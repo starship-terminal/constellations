@@ -10,7 +10,7 @@ The "Sign up" control is the site's signature element: a 80 x 40 lime pill (`hs-
 
 ## The homepage hero: headline + job-search form
 
-The hero stacks an uppercase brand-face h1 — "LET'S FIND YOUR NEXT JOB", SansPlomb semibold at ~86px cap-height (`hs-hero-h1`, layout probe reads 86px/68.8px) — over the job-search form (`hs-search-form`, a 920 x 88 `rounded-3xl` field row, `--content-max-width`-bounded). A rounded "Search jobs" submit sits inside the field's right end (`hs-search-button`, 56 x 56), and the type pills Full-time / Remote / Internship (`hs-filter-pill`, 14px) sit beneath. The form was measured at rest only: nothing was typed and it was never submitted (it would navigate into the app).
+The hero stacks an uppercase brand-face h1 — "LET'S FIND YOUR NEXT JOB", SansPlomb semibold (`hs-hero-h1`, 160px/128px at desktop; the 86px/68.8px copy is the one that paints at 1024 and 390) — over the job-search form (`hs-search-form`, a 920 x 88 `rounded-3xl` field row, `--content-max-width`-bounded). A rounded "Search jobs" submit sits inside the field's right end (`hs-search-button`, 56 x 56), and the type pills Full-time / Remote / Internship (`hs-filter-pill`, 14px) sit beneath. The form was measured at rest only: nothing was typed and it was never submitted (it would navigate into the app).
 
 ## Section bands and the 12-column grid
 
@@ -26,7 +26,7 @@ Page sections ride a 12-column grid — at 1440 the columns measure 116px each (
 
 ## Students, careers, blog
 
-/students/ pairs the same sign-up CTA (`stu-signup-button`, lime pill) with arrow-suffixed text links ("Find jobs and internships →", `stu-text-link`, `light.link.accent`) and a card carousel. /careers/ lists open roles behind a search field (`car-search-input`, 688 x 56), department accordions (`car-dept-button`, 218 x 56, opened by the header's own press) and pagination. /blog/ is a searchable index: a 343 x 27 search field at 22px (`blog-search-input`), an 89 x 48 "Search" button (`blog-search-button`), uppercase 16px/600 category links (`blog-category-link`), then article cards (`blog-card`) down the alternating neutral bands.
+/students/ pairs the same sign-up CTA (`stu-signup-button`, lime pill) with arrow-suffixed text links ("Find jobs and internships →", `stu-text-link`, `light.link.accent`) and a card carousel. /careers/ lists open roles behind a search field (`car-search-input`, 688 x 56), the departments filter dropdown (`car-dept-button`, 218 x 56, opened by its own press) and pagination. /blog/ is a searchable index: a 343 x 27 search field at 22px (`blog-search-input`), an 89 x 48 "Search" button (`blog-search-button`), uppercase 16px/600 category links (`blog-category-link`), then article cards (`blog-card`) down the alternating neutral bands.
 
 ## Legal pages
 

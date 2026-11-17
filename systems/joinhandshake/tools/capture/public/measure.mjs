@@ -106,7 +106,15 @@ const CHROME = [
     sel: 'nav a (text Log in)', find: async (p) => await domFind(p, /^log in$/i, { sel: 'nav a, nav button', tag: 'li', minW: 30, minH: 16 }), states: ['default', 'hover', 'focus-visible'] },
   { key: 'hs-nav-menu', group: 'Site chrome', title: 'Nav mega menu (open)',
     desc: 'The hover-opened panel under a nav section item. "opened" is the item\'s own hover: the pointer rests on it until aria-expanded flips.',
-    sel: 'nav [class*="panel"], nav [class*="menu"], [role="menu"]', find: (p) => p.locator('nav').first(), states: [
+    sel: 'div.absolute.top-full.rounded-2xl', find: async (p) => {
+      // The panel only exists in the DOM once the item is hovered: open it
+      // here, before the runner's own visibility check. The nav item itself
+      // also carries data-state=open, so match the panel's own classes only.
+      const item = p.locator('nav').first().locator('a,button').filter({ hasText: /^Employers$/ }).first();
+      const b = await item.boundingBox();
+      if (b) { await p.mouse.move(b.x + b.width / 2, b.y + b.height / 2); await p.waitForTimeout(1400); }
+      return p.locator('div.absolute.top-full.rounded-2xl:visible').first();
+    }, states: [
       { name: 'opened', via: 'the nav item\'s own hover — the panel is measured in the nav region it overlays',
         fn: async (loc) => {
           const item = page.locator('nav').first().locator('a,button').filter({ hasText: /^Employers$/ }).first();
@@ -180,7 +188,7 @@ const PRICING = [
     desc: 'A td in the comparison table.', sel: 'td', find: (p) => p.locator('td:visible').first(), states: ['default'] },
   { key: 'pricing-plan-card', group: 'Pricing page', title: 'Plan card',
     desc: 'A plan column/card on the pricing page.',
-    sel: '[class*="plan" i], [class*="tier" i], main section', find: async (p) => await domFind(p, /basic|pro|enterprise/i, { sel: 'main h2, main h3, main [class*="card" i]', tag: 'pc', up: 'div', minW: 120, minH: 60 }), states: ['default'] },
+    sel: '[class*="plan" i], [class*="tier" i], main section', find: async (p) => await domFind(p, /^(basic|pro|enterprise|promoted jobs?)$/i, { sel: 'main h2, main h3, main h4, main [class*="card" i] h2, main [class*="card" i] h3', tag: 'pc', up: 'div', minW: 60, minH: 16 }), states: ['default'] },
   { key: 'pricing-feature-tab', group: 'Pricing page', title: 'Feature group tab',
     desc: 'A "Target & Connect" / "Centralize" / "Brand" / "Measure" group button that switches the comparison section.',
     sel: 'button (text Target & Connect|Centralize)', find: async (p) => await domFind(p, /^(target & connect|centralize|brand|measure)$/i, { sel: 'button', tag: 'ft', minW: 60, minH: 16 }), states: ['default', 'hover',
@@ -252,8 +260,8 @@ const CAREERS = [
   { key: 'car-search-input', group: 'Careers page', title: 'Roles search field',
     desc: 'The open-roles search input — measured at rest, nothing typed.',
     sel: 'input[placeholder*="earch" i], input', find: (p) => p.locator('input:visible').first(), states: ['default', 'focused'] },
-  { key: 'car-dept-button', group: 'Careers page', title: 'Department accordion',
-    desc: 'A department group header in the roles list — "opened" is the header\'s own press.',
+  { key: 'car-dept-button', group: 'Careers page', title: 'Department filter button',
+    desc: 'The "All departments" filter dropdown in the roles list — "opened" is its own press.',
     sel: 'button.group.flex', find: (p) => p.locator('button.group.flex:visible').first(), states: ['default', 'hover',
       { name: 'opened', via: 'the header\'s own press — a local UI toggle', fn: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); } }] },
   { key: 'car-job-link', group: 'Careers page', title: 'Job row link',
@@ -335,7 +343,7 @@ const GROUPS = {
   chrome: { page: 'home', specs: [...CHROME, ...HOME] },
   employers: { page: 'employers', specs: EMPLOYERS },
   pricing: { page: 'pricing', specs: PRICING },
-  forms: { page: 'request-more-info', specs: FORMS, scrollFirst: true },
+  forms: { page: 'request-more-info', specs: FORMS.filter((f) => f.page === 'request-more-info'), scrollFirst: true },
   'cc-forms': { page: 'cc-contact', specs: FORMS.filter((f) => f.page === 'cc-contact'), scrollFirst: true },
   students: { page: 'students', specs: STUDENTS },
   blog: { page: 'blog', specs: BLOG },

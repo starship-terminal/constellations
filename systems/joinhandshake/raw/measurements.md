@@ -32,7 +32,7 @@ Page: /. Selector: `nav.fixed`. States: default.
 | Painted layers | div.flex.items-center 1392.0x56.0 bg #ffffff @ 0 r 16px; a.flex.flex-col 73.8x40.0 bg #000000 @ 0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px; a.flex.flex-col 80.5x40.0 bg #d3fb52 r 8px |
 | How | resting state |
 
-Crops: none.
+Crops: `hs-nav-default.png`.
 
 #### hs-nav-link
 
@@ -57,7 +57,7 @@ Page: /. Selector: `nav a (text Employers)`. States: default, hover, focus-visib
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 | Painted layers | - | a.rounded-lg.px-4 95.1x43.6 bg #ffffff @ 0.1 r 8px | a.rounded-lg.px-4 95.1x43.6 r 8px outline 1px auto #101010 offset 1px |
 
-Crops: none.
+Crops: `hs-nav-link-default.png`, `hs-nav-link-hover.png`, `hs-nav-link-focus-visible.png`.
 
 #### hs-signup-button
 
@@ -72,7 +72,7 @@ Page: /. Selector: `nav a,nav button (text Sign up)`. States: default, hover, fo
 | Gap | normal 4px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 8px | = | = | = |
-| Background | #d3fb52 | #a1dd3b | #e7ff89 | #e7ff89 |
+| Background | #d3fb52 | #a1dd3b | #e7ff89 | #a1dd3b |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | NoiGrotesk 14px/15.4px 500 | = | = | = |
@@ -80,10 +80,10 @@ Page: /. Selector: `nav a,nav button (text Sign up)`. States: default, hover, fo
 | Colour | #14151c | = | = | = |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.flex.flex-col 80.5x40.0 bg #d3fb52 r 8px | a.flex.flex-col 80.5x40.0 bg #a1dd3b r 8px | a.flex.flex-col 80.5x40.0 bg #e7ff89 r 8px outline 1px auto #101010 offset 1px | a.flex.flex-col 80.5x40.0 bg #e7ff89 r 8px |
+| Painted layers | a.flex.flex-col 80.5x40.0 bg #d3fb52 r 8px | a.flex.flex-col 80.5x40.0 bg #a1dd3b r 8px | a.flex.flex-col 80.5x40.0 bg #e7ff89 r 8px outline 1px auto #101010 offset 1px | a.flex.flex-col 80.5x40.0 bg #a1dd3b r 8px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
-Crops: none.
+Crops: `hs-signup-button-default.png`, `hs-signup-button-hover.png`, `hs-signup-button-focus-visible.png`, `hs-signup-button-pressed.png`.
 
 #### hs-login-link
 
@@ -109,33 +109,35 @@ Page: /. Selector: `nav a (text Log in)`. States: default, hover, focus-visible.
 | Painted layers | a.flex.flex-col 73.8x40.0 bg #000000 @ 0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | a.flex.flex-col 73.8x40.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | a.flex.flex-col 73.8x40.0 bg #000000 @ 0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px outline 1px auto #101010 offset 1px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 
-Crops: none.
+Crops: `hs-login-link-default.png`, `hs-login-link-hover.png`, `hs-login-link-focus-visible.png`.
 
 #### hs-nav-menu
 
 Nav mega menu (open). The hover-opened panel under a nav section item. "opened" is the item's own hover: the pointer rests on it until aria-expanded flips.
 
-Page: /. Selector: `nav [class*="panel"], nav [class*="menu"], [role="menu"]`. States: opened.
+Page: /. Selector: `div.absolute.top-full.rounded-2xl`. States: opened.
 
 | Property | opened |
 |---|---|
-| Size (w x h) | 1440 x 56 |
+| Size (w x h) | 774 x 249.68 |
 | Padding | 0px |
 | Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
+| Radius | 16px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px |
 | Outline | none |
-| Font | NoiGrotesk 16px/24px 400 |
-| Letter spacing | normal |
+| Font | NoiGrotesk 14px/19.6px 400 |
+| Letter spacing | -0.21px |
 | Colour | #000000 |
-| Text node | a.rounded-lg.px-4: NoiGrotesk 14px/19.6px 400, #ffffff, ls -0.21px |
-| Transition | top, color 0.3s, 0.2s ease-in-out, ease delay 0s, 0s |
-| Icon | 0 x 0, colour #d3fb52 |
-| Painted layers | div.flex.items-center 1392.0x56.0 bg #ffffff @ 0 r 16px; a.rounded-lg.px-4 95.1x43.6 bg #ffffff @ 0.1 r 8px; div.absolute.top-full 860.0x320.3 bg #ffffff r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px; a.relative.flex 276.0x304.3 bg #f3f4fa r 12px; div.relative.h-38 244.0x152.0 image linear-gradient(to right in oklab, #004449 0px, #052326 100%) r 12px; div.absolute.inset-0 244.0x152.0 image radial-gradient(circle at right top, #d3fb52 @ 0.2 0px, #000000 @ 0 34%) |
+| Text node | div.w-fit.rounded-full: NoiGrotesk 10px/11px 500, #d3fb52, ls 0.2px |
+| Transition | none |
+| Transform | matrix3d(0.9, 0, 0, 0, 0, 0.779423, -0.45, 0, 0, 0.5, 0.866025, 0, 0, 0, 0, 1) |
+| Opacity | 0 |
+| Icon | 14.4 x 12.47, colour #000000 |
+| Painted layers | div.absolute.top-full 774.0x249.7 bg #ffffff r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px; a.relative.flex 248.4x237.2 bg #f3f4fa r 12px; div.relative.h-38 219.6x118.5 image linear-gradient(to right in oklab, #004449 0px, #052326 100%) r 12px; div.absolute.inset-0 219.6x118.5 image radial-gradient(circle at right top, #d3fb52 @ 0.2 0px, #000000 @ 0 34%); div.w-fit.rounded-full 70.9x21.0 bg #d3fb52 @ 0.12 r 9999px |
 | How | the nav item's own hover — the panel is measured in the nav region it overlays |
 
-Crops: none.
+Crops: `hs-nav-menu-opened.png`.
 
 #### hs-footer
 
@@ -162,7 +164,7 @@ Page: /. Selector: `footer`. States: default.
 | Ancestor paint | 1 up div.relative.z-10 bg #14151c |
 | How | resting state |
 
-Crops: none.
+Crops: `hs-footer-default.png`.
 
 #### hs-footer-link
 
@@ -188,41 +190,111 @@ Page: /. Selector: `footer a`. States: default, hover, focus-visible.
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 | Painted layers | - | = | a 140.0x47.2 outline 1px auto #101010 offset 1px |
 
-Crops: none.
+Crops: `hs-footer-link-default.png`, `hs-footer-link-hover.png`, `hs-footer-link-focus-visible.png`.
 
 ### Homepage hero
 
 #### hs-hero-h1
 
-Hero headline (h1). "Let's find your next job" — the hero title in the brand face.
+Hero headline (h1). "LET'S FIND YOUR NEXT JOB" — the hero title in the brand face. The page ships two hero copies (one per breakpoint); the visible one is picked, never the zero-rect twin.
 
-Page: /. Selector: `main h1, h1`. States: .
+Page: /. Selector: `main h1, h1`. States: default.
 
-Not found on the page at capture time.
+| Property | default |
+|---|---|
+| Size (w x h) | 1392 x 274 |
+| Padding | 0px 0px 18px 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | SansPlomb 160px/128px 600 |
+| Letter spacing | -4px |
+| Colour | #ffffff |
+| Text node | span.block: SansPlomb 160px/128px 600, #ffffff, ls -4px |
+| Transition | none |
+| How | resting state |
+
+Crops: `hs-hero-h1-default.png`.
 
 #### hs-search-form
 
 Job search form. The hero job-search field row — measured at rest; typing and submitting were never done (the form navigates to the app).
 
-Page: /. Selector: `form`. States: .
+Page: /. Selector: `form`. States: default.
 
-Not found on the page at capture time.
+| Property | default |
+|---|---|
+| Size (w x h) | 920 x 88 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | NoiGrotesk 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | span: NoiGrotesk 20px/22px 400, #14151c @ 0.6, ls -0.3px |
+| Transition | none |
+| Icon | 32 x 32, colour #252630 |
+| Painted layers | input.hidden.size-full 920.0x88.0 bg #ffffff r 24px; textarea.block.size-full 0.0x0.0 bg #ffffff r 24px; button.absolute.right-(--mobile-input-padding) 56.0x56.0 bg #252630 @ 0.1 r 12px |
+| How | resting state |
+
+Crops: `hs-search-form-default.png`.
 
 #### hs-search-input
 
 Job search input. The rounded text field inside the hero form.
 
-Page: /. Selector: `form input[type="text"], form input`. States: .
+Page: /. Selector: `form input[type="text"], form input`. States: default, focused.
 
-Not found on the page at capture time.
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 920 x 88 | = |
+| Padding | 0px 80px 0px 64px | = |
+| Border | none | = |
+| Radius | 24px | = |
+| Background | #ffffff | = |
+| Box shadow | none | = |
+| Outline | none | 1px auto #101010 offset 0px |
+| Font | NoiGrotesk 20px/22px 400 | = |
+| Letter spacing | -0.3px | = |
+| Colour | #252630 | = |
+| Transition | none | = |
+| Cursor | text | = |
+| Placeholder | #252630, opacity 1 | = |
+| Painted layers | input.hidden.size-full 920.0x88.0 bg #ffffff r 24px | input.hidden.size-full 920.0x88.0 bg #ffffff r 24px outline 1px auto #101010 offset 0px |
+| How | resting state | the field clicked into |
+
+Crops: `hs-search-input-default.png`, `hs-search-input-focused.png`.
 
 #### hs-search-button
 
 "Search jobs" button. The submit-styled button inside the hero form — pressed states are CDP-forced, so it never submits.
 
-Page: /. Selector: `form button (text Search jobs)`. States: .
+Page: /. Selector: `form button[aria-label*="search" i] (icon-only "Search jobs" submit)`. States: default, hover, focus-visible, pressed.
 
-Not found on the page at capture time.
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 56 x 56 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 12px | = | = | = |
+| Background | #252630 @ 0.1 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | NoiGrotesk 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0, 0, 0.2, 1) | = | = | = |
+| Cursor | not-allowed | = | = | = |
+| Icon | 13 x 20, colour #7b7b85 | = | = | = |
+| Painted layers | button.absolute.right-(--mobile-input-padding) 56.0x56.0 bg #252630 @ 0.1 r 12px | = | = | = |
+| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
+
+Crops: `hs-search-button-default.png`, `hs-search-button-hover.png`, `hs-search-button-focus-visible.png`, `hs-search-button-pressed.png`.
 
 #### hs-filter-pill
 
@@ -248,25 +320,61 @@ Page: /. Selector: `button (text Full-time)`. States: default, hover, focus-visi
 | Painted layers | button.flex.shrink-0 91.1x45.9 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | button.flex.shrink-0 91.1x45.9 bg #ffffff @ 0.1 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | button.flex.shrink-0 91.1x45.9 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px outline 1px auto #101010 offset 0px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 
-Crops: none.
+Crops: `hs-filter-pill-default.png`, `hs-filter-pill-hover.png`, `hs-filter-pill-focus-visible.png`.
 
 ### Employers page
 
 #### hs-banner
 
-Notification banner. The top banner (its height is --notification-banner-height) with its dismiss control.
+Notification banner. The top banner (its height is --notification-banner-height); while it shows, the nav's top offset switches to --desktop-nav-top-offset-with-banner.
 
-Page: /employers/. Selector: `[class*="banner" i], [class*="notification" i]`. States: .
+Page: /employers/. Selector: `div[class*="notification-banner-height"]:visible`. States: default.
 
-Not found on the page at capture time.
+| Property | default |
+|---|---|
+| Size (w x h) | 1392 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 8px |
+| Background | #d3fb52 |
+| Box shadow | none |
+| Outline | none |
+| Font | NoiGrotesk 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #252630 |
+| Text node | p.font-noi-grotesk.text-[14px]/xl: NoiGrotesk 14px/19.6px 400, #252630, ls -0.21px |
+| Transition | none |
+| Icon | 16 x 16, colour #252630, fill #000000 |
+| Painted layers | div.z-40.h-(--notification-banner-height) 1392.0x40.0 bg #d3fb52 r 8px |
+| How | resting state |
+
+Crops: `hs-banner-default.png`.
 
 #### hs-banner-dismiss
 
-Banner dismiss button. The "Dismiss notification" control — measured, never pressed.
+Banner dismiss button. The icon-only "Dismiss notification" control — measured, never pressed.
 
-Page: /employers/. Selector: `button (text Dismiss notification)`. States: .
+Page: /employers/. Selector: `button[aria-label="Dismiss notification"]`. States: default, hover, focus-visible.
 
-Not found on the page at capture time.
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 16 x 16 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | 1px auto #101010 offset 0px |
+| Font | NoiGrotesk 16px/24px 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #252630 | = | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 16, colour #252630 | = | = |
+| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
+| Painted layers | - | = | button.absolute.right-6 16.0x16.0 outline 1px auto #101010 offset 0px |
+
+Crops: `hs-banner-dismiss-default.png`, `hs-banner-dismiss-hover.png`, `hs-banner-dismiss-focus-visible.png`.
 
 #### hs-segment-tab
 
@@ -285,12 +393,12 @@ Page: /employers/. Selector: `button (text Source/Automate)`. States: default, h
 | Outline | none | = | = |
 | Font | NoiGrotesk 40px/44px 400 | = | = |
 | Letter spacing | -1px | = | = |
-| Colour | #ffffff | #252630 | #252630 |
+| Colour | #a9aaae | #252630 | #252630 |
 | Transition | opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Cursor | pointer | = | = |
 | How | resting state | mouse hover over the element | the tab's own press — a local UI toggle that swaps the published panel |
 
-Crops: none.
+Crops: `hs-segment-tab-default.png`, `hs-segment-tab-hover.png`, `hs-segment-tab-selected.png`.
 
 #### hs-cta
 
@@ -317,7 +425,7 @@ Page: /employers/. Selector: `a.group.inline-flex (text Get started/Contact sale
 | Ancestor paint | 1 up div.flex.flex-1 bg #ffffff @ 0.1 | = | = | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
-Crops: none.
+Crops: `hs-cta-default.png`, `hs-cta-hover.png`, `hs-cta-focus-visible.png`, `hs-cta-pressed.png`.
 
 #### hs-carousel-dot
 
@@ -342,15 +450,34 @@ Page: /employers/. Selector: `button[aria-label*="testimonial" i]`. States: defa
 | Painted layers | button.size-2.rounded-full 8.0x8.0 bg #ffffff r 9999px | = |
 | How | resting state | mouse hover over the element |
 
-Crops: none.
+Crops: `hs-carousel-dot-default.png`, `hs-carousel-dot-hover.png`.
 
 #### hs-faq
 
 FAQ accordion question. A question row in the FAQ. "opened" is the question button's own press: it unfolds the answer.
 
-Page: /employers/. Selector: `button (question)`. States: .
+Page: /employers/. Selector: `button (question)`. States: default, hover, focus-visible, opened.
 
-Not found on the page at capture time.
+| Property | default | hover | focus-visible | opened |
+|---|---|---|---|---|
+| Size (w x h) | 597.33 x 25.2 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #101010 offset 0px | = |
+| Font | NoiGrotesk 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | p.font-noi-grotesk.text-[18px]/xl: NoiGrotesk 18px/25.2px 400, #ffffff, ls -0.27px | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 14 x 20, colour #ffffff, fill #000000 | = | = | = |
+| Painted layers | div.flex.size-6 24.0x24.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 9999px | = | button 597.3x25.2 outline 1px auto #101010 offset 0px; div.flex.size-6 24.0x24.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 9999px | = |
+| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | the question button's own press — a local UI toggle |
+
+Crops: `hs-faq-default.png`, `hs-faq-hover.png`, `hs-faq-focus-visible.png`, `hs-faq-opened.png`.
 
 ### Pricing page
 
@@ -378,7 +505,7 @@ Page: /employers/pricing/. Selector: `table`. States: default.
 | Painted layers | table.w-full.bg-white 1152.0x856.5 bg #ffffff; td.col-span-1.flex 164.6x92.8 bg #252630 @ 0.04; tr.grid.grid-cols-7 1152.0x93.8 border T:1px solid; td.col-span-1.flex 164.6x92.8 bg #252630 @ 0.04; tr.grid.grid-cols-7 1152.0x73.0 border T:1px solid; td.col-span-1.flex 164.6x72.0 bg #252630 @ 0.04 |
 | How | resting state |
 
-Crops: none.
+Crops: `pricing-table-default.png`.
 
 #### pricing-th
 
@@ -401,7 +528,7 @@ Page: /employers/pricing/. Selector: `th`. States: default.
 | Transition | none |
 | How | resting state |
 
-Crops: none.
+Crops: `pricing-th-default.png`.
 
 #### pricing-td
 
@@ -425,7 +552,7 @@ Page: /employers/pricing/. Selector: `td`. States: default.
 | Transition | none |
 | How | resting state |
 
-Crops: none.
+Crops: `pricing-td-default.png`.
 
 #### pricing-plan-card
 
@@ -435,9 +562,9 @@ Page: /employers/pricing/. Selector: `[class*="plan" i], [class*="tier" i], main
 
 | Property | default |
 |---|---|
-| Size (w x h) | 568 x 70.41 |
+| Size (w x h) | 256 x 125.61 |
 | Padding | 0px |
-| Gap | normal 8px |
+| Gap | 64px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -448,12 +575,10 @@ Page: /employers/pricing/. Selector: `[class*="plan" i], [class*="tier" i], main
 | Colour | #000000 |
 | Text node | h2.font-noi-grotesk.text-[32px]/lg: NoiGrotesk 32px/35.2px 400, #000000, ls -0.8px |
 | Transition | none |
-| Cursor | pointer |
-| Icon | 14 x 20, colour #000000 |
-| Painted layers | div.flex.size-6 24.0x24.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 9999px |
+| Ancestor paint | 1 up div.flex.h-fit bg #f3f4fa |
 | How | resting state |
 
-Crops: none.
+Crops: `pricing-plan-card-default.png`.
 
 #### pricing-feature-tab
 
@@ -480,7 +605,7 @@ Page: /employers/pricing/. Selector: `button (text Target & Connect/Centralize)`
 | Painted layers | button.flex.w-full 1152.0x74.6 border B:1px solid | = | = |
 | How | resting state | mouse hover over the element | the tab's own press — a local UI toggle |
 
-Crops: none.
+Crops: `pricing-feature-tab-default.png`, `pricing-feature-tab-hover.png`, `pricing-feature-tab-selected.png`.
 
 ### Marketo forms
 
@@ -507,7 +632,7 @@ Page: /employers/request-more-info/. Selector: `form[class*="marketo" i], form`.
 | Painted layers | input.mktoField.mktoEmailField 502.7x58.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; input.mktoField.mktoTextField 243.3x58.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; input.mktoField.mktoTextField 243.3x58.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; input.mktoField.mktoTextField 502.7x58.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; input.mktoField.mktoTelField 502.7x58.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; input.mktoField.mktoNumberField 502.7x58.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px |
 | How | resting state |
 
-Crops: none.
+Crops: `mkto-form-default.png`.
 
 #### mkto-input
 
@@ -533,7 +658,7 @@ Page: /employers/request-more-info/. Selector: `form input[type="text"], form in
 | Painted layers | input.mktoField.mktoEmailField 502.7x58.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px | input.mktoField.mktoEmailField 502.7x58.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px outline 1px auto #9b53f6 offset 0px |
 | How | resting state | the field clicked into |
 
-Crops: none.
+Crops: `mkto-input-default.png`, `mkto-input-focused.png`.
 
 #### mkto-select
 
@@ -555,7 +680,7 @@ Page: /employers/request-more-info/. Selector: `form button[type="submit"], form
 | Padding | 14px 16px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 4px | = | = | = |
-| Background | #d3fb52 | #d7fb61 | = | = |
+| Background | #d3fb52 | #ffffff | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 0px | = |
 | Font | NoiGrotesk 18px/18px 400 | = | = | = |
@@ -563,10 +688,10 @@ Page: /employers/request-more-info/. Selector: `form button[type="submit"], form
 | Colour | #14151c | = | = | = |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.inline-flex.min-h-12 502.7x48.0 bg #d3fb52 r 4px | button.inline-flex.min-h-12 502.7x48.0 bg #d7fb61 r 4px | button.inline-flex.min-h-12 502.7x48.0 bg #d3fb52 r 4px outline 1px auto #101010 offset 0px | = |
+| Painted layers | button.inline-flex.min-h-12 502.7x48.0 bg #d3fb52 r 4px | button.inline-flex.min-h-12 502.7x48.0 bg #ffffff r 4px | button.inline-flex.min-h-12 502.7x48.0 bg #d3fb52 r 4px outline 1px auto #101010 offset 0px | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
-Crops: none.
+Crops: `mkto-submit-default.png`, `mkto-submit-hover.png`, `mkto-submit-focus-visible.png`, `mkto-submit-pressed.png`.
 
 #### cc-form
 
@@ -591,7 +716,7 @@ Page: /career-centers/contact/. Selector: `form`. States: default.
 | Painted layers | input.mktoField.mktoTextField 728.0x40.0 bg #f3f4fa r 3px; input.mktoField.mktoTextField 728.0x40.0 bg #f3f4fa r 3px; input.mktoField.mktoEmailField 728.0x40.0 bg #f3f4fa r 3px; input.mktoField.mktoTelField 728.0x40.0 bg #f3f4fa r 3px; input.mktoField.mktoTextField 728.0x40.0 bg #f3f4fa r 3px; select.mktoField.mktoHasWidth 728.0x35.0 bg #f3f4fa r 3px |
 | How | resting state |
 
-Crops: none.
+Crops: `cc-form-default.png`.
 
 ### Students page
 
@@ -599,9 +724,27 @@ Crops: none.
 
 Email capture field. The "Type school or personal email here" field in the hero — measured at rest, nothing typed.
 
-Page: /students/. Selector: `input[type="email"]`. States: .
+Page: /students/. Selector: `input[type="email"]`. States: default, focused.
 
-Not found on the page at capture time.
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 448 x 56 | = |
+| Padding | 8px 16px | = |
+| Border | none | = |
+| Radius | 8px | = |
+| Background | #ffffff | = |
+| Box shadow | none | = |
+| Outline | none | 1px auto #101010 offset 0px |
+| Font | NoiGrotesk 18px/25.2px 400 | = |
+| Letter spacing | -0.27px | = |
+| Colour | #14151c | = |
+| Transition | none | = |
+| Cursor | text | = |
+| Placeholder | #14151c @ 0.6, opacity 1 | = |
+| Painted layers | input.mx-auto.h-14 448.0x56.0 bg #ffffff r 8px | input.mx-auto.h-14 448.0x56.0 bg #ffffff r 8px outline 1px auto #101010 offset 0px |
+| How | resting state | the field clicked into |
+
+Crops: `stu-email-input-default.png`, `stu-email-input-focused.png`.
 
 #### stu-signup-button
 
@@ -614,20 +757,20 @@ Page: /students/. Selector: `button.group.inline-flex (text Sign up)`. States: d
 | Size (w x h) | 82.53 x 40 | = | = | = |
 | Padding | 12px 16px | = | = | = |
 | Gap | normal 4px | = | = | = |
-| Border | 1px solid #ffffff | 1px solid #000000 @ 0 | 1px solid #f3f4fa | 1px solid #000000 @ 0 |
+| Border | 1px solid #252630 | 1px solid #000000 @ 0 | 1px solid #14151c | 1px solid #000000 @ 0 |
 | Radius | 8px | = | = | = |
-| Background | transparent | #ffffff | = | #ffffff |
+| Background | transparent | #14151c @ 0.1 | #ffffff | #ffffff |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | NoiGrotesk 14px/15.4px 500 | = | = | = |
 | Letter spacing | -0.21px | = | = | = |
-| Colour | #ffffff | #14151c | #f3f4fa | #14151c |
+| Colour | #252630 | = | = | #14151c |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.flex.flex-col 82.5x40.0 bg #000000 @ 0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | a.flex.flex-col 82.5x40.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | a.flex.flex-col 82.5x40.0 bg #000000 @ 0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px outline 1px auto #101010 offset 1px | a.flex.flex-col 82.5x40.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px |
+| Painted layers | a.flex.flex-col 82.5x40.0 bg #000000 @ 0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | a.flex.flex-col 82.5x40.0 bg #14151c @ 0.1 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | a.flex.flex-col 82.5x40.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px outline 1px auto #101010 offset 1px | a.flex.flex-col 82.5x40.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
-Crops: none.
+Crops: `stu-signup-button-default.png`, `stu-signup-button-hover.png`, `stu-signup-button-focus-visible.png`, `stu-signup-button-pressed.png`.
 
 #### stu-text-link
 
@@ -653,15 +796,33 @@ Page: /students/. Selector: `a (text Find jobs and internships)`. States: defaul
 | Painted layers | a.font-noi-grotesk.text-[16px]/xl 243.5x46.4 bg #052326 @ 0.8 r 32px | a.font-noi-grotesk.text-[16px]/xl 243.5x46.4 bg #004449 @ 0.8 r 32px | a.font-noi-grotesk.text-[16px]/xl 243.5x46.4 bg #052326 @ 0.8 r 32px outline 1px auto #101010 offset 1px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 
-Crops: none.
+Crops: `stu-text-link-default.png`, `stu-text-link-hover.png`, `stu-text-link-focus-visible.png`.
 
 #### stu-carousel-btn
 
 Card carousel arrow. A "Slide to the next/previous card" arrow button.
 
-Page: /students/. Selector: `button[aria-label*="card" i]`. States: .
+Page: /students/. Selector: `button[aria-label*="card" i]`. States: default, hover.
 
-Not found on the page at capture time.
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 48 x 48 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | NoiGrotesk 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #ffffff | #14151c |
+| Transition | none | = |
+| Cursor | pointer | = |
+| Icon | 20 x 14, colour #ffffff | 20 x 14, colour #14151c, fill #ffffff |
+| Painted layers | div.flex.size-12 48.0x48.0 bg #ffffff r 9999px | div.flex.size-12 48.0x48.0 bg #14151c r 9999px |
+| How | resting state | mouse hover over the element |
+
+Crops: `stu-carousel-btn-default.png`, `stu-carousel-btn-hover.png`.
 
 ### Blog
 
@@ -690,7 +851,7 @@ Page: /blog/. Selector: `input[type="search"]`. States: default, focused.
 | How | resting state | the field clicked into |
 | Ancestor paint | - | 2 up div.flex.min-h-12 bg #f3f4fa outline 1px solid #000000 |
 
-Crops: none.
+Crops: `blog-search-input-default.png`, `blog-search-input-focused.png`.
 
 #### blog-search-button
 
@@ -715,7 +876,7 @@ Page: /blog/. Selector: `button (text Search)`. States: default, hover, focus-vi
 | Painted layers | button.inline-flex.min-h-12 88.9x48.0 bg #052326 r 4px | = | button.inline-flex.min-h-12 88.9x48.0 bg #052326 r 4px outline 1px auto #101010 offset 0px | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
-Crops: none.
+Crops: `blog-search-button-default.png`, `blog-search-button-hover.png`, `blog-search-button-focus-visible.png`, `blog-search-button-pressed.png`.
 
 #### blog-category-link
 
@@ -740,31 +901,34 @@ Page: /blog/. Selector: `a.uppercase`. States: default, hover, focus-visible.
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 | Painted layers | - | = | a.uppercase.font-semibold 137.0x17.0 outline 1px auto #101010 offset 1px |
 
-Crops: none.
+Crops: `blog-category-link-default.png`, `blog-category-link-hover.png`, `blog-category-link-focus-visible.png`.
 
 #### blog-card
 
 Article card. An article card link on the blog index.
 
-Page: /blog/. Selector: `main a[href*="/blog/"]`. States: default, hover.
+Page: /blog/. Selector: `main a[href*="/blog/"] (the card-sized anchor, not a category link)`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 137 x 17 | = |
+| Size (w x h) | 536 x 159.22 | = |
 | Padding | 0px | = |
+| Gap | 24px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | NoiGrotesk 16px/24px 600 | = |
+| Font | NoiGrotesk 16px/24px 400 | = |
 | Letter spacing | normal | = |
-| Colour | #2e6aff | #1552d6 |
+| Colour | #000000 | = |
+| Text node | h3.font-noi-grotesk.text-[36px]/lg: NoiGrotesk 40px/44px 600, #000000, ls -1px | = |
 | Transition | none | = |
 | Cursor | pointer | = |
+| Ancestor paint | 1 up div.flex.flex-col bg #ffffff | = |
 | How | resting state | mouse hover over the element |
 
-Crops: none.
+Crops: `blog-card-default.png`, `blog-card-hover.png`.
 
 #### blog-readmore
 
@@ -791,7 +955,7 @@ Page: /blog/. Selector: `a (text Read More)`. States: default, hover.
 | Ancestor paint | 1 up div.flex.flex-col bg #ffffff | = |
 | How | resting state | mouse hover over the element |
 
-Crops: none.
+Crops: `blog-readmore-default.png`, `blog-readmore-hover.png`.
 
 ### Careers page
 
@@ -820,7 +984,7 @@ Page: /careers/. Selector: `button (text Health & wellness)`. States: default, h
 | Painted layers | div.flex.size-6 24.0x24.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 9999px | = | = |
 | How | resting state | mouse hover over the element | the tab's own press — a local UI toggle |
 
-Crops: none.
+Crops: `car-benefit-tab-default.png`, `car-benefit-tab-hover.png`, `car-benefit-tab-selected.png`.
 
 #### car-search-input
 
@@ -846,11 +1010,11 @@ Page: /careers/. Selector: `input[placeholder*="earch" i], input`. States: defau
 | Painted layers | input.border.transition-all 688.0x56.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px | input.border.transition-all 688.0x56.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #252630 0px 0px 0px 1px |
 | How | resting state | the field clicked into |
 
-Crops: none.
+Crops: `car-search-input-default.png`, `car-search-input-focused.png`.
 
 #### car-dept-button
 
-Department accordion. A department group header in the roles list — "opened" is the header's own press.
+Department filter button. The "All departments" filter dropdown in the roles list — "opened" is its own press.
 
 Page: /careers/. Selector: `button.group.flex`. States: default, hover, opened.
 
@@ -872,7 +1036,7 @@ Page: /careers/. Selector: `button.group.flex`. States: default, hover, opened.
 | Painted layers | button.group.flex 218.7x56.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px | = | button.group.flex 218.7x56.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #252630 0px 0px 0px 1px |
 | How | resting state | mouse hover over the element | the header's own press — a local UI toggle |
 
-Crops: none.
+Crops: `car-dept-button-default.png`, `car-dept-button-hover.png`, `car-dept-button-opened.png`.
 
 #### car-job-link
 
@@ -898,7 +1062,7 @@ Page: /careers/. Selector: `a (job title)`. States: default, hover.
 | Painted layers | div.group.flex 1392.0x122.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px; div.group.inline-flex 73.8x40.0 bg #252630 r 8px | div.group.flex 1392.0x122.0 bg #252630 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px; div.group.inline-flex 73.8x40.0 bg #d3fb52 r 8px |
 | How | resting state | mouse hover over the element |
 
-Crops: none.
+Crops: `car-job-link-default.png`, `car-job-link-hover.png`.
 
 #### car-page-button
 
@@ -923,7 +1087,7 @@ Page: /careers/. Selector: `button.group.inline-flex (text 1/2/3)`. States: defa
 | Painted layers | button.group.inline-flex 48.0x48.0 bg #14151c border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px | = | button.group.inline-flex 48.0x48.0 bg #14151c border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px outline 1px auto #101010 offset 0px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 
-Crops: none.
+Crops: `car-page-button-default.png`, `car-page-button-hover.png`, `car-page-button-focus-visible.png`.
 
 ### Legal pages
 
@@ -931,27 +1095,26 @@ Crops: none.
 
 Legal nav link (active). The current section link in the legal left rail (opacity-100).
 
-Page: /legal/tos/. Selector: `a.font-medium`. States: default, hover.
+Page: /legal/tos/. Selector: `main a.font-medium`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 73.75 x 40 | = |
-| Padding | 12px 16px | = |
-| Gap | normal 4px | = |
-| Border | 1px solid #252630 | 1px solid #000000 @ 0 |
-| Radius | 8px | = |
-| Background | transparent | #14151c @ 0.1 |
+| Size (w x h) | 305.5 x 22.41 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | NoiGrotesk 14px/15.4px 500 | = |
-| Letter spacing | -0.21px | = |
-| Colour | #252630 | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Font | NoiGrotesk 16px/24px 500 | = |
+| Letter spacing | normal | = |
+| Colour | #000000 | = |
+| Text node | p.font-noi-grotesk.text-[16px]/xl: NoiGrotesk 16px/22.4px 500, #000000, ls -0.24px | = |
+| Transition | none | = |
 | Cursor | pointer | = |
-| Painted layers | a.flex.flex-col 73.8x40.0 bg #000000 @ 0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | a.flex.flex-col 73.8x40.0 bg #14151c @ 0.1 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px |
 | How | resting state | mouse hover over the element |
 
-Crops: none.
+Crops: `legal-nav-active-default.png`, `legal-nav-active-hover.png`.
 
 #### legal-nav-link
 
@@ -978,7 +1141,7 @@ Page: /legal/tos/. Selector: `a.opacity-60`. States: default, hover, focus-visib
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 | Painted layers | - | = | a.opacity-60 305.5x22.4 outline 1px auto #101010 offset 1px |
 
-Crops: none.
+Crops: `legal-nav-link-default.png`, `legal-nav-link-hover.png`, `legal-nav-link-focus-visible.png`.
 
 ### App access
 
@@ -1006,7 +1169,7 @@ Page: https://app.joinhandshake.com/access. Selector: `main, #maincontent, body`
 | Painted layers | div.rosetta-field__base.sc-ezOQGI 137.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px; div.sc-bYMpWt.jDuFBQ 0.0x0.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px shadow #000000 @ 0.08 0px 6px 30px 0px, #000000 @ 0.08 0px 1px 3px 0px; div.rosetta-select__option.rosetta-body-medium 0.0x0.0 bg #e7e7e7 r 8px; select.rosetta-select__hidden 1.0x1.0 bg #efefef; svg.rosetta-logo-app-icon.rosetta-entity-avatar 48.0x48.0 bg #ffffff r 8px outline 1px solid #121212 @ 0.12 offset -1px; hr.sc-fNAUDI.fQrJOK 157.0x2.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid |
 | How | resting state |
 
-Crops: none.
+Crops: `app-shell-default.png`.
 
 #### app-locale-select
 
@@ -1032,15 +1195,33 @@ Page: https://app.joinhandshake.com/access. Selector: `select.rosetta-select__hi
 | Painted layers | div.rosetta-field__base.sc-ezOQGI 137.0x36.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px; div.sc-bYMpWt.jDuFBQ 0.0x0.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px shadow #000000 @ 0.08 0px 6px 30px 0px, #000000 @ 0.08 0px 1px 3px 0px; div.rosetta-select__option.rosetta-body-medium 0.0x0.0 bg #e7e7e7 r 8px; select.rosetta-select__hidden 1.0x1.0 bg #efefef |
 | How | resting state |
 
-Crops: none.
+Crops: `app-locale-select-default.png`.
 
 #### app-email-field
 
 Email field. The "Enter your email" rosetta-field — measured at rest, nothing typed.
 
-Page: https://app.joinhandshake.com/access. Selector: `input[name="email"], input[type="text"]`. States: .
+Page: https://app.joinhandshake.com/access. Selector: `input[name="email"], input[type="text"]`. States: default, focused.
 
-Not found on the page at capture time.
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 344 x 48 | = |
+| Padding | 0px 16px | = |
+| Border | 1px solid #121212 @ 0.12 | 1px solid #04191b |
+| Radius | 8px | = |
+| Background | #ffffff | = |
+| Box shadow | none | #04191b 0px 0px 0px 1px inset |
+| Outline | none | 1px solid #000000 @ 0 offset 0px |
+| Font | Noi Grotesk 17px/23.8px 400 | = |
+| Letter spacing | -0.34px | = |
+| Colour | #121212 | = |
+| Transition | transform 0.3s ease-in | = |
+| Cursor | text | = |
+| Placeholder | #121212 @ 0.7, opacity 1 | = |
+| Painted layers | input.rosetta-field__base.sc-ezOQGI 344.0x48.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px | input.rosetta-field__base.sc-ezOQGI 344.0x48.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px shadow #04191b 0px 0px 0px 1px inset outline 1px solid #000000 @ 0 offset 0px |
+| How | resting state | the field clicked into |
+
+Crops: `app-email-field-default.png`, `app-email-field-focused.png`.
 
 #### app-continue-button
 
@@ -1066,15 +1247,30 @@ Page: https://app.joinhandshake.com/access. Selector: `button.rosetta-button`. S
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 | Background image | - | linear-gradient(#ffffff @ 0.06, #ffffff @ 0.06) | = | linear-gradient(#ffffff @ 0.12, #ffffff @ 0.12) |
 
-Crops: none.
+Crops: `app-continue-button-default.png`, `app-continue-button-hover.png`, `app-continue-button-focus-visible.png`, `app-continue-button-pressed.png`.
 
 #### app-google-button
 
 Google SSO button. The "Continue with Google" button — Google's own rendered widget (GSI), recorded as vendor.
 
-Page: https://app.joinhandshake.com/access. Selector: `[class*="LgbsSe"], [id*="gsi" i], iframe[title*="Google" i]`. States: .
+Page: https://app.joinhandshake.com/access. Selector: `[class*="LgbsSe"], [id*="gsi" i], iframe[title*="Google" i], iframe[src*="accounts.google.com"]`. States: default.
 
-Not found on the page at capture time.
+| Property | default |
+|---|---|
+| Size (w x h) | 364 x 44 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Noi Grotesk 15px/18px 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Transition | none |
+| How | resting state |
+
+Crops: `app-google-button-default.png`.
 
 #### app-employer-link
 
@@ -1098,7 +1294,7 @@ Page: https://app.joinhandshake.com/access. Selector: `a (text employer)`. State
 | Cursor | pointer | = |
 | How | resting state | mouse hover over the element |
 
-Crops: none.
+Crops: `app-employer-link-default.png`, `app-employer-link-hover.png`.
 
 #### app-tos-link
 
@@ -1123,7 +1319,7 @@ Page: https://app.joinhandshake.com/access. Selector: `a (text Terms of Service)
 | Ancestor paint | 1 up div bg #ffffff @ 0.6 | = |
 | How | resting state | mouse hover over the element |
 
-Crops: none.
+Crops: `app-tos-link-default.png`, `app-tos-link-hover.png`.
 
 ### Site chrome (mobile)
 
@@ -1151,7 +1347,7 @@ Page: /. Selector: `nav[class*="xl:hidden"] > div:first-child (fixed pill)`. Sta
 | Painted layers | div.fixed.top-(--mobile-top-offset) 358.0x48.0 bg #ffffff r 12px; a.group.items-center 88.3x40.0 bg #000000 @ 0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px; a.group.items-center 76.6x40.0 bg #252630 r 8px; a.group.items-center 0.0x0.0 bg #252630 r 8px |
 | How | resting state |
 
-Crops: none.
+Crops: `m-hs-topbar-default.png`.
 
 #### m-hs-hamburger
 
@@ -1176,7 +1372,7 @@ Page: /. Selector: `button[aria-label="Open menu"]`. States: default, hover.
 | Icon | 16 x 16, colour #000000 | = |
 | How | resting state | mouse hover over the element |
 
-Crops: none.
+Crops: `m-hs-hamburger-default.png`, `m-hs-hamburger-hover.png`.
 
 #### m-hs-drawer
 
@@ -1202,7 +1398,7 @@ Page: /. Selector: `div[class*="mobile-nav-height"][class*="100dvh"] (the fixed 
 | Painted layers | div.fixed.top-[calc(var(--mobile-top-offset)+var(--mobile-nav-height))] 390.0x772.0 bg #ffffff; div.fixed.inset-0 390.0x772.0 bg #ffffff; div.h-px.w-screen 390.0x1.0 bg #252630 @ 0.1; div.h-px.bg-neutral-90/10 358.0x1.0 bg #252630 @ 0.1; div.h-px.bg-neutral-90/10 358.0x1.0 bg #252630 @ 0.1; div.h-px.bg-neutral-90/10 358.0x1.0 bg #252630 @ 0.1 |
 | How | the "Open menu" button's own press |
 
-Crops: none.
+Crops: `m-hs-drawer-opened.png`.
 
 ## Transitions declared in the readable stylesheets
 

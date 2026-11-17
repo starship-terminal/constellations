@@ -312,7 +312,7 @@ if C:
     geom("hs-cta", "default", "h", "button.cta.height", "CTA pill")
     geom("app-email-field", "default", "h", "input.email.height", "login email field")
     geom("app-continue-button", "default", "h", "button.continue.height", '"Continue with email" button')
-    geom("app-shell", "default", "w", "loginCard.width", "the /access card")
+    geom("app-shell", "default", "w", "page.width", "the /access page shell — the viewport-wide main, not the card (the card itself is not separately measured)")
     geom("m-hs-topbar", "default", "h", "mobileHeader.height", "mobile top bar")
     geom("m-hs-hamburger", "default", "h", "mobileMenuButton.size", '"Open menu" button')
     geom("m-hs-drawer", "opened", "w", "mobileDrawer.width", "opened nav sheet")
@@ -353,7 +353,10 @@ if C:
     # tokens under core.typography. letterSpacing stays in px as measured.
     def typ(comp, path, name):
         st = C.get(comp, {}).get("states", {}).get("default", {})
-        s = st.get("style") or {}
+        # The capture records the painted text node's own style in textStyle
+        # when it differs from the component's box — prefer it (a pill's label
+        # is smaller than the pill's own inherited font).
+        s = st.get("textStyle") or st.get("style") or {}
         if not s.get("fontSize"):
             return
         style = {

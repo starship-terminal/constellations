@@ -338,6 +338,8 @@ im = Image.open(${JSON.stringify(file)}).convert('RGB')
 im = im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
 im.save(${JSON.stringify(file)}, optimize=True)`]);
   } catch (e) { console.log('  ! crop quantize failed for', name); }
+  // The package-relative path the caller records on the state's `crop` field.
+  return `components/crops/${name}.png`;
 }
 
 // The centre of a locator, scrolled into view — used before a real hover so

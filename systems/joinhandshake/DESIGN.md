@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Handshake"
-description: "marketing-site and auth-gate design: a floating transparent-over-hero pill nav that inverts to ink-on-white under scroll (nav top-offset swaps to --desktop-nav-top-offset-with-banner when the notification band shows), a lime #d3fb52 'Sign up' pill (hover #a1dd3b), ink #14151c headline/footer and the blue #2e6aff CTA utility ramp (--cta/-hover/-active/-visited), proprietary NoiGrotesk + SansPlomb faces, an 86px uppercase hero over a 920x88 rounded-3xl job-search field, a 12-col grid of 116px tracks inside --container-*/--content-max-width, alternating bg-neutral-0/-10 section bands, segment switchers, FAQ and department accordions, Marketo lead forms, pricing tables, plus the consumer app's signed-out /access card painted by the Rosetta --rosetta-* layer (bg.primary #fff, fg.primary #121212, interactive.primary #04191b)"
+description: "marketing-site and auth-gate design: a floating transparent-over-hero pill nav that inverts to ink-on-white under scroll (nav top-offset swaps to --desktop-nav-top-offset-with-banner when the notification band shows), a lime #d3fb52 'Sign up' pill (hover #a1dd3b), ink #14151c headline/footer and the blue #2e6aff CTA utility ramp (--cta/-hover/-active/-visited), proprietary NoiGrotesk + SansPlomb faces, a 160px uppercase hero (86px on the phone) over a 920x88 rounded-3xl job-search field, a 12-col grid of 116px tracks inside --container-*/--content-max-width, alternating bg-neutral-0/-10 section bands, segment switchers, FAQ and department accordions, Marketo lead forms, pricing tables, plus the consumer app's signed-out /access card painted by the Rosetta --rosetta-* layer (bg.primary #fff, fg.primary #121212, interactive.primary #04191b)"
 omitted:
   - section: "rounded"
     reason: "tokens.json has no rounded tokens under `core.radius`"
@@ -67,14 +67,16 @@ typography:
     lineHeight: "24px"
   pill:
     fontFamily: "NoiGrotesk"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: "24px"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: "11.9px"
+    letterSpacing: "-0.21px"
   accordion:
     fontFamily: "NoiGrotesk"
-    fontSize: "16px"
+    fontSize: "18px"
     fontWeight: 400
-    lineHeight: "24px"
+    lineHeight: "25.2px"
+    letterSpacing: "-0.27px"
   footerLink:
     fontFamily: "NoiGrotesk"
     fontSize: "16px"
@@ -112,7 +114,8 @@ typography:
     fontFamily: "NoiGrotesk"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: "24px"
+    lineHeight: "22.4px"
+    letterSpacing: "-0.24px"
 spacing:
   unit: "0.25rem"
 ---
@@ -125,11 +128,11 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: marketing-site and auth-gate design: a floating transparent-over-hero pill nav that inverts to ink-on-white under scroll (nav top-offset swaps to --desktop-nav-top-offset-with-banner when the notification band shows), a lime #d3fb52 'Sign up' pill (hover #a1dd3b), ink #14151c headline/footer and the blue #2e6aff CTA utility ramp (--cta/-hover/-active/-visited), proprietary NoiGrotesk + SansPlomb faces, an 86px uppercase hero over a 920x88 rounded-3xl job-search field, a 12-col grid of 116px tracks inside --container-*/--content-max-width, alternating bg-neutral-0/-10 section bands, segment switchers, FAQ and department accordions, Marketo lead forms, pricing tables, plus the consumer app's signed-out /access card painted by the Rosetta --rosetta-* layer (bg.primary #fff, fg.primary #121212, interactive.primary #04191b).
+Good for: marketing-site and auth-gate design: a floating transparent-over-hero pill nav that inverts to ink-on-white under scroll (nav top-offset swaps to --desktop-nav-top-offset-with-banner when the notification band shows), a lime #d3fb52 'Sign up' pill (hover #a1dd3b), ink #14151c headline/footer and the blue #2e6aff CTA utility ramp (--cta/-hover/-active/-visited), proprietary NoiGrotesk + SansPlomb faces, a 160px uppercase hero (86px on the phone) over a 920x88 rounded-3xl job-search field, a 12-col grid of 116px tracks inside --container-*/--content-max-width, alternating bg-neutral-0/-10 section bands, segment switchers, FAQ and department accordions, Marketo lead forms, pricing tables, plus the consumer app's signed-out /access card painted by the Rosetta --rosetta-* layer (bg.primary #fff, fg.primary #121212, interactive.primary #04191b).
 
 Captured 2026-11-17, signed out (every captured surface is public: joinhandshake.com's marketing pages serve a plain load, and app.joinhandshake.com/access - the 'Log in or sign up' card - cleared its Cloudflare challenge intermittently and was captured on the loads that did; /explore, /signup, the registration flow and support.joinhandshake.com never cleared - blocked boundaries, not captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the nav's hover-opened mega menu, segment tabs, FAQ and department accordions, the phone's 'Open menu' button). Themes: light, access.
 
-A token set and component reference for Handshake's signed-out web — for building marketing pages, pricing tables, lead forms and auth-gate cards in the style of the real thing. It was read from **joinhandshake.com** and **app.joinhandshake.com** on **2026-11-17**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the marketing routes /, /students/ and /students/whos-hiring/, /employers/, /employers/pricing/ and /employers/request-more-info/, /career-centers/, /career-centers/contact/ and /career-centers/marketing-toolkit/, /careers/, /about/, /ai/, /ai/enterprise/ and /ai/opportunities/, /research/ai/ (the one Framer-built page), /blog/ and an article, /learn/, /legal/tos/, /privacy-policy/, /newsroom/, /accessibility/ and /security/; the nav mega menu, an employers segment tab, FAQ and careers department accordions and the 390px "Open menu" nav sheet as transient states; mobile passes on home, students, employers, pricing and blog; and the consumer app's "Log in or sign up" card at app.joinhandshake.com/access on the loads where its Cloudflare challenge cleared, desktop and phone.
+A token set and component reference for Handshake's signed-out web — for building marketing pages, pricing tables, lead forms and auth-gate cards in the style of the real thing. It was read from **joinhandshake.com** and **app.joinhandshake.com** on **2026-11-17**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the marketing routes /, /students/ and /students/whos-hiring/, /employers/, /employers/pricing/ and /employers/request-more-info/, /career-centers/, /career-centers/contact/ and /career-centers/marketing-toolkit/, /careers/, /about/, /ai/, /ai/enterprise/ and /ai/opportunities/, /research/ai/ (the one Framer-built page), /blog/ and an article, /learn/, /legal/tos/, /privacy-policy/, /newsroom/, /accessibility/ and /security/; the nav mega menu, an employers segment tab, FAQ and the careers departments filter and the 390px "Open menu" nav sheet as transient states; mobile passes on home, students, employers, pricing and blog; and the consumer app's "Log in or sign up" card at app.joinhandshake.com/access on the loads where its Cloudflare challenge cleared, desktop and phone.
 
 joinhandshake.com declares a real variable layer to the browser: the Tailwind theme's `--font-noi-grotesk` / `--font-sans-plomb` (the proprietary NoiGrotesk and SansPlomb faces), `--spacing`, `--container-3xs..7xl`, `--leading-*`, `--tracking-*`, `--font-weight-*`, `--ease-*`, `--default-transition-*`, `--animate-*`, `--blur-*`, `--drop-shadow-*` and `--breakpoint-lg`, plus the site's own geometry variables — `--desktop-nav-height` 3.5rem and its `--desktop-nav-top-offset`, `--mobile-nav-height`, `--notification-banner-height`, `--full-*-nav-height`, `--container-padding` and `--content-max-width` — and the arbitrary-property utility declarations `--cta:#2e6aff` / `--cta-hover:#1552d6` / `--cta-active|visited:#6fbb28` and `--bg:#14151c` / `--text:#14151c` (the ink). The app surfaces a different, larger layer: the Rosetta design system's `--rosetta-bg-*`/`--rosetta-fg-*`/`--rosetta-interactive-*`/`--rosetta-shadow-*`/`--rosetta-size-*`/`--rosetta-spacing-*`/`--rosetta-type-*`/`--rosetta-font-family-*` plus `--nav-*`, `--popover-*`, `--modal-*`, `--listbox-*`, `--select-*`, `--tag-*`, `--avatar-*`, `--slider-*`, `--tooltip-*`, `--day-picker-*`, `--segmented-toggle-*` and friends, served from handshake-production-cdn.joinhandshake.com. Both surfaces paint **light only** — no theme class, no theme control, no prefers-color-scheme rule — so there is one `light` token set for the marketing site and one `access` set for the app, and no dark pass exists because no dark surface exists. **Boundary:** the consumer app's signed-in surfaces — /explore, /signup, the student registration flow — never cleared the Cloudflare managed challenge across fresh-context retries, and support.joinhandshake.com answered Cloudflare 403 from the capture host. Nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles the pages' own chrome provides, and pressed states are DevTools-forced pseudo-classes, never real presses.
 
@@ -194,7 +197,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 1. **Do float the nav.** The pill sits 24px (`--desktop-nav-top-offset`) below the viewport top over every page, transparent with white items over the hero and switching to the banner offset when the notification band shows ([home](screenshots/home-light-default.png), [nav](components/crops/hs-nav-default.png)).
 2. **Do spend the lime on the one action.** `light.button.primary.bg` #d3fb52 fills only the sign-up pill (hover #a1dd3b); CTAs elsewhere are ink pills, ghosts or the blue `--cta` #2e6aff utilities ([Sign up](components/crops/hs-signup-button-default.png), [CTA](components/crops/hs-cta-default.png)).
-3. **Do pair the two voices.** NoiGrotesk carries the brand moments and SansPlomb the body; the uppercase 86px hero ("LET'S FIND YOUR NEXT JOB") sits over the 920px rounded-3xl search field ([hero](components/crops/hs-hero-h1-default.png), [form](components/crops/hs-search-form-default.png)).
+3. **Do pair the two voices.** NoiGrotesk carries the brand moments and SansPlomb the body; the uppercase SansPlomb hero ("LET'S FIND YOUR NEXT JOB" — 160px at desktop, 86px on the phone) sits over the 920px rounded-3xl search field ([hero](components/crops/hs-hero-h1-default.png), [form](components/crops/hs-search-form-default.png)).
 4. **Do band the page by fill.** Long indexes alternate `bg-neutral-0` white and `bg-neutral-10` #f3f4fa sections — grouping by fill, not by rules ([blog](screenshots/blog-light-full.png)).
 5. **Do let opacity carry selection.** The segment switcher's unselected tabs sit at muted opacity; the selected tab and the carousel dots are the same control at full strength ([tab](components/crops/hs-segment-tab-selected.png)).
 6. **Don't style the signed-in app from this package.** /explore, /signup, registration and support.joinhandshake.com are blocked boundaries; `access` describes the sign-in card's Rosetta layer only ([access](screenshots/access-light-default.png)).

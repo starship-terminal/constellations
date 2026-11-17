@@ -1,7 +1,7 @@
 {
  "_meta": {
   "read": "2026-11-17",
-  "viewport": "1440 x 900 (mobile group 390 x 844); joinhandshake.com paints light only — there is no theme control",
+  "viewport": "1440 x 900 (mobile group 390 x 844); joinhandshake.com paints light only \u2014 there is no theme control",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
    "/": [
@@ -103,7 +103,7 @@
    "selector": "nav.fixed",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:05:00.953Z",
+   "run": "2026-11-17T08:50:35.113Z",
    "states": {
     "default": {
      "tag": "nav",
@@ -226,18 +226,19 @@
       "color": "rgb(211, 251, 82)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:05:05.801Z"
+     "crop": "components/crops/hs-nav-default.png",
+     "run": "2026-11-17T08:51:01.377Z"
     }
    }
   },
   "hs-nav-link": {
    "group": "Site chrome",
    "title": "Nav section item",
-   "desc": "A top-level nav item (\"Employers\") — opens the mega menu on hover.",
+   "desc": "A top-level nav item (\"Employers\") \u2014 opens the mega menu on hover.",
    "selector": "nav a (text Employers)",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:05:05.810Z",
+   "run": "2026-11-17T08:51:01.384Z",
    "states": {
     "default": {
      "tag": "a",
@@ -320,7 +321,8 @@
       "top": "auto"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:05:07.254Z"
+     "crop": "components/crops/hs-nav-link-default.png",
+     "run": "2026-11-17T08:51:02.879Z"
     },
     "hover": {
      "tag": "a",
@@ -411,7 +413,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:05:09.848Z"
+     "crop": "components/crops/hs-nav-link-hover.png",
+     "run": "2026-11-17T08:51:05.133Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -502,7 +505,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:05:12.171Z"
+     "crop": "components/crops/hs-nav-link-focus-visible.png",
+     "run": "2026-11-17T08:51:10.282Z"
     }
    }
   },
@@ -513,7 +517,7 @@
    "selector": "nav a,nav button (text Sign up)",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:05:12.285Z",
+   "run": "2026-11-17T08:51:10.288Z",
    "states": {
     "default": {
      "tag": "a",
@@ -604,7 +608,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T05:05:17.131Z"
+     "crop": "components/crops/hs-signup-button-default.png",
+     "run": "2026-11-17T08:51:11.660Z"
     },
     "hover": {
      "tag": "a",
@@ -695,7 +700,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:05:23.142Z"
+     "crop": "components/crops/hs-signup-button-hover.png",
+     "run": "2026-11-17T08:51:13.889Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -787,7 +793,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:05:28.408Z"
+     "crop": "components/crops/hs-signup-button-focus-visible.png",
+     "run": "2026-11-17T08:51:18.211Z"
     },
     "pressed": {
      "tag": "a",
@@ -877,8 +884,9 @@
        "radius": "8px"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
-     "run": "2026-11-17T05:05:31.552Z"
+     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "crop": "components/crops/hs-signup-button-pressed.png",
+     "run": "2026-11-17T08:51:22.108Z"
     }
    }
   },
@@ -889,7 +897,7 @@
    "selector": "nav a (text Log in)",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:05:31.566Z",
+   "run": "2026-11-17T08:51:23.235Z",
    "states": {
     "default": {
      "tag": "a",
@@ -981,7 +989,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T05:05:39.388Z"
+     "crop": "components/crops/hs-login-link-default.png",
+     "run": "2026-11-17T08:51:30.378Z"
     },
     "hover": {
      "tag": "a",
@@ -1019,27 +1028,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868)",
+      "borderTopColor": "oklab(0 0 0 / 0)",
       "borderRightWidth": "1px",
       "borderRightStyle": "solid",
-      "borderRightColor": "oklab(0.999994 0.0000455678 0.0000200868)",
+      "borderRightColor": "oklab(0 0 0 / 0)",
       "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "oklab(0.999994 0.0000455678 0.0000200868)",
+      "borderBottomColor": "oklab(0 0 0 / 0)",
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "oklab(0.999994 0.0000455678 0.0000200868)",
+      "borderLeftColor": "oklab(0 0 0 / 0)",
       "borderTopLeftRadius": "8px",
       "borderTopRightRadius": "8px",
       "borderBottomRightRadius": "8px",
       "borderBottomLeftRadius": "8px",
-      "backgroundColor": "oklab(0 0 0 / 0)",
+      "backgroundColor": "rgb(255, 255, 255)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(20, 21, 28)",
       "outlineOffset": "0px",
       "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
       "fontSize": "14px",
@@ -1047,9 +1056,9 @@
       "lineHeight": "15.4px",
       "letterSpacing": "-0.21px",
       "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
+      "color": "rgb(20, 21, 28)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationColor": "rgb(20, 21, 28)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
@@ -1068,12 +1077,13 @@
        "node": "a.flex.flex-col",
        "size": "73.8x40.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklab(0 0 0 / 0)",
+       "bg": "rgb(255, 255, 255)",
        "radius": "8px"
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:05:52.149Z"
+     "crop": "components/crops/hs-login-link-hover.png",
+     "run": "2026-11-17T08:51:32.784Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -1166,7 +1176,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:05:58.403Z"
+     "crop": "components/crops/hs-login-link-focus-visible.png",
+     "run": "2026-11-17T08:51:35.245Z"
     }
    }
   },
@@ -1174,27 +1185,27 @@
    "group": "Site chrome",
    "title": "Nav mega menu (open)",
    "desc": "The hover-opened panel under a nav section item. \"opened\" is the item's own hover: the pointer rests on it until aria-expanded flips.",
-   "selector": "nav [class*=\"panel\"], nav [class*=\"menu\"], [role=\"menu\"]",
+   "selector": "div.absolute.top-full.rounded-2xl",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:05:58.853Z",
+   "run": "2026-11-17T08:51:35.258Z",
    "states": {
     "opened": {
-     "tag": "nav",
-     "classes": "fixed inset-x-0 top-(--desktop-nav-top-offset) z-50",
-     "text": "Employers FREE DEMO See Handshake in action Discover how Handshake can transform",
+     "tag": "div",
+     "classes": "absolute top-full left-1/2 w-auto",
+     "text": "FREE DEMO See Handshake in action Discover how Handshake can transform your recr",
      "rect": {
-      "x": 0,
-      "y": 24,
-      "w": 1440,
-      "h": 56
+      "x": 333,
+      "y": 116.3,
+      "w": 774,
+      "h": 249.68
      },
      "style": {
-      "display": "flex",
-      "position": "fixed",
+      "display": "block",
+      "position": "absolute",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "56px",
+      "width": "860px",
+      "height": "320.344px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -1202,7 +1213,7 @@
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
-      "marginTop": "0px",
+      "marginTop": "9px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
@@ -1211,7 +1222,7 @@
       "columnGap": "normal",
       "flexDirection": "row",
       "alignItems": "normal",
-      "justifyContent": "center",
+      "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -1225,118 +1236,94 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(255, 255, 255)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
-      "fontSize": "16px",
+      "fontSize": "14px",
       "fontWeight": "400",
-      "lineHeight": "24px",
-      "letterSpacing": "normal",
+      "lineHeight": "19.6px",
+      "letterSpacing": "-0.21px",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
       "textDecorationColor": "rgb(0, 0, 0)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "top, color",
-      "transitionDuration": "0.3s, 0.2s",
-      "transitionTimingFunction": "ease-in-out, ease",
-      "transitionDelay": "0s, 0s",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
+      "opacity": "0",
+      "transform": "matrix3d(0.9, 0, 0, 0, 0, 0.779423, -0.45, 0, 0, 0.5, 0.866025, 0, 0, 0, 0, 1)",
       "overflow": "visible",
-      "zIndex": "50",
-      "top": "24px"
+      "zIndex": "auto",
+      "top": "40px"
      },
      "paint": [
       {
-       "node": "div.flex.items-center",
-       "size": "1392.0x56.0",
-       "bg": "rgba(255, 255, 255, 0)",
-       "radius": "16px"
-      },
-      {
-       "node": "a.rounded-lg.px-4",
-       "size": "95.1x43.6",
-       "bg": "oklab(1 0 5.96046e-8 / 0.1)",
-       "radius": "8px"
-      },
-      {
        "node": "div.absolute.top-full",
-       "size": "860.0x320.3",
+       "size": "774.0x249.7",
        "bg": "rgb(255, 255, 255)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
        "radius": "16px"
       },
       {
        "node": "a.relative.flex",
-       "size": "276.0x304.3",
+       "size": "248.4x237.2",
        "bg": "rgb(243, 244, 250)",
        "radius": "12px"
       },
       {
        "node": "div.relative.h-38",
-       "size": "244.0x152.0",
+       "size": "219.6x118.5",
        "bgImage": "linear-gradient(to right in oklab, rgb(0, 68, 73) 0px, rgb(5, 35, 38) 100%)",
        "radius": "12px"
       },
       {
        "node": "div.absolute.inset-0",
-       "size": "244.0x152.0",
+       "size": "219.6x118.5",
        "bgImage": "radial-gradient(circle at right top, oklab(0.929498 -0.102233 0.164756 / 0.2) 0px, rgba(0, 0, 0, 0) 34%)"
       },
       {
        "node": "div.w-fit.rounded-full",
-       "size": "78.8x27.0",
+       "size": "70.9x21.0",
        "bg": "oklab(0.929498 -0.102233 0.164756 / 0.12)",
        "radius": "9999px"
-      },
-      {
-       "node": "a.flex.flex-col",
-       "size": "73.8x40.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "oklab(0 0 0 / 0)",
-       "radius": "8px"
-      },
-      {
-       "node": "a.flex.flex-col",
-       "size": "80.5x40.0",
-       "bg": "rgb(211, 251, 82)",
-       "radius": "8px"
       }
      ],
      "textStyle": {
-      "node": "a.rounded-lg.px-4",
-      "text": "Employers",
+      "node": "div.w-fit.rounded-full",
+      "text": "Free demo",
       "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "19.6px",
-      "fontWeight": "400",
-      "letterSpacing": "-0.21px",
-      "color": "rgb(255, 255, 255)",
+      "fontSize": "10px",
+      "lineHeight": "11px",
+      "fontWeight": "500",
+      "letterSpacing": "0.2px",
+      "color": "rgb(211, 251, 82)",
       "textDecorationLine": "none",
-      "textTransform": "none"
+      "textTransform": "uppercase"
      },
      "icon": {
-      "w": 0,
-      "h": 0,
+      "w": 14.4,
+      "h": 12.47,
       "fill": "none",
       "stroke": "none",
-      "color": "rgb(211, 251, 82)"
+      "color": "rgb(0, 0, 0)"
      },
-     "via": "the nav item's own hover — the panel is measured in the nav region it overlays",
-     "run": "2026-11-17T05:06:03.134Z"
+     "via": "the nav item's own hover \u2014 the panel is measured in the nav region it overlays",
+     "crop": "components/crops/hs-nav-menu-opened.png",
+     "run": "2026-11-17T08:51:54.771Z"
     }
    }
   },
@@ -1347,7 +1334,7 @@
    "selector": "footer",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:06:03.175Z",
+   "run": "2026-11-17T08:51:56.090Z",
    "states": {
     "default": {
      "tag": "footer",
@@ -1465,7 +1452,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:06:06.335Z"
+     "crop": "components/crops/hs-footer-default.png",
+     "run": "2026-11-17T08:52:14.383Z"
     }
    }
   },
@@ -1476,7 +1464,7 @@
    "selector": "footer a",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:06:06.342Z",
+   "run": "2026-11-17T08:52:14.401Z",
    "states": {
     "default": {
      "tag": "a",
@@ -1566,7 +1554,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:06:07.209Z"
+     "crop": "components/crops/hs-footer-link-default.png",
+     "run": "2026-11-17T08:52:15.245Z"
     },
     "hover": {
      "tag": "a",
@@ -1656,7 +1645,8 @@
       "color": "rgb(211, 251, 82)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:06:08.990Z"
+     "crop": "components/crops/hs-footer-link-hover.png",
+     "run": "2026-11-17T08:52:17.009Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -1753,18 +1743,19 @@
       "color": "rgb(255, 255, 255)"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:06:10.312Z"
+     "crop": "components/crops/hs-footer-link-focus-visible.png",
+     "run": "2026-11-17T08:52:18.241Z"
     }
    }
   },
   "hs-hero-h1": {
    "group": "Homepage hero",
    "title": "Hero headline (h1)",
-   "desc": "\"LET'S FIND YOUR NEXT JOB\" — the hero title in the brand face. The page ships two hero copies (one per breakpoint); the visible one is picked, never the zero-rect twin.",
+   "desc": "\"LET'S FIND YOUR NEXT JOB\" \u2014 the hero title in the brand face. The page ships two hero copies (one per breakpoint); the visible one is picked, never the zero-rect twin.",
    "selector": "main h1, h1",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:06:10.329Z",
+   "run": "2026-11-17T08:52:18.245Z",
    "states": {
     "default": {
      "tag": "h1",
@@ -1859,23 +1850,24 @@
       "textTransform": "uppercase"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:06:15.520Z"
+     "crop": "components/crops/hs-hero-h1-default.png",
+     "run": "2026-11-17T08:52:20.916Z"
     }
    }
   },
   "hs-search-form": {
    "group": "Homepage hero",
    "title": "Job search form",
-   "desc": "The hero job-search field row — measured at rest; typing and submitting were never done (the form navigates to the app).",
+   "desc": "The hero job-search field row \u2014 measured at rest; typing and submitting were never done (the form navigates to the app).",
    "selector": "form",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:06:16.185Z",
+   "run": "2026-11-17T08:52:20.921Z",
    "states": {
     "default": {
      "tag": "form",
      "classes": "relative col-span-full h-38 w-full",
-     "text": "AI trainer roles focused on data labeling",
+     "text": "Part-time jobs for students studying design",
      "rect": {
       "x": 260,
       "y": 406,
@@ -1974,7 +1966,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "A",
+      "text": "P",
       "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
       "fontSize": "20px",
       "lineHeight": "22px",
@@ -1992,7 +1984,8 @@
       "color": "rgb(37, 38, 48)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:06:31.861Z"
+     "crop": "components/crops/hs-search-form-default.png",
+     "run": "2026-11-17T08:52:22.719Z"
     }
    }
   },
@@ -2003,7 +1996,7 @@
    "selector": "form input[type=\"text\"], form input",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:06:31.968Z",
+   "run": "2026-11-17T08:52:22.726Z",
    "states": {
     "default": {
      "tag": "input",
@@ -2099,7 +2092,8 @@
       "fontSize": "20px"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:06:35.309Z"
+     "crop": "components/crops/hs-search-input-default.png",
+     "run": "2026-11-17T08:52:24.858Z"
     },
     "focused": {
      "tag": "input",
@@ -2196,18 +2190,19 @@
       "fontSize": "20px"
      },
      "via": "the field clicked into",
-     "run": "2026-11-17T05:06:38.249Z"
+     "crop": "components/crops/hs-search-input-focused.png",
+     "run": "2026-11-17T08:52:27.286Z"
     }
    }
   },
   "hs-search-button": {
    "group": "Homepage hero",
    "title": "\"Search jobs\" button",
-   "desc": "The submit-styled button inside the hero form — pressed states are CDP-forced, so it never submits.",
+   "desc": "The submit-styled button inside the hero form \u2014 pressed states are CDP-forced, so it never submits.",
    "selector": "form button[aria-label*=\"search\" i] (icon-only \"Search jobs\" submit)",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:06:38.254Z",
+   "run": "2026-11-17T08:52:27.292Z",
    "states": {
     "default": {
      "tag": "button",
@@ -2305,7 +2300,8 @@
       "color": "rgb(123, 123, 133)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:06:39.648Z"
+     "crop": "components/crops/hs-search-button-default.png",
+     "run": "2026-11-17T08:52:28.639Z"
     },
     "hover": {
      "tag": "button",
@@ -2403,7 +2399,8 @@
       "color": "rgb(123, 123, 133)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:06:43.645Z"
+     "crop": "components/crops/hs-search-button-hover.png",
+     "run": "2026-11-17T08:52:31.136Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -2501,7 +2498,8 @@
       "color": "rgb(123, 123, 133)"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:06:45.485Z"
+     "crop": "components/crops/hs-search-button-focus-visible.png",
+     "run": "2026-11-17T08:52:32.924Z"
     },
     "pressed": {
      "tag": "button",
@@ -2598,8 +2596,9 @@
       "stroke": "none",
       "color": "rgb(123, 123, 133)"
      },
-     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
-     "run": "2026-11-17T05:06:47.637Z"
+     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "crop": "components/crops/hs-search-button-pressed.png",
+     "run": "2026-11-17T08:52:35.206Z"
     }
    }
   },
@@ -2610,7 +2609,7 @@
    "selector": "button (text Full-time)",
    "page": "/",
    "url": "https://joinhandshake.com/",
-   "run": "2026-11-17T05:06:47.643Z",
+   "run": "2026-11-17T08:52:35.214Z",
    "states": {
     "default": {
      "tag": "button",
@@ -2713,7 +2712,8 @@
       "textTransform": "none"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:06:49.169Z"
+     "crop": "components/crops/hs-filter-pill-default.png",
+     "run": "2026-11-17T08:52:37.209Z"
     },
     "hover": {
      "tag": "button",
@@ -2817,7 +2817,8 @@
       "textTransform": "none"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:06:54.373Z"
+     "crop": "components/crops/hs-filter-pill-hover.png",
+     "run": "2026-11-17T08:52:50.590Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -2921,7 +2922,8 @@
       "textTransform": "none"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:06:56.137Z"
+     "crop": "components/crops/hs-filter-pill-focus-visible.png",
+     "run": "2026-11-17T08:53:11.474Z"
     }
    }
   },
@@ -3042,14 +3044,15 @@
       "color": "rgb(37, 38, 48)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:07:07.852Z"
+     "run": "2026-11-17T05:07:07.852Z",
+     "crop": "components/crops/hs-banner-default.png"
     }
    }
   },
   "hs-banner-dismiss": {
    "group": "Employers page",
    "title": "Banner dismiss button",
-   "desc": "The icon-only \"Dismiss notification\" control — measured, never pressed.",
+   "desc": "The icon-only \"Dismiss notification\" control \u2014 measured, never pressed.",
    "selector": "button[aria-label=\"Dismiss notification\"]",
    "page": "/employers/",
    "url": "https://joinhandshake.com/employers/",
@@ -3143,7 +3146,8 @@
       "color": "rgb(37, 38, 48)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:07:09.961Z"
+     "run": "2026-11-17T05:07:09.961Z",
+     "crop": "components/crops/hs-banner-dismiss-default.png"
     },
     "hover": {
      "tag": "button",
@@ -3233,7 +3237,8 @@
       "color": "rgb(37, 38, 48)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:07:11.690Z"
+     "run": "2026-11-17T05:07:11.690Z",
+     "crop": "components/crops/hs-banner-dismiss-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -3330,14 +3335,15 @@
       "color": "rgb(37, 38, 48)"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:07:12.933Z"
+     "run": "2026-11-17T05:07:12.933Z",
+     "crop": "components/crops/hs-banner-dismiss-focus-visible.png"
     }
    }
   },
   "hs-segment-tab": {
    "group": "Employers page",
    "title": "Segment switcher tab",
-   "desc": "One of Source / Automate / Brand / Measure — opacity carries the selection. \"selected\" is the tab's own press: it swaps the feature panel.",
+   "desc": "One of Source / Automate / Brand / Measure \u2014 opacity carries the selection. \"selected\" is the tab's own press: it swaps the feature panel.",
    "selector": "button (text Source|Automate)",
    "page": "/employers/",
    "url": "https://joinhandshake.com/employers/",
@@ -3424,7 +3430,8 @@
       "top": "auto"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:07:13.863Z"
+     "run": "2026-11-17T05:07:13.863Z",
+     "crop": "components/crops/hs-segment-tab-default.png"
     },
     "hover": {
      "tag": "button",
@@ -3507,7 +3514,8 @@
       "top": "auto"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:07:15.636Z"
+     "run": "2026-11-17T05:07:15.636Z",
+     "crop": "components/crops/hs-segment-tab-hover.png"
     },
     "selected": {
      "tag": "button",
@@ -3589,15 +3597,16 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "via": "the tab's own press — a local UI toggle that swaps the published panel",
-     "run": "2026-11-17T05:07:17.510Z"
+     "via": "the tab's own press \u2014 a local UI toggle that swaps the published panel",
+     "run": "2026-11-17T05:07:17.510Z",
+     "crop": "components/crops/hs-segment-tab-selected.png"
     }
    }
   },
   "hs-cta": {
    "group": "Employers page",
    "title": "CTA link-button",
-   "desc": "A solid call-to-action (\"Post a job today\" / \"Get started\" / \"Contact sales\") — the group.inline-flex pill.",
+   "desc": "A solid call-to-action (\"Post a job today\" / \"Get started\" / \"Contact sales\") \u2014 the group.inline-flex pill.",
    "selector": "a.group.inline-flex (text Get started|Contact sales|Post a job)",
    "page": "/employers/",
    "url": "https://joinhandshake.com/employers/",
@@ -3701,7 +3710,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T05:07:19.128Z"
+     "run": "2026-11-17T05:07:19.128Z",
+     "crop": "components/crops/hs-cta-default.png"
     },
     "hover": {
      "tag": "a",
@@ -3801,7 +3811,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:07:21.002Z"
+     "run": "2026-11-17T05:07:21.002Z",
+     "crop": "components/crops/hs-cta-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -3902,7 +3913,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:07:22.288Z"
+     "run": "2026-11-17T05:07:22.288Z",
+     "crop": "components/crops/hs-cta-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -4001,8 +4013,9 @@
        "bg": "oklab(1 0 5.96046e-8 / 0.1)"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
-     "run": "2026-11-17T05:07:23.619Z"
+     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "run": "2026-11-17T05:07:23.619Z",
+     "crop": "components/crops/hs-cta-pressed.png"
     }
    }
   },
@@ -4104,7 +4117,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T05:07:24.460Z"
+     "run": "2026-11-17T05:07:24.460Z",
+     "crop": "components/crops/hs-carousel-dot-default.png"
     },
     "hover": {
      "tag": "button",
@@ -4195,7 +4209,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:07:26.181Z"
+     "run": "2026-11-17T05:07:26.181Z",
+     "crop": "components/crops/hs-carousel-dot-hover.png"
     }
    }
   },
@@ -4316,7 +4331,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:07:27.019Z"
+     "run": "2026-11-17T05:07:27.019Z",
+     "crop": "components/crops/hs-faq-default.png"
     },
     "hover": {
      "tag": "button",
@@ -4426,7 +4442,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:07:28.766Z"
+     "run": "2026-11-17T05:07:28.766Z",
+     "crop": "components/crops/hs-faq-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -4541,7 +4558,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:07:30.009Z"
+     "run": "2026-11-17T05:07:30.009Z",
+     "crop": "components/crops/hs-faq-focus-visible.png"
     },
     "opened": {
      "tag": "button",
@@ -4650,8 +4668,9 @@
       "stroke": "none",
       "color": "rgb(255, 255, 255)"
      },
-     "via": "the question button's own press — a local UI toggle",
-     "run": "2026-11-17T05:07:31.857Z"
+     "via": "the question button's own press \u2014 a local UI toggle",
+     "run": "2026-11-17T05:07:31.857Z",
+     "crop": "components/crops/hs-faq-opened.png"
     }
    }
   },
@@ -4662,7 +4681,7 @@
    "selector": "table",
    "page": "/employers/pricing/",
    "url": "https://joinhandshake.com/employers/pricing/",
-   "run": "2026-11-17T04:17:02.141Z",
+   "run": "2026-11-17T08:44:03.224Z",
    "states": {
     "default": {
      "tag": "table",
@@ -4836,7 +4855,8 @@
       "color": "rgb(0, 177, 181)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:17:03.823Z"
+     "crop": "components/crops/pricing-table-default.png",
+     "run": "2026-11-17T08:44:05.661Z"
     }
    }
   },
@@ -4847,7 +4867,7 @@
    "selector": "th",
    "page": "/employers/pricing/",
    "url": "https://joinhandshake.com/employers/pricing/",
-   "run": "2026-11-17T04:17:03.838Z",
+   "run": "2026-11-17T08:44:06.149Z",
    "states": {
     "default": {
      "tag": "th",
@@ -4930,7 +4950,8 @@
       "top": "auto"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:17:04.666Z"
+     "crop": "components/crops/pricing-th-default.png",
+     "run": "2026-11-17T08:44:09.260Z"
     }
    }
   },
@@ -4941,7 +4962,7 @@
    "selector": "td",
    "page": "/employers/pricing/",
    "url": "https://joinhandshake.com/employers/pricing/",
-   "run": "2026-11-17T04:17:04.687Z",
+   "run": "2026-11-17T08:44:09.531Z",
    "states": {
     "default": {
      "tag": "td",
@@ -5036,7 +5057,8 @@
       "textTransform": "none"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:17:05.506Z"
+     "crop": "components/crops/pricing-td-default.png",
+     "run": "2026-11-17T08:44:18.302Z"
     }
    }
   },
@@ -5047,27 +5069,27 @@
    "selector": "[class*=\"plan\" i], [class*=\"tier\" i], main section",
    "page": "/employers/pricing/",
    "url": "https://joinhandshake.com/employers/pricing/",
-   "run": "2026-11-17T04:17:05.836Z",
+   "run": "2026-11-17T08:44:18.626Z",
    "states": {
     "default": {
      "tag": "div",
-     "classes": "relative flex items-center justify-between",
-     "text": "What is the difference between Basic, Pro, Enterprise, and Promoted jobs?",
+     "classes": "flex flex-col gap-10 lg:gap-16",
+     "text": "Basic Free",
      "rect": {
-      "x": 728,
-      "y": 415.2,
-      "w": 568,
-      "h": 70.41
+      "x": 64,
+      "y": 388,
+      "w": 256,
+      "h": 125.61
      },
      "style": {
       "display": "flex",
-      "position": "relative",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "568px",
-      "height": "70.4062px",
-      "minWidth": "0px",
+      "width": "256px",
+      "height": "125.609px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -5076,12 +5098,12 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal 8px",
-      "rowGap": "normal",
-      "columnGap": "8px",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "space-between",
+      "gap": "64px",
+      "rowGap": "64px",
+      "columnGap": "64px",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -5122,24 +5144,24 @@
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "auto",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
-     "paint": [
+     "ancestors": [
       {
-       "node": "div.flex.size-6",
-       "size": "24.0x24.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "radius": "9999px"
+       "up": 1,
+       "node": "div.flex.h-fit",
+       "radius": "16px",
+       "bg": "rgb(243, 244, 250)"
       }
      ],
      "textStyle": {
       "node": "h2.font-noi-grotesk.text-[32px]/lg",
-      "text": "What is the difference between Basic, Pr",
+      "text": "Basic",
       "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
       "fontSize": "32px",
       "lineHeight": "35.2px",
@@ -5149,15 +5171,9 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 14,
-      "h": 20,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(0, 0, 0)"
-     },
      "via": "resting state",
-     "run": "2026-11-17T04:17:07.576Z"
+     "crop": "components/crops/pricing-plan-card-default.png",
+     "run": "2026-11-17T08:44:22.773Z"
     }
    }
   },
@@ -5168,7 +5184,7 @@
    "selector": "button (text Target & Connect|Centralize)",
    "page": "/employers/pricing/",
    "url": "https://joinhandshake.com/employers/pricing/",
-   "run": "2026-11-17T04:17:08.137Z",
+   "run": "2026-11-17T08:44:23.044Z",
    "states": {
     "default": {
      "tag": "button",
@@ -5277,7 +5293,8 @@
       "color": "rgb(190, 189, 191)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:17:10.497Z"
+     "crop": "components/crops/pricing-feature-tab-default.png",
+     "run": "2026-11-17T08:44:25.222Z"
     },
     "hover": {
      "tag": "button",
@@ -5386,7 +5403,8 @@
       "color": "rgb(190, 189, 191)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:17:12.816Z"
+     "crop": "components/crops/pricing-feature-tab-hover.png",
+     "run": "2026-11-17T08:44:27.053Z"
     },
     "selected": {
      "tag": "button",
@@ -5494,15 +5512,16 @@
       "stroke": "none",
       "color": "rgb(190, 189, 191)"
      },
-     "via": "the tab's own press — a local UI toggle",
-     "run": "2026-11-17T04:17:15.665Z"
+     "via": "the tab's own press \u2014 a local UI toggle",
+     "crop": "components/crops/pricing-feature-tab-selected.png",
+     "run": "2026-11-17T08:44:29.149Z"
     }
    }
   },
   "mkto-form": {
    "group": "Marketo forms",
    "title": "Demo form shell",
-   "desc": "The \"Request a demo\" Marketo form — its fields mount from go.joinhandshake.com vendor script.",
+   "desc": "The \"Request a demo\" Marketo form \u2014 its fields mount from go.joinhandshake.com vendor script.",
    "selector": "form[class*=\"marketo\" i], form",
    "page": "/employers/request-more-info/",
    "url": "https://joinhandshake.com/employers/<id>/",
@@ -5693,7 +5712,8 @@
       "textTransform": "none"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:54:41.977Z"
+     "run": "2026-11-17T04:54:41.977Z",
+     "crop": "components/crops/mkto-form-default.png"
     }
    }
   },
@@ -5801,7 +5821,8 @@
       "fontSize": "16px"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:54:42.942Z"
+     "run": "2026-11-17T04:54:42.942Z",
+     "crop": "components/crops/mkto-input-default.png"
     },
     "focused": {
      "tag": "input",
@@ -5899,7 +5920,8 @@
       "fontSize": "16px"
      },
      "via": "the field clicked into",
-     "run": "2026-11-17T04:54:44.741Z"
+     "run": "2026-11-17T04:54:44.741Z",
+     "crop": "components/crops/mkto-input-focused.png"
     }
    }
   },
@@ -5917,7 +5939,7 @@
   "mkto-submit": {
    "group": "Marketo forms",
    "title": "Form submit button",
-   "desc": "The form's submit control — measured, never pressed (pressed states are CDP-forced).",
+   "desc": "The form's submit control \u2014 measured, never pressed (pressed states are CDP-forced).",
    "selector": "form button[type=\"submit\"], form button",
    "page": "/employers/request-more-info/",
    "url": "https://joinhandshake.com/employers/<id>/",
@@ -6012,7 +6034,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T04:54:45.800Z"
+     "run": "2026-11-17T04:54:45.800Z",
+     "crop": "components/crops/mkto-submit-default.png"
     },
     "hover": {
      "tag": "button",
@@ -6103,7 +6126,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:54:47.620Z"
+     "run": "2026-11-17T04:54:47.620Z",
+     "crop": "components/crops/mkto-submit-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -6195,7 +6219,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T04:54:49.901Z"
+     "run": "2026-11-17T04:54:49.901Z",
+     "crop": "components/crops/mkto-submit-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -6285,15 +6310,16 @@
        "radius": "4px"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
-     "run": "2026-11-17T04:54:56.605Z"
+     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "run": "2026-11-17T04:54:56.605Z",
+     "crop": "components/crops/mkto-submit-pressed.png"
     }
    }
   },
   "cc-form": {
    "group": "Marketo forms",
    "title": "Career-center contact form",
-   "desc": "The EDU contact form on /career-centers/contact/ — same Marketo stack.",
+   "desc": "The EDU contact form on /career-centers/contact/ \u2014 same Marketo stack.",
    "selector": "form",
    "page": "/career-centers/contact/",
    "url": "https://joinhandshake.com/career-centers/contact/",
@@ -6460,14 +6486,15 @@
       "textTransform": "none"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:55:31.878Z"
+     "run": "2026-11-17T04:55:31.878Z",
+     "crop": "components/crops/cc-form-default.png"
     }
    }
   },
   "stu-email-input": {
    "group": "Students page",
    "title": "Email capture field",
-   "desc": "The \"Type school or personal email here\" field in the hero — measured at rest, nothing typed.",
+   "desc": "The \"Type school or personal email here\" field in the hero \u2014 measured at rest, nothing typed.",
    "selector": "input[type=\"email\"]",
    "page": "/students/",
    "url": "https://joinhandshake.com/students/",
@@ -6567,7 +6594,8 @@
       "fontSize": "18px"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:56:23.776Z"
+     "run": "2026-11-17T04:56:23.776Z",
+     "crop": "components/crops/stu-email-input-default.png"
     },
     "focused": {
      "tag": "input",
@@ -6664,7 +6692,8 @@
       "fontSize": "18px"
      },
      "via": "the field clicked into",
-     "run": "2026-11-17T04:56:25.435Z"
+     "run": "2026-11-17T04:56:25.435Z",
+     "crop": "components/crops/stu-email-input-focused.png"
     }
    }
   },
@@ -6767,7 +6796,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T04:56:26.671Z"
+     "run": "2026-11-17T04:56:26.671Z",
+     "crop": "components/crops/stu-signup-button-default.png"
     },
     "hover": {
      "tag": "a",
@@ -6859,7 +6889,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:56:40.742Z"
+     "run": "2026-11-17T04:56:40.742Z",
+     "crop": "components/crops/stu-signup-button-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -6952,7 +6983,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T04:56:44.376Z"
+     "run": "2026-11-17T04:56:44.376Z",
+     "crop": "components/crops/stu-signup-button-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -7043,16 +7075,17 @@
        "radius": "8px"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
+     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
      "run": "2026-11-17T04:45:21.724Z",
-     "rerunError": "cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location"
+     "rerunError": "cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location",
+     "crop": "components/crops/stu-signup-button-pressed.png"
     }
    }
   },
   "stu-text-link": {
    "group": "Students page",
    "title": "Arrow text link",
-   "desc": "\"Find jobs and internships →\" — an arrow-suffixed text link in the brand face.",
+   "desc": "\"Find jobs and internships \u2192\" \u2014 an arrow-suffixed text link in the brand face.",
    "selector": "a (text Find jobs and internships)",
    "page": "/students/",
    "url": "https://joinhandshake.com/students/",
@@ -7061,7 +7094,7 @@
     "default": {
      "tag": "a",
      "classes": "font-noi-grotesk text-[16px]/xl tracking-sm font-medium",
-     "text": "Find jobs and internships →",
+     "text": "Find jobs and internships \u2192",
      "rect": {
       "x": 598.2,
       "y": 144,
@@ -7148,12 +7181,13 @@
      ],
      "via": "resting state",
      "run": "2026-11-17T04:45:24.325Z",
-     "rerunError": "locator.evaluate: Timeout 8000ms exceeded."
+     "rerunError": "locator.evaluate: Timeout 8000ms exceeded.",
+     "crop": "components/crops/stu-text-link-default.png"
     },
     "hover": {
      "tag": "a",
      "classes": "font-noi-grotesk text-[16px]/xl tracking-sm font-medium",
-     "text": "Find jobs and internships →",
+     "text": "Find jobs and internships \u2192",
      "rect": {
       "x": 598.2,
       "y": 144,
@@ -7240,12 +7274,13 @@
      ],
      "via": "mouse hover over the element",
      "run": "2026-11-17T04:45:27.061Z",
-     "rerunError": "locator.boundingBox: Timeout 8000ms exceeded."
+     "rerunError": "locator.boundingBox: Timeout 8000ms exceeded.",
+     "crop": "components/crops/stu-text-link-hover.png"
     },
     "focus-visible": {
      "tag": "a",
      "classes": "font-noi-grotesk text-[16px]/xl tracking-sm font-medium",
-     "text": "Find jobs and internships →",
+     "text": "Find jobs and internships \u2192",
      "rect": {
       "x": 598.2,
       "y": 144,
@@ -7333,7 +7368,8 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "run": "2026-11-17T04:45:29.674Z",
-     "rerunError": "locator.evaluate: Timeout 8000ms exceeded."
+     "rerunError": "locator.evaluate: Timeout 8000ms exceeded.",
+     "crop": "components/crops/stu-text-link-focus-visible.png"
     }
    }
   },
@@ -7442,7 +7478,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:57:26.817Z"
+     "run": "2026-11-17T04:57:26.817Z",
+     "crop": "components/crops/stu-carousel-btn-default.png"
     },
     "hover": {
      "tag": "button",
@@ -7540,14 +7577,15 @@
       "color": "rgb(20, 21, 28)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:57:36.283Z"
+     "run": "2026-11-17T04:57:36.283Z",
+     "crop": "components/crops/stu-carousel-btn-hover.png"
     }
    }
   },
   "blog-search-input": {
    "group": "Blog",
    "title": "Blog search field",
-   "desc": "The search input on the blog index — measured at rest, nothing typed.",
+   "desc": "The search input on the blog index \u2014 measured at rest, nothing typed.",
    "selector": "input[type=\"search\"]",
    "page": "/blog/",
    "url": "https://joinhandshake.com/blog/",
@@ -7646,7 +7684,8 @@
       "fontSize": "22px"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:57:57.374Z"
+     "run": "2026-11-17T04:57:57.374Z",
+     "crop": "components/crops/blog-search-input-default.png"
     },
     "focused": {
      "tag": "input",
@@ -7750,14 +7789,15 @@
       "fontSize": "22px"
      },
      "via": "the field clicked into",
-     "run": "2026-11-17T04:57:58.776Z"
+     "run": "2026-11-17T04:57:58.776Z",
+     "crop": "components/crops/blog-search-input-focused.png"
     }
    }
   },
   "blog-search-button": {
    "group": "Blog",
    "title": "Search button",
-   "desc": "The Search button beside the field — CDP-forced states only.",
+   "desc": "The Search button beside the field \u2014 CDP-forced states only.",
    "selector": "button (text Search)",
    "page": "/blog/",
    "url": "https://joinhandshake.com/blog/",
@@ -7852,7 +7892,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T04:57:59.698Z"
+     "run": "2026-11-17T04:57:59.698Z",
+     "crop": "components/crops/blog-search-button-default.png"
     },
     "hover": {
      "tag": "button",
@@ -7943,7 +7984,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:58:01.563Z"
+     "run": "2026-11-17T04:58:01.563Z",
+     "crop": "components/crops/blog-search-button-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -8035,7 +8077,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T04:58:03.283Z"
+     "run": "2026-11-17T04:58:03.283Z",
+     "crop": "components/crops/blog-search-button-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -8125,8 +8168,9 @@
        "radius": "4px"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
-     "run": "2026-11-17T04:58:04.826Z"
+     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "run": "2026-11-17T04:58:04.826Z",
+     "crop": "components/crops/blog-search-button-pressed.png"
     }
    }
   },
@@ -8220,7 +8264,8 @@
       "top": "auto"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:58:09.935Z"
+     "run": "2026-11-17T04:58:09.935Z",
+     "crop": "components/crops/blog-category-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -8303,7 +8348,8 @@
       "top": "auto"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:58:18.161Z"
+     "run": "2026-11-17T04:58:18.161Z",
+     "crop": "components/crops/blog-category-link-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -8393,7 +8439,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T04:58:21.289Z"
+     "run": "2026-11-17T04:58:21.289Z",
+     "crop": "components/crops/blog-category-link-focus-visible.png"
     }
    }
   },
@@ -8507,7 +8554,8 @@
       "textTransform": "none"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:58:29.342Z"
+     "run": "2026-11-17T04:58:29.342Z",
+     "crop": "components/crops/blog-card-default.png"
     },
     "hover": {
      "tag": "a",
@@ -8610,7 +8658,8 @@
       "textTransform": "none"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:58:32.429Z"
+     "run": "2026-11-17T04:58:32.429Z",
+     "crop": "components/crops/blog-card-hover.png"
     }
    }
   },
@@ -8731,7 +8780,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:58:50.495Z"
+     "run": "2026-11-17T04:58:50.495Z",
+     "crop": "components/crops/blog-readmore-default.png"
     },
     "hover": {
      "tag": "a",
@@ -8841,14 +8891,15 @@
       "color": "rgb(0, 0, 0)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:58:54.647Z"
+     "run": "2026-11-17T04:58:54.647Z",
+     "crop": "components/crops/blog-readmore-hover.png"
     }
    }
   },
   "car-benefit-tab": {
    "group": "Careers page",
    "title": "Benefits tab",
-   "desc": "A benefits category button (\"Health & wellness\") — the tab's own press swaps the panel.",
+   "desc": "A benefits category button (\"Health & wellness\") \u2014 the tab's own press swaps the panel.",
    "selector": "button (text Health & wellness)",
    "page": "/careers/",
    "url": "https://joinhandshake.com/careers/",
@@ -8962,7 +9013,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:19:51.532Z"
+     "run": "2026-11-17T04:19:51.532Z",
+     "crop": "components/crops/car-benefit-tab-default.png"
     },
     "hover": {
      "tag": "button",
@@ -9072,7 +9124,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:19:53.356Z"
+     "run": "2026-11-17T04:19:53.356Z",
+     "crop": "components/crops/car-benefit-tab-hover.png"
     },
     "selected": {
      "tag": "button",
@@ -9181,15 +9234,16 @@
       "stroke": "none",
       "color": "rgb(0, 0, 0)"
      },
-     "via": "the tab's own press — a local UI toggle",
-     "run": "2026-11-17T04:19:55.748Z"
+     "via": "the tab's own press \u2014 a local UI toggle",
+     "run": "2026-11-17T04:19:55.748Z",
+     "crop": "components/crops/car-benefit-tab-selected.png"
     }
    }
   },
   "car-search-input": {
    "group": "Careers page",
    "title": "Roles search field",
-   "desc": "The open-roles search input — measured at rest, nothing typed.",
+   "desc": "The open-roles search input \u2014 measured at rest, nothing typed.",
    "selector": "input[placeholder*=\"earch\" i], input",
    "page": "/careers/",
    "url": "https://joinhandshake.com/careers/",
@@ -9290,7 +9344,8 @@
       "fontSize": "16px"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:19:57.286Z"
+     "run": "2026-11-17T04:19:57.286Z",
+     "crop": "components/crops/car-search-input-default.png"
     },
     "focused": {
      "tag": "input",
@@ -9388,14 +9443,15 @@
       "fontSize": "16px"
      },
      "via": "the field clicked into",
-     "run": "2026-11-17T04:19:59.470Z"
+     "run": "2026-11-17T04:19:59.470Z",
+     "crop": "components/crops/car-search-input-focused.png"
     }
    }
   },
   "car-dept-button": {
    "group": "Careers page",
-   "title": "Department accordion",
-   "desc": "A department group header in the roles list — \"opened\" is the header's own press.",
+   "title": "Department filter button",
+   "desc": "The \"All departments\" filter dropdown in the roles list \u2014 \"opened\" is its own press.",
    "selector": "button.group.flex",
    "page": "/careers/",
    "url": "https://joinhandshake.com/careers/",
@@ -9498,7 +9554,8 @@
       "color": "rgb(20, 21, 28)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:20:00.423Z"
+     "run": "2026-11-17T04:20:00.423Z",
+     "crop": "components/crops/car-dept-button-default.png"
     },
     "hover": {
      "tag": "button",
@@ -9597,7 +9654,8 @@
       "color": "rgb(20, 21, 28)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:20:09.265Z"
+     "run": "2026-11-17T04:20:09.265Z",
+     "crop": "components/crops/car-dept-button-hover.png"
     },
     "opened": {
      "tag": "button",
@@ -9696,8 +9754,9 @@
       "stroke": "none",
       "color": "rgb(20, 21, 28)"
      },
-     "via": "the header's own press — a local UI toggle",
-     "run": "2026-11-17T04:20:16.267Z"
+     "via": "the header's own press \u2014 a local UI toggle",
+     "run": "2026-11-17T04:20:16.267Z",
+     "crop": "components/crops/car-dept-button-opened.png"
     }
    }
   },
@@ -9818,7 +9877,8 @@
       "textTransform": "none"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:20:18.048Z"
+     "run": "2026-11-17T04:20:18.048Z",
+     "crop": "components/crops/car-job-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -9928,7 +9988,8 @@
       "textTransform": "none"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:20:19.959Z"
+     "run": "2026-11-17T04:20:19.959Z",
+     "crop": "components/crops/car-job-link-hover.png"
     }
    }
   },
@@ -10031,7 +10092,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T04:20:21.184Z"
+     "run": "2026-11-17T04:20:21.184Z",
+     "crop": "components/crops/car-page-button-default.png"
     },
     "hover": {
      "tag": "button",
@@ -10123,7 +10185,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:20:22.916Z"
+     "run": "2026-11-17T04:20:22.916Z",
+     "crop": "components/crops/car-page-button-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -10216,7 +10279,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T04:20:24.105Z"
+     "run": "2026-11-17T04:20:24.105Z",
+     "crop": "components/crops/car-page-button-focus-visible.png"
     }
    }
   },
@@ -10322,7 +10386,8 @@
       "textTransform": "none"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:59:18.678Z"
+     "run": "2026-11-17T04:59:18.678Z",
+     "crop": "components/crops/legal-nav-active-default.png"
     },
     "hover": {
      "tag": "a",
@@ -10417,7 +10482,8 @@
       "textTransform": "none"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:59:20.762Z"
+     "run": "2026-11-17T04:59:20.762Z",
+     "crop": "components/crops/legal-nav-active-hover.png"
     }
    }
   },
@@ -10523,7 +10589,8 @@
       "textTransform": "none"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:59:22.661Z"
+     "run": "2026-11-17T04:59:22.661Z",
+     "crop": "components/crops/legal-nav-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -10618,7 +10685,8 @@
       "textTransform": "none"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:59:24.527Z"
+     "run": "2026-11-17T04:59:24.527Z",
+     "crop": "components/crops/legal-nav-link-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -10720,14 +10788,15 @@
       "textTransform": "none"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T04:59:26.545Z"
+     "run": "2026-11-17T04:59:26.545Z",
+     "crop": "components/crops/legal-nav-link-focus-visible.png"
     }
    }
   },
   "app-shell": {
    "group": "App access",
    "title": "Login page shell",
-   "desc": "The /access page body — the consumer app's signed-out entry.",
+   "desc": "The /access page body \u2014 the consumer app's signed-out entry.",
    "selector": "main, #maincontent, body",
    "page": "https://app.joinhandshake.com/access",
    "url": "https://app.joinhandshake.com/access",
@@ -10897,7 +10966,8 @@
       "color": "rgba(18, 18, 18, 0.7)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:07:48.814Z"
+     "run": "2026-11-17T05:07:48.814Z",
+     "crop": "components/crops/app-shell-default.png"
     }
    }
   },
@@ -11038,14 +11108,15 @@
       "color": "rgba(18, 18, 18, 0.7)"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:07:50.594Z"
+     "run": "2026-11-17T05:07:50.594Z",
+     "crop": "components/crops/app-locale-select-default.png"
     }
    }
   },
   "app-email-field": {
    "group": "App access",
    "title": "Email field",
-   "desc": "The \"Enter your email\" rosetta-field — measured at rest, nothing typed.",
+   "desc": "The \"Enter your email\" rosetta-field \u2014 measured at rest, nothing typed.",
    "selector": "input[name=\"email\"], input[type=\"text\"]",
    "page": "https://app.joinhandshake.com/access",
    "url": "https://app.joinhandshake.com/access",
@@ -11146,7 +11217,8 @@
       "fontSize": "17px"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:07:51.887Z"
+     "run": "2026-11-17T05:07:51.887Z",
+     "crop": "components/crops/app-email-field-default.png"
     },
     "focused": {
      "tag": "input",
@@ -11245,14 +11317,15 @@
       "fontSize": "17px"
      },
      "via": "the field clicked into",
-     "run": "2026-11-17T05:07:55.605Z"
+     "run": "2026-11-17T05:07:55.605Z",
+     "crop": "components/crops/app-email-field-focused.png"
     }
    }
   },
   "app-continue-button": {
    "group": "App access",
    "title": "\"Continue with email\" button",
-   "desc": "The rosetta-button submit — pressed states are CDP-forced, so the form never submits.",
+   "desc": "The rosetta-button submit \u2014 pressed states are CDP-forced, so the form never submits.",
    "selector": "button.rosetta-button",
    "page": "https://app.joinhandshake.com/access",
    "url": "https://app.joinhandshake.com/access",
@@ -11347,7 +11420,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T05:08:00.961Z"
+     "run": "2026-11-17T05:08:00.961Z",
+     "crop": "components/crops/app-continue-button-default.png"
     },
     "hover": {
      "tag": "button",
@@ -11439,7 +11513,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:08:04.863Z"
+     "run": "2026-11-17T05:08:04.863Z",
+     "crop": "components/crops/app-continue-button-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -11531,7 +11606,8 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
-     "run": "2026-11-17T05:08:12.419Z"
+     "run": "2026-11-17T05:08:12.419Z",
+     "crop": "components/crops/app-continue-button-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -11622,15 +11698,16 @@
        "radius": "8px"
       }
      ],
-     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
-     "run": "2026-11-17T05:08:14.269Z"
+     "via": "CDP CSS.forcePseudoState(:active:hover) \u2014 no real press",
+     "run": "2026-11-17T05:08:14.269Z",
+     "crop": "components/crops/app-continue-button-pressed.png"
     }
    }
   },
   "app-google-button": {
    "group": "App access",
    "title": "Google SSO button",
-   "desc": "The \"Continue with Google\" button — Google's own rendered widget (GSI), recorded as vendor.",
+   "desc": "The \"Continue with Google\" button \u2014 Google's own rendered widget (GSI), recorded as vendor.",
    "selector": "[class*=\"LgbsSe\"], [id*=\"gsi\" i], iframe[title*=\"Google\" i], iframe[src*=\"accounts.google.com\"]",
    "page": "https://app.joinhandshake.com/access",
    "url": "https://app.joinhandshake.com/access",
@@ -11717,7 +11794,8 @@
       "top": "0px"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:08:16.952Z"
+     "run": "2026-11-17T05:08:16.952Z",
+     "crop": "components/crops/app-google-button-default.png"
     }
    }
   },
@@ -11811,7 +11889,8 @@
       "top": "auto"
      },
      "via": "resting state",
-     "run": "2026-11-17T05:08:20.413Z"
+     "run": "2026-11-17T05:08:20.413Z",
+     "crop": "components/crops/app-employer-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -11894,7 +11973,8 @@
       "top": "auto"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:08:22.978Z"
+     "run": "2026-11-17T05:08:22.978Z",
+     "crop": "components/crops/app-employer-link-hover.png"
     }
    }
   },
@@ -11996,7 +12076,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T05:08:27.424Z"
+     "run": "2026-11-17T05:08:27.424Z",
+     "crop": "components/crops/app-tos-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -12087,7 +12168,8 @@
       }
      ],
      "via": "mouse hover over the element",
-     "run": "2026-11-17T05:08:29.432Z"
+     "run": "2026-11-17T05:08:29.432Z",
+     "crop": "components/crops/app-tos-link-hover.png"
     }
    }
   },
@@ -12227,7 +12309,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:31:28.944Z"
+     "run": "2026-11-17T04:31:28.944Z",
+     "crop": "components/crops/m-hs-topbar-default.png"
     }
    }
   },
@@ -12328,7 +12411,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:31:30.046Z"
+     "run": "2026-11-17T04:31:30.046Z",
+     "crop": "components/crops/m-hs-hamburger-default.png"
     },
     "hover": {
      "tag": "button",
@@ -12418,7 +12502,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "via": "mouse hover over the element",
-     "run": "2026-11-17T04:31:32.069Z"
+     "run": "2026-11-17T04:31:32.069Z",
+     "crop": "components/crops/m-hs-hamburger-hover.png"
     }
    }
   },
@@ -12603,7 +12688,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "via": "the \"Open menu\" button's own press",
-     "run": "2026-11-17T04:31:35.079Z"
+     "run": "2026-11-17T04:31:35.079Z",
+     "crop": "components/crops/m-hs-drawer-opened.png"
     }
    }
   }

@@ -28,7 +28,9 @@ function measure() {
   const vis = (e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
   const all = [...document.querySelectorAll('body *')].filter((e) => !e.closest('svg') && vis(e));
   const out = { vw: innerWidth, docH: document.documentElement.scrollHeight, theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light' };
-  const h1 = document.querySelector('main h1'); out.h1 = h1 && { text: h1.innerText.slice(0, 50), font: getComputedStyle(h1).font.slice(0, 120), ...R(h1) };
+  // The responsive templates ship a hidden h1 copy for each breakpoint; the
+  // probe wants the one that actually paints.
+  const h1 = [...document.querySelectorAll('main h1')].find((e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; }); out.h1 = h1 && { text: h1.innerText.slice(0, 50), font: getComputedStyle(h1).font.slice(0, 120), ...R(h1) };
   // The fixed shell: header, the page footer bar, and anything else fixed/sticky
   // wider than a button.
   out.fixed = all.filter((e) => ['sticky', 'fixed'].includes(getComputedStyle(e).position) && R(e).w > 120).map((e) => ({ el: tag(e), pos: getComputedStyle(e).position, top: getComputedStyle(e).top, z: getComputedStyle(e).zIndex, ...R(e) })).slice(0, 12);

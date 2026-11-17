@@ -18,7 +18,7 @@ Screenshots are named `{page}-light-{state}.png`: every page on both surfaces pa
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [nav-open](screenshots/home-light-nav-open.png) |
+| Home | `/` | [consent](screenshots/home-light-consent.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [nav-open](screenshots/home-light-nav-open.png) |
 | Students | `/students/` | [default](screenshots/students-light-default.png), [full](screenshots/students-light-full.png) |
 | Who's hiring | `/students/whos-hiring/` | [default](screenshots/whos-hiring-light-default.png), [full](screenshots/whos-hiring-light-full.png) |
 | Employers | `/employers/` | [default](screenshots/employers-light-default.png), [faq-open](screenshots/employers-light-faq-open.png), [full](screenshots/employers-light-full.png), [tab-automate](screenshots/employers-light-tab-automate.png) |
@@ -27,7 +27,7 @@ Screenshots are named `{page}-light-{state}.png`: every page on both surfaces pa
 | Career centers | `/career-centers/` | [default](screenshots/career-centers-light-default.png), [full](screenshots/career-centers-light-full.png) |
 | Career-centers contact | `/career-centers/contact/` | [default](screenshots/cc-contact-light-default.png), [full](screenshots/cc-contact-light-full.png) |
 | Marketing toolkit | `/career-centers/marketing-toolkit/` | [default](screenshots/marketing-toolkit-light-default.png), [full](screenshots/marketing-toolkit-light-full.png) |
-| Careers | `/careers/` | [default](screenshots/careers-light-default.png), [full](screenshots/careers-light-full.png) |
+| Careers | `/careers/` | [default](screenshots/careers-light-default.png), [dept-open](screenshots/careers-light-dept-open.png), [full](screenshots/careers-light-full.png) |
 | About | `/about/` | [default](screenshots/about-light-default.png), [full](screenshots/about-light-full.png) |
 | Handshake AI | `/ai/` | [default](screenshots/ai-light-default.png), [full](screenshots/ai-light-full.png) |
 | AI for enterprise | `/ai/enterprise/` | [default](screenshots/ai-enterprise-light-default.png), [full](screenshots/ai-enterprise-light-full.png) |
@@ -42,7 +42,7 @@ Screenshots are named `{page}-light-{state}.png`: every page on both surfaces pa
 | Accessibility | `/accessibility/` | [default](screenshots/accessibility-light-default.png), [full](screenshots/accessibility-light-full.png) |
 | Security | `/security/` | [default](screenshots/security-light-default.png), [full](screenshots/security-light-full.png) |
 | App access (consumer login) | `app.joinhandshake.com/access` | [default](screenshots/access-light-default.png), [full](screenshots/access-light-full.png) |
-| Home, phone | `/` |  |
+| Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [drawer](screenshots/mobile-home-light-drawer.png), [full](screenshots/mobile-home-light-full.png) |
 | Students, phone | `/students/` | [default](screenshots/mobile-students-light-default.png), [full](screenshots/mobile-students-light-full.png) |
 | Employers, phone | `/employers/` | [default](screenshots/mobile-employers-light-default.png), [full](screenshots/mobile-employers-light-full.png) |
 | Pricing, phone | `/employers/pricing/` | [default](screenshots/mobile-pricing-light-default.png), [full](screenshots/mobile-pricing-light-full.png) |
@@ -76,9 +76,9 @@ Values that apply across entries, from the measurement files.
 | 0.15s | `cubic-bezier(0, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | hs-filter-pill, hs-search-button |
 | 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, -webkit-backdrop-filter, all, backdrop-filter, background-color, border-color, box-shadow, color, content-visibility, display, fill, filter, opacity, outline-color, overlay, pointer-events, rotate, scale, stroke, text-decoration-color, transform, translate | car-dept-button, car-page-button, car-search-input, hs-carousel-dot, hs-cta, hs-login-link, hs-segment-tab, hs-signup-button and more |
 | 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | blog-search-button, mkto-submit |
-| 0.2s | `ease` | background-color, color | app-continue-button, hs-nav, hs-nav-menu |
+| 0.2s | `ease` | background-color, color | app-continue-button, hs-nav |
 | 0.3s | `ease-in` | transform | app-email-field |
-| 0.3s | `ease-in-out` | top | hs-nav, hs-nav-menu |
+| 0.3s | `ease-in-out` | top | hs-nav |
 | 0.4s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | hs-nav-link |
 
 **Card shapes.** Default-state values; the entries hold the states.
@@ -101,17 +101,17 @@ The chrome every marketing page carries: the floating pill nav (wordmark, sectio
 
 #### Fixed nav bar
 The pill-shaped bar fixed under --desktop-nav-top-offset over every marketing page: wordmark, section items, "Sign up" and "Log in". Read as `hs-nav` on the home page.
-Read on 2026-11-17T05:05:05.801Z.
+Read on 2026-11-17T08:51:01.377Z.
 
 **Values (default).** size 1440 x 56; background transparent; text NoiGrotesk 14/19.6 400, #ffffff `light.fg.headline`; transition top 0.3s ease-in-out, color 0.2s ease; layers div.flex.items-center 1392.0x56.0 rgba(255, 255, 255, 0) 16px; a.flex.flex-col 73.8x40.0 oklab(0 0 0 / 0) T:1px solid / R:1px solid / B:1px solid / L:1px solid 8px; a.flex.flex-col 80.5x40.0 rgb(211, 251, 82) 8px.
 
 Child layers that carry the look: div 1392x56 background rgba(255, 255, 255, 0) radius 16px; a 73.8x40 background oklab(0 0 0 / 0) border 1px solid radius 8px; a 80.5x40 background #d3fb52 `light.button.primary.bg` radius 8px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Fixed nav bar default](components/crops/hs-nav-default.png)
 
 #### Nav section item
 A top-level nav item ("Employers") — opens the mega menu on hover. Read as `hs-nav-link` on the home page.
-States read on 2026-11-17T05:05:07.254Z (default); 2026-11-17T05:05:09.848Z (hover); 2026-11-17T05:05:12.171Z (focus-visible).
+States read on 2026-11-17T08:51:02.879Z (default); 2026-11-17T08:51:05.133Z (hover); 2026-11-17T08:51:10.282Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -119,11 +119,11 @@ States read on 2026-11-17T05:05:07.254Z (default); 2026-11-17T05:05:09.848Z (hov
 | hover | background oklab(1 0 5.96046e-8 / 0.1) |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.rounded-lg.px-4 95.1x43.6 1px auto rgb(16, 16, 16) offset 1px 8px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Nav section item default](components/crops/hs-nav-link-default.png) ![Nav section item hover](components/crops/hs-nav-link-hover.png) ![Nav section item focus-visible](components/crops/hs-nav-link-focus-visible.png)
 
 #### "Sign up" button
 The solid sign-up control in the nav's right rail. Read as `hs-signup-button` on the home page.
-States read on 2026-11-17T05:05:17.131Z (default); 2026-11-17T05:05:23.142Z (hover); 2026-11-17T05:05:28.408Z (focus-visible); 2026-11-17T05:05:31.552Z (pressed).
+States read on 2026-11-17T08:51:11.660Z (default); 2026-11-17T08:51:13.889Z (hover); 2026-11-17T08:51:18.211Z (focus-visible); 2026-11-17T08:51:22.108Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -132,41 +132,39 @@ States read on 2026-11-17T05:05:17.131Z (default); 2026-11-17T05:05:23.142Z (hov
 | focus-visible | background #e7ff89 `core.color.framer.24ccea63-a288-4de4-8c94-07c5025e7e7e`; outline 1px auto #101010, offset 1px |
 | pressed | background #a1dd3b `light.button.primary.hover` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+!["Sign up" button default](components/crops/hs-signup-button-default.png) !["Sign up" button hover](components/crops/hs-signup-button-hover.png) !["Sign up" button focus-visible](components/crops/hs-signup-button-focus-visible.png) !["Sign up" button pressed](components/crops/hs-signup-button-pressed.png)
 
 #### "Log in" link
 The outlined log-in control in the nav's right rail. Read as `hs-login-link` on the home page.
-States read on 2026-11-17T05:05:39.388Z (default); 2026-11-17T05:05:52.149Z (hover); 2026-11-17T05:05:58.403Z (focus-visible).
+States read on 2026-11-17T08:51:30.378Z (default); 2026-11-17T08:51:32.784Z (hover); 2026-11-17T08:51:35.245Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 73.75 x 40; padding 12px 16px; border 1px solid #ffffff `light.fg.headline`; radius 8px; background oklab(0 0 0 / 0); text NoiGrotesk 14/15.4 500, #ffffff `light.fg.headline`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), display 0.15s cubic-bezier(0.4, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.15s cubic-bezier(0.4, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | border 1px solid oklab(0.999994 0.0000455678 0.0000200868) |
+| hover | border 1px solid oklab(0 0 0 / 0); background #ffffff `light.fg.headline`; text NoiGrotesk 14/15.4 500, #14151c `light.bg.footer` |
 | focus-visible | border 1px solid #f3f4fa `light.bg.muted`; outline 1px auto #101010, offset 1px; text NoiGrotesk 14/15.4 500, #f3f4fa `light.bg.muted` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+!["Log in" link default](components/crops/hs-login-link-default.png) !["Log in" link hover](components/crops/hs-login-link-hover.png) !["Log in" link focus-visible](components/crops/hs-login-link-focus-visible.png)
 
 #### Nav mega menu (open)
 The hover-opened panel under a nav section item. "opened" is the item's own hover: the pointer rests on it until aria-expanded flips. Read as `hs-nav-menu` on the home page.
-Read on 2026-11-17T05:06:03.134Z.
+Read on 2026-11-17T08:51:54.771Z.
 
-**Values (opened).** size 1440 x 56; background transparent; text NoiGrotesk 14/19.6 400, #ffffff `light.fg.headline`; transition top 0.3s ease-in-out, color 0.2s ease; layers div.flex.items-center 1392.0x56.0 rgba(255, 255, 255, 0) 16px; a.rounded-lg.px-4 95.1x43.6 oklab(1 0 5.96046e-8 / 0.1) 8px; div.absolute.top-full 860.0x320.3 rgb(255, 255, 255) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px 16px; a.rela.
+**Values (opened).** size 774 x 249.68; radius 16px; background #ffffff `light.fg.headline`; shadow rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px; text NoiGrotesk 10/11 500, #d3fb52 `light.button.primary.bg`; transform matrix3d(0.9, 0, 0, 0, 0, 0.779423, -0.45, 0, 0, 0.5, 0.866025, 0, 0, 0, 0, 1); opacity 0; icon 14.4 x 12.47, #000000 `light.nav.legal`.
 
-Child layers that carry the look: div 1392x56 background rgba(255, 255, 255, 0) radius 16px; a 95.1x43.6 background oklab(1 0 5.96046e-8 / 0.1) radius 8px; div 860x320.3 background #ffffff `light.fg.headline` radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Nav mega menu (open) opened](components/crops/hs-nav-menu-opened.png)
 
 #### Footer
 The rounded-top footer (rounded-t-3xl) with link columns. Read as `hs-footer` on the home page.
-Read on 2026-11-17T05:06:06.335Z.
+Read on 2026-11-17T08:52:14.383Z.
 
 **Values (default).** size 1440 x 766.25; padding 24px; radius 24px 24px 0px 0px; background #14151c `light.bg.footer`; text NoiGrotesk 40/44 400, #ffffff `light.fg.headline`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Footer default](components/crops/hs-footer-default.png)
 
 #### Footer link
 A single link inside the footer columns. Read as `hs-footer-link` on the home page.
-States read on 2026-11-17T05:06:07.209Z (default); 2026-11-17T05:06:08.990Z (hover); 2026-11-17T05:06:10.312Z (focus-visible).
+States read on 2026-11-17T08:52:15.245Z (default); 2026-11-17T08:52:17.009Z (hover); 2026-11-17T08:52:18.241Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -174,7 +172,7 @@ States read on 2026-11-17T05:06:07.209Z (default); 2026-11-17T05:06:08.990Z (hov
 | hover | text NoiGrotesk 16/24 400, #d3fb52 `light.button.primary.bg` |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a 140.0x47.2 1px auto rgb(16, 16, 16) offset 1px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Footer link default](components/crops/hs-footer-link-default.png) ![Footer link hover](components/crops/hs-footer-link-hover.png) ![Footer link focus-visible](components/crops/hs-footer-link-focus-visible.png)
 
 ### Homepage hero
 
@@ -182,46 +180,46 @@ The home page's job-search surface: the brand-face headline, the rounded search 
 
 #### Hero headline (h1)
 "LET'S FIND YOUR NEXT JOB" — the hero title in the brand face. The page ships two hero copies (one per breakpoint); the visible one is picked, never the zero-rect twin. Read as `hs-hero-h1` on the home page.
-Read on 2026-11-17T05:06:15.520Z.
+Read on 2026-11-17T08:52:20.916Z.
 
 **Values (default).** size 1392 x 274; padding 0px 0px 18px 0px; background transparent; text SansPlomb 160/128 600, #ffffff `light.fg.headline`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Hero headline (h1) default](components/crops/hs-hero-h1-default.png)
 
 #### Job search form
 The hero job-search field row — measured at rest; typing and submitting were never done (the form navigates to the app). Read as `hs-search-form` on the home page.
-Read on 2026-11-17T05:06:31.861Z.
+Read on 2026-11-17T08:52:22.719Z.
 
 **Values (default).** size 920 x 88; background transparent; text NoiGrotesk 20/22 400, oklab(0.19794 0.0021212 -0.0139539 / 0.6); icon 32 x 32, #252630 `light.input.search.border`; layers input.hidden.size-full 920.0x88.0 rgb(255, 255, 255) 24px; textarea.block.size-full 0.0x0.0 rgb(255, 255, 255) 24px; button.absolute.right-(--mobile-input-padding) 56.0x56.0 oklab(0.271936 0.00340799 -0.0182189 / 0.1) 12px.
 
 Child layers that carry the look: input 920x88 background #ffffff `light.fg.headline` radius 24px; textarea 0x0 background #ffffff `light.fg.headline` radius 24px; button 56x56 background oklab(0.271936 0.00340799 -0.0182189 / 0.1) radius 12px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Job search form default](components/crops/hs-search-form-default.png)
 
 #### Job search input
 The rounded text field inside the hero form. Read as `hs-search-input` on the home page.
-States read on 2026-11-17T05:06:35.309Z (default); 2026-11-17T05:06:38.249Z (focused).
+States read on 2026-11-17T08:52:24.858Z (default); 2026-11-17T08:52:27.286Z (focused).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 920 x 88; padding 0px 80px 0px 64px; radius 24px; background #ffffff `light.fg.headline`; text NoiGrotesk 20/22 400, #252630 `light.input.search.border`; placeholder #252630 `light.input.search.border` |
 | focused | outline 1px auto #101010, offset 0px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Job search input default](components/crops/hs-search-input-default.png) ![Job search input focused](components/crops/hs-search-input-focused.png)
 
 #### "Search jobs" button
 The submit-styled button inside the hero form — pressed states are CDP-forced, so it never submits. Read as `hs-search-button` on the home page.
-States read on 2026-11-17T05:06:39.648Z (default); 2026-11-17T05:06:43.645Z (hover); 2026-11-17T05:06:45.485Z (focus-visible); 2026-11-17T05:06:47.637Z (pressed).
+States read on 2026-11-17T08:52:28.639Z (default); 2026-11-17T08:52:31.136Z (hover); 2026-11-17T08:52:32.924Z (focus-visible); 2026-11-17T08:52:35.206Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, focus-visible, pressed) | size 56 x 56; radius 12px; background oklab(0.271936 0.00340799 -0.0182189 / 0.1); text NoiGrotesk 16/24 400, #ffffff `light.fg.headline`; transition color 0.15s cubic-bezier(0, 0, 0.2, 1), background-color 0.15s cubic-bezier(0, 0, 0.2, 1), border-color 0.15s cubic-bezier(0, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0, 0, 0.2, 1), fill 0.15s cubic-bezier(0, 0, 0.2, 1), stroke 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0, 0, 0.2, 1); icon 13 x 20, #7b7b85 `core.color.framer.9bc81069-b7b8-4d87-8c24-886145b7c040` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+!["Search jobs" button default](components/crops/hs-search-button-default.png) !["Search jobs" button hover](components/crops/hs-search-button-hover.png) !["Search jobs" button focus-visible](components/crops/hs-search-button-focus-visible.png) !["Search jobs" button pressed](components/crops/hs-search-button-pressed.png)
 
 #### Job-type pill
 A selectable type pill under the search field ("Full-time"). Read as `hs-filter-pill` on the home page.
-States read on 2026-11-17T05:06:49.169Z (default); 2026-11-17T05:06:54.373Z (hover); 2026-11-17T05:06:56.137Z (focus-visible).
+States read on 2026-11-17T08:52:37.209Z (default); 2026-11-17T08:52:50.590Z (hover); 2026-11-17T08:53:11.474Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -229,7 +227,7 @@ States read on 2026-11-17T05:06:49.169Z (default); 2026-11-17T05:06:54.373Z (hov
 | hover | background oklab(1 0 5.96046e-8 / 0.1) |
 | focus-visible | outline 1px auto #101010, offset 0px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Job-type pill default](components/crops/hs-filter-pill-default.png) ![Job-type pill hover](components/crops/hs-filter-pill-hover.png) ![Job-type pill focus-visible](components/crops/hs-filter-pill-focus-visible.png)
 
 ### Employers page
 
@@ -241,7 +239,7 @@ Read on 2026-11-17T05:07:07.852Z.
 
 **Values (default).** size 1392 x 40; radius 8px; background #d3fb52 `light.button.primary.bg`; text NoiGrotesk 14/19.6 400, #252630 `light.input.search.border`; icon 16 x 16, #252630 `light.input.search.border`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Notification banner default](components/crops/hs-banner-default.png)
 
 #### Banner dismiss button
 The icon-only "Dismiss notification" control — measured, never pressed. Read as `hs-banner-dismiss` on the employers page.
@@ -252,7 +250,7 @@ States read on 2026-11-17T05:07:09.961Z (default); 2026-11-17T05:07:11.690Z (hov
 | default (same: hover) | size 16 x 16; background transparent; text NoiGrotesk 16/24 400, #252630 `light.input.search.border`; icon 16 x 16, #252630 `light.input.search.border` |
 | focus-visible | outline 1px auto #101010, offset 0px; layers button.absolute.right-6 16.0x16.0 1px auto rgb(16, 16, 16) offset 0px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Banner dismiss button default](components/crops/hs-banner-dismiss-default.png) ![Banner dismiss button hover](components/crops/hs-banner-dismiss-hover.png) ![Banner dismiss button focus-visible](components/crops/hs-banner-dismiss-focus-visible.png)
 
 #### Segment switcher tab
 One of Source / Automate / Brand / Measure — opacity carries the selection. "selected" is the tab's own press: it swaps the feature panel. Read as `hs-segment-tab` on the employers page.
@@ -263,7 +261,7 @@ States read on 2026-11-17T05:07:13.863Z (default); 2026-11-17T05:07:15.636Z (hov
 | default | size 120 x 44; background transparent; text NoiGrotesk 40/44 400, #a9aaae `light.tab.fg`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover, selected | text NoiGrotesk 40/44 400, #252630 `light.input.search.border` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Segment switcher tab default](components/crops/hs-segment-tab-default.png) ![Segment switcher tab hover](components/crops/hs-segment-tab-hover.png) ![Segment switcher tab selected](components/crops/hs-segment-tab-selected.png)
 
 #### CTA link-button
 A solid call-to-action ("Post a job today" / "Get started" / "Contact sales") — the group.inline-flex pill. Read as `hs-cta` on the employers page.
@@ -275,7 +273,7 @@ States read on 2026-11-17T05:07:19.128Z (default); 2026-11-17T05:07:21.002Z (hov
 | hover | border 1px solid oklab(0 0 0 / 0); background #ffffff `light.fg.headline`; text NoiGrotesk 16/17.6 500, #14151c `light.bg.footer` |
 | focus-visible | border 1px solid #f3f4fa `light.bg.muted`; outline 1px auto #101010, offset 1px; text NoiGrotesk 16/17.6 500, #f3f4fa `light.bg.muted` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![CTA link-button default](components/crops/hs-cta-default.png) ![CTA link-button hover](components/crops/hs-cta-hover.png) ![CTA link-button focus-visible](components/crops/hs-cta-focus-visible.png) ![CTA link-button pressed](components/crops/hs-cta-pressed.png)
 
 #### Testimonial dot
 A carousel page dot ("Go to testimonial N"). Read as `hs-carousel-dot` on the employers page.
@@ -285,7 +283,7 @@ States read on 2026-11-17T05:07:24.460Z (default); 2026-11-17T05:07:26.181Z (hov
 |---|---|
 | default (same: hover) | size 8 x 8; radius 9999px; background #ffffff `light.fg.headline`; text NoiGrotesk 16/24 400, #ffffff `light.fg.headline`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Testimonial dot default](components/crops/hs-carousel-dot-default.png) ![Testimonial dot hover](components/crops/hs-carousel-dot-hover.png)
 
 #### FAQ accordion question
 A question row in the FAQ. "opened" is the question button's own press: it unfolds the answer. Read as `hs-faq` on the employers page.
@@ -298,7 +296,7 @@ States read on 2026-11-17T05:07:27.019Z (default); 2026-11-17T05:07:28.766Z (hov
 
 Child layers that carry the look: div 24x24 border 1px solid radius 9999px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![FAQ accordion question default](components/crops/hs-faq-default.png) ![FAQ accordion question hover](components/crops/hs-faq-hover.png) ![FAQ accordion question focus-visible](components/crops/hs-faq-focus-visible.png) ![FAQ accordion question opened](components/crops/hs-faq-opened.png)
 
 ### Pricing page
 
@@ -306,41 +304,39 @@ The /employers/pricing/ furniture: the plan cards, the feature-group tabs and th
 
 #### Plan comparison table
 One of the plan/feature tables on /employers/pricing/ (the page mounts four). Read as `pricing-table` on the pricing page.
-Read on 2026-11-17T04:17:03.823Z.
+Read on 2026-11-17T08:44:05.661Z.
 
 **Values (default).** size 1152 x 856.47; background #ffffff `light.fg.headline`; text NoiGrotesk 16/24 700, #000000 `light.nav.legal`; icon 24 x 24, #00b1b5 `core.color.framer.089c3dbf-4f41-4221-b7d6-ae39d611e102`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Plan comparison table default](components/crops/pricing-table-default.png)
 
 #### Table header cell
 A th in the comparison table. Read as `pricing-th` on the pricing page.
-Read on 2026-11-17T04:17:04.666Z.
+Read on 2026-11-17T08:44:09.260Z.
 
 **Values (default).** size 83 x 24; background transparent; text NoiGrotesk 16/24 700, #000000 `light.nav.legal`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Table header cell default](components/crops/pricing-th-default.png)
 
 #### Table cell
 A td in the comparison table. Read as `pricing-td` on the pricing page.
-Read on 2026-11-17T04:17:05.506Z.
+Read on 2026-11-17T08:44:18.302Z.
 
 **Values (default).** size 493.7 x 92.81; padding 24px; background transparent; text NoiGrotesk 16/22.4 400, oklab(0.271936 0.00340799 -0.0182189 / 0.8).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Table cell default](components/crops/pricing-td-default.png)
 
 #### Plan card
 A plan column/card on the pricing page. Read as `pricing-plan-card` on the pricing page.
-Read on 2026-11-17T04:17:07.576Z.
+Read on 2026-11-17T08:44:22.773Z.
 
-**Values (default).** size 568 x 70.41; background transparent; text NoiGrotesk 32/35.2 400, #000000 `light.nav.legal`; icon 14 x 20, #000000 `light.nav.legal`; layers div.flex.size-6 24.0x24.0 T:1px solid / R:1px solid / B:1px solid / L:1px solid 9999px.
+**Values (default).** size 256 x 125.61; background transparent; text NoiGrotesk 32/35.2 400, #000000 `light.nav.legal`.
 
-Child layers that carry the look: div 24x24 border 1px solid radius 9999px.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Plan card default](components/crops/pricing-plan-card-default.png)
 
 #### Feature group tab
 A "Target & Connect" / "Centralize" / "Brand" / "Measure" group button that switches the comparison section. Read as `pricing-feature-tab` on the pricing page.
-States read on 2026-11-17T04:17:10.497Z (default); 2026-11-17T04:17:12.816Z (hover); 2026-11-17T04:17:15.665Z (selected).
+States read on 2026-11-17T08:44:25.222Z (default); 2026-11-17T08:44:27.053Z (hover); 2026-11-17T08:44:29.149Z (selected).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -348,7 +344,7 @@ States read on 2026-11-17T04:17:10.497Z (default); 2026-11-17T04:17:12.816Z (hov
 
 Child layers that carry the look: button 1152x74.6 border 1px solid.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Feature group tab default](components/crops/pricing-feature-tab-default.png) ![Feature group tab hover](components/crops/pricing-feature-tab-hover.png) ![Feature group tab selected](components/crops/pricing-feature-tab-selected.png)
 
 ### Marketo forms
 
@@ -362,7 +358,7 @@ Read on 2026-11-17T04:54:41.977Z.
 
 Child layers that carry the look: input 502.7x58 background #ffffff `light.fg.headline` border 1px solid radius 4px; input 243.3x58 background #ffffff `light.fg.headline` border 1px solid radius 4px; input 243.3x58 background #ffffff `light.fg.headline` border 1px solid radius 4px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Demo form shell default](components/crops/mkto-form-default.png)
 
 #### Form text field
 A text input inside the Marketo form. Read as `mkto-input` on the request a demo page.
@@ -373,7 +369,7 @@ States read on 2026-11-17T04:54:42.942Z (default); 2026-11-17T04:54:44.741Z (foc
 | default | size 502.67 x 58; padding 16px; border 1px solid #484851 `core.color.framer.c5583c21-56ea-40f2-bd5f-aab56412a3da`; radius 4px; background #ffffff `light.fg.headline`; text NoiGrotesk 16/24 400, #252630 `light.input.search.border`; placeholder #bebdbf `core.color.framer.7509cc64-b578-4e00-8e69-ea2d85bc1acc` |
 | focused | border 1px solid #ff455b `core.color.framer.6c621e68-cbf1-4faf-a500-3fc11fa7290d`; outline 1px auto #9b53f6 `core.color.framer.f8d4d9f2-c148-478e-9f1b-a43f8a3cc1fe`, offset 0px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Form text field default](components/crops/mkto-input-default.png) ![Form text field focused](components/crops/mkto-input-focused.png)
 
 #### Form select
 A select inside the Marketo form. Read as `mkto-select` on the request a demo page.
@@ -390,7 +386,7 @@ States read on 2026-11-17T04:54:45.800Z (default); 2026-11-17T04:54:47.620Z (hov
 | hover | background #ffffff `light.fg.headline` |
 | focus-visible | outline 1px auto #101010, offset 0px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Form submit button default](components/crops/mkto-submit-default.png) ![Form submit button hover](components/crops/mkto-submit-hover.png) ![Form submit button focus-visible](components/crops/mkto-submit-focus-visible.png) ![Form submit button pressed](components/crops/mkto-submit-pressed.png)
 
 #### Career-center contact form
 The EDU contact form on /career-centers/contact/ — same Marketo stack. Read as `cc-form` on the career-centers contact page.
@@ -400,7 +396,7 @@ Read on 2026-11-17T04:55:31.878Z.
 
 Child layers that carry the look: input 728x40 background #f3f4fa `light.bg.muted` radius 3px; input 728x40 background #f3f4fa `light.bg.muted` radius 3px; input 728x40 background #f3f4fa `light.bg.muted` radius 3px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Career-center contact form default](components/crops/cc-form-default.png)
 
 ### Students page
 
@@ -415,7 +411,7 @@ States read on 2026-11-17T04:56:23.776Z (default); 2026-11-17T04:56:25.435Z (foc
 | default | size 448 x 56; padding 8px 16px; radius 8px; background #ffffff `light.fg.headline`; text NoiGrotesk 18/25.2 400, #14151c `light.bg.footer`; placeholder oklab(0.19794 0.0021212 -0.0139539 / 0.6) |
 | focused | outline 1px auto #101010, offset 0px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Email capture field default](components/crops/stu-email-input-default.png) ![Email capture field focused](components/crops/stu-email-input-focused.png)
 
 #### "Sign up" CTA
 The students sign-up button (group.inline-flex). Read as `stu-signup-button` on the students page.
@@ -428,7 +424,7 @@ States read on 2026-11-17T04:45:21.724Z (pressed); 2026-11-17T04:56:26.671Z (def
 | focus-visible | border 1px solid #14151c `light.bg.footer`; background #ffffff `light.fg.headline`; outline 1px auto #101010, offset 1px |
 | pressed | border 1px solid oklab(0 0 0 / 0); background #ffffff `light.fg.headline`; text NoiGrotesk 14/15.4 500, #14151c `light.bg.footer` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+!["Sign up" CTA default](components/crops/stu-signup-button-default.png) !["Sign up" CTA hover](components/crops/stu-signup-button-hover.png) !["Sign up" CTA focus-visible](components/crops/stu-signup-button-focus-visible.png) !["Sign up" CTA pressed](components/crops/stu-signup-button-pressed.png)
 
 #### Arrow text link
 "Find jobs and internships →" — an arrow-suffixed text link in the brand face. Read as `stu-text-link` on the students page.
@@ -440,7 +436,7 @@ States read on 2026-11-17T04:45:24.325Z (default); 2026-11-17T04:45:27.061Z (hov
 | hover | background oklab(0.352278 -0.0551743 -0.0235738 / 0.8) |
 | focus-visible | outline 1px auto #101010, offset 1px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Arrow text link default](components/crops/stu-text-link-default.png) ![Arrow text link hover](components/crops/stu-text-link-hover.png) ![Arrow text link focus-visible](components/crops/stu-text-link-focus-visible.png)
 
 #### Card carousel arrow
 A "Slide to the next/previous card" arrow button. Read as `stu-carousel-btn` on the students page.
@@ -453,7 +449,7 @@ States read on 2026-11-17T04:57:26.817Z (default); 2026-11-17T04:57:36.283Z (hov
 
 Child layers that carry the look: div 48x48 background #ffffff `light.fg.headline` radius 9999px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Card carousel arrow default](components/crops/stu-carousel-btn-default.png) ![Card carousel arrow hover](components/crops/stu-carousel-btn-hover.png)
 
 ### Blog
 
@@ -467,7 +463,7 @@ States read on 2026-11-17T04:57:57.374Z (default); 2026-11-17T04:57:58.776Z (foc
 |---|---|
 | default (same: focused) | size 343 x 27; padding 0px 0px 0px 8px; background #f3f4fa `light.bg.muted`; text NoiGrotesk 22/22 400, #000000 `light.nav.legal`; placeholder #000000 `light.nav.legal` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Blog search field default](components/crops/blog-search-input-default.png) ![Blog search field focused](components/crops/blog-search-input-focused.png)
 
 #### Search button
 The Search button beside the field — CDP-forced states only. Read as `blog-search-button` on the blog page.
@@ -478,7 +474,7 @@ States read on 2026-11-17T04:57:59.698Z (default); 2026-11-17T04:58:01.563Z (hov
 | default (same: hover, pressed) | size 88.92 x 48; padding 14px 16px; radius 4px; background #052326 `access.deprecated.backgroundInvertedSecondary`; text NoiGrotesk 18/18 400, #ffffff `light.fg.headline`; transition color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), fill 0.2s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | focus-visible | outline 1px auto #101010, offset 0px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Search button default](components/crops/blog-search-button-default.png) ![Search button hover](components/crops/blog-search-button-hover.png) ![Search button focus-visible](components/crops/blog-search-button-focus-visible.png) ![Search button pressed](components/crops/blog-search-button-pressed.png)
 
 #### Category link
 An uppercase category link ("AI SKILLS STUDIO"). Read as `blog-category-link` on the blog page.
@@ -490,7 +486,7 @@ States read on 2026-11-17T04:58:09.935Z (default); 2026-11-17T04:58:18.161Z (hov
 | hover | text NoiGrotesk 16/24 600, #1552d6 `core.color.site.ctaHover` |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.uppercase.font-semibold 137.0x17.0 1px auto rgb(16, 16, 16) offset 1px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Category link default](components/crops/blog-category-link-default.png) ![Category link hover](components/crops/blog-category-link-hover.png) ![Category link focus-visible](components/crops/blog-category-link-focus-visible.png)
 
 #### Article card
 An article card link on the blog index. Read as `blog-card` on the blog page.
@@ -500,7 +496,7 @@ States read on 2026-11-17T04:58:29.342Z (default); 2026-11-17T04:58:32.429Z (hov
 |---|---|
 | default (same: hover) | size 536 x 159.22; background transparent; text NoiGrotesk 40/44 600, #000000 `light.nav.legal` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Article card default](components/crops/blog-card-default.png) ![Article card hover](components/crops/blog-card-hover.png)
 
 #### "Read More" link
 The Read More affordance on an article card. Read as `blog-readmore` on the blog page.
@@ -510,7 +506,7 @@ States read on 2026-11-17T04:58:50.495Z (default); 2026-11-17T04:58:54.647Z (hov
 |---|---|
 | default (same: hover) | size 536 x 25.5; background transparent; text NoiGrotesk 22/24.2 700, #000000 `light.nav.legal`; icon 14.11 x 24, #000000 `light.nav.legal` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+!["Read More" link default](components/crops/blog-readmore-default.png) !["Read More" link hover](components/crops/blog-readmore-hover.png)
 
 ### Careers page
 
@@ -526,7 +522,7 @@ States read on 2026-11-17T04:19:51.532Z (default); 2026-11-17T04:19:53.356Z (hov
 
 Child layers that carry the look: div 24x24 border 1px solid radius 9999px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Benefits tab default](components/crops/car-benefit-tab-default.png) ![Benefits tab hover](components/crops/car-benefit-tab-hover.png) ![Benefits tab selected](components/crops/car-benefit-tab-selected.png)
 
 #### Roles search field
 The open-roles search input — measured at rest, nothing typed. Read as `car-search-input` on the careers page.
@@ -537,10 +533,10 @@ States read on 2026-11-17T04:19:57.286Z (default); 2026-11-17T04:19:59.470Z (foc
 | default | size 688 x 56; padding 16px 12px; border 1px solid oklab(0.271936 0.00340799 -0.0182189 / 0.1); radius 12px; background #ffffff `light.fg.headline`; text NoiGrotesk 16/22.4 400, #14151c `light.bg.footer`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #bebdbf `core.color.framer.7509cc64-b578-4e00-8e69-ea2d85bc1acc` |
 | focused | border 1px solid #252630 `light.input.search.border`; shadow oklab(0.271924 0.003418 -0.0182035) 0px 0px 0px 1px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Roles search field default](components/crops/car-search-input-default.png) ![Roles search field focused](components/crops/car-search-input-focused.png)
 
-#### Department accordion
-A department group header in the roles list — "opened" is the header's own press. Read as `car-dept-button` on the careers page.
+#### Department filter button
+The "All departments" filter dropdown in the roles list — "opened" is its own press. Read as `car-dept-button` on the careers page.
 States read on 2026-11-17T04:20:00.423Z (default); 2026-11-17T04:20:09.265Z (hover); 2026-11-17T04:20:16.267Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
@@ -549,7 +545,7 @@ States read on 2026-11-17T04:20:00.423Z (default); 2026-11-17T04:20:09.265Z (hov
 | hover | border 1px solid #bebdbf `core.color.framer.7509cc64-b578-4e00-8e69-ea2d85bc1acc` |
 | opened | border 1px solid #252630 `light.input.search.border`; shadow oklab(0.271924 0.003418 -0.0182035) 0px 0px 0px 1px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Department filter button default](components/crops/car-dept-button-default.png) ![Department filter button hover](components/crops/car-dept-button-hover.png) ![Department filter button opened](components/crops/car-dept-button-opened.png)
 
 #### Job row link
 An open-role link in the list. Read as `car-job-link` on the careers page.
@@ -562,7 +558,7 @@ States read on 2026-11-17T04:20:18.048Z (default); 2026-11-17T04:20:19.959Z (hov
 
 Child layers that carry the look: div 1392x122 background #ffffff `light.fg.headline` border 1px solid radius 12px; div 73.8x40 background #252630 `light.input.search.border` radius 8px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Job row link default](components/crops/car-job-link-default.png) ![Job row link hover](components/crops/car-job-link-hover.png)
 
 #### Pagination button
 A page number in the roles pagination. Read as `car-page-button` on the careers page.
@@ -573,7 +569,7 @@ States read on 2026-11-17T04:20:21.184Z (default); 2026-11-17T04:20:22.916Z (hov
 | default (same: hover) | size 48 x 48; border 1px solid #14151c `light.bg.footer`; radius 12px; background #14151c `light.bg.footer`; text NoiGrotesk 16/24 400, #ffffff `light.fg.headline`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), display 0.15s cubic-bezier(0.4, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.15s cubic-bezier(0.4, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | focus-visible | outline 1px auto #101010, offset 0px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Pagination button default](components/crops/car-page-button-default.png) ![Pagination button hover](components/crops/car-page-button-hover.png) ![Pagination button focus-visible](components/crops/car-page-button-focus-visible.png)
 
 ### Legal pages
 
@@ -587,7 +583,7 @@ States read on 2026-11-17T04:59:18.678Z (default); 2026-11-17T04:59:20.762Z (hov
 |---|---|
 | default (same: hover) | size 305.5 x 22.41; background transparent; text NoiGrotesk 16/22.4 500, #000000 `light.nav.legal` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Legal nav link (active) default](components/crops/legal-nav-active-default.png) ![Legal nav link (active) hover](components/crops/legal-nav-active-hover.png)
 
 #### Legal nav link
 An inactive section link in the legal left rail (opacity-60). Read as `legal-nav-link` on the legal page.
@@ -598,7 +594,7 @@ States read on 2026-11-17T04:59:22.661Z (default); 2026-11-17T04:59:24.527Z (hov
 | default (same: hover) | size 305.5 x 22.41; background transparent; text NoiGrotesk 16/22.4 400, #000000 `light.nav.legal`; opacity 0.6 |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.opacity-60 305.5x22.4 1px auto rgb(16, 16, 16) offset 1px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Legal nav link default](components/crops/legal-nav-link-default.png) ![Legal nav link hover](components/crops/legal-nav-link-hover.png) ![Legal nav link focus-visible](components/crops/legal-nav-link-focus-visible.png)
 
 ### App access
 
@@ -612,7 +608,7 @@ Read on 2026-11-17T05:07:48.814Z.
 
 Child layers that carry the look: div 137x36 background #ffffff `light.fg.headline` border 1px solid radius 8px; div 0x0 background #ffffff `light.fg.headline` border 1px solid radius 8px shadow rgba(0, 0, 0, 0.08) 0px 6px 30px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px; div 0x0 background #e7e7e7 `access.deprecated.backgroundQuaternary` radius 8px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Login page shell default](components/crops/app-shell-default.png)
 
 #### Locale select
 The "English (US)" rosetta-select in the page chrome. Read as `app-locale-select` on the https://app.joinhandshake.com/access page.
@@ -622,7 +618,7 @@ Read on 2026-11-17T05:07:50.594Z.
 
 Child layers that carry the look: div 137x36 background #ffffff `light.fg.headline` border 1px solid radius 8px; div 0x0 background #ffffff `light.fg.headline` border 1px solid radius 8px shadow rgba(0, 0, 0, 0.08) 0px 6px 30px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px; div 0x0 background #e7e7e7 `access.deprecated.backgroundQuaternary` radius 8px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Locale select default](components/crops/app-locale-select-default.png)
 
 #### Email field
 The "Enter your email" rosetta-field — measured at rest, nothing typed. Read as `app-email-field` on the https://app.joinhandshake.com/access page.
@@ -633,7 +629,7 @@ States read on 2026-11-17T05:07:51.887Z (default); 2026-11-17T05:07:55.605Z (foc
 | default | size 344 x 48; padding 0px 16px; border 1px solid rgba(18, 18, 18, 0.12) `access.rosettaFg.border`; radius 8px; background #ffffff `light.fg.headline`; text Noi Grotesk 17/23.8 400, #121212 `access.rosettaBg.inverted`; transition transform 0.3s ease-in; placeholder rgba(18, 18, 18, 0.7) `access.rosettaFg.secondary` |
 | focused | border 1px solid #04191b `access.rosettaInteractive.primary`; shadow #04191b 0px 0px 0px 1px inset; outline 1px solid transparent, offset 0px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Email field default](components/crops/app-email-field-default.png) ![Email field focused](components/crops/app-email-field-focused.png)
 
 #### "Continue with email" button
 The rosetta-button submit — pressed states are CDP-forced, so the form never submits. Read as `app-continue-button` on the https://app.joinhandshake.com/access page.
@@ -646,7 +642,7 @@ States read on 2026-11-17T05:08:00.961Z (default); 2026-11-17T05:08:04.863Z (hov
 | focus-visible | outline 2px solid #003bcc `access.rosettaBg.featureCallout`, offset 2px |
 | pressed | image linear-gradient(rgba(255, 255, 255, 0.12) `access.rosettaInteractive.invertedPressed`, rgba(255, 255, 255, 0.12) `access.rosettaInteractive.invertedPressed`) |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+!["Continue with email" button default](components/crops/app-continue-button-default.png) !["Continue with email" button hover](components/crops/app-continue-button-hover.png) !["Continue with email" button focus-visible](components/crops/app-continue-button-focus-visible.png) !["Continue with email" button pressed](components/crops/app-continue-button-pressed.png)
 
 #### Google SSO button
 The "Continue with Google" button — Google's own rendered widget (GSI), recorded as vendor. Read as `app-google-button` on the https://app.joinhandshake.com/access page.
@@ -654,7 +650,7 @@ Read on 2026-11-17T05:08:16.952Z.
 
 **Values (default).** size 364 x 44; background transparent; text Noi Grotesk 15/18 400, #000000 `light.nav.legal`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Google SSO button default](components/crops/app-google-button-default.png)
 
 #### "Sign up as an employer" link
 The employer sign-up link under the login card. Read as `app-employer-link` on the https://app.joinhandshake.com/access page.
@@ -665,7 +661,7 @@ States read on 2026-11-17T05:08:20.413Z (default); 2026-11-17T05:08:22.978Z (hov
 | default | size 61 x 16; background transparent; text Noi Grotesk 15/18 400, #1569e0 |
 | hover | text Noi Grotesk 15/18 400, #0e489a |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+!["Sign up as an employer" link default](components/crops/app-employer-link-default.png) !["Sign up as an employer" link hover](components/crops/app-employer-link-hover.png)
 
 #### Terms link
 The Terms of Service link in the fine print. Read as `app-tos-link` on the https://app.joinhandshake.com/access page.
@@ -676,7 +672,7 @@ States read on 2026-11-17T05:08:27.424Z (default); 2026-11-17T05:08:29.432Z (hov
 | default | size 106.09 x 14; background transparent; text Noi Grotesk 13/15.6 400, #1569e0 |
 | hover | text Noi Grotesk 13/15.6 400, #0e489a |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Terms link default](components/crops/app-tos-link-default.png) ![Terms link hover](components/crops/app-tos-link-hover.png)
 
 ### Site chrome (mobile)
 
@@ -688,7 +684,7 @@ Read on 2026-11-17T04:31:28.944Z.
 
 **Values (default).** size 358 x 48; padding 8px; radius 12px; background #ffffff `light.fg.headline`; text NoiGrotesk 16/14.4 500, #252630 `light.input.search.border`; icon 32 x 32, #000000 `light.nav.legal`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Mobile header pill default](components/crops/m-hs-topbar-default.png)
 
 #### "Open menu" button
 The icon-only button (aria-label "Open menu", no text content) that opens the mobile nav sheet. Read as `m-hs-hamburger` on the home page.
@@ -698,7 +694,7 @@ States read on 2026-11-17T04:31:30.046Z (default); 2026-11-17T04:31:32.069Z (hov
 |---|---|
 | default (same: hover) | size 24 x 16; background transparent; text NoiGrotesk 16/24 400, #000000 `light.nav.legal`; icon 16 x 16, #000000 `light.nav.legal` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+!["Open menu" button default](components/crops/m-hs-hamburger-default.png) !["Open menu" button hover](components/crops/m-hs-hamburger-hover.png)
 
 #### Nav sheet (open)
 The opened mobile navigation sheet. The "Open menu" press happens in find(): the sheet is only reachable once open, so the state itself is a no-op. Read as `m-hs-drawer` on the home page.
@@ -706,7 +702,7 @@ Read on 2026-11-17T04:31:35.079Z.
 
 **Values (opened).** size 390 x 772; padding 8px 16px 24px 16px; background #ffffff `light.fg.headline`; text NoiGrotesk 28/30.8 400, #000000 `light.nav.legal`; icon 16 x 16, #000000 `light.nav.legal`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Nav sheet (open) opened](components/crops/m-hs-drawer-opened.png)
 
 ## Icons
 

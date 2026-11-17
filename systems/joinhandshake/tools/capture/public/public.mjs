@@ -143,10 +143,10 @@ async function faqOpen(p, S, reText = /./) {
   await wait(p, 400);
 }
 
-// The careers department accordion: a group header button opens its role
-// list — a local UI toggle.
+// The careers department filter: the "All departments" dropdown button opens
+// the department list — a local UI toggle; the job links are never followed.
 async function deptOpen(p, S) {
-  const btn = p.locator('button:visible').filter({ hasText: /engineering|design|product|data|marketing|sales|operations|people|finance|legal/i }).first();
+  const btn = p.locator('button:visible').filter({ hasText: /all departments|departments/i }).first();
   if (!(await btn.count())) { log('  ! dept accordion missing'); return; }
   await btn.scrollIntoViewIfNeeded().catch(() => {});
   await btn.click({ timeout: 4000 }).catch(() => {});
@@ -158,8 +158,6 @@ const BOTH = async (p, S) => { await S.view('default'); await S.full(); };
 
 const desktop = {
   home: { url: BASE + '/', wait: 7000, run: async (p, S) => {
-    await step('consent', () => consentShot(p, S));
-    await closePromo(p);
     await S.view('default');
     await step('nav-open', () => navMenu(p, S));
     await S.full();
@@ -258,6 +256,9 @@ for (const { k, mob, app: isApp } of runs) {
       await p.goto(spec.url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
       if (!(await clearChallenge(p, { tries: isApp ? 8 : 12, step: 2000 }))) { log('  BLOCKED challenge', spec.url, `(try ${attempt + 1})`); await ctx.close(); continue; }
       await wait(p, spec.wait || 8000);
+      // The consent banner is shot where the page mounts it, before the first
+      // closePromo hides it — hiding it first would always skip the shot.
+      if (!isApp && name === 'home') await step('consent', () => consentShot(p, S));
       if (!isApp) await closePromo(p);
       await spec.run(p, S);
       done = true;

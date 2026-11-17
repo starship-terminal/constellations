@@ -302,6 +302,23 @@ const out = {
   fonts: result.fonts,
   resolved,
 };
+// A run where the app's challenge never clears must not erase the app
+// readings a previous run captured: carry the earlier file's app bins,
+// resolved names and sheet list forward.
+if (!appOk) {
+  try {
+    const prev = JSON.parse(fs.readFileSync(path.join(REF, 'raw', 'css-vars.json'), 'utf8'));
+    if (prev.resolved && prev.resolved.app && Object.keys(prev.resolved.app).length) {
+      out.resolved.app = prev.resolved.app;
+      out.app = prev.app;
+      out['app-theme'] = prev['app-theme'];
+      out.sheets = [...out.sheets, ...(prev.sheets || []).filter((s) => s.startsWith('app:') || s.startsWith('app-inline'))];
+      out.counts.names.app = [...new Set((out.app || []).flatMap((r) => Object.keys(r.properties)))].sort().length;
+      out.counts.names['app-theme'] = [...new Set((out['app-theme'] || []).flatMap((r) => Object.keys(r.properties)))].sort().length;
+      console.log(`  kept previous run's app readings: ${Object.keys(prev.resolved.app).length} resolved names, ${(prev.app || []).length + (prev['app-theme'] || []).length} rules`);
+    }
+  } catch { /* no previous file — nothing to carry */ }
+}
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
 fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
 console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names theme ${out.counts.names.theme}, app-theme ${out.counts.names['app-theme']}, app ${out.counts.names.app}, vendor ${out.counts.names.vendor}, utility ${out.counts.names.utility}, tailwind ${out.counts.names.tailwind}`);
