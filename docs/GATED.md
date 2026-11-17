@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_118 of 176 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_119 of 177 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -189,6 +189,10 @@ Access: signed out (clay.earth 301-redirects to me.sh - the Clay product rebrand
 Access: signed out (the marketing routes are fully public; the editor sits behind app.clipchamp.com sign-in - the public login card was measured at rest, the email path where the only field lives was never entered; consent and promo overlays were hidden without answering them; CTA anchors to signup/login were never followed)
 - the editor itself - timeline, assets, export - sits behind app.clipchamp.com sign-in and was never crossed; the sign-in card was measured at rest but never submitted
 - no credentials field renders on the sign-in card until the email path is entered; that path was never crossed, so no field was measured
+
+## [Cofounder](../systems/cofounder) — `cofounder`
+Access: signed out (the marketing routes are fully public; the Cofounder OS sits behind app.cofounder.co sign-in - the login card was measured at rest only; CTA anchors to the app were never followed; the hero copy-prompt button writes the clipboard so it was never pressed; no form was submitted and nothing was authenticated)
+- the Cofounder OS - workspace, integrations, billing - sits behind app.cofounder.co sign-in and was never crossed; the login card was measured at rest but never submitted
 
 ## [Discord](../systems/discord) — `discord`
 Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)

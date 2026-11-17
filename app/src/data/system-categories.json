@@ -1498,5 +1498,14 @@
       "Productivity"
     ],
     "reason": "catalog.json describes Microsoft's Clipchamp video editor: marketing pages for the browser video editor, templates, stock library, pricing tiers and an education/work surface."
+  },
+  {
+    "referenceId": "systems:cofounder",
+    "groupId": "web-categories",
+    "labels": [
+      "AI Tool",
+      "Productivity"
+    ],
+    "reason": "catalog.json describes Cofounder's AI agent-orchestration marketing site: a pixel-art hero, an agent tools band, how-to guides, pricing cards and the Cofounder OS sign-in boundary."
   }
 ]
