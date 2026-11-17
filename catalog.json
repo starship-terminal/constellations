@@ -16427,6 +16427,7 @@
     "route": "public-web",
     "date": "2026-11-18",
     "durationMin": 120,
+    "pr": "https://github.com/starship-terminal/constellations/pull/649",
     "gaps": [
      "Sign in at https://app.krisp.ai/login: the meeting assistant, notes, recordings and account settings sit behind sign-in and were not captured",
      "Get Krisp and Try it Free go to https://app.krisp.ai/sign-up: account creation was not followed",
