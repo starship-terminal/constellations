@@ -10,7 +10,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `ABC Favorit 16/22 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (108 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (107 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -53,7 +53,7 @@ Screenshots are named `{page}-{theme}-{state}.png` where `{theme}` is the surfac
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 13 components were given a real keyboard focus. 10 draw an outline ring: `nav-start-selling` (1px auto #101010, offset 1px), `nav-category` (1px auto #101010, offset 1px), `discover-card` (on a child: 1px auto rgb(16, 16, 16) offset 1px), `discover-load-more` (1px auto #101010, offset 0px), `home-search-button` (1px auto #101010, offset 0px), `login-oauth` (1px auto #101010, offset 0px), `login-submit` (1px auto #101010, offset 0px), `product-term-select` (2px solid #36a9ae, offset 0px), `product-buy` (1px auto #101010, offset 1px), `checkout-country` (2px solid #36a9ae, offset 0px). The other 3 show no measured change: `nav-login`, `discover-pager-arrow`, `discover-tab`.
+**Focus.** 11 components were given a real keyboard focus. 10 draw an outline ring: `nav-start-selling` (1px auto #101010, offset 1px), `nav-category` (1px auto #101010, offset 1px), `discover-card` (on a child: 1px auto rgb(16, 16, 16) offset 1px), `discover-load-more` (1px auto #101010, offset 0px), `home-search-button` (1px auto #101010, offset 0px), `login-oauth` (1px auto #101010, offset 0px), `login-submit` (1px auto #101010, offset 0px), `product-term-select` (2px solid #36a9ae, offset 0px), `product-buy` (1px auto #101010, offset 1px), `checkout-country` (2px solid #36a9ae, offset 0px). The other 1 show no measured change: `discover-pager-arrow`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -73,7 +73,7 @@ Values that apply across entries, from the measurement files.
 | [Login form card](#login-form-card) | 736 x 738 | - | - | transparent | none | 0 |
 | [Tier option (radio)](#tier-option-radio) | 331.34 x 100 | 1px solid #36a9ae | 4px | #ffffff `light.role.background` | #36a9ae 0px 0px 0px 1px | 12px 16px |
 | [Order summary card](#order-summary-card) | 832 x 567 | - | - | transparent | none | 0 |
-| [Product card, phone](#product-card-phone) | 234 x 506 | 1px solid #000000 `light.role.border` | 4px | #ffffff `light.role.background` | none | 0 |
+| [Product card, phone](#product-card-phone) | 234 x 498 | 1px solid #000000 `light.role.border` | 4px | #ffffff `light.role.background` | none | 0 |
 
 ## Components
 
@@ -83,7 +83,7 @@ The header every gumroad.com page carries: the GUMROAD wordmark, the marketplace
 
 #### Header bar
 The hero header over Discover: wordmark, search, the auth buttons and the category nav. Read as `nav-bar` on the Discover page.
-States read on 2026-11-17T04:36:14.885Z (default); 2026-11-17T04:36:17.148Z (dark).
+States read on 2026-11-17T07:51:44.585Z (default); 2026-11-17T07:52:02.965Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -94,7 +94,7 @@ States read on 2026-11-17T04:36:14.885Z (default); 2026-11-17T04:36:17.148Z (dar
 
 #### Wordmark link
 The GUMROAD wordmark, uppercased display type, linking home. Read as `nav-logo` on the Discover page.
-States read on 2026-11-17T04:36:23.032Z (default); 2026-11-17T04:36:26.037Z (hover).
+States read on 2026-11-17T07:52:04.910Z (default); 2026-11-17T07:52:07.148Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -106,7 +106,7 @@ Child layers that carry the look: span 245x46.9 background #000000 `light.role.b
 
 #### Search combobox
 The "Search products" field — a combobox that opens a suggestion menu; "focused" is the field clicked into, nothing typed. Read as `nav-search` on the Discover page.
-States read on 2026-11-17T04:36:40.153Z (default); 2026-11-17T04:36:41.924Z (focused); 2026-11-17T04:36:43.937Z (dark).
+States read on 2026-11-17T07:52:08.382Z (default); 2026-11-17T07:52:10.419Z (focused); 2026-11-17T07:52:12.466Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -118,18 +118,18 @@ States read on 2026-11-17T04:36:40.153Z (default); 2026-11-17T04:36:41.924Z (foc
 
 #### "Log in" button
 The bordered auth button beside the primary CTA. Read as `nav-login` on the Discover page.
-States read on 2026-11-17T04:36:47.975Z (default); 2026-11-17T04:36:57.238Z (hover); 2026-11-17T04:37:03.415Z (focus-visible).
+States read on 2026-11-17T07:52:13.336Z (focus-visible); 2026-11-17T07:52:14.803Z (default); 2026-11-17T07:52:21.535Z (hover). `focus-visible` failed at capture (keyboard focus never reached the target — focus-visible state not measurable).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 79 x 48; padding 12px 16px; border 1px solid #000000 `light.role.border`; radius 4px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 79 x 48; padding 12px 16px; border 1px solid #000000 `light.role.border`; radius 4px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | shadow #000000 4px 4px 0px 0px; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
 
-!["Log in" button default](components/crops/nav-login-default.png) !["Log in" button hover](components/crops/nav-login-hover.png) !["Log in" button focus-visible](components/crops/nav-login-focus-visible.png)
+!["Log in" button default](components/crops/nav-login-default.png) !["Log in" button hover](components/crops/nav-login-hover.png)
 
 #### "Start selling" button
 The filled primary auth CTA — primary background, contrast-primary text. Read as `nav-start-selling` on the Discover page.
-States read on 2026-11-17T04:37:04.300Z (default); 2026-11-17T04:37:06.128Z (hover); 2026-11-17T04:37:07.375Z (focus-visible); 2026-11-17T04:37:08.644Z (pressed); 2026-11-17T04:37:10.331Z (dark).
+States read on 2026-11-17T07:52:27.533Z (default); 2026-11-17T07:52:29.548Z (hover); 2026-11-17T07:52:34.787Z (focus-visible); 2026-11-17T07:52:38.771Z (pressed); 2026-11-17T07:52:53.835Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -143,7 +143,7 @@ States read on 2026-11-17T04:37:04.300Z (default); 2026-11-17T04:37:06.128Z (hov
 
 #### Category nav link
 A link in the categories nav ("Design") — underlined text links on the header bar. Read as `nav-category` on the Discover page.
-States read on 2026-11-17T04:37:12.009Z (default); 2026-11-17T04:37:14.228Z (hover); 2026-11-17T04:37:15.665Z (focus-visible).
+States read on 2026-11-17T07:53:00.963Z (default); 2026-11-17T07:53:10.073Z (hover); 2026-11-17T07:53:33.508Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -155,11 +155,11 @@ States read on 2026-11-17T04:37:12.009Z (default); 2026-11-17T04:37:14.228Z (hov
 
 #### Category nav link, current
 "All" — the current category, painted with the active marker. Read as `nav-category-active` on the Discover page.
-Read on 2026-11-17T04:37:35.404Z.
+Read on 2026-11-17T07:53:35.208Z.
 
 **Values (default).** size 45 x 40; padding 8px 12px; border 1px solid #000000 `light.role.border`; radius 3.35544e+07px; background #ffffff `light.role.background`; text ABC Favorit 16/22 400, #000000 `light.role.border`; transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Category nav link, current default](components/crops/nav-category-active-default.png)
 
 ### Site chrome (mobile)
 
@@ -167,7 +167,7 @@ The 390px header: the wordmark and the menu button that opens the phone's nav pa
 
 #### Mobile header
 The header at 390px: wordmark, search and the menu button. Read as `m-nav-bar` on the Discover page.
-Read on 2026-11-17T04:34:37.125Z.
+Read on 2026-11-17T08:00:24.165Z.
 
 **Values (default).** size 390 x 243.86; padding 32px 16px; border B: 1px solid #000000 `light.role.border`; background #f4f4f0 `light.ground.bodyBg`; text ABC Favorit 16/22 400, #000000 `light.role.border`; icon 20 x 20, #000000 `light.role.border`.
 
@@ -175,7 +175,7 @@ Read on 2026-11-17T04:34:37.125Z.
 
 #### Menu button
 The button that opens the mobile nav panel. Read as `m-nav-menu-button` on the Discover page.
-States read on 2026-11-17T04:34:37.972Z (default); 2026-11-17T04:34:39.831Z (hover).
+States read on 2026-11-17T08:00:28.623Z (default); 2026-11-17T08:00:34.071Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -189,7 +189,7 @@ The marketplace grid page: the featured-product carousel with its unlabelled pag
 
 #### Featured product card
 A large card in the Featured products carousel: cover, title, blurb, creator, rating and the price flag. Read as `discover-featured-card` on the Discover page.
-States read on 2026-11-17T04:37:50.550Z (default); 2026-11-17T04:37:52.978Z (hover); 2026-11-17T04:37:55.182Z (dark).
+States read on 2026-11-17T07:53:36.550Z (default); 2026-11-17T07:53:41.827Z (hover); 2026-11-17T07:53:47.183Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -201,7 +201,7 @@ States read on 2026-11-17T04:37:50.550Z (default); 2026-11-17T04:37:52.978Z (hov
 
 #### Carousel pager arrow
 The small square arrow button beside the "1 / 8" counter in the Featured header. Read as `discover-pager-arrow` on the Discover page.
-States read on 2026-11-17T04:37:56.929Z (default); 2026-11-17T04:37:58.795Z (hover); 2026-11-17T04:38:00.150Z (focus-visible).
+States read on 2026-11-17T07:54:05.902Z (default); 2026-11-17T07:54:07.853Z (hover); 2026-11-17T07:54:09.296Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -211,7 +211,7 @@ States read on 2026-11-17T04:37:56.929Z (default); 2026-11-17T04:37:58.795Z (hov
 
 #### Product card (market grid)
 A card in the "On the market" grid: cover block, title, creator, rating row and the price cell in the footer. Read as `discover-card` on the Discover page.
-States read on 2026-11-17T04:38:01.595Z (default); 2026-11-17T04:38:03.644Z (hover); 2026-11-17T04:38:05.109Z (focus-visible); 2026-11-17T04:38:06.988Z (dark).
+States read on 2026-11-17T07:54:11.573Z (default); 2026-11-17T07:54:13.783Z (hover); 2026-11-17T07:54:16.611Z (focus-visible); 2026-11-17T07:54:19.069Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -223,36 +223,36 @@ States read on 2026-11-17T04:38:01.595Z (default); 2026-11-17T04:38:03.644Z (hov
 
 #### Price flag
 The price cell in a card footer — the accent flag tag ("SGD 47.67"). Read as `discover-card-price` on the Discover page.
-States read on 2026-11-17T04:38:12.083Z (default); 2026-11-17T04:38:18.380Z (dark).
+States read on 2026-11-17T07:54:25.081Z (default); 2026-11-17T07:54:27.442Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: dark) | size 97 x 30; padding 4px 8px; background #ff90e8 `light.role.accent`; text ABC Favorit 16/22 400, #000000 `light.role.border` |
+| default (same: dark) | size 102 x 30; padding 4px 8px; background #ff90e8 `light.role.accent`; text ABC Favorit 16/22 400, #000000 `light.role.border` |
 
 ![Price flag default](components/crops/discover-card-price-default.png) ![Price flag dark](components/crops/discover-card-price-dark.png)
 
 #### Rating stars row
 The star rating in a card footer ("5.0 (6)"). Read as `discover-card-rating` on the Discover page.
-Read on 2026-11-17T04:38:32.985Z.
+Read on 2026-11-17T07:54:29.507Z.
 
-**Values (default).** size 23 x 22; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`.
+**Values (default).** size 24 x 22; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`.
 
 ![Rating stars row default](components/crops/discover-card-rating-default.png)
 
 #### Market tab
 A tab in the market switcher ("Trending" / "Best Sellers" / "Hot & New") — a bordered pill link. Read as `discover-tab` on the Discover page.
-States read on 2026-11-17T04:38:36.824Z (default); 2026-11-17T04:38:39.907Z (hover); 2026-11-17T04:38:41.193Z (focus-visible).
+States read on 2026-11-17T07:54:29.516Z (focus-visible); 2026-11-17T07:54:30.455Z (default); 2026-11-17T07:54:33.347Z (hover). `focus-visible` failed at capture (keyboard focus never reached the target — focus-visible state not measurable).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 114 x 40; padding 8px 12px; border 1px solid transparent; radius 3.35544e+07px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border` |
+| default | size 114 x 40; padding 8px 12px; border 1px solid transparent; radius 3.35544e+07px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border` |
 | hover | border 1px solid #000000 `light.role.border` |
 
-![Market tab default](components/crops/discover-tab-default.png) ![Market tab hover](components/crops/discover-tab-hover.png) ![Market tab focus-visible](components/crops/discover-tab-focus-visible.png)
+![Market tab default](components/crops/discover-tab-default.png) ![Market tab hover](components/crops/discover-tab-hover.png)
 
 #### Market tab, selected
 "Trending" — the selected tab, filled with the inverted colours. Read as `discover-tab-active` on the Discover page.
-States read on 2026-11-17T04:38:44.325Z (default); 2026-11-17T04:38:46.548Z (dark).
+States read on 2026-11-17T07:54:37.982Z (default); 2026-11-17T07:55:12.180Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -263,7 +263,7 @@ States read on 2026-11-17T04:38:44.325Z (default); 2026-11-17T04:38:46.548Z (dar
 
 #### Filters disclosure
 The "Filters" details/summary panel — "opened" is its own disclosure press. Read as `discover-filters` on the Discover page.
-States read on 2026-11-17T04:38:48.568Z (default); 2026-11-17T04:38:50.729Z (opened).
+States read on 2026-11-17T07:55:13.963Z (default); 2026-11-17T07:55:17.556Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -276,7 +276,7 @@ Child layers that carry the look: details 310x55 border 1px solid; input 24x24 b
 
 #### Filter checkbox
 A checkbox row inside the open Filters panel (the square box with the tick). Read as `discover-filter-checkbox` on the Discover page.
-States read on 2026-11-17T04:38:51.618Z (default); 2026-11-17T04:38:53.408Z (hover).
+States read on 2026-11-17T07:55:24.015Z (default); 2026-11-17T07:55:26.837Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -286,7 +286,7 @@ States read on 2026-11-17T04:38:51.618Z (default); 2026-11-17T04:38:53.408Z (hov
 
 #### "Load more" button
 The bordered pagination button under the market grid. Read as `discover-load-more` on the Discover page.
-States read on 2026-11-17T04:38:53.419Z (pressed); 2026-11-17T04:38:54.299Z (default); 2026-11-17T04:38:56.995Z (hover); 2026-11-17T04:38:58.247Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
+States read on 2026-11-17T07:55:26.847Z (pressed); 2026-11-17T07:55:29.805Z (default); 2026-11-17T07:55:38.025Z (hover); 2026-11-17T07:55:41.313Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -298,7 +298,7 @@ States read on 2026-11-17T04:38:53.419Z (pressed); 2026-11-17T04:38:54.299Z (def
 
 #### Currency select
 The currency picker at the foot of the page ("$ (US Dollars)"). Read as `discover-currency-select` on the Discover page.
-States read on 2026-11-17T04:38:59.441Z (default); 2026-11-17T04:39:01.255Z (hover).
+States read on 2026-11-17T07:55:50.677Z (default); 2026-11-17T07:55:55.802Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -312,9 +312,9 @@ The product card as the Discover grid draws it at 390 wide.
 
 #### Product card, phone
 A market-grid card at 390px — the grid collapses to a single column. Read as `m-discover-card` on the Discover page.
-Read on 2026-11-17T04:34:41.103Z.
+Read on 2026-11-17T08:00:38.894Z.
 
-**Values (default).** size 234 x 506; border 1px solid #000000 `light.role.border`; radius 4px; background #ffffff `light.role.background`; text ABC Favorit 20/26 400, #000000 `light.role.border`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1).
+**Values (default).** size 234 x 498; border 1px solid #000000 `light.role.border`; radius 4px; background #ffffff `light.role.background`; text ABC Favorit 20/26 400, #000000 `light.role.border`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #000000 `light.role.border`.
 
 ![Product card, phone default](components/crops/m-discover-card-default.png)
 
@@ -324,7 +324,7 @@ The landing page hero: the 'Go from 0 to $1' display heading, the marketplace se
 
 #### Hero section
 The landing hero ("Go from 0 to $1") — display heading over the brand illustration. Read as `home-hero` on the landing page.
-States read on 2026-11-17T04:41:01.235Z (default); 2026-11-17T04:41:04.039Z (dark).
+States read on 2026-11-17T07:56:30.470Z (default); 2026-11-17T07:56:32.742Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -335,7 +335,7 @@ States read on 2026-11-17T04:41:01.235Z (default); 2026-11-17T04:41:04.039Z (dar
 
 #### Hero heading
 The display headline in ABC Favorit. Read as `home-h1` on the landing page.
-States read on 2026-11-17T04:41:10.321Z (default); 2026-11-17T04:41:29.161Z (dark).
+States read on 2026-11-17T07:56:34.647Z (default); 2026-11-17T07:56:36.550Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -346,7 +346,7 @@ States read on 2026-11-17T04:41:10.321Z (default); 2026-11-17T04:41:29.161Z (dar
 
 #### Marketplace search field
 The hero's "Search marketplace" input with its own search button. Read as `home-search` on the landing page.
-States read on 2026-11-17T04:41:31.127Z (default); 2026-11-17T04:41:37.524Z (focused).
+States read on 2026-11-17T07:56:47.373Z (default); 2026-11-17T07:56:58.649Z (focused).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -357,7 +357,7 @@ States read on 2026-11-17T04:41:31.127Z (default); 2026-11-17T04:41:37.524Z (foc
 
 #### Search button
 The square button attached to the hero search field. Read as `home-search-button` on the landing page.
-States read on 2026-11-17T04:41:42.953Z (default); 2026-11-17T04:41:44.969Z (hover); 2026-11-17T04:41:46.336Z (focus-visible); 2026-11-17T04:41:48.248Z (pressed).
+States read on 2026-11-17T07:57:01.797Z (default); 2026-11-17T07:57:03.670Z (hover); 2026-11-17T07:57:06.480Z (focus-visible); 2026-11-17T07:57:17.371Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -368,7 +368,7 @@ States read on 2026-11-17T04:41:42.953Z (default); 2026-11-17T04:41:44.969Z (hov
 
 #### Email capture field
 The footer email field of the "subscribe" form. Read as `home-subscribe-input` on the landing page.
-Read on 2026-11-17T04:41:49.182Z.
+Read on 2026-11-17T07:57:18.517Z.
 
 **Values (default).** size 560.41 x 48; padding 0px 16px; border 1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.3); radius 4px; background transparent; text ABC Favorit 16/24 400, #ffffff `light.role.background`; placeholder oklab(0.999994 0.0000455678 0.0000200868 / 0.5).
 
@@ -381,7 +381,7 @@ Not on the page when it was captured.
 
 #### Subscribe form
 The email capture form row at the foot of the landing page — the field plus its arrow submit. Read as `home-subscribe-form` on the landing page.
-States read on 2026-11-17T04:41:50.363Z (default); 2026-11-17T04:41:54.332Z (dark).
+States read on 2026-11-17T07:57:19.418Z (default); 2026-11-17T07:57:26.049Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -397,7 +397,7 @@ The log-in card: OAuth buttons (Apple, Google, X, Stripe), the email and passwor
 
 #### Login form card
 The centred card: OAuth buttons, the divider, the email/password fieldset and the submit. Read as `login-card` on the log in page.
-States read on 2026-11-17T04:31:12.980Z (default); 2026-11-17T04:31:17.145Z (dark).
+States read on 2026-11-17T07:58:03.349Z (default); 2026-11-17T07:58:06.110Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -409,7 +409,7 @@ Child layers that carry the look: button 736x48 background #000000 `light.role.b
 
 #### OAuth button
 An identity-provider button ("Apple" / "Google" / "X" / "Stripe") — full-width bordered. Read as `login-oauth` on the log in page.
-States read on 2026-11-17T04:31:18.835Z (default); 2026-11-17T04:31:20.703Z (hover); 2026-11-17T04:31:21.993Z (focus-visible).
+States read on 2026-11-17T07:58:07.825Z (default); 2026-11-17T07:58:11.199Z (hover); 2026-11-17T07:58:12.550Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -421,7 +421,7 @@ States read on 2026-11-17T04:31:18.835Z (default); 2026-11-17T04:31:20.703Z (hov
 
 #### Email input
 The labelled email field — measured, never typed into. Read as `login-email` on the log in page.
-States read on 2026-11-17T04:31:22.859Z (default); 2026-11-17T04:31:24.124Z (focused); 2026-11-17T04:31:25.767Z (dark).
+States read on 2026-11-17T07:58:13.557Z (default); 2026-11-17T07:58:14.918Z (focused); 2026-11-17T07:58:17.658Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -433,7 +433,7 @@ States read on 2026-11-17T04:31:22.859Z (default); 2026-11-17T04:31:24.124Z (foc
 
 #### Password input
 The password field with its "Show password" eye button. Read as `login-password` on the log in page.
-Read on 2026-11-17T04:31:27.452Z.
+Read on 2026-11-17T07:58:44.458Z.
 
 **Values (default).** size 702 x 46; padding 12px 16px; radius 4px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; placeholder #000000 `light.role.border`; layers up1 div.inline-flex.items-center rgb(255, 255, 255); input.font-[inherit].py-3 702.0x46.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 4px.
 
@@ -441,7 +441,7 @@ Read on 2026-11-17T04:31:27.452Z.
 
 #### "Login" button
 The filled submit — measured and hovered only, never pressed for real. Read as `login-submit` on the log in page.
-States read on 2026-11-17T04:31:28.298Z (default); 2026-11-17T04:31:30.114Z (hover); 2026-11-17T04:31:31.355Z (focus-visible); 2026-11-17T04:31:32.625Z (pressed); 2026-11-17T04:31:34.273Z (dark).
+States read on 2026-11-17T07:58:51.300Z (default); 2026-11-17T07:58:56.758Z (hover); 2026-11-17T07:59:13.098Z (focus-visible); 2026-11-17T07:59:34.367Z (pressed); 2026-11-17T07:59:36.165Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -454,7 +454,7 @@ States read on 2026-11-17T04:31:28.298Z (default); 2026-11-17T04:31:30.114Z (hov
 
 #### "Forgot your password?" link
 The muted recovery link inside the password fieldset. Read as `login-forgot` on the log in page.
-States read on 2026-11-17T04:31:35.901Z (default); 2026-11-17T04:31:37.660Z (hover).
+States read on 2026-11-17T07:59:38.016Z (default); 2026-11-17T07:59:40.327Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|

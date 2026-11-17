@@ -39,7 +39,7 @@
    "selector": "header.hero, header",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:35:53.992Z",
+   "run": "2026-11-17T07:51:17.533Z",
    "states": {
     "default": {
      "tag": "header",
@@ -231,8 +231,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "via": "resting state",
-     "crop": "components/crops/nav-bar-default.png",
-     "run": "2026-11-17T04:36:14.885Z"
+     "run": "2026-11-17T07:51:44.585Z",
+     "crop": "components/crops/nav-bar-default.png"
     },
     "dark": {
      "tag": "header",
@@ -425,7 +425,7 @@
      },
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/nav-bar-dark.png",
-     "run": "2026-11-17T04:36:17.148Z"
+     "run": "2026-11-17T07:52:02.965Z"
     }
    }
   },
@@ -436,7 +436,7 @@
    "selector": "header a (Gumroad)",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:36:18.617Z",
+   "run": "2026-11-17T07:52:03.816Z",
    "states": {
     "default": {
      "tag": "a",
@@ -539,7 +539,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/nav-logo-default.png",
-     "run": "2026-11-17T04:36:23.032Z"
+     "run": "2026-11-17T07:52:04.910Z"
     },
     "hover": {
      "tag": "a",
@@ -642,7 +642,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-logo-hover.png",
-     "run": "2026-11-17T04:36:26.037Z"
+     "run": "2026-11-17T07:52:07.148Z"
     }
    }
   },
@@ -653,7 +653,7 @@
    "selector": "header input[role=\"combobox\"], header input",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:36:27.136Z",
+   "run": "2026-11-17T07:52:07.157Z",
    "states": {
     "default": {
      "tag": "input",
@@ -758,7 +758,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/nav-search-default.png",
-     "run": "2026-11-17T04:36:40.153Z"
+     "run": "2026-11-17T07:52:08.382Z"
     },
     "focused": {
      "tag": "input",
@@ -864,7 +864,7 @@
      },
      "via": "the field clicked into",
      "crop": "components/crops/nav-search-focused.png",
-     "run": "2026-11-17T04:36:41.924Z"
+     "run": "2026-11-17T07:52:10.419Z"
     },
     "dark": {
      "tag": "input",
@@ -969,7 +969,7 @@
      },
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/nav-search-dark.png",
-     "run": "2026-11-17T04:36:43.937Z"
+     "run": "2026-11-17T07:52:12.466Z"
     }
    }
   },
@@ -980,7 +980,7 @@
    "selector": "header a (Log in)",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:36:45.091Z",
+   "run": "2026-11-17T07:52:13.336Z",
    "states": {
     "default": {
      "tag": "a",
@@ -1072,7 +1072,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/nav-login-default.png",
-     "run": "2026-11-17T04:36:47.975Z"
+     "run": "2026-11-17T07:52:14.803Z"
     },
     "hover": {
      "tag": "a",
@@ -1181,99 +1181,10 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-login-hover.png",
-     "run": "2026-11-17T04:36:57.238Z"
+     "run": "2026-11-17T07:52:21.535Z"
     },
     "focus-visible": {
-     "tag": "a",
-     "classes": "inline-flex items-center justify-center gap-2",
-     "text": "Log in",
-     "rect": {
-      "x": 1160,
-      "y": 32,
-      "w": 79,
-      "h": 48
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "79px",
-      "height": "48px",
-      "minWidth": "0px",
-      "maxWidth": "100%",
-      "minHeight": "auto",
-      "paddingTop": "12px",
-      "paddingRight": "16px",
-      "paddingBottom": "12px",
-      "paddingLeft": "16px",
-      "marginTop": "0px",
-      "marginRight": "16px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "8px",
-      "rowGap": "8px",
-      "columnGap": "8px",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "4px",
-      "borderTopRightRadius": "4px",
-      "borderBottomRightRadius": "4px",
-      "borderBottomLeftRadius": "4px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "22px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "transform, translate, scale, rotate",
-      "transitionDuration": "0.15s",
-      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.inline-flex.items-center",
-       "size": "79.0x48.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "radius": "4px"
-      }
-     ],
-     "via": "keyboard focus (Shift+Tab, Tab)",
-     "crop": "components/crops/nav-login-focus-visible.png",
-     "run": "2026-11-17T04:37:03.415Z"
+     "error": "keyboard focus never reached the target — focus-visible state not measurable"
     }
    }
   },
@@ -1284,7 +1195,7 @@
    "selector": "header a (Start selling)",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:37:03.419Z",
+   "run": "2026-11-17T07:52:24.915Z",
    "states": {
     "default": {
      "tag": "a",
@@ -1377,7 +1288,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/nav-start-selling-default.png",
-     "run": "2026-11-17T04:37:04.300Z"
+     "run": "2026-11-17T07:52:27.533Z"
     },
     "hover": {
      "tag": "a",
@@ -1487,7 +1398,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-start-selling-hover.png",
-     "run": "2026-11-17T04:37:06.128Z"
+     "run": "2026-11-17T07:52:29.548Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -1581,7 +1492,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/nav-start-selling-focus-visible.png",
-     "run": "2026-11-17T04:37:07.375Z"
+     "run": "2026-11-17T07:52:34.787Z"
     },
     "pressed": {
      "tag": "a",
@@ -1691,7 +1602,7 @@
      ],
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/nav-start-selling-pressed.png",
-     "run": "2026-11-17T04:37:08.644Z"
+     "run": "2026-11-17T07:52:38.771Z"
     },
     "dark": {
      "tag": "a",
@@ -1784,7 +1695,7 @@
      ],
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/nav-start-selling-dark.png",
-     "run": "2026-11-17T04:37:10.331Z"
+     "run": "2026-11-17T07:52:53.835Z"
     }
    }
   },
@@ -1795,7 +1706,7 @@
    "selector": "header a[href=\"/design\"]",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:37:11.142Z",
+   "run": "2026-11-17T07:52:55.299Z",
    "states": {
     "default": {
      "tag": "a",
@@ -1887,7 +1798,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/nav-category-default.png",
-     "run": "2026-11-17T04:37:12.009Z"
+     "run": "2026-11-17T07:53:00.963Z"
     },
     "hover": {
      "tag": "a",
@@ -1997,7 +1908,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-category-hover.png",
-     "run": "2026-11-17T04:37:14.228Z"
+     "run": "2026-11-17T07:53:10.073Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -2090,7 +2001,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/nav-category-focus-visible.png",
-     "run": "2026-11-17T04:37:15.665Z"
+     "run": "2026-11-17T07:53:33.508Z"
     }
    }
   },
@@ -2101,7 +2012,7 @@
    "selector": "header a[href=\"/discover\"] (All)",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:37:16.865Z",
+   "run": "2026-11-17T07:53:33.518Z",
    "states": {
     "default": {
      "tag": "a",
@@ -2193,7 +2104,8 @@
       }
      ],
      "via": "resting state",
-     "run": "2026-11-17T04:37:35.404Z"
+     "crop": "components/crops/nav-category-active-default.png",
+     "run": "2026-11-17T07:53:35.208Z"
     }
    }
   },
@@ -2204,12 +2116,12 @@
    "selector": "div.override article",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:37:35.657Z",
+   "run": "2026-11-17T07:53:35.217Z",
    "states": {
     "default": {
      "tag": "article",
      "classes": "relative flex flex-col rounded",
-     "text": "Blossom and Root First Grade (Full Bundle) Important: This is a PDF download. No",
+     "text": "Mindthecolor v3 Professional color correction, grading and image analysis inside",
      "rect": {
       "x": 64,
       "y": 260,
@@ -2308,12 +2220,12 @@
       },
       {
        "node": "div.relative.grid",
-       "size": "114.0x32.0",
+       "size": "119.0x32.0",
        "border": "T:1px solid | B:1px solid | L:1px solid"
       },
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "97.0x30.0",
+       "size": "102.0x30.0",
        "bg": "rgb(255, 144, 232)"
       },
       {
@@ -2329,7 +2241,7 @@
      ],
      "textStyle": {
       "node": "h2.line-clamp-3.gap-3",
-      "text": "Blossom and Root First Grade (Full Bundl",
+      "text": "Mindthecolor v3",
       "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
       "fontSize": "20px",
       "lineHeight": "26px",
@@ -2348,12 +2260,12 @@
      },
      "via": "resting state",
      "crop": "components/crops/discover-featured-card-default.png",
-     "run": "2026-11-17T04:37:50.550Z"
+     "run": "2026-11-17T07:53:36.550Z"
     },
     "hover": {
      "tag": "article",
      "classes": "relative flex flex-col rounded",
-     "text": "Blossom and Root First Grade (Full Bundle) Important: This is a PDF download. No",
+     "text": "Mindthecolor v3 Professional color correction, grading and image analysis inside",
      "rect": {
       "x": 64,
       "y": 260,
@@ -2453,12 +2365,12 @@
       },
       {
        "node": "div.relative.grid",
-       "size": "114.0x32.0",
+       "size": "119.0x32.0",
        "border": "T:1px solid | B:1px solid | L:1px solid"
       },
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "97.0x30.0",
+       "size": "102.0x30.0",
        "bg": "rgb(255, 144, 232)"
       },
       {
@@ -2474,7 +2386,7 @@
      ],
      "textStyle": {
       "node": "h2.line-clamp-3.gap-3",
-      "text": "Blossom and Root First Grade (Full Bundl",
+      "text": "Mindthecolor v3",
       "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
       "fontSize": "20px",
       "lineHeight": "26px",
@@ -2493,12 +2405,12 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/discover-featured-card-hover.png",
-     "run": "2026-11-17T04:37:52.978Z"
+     "run": "2026-11-17T07:53:41.827Z"
     },
     "dark": {
      "tag": "article",
      "classes": "relative flex flex-col rounded",
-     "text": "Blossom and Root First Grade (Full Bundle) Important: This is a PDF download. No",
+     "text": "Mindthecolor v3 Professional color correction, grading and image analysis inside",
      "rect": {
       "x": 64,
       "y": 260,
@@ -2597,12 +2509,12 @@
       },
       {
        "node": "div.relative.grid",
-       "size": "114.0x32.0",
+       "size": "119.0x32.0",
        "border": "T:1px solid | B:1px solid | L:1px solid"
       },
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "97.0x30.0",
+       "size": "102.0x30.0",
        "bg": "rgb(255, 144, 232)"
       },
       {
@@ -2618,7 +2530,7 @@
      ],
      "textStyle": {
       "node": "h2.line-clamp-3.gap-3",
-      "text": "Blossom and Root First Grade (Full Bundl",
+      "text": "Mindthecolor v3",
       "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
       "fontSize": "20px",
       "lineHeight": "26px",
@@ -2637,7 +2549,7 @@
      },
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/discover-featured-card-dark.png",
-     "run": "2026-11-17T04:37:55.182Z"
+     "run": "2026-11-17T07:53:47.183Z"
     }
    }
   },
@@ -2648,7 +2560,7 @@
    "selector": "section (Featured) button",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:37:56.005Z",
+   "run": "2026-11-17T07:53:48.010Z",
    "states": {
     "default": {
      "tag": "button",
@@ -2739,7 +2651,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/discover-pager-arrow-default.png",
-     "run": "2026-11-17T04:37:56.929Z"
+     "run": "2026-11-17T07:54:05.902Z"
     },
     "hover": {
      "tag": "button",
@@ -2830,7 +2742,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/discover-pager-arrow-hover.png",
-     "run": "2026-11-17T04:37:58.795Z"
+     "run": "2026-11-17T07:54:07.853Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -2921,7 +2833,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/discover-pager-arrow-focus-visible.png",
-     "run": "2026-11-17T04:38:00.150Z"
+     "run": "2026-11-17T07:54:09.296Z"
     }
    }
   },
@@ -2932,12 +2844,12 @@
    "selector": "div.grid-cols-2 article",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:38:00.162Z",
+   "run": "2026-11-17T07:54:09.302Z",
    "states": {
     "default": {
      "tag": "article",
      "classes": "relative flex flex-col rounded",
-     "text": "💸 Paycheck to Portfolio Membership Paycheck to Portfolio 5.0 (20) SGD 37.36 a m",
+     "text": "World Of Warcraft Forever - Complete Goldguide Studen Albatroz 4.6 (83) SGD 51.5",
      "rect": {
       "x": 440,
       "y": 189,
@@ -3041,12 +2953,12 @@
       },
       {
        "node": "div.relative.grid",
-       "size": "173.0x32.0",
+       "size": "107.0x32.0",
        "border": "T:1px solid | B:1px solid | L:1px solid"
       },
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "156.0x30.0",
+       "size": "90.0x30.0",
        "bg": "rgb(255, 144, 232)"
       },
       {
@@ -3062,7 +2974,7 @@
      ],
      "textStyle": {
       "node": "h4.line-clamp-4.lg:text-xl",
-      "text": "💸 Paycheck to Portfolio Membership",
+      "text": "World Of Warcraft Forever - Complete Gol",
       "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
       "fontSize": "20px",
       "lineHeight": "28px",
@@ -3081,12 +2993,12 @@
      },
      "via": "resting state",
      "crop": "components/crops/discover-card-default.png",
-     "run": "2026-11-17T04:38:01.595Z"
+     "run": "2026-11-17T07:54:11.573Z"
     },
     "hover": {
      "tag": "article",
      "classes": "relative flex flex-col rounded",
-     "text": "💸 Paycheck to Portfolio Membership Paycheck to Portfolio 5.0 (20) SGD 37.36 a m",
+     "text": "World Of Warcraft Forever - Complete Goldguide Studen Albatroz 4.6 (83) SGD 51.5",
      "rect": {
       "x": 440,
       "y": 189,
@@ -3191,12 +3103,12 @@
       },
       {
        "node": "div.relative.grid",
-       "size": "173.0x32.0",
+       "size": "107.0x32.0",
        "border": "T:1px solid | B:1px solid | L:1px solid"
       },
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "156.0x30.0",
+       "size": "90.0x30.0",
        "bg": "rgb(255, 144, 232)"
       },
       {
@@ -3212,7 +3124,7 @@
      ],
      "textStyle": {
       "node": "h4.line-clamp-4.lg:text-xl",
-      "text": "💸 Paycheck to Portfolio Membership",
+      "text": "World Of Warcraft Forever - Complete Gol",
       "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
       "fontSize": "20px",
       "lineHeight": "28px",
@@ -3231,12 +3143,12 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/discover-card-hover.png",
-     "run": "2026-11-17T04:38:03.644Z"
+     "run": "2026-11-17T07:54:13.783Z"
     },
     "focus-visible": {
      "tag": "article",
      "classes": "relative flex flex-col rounded",
-     "text": "💸 Paycheck to Portfolio Membership Paycheck to Portfolio 5.0 (20) SGD 37.36 a m",
+     "text": "World Of Warcraft Forever - Complete Goldguide Studen Albatroz 4.6 (83) SGD 51.5",
      "rect": {
       "x": 440,
       "y": 189,
@@ -3345,12 +3257,12 @@
       },
       {
        "node": "div.relative.grid",
-       "size": "173.0x32.0",
+       "size": "107.0x32.0",
        "border": "T:1px solid | B:1px solid | L:1px solid"
       },
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "156.0x30.0",
+       "size": "90.0x30.0",
        "bg": "rgb(255, 144, 232)"
       },
       {
@@ -3366,7 +3278,7 @@
      ],
      "textStyle": {
       "node": "h4.line-clamp-4.lg:text-xl",
-      "text": "💸 Paycheck to Portfolio Membership",
+      "text": "World Of Warcraft Forever - Complete Gol",
       "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
       "fontSize": "20px",
       "lineHeight": "28px",
@@ -3385,12 +3297,12 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/discover-card-focus-visible.png",
-     "run": "2026-11-17T04:38:05.109Z"
+     "run": "2026-11-17T07:54:16.611Z"
     },
     "dark": {
      "tag": "article",
      "classes": "relative flex flex-col rounded",
-     "text": "💸 Paycheck to Portfolio Membership Paycheck to Portfolio 5.0 (20) SGD 37.36 a m",
+     "text": "World Of Warcraft Forever - Complete Goldguide Studen Albatroz 4.6 (83) SGD 51.5",
      "rect": {
       "x": 440,
       "y": 189,
@@ -3494,12 +3406,12 @@
       },
       {
        "node": "div.relative.grid",
-       "size": "173.0x32.0",
+       "size": "107.0x32.0",
        "border": "T:1px solid | B:1px solid | L:1px solid"
       },
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "156.0x30.0",
+       "size": "90.0x30.0",
        "bg": "rgb(255, 144, 232)"
       },
       {
@@ -3515,7 +3427,7 @@
      ],
      "textStyle": {
       "node": "h4.line-clamp-4.lg:text-xl",
-      "text": "💸 Paycheck to Portfolio Membership",
+      "text": "World Of Warcraft Forever - Complete Gol",
       "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
       "fontSize": "20px",
       "lineHeight": "28px",
@@ -3534,7 +3446,7 @@
      },
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/discover-card-dark.png",
-     "run": "2026-11-17T04:38:06.988Z"
+     "run": "2026-11-17T07:54:19.069Z"
     }
    }
   },
@@ -3545,23 +3457,23 @@
    "selector": "article footer (price)",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:38:08.465Z",
+   "run": "2026-11-17T07:54:21.602Z",
    "states": {
     "default": {
      "tag": "div",
      "classes": "bg-accent-with-text px-2 py-1 whitespace-nowrap",
-     "text": "SGD 171.34",
+     "text": "SGD 253.82",
      "rect": {
       "x": 468,
       "y": 435,
-      "w": 97,
+      "w": 102,
       "h": 30
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "97px",
+      "width": "102px",
       "height": "30px",
       "minWidth": "0px",
       "maxWidth": "100%",
@@ -3630,29 +3542,29 @@
      "paint": [
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "97.0x30.0",
+       "size": "102.0x30.0",
        "bg": "rgb(255, 144, 232)"
       }
      ],
      "via": "resting state",
      "crop": "components/crops/discover-card-price-default.png",
-     "run": "2026-11-17T04:38:12.083Z"
+     "run": "2026-11-17T07:54:25.081Z"
     },
     "dark": {
      "tag": "div",
      "classes": "bg-accent-with-text px-2 py-1 whitespace-nowrap",
-     "text": "SGD 171.34",
+     "text": "SGD 253.82",
      "rect": {
       "x": 468,
       "y": 435,
-      "w": 97,
+      "w": 102,
       "h": 30
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "97px",
+      "width": "102px",
       "height": "30px",
       "minWidth": "0px",
       "maxWidth": "100%",
@@ -3721,13 +3633,13 @@
      "paint": [
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "97.0x30.0",
+       "size": "102.0x30.0",
        "bg": "rgb(255, 144, 232)"
       }
      ],
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/discover-card-price-dark.png",
-     "run": "2026-11-17T04:38:18.380Z"
+     "run": "2026-11-17T07:54:27.442Z"
     }
    }
   },
@@ -3738,23 +3650,23 @@
    "selector": "article footer (rating)",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:38:20.181Z",
+   "run": "2026-11-17T07:54:28.587Z",
    "states": {
     "default": {
      "tag": "span",
      "classes": "rating-average",
-     "text": "4.8",
+     "text": "5.0",
      "rect": {
-      "x": 688,
+      "x": 685,
       "y": 439,
-      "w": 23,
+      "w": 24,
       "h": 22
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "23px",
+      "width": "24px",
       "height": "22px",
       "minWidth": "0px",
       "maxWidth": "100%",
@@ -3822,7 +3734,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/discover-card-rating-default.png",
-     "run": "2026-11-17T04:38:32.985Z"
+     "run": "2026-11-17T07:54:29.507Z"
     }
    }
   },
@@ -3833,7 +3745,7 @@
    "selector": "a[role=\"tab\"]",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:38:33.106Z",
+   "run": "2026-11-17T07:54:29.516Z",
    "states": {
     "default": {
      "tag": "a",
@@ -3925,7 +3837,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/discover-tab-default.png",
-     "run": "2026-11-17T04:38:36.824Z"
+     "run": "2026-11-17T07:54:30.455Z"
     },
     "hover": {
      "tag": "a",
@@ -4017,99 +3929,10 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/discover-tab-hover.png",
-     "run": "2026-11-17T04:38:39.907Z"
+     "run": "2026-11-17T07:54:33.347Z"
     },
     "focus-visible": {
-     "tag": "a",
-     "classes": "border no-underline shrink-0 rounded-full",
-     "text": "Best Sellers",
-     "rect": {
-      "x": 1146,
-      "y": 430,
-      "w": 114,
-      "h": 40
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "114px",
-      "height": "40px",
-      "minWidth": "0px",
-      "maxWidth": "100%",
-      "minHeight": "auto",
-      "paddingTop": "8px",
-      "paddingRight": "12px",
-      "paddingBottom": "8px",
-      "paddingLeft": "12px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgba(0, 0, 0, 0)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgba(0, 0, 0, 0)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgba(0, 0, 0, 0)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgba(0, 0, 0, 0)",
-      "borderTopLeftRadius": "3.35544e+07px",
-      "borderTopRightRadius": "3.35544e+07px",
-      "borderBottomRightRadius": "3.35544e+07px",
-      "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "22px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.border.no-underline",
-       "size": "114.0x40.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "radius": "3.35544e+07px"
-      }
-     ],
-     "via": "keyboard focus (Shift+Tab, Tab)",
-     "crop": "components/crops/discover-tab-focus-visible.png",
-     "run": "2026-11-17T04:38:41.193Z"
+     "error": "keyboard focus never reached the target — focus-visible state not measurable"
     }
    }
   },
@@ -4120,7 +3943,7 @@
    "selector": "a[role=\"tab\"][aria-selected=\"true\"]",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:38:41.329Z",
+   "run": "2026-11-17T07:54:34.298Z",
    "states": {
     "default": {
      "tag": "a",
@@ -4213,7 +4036,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/discover-tab-active-default.png",
-     "run": "2026-11-17T04:38:44.325Z"
+     "run": "2026-11-17T07:54:37.982Z"
     },
     "dark": {
      "tag": "a",
@@ -4306,7 +4129,7 @@
      ],
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/discover-tab-active-dark.png",
-     "run": "2026-11-17T04:38:46.548Z"
+     "run": "2026-11-17T07:55:12.180Z"
     }
    }
   },
@@ -4317,7 +4140,7 @@
    "selector": "details",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:38:47.372Z",
+   "run": "2026-11-17T07:55:13.015Z",
    "states": {
     "default": {
      "tag": "details",
@@ -4477,12 +4300,12 @@
      },
      "via": "resting state",
      "crop": "components/crops/discover-filters-default.png",
-     "run": "2026-11-17T04:38:48.568Z"
+     "run": "2026-11-17T07:55:13.963Z"
     },
     "opened": {
      "tag": "details",
      "classes": "flex-wrap items-center justify-between gap-4",
-     "text": "Tags All Products vrchat (20122) notion template (11404) vrchat asset (8579) ble",
+     "text": "Tags All Products vrchat (20121) notion template (11406) vrchat asset (8579) ble",
      "rect": {
       "x": 65,
       "y": 312,
@@ -4637,7 +4460,7 @@
      },
      "via": "the disclosure's own press",
      "crop": "components/crops/discover-filters-opened.png",
-     "run": "2026-11-17T04:38:50.729Z"
+     "run": "2026-11-17T07:55:17.556Z"
     }
    }
   },
@@ -4648,7 +4471,7 @@
    "selector": "details[open] input",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:38:50.741Z",
+   "run": "2026-11-17T07:55:17.566Z",
    "states": {
     "default": {
      "tag": "input",
@@ -4746,7 +4569,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/discover-filter-checkbox-default.png",
-     "run": "2026-11-17T04:38:51.618Z"
+     "run": "2026-11-17T07:55:24.015Z"
     },
     "hover": {
      "tag": "input",
@@ -4844,7 +4667,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/discover-filter-checkbox-hover.png",
-     "run": "2026-11-17T04:38:53.408Z"
+     "run": "2026-11-17T07:55:26.837Z"
     }
    }
   },
@@ -4855,7 +4678,7 @@
    "selector": "button (Load more)",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:38:53.419Z",
+   "run": "2026-11-17T07:55:26.847Z",
    "states": {
     "default": {
      "tag": "button",
@@ -4947,14 +4770,14 @@
      ],
      "via": "resting state",
      "crop": "components/crops/discover-load-more-default.png",
-     "run": "2026-11-17T04:38:54.299Z"
+     "run": "2026-11-17T07:55:29.805Z"
     },
     "hover": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center gap-2",
      "text": "Load more",
      "rect": {
-      "x": 847.5,
+      "x": 851.5,
       "y": 426,
       "w": 113,
       "h": 48
@@ -5056,7 +4879,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/discover-load-more-hover.png",
-     "run": "2026-11-17T04:38:56.995Z"
+     "run": "2026-11-17T07:55:38.025Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -5149,7 +4972,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/discover-load-more-focus-visible.png",
-     "run": "2026-11-17T04:38:58.247Z"
+     "run": "2026-11-17T07:55:41.313Z"
     },
     "pressed": {
      "error": "cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location"
@@ -5163,7 +4986,7 @@
    "selector": "select",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:38:58.584Z",
+   "run": "2026-11-17T07:55:41.647Z",
    "states": {
     "default": {
      "tag": "select",
@@ -5256,7 +5079,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/discover-currency-select-default.png",
-     "run": "2026-11-17T04:38:59.441Z"
+     "run": "2026-11-17T07:55:50.677Z"
     },
     "hover": {
      "tag": "select",
@@ -5349,7 +5172,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/discover-currency-select-hover.png",
-     "run": "2026-11-17T04:39:01.255Z"
+     "run": "2026-11-17T07:55:55.802Z"
     }
    }
   },
@@ -5360,7 +5183,7 @@
    "selector": "main header, header.grid",
    "page": "/",
    "url": "https://gumroad.com/",
-   "run": "2026-11-17T04:40:59.146Z",
+   "run": "2026-11-17T07:56:11.528Z",
    "states": {
     "default": {
      "tag": "header",
@@ -5513,7 +5336,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/home-hero-default.png",
-     "run": "2026-11-17T04:41:01.235Z"
+     "run": "2026-11-17T07:56:30.470Z"
     },
     "dark": {
      "tag": "header",
@@ -5666,7 +5489,7 @@
      },
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/home-hero-dark.png",
-     "run": "2026-11-17T04:41:04.039Z"
+     "run": "2026-11-17T07:56:32.742Z"
     }
    }
   },
@@ -5677,7 +5500,7 @@
    "selector": "h1",
    "page": "/",
    "url": "https://gumroad.com/",
-   "run": "2026-11-17T04:41:05.035Z",
+   "run": "2026-11-17T07:56:33.552Z",
    "states": {
     "default": {
      "tag": "h1",
@@ -5761,7 +5584,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/home-h1-default.png",
-     "run": "2026-11-17T04:41:10.321Z"
+     "run": "2026-11-17T07:56:34.647Z"
     },
     "dark": {
      "tag": "h1",
@@ -5845,7 +5668,7 @@
      },
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/home-h1-dark.png",
-     "run": "2026-11-17T04:41:29.161Z"
+     "run": "2026-11-17T07:56:36.550Z"
     }
    }
   },
@@ -5856,7 +5679,7 @@
    "selector": "input#marketplace-search, form input",
    "page": "/",
    "url": "https://gumroad.com/",
-   "run": "2026-11-17T04:41:30.034Z",
+   "run": "2026-11-17T07:56:39.228Z",
    "states": {
     "default": {
      "tag": "input",
@@ -5954,7 +5777,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/home-search-default.png",
-     "run": "2026-11-17T04:41:31.127Z"
+     "run": "2026-11-17T07:56:47.373Z"
     },
     "focused": {
      "tag": "input",
@@ -6053,7 +5876,7 @@
      },
      "via": "the field clicked into",
      "crop": "components/crops/home-search-focused.png",
-     "run": "2026-11-17T04:41:37.524Z"
+     "run": "2026-11-17T07:56:58.649Z"
     }
    }
   },
@@ -6064,7 +5887,7 @@
    "selector": "form button",
    "page": "/",
    "url": "https://gumroad.com/",
-   "run": "2026-11-17T04:41:38.416Z",
+   "run": "2026-11-17T07:56:58.867Z",
    "states": {
     "default": {
      "tag": "button",
@@ -6164,7 +5987,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/home-search-button-default.png",
-     "run": "2026-11-17T04:41:42.953Z"
+     "run": "2026-11-17T07:57:01.797Z"
     },
     "hover": {
      "tag": "button",
@@ -6264,7 +6087,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/home-search-button-hover.png",
-     "run": "2026-11-17T04:41:44.969Z"
+     "run": "2026-11-17T07:57:03.670Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -6365,7 +6188,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/home-search-button-focus-visible.png",
-     "run": "2026-11-17T04:41:46.336Z"
+     "run": "2026-11-17T07:57:06.480Z"
     },
     "pressed": {
      "tag": "button",
@@ -6465,7 +6288,7 @@
      },
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/home-search-button-pressed.png",
-     "run": "2026-11-17T04:41:48.248Z"
+     "run": "2026-11-17T07:57:17.371Z"
     }
    }
   },
@@ -6476,7 +6299,7 @@
    "selector": "form input[type=\"email\"]",
    "page": "/",
    "url": "https://gumroad.com/",
-   "run": "2026-11-17T04:41:48.269Z",
+   "run": "2026-11-17T07:57:17.379Z",
    "states": {
     "default": {
      "tag": "input",
@@ -6484,7 +6307,7 @@
      "text": "Your email address",
      "rect": {
       "x": 57.6,
-      "y": 634.5,
+      "y": 634.1,
       "w": 560.41,
       "h": 48
      },
@@ -6573,7 +6396,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/home-subscribe-input-default.png",
-     "run": "2026-11-17T04:41:49.182Z"
+     "run": "2026-11-17T07:57:18.517Z"
     }
    }
   },
@@ -6595,7 +6418,7 @@
    "selector": "form",
    "page": "/login",
    "url": "https://gumroad.com/login",
-   "run": "2026-11-17T04:31:06.969Z",
+   "run": "2026-11-17T07:57:56.555Z",
    "states": {
     "default": {
      "tag": "form",
@@ -6771,7 +6594,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-card-default.png",
-     "run": "2026-11-17T04:31:12.980Z"
+     "run": "2026-11-17T07:58:03.349Z"
     },
     "dark": {
      "tag": "form",
@@ -6947,7 +6770,7 @@
      },
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/login-card-dark.png",
-     "run": "2026-11-17T04:31:17.145Z"
+     "run": "2026-11-17T07:58:06.110Z"
     }
    }
   },
@@ -6958,7 +6781,7 @@
    "selector": "form button",
    "page": "/login",
    "url": "https://gumroad.com/login",
-   "run": "2026-11-17T04:31:17.953Z",
+   "run": "2026-11-17T07:58:06.927Z",
    "states": {
     "default": {
      "tag": "button",
@@ -7058,15 +6881,15 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-oauth-default.png",
-     "run": "2026-11-17T04:31:18.835Z"
+     "run": "2026-11-17T07:58:07.825Z"
     },
     "hover": {
      "tag": "button",
      "classes": "inline-flex items-center justify-center gap-2",
      "text": "Apple",
      "rect": {
-      "x": 60,
-      "y": 221,
+      "x": 64,
+      "y": 225,
       "w": 736,
       "h": 48
      },
@@ -7175,7 +6998,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/login-oauth-hover.png",
-     "run": "2026-11-17T04:31:20.703Z"
+     "run": "2026-11-17T07:58:11.199Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -7276,7 +7099,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/login-oauth-focus-visible.png",
-     "run": "2026-11-17T04:31:21.993Z"
+     "run": "2026-11-17T07:58:12.550Z"
     }
    }
   },
@@ -7287,7 +7110,7 @@
    "selector": "form input[type=\"email\"]",
    "page": "/login",
    "url": "https://gumroad.com/login",
-   "run": "2026-11-17T04:31:21.996Z",
+   "run": "2026-11-17T07:58:12.557Z",
    "states": {
     "default": {
      "tag": "input",
@@ -7385,7 +7208,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-email-default.png",
-     "run": "2026-11-17T04:31:22.859Z"
+     "run": "2026-11-17T07:58:13.557Z"
     },
     "focused": {
      "tag": "input",
@@ -7484,7 +7307,7 @@
      },
      "via": "the field clicked into",
      "crop": "components/crops/login-email-focused.png",
-     "run": "2026-11-17T04:31:24.124Z"
+     "run": "2026-11-17T07:58:14.918Z"
     },
     "dark": {
      "tag": "input",
@@ -7582,7 +7405,7 @@
      },
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/login-email-dark.png",
-     "run": "2026-11-17T04:31:25.767Z"
+     "run": "2026-11-17T07:58:17.658Z"
     }
    }
   },
@@ -7593,7 +7416,7 @@
    "selector": "form input[type=\"password\"]",
    "page": "/login",
    "url": "https://gumroad.com/login",
-   "run": "2026-11-17T04:31:26.578Z",
+   "run": "2026-11-17T07:58:18.795Z",
    "states": {
     "default": {
      "tag": "input",
@@ -7698,7 +7521,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-password-default.png",
-     "run": "2026-11-17T04:31:27.452Z"
+     "run": "2026-11-17T07:58:44.458Z"
     }
    }
   },
@@ -7709,7 +7532,7 @@
    "selector": "form button (Login)",
    "page": "/login",
    "url": "https://gumroad.com/login",
-   "run": "2026-11-17T04:31:27.458Z",
+   "run": "2026-11-17T07:58:44.550Z",
    "states": {
     "default": {
      "tag": "button",
@@ -7802,7 +7625,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/login-submit-default.png",
-     "run": "2026-11-17T04:31:28.298Z"
+     "run": "2026-11-17T07:58:51.300Z"
     },
     "hover": {
      "tag": "button",
@@ -7912,7 +7735,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/login-submit-hover.png",
-     "run": "2026-11-17T04:31:30.114Z"
+     "run": "2026-11-17T07:58:56.758Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -8006,7 +7829,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/login-submit-focus-visible.png",
-     "run": "2026-11-17T04:31:31.355Z"
+     "run": "2026-11-17T07:59:13.098Z"
     },
     "pressed": {
      "tag": "button",
@@ -8099,7 +7922,7 @@
      ],
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/login-submit-pressed.png",
-     "run": "2026-11-17T04:31:32.625Z"
+     "run": "2026-11-17T07:59:34.367Z"
     },
     "dark": {
      "tag": "button",
@@ -8192,7 +8015,7 @@
      ],
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/login-submit-dark.png",
-     "run": "2026-11-17T04:31:34.273Z"
+     "run": "2026-11-17T07:59:36.165Z"
     }
    }
   },
@@ -8203,7 +8026,7 @@
    "selector": "form a (Forgot)",
    "page": "/login",
    "url": "https://gumroad.com/login",
-   "run": "2026-11-17T04:31:35.082Z",
+   "run": "2026-11-17T07:59:37.028Z",
    "states": {
     "default": {
      "tag": "a",
@@ -8287,7 +8110,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-forgot-default.png",
-     "run": "2026-11-17T04:31:35.901Z"
+     "run": "2026-11-17T07:59:38.016Z"
     },
     "hover": {
      "tag": "a",
@@ -8371,7 +8194,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/login-forgot-hover.png",
-     "run": "2026-11-17T04:31:37.660Z"
+     "run": "2026-11-17T07:59:40.327Z"
     }
    }
   },
@@ -11807,7 +11630,7 @@
    "selector": "header.hero, header",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:34:36.071Z",
+   "run": "2026-11-17T08:00:13.337Z",
    "states": {
     "default": {
      "tag": "header",
@@ -11951,7 +11774,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/m-nav-bar-default.png",
-     "run": "2026-11-17T04:34:37.125Z"
+     "run": "2026-11-17T08:00:24.165Z"
     }
    }
   },
@@ -11962,7 +11785,7 @@
    "selector": "header button, nav button",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:34:37.132Z",
+   "run": "2026-11-17T08:00:24.451Z",
    "states": {
     "default": {
      "tag": "button",
@@ -12053,7 +11876,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/m-nav-menu-button-default.png",
-     "run": "2026-11-17T04:34:37.972Z"
+     "run": "2026-11-17T08:00:28.623Z"
     },
     "hover": {
      "tag": "button",
@@ -12144,7 +11967,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/m-nav-menu-button-hover.png",
-     "run": "2026-11-17T04:34:39.831Z"
+     "run": "2026-11-17T08:00:34.071Z"
     }
    }
   },
@@ -12155,24 +11978,24 @@
    "selector": "article",
    "page": "/discover",
    "url": "https://gumroad.com/discover",
-   "run": "2026-11-17T04:34:39.839Z",
+   "run": "2026-11-17T08:00:34.539Z",
    "states": {
     "default": {
      "tag": "article",
      "classes": "relative flex flex-col rounded",
-     "text": "THE ARCTIC MATRIX Midnight Whispers SGD 38.64",
+     "text": "Willow Horse/Pegasus Furry Vrchat Avatar (PC + QUEST + FACETRACKING) FoxiPaws SG",
      "rect": {
       "x": 16,
-      "y": 172.9,
+      "y": 178.9,
       "w": 234,
-      "h": 506
+      "h": 498
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
       "width": "234px",
-      "height": "506px",
+      "height": "498px",
       "minWidth": "0px",
       "maxWidth": "100%",
       "minHeight": "auto",
@@ -12240,7 +12063,7 @@
      "paint": [
       {
        "node": "article.relative.flex",
-       "size": "234.0x506.0",
+       "size": "234.0x498.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "rgb(255, 255, 255)",
        "radius": "4px"
@@ -12253,7 +12076,7 @@
       },
       {
        "node": "header.flex.flex-1",
-       "size": "232.0x208.0",
+       "size": "232.0x145.0",
        "border": "B:1px solid"
       },
       {
@@ -12263,13 +12086,18 @@
        "radius": "3.35544e+07px"
       },
       {
+       "node": "div.flex-1.p-4",
+       "size": "232.0x65.0",
+       "border": "B:1px solid"
+      },
+      {
        "node": "div.relative.grid",
-       "size": "112.0x32.0",
+       "size": "109.0x32.0",
        "border": "T:1px solid | B:1px solid | L:1px solid"
       },
       {
        "node": "div.bg-accent-with-text.px-2",
-       "size": "95.0x30.0",
+       "size": "92.0x30.0",
        "bg": "rgb(255, 144, 232)"
       },
       {
@@ -12285,7 +12113,7 @@
      ],
      "textStyle": {
       "node": "h2.line-clamp-3.gap-3",
-      "text": "THE ARCTIC MATRIX",
+      "text": "Willow Horse/Pegasus Furry Vrchat Avatar",
       "fontFamily": "\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif",
       "fontSize": "20px",
       "lineHeight": "26px",
@@ -12295,9 +12123,16 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
      "via": "resting state",
      "crop": "components/crops/m-discover-card-default.png",
-     "run": "2026-11-17T04:34:41.103Z"
+     "run": "2026-11-17T08:00:38.894Z"
     }
    }
   },
@@ -12308,7 +12143,7 @@
    "selector": "form.flex.gap-1, form",
    "page": "/",
    "url": "https://gumroad.com/",
-   "run": "2026-11-17T04:41:49.213Z",
+   "run": "2026-11-17T07:57:18.532Z",
    "states": {
     "default": {
      "tag": "form",
@@ -12433,7 +12268,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/home-subscribe-form-default.png",
-     "run": "2026-11-17T04:41:50.363Z"
+     "run": "2026-11-17T07:57:19.418Z"
     },
     "dark": {
      "tag": "form",
@@ -12558,7 +12393,7 @@
      },
      "via": "same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark)",
      "crop": "components/crops/home-subscribe-form-dark.png",
-     "run": "2026-11-17T04:41:54.332Z"
+     "run": "2026-11-17T07:57:26.049Z"
     }
    }
   }

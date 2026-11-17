@@ -95,24 +95,25 @@ Page: /discover. Selector: `header a (Log in)`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 79 x 48 | = | = |
-| Padding | 12px 16px | = | = |
-| Gap | 8px | = | = |
-| Border | 1px solid #000000 | = | = |
-| Radius | 4px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 4px 4px 0px 0px | = |
-| Outline | none | = | = |
-| Font | ABC Favorit 16px/22px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #000000 | = | = |
-| Transition | transform, translate, scale, rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
-| Cursor | pointer | = | = |
-| Painted layers | a.inline-flex.items-center 79.0x48.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px | a.inline-flex.items-center 79.0x48.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 4px 4px 0px 0px | = |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
+| Size (w x h) | 79 x 48 | = | - |
+| Padding | 12px 16px | = | - |
+| Gap | 8px | = | - |
+| Border | 1px solid #000000 | = | - |
+| Radius | 4px | = | - |
+| Background | transparent | = | - |
+| Box shadow | none | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 4px 4px 0px 0px | - |
+| Outline | none | = | - |
+| Font | ABC Favorit 16px/22px 400 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #000000 | = | - |
+| Transition | transform, translate, scale, rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - |
+| Cursor | pointer | = | - |
+| Painted layers | a.inline-flex.items-center 79.0x48.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px | a.inline-flex.items-center 79.0x48.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 4px 4px 0px 0px | - |
+| How | resting state | mouse hover over the element | - |
 | ::after | - | 82px x 51px, absolute, bg #000000 @ 0, radius 0px | = |
+| Error | - | = | keyboard focus never reached the target — focus-visible state not measurable |
 
-Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-focus-visible.png`.
+Crops: `nav-login-default.png`, `nav-login-hover.png`.
 
 #### nav-start-selling
 
@@ -192,7 +193,7 @@ Page: /discover. Selector: `header a[href="/discover"] (All)`. States: default.
 | Painted layers | a.inline-flex.items-center 45.0x40.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px |
 | How | resting state |
 
-Crops: none.
+Crops: `nav-category-active-default.png`.
 
 ### Discover
 
@@ -217,7 +218,7 @@ Page: /discover. Selector: `div.override article`. States: default, hover, dark.
 | Text node | h2.line-clamp-3.gap-3: ABC Favorit 20px/26px 400, #000000 | = | h2.line-clamp-3.gap-3: ABC Favorit 20px/26px 400, #dddddd |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
 | Icon | 20 x 20, colour #000000 | = | 20 x 20, colour #dddddd |
-| Painted layers | article.relative.flex 704.0x380.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 378.0x378.0 border R:1px solid r 4px 0px 0px 4px; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 114.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 97.0x30.0 bg #ff90e8; div.border-border.border-r-transparent 16.0x30.0 border T:15px solid / R:15px solid / B:15px solid / L:1px solid | article.relative.flex 704.0x380.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 4px 4px 0px 0px; figure.aspect-square.overflow-hidden 378.0x378.0 border R:1px solid r 4px 0px 0px 4px; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 114.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 97.0x30.0 bg #ff90e8; div.border-border.border-r-transparent 16.0x30.0 border T:15px solid / R:15px solid / B:15px solid / L:1px solid | article.relative.flex 704.0x380.0 bg #000000 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 378.0x378.0 border R:1px solid r 4px 0px 0px 4px; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 114.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 97.0x30.0 bg #ff90e8; div.border-border.border-r-transparent 16.0x30.0 border T:15px solid / R:15px solid / B:15px solid / L:1px solid |
+| Painted layers | article.relative.flex 704.0x380.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 378.0x378.0 border R:1px solid r 4px 0px 0px 4px; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 119.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 102.0x30.0 bg #ff90e8; div.border-border.border-r-transparent 16.0x30.0 border T:15px solid / R:15px solid / B:15px solid / L:1px solid | article.relative.flex 704.0x380.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 4px 4px 0px 0px; figure.aspect-square.overflow-hidden 378.0x378.0 border R:1px solid r 4px 0px 0px 4px; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 119.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 102.0x30.0 bg #ff90e8; div.border-border.border-r-transparent 16.0x30.0 border T:15px solid / R:15px solid / B:15px solid / L:1px solid | article.relative.flex 704.0x380.0 bg #000000 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 378.0x378.0 border R:1px solid r 4px 0px 0px 4px; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 119.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 102.0x30.0 bg #ff90e8; div.border-border.border-r-transparent 16.0x30.0 border T:15px solid / R:15px solid / B:15px solid / L:1px solid |
 | How | resting state | mouse hover over the element | same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark) |
 
 Crops: `discover-featured-card-default.png`, `discover-featured-card-hover.png`, `discover-featured-card-dark.png`.
@@ -268,7 +269,7 @@ Page: /discover. Selector: `div.grid-cols-2 article`. States: default, hover, fo
 | Text node | h4.line-clamp-4.lg:text-xl: ABC Favorit 20px/28px 400, #000000 | = | = | h4.line-clamp-4.lg:text-xl: ABC Favorit 20px/28px 400, #dddddd |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Icon | 20 x 20, colour #000000 | = | = | 20 x 20, colour #dddddd |
-| Painted layers | article.relative.flex 301.3x522.3 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 299.3x299.3 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 299.3x157.0 border B:1px solid; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 173.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 156.0x30.0 bg #ff90e8 | article.relative.flex 301.3x522.3 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 4px 4px 0px 0px; figure.aspect-square.overflow-hidden 299.3x299.3 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 299.3x157.0 border B:1px solid; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 173.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 156.0x30.0 bg #ff90e8 | article.relative.flex 301.3x522.3 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 299.3x299.3 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 299.3x157.0 border B:1px solid; a.no-underline.before:absolute 267.3x56.0 outline 1px auto #101010 offset 1px; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 173.0x32.0 border T:1px solid / B:1px solid / L:1px solid | article.relative.flex 301.3x522.3 bg #000000 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 299.3x299.3 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 299.3x157.0 border B:1px solid; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 173.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 156.0x30.0 bg #ff90e8 |
+| Painted layers | article.relative.flex 301.3x522.3 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 299.3x299.3 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 299.3x157.0 border B:1px solid; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 107.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 90.0x30.0 bg #ff90e8 | article.relative.flex 301.3x522.3 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 4px 4px 0px 0px; figure.aspect-square.overflow-hidden 299.3x299.3 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 299.3x157.0 border B:1px solid; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 107.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 90.0x30.0 bg #ff90e8 | article.relative.flex 301.3x522.3 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 299.3x299.3 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 299.3x157.0 border B:1px solid; a.no-underline.before:absolute 267.3x56.0 outline 1px auto #101010 offset 1px; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 107.0x32.0 border T:1px solid / B:1px solid / L:1px solid | article.relative.flex 301.3x522.3 bg #000000 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 299.3x299.3 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 299.3x157.0 border B:1px solid; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 107.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 90.0x30.0 bg #ff90e8 |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark) |
 
 Crops: `discover-card-default.png`, `discover-card-hover.png`, `discover-card-focus-visible.png`, `discover-card-dark.png`.
@@ -281,7 +282,7 @@ Page: /discover. Selector: `article footer (price)`. States: default, dark.
 
 | Property | default | dark |
 |---|---|---|
-| Size (w x h) | 97 x 30 | = |
+| Size (w x h) | 102 x 30 | = |
 | Padding | 4px 8px | = |
 | Border | none | = |
 | Radius | 0px | = |
@@ -292,7 +293,7 @@ Page: /discover. Selector: `article footer (price)`. States: default, dark.
 | Letter spacing | normal | = |
 | Colour | #000000 | = |
 | Transition | none | = |
-| Painted layers | div.bg-accent-with-text.px-2 97.0x30.0 bg #ff90e8 | = |
+| Painted layers | div.bg-accent-with-text.px-2 102.0x30.0 bg #ff90e8 | = |
 | How | resting state | same element after the colour-scheme emulation repainted the page through @media (prefers-color-scheme:dark) |
 
 Crops: `discover-card-price-default.png`, `discover-card-price-dark.png`.
@@ -305,7 +306,7 @@ Page: /discover. Selector: `article footer (rating)`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 23 x 22 |
+| Size (w x h) | 24 x 22 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -328,22 +329,23 @@ Page: /discover. Selector: `a[role="tab"]`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 114 x 40 | = | = |
-| Padding | 8px 12px | = | = |
-| Border | 1px solid #000000 @ 0 | 1px solid #000000 | = |
-| Radius | 3.35544e+07px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | ABC Favorit 16px/22px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #000000 | = | = |
-| Transition | none | = | = |
-| Cursor | pointer | = | = |
-| Painted layers | a.border.no-underline 114.0x40.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px | = | = |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
+| Size (w x h) | 114 x 40 | = | - |
+| Padding | 8px 12px | = | - |
+| Border | 1px solid #000000 @ 0 | 1px solid #000000 | - |
+| Radius | 3.35544e+07px | = | - |
+| Background | transparent | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | ABC Favorit 16px/22px 400 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #000000 | = | - |
+| Transition | none | = | - |
+| Cursor | pointer | = | - |
+| Painted layers | a.border.no-underline 114.0x40.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px | = | - |
+| How | resting state | mouse hover over the element | - |
+| Error | - | = | keyboard focus never reached the target — focus-visible state not measurable |
 
-Crops: `discover-tab-default.png`, `discover-tab-hover.png`, `discover-tab-focus-visible.png`.
+Crops: `discover-tab-default.png`, `discover-tab-hover.png`.
 
 #### discover-tab-active
 
@@ -1292,7 +1294,7 @@ Page: /discover. Selector: `article`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 234 x 506 |
+| Size (w x h) | 234 x 498 |
 | Padding | 0px |
 | Border | 1px solid #000000 |
 | Radius | 4px |
@@ -1304,7 +1306,8 @@ Page: /discover. Selector: `article`. States: default.
 | Colour | #000000 |
 | Text node | h2.line-clamp-3.gap-3: ABC Favorit 20px/26px 400, #000000 |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| Painted layers | article.relative.flex 234.0x506.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 232.0x232.0 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 232.0x208.0 border B:1px solid; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.relative.grid 112.0x32.0 border T:1px solid / B:1px solid / L:1px solid; div.bg-accent-with-text.px-2 95.0x30.0 bg #ff90e8 |
+| Icon | 20 x 20, colour #000000 |
+| Painted layers | article.relative.flex 234.0x498.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.aspect-square.overflow-hidden 232.0x232.0 border B:1px solid r 4px 4px 0px 0px; header.flex.flex-1 232.0x145.0 border B:1px solid; img.aspect-square.w-5 20.0x20.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 3.35544e+07px; div.flex-1.p-4 232.0x65.0 border B:1px solid; div.relative.grid 109.0x32.0 border T:1px solid / B:1px solid / L:1px solid |
 | How | resting state |
 
 Crops: `m-discover-card-default.png`.

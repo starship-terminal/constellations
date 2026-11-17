@@ -1546,7 +1546,7 @@
   "mobileCard": {
    "height": {
     "type": "dimension",
-    "value": "506px",
+    "value": "498px",
     "source": "measured m-discover-card default on /discover (a phone market card)"
    }
   },

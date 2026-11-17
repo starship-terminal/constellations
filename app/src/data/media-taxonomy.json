@@ -1354,8 +1354,8 @@
     },
     {
       "referenceId": "systems:gumroad",
-      "media": 156,
-      "assignedMedia": 57
+      "media": 155,
+      "assignedMedia": 56
     }
   ],
   "assignments": [
@@ -307014,17 +307014,6 @@
     {
       "referenceId": "systems:gumroad",
       "mediaId": "systems/gumroad/components/crops/discover-tab-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:gumroad",
-      "mediaId": "systems/gumroad/components/crops/discover-tab-focus-visible.png",
       "terms": [
         {
           "termId": "web-ui-elements:tabs",
