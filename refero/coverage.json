@@ -961,6 +961,23 @@
         }
       ]
     },
+    "column.com": {
+      "catalog": [
+        {
+          "name": "Column",
+          "domain": "column.com",
+          "id": 509
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "column",
+          "name": "Column",
+          "url": "https://column.com/",
+          "name_match": true
+        }
+      ]
+    },
     "copy.ai": {
       "catalog": [
         {
@@ -2660,13 +2677,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "column.com": [
-      {
-        "name": "Column",
-        "domain": "column.com",
-        "id": 509
       }
     ],
     "contra.com": [
