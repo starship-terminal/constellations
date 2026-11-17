@@ -364,12 +364,15 @@ for _cname in ("plan-card", "cta-dark", "hero-prompt-btn"):
             _layers = []
             for _ly in re.split(r",(?![^(]*\))", _sh):
                 m = re.match(
-                    r"\s*(rgb[a]?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px",
+                    r"\s*(rgb[a]?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(\s+inset)?",
                     _ly)
                 if m:
-                    _layers.append({"color": m.group(1), "offsetX": m.group(2) + "px",
-                                    "offsetY": m.group(3) + "px", "blur": m.group(4) + "px",
-                                    "spread": m.group(5) + "px"})
+                    _layer = {"color": m.group(1), "offsetX": m.group(2) + "px",
+                              "offsetY": m.group(3) + "px", "blur": m.group(4) + "px",
+                              "spread": m.group(5) + "px"}
+                    if m.group(6):
+                        _layer["inset"] = True
+                    _layers.append(_layer)
             if _layers:
                 SPEC["light"]["shadow"] = {"card" if _cname == "plan-card" else "control": {
                     "type": "shadow", "value": _layers,
@@ -417,14 +420,14 @@ for key, var in [
             "source": f"declared {var} (raw/css-vars.json)",
             "description": "The default transition duration (.15s)."}
 for key, cname, prop, desc in [
-    ("control", "cta-dark", "transitionDuration", "The control transition (.14s on btn-light-surface)."),
-    ("card", "plan-card", "transitionDuration", "The pricing-card hover-lift transition (.5s overshoot cubic-bezier(0.34,1.3,0.64,1))."),
+    ("control", "hero-cta", "transitionDuration", "The control transition (.14s on the light pill buttons)."),
+    ("nav", "nav-item", "transitionDuration", "The nav-link colour transition (.06s)."),
 ]:
     try:
         v = stprop(cname, "default", prop)
         if v and v != "0s":
             SPEC["core"].setdefault("motion", {}).setdefault("duration", {})[key] = {
-                "value": v, "type": "duration",
+                "value": v.split(",")[0].strip(), "type": "duration",
                 "source": f"computed {prop} of {cname} default (raw/components-computed.json)",
                 "description": desc}
     except KeyError:
@@ -440,13 +443,14 @@ for key, var in [
             "source": f"declared {var} (raw/css-vars.json)",
             "description": f"Declared {var[2:]}."}
 for key, cname, desc in [
-    ("cardHover", "plan-card", "The pricing-card overshoot ease (cubic-bezier(0.34,1.3,0.64,1))."),
+    ("control", "tool-button", "The tool-button ease (the declared default curve, measured on the paint)."),
 ]:
     try:
         v = stprop(cname, "default", "transitionTimingFunction")
-        if v and "cubic-bezier" in v:
+        m = re.search(r"cubic-bezier\([^)]+\)", v or "")
+        if m:
             SPEC["core"].setdefault("motion", {}).setdefault("curve", {})[key] = {
-                "value": v.split(",")[-1].strip() if "," in v else v, "type": "cubicBezier",
+                "value": m.group(0), "type": "cubicBezier",
                 "source": f"computed transitionTimingFunction of {cname} default (raw/components-computed.json)",
                 "description": desc}
     except KeyError:

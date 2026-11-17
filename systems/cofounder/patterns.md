@@ -24,7 +24,7 @@ The customer logo row uses `logo-tile` cards (170 x 84, `#f3f3f0` = `core.color.
 
 ## Pricing
 
-The pricing page opens on a 46px/400 ink-80 headline (`pricing-title`, 1032 x 69 — the h1 is sr-only; the visible headline is the h2). The plans are **whole-card anchors** (`plan-card`, 640 x 594, `aria-label="Get started for Cofounder"`): the inner `.pricing-card` layer paints `#fbfbf8` (`light.surface.raised`), 1px `#dee2de` (`light.border.card`), `radius 16px` (`core.card.radiusPlan` = declared `--radius-2xl`), with the layered inset rim + ambient shadow. Inside: `plan-name` (15px/460 `rgba(38,35,35,.7)` = `light.text.muted`) and, revealed only while the card is hovered, the `plan-cta` chip (89 x 31) — a small `cta-btn-dark` (gradient, `#383838` edge, `12px/460` white-90 "Get started"). The card hover also runs a `cubic-bezier(0.34,1.3,0.64,1)` overshoot lift on a `0.5s` duration (`core.motion.curve.cardHover`, `core.motion.duration.card`). Every card links to app.cofounder.co — measured, never followed.
+The pricing page opens on a 46px/400 ink-80 headline (`pricing-title`, 1032 x 69 — the h1 is sr-only; the visible headline is the h2). The plans are **whole-card anchors** (`plan-card`, 640 x 594, `aria-label="Get started for Cofounder"`): the inner `.pricing-card` layer paints `#fbfbf8` (`light.surface.raised`), 1px `#dee2de` (`light.border.card`), `radius 16px` (`core.card.radiusPlan` = declared `--radius-2xl`), with the layered inset rim + ambient shadow. Inside: `plan-name` (15px/460 `rgba(38,35,35,.7)` = `light.text.muted`) and, revealed only while the card is hovered, the `plan-cta` chip (89 x 31) — a small `cta-btn-dark` (gradient, `#383838` edge, `12px/460` white-90 "Get started"). No lift transition is recorded on the anchor itself (`transition: 0s`); the chip reveal is the measured hover change. Every card links to app.cofounder.co — measured, never followed.
 
 ## The how-to guides
 
@@ -32,7 +32,7 @@ The guide pages render a hidden prerender heading set first in DOM (skipped) the
 
 ## The sign-in card (boundary)
 
-app.cofounder.co/os/login is the app's own surface — a different, darker control language measured at rest and never submitted. The page (`signin-card`, the 1430 x 900 `#fcfcf9` shell with the "CofounderOS" 32px title) centres OAuth rows (`signin-button`, 384 x 52): a `linear-gradient(to top, #0f0f0f, #262626)` fill under a 2px `#4f4f4f` border, full-pill radius, `14px/500` white text, three stacked drop shadows, `0.2s cubic-bezier(.4,0,.2,1)` — and focus draws a `#4087f2` ring (the app's own focus blue, not the marketing `#101010`). A `signin-back` icon button (40 x 40, ink-72, hover `rgba(32,32,32,.05)` tint) returns to the site. Nothing was typed, pressed or sent.
+app.cofounder.co/os/login is the app's own surface — a different, darker control language measured at rest and never submitted. The page (`signin-card`, the 1430 x 900 `#fcfcf9` shell with the "CofounderOS" 32px title) centres OAuth rows (`signin-button`, 384 x 52): a `linear-gradient(to top, #0f0f0f, #262626)` fill under a 2px `#4f4f4f` border, full-pill radius, `14px/500` white text, three stacked drop shadows — and, recorded honestly, keyboard focus paints **no change** on the OAuth rows (`outline-style: none`; the latent `#4087f2` outlineColor never renders — an honest gap in the app's surface). The `signin-back` icon button (40 x 40, ink-72, hover `rgba(32,32,32,.05)` tint) does draw a focus ring — a `rgba(32,32,32,.1)` 2px shadow ring, not an outline. Nothing was typed, pressed or sent.
 
 ## Footer and mobile
 

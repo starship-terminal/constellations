@@ -101,10 +101,8 @@ The header "Run a company" pill linking to app.cofounder.co/os; measured never f
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 130 x 41; padding 0px 12px; radius 8px; background transparent; text neoris 15/22.5 460, #1a1a1a |
-| hover | child paint span.pointer-events-none.absolute: bgImage linear-gradient(rgba(32, 32, 32, 0.1) 0%, rgba(32, 32, 32, 0.1) 100%), linear-gradient(rgb(79, 79, 79) 0%, rgba(32, 32, 32, 0.85) 100%); border 1px solid #383838; shadow rgba(64, 64, 64, 0.12) 0px 0px 0px 1px, rgba(255, 255, 255, 0.24) 0px 2px 0px 0px inset, rgba(0, 0, 0, 0.25) 0px -0.5px 2px 0px inset, rgba(0, 0, 0, 0.03) 0px 2px 8px 0px, rgba(0, 0, 0, 0.16) 0px 3px 4px 0px; span.pointer-events-none.absolute: background #f1f1ee; shadow rgba(0, 0, 0, 0.5) 0px 1px 1px 0px, rgba(255, 255, 255, 0.23) 0px 0px 0px 1px |
-| focus-visible | outline 1px auto #101010, offset 1px; child paint a.group.relative: size 130.0x41.0; radius 8px; outline 1px auto rgb(16, 16, 16) offset 1px; span.pointer-events-none.absolute: bgImage linear-gradient(rgba(32, 32, 32, 0.1) 0%, rgba(32, 32, 32, 0.1) 100%), linear-gradient(rgb(79, 79, 79) 0%, rgba(32, 32, 32, 0.85) 100%); border 1px solid #383838; shadow rgba(64, 64, 64, 0.12) 0px 0px 0px 1px, rgba(255, 255, 255, 0.24) 0px 2px 0px 0px inset, rgba(0, 0, 0, 0.25) 0px -0.5px 2px 0px inset, rgba(0, 0, 0, 0.03) 0px 2px 8px 0px, rgba(0, 0, 0, 0.16) 0px 3px 4px 0px; span.pointer-events-none.absolute: background #f1f1ee; shadow rgba(0, 0, 0, 0.5) 0px 1px 1px 0px, rgba(255, 255, 255, 0.23) 0px 0px 0px 1px |
-| pressed | child paint span.pointer-events-none.absolute: bgImage linear-gradient(rgba(32, 32, 32, 0.1) 0%, rgba(32, 32, 32, 0.1) 100%), linear-gradient(rgb(79, 79, 79) 0%, rgba(32, 32, 32, 0.85) 100%); border 1px solid #383838; shadow rgba(64, 64, 64, 0.12) 0px 0px 0px 1px, rgba(255, 255, 255, 0.24) 0px 2px 0px 0px inset, rgba(0, 0, 0, 0.25) 0px -0.5px 2px 0px inset, rgba(0, 0, 0, 0.03) 0px 2px 8px 0px, rgba(0, 0, 0, 0.16) 0px 3px 4px 0px; span.pointer-events-none.absolute: background #f1f1ee; shadow rgba(0, 0, 0, 0.5) 0px 1px 1px 0px, rgba(255, 255, 255, 0.23) 0px 0px 0px 1px |
+| default (same: hover, pressed) | size 130 x 41; padding 0px 12px; radius 8px; background transparent; text neoris 15/22.5 460, #1a1a1a |
+| focus-visible | outline 1px auto #101010, offset 1px; child paint a.group.relative: size 130.0x41.0; radius 8px; outline 1px auto rgb(16, 16, 16) offset 1px |
 
 Child layers that carry the look: span 130x41 image linear-gradient(rgba(32, 32, 32, 0.1) 0%, rgba(32, 32, 32, 0.1) 100%), linear-gradient(#4f border 1px solid #383838 radius 8px shadow rgba(64, 64, 64, 0.12) 0px 0px 0px 1px, rgba(255, 255, 255, 0.24) 0px 2px 0px 0px inset, rgba(0, 0, 0, 0.25) 0px -0.5px 2px 0px inset, rgba(0, 0, 0, 0.03) 0px 2px 8px 0px, rgba(0, 0, 0, 0.16) 0px 3px 4px 0px; span 130x41 background #f1f1ee border 1px solid rgba(32, 32, 32, 0.1) radius 8px shadow rgba(0, 0, 0, 0.5) 0px 1px 1px 0px, rgba(255, 255, 255, 0.23) 0px 0px 0px 1px; span 130x41 background #e7e7e1 border 1px solid rgba(32, 32, 32, 0.1) radius 8px shadow rgba(255, 255, 255, 0.35) 0px 0px 0.357px 1.5px inset.
 
@@ -138,10 +136,8 @@ The glass "copy the setup prompt" hero button (glass-hero-btn, backdrop-blur 24p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 179.56 x 41; padding 0px 10px; radius 8px; background transparent; text neoris 15/22.5 460, #ffffff `color.white`; icon 16 x 16, #ffffff `color.white` |
-| hover | child paint span.pointer-events-none.absolute: background rgba(255, 255, 255, 0.05); span.pointer-events-none.absolute: bgImage linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.2)); shadow rgba(0, 0, 0, 0.12) 0px -1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px inset, rgba(255, 255, 255, 0.24) 0px 1px 1px 0px inset |
-| focus-visible | outline 2px solid #ffffff `color.white`, offset 4px; child paint button.group.relative: size 179.6x41.0; radius 8px; outline 2px solid rgb(255, 255, 255) offset 4px; span.pointer-events-none.absolute: background rgba(255, 255, 255, 0.05); span.pointer-events-none.absolute: bgImage linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.2)); shadow rgba(0, 0, 0, 0.12) 0px -1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px inset, rgba(255, 255, 255, 0.24) 0px 1px 1px 0px inset |
-| pressed | child paint span.pointer-events-none.absolute: background rgba(255, 255, 255, 0.05); span.pointer-events-none.absolute: bgImage linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.2)); shadow rgba(0, 0, 0, 0.12) 0px -1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px inset, rgba(255, 255, 255, 0.24) 0px 1px 1px 0px inset |
+| default (same: hover, pressed) | size 179.56 x 41; padding 0px 10px; radius 8px; background transparent; text neoris 15/22.5 460, #ffffff `color.white`; icon 16 x 16, #ffffff `color.white` |
+| focus-visible | outline 2px solid #ffffff `color.white`, offset 4px; child paint button.group.relative: size 179.6x41.0; radius 8px; outline 2px solid rgb(255, 255, 255) offset 4px |
 
 Child layers that carry the look: span 179.6x41 background rgba(255, 255, 255, 0.05) radius 8px; span 179.6x41 image linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.2)) radius 8px shadow rgba(0, 0, 0, 0.12) 0px -1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px inset, rgba(255, 255, 255, 0.24) 0px 1px 1px 0px inset; span 179.6x41 image linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.15)) radius 8px shadow rgba(0, 0, 0, 0.12) 0px -1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 2px 0px inset, rgba(255, 255, 255, 0.6) 0px 2px 1px 0px inset.
 
@@ -202,7 +198,7 @@ Child layers that carry the look: span 1x44 background rgba(255, 255, 255, 0.35)
 ![Tools tab (unselected) default](components/crops/tool-tab-off-default.png) ![Tools tab (unselected) hover](components/crops/tool-tab-off-hover.png) ![Tools tab (unselected) focus-visible](components/crops/tool-tab-off-focus-visible.png)
 
 #### Tool button
-A tool/agent picker button (border-black/10 bg-white/60 rounded-[10px], hover -translate-y lift). Read as `tool-button` on the home page.
+A tool/agent picker button (border-black/10 bg-white/60 rounded-[10px], hover white-fill swap). Read as `tool-button` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -260,7 +256,7 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 
 ### Pricing
 
-The pricing route: the whole-card plan anchors with the hover lift and revealed CTA chip.
+The pricing route: the whole-card plan anchors with the hover-revealed CTA chip.
 
 #### Pricing title
 The visible pricing headline (the h1 is sr-only). Read as `pricing-title` on the pricing page.
@@ -270,14 +266,12 @@ The visible pricing headline (the h1 is sr-only). Read as `pricing-title` on the
 ![Pricing title default](components/crops/pricing-title-default.png)
 
 #### Plan card
-A whole-card plan anchor (pricing-card-group -> pricing-card): border-border-card bg-surface-raised rounded-2xl, hover -translate-y-10 reveal of the hidden CTA chip. Links to app.cofounder.co; never followed. Read as `plan-card` on the pricing page.
+A whole-card plan anchor (pricing-card-group -> pricing-card): border-border-card bg-surface-raised rounded-2xl, hover reveals the hidden CTA chip (no lift transition - the anchor computes 0s). Links to app.cofounder.co; never followed. Read as `plan-card` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 640 x 594; background transparent; text neoris 15/21 460, rgba(38, 35, 35, 0.7) `color.ink.70`; icon 21 x 21, #171717 `color.ink.90` |
-| hover | child paint span.cta-btn-dark.relative: size 89.3x30.8 |
-| focus-visible | outline 1px auto #101010, offset 1px; child paint a.pricing-card-group.group: size 640.0x594.0; outline 1px auto rgb(16, 16, 16) offset 1px; span.cta-btn-dark.relative: size 89.3x30.8 |
-| pressed | child paint span.cta-btn-dark.relative: size 89.3x30.8 |
+| default (same: hover, pressed) | size 640 x 594; background transparent; text neoris 15/21 460, rgba(38, 35, 35, 0.7) `color.ink.70`; icon 21 x 21, #171717 `color.ink.90` |
+| focus-visible | outline 1px auto #101010, offset 1px; child paint a.pricing-card-group.group: size 640.0x594.0; outline 1px auto rgb(16, 16, 16) offset 1px |
 
 Child layers that carry the look: div 640x594 background #fbfbf8 `color.surfaceRaised` border 1px solid #dee2de `color.borderCard` radius 16px shadow rgba(255, 255, 255, 0.35) 0px 0px 0.357px 1.5px inset, #ffffff `color.white` 0px 2px 0px 0px inset, rgba(0, 0, 0, 0.25) 0px 0px 2px 0px, rgba(232, 231, 230, 0.32) 0px 0px 0px 4px; span 89.3x30.8 image linear-gradient(rgba(32, 32, 32, 0.1) 0%, rgba(32, 32, 32, 0.1) 100%), linear-gradient(#4f border 1px solid #383838 radius 8px shadow rgba(64, 64, 64, 0.12) 0px 0px 0px 1px, rgba(255, 255, 255, 0.24) 0px 2px 0px 0px inset, rgba(0, 0, 0, 0.25) 0px -0.5px 2px 0px inset, rgba(0, 0, 0, 0.03) 0px 2px 8px 0px, rgba(0, 0, 0, 0.16) 0px 3px 4px 0px; div 614x220 background #f5f5f2 `color.surface` border 1px solid #dee2de `color.borderCard` radius 8px.
 
@@ -380,10 +374,12 @@ A link in a footer link column (footer-link) — the md:hidden mobile CTA copy i
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 46.06 x 19; background transparent; text neoris 15/21 460, rgba(38, 35, 35, 0.8) `color.ink.80`; transition color 0.2s ease-out |
+| default | size 46.06 x 19; background transparent; text neoris 15/21 460, rgba(38, 35, 35, 0.8) `color.ink.80`; transition color 0.2s ease-out |
+| hover | child paint el::before: opacity 1 |
 | focus-visible | outline 1px auto #101010, offset 1px; child paint a.footer-link.text-ink: size 46.1x19.0; outline 1px auto rgb(16, 16, 16) offset 1px |
+| pressed | child paint el::before: opacity 1 |
 
-Child layers that carry the look: a::before 58625pxx23px background rgba(231, 231, 227, 0.8) radius 4px.
+Child layers that carry the look: a::before 58.0625pxx23px background rgba(231, 231, 227, 0.8) radius 4px.
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 

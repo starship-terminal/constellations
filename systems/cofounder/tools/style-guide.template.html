@@ -9,9 +9,9 @@
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: var(--font-family-ui, "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
-  --sg-display: var(--font-family-display, "TT Neoris", var(--sg-sans));
-  --sg-mono: var(--font-family-mono, "Departure Mono", ui-monospace, "SF Mono", Menlo, monospace);
+  --sg-sans: var(--font-family-ui, "Inter"), "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sg-display: var(--font-family-display, neoris), "neoris Fallback", var(--sg-sans);
+  --sg-mono: var(--font-family-mono, "IBM Plex Mono"), "IBM Plex Mono Fallback", ui-monospace, "SF Mono", Menlo, monospace;
 }
 * { box-sizing: border-box; }
 body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-ink-90, #171717); background: var(--surface-page, #f5f5f2); }
@@ -62,8 +62,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 /* ---- the sign-in card (app boundary) ---- */
 .signin { max-width: 460px; margin: 28px auto; padding: 28px; background: var(--surface-raised, #fbfbf8); border: 1px solid var(--border-card, #dee2de); border-radius: var(--radius-xl, 12px); font-size: 14px; color: var(--text-primary, #262323cc); }
 .signin .h { font: 400 26px/1.2 var(--sg-display); color: var(--text-primary, #262323cc); margin-bottom: 16px; text-align: center; }
-.obtn { display: flex; align-items: center; justify-content: center; height: 44px; border-radius: var(--component-control-radiusCta, 8px); margin-bottom: 10px; font-size: 15px; font-weight: 460; background: var(--surface-page, #f5f5f2); border: 1px solid rgba(32,32,32,.1); color: var(--text-primary, #262323cc); box-shadow: 0 2px 3px rgba(0,0,0,.06), inset 0 2px #fff; }
-.obtn:hover { background: var(--surface-raised, #fbfbf8); }
+.obtn { display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 999px; margin-bottom: 10px; font-size: 14px; font-weight: 500; background: linear-gradient(to top, #0f0f0f, #262626); border: 2px solid #4f4f4f; color: #fff; box-shadow: 0 13px 5px rgba(0,0,0,.03), 0 7px 4px rgba(0,0,0,.07), 0 3px 3px rgba(0,0,0,.14), 0 1px 2px rgba(0,0,0,.19), inset 0 0 .357px 1.071px rgba(255,255,255,.2), inset 0 0 .357px 1.071px rgba(255,255,255,.15); }
 .back { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--text-muted, #262323b3); }
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--border-card, #dee2de); padding: 6px 14px; text-align: left; }
@@ -91,13 +90,13 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-card, #dee2de); padd
   </div>
 
   <h2 class="sh">Pricing</h2>
-  <p class="lead">The whole-card plan anchors — raised ground, #dee2de border, layered shadows and a -10px hover lift that reveals the hidden CTA chip. Cards link to the app, never followed.</p>
+  <p class="lead">The whole-card plan anchors — raised ground, #dee2de border and layered shadows, with the dark CTA chip revealed only on hover. Cards link to the app, never followed.</p>
   <div class="mock light">
     <div class="plans">
       <div class="pcard"><div class="cap">Cofounder</div><div class="price">$49<span class="per">/mo</span></div></div>
       <div class="pcard"><div class="cap">Team</div><div class="price">$249<span class="per">/mo</span></div></div>
     </div>
-    <div class="feat"><b>Everything included</b> — every card lifts on hover and reveals its dark CTA chip.</div>
+    <div class="feat"><b>Everything included</b> — every card reveals its dark CTA chip on hover.</div>
   </div>
 
   <h2 class="sh">The sign-in card</h2>
@@ -165,6 +164,30 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   let m = '';
   for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#meas-out').innerHTML = m;
+})();
+
+(function groups() {
+  // Every remaining token group gets a key/value table — fonts, radii,
+  // spacing, blur, motion, shadows, typography and the light set's
+  // non-colour roles, so the guide covers all of tokens.json.
+  const show = (v) => Array.isArray(v) ? (typeof v[0] === 'object' ? v.map((l) => `${l.color} ${l.offsetX} ${l.offsetY} ${l.blur} ${l.spread}${l.inset ? ' inset' : ''}`).join(', ') : v.join(', ')) : String(v);
+  const skip = new Set(['color', 'component', 'measured', 'gradient']);
+  let h = '';
+  for (const [set, toks] of [['core', TOK.core], ['light', TOK.light], ['dark', TOK.dark]]) {
+    for (const [g, grp] of Object.entries(toks || {})) {
+      if (skip.has(g)) continue;
+      const items = flat(grp, g + '.').filter(([, t]) => t.t !== 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(set)}.${esc(g)}</div><div class="kv">`;
+      for (const [n, t] of items) h += `<div><b>${esc(n)}</b> <span>${esc(show(t.v))}</span></div>`;
+      h += '</div>';
+    }
+  }
+  if (h) {
+    const sec = document.createElement('div');
+    sec.innerHTML = `<h2 class="sh">Scales and roles</h2>` + h;
+    $('#meas-out').appendChild(sec);
+  }
 })();
 </script>
 </body>

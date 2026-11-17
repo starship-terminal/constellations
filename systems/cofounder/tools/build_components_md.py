@@ -166,23 +166,46 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def paint_sig(v):
-    """(node, bg, bgImage, border, radius, shadow, outline) per painted child or
-    pseudo layer — sites repaint these on state changes without touching the
-    root's computed style, so they must join the state diff."""
-    return [
-        (p.get("node"), p.get("size"), p.get("bg"), p.get("bgImage"), p.get("border"), p.get("radius"), p.get("shadow"), p.get("outline"))
+    """(node, size, bg, bgImage, border, radius, shadow, outline, opacity) per
+    painted child or pseudo layer — sites repaint these on state changes
+    without touching the root's computed style, so they must join the state
+    diff. The element-level ::before/::after blocks are appended too: they
+    carry opacity, which the descendant paint layers do not record."""
+    sig = [
+        (p.get("node"), p.get("size"), p.get("bg"), p.get("bgImage"), p.get("border"), p.get("radius"), p.get("shadow"), p.get("outline"), p.get("opacity"))
         for p in (v.get("paint") or [])
     ]
+    for pe in ("::before", "::after"):
+        pb = v.get(pe)
+        if pb:
+            sig.append((
+                "el" + pe,
+                f"{pb.get('width')}x{pb.get('height')}",
+                pb.get("backgroundColor") if pb.get("backgroundColor") != "rgba(0, 0, 0, 0)" else None,
+                None, None,
+                pb.get("borderRadius") if pb.get("borderRadius") != "0px" else None,
+                pb.get("boxShadow") if pb.get("boxShadow") != "none" else None,
+                None, pb.get("opacity"),
+            ))
+    return sig
 
 
 def paint_diff(cur, base):
     """Describe the painted layers that changed vs the base state, by node. A
-    layer that only exists in this state is listed with its attributes."""
-    bmap = {p[0]: p[1:] for p in base}
+    layer that only exists in this state is listed with its attributes. Nodes
+    repeat (two children can share a node label), so layers pair off by
+    occurrence order within the node, not by node alone."""
+    bmap = {}
+    for p in base:
+        bmap.setdefault(p[0], []).append(p[1:])
+    seen = {}
     out = []
     for node, *vals in cur:
-        old = bmap.get(node)
-        fields = ("size", "bg", "bgImage", "border", "radius", "shadow", "outline")
+        idx = seen.get(node, 0)
+        seen[node] = idx + 1
+        olds = bmap.get(node)
+        old = olds[idx] if olds and idx < len(olds) else None
+        fields = ("size", "bg", "bgImage", "border", "radius", "shadow", "outline", "opacity")
         bits = []
         if old is None:
             vals_to_show = vals
@@ -251,7 +274,7 @@ def child_layers(c):
         return None
     out = []
     for p in st["paint"][:3]:
-        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
+        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], re.sub(r"\.0+(?=\D|$)", "", p["size"].replace(".0x", "x"))]
         if p.get("bg"):
             bits.append("background " + colour(p["bg"]))
         if p.get("bgImage"):
@@ -273,7 +296,7 @@ PAGE_NAME = {"home": "home", "pricing": "pricing", "howto": "how-to", "signin": 
 GROUP_INTRO = {
     "Shell and navigation": "The fixed glass site header: wordmark, the flat nav-link row and the Run-a-company CTA.",
     "Home": "The pixel-art hero (Run an entire company with AI), the white and glass hero buttons, the #1a6fd1 tools band with its tab toggles, the tool picker buttons, case-study cards, the campaign carousel and the logo rows.",
-    "Pricing": "The pricing route: the whole-card plan anchors with the hover lift and revealed CTA chip.",
+    "Pricing": "The pricing route: the whole-card plan anchors with the hover-revealed CTA chip.",
     "How-to guides": "The how-to guides: headlines, content sections and the Neoris card titles.",
     "App sign-in (boundary)": "app.cofounder.co/os's public login surface — measured at rest; nothing was typed, signed into or submitted.",
     "Footer": "The footer band: the Run-a-company CTA card, link columns and social icons.",
