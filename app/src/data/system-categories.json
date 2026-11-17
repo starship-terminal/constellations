@@ -1466,5 +1466,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool", "Development Tools"],
     "reason": "catalog.json describes the xAI/Grok developer documentation portal: quickstart and model docs, API reference, token pricing tables, rate limits, release notes, a cmdK search surface and the Grok help section."
+  },
+  {
+    "referenceId": "systems:hbomax",
+    "groupId": "web-categories",
+    "labels": ["Video Streaming", "Entertainment"],
+    "reason": "catalog.json describes a video streaming service's signed-out marketing site: hero title carousel, subscription plan cards, content rails and title detail pages."
   }
 ]
