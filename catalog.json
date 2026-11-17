@@ -4481,7 +4481,7 @@
     ],
     "durationMin": 300,
     "durationNote": "wall-clock across the capture sessions including kit adaptation, route and DOM probing, the stylesheet harvest with literal-utility preservation, screenshot and measurement passes with selector correction, and the offline build",
-    "pr": "https://github.com/starship-terminal/constellations/pull/TODO"
+    "pr": "https://github.com/starship-terminal/constellations/pull/636"
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the wordmark, social marks, certification badges) are visible in the crops and screenshots"
