@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 189,
-    "system_domains": 180,
-    "matched_domains": 150,
-    "missing_domains": 283,
+    "system_packages": 190,
+    "system_domains": 181,
+    "matched_domains": 151,
+    "missing_domains": 282,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2474,6 +2474,23 @@
         }
       ]
     },
+    "limitless.ai": {
+      "catalog": [
+        {
+          "name": "Limitless",
+          "domain": "limitless.ai",
+          "id": 551
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "limitless",
+          "name": "Limitless",
+          "url": "https://www.limitless.ai",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2951,13 +2968,6 @@
         "name": "Leonardo.Ai",
         "domain": "leonardo.ai",
         "id": 922
-      }
-    ],
-    "limitless.ai": [
-      {
-        "name": "Limitless",
-        "domain": "limitless.ai",
-        "id": 551
       }
     ],
     "linkedin.com": [
