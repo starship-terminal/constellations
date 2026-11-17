@@ -6228,7 +6228,7 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 90,
-    "pr": ""
+    "pr": "https://github.com/starship-terminal/constellations/pull/648"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the wordmark, search mark, hamburger and social glyphs are visible in the crops and screenshots"
