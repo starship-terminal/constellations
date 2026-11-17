@@ -5904,6 +5904,85 @@
    }
   },
   {
+   "slug": "hbomax",
+   "name": "HBO Max",
+   "url": "https://www.hbomax.com",
+   "category": "media",
+   "platform": "web",
+   "goodFor": "Video streaming signed-out marketing: a pure-black single dark theme, the monochrome Max action palette (white primary button on black), a hero title carousel, subscription plan cards with a monthly/yearly billing toggle, an FAQ accordion, horizontal content rails and title detail pages, Max Sans type, and the site's own generated --color_*/--spacer-*/--border-* token sheet",
+   "tags": [
+    "web",
+    "streaming",
+    "video",
+    "entertainment",
+    "marketing",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public; sign-in, plan checkout, the help centre and account surfaces were link-observed only and never opened)",
+   "themes": [
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/hbomax/README.md",
+   "tokens": "systems/hbomax/tokens.json",
+   "styleGuide": "systems/hbomax/style-guide.html",
+   "preview": {
+    "cover": "systems/hbomax/screenshots/home-dark-default.png",
+    "icon": "systems/hbomax/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.color.surface.low",
+      "surface": "dark.color.surface.high",
+      "text": "dark.color.general.text.high",
+      "muted": "dark.color.general.text.low",
+      "accent": "dark.color.action.primary.fill.high",
+      "border": "dark.color.general.border.low"
+     }
+    },
+    "fonts": []
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "hbomax.com (redirects to www.hbomax.com, Singapore locale /sg/en) in headed Chromium under Xvfb - headless is Akamai-blocked with a 403; desktop 1440x900 and mobile 390x844; computed styles and crops from the live DOM; CSS vars harvested from the site's generated stylesheet under /dotcom/generated/css/ds/hbomax/ and resolved under html data-theme=\"max\"",
+    "timestamp": "2026-11-17T04:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/sg/en",
+     "/sg/en/movies",
+     "/sg/en/shows",
+     "/sg/en/channel",
+     "/sg/en/show/e6e7bad9-d48d-4434-b334-7c651ffc4bdf",
+     "/sg/en/movie/710798da-f811-40be-9ed9-3a7443e36278",
+     "/sg/en/collections/genre/kids-family",
+     "/sg/en/sitemap",
+     "/sg/en/corp-info",
+     "/privacy",
+     "mobile /sg/en",
+     "mobile /sg/en/movies",
+     "mobile /sg/en/show/..."
+    ],
+    "gaps": [
+     "headless Chromium is refused by Akamai (HTTP 403 Access Denied); the capture ran headed under xvfb-run and no bot-protection bypass was attempted",
+     "auth.hbomax.com sign-in, plan selection and checkout, help.hbomax.com and every account surface were observed as links only and never opened; no form was submitted and no trial or plan was started",
+     "one painted theme: html data-theme=\"max\" is the only variant the site serves (the former HBO Max light scheme is gone post-rebrand), so there is no light token set",
+     "the site only served the Singapore locale from this network; /sg/en is the captured surface and other regions' catalogues were not probed",
+     "carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted"
+    ],
+    "durationMin": null,
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/starship-terminal/constellations/pull/626"
+   }
+  },
+  {
    "slug": "hevy",
    "name": "Hevy",
    "url": "https://www.hevyapp.com",
