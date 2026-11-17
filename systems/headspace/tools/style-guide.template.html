@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headspace style guide</title>
+<meta name="description" content="Headspace design tokens and the signed-out marketing, auth, checkout and B2B surfaces' components, rendered from tokens.json with measured and declared values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+/*DECLARED*/
+  --sg-sans: "Headspace Apercu", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Apercu Pro Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-ink-primary, #4b4c4d); background: var(--color-surface-page, #f9f4f2); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 38px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-ink-primary, #4b4c4d); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-line-field, #d2d5de); }
+.lead { max-width: 62ch; color: var(--color-ink-primary, #4b4c4d); opacity: .85; }
+.note { font-size: 13px; color: var(--color-ink-muted, #44423f); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-ink-primary, #4b4c4d); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-line-field, #d2d5de); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-ink-muted, #44423f); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-line-field, #d2d5de); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-ink-muted, #44423f); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-line-field, #d2d5de); overflow: hidden; background: var(--color-surface-page, #f9f4f2); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--layout-header-height-1440, 80px); padding: 0 12px 0 var(--spacing-header-x, 48px); font-size: 15px; font-weight: 600; color: var(--color-ink-nav, #2d2c2b); background: var(--color-surface-header, #fff); }
+.navbar .wm { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 19px; letter-spacing: -0.02em; }
+.navbar .wm i { width: 24px; height: 24px; border-radius: 50%; background: var(--color-brand-orange, #ff7e1d); display: inline-block; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--spacing-button-y, 13.2px) var(--spacing-button-x, 24px); font-size: 16px; font-weight: 700; border-radius: var(--radius-button, 32px); border: none; box-shadow: var(--shadow-button, none); }
+.btn.primary { background: var(--color-brand-blue, #0061ef); color: var(--color-brand-on-blue, #fff); }
+.btn.primary:hover { background: var(--color-brand-blue-hover, #0040ea); }
+.btn.dark { background: var(--color-action-secondary, #2d2c2b); color: var(--color-action-secondary-ink, #fff); }
+.btn.dark:hover { background: var(--color-action-secondary-hover, #141313); }
+.btn.quiet { background: var(--color-action-tertiary, #f9f4f2); color: var(--color-ink-muted, #44423f); box-shadow: none; }
+.btn.quiet:hover { background: var(--color-action-tertiary-hover, #e5e7ec); }
+.btn.b2b { background: #fff; color: var(--color-ink-nav, #2d2c2b); border-radius: var(--radius-pill, 800px); box-shadow: none; }
+.btn.b2b:hover { background: var(--color-brand-orange, #ff7e1d); color: #fff; }
+.hero { padding: 64px 40px; font-weight: 700; font-size: var(--font-size-display, 64px); line-height: 1.05; letter-spacing: -0.02em; color: var(--color-ink-primary, #4b4c4d); }
+.hero small { display: block; font: 400 var(--font-size-body-lg, 20px)/1.5 var(--sg-sans); color: var(--color-ink-muted, #44423f); margin: 18px 0 24px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-line-field, #d2d5de); padding: 24px; font-size: 13px; background: var(--color-surface-field, #fff); border-radius: var(--radius-field, 8px); }
+.tile.accent { background: var(--color-brand-yellow, #ffce00); border-color: transparent; }
+.tile b { display: block; font: 700 var(--font-size-h3, 24px)/1.2 var(--sg-sans); margin-bottom: 4px; color: var(--color-ink-primary, #4b4c4d); }
+.tile .sub { opacity: .75; font-size: 12px; color: var(--color-ink-muted, #44423f); }
+.field { width: 340px; max-width: 100%; padding: var(--spacing-field-y, 24px) var(--spacing-field-x, 16px); border: 1px solid var(--color-line-field, #d2d5de); border-radius: var(--radius-field, 8px); background: var(--color-surface-field, #fff); color: var(--color-ink-muted, #44423f); font-size: 16px; }
+.field.focus { outline: 1px solid var(--color-accent-focus, #101010); outline-offset: 2px; }
+.authcard { max-width: 420px; margin: 0 auto; padding: var(--spacing-auth-card, 40px); background: var(--color-surface-auth-card, #fff); border: 1px solid var(--color-line-field, #d2d5de); }
+.authcard h3 { font: 700 var(--font-size-h3, 24px)/1.2 var(--sg-sans); margin: 0 0 18px; }
+.promo { padding: 4px 16px; text-align: center; font-size: 18px; font-weight: 500; color: var(--color-accent-promo-ink, #2d2c2b); text-decoration: underline; background: var(--color-surface-header, #fff); }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-line-field, #d2d5de); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-ink-muted, #44423f); font-family: var(--sg-mono); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-line-field, #d2d5de); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Headspace style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Headspace, measured</h2>
+  <p class="lead">headspace.com compiles to generated Emotion classes with almost no custom-property layer — the signed-out stylesheets declare only a small <code>:root</code> palette (the <code>declared</code> set: <code>--secondary-blue #0061ef</code>, <code>--primary-blue #0040ea</code>, <code>--orange #ff7e1d</code>, <code>--primary-warm-grey-700 #2d2c2b</code>, <code>--2ndary-warm-grey-100 #f9f4f2</code> and friends), so the role tokens are computed-style measurements and the declarations cross-check them. One family carries the surface: Headspace Apercu 200–700 (Apercu Pro Mono in the @font-face list). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from www.headspace.com, organizations.headspace.com, checkout.headspace.com and auth.headspace.com, signed out, in headless Chromium. Everything post-login is a documented boundary; the auth, newsletter, redeem and checkout forms were measured empty, never submitted; the OneTrust consent layer was hidden, never answered. No dark theme exists signed out — no control, no attribute, no applied dark media rules. The Apercu faces are licensed and not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The promo strip sits over the white header: wordmark and orange dot, the category links (For You · For Business · For Providers · Our Plans · Resources · About) whose hover opens one shared mega-menu, then Log in, Help and the offer CTA. Primary actions are <code>#0061ef</code> pills (hover <code>#0040ea</code>) with a soft 2px drop; secondary actions are dark <code>#2d2c2b</code> pills.</p>
+  <div class="mock" style="padding:0">
+    <div class="promo">Feel your best for 50% off →</div>
+    <div class="navbar"><span class="wm"><i></i>headspace</span><span>For You</span><span>For Business</span><span>Our Plans</span><span>Resources</span><span class="sp"></span><span style="font-weight:400">Log in</span><span>Help</span><span class="btn primary" style="padding:10px 18px">Get 50% off</span></div>
+    <div class="hero">Be kind to your mind<small>Less stress. More rest. Better focus and brighter days — everything your mind needs, in one place.</small><span class="btn primary">Get 50% off</span> <span class="btn dark" style="margin-left:10px">Try for free</span></div>
+  </div>
+
+  <h2 class="sh">Plans, fields and the auth card</h2>
+  <p class="lead">The /subscriptions block rows plan cards with a billing switch and a seat slider; fields are rounded rectangles on white with a <code>#d2d5de</code> border and a 1px near-black focus outline. The auth surface is a white card on the warm-grey ground — measured empty, never submitted.</p>
+  <div class="mock" style="padding:24px">
+    <div class="grid">
+      <div class="tile"><b>Monthly</b><span class="sub">$12.99/mo · cancel anytime</span><br><span class="btn primary" style="margin-top:12px">Get started</span></div>
+      <div class="tile accent"><b>Annual</b><span class="sub">$69.99/yr · save 55%</span><br><span class="btn dark" style="margin-top:12px">Get started</span></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px">
+      <input class="field" placeholder="Email address" readonly>
+      <input class="field focus" placeholder="Focused — 1px #101010 outline" readonly>
+      <span class="btn primary">Subscribe</span>
+      <span class="btn quiet">Continue with SSO</span>
+      <span class="btn b2b">Talk to sales (B2B hover: orange)</span>
+    </div>
+    <div class="authcard" style="margin-top:18px">
+      <h3>Create your account</h3>
+      <input class="field" placeholder="Email address" readonly style="width:100%">
+      <div style="margin-top:14px"><span class="btn primary" style="width:100%">Continue</span></div>
+      <div style="margin-top:10px"><span class="btn quiet" style="width:100%">Continue with SSO</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Colour</h2>
+  <p class="lead">The measured light palette, then the small <code>:root</code> palette the stylesheets declare (the <code>declared</code> set) — the two cross-check: measured blue <code>#0061ef</code> is <code>--secondary-blue</code>, measured hover <code>#0040ea</code> is <code>--primary-blue</code>, measured warm ground <code>#f9f4f2</code> is <code>--2ndary-warm-grey-100</code>, measured dark pill <code>#2d2c2b</code> is <code>--primary-warm-grey-700</code>.</p>
+  <div class="pal-h">light set (measured)</div>
+  <div class="pal" id="light-out"></div>
+  <div class="pal-h">declared set (the :root palette)</div>
+  <div class="pal" id="declared-out"></div>
+
+  <h2 class="sh">Typography</h2>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Shape, spacing and layout</h2>
+  <div id="density-out"></div>
+  <div class="boxes" id="radius-out" style="margin-top:12px"></div>
+  <div class="kv" id="spacing-out" style="margin-top:12px"></div>
+
+  <h2 class="sh">Elevation and motion</h2>
+  <div class="kv" id="shadow-out"></div>
+  <div class="kv" id="motion-out" style="margin-top:12px"></div>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function* flat(node, prefix='') {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (k.startsWith('$')) continue;
+    if (v && typeof v === 'object' && '$value' in v) yield [prefix + k, v];
+    else if (v && typeof v === 'object') yield* flat(v, prefix + k + '.');
+  }
+}
+const sw = (n, t) => `<div class="sw"><span class="dot"><i style="background:${esc(t.$value)}"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.$value)}</div></div></div>`;
+$('#light-out').innerHTML = [...flat(TOK.light?.color || {})].map(([n, t]) => t.$type === 'color' ? sw('color.' + n, t) : '').join('');
+$('#declared-out').innerHTML = [...flat(TOK.declared || {})].map(([n, t]) => sw(n, t)).join('');
+{
+  let h = '';
+  for (const [n, t] of flat((TOK.core?.font || {}).size || {}, 'font.size.')) h += `<div class="tr"><span class="ts" style="font-size:${esc(t.$value)}">The mind, at ease — ${esc(n)}</span><span class="tv">${esc(t.$value)}</span></div>`;
+  for (const [n, t] of flat((TOK.core?.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.$value)}</span></div>`;
+  for (const [n, t] of flat((TOK.core?.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.$value)}">${esc(n)} — Headspace</span><span class="tv">${esc(t.$value)}</span></div>`;
+  for (const [n, t] of flat((TOK.core?.font || {}).family || {}, 'font.family.')) h += `<div class="tr"><span class="ts" style="font-family:${esc(t.$value)}">${esc(n)}</span><span class="tv">${esc(t.$value)}</span></div>`;
+  $('#type-out').innerHTML = h;
+}
+{
+  let m = '';
+  for (const [n, t] of flat(TOK.core?.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.$value)}</span></div>`;
+  $('#density-out').innerHTML = `<div class="kv">${m}</div>`;
+  let r = '';
+  for (const [n, t] of flat(TOK.core?.radius || {}, 'radius.')) r += `<div class="bx" style="border-radius:min(${esc(t.$value)}, 42px)">${esc(n.replace('radius.', ''))}<br>${esc(t.$value)}</div>`;
+  $('#radius-out').innerHTML = r;
+  let sp = '';
+  for (const [n, t] of flat(TOK.core?.spacing || {}, 'spacing.')) sp += `<div><b>${esc(n)}</b> <span>${esc(t.$value)}</span></div>`;
+  $('#spacing-out').innerHTML = sp;
+  let sh = '';
+  for (const [n, t] of flat(TOK.core?.shadow || {}, 'shadow.')) sh += `<div><b>${esc(n)}</b> <span>${esc(t.$value)}</span></div>`;
+  $('#shadow-out').innerHTML = sh;
+  let mo = '';
+  for (const [n, t] of flat(TOK.core?.motion || {}, 'motion.')) mo += `<div><b>${esc(n)}</b> <span>${esc(String(t.$value).slice(0, 90))}</span></div>`;
+  $('#motion-out').innerHTML = mo;
+}
+</script>
+</body>
+</html>

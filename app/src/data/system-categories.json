@@ -1512,6 +1512,14 @@
     "reason": "catalog.json describes Microsoft's Clipchamp video editor: marketing pages for the browser video editor, templates, stock library, pricing tiers and an education/work surface."
   },
   {
+    "referenceId": "systems:headspace",
+    "groupId": "web-categories",
+    "labels": [
+      "Health & Wellness"
+    ],
+    "reason": "catalog.json describes the Headspace meditation-and-sleep product: the marketing pages, the free-preview content library, the plans block, the signed-out Auth0 auth cards, the checkout shell and the organizations.headspace.com B2B surface; the member app past login is gated."
+  },
+  {
     "referenceId": "systems:gumroad",
     "groupId": "web-categories",
     "labels": [

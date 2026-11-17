@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_127 of 185 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_128 of 186 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -714,6 +714,13 @@ Access: signed out (every captured surface is public: www.helloivy.co marketing 
 Access: signed out (the marketing pages, content pages and demo registries are fully public; the auth forms were read at rest - nothing was focused, typed or submitted; the gift modal's Give/contribute flow and every payment step were never entered; the registry's internal routes /contributions, /payment-methods, /ask and /quick-thanks bounce the guest to / and were recorded as boundaries)
 - focus/hover/pressed states on the auth controls were never forced (focusing a field is the first step of signing in)
 - the registry's internal routes (/contributions, /payment-methods, /ask, /quick-thanks) bounce the signed-out guest to /
+
+## [Headspace](../systems/headspace) — `headspace`
+Access: signed out (every captured surface is public); the member app behind auth.headspace.com login was never reached; the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never filled or submitted; no trial started, no plan bought, no code redeemed; every CTA measured, never followed; the OneTrust consent layer was hidden, never answered
+- everything post-login - the member home, meditation player, streaks, settings and the whole signed-in app behind auth.headspace.com; an authenticated boundary never reached
+- submitted states: the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never sent - validation, error, loading and success states are absent rather than measured
+- /pricing answers a real 404 ('Whoops! Something's changed'); the plans live on /subscriptions - a recorded absence, not a capture
+- the checkout shell's form fields, the feature/testimonial cards, the FAQ accordion, the plan cards and billing switch, the content tiles, the footer language selector and app badges, and the mobile nav sheet did not match the kit's structural selectors on this pass - recorded as absent components, not measured
 
 ## Gate noted in access text only
 
