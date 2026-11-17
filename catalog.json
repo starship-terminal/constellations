@@ -6146,6 +6146,80 @@
    }
   },
   {
+   "slug": "lemni",
+   "name": "Lemni",
+   "url": "https://www.lemni.com",
+   "category": "ai-agent",
+   "platform": "web",
+   "goodFor": "Quiet AI-agent marketing: a dark home and light inner pages, TWK Lausanne display with tight tracking, black pills, a glass Continue control, and a separate system-ui sign-in card",
+   "tags": [
+    "web",
+    "ai",
+    "agents",
+    "marketing",
+    "framer",
+    "signed-out",
+    "dark-home",
+    "pill"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed out (public marketing pages and the resting sign-in shell; no account created, no form submitted)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/lemni/README.md",
+   "tokens": "systems/lemni/tokens.json",
+   "styleGuide": "systems/lemni/style-guide.html",
+   "preview": {
+    "cover": "systems/lemni/screenshots/home-dark-default.png",
+    "icon": "systems/lemni/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background.page",
+      "surface": "light.background.surface",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.accent.default",
+      "border": "light.border.stroke"
+     },
+     "dark": {
+      "page": "dark.background.page",
+      "surface": "dark.background.surface",
+      "text": "dark.text.primary",
+      "muted": "dark.text.secondary",
+      "accent": "dark.accent.default",
+      "border": "dark.border.stroke"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.sans",
+     "core.font.family.system"
+    ]
+   },
+   "capture": {
+    "harness": "Grok Build",
+    "model": "grok-4.7",
+    "route": "public-web",
+    "durationMin": 180,
+    "gaps": [
+     "Sign-in submit and Continue with Google at https://lemni.com/signin (reached from https://lemni.com/signup, nav Continue, and pricing Try For Free). The resting shell was captured. The form was not submitted and Google was not clicked.",
+     "Authenticated product (agent builder, knowledge, actions, inbox, workplace, billing) behind https://lemni.com/signin. app.lemni.com, go.lemni.com and dashboard.lemni.com did not connect.",
+     "Application form at https://www.lemni.com/company/apply. Not submitted.",
+     "Community at https://community.lemni.com returned an empty body and was not captured."
+    ]
+   },
+   "layoutGaps": {
+    "icons/": "Marketing marks are Framer sprite references, not standalone SVGs. The wordmark is in the page screenshots and icon.png."
+   }
+  },
+  {
    "slug": "linear",
    "name": "Linear",
    "url": "https://linear.app",
