@@ -6208,6 +6208,7 @@
     "model": "grok-4.7",
     "route": "public-web",
     "durationMin": 180,
+    "pr": "https://github.com/starship-terminal/constellations/pull/656",
     "gaps": [
      "Sign-in submit and Continue with Google at https://lemni.com/signin (reached from https://lemni.com/signup, nav Continue, and pricing Try For Free). The resting shell was captured. The form was not submitted and Google was not clicked.",
      "Authenticated product (agent builder, knowledge, actions, inbox, workplace, billing) behind https://lemni.com/signin. app.lemni.com, go.lemni.com and dashboard.lemni.com did not connect.",
