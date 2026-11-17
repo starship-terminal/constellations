@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 190,
-    "system_domains": 181,
-    "matched_domains": 151,
-    "missing_domains": 282,
+    "system_packages": 191,
+    "system_domains": 182,
+    "matched_domains": 152,
+    "missing_domains": 281,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -957,6 +957,23 @@
           "slug": "coinbase",
           "name": "Coinbase",
           "url": "https://www.coinbase.com/en-sg",
+          "name_match": true
+        }
+      ]
+    },
+    "column.com": {
+      "catalog": [
+        {
+          "name": "Column",
+          "domain": "column.com",
+          "id": 509
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "column",
+          "name": "Column",
+          "url": "https://column.com/",
           "name_match": true
         }
       ]
@@ -2660,13 +2677,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "column.com": [
-      {
-        "name": "Column",
-        "domain": "column.com",
-        "id": 509
       }
     ],
     "contra.com": [
