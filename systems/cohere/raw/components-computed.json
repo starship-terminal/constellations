@@ -6603,27 +6603,27 @@
   "faq-item-open": {
    "states": {
     "opened": {
-     "tag": "button",
-     "classes": "flex w-full cursor-pointer items-center",
-     "text": "How do I inquire about model customization and private deployment?",
+     "tag": "div",
+     "classes": "w-full transition-colors bg-no-repeat border-t-pureBlack",
+     "text": "How do I inquire about model customization and private deployment? Cohere suppor",
      "rect": {
       "x": 740,
-      "y": 450.7,
+      "y": 377.7,
       "w": 660,
-      "h": 61.2
+      "h": 206.2
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "660px",
-      "height": "61.2031px",
+      "height": "206.203px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "0px",
+      "paddingTop": "8px",
       "paddingRight": "0px",
-      "paddingBottom": "36px",
+      "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
@@ -6633,27 +6633,27 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "space-between",
+      "alignItems": "normal",
+      "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(229, 231, 235)",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(0, 0, 0)",
       "borderRightWidth": "0px",
-      "borderRightStyle": "none",
+      "borderRightStyle": "solid",
       "borderRightColor": "rgb(229, 231, 235)",
       "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
+      "borderBottomStyle": "solid",
       "borderBottomColor": "rgb(229, 231, 235)",
       "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
+      "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(229, 231, 235)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
       "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
+      "backgroundImage": "linear-gradient(to right, rgb(255, 119, 89), rgb(118, 112, 197), rgb(76, 110, 230))",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
@@ -6671,11 +6671,11 @@
       "textDecorationColor": "rgb(33, 33, 33)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
+      "transitionProperty": "color, background-color, border-color, text-decoration-color, fill, stroke",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "auto",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
@@ -6694,6 +6694,13 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "paint": [
+      {
+       "node": "div.w-full.transition-colors",
+       "size": "660.0x206.2",
+       "bgImage": "linear-gradient(to right, rgb(255, 119, 89), rgb(118, 112, 197), rgb(76, 110, 230))"
+      }
+     ],
      "crop": "components/crops/faq-item-open-opened.png",
      "via": "own toggle",
      "run": "2026-11-17"
@@ -6705,8 +6712,8 @@
    "url": "https://cohere.com/pricing",
    "title": "FAQ row, open",
    "group": "Pricing",
-   "desc": "The same FAQ accordion opened by its own press (a local UI toggle).",
-   "selector": "button:has-text(\"How do I\")"
+   "desc": "The FAQ item after its question button's own press (a local UI toggle) — the enclosing row is measured so the expanded answer lands in the state, not just the toggle.",
+   "selector": "parent of button:has-text(\"How do I\")"
   },
   "north-title": {
    "states": {

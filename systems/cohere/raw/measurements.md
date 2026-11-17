@@ -524,25 +524,26 @@ Crops: `faq-item-default.png`, `faq-item-hover.png`, `faq-item-focus-visible.png
 
 #### faq-item-open
 
-FAQ row, open. The same FAQ accordion opened by its own press (a local UI toggle).
+FAQ row, open. The FAQ item after its question button's own press (a local UI toggle) — the enclosing row is measured so the expanded answer lands in the state, not just the toggle.
 
-Page: pricing. Selector: `button:has-text("How do I")`. States: opened.
+Page: pricing. Selector: `parent of button:has-text("How do I")`. States: opened.
 
 | Property | opened |
 |---|---|
-| Size (w x h) | 660 x 61.2 |
-| Padding | 0px 0px 36px 0px |
+| Size (w x h) | 660 x 206.2 |
+| Padding | 8px 0px 0px 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
+| Background image | linear-gradient(to right, #ff7759, #7670c5, #4c6ee6) |
 | Box shadow | none |
 | Outline | none |
 | Font | Unica77 Cohere Web 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #212121 |
 | Text node | h5.text-web3-16.lg:text-web3-18: Unica77 Cohere Web 18px/25.2px 400, #17171c |
-| Transition | none |
-| Cursor | pointer |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Painted layers | div.w-full.transition-colors 660.0x206.2 image linear-gradient(to right, #ff7759, #7670c5, #4c6ee6) |
 | How | own toggle |
 
 Crops: `faq-item-open-opened.png`.

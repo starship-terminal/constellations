@@ -31,8 +31,8 @@ colors:
   accent: "#17171c"
   accentHover: "#000000"
   border-subtle: "#dadce0"
-  border-onDark: "#525260"
   border-input: "#bdbdbd"
+  border-onDark: "#525260"
   focus: "#101010"
   focusAlt: "#fafafa"
   focusOnDark: "#616161"
@@ -124,4 +124,4 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Do treat the promo banner, footer and green band as islands inside the single light theme.** White on `#17171c` and `#355146` is the only inversion ([footer-cta](components/crops/footer-cta-default.png)).
 - **Don't reach for a dark theme.** Every route paints the same light surface; the dark hero bands on /north and /command are bands, not a theme ([north hero](screenshots/north-light-default.png)).
 - **Don't infer the Cohere product from the marketing pages or the login card.** Everything behind `dashboard.cohere.com` was measured at rest only ([sign-in](screenshots/signin-light-default.png)).
-- **Don't copy the wordmark, the marquee customer logos, or the hero artwork into anything that ships.** They are Cohere's and its customers' marks ([marquee](components/crops/marquee-logo-default.png)).
+- **Don't copy the wordmark, the marquee customer logos, or the hero artwork into anything that ships.** They are Cohere's and its customers' marks ([marquee](screenshots/home-light-full.png)).

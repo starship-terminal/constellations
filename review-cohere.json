@@ -13,7 +13,7 @@
  },
  "F4": {
   "grade": "meets",
-  "evidence": "A real border ladder: border.subtle #dadce0 (OAuth rows), border.input #bdbdbd (the sign-in field), border.onDark #525260 (the footer's painted row separators) and the focus outlines (1px auto #101010; OAuth row 1px #616161 offset 4; CTA pill border-swap to neutral-95)."
+  "evidence": "A real border ladder: border.subtle #dadce0 (OAuth rows), border.input #bdbdbd (the sign-in field), border.onDark #525260 (the 1px neutral-40 separator the footer's mobile accordion rows declare \u2014 measured on their hidden desktop clones and labelled as such) and the focus outlines (1px auto #101010; OAuth row 1px #616161 offset 4; CTA pill border-swap to neutral-95)."
  },
  "F5": {
   "grade": "meets",

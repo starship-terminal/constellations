@@ -8,7 +8,7 @@ Above the nav sits a dismissible pureBlack banner (`promo-banner`, 1440 x 48, `l
 
 ## The gradient pill CTAs
 
-One control language across the site: `radius.full` 9999px pills, 53.2px tall at the 18px label size (`nav-cta` is the 36px-tall compact variant). **Dark** (`cta-dark`, `nav-cta`, `command-cta`, `north-cta`): `neutral-15` `#17171c` fill (`light.accent`) → pureBlack on hover, white text (`light.text.onAccent`), focus swaps a transparent 2px border to `neutral-95` (`light.focusAlt`). **Light** (`cta-light`, `hero-cta`, `footer-cta`): white fill, `#17171c` text. Every pill carries the `ease-button-gradient` `::before` layer — a 270deg `quartz-500 #d18ee2 → coral-500 #ff7759` sweep (`core.gradient.cta`) revealed through a sliding mask — and swaps `background-color,color` in `0.3s ease` (`motion.duration.measuredControl`, `motion.curve.button`). `cta-dark`'s own hover state is uncaptured (the hover animation re-renders the node mid-measure; recorded as an error state) but the identical swap is measured on `nav-cta`.
+One control language across the site: `radius.full` 9999px pills, 53.2px tall at the 18px label size (`nav-cta` is the 36px-tall compact variant). **Dark** (`cta-dark`, `nav-cta`): `neutral-15` `#17171c` fill (`light.accent`) → pureBlack on hover, white text (`light.text.onAccent`), focus swaps a transparent 2px border to `neutral-95` (`light.focusAlt`). **Light** (`cta-light`, `hero-cta`, `footer-cta`, `north-cta`, `command-cta`): white fill, `#17171c` text — the product-page heroes pair the white pill with their dark bands. Every pill carries the `ease-button-gradient` `::before` layer — a 270deg `quartz-500 #d18ee2 → coral-500 #ff7759` sweep (`core.gradient.cta`) revealed through a sliding mask — and swaps `background-color,color` in `0.3s ease` (`motion.duration.measuredControl`, `motion.curve.button`). `cta-dark`'s own hover state is uncaptured (the hover animation re-renders the node mid-measure; recorded as an error state) but the identical swap is measured on `nav-cta`.
 
 ## The hero and home
 
@@ -20,7 +20,7 @@ The home hero is light: `hero-title` (1128 x 192) sets 96px CohereText (`font.fa
 
 ## The product page heroes
 
-`/north` and `/command` open on **dark hero islands** inside the light theme: `north-title` (1128 x 144) and `command-title` (1128 x 216) set white 72px CohereText over the dark band, with the dark `north-cta`/`command-cta` pills (152 x 53.2) below.
+`/north` and `/command` open on **dark hero islands** inside the light theme: `north-title` (1128 x 144) and `command-title` (1128 x 216) set white 72px CohereText over the dark band, with the light `north-cta` (146 x 53.2) and `command-cta` (185 x 53.2) pills below.
 
 ## The footer bands
 

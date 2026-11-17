@@ -186,7 +186,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'menu held open by opts.open';
-        else { await toggle(loc); await page.waitForTimeout(900); via = 'own toggle'; }
+        else { await toggle(opts.toggleLoc || loc); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -300,7 +300,8 @@ async function pricing() {
   await S('price-tab-off', q('[role="tablist"] button[role="tab"][aria-selected="false"]').filter({ visible: true }).first(), B4, { group: g, title: 'Category tab (unselected)', desc: 'An unselected model-category tab (aria-selected=false); never pressed — it would swap the rate table.', sel: '[role=tab][aria-selected=false]' }, { noScroll: true });
   await S('price-rate', q('text=/\\$\\d+(\\.\\d+)?/').filter({ visible: true }).first(), ['default'], { group: g, title: 'Rate figure', desc: 'A per-model rate figure in the pricing table (the "$3.00"-style cells).', sel: 'text=/\\$\\d+/' });
   await S('faq-item', q('button').filter({ hasText: /How do I|What’s the|When do I/ }).filter({ visible: true }).first(), B4, { group: g, title: 'FAQ row', desc: 'A pricing-FAQ accordion row (closed state; its own press opens the answer — a local toggle).', sel: 'button:has-text("How do I")' });
-  await S('faq-item-open', q('button').filter({ hasText: /How do I|What’s the|When do I/ }).filter({ visible: true }).first(), ['opened'], { group: g, title: 'FAQ row, open', desc: 'The same FAQ accordion opened by its own press (a local UI toggle).', sel: 'button:has-text("How do I")' });
+  const faqBtn = q('button').filter({ hasText: /How do I|What’s the|When do I/ }).filter({ visible: true }).first();
+  await S('faq-item-open', faqBtn.locator('xpath=..'), ['opened'], { group: g, title: 'FAQ row, open', desc: 'The FAQ item after its question button\'s own press (a local UI toggle) — the enclosing row is measured so the expanded answer lands in the state, not just the toggle.', sel: 'parent of button:has-text("How do I")', toggleLoc: faqBtn });
   save();
 }
 

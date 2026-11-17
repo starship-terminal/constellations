@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Reviewed the captured evidence directly: tokens.json values against raw/css-vars.json utility declarations and raw/components-computed.json measurements, the components.md state tables, 94 crops and 28 screenshots, the sign-in boundary capture, and the known gaps.",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Reviewed the captured evidence directly: tokens.json values against raw/css-vars.json utility declarations and raw/components-computed.json measurements, the components.md state tables, 94 crops and 28 screenshots, the sign-in boundary capture, and the known gaps. Greptile pass: alias normalisation, hidden-clone border provenance, FAQ expanded measurement, card-paint coverage guard, derived pressed note, control mocks and doc claims corrected.",
  "systems": [
   {
    "slug": "1password",
@@ -22165,7 +22165,7 @@
     },
     "F4": {
      "grade": "meets",
-     "evidence": "A real border ladder: border.subtle #dadce0 (OAuth rows), border.input #bdbdbd (the sign-in field), border.onDark #525260 (the footer's painted row separators) and the focus outlines (1px auto #101010; OAuth row 1px #616161 offset 4; CTA pill border-swap to neutral-95)."
+     "evidence": "A real border ladder: border.subtle #dadce0 (OAuth rows), border.input #bdbdbd (the sign-in field), border.onDark #525260 (the 1px neutral-40 separator the footer's mobile accordion rows declare — measured on their hidden desktop clones and labelled as such) and the focus outlines (1px auto #101010; OAuth row 1px #616161 offset 4; CTA pill border-swap to neutral-95)."
     },
     "F5": {
      "grade": "meets",
@@ -22278,5 +22278,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Reviewed the captured evidence directly: tokens.json values against raw/css-vars.json utility declarations and raw/components-computed.json measurements, the components.md state tables, 94 crops and 28 screenshots, the sign-in boundary capture, and the known gaps."
+ "reviewMethod": "Reviewed the captured evidence directly: tokens.json values against raw/css-vars.json utility declarations and raw/components-computed.json measurements, the components.md state tables, 94 crops and 28 screenshots, the sign-in boundary capture, and the known gaps. Greptile pass: alias normalisation, hidden-clone border provenance, FAQ expanded measurement, card-paint coverage guard, derived pressed note, control mocks and doc claims corrected."
 }

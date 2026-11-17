@@ -54,9 +54,9 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .ccard .cap { font: 500 12px/1.4 var(--sg-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted, #757575); }
 .ccard .t { font: 400 20px/1.2 var(--sg-display); margin-top: 8px; color: var(--text-primary, #212121); }
 /* ---- pricing ---- */
-.ptabs { display: flex; gap: 8px; padding: 24px 24px 0; font-size: 14px; }
-.ptabs .t { padding: 8px 16px; border-radius: var(--radius-full, 9999px); border: 1px solid var(--color-neutral-90, #f2f2f2); color: var(--text-muted, #757575); }
-.ptabs .t.on { background: var(--accent, #17171c); color: var(--text-onAccent, #fff); border-color: var(--accent, #17171c); }
+.ptabs { display: flex; gap: 24px; padding: 24px 24px 0; font-size: 16px; }
+.ptabs .t { padding: 4px 0; color: var(--text-primary, #212121); }
+.ptabs .t.on { border-bottom: 2px solid; border-image: linear-gradient(90deg, var(--color-coral-500, #ff7759), var(--color-quartz-500, #d18ee2)) 1; }
 .ptable { margin: 16px 24px 24px; border-collapse: collapse; font-size: 14px; width: calc(100% - 48px); }
 .ptable td, .ptable th { border-bottom: 1px solid var(--color-neutral-90, #f2f2f2); padding: 10px 14px; text-align: left; }
 .ptable .rate { font-family: var(--sg-mono); }
@@ -69,8 +69,8 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 /* ---- the sign-in card (app boundary) ---- */
 .signin { max-width: 420px; margin: 28px auto; padding: 28px; background: var(--surface-page, #fff); border: 1px solid var(--color-neutral-90, #f2f2f2); border-radius: var(--radius-lg, 12px); font-size: 14px; color: var(--text-primary, #212121); }
 .signin .h { font: 400 24px/1.2 var(--sg-display); margin-bottom: 16px; text-align: center; }
-.signin .field { height: var(--component-control-heightOAuth, 44px); border: 1px solid var(--color-neutral-90, #f2f2f2); border-radius: var(--radius-md, 6.8px); margin-bottom: 10px; display: flex; align-items: center; padding: 0 12px; color: var(--text-muted, #757575); }
-.signin .obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightOAuth, 44px); border-radius: var(--radius-md, 6.8px); margin-bottom: 10px; font-size: 14px; font-weight: 500; background: var(--accent, #17171c); color: var(--text-onAccent, #fff); }
+.signin .field { height: 60px; border: 1px solid var(--border-input, #bdbdbd); border-radius: 8px 8px 0 0; margin-bottom: 10px; display: flex; align-items: center; padding: 0 12px; color: var(--text-primary, #212121); background: var(--color-neutral-95, #fafafa); }
+.signin .obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightOAuth, 40px); border-radius: 4px; margin-bottom: 10px; font-size: 14px; background: var(--color-pureWhite, #fff); color: var(--text-primary, #212121); border: 1px solid var(--border-subtle, #dadce0); }
 .back { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--text-muted, #757575); }
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-90, #f2f2f2); padding: 6px 14px; text-align: left; }

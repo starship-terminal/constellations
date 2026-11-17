@@ -4,31 +4,31 @@
   "color": {
    "volcanic": {
     "500": {
-     "value": "rgb(158 158 158)",
+     "value": "#9e9e9e",
      "type": "color",
      "source": "declared .bg-volcanic-500 background-color (raw/css-vars.json utilities)",
      "description": "Declared volcanic-500. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."
     },
     "600": {
-     "value": "rgb(117 117 117)",
+     "value": "#757575",
      "type": "color",
      "source": "declared .bg-volcanic-600 background-color (raw/css-vars.json utilities)",
      "description": "Declared volcanic-600. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."
     },
     "700": {
-     "value": "rgb(97 97 97)",
+     "value": "#616161",
      "type": "color",
      "source": "declared .bg-volcanic-700 background-color (raw/css-vars.json utilities)",
      "description": "Declared volcanic-700. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."
     },
     "800": {
-     "value": "rgb(66 66 66)",
+     "value": "#424242",
      "type": "color",
      "source": "declared .bg-volcanic-800 background-color (raw/css-vars.json utilities)",
      "description": "Declared volcanic-800. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."
     },
     "900": {
-     "value": "rgb(33 33 33)",
+     "value": "#212121",
      "type": "color",
      "source": "declared .bg-volcanic-900 background-color (raw/css-vars.json utilities)",
      "description": "Declared volcanic-900. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."
@@ -36,55 +36,55 @@
    },
    "neutral": {
     "10": {
-     "value": "rgb(29 29 29)",
+     "value": "#1d1d1d",
      "type": "color",
      "source": "declared .bg-neutral-10 background-color (raw/css-vars.json utilities)",
      "description": "Declared neutral-10. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."
     },
     "15": {
-     "value": "rgb(23 23 28)",
+     "value": "#17171c",
      "type": "color",
      "source": "declared .bg-neutral-15 background-color (raw/css-vars.json utilities)",
      "description": "Declared neutral-15. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."
     },
     "30": {
-     "value": "rgb(47 47 55)",
+     "value": "#2f2f37",
      "type": "color",
      "source": "declared .bg-neutral-30 background-color (raw/css-vars.json utilities)",
      "description": "Declared neutral-30. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."
     },
     "40": {
-     "value": "rgb(82 82 96)",
+     "value": "#525260",
      "type": "color",
      "source": "declared .bg-neutral-40 background-color (raw/css-vars.json utilities)",
      "description": "Declared neutral-40. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."
     },
     "50": {
-     "value": "rgb(117 117 138)",
+     "value": "#75758a",
      "type": "color",
      "source": "declared .bg-neutral-50 background-color (raw/css-vars.json utilities)",
      "description": "Declared neutral-50. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."
     },
     "70": {
-     "value": "rgb(187 187 195)",
+     "value": "#bbbbc3",
      "type": "color",
      "source": "declared .bg-neutral-70 background-color (raw/css-vars.json utilities)",
      "description": "Declared neutral-70. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."
     },
     "80": {
-     "value": "rgb(217 217 221)",
+     "value": "#d9d9dd",
      "type": "color",
      "source": "declared .bg-neutral-80 background-color (raw/css-vars.json utilities)",
      "description": "Declared neutral-80. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."
     },
     "90": {
-     "value": "rgb(242 242 242)",
+     "value": "#f2f2f2",
      "type": "color",
      "source": "declared .bg-neutral-90 background-color (raw/css-vars.json utilities)",
      "description": "Declared neutral-90. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."
     },
     "95": {
-     "value": "rgb(250 250 250)",
+     "value": "#fafafa",
      "type": "color",
      "source": "declared .bg-neutral-95 background-color (raw/css-vars.json utilities)",
      "description": "Declared neutral-95. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."
@@ -92,55 +92,55 @@
    },
    "quartz": {
     "50": {
-     "value": "rgb(248 241 249)",
+     "value": "#f8f1f9",
      "type": "color",
      "source": "declared .bg-quartz-50 background-color (raw/css-vars.json utilities)",
      "description": "Declared quartz-50. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."
     },
     "100": {
-     "value": "rgb(240 223 243)",
+     "value": "#f0dff3",
      "type": "color",
      "source": "declared .bg-quartz-100 background-color (raw/css-vars.json utilities)",
      "description": "Declared quartz-100. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."
     },
     "150": {
-     "value": "rgb(237 218 244)",
+     "value": "#eddaf4",
      "type": "color",
      "source": "declared .bg-quartz-150 background-color (raw/css-vars.json utilities)",
      "description": "Declared quartz-150. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."
     },
     "200": {
-     "value": "rgb(234 208 240)",
+     "value": "#ead0f0",
      "type": "color",
      "source": "declared .bg-quartz-200 background-color (raw/css-vars.json utilities)",
      "description": "Declared quartz-200. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."
     },
     "300": {
-     "value": "rgb(232 195 240)",
+     "value": "#e8c3f0",
      "type": "color",
      "source": "declared .bg-quartz-300 background-color (raw/css-vars.json utilities)",
      "description": "Declared quartz-300. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."
     },
     "500": {
-     "value": "rgb(209 142 226)",
+     "value": "#d18ee2",
      "type": "color",
      "source": "declared .bg-quartz-500 background-color (raw/css-vars.json utilities)",
      "description": "Declared quartz-500. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."
     },
     "600": {
-     "value": "rgb(181 118 197)",
+     "value": "#b576c5",
      "type": "color",
      "source": "declared .bg-quartz-600 background-color (raw/css-vars.json utilities)",
      "description": "Declared quartz-600. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."
     },
     "700": {
-     "value": "rgb(155 96 170)",
+     "value": "#9b60aa",
      "type": "color",
      "source": "declared .bg-quartz-700 background-color (raw/css-vars.json utilities)",
      "description": "Declared quartz-700. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."
     },
     "900": {
-     "value": "rgb(62 38 68)",
+     "value": "#3e2644",
      "type": "color",
      "source": "declared .bg-quartz-900 background-color (raw/css-vars.json utilities)",
      "description": "Declared quartz-900. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."
@@ -148,49 +148,49 @@
    },
    "coral": {
     "50": {
-     "value": "rgb(253 242 240)",
+     "value": "#fdf2f0",
      "type": "color",
      "source": "declared .bg-coral-50 background-color (raw/css-vars.json utilities)",
      "description": "Declared coral-50. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."
     },
     "85": {
-     "value": "rgb(255 217 208)",
+     "value": "#ffd9d0",
      "type": "color",
      "source": "declared .bg-coral-85 background-color (raw/css-vars.json utilities)",
      "description": "Declared coral-85. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."
     },
     "100": {
-     "value": "rgb(246 221 213)",
+     "value": "#f6ddd5",
      "type": "color",
      "source": "declared .bg-coral-100 background-color (raw/css-vars.json utilities)",
      "description": "Declared coral-100. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."
     },
     "200": {
-     "value": "rgb(248 200 188)",
+     "value": "#f8c8bc",
      "type": "color",
      "source": "declared .bg-coral-200 background-color (raw/css-vars.json utilities)",
      "description": "Declared coral-200. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."
     },
     "300": {
-     "value": "rgb(255 173 155)",
+     "value": "#ffad9b",
      "type": "color",
      "source": "declared .bg-coral-300 background-color (raw/css-vars.json utilities)",
      "description": "Declared coral-300. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."
     },
     "400": {
-     "value": "rgb(255 150 126)",
+     "value": "#ff967e",
      "type": "color",
      "source": "declared .bg-coral-400 background-color (raw/css-vars.json utilities)",
      "description": "Declared coral-400. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."
     },
     "500": {
-     "value": "rgb(255 119 89)",
+     "value": "#ff7759",
      "type": "color",
      "source": "declared .bg-coral-500 background-color (raw/css-vars.json utilities)",
      "description": "Declared coral-500. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."
     },
     "700": {
-     "value": "rgb(202 73 45)",
+     "value": "#ca492d",
      "type": "color",
      "source": "declared .bg-coral-700 background-color (raw/css-vars.json utilities)",
      "description": "Declared coral-700. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."
@@ -198,31 +198,31 @@
    },
    "mushroom": {
     "50": {
-     "value": "rgb(245 244 242)",
+     "value": "#f5f4f2",
      "type": "color",
      "source": "declared .bg-mushroom-50 background-color (raw/css-vars.json utilities)",
      "description": "Declared mushroom-50. The warm olive-grey ramp."
     },
     "100": {
-     "value": "rgb(233 230 222)",
+     "value": "#e9e6de",
      "type": "color",
      "source": "declared .bg-mushroom-100 background-color (raw/css-vars.json utilities)",
      "description": "Declared mushroom-100. The warm olive-grey ramp."
     },
     "200": {
-     "value": "rgb(228 222 210)",
+     "value": "#e4ded2",
      "type": "color",
      "source": "declared .bg-mushroom-200 background-color (raw/css-vars.json utilities)",
      "description": "Declared mushroom-200. The warm olive-grey ramp."
     },
     "300": {
-     "value": "rgb(215 207 193)",
+     "value": "#d7cfc1",
      "type": "color",
      "source": "declared .bg-mushroom-300 background-color (raw/css-vars.json utilities)",
      "description": "Declared mushroom-300. The warm olive-grey ramp."
     },
     "600": {
-     "value": "rgb(157 148 130)",
+     "value": "#9d9482",
      "type": "color",
      "source": "declared .bg-mushroom-600 background-color (raw/css-vars.json utilities)",
      "description": "Declared mushroom-600. The warm olive-grey ramp."
@@ -230,25 +230,25 @@
    },
    "marble": {
     "100": {
-     "value": "rgb(250 250 250)",
+     "value": "#fafafa",
      "type": "color",
      "source": "declared .bg-marble-100 background-color (raw/css-vars.json utilities)",
      "description": "Declared marble-100. The light marble-grey ramp."
     },
     "200": {
-     "value": "rgb(245 245 245)",
+     "value": "#f5f5f5",
      "type": "color",
      "source": "declared .bg-marble-200 background-color (raw/css-vars.json utilities)",
      "description": "Declared marble-200. The light marble-grey ramp."
     },
     "300": {
-     "value": "rgb(238 238 238)",
+     "value": "#eeeeee",
      "type": "color",
      "source": "declared .bg-marble-300 background-color (raw/css-vars.json utilities)",
      "description": "Declared marble-300. The light marble-grey ramp."
     },
     "400": {
-     "value": "rgb(224 224 224)",
+     "value": "#e0e0e0",
      "type": "color",
      "source": "declared .bg-marble-400 background-color (raw/css-vars.json utilities)",
      "description": "Declared marble-400. The light marble-grey ramp."
@@ -256,67 +256,67 @@
    },
    "blue": {
     "25": {
-     "value": "rgb(229 235 255)",
+     "value": "#e5ebff",
      "type": "color",
      "source": "declared .bg-blue-25 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-25. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "50": {
-     "value": "rgb(240 242 251)",
+     "value": "#f0f2fb",
      "type": "color",
      "source": "declared .bg-blue-50 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-50. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "100": {
-     "value": "rgb(219 224 242)",
+     "value": "#dbe0f2",
      "type": "color",
      "source": "declared .bg-blue-100 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-100. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "200": {
-     "value": "rgb(192 202 239)",
+     "value": "#c0caef",
      "type": "color",
      "source": "declared .bg-blue-200 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-200. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "300": {
-     "value": "rgb(169 185 243)",
+     "value": "#a9b9f3",
      "type": "color",
      "source": "declared .bg-blue-300 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-300. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "325": {
-     "value": "rgb(143 166 249)",
+     "value": "#8fa6f9",
      "type": "color",
      "source": "declared .bg-blue-325 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-325. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "500": {
-     "value": "rgb(76 110 230)",
+     "value": "#4c6ee6",
      "type": "color",
      "source": "declared .bg-blue-500 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-500. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "600": {
-     "value": "rgb(63 95 210)",
+     "value": "#3f5fd2",
      "type": "color",
      "source": "declared .bg-blue-600 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-600. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "700": {
-     "value": "rgb(45 76 185)",
+     "value": "#2d4cb9",
      "type": "color",
      "source": "declared .bg-blue-700 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-700. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "800": {
-     "value": "rgb(30 64 175)",
+     "value": "#1e40af",
      "type": "color",
      "source": "declared .bg-blue-800 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-800. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
     },
     "900": {
-     "value": "rgb(18 30 74)",
+     "value": "#121e4a",
      "type": "color",
      "source": "declared .bg-blue-900 background-color (raw/css-vars.json utilities)",
      "description": "Declared blue-900. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."
@@ -324,55 +324,55 @@
    },
    "green": {
     "50": {
-     "value": "rgb(238 240 239)",
+     "value": "#eef0ef",
      "type": "color",
      "source": "declared .bg-green-50 background-color (raw/css-vars.json utilities)",
      "description": "Declared green-50. The muted sage-green ramp."
     },
     "100": {
-     "value": "rgb(212 217 212)",
+     "value": "#d4d9d4",
      "type": "color",
      "source": "declared .bg-green-100 background-color (raw/css-vars.json utilities)",
      "description": "Declared green-100. The muted sage-green ramp."
     },
     "200": {
-     "value": "rgb(178 187 182)",
+     "value": "#b2bbb6",
      "type": "color",
      "source": "declared .bg-green-200 background-color (raw/css-vars.json utilities)",
      "description": "Declared green-200. The muted sage-green ramp."
     },
     "500": {
-     "value": "rgb(113 134 126)",
+     "value": "#71867e",
      "type": "color",
      "source": "declared .bg-green-500 background-color (raw/css-vars.json utilities)",
      "description": "Declared green-500. The muted sage-green ramp."
     },
     "600": {
-     "value": "rgb(85 111 101)",
+     "value": "#556f65",
      "type": "color",
      "source": "declared .bg-green-600 background-color (raw/css-vars.json utilities)",
      "description": "Declared green-600. The muted sage-green ramp."
     },
     "650": {
-     "value": "rgb(53 81 70)",
+     "value": "#355146",
      "type": "color",
      "source": "declared .bg-green-650 background-color (raw/css-vars.json utilities)",
      "description": "Declared green-650. The muted sage-green ramp."
     },
     "700": {
-     "value": "rgb(57 89 77)",
+     "value": "#39594d",
      "type": "color",
      "source": "declared .bg-green-700 background-color (raw/css-vars.json utilities)",
      "description": "Declared green-700. The muted sage-green ramp."
     },
     "800": {
-     "value": "rgb(43 66 57)",
+     "value": "#2b4239",
      "type": "color",
      "source": "declared .bg-green-800 background-color (raw/css-vars.json utilities)",
      "description": "Declared green-800. The muted sage-green ramp."
     },
     "900": {
-     "value": "rgb(22 33 28)",
+     "value": "#16211c",
      "type": "color",
      "source": "declared .bg-green-900 background-color (raw/css-vars.json utilities)",
      "description": "Declared green-900. The muted sage-green ramp."
@@ -380,31 +380,31 @@
    },
    "danger": {
     "50": {
-     "value": "rgb(255 241 241)",
+     "value": "#fff1f1",
      "type": "color",
      "source": "declared .bg-danger-50 background-color (raw/css-vars.json utilities)",
      "description": "Declared danger-50. The error red ramp."
     },
     "200": {
-     "value": "rgb(240 204 204)",
+     "value": "#f0cccc",
      "type": "color",
      "source": "declared .bg-danger-200 background-color (raw/css-vars.json utilities)",
      "description": "Declared danger-200. The error red ramp."
     },
     "500": {
-     "value": "rgb(178 0 0)",
+     "value": "#b20000",
      "type": "color",
      "source": "declared .bg-danger-500 background-color (raw/css-vars.json utilities)",
      "description": "Declared danger-500. The error red ramp."
     },
     "600": {
-     "value": "rgb(179 0 0)",
+     "value": "#b30000",
      "type": "color",
      "source": "declared .bg-danger-600 background-color (raw/css-vars.json utilities)",
      "description": "Declared danger-600. The error red ramp."
     },
     "900": {
-     "value": "rgb(90 0 0)",
+     "value": "#5a0000",
      "type": "color",
      "source": "declared .bg-danger-900 background-color (raw/css-vars.json utilities)",
      "description": "Declared danger-900. The error red ramp."
@@ -412,32 +412,32 @@
    },
    "success": {
     "50": {
-     "value": "rgb(239 245 234)",
+     "value": "#eff5ea",
      "type": "color",
      "source": "declared .bg-success-50 background-color (raw/css-vars.json utilities)",
      "description": "Declared success-50. The success green ramp."
     },
     "300": {
-     "value": "rgb(8 145 17)",
+     "value": "#089111",
      "type": "color",
      "source": "declared .bg-success-300 background-color (raw/css-vars.json utilities)",
      "description": "Declared success-300. The success green ramp."
     }
    },
    "pureBlack": {
-    "value": "rgb(0 0 0)",
+    "value": "#000000",
     "type": "color",
     "source": "declared .bg-pureBlack background-color (raw/css-vars.json utilities)",
     "description": "Declared pureBlack (#000) — the promo banner fill."
    },
    "pureWhite": {
-    "value": "rgb(255 255 255)",
+    "value": "#ffffff",
     "type": "color",
     "source": "declared .bg-pureWhite background-color (raw/css-vars.json utilities)",
     "description": "Declared pureWhite (#fff) — the page ground and CTA pill."
    },
    "onyx": {
-    "value": "rgb(12 18 16)",
+    "value": "#0c1210",
     "type": "color",
     "source": "declared .bg-onyx background-color (raw/css-vars.json utilities)",
     "description": "Declared onyx (#0c1210) — the near-black green-tinted ink."
@@ -824,8 +824,8 @@
    "page": {
     "type": "color",
     "description": "The page ground — painted by the body (pureWhite #fff).",
-    "value": "#ffffff",
-    "source": "computed backgroundColor of page-ground default (raw/components-computed.json)"
+    "value": "{color.pureWhite}",
+    "source": "computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.pureWhite"
    },
    "raised": {
     "type": "color",
@@ -836,62 +836,62 @@
    "dark": {
     "type": "color",
     "description": "The footer band's dark island fill (neutral-15 #17171c).",
-    "value": "#17171c",
-    "source": "computed paint.3.bg of footer default (raw/components-computed.json)"
+    "value": "{color.neutral.15}",
+    "source": "computed paint.3.bg of footer default (raw/components-computed.json); same value as core.color.neutral.15"
    },
    "band": {
     "type": "color",
     "description": "The “Ready to put AI to work” CTA band inside the footer — a deep green #355146.",
-    "value": "#355146",
-    "source": "computed paint.0.bg of footer default (raw/components-computed.json)"
+    "value": "{color.green.650}",
+    "source": "computed paint.0.bg of footer default (raw/components-computed.json); same value as core.color.green.650"
    },
    "banner": {
     "type": "color",
     "description": "The promo banner's pureBlack fill above the nav.",
-    "value": "#000000",
-    "source": "computed backgroundColor of promo-banner default (raw/components-computed.json)"
+    "value": "{color.pureBlack}",
+    "source": "computed backgroundColor of promo-banner default (raw/components-computed.json); same value as core.color.pureBlack"
    }
   },
   "text": {
    "primary": {
     "type": "color",
     "description": "The primary ink on the page ground (volcanic-900 #212121).",
-    "value": "#212121",
-    "source": "computed color of hero-title default (raw/components-computed.json)"
+    "value": "{color.volcanic.900}",
+    "source": "computed color of hero-title default (raw/components-computed.json); same value as core.color.volcanic.900"
    },
    "nav": {
     "type": "color",
     "description": "The nav-link ink at rest (pureBlack).",
-    "value": "#000000",
-    "source": "computed color of nav-item default (raw/components-computed.json)"
+    "value": "{color.pureBlack}",
+    "source": "computed color of nav-item default (raw/components-computed.json); same value as core.color.pureBlack"
    },
    "onDark": {
     "type": "color",
     "description": "Text on the dark footer band (neutral-95 #fafafa).",
-    "value": "#fafafa",
-    "source": "computed color of footer-link default (raw/components-computed.json)"
+    "value": "{color.neutral.95}",
+    "source": "computed color of footer-link default (raw/components-computed.json); same value as core.color.neutral.95"
    },
    "onAccent": {
     "type": "color",
     "description": "White text on the dark CTA pills (neutral-15 #17171c).",
-    "value": "#ffffff",
-    "source": "computed color of cta-dark default (raw/components-computed.json)"
+    "value": "{color.pureWhite}",
+    "source": "computed color of cta-dark default (raw/components-computed.json); same value as core.color.pureWhite"
    },
    "banner": {
     "type": "color",
     "description": "White text on the promo banner.",
-    "value": "#ffffff",
-    "source": "computed color of promo-banner default (raw/components-computed.json)"
+    "value": "{color.pureWhite}",
+    "source": "computed color of promo-banner default (raw/components-computed.json); same value as core.color.pureWhite"
    },
    "visited": {
     "type": "color",
-    "value": "rgb(202 73 45)",
+    "value": "#ca492d",
     "source": "declared .text-coral-700 color (raw/css-vars.json utilities) — applied to content links under :visited",
     "description": "The visited-link colour (coral-700 #ca492d) the sheet declares on content links."
    },
    "muted": {
     "type": "color",
-    "value": "rgb(97 97 97)",
+    "value": "#616161",
     "source": "declared .bg-volcanic-700 background-color (raw/css-vars.json utilities); also measured as the signin-oauth focus-visible outlineColor (raw/components-computed.json)",
     "description": "The muted shade (volcanic-700 #616161) — what the sign-in field's disabled:text-volcanic-700 applies under :disabled; never paints as body text signed out."
    }
@@ -899,14 +899,14 @@
   "accent": {
    "type": "color",
    "description": "The dark CTA fill — the surface's accent control (neutral-15 #17171c).",
-   "value": "#17171c",
-   "source": "computed backgroundColor of cta-dark default (raw/components-computed.json)"
+   "value": "{color.neutral.15}",
+   "source": "computed backgroundColor of cta-dark default (raw/components-computed.json); same value as core.color.neutral.15"
   },
   "accentHover": {
    "type": "color",
    "description": "The dark CTA's hover fill — pureBlack #000.",
-   "value": "#000000",
-   "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json)"
+   "value": "{color.pureBlack}",
+   "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json); same value as core.color.pureBlack"
   },
   "border": {
    "subtle": {
@@ -915,17 +915,17 @@
     "value": "#dadce0",
     "source": "computed borderTopColor of signin-oauth default (raw/components-computed.json)"
    },
-   "onDark": {
-    "type": "color",
-    "description": "The 1px row separator painted inside the footer accordions (#525260).",
-    "value": "#525260",
-    "source": "computed paint.4.border of footer default (raw/components-computed.json)"
-   },
    "input": {
     "type": "color",
     "description": "The sign-in field's 1px border (#bdbdbd).",
     "value": "#bdbdbd",
     "source": "computed borderTopColor of signin-field default (raw/components-computed.json)"
+   },
+   "onDark": {
+    "type": "color",
+    "value": "#525260",
+    "source": "computed border of the footer's li.border-b accordion rows, hidden 0x0 clones at 1440 (raw/components-computed.json); declared neutral-40 (raw/css-vars.json utilities)",
+    "description": "The 1px row separator the footer's mobile accordion layout declares (neutral-40 #525260); measured on its hidden desktop clones — it paints where the same rows render at mobile widths."
    }
   },
   "focus": {
@@ -937,14 +937,14 @@
   "focusAlt": {
    "type": "color",
    "description": "The CTA pill's focus repaint: the transparent 2px border swaps to neutral-95 #fafafa.",
-   "value": "#fafafa",
-   "source": "computed borderTopColor of cta-dark focus-visible (raw/components-computed.json)"
+   "value": "{color.neutral.95}",
+   "source": "computed borderTopColor of cta-dark focus-visible (raw/components-computed.json); same value as core.color.neutral.95"
   },
   "focusOnDark": {
    "type": "color",
    "description": "The sign-in OAuth row's 1px solid focus outline (#616161).",
-   "value": "#616161",
-   "source": "computed outlineColor of signin-oauth focus-visible (raw/components-computed.json)"
+   "value": "{color.volcanic.700}",
+   "source": "computed outlineColor of signin-oauth focus-visible (raw/components-computed.json); same value as core.color.volcanic.700"
   },
   "overlay": {
    "scrim": {

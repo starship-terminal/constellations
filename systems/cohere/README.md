@@ -108,4 +108,4 @@ Routes: `/` (with the promo banner, glass header, hero, customer marquee, callou
 - **Do treat the promo banner, footer and green band as islands inside the single light theme.** White on `#17171c` and `#355146` is the only inversion ([footer-cta](components/crops/footer-cta-default.png)).
 - **Don't reach for a dark theme.** Every route paints the same light surface; the dark hero bands on /north and /command are bands, not a theme ([north hero](screenshots/north-light-default.png)).
 - **Don't infer the Cohere product from the marketing pages or the login card.** Everything behind `dashboard.cohere.com` was measured at rest only ([sign-in](screenshots/signin-light-default.png)).
-- **Don't copy the wordmark, the marquee customer logos, or the hero artwork into anything that ships.** They are Cohere's and its customers' marks ([marquee](components/crops/marquee-logo-default.png)).
+- **Don't copy the wordmark, the marquee customer logos, or the hero artwork into anything that ships.** They are Cohere's and its customers' marks ([marquee](screenshots/home-light-full.png)).

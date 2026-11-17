@@ -424,7 +424,12 @@ if without:
     line += f" The other {len(without)} show no change a keyboard user can see: {', '.join(without)}."
 W(line)
 W()
-W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): the controls hold their hover step through press on this surface — hover and pressed read as the same painted step. Nothing a real press would submit, navigate or write (the CTAs navigate onward, the sign-in OAuth and Log-in controls submit) was ever pressed.")
+_same, _diff = [], []
+for _k, _c in C.items():
+    _st = _c.get("states") or {}
+    if "hover" in _st and "pressed" in _st and "style" in _st["hover"] and "style" in _st["pressed"]:
+        (_same if _st["hover"]["style"] == _st["pressed"]["style"] else _diff).append(_k)
+W(f"**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). On {len(_same)} of {len(_same) + len(_diff)} measured controls pressed reads as the same painted step as hover{'; the rest differ — ' + ', '.join(f'`{k}`' for k in _diff) + ' (their rows show the diff)' if _diff else ''}. Nothing a real press would submit, navigate or write (the CTAs navigate onward, the sign-in OAuth and Log-in controls submit) was ever pressed.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -474,8 +479,14 @@ for k in ["callout-card", "faq-item", "signin-card", "cta-dark"]:
         continue
     p = props(st)
     if ("radius" not in p or (p["background"] == "transparent" and "image" not in p)) and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+        # A painted child only describes the component when it covers it —
+        # signin-card's first paint is its email input, not the form.
+        def _covers(x):
+            m = re.match(r"([\d.]+)x([\d.]+)", x.get("size") or "")
+            return bool(m) and float(m.group(1)) >= st["rect"]["w"] * 0.9 and float(m.group(2)) >= st["rect"]["h"] * 0.9
+        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius") and _covers(x)), None)
+        if p0:
+            p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('image') or p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

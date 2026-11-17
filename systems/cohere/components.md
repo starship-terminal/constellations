@@ -43,13 +43,13 @@ Values that apply across entries, from the measurement files.
 
 **Focus.** 18 components were given a real keyboard focus (a further 1 could not be driven: `footer-social`). 18 show a visible focus state: `banner-close` (1px auto #101010, offset 0px), `nav-item` (1px auto #101010, offset 1px), `nav-signin` (2px solid #4c6ee6 `color.blue.500`, offset 2px), `nav-cta` (visible change in boxShadow/borderTopColor), `hero-cta` (visible change in boxShadow), `cta-dark` (visible change in boxShadow/borderTopColor), `cta-light` (visible change in boxShadow), `callout-card` (1px auto #101010, offset 1px), `price-tab` (1px auto #101010, offset 0px), `price-tab-off` (1px auto #101010, offset 0px), `faq-item` (1px auto #101010, offset 0px), `north-cta` (visible change in boxShadow), `command-cta` (visible change in boxShadow), `signin-oauth` (1px solid #616161 `color.volcanic.700`, offset 4px), `signin-submit` (2px solid rgba(0, 0, 0, 0) offset 2px on button.mt-10.w-full (child layer)), `footer-link` (1px auto #101010, offset 1px), `footer-cta` (visible change in boxShadow), `m-menu-link` (1px auto #e59700, offset 0px).
 
-**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): the controls hold their hover step through press on this surface — hover and pressed read as the same painted step. Nothing a real press would submit, navigate or write (the CTAs navigate onward, the sign-in OAuth and Log-in controls submit) was ever pressed.
+**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). On 12 of 18 measured controls pressed reads as the same painted step as hover; the rest differ — `nav-cta`, `hero-cta`, `cta-light`, `north-cta`, `command-cta`, `signin-oauth` (their rows show the diff). Nothing a real press would submit, navigate or write (the CTAs navigate onward, the sign-in OAuth and Log-in controls submit) was ever pressed.
 
 **Motion.** Transitions measured on the components, by duration.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | backdrop-filter, background-color, border-color, box-shadow, color, fill, filter, opacity, stroke, text-decoration-color, transform | signin-oauth |
+| 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | backdrop-filter, background-color, border-color, box-shadow, color, fill, filter, opacity, stroke, text-decoration-color, transform | faq-item-open, signin-oauth |
 | 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | background-color, border-color, color, fill, stroke, text-decoration-color | nav-item |
 | 0.3s | `cubic-bezier(0.4, 0, 0.2, 1)` | all, background-color, color, transform | banner-close, header, m-header, nav-signin |
 | 0.3s | `ease` | background-color, color | command-cta, cta-dark, cta-light, footer-cta, hero-cta, nav-cta, north-cta |
@@ -59,9 +59,9 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Callout card](#callout-card) | 437.33 x 492.81 | - | 22px 22px 0px 0px | #f0eee9 | none | 0 |
+| [Callout card](#callout-card) | 437.33 x 492.81 | - | 22px | transparent | none | 0 |
 | [FAQ row](#faq-row) | 660 x 61.2 | - | - | transparent | none | 0px 0px 36px 0px |
-| [Sign-in card](#sign-in-card) | 566 x 235 | 1px solid #bdbdbd | 8px 8px 0px 0px | #fafafa `color.neutral.95` | none | 0 |
+| [Sign-in card](#sign-in-card) | 566 x 235 | - | - | transparent | none | 0 |
 | [Dark CTA](#dark-cta) | 146 x 53.2 | 2px solid transparent | 9999px | #17171c `color.neutral.15` | none | 12px 24px |
 
 ## Components
@@ -265,9 +265,9 @@ A pricing-FAQ accordion row (closed state; its own press opens the answer — a 
 ![FAQ row default](components/crops/faq-item-default.png) ![FAQ row hover](components/crops/faq-item-hover.png) ![FAQ row focus-visible](components/crops/faq-item-focus-visible.png) ![FAQ row pressed](components/crops/faq-item-pressed.png)
 
 #### FAQ row, open
-The same FAQ accordion opened by its own press (a local UI toggle). Read as `faq-item-open` on the pricing page.
+The FAQ item after its question button's own press (a local UI toggle) — the enclosing row is measured so the expanded answer lands in the state, not just the toggle. Read as `faq-item-open` on the pricing page.
 
-**Values (opened).** size 660 x 61.2; padding 0px 0px 36px 0px; background transparent; text Unica77 Cohere Web 18/25.2 400, #17171c `color.neutral.15`.
+**Values (opened).** size 660 x 206.2; padding 8px 0px 0px 0px; background transparent; image linear-gradient(to right, #ff7759 `color.coral.500`, #7670c5, #4c6ee6 `color.blue.500`); text Unica77 Cohere Web 18/25.2 400, #17171c `color.neutral.15`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1).
 
 ![FAQ row, open opened](components/crops/faq-item-open-opened.png)
 

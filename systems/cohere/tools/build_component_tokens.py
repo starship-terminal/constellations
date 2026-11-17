@@ -178,6 +178,10 @@ def norm_color(v):
         if a is None or float(a) >= 1:
             return "#%02x%02x%02x" % (int(float(r)), int(float(g)), int(float(b)))
         return f"rgba({int(float(r))}, {int(float(g))}, {int(float(b))}, {'%g' % float(a)})"
+    m = re.fullmatch(r"rgb\(([\d.]+)\s+([\d.]+)\s+([\d.]+)\)", v)
+    if m:
+        r, g, b = m.groups()
+        return "#%02x%02x%02x" % (int(float(r)), int(float(g)), int(float(b)))
     m = re.fullmatch(r"rgb\(([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*/\s*([\d.]+%?)\)", v)
     if m:
         r, g, b, a = m.groups()
@@ -338,7 +342,6 @@ for path, comp, state, prop, desc in [
     ("light:accent", "cta-dark", "default", "backgroundColor", "The dark CTA fill — the surface's accent control (neutral-15 #17171c)."),
     ("light:accentHover", "nav-cta", "hover", "backgroundColor", "The dark CTA's hover fill — pureBlack #000."),
     ("light:border.subtle", "signin-oauth", "default", "borderTopColor", "The 1px hairline on the sign-in OAuth rows (#dadce0)."),
-    ("light:border.onDark", "footer", "default", "paint.4.border", "The 1px row separator painted inside the footer accordions (#525260)."),
     ("light:border.input", "signin-field", "default", "borderTopColor", "The sign-in field's 1px border (#bdbdbd)."),
     ("light:focus", "nav-item", "focus-visible", "outlineColor", "The 1px auto focus outline on nav links (#101010)."),
     ("light:focusAlt", "cta-dark", "focus-visible", "borderTopColor", "The CTA pill's focus repaint: the transparent 2px border swaps to neutral-95 #fafafa."),
@@ -367,6 +370,15 @@ if _v:
         "type": "color", "value": norm_color(_v),
         "source": "declared .bg-volcanic-700 background-color (raw/css-vars.json utilities); also measured as the signin-oauth focus-visible outlineColor (raw/components-computed.json)",
         "description": "The muted shade (volcanic-700 #616161) — what the sign-in field's disabled:text-volcanic-700 applies under :disabled; never paints as body text signed out."}
+# The footer accordion rows (li.border-b) are hidden clones at 1440 but carry
+# the 1px neutral-40 separator they paint at mobile widths — labelled, not
+# passed off as a painted desktop border.
+_v = stprop("footer", "default", "paint.4.border")
+if _v:
+    SPEC["light"].setdefault("border", {})["onDark"] = {
+        "type": "color", "value": norm_color(re.search(r"rgba?\([^)]*\)", _v).group(0)),
+        "source": "computed border of the footer's li.border-b accordion rows, hidden 0x0 clones at 1440 (raw/components-computed.json); declared neutral-40 (raw/css-vars.json utilities)",
+        "description": "The 1px row separator the footer's mobile accordion layout declares (neutral-40 #525260); measured on its hidden desktop clones — it paints where the same rows render at mobile widths."}
 # The mobile-menu scrim tint is a declared utility: .bg-black\\/20 paints
 # volcanic-900 at 20%.
 _v = rgb_of(util("bg-black\\/20", "background-color"))
