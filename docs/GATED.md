@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -547,6 +547,15 @@ Access: read-only (the marketing site, fibery.io/sign-up and fibery.io/login/ ar
 - the sign-up wizard was never advanced past step one - 'Create workspace' and 'Start without AI' were never pressed - so steps 2+ and workspace creation are uncaptured
 - the sign-up prompt and login e-mail field were typed into then cleared and never submitted, and the OAuth POST forms were never pressed - validation, error, loading and success states are absent rather than measured
 - 'Book a demo' links to a scheduler that was never opened; 'Workspace SSO' was never followed
+
+## [Krea](../systems/krea) — `krea`
+Access: read-only (the home shell, pricing, enterprise, blog, plugins, MCP, the image tool, docs, terms and the login card are public; assets, train, nodes, account, billing, API keys, checkout and generation sit behind sign-in and were never reached; Sign in, Sign up, OAuth, Book a call, Get Pro and Generate were measured, never followed; the prompt and email fields were filled and cleared; consent overlays were hidden, never answered)
+- https://www.krea.ai/login is the auth boundary (Continue with Google, Continue with Apple, SSO, Continue with Email). Controls were measured, never followed, and the email field was filled and cleared
+- https://www.krea.ai/assets redirects to /login?redirect=%2Fassets. The signed-in asset library was not captured
+- https://www.krea.ai/pricing plan buttons (Get Free, Get Basic, Get Pro, Get Max) open account or checkout and were measured, never followed
+- https://www.krea.ai/ and https://www.krea.ai/image Generate and the composer submit a generation. They were measured, never clicked
+- Train, Node Editor, account settings, billing and API keys sit behind sign-in and were not opened
+- composer-send, image-generate, price-card, faq-item, m-sidebar and m-signin were not found as stable elements on the measurement pass
 
 ## [fal.ai](../systems/fal) — `fal`
 Access: read-only (the marketing pages, the explore catalog, the model and API pages, the docs and the login card are fully public; everything past login - dashboard, API keys, billing, deployments, sandbox, inference - is an authenticated boundary never reached; OAuth, Sign-in-to-run, Open-in-Sandbox, Download, Contact-Sales and Get-Started were measured, never followed; the prompt field was filled and cleared without running a model; the consent card was hidden, never answered)
