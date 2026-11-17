@@ -17,6 +17,7 @@ HBO Max is worth a capture because it is a current reference for the streaming-m
 | [screenshots/](screenshots) | `{page}-dark-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-promo` the consent modal, `-carousel-next`/`-plan-yearly`/`-faq-open` the toggle states |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the token sheet and app bundles, resolved at 1440px), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [layout.json](raw/layout.json), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
+| [capture.pr](capture.pr) | The pull request this capture shipped in |
 
 ## Brief
 

@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cohere style guide</title>
+<meta name="description" content="Cohere (cohere.com) design tokens and the public site's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-volcanic-500: #9e9e9e;
+  --color-volcanic-600: #757575;
+  --color-volcanic-700: #616161;
+  --color-volcanic-800: #424242;
+  --color-volcanic-900: #212121;
+  --color-neutral-10: #1d1d1d;
+  --color-neutral-15: #17171c;
+  --color-neutral-30: #2f2f37;
+  --color-neutral-40: #525260;
+  --color-neutral-50: #75758a;
+  --color-neutral-70: #bbbbc3;
+  --color-neutral-80: #d9d9dd;
+  --color-neutral-90: #f2f2f2;
+  --color-neutral-95: #fafafa;
+  --color-quartz-50: #f8f1f9;
+  --color-quartz-100: #f0dff3;
+  --color-quartz-150: #eddaf4;
+  --color-quartz-200: #ead0f0;
+  --color-quartz-300: #e8c3f0;
+  --color-quartz-500: #d18ee2;
+  --color-quartz-600: #b576c5;
+  --color-quartz-700: #9b60aa;
+  --color-quartz-900: #3e2644;
+  --color-coral-50: #fdf2f0;
+  --color-coral-85: #ffd9d0;
+  --color-coral-100: #f6ddd5;
+  --color-coral-200: #f8c8bc;
+  --color-coral-300: #ffad9b;
+  --color-coral-400: #ff967e;
+  --color-coral-500: #ff7759;
+  --color-coral-700: #ca492d;
+  --color-mushroom-50: #f5f4f2;
+  --color-mushroom-100: #e9e6de;
+  --color-mushroom-200: #e4ded2;
+  --color-mushroom-300: #d7cfc1;
+  --color-mushroom-600: #9d9482;
+  --color-marble-100: #fafafa;
+  --color-marble-200: #f5f5f5;
+  --color-marble-300: #eeeeee;
+  --color-marble-400: #e0e0e0;
+  --color-blue-25: #e5ebff;
+  --color-blue-50: #f0f2fb;
+  --color-blue-100: #dbe0f2;
+  --color-blue-200: #c0caef;
+  --color-blue-300: #a9b9f3;
+  --color-blue-325: #8fa6f9;
+  --color-blue-500: #4c6ee6;
+  --color-blue-600: #3f5fd2;
+  --color-blue-700: #2d4cb9;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #121e4a;
+  --color-green-50: #eef0ef;
+  --color-green-100: #d4d9d4;
+  --color-green-200: #b2bbb6;
+  --color-green-500: #71867e;
+  --color-green-600: #556f65;
+  --color-green-650: #355146;
+  --color-green-700: #39594d;
+  --color-green-800: #2b4239;
+  --color-green-900: #16211c;
+  --color-danger-50: #fff1f1;
+  --color-danger-200: #f0cccc;
+  --color-danger-500: #b20000;
+  --color-danger-600: #b30000;
+  --color-danger-900: #5a0000;
+  --color-success-50: #eff5ea;
+  --color-success-300: #089111;
+  --color-pureBlack: #000000;
+  --color-pureWhite: #ffffff;
+  --color-onyx: #0c1210;
+  --gradient-cta: linear-gradient(270deg, #d18ee2 0.0%, #ff7759 100.0%);
+  --radius-sm: 4px;
+  --radius-md: 6.8px;
+  --radius-lg: 12px;
+  --radius-xl: 22px;
+  --radius-xxl: 30px;
+  --radius-xxxl: 1.5rem;
+  --radius-full: 9999px;
+  --radius-control: 9999px;
+  --radius-card: 22px;
+  --motion-duration-fast: 150ms;
+  --motion-duration-default: 200ms;
+  --motion-duration-slow: 300ms;
+  --motion-duration-slower: 500ms;
+  --motion-duration-measuredControl: 300ms;
+  --motion-duration-measuredNav: 200ms;
+  --motion-curve-in-: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --motion-curve-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-curve-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-curve-button: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --spacing-unit: 0.25rem;
+  --z-background: 0;
+  --z-content: 20;
+  --z-nav: 100;
+  --layout-maxWidth-fullScreen: 2280px;
+  --layout-maxWidth-internal: 1920px;
+  --layout-maxWidth-blog: 1390px;
+  --fontSize-web312: 0.75rem;
+  --fontSize-web314: 0.875rem;
+  --fontSize-web316: 1rem;
+  --fontSize-web318: 1.125rem;
+  --fontSize-web320: 1.25rem;
+  --fontSize-web324: 1.5rem;
+  --fontSize-web328: 1.75rem;
+  --fontSize-web340: 2.5rem;
+  --fontSize-web348: 3rem;
+  --fontSize-web360: 3.75rem;
+  --fontSize-web37: 0.5rem;
+  --fontWeight-normal: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --font-family-ui: "Unica77 Cohere Web", Inter, Arial, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-mono: CohereMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-eyebrow: CohereMono, Arial, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-display: CohereVariable, "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-displayMeasured: CohereText, "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-size-hero: 96px;
+  --font-size-h1Pricing: 72px;
+  --font-size-h2: 60px;
+  --font-size-mHero: 60px;
+  --font-size-nav: 14px;
+  --font-size-footer: 14px;
+  --font-size-banner: 16px;
+  --font-size-rate: 18px;
+  --font-size-cta: 18px;
+  --font-size-faq: 18px;
+  --component-control-heightNavCta: 36px;
+  --component-control-heightNavItem: 31.5938px;
+  --component-control-heightHeroCta: 53.2031px;
+  --component-control-heightMenuButton: 32px;
+  --component-control-radiusCta: 9999px;
+  --component-control-heightOAuth: 40px;
+  --component-banner-height: 48px;
+  --component-nav-height: 60px;
+  --component-footer-height: 1430.39px;
+  --component-drawer-width: 390px;
+  --component-heroTitle-width: 1128px;
+  --component-card-widthCallout: 437.328px;
+  --component-field-widthSignin: 566px;
+  --surface-page: var(--color-pureWhite);
+  --surface-raised: #f0eee9;
+  --surface-dark: var(--color-neutral-15);
+  --surface-band: var(--color-green-650);
+  --surface-banner: var(--color-pureBlack);
+  --text-primary: var(--color-volcanic-900);
+  --text-nav: var(--color-pureBlack);
+  --text-onDark: var(--color-neutral-95);
+  --text-onAccent: var(--color-pureWhite);
+  --text-banner: var(--color-pureWhite);
+  --text-visited: #ca492d;
+  --text-muted: #616161;
+  --accent: var(--color-neutral-15);
+  --accentHover: var(--color-pureBlack);
+  --border-subtle: #dadce0;
+  --border-input: #bdbdbd;
+  --border-onDark: #525260;
+  --focus: #101010;
+  --focusAlt: var(--color-neutral-95);
+  --focusOnDark: var(--color-volcanic-700);
+  --overlay-scrim: rgba(33, 33, 33, 0.2);
+  --sg-sans: var(--font-family-ui, "Unica77 Cohere Web"), Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  --sg-display: var(--font-family-display, "CohereVariable"), "Space Grotesk", var(--sg-sans);
+  --sg-mono: var(--font-family-mono, "CohereMono"), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #212121); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.4px; }
+h2.sh { font: 500 12px/1 var(--sg-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted, #757575); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-90, #f2f2f2); }
+.lead { max-width: 62ch; color: var(--text-muted, #757575); }
+.note { font-size: 13px; color: var(--text-muted, #757575); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #757575); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-90, #f2f2f2); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #757575); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, #757575); }
+/* ---- site mock: the marketing surface ---- */
+.mock { border: 1px solid var(--color-neutral-90, #f2f2f2); border-radius: var(--radius-xl, 22px); overflow: hidden; }
+.mock.light { background: var(--surface-page, #fff); color: var(--text-primary, #212121); }
+.banner { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: var(--component-banner-height, 40px); padding: 6px 32px; font-size: 14px; background: var(--surface-banner, #000); color: var(--text-banner, #fff); }
+.banner a { color: var(--text-banner, #fff); text-decoration: underline; }
+.banner .x { margin-left: auto; color: var(--text-banner, #fff); font-family: var(--sg-mono); }
+.navbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 60px); padding: 0 32px; font-size: 14px; color: var(--text-nav, #212121); border-bottom: 1px solid var(--color-neutral-90, #f2f2f2); }
+.navbar .wm { font-family: var(--sg-display); font-size: 18px; font-weight: 500; color: var(--text-primary, #212121); }
+.navbar .sp { flex: 1; }
+.navbar .lk { height: var(--component-control-heightNavItem, 36px); display: inline-flex; align-items: center; padding: 0 6px; }
+.navbar .ghost { height: var(--component-control-heightNavItem, 36px); display: inline-flex; align-items: center; padding: 0 12px; }
+.navbar .cta { height: var(--component-control-heightNavCta, 40px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--accent, #17171c); color: var(--text-onAccent, #fff); font-weight: 500; }
+.hero { padding: 80px 40px 72px; text-align: center; }
+.hero h3 { font: 400 var(--font-size-hero, 60px)/1 var(--sg-display); margin: 0 auto 16px; max-width: 16ch; letter-spacing: -.02em; }
+.hero p { margin: 0 auto 36px; color: var(--text-muted, #757575); max-width: 46ch; }
+.herorow { display: flex; gap: 10px; align-items: center; justify-content: center; }
+.bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightHeroCta, 44px); padding: 0 20px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--accent, #17171c); color: var(--text-onAccent, #fff); font-size: 15px; font-weight: 500; }
+/* ---- callout cards ---- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 24px; }
+.ccard { border-radius: var(--radius-lg, 12px); background: var(--surface-raised, #fafafa); border: 1px solid var(--border-subtle, var(--color-neutral-90, #f2f2f2)); padding: 18px; font-weight: 500; }
+.ccard .cap { font: 500 12px/1.4 var(--sg-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted, #757575); }
+.ccard .t { font: 400 20px/1.2 var(--sg-display); margin-top: 8px; color: var(--text-primary, #212121); }
+/* ---- pricing ---- */
+.ptabs { display: flex; gap: 24px; padding: 24px 24px 0; font-size: 16px; }
+.ptabs .t { padding: 4px 0; color: var(--text-primary, #212121); }
+.ptabs .t.on { border-bottom: 2px solid; border-image: linear-gradient(90deg, var(--color-coral-500, #ff7759), var(--color-quartz-500, #d18ee2)) 1; }
+.ptable { margin: 16px 24px 24px; border-collapse: collapse; font-size: 14px; width: calc(100% - 48px); }
+.ptable td, .ptable th { border-bottom: 1px solid var(--color-neutral-90, #f2f2f2); padding: 10px 14px; text-align: left; }
+.ptable .rate { font-family: var(--sg-mono); }
+/* ---- footer band ---- */
+.fband { background: var(--surface-dark, #0c1210); color: var(--text-onDark, #fff); padding: 40px 32px; }
+.fband .fcta { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: var(--radius-full, 9999px); background: var(--color-pureWhite, #fff); color: var(--accent, #17171c); font-weight: 500; }
+.fband .cols { display: flex; gap: 48px; margin-top: 28px; font-size: 13px; }
+.fband .cols span { display: block; color: var(--text-onDark, #fff); opacity: .7; line-height: 2; }
+.fband .cols b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; opacity: .9; }
+/* ---- the sign-in card (app boundary) ---- */
+.signin { max-width: 420px; margin: 28px auto; padding: 28px; background: var(--surface-page, #fff); border: 1px solid var(--color-neutral-90, #f2f2f2); border-radius: var(--radius-lg, 12px); font-size: 14px; color: var(--text-primary, #212121); }
+.signin .h { font: 400 24px/1.2 var(--sg-display); margin-bottom: 16px; text-align: center; }
+.signin .field { height: 60px; border: 1px solid var(--border-input, #bdbdbd); border-radius: 8px 8px 0 0; margin-bottom: 10px; display: flex; align-items: center; padding: 0 12px; color: var(--text-primary, #212121); background: var(--color-neutral-95, #fafafa); }
+.signin .obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightOAuth, 40px); border-radius: 4px; margin-bottom: 10px; font-size: 14px; background: var(--color-pureWhite, #fff); color: var(--text-primary, #212121); border: 1px solid var(--border-subtle, #dadce0); }
+.back { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--text-muted, #757575); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-90, #f2f2f2); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cohere style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Cohere, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. cohere.com declares its design layer as Tailwind config utility classes, not <code>:root</code> variables — a named palette (<code>volcanic</code> brand greys, the workhorse <code>neutral</code> ramp, <code>quartz</code>/<code>coral</code>/<code>mushroom</code>/<code>marble</code>/<code>blue</code>/<code>green</code>/<code>danger</code>/<code>success</code> plus <code>onyx</code>/<code>pureBlack</code>/<code>pureWhite</code>), the <code>text-web3-*</code> type scale, the <code>font-*</code> family stacks (Unica77 Cohere Web, CohereMono, CohereVariable), a custom radius scale and the <code>z-*</code>/<code>max-w-web3-*</code> layers. Roles are measured on the painted chrome: the dark <code>ease-button-gradient</code> CTA pills, the pureBlack promo banner, the footer band and the sign-in card. Brand art is the hero illustration.</p>
+  <p class="note">One light theme across the marketing routes, with the pureBlack promo banner and the dark footer band inside it; dashboard.cohere.com/welcome/login is a separate app surface measured at rest as the sign-in boundary. Read from cohere.com on 2026-11-17, signed out, in headless Chromium. Nothing was signed into, paid for or submitted.</p>
+
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">The dismissible pureBlack promo banner above the fixed nav (wordmark, roll-hover links, Sign-in ghost and the dark Request-a-demo pill), then the centred serif-scale hero with its CTA pills.</p>
+  <div class="mock light">
+    <div class="banner"><span>Rerank 5 is here: sharper search, fewer tokens. <a>Learn more</a></span><span class="x">×</span></div>
+    <div class="navbar"><span class="wm">Cohere</span><span class="lk">Products</span><span class="lk">Solutions</span><span class="lk">Resources</span><span class="lk">Company</span><span class="sp"></span><span class="ghost">Sign in</span><span class="cta">Request a demo</span></div>
+    <div class="hero">
+      <h3>Your AI. Your rules.</h3>
+      <p>Security-first enterprise AI — models and systems that deploy where your data lives.</p>
+      <div class="herorow"><span class="bigcta">Request a demo</span></div>
+    </div>
+    <div class="cards">
+      <div class="ccard"><div class="cap">Platform</div><div class="t">North — the agentic workspace</div></div>
+      <div class="ccard"><div class="cap">Models</div><div class="t">Command — production-ready LLMs</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">The model-category tablist switches the rate table; rates are per-model figures. The tabs are aria-selected toggles — measured at rest, never switched.</p>
+  <div class="mock light">
+    <div class="ptabs"><span class="t on">Workplace systems</span><span class="t">Generative models</span><span class="t">Advanced retrieval models</span></div>
+    <table class="ptable"><tr><th>Model</th><th>Rate</th></tr><tr><td>Command A</td><td class="rate">$2.50 / 1M tokens</td></tr><tr><td>Rerank 5</td><td class="rate">$3.00 / 1K searches</td></tr></table>
+  </div>
+
+  <h2 class="sh">Footer band</h2>
+  <p class="lead">The dark island inside the light theme — white CTA pill, link columns and the legal/certification row.</p>
+  <div class="mock light"><div class="fband">
+    <span class="fcta">Request a demo</span>
+    <div class="cols"><div><b>Platforms</b><span>North</span><span>Compass</span></div><div><b>Models</b><span>Command</span><span>Embed</span><span>Rerank</span></div><div><b>Company</b><span>About</span><span>Careers</span></div></div>
+  </div></div>
+
+  <h2 class="sh">The sign-in card</h2>
+  <p class="lead">dashboard.cohere.com/welcome/login is a separate app surface — a card with an email field and OAuth controls; measured at rest, never submitted.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Log in to Cohere</div>
+    <div class="field">Email address</div>
+    <div class="obtn">Continue with Google</div>
+    <span class="back">← Back to cohere.com</span>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The page ground is <code>light.surface.page</code> (declared <code>pureWhite</code>); the dark islands are <code>light.surface.banner</code> = <code>color.pureBlack</code> #000 and <code>light.surface.dark</code> (the footer band). Ink is <code>light.text.primary</code> = <code>color.volcanic.900</code> #212121 with <code>light.text.muted</code> for secondary copy; the accent control is the dark CTA <code>light.accent</code> = <code>color.neutral.15</code> #17171c. <code>coral</code> is the warm accent (visited links declare coral-700), <code>quartz</code> the purple.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the nav pill heights, the promo banner and nav bar heights, the CTA radius, the OAuth row, the mobile menu overlay and the sign-in field width.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Harvested the Tailwind config's literal utility rules (the named palette, type scale, radius scale, z and max-width layers) and read computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible and CDP-forced pressed states measured per component; the FAQ accordion and the mobile menu read at their own toggled state</td></tr><tr><td>No provenance</td><td>Every token names its utility class or the measurement it came from; values painted by the browser (decomposed shorthands) are labelled as computed, not declared</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"volcanic":{"500":{"v":"#9e9e9e","t":"color","s":"declared .bg-volcanic-500 background-color (raw/css-vars.json utilities)","d":"Declared volcanic-500. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."},"600":{"v":"#757575","t":"color","s":"declared .bg-volcanic-600 background-color (raw/css-vars.json utilities)","d":"Declared volcanic-600. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."},"700":{"v":"#616161","t":"color","s":"declared .bg-volcanic-700 background-color (raw/css-vars.json utilities)","d":"Declared volcanic-700. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."},"800":{"v":"#424242","t":"color","s":"declared .bg-volcanic-800 background-color (raw/css-vars.json utilities)","d":"Declared volcanic-800. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."},"900":{"v":"#212121","t":"color","s":"declared .bg-volcanic-900 background-color (raw/css-vars.json utilities)","d":"Declared volcanic-900. The brand grey ramp (volcanic-900 #212121 is the ink the site paints everywhere)."}},"neutral":{"10":{"v":"#1d1d1d","t":"color","s":"declared .bg-neutral-10 background-color (raw/css-vars.json utilities)","d":"Declared neutral-10. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."},"15":{"v":"#17171c","t":"color","s":"declared .bg-neutral-15 background-color (raw/css-vars.json utilities)","d":"Declared neutral-15. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."},"30":{"v":"#2f2f37","t":"color","s":"declared .bg-neutral-30 background-color (raw/css-vars.json utilities)","d":"Declared neutral-30. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."},"40":{"v":"#525260","t":"color","s":"declared .bg-neutral-40 background-color (raw/css-vars.json utilities)","d":"Declared neutral-40. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."},"50":{"v":"#75758a","t":"color","s":"declared .bg-neutral-50 background-color (raw/css-vars.json utilities)","d":"Declared neutral-50. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."},"70":{"v":"#bbbbc3","t":"color","s":"declared .bg-neutral-70 background-color (raw/css-vars.json utilities)","d":"Declared neutral-70. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."},"80":{"v":"#d9d9dd","t":"color","s":"declared .bg-neutral-80 background-color (raw/css-vars.json utilities)","d":"Declared neutral-80. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."},"90":{"v":"#f2f2f2","t":"color","s":"declared .bg-neutral-90 background-color (raw/css-vars.json utilities)","d":"Declared neutral-90. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."},"95":{"v":"#fafafa","t":"color","s":"declared .bg-neutral-95 background-color (raw/css-vars.json utilities)","d":"Declared neutral-95. The workhorse ramp: neutral-15 #17171c is the dark CTA, 90 #f2f2f2 a panel fill, 95 #fafafa near-white."}},"quartz":{"50":{"v":"#f8f1f9","t":"color","s":"declared .bg-quartz-50 background-color (raw/css-vars.json utilities)","d":"Declared quartz-50. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."},"100":{"v":"#f0dff3","t":"color","s":"declared .bg-quartz-100 background-color (raw/css-vars.json utilities)","d":"Declared quartz-100. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."},"150":{"v":"#eddaf4","t":"color","s":"declared .bg-quartz-150 background-color (raw/css-vars.json utilities)","d":"Declared quartz-150. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."},"200":{"v":"#ead0f0","t":"color","s":"declared .bg-quartz-200 background-color (raw/css-vars.json utilities)","d":"Declared quartz-200. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."},"300":{"v":"#e8c3f0","t":"color","s":"declared .bg-quartz-300 background-color (raw/css-vars.json utilities)","d":"Declared quartz-300. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."},"500":{"v":"#d18ee2","t":"color","s":"declared .bg-quartz-500 background-color (raw/css-vars.json utilities)","d":"Declared quartz-500. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."},"600":{"v":"#b576c5","t":"color","s":"declared .bg-quartz-600 background-color (raw/css-vars.json utilities)","d":"Declared quartz-600. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."},"700":{"v":"#9b60aa","t":"color","s":"declared .bg-quartz-700 background-color (raw/css-vars.json utilities)","d":"Declared quartz-700. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."},"900":{"v":"#3e2644","t":"color","s":"declared .bg-quartz-900 background-color (raw/css-vars.json utilities)","d":"Declared quartz-900. The purple accent ramp (quartz-500 #d18ee2 to quartz-900 #3e2644)."}},"coral":{"50":{"v":"#fdf2f0","t":"color","s":"declared .bg-coral-50 background-color (raw/css-vars.json utilities)","d":"Declared coral-50. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."},"85":{"v":"#ffd9d0","t":"color","s":"declared .bg-coral-85 background-color (raw/css-vars.json utilities)","d":"Declared coral-85. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."},"100":{"v":"#f6ddd5","t":"color","s":"declared .bg-coral-100 background-color (raw/css-vars.json utilities)","d":"Declared coral-100. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."},"200":{"v":"#f8c8bc","t":"color","s":"declared .bg-coral-200 background-color (raw/css-vars.json utilities)","d":"Declared coral-200. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."},"300":{"v":"#ffad9b","t":"color","s":"declared .bg-coral-300 background-color (raw/css-vars.json utilities)","d":"Declared coral-300. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."},"400":{"v":"#ff967e","t":"color","s":"declared .bg-coral-400 background-color (raw/css-vars.json utilities)","d":"Declared coral-400. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."},"500":{"v":"#ff7759","t":"color","s":"declared .bg-coral-500 background-color (raw/css-vars.json utilities)","d":"Declared coral-500. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."},"700":{"v":"#ca492d","t":"color","s":"declared .bg-coral-700 background-color (raw/css-vars.json utilities)","d":"Declared coral-700. The warm accent ramp (coral-500 #ff7759, coral-700 #ca492d, coral-900 #511d12)."}},"mushroom":{"50":{"v":"#f5f4f2","t":"color","s":"declared .bg-mushroom-50 background-color (raw/css-vars.json utilities)","d":"Declared mushroom-50. The warm olive-grey ramp."},"100":{"v":"#e9e6de","t":"color","s":"declared .bg-mushroom-100 background-color (raw/css-vars.json utilities)","d":"Declared mushroom-100. The warm olive-grey ramp."},"200":{"v":"#e4ded2","t":"color","s":"declared .bg-mushroom-200 background-color (raw/css-vars.json utilities)","d":"Declared mushroom-200. The warm olive-grey ramp."},"300":{"v":"#d7cfc1","t":"color","s":"declared .bg-mushroom-300 background-color (raw/css-vars.json utilities)","d":"Declared mushroom-300. The warm olive-grey ramp."},"600":{"v":"#9d9482","t":"color","s":"declared .bg-mushroom-600 background-color (raw/css-vars.json utilities)","d":"Declared mushroom-600. The warm olive-grey ramp."}},"marble":{"100":{"v":"#fafafa","t":"color","s":"declared .bg-marble-100 background-color (raw/css-vars.json utilities)","d":"Declared marble-100. The light marble-grey ramp."},"200":{"v":"#f5f5f5","t":"color","s":"declared .bg-marble-200 background-color (raw/css-vars.json utilities)","d":"Declared marble-200. The light marble-grey ramp."},"300":{"v":"#eeeeee","t":"color","s":"declared .bg-marble-300 background-color (raw/css-vars.json utilities)","d":"Declared marble-300. The light marble-grey ramp."},"400":{"v":"#e0e0e0","t":"color","s":"declared .bg-marble-400 background-color (raw/css-vars.json utilities)","d":"Declared marble-400. The light marble-grey ramp."}},"blue":{"25":{"v":"#e5ebff","t":"color","s":"declared .bg-blue-25 background-color (raw/css-vars.json utilities)","d":"Declared blue-25. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"50":{"v":"#f0f2fb","t":"color","s":"declared .bg-blue-50 background-color (raw/css-vars.json utilities)","d":"Declared blue-50. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"100":{"v":"#dbe0f2","t":"color","s":"declared .bg-blue-100 background-color (raw/css-vars.json utilities)","d":"Declared blue-100. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"200":{"v":"#c0caef","t":"color","s":"declared .bg-blue-200 background-color (raw/css-vars.json utilities)","d":"Declared blue-200. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"300":{"v":"#a9b9f3","t":"color","s":"declared .bg-blue-300 background-color (raw/css-vars.json utilities)","d":"Declared blue-300. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"325":{"v":"#8fa6f9","t":"color","s":"declared .bg-blue-325 background-color (raw/css-vars.json utilities)","d":"Declared blue-325. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"500":{"v":"#4c6ee6","t":"color","s":"declared .bg-blue-500 background-color (raw/css-vars.json utilities)","d":"Declared blue-500. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"600":{"v":"#3f5fd2","t":"color","s":"declared .bg-blue-600 background-color (raw/css-vars.json utilities)","d":"Declared blue-600. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"700":{"v":"#2d4cb9","t":"color","s":"declared .bg-blue-700 background-color (raw/css-vars.json utilities)","d":"Declared blue-700. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"800":{"v":"#1e40af","t":"color","s":"declared .bg-blue-800 background-color (raw/css-vars.json utilities)","d":"Declared blue-800. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."},"900":{"v":"#121e4a","t":"color","s":"declared .bg-blue-900 background-color (raw/css-vars.json utilities)","d":"Declared blue-900. The blue ramp (blue-500 #4c6ee6, blue-900 #121e4a navy)."}},"green":{"50":{"v":"#eef0ef","t":"color","s":"declared .bg-green-50 background-color (raw/css-vars.json utilities)","d":"Declared green-50. The muted sage-green ramp."},"100":{"v":"#d4d9d4","t":"color","s":"declared .bg-green-100 background-color (raw/css-vars.json utilities)","d":"Declared green-100. The muted sage-green ramp."},"200":{"v":"#b2bbb6","t":"color","s":"declared .bg-green-200 background-color (raw/css-vars.json utilities)","d":"Declared green-200. The muted sage-green ramp."},"500":{"v":"#71867e","t":"color","s":"declared .bg-green-500 background-color (raw/css-vars.json utilities)","d":"Declared green-500. The muted sage-green ramp."},"600":{"v":"#556f65","t":"color","s":"declared .bg-green-600 background-color (raw/css-vars.json utilities)","d":"Declared green-600. The muted sage-green ramp."},"650":{"v":"#355146","t":"color","s":"declared .bg-green-650 background-color (raw/css-vars.json utilities)","d":"Declared green-650. The muted sage-green ramp."},"700":{"v":"#39594d","t":"color","s":"declared .bg-green-700 background-color (raw/css-vars.json utilities)","d":"Declared green-700. The muted sage-green ramp."},"800":{"v":"#2b4239","t":"color","s":"declared .bg-green-800 background-color (raw/css-vars.json utilities)","d":"Declared green-800. The muted sage-green ramp."},"900":{"v":"#16211c","t":"color","s":"declared .bg-green-900 background-color (raw/css-vars.json utilities)","d":"Declared green-900. The muted sage-green ramp."}},"danger":{"50":{"v":"#fff1f1","t":"color","s":"declared .bg-danger-50 background-color (raw/css-vars.json utilities)","d":"Declared danger-50. The error red ramp."},"200":{"v":"#f0cccc","t":"color","s":"declared .bg-danger-200 background-color (raw/css-vars.json utilities)","d":"Declared danger-200. The error red ramp."},"500":{"v":"#b20000","t":"color","s":"declared .bg-danger-500 background-color (raw/css-vars.json utilities)","d":"Declared danger-500. The error red ramp."},"600":{"v":"#b30000","t":"color","s":"declared .bg-danger-600 background-color (raw/css-vars.json utilities)","d":"Declared danger-600. The error red ramp."},"900":{"v":"#5a0000","t":"color","s":"declared .bg-danger-900 background-color (raw/css-vars.json utilities)","d":"Declared danger-900. The error red ramp."}},"success":{"50":{"v":"#eff5ea","t":"color","s":"declared .bg-success-50 background-color (raw/css-vars.json utilities)","d":"Declared success-50. The success green ramp."},"300":{"v":"#089111","t":"color","s":"declared .bg-success-300 background-color (raw/css-vars.json utilities)","d":"Declared success-300. The success green ramp."}},"pureBlack":{"v":"#000000","t":"color","s":"declared .bg-pureBlack background-color (raw/css-vars.json utilities)","d":"Declared pureBlack (#000) — the promo banner fill."},"pureWhite":{"v":"#ffffff","t":"color","s":"declared .bg-pureWhite background-color (raw/css-vars.json utilities)","d":"Declared pureWhite (#fff) — the page ground and CTA pill."},"onyx":{"v":"#0c1210","t":"color","s":"declared .bg-onyx background-color (raw/css-vars.json utilities)","d":"Declared onyx (#0c1210) — the near-black green-tinted ink."}},"gradient":{"cta":{"v":[{"color":"#d18ee2","position":0.0},{"color":"#ff7759","position":1.0}],"t":"gradient","s":"computed backgroundImage of the footer CTA's ::before layer (raw/components-computed.json, footer-cta default)","d":"The CTA pill's gradient sweep (::before) — quartz-500 #d18ee2 to coral-500 #ff7759 at 270deg, revealed through the ease-button-gradient mask."}},"measured":{},"radius":{"sm":{"v":"4px","t":"dimension","s":"declared .rounded-sm border-radius (raw/css-vars.json utilities)","d":"Declared rounded-sm (4px)."},"md":{"v":"6.8px","t":"dimension","s":"declared .rounded-md border-radius (raw/css-vars.json utilities)","d":"Declared rounded-md (6.8px)."},"lg":{"v":"12px","t":"dimension","s":"declared .rounded-lg border-radius (raw/css-vars.json utilities)","d":"Declared rounded-lg (12px)."},"xl":{"v":"22px","t":"dimension","s":"declared .rounded-xl border-radius (raw/css-vars.json utilities)","d":"Declared rounded-xl (22px)."},"xxl":{"v":"30px","t":"dimension","s":"declared .rounded-2xl border-radius (raw/css-vars.json utilities)","d":"Declared rounded-2xl (30px)."},"xxxl":{"v":"1.5rem","t":"dimension","s":"declared .rounded-3xl border-radius (raw/css-vars.json utilities)","d":"Declared rounded-3xl (1.5rem = 24px)."},"full":{"v":"9999px","t":"dimension","s":"declared .rounded-full border-radius (raw/css-vars.json utilities)","d":"Declared rounded-full (9999px) — the pill controls."},"control":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The measured CTA-pill corner radius."},"card":{"v":"22px","t":"dimension","s":"computed borderTopLeftRadius of callout-card default (raw/components-computed.json)","d":"The measured callout-card corner."}},"motion":{"duration":{"fast":{"v":"150ms","t":"duration","s":"declared .duration-150 transition-duration (raw/css-vars.json utilities)","d":"Declared duration-150 (.15s)."},"default":{"v":"200ms","t":"duration","s":"declared .duration-200 transition-duration (raw/css-vars.json utilities)","d":"Declared duration-200 (.2s) — the nav-link and button colour swaps."},"slow":{"v":"300ms","t":"duration","s":"declared .duration-300 transition-duration (raw/css-vars.json utilities)","d":"Declared duration-300 (.3s) — the banner-close rotation and menu scrim."},"slower":{"v":"500ms","t":"duration","s":"declared .duration-500 transition-duration (raw/css-vars.json utilities)","d":"Declared duration-500 (.5s)."},"measuredControl":{"v":"300ms","t":"duration","s":"computed transitionDuration of nav-cta default (raw/components-computed.json)","d":"The measured CTA transition."},"measuredNav":{"v":"200ms","t":"duration","s":"computed transitionDuration of nav-item default (raw/components-computed.json)","d":"The measured nav-link transition."}},"curve":{"in_":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"declared .ease-in transition-timing-function (raw/css-vars.json utilities)","d":"Declared ease-in."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared .ease-out transition-timing-function (raw/css-vars.json utilities)","d":"Declared ease-out."},"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared .ease-in-out transition-timing-function (raw/css-vars.json utilities)","d":"Declared ease-in-out."},"button":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":"computed transitionTimingFunction of nav-cta default (raw/components-computed.json)","d":"The `ease` curve on the CTA pills’ background/color swap (0.3s)."}}},"spacing":{"unit":{"v":"0.25rem","t":"dimension","s":"declared .gap-1 gap (raw/css-vars.json utilities)","d":"The spacing base unit (.25rem = 4px) — every gap/padding multiplies it."}},"z":{"background":{"v":0,"t":"number","s":"declared .z-background z-index (raw/css-vars.json utilities)","d":"Declared z-background (0)."},"content":{"v":20,"t":"number","s":"declared .z-content z-index (raw/css-vars.json utilities)","d":"Declared z-content (20)."},"nav":{"v":100,"t":"number","s":"declared .z-nav z-index (raw/css-vars.json utilities)","d":"Declared z-nav (100) — the fixed chrome layer."}},"layout":{"maxWidth":{"fullScreen":{"v":"2280px","t":"dimension","s":"declared .max-w-web3-full-screen max-width (raw/css-vars.json utilities)","d":"Declared max-w-web3-full-screen (2280px) — the outermost content measure."},"internal":{"v":"1920px","t":"dimension","s":"declared .max-w-web3-internal-wrapper max-width (raw/css-vars.json utilities)","d":"Declared max-w-web3-internal-wrapper (1920px) — the inner column."},"blog":{"v":"1390px","t":"dimension","s":"declared .max-w-web3-blog-lp-wrapper max-width (raw/css-vars.json utilities)","d":"Declared max-w-web3-blog-lp-wrapper (1390px)."}}},"fontSize":{"web312":{"v":"0.75rem","t":"dimension","s":"declared .text-web3-12 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-12 (font-size 0.75rem, line-height 140%, tracking 0px)."},"web314":{"v":"0.875rem","t":"dimension","s":"declared .text-web3-14 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-14 (font-size 0.875rem, line-height 140%, tracking 0px)."},"web316":{"v":"1rem","t":"dimension","s":"declared .text-web3-16 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-16 (font-size 1rem, line-height 140%, tracking 0px)."},"web318":{"v":"1.125rem","t":"dimension","s":"declared .text-web3-18 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-18 (font-size 1.125rem, line-height 140%, tracking 0px)."},"web320":{"v":"1.25rem","t":"dimension","s":"declared .text-web3-20 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-20 (font-size 1.25rem, line-height 130%, tracking 0px)."},"web324":{"v":"1.5rem","t":"dimension","s":"declared .text-web3-24 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-24 (font-size 1.5rem, line-height 130%, tracking 0px)."},"web328":{"v":"1.75rem","t":"dimension","s":"declared .text-web3-28 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-28 (font-size 1.75rem, line-height 120%, tracking -0.01em)."},"web340":{"v":"2.5rem","t":"dimension","s":"declared .text-web3-40 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-40 (font-size 2.5rem, line-height 100%, tracking -0.02em)."},"web348":{"v":"3rem","t":"dimension","s":"declared .text-web3-48 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-48 (font-size 3rem, line-height 100%, tracking -0.02em)."},"web360":{"v":"3.75rem","t":"dimension","s":"declared .text-web3-60 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-60 (font-size 3.75rem, line-height 100%, tracking -0.02em)."},"web37":{"v":"0.5rem","t":"dimension","s":"declared .text-web3-7 font-size (raw/css-vars.json utilities)","d":"Declared text-web3-7 (font-size 0.5rem, line-height 140%, tracking 0.02em)."}},"fontWeight":{"normal":{"v":400,"t":"fontWeight","s":"declared .font-normal font-weight (raw/css-vars.json utilities)","d":"Declared font-normal."},"medium":{"v":500,"t":"fontWeight","s":"declared .font-medium font-weight (raw/css-vars.json utilities)","d":"Declared font-medium."},"semibold":{"v":600,"t":"fontWeight","s":"declared .font-semibold font-weight (raw/css-vars.json utilities)","d":"Declared font-semibold."}},"font":{"family":{"ui":{"v":"\"Unica77 Cohere Web\", Inter, Arial, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"declared .font-body font-family (raw/css-vars.json utilities)","d":"Declared font-body: Unica77 Cohere Web + Inter/Arial/system fallbacks — the UI face."},"mono":{"v":"CohereMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"fontFamily","s":"declared .font-code font-family (raw/css-vars.json utilities)","d":"Declared font-code: CohereMono + ui-monospace fallbacks — the code face."},"eyebrow":{"v":"CohereMono, Arial, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"declared .font-eyebrow font-family (raw/css-vars.json utilities)","d":"Declared font-eyebrow: CohereMono + sans fallbacks — the eyebrow/label face."},"display":{"v":"CohereVariable, \"Space Grotesk\", Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"declared .font-variable font-family (raw/css-vars.json utilities)","d":"Declared font-variable: CohereVariable + Space Grotesk fallbacks — the display face."},"displayMeasured":{"v":"CohereText, \"Space Grotesk\", Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"The face the hero headline actually paints."}},"size":{"hero":{"v":"96px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The hero display headline at 1440px (96px, CohereText)."},"h1Pricing":{"v":"72px","t":"dimension","s":"computed fontSize of pricing-title default (raw/components-computed.json)","d":"The pricing headline (72px)."},"h2":{"v":"60px","t":"dimension","s":"computed fontSize of section-title default (raw/components-computed.json)","d":"Section headings."},"mHero":{"v":"60px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The hero headline at 390px."},"nav":{"v":"14px","t":"dimension","s":"computed fontSize of nav-item default (raw/components-computed.json)","d":"Nav labels (web3-14)."},"footer":{"v":"14px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Footer links."},"banner":{"v":"16px","t":"dimension","s":"computed fontSize of promo-banner default (raw/components-computed.json)","d":"The promo banner line (web3-16)."},"rate":{"v":"18px","t":"dimension","s":"computed fontSize of price-rate default (raw/components-computed.json)","d":"The pricing rate figure."},"cta":{"v":"18px","t":"dimension","s":"computed fontSize of cta-dark default (raw/components-computed.json)","d":"CTA pill labels (18px)."},"faq":{"v":"18px","t":"dimension","s":"computed fontSize of faq-item default (raw/components-computed.json)","d":"FAQ rows (18px)."}}},"component":{"control":{"heightNavCta":{"v":"36px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The nav Request-a-demo pill."},"heightNavItem":{"v":"31.5938px","t":"dimension","s":"computed height of nav-item default (raw/components-computed.json)","d":"Nav links (py-1.5)."},"heightHeroCta":{"v":"53.2031px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The hero CTA pill."},"heightMenuButton":{"v":"32px","t":"dimension","s":"computed height of m-menu-button default (raw/components-computed.json)","d":"The mobile menu toggle."},"radiusCta":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"CTA-pill corner radius."},"heightOAuth":{"v":"40px","t":"dimension","s":"computed height of signin-oauth default (raw/components-computed.json)","d":"The sign-in OAuth row."}},"banner":{"height":{"v":"48px","t":"dimension","s":"computed height of promo-banner default (raw/components-computed.json)","d":"The promo banner strip."}},"nav":{"height":{"v":"60px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The fixed nav bar at 1440px."}},"footer":{"height":{"v":"1430.39px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}},"drawer":{"width":{"v":"390px","t":"dimension","s":"computed width of m-menu-open default (raw/components-computed.json)","d":"The mobile menu overlay at 390px."}},"heroTitle":{"width":{"v":"1128px","t":"dimension","s":"computed width of hero-title default (raw/components-computed.json)","d":"The hero headline's measure."}},"card":{"widthCallout":{"v":"437.328px","t":"dimension","s":"computed width of callout-card default (raw/components-computed.json)","d":"A callout card at 1440px."}},"field":{"widthSignin":{"v":"566px","t":"dimension","s":"computed width of signin-field default (raw/components-computed.json)","d":"The sign-in email field."}}}},"light":{"surface":{"page":{"v":"{color.pureWhite}","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.pureWhite","d":"The page ground — painted by the body (pureWhite #fff)."},"raised":{"v":"#f0eee9","t":"color","s":"computed paint.0.bg of callout-card default (raw/components-computed.json)","d":"A raised card ground in page content — the callout card's #f0eee9 fill (a marble-family tint)."},"dark":{"v":"{color.neutral.15}","t":"color","s":"computed paint.3.bg of footer default (raw/components-computed.json); same value as core.color.neutral.15","d":"The footer band's dark island fill (neutral-15 #17171c)."},"band":{"v":"{color.green.650}","t":"color","s":"computed paint.0.bg of footer default (raw/components-computed.json); same value as core.color.green.650","d":"The “Ready to put AI to work” CTA band inside the footer — a deep green #355146."},"banner":{"v":"{color.pureBlack}","t":"color","s":"computed backgroundColor of promo-banner default (raw/components-computed.json); same value as core.color.pureBlack","d":"The promo banner's pureBlack fill above the nav."}},"text":{"primary":{"v":"{color.volcanic.900}","t":"color","s":"computed color of hero-title default (raw/components-computed.json); same value as core.color.volcanic.900","d":"The primary ink on the page ground (volcanic-900 #212121)."},"nav":{"v":"{color.pureBlack}","t":"color","s":"computed color of nav-item default (raw/components-computed.json); same value as core.color.pureBlack","d":"The nav-link ink at rest (pureBlack)."},"onDark":{"v":"{color.neutral.95}","t":"color","s":"computed color of footer-link default (raw/components-computed.json); same value as core.color.neutral.95","d":"Text on the dark footer band (neutral-95 #fafafa)."},"onAccent":{"v":"{color.pureWhite}","t":"color","s":"computed color of cta-dark default (raw/components-computed.json); same value as core.color.pureWhite","d":"White text on the dark CTA pills (neutral-15 #17171c)."},"banner":{"v":"{color.pureWhite}","t":"color","s":"computed color of promo-banner default (raw/components-computed.json); same value as core.color.pureWhite","d":"White text on the promo banner."},"visited":{"v":"#ca492d","t":"color","s":"declared .text-coral-700 color (raw/css-vars.json utilities) — applied to content links under :visited","d":"The visited-link colour (coral-700 #ca492d) the sheet declares on content links."},"muted":{"v":"#616161","t":"color","s":"declared .bg-volcanic-700 background-color (raw/css-vars.json utilities); also measured as the signin-oauth focus-visible outlineColor (raw/components-computed.json)","d":"The muted shade (volcanic-700 #616161) — what the sign-in field's disabled:text-volcanic-700 applies under :disabled; never paints as body text signed out."}},"accent":{"v":"{color.neutral.15}","t":"color","s":"computed backgroundColor of cta-dark default (raw/components-computed.json); same value as core.color.neutral.15","d":"The dark CTA fill — the surface's accent control (neutral-15 #17171c)."},"accentHover":{"v":"{color.pureBlack}","t":"color","s":"computed backgroundColor of nav-cta hover (raw/components-computed.json); same value as core.color.pureBlack","d":"The dark CTA's hover fill — pureBlack #000."},"border":{"subtle":{"v":"#dadce0","t":"color","s":"computed borderTopColor of signin-oauth default (raw/components-computed.json)","d":"The 1px hairline on the sign-in OAuth rows (#dadce0)."},"input":{"v":"#bdbdbd","t":"color","s":"computed borderTopColor of signin-field default (raw/components-computed.json)","d":"The sign-in field's 1px border (#bdbdbd)."},"onDark":{"v":"#525260","t":"color","s":"computed border of the footer's li.border-b accordion rows, hidden 0x0 clones at 1440 (raw/components-computed.json); declared neutral-40 (raw/css-vars.json utilities)","d":"The 1px row separator the footer's mobile accordion layout declares (neutral-40 #525260); measured on its hidden desktop clones — it paints where the same rows render at mobile widths."}},"focus":{"v":"#101010","t":"color","s":"computed outlineColor of nav-item focus-visible (raw/components-computed.json)","d":"The 1px auto focus outline on nav links (#101010)."},"focusAlt":{"v":"{color.neutral.95}","t":"color","s":"computed borderTopColor of cta-dark focus-visible (raw/components-computed.json); same value as core.color.neutral.95","d":"The CTA pill's focus repaint: the transparent 2px border swaps to neutral-95 #fafafa."},"focusOnDark":{"v":"{color.volcanic.700}","t":"color","s":"computed outlineColor of signin-oauth focus-visible (raw/components-computed.json); same value as core.color.volcanic.700","d":"The sign-in OAuth row's 1px solid focus outline (#616161)."},"overlay":{"scrim":{"v":"rgba(33, 33, 33, 0.2)","t":"color","s":"declared .bg-black/20 background-color (raw/css-vars.json utilities)","d":"The mobile-menu scrim tint — volcanic-900 at 20% (declared .bg-black/20)."}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
+  if (grads.length) {
+    h += `<div class="pal-h">gradients</div><div class="pal">`;
+    for (const [n, t] of grads) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc((t.v||[]).map(s=>s.color).join(' → '))}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function groups() {
+  // Every remaining token group gets a key/value table — fonts, radii,
+  // spacing, blur, motion, shadows, typography and the light set's
+  // non-colour roles, so the guide covers all of tokens.json.
+  const show = (v) => Array.isArray(v) ? (typeof v[0] === 'object' ? v.map((l) => `${l.color} ${l.offsetX} ${l.offsetY} ${l.blur} ${l.spread}${l.inset ? ' inset' : ''}`).join(', ') : v.join(', ')) : String(v);
+  const skip = new Set(['color', 'component', 'measured', 'gradient']);
+  let h = '';
+  for (const [set, toks] of [['core', TOK.core], ['light', TOK.light], ['dark', TOK.dark]]) {
+    for (const [g, grp] of Object.entries(toks || {})) {
+      if (skip.has(g)) continue;
+      const items = flat(grp, g + '.').filter(([, t]) => t.t !== 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(set)}.${esc(g)}</div><div class="kv">`;
+      for (const [n, t] of items) h += `<div><b>${esc(n)}</b> <span>${esc(show(t.v))}</span></div>`;
+      h += '</div>';
+    }
+  }
+  if (h) {
+    const sec = document.createElement('div');
+    sec.innerHTML = `<h2 class="sh">Scales and roles</h2>` + h;
+    $('#meas-out').appendChild(sec);
+  }
+})();
+</script>
+</body>
+</html>

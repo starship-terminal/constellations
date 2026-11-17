@@ -819,8 +819,8 @@
     858
    ],
    "description": "Online video editor by Microsoft ",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/clipchamp",
    "notes": "",
    "batch": 3
   },

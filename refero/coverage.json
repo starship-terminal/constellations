@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 176,
-    "system_domains": 167,
-    "matched_domains": 137,
-    "missing_domains": 296,
+    "system_packages": 184,
+    "system_domains": 175,
+    "matched_domains": 145,
+    "missing_domains": 288,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -889,6 +889,57 @@
           "slug": "clearful",
           "name": "Clearful",
           "url": "https://clearful.com",
+          "name_match": true
+        }
+      ]
+    },
+    "clipchamp.com": {
+      "catalog": [
+        {
+          "name": "Clipchamp",
+          "domain": "clipchamp.com",
+          "id": 858
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "clipchamp",
+          "name": "Clipchamp",
+          "url": "https://clipchamp.com",
+          "name_match": true
+        }
+      ]
+    },
+    "cofounder.co": {
+      "catalog": [
+        {
+          "name": "Cofounder",
+          "domain": "cofounder.co",
+          "id": 746
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cofounder",
+          "name": "Cofounder",
+          "url": "https://cofounder.co",
+          "name_match": true
+        }
+      ]
+    },
+    "cohere.com": {
+      "catalog": [
+        {
+          "name": "Cohere",
+          "domain": "cohere.com",
+          "id": 576
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cohere",
+          "name": "Cohere",
+          "url": "https://cohere.com",
           "name_match": true
         }
       ]
@@ -2236,6 +2287,40 @@
         }
       ]
     },
+    "gumroad.com": {
+      "catalog": [
+        {
+          "name": "Gumroad",
+          "domain": "gumroad.com",
+          "id": 296
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gumroad",
+          "name": "Gumroad",
+          "url": "https://gumroad.com",
+          "name_match": true
+        }
+      ]
+    },
+    "hashnode.com": {
+      "catalog": [
+        {
+          "name": "Hashnode",
+          "domain": "hashnode.com",
+          "id": 194
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hashnode",
+          "name": "Hashnode",
+          "url": "https://hashnode.com",
+          "name_match": true
+        }
+      ]
+    },
     "hbomax.com": {
       "catalog": [
         {
@@ -2249,6 +2334,57 @@
           "slug": "hbomax",
           "name": "HBO Max",
           "url": "https://www.hbomax.com",
+          "name_match": false
+        }
+      ]
+    },
+    "helloivy.co": {
+      "catalog": [
+        {
+          "name": "Hello Ivy",
+          "domain": "helloivy.co",
+          "id": 602
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "helloivy",
+          "name": "Hello Ivy",
+          "url": "https://www.helloivy.co",
+          "name_match": false
+        }
+      ]
+    },
+    "hitchd.com": {
+      "catalog": [
+        {
+          "name": "Hitchd",
+          "domain": "hitchd.com",
+          "id": 786
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hitchd",
+          "name": "Hitchd",
+          "url": "https://www.hitchd.com",
+          "name_match": true
+        }
+      ]
+    },
+    "joinhandshake.com": {
+      "catalog": [
+        {
+          "name": "Handshake",
+          "domain": "joinhandshake.com",
+          "id": 785
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "joinhandshake",
+          "name": "Handshake",
+          "url": "https://joinhandshake.com",
           "name_match": false
         }
       ]
@@ -2424,27 +2560,6 @@
         "id": 658
       }
     ],
-    "clipchamp.com": [
-      {
-        "name": "Clipchamp",
-        "domain": "clipchamp.com",
-        "id": 858
-      }
-    ],
-    "cofounder.co": [
-      {
-        "name": "Cofounder",
-        "domain": "cofounder.co",
-        "id": 746
-      }
-    ],
-    "cohere.com": [
-      {
-        "name": "Cohere",
-        "domain": "cohere.com",
-        "id": 576
-      }
-    ],
     "coinbase.com": [
       {
         "name": "Coinbase",
@@ -2585,20 +2700,6 @@
         "id": 294
       }
     ],
-    "gumroad.com": [
-      {
-        "name": "Gumroad",
-        "domain": "gumroad.com",
-        "id": 296
-      }
-    ],
-    "hashnode.com": [
-      {
-        "name": "Hashnode",
-        "domain": "hashnode.com",
-        "id": 194
-      }
-    ],
     "headspace.com": [
       {
         "name": "Headspace",
@@ -2606,25 +2707,11 @@
         "id": 113
       }
     ],
-    "helloivy.co": [
-      {
-        "name": "Hello Ivy",
-        "domain": "helloivy.co",
-        "id": 602
-      }
-    ],
     "helloklean.com": [
       {
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "hitchd.com": [
-      {
-        "name": "Hitchd",
-        "domain": "hitchd.com",
-        "id": 786
       }
     ],
     "homerun.co": [
@@ -2723,13 +2810,6 @@
         "name": "Jitter",
         "domain": "jitter.video",
         "id": 318
-      }
-    ],
-    "joinhandshake.com": [
-      {
-        "name": "Handshake",
-        "domain": "joinhandshake.com",
-        "id": 785
       }
     ],
     "kickstarter.com": [
