@@ -13090,7 +13090,7 @@
     ],
     "durationMin": 180,
     "durationNote": "wall-clock across the capture session including kit adaptation, the stylesheet harvest, screenshot and measurement passes, and the offline build",
-    "pr": ""
+    "pr": "https://github.com/starship-terminal/constellations/pull/657"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the wordmark, tool glyphs and plan icons are visible in the crops and screenshots"
