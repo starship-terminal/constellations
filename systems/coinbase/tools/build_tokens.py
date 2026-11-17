@@ -169,7 +169,10 @@ def tokens_of(tree, prefix=""):
 
 
 NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)} | {n for n, _ in tokens_of(dark)}
+# Each themed set resolves against itself plus core only — a light alias whose
+# target lives solely in dark cannot resolve under $themes and must not pass.
+NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
+NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
 
 
 def aliases(v):
@@ -186,10 +189,10 @@ for n, t in list(tokens_of(core)):
     for a in aliases(t["$value"]):
         if a not in NAMES:
             raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for set_name, tree in (("light", light), ("dark", dark)):
+for set_name, tree, names in (("light", light, NAMES_L), ("dark", dark, NAMES_D)):
     for n, t in list(tokens_of(tree)):
         for a in aliases(t["$value"]):
-            if a not in NAMES_L:
+            if a not in names:
                 raise KeyError(f"{set_name}.{n}: alias {{{a}}} points at nothing")
 
 tokens = {

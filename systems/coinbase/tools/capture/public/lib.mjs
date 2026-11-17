@@ -1,5 +1,5 @@
-// Shared helpers for the coinbase.com public captures (from the kit's
-// Bezi/Gauth/Coursera lineage, via the clipchamp and cohere adaptations).
+// Shared helpers for the coinbase.com public captures (carry-over capture
+// harness, adapted for Coinbase's CDS themes, OneTrust layer and Cloudflare).
 // Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
 // directory has no node_modules.
 import fs from 'node:fs';

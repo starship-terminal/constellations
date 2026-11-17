@@ -1994,79 +1994,7 @@
    "type": "color",
    "description": "The Sign-up pill fill — Coinbase blue (bgPrimary #0052ff).",
    "value": "{color.blue.60}",
-   "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); same value as core.color.blue.60",
-   "accentSubtleGreen": {
-    "type": "color",
-    "value": "#f5fffb",
-    "source": "declared --lightColor-accentSubtleGreen on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentSubtleGreen."
-   },
-   "accentBoldGreen": {
-    "type": "color",
-    "value": "#098551",
-    "source": "declared --lightColor-accentBoldGreen on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentBoldGreen."
-   },
-   "accentSubtleBlue": {
-    "type": "color",
-    "value": "#f5f8ff",
-    "source": "declared --lightColor-accentSubtleBlue on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentSubtleBlue."
-   },
-   "accentBoldBlue": {
-    "type": "color",
-    "value": "#0052ff",
-    "source": "declared --lightColor-accentBoldBlue on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentBoldBlue."
-   },
-   "accentSubtlePurple": {
-    "type": "color",
-    "value": "#fbf7ff",
-    "source": "declared --lightColor-accentSubtlePurple on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentSubtlePurple."
-   },
-   "accentBoldPurple": {
-    "type": "color",
-    "value": "#5a30ad",
-    "source": "declared --lightColor-accentBoldPurple on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentBoldPurple."
-   },
-   "accentSubtleYellow": {
-    "type": "color",
-    "value": "#fffcf1",
-    "source": "declared --lightColor-accentSubtleYellow on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentSubtleYellow."
-   },
-   "accentBoldYellow": {
-    "type": "color",
-    "value": "#f7d21a",
-    "source": "declared --lightColor-accentBoldYellow on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentBoldYellow."
-   },
-   "accentSubtleRed": {
-    "type": "color",
-    "value": "#fff5f6",
-    "source": "declared --lightColor-accentSubtleRed on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentSubtleRed."
-   },
-   "accentBoldRed": {
-    "type": "color",
-    "value": "#cf202f",
-    "source": "declared --lightColor-accentBoldRed on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentBoldRed."
-   },
-   "accentSubtleGray": {
-    "type": "color",
-    "value": "#eef0f3",
-    "source": "declared --lightColor-accentSubtleGray on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentSubtleGray."
-   },
-   "accentBoldGray": {
-    "type": "color",
-    "value": "#32353d",
-    "source": "declared --lightColor-accentBoldGray on div.coinbase.light (raw/css-vars.json themes)",
-    "description": "Declared light-scheme role accentBoldGray."
-   }
+   "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); same value as core.color.blue.60"
   },
   "accentHover": {
    "type": "color",
@@ -2194,6 +2122,80 @@
     "value": "#ffffff",
     "source": "declared --lightColor-bgElevation2 on div.coinbase.light (raw/css-vars.json themes)",
     "description": "Declared light-scheme role bgElevation2."
+   }
+  },
+  "accentVariants": {
+   "accentSubtleGreen": {
+    "type": "color",
+    "value": "#f5fffb",
+    "source": "declared --lightColor-accentSubtleGreen on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentSubtleGreen."
+   },
+   "accentBoldGreen": {
+    "type": "color",
+    "value": "#098551",
+    "source": "declared --lightColor-accentBoldGreen on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentBoldGreen."
+   },
+   "accentSubtleBlue": {
+    "type": "color",
+    "value": "#f5f8ff",
+    "source": "declared --lightColor-accentSubtleBlue on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentSubtleBlue."
+   },
+   "accentBoldBlue": {
+    "type": "color",
+    "value": "#0052ff",
+    "source": "declared --lightColor-accentBoldBlue on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentBoldBlue."
+   },
+   "accentSubtlePurple": {
+    "type": "color",
+    "value": "#fbf7ff",
+    "source": "declared --lightColor-accentSubtlePurple on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentSubtlePurple."
+   },
+   "accentBoldPurple": {
+    "type": "color",
+    "value": "#5a30ad",
+    "source": "declared --lightColor-accentBoldPurple on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentBoldPurple."
+   },
+   "accentSubtleYellow": {
+    "type": "color",
+    "value": "#fffcf1",
+    "source": "declared --lightColor-accentSubtleYellow on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentSubtleYellow."
+   },
+   "accentBoldYellow": {
+    "type": "color",
+    "value": "#f7d21a",
+    "source": "declared --lightColor-accentBoldYellow on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentBoldYellow."
+   },
+   "accentSubtleRed": {
+    "type": "color",
+    "value": "#fff5f6",
+    "source": "declared --lightColor-accentSubtleRed on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentSubtleRed."
+   },
+   "accentBoldRed": {
+    "type": "color",
+    "value": "#cf202f",
+    "source": "declared --lightColor-accentBoldRed on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentBoldRed."
+   },
+   "accentSubtleGray": {
+    "type": "color",
+    "value": "#eef0f3",
+    "source": "declared --lightColor-accentSubtleGray on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentSubtleGray."
+   },
+   "accentBoldGray": {
+    "type": "color",
+    "value": "#32353d",
+    "source": "declared --lightColor-accentBoldGray on div.coinbase.light (raw/css-vars.json themes)",
+    "description": "Declared light-scheme role accentBoldGray."
    }
   },
   "interactive": {
@@ -2488,7 +2490,7 @@
     "description": "Declared dark-scheme role bgLinePrimarySubtle (the band's remapped --color-* layer)."
    }
   },
-  "accent": {
+  "accentVariants": {
    "accentSubtleGreen": {
     "type": "color",
     "value": "#001f12",

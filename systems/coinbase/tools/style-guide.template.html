@@ -13,6 +13,12 @@
   --sg-display: var(--font-family-display, "CoinbaseDisplay"), var(--sg-sans);
   --sg-mono: var(--font-family-mono, "CoinbaseMono"), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+/* The dark set redeclares the same role names — scope it to .sg-dark so a dark
+   swatch resolves its own theme instead of leaking light values (or
+   clobbering the light vars on :root). */
+.sg-dark {
+/*DARK*/
+}
 * { box-sizing: border-box; }
 body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #0a0b0d); background: var(--surface-page, #fff); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
@@ -36,7 +42,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .mock.light { background: var(--surface-page, #fff); color: var(--text-primary, #0a0b0d); }
 .banner { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: var(--component-banner-height, 40px); padding: 6px 32px; font-size: 14px; background: var(--surface-raised, #eef0f3); color: var(--text-banner, #11206b); }
 .banner a { color: var(--text-banner, #11206b); }
-.navbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 68px); padding: 0 32px; font-size: 14px; color: var(--text-nav, #0a0b0d); border-bottom: 1px solid var(--border-subtle, rgba(91,97,110,.2)); }
+.navbar { display: flex; align-items: center; gap: 14px; height: calc(var(--component-nav-height, 117px) - var(--component-banner-height, 48px)); padding: 0 32px; font-size: 14px; color: var(--text-nav, #0a0b0d); border-bottom: 1px solid var(--border-subtle, rgba(91,97,110,.2)); }
 .navbar .lg { width: 24px; height: 24px; border-radius: 50%; background: var(--accent, #0052ff); display: inline-block; }
 .navbar .wm { font-family: var(--sg-display); font-size: 18px; font-weight: 600; color: var(--text-primary, #0a0b0d); }
 .navbar .sp { flex: 1; }
@@ -44,7 +50,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar .ghost { height: var(--component-control-heightNavItem, 44px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--surface-raised, #eef0f3); color: var(--text-primary, #0a0b0d); font-weight: 600; }
 .navbar .cta { height: var(--component-control-heightNavCta, 44px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--accent, #0052ff); color: var(--text-onAccent, #fff); font-weight: 600; }
 .hero { padding: 80px 40px 72px; text-align: center; }
-.hero h3 { font: 400 var(--font-size-d2-fs, 80px)/1 var(--sg-display); margin: 0 auto 16px; max-width: 16ch; letter-spacing: -.02em; }
+.hero h3 { font: 400 var(--font-size-hero, 80px)/1 var(--sg-display); margin: 0 auto 16px; max-width: 16ch; letter-spacing: -.02em; }
 .hero p { margin: 0 auto 36px; color: var(--text-muted, #5b616e); max-width: 46ch; }
 .herorow { display: flex; gap: 10px; align-items: center; justify-content: center; }
 .bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightHeroCta, 56px); padding: 0 24px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--surface-dark, #0a0b0d); color: var(--text-onDark, #fff); font-size: 15px; font-weight: 600; }
@@ -57,7 +63,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 /* ---- the explore price table ---- */
 .ptable { margin: 16px 24px 24px; border-collapse: collapse; font-size: 14px; width: calc(100% - 48px); }
 .ptable td, .ptable th { border-bottom: 1px solid var(--border-subtle, rgba(91,97,110,.2)); padding: 10px 14px; text-align: left; }
-.ptable .rate { font-family: var(--sg-mono); }
+.ptable .rate { font-family: var(--font-family-sans, "CoinbaseSans"), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: var(--font-size-price, 16px); }
 .ptable .up { color: var(--color-role-fgPositive, #098551); }
 .ptable .dn { color: var(--color-role-fgNegative, #cf202f); }
 /* ---- footer band (light grey, bgAlternate) ---- */
@@ -104,7 +110,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-gray-10, #eef0f3); pa
   </div>
 
   <h2 class="sh">Explore — the price table</h2>
-  <p class="lead">The market table on /explore: hairline-ruled rows with a hover wash, figures in CoinbaseMono-style tabular type and positive/negative change chips in the declared status colours.</p>
+  <p class="lead">The market table on /explore: hairline-ruled rows with a hover wash, figures in CoinbaseSans 16px/24px and positive/negative change chips in the declared status colours.</p>
   <div class="mock light">
     <table class="ptable"><tr><th>Asset</th><th>Price</th><th>24h change</th></tr><tr><td>Bitcoin</td><td class="rate">S$118,432</td><td class="up">+1.84%</td></tr><tr><td>Ethereum</td><td class="rate">S$4,215</td><td class="dn">−0.62%</td></tr></table>
   </div>
@@ -161,9 +167,9 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
     const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
     if (!roles.length) continue;
-    h += `<div class="pal-h">${set} roles</div><div class="pal">`;
+    h += `<div class="pal-h">${set} roles</div>${set === 'dark' ? '<div class="sg-dark">' : ''}<div class="pal">`;
     for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
+    h += `</div>${set === 'dark' ? '</div>' : ''}`;
   }
   const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
   if (grads.length) {

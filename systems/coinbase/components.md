@@ -468,7 +468,7 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Themes
 
-One theme: the whole public surface paints light. Dark islands exist inside the theme (the pureBlack promo banner, the dark footer band), but no second theme is offered.
+One theme: the whole public surface paints light. One dark island exists inside the theme — the home asset panel mounts `div.coinbase.dark` and redeclares the `--color-*` roles — but no second theme is offered; the promo row and footer band are the light scheme's bgAlternate grey.
 
 ### Fonts
 

@@ -359,7 +359,7 @@ for _name in LIGHT_VARS:
             "line" if _role.startswith("bgLine") else
             "elevation" if _role.startswith("bgElevation") else
             "interactive" if _role.endswith(("Hovered", "Pressed", "Disabled")) else
-            "accent" if _role.startswith("accent") else "other")
+            "accentVariants" if _role.startswith("accent") else "other")
     node = SPEC["light"].setdefault(_grp, {})
     node[_role] = {"type": "color", "value": _v,
                    "source": f"declared {_name} on div.coinbase.light (raw/css-vars.json themes)",
@@ -379,7 +379,7 @@ for _name in DARK_VARS:
     _grp = ("text" if _role.startswith("fg") else
             "surface" if _role.startswith("bg") and not _role.startswith("bgLine") else
             "line" if _role.startswith("bgLine") else
-            "accent" if _role.startswith("accent") else "other")
+            "accentVariants" if _role.startswith("accent") else "other")
     node = SPEC["dark"].setdefault(_grp, {})
     node[_role] = {"type": "color", "value": _v,
                    "source": f"declared {_name} on div.coinbase.dark (raw/css-vars.json themes)",

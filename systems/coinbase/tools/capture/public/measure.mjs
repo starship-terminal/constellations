@@ -102,7 +102,7 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, view, run, url: URLS[current] && new URL(URLS[current], BASE).href }, meta);
+  Object.assign(c, { page: current, view, run, url: URLS[current] && (/^https?:/.test(URLS[current]) ? URLS[current] : BASE + URLS[current]) }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
