@@ -15235,6 +15235,103 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/625",
     "durationNote": "wall-clock across the capture session including reachability probes, kit adaptation, the two-surface stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "helloivy",
+   "name": "Hello Ivy",
+   "url": "https://www.helloivy.co",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "project-management product design across three signed-out surfaces on two unrelated token layers: www.helloivy's Framer marketing build (cream #faf6f0 ground, black ink, Unbounded display headings, a 116px nav strip with a black pill 'Start for free' CTA, a full-screen Framer menu overlay, and a real footer 'Change theme' control that repaints html[toggle-theme=dark]) plus app.helloivy.co, the Vue product seen at the /login boundary and the public share route (a 242px sidebar / 66px header shell around a document canvas on the app's own warm-grey semantic layer, the #3F40F2 indigo as --main-color/--link-color/--checkbox, Inter everywhere, 10px control radius), and the hosted /docs platform (General Sans, its own chrome). Marketing theme is five hashed --token-* body vars re-pointed per theme; app roles arrive as the share page's inline section.main_section theme",
+   "tags": [
+    "web",
+    "project-management",
+    "interior-design",
+    "collaboration",
+    "docs",
+    "marketing",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public: www.helloivy.co marketing routes, app.helloivy.co/login at rest and the public share document, and the hosted /docs platform; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the Framer menu overlay, the footer's real 'Change theme' control, the pricing FAQ accordion, the share page's settings popover and the phone's menu drawer; every link was measured, never followed; the workspace and every post-auth surface was never entered)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/helloivy/README.md",
+   "tokens": "systems/helloivy/tokens.json",
+   "styleGuide": "systems/helloivy/style-guide.html",
+   "preview": {
+    "cover": "systems/helloivy/screenshots/home-light-default.png",
+    "icon": "systems/helloivy/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.ground",
+      "surface": "light.color.inverseSurface",
+      "text": "light.color.ink",
+      "muted": "light.color.muted",
+      "accent": "light.color.link",
+      "border": "light.component.button.cta.border"
+     },
+     "dark": {
+      "page": "dark.color.ground",
+      "surface": "dark.color.inverseSurface",
+      "text": "dark.color.ink",
+      "muted": "dark.color.muted",
+      "accent": "dark.color.link",
+      "border": "dark.component.button.cta.border"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.body",
+     "core.font.family.docs"
+    ]
+   },
+   "source": "capture",
+   "capture": {
+    "method": "public-web",
+    "source": "www.helloivy.co, app.helloivy.co and the hosted /docs in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (503 rules, 365 @font-face, 61 light + 61 dark resolved custom properties in a probe carrying the site's own sheets, and the app share page's inline section.main_section theme). The marketing site boots html[toggle-theme=light]; the footer's own 'Change theme' control repaints html[toggle-theme=dark] (localStorage.currentToggleState) - verified by the repainted surface before any dark reading, and switched back after. The app paints light only on its public routes; /docs is a separate platform, light-only, no dark inferred. BOUNDARY: the workspace and every post-auth surface never entered; /login measured at rest only - fields never typed, 'Continue' never pressed",
+    "timestamp": "2026-11-17T18:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "www.helloivy.co/",
+     "www.helloivy.co/about",
+     "www.helloivy.co/features (+ /features/tasks, /features/annotate, /features/client-portal)",
+     "www.helloivy.co/pricing",
+     "www.helloivy.co/project-management, /project-collaboration-software, /notion-alternative",
+     "www.helloivy.co/blog + /blog/announcing-hello-ivy-2-0",
+     "www.helloivy.co/release-notes, /terms",
+     "www.helloivy.co/docs + /docs/create-a-project (the hosted docs platform)",
+     "app.helloivy.co/login (rest only - never signed into)",
+     "app.helloivy.co/.../share/... (the public share document + its settings popover)",
+     "verified html[toggle-theme=dark] repaints on home, about, features, pricing and blog via the footer's real 'Change theme' control",
+     "the Framer 'Menu' overlay (desktop + 390px drawer), an opened FAQ row, the share settings popover and the footer theme control as transient states",
+     "BLOCKED: the workspace and every post-auth surface (never entered), the app's other share media (nothing submitted, printed or mailed)"
+    ],
+    "gaps": [
+     "the signed-in product (the workspace, projects, clients, files and settings behind /login) is a boundary: the login card was measured at rest, fields never typed, 'Continue' never pressed",
+     "the app's semantic layer resolves only where its inline section.main_section theme exists - the public share route; /login carries no section so app roles there are measured, not themed",
+     "dark evidence is the marketing site alone: the footer's real 'Change theme' repaint, verified per page; the app and /docs paint light only - no dark values were inferred for either",
+     "the reduced-motion probe's sampled movers kept moving under prefers-reduced-motion: reduce - recorded as behaviour 'ignores', not suppression",
+     "the remaining feature and alternative marketing routes were probed and share the same chrome/theme layer; three feature pages and the Notion alternative were screenshotted as representatives",
+     "Unbounded, Inter and General Sans are declared and measured, not shipped; the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "full-page captures are bounded; the bound and stitching are recorded in each .capture.json sidecar"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including route probing, kit adaptation, the theme-repaint verification, the screenshot pass, the measurement/layout/motion/icon passes and the offline build"
+   }
   }
  ]
 }

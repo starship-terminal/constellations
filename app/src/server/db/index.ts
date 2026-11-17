@@ -329,6 +329,16 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedMediaTerms(tx, new Set(["systems:hashnode"]));
       await tx.execute("PRAGMA user_version = 25");
     }
+    if (version < 26) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v25 never re-seeds, so the Hello Ivy rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:helloivy"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:helloivy"]));
+      await tx.execute("PRAGMA user_version = 26");
+    }
     await tx.commit();
   } catch (error) {
     await tx.rollback();

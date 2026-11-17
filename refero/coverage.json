@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 176,
-    "system_domains": 167,
-    "matched_domains": 137,
-    "missing_domains": 296,
+    "system_packages": 178,
+    "system_domains": 169,
+    "matched_domains": 139,
+    "missing_domains": 294,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2270,6 +2270,23 @@
         }
       ]
     },
+    "helloivy.co": {
+      "catalog": [
+        {
+          "name": "Hello Ivy",
+          "domain": "helloivy.co",
+          "id": 602
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "helloivy",
+          "name": "Hello Ivy",
+          "url": "https://www.helloivy.co",
+          "name_match": false
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2614,13 +2631,6 @@
         "name": "Headspace",
         "domain": "headspace.com",
         "id": 113
-      }
-    ],
-    "helloivy.co": [
-      {
-        "name": "Hello Ivy",
-        "domain": "helloivy.co",
-        "id": 602
       }
     ],
     "helloklean.com": [

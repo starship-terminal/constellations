@@ -1504,5 +1504,13 @@
       "Productivity"
     ],
     "reason": "catalog.json describes Microsoft's Clipchamp video editor: marketing pages for the browser video editor, templates, stock library, pricing tiers and an education/work surface."
+  },
+  {
+    "referenceId": "systems:helloivy",
+    "groupId": "web-categories",
+    "labels": [
+      "Project Management"
+    ],
+    "reason": "catalog.json describes Hello Ivy, a project-management tool for interior designers: projects, clients, files and feedback across the marketing site, the app login boundary and the public share document."
   }
 ]
