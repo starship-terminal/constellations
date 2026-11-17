@@ -1406,6 +1406,11 @@
       "referenceId": "systems:homerun",
       "media": 211,
       "assignedMedia": 211
+    },
+    {
+      "referenceId": "systems:httpie",
+      "media": 155,
+      "assignedMedia": 64
     }
   ],
   "assignments": [
@@ -319294,6 +319299,725 @@
           "termId": "web-fonts:gt-america",
           "rule": "font-primary",
           "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/about-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/about-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/app-dark-tab-auth.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/app-dark-tab-body.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/app-dark-tab-headers.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/app-dark-tab-response.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/download-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/download-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/download-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/home-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/home-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/home-dark-theme-toggle.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-auth-tab-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-body-tab-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-drafts-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-drafts-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-env-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-env-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-env-button-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-method-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-method-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-method-button-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-panel-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-panel-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-panel-tab-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-panel-tabs-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-param-checkbox-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-request-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-request-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-send-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-send-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-send-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-send-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-sidebar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-sidebar-light.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-space-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-space-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/app-space-button-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/button-counter-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/button-counter-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/button-counter-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/button-secondary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/button-secondary-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/button-secondary-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/button-share-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/button-share-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/cli-code-block-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:code-snippet",
+          "rule": "ui-code",
+          "reason": "Capture filename explicitly names code snippet; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/cli-code-block-light.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:code-snippet",
+          "rule": "ui-code",
+          "reason": "Capture filename explicitly names code snippet; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/copy-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/copy-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/docs-code-block-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:code-snippet",
+          "rule": "ui-code",
+          "reason": "Capture filename explicitly names code snippet; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/docs-code-block-light.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:code-snippet",
+          "rule": "ui-code",
+          "reason": "Capture filename explicitly names code snippet; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/early-access-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/newsletter-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/newsletter-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/post-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/post-card-light.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/site-footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/social-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/social-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/theme-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:httpie",
+      "mediaId": "systems/httpie/components/crops/theme-toggle-light.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
         }
       ]
     }

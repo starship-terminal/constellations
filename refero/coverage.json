@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 187,
-    "system_domains": 178,
-    "matched_domains": 148,
-    "missing_domains": 285,
+    "system_packages": 188,
+    "system_domains": 179,
+    "matched_domains": 149,
+    "missing_domains": 284,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2423,6 +2423,23 @@
         }
       ]
     },
+    "httpie.io": {
+      "catalog": [
+        {
+          "name": "HTTPie",
+          "domain": "httpie.io",
+          "id": 540
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "httpie",
+          "name": "HTTPie",
+          "url": "https://httpie.io",
+          "name_match": true
+        }
+      ]
+    },
     "joinhandshake.com": {
       "catalog": [
         {
@@ -2749,13 +2766,6 @@
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "httpie.io": [
-      {
-        "name": "HTTPie",
-        "domain": "httpie.io",
-        "id": 540
       }
     ],
     "huddlekit.com": [

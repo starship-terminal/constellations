@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 35)
+    if (version > 36)
 >>>>>>> origin/main
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
@@ -457,6 +457,16 @@ export async function createResearchStore(directory: string) {
         ]),
       );
       await tx.execute("PRAGMA user_version = 35");
+    }
+    if (version < 36) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v35 never re-seeds, so the HTTPie rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:httpie"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:httpie"]));
+      await tx.execute("PRAGMA user_version = 36");
     }
     await tx.commit();
   } catch (error) {
