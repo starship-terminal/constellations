@@ -4,13 +4,13 @@ The discovery list of every page and view captured, then one entry per component
 
 **Where this was read.** The canonical surface is grow.google's **US edition**: bare headless contexts (no user agent, no locale) receive it. From this capture host, a request carrying a real browser user agent or an explicit locale is 302'd from `/` to the regional `/intl/ALL_sg/` edition — the APAC variant shots (`apac-*`) record that edition, and every deep link serves the US edition regardless. The cookie notification bar was removed from captures (hidden, never answered).
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (40 components, 82 states). The page layouts are described in [patterns.md](patterns.md) and the layout probe in [raw/layout.json](raw/layout.json).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (41 components, 106 states). The page layouts are described in [patterns.md](patterns.md) and the layout probe in [raw/layout.json](raw/layout.json).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one — grow.google's stylesheet declares only the `--glue-*-{50..900}` colour ramps as custom properties, so most entries label against that ramp. Text is written family size/line-height weight, then its colour, for example `Google Sans Flex 16/24 500, #3c4043`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (82 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (105 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -52,7 +52,7 @@ Screenshots are named `{page}-light-{state}.png` (grow.google paints one theme �
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 12 components were given a real keyboard focus. Glue's ring is a 2px box-shadow in the declared glue-blue-600 (rgb(26, 115, 232)) offset 1px — the outline is set transparent beside it: `promo-link` (2px solid transparent, offset 1px), `hero-cta` (2px solid transparent, offset 1px), `card-link` (2px solid transparent, offset 1px), `footer-link` (2px solid transparent, offset 1px), `learn-more-btn` (2px solid transparent, offset 1px), `tab` (2px solid transparent, offset 1px), `cert-cta` (2px solid transparent, offset 1px), `ai-link` (2px solid transparent, offset 1px), `m-hero-cta` (2px solid transparent, offset 1px). The rest draw the same shadow ring without the transparent outline: `nav-link`, `nav-drop-trigger`, `m-drawer-btn`.
+**Focus.** 20 components were given a real keyboard focus. Glue's ring is a 2px box-shadow in the declared glue-blue-600 (rgb(26, 115, 232)) offset 1px — the outline is set transparent beside it: `promo-link` (2px solid transparent, offset 1px), `hero-cta` (2px solid transparent, offset 1px), `video-teaser` (2px solid transparent, offset 0px), `card-link` (2px solid transparent, offset 1px), `footer-link` (2px solid transparent, offset 1px), `footer-lang` (1px auto #101010, offset 0px), `breadcrumb` (2px solid transparent, offset 1px), `learn-more-btn` (2px solid transparent, offset 1px), `tab` (2px solid transparent, offset 1px), `cert-cta` (2px solid transparent, offset 1px), `ai-link` (2px solid transparent, offset 1px), `m-hero-cta` (2px solid transparent, offset 1px). The rest draw the same shadow ring without the transparent outline: `header-logo`, `nav-link`, `nav-drop-trigger`, `mega-item`, `promo-banner`, `m-drawer-btn`, `m-drawer-link`, `m-skip-link`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover) — nothing a real press would submit or open was ever pressed. A pressed filled button keeps the hover's #185abc fill and deepens the elevation (0 1px 2px / 0 2px 6px rgba(60,64,67)); pressed text links keep the faint brand wash (rgba(26,115,232,0.1)); the 5px `outline: auto` Chrome draws on forced :active is the forced-state artifact, not a page style.
 
@@ -110,9 +110,14 @@ The glue top bar: the "Grow with Google" wordmark, the Career Certificates / AI 
 #### Logo
 The "Grow with Google" lockup in the header (a .glue-header__logo-link anchor in the desktop bar — the Google mark plus the "Grow with Google" img wordmark, 210x48; the mobile bar carries a second display:none copy). Read as `header-logo` on the home page.
 
-**Values (default).** size 210 x 48; padding 0px 9px; radius 4px; background transparent; text Google Sans Flex 16/24 500, #5f6368 `color.palette.grey.700`; transition background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 210 x 48; padding 0px 9px; radius 4px; background transparent; text Google Sans Flex 16/24 500, #5f6368 `color.palette.grey.700`; transition background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease |
+| hover | text Google Sans Flex 16/24 500, #202124 `color.palette.grey.900` |
+| focus-visible | background #f8f9fa `color.palette.grey.50`; shadow #1a73e8 0px 0px 0px 2px; text Google Sans Flex 16/24 500, #3186ff |
+| pressed | text Google Sans Flex 16/24 500, #202124 `color.palette.grey.900` |
 
-![Logo default](components/crops/header-logo-default.png)
+![Logo default](components/crops/header-logo-default.png) ![Logo focus-visible](components/crops/header-logo-focus-visible.png) ![Logo pressed](components/crops/header-logo-pressed.png)
 
 #### Nav link
 A header nav link (AI Training); measured, never followed. Read as `nav-link` on the home page.
@@ -144,11 +149,16 @@ The opened mega-menu panel: Foundational, Advanced and Courses columns. Read as 
 #### Mega-menu item
 A certificate link inside the opened mega-menu; measured while the menu was held open, never followed. Read as `mega-item` on the home page.
 
-**Values (default).** size 272 x 48; padding 8px 0px; border L: 2px solid transparent; radius 4px 0px 0px 4px; background transparent; text Google Sans Flex 16/24 400, #202124 `color.palette.grey.900`; transition background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 272 x 48; padding 8px 0px; border L: 2px solid transparent; radius 4px 0px 0px 4px; background transparent; text Google Sans Flex 16/24 400, #202124 `color.palette.grey.900`; transition background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease |
+| hover | background #f8f9fa `color.palette.grey.50`; text Google Sans Flex 16/24 400, #3186ff |
+| focus-visible | background #f8f9fa `color.palette.grey.50`; shadow #1a73e8 0px 0px 0px 2px; text Google Sans Flex 16/24 400, #3186ff |
+| pressed | background #f8f9fa `color.palette.grey.50`; text Google Sans Flex 16/24 400, #3186ff |
 
 Child layers that carry the look: a 272x48 border 2px transparent radius 4px 0px 0px 4px.
 
-![Mega-menu item default](components/crops/mega-item-default.png)
+![Mega-menu item default](components/crops/mega-item-default.png) ![Mega-menu item hover](components/crops/mega-item-hover.png) ![Mega-menu item focus-visible](components/crops/mega-item-focus-visible.png) ![Mega-menu item pressed](components/crops/mega-item-pressed.png)
 
 ### Home
 
@@ -157,9 +167,11 @@ The US home page: the promo banner, a video-led hero ("Grow your career or busin
 #### Promo banner
 The blue "New! Enroll in the AI Certificate and learn vibe coding…" promotion banner under the header — the whole banner is one anchor. Read as `promo-banner` on the home page.
 
-**Values (default).** size 575.83 x 25; padding 1px 0px 0px 0px; background transparent; text Google Sans Flex 16/24 500, #ffffff `color.palette.grey.0`.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, focus-visible, pressed) | size 575.83 x 25; padding 1px 0px 0px 0px; background transparent; text Google Sans Flex 16/24 500, #ffffff `color.palette.grey.0` |
 
-![Promo banner default](components/crops/promo-banner-default.png)
+![Promo banner default](components/crops/promo-banner-default.png) ![Promo banner hover](components/crops/promo-banner-hover.png) ![Promo banner focus-visible](components/crops/promo-banner-focus-visible.png) ![Promo banner pressed](components/crops/promo-banner-pressed.png)
 
 #### Promo link
 The banner's "Enroll now →" tail; measured, never followed. Read as `promo-link` on the home page.
@@ -193,11 +205,14 @@ The hero's blue pill action (glue-button--high-emphasis); measured, never follow
 #### Video teaser
 The hero video preview with the 48px play overlay; clicking it opens a glue-modal carrying a YouTube embed. Measured at rest; the modal was screenshotted in the capture pass and closed. Read as `video-teaser` on the home page.
 
-**Values (default).** size 616 x 346.5; background transparent; text Google Sans Flex 11/16 500, #202124 `color.palette.grey.900`; icon 48 x 48, #ffffff `color.palette.grey.0`.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, pressed) | size 616 x 346.5; background transparent; text Google Sans Flex 11/16 500, #202124 `color.palette.grey.900`; icon 48 x 48, #ffffff `color.palette.grey.0` |
+| focus-visible | radius 4px; shadow #185abc 0px 0px 0px 2px; outline 2px solid transparent, offset 0px |
 
 Child layers that carry the look: span 61.5x20 background rgba(255, 255, 255, 0.62) radius 100px.
 
-![Video teaser default](components/crops/video-teaser-default.png)
+![Video teaser default](components/crops/video-teaser-default.png) ![Video teaser hover](components/crops/video-teaser-hover.png) ![Video teaser focus-visible](components/crops/video-teaser-focus-visible.png) ![Video teaser pressed](components/crops/video-teaser-pressed.png)
 
 #### Section heading
 A section heading on the marketing home. Read as `h2` on the home page.
@@ -242,9 +257,14 @@ The /certificates catalog: the breadcrumb, the display heading, the statistics b
 #### Breadcrumb link
 The "Grow with Google" link opening the breadcrumb trail above the catalog heading. Read as `breadcrumb` on the certificates catalog page.
 
-**Values (default).** size 111.2 x 15; radius 4px; background transparent; text Google Sans Flex 12/20 400, #3186ff; transition background-color 0.2s ease, color 0.2s ease.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 111.2 x 15; radius 4px; background transparent; text Google Sans Flex 12/20 400, #3186ff; transition background-color 0.2s ease, color 0.2s ease |
+| hover | background rgba(26, 115, 232, 0.04) |
+| focus-visible | background rgba(26, 115, 232, 0.12); shadow #1a73e8 0px 0px 0px 2px; outline 2px solid transparent, offset 1px |
+| pressed | background rgba(26, 115, 232, 0.1); outline 5px auto #101010, offset 0px |
 
-![Breadcrumb link default](components/crops/breadcrumb-default.png)
+![Breadcrumb link default](components/crops/breadcrumb-default.png) ![Breadcrumb link hover](components/crops/breadcrumb-hover.png) ![Breadcrumb link focus-visible](components/crops/breadcrumb-focus-visible.png) ![Breadcrumb link pressed](components/crops/breadcrumb-pressed.png)
 
 #### Eyebrow
 The "GOOGLE CAREER CERTIFICATES" eyebrow over the page heading. Read as `eyebrow` on the certificates catalog page.
@@ -424,9 +444,12 @@ A footer link; measured, never followed. Read as `footer-link` on the home page.
 #### Locale select
 The footer region/language <select>; measured, never changed — its form posts to services.google.com. Read as `footer-lang` on the home page.
 
-**Values (default).** size 233 x 24; padding 0px 24px 0px 2px; background #eff2f7; image an image (data URI); text Google Sans Flex 16/24 500, #3c4043 `color.palette.grey.800`.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, pressed) | size 233 x 24; padding 0px 24px 0px 2px; background #eff2f7; image an image (data URI); text Google Sans Flex 16/24 500, #3c4043 `color.palette.grey.800` |
+| focus-visible | outline 1px auto #101010, offset 0px |
 
-![Locale select default](components/crops/footer-lang-default.png)
+![Locale select default](components/crops/footer-lang-default.png) ![Locale select hover](components/crops/footer-lang-hover.png) ![Locale select focus-visible](components/crops/footer-lang-focus-visible.png) ![Locale select pressed](components/crops/footer-lang-pressed.png)
 
 ### Mobile (390 wide)
 
@@ -468,11 +491,25 @@ The header button that opens the navigation drawer at 390 wide; opened was measu
 ![Drawer toggle default](components/crops/m-drawer-btn-default.png) ![Drawer toggle hover](components/crops/m-drawer-btn-hover.png) ![Drawer toggle focus-visible](components/crops/m-drawer-btn-focus-visible.png) ![Drawer toggle pressed](components/crops/m-drawer-btn-pressed.png) ![Drawer toggle opened](components/crops/m-drawer-btn-opened.png)
 
 #### Drawer link
-A link inside the opened navigation drawer; measured while the drawer was held open, never followed. Read as `m-drawer-link` on the home (390 wide) page at 390 wide.
+A link inside the opened navigation drawer (Career Certificates, 326x50); measured while the drawer was held open, never followed. Read as `m-drawer-link` on the home (390 wide) page at 390 wide.
 
-**Values (default).** size 134.75 x 48; radius 4px 100px 100px 4px; background transparent; text Google Sans Flex 16/24 500, #3c4043 `color.palette.grey.800`; transition background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover) | size 326 x 50; padding 13px 16px 13px 24px; radius 4px 100px 100px 4px; background transparent; text Google Sans Flex 16/24 500, #3c4043 `color.palette.grey.800`; transition background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease; icon 18 x 18, #3c4043 `color.palette.grey.800` |
+| focus-visible | shadow #1a73e8 0px 0px 0px 2px; text Google Sans Flex 16/24 500, #3186ff; icon 18 x 18, #3186ff |
+| pressed | text Google Sans Flex 16/24 500, #3186ff; icon 18 x 18, #3186ff |
 
-![Drawer link default](components/crops/m-drawer-link-default.png)
+![Drawer link default](components/crops/m-drawer-link-default.png) ![Drawer link hover](components/crops/m-drawer-link-hover.png) ![Drawer link focus-visible](components/crops/m-drawer-link-focus-visible.png) ![Drawer link pressed](components/crops/m-drawer-link-pressed.png)
+
+#### Skip link
+The "Jump to Content" skip link — parked off-canvas at y -999, revealed at 39,8 (160x48) by keyboard focus; hover does not apply to a hidden element. Read as `m-skip-link` on the home (390 wide) page at 390 wide.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: pressed) | size 134.75 x 48; radius 4px 100px 100px 4px; background transparent; text Google Sans Flex 16/24 500, #3c4043 `color.palette.grey.800`; transition background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease |
+| focus-visible | size 160 x 48; radius 4px; background #f8f9fa `color.palette.grey.50`; shadow #1a73e8 0px 0px 0px 2px; text Google Sans Flex 16/24 500, #3186ff |
+
+![Skip link default](components/crops/m-skip-link-default.png) ![Skip link focus-visible](components/crops/m-skip-link-focus-visible.png) ![Skip link pressed](components/crops/m-skip-link-pressed.png)
 
 ## Icons
 

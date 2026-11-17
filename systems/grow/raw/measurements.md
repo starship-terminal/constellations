@@ -38,25 +38,27 @@ Crops: `header-default.png`.
 
 Logo. The "Grow with Google" lockup in the header (a .glue-header__logo-link anchor in the desktop bar — the Google mark plus the "Grow with Google" img wordmark, 210x48; the mobile bar carries a second display:none copy).
 
-Page: home. Selector: `.glue-header__bar--desktop .glue-header__logo-link`. States: default.
+Page: home. Selector: `.glue-header__bar--desktop .glue-header__logo-link`. States: default, hover, focus-visible, pressed.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 210 x 48 |
-| Padding | 0px 9px |
-| Border | none |
-| Radius | 4px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Google Sans Flex 16px/24px 500 |
-| Letter spacing | 0.25px |
-| Colour | #5f6368 |
-| Transition | background-color, box-shadow, color 0.2s, 0.2s, 0.2s ease, ease, ease delay 0s, 0s, 0s |
-| Cursor | pointer |
-| How | at rest |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 210 x 48 | = | = | = |
+| Padding | 0px 9px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 4px | = | = | = |
+| Background | transparent | = | #f8f9fa | = |
+| Box shadow | none | = | #1a73e8 0px 0px 0px 2px | #000000 @ 0 0px 0px 0px 1px |
+| Outline | none | = | = | = |
+| Font | Google Sans Flex 16px/24px 500 | = | = | = |
+| Letter spacing | 0.25px | = | = | = |
+| Colour | #5f6368 | #202124 | #3186ff | #202124 |
+| Transition | background-color, box-shadow, color 0.2s, 0.2s, 0.2s ease, ease, ease delay 0s, 0s, 0s | = | = | = |
+| Cursor | pointer | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Ancestor paint | - | 1 up div.glue-header__logo bg #f8f9fa | = | = |
+| Painted layers | - | = | a.glue-header__logo-link 210.0x48.0 bg #f8f9fa r 4px shadow #1a73e8 0px 0px 0px 2px | a.glue-header__logo-link 210.0x48.0 r 4px shadow #000000 @ 0 0px 0px 0px 1px |
 
-Crops: `header-logo-default.png`.
+Crops: `header-logo-default.png`, `header-logo-focus-visible.png`, `header-logo-pressed.png`.
 
 #### nav-link
 
@@ -71,7 +73,7 @@ Page: home. Selector: `header nav link`. States: default, hover, focus-visible, 
 | Border | none | = | = | = |
 | Radius | 4px | = | = | = |
 | Background | transparent | = | #f8f9fa | = |
-| Box shadow | none | = | #1a73e8 0px 0px 0px 2px | #000000 @ 0 0px 0px 0px 1px |
+| Box shadow | none | = | #1a73e8 0px 0px 0px 2px | #000000 @ 0 0px 0px 0px 0px |
 | Outline | none | = | = | = |
 | Font | Google Sans Flex 16px/24px 500 | = | = | = |
 | Letter spacing | 0.25px | = | = | = |
@@ -79,7 +81,7 @@ Page: home. Selector: `header nav link`. States: default, hover, focus-visible, 
 | Transition | background-color, box-shadow, color 0.2s, 0.2s, 0.2s ease, ease, ease delay 0s, 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.glue-header__link 107.8x48.0 bg #f8f9fa r 4px shadow #1a73e8 0px 0px 0px 2px | a.glue-header__link 107.8x48.0 r 4px shadow #000000 @ 0 0px 0px 0px 1px |
+| Painted layers | - | = | a.glue-header__link 107.8x48.0 bg #f8f9fa r 4px shadow #1a73e8 0px 0px 0px 2px | a.glue-header__link 107.8x48.0 r 4px shadow #000000 @ 0 0px 0px 0px 0px |
 
 Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
@@ -137,26 +139,26 @@ Crops: `mega-panel-default.png`.
 
 Mega-menu item. A certificate link inside the opened mega-menu; measured while the menu was held open, never followed.
 
-Page: home. Selector: `mega-menu link`. States: default.
+Page: home. Selector: `mega-menu link`. States: default, hover, focus-visible, pressed.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 272 x 48 |
-| Padding | 8px 0px |
-| Border | T: none; R: none; B: none; L: 2px solid #000000 @ 0 |
-| Radius | 4px 0px 0px 4px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Google Sans Flex 16px/24px 400 |
-| Letter spacing | 0.25px |
-| Colour | #202124 |
-| Transition | background-color, box-shadow, color 0.2s, 0.2s, 0.2s ease, ease, ease delay 0s, 0s, 0s |
-| Cursor | pointer |
-| Painted layers | a.glue-header__link 272.0x48.0 border L:2px #000000 @ 0 r 4px 0px 0px 4px |
-| How | at rest |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 272 x 48 | = | = | = |
+| Padding | 8px 0px | = | = | = |
+| Border | T: none; R: none; B: none; L: 2px solid #000000 @ 0 | = | = | = |
+| Radius | 4px 0px 0px 4px | = | = | = |
+| Background | transparent | #f8f9fa | #f8f9fa | #f8f9fa |
+| Box shadow | none | = | #1a73e8 0px 0px 0px 2px | #000000 @ 0 0px 0px 0px 1px |
+| Outline | none | = | = | = |
+| Font | Google Sans Flex 16px/24px 400 | = | = | = |
+| Letter spacing | 0.25px | = | = | = |
+| Colour | #202124 | #3186ff | #3186ff | #3186ff |
+| Transition | background-color, box-shadow, color 0.2s, 0.2s, 0.2s ease, ease, ease delay 0s, 0s, 0s | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | a.glue-header__link 272.0x48.0 border L:2px #000000 @ 0 r 4px 0px 0px 4px | a.glue-header__link 272.0x48.0 bg #f8f9fa border L:2px #000000 @ 0 r 4px 0px 0px 4px | a.glue-header__link 272.0x48.0 bg #f8f9fa border L:2px #000000 @ 0 r 4px 0px 0px 4px shadow #1a73e8 0px 0px 0px 2px | a.glue-header__link 272.0x48.0 bg #f8f9fa border L:2px #000000 @ 0 r 4px 0px 0px 4px shadow #000000 @ 0 0px 0px 0px 1px |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `mega-item-default.png`.
+Crops: `mega-item-default.png`, `mega-item-hover.png`, `mega-item-focus-visible.png`, `mega-item-pressed.png`.
 
 ### Home
 
@@ -164,25 +166,25 @@ Crops: `mega-item-default.png`.
 
 Promo banner. The blue "New! Enroll in the AI Certificate and learn vibe coding…" promotion banner under the header — the whole banner is one anchor.
 
-Page: home. Selector: `promo banner`. States: default.
+Page: home. Selector: `promo banner`. States: default, hover, focus-visible, pressed.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 575.83 x 25 |
-| Padding | 1px 0px 0px 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Google Sans Flex 16px/24px 400 |
-| Letter spacing | 0.1px |
-| Colour | #ffffff |
-| Text node | span.anchorText: Google Sans Flex 16px/24px 500, #ffffff, ls 0.1px |
-| Transition | none |
-| How | at rest |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 575.83 x 25 | = | = | = |
+| Padding | 1px 0px 0px 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Google Sans Flex 16px/24px 400 | = | = | = |
+| Letter spacing | 0.1px | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span.anchorText: Google Sans Flex 16px/24px 500, #ffffff, ls 0.1px | = | = | = |
+| Transition | none | = | = | = |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
-Crops: `promo-banner-default.png`.
+Crops: `promo-banner-default.png`, `promo-banner-hover.png`, `promo-banner-focus-visible.png`, `promo-banner-pressed.png`.
 
 #### promo-link
 
@@ -263,28 +265,28 @@ Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png
 
 Video teaser. The hero video preview with the 48px play overlay; clicking it opens a glue-modal carrying a YouTube embed. Measured at rest; the modal was screenshotted in the capture pass and closed.
 
-Page: home. Selector: `.glue-video`. States: default.
+Page: home. Selector: `.glue-video`. States: default, hover, focus-visible, pressed.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 616 x 346.5 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Google Sans Flex 19px/28.5px 400 |
-| Letter spacing | 0.1px |
-| Colour | #202124 |
-| Text node | span.glue-label.glue-video__timestamp-duration: Google Sans Flex 11px/16px 500, #202124, ls 0.5px |
-| Transition | none |
-| Cursor | pointer |
-| Icon | 48 x 48, colour #ffffff |
-| Painted layers | span.glue-video__timestamp.glue-video__timestamp--light 61.5x20.0 bg #ffffff @ 0.62 r 100px |
-| How | at rest |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 616 x 346.5 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | 4px | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #185abc 0px 0px 0px 2px | = |
+| Outline | none | = | 2px solid #000000 @ 0 offset 0px | = |
+| Font | Google Sans Flex 19px/28.5px 400 | = | = | = |
+| Letter spacing | 0.1px | = | = | = |
+| Colour | #202124 | = | = | = |
+| Text node | span.glue-label.glue-video__timestamp-duration: Google Sans Flex 11px/16px 500, #202124, ls 0.5px | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 48 x 48, colour #ffffff | = | = | = |
+| Painted layers | span.glue-video__timestamp.glue-video__timestamp--light 61.5x20.0 bg #ffffff @ 0.62 r 100px | = | div.glue-video.glue-video__preview-container 616.0x346.5 r 4px shadow #185abc 0px 0px 0px 2px outline 2px solid #000000 @ 0 offset 0px; span.glue-video__timestamp.glue-video__timestamp--light 61.5x20.0 bg #ffffff @ 0.62 r 100px | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `video-teaser-default.png`.
+Crops: `video-teaser-default.png`, `video-teaser-hover.png`, `video-teaser-focus-visible.png`, `video-teaser-pressed.png`.
 
 #### h2
 
@@ -445,27 +447,27 @@ Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-vi
 
 Locale select. The footer region/language <select>; measured, never changed — its form posts to services.google.com.
 
-Page: home. Selector: `footer select`. States: default.
+Page: home. Selector: `footer select`. States: default, hover, focus-visible, pressed.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 233 x 24 |
-| Padding | 0px 24px 0px 2px |
-| Border | none |
-| Radius | 0px |
-| Background | #eff2f7 |
-| Background image | url(data:…) |
-| Box shadow | none |
-| Outline | none |
-| Font | Google Sans Flex 16px/24px 500 |
-| Letter spacing | normal |
-| Colour | #3c4043 |
-| Transition | none |
-| Cursor | default |
-| Painted layers | select.glue-form__dropdown.glue-footer__lang-dropdown 233.0x24.0 bg #eff2f7 image url(data:…) |
-| How | at rest |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 233 x 24 | = | = | = |
+| Padding | 0px 24px 0px 2px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | #eff2f7 | = | = | = |
+| Background image | url(data:…) | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #101010 offset 0px | = |
+| Font | Google Sans Flex 16px/24px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #3c4043 | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | default | = | = | = |
+| Painted layers | select.glue-form__dropdown.glue-footer__lang-dropdown 233.0x24.0 bg #eff2f7 image url(data:…) | = | select.glue-form__dropdown.glue-footer__lang-dropdown 233.0x24.0 bg #eff2f7 image url(data:…) outline 1px auto #101010 offset 0px | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `footer-lang-default.png`.
+Crops: `footer-lang-default.png`, `footer-lang-hover.png`, `footer-lang-focus-visible.png`, `footer-lang-pressed.png`.
 
 ### Certificates
 
@@ -473,26 +475,27 @@ Crops: `footer-lang-default.png`.
 
 Breadcrumb link. The "Grow with Google" link opening the breadcrumb trail above the catalog heading.
 
-Page: certificates. Selector: `breadcrumb link`. States: default.
+Page: certificates. Selector: `breadcrumb link`. States: default, hover, focus-visible, pressed.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 111.2 x 15 |
-| Padding | 0px |
-| Border | none |
-| Radius | 4px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Google Sans Flex 12px/20px 400 |
-| Letter spacing | 0.2px |
-| Colour | #3186ff |
-| Text node | span.anchorText: Google Sans Flex 12px/20px 400, #3186ff, ls 0.2px |
-| Transition | background-color, color 0.2s, 0.2s ease, ease delay 0s, 0s |
-| Cursor | pointer |
-| How | at rest |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 111.2 x 15 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 4px | = | = | = |
+| Background | transparent | #1a73e8 @ 0.04 | #1a73e8 @ 0.12 | #1a73e8 @ 0.1 |
+| Box shadow | none | = | #1a73e8 0px 0px 0px 2px | = |
+| Outline | none | = | 2px solid #000000 @ 0 offset 1px | 5px auto #101010 offset 0px |
+| Font | Google Sans Flex 12px/20px 400 | = | = | = |
+| Letter spacing | 0.2px | = | = | = |
+| Colour | #3186ff | = | = | = |
+| Text node | span.anchorText: Google Sans Flex 12px/20px 400, #3186ff, ls 0.2px | = | = | = |
+| Transition | background-color, color 0.2s, 0.2s ease, ease delay 0s, 0s | = | = | = |
+| Cursor | pointer | = | = | = |
+| How | at rest | mouse hover | keydown then focus() | CDP forcePseudoState :active:hover |
+| Painted layers | - | a 111.2x15.0 bg #1a73e8 @ 0.04 r 4px | a 111.2x15.0 bg #1a73e8 @ 0.12 r 4px shadow #1a73e8 0px 0px 0px 2px outline 2px solid #000000 @ 0 offset 1px | a 111.2x15.0 bg #1a73e8 @ 0.1 r 4px outline 5px auto #101010 offset 0px |
 
-Crops: `breadcrumb-default.png`.
+Crops: `breadcrumb-default.png`, `breadcrumb-hover.png`, `breadcrumb-focus-visible.png`, `breadcrumb-pressed.png`.
 
 #### eyebrow
 
@@ -615,7 +618,7 @@ Page: certificates. Selector: `.glue-jumplinks__list`. States: default.
 | Icon | 18 x 18, colour #5f6368 |
 | ::before | 20px x 30px, absolute, bg #000000 @ 0 linear-gradient(269deg, #ffffff @ 0, #ffffff 100%), radius 0px |
 | ::after | 20px x 30px, absolute, bg #000000 @ 0 linear-gradient(269deg, #ffffff, #ffffff @ 0), radius 0px |
-| Painted layers | div.glue-jumplinks 721.0x48.0 bg #ffffff r 120px shadow #3c4043 @ 0.3 0px 1px 2px 0px, #3c4043 @ 0.15 0px 1px 3px 1px; div::before.glue-jumplinks 20pxx30px image linear-gradient(269deg, #ffffff @ 0, #ffffff 100%); div::after.glue-jumplinks 20pxx30px image linear-gradient(269deg, #ffffff, #ffffff @ 0); button.glue-jumplinks__button.glue-jumplinks__button--prev 48.0x48.0 bg #ffffff border T:2px #000000 @ 0 / R:2px #000000 @ 0 / B:2px #000000 @ 0 / L:2px #000000 @ 0 r 50%; button::before.glue-jumplinks__button.glue-jumplinks__button--prev 20pxx48px image linear-gradient(269deg, #ffffff @ 0, #ffffff 100%); a.glue-jumplinks__link 97.0x38.0 border T:2px #000000 @ 0 / R:2px #000000 @ 0 / B:2px #000000 @ 0 / L:2px #000000 @ 0 |
+| Painted layers | div.glue-jumplinks.glue-jumplinks--rewind 721.0x48.0 bg #ffffff r 120px shadow #3c4043 @ 0.3 0px 1px 2px 0px, #3c4043 @ 0.15 0px 1px 3px 1px; div::before.glue-jumplinks.glue-jumplinks--rewind 20pxx30px image linear-gradient(269deg, #ffffff @ 0, #ffffff 100%); div::after.glue-jumplinks.glue-jumplinks--rewind 20pxx30px image linear-gradient(269deg, #ffffff, #ffffff @ 0); button.glue-jumplinks__button.glue-jumplinks__button--prev 48.0x48.0 bg #ffffff border T:2px #000000 @ 0 / R:2px #000000 @ 0 / B:2px #000000 @ 0 / L:2px #000000 @ 0 r 50%; button::before.glue-jumplinks__button.glue-jumplinks__button--prev 20pxx48px image linear-gradient(269deg, #ffffff @ 0, #ffffff 100%); a.glue-jumplinks__link 97.0x38.0 border T:2px #000000 @ 0 / R:2px #000000 @ 0 / B:2px #000000 @ 0 / L:2px #000000 @ 0 |
 | How | at rest |
 
 Crops: `tab-bar-default.png`.
@@ -1005,28 +1008,55 @@ Crops: `m-drawer-btn-default.png`, `m-drawer-btn-hover.png`, `m-drawer-btn-focus
 
 #### m-drawer-link
 
-Drawer link. A link inside the opened navigation drawer; measured while the drawer was held open, never followed.
+Drawer link. A link inside the opened navigation drawer (Career Certificates, 326x50); measured while the drawer was held open, never followed.
 
-Page: mobile. Selector: `drawer link`. States: default.
+Page: mobile. Selector: `.glue-header__drawer--is-open a.glue-header__link`. States: default, hover, focus-visible, pressed.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 134.75 x 48 |
-| Padding | 0px |
-| Border | none |
-| Radius | 4px 100px 100px 4px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Google Sans Flex 16px/24px 500 |
-| Letter spacing | 0.25px |
-| Colour | #3c4043 |
-| Text node | p.glue-header__skip-content-text: Google Sans Flex 16px/24px 500, #3c4043, ls 0.25px |
-| Transition | background-color, box-shadow, color 0.2s, 0.2s, 0.2s ease, ease, ease delay 0s, 0s, 0s |
-| Cursor | pointer |
-| How | at rest |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 326 x 50 | = | = | = |
+| Padding | 13px 16px 13px 24px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 4px 100px 100px 4px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | #1a73e8 0px 0px 0px 2px | #000000 @ 0 0px 0px 0px 1px |
+| Outline | none | = | = | = |
+| Font | Google Sans Flex 16px/24px 500 | = | = | = |
+| Letter spacing | 0.25px | = | = | = |
+| Colour | #3c4043 | = | #3186ff | #3186ff |
+| Transition | background-color, box-shadow, color 0.2s, 0.2s, 0.2s ease, ease, ease delay 0s, 0s, 0s | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 18 x 18, colour #3c4043 | = | 18 x 18, colour #3186ff | 18 x 18, colour #3186ff |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | a.glue-header__link 326.0x50.0 r 4px 100px 100px 4px shadow #1a73e8 0px 0px 0px 2px | a.glue-header__link 326.0x50.0 r 4px 100px 100px 4px shadow #000000 @ 0 0px 0px 0px 1px |
 
-Crops: `m-drawer-link-default.png`.
+Crops: `m-drawer-link-default.png`, `m-drawer-link-hover.png`, `m-drawer-link-focus-visible.png`, `m-drawer-link-pressed.png`.
+
+#### m-skip-link
+
+Skip link. The "Jump to Content" skip link — parked off-canvas at y -999, revealed at 39,8 (160x48) by keyboard focus; hover does not apply to a hidden element.
+
+Page: mobile. Selector: `.glue-header__skip-content`. States: default, focus-visible, pressed.
+
+| Property | default | focus-visible | pressed |
+|---|---|---|---|
+| Size (w x h) | 134.75 x 48 | 160 x 48 | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 4px 100px 100px 4px | 4px | = |
+| Background | transparent | #f8f9fa | = |
+| Box shadow | none | #1a73e8 0px 0px 0px 2px | #000000 @ 0 0px 0px 0px 1px |
+| Outline | none | = | = |
+| Font | Google Sans Flex 16px/24px 500 | = | = |
+| Letter spacing | 0.25px | = | = |
+| Colour | #3c4043 | #3186ff | = |
+| Text node | p.glue-header__skip-content-text: Google Sans Flex 16px/24px 500, #3c4043, ls 0.25px | p.glue-header__skip-content-text: Google Sans Flex 16px/24px 500, #3186ff, ls 0.25px | = |
+| Transition | background-color, box-shadow, color 0.2s, 0.2s, 0.2s ease, ease, ease delay 0s, 0s, 0s | = | = |
+| Cursor | pointer | = | = |
+| How | at rest | keydown then focus() | CDP forcePseudoState :active:hover |
+| Painted layers | - | a.glue-header__link.glue-header__skip-content 160.0x48.0 bg #f8f9fa r 4px shadow #1a73e8 0px 0px 0px 2px | a.glue-header__link.glue-header__skip-content 134.8x48.0 r 4px 100px 100px 4px shadow #000000 @ 0 0px 0px 0px 1px |
+
+Crops: `m-skip-link-default.png`, `m-skip-link-focus-visible.png`, `m-skip-link-pressed.png`.
 
 ## Transitions declared in the readable stylesheets
 
