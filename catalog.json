@@ -4570,7 +4570,8 @@
     ],
     "date": "2026-11-18",
     "version": "public site as of 2026-11-18 (shutdown banner: 31 March 2027)",
-    "durationMin": 90
+    "durationMin": 90,
+    "pr": "https://github.com/starship-terminal/constellations/pull/640"
    }
   },
   {
