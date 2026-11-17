@@ -962,21 +962,22 @@ Page: https://ichigo.gumroad.com/l/ichigo-reader. Selector: `button (Share)`. St
 | Icon | 20 x 20, colour #000000 | = | = |
 | Painted layers | button.inline-flex.items-center 104.0x48.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px | button.inline-flex.items-center 104.0x48.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 4px 4px 0px 0px | button.inline-flex.items-center 104.0x48.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | How | resting state | mouse hover over the element | the button's own press, opening the share popover |
-| ::after | - | 107px x 51px, absolute, bg #000000 @ 0, radius 0px | = |
+| ::after | - | 107px x 51px, absolute, bg #000000 @ 0, radius 0px | 107px x 51px, absolute, bg #000000 @ 0, radius 0px |
 
 Crops: `product-share-default.png`, `product-share-hover.png`, `product-share-opened.png`.
 
 #### product-ratings
 
-Ratings summary. The "Ratings / 4.1 / (235 ratings)" block beside the buy panel.
+Ratings + reviews. The ratings column beside the buy panel — the 4.1 summary, the star histogram and the review feed under it.
 
-Page: https://ichigo.gumroad.com/l/ichigo-reader. Selector: `header (Ratings)`. States: default.
+Page: https://ichigo.gumroad.com/l/ichigo-reader. Selector: `article section (Ratings)`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 2987.42 |
-| Padding | 0px |
-| Border | T: none; R: none; B: 1px solid #000000; L: none |
+| Size (w x h) | 379.34 x 1783.3 |
+| Padding | 24px |
+| Gap | 16px |
+| Border | T: 1px solid #000000; R: none; B: none; L: none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
@@ -984,13 +985,13 @@ Page: https://ichigo.gumroad.com/l/ichigo-reader. Selector: `header (Ratings)`. 
 | Font | ABC Favorit 16px/22px 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | h1.wrap-break-word: ABC Favorit 40px/48px 400, #000000 |
+| Text node | h3: ABC Favorit 18.4px/25.3px 400, #000000 |
 | Transition | none |
-| Icon | 20 x 20, colour #000000 @ 0.5 |
-| Painted layers | section.border-b.border-border 1440.0x2987.4 border B:1px solid; article.relative.grid 1140.0x2858.4 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; figure.group.relative 1138.0x641.1 bg #ffffff border B:1px solid r 4px 4px 0px 0px; header.grid.gap-4 758.7x96.0 border R:1px solid; select.font-[inherit].py-3 331.3x48.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; button.cursor-pointer.text-current 331.3x100.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #36a9ae 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| Icon | 20 x 20, colour #000000 |
+| Painted layers | section.grid.gap-4 379.3x1783.3 border T:1px solid; meter.h-[1lh].w-full 223.3x22.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; meter.h-[1lh].w-full 223.3x22.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; meter.h-[1lh].w-full 223.3x22.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; meter.h-[1lh].w-full 223.3x22.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px; meter.h-[1lh].w-full 223.3x22.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px |
 | How | resting state |
 
-Crops: none.
+Crops: `product-ratings-default.png`.
 
 #### product-review-load
 
@@ -1048,13 +1049,13 @@ Crops: `product-footer-default.png`.
 
 Order summary card. The cart block: item thumbnail with quantity badge, Edit/Remove, the "Give as a gift?" toggle and the totals.
 
-Page: https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1. Selector: `div#app div.grid.gap-8 > div`. States: default.
+Page: https://gumroad.com/checkout. Selector: `div#app div.grid.gap-8 > div > div:first-child`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1312 x 1331.89 |
+| Size (w x h) | 832 x 567 |
 | Padding | 0px |
-| Gap | 32px 64px |
+| Gap | 24px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -1075,7 +1076,7 @@ Crops: `checkout-summary-default.png`.
 
 "Give as a gift?" switch. The iOS-style switch — measured, never toggled.
 
-Page: https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1. Selector: `[role="switch"], [role="checkbox"]`. States: default, hover.
+Page: https://gumroad.com/checkout. Selector: `[role="switch"], [role="checkbox"]`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
@@ -1102,7 +1103,7 @@ Crops: `checkout-gift-toggle-default.png`, `checkout-gift-toggle-hover.png`.
 
 Email field. The labelled Email address input — measured as found, never typed into.
 
-Page: https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1. Selector: `input[type="email"]`. States: default, focused.
+Page: https://gumroad.com/checkout. Selector: `input[type="email"]`. States: default, focused.
 
 | Property | default | focused |
 |---|---|---|
@@ -1128,7 +1129,7 @@ Crops: `checkout-email-default.png`, `checkout-email-focused.png`.
 
 Full name field. The labelled Full name input.
 
-Page: https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1. Selector: `input[id*="fullName" i]`. States: default.
+Page: https://gumroad.com/checkout. Selector: `input[id*="fullName" i]`. States: default.
 
 | Property | default |
 |---|---|
@@ -1154,7 +1155,7 @@ Crops: `checkout-name-default.png`.
 
 Country select. The country picker, pre-detected to the visitor's region.
 
-Page: https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1. Selector: `select`. States: default, hover, focus-visible.
+Page: https://gumroad.com/checkout. Selector: `select`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
@@ -1179,7 +1180,7 @@ Crops: `checkout-country-default.png`, `checkout-country-hover.png`, `checkout-c
 
 Currency select. The "SGD$ (Singapore Dollars) — detected" select in the totals column.
 
-Page: https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1. Selector: `select (currency)`. States: default.
+Page: https://gumroad.com/checkout. Selector: `select (currency)`. States: default.
 
 | Property | default |
 |---|---|
@@ -1204,7 +1205,7 @@ Crops: `checkout-currency-default.png`.
 
 Pay button. The filled pay submit at the foot of the payment column — measured, never pressed.
 
-Page: https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1. Selector: `button[type="submit"], button (Pay)`. States: default, hover.
+Page: https://gumroad.com/checkout. Selector: `button[type="submit"], button (Pay)`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|

@@ -10,7 +10,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `ABC Favorit 16/22 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (107 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (108 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -72,7 +72,7 @@ Values that apply across entries, from the measurement files.
 | [Hero section](#hero-section) | 1440 x 776 | - | - | #f4f4f0 `light.ground.bodyBg` | none | 0 |
 | [Login form card](#login-form-card) | 736 x 738 | - | - | transparent | none | 0 |
 | [Tier option (radio)](#tier-option-radio) | 331.34 x 100 | 1px solid #36a9ae | 4px | #ffffff `light.role.background` | #36a9ae 0px 0px 0px 1px | 12px 16px |
-| [Order summary card](#order-summary-card) | 1312 x 1331.89 | - | - | transparent | none | 0 |
+| [Order summary card](#order-summary-card) | 832 x 567 | - | - | transparent | none | 0 |
 | [Product card, phone](#product-card-phone) | 234 x 506 | 1px solid #000000 `light.role.border` | 4px | #ffffff `light.role.background` | none | 0 |
 
 ## Components
@@ -110,8 +110,9 @@ States read on 2026-11-17T04:36:40.153Z (default); 2026-11-17T04:36:41.924Z (foc
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 789 x 46; padding 12px 16px; radius 4px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; placeholder rgba(0, 0, 0, 0.5) `light.role.muted`; layers input.font-[inherit].py-3 789.0x46.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 4px |
-| dark | text ABC Favorit 16/22 400, #dddddd; placeholder rgba(221, 221, 221, 0.5) |
+| default | size 789 x 46; padding 12px 16px; radius 4px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; placeholder rgba(0, 0, 0, 0.5) `light.role.muted`; layers up1 div.inline-flex.items-center rgb(255, 255, 255); input.font-[inherit].py-3 789.0x46.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 4px |
+| focused | layers up1 div.inline-flex.items-center rgb(255, 255, 255) 2px solid rgb(255, 144, 232); input.font-[inherit].py-3 789.0x46.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 4px |
+| dark | text ABC Favorit 16/22 400, #dddddd; placeholder rgba(221, 221, 221, 0.5); layers up1 div.inline-flex.items-center rgb(0, 0, 0); input.font-[inherit].py-3 789.0x46.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 4px |
 
 ![Search combobox default](components/crops/nav-search-default.png) ![Search combobox focused](components/crops/nav-search-focused.png) ![Search combobox dark](components/crops/nav-search-dark.png)
 
@@ -266,8 +267,8 @@ States read on 2026-11-17T04:38:48.568Z (default); 2026-11-17T04:38:50.729Z (ope
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 310 x 55; padding 16px; border B: 1px solid #000000 `light.role.border`; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; icon 20 x 20, #000000 `light.role.border`; layers details.flex-wrap.items-center 310.0x55.0 B:1px solid; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 144, 232) T:1px solid / R:1px solid / B:1px solid / L:1px solid 8px; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 255, 255) T:1px solid / R:1px solid / B:1px solid / L:1px solid 8px; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 255, 2 |
-| opened | size 310 x 277; layers details.flex-wrap.items-center 310.0x277.0 B:1px solid; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 144, 232) T:1px solid / R:1px solid / B:1px solid / L:1px solid 8px; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 255, 255) T:1px solid / R:1px solid / B:1px solid / L:1px solid 8px; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 255,  |
+| default | size 310 x 55; padding 16px; border B: 1px solid #000000 `light.role.border`; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; icon 20 x 20, #000000 `light.role.border`; layers up1 div.grid.divide-y rgb(255, 255, 255); details.flex-wrap.items-center 310.0x55.0 B:1px solid; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 144, 232) T:1px solid / R:1px solid / B:1px solid / L:1px solid 8px; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 255, 255) T:1px solid / R:1px solid / B:1px solid / L:1px solid 8px; input.appearance-none.size-[cal |
+| opened | size 310 x 277; layers up1 div.grid.divide-y rgb(255, 255, 255); details.flex-wrap.items-center 310.0x277.0 B:1px solid; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 144, 232) T:1px solid / R:1px solid / B:1px solid / L:1px solid 8px; input.appearance-none.size-[calc(1lh+0.125rem)] 24.0x24.0 rgb(255, 255, 255) T:1px solid / R:1px solid / B:1px solid / L:1px solid 8px; input.appearance-none.size-[ca |
 
 Child layers that carry the look: details 310x55 border 1px solid; input 24x24 background #ff90e8 `light.role.accent` border 1px solid radius 8px; input 24x24 background #ffffff `light.role.background` border 1px solid radius 8px.
 
@@ -327,8 +328,8 @@ States read on 2026-11-17T04:41:01.235Z (default); 2026-11-17T04:41:04.039Z (dar
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 1440 x 776; background #f4f4f0 `light.ground.bodyBg`; text ABC Favorit 96/96 400, #000000 `light.role.border`; icon 24 x 24, #242423 `core.color.scale.darkGray` |
-| dark | background #000000 `light.role.border`; text ABC Favorit 96/96 400, #ffffff `light.role.background`; icon 24 x 24, oklab(0.999994 0.0000455677 0.0000200868 / 0.7) |
+| default | size 1440 x 776; background #f4f4f0 `light.ground.bodyBg`; text ABC Favorit 96/96 400, #000000 `light.role.border`; icon 24 x 24, #242423 `core.color.scale.darkGray`; layers up1 div.bg-gray.dark:bg-black rgb(244, 244, 240) |
+| dark | background #000000 `light.role.border`; text ABC Favorit 96/96 400, #ffffff `light.role.background`; icon 24 x 24, oklab(0.999994 0.0000455677 0.0000200868 / 0.7); layers up1 div.bg-gray.dark:bg-black rgb(0, 0, 0) |
 
 ![Hero section default](components/crops/home-hero-default.png) ![Hero section dark](components/crops/home-hero-dark.png)
 
@@ -434,7 +435,7 @@ States read on 2026-11-17T04:31:22.859Z (default); 2026-11-17T04:31:24.124Z (foc
 The password field with its "Show password" eye button. Read as `login-password` on the log in page.
 Read on 2026-11-17T04:31:27.452Z.
 
-**Values (default).** size 702 x 46; padding 12px 16px; radius 4px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; placeholder #000000 `light.role.border`; layers input.font-[inherit].py-3 702.0x46.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 4px.
+**Values (default).** size 702 x 46; padding 12px 16px; radius 4px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; placeholder #000000 `light.role.border`; layers up1 div.inline-flex.items-center rgb(255, 255, 255); input.font-[inherit].py-3 702.0x46.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 4px.
 
 ![Password input default](components/crops/login-password-default.png)
 
@@ -467,9 +468,9 @@ A product page on a creator subdomain (ichigo.gumroad.com): the title block, the
 
 #### Product header
 The title block over the buy panel on a <creator>.gumroad.com/l/ page. Read as `product-header` on the https://ichigo.gumroad.com/l/ichigo-reader page.
-Read on 2026-11-17T04:31:51.866Z.
+Read on 2026-11-17T07:15:03.764Z.
 
-**Values (default).** size 758.66 x 96; padding 24px; border R: 1px solid #000000 `light.role.border`; background transparent; text ABC Favorit 40/48 400, #000000 `light.role.border`; layers header.grid.gap-4 758.7x96.0 R:1px solid.
+**Values (default).** size 758.66 x 96; padding 24px; border R: 1px solid #000000 `light.role.border`; background transparent; text ABC Favorit 40/48 400, #000000 `light.role.border`; layers up1 article.relative.grid rgb(255, 255, 255); header.grid.gap-4 758.7x96.0 R:1px solid.
 
 Child layers that carry the look: header 758.7x96 border 1px solid.
 
@@ -477,7 +478,7 @@ Child layers that carry the look: header 758.7x96 border 1px solid.
 
 #### Tier option (radio)
 A priced tier card — a radio-style button carrying the price and tier emoji label. Read as `product-tier` on the https://ichigo.gumroad.com/l/ichigo-reader page.
-States read on 2026-11-17T04:32:03.450Z (default); 2026-11-17T04:32:05.787Z (hover).
+States read on 2026-11-17T07:15:26.844Z (default); 2026-11-17T07:15:50.164Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -488,7 +489,7 @@ States read on 2026-11-17T04:32:03.450Z (default); 2026-11-17T04:32:05.787Z (hov
 
 #### Billing term select
 The "Monthly | Yearly" select in the buy controls. Read as `product-term-select` on the https://ichigo.gumroad.com/l/ichigo-reader page.
-States read on 2026-11-17T04:32:07.386Z (default); 2026-11-17T04:32:09.983Z (hover); 2026-11-17T04:32:11.245Z (focus-visible).
+States read on 2026-11-17T07:15:51.294Z (default); 2026-11-17T07:15:53.243Z (hover); 2026-11-17T07:16:02.205Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -499,7 +500,7 @@ States read on 2026-11-17T04:32:07.386Z (default); 2026-11-17T04:32:09.983Z (hov
 
 #### Purchase link
 The "Subscribe"/"I want this" link that navigates to gumroad.com/checkout — measured, never followed in this run. Read as `product-buy` on the https://ichigo.gumroad.com/l/ichigo-reader page.
-States read on 2026-11-17T04:32:11.262Z (pressed); 2026-11-17T04:32:12.292Z (default); 2026-11-17T04:32:14.143Z (hover); 2026-11-17T04:32:15.433Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
+States read on 2026-11-17T07:16:05.372Z (pressed); 2026-11-17T07:16:08.204Z (default); 2026-11-17T07:16:13.726Z (hover); 2026-11-17T07:16:18.851Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -510,7 +511,7 @@ States read on 2026-11-17T04:32:11.262Z (pressed); 2026-11-17T04:32:12.292Z (def
 
 #### "Add to wishlist" control
 The combobox-shaped wishlist picker beside the purchase link. Read as `product-wishlist` on the https://ichigo.gumroad.com/l/ichigo-reader page.
-States read on 2026-11-17T04:32:16.595Z (default); 2026-11-17T04:32:19.006Z (hover).
+States read on 2026-11-17T07:16:21.741Z (default); 2026-11-17T07:16:25.608Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -520,28 +521,27 @@ States read on 2026-11-17T04:32:16.595Z (default); 2026-11-17T04:32:19.006Z (hov
 
 #### "Share" button + popover
 The Share button; "opened" is its own popover state. Read as `product-share` on the https://ichigo.gumroad.com/l/ichigo-reader page.
-States read on 2026-11-17T04:32:21.355Z (default); 2026-11-17T04:32:24.888Z (hover); 2026-11-17T04:32:27.652Z (opened).
+States read on 2026-11-17T07:16:29.120Z (default); 2026-11-17T07:16:31.933Z (hover); 2026-11-17T07:16:37.894Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: opened) | size 104 x 48; padding 12px 16px; border 1px solid #000000 `light.role.border`; radius 4px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #000000 `light.role.border` |
+| default | size 104 x 48; padding 12px 16px; border 1px solid #000000 `light.role.border`; radius 4px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #000000 `light.role.border` |
 | hover | shadow #000000 4px 4px 0px 0px; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
+| opened | layers ::after rgba(0, 0, 0, 0) 0px none 1 |
 
 !["Share" button + popover default](components/crops/product-share-default.png) !["Share" button + popover hover](components/crops/product-share-hover.png) !["Share" button + popover opened](components/crops/product-share-opened.png)
 
-#### Ratings summary
-The "Ratings / 4.1 / (235 ratings)" block beside the buy panel. Read as `product-ratings` on the https://ichigo.gumroad.com/l/ichigo-reader page.
-Read on 2026-11-17T04:32:47.348Z.
+#### Ratings + reviews
+The ratings column beside the buy panel — the 4.1 summary, the star histogram and the review feed under it. Read as `product-ratings` on the https://ichigo.gumroad.com/l/ichigo-reader page.
+Read on 2026-11-17T07:16:40.889Z.
 
-**Values (default).** size 1440 x 2987.42; border B: 1px solid #000000 `light.role.border`; background transparent; text ABC Favorit 40/48 400, #000000 `light.role.border`; icon 20 x 20, rgba(0, 0, 0, 0.5) `light.role.muted`; layers section.border-b.border-border 1440.0x2987.4 B:1px solid; article.relative.grid 1140.0x2858.4 rgb(255, 255, 255) T:1px solid / R:1px solid / B:1px solid / L:1px solid 4px; figure.group.relative 1138.0x641.1 rgb(255, 255, 255) B:1px solid 4px 4px 0px 0px; header.grid.gap-4 758.7x96.0 R:1px solid; select.font-[inherit].py-3 331.3x48.0 rgb(255, 255, 255) T:1px solid / R:1px solid / B:1px solid / L:1p.
+**Values (default).** size 379.34 x 1783.3; padding 24px; border T: 1px solid #000000 `light.role.border`; background transparent; text ABC Favorit 18.4/25.3 400, #000000 `light.role.border`; icon 20 x 20, #000000 `light.role.border`.
 
-Child layers that carry the look: section 1440x2987.4 border 1px solid; article 1140x2858.4 background #ffffff `light.role.background` border 1px solid radius 4px; figure 1138x641.1 background #ffffff `light.role.background` border 1px solid radius 4px 4px 0px 0px.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Ratings + reviews default](components/crops/product-ratings-default.png)
 
 #### "Load more" reviews
 The underlined reviews pagination button. Read as `product-review-load` on the https://ichigo.gumroad.com/l/ichigo-reader page.
-States read on 2026-11-17T04:32:54.365Z (default); 2026-11-17T04:32:56.983Z (hover).
+States read on 2026-11-17T07:16:41.824Z (default); 2026-11-17T07:16:43.642Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -551,7 +551,7 @@ States read on 2026-11-17T04:32:54.365Z (default); 2026-11-17T04:32:56.983Z (hov
 
 #### "Powered by Gumroad" footer
 The slim footer under the product page — the brand link and currency select. Read as `product-footer` on the https://ichigo.gumroad.com/l/ichigo-reader page.
-Read on 2026-11-17T04:32:58.073Z.
+Read on 2026-11-17T07:16:44.659Z.
 
 **Values (default).** size 1440 x 176; padding 64px 16px; background transparent; text ABC Favorit 16/22 400, #000000 `light.role.border`; icon 20 x 20, rgba(0, 0, 0, 0.5) `light.role.muted`; layers span.inline-block.aspect-115/22 115.0x22.0 rgb(0, 0, 0); select.font-[inherit].py-3 338.0x48.0 rgb(255, 255, 255) T:1px solid / R:1px solid / B:1px solid / L:1px solid 4px.
 
@@ -564,18 +564,18 @@ Child layers that carry the look: span 115x22 background #000000 `light.role.bor
 The public checkout the product page's 'Subscribe' link targets — gumroad.com/checkout with the product's option key: the order summary, gift toggle, email/name/country/currency fields and the pay methods. Fields were measured empty; nothing was filled or submitted.
 
 #### Order summary card
-The cart block: item thumbnail with quantity badge, Edit/Remove, the "Give as a gift?" toggle and the totals. Read as `checkout-summary` on the https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 page.
-Read on 2026-11-17T04:40:02.452Z.
+The cart block: item thumbnail with quantity badge, Edit/Remove, the "Give as a gift?" toggle and the totals. Read as `checkout-summary` on the https://gumroad.com/checkout page.
+Read on 2026-11-17T07:19:09.049Z.
 
-**Values (default).** size 1312 x 1331.89; background transparent; text ABC Favorit 12/16 400, #ffffff `light.role.background`; icon 20 x 20, rgba(0, 0, 0, 0.5) `light.role.muted`; layers div.rounded-sm.border 832.0x257.0 rgb(255, 255, 255) T:1px solid / R:1px solid / B:1px solid / L:1px solid 4px; figure.tailwind-override.overflow-hidden 120.0x120.0 T:1px solid / R:1px solid / B:1px solid / L:1px solid 4px; div.absolute.top-0 24.0x24.0 rgb(0, 0, 0) T:1px solid / R:1px solid / B:1px solid / L:1px solid 3.35544e+07px; button.inline-flex.items-center 60.0x32.0 T:1px solid / R:1px sol.
+**Values (default).** size 832 x 567; background transparent; text ABC Favorit 12/16 400, #ffffff `light.role.background`; icon 20 x 20, rgba(0, 0, 0, 0.5) `light.role.muted`; layers div.rounded-sm.border 832.0x257.0 rgb(255, 255, 255) T:1px solid / R:1px solid / B:1px solid / L:1px solid 4px; figure.tailwind-override.overflow-hidden 120.0x120.0 T:1px solid / R:1px solid / B:1px solid / L:1px solid 4px; div.absolute.top-0 24.0x24.0 rgb(0, 0, 0) T:1px solid / R:1px solid / B:1px solid / L:1px solid 3.35544e+07px; button.inline-flex.items-center 60.0x32.0 T:1px solid / R:1px sol.
 
 Child layers that carry the look: div 832x257 background #ffffff `light.role.background` border 1px solid radius 4px; figure 120x120 border 1px solid radius 4px; div 24x24 background #000000 `light.role.border` border 1px solid radius 3.35544e+07px.
 
 ![Order summary card default](components/crops/checkout-summary-default.png)
 
 #### "Give as a gift?" switch
-The iOS-style switch — measured, never toggled. Read as `checkout-gift-toggle` on the https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 page.
-States read on 2026-11-17T04:40:03.324Z (default); 2026-11-17T04:40:05.164Z (hover).
+The iOS-style switch — measured, never toggled. Read as `checkout-gift-toggle` on the https://gumroad.com/checkout page.
+States read on 2026-11-17T07:19:11.285Z (default); 2026-11-17T07:19:13.162Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -584,8 +584,8 @@ States read on 2026-11-17T04:40:03.324Z (default); 2026-11-17T04:40:05.164Z (hov
 !["Give as a gift?" switch default](components/crops/checkout-gift-toggle-default.png) !["Give as a gift?" switch hover](components/crops/checkout-gift-toggle-hover.png)
 
 #### Email field
-The labelled Email address input — measured as found, never typed into. Read as `checkout-email` on the https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 page.
-States read on 2026-11-17T04:40:06.030Z (default); 2026-11-17T04:40:07.432Z (focused).
+The labelled Email address input — measured as found, never typed into. Read as `checkout-email` on the https://gumroad.com/checkout page.
+States read on 2026-11-17T07:19:14.472Z (default); 2026-11-17T07:19:18.784Z (focused).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -595,16 +595,16 @@ States read on 2026-11-17T04:40:06.030Z (default); 2026-11-17T04:40:07.432Z (foc
 ![Email field default](components/crops/checkout-email-default.png) ![Email field focused](components/crops/checkout-email-focused.png)
 
 #### Full name field
-The labelled Full name input. Read as `checkout-name` on the https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 page.
-Read on 2026-11-17T04:40:08.284Z.
+The labelled Full name input. Read as `checkout-name` on the https://gumroad.com/checkout page.
+Read on 2026-11-17T07:19:19.949Z.
 
 **Values (default).** size 374 x 48; padding 12px 16px; border 1px solid #000000 `light.role.border`; radius 4px; background #ffffff `light.role.background`; text ABC Favorit 16/22 400, #000000 `light.role.border`; placeholder #000000 `light.role.border`.
 
 ![Full name field default](components/crops/checkout-name-default.png)
 
 #### Country select
-The country picker, pre-detected to the visitor's region. Read as `checkout-country` on the https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 page.
-States read on 2026-11-17T04:40:09.509Z (default); 2026-11-17T04:40:11.487Z (hover); 2026-11-17T04:40:13.612Z (focus-visible).
+The country picker, pre-detected to the visitor's region. Read as `checkout-country` on the https://gumroad.com/checkout page.
+States read on 2026-11-17T07:19:24.228Z (default); 2026-11-17T07:19:29.449Z (hover); 2026-11-17T07:19:30.778Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -614,16 +614,16 @@ States read on 2026-11-17T04:40:09.509Z (default); 2026-11-17T04:40:11.487Z (hov
 ![Country select default](components/crops/checkout-country-default.png) ![Country select hover](components/crops/checkout-country-hover.png) ![Country select focus-visible](components/crops/checkout-country-focus-visible.png)
 
 #### Currency select
-The "SGD$ (Singapore Dollars) — detected" select in the totals column. Read as `checkout-currency` on the https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 page.
-Read on 2026-11-17T04:40:14.586Z.
+The "SGD$ (Singapore Dollars) — detected" select in the totals column. Read as `checkout-currency` on the https://gumroad.com/checkout page.
+Read on 2026-11-17T07:19:31.915Z.
 
 **Values (default).** size 374 x 48; padding 12px 44px 12px 16px; border 1px solid #000000 `light.role.border`; radius 4px; background #ffffff `light.role.background`; text ABC Favorit 16/22 400, #000000 `light.role.border`.
 
 ![Currency select default](components/crops/checkout-currency-default.png)
 
 #### Pay button
-The filled pay submit at the foot of the payment column — measured, never pressed. Read as `checkout-pay` on the https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 page.
-States read on 2026-11-17T04:40:15.645Z (default); 2026-11-17T04:40:17.605Z (hover).
+The filled pay submit at the foot of the payment column — measured, never pressed. Read as `checkout-pay` on the https://gumroad.com/checkout page.
+States read on 2026-11-17T07:19:33.726Z (default); 2026-11-17T07:19:36.811Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|

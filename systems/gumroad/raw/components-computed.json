@@ -8382,7 +8382,7 @@
    "selector": "article header",
    "page": "https://ichigo.gumroad.com/l/ichigo-reader",
    "url": "https://ichigo.gumroad.com/l/ichigo-reader",
-   "run": "2026-11-17T04:31:50.498Z",
+   "run": "2026-11-17T07:14:49.412Z",
    "states": {
     "default": {
      "tag": "header",
@@ -8493,7 +8493,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/product-header-default.png",
-     "run": "2026-11-17T04:31:51.866Z"
+     "run": "2026-11-17T07:15:03.764Z"
     }
    }
   },
@@ -8504,7 +8504,7 @@
    "selector": "[role=\"radio\"]",
    "page": "https://ichigo.gumroad.com/l/ichigo-reader",
    "url": "https://ichigo.gumroad.com/l/ichigo-reader",
-   "run": "2026-11-17T04:32:01.593Z",
+   "run": "2026-11-17T07:15:03.781Z",
    "states": {
     "default": {
      "tag": "button",
@@ -8616,8 +8616,8 @@
       "textTransform": "none"
      },
      "via": "resting state",
-     "crop": "components/crops/product-tier-default.png",
-     "run": "2026-11-17T04:32:03.450Z"
+     "run": "2026-11-17T07:15:26.844Z",
+     "crop": "components/crops/product-tier-default.png"
     },
     "hover": {
      "tag": "button",
@@ -8625,7 +8625,7 @@
      "text": "SGD 11.58 a month 🍓💖🍰",
      "rect": {
       "x": 929.7,
-      "y": 400.1,
+      "y": 396.1,
       "w": 331.34,
       "h": 100
      },
@@ -8746,7 +8746,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/product-tier-hover.png",
-     "run": "2026-11-17T04:32:05.787Z"
+     "run": "2026-11-17T07:15:50.164Z"
     }
    }
   },
@@ -8757,7 +8757,7 @@
    "selector": "select",
    "page": "https://ichigo.gumroad.com/l/ichigo-reader",
    "url": "https://ichigo.gumroad.com/l/ichigo-reader",
-   "run": "2026-11-17T04:32:06.455Z",
+   "run": "2026-11-17T07:15:50.195Z",
    "states": {
     "default": {
      "tag": "select",
@@ -8850,7 +8850,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/product-term-select-default.png",
-     "run": "2026-11-17T04:32:07.386Z"
+     "run": "2026-11-17T07:15:51.294Z"
     },
     "hover": {
      "tag": "select",
@@ -8943,7 +8943,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/product-term-select-hover.png",
-     "run": "2026-11-17T04:32:09.983Z"
+     "run": "2026-11-17T07:15:53.243Z"
     },
     "focus-visible": {
      "tag": "select",
@@ -9037,7 +9037,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/product-term-select-focus-visible.png",
-     "run": "2026-11-17T04:32:11.245Z"
+     "run": "2026-11-17T07:16:02.205Z"
     }
    }
   },
@@ -9048,7 +9048,7 @@
    "selector": "a (Subscribe|I want this)",
    "page": "https://ichigo.gumroad.com/l/ichigo-reader",
    "url": "https://ichigo.gumroad.com/l/ichigo-reader",
-   "run": "2026-11-17T04:32:11.262Z",
+   "run": "2026-11-17T07:16:05.372Z",
    "states": {
     "default": {
      "tag": "a",
@@ -9141,7 +9141,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/product-buy-default.png",
-     "run": "2026-11-17T04:32:12.292Z"
+     "run": "2026-11-17T07:16:08.204Z"
     },
     "hover": {
      "tag": "a",
@@ -9234,7 +9234,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/product-buy-hover.png",
-     "run": "2026-11-17T04:32:14.143Z"
+     "run": "2026-11-17T07:16:13.726Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -9328,7 +9328,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/product-buy-focus-visible.png",
-     "run": "2026-11-17T04:32:15.433Z"
+     "run": "2026-11-17T07:16:18.851Z"
     },
     "pressed": {
      "error": "cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location"
@@ -9342,7 +9342,7 @@
    "selector": "[role=\"combobox\"] (wishlist)",
    "page": "https://ichigo.gumroad.com/l/ichigo-reader",
    "url": "https://ichigo.gumroad.com/l/ichigo-reader",
-   "run": "2026-11-17T04:32:15.764Z",
+   "run": "2026-11-17T07:16:19.679Z",
    "states": {
     "default": {
      "tag": "div",
@@ -9454,7 +9454,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/product-wishlist-default.png",
-     "run": "2026-11-17T04:32:16.595Z"
+     "run": "2026-11-17T07:16:21.741Z"
     },
     "hover": {
      "tag": "div",
@@ -9566,7 +9566,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/product-wishlist-hover.png",
-     "run": "2026-11-17T04:32:19.006Z"
+     "run": "2026-11-17T07:16:25.608Z"
     }
    }
   },
@@ -9577,7 +9577,7 @@
    "selector": "button (Share)",
    "page": "https://ichigo.gumroad.com/l/ichigo-reader",
    "url": "https://ichigo.gumroad.com/l/ichigo-reader",
-   "run": "2026-11-17T04:32:20.478Z",
+   "run": "2026-11-17T07:16:26.225Z",
    "states": {
     "default": {
      "tag": "button",
@@ -9676,7 +9676,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/product-share-default.png",
-     "run": "2026-11-17T04:32:21.355Z"
+     "run": "2026-11-17T07:16:29.120Z"
     },
     "hover": {
      "tag": "button",
@@ -9792,7 +9792,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/product-share-hover.png",
-     "run": "2026-11-17T04:32:24.888Z"
+     "run": "2026-11-17T07:16:31.933Z"
     },
     "opened": {
      "tag": "button",
@@ -9874,6 +9874,22 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "::after": {
+      "content": "\"\"",
+      "width": "107px",
+      "height": "51px",
+      "position": "absolute",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 0)",
+      "borderRadius": "0px",
+      "inset": "0px -5px -5px 0px",
+      "opacity": "1",
+      "transition": "all"
+     },
      "paint": [
       {
        "node": "button.inline-flex.items-center",
@@ -9892,60 +9908,60 @@
      },
      "via": "the button's own press, opening the share popover",
      "crop": "components/crops/product-share-opened.png",
-     "run": "2026-11-17T04:32:27.652Z"
+     "run": "2026-11-17T07:16:37.894Z"
     }
    }
   },
   "product-ratings": {
    "group": "Product page",
-   "title": "Ratings summary",
-   "desc": "The \"Ratings / 4.1 / (235 ratings)\" block beside the buy panel.",
-   "selector": "header (Ratings)",
+   "title": "Ratings + reviews",
+   "desc": "The ratings column beside the buy panel — the 4.1 summary, the star histogram and the review feed under it.",
+   "selector": "article section (Ratings)",
    "page": "https://ichigo.gumroad.com/l/ichigo-reader",
    "url": "https://ichigo.gumroad.com/l/ichigo-reader",
-   "run": "2026-11-17T04:32:28.274Z",
+   "run": "2026-11-17T07:16:38.427Z",
    "states": {
     "default": {
      "tag": "section",
-     "classes": "border-b border-border",
-     "text": "Ichigo Translator Subscription Monthly Yearly SGD 11.58 a month 🍓💖🍰 We'll ema",
+     "classes": "grid gap-4 border-t p-6",
+     "text": "Ratings 4.1 (235 ratings) 5 stars 65% 4 stars 11% 3 stars 5% 2 stars 3% 1 star 1",
      "rect": {
-      "x": 0,
-      "y": -1043,
-      "w": 1440,
-      "h": 2987.42
+      "x": 909.7,
+      "y": -440.9,
+      "w": 379.34,
+      "h": 1783.3
      },
      "style": {
-      "display": "block",
+      "display": "grid",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "2987.42px",
+      "width": "379.344px",
+      "height": "1783.3px",
       "minWidth": "0px",
       "maxWidth": "100%",
       "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingTop": "24px",
+      "paddingRight": "24px",
+      "paddingBottom": "24px",
+      "paddingLeft": "24px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "16px",
+      "rowGap": "16px",
+      "columnGap": "16px",
       "flexDirection": "row",
       "alignItems": "normal",
       "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
+      "gridTemplateColumns": "331.344px",
+      "borderTopWidth": "1px",
       "borderTopStyle": "solid",
       "borderTopColor": "rgb(0, 0, 0)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
       "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "1px",
+      "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
       "borderBottomColor": "rgb(0, 0, 0)",
       "borderLeftWidth": "0px",
@@ -9987,109 +10003,91 @@
      },
      "paint": [
       {
-       "node": "section.border-b.border-border",
-       "size": "1440.0x2987.4",
-       "border": "B:1px solid"
+       "node": "section.grid.gap-4",
+       "size": "379.3x1783.3",
+       "border": "T:1px solid"
       },
       {
-       "node": "article.relative.grid",
-       "size": "1140.0x2858.4",
+       "node": "meter.h-[1lh].w-full",
+       "size": "223.3x22.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(255, 255, 255)",
        "radius": "4px"
       },
       {
-       "node": "figure.group.relative",
-       "size": "1138.0x641.1",
-       "border": "B:1px solid",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "4px 4px 0px 0px"
-      },
-      {
-       "node": "header.grid.gap-4",
-       "size": "758.7x96.0",
-       "border": "R:1px solid"
-      },
-      {
-       "node": "select.font-[inherit].py-3",
-       "size": "331.3x48.0",
+       "node": "meter.h-[1lh].w-full",
+       "size": "223.3x22.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(255, 255, 255)",
        "radius": "4px"
       },
       {
-       "node": "button.cursor-pointer.text-current",
-       "size": "331.3x100.0",
+       "node": "meter.h-[1lh].w-full",
+       "size": "223.3x22.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(54, 169, 174) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "4px"
       },
       {
-       "node": "div.inline-flex.align-middle",
-       "size": "160.0x40.0",
+       "node": "meter.h-[1lh].w-full",
+       "size": "223.3x22.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(255, 255, 255)",
+       "radius": "4px"
+      },
+      {
+       "node": "meter.h-[1lh].w-full",
+       "size": "223.3x22.0",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
+       "radius": "4px"
+      },
+      {
+       "node": "img.aspect-square.w-5",
+       "size": "20.0x20.0",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "radius": "3.35544e+07px"
       },
       {
-       "node": "a.inline-flex.items-center",
-       "size": "331.3x48.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(54, 169, 174)",
-       "radius": "4px"
-      },
-      {
-       "node": "div.flex.cursor-pointer",
-       "size": "219.3x48.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "4px"
-      },
-      {
-       "node": "datalist.absolute.top-full",
+       "node": "span.pointer-events-none.absolute",
        "size": "0.0x0.0",
-       "border": "R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(0, 0, 0) 4px 4px 0px 0px",
-       "radius": "0px 0px 4px 4px"
-      },
-      {
-       "node": "button.inline-flex.items-center",
-       "size": "104.0x48.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "4px"
-      },
-      {
-       "node": "div.z-30.w-max",
-       "size": "237.0x210.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(0, 0, 0) 4px 4px 0px 0px",
-       "radius": "4px"
-      },
-      {
-       "node": "a.inline-flex.items-center",
-       "size": "203.0x48.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "rgb(0, 0, 0)",
-       "radius": "4px"
+       "radius": "6px"
       },
       {
-       "node": "a.inline-flex.items-center",
-       "size": "203.0x48.0",
+       "node": "div.absolute.border-6",
+       "size": "0.0x0.0",
+       "border": "T:6px solid | R:6px solid | B:6px solid | L:6px solid"
+      },
+      {
+       "node": "hr",
+       "size": "331.3x1.0",
+       "border": "T:1px solid"
+      },
+      {
+       "node": "img.aspect-square.w-5",
+       "size": "20.0x20.0",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(66, 103, 178)",
-       "radius": "4px"
+       "radius": "3.35544e+07px"
+      },
+      {
+       "node": "span.pointer-events-none.absolute",
+       "size": "0.0x0.0",
+       "bg": "rgb(0, 0, 0)",
+       "radius": "6px"
+      },
+      {
+       "node": "div.absolute.border-6",
+       "size": "0.0x0.0",
+       "border": "T:6px solid | R:6px solid | B:6px solid | L:6px solid"
+      },
+      {
+       "node": "hr",
+       "size": "331.3x1.0",
+       "border": "T:1px solid"
       }
      ],
      "textStyle": {
-      "node": "h1.wrap-break-word",
-      "text": "Ichigo Translator Subscription",
+      "node": "h3",
+      "text": "Ratings",
       "fontFamily": "\"ABC Favorit\", \"ABC Favorit\", sans-serif",
-      "fontSize": "40px",
-      "lineHeight": "48px",
+      "fontSize": "18.4px",
+      "lineHeight": "25.3px",
       "fontWeight": "400",
       "letterSpacing": "normal",
       "color": "rgb(0, 0, 0)",
@@ -10099,12 +10097,13 @@
      "icon": {
       "w": 20,
       "h": 20,
-      "fill": "rgba(0, 0, 0, 0.5)",
+      "fill": "rgb(0, 0, 0)",
       "stroke": "none",
-      "color": "rgba(0, 0, 0, 0.5)"
+      "color": "rgb(0, 0, 0)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:32:47.348Z"
+     "crop": "components/crops/product-ratings-default.png",
+     "run": "2026-11-17T07:16:40.889Z"
     }
    }
   },
@@ -10115,7 +10114,7 @@
    "selector": "button (Load more)",
    "page": "https://ichigo.gumroad.com/l/ichigo-reader",
    "url": "https://ichigo.gumroad.com/l/ichigo-reader",
-   "run": "2026-11-17T04:32:48.187Z",
+   "run": "2026-11-17T07:16:40.942Z",
    "states": {
     "default": {
      "tag": "button",
@@ -10199,7 +10198,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/product-review-load-default.png",
-     "run": "2026-11-17T04:32:54.365Z"
+     "run": "2026-11-17T07:16:41.824Z"
     },
     "hover": {
      "tag": "button",
@@ -10283,7 +10282,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/product-review-load-hover.png",
-     "run": "2026-11-17T04:32:56.983Z"
+     "run": "2026-11-17T07:16:43.642Z"
     }
    }
   },
@@ -10294,7 +10293,7 @@
    "selector": "footer",
    "page": "https://ichigo.gumroad.com/l/ichigo-reader",
    "url": "https://ichigo.gumroad.com/l/ichigo-reader",
-   "run": "2026-11-17T04:32:56.995Z",
+   "run": "2026-11-17T07:16:43.648Z",
    "states": {
     "default": {
      "tag": "footer",
@@ -10411,7 +10410,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/product-footer-default.png",
-     "run": "2026-11-17T04:32:58.073Z"
+     "run": "2026-11-17T07:16:44.659Z"
     }
    }
   },
@@ -10419,27 +10418,27 @@
    "group": "Checkout",
    "title": "Order summary card",
    "desc": "The cart block: item thumbnail with quantity badge, Edit/Remove, the \"Give as a gift?\" toggle and the totals.",
-   "selector": "div#app div.grid.gap-8 > div",
-   "page": "https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1",
+   "selector": "div#app div.grid.gap-8 > div > div:first-child",
+   "page": "https://gumroad.com/checkout",
    "url": "https://gumroad.com/checkout",
-   "run": "2026-11-17T04:39:44.883Z",
+   "run": "2026-11-17T07:18:20.228Z",
    "states": {
     "default": {
      "tag": "div",
-     "classes": "grid grid-cols-1 items-start gap-x-16",
+     "classes": "grid gap-6",
      "text": "Qty: 1 1 Ichigo Translator Subscription Ichigo Reader Tier: 🍓💖🍰 Edit Remove S",
      "rect": {
       "x": 64,
-      "y": -215,
-      "w": 1312,
-      "h": 1331.89
+      "y": 104,
+      "w": 832,
+      "h": 567
      },
      "style": {
       "display": "grid",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1312px",
-      "height": "1331.89px",
+      "width": "832px",
+      "height": "567px",
       "minWidth": "0px",
       "maxWidth": "100%",
       "minHeight": "auto",
@@ -10451,13 +10450,13 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "32px 64px",
-      "rowGap": "32px",
-      "columnGap": "64px",
+      "gap": "24px",
+      "rowGap": "24px",
+      "columnGap": "24px",
       "flexDirection": "row",
-      "alignItems": "flex-start",
+      "alignItems": "normal",
       "justifyContent": "normal",
-      "gridTemplateColumns": "832px 416px",
+      "gridTemplateColumns": "832px",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
       "borderTopColor": "rgb(0, 0, 0)",
@@ -10578,20 +10577,6 @@
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
        "bg": "rgb(255, 255, 255)",
        "radius": "4px"
-      },
-      {
-       "node": "div.grid.divide-y",
-       "size": "416.0x1275.9",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "4px"
-      },
-      {
-       "node": "input.font-[inherit].py-3",
-       "size": "374.0x48.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "4px"
       }
      ],
      "textStyle": {
@@ -10615,7 +10600,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/checkout-summary-default.png",
-     "run": "2026-11-17T04:40:02.452Z"
+     "run": "2026-11-17T07:19:09.049Z"
     }
    }
   },
@@ -10624,9 +10609,9 @@
    "title": "\"Give as a gift?\" switch",
    "desc": "The iOS-style switch — measured, never toggled.",
    "selector": "[role=\"switch\"], [role=\"checkbox\"]",
-   "page": "https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1",
+   "page": "https://gumroad.com/checkout",
    "url": "https://gumroad.com/checkout",
-   "run": "2026-11-17T04:40:02.477Z",
+   "run": "2026-11-17T07:19:09.301Z",
    "states": {
     "default": {
      "tag": "input",
@@ -10746,7 +10731,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/checkout-gift-toggle-default.png",
-     "run": "2026-11-17T04:40:03.324Z"
+     "run": "2026-11-17T07:19:11.285Z"
     },
     "hover": {
      "tag": "input",
@@ -10866,7 +10851,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/checkout-gift-toggle-hover.png",
-     "run": "2026-11-17T04:40:05.164Z"
+     "run": "2026-11-17T07:19:13.162Z"
     }
    }
   },
@@ -10875,9 +10860,9 @@
    "title": "Email field",
    "desc": "The labelled Email address input — measured as found, never typed into.",
    "selector": "input[type=\"email\"]",
-   "page": "https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1",
+   "page": "https://gumroad.com/checkout",
    "url": "https://gumroad.com/checkout",
-   "run": "2026-11-17T04:40:05.168Z",
+   "run": "2026-11-17T07:19:13.169Z",
    "states": {
     "default": {
      "tag": "input",
@@ -10975,7 +10960,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/checkout-email-default.png",
-     "run": "2026-11-17T04:40:06.030Z"
+     "run": "2026-11-17T07:19:14.472Z"
     },
     "focused": {
      "tag": "input",
@@ -11074,7 +11059,7 @@
      },
      "via": "the field clicked into",
      "crop": "components/crops/checkout-email-focused.png",
-     "run": "2026-11-17T04:40:07.432Z"
+     "run": "2026-11-17T07:19:18.784Z"
     }
    }
   },
@@ -11083,9 +11068,9 @@
    "title": "Full name field",
    "desc": "The labelled Full name input.",
    "selector": "input[id*=\"fullName\" i]",
-   "page": "https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1",
+   "page": "https://gumroad.com/checkout",
    "url": "https://gumroad.com/checkout",
-   "run": "2026-11-17T04:40:07.441Z",
+   "run": "2026-11-17T07:19:18.924Z",
    "states": {
     "default": {
      "tag": "input",
@@ -11183,7 +11168,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/checkout-name-default.png",
-     "run": "2026-11-17T04:40:08.284Z"
+     "run": "2026-11-17T07:19:19.949Z"
     }
    }
   },
@@ -11192,9 +11177,9 @@
    "title": "Country select",
    "desc": "The country picker, pre-detected to the visitor's region.",
    "selector": "select",
-   "page": "https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1",
+   "page": "https://gumroad.com/checkout",
    "url": "https://gumroad.com/checkout",
-   "run": "2026-11-17T04:40:08.288Z",
+   "run": "2026-11-17T07:19:20.251Z",
    "states": {
     "default": {
      "tag": "select",
@@ -11287,7 +11272,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/checkout-country-default.png",
-     "run": "2026-11-17T04:40:09.509Z"
+     "run": "2026-11-17T07:19:24.228Z"
     },
     "hover": {
      "tag": "select",
@@ -11380,7 +11365,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/checkout-country-hover.png",
-     "run": "2026-11-17T04:40:11.487Z"
+     "run": "2026-11-17T07:19:29.449Z"
     },
     "focus-visible": {
      "tag": "select",
@@ -11474,7 +11459,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/checkout-country-focus-visible.png",
-     "run": "2026-11-17T04:40:13.612Z"
+     "run": "2026-11-17T07:19:30.778Z"
     }
    }
   },
@@ -11483,9 +11468,9 @@
    "title": "Currency select",
    "desc": "The \"SGD$ (Singapore Dollars) — detected\" select in the totals column.",
    "selector": "select (currency)",
-   "page": "https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1",
+   "page": "https://gumroad.com/checkout",
    "url": "https://gumroad.com/checkout",
-   "run": "2026-11-17T04:40:13.634Z",
+   "run": "2026-11-17T07:19:30.784Z",
    "states": {
     "default": {
      "tag": "select",
@@ -11578,7 +11563,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/checkout-currency-default.png",
-     "run": "2026-11-17T04:40:14.586Z"
+     "run": "2026-11-17T07:19:31.915Z"
     }
    }
   },
@@ -11587,9 +11572,9 @@
    "title": "Pay button",
    "desc": "The filled pay submit at the foot of the payment column — measured, never pressed.",
    "selector": "button[type=\"submit\"], button (Pay)",
-   "page": "https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1",
+   "page": "https://gumroad.com/checkout",
    "url": "https://gumroad.com/checkout",
-   "run": "2026-11-17T04:40:14.675Z",
+   "run": "2026-11-17T07:19:31.926Z",
    "states": {
     "default": {
      "tag": "button",
@@ -11700,7 +11685,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/checkout-pay-default.png",
-     "run": "2026-11-17T04:40:15.645Z"
+     "run": "2026-11-17T07:19:33.726Z"
     },
     "hover": {
      "tag": "button",
@@ -11811,7 +11796,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/checkout-pay-hover.png",
-     "run": "2026-11-17T04:40:17.605Z"
+     "run": "2026-11-17T07:19:36.811Z"
     }
    }
   },

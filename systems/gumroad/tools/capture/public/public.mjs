@@ -27,6 +27,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, setTheme, chromium, UA, UA_MOBILE, BASE, PRODUCT_URL, CREATOR_URL } from './lib.mjs';
+import { safeUrl } from '../safe-url.mjs';
 
 // Full-colour shots are working files, never committed: by default they go outside the repository,
 // to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
@@ -102,7 +103,7 @@ async function restoreShell(p) {
 
 class Shooter {
   constructor(p, prefix, vw, vh, dpr, sourceUrl) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: sourceUrl }; this.count = 0; }
-  async view(name) { await closePromo(this.p); await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
+  async view(name, sourceUrl) { await closePromo(this.p); const requested = sourceUrl ? { ...this.requested, sanitizedSourceUrl: sourceUrl } : this.requested; await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, requested); this.count++; log('  shot', name); }
   async full(name = 'full') {
     const p = this.p;
     await closePromo(p);
@@ -250,7 +251,10 @@ const desktop = {
       await clickEl(t);
       await p.waitForLoadState('domcontentloaded', { timeout: 30000 }).catch(() => {});
       await wait(p, 12000);
-      await S.view('checkout');
+      // The page navigated to gumroad.com/checkout — record that surface, not
+      // the product page the shooter was opened on. safeUrl drops the
+      // product/option query, so the sidecar names the public route only.
+      await S.view('checkout', safeUrl(p.url()));
     });
     ctx.extra += await darkPass(p, 'product', 1440, 900, 1, PRODUCT_URL, ['default']);
   } },

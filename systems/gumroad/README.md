@@ -87,7 +87,7 @@ Fonts: `core.font.family.product` is ABC Favorit, then 6 fallbacks. Scales, coun
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 107 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 108 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -119,9 +119,9 @@ PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/cap
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/layout.mjs        # raw/layout.json
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/motion-probe.mjs --urls https://gumroad.com/,https://gumroad.com/discover,https://gumroad.com/pricing,https://ichigo.gumroad.com/l/ichigo-reader  # raw/motion.json
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/icons.mjs         # icons/
-PYTHON=~/.design-systems/venv/bin/python3 python3 tools/capture/quantize.py ~/.design-systems/gumroad/raw-shots  # screenshots/
-python3 tools/capture/public/build-measurements.mjs                                                  # raw/measurements.md
-python3 tools/build_component_tokens.py && python3 tools/build_tokens.py                             # tokens.json
+~/.design-systems/venv/bin/python3 tools/capture/quantize.py ~/.design-systems/gumroad/raw-shots      # screenshots/ (Pillow lives in the capture venv)
+node tools/capture/public/build-measurements.mjs                                                    # raw/measurements.md
+~/.design-systems/venv/bin/python3 tools/build_component_tokens.py && ~/.design-systems/venv/bin/python3 tools/build_tokens.py  # tokens.json
 python3 tools/build_components_md.py                                                                 # components.md
 python3 tools/build_style_guide.py                                                                   # style-guide.html
 python3 -m unittest discover -s tools                                                                # the token tests

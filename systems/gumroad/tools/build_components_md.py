@@ -166,6 +166,11 @@ def props(v):
         if v.get(pe):
             p = v[pe]
             bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
+    # Wrapper paint drawn around the element carries state too — nav-search's
+    # focused ring is a 2px pink outline on the field's parent, invisible in
+    # the element's own style. Report it so the diff catches the state change.
+    for p in v.get("ancestors", [])[:4]:
+        bits.append(" ".join(x for x in (f"up{p['up']} {p['node']}", p.get("bg"), p.get("outline"), p.get("shadow")) if x))
     # A root box-shadow (e.g. the 1px focus ring gained on focus-visible) does
     # not remove the painted children: keep reporting their layers, which is
     # where a state-carrying child outline (the 3px cyan CTA ring) shows up.

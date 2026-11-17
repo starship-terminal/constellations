@@ -61,7 +61,7 @@ colors:
   neutral-neutralFilled: "#ffffff"
   ground-bodyBg: "#f4f4f0"
   component-cta-bg: "#000000"
-  component-tabActive-bg: "#000000"
+  component-tabActive-bg: "#ffffff"
   component-priceFlag-bg: "#ff90e8"
   component-header-bg: "#f4f4f0"
   component-card-bg: "#ffffff"
@@ -79,9 +79,9 @@ typography:
     lineHeight: "22px"
   h1:
     fontFamily: "ABC Favorit"
-    fontSize: "16px"
+    fontSize: "40px"
     fontWeight: 400
-    lineHeight: "22px"
+    lineHeight: "48px"
   navLink:
     fontFamily: "ABC Favorit"
     fontSize: "16px"

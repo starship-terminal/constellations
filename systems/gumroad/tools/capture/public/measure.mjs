@@ -67,6 +67,12 @@ async function kbFocus(loc) {
   await page.keyboard.press('Shift+Tab');
   await page.keyboard.press('Tab');
   await page.waitForTimeout(400);
+  // The driver is only honest when keyboard focus actually reached the target
+  // (or a child of it — wrapper targets like the discover card's article can
+  // take no focus of their own, and Tab may land elsewhere). A miss is a
+  // failed state, not a reading that falsely shows no visible change.
+  const focused = await loc.evaluate((el) => el === document.activeElement || el.contains(document.activeElement)).catch(() => false);
+  if (!focused) throw new Error('keyboard focus never reached the target — focus-visible state not measurable');
 }
 
 // CSS.forcePseudoState through CDP: the press never happens, so no link can
@@ -217,9 +223,9 @@ const PRODUCT = [
     desc: 'The Share button; "opened" is its own popover state.',
     sel: 'button (Share)', find: async (p) => await domFind(p, /^\s*share\s*$/i, { sel: 'button', tag: 'sh', minW: 60, minH: 30 }), states: ['default', 'hover',
       { name: 'opened', via: 'the button\'s own press, opening the share popover', fn: async (loc) => { await loc.click({ timeout: 5000 }).catch(() => {}); await page.waitForTimeout(1200); } }] },
-  { key: 'product-ratings', group: 'Product page', title: 'Ratings summary',
-    desc: 'The "Ratings / 4.1 / (235 ratings)" block beside the buy panel.',
-    sel: 'header (Ratings)', find: async (p) => await domFind(p, /ratings/i, { sel: 'header, section', tag: 'rg', minW: 100, minH: 16, leaf: false }), states: ['default'] },
+  { key: 'product-ratings', group: 'Product page', title: 'Ratings + reviews',
+    desc: 'The ratings column beside the buy panel — the 4.1 summary, the star histogram and the review feed under it.',
+    sel: 'article section (Ratings)', find: (p) => p.locator('article section').filter({ has: p.locator('header').filter({ hasText: /ratings/i }) }).filter({ visible: true }).last(), states: ['default'] },
   { key: 'product-review-load', group: 'Product page', title: '"Load more" reviews',
     desc: 'The underlined reviews pagination button.',
     sel: 'button (Load more)', find: async (p) => await domFind(p, /load more/i, { sel: 'button', tag: 'rl', minW: 50, minH: 14 }), states: ['default', 'hover'] },
@@ -231,7 +237,7 @@ const PRODUCT = [
 const CHECKOUT = [
   { key: 'checkout-summary', group: 'Checkout', title: 'Order summary card',
     desc: 'The cart block: item thumbnail with quantity badge, Edit/Remove, the "Give as a gift?" toggle and the totals.',
-    sel: 'div#app div.grid.gap-8 > div', find: (p) => p.locator('div#app div.grid.gap-8 > div').filter({ visible: true }).first(), states: ['default'] },
+    sel: 'div#app div.grid.gap-8 > div > div:first-child', find: (p) => p.locator('div#app div.grid.gap-8 > div > div:first-child').filter({ visible: true }).first(), states: ['default'] },
   { key: 'checkout-gift-toggle', group: 'Checkout', title: '"Give as a gift?" switch',
     desc: 'The iOS-style switch — measured, never toggled.',
     sel: '[role="switch"], [role="checkbox"]', find: (p) => p.locator('[role="switch"], [role="checkbox"]').filter({ visible: true }).first(), states: ['default', 'hover'] },
@@ -299,7 +305,9 @@ for (const [key, g] of Object.entries(GROUPS)) {
   const url = URLS[g.page].startsWith('http') ? URLS[g.page] : BASE + URLS[g.page];
   log('open', key, g.mobile ? '(mobile)' : '', url);
   await open(page, url, { wait: 7000 });
-  await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
+  // Cosmetic only (no blinking caret in crops) — the checkout page's CSP
+  // refuses injected styles, so a refusal must not kill the run.
+  await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   if (g.setup) await g.setup(page).catch((e) => log('  setup failed:', e.message));
   // the readable sheets' transition declarations, for measurements.md
   out._meta.sheets[URLS[g.page]] = await page.evaluate(() => {
@@ -320,7 +328,9 @@ for (const [key, g] of Object.entries(GROUPS)) {
     comp.title = spec.title;
     comp.desc = spec.desc;
     comp.selector = spec.sel;
-    comp.page = URLS[g.page];
+    // Route paths stay paths; absolute URLs go through safeUrl so the checkout
+    // page never keeps its product/option query in the record.
+    comp.page = URLS[g.page].startsWith('http') ? safeUrl(url) : URLS[g.page];
     comp.url = safeUrl(url);
     comp.run = new Date().toISOString();
     comp.states ??= {};

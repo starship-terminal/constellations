@@ -675,9 +675,9 @@
    "h1": {
     "$value": {
      "fontFamily": "\"ABC Favorit\", \"ABC Favorit\", sans-serif",
-     "fontSize": "16px",
+     "fontSize": "40px",
      "fontWeight": 400,
-     "lineHeight": "22px"
+     "lineHeight": "48px"
     },
     "$type": "typography",
     "$description": "a product page title block",
@@ -1008,8 +1008,8 @@
    "tabActive": {
     "bg": {
      "type": "color",
-     "value": "{role.primary}",
-     "source": "measured discover-tab-active default on /discover (the selected market tab fill) — the element's class paints the role.primary role, so each theme resolves its own",
+     "value": "{role.background}",
+     "source": "measured discover-tab-active default on /discover (the selected market tab fill) — the element's class paints the role.background role, so each theme resolves its own",
      "description": "the selected market tab fill"
     }
    },
@@ -1282,8 +1282,8 @@
    "tabActive": {
     "bg": {
      "type": "color",
-     "value": "{role.primary}",
-     "source": "measured discover-tab-active default on /discover (the selected market tab fill) — the element's class paints the role.primary role, so each theme resolves its own",
+     "value": "{role.background}",
+     "source": "measured discover-tab-active default on /discover (the selected market tab fill) — the element's class paints the role.background role, so each theme resolves its own",
      "description": "the selected market tab fill"
     }
    },
@@ -1507,26 +1507,26 @@
    "height": {
     "type": "dimension",
     "value": "48px",
-    "source": "measured checkout-email default on https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 (a checkout field)"
+    "source": "measured checkout-email default on https://gumroad.com/checkout (a checkout field)"
    },
    "radius": {
     "type": "dimension",
     "value": "4px",
-    "source": "measured checkout-email default on https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 (a checkout field)"
+    "source": "measured checkout-email default on https://gumroad.com/checkout (a checkout field)"
    }
   },
   "checkoutSelect": {
    "height": {
     "type": "dimension",
     "value": "48px",
-    "source": "measured checkout-country default on https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 (a checkout select)"
+    "source": "measured checkout-country default on https://gumroad.com/checkout (a checkout select)"
    }
   },
   "checkoutSummary": {
    "width": {
     "type": "dimension",
-    "value": "1312px",
-    "source": "measured checkout-summary default on https://gumroad.com/checkout?product=rsMja&option=6Fm6gGP9cDXYcJRRo8U3pA%3D%3D&recurrence=monthly&quantity=1 (the order summary card)"
+    "value": "832px",
+    "source": "measured checkout-summary default on https://gumroad.com/checkout (the order summary card)"
    }
   },
   "heroSearch": {

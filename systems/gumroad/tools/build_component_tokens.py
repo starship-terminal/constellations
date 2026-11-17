@@ -388,7 +388,7 @@ if C_PATH.exists():
     # Measured fills that land on declared roles alias the role token, so each
     # theme resolves its own value.
     theme_alias("nav-start-selling", "default", "backgroundColor", "component.cta.bg", "role.primary", "the primary CTA fill")
-    theme_alias("discover-tab-active", "default", "backgroundColor", "component.tabActive.bg", "role.primary", "the selected market tab fill")
+    theme_alias("discover-tab-active", "default", "backgroundColor", "component.tabActive.bg", "role.background", "the selected market tab fill")
     theme_alias("discover-card-price", "default", "backgroundColor", "component.priceFlag.bg", "role.accent", "the price flag fill")
     theme_alias("nav-bar", "default", "backgroundColor", "component.header.bg", "ground.bodyBg", "the header bar ground")
     theme_alias("discover-card", "default", "backgroundColor", "component.card.bg", "role.background", "the product card surface")
@@ -397,7 +397,11 @@ if C_PATH.exists():
     # tokens under core.typography. letterSpacing stays in px as measured.
     def typ(comp, path, name, state="default"):
         st = C.get(comp, {}).get("states", {}).get(state, {})
-        s = st.get("style") or {}
+        # A wrapper whose own font is inherited body type records its prominent
+        # child text under textStyle (product-header's h1 is 40/48 while the
+        # header block sits at 16/22) — prefer it so the token carries the
+        # heading geometry a reader means.
+        s = st.get("textStyle") or st.get("style") or {}
         if not s.get("fontSize"):
             return
         style = {
