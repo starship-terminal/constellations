@@ -1,0 +1,86 @@
+{
+ "F1": {
+  "grade": "meets",
+  "evidence": "The full declared CDS palette is tokenised: eleven primitive ramps read off div.coinbase.light's inline style — blue (13 steps, blue60 #0052ff), gray (13), green, orange, red, indigo, pink, purple, teal, yellow, chartreuse — 145 colours under core.color.<family>.<step>, each citing its --light-<family><step> declaration."
+ },
+ "F2": {
+  "grade": "meets",
+  "evidence": "light.surface.page #fff (the .coinbase.light wrapper's fill), raised #eef0f3 (the footer band and promo row, bgAlternate), dark #0a0b0d (the .coinbase.dark asset band, bgInverse) and overlay.scrim rgba(50,53,61,.33) (declared --color-bgOverlay, never opened signed out). The dark surface is a theme island inside the single light scheme."
+ },
+ "F3": {
+  "grade": "meets",
+  "evidence": "light.text.primary #0a0b0d (fg), muted #5b616e (fgMuted footer links), nav #0a0b0d, onDark #fff (dark-band chip labels), onAccent #fff (on the blue pill) and banner #11206b (the promo row's navy link) — all measured and aliased to the declared ramp/role tokens."
+ },
+ "F4": {
+  "grade": "meets",
+  "evidence": "border.subtle (bgLine rgba(91,97,110,.2), declared and painted by the nav hairline, footer rules and sign-in OR divider), border.input (bgLineHeavy rgba(91,97,110,.66), measured on the sign-in field's container), the OAuth rows' bgLine borders and the focus outlines (1px auto #101010 on links; 2px solid #0052ff on buttons)."
+ },
+ "F5": {
+  "grade": "meets",
+  "evidence": "Pill fills measured through default/hover/focus-visible/pressed: blue (bgPrimary #0052ff → bgBrandHovered rgba(0,72,224,.88)), dark (#0a0b0d → rgba(17,18,20,.88)), ghost (bgSecondary) and the sign-in Continue (#1460ff); the dark band's chips (#282b31) measured with a pressed state."
+ },
+ "F6": {
+  "grade": "partly",
+  "evidence": "The status roles are declared and tokenised (fgPositive #098551, fgNegative #cf202f, fgWarning #cf470e, the bg*Wash pairs) and they visibly paint the price table's change figures and 'Top movers' rail — but no status-bearing element was individually measured, and no validation state exists to capture signed out."
+ },
+ "F7": {
+  "grade": "meets",
+  "evidence": "One light scheme paints every marketing route; the .coinbase.dark band is a theme island whose remapped --color-* layer is emitted as the 52-token dark set — the declared dark roles are captured even though no full dark page is served."
+ },
+ "F8": {
+  "grade": "meets",
+  "evidence": "Five declared families with full fallback stacks (CoinbaseDisplay/Sans/Text/Mono/Condensed via --cds-font-*), the per-variant fontSize/fontWeight/lineHeight scales (display1 4rem … legal 0.8125rem), and measured sizes: 80px hero CoinbaseDisplay, 44px section titles, 28px explore title, 52px mobile hero, 16-24px controls/body."
+ },
+ "F9": {
+  "grade": "meets",
+  "evidence": "The complete declared spacing ladder is tokenised: --space-0..10 plus the 0.25/0.5/0.75/1.5 fraction steps (16 steps under core.spacing)."
+ },
+ "F10": {
+  "grade": "meets",
+  "evidence": "The declared --borderRadius-0..1000 scale (0/4/8/12/16/24/32/40/48/56px + the 100000px pill step) is tokenised, plus measured radii: the pill controls at 56px/effective-round and the border widths (bgLine hairlines, the field's 1px border)."
+ },
+ "F11": {
+  "grade": "meets",
+  "evidence": "Control heights measured per component: nav controls 44px, hero/dark CTAs 56px, chips 44px, OAuth rows 58px, the sign-in field 56px, the menu button 47px; band heights (promo 40px, nav 117px sticky, footer 1230px, mobile bar 129px); table rows 76px; the declared iconSize/avatarSize/controlSize scales alongside."
+ },
+ "F12": {
+  "grade": "partly",
+  "evidence": "The --shadow-elevation1 (0 8px 12px fgMuted@12%) and elevation2 (0 8px 24px black@12%) ladder is declared on the theme element and tokenised, but nothing on the measured marketing chrome casts a shadow — the surface is flat. Declared-only, labelled as such."
+ },
+ "F13": {
+  "grade": "partly",
+  "evidence": "Two measured durations (200ms on the promo banner and explore search) and the ease-in-out curve — the real animated chrome is thin; every CTA/nav/chip control measured a 0s transition. No motion scale is declared on the theme element and the harvested sheets carry no prefers-reduced-motion gating."
+ },
+ "F14": {
+  "grade": "meets",
+  "evidence": "The nav's z-index (5) measured, the hero column's 656px content measure, per-component widths at both breakpoints (1440/390) and the mobile menu overlay geometry (390 x 715)."
+ },
+ "C1": {
+  "grade": "partly",
+  "evidence": "~10 of the 19 checklist components on the public surface: button (blue/dark/ghost pills, Buy pills), icon button (hamburger, social icons, search, sort), link (nav/footer/menu), menu (mobile overlay), chip/toggle (dark band filters, explore sort chips), card (promo carousel), table (prices), text field (email + explore search), submit button (Continue), OAuth rows (passkey/Google/Apple). No select/checkbox/radio/switch/dialog/toast/accordion mounts signed out."
+ },
+ "C2": {
+  "grade": "meets",
+  "evidence": "85 states across 38 components: default/hover/focus-visible/pressed on every interactive control, 'opened' on the mobile menu and 'focused' on the sign-in field and explore search."
+ },
+ "C3": {
+  "grade": "meets",
+  "evidence": "14 components captured a visible keyboard focus: 1px auto #101010 outlines on nav links/price rows/footer links, 2px solid #0052ff on every pill/button (nav, hero, dark, One/Prime CTAs, sign-in OAuth/passkey), the chip's #578bfa ring and the mobile menu link's #e59700 ring."
+ },
+ "C4": {
+  "grade": "meets",
+  "evidence": "components.md writes every state in token terms — values followed by the matching core.color.* name — with the shared-values tables (focus, motion, card shapes, text) built from the same token map."
+ },
+ "P1": {
+  "grade": "meets",
+  "evidence": "patterns.md covers every captured surface: promo row + sticky nav chrome, the pill language, hero + dark asset band, the explore price table, One/Prime heroes, the grey footer band, the sign-in card and the mobile pass."
+ },
+ "A1": {
+  "grade": "partly",
+  "evidence": "icon.png fetched from the declared apple-touch-icon (128px); 11 @font-face records harvested with their file URLs. No standalone SVG icon set was lifted — the glyphs in crops are Coinbase's artwork."
+ },
+ "K1": {
+  "grade": "meets",
+  "evidence": "README states the routes, widths, tooling (headed Chromium under Xvfb, the Cloudflare gate) and boundary, plus an explicit Known gaps section (the thin motion scale, the unpainted shadow ladder, the unmeasured focus ring, the narrow sign-in card, the screenshot-only routes and the geolocated Singapore locale)."
+ }
+}

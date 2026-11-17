@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_123 of 181 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_124 of 182 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -197,6 +197,11 @@ Access: signed out (the marketing routes are fully public; the Cofounder OS sits
 ## [Cohere](../systems/cohere) — `cohere`
 Access: signed out (the marketing routes are fully public; the Cohere product sits behind dashboard.cohere.com sign-in - the welcome/login card was measured at rest only with no credentials typed and nothing submitted; nav/hero CTAs to sign-up and sales forms were never followed; no OAuth flow was started)
 - the Cohere product - North, Command, the dashboard - sits behind dashboard.cohere.com sign-in and was never crossed; the login card was measured at rest but never submitted
+
+## [Coinbase](../systems/coinbase) — `coinbase`
+Access: signed out (the marketing routes are fully public; the Coinbase product sits behind login.coinbase.com - the /signin redirect's card was measured at rest only: the email field was focused once for its computed style, no text was typed, nothing submitted, and no OAuth/passkey flow was started; the OneTrust consent layer was hidden, never answered)
+- the Coinbase product - portfolio, trading, wallets - sits behind login.coinbase.com sign-in and was never crossed; the sign-in card was measured at rest but never submitted
+- the email field's focused border change lives on its container wrapper, not the input - the focused state records no outline change on the field itself
 
 ## [Discord](../systems/discord) — `discord`
 Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)
