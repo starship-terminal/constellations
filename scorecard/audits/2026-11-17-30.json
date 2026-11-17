@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Reviewed the captured evidence directly: tokens.json values against raw/css-vars.json utility declarations and raw/components-computed.json measurements, the components.md state tables, 94 crops and 28 screenshots, the sign-in boundary capture, and the known gaps.",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Live DOM measurements from the capture pass (components-computed.json), declared CSS vars from raw/css-vars.json, screenshots and crop review",
  "systems": [
   {
    "slug": "1password",
@@ -22020,134 +22020,135 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "cohere",
+   "slug": "joinhandshake",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "Real declared ramps tokenised from the utility layer: neutral 9 steps, quartz 9, blue 11, green 9, coral 8, plus volcanic 5, mushroom 5, marble 4, danger 5 and success 2 — 70 colours across the named Tailwind palette families (core.color.*), each citing its .bg-* rule."
+     "grade": "partly",
+     "evidence": "The marketing palette arrives as utility declarations (--cta ramp, --bg/--text ink) and Framer --token-* colours rather than a declared ramp; the app's rosettaAvatar.* carries six per-hue families (blue/cyan/gray/green/orange/purple) but no ~10-step ramp from lightest to darkest exists in either set."
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "light.surface.page #fff (body), raised #f0eee9 (callout-card fill), dark #17171c (footer band), band #355146 (the green CTA band), banner #000 (promo strip) and overlay.scrim rgba(33,33,33,.2) (the declared .bg-black/20 mobile scrim). The dark surfaces are measured as islands inside the single light theme."
+     "grade": "partly",
+     "evidence": "light.bg.page/muted/nav/footer plus access.rosettaBg.primary/secondary/surface/inverted(-disabled)/selected/featureCallout cover page, surface, raised and inverted roles; no overlay or scrim role exists on the signed-out surface."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "light.text.primary #212121, nav #000, onDark #fafafa, onAccent/banner #fff, visited {coral.700} and muted {volcanic.700} are tokenised — the last from the declared disabled:text-volcanic-700 on the sign-in field, measured as the OAuth focus outline; it never paints as body text signed out. No live disabled or placeholder text role exists to capture."
+     "grade": "meets",
+     "evidence": "access.rosettaFg.primary/secondary/disabled/inverted(-border,-disabled)/border plus light link.accent/-footer/-nav roles and fg.body/headline/navLink - primary, secondary, disabled, on-accent (inverted) and link roles are all present across the two sets."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "A real border ladder: border.subtle #dadce0 (OAuth rows), border.input #bdbdbd (the sign-in field), border.onDark #525260 (the footer's painted row separators) and the focus outlines (1px auto #101010; OAuth row 1px #616161 offset 4; CTA pill border-swap to neutral-95)."
+     "grade": "partly",
+     "evidence": "access.rosettaFg.border and rosettaSize.borderRegular/borderActive give a border role and widths, access.rosettaInteractive.focusOutline is the focus ring role, and light.input.search.border is measured; no separate default-vs-strong border scale exists."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Both pill fills measured through default/hover/focus-visible/pressed: dark (#17171c -> #000 on nav-cta) and light (white). cta-dark's own hover is recorded as an error state — the ease-button-gradient hover animation re-renders the node — and the identical swap is captured on nav-cta."
+     "evidence": "access.rosettaInteractive.primary/hovered/pressed (+inverted variants) is a full default/hover/pressed accent ladder, and light.button.primary.bg #d3fb52 carries a measured hover #a1dd3b."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "danger (5 steps) and success (2 steps) are declared in the palette and tokenised, but they never paint in a validation/status role on the public surface; no warning or info family exists and nothing was submitted so no validation state was seen."
+     "evidence": "access.rosettaBg.statusInfo/Neutral/Positive/Warning/Negative fills plus access.rosettaFg.statusInfo/Positive/Warning/Negative text roles cover four statuses in fill and text; dedicated status border roles are not declared."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "One theme ships: every route paints the same light surface. The promo banner, footer band, green CTA band and product-hero dark islands are surfaces inside it, captured as light.* roles rather than a dark theme."
+     "evidence": "Both surfaces are light-only by construction - no theme class, control or media query exists - so the single light set per surface is the whole parity contract; no role was invented for a theme that does not exist."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Five families tokenised with full fallback stacks (font.family.ui Unica77 Cohere Web, display CohereVariable, displayMeasured CohereText — the face the hero actually paints, mono/eyebrow CohereMono), the declared web3-* type scale, and 10 measured sizes (96px hero, 72px product h1s, 60px section/mobile, 18/16/14px body scale)."
+     "evidence": "core.font.family.noiGrotesk/sansPlomb(+swap) with fallbacks and font.weight light-bold, a --leading-*/--tracking-*/type scale, 13 measured typography.* component styles plus the app's complete rosettaType.* roles (body/brand/heading/mono x size x weight x line-height) and rosettaSize.fontFs1-9."
     },
     "F9": {
-     "grade": "partly",
-     "evidence": "One declared primitive: core.spacing.unit .25rem/4px (.gap-1) — the gap ladder exists in the sheet (gap-0.5..36) but multiples are unnamed. Measured paddings live in component dimensions; no named spacing ladder is declared."
+     "grade": "meets",
+     "evidence": "core.space.unit is the declared 0.25rem (--spacing) base; the app adds rosettaSize.space2-64 and spacingHalf-One-Two-...-Sixteen ladders on the same 4px base."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "The custom declared radius scale is tokenised (rounded-sm 4px, md 6.8px, lg 12px, xl 22px, 2xl 30px, 3xl 1.5rem, full 9999px — not the Tailwind defaults) plus measured control 9999px and card 22px; 1px/2px border widths measured on the sign-in card and CTA pills."
+     "evidence": "Measured pill radii (nav, sign-up button, job-type pill, CTA) plus access.rosettaSize.radiusZero/radiusOne-*/radiusMax/radiusContainer/radiusInput* and rosettaSize.borderRegular/borderActive widths."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Control heights measured per component: nav-cta 36px, OAuth rows 40px, menu rows 44px, pill CTAs 53.2px, sign-in field 60px, banner 48px, header 60px, mobile bar 60px; social icons 24px, menu button 32px; focus ring 1px offset 0-4px."
+     "grade": "partly",
+     "evidence": "access.rosettaSize.controlHeightXs/Sm/Md/Lg and contained*/standalone* size ladders plus measured marketing geometry (nav.height 3.5rem, sign-up 40px, drawer 390px, search button 56px); icon sizes and a focus-ring width exist only as declarations (rosettaSize.borderActive) not a named icon scale."
     },
     "F12": {
-     "grade": "missing",
-     "evidence": "Nothing on the public surface paints a real drop shadow: the pill CTAs use 2px transparent borders and 1px rings, and the focus-visible shadow stacks read rgba(0,0,0,0). No elevation ladder exists to tokenise — recorded, not invented."
+     "grade": "meets",
+     "evidence": "access.rosettaShadow.elevationZero through elevationFive plus one/two/three is a real numbered elevation scale; the marketing surface uses borders and drop-shadow utilities instead, which is its honest design."
     },
     "F13": {
      "grade": "meets",
-     "evidence": "Declared durations .duration-0..1000 (150/200/300/500ms tokenised) plus measured nav-cta 0.3s and nav-item 0.2s; four curves tokenised (ease-in/out/in-out declared + the measured `ease` on the pills); the menu's 0.5s clip-path transition is measured, and the sheets declare motion-safe:/motion-reduce: variants gating the transform and glow effects on prefers-reduced-motion."
+     "evidence": "core.duration.default 150ms (--default-transition-duration), the --ease-* curves and --animate-pulse/-spin keyframes are declared; the probe records that prefers-reduced-motion is ignored on all seven probed routes (raw/motion.json) - the reduced-motion behaviour is documented as absent, not assumed."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Three declared content wrappers (max-w-web3-full-screen 2280px, internal 1920px, blog 1390px), the declared z layer names (background 0, content 20, nav 100) and per-component measured widths at two breakpoints (1440/390). Breakpoints are observed (lg:flex blocks, the 390 pass) but not named."
+     "evidence": "breakpoint.lg, container.3xs-7xl, layout desktop/mobile nav heights, --content-max-width and the 12x116px grid plus fixed/sticky furniture are in raw/layout.json at four widths; grid columns are measured but not tokenised and there is no z-index scale token."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~10 of the 19 checklist components on the public surface: button (dark/light pills), icon button (banner close, hamburger, social), link (nav/footer/menu), menu (mobile overlay + scrim), tabs (pricing on/off), accordion (FAQ), card (callout), text field (sign-in email), submit button (green Log-in), badge (certification anchors). No select/checkbox/radio/switch/dialog/toast/table mounts signed out."
+     "evidence": "The signed-out checklist coverage is real but partial: button (sign-up, CTA, continue, search), icon button (hamburger, banner dismiss, carousel arrow, search submit), link (nav/footer/legal/blog/employer/tos), text field (hero/blog/careers/students/marketo inputs, app email field), select (app locale rosetta-select), tabs (segment switcher, pricing feature tabs, benefits tabs), menu (nav mega menu), card (blog card, plan card), table (pricing comparison) - about 10 of 19; text area, checkbox, radio, switch, tooltip, dialog, toast, avatar and badge do not appear on the signed-out surface - honest absence."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "97 states across 39 components: default/hover/focus-visible/pressed on every interactive control, 'opened' on the FAQ accordion and mobile menu, 'focused' on the sign-in field, on/off on the pricing tabs. The single honest gap (cta-dark hover, node re-renders) is recorded as an error state."
+     "evidence": "118 states across 54 components: real hover and keyboard focus-visible, CDP-forced pressed (never a real press, so nothing can fire), opened/selected via each control's own toggle (accordion, segment tab, nav sheet, benefits tab) and focused on the measured inputs."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "18 components captured a visible keyboard focus: the 1px #101010 auto outline on nav/banner/card/tab/FAQ/footer controls, the CTA's neutral-95 border swap, the OAuth row's 1px #616161 offset-4 outline and the mobile menu's #e59700 amber ring."
+     "evidence": "focus-visible states measured on the nav link, footer link, sign-up and CTA buttons, banner dismiss, FAQ row, marketo submit, blog search button, category link, legal rail links, app continue button and the mobile hamburger."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "components.md writes every state in token terms — values followed by the matching core.color.* name — with the shared-values tables (focus, motion, card shapes, text) built from the same token map."
+     "evidence": "components.md labels every measured colour and geometry by its tokens.json path (light.bg.*, core.color.site.*, access.rosetta*) wherever a token exists, and says so where a value is measured but untokenised."
     },
     "P1": {
-     "grade": "meets",
-     "evidence": "patterns.md covers every captured surface: banner+header chrome, the gradient pill language, the hero and callout sections, the pricing table/FAQ, the dark product heroes, the two footer bands, the sign-in card and the mobile pass."
+     "grade": "partly",
+     "evidence": "patterns.md covers the marketing shell and floating pill nav, the hero search form, section bands and the 12-col grid, segment switchers and accordions, pricing tables and Marketo forms, the app access card, mobile, motion and focus and the blocked app boundary; forms are measured at rest by rule, and empty/loading/error, destructive confirmation and onboarding do not exist on the signed-out surface."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "icon.png fetched from the declared apple-touch-icon (128px); 49 @font-face records harvested with their file URLs. No standalone SVG icon set was lifted — the glyphs in crops are the site's artwork."
+     "evidence": "8 inline SVGs collected from the nav mega menu with icons/INDEX.tsv naming each by role and seen location - a partial harvest, not the product's full icon set; NoiGrotesk, SansPlomb, Chicago FLF/Geneva and the Rosetta stack are named as proprietary self-hosted faces with system fallbacks."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states the routes, widths, tooling and boundary, plus an explicit Known gaps section (the uncapturable cta-dark hover, unswitched pricing tabs, declared-only visited colour, the no-shadow finding and the screenshot-only routes)."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.34:1 light muted (light.text.muted) on surface (light.surface.raised)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 160 of 160 tokens name their source"
-    },
-    "K2": {
-     "grade": "meets",
-     "evidence": "Script: 6 rules, each linking a screenshot or crop"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
+     "evidence": "The README states the signed-out scope, the two surfaces, the capture method and viewports, the Cloudflare boundaries (/explore, /signup, registration, support), the consent-banner treatment, the light-only status and what to distrust."
     },
     "V1": {
+     "grade": "meets",
+     "evidence": "Nine do/don't principles in the README each link a screenshot or crop as evidence - floating nav, lime spent on one action, two type voices, fill-banded pages, opacity as selection, the signed-in boundary, consent, no dark theme, brand ownership."
+    },
+    "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 2.11:1 light muted (light.tab.fg) on surface (light.bg.muted)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 554 of 554 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 9 rules, 6 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Cohere",
-   "goodFor": "enterprise AI platform marketing: a Next.js/Tailwind v3/Sanity build painting one light theme (pureWhite ground, volcanic-900 ink) whose declared layer lives in utility rules - the named palette (volcanic/coral/mushroom/marble/quartz/onyx/neutral), the web3-* type scale and custom radii (rounded-xl 22px, rounded-2xl 30px) - with dark islands (pureBlack promo banner, neutral-15 footer, #355146 green CTA band), 9999px pill CTAs carrying a ::before quartz-500-to-coral-500 gradient sweep, and CohereText/Unica77/CohereMono type",
-   "url": "https://cohere.com",
+   "name": "Handshake",
+   "goodFor": "marketing-site and auth-gate design: a floating transparent-over-hero pill nav that inverts to ink-on-white under scroll (nav top-offset swaps to --desktop-nav-top-offset-with-banner when the notification band shows), a lime #d3fb52 'Sign up' pill (hover #a1dd3b), ink #14151c headline/footer and the blue #2e6aff CTA utility ramp (--cta/-hover/-active/-visited), proprietary NoiGrotesk + SansPlomb faces, a 160px uppercase hero (86px on the phone) over a 920x88 rounded-3xl job-search field, a 12-col grid of 116px tracks inside --container-*/--content-max-width, alternating bg-neutral-0/-10 section bands, segment switchers, FAQ and department accordions, Marketo lead forms, pricing tables, plus the consumer app's signed-out /access card painted by the Rosetta --rosetta-* layer (bg.primary #fff, fg.primary #121212, interactive.primary #04191b)",
+   "url": "https://joinhandshake.com",
    "captured": "2026-11-17",
    "themes": [
-    "light"
+    "light",
+    "access"
    ],
    "platform": "web",
-   "category": "AI research",
+   "category": "Productivity",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Reviewed the captured evidence directly: tokens.json values against raw/css-vars.json utility declarations and raw/components-computed.json measurements, the components.md state tables, 94 crops and 28 screenshots, the sign-in boundary capture, and the known gaps."
+ "reviewMethod": "Live DOM measurements from the capture pass (components-computed.json), declared CSS vars from raw/css-vars.json, screenshots and crop review"
 }
