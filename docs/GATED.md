@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -738,6 +738,14 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Kitchen.co](../systems/kitchen) — `kitchen`
+Access: signed out (public marketing pages; the workspace app, signup submit, demo submit and Stripe checkout were not entered)
+- Workspace app (https://kitchen.co/login redirects to https://kitchen.co/login/workspace): Continue was not pressed, so the signed-in client portal was not captured
+- Get started (https://kitchen.co/get-started): the email signup form was measured and not submitted
+- Get a demo (https://kitchen.co/get-demo): the demo request form was not submitted
+- Lifetime checkout (https://kitchen.co/pricing Pay Now links to buy.stripe.com): Stripe checkout was not opened
+- Buy (https://kitchen.co/buy): the lifetime offer page is public; purchase was not started
 
 ## Gate noted in access text only
 

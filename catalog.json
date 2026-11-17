@@ -16372,6 +16372,73 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/635",
     "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "kitchen",
+   "name": "Kitchen.co",
+   "url": "https://kitchen.co",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Agency marketing sites: a black promo strip, white page, Graphik headlines, a 5px coral call to action and ink buttons, three-column pricing, and a workspace login gate",
+   "tags": [
+    "web",
+    "saas",
+    "marketing",
+    "client-portal",
+    "coral",
+    "pricing",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed out (public marketing pages; the workspace app, signup submit, demo submit and Stripe checkout were not entered)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/kitchen/README.md",
+   "tokens": "systems/kitchen/tokens.json",
+   "styleGuide": "systems/kitchen/style-guide.html",
+   "preview": {
+    "cover": "systems/kitchen/screenshots/home-light-default.png",
+    "icon": "systems/kitchen/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background.page",
+      "surface": "light.background.sand",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.action.coral",
+      "border": "light.border.stroke"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans"
+    ]
+   },
+   "capture": {
+    "harness": "Grok Build",
+    "model": "grok-4.7",
+    "route": "public-web",
+    "date": "2026-11-18",
+    "version": "marketing site, main.css id 34f42d00dd489cfa18358327b0fd45c4",
+    "durationMin": 90,
+    "durationNote": "Public capture of kitchen.co: route probe, kit adaptation, screenshot and measurement passes, motion probe, offline build.",
+    "gaps": [
+     "Workspace app (https://kitchen.co/login redirects to https://kitchen.co/login/workspace): Continue was not pressed, so the signed-in client portal was not captured",
+     "Get started (https://kitchen.co/get-started): the email signup form was measured and not submitted",
+     "Get a demo (https://kitchen.co/get-demo): the demo request form was not submitted",
+     "Lifetime checkout (https://kitchen.co/pricing Pay Now links to buy.stripe.com): Stripe checkout was not opened",
+     "Buy (https://kitchen.co/buy): the lifetime offer page is public; purchase was not started"
+    ]
+   },
+   "layoutGaps": {
+    "icons/": "Kitchen.co paints its wordmark and marks as an icon font (icon-logo-co), not inline SVGs. The marks are visible in the screenshots and crops."
+   }
   }
  ]
 }

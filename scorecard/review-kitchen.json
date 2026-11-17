@@ -1,0 +1,86 @@
+{
+  "F1": {
+    "grade": "missing",
+    "evidence": "Kitchen.co does not publish a colour ramp. main.css uses a handful of hex literals (ink #1d1c1d, coral #ed553b, sand #f8f6f4, gold #ffdc4d, grey #707070). The package records those roles, not a 10-step ramp per hue."
+  },
+  "F2": {
+    "grade": "partly",
+    "evidence": "Page (#ffffff), sand surface (#f8f6f4) and the promo strip (#1d1c1d) are measured. No raised, overlay or scrim role paints on the public pages after the cookie overlay was hidden."
+  },
+  "F3": {
+    "grade": "partly",
+    "evidence": "Primary (#1d1c1d), secondary (#707070), on-ink and on-coral are measured. The wordmark link computes to the UA blue. No disabled text role appears on the public pages."
+  },
+  "F4": {
+    "grade": "partly",
+    "evidence": "The Log in button uses a 2px #1d1c1d outline. Hairline #e5e5e5 and field #dcdcdc are in the stylesheet. No separate focus-border token: focus-visible on the measured buttons did not change the border."
+  },
+  "F5": {
+    "grade": "partly",
+    "evidence": "Coral and ink buttons were measured at rest, hover, focus-visible and DevTools-forced pressed. The fills do not change. The states were captured; the product does not restyle them."
+  },
+  "F6": {
+    "grade": "missing",
+    "evidence": "No success, warning, danger or info colour paints on the public marketing pages. Forms were not submitted, so validation colours stayed hidden."
+  },
+  "F7": {
+    "grade": "meets",
+    "evidence": "The site ships one theme. Every semantic role in the light set was measured on that theme. There is no dark theme to match."
+  },
+  "F8": {
+    "grade": "partly",
+    "evidence": "Graphik is the only family, with a Helvetica Neue / Arial fallback. Measured sizes are 16, 18, 22 and 72px. Weights in use are 400 and 700. Named roles are hero, body, button, nav and FAQ, not a full display/heading/label/caption/code scale."
+  },
+  "F9": {
+    "grade": "missing",
+    "evidence": "No spacing scale is declared. Measured padding is 14px 24px on the coral button and 10px 15px on the small header buttons. That is not a 4px or 8px scale."
+  },
+  "F10": {
+    "grade": "partly",
+    "evidence": "Buttons and fields use a 5px radius. The outline button uses a 2px border. There is no radius ladder."
+  },
+  "F11": {
+    "grade": "partly",
+    "evidence": "Small header buttons are 44px tall. Coral and plan buttons are 52px. The phone Menu control is 34px. No designed focus-ring width or offset was measured."
+  },
+  "F12": {
+    "grade": "missing",
+    "evidence": "Plan cards, the Solutions menu and the phone drawer do not cast a measured box-shadow. The site is flat."
+  },
+  "F13": {
+    "grade": "partly",
+    "evidence": "The motion probe on home, pricing and features recorded 150ms and 200ms durations. Reduced motion is ignored: the probe verdict is ignores, and no authored prefers-reduced-motion rules were found."
+  },
+  "F14": {
+    "grade": "partly",
+    "evidence": "Captured at 1440 and 390. The home shell content is 1280px wide. No named breakpoint or z-index scale is tokenised. The phone drawer is a captured layer, not a z-index token."
+  },
+  "C1": {
+    "grade": "partly",
+    "evidence": "Public pages show button, icon button (Menu), link, text field, menu, card, list row (FAQ) and avatar. Text area, select, checkbox, radio, switch, tabs, tooltip, dialog, toast, table and badge do not paint on the captured pages. That is 8 of 19."
+  },
+  "C2": {
+    "grade": "partly",
+    "evidence": "Buttons have hover, focus-visible and pressed. The FAQ row opens. Fields have focused. Disabled, loading, error and selected do not appear without submitting a form or entering the app."
+  },
+  "C3": {
+    "grade": "partly",
+    "evidence": "Focus-visible was applied to nav links, header buttons, the coral CTA, the plan CTA and the FAQ row. The workspace and signup fields were focused. The product often draws no extra ring."
+  },
+  "C4": {
+    "grade": "partly",
+    "evidence": "components.md quotes computed colours and sizes next to crops. Token names exist for the shared roles, but most component lines still show the raw computed value."
+  },
+  "P1": {
+    "grade": "partly",
+    "evidence": "patterns.md covers the marketing chrome, the hero, the pricing columns and the login gate. Forms with validation, empty/loading/error, destructive confirmation, feedback and onboarding sit behind submit or sign-in and are recorded as gaps."
+  },
+  "A1": {
+    "grade": "partly",
+    "evidence": "Graphik is named with its commercial status and a Helvetica Neue / Arial fallback. The wordmark is an icon font, not an SVG set, so icons/ is a declared layout gap. The marks are in the screenshots."
+  },
+  "K1": {
+    "grade": "meets",
+    "evidence": "The README states the date, the signed-out public route, the widths, how values were read, and what to distrust."
+  }
+}
