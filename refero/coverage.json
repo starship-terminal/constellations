@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 176,
-    "system_domains": 167,
-    "matched_domains": 137,
-    "missing_domains": 296,
+    "system_packages": 178,
+    "system_domains": 169,
+    "matched_domains": 139,
+    "missing_domains": 294,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2270,6 +2270,23 @@
         }
       ]
     },
+    "headspace.com": {
+      "catalog": [
+        {
+          "name": "Headspace",
+          "domain": "headspace.com",
+          "id": 113
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "headspace",
+          "name": "Headspace",
+          "url": "https://www.headspace.com",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2607,13 +2624,6 @@
         "name": "HBO Max",
         "domain": "hbomax.com",
         "id": 337
-      }
-    ],
-    "headspace.com": [
-      {
-        "name": "Headspace",
-        "domain": "headspace.com",
-        "id": 113
       }
     ],
     "helloivy.co": [

@@ -1354,8 +1354,13 @@
     },
     {
       "referenceId": "systems:hashnode",
-      "media": 200,
-      "assignedMedia": 200
+      "media": 203,
+      "assignedMedia": 203
+    },
+    {
+      "referenceId": "systems:headspace",
+      "media": 128,
+      "assignedMedia": 30
     }
   ],
   "assignments": [
@@ -307810,6 +307815,38 @@
     },
     {
       "referenceId": "systems:hashnode",
+      "mediaId": "systems/hashnode/components/crops/app-sidebar-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hashnode/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hashnode",
+      "mediaId": "systems/hashnode/components/crops/app-sidebar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hashnode/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hashnode",
       "mediaId": "systems/hashnode/components/crops/app-sidebar-toggle-default.png",
       "terms": [
         {
@@ -308228,6 +308265,17 @@
     },
     {
       "referenceId": "systems:hashnode",
+      "mediaId": "systems/hashnode/components/crops/feed-trending-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hashnode/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hashnode",
       "mediaId": "systems/hashnode/components/crops/m-app-drawer-opened.png",
       "terms": [
         {
@@ -308477,12 +308525,44 @@
     },
     {
       "referenceId": "systems:hashnode",
+      "mediaId": "systems/hashnode/components/crops/post-card-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hashnode/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hashnode",
       "mediaId": "systems/hashnode/components/crops/post-card-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
           "rule": "ui-cards",
           "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hashnode/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hashnode",
+      "mediaId": "systems/hashnode/components/crops/post-comments-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:comments",
+          "rule": "ux-comments",
+          "reason": "Capture filename explicitly names comments; local classification from recorded capture metadata."
         },
         {
           "termId": "web-fonts:inter",
@@ -308787,17 +308867,6 @@
           "rule": "ui-footer",
           "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
         },
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/hashnode/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:hashnode",
-      "mediaId": "systems/hashnode/components/crops/th-header-dark.png",
-      "terms": [
         {
           "termId": "web-fonts:inter",
           "rule": "font-primary",
@@ -309234,22 +309303,6 @@
     },
     {
       "referenceId": "systems:hashnode",
-      "mediaId": "systems/hashnode/components/crops/th-theme-toggle-darkblog.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/hashnode/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:hashnode",
       "mediaId": "systems/hashnode/components/crops/th-theme-toggle-default.png",
       "terms": [
         {
@@ -309294,6 +309347,336 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/hashnode/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/checkout-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:checkout",
+          "rule": "page-checkout",
+          "reason": "Capture filename explicitly names checkout; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/checkout-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:checkout",
+          "rule": "page-checkout",
+          "reason": "Capture filename explicitly names checkout; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/login-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/mobile-home-light-drawer.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/share-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/share-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/signup-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/screenshots/signup-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/app-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/app-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/m-nav-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/m-nav-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/org-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/plan-slider-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:slider",
+          "rule": "ui-slider",
+          "reason": "Capture filename explicitly names slider; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/redeem-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/redeem-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/redeem-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/subscribe-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/subscribe-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:headspace",
+      "mediaId": "systems/headspace/components/crops/subscribe-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         }
       ]
     }
