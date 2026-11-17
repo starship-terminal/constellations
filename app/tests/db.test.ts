@@ -901,6 +901,60 @@ test("version-twenty-two stores gain the Grok rows, without touching their own l
   ).toHaveLength(0);
 });
 
+test("version-twenty-four stores gain the Hashnode rows, without touching their own labels", async () => {
+  const { dir, store } = await open();
+  // A v24 store opened before the Hashnode rows existed: drop them and
+  // rewind past the v25 top-up.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:hashnode'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:hashnode'",
+  );
+  // A user who cleared another package's labels: the scoped top-up must not
+  // resurrect them (an empty assignment reads as "never labelled" to the
+  // unscoped seed).
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:discord'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:discord'",
+  );
+  await store.client.execute("PRAGMA user_version=24");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(25);
+  const categories = await migrated.listReferenceCategories();
+  // The seed labels (Social Networking + Development Tools) land as two rows.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:hashnode"),
+  ).toHaveLength(2);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:hashnode"])).map(
+      (row) => row.label,
+    ),
+  ).toEqual(["Development Tools", "Social Networking"]);
+  const media = await migrated.listMediaTermAssignments();
+  expect(
+    media.filter((row) => row.referenceId === "systems:hashnode").length,
+  ).toBeGreaterThan(0);
+  // The cleared discord rows stay cleared — the top-up seeds only its own
+  // batch.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:discord"),
+  ).toHaveLength(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:discord"),
+  ).toHaveLength(0);
+});
+
 test("version-twenty-three stores gain the Clipchamp rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v23 store opened before the Clipchamp rows existed: drop them and rewind.
@@ -929,7 +983,7 @@ test("version-twenty-three stores gain the Clipchamp rows, without touching thei
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(24);
+  ).toBe(25);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Design & Media Editing + Productivity) land as two rows.
   expect(
@@ -955,13 +1009,13 @@ test("version-twenty-three stores gain the Clipchamp rows, without touching thei
 
 test("future database versions are rejected without downgrading their schema", async () => {
   const { dir, store } = await open();
-  await store.client.execute("PRAGMA user_version=25");
+  await store.client.execute("PRAGMA user_version=26");
   await expect(createResearchStore(dir)).rejects.toThrow("newer application");
   expect(
     Number(
       (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
     ),
-  ).toBe(25);
+  ).toBe(26);
 });
 
 test("updateSettings writes JSON on a fresh row and on a conflicting row", async () => {

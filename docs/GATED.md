@@ -672,6 +672,11 @@ Access: signed out (every captured surface is public; the signed-in workspace, s
 - the login, register and Craft fields were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
 - the anonymous editor's file content, layers and canvas tools beyond the onboarding and the Craft dialog were not exercised - the scratch file was never saved
 
+## [Hashnode](../systems/hashnode) — `hashnode`
+Access: signed out (every captured surface is public: hashnode.com marketing/feed/posts/profiles/product sections and townhall.hashnode.com; /login and every post-auth surface never entered; engineering.hashnode.com returned 429, help./docs./blog./api./support./changelog./weekly. subdomains do not resolve, status.hashnode.com is a Better Stack page not the product - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the search dialogs, Theme/More menus, FAQ and tab rows, the sidebar toggle, the phone nav button)
+- the signed-in product (/login and everything behind it - dashboard, editor, settings, the onboarding submit) is a boundary: the Sign in / Start your blog / Get Pro links were measured, never followed
+- five components read as absent on this pass (the profile sticky header, the Get Pro plan CTA, the deferred onboarding field, the blog article's pre wrapper, the blog search suggestion row) - recorded as missing, not measured as absent
+
 ## Gate noted in access text only
 
 ### [1Password](../systems/1password) — `1password`

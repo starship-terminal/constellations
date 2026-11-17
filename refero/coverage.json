@@ -2253,6 +2253,23 @@
         }
       ]
     },
+    "hashnode.com": {
+      "catalog": [
+        {
+          "name": "Hashnode",
+          "domain": "hashnode.com",
+          "id": 194
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hashnode",
+          "name": "Hashnode",
+          "url": "https://hashnode.com",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2583,13 +2600,6 @@
         "name": "Gumroad",
         "domain": "gumroad.com",
         "id": 296
-      }
-    ],
-    "hashnode.com": [
-      {
-        "name": "Hashnode",
-        "domain": "hashnode.com",
-        "id": 194
       }
     ],
     "hbomax.com": [
