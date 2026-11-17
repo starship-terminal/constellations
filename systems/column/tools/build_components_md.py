@@ -414,13 +414,27 @@ for k, c in C.items():
         foc.append((k, "visible change in " + "/".join(changed)))
     else:
         # A child layer can paint the ring: the CTA's inner anchor picks up the
-        # browser's auto outline on focus-visible, so compare painted outlines
-        # between the focused and default states before calling it no-change.
+        # browser's auto outline on focus-visible, and the sign-in submit's
+        # ::after grows a 3px ring shadow. Compare painted outlines and shadows
+        # between the focused and default states before calling it no-change —
+        # keyed on the node kind, not the styled-components hash, which
+        # regenerates per state.
         def rings(v):
-            return {p.get("node"): p.get("outline") for p in ((v or {}).get("paint") or []) if p.get("outline")}
-        new = {n: o for n, o in rings(st).items() if rings(c["states"].get("default")).get(n) != o}
-        if new:
-            foc.append((k, "; ".join(f"{o} on {n}" for n, o in list(new.items())[:2]) + " (child layer)"))
+            out = {}
+            for p in ((v or {}).get("paint") or []):
+                node = (p.get("node") or "").split(".")[0]
+                out[node] = (p.get("outline"), p.get("shadow"))
+            return out
+        base = rings(c["states"].get("default"))
+        changed = []
+        for n, (o, sh) in rings(st).items():
+            bo, bsh = base.get(n, (None, None))
+            if o and o != bo:
+                changed.append(f"{o} on {n}")
+            elif sh and sh != bsh:
+                changed.append(f"shadow change on {n}")
+        if changed:
+            foc.append((k, "; ".join(changed[:2]) + " (child layer)"))
         else:
             foc.append((k, None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]

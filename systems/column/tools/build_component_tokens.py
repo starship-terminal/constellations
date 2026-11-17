@@ -201,8 +201,8 @@ for _path, _name, _desc in [
 _g = dvar("--bg-gradient-primary") or (RAW_DECL.get("--bg-gradient-primary") or "")
 _m = re.match(r"linear-gradient\((\d+)deg,\s*(.+)\)", _g)
 if _m:
-    _cols = re.findall(r"rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}", _m.group(2))
-    _stops = [{"color": norm_color(c), "position": round(i / max(len(_cols) - 1, 1), 2)} for i, c in enumerate(_cols)]
+    _found = re.findall(r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})(?:\s+([\d.]+)%)?", _m.group(2))
+    _stops = [{"color": norm_color(c), "position": float(p) / 100 if p else round(i / max(len(_found) - 1, 1), 2)} for i, (c, p) in enumerate(_found)]
     if _stops:
         SPEC["core"].setdefault("gradient", {})["primary"] = {
             "type": "gradient", "value": _stops, "angle": _m.group(1) + "deg",
@@ -302,6 +302,7 @@ for path, comp, state, prop, desc in [
     ("light:text.nav", "nav-item", "default", "color", "The nav-link ink at rest."),
     ("light:text.footer", "footer-link", "default", "color", "Footer link ink."),
     ("light:border.subtle", "header", "default", "paint.0.border", "The 1px hairline under the header."),
+    ("light:accentSignin", "signin-submit", "default", "paint.0.bg", "The sign-in submit's painted fill — blue-500 #4575cd on the app surface, lighter than the marketing navy."),
 ]:
     try:
         role(path, comp, state, prop, desc)
@@ -315,8 +316,8 @@ try:
     _img = stprop("promo-banner", "default", "backgroundImage") or ""
     _m = re.match(r"linear-gradient\((\d+)deg,\s*(.+)\)", _img)
     if _m:
-        _cols = re.findall(r"rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}", _m.group(2))
-        _stops = [{"color": norm_color(c), "position": round(i / max(len(_cols) - 1, 1), 2)} for i, c in enumerate(_cols)]
+        _found = re.findall(r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})(?:\s+([\d.]+)%)?", _m.group(2))
+        _stops = [{"color": norm_color(c), "position": float(p) / 100 if p else round(i / max(len(_found) - 1, 1), 2)} for i, (c, p) in enumerate(_found)]
         if _stops:
             SPEC["core"].setdefault("gradient", {})["banner"] = {
                 "type": "gradient", "value": _stops, "angle": _m.group(1) + "deg",
@@ -337,20 +338,21 @@ for _name, _key, _desc in [
     _sh = RAW_DECL.get(_name) or ""
     if _sh:
         _layers = []
+        _dim = r"(-?[\d.]+(?:px)?)"  # declared shadows may use bare 0 for zero lengths
         for _ly in re.split(r",(?![^(]*\))", _sh):
             m = re.match(
-                r"\s*(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})",
+                r"\s*" + _dim + r"\s+" + _dim + r"\s+" + _dim + r"\s+(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})",
                 _ly) or re.match(
-                r"\s*(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})",
+                r"\s*" + _dim + r"\s+" + _dim + r"\s+" + _dim + r"\s+" + _dim + r"\s+(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})",
                 _ly)
             if m:
                 g = m.groups()
                 col = g[-1]
-                nums = g[:-1]
-                _layers.append({"color": norm_color(col), "offsetX": nums[0] + "px",
-                                "offsetY": nums[1] + "px",
-                                "blur": (nums[2] if len(nums) > 2 else "0") + "px",
-                                "spread": (nums[3] if len(nums) > 3 else "0") + "px"})
+                nums = [n if n.endswith("px") else n + "px" for n in g[:-1]]
+                _layers.append({"color": norm_color(col), "offsetX": nums[0],
+                                "offsetY": nums[1],
+                                "blur": (nums[2] if len(nums) > 2 else "0px"),
+                                "spread": (nums[3] if len(nums) > 3 else "0px")})
         if _layers:
             SPEC["light"].setdefault("shadow", {})[_key] = {
                 "type": "shadow", "value": _layers,
@@ -361,9 +363,10 @@ for _name, _key, _desc in [
 rad = SPEC["core"].setdefault("radius", {})
 for _n in sorted(R):
     m = re.fullmatch(r"--radii-(.+)", _n)
-    if m and dvar(_n):
+    _rv = dvar(_n)
+    if m and _rv is not None:
         key = {"0": "none", "1": "sm", "2": "md", "4": "xl"}.get(m.group(1), m.group(1))
-        rad[key] = {"value": dvar(_n), "type": "dimension",
+        rad[key] = {"value": "0px" if _rv in (0, "0") else _rv, "type": "dimension",
                     "source": decl_source(_n),
                     "description": f"Declared {_n}."}
 for key, cname, desc in [
@@ -428,6 +431,10 @@ for _n in sorted(R, key=lambda s: [float(x) if x.replace('.', '', 1).isdigit() e
             v = "-" + str(pos)
         else:
             continue
+    elif not re.fullmatch(r"-?[\d.]+(px|rem|em)", (RAW_DECL.get(_n) or "").strip()):
+        # --space-auto's keyword probes to a meaningless 0px width — a keyword
+        # is not a length, so it does not publish as a dimension.
+        continue
     key = m.group(1) + m.group(2).replace("-", "_")
     sp[key] = {"value": v, "type": "dimension",
                "source": decl_source(_n),

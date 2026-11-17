@@ -45,7 +45,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #111a4a `light.accent` |
 | border | #cfd0d8 `light.border.input` |
 
-Fonts: `core.font.family.sans` is SuisseIntl, then 14 fallbacks; `core.font.family.mono` is SuisseIntlMono, then 8 fallbacks; `core.font.family.ui` is Inter, then 14 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 11 radius steps (`core.radius`), 70 spacing steps (`core.spacing`).
+Fonts: `core.font.family.sans` is SuisseIntl, then 14 fallbacks; `core.font.family.mono` is SuisseIntlMono, then 8 fallbacks; `core.font.family.ui` is Inter, then 14 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 12 radius steps (`core.radius`), 69 spacing steps (`core.spacing`).
 
 ### Using components
 
@@ -110,8 +110,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 Rules a build in this style can follow, each linked to the capture that shows it.
 
 - **Do paint headings in the navy ink** (`light.text.heading` gray-900 `#12161e` for body headings, blue-800 `#111a4a` for the hero) on the white or tinted ground — [hero-title](components/crops/hero-title-default.png).
-- **Do keep the dark infrastructure band an island** — cyan-900 `#011821` under `color-palette-inverted`, white heading, inside the light page — [dark-band](components/crops/dark-band-default.png).
-- **Do use the declared role names for surfaces** — `light.surface.page` = blue-50 `#eef4fb`, secondary = gray-100 — rather than picking greys by eye — [footer](components/crops/footer-default.png).
-- **Don't treat the launch banner as chrome to delete** — it's real header content with its own blue-violet gradient — [promo-banner](components/crops/promo-banner-default.png).
-- **Don't cross the sign-in boundary** — the email field's focus is as far as this package goes; nothing was typed or submitted — [signin-card](components/crops/signin-card-default.png).
+- **Do keep the dark infrastructure band an island** — cyan-900 `#011821` under `color-palette-inverted`, white heading, inside the light page — [dark-title](components/crops/dark-title-default.png).
+- **Do use the declared role names for surfaces** — `light.surface.page` = blue-50 `#eef4fb`, secondary = gray-100 — rather than picking greys by eye — [footer-link](components/crops/footer-link-default.png).
+- **Don't treat the launch banner as chrome to delete** — it's real header content with its own blue-violet gradient — [promo-banner](screenshots/home-light-default.png).
+- **Don't cross the sign-in boundary** — the email field's focus is as far as this package goes; nothing was typed or submitted — [signin-card](screenshots/signin-light-default.png).
 - **Don't flatten the product-UI mocks into real app components** — they're marketing frames — [product-screen](components/crops/product-screen-default.png).

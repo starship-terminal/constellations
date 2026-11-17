@@ -34,7 +34,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 /* ---- site mock: the marketing surface ---- */
 .mock { border: 1px solid var(--color-gray-100, #eeeff2); border-radius: var(--radius-xl, 16px); overflow: hidden; }
 .mock.light { background: var(--surface-card, #fff); color: var(--text-heading, #12161e); }
-.banner { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: var(--component-banner-height, 40px); padding: 6px 32px; font-size: 14px; background: var(--surface-banner, #eef4fb); color: var(--text-banner, #111a4a); }
+.banner { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: var(--component-banner-height, 40px); padding: 6px 32px; font-size: 14px; background: var(--gradient-banner, linear-gradient(90deg, #3e5199 0%, #5568ad 100%)); color: var(--text-banner, #111a4a); }
 .banner a { color: var(--text-link, #1e4199); text-decoration: underline; }
 .navbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 62px); padding: 0 32px; font-size: 14px; color: var(--text-nav, #111a4a); border-bottom: 1px solid var(--border-subtle, var(--color-gray-100, #eeeff2)); }
 .navbar .wm { font-family: var(--sg-display); font-size: 18px; font-weight: 600; color: var(--text-heading, #12161e); }
@@ -65,7 +65,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .signin { max-width: 420px; margin: 28px auto; padding: 28px; background: var(--color-gray-50, #f6f6f8); border: 1px solid var(--color-gray-100, #eeeff2); border-radius: var(--radius-lg, 16px); font-size: 14px; color: var(--text-heading, #12161e); }
 .signin .h { font: 600 24px/1.2 var(--sg-display); margin-bottom: 16px; text-align: center; }
 .signin .field { height: 48px; border: 1px solid var(--border-input, #cfd0d8); border-radius: var(--radius-default, 8px); margin-bottom: 10px; display: flex; align-items: center; padding: 0 12px; color: var(--text-placeholder, #7c7f88); background: var(--color-white, #fff); }
-.signin .obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightSubmit, 44px); border-radius: var(--radius-default, 8px); margin-bottom: 10px; font-size: 14px; background: var(--accent, #111a4a); color: var(--text-onAccent, #fff); }
+.signin .obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightSubmit, 44px); border-radius: var(--radius-default, 8px); margin-bottom: 10px; font-size: 14px; background: var(--accentSignin, #4575cd); color: var(--text-onAccent, #fff); }
 .signin .obtn.ghost { background: var(--color-white, #fff); color: var(--text-heading, #12161e); border: 1px solid var(--border-input, #cfd0d8); }
 .back { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--text-body, #575a64); }
 table.cmp { border-collapse: collapse; font-size: 14px; }
@@ -188,7 +188,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [set, toks] of [['core', TOK.core], ['light', TOK.light], ['dark', TOK.dark]]) {
     for (const [g, grp] of Object.entries(toks || {})) {
       if (skip.has(g)) continue;
-      const items = flat(grp, g + '.').filter(([, t]) => t.t !== 'color');
+      const items = (grp && grp.t ? [[g, grp]] : flat(grp, g + '.')).filter(([, t]) => t.t !== 'color');
       if (!items.length) continue;
       h += `<div class="pal-h">${esc(set)}.${esc(g)}</div><div class="kv">`;
       for (const [n, t] of items) h += `<div><b>${esc(n)}</b> <span>${esc(show(t.v))}</span></div>`;

@@ -1,8 +1,8 @@
 # Component measurements
 
-Computed styles read from coinbase.com on 2026-11-17 by `tools/capture/public/measure.mjs`, signed out, in headed Chromium (Cloudflare gates headless) at 1440 x 900 (the Mobile group at 390 x 844) on the site's light surface (the OneTrust/consent overlays hidden, never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from column.com on 2026-11-17 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium (the site renders clean headless — no bot wall) at 1440 x 900 (the Mobile group at 390 x 844) on the site's light surface (the styled-components cookie banner hidden, never answered; dashboard.column.com/login measured at rest with nothing typed or submitted), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
-States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
+States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent — not driven on this capture, where nothing was typed at all; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
 ## Components
 
@@ -625,9 +625,9 @@ Crops: none.
 
 #### footer-link
 
-Footer link. A link in a footer link column (_footer__ListLink).
+Footer card link. The closer band’s card link (_closer__CardLink — "Documentation / Get started" tiles, white-25% fill + 1px white ring).
 
-Page: home. Selector: `footer [class*=_footer__ListLink] first`. States: default, hover, focus-visible, pressed.
+Page: home. Selector: `footer closer CardLink first`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -636,7 +636,7 @@ Page: home. Selector: `footer [class*=_footer__ListLink] first`. States: default
 | Gap | 48px | = | = | = |
 | Border | 1px solid #ffffff | = | = | = |
 | Radius | 8px | = | = | = |
-| Background | #ffffff @ 0.25 | #ffffff @ 0.5 | = | #ffffff @ 0.5 |
+| Background | #ffffff @ 0.25 | = | = | = |
 | Box shadow | #000000 @ 0.1 0px 1px 2px 0px | = | = | = |
 | Backdrop filter | blur(12px) | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 1px | = |
@@ -646,7 +646,7 @@ Page: home. Selector: `footer [class*=_footer__ListLink] first`. States: default
 | Text node | h4.Typography__Text-sc-qr50ld-0.hEcRJK: SuisseIntl 16px/17.6px 600, #111a4a | = | = | = |
 | Transition | background 0.2s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a._closer__CardLink-sc-jov7sq-4.czbWQZ 344.0x209.0 bg #ffffff @ 0.25 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 8px shadow #000000 @ 0.1 0px 1px 2px 0px; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50% | a._closer__CardLink-sc-jov7sq-4.czbWQZ 344.0x209.0 bg #ffffff @ 0.5 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 8px shadow #000000 @ 0.1 0px 1px 2px 0px; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50% | a._closer__CardLink-sc-jov7sq-4.czbWQZ 344.0x209.0 bg #ffffff @ 0.25 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 8px shadow #000000 @ 0.1 0px 1px 2px 0px outline 1px auto #101010 offset 1px; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50% | a._closer__CardLink-sc-jov7sq-4.czbWQZ 344.0x209.0 bg #ffffff @ 0.5 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 8px shadow #000000 @ 0.1 0px 1px 2px 0px; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50% |
+| Painted layers | a._closer__CardLink-sc-jov7sq-4.czbWQZ 344.0x209.0 bg #ffffff @ 0.25 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 8px shadow #000000 @ 0.1 0px 1px 2px 0px; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50% | = | a._closer__CardLink-sc-jov7sq-4.czbWQZ 344.0x209.0 bg #ffffff @ 0.25 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 8px shadow #000000 @ 0.1 0px 1px 2px 0px outline 1px auto #101010 offset 1px; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50%; div.DotGridIcon__Dot-sc-ws0s75-1.lktAvq 2.0x2.0 bg #4575cd r 50% | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`.

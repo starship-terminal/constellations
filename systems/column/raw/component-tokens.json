@@ -645,7 +645,7 @@
      },
      {
       "color": "#7ea7e9",
-      "position": 1.0
+      "position": 0.92
      }
     ],
     "angle": "165deg",
@@ -671,6 +671,12 @@
   },
   "measured": {},
   "radius": {
+   "none": {
+    "value": "0px",
+    "type": "dimension",
+    "source": "declared --radii-0 (0) (raw/css-vars.json :root)",
+    "description": "Declared --radii-0."
+   },
    "sm": {
     "value": "4px",
     "type": "dimension",
@@ -960,12 +966,6 @@
     "type": "dimension",
     "source": "declared --space-96 (24rem) (raw/css-vars.json :root)",
     "description": "Declared --space-96 (24rem)."
-   },
-   "auto": {
-    "value": "0px",
-    "type": "dimension",
-    "source": "declared --space-auto (auto) (raw/css-vars.json :root)",
-    "description": "Declared --space-auto (auto)."
    },
    "n1": {
     "value": "-0.25rem",
@@ -1772,6 +1772,12 @@
    "value": "{color.blue.100}",
    "source": "declared --form-input-focus-ring (rgba(212,227,247,1)) (raw/css-vars.json :root); same value as core.color.blue.100"
   },
+  "accentSignin": {
+   "type": "color",
+   "description": "The sign-in submit's painted fill — blue-500 #4575cd on the app surface, lighter than the marketing navy.",
+   "value": "{color.blue.500}",
+   "source": "computed paint.0.bg of signin-submit default (raw/components-computed.json); same value as core.color.blue.500"
+  },
   "shadow": {
    "product": {
     "type": "shadow",
@@ -1814,6 +1820,20 @@
     ],
     "source": "declared --shadow-product (0px 40px 32px rgba(0,0,0,0.02),0px 22px 18px rgba(0,0,0,0.03),0px 12px 10px rgba(0,0,0,0.03),0px 7px 5px rgba(0,0,0,0.04),0px 3px 2px rgba(0,0,0,0.07)) (raw/css-vars.json :root)",
     "description": "The declared five-layer product shadow — the lifted card elevation."
+   },
+   "productBorder": {
+    "type": "shadow",
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     }
+    ],
+    "source": "declared --shadow-product-border (0 0 0 1px rgba(0,0,0,0.05)) (raw/css-vars.json :root)",
+    "description": "The declared 1px black-at-5% ring that edges lifted cards."
    }
   }
  },

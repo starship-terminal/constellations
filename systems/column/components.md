@@ -51,7 +51,7 @@ Screenshots are named `{page}-{theme}-{state}.png`; every public route paints th
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 9 components were given a real keyboard focus. 7 show a visible focus state: `nav-item` (visible change in boxShadow), `nav-ghost` (visible change in boxShadow), `nav-cta` (visible change in boxShadow/backgroundColor), `hero-cta` (visible change in boxShadow), `cards-cta` (visible change in boxShadow), `footer-link` (1px auto #101010, offset 1px), `m-menu-link` (1px auto #e59700, offset 1px). The other 2 show no change a keyboard user can see: `signin-submit`, `signin-passkey`.
+**Focus.** 9 components were given a real keyboard focus. 8 show a visible focus state: `nav-item` (visible change in boxShadow), `nav-ghost` (visible change in boxShadow), `nav-cta` (visible change in boxShadow/backgroundColor), `hero-cta` (visible change in boxShadow), `cards-cta` (visible change in boxShadow), `signin-submit` (shadow change on button::after (child layer)), `footer-link` (1px auto #101010, offset 1px), `m-menu-link` (1px auto #e59700, offset 1px). The other 1 show no change a keyboard user can see: `signin-passkey`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). On 6 of 9 measured controls pressed reads as the same painted step as hover; the rest differ — `nav-cta`, `hero-cta`, `cards-cta` (their rows show the diff). Nothing a real press would submit, navigate or write (the CTAs navigate onward, the sign-in OAuth and Log-in controls submit) was ever pressed.
 
@@ -303,17 +303,15 @@ The closer band at the page bottom (light grey, #eeeff2): link columns, the Colu
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
-#### Footer link
-A link in a footer link column (_footer__ListLink). Read as `footer-link` on the home page.
+#### Footer card link
+The closer band’s card link (_closer__CardLink — "Documentation / Get started" tiles, white-25% fill + 1px white ring). Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 344 x 208.98; padding 24px 32px 32px 32px; border 1px solid #ffffff `color.white`; radius 8px; background rgba(255, 255, 255, 0.25); shadow rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; text SuisseIntl 16/17.6 600, #111a4a `color.blue.800`; transition background 0.2s ease |
-| hover | background rgba(255, 255, 255, 0.5); child paint a._closer__CardLink-sc-jov7sq-4.czbWQZ: background rgba(255, 255, 255, 0.5) |
+| default (same: hover, pressed) | size 344 x 208.98; padding 24px 32px 32px 32px; border 1px solid #ffffff `color.white`; radius 8px; background rgba(255, 255, 255, 0.25); shadow rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; text SuisseIntl 16/17.6 600, #111a4a `color.blue.800`; transition background 0.2s ease |
 | focus-visible | outline 1px auto #101010, offset 1px; child paint a._closer__CardLink-sc-jov7sq-4.czbWQZ: outline 1px auto rgb(16, 16, 16) offset 1px |
-| pressed | background rgba(255, 255, 255, 0.5); child paint a._closer__CardLink-sc-jov7sq-4.czbWQZ: background rgba(255, 255, 255, 0.5) |
 
-![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png)
+![Footer card link default](components/crops/footer-link-default.png) ![Footer card link hover](components/crops/footer-link-hover.png) ![Footer card link focus-visible](components/crops/footer-link-focus-visible.png)
 
 #### Footer logo
 The Column logo block inside the footer band (_footer__FooterLogoContainer). Read as `footer-logo` on the home page.
