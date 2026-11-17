@@ -6219,7 +6219,8 @@
      "template Fill in online, Copy to Google Docs, and Download as Word on https://kinhive.com/templates/nda were not followed; those are submission and account boundaries",
      "App Store and Google Play badges on the home hero were not followed",
      "other blog articles, feature pages, funding rows, resource rows, and shop products share the captured templates and were not each measured"
-    ]
+    ],
+    "pr": "655"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the wordmark, chartreuse chips, and cart glyph are visible in the crops and screenshots"
