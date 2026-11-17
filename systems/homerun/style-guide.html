@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homerun style guide</title>
+<meta name="description" content="Homerun (homerun.co) design tokens and the public site's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-beige-400: #faf9f7;
+  --color-beige-500: #f5f3ef;
+  --color-beige-600: #edebe7;
+  --color-beige-700: #e3e1dd;
+  --color-beige-800: #dbd9d5;
+  --color-blue-300: #eef2ff;
+  --color-blue-400: #c9d5fd;
+  --color-blue-500: #4f75fe;
+  --color-blue-600: #254cda;
+  --color-blue-700: #0b247f;
+  --color-brown-100: #a3a2a2;
+  --color-brown-200: #736b6b;
+  --color-brown-300: #4a3e3e;
+  --color-brown-400: #382d2d;
+  --color-brown-500: #2d2323;
+  --color-brown-600: #1f1818;
+  --color-brown-700: #131313;
+  --color-white: #ffffff;
+  --color-secondary-green: #00b16b;
+  --color-secondary-lilac: #bda3fa;
+  --color-secondary-orange: #f7841f;
+  --color-secondary-red: #f23540;
+  --color-secondary-yellow: #ffbb00;
+  --color-tertiary-blood-orange: #ffe385;
+  --color-tertiary-light-green: #b4dc19;
+  --color-tertiary-navy: #283750;
+  --color-tertiary-pink: #ffc4bf;
+  --color-tertiary-purple: #78286e;
+  --color-tertiary-warm-grey: #d1d3c4;
+  --color-named-accessible-components-dark-grey: #9b9b9b;
+  --color-named-aoeb: #244f41;
+  --color-named-background-grey: #f4f3f3;
+  --color-named-beige-beige-400: #faf9f7;
+  --color-named-beige-beige-600: #edebe7;
+  --color-named-beige-beige-800: #dbd9d5;
+  --color-named-beige-500: #f5f3ef;
+  --color-named-beige-700: #e3e1dd;
+  --color-named-black: rgba(14, 16, 22, 0.95);
+  --color-named-blue: #63cdf5;
+  --color-named-bone: #f5f3ef;
+  --color-named-bright-yellow: #fff442;
+  --color-named-brown-brown-200: #736b6b;
+  --color-named-brown-brown-300: #4a3e3e;
+  --color-named-brown-brown-400: #382d2d;
+  --color-named-brown-brown-500: #2d2323;
+  --color-named-brown-brown-600: #1f1818;
+  --color-named-brown-text-link: #665757;
+  --color-named-brown200: #736b6b;
+  --color-named-burntsienna: #fd7d5d;
+  --color-named-cadet-blue: #07a2bb;
+  --color-named-coffee-100: #f1efef;
+  --color-named-coffee-200: #e6e2e2;
+  --color-named-coffee-300: #d5cccc;
+  --color-named-coffee-50: #f9f7f7;
+  --color-named-coffee-500: #988686;
+  --color-named-coffee-600: #8a7878;
+  --color-named-coffee-800: #605454;
+  --color-named-coffee-900: #534949;
+  --color-named-coffee-950: #2a2525;
+  --color-named-coffee-black: #2d2323;
+  --color-named-coffee-black-2: #2d2323;
+  --color-named-coral: #ff8e5c;
+  --color-named-coral-2: #e6733e;
+  --color-named-crimson: #f03842;
+  --color-named-dark-grey: #2e3038;
+  --color-named-dark-roasted-coffee-black: #1f1717;
+  --color-named-dark-slate-blue: #004a7c;
+  --color-named-dark-slate-grey: #365866;
+  --color-named-dark-slate-grey-2: #365866;
+  --color-named-darkgrey: #2e3038;
+  --color-named-dim-grey: #454f5b;
+  --color-named-dim-grey-2: #4a3e3e;
+  --color-named-facebook: #3b5998;
+  --color-named-floral-white: #f0ede7;
+  --color-named-gdpr-blue: rgba(0, 0, 45, 0.9);
+  --color-named-gold: #f7bd00;
+  --color-named-homerun-blue: #0099ff;
+  --color-named-homerun-dark-blue: #113857;
+  --color-named-hr-500: #00c275;
+  --color-named-hr-700: #113428;
+  --color-named-hr-800: #172923;
+  --color-named-khaki: #fae1b1;
+  --color-named-light-grey: rgba(204, 204, 204, 0.3);
+  --color-named-light-purple: #bca3f9;
+  --color-named-light-sea-green: #00b8aa;
+  --color-named-light-sky-blue: #77c1f0;
+  --color-named-lightblue: #e1f0fb;
+  --color-named-linen: #eee9df;
+  --color-named-maroon: #4e101f;
+  --color-named-medium-sea-green: #40a16a;
+  --color-named-medium-sea-green-2: #1bc183;
+  --color-named-medium-turquoise: #00c5b6;
+  --color-named-midnight-blue: #243341;
+  --color-named-midnight-blue-2: #0d2446;
+  --color-named-pale-green: #bcffae;
+  --color-named-pink: #f0a8fa;
+  --color-named-purple: #43283a;
+  --color-named-purple-2: #43283a;
+  --color-named-royal-blue: #4f75fe;
+  --color-named-royal-blue-2: #4f75fe;
+  --color-named-sea-green: #14915f;
+  --color-named-silver: #cdc4b4;
+  --color-named-silver-2: #cdc4b4;
+  --color-named-sky: #e8e5de;
+  --color-named-sky-light: #f4f6f8;
+  --color-named-snow: #f8f4f4;
+  --color-named-steel-blue: #007bb6;
+  --color-named-teal: #247a88;
+  --color-named-teal-2: #2c6863;
+  --color-named-thistle: rgba(212, 181, 212, 0.5);
+  --color-named-tomato: #fc4945;
+  --color-named-very-light-grey: #fcfbf7;
+  --color-named-warm-grey: #b4a6a6;
+  --color-named-white: #ffffff;
+  --color-named-white-2: #ffffff;
+  --color-named-white-smoke: #f1f0ed;
+  --radius-button: 12px;
+  --radius-card: 32px;
+  --radius-band: 40px;
+  --radius-field: 30px;
+  --radius-accordion: 10px;
+  --radius-testimonial: 20px;
+  --radius-control: 10px;
+  --font-family-sans: "GT America", sans-serif;
+  --font-family-display: "GT Walsheim", sans-serif;
+  --font-family-app: GT-America, Helvetica, Arial, sans-serif;
+  --font-family-careers: GTAmerica-Regular;
+  --font-family-apply: Inter, sans-serif;
+  --font-size-hero: 64px;
+  --font-size-h2: 48px;
+  --font-size-heroSub: 22px;
+  --font-size-body: 16px;
+  --font-size-nav: 16px;
+  --font-size-cta: 20px;
+  --font-size-faq: 20px;
+  --font-size-footer: 20px;
+  --font-size-mHero: 40px;
+  --font-weight-display: 900;
+  --motion-duration-normal: 200ms;
+  --motion-duration-fast: 300ms;
+  --component-ui-radiusButton: 10px;
+  --component-ui-radiusInput: 10px;
+  --component-ui-heightInput: 44px;
+  --component-ui-heightButton: 44px;
+  --component-ui-fieldBg: var(--color-beige-500);
+  --component-ui-textDefault: var(--color-brown-300);
+  --component-ui-textHeading: var(--color-brown-500);
+  --component-control-heightNavCta: 72px;
+  --component-control-heightHeroCta: 52px;
+  --component-control-heightField: 50px;
+  --component-control-heightStepper: 32px;
+  --component-control-heightSso: 44px;
+  --component-control-widthField: 382px;
+  --component-nav-height: 104px;
+  --component-nav-panelWidth: 436px;
+  --component-footer-height: 622.172px;
+  --component-menu-height: 451px;
+  --component-heroTitle-width: 576px;
+  --component-planCard-width: 652px;
+  --component-jobCard-width: 1040px;
+  --surface-page: var(--color-white);
+  --surface-card: var(--color-white);
+  --surface-band: #f5f1ec;
+  --surface-dark: var(--color-brown-500);
+  --surface-field: rgba(45, 35, 35, 0.1);
+  --text-primary: var(--color-brown-300);
+  --text-heading: var(--color-brown-400);
+  --text-heading2: #1e1818;
+  --text-muted: var(--color-brown-200);
+  --text-onDark: var(--color-white);
+  --text-onAccent: var(--color-white);
+  --accent: var(--color-blue-500);
+  --accentHover: var(--color-blue-600);
+  --accentPressed: var(--color-blue-600);
+  --darkFill: var(--color-brown-500);
+  --darkFillHover: var(--color-brown-300);
+  --border-subtle: var(--color-beige-700);
+  --border-demo: var(--color-beige-600);
+  --focus: #101010;
+  --nav-link: var(--color-brown-300);
+  --nav-linkHover: var(--color-brown-300);
+  --careers-accent: #466af6;
+  --careers-link: var(--color-brown-700);
+  --careers-text: #333333;
+  --app-accent: var(--color-blue-500);
+  --app-field: var(--color-beige-500);
+  --app-ssoBorder: rgba(102, 87, 87, 0.2);
+  --app-hrAccent: var(--color-secondary-green);
+  --apply-field: #fafafa;
+  --apply-border: #e8e8e8;
+  --apply-accent: var(--color-blue-500);
+  --shadow-cookie: 0px 2px 5px 0px rgba(33, 43, 54, 0.15);
+  --sg-sans: var(--font-family-sans, "GT America", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif);
+  --sg-display: var(--font-family-display, "GT Walsheim", var(--font-family-sans, "GT America"), sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: #4a3e3e; background: #ffffff; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 900 40px/1.1 var(--sg-display); margin: 0 0 4px; color: #382d2d; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: #736b6b; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid #edebe7; }
+.lead { max-width: 62ch; color: #736b6b; }
+.note { font-size: 13px; color: #736b6b; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: #736b6b; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #edebe7; display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: #736b6b; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: #736b6b; }
+/* ---- site mock: the marketing surface ---- */
+.mock { border: 1px solid #edebe7; border-radius: var(--radius-card, 32px); overflow: hidden; }
+.mock.light { background: var(--surface-page, #fff); color: var(--text-primary, #4a3e3e); }
+.navbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 104px); padding: 0 32px; font-size: 16px; font-weight: 400; color: var(--nav-link, var(--text-primary, #4a3e3e)); background: var(--surface-page, #fff); border-bottom: 1px solid #edebe7; }
+.navbar .wm { font-family: var(--sg-display); font-size: 20px; font-weight: 900; color: var(--darkFill, #2d2323); }
+.navbar .sp { flex: 1; }
+.navbar .lk { height: 58px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 10px; }
+.navbar .demo { height: var(--component-control-heightNavCta, 72px); max-height: 58px; display: inline-flex; align-items: center; padding: 0 22px; border-radius: var(--radius-button, 12px); background: var(--darkFill, #2d2323); color: var(--text-onDark, #fff); }
+.navbar .demo:hover { background: var(--darkFillHover, #4a3e3e); }
+.navbar .cta { height: var(--component-control-heightNavCta, 72px); max-height: 58px; display: inline-flex; align-items: center; padding: 0 22px; border-radius: var(--radius-button, 12px); background: var(--accent, #4f75fe); color: var(--text-onAccent, #fff); }
+.navbar .cta:hover { background: var(--accentHover, #254cda); }
+.hero { padding: 72px 40px 64px; text-align: left; background: var(--surface-page, #fff); color: var(--text-primary, #4a3e3e); }
+.hero h3 { font: 900 var(--font-size-hero, 64px)/1.0 var(--sg-display); margin: 0 0 18px; color: var(--text-heading, #382d2d); }
+.hero p { margin: 0 0 36px; font-size: var(--font-size-heroSub, 22px); color: var(--text-primary, #4a3e3e); max-width: 34ch; }
+.bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightHeroCta, 52px); padding: 0 30px; border-radius: var(--radius-button, 12px); background: var(--accent, #4f75fe); color: var(--text-onAccent, #fff); font-size: var(--font-size-cta, 20px); margin-right: 12px; }
+.bigcta:hover { background: var(--accentHover, #254cda); }
+.bigcta:active { background: var(--accentPressed, #254cda); }
+.seccta { display: inline-flex; align-items: center; justify-content: center; height: 54px; padding: 0 26px; border-radius: var(--radius-button, 12px); background: var(--darkFill, #382d2d); border: 1px solid var(--border-demo, #edebe7); color: var(--text-onDark, #fff); font-size: var(--font-size-cta, 20px); }
+/* ---- feature accordion + testimonials on the beige band ---- */
+.band { padding: 32px 24px; background: var(--surface-band, #f5f1ec); }
+.acc { border-radius: var(--radius-accordion, 10px); background: var(--surface-card, #fff); padding: 16px 20px; margin-bottom: 10px; font-weight: 500; }
+.acc .body { font-size: 14px; color: var(--text-muted, #736b6b); font-weight: 400; margin-top: 8px; }
+.tcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 0 24px 24px; background: var(--surface-band, #f5f1ec); }
+.tcard { border-radius: var(--radius-testimonial, 20px); background: var(--surface-card, #fff); padding: 24px; font-size: 14px; }
+.tcard .cap { color: var(--text-muted, #736b6b); margin-top: 10px; }
+.ctaband { margin: 24px; border-radius: var(--radius-band, 40px); background: var(--surface-dark, #2d2323); color: var(--text-onDark, #fff); padding: 40px 32px; }
+.ctaband .h { font: 900 var(--font-size-h2, 48px)/1.05 var(--sg-display); margin-bottom: 20px; }
+.ctaband .wcta { display: inline-flex; align-items: center; height: 52px; padding: 0 30px; border-radius: var(--radius-button, 12px); background: var(--accent, #4f75fe); color: var(--text-onAccent, #fff); font-size: 20px; }
+/* ---- pricing ---- */
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; padding: 24px; }
+.pcard { border: 1px solid var(--border-subtle, #e3e1dd); border-radius: var(--radius-card, 32px); padding: 28px; background: var(--surface-card, #fff); }
+.pcard .p { font: 900 28px/1.1 var(--sg-display); color: var(--text-heading, #382d2d); }
+.pcard .cap { font-size: 14px; color: var(--text-muted, #736b6b); margin: 8px 0 18px; }
+.pbtn { display: inline-flex; align-items: center; height: 52px; padding: 0 24px; border-radius: var(--radius-button, 12px); background: var(--darkFill, #2d2323); color: var(--text-onDark, #fff); }
+details.faq { margin: 0 24px 24px; border-radius: var(--radius-accordion, 10px); padding: 14px 18px; font-size: var(--font-size-faq, 25px); background: var(--surface-card, #fff); border: 1px solid #edebe7; }
+details.faq summary { cursor: pointer; color: var(--darkFill, #2d2323); }
+/* ---- the sign-in cards (app boundaries) ---- */
+.signin { max-width: 430px; margin: 28px auto; padding: 28px; background: var(--surface-page, #fff); font-size: 16px; color: var(--text-primary, #4a3e3e); }
+.signin .h { font-size: 24px; font-weight: 700; color: var(--text-heading, #382d2d); margin-bottom: 16px; }
+.obtn { display: flex; align-items: center; justify-content: center; height: var(--component-ui-heightButton, var(--component-control-heightSso, 44px)); border-radius: var(--radius-control, 10px); margin-bottom: 10px; font-size: 16px; border: 1px solid var(--app-ssoBorder, rgba(102,87,87,.2)); color: var(--text-primary, #4a3e3e); background: transparent; }
+.field { display: flex; align-items: center; height: var(--component-ui-heightInput, 44px); border-radius: var(--radius-control, 10px); margin-bottom: 10px; padding: 0 15px; background: var(--app-field, #f5f3ef); color: var(--text-primary, #4a3e3e); }
+.signin .go { display: flex; align-items: center; justify-content: center; height: 44px; border-radius: var(--radius-control, 10px); background: var(--app-accent, #4f75fe); color: #fff; }
+.hrsign .go { background: var(--app-hrAccent, #00b16b); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid #edebe7; padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Homerun style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Homerun, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. homerun.co is a Webflow build whose :root carries TWO palette layers — the current <code>--_updated-colors-v2---*</code> set (beige grounds, the #4f75fe blue ramp, the warm brown ink scale, secondary and tertiary accents) and a large legacy named layer it replaced — so the core colors are the updated declarations, with every legacy name kept under <code>color.named.*</code>, and the roles are measured on the painted chrome: the blue primary buttons, the dark #2d2323 demo buttons and CTA band, the beige-tinted bands and inputs.</p>
+  <p class="note">One light theme across every surface, with dark #2d2323 content bands inside it. jobs.homerun.co is the employer careers site on the same system (its own #466af6 button blue); app.homerun.co/login and app.homerun.hr/Account/Logon are sign-in boundaries measured at rest — nothing was typed, sent or submitted. Read on 2026-11-17, signed out, in headless Chromium.</p>
+
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">The white nav with its dark Book-a-demo and blue Start-free-trial pair, the GT Walsheim hero with the blue primary and dark secondary CTAs, the beige band of cards and accordions, and the 40px-radius dark closing CTA band.</p>
+  <div class="mock light">
+    <div class="navbar"><span class="wm">Homerun</span><span class="lk">Product</span><span class="lk">Resources</span><span class="sp"></span><span class="demo">Book a demo</span><span class="cta">Start free trial</span></div>
+    <div class="hero">
+      <h3>Hiring software that moves your team forward</h3>
+      <p>Organise your hiring, manage your team and grow — all in one place.</p>
+      <span class="bigcta">Try free for 15 days</span><span class="seccta">Book a demo</span>
+    </div>
+    <div class="band">
+      <div class="acc"><b>Post jobs everywhere</b><div class="body">One opening, every board — measured as the feature accordion.</div></div>
+      <div class="acc"><b>Track every candidate</b><div class="body">The pipeline view behind the accordion.</div></div>
+    </div>
+    <div class="tcards">
+      <div class="tcard"><b>“Homerun made hiring feel human.”</b><div class="cap">Testimonial card, radius 20px</div></div>
+      <div class="tcard"><b>“The calmest ATS we tried.”</b><div class="cap">Beige band, card on white</div></div>
+    </div>
+    <div class="ctaband"><div class="h">Start hiring with Homerun</div><span class="wcta">Try free for 15 days</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">Plan cards on a 1px beige hairline with 32px corners and the FAQ accordion on 10px corners.</p>
+  <div class="mock light">
+    <div class="plans">
+      <div class="pcard"><div class="p">Light</div><div class="cap">For small teams starting out</div><span class="pbtn">Start free trial</span></div>
+      <div class="pcard"><div class="p">Plus</div><div class="cap">For growing teams</div><span class="pbtn">Start free trial</span></div>
+      <div class="pcard"><div class="p">Custom</div><div class="cap">For larger organisations</div><span class="pbtn">Book a demo</span></div>
+    </div>
+    <details class="faq" open><summary>How does the free trial work?</summary><p>Fifteen days, no card — measured as the pricing FAQ item.</p></details>
+  </div>
+
+  <h2 class="sh">The sign-in cards</h2>
+  <p class="lead">app.homerun.co/login: SSO buttons on a hairline, fields on the beige-500 fill, the blue Log in — the app's declared <code>--ui-*</code> roles (10px radius, 44px heights) paint exactly this. app.homerun.hr runs the same layout on the HR green. Both measured at rest, never submitted.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Log in to Homerun</div>
+    <div class="obtn">Log in with Google</div>
+    <div class="obtn">Log in with Microsoft</div>
+    <div class="field">Email address</div>
+    <div class="field">Password</div>
+    <div class="go">Log in</div>
+  </div>
+  <div class="signin hrsign">
+    <div class="h">Homerun HR</div>
+    <div class="field">Email address</div>
+    <div class="field">Password</div>
+    <div class="go">Log in</div>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The page ground is <code>light.surface.page</code> #ffffff (<code>color.white</code>); tinted bands take <code>light.surface.band</code> #f5f1ec, fields <code>light.app.field</code> #f5f3ef (<code>color.beige.500</code>) and the dark band <code>light.surface.dark</code> #2d2323 (<code>color.brown.500</code>). Brand controls take <code>light.accent</code> #4f75fe (<code>color.blue.500</code>) and darken to <code>light.accentHover</code>/<code>light.accentPressed</code> #254cda (<code>color.blue.600</code>); the dark buttons lift toward <code>light.darkFillHover</code> #4a3e3e (<code>color.brown.300</code>, also the body ink). The careers site runs its own <code>light.careers.accent</code> #466af6 and the HR card its <code>light.app.hrAccent</code> #00b16b.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 104px nav bar at 1440 (72px on mobile), the 52px hero CTA, the 44px sign-in controls the app declares as <code>--ui-input-height</code>/<code>--ui-button-min-height</code>, the 436px Resources panel, the 358 x 451 mobile menu sheet, the plan card and job-card widths.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared CSS variables on all four surfaces (the Webflow :root layers, the careers sheets and the app's --ui-* roles) and the computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component — the nav dropdowns held open by hover, the pricing FAQ by its own toggle, the mobile menu by an in-page click verified open</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from; declared and measured values are linked by alias only when they agree</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"beige":{"400":{"v":"#faf9f7","t":"color","s":"declared --_updated-colors-v2---primary--beige-400 (raw/css-vars.json)","d":"Updated-palette primary--beige-400: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."},"500":{"v":"#f5f3ef","t":"color","s":"declared --_updated-colors-v2---primary--beige-500 (raw/css-vars.json)","d":"Updated-palette primary--beige-500: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."},"600":{"v":"#edebe7","t":"color","s":"declared --_updated-colors-v2---primary--beige-600 (raw/css-vars.json)","d":"Updated-palette primary--beige-600: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."},"700":{"v":"#e3e1dd","t":"color","s":"declared --_updated-colors-v2---primary--beige-700 (raw/css-vars.json)","d":"Updated-palette primary--beige-700: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."},"800":{"v":"#dbd9d5","t":"color","s":"declared --_updated-colors-v2---primary--beige-800 (raw/css-vars.json)","d":"Updated-palette primary--beige-800: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."}},"blue":{"300":{"v":"#eef2ff","t":"color","s":"declared --_updated-colors-v2---primary--blue-300 (raw/css-vars.json)","d":"Updated-palette primary--blue-300: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."},"400":{"v":"#c9d5fd","t":"color","s":"declared --_updated-colors-v2---primary--blue-400 (raw/css-vars.json)","d":"Updated-palette primary--blue-400: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."},"500":{"v":"#4f75fe","t":"color","s":"declared --_updated-colors-v2---primary--blue-500 (raw/css-vars.json)","d":"Updated-palette primary--blue-500: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."},"600":{"v":"#254cda","t":"color","s":"declared --_updated-colors-v2---primary--blue-600 (raw/css-vars.json)","d":"Updated-palette primary--blue-600: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."},"700":{"v":"#0b247f","t":"color","s":"declared --_updated-colors-v2---primary--blue-700 (raw/css-vars.json)","d":"Updated-palette primary--blue-700: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."}},"brown":{"100":{"v":"#a3a2a2","t":"color","s":"declared --_updated-colors-v2---primary--brown-100 (raw/css-vars.json)","d":"Updated-palette primary--brown-100: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."},"200":{"v":"#736b6b","t":"color","s":"declared --_updated-colors-v2---primary--brown-200 (raw/css-vars.json)","d":"Updated-palette primary--brown-200: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."},"300":{"v":"#4a3e3e","t":"color","s":"declared --_updated-colors-v2---primary--brown-300 (raw/css-vars.json)","d":"Updated-palette primary--brown-300: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."},"400":{"v":"#382d2d","t":"color","s":"declared --_updated-colors-v2---primary--brown-400 (raw/css-vars.json)","d":"Updated-palette primary--brown-400: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."},"500":{"v":"#2d2323","t":"color","s":"declared --_updated-colors-v2---primary--brown-500 (raw/css-vars.json)","d":"Updated-palette primary--brown-500: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."},"600":{"v":"#1f1818","t":"color","s":"declared --_updated-colors-v2---primary--brown-600 (raw/css-vars.json)","d":"Updated-palette primary--brown-600: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."},"700":{"v":"#131313","t":"color","s":"declared --_updated-colors-v2---primary--brown-700 (raw/css-vars.json)","d":"Updated-palette primary--brown-700: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."}},"white":{"v":"#ffffff","t":"color","s":"declared --_updated-colors-v2---primary--white (raw/css-vars.json)","d":"Updated-palette primary--white: the page ground."},"secondary":{"green":{"v":"#00b16b","t":"color","s":"declared --_updated-colors-v2---secondary--green (raw/css-vars.json)","d":"Updated-palette secondary--green: the secondary accent set (green is the HR accent family)."},"lilac":{"v":"#bda3fa","t":"color","s":"declared --_updated-colors-v2---secondary--lilac (raw/css-vars.json)","d":"Updated-palette secondary--lilac: the secondary accent set (green is the HR accent family)."},"orange":{"v":"#f7841f","t":"color","s":"declared --_updated-colors-v2---secondary--orange (raw/css-vars.json)","d":"Updated-palette secondary--orange: the secondary accent set (green is the HR accent family)."},"red":{"v":"#f23540","t":"color","s":"declared --_updated-colors-v2---secondary--red (raw/css-vars.json)","d":"Updated-palette secondary--red: the secondary accent set (green is the HR accent family)."},"yellow":{"v":"#ffbb00","t":"color","s":"declared --_updated-colors-v2---secondary--yellow (raw/css-vars.json)","d":"Updated-palette secondary--yellow: the secondary accent set (green is the HR accent family)."}},"tertiary":{"blood_orange":{"v":"#ffe385","t":"color","s":"declared --_updated-colors-v2---tertiary--blood-orange (raw/css-vars.json)","d":"Updated-palette tertiary--blood-orange: the tertiary scene colours for illustrations and bands."},"light_green":{"v":"#b4dc19","t":"color","s":"declared --_updated-colors-v2---tertiary--light-green (raw/css-vars.json)","d":"Updated-palette tertiary--light-green: the tertiary scene colours for illustrations and bands."},"navy":{"v":"#283750","t":"color","s":"declared --_updated-colors-v2---tertiary--navy (raw/css-vars.json)","d":"Updated-palette tertiary--navy: the tertiary scene colours for illustrations and bands."},"pink":{"v":"#ffc4bf","t":"color","s":"declared --_updated-colors-v2---tertiary--pink (raw/css-vars.json)","d":"Updated-palette tertiary--pink: the tertiary scene colours for illustrations and bands."},"purple":{"v":"#78286e","t":"color","s":"declared --_updated-colors-v2---tertiary--purple (raw/css-vars.json)","d":"Updated-palette tertiary--purple: the tertiary scene colours for illustrations and bands."},"warm_grey":{"v":"#d1d3c4","t":"color","s":"declared --_updated-colors-v2---tertiary--warm-grey (raw/css-vars.json)","d":"Updated-palette tertiary--warm-grey: the tertiary scene colours for illustrations and bands."}},"named":{"accessible-components-dark-grey":{"v":"#9b9b9b","t":"color","s":"declared --accessible-components-dark-grey (raw/css-vars.json)","d":"Legacy palette name accessible-components-dark-grey."},"aoeb":{"v":"#244f41","t":"color","s":"declared --aoeb (raw/css-vars.json)","d":"Legacy palette name aoeb."},"background-grey":{"v":"#f4f3f3","t":"color","s":"declared --background-grey (raw/css-vars.json)","d":"Legacy palette name background-grey."},"beige":{"beige-400":{"v":"#faf9f7","t":"color","s":"declared --beige--beige-400 (raw/css-vars.json)","d":"Legacy palette name beige--beige-400."},"beige-600":{"v":"#edebe7","t":"color","s":"declared --beige--beige-600 (raw/css-vars.json)","d":"Legacy palette name beige--beige-600."},"beige-800":{"v":"#dbd9d5","t":"color","s":"declared --beige--beige-800 (raw/css-vars.json)","d":"Legacy palette name beige--beige-800."}},"beige-500":{"v":"#f5f3ef","t":"color","s":"declared --beige-500 (raw/css-vars.json)","d":"Legacy palette name beige-500."},"beige-700":{"v":"#e3e1dd","t":"color","s":"declared --beige-700 (raw/css-vars.json)","d":"Legacy palette name beige-700."},"black":{"v":"rgba(14, 16, 22, 0.95)","t":"color","s":"declared --black (raw/css-vars.json)","d":"Legacy palette name black."},"blue":{"v":"#63cdf5","t":"color","s":"declared --blue (raw/css-vars.json)","d":"Legacy palette name blue."},"bone":{"v":"#f5f3ef","t":"color","s":"declared --bone (raw/css-vars.json)","d":"Legacy palette name bone."},"bright-yellow":{"v":"#fff442","t":"color","s":"declared --bright-yellow (raw/css-vars.json)","d":"Legacy palette name bright-yellow."},"brown":{"brown-200":{"v":"#736b6b","t":"color","s":"declared --brown--brown-200 (raw/css-vars.json)","d":"Legacy palette name brown--brown-200."},"brown-300":{"v":"#4a3e3e","t":"color","s":"declared --brown--brown-300 (raw/css-vars.json)","d":"Legacy palette name brown--brown-300."},"brown-400":{"v":"#382d2d","t":"color","s":"declared --brown--brown-400 (raw/css-vars.json)","d":"Legacy palette name brown--brown-400."},"brown-500":{"v":"#2d2323","t":"color","s":"declared --brown--brown-500 (raw/css-vars.json)","d":"Legacy palette name brown--brown-500."},"brown-600":{"v":"#1f1818","t":"color","s":"declared --brown--brown-600 (raw/css-vars.json)","d":"Legacy palette name brown--brown-600."}},"brown-text-link":{"v":"#665757","t":"color","s":"declared --brown-text-link (raw/css-vars.json)","d":"Legacy palette name brown-text-link."},"brown200":{"v":"#736b6b","t":"color","s":"declared --brown200 (raw/css-vars.json)","d":"Legacy palette name brown200."},"burntsienna":{"v":"#fd7d5d","t":"color","s":"declared --burntsienna (raw/css-vars.json)","d":"Legacy palette name burntsienna."},"cadet-blue":{"v":"#07a2bb","t":"color","s":"declared --cadet-blue (raw/css-vars.json)","d":"Legacy palette name cadet-blue."},"coffee-100":{"v":"#f1efef","t":"color","s":"declared --coffee-100 (raw/css-vars.json)","d":"Legacy palette name coffee-100."},"coffee-200":{"v":"#e6e2e2","t":"color","s":"declared --coffee-200 (raw/css-vars.json)","d":"Legacy palette name coffee-200."},"coffee-300":{"v":"#d5cccc","t":"color","s":"declared --coffee-300 (raw/css-vars.json)","d":"Legacy palette name coffee-300."},"coffee-50":{"v":"#f9f7f7","t":"color","s":"declared --coffee-50 (raw/css-vars.json)","d":"Legacy palette name coffee-50."},"coffee-500":{"v":"#988686","t":"color","s":"declared --coffee-500 (raw/css-vars.json)","d":"Legacy palette name coffee-500."},"coffee-600":{"v":"#8a7878","t":"color","s":"declared --coffee-600 (raw/css-vars.json)","d":"Legacy palette name coffee-600."},"coffee-800":{"v":"#605454","t":"color","s":"declared --coffee-800 (raw/css-vars.json)","d":"Legacy palette name coffee-800."},"coffee-900":{"v":"#534949","t":"color","s":"declared --coffee-900 (raw/css-vars.json)","d":"Legacy palette name coffee-900."},"coffee-950":{"v":"#2a2525","t":"color","s":"declared --coffee-950 (raw/css-vars.json)","d":"Legacy palette name coffee-950."},"coffee-black":{"v":"#2d2323","t":"color","s":"declared --coffee-black (raw/css-vars.json)","d":"Legacy palette name coffee-black."},"coffee-black-2":{"v":"#2d2323","t":"color","s":"declared --coffee-black-2 (raw/css-vars.json)","d":"Legacy palette name coffee-black-2."},"coral":{"v":"#ff8e5c","t":"color","s":"declared --coral (raw/css-vars.json)","d":"Legacy palette name coral."},"coral-2":{"v":"#e6733e","t":"color","s":"declared --coral-2 (raw/css-vars.json)","d":"Legacy palette name coral-2."},"crimson":{"v":"#f03842","t":"color","s":"declared --crimson (raw/css-vars.json)","d":"Legacy palette name crimson."},"dark-grey":{"v":"#2e3038","t":"color","s":"declared --dark-grey (raw/css-vars.json)","d":"Legacy palette name dark-grey."},"dark-roasted-coffee-black":{"v":"#1f1717","t":"color","s":"declared --dark-roasted-coffee-black (raw/css-vars.json)","d":"Legacy palette name dark-roasted-coffee-black."},"dark-slate-blue":{"v":"#004a7c","t":"color","s":"declared --dark-slate-blue (raw/css-vars.json)","d":"Legacy palette name dark-slate-blue."},"dark-slate-grey":{"v":"#365866","t":"color","s":"declared --dark-slate-grey (raw/css-vars.json)","d":"Legacy palette name dark-slate-grey."},"dark-slate-grey-2":{"v":"#365866","t":"color","s":"declared --dark-slate-grey-2 (raw/css-vars.json)","d":"Legacy palette name dark-slate-grey-2."},"darkgrey":{"v":"#2e3038","t":"color","s":"declared --darkgrey (raw/css-vars.json)","d":"Legacy palette name darkgrey."},"dim-grey":{"v":"#454f5b","t":"color","s":"declared --dim-grey (raw/css-vars.json)","d":"Legacy palette name dim-grey."},"dim-grey-2":{"v":"#4a3e3e","t":"color","s":"declared --dim-grey-2 (raw/css-vars.json)","d":"Legacy palette name dim-grey-2."},"facebook":{"v":"#3b5998","t":"color","s":"declared --facebook (raw/css-vars.json)","d":"Legacy palette name facebook."},"floral-white":{"v":"#f0ede7","t":"color","s":"declared --floral-white (raw/css-vars.json)","d":"Legacy palette name floral-white."},"gdpr-blue":{"v":"rgba(0, 0, 45, 0.9)","t":"color","s":"declared --gdpr-blue (raw/css-vars.json)","d":"Legacy palette name gdpr-blue."},"gold":{"v":"#f7bd00","t":"color","s":"declared --gold (raw/css-vars.json)","d":"Legacy palette name gold."},"homerun-blue":{"v":"#0099ff","t":"color","s":"declared --homerun-blue (raw/css-vars.json)","d":"Legacy palette name homerun-blue."},"homerun-dark-blue":{"v":"#113857","t":"color","s":"declared --homerun-dark-blue (raw/css-vars.json)","d":"Legacy palette name homerun-dark-blue."},"hr":{"500":{"v":"#00c275","t":"color","s":"declared --hr--500 (raw/css-vars.json)","d":"Legacy palette name hr--500."},"700":{"v":"#113428","t":"color","s":"declared --hr--700 (raw/css-vars.json)","d":"Legacy palette name hr--700."},"800":{"v":"#172923","t":"color","s":"declared --hr--800 (raw/css-vars.json)","d":"Legacy palette name hr--800."}},"khaki":{"v":"#fae1b1","t":"color","s":"declared --khaki (raw/css-vars.json)","d":"Legacy palette name khaki."},"light-grey":{"v":"rgba(204, 204, 204, 0.3)","t":"color","s":"declared --light-grey (raw/css-vars.json)","d":"Legacy palette name light-grey."},"light-purple":{"v":"#bca3f9","t":"color","s":"declared --light-purple (raw/css-vars.json)","d":"Legacy palette name light-purple."},"light-sea-green":{"v":"#00b8aa","t":"color","s":"declared --light-sea-green (raw/css-vars.json)","d":"Legacy palette name light-sea-green."},"light-sky-blue":{"v":"#77c1f0","t":"color","s":"declared --light-sky-blue (raw/css-vars.json)","d":"Legacy palette name light-sky-blue."},"lightblue":{"v":"#e1f0fb","t":"color","s":"declared --lightblue (raw/css-vars.json)","d":"Legacy palette name lightblue."},"linen":{"v":"#eee9df","t":"color","s":"declared --linen (raw/css-vars.json)","d":"Legacy palette name linen."},"maroon":{"v":"#4e101f","t":"color","s":"declared --maroon (raw/css-vars.json)","d":"Legacy palette name maroon."},"medium-sea-green":{"v":"#40a16a","t":"color","s":"declared --medium-sea-green (raw/css-vars.json)","d":"Legacy palette name medium-sea-green."},"medium-sea-green-2":{"v":"#1bc183","t":"color","s":"declared --medium-sea-green-2 (raw/css-vars.json)","d":"Legacy palette name medium-sea-green-2."},"medium-turquoise":{"v":"#00c5b6","t":"color","s":"declared --medium-turquoise (raw/css-vars.json)","d":"Legacy palette name medium-turquoise."},"midnight-blue":{"v":"#243341","t":"color","s":"declared --midnight-blue (raw/css-vars.json)","d":"Legacy palette name midnight-blue."},"midnight-blue-2":{"v":"#0d2446","t":"color","s":"declared --midnight-blue-2 (raw/css-vars.json)","d":"Legacy palette name midnight-blue-2."},"pale-green":{"v":"#bcffae","t":"color","s":"declared --pale-green (raw/css-vars.json)","d":"Legacy palette name pale-green."},"pink":{"v":"#f0a8fa","t":"color","s":"declared --pink (raw/css-vars.json)","d":"Legacy palette name pink."},"purple":{"v":"#43283a","t":"color","s":"declared --purple (raw/css-vars.json)","d":"Legacy palette name purple."},"purple-2":{"v":"#43283a","t":"color","s":"declared --purple-2 (raw/css-vars.json)","d":"Legacy palette name purple-2."},"royal-blue":{"v":"#4f75fe","t":"color","s":"declared --royal-blue (raw/css-vars.json)","d":"Legacy palette name royal-blue."},"royal-blue-2":{"v":"#4f75fe","t":"color","s":"declared --royal-blue-2 (raw/css-vars.json)","d":"Legacy palette name royal-blue-2."},"sea-green":{"v":"#14915f","t":"color","s":"declared --sea-green (raw/css-vars.json)","d":"Legacy palette name sea-green."},"silver":{"v":"#cdc4b4","t":"color","s":"declared --silver (raw/css-vars.json)","d":"Legacy palette name silver."},"silver-2":{"v":"#cdc4b4","t":"color","s":"declared --silver-2 (raw/css-vars.json)","d":"Legacy palette name silver-2."},"sky":{"v":"#e8e5de","t":"color","s":"declared --sky (raw/css-vars.json)","d":"Legacy palette name sky."},"sky-light":{"v":"#f4f6f8","t":"color","s":"declared --sky-light (raw/css-vars.json)","d":"Legacy palette name sky-light."},"snow":{"v":"#f8f4f4","t":"color","s":"declared --snow (raw/css-vars.json)","d":"Legacy palette name snow."},"steel-blue":{"v":"#007bb6","t":"color","s":"declared --steel-blue (raw/css-vars.json)","d":"Legacy palette name steel-blue."},"teal":{"v":"#247a88","t":"color","s":"declared --teal (raw/css-vars.json)","d":"Legacy palette name teal."},"teal-2":{"v":"#2c6863","t":"color","s":"declared --teal-2 (raw/css-vars.json)","d":"Legacy palette name teal-2."},"thistle":{"v":"rgba(212, 181, 212, 0.5)","t":"color","s":"declared --thistle (raw/css-vars.json)","d":"Legacy palette name thistle."},"tomato":{"v":"#fc4945","t":"color","s":"declared --tomato (raw/css-vars.json)","d":"Legacy palette name tomato."},"very-light-grey":{"v":"#fcfbf7","t":"color","s":"declared --very-light-grey (raw/css-vars.json)","d":"Legacy palette name very-light-grey."},"warm-grey":{"v":"#b4a6a6","t":"color","s":"declared --warm-grey (raw/css-vars.json)","d":"Legacy palette name warm-grey."},"white":{"v":"#ffffff","t":"color","s":"declared --white (raw/css-vars.json)","d":"Legacy palette name white."},"white-2":{"v":"#ffffff","t":"color","s":"declared --white-2 (raw/css-vars.json)","d":"Legacy palette name white-2."},"white-smoke":{"v":"#f1f0ed","t":"color","s":"declared --white-smoke (raw/css-vars.json)","d":"Legacy palette name white-smoke."}}},"radius":{"button":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"Primary buttons (the large 12px corner)."},"card":{"v":"32px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"Plan-card corners."},"band":{"v":"40px","t":"dimension","s":"computed borderTopLeftRadius of cta-band default (raw/components-computed.json)","d":"The closing CTA band's pill-like corner."},"field":{"v":"30px","t":"dimension","s":"computed borderTopLeftRadius of newsletter-field default (raw/components-computed.json)","d":"Rounded inputs (newsletter)."},"accordion":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of feature-accordion default (raw/components-computed.json)","d":"Feature/FAQ accordion corners."},"testimonial":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of testimonial-card default (raw/components-computed.json)","d":"Testimonial card corners."},"control":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of signin-button default (raw/components-computed.json)","d":"The app surface's control corner (declared --ui-button-radius = 10px)."}},"font":{"family":{"sans":{"v":"\"GT America\", sans-serif","t":"fontFamily","s":"computed fontFamily of hero-sub default (raw/components-computed.json)","d":"The UI face — GT America (Grilli Type, self-hosted CDN webfont), measured on body/nav/button text."},"display":{"v":"\"GT Walsheim\", sans-serif","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"The display face — GT Walsheim (measured on the hero and section titles, weight 900)."},"app":{"v":"GT-America, Helvetica, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of signin-button default (raw/components-computed.json)","d":"The sign-in surface's stack — the same GT America (named GT-America in the app bundle)."},"careers":{"v":"GTAmerica-Regular","t":"fontFamily","s":"computed fontFamily of careers-all-jobs default (raw/components-computed.json)","d":"The careers site's face (GTAmerica-Regular)."},"apply":{"v":"Inter, sans-serif","t":"fontFamily","s":"computed fontFamily of apply-field default (raw/components-computed.json)","d":"The application wizard's face — Inter."}},"size":{"hero":{"v":"64px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The hero display headline at 1440px."},"h2":{"v":"48px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"Section headings."},"heroSub":{"v":"22px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The hero subline."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of page-ground default (raw/components-computed.json)","d":"Body/UI base."},"nav":{"v":"16px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"Nav labels and nav buttons."},"cta":{"v":"20px","t":"dimension","s":"computed fontSize of hero-cta default (raw/components-computed.json)","d":"The large primary CTA label."},"faq":{"v":"20px","t":"dimension","s":"computed fontSize of faq-item default (raw/components-computed.json)","d":"The pricing FAQ question."},"footer":{"v":"20px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Footer links."},"mHero":{"v":"40px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The hero headline at 390px."}},"weight":{"display":{"v":900,"t":"fontWeight","s":"computed fontWeight of hero-title default (raw/components-computed.json)","d":"Display headlines (GT Walsheim 900)."}}},"motion":{"duration":{"normal":{"v":"200ms","t":"duration","s":"computed transitionDuration of hero-cta default (raw/components-computed.json)","d":"Transition duration on the hero-cta."},"fast":{"v":"300ms","t":"duration","s":"computed transitionDuration of nav-link default (raw/components-computed.json)","d":"Transition duration on the nav-link."}}},"component":{"ui":{"radiusButton":{"v":"10px","t":"dimension","s":"declared --ui-button-radius on app.homerun.co (raw/css-vars.json)","d":"declared 10px — the sign-in button paints it"},"radiusInput":{"v":"10px","t":"dimension","s":"declared --ui-input-border-radius on app.homerun.co (raw/css-vars.json)","d":"declared 10px — the inputs paint it"},"heightInput":{"v":"44px","t":"dimension","s":"declared --ui-input-height on app.homerun.co (raw/css-vars.json)","d":"declared 44px — the email/password inputs paint it"},"heightButton":{"v":"44px","t":"dimension","s":"declared --ui-button-min-height on app.homerun.co (raw/css-vars.json)","d":"declared 44px — the sign-in buttons paint it"},"fieldBg":{"v":"{color.beige.500}","t":"color","s":"declared --ui-input-bg on app.homerun.co (raw/css-vars.json); the signin-email paints #f5f3ef","d":"the input fill, declared #f5f3ef — the fields paint it"},"textDefault":{"v":"{color.brown.300}","t":"color","s":"declared --ui-color-text-default on app.homerun.co (raw/css-vars.json); the signin-sso paints #4a3e3e","d":"the default app ink, declared #4a3e3e"},"textHeading":{"v":"{color.brown.500}","t":"color","s":"declared --ui-color-text-heading on app.homerun.co (raw/css-vars.json); the signin-email paints #2d2323","d":"the app heading ink, declared #2d2323"}},"control":{"heightNavCta":{"v":"72px","t":"dimension","s":"computed height of nav-trial default (raw/components-computed.json)","d":"The nav Start-free-trial button."},"heightHeroCta":{"v":"52px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The large hero CTA."},"heightField":{"v":"50px","t":"dimension","s":"computed height of newsletter-field default (raw/components-computed.json)","d":"The newsletter input."},"heightStepper":{"v":"32px","t":"dimension","s":"computed height of plan-stepper-plus default (raw/components-computed.json)","d":"The pricing job-slot stepper icon."},"heightSso":{"v":"44px","t":"dimension","s":"computed height of signin-sso default (raw/components-computed.json)","d":"The sign-in SSO button."},"widthField":{"v":"382px","t":"dimension","s":"computed width of signin-email default (raw/components-computed.json)","d":"The sign-in email input at 1440px."}},"nav":{"height":{"v":"104px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The sticky top nav at 1440px."},"panelWidth":{"v":"436px","t":"dimension","s":"computed width of nav-resources-panel default (raw/components-computed.json)","d":"The open Resources mega-panel."}},"footer":{"height":{"v":"622.172px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}},"menu":{"height":{"v":"451px","t":"dimension","s":"computed height of m-menu-open default (raw/components-computed.json)","d":"The opened mobile menu sheet at 390px."}},"heroTitle":{"width":{"v":"576px","t":"dimension","s":"computed width of hero-title default (raw/components-computed.json)","d":"The hero headline's measure at 1440px."}},"planCard":{"width":{"v":"652px","t":"dimension","s":"computed width of plan-card default (raw/components-computed.json)","d":"A pricing plan card."}},"jobCard":{"width":{"v":"1040px","t":"dimension","s":"computed width of careers-job-card default (raw/components-computed.json)","d":"A careers job row at 1440px."}}}},"light":{"surface":{"page":{"v":"{color.white}","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.white","d":"The page ground, painted by the body."},"card":{"v":"{color.white}","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json); same value as core.color.white","d":"A card ground (plan card, FAQ items)."},"band":{"v":"#f5f1ec","t":"color","s":"computed backgroundColor of testimonial-card default (raw/components-computed.json)","d":"The tinted testimonial/band ground."},"dark":{"v":"{color.brown.500}","t":"color","s":"computed backgroundColor of cta-band default (raw/components-computed.json); same value as core.color.brown.500","d":"A dark content band inside the light theme (the closing CTA)."},"field":{"v":"rgba(45, 35, 35, 0.1)","t":"color","s":"computed backgroundColor of newsletter-field default (raw/components-computed.json)","d":"The newsletter input's tinted fill (brown at 10%)."}},"text":{"primary":{"v":"{color.brown.300}","t":"color","s":"computed color of page-ground default (raw/components-computed.json); same value as core.color.brown.300","d":"The body ink (= brown-300 #4a3e3e)."},"heading":{"v":"{color.brown.400}","t":"color","s":"computed color of hero-title default (raw/components-computed.json); same value as core.color.brown.400","d":"The display ink (= brown-400 #382d2d)."},"heading2":{"v":"#1e1818","t":"color","s":"computed color of section-h2 default (raw/components-computed.json)","d":"Section headings paint a slightly deeper ink than brown-400."},"muted":{"v":"{color.brown.200}","t":"color","s":"computed color of footer-link default (raw/components-computed.json); same value as core.color.brown.200","d":"Muted text on footer links and small print (= brown-200 #736b6b)."},"onDark":{"v":"{color.white}","t":"color","s":"computed color of cta-band default (raw/components-computed.json); same value as core.color.white","d":"Text on the dark bands."},"onAccent":{"v":"{color.white}","t":"color","s":"computed color of hero-cta default (raw/components-computed.json); same value as core.color.white","d":"Text on the brand-blue controls."}},"accent":{"v":"{color.blue.500}","t":"color","s":"computed backgroundColor of hero-cta default (raw/components-computed.json); same value as core.color.blue.500","d":"The brand blue where a solid fill shows (= blue-500 #4f75fe)."},"accentHover":{"v":"{color.blue.600}","t":"color","s":"computed backgroundColor of hero-cta hover (raw/components-computed.json); same value as core.color.blue.600","d":"The primary button's hover fill."},"accentPressed":{"v":"{color.blue.600}","t":"color","s":"computed backgroundColor of hero-cta pressed (raw/components-computed.json); same value as core.color.blue.600","d":"The primary button's pressed fill."},"darkFill":{"v":"{color.brown.500}","t":"color","s":"computed backgroundColor of nav-demo default (raw/components-computed.json); same value as core.color.brown.500","d":"The dark brown button fill (= brown-500 #2d2323)."},"darkFillHover":{"v":"{color.brown.300}","t":"color","s":"computed backgroundColor of nav-demo hover (raw/components-computed.json); same value as core.color.brown.300","d":"The dark button's hover fill."},"border":{"subtle":{"v":"{color.beige.700}","t":"color","s":"computed borderTopColor of plan-card default (raw/components-computed.json); same value as core.color.beige.700","d":"The card hairline (= beige-700 #e3e1dd)."},"demo":{"v":"{color.beige.600}","t":"color","s":"computed borderTopColor of hero-demo default (raw/components-computed.json); same value as core.color.beige.600","d":"The secondary button's border (= beige-600 #edebe7)."}},"focus":{"v":"#101010","t":"color","s":"computed outlineColor of hero-cta focus-visible (raw/components-computed.json)","d":"The focus ring on the surface's controls."},"nav":{"link":{"v":"{color.brown.300}","t":"color","s":"computed color of nav-link default (raw/components-computed.json); same value as core.color.brown.300","d":"Nav link ink at rest."},"linkHover":{"v":"{color.brown.300}","t":"color","s":"computed color of nav-link hover (raw/components-computed.json); same value as core.color.brown.300","d":"Nav link ink on hover."}},"careers":{"accent":{"v":"#466af6","t":"color","s":"computed backgroundColor of careers-all-jobs default (raw/components-computed.json)","d":"The careers site's own button blue (#466af6 — a step between the brand blue and its hover)."},"link":{"v":"{color.brown.700}","t":"color","s":"computed textStyle.color of careers-job-card default (raw/components-computed.json); same value as core.color.brown.700","d":"The job-title link ink on the careers site."},"text":{"v":"#333333","t":"color","s":"computed color of careers-header default (raw/components-computed.json)","d":"Careers body ink."}},"app":{"accent":{"v":"{color.blue.500}","t":"color","s":"computed backgroundColor of signin-button default (raw/components-computed.json); same value as core.color.blue.500","d":"The ATS sign-in button — the same brand blue-500."},"field":{"v":"{color.beige.500}","t":"color","s":"computed backgroundColor of signin-email default (raw/components-computed.json); same value as core.color.beige.500","d":"The sign-in input fill (= beige-500 #f5f3ef)."},"ssoBorder":{"v":"rgba(102, 87, 87, 0.2)","t":"color","s":"computed borderTopColor of signin-sso default (raw/components-computed.json)","d":"The SSO button's hairline."},"hrAccent":{"v":"{color.secondary.green}","t":"color","s":"computed backgroundColor of hr-button default (raw/components-computed.json); same value as core.color.secondary.green","d":"The HR sign-in button — the HR product green (= secondary--green #00b16b)."}},"apply":{"field":{"v":"#fafafa","t":"color","s":"computed backgroundColor of apply-field default (raw/components-computed.json)","d":"The application-form input ground."},"border":{"v":"#e8e8e8","t":"color","s":"computed borderTopColor of apply-field default (raw/components-computed.json)","d":"The application-form input hairline."},"accent":{"v":"{color.blue.500}","t":"color","s":"computed backgroundColor of apply-next default (raw/components-computed.json); same value as core.color.blue.500","d":"The application wizard's Next fill — the brand blue again."}},"shadow":{"cookie":{"v":[{"color":"rgba(33, 43, 54, 0.15)","offsetX":"0px","offsetY":"2px","blur":"5px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of cookie-banner default (raw/components-computed.json)","d":"The cookie-banner's drop shadow."}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

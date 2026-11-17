@@ -4304,6 +4304,190 @@
    }
   },
   {
+   "slug": "cofounder",
+   "name": "Cofounder",
+   "url": "https://cofounder.co",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "AI agent-orchestration marketing: a Next.js/Tailwind v4 build painting one light theme (warm paper #f5f5f2) with a pixel-art landscape hero, a glass fixed header with light-pill CTA, a saturated #1a6fd1 tools band with aria-pressed tabs, two button fills (light hairline pill + dark gradient CTA), 16px-radius whole-card pricing anchors that reveal a chip CTA on hover, and TT Neoris/Inter/IBM Plex Mono/Departure Mono type",
+   "tags": [
+    "web",
+    "ai",
+    "agents",
+    "nextjs",
+    "tailwind",
+    "pixel-art",
+    "light",
+    "blue-accent",
+    "declared-tokens",
+    "marketing",
+    "pricing",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (the marketing routes are fully public; the Cofounder OS sits behind app.cofounder.co sign-in - the login card was measured at rest only; CTA anchors to the app were never followed; the hero copy-prompt button writes the clipboard so it was never pressed; no form was submitted and nothing was authenticated)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/cofounder/README.md",
+   "tokens": "systems/cofounder/tokens.json",
+   "styleGuide": "systems/cofounder/style-guide.html",
+   "preview": {
+    "cover": "systems/cofounder/screenshots/home-light-default.png",
+    "icon": "systems/cofounder/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.raised",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.card"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.ui",
+     "core.font.family.mono",
+     "core.font.family.departure"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "cofounder.co in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 87 element crops from the live DOM, plus a stylesheet harvest that fetches the cross-origin Next.js sheets directly (227 rules: the Tailwind v4 @property/--color-* layer, next/font module-scoped families and 30 @font-face records). Selectors ride semantic/utility classes plus data-analytics-* and aria-label attributes. Declared var() chains are resolved through the app-scope rules and lab() values converted to sRGB; role tokens are measured computed values. The app.cofounder.co/os/login card is the app's own styled surface measured at rest. BOUNDARY: the OS, integrations, billing and every OAuth/account action sit behind sign-in, never crossed; CTA anchors to the app were never followed; nothing was typed, submitted or authenticated",
+    "timestamp": "2026-11-17T12:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/how-to/start",
+     "/how-to/build",
+     "/how-to/scale",
+     "/how-to/sell",
+     "/resources",
+     "/support",
+     "/privacy-policy",
+     "/terms",
+     "app.cofounder.co/os/login",
+     "mobile /, /pricing and /how-to/start plus the open menu overlay"
+    ],
+    "gaps": [
+     "the Cofounder OS - workspace, integrations, billing - sits behind app.cofounder.co sign-in and was never crossed; the login card was measured at rest but never submitted",
+     "the hero copy-prompt button writes to the clipboard, so it was measured at rest/hover/focus/forced-pressed but never clicked",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "the case-study carousel's Previous/Next arrows never render a visible box signed out; the how-to article column mounts no landmark - both recorded as missing",
+     "the guide pages render a hidden prerender heading set before the real column; the visible set is what was measured",
+     "no standalone SVG icon set was lifted; the glyphs in crops and screenshots are Cofounder's artwork"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, route probing, the stylesheet harvest with app-scope var() and lab() resolution, screenshot and measurement passes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/630"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the pixel sun mark, social marks) are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "cohere",
+   "name": "Cohere",
+   "url": "https://cohere.com",
+   "category": "ai-research",
+   "platform": "web",
+   "goodFor": "enterprise AI platform marketing: a Next.js/Tailwind v3/Sanity build painting one light theme (pureWhite ground, volcanic-900 ink) whose declared layer lives in utility rules - the named palette (volcanic/coral/mushroom/marble/quartz/onyx/neutral), the web3-* type scale and custom radii (rounded-xl 22px, rounded-2xl 30px) - with dark islands (pureBlack promo banner, neutral-15 footer, #355146 green CTA band), 9999px pill CTAs carrying a ::before quartz-500-to-coral-500 gradient sweep, and CohereText/Unica77/CohereMono type",
+   "tags": [
+    "web",
+    "ai",
+    "enterprise",
+    "llm",
+    "nextjs",
+    "tailwind",
+    "sanity",
+    "light",
+    "dark-islands",
+    "utility-tokens",
+    "marketing",
+    "pricing",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (the marketing routes are fully public; the Cohere product sits behind dashboard.cohere.com sign-in - the welcome/login card was measured at rest only with no credentials typed and nothing submitted; nav/hero CTAs to sign-up and sales forms were never followed; no OAuth flow was started)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/cohere/README.md",
+   "tokens": "systems/cohere/tokens.json",
+   "styleGuide": "systems/cohere/style-guide.html",
+   "preview": {
+    "cover": "systems/cohere/screenshots/home-light-default.png",
+    "icon": "systems/cohere/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.raised",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.displayMeasured",
+     "core.font.family.ui",
+     "core.font.family.mono"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "cohere.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 94 element crops from the live DOM, plus a stylesheet harvest that reads every rule in the 8 fetched sheets (1596 rules, 49 @font-face records) and preserves 1086 literal utility declarations as the declared layer - the site ships no :root token block, so .bg-*/.text-*/.rounded-*/.z-*/.max-w-*/.ease-*/.duration-*/.gap-* rules carry the design values. Selectors ride semantic/utility classes and aria-labels, constrained to painted containers (the footer clones its columns for mobile accordions; the painted desktop set is inside div.hidden.lg:flex). The dashboard.cohere.com/welcome/login card is the app's own styled surface measured at rest. BOUNDARY: the product, North/Command trials, billing and every OAuth/account action sit behind sign-in, never crossed; nothing was typed, submitted or authenticated",
+    "timestamp": "2026-11-17T13:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/north",
+     "/command",
+     "/models-overview",
+     "/developers",
+     "/customer-stories",
+     "/about",
+     "/privacy",
+     "/terms-of-use",
+     "dashboard.cohere.com/welcome/login",
+     "mobile /, /pricing and /north plus the open menu overlay"
+    ],
+    "gaps": [
+     "the Cohere product - North, Command, the dashboard - sits behind dashboard.cohere.com sign-in and was never crossed; the login card was measured at rest but never submitted",
+     "cta-dark's hover state could not be captured: the ease-button-gradient hover animation re-renders the pill node mid-evaluate so the locator goes stale; the failure is recorded as an error state and the identical swap is measured on nav-cta",
+     "the pricing tabs were measured in their on/off states without switching - the inactive tab's table content was never painted for capture",
+     "the visited-link colour is declared (.text-coral-700 under :visited) but no visited link could be rendered signed out",
+     "nothing on the public surface paints a real drop shadow - no elevation ladder exists to tokenise",
+     "models-overview/developers/customer-stories/about/privacy/terms are captured as full screenshots only; their internal components were not individually measured",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "no standalone SVG icon set was lifted; the glyphs in crops and screenshots are Cohere's artwork"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, route and DOM probing, the stylesheet harvest with literal-utility preservation, screenshot and measurement passes with selector correction, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/636"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the wordmark, social marks, certification badges) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "conductor-desktop",
    "name": "Conductor (desktop)",
    "url": "https://conductor.build",
@@ -5717,6 +5901,85 @@
    },
    "layoutGaps": {
     "icons/": "Grok Bot's icons (the cursor-icons font) and Bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
+   }
+  },
+  {
+   "slug": "hbomax",
+   "name": "HBO Max",
+   "url": "https://www.hbomax.com",
+   "category": "media",
+   "platform": "web",
+   "goodFor": "Video streaming signed-out marketing: a pure-black single dark theme, the monochrome Max action palette (white primary button on black), a hero title carousel, subscription plan cards with a monthly/yearly billing toggle, an FAQ accordion, horizontal content rails and title detail pages, Max Sans type, and the site's own generated --color_*/--spacer-*/--border-* token sheet",
+   "tags": [
+    "web",
+    "streaming",
+    "video",
+    "entertainment",
+    "marketing",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public; sign-in, plan checkout, the help centre and account surfaces were link-observed only and never opened)",
+   "themes": [
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/hbomax/README.md",
+   "tokens": "systems/hbomax/tokens.json",
+   "styleGuide": "systems/hbomax/style-guide.html",
+   "preview": {
+    "cover": "systems/hbomax/screenshots/home-dark-default.png",
+    "icon": "systems/hbomax/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.color.surface.low",
+      "surface": "dark.color.surface.high",
+      "text": "dark.color.general.text.high",
+      "muted": "dark.color.general.text.low",
+      "accent": "dark.color.action.primary.fill.high",
+      "border": "dark.color.general.border.low"
+     }
+    },
+    "fonts": []
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "hbomax.com (redirects to www.hbomax.com, Singapore locale /sg/en) in headed Chromium under Xvfb - headless is Akamai-blocked with a 403; desktop 1440x900 and mobile 390x844; computed styles and crops from the live DOM; CSS vars harvested from the site's generated stylesheet under /dotcom/generated/css/ds/hbomax/ and resolved under html data-theme=\"max\"",
+    "timestamp": "2026-11-17T04:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/sg/en",
+     "/sg/en/movies",
+     "/sg/en/shows",
+     "/sg/en/channel",
+     "/sg/en/show/e6e7bad9-d48d-4434-b334-7c651ffc4bdf",
+     "/sg/en/movie/710798da-f811-40be-9ed9-3a7443e36278",
+     "/sg/en/collections/genre/kids-family",
+     "/sg/en/sitemap",
+     "/sg/en/corp-info",
+     "/privacy",
+     "mobile /sg/en",
+     "mobile /sg/en/movies",
+     "mobile /sg/en/show/..."
+    ],
+    "gaps": [
+     "headless Chromium is refused by Akamai (HTTP 403 Access Denied); the capture ran headed under xvfb-run and no bot-protection bypass was attempted",
+     "auth.hbomax.com sign-in, plan selection and checkout, help.hbomax.com and every account surface were observed as links only and never opened; no form was submitted and no trial or plan was started",
+     "one painted theme: html data-theme=\"max\" is the only variant the site serves (the former HBO Max light scheme is gone post-rebrand), so there is no light token set",
+     "the site only served the Singapore locale from this network; /sg/en is the captured surface and other regions' catalogues were not probed",
+     "carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted"
+    ],
+    "durationMin": null,
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/starship-terminal/constellations/pull/626"
    }
   },
   {
@@ -15130,6 +15393,92 @@
    }
   },
   {
+   "slug": "grow",
+   "name": "Grow with Google",
+   "url": "https://grow.google",
+   "category": "learning",
+   "platform": "web",
+   "goodFor": "program and certificate marketing pages in Google's glue marketing style: a light-only white surface, Google Sans Flex display ramp (60/72 hero, 48/56 catalog, 36/24 home headline), the declared --glue-* colour ramps, the painted #3186ff accent on filled 48px-radius pills and links, #185abc hover, #eff2f7 footer band, a 120px jumplinks pill bar, #dadce0 hairline FAQ rows, the full-bleed 1440px mega-menu and the #18191d editorial dark hero on certificate pages; plus the US/APAC regional split the root route serves by request characteristics",
+   "tags": [
+    "web",
+    "google",
+    "education",
+    "certificates",
+    "marketing",
+    "glue",
+    "light",
+    "signed-out",
+    "regional-variant"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public; enrolment on Coursera, Google accounts and all outbound links were measured, never followed; the footer's language select was never changed — its form posts to services.google.com; the hero YouTube embed was opened and closed, never played; no sign-in exists on grow.google)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/grow/README.md",
+   "tokens": "systems/grow/tokens.json",
+   "styleGuide": "systems/grow/style-guide.html",
+   "preview": {
+    "cover": "systems/grow/screenshots/home-light-default.png",
+    "icon": "systems/grow/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.surface.base",
+      "surface": "light.color.surface.muted",
+      "text": "light.color.ink.primary",
+      "muted": "light.color.ink.secondary",
+      "accent": "light.button.primary.bg",
+      "border": "light.color.line.hairline"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "grow.google's US edition in headless Chromium (Playwright) — bare contexts with no user agent or locale, because this host's real-UA or locale-bearing requests are 302'd from / to the regional /intl/ALL_sg/ edition (retained as the apac-* screenshot variant). Desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a first-party stylesheet harvest (the ~676KB versioned gstatic gwg-us bundle: 19 rules, 266 @font-face, 54 resolved custom properties — the --glue-* colour ramps are the only declared variables).",
+    "timestamp": "2026-11-17T13:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "grow.google/ (US edition, bare context)",
+     "grow.google/certificates",
+     "grow.google/certificates/ux-design/",
+     "grow.google/certificates/data-analytics/",
+     "grow.google/ai/",
+     "grow.google/ai-professional/",
+     "grow.google/stories/",
+     "grow.google/our-mission/",
+     "grow.google/partners/",
+     "grow.google/employers/",
+     "grow.google/news-insights/",
+     "the Career Certificates mega-menu, the mobile navigation drawer, one FAQ expansion row and the hero video modal as local UI toggles",
+     "VARIANT: grow.google/intl/ALL_sg/ (the APAC regional edition this host's real-UA requests reach) — screenshot evidence only",
+     "BOUNDARY: coursera.org enrolment, Google accounts, outbound links, the footer's language select (posts to services.google.com) and YouTube playback — measured or opened, never followed, changed or played"
+    ],
+    "gaps": [
+     "enrolment and accounts live off grow.google (coursera.org, Google sign-in): every CTA was measured, never followed",
+     "the APAC regional edition (/intl/ALL_sg/) is a variant surface: different promo stack and shorter page; no tokens come from it",
+     "the hero video's YouTube player controls are uncaptured — the embed was opened and closed, never played",
+     "the footer's region/language <select> posts to services.google.com and was never changed",
+     "the glue bundle declares only the colour ramps as custom properties: spacing, type, radii and shadows are measured computed styles, not a declared scale",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; the 5px outline:auto in pressed reads is Chrome's artifact",
+     "prefers-reduced-motion is only partially honoured on the probed pages — see raw/motion.json",
+     "full-page mobile captures are bounded and tiled (.partN), with the clip in each .capture.json sidecar"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock across the capture sessions including the regional-redirect investigation, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass, icon/motion/layout probes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/628"
+   }
+  },
+  {
    "slug": "hashnode",
    "name": "Hashnode",
    "url": "https://hashnode.com",
@@ -15234,6 +15583,553 @@
     "durationMin": 240,
     "pr": "https://github.com/starship-terminal/constellations/pull/625",
     "durationNote": "wall-clock across the capture session including reachability probes, kit adaptation, the two-surface stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
+   }
+  },
+  {
+   "slug": "gumroad",
+   "name": "Gumroad",
+   "url": "https://gumroad.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "marketplace design: a declared Tailwind v4 token layer of --pink/--purple/--green/--orange/--red/--yellow brand colours, semantic roles as RGB channel triplets (--accent #ff90e8, --primary, --filled, --success/--warning/--danger/--info and --contrast-* partners), a real prefers-color-scheme:dark theme (--body-bg #f4f4f0->#242423, --border-alpha 1->0.35, no in-page toggle), 1px black borders with 4px-radius cards and hard 4px offset shadows, --spacer-1..8, ABC Favorit on a --text-xs..9xl ramp, a bordered hero header with category pills, a Discover grid of bordered product cards with pink price flags and a featured carousel, a product page with tier card and billing-term select, auth cards and a public checkout form",
+   "tags": [
+    "web",
+    "marketplace",
+    "e-commerce",
+    "digital-products",
+    "creator",
+    "storefront",
+    "checkout",
+    "pricing",
+    "search",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public gumroad.com or a public creator subdomain; the seller dashboard, buyer library and settings stayed behind login; the public checkout was captured empty and never submitted; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the carousel arrow, the nav menu button, the Share popover, the billing-term select)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/gumroad/README.md",
+   "tokens": "systems/gumroad/tokens.json",
+   "styleGuide": "systems/gumroad/style-guide.html",
+   "preview": {
+    "cover": "systems/gumroad/screenshots/home-light-default.png",
+    "icon": "systems/gumroad/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.ground.bodyBg",
+      "surface": "light.component.card.bg",
+      "text": "light.role.primary",
+      "muted": "light.role.muted",
+      "accent": "core.color.brand.pink",
+      "border": "light.role.border"
+     },
+     "dark": {
+      "page": "dark.ground.bodyBg",
+      "surface": "dark.component.card.bg",
+      "text": "dark.role.primary",
+      "muted": "dark.role.muted",
+      "accent": "core.color.brand.pink",
+      "border": "dark.role.border"
+     }
+    },
+    "fonts": [
+     "core.font.family.product"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/gumroad/raw-shots (full-colour unmasked captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "gumroad.com and ichigo.gumroad.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (198 rules, 4 @font-face, 189 resolved custom properties per profile - the main site's light/dark and the product subdomain's light-pinned pair kept apart). The site declares color-scheme light dark and repaints under @media (prefers-color-scheme:dark) - emulation verified against the painted surface; the product subdomain pins a light palette and does not repaint. BOUNDARY: the seller dashboard, buyer library, payouts and settings stayed signed out; the public checkout was captured empty and never submitted",
+    "timestamp": "2026-11-17T05:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "gumroad.com/",
+     "gumroad.com/discover",
+     "gumroad.com/design (category)",
+     "gumroad.com/features",
+     "gumroad.com/pricing",
+     "gumroad.com/about",
+     "gumroad.com/blog",
+     "gumroad.com/gumclaw",
+     "gumroad.com/help",
+     "gumroad.com/terms",
+     "gumroad.com/login",
+     "gumroad.com/signup",
+     "ichigo.gumroad.com/l/ichigo-reader (product page)",
+     "ichigo.gumroad.com/ (creator profile)",
+     "gumroad.com/checkout?product=... (public checkout, captured empty)",
+     "verified prefers-color-scheme:dark repaints on the landing, Discover, category, features, pricing, help, login and signup",
+     "the Discover featured-products carousel, the phone nav menu, the product Share popover, the Monthly->Yearly billing-term switch and the empty checkout form as transient states"
+    ],
+    "gaps": [
+     "post-login surfaces: the seller dashboard (products, sales, payouts, analytics), the buyer library and account settings were never reached - the capture was signed out end to end",
+     "product/creator dark: the subdomain's inline :root styles pin a light palette over the shared sheet, so no dark product page exists - recorded as observed behaviour, not a theme",
+     "search results: the marketplace search fields were measured empty; no query was ever submitted",
+     "checkout beyond the empty public form: payment, confirmation and post-purchase screens were never reached",
+     "the ABC Favorit face is served from assets.gumroad.com and is not shipped in the package; crops show it, the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; discover-load-more and product-buy pressed reads failed at the CDP layer",
+     "prefers-reduced-motion is partially honoured (3 of 185 moving elements removed) - see raw/motion.json",
+     "the Discover grid lazy-loads, so -full captures are bounded at eight chunks; anything past the bound is absent rather than scrolled"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass, the icon/motion/layout probes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/627"
+   }
+  },
+  {
+   "slug": "joinhandshake",
+   "name": "Handshake",
+   "url": "https://joinhandshake.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "marketing-site and auth-gate design: a floating transparent-over-hero pill nav that inverts to ink-on-white under scroll (nav top-offset swaps to --desktop-nav-top-offset-with-banner when the notification band shows), a lime #d3fb52 'Sign up' pill (hover #a1dd3b), ink #14151c headline/footer and the blue #2e6aff CTA utility ramp (--cta/-hover/-active/-visited), proprietary NoiGrotesk + SansPlomb faces, a 160px uppercase hero (86px on the phone) over a 920x88 rounded-3xl job-search field, a 12-col grid of 116px tracks inside --container-*/--content-max-width, alternating bg-neutral-0/-10 section bands, segment switchers, FAQ and department accordions, Marketo lead forms, pricing tables, plus the consumer app's signed-out /access card painted by the Rosetta --rosetta-* layer (bg.primary #fff, fg.primary #121212, interactive.primary #04191b)",
+   "tags": ["web", "marketing", "careers", "hiring", "education", "students", "employers", "pricing", "blog", "forms", "light", "signed-out", "design-tokens"],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public: joinhandshake.com's marketing pages serve a plain load, and app.joinhandshake.com/access - the 'Log in or sign up' card - cleared its Cloudflare challenge intermittently and was captured on the loads that did; /explore, /signup, the registration flow and support.joinhandshake.com never cleared - blocked boundaries, not captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the nav's hover-opened mega menu, segment tabs, FAQ and department accordions, the phone's 'Open menu' button)",
+   "themes": ["light", "access"],
+   "widths": [1440, 390],
+   "entry": "systems/joinhandshake/README.md",
+   "tokens": "systems/joinhandshake/tokens.json",
+   "styleGuide": "systems/joinhandshake/style-guide.html",
+   "preview": {
+    "cover": "systems/joinhandshake/screenshots/home-light-default.png",
+    "icon": "systems/joinhandshake/icon.png",
+    "swatches": {
+     "light": {"page": "light.bg.page", "surface": "light.bg.muted", "text": "light.fg.body", "muted": "light.tab.fg", "accent": "light.button.primary.bg", "border": "light.input.search.border"},
+     "access": {"page": "access.rosettaBg.primary", "surface": "access.rosettaBg.surface", "text": "access.rosettaFg.primary", "muted": "access.rosettaFg.secondary", "accent": "access.rosettaInteractive.primary", "border": "access.rosettaFg.border"}
+    },
+    "fonts": ["core.font.family.noiGrotesk", "core.font.family.sansPlomb"]
+   },
+   "source": {"path": "~/.design-systems/joinhandshake/raw-shots (full-colour captures, outside the repo)"},
+   "capture": {
+    "method": "public-web",
+    "source": "joinhandshake.com and app.joinhandshake.com/access in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (2387 rules, 135 @font-face, 472 site + 242 app resolved custom properties in a probe document). The marketing site scrolls the document; full-page captures are bounded at eight chunks. BOUNDARY: app.joinhandshake.com/explore, /signup, the registration flow and support.joinhandshake.com never cleared the Cloudflare managed challenge from the capture host - documented boundaries, not captures",
+    "timestamp": "2026-11-17T05:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "joinhandshake.com/ (default, nav mega menu, full)",
+     "joinhandshake.com/students, /students/whos-hiring, /employers, /employers/pricing, /employers/request-more-info, /career-centers, /career-centers/contact, /career-centers/marketing-toolkit",
+     "joinhandshake.com/careers, /about, /ai, /ai/enterprise, /ai/opportunities, /research/ai, /blog + one article, /learn, /legal/tos, /privacy-policy, /newsroom, /accessibility, /security",
+     "app.joinhandshake.com/access desktop and 390px (on the loads that cleared the Cloudflare challenge)",
+     "segment tab, FAQ and department-accordion opens and the 390px 'Open menu' nav sheet as transient states",
+     "BLOCKED: app.joinhandshake.com/explore and /signup (Cloudflare managed challenge, never cleared), support.joinhandshake.com (Cloudflare 403)"
+    ],
+    "gaps": [
+     "the consumer app's signed-in surfaces - /explore, /signup, registration, dashboards - are a blocked boundary: the Cloudflare managed challenge never cleared across fresh-context retries",
+     "support.joinhandshake.com returned Cloudflare 403 from the capture host - the help centre was never reached",
+     "search results: the hero, blog and careers search fields were measured at rest but no query was ever typed - results states are uncaptured",
+     "the Marketo lead forms were measured at rest; no field was filled and nothing was submitted - validation, error and success states are absent",
+     "the floating nav's scrolled state (solid white pill, ink links) is visible in the page screenshots but was not separately state-measured; the rest state over the hero is the measured one",
+     "the NoiGrotesk, SansPlomb, Chicago FLF and Rosetta faces are proprietary and not shipped; crops show them, the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "prefers-reduced-motion is ignored on all seven probed marketing routes - see raw/motion.json",
+     "the Ketch consent banner was captured where the page mounted it and then hidden, never answered - the preference centre behind its buttons is uncaptured"
+    ],
+    "durationMin": 340,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass (Cloudflare retries on the app routes), three measurement passes with selector fixes, the layout and motion probes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/629"
+   }
+  },
+  {
+   "slug": "helloivy",
+   "name": "Hello Ivy",
+   "url": "https://www.helloivy.co",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "project-management product design across three signed-out surfaces on two unrelated token layers: www.helloivy's Framer marketing build (cream #faf6f0 ground, black ink, Unbounded display headings, a 116px nav strip with a black pill 'Start for free' CTA, a full-screen Framer menu overlay, and a real footer 'Change theme' control that repaints html[toggle-theme=dark]) plus app.helloivy.co, the Vue product seen at the /login boundary and the public share route (a 242px sidebar / 66px header shell around a document canvas on the app's own warm-grey semantic layer, the #3F40F2 indigo as --main-color/--link-color/--checkbox, Inter everywhere, 10px control radius), and the hosted /docs platform (General Sans, its own chrome). Marketing theme is five hashed --token-* body vars re-pointed per theme; app roles arrive as the share page's inline section.main_section theme",
+   "tags": [
+    "web",
+    "project-management",
+    "interior-design",
+    "collaboration",
+    "docs",
+    "marketing",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public: www.helloivy.co marketing routes, app.helloivy.co/login at rest and the public share document, and the hosted /docs platform; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the Framer menu overlay, the footer's real 'Change theme' control, the pricing FAQ accordion, the share page's settings popover and the phone's menu drawer; every link was measured, never followed; the workspace and every post-auth surface was never entered)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/helloivy/README.md",
+   "tokens": "systems/helloivy/tokens.json",
+   "styleGuide": "systems/helloivy/style-guide.html",
+   "preview": {
+    "cover": "systems/helloivy/screenshots/home-light-default.png",
+    "icon": "systems/helloivy/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.ground",
+      "surface": "light.color.inverseSurface",
+      "text": "light.color.ink",
+      "muted": "light.color.muted",
+      "accent": "light.color.link",
+      "border": "light.color.ink"
+     },
+     "dark": {
+      "page": "dark.color.ground",
+      "surface": "dark.color.inverseSurface",
+      "text": "dark.color.ink",
+      "muted": "dark.color.muted",
+      "accent": "dark.color.link",
+      "border": "dark.color.ink"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.body",
+     "core.font.family.docs"
+    ]
+   },
+   "source": "capture",
+   "capture": {
+    "method": "public-web",
+    "source": "www.helloivy.co, app.helloivy.co and the hosted /docs in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (503 rules, 365 @font-face, 61 light + 61 dark resolved custom properties in a probe carrying the site's own sheets, and the app share page's inline section.main_section theme). The marketing site boots html[toggle-theme=light]; the footer's own 'Change theme' control repaints html[toggle-theme=dark] (localStorage.currentToggleState) - verified by the repainted surface before any dark reading, and switched back after. The app paints light only on its public routes; /docs is a separate platform, light-only, no dark inferred. BOUNDARY: the workspace and every post-auth surface never entered; /login measured at rest only - fields never typed, 'Continue' never pressed",
+    "timestamp": "2026-11-17T18:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "www.helloivy.co/",
+     "www.helloivy.co/about",
+     "www.helloivy.co/features (+ /features/tasks, /features/annotate, /features/client-portal)",
+     "www.helloivy.co/pricing",
+     "www.helloivy.co/project-management, /project-collaboration-software, /notion-alternative",
+     "www.helloivy.co/blog + /blog/announcing-hello-ivy-2-0",
+     "www.helloivy.co/release-notes, /terms",
+     "www.helloivy.co/docs + /docs/create-a-project (the hosted docs platform)",
+     "app.helloivy.co/login (rest only - never signed into)",
+     "app.helloivy.co/.../share/... (the public share document + its settings popover)",
+     "verified html[toggle-theme=dark] repaints on home, about, features, pricing and blog via the footer's real 'Change theme' control",
+     "the Framer 'Menu' overlay (desktop + 390px drawer), an opened FAQ row, the share settings popover and the footer theme control as transient states",
+     "BLOCKED: the workspace and every post-auth surface (never entered), the app's other share media (nothing submitted, printed or mailed)"
+    ],
+    "gaps": [
+     "the signed-in product (the workspace, projects, clients, files and settings behind /login) is a boundary: the login card was measured at rest, fields never typed, 'Continue' never pressed",
+     "the app's semantic layer resolves only where its inline section.main_section theme exists - the public share route; /login carries no section so app roles there are measured, not themed",
+     "dark evidence is the marketing site alone: the footer's real 'Change theme' repaint, verified per page; the app and /docs paint light only - no dark values were inferred for either",
+     "the reduced-motion probe's sampled movers kept moving under prefers-reduced-motion: reduce - recorded as behaviour 'ignores', not suppression",
+     "the remaining feature and alternative marketing routes were probed and share the same chrome/theme layer; three feature pages and the Notion alternative were screenshotted as representatives",
+     "Unbounded, Inter and General Sans are declared and measured, not shipped; the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "full-page captures are bounded; the bound and stitching are recorded in each .capture.json sidecar"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including route probing, kit adaptation, the theme-repaint verification, the screenshot pass, the measurement/layout/motion/icon passes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/633"
+   }
+  },
+  {
+   "slug": "hitchd",
+   "name": "Hitchd",
+   "url": "https://www.hitchd.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "Honeymoon-registry and cash-gifting design: a Foundation marketing stack (self-hosted DDNR hairline serif + Inter Variable on warm paper #f6f3ef with a near-black ink) that is currently a one-viewport closure notice, plus two Angular apps - the couple auth surface (48px fields at 8px radius, 50px disabled pill) and the guest registry (sample banner + black Try It Free pill, couple hero in the registry's own display faces, Sort by select, gift tiles, and a card-tap gift modal with a disabled Give pill). One light theme; the money path and every internal registry route are documented boundaries",
+   "tags": [
+    "web",
+    "wedding",
+    "registry",
+    "crowdfunding",
+    "angular",
+    "foundation",
+    "light",
+    "serif-display",
+    "signed-out",
+    "closure"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (the marketing pages, content pages and demo registries are fully public; the auth forms were read at rest - nothing was focused, typed or submitted; the gift modal's Give/contribute flow and every payment step were never entered; the registry's internal routes /contributions, /payment-methods, /ask and /quick-thanks bounce the guest to / and were recorded as boundaries)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/hitchd/README.md",
+   "tokens": "systems/hitchd/tokens.json",
+   "styleGuide": "systems/hitchd/style-guide.html",
+   "preview": {
+    "cover": "systems/hitchd/screenshots/home-light-default.png",
+    "icon": "systems/hitchd/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.surface.page",
+      "surface": "light.color.surface.cream",
+      "text": "light.color.text.ink",
+      "muted": "light.color.text.muted",
+      "accent": "light.color.action.ctaFill",
+      "border": "light.color.border.field"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.text",
+     "core.font.family.registry"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "hitchd.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass at 2x; computed styles and element crops from the live DOM on 20 components, a stylesheet harvest (almost no declared variables - ~10 radio-control flags - so the token layer is measured computed styles aliased to a measured palette) plus 77 @font-face records, layout readings on 22 page passes, motion probed on 6 pages (145 moving transitions; prefers-reduced-motion is ignored) and an icon index (3 inline SVGs plus 58 linked references). The site is a Foundation marketing stack plus two Angular apps; the registry app's boot is nondeterministic, so the measurer waits for the gift list itself with one reload retry. BOUNDARY: the couple dashboard and every post-login surface, the Give/contribute/payment steps, and the registry's internal routes (all bounce to /) were never crossed; auth forms were read at rest only",
+    "timestamp": "2026-11-17T18:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/login",
+     "/signup",
+     "/forgot-password",
+     "/blog",
+     "/blog/what-is-a-honeymoon-registry",
+     "/terms",
+     "/privacy",
+     "/trips/australia",
+     "/guides/add-hitchd-to-knot-wedding-webiste",
+     "/zoeandnoah (+ sort open, filtered, gift modal at rest)",
+     "/avaandbenjamin (countdown)",
+     "mobile /, /login, /blog, /blog/what-is-a-honeymoon-registry, /zoeandnoah, /avaandbenjamin"
+    ],
+    "gaps": [
+     "no dark theme exists anywhere - no variant declared, no theme control found - so the package is light-only by evidence, not by omission",
+     "/blog is ~50,000px tall; its tiled full-page capture exceeded the timeout and is documented as a truncation boundary",
+     "focus/hover/pressed states on the auth controls were never forced (focusing a field is the first step of signing in)",
+     "the demo registry's .mobile-menu drawer exists with owner links but no guest-facing control opens it - measured hidden at rest",
+     "the registry's internal routes (/contributions, /payment-methods, /ask, /quick-thanks) bounce the signed-out guest to /",
+     "the closing site's redirected marketing routes (/how-it-works, /about, /pricing, /*-alternative, /referrals, /honeymoon-registry) 301 to /",
+     "only 3 inline SVGs paint on the public surface; the rest of the iconography is linked brand/social SVGs, indexed but not vendored"
+    ],
+    "durationMin": 420,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the flaky Angular registry app's repeated measurement passes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/634"
+   }
+  },
+  {
+   "slug": "headspace",
+   "name": "Headspace",
+   "url": "https://www.headspace.com",
+   "category": "fitness",
+   "platform": "web",
+   "goodFor": "Meditation, sleep and mental-health product across four public surfaces: the Next.js marketing site (generated Emotion classes, no custom-property layer, Headspace Apercu 200-700, blue #0061ef primary pills and dark #2d2c2b secondary pills on a warm #f9f4f2 ground, hover mega-menu, topic pages with pastel tints), the /content free-preview library and /articles hub, the /subscriptions plans block (billing switch, seat slider), the signed-out Auth0 universal login/signup cards on auth.headspace.com, the checkout.headspace.com self-serve shell, and the organizations.headspace.com B2B surface (yellow #ffce00 cards, white pill CTA going #ff7e1d orange on hover)",
+   "tags": [
+      "web",
+      "meditation",
+      "sleep",
+      "mental-health",
+      "wellness",
+      "marketing",
+      "light",
+      "signed-out",
+      "pricing",
+      "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public); the member app behind auth.headspace.com login was never reached; the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never filled or submitted; no trial started, no plan bought, no code redeemed; every CTA measured, never followed; the OneTrust consent layer was hidden, never answered",
+   "themes": [
+      "light"
+   ],
+   "widths": [
+      1440,
+      390
+   ],
+   "entry": "systems/headspace/README.md",
+   "tokens": "systems/headspace/tokens.json",
+   "styleGuide": "systems/headspace/style-guide.html",
+   "preview": {
+      "cover": "systems/headspace/screenshots/home-light-default.png",
+      "icon": "systems/headspace/icon.png",
+      "swatches": {
+         "light": {
+            "page": "light.color.surface.page",
+            "surface": "light.color.surface.auth-card",
+            "text": "light.color.ink.primary",
+            "muted": "light.color.ink.muted",
+            "accent": "light.color.brand.blue",
+            "border": "light.color.line.field"
+         }
+      },
+      "fonts": [
+         "core.font.family.display",
+         "core.font.family.body"
+      ]
+   },
+   "source": {
+      "path": "~/.design-systems/headspace/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+      "method": "public-web",
+      "source": "www.headspace.com (a Next.js marketing site compiled to generated Emotion classes with 275+ inline style blocks; the stylesheets declare only a small :root palette - 27 custom properties including --secondary-blue #0061ef, --primary-blue #0040ea, --orange #ff7e1d, --primary-warm-grey-700 #2d2c2b, --2ndary-warm-grey-100 #f9f4f2 - resolved by the harvest and cross-checked against the measured component values; Headspace Apercu + Apercu Pro Mono @font-face), organizations.headspace.com (the B2B marketing host), checkout.headspace.com (the self-serve checkout shell) and auth.headspace.com (the Auth0 universal login/signup the /login and /signup routes redirect to) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 64 element crops from the live DOM. BOUNDARY: everything post-login; forms measured empty; /pricing serves a real 404",
+      "timestamp": "2026-11-17T08:00:00Z",
+      "harness": "Devin",
+      "model": "Devin",
+      "route": "public-web",
+      "routes": [
+         "/",
+         "/app",
+         "/meditation",
+         "/mindfulness",
+         "/sleep",
+         "/online-therapy",
+         "/coaching",
+         "/ai-mental-health-companion",
+         "/mental-health",
+         "/mental-health/anxiety",
+         "/science",
+         "/about-us",
+         "/articles",
+         "/articles/can-you-use-hsa-or-fsa-for-mental-health",
+         "/content",
+         "/content/topics/100",
+         "/subscriptions",
+         "/family-plan",
+         "/buy/gift",
+         "/share-headspace",
+         "/code",
+         "/app/mindful-families",
+         "organizations.headspace.com/",
+         "organizations.headspace.com/employers",
+         "checkout.headspace.com/checkout (viewed only)",
+         "/login and /signup -> auth.headspace.com universal pages (measured empty)",
+         "home header For-You mega-menu, mobile /, /subscriptions, /meditation, /content and the mobile nav sheet"
+      ],
+      "gaps": [
+         "everything post-login - the member home, meditation player, streaks, settings and the whole signed-in app behind auth.headspace.com; an authenticated boundary never reached",
+         "submitted states: the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never sent - validation, error, loading and success states are absent rather than measured",
+         "no trial started, no plan bought, no code redeemed, no gift sent, no guest pass claimed - every transactional step past the painted form is a recorded gap",
+         "/pricing answers a real 404 ('Whoops! Something's changed'); the plans live on /subscriptions - a recorded absence, not a capture",
+         "no dark theme: no control, no attribute, no applied prefers-color-scheme rules on any captured page",
+         "pressed states are DevTools-forced (CSS.forcePseudoState) - script-driven mousedown looks are uncaptured",
+         "the OneTrust consent banner/preferences were hidden (display:none), never answered - no consent state captured",
+         "the checkout shell's form fields, the feature/testimonial cards, the FAQ accordion, the plan cards and billing switch, the content tiles, the footer language selector and app badges, and the mobile nav sheet did not match the kit's structural selectors on this pass - recorded as absent components, not measured",
+         "full-page screenshots capture the real scrollable area: on pages whose content overflows horizontally the -full PNG is wider than the 1440 viewport, and pages taller than 8 tiles truncate from the bottom; sidecars record the document size"
+      ],
+      "durationMin": 240,
+      "durationNote": "wall-clock across the capture sessions including reachability probes, kit adaptation from the Grok capture, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
+      "pr": "https://github.com/starship-terminal/constellations/pull/631"
+   },
+   "layoutGaps": {}
+},
+  {
+   "slug": "homerun",
+   "name": "Homerun",
+   "url": "https://www.homerun.co",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Homerun's hiring/ATS marketing: a Webflow build whose :root carries two palette layers at once - the current --_updated-colors-v2---* set (beige grounds, the #4f75fe brand-blue ramp, the warm-brown ink scale, secondary/tertiary accents) plus the legacy named layer it replaced - over a single light theme with #2d2323 dark bands, GT Walsheim 900 display + GT America UI type, 12px-radius blue/dark button pairs, and the same system running through the jobs.homerun.co careers app (#466af6 accent), the Angular app.homerun.co/login card (its own --ui-* token layer) and the .NET app.homerun.hr sign-in (#00b16b green)",
+   "tags": [
+    "web",
+    "saas",
+    "hr",
+    "ats",
+    "hiring",
+    "webflow",
+    "light",
+    "blue-accent",
+    "declared-tokens",
+    "marketing",
+    "pricing",
+    "careers",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (the marketing routes and careers site are fully public; the ATS and HR apps sit behind sign-in - both public login cards were measured at rest, never submitted; the public application wizard was never advanced past its first step; consent banners were hidden without answering them; sign-up/login/apply links were never followed)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/homerun/README.md",
+   "tokens": "systems/homerun/tokens.json",
+   "styleGuide": "systems/homerun/style-guide.html",
+   "preview": {
+    "cover": "systems/homerun/screenshots/home-light-default.png",
+    "icon": "systems/homerun/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.band",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.sans"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "www.homerun.co, jobs.homerun.co, app.homerun.co/login and app.homerun.hr/Account/Logon in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 161 element crops from the live DOM, plus a four-surface stylesheet harvest that fetches the cross-origin CDN sheets directly (499 rules, 66 @font-face records, 654 variable names resolved per surface: www 87, jobs 168, app 350, apphr 0). The marketing site is a Webflow build whose :root declares the current --_updated-colors-v2---* palette plus a large legacy named layer, both kept; the Angular sign-in declares its own --ui-* control roles. core ramp tokens are the declared values; surface roles are measured computed values aliased to the declarations they match. BOUNDARY: the ATS and HR apps sit behind sign-in, never crossed; the application wizard was never advanced or submitted; nothing was typed, sent or authenticated",
+    "timestamp": "2026-11-17T12:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/ats",
+     "/hr",
+     "/product/features",
+     "/pricing",
+     "/customers",
+     "/about",
+     "/contact",
+     "/blog",
+     "/templates",
+     "/integrations",
+     "/guides",
+     "/updates/",
+     "/trial",
+     "/privacy-statement",
+     "jobs.homerun.co/, /open/en and /open/en/apply",
+     "app.homerun.co/login",
+     "app.homerun.hr/Account/Logon",
+     "mobile /, /pricing and /ats plus the opened mobile menu"
+    ],
+    "gaps": [
+     "the ATS and HR apps sit behind sign-in and were never crossed; both login cards were measured at rest and never submitted, no credentials exist in the capture",
+     "the application wizard was never advanced past its first step: nothing was typed, uploaded or submitted, and its file input/checkbox paint through custom controls over 0x0 inputs",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "the pricing feature table sits below the lazy-load line: pricing-table/-head/-row kept earlier readings under recaptureMissed provenance",
+     "blog/guide/update/template article pages and customer stories are index-list captures only",
+     "apphr declares no custom properties - plain Tailwind utility CSS - so its tokens are measured values",
+     "consent was never answered, so a consent-accepted render of the careers site is not in the set"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, four-surface route probing, the stylesheet harvest and per-surface resolution, screenshot and measurement passes, and the offline build"
    }
   },
   {

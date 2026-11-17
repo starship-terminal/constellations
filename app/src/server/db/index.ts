@@ -78,7 +78,8 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 26)
+    if (version > 36)
+>>>>>>> origin/main
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -331,19 +332,141 @@ export async function createResearchStore(directory: string) {
     }
     if (version < 26) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v25 never re-seeds, so the HTTPie rows would never
-      // arrive. systems:hashnode is included on the media side only: its
-      // seed gained five media rows for crops that landed after the v25
-      // top-up ran, which a v25 store would otherwise never receive (pairs
-      // already labelled are skipped). Scoping keeps cleared labels on
-      // older packages cleared — an empty assignment reads as "never
-      // labelled", so an unscoped pass would restore rows the user deleted.
-      await seedNewCuratedCategories(tx, new Set(["systems:httpie"]));
+      // already at v25 never re-seeds, so the Gumroad rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:gumroad"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:gumroad"]));
+      await tx.execute("PRAGMA user_version = 26");
+    }
+    if (version < 27) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v26 never re-seeds, so the Cofounder rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:cofounder"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:cofounder"]));
+      await tx.execute("PRAGMA user_version = 27");
+    }
+    if (version < 28) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v27 never re-seeds, so the Handshake rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:joinhandshake"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:joinhandshake"]));
+      await tx.execute("PRAGMA user_version = 28");
+    }
+    if (version < 29) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v28 never re-seeds, so the Cohere rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:cohere"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:cohere"]));
+      await tx.execute("PRAGMA user_version = 29");
+    }
+    if (version < 30) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v29 never re-seeds, so the Hello Ivy rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:helloivy"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:helloivy"]));
+      await tx.execute("PRAGMA user_version = 30");
+    }
+    if (version < 31) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v30 never re-seeds, so the Hitchd rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:hitchd"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:hitchd"]));
+      // The media seed also gained two joinhandshake screenshots since v28
+      // shipped. A v28 store already labelled that package's other media, so
+      // re-seeding the whole reference would resurrect any rows a user
+      // cleared; the two media IDs are new and cannot have been cleared, so
+      // top up just those.
       await seedNewCuratedMediaTerms(
         tx,
-        new Set(["systems:httpie", "systems:hashnode"]),
+        new Set(["systems:joinhandshake"]),
+        new Set([
+          "systems/joinhandshake/screenshots/home-light-consent.png",
+          "systems/joinhandshake/screenshots/mobile-home-light-drawer.png",
+        ]),
       );
-      await tx.execute("PRAGMA user_version = 26");
+      await tx.execute("PRAGMA user_version = 31");
+    }
+    if (version < 32) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v31 never re-seeds, so the HBO Max rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:hbomax"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:hbomax"]));
+      await tx.execute("PRAGMA user_version = 32");
+    }
+    if (version < 33) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v32 never re-seeds, so the Grow with Google rows would
+      // never arrive. Scoping keeps cleared labels on older packages cleared
+      // — an empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:grow"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:grow"]));
+      await tx.execute("PRAGMA user_version = 33");
+    }
+    if (version < 34) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v33 never re-seeds, so the Headspace rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:headspace"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:headspace"]));
+      await tx.execute("PRAGMA user_version = 34");
+    }
+    if (version < 35) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v34 never re-seeds, so the Homerun rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:homerun"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:homerun"]));
+      // The regenerated seed also gained five Hashnode crop assignments no
+      // store has labelled yet (they entered the seed file with this batch).
+      // Backfill just those media ids: scoping the pass to the whole
+      // systems:hashnode reference would restore labels a user cleared.
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set(["systems:hashnode"]),
+        new Set([
+          "systems/hashnode/components/crops/app-sidebar-dark.png",
+          "systems/hashnode/components/crops/app-sidebar-default.png",
+          "systems/hashnode/components/crops/feed-trending-default.png",
+          "systems/hashnode/components/crops/post-card-dark.png",
+          "systems/hashnode/components/crops/post-comments-link-default.png",
+        ]),
+      );
+      await tx.execute("PRAGMA user_version = 35");
+    }
+    if (version < 36) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v35 never re-seeds, so the HTTPie rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:httpie"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:httpie"]));
+      await tx.execute("PRAGMA user_version = 36");
     }
     await tx.commit();
   } catch (error) {

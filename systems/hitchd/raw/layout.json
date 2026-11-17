@@ -1,0 +1,1918 @@
+{
+ "readAt": "2026-11-17",
+ "source": "getBoundingClientRect + computed positions read in live headless Chromium on the signed-out public pages below, at 1440 x 900 and 390 x 844; nothing clicked or submitted",
+ "pages": {
+  "home@desktop": {
+   "url": "https://www.hitchd.com/",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 900,
+   "landmarks": [
+    {
+     "node": "section.hero.home.b-test",
+     "rect": {
+      "x": 0,
+      "y": 98,
+      "w": 1440,
+      "h": 802
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "header.closure-header",
+     "rect": {
+      "x": 0,
+      "y": 98,
+      "w": 1440,
+      "h": 96
+     },
+     "position": "absolute",
+     "display": "block",
+     "zIndex": "3"
+    },
+    {
+     "node": "nav",
+     "rect": {
+      "x": 56,
+      "y": 122,
+      "w": 1328,
+      "h": 48
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 0,
+      "y": 98,
+      "w": 1440,
+      "h": 802
+     },
+     "position": "absolute",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 0,
+      "y": 98,
+      "w": 1440,
+      "h": 802
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "login@desktop": {
+   "url": "https://www.hitchd.com/login",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 900,
+   "landmarks": [],
+   "grids": [],
+   "fixed": [
+    {
+     "node": "iframe",
+     "rect": {
+      "x": 0,
+      "y": 900,
+      "w": 1440,
+      "h": 1
+     },
+     "position": "fixed",
+     "display": "block"
+    },
+    {
+     "node": "div.grecaptcha-badge",
+     "rect": {
+      "x": 1370,
+      "y": 826,
+      "w": 256,
+      "h": 60
+     },
+     "position": "fixed",
+     "display": "block"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "signup@desktop": {
+   "url": "https://www.hitchd.com/signup",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 900,
+   "landmarks": [],
+   "grids": [
+    {
+     "node": "div.row",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 900
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.row",
+     "rect": {
+      "x": 720,
+      "y": 0,
+      "w": 720,
+      "h": 900
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.row.large-up-2",
+     "rect": {
+      "x": 860,
+      "y": 0,
+      "w": 440,
+      "h": 900
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "ul.pass",
+     "rect": {
+      "x": 860,
+      "y": 510.5,
+      "w": 440,
+      "h": 24
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [
+    {
+     "node": "iframe",
+     "rect": {
+      "x": 0,
+      "y": 900,
+      "w": 1440,
+      "h": 1
+     },
+     "position": "fixed",
+     "display": "block"
+    },
+    {
+     "node": "div.grecaptcha-badge",
+     "rect": {
+      "x": 1370,
+      "y": 826,
+      "w": 256,
+      "h": 60
+     },
+     "position": "fixed",
+     "display": "block"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "forgot-password@desktop": {
+   "url": "https://www.hitchd.com/forgot-password",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 900,
+   "landmarks": [],
+   "grids": [],
+   "fixed": [
+    {
+     "node": "iframe",
+     "rect": {
+      "x": 0,
+      "y": 900,
+      "w": 1440,
+      "h": 1
+     },
+     "position": "fixed",
+     "display": "block"
+    },
+    {
+     "node": "div.grecaptcha-badge",
+     "rect": {
+      "x": 1370,
+      "y": 826,
+      "w": 256,
+      "h": 60
+     },
+     "position": "fixed",
+     "display": "block"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "blog@desktop": {
+   "url": "https://www.hitchd.com/blog",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 46060,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 88
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "section.hero",
+     "rect": {
+      "x": 0,
+      "y": 88,
+      "w": 1440,
+      "h": 256
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "section.blog-post",
+     "rect": {
+      "x": 0,
+      "y": 432,
+      "w": 1440,
+      "h": 45149.6
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 108,
+      "y": 506,
+      "w": 386.7,
+      "h": 600
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 526.7,
+      "y": 506,
+      "w": 386.7,
+      "h": 577.5
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 945.3,
+      "y": 506,
+      "w": 386.7,
+      "h": 568.4
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 108,
+      "y": 1154,
+      "w": 386.7,
+      "h": 601.4
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 526.7,
+      "y": 1154,
+      "w": 386.7,
+      "h": 602.9
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 945.3,
+      "y": 1154,
+      "w": 386.7,
+      "h": 543.8
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 80,
+      "y": 168,
+      "w": 1280,
+      "h": 96
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 104,
+      "y": 168,
+      "w": 1232,
+      "h": 96
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 80,
+      "y": 506,
+      "w": 1280,
+      "h": 45075.6
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 92,
+      "y": 506,
+      "w": 1256,
+      "h": 45075.6
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "post@desktop": {
+   "url": "https://www.hitchd.com/blog/what-is-a-honeymoon-registry",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 8827,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 56,
+      "w": 1440,
+      "h": 80
+     },
+     "position": "static",
+     "display": "block",
+     "zIndex": "999999"
+    },
+    {
+     "node": "section.blog-post",
+     "rect": {
+      "x": 0,
+      "y": 136,
+      "w": 1440,
+      "h": 8321.2
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 80,
+      "y": 895.4,
+      "w": 1256,
+      "h": 7561.8
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container.maxed",
+     "rect": {
+      "x": 80,
+      "y": 136,
+      "w": 1280,
+      "h": 8321.2
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 80,
+      "y": 136,
+      "w": 1280,
+      "h": 8321.2
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [
+    {
+     "node": "div.hellobar",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 56
+     },
+     "position": "sticky",
+     "display": "block",
+     "zIndex": "999999"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "terms@desktop": {
+   "url": "https://www.hitchd.com/terms",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 16589,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 88
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "nav.hide-for-small-only",
+     "rect": {
+      "x": 24,
+      "y": 0,
+      "w": 1392,
+      "h": 82
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 24,
+      "y": 0,
+      "w": 1392,
+      "h": 82
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin",
+     "rect": {
+      "x": 64,
+      "y": 0,
+      "w": 1312,
+      "h": 82
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 80,
+      "y": 104,
+      "w": 1280,
+      "h": 16027.6
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 68,
+      "y": 104,
+      "w": 1304,
+      "h": 16027.6
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "privacy@desktop": {
+   "url": "https://www.hitchd.com/privacy",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 6757,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 88
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "nav.hide-for-small-only",
+     "rect": {
+      "x": 24,
+      "y": 0,
+      "w": 1392,
+      "h": 82
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 24,
+      "y": 0,
+      "w": 1392,
+      "h": 82
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin",
+     "rect": {
+      "x": 64,
+      "y": 0,
+      "w": 1312,
+      "h": 82
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 80,
+      "y": 104,
+      "w": 1280,
+      "h": 6196
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 68,
+      "y": 104,
+      "w": 1304,
+      "h": 6196
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "trips@desktop": {
+   "url": "https://www.hitchd.com/trips/australia",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 6538,
+   "landmarks": [
+    {
+     "node": "header.home-header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 88
+     },
+     "position": "absolute",
+     "display": "block",
+     "zIndex": "99"
+    },
+    {
+     "node": "section.hero.home.ad",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 772
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "section.how-it-works",
+     "rect": {
+      "x": 0,
+      "y": 772,
+      "w": 1440,
+      "h": 560
+     },
+     "position": "relative",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 772
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 772
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 0,
+      "y": 772,
+      "w": 1440,
+      "h": 560
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 0,
+      "y": 872,
+      "w": 1440,
+      "h": 360
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.country-photo-grid",
+     "rect": {
+      "x": 0,
+      "y": 1332,
+      "w": 1440,
+      "h": 500
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 0,
+      "y": 1332,
+      "w": 1440,
+      "h": 500
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 0,
+      "y": 1332,
+      "w": 1440,
+      "h": 500
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "guide@desktop": {
+   "url": "https://www.hitchd.com/guides/add-hitchd-to-knot-wedding-webiste",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 8049,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 80
+     },
+     "position": "static",
+     "display": "block",
+     "zIndex": "999999"
+    },
+    {
+     "node": "main",
+     "rect": {
+      "x": 37,
+      "y": 824,
+      "w": 1366,
+      "h": 6437
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "section.blog-post",
+     "rect": {
+      "x": 158,
+      "y": 824,
+      "w": 800,
+      "h": 6437
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 158,
+      "y": 1112,
+      "w": 776,
+      "h": 6149
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container.maxed",
+     "rect": {
+      "x": 80,
+      "y": 80,
+      "w": 1280,
+      "h": 744
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 80,
+      "y": 80,
+      "w": 1280,
+      "h": 744
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-container.maxed",
+     "rect": {
+      "x": 158,
+      "y": 824,
+      "w": 800,
+      "h": 6437
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 158,
+      "y": 824,
+      "w": 800,
+      "h": 6437
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [
+    {
+     "node": "div.sticky",
+     "rect": {
+      "x": 958,
+      "y": 872,
+      "w": 300,
+      "h": 478
+     },
+     "position": "sticky",
+     "display": "block",
+     "zIndex": "0"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "registry@desktop": {
+   "url": "https://www.hitchd.com/zoeandnoah",
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "scrollHeight": 7690,
+   "landmarks": [],
+   "grids": [
+    {
+     "node": "div.experience-count.row.small-up-1",
+     "rect": {
+      "x": 0,
+      "y": 880,
+      "w": 1440,
+      "h": 144
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "ol.gift-list.row.medium-up-2",
+     "rect": {
+      "x": 0,
+      "y": 1024,
+      "w": 1440,
+      "h": 524
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div#gifts.giftz.row.single-giftz",
+     "rect": {
+      "x": 12,
+      "y": 1056,
+      "w": 1416,
+      "h": 472
+     },
+     "position": "relative",
+     "display": "flex"
+    },
+    {
+     "node": "ol#Australia.gift-list.row.small-up-1",
+     "rect": {
+      "x": 0,
+      "y": 1612,
+      "w": 1440,
+      "h": 1843.3
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [
+    {
+     "node": "div.top-registry-sample-banner",
+     "rect": {
+      "x": 0,
+      "y": 820,
+      "w": 1440,
+      "h": 80
+     },
+     "position": "fixed",
+     "display": "block",
+     "zIndex": "999999999"
+    },
+    {
+     "node": "iframe",
+     "rect": {
+      "x": 0,
+      "y": 7690,
+      "w": 1440,
+      "h": 1
+     },
+     "position": "fixed",
+     "display": "block"
+    },
+    {
+     "node": "div.grecaptcha-badge",
+     "rect": {
+      "x": 1370,
+      "y": 826,
+      "w": 256,
+      "h": 60
+     },
+     "position": "fixed",
+     "display": "block"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "home@mobile": {
+   "url": "https://www.hitchd.com/",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 844,
+   "landmarks": [
+    {
+     "node": "section.hero.home.b-test",
+     "rect": {
+      "x": 0,
+      "y": 117.5,
+      "w": 390,
+      "h": 726.5
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "header.closure-header",
+     "rect": {
+      "x": 0,
+      "y": 117.5,
+      "w": 390,
+      "h": 80
+     },
+     "position": "absolute",
+     "display": "block",
+     "zIndex": "3"
+    },
+    {
+     "node": "nav",
+     "rect": {
+      "x": 24,
+      "y": 133.5,
+      "w": 342,
+      "h": 48
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 0,
+      "y": 117.5,
+      "w": 390,
+      "h": 726.5
+     },
+     "position": "absolute",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 0,
+      "y": 117.5,
+      "w": 390,
+      "h": 726.5
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "login@mobile": {
+   "url": "https://www.hitchd.com/login",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 893,
+   "landmarks": [],
+   "grids": [],
+   "fixed": [
+    {
+     "node": "iframe",
+     "rect": {
+      "x": 0,
+      "y": 893,
+      "w": 390,
+      "h": 1
+     },
+     "position": "fixed",
+     "display": "block"
+    },
+    {
+     "node": "div.grecaptcha-badge",
+     "rect": {
+      "x": 320,
+      "y": 770,
+      "w": 256,
+      "h": 60
+     },
+     "position": "fixed",
+     "display": "block"
+    }
+   ],
+   "scrollers": [
+    {
+     "node": "body.mac",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844
+     },
+     "position": "relative",
+     "display": "block",
+     "scrollH": 893,
+     "clientH": 844
+    }
+   ],
+   "dialogs": []
+  },
+  "signup@mobile": {
+   "url": "https://www.hitchd.com/signup",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 844,
+   "landmarks": [],
+   "grids": [
+    {
+     "node": "div.row",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 628
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.row",
+     "rect": {
+      "x": 24,
+      "y": 0,
+      "w": 342,
+      "h": 628
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.row.large-up-2",
+     "rect": {
+      "x": 24,
+      "y": 24,
+      "w": 342,
+      "h": 580
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "ul.pass",
+     "rect": {
+      "x": 24,
+      "y": 368,
+      "w": 342,
+      "h": 24
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [
+    {
+     "node": "iframe",
+     "rect": {
+      "x": 0,
+      "y": 628,
+      "w": 390,
+      "h": 1
+     },
+     "position": "fixed",
+     "display": "block"
+    },
+    {
+     "node": "div.grecaptcha-badge",
+     "rect": {
+      "x": 320,
+      "y": 770,
+      "w": 256,
+      "h": 60
+     },
+     "position": "fixed",
+     "display": "block"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "forgot-password@mobile": {
+   "url": "https://www.hitchd.com/forgot-password",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 844,
+   "landmarks": [],
+   "grids": [],
+   "fixed": [
+    {
+     "node": "iframe",
+     "rect": {
+      "x": 0,
+      "y": 844,
+      "w": 390,
+      "h": 1
+     },
+     "position": "fixed",
+     "display": "block"
+    },
+    {
+     "node": "div.grecaptcha-badge",
+     "rect": {
+      "x": 320,
+      "y": 770,
+      "w": 256,
+      "h": 60
+     },
+     "position": "fixed",
+     "display": "block"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "blog@mobile": {
+   "url": "https://www.hitchd.com/blog",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 127663,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 80
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "section.hero",
+     "rect": {
+      "x": 0,
+      "y": 80,
+      "w": 390,
+      "h": 208
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "section.blog-post",
+     "rect": {
+      "x": 0,
+      "y": 312,
+      "w": 390,
+      "h": 126652.7
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 0,
+      "y": 361.2,
+      "w": 390,
+      "h": 559
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 0,
+      "y": 968.2,
+      "w": 390,
+      "h": 531
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 24,
+      "y": 144,
+      "w": 342,
+      "h": 80
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 24,
+      "y": 144,
+      "w": 342,
+      "h": 80
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 0,
+      "y": 361.2,
+      "w": 390,
+      "h": 126603.5
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 0,
+      "y": 361.2,
+      "w": 390,
+      "h": 126603.5
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "post@mobile": {
+   "url": "https://www.hitchd.com/blog/what-is-a-honeymoon-registry",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 16310,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 48,
+      "w": 390,
+      "h": 64
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "section.blog-post",
+     "rect": {
+      "x": 0,
+      "y": 112,
+      "w": 390,
+      "h": 15556.5
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 0,
+      "y": 452.1,
+      "w": 390,
+      "h": 15152.4
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container.maxed",
+     "rect": {
+      "x": 0,
+      "y": 112,
+      "w": 390,
+      "h": 15556.5
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 0,
+      "y": 112,
+      "w": 390,
+      "h": 15556.5
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [
+    {
+     "node": "div.hellobar",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 48
+     },
+     "position": "sticky",
+     "display": "block",
+     "zIndex": "9"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "terms@mobile": {
+   "url": "https://www.hitchd.com/terms",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 27434,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 80
+     },
+     "position": "relative",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 24,
+      "y": 96,
+      "w": 342,
+      "h": 26393.2
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 12,
+      "y": 96,
+      "w": 366,
+      "h": 26393.2
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "privacy@mobile": {
+   "url": "https://www.hitchd.com/privacy",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 11425,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 80
+     },
+     "position": "relative",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 24,
+      "y": 96,
+      "w": 342,
+      "h": 10384
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 12,
+      "y": 96,
+      "w": 366,
+      "h": 10384
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "trips@mobile": {
+   "url": "https://www.hitchd.com/trips/australia",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 10903,
+   "landmarks": [
+    {
+     "node": "header.home-header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 80
+     },
+     "position": "absolute",
+     "display": "block",
+     "zIndex": "99"
+    },
+    {
+     "node": "section.hero.home.ad",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 636
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "section.how-it-works",
+     "rect": {
+      "x": 0,
+      "y": 636,
+      "w": 390,
+      "h": 830
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "section.top10",
+     "rect": {
+      "x": 0,
+      "y": 3019,
+      "w": 390,
+      "h": 4777
+     },
+     "position": "relative",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 24,
+      "y": 172,
+      "w": 342,
+      "h": 300
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 24,
+      "y": 172,
+      "w": 342,
+      "h": 300
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 24,
+      "y": 700,
+      "w": 342,
+      "h": 702
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 24,
+      "y": 700,
+      "w": 342,
+      "h": 702
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-container",
+     "rect": {
+      "x": 24,
+      "y": 3299,
+      "w": 342,
+      "h": 4377
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x",
+     "rect": {
+      "x": 24,
+      "y": 3299,
+      "w": 342,
+      "h": 4377
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "guide@mobile": {
+   "url": "https://www.hitchd.com/guides/add-hitchd-to-knot-wedding-webiste",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 8547,
+   "landmarks": [
+    {
+     "node": "header",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 64
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "main",
+     "rect": {
+      "x": 0,
+      "y": 308,
+      "w": 390,
+      "h": 6609.3
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "section.blog-post",
+     "rect": {
+      "x": 0,
+      "y": 308,
+      "w": 390,
+      "h": 6609.3
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "article",
+     "rect": {
+      "x": 0,
+      "y": 476,
+      "w": 390,
+      "h": 6377.3
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.grid-container.maxed",
+     "rect": {
+      "x": 0,
+      "y": 64,
+      "w": 390,
+      "h": 244
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 0,
+      "y": 64,
+      "w": 390,
+      "h": 244
+     },
+     "position": "static",
+     "display": "flex"
+    },
+    {
+     "node": "div.grid-container.maxed",
+     "rect": {
+      "x": 0,
+      "y": 308,
+      "w": 390,
+      "h": 6609.3
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "div.grid-x.grid-margin-x",
+     "rect": {
+      "x": 0,
+      "y": 308,
+      "w": 390,
+      "h": 6609.3
+     },
+     "position": "static",
+     "display": "flex"
+    }
+   ],
+   "fixed": [
+    {
+     "node": "aside#floating-try-hitchd-div",
+     "rect": {
+      "x": 0,
+      "y": 531,
+      "w": 390,
+      "h": 313
+     },
+     "position": "fixed",
+     "display": "block",
+     "zIndex": "999999999"
+    },
+    {
+     "node": "div.sticky",
+     "rect": {
+      "x": 24,
+      "y": 555,
+      "w": 342,
+      "h": 265
+     },
+     "position": "sticky",
+     "display": "block",
+     "zIndex": "0"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  },
+  "registry@mobile": {
+   "url": "https://www.hitchd.com/zoeandnoah",
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "scrollHeight": 15050,
+   "landmarks": [
+    {
+     "node": "nav#navmenu.show-for-small-only.mobile-menu.mobile-menu-hidden",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844
+     },
+     "position": "fixed",
+     "display": "block",
+     "zIndex": "999999999"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.experience-count.row.small-up-1",
+     "rect": {
+      "x": 0,
+      "y": 660,
+      "w": 390,
+      "h": 64
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "ol.gift-list.row.medium-up-2",
+     "rect": {
+      "x": 0,
+      "y": 724,
+      "w": 390,
+      "h": 350.5
+     },
+     "position": "relative",
+     "display": "flex"
+    },
+    {
+     "node": "div#gifts.giftz.row.single-giftz",
+     "rect": {
+      "x": 10,
+      "y": 780,
+      "w": 370,
+      "h": 294.5
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "ol#Australia.gift-list.row.small-up-1",
+     "rect": {
+      "x": 0,
+      "y": 1142.5,
+      "w": 390,
+      "h": 4244.5
+     },
+     "position": "relative",
+     "display": "flex"
+    },
+    {
+     "node": "ol#Hawaii.gift-list.row.small-up-1",
+     "rect": {
+      "x": 0,
+      "y": 5455,
+      "w": 390,
+      "h": 4897.5
+     },
+     "position": "relative",
+     "display": "flex"
+    },
+    {
+     "node": "ul",
+     "rect": {
+      "x": 24,
+      "y": 370,
+      "w": 342,
+      "h": 132
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "ul",
+     "rect": {
+      "x": 24,
+      "y": 660,
+      "w": 342,
+      "h": 90
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "fixed": [
+    {
+     "node": "div.top-registry-sample-banner",
+     "rect": {
+      "x": 0,
+      "y": 780,
+      "w": 390,
+      "h": 64
+     },
+     "position": "fixed",
+     "display": "block",
+     "zIndex": "999999999"
+    },
+    {
+     "node": "div.toggle-dd.gift-filter.reduce-px",
+     "rect": {
+      "x": 24,
+      "y": 700,
+      "w": 342,
+      "h": 56
+     },
+     "position": "sticky",
+     "display": "block",
+     "zIndex": "999999"
+    },
+    {
+     "node": "nav#navmenu.show-for-small-only.mobile-menu.mobile-menu-hidden",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844
+     },
+     "position": "fixed",
+     "display": "block",
+     "zIndex": "999999999"
+    },
+    {
+     "node": "iframe",
+     "rect": {
+      "x": 0,
+      "y": 15050.2,
+      "w": 390,
+      "h": 1
+     },
+     "position": "fixed",
+     "display": "block"
+    },
+    {
+     "node": "div.grecaptcha-badge",
+     "rect": {
+      "x": 320,
+      "y": 770,
+      "w": 256,
+      "h": 60
+     },
+     "position": "fixed",
+     "display": "block"
+    }
+   ],
+   "scrollers": [],
+   "dialogs": []
+  }
+ }
+}
