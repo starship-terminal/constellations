@@ -1506,6 +1506,14 @@
     "reason": "catalog.json describes Microsoft's Clipchamp video editor: marketing pages for the browser video editor, templates, stock library, pricing tiers and an education/work surface."
   },
   {
+    "referenceId": "systems:gumroad",
+    "groupId": "web-categories",
+    "labels": [
+      "Marketplace"
+    ],
+    "reason": "catalog.json describes a digital-products marketplace: the Discover browse grid with category pills and product cards, a creator subdomain product page with tier pricing, a public checkout form and the signed-out login/signup edge."
+  },
+  {
     "referenceId": "systems:grow",
     "groupId": "web-categories",
     "labels": ["Education"],

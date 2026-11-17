@@ -15321,6 +15321,111 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/625",
     "durationNote": "wall-clock across the capture session including reachability probes, kit adaptation, the two-surface stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "gumroad",
+   "name": "Gumroad",
+   "url": "https://gumroad.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "marketplace design: a declared Tailwind v4 token layer of --pink/--purple/--green/--orange/--red/--yellow brand colours, semantic roles as RGB channel triplets (--accent #ff90e8, --primary, --filled, --success/--warning/--danger/--info and --contrast-* partners), a real prefers-color-scheme:dark theme (--body-bg #f4f4f0->#242423, --border-alpha 1->0.35, no in-page toggle), 1px black borders with 4px-radius cards and hard 4px offset shadows, --spacer-1..8, ABC Favorit on a --text-xs..9xl ramp, a bordered hero header with category pills, a Discover grid of bordered product cards with pink price flags and a featured carousel, a product page with tier card and billing-term select, auth cards and a public checkout form",
+   "tags": [
+    "web",
+    "marketplace",
+    "e-commerce",
+    "digital-products",
+    "creator",
+    "storefront",
+    "checkout",
+    "pricing",
+    "search",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public gumroad.com or a public creator subdomain; the seller dashboard, buyer library and settings stayed behind login; the public checkout was captured empty and never submitted; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the carousel arrow, the nav menu button, the Share popover, the billing-term select)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/gumroad/README.md",
+   "tokens": "systems/gumroad/tokens.json",
+   "styleGuide": "systems/gumroad/style-guide.html",
+   "preview": {
+    "cover": "systems/gumroad/screenshots/home-light-default.png",
+    "icon": "systems/gumroad/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.ground.bodyBg",
+      "surface": "light.component.card.bg",
+      "text": "light.role.primary",
+      "muted": "light.role.muted",
+      "accent": "core.color.brand.pink",
+      "border": "light.role.border"
+     },
+     "dark": {
+      "page": "dark.ground.bodyBg",
+      "surface": "dark.component.card.bg",
+      "text": "dark.role.primary",
+      "muted": "dark.role.muted",
+      "accent": "core.color.brand.pink",
+      "border": "dark.role.border"
+     }
+    },
+    "fonts": [
+     "core.font.family.product"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/gumroad/raw-shots (full-colour unmasked captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "gumroad.com and ichigo.gumroad.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (198 rules, 4 @font-face, 189 resolved custom properties per profile - the main site's light/dark and the product subdomain's light-pinned pair kept apart). The site declares color-scheme light dark and repaints under @media (prefers-color-scheme:dark) - emulation verified against the painted surface; the product subdomain pins a light palette and does not repaint. BOUNDARY: the seller dashboard, buyer library, payouts and settings stayed signed out; the public checkout was captured empty and never submitted",
+    "timestamp": "2026-11-17T05:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "gumroad.com/",
+     "gumroad.com/discover",
+     "gumroad.com/design (category)",
+     "gumroad.com/features",
+     "gumroad.com/pricing",
+     "gumroad.com/about",
+     "gumroad.com/blog",
+     "gumroad.com/gumclaw",
+     "gumroad.com/help",
+     "gumroad.com/terms",
+     "gumroad.com/login",
+     "gumroad.com/signup",
+     "ichigo.gumroad.com/l/ichigo-reader (product page)",
+     "ichigo.gumroad.com/ (creator profile)",
+     "gumroad.com/checkout?product=... (public checkout, captured empty)",
+     "verified prefers-color-scheme:dark repaints on the landing, Discover, category, features, pricing, help, login and signup",
+     "the Discover featured-products carousel, the phone nav menu, the product Share popover, the Monthly->Yearly billing-term switch and the empty checkout form as transient states"
+    ],
+    "gaps": [
+     "post-login surfaces: the seller dashboard (products, sales, payouts, analytics), the buyer library and account settings were never reached - the capture was signed out end to end",
+     "product/creator dark: the subdomain's inline :root styles pin a light palette over the shared sheet, so no dark product page exists - recorded as observed behaviour, not a theme",
+     "search results: the marketplace search fields were measured empty; no query was ever submitted",
+     "checkout beyond the empty public form: payment, confirmation and post-purchase screens were never reached",
+     "the ABC Favorit face is served from assets.gumroad.com and is not shipped in the package; crops show it, the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; discover-load-more and product-buy pressed reads failed at the CDP layer",
+     "prefers-reduced-motion is partially honoured (3 of 185 moving elements removed) - see raw/motion.json",
+     "the Discover grid lazy-loads, so -full captures are bounded at eight chunks; anything past the bound is absent rather than scrolled"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass, the icon/motion/layout probes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/627"
+   }
   }
  ]
 }
