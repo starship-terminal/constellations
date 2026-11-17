@@ -128,10 +128,17 @@ export async function seedNewCuratedCategories(
   }
 }
 
-/** The media side of v6; a labelled media pair is never touched again. */
+/** The media side of v6; a labelled media pair is never touched again.
+ * `onlyMediaIds` narrows the top-up further, to specific media files — used
+ * when the seed gained rows for an already-released reference: seeding the
+ * whole reference again would resurrect labels a user cleared on the media
+ * that shipped with the earlier version, but brand-new media IDs cannot have
+ * been cleared, so topping up just those IDs is safe.
+ */
 export async function seedNewCuratedMediaTerms(
   tx: Transaction,
   onlyReferences?: ReadonlySet<string>,
+  onlyMediaIds?: ReadonlySet<string>,
 ) {
   const { default: seed } = await import("@/data/media-taxonomy.json");
   const known = new Set(
@@ -149,6 +156,7 @@ export async function seedNewCuratedMediaTerms(
   const entries = seed.assignments.flatMap((assignment) => {
     if (onlyReferences && !onlyReferences.has(assignment.referenceId))
       return [];
+    if (onlyMediaIds && !onlyMediaIds.has(assignment.mediaId)) return [];
     if (labeled.has(`${assignment.referenceId}${assignment.mediaId}`))
       return [];
     return assignment.terms
