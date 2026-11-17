@@ -1535,5 +1535,13 @@
       "Project Management"
     ],
     "reason": "catalog.json describes Hello Ivy, a project-management tool for interior designers: projects, clients, files and feedback across the marketing site, the app login boundary and the public share document."
+    },
+    {
+    "referenceId": "systems:cohere",
+    "groupId": "web-categories",
+    "labels": [
+      "AI Tool"
+    ],
+    "reason": "catalog.json describes Cohere's enterprise AI platform marketing site: the Command/North product pages, per-model pricing rate table, models overview, developer and customer-story surfaces, legal pages and the dashboard.cohere.com sign-in boundary."
   }
 ]
