@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 177,
-    "system_domains": 168,
-    "matched_domains": 138,
-    "missing_domains": 295,
+    "system_packages": 179,
+    "system_domains": 170,
+    "matched_domains": 140,
+    "missing_domains": 293,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2270,6 +2270,40 @@
         }
       ]
     },
+    "gumroad.com": {
+      "catalog": [
+        {
+          "name": "Gumroad",
+          "domain": "gumroad.com",
+          "id": 296
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gumroad",
+          "name": "Gumroad",
+          "url": "https://gumroad.com",
+          "name_match": true
+        }
+      ]
+    },
+    "hashnode.com": {
+      "catalog": [
+        {
+          "name": "Hashnode",
+          "domain": "hashnode.com",
+          "id": 194
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hashnode",
+          "name": "Hashnode",
+          "url": "https://hashnode.com",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2586,20 +2620,6 @@
         "name": "Grow with Google",
         "domain": "grow.google",
         "id": 294
-      }
-    ],
-    "gumroad.com": [
-      {
-        "name": "Gumroad",
-        "domain": "gumroad.com",
-        "id": 296
-      }
-    ],
-    "hashnode.com": [
-      {
-        "name": "Hashnode",
-        "domain": "hashnode.com",
-        "id": 194
       }
     ],
     "hbomax.com": [

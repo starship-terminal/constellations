@@ -1491,6 +1491,12 @@
     "reason": "catalog.json describes the xAI/Grok developer documentation portal: quickstart and model docs, API reference, token pricing tables, rate limits, release notes, a cmdK search surface and the Grok help section."
   },
   {
+    "referenceId": "systems:hashnode",
+    "groupId": "web-categories",
+    "labels": ["Social Networking", "Development Tools"],
+    "reason": "catalog.json describes Hashnode's signed-out developer-blogging product: the marketing pages, public feed and post cards, public profiles and posts, Pro pricing, the agents install page, changelog, hackathons and brand surfaces, plus the Town Hall hosted-blog engine's index/article/archive."
+  },
+  {
     "referenceId": "systems:clipchamp",
     "groupId": "web-categories",
     "labels": [
@@ -1498,6 +1504,14 @@
       "Productivity"
     ],
     "reason": "catalog.json describes Microsoft's Clipchamp video editor: marketing pages for the browser video editor, templates, stock library, pricing tiers and an education/work surface."
+  },
+  {
+    "referenceId": "systems:gumroad",
+    "groupId": "web-categories",
+    "labels": [
+      "Marketplace"
+    ],
+    "reason": "catalog.json describes a digital-products marketplace: the Discover browse grid with category pills and product cards, a creator subdomain product page with tier pricing, a public checkout form and the signed-out login/signup edge."
   },
   {
     "referenceId": "systems:cofounder",
