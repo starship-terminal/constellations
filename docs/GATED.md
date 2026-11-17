@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -738,6 +738,13 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Huddlekit](../systems/huddlekit) — `huddlekit`
+Access: signed out (every captured surface is public: the huddlekit.com marketing site and app.huddlekit.com/login, the only surface the app serves anonymously; everything past /login 307-redirects an anonymous visitor and was never entered; Google OAuth and the email form's Continue were never submitted; try./demo./status./docs./help.huddlekit.com and app.huddlekit.io do not resolve - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the consent banner's Decline, the nav menus, FAQ and tab rows, the billing switch, Show-more, the email reveal, the phone's menu button)
+- the signed-in product (everything on app.huddlekit.com past /login - the annotation widget on a real site, the project dashboard, workspaces, settings, billing) is a boundary: the Sign in / Get started links were measured, never followed
+- huddlekit.com has no theme control: the dark token set is the .dark re-pointed declarations the app paints under prefers-color-scheme (verified on the login), and the site's dark footer/testimonial/MCP panels are component-level surfaces, not a page theme
+- no field was ever typed into (support search, contrast-checker inputs, the login email field were focused only), so validation, suggestion and error states are uncaptured; the email Continue and Google OAuth were never submitted
+- prefers-reduced-motion is only partly honoured - /pricing, /features and the login ignore it and the marquee/ping loops keep running; the probe's per-page verdicts are in raw/motion.json
 
 ## Gate noted in access text only
 

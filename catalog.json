@@ -16372,6 +16372,111 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/635",
     "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "huddlekit",
+   "name": "Huddlekit",
+   "url": "https://huddlekit.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "design-feedback / website-annotation product design across two surfaces on one Tailwind v4 + shadcn-style token layer: huddlekit.com's signed-out marketing site (announcement bar, sticky header with hover-open Solutions/Resources fly-outs, a warm --color-page wash #f6f3f2, hero + feature-tab demos, a dark testimonial wall behind a Show-more toggle, plan-card pricing with a billing switch, FAQ accordions, a giant-wordmark dark footer) plus app.huddlekit.com/login, the only anonymous app surface (a square login card, orange 'Continue with Google', the 'Continue with email' reveal, a pill email field). Semantic roles --background/--foreground, --card/-popover/-primary/-secondary/-muted/-accent(+foregrounds), --destructive, --border/--input/--ring #ff6900, --upgrade #7357ff pro purple, --sidebar-*, --chart-1..5, --canvas, --mode-glow-strength, --color-primary-dark, --scroll-mask-*; --radius .75rem + --radius-xs..2xl, --spacing, --container-*, --section-*/--card-gap; the --text-xs..7xl ramp with --leading-*/--tracking-*; next/font --font-sans Inter + --font-geist-mono; --ease-*/--animate-*/--default-transition-* motion vars. Light-only site with nested .dark panels; the app paints html.dark under prefers-color-scheme",
+   "tags": [
+    "web",
+    "feedback",
+    "annotation",
+    "design-tools",
+    "agency",
+    "collaboration",
+    "marketing",
+    "pricing",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed out (every captured surface is public: the huddlekit.com marketing site and app.huddlekit.com/login, the only surface the app serves anonymously; everything past /login 307-redirects an anonymous visitor and was never entered; Google OAuth and the email form's Continue were never submitted; try./demo./status./docs./help.huddlekit.com and app.huddlekit.io do not resolve - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the consent banner's Decline, the nav menus, FAQ and tab rows, the billing switch, Show-more, the email reveal, the phone's menu button)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/huddlekit/README.md",
+   "tokens": "systems/huddlekit/tokens.json",
+   "styleGuide": "systems/huddlekit/style-guide.html",
+   "preview": {
+    "cover": "systems/huddlekit/screenshots/home-light-default.png",
+    "icon": "systems/huddlekit/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.root.background",
+      "surface": "light.card.default",
+      "text": "light.root.foreground",
+      "muted": "light.muted.foreground",
+      "accent": "light.primary.default",
+      "border": "light.border.default"
+     },
+     "dark": {
+      "page": "dark.root.background",
+      "surface": "dark.card.default",
+      "text": "dark.root.foreground",
+      "muted": "dark.muted.foreground",
+      "accent": "dark.primary.default",
+      "border": "dark.border.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.geistMono",
+     "core.font.family.mono"
+    ]
+   },
+   "source": "capture",
+   "capture": {
+    "method": "public-web",
+    "source": "huddlekit.com and app.huddlekit.com/login in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a two-surface stylesheet harvest (558 rules, 25 @font-face, 154 light + 154 dark resolved custom properties in a probe carrying the live pages' own next/font classes). huddlekit.com paints light only - its .dark rules re-point the same names inside nested panels (footer, dark testimonials, the MCP card), never on <html>; app.huddlekit.com paints html.dark + data-theme=dark under prefers-color-scheme, so dark evidence is the emulated OS-preference path verified against the painted login. Computed colours come back oklch()/oklab() and are converted to the painted sRGB values (CSS Color 4). Full-page shots are bounded at eight chunks; mobile pages taller than one GPU texture are stitched from part tiles with rebuilt sidecars. BOUNDARY: everything past /login (the annotation widget, dashboard, workspaces, billing) was never entered; Google OAuth and the email Continue were never submitted; try./demo./status./docs./help. hosts and app.huddlekit.io are NXDOMAIN",
+    "timestamp": "2026-11-18T03:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "huddlekit.com/ (+ consent banner, Solutions/Resources menus, FAQ, feature tab, testimonials Show-more)",
+     "huddlekit.com/features",
+     "huddlekit.com/agencies",
+     "huddlekit.com/customers + /customers/leadfront",
+     "huddlekit.com/pricing (+ billing switch, FAQ)",
+     "huddlekit.com/integrations + /integrations/linear",
+     "huddlekit.com/compare + /compare/pastel-alternative",
+     "huddlekit.com/mcp",
+     "huddlekit.com/manifesto",
+     "huddlekit.com/blog + /blog/introducing-huddlekit",
+     "huddlekit.com/support + /support/getting-started",
+     "huddlekit.com/tools + /tools/color-contrast-checker",
+     "huddlekit.com/contact",
+     "huddlekit.com/privacy",
+     "app.huddlekit.com/login (light + prefers-color-scheme dark, consent, 'Continue with email' reveal)",
+     "verified dark repaints of the login only (the marketing site has no theme control; its .dark panels are component surfaces measured at rest)",
+     "390px passes on home (+ nav drawer), pricing, the contrast checker and the login",
+     "BLOCKED: app.huddlekit.com past /login (307 to /login, never entered), Google OAuth and email submit (never pressed), try./demo./status./docs./help. hosts + app.huddlekit.io (NXDOMAIN)"
+    ],
+    "gaps": [
+     "the signed-in product (everything on app.huddlekit.com past /login - the annotation widget on a real site, the project dashboard, workspaces, settings, billing) is a boundary: the Sign in / Get started links were measured, never followed",
+     "try./demo./status./docs./help.huddlekit.com and app.huddlekit.io do not resolve (NXDOMAIN from the capture host, 2026-11-17) - documented boundaries",
+     "huddlekit.com has no theme control: the dark token set is the .dark re-pointed declarations the app paints under prefers-color-scheme (verified on the login), and the site's dark footer/testimonial/MCP panels are component-level surfaces, not a page theme",
+     "no field was ever typed into (support search, contrast-checker inputs, the login email field were focused only), so validation, suggestion and error states are uncaptured; the email Continue and Google OAuth were never submitted",
+     "the consent banner's Accept was never pressed (Decline dismissed it once); copy-to-clipboard and sign-up CTAs were measured, never pressed",
+     "the sitemap's ~140 URLs are covered by one instance per differing template (one blog article of 12, one compare page of 16, one support article of ~40, one integration of 8, one case study of 2, one tool of ~30; /privacy stands in for /terms and /dpa, /agencies for /freelancers, /product-teams, /qa-teams)",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "prefers-reduced-motion is only partly honoured - /pricing, /features and the login ignore it and the marquee/ping loops keep running; the probe's per-page verdicts are in raw/motion.json",
+     "the Inter and Geist Mono faces are next/font-licensed and not shipped; crops show them, the style guide falls back to system fonts"
+    ],
+    "durationMin": 180,
+    "durationNote": "wall-clock across the capture sessions including the probes, the kit adaptation, the two-surface stylesheet harvest, the screenshot and measurement passes, the icon collection and the offline build"
+   }
   }
  ]
 }

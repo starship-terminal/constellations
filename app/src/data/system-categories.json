@@ -1609,5 +1609,14 @@
    "Marketplace"
   ],
   "reason": "catalog.json describes a honeymoon cash-gift registry: the closure-notice home, marketing content pages (blog, destination trips, guides), the signed-out auth forms at rest and the public demo registry where guests fund a couple's listed gifts."
+ },
+ {
+  "referenceId": "systems:huddlekit",
+  "groupId": "web-categories",
+  "labels": [
+   "Collaboration Tools",
+   "Design & Media Editing"
+  ],
+  "reason": "catalog.json describes Huddlekit's signed-out visual-annotation product for website feedback: the marketing site (features, solutions, pricing, integrations, compare, MCP, blog, support, free design tools) plus the app's anonymous login surface."
  }
 ]
