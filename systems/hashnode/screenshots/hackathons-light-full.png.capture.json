@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:53:41.224Z",
+  "capturedAt": "2026-11-17T06:16:34.916Z",
   "screenshot": "hackathons-light-full.png",
   "sanitizedSourceUrl": "https://hashnode.com/hackathons",
   "requested": {
@@ -35,7 +35,7 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1516,
+      "width": 1440,
       "height": 1920
     },
     "scroll": {
@@ -49,13 +49,13 @@
     "clip": null
   },
   "png": {
-    "width": 1516,
+    "width": 1440,
     "height": 1920
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1516,
+      "width": 1440,
       "height": 1920
     },
     "basis": "fullPage"

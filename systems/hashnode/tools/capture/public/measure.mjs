@@ -68,6 +68,7 @@ let page, cdp, context, current;
 // ---------- state drivers ----------
 
 async function reset() {
+  await page.keyboard.press('Escape').catch(() => {});
   await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
   const vw = page.viewportSize()?.width ?? 1440;
   await page.mouse.move(vw - 2, 2);
@@ -85,6 +86,39 @@ async function kbFocus(loc) {
   await page.keyboard.press('Shift+Tab');
   await page.keyboard.press('Tab');
   await page.waitForTimeout(400);
+  // The attempt is only evidence when focus really came back to the element
+  // and paints the :focus-visible ring — anything else is a resting reading,
+  // recorded under the "focus failed" via rather than claimed as a state.
+  return await loc.evaluate((el) => {
+    const ae = document.activeElement;
+    const held = ae === el || el.contains(ae);
+    let ring = false;
+    try { ring = Boolean((ae && ae.matches(':focus-visible')) || el.matches(':focus-visible')); } catch { /* unpierceable */ }
+    return { held, ring };
+  }).catch(() => ({ held: false, ring: false }));
+}
+
+// Pick one element out of a selector's matches inside the page — marks the
+// winner with data-m-mark="<tag>" and returns a locator for it. score(el, r,
+// cs) returns a number, lowest wins; return Infinity to skip a match.
+async function pick(p, sel, score, tag = 'pk') {
+  const ok = await p.evaluate(([s, t, src]) => {
+    document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
+    const fn = new Function('el', 'r', 'cs', `return (${src})(el, r, cs)`);
+    let best = null, bestV = Infinity;
+    for (const el of document.querySelectorAll(s)) {
+      const r = el.getBoundingClientRect();
+      if (!r.width || !r.height) continue;
+      const cs = getComputedStyle(el);
+      if (cs.visibility === 'hidden' || cs.opacity === '0') continue;
+      const v = fn(el, r, cs);
+      if (v < bestV) { bestV = v; best = el; }
+    }
+    if (!best) return false;
+    best.setAttribute('data-m-mark', t);
+    return true;
+  }, [sel, tag, score.toString()]);
+  return ok ? p.locator(`[data-m-mark="${tag}"]`) : p.locator('[data-m-mark="__none__"]');
 }
 
 // CSS.forcePseudoState through CDP: the press never happens, so no link can
@@ -115,7 +149,7 @@ const MENU_LINK = 'a[class*="peer/menu-button"]';
 const CHROME = [
   { key: 'app-sidebar', group: 'App chrome', title: 'App sidebar',
     desc: 'The left sidebar (bg-sidebar): logo, Home/Feed/Pro/Agents nav links, the Search / Theme / More menu buttons, sidebar footer with the resource links and the Sign-in link.',
-    sel: SIDEBAR, find: (p) => p.locator(SIDEBAR).first(), states: ['default', 'dark'] },
+    sel: SIDEBAR, find: (p) => p.locator('div[class~="bg-sidebar"]').first(), states: ['default', 'dark'] },
   { key: 'app-nav-link', group: 'App chrome', title: 'Sidebar nav link',
     desc: 'A primary nav link in the sidebar ("Feed"), a peer/menu-button row.',
     sel: MENU_LINK, find: (p) => p.locator(MENU_LINK).filter({ hasText: /feed/i }).first(), states: ['default', 'hover', 'focus-visible'] },
@@ -138,7 +172,12 @@ const CHROME = [
         await loc.click({ timeout: 4000 }).catch(() => {});
         await page.waitForTimeout(900);
       } },
-      { name: 'opened-menu', via: 'the open Light / Dark / System menu, read off [role="menuitem"]', fn: async () => {} },
+      { name: 'opened-menu', via: 'the open Light / Dark / System menu — Theme pressed, the painted [role="menu"] itself read; reset closes it with Escape', fn: async (loc) => {
+        await loc.click({ timeout: 4000 }).catch(() => {});
+        await page.waitForTimeout(900);
+        const m = page.locator('[role="menu"], [role="listbox"]').filter({ visible: true }).last();
+        return (await m.count()) ? m : null;
+      } },
     ] },
   { key: 'app-more-menu', group: 'App chrome', title: '"More" menu button',
     desc: 'The "More" menu-button (carries a "New" badge) opening the overflow nav menu. "opened" is its own press, closed with Escape.',
@@ -162,7 +201,12 @@ const FEED = [
     sel: 'article', find: (p) => p.locator('article').filter({ visible: true }).first(), states: ['default', 'dark'] },
   { key: 'post-title-link', group: 'Feed', title: 'Post title link',
     desc: 'The post\'s title inside a feed card — the card\'s main link.',
-    sel: 'article a (heading)', find: (p) => p.locator('article').first().locator('a').filter({ visible: true }).filter({ hasText: /\w{4}/ }).first(), states: ['default', 'hover', 'focus-visible'] },
+    sel: 'article a (title)', find: async (p) => await pick(p, 'article:first-of-type a', (el) => {
+      const href = el.getAttribute('href') || '';
+      if (href.startsWith('/@') || href.startsWith('#')) return Infinity;
+      const t = (el.innerText || '').trim();
+      return t.length >= 8 ? -t.length : Infinity;   // the longest non-author link is the title
+    }, 'ptl'), states: ['default', 'hover', 'focus-visible'] },
   { key: 'post-upvote', group: 'Feed', title: 'Upvote button',
     desc: 'The upvote action under a feed card (aria-label "Upvote"): count + arrow icon — measured, never pressed.',
     sel: 'article button[aria-label*="Upvote" i]', find: (p) => p.locator('article button[aria-label*="Upvote" i]').filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible', 'pressed'] },
@@ -216,7 +260,12 @@ const PROFILE = [
 const PRO = [
   { key: 'pro-plan-card', group: 'Pro', title: 'Plan card',
     desc: 'A Pro / Growth pricing card on /pro.',
-    sel: '[class*="card"], article, section [class*="rounded"]', find: (p) => p.locator('a[href*="/pro"], [class*="pro-"]').filter({ visible: true }).first(), states: ['default'] },
+    sel: 'main box (priced plan)', find: async (p) => await pick(p, 'main div, main section, main article', (el, r) => {
+      if (r.width < 200 || r.width > 720) return Infinity;
+      const t = el.innerText || '';
+      if (!/\$\s*\d/.test(t) || !/mo(?:nth)?\b|year/i.test(t)) return Infinity;
+      return el.querySelectorAll('*').length;   // the smallest box holding a price is the card, not the page or a nav link
+    }, 'ppc'), states: ['default'] },
   { key: 'pro-cta', group: 'Pro', title: '"Get Pro" CTA',
     desc: 'A plan call-to-action ("Get Pro, $5 a month") — links to /login, measured never followed.',
     sel: 'a (text Get Pro)', find: async (p) => await domFind(p, /get pro/i, { sel: 'a', tag: 'pc', minW: 80 }), states: ['default', 'hover', 'focus-visible'] },
@@ -289,7 +338,7 @@ const TH_CHROME = [
     sel: 'header', find: (p) => p.locator('header').first(), states: ['default', 'dark'] },
   { key: 'th-nav', group: 'Blog chrome', title: 'Main navigation pill',
     desc: 'The centred pill nav (bg-surface, rounded-full border) holding the publication\'s nav links.',
-    sel: 'nav[aria-label="Main navigation"]', find: (p) => p.locator('nav[aria-label="Main navigation"]').first(), states: ['default'] },
+    sel: 'nav[aria-label="Main navigation"] [class*="rounded-full"]', find: (p) => p.locator('nav[aria-label="Main navigation"] [class*="rounded-full"], nav[aria-label="Main navigation"] [class*="bg-surface"]').filter({ visible: true }).first(), states: ['default'] },
   { key: 'th-nav-link', group: 'Blog chrome', title: 'Nav link',
     desc: 'A nav item in the pill ("News 📰"), hover:bg-background.',
     sel: 'nav[aria-label="Main navigation"] a', find: (p) => p.locator('nav[aria-label="Main navigation"] a').filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible'] },
@@ -336,7 +385,7 @@ const TH_PROSE = [
   { key: 'th-prose-h2', group: 'Blog prose', title: 'Section heading (h2)',
     desc: 'An in-article heading.', sel: 'main h2', find: (p) => p.locator('main h2').filter({ visible: true }).first(), states: ['default'] },
   { key: 'th-prose-p', group: 'Blog prose', title: 'Body paragraph',
-    desc: 'A paragraph of article prose (text-reading).', sel: 'main p', find: (p) => p.locator('main p').filter({ visible: true }).first(), states: ['default', 'dark'] },
+    desc: 'A paragraph of article prose (text-reading).', sel: 'main p (sentence)', find: (p) => p.locator('main p').filter({ visible: true }).filter({ hasText: /\S+(\s+\S+){7,}/ }).first(), states: ['default', 'dark'] },
   { key: 'th-prose-link', group: 'Blog prose', title: 'Prose link',
     desc: 'A body-text link inside the article.', sel: 'main p a, main li a', find: (p) => p.locator('main :is(p,li) a').filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible'] },
   { key: 'th-code-block', group: 'Blog prose', title: 'Code block',
@@ -505,18 +554,19 @@ for (const [key, g] of Object.entries(GROUPS)) {
       try {
         await reset();
         let viaText = 'resting state';
-        if (st === 'hover') { await hover(loc); viaText = via.hover; }
-        else if (st === 'focus-visible') { await kbFocus(loc); viaText = via['focus-visible']; }
-        else if (st === 'focused') { await loc.click({ timeout: 3000 }).catch(() => loc.evaluate((el) => el.focus())); await page.waitForTimeout(400); viaText = 'the field clicked into'; }
-        else if (st === 'pressed') { pressed = await pressOn(loc); viaText = via.pressed; }
+        let readLoc = loc;
+        if (st === 'hover') { await hover(readLoc); viaText = via.hover; }
+        else if (st === 'focus-visible') { const f = await kbFocus(readLoc); viaText = f && (f.held || f.ring) ? via['focus-visible'] : 'focus failed'; }
+        else if (st === 'focused') { await readLoc.click({ timeout: 3000 }).catch(() => readLoc.evaluate((el) => el.focus())); await page.waitForTimeout(400); viaText = 'the field clicked into'; }
+        else if (st === 'pressed') { pressed = await pressOn(readLoc); viaText = via.pressed; }
         else if (st === 'dark') { if (!(await darkFn(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = isBlog(g.page) ? via.darkblog : via.dark; }
         else if (st === 'darkblog') { if (!(await setBlogTheme(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = via.darkblog; }
-        else if (st && typeof st === 'object' && st.fn) { await st.fn(loc); viaText = st.via || 'reached by the component\'s own UI toggle'; }
-        else if (typeof st === 'function') { await st(loc); viaText = 'reached by the component\'s own UI toggle'; }
-        await centre(loc).catch(() => {});
-        const v = await styleOf(loc);
+        else if (st && typeof st === 'object' && st.fn) { const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
+        else if (typeof st === 'function') { await st(readLoc); viaText = 'reached by the component\'s own UI toggle'; }
+        await centre(readLoc).catch(() => {});
+        const v = await styleOf(readLoc);
         v.via = viaText;
-        v.crop = await crop(page, loc, `${spec.key}-${name}`).catch((e) => { log('  crop failed', spec.key, name, e.message.split('\n')[0]); return undefined; });
+        v.crop = await crop(page, readLoc, `${spec.key}-${name}`).catch((e) => { log('  crop failed', spec.key, name, e.message.split('\n')[0]); return undefined; });
         v.run = new Date().toISOString();
         comp.states[name] = v;
         log(' ', spec.key, name, 'ok');
@@ -530,7 +580,21 @@ for (const [key, g] of Object.entries(GROUPS)) {
         log(' ', spec.key, name, 'FAILED', e.message.split('\n')[0]);
       } finally {
         if (pressed != null) await pressOff(pressed).catch(() => {});
-        if (darkOn) await darkFn(page, 'light').catch(() => {});
+        if (darkOn) {
+          let back = await darkFn(page, 'light').catch(() => false);
+          if (!back) back = await darkFn(page, 'light').catch(() => false);
+          if (!back) {
+            // A failed reset must never leak dark paint into the next
+            // default reading: reload, which restores the html.light boot,
+            // and re-find the element so later states measure the live page.
+            log(' ', spec.key, 'light reset failed — reloading to the light boot');
+            await open(page, url, { wait: 7000 }).catch(() => {});
+            await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
+            if (g.setup) await g.setup(page).catch(() => {});
+            const refound = await spec.find(page).catch(() => null);
+            if (refound && await refound.count()) loc = refound.first();
+          }
+        }
       }
     }
     save();

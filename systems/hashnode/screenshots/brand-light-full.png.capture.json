@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:54:34.103Z",
+  "capturedAt": "2026-11-17T06:17:15.240Z",
   "screenshot": "brand-light-full.png",
   "sanitizedSourceUrl": "https://hashnode.com/brand",
   "requested": {
@@ -35,7 +35,7 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1516,
+      "width": 1440,
       "height": 3008
     },
     "scroll": {
@@ -49,13 +49,13 @@
     "clip": null
   },
   "png": {
-    "width": 1516,
+    "width": 1440,
     "height": 3008
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1516,
+      "width": 1440,
       "height": 3008
     },
     "basis": "fullPage"

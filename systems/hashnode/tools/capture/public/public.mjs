@@ -76,9 +76,15 @@ async function expandScroller(p) {
     if (!sc) return null;
     for (let el = sc; el && el !== document.documentElement; el = el.parentElement) {
       el.setAttribute('data-fp-expand', '1');
+      // flex:none relaxes height but also drops the flex-basis width, letting
+      // the pane grow wider than the viewport — pin the measured border-box
+      // width so the full-page shot keeps the real layout.
+      const w = el.getBoundingClientRect().width;
       for (const prop of ['height', 'max-height', 'min-height']) el.style.setProperty(prop, 'auto', 'important');
       el.style.setProperty('overflow', 'visible', 'important');
       el.style.setProperty('flex', 'none', 'important');
+      el.style.setProperty('box-sizing', 'border-box', 'important');
+      el.style.setProperty('width', `${w}px`, 'important');
     }
     for (const el of [document.body, document.documentElement]) {
       el.setAttribute('data-fp-expand', '1');
@@ -91,7 +97,7 @@ async function expandScroller(p) {
 async function restoreShell(p) {
   await p.evaluate(() => {
     for (const el of document.querySelectorAll('[data-fp-expand]')) {
-      for (const prop of ['height', 'max-height', 'min-height', 'overflow', 'flex']) el.style.removeProperty(prop);
+      for (const prop of ['height', 'max-height', 'min-height', 'overflow', 'flex', 'box-sizing', 'width']) el.style.removeProperty(prop);
       el.removeAttribute('data-fp-expand');
     }
     const sc = document.querySelector('[data-fp-scroller]');

@@ -168,8 +168,17 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 })();
 
 (function elev() {
+  const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
   let e = '';
-  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  // The product's five-level --elevation-* stacks live per theme, not in
+  // core.shadow — render both so the real scale is inspectable.
+  for (const setname of ['light', 'dark']) {
+    const group = flat((TOK[setname] || {}).elevation || {}, setname + '.elevation.');
+    if (!group.length) continue;
+    e += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} elevation</b></div>`;
+    for (const [n, t] of group) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  }
   $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
 })();
 

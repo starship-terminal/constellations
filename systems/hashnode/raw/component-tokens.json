@@ -462,9 +462,9 @@
    "body": {
     "$value": {
      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
-     "fontSize": "12px",
-     "fontWeight": 600,
-     "lineHeight": "16px"
+     "fontSize": "18px",
+     "fontWeight": 400,
+     "lineHeight": "28px"
     },
     "$type": "typography",
     "$description": "article body text — text-reading",
@@ -500,7 +500,7 @@
    },
    "navLink": {
     "$value": {
-     "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+     "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
      "fontSize": "14px",
      "fontWeight": 400,
      "lineHeight": "20px"
@@ -513,7 +513,7 @@
    },
    "button": {
     "$value": {
-     "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+     "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
      "fontSize": "16px",
      "fontWeight": 600,
      "lineHeight": "24px"
@@ -1825,7 +1825,7 @@
   "sidebar": {
    "width": {
     "type": "dimension",
-    "value": "1440px",
+    "value": "64px",
     "source": "measured app-sidebar default on / (app sidebar column)"
    }
   },
@@ -1903,8 +1903,9 @@
    },
    "radius": {
     "type": "dimension",
-    "value": "0px",
-    "source": "measured th-nav default on / (blog pill nav corner)"
+    "value": "9999px",
+    "source": "measured th-nav default on / (blog pill nav corner)",
+    "description": "all four corners measure the full-radius clamp — a pill"
    }
   },
   "blogSearchDialog": {
@@ -1939,7 +1940,7 @@
    "linkHover": {
     "color": {
      "type": "color",
-     "value": "lab(91.8598 -0.149757 -1.88929)",
+     "value": "lab(7.16472 -0.140898 -4.74486)",
      "source": "measured post-title-link hover on / (post title on hover)"
     }
    },

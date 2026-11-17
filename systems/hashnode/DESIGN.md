@@ -158,9 +158,9 @@ typography:
     letterSpacing: "-0.24px"
   body:
     fontFamily: "-apple-system"
-    fontSize: "12px"
-    fontWeight: 600
-    lineHeight: "16px"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "28px"
   bodyLink:
     fontFamily: "-apple-system"
     fontSize: "18px"
@@ -172,12 +172,12 @@ typography:
     fontWeight: 400
     lineHeight: "24px"
   navLink:
-    fontFamily: "-apple-system"
+    fontFamily: "Inter"
     fontSize: "14px"
     fontWeight: 400
     lineHeight: "20px"
   button:
-    fontFamily: "-apple-system"
+    fontFamily: "Inter"
     fontSize: "16px"
     fontWeight: 600
     lineHeight: "24px"

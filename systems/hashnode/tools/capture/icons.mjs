@@ -87,6 +87,16 @@ async function scrollAll(p, tag) {
     }
     return out.slice(0, 3);
   });
+  await grab(p, tag);   // always collect what is already painted
+  if (!scs.length) {
+    // No inner scroller (Town Hall scrolls the document): walk the document
+    // itself so lazily-rendered icons lower on the page still get collected.
+    const h = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
+    for (let y = 0; y < h; y += 700) {
+      await p.evaluate((y) => scrollTo(0, y), y);
+      await wait(p, 220); await grab(p, tag);
+    }
+  }
   for (const h of scs) {
     for (let y = 0; y < h; y += 700) {
       await p.evaluate((y) => { const els = [...document.querySelectorAll('div,main,aside,section,nav')].filter((el) => { const cs = getComputedStyle(el); return (cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight + 100; }); els.forEach((el) => { el.scrollTop = y; }); }, y);

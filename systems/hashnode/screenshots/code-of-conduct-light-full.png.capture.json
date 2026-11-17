@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:56:05.242Z",
+  "capturedAt": "2026-11-17T06:18:41.586Z",
   "screenshot": "code-of-conduct-light-full.png",
   "sanitizedSourceUrl": "https://hashnode.com/code-of-conduct",
   "requested": {
@@ -35,7 +35,7 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1516,
+      "width": 1440,
       "height": 4580
     },
     "scroll": {
@@ -49,13 +49,13 @@
     "clip": null
   },
   "png": {
-    "width": 1516,
+    "width": 1440,
     "height": 4580
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1516,
+      "width": 1440,
       "height": 4580
     },
     "basis": "fullPage"

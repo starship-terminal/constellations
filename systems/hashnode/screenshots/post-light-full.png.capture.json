@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:49:58.496Z",
+  "capturedAt": "2026-11-17T06:12:23.207Z",
   "screenshot": "post-light-full.png",
   "sanitizedSourceUrl": "https://hashnode.com/posts/i-used-to-be-a-magician/6afadee8cd8f659889f399ed",
   "requested": {
@@ -35,7 +35,7 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1516,
+      "width": 1440,
       "height": 1688
     },
     "scroll": {
@@ -49,13 +49,13 @@
     "clip": null
   },
   "png": {
-    "width": 1516,
+    "width": 1440,
     "height": 1688
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1516,
+      "width": 1440,
       "height": 1688
     },
     "basis": "fullPage"

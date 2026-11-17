@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-17T03:59:55.774Z",
+ "capturedAt": "2026-11-17T06:19:35.781Z",
  "screenshot": "mobile-home-light-full.png",
  "sanitizedSourceUrl": "https://hashnode.com/",
  "requested": {
@@ -36,7 +36,7 @@
   },
   "documentSize": {
    "width": 390,
-   "height": 17880
+   "height": 18025
   },
   "scroll": {
    "x": 0,
@@ -50,18 +50,18 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 17880
+   "height": 18025
   }
  },
  "png": {
   "width": 390,
-  "height": 17880
+  "height": 18025
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 390,
-   "height": 17880
+   "height": 18025
   },
   "basis": "stitchedParts"
  },
@@ -95,7 +95,7 @@
    "x": 0,
    "y": 14000,
    "width": 390,
-   "height": 3880
+   "height": 4025
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:48:00.466Z",
+  "capturedAt": "2026-11-17T06:11:33.210Z",
   "screenshot": "feed-light-full.png",
   "sanitizedSourceUrl": "https://hashnode.com/feed",
   "requested": {
@@ -35,7 +35,7 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1516,
+      "width": 1440,
       "height": 4011
     },
     "scroll": {
@@ -49,13 +49,13 @@
     "clip": null
   },
   "png": {
-    "width": 1516,
+    "width": 1440,
     "height": 4011
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1516,
+      "width": 1440,
       "height": 4011
     },
     "basis": "fullPage"

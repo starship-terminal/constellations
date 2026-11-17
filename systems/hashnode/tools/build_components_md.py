@@ -59,17 +59,53 @@ def norm(r, g, b, a=None):
     return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
 
 
+def _lab_okl(c):
+    """CIE lab()/oklab()/oklch() -> '#rrggbb' or 'rgba(...)' for the token
+    lookup, mirroring norm_color() in build_tokens.py."""
+    m = re.fullmatch(r"lab\(\s*([\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s*(?:/\s*([\d.]+%?))?\s*\)", c.strip())
+    if m:
+        L, A, B, a = m.groups()
+        fy = (float(L) + 16) / 116
+        fx, fz = fy + float(A) / 500, fy - float(B) / 200
+        d = 6 / 29
+        f = lambda t: t ** 3 if t > d else 3 * d ** 2 * (t - 4 / 29)
+        x, y, z = f(fx) * 0.96422, f(fy) * 1.0, f(fz) * 0.82521
+        r = 3.1338561 * x - 1.6168667 * y - 0.4906146 * z
+        g = -0.9787684 * x + 1.9161415 * y + 0.0334540 * z
+        b = 0.0719453 * x - 0.2289914 * y + 1.4052427 * z
+        gam = lambda v: 12.92 * v if v <= 0.0031308 else 1.055 * v ** (1 / 2.4) - 0.055
+        r, g, b = (max(0, min(255, round(gam(v) * 255))) for v in (r, g, b))
+        if a is None:
+            return "#%02x%02x%02x" % (r, g, b)
+        al = float(a[:-1]) / 100 if a.endswith("%") else float(a)
+        return "#%02x%02x%02x" % (r, g, b) if al == 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, al)
+    # achromatic oklch()/oklab(): L 0 is black, L 1 is white. Chromium's
+    # computed a/b can be signed or `none`; the tiny chroma these shadows
+    # carry is within a rounding step of the grey L gives.
+    m = re.fullmatch(r"okl(?:ch|ab)\(\s*([\d.]+)\s+(?:none|-?[\d.]+)\s+(?:none|-?[\d.]+)\s*(?:/\s*([\d.]+%?))?\s*\)", c.strip())
+    if m:
+        lvl = round(float(m.group(1)) * 255)
+        a = float(m.group(2) or 1)
+        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
+    return c
+
+
 def colour(c, tokens=True):
-    """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)'."""
+    """rgb()/rgba()/color(srgb)/lab()/oklab()/oklch() -> '#hex `token`' or 'rgba(...)'."""
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
         tok = BY_COLOR.get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
+    # Modern colour functions first: normalize each to sRGB so the hex/RGBA
+    # passes below can attach the token name like any other measured value.
+    c = re.sub(r"(?:lab|oklab|oklch)\([^)]*\)", lambda m: _lab_okl(m.group(0)), c)
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
-    return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+    c = re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+    # Skip hexes a label was already attached to, so the pass is idempotent.
+    return re.sub(r"#[0-9a-fA-F]{6}\b(?!\s*`)", lambda m: label(m.group(0).lower()), c)
 
 
 def sides(t, r, b, l):
@@ -163,13 +199,13 @@ def props(v):
     for pe in ("::before", "::after"):
         if v.get(pe):
             p = v[pe]
-            bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
+            bits.append(" ".join(x for x in (pe, *(colour(p[k], tokens=False) if p.get(k) else None for k in ("backgroundColor", "borderTopWidth", "boxShadow")), p.get("opacity")) if x))
     # A root box-shadow (e.g. the 1px focus ring gained on focus-visible) does
     # not remove the painted children: keep reporting their layers, which is
     # where a state-carrying child outline (the 3px cyan CTA ring) shows up.
     if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
         for p in v.get("paint", [])[:6]:
-            bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
+            bits.append(" ".join(x for x in (p["node"], p.get("size"), *(colour(p[k], tokens=False) if p.get(k) else None for k in ("bg", "border", "shadow", "outline")), p.get("radius")) if x))
     if bits:
         o["layers"] = "; ".join(bits)[:400]
     return o

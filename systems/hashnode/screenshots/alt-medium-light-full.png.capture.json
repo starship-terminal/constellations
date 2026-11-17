@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:55:01.233Z",
+  "capturedAt": "2026-11-17T06:17:35.653Z",
   "screenshot": "alt-medium-light-full.png",
   "sanitizedSourceUrl": "https://hashnode.com/alternatives/medium",
   "requested": {
@@ -35,7 +35,7 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1516,
+      "width": 1440,
       "height": 3623
     },
     "scroll": {
@@ -49,13 +49,13 @@
     "clip": null
   },
   "png": {
-    "width": 1516,
+    "width": 1440,
     "height": 3623
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1516,
+      "width": 1440,
       "height": 3623
     },
     "basis": "fullPage"

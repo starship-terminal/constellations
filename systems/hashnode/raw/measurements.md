@@ -16,24 +16,23 @@ Page: /. Selector: `div[class*="bg-sidebar"]`. States: default, dark.
 
 | Property | default | dark |
 |---|---|---|
-| Size (w x h) | 1440 x 900 | = |
+| Size (w x h) | 64 x 876 | = |
 | Padding | 0px | = |
 | Border | none | = |
-| Radius | 0px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
+| Radius | 28px | = |
+| Background | #f7f8fa | #06070b |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | #000000 @ 0 0px 0px 0px 0px, #e6e8eb @ 0.06 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | Outline | none | = |
-| Font | -apple-system 16px/24px 400 | = |
+| Font | Inter 16px/24px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #13161c | #e6e8eb |
-| Text node | a: -apple-system 16px/24px 400, #13161c | a: -apple-system 16px/24px 400, #e6e8eb |
+| Text node | a: Inter 16px/24px 400, #13161c | a: Inter 16px/24px 400, #e6e8eb |
 | Transition | none | = |
 | Icon | 16 x 16, colour #63666d | 16 x 16, colour #a2a5aa |
 | Painted layers | div.bg-sidebar.group-data-[variant=floating]:border-sidebar-border 64.0x876.0 bg #f7f8fa r 28px shadow #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; button.peer/menu-button.flex 40.0x40.0 bg #ffffff r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.05 0px 1px 2px 0px; kbd.inline-flex.h-5 0.0x0.0 bg #f2f3f6 r 6px; kbd.inline-flex.h-5 0.0x0.0 bg #f2f3f6 r 6px; div.flex.min-h-0 64.0x608.0 image linear-gradient(#f7f8fa 30%, #000000 @ 0), linear-gradient(#000000 @ 0, #f7f8fa 70%), radi; a.peer/menu-button.flex 40.0x40.0 bg #ffffff r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.05 0px 1px 2px 0px | div.bg-sidebar.group-data-[variant=floating]:border-sidebar-border 64.0x876.0 bg #06070b r 28px shadow #000000 @ 0 0px 0px 0px 0px, #e6e8eb @ 0.06 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; button.peer/menu-button.flex 40.0x40.0 bg #15171c r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #272a30 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.3 0px 1px 2px 0px; kbd.inline-flex.h-5 0.0x0.0 bg #191c21 r 6px; kbd.inline-flex.h-5 0.0x0.0 bg #191c21 r 6px; div.flex.min-h-0 64.0x608.0 image linear-gradient(#06070b 30%, #000000 @ 0), linear-gradient(#000000 @ 0, #06070b 70%), radi; a.peer/menu-button.flex 40.0x40.0 bg #15171c r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #272a30 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.3 0px 1px 2px 0px |
-| Ancestor paint | 1 up body.antialiased.bg-background bg #ffffff | 1 up body.antialiased.bg-background bg #0d0f14 |
 | How | resting state | same element after the header Theme menu repaints html.dark |
 
-Crops: none.
+Crops: `app-sidebar-default.png`, `app-sidebar-dark.png`.
 
 #### app-nav-link
 
@@ -51,7 +50,7 @@ Page: /. Selector: `a[class*="peer/menu-button"]`. States: default, hover, focus
 | Background | transparent | #e9ebef | = |
 | Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #1d65c8 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
 | Outline | none | = | = |
-| Font | -apple-system 14px/20px 400 | = | = |
+| Font | Inter 14px/20px 400 | = | = |
 | Letter spacing | normal | = | = |
 | Colour | #13161c | = | = |
 | Transition | width, height, padding, color 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = | = |
@@ -78,7 +77,7 @@ Page: /. Selector: `a[class*="peer/menu-button"]`. States: default.
 | Background | #ffffff |
 | Box shadow | #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.05 0px 1px 2px 0px |
 | Outline | none |
-| Font | -apple-system 14px/20px 600 |
+| Font | Inter 14px/20px 600 |
 | Letter spacing | normal |
 | Colour | #13161c |
 | Transition | width, height, padding, color 0.15s cubic-bezier(0.16, 1, 0.3, 1) |
@@ -105,7 +104,7 @@ Page: /. Selector: `button (text Toggle Sidebar)`. States: default, hover, opene
 | Background | transparent | #e9ebef | - |
 | Box shadow | none | = | - |
 | Outline | none | = | - |
-| Font | -apple-system 14px/20px 600 | = | - |
+| Font | Inter 14px/20px 600 | = | - |
 | Letter spacing | normal | = | - |
 | Colour | #63666d | #13161c | - |
 | Transition | all 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = | - |
@@ -134,10 +133,10 @@ Page: /. Selector: `button[class*="peer/menu-button"] (text Search)`. States: de
 | Background | #ffffff | = | = |
 | Box shadow | #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.05 0px 1px 2px 0px | = | #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #1d65c8 0px 0px 0px 2px, #13161c @ 0.05 0px 1px 2px 0px |
 | Outline | none | = | = |
-| Font | -apple-system 14px/20px 400 | = | = |
+| Font | Inter 14px/20px 400 | = | = |
 | Letter spacing | normal | = | = |
 | Colour | #63666d | = | = |
-| Text node | span: -apple-system 14px/20px 400, #63666d | = | = |
+| Text node | span: Inter 14px/20px 400, #63666d | = | = |
 | Transition | width, height, padding, color 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = | = |
 | Cursor | default | = | = |
 | Icon | 18 x 18, colour #63666d | 18 x 18, colour #13161c | = |
@@ -154,22 +153,23 @@ Page: /. Selector: `button[class*="peer/menu-button"] (text Theme)`. States: def
 
 | Property | default | opened | opened-menu |
 |---|---|---|---|
-| Size (w x h) | 97.33 x 32 | = | = |
-| Padding | 8px 12px | = | = |
-| Gap | 10px | = | = |
-| Border | none | = | = |
-| Radius | 3.35544e+07px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
+| Size (w x h) | 99 x 32 | = | 300 x 120 |
+| Padding | 8px 12px | = | 6px |
+| Gap | 10px | = | - |
+| Border | none | = | 1px solid #e2e4e8 |
+| Radius | 3.35544e+07px | = | 12px |
+| Background | transparent | = | #ffffff |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px |
 | Outline | none | = | = |
-| Font | -apple-system 14px/20px 400 | = | = |
+| Font | Inter 14px/20px 400 | = | Inter 16px/24px 400 |
 | Letter spacing | normal | = | = |
 | Colour | #13161c | = | = |
-| Text node | span: -apple-system 14px/20px 400, #13161c | = | = |
-| Transition | width, height, padding, color 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = | = |
-| Cursor | default | = | = |
-| Icon | 18 x 18, colour #63666d | = | = |
-| How | resting state | the "Theme" button's own press (menu open; Escape restores) | the open Light / Dark / System menu, read off [role="menuitem"] |
+| Text node | span: Inter 14px/20px 400, #13161c | = | span.flex.items-center: Inter 14px/20px 400, #13161c |
+| Transition | width, height, padding, color 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = | none |
+| Cursor | default | = | - |
+| Icon | 18 x 18, colour #63666d | = | 16 x 16, colour #13161c |
+| How | resting state | the "Theme" button's own press (menu open; Escape restores) | the open Light / Dark / System menu — Theme pressed, the painted [role="menu"] itself read; reset closes it with Escape |
+| Painted layers | - | = | div.bg-popover.text-popover-foreground 300.0x120.0 bg #ffffff border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px; div.focus:bg-accent.focus:text-accent-foreground 90.0x98.0 bg #e9ebef r 8px; span.light.flex 78.0x58.0 bg #f7f8fa r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; span.h-1.5.w-10 40.0x6.0 bg #ced1d6 r 6px; span.flex-1.rounded-sm 62.0x32.0 bg #ffffff r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; span.dark.flex 78.0x58.0 bg #0d0f14 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #272a30 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
 
 Crops: `app-theme-button-default.png`, `app-theme-button-opened.png`, `app-theme-button-opened-menu.png`.
 
@@ -181,22 +181,22 @@ Page: /. Selector: `button[class*="peer/menu-button"] (text More)`. States: defa
 
 | Property | default | hover | opened |
 |---|---|---|---|
-| Size (w x h) | 130.67 x 32 | = | = |
+| Size (w x h) | 129 x 32 | = | = |
 | Padding | 8px 12px | = | = |
 | Gap | 10px | = | = |
 | Border | none | = | = |
 | Radius | 3.35544e+07px | = | = |
-| Background | transparent | = | = |
+| Background | transparent | #e9ebef | = |
 | Box shadow | none | = | = |
 | Outline | none | = | = |
-| Font | -apple-system 14px/20px 400 | = | = |
+| Font | Inter 14px/20px 400 | = | = |
 | Letter spacing | normal | = | = |
 | Colour | #13161c | = | = |
-| Text node | span: -apple-system 14px/20px 400, #13161c | = | = |
+| Text node | span: Inter 14px/20px 400, #13161c | = | = |
 | Transition | width, height, padding, color 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = | = |
 | Cursor | default | = | = |
-| Icon | 16 x 16, colour #63666d | = | = |
-| Painted layers | span.absolute.-right-1 0.0x0.0 bg #2962ff r 3.35544e+07px; span.ml-auto.inline-flex 40.9x18.0 bg #2962ff r 3.35544e+07px | = | = |
+| Icon | 16 x 16, colour #63666d | 16 x 16, colour #13161c | = |
+| Painted layers | span.absolute.-right-1 0.0x0.0 bg #2962ff r 3.35544e+07px; span.ml-auto.inline-flex 41.0x18.0 bg #2962ff r 3.35544e+07px | button.peer/menu-button.flex 129.0x32.0 bg #e9ebef r 3.35544e+07px; span.absolute.-right-1 0.0x0.0 bg #2962ff r 3.35544e+07px; span.ml-auto.inline-flex 41.0x18.0 bg #2962ff r 3.35544e+07px | - |
 | How | resting state | mouse hover over the element | the "More" button's own press (menu open; Escape restores) |
 
 Crops: `app-more-menu-default.png`, `app-more-menu-hover.png`, `app-more-menu-opened.png`.
@@ -209,21 +209,21 @@ Page: /. Selector: `a[href="/login"] (text Start your blog)`. States: default, h
 
 | Property | default | hover | focus-visible | pressed | dark |
 |---|---|---|---|---|---|
-| Size (w x h) | 242.55 x 56 | = | = | = | = |
+| Size (w x h) | 241 x 56 | = | = | = | = |
 | Padding | 0px 28px | = | = | = | = |
 | Gap | 8px | = | = | = | = |
 | Border | none | = | = | = | = |
 | Radius | 3.35544e+07px | = | = | = | = |
-| Background | #181b20 | = | = | = | #e6e8eb |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px | = | = | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 1px 2px 0px, #000000 @ 0.6 0px 12px 32px -12px |
+| Background | #181b20 | #181b20 @ 0.9 | = | #181b20 @ 0.9 | #e6e8eb |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #2962ff @ 0.5 0px 0px 0px 3px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 1px 2px 0px, #000000 @ 0.6 0px 12px 32px -12px |
 | Outline | none | = | = | = | = |
-| Font | -apple-system 16px/24px 600 | = | = | = | = |
+| Font | Inter 16px/24px 600 | = | = | = | = |
 | Letter spacing | normal | = | = | = | = |
 | Colour | #ffffff | = | = | = | #15171c |
 | Transition | all 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
 | Icon | 18 x 18, colour #ffffff | = | = | = | 18 x 18, colour #15171c |
-| Painted layers | a.inline-flex.cursor-pointer 242.5x56.0 bg #181b20 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px | = | = | = | a.inline-flex.cursor-pointer 242.5x56.0 bg #e6e8eb r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 1px 2px 0px, #000000 @ 0.6 0px 12px 32px -12px |
+| Painted layers | a.inline-flex.cursor-pointer 241.0x56.0 bg #181b20 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px | a.inline-flex.cursor-pointer 241.0x56.0 bg #181b20 @ 0.9 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px | a.inline-flex.cursor-pointer 241.0x56.0 bg #181b20 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #2962ff @ 0.5 0px 0px 0px 3px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px | a.inline-flex.cursor-pointer 241.0x56.0 bg #181b20 @ 0.9 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 1px 2px 0px, #13161c @ 0.22 0px 12px 32px -12px | a.inline-flex.cursor-pointer 241.0x56.0 bg #e6e8eb r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 1px 2px 0px, #000000 @ 0.6 0px 12px 32px -12px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press | same element after the header Theme menu repaints html.dark |
 
 Crops: `app-cta-default.png`, `app-cta-hover.png`, `app-cta-focus-visible.png`, `app-cta-pressed.png`, `app-cta-dark.png`.
@@ -244,10 +244,10 @@ Page: /. Selector: `a[href="/login"] (text Sign in)`. States: default, hover.
 | Background | #ffffff | = |
 | Box shadow | #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.05 0px 1px 2px 0px | = |
 | Outline | none | = |
-| Font | -apple-system 14px/20px 600 | = |
+| Font | Inter 14px/20px 600 | = |
 | Letter spacing | normal | = |
 | Colour | #13161c | = |
-| Text node | span: -apple-system 14px/20px 600, #13161c | = |
+| Text node | span: Inter 14px/20px 600, #13161c | = |
 | Transition | width, height, padding, color 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = |
 | Cursor | pointer | = |
 | Icon | 18 x 18, colour #13161c | = |
@@ -273,41 +273,40 @@ Page: /. Selector: `article`. States: default, dark.
 | Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | -apple-system 16px/24px 400 | = |
+| Font | Inter 16px/24px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #13161c | #e6e8eb |
-| Text node | span.relative.inline-flex: -apple-system 12px/16px 600, #63666d | span.relative.inline-flex: -apple-system 12px/16px 600, #a2a5aa |
+| Text node | span.relative.inline-flex: Inter 12px/16px 600, #63666d | span.relative.inline-flex: Inter 12px/16px 600, #a2a5aa |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.16, 1, 0.3, 1) | = |
 | Icon | 14 x 14, colour #63666d | 14 x 14, colour #a2a5aa |
-| Painted layers | div.relative.aspect-[800/420] 558.4x293.2 bg #f2f3f6 r 12px; div.pointer-events-none.absolute 558.4x293.2 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 24.0x24.0 bg #f2f3f6 r 3.35544e+07px; div.relative.aspect-[800/420] 0.0x0.0 bg #f2f3f6 r 12px; div.pointer-events-none.absolute 0.0x0.0 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; button.inline-flex.h-8 52.0x32.0 bg #f2f3f6 r 3.35544e+07px | div.relative.aspect-[800/420] 558.4x293.2 bg #191c21 r 12px; div.pointer-events-none.absolute 558.4x293.2 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 24.0x24.0 bg #191c21 r 3.35544e+07px; div.relative.aspect-[800/420] 0.0x0.0 bg #191c21 r 12px; div.pointer-events-none.absolute 0.0x0.0 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; button.inline-flex.h-8 52.0x32.0 bg #191c21 r 3.35544e+07px |
+| Painted layers | div.relative.aspect-[800/420] 558.4x293.2 bg #f2f3f6 r 12px; div.pointer-events-none.absolute 558.4x293.2 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 24.0x24.0 bg #f2f3f6 r 3.35544e+07px; div.relative.aspect-[800/420] 0.0x0.0 bg #f2f3f6 r 12px; div.pointer-events-none.absolute 0.0x0.0 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; button.inline-flex.h-8 53.0x32.0 bg #f2f3f6 r 3.35544e+07px | div.relative.aspect-[800/420] 558.4x293.2 bg #191c21 r 12px; div.pointer-events-none.absolute 558.4x293.2 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 24.0x24.0 bg #191c21 r 3.35544e+07px; div.relative.aspect-[800/420] 0.0x0.0 bg #191c21 r 12px; div.pointer-events-none.absolute 0.0x0.0 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.1 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; button.inline-flex.h-8 53.0x32.0 bg #191c21 r 3.35544e+07px |
 | How | resting state | same element after the header Theme menu repaints html.dark |
 
-Crops: `post-card-default.png`.
+Crops: `post-card-default.png`, `post-card-dark.png`.
 
 #### post-title-link
 
 Post title link. The post's title inside a feed card — the card's main link.
 
-Page: /. Selector: `article a (heading)`. States: default, hover, focus-visible.
+Page: /. Selector: `article a (title)`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 162 x 24 | = | = |
+| Size (w x h) | 429.56 x 185.16 | = | = |
 | Padding | 0px | = | = |
-| Gap | 10px | = | = |
 | Border | none | = | = |
 | Radius | 0px | = | = |
 | Background | transparent | = | = |
 | Box shadow | none | = | = |
-| Outline | none | = | 2px solid #6293ff offset 2px |
+| Outline | none | = | 2px solid #2962ff offset 2px |
 | Font | Inter 16px/24px 400 | = | = |
 | Letter spacing | normal | = | = |
-| Colour | #e6e8eb | = | = |
-| Text node | span.relative.inline-flex: Inter 12px/16px 600, #a2a5aa | = | = |
-| Transition | none | = | = |
+| Colour | #13161c | = | = |
+| Text node | h3.line-clamp-2.text-title-3: Inter 24px/32px 600, #13161c, ls -0.24px | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.16, 1, 0.3, 1) | = | = |
 | Cursor | pointer | = | = |
-| Painted layers | span.relative.inline-flex 24.0x24.0 bg #191c21 r 3.35544e+07px | = | a.group/author.flex 162.0x24.0 outline 2px solid #6293ff offset 2px; span.relative.inline-flex 24.0x24.0 bg #191c21 r 3.35544e+07px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
+| Painted layers | - | = | a.block.transition-colors 429.6x185.2 outline 2px solid #2962ff offset 2px |
 
 Crops: `post-title-link-default.png`, `post-title-link-hover.png`, `post-title-link-focus-visible.png`.
 
@@ -324,17 +323,17 @@ Page: /. Selector: `article button[aria-label*="Upvote" i]`. States: default, ho
 | Gap | 6px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 3.35544e+07px | = | = | = |
-| Background | #191c21 | #23262c | = | #23262c |
+| Background | #f2f3f6 | #e9ebef | = | #e9ebef |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #6293ff offset 2px | = |
+| Outline | none | = | 2px solid #2962ff offset 2px | = |
 | Font | Inter 14px/20px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #e6e8eb | = | = | = |
-| Text node | span: Inter 14px/20px 400, #e6e8eb | = | = | = |
+| Colour | #13161c | = | = | = |
+| Text node | span: Inter 14px/20px 400, #13161c | = | = | = |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #e6e8eb | = | = | = |
-| Painted layers | button.inline-flex.h-8 53.0x32.0 bg #191c21 r 3.35544e+07px | button.inline-flex.h-8 53.0x32.0 bg #23262c r 3.35544e+07px | button.inline-flex.h-8 53.0x32.0 bg #191c21 r 3.35544e+07px outline 2px solid #6293ff offset 2px | button.inline-flex.h-8 53.0x32.0 bg #23262c r 3.35544e+07px |
+| Icon | 16 x 16, colour #13161c | = | = | = |
+| Painted layers | button.inline-flex.h-8 53.0x32.0 bg #f2f3f6 r 3.35544e+07px | button.inline-flex.h-8 53.0x32.0 bg #e9ebef r 3.35544e+07px | button.inline-flex.h-8 53.0x32.0 bg #f2f3f6 r 3.35544e+07px outline 2px solid #2962ff offset 2px | button.inline-flex.h-8 53.0x32.0 bg #e9ebef r 3.35544e+07px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
 Crops: `post-upvote-default.png`, `post-upvote-hover.png`, `post-upvote-focus-visible.png`, `post-upvote-pressed.png`.
@@ -351,16 +350,16 @@ Page: /. Selector: `article button[aria-label*="Bookmark" i]`. States: default, 
 | Padding | 0px | = | = |
 | Border | none | = | = |
 | Radius | 3.35544e+07px | = | = |
-| Background | #191c21 | #23262c | = |
+| Background | #f2f3f6 | #e9ebef | = |
 | Box shadow | none | = | = |
-| Outline | none | = | 2px solid #6293ff offset 2px |
+| Outline | none | = | 2px solid #2962ff offset 2px |
 | Font | Inter 16px/24px 400 | = | = |
 | Letter spacing | normal | = | = |
-| Colour | #e6e8eb | = | = |
+| Colour | #13161c | = | = |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = | = |
 | Cursor | default | = | = |
-| Icon | 16 x 16, colour #e6e8eb | = | = |
-| Painted layers | button.inline-flex.size-8 32.0x32.0 bg #191c21 r 3.35544e+07px | button.inline-flex.size-8 32.0x32.0 bg #23262c r 3.35544e+07px | button.inline-flex.size-8 32.0x32.0 bg #191c21 r 3.35544e+07px outline 2px solid #6293ff offset 2px |
+| Icon | 16 x 16, colour #13161c | = | = |
+| Painted layers | button.inline-flex.size-8 32.0x32.0 bg #f2f3f6 r 3.35544e+07px | button.inline-flex.size-8 32.0x32.0 bg #e9ebef r 3.35544e+07px | button.inline-flex.size-8 32.0x32.0 bg #f2f3f6 r 3.35544e+07px outline 2px solid #2962ff offset 2px |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
 
 Crops: `post-bookmark-default.png`, `post-bookmark-hover.png`, `post-bookmark-focus-visible.png`.
@@ -378,20 +377,20 @@ Page: /. Selector: `article a[aria-label*="comment" i]`. States: default, hover.
 | Gap | 6px | = |
 | Border | none | = |
 | Radius | 3.35544e+07px | = |
-| Background | #191c21 | #23262c |
+| Background | #f2f3f6 | #e9ebef |
 | Box shadow | none | = |
 | Outline | none | = |
 | Font | Inter 14px/20px 400 | = |
 | Letter spacing | normal | = |
-| Colour | #e6e8eb | = |
-| Text node | span: Inter 14px/20px 400, #e6e8eb | = |
+| Colour | #13161c | = |
+| Text node | span: Inter 14px/20px 400, #13161c | = |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.16, 1, 0.3, 1) | = |
 | Cursor | pointer | = |
-| Icon | 16 x 16, colour #e6e8eb | = |
-| Painted layers | a.inline-flex.h-8 103.0x32.0 bg #191c21 r 3.35544e+07px; span.relative.inline-flex 20.0x20.0 bg #191c21 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #191c21 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 20.0x20.0 bg #191c21 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #191c21 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 20.0x20.0 bg #191c21 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #191c21 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | a.inline-flex.h-8 103.0x32.0 bg #23262c r 3.35544e+07px; span.relative.inline-flex 20.0x20.0 bg #191c21 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #191c21 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 20.0x20.0 bg #191c21 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #191c21 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 20.0x20.0 bg #191c21 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #191c21 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
+| Icon | 16 x 16, colour #13161c | = |
+| Painted layers | a.inline-flex.h-8 103.0x32.0 bg #f2f3f6 r 3.35544e+07px; span.relative.inline-flex 20.0x20.0 bg #f2f3f6 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #f2f3f6 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 20.0x20.0 bg #f2f3f6 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #f2f3f6 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 20.0x20.0 bg #f2f3f6 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #f2f3f6 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | a.inline-flex.h-8 103.0x32.0 bg #e9ebef r 3.35544e+07px; span.relative.inline-flex 20.0x20.0 bg #f2f3f6 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #f2f3f6 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 20.0x20.0 bg #f2f3f6 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #f2f3f6 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; span.relative.inline-flex 20.0x20.0 bg #f2f3f6 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #f2f3f6 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
 | How | resting state | mouse hover over the element |
 
-Crops: `post-comments-link-hover.png`.
+Crops: `post-comments-link-default.png`, `post-comments-link-hover.png`.
 
 #### post-author
 
@@ -411,11 +410,11 @@ Page: /. Selector: `article a[href^="/@"]`. States: default, hover.
 | Outline | none | = |
 | Font | Inter 16px/24px 400 | = |
 | Letter spacing | normal | = |
-| Colour | #e6e8eb | = |
-| Text node | span.relative.inline-flex: Inter 12px/16px 600, #a2a5aa | = |
+| Colour | #13161c | = |
+| Text node | span.relative.inline-flex: Inter 12px/16px 600, #63666d | = |
 | Transition | none | = |
 | Cursor | pointer | = |
-| Painted layers | span.relative.inline-flex 24.0x24.0 bg #191c21 r 3.35544e+07px | = |
+| Painted layers | span.relative.inline-flex 24.0x24.0 bg #f2f3f6 r 3.35544e+07px | = |
 | How | resting state | mouse hover over the element |
 
 Crops: `post-author-default.png`, `post-author-hover.png`.
@@ -455,7 +454,7 @@ Page: /feed. Selector: `aside[aria-label*="Trending" i]`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 352 x 3865.77 |
+| Size (w x h) | 352 x 3861.77 |
 | Padding | 0px |
 | Border | none |
 | Radius | 28px |
@@ -468,10 +467,10 @@ Page: /feed. Selector: `aside[aria-label*="Trending" i]`. States: default.
 | Text node | h3.min-w-0.text-title-3: Inter 20px/28px 600, #13161c |
 | Transition | none |
 | Icon | 14 x 14, colour #2962ff |
-| Painted layers | aside.my-3.mr-3 352.0x3865.8 bg #f7f8fa r 28px shadow #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; div.rounded-xl.border 304.0x586.0 bg #fbfcfd border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; img.size-5.rounded-full 20.0x20.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; img.size-5.rounded-full 20.0x20.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; img.size-5.rounded-full 20.0x20.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; img.size-5.rounded-full 20.0x20.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
+| Painted layers | aside.my-3.mr-3 352.0x3861.8 bg #f7f8fa r 28px shadow #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.06 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; div.rounded-xl.border 304.0x586.0 bg #fbfcfd border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; img.size-5.rounded-full 20.0x20.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; img.size-5.rounded-full 20.0x20.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; img.size-5.rounded-full 20.0x20.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; img.size-5.rounded-full 20.0x20.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
 | How | resting state |
 
-Crops: none.
+Crops: `feed-trending-default.png`.
 
 ### Discussion
 
@@ -677,26 +676,23 @@ Crops: `profile-share-default.png`, `profile-share-hover.png`, `profile-share-fo
 
 Plan card. A Pro / Growth pricing card on /pro.
 
-Page: /pro. Selector: `[class*="card"], article, section [class*="rounded"]`. States: default.
+Page: /pro. Selector: `main box (priced plan)`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 232 x 32 |
-| Padding | 8px 12px |
-| Gap | 10px |
+| Size (w x h) | 233.72 x 92 |
+| Padding | 8px 0px 0px 0px |
+| Gap | 4px |
 | Border | none |
-| Radius | 3.35544e+07px |
-| Background | #ffffff |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.05 0px 1px 2px 0px |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
 | Outline | none |
-| Font | -apple-system 14px/20px 600 |
+| Font | -apple-system 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #13161c |
-| Text node | span: -apple-system 14px/20px 600, #13161c |
-| Transition | width, height, padding, color 0.15s cubic-bezier(0.16, 1, 0.3, 1) |
-| Cursor | pointer |
-| Icon | 18 x 18, colour #13161c |
-| Painted layers | a.peer/menu-button.flex 232.0x32.0 bg #ffffff r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #e2e4e8 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #13161c @ 0.05 0px 1px 2px 0px |
+| Text node | span.text-chapter.text-foreground: -apple-system 56px/60px 600, #13161c, ls -1.68px |
+| Transition | none |
 | How | resting state |
 
 Crops: `pro-plan-card-default.png`.
@@ -1019,21 +1015,22 @@ Page: /. Selector: `header`. States: default, dark.
 | Ancestor paint | 1 up div.flex.min-h-screen bg #ffffff | 1 up div.flex.min-h-screen bg #0d0f14 |
 | How | resting state | same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless) |
 
-Crops: `th-header-default.png`, `th-header-dark.png`.
+Crops: `th-header-default.png`.
 
 #### th-nav
 
 Main navigation pill. The centred pill nav (bg-surface, rounded-full border) holding the publication's nav links.
 
-Page: /. Selector: `nav[aria-label="Main navigation"]`. States: default.
+Page: /. Selector: `nav[aria-label="Main navigation"] [class*="rounded-full"]`. States: default.
 
 | Property | default |
 |---|---|
 | Size (w x h) | 468.59 x 36 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
+| Padding | 2px |
+| Gap | 2px |
+| Border | 1px solid #e2e4e8 |
+| Radius | 3.35544e+07px |
+| Background | #f7f8fa |
 | Box shadow | none |
 | Outline | none |
 | Font | -apple-system 16px/24px 400 |
@@ -1125,7 +1122,7 @@ Page: /. Selector: `button[aria-label*="theme" i], button:has-text("Toggle theme
 | Icon | 16 x 16, colour #63666d | 0 x 0, colour #a2a5aa |
 | How | resting state | same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless) |
 
-Crops: `th-theme-toggle-default.png`, `th-theme-toggle-darkblog.png`.
+Crops: `th-theme-toggle-default.png`.
 
 #### th-more-menu
 
@@ -1368,20 +1365,20 @@ Crops: `th-prose-h2-default.png`.
 
 Body paragraph. A paragraph of article prose (text-reading).
 
-Page: /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps. Selector: `main p`. States: default, dark.
+Page: /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps. Selector: `main p (sentence)`. States: default, dark.
 
 | Property | default | dark |
 |---|---|---|
-| Size (w x h) | 208 x 16 | = |
+| Size (w x h) | 680 x 168 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | -apple-system 12px/16px 600 | = |
+| Font | -apple-system 18px/28px 400 | = |
 | Letter spacing | normal | = |
-| Colour | #63666d | #a2a5aa |
+| Colour | #292b30 | #d5d7db |
 | Transition | none | = |
 | How | resting state | same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless) |
 
@@ -1788,7 +1785,7 @@ Crops: `m-th-header-default.png`.
 
 hashnode.com and townhall.hashnode.com serve their own CSS same-origin (/_next/static/chunks), so this list is the site's own transition declarations the CSSOM could read on each page.
 
-- /: none
+- /: `background 0.15s`, `transform 0.4s`, `transform 0.4s, opacity 0.4s, height 0.4s, box-shadow 0.2s`, `opacity 0.4s, box-shadow 0.2s`, `opacity 0.1s, background 0.2s, border-color 0.2s`, `opacity 0.4s`, `transform 0.5s, opacity 0.2s`, `none`, `opacity 0.2s, transform 0.2s`
 
 - /@anish78: `background 0.15s`, `transform 0.4s`, `transform 0.4s, opacity 0.4s, height 0.4s, box-shadow 0.2s`, `opacity 0.4s, box-shadow 0.2s`, `opacity 0.1s, background 0.2s, border-color 0.2s`, `opacity 0.4s`, `transform 0.5s, opacity 0.2s`, `none`, `opacity 0.2s, transform 0.2s`
 

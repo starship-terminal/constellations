@@ -4,7 +4,35 @@
   "viewport": "1440 x 900 (mobile group 390 x 844); hashnode.com paints html.light by default and html.dark after the header Theme menu (Light / Dark / System) — `dark` states are measured on the painted dark surface; th-* blog pages paint html.dark on prefers-color-scheme (emulated + reloaded, their own toggle produced no repaint headless)",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
-   "/": [],
+   "/": [
+    {
+     "transition": "background 0.15s"
+    },
+    {
+     "transition": "transform 0.4s"
+    },
+    {
+     "transition": "transform 0.4s, opacity 0.4s, height 0.4s, box-shadow 0.2s"
+    },
+    {
+     "transition": "opacity 0.4s, box-shadow 0.2s"
+    },
+    {
+     "transition": "opacity 0.1s, background 0.2s, border-color 0.2s"
+    },
+    {
+     "transition": "opacity 0.4s"
+    },
+    {
+     "transition": "transform 0.5s, opacity 0.2s"
+    },
+    {
+     "transition": "none"
+    },
+    {
+     "transition": "opacity 0.2s, transform 0.2s"
+    }
+   ],
    "/feed": [
     {
      "transition": "background 0.15s"
@@ -249,27 +277,27 @@
    "selector": "div[class*=\"bg-sidebar\"]",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:06:12.289Z",
+   "run": "2026-11-17T06:01:44.044Z",
    "states": {
     "default": {
      "tag": "div",
-     "classes": "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh",
+     "classes": "bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full",
      "text": "Toggle Sidebar Extend Resources Buildful - AI coding agent that delivers frontie",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 12,
+      "y": 12,
+      "w": 64,
+      "h": 876
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
+      "width": "64px",
+      "height": "876px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "900px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -281,7 +309,7 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -297,19 +325,19 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "28px",
+      "borderTopRightRadius": "28px",
+      "borderBottomRightRadius": "28px",
+      "borderBottomLeftRadius": "28px",
+      "backgroundColor": "lab(97.552 -0.0918508 -1.13482)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.199999 -0.00136095 -0.0129235 / 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "fontWeight": "400",
       "lineHeight": "24px",
@@ -426,18 +454,10 @@
        "radius": "3.35544e+07px"
       }
      ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "body.antialiased.bg-background",
-       "radius": "0px",
-       "bg": "lab(100 0 0)"
-      }
-     ],
      "textStyle": {
       "node": "a",
       "text": "Buildful - AI coding agent that delivers",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "lineHeight": "24px",
       "fontWeight": "400",
@@ -454,27 +474,28 @@
       "color": "lab(43.1077 -0.29406 -4.49811)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:06:34.697Z"
+     "crop": "components/crops/app-sidebar-default.png",
+     "run": "2026-11-17T06:01:46.657Z"
     },
     "dark": {
      "tag": "div",
-     "classes": "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh",
+     "classes": "bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full",
      "text": "Toggle Sidebar Extend Resources Buildful - AI coding agent that delivers frontie",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 12,
+      "y": 12,
+      "w": 64,
+      "h": 876
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
+      "width": "64px",
+      "height": "876px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "900px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -486,7 +507,7 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -502,19 +523,19 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "28px",
+      "borderTopRightRadius": "28px",
+      "borderBottomRightRadius": "28px",
+      "borderBottomLeftRadius": "28px",
+      "backgroundColor": "lab(1.96624 -0.036478 -1.47524)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.929998 -0.000531942 -0.00495064 / 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "fontWeight": "400",
       "lineHeight": "24px",
@@ -630,18 +651,10 @@
        "radius": "3.35544e+07px"
       }
      ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "body.antialiased.bg-background",
-       "radius": "0px",
-       "bg": "lab(4.32278 -0.0849143 -3.03079)"
-      }
-     ],
      "textStyle": {
       "node": "a",
       "text": "Buildful - AI coding agent that delivers",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "lineHeight": "24px",
       "fontWeight": "400",
@@ -658,7 +671,8 @@
       "color": "lab(67.6029 -0.225931 -3.01496)"
      },
      "via": "same element after the header Theme menu repaints html.dark",
-     "run": "2026-11-17T04:06:55.419Z"
+     "crop": "components/crops/app-sidebar-dark.png",
+     "run": "2026-11-17T06:01:52.744Z"
     }
    }
   },
@@ -669,7 +683,7 @@
    "selector": "a[class*=\"peer/menu-button\"]",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:06:57.383Z",
+   "run": "2026-11-17T06:01:54.659Z",
    "states": {
     "default": {
      "tag": "a",
@@ -729,7 +743,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -760,7 +774,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-nav-link-default.png",
-     "run": "2026-11-17T04:06:58.359Z"
+     "run": "2026-11-17T06:01:55.494Z"
     },
     "hover": {
      "tag": "a",
@@ -820,7 +834,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -859,7 +873,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-nav-link-hover.png",
-     "run": "2026-11-17T04:07:00.187Z"
+     "run": "2026-11-17T06:01:57.516Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -919,7 +933,7 @@
       "outlineStyle": "none",
       "outlineColor": "lab(46.0225 28.2872 -84.5408)",
       "outlineOffset": "2px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -958,7 +972,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/app-nav-link-focus-visible.png",
-     "run": "2026-11-17T04:07:01.677Z"
+     "run": "2026-11-17T06:01:58.890Z"
     }
    }
   },
@@ -969,7 +983,7 @@
    "selector": "a[class*=\"peer/menu-button\"]",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:07:01.689Z",
+   "run": "2026-11-17T06:01:58.909Z",
    "states": {
     "default": {
      "tag": "a",
@@ -1029,7 +1043,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "600",
       "lineHeight": "20px",
@@ -1069,7 +1083,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-nav-active-default.png",
-     "run": "2026-11-17T04:07:02.829Z"
+     "run": "2026-11-17T06:01:59.789Z"
     }
    }
   },
@@ -1080,7 +1094,7 @@
    "selector": "button (text Toggle Sidebar)",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:07:03.726Z",
+   "run": "2026-11-17T06:01:59.795Z",
    "states": {
     "default": {
      "tag": "button",
@@ -1140,7 +1154,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "600",
       "lineHeight": "20px",
@@ -1180,7 +1194,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-sidebar-toggle-default.png",
-     "run": "2026-11-17T04:07:06.354Z"
+     "run": "2026-11-17T06:02:00.689Z"
     },
     "hover": {
      "tag": "button",
@@ -1240,7 +1254,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "600",
       "lineHeight": "20px",
@@ -1288,7 +1302,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-sidebar-toggle-hover.png",
-     "run": "2026-11-17T04:07:10.108Z"
+     "run": "2026-11-17T06:02:02.496Z"
     },
     "opened": {
      "error": "locator.evaluate: Timeout 8000ms exceeded."
@@ -1302,7 +1316,7 @@
    "selector": "button[class*=\"peer/menu-button\"] (text Search)",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:07:34.575Z",
+   "run": "2026-11-17T06:02:20.410Z",
    "states": {
     "default": {
      "tag": "button",
@@ -1362,7 +1376,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -1408,7 +1422,7 @@
      "textStyle": {
       "node": "span",
       "text": "Search",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "400",
@@ -1426,7 +1440,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-search-button-default.png",
-     "run": "2026-11-17T04:07:40.847Z"
+     "run": "2026-11-17T06:02:21.265Z"
     },
     "hover": {
      "tag": "button",
@@ -1486,7 +1500,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -1532,7 +1546,7 @@
      "textStyle": {
       "node": "span",
       "text": "Search",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "400",
@@ -1550,7 +1564,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-search-button-hover.png",
-     "run": "2026-11-17T04:07:43.100Z"
+     "run": "2026-11-17T06:02:23.060Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -1610,7 +1624,7 @@
       "outlineStyle": "none",
       "outlineColor": "lab(46.0225 28.2872 -84.5408)",
       "outlineOffset": "2px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -1656,7 +1670,7 @@
      "textStyle": {
       "node": "span",
       "text": "Search",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "400",
@@ -1674,7 +1688,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/app-search-button-focus-visible.png",
-     "run": "2026-11-17T04:07:46.464Z"
+     "run": "2026-11-17T06:02:24.762Z"
     }
    }
   },
@@ -1685,7 +1699,7 @@
    "selector": "button[class*=\"peer/menu-button\"] (text Theme)",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:07:46.903Z",
+   "run": "2026-11-17T06:02:24.795Z",
    "states": {
     "default": {
      "tag": "button",
@@ -1694,14 +1708,14 @@
      "rect": {
       "x": 24,
       "y": 794,
-      "w": 97.33,
+      "w": 99,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "97.3281px",
+      "width": "99px",
       "height": "32px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -1745,7 +1759,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -1770,7 +1784,7 @@
      "textStyle": {
       "node": "span",
       "text": "Theme",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "400",
@@ -1788,7 +1802,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-theme-button-default.png",
-     "run": "2026-11-17T04:07:47.797Z"
+     "run": "2026-11-17T06:02:25.749Z"
     },
     "opened": {
      "tag": "button",
@@ -1797,14 +1811,14 @@
      "rect": {
       "x": 24,
       "y": 794,
-      "w": 97.33,
+      "w": 99,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "97.3281px",
+      "width": "99px",
       "height": "32px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -1848,7 +1862,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -1873,7 +1887,7 @@
      "textStyle": {
       "node": "span",
       "text": "Theme",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "400",
@@ -1891,70 +1905,70 @@
      },
      "via": "the \"Theme\" button's own press (menu open; Escape restores)",
      "crop": "components/crops/app-theme-button-opened.png",
-     "run": "2026-11-17T04:07:49.986Z"
+     "run": "2026-11-17T06:02:27.752Z"
     },
     "opened-menu": {
-     "tag": "button",
-     "classes": "peer/menu-button flex w-full items-center",
-     "text": "Theme",
+     "tag": "div",
+     "classes": "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out",
+     "text": "Light Dark System",
      "rect": {
       "x": 24,
-      "y": 794,
-      "w": 97.33,
-      "h": 32
+      "y": 666,
+      "w": 300,
+      "h": 120
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "97.3281px",
-      "height": "32px",
-      "minWidth": "0px",
+      "width": "300px",
+      "height": "120px",
+      "minWidth": "128px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "8px",
-      "paddingRight": "12px",
-      "paddingBottom": "8px",
-      "paddingLeft": "12px",
+      "paddingTop": "6px",
+      "paddingRight": "6px",
+      "paddingBottom": "6px",
+      "paddingLeft": "6px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
+      "borderTopWidth": "1px",
       "borderTopStyle": "solid",
       "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderRightWidth": "0px",
+      "borderRightWidth": "1px",
       "borderRightStyle": "solid",
       "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderBottomWidth": "0px",
+      "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
       "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderLeftWidth": "0px",
+      "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderTopLeftRadius": "3.35544e+07px",
-      "borderTopRightRadius": "3.35544e+07px",
-      "borderBottomRightRadius": "3.35544e+07px",
-      "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "lab(100 0 0)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
+      "outlineColor": "lab(7.16472 -0.140898 -4.74486)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
-      "fontSize": "14px",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
+      "fontSize": "16px",
       "fontWeight": "400",
-      "lineHeight": "20px",
+      "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "lab(7.16472 -0.140898 -4.74486)",
@@ -1962,21 +1976,111 @@
       "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "width, height, padding, color",
-      "transitionDuration": "0.15s",
-      "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "default",
+      "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
+      "overflow": "hidden auto",
+      "zIndex": "50",
       "top": "auto"
      },
+     "paint": [
+      {
+       "node": "div.bg-popover.text-popover-foreground",
+       "size": "300.0x120.0",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
+       "bg": "lab(100 0 0)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
+       "radius": "12px"
+      },
+      {
+       "node": "div.focus:bg-accent.focus:text-accent-foreground",
+       "size": "90.0x98.0",
+       "bg": "lab(93.0156 -0.17792 -2.26609)",
+       "radius": "8px"
+      },
+      {
+       "node": "span.light.flex",
+       "size": "78.0x58.0",
+       "bg": "lab(97.552 -0.0918508 -1.13482)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(90.4636 -0.177681 -2.26592) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "8px"
+      },
+      {
+       "node": "span.h-1.5.w-10",
+       "size": "40.0x6.0",
+       "bg": "lab(83.7271 -0.230253 -3.0174)",
+       "radius": "6px"
+      },
+      {
+       "node": "span.flex-1.rounded-sm",
+       "size": "62.0x32.0",
+       "bg": "lab(100 0 0)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(90.4636 -0.177681 -2.26592) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "6px"
+      },
+      {
+       "node": "span.dark.flex",
+       "size": "78.0x58.0",
+       "bg": "lab(4.32278 -0.0849143 -3.03079)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(16.8878 -0.22532 -4.46479) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "8px"
+      },
+      {
+       "node": "span.h-1.5.w-10",
+       "size": "40.0x6.0",
+       "bg": "lab(25.7005 -0.268683 -4.84824)",
+       "radius": "6px"
+      },
+      {
+       "node": "span.flex-1.rounded-sm",
+       "size": "62.0x32.0",
+       "bg": "lab(7.73499 -0.163585 -3.70654)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(16.8878 -0.22532 -4.46479) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "6px"
+      },
+      {
+       "node": "span.flex.h-14.5",
+       "size": "78.0x58.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(90.4636 -0.177681 -2.26592) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "8px"
+      },
+      {
+       "node": "span.light.flex",
+       "size": "39.0x58.0",
+       "bg": "lab(97.552 -0.0918508 -1.13482)"
+      },
+      {
+       "node": "span.h-1.5.w-5",
+       "size": "20.0x6.0",
+       "bg": "lab(83.7271 -0.230253 -3.0174)",
+       "radius": "6px"
+      },
+      {
+       "node": "span.flex-1.rounded-l-sm",
+       "size": "31.0x32.0",
+       "bg": "lab(100 0 0)",
+       "radius": "6px 0px 0px 6px"
+      },
+      {
+       "node": "span.dark.flex",
+       "size": "39.0x58.0",
+       "bg": "lab(4.32278 -0.0849143 -3.03079)"
+      },
+      {
+       "node": "span.flex-1.rounded-r-sm",
+       "size": "31.0x32.0",
+       "bg": "lab(7.73499 -0.163585 -3.70654)",
+       "radius": "0px 6px 6px 0px"
+      }
+     ],
      "textStyle": {
-      "node": "span",
-      "text": "Theme",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "node": "span.flex.items-center",
+      "text": "Light",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "400",
@@ -1986,15 +2090,15 @@
       "textTransform": "none"
      },
      "icon": {
-      "w": 18,
-      "h": 18,
+      "w": 16,
+      "h": 16,
       "fill": "none",
-      "stroke": "lab(43.1077 -0.29406 -4.49811)",
-      "color": "lab(43.1077 -0.29406 -4.49811)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
-     "via": "the open Light / Dark / System menu, read off [role=\"menuitem\"]",
+     "via": "the open Light / Dark / System menu — Theme pressed, the painted [role=\"menu\"] itself read; reset closes it with Escape",
      "crop": "components/crops/app-theme-button-opened-menu.png",
-     "run": "2026-11-17T04:07:50.868Z"
+     "run": "2026-11-17T06:02:29.905Z"
     }
    }
   },
@@ -2005,23 +2109,23 @@
    "selector": "button[class*=\"peer/menu-button\"] (text More)",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:07:51.092Z",
+   "run": "2026-11-17T06:02:29.914Z",
    "states": {
     "default": {
      "tag": "button",
      "classes": "peer/menu-button flex w-full items-center",
      "text": "More New",
      "rect": {
-      "x": 125.3,
+      "x": 127,
       "y": 794,
-      "w": 130.67,
+      "w": 129,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "130.672px",
+      "width": "129px",
       "height": "32px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2065,7 +2169,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -2096,7 +2200,7 @@
       },
       {
        "node": "span.ml-auto.inline-flex",
-       "size": "40.9x18.0",
+       "size": "41.0x18.0",
        "bg": "lab(46.0225 28.2872 -84.5408)",
        "radius": "3.35544e+07px"
       }
@@ -2104,7 +2208,7 @@
      "textStyle": {
       "node": "span",
       "text": "More",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "400",
@@ -2122,23 +2226,23 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-more-menu-default.png",
-     "run": "2026-11-17T04:07:53.928Z"
+     "run": "2026-11-17T06:02:30.806Z"
     },
     "hover": {
      "tag": "button",
      "classes": "peer/menu-button flex w-full items-center",
      "text": "More New",
      "rect": {
-      "x": 125.3,
+      "x": 127,
       "y": 794,
-      "w": 130.67,
+      "w": 129,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "130.672px",
+      "width": "129px",
       "height": "32px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2174,7 +2278,7 @@
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "lab(93.0156 -0.17792 -2.26609)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -2182,7 +2286,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -2206,6 +2310,12 @@
      },
      "paint": [
       {
+       "node": "button.peer/menu-button.flex",
+       "size": "129.0x32.0",
+       "bg": "lab(93.0156 -0.17792 -2.26609)",
+       "radius": "3.35544e+07px"
+      },
+      {
        "node": "span.absolute.-right-1",
        "size": "0.0x0.0",
        "bg": "lab(46.0225 28.2872 -84.5408)",
@@ -2213,7 +2323,7 @@
       },
       {
        "node": "span.ml-auto.inline-flex",
-       "size": "40.9x18.0",
+       "size": "41.0x18.0",
        "bg": "lab(46.0225 28.2872 -84.5408)",
        "radius": "3.35544e+07px"
       }
@@ -2221,7 +2331,7 @@
      "textStyle": {
       "node": "span",
       "text": "More",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "400",
@@ -2234,28 +2344,28 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(43.1077 -0.29406 -4.49811)",
-      "color": "lab(43.1077 -0.29406 -4.49811)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-more-menu-hover.png",
-     "run": "2026-11-17T04:07:56.089Z"
+     "run": "2026-11-17T06:02:32.640Z"
     },
     "opened": {
      "tag": "button",
      "classes": "peer/menu-button flex w-full items-center",
-     "text": "More New",
+     "text": "More",
      "rect": {
-      "x": 125.3,
+      "x": 127,
       "y": 794,
-      "w": 130.67,
+      "w": 129,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "130.672px",
+      "width": "129px",
       "height": "32px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2299,7 +2409,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "20px",
@@ -2321,24 +2431,10 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "span.absolute.-right-1",
-       "size": "0.0x0.0",
-       "bg": "lab(46.0225 28.2872 -84.5408)",
-       "radius": "3.35544e+07px"
-      },
-      {
-       "node": "span.ml-auto.inline-flex",
-       "size": "40.9x18.0",
-       "bg": "lab(46.0225 28.2872 -84.5408)",
-       "radius": "3.35544e+07px"
-      }
-     ],
      "textStyle": {
       "node": "span",
       "text": "More",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "400",
@@ -2356,7 +2452,7 @@
      },
      "via": "the \"More\" button's own press (menu open; Escape restores)",
      "crop": "components/crops/app-more-menu-opened.png",
-     "run": "2026-11-17T04:08:01.926Z"
+     "run": "2026-11-17T06:02:34.576Z"
     }
    }
   },
@@ -2367,23 +2463,23 @@
    "selector": "a[href=\"/login\"] (text Start your blog)",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:08:02.655Z",
+   "run": "2026-11-17T06:02:34.595Z",
    "states": {
     "default": {
      "tag": "a",
      "classes": "inline-flex cursor-pointer items-center justify-center",
      "text": "Start your blog, free",
      "rect": {
-      "x": 732.7,
+      "x": 733.5,
       "y": 402.5,
-      "w": 242.55,
+      "w": 241,
       "h": 56
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "242.547px",
+      "width": "241px",
       "height": "56px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2427,7 +2523,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "fontWeight": "600",
       "lineHeight": "24px",
@@ -2452,7 +2548,7 @@
      "paint": [
       {
        "node": "a.inline-flex.cursor-pointer",
-       "size": "242.5x56.0",
+       "size": "241.0x56.0",
        "bg": "lab(9.58302 -0.18093 -4.0814)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
        "radius": "3.35544e+07px"
@@ -2467,23 +2563,23 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-cta-default.png",
-     "run": "2026-11-17T04:08:03.899Z"
+     "run": "2026-11-17T06:02:39.382Z"
     },
     "hover": {
      "tag": "a",
      "classes": "inline-flex cursor-pointer items-center justify-center",
      "text": "Start your blog, free",
      "rect": {
-      "x": 732.7,
+      "x": 733.5,
       "y": 402.5,
-      "w": 242.55,
+      "w": 241,
       "h": 56
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "242.547px",
+      "width": "241px",
       "height": "56px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2519,7 +2615,7 @@
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(9.58302 -0.18093 -4.0814)",
+      "backgroundColor": "oklab(0.220999 -0.00115209 -0.0109341 / 0.9)",
       "backgroundImage": "none",
       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
       "backdropFilter": "none",
@@ -2527,7 +2623,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "fontWeight": "600",
       "lineHeight": "24px",
@@ -2552,8 +2648,8 @@
      "paint": [
       {
        "node": "a.inline-flex.cursor-pointer",
-       "size": "242.5x56.0",
-       "bg": "lab(9.58302 -0.18093 -4.0814)",
+       "size": "241.0x56.0",
+       "bg": "oklab(0.220999 -0.00115209 -0.0109341 / 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
        "radius": "3.35544e+07px"
       }
@@ -2567,23 +2663,23 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-cta-hover.png",
-     "run": "2026-11-17T04:08:05.894Z"
+     "run": "2026-11-17T06:02:44.080Z"
     },
     "focus-visible": {
      "tag": "a",
      "classes": "inline-flex cursor-pointer items-center justify-center",
      "text": "Start your blog, free",
      "rect": {
-      "x": 732.7,
+      "x": 733.5,
       "y": 402.5,
-      "w": 242.55,
+      "w": 241,
       "h": 56
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "242.547px",
+      "width": "241px",
       "height": "56px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2605,29 +2701,29 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
+      "borderTopColor": "lab(46.0225 28.2872 -84.5408)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
+      "borderRightColor": "lab(46.0225 28.2872 -84.5408)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
+      "borderBottomColor": "lab(46.0225 28.2872 -84.5408)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
+      "borderLeftColor": "lab(46.0225 28.2872 -84.5408)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
       "backgroundColor": "lab(9.58302 -0.18093 -4.0814)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.561988 -0.023436 -0.238834 / 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
-      "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "outlineColor": "lab(46.0225 28.2872 -84.5408)",
+      "outlineOffset": "2px",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "fontWeight": "600",
       "lineHeight": "24px",
@@ -2652,9 +2748,9 @@
      "paint": [
       {
        "node": "a.inline-flex.cursor-pointer",
-       "size": "242.5x56.0",
+       "size": "241.0x56.0",
        "bg": "lab(9.58302 -0.18093 -4.0814)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.561988 -0.023436 -0.238834 / 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
        "radius": "3.35544e+07px"
       }
      ],
@@ -2667,23 +2763,23 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/app-cta-focus-visible.png",
-     "run": "2026-11-17T04:08:07.236Z"
+     "run": "2026-11-17T06:02:47.836Z"
     },
     "pressed": {
      "tag": "a",
      "classes": "inline-flex cursor-pointer items-center justify-center",
      "text": "Start your blog, free",
      "rect": {
-      "x": 732.7,
+      "x": 733.5,
       "y": 402.5,
-      "w": 242.55,
+      "w": 241,
       "h": 56
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "242.547px",
+      "width": "241px",
       "height": "56px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2719,7 +2815,7 @@
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(9.58302 -0.18093 -4.0814)",
+      "backgroundColor": "oklab(0.220999 -0.00115209 -0.0109341 / 0.9)",
       "backgroundImage": "none",
       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
       "backdropFilter": "none",
@@ -2727,7 +2823,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "fontWeight": "600",
       "lineHeight": "24px",
@@ -2752,8 +2848,8 @@
      "paint": [
       {
        "node": "a.inline-flex.cursor-pointer",
-       "size": "242.5x56.0",
-       "bg": "lab(9.58302 -0.18093 -4.0814)",
+       "size": "241.0x56.0",
+       "bg": "oklab(0.220999 -0.00115209 -0.0109341 / 0.9)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px",
        "radius": "3.35544e+07px"
       }
@@ -2767,23 +2863,23 @@
      },
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/app-cta-pressed.png",
-     "run": "2026-11-17T04:08:36.866Z"
+     "run": "2026-11-17T06:03:01.617Z"
     },
     "dark": {
      "tag": "a",
      "classes": "inline-flex cursor-pointer items-center justify-center",
      "text": "Start your blog, free",
      "rect": {
-      "x": 732.7,
+      "x": 733.5,
       "y": 402.5,
-      "w": 242.55,
+      "w": 241,
       "h": 56
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "242.547px",
+      "width": "241px",
       "height": "56px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2827,7 +2923,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "fontWeight": "600",
       "lineHeight": "24px",
@@ -2852,7 +2948,7 @@
      "paint": [
       {
        "node": "a.inline-flex.cursor-pointer",
-       "size": "242.5x56.0",
+       "size": "241.0x56.0",
        "bg": "lab(91.8598 -0.149757 -1.88929)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 1px 2px 0px, rgba(0, 0, 0, 0.6) 0px 12px 32px -12px",
        "radius": "3.35544e+07px"
@@ -2867,7 +2963,7 @@
      },
      "via": "same element after the header Theme menu repaints html.dark",
      "crop": "components/crops/app-cta-dark.png",
-     "run": "2026-11-17T04:08:43.651Z"
+     "run": "2026-11-17T06:03:04.996Z"
     }
    }
   },
@@ -2878,7 +2974,7 @@
    "selector": "a[href=\"/login\"] (text Sign in)",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:08:45.582Z",
+   "run": "2026-11-17T06:03:18.797Z",
    "states": {
     "default": {
      "tag": "a",
@@ -2938,7 +3034,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "600",
       "lineHeight": "20px",
@@ -2972,7 +3068,7 @@
      "textStyle": {
       "node": "span",
       "text": "Sign in",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "600",
@@ -2990,7 +3086,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-signin-default.png",
-     "run": "2026-11-17T04:08:46.507Z"
+     "run": "2026-11-17T06:03:25.440Z"
     },
     "hover": {
      "tag": "a",
@@ -3050,7 +3146,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "fontWeight": "600",
       "lineHeight": "20px",
@@ -3084,7 +3180,7 @@
      "textStyle": {
       "node": "span",
       "text": "Sign in",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
       "lineHeight": "20px",
       "fontWeight": "600",
@@ -3102,7 +3198,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-signin-hover.png",
-     "run": "2026-11-17T04:08:55.218Z"
+     "run": "2026-11-17T06:03:32.139Z"
     }
    }
   },
@@ -3113,7 +3209,7 @@
    "selector": "article",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:08:55.465Z",
+   "run": "2026-11-17T06:03:32.586Z",
    "states": {
     "default": {
      "tag": "article",
@@ -3173,7 +3269,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "fontWeight": "400",
       "lineHeight": "24px",
@@ -3228,13 +3324,13 @@
       },
       {
        "node": "button.inline-flex.h-8",
-       "size": "52.0x32.0",
+       "size": "53.0x32.0",
        "bg": "lab(95.8079 -0.121295 -1.51228)",
        "radius": "3.35544e+07px"
       },
       {
        "node": "a.inline-flex.h-8",
-       "size": "102.0x32.0",
+       "size": "103.0x32.0",
        "bg": "lab(95.8079 -0.121295 -1.51228)",
        "radius": "3.35544e+07px"
       },
@@ -3269,7 +3365,7 @@
      "textStyle": {
       "node": "span.relative.inline-flex",
       "text": "E",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "12px",
       "lineHeight": "16px",
       "fontWeight": "600",
@@ -3287,7 +3383,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/post-card-default.png",
-     "run": "2026-11-17T04:09:11.253Z"
+     "run": "2026-11-17T06:03:41.161Z"
     },
     "dark": {
      "tag": "article",
@@ -3347,7 +3443,7 @@
       "outlineStyle": "none",
       "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
       "outlineOffset": "0px",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
       "fontWeight": "400",
       "lineHeight": "24px",
@@ -3402,13 +3498,13 @@
       },
       {
        "node": "button.inline-flex.h-8",
-       "size": "52.0x32.0",
+       "size": "53.0x32.0",
        "bg": "lab(10.0472 -0.183955 -4.0827)",
        "radius": "3.35544e+07px"
       },
       {
        "node": "a.inline-flex.h-8",
-       "size": "102.0x32.0",
+       "size": "103.0x32.0",
        "bg": "lab(10.0472 -0.183955 -4.0827)",
        "radius": "3.35544e+07px"
       },
@@ -3443,7 +3539,7 @@
      "textStyle": {
       "node": "span.relative.inline-flex",
       "text": "E",
-      "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+      "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "12px",
       "lineHeight": "16px",
       "fontWeight": "600",
@@ -3460,7 +3556,8 @@
       "color": "lab(67.6029 -0.225931 -3.01496)"
      },
      "via": "same element after the header Theme menu repaints html.dark",
-     "run": "2026-11-17T04:09:33.543Z"
+     "crop": "components/crops/post-card-dark.png",
+     "run": "2026-11-17T06:03:48.249Z"
     }
    }
   },
@@ -3468,28 +3565,28 @@
    "group": "Feed",
    "title": "Post title link",
    "desc": "The post's title inside a feed card — the card's main link.",
-   "selector": "article a (heading)",
+   "selector": "article a (title)",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:09:59.073Z",
+   "run": "2026-11-17T06:03:50.589Z",
    "states": {
     "default": {
      "tag": "a",
-     "classes": "group/author flex min-w-0 items-center",
-     "text": "E Esanju Babatunde",
+     "classes": "block transition-colors duration-200 hover:no-underline",
+     "text": "A Status Column Is Not an Audit Trail: Designing for Accountability Across Regul",
      "rect": {
-      "x": 840.8,
-      "y": 438,
-      "w": 162,
-      "h": 24
+      "x": 934.4,
+      "y": 357.5,
+      "w": 429.56,
+      "h": 185.16
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "162px",
-      "height": "24px",
-      "minWidth": "0px",
+      "width": "429.562px",
+      "height": "185.156px",
+      "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
@@ -3500,25 +3597,25 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -3529,7 +3626,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
@@ -3537,14 +3634,14 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.2s",
+      "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
@@ -3553,47 +3650,39 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "span.relative.inline-flex",
-       "size": "24.0x24.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "radius": "3.35544e+07px"
-      }
-     ],
      "textStyle": {
-      "node": "span.relative.inline-flex",
-      "text": "E",
+      "node": "h3.line-clamp-2.text-title-3",
+      "text": "A Status Column Is Not an Audit Trail: D",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
-      "fontSize": "12px",
-      "lineHeight": "16px",
+      "fontSize": "24px",
+      "lineHeight": "32px",
       "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "lab(67.6029 -0.225931 -3.01496)",
+      "letterSpacing": "-0.24px",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "via": "resting state",
      "crop": "components/crops/post-title-link-default.png",
-     "run": "2026-11-17T04:10:00.347Z"
+     "run": "2026-11-17T06:03:51.669Z"
     },
     "hover": {
      "tag": "a",
-     "classes": "group/author flex min-w-0 items-center",
-     "text": "E Esanju Babatunde",
+     "classes": "block transition-colors duration-200 hover:no-underline",
+     "text": "A Status Column Is Not an Audit Trail: Designing for Accountability Across Regul",
      "rect": {
-      "x": 840.8,
-      "y": 438,
-      "w": 162,
-      "h": 24
+      "x": 934.4,
+      "y": 357.5,
+      "w": 429.56,
+      "h": 185.16
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "162px",
-      "height": "24px",
-      "minWidth": "0px",
+      "width": "429.562px",
+      "height": "185.156px",
+      "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
@@ -3604,25 +3693,25 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -3633,7 +3722,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
@@ -3641,14 +3730,14 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.2s",
+      "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
@@ -3657,47 +3746,39 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "span.relative.inline-flex",
-       "size": "24.0x24.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "radius": "3.35544e+07px"
-      }
-     ],
      "textStyle": {
-      "node": "span.relative.inline-flex",
-      "text": "E",
+      "node": "h3.line-clamp-2.text-title-3",
+      "text": "A Status Column Is Not an Audit Trail: D",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
-      "fontSize": "12px",
-      "lineHeight": "16px",
+      "fontSize": "24px",
+      "lineHeight": "32px",
       "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "lab(67.6029 -0.225931 -3.01496)",
+      "letterSpacing": "-0.24px",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/post-title-link-hover.png",
-     "run": "2026-11-17T04:10:02.357Z"
+     "run": "2026-11-17T06:03:53.903Z"
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "group/author flex min-w-0 items-center",
-     "text": "E Esanju Babatunde",
+     "classes": "block transition-colors duration-200 hover:no-underline",
+     "text": "A Status Column Is Not an Audit Trail: Designing for Accountability Across Regul",
      "rect": {
-      "x": 840.8,
-      "y": 438,
-      "w": 162,
-      "h": 24
+      "x": 934.4,
+      "y": 357.5,
+      "w": 429.56,
+      "h": 185.16
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "162px",
-      "height": "24px",
-      "minWidth": "0px",
+      "width": "429.562px",
+      "height": "185.156px",
+      "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
@@ -3708,25 +3789,25 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -3737,7 +3818,7 @@
       "backdropFilter": "none",
       "outlineWidth": "2px",
       "outlineStyle": "solid",
-      "outlineColor": "lab(61.3712 9.00993 -60.4412)",
+      "outlineColor": "lab(46.0225 28.2872 -84.5408)",
       "outlineOffset": "2px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
@@ -3745,14 +3826,14 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.2s",
+      "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
@@ -3763,32 +3844,26 @@
      },
      "paint": [
       {
-       "node": "a.group/author.flex",
-       "size": "162.0x24.0",
-       "outline": "2px solid lab(61.3712 9.00993 -60.4412) offset 2px"
-      },
-      {
-       "node": "span.relative.inline-flex",
-       "size": "24.0x24.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "radius": "3.35544e+07px"
+       "node": "a.block.transition-colors",
+       "size": "429.6x185.2",
+       "outline": "2px solid lab(46.0225 28.2872 -84.5408) offset 2px"
       }
      ],
      "textStyle": {
-      "node": "span.relative.inline-flex",
-      "text": "E",
+      "node": "h3.line-clamp-2.text-title-3",
+      "text": "A Status Column Is Not an Audit Trail: D",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
-      "fontSize": "12px",
-      "lineHeight": "16px",
+      "fontSize": "24px",
+      "lineHeight": "32px",
       "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "lab(67.6029 -0.225931 -3.01496)",
+      "letterSpacing": "-0.24px",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/post-title-link-focus-visible.png",
-     "run": "2026-11-17T04:10:07.107Z"
+     "run": "2026-11-17T06:03:57.541Z"
     }
    }
   },
@@ -3799,15 +3874,15 @@
    "selector": "article button[aria-label*=\"Upvote\" i]",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:10:07.371Z",
+   "run": "2026-11-17T06:03:58.883Z",
    "states": {
     "default": {
      "tag": "button",
      "classes": "inline-flex h-8 cursor-pointer items-center",
      "text": "5",
      "rect": {
-      "x": 840.8,
-      "y": 433.9,
+      "x": 934.4,
+      "y": 433.7,
       "w": 53,
       "h": 32
      },
@@ -3837,27 +3912,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(10.0472 -0.183955 -4.0827)",
+      "backgroundColor": "lab(95.8079 -0.121295 -1.51228)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
@@ -3865,9 +3940,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -3885,7 +3960,7 @@
       {
        "node": "button.inline-flex.h-8",
        "size": "53.0x32.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
        "radius": "3.35544e+07px"
       }
      ],
@@ -3897,7 +3972,7 @@
       "lineHeight": "20px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -3905,20 +3980,20 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(91.8598 -0.149757 -1.88929)",
-      "color": "lab(91.8598 -0.149757 -1.88929)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "resting state",
      "crop": "components/crops/post-upvote-default.png",
-     "run": "2026-11-17T04:10:15.808Z"
+     "run": "2026-11-17T06:04:04.312Z"
     },
     "hover": {
      "tag": "button",
      "classes": "inline-flex h-8 cursor-pointer items-center",
      "text": "5",
      "rect": {
-      "x": 840.8,
-      "y": 433.9,
+      "x": 934.4,
+      "y": 433.7,
       "w": 53,
       "h": 32
      },
@@ -3948,27 +4023,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(15.0313 -0.215963 -4.46058)",
+      "backgroundColor": "lab(93.0156 -0.17792 -2.26609)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
@@ -3976,9 +4051,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -3996,7 +4071,7 @@
       {
        "node": "button.inline-flex.h-8",
        "size": "53.0x32.0",
-       "bg": "lab(15.0313 -0.215963 -4.46058)",
+       "bg": "lab(93.0156 -0.17792 -2.26609)",
        "radius": "3.35544e+07px"
       }
      ],
@@ -4008,7 +4083,7 @@
       "lineHeight": "20px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -4016,20 +4091,20 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(91.8598 -0.149757 -1.88929)",
-      "color": "lab(91.8598 -0.149757 -1.88929)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/post-upvote-hover.png",
-     "run": "2026-11-17T04:10:18.405Z"
+     "run": "2026-11-17T06:04:08.650Z"
     },
     "focus-visible": {
      "tag": "button",
      "classes": "inline-flex h-8 cursor-pointer items-center",
      "text": "5",
      "rect": {
-      "x": 840.8,
-      "y": 433.9,
+      "x": 934.4,
+      "y": 433.7,
       "w": 53,
       "h": 32
      },
@@ -4059,27 +4134,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(10.0472 -0.183955 -4.0827)",
+      "backgroundColor": "lab(95.8079 -0.121295 -1.51228)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "2px",
       "outlineStyle": "solid",
-      "outlineColor": "lab(61.3712 9.00993 -60.4412)",
+      "outlineColor": "lab(46.0225 28.2872 -84.5408)",
       "outlineOffset": "2px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
@@ -4087,9 +4162,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -4107,8 +4182,8 @@
       {
        "node": "button.inline-flex.h-8",
        "size": "53.0x32.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "outline": "2px solid lab(61.3712 9.00993 -60.4412) offset 2px",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
+       "outline": "2px solid lab(46.0225 28.2872 -84.5408) offset 2px",
        "radius": "3.35544e+07px"
       }
      ],
@@ -4120,7 +4195,7 @@
       "lineHeight": "20px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -4128,20 +4203,20 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(91.8598 -0.149757 -1.88929)",
-      "color": "lab(91.8598 -0.149757 -1.88929)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/post-upvote-focus-visible.png",
-     "run": "2026-11-17T04:10:20.537Z"
+     "run": "2026-11-17T06:04:13.900Z"
     },
     "pressed": {
      "tag": "button",
      "classes": "inline-flex h-8 cursor-pointer items-center",
      "text": "5",
      "rect": {
-      "x": 840.8,
-      "y": 433.9,
+      "x": 934.4,
+      "y": 433.7,
       "w": 53,
       "h": 32
      },
@@ -4171,27 +4246,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(15.0313 -0.215963 -4.46058)",
+      "backgroundColor": "lab(93.0156 -0.17792 -2.26609)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
@@ -4199,9 +4274,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -4219,7 +4294,7 @@
       {
        "node": "button.inline-flex.h-8",
        "size": "53.0x32.0",
-       "bg": "lab(15.0313 -0.215963 -4.46058)",
+       "bg": "lab(93.0156 -0.17792 -2.26609)",
        "radius": "3.35544e+07px"
       }
      ],
@@ -4231,7 +4306,7 @@
       "lineHeight": "20px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -4239,12 +4314,12 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(91.8598 -0.149757 -1.88929)",
-      "color": "lab(91.8598 -0.149757 -1.88929)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/post-upvote-pressed.png",
-     "run": "2026-11-17T04:10:21.828Z"
+     "run": "2026-11-17T06:04:17.602Z"
     }
    }
   },
@@ -4255,15 +4330,15 @@
    "selector": "article button[aria-label*=\"Bookmark\" i]",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:10:21.853Z",
+   "run": "2026-11-17T06:04:17.680Z",
    "states": {
     "default": {
      "tag": "button",
      "classes": "inline-flex size-8 shrink-0 items-center",
      "text": "Bookmark this post",
      "rect": {
-      "x": 1254,
-      "y": 433.9,
+      "x": 1332,
+      "y": 433.7,
       "w": 32,
       "h": 32
      },
@@ -4293,27 +4368,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(10.0472 -0.183955 -4.0827)",
+      "backgroundColor": "lab(95.8079 -0.121295 -1.51228)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
@@ -4321,9 +4396,9 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -4341,7 +4416,7 @@
       {
        "node": "button.inline-flex.size-8",
        "size": "32.0x32.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
        "radius": "3.35544e+07px"
       }
      ],
@@ -4349,20 +4424,20 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(91.8598 -0.149757 -1.88929)",
-      "color": "lab(91.8598 -0.149757 -1.88929)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "resting state",
      "crop": "components/crops/post-bookmark-default.png",
-     "run": "2026-11-17T04:10:22.757Z"
+     "run": "2026-11-17T06:04:19.952Z"
     },
     "hover": {
      "tag": "button",
      "classes": "inline-flex size-8 shrink-0 items-center",
      "text": "Bookmark this post",
      "rect": {
-      "x": 1254,
-      "y": 433.9,
+      "x": 1332,
+      "y": 433.7,
       "w": 32,
       "h": 32
      },
@@ -4392,27 +4467,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(15.0313 -0.215963 -4.46058)",
+      "backgroundColor": "lab(93.0156 -0.17792 -2.26609)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
@@ -4420,9 +4495,9 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -4440,7 +4515,7 @@
       {
        "node": "button.inline-flex.size-8",
        "size": "32.0x32.0",
-       "bg": "lab(15.0313 -0.215963 -4.46058)",
+       "bg": "lab(93.0156 -0.17792 -2.26609)",
        "radius": "3.35544e+07px"
       }
      ],
@@ -4448,20 +4523,20 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(91.8598 -0.149757 -1.88929)",
-      "color": "lab(91.8598 -0.149757 -1.88929)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/post-bookmark-hover.png",
-     "run": "2026-11-17T04:10:24.576Z"
+     "run": "2026-11-17T06:04:21.793Z"
     },
     "focus-visible": {
      "tag": "button",
      "classes": "inline-flex size-8 shrink-0 items-center",
      "text": "Bookmark this post",
      "rect": {
-      "x": 1254,
-      "y": 433.9,
+      "x": 1332,
+      "y": 433.7,
       "w": 32,
       "h": 32
      },
@@ -4491,27 +4566,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(10.0472 -0.183955 -4.0827)",
+      "backgroundColor": "lab(95.8079 -0.121295 -1.51228)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "2px",
       "outlineStyle": "solid",
-      "outlineColor": "lab(61.3712 9.00993 -60.4412)",
+      "outlineColor": "lab(46.0225 28.2872 -84.5408)",
       "outlineOffset": "2px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
@@ -4519,9 +4594,9 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -4539,8 +4614,8 @@
       {
        "node": "button.inline-flex.size-8",
        "size": "32.0x32.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "outline": "2px solid lab(61.3712 9.00993 -60.4412) offset 2px",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
+       "outline": "2px solid lab(46.0225 28.2872 -84.5408) offset 2px",
        "radius": "3.35544e+07px"
       }
      ],
@@ -4548,12 +4623,12 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(91.8598 -0.149757 -1.88929)",
-      "color": "lab(91.8598 -0.149757 -1.88929)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/post-bookmark-focus-visible.png",
-     "run": "2026-11-17T04:10:28.158Z"
+     "run": "2026-11-17T06:04:23.120Z"
     }
    }
   },
@@ -4564,15 +4639,15 @@
    "selector": "article a[aria-label*=\"comment\" i]",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:10:28.207Z",
+   "run": "2026-11-17T06:04:23.129Z",
    "states": {
     "default": {
      "tag": "a",
      "classes": "inline-flex h-8 shrink-0 items-center",
      "text": "4 O Q L",
      "rect": {
-      "x": 901.8,
-      "y": 433.9,
+      "x": 995.4,
+      "y": 433.7,
       "w": 103,
       "h": 32
      },
@@ -4602,27 +4677,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(10.0472 -0.183955 -4.0827)",
+      "backgroundColor": "lab(95.8079 -0.121295 -1.51228)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
@@ -4630,9 +4705,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -4650,28 +4725,28 @@
       {
        "node": "a.inline-flex.h-8",
        "size": "103.0x32.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
        "radius": "3.35544e+07px"
       },
       {
        "node": "span.relative.inline-flex",
        "size": "20.0x20.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(10.0472 -0.183955 -4.0827) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(95.8079 -0.121295 -1.51228) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "3.35544e+07px"
       },
       {
        "node": "span.relative.inline-flex",
        "size": "20.0x20.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(10.0472 -0.183955 -4.0827) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(95.8079 -0.121295 -1.51228) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "3.35544e+07px"
       },
       {
        "node": "span.relative.inline-flex",
        "size": "20.0x20.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(10.0472 -0.183955 -4.0827) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(95.8079 -0.121295 -1.51228) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "3.35544e+07px"
       }
      ],
@@ -4683,7 +4758,7 @@
       "lineHeight": "20px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -4691,19 +4766,20 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(91.8598 -0.149757 -1.88929)",
-      "color": "lab(91.8598 -0.149757 -1.88929)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:10:46.752Z"
+     "crop": "components/crops/post-comments-link-default.png",
+     "run": "2026-11-17T06:04:23.996Z"
     },
     "hover": {
      "tag": "a",
      "classes": "inline-flex h-8 shrink-0 items-center",
      "text": "4 O Q L",
      "rect": {
-      "x": 901.8,
-      "y": 433.9,
+      "x": 995.4,
+      "y": 433.7,
       "w": 103,
       "h": 32
      },
@@ -4733,27 +4809,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(15.0313 -0.215963 -4.46058)",
+      "backgroundColor": "lab(93.0156 -0.17792 -2.26609)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "14px",
@@ -4761,9 +4837,9 @@
       "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -4781,28 +4857,28 @@
       {
        "node": "a.inline-flex.h-8",
        "size": "103.0x32.0",
-       "bg": "lab(15.0313 -0.215963 -4.46058)",
+       "bg": "lab(93.0156 -0.17792 -2.26609)",
        "radius": "3.35544e+07px"
       },
       {
        "node": "span.relative.inline-flex",
        "size": "20.0x20.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(10.0472 -0.183955 -4.0827) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(95.8079 -0.121295 -1.51228) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "3.35544e+07px"
       },
       {
        "node": "span.relative.inline-flex",
        "size": "20.0x20.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(10.0472 -0.183955 -4.0827) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(95.8079 -0.121295 -1.51228) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "3.35544e+07px"
       },
       {
        "node": "span.relative.inline-flex",
        "size": "20.0x20.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(10.0472 -0.183955 -4.0827) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(95.8079 -0.121295 -1.51228) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "3.35544e+07px"
       }
      ],
@@ -4814,7 +4890,7 @@
       "lineHeight": "20px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -4822,12 +4898,12 @@
       "w": 16,
       "h": 16,
       "fill": "none",
-      "stroke": "lab(91.8598 -0.149757 -1.88929)",
-      "color": "lab(91.8598 -0.149757 -1.88929)"
+      "stroke": "lab(7.16472 -0.140898 -4.74486)",
+      "color": "lab(7.16472 -0.140898 -4.74486)"
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/post-comments-link-hover.png",
-     "run": "2026-11-17T04:11:30.803Z"
+     "run": "2026-11-17T06:04:25.793Z"
     }
    }
   },
@@ -4838,15 +4914,15 @@
    "selector": "article a[href^=\"/@\"]",
    "page": "/",
    "url": "https://hashnode.com/",
-   "run": "2026-11-17T04:11:30.815Z",
+   "run": "2026-11-17T06:04:25.806Z",
    "states": {
     "default": {
      "tag": "a",
      "classes": "group/author flex min-w-0 items-center",
      "text": "E Esanju Babatunde",
      "rect": {
-      "x": 840.8,
-      "y": 438,
+      "x": 934.4,
+      "y": 437.5,
       "w": 162,
       "h": 24
      },
@@ -4876,16 +4952,16 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -4896,7 +4972,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
@@ -4904,9 +4980,9 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -4924,7 +5000,7 @@
       {
        "node": "span.relative.inline-flex",
        "size": "24.0x24.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
        "radius": "3.35544e+07px"
       }
      ],
@@ -4936,21 +5012,21 @@
       "lineHeight": "16px",
       "fontWeight": "600",
       "letterSpacing": "normal",
-      "color": "lab(67.6029 -0.225931 -3.01496)",
+      "color": "lab(43.1077 -0.29406 -4.49811)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "via": "resting state",
      "crop": "components/crops/post-author-default.png",
-     "run": "2026-11-17T04:11:31.663Z"
+     "run": "2026-11-17T06:04:26.666Z"
     },
     "hover": {
      "tag": "a",
      "classes": "group/author flex min-w-0 items-center",
      "text": "E Esanju Babatunde",
      "rect": {
-      "x": 840.8,
-      "y": 438,
+      "x": 934.4,
+      "y": 437.5,
       "w": 162,
       "h": 24
      },
@@ -4980,16 +5056,16 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(16.8878 -0.22532 -4.46479)",
+      "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -5000,7 +5076,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
+      "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
       "fontSize": "16px",
@@ -5008,9 +5084,9 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(91.8598 -0.149757 -1.88929)",
+      "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(91.8598 -0.149757 -1.88929)",
+      "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -5028,7 +5104,7 @@
       {
        "node": "span.relative.inline-flex",
        "size": "24.0x24.0",
-       "bg": "lab(10.0472 -0.183955 -4.0827)",
+       "bg": "lab(95.8079 -0.121295 -1.51228)",
        "radius": "3.35544e+07px"
       }
      ],
@@ -5040,13 +5116,13 @@
       "lineHeight": "16px",
       "fontWeight": "600",
       "letterSpacing": "normal",
-      "color": "lab(67.6029 -0.225931 -3.01496)",
+      "color": "lab(43.1077 -0.29406 -4.49811)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/post-author-hover.png",
-     "run": "2026-11-17T04:11:33.470Z"
+     "run": "2026-11-17T06:04:28.500Z"
     }
    }
   },
@@ -5057,7 +5133,7 @@
    "selector": "button[aria-label*=\"Load more\" i]",
    "page": "/feed",
    "url": "https://hashnode.com/feed",
-   "run": "2026-11-17T04:11:56.135Z",
+   "run": "2026-11-17T05:50:27.249Z",
    "states": {
     "default": {
      "tag": "button",
@@ -5163,7 +5239,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/feed-load-more-default.png",
-     "run": "2026-11-17T04:12:04.578Z"
+     "run": "2026-11-17T05:50:51.153Z"
     },
     "hover": {
      "tag": "button",
@@ -5269,7 +5345,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/feed-load-more-hover.png",
-     "run": "2026-11-17T04:12:07.426Z"
+     "run": "2026-11-17T05:50:52.989Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -5375,7 +5451,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/feed-load-more-focus-visible.png",
-     "run": "2026-11-17T04:12:08.734Z"
+     "run": "2026-11-17T05:50:54.388Z"
     }
    }
   },
@@ -5386,7 +5462,7 @@
    "selector": "aside[aria-label*=\"Trending\" i]",
    "page": "/feed",
    "url": "https://hashnode.com/feed",
-   "run": "2026-11-17T04:12:10.271Z",
+   "run": "2026-11-17T05:50:54.542Z",
    "states": {
     "default": {
      "tag": "aside",
@@ -5394,16 +5470,16 @@
      "text": "Trending tags this week #ai 242 posts #python 132 posts #security 115 posts #web",
      "rect": {
       "x": 1076,
-      "y": -1483,
+      "y": -1481,
       "w": 352,
-      "h": 3865.77
+      "h": 3861.77
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "352px",
-      "height": "3865.77px",
+      "height": "3861.77px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -5471,7 +5547,7 @@
      "paint": [
       {
        "node": "aside.my-3.mr-3",
-       "size": "352.0x3865.8",
+       "size": "352.0x3861.8",
        "bg": "lab(97.552 -0.0918508 -1.13482)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.199999 -0.00136095 -0.0129235 / 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "28px"
@@ -5577,7 +5653,8 @@
       "color": "lab(46.0225 28.2872 -84.5408)"
      },
      "via": "resting state",
-     "run": "2026-11-17T04:13:07.877Z"
+     "crop": "components/crops/feed-trending-default.png",
+     "run": "2026-11-17T05:50:57.313Z"
     }
    }
   },
@@ -7288,42 +7365,42 @@
    "group": "Pro",
    "title": "Plan card",
    "desc": "A Pro / Growth pricing card on /pro.",
-   "selector": "[class*=\"card\"], article, section [class*=\"rounded\"]",
+   "selector": "main box (priced plan)",
    "page": "/pro",
    "url": "https://hashnode.com/pro",
-   "run": "2026-11-17T04:15:48.957Z",
+   "run": "2026-11-17T05:51:34.404Z",
    "states": {
     "default": {
-     "tag": "a",
-     "classes": "peer/menu-button flex w-full items-center",
-     "text": "Hashnode Pro",
+     "tag": "div",
+     "classes": "flex flex-col items-center gap-1",
+     "text": "$5 / month $50 / year (2 months free). Per seat.",
      "rect": {
-      "x": 24,
-      "y": 242,
-      "w": 232,
-      "h": 32
+      "x": 737.1,
+      "y": 388.4,
+      "w": 233.72,
+      "h": 92
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "232px",
-      "height": "32px",
+      "width": "233.719px",
+      "height": "92px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
       "paddingTop": "8px",
-      "paddingRight": "12px",
-      "paddingBottom": "8px",
-      "paddingLeft": "12px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
-      "flexDirection": "row",
+      "gap": "4px",
+      "rowGap": "4px",
+      "columnGap": "4px",
+      "flexDirection": "column",
       "alignItems": "center",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -7339,22 +7416,22 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderTopLeftRadius": "3.35544e+07px",
-      "borderTopRightRadius": "3.35544e+07px",
-      "borderBottomRightRadius": "3.35544e+07px",
-      "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "lab(100 0 0)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(90.4636 -0.177681 -2.26592) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.05) 0px 1px 2px 0px",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
-      "fontSize": "14px",
-      "fontWeight": "600",
-      "lineHeight": "20px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "lab(7.16472 -0.140898 -4.74486)",
@@ -7362,48 +7439,32 @@
       "textDecorationColor": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "width, height, padding, color",
-      "transitionDuration": "0.15s",
-      "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "hidden",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "a.peer/menu-button.flex",
-       "size": "232.0x32.0",
-       "bg": "lab(100 0 0)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(90.4636 -0.177681 -2.26592) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(19, 22, 28, 0.05) 0px 1px 2px 0px",
-       "radius": "3.35544e+07px"
-      }
-     ],
      "textStyle": {
-      "node": "span",
-      "text": "Hashnode Pro",
+      "node": "span.text-chapter.text-foreground",
+      "text": "$",
       "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
-      "fontSize": "14px",
-      "lineHeight": "20px",
+      "fontSize": "56px",
+      "lineHeight": "60px",
       "fontWeight": "600",
-      "letterSpacing": "normal",
+      "letterSpacing": "-1.68px",
       "color": "lab(7.16472 -0.140898 -4.74486)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 18,
-      "h": 18,
-      "fill": "none",
-      "stroke": "none",
-      "color": "lab(7.16472 -0.140898 -4.74486)"
-     },
      "via": "resting state",
      "crop": "components/crops/pro-plan-card-default.png",
-     "run": "2026-11-17T04:15:53.024Z"
+     "run": "2026-11-17T05:51:35.455Z"
     }
    }
   },
@@ -7414,7 +7475,7 @@
    "selector": "a (text Get Pro)",
    "page": "/pro",
    "url": "https://hashnode.com/pro",
-   "run": "2026-11-17T04:15:53.132Z",
+   "run": "2026-11-17T05:51:35.470Z",
    "states": {},
    "missing": true
   },
@@ -7425,7 +7486,7 @@
    "selector": "button (text What do I get with Pro)",
    "page": "/pro",
    "url": "https://hashnode.com/pro",
-   "run": "2026-11-17T04:15:53.138Z",
+   "run": "2026-11-17T05:51:35.477Z",
    "states": {
     "default": {
      "tag": "button",
@@ -7433,7 +7494,7 @@
      "text": "What do I get with Pro?",
      "rect": {
       "x": 424,
-      "y": 408.5,
+      "y": 424,
       "w": 860,
       "h": 52
      },
@@ -7516,7 +7577,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/faq-question-default.png",
-     "run": "2026-11-17T04:15:55.084Z"
+     "run": "2026-11-17T05:51:43.202Z"
     },
     "hover": {
      "tag": "button",
@@ -7607,7 +7668,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/faq-question-hover.png",
-     "run": "2026-11-17T04:16:12.190Z"
+     "run": "2026-11-17T05:51:45.125Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -7706,7 +7767,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/faq-question-focus-visible.png",
-     "run": "2026-11-17T04:16:13.753Z"
+     "run": "2026-11-17T05:51:46.439Z"
     },
     "opened": {
      "tag": "button",
@@ -7797,7 +7858,7 @@
      },
      "via": "the question row's own press (answer visible; pressed again to close)",
      "crop": "components/crops/faq-question-opened.png",
-     "run": "2026-11-17T04:16:32.949Z"
+     "run": "2026-11-17T05:51:48.317Z"
     }
    }
   },
@@ -10257,7 +10318,7 @@
    "selector": "header",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:24:58.503Z",
+   "run": "2026-11-17T05:52:01.707Z",
    "states": {
     "default": {
      "tag": "header",
@@ -10412,7 +10473,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-header-default.png",
-     "run": "2026-11-17T04:25:10.394Z"
+     "run": "2026-11-17T05:52:26.883Z"
     },
     "dark": {
      "tag": "header",
@@ -10566,8 +10627,7 @@
       "color": "lab(67.6029 -0.225931 -3.01496)"
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless)",
-     "crop": "components/crops/th-header-dark.png",
-     "run": "2026-11-17T04:25:17.450Z"
+     "run": "2026-11-17T05:52:55.102Z"
     }
    }
   },
@@ -10575,14 +10635,14 @@
    "group": "Blog chrome",
    "title": "Main navigation pill",
    "desc": "The centred pill nav (bg-surface, rounded-full border) holding the publication's nav links.",
-   "selector": "nav[aria-label=\"Main navigation\"]",
+   "selector": "nav[aria-label=\"Main navigation\"] [class*=\"rounded-full\"]",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:25:28.653Z",
+   "run": "2026-11-17T05:53:09.049Z",
    "states": {
     "default": {
-     "tag": "nav",
-     "classes": "hidden lg:block",
+     "tag": "ul",
+     "classes": "flex h-9 min-w-80 items-center",
      "text": "News 📰 Engineering 🧰 Go to Hashnode 🔗 More",
      "rect": {
       "x": 485.7,
@@ -10591,46 +10651,46 @@
       "h": 36
      },
      "style": {
-      "display": "block",
+      "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
       "width": "468.594px",
       "height": "36px",
-      "minWidth": "auto",
+      "minWidth": "320px",
       "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "minHeight": "0px",
+      "paddingTop": "2px",
+      "paddingRight": "2px",
+      "paddingBottom": "2px",
+      "paddingLeft": "2px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "2px",
+      "rowGap": "2px",
+      "columnGap": "2px",
       "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
+      "alignItems": "center",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
+      "borderTopWidth": "1px",
       "borderTopStyle": "solid",
       "borderTopColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderRightWidth": "0px",
+      "borderRightWidth": "1px",
       "borderRightStyle": "solid",
       "borderRightColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderBottomWidth": "0px",
+      "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
       "borderBottomColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderLeftWidth": "0px",
+      "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "lab(90.4636 -0.177681 -2.26592)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "3.35544e+07px",
+      "borderTopRightRadius": "3.35544e+07px",
+      "borderBottomRightRadius": "3.35544e+07px",
+      "borderBottomLeftRadius": "3.35544e+07px",
+      "backgroundColor": "lab(97.552 -0.0918508 -1.13482)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -10690,7 +10750,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-nav-default.png",
-     "run": "2026-11-17T04:25:29.701Z"
+     "run": "2026-11-17T05:53:19.779Z"
     }
    }
   },
@@ -10701,7 +10761,7 @@
    "selector": "nav[aria-label=\"Main navigation\"] a",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:25:29.960Z",
+   "run": "2026-11-17T05:53:19.833Z",
    "states": {
     "default": {
      "tag": "a",
@@ -10797,7 +10857,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-nav-link-default.png",
-     "run": "2026-11-17T04:25:30.852Z"
+     "run": "2026-11-17T05:53:22.224Z"
     },
     "hover": {
      "tag": "a",
@@ -10901,7 +10961,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/th-nav-link-hover.png",
-     "run": "2026-11-17T04:25:32.908Z"
+     "run": "2026-11-17T05:53:24.076Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -11005,7 +11065,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/th-nav-link-focus-visible.png",
-     "run": "2026-11-17T04:25:34.190Z"
+     "run": "2026-11-17T05:53:25.450Z"
     }
    }
   },
@@ -11016,7 +11076,7 @@
    "selector": "button[aria-label*=\"Open search\" i]",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:25:34.218Z",
+   "run": "2026-11-17T05:53:25.459Z",
    "states": {
     "default": {
      "tag": "button",
@@ -11133,7 +11193,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-search-button-default.png",
-     "run": "2026-11-17T04:25:36.131Z"
+     "run": "2026-11-17T05:53:26.391Z"
     },
     "hover": {
      "tag": "button",
@@ -11251,7 +11311,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/th-search-button-hover.png",
-     "run": "2026-11-17T04:25:39.672Z"
+     "run": "2026-11-17T05:53:29.068Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -11369,7 +11429,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/th-search-button-focus-visible.png",
-     "run": "2026-11-17T04:25:45.038Z"
+     "run": "2026-11-17T05:53:31.666Z"
     }
    }
   },
@@ -11380,7 +11440,7 @@
    "selector": "button[aria-label*=\"theme\" i], button:has-text(\"Toggle theme\")",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:25:45.115Z",
+   "run": "2026-11-17T05:53:31.813Z",
    "states": {
     "default": {
      "tag": "button",
@@ -11471,7 +11531,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-theme-toggle-default.png",
-     "run": "2026-11-17T04:25:46.150Z"
+     "run": "2026-11-17T05:53:42.208Z"
     },
     "darkblog": {
      "tag": "button",
@@ -11561,8 +11621,7 @@
       "color": "lab(67.6029 -0.225931 -3.01496)"
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless)",
-     "crop": "components/crops/th-theme-toggle-darkblog.png",
-     "run": "2026-11-17T04:25:54.995Z"
+     "run": "2026-11-17T05:54:18.932Z"
     }
    }
   },
@@ -11573,7 +11632,7 @@
    "selector": "button (text More)",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:26:01.038Z",
+   "run": "2026-11-17T05:54:25.139Z",
    "states": {
     "default": {
      "tag": "button",
@@ -11664,7 +11723,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-more-menu-default.png",
-     "run": "2026-11-17T04:26:03.106Z"
+     "run": "2026-11-17T05:54:29.118Z"
     },
     "hover": {
      "tag": "button",
@@ -11763,7 +11822,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/th-more-menu-hover.png",
-     "run": "2026-11-17T04:26:06.154Z"
+     "run": "2026-11-17T05:54:51.256Z"
     },
     "opened": {
      "tag": "button",
@@ -11862,7 +11921,7 @@
      },
      "via": "the \"More\" button's own press (menu open; Escape restores)",
      "crop": "components/crops/th-more-menu-opened.png",
-     "run": "2026-11-17T04:26:08.330Z"
+     "run": "2026-11-17T05:54:54.289Z"
     }
    }
   },
@@ -11873,7 +11932,7 @@
    "selector": "aside[aria-label*=\"About the publication\" i]",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:26:08.812Z",
+   "run": "2026-11-17T05:54:54.675Z",
    "states": {
     "default": {
      "tag": "aside",
@@ -12002,7 +12061,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-about-default.png",
-     "run": "2026-11-17T04:26:24.400Z"
+     "run": "2026-11-17T05:54:57.426Z"
     }
    }
   },
@@ -12013,7 +12072,7 @@
    "selector": "footer",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:26:24.699Z",
+   "run": "2026-11-17T05:55:01.054Z",
    "states": {
     "default": {
      "tag": "footer",
@@ -12137,7 +12196,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-footer-default.png",
-     "run": "2026-11-17T04:26:28.007Z"
+     "run": "2026-11-17T05:55:02.498Z"
     },
     "dark": {
      "tag": "footer",
@@ -12261,7 +12320,7 @@
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless)",
      "crop": "components/crops/th-footer-dark.png",
-     "run": "2026-11-17T04:26:36.742Z"
+     "run": "2026-11-17T05:55:24.845Z"
     }
    }
   },
@@ -12272,7 +12331,7 @@
    "selector": "li article, li[class*=\"py-5\"]",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:26:42.351Z",
+   "run": "2026-11-17T05:55:33.908Z",
    "states": {
     "default": {
      "tag": "article",
@@ -12396,7 +12455,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-post-card-default.png",
-     "run": "2026-11-17T04:26:46.650Z"
+     "run": "2026-11-17T05:55:44.848Z"
     },
     "dark": {
      "tag": "article",
@@ -12520,7 +12579,7 @@
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless)",
      "crop": "components/crops/th-post-card-dark.png",
-     "run": "2026-11-17T04:26:59.389Z"
+     "run": "2026-11-17T05:55:52.810Z"
     }
    }
   },
@@ -12531,7 +12590,7 @@
    "selector": "article a, li a",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:27:28.318Z",
+   "run": "2026-11-17T05:55:58.605Z",
    "states": {
     "default": {
      "tag": "a",
@@ -12655,7 +12714,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-post-title-default.png",
-     "run": "2026-11-17T04:27:40.088Z"
+     "run": "2026-11-17T05:55:59.987Z"
     },
     "hover": {
      "tag": "a",
@@ -12779,7 +12838,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/th-post-title-hover.png",
-     "run": "2026-11-17T04:27:52.692Z"
+     "run": "2026-11-17T05:56:02.404Z"
     }
    }
   },
@@ -12790,7 +12849,7 @@
    "selector": "button[aria-label*=\"Load more\" i]",
    "page": "/",
    "url": "https://townhall.hashnode.com/",
-   "run": "2026-11-17T04:27:53.540Z",
+   "run": "2026-11-17T05:56:02.419Z",
    "states": {
     "default": {
      "tag": "button",
@@ -12895,7 +12954,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-load-more-default.png",
-     "run": "2026-11-17T04:27:59.846Z"
+     "run": "2026-11-17T05:56:05.700Z"
     },
     "hover": {
      "tag": "button",
@@ -13000,7 +13059,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/th-load-more-hover.png",
-     "run": "2026-11-17T04:28:03.064Z"
+     "run": "2026-11-17T05:56:13.015Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -13106,7 +13165,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/th-load-more-focus-visible.png",
-     "run": "2026-11-17T04:28:04.921Z"
+     "run": "2026-11-17T05:56:15.024Z"
     }
    }
   },
@@ -13117,7 +13176,7 @@
    "selector": "header.page-frame, header",
    "page": "/why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps",
    "url": "https://townhall.hashnode.com/<id>",
-   "run": "2026-11-17T04:20:28.684Z",
+   "run": "2026-11-17T05:56:46.344Z",
    "states": {
     "default": {
      "tag": "header",
@@ -13228,7 +13287,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-article-header-default.png",
-     "run": "2026-11-17T04:20:30.252Z"
+     "run": "2026-11-17T05:56:49.122Z"
     },
     "dark": {
      "tag": "header",
@@ -13339,7 +13398,7 @@
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless)",
      "crop": "components/crops/th-article-header-dark.png",
-     "run": "2026-11-17T04:20:50.704Z"
+     "run": "2026-11-17T05:57:05.811Z"
     }
    }
   },
@@ -13350,7 +13409,7 @@
    "selector": "main h1",
    "page": "/why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps",
    "url": "https://townhall.hashnode.com/<id>",
-   "run": "2026-11-17T04:20:58.081Z",
+   "run": "2026-11-17T05:57:12.715Z",
    "states": {
     "default": {
      "tag": "h1",
@@ -13434,7 +13493,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-prose-h1-default.png",
-     "run": "2026-11-17T04:20:59.653Z"
+     "run": "2026-11-17T05:57:15.486Z"
     },
     "dark": {
      "tag": "h1",
@@ -13518,7 +13577,7 @@
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless)",
      "crop": "components/crops/th-prose-h1-dark.png",
-     "run": "2026-11-17T04:21:06.603Z"
+     "run": "2026-11-17T05:57:27.389Z"
     }
    }
   },
@@ -13529,7 +13588,7 @@
    "selector": "main h2",
    "page": "/why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps",
    "url": "https://townhall.hashnode.com/<id>",
-   "run": "2026-11-17T04:21:17.170Z",
+   "run": "2026-11-17T05:57:33.990Z",
    "states": {
     "default": {
      "tag": "h2",
@@ -13620,7 +13679,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-prose-h2-default.png",
-     "run": "2026-11-17T04:21:19.533Z"
+     "run": "2026-11-17T05:57:34.927Z"
     }
    }
   },
@@ -13628,37 +13687,37 @@
    "group": "Blog prose",
    "title": "Body paragraph",
    "desc": "A paragraph of article prose (text-reading).",
-   "selector": "main p",
+   "selector": "main p (sentence)",
    "page": "/why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps",
    "url": "https://townhall.hashnode.com/<id>",
-   "run": "2026-11-17T04:21:21.588Z",
+   "run": "2026-11-17T05:57:34.944Z",
    "states": {
     "default": {
      "tag": "p",
-     "classes": "mb-3 text-caption text-muted-foreground",
-     "text": "On this page",
+     "classes": "",
+     "text": "Developers are moving faster than ever these days. With tools like Copilot, Curs",
      "rect": {
-      "x": 1072,
-      "y": 442.9,
-      "w": 208,
-      "h": 16
+      "x": 380,
+      "y": 366.9,
+      "w": 680,
+      "h": 168
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "208px",
-      "height": "16px",
+      "width": "680px",
+      "height": "168px",
       "minWidth": "0px",
-      "maxWidth": "none",
+      "maxWidth": "100%",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
-      "marginTop": "0px",
+      "marginTop": "20px",
       "marginRight": "0px",
-      "marginBottom": "12px",
+      "marginBottom": "20px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -13692,14 +13751,14 @@
       "outlineColor": "oklab(0.561988 -0.023436 -0.238834 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
-      "fontSize": "12px",
-      "fontWeight": "600",
-      "lineHeight": "16px",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "28px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(43.1077 -0.29406 -4.49811)",
+      "color": "lab(17.4785 -0.211284 -3.73163)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(43.1077 -0.29406 -4.49811)",
+      "textDecorationColor": "lab(17.4785 -0.211284 -3.73163)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -13715,34 +13774,34 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-prose-p-default.png",
-     "run": "2026-11-17T04:21:23.359Z"
+     "run": "2026-11-17T05:57:36.242Z"
     },
     "dark": {
      "tag": "p",
-     "classes": "mb-3 text-caption text-muted-foreground",
-     "text": "On this page",
+     "classes": "",
+     "text": "Developers are moving faster than ever these days. With tools like Copilot, Curs",
      "rect": {
-      "x": 1072,
-      "y": 442.9,
-      "w": 208,
-      "h": 16
+      "x": 380,
+      "y": 366.9,
+      "w": 680,
+      "h": 168
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "208px",
-      "height": "16px",
+      "width": "680px",
+      "height": "168px",
       "minWidth": "0px",
-      "maxWidth": "none",
+      "maxWidth": "100%",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
-      "marginTop": "0px",
+      "marginTop": "20px",
       "marginRight": "0px",
-      "marginBottom": "12px",
+      "marginBottom": "20px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -13776,14 +13835,14 @@
       "outlineColor": "oklab(0.679991 -0.0166 -0.169166 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
-      "fontSize": "12px",
-      "fontWeight": "600",
-      "lineHeight": "16px",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "28px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(67.6029 -0.225931 -3.01496)",
+      "color": "lab(86.0556 -0.177175 -2.26561)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(67.6029 -0.225931 -3.01496)",
+      "textDecorationColor": "lab(86.0556 -0.177175 -2.26561)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -13799,7 +13858,7 @@
      },
      "via": "same element after prefers-color-scheme repaints html.dark (the signal the blog engine honours; its own toggle produced no repaint headless)",
      "crop": "components/crops/th-prose-p-dark.png",
-     "run": "2026-11-17T04:21:33.351Z"
+     "run": "2026-11-17T05:57:42.620Z"
     }
    }
   },
@@ -13810,7 +13869,7 @@
    "selector": "main p a, main li a",
    "page": "/why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps",
    "url": "https://townhall.hashnode.com/<id>",
-   "run": "2026-11-17T04:21:38.987Z",
+   "run": "2026-11-17T05:57:48.430Z",
    "states": {
     "default": {
      "tag": "a",
@@ -13894,7 +13953,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-prose-link-default.png",
-     "run": "2026-11-17T04:21:39.878Z"
+     "run": "2026-11-17T05:57:49.347Z"
     },
     "hover": {
      "tag": "a",
@@ -13978,7 +14037,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/th-prose-link-hover.png",
-     "run": "2026-11-17T04:21:42.550Z"
+     "run": "2026-11-17T05:57:51.149Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -14069,7 +14128,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/th-prose-link-focus-visible.png",
-     "run": "2026-11-17T04:21:44.819Z"
+     "run": "2026-11-17T05:57:52.424Z"
     }
    }
   },
@@ -14080,7 +14139,7 @@
    "selector": "main pre, [class*=\"code\"]",
    "page": "/why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps",
    "url": "https://townhall.hashnode.com/<id>",
-   "run": "2026-11-17T04:21:45.027Z",
+   "run": "2026-11-17T05:57:52.432Z",
    "states": {},
    "missing": true
   },
@@ -14091,7 +14150,7 @@
    "selector": "nav[aria-label*=\"On this page\" i]",
    "page": "/why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps",
    "url": "https://townhall.hashnode.com/<id>",
-   "run": "2026-11-17T04:21:45.034Z",
+   "run": "2026-11-17T05:57:52.435Z",
    "states": {
     "default": {
      "tag": "nav",
@@ -14187,7 +14246,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-toc-default.png",
-     "run": "2026-11-17T04:21:46.853Z"
+     "run": "2026-11-17T05:57:53.332Z"
     }
    }
   },
@@ -14198,7 +14257,7 @@
    "selector": "nav[aria-label*=\"On this page\" i] a",
    "page": "/why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps",
    "url": "https://townhall.hashnode.com/<id>",
-   "run": "2026-11-17T04:21:46.929Z",
+   "run": "2026-11-17T05:57:53.345Z",
    "states": {
     "default": {
      "tag": "a",
@@ -14282,7 +14341,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/th-toc-link-default.png",
-     "run": "2026-11-17T04:21:47.877Z"
+     "run": "2026-11-17T05:57:54.195Z"
     },
     "hover": {
      "tag": "a",
@@ -14366,7 +14425,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/th-toc-link-hover.png",
-     "run": "2026-11-17T04:21:49.712Z"
+     "run": "2026-11-17T05:57:56.011Z"
     }
    }
   },
