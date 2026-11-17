@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 175,
-    "system_domains": 166,
-    "matched_domains": 136,
-    "missing_domains": 297,
+    "system_packages": 176,
+    "system_domains": 167,
+    "matched_domains": 137,
+    "missing_domains": 296,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -889,6 +889,23 @@
           "slug": "clearful",
           "name": "Clearful",
           "url": "https://clearful.com",
+          "name_match": true
+        }
+      ]
+    },
+    "clipchamp.com": {
+      "catalog": [
+        {
+          "name": "Clipchamp",
+          "domain": "clipchamp.com",
+          "id": 858
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "clipchamp",
+          "name": "Clipchamp",
+          "url": "https://clipchamp.com",
           "name_match": true
         }
       ]
@@ -2405,13 +2422,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "clipchamp.com": [
-      {
-        "name": "Clipchamp",
-        "domain": "clipchamp.com",
-        "id": 858
       }
     ],
     "cofounder.co": [

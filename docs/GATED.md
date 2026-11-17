@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_117 of 175 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_118 of 176 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -184,6 +184,11 @@ Access: signed out (clay.earth 301-redirects to me.sh - the Clay product rebrand
 - the product itself: the Mesh app interior, plan checkout, downloads (/start targets) and every account surface sit behind app.me.sh and were never reached; the sign-in card was measured and its e-mail field focused and filled with placeholder text only, never submitted
 - no form was submitted, no plan purchased, no OAuth button pressed; the nav dropdowns and the mobile drawer were opened by their own toggles but nothing navigated
 - the marketing site runs three skins on one product: the black marketing routes, the warm-cream /pricing route and the light app.me.sh sign-in card (SF Pro, #ff6821) - all tokenised, none toggled by the user
+
+## [Clipchamp](../systems/clipchamp) — `clipchamp`
+Access: signed out (the marketing routes are fully public; the editor sits behind app.clipchamp.com sign-in - the public login card was measured at rest, the email path where the only field lives was never entered; consent and promo overlays were hidden without answering them; CTA anchors to signup/login were never followed)
+- the editor itself - timeline, assets, export - sits behind app.clipchamp.com sign-in and was never crossed; the sign-in card was measured at rest but never submitted
+- no credentials field renders on the sign-in card until the email path is entered; that path was never crossed, so no field was measured
 
 ## [Discord](../systems/discord) — `discord`
 Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)
