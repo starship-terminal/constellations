@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 176,
-    "system_domains": 167,
-    "matched_domains": 137,
-    "missing_domains": 296,
+    "system_packages": 178,
+    "system_domains": 169,
+    "matched_domains": 139,
+    "missing_domains": 294,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2253,6 +2253,23 @@
         }
       ]
     },
+    "gumroad.com": {
+      "catalog": [
+        {
+          "name": "Gumroad",
+          "domain": "gumroad.com",
+          "id": 296
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gumroad",
+          "name": "Gumroad",
+          "url": "https://gumroad.com",
+          "name_match": true
+        }
+      ]
+    },
     "hashnode.com": {
       "catalog": [
         {
@@ -2593,13 +2610,6 @@
         "name": "Grow with Google",
         "domain": "grow.google",
         "id": 294
-      }
-    ],
-    "gumroad.com": [
-      {
-        "name": "Gumroad",
-        "domain": "gumroad.com",
-        "id": 296
       }
     ],
     "hbomax.com": [
