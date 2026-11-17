@@ -1,0 +1,1360 @@
+{
+ "readAt": "2026-11-17",
+ "source": "clipchamp.com's inline <style> rules and its CDN stylesheets (cross-origin to the CSSOM, fetched directly as public static files), read through the CSSOM on the live home page and re-parsed in a probe document",
+ "sheets": [
+  {
+   "name": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "media": "",
+   "bytes": 10684
+  },
+  {
+   "name": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "media": "",
+   "bytes": 135184
+  },
+  {
+   "name": "https://clipchamp.com/_next/static/chunks/1_90qr7wer2qq.css",
+   "media": "",
+   "bytes": 2372
+  },
+  {
+   "name": "https://clipchamp.com/_next/static/chunks/3syz83zy3mya0.css",
+   "media": "",
+   "bytes": 10556
+  },
+  {
+   "name": "inline-4",
+   "media": "",
+   "bytes": 380
+  },
+  {
+   "name": "inline-5",
+   "media": "",
+   "bytes": 21223
+  }
+ ],
+ "counts": {
+  "rules": 31,
+  "fonts": 24,
+  "names": {
+   "token": 0,
+   "app": 569,
+   "framework": 0,
+   "utility": 0
+  },
+  "bySelector": {
+   "[app] :root": 47,
+   "[app] .WtdJta_variable": 1,
+   "[app] .q8sKha_variable": 1,
+   "[app] .gk_qKW_variable": 1,
+   "[app] .AVaj0q_variable": 1,
+   "[app] .SeVmIa_variable": 1,
+   "[app] .LxjeOG_variable": 1,
+   "[app] .aORoxG_variable": 1,
+   "[app] .qSaNra_BrandPalette": 4,
+   "[app] .qSaNra_Accent1Palette": 4,
+   "[app] .qSaNra_Accent2Palette": 4,
+   "[app] .J3lkyW_MessengerButton": 1,
+   "[app] .J3lkyW_FacebookButton": 1,
+   "[app] .J3lkyW_TwitterButton": 1,
+   "[app] .J3lkyW_LinkedInButton": 1,
+   "[app] .J3lkyW_RedditButton": 1,
+   "[app] .J3lkyW_WhatsappButton": 1,
+   "[app] .J3lkyW_EmailButton": 1,
+   "[app] .ZK9kKa_Grid": 2,
+   "[app] @media (max-width: 62em) .ZK9kKa_Grid": 1,
+   "[app] @media (max-width: 48em) .ZK9kKa_Grid": 1,
+   "[app] @media (max-width: 36em) .ZK9kKa_Grid": 1,
+   "[app] .EeQVMG_PromptStarter button": 2,
+   "[app] ._ZpZIa_Card > .fui-Card": 5,
+   "[app] .DL38bq_BrandPalette": 4,
+   "[app] .DL38bq_Accent1Palette": 4,
+   "[app] .DL38bq_Accent2Palette": 4,
+   "[app] .XzHYfa_TitleContainer": 2,
+   "[app] .Oc_SzG_SearchBarContainer": 1,
+   "[app] .Oc_SzG_Header": 1,
+   "[app] .fui-FluentProvider_R_db_": 499
+  }
+ },
+ "errors": [],
+ "token": [],
+ "app": [
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--color-blue-50": "#242da0",
+    "--color-blue-80": "#3a5af4",
+    "--color-blue-110": "#8893ff",
+    "--color-blue-150": "#dee2ff",
+    "--color-grey-18": "#2c2d3c",
+    "--color-grey-20": "#313242",
+    "--color-grey-40": "#64647c",
+    "--color-grey-44": "#6e6e86",
+    "--color-pink-50": "#6e006c",
+    "--color-pink-80": "#b50ac1",
+    "--color-pink-110": "#e560ff",
+    "--color-pink-150": "#f6d9ff",
+    "--color-purple-60": "#433ac7",
+    "--color-purple-70": "#4d43de",
+    "--color-purple-80": "#6453e4",
+    "--color-purple-160": "#f3f0ff",
+    "--color-text-dark": "var(--color-grey-20)",
+    "--color-text-light": "var(--color-grey-40)",
+    "--color-brand-dark": "var(--color-purple-60)",
+    "--color-brand-light": "var(--color-purple-70)",
+    "--color-brand-standard": "var(--color-purple-80)",
+    "--color-brand-background": "var(--color-purple-160)",
+    "--color-accent-1-dark": "var(--color-pink-50)",
+    "--color-accent-1-standard": "var(--color-pink-80)",
+    "--color-accent-1-light": "var(--color-pink-110)",
+    "--color-accent-1-background": "var(--color-pink-150)",
+    "--color-accent-2-dark": "var(--color-blue-50)",
+    "--color-accent-2-standard": "var(--color-blue-80)",
+    "--color-accent-2-light": "var(--color-blue-110)",
+    "--color-accent-2-background": "var(--color-blue-150)",
+    "--color-background-off-white": "#fbfbfc",
+    "--color-inactive-links": "var(--color-purple-70)",
+    "--color-hover-links": "var(--color-purple-60)",
+    "--color-social-messenger": "#0086ff",
+    "--color-social-facebook": "#1977f2",
+    "--color-social-twitter": "#1da1f2",
+    "--color-social-linkedin": "#0077b5",
+    "--color-social-reddit": "#ff4500",
+    "--color-social-whatsapp": "#3ac34c",
+    "--color-social-email": "var(--color-brand-standard)",
+    "--color-collapsible-header": "#5d6276",
+    "--color-collapsible-content": "#1c1c26b3",
+    "--hover-duration": ".2s",
+    "--height-audio-item": "160px",
+    "--height-banner": "3rem",
+    "--height-nav": "3.875rem",
+    "--height-mobile-nav": "4.5rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "selector": ".WtdJta_variable",
+   "context": [],
+   "properties": {
+    "--font-segoe-variable": "\"segoeVariableFont\", \"segoeVariableFont Fallback\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "selector": ".q8sKha_variable",
+   "context": [],
+   "properties": {
+    "--font-segoe": "\"segoeFont\", \"segoeFont Fallback\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "selector": ".gk_qKW_variable",
+   "context": [],
+   "properties": {
+    "--font-kinto-sans": "\"kintoSansFont\", \"kintoSansFont Fallback\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "selector": ".AVaj0q_variable",
+   "context": [],
+   "properties": {
+    "--font-open-sans-cy": "\"openSansCyFont\", \"openSansCyFont Fallback\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "selector": ".SeVmIa_variable",
+   "context": [],
+   "properties": {
+    "--font-noto-sans-ko": "\"notoSansKoFont\", \"notoSansKoFont Fallback\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "selector": ".LxjeOG_variable",
+   "context": [],
+   "properties": {
+    "--font-noto-sans-th": "\"notoSansThFont\", \"notoSansThFont Fallback\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "selector": ".aORoxG_variable",
+   "context": [],
+   "properties": {
+    "--font-noto-sans-zh": "\"notoSansZhFont\", \"notoSansZhFont Fallback\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".qSaNra_BrandPalette",
+   "context": [],
+   "properties": {
+    "--palette-dark": "var(--color-brand-dark)",
+    "--palette-standard": "var(--color-brand-standard)",
+    "--palette-light": "var(--color-brand-light)",
+    "--palette-background": "var(--color-brand-background)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".qSaNra_Accent1Palette",
+   "context": [],
+   "properties": {
+    "--palette-dark": "var(--color-accent-1-dark)",
+    "--palette-standard": "var(--color-accent-1-standard)",
+    "--palette-light": "var(--color-accent-1-light)",
+    "--palette-background": "var(--color-accent-1-background)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".qSaNra_Accent2Palette",
+   "context": [],
+   "properties": {
+    "--palette-dark": "var(--color-accent-2-dark)",
+    "--palette-standard": "var(--color-accent-2-standard)",
+    "--palette-light": "var(--color-accent-2-light)",
+    "--palette-background": "var(--color-accent-2-background)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".J3lkyW_MessengerButton",
+   "context": [],
+   "properties": {
+    "--social-color": "var(--color-social-messenger)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".J3lkyW_FacebookButton",
+   "context": [],
+   "properties": {
+    "--social-color": "var(--color-social-facebook)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".J3lkyW_TwitterButton",
+   "context": [],
+   "properties": {
+    "--social-color": "var(--color-social-twitter)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".J3lkyW_LinkedInButton",
+   "context": [],
+   "properties": {
+    "--social-color": "var(--color-social-linkedin)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".J3lkyW_RedditButton",
+   "context": [],
+   "properties": {
+    "--social-color": "var(--color-social-reddit)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".J3lkyW_WhatsappButton",
+   "context": [],
+   "properties": {
+    "--social-color": "var(--color-social-whatsapp)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".J3lkyW_EmailButton",
+   "context": [],
+   "properties": {
+    "--social-color": "var(--color-social-email)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".ZK9kKa_Grid",
+   "context": [],
+   "properties": {
+    "--content-grid-row-height": "14rem",
+    "--gap": "30px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".ZK9kKa_Grid",
+   "context": [
+    "@media (max-width: 62em)"
+   ],
+   "properties": {
+    "--content-grid-row-height": "12.5rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".ZK9kKa_Grid",
+   "context": [
+    "@media (max-width: 48em)"
+   ],
+   "properties": {
+    "--content-grid-row-height": "11rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".ZK9kKa_Grid",
+   "context": [
+    "@media (max-width: 36em)"
+   ],
+   "properties": {
+    "--gap": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".EeQVMG_PromptStarter button",
+   "context": [],
+   "properties": {
+    "--gradient-rest": "linear-gradient(110deg, color-mix(in srgb, var(--colorBrandStroke2Contrast) 15%, var(--colorNeutralBackground1)) 0%, color-mix(in srgb, var(--colorBrandStroke2Contrast) 1%, var(--colorNeutralBackground1)) 10%, var(--colorNeutralBackground1) 20%, var(--colorNeutralBackground1) 70%, color-mix(in srgb, var(--colorBrandStroke2Contrast) 1%, var(--colorNeutralBackground1)) 80%, color-mix(in srgb, var(--colorBrandStroke2Contrast) 15%, var(--colorNeutralBackground1)) 100%), radial-gradient(96% 380% at 100% 3%, color-mix(in srgb, var(--colorNeutralBackground3) 60%, var(--colorNeutralBackground1)) 6%, var(--colorNeutralBackground1) 54%)",
+    "--gradient-hover": "linear-gradient(110deg, color-mix(in srgb, var(--colorBrandStroke2Contrast) 15%, var(--colorNeutralBackground1)) -10%, color-mix(in srgb, var(--colorBrandStroke2Contrast) 1%, var(--colorNeutralBackground1)) 5%, var(--colorNeutralBackground1) 10%, var(--colorNeutralBackground1) 80%, color-mix(in srgb, var(--colorBrandStroke2Contrast) 1%, var(--colorNeutralBackground1)) 90%, color-mix(in srgb, var(--colorBrandStroke2Contrast) 15%, var(--colorNeutralBackground1)) 110%), radial-gradient(96% 380% at 100% 3%, color-mix(in srgb, var(--colorNeutralBackground3) 60%, var(--colorNeutralBackground1)) 6%, var(--colorNeutralBackground1) 54%)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": "._ZpZIa_Card > .fui-Card",
+   "context": [],
+   "properties": {
+    "--gradient-tint": "color-mix(in srgb, var(--colorBrandStroke2Contrast) 15%, var(--colorNeutralBackground1))",
+    "--gradient-fade": "color-mix(in srgb, var(--colorBrandStroke2Contrast) 1%, var(--colorNeutralBackground1))",
+    "--gradient-base": "radial-gradient(96% 380% at 100% 3%, color-mix(in srgb, var(--colorNeutralBackground3) 60%, var(--colorNeutralBackground1)) 6%, var(--colorNeutralBackground1) 54%)",
+    "--gradient-rest": "linear-gradient(110deg, var(--gradient-tint) 0%, var(--gradient-fade) 10%, var(--colorNeutralBackground1) 20%, var(--colorNeutralBackground1) 70%, var(--gradient-fade) 80%, var(--gradient-tint) 100%), var(--gradient-base)",
+    "--gradient-hover": "linear-gradient(110deg, var(--gradient-tint) -10%, var(--gradient-fade) 5%, var(--colorNeutralBackground1) 10%, var(--colorNeutralBackground1) 80%, var(--gradient-fade) 90%, var(--gradient-tint) 110%), var(--gradient-base)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".DL38bq_BrandPalette",
+   "context": [],
+   "properties": {
+    "--palette-dark": "var(--color-brand-dark)",
+    "--palette-standard": "var(--color-brand-standard)",
+    "--palette-light": "var(--color-brand-light)",
+    "--palette-background": "var(--color-brand-background)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".DL38bq_Accent1Palette",
+   "context": [],
+   "properties": {
+    "--palette-dark": "var(--color-accent-1-dark)",
+    "--palette-standard": "var(--color-accent-1-standard)",
+    "--palette-light": "var(--color-accent-1-light)",
+    "--palette-background": "var(--color-accent-1-background)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".DL38bq_Accent2Palette",
+   "context": [],
+   "properties": {
+    "--palette-dark": "var(--color-accent-2-dark)",
+    "--palette-standard": "var(--color-accent-2-standard)",
+    "--palette-light": "var(--color-accent-2-light)",
+    "--palette-background": "var(--color-accent-2-background)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/2_e3tzgq5g32v.css",
+   "selector": ".XzHYfa_TitleContainer",
+   "context": [],
+   "properties": {
+    "--padding": ".625rem",
+    "--line-height": "1.125rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/3syz83zy3mya0.css",
+   "selector": ".Oc_SzG_SearchBarContainer",
+   "context": [],
+   "properties": {
+    "--search-bar-height": "5.5rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/3syz83zy3mya0.css",
+   "selector": ".Oc_SzG_Header",
+   "context": [],
+   "properties": {
+    "--header-height": "3.75rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-5",
+   "selector": ".fui-FluentProvider_R_db_",
+   "context": [],
+   "properties": {
+    "--borderRadiusNone": "0",
+    "--borderRadiusSmall": "2px",
+    "--borderRadiusMedium": "4px",
+    "--borderRadiusLarge": "6px",
+    "--borderRadiusXLarge": "8px",
+    "--borderRadiusCircular": "10000px",
+    "--fontSizeBase100": "10px",
+    "--fontSizeBase200": "12px",
+    "--fontSizeBase300": "1rem",
+    "--fontSizeBase400": "16px",
+    "--fontSizeBase500": "1.25rem",
+    "--fontSizeBase600": "24px",
+    "--fontSizeHero700": "28px",
+    "--fontSizeHero800": "32px",
+    "--fontSizeHero900": "2.25rem",
+    "--fontSizeHero1000": "2.5rem",
+    "--lineHeightBase100": "14px",
+    "--lineHeightBase200": "16px",
+    "--lineHeightBase300": "20px",
+    "--lineHeightBase400": "22px",
+    "--lineHeightBase500": "1.5",
+    "--lineHeightBase600": "32px",
+    "--lineHeightHero700": "36px",
+    "--lineHeightHero800": "40px",
+    "--lineHeightHero900": "1.1",
+    "--lineHeightHero1000": "1.2",
+    "--fontFamilyBase": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+    "--fontFamilyMonospace": "Consolas, 'Courier New', Courier, monospace",
+    "--fontFamilyNumeric": "Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+    "--fontWeightRegular": "400",
+    "--fontWeightMedium": "600",
+    "--fontWeightSemibold": "700",
+    "--fontWeightBold": "700",
+    "--strokeWidthThin": "1px",
+    "--strokeWidthThick": "2px",
+    "--strokeWidthThicker": "3px",
+    "--strokeWidthThickest": "4px",
+    "--spacingHorizontalNone": "0",
+    "--spacingHorizontalXXS": "2px",
+    "--spacingHorizontalXS": "4px",
+    "--spacingHorizontalSNudge": "6px",
+    "--spacingHorizontalS": "8px",
+    "--spacingHorizontalMNudge": "10px",
+    "--spacingHorizontalM": "12px",
+    "--spacingHorizontalL": "16px",
+    "--spacingHorizontalXL": "20px",
+    "--spacingHorizontalXXL": "24px",
+    "--spacingHorizontalXXXL": "32px",
+    "--spacingVerticalNone": "0",
+    "--spacingVerticalXXS": "2px",
+    "--spacingVerticalXS": "4px",
+    "--spacingVerticalSNudge": "6px",
+    "--spacingVerticalS": "8px",
+    "--spacingVerticalMNudge": "10px",
+    "--spacingVerticalM": "12px",
+    "--spacingVerticalL": "16px",
+    "--spacingVerticalXL": "20px",
+    "--spacingVerticalXXL": "24px",
+    "--spacingVerticalXXXL": "32px",
+    "--durationUltraFast": "50ms",
+    "--durationFaster": "100ms",
+    "--durationFast": "150ms",
+    "--durationNormal": "200ms",
+    "--durationGentle": "250ms",
+    "--durationSlow": "300ms",
+    "--durationSlower": "400ms",
+    "--durationUltraSlow": "500ms",
+    "--curveAccelerateMax": "cubic-bezier(0.9,0.1,1,0.2)",
+    "--curveAccelerateMid": "cubic-bezier(1,0,1,1)",
+    "--curveAccelerateMin": "cubic-bezier(0.8,0,0.78,1)",
+    "--curveDecelerateMax": "cubic-bezier(0.1,0.9,0.2,1)",
+    "--curveDecelerateMid": "cubic-bezier(0,0,0,1)",
+    "--curveDecelerateMin": "cubic-bezier(0.33,0,0.1,1)",
+    "--curveEasyEaseMax": "cubic-bezier(0.8,0,0.2,1)",
+    "--curveEasyEase": "cubic-bezier(0.33,0,0.67,1)",
+    "--curveLinear": "cubic-bezier(0,0,1,1)",
+    "--colorNeutralForeground1": "#232330",
+    "--colorNeutralForeground1Hover": "#232330",
+    "--colorNeutralForeground1Pressed": "#232330",
+    "--colorNeutralForeground1Selected": "#232330",
+    "--colorNeutralForeground2": "#404055",
+    "--colorNeutralForeground2Hover": "#232330",
+    "--colorNeutralForeground2Pressed": "#232330",
+    "--colorNeutralForeground2Selected": "#232330",
+    "--colorNeutralForeground2BrandHover": "#6453E4",
+    "--colorNeutralForeground2BrandPressed": "#4D43DE",
+    "--colorNeutralForeground2BrandSelected": "#6453E4",
+    "--colorNeutralForeground3": "#5F5F77",
+    "--colorNeutralForeground3Hover": "#404055",
+    "--colorNeutralForeground3Pressed": "#404055",
+    "--colorNeutralForeground3Selected": "#404055",
+    "--colorNeutralForeground3BrandHover": "#6453E4",
+    "--colorNeutralForeground3BrandPressed": "#4D43DE",
+    "--colorNeutralForeground3BrandSelected": "#6453E4",
+    "--colorNeutralForeground4": "#6E6E86",
+    "--colorNeutralForegroundDisabled": "#BCBCCD",
+    "--colorNeutralForegroundInvertedDisabled": "rgba(255, 255, 255, 0.4)",
+    "--colorBrandForegroundLink": "#4D43DE",
+    "--colorBrandForegroundLinkHover": "#433AC7",
+    "--colorBrandForegroundLinkPressed": "#302690",
+    "--colorBrandForegroundLinkSelected": "#4D43DE",
+    "--colorNeutralForeground2Link": "#404055",
+    "--colorNeutralForeground2LinkHover": "#232330",
+    "--colorNeutralForeground2LinkPressed": "#232330",
+    "--colorNeutralForeground2LinkSelected": "#232330",
+    "--colorCompoundBrandForeground1": "#6453E4",
+    "--colorCompoundBrandForeground1Hover": "#4D43DE",
+    "--colorCompoundBrandForeground1Pressed": "#433AC7",
+    "--colorBrandForeground1": "#4D43DE",
+    "--colorBrandForeground2": "#4D43DE",
+    "--colorBrandForeground2Hover": "#433AC7",
+    "--colorBrandForeground2Pressed": "#271C73",
+    "--colorNeutralForeground1Static": "#232330",
+    "--colorNeutralForegroundStaticInverted": "#ffffff",
+    "--colorNeutralForegroundInverted": "#ffffff",
+    "--colorNeutralForegroundInvertedHover": "#ffffff",
+    "--colorNeutralForegroundInvertedPressed": "#ffffff",
+    "--colorNeutralForegroundInvertedSelected": "#ffffff",
+    "--colorNeutralForegroundInverted2": "#ffffff",
+    "--colorNeutralForegroundOnBrand": "#ffffff",
+    "--colorNeutralForegroundInvertedLink": "#ffffff",
+    "--colorNeutralForegroundInvertedLinkHover": "#ffffff",
+    "--colorNeutralForegroundInvertedLinkPressed": "#ffffff",
+    "--colorNeutralForegroundInvertedLinkSelected": "#ffffff",
+    "--colorBrandForegroundInverted": "#978BFF",
+    "--colorBrandForegroundInvertedHover": "#A49AFF",
+    "--colorBrandForegroundInvertedPressed": "#978BFF",
+    "--colorBrandForegroundOnLight": "#6453E4",
+    "--colorBrandForegroundOnLightHover": "#4D43DE",
+    "--colorBrandForegroundOnLightPressed": "#392FAC",
+    "--colorBrandForegroundOnLightSelected": "#433AC7",
+    "--colorNeutralBackground1": "#ffffff",
+    "--colorNeutralBackground1Hover": "#F5F5FA",
+    "--colorNeutralBackground1Pressed": "#DFDFE8",
+    "--colorNeutralBackground1Selected": "#EAEAF1",
+    "--colorNeutralBackground2": "#FAFAFF",
+    "--colorNeutralBackground2Hover": "#F0F0F5",
+    "--colorNeutralBackground2Pressed": "#DADAE5",
+    "--colorNeutralBackground2Selected": "#E5E5ED",
+    "--colorNeutralBackground3": "#F5F5FA",
+    "--colorNeutralBackground3Hover": "#EAEAF1",
+    "--colorNeutralBackground3Pressed": "#D5D5E1",
+    "--colorNeutralBackground3Selected": "#DFDFE8",
+    "--colorNeutralBackground4": "#F0F0F5",
+    "--colorNeutralBackground4Hover": "#FAFAFF",
+    "--colorNeutralBackground4Pressed": "#F5F5FA",
+    "--colorNeutralBackground4Selected": "#ffffff",
+    "--colorNeutralBackground5": "#EAEAF1",
+    "--colorNeutralBackground5Hover": "#F5F5FA",
+    "--colorNeutralBackground5Pressed": "#F0F0F5",
+    "--colorNeutralBackground5Selected": "#FAFAFF",
+    "--colorNeutralBackground6": "#E5E5ED",
+    "--colorNeutralBackgroundInverted": "#272836",
+    "--colorNeutralBackgroundStatic": "#C1C1D1",
+    "--colorNeutralBackgroundAlpha": "rgba(255, 255, 255, 0.5)",
+    "--colorNeutralBackgroundAlpha2": "rgba(255, 255, 255, 0.8)",
+    "--colorSubtleBackground": "transparent",
+    "--colorSubtleBackgroundHover": "#F5F5FA",
+    "--colorSubtleBackgroundPressed": "#DFDFE8",
+    "--colorSubtleBackgroundSelected": "#EAEAF1",
+    "--colorSubtleBackgroundLightAlphaHover": "rgba(255, 255, 255, 0.7)",
+    "--colorSubtleBackgroundLightAlphaPressed": "rgba(255, 255, 255, 0.5)",
+    "--colorSubtleBackgroundLightAlphaSelected": "transparent",
+    "--colorSubtleBackgroundInverted": "transparent",
+    "--colorSubtleBackgroundInvertedHover": "rgba(0, 0, 0, 0.1)",
+    "--colorSubtleBackgroundInvertedPressed": "rgba(0, 0, 0, 0.3)",
+    "--colorSubtleBackgroundInvertedSelected": "rgba(0, 0, 0, 0.2)",
+    "--colorTransparentBackground": "transparent",
+    "--colorTransparentBackgroundHover": "transparent",
+    "--colorTransparentBackgroundPressed": "transparent",
+    "--colorTransparentBackgroundSelected": "transparent",
+    "--colorNeutralBackgroundDisabled": "#F0F0F5",
+    "--colorNeutralBackgroundInvertedDisabled": "rgba(255, 255, 255, 0.1)",
+    "--colorNeutralStencil1": "#E5E5ED",
+    "--colorNeutralStencil2": "#FAFAFF",
+    "--colorNeutralStencil1Alpha": "rgba(0, 0, 0, 0.1)",
+    "--colorNeutralStencil2Alpha": "rgba(0, 0, 0, 0.05)",
+    "--colorBackgroundOverlay": "rgba(0, 0, 0, 0.4)",
+    "--colorScrollbarOverlay": "rgba(0, 0, 0, 0.4)",
+    "--colorBrandBackground": "#6453E4",
+    "--colorBrandBackgroundHover": "#4D43DE",
+    "--colorBrandBackgroundPressed": "#392FAC",
+    "--colorBrandBackgroundSelected": "#433AC7",
+    "--colorCompoundBrandBackground": "#6453E4",
+    "--colorCompoundBrandBackgroundHover": "#4D43DE",
+    "--colorCompoundBrandBackgroundPressed": "#433AC7",
+    "--colorBrandBackgroundStatic": "#6453E4",
+    "--colorBrandBackground2": "#F3F0FF",
+    "--colorBrandBackground2Hover": "#E3DEFF",
+    "--colorBrandBackground2Pressed": "#C3BAFF",
+    "--colorBrandBackground3Static": "#433AC7",
+    "--colorBrandBackground4Static": "#302690",
+    "--colorBrandBackgroundInverted": "#ffffff",
+    "--colorBrandBackgroundInvertedHover": "#F3F0FF",
+    "--colorBrandBackgroundInvertedPressed": "#D4CCFF",
+    "--colorBrandBackgroundInvertedSelected": "#E3DEFF",
+    "--colorNeutralCardBackground": "#fafafa",
+    "--colorNeutralCardBackgroundHover": "#ffffff",
+    "--colorNeutralCardBackgroundPressed": "#f5f5f5",
+    "--colorNeutralCardBackgroundSelected": "#ebebeb",
+    "--colorNeutralCardBackgroundDisabled": "#f0f0f0",
+    "--colorNeutralStrokeAccessible": "#5F5F77",
+    "--colorNeutralStrokeAccessibleHover": "#55556C",
+    "--colorNeutralStrokeAccessiblePressed": "#4B4B61",
+    "--colorNeutralStrokeAccessibleSelected": "#6453E4",
+    "--colorNeutralStroke1": "#D0D0DD",
+    "--colorNeutralStroke1Hover": "#C6C6D6",
+    "--colorNeutralStroke1Pressed": "#B1B2C4",
+    "--colorNeutralStroke1Selected": "#232330",
+    "--colorNeutralStroke2": "#DFDFE8",
+    "--colorNeutralStroke3": "#F0F0F5",
+    "--colorNeutralStrokeSubtle": "#DFDFE8",
+    "--colorNeutralStrokeOnBrand": "#ffffff",
+    "--colorNeutralStrokeOnBrand2": "#ffffff",
+    "--colorNeutralStrokeOnBrand2Hover": "#ffffff",
+    "--colorNeutralStrokeOnBrand2Pressed": "#ffffff",
+    "--colorNeutralStrokeOnBrand2Selected": "#ffffff",
+    "--colorBrandStroke1": "#6453E4",
+    "--colorBrandStroke2": "#D4CCFF",
+    "--colorBrandStroke2Hover": "#B1A8FF",
+    "--colorBrandStroke2Pressed": "#6453E4",
+    "--colorBrandStroke2Contrast": "#D4CCFF",
+    "--colorCompoundBrandStroke": "#6453E4",
+    "--colorCompoundBrandStrokeHover": "#4D43DE",
+    "--colorCompoundBrandStrokePressed": "#433AC7",
+    "--colorNeutralStrokeDisabled": "#DFDFE8",
+    "--colorNeutralStrokeInvertedDisabled": "rgba(255, 255, 255, 0.4)",
+    "--colorTransparentStroke": "transparent",
+    "--colorTransparentStrokeInteractive": "transparent",
+    "--colorTransparentStrokeDisabled": "transparent",
+    "--colorNeutralStrokeAlpha": "rgba(0, 0, 0, 0.05)",
+    "--colorNeutralStrokeAlpha2": "rgba(255, 255, 255, 0.2)",
+    "--colorStrokeFocus1": "#ffffff",
+    "--colorStrokeFocus2": "#000000",
+    "--colorNeutralShadowAmbient": "rgba(0,0,0,0.12)",
+    "--colorNeutralShadowKey": "rgba(0,0,0,0.14)",
+    "--colorNeutralShadowAmbientLighter": "rgba(0,0,0,0.06)",
+    "--colorNeutralShadowKeyLighter": "rgba(0,0,0,0.07)",
+    "--colorNeutralShadowAmbientDarker": "rgba(0,0,0,0.20)",
+    "--colorNeutralShadowKeyDarker": "rgba(0,0,0,0.24)",
+    "--colorBrandShadowAmbient": "rgba(0,0,0,0.30)",
+    "--colorBrandShadowKey": "rgba(0,0,0,0.25)",
+    "--colorPaletteRedBackground1": "#fdf6f6",
+    "--colorPaletteRedBackground2": "#f1bbbc",
+    "--colorPaletteRedBackground3": "#C2344D",
+    "--colorPaletteRedForeground1": "#bc2f32",
+    "--colorPaletteRedForeground2": "#751d1f",
+    "--colorPaletteRedForeground3": "#d13438",
+    "--colorPaletteRedBorderActive": "#d13438",
+    "--colorPaletteRedBorder1": "#f1bbbc",
+    "--colorPaletteRedBorder2": "#d13438",
+    "--colorPaletteGreenBackground1": "#f1faf1",
+    "--colorPaletteGreenBackground2": "#9fd89f",
+    "--colorPaletteGreenBackground3": "#107c10",
+    "--colorPaletteGreenForeground1": "#0e700e",
+    "--colorPaletteGreenForeground2": "#094509",
+    "--colorPaletteGreenForeground3": "#107c10",
+    "--colorPaletteGreenBorderActive": "#107c10",
+    "--colorPaletteGreenBorder1": "#9fd89f",
+    "--colorPaletteGreenBorder2": "#107c10",
+    "--colorPaletteDarkOrangeBackground1": "#fdf6f3",
+    "--colorPaletteDarkOrangeBackground2": "#f4bfab",
+    "--colorPaletteDarkOrangeBackground3": "#da3b01",
+    "--colorPaletteDarkOrangeForeground1": "#c43501",
+    "--colorPaletteDarkOrangeForeground2": "#7a2101",
+    "--colorPaletteDarkOrangeForeground3": "#da3b01",
+    "--colorPaletteDarkOrangeBorderActive": "#da3b01",
+    "--colorPaletteDarkOrangeBorder1": "#f4bfab",
+    "--colorPaletteDarkOrangeBorder2": "#da3b01",
+    "--colorPaletteYellowBackground1": "#fffef5",
+    "--colorPaletteYellowBackground2": "#fef7b2",
+    "--colorPaletteYellowBackground3": "#fde300",
+    "--colorPaletteYellowForeground1": "#817400",
+    "--colorPaletteYellowForeground2": "#817400",
+    "--colorPaletteYellowForeground3": "#fde300",
+    "--colorPaletteYellowBorderActive": "#fde300",
+    "--colorPaletteYellowBorder1": "#fef7b2",
+    "--colorPaletteYellowBorder2": "#fde300",
+    "--colorPaletteBerryBackground1": "#fdf5fc",
+    "--colorPaletteBerryBackground2": "#edbbe7",
+    "--colorPaletteBerryBackground3": "#c239b3",
+    "--colorPaletteBerryForeground1": "#af33a1",
+    "--colorPaletteBerryForeground2": "#6d2064",
+    "--colorPaletteBerryForeground3": "#c239b3",
+    "--colorPaletteBerryBorderActive": "#c239b3",
+    "--colorPaletteBerryBorder1": "#edbbe7",
+    "--colorPaletteBerryBorder2": "#c239b3",
+    "--colorPaletteLightGreenBackground1": "#f2fbf2",
+    "--colorPaletteLightGreenBackground2": "#a7e3a5",
+    "--colorPaletteLightGreenBackground3": "#13a10e",
+    "--colorPaletteLightGreenForeground1": "#11910d",
+    "--colorPaletteLightGreenForeground2": "#0b5a08",
+    "--colorPaletteLightGreenForeground3": "#13a10e",
+    "--colorPaletteLightGreenBorderActive": "#13a10e",
+    "--colorPaletteLightGreenBorder1": "#a7e3a5",
+    "--colorPaletteLightGreenBorder2": "#13a10e",
+    "--colorPaletteMarigoldBackground1": "#fefbf4",
+    "--colorPaletteMarigoldBackground2": "#f9e2ae",
+    "--colorPaletteMarigoldBackground3": "#eaa300",
+    "--colorPaletteMarigoldForeground1": "#d39300",
+    "--colorPaletteMarigoldForeground2": "#835b00",
+    "--colorPaletteMarigoldForeground3": "#eaa300",
+    "--colorPaletteMarigoldBorderActive": "#eaa300",
+    "--colorPaletteMarigoldBorder1": "#f9e2ae",
+    "--colorPaletteMarigoldBorder2": "#eaa300",
+    "--colorPaletteRedForegroundInverted": "#dc5e62",
+    "--colorPaletteGreenForegroundInverted": "#359b35",
+    "--colorPaletteYellowForegroundInverted": "#fef7b2",
+    "--colorPaletteDarkRedBackground2": "#d69ca5",
+    "--colorPaletteDarkRedForeground2": "#420610",
+    "--colorPaletteDarkRedBorderActive": "#750b1c",
+    "--colorPaletteCranberryBackground2": "#eeacb2",
+    "--colorPaletteCranberryForeground2": "#6e0811",
+    "--colorPaletteCranberryBorderActive": "#c50f1f",
+    "--colorPalettePumpkinBackground2": "#efc4ad",
+    "--colorPalettePumpkinForeground2": "#712d09",
+    "--colorPalettePumpkinBorderActive": "#ca5010",
+    "--colorPalettePeachBackground2": "#ffddb3",
+    "--colorPalettePeachForeground2": "#8f4e00",
+    "--colorPalettePeachBorderActive": "#ff8c00",
+    "--colorPaletteGoldBackground2": "#ecdfa5",
+    "--colorPaletteGoldForeground2": "#6c5700",
+    "--colorPaletteGoldBorderActive": "#c19c00",
+    "--colorPaletteBrassBackground2": "#e0cea2",
+    "--colorPaletteBrassForeground2": "#553e06",
+    "--colorPaletteBrassBorderActive": "#986f0b",
+    "--colorPaletteBrownBackground2": "#ddc3b0",
+    "--colorPaletteBrownForeground2": "#50301a",
+    "--colorPaletteBrownBorderActive": "#8e562e",
+    "--colorPaletteForestBackground2": "#bdd99b",
+    "--colorPaletteForestForeground2": "#294903",
+    "--colorPaletteForestBorderActive": "#498205",
+    "--colorPaletteSeafoamBackground2": "#a8f0cd",
+    "--colorPaletteSeafoamForeground2": "#00723b",
+    "--colorPaletteSeafoamBorderActive": "#00cc6a",
+    "--colorPaletteDarkGreenBackground2": "#9ad29a",
+    "--colorPaletteDarkGreenForeground2": "#063b06",
+    "--colorPaletteDarkGreenBorderActive": "#0b6a0b",
+    "--colorPaletteLightTealBackground2": "#a6e9ed",
+    "--colorPaletteLightTealForeground2": "#00666d",
+    "--colorPaletteLightTealBorderActive": "#00b7c3",
+    "--colorPaletteTealBackground2": "#9bd9db",
+    "--colorPaletteTealForeground2": "#02494c",
+    "--colorPaletteTealBorderActive": "#038387",
+    "--colorPaletteSteelBackground2": "#94c8d4",
+    "--colorPaletteSteelForeground2": "#00333f",
+    "--colorPaletteSteelBorderActive": "#005b70",
+    "--colorPaletteBlueBackground2": "#a9d3f2",
+    "--colorPaletteBlueForeground2": "#004377",
+    "--colorPaletteBlueBorderActive": "#0078d4",
+    "--colorPaletteRoyalBlueBackground2": "#9abfdc",
+    "--colorPaletteRoyalBlueForeground2": "#002c4e",
+    "--colorPaletteRoyalBlueBorderActive": "#004e8c",
+    "--colorPaletteCornflowerBackground2": "#c8d1fa",
+    "--colorPaletteCornflowerForeground2": "#2c3c85",
+    "--colorPaletteCornflowerBorderActive": "#4f6bed",
+    "--colorPaletteNavyBackground2": "#a3b2e8",
+    "--colorPaletteNavyForeground2": "#001665",
+    "--colorPaletteNavyBorderActive": "#0027b4",
+    "--colorPaletteLavenderBackground2": "#d2ccf8",
+    "--colorPaletteLavenderForeground2": "#3f3682",
+    "--colorPaletteLavenderBorderActive": "#7160e8",
+    "--colorPalettePurpleBackground2": "#c6b1de",
+    "--colorPalettePurpleForeground2": "#341a51",
+    "--colorPalettePurpleBorderActive": "#5c2e91",
+    "--colorPaletteGrapeBackground2": "#d9a7e0",
+    "--colorPaletteGrapeForeground2": "#4c0d55",
+    "--colorPaletteGrapeBorderActive": "#881798",
+    "--colorPaletteLilacBackground2": "#e6bfed",
+    "--colorPaletteLilacForeground2": "#63276d",
+    "--colorPaletteLilacBorderActive": "#b146c2",
+    "--colorPalettePinkBackground2": "#f7c0e3",
+    "--colorPalettePinkForeground2": "#80215d",
+    "--colorPalettePinkBorderActive": "#e43ba6",
+    "--colorPaletteMagentaBackground2": "#eca5d1",
+    "--colorPaletteMagentaForeground2": "#6b0043",
+    "--colorPaletteMagentaBorderActive": "#bf0077",
+    "--colorPalettePlumBackground2": "#d696c0",
+    "--colorPalettePlumForeground2": "#43002b",
+    "--colorPalettePlumBorderActive": "#77004d",
+    "--colorPaletteBeigeBackground2": "#d7d4d4",
+    "--colorPaletteBeigeForeground2": "#444241",
+    "--colorPaletteBeigeBorderActive": "#7a7574",
+    "--colorPaletteMinkBackground2": "#cecccb",
+    "--colorPaletteMinkForeground2": "#343231",
+    "--colorPaletteMinkBorderActive": "#5d5a58",
+    "--colorPalettePlatinumBackground2": "#cdd6d8",
+    "--colorPalettePlatinumForeground2": "#3b4447",
+    "--colorPalettePlatinumBorderActive": "#69797e",
+    "--colorPaletteAnchorBackground2": "#bcc3c7",
+    "--colorPaletteAnchorForeground2": "#202427",
+    "--colorPaletteAnchorBorderActive": "#394146",
+    "--colorStatusSuccessBackground1": "#D3FCE0",
+    "--colorStatusSuccessBackground2": "#37BA9D",
+    "--colorStatusSuccessBackground3": "#37BA9D",
+    "--colorStatusSuccessForeground1": "#007869",
+    "--colorStatusSuccessForeground2": "#0C5C51",
+    "--colorStatusSuccessForeground3": "#0C5C51",
+    "--colorStatusSuccessForegroundInverted": "#2EAC92",
+    "--colorStatusSuccessBorderActive": "#107c10",
+    "--colorStatusSuccessBorder1": "#8BE4BD",
+    "--colorStatusSuccessBorder2": "#4AC6A4",
+    "--colorStatusWarningBackground1": "#FFF0D8",
+    "--colorStatusWarningBackground2": "#ED9100",
+    "--colorStatusWarningBackground3": "#ED9100",
+    "--colorStatusWarningForeground1": "#9D5A00",
+    "--colorStatusWarningForeground2": "#7E4200",
+    "--colorStatusWarningForeground3": "#7E4200",
+    "--colorStatusWarningForegroundInverted": "#faa06b",
+    "--colorStatusWarningBorderActive": "#f7630c",
+    "--colorStatusWarningBorder1": "#FFDEA7",
+    "--colorStatusWarningBorder2": "#bc4b09",
+    "--colorStatusDangerBackground1": "#FFEEEE",
+    "--colorStatusDangerBackground2": "#C2344D",
+    "--colorStatusDangerBackground3": "#C2344D",
+    "--colorStatusDangerForeground1": "#C2344D",
+    "--colorStatusDangerForeground2": "#9A2043",
+    "--colorStatusDangerForeground3": "#9A2043",
+    "--colorStatusDangerForegroundInverted": "#dc626d",
+    "--colorStatusDangerBorderActive": "#c50f1f",
+    "--colorStatusDangerBorder1": "#FFC4C1",
+    "--colorStatusDangerBorder2": "#FF948D",
+    "--colorStatusDangerBackground3Hover": "#AD2647",
+    "--colorStatusDangerBackground3Pressed": "#84173C",
+    "--shadow2": "0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14)",
+    "--shadow4": "0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14)",
+    "--shadow8": "0 0 2px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.14)",
+    "--shadow16": "0 0 2px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.14)",
+    "--shadow28": "0 0 8px rgba(0,0,0,0.12), 0 14px 28px rgba(0,0,0,0.14)",
+    "--shadow64": "0 0 8px rgba(0,0,0,0.12), 0 32px 64px rgba(0,0,0,0.14)",
+    "--shadow2Brand": "0 0 2px rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.25)",
+    "--shadow4Brand": "0 0 2px rgba(0,0,0,0.30), 0 2px 4px rgba(0,0,0,0.25)",
+    "--shadow8Brand": "0 0 2px rgba(0,0,0,0.30), 0 4px 8px rgba(0,0,0,0.25)",
+    "--shadow16Brand": "0 0 2px rgba(0,0,0,0.30), 0 8px 16px rgba(0,0,0,0.25)",
+    "--shadow28Brand": "0 0 8px rgba(0,0,0,0.30), 0 14px 28px rgba(0,0,0,0.25)",
+    "--shadow64Brand": "0 0 8px rgba(0,0,0,0.30), 0 32px 64px rgba(0,0,0,0.25)",
+    "--colorDestructiveForeground1": "#ffffff",
+    "--colorDestructiveBackground1": "#C2344D",
+    "--colorDestructiveBackground1Hover": "#AD2647",
+    "--colorDestructiveBackground1Pressed": "#84173C",
+    "--colorDestructiveBackground1Selected": "#C2344D",
+    "--colorSuccessForeground1": "#000000",
+    "--colorSuccessBackground1": "#37BA9D",
+    "--colorSuccessBackground1Hover": "#179382",
+    "--colorSuccessBackground1Pressed": "#007869",
+    "--colorSuccessBackground1Selected": "#2EAC92",
+    "--colorTooltipBackground1": "#ffffff",
+    "--colorTooltipBackground2": "#F5F5FA",
+    "--colorButtonSecondaryBackground1": "#F5F5FA",
+    "--colorButtonSecondaryBackground1Hover": "#EAEAF1",
+    "--colorButtonTransparentForeground1": "#4D43DE",
+    "--colorButtonTransparentForeground1Hover": "#392FAC",
+    "--colorButtonTransparentForeground1Pressed": "#302690",
+    "--colorButtonTransparentForeground1Selected": "#433AC7",
+    "--colorButtonSubtleForeground1Hover": "#232330",
+    "--colorToolbarBackground1": "#DFDFE8",
+    "--colorMenuNeutralBackground1": "#ffffff",
+    "--colorMenuNeutralStroke1": "#D5D5E1",
+    "--colorTagFilledBackground1": "#F5F5FA",
+    "--colorBrandForeground1Hover": "#4D43DE",
+    "--colorBrandForeground1Pressed": "#302690",
+    "--colorBrandForeground1Selected": "#433AC7",
+    "--colorBrandForeground2Selected": "#433AC7",
+    "--colorNeutralBackgroundInverted6": "#E5E5ED",
+    "--colorNeutralBackgroundInverted6Hover": "#E5E5ED",
+    "--colorNeutralBackgroundInverted6Pressed": "#E5E5ED",
+    "--colorNeutralBackgroundInverted6Selected": "#E5E5ED",
+    "--colorNeutralForegroundOnColour": "#ffffff",
+    "--colorStatusSuccessBackground1Hover": "#ADF0CC",
+    "--colorStatusSuccessBackground1Pressed": "#8BE4BD",
+    "--colorStatusSuccessBackground1Selected": "#D3FCE0",
+    "--colorStatusSuccessBackground2Hover": "#179382",
+    "--colorStatusSuccessBackground2Pressed": "#007869",
+    "--colorStatusSuccessBackground2Selected": "#2EAC92",
+    "--colorStatusSuccessBackground3Hover": "#179382",
+    "--colorStatusSuccessBackground3Pressed": "#007869",
+    "--colorStatusSuccessBackground3Selected": "#2EAC92",
+    "--colorStatusSuccessForeground1Hover": "#02685C",
+    "--colorStatusSuccessForeground1Pressed": "#0B4E44",
+    "--colorStatusSuccessForeground1Selected": "#0C5C51",
+    "--colorStatusWarningBackground1Hover": "#FFDEA7",
+    "--colorStatusWarningBackground1Pressed": "#FFCA69",
+    "--colorStatusWarningBackground1Selected": "#FFF0D8",
+    "--colorStatusWarningBackground2Hover": "#DD8601",
+    "--colorStatusWarningBackground2Pressed": "#9D5A00",
+    "--colorStatusWarningBackground2Selected": "#C07100",
+    "--colorStatusWarningForeground1Hover": "#8B4D00",
+    "--colorStatusWarningForeground1Pressed": "#6B3800",
+    "--colorStatusWarningForeground1Selected": "#7E4200",
+    "--colorStatusDangerBackground1Hover": "#FFD9D7",
+    "--colorStatusDangerBackground1Pressed": "#FFC4C1",
+    "--colorStatusDangerBackground1Selected": "#FFEEEE",
+    "--colorStatusDangerBackground2Hover": "#AD2647",
+    "--colorStatusDangerBackground2Pressed": "#84173C",
+    "--colorStatusDangerBackground2Selected": "#9A2043",
+    "--colorStatusDangerBackground3Selected": "#9A2043",
+    "--colorStatusDangerForeground1Hover": "#AD2647",
+    "--colorStatusDangerForeground1Pressed": "#84173C",
+    "--colorStatusDangerForeground1Selected": "#9A2043"
+   },
+   "bin": "app"
+  }
+ ],
+ "framework": [],
+ "utility": [],
+ "fonts": [
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "segoeVariableFont",
+   "src": "url(\"../media/segoe_ui_vf-s.3lcojexweltyk.woff2\") format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "\"segoeVariableFont Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "108.25%",
+   "descent-override": "25.18%",
+   "line-gap-override": "0%",
+   "size-adjust": "99.69%"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "segoeFont",
+   "src": "url(\"../media/segoe_ui_static_regular-s.08fokfyhwq2tr.woff\") format(\"woff\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "\"segoeFont Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "108.25%",
+   "descent-override": "25.18%",
+   "line-gap-override": "0%",
+   "size-adjust": "99.69%"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "kintoSansFont",
+   "src": "url(\"../media/kinto_sans_400-s.2nwxwkv2ywkmh.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "kintoSansFont",
+   "src": "url(\"../media/kinto_sans_500-s.08i8jh0ylxlwe.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "500"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "kintoSansFont",
+   "src": "url(\"../media/kinto_sans_700-s.1bif7hynk1luo.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "700"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "\"kintoSansFont Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "83.64%",
+   "descent-override": "11.4%",
+   "line-gap-override": "0%",
+   "size-adjust": "105.22%"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "openSansCyFont",
+   "src": "url(\"../media/open_sans_cy_400-s.0tyz_9jr2kfm9.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "openSansCyFont",
+   "src": "url(\"../media/open_sans_cy_500-s.29pzqmglwp0pt.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "500"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "openSansCyFont",
+   "src": "url(\"../media/open_sans_cy_700-s.12y3p8gqv46p7.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "700"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "\"openSansCyFont Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "101.48%",
+   "descent-override": "27.82%",
+   "line-gap-override": "0%",
+   "size-adjust": "105.33%"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "notoSansKoFont",
+   "src": "url(\"../media/noto_sans_ko_400-s.0rmbqx5-t3jrj.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "notoSansKoFont",
+   "src": "url(\"../media/noto_sans_ko_500-s.0bhyfskfogeg0.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "500"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "notoSansKoFont",
+   "src": "url(\"../media/noto_sans_ko_700-s.239mk8o1ld05h.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "700"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "\"notoSansKoFont Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "110.24%",
+   "descent-override": "27.37%",
+   "line-gap-override": "0%",
+   "size-adjust": "105.22%"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "notoSansThFont",
+   "src": "url(\"../media/noto_sans_th_400-s.2ni-ubb4z9nh_.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "notoSansThFont",
+   "src": "url(\"../media/noto_sans_th_500-s.07s2eogbkcexj.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "500"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "notoSansThFont",
+   "src": "url(\"../media/noto_sans_th_700-s.3bmhtaofu2317.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "700"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "\"notoSansThFont Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "106.1%",
+   "descent-override": "45%",
+   "line-gap-override": "0%",
+   "size-adjust": "100%"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "notoSansZhFont",
+   "src": "url(\"../media/noto_sans_zh_400-s.26nr2_u21pgip.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "notoSansZhFont",
+   "src": "url(\"../media/noto_sans_zh_500-s.33ku3df4i3sgi.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "500"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "notoSansZhFont",
+   "src": "url(\"../media/noto_sans_zh_700-s.2mq28h6zwn4kj.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "700"
+  },
+  {
+   "file": "https://clipchamp.com/_next/static/chunks/10qnitb0w7sme.css",
+   "font-family": "\"notoSansZhFont Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "110.24%",
+   "descent-override": "27.37%",
+   "line-gap-override": "0%",
+   "size-adjust": "105.22%"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--color-accent-1-background": {
+    "raw": "#f6d9ff",
+    "kind": "color",
+    "value": "#f6d9ff"
+   },
+   "--color-accent-1-dark": {
+    "raw": "#6e006c",
+    "kind": "color",
+    "value": "#6e006c"
+   },
+   "--color-accent-1-light": {
+    "raw": "#e560ff",
+    "kind": "color",
+    "value": "#e560ff"
+   },
+   "--color-accent-1-standard": {
+    "raw": "#b50ac1",
+    "kind": "color",
+    "value": "#b50ac1"
+   },
+   "--color-accent-2-background": {
+    "raw": "#dee2ff",
+    "kind": "color",
+    "value": "#dee2ff"
+   },
+   "--color-accent-2-dark": {
+    "raw": "#242da0",
+    "kind": "color",
+    "value": "#242da0"
+   },
+   "--color-accent-2-light": {
+    "raw": "#8893ff",
+    "kind": "color",
+    "value": "#8893ff"
+   },
+   "--color-accent-2-standard": {
+    "raw": "#3a5af4",
+    "kind": "color",
+    "value": "#3a5af4"
+   },
+   "--color-background-off-white": {
+    "raw": "#fbfbfc",
+    "kind": "color",
+    "value": "#fbfbfc"
+   },
+   "--color-blue-110": {
+    "raw": "#8893ff",
+    "kind": "color",
+    "value": "#8893ff"
+   },
+   "--color-blue-150": {
+    "raw": "#dee2ff",
+    "kind": "color",
+    "value": "#dee2ff"
+   },
+   "--color-blue-50": {
+    "raw": "#242da0",
+    "kind": "color",
+    "value": "#242da0"
+   },
+   "--color-blue-80": {
+    "raw": "#3a5af4",
+    "kind": "color",
+    "value": "#3a5af4"
+   },
+   "--color-brand-background": {
+    "raw": "#f3f0ff",
+    "kind": "color",
+    "value": "#f3f0ff"
+   },
+   "--color-brand-dark": {
+    "raw": "#433ac7",
+    "kind": "color",
+    "value": "#433ac7"
+   },
+   "--color-brand-light": {
+    "raw": "#4d43de",
+    "kind": "color",
+    "value": "#4d43de"
+   },
+   "--color-brand-standard": {
+    "raw": "#6453e4",
+    "kind": "color",
+    "value": "#6453e4"
+   },
+   "--color-collapsible-content": {
+    "raw": "#1c1c26b3",
+    "kind": "color",
+    "value": "rgba(28, 28, 38, 0.7)"
+   },
+   "--color-collapsible-header": {
+    "raw": "#5d6276",
+    "kind": "color",
+    "value": "#5d6276"
+   },
+   "--color-grey-18": {
+    "raw": "#2c2d3c",
+    "kind": "color",
+    "value": "#2c2d3c"
+   },
+   "--color-grey-20": {
+    "raw": "#313242",
+    "kind": "color",
+    "value": "#313242"
+   },
+   "--color-grey-40": {
+    "raw": "#64647c",
+    "kind": "color",
+    "value": "#64647c"
+   },
+   "--color-grey-44": {
+    "raw": "#6e6e86",
+    "kind": "color",
+    "value": "#6e6e86"
+   },
+   "--color-hover-links": {
+    "raw": "#433ac7",
+    "kind": "color",
+    "value": "#433ac7"
+   },
+   "--color-inactive-links": {
+    "raw": "#4d43de",
+    "kind": "color",
+    "value": "#4d43de"
+   },
+   "--color-pink-110": {
+    "raw": "#e560ff",
+    "kind": "color",
+    "value": "#e560ff"
+   },
+   "--color-pink-150": {
+    "raw": "#f6d9ff",
+    "kind": "color",
+    "value": "#f6d9ff"
+   },
+   "--color-pink-50": {
+    "raw": "#6e006c",
+    "kind": "color",
+    "value": "#6e006c"
+   },
+   "--color-pink-80": {
+    "raw": "#b50ac1",
+    "kind": "color",
+    "value": "#b50ac1"
+   },
+   "--color-purple-160": {
+    "raw": "#f3f0ff",
+    "kind": "color",
+    "value": "#f3f0ff"
+   },
+   "--color-purple-60": {
+    "raw": "#433ac7",
+    "kind": "color",
+    "value": "#433ac7"
+   },
+   "--color-purple-70": {
+    "raw": "#4d43de",
+    "kind": "color",
+    "value": "#4d43de"
+   },
+   "--color-purple-80": {
+    "raw": "#6453e4",
+    "kind": "color",
+    "value": "#6453e4"
+   },
+   "--color-social-email": {
+    "raw": "#6453e4",
+    "kind": "color",
+    "value": "#6453e4"
+   },
+   "--color-social-facebook": {
+    "raw": "#1977f2",
+    "kind": "color",
+    "value": "#1977f2"
+   },
+   "--color-social-linkedin": {
+    "raw": "#0077b5",
+    "kind": "color",
+    "value": "#0077b5"
+   },
+   "--color-social-messenger": {
+    "raw": "#0086ff",
+    "kind": "color",
+    "value": "#0086ff"
+   },
+   "--color-social-reddit": {
+    "raw": "#ff4500",
+    "kind": "color",
+    "value": "#ff4500"
+   },
+   "--color-social-twitter": {
+    "raw": "#1da1f2",
+    "kind": "color",
+    "value": "#1da1f2"
+   },
+   "--color-social-whatsapp": {
+    "raw": "#3ac34c",
+    "kind": "color",
+    "value": "#3ac34c"
+   },
+   "--color-text-dark": {
+    "raw": "#313242",
+    "kind": "color",
+    "value": "#313242"
+   },
+   "--color-text-light": {
+    "raw": "#64647c",
+    "kind": "color",
+    "value": "#64647c"
+   },
+   "--height-audio-item": {
+    "raw": "160px",
+    "kind": "dimension",
+    "value": "160px"
+   },
+   "--height-banner": {
+    "raw": "3rem",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--height-mobile-nav": {
+    "raw": "4.5rem",
+    "kind": "dimension",
+    "value": "72px"
+   },
+   "--height-nav": {
+    "raw": "3.875rem",
+    "kind": "dimension",
+    "value": "62px"
+   },
+   "--hover-duration": {
+    "raw": ".2s",
+    "kind": "duration",
+    "value": "0.2s"
+   }
+  }
+ }
+}
