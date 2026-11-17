@@ -893,6 +893,23 @@
         }
       ]
     },
+    "clipchamp.com": {
+      "catalog": [
+        {
+          "name": "Clipchamp",
+          "domain": "clipchamp.com",
+          "id": 858
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "clipchamp",
+          "name": "Clipchamp",
+          "url": "https://clipchamp.com",
+          "name_match": true
+        }
+      ]
+    },
     "copy.ai": {
       "catalog": [
         {
@@ -2422,13 +2439,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "clipchamp.com": [
-      {
-        "name": "Clipchamp",
-        "domain": "clipchamp.com",
-        "id": 858
       }
     ],
     "cofounder.co": [

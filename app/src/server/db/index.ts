@@ -311,13 +311,23 @@ export async function createResearchStore(directory: string) {
     }
     if (version < 24) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v23 never re-seeds, so the Hashnode rows would never
+      // already at v23 never re-seeds, so the Clipchamp rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:clipchamp"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:clipchamp"]));
+      await tx.execute("PRAGMA user_version = 24");
+    }
+    if (version < 25) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v24 never re-seeds, so the Hashnode rows would never
       // arrive. Scoping keeps cleared labels on older packages cleared — an
       // empty assignment reads as "never labelled", so an unscoped pass
       // would restore rows the user deleted.
       await seedNewCuratedCategories(tx, new Set(["systems:hashnode"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:hashnode"]));
-      await tx.execute("PRAGMA user_version = 24");
+      await tx.execute("PRAGMA user_version = 25");
     }
     await tx.commit();
   } catch (error) {
