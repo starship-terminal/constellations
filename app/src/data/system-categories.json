@@ -870,7 +870,7 @@
       "AI Tool",
       "Productivity"
     ],
-    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries \u2014 the AI Tool label."
+    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries — the AI Tool label."
   },
   {
     "referenceId": "systems:deel",
@@ -894,7 +894,7 @@
     "labels": [
       "AI Tool"
     ],
-    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) \u2014 the AI Tool label."
+    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) — the AI Tool label."
   },
   {
     "referenceId": "systems:chargetrip",
@@ -1194,7 +1194,7 @@
       "AI Tool",
       "Productivity"
     ],
-    "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog \u2014 the AI Tool label."
+    "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog — the AI Tool label."
   },
   {
     "referenceId": "systems:family",
@@ -1461,7 +1461,7 @@
       "Fundraising",
       "Marketplace"
     ],
-    "reason": "catalog.json describes a crowdfunding platform: the home hero and header dropdowns, the /discover and /s browse grids of fundraiser cards, a public /f/<slug> fundraiser page, the /create/fundraiser/category wizard at rest, the /sign-in auth boundary and the /c/* marketing stack \u2014 all signed-out."
+    "reason": "catalog.json describes a crowdfunding platform: the home hero and header dropdowns, the /discover and /s browse grids of fundraiser cards, a public /f/<slug> fundraiser page, the /create/fundraiser/category wizard at rest, the /sign-in auth boundary and the /c/* marketing stack — all signed-out."
   },
   {
     "referenceId": "systems:grammarly",
@@ -1499,7 +1499,10 @@
   {
     "referenceId": "systems:hashnode",
     "groupId": "web-categories",
-    "labels": ["Social Networking", "Development Tools"],
+    "labels": [
+      "Social Networking",
+      "Development Tools"
+    ],
     "reason": "catalog.json describes Hashnode's signed-out developer-blogging product: the marketing pages, public feed and post cards, public profiles and posts, Pro pricing, the agents install page, changelog, hackathons and brand surfaces, plus the Town Hall hosted-blog engine's index/article/archive."
   },
   {
@@ -1545,8 +1548,20 @@
   {
     "referenceId": "systems:joinhandshake",
     "groupId": "web-categories",
-    "labels": ["Marketplace", "Productivity"],
+    "labels": [
+      "Marketplace",
+      "Productivity"
+    ],
     "reason": "catalog.json describes a college career network: the students/employers/career-centers marketing stack, employer pricing and request-a-demo Marketo forms, a careers page with a departments filter, a blog and learn hub, legal and corporate pages, and the consumer app's signed-out 'Log in or sign up' card at /access - all signed-out, with the job feed and registration behind a Cloudflare boundary."
+  },
+  {
+    "referenceId": "systems:homerun",
+    "groupId": "web-categories",
+    "labels": [
+      "Business",
+      "Productivity"
+    ],
+    "reason": "catalog.json describes Homerun's signed-out hiring/ATS product: the marketing pages, product/features/pricing/customers surfaces, blog/templates/integrations/guides/updates libraries, trial and legal pages, the jobs.homerun.co careers app with its public job ads and application wizard, and the two sign-in boundaries."
   },
   {
     "referenceId": "systems:helloivy",

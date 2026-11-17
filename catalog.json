@@ -16037,6 +16037,100 @@
       "pr": "https://github.com/starship-terminal/constellations/pull/631"
    },
    "layoutGaps": {}
-}
+},
+  {
+   "slug": "homerun",
+   "name": "Homerun",
+   "url": "https://www.homerun.co",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Homerun's hiring/ATS marketing: a Webflow build whose :root carries two palette layers at once - the current --_updated-colors-v2---* set (beige grounds, the #4f75fe brand-blue ramp, the warm-brown ink scale, secondary/tertiary accents) plus the legacy named layer it replaced - over a single light theme with #2d2323 dark bands, GT Walsheim 900 display + GT America UI type, 12px-radius blue/dark button pairs, and the same system running through the jobs.homerun.co careers app (#466af6 accent), the Angular app.homerun.co/login card (its own --ui-* token layer) and the .NET app.homerun.hr sign-in (#00b16b green)",
+   "tags": [
+    "web",
+    "saas",
+    "hr",
+    "ats",
+    "hiring",
+    "webflow",
+    "light",
+    "blue-accent",
+    "declared-tokens",
+    "marketing",
+    "pricing",
+    "careers",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (the marketing routes and careers site are fully public; the ATS and HR apps sit behind sign-in - both public login cards were measured at rest, never submitted; the public application wizard was never advanced past its first step; consent banners were hidden without answering them; sign-up/login/apply links were never followed)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/homerun/README.md",
+   "tokens": "systems/homerun/tokens.json",
+   "styleGuide": "systems/homerun/style-guide.html",
+   "preview": {
+    "cover": "systems/homerun/screenshots/home-light-default.png",
+    "icon": "systems/homerun/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.band",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.sans"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "www.homerun.co, jobs.homerun.co, app.homerun.co/login and app.homerun.hr/Account/Logon in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 161 element crops from the live DOM, plus a four-surface stylesheet harvest that fetches the cross-origin CDN sheets directly (499 rules, 66 @font-face records, 654 variable names resolved per surface: www 87, jobs 168, app 350, apphr 0). The marketing site is a Webflow build whose :root declares the current --_updated-colors-v2---* palette plus a large legacy named layer, both kept; the Angular sign-in declares its own --ui-* control roles. core ramp tokens are the declared values; surface roles are measured computed values aliased to the declarations they match. BOUNDARY: the ATS and HR apps sit behind sign-in, never crossed; the application wizard was never advanced or submitted; nothing was typed, sent or authenticated",
+    "timestamp": "2026-11-17T12:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/ats",
+     "/hr",
+     "/product/features",
+     "/pricing",
+     "/customers",
+     "/about",
+     "/contact",
+     "/blog",
+     "/templates",
+     "/integrations",
+     "/guides",
+     "/updates/",
+     "/trial",
+     "/privacy-statement",
+     "jobs.homerun.co/, /open/en and /open/en/apply",
+     "app.homerun.co/login",
+     "app.homerun.hr/Account/Logon",
+     "mobile /, /pricing and /ats plus the opened mobile menu"
+    ],
+    "gaps": [
+     "the ATS and HR apps sit behind sign-in and were never crossed; both login cards were measured at rest and never submitted, no credentials exist in the capture",
+     "the application wizard was never advanced past its first step: nothing was typed, uploaded or submitted, and its file input/checkbox paint through custom controls over 0x0 inputs",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "the pricing feature table sits below the lazy-load line: pricing-table/-head/-row kept earlier readings under recaptureMissed provenance",
+     "blog/guide/update/template article pages and customer stories are index-list captures only",
+     "apphr declares no custom properties - plain Tailwind utility CSS - so its tokens are measured values",
+     "consent was never answered, so a consent-accepted render of the careers site is not in the set"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, four-surface route probing, the stylesheet harvest and per-surface resolution, screenshot and measurement passes, and the offline build"
+   }
+  }
  ]
 }

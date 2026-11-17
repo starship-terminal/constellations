@@ -156,6 +156,9 @@ export async function seedNewCuratedMediaTerms(
   const entries = seed.assignments.flatMap((assignment) => {
     if (onlyReferences && !onlyReferences.has(assignment.referenceId))
       return [];
+    // A top-up may also be scoped to media ids, for rows the regenerated seed
+    // file gained since the reference's own migration: they were never seeded,
+    // so no user could have cleared them and inserting them restores nothing.
     if (onlyMediaIds && !onlyMediaIds.has(assignment.mediaId)) return [];
     if (labeled.has(`${assignment.referenceId}${assignment.mediaId}`))
       return [];

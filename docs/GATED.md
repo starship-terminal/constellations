@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_128 of 186 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_129 of 187 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -721,6 +721,11 @@ Access: signed out (every captured surface is public); the member app behind aut
 - submitted states: the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never sent - validation, error, loading and success states are absent rather than measured
 - /pricing answers a real 404 ('Whoops! Something's changed'); the plans live on /subscriptions - a recorded absence, not a capture
 - the checkout shell's form fields, the feature/testimonial cards, the FAQ accordion, the plan cards and billing switch, the content tiles, the footer language selector and app badges, and the mobile nav sheet did not match the kit's structural selectors on this pass - recorded as absent components, not measured
+
+## [Homerun](../systems/homerun) — `homerun`
+Access: signed out (the marketing routes and careers site are fully public; the ATS and HR apps sit behind sign-in - both public login cards were measured at rest, never submitted; the public application wizard was never advanced past its first step; consent banners were hidden without answering them; sign-up/login/apply links were never followed)
+- the ATS and HR apps sit behind sign-in and were never crossed; both login cards were measured at rest and never submitted, no credentials exist in the capture
+- the application wizard was never advanced past its first step: nothing was typed, uploaded or submitted, and its file input/checkbox paint through custom controls over 0x0 inputs
 
 ## Gate noted in access text only
 

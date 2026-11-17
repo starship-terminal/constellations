@@ -1401,6 +1401,11 @@
       "referenceId": "systems:headspace",
       "media": 128,
       "assignedMedia": 30
+    },
+    {
+      "referenceId": "systems:homerun",
+      "media": 211,
+      "assignedMedia": 211
     }
   ],
   "assignments": [
@@ -315558,6 +315563,3737 @@
           "termId": "web-ui-elements:button",
           "rule": "ui-button",
           "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/apply-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/ats-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/ats-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/careers-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/careers-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/contact-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/customers-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/customers-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/features-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/features-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/guides-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/guides-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/home-light-nav-login-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/home-light-nav-resources-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/hr-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/hr-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/integrations-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/integrations-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/job-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/job-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-apply-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-ats-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-ats-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-careers-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-careers-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-home-light-menu-open.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/mobile-pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/pricing-light-faq-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/privacy-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/privacy-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/signin-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/signinhr-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/templates-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/templates-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/trial-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/trial-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/updates-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/screenshots/updates-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-back-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-back-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-back-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-back-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-email-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-email-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-next-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-next-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/apply-steps-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/ats-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/ats-feature-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/ats-integrate-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/ats-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/ats-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-all-jobs-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-all-jobs-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-all-jobs-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-all-jobs-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-carousel-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-carousel-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-filter-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-filter-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-filter-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-filter-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-job-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-job-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-job-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-job-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-share-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/careers-share-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/cookie-banner-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/cta-band-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/faq-answer-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/faq-item-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/feature-accordion-body-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/feature-accordion-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/feature-accordion-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/footer-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-demo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-demo-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-demo-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-demo-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-sub-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/hr-password-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-apply-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-apply-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-apply-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-apply-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-back-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-back-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-back-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-back-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-prose-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-share-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-share-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-share-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-share-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/job-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/m-menu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/m-menu-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/m-menu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/m-menu-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/m-menu-open-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-demo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-demo-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-demo-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-demo-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-login-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-login-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-login-opened.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-login-panel-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-product-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-product-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-product-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-product-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-resources-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-resources-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-resources-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-resources-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-resources-opened.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-resources-panel-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-trial-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-trial-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-trial-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/nav-trial-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/newsletter-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/newsletter-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/newsletter-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/newsletter-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-feature-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-stepper-minus-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:stepper",
+          "rule": "ui-stepper",
+          "reason": "Capture filename explicitly names stepper; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-stepper-plus-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:stepper",
+          "rule": "ui-stepper",
+          "reason": "Capture filename explicitly names stepper; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-stepper-plus-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:stepper",
+          "rule": "ui-stepper",
+          "reason": "Capture filename explicitly names stepper; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/plan-stepper-plus-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:stepper",
+          "rule": "ui-stepper",
+          "reason": "Capture filename explicitly names stepper; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/pricing-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/pricing-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/pricing-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/pricing-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/pricing-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/rating-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/section-h2-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-email-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-email-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-password-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-sso-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-sso-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-sso-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-sso-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:homerun",
+      "mediaId": "systems/homerun/components/crops/signin-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:gt-walsheim",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT Walsheim from systems/homerun/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:gt-america",
+          "rule": "font-primary",
+          "reason": "Exact primary family GT America from systems/homerun/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
         }
       ]
     }

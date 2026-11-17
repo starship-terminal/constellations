@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 186,
-    "system_domains": 177,
-    "matched_domains": 147,
-    "missing_domains": 286,
+    "system_packages": 187,
+    "system_domains": 178,
+    "matched_domains": 148,
+    "missing_domains": 285,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2406,6 +2406,23 @@
         }
       ]
     },
+    "homerun.co": {
+      "catalog": [
+        {
+          "name": "Homerun",
+          "domain": "homerun.co",
+          "id": 417
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "homerun",
+          "name": "Homerun",
+          "url": "https://www.homerun.co",
+          "name_match": true
+        }
+      ]
+    },
     "joinhandshake.com": {
       "catalog": [
         {
@@ -2732,13 +2749,6 @@
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "homerun.co": [
-      {
-        "name": "Homerun",
-        "domain": "homerun.co",
-        "id": 417
       }
     ],
     "httpie.io": [
