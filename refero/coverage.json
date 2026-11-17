@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 189,
-    "system_domains": 180,
-    "matched_domains": 150,
-    "missing_domains": 283,
+    "system_packages": 190,
+    "system_domains": 181,
+    "matched_domains": 151,
+    "missing_domains": 282,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2474,6 +2474,23 @@
         }
       ]
     },
+    "kinhive.com": {
+      "catalog": [
+        {
+          "name": "Kinhive",
+          "domain": "kinhive.com",
+          "id": 691
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kinhive",
+          "name": "Kinhive",
+          "url": "https://kinhive.com",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2867,13 +2884,6 @@
         "name": "Kickstarter",
         "domain": "kickstarter.com",
         "id": 182
-      }
-    ],
-    "kinhive.com": [
-      {
-        "name": "Kinhive",
-        "domain": "kinhive.com",
-        "id": 691
       }
     ],
     "kit.com": [
