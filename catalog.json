@@ -9060,6 +9060,7 @@
     "route": "public-web",
     "date": "2026-11-18",
     "durationMin": 90,
+    "pr": "644",
     "gaps": [
      "JetBrains Account at https://account.jetbrains.com/login (email field, signup, and the signed-in account) was measured at rest only; no OAuth button was pressed",
      "Store checkout and Buy at https://www.jetbrains.com/store/ were not followed",
