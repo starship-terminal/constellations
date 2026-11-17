@@ -16440,7 +16440,7 @@
      "the product publishes no dark theme; the dark token set is empty on purpose",
      "C5, V1 and V2 are not published by the product"
     ],
-    "pr": ""
+    "pr": "https://github.com/starship-terminal/constellations/pull/646"
    }
   }
  ]
