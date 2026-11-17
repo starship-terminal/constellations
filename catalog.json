@@ -12575,6 +12575,7 @@
      "The footer email subscription field was not submitted",
      "The filter panel did not open, so filter contents are unmeasured"
     ],
+    "pr": 642,
     "durationMin": 90,
     "durationNote": "public-web capture on 2026-11-18, including kit adaptation, stylesheet harvest, screenshot and measurement passes"
    }
