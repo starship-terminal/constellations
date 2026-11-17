@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 189,
-    "system_domains": 180,
-    "matched_domains": 150,
-    "missing_domains": 283,
+    "system_packages": 190,
+    "system_domains": 181,
+    "matched_domains": 151,
+    "missing_domains": 282,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2474,6 +2474,23 @@
         }
       ]
     },
+    "krisp.ai": {
+      "catalog": [
+        {
+          "name": "Krisp",
+          "domain": "krisp.ai",
+          "id": 461
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "krisp",
+          "name": "Krisp",
+          "url": "https://krisp.ai",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2916,13 +2933,6 @@
         "name": "Krea.ai",
         "domain": "krea.ai",
         "id": 495
-      }
-    ],
-    "krisp.ai": [
-      {
-        "name": "Krisp",
-        "domain": "krisp.ai",
-        "id": 461
       }
     ],
     "lego.com": [

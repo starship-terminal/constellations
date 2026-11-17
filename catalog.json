@@ -16372,6 +16372,69 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/635",
     "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "krisp",
+   "name": "Krisp",
+   "url": "https://krisp.ai",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Voice-AI product marketing: white field, ink and one indigo primary pill, Plus Jakarta Sans display, a product mega-menu, and pricing cards with a billing pill",
+   "tags": [
+    "web",
+    "saas",
+    "marketing",
+    "voice",
+    "meetings",
+    "pricing",
+    "indigo",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed out (every captured surface is public; sign-in, sign-up and the contact-sales form were not followed)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/krisp/README.md",
+   "tokens": "systems/krisp/tokens.json",
+   "styleGuide": "systems/krisp/style-guide.html",
+   "preview": {
+    "cover": "systems/krisp/screenshots/home-light-default.png",
+    "icon": "systems/krisp/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background.page",
+      "surface": "light.background.surface",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.action.primary",
+      "border": "light.border.default"
+     }
+    },
+    "fonts": [
+     "core.fontFamily.sans"
+    ]
+   },
+   "capture": {
+    "harness": "Grok Build",
+    "model": "grok-4.7",
+    "version": "krisp-v4 theme 17.19",
+    "route": "public-web",
+    "date": "2026-11-18",
+    "durationMin": 120,
+    "gaps": [
+     "Sign in at https://app.krisp.ai/login: the meeting assistant, notes, recordings and account settings sit behind sign-in and were not captured",
+     "Get Krisp and Try it Free go to https://app.krisp.ai/sign-up: account creation was not followed",
+     "Book a demo and Talk to Sales open https://krisp.ai/contact-sales/: a sales form with email, name, select and radios, not submitted",
+     "Help centre at https://help.krisp.ai/hc/en-us was not captured",
+     "Cookie settings (OneTrust) was hidden and never clicked"
+    ]
+   }
   }
  ]
 }

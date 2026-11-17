@@ -1,0 +1,13 @@
+{
+  "families": [
+    {
+      "name": "sample address in the meeting illustration",
+      "files": ["screenshots/mobile-home-light-full.png"],
+      "rects": [[590, 15120, 720, 15180, "solid"]]
+    }
+  ],
+  "ocr": {
+    "emails": true,
+    "net": true
+  }
+}

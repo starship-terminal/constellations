@@ -2634,8 +2634,8 @@
     461
    ],
    "description": "World's #1 Noise Cancelling App and AI Meeting Assistant",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/krisp",
    "notes": "",
    "batch": 9
   },
