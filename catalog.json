@@ -16578,7 +16578,8 @@
      "full-page shots bound at eight chunks - blog-post and terms-of-use ran past one GPU texture and are stitched part tiles; bounds are in each .capture.json sidecar"
     ],
     "durationMin": 300,
-    "durationNote": "wall-clock across two sessions including a rate-limit interruption: kit adaptation, the four-surface stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
+    "durationNote": "wall-clock across two sessions including a rate-limit interruption: kit adaptation, the four-surface stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/659"
    }
   }
  ]
