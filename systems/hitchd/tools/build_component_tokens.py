@@ -97,6 +97,15 @@ def R(comp, part, key):
 # ---------------------------------------------------------------- palette
 # name -> (component, part, css prop, description). Values are read from the
 # measurement file, so an element that was not captured yields no token.
+def read_prop(comp, part, prop):
+    """A prop's measured value: for color, the painted text node's reading
+    (textStyle) when the kit recorded one — a wrapper can report a colour its
+    visible text overrides; otherwise the element's own computed style."""
+    if prop == "color":
+        return ts(comp, part, "color")
+    return st(comp, part)[prop]
+
+
 PAL = [
     ("ink", "announcement-banner", "text", "color", "The near-black ink of the closure strip and body copy."),
     ("cream", "announcement-banner", "banner", "backgroundColor", "The warm paper of the closure strip."),
@@ -112,9 +121,9 @@ PAL = [
 pal = SPEC["core"].setdefault("palette", {})
 for name, comp, part, prop, desc in PAL:
     if have(comp, part, prop):
-        put(pal, name, lit(st(comp, part)[prop], "color", M(comp, part, prop), desc))
+        put(pal, name, lit(read_prop(comp, part, prop), "color", M(comp, part, prop), desc))
 
-PAL_VAL = {name: norm_color(st(comp, part)[prop]) for name, comp, part, prop, _ in PAL if have(comp, part, prop)}
+PAL_VAL = {name: norm_color(read_prop(comp, part, prop)) for name, comp, part, prop, _ in PAL if have(comp, part, prop)}
 
 
 def role(value, ty, src, desc):
@@ -143,7 +152,8 @@ ROLES = [
     ("text.price", "gift-card", "price", "color", "A gift's price."),
     ("text.lead", "hero", "lead", "color", "The hero supporting paragraph."),
     ("border.field", "auth-field", "input", "borderTopColor", "Text field borders."),
-    ("action.ctaInk", "registry-nav", "cta", "color", "The 'Try It Free' link — a teal label on the translucent sample banner, not a filled pill."),
+    ("action.ctaInk", "registry-nav", "cta", "color", "The 'Try It Free' pill's label ink on the sample banner (the painted desktop link — the hidden phone variant is never measured)."),
+    ("action.ctaFill", "registry-nav", "cta", "backgroundColor", "The 'Try It Free' pill's fill."),
     ("action.giveInk", "gift-modal", "give", "color", "The Give button label."),
     ("action.giveFill", "gift-modal", "giveWrap", "backgroundColor", "The Give pill's fill, painted on its .pay wrapper (disabled at rest until an amount exists)."),
     ("action.disabledFill", "auth-button", "button", "backgroundColor", "A disabled submit fill."),
@@ -153,7 +163,7 @@ ROLES = [
 ]
 for path, comp, part, prop, desc in ROLES:
     if have(comp, part, prop):
-        put(L, path, role(st(comp, part)[prop], "color", M(comp, part, prop), desc))
+        put(L, path, role(read_prop(comp, part, prop), "color", M(comp, part, prop), desc))
 
 # ---------------------------------------------------------------- type
 F = SPEC["core"].setdefault("font", {})
@@ -225,7 +235,8 @@ RAD = [
     ("pill", "auth-button", "button", "borderTopLeftRadius", "The auth submit pill."),
     ("card", "gift-card", "card", "borderTopLeftRadius", "Gift tile corners."),
     ("modal", "gift-modal", "modal", "borderTopLeftRadius", "The gift modal corners."),
-    ("cta", "registry-nav", "cta", "borderTopLeftRadius", "The Try It Free corners."),
+    ("cta", "registry-nav", "cta", "borderTopLeftRadius", "The Try It Free pill's corners."),
+    ("give", "gift-modal", "give", "borderTopLeftRadius", "The Give pill's corners."),
 ]
 for name, comp, part, prop, desc in RAD:
     if have(comp, part, prop):

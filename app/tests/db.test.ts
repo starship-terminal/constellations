@@ -1174,6 +1174,16 @@ test("version-twenty-eight stores gain the Hitchd rows, without touching their o
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:hitchd'",
   );
+  // The media seed also grew two joinhandshake screenshots after v28 shipped.
+  // v29 tops up just those media IDs — simulate the v28 store by deleting
+  // them, plus one joinhandshake media row standing in for a label the user
+  // cleared: the scoped top-up must not resurrect the cleared one.
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:joinhandshake' AND media_id IN ('systems/joinhandshake/screenshots/home-light-consent.png','systems/joinhandshake/screenshots/mobile-home-light-drawer.png')",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:joinhandshake' AND media_id = (SELECT media_id FROM media_term_assignments WHERE reference_id='systems:joinhandshake' AND media_id NOT IN ('systems/joinhandshake/screenshots/home-light-consent.png','systems/joinhandshake/screenshots/mobile-home-light-drawer.png') LIMIT 1)",
+  );
   // A user who cleared another package's labels: the scoped top-up must not
   // resurrect them (an empty assignment reads as "never labelled" to the
   // unscoped seed).
@@ -1208,6 +1218,30 @@ test("version-twenty-eight stores gain the Hitchd rows, without touching their o
   expect(
     media.filter((row) => row.referenceId === "systems:hitchd").length,
   ).toBeGreaterThan(0);
+  // The two new joinhandshake media arrived through the media-scoped top-up,
+  // while the media cleared above stays cleared and every other row keeps
+  // whatever the v28 pass already wrote.
+  const jhMedia = new Set(
+    media
+      .filter((row) => row.referenceId === "systems:joinhandshake")
+      .map((row) => row.mediaId),
+  );
+  expect(jhMedia.has("systems/joinhandshake/screenshots/home-light-consent.png")).toBe(true);
+  expect(
+    jhMedia.has("systems/joinhandshake/screenshots/mobile-home-light-drawer.png"),
+  ).toBe(true);
+  const remaining = await migrated.client.execute(
+    "SELECT COUNT(DISTINCT media_id) AS n FROM media_term_assignments WHERE reference_id='systems:joinhandshake'",
+  );
+  // seed count for the reference minus the one cleared media
+  const seedCount = new Set(
+    (
+      await import("@/data/media-taxonomy.json").then((m) => m.default)
+    ).assignments
+      .filter((a) => a.referenceId === "systems:joinhandshake")
+      .map((a) => a.mediaId),
+  ).size;
+  expect(Number(remaining.rows[0].n)).toBe(seedCount - 1);
   // The cleared digg rows stay cleared — the top-up seeds only its own batch.
   expect(
     categories.filter((row) => row.referenceId === "systems:digg"),

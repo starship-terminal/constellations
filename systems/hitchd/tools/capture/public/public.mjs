@@ -21,7 +21,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, openRegistry } from './lib.mjs';
 
 // Full-colour shots are working files, never committed: by default they go outside the repository,
 // to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
@@ -64,12 +64,19 @@ class Shooter {
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     const opts = (extra) => ({ path: extra, scale: 'css', timeout: 120000 });
     const snap = async (o) => { try { await screenshotWithMetadata(p, o, this.requested); } catch (e) { if (!/dimension mismatch/.test(e.message)) throw e; log('  !', o.path.split('/').pop(), 'dimension mismatch (PNG kept)'); } };
+    // a manifest tells quantize.py how many tiles the page owed: a tile that
+    // times out leaves a shortened part set, and without the intended count a
+    // partial sheet could stitch and pass as complete
+    const manifest = () => `${f}.full.json`;
+    fs.writeFileSync(manifest(), JSON.stringify({ scrollHeight: H, capturedHeight: hCap, chunkHeight: chunk, expectedTiles: Math.ceil(hCap / chunk), tilesWritten: 0 }, null, 1) + '\n');
+    let written = 0;
     try {
-      if (hCap <= chunk) await snap({ ...opts(f + '.png'), fullPage: true });
-      else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await snap({ ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } });
+      if (hCap <= chunk) { await snap({ ...opts(f + '.png'), fullPage: true }); written = 1; }
+      else for (let i = 0, y = 0; y < hCap; i++, y += chunk) { await snap({ ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }); written++; }
     } catch (e) {
       log('  ! full shot failed:', String(e.message).split('\n')[0]);
     }
+    fs.writeFileSync(manifest(), JSON.stringify({ scrollHeight: H, capturedHeight: hCap, chunkHeight: chunk, expectedTiles: Math.ceil(hCap / chunk), tilesWritten: written }, null, 1) + '\n');
     await p.evaluate(() => document.querySelectorAll('video').forEach((v) => v.play().catch(() => {}))).catch(() => {});
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
@@ -78,11 +85,13 @@ class Shooter {
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 
 // The registry's "Sort by" filter: a styled <select> inside .toggle-dd.gift-filter.
-// Picking an option re-filters the gift list — a local UI toggle; nothing is
-// submitted. "opened" focuses the select's own dropdown state; then
-// "Still needed" is selected and shot as its own state.
+// Two stacked variants are rendered and only one paints at a given width —
+// the visible one is the same element measure.mjs reads. Picking an option
+// re-filters the gift list — a local UI toggle; nothing is submitted.
+// "opened" focuses the select's own dropdown state; then "Still needed" is
+// selected and shot as its own state — but only once that state is true.
 async function registryFilters(p, S) {
-  const sel = p.locator('.toggle-dd.gift-filter select, .gift-filter select').first();
+  const sel = p.locator('.toggle-dd.gift-filter select:visible, .gift-filter select:visible, select:visible').first();
   if (!(await sel.count())) { log('  ! sort select missing'); return; }
   await sel.click({ timeout: 4000 }).catch(() => {});
   await wait(p, 600);
@@ -92,6 +101,11 @@ async function registryFilters(p, S) {
   if (still >= 0) {
     await sel.selectOption({ index: still }).catch(() => {});
     await wait(p, 1200);
+    // require the requested state before saving: the select must report the
+    // "Still needed" option selected, otherwise the shot would record the
+    // default list under the filtered name
+    const applied = (await sel.evaluate((el, i) => el.selectedIndex === i, still).catch(() => false));
+    if (!applied) { log('  ! filter did not apply; skipping state'); await sel.selectOption({ index: 0 }).catch(() => {}); return; }
     await S.view('filter-still-needed');
     await sel.selectOption({ index: 0 }).catch(() => {});
     await wait(p, 800);
@@ -103,13 +117,17 @@ async function registryFilters(p, S) {
 // "Give" button, amount field and payment steps are never entered — then the
 // history goes back to the registry.
 async function giftModal(p, S) {
-  const card = p.locator('li.gift-col-mob .gift, ol.gift-list .gift').filter({ hasText: /Accommodation|Airbnb|Seafood|Road Trip|Dinner|Lessons|Tour/ }).first();
-  if (!(await card.count())) { log('  ! gift card missing'); return; }
-  await card.scrollIntoViewIfNeeded();
-  await card.click({ timeout: 5000 }).catch(() => {});
-  await wait(p, 3000);
-  const modal = p.locator('.gift-modal, .modalDialog').filter({ visible: true }).first();
-  if (!(await modal.count())) { log('  ! gift modal did not open'); await p.goBack().catch(() => {}); return; }
+  // the same elements measure.mjs reads: ol.gift-list .giftz tiles, and the
+  // tile's own .click-space / .view-gift hit target — a bare div click can
+  // land on a child that swallows the event instead of navigating
+  const card = p.locator('ol.gift-list .giftz:visible').filter({ hasText: /Accommodation|Airbnb|Seafood|Road Trip|Dinner|Lessons|Tour/ }).first();
+  const target = (await card.count()) ? card : p.locator('ol.gift-list .giftz:visible').first();
+  if (!(await target.count())) { log('  ! gift card missing'); return; }
+  await target.scrollIntoViewIfNeeded();
+  await target.locator('.click-space, .view-gift').first().click({ timeout: 8000 }).catch(() => {});
+  await wait(p, 5000);
+  const modal = p.locator('.gift-modal:visible, .modalDialog:visible').first();
+  if (!(await modal.count())) { log('  ! gift modal did not open; no shot saved'); await p.goBack().catch(() => {}); return; }
   await S.view('gift-modal');
   await p.goBack({ waitUntil: 'domcontentloaded' }).catch(() => p.goto('https://www.hitchd.com/zoeandnoah'));
   await wait(p, 4000);
@@ -149,7 +167,7 @@ const desktop = {
   privacy: { url: BASE + '/privacy', wait: 7000, run: BOTH },
   trips: { url: BASE + '/trips/australia', wait: 7000, run: BOTH },
   guide: { url: BASE + '/guides/add-hitchd-to-knot-wedding-webiste', wait: 7000, run: BOTH },
-  registry: { url: BASE + '/zoeandnoah', wait: 30000, run: async (p, S) => {
+  registry: { url: BASE + '/zoeandnoah', painted: true, run: async (p, S) => {
     await S.view('default');
     await step('sort', () => registryFilters(p, S));
     await step('gift-modal', () => giftModal(p, S));
@@ -163,7 +181,7 @@ const mobile = {
   login: { url: BASE + '/login', wait: 8000, run: REST },
   blog: { url: BASE + '/blog', wait: 7000, run: REST },
   post: { url: BASE + '/blog/what-is-a-honeymoon-registry', wait: 7000, run: BOTH },
-  registry: { url: BASE + '/zoeandnoah', wait: 30000, run: async (p, S) => {
+  registry: { url: BASE + '/zoeandnoah', painted: true, run: async (p, S) => {
     await S.view('default');
     await step('menu', () => mobileMenu(p, S));
     await S.full();
@@ -187,7 +205,14 @@ for (const { k, mob } of runs) {
   try {
     await p.goto(spec.url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.url); await ctx.close(); continue; }
-    await wait(p, spec.wait || 8000);
+    if (spec.painted) {
+      // the guest registry boots its Angular data fetch nondeterministically;
+      // share measure.mjs's painted-wait (a nonzero-size .giftz tile) rather
+      // than trusting a fixed sleep
+      if (!(await openRegistry(p))) log('  ! registry never painted; default shot records the shell it reached');
+    } else {
+      await wait(p, spec.wait || 8000);
+    }
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;

@@ -49,7 +49,20 @@ def css_val(name, t):
     if ty == "gradient":
         angle = t["$extensions"].get("angle", "180deg")
         return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
-    return alias(v)
+    if ty == "border" and isinstance(v, dict):
+        return f'{alias(v["width"])} {v["style"]} {alias(v["color"])}'
+    if ty == "transition" and isinstance(v, dict):
+        prop = (t.get("$extensions") or {}).get("property", "all")
+        return f'{prop} {alias(v["duration"])} {alias(v["timingFunction"])} {alias(v.get("delay", "0ms"))}'.replace("  ", " ")
+    if ty == "animation" and isinstance(v, dict):
+        parts = [v["name"], alias(v["duration"]), alias(v["timingFunction"]), alias(v.get("delay", "0ms"))]
+        for k in ("iterationCount", "direction", "fillMode"):
+            if v.get(k) and v[k] != "none":
+                parts.append(alias(v[k]))
+        return " ".join(parts)
+    if isinstance(v, str):
+        return alias(v)
+    return "/* unrendered composite */ none"
 
 
 # A light-only product has no dark set; every set that is missing renders as empty.

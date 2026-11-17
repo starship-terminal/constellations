@@ -43,22 +43,22 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 |---|---|
 | page | #ffffff `light.color.surface.page` |
 | surface | #f6f3ef `light.color.surface.cream` |
-| text | #000000 `light.color.text.ink` |
-| muted | #484a4c `light.color.text.muted` |
-| accent | #008cba `light.color.action.ctaInk` |
+| text | #111212 `light.color.text.ink` |
+| muted | #575a5d `light.color.text.muted` |
+| accent | #111212 `light.color.action.ctaFill` |
 | border | #d2d2d7 `light.color.border.field` |
 
-Fonts: `core.font.family.display` is DDNR, with no fallback; `core.font.family.text` is Inter Variable, then 13 fallbacks; `core.font.family.registry` is classic, with no fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 5 radius steps (`core.radius`), 5 spacing steps (`core.spacing`).
+Fonts: `core.font.family.display` is DDNR, with no fallback; `core.font.family.text` is Inter Variable, then 13 fallbacks; `core.font.family.registry` is classic, with no fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 6 radius steps (`core.radius`), 5 spacing steps (`core.spacing`).
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 12 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 14 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| light | 21.00:1 pass | 18.98:1 pass | 8.90:1 pass | 8.04:1 pass |
+| light | 18.76:1 pass | 16.96:1 pass | 6.94:1 pass | 6.27:1 pass |
 
 4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus: no focus tokens (no token path contains "focus").
 
@@ -74,11 +74,11 @@ Scorecard: **9 of 25 met, 14 partly, 2 missing**; C5, V1, V2 are optional for a 
 |---|---|---|
 | F6 Status colours | Missing | No success, warning, danger or info colour appears on any captured surface or in the stylesheet harvest - the signed-out product carries no status components. |
 | C3 Focus | Missing | No focus ring is captured: focusing a field is the first step of signing in and was never done; the rest of the public surface shows no focus-visible painting. |
-| F1 Colour ramps | Partly | Hitchd declares almost no custom properties (~10 radio-control flags), so the palette is measured: 10 flat colours in core.palette (ink #000000, cream #f6f3ef, heroInk/paper whites, muted #484a4c, fieldLine #d2d2d7, disabled greys, registry white, giftPrice #545759). No per-hue ramp exists on the site to capture. |
+| F1 Colour ramps | Partly | Hitchd declares almost no custom properties (~10 radio-control flags), so the palette is measured: 9 flat colours in core.palette (ink #111212, cream #f6f3ef, heroInk/paper whites, muted #575a5d, fieldLine #d2d2d7, disabled greys, registry white, menuBg). No per-hue ramp exists on the site to capture. |
 | F2 Background roles | Partly | light.color.surface covers page (auth body #ffffff), cream (announcement strip), modal, menu and footer, all measured. Raised/overlay/scrim are not separated roles on the public surface - the modal paints flat white over the list. |
-| F3 Text roles | Partly | Primary (text.ink), secondary (text.muted), inverse-on-photo (text.inverse), link, disabled label (action.disabledInk), hashtag, price and lead roles are measured. An on-accent text role does not exist publicly: the CTA is a teal text link and the pills are disabled. |
+| F3 Text roles | Partly | Primary (text.ink), secondary (text.muted), inverse-on-photo (text.inverse), link, disabled label (action.disabledInk), hashtag and lead roles are measured. An on-accent text role does not exist publicly: the one painted accent is a black pill with white ink and the other pills are disabled. The demo registry's gift tiles paint no price text (empty .bottompricing containers), so no price role is claimed. |
 | F4 Border roles | Partly | border.field (1px #d2d2d7 on the auth inputs) is measured. No strong or focus border role paints on the public surface - a field's focus ring is only reachable by focusing toward sign-in, a documented boundary. |
-| F5 Accent states | Partly | Accents are measured at default only: the teal Try It Free link #008cba, the disabled Continue pill #cdcfd0 and the disabled Give pill #c5c8ca. Hover and pressed were never forced (the only enabled control is a nav link; the auth/Give presses are the boundary). |
+| F5 Accent states | Partly | Accents are measured at default only: the black Try It Free pill #111212 with white ink, the disabled Continue pill #cdcfd0 and the disabled Give pill #c5c8ca. Hover and pressed were never forced (the only enabled control is a nav link; the auth/Give presses are the boundary). |
 | F9 Spacing | Partly | Five measured spacing tokens from real components (strip padding, field x-padding, button padding, card and modal padding). Hitchd publishes no spacing scale, so no stepped base unit exists to capture. |
 | F11 Sizing | Partly | Control geometry is measured per component (field 450x48, submit 48px high, Give pill 50px, closure header 96px, banner 98px, registry banner) and icon glyphs measured (24x24). The focus ring's width/offset was never capturable - documented gap. |
 | F12 Elevation | Partly | Component shadows are parsed into DTCG layers where they paint (card, modal, header checks; most Hitchd surfaces are flat). No named elevation levels are published by the product. |
@@ -98,18 +98,10 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 1. **Do set display type in the product's own display faces.** The home hero is hairline DDNR (weight 100) at 88px over photography; the registry couple names are the `classic` registry face at 96px white — neither is a bold grotesque. See [hero](components/crops/hero.png) and [registry-hero](components/crops/registry-hero.png).
 2. **Do keep the field warm and quiet.** White paper, the cream `#f6f3ef` announcement strip, near-black ink, hairline borders — the site's only loud surface is a photo. See [announcement](components/crops/announcement.png).
 3. **Do pill the submit and round the field.** The auth Continue and Give buttons are full 50px pills; text fields keep 8px corners and a 1px `#d2d2d7` line at 48px high. See [auth-button](components/crops/auth-button.png) and [auth-card](components/crops/auth-card.png).
-4. **Do let the registry sell with restraint.** The sample banner is a quiet sentence plus the teal "Try It Free" link; gift tiles are photography, a name, a price and a thin progress line. See [registry-light-default](screenshots/registry-light-default.png).
+4. **Do let the registry sell with restraint.** The sample banner is a quiet sentence plus a black "Try It Free" pill; gift tiles are photography, a name, a price and a thin progress line. See [registry-light-default](screenshots/registry-light-default.png).
 5. **Don't invent a dark theme.** No stylesheet, page or app surveyed declares a dark variant and no theme control exists; the token file ships a single light set. See [raw/css-vars.json](raw/css-vars.json).
 6. **Don't enter the money path or sign in.** The gift modal's Give button, every contribution and payment step, and all three auth forms were measured at rest and never pressed, typed or submitted. The registry's owner routes (`/zoeandnoah/contributions`, `/payment-methods`, `/ask`, `/quick-thanks`) bounce a signed-out guest to `/` — documented boundaries, not captures.
 7. **Don't treat the demo registry as live.** /zoeandnoah and /avaandbenjamin are the public sample registries Hitchd itself publishes; their couple names and gift content appear only inside screenshots and crops.
-
-## Brief
-
-<!-- brief:start. Generated by tools/brief.py from catalog.json, the tokens file and this README; `make brief` rewrites it. Do not edit. -->
-
-## Health
-
-<!-- health:start. Generated; do not edit. -->
 
 ## How the values were read
 

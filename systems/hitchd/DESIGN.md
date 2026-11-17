@@ -3,33 +3,33 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Hitchd"
-description: "Honeymoon-registry and cash-gifting design: a Foundation marketing stack (self-hosted DDNR hairline serif + Inter Variable on warm paper #f6f3ef with a near-black ink) that is currently a one-viewport closure notice, plus two Angular apps - the couple auth surface (48px fields at 8px radius, 50px disabled pill) and the guest registry (sample banner + teal Try It Free link, couple hero in the registry's own display faces, Sort by select, gift tiles, and a card-tap gift modal with a disabled Give pill). One light theme; the money path and every internal registry route are documented boundaries"
+description: "Honeymoon-registry and cash-gifting design: a Foundation marketing stack (self-hosted DDNR hairline serif + Inter Variable on warm paper #f6f3ef with a near-black ink) that is currently a one-viewport closure notice, plus two Angular apps - the couple auth surface (48px fields at 8px radius, 50px disabled pill) and the guest registry (sample banner + black Try It Free pill, couple hero in the registry's own display faces, Sort by select, gift tiles, and a card-tap gift modal with a disabled Give pill). One light theme; the money path and every internal registry route are documented boundaries"
 omitted:
   - section: "typography"
     reason: "tokens.json has no typography tokens under `core.typography`"
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
-  primary: "#008cba"
+  primary: "#111212"
   neutral: "#ffffff"
   surface: "#f6f3ef"
-  on-surface: "#000000"
-  on-surface-variant: "#484a4c"
+  on-surface: "#111212"
+  on-surface-variant: "#575a5d"
   outline: "#d2d2d7"
   color-surface-page: "#ffffff"
   color-surface-cream: "#f6f3ef"
   color-surface-modal: "#ffffff"
   color-surface-menu: "#ffffff"
   color-surface-footer: "#ffffff"
-  color-text-ink: "#000000"
-  color-text-muted: "#484a4c"
+  color-text-ink: "#111212"
+  color-text-muted: "#575a5d"
   color-text-inverse: "#ffffff"
   color-text-link: "#111212"
   color-text-hashtag: "#ffffff"
-  color-text-price: "#545759"
   color-text-lead: "#ffffff"
   color-border-field: "#d2d2d7"
-  color-action-ctaInk: "#008cba"
+  color-action-ctaInk: "#ffffff"
+  color-action-ctaFill: "#111212"
   color-action-giveInk: "#ffffff"
   color-action-giveFill: "#c5c8ca"
   color-action-disabledFill: "#cdcfd0"
@@ -41,7 +41,8 @@ rounded:
   pill: "50px"
   card: "0px"
   modal: "0px"
-  cta: "0px"
+  cta: "100px"
+  give: "0px"
 spacing:
   strip-y: "20px"
   field-x: "16px"
@@ -58,7 +59,7 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Honeymoon-registry and cash-gifting design: a Foundation marketing stack (self-hosted DDNR hairline serif + Inter Variable on warm paper #f6f3ef with a near-black ink) that is currently a one-viewport closure notice, plus two Angular apps - the couple auth surface (48px fields at 8px radius, 50px disabled pill) and the guest registry (sample banner + teal Try It Free link, couple hero in the registry's own display faces, Sort by select, gift tiles, and a card-tap gift modal with a disabled Give pill). One light theme; the money path and every internal registry route are documented boundaries.
+Good for: Honeymoon-registry and cash-gifting design: a Foundation marketing stack (self-hosted DDNR hairline serif + Inter Variable on warm paper #f6f3ef with a near-black ink) that is currently a one-viewport closure notice, plus two Angular apps - the couple auth surface (48px fields at 8px radius, 50px disabled pill) and the guest registry (sample banner + black Try It Free pill, couple hero in the registry's own display faces, Sort by select, gift tiles, and a card-tap gift modal with a disabled Give pill). One light theme; the money path and every internal registry route are documented boundaries.
 
 Captured 2026-11-17, signed out (the marketing pages, content pages and demo registries are fully public; the auth forms were read at rest - nothing was focused, typed or submitted; the gift modal's Give/contribute flow and every payment step were never entered; the registry's internal routes /contributions, /payment-methods, /ask and /quick-thanks bounce the guest to / and were recorded as boundaries). Themes: light.
 
@@ -70,11 +71,11 @@ Hitchd is worth a capture because it is three small, honest systems in one produ
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#008cba):** `light.color.action.ctaInk`
+- **primary (#111212):** `light.color.action.ctaFill`
 - **neutral (#ffffff):** `light.color.surface.page`
 - **surface (#f6f3ef):** `light.color.surface.cream`
-- **on-surface (#000000):** `light.color.text.ink`
-- **on-surface-variant (#484a4c):** `light.color.text.muted`
+- **on-surface (#111212):** `light.color.text.ink`
+- **on-surface-variant (#575a5d):** `light.color.text.muted`
 - **outline (#d2d2d7):** `light.color.border.field`
 
 ## Typography
@@ -91,7 +92,7 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `field` 8px, `pill` 50px, `card` 0px, `modal` 0px, `cta` 0px.
+Corner radii from `core.radius`: `field` 8px, `pill` 50px, `card` 0px, `modal` 0px, `cta` 100px, `give` 0px.
 
 ## Components
 
@@ -112,7 +113,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 1. **Do set display type in the product's own display faces.** The home hero is hairline DDNR (weight 100) at 88px over photography; the registry couple names are the `classic` registry face at 96px white — neither is a bold grotesque. See [hero](components/crops/hero.png) and [registry-hero](components/crops/registry-hero.png).
 2. **Do keep the field warm and quiet.** White paper, the cream `#f6f3ef` announcement strip, near-black ink, hairline borders — the site's only loud surface is a photo. See [announcement](components/crops/announcement.png).
 3. **Do pill the submit and round the field.** The auth Continue and Give buttons are full 50px pills; text fields keep 8px corners and a 1px `#d2d2d7` line at 48px high. See [auth-button](components/crops/auth-button.png) and [auth-card](components/crops/auth-card.png).
-4. **Do let the registry sell with restraint.** The sample banner is a quiet sentence plus the teal "Try It Free" link; gift tiles are photography, a name, a price and a thin progress line. See [registry-light-default](screenshots/registry-light-default.png).
+4. **Do let the registry sell with restraint.** The sample banner is a quiet sentence plus a black "Try It Free" pill; gift tiles are photography, a name, a price and a thin progress line. See [registry-light-default](screenshots/registry-light-default.png).
 5. **Don't invent a dark theme.** No stylesheet, page or app surveyed declares a dark variant and no theme control exists; the token file ships a single light set. See [raw/css-vars.json](raw/css-vars.json).
 6. **Don't enter the money path or sign in.** The gift modal's Give button, every contribution and payment step, and all three auth forms were measured at rest and never pressed, typed or submitted. The registry's owner routes (`/zoeandnoah/contributions`, `/payment-methods`, `/ask`, `/quick-thanks`) bounce a signed-out guest to `/` — documented boundaries, not captures.
 7. **Don't treat the demo registry as live.** /zoeandnoah and /avaandbenjamin are the public sample registries Hitchd itself publishes; their couple names and gift content appear only inside screenshots and crops.

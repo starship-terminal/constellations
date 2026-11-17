@@ -94,20 +94,20 @@ Page: https://www.hitchd.com/zoeandnoah. Selector: `see tools/capture/public/mea
 
 | Property | bar | cta | hashtag |
 |---|---|---|---|
-| Size (w x h) | 1440 x 80 | 0 x 0 | 137 x 28.39 |
-| Padding | 0px | = | = |
+| Size (w x h) | 1440 x 80 | 117 x 40 | 137 x 28.39 |
+| Padding | 0px | 0px 20px | = |
 | Border | none | = | T: none; R: none; B: 2px solid #000000 @ 0; L: none |
-| Radius | 0px | = | = |
-| Background | #ffffff @ 0.92 | transparent | transparent |
+| Radius | 0px | 100px | = |
+| Background | #ffffff @ 0.92 | #111212 | transparent |
 | Box shadow | #000000 @ 0.08 0px -1px 0px 0px | none | none |
 | Backdrop filter | saturate(1.8) blur(20px) | - | - |
 | Outline | none | = | = |
-| Font | Inter Variable 16px/24px 400 | = | Inter Variable 22px/26.4px 500 |
+| Font | Inter Variable 16px/24px 400 | Inter Variable 16px/40px 500 | Inter Variable 22px/26.4px 500 |
 | Letter spacing | normal | = | = |
-| Colour | #545759 | #008cba | #ffffff |
+| Colour | #545759 | #ffffff | #ffffff |
 | Text node | p.demo-reg-p: Inter Variable 17px/80px 500, #111212 | - | - |
 | Transition | none | = | = |
-| Painted layers | div.top-registry-sample-banner 1440.0x80.0 bg #ffffff @ 0.92 shadow #000000 @ 0.08 0px -1px 0px 0px; a.direct 117.0x40.0 bg #111212 r 100px | - | a.hashtag-link 137.0x28.4 border B:2px solid #000000 @ 0 |
+| Painted layers | div.top-registry-sample-banner 1440.0x80.0 bg #ffffff @ 0.92 shadow #000000 @ 0.08 0px -1px 0px 0px; a.direct 117.0x40.0 bg #111212 r 100px | a.direct 117.0x40.0 bg #111212 r 100px | a.hashtag-link 137.0x28.4 border B:2px solid #000000 @ 0 |
 | How |  |  |  |
 | Cursor | - | pointer | pointer |
 
@@ -243,48 +243,49 @@ Page: https://www.hitchd.com/blog. Selector: `see tools/capture/public/measure.m
 
 | Property | card | title |
 |---|---|---|
-| Size (w x h) | 1440 x 45149.61 | 1280 x 74 |
-| Padding | 0px | 0px 28px 40px 28px |
+| Size (w x h) | 386.66 x 600 | 328.66 x 96 |
+| Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | Inter Variable 16px/24px 400 | Inter Variable 28px/34px 600 |
+| Font | Inter Variable 16px/24px 400 | Inter Variable 26px/32px 600 |
 | Letter spacing | normal | = |
-| Colour | #000000 | #111212 |
-| Text node | h2: Inter Variable 28px/34px 600, #111212 | - |
+| Colour | #000000 | #2c2e2f |
+| Text node | h6.left: Inter Variable 15px/20px 400, #737373 | - |
 | Transition | none | = |
-| Painted layers | div.body 386.7x299.0 bg #ffffff; span 3.0x3.0 bg #737373 r 50%; a::after.primary 102pxx1px bg #000000; div.body 386.7x273.0 bg #ffffff; span 3.0x3.0 bg #737373 r 50%; a::after.primary 102pxx1px bg #000000 | - |
+| Painted layers | div.body 386.7x299.0 bg #ffffff; span 3.0x3.0 bg #737373 r 50%; a::after.primary 102pxx1px bg #000000 | - |
 | How |  |  |
+| Cursor | - | pointer |
 
-Crops: none.
+Crops: `blog-card.png`.
 
 #### gift-card
 
 Gift card. a gift tile in the registry list
 
-Page: https://www.hitchd.com/zoeandnoah. Selector: `see tools/capture/public/measure.mjs`. States: card, title, price, info.
+Page: https://www.hitchd.com/zoeandnoah. Selector: `see tools/capture/public/measure.mjs`. States: card, title, info.
 
-| Property | card | title | price | info |
-|---|---|---|---|---|
-| Size (w x h) | 1416 x 472 | 616 x 40 | 616 x 0 | 708 x 472 |
-| Padding | 0px | 0px 16px 0px 0px | = | 0px 12px 0px 80px |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter Variable 16px/24px 400 | Inter Variable 36px/40px 600 | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #545759 | #111212 | = | = |
-| Text node | span: Inter Variable 12px/24px 500, #ffffff | - | - | h3: Inter Variable 36px/40px 600, #111212 |
-| Transition | none | = | = | = |
-| ::before | 0px x 472px, static, bg #000000 @ 0, radius 0px | - | - | - |
-| ::after | 0px x 472px, static, bg #000000 @ 0, radius 0px | - | - | - |
-| Painted layers | div.small-12.medium-12 708.0x472.0 r 20px shadow #000000 @ 0.1 0px 0px 0px 1px inset; div.gift-featured-tag 123.0x28.0 image linear-gradient(#080c0c 0%, #0c1212 100%) border T:1px solid #080c0c / R:1px solid #080c0c / B:1px solid #080c0c / L:1px solid #080c0c r 50px shadow #000000 @ 0.1 0px 1px 2px 0px; div.view-gift 75.0x34.0 bg #ffffff r 50px shadow #111212 @ 0.12 0px 0px 0px 1px | - | - | div.view-gift 75.0x34.0 bg #ffffff r 50px shadow #111212 @ 0.12 0px 0px 0px 1px |
-| How |  |  |  |  |
-| Cursor | - | pointer | = | = |
+| Property | card | title | info |
+|---|---|---|---|
+| Size (w x h) | 1416 x 472 | 616 x 40 | 708 x 472 |
+| Padding | 0px | 0px 16px 0px 0px | 0px 12px 0px 80px |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | Inter Variable 16px/24px 400 | Inter Variable 36px/40px 600 | = |
+| Letter spacing | normal | = | = |
+| Colour | #545759 | #111212 | = |
+| Text node | span: Inter Variable 12px/24px 500, #ffffff | - | h3: Inter Variable 36px/40px 600, #111212 |
+| Transition | none | = | = |
+| ::before | 0px x 472px, static, bg #000000 @ 0, radius 0px | - | - |
+| ::after | 0px x 472px, static, bg #000000 @ 0, radius 0px | - | - |
+| Painted layers | div.small-12.medium-12 708.0x472.0 r 20px shadow #000000 @ 0.1 0px 0px 0px 1px inset; div.gift-featured-tag 123.0x28.0 image linear-gradient(#080c0c 0%, #0c1212 100%) border T:1px solid #080c0c / R:1px solid #080c0c / B:1px solid #080c0c / L:1px solid #080c0c r 50px shadow #000000 @ 0.1 0px 1px 2px 0px; div.view-gift 75.0x34.0 bg #ffffff r 50px shadow #111212 @ 0.12 0px 0px 0px 1px | - | div.view-gift 75.0x34.0 bg #ffffff r 50px shadow #111212 @ 0.12 0px 0px 0px 1px |
+| How |  |  |  |
+| Cursor | - | pointer | = |
 
 Crops: `gift-card.png`.
 
@@ -296,7 +297,7 @@ Page: https://www.hitchd.com/zoeandnoah. Selector: `see tools/capture/public/mea
 
 | Property | card |
 |---|---|
-| Size (w x h) | 370 x 0 |
+| Size (w x h) | 370 x 294.5 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -306,10 +307,11 @@ Page: https://www.hitchd.com/zoeandnoah. Selector: `see tools/capture/public/mea
 | Font | Inter Variable 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #545759 |
+| Text node | span: Inter Variable 12px/24px 500, #ffffff |
 | Transition | none |
 | ::before | 0px x 0px, static, bg #000000 @ 0, radius 0px |
 | ::after | 0px x 0px, static, bg #000000 @ 0, radius 0px |
-| Painted layers | div.small-12.medium-12 0.0x0.0 r 16px shadow #000000 @ 0.1 0px 0px 0px 1px inset; div.gift-featured-tag 0.0x0.0 image linear-gradient(#080c0c 0%, #0c1212 100%) border T:1px solid #080c0c / R:1px solid #080c0c / B:1px solid #080c0c / L:1px solid #080c0c r 50px shadow #000000 @ 0.1 0px 1px 2px 0px; div.dark-drop 0.0x0.0 image linear-gradient(0deg, #0f0f10 @ 0 0%, #0f0f10 100%) r 16px 16px 0px 0px; div.view-gift 0.0x0.0 bg #ffffff r 50px shadow #111212 @ 0.12 0px 0px 0px 1px |
+| Painted layers | div.small-12.medium-6 342.0x256.5 r 16px shadow #000000 @ 0.1 0px 0px 0px 1px inset; div.gift-featured-tag 123.0x28.0 image linear-gradient(#080c0c 0%, #0c1212 100%) border T:1px solid #080c0c / R:1px solid #080c0c / B:1px solid #080c0c / L:1px solid #080c0c r 50px shadow #000000 @ 0.1 0px 1px 2px 0px |
 | How |  |
 
 Crops: `mobile-gift-card.png`.
@@ -401,7 +403,7 @@ Page: https://www.hitchd.com/login. Selector: `see tools/capture/public/measure.
 
 | Property | link | muted |
 |---|---|---|
-| Size (w x h) | 125 x 21 | 0 x 0 |
+| Size (w x h) | 125 x 21 | 450 x 21 |
 | Padding | 0px | = |
 | Border | T: none; R: none; B: 1px solid #000000 @ 0.12; L: none | none |
 | Radius | 0px | = |
@@ -410,10 +412,10 @@ Page: https://www.hitchd.com/login. Selector: `see tools/capture/public/measure.
 | Outline | none | = |
 | Font | Inter Variable 14px/20px 500 | Inter Variable 14px/20px 400 |
 | Letter spacing | normal | = |
-| Colour | #111212 | #484a4c |
-| Transition | all 0.15s ease-in-out | all 0.3s ease |
+| Colour | #111212 | #575a5d |
+| Transition | all 0.15s ease-in-out | none |
 | Cursor | pointer | - |
-| Painted layers | a 125.0x21.0 border B:1px solid #000000 @ 0.12 | - |
+| Painted layers | a 125.0x21.0 border B:1px solid #000000 @ 0.12 | a 79.0x21.0 border B:1px solid #000000 @ 0.12 |
 | How |  |  |
 
 Crops: none.
@@ -428,7 +430,7 @@ Page: https://www.hitchd.com/zoeandnoah. Selector: `see tools/capture/public/mea
 
 | Property | control | select |
 |---|---|---|
-| Size (w x h) | 0 x 0 | = |
+| Size (w x h) | 158 x 48 | 111 x 24 |
 | Padding | 0px | 0px 24px 0px 0px |
 | Border | none | = |
 | Radius | 0px | = |
@@ -438,13 +440,14 @@ Page: https://www.hitchd.com/zoeandnoah. Selector: `see tools/capture/public/mea
 | Font | Inter Variable 16px/24px 400 | Inter Variable 15px/17.25px 500 |
 | Letter spacing | normal | = |
 | Colour | #545759 | #393c3c |
+| Text node | span: Inter Variable 13px/20px 500, #96999c | - |
 | Transition | none | = |
 | Painted layers | option.selected 0.0x0.0 shadow #111212 0px 0px 0px 1.5px inset | = |
 | How |  |  |
 | Background image | - | url(…) |
 | Cursor | - | pointer |
 
-Crops: none.
+Crops: `sort-filter.png`.
 
 #### mobile-menu
 

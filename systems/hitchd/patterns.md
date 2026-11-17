@@ -28,10 +28,10 @@ Pattern: centred `auth card` on `surface.page` → `h1` (`size.authH1`) → labe
 
 Pattern stack: `registry sample banner` → couple hero → `sort-filter` → gift grid → `gift-modal` on card tap.
 
-- **Sample banner.** `.top-registry-sample-banner` — `nav.bar` fill with the line "Fund your dream honeymoon guilt-free." and the teal `action.ctaInk` "Try It Free" link. [registry-nav](components/crops/registry-nav.png)
+- **Sample banner.** `.top-registry-sample-banner` — `nav.bar` fill with the line "Fund your dream honeymoon guilt-free." and the black `action.ctaFill` "Try It Free" pill (white `action.ctaInk` label, 100px corners). [registry-nav](components/crops/registry-nav.png)
 - **Couple hero.** `h1.classic` — the display face at `size.display.registry` — plus `.couple-intro` (date, welcome paragraph, `text.hashtag` `#zoeandnoah`) over the cover photo. [registry-hero](components/crops/registry-hero.png)
 - **Sort filter.** A `.toggle-dd.gift-filter` styled `<select>` — Everything / Still needed / Funded / Couple's choice. Picking re-filters the grid locally; two stacked variants render, one per width. [registry-light-sort-open](screenshots/registry-light-sort-open.png), [registry-light-filter-still-needed](screenshots/registry-light-filter-still-needed.png)
-- **Gift grid.** `ol.gift-list`'s `.giftz` tiles (`radius.card`): gift photo, `h3` title, location, `text.price` goal line. [gift-card](components/crops/gift-card.png)
+- **Gift grid.** `ol.gift-list`'s `.giftz` tiles (`radius.card`): gift photo, `h3` title, location and description; the `.bottompricing` goal containers render empty on the demo registry, so no price role is claimed. [gift-card](components/crops/gift-card.png)
 - **Gift modal.** A card's own tap routes to `/zoeandnoah/<gift-slug>` and the app draws the modal over the list: `surface.modal`, title, funded-vs-goal progress, amount field, and the `Give` pill disabled until an amount exists. Read at rest — Give and everything behind it is the boundary. [gift-modal](components/crops/gift-modal.png), [registry-light-gift-modal](screenshots/registry-light-gift-modal.png)
 - **Phone drawer.** `.mobile-menu` exists in the DOM hidden on the demo — it carries the owner links (contributions, payment methods, log out) but no guest-facing control opens it, so it is a boundary, not a guest pattern. Documented, not faked.
 

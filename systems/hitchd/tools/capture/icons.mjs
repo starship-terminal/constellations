@@ -13,7 +13,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { BASE, UA, launch, patch, clearChallenge, closePromo } from './public/lib.mjs';
+import { BASE, UA, launch, patch, clearChallenge, closePromo, openRegistry } from './public/lib.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ICONS = path.resolve(HERE, '..', '..', 'icons');
@@ -56,12 +56,19 @@ for (const [path_, tag] of [['/', 'home'], ['/blog', 'blog'], ['/blog/what-is-a-
     await grab(p, tag);
   });
 }
-// gift modal icons: opened by the card's own tap, read at rest
+// gift modal icons: opened by the card's own tap, read at rest — the same
+// painted-wait, tile and hit-target as measure.mjs (a bare div click can land
+// on a child that swallows the event), and nothing is saved when the modal
+// never opens
 await tryDo('gift-modal', async () => {
-  await p.goto(BASE + '/zoeandnoah', { waitUntil: 'domcontentloaded', timeout: 90000 });
-  await wait(8000);
-  const card = p.locator('li.gift-col-mob .gift, ol.gift-list .gift').filter({ hasText: /Accommodation|Airbnb|Seafood|Dinner/ }).first();
-  await card.scrollIntoViewIfNeeded(); await card.click({ timeout: 5000 }); await wait(3000);
+  if (!(await openRegistry(p))) { console.log('blocked gift-modal: registry never painted'); return; }
+  const card = p.locator('ol.gift-list .giftz:visible').filter({ hasText: /Accommodation|Airbnb|Seafood|Dinner|Lessons|Tour|Road Trip/ }).first();
+  const target = (await card.count()) ? card : p.locator('ol.gift-list .giftz:visible').first();
+  if (!(await target.count())) { console.log('blocked gift-modal: no gift tile'); return; }
+  await target.scrollIntoViewIfNeeded();
+  await target.locator('.click-space, .view-gift').first().click({ timeout: 8000 }).catch(() => {});
+  await wait(5000);
+  if (!(await p.locator('.gift-modal:visible, .modalDialog:visible').count())) { console.log('blocked gift-modal: modal did not open'); await p.goBack().catch(() => {}); return; }
   await grab(p, 'gift-modal');
 });
 await browser.close();

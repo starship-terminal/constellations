@@ -11,7 +11,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BASE, UA, UA_MOBILE, launch, patch, clearChallenge } from './public/lib.mjs';
+import { BASE, UA, UA_MOBILE, launch, patch, clearChallenge, openRegistry } from './public/lib.mjs';
 
 const REF = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const PAGES = [
@@ -44,9 +44,17 @@ for (const [w, h, ua, tag] of [[1440, 900, UA, 'desktop'], [390, 844, UA_MOBILE,
   const p = await ctx.newPage();
   for (const [label, path_] of PAGES) {
     try {
-      await p.goto(BASE + path_, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-      if (!(await clearChallenge(p))) { out.pages[`${label}@${tag}`] = { blocked: 'bot challenge' }; continue; }
-      await p.waitForTimeout(7000);
+      if (label === 'registry') {
+        // the guest registry is an Angular app whose data fetch stalls on
+        // some loads — share measure.mjs's painted-wait (a nonzero-size
+        // .giftz tile) instead of reading a fixed-sleep shell
+        const painted = await openRegistry(p);
+        if (!painted) { out.pages[`${label}@${tag}`] = { blocked: 'gift list never painted' }; continue; }
+      } else {
+        await p.goto(BASE + path_, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+        if (!(await clearChallenge(p))) { out.pages[`${label}@${tag}`] = { blocked: 'bot challenge' }; continue; }
+        await p.waitForTimeout(7000);
+      }
       out.pages[`${label}@${tag}`] = { url: BASE + path_, ...(await p.evaluate(read)) };
       console.log('ok', label, tag);
     } catch (e) { out.pages[`${label}@${tag}`] = { error: String(e.message).split('\n')[0] }; console.log('FAIL', label, tag); }

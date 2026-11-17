@@ -555,7 +555,7 @@
     "w": 1440,
     "h": 900
    },
-   "scrollHeight": 6960,
+   "scrollHeight": 6757,
    "landmarks": [
     {
      "node": "header",
@@ -609,7 +609,7 @@
       "x": 80,
       "y": 104,
       "w": 1280,
-      "h": 6400
+      "h": 6196
      },
      "position": "static",
      "display": "block"
@@ -620,7 +620,7 @@
       "x": 68,
       "y": 104,
       "w": 1304,
-      "h": 6400
+      "h": 6196
      },
      "position": "static",
      "display": "flex"
@@ -963,21 +963,7 @@
      "display": "block"
     }
    ],
-   "scrollers": [
-    {
-     "node": "body.mac",
-     "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
-     },
-     "position": "relative",
-     "display": "block",
-     "scrollH": 7690,
-     "clientH": 900
-    }
-   ],
+   "scrollers": [],
    "dialogs": []
   },
   "home@mobile": {
@@ -1338,7 +1324,7 @@
     "w": 390,
     "h": 844
    },
-   "scrollHeight": 16400,
+   "scrollHeight": 16310,
    "landmarks": [
     {
      "node": "header",
@@ -1357,7 +1343,7 @@
       "x": 0,
       "y": 112,
       "w": 390,
-      "h": 15646.6
+      "h": 15556.5
      },
      "position": "relative",
      "display": "block"
@@ -1366,9 +1352,9 @@
      "node": "article",
      "rect": {
       "x": 0,
-      "y": 488.1,
+      "y": 452.1,
       "w": 390,
-      "h": 15206.5
+      "h": 15152.4
      },
      "position": "static",
      "display": "block"
@@ -1381,7 +1367,7 @@
       "x": 0,
       "y": 112,
       "w": 390,
-      "h": 15646.6
+      "h": 15556.5
      },
      "position": "static",
      "display": "block"
@@ -1392,7 +1378,7 @@
       "x": 0,
       "y": 112,
       "w": 390,
-      "h": 15646.6
+      "h": 15556.5
      },
      "position": "static",
      "display": "flex"
@@ -1771,26 +1757,142 @@
     "w": 390,
     "h": 844
    },
-   "scrollHeight": 844,
-   "landmarks": [],
-   "grids": [],
-   "fixed": [
+   "scrollHeight": 15050,
+   "landmarks": [
     {
-     "node": "div#container.align",
+     "node": "nav#navmenu.show-for-small-only.mobile-menu.mobile-menu-hidden",
      "rect": {
       "x": 0,
-      "y": 366.5,
+      "y": 0,
       "w": 390,
-      "h": 111
+      "h": 844
      },
      "position": "fixed",
+     "display": "block",
+     "zIndex": "999999999"
+    }
+   ],
+   "grids": [
+    {
+     "node": "div.experience-count.row.small-up-1",
+     "rect": {
+      "x": 0,
+      "y": 660,
+      "w": 390,
+      "h": 64
+     },
+     "position": "relative",
      "display": "block"
+    },
+    {
+     "node": "ol.gift-list.row.medium-up-2",
+     "rect": {
+      "x": 0,
+      "y": 724,
+      "w": 390,
+      "h": 350.5
+     },
+     "position": "relative",
+     "display": "flex"
+    },
+    {
+     "node": "div#gifts.giftz.row.single-giftz",
+     "rect": {
+      "x": 10,
+      "y": 780,
+      "w": 370,
+      "h": 294.5
+     },
+     "position": "relative",
+     "display": "block"
+    },
+    {
+     "node": "ol#Australia.gift-list.row.small-up-1",
+     "rect": {
+      "x": 0,
+      "y": 1142.5,
+      "w": 390,
+      "h": 4244.5
+     },
+     "position": "relative",
+     "display": "flex"
+    },
+    {
+     "node": "ol#Hawaii.gift-list.row.small-up-1",
+     "rect": {
+      "x": 0,
+      "y": 5455,
+      "w": 390,
+      "h": 4897.5
+     },
+     "position": "relative",
+     "display": "flex"
+    },
+    {
+     "node": "ul",
+     "rect": {
+      "x": 24,
+      "y": 370,
+      "w": 342,
+      "h": 132
+     },
+     "position": "static",
+     "display": "block"
+    },
+    {
+     "node": "ul",
+     "rect": {
+      "x": 24,
+      "y": 660,
+      "w": 342,
+      "h": 90
+     },
+     "position": "static",
+     "display": "block"
+    }
+   ],
+   "fixed": [
+    {
+     "node": "div.top-registry-sample-banner",
+     "rect": {
+      "x": 0,
+      "y": 780,
+      "w": 390,
+      "h": 64
+     },
+     "position": "fixed",
+     "display": "block",
+     "zIndex": "999999999"
+    },
+    {
+     "node": "div.toggle-dd.gift-filter.reduce-px",
+     "rect": {
+      "x": 24,
+      "y": 700,
+      "w": 342,
+      "h": 56
+     },
+     "position": "sticky",
+     "display": "block",
+     "zIndex": "999999"
+    },
+    {
+     "node": "nav#navmenu.show-for-small-only.mobile-menu.mobile-menu-hidden",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844
+     },
+     "position": "fixed",
+     "display": "block",
+     "zIndex": "999999999"
     },
     {
      "node": "iframe",
      "rect": {
       "x": 0,
-      "y": 0,
+      "y": 15050.2,
       "w": 390,
       "h": 1
      },

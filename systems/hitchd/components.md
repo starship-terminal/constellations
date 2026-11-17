@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from www.hitchd.com on 2026-11-17, signed out, in headless Chromium at 1440 x 900 (the mobile entries at 390 x 844), with computed styles read from the running page. Nothing was signed into, paid, sent or submitted.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (20 components, 43 states). The page layouts are described in [raw/layout.json](raw/layout.json).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (20 components, 42 states). The page layouts are described in [raw/layout.json](raw/layout.json).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter Variable 16/24 400, #111212`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (12 files, named `{component}-{state}.png`). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (14 files, named `{component}-{state}.png`). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -66,22 +66,22 @@ Values that apply across entries, from the measurement files.
 | signup | page 900px tall, widest band 1440px, 2 fixed/sticky | page 844px tall, widest band 390px, 2 fixed/sticky |
 | forgot-password | page 900px tall, no band found, 2 fixed/sticky | page 844px tall, no band found, 2 fixed/sticky |
 | blog | page 46060px tall, widest band 1280px, 0 fixed/sticky | page 127663px tall, widest band 390px, 0 fixed/sticky |
-| post | page 8827px tall, widest band 1280px, 1 fixed/sticky | page 16400px tall, widest band 390px, 1 fixed/sticky |
+| post | page 8827px tall, widest band 1280px, 1 fixed/sticky | page 16310px tall, widest band 390px, 1 fixed/sticky |
 | terms | page 16589px tall, widest band 1392px, 0 fixed/sticky | page 27434px tall, widest band 366px, 0 fixed/sticky |
-| privacy | page 6960px tall, widest band 1392px, 0 fixed/sticky | page 11425px tall, widest band 366px, 0 fixed/sticky |
+| privacy | page 6757px tall, widest band 1392px, 0 fixed/sticky | page 11425px tall, widest band 366px, 0 fixed/sticky |
 | trips | page 6538px tall, widest band 1440px, 0 fixed/sticky | page 10903px tall, widest band 342px, 0 fixed/sticky |
 | guide | page 8049px tall, widest band 1280px, 1 fixed/sticky | page 8547px tall, widest band 390px, 2 fixed/sticky |
-| registry | page 7690px tall, widest band 1440px, 3 fixed/sticky | page 844px tall, no band found, 3 fixed/sticky |
+| registry | page 7690px tall, widest band 1440px, 3 fixed/sticky | page 15050px tall, widest band 390px, 5 fixed/sticky |
 
-**Card shapes.** Default-state values; the entries hold the states.
+**Card shapes.** Default-state values for each component's own container part; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Gift card](#gift-card) | 1416 x 472 | - | 50px | #ffffff `heroInk` | rgba(17, 18, 18, 0.12) 0px 0px 0px 1px | 0 |
-| [Gift card (mobile)](#gift-card-mobile) | 370 x 0 | - | 50px | #ffffff `heroInk` | rgba(17, 18, 18, 0.12) 0px 0px 0px 1px | 0 |
-| [Blog index card](#blog-index-card) | 1440 x 45149.61 | - | 50% | #737373 | none | 0 |
-| [Auth form card](#auth-form-card) | 450 x 32 | - | - | transparent | none | 0 |
-| [Gift modal](#gift-modal) | 1440 x 779.77 | - | 100px | #c5c8ca | none | 0 |
+| [Gift card](#gift-card) | 1416 x 472 | - | - | transparent | none | 0 |
+| [Gift card (mobile)](#gift-card-mobile) | 370 x 294.5 | - | - | transparent | none | 0 |
+| [Blog index card](#blog-index-card) | 386.66 x 600 | - | - | transparent | none | 0 |
+| [Auth form card](#auth-form-card) | 450 x 437 | - | - | transparent | none | 0 |
+| [Gift modal](#gift-modal) | 1440 x 779.77 | - | - | #ffffff `heroInk` | none | 0 |
 
 ## Components
 
@@ -105,7 +105,7 @@ the full-width "Hitchd is closing on 31 December 2026" strip above the header. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| banner | size 1440 x 98; padding 20px 24px; background #f6f3ef `cream`; text Inter Variable 20/30 500, #111212 |
+| banner | size 1440 x 98; padding 20px 24px; background #f6f3ef `cream`; text Inter Variable 20/30 500, #111212 `ink` |
 | text | size 705 x 58; padding none; background transparent |
 
 ![Closure announcement banner banner](components/crops/announcement.png)
@@ -115,8 +115,8 @@ the marketing footer and its links (the closure home has no footer; read on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| footer | size 1440 x 370; padding 64px 24px 40px 24px; background #ffffff `heroInk`; text Inter Variable 15/26 600, #000000 `ink` |
-| link | size 0 x 0; padding none; background transparent; text Inter Variable 17/22 400, #111212 |
+| footer | size 1440 x 370; padding 64px 24px 40px 24px; background #ffffff `heroInk`; text Inter Variable 15/26 600, #000000 |
+| link | size 0 x 0; padding none; background transparent; text Inter Variable 17/22 400, #111212 `ink` |
 
 ![Footer footer](components/crops/footer.png)
 
@@ -125,8 +125,8 @@ the registry top bar, #hashtag link and Try It Free CTA. Read as `registry-nav` 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| bar | size 1440 x 80; background rgba(255, 255, 255, 0.92); shadow rgba(0, 0, 0, 0.08) 0px -1px 0px 0px; text Inter Variable 17/80 500, #111212 |
-| cta | size 0 x 0; background transparent; shadow none; text Inter Variable 16/24 400, #008cba |
+| bar | size 1440 x 80; background rgba(255, 255, 255, 0.92); shadow rgba(0, 0, 0, 0.08) 0px -1px 0px 0px; text Inter Variable 17/80 500, #111212 `ink` |
+| cta | size 117 x 40; padding 0px 20px; radius 100px; background #111212 `ink`; shadow none; text Inter Variable 16/40 500, #ffffff `heroInk` |
 | hashtag | size 137 x 28.39; border B: 2px solid transparent; background transparent; shadow none; text Inter Variable 22/26.4 500, #ffffff `heroInk` |
 
 ![Registry nav bar](components/crops/registry-nav.png)
@@ -148,7 +148,7 @@ the home hero — "Tie the knot, without tangles." set in DDNR. Read as `hero` o
 #### Marketing H2
 a section heading on the marketing surface (the closure home carries no h2, so this was read on the destination page) Read as `marketing-h2` on the https://www.hitchd.com/trips/australia page.
 
-**Values (h2).** size 672 x 120; background transparent; text Inter Variable 56/60 600, #000000 `ink`.
+**Values (h2).** size 672 x 120; background transparent; text Inter Variable 56/60 600, #000000.
 
 ![Marketing H2 h2](components/crops/h2.png)
 
@@ -157,8 +157,8 @@ the blog post H1, body copy and inline link. Read as `article-type` on the blog 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| h1 | size 680 x 168; padding 48px 0px 0px 24px; background transparent; text Inter Variable 56/60.00 700, #111212 |
-| body | size 1208 x 54; padding none; text Inter Variable 19/27.00 400, #111212 |
+| h1 | size 680 x 168; padding 48px 0px 0px 24px; background transparent; text Inter Variable 56/60.00 700, #111212 `ink` |
+| body | size 1208 x 54; padding none; text Inter Variable 19/27.00 400, #111212 `ink` |
 | link | size 45 x 17; padding none; text Inter Variable 14/17.99 500, #6e6e73 |
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
@@ -168,7 +168,7 @@ a terms page heading and paragraph. Read as `prose-h2` on the terms page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| h2 | size 118 x 36; background transparent; text Inter Variable 32/36 600, #000000 `ink` |
+| h2 | size 118 x 36; background transparent; text Inter Variable 32/36 600, #000000 |
 | body | size 700 x 24; text Inter Variable 16/24 400, #333333 |
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
@@ -192,12 +192,12 @@ a post row on /blog. Read as `blog-card` on the blog index page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| card | size 1440 x 45149.61; background transparent; text Inter Variable 28/34 600, #111212 |
-| title | size 1280 x 74; padding 0px 28px 40px 28px |
+| card | size 386.66 x 600; background transparent; text Inter Variable 15/20 400, #737373 |
+| title | size 328.66 x 96; text Inter Variable 26/32 600, #2c2e2f |
 
-Child layers that carry the look: div 386.7x299 background #ffffff `heroInk`; span 3x3 background #737373 radius 50%; a::after 102pxx1px background #000000 `ink`.
+Child layers that carry the look: div 386.7x299 background #ffffff `heroInk`; span 3x3 background #737373 radius 50%; a::after 102pxx1px background #000000.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Blog index card card](components/crops/blog-card.png)
 
 #### Gift card
 a gift tile in the registry list. Read as `gift-card` on the demo registry page.
@@ -205,9 +205,8 @@ a gift tile in the registry list. Read as `gift-card` on the demo registry page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | card | size 1416 x 472; background transparent; text Inter Variable 12/24 500, #ffffff `heroInk` |
-| title | size 616 x 40; padding 0px 16px 0px 0px; text Inter Variable 36/40 600, #111212 |
-| price | size 616 x 0; text Inter Variable 16/24 400, #545759 `giftPrice` |
-| info | size 708 x 472; padding 0px 12px 0px 80px; text Inter Variable 36/40 600, #111212 |
+| title | size 616 x 40; padding 0px 16px 0px 0px; text Inter Variable 36/40 600, #111212 `ink` |
+| info | size 708 x 472; padding 0px 12px 0px 80px; text Inter Variable 36/40 600, #111212 `ink` |
 
 Child layers that carry the look: div 708x472 radius 20px shadow rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset; div 123x28 image linear-gradient(#080c0c 0%, #0c1212 100%) border 1px solid #080c0c radius 50px shadow rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; div 75x34 background #ffffff `heroInk` radius 50px shadow rgba(17, 18, 18, 0.12) 0px 0px 0px 1px.
 
@@ -216,9 +215,9 @@ Child layers that carry the look: div 708x472 radius 20px shadow rgba(0, 0, 0, 0
 #### Gift card (mobile)
 a gift tile at 390 x 844. Read as `mobile-gift-card` on the demo registry page.
 
-**Values (card).** size 370 x 0; background transparent; text Inter Variable 16/24 400, #545759 `giftPrice`.
+**Values (card).** size 370 x 294.5; background transparent; text Inter Variable 12/24 500, #ffffff `heroInk`.
 
-Child layers that carry the look: div 0x0 radius 16px shadow rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset; div 0x0 image linear-gradient(#080c0c 0%, #0c1212 100%) border 1px solid #080c0c radius 50px shadow rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; div 0x0 image linear-gradient(0deg, rgba(15, 15, 16, 0) 0%, #0f0f10 100%) radius 16px 16px 0px 0px.
+Child layers that carry the look: div 342x256.5 radius 16px shadow rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset; div 123x28 image linear-gradient(#080c0c 0%, #0c1212 100%) border 1px solid #080c0c radius 50px shadow rgba(0, 0, 0, 0.1) 0px 1px 2px 0px.
 
 ![Gift card (mobile) card](components/crops/mobile-gift-card.png)
 
@@ -231,8 +230,8 @@ the /login form container and heading, at rest. Read as `auth-layout` on the log
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| h1 | size 450 x 32; background transparent; text Inter Variable 28/32 600, #111212 |
-| card | size 450 x 437; text Inter Variable 16/20 600, #111212 |
+| h1 | size 450 x 32; background transparent; text Inter Variable 28/32 600, #111212 `ink` |
+| card | size 450 x 437; text Inter Variable 16/20 600, #111212 `ink` |
 | page | size 1440 x 900; background #ffffff `heroInk` |
 
 ![Auth form card h1](components/crops/auth-card.png)
@@ -242,8 +241,8 @@ the email input and its label, at rest. Read as `auth-field` on the login page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| input | size 450 x 48; padding 0px 16px; border 1px solid #d2d2d7 `fieldLine`; radius 8px; background transparent; text Inter Variable 17/24 400, #111212; transition all 0.15s ease-in-out; placeholder #111212 |
-| label | size 40 x 20; padding none; border none; radius none; text Inter Variable 16/20 600, #111212; transition none; placeholder none |
+| input | size 450 x 48; padding 0px 16px; border 1px solid #d2d2d7 `fieldLine`; radius 8px; background transparent; text Inter Variable 17/24 400, #111212 `ink`; transition all 0.15s ease-in-out; placeholder #111212 `ink` |
+| label | size 40 x 20; padding none; border none; radius none; text Inter Variable 16/20 600, #111212 `ink`; transition none; placeholder none |
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -259,8 +258,8 @@ the forgot-password link and helper copy. Read as `auth-link` on the login page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| link | size 125 x 21; border B: 1px solid rgba(0, 0, 0, 0.12); background transparent; text Inter Variable 14/20 500, #111212; transition all 0.15s ease-in-out |
-| muted | size 0 x 0; border none; text Inter Variable 14/20 400, #484a4c `muted`; transition all 0.3s ease |
+| link | size 125 x 21; border B: 1px solid rgba(0, 0, 0, 0.12); background transparent; text Inter Variable 14/20 500, #111212 `ink`; transition all 0.15s ease-in-out |
+| muted | size 450 x 21; border none; text Inter Variable 14/20 400, #575a5d `muted`; transition none |
 
 Child layers that carry the look: a 125x21 border 1px solid rgba(0, 0, 0, 0.12).
 
@@ -275,17 +274,17 @@ the "Sort by" select in the registry header. Read as `sort-filter` on the demo r
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| control | size 0 x 0; background transparent; text Inter Variable 16/24 400, #545759 `giftPrice` |
-| select | padding 0px 24px 0px 0px; image url(…); text Inter Variable 15/17.25 500, #393c3c |
+| control | size 158 x 48; background transparent; text Inter Variable 13/20 500, #96999c |
+| select | size 111 x 24; padding 0px 24px 0px 0px; image url(…); text Inter Variable 15/17.25 500, #393c3c |
 
-Child layers that carry the look: option 0x0 shadow #111212 0px 0px 0px 1.5px inset.
+Child layers that carry the look: option 0x0 shadow #111212 `ink` 0px 0px 0px 1.5px inset.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Sort filter control](components/crops/sort-filter.png)
 
 #### Mobile menu
 the registry .mobile-menu drawer at 390px — it exists (with owner links) but no guest-facing control opens it, so it was measured hidden at rest. Read as `mobile-menu` on the demo registry page.
 
-**Values (menu).** size 390 x 844; padding 12px 24px 24px 24px; background #ffffff `heroInk`; text Inter Variable 16/normal 400, #545759 `giftPrice`; transition all 0.15s ease-in; opacity 0; icon 24 x 24, #111212.
+**Values (menu).** size 390 x 844; padding 12px 24px 24px 24px; background #ffffff `heroInk`; text Inter Variable 16/normal 400, #545759; transition all 0.15s ease-in; opacity 0; icon 24 x 24, #111212 `ink`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -298,7 +297,7 @@ a gift card's modal, opened by its own tap and read at rest; the Give flow is ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| modal | size 1440 x 779.77; background #ffffff `heroInk`; text Inter Variable 36/40.5 600, #111212; icon 32 x 32, #ffffff `heroInk` |
+| modal | size 1440 x 779.77; background #ffffff `heroInk`; text Inter Variable 36/40.5 600, #111212 `ink`; icon 32 x 32, #ffffff `heroInk` |
 | title | size 453.33 x 40.5; background transparent; icon none |
 | give | size 453.33 x 50; background transparent; text Inter Variable 17/50 500, #ffffff `heroInk`; icon none |
 | giveWrap | size 453.33 x 50; radius 100px; background #c5c8ca; text Inter Variable 17/50 500, #ffffff `heroInk`; transition all 0.15s ease-in-out; icon none |

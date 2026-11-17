@@ -13,7 +13,7 @@
 // card's own tap and read at rest; its Give flow is never entered.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, open, closePromo, styleOf, crop, centre, RAW, domFind, slug, patch } from './lib.mjs';
+import { BASE, M, launch, open, openRegistry, closePromo, styleOf, crop, centre, RAW, domFind, slug, patch } from './lib.mjs';
 import { safeUrl } from '../safe-url.mjs';
 
 const only = (process.argv[2] || '').split(',').filter(Boolean);
@@ -28,24 +28,10 @@ const pm = await mctx.newPage();
 const safeCrop = async (page, locator, name) => { try { return await crop(page, locator, name); } catch { return null; } };
 const run = async (name, fn) => { if (only.length && !only.includes(name)) return; try { out[name] = await fn(); console.log('ok', name); } catch (e) { out[name] = { error: String(e).split('\n')[0] }; console.log('FAIL', name, out[name].error); } };
 
-// The guest registry is a legacy Angular app whose data fetch stalls on some
-// loads — a fixed sleep is not a reliable boot signal (a 45s wait has seen
-// both a fully painted gift list and an empty shell). Wait for the gift list
-// itself, reload once on a stall, then hide (never click) the welcome and
-// guest-mode popups so they cannot cover the page.
-const openRegistry = async (page) => {
-  await open(page, BASE + '/zoeandnoah', { wait: 12000 });
-  for (let i = 0; i < 3; i++) {
-    if (await page.locator('ol.gift-list .giftz').first().count()) break;
-    if (i === 1) await page.reload({ waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await page.waitForTimeout(15000);
-  }
-  await page.evaluate(() => {
-    document.querySelectorAll('app-welcome-popup, app-guest-mode-popup, .modal-backdrop').forEach((n) => n.style.setProperty('display', 'none', 'important'));
-    document.body && document.body.style.removeProperty('overflow');
-  }).catch(() => {});
-  return !!(await page.locator('ol.gift-list .giftz').first().count());
-};
+// The registry wait lives in lib.mjs (openRegistry): it polls for a painted,
+// nonzero-size .giftz tile — the element can exist at 0px while the app is
+// still booting — reloads once on a stall, then hides the popups. layout.mjs
+// and public.mjs share the same wait.
 
 // ---- marketing surface ----------------------------------------------------
 
@@ -83,7 +69,7 @@ await run('hero', async () => {
 await run('marketing-h2', async () => {
   // the closure home page carries no h2/footer — those live on the content pages
   await open(p, BASE + '/trips/australia');
-  const h2 = p.locator('h2').filter({ visible: true }).first();
+  const h2 = p.locator('h2:visible').first();
   return { h2: await styleOf(h2), crop: await safeCrop(p, h2, 'h2') };
 });
 
@@ -95,20 +81,22 @@ await run('marketing-footer', async () => {
 
 await run('blog-card', async () => {
   await open(p, BASE + '/blog');
-  const card = p.locator('article, [class*="post" i], .row .columns').filter({ has: p.locator('h2, h3, img') }).first();
+  // section.blog-post wraps the whole index (its h2 is "Articles"); one card
+  // is an <article> tile inside its .grid-container
+  const card = p.locator('section.blog-post article:visible').first();
   return { card: await styleOf(card), title: await styleOf(card.locator('h1, h2, h3, h4').first()), crop: await safeCrop(p, card, 'blog-card') };
 });
 
 await run('article-type', async () => {
   await open(p, BASE + '/blog/what-is-a-honeymoon-registry', { wait: 10000 });
-  const body = p.locator('.blog-post p, article p, [class*="content" i] p, main p').filter({ visible: true }).first();
+  const body = p.locator('.blog-post p:visible, article p:visible, [class*="content" i] p:visible, main p:visible').first();
   return { h1: await styleOf(p.locator('h1').first()), body: await styleOf(body), link: await styleOf(p.locator('article a, main a').first()) };
 });
 
 await run('prose-h2', async () => {
   await open(p, BASE + '/terms');
-  const h2 = p.locator('h2, h3').filter({ visible: true }).first();
-  return { h2: await styleOf(h2), body: await styleOf(p.locator('main p, article p, p').filter({ visible: true }).first()) };
+  const h2 = p.locator('h2:visible, h3:visible').first();
+  return { h2: await styleOf(h2), body: await styleOf(p.locator('main p:visible, article p:visible, p:visible').first()) };
 });
 
 // ---- couple app (auth forms at rest) --------------------------------------
@@ -120,45 +108,49 @@ await run('auth-layout', async () => {
 
 await run('auth-field', async () => {
   await open(p, BASE + '/login');
-  const input = p.locator('input[type="email"], input[type="text"], input').filter({ visible: true }).first();
+  const input = p.locator('input[type="email"]:visible, input[type="text"]:visible, input:visible').first();
   return { input: await styleOf(input), label: await styleOf(input.locator('xpath=preceding::label[1]').first()) };
 });
 
 await run('auth-button', async () => {
   await open(p, BASE + '/login');
-  const btn = p.locator('button[type="submit"], button').filter({ visible: true }).first();
+  const btn = p.locator('button[type="submit"]:visible, button:visible').first();
   return { button: await styleOf(btn), disabled: await btn.isDisabled().catch(() => null), crop: await crop(p, btn, 'auth-button') };
 });
 
 await run('auth-link', async () => {
   await open(p, BASE + '/login');
   const a = p.locator('a').filter({ hasText: /forgot|sign up|create/i }).first();
-  return { link: await styleOf(a), muted: await styleOf(p.locator('[class*="helper" i], [class*="muted" i], p').filter({ visible: true }).first()) };
+  return { link: await styleOf(a), muted: await styleOf(p.locator('[class*="helper" i]:visible, [class*="muted" i]:visible, p:visible').first()) };
 });
 
 // ---- guest registry app ----------------------------------------------------
 
 await run('registry-hero', async () => {
   await openRegistry(p);
-  const h = p.locator('h1.classic:not(.proxy), h1').filter({ visible: true }).first();
+  const h = p.locator('h1.classic:not(.proxy):visible, h1:visible').first();
   const names = p.locator('.couple-intro, [class*="couple" i]').first();
   return { heading: await styleOf(h), names: await styleOf(names), crop: await safeCrop(p, names, 'registry-hero') };
 });
 
 await run('registry-nav', async () => {
   await openRegistry(p);
-  const bar = p.locator('.top-registry-sample-banner').filter({ visible: true }).first();
-  const cta = p.locator('a.direct').filter({ hasText: /try it free/i }).first();
-  return { bar: await styleOf(bar), cta: await styleOf(cta), hashtag: await styleOf(p.locator('.hashtag-link').first()), crop: await safeCrop(p, bar, 'registry-nav') };
+  const bar = p.locator('.top-registry-sample-banner:visible').first();
+  // the banner renders two a.direct copies — a .show-for-small-only one for the
+  // phone and a .hide-for-small-only one for the desktop; only the one that
+  // paints at this width may be measured (the other reads 0px with stale
+  // styles)
+  const cta = bar.locator('a.direct:visible').filter({ hasText: /try it free/i }).first();
+  return { bar: await styleOf(bar), cta: await styleOf(cta), hashtag: await styleOf(p.locator('.hashtag-link:visible').first()), crop: await safeCrop(p, bar, 'registry-nav') };
 });
 
 await run('gift-card', async () => {
   if (!(await openRegistry(p))) throw new Error('gift list never painted');
   // ol.gift-list holds .giftz tiles; the first is the couple's showcase pick
-  const card = p.locator('ol.gift-list .giftz').filter({ visible: true }).first();
-  const info = card.locator('.showcasegift-info, [class*="info" i]').filter({ visible: true }).first();
-  const title = card.locator('h1, h2, h3, h4, h5').filter({ visible: true }).first();
-  const price = card.locator('[class*="pric" i], [class*="amount" i], .currency').filter({ visible: true }).first();
+  const card = p.locator('ol.gift-list .giftz:visible').first();
+  const info = card.locator('.showcasegift-info:visible, [class*="info" i]:visible').first();
+  const title = card.locator('h1:visible, h2:visible, h3:visible, h4:visible, h5:visible').first();
+  const price = card.locator('[class*="pric" i]:visible, [class*="amount" i]:visible, .currency:visible').first();
   const r = { card: await styleOf(card), title: await styleOf(title), crop: await safeCrop(p, card, 'gift-card') };
   // the showcase tile carries .bottompricing; non-showcase tiles may not
   if (await price.count()) r.price = await styleOf(price);
@@ -170,7 +162,7 @@ await run('sort-filter', async () => {
   if (!(await openRegistry(p))) throw new Error('gift list never painted');
   await p.locator('select').first().waitFor({ state: 'attached', timeout: 20000 }).catch(() => {});
   // two stacked variants are rendered; only one paints at this width
-  const sel = p.locator('select').filter({ visible: true }).first();
+  const sel = p.locator('select:visible').first();
   const dd = sel.locator('xpath=ancestor::*[contains(@class,"toggle-dd") or contains(@class,"filter") or contains(@class,"sort")][1]').first();
   const wrap = (await dd.count()) ? dd : sel.locator('xpath=..').first();
   return { control: await styleOf(wrap), select: await styleOf(sel), crop: await safeCrop(p, wrap, 'sort-filter') };
@@ -178,14 +170,14 @@ await run('sort-filter', async () => {
 
 await run('gift-modal', async () => {
   if (!(await openRegistry(p))) throw new Error('gift list never painted');
-  const card = p.locator('ol.gift-list .giftz').filter({ visible: true }).first();
+  const card = p.locator('ol.gift-list .giftz:visible').first();
   await card.scrollIntoViewIfNeeded();
   // the tile's own .click-space / .view-gift hit target navigates to
   // /<couple>/<gift-slug>, which paints the modal — a bare div click can land
   // on a child that swallows the event
   await card.locator('.click-space, .view-gift').first().click({ timeout: 8000 }).catch(() => {});
   await p.waitForTimeout(5000);
-  const modal = p.locator('.gift-modal, .modalDialog, app-gift-modal [class*="modal" i]').filter({ visible: true }).first();
+  const modal = p.locator('.gift-modal:visible, .modalDialog:visible, app-gift-modal [class*="modal" i]:visible').first();
   if (!(await modal.count())) return { notes: { boundary: 'gift modal did not open from the card tap' } };
   const give = modal.locator('button, a').filter({ hasText: /give|contribute/i }).first();
   // the pill's fill paints on its .pay wrapper, not the <a>
@@ -210,7 +202,7 @@ await run('mobile-menu', async () => {
 
 await run('mobile-gift-card', async () => {
   if (!(await openRegistry(pm))) throw new Error('gift list never painted');
-  const card = pm.locator('ol.gift-list .giftz').filter({ visible: true }).first();
+  const card = pm.locator('ol.gift-list .giftz:visible').first();
   return { card: await styleOf(card), crop: await safeCrop(pm, card, 'mobile-gift-card') };
 });
 

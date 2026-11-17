@@ -150,6 +150,15 @@ const resolved = await probe.evaluate((names) => {
 await browser.close();
 
 const VENDOR = /recaptcha|grecaptcha|stackadapt|intercom|stripe|gtm|googletagmanager|--gigya|--hs-|cookiebot/i;
+// Vendor vars that carry an identifier rather than a style (StackAdapt's
+// --sa-uid is a base64 visitor id): record that the name exists, never its
+// value — a design package has no use for a tracker token and a copy of it
+// is a needless identifier leak.
+const IDENT = /uid|uuid|token|secret|api[-_]?key|session|visitor/i;
+const maskIdents = (rules) => rules.map((r) => ({
+  ...r,
+  properties: Object.fromEntries(Object.entries(r.properties).map(([k, v]) => [k, IDENT.test(k) ? '<identifier omitted>' : v])),
+}));
 const FRAMEWORK = /^--(desktop|mobile|tablet)-in-/;
 const binOf = (r) => {
   const names = Object.keys(r.properties);
@@ -177,11 +186,11 @@ const out = {
   },
   errors: result.errors,
   app: result.rules.filter((r) => r.bin === 'app'),
-  vendor: result.rules.filter((r) => r.bin === 'vendor'),
+  vendor: maskIdents(result.rules.filter((r) => r.bin === 'vendor')),
   framework: result.rules.filter((r) => r.bin === 'framework'),
   utility: result.rules.filter((r) => r.bin === 'utility'),
   fonts: result.fonts,
-  resolved: { light: resolved },
+  resolved: { light: Object.fromEntries(Object.entries(resolved).map(([k, r]) => [k, IDENT.test(k) ? { kind: r.kind, value: '<identifier omitted>' } : r])) },
 };
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
 fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');

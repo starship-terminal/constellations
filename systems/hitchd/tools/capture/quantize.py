@@ -43,12 +43,15 @@ def pixel_scale(meta):
     return png['width'] / clip['width'] if clip and png and clip.get('width') and png.get('width') else 1
 
 
-def stitched_sidecar(name, sheet, tile_paths):
+def stitched_sidecar(name, sheet, tile_paths, manifest=None):
     """Rebuild name.png.capture.json from the part tiles' sidecars, or None when any tile cannot vouch.
 
     Tile clips are CSS pixels, so the stitched clip stays in CSS pixels and the expected PNG size is
     each clip times its pixel scale (a 2x capture is twice its clip). A tile with no sidecar or no clip
-    leaves the image without one: unmeasured shots are never marked as checked."""
+    leaves the image without one: unmeasured shots are never marked as checked. Tile continuity and the
+    shooter's .full.json manifest are verified too: a tile that timed out mid-run leaves a shortened part
+    set, and a shortened sheet is a partial capture — its sidecar fails its dimensionCheck, it never
+    silently passes as the whole page."""
     parts = [sidecar_for(f) for f in tile_paths]
     if not parts or any(not p for p in parts):
         return None
@@ -57,6 +60,25 @@ def stitched_sidecar(name, sheet, tile_paths):
     if any(not c for c in clips):
         return None
     meta = dict(parts[0])
+    problems = []
+    # tiles must be contiguous vertical slices of the same column: index order
+    # already checked by the caller; the clip geometry must agree
+    y = clips[0]['y']
+    for i, c in enumerate(clips):
+        if c['x'] != clips[0]['x'] or c['width'] != clips[0]['width']:
+            problems.append(f"part{i} clips a different column than part0")
+        if c['y'] != y:
+            problems.append(f"part{i} clips y={c['y']}, expected {y} — a tile is missing or duplicated")
+        y += c['height']
+    if manifest:
+        owed = manifest.get('expectedTiles')
+        have = manifest.get('tilesWritten')
+        if owed is not None and len(parts) != owed:
+            problems.append(f"page owed {owed} tiles, only {len(parts)} stitched — the sheet is partial")
+        if have is not None and len(parts) != have:
+            problems.append(f"shooter wrote {have} tiles, {len(parts)} stitched — the set is inconsistent")
+    if problems:
+        meta['partial'] = problems
     meta['screenshot'] = f'{name}.png'
     meta['capture'] = {'mode': 'stitchedParts', 'scale': (parts[0].get('capture') or {}).get('scale', 'device'),
                        'clip': {'x': clips[0]['x'], 'y': clips[0]['y'], 'width': clips[0]['width'],
@@ -67,7 +89,7 @@ def stitched_sidecar(name, sheet, tile_paths):
     expected = {'width': round(clips[0]['width'] * scales[0]),
                 'height': sum(round(c['height'] * s) for c, s in zip(clips, scales))}
     matches = abs(sheet.width - expected['width']) <= 1 and abs(sheet.height - expected['height']) <= 1
-    meta['dimensionCheck'] = {'status': 'pass' if matches else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
+    meta['dimensionCheck'] = {'status': 'pass' if matches and not problems else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
     if not matches:
         meta['dimensionCheck']['error'] = (f"Stitched PNG {sheet.width}x{sheet.height}, "
                                            f"expected {expected['width']}x{expected['height']} from the part clips")
@@ -83,13 +105,26 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
+    # tile indices must run 0..n-1: a timeout that leaves a hole in the
+    # sequence means the sheet skips part of the page — record it, still
+    # stitch what survived (the sidecar's check will fail it as partial)
+    idx = [i for i, _ in ps]
+    mf = RAW / f'{name}.full.json'
+    manifest = json.loads(mf.read_text()) if mf.exists() else None
+    if idx != list(range(len(ps))):
+        manifest = dict(manifest or {})
+        manifest.setdefault('indexGap', idx)
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0
     for i in ims:
         sheet.paste(i, (0, y)); y += i.height
     sheet.save(RAW / f'{name}.png')
-    stitched[name] = stitched_sidecar(name, sheet, [f for _, f in ps])
+    stitched[name] = stitched_sidecar(name, sheet, [f for _, f in ps], manifest)
+    if manifest and manifest.get('indexGap'):
+        stitched[name] = dict(stitched[name] or {})
+        stitched[name].setdefault('partial', []).append(f"tile indices {idx} are not contiguous")
+        stitched[name].setdefault('dimensionCheck', {})['status'] = 'fail'
     print('stitched', name, sheet.size)
 
 n = 0

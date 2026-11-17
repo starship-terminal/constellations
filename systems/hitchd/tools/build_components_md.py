@@ -380,22 +380,24 @@ def layout_of(key):
 for label in ["home", "login", "signup", "forgot-password", "blog", "post", "terms", "privacy", "trips", "guide", "registry"]:
     W(f"| {label} | {layout_of(label + '@desktop')} | {layout_of(label + '@mobile')} |")
 W()
-W("**Card shapes.** Default-state values; the entries hold the states.")
+W("**Card shapes.** Default-state values for each component's own container part; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
-# PRODUCT (adapt): the card-like components to compare in one table.
+# Each row reads the component's own named part — never a descendant's paint,
+# which would mix parts (a heading's height, a small button's radius, a
+# disabled pill's fill) into the card's shape.
+SHAPE_PART = {"gift-card": "card", "mobile-gift-card": "card", "blog-card": "card", "auth-layout": "card", "gift-modal": "modal"}
 for k in ["gift-card", "mobile-gift-card", "blog-card", "auth-layout", "gift-modal"]:
     c = C.get(k)
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = c["states"].get(SHAPE_PART[k])
+    if not st or "style" not in st:
+        st = next((s for s in c["states"].values() if "style" in s), None)
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

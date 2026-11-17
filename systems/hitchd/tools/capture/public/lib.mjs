@@ -150,6 +150,41 @@ export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
   if (promo === 'close') await closePromo(page);
 }
 
+// ---- the guest registry's painted-wait, shared by every capture path ----
+
+// The guest registry is a legacy Angular app whose data fetch stalls on some
+// loads — a fixed sleep is not a reliable boot signal (a 45s wait has seen
+// both a fully painted gift list and an empty shell, and a bare .giftz element
+// can exist at 0px while the app is still booting). Painted means a real,
+// nonzero-size gift tile.
+export async function registryPainted(page) {
+  return page.evaluate(() => {
+    for (const el of document.querySelectorAll('ol.gift-list .giftz')) {
+      const r = el.getBoundingClientRect();
+      if (r.width > 0 && r.height > 0) return true;
+    }
+    return false;
+  }).catch(() => false);
+}
+
+// Wait for the painted registry: poll the tile itself, reload once on a stall,
+// then hide (never click) the welcome and guest-mode popups so they cannot
+// cover the page. Shared by measure.mjs, layout.mjs and public.mjs so the
+// three paths can never disagree about what "the registry loaded" means.
+export async function openRegistry(page, { url = BASE + '/zoeandnoah' } = {}) {
+  await open(page, url, { wait: 12000 });
+  for (let i = 0; i < 3; i++) {
+    if (await registryPainted(page)) break;
+    if (i === 1) await page.reload({ waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await page.waitForTimeout(15000);
+  }
+  await page.evaluate(() => {
+    document.querySelectorAll('app-welcome-popup, app-guest-mode-popup, .modal-backdrop').forEach((n) => n.style.setProperty('display', 'none', 'important'));
+    document.body && document.body.style.removeProperty('overflow');
+  }).catch(() => {});
+  return registryPainted(page);
+}
+
 // Computed style properties recorded for every component and state.
 export const PROPS = [
   'display', 'position', 'boxSizing', 'width', 'height', 'minWidth', 'maxWidth', 'minHeight',
