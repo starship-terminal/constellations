@@ -16456,7 +16456,8 @@
      "search was not typed or submitted; /search?ingredients=apple is a published browse link"
     ],
     "durationMin": 150,
-    "durationNote": "one session: route probe, kit adaptation, screenshot and measurement passes, token build"
+    "durationNote": "one session: route probe, kit adaptation, screenshot and measurement passes, token build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/651"
    }
   }
  ]
