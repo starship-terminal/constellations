@@ -16456,7 +16456,8 @@
      "Comments, updates posting, messages, and the creator dashboard were not opened."
     ],
     "durationMin": 90,
-    "date": "2026-11-18"
+    "date": "2026-11-18",
+    "pr": "https://github.com/starship-terminal/constellations/pull/653"
    }
   }
  ]
