@@ -45,11 +45,49 @@ def blocks():
     return out
 
 
+def _split_selector(prelude):
+    """Split `color: red; .title` into the closed declaration and the selector.
+
+    The semicolon has to sit outside quotes and parentheses, so
+    `&[data-label="a;b"]` stays one selector. No semicolon means the
+    whole prelude is the selector.
+    """
+    depth, quote, last = 0, None, -1
+    i = 0
+    while i < len(prelude):
+        c = prelude[i]
+        if c == '\\':
+            i += 2
+            continue
+        if quote:
+            if c == quote:
+                quote = None
+        elif c in '"\'':
+            quote = c
+        elif c == '(':
+            depth += 1
+        elif c == ')' and depth:
+            depth -= 1
+        elif c == ';' and depth == 0:
+            last = i
+        i += 1
+    if last == -1:
+        return '', prelude.strip()
+    return prelude[:last + 1], prelude[last + 1:].strip()
+
+
 def parse(css):
     """Yield (conditions, selector, body) for every style rule; conditions are the at-rule
-    preludes around it, outermost first."""
-    i, n, stack, start = 0, len(css), [], 0
-    quote = None
+    preludes around it, outermost first.
+
+    Nested style rules are their own yields. A declaration that sits beside
+    one (`color: red; .title { ... } margin: 4px`) stays on the outer rule.
+    The nested selector is not folded into that declaration, and a child
+    block is not copied into the outer body.
+    """
+    i, n = 0, len(css)
+    # (head, declarations already closed before a nested child)
+    stack, start, quote = [], 0, None
     while i < n:
         c = css[i]
         if c == '\\':  # an escape, in a string or in a selector such as .\[data-cds\=\'Button\'\]
@@ -58,27 +96,62 @@ def parse(css):
         if quote:
             if c == quote:
                 quote = None
-        elif c in '"\'':
+            i += 1
+            continue
+        if c in '"\'':
             quote = c
         elif c == '{':
-            stack.append((css[start:i].strip(), i + 1))
+            prelude = css[start:i]
+            owned = ''
+            if stack and not stack[-1][0].startswith('@'):
+                owned, prelude = _split_selector(stack[-1][1] + prelude)
+                stack[-1][1] = owned
+            stack.append([prelude.strip(), ''])
             start = i + 1
         elif c == '}':
             if stack:
-                head, body_start = stack.pop()
-                body = css[body_start:i]
-                # a step inside @keyframes (0%, from, to) is not a style rule
-                if not head.startswith('@') and '{' not in body and not any(h.startswith(('@keyframes', '@-webkit-keyframes')) for h, _ in stack):
-                    yield [h for h, _ in stack], head, body
+                head, owned = stack.pop()
+                body = owned + css[start:i]
+                # a step inside @keyframes (0%, from, to) is not a style rule.
+                if not head.startswith('@') and not any(
+                        frame[0].startswith(('@keyframes', '@-webkit-keyframes')) for frame in stack):
+                    if ':' in body:
+                        yield [frame[0] for frame in stack], head, body
             start = i + 1
         elif c == ';' and not stack:
             start = i + 1
         i += 1
 
 
+def _split_declarations(body):
+    """Split a declaration list on semicolons outside quotes and parentheses."""
+    parts, start, depth, quote = [], 0, 0, None
+    i = 0
+    while i < len(body):
+        c = body[i]
+        if c == '\\':
+            i += 2
+            continue
+        if quote:
+            if c == quote:
+                quote = None
+        elif c in '"\'':
+            quote = c
+        elif c == '(':
+            depth += 1
+        elif c == ')' and depth:
+            depth -= 1
+        elif c == ';' and depth == 0:
+            parts.append(body[start:i])
+            start = i + 1
+        i += 1
+    parts.append(body[start:])
+    return parts
+
+
 def decls(body):
     out = []
-    for part in re.split(r';(?![^(]*\))', body):
+    for part in _split_declarations(body):
         if ':' in part:
             k, v = part.split(':', 1)
             out.append((k.strip(), v.strip()))
