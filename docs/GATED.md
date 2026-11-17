@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -738,6 +738,16 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Kit](../systems/kit) — `kit`
+Access: signed out (the creator app behind app.kit.com login was never reached)
+- the signed-in creator app at app.kit.com (dashboard, email designer, automations, subscribers, commerce) needs an account and was never reached
+- the request-a-demo form at https://kit.com/request-demo sits in a Chili Piper iframe (https://kit.chilipiper.com/concierge-router/demo-request-form) and was not submitted
+- password reset at https://app.kit.com/users/password/new is linked from the log-in card and was not followed
+- checkout and trial links on https://kit.com/pricing point at signup with a plan query (plan=1k, plan=1k-annual, plan=kit-free) and were measured, never followed
+- disabled, error, loading and validation states were not seen because no form was submitted
+- the product publishes no dark theme; the dark token set is empty on purpose
+- C5, V1 and V2 are not published by the product
 
 ## Gate noted in access text only
 
