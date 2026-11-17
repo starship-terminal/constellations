@@ -4574,7 +4574,8 @@
      "no standalone SVG icon set was lifted; the glyphs in crops and screenshots are Coinbase's artwork"
     ],
     "durationMin": 300,
-    "durationNote": "wall-clock across the capture sessions including kit adaptation, Cloudflare/headed-browser probing, route and DOM probing, the theme-element harvest, screenshot and measurement passes with selector correction, and the offline build"
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, Cloudflare/headed-browser probing, route and DOM probing, the theme-element harvest, screenshot and measurement passes with selector correction, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/637"
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the logo, social marks, passkey/OAuth marks) are visible in the crops and screenshots"
