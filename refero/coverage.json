@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 189,
-    "system_domains": 180,
-    "matched_domains": 150,
-    "missing_domains": 283,
+    "system_packages": 190,
+    "system_domains": 181,
+    "matched_domains": 151,
+    "missing_domains": 282,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2474,6 +2474,23 @@
         }
       ]
     },
+    "lemonsqueezy.com": {
+      "catalog": [
+        {
+          "name": "Lemon Squeezy",
+          "domain": "lemonsqueezy.com",
+          "id": 321
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lemonsqueezy",
+          "name": "Lemon Squeezy",
+          "url": "https://www.lemonsqueezy.com",
+          "name_match": false
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2937,13 +2954,6 @@
         "name": "Lemni",
         "domain": "lemni.com",
         "id": 608
-      }
-    ],
-    "lemonsqueezy.com": [
-      {
-        "name": "Lemon Squeezy",
-        "domain": "lemonsqueezy.com",
-        "id": 321
       }
     ],
     "leonardo.ai": [

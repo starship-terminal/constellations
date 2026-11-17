@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -197,6 +197,16 @@ Access: signed out (the marketing routes are fully public; the Cofounder OS sits
 ## [Cohere](../systems/cohere) — `cohere`
 Access: signed out (the marketing routes are fully public; the Cohere product sits behind dashboard.cohere.com sign-in - the welcome/login card was measured at rest only with no credentials typed and nothing submitted; nav/hero CTAs to sign-up and sales forms were never followed; no OAuth flow was started)
 - the Cohere product - North, Command, the dashboard - sits behind dashboard.cohere.com sign-in and was never crossed; the login card was measured at rest but never submitted
+
+## [Lemon Squeezy](../systems/lemonsqueezy) — `lemonsqueezy`
+Access: signed out (marketing, docs, help, pricing, about, legal and the auth card are public; the dashboard, product editor, payouts, customers and settings sit behind auth.lemonsqueezy.com/login and were not opened; the sign-in form and the register business-intent step were not submitted; Google and Twitter OAuth were not followed; Stripe checkout was not opened)
+- the signed-in dashboard at app.lemonsqueezy.com: products, orders, subscriptions, customers, discounts, affiliates, payouts, analytics and settings sit behind https://auth.lemonsqueezy.com/login and were not opened
+- the customer order portal at https://app.lemonsqueezy.com/my-orders sits behind sign-in and was not opened
+- Google and Twitter OAuth on https://auth.lemonsqueezy.com/login were measured as buttons and never followed
+- the password reset form at https://auth.lemonsqueezy.com/password/reset was not opened
+- the register flow at https://auth.lemonsqueezy.com/register (business-intent step) was screenshotted and not submitted, so later account-creation steps were not reached
+- Stripe Managed Payments signup at https://dashboard.stripe.com/register/managed_payments and https://stripe.com/managed-payments were not opened; they are a different product
+- checkout and purchase are not on the public marketing pages and were not opened
 
 ## [Coinbase](../systems/coinbase) — `coinbase`
 Access: signed out (the marketing routes are fully public; the Coinbase product sits behind login.coinbase.com - the /signin redirect's card was measured at rest only: the email field was focused once for its computed style, no text was typed, nothing submitted, and no OAuth/passkey flow was started; the OneTrust consent layer was hidden, never answered)

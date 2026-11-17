@@ -2679,8 +2679,8 @@
     321
    ],
    "description": "Payments, tax & subscriptions for software companies",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/lemonsqueezy",
    "notes": "",
    "batch": 9
   },

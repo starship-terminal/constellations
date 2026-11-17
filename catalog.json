@@ -4488,6 +4488,92 @@
    }
   },
   {
+   "slug": "lemonsqueezy",
+   "name": "Lemon Squeezy",
+   "url": "https://www.lemonsqueezy.com",
+   "category": "finance",
+   "platform": "web",
+   "goodFor": "A merchant-of-record marketing site winding down onto Stripe: Webflow Client-First, a purple-600 hero (#5423e7), a yellow shutdown banner (#ffc233), 40px white pills, Circular Pro Book display and Inter UI, plus an 8px-radius auth card in the same purple",
+   "tags": [
+    "web",
+    "payments",
+    "merchant-of-record",
+    "subscriptions",
+    "webflow",
+    "light",
+    "pills",
+    "marketing",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed out (marketing, docs, help, pricing, about, legal and the auth card are public; the dashboard, product editor, payouts, customers and settings sit behind auth.lemonsqueezy.com/login and were not opened; the sign-in form and the register business-intent step were not submitted; Google and Twitter OAuth were not followed; Stripe checkout was not opened)",
+   "themes": ["light"],
+   "widths": [1440, 390],
+   "entry": "systems/lemonsqueezy/README.md",
+   "tokens": "systems/lemonsqueezy/tokens.json",
+   "styleGuide": "systems/lemonsqueezy/style-guide.html",
+   "preview": {
+    "cover": "systems/lemonsqueezy/screenshots/home-light-default.png",
+    "icon": "systems/lemonsqueezy/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.raised",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.accent",
+      "border": "light.border.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.sans",
+     "core.font.family.mono"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "www.lemonsqueezy.com (Webflow), docs.lemonsqueezy.com (Mintlify) and auth.lemonsqueezy.com/login in headless Chromium, desktop 1440x900 and a 390x844 mobile pass, on 2026-11-18. Colour ramps read from the cross-origin stylesheet :root. Component styles computed on the live DOM. Consent overlays hidden, never answered. Nothing submitted.",
+    "timestamp": "2026-11-18T12:00:00Z",
+    "harness": "Grok Build",
+    "model": "grok-4.7",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/help",
+     "/about",
+     "/blog/saying-goodbye-to-lemon-squeezy",
+     "/privacy",
+     "/terms",
+     "/creators-guide",
+     "/why-did-lemon-squeeezy-charge-me",
+     "/features (404)",
+     "docs.lemonsqueezy.com/",
+     "docs.lemonsqueezy.com/help",
+     "docs.lemonsqueezy.com/api",
+     "docs.lemonsqueezy.com/migration",
+     "auth.lemonsqueezy.com/login",
+     "auth.lemonsqueezy.com/register",
+     "mobile / /pricing /help docs login"
+    ],
+    "gaps": [
+     "the signed-in dashboard at app.lemonsqueezy.com: products, orders, subscriptions, customers, discounts, affiliates, payouts, analytics and settings sit behind https://auth.lemonsqueezy.com/login and were not opened",
+     "the customer order portal at https://app.lemonsqueezy.com/my-orders sits behind sign-in and was not opened",
+     "Google and Twitter OAuth on https://auth.lemonsqueezy.com/login were measured as buttons and never followed",
+     "the password reset form at https://auth.lemonsqueezy.com/password/reset was not opened",
+     "the register flow at https://auth.lemonsqueezy.com/register (business-intent step) was screenshotted and not submitted, so later account-creation steps were not reached",
+     "Stripe Managed Payments signup at https://dashboard.stripe.com/register/managed_payments and https://stripe.com/managed-payments were not opened; they are a different product",
+     "checkout and purchase are not on the public marketing pages and were not opened",
+     "the docs search dialog on https://docs.lemonsqueezy.com/help was screenshotted and not measured; no query was typed"
+    ],
+    "date": "2026-11-18",
+    "version": "public site as of 2026-11-18 (shutdown banner: 31 March 2027)",
+    "durationMin": 90
+   }
+  },
+  {
    "slug": "coinbase",
    "name": "Coinbase",
    "url": "https://www.coinbase.com/en-sg",
