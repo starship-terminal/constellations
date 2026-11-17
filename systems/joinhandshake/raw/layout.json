@@ -1,0 +1,5725 @@
+{
+ "employers@1440": {
+  "vw": 1440,
+  "docH": 6534,
+  "theme": "light",
+  "h1": {
+   "text": "HIRE QUALIFIED TALENT FAST",
+   "font": "",
+   "x": 384,
+   "y": 176,
+   "w": 672,
+   "h": 286
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset-with-banner)",
+    "pos": "fixed",
+    "top": "76px",
+    "z": "50",
+    "x": 0,
+    "y": 76,
+    "w": 1440,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.container.flex.flex-col",
+    "max": "1440px",
+    "padL": "144px",
+    "padR": "144px",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 1106
+   },
+   {
+    "el": "div.relative.mx-auto.flex",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 128,
+    "w": 1152,
+    "h": 716
+   },
+   {
+    "el": "h1.z-10.-mt-6.max-w-2xl",
+    "max": "672px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 176,
+    "w": 672,
+    "h": 286
+   },
+   {
+    "el": "p.max-w-md.text-center.text-balance",
+    "max": "448px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 496,
+    "y": 502,
+    "w": 448,
+    "h": 54
+   },
+   {
+    "el": "div.flex.w-full.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 596,
+    "w": 1152,
+    "h": 248
+   },
+   {
+    "el": "section.flex.max-w-6xl.flex-col",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 154,
+    "y": 924,
+    "w": 1131,
+    "h": 118
+   },
+   {
+    "el": "div.container.flex.flex-col",
+    "max": "1440px",
+    "padL": "144px",
+    "padR": "144px",
+    "x": 195,
+    "y": 1202,
+    "w": 1050,
+    "h": 31
+   },
+   {
+    "el": "div.flex.max-w-3xl.flex-col",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 336,
+    "y": 1569,
+    "w": 768,
+    "h": 164
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[20px]/lg.tracking-sm",
+    "max": "546px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 447,
+    "y": 1689,
+    "w": 546,
+    "h": 44
+   },
+   {
+    "el": "div.mx-auto.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 1922,
+    "w": 1152,
+    "h": 466
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[20px]/lg.tracking-sm",
+    "max": "448px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 830,
+    "y": 2038,
+    "w": 448,
+    "h": 66
+   },
+   {
+    "el": "div.mx-auto.flex.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 294,
+    "y": 2471,
+    "w": 851,
+    "h": 190
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.flex.flex-col.gap-10",
+    "cols": "252.812px 252.812px 252.812px 252.812px",
+    "colGap": "40px",
+    "rowGap": "40px",
+    "x": 154,
+    "y": 972,
+    "w": 1131,
+    "h": 70
+   },
+   {
+    "el": "div.hidden.lg:grid.lg:grid-cols-12",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 144,
+    "y": 1922,
+    "w": 1152,
+    "h": 466
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 2661,
+    "w": 1152,
+    "h": 673
+   },
+   {
+    "el": "section.mx-auto.grid.max-w-5xl",
+    "cols": "85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 208,
+    "y": 5083,
+    "w": 1024,
+    "h": 637
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 5792,
+    "w": 1392,
+    "h": 718
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "218.656px 218.672px 218.672px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 728,
+    "y": 5792,
+    "w": 688,
+    "h": 336
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.transition-colors.duration-700",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 5768
+  },
+  "sections": [
+   {
+    "el": "section.relative.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 144,
+    "y": 128,
+    "w": 1152,
+    "h": 914,
+    "heading": "HIRE QUALIFIED TALENT FAST"
+   },
+   {
+    "el": "section.flex.max-w-6xl.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 154,
+    "y": 924,
+    "w": 1131,
+    "h": 118,
+    "heading": "30M"
+   },
+   {
+    "el": "section.flex.flex-col.gap-10",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1202,
+    "w": 1440,
+    "h": 255,
+    "heading": "Trusted by 97% of the Fortune 500 and over 1M smal"
+   },
+   {
+    "el": "section.py-16.lg:py-24",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 144,
+    "y": 1733,
+    "w": 1152,
+    "h": 658,
+    "heading": "Source"
+   },
+   {
+    "el": "section.py-20.lg:py-32",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 144,
+    "y": 3922,
+    "w": 1152,
+    "h": 722,
+    "heading": ""
+   },
+   {
+    "el": "section.relative.mx-auto.flex",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 144,
+    "y": 4645,
+    "w": 1152,
+    "h": 438,
+    "heading": "Ready to hire the next generation of talent?"
+   },
+   {
+    "el": "section.mx-auto.grid.max-w-5xl",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 208,
+    "y": 5083,
+    "w": 1024,
+    "h": 637,
+    "heading": "FAQs"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "pricing@1440": {
+  "vw": 1440,
+  "docH": 5286,
+  "theme": "light",
+  "h1": null,
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   },
+   {
+    "el": "div.sticky.top-0.z-20",
+    "pos": "sticky",
+    "top": "0px",
+    "z": "20",
+    "x": 144,
+    "y": 1376,
+    "w": 1152,
+    "h": 154
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "max": "1440px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 64,
+    "w": 1392,
+    "h": 279
+   },
+   {
+    "el": "section.mx-auto.hidden.w-full",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 1320,
+    "w": 1152,
+    "h": 2303
+   },
+   {
+    "el": "div.flex.w-full.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 1320,
+    "w": 1152,
+    "h": 2303
+   },
+   {
+    "el": "h2.font-noi-grotesk.text-[36px]/lg.tracking-lg",
+    "max": "441px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 3744,
+    "w": 441,
+    "h": 44
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4544,
+    "w": 1392,
+    "h": 718
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.relative.lg:grid.lg:grid-cols-12",
+    "cols": "96px 96px 96px 96px 96px 96px 96px 96px 96px 96px 96px 96px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 1376,
+    "w": 1152,
+    "h": 2247
+   },
+   {
+    "el": "div.sticky.top-0.z-20",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 1376,
+    "w": 1152,
+    "h": 154
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 1605,
+    "w": 1152,
+    "h": 93
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 1698,
+    "w": 1152,
+    "h": 94
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 1792,
+    "w": 1152,
+    "h": 73
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 1865,
+    "w": 1152,
+    "h": 94
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 1959,
+    "w": 1152,
+    "h": 116
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 2075,
+    "w": 1152,
+    "h": 73
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 2148,
+    "w": 1152,
+    "h": 73
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 144,
+    "y": 2221,
+    "w": 1152,
+    "h": 73
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.flex.flex-col.gap-20",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 4520
+  },
+  "sections": [
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 64,
+    "w": 1392,
+    "h": 279,
+    "heading": "Employer plans and pricing"
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 463,
+    "w": 1392,
+    "h": 737,
+    "heading": "Basic"
+   },
+   {
+    "el": "section.mx-auto.hidden.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 144,
+    "y": 1320,
+    "w": 1152,
+    "h": 2303,
+    "heading": "Compare all features"
+   },
+   {
+    "el": "section.relative.lg:grid.lg:grid-cols-12",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 144,
+    "y": 1376,
+    "w": 1152,
+    "h": 2247,
+    "heading": "Target & Connect"
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 144,
+    "y": 1605,
+    "w": 1152,
+    "h": 856,
+    "heading": ""
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 144,
+    "y": 2536,
+    "w": 1152,
+    "h": 553,
+    "heading": ""
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 144,
+    "y": 3163,
+    "w": 1152,
+    "h": 219,
+    "heading": ""
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 144,
+    "y": 3457,
+    "w": 1152,
+    "h": 167,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 3744,
+    "w": 1392,
+    "h": 656,
+    "heading": "Pricing FAQs"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "request-more-info@1440": {
+  "vw": 1440,
+  "docH": 1470,
+  "theme": "light",
+  "h1": {
+   "text": "Your next great hire is already on Handshake",
+   "font": "",
+   "x": 100,
+   "y": 128,
+   "w": 503,
+   "h": 171
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.container.grid.grid-cols-4",
+    "max": "1440px",
+    "padL": "100px",
+    "padR": "100px",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 594
+   },
+   {
+    "el": "h2.container.mt-[64px].w-full",
+    "max": "1440px",
+    "padL": "100px",
+    "padR": "100px",
+    "x": 0,
+    "y": 604,
+    "w": 1440,
+    "h": 31
+   },
+   {
+    "el": "section.container.py-10.text-white",
+    "max": "1440px",
+    "padL": "100px",
+    "padR": "100px",
+    "x": 0,
+    "y": 967,
+    "w": 1440,
+    "h": 504
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.container.grid.grid-cols-4",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3438px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "24px",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 594
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.min-h-svh.bg-cyan-90",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 1470
+  },
+  "sections": [
+   {
+    "el": "section.container.py-10.text-white",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 967,
+    "w": 1440,
+    "h": 504,
+    "heading": "Why Handshake"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "career-centers@1440": {
+  "vw": 1440,
+  "docH": 5681,
+  "theme": "light",
+  "h1": {
+   "text": "Get your\nstudents hired",
+   "font": "600 234px / 198.9px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 219,
+   "y": 160,
+   "w": 1002,
+   "h": 398
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.mx-auto.flex.max-w-[1760px]",
+    "max": "1760px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 80,
+    "w": 1440,
+    "h": 1309
+   },
+   {
+    "el": "div.flex.max-w-[1064px].flex-col",
+    "max": "1064px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 219,
+    "y": 160,
+    "w": 1002,
+    "h": 585
+   },
+   {
+    "el": "p.max-w-[716px].text-b20.text-white",
+    "max": "716px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 362,
+    "y": 598,
+    "w": 716,
+    "h": 48
+   },
+   {
+    "el": "div.grid.grid-cols-1.justify-center",
+    "max": "1280px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 140,
+    "y": 2049,
+    "w": 1160,
+    "h": 534
+   },
+   {
+    "el": "p.-indent-[11.78px].text-[32px].leading-[0.95]",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 2973,
+    "w": 768,
+    "h": 350
+   },
+   {
+    "el": "p.-indent-[11.78px].text-[32px].leading-[0.95]",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 2962,
+    "y": 3039,
+    "w": 768,
+    "h": 218
+   },
+   {
+    "el": "p.-indent-[11.78px].text-[32px].leading-[0.95]",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 4386,
+    "y": 3017,
+    "w": 768,
+    "h": 262
+   },
+   {
+    "el": "p.-indent-[11.78px].text-[32px].leading-[0.95]",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 5810,
+    "y": 2973,
+    "w": 768,
+    "h": 350
+   },
+   {
+    "el": "div.flex.max-w-[852px].flex-col",
+    "max": "852px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 294,
+    "y": 4488,
+    "w": 852,
+    "h": 227
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4939,
+    "w": 1392,
+    "h": 718
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.grid.grid-cols-1.justify-center",
+    "cols": "271.984px 272px 272px 272px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 140,
+    "y": 2049,
+    "w": 1160,
+    "h": 534
+   },
+   {
+    "el": "div.grid.grid-cols-1.gap-16",
+    "cols": "355.188px 355.203px 355.188px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 163,
+    "y": 3869,
+    "w": 1114,
+    "h": 314
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 4939,
+    "w": 1392,
+    "h": 718
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "218.656px 218.672px 218.672px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 728,
+    "y": 4939,
+    "w": 688,
+    "h": 336
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.transition-colors.duration-700",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 4915
+  },
+  "sections": [
+   {
+    "el": "section.pt-16.transition.duration-300",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 1949,
+    "heading": "Get your students hired"
+   },
+   {
+    "el": "section.w-full.pt-[100px].pb-14",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1389,
+    "w": 1440,
+    "h": 560,
+    "heading": ""
+   },
+   {
+    "el": "section",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1949,
+    "w": 1440,
+    "h": 1641,
+    "heading": ""
+   },
+   {
+    "el": "section.relative",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 2783,
+    "w": 1392,
+    "h": 783,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.w-full.rounded-2xl",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 2783,
+    "w": 1392,
+    "h": 783,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.w-full.rounded-2xl",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 2842,
+    "y": 2783,
+    "w": 1392,
+    "h": 783,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.w-full.rounded-2xl",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 4266,
+    "y": 2783,
+    "w": 1392,
+    "h": 783,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.w-full.rounded-2xl",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 5690,
+    "y": 2783,
+    "w": 1392,
+    "h": 783,
+    "heading": ""
+   },
+   {
+    "el": "section",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 3590,
+    "w": 1440,
+    "h": 1324,
+    "heading": "Handshake data helps Baylor University get a 29% i"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "careers@1440": {
+  "vw": 1440,
+  "docH": 5465,
+  "theme": "light",
+  "h1": null,
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 64,
+    "w": 1152,
+    "h": 912
+   },
+   {
+    "el": "div.mx-auto.flex.w-full",
+    "max": "1440px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 1176,
+    "w": 1440,
+    "h": 766
+   },
+   {
+    "el": "h2.font-noi-grotesk.text-[36px]/lg.tracking-lg",
+    "max": "634px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 403,
+    "y": 1241,
+    "w": 634,
+    "h": 88
+   },
+   {
+    "el": "div.flex.w-full.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 2141,
+    "w": 1152,
+    "h": 377
+   },
+   {
+    "el": "h2.font-noi-grotesk.text-[44px]/lg.tracking-lg",
+    "max": "441px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 2207,
+    "w": 441,
+    "h": 112
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4722,
+    "w": 1392,
+    "h": 718
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 64,
+    "w": 1152,
+    "h": 912
+   },
+   {
+    "el": "div.flex.w-full.flex-col",
+    "cols": "453.328px 453.328px 453.344px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 24,
+    "y": 1409,
+    "w": 1392,
+    "h": 532
+   },
+   {
+    "el": "div.grid.h-14.w-full",
+    "cols": "188px 188px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 532,
+    "y": 2931,
+    "w": 376,
+    "h": 56
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 4722,
+    "w": 1392,
+    "h": 718
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "218.656px 218.672px 218.672px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 728,
+    "y": 4722,
+    "w": 688,
+    "h": 336
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.flex.flex-col.bg-neutral-90",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 4698
+  },
+  "sections": [
+   {
+    "el": "section.col-span-full.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 144,
+    "y": 208,
+    "w": 1152,
+    "h": 768,
+    "heading": "At Handshake, we have a strong conviction that hum"
+   },
+   {
+    "el": "section.w-full.bg-neutral-0.pt-16",
+    "bg": "rgb(255, 255, 255)",
+    "x": 0,
+    "y": 976,
+    "w": 1440,
+    "h": 1066,
+    "heading": "How we show up for each other through the work we "
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgb(255, 255, 255)",
+    "x": 0,
+    "y": 2041,
+    "w": 1440,
+    "h": 577,
+    "heading": "Supporting you at work and beyond"
+   },
+   {
+    "el": "section.flex.w-full.scroll-mt-20",
+    "bg": "rgb(255, 255, 255)",
+    "x": 0,
+    "y": 2619,
+    "w": 1440,
+    "h": 2080,
+    "heading": "OPEN ROLES"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "blog@1440": {
+  "vw": 1440,
+  "docH": 5539,
+  "theme": "light",
+  "h1": {
+   "text": "Career advice for students and new graduates",
+   "font": "",
+   "x": 304,
+   "y": 140,
+   "w": 833,
+   "h": 44
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "header.container.flex.flex-col",
+    "max": "1440px",
+    "padL": "40px",
+    "padR": "40px",
+    "x": 0,
+    "y": 112,
+    "w": 1440,
+    "h": 276
+   },
+   {
+    "el": "div.max-w-4xl.px-5",
+    "max": "896px",
+    "padL": "20px",
+    "padR": "20px",
+    "x": 284,
+    "y": 112,
+    "w": 873,
+    "h": 100
+   },
+   {
+    "el": "section.container.pb-16.xl:pb-20",
+    "max": "1440px",
+    "padL": "40px",
+    "padR": "40px",
+    "x": 0,
+    "y": 388,
+    "w": 1440,
+    "h": 1286
+   },
+   {
+    "el": "div.relative.container.pt-[40%]",
+    "max": "1440px",
+    "padL": "96px",
+    "padR": "96px",
+    "x": 40,
+    "y": 388,
+    "w": 1360,
+    "h": 621
+   },
+   {
+    "el": "div.container",
+    "max": "1440px",
+    "padL": "40px",
+    "padR": "40px",
+    "x": 0,
+    "y": 1870,
+    "w": 1440,
+    "h": 491
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4796,
+    "w": 1392,
+    "h": 718
+   }
+  ],
+  "grids": [
+   {
+    "el": "ul.flex.flex-col.gap-6",
+    "cols": "437.328px 437.328px 437.344px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 40,
+    "y": 1073,
+    "w": 1360,
+    "h": 522
+   },
+   {
+    "el": "ul.flex.flex-col.gap-6",
+    "cols": "437.328px 437.328px 437.344px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 40,
+    "y": 1870,
+    "w": 1360,
+    "h": 491
+   },
+   {
+    "el": "ul.flex.flex-col.gap-6",
+    "cols": "437.328px 437.328px 437.344px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 40,
+    "y": 2637,
+    "w": 1360,
+    "h": 522
+   },
+   {
+    "el": "ul.flex.flex-col.gap-6",
+    "cols": "437.328px 437.328px 437.344px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 40,
+    "y": 3435,
+    "w": 1360,
+    "h": 491
+   },
+   {
+    "el": "ul.flex.flex-col.gap-6",
+    "cols": "437.328px 437.328px 437.344px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 40,
+    "y": 4202,
+    "w": 1360,
+    "h": 491
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 4796,
+    "w": 1392,
+    "h": 718
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "218.656px 218.672px 218.672px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 728,
+    "y": 4796,
+    "w": 688,
+    "h": 336
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": {
+   "el": "header.container.flex.flex-col",
+   "bg": "rgba(0, 0, 0, 0)",
+   "borderB": "0px rgb(0, 0, 0)",
+   "x": 0,
+   "y": 112,
+   "w": 1440,
+   "h": 276
+  },
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 112,
+   "w": 1440,
+   "h": 4660
+  },
+  "sections": [
+   {
+    "el": "section.mt-20.md:mt-28",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 112,
+    "w": 1440,
+    "h": 1562,
+    "heading": "Career advice for students and new graduates"
+   },
+   {
+    "el": "section.container.pb-16.xl:pb-20",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 388,
+    "w": 1440,
+    "h": 1286,
+    "heading": "Introducing AI Skills Studio"
+   },
+   {
+    "el": "section.py-16.lg:py-20.bg-neutral-10",
+    "bg": "rgb(243, 244, 250)",
+    "x": 0,
+    "y": 1674,
+    "w": 1440,
+    "h": 767,
+    "heading": "Find a job"
+   },
+   {
+    "el": "section.py-16.lg:py-20.bg-neutral-0",
+    "bg": "rgb(255, 255, 255)",
+    "x": 0,
+    "y": 2441,
+    "w": 1440,
+    "h": 798,
+    "heading": "Interview tips"
+   },
+   {
+    "el": "section.py-16.lg:py-20.bg-neutral-10",
+    "bg": "rgb(243, 244, 250)",
+    "x": 0,
+    "y": 3239,
+    "w": 1440,
+    "h": 767,
+    "heading": "Resumes and cover letters"
+   },
+   {
+    "el": "section.py-16.lg:py-20.bg-neutral-0",
+    "bg": "rgb(255, 255, 255)",
+    "x": 0,
+    "y": 4006,
+    "w": 1440,
+    "h": 767,
+    "heading": "Using Handshake"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "legal@1440": {
+  "vw": 1440,
+  "docH": 17085,
+  "theme": "light",
+  "h1": null,
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 16343,
+    "w": 1392,
+    "h": 718
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.my-20.grid.grid-cols-12",
+    "cols": "103.156px 103.156px 103.156px 103.156px 103.156px 103.156px 103.156px 103.156px 103.156px 103.156px 103.156px 103.156px",
+    "colGap": "14px",
+    "rowGap": "14px",
+    "x": 0,
+    "y": 398,
+    "w": 1440,
+    "h": 15841
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 16343,
+    "w": 1392,
+    "h": 718
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "218.656px 218.672px 218.672px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 728,
+    "y": 16343,
+    "w": 688,
+    "h": 336
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 16239
+  },
+  "sections": [
+   {
+    "el": "section.bg-lime-30.py-20.text-neutral-90",
+    "bg": "rgb(211, 251, 82)",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 318,
+    "heading": "LEGAL"
+   },
+   {
+    "el": "section.my-20.grid.grid-cols-12",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 398,
+    "w": 1440,
+    "h": 15841,
+    "heading": "Terms of Service"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "about@1440": {
+  "vw": 1440,
+  "docH": 8414,
+  "theme": "light",
+  "h1": {
+   "text": "The career network for the AI economy",
+   "font": "600 186px / 158.1px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 144,
+   "y": 154,
+   "w": 1152,
+   "h": 474
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 0,
+    "w": 1152,
+    "h": 709
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 7672,
+    "w": 1392,
+    "h": 718
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 0,
+    "w": 1152,
+    "h": 709
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "40px",
+    "x": 144,
+    "y": 1612,
+    "w": 1152,
+    "h": 287
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 2019,
+    "w": 1152,
+    "h": 873
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 3012,
+    "w": 1152,
+    "h": 1667
+   },
+   {
+    "el": "div.grid.grid-cols-2.gap-x-3",
+    "cols": "172px 172px 172px",
+    "colGap": "12px",
+    "rowGap": "64px",
+    "x": 536,
+    "y": 3012,
+    "w": 760,
+    "h": 1667
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 4798,
+    "w": 1152,
+    "h": 980
+   },
+   {
+    "el": "div.grid.grid-cols-2.gap-x-3",
+    "cols": "172px 172px 172px",
+    "colGap": "12px",
+    "rowGap": "64px",
+    "x": 536,
+    "y": 4798,
+    "w": 760,
+    "h": 980
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 5898,
+    "w": 1152,
+    "h": 822
+   },
+   {
+    "el": "div.mt-14.grid.grid-cols-1",
+    "cols": "368px 368px",
+    "colGap": "24px",
+    "rowGap": "56px",
+    "x": 536,
+    "y": 6095,
+    "w": 760,
+    "h": 625
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 6752,
+    "w": 1152,
+    "h": 896
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-hidden.bg-linear-to-b.from-white",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 7648
+  },
+  "sections": [
+   {
+    "el": "section",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 1552,
+    "heading": "The career network for the AI economy"
+   },
+   {
+    "el": "section.py-15",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1552,
+    "w": 1440,
+    "h": 407,
+    "heading": "Handshake is the best place to learn, earn, and gr"
+   },
+   {
+    "el": "section.py-15",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1959,
+    "w": 1440,
+    "h": 993,
+    "heading": "Letter from the CEO"
+   },
+   {
+    "el": "section.py-15",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 2952,
+    "w": 1440,
+    "h": 1787,
+    "heading": "Leadership"
+   },
+   {
+    "el": "section.py-15",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 4738,
+    "w": 1440,
+    "h": 1100,
+    "heading": "Board of Directors"
+   },
+   {
+    "el": "section.pt-15.pb-8",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 5838,
+    "w": 1440,
+    "h": 914,
+    "heading": "Office locations"
+   },
+   {
+    "el": "section.relative.rounded-t-2xl.bg-neutral-10",
+    "bg": "rgb(243, 244, 250)",
+    "x": 0,
+    "y": 6752,
+    "w": 1440,
+    "h": 896,
+    "heading": "Our story"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "ai@1440": {
+  "vw": 1440,
+  "docH": 5672,
+  "theme": "light",
+  "h1": null,
+  "fixed": [
+   {
+    "el": "div.framer-1w6k92i-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 80
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.framer-1u38x1n",
+    "max": "1440px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 4888
+   },
+   {
+    "el": "div.framer-1wwbaas",
+    "max": "585px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 428,
+    "y": 357,
+    "w": 585,
+    "h": 44
+   },
+   {
+    "el": "a.framer-rE7OS.framer-3NTqI.framer-tud71u",
+    "max": "416px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 267,
+    "y": 735,
+    "w": 75,
+    "h": 40
+   },
+   {
+    "el": "a.framer-rE7OS.framer-3NTqI.framer-tud71u",
+    "max": "416px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 617,
+    "y": 735,
+    "w": 75,
+    "h": 40
+   },
+   {
+    "el": "a.framer-rE7OS.framer-3NTqI.framer-tud71u",
+    "max": "416px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 967,
+    "y": 735,
+    "w": 75,
+    "h": 40
+   },
+   {
+    "el": "a.framer-rE7OS.framer-3NTqI.framer-tud71u",
+    "max": "416px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1317,
+    "y": 735,
+    "w": 75,
+    "h": 40
+   },
+   {
+    "el": "div.framer-1nixbfc",
+    "max": "550px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 445,
+    "y": 1176,
+    "w": 550,
+    "h": 62
+   },
+   {
+    "el": "div.framer-1e79s55",
+    "max": "907px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 267,
+    "y": 1672,
+    "w": 907,
+    "h": 60
+   },
+   {
+    "el": "div.framer-jup534",
+    "max": "1100px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 170,
+    "y": 1852,
+    "w": 1100,
+    "h": 166
+   },
+   {
+    "el": "div.framer-1kppy0v",
+    "max": "550px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 445,
+    "y": 1852,
+    "w": 550,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1nmyrtb",
+    "max": "1152px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 144,
+    "y": 3698,
+    "w": 1152,
+    "h": 616
+   },
+   {
+    "el": "div.framer-gg85wu",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 3698,
+    "w": 1120,
+    "h": 616
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-wzypc.hidden-yi75f6",
+    "cols": "342px 342px 342px 342px",
+    "colGap": "8px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 609,
+    "w": 1392,
+    "h": 388
+   },
+   {
+    "el": "div.framer-1598hcv",
+    "cols": "454.656px 454.672px 454.656px",
+    "colGap": "8px",
+    "rowGap": "8px",
+    "x": 30,
+    "y": 1286,
+    "w": 1380,
+    "h": 338
+   },
+   {
+    "el": "div.framer-1nmjjpe",
+    "cols": "218.656px 218.656px 218.656px 218.656px 218.656px 218.656px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 24,
+    "y": 4928,
+    "w": 1392,
+    "h": 336
+   },
+   {
+    "el": "div.framer-1jp3hio",
+    "cols": "218.656px 218.672px 218.672px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 728,
+    "y": 4928,
+    "w": 688,
+    "h": 336
+   }
+  ],
+  "flexRows": [
+   {
+    "el": "div.framer-o6sfrr",
+    "gap": "50px 48px",
+    "x": 170,
+    "y": 1948,
+    "w": 1100,
+    "h": 70
+   }
+  ],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "body",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 5672
+  },
+  "sections": [],
+  "body": {
+   "font": "sans-serif",
+   "size": "12px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "learn@1440": {
+  "vw": 1440,
+  "docH": 9767,
+  "theme": "light",
+  "h1": {
+   "text": "ANYONE CAN BUILD WITH AI",
+   "font": "600 228px / 193.8px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 236,
+   "y": 224,
+   "w": 968,
+   "h": 388
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   },
+   {
+    "el": "div.sticky.top-[var(--pinned-scroll-slides-sticky-top-mobile)].flex",
+    "pos": "sticky",
+    "top": "80px",
+    "z": "auto",
+    "x": 24,
+    "y": 2907,
+    "w": 1392,
+    "h": 820
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.relative.mx-auto.flex",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 112,
+    "w": 1392,
+    "h": 736
+   },
+   {
+    "el": "div.relative.flex.h-full",
+    "max": "1152px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 220,
+    "y": 152,
+    "w": 1000,
+    "h": 656
+   },
+   {
+    "el": "h1.font-sans-plomb.font-semibold.tracking-sm",
+    "max": "968px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 236,
+    "y": 224,
+    "w": 968,
+    "h": 388
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[20px]/lg.tracking-sm",
+    "max": "630px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 405,
+    "y": 660,
+    "w": 630,
+    "h": 44
+   },
+   {
+    "el": "div.mx-auto.flex.w-full",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 888,
+    "w": 1392,
+    "h": 105
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "max": "1158px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 141,
+    "y": 1113,
+    "w": 1158,
+    "h": 721
+   },
+   {
+    "el": "div.flex.max-w-2xl.flex-col",
+    "max": "672px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 165,
+    "y": 1193,
+    "w": 471,
+    "h": 69
+   },
+   {
+    "el": "div.flex.max-w-[640px].flex-col",
+    "max": "640px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 205,
+    "y": 1626,
+    "w": 640,
+    "h": 88
+   },
+   {
+    "el": "h2.font-noi-grotesk.text-[36px]/lg.tracking-lg",
+    "max": "520px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 165,
+    "y": 1954,
+    "w": 520,
+    "h": 88
+   },
+   {
+    "el": "section.relative.mx-auto.w-full",
+    "max": "1440px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 2907,
+    "w": 1440,
+    "h": 3105
+   },
+   {
+    "el": "article.absolute.inset-0.overflow-hidden",
+    "max": "1440px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 130,
+    "y": 2995,
+    "w": 1180,
+    "h": 644
+   },
+   {
+    "el": "div.flex.max-w-2xl.flex-col",
+    "max": "672px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 165,
+    "y": 6132,
+    "w": 303,
+    "h": 69
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.grid.grid-cols-2.gap-4",
+    "cols": "265.5px 265.5px 265.5px 265.5px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 165,
+    "y": 2172,
+    "w": 1110,
+    "h": 225
+   },
+   {
+    "el": "div.grid.grid-cols-2.gap-2",
+    "cols": "359.328px 359.328px 359.344px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 165,
+    "y": 2527,
+    "w": 1110,
+    "h": 260
+   },
+   {
+    "el": "div.grid.grid-cols-1.gap-4",
+    "cols": "359.328px 359.328px 359.344px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 165,
+    "y": 6241,
+    "w": 1110,
+    "h": 536
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 9025,
+    "w": 1392,
+    "h": 718
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "218.656px 218.672px 218.672px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 728,
+    "y": 9025,
+    "w": 688,
+    "h": 336
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.bg-white.pt-20.text-neutral-100",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 9001
+  },
+  "sections": [
+   {
+    "el": "section.flex.flex-col.gap-20",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 96,
+    "w": 1440,
+    "h": 897,
+    "heading": "ANYONE CAN BUILD WITH AI"
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 141,
+    "y": 1113,
+    "w": 1158,
+    "h": 721,
+    "heading": "Your Deadline, Your Design: Create a Countdown Loc"
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 141,
+    "y": 1954,
+    "w": 1158,
+    "h": 834,
+    "heading": "Discover missions that help you build skills for y"
+   },
+   {
+    "el": "section.relative.mx-auto.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 2907,
+    "w": 1440,
+    "h": 3105,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 141,
+    "y": 6132,
+    "w": 1158,
+    "h": 645,
+    "heading": ""
+   },
+   {
+    "el": "section.relative.z-10.overflow-hidden",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 6897,
+    "w": 1440,
+    "h": 1319,
+    "heading": "READY WHEN YOU ARE"
+   },
+   {
+    "el": "section.relative.z-10.mx-auto",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 493,
+    "y": 8216,
+    "w": 454,
+    "h": 705,
+    "heading": ""
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "access@1440": {
+  "vw": 1440,
+  "docH": 900,
+  "theme": "light",
+  "h1": {
+   "text": "Log in or sign up",
+   "font": "",
+   "x": 548,
+   "y": 298,
+   "w": 344,
+   "h": 34
+  },
+  "fixed": [
+   {
+    "el": "header.sc-ehuVvn.cwwrbB",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "1",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 84
+   },
+   {
+    "el": "div.sc-YkBNp.djfRDT",
+    "pos": "fixed",
+    "top": "820.812px",
+    "z": "auto",
+    "x": 0,
+    "y": 821,
+    "w": 1440,
+    "h": 55
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": "-9999px",
+    "z": "auto",
+    "x": -9999,
+    "y": -9999,
+    "w": 131,
+    "h": 72
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [],
+  "grids": [],
+  "flexRows": [],
+  "sidebar": null,
+  "header": {
+   "el": "header.sc-ehuVvn.cwwrbB",
+   "bg": "rgba(0, 0, 0, 0)",
+   "borderB": "0px rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 84
+  },
+  "main": {
+   "el": "main.sc-lcuODO.djNiKR",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 900
+  },
+  "sections": [],
+  "body": {
+   "font": "\"Noi Grotesk\", system-ui, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "employers@1920": {
+  "vw": 1920,
+  "docH": 6630,
+  "theme": "light",
+  "h1": {
+   "text": "HIRE QUALIFIED TALENT FAST",
+   "font": "",
+   "x": 624,
+   "y": 176,
+   "w": 672,
+   "h": 286
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset-with-banner)",
+    "pos": "fixed",
+    "top": "76px",
+    "z": "50",
+    "x": 0,
+    "y": 76,
+    "w": 1920,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.container.flex.flex-col",
+    "max": "1440px",
+    "padL": "144px",
+    "padR": "144px",
+    "x": 240,
+    "y": 0,
+    "w": 1440,
+    "h": 1106
+   },
+   {
+    "el": "div.relative.mx-auto.flex",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 128,
+    "w": 1152,
+    "h": 716
+   },
+   {
+    "el": "h1.z-10.-mt-6.max-w-2xl",
+    "max": "672px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 624,
+    "y": 176,
+    "w": 672,
+    "h": 286
+   },
+   {
+    "el": "p.max-w-md.text-center.text-balance",
+    "max": "448px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 736,
+    "y": 502,
+    "w": 448,
+    "h": 54
+   },
+   {
+    "el": "div.flex.w-full.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 596,
+    "w": 1152,
+    "h": 248
+   },
+   {
+    "el": "section.flex.max-w-6xl.flex-col",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 394,
+    "y": 924,
+    "w": 1131,
+    "h": 118
+   },
+   {
+    "el": "div.container.flex.flex-col",
+    "max": "1440px",
+    "padL": "144px",
+    "padR": "144px",
+    "x": 435,
+    "y": 1202,
+    "w": 1050,
+    "h": 31
+   },
+   {
+    "el": "div.flex.max-w-3xl.flex-col",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 576,
+    "y": 1569,
+    "w": 768,
+    "h": 164
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[20px]/lg.tracking-sm",
+    "max": "546px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 687,
+    "y": 1689,
+    "w": 546,
+    "h": 44
+   },
+   {
+    "el": "div.mx-auto.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 1922,
+    "w": 1152,
+    "h": 466
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[20px]/lg.tracking-sm",
+    "max": "448px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1070,
+    "y": 2038,
+    "w": 448,
+    "h": 66
+   },
+   {
+    "el": "div.mx-auto.flex.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 534,
+    "y": 2471,
+    "w": 851,
+    "h": 190
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.flex.flex-col.gap-10",
+    "cols": "252.812px 252.812px 252.812px 252.812px",
+    "colGap": "40px",
+    "rowGap": "40px",
+    "x": 394,
+    "y": 972,
+    "w": 1131,
+    "h": 70
+   },
+   {
+    "el": "div.hidden.lg:grid.lg:grid-cols-12",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 384,
+    "y": 1922,
+    "w": 1152,
+    "h": 466
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 384,
+    "y": 2661,
+    "w": 1152,
+    "h": 673
+   },
+   {
+    "el": "section.mx-auto.grid.max-w-5xl",
+    "cols": "85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 448,
+    "y": 5083,
+    "w": 1024,
+    "h": 637
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 5792,
+    "w": 1872,
+    "h": 814
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "298.656px 298.672px 298.656px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 968,
+    "y": 5792,
+    "w": 928,
+    "h": 336
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.transition-colors.duration-700",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 5768
+  },
+  "sections": [
+   {
+    "el": "section.relative.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 384,
+    "y": 128,
+    "w": 1152,
+    "h": 914,
+    "heading": "HIRE QUALIFIED TALENT FAST"
+   },
+   {
+    "el": "section.flex.max-w-6xl.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 394,
+    "y": 924,
+    "w": 1131,
+    "h": 118,
+    "heading": "30M"
+   },
+   {
+    "el": "section.flex.flex-col.gap-10",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1202,
+    "w": 1920,
+    "h": 255,
+    "heading": "Trusted by 97% of the Fortune 500 and over 1M smal"
+   },
+   {
+    "el": "section.py-16.lg:py-24",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 384,
+    "y": 1733,
+    "w": 1152,
+    "h": 658,
+    "heading": "Source"
+   },
+   {
+    "el": "section.py-20.lg:py-32",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 384,
+    "y": 3922,
+    "w": 1152,
+    "h": 722,
+    "heading": ""
+   },
+   {
+    "el": "section.relative.mx-auto.flex",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 384,
+    "y": 4645,
+    "w": 1152,
+    "h": 438,
+    "heading": "Ready to hire the next generation of talent?"
+   },
+   {
+    "el": "section.mx-auto.grid.max-w-5xl",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 448,
+    "y": 5083,
+    "w": 1024,
+    "h": 637,
+    "heading": "FAQs"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "pricing@1920": {
+  "vw": 1920,
+  "docH": 5382,
+  "theme": "light",
+  "h1": null,
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1920,
+    "h": 56
+   },
+   {
+    "el": "div.sticky.top-0.z-20",
+    "pos": "sticky",
+    "top": "0px",
+    "z": "20",
+    "x": 384,
+    "y": 1376,
+    "w": 1152,
+    "h": 154
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "max": "1440px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 240,
+    "y": 64,
+    "w": 1440,
+    "h": 279
+   },
+   {
+    "el": "section.mx-auto.hidden.w-full",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 1320,
+    "w": 1152,
+    "h": 2303
+   },
+   {
+    "el": "div.flex.w-full.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 1320,
+    "w": 1152,
+    "h": 2303
+   },
+   {
+    "el": "h2.font-noi-grotesk.text-[36px]/lg.tracking-lg",
+    "max": "441px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 3744,
+    "w": 441,
+    "h": 44
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.relative.lg:grid.lg:grid-cols-12",
+    "cols": "96px 96px 96px 96px 96px 96px 96px 96px 96px 96px 96px 96px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 1376,
+    "w": 1152,
+    "h": 2247
+   },
+   {
+    "el": "div.sticky.top-0.z-20",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 1376,
+    "w": 1152,
+    "h": 154
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 1605,
+    "w": 1152,
+    "h": 93
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 1698,
+    "w": 1152,
+    "h": 94
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 1792,
+    "w": 1152,
+    "h": 73
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 1865,
+    "w": 1152,
+    "h": 94
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 1959,
+    "w": 1152,
+    "h": 116
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 2075,
+    "w": 1152,
+    "h": 73
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 2148,
+    "w": 1152,
+    "h": 73
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "164.562px 164.562px 164.562px 164.578px 164.562px 164.578px 164.578px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 384,
+    "y": 2221,
+    "w": 1152,
+    "h": 73
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.flex.flex-col.gap-20",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 4520
+  },
+  "sections": [
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 240,
+    "y": 64,
+    "w": 1440,
+    "h": 279,
+    "heading": "Employer plans and pricing"
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 240,
+    "y": 463,
+    "w": 1440,
+    "h": 737,
+    "heading": "Basic"
+   },
+   {
+    "el": "section.mx-auto.hidden.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 384,
+    "y": 1320,
+    "w": 1152,
+    "h": 2303,
+    "heading": "Compare all features"
+   },
+   {
+    "el": "section.relative.lg:grid.lg:grid-cols-12",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 384,
+    "y": 1376,
+    "w": 1152,
+    "h": 2247,
+    "heading": "Target & Connect"
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 384,
+    "y": 1605,
+    "w": 1152,
+    "h": 856,
+    "heading": ""
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 384,
+    "y": 2536,
+    "w": 1152,
+    "h": 553,
+    "heading": ""
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 384,
+    "y": 3163,
+    "w": 1152,
+    "h": 219,
+    "heading": ""
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 384,
+    "y": 3457,
+    "w": 1152,
+    "h": 167,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 3744,
+    "w": 1872,
+    "h": 656,
+    "heading": "Pricing FAQs"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "access@1920": {
+  "vw": 1920,
+  "docH": 1080,
+  "theme": "light",
+  "h1": {
+   "text": "Log in or sign up",
+   "font": "",
+   "x": 788,
+   "y": 388,
+   "w": 344,
+   "h": 34
+  },
+  "fixed": [
+   {
+    "el": "header.sc-ehuVvn.cwwrbB",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "1",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 84
+   },
+   {
+    "el": "div.sc-YkBNp.djfRDT",
+    "pos": "fixed",
+    "top": "1000.81px",
+    "z": "auto",
+    "x": 0,
+    "y": 1001,
+    "w": 1920,
+    "h": 55
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": "-9999px",
+    "z": "auto",
+    "x": -9999,
+    "y": -9999,
+    "w": 131,
+    "h": 72
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [],
+  "grids": [],
+  "flexRows": [],
+  "sidebar": null,
+  "header": {
+   "el": "header.sc-ehuVvn.cwwrbB",
+   "bg": "rgba(0, 0, 0, 0)",
+   "borderB": "0px rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 84
+  },
+  "main": {
+   "el": "main.sc-lcuODO.djNiKR",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1080
+  },
+  "sections": [],
+  "body": {
+   "font": "\"Noi Grotesk\", system-ui, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "home@1024": {
+  "vw": 1024,
+  "docH": 5503,
+  "theme": "light",
+  "h1": {
+   "text": "LET'S FIND\nYOUR NEXT JOB",
+   "font": "600 86px / 68.8px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 24,
+   "y": 144,
+   "w": 976,
+   "h": 165
+  },
+  "fixed": [
+   {
+    "el": "div.fixed.top-(--mobile-top-offset).left-1/2",
+    "pos": "fixed",
+    "top": "32px",
+    "z": "auto",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 64
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.col-span-full.mx-auto.grid",
+    "max": "1140px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 770,
+    "w": 976,
+    "h": 676
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "max": "1440px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 1768,
+    "w": 1024,
+    "h": 3080
+   },
+   {
+    "el": "h3.font-noi-grotesk.text-[32px]/lg.tracking-lg",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1948,
+    "w": 600,
+    "h": 70
+   },
+   {
+    "el": "div.grid.max-w-(--content-max-width).grid-cols-12",
+    "max": "1140px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 2039,
+    "w": 976,
+    "h": 684
+   },
+   {
+    "el": "img.h-auto.w-full.max-w-172",
+    "max": "688px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 2139,
+    "w": 688,
+    "h": 515
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "976px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4872,
+    "w": 976,
+    "h": 607
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 768
+   },
+   {
+    "el": "div.col-span-full.grid.h-(--mobile-hero-content-height)",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "normal",
+    "rowGap": "32px",
+    "x": 24,
+    "y": 158,
+    "w": 976,
+    "h": 452
+   },
+   {
+    "el": "div.col-span-full.grid.grid-cols-12",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "8px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 545,
+    "w": 976,
+    "h": 65
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 770,
+    "w": 1024,
+    "h": 676
+   },
+   {
+    "el": "div.col-span-full.mx-auto.grid",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 770,
+    "w": 976,
+    "h": 676
+   },
+   {
+    "el": "div.col-span-full.mt-20.grid",
+    "cols": "66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 24,
+    "y": 934,
+    "w": 976,
+    "h": 380
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 1606,
+    "w": 1024,
+    "h": 22
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 1768,
+    "w": 1024,
+    "h": 3080
+   },
+   {
+    "el": "div.col-span-full.mt-20.grid",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "normal",
+    "rowGap": "40px",
+    "x": 24,
+    "y": 1928,
+    "w": 976,
+    "h": 2840
+   },
+   {
+    "el": "div.grid.max-w-(--content-max-width).grid-cols-12",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "normal",
+    "rowGap": "40px",
+    "x": 24,
+    "y": 2039,
+    "w": 976,
+    "h": 684
+   }
+  ],
+  "flexRows": [
+   {
+    "el": "div.col-span-full.flex.flex-wrap",
+    "gap": "8px 4px",
+    "x": 24,
+    "y": 545,
+    "w": 976,
+    "h": 65
+   }
+  ],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.bg-neutral-100.text-white",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 4848
+  },
+  "sections": [
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 768,
+    "heading": "LET'S FIND YOUR NEXT JOB"
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 770,
+    "w": 1024,
+    "h": 676,
+    "heading": "Get paid to make AI smarter and safer"
+   },
+   {
+    "el": "section.mt-40.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1606,
+    "w": 1024,
+    "h": 162,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1768,
+    "w": 1024,
+    "h": 3080,
+    "heading": "The largest, most trusted network for careers in t"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "students@1024": {
+  "vw": 1024,
+  "docH": 7123,
+  "theme": "light",
+  "h1": {
+   "text": "SHOW UP,\nGET HIRED",
+   "font": "600 186px / 167.4px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 24,
+   "y": 174,
+   "w": 976,
+   "h": 343
+  },
+  "fixed": [
+   {
+    "el": "div.fixed.top-(--mobile-top-offset).left-1/2",
+    "pos": "fixed",
+    "top": "32px",
+    "z": "auto",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 64
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "p.font-noi-grotesk.text-[18px]/xl.tracking-sm",
+    "max": "632px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 196,
+    "y": 1545,
+    "w": 632,
+    "h": 76
+   },
+   {
+    "el": "div.w-full.max-w-230.md:mx-auto",
+    "max": "920px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 52,
+    "y": 1765,
+    "w": 920,
+    "h": 518
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "976px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 6492,
+    "w": 976,
+    "h": 607
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.flex.flex-col.gap-4",
+    "cols": "67.3281px 67.3281px 67.3281px 67.3281px 67.3281px 67.3281px 67.3281px 67.3281px 67.3281px 67.3281px 67.3281px 67.3281px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 20,
+    "y": 2918,
+    "w": 984,
+    "h": 1560
+   },
+   {
+    "el": "div.size-full.py-20.lg:grid",
+    "cols": "60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 20,
+    "y": 5615,
+    "w": 984,
+    "h": 853
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 6492,
+    "w": 976,
+    "h": 607
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "149.328px 149.328px 149.328px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 520,
+    "y": 6492,
+    "w": 480,
+    "h": 308
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.transition-colors.duration-700",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 6468
+  },
+  "sections": [
+   {
+    "el": "section.relative.overflow-x-clip.px-6",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 1339,
+    "heading": "SHOW UP, GET HIRED"
+   },
+   {
+    "el": "section.px-5.2xl:px-36",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1419,
+    "w": 1024,
+    "h": 814,
+    "heading": "Don’t just learn AI, build with it"
+   },
+   {
+    "el": "section.flex.flex-col.gap-y-10",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 2313,
+    "w": 1024,
+    "h": 441,
+    "heading": ""
+   },
+   {
+    "el": "section.px-5.2xl:px-36.flex",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 2834,
+    "w": 1024,
+    "h": 1732,
+    "heading": "How it works"
+   },
+   {
+    "el": "section.relative.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 4646,
+    "w": 1024,
+    "h": 969,
+    "heading": "For people who are (or have been) in your shoes"
+   },
+   {
+    "el": "section.px-5.2xl:px-36",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 5615,
+    "w": 1024,
+    "h": 853,
+    "heading": "START BUILDING YOUR FUTURE"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "employers@1024": {
+  "vw": 1024,
+  "docH": 6233,
+  "theme": "light",
+  "h1": {
+   "text": "HIRE QUALIFIED TALENT FAST",
+   "font": "",
+   "x": 176,
+   "y": 192,
+   "w": 672,
+   "h": 220
+  },
+  "fixed": [
+   {
+    "el": "div.fixed.top-(--mobile-top-offset).left-1/2",
+    "pos": "fixed",
+    "top": "32px",
+    "z": "auto",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 64
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.container.flex.flex-col",
+    "max": "1440px",
+    "padL": "20px",
+    "padR": "20px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 1056
+   },
+   {
+    "el": "div.relative.mx-auto.flex",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 128,
+    "w": 984,
+    "h": 666
+   },
+   {
+    "el": "h1.z-10.-mt-6.max-w-2xl",
+    "max": "672px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 176,
+    "y": 192,
+    "w": 672,
+    "h": 220
+   },
+   {
+    "el": "p.max-w-md.text-center.text-balance",
+    "max": "448px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 288,
+    "y": 452,
+    "w": 448,
+    "h": 54
+   },
+   {
+    "el": "div.flex.w-full.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 546,
+    "w": 984,
+    "h": 248
+   },
+   {
+    "el": "section.flex.max-w-6xl.flex-col",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 93,
+    "y": 874,
+    "w": 837,
+    "h": 118
+   },
+   {
+    "el": "div.container.flex.flex-col",
+    "max": "1440px",
+    "padL": "20px",
+    "padR": "20px",
+    "x": 111,
+    "y": 1152,
+    "w": 802,
+    "h": 31
+   },
+   {
+    "el": "div.flex.max-w-3xl.flex-col",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 128,
+    "y": 1479,
+    "w": 768,
+    "h": 156
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[20px]/lg.tracking-sm",
+    "max": "546px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 239,
+    "y": 1591,
+    "w": 546,
+    "h": 44
+   },
+   {
+    "el": "div.mx-auto.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 1810,
+    "w": 984,
+    "h": 396
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[20px]/lg.tracking-sm",
+    "max": "448px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 608,
+    "y": 1891,
+    "w": 396,
+    "h": 66
+   },
+   {
+    "el": "div.mx-auto.flex.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 122,
+    "y": 2303,
+    "w": 780,
+    "h": 186
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.flex.flex-col.gap-10",
+    "cols": "157.203px 90.2031px 216.812px 252.812px",
+    "colGap": "40px",
+    "rowGap": "40px",
+    "x": 93,
+    "y": 922,
+    "w": 837,
+    "h": 70
+   },
+   {
+    "el": "div.hidden.lg:grid.lg:grid-cols-12",
+    "cols": "60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 20,
+    "y": 1810,
+    "w": 984,
+    "h": 396
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "58px 58px 58px 58px 58px 58px 58px 58px 58px 58px 58px 58px",
+    "colGap": "24px",
+    "rowGap": "16px",
+    "x": 32,
+    "y": 2489,
+    "w": 960,
+    "h": 673
+   },
+   {
+    "el": "section.mx-auto.grid.max-w-5xl",
+    "cols": "82px 82px 82px 82px 82px 82px 82px 82px 82px 82px 82px 82px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 20,
+    "y": 4893,
+    "w": 984,
+    "h": 637
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px 66.6562px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 5602,
+    "w": 976,
+    "h": 607
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "149.328px 149.328px 149.328px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 520,
+    "y": 5602,
+    "w": 480,
+    "h": 308
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.transition-colors.duration-700",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 5578
+  },
+  "sections": [
+   {
+    "el": "section.relative.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 128,
+    "w": 984,
+    "h": 864,
+    "heading": "HIRE QUALIFIED TALENT FAST"
+   },
+   {
+    "el": "section.flex.max-w-6xl.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 93,
+    "y": 874,
+    "w": 837,
+    "h": 118,
+    "heading": "30M"
+   },
+   {
+    "el": "section.flex.flex-col.gap-10",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1152,
+    "w": 1024,
+    "h": 215,
+    "heading": "Trusted by 97% of the Fortune 500 and over 1M smal"
+   },
+   {
+    "el": "section.py-16.lg:py-24",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 1635,
+    "w": 984,
+    "h": 588,
+    "heading": "Source"
+   },
+   {
+    "el": "section.py-20.lg:py-32",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 3756,
+    "w": 984,
+    "h": 702,
+    "heading": ""
+   },
+   {
+    "el": "section.relative.mx-auto.flex",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 4459,
+    "w": 984,
+    "h": 434,
+    "heading": "Ready to hire the next generation of talent?"
+   },
+   {
+    "el": "section.mx-auto.grid.max-w-5xl",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 4893,
+    "w": 984,
+    "h": 637,
+    "heading": "FAQs"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "pricing@1024": {
+  "vw": 1024,
+  "docH": 5433,
+  "theme": "light",
+  "h1": null,
+  "fixed": [
+   {
+    "el": "div.fixed.top-(--mobile-top-offset).left-1/2",
+    "pos": "fixed",
+    "top": "32px",
+    "z": "auto",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 64
+   },
+   {
+    "el": "div.sticky.top-0.z-20",
+    "pos": "sticky",
+    "top": "0px",
+    "z": "20",
+    "x": 24,
+    "y": 1441,
+    "w": 976,
+    "h": 154
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "max": "1440px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 64,
+    "w": 976,
+    "h": 231
+   },
+   {
+    "el": "section.mx-auto.hidden.w-full",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1393,
+    "w": 976,
+    "h": 2384
+   },
+   {
+    "el": "div.flex.w-full.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1393,
+    "w": 976,
+    "h": 2384
+   },
+   {
+    "el": "h2.font-noi-grotesk.text-[36px]/lg.tracking-lg",
+    "max": "441px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 3896,
+    "w": 441,
+    "h": 44
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "976px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4802,
+    "w": 976,
+    "h": 607
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.relative.lg:grid.lg:grid-cols-12",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 1441,
+    "w": 976,
+    "h": 2336
+   },
+   {
+    "el": "div.sticky.top-0.z-20",
+    "cols": "139.422px 139.422px 139.422px 139.422px 139.438px 139.422px 139.438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 1441,
+    "w": 976,
+    "h": 154
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "139.422px 139.422px 139.422px 139.422px 139.438px 139.422px 139.438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 1670,
+    "w": 976,
+    "h": 93
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "139.422px 139.422px 139.422px 139.422px 139.438px 139.422px 139.438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 1762,
+    "w": 976,
+    "h": 116
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "139.422px 139.422px 139.422px 139.422px 139.438px 139.422px 139.438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 1879,
+    "w": 976,
+    "h": 73
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "139.422px 139.422px 139.422px 139.422px 139.438px 139.422px 139.438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 1952,
+    "w": 976,
+    "h": 116
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "139.422px 139.422px 139.422px 139.422px 139.438px 139.422px 139.438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 2068,
+    "w": 976,
+    "h": 139
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "139.422px 139.422px 139.422px 139.422px 139.438px 139.422px 139.438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 2206,
+    "w": 976,
+    "h": 73
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "139.422px 139.422px 139.422px 139.422px 139.438px 139.422px 139.438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 2279,
+    "w": 976,
+    "h": 73
+   },
+   {
+    "el": "tr.grid.grid-cols-7.border-t",
+    "cols": "139.422px 139.422px 139.422px 139.422px 139.438px 139.422px 139.438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 2352,
+    "w": 976,
+    "h": 73
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.flex.flex-col.gap-20",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 4778
+  },
+  "sections": [
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 64,
+    "w": 976,
+    "h": 231,
+    "heading": "Employer plans and pricing"
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 415,
+    "w": 976,
+    "h": 858,
+    "heading": "Basic"
+   },
+   {
+    "el": "section.mx-auto.hidden.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 1393,
+    "w": 976,
+    "h": 2384,
+    "heading": "Compare all features"
+   },
+   {
+    "el": "section.relative.lg:grid.lg:grid-cols-12",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 1441,
+    "w": 976,
+    "h": 2336,
+    "heading": "Target & Connect"
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 24,
+    "y": 1670,
+    "w": 976,
+    "h": 924,
+    "heading": ""
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 24,
+    "y": 2668,
+    "w": 976,
+    "h": 553,
+    "heading": ""
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 24,
+    "y": 3295,
+    "w": 976,
+    "h": 240,
+    "heading": ""
+   },
+   {
+    "el": "table.w-full.bg-white",
+    "bg": "rgb(255, 255, 255)",
+    "x": 24,
+    "y": 3609,
+    "w": 976,
+    "h": 167,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 24,
+    "y": 3896,
+    "w": 976,
+    "h": 762,
+    "heading": "Pricing FAQs"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "access@1024": {
+  "vw": 1024,
+  "docH": 768,
+  "theme": "light",
+  "h1": {
+   "text": "Log in or sign up",
+   "font": "",
+   "x": 340,
+   "y": 232,
+   "w": 344,
+   "h": 34
+  },
+  "fixed": [
+   {
+    "el": "header.sc-ehuVvn.cwwrbB",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "1",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 84
+   },
+   {
+    "el": "div.sc-YkBNp.djfRDT",
+    "pos": "fixed",
+    "top": "673.219px",
+    "z": "auto",
+    "x": 0,
+    "y": 673,
+    "w": 1024,
+    "h": 71
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": "-9999px",
+    "z": "auto",
+    "x": -9999,
+    "y": -9999,
+    "w": 131,
+    "h": 72
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [],
+  "grids": [],
+  "flexRows": [],
+  "sidebar": null,
+  "header": {
+   "el": "header.sc-ehuVvn.cwwrbB",
+   "bg": "rgba(0, 0, 0, 0)",
+   "borderB": "0px rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 84
+  },
+  "main": {
+   "el": "main.sc-lcuODO.djNiKR",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 768
+  },
+  "sections": [],
+  "body": {
+   "font": "\"Noi Grotesk\", system-ui, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "home@390": {
+  "vw": 390,
+  "docH": 5870,
+  "theme": "light",
+  "h1": {
+   "text": "LET'S FIND\nYOUR NEXT JOB",
+   "font": "600 86px / 68.8px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 16,
+   "y": 234,
+   "w": 358,
+   "h": 151
+  },
+  "fixed": [
+   {
+    "el": "div.fixed.top-(--mobile-top-offset).left-1/2",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "auto",
+    "x": 16,
+    "y": 24,
+    "w": 358,
+    "h": 48
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.col-span-full.mx-auto.grid",
+    "max": "1140px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 860,
+    "w": 358,
+    "h": 1554
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "max": "1440px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 2736,
+    "w": 390,
+    "h": 2300
+   },
+   {
+    "el": "h3.font-noi-grotesk.text-[32px]/lg.tracking-lg",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 2916,
+    "w": 358,
+    "h": 106
+   },
+   {
+    "el": "div.grid.max-w-(--content-max-width).grid-cols-12",
+    "max": "1140px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 3042,
+    "w": 358,
+    "h": 460
+   },
+   {
+    "el": "img.h-auto.w-full.max-w-172",
+    "max": "688px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 3142,
+    "w": 358,
+    "h": 268
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 844
+   },
+   {
+    "el": "div.col-span-full.grid.h-(--mobile-hero-content-height)",
+    "cols": "29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px",
+    "colGap": "normal",
+    "rowGap": "32px",
+    "x": 16,
+    "y": 248,
+    "w": 358,
+    "h": 452
+   },
+   {
+    "el": "div.col-span-full.grid.grid-cols-12",
+    "cols": "22.5px 22.5px 22.5px 22.5px 22.5px 22.5px 22.5px 22.5px 22.5px 22.5px 22.5px 22.5px",
+    "colGap": "8px",
+    "rowGap": "24px",
+    "x": 16,
+    "y": 606,
+    "w": 358,
+    "h": 94
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 860,
+    "w": 390,
+    "h": 1554
+   },
+   {
+    "el": "div.col-span-full.mx-auto.grid",
+    "cols": "29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 16,
+    "y": 860,
+    "w": 358,
+    "h": 1554
+   },
+   {
+    "el": "div.col-span-full.mt-20.grid",
+    "cols": "15.1562px 15.1562px 15.1562px 15.1562px 15.1562px 15.1562px 15.1562px 15.1562px 15.1562px 15.1562px 15.1562px 15.1562px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 16,
+    "y": 1110,
+    "w": 358,
+    "h": 1172
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 2574,
+    "w": 390,
+    "h": 22
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 2736,
+    "w": 390,
+    "h": 2300
+   },
+   {
+    "el": "div.col-span-full.mt-20.grid",
+    "cols": "29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px",
+    "colGap": "normal",
+    "rowGap": "40px",
+    "x": 16,
+    "y": 2896,
+    "w": 358,
+    "h": 2060
+   },
+   {
+    "el": "div.grid.max-w-(--content-max-width).grid-cols-12",
+    "cols": "29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px 29.8281px",
+    "colGap": "normal",
+    "rowGap": "40px",
+    "x": 16,
+    "y": 3042,
+    "w": 358,
+    "h": 460
+   }
+  ],
+  "flexRows": [
+   {
+    "el": "div.col-span-full.flex.flex-wrap",
+    "gap": "8px 4px",
+    "x": 16,
+    "y": 606,
+    "w": 358,
+    "h": 94
+   }
+  ],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.bg-neutral-100.text-white",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 5036
+  },
+  "sections": [
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 844,
+    "heading": "LET'S FIND YOUR NEXT JOB"
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 860,
+    "w": 390,
+    "h": 1554,
+    "heading": "Get paid to make AI smarter and safer"
+   },
+   {
+    "el": "section.mt-40.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 2574,
+    "w": 390,
+    "h": 162,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 2736,
+    "w": 390,
+    "h": 2300,
+    "heading": "The largest, most trusted network for careers in t"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "students@390": {
+  "vw": 390,
+  "docH": 8887,
+  "theme": "light",
+  "h1": {
+   "text": "SHOW UP,\nGET HIRED",
+   "font": "600 120px / 102px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 24,
+   "y": 158,
+   "w": 342,
+   "h": 212
+  },
+  "fixed": [
+   {
+    "el": "div.fixed.top-(--mobile-top-offset).left-1/2",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "auto",
+    "x": 16,
+    "y": 24,
+    "w": 358,
+    "h": 48
+   },
+   {
+    "el": "div.responsive-wrapper",
+    "pos": "fixed",
+    "top": "786px",
+    "z": "2147483647",
+    "x": 0,
+    "y": 786,
+    "w": 390,
+    "h": 58
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "p.font-noi-grotesk.text-[18px]/xl.tracking-sm",
+    "max": "632px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 1314,
+    "w": 350,
+    "h": 126
+   },
+   {
+    "el": "div.w-full.max-w-230.md:mx-auto",
+    "max": "920px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 1584,
+    "w": 350,
+    "h": 197
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "77.5px 77.5px 77.5px 77.5px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 16,
+    "y": 8018,
+    "w": 358,
+    "h": 795
+   },
+   {
+    "el": "div",
+    "cols": "35.0938px 237.891px 117px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 786,
+    "w": 390,
+    "h": 58
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.transition-colors.duration-700",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 7994
+  },
+  "sections": [
+   {
+    "el": "section.relative.overflow-x-clip.px-6",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 1072,
+    "heading": "SHOW UP, GET HIRED"
+   },
+   {
+    "el": "section.px-5.2xl:px-36",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1152,
+    "w": 390,
+    "h": 578,
+    "heading": "Don’t just learn AI, build with it"
+   },
+   {
+    "el": "section.flex.flex-col.gap-y-10",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1810,
+    "w": 390,
+    "h": 441,
+    "heading": ""
+   },
+   {
+    "el": "section.px-5.2xl:px-36.flex",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 2332,
+    "w": 390,
+    "h": 2604,
+    "heading": "How it works"
+   },
+   {
+    "el": "section.relative.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 5015,
+    "w": 390,
+    "h": 1679,
+    "heading": "For people who are (or have been) in your shoes"
+   },
+   {
+    "el": "section.px-5.2xl:px-36",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 6694,
+    "w": 390,
+    "h": 1299,
+    "heading": "START BUILDING YOUR FUTURE"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "employers@390": {
+  "vw": 390,
+  "docH": 10135,
+  "theme": "light",
+  "h1": {
+   "text": "Hire qualified talent fast",
+   "font": "",
+   "x": 20,
+   "y": 164,
+   "w": 350,
+   "h": 156
+  },
+  "fixed": [
+   {
+    "el": "div.fixed.top-(--mobile-top-offset).left-1/2",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "auto",
+    "x": 16,
+    "y": 24,
+    "w": 358,
+    "h": 48
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.container.flex.flex-col",
+    "max": "1440px",
+    "padL": "20px",
+    "padR": "20px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 1525
+   },
+   {
+    "el": "div.relative.mx-auto.flex",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 112,
+    "w": 350,
+    "h": 879
+   },
+   {
+    "el": "h1.z-10.-mt-6.max-w-2xl",
+    "max": "672px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 164,
+    "w": 350,
+    "h": 156
+   },
+   {
+    "el": "p.max-w-md.text-center.text-balance",
+    "max": "448px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 348,
+    "w": 350,
+    "h": 81
+   },
+   {
+    "el": "div.flex.w-full.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 457,
+    "w": 350,
+    "h": 534
+   },
+   {
+    "el": "section.flex.max-w-6xl.flex-col",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 1019,
+    "w": 350,
+    "h": 450
+   },
+   {
+    "el": "div.flex.max-w-3xl.flex-col",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 1942,
+    "w": 350,
+    "h": 266
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[20px]/lg.tracking-sm",
+    "max": "546px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 2142,
+    "w": 350,
+    "h": 66
+   },
+   {
+    "el": "div.mx-auto.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 2743,
+    "w": 350,
+    "h": 2356
+   },
+   {
+    "el": "div.mx-auto.flex.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 4772,
+    "w": 350,
+    "h": 296
+   },
+   {
+    "el": "blockquote.font-noi-grotesk.text-[40px]/lg.tracking-lg",
+    "max": "896px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 36,
+    "y": 7187,
+    "w": 318,
+    "h": 352
+   },
+   {
+    "el": "blockquote.font-noi-grotesk.text-[40px]/lg.tracking-lg",
+    "max": "896px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 738,
+    "y": 7187,
+    "w": 318,
+    "h": 572
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.mx-auto.grid.max-w-5xl",
+    "cols": "29.1562px 29.1562px 29.1562px 29.1562px 29.1562px 29.1562px 29.1562px 29.1562px 29.1562px 29.1562px 29.1562px 29.1562px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 20,
+    "y": 8527,
+    "w": 350,
+    "h": 741
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "77.5px 77.5px 77.5px 77.5px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 16,
+    "y": 9324,
+    "w": 358,
+    "h": 795
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.transition-colors.duration-700",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 9300
+  },
+  "sections": [
+   {
+    "el": "section.relative.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 112,
+    "w": 350,
+    "h": 1357,
+    "heading": "Hire qualified talent fast"
+   },
+   {
+    "el": "section.flex.max-w-6xl.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 1019,
+    "w": 350,
+    "h": 450,
+    "heading": "30M"
+   },
+   {
+    "el": "section.flex.flex-col.gap-10",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1621,
+    "w": 390,
+    "h": 209,
+    "heading": "Trusted by 97% of the Fortune 500 and over 1M smal"
+   },
+   {
+    "el": "section.py-16.lg:py-24",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 2208,
+    "w": 350,
+    "h": 2484,
+    "heading": "Source"
+   },
+   {
+    "el": "section.py-20.lg:py-32",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 6880,
+    "w": 350,
+    "h": 980,
+    "heading": ""
+   },
+   {
+    "el": "section.relative.mx-auto.flex",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 7861,
+    "w": 350,
+    "h": 666,
+    "heading": "Ready to hire the next generation of talent?"
+   },
+   {
+    "el": "section.mx-auto.grid.max-w-5xl",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 20,
+    "y": 8527,
+    "w": 350,
+    "h": 741,
+    "heading": "FAQs"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "pricing@390": {
+  "vw": 390,
+  "docH": 4319,
+  "theme": "light",
+  "h1": null,
+  "fixed": [
+   {
+    "el": "div.fixed.top-(--mobile-top-offset).left-1/2",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "auto",
+    "x": 16,
+    "y": 24,
+    "w": 358,
+    "h": 48
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "max": "1440px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 64,
+    "w": 358,
+    "h": 225
+   },
+   {
+    "el": "div.flex.w-full.max-w-6xl",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 2781,
+    "w": 358,
+    "h": 623
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "77.5px 77.5px 77.5px 77.5px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 16,
+    "y": 3509,
+    "w": 358,
+    "h": 795
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.flex.flex-col.gap-20",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 3485
+  },
+  "sections": [
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 16,
+    "y": 64,
+    "w": 358,
+    "h": 225,
+    "heading": "Employer plans and pricing"
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 16,
+    "y": 369,
+    "w": 358,
+    "h": 2332,
+    "heading": "Basic"
+   },
+   {
+    "el": "section.mx-auto.flex.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 16,
+    "y": 2781,
+    "w": 358,
+    "h": 623,
+    "heading": "Pricing FAQs"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "access@390": {
+  "vw": 390,
+  "docH": 844,
+  "theme": "light",
+  "h1": {
+   "text": "Log in or sign up",
+   "font": "",
+   "x": 23,
+   "y": 156,
+   "w": 344,
+   "h": 34
+  },
+  "fixed": [
+   {
+    "el": "div.sc-YkBNp.djfRDT",
+    "pos": "fixed",
+    "top": "718.031px",
+    "z": "auto",
+    "x": 0,
+    "y": 718,
+    "w": 390,
+    "h": 102
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": "-9999px",
+    "z": "auto",
+    "x": -9999,
+    "y": -9999,
+    "w": 131,
+    "h": 72
+   },
+   {
+    "el": "iframe.L5Fo6c-PQbLGe",
+    "pos": "fixed",
+    "top": "700px",
+    "z": "9999",
+    "x": 0,
+    "y": 700,
+    "w": 390,
+    "h": 144
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [],
+  "grids": [],
+  "flexRows": [],
+  "sidebar": null,
+  "header": {
+   "el": "header.sc-ehuVvn.cwwrbB",
+   "bg": "rgba(0, 0, 0, 0)",
+   "borderB": "0px rgb(0, 0, 0)",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 84
+  },
+  "main": {
+   "el": "main.sc-lcuODO.djNiKR",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 844
+  },
+  "sections": [],
+  "body": {
+   "font": "\"Noi Grotesk\", system-ui, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "home@1440": {
+  "vw": 1440,
+  "docH": 5383,
+  "theme": "light",
+  "h1": {
+   "text": "LET'S FIND\nYOUR NEXT JOB",
+   "font": "600 160px / 128px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 24,
+   "y": 164,
+   "w": 1392,
+   "h": 274
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "form.relative.col-span-full.h-38",
+    "max": "920px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 260,
+    "y": 540,
+    "w": 920,
+    "h": 88
+   },
+   {
+    "el": "div.col-span-full.mx-auto.grid",
+    "max": "1140px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 150,
+    "y": 900,
+    "w": 1140,
+    "h": 676
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "max": "1440px",
+    "padL": "140px",
+    "padR": "140px",
+    "x": 0,
+    "y": 1994,
+    "w": 1440,
+    "h": 2622
+   },
+   {
+    "el": "h3.font-noi-grotesk.text-[32px]/lg.tracking-lg",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 420,
+    "y": 2214,
+    "w": 600,
+    "h": 70
+   },
+   {
+    "el": "div.grid.max-w-(--content-max-width).grid-cols-12",
+    "max": "1140px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 150,
+    "y": 2345,
+    "w": 1140,
+    "h": 388
+   },
+   {
+    "el": "img.h-auto.w-full.max-w-172",
+    "max": "688px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 150,
+    "y": 2445,
+    "w": 688,
+    "h": 388
+   },
+   {
+    "el": "img.h-auto.w-full.max-w-172",
+    "max": "688px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 602,
+    "y": 3033,
+    "w": 688,
+    "h": 388
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4641,
+    "w": 1392,
+    "h": 718
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "116px 116px 116px 116px 116px 116px 116px 116px 116px 116px 116px 116px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 900,
+    "w": 1440,
+    "h": 676
+   },
+   {
+    "el": "div.col-span-full.mx-auto.grid",
+    "cols": "95px 95px 95px 95px 95px 95px 95px 95px 95px 95px 95px 95px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 150,
+    "y": 900,
+    "w": 1140,
+    "h": 676
+   },
+   {
+    "el": "div.col-span-full.mt-20.grid",
+    "cols": "80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 150,
+    "y": 1064,
+    "w": 1140,
+    "h": 380
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 1736,
+    "w": 1440,
+    "h": 22
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 1994,
+    "w": 1440,
+    "h": 2622
+   },
+   {
+    "el": "div.col-span-full.mt-20.grid",
+    "cols": "96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px",
+    "colGap": "normal",
+    "rowGap": "80px",
+    "x": 140,
+    "y": 2194,
+    "w": 1160,
+    "h": 2302
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 4641,
+    "w": 1392,
+    "h": 718
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "218.656px 218.672px 218.672px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 728,
+    "y": 4641,
+    "w": 688,
+    "h": 336
+   }
+  ],
+  "flexRows": [
+   {
+    "el": "div.col-span-full.flex.flex-wrap",
+    "gap": "8px 4px",
+    "x": 516,
+    "y": 660,
+    "w": 409,
+    "h": 46
+   }
+  ],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.bg-neutral-100.text-white",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 4617
+  },
+  "sections": [
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900,
+    "heading": "Let's findyour next job"
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 900,
+    "w": 1440,
+    "h": 676,
+    "heading": "Get paid to make AI smarter and safer"
+   },
+   {
+    "el": "section.mt-40.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1736,
+    "w": 1440,
+    "h": 258,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1994,
+    "w": 1440,
+    "h": 2622,
+    "heading": "The largest, most trusted network for careers in t"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "students@1440": {
+  "vw": 1440,
+  "docH": 6423,
+  "theme": "light",
+  "h1": {
+   "text": "SHOW UP",
+   "font": "600 228px / 193.8px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 24,
+   "y": 232,
+   "w": 1392,
+   "h": 202
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1440,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.hidden.flex-col.gap-7",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 820,
+    "w": 1152,
+    "h": 64
+   },
+   {
+    "el": "input.mx-auto.h-14.w-full",
+    "max": "448px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 848,
+    "y": 824,
+    "w": 448,
+    "h": 56
+   },
+   {
+    "el": "div.mx-auto.flex.flex-col",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 1044,
+    "w": 1152,
+    "h": 372
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[18px]/xl.tracking-sm",
+    "max": "632px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 928,
+    "y": 1237,
+    "w": 368,
+    "h": 126
+   },
+   {
+    "el": "div.w-full.max-w-230.md:mx-auto",
+    "max": "662px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 1094,
+    "w": 662,
+    "h": 372
+   },
+   {
+    "el": "form.flex.flex-col.items-center",
+    "max": "640px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 5522,
+    "w": 640,
+    "h": 64
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "max": "1392px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 5680,
+    "w": 1392,
+    "h": 718
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.flex.flex-col.gap-4",
+    "cols": "81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px 81.3281px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 2610,
+    "w": 1152,
+    "h": 601
+   },
+   {
+    "el": "div.size-full.py-20.lg:grid",
+    "cols": "74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 144,
+    "y": 4662,
+    "w": 1152,
+    "h": 994
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px 101.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 5680,
+    "w": 1392,
+    "h": 718
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "218.656px 218.672px 218.672px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 728,
+    "y": 5680,
+    "w": 688,
+    "h": 336
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.transition-colors.duration-700",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 5656
+  },
+  "sections": [
+   {
+    "el": "section.relative.overflow-x-clip.px-6",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 964,
+    "heading": "SHOW UP,GET HIRED"
+   },
+   {
+    "el": "section.px-5.2xl:px-36",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1044,
+    "w": 1440,
+    "h": 372,
+    "heading": "Don’t just learn AI, build with it"
+   },
+   {
+    "el": "section.flex.flex-col.gap-y-10",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1616,
+    "w": 1440,
+    "h": 705,
+    "heading": ""
+   },
+   {
+    "el": "section.px-5.2xl:px-36.flex",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 2522,
+    "w": 1440,
+    "h": 777,
+    "heading": "How it works"
+   },
+   {
+    "el": "section.relative.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 3379,
+    "w": 1440,
+    "h": 1283,
+    "heading": "For people who are (or have been) in your shoes"
+   },
+   {
+    "el": "section.px-5.2xl:px-36",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 4662,
+    "w": 1440,
+    "h": 994,
+    "heading": "START BUILDING YOUR FUTURE"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "home@1920": {
+  "vw": 1920,
+  "docH": 5659,
+  "theme": "light",
+  "h1": {
+   "text": "LET'S FIND\nYOUR NEXT JOB",
+   "font": "600 160px / 128px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 24,
+   "y": 254,
+   "w": 1872,
+   "h": 274
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1920,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "form.relative.col-span-full.h-38",
+    "max": "920px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 500,
+    "y": 630,
+    "w": 920,
+    "h": 88
+   },
+   {
+    "el": "div.col-span-full.mx-auto.grid",
+    "max": "1140px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 390,
+    "y": 1080,
+    "w": 1140,
+    "h": 676
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "max": "1440px",
+    "padL": "140px",
+    "padR": "140px",
+    "x": 240,
+    "y": 2174,
+    "w": 1440,
+    "h": 2622
+   },
+   {
+    "el": "h3.font-noi-grotesk.text-[32px]/lg.tracking-lg",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 660,
+    "y": 2394,
+    "w": 600,
+    "h": 70
+   },
+   {
+    "el": "div.grid.max-w-(--content-max-width).grid-cols-12",
+    "max": "1140px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 390,
+    "y": 2525,
+    "w": 1140,
+    "h": 388
+   },
+   {
+    "el": "img.h-auto.w-full.max-w-172",
+    "max": "688px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 390,
+    "y": 2625,
+    "w": 688,
+    "h": 388
+   },
+   {
+    "el": "img.h-auto.w-full.max-w-172",
+    "max": "688px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 842,
+    "y": 3213,
+    "w": 688,
+    "h": 388
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "156px 156px 156px 156px 156px 156px 156px 156px 156px 156px 156px 156px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 1080,
+    "w": 1920,
+    "h": 676
+   },
+   {
+    "el": "div.col-span-full.mx-auto.grid",
+    "cols": "95px 95px 95px 95px 95px 95px 95px 95px 95px 95px 95px 95px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 390,
+    "y": 1080,
+    "w": 1140,
+    "h": 676
+   },
+   {
+    "el": "div.col-span-full.mt-20.grid",
+    "cols": "80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px 80.3281px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 390,
+    "y": 1244,
+    "w": 1140,
+    "h": 380
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px 136.656px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 1916,
+    "w": 1920,
+    "h": 22
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "cols": "96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 240,
+    "y": 2174,
+    "w": 1440,
+    "h": 2622
+   },
+   {
+    "el": "div.col-span-full.mt-20.grid",
+    "cols": "96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px 96.6562px",
+    "colGap": "normal",
+    "rowGap": "80px",
+    "x": 380,
+    "y": 2374,
+    "w": 1160,
+    "h": 2302
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 4821,
+    "w": 1872,
+    "h": 814
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "298.656px 298.672px 298.656px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 968,
+    "y": 4821,
+    "w": 928,
+    "h": 336
+   }
+  ],
+  "flexRows": [
+   {
+    "el": "div.col-span-full.flex.flex-wrap",
+    "gap": "8px 4px",
+    "x": 756,
+    "y": 750,
+    "w": 409,
+    "h": 46
+   }
+  ],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.bg-neutral-100.text-white",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 4797
+  },
+  "sections": [
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1080,
+    "heading": "Let's findyour next job"
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1080,
+    "w": 1920,
+    "h": 676,
+    "heading": "Get paid to make AI smarter and safer"
+   },
+   {
+    "el": "section.mt-40.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1916,
+    "w": 1920,
+    "h": 258,
+    "heading": ""
+   },
+   {
+    "el": "section.mx-auto.grid.w-full",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 240,
+    "y": 2174,
+    "w": 1440,
+    "h": 2622,
+    "heading": "The largest, most trusted network for careers in t"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "students@1920": {
+  "vw": 1920,
+  "docH": 6766,
+  "theme": "light",
+  "h1": {
+   "text": "SHOW UP",
+   "font": "600 228px / 193.8px SansPlomb, \"SansPlomb Fallback\", sans-serif",
+   "x": 24,
+   "y": 322,
+   "w": 1872,
+   "h": 202
+  },
+  "fixed": [
+   {
+    "el": "nav.fixed.inset-x-0.top-(--desktop-nav-top-offset)",
+    "pos": "fixed",
+    "top": "24px",
+    "z": "50",
+    "x": 0,
+    "y": 24,
+    "w": 1920,
+    "h": 56
+   }
+  ],
+  "scrollers": [],
+  "maxWidths": [
+   {
+    "el": "div.hidden.flex-col.gap-7",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 1000,
+    "w": 1152,
+    "h": 64
+   },
+   {
+    "el": "input.mx-auto.h-14.w-full",
+    "max": "448px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 1088,
+    "y": 1004,
+    "w": 448,
+    "h": 56
+   },
+   {
+    "el": "div.mx-auto.flex.flex-col",
+    "max": "1152px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 1224,
+    "w": 1152,
+    "h": 372
+   },
+   {
+    "el": "p.font-noi-grotesk.text-[18px]/xl.tracking-sm",
+    "max": "632px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1168,
+    "y": 1417,
+    "w": 368,
+    "h": 126
+   },
+   {
+    "el": "div.w-full.max-w-230.md:mx-auto",
+    "max": "662px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 384,
+    "y": 1274,
+    "w": 662,
+    "h": 372
+   },
+   {
+    "el": "form.flex.flex-col.items-center",
+    "max": "640px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 5609,
+    "w": 640,
+    "h": 64
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.flex.flex-col.gap-4",
+    "cols": "121.328px 121.328px 121.328px 121.328px 121.328px 121.328px 121.328px 121.328px 121.328px 121.328px 121.328px 121.328px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 144,
+    "y": 2790,
+    "w": 1632,
+    "h": 663
+   },
+   {
+    "el": "div.size-full.py-20.lg:grid",
+    "cols": "114px 114px 114px 114px 114px 114px 114px 114px 114px 114px 114px 114px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 144,
+    "y": 4904,
+    "w": 1632,
+    "h": 1000
+   },
+   {
+    "el": "div.mx-auto.grid.w-full",
+    "cols": "141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px 141.328px",
+    "colGap": "16px",
+    "rowGap": "8px",
+    "x": 24,
+    "y": 5928,
+    "w": 1872,
+    "h": 814
+   },
+   {
+    "el": "div.grid.w-full.grid-cols-1",
+    "cols": "298.656px 298.672px 298.656px",
+    "colGap": "16px",
+    "rowGap": "40px",
+    "x": 968,
+    "y": 5928,
+    "w": 928,
+    "h": 336
+   }
+  ],
+  "flexRows": [],
+  "sidebar": null,
+  "header": null,
+  "main": {
+   "el": "main.overflow-x-clip.transition-colors.duration-700",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 5904
+  },
+  "sections": [
+   {
+    "el": "section.relative.overflow-x-clip.px-6",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 1144,
+    "heading": "SHOW UP,GET HIRED"
+   },
+   {
+    "el": "section.px-5.2xl:px-36",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1224,
+    "w": 1920,
+    "h": 372,
+    "heading": "Don’t just learn AI, build with it"
+   },
+   {
+    "el": "section.flex.flex-col.gap-y-10",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 1796,
+    "w": 1920,
+    "h": 705,
+    "heading": ""
+   },
+   {
+    "el": "section.px-5.2xl:px-36.flex",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 2702,
+    "w": 1920,
+    "h": 839,
+    "heading": "How it works"
+   },
+   {
+    "el": "section.relative.flex.flex-col",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 3621,
+    "w": 1920,
+    "h": 1283,
+    "heading": "For people who are (or have been) in your shoes"
+   },
+   {
+    "el": "section.px-5.2xl:px-36",
+    "bg": "rgba(0, 0, 0, 0)",
+    "x": 0,
+    "y": 4904,
+    "w": 1920,
+    "h": 1000,
+    "heading": "START BUILDING YOUR FUTURE"
+   }
+  ],
+  "body": {
+   "font": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+   "size": "16px",
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)"
+  }
+ }
+}

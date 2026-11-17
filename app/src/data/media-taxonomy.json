@@ -1368,6 +1368,11 @@
       "assignedMedia": 56
     },
     {
+      "referenceId": "systems:joinhandshake",
+      "media": 185,
+      "assignedMedia": 73
+    },
+    {
       "referenceId": "systems:helloivy",
       "media": 118,
       "assignedMedia": 118
@@ -311478,6 +311483,894 @@
           "termId": "web-ux-patterns:wish-list-bookmark",
           "rule": "ux-bookmark",
           "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/employers-light-faq-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/employers-light-tab-automate.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/home-light-consent.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/home-light-nav-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/mobile-home-light-drawer.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/screenshots/pricing-light-faq-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/app-continue-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/app-continue-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/app-continue-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/app-continue-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/app-google-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/blog-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/blog-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/blog-search-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/blog-search-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/blog-search-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/blog-search-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/blog-search-input-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/blog-search-input-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-benefit-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-benefit-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-benefit-tab-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-dept-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-dept-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-dept-button-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-page-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-page-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-page-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-search-input-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/car-search-input-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-carousel-dot-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-carousel-dot-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-faq-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-faq-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-faq-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-faq-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-filter-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-filter-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-filter-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-search-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-search-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-search-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-search-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-search-form-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-search-input-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-search-input-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-segment-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-segment-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-segment-tab-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-signup-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-signup-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-signup-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/hs-signup-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/m-hs-drawer-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/pricing-feature-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/pricing-feature-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/pricing-feature-tab-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/pricing-plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/pricing-table-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/stu-carousel-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/stu-carousel-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/stu-signup-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/stu-signup-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/stu-signup-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "mediaId": "systems/joinhandshake/components/crops/stu-signup-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         }
       ]
     },
