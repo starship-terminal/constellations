@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_118 of 176 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_119 of 177 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -671,6 +671,12 @@ Access: signed out (every captured surface is public; the signed-in workspace, s
 - every signed-in product surface (saved designs, workspaces, team/billing, the editor beyond the anonymous scratch file) needs an account - an authenticated boundary never reached
 - the login, register and Craft fields were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
 - the anonymous editor's file content, layers and canvas tools beyond the onboarding and the Craft dialog were not exercised - the scratch file was never saved
+
+## [Gumroad](../systems/gumroad) — `gumroad`
+Access: signed out (every captured surface is public gumroad.com or a public creator subdomain; the seller dashboard, buyer library and settings stayed behind login; the public checkout was captured empty and never submitted; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the carousel arrow, the nav menu button, the Share popover, the billing-term select)
+- post-login surfaces: the seller dashboard (products, sales, payouts, analytics), the buyer library and account settings were never reached - the capture was signed out end to end
+- search results: the marketplace search fields were measured empty; no query was ever submitted
+- checkout beyond the empty public form: payment, confirmation and post-purchase screens were never reached
 
 ## Gate noted in access text only
 
