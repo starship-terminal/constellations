@@ -6205,7 +6205,8 @@
      "the Enzuzo cookie banner was hidden and never clicked"
     ],
     "durationMin": 90,
-    "durationNote": "One session: recon, kit adaptation, screenshot and measurement passes, token build."
+    "durationNote": "One session: recon, kit adaptation, screenshot and measurement passes, token build.",
+    "pr": "645"
    }
   },
   {
