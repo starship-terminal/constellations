@@ -16372,6 +16372,92 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/635",
     "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "julienne",
+   "name": "Julienne",
+   "url": "https://withjulienne.com",
+   "category": "fitness",
+   "platform": "web",
+   "goodFor": "Recipe-app marketing and public discovery: a glass header on white paper, EB Garamond display, Inter labels, and a wine brand fill (#3c1518) that also paints the one primary button and the selected filter chip. Light boots as html.js.light; dark is the header Toggle theme control setting html.js.dark, with the page at #131313 and glass fills at about 7% white. Auth, save, cook and buy stay at the boundary.",
+   "tags": [
+    "web",
+    "recipes",
+    "food",
+    "cookbook",
+    "marketing",
+    "light",
+    "dark",
+    "signed-out",
+    "glass"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed out (public pages only: home, discover, a published recipe, ingredient search, a collection, team, roadmap, shop, privacy policy, signup at rest, and the cookbook gate; nothing typed, submitted, saved, cooked or bought; the only presses were the theme toggle, a discover filter chip, the marketing Menu button, and Log in opened and closed at rest)",
+   "themes": ["light", "dark"],
+   "widths": [1440, 390],
+   "entry": "systems/julienne/README.md",
+   "tokens": "systems/julienne/tokens.json",
+   "styleGuide": "systems/julienne/style-guide.html",
+   "preview": {
+    "cover": "systems/julienne/screenshots/home-light-default.png",
+    "icon": "systems/julienne/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.page",
+      "surface": "light.color.footer",
+      "text": "light.color.ink",
+      "muted": "light.color.muted",
+      "accent": "light.color.brand",
+      "border": "light.color.fieldBorder"
+     },
+     "dark": {
+      "page": "dark.color.page",
+      "surface": "dark.color.footer",
+      "text": "dark.color.ink",
+      "muted": "dark.color.muted",
+      "accent": "dark.color.brand",
+      "border": "dark.color.fieldBorder"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.body",
+     "core.font.family.ui"
+    ]
+   },
+   "source": "capture",
+   "capture": {
+    "method": "public-web",
+    "source": "withjulienne.com in headless Chromium, desktop 1440x900 and phone 390x844. Computed styles and crops from the live DOM. Dark via the header Toggle theme control, verified as html.js.dark before the reading.",
+    "timestamp": "2026-11-18T12:00:00Z",
+    "harness": "Grok Build",
+    "model": "grok-4.7",
+    "route": "public-web",
+    "routes": [
+     "withjulienne.com/",
+     "withjulienne.com/discover",
+     "withjulienne.com/days/11_17_2026/recipes/chef_muse_20261117_soup_season_e92685c034_10",
+     "withjulienne.com/search?ingredients=apple",
+     "withjulienne.com/collections/carousel/weeknights",
+     "withjulienne.com/team",
+     "withjulienne.com/roadmap",
+     "withjulienne.com/shop",
+     "withjulienne.com/privacy-policy",
+     "withjulienne.com/signup (rest only)",
+     "withjulienne.com/cookbook (signed-out gate)"
+    ],
+    "gaps": [
+     "the signed-in cookbook at https://withjulienne.com/cookbook is a boundary: signed out it shows Come back soon, and the account cookbook was not entered",
+     "Save on a recipe (https://withjulienne.com/days/11_17_2026/recipes/chef_muse_20261117_soup_season_e92685c034_10) was not pressed; saving needs an account",
+     "Cook on that recipe page was not pressed; cook mode needs an account",
+     "Buy on the home cookbook cards was not followed; it leaves the site for a shop",
+     "Log in and https://withjulienne.com/signup were read at rest; email, password, Google, Apple and Turnstile were never used",
+     "search was not typed or submitted; /search?ingredients=apple is a published browse link"
+    ],
+    "durationMin": 150,
+    "durationNote": "one session: route probe, kit adaptation, screenshot and measurement passes, token build"
+   }
   }
  ]
 }

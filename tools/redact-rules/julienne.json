@@ -1,0 +1,7 @@
+{
+  "_note": "Julienne publishes juliachild@gmail.com as the email field's example placeholder. It is marketing copy, not a person's contact detail.",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["juliachild@gmail\\.com", "^juliachild@gmail\\.co"]
+  }
+}

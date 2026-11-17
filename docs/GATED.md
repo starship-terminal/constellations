@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -738,6 +738,14 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Julienne](../systems/julienne) — `julienne`
+Access: signed out (public pages only: home, discover, a published recipe, ingredient search, a collection, team, roadmap, shop, privacy policy, signup at rest, and the cookbook gate; nothing typed, submitted, saved, cooked or bought; the only presses were the theme toggle, a discover filter chip, the marketing Menu button, and Log in opened and closed at rest)
+- the signed-in cookbook at https://withjulienne.com/cookbook is a boundary: signed out it shows Come back soon, and the account cookbook was not entered
+- Save on a recipe (https://withjulienne.com/days/11_17_2026/recipes/chef_muse_20261117_soup_season_e92685c034_10) was not pressed; saving needs an account
+- Cook on that recipe page was not pressed; cook mode needs an account
+- Log in and https://withjulienne.com/signup were read at rest; email, password, Google, Apple and Turnstile were never used
+- search was not typed or submitted; /search?ingredients=apple is a published browse link
 
 ## Gate noted in access text only
 
