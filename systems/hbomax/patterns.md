@@ -55,8 +55,8 @@ a chevron press expands the answer
 Home and the browse pages (/movies, /shows, /channel, collections) carry
 horizontal rails of poster cards — each card a link into a title detail
 page. On the browse pages the rail block spans the full width
-([browse-rail-section](components/crops/browse-rail-section-default.png),
-1425 x 768), card controls ([browse-rail-card](components/crops/browse-rail-card-default.png))
+(`browse-rail-section`, 1425 x 768 — measured, no crop saved),
+card controls ([browse-rail-card](components/crops/browse-rail-card-default.png))
 inside; the home rail section was absent at this capture (a first-visit
 lazy-load; rail-card itself was measured). See
 [movies-dark-default](screenshots/movies-dark-default.png) and
@@ -96,7 +96,7 @@ the pass.
 
 `/privacy` is a different surface from the marketing chrome: a white
 document column on `#f1f1f1`, plain `sans`/Arial prose — dark gray
-headings (`rgb(32, 33, 36)`, [legal-h1](components/crops/legal-h1-default.png))
+headings (`rgb(32, 33, 36)`; `legal-h1` was absent at this capture)
 and body text (`rgb(95, 99, 104)`, [legal-p](components/crops/legal-p-default.png))
 — with none of the Max token sheet's `--color_*` roles painted. It is the
 same signed-out host but its own stylesheets, so its values live in the
