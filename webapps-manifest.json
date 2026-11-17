@@ -2424,9 +2424,9 @@
     319
    ],
    "description": "Collaborate better",
-   "status": "pending",
+   "status": "uncapturable",
    "package": null,
-   "notes": "",
+   "notes": "Probed 2026-11-18: https://invisionapp.com and https://www.invisionapp.com (and /login, /pricing, /teams, /inside-design, /enterprise, /customers, /about, /freehand) return HTTP 301 from an AWS ELB to https://miro.com:443/, which serves Miro's live Framer marketing site (title AI Innovation Workspace | Miro), not InVision. Former product hosts do not resolve: projects, support, status, blog, app, login, freehand, studio, dsm, inspect.invisionapp.com. InVision shut its design-collaboration services on 2024-12-31 after selling Freehand to Miro in 2023-11; nothing honest of the product remains to capture.",
    "batch": 9
   },
   {
