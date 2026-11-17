@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:25:02.522Z",
+  "capturedAt": "2026-11-17T13:02:11.249Z",
   "screenshot": "pricing-dark-default.png",
   "sanitizedSourceUrl": "https://www.helloivy.co/pricing",
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 2177
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
-      "height": 3077
+      "height": 3202
     },
     "scroll": {
       "x": 0,
-      "y": 2177
+      "y": 0
     }
   },
   "capture": {

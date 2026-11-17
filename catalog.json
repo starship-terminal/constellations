@@ -15532,7 +15532,7 @@
       "text": "light.color.ink",
       "muted": "light.color.muted",
       "accent": "light.color.link",
-      "border": "light.component.button.cta.border"
+      "border": "light.color.ink"
      },
      "dark": {
       "page": "dark.color.ground",
@@ -15540,7 +15540,7 @@
       "text": "dark.color.ink",
       "muted": "dark.color.muted",
       "accent": "dark.color.link",
-      "border": "dark.component.button.cta.border"
+      "border": "dark.color.ink"
      }
     },
     "fonts": [

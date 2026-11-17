@@ -117,40 +117,43 @@ lit("#555555", "color", "css-var --framer-link-hover-text-color declared by the 
 # names resolve through hashed vars; the values below are the painted
 # declarations read live (raw/css-vars.json appTheme). Light-only surface:
 # the app paints no dark pass on this route.
-APP = "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --%s; the same values the app's CSS names alias"
+APP = "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), %s; the same values the app's CSS names alias"
+# (token key, painted value, the real --var name it resolves from, desc) —
+# the var names are the section's own declarations (raw/css-vars.json
+# appTheme), spelled exactly as painted.
 APP_THEME = [
-    ("primary", "#fff", "the primary role — white"),
-    ("brand", "#3F40F2", "the brand indigo — --main-color, --link-color and --checkbox all paint it"),
-    ("mainColor", "#3F40F2", "--main-color — links, primary actions, the checked accent"),
-    ("linkColor", "#3F40F2", "--link-color"),
-    ("checkbox", "#3F40F2", "--checkbox — checked state fill"),
-    ("ink", "#37352f", "--app-color — the product ink"),
-    ("canvasInk", "#323235", "--canvas-color — the document canvas' ink"),
-    ("canvas", "#fff", "--canvas — the document/page ground"),
-    ("sidebar", "#F5F6F4", "--sidebar — the sidebar ground"),
-    ("hover", "#F3F5F7", "--hover — hover row fill"),
-    ("book", "#F5F6FA", "--book — the book/page-list ground"),
-    ("hoverBook", "#F1F3F5", "--hover-book"),
-    ("comment", "#fdffe4", "--comment — comment pin tint"),
-    ("selection", "#F3F5F7", "--selection — selected-row fill"),
-    ("textSelection", "#e4f2ff", "--text-selection — text selection tint"),
-    ("project", "#ECEDF1", "--project — project chip fill"),
-    ("projectHover", "#F1F1F5", "--projectHover"),
-    ("scrollBar", "#eee", "--scrollBarColor — the scrollbar track"),
-    ("scrollBarThumb", "#CCCCCC", "--scrollBarThumbColor"),
-    ("scrollBarThumbHover", "#9e9d9d", "--scrollBarThumbHover"),
-    ("imageShadow", "#e7e7e7", "--image-shadow — image drop line"),
-    ("bookIcon", "#323232", "--book-icon — icon ink in the book list"),
+    ("primary", "#fff", "--primary", "the primary role — white"),
+    ("brand", "#3F40F2", "--main-color", "the brand indigo — --main-color, --link-color and --checkbox all paint it"),
+    ("mainColor", "#3F40F2", "--main-color", "--main-color — links, primary actions, the checked accent"),
+    ("linkColor", "#3F40F2", "--link-color", "--link-color"),
+    ("checkbox", "#3F40F2", "--checkbox", "--checkbox — checked state fill"),
+    ("ink", "#37352f", "--app-color", "--app-color — the product ink"),
+    ("canvasInk", "#323235", "--canvas-color", "--canvas-color — the document canvas' ink"),
+    ("canvas", "#fff", "--canvas", "--canvas — the document/page ground"),
+    ("sidebar", "#F5F6F4", "--sidebar", "--sidebar — the sidebar ground"),
+    ("hover", "#F3F5F7", "--hover", "--hover — hover row fill"),
+    ("book", "#F5F6FA", "--book", "--book — the book/page-list ground"),
+    ("hoverBook", "#F1F3F5", "--hover-book", "--hover-book"),
+    ("comment", "#fdffe4", "--comment", "--comment — comment pin tint"),
+    ("selection", "#F3F5F7", "--selection", "--selection — selected-row fill"),
+    ("textSelection", "#e4f2ff", "--text-selection", "--text-selection — text selection tint"),
+    ("project", "#ECEDF1", "--project", "--project — project chip fill"),
+    ("projectHover", "#F1F1F5", "--projectHover", "--projectHover"),
+    ("scrollBar", "#eee", "--scrollBarColor", "--scrollBarColor — the scrollbar track"),
+    ("scrollBarThumb", "#CCCCCC", "--scrollBarThumbColor", "--scrollBarThumbColor"),
+    ("scrollBarThumbHover", "#9e9d9d", "--scrollBarThumbHover", "--scrollBarThumbHover"),
+    ("imageShadow", "#e7e7e7", "--image-shadow", "--image-shadow — image drop line"),
+    ("bookIcon", "#323232", "--book-icon", "--book-icon — icon ink in the book list"),
 ]
-for key, val, desc in APP_THEME:
-    lit(val, "color", APP % ("--" + key if not key.startswith("--") else key), "core", f"app.color.{key}", desc=desc)
+for key, val, var, desc in APP_THEME:
+    lit(val, "color", APP % var, "core", f"app.color.{key}", desc=desc)
 lit("Inter", "fontFamily", APP % "--main-font-family", "core", "app.font.family", desc="the product face — --main-font-family")
-for key, val, desc in [
-    ("sidebarWidth", "242px", "--sidebar-width — the workspace rail"),
-    ("headerHeight", "66px", "--header-height — the document header strip"),
-    ("mainHeaderHeight", "65px", "--main-header-height — the app header strip"),
+for key, val, var, desc in [
+    ("sidebarWidth", "242px", "--sidebar-width", "--sidebar-width — the workspace rail"),
+    ("headerHeight", "66px", "--header-height", "--header-height — the document header strip"),
+    ("mainHeaderHeight", "65px", "--main-header-height", "--main-header-height — the app header strip"),
 ]:
-    lit(val, "dimension", APP % "--" + key.replace("Width", "-width").replace("Height", "-height"), "core", f"app.layout.{key}", desc=desc)
+    lit(val, "dimension", APP % var, "core", f"app.layout.{key}", desc=desc)
 
 # ------------------------------------------------------------- core scales
 # Type faces — measured on painted elements (the Framer pages declare
@@ -250,15 +253,17 @@ if C_PATH.exists():
                   f"measured nav-cta default backgroundColor {lt['backgroundColor']} on / (the ink role)",
                   f"measured nav-cta dark backgroundColor {dk.get('backgroundColor')} on / (the inverse ink role)",
                   "component.button.cta.bg", desc="the marketing pill fill — paints the ink role in light, the inverse ink in dark")
-        lit_theme("{color.inverseSurface}", "{color.ink}", "color",
+        # The label keeps painting the inverse *surface* value in both
+        # themes: white on the black pill in light, the measured
+        # rgb(0, 0, 0) black on the cream pill in dark (the captured dark
+        # textStyle.color — not color.ink, which would fade on #faf6f0).
+        lit_theme("{color.inverseSurface}", "{color.inverseSurface}", "color",
                   "measured nav-cta default text color rgb(255, 255, 255) on / (the inverse surface role)",
-                  f"measured nav-cta dark text color {dk.get('textStyle', {}).get('color') if dk.get('textStyle') else 'rgb(0, 0, 0)'} on / (the ink role)",
+                  f"measured nav-cta dark text color {dk.get('textStyle', {}).get('color') if dk.get('textStyle') else 'rgb(0, 0, 0)'} on / (the inverse surface role — the label stays black)",
                   "component.button.cta.fg", desc="the marketing pill label colour")
-    if lt.get("borderTopColor"):
-        lit_theme(lt["borderTopColor"], dk.get("borderTopColor", lt["borderTopColor"]), "color",
-                  f"measured nav-cta default borderTopColor {lt['borderTopColor']} on /",
-                  f"measured nav-cta dark borderTopColor {dk.get('borderTopColor')} on /",
-                  "component.button.cta.border", desc="the marketing pill's border colour — an accent only the CTA carries")
+    # No border token: the captured pill paints borderTopWidth 0px /
+    # borderTopStyle none — its computed borderTopColor (the unvisited-link
+    # currentColor) is not a real border, so nothing is published as one.
 
     # The app's measured button paint (login-continue: near-black pill, hover black).
     lc = C.get("login-continue", {}).get("states", {})
@@ -285,7 +290,11 @@ if C_PATH.exists():
     # tokens under core.typography.
     def typ(comp, path, name, state="default"):
         st = C.get(comp, {}).get("states", {}).get(state, {})
-        s = st.get("style") or {}
+        # The capture's textStyle block is the first real text node's own
+        # type; the container's style carries the wrapper's face, which is
+        # smaller/inherited whenever they differ (a card's heading vs its
+        # body). Prefer the measured text.
+        s = st.get("textStyle") or st.get("style") or {}
         if not s.get("fontSize"):
             return
         style = {

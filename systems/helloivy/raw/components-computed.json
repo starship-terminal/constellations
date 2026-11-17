@@ -137,7 +137,7 @@
    "selector": "header/nav (top strip)",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:05:53.359Z",
+   "run": "2026-11-17T12:57:59.521Z",
    "states": {
     "default": {
      "tag": "div",
@@ -294,7 +294,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/nav-bar-default.png",
-     "run": "2026-11-17T09:06:20.525Z"
+     "run": "2026-11-17T12:58:00.620Z"
     },
     "dark": {
      "tag": "div",
@@ -451,7 +451,7 @@
      },
      "via": "same element after the footer \"Change theme\" toggle repaints html[toggle-theme=dark]",
      "crop": "components/crops/nav-bar-dark.png",
-     "run": "2026-11-17T09:06:49.349Z"
+     "run": "2026-11-17T12:58:03.977Z"
     }
    }
   },
@@ -462,7 +462,7 @@
    "selector": "nav link",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:06:51.858Z",
+   "run": "2026-11-17T12:58:06.333Z",
    "states": {
     "default": {
      "tag": "a",
@@ -546,7 +546,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/nav-link-default.png",
-     "run": "2026-11-17T09:06:52.788Z"
+     "run": "2026-11-17T12:58:07.203Z"
     },
     "hover": {
      "tag": "a",
@@ -630,7 +630,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-link-hover.png",
-     "run": "2026-11-17T09:06:54.673Z"
+     "run": "2026-11-17T12:58:09.072Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -721,7 +721,7 @@
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/nav-link-focus-visible.png",
-     "run": "2026-11-17T09:07:13.156Z"
+     "run": "2026-11-17T12:58:10.355Z"
     }
    }
   },
@@ -732,7 +732,7 @@
    "selector": "a/button (text Get Started)",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:07:13.158Z",
+   "run": "2026-11-17T12:58:10.360Z",
    "states": {
     "default": {
      "tag": "a",
@@ -836,7 +836,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/nav-cta-default.png",
-     "run": "2026-11-17T09:07:14.174Z"
+     "run": "2026-11-17T12:58:11.195Z"
     },
     "hover": {
      "tag": "a",
@@ -940,7 +940,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-cta-hover.png",
-     "run": "2026-11-17T09:07:16.261Z"
+     "run": "2026-11-17T12:58:13.080Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -1045,7 +1045,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/nav-cta-focus-visible.png",
-     "run": "2026-11-17T09:07:17.710Z"
+     "run": "2026-11-17T12:58:14.400Z"
     },
     "pressed": {
      "tag": "a",
@@ -1149,7 +1149,7 @@
      },
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/nav-cta-pressed.png",
-     "run": "2026-11-17T09:07:21.784Z"
+     "run": "2026-11-17T12:58:16.026Z"
     },
     "dark": {
      "tag": "a",
@@ -1253,7 +1253,7 @@
      },
      "via": "same element after the footer \"Change theme\" toggle repaints html[toggle-theme=dark]",
      "crop": "components/crops/nav-cta-dark.png",
-     "run": "2026-11-17T09:07:25.646Z"
+     "run": "2026-11-17T12:58:19.279Z"
     }
    }
   },
@@ -1264,7 +1264,7 @@
    "selector": "[data-framer-name=\"Menu\"]",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:07:28.039Z",
+   "run": "2026-11-17T12:58:21.667Z",
    "states": {
     "default": {
      "tag": "div",
@@ -1386,7 +1386,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/nav-menu-box-default.png",
-     "run": "2026-11-17T09:07:29.139Z"
+     "run": "2026-11-17T12:58:22.567Z"
     },
     "hover": {
      "tag": "div",
@@ -1508,41 +1508,41 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-menu-box-hover.png",
-     "run": "2026-11-17T09:07:31.844Z"
+     "run": "2026-11-17T12:58:24.454Z"
     },
     "opened": {
-     "tag": "html",
-     "classes": "",
-     "text": "Features Pricing Log in Get Started The Project Management Tool for Creative Tea",
+     "tag": "div",
+     "classes": "framer-k3BMT framer-n9ao67 framer-v-n9ao67",
+     "text": "01 HOME 02 FEATURES 03 PRICING 04 ABOUT 05 BLOG",
      "rect": {
       "x": 0,
-      "y": -3702,
+      "y": 92,
       "w": 1440,
-      "h": 8305.19
+      "h": 381.02
      },
      "style": {
-      "display": "block",
-      "position": "static",
+      "display": "flex",
+      "position": "relative",
       "boxSizing": "border-box",
       "width": "1440px",
-      "height": "8305.19px",
+      "height": "381.016px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingLeft": "48px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
+      "gap": "10px",
+      "rowGap": "10px",
+      "columnGap": "10px",
+      "flexDirection": "column",
+      "alignItems": "flex-start",
+      "justifyContent": "flex-start",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -1568,8 +1568,8 @@
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
-      "fontFamily": "\"Times New Roman\"",
-      "fontSize": "16px",
+      "fontFamily": "sans-serif",
+      "fontSize": "12px",
       "fontWeight": "400",
       "lineHeight": "normal",
       "letterSpacing": "normal",
@@ -1583,107 +1583,28 @@
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "auto",
+      "cursor": "none",
       "opacity": "1",
       "transform": "none",
       "overflow": "hidden",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
-     "paint": [
-      {
-       "node": "body.framer-body-KqUl8LiGf-framer-kKUAY.framer-cursor-none",
-       "size": "1440.0x8305.2",
-       "bg": "rgb(250, 246, 240)"
-      },
-      {
-       "node": "div.framer-kKUAY.framer-R8WG4",
-       "size": "1440.0x8305.2",
-       "bg": "rgb(250, 246, 240)"
-      },
-      {
-       "node": "div::after.framer-324l0c",
-       "size": "1392pxx1185.91px",
-       "border": "T:1px solid | R:1px solid | L:1px solid"
-      },
-      {
-       "node": "div::after.framer-qTIUJ.framer-o0W2X",
-       "size": "1392pxx116px",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid"
-      },
-      {
-       "node": "div::after.framer-1n1l10e",
-       "size": "1232pxx116px",
-       "border": "R:1px solid"
-      },
-      {
-       "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
-       "bg": "rgb(0, 0, 0)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div::after.framer-p1xt7c",
-       "size": "160pxx116px",
-       "border": "R:1px solid"
-      },
-      {
-       "node": "div.framer-ig1a2v",
-       "size": "104.0x1.0",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
-       "node": "div.framer-1wtprsd",
-       "size": "64.0x1.0",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
-       "node": "div.framer-4opjpw",
-       "size": "104.0x1.0",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
-       "node": "div::after.framer-5sxjpq",
-       "size": "1392pxx1069.91px",
-       "border": "R:1px solid | B:1px solid | L:1px solid"
-      },
-      {
-       "node": "div::after.framer-2nu4y2",
-       "size": "1392pxx696px",
-       "border": "T:1px solid"
-      },
-      {
-       "node": "div::after.framer-1rmbxu8",
-       "size": "1392pxx180px",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid"
-      },
-      {
-       "node": "div::after.framer-8rubyl",
-       "size": "1392pxx180px",
-       "border": "B:1px solid"
-      }
-     ],
      "textStyle": {
-      "node": "a.framer-text.framer-styles-preset-16lr516",
-      "text": "Features",
+      "node": "p.framer-text.framer-styles-preset-1tg37r6",
+      "text": "01",
       "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "19.2px",
-      "fontWeight": "600",
+      "fontSize": "24px",
+      "lineHeight": "33.6px",
+      "fontWeight": "500",
       "letterSpacing": "normal",
       "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 124,
-      "h": 60,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(0, 0, 238)"
-     },
      "via": "the menu box's own press (overlay open; reloaded afterwards)",
-     "run": "2026-11-17T09:09:34.565Z"
+     "crop": "components/crops/nav-menu-box-opened.png",
+     "run": "2026-11-17T12:58:28.203Z"
     }
    }
   },
@@ -1694,7 +1615,7 @@
    "selector": "h1",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:09:34.619Z",
+   "run": "2026-11-17T12:58:28.205Z",
    "states": {
     "default": {
      "tag": "h1",
@@ -1778,7 +1699,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/hero-heading-default.png",
-     "run": "2026-11-17T09:10:27.358Z"
+     "run": "2026-11-17T12:58:40.019Z"
     },
     "dark": {
      "tag": "h1",
@@ -1862,7 +1783,7 @@
      },
      "via": "same element after the footer \"Change theme\" toggle repaints html[toggle-theme=dark]",
      "crop": "components/crops/hero-heading-dark.png",
-     "run": "2026-11-17T09:10:31.528Z"
+     "run": "2026-11-17T12:58:43.483Z"
     }
    }
   },
@@ -1873,7 +1794,7 @@
    "selector": "p (sentence)",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:10:34.224Z",
+   "run": "2026-11-17T12:58:45.845Z",
    "states": {
     "default": {
      "tag": "p",
@@ -1957,34 +1878,34 @@
      },
      "via": "resting state",
      "crop": "components/crops/hero-copy-default.png",
-     "run": "2026-11-17T09:11:01.180Z"
+     "run": "2026-11-17T12:58:46.931Z"
     }
    }
   },
   "hero-cta": {
    "group": "Marketing",
    "title": "Hero call-to-action",
-   "desc": "The solid button under the hero (\"Try it for free\" / \"Get Started - Free Trial\") — links to the app, measured never followed.",
-   "selector": "a/button (trial CTA)",
+   "desc": "The trial CTA — the floating \"Try it for free\" pill painted bottom-right on the marketing pages — links to the app, measured never followed.",
+   "selector": "a/button (trial CTA, outside the nav)",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:11:01.303Z",
+   "run": "2026-11-17T12:58:46.937Z",
    "states": {
     "default": {
      "tag": "a",
-     "classes": "framer-1lje3 framer-12mefgs framer-v-12mefgs framer-1t1lr6l",
-     "text": "Get Started",
+     "classes": "framer-1lje3 framer-12mefgs framer-v-2szbug framer-1t1lr6l",
+     "text": "Try it for free",
      "rect": {
-      "x": 1078,
-      "y": 54,
-      "w": 154,
+      "x": 1220,
+      "y": 824,
+      "w": 196,
       "h": 56
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "154px",
+      "width": "196px",
       "height": "56px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2053,14 +1974,14 @@
      "paint": [
       {
        "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
+       "size": "196.0x56.0",
        "bg": "rgb(0, 0, 0)",
        "radius": "9999px"
       }
      ],
      "textStyle": {
       "node": "p.framer-text",
-      "text": "Get Started",
+      "text": "Try it for free",
       "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
       "fontSize": "16px",
       "lineHeight": "19.2px",
@@ -2070,25 +1991,32 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "icon": {
+      "w": 17,
+      "h": 22,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(0, 0, 238)"
+     },
      "via": "resting state",
      "crop": "components/crops/hero-cta-default.png",
-     "run": "2026-11-17T09:11:07.150Z"
+     "run": "2026-11-17T12:58:47.813Z"
     },
     "hover": {
      "tag": "a",
-     "classes": "framer-1lje3 framer-12mefgs framer-v-12mefgs hover",
-     "text": "Get Started",
+     "classes": "framer-1lje3 framer-12mefgs framer-v-2szbug hover",
+     "text": "Try it for free",
      "rect": {
-      "x": 1078,
-      "y": 54,
-      "w": 154,
+      "x": 1220,
+      "y": 824,
+      "w": 196,
       "h": 56
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "154px",
+      "width": "196px",
       "height": "56px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2157,14 +2085,14 @@
      "paint": [
       {
        "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
+       "size": "196.0x56.0",
        "bg": "rgb(0, 0, 0)",
        "radius": "9999px"
       }
      ],
      "textStyle": {
       "node": "p.framer-text",
-      "text": "Get Started",
+      "text": "Try it for free",
       "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
       "fontSize": "16px",
       "lineHeight": "19.2px",
@@ -2174,25 +2102,32 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "icon": {
+      "w": 17,
+      "h": 22,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(0, 0, 238)"
+     },
      "via": "mouse hover over the element",
      "crop": "components/crops/hero-cta-hover.png",
-     "run": "2026-11-17T09:11:44.064Z"
+     "run": "2026-11-17T12:58:49.706Z"
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "framer-1lje3 framer-12mefgs framer-v-12mefgs framer-1t1lr6l",
-     "text": "Get Started",
+     "classes": "framer-1lje3 framer-12mefgs framer-v-2szbug framer-1t1lr6l",
+     "text": "Try it for free",
      "rect": {
-      "x": 1078,
-      "y": 54,
-      "w": 154,
+      "x": 1220,
+      "y": 820.2,
+      "w": 196,
       "h": 56
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "154px",
+      "width": "196px",
       "height": "56px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2261,7 +2196,7 @@
      "paint": [
       {
        "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
+       "size": "196.0x56.0",
        "bg": "rgb(0, 0, 0)",
        "outline": "1px auto rgb(16, 16, 16) offset 1px",
        "radius": "9999px"
@@ -2269,7 +2204,7 @@
      ],
      "textStyle": {
       "node": "p.framer-text",
-      "text": "Get Started",
+      "text": "Try it for free",
       "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
       "fontSize": "16px",
       "lineHeight": "19.2px",
@@ -2278,130 +2213,33 @@
       "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
       "textTransform": "none"
+     },
+     "icon": {
+      "w": 17,
+      "h": 22,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(0, 0, 238)"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/hero-cta-focus-visible.png",
-     "run": "2026-11-17T09:12:01.293Z"
-    },
-    "pressed": {
-     "tag": "a",
-     "classes": "framer-1lje3 framer-12mefgs framer-v-12mefgs framer-1t1lr6l",
-     "text": "Get Started",
-     "rect": {
-      "x": 1078,
-      "y": 54,
-      "w": 154,
-      "h": 56
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "154px",
-      "height": "56px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "15px",
-      "paddingRight": "30px",
-      "paddingBottom": "15px",
-      "paddingLeft": "30px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 238)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 238)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 238)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 238)",
-      "borderTopLeftRadius": "9999px",
-      "borderTopRightRadius": "9999px",
-      "borderBottomRightRadius": "9999px",
-      "borderBottomLeftRadius": "9999px",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 238)",
-      "outlineOffset": "0px",
-      "fontFamily": "sans-serif",
-      "fontSize": "12px",
-      "fontWeight": "400",
-      "lineHeight": "normal",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 238)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 238)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "none",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
-       "bg": "rgb(0, 0, 0)",
-       "radius": "9999px"
-      }
-     ],
-     "textStyle": {
-      "node": "p.framer-text",
-      "text": "Get Started",
-      "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "19.2px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
-     "crop": "components/crops/hero-cta-pressed.png",
-     "run": "2026-11-17T09:12:03.581Z"
+     "run": "2026-11-17T12:58:51.025Z"
     },
     "dark": {
      "tag": "a",
-     "classes": "framer-1lje3 framer-12mefgs framer-v-12mefgs framer-1t1lr6l",
-     "text": "Get Started",
+     "classes": "framer-1lje3 framer-12mefgs framer-v-2szbug framer-1t1lr6l",
+     "text": "Try it for free",
      "rect": {
-      "x": 1078,
-      "y": 54,
-      "w": 154,
+      "x": 1220,
+      "y": 820.2,
+      "w": 196,
       "h": 56
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "154px",
+      "width": "196px",
       "height": "56px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2470,14 +2308,14 @@
      "paint": [
       {
        "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
+       "size": "196.0x56.0",
        "bg": "rgb(250, 246, 240)",
        "radius": "9999px"
       }
      ],
      "textStyle": {
       "node": "p.framer-text",
-      "text": "Get Started",
+      "text": "Try it for free",
       "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
       "fontSize": "16px",
       "lineHeight": "19.2px",
@@ -2487,9 +2325,127 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "icon": {
+      "w": 17,
+      "h": 22,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(158, 158, 255)"
+     },
      "via": "same element after the footer \"Change theme\" toggle repaints html[toggle-theme=dark]",
      "crop": "components/crops/hero-cta-dark.png",
-     "run": "2026-11-17T09:12:10.120Z"
+     "run": "2026-11-17T12:58:55.969Z"
+    },
+    "pressed": {
+     "tag": "a",
+     "classes": "framer-1lje3 framer-12mefgs framer-v-2szbug framer-1t1lr6l",
+     "text": "Try it for free",
+     "rect": {
+      "x": 1220,
+      "y": 820.2,
+      "w": 196,
+      "h": 56
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "196px",
+      "height": "56px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "15px",
+      "paddingRight": "30px",
+      "paddingBottom": "15px",
+      "paddingLeft": "30px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "10px",
+      "rowGap": "10px",
+      "columnGap": "10px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 0, 0)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 0, 0)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 0, 0)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 0, 0)",
+      "borderTopLeftRadius": "9999px",
+      "borderTopRightRadius": "9999px",
+      "borderBottomRightRadius": "9999px",
+      "borderBottomLeftRadius": "9999px",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "none",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "a.framer-1lje3.framer-12mefgs",
+       "size": "196.0x56.0",
+       "bg": "rgb(0, 0, 0)",
+       "radius": "9999px"
+      }
+     ],
+     "textStyle": {
+      "node": "p.framer-text",
+      "text": "Try it for free",
+      "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "19.2px",
+      "fontWeight": "600",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 17,
+      "h": 22,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(255, 0, 0)"
+     },
+     "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
+     "crop": "components/crops/hero-cta-pressed.png",
+     "run": "2026-11-17T12:58:52.712Z"
     }
    }
   },
@@ -2500,7 +2456,7 @@
    "selector": "h3",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:12:12.728Z",
+   "run": "2026-11-17T12:58:58.328Z",
    "states": {
     "default": {
      "tag": "h3",
@@ -2508,7 +2464,7 @@
      "text": "The tools to make it all happen.",
      "rect": {
       "x": 212,
-      "y": 382.5,
+      "y": 368.1,
       "w": 800,
       "h": 136.41
      },
@@ -2584,7 +2540,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/section-heading-default.png",
-     "run": "2026-11-17T09:12:42.721Z"
+     "run": "2026-11-17T12:58:59.409Z"
     },
     "dark": {
      "tag": "h3",
@@ -2667,7 +2623,8 @@
       "top": "auto"
      },
      "via": "same element after the footer \"Change theme\" toggle repaints html[toggle-theme=dark]",
-     "run": "2026-11-17T09:13:55.034Z"
+     "crop": "components/crops/section-heading-dark.png",
+     "run": "2026-11-17T12:59:02.785Z"
     }
    }
   },
@@ -2675,30 +2632,30 @@
    "group": "Site chrome",
    "title": "Footer",
    "desc": "The page footer: product/resource columns, the social icons, the \"Change theme\" control and the \"Try it for free\" CTA.",
-   "selector": "footer",
+   "selector": "footer (the whole block)",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:13:58.419Z",
+   "run": "2026-11-17T12:59:05.145Z",
    "states": {
     "default": {
      "tag": "div",
-     "classes": "framer-1ddt12h",
-     "text": "© 2024 Hello Ivy Inc. ・ Terms",
+     "classes": "framer-MCeyU framer-BAp5c framer-8QzD2 framer-o0W2X",
+     "text": "LOOKS GREAT GET STARTED 447 Broadway New York, 10013 hello@helloivy.co Features ",
      "rect": {
-      "x": 590.5,
-      "y": 753,
-      "w": 175,
-      "h": 19.2
+      "x": 24,
+      "y": 235.8,
+      "w": 1392,
+      "h": 560.41
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "175px",
-      "height": "19.2031px",
-      "minWidth": "auto",
+      "width": "1392px",
+      "height": "560.406px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -2707,12 +2664,12 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "0px",
+      "rowGap": "0px",
+      "columnGap": "0px",
       "flexDirection": "column",
-      "alignItems": "normal",
-      "justifyContent": "flex-start",
+      "alignItems": "center",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -2760,41 +2717,107 @@
       "zIndex": "auto",
       "top": "0px"
      },
+     "::after": {
+      "content": "\"\"",
+      "width": "1392px",
+      "height": "560.406px",
+      "position": "absolute",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(0, 0, 0)",
+      "borderRadius": "0px",
+      "inset": "0px 0px 0px 0px",
+      "opacity": "1",
+      "transition": "all"
+     },
+     "paint": [
+      {
+       "node": "div::after.framer-MCeyU.framer-BAp5c",
+       "size": "1392pxx560.406px",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid"
+      },
+      {
+       "node": "div::after.framer-cmnq2x",
+       "size": "1392pxx116.203px",
+       "border": "B:1px solid"
+      },
+      {
+       "node": "div.framer-1r83dga",
+       "size": "9.0x9.0",
+       "bg": "rgb(0, 0, 0)",
+       "radius": "100px"
+      },
+      {
+       "node": "div::after.framer-ivcetf",
+       "size": "1392pxx377px",
+       "border": "B:1px solid"
+      },
+      {
+       "node": "div::after.framer-1ddini9",
+       "size": "278.391pxx377px",
+       "border": "R:1px solid"
+      },
+      {
+       "node": "div::after.framer-14gy5od",
+       "size": "278.406pxx377px",
+       "border": "R:1px solid"
+      },
+      {
+       "node": "div::after.framer-1op4ido",
+       "size": "278.391pxx377px",
+       "border": "R:1px solid"
+      },
+      {
+       "node": "div::after.framer-13nc4wr",
+       "size": "278.406pxx377px",
+       "border": "R:1px solid"
+      }
+     ],
      "textStyle": {
-      "node": "p.framer-text.framer-styles-preset-1te43qg",
-      "text": "© 2024 Hello Ivy Inc. ・",
-      "fontFamily": "Inter, sans-serif",
-      "fontSize": "12px",
-      "lineHeight": "19.2px",
-      "fontWeight": "400",
+      "node": "h3.framer-text.framer-styles-preset-1nnq1zc",
+      "text": "LOOKS GREAT",
+      "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+      "fontSize": "62px",
+      "lineHeight": "68.2px",
+      "fontWeight": "500",
       "letterSpacing": "normal",
       "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "icon": {
+      "w": 48,
+      "h": 48,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
      "via": "resting state",
      "crop": "components/crops/footer-default.png",
-     "run": "2026-11-17T09:14:03.744Z"
+     "run": "2026-11-17T12:59:06.366Z"
     },
     "dark": {
      "tag": "div",
-     "classes": "framer-1ddt12h",
-     "text": "© 2024 Hello Ivy Inc. ・ Terms",
+     "classes": "framer-MCeyU framer-BAp5c framer-8QzD2 framer-o0W2X",
+     "text": "LOOKS GREAT GET STARTED 447 Broadway New York, 10013 hello@helloivy.co Features ",
      "rect": {
-      "x": 590.5,
-      "y": 753,
-      "w": 175,
-      "h": 19.2
+      "x": 24,
+      "y": 235.8,
+      "w": 1392,
+      "h": 560.41
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "175px",
-      "height": "19.2031px",
-      "minWidth": "auto",
+      "width": "1392px",
+      "height": "560.406px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -2803,12 +2826,12 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "0px",
+      "rowGap": "0px",
+      "columnGap": "0px",
       "flexDirection": "column",
-      "alignItems": "normal",
-      "justifyContent": "flex-start",
+      "alignItems": "center",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -2856,21 +2879,87 @@
       "zIndex": "auto",
       "top": "0px"
      },
+     "::after": {
+      "content": "\"\"",
+      "width": "1392px",
+      "height": "560.406px",
+      "position": "absolute",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(102, 102, 98)",
+      "borderRadius": "0px",
+      "inset": "0px 0px 0px 0px",
+      "opacity": "1",
+      "transition": "all"
+     },
+     "paint": [
+      {
+       "node": "div::after.framer-MCeyU.framer-BAp5c",
+       "size": "1392pxx560.406px",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid"
+      },
+      {
+       "node": "div::after.framer-cmnq2x",
+       "size": "1392pxx116.203px",
+       "border": "B:1px solid"
+      },
+      {
+       "node": "div.framer-1r83dga",
+       "size": "9.0x9.0",
+       "bg": "rgb(237, 236, 218)",
+       "radius": "100px"
+      },
+      {
+       "node": "div::after.framer-ivcetf",
+       "size": "1392pxx377px",
+       "border": "B:1px solid"
+      },
+      {
+       "node": "div::after.framer-1ddini9",
+       "size": "278.391pxx377px",
+       "border": "R:1px solid"
+      },
+      {
+       "node": "div::after.framer-14gy5od",
+       "size": "278.406pxx377px",
+       "border": "R:1px solid"
+      },
+      {
+       "node": "div::after.framer-1op4ido",
+       "size": "278.391pxx377px",
+       "border": "R:1px solid"
+      },
+      {
+       "node": "div::after.framer-13nc4wr",
+       "size": "278.406pxx377px",
+       "border": "R:1px solid"
+      }
+     ],
      "textStyle": {
-      "node": "p.framer-text.framer-styles-preset-1te43qg",
-      "text": "© 2024 Hello Ivy Inc. ・",
-      "fontFamily": "Inter, sans-serif",
-      "fontSize": "12px",
-      "lineHeight": "19.2px",
-      "fontWeight": "400",
+      "node": "h3.framer-text.framer-styles-preset-1nnq1zc",
+      "text": "LOOKS GREAT",
+      "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+      "fontSize": "62px",
+      "lineHeight": "68.2px",
+      "fontWeight": "500",
       "letterSpacing": "normal",
       "color": "rgb(237, 236, 218)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "icon": {
+      "w": 48,
+      "h": 48,
+      "fill": "rgb(237, 236, 218)",
+      "stroke": "none",
+      "color": "rgb(237, 236, 218)"
+     },
      "via": "same element after the footer \"Change theme\" toggle repaints html[toggle-theme=dark]",
      "crop": "components/crops/footer-dark.png",
-     "run": "2026-11-17T09:14:10.470Z"
+     "run": "2026-11-17T12:59:09.922Z"
     }
    }
   },
@@ -2881,7 +2970,7 @@
    "selector": "footer leaf (text Change theme)",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:14:14.759Z",
+   "run": "2026-11-17T12:59:12.298Z",
    "states": {
     "default": {
      "tag": "p",
@@ -2965,7 +3054,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/theme-control-default.png",
-     "run": "2026-11-17T09:14:26.686Z"
+     "run": "2026-11-17T12:59:13.172Z"
     },
     "hover": {
      "tag": "p",
@@ -3049,28 +3138,28 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/theme-control-hover.png",
-     "run": "2026-11-17T09:14:28.844Z"
+     "run": "2026-11-17T12:59:15.023Z"
     }
    }
   },
   "footer-link": {
    "group": "Site chrome",
    "title": "Footer link",
-   "desc": "A footer column link (a product page).",
-   "selector": "footer a",
+   "desc": "A footer column link (a product page) — an anchor inside the measured footer block.",
+   "selector": "a inside the footer block",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:14:28.963Z",
+   "run": "2026-11-17T12:59:15.028Z",
    "states": {
     "default": {
      "tag": "a",
      "classes": "framer-text framer-styles-preset-16lr516",
-     "text": "Pricing",
+     "text": "Docs",
      "rect": {
-      "x": 918,
-      "y": 71.4,
-      "w": 55,
-      "h": 20
+      "x": 326.4,
+      "y": 465,
+      "w": 34,
+      "h": 17
      },
      "style": {
       "display": "inline",
@@ -3121,9 +3210,9 @@
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "600",
-      "lineHeight": "19.2px",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "22px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
@@ -3144,17 +3233,17 @@
      },
      "via": "resting state",
      "crop": "components/crops/footer-link-default.png",
-     "run": "2026-11-17T09:14:46.979Z"
+     "run": "2026-11-17T12:59:15.868Z"
     },
     "hover": {
      "tag": "a",
      "classes": "framer-text framer-styles-preset-16lr516",
-     "text": "Pricing",
+     "text": "Docs",
      "rect": {
-      "x": 918,
-      "y": 71.4,
-      "w": 55,
-      "h": 20
+      "x": 326.4,
+      "y": 465,
+      "w": 34,
+      "h": 17
      },
      "style": {
       "display": "inline",
@@ -3205,9 +3294,9 @@
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "600",
-      "lineHeight": "19.2px",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "22px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
@@ -3228,7 +3317,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/footer-link-hover.png",
-     "run": "2026-11-17T09:14:58.870Z"
+     "run": "2026-11-17T12:59:17.689Z"
     }
    }
   },
@@ -3236,27 +3325,27 @@
    "group": "Pricing",
    "title": "Plan card",
    "desc": "A pricing card (\"Grow\" / \"Business\" / \"Enterprise\"): name, price, allowance rows and its CTA.",
-   "selector": "box (priced plan)",
+   "selector": "box (priced plan with its own CTA)",
    "page": "pricing",
    "url": "https://www.helloivy.co/pricing",
-   "run": "2026-11-17T08:58:07.590Z",
+   "run": "2026-11-17T12:59:28.448Z",
    "states": {
     "default": {
      "tag": "div",
-     "classes": "framer-1rvzmnx",
-     "text": "Prefer paying one monthly fee for unlimited users? That's possible for $349/mont",
+     "classes": "framer-ni55qm",
+     "text": "Grow $12 per user per month For creative teams up to 10 people. All features Unl",
      "rect": {
-      "x": 48,
-      "y": 383,
-      "w": 488,
-      "h": 135.19
+      "x": 24,
+      "y": 164.6,
+      "w": 464,
+      "h": 571
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "488px",
-      "height": "135.188px",
+      "width": "464px",
+      "height": "571px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -3268,11 +3357,11 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "0px",
+      "rowGap": "0px",
+      "columnGap": "0px",
       "flexDirection": "column",
-      "alignItems": "normal",
+      "alignItems": "flex-start",
       "justifyContent": "flex-start",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -3317,42 +3406,61 @@
       "cursor": "none",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "0px"
      },
+     "paint": [
+      {
+       "node": "div::after.framer-1fhyswc",
+       "size": "464pxx166.391px",
+       "border": "B:1px solid"
+      },
+      {
+       "node": "a.framer-vVI5g.framer-4vbkq",
+       "size": "416.0x49.6",
+       "bg": "rgb(0, 0, 0)"
+      }
+     ],
      "textStyle": {
-      "node": "strong.framer-text",
-      "text": "Prefer paying one monthly fee for",
-      "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
-      "fontSize": "18px",
-      "lineHeight": "28.8px",
-      "fontWeight": "700",
-      "letterSpacing": "normal",
+      "node": "h6.framer-text.framer-styles-preset-73gayi",
+      "text": "Grow",
+      "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": "500",
+      "letterSpacing": "0.4px",
       "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
      "via": "resting state",
      "crop": "components/crops/plan-card-default.png",
-     "run": "2026-11-17T08:58:22.070Z"
+     "run": "2026-11-17T12:59:29.636Z"
     },
     "dark": {
      "tag": "div",
-     "classes": "framer-1rvzmnx",
-     "text": "Prefer paying one monthly fee for unlimited users? That's possible for $349/mont",
+     "classes": "framer-ni55qm",
+     "text": "Grow $12 per user per month For creative teams up to 10 people. All features Unl",
      "rect": {
-      "x": 48,
-      "y": 383,
-      "w": 488,
-      "h": 135.19
+      "x": 24,
+      "y": 164.6,
+      "w": 464,
+      "h": 571
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "488px",
-      "height": "135.188px",
+      "width": "464px",
+      "height": "571px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -3364,11 +3472,11 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "0px",
+      "rowGap": "0px",
+      "columnGap": "0px",
       "flexDirection": "column",
-      "alignItems": "normal",
+      "alignItems": "flex-start",
       "justifyContent": "flex-start",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -3413,67 +3521,86 @@
       "cursor": "none",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "0px"
      },
+     "paint": [
+      {
+       "node": "div::after.framer-1fhyswc",
+       "size": "464pxx166.391px",
+       "border": "B:1px solid"
+      },
+      {
+       "node": "a.framer-vVI5g.framer-4vbkq",
+       "size": "416.0x49.6",
+       "bg": "rgb(237, 236, 218)"
+      }
+     ],
      "textStyle": {
-      "node": "strong.framer-text",
-      "text": "Prefer paying one monthly fee for",
-      "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
-      "fontSize": "18px",
-      "lineHeight": "28.8px",
-      "fontWeight": "700",
-      "letterSpacing": "normal",
+      "node": "h6.framer-text.framer-styles-preset-73gayi",
+      "text": "Grow",
+      "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": "500",
+      "letterSpacing": "0.4px",
       "color": "rgb(237, 236, 218)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "icon": {
+      "w": 20,
+      "h": 20,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
      "via": "same element after the footer \"Change theme\" toggle repaints html[toggle-theme=dark]",
      "crop": "components/crops/plan-card-dark.png",
-     "run": "2026-11-17T08:58:25.699Z"
+     "run": "2026-11-17T12:59:33.111Z"
     }
    }
   },
   "plan-cta": {
    "group": "Pricing",
    "title": "Plan CTA button",
-   "desc": "A plan's call-to-action — links to the app; measured, never followed.",
-   "selector": "a/button (plan CTA)",
+   "desc": "A plan's call-to-action inside the measured plan card — links to the app; measured, never followed.",
+   "selector": "a/button inside the plan card",
    "page": "pricing",
    "url": "https://www.helloivy.co/pricing",
-   "run": "2026-11-17T08:58:59.202Z",
+   "run": "2026-11-17T12:59:57.882Z",
    "states": {
     "default": {
      "tag": "a",
-     "classes": "framer-1lje3 framer-12mefgs framer-v-12mefgs framer-1t1lr6l",
-     "text": "Get Started",
+     "classes": "framer-vVI5g framer-4vbkq framer-10qwo6x framer-v-10qwo6x",
+     "text": "Try for Free",
      "rect": {
-      "x": 1078,
-      "y": 54,
-      "w": 154,
-      "h": 56
+      "x": 48,
+      "y": 426,
+      "w": 416,
+      "h": 49.59
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "154px",
-      "height": "56px",
+      "width": "416px",
+      "height": "49.5938px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "15px",
-      "paddingRight": "30px",
-      "paddingBottom": "15px",
-      "paddingLeft": "30px",
+      "paddingTop": "12px",
+      "paddingRight": "20px",
+      "paddingBottom": "12px",
+      "paddingLeft": "20px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "6px",
+      "rowGap": "6px",
+      "columnGap": "6px",
       "flexDirection": "row",
       "alignItems": "center",
       "justifyContent": "center",
@@ -3490,10 +3617,10 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(0, 0, 238)",
-      "borderTopLeftRadius": "9999px",
-      "borderTopRightRadius": "9999px",
-      "borderBottomRightRadius": "9999px",
-      "borderBottomLeftRadius": "9999px",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgb(0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
@@ -3520,64 +3647,63 @@
       "cursor": "none",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "0px"
      },
      "paint": [
       {
-       "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
-       "bg": "rgb(0, 0, 0)",
-       "radius": "9999px"
+       "node": "a.framer-vVI5g.framer-4vbkq",
+       "size": "416.0x49.6",
+       "bg": "rgb(0, 0, 0)"
       }
      ],
      "textStyle": {
-      "node": "p.framer-text",
-      "text": "Get Started",
-      "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+      "node": "h1.framer-text.framer-styles-preset-1fllz1t",
+      "text": "Try for Free",
+      "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
       "fontSize": "16px",
-      "lineHeight": "19.2px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
+      "lineHeight": "25.6px",
+      "fontWeight": "500",
+      "letterSpacing": "0.48px",
+      "color": "rgb(250, 246, 240)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "via": "resting state",
      "crop": "components/crops/plan-cta-default.png",
-     "run": "2026-11-17T08:59:09.095Z"
+     "run": "2026-11-17T12:59:58.779Z"
     },
     "hover": {
      "tag": "a",
-     "classes": "framer-1lje3 framer-12mefgs framer-v-12mefgs hover",
-     "text": "Get Started",
+     "classes": "framer-vVI5g framer-4vbkq framer-10qwo6x framer-v-10qwo6x",
+     "text": "Try for Free",
      "rect": {
-      "x": 1078,
-      "y": 54,
-      "w": 154,
-      "h": 56
+      "x": 48,
+      "y": 426,
+      "w": 416,
+      "h": 49.59
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "154px",
-      "height": "56px",
+      "width": "416px",
+      "height": "49.5938px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "15px",
-      "paddingRight": "30px",
-      "paddingBottom": "15px",
-      "paddingLeft": "30px",
+      "paddingTop": "12px",
+      "paddingRight": "20px",
+      "paddingBottom": "12px",
+      "paddingLeft": "20px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "12px",
+      "rowGap": "12px",
+      "columnGap": "12px",
       "flexDirection": "row",
       "alignItems": "center",
       "justifyContent": "center",
@@ -3594,10 +3720,10 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(0, 0, 238)",
-      "borderTopLeftRadius": "9999px",
-      "borderTopRightRadius": "9999px",
-      "borderBottomRightRadius": "9999px",
-      "borderBottomLeftRadius": "9999px",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgb(0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
@@ -3622,66 +3748,65 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "none",
-      "opacity": "0.8",
+      "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "0px"
      },
      "paint": [
       {
-       "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
-       "bg": "rgb(0, 0, 0)",
-       "radius": "9999px"
+       "node": "a.framer-vVI5g.framer-4vbkq",
+       "size": "416.0x49.6",
+       "bg": "rgb(0, 0, 0)"
       }
      ],
      "textStyle": {
-      "node": "p.framer-text",
-      "text": "Get Started",
-      "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+      "node": "h1.framer-text.framer-styles-preset-1fllz1t",
+      "text": "Try for Free",
+      "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
       "fontSize": "16px",
-      "lineHeight": "19.2px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
+      "lineHeight": "25.6px",
+      "fontWeight": "500",
+      "letterSpacing": "0.48px",
+      "color": "rgb(250, 246, 240)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/plan-cta-hover.png",
-     "run": "2026-11-17T08:59:12.738Z"
+     "run": "2026-11-17T13:00:00.630Z"
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "framer-1lje3 framer-12mefgs framer-v-12mefgs framer-1t1lr6l",
-     "text": "Get Started",
+     "classes": "framer-vVI5g framer-4vbkq framer-10qwo6x framer-v-10qwo6x",
+     "text": "Try for Free",
      "rect": {
-      "x": 1078,
-      "y": 54,
-      "w": 154,
-      "h": 56
+      "x": 48,
+      "y": 426,
+      "w": 416,
+      "h": 49.59
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "154px",
-      "height": "56px",
+      "width": "416px",
+      "height": "49.5938px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "15px",
-      "paddingRight": "30px",
-      "paddingBottom": "15px",
-      "paddingLeft": "30px",
+      "paddingTop": "12px",
+      "paddingRight": "20px",
+      "paddingBottom": "12px",
+      "paddingLeft": "20px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "6px",
+      "rowGap": "6px",
+      "columnGap": "6px",
       "flexDirection": "row",
       "alignItems": "center",
       "justifyContent": "center",
@@ -3698,10 +3823,10 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(0, 0, 238)",
-      "borderTopLeftRadius": "9999px",
-      "borderTopRightRadius": "9999px",
-      "borderBottomRightRadius": "9999px",
-      "borderBottomLeftRadius": "9999px",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgb(0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
@@ -3728,92 +3853,91 @@
       "cursor": "none",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "0px"
      },
      "paint": [
       {
-       "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
+       "node": "a.framer-vVI5g.framer-4vbkq",
+       "size": "416.0x49.6",
        "bg": "rgb(0, 0, 0)",
-       "outline": "1px auto rgb(16, 16, 16) offset 1px",
-       "radius": "9999px"
+       "outline": "1px auto rgb(16, 16, 16) offset 1px"
       }
      ],
      "textStyle": {
-      "node": "p.framer-text",
-      "text": "Get Started",
-      "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+      "node": "h1.framer-text.framer-styles-preset-1fllz1t",
+      "text": "Try for Free",
+      "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
       "fontSize": "16px",
-      "lineHeight": "19.2px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
+      "lineHeight": "25.6px",
+      "fontWeight": "500",
+      "letterSpacing": "0.48px",
+      "color": "rgb(250, 246, 240)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/plan-cta-focus-visible.png",
-     "run": "2026-11-17T08:59:14.554Z"
+     "run": "2026-11-17T13:00:01.954Z"
     },
     "pressed": {
      "tag": "a",
-     "classes": "framer-1lje3 framer-12mefgs framer-v-12mefgs framer-1t1lr6l",
-     "text": "Get Started",
+     "classes": "framer-vVI5g framer-4vbkq framer-10qwo6x framer-v-10qwo6x",
+     "text": "Try for Free",
      "rect": {
-      "x": 1078,
-      "y": 54,
-      "w": 154,
-      "h": 56
+      "x": 48,
+      "y": 426,
+      "w": 416,
+      "h": 49.59
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "154px",
-      "height": "56px",
+      "width": "416px",
+      "height": "49.5938px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "15px",
-      "paddingRight": "30px",
-      "paddingBottom": "15px",
-      "paddingLeft": "30px",
+      "paddingTop": "12px",
+      "paddingRight": "20px",
+      "paddingBottom": "12px",
+      "paddingLeft": "20px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "6px",
+      "rowGap": "6px",
+      "columnGap": "6px",
       "flexDirection": "row",
       "alignItems": "center",
       "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 238)",
+      "borderTopColor": "rgb(255, 0, 0)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 238)",
+      "borderRightColor": "rgb(255, 0, 0)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 238)",
+      "borderBottomColor": "rgb(255, 0, 0)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 238)",
-      "borderTopLeftRadius": "9999px",
-      "borderTopRightRadius": "9999px",
-      "borderBottomRightRadius": "9999px",
-      "borderBottomLeftRadius": "9999px",
+      "borderLeftColor": "rgb(255, 0, 0)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgb(0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 238)",
+      "outlineColor": "rgb(255, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "sans-serif",
       "fontSize": "12px",
@@ -3821,9 +3945,9 @@
       "lineHeight": "normal",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 238)",
+      "color": "rgb(255, 0, 0)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 238)",
+      "textDecorationColor": "rgb(255, 0, 0)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -3833,33 +3957,32 @@
       "cursor": "none",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "0px"
      },
      "paint": [
       {
-       "node": "a.framer-1lje3.framer-12mefgs",
-       "size": "154.0x56.0",
-       "bg": "rgb(0, 0, 0)",
-       "radius": "9999px"
+       "node": "a.framer-vVI5g.framer-4vbkq",
+       "size": "416.0x49.6",
+       "bg": "rgb(0, 0, 0)"
       }
      ],
      "textStyle": {
-      "node": "p.framer-text",
-      "text": "Get Started",
-      "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+      "node": "h1.framer-text.framer-styles-preset-1fllz1t",
+      "text": "Try for Free",
+      "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
       "fontSize": "16px",
-      "lineHeight": "19.2px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
+      "lineHeight": "25.6px",
+      "fontWeight": "500",
+      "letterSpacing": "0.48px",
+      "color": "rgb(250, 246, 240)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/plan-cta-pressed.png",
-     "run": "2026-11-17T08:59:15.918Z"
+     "run": "2026-11-17T13:00:03.679Z"
     }
    }
   },
@@ -3870,7 +3993,7 @@
    "selector": "row (text Is Hello Ivy only useful for design teams?)",
    "page": "pricing",
    "url": "https://www.helloivy.co/pricing",
-   "run": "2026-11-17T08:59:16.284Z",
+   "run": "2026-11-17T13:00:03.690Z",
    "states": {
     "default": {
      "tag": "p",
@@ -3878,7 +4001,7 @@
      "text": "Is Hello Ivy only useful for design teams?",
      "rect": {
       "x": 48,
-      "y": 418.9,
+      "y": 424.5,
       "w": 1300,
       "h": 25.59
      },
@@ -3954,7 +4077,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/faq-question-default.png",
-     "run": "2026-11-17T08:59:17.302Z"
+     "run": "2026-11-17T13:00:04.637Z"
     },
     "hover": {
      "tag": "p",
@@ -4038,7 +4161,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/faq-question-hover.png",
-     "run": "2026-11-17T08:59:19.548Z"
+     "run": "2026-11-17T13:00:06.530Z"
     },
     "opened": {
      "tag": "p",
@@ -4122,7 +4245,7 @@
      },
      "via": "the question row's own press (answer visible; pressed again to close)",
      "crop": "components/crops/faq-question-opened.png",
-     "run": "2026-11-17T08:59:22.120Z"
+     "run": "2026-11-17T13:00:08.742Z"
     }
    }
   },
@@ -4880,35 +5003,35 @@
    "selector": "form/card (login)",
    "page": "login",
    "url": "https://app.helloivy.co/login",
-   "run": "2026-11-17T09:01:21.045Z",
+   "run": "2026-11-17T12:50:06.057Z",
    "states": {
     "default": {
      "tag": "div",
-     "classes": "text-center",
-     "text": "Welcome back Log in using your account",
+     "classes": "max-w-[500px] mx-auto",
+     "text": "Welcome back Log in using your account Your email Your password Forgot password?",
      "rect": {
       "x": 470,
       "y": 223.1,
       "w": 500,
-      "h": 61.59
+      "h": 498.84
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "500px",
-      "height": "61.5938px",
+      "height": "498.844px",
       "minWidth": "0px",
-      "maxWidth": "none",
+      "maxWidth": "500px",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
-      "marginRight": "0px",
+      "marginRight": "184px",
       "marginBottom": "0px",
-      "marginLeft": "0px",
+      "marginLeft": "184px",
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
@@ -4962,6 +5085,46 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "paint": [
+      {
+       "node": "input.w-full.outline-none",
+       "size": "500.0x48.5",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
+       "bg": "rgb(252, 252, 252)",
+       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px",
+       "radius": "10px"
+      },
+      {
+       "node": "input.w-full.outline-none",
+       "size": "500.0x48.5",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
+       "bg": "rgb(252, 252, 252)",
+       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px",
+       "radius": "10px"
+      },
+      {
+       "node": "button.inline-flex.items-center",
+       "size": "500.0x53.3",
+       "bg": "rgb(34, 34, 34)",
+       "radius": "10px"
+      },
+      {
+       "node": "button.inline-flex.items-center",
+       "size": "500.0x56.0",
+       "border": "T:2px solid | R:2px solid | B:2px solid | L:2px solid",
+       "radius": "10px"
+      },
+      {
+       "node": "div.w-full.border-t",
+       "size": "500.0x1.0",
+       "border": "T:1px solid"
+      },
+      {
+       "node": "span.px-10.pt-10",
+       "size": "34.0x31.0",
+       "bg": "rgb(255, 255, 255)"
+      }
+     ],
      "textStyle": {
       "node": "p.auth-title",
       "text": "Welcome back",
@@ -4974,9 +5137,16 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "icon": {
+      "w": 30,
+      "h": 20,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(112, 123, 139)"
+     },
      "via": "resting state",
      "crop": "components/crops/login-card-default.png",
-     "run": "2026-11-17T09:01:21.945Z"
+     "run": "2026-11-17T12:50:07.120Z"
     }
    }
   },
@@ -4987,7 +5157,7 @@
    "selector": "input[type=\"email\"], input[name*=\"email\" i]",
    "page": "login",
    "url": "https://app.helloivy.co/login",
-   "run": "2026-11-17T09:01:21.947Z",
+   "run": "2026-11-17T12:50:07.123Z",
    "states": {
     "default": {
      "tag": "input",
@@ -5086,7 +5256,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-input-email-default.png",
-     "run": "2026-11-17T09:01:22.839Z"
+     "run": "2026-11-17T12:50:07.958Z"
     },
     "focused": {
      "tag": "input",
@@ -5186,7 +5356,7 @@
      },
      "via": "the field clicked into",
      "crop": "components/crops/login-input-email-focused.png",
-     "run": "2026-11-17T09:01:24.103Z"
+     "run": "2026-11-17T12:50:09.210Z"
     }
    }
   },
@@ -5197,7 +5367,7 @@
    "selector": "input[type=\"password\"]",
    "page": "login",
    "url": "https://app.helloivy.co/login",
-   "run": "2026-11-17T09:01:24.106Z",
+   "run": "2026-11-17T12:50:09.216Z",
    "states": {
     "default": {
      "tag": "input",
@@ -5296,7 +5466,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-input-password-default.png",
-     "run": "2026-11-17T09:01:25.026Z"
+     "run": "2026-11-17T12:50:10.062Z"
     }
    }
   },
@@ -5307,7 +5477,7 @@
    "selector": "button (text Continue)",
    "page": "login",
    "url": "https://app.helloivy.co/login",
-   "run": "2026-11-17T09:01:25.029Z",
+   "run": "2026-11-17T12:50:10.067Z",
    "states": {
     "default": {
      "tag": "button",
@@ -5411,7 +5581,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-continue-default.png",
-     "run": "2026-11-17T09:01:26.228Z"
+     "run": "2026-11-17T12:50:10.905Z"
     },
     "hover": {
      "tag": "button",
@@ -5515,7 +5685,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/login-continue-hover.png",
-     "run": "2026-11-17T09:01:28.032Z"
+     "run": "2026-11-17T12:50:12.681Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -5620,7 +5790,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/login-continue-focus-visible.png",
-     "run": "2026-11-17T09:01:29.290Z"
+     "run": "2026-11-17T12:50:13.922Z"
     }
    }
   },
@@ -5631,7 +5801,7 @@
    "selector": "button (text Login with Google)",
    "page": "login",
    "url": "https://app.helloivy.co/login",
-   "run": "2026-11-17T09:01:29.296Z",
+   "run": "2026-11-17T12:50:13.925Z",
    "states": {
     "default": {
      "tag": "button",
@@ -5742,7 +5912,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-google-default.png",
-     "run": "2026-11-17T09:01:30.192Z"
+     "run": "2026-11-17T12:50:14.786Z"
     },
     "hover": {
      "tag": "button",
@@ -5854,7 +6024,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/login-google-hover.png",
-     "run": "2026-11-17T09:01:32.035Z"
+     "run": "2026-11-17T12:50:16.602Z"
     }
    }
   },
@@ -5865,7 +6035,7 @@
    "selector": "a (text Sign up)",
    "page": "login",
    "url": "https://app.helloivy.co/login",
-   "run": "2026-11-17T09:01:32.038Z",
+   "run": "2026-11-17T12:50:16.645Z",
    "states": {
     "default": {
      "tag": "a",
@@ -5949,7 +6119,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-signup-default.png",
-     "run": "2026-11-17T09:01:32.895Z"
+     "run": "2026-11-17T12:50:17.468Z"
     },
     "hover": {
      "tag": "a",
@@ -6033,7 +6203,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/login-signup-hover.png",
-     "run": "2026-11-17T09:01:34.667Z"
+     "run": "2026-11-17T12:50:19.237Z"
     }
    }
   },
@@ -6044,7 +6214,7 @@
    "selector": "a (text Forgot password?)",
    "page": "login",
    "url": "https://app.helloivy.co/login",
-   "run": "2026-11-17T09:01:34.672Z",
+   "run": "2026-11-17T12:50:19.244Z",
    "states": {
     "default": {
      "tag": "a",
@@ -6128,7 +6298,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/login-forgot-default.png",
-     "run": "2026-11-17T09:01:35.522Z"
+     "run": "2026-11-17T12:50:20.089Z"
     },
     "hover": {
      "tag": "a",
@@ -6212,7 +6382,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/login-forgot-hover.png",
-     "run": "2026-11-17T09:01:37.414Z"
+     "run": "2026-11-17T12:50:21.881Z"
     }
    }
   },
@@ -6776,7 +6946,7 @@
    "selector": "top strip (ancestor of Menu)",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:23:36.317Z",
+   "run": "2026-11-17T12:50:32.594Z",
    "states": {
     "default": {
      "tag": "div",
@@ -6915,7 +7085,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/m-nav-bar-default.png",
-     "run": "2026-11-17T09:23:58.303Z"
+     "run": "2026-11-17T12:50:33.519Z"
     }
    }
   },
@@ -6926,27 +7096,27 @@
    "selector": "[data-framer-name=\"Menu\"]",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:23:58.433Z",
+   "run": "2026-11-17T12:50:33.525Z",
    "states": {
     "opened": {
-     "tag": "html",
-     "classes": "",
-     "text": "The Project Management Tool for Creative Teams. At Hello Ivy, we know that as a ",
+     "tag": "div",
+     "classes": "framer-pqk4rh",
+     "text": "01 HOME 02 FEATURES 03 PRICING 04 ABOUT 05 BLOG",
      "rect": {
       "x": 0,
-      "y": -6219,
+      "y": 0,
       "w": 390,
-      "h": 13282.56
+      "h": 343.98
      },
      "style": {
-      "display": "block",
-      "position": "static",
+      "display": "flex",
+      "position": "relative",
       "boxSizing": "border-box",
       "width": "390px",
-      "height": "13282.6px",
-      "minWidth": "0px",
+      "height": "343.984px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -6955,12 +7125,12 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
+      "gap": "0px",
+      "rowGap": "0px",
+      "columnGap": "0px",
+      "flexDirection": "column",
+      "alignItems": "center",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -6986,8 +7156,8 @@
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
-      "fontFamily": "\"Times New Roman\"",
-      "fontSize": "16px",
+      "fontFamily": "sans-serif",
+      "fontSize": "12px",
       "fontWeight": "400",
       "lineHeight": "normal",
       "letterSpacing": "normal",
@@ -7006,101 +7176,40 @@
       "transform": "none",
       "overflow": "hidden",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
      "paint": [
       {
-       "node": "body.framer-body-KqUl8LiGf-framer-kKUAY",
-       "size": "390.0x13282.6",
-       "bg": "rgb(250, 246, 240)"
-      },
-      {
-       "node": "div.framer-kKUAY.framer-R8WG4",
-       "size": "390.0x13282.6",
-       "bg": "rgb(250, 246, 240)"
-      },
-      {
-       "node": "div::after.framer-324l0c",
-       "size": "358pxx933.594px",
-       "border": "T:1px solid | R:1px solid | L:1px solid"
-      },
-      {
-       "node": "div::after.framer-qTIUJ.framer-o0W2X",
-       "size": "358pxx116px",
+       "node": "div::after.framer-k36hk2",
+       "size": "44pxx44px",
        "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid"
       },
       {
-       "node": "div::after.framer-1n1l10e",
-       "size": "198pxx116px",
-       "border": "R:1px solid"
-      },
-      {
-       "node": "div::after.framer-p1xt7c",
-       "size": "160pxx116px",
-       "border": "R:1px solid"
-      },
-      {
-       "node": "div.framer-ig1a2v",
-       "size": "104.0x1.0",
+       "node": "div.framer-13cooux",
+       "size": "19.1x19.1",
        "bg": "rgb(0, 0, 0)"
       },
       {
-       "node": "div.framer-1wtprsd",
-       "size": "64.0x1.0",
+       "node": "div.framer-1itw2xu",
+       "size": "19.1x19.1",
        "bg": "rgb(0, 0, 0)"
-      },
-      {
-       "node": "div.framer-4opjpw",
-       "size": "104.0x1.0",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
-       "node": "div::after.framer-5sxjpq",
-       "size": "358pxx817.594px",
-       "border": "R:1px solid | B:1px solid | L:1px solid"
-      },
-      {
-       "node": "div::after.framer-hf2k1x",
-       "size": "358pxx417.594px",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid"
-      },
-      {
-       "node": "div::after.framer-2nu4y2",
-       "size": "358pxx400px",
-       "border": "T:1px solid"
-      },
-      {
-       "node": "div::after.framer-1rmbxu8",
-       "size": "358pxx171px",
-       "border": "T:1px solid | R:1px solid | L:1px solid"
-      },
-      {
-       "node": "div::after.framer-8rubyl",
-       "size": "358pxx171px",
-       "border": "T:1px solid | R:1px solid | L:1px solid"
       }
      ],
      "textStyle": {
-      "node": "h3.framer-text",
-      "text": "The Project Management Tool for Creative",
-      "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
-      "fontSize": "32px",
-      "lineHeight": "38.4px",
+      "node": "p.framer-text.framer-styles-preset-1j07l0l",
+      "text": "01",
+      "fontFamily": "Inter-Medium, Inter, \"Inter Placeholder\", sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "25.6px",
       "fontWeight": "500",
       "letterSpacing": "normal",
       "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 124,
-      "h": 60,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(0, 0, 238)"
-     },
      "via": "the menu box's own tap (overlay open; reloaded afterwards)",
-     "run": "2026-11-17T09:24:55.307Z"
+     "crop": "components/crops/m-menu-box-opened.png",
+     "run": "2026-11-17T12:50:37.200Z"
     }
    }
   },
@@ -7111,7 +7220,7 @@
    "selector": "h1,h2,h3",
    "page": "home",
    "url": "https://www.helloivy.co/",
-   "run": "2026-11-17T09:24:56.579Z",
+   "run": "2026-11-17T12:50:37.207Z",
    "states": {
     "default": {
      "tag": "h3",
@@ -7186,7 +7295,7 @@
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "none",
+      "cursor": "auto",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
@@ -7195,7 +7304,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/m-hero-heading-default.png",
-     "run": "2026-11-17T09:25:19.281Z"
+     "run": "2026-11-17T12:50:48.903Z"
     }
    }
   }

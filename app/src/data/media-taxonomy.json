@@ -1374,8 +1374,8 @@
     },
     {
       "referenceId": "systems:helloivy",
-      "media": 118,
-      "assignedMedia": 118
+      "media": 121,
+      "assignedMedia": 121
     }
   ],
   "assignments": [
@@ -313492,6 +313492,17 @@
     },
     {
       "referenceId": "systems:helloivy",
+      "mediaId": "systems/helloivy/components/crops/m-menu-box-opened.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/helloivy/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:helloivy",
       "mediaId": "systems/helloivy/components/crops/m-nav-bar-default.png",
       "terms": [
         {
@@ -313635,6 +313646,17 @@
     },
     {
       "referenceId": "systems:helloivy",
+      "mediaId": "systems/helloivy/components/crops/nav-menu-box-opened.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/helloivy/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:helloivy",
       "mediaId": "systems/helloivy/components/crops/plan-card-dark.png",
       "terms": [
         {
@@ -313718,6 +313740,17 @@
           "rule": "ui-cards",
           "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/helloivy/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:helloivy",
+      "mediaId": "systems/helloivy/components/crops/section-heading-dark.png",
+      "terms": [
         {
           "termId": "web-fonts:inter",
           "rule": "font-primary",

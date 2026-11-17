@@ -13,7 +13,7 @@ colors:
   surface: "#ffffff"
   on-surface: "#000000"
   on-surface-variant: "#000000"
-  outline: "#0000ee"
+  outline: "#000000"
   color-ground: "#faf6f0"
   color-ink: "#000000"
   color-muted: "#000000"
@@ -23,7 +23,6 @@ colors:
   color-linkHover: "#555555"
   component-button-cta-bg: "#000000"
   component-button-cta-fg: "#ffffff"
-  component-button-cta-border: "#0000ee"
 typography:
   display:
     fontFamily: "Unbounded"
@@ -57,9 +56,11 @@ typography:
     fontWeight: 500
     lineHeight: "25.6px"
   cardTitle:
-    fontFamily: "sans-serif"
-    fontSize: "12px"
-    fontWeight: 400
+    fontFamily: "Unbounded"
+    fontSize: "34px"
+    fontWeight: 500
+    lineHeight: "40.8px"
+    letterSpacing: "0.34px"
   small:
     fontFamily: "Inter"
     fontSize: "14px"
@@ -67,9 +68,9 @@ typography:
     lineHeight: "21px"
   appTitle:
     fontFamily: "Inter"
-    fontSize: "15px"
-    fontWeight: 400
-    lineHeight: "22.5px"
+    fontSize: "23px"
+    fontWeight: 600
+    lineHeight: "27.6px"
   appButton:
     fontFamily: "Inter"
     fontSize: "17px"
@@ -124,11 +125,11 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 - **surface (#ffffff):** `light.color.inverseSurface`
 - **on-surface (#000000):** `light.color.ink`
 - **on-surface-variant (#000000):** `light.color.muted`
-- **outline (#0000ee):** `light.component.button.cta.border`
+- **outline (#000000):** `light.color.ink`
 
 ## Typography
 
-13 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: General Sans, Inter, Inter-Medium, Unbounded, sans-serif.
+13 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: General Sans, Inter, Inter-Medium, Unbounded.
 
 ## Layout
 

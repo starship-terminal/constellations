@@ -169,7 +169,9 @@ async function menuOverlay(p, S) {
   if (!ok) { log('  ! nav menu control missing'); return; }
   const [x, y] = (await p.evaluate(() => document.querySelector('[data-menu-xy]').getAttribute('data-menu-xy'))).split(',').map(Number);
   const isTouch = await p.evaluate(() => 'ontouchstart' in window && navigator.maxTouchPoints > 0);
-  const isOpen = () => p.evaluate(() => [...document.querySelectorAll('*')].some((e) => /01\s*HOME/i.test(e.innerText || '') && /FEATURES/i.test(e.innerText || '') && (e.innerText || '').length < 4000 && e.getBoundingClientRect().height > 300));
+  // The overlay's own painted box reports open — html/body also carry the
+  // text when the overlay never mounted, so they cannot count.
+  const isOpen = () => p.evaluate(() => [...document.querySelectorAll('*')].some((e) => e !== document.documentElement && e !== document.body && /01\s*HOME/i.test(e.innerText || '') && /FEATURES/i.test(e.innerText || '') && (e.innerText || '').length < 4000 && e.getBoundingClientRect().height > 300));
   // The press is flaky while the nav bar is still animating: press until the
   // overlay reports open (up to four tries), never a double-toggle — a retry
   // only fires while the overlay is still closed.
@@ -230,16 +232,28 @@ async function faqOpen(p, S) {
     const rows = [...document.querySelectorAll('div,p,h1,h2,h3,button,a')].filter((e) => /^Is Hello Ivy only useful for design teams\??$/i.test((e.innerText || '').trim()));
     const el = rows[0];
     if (!el) return false;
-    const r = el.getBoundingClientRect();
-    el.setAttribute('data-faq-xy', `${r.x + r.width / 2},${r.y + r.height / 2}`);
+    // Scroll first, then read the press point — coordinates taken before
+    // the scroll are stale the moment the row moves.
+    el.setAttribute('data-faq-xy', '1');
     el.scrollIntoView({ block: 'center', behavior: 'instant' });
     return true;
   });
   if (!q) { log('  ! faq question missing'); return; }
   await wait(p, 800);
-  const [x, y] = (await p.evaluate(() => document.querySelector('[data-faq-xy]').getAttribute('data-faq-xy'))).split(',').map(Number);
-  await p.mouse.click(x, y).catch(() => {});
+  const pt = await p.evaluate(() => {
+    const el = document.querySelector('[data-faq-xy]');
+    if (!el) return null;
+    const r = el.getBoundingClientRect();
+    return { x: r.x + r.width / 2, y: r.y + r.height / 2, h: document.documentElement.scrollHeight };
+  });
+  if (!pt || pt.y < 0 || pt.y > (p.viewportSize()?.height ?? 900)) { log('  ! faq question off-viewport after scroll'); return; }
+  await p.mouse.click(pt.x, pt.y).catch(() => {});
   await wait(p, 1200);
+  // The shot is only 'faq-open' when the row actually opened: the answer
+  // grows the document, or a row reports expanded.
+  const opened = await p.evaluate((h) =>
+    document.documentElement.scrollHeight > h + 20 || Boolean(document.querySelector('[aria-expanded="true"]')), pt.h);
+  if (!opened) { log('  ! faq press opened no answer — shot skipped'); return; }
   await S.view('faq-open');
 }
 
@@ -259,6 +273,11 @@ async function shareSettings(p, S) {
 // theme" control (the painted check is inside setTheme), shoot, switch back.
 async function darkPass(p, name, vw, vh, dpr, url, shots = ['default']) {
   if (!(await setTheme(p, 'dark'))) { log('  ! dark theme never painted; dark shots skipped'); return 0; }
+  // The toggle lives in the footer — the page is scrolled there after the
+  // switch, and a viewport shot taken now would be the footer, not the
+  // page top the light default shows.
+  await p.evaluate(() => scrollTo(0, 0));
+  await wait(p, 900);
   const Sd = new Shooter(p, `${name}-dark`, vw, vh, dpr, url);
   for (const s of shots) { if (s === 'full') await Sd.full(); else await Sd.view(s); }
   await setTheme(p, 'light').catch(() => {});

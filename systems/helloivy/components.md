@@ -10,7 +10,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (61 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (64 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -75,11 +75,11 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Top navigation bar](#top-navigation-bar) | 1392 x 116 | - | - | transparent | none | 0 |
 | [Menu box](#menu-box) | 160 x 116 | - | - | transparent | none | 24px |
-| [Plan card](#plan-card) | 488 x 135.19 | - | - | transparent | none | 0 |
+| [Plan card](#plan-card) | 464 x 571 | - | - | transparent | none | 0 |
 | [Feature card](#feature-card) | 300 x 40.8 | - | - | transparent | none | 0 |
 | [Post card](#post-card) | 464 x 607.08 | - | - | transparent | none | 0 |
 | [Docs sidebar](#docs-sidebar) | 200 x 134.78 | - | - | transparent | none | 0 |
-| [Login card](#login-card) | 500 x 61.59 | - | - | transparent | none | 0 |
+| [Login card](#login-card) | 500 x 498.84 | - | - | transparent | none | 0 |
 | [Share page header](#share-page-header) | 1000 x 68.75 | - | - | transparent | none | 20px |
 | [Media-kit document](#media-kit-document) | 795 x 3376.61 | - | - | transparent | none | 0px 0px 250px 20px |
 | [Mobile nav bar](#mobile-nav-bar) | 358 x 116 | - | - | transparent | none | 0 |
@@ -92,7 +92,7 @@ The marketing shell every www.helloivy.co page carries: the 116px top strip (wor
 
 #### Top navigation bar
 The fixed top strip: the Hello Ivy wordmark, Features / Pricing / About / Docs / Blog links, the "Get Started" CTA and the bordered menu box. Read as `nav-bar` on the home page.
-States read on 2026-11-17T09:06:20.525Z (default); 2026-11-17T09:06:49.349Z (dark).
+States read on 2026-11-17T12:58:00.620Z (default); 2026-11-17T12:58:03.977Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -105,7 +105,7 @@ Child layers that carry the look: div::after 1392pxx116px border 1px solid; div:
 
 #### Nav link
 A nav item in the top strip ("Pricing"). Read as `nav-link` on the home page.
-States read on 2026-11-17T09:06:52.788Z (default); 2026-11-17T09:06:54.673Z (hover); 2026-11-17T09:07:13.156Z (focus-visible).
+States read on 2026-11-17T12:58:07.203Z (default); 2026-11-17T12:58:09.072Z (hover); 2026-11-17T12:58:10.355Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -116,7 +116,7 @@ States read on 2026-11-17T09:06:52.788Z (default); 2026-11-17T09:06:54.673Z (hov
 
 #### "Get Started" nav button
 The solid call-to-action at the right of the nav — links to app.helloivy.co; measured, never followed. Read as `nav-cta` on the home page.
-States read on 2026-11-17T09:07:14.174Z (default); 2026-11-17T09:07:16.261Z (hover); 2026-11-17T09:07:17.710Z (focus-visible); 2026-11-17T09:07:21.784Z (pressed); 2026-11-17T09:07:25.646Z (dark).
+States read on 2026-11-17T12:58:11.195Z (default); 2026-11-17T12:58:13.080Z (hover); 2026-11-17T12:58:14.400Z (focus-visible); 2026-11-17T12:58:16.026Z (pressed); 2026-11-17T12:58:19.279Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -129,32 +129,34 @@ States read on 2026-11-17T09:07:14.174Z (default); 2026-11-17T09:07:16.261Z (hov
 
 #### Menu box
 The bordered hamburger box at the nav's right edge — opens the 01 HOME / 02 FEATURES … overlay. "opened" is its own press, closed with Escape. Read as `nav-menu-box` on the home page.
-States read on 2026-11-17T09:07:29.139Z (default); 2026-11-17T09:07:31.844Z (hover); 2026-11-17T09:09:34.565Z (opened).
+States read on 2026-11-17T12:58:22.567Z (default); 2026-11-17T12:58:24.454Z (hover); 2026-11-17T12:58:28.203Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 160 x 116; padding 24px; background transparent; text sans-serif 12/normal 400, #000000 `light.color.ink`; layers ::after transparent 0px none 1; div::after.framer-p1xt7c 160pxx116px R:1px solid; div.framer-ig1a2v 104.0x1.0 #000000; div.framer-1wtprsd 64.0x1.0 #000000; div.framer-4opjpw 104.0x1.0 #000000 |
 | hover | layers ::after transparent 0px none 1; div::after.framer-p1xt7c 160pxx116px R:1px solid; div.framer-ig1a2v 104.0x1.0 #000000; div.framer-1wtprsd 104.0x1.0 #000000; div.framer-4opjpw 104.0x1.0 #000000 |
-| opened | size 1440 x 8305.19; padding none; text Inter 16/19.2 600, #000000 `light.color.ink`; layers body.framer-body-KqUl8LiGf-framer-kKUAY.framer-cursor-none 1440.0x8305.2 #faf6f0; div.framer-kKUAY.framer-R8WG4 1440.0x8305.2 #faf6f0; div::after.framer-324l0c 1392pxx1185.91px T:1px solid / R:1px solid / L:1px solid; div::after.framer-qTIUJ.framer-o0W2X 1392pxx116px T:1px solid / R:1px solid / B:1px solid / L:1px solid; div::after.framer-1n1l10e 1232pxx116px R:1px solid; a.framer-1lje3.framer-12m |
+| opened | size 1440 x 381.02; padding 0px 0px 0px 48px; text Inter 24/33.6 500, #000000 `light.color.ink`; layers none |
 
 Child layers that carry the look: div::after 160pxx116px border 1px solid; div 104x1 background #000000 `light.color.ink`; div 64x1 background #000000 `light.color.ink`.
 
-![Menu box default](components/crops/nav-menu-box-default.png) ![Menu box hover](components/crops/nav-menu-box-hover.png)
+![Menu box default](components/crops/nav-menu-box-default.png) ![Menu box hover](components/crops/nav-menu-box-hover.png) ![Menu box opened](components/crops/nav-menu-box-opened.png)
 
 #### Footer
 The page footer: product/resource columns, the social icons, the "Change theme" control and the "Try it for free" CTA. Read as `footer` on the home page.
-States read on 2026-11-17T09:14:03.744Z (default); 2026-11-17T09:14:10.470Z (dark).
+States read on 2026-11-17T12:59:06.366Z (default); 2026-11-17T12:59:09.922Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 175 x 19.2; background transparent; text Inter 12/19.2 400, #000000 `light.color.ink` |
-| dark | text Inter 12/19.2 400, #edecda |
+| default | size 1392 x 560.41; background transparent; text Unbounded 62/68.2 500, #000000 `light.color.ink`; icon 48 x 48, #000000 `light.color.ink`; layers ::after transparent 1px none 1; div::after.framer-MCeyU.framer-BAp5c 1392pxx560.406px T:1px solid / R:1px solid / B:1px solid / L:1px solid; div::after.framer-cmnq2x 1392pxx116.203px B:1px solid; div.framer-1r83dga 9.0x9.0 #000000 100px; div::after.framer-ivcetf 1392pxx377px B:1px solid; div::after.framer-1ddini9 278.391pxx377px R:1px solid; div::after.framer-14gy5od 278.406pxx377px R:1px solid |
+| dark | text Unbounded 62/68.2 500, #edecda; icon 48 x 48, #edecda; layers ::after transparent 1px none 1; div::after.framer-MCeyU.framer-BAp5c 1392pxx560.406px T:1px solid / R:1px solid / B:1px solid / L:1px solid; div::after.framer-cmnq2x 1392pxx116.203px B:1px solid; div.framer-1r83dga 9.0x9.0 #edecda 100px; div::after.framer-ivcetf 1392pxx377px B:1px solid; div::after.framer-1ddini9 278.391pxx377px R:1px solid; div::after.framer-14gy5od 278.406pxx377px R:1px solid |
+
+Child layers that carry the look: div::after 1392pxx560.406px border 1px solid; div::after 1392pxx116.203px border 1px solid; div 9x9 background #000000 `light.color.ink` radius 100px.
 
 ![Footer default](components/crops/footer-default.png) ![Footer dark](components/crops/footer-dark.png)
 
 #### "Change theme" control
 The footer's own theme toggle — the control that repaints html[toggle-theme] and writes localStorage.currentToggleState. Measured at rest; the painted dark pass lives on the `dark` states of other components. Read as `theme-control` on the home page.
-States read on 2026-11-17T09:14:26.686Z (default); 2026-11-17T09:14:28.844Z (hover).
+States read on 2026-11-17T12:59:13.172Z (default); 2026-11-17T12:59:15.023Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -163,12 +165,12 @@ States read on 2026-11-17T09:14:26.686Z (default); 2026-11-17T09:14:28.844Z (hov
 !["Change theme" control default](components/crops/theme-control-default.png) !["Change theme" control hover](components/crops/theme-control-hover.png)
 
 #### Footer link
-A footer column link (a product page). Read as `footer-link` on the home page.
-States read on 2026-11-17T09:14:46.979Z (default); 2026-11-17T09:14:58.870Z (hover).
+A footer column link (a product page) — an anchor inside the measured footer block. Read as `footer-link` on the home page.
+States read on 2026-11-17T12:59:15.868Z (default); 2026-11-17T12:59:17.689Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 55 x 20; background transparent; text Inter 16/19.2 600, #000000 `light.color.ink` |
+| default (same: hover) | size 34 x 17; background transparent; text Inter 14/22 400, #000000 `light.color.ink` |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png)
 
@@ -178,7 +180,7 @@ The home page's editorial layer: the Unbounded display hero (heading, lead copy,
 
 #### Hero heading (h1)
 The page's headline — the largest display type on the site. Read as `hero-heading` on the home page.
-States read on 2026-11-17T09:10:27.358Z (default); 2026-11-17T09:10:31.528Z (dark).
+States read on 2026-11-17T12:58:40.019Z (default); 2026-11-17T12:58:43.483Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -189,35 +191,36 @@ States read on 2026-11-17T09:10:27.358Z (default); 2026-11-17T09:10:31.528Z (dar
 
 #### Hero paragraph
 The supporting paragraph under the headline. Read as `hero-copy` on the home page.
-Read on 2026-11-17T09:11:01.180Z.
+Read on 2026-11-17T12:58:46.931Z.
 
 **Values (default).** size 1238 x 121.5; background transparent; text Inter 27/40.5 400, #000000 `light.color.ink`.
 
 ![Hero paragraph default](components/crops/hero-copy-default.png)
 
 #### Hero call-to-action
-The solid button under the hero ("Try it for free" / "Get Started - Free Trial") — links to the app, measured never followed. Read as `hero-cta` on the home page.
-States read on 2026-11-17T09:11:07.150Z (default); 2026-11-17T09:11:44.064Z (hover); 2026-11-17T09:12:01.293Z (focus-visible); 2026-11-17T09:12:03.581Z (pressed); 2026-11-17T09:12:10.120Z (dark).
+The trial CTA — the floating "Try it for free" pill painted bottom-right on the marketing pages — links to the app, measured never followed. Read as `hero-cta` on the home page.
+States read on 2026-11-17T12:58:47.813Z (default); 2026-11-17T12:58:49.706Z (hover); 2026-11-17T12:58:51.025Z (focus-visible); 2026-11-17T12:58:52.712Z (pressed); 2026-11-17T12:58:55.969Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 154 x 56; padding 15px 30px; radius 9999px; background #000000 `light.color.ink`; text Inter 16/19.2 600, #ffffff `light.color.inverseSurface` |
+| default | size 196 x 56; padding 15px 30px; radius 9999px; background #000000 `light.color.ink`; text Inter 16/19.2 600, #ffffff `light.color.inverseSurface`; icon 17 x 22, #0000ee |
 | hover | opacity 0.8 |
 | focus-visible | outline 1px auto #101010, offset 1px |
-| dark | background #faf6f0 `light.color.ground`; text Inter 16/19.2 600, #000000 `light.color.ink` |
+| dark | background #faf6f0 `light.color.ground`; text Inter 16/19.2 600, #000000 `light.color.ink`; icon 17 x 22, #9e9eff |
+| pressed | icon 17 x 22, #ff0000 |
 
-![Hero call-to-action default](components/crops/hero-cta-default.png) ![Hero call-to-action hover](components/crops/hero-cta-hover.png) ![Hero call-to-action focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero call-to-action pressed](components/crops/hero-cta-pressed.png) ![Hero call-to-action dark](components/crops/hero-cta-dark.png)
+![Hero call-to-action default](components/crops/hero-cta-default.png) ![Hero call-to-action hover](components/crops/hero-cta-hover.png) ![Hero call-to-action focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero call-to-action dark](components/crops/hero-cta-dark.png) ![Hero call-to-action pressed](components/crops/hero-cta-pressed.png)
 
 #### Section heading (h3)
 A mid-page section heading — the page's display type below the h1. Read as `section-heading` on the home page.
-States read on 2026-11-17T09:12:42.721Z (default); 2026-11-17T09:13:55.034Z (dark).
+States read on 2026-11-17T12:58:59.409Z (default); 2026-11-17T12:59:02.785Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 800 x 136.41; background transparent; text Unbounded 62/68.2 500, #000000 `light.color.ink` |
 | dark | text Unbounded 62/68.2 500, #edecda |
 
-![Section heading (h3) default](components/crops/section-heading-default.png)
+![Section heading (h3) default](components/crops/section-heading-default.png) ![Section heading (h3) dark](components/crops/section-heading-dark.png)
 
 ### Pricing
 
@@ -225,30 +228,31 @@ The /pricing page: the plan column cards, their pill CTAs, and the FAQ accordion
 
 #### Plan card
 A pricing card ("Grow" / "Business" / "Enterprise"): name, price, allowance rows and its CTA. Read as `plan-card` on the pricing page.
-States read on 2026-11-17T08:58:22.070Z (default); 2026-11-17T08:58:25.699Z (dark).
+States read on 2026-11-17T12:59:29.636Z (default); 2026-11-17T12:59:33.111Z (dark).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 488 x 135.19; background transparent; text Inter 18/28.8 700, #000000 `light.color.ink` |
-| dark | text Inter 18/28.8 700, #edecda |
+| default | size 464 x 571; background transparent; text Unbounded 20/28 500, #000000 `light.color.ink`; icon 20 x 20, #000000 `light.color.ink`; layers div::after.framer-1fhyswc 464pxx166.391px B:1px solid; a.framer-vVI5g.framer-4vbkq 416.0x49.6 #000000 |
+| dark | text Unbounded 20/28 500, #edecda; icon 20 x 20, #ffffff `light.color.inverseSurface`; layers div::after.framer-1fhyswc 464pxx166.391px B:1px solid; a.framer-vVI5g.framer-4vbkq 416.0x49.6 #edecda |
+
+Child layers that carry the look: div::after 464pxx166.391px border 1px solid; a 416x49.6 background #000000 `light.color.ink`.
 
 ![Plan card default](components/crops/plan-card-default.png) ![Plan card dark](components/crops/plan-card-dark.png)
 
 #### Plan CTA button
-A plan's call-to-action — links to the app; measured, never followed. Read as `plan-cta` on the pricing page.
-States read on 2026-11-17T08:59:09.095Z (default); 2026-11-17T08:59:12.738Z (hover); 2026-11-17T08:59:14.554Z (focus-visible); 2026-11-17T08:59:15.918Z (pressed).
+A plan's call-to-action inside the measured plan card — links to the app; measured, never followed. Read as `plan-cta` on the pricing page.
+States read on 2026-11-17T12:59:58.779Z (default); 2026-11-17T13:00:00.630Z (hover); 2026-11-17T13:00:01.954Z (focus-visible); 2026-11-17T13:00:03.679Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 154 x 56; padding 15px 30px; radius 9999px; background #000000 `light.color.ink`; text Inter 16/19.2 600, #ffffff `light.color.inverseSurface` |
-| hover | opacity 0.8 |
+| default (same: hover, pressed) | size 416 x 49.59; padding 12px 20px; background #000000 `light.color.ink`; text Unbounded 16/25.6 500, #faf6f0 `light.color.ground` |
 | focus-visible | outline 1px auto #101010, offset 1px |
 
 ![Plan CTA button default](components/crops/plan-cta-default.png) ![Plan CTA button hover](components/crops/plan-cta-hover.png) ![Plan CTA button focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA button pressed](components/crops/plan-cta-pressed.png)
 
 #### FAQ accordion question
 A question row in the pricing FAQ. "opened" is its own press revealing the answer, pressed again to close. Read as `faq-question` on the pricing page.
-States read on 2026-11-17T08:59:17.302Z (default); 2026-11-17T08:59:19.548Z (hover); 2026-11-17T08:59:22.120Z (opened).
+States read on 2026-11-17T13:00:04.637Z (default); 2026-11-17T13:00:06.530Z (hover); 2026-11-17T13:00:08.742Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -315,15 +319,17 @@ app.helloivy.co/login, at rest only: the centred card (heading, email/password f
 
 #### Login card
 The centred card on app.helloivy.co/login ("Welcome back", email/password fields, Continue, Google). The auth boundary: nothing is entered or submitted. Read as `login-card` on the app login page.
-Read on 2026-11-17T09:01:21.945Z.
+Read on 2026-11-17T12:50:07.120Z.
 
-**Values (default).** size 500 x 61.59; background transparent; text Inter 23/27.6 600, #37352f `core.app.color.ink`.
+**Values (default).** size 500 x 498.84; background transparent; text Inter 23/27.6 600, #37352f `core.app.color.ink`; icon 30 x 20, #707b8b; layers input.w-full.outline-none 500.0x48.5 #fcfcfc T:1px solid / R:1px solid / B:1px solid / L:1px solid 2px solid transparent offset 2px 10px; input.w-full.outline-none 500.0x48.5 #fcfcfc T:1px solid / R:1px solid / B:1px solid / L:1px solid 2px solid transparent offset 2px 10px; button.inline-flex.items-center 500.0x53.3 #222222 10px; button.inline-flex.items-center 500.0x56.0 T:2px solid / R:2px soli.
+
+Child layers that carry the look: input 500x48.5 background #fcfcfc `core.component.input.bg` border 1px solid radius 10px; input 500x48.5 background #fcfcfc `core.component.input.bg` border 1px solid radius 10px; button 500x53.3 background #222222 `core.component.button.app.bg` radius 10px.
 
 ![Login card default](components/crops/login-card-default.png)
 
 #### Email input
 The "Your email" field — measured at rest; nothing is entered. Read as `login-input-email` on the app login page.
-States read on 2026-11-17T09:01:22.839Z (default); 2026-11-17T09:01:24.103Z (focused).
+States read on 2026-11-17T12:50:07.958Z (default); 2026-11-17T12:50:09.210Z (focused).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -334,7 +340,7 @@ States read on 2026-11-17T09:01:22.839Z (default); 2026-11-17T09:01:24.103Z (foc
 
 #### Password input
 The "Your password" field — measured at rest; nothing is entered. Read as `login-input-password` on the app login page.
-Read on 2026-11-17T09:01:25.026Z.
+Read on 2026-11-17T12:50:10.062Z.
 
 **Values (default).** size 500 x 48.5; padding 12px 20px; border 1px solid #c4c4c4 `core.component.input.border`; radius 10px; background #fcfcfc `core.component.input.bg`; outline 2px solid transparent, offset 2px; text Inter 15/22.5 400, #222222 `core.component.button.app.bg`; transition all 0.05s cubic-bezier(0.4, 0, 0.2, 1); placeholder #bbbbbb.
 
@@ -342,7 +348,7 @@ Read on 2026-11-17T09:01:25.026Z.
 
 #### "Continue" button
 The form's submit — measured, never pressed (it would submit). Read as `login-continue` on the app login page.
-States read on 2026-11-17T09:01:26.228Z (default); 2026-11-17T09:01:28.032Z (hover); 2026-11-17T09:01:29.290Z (focus-visible).
+States read on 2026-11-17T12:50:10.905Z (default); 2026-11-17T12:50:12.681Z (hover); 2026-11-17T12:50:13.922Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -354,7 +360,7 @@ States read on 2026-11-17T09:01:26.228Z (default); 2026-11-17T09:01:28.032Z (hov
 
 #### "Login with Google" button
 The OAuth button — measured, never pressed. Read as `login-google` on the app login page.
-States read on 2026-11-17T09:01:30.192Z (default); 2026-11-17T09:01:32.035Z (hover).
+States read on 2026-11-17T12:50:14.786Z (default); 2026-11-17T12:50:16.602Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -365,7 +371,7 @@ States read on 2026-11-17T09:01:30.192Z (default); 2026-11-17T09:01:32.035Z (hov
 
 #### "Sign up" link
 The "Don't have an account yet? Sign up" link — measured, never followed. Read as `login-signup` on the app login page.
-States read on 2026-11-17T09:01:32.895Z (default); 2026-11-17T09:01:34.667Z (hover).
+States read on 2026-11-17T12:50:17.468Z (default); 2026-11-17T12:50:19.237Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -375,7 +381,7 @@ States read on 2026-11-17T09:01:32.895Z (default); 2026-11-17T09:01:34.667Z (hov
 
 #### "Forgot password?" link
 The reset link — measured, never followed. Read as `login-forgot` on the app login page.
-States read on 2026-11-17T09:01:35.522Z (default); 2026-11-17T09:01:37.414Z (hover).
+States read on 2026-11-17T12:50:20.089Z (default); 2026-11-17T12:50:21.881Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -423,7 +429,7 @@ The 390px surface: the compact top strip and the 'Menu' control's drawer, opened
 
 #### Mobile nav bar
 The top strip at 390px — wordmark and the menu box (the menu element's painted ancestor bar). Read as `m-nav-bar` on the home page.
-Read on 2026-11-17T09:23:58.303Z.
+Read on 2026-11-17T12:50:33.519Z.
 
 **Values (default).** size 358 x 116; background transparent; text sans-serif 12/normal 400, #000000 `light.color.ink`; layers ::after transparent 1px none 1; div::after.framer-qTIUJ.framer-o0W2X 358pxx116px T:1px solid / R:1px solid / B:1px solid / L:1px solid; div::after.framer-1n1l10e 198pxx116px R:1px solid; div::after.framer-p1xt7c 160pxx116px R:1px solid; div.framer-ig1a2v 104.0x1.0 #000000; div.framer-1wtprsd 64.0x1.0 #000000; div.framer-4opjpw 104.0x1.0 #000000.
 
@@ -433,13 +439,13 @@ Child layers that carry the look: div::after 358pxx116px border 1px solid; div::
 
 #### Menu box (drawer open)
 The nav menu box at 390px — a real tap opens the full-screen overlay (data-framer-name "Menu"). "opened" is its own tap, closed with Escape. Read as `m-menu-box` on the home page.
-Read on 2026-11-17T09:24:55.307Z.
+Read on 2026-11-17T12:50:37.200Z.
 
-**Values (opened).** size 390 x 13282.56; background transparent; text Unbounded 32/38.4 500, #000000 `light.color.ink`; layers body.framer-body-KqUl8LiGf-framer-kKUAY 390.0x13282.6 #faf6f0; div.framer-kKUAY.framer-R8WG4 390.0x13282.6 #faf6f0; div::after.framer-324l0c 358pxx933.594px T:1px solid / R:1px solid / L:1px solid; div::after.framer-qTIUJ.framer-o0W2X 358pxx116px T:1px solid / R:1px solid / B:1px solid / L:1px solid; div::after.framer-1n1l10e 198pxx116px R:1px solid; div::after.framer-p1xt7c 160pxx116px R:1px soli.
+**Values (opened).** size 390 x 343.98; background transparent; text Inter-Medium 16/25.6 500, #000000 `light.color.ink`; layers div::after.framer-k36hk2 44pxx44px T:1px solid / R:1px solid / B:1px solid / L:1px solid; div.framer-13cooux 19.1x19.1 #000000; div.framer-1itw2xu 19.1x19.1 #000000.
 
-Child layers that carry the look: body 390x13282.6 background #faf6f0 `light.color.ground`; div 390x13282.6 background #faf6f0 `light.color.ground`; div::after 358pxx933.594px border 1px solid.
+Child layers that carry the look: div::after 44pxx44px border 1px solid; div 19.1x19.1 background #000000 `light.color.ink`; div 19.1x19.1 background #000000 `light.color.ink`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Menu box (drawer open) opened](components/crops/m-menu-box-opened.png)
 
 ### Marketing (mobile)
 
@@ -447,7 +453,7 @@ The 390px home hero — the display heading drops to 32px.
 
 #### Hero heading at 390px
 The headline on the phone — the display type compressed to the small width (an h3 at this width). Read as `m-hero-heading` on the home page.
-Read on 2026-11-17T09:25:19.281Z.
+Read on 2026-11-17T12:50:48.903Z.
 
 **Values (default).** size 310 x 192.03; background transparent; text Unbounded 32/38.4 500, #000000 `light.color.ink`.
 

@@ -60,7 +60,7 @@ async function reset() {
   // The Framer menu overlay ignores Escape: when a state left it open the
   // clean recovery is a reload — every later element read and crop would
   // otherwise be the overlay, not the component.
-  const overlayOpen = await page.evaluate(() => [...document.querySelectorAll('*')].some((e) => /01\s*HOME/i.test(e.innerText || '') && /FEATURES/i.test(e.innerText || '') && (e.innerText || '').length < 4000 && e.getBoundingClientRect().height > 300)).catch(() => false);
+  const overlayOpen = await page.evaluate(() => [...document.querySelectorAll('*')].some((e) => e !== document.documentElement && e !== document.body && /01\s*HOME/i.test(e.innerText || '') && /FEATURES/i.test(e.innerText || '') && (e.innerText || '').length < 4000 && e.getBoundingClientRect().height > 300)).catch(() => false);
   if (overlayOpen && currentUrl) { await open(page, currentUrl, { wait: 8000 }); await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {}); }
   await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
   const vw = page.viewportSize()?.width ?? 1440;
@@ -117,10 +117,25 @@ async function pick(p, sel, score, tag = 'pk') {
 // CSS.forcePseudoState through CDP: the press never happens, so no link can
 // navigate and no button can fire.
 async function pressOn(loc) {
+  await centre(loc).catch(() => {});   // getNodeForLocation needs the point inside the viewport
   const b = await loc.boundingBox();
   if (!b) return null;
   await cdp.send('DOM.getDocument').catch(() => {});
-  const { backendNodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) });
+  let backendNodeId;
+  try {
+    ({ backendNodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) }));
+  } catch {
+    // Hit-testing misses under some Framer transform layers — resolve the
+    // measured element itself instead of whatever paints on top.
+    await loc.evaluate((el) => el.setAttribute('data-press-target', '1'));
+    const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false });
+    if (!result || !result.objectId) throw new Error('press fallback: element not resolvable');
+    const { nodeId } = await cdp.send('DOM.requestNode', { objectId: result.objectId });
+    await loc.evaluate((el) => el.removeAttribute('data-press-target')).catch(() => {});
+    await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
+    await page.waitForTimeout(400);
+    return nodeId;
+  }
   const { nodeIds } = await cdp.send('DOM.pushNodesByBackendIdsToFrontend', { backendNodeIds: [backendNodeId] });
   await cdp.send('CSS.forcePseudoState', { nodeId: nodeIds[0], forcedPseudoClasses: ['active', 'hover'] });
   await page.waitForTimeout(400);
@@ -177,18 +192,25 @@ const NAV_SPECS = [
       return p.locator(ok ? '[data-m-mark="mb"]' : '[data-m-mark="__none__"]');
     }, states: ['default', 'hover',
       { name: 'opened', via: 'the menu box\'s own press (overlay open; reloaded afterwards)', fn: async (loc) => {
-        const b = await loc.boundingBox();
-        if (b) await page.mouse.click(b.x + b.width / 2, b.y + b.height / 2).catch(() => {});
+        await loc.click({ timeout: 4000 }).catch(() => {});   // a locator press scrolls into view first
         await page.waitForTimeout(2500);
+        // The overlay box, not the page: html/body match the text test when
+        // the overlay never opened, so they are excluded and the smallest
+        // painted subtree holding the link list wins. No overlay = a failed
+        // state, never a reading of the document.
         const ov = await page.evaluate(() => {
-          const el = [...document.querySelectorAll('*')].filter((e) => {
+          const els = [...document.querySelectorAll('*')].filter((e) => {
+            if (e === document.documentElement || e === document.body) return false;
             const t = e.innerText || '';
-            return /0?1\s*HOME/i.test(t) && /FEATURES/i.test(t) && t.length < 4000 && e.getBoundingClientRect().height > 300;
-          })[0];
+            if (!/0?1\s*HOME/i.test(t) || !/FEATURES/i.test(t) || t.length >= 4000) return false;
+            return e.getBoundingClientRect().height > 300;
+          }).sort((a, b) => a.querySelectorAll('*').length - b.querySelectorAll('*').length);
+          const el = els[0];
           if (el) el.setAttribute('data-m-mark', 'mov');
           return Boolean(el);
         });
-        return ov ? page.locator('[data-m-mark="mov"]') : null;
+        if (!ov) throw new Error('the menu overlay never painted open');
+        return page.locator('[data-m-mark="mov"]');
       } },
     ] },
 ];
@@ -206,45 +228,111 @@ const HERO_SPECS = [
       return el.querySelectorAll('*').length;
     }, 'hc'), states: ['default'] },
   { key: 'hero-cta', group: 'Marketing', title: 'Hero call-to-action',
-    desc: 'The solid button under the hero ("Try it for free" / "Get Started - Free Trial") — links to the app, measured never followed.',
-    sel: 'a/button (trial CTA)', find: async (p) => await domFind(p, /try it for free|free trial|start for free|get started/i, { sel: 'a, button, div', tag: 'ht', minW: 80, minH: 24 }), states: ['default', 'hover', 'focus-visible', 'pressed', 'dark'] },
+    desc: 'The trial CTA — the floating "Try it for free" pill painted bottom-right on the marketing pages — links to the app, measured never followed.',
+    sel: 'a/button (trial CTA, outside the nav)', find: async (p) => {
+      // Never the nav\'s "Get Started": anything inside the marked top
+      // strip is excluded, and the trial pill sits below it.
+      const ok = await p.evaluate(() => {
+        const nav = document.querySelector('[data-m-mark="nav"]');
+        const els = [...document.querySelectorAll('a, button, div')].filter((e) => {
+          if (nav && nav.contains(e)) return false;
+          const t = (e.innerText || '').trim();
+          if (!/try it for free|free trial|start for free/i.test(t) || t.length > 40) return false;
+          const r = e.getBoundingClientRect();
+          if (r.width < 60 || r.height < 20 || r.top < 140) return false;
+          let anc = e;
+          while (anc) { const cs = getComputedStyle(anc); if (cs.display === 'none' || cs.visibility === 'hidden') return false; anc = anc.parentElement; }
+          return true;
+        });
+        const el = els.filter((e) => !els.some((o) => o !== e && e.contains(o)))[0] || els[0];
+        if (el) el.setAttribute('data-m-mark', 'ht');
+        return Boolean(el);
+      });
+      return p.locator(ok ? '[data-m-mark="ht"]' : '[data-m-mark="__none__"]');
+    }, states: ['default', 'hover', 'focus-visible', 'pressed', 'dark'] },
   { key: 'section-heading', group: 'Marketing', title: 'Section heading (h3)',
     desc: 'A mid-page section heading — the page\'s display type below the h1.',
     sel: 'h3', find: (p) => p.locator('h3').filter({ visible: true }).first(), states: ['default', 'dark'] },
   { key: 'footer', group: 'Site chrome', title: 'Footer',
     desc: 'The page footer: product/resource columns, the social icons, the "Change theme" control and the "Try it for free" CTA.',
-    sel: 'footer', find: async (p) => await pick(p, 'footer, [data-framer-name*="footer" i], div, section', (el, r, cs) => {
+    sel: 'footer (the whole block)', find: async (p) => await pick(p, 'footer, [data-framer-name*="footer" i], div, section', (el, r, cs) => {
+      if (r.width < 600 || r.height < 120) return Infinity;
       const t = el.innerText || '';
+      // The footer block, not the copyright line: its link columns and the
+      // "Change theme" control must all live inside the measured box.
       if (!/© 20\d\d Hello Ivy|Hello Ivy Inc/i.test(t)) return Infinity;
+      if (!/change theme/i.test(t)) return Infinity;
+      if (!/features/i.test(t) || !/blog|about|pricing/i.test(t)) return Infinity;
       return el.querySelectorAll('*').length;
     }, 'ft'), states: ['default', 'dark'] },
   { key: 'theme-control', group: 'Site chrome', title: '"Change theme" control',
     desc: 'The footer\'s own theme toggle — the control that repaints html[toggle-theme] and writes localStorage.currentToggleState. Measured at rest; the painted dark pass lives on the `dark` states of other components.',
     sel: 'footer leaf (text Change theme)', find: async (p) => await domFind(p, /^Change theme$/i, { sel: 'div,span,p,a,button', tag: 'tc', minW: 40 }), states: ['default', 'hover'] },
   { key: 'footer-link', group: 'Site chrome', title: 'Footer link',
-    desc: 'A footer column link (a product page).',
-    sel: 'footer a', find: async (p) => await domFind(p, /terms|pricing|blog|docs/i, { sel: 'a', tag: 'fl', minW: 20 }), states: ['default', 'hover'] },
+    desc: 'A footer column link (a product page) — an anchor inside the measured footer block.',
+    sel: 'a inside the footer block', find: async (p) => {
+      // Scoped to the footer found above: a bare page search lands on the
+      // nav\'s "Pricing" first.
+      const ok = await p.evaluate(() => {
+        const f = document.querySelector('[data-m-mark="ft"]');
+        if (!f) return false;
+        const a = [...f.querySelectorAll('a')].filter((e) => {
+          const r = e.getBoundingClientRect();
+          const cs = getComputedStyle(e);
+          return r.width > 20 && r.height > 8 && cs.visibility !== 'hidden' && cs.display !== 'none'
+            && /features|pricing|blog|docs|about|terms/i.test((e.innerText || '').trim());
+        })[0];
+        if (a) a.setAttribute('data-m-mark', 'fl');
+        return Boolean(a);
+      });
+      return p.locator(ok ? '[data-m-mark="fl"]' : '[data-m-mark="__none__"]');
+    }, states: ['default', 'hover'] },
 ];
 
 const PRICING_SPECS = [
   { key: 'plan-card', group: 'Pricing', title: 'Plan card',
     desc: 'A pricing card ("Grow" / "Business" / "Enterprise"): name, price, allowance rows and its CTA.',
-    sel: 'box (priced plan)', find: async (p) => await pick(p, 'div, section, article', (el, r) => {
-      if (r.width < 200 || r.width > 800) return Infinity;
+    sel: 'box (priced plan with its own CTA)', find: async (p) => await pick(p, 'div, section, article', (el, r) => {
+      if (r.width < 240 || r.width > 800 || r.height < 200) return Infinity;
       const t = el.innerText || '';
-      if (!/\$\s*\d/.test(t) || !/per user|month|year/i.test(t)) return Infinity;
-      return el.querySelectorAll('*').length;   // the smallest box holding a price is the card, not the page
+      if (!/\$\s*\d/.test(t) || !/per user/i.test(t)) return Infinity;
+      // A plan card carries its own call-to-action; the "one monthly fee"
+      // aside that also quotes a price does not.
+      if (![...el.querySelectorAll('a, button')].some((b) => /try|start|talk|choose|sign up/i.test((b.innerText || '').trim()))) return Infinity;
+      return el.querySelectorAll('*').length;
     }, 'pc'), states: ['default', 'dark'] },
   { key: 'plan-cta', group: 'Pricing', title: 'Plan CTA button',
-    desc: 'A plan\'s call-to-action — links to the app; measured, never followed.',
-    sel: 'a/button (plan CTA)', find: async (p) => await domFind(p, /get started|choose|try it|start/i, { sel: 'a, button', tag: 'pct', minW: 60 }), states: ['default', 'hover', 'focus-visible', 'pressed'] },
+    desc: 'A plan\'s call-to-action inside the measured plan card — links to the app; measured, never followed.',
+    sel: 'a/button inside the plan card', find: async (p) => {
+      // Scoped to the plan card found above: a bare page search lands on
+      // the nav\'s "Get Started" first.
+      const ok = await p.evaluate(() => {
+        const card = document.querySelector('[data-m-mark="pc"]');
+        if (!card) return false;
+        const b = [...card.querySelectorAll('a, button')].filter((e) => {
+          const r = e.getBoundingClientRect();
+          const cs = getComputedStyle(e);
+          return r.width > 40 && r.height > 16 && cs.visibility !== 'hidden' && cs.display !== 'none'
+            && /try|start|talk|choose|sign/i.test((e.innerText || '').trim());
+        })[0];
+        if (b) b.setAttribute('data-m-mark', 'pct');
+        return Boolean(b);
+      });
+      return p.locator(ok ? '[data-m-mark="pct"]' : '[data-m-mark="__none__"]');
+    }, states: ['default', 'hover', 'focus-visible', 'pressed'] },
   { key: 'faq-question', group: 'Pricing', title: 'FAQ accordion question',
     desc: 'A question row in the pricing FAQ. "opened" is its own press revealing the answer, pressed again to close.',
     sel: 'row (text Is Hello Ivy only useful for design teams?)', find: async (p) => await domFind(p, /is hello ivy only useful for design teams/i, { sel: 'div,p,h1,h2,h3,button,a', tag: 'fq', minW: 100 }), states: ['default', 'hover',
       { name: 'opened', via: 'the question row\'s own press (answer visible; pressed again to close)', fn: async (loc) => {
-        const b = await loc.boundingBox();
-        if (b) await page.mouse.click(b.x + b.width / 2, b.y + b.height / 2).catch(() => {});
-        await page.waitForTimeout(1000);
+        const before = await page.evaluate(() => document.documentElement.scrollHeight);
+        await loc.click({ timeout: 4000 }).catch(() => {});   // a locator press scrolls into view first
+        await page.waitForTimeout(1200);
+        // Opened means the page grew (the answer pushed content down) or a
+        // row reported expanded — a silent miss records a failed state,
+        // never a second reading of the closed row.
+        const grew = await page.evaluate((h) => document.documentElement.scrollHeight > h + 20, before);
+        const expanded = await page.evaluate(() => Boolean(document.querySelector('[aria-expanded="true"]')));
+        if (!grew && !expanded) throw new Error('the FAQ row press opened no answer');
       } },
     ] },
 ];
@@ -292,9 +380,13 @@ const LOGIN_SPECS = [
   { key: 'login-card', group: 'App login', title: 'Login card',
     desc: 'The centred card on app.helloivy.co/login ("Welcome back", email/password fields, Continue, Google). The auth boundary: nothing is entered or submitted.',
     sel: 'form/card (login)', find: async (p) => await pick(p, 'form, [class*="card"], [class*="login"], div, section', (el, r) => {
-      if (r.width < 200 || r.width > 700) return Infinity;
+      if (r.width < 200 || r.width > 700 || r.height < 150) return Infinity;
       const t = el.innerText || '';
       if (!/welcome back|log in using your account/i.test(t)) return Infinity;
+      // The card, not the heading div: it carries the fields and a submit
+      // control.
+      if (!el.querySelector('input')) return Infinity;
+      if (![...el.querySelectorAll('button, [role="button"], a')].some((b) => /continue|google|log in|sign in/i.test((b.innerText || '').trim()))) return Infinity;
       return el.querySelectorAll('*').length;
     }, 'lc'), states: ['default'] },
   { key: 'login-input-email', group: 'App login', title: 'Email input',
@@ -391,18 +483,24 @@ const MOBILE_SPECS = [
       });
       return p.locator(ok ? '[data-m-mark="mmb"]' : '[data-m-mark="__none__"]');
     }, states: [{ name: 'opened', via: 'the menu box\'s own tap (overlay open; reloaded afterwards)', fn: async (loc) => {
-      const b = await loc.boundingBox();
-      if (b) await page.touchscreen.tap(b.x + b.width / 2, b.y + b.height / 2).catch(() => page.mouse.click(b.x + b.width / 2, b.y + b.height / 2));
+      await loc.tap({ timeout: 4000 }).catch(() => loc.click({ timeout: 3000 }).catch(() => {}));   // a locator press scrolls into view first
       await page.waitForTimeout(2500);
+      // The overlay box, not the page: html/body match the text test when
+      // the overlay never opened, so they are excluded and the smallest
+      // painted subtree holding the link list wins.
       const ov = await page.evaluate(() => {
-        const el = [...document.querySelectorAll('*')].filter((e) => {
+        const els = [...document.querySelectorAll('*')].filter((e) => {
+          if (e === document.documentElement || e === document.body) return false;
           const t = e.innerText || '';
-          return /0?1\s*HOME/i.test(t) && /FEATURES/i.test(t) && t.length < 4000 && e.getBoundingClientRect().height > 300;
-        })[0];
+          if (!/0?1\s*HOME/i.test(t) || !/FEATURES/i.test(t) || t.length >= 4000) return false;
+          return e.getBoundingClientRect().height > 300;
+        }).sort((a, b) => a.querySelectorAll('*').length - b.querySelectorAll('*').length);
+        const el = els[0];
         if (el) el.setAttribute('data-m-mark', 'mov2');
         return Boolean(el);
       });
-      return ov ? page.locator('[data-m-mark="mov2"]') : null;
+      if (!ov) throw new Error('the menu overlay never painted open');
+      return page.locator('[data-m-mark="mov2"]');
     } }] },
   { key: 'm-hero-heading', group: 'Marketing (mobile)', title: 'Hero heading at 390px',
     desc: 'The headline on the phone — the display type compressed to the small width (an h3 at this width).',

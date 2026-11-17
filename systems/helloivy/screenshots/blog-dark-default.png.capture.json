@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:27:41.635Z",
+  "capturedAt": "2026-11-17T13:03:21.081Z",
   "screenshot": "blog-dark-default.png",
   "sanitizedSourceUrl": "https://www.helloivy.co/blog",
   "requested": {
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 17915
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 17915
+      "y": 0
     }
   },
   "capture": {

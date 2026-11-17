@@ -66,15 +66,18 @@ for (let tries = 0; tries < 6 && !page; tries++) {
   if (await clearChallenge(p, { tries: 3, step: 1500 })) {
     page = p;
     [inline, appTheme] = await p.evaluate(() => {
+      // a url() in a custom property can be a signed URL: record url(…),
+      // only data: and #fragment references kept
+      const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
       const sec = document.querySelector('section.main_section');
       const decls = {};
       if (sec) {
-        for (const n of sec.style) if (n.startsWith('--')) decls[n] = sec.style.getPropertyValue(n).trim();
+        for (const n of sec.style) if (n.startsWith('--')) decls[n] = noUrl(sec.style.getPropertyValue(n).trim());
         // the hashed names resolve through computed style too — read the
         // semantic aliases back out so each has a painted value.
         const cs = getComputedStyle(sec);
         for (const n of ['--primary', '--main-color', '--link-color', '--checkbox', '--app-color', '--canvas-color', '--selection', '--canvas', '--sidebar', '--hover', '--book', '--hover-book', '--comment', '--scrollBarColor', '--scrollBarThumbColor', '--scrollBarThumbHover', '--project', '--projectHover', '--image-shadow', '--text-selection', '--book-icon', '--main-font-family', '--sidebar-width', '--header-height', '--main-header-height']) {
-          const v = cs.getPropertyValue(n).trim();
+          const v = noUrl(cs.getPropertyValue(n).trim());
           if (v) decls['@' + n] = v;
         }
       }

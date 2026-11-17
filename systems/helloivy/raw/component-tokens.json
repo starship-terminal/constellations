@@ -5,133 +5,133 @@
     "primary": {
      "type": "color",
      "value": "#fff",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----primary; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --primary; the same values the app's CSS names alias",
      "description": "the primary role — white"
     },
     "brand": {
      "type": "color",
      "value": "#3F40F2",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----brand; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --main-color; the same values the app's CSS names alias",
      "description": "the brand indigo — --main-color, --link-color and --checkbox all paint it"
     },
     "mainColor": {
      "type": "color",
      "value": "#3F40F2",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----mainColor; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --main-color; the same values the app's CSS names alias",
      "description": "--main-color — links, primary actions, the checked accent"
     },
     "linkColor": {
      "type": "color",
      "value": "#3F40F2",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----linkColor; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --link-color; the same values the app's CSS names alias",
      "description": "--link-color"
     },
     "checkbox": {
      "type": "color",
      "value": "#3F40F2",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----checkbox; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --checkbox; the same values the app's CSS names alias",
      "description": "--checkbox — checked state fill"
     },
     "ink": {
      "type": "color",
      "value": "#37352f",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----ink; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --app-color; the same values the app's CSS names alias",
      "description": "--app-color — the product ink"
     },
     "canvasInk": {
      "type": "color",
      "value": "#323235",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----canvasInk; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --canvas-color; the same values the app's CSS names alias",
      "description": "--canvas-color — the document canvas' ink"
     },
     "canvas": {
      "type": "color",
      "value": "#fff",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----canvas; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --canvas; the same values the app's CSS names alias",
      "description": "--canvas — the document/page ground"
     },
     "sidebar": {
      "type": "color",
      "value": "#F5F6F4",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----sidebar; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --sidebar; the same values the app's CSS names alias",
      "description": "--sidebar — the sidebar ground"
     },
     "hover": {
      "type": "color",
      "value": "#F3F5F7",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----hover; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --hover; the same values the app's CSS names alias",
      "description": "--hover — hover row fill"
     },
     "book": {
      "type": "color",
      "value": "#F5F6FA",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----book; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --book; the same values the app's CSS names alias",
      "description": "--book — the book/page-list ground"
     },
     "hoverBook": {
      "type": "color",
      "value": "#F1F3F5",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----hoverBook; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --hover-book; the same values the app's CSS names alias",
      "description": "--hover-book"
     },
     "comment": {
      "type": "color",
      "value": "#fdffe4",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----comment; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --comment; the same values the app's CSS names alias",
      "description": "--comment — comment pin tint"
     },
     "selection": {
      "type": "color",
      "value": "#F3F5F7",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----selection; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --selection; the same values the app's CSS names alias",
      "description": "--selection — selected-row fill"
     },
     "textSelection": {
      "type": "color",
      "value": "#e4f2ff",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----textSelection; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --text-selection; the same values the app's CSS names alias",
      "description": "--text-selection — text selection tint"
     },
     "project": {
      "type": "color",
      "value": "#ECEDF1",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----project; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --project; the same values the app's CSS names alias",
      "description": "--project — project chip fill"
     },
     "projectHover": {
      "type": "color",
      "value": "#F1F1F5",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----projectHover; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --projectHover; the same values the app's CSS names alias",
      "description": "--projectHover"
     },
     "scrollBar": {
      "type": "color",
      "value": "#eee",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----scrollBar; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --scrollBarColor; the same values the app's CSS names alias",
      "description": "--scrollBarColor — the scrollbar track"
     },
     "scrollBarThumb": {
      "type": "color",
      "value": "#CCCCCC",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----scrollBarThumb; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --scrollBarThumbColor; the same values the app's CSS names alias",
      "description": "--scrollBarThumbColor"
     },
     "scrollBarThumbHover": {
      "type": "color",
      "value": "#9e9d9d",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----scrollBarThumbHover; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --scrollBarThumbHover; the same values the app's CSS names alias",
      "description": "--scrollBarThumbHover"
     },
     "imageShadow": {
      "type": "color",
      "value": "#e7e7e7",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----imageShadow; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --image-shadow; the same values the app's CSS names alias",
      "description": "--image-shadow — image drop line"
     },
     "bookIcon": {
      "type": "color",
      "value": "#323232",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----bookIcon; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --book-icon; the same values the app's CSS names alias",
      "description": "--book-icon — icon ink in the book list"
     }
    },
@@ -139,7 +139,7 @@
     "family": {
      "type": "fontFamily",
      "value": "Inter",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----main-font-family; the same values the app's CSS names alias",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --main-font-family; the same values the app's CSS names alias",
      "description": "the product face — --main-font-family"
     }
    },
@@ -147,19 +147,19 @@
     "sidebarWidth": {
      "type": "dimension",
      "value": "242px",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----; the same values the app's CSS names aliassidebar-width",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --sidebar-width; the same values the app's CSS names alias",
      "description": "--sidebar-width — the workspace rail"
     },
     "headerHeight": {
      "type": "dimension",
      "value": "66px",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----; the same values the app's CSS names aliasheader-height",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --header-height; the same values the app's CSS names alias",
      "description": "--header-height — the document header strip"
     },
     "mainHeaderHeight": {
      "type": "dimension",
      "value": "65px",
-     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), ----; the same values the app's CSS names aliasmainHeader-height",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --main-header-height; the same values the app's CSS names alias",
      "description": "--main-header-height — the app header strip"
     }
    }
@@ -371,10 +371,11 @@
    },
    "cardTitle": {
     "$value": {
-     "fontFamily": "sans-serif",
-     "fontSize": "12px",
-     "fontWeight": 400,
-     "lineHeight": "normal"
+     "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+     "fontSize": "34px",
+     "fontWeight": 500,
+     "lineHeight": "40.8px",
+     "letterSpacing": "0.34px"
     },
     "$type": "typography",
     "$description": "a feature tile title — Unbounded 34/41",
@@ -398,9 +399,9 @@
    "appTitle": {
     "$value": {
      "fontFamily": "Inter, sans-serif",
-     "fontSize": "15px",
-     "fontWeight": 400,
-     "lineHeight": "22.5px"
+     "fontSize": "23px",
+     "fontWeight": 600,
+     "lineHeight": "27.6px"
     },
     "$type": "typography",
     "$description": "the app login heading — Inter 23/28 600",
@@ -516,12 +517,6 @@
       "value": "{color.inverseSurface}",
       "source": "measured nav-cta default text color rgb(255, 255, 255) on / (the inverse surface role)",
       "description": "the marketing pill label colour"
-     },
-     "border": {
-      "type": "color",
-      "value": "rgb(0, 0, 238)",
-      "source": "measured nav-cta default borderTopColor rgb(0, 0, 238) on /",
-      "description": "the marketing pill's border colour — an accent only the CTA carries"
      }
     }
    }
@@ -578,15 +573,9 @@
      },
      "fg": {
       "type": "color",
-      "value": "{color.ink}",
-      "source": "measured nav-cta dark text color rgb(0, 0, 0) on / (the ink role)",
+      "value": "{color.inverseSurface}",
+      "source": "measured nav-cta dark text color rgb(0, 0, 0) on / (the inverse surface role — the label stays black)",
       "description": "the marketing pill label colour"
-     },
-     "border": {
-      "type": "color",
-      "value": "rgb(158, 158, 255)",
-      "source": "measured nav-cta dark borderTopColor rgb(158, 158, 255) on /",
-      "description": "the marketing pill's border colour — an accent only the CTA carries"
      }
     }
    }
@@ -701,7 +690,7 @@
   "planCard": {
    "width": {
     "type": "dimension",
-    "value": "488px",
+    "value": "464px",
     "source": "measured plan-card default on pricing (a pricing plan column)"
    }
   },

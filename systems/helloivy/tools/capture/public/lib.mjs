@@ -158,7 +158,14 @@ export async function paintedTheme(p) {
 
 export async function themeReached(p, want) {
   const s = await paintedTheme(p);
-  const darkPainted = s.toggle === 'dark' || s.scheme === 'dark' || s.bodyDark === true || s.surfaceDark === true;
+  // "dark" is only reached when a real surface repainted dark — a flipped
+  // toggle attribute or scheme marker on still-light paint is not evidence.
+  // Only when no painted surface could be measured at all does the marker
+  // alone stand in.
+  const measuredDark = s.bodyDark === true || s.surfaceDark === true;
+  const measuredLight = s.bodyDark === false && s.surfaceDark === false;
+  const markerDark = s.toggle === 'dark' || s.scheme === 'dark';
+  const darkPainted = measuredDark || (!measuredLight && s.bodyDark == null && s.surfaceDark == null && markerDark);
   return want === 'dark' ? darkPainted && s.toggle !== 'light' : !darkPainted;
 }
 

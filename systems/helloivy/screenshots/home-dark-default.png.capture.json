@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:51:38.136Z",
+  "capturedAt": "2026-11-17T13:00:53.937Z",
   "screenshot": "home-dark-default.png",
   "sanitizedSourceUrl": "https://www.helloivy.co/",
   "requested": {
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 7405
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 7405
+      "y": 0
     }
   },
   "capture": {

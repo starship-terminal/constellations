@@ -98,37 +98,37 @@ Page: home. Selector: `[data-framer-name="Menu"]`. States: default, hover, opene
 
 | Property | default | hover | opened |
 |---|---|---|---|
-| Size (w x h) | 160 x 116 | = | 1440 x 8305.19 |
-| Padding | 24px | = | 0px |
-| Gap | 24px | = | - |
+| Size (w x h) | 160 x 116 | = | 1440 x 381.02 |
+| Padding | 24px | = | 0px 0px 0px 48px |
+| Gap | 24px | = | 10px |
 | Border | none | = | = |
 | Radius | 0px | = | = |
 | Background | transparent | = | = |
 | Box shadow | none | = | = |
 | Outline | none | = | = |
-| Font | sans-serif 12px/normal 400 | = | Times New Roman 16px/normal 400 |
+| Font | sans-serif 12px/normal 400 | = | = |
 | Letter spacing | normal | = | = |
 | Colour | #000000 | = | = |
 | Transition | none | = | = |
-| Cursor | none | = | - |
+| Cursor | none | = | = |
 | ::after | 160px x 116px, absolute, bg #000000 @ 0, radius 0px | = | - |
-| Painted layers | div::after.framer-p1xt7c 160pxx116px border R:1px solid; div.framer-ig1a2v 104.0x1.0 bg #000000; div.framer-1wtprsd 64.0x1.0 bg #000000; div.framer-4opjpw 104.0x1.0 bg #000000 | div::after.framer-p1xt7c 160pxx116px border R:1px solid; div.framer-ig1a2v 104.0x1.0 bg #000000; div.framer-1wtprsd 104.0x1.0 bg #000000; div.framer-4opjpw 104.0x1.0 bg #000000 | body.framer-body-KqUl8LiGf-framer-kKUAY.framer-cursor-none 1440.0x8305.2 bg #faf6f0; div.framer-kKUAY.framer-R8WG4 1440.0x8305.2 bg #faf6f0; div::after.framer-324l0c 1392pxx1185.91px border T:1px solid / R:1px solid / L:1px solid; div::after.framer-qTIUJ.framer-o0W2X 1392pxx116px border T:1px solid / R:1px solid / B:1px solid / L:1px solid; div::after.framer-1n1l10e 1232pxx116px border R:1px solid; a.framer-1lje3.framer-12mefgs 154.0x56.0 bg #000000 r 9999px |
+| Painted layers | div::after.framer-p1xt7c 160pxx116px border R:1px solid; div.framer-ig1a2v 104.0x1.0 bg #000000; div.framer-1wtprsd 64.0x1.0 bg #000000; div.framer-4opjpw 104.0x1.0 bg #000000 | div::after.framer-p1xt7c 160pxx116px border R:1px solid; div.framer-ig1a2v 104.0x1.0 bg #000000; div.framer-1wtprsd 104.0x1.0 bg #000000; div.framer-4opjpw 104.0x1.0 bg #000000 | - |
 | How | resting state | mouse hover over the element | the menu box's own press (overlay open; reloaded afterwards) |
-| Text node | - | = | a.framer-text.framer-styles-preset-16lr516: Inter 16px/19.2px 600, #000000 |
-| Icon | - | = | 124 x 60, colour #0000ee, fill #000000 |
+| Text node | - | = | p.framer-text.framer-styles-preset-1tg37r6: Inter 24px/33.6px 500, #000000 |
 
-Crops: `nav-menu-box-default.png`, `nav-menu-box-hover.png`.
+Crops: `nav-menu-box-default.png`, `nav-menu-box-hover.png`, `nav-menu-box-opened.png`.
 
 #### footer
 
 Footer. The page footer: product/resource columns, the social icons, the "Change theme" control and the "Try it for free" CTA.
 
-Page: home. Selector: `footer`. States: default, dark.
+Page: home. Selector: `footer (the whole block)`. States: default, dark.
 
 | Property | default | dark |
 |---|---|---|
-| Size (w x h) | 175 x 19.2 | = |
+| Size (w x h) | 1392 x 560.41 | = |
 | Padding | 0px | = |
+| Gap | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
@@ -137,9 +137,12 @@ Page: home. Selector: `footer`. States: default, dark.
 | Font | sans-serif 12px/normal 400 | = |
 | Letter spacing | normal | = |
 | Colour | #000000 | #ffffff |
-| Text node | p.framer-text.framer-styles-preset-1te43qg: Inter 12px/19.2px 400, #000000 | p.framer-text.framer-styles-preset-1te43qg: Inter 12px/19.2px 400, #edecda |
+| Text node | h3.framer-text.framer-styles-preset-1nnq1zc: Unbounded 62px/68.2px 500, #000000 | h3.framer-text.framer-styles-preset-1nnq1zc: Unbounded 62px/68.2px 500, #edecda |
 | Transition | none | = |
 | Cursor | none | = |
+| Icon | 48 x 48, colour #000000 | 48 x 48, colour #edecda |
+| ::after | 1392px x 560.406px, absolute, bg #000000 @ 0, radius 0px | = |
+| Painted layers | div::after.framer-MCeyU.framer-BAp5c 1392pxx560.406px border T:1px solid / R:1px solid / B:1px solid / L:1px solid; div::after.framer-cmnq2x 1392pxx116.203px border B:1px solid; div.framer-1r83dga 9.0x9.0 bg #000000 r 100px; div::after.framer-ivcetf 1392pxx377px border B:1px solid; div::after.framer-1ddini9 278.391pxx377px border R:1px solid; div::after.framer-14gy5od 278.406pxx377px border R:1px solid | div::after.framer-MCeyU.framer-BAp5c 1392pxx560.406px border T:1px solid / R:1px solid / B:1px solid / L:1px solid; div::after.framer-cmnq2x 1392pxx116.203px border B:1px solid; div.framer-1r83dga 9.0x9.0 bg #edecda r 100px; div::after.framer-ivcetf 1392pxx377px border B:1px solid; div::after.framer-1ddini9 278.391pxx377px border R:1px solid; div::after.framer-14gy5od 278.406pxx377px border R:1px solid |
 | How | resting state | same element after the footer "Change theme" toggle repaints html[toggle-theme=dark] |
 
 Crops: `footer-default.png`, `footer-dark.png`.
@@ -170,20 +173,20 @@ Crops: `theme-control-default.png`, `theme-control-hover.png`.
 
 #### footer-link
 
-Footer link. A footer column link (a product page).
+Footer link. A footer column link (a product page) — an anchor inside the measured footer block.
 
-Page: home. Selector: `footer a`. States: default, hover.
+Page: home. Selector: `a inside the footer block`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 55 x 20 | = |
+| Size (w x h) | 34 x 17 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | Inter 16px/19.2px 600 | = |
+| Font | Inter 14px/22px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #000000 | = |
 | Transition | none | = |
@@ -244,31 +247,32 @@ Crops: `hero-copy-default.png`.
 
 #### hero-cta
 
-Hero call-to-action. The solid button under the hero ("Try it for free" / "Get Started - Free Trial") — links to the app, measured never followed.
+Hero call-to-action. The trial CTA — the floating "Try it for free" pill painted bottom-right on the marketing pages — links to the app, measured never followed.
 
-Page: home. Selector: `a/button (trial CTA)`. States: default, hover, focus-visible, pressed, dark.
+Page: home. Selector: `a/button (trial CTA, outside the nav)`. States: default, hover, focus-visible, dark, pressed.
 
-| Property | default | hover | focus-visible | pressed | dark |
+| Property | default | hover | focus-visible | dark | pressed |
 |---|---|---|---|---|---|
-| Size (w x h) | 154 x 56 | = | = | = | = |
+| Size (w x h) | 196 x 56 | = | = | = | = |
 | Padding | 15px 30px | = | = | = | = |
 | Gap | 10px | = | = | = | = |
 | Border | none | = | = | = | = |
 | Radius | 9999px | = | = | = | = |
-| Background | #000000 | = | = | = | #faf6f0 |
+| Background | #000000 | = | = | #faf6f0 | = |
 | Box shadow | none | = | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 1px | = | = |
 | Font | sans-serif 12px/normal 400 | = | = | = | = |
 | Letter spacing | normal | = | = | = | = |
-| Colour | #0000ee | = | = | = | #9e9eff |
-| Text node | p.framer-text: Inter 16px/19.2px 600, #ffffff | = | = | = | p.framer-text: Inter 16px/19.2px 600, #000000 |
+| Colour | #0000ee | = | = | #9e9eff | #ff0000 |
+| Text node | p.framer-text: Inter 16px/19.2px 600, #ffffff | = | = | p.framer-text: Inter 16px/19.2px 600, #000000 | = |
 | Transition | none | = | = | = | = |
 | Cursor | none | = | = | = | = |
-| Painted layers | a.framer-1lje3.framer-12mefgs 154.0x56.0 bg #000000 r 9999px | = | a.framer-1lje3.framer-12mefgs 154.0x56.0 bg #000000 r 9999px outline 1px auto #101010 offset 1px | = | a.framer-1lje3.framer-12mefgs 154.0x56.0 bg #faf6f0 r 9999px |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press | same element after the footer "Change theme" toggle repaints html[toggle-theme=dark] |
+| Icon | 17 x 22, colour #0000ee, fill #000000 | = | = | 17 x 22, colour #9e9eff, fill #000000 | 17 x 22, colour #ff0000, fill #000000 |
+| Painted layers | a.framer-1lje3.framer-12mefgs 196.0x56.0 bg #000000 r 9999px | = | a.framer-1lje3.framer-12mefgs 196.0x56.0 bg #000000 r 9999px outline 1px auto #101010 offset 1px | a.framer-1lje3.framer-12mefgs 196.0x56.0 bg #faf6f0 r 9999px | = |
+| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | same element after the footer "Change theme" toggle repaints html[toggle-theme=dark] | CDP CSS.forcePseudoState(:active:hover) — no real press |
 | Opacity | - | 0.8 | = | = | = |
 
-Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`, `hero-cta-dark.png`.
+Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-dark.png`, `hero-cta-pressed.png`.
 
 #### section-heading
 
@@ -292,7 +296,7 @@ Page: home. Selector: `h3`. States: default, dark.
 | Cursor | none | = |
 | How | resting state | same element after the footer "Change theme" toggle repaints html[toggle-theme=dark] |
 
-Crops: `section-heading-default.png`.
+Crops: `section-heading-default.png`, `section-heading-dark.png`.
 
 ### Pricing
 
@@ -300,12 +304,13 @@ Crops: `section-heading-default.png`.
 
 Plan card. A pricing card ("Grow" / "Business" / "Enterprise"): name, price, allowance rows and its CTA.
 
-Page: pricing. Selector: `box (priced plan)`. States: default, dark.
+Page: pricing. Selector: `box (priced plan with its own CTA)`. States: default, dark.
 
 | Property | default | dark |
 |---|---|---|
-| Size (w x h) | 488 x 135.19 | = |
+| Size (w x h) | 464 x 571 | = |
 | Padding | 0px | = |
+| Gap | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
@@ -314,38 +319,39 @@ Page: pricing. Selector: `box (priced plan)`. States: default, dark.
 | Font | sans-serif 12px/normal 400 | = |
 | Letter spacing | normal | = |
 | Colour | #000000 | #ffffff |
-| Text node | strong.framer-text: Inter 18px/28.8px 700, #000000 | strong.framer-text: Inter 18px/28.8px 700, #edecda |
+| Text node | h6.framer-text.framer-styles-preset-73gayi: Unbounded 20px/28px 500, #000000, ls 0.4px | h6.framer-text.framer-styles-preset-73gayi: Unbounded 20px/28px 500, #edecda, ls 0.4px |
 | Transition | none | = |
 | Cursor | none | = |
+| Icon | 20 x 20, colour #000000 | 20 x 20, colour #ffffff, fill #000000 |
+| Painted layers | div::after.framer-1fhyswc 464pxx166.391px border B:1px solid; a.framer-vVI5g.framer-4vbkq 416.0x49.6 bg #000000 | div::after.framer-1fhyswc 464pxx166.391px border B:1px solid; a.framer-vVI5g.framer-4vbkq 416.0x49.6 bg #edecda |
 | How | resting state | same element after the footer "Change theme" toggle repaints html[toggle-theme=dark] |
 
 Crops: `plan-card-default.png`, `plan-card-dark.png`.
 
 #### plan-cta
 
-Plan CTA button. A plan's call-to-action — links to the app; measured, never followed.
+Plan CTA button. A plan's call-to-action inside the measured plan card — links to the app; measured, never followed.
 
-Page: pricing. Selector: `a/button (plan CTA)`. States: default, hover, focus-visible, pressed.
+Page: pricing. Selector: `a/button inside the plan card`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 154 x 56 | = | = | = |
-| Padding | 15px 30px | = | = | = |
-| Gap | 10px | = | = | = |
+| Size (w x h) | 416 x 49.59 | = | = | = |
+| Padding | 12px 20px | = | = | = |
+| Gap | 6px | 12px | = | = |
 | Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
+| Radius | 0px | = | = | = |
 | Background | #000000 | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | sans-serif 12px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #0000ee | = | = | = |
-| Text node | p.framer-text: Inter 16px/19.2px 600, #ffffff | = | = | = |
+| Colour | #0000ee | = | = | #ff0000 |
+| Text node | h1.framer-text.framer-styles-preset-1fllz1t: Unbounded 16px/25.6px 500, #faf6f0, ls 0.48px | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | none | = | = | = |
-| Painted layers | a.framer-1lje3.framer-12mefgs 154.0x56.0 bg #000000 r 9999px | = | a.framer-1lje3.framer-12mefgs 154.0x56.0 bg #000000 r 9999px outline 1px auto #101010 offset 1px | = |
+| Painted layers | a.framer-vVI5g.framer-4vbkq 416.0x49.6 bg #000000 | = | a.framer-vVI5g.framer-4vbkq 416.0x49.6 bg #000000 outline 1px auto #101010 offset 1px | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
-| Opacity | - | 0.8 | = | = |
 
 Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
 
@@ -490,7 +496,7 @@ Page: login. Selector: `form/card (login)`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 500 x 61.59 |
+| Size (w x h) | 500 x 498.84 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -502,6 +508,8 @@ Page: login. Selector: `form/card (login)`. States: default.
 | Colour | #37352f |
 | Text node | p.auth-title: Inter 23px/27.6px 600, #37352f |
 | Transition | none |
+| Icon | 30 x 20, colour #707b8b |
+| Painted layers | input.w-full.outline-none 500.0x48.5 bg #fcfcfc border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 10px outline 2px solid #000000 @ 0 offset 2px; input.w-full.outline-none 500.0x48.5 bg #fcfcfc border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 10px outline 2px solid #000000 @ 0 offset 2px; button.inline-flex.items-center 500.0x53.3 bg #222222 r 10px; button.inline-flex.items-center 500.0x56.0 border T:2px solid / R:2px solid / B:2px solid / L:2px solid r 10px; div.w-full.border-t 500.0x1.0 border T:1px solid; span.px-10.pt-10 34.0x31.0 bg #ffffff |
 | How | resting state |
 
 Crops: `login-card-default.png`.
@@ -775,23 +783,23 @@ Page: home. Selector: `[data-framer-name="Menu"]`. States: opened.
 
 | Property | opened |
 |---|---|
-| Size (w x h) | 390 x 13282.56 |
+| Size (w x h) | 390 x 343.98 |
 | Padding | 0px |
+| Gap | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Times New Roman 16px/normal 400 |
+| Font | sans-serif 12px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | h3.framer-text: Unbounded 32px/38.4px 500, #000000 |
+| Text node | p.framer-text.framer-styles-preset-1j07l0l: Inter-Medium 16px/25.6px 500, #000000 |
 | Transition | none |
-| Icon | 124 x 60, colour #0000ee, fill #000000 |
-| Painted layers | body.framer-body-KqUl8LiGf-framer-kKUAY 390.0x13282.6 bg #faf6f0; div.framer-kKUAY.framer-R8WG4 390.0x13282.6 bg #faf6f0; div::after.framer-324l0c 358pxx933.594px border T:1px solid / R:1px solid / L:1px solid; div::after.framer-qTIUJ.framer-o0W2X 358pxx116px border T:1px solid / R:1px solid / B:1px solid / L:1px solid; div::after.framer-1n1l10e 198pxx116px border R:1px solid; div::after.framer-p1xt7c 160pxx116px border R:1px solid |
+| Painted layers | div::after.framer-k36hk2 44pxx44px border T:1px solid / R:1px solid / B:1px solid / L:1px solid; div.framer-13cooux 19.1x19.1 bg #000000; div.framer-1itw2xu 19.1x19.1 bg #000000 |
 | How | the menu box's own tap (overlay open; reloaded afterwards) |
 
-Crops: none.
+Crops: `m-menu-box-opened.png`.
 
 ### Marketing (mobile)
 
@@ -814,7 +822,6 @@ Page: home. Selector: `h1,h2,h3`. States: default.
 | Letter spacing | normal |
 | Colour | #000000 |
 | Transition | none |
-| Cursor | none |
 | How | resting state |
 
 Crops: `m-hero-heading-default.png`.

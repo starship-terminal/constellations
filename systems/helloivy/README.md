@@ -126,13 +126,13 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | text | #000000 `light.color.ink` | #edecda `dark.color.ink` |
 | muted | #000000 `light.color.muted` | #666662 `dark.color.muted` |
 | accent | #0099ff `light.color.link` | #0099ff `dark.color.link` |
-| border | #0000ee `light.component.button.cta.border` | #9e9eff `dark.component.button.cta.border` |
+| border | #000000 `light.color.ink` | #edecda `dark.color.ink` |
 
 Fonts: `core.font.family.display` is Unbounded, then 2 fallbacks; `core.font.family.body` is Inter, then 2 fallbacks; `core.font.family.docs` is General Sans, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 13 type styles (`core.typography`), 2 radius steps (`core.radius`), no spacing steps under `core.spacing`.
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 61 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 64 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

@@ -162,12 +162,18 @@ await tryDo('faq open', async () => {
   await open(p, '/pricing');
   const q = await p.evaluate(() => {
     const el = [...document.querySelectorAll('div,p,h1,h2,h3,button,a')].filter((e) => /^Is Hello Ivy only useful for design teams\??$/i.test((e.innerText || '').trim()))[0];
-    if (el) { const r = el.getBoundingClientRect(); el.setAttribute('data-xy', `${r.x + r.width / 2},${r.y + r.height / 2}`); el.scrollIntoView({ block: 'center', behavior: 'instant' }); }
+    if (el) { el.setAttribute('data-xy', '1'); el.scrollIntoView({ block: 'center', behavior: 'instant' }); }
     return Boolean(el);
   });
   if (q) {
-    const [x, y] = (await p.evaluate(() => document.querySelector('[data-xy]').getAttribute('data-xy'))).split(',').map(Number);
-    await p.mouse.click(x, y).catch(() => {});
+    await wait(p, 600);
+    const pt = await p.evaluate(() => {
+      const el = document.querySelector('[data-xy]');
+      if (!el) return null;
+      const r = el.getBoundingClientRect();   // read after the scroll — pre-scroll coords are stale
+      return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+    });
+    if (pt) await p.mouse.click(pt.x, pt.y).catch(() => {});
     await wait(p, 1200); await grab(p, 'pricing (faq open)');
   }
 });

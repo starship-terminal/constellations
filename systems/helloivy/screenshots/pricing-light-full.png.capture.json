@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:24:09.737Z",
+  "capturedAt": "2026-11-17T13:02:04.467Z",
   "screenshot": "pricing-light-full.png",
   "sanitizedSourceUrl": "https://www.helloivy.co/pricing",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 3077
+      "height": 3202
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 3077
+    "height": 3202
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 3077
+      "height": 3202
     },
     "basis": "fullPage"
   },
