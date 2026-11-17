@@ -16476,7 +16476,8 @@
      "marketing home and pricing ignore prefers-reduced-motion; sign-in is partial (raw/motion.json)"
     ],
     "durationMin": 180,
-    "durationNote": "wall-clock across the capture session including kit adaptation, route and DOM probing, the stylesheet harvest, screenshot and measurement passes, and the offline build"
+    "durationNote": "wall-clock across the capture session including kit adaptation, route and DOM probing, the stylesheet harvest, screenshot and measurement passes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/647"
    }
   }
  ]
