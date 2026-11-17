@@ -15338,7 +15338,7 @@
       ],
       "durationMin": 240,
       "durationNote": "wall-clock across the capture sessions including reachability probes, kit adaptation from the Grok capture, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
-      "pr": ""
+      "pr": "https://github.com/starship-terminal/constellations/pull/631"
    },
    "layoutGaps": {}
 }
