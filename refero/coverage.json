@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 179,
-    "system_domains": 170,
-    "matched_domains": 140,
-    "missing_domains": 293,
+    "system_packages": 181,
+    "system_domains": 172,
+    "matched_domains": 142,
+    "missing_domains": 291,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -906,6 +906,23 @@
           "slug": "clipchamp",
           "name": "Clipchamp",
           "url": "https://clipchamp.com",
+          "name_match": true
+        }
+      ]
+    },
+    "cofounder.co": {
+      "catalog": [
+        {
+          "name": "Cofounder",
+          "domain": "cofounder.co",
+          "id": 746
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cofounder",
+          "name": "Cofounder",
+          "url": "https://cofounder.co",
           "name_match": true
         }
       ]
@@ -2304,6 +2321,23 @@
         }
       ]
     },
+    "joinhandshake.com": {
+      "catalog": [
+        {
+          "name": "Handshake",
+          "domain": "joinhandshake.com",
+          "id": 785
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "joinhandshake",
+          "name": "Handshake",
+          "url": "https://joinhandshake.com",
+          "name_match": false
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2473,13 +2507,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "cofounder.co": [
-      {
-        "name": "Cofounder",
-        "domain": "cofounder.co",
-        "id": 746
       }
     ],
     "cohere.com": [
@@ -2753,13 +2780,6 @@
         "name": "Jitter",
         "domain": "jitter.video",
         "id": 318
-      }
-    ],
-    "joinhandshake.com": [
-      {
-        "name": "Handshake",
-        "domain": "joinhandshake.com",
-        "id": 785
       }
     ],
     "kickstarter.com": [

@@ -1514,6 +1514,21 @@
     "reason": "catalog.json describes a digital-products marketplace: the Discover browse grid with category pills and product cards, a creator subdomain product page with tier pricing, a public checkout form and the signed-out login/signup edge."
   },
   {
+    "referenceId": "systems:cofounder",
+    "groupId": "web-categories",
+    "labels": [
+      "AI Tool",
+      "Productivity"
+    ],
+    "reason": "catalog.json describes Cofounder's AI agent-orchestration marketing site: a pixel-art hero, an agent tools band, how-to guides, pricing cards and the Cofounder OS sign-in boundary."
+  },
+  {
+    "referenceId": "systems:joinhandshake",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Productivity"],
+    "reason": "catalog.json describes a college career network: the students/employers/career-centers marketing stack, employer pricing and request-a-demo Marketo forms, a careers page with a departments filter, a blog and learn hub, legal and corporate pages, and the consumer app's signed-out 'Log in or sign up' card at /access - all signed-out, with the job feed and registration behind a Cloudflare boundary."
+  },
+  {
     "referenceId": "systems:hitchd",
     "groupId": "web-categories",
     "labels": [
