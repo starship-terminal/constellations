@@ -16372,6 +16372,115 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/635",
     "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "hume",
+   "name": "Hume AI",
+   "url": "https://www.hume.ai",
+   "category": "ai-agent",
+   "platform": "web",
+   "goodFor": "Voice-AI product marketing and docs in Hume's post-pivot Audio Decision Model system: a Next.js + Tailwind v4 site whose :root declares warm off-white #fdfdfc ground, an eleven-pastel --accent-* ramp that paints the question/answer chip grammar (Pick One / Yes/No / Scale rubric rows beside a customer-call player), --gradient-* wash stops, Martina Plantijn serif display scaled by a --k viewport factor over Inter UI and PP Fraktion Mono code; a Fern docs build on dev.hume.ai with the only real theme control (header Light/Dark/System menu repaints html.dark onto a #1c1917 warm near-black, Fellix body + Fraktion code, 93px header + 272px sidebar + sticky TOC, 528px prose/code reference columns); plus the demo.hume.ai invitation gate and the app.hume.ai/log-in card, each on its own light layer - all signed out, the playground and platform never entered",
+   "tags": [
+    "web",
+    "voice",
+    "ai",
+    "audio",
+    "agents",
+    "tts",
+    "saas",
+    "marketing",
+    "docs",
+    "fern",
+    "nextjs",
+    "tailwind",
+    "pastel",
+    "serif-display",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed out (every captured surface is public: www.hume.ai marketing/product/blog/legal pages, the dev.hume.ai docs, the demo.hume.ai invitation gate and the app.hume.ai/log-in card; the demo playground is gated on an invitation email and was never entered, nothing past /log-in was entered, EVI/Octave TTS have no public surface post-pivot - demo.hume.ai/evi answers 404; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the docs Theme menu, the home player's transport, the benchmark tabs, the blog filters and the mobile drawer)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/hume/README.md",
+   "tokens": "systems/hume/tokens.json",
+   "styleGuide": "systems/hume/style-guide.html",
+   "preview": {
+    "cover": "systems/hume/screenshots/home-light-default.png",
+    "icon": "systems/hume/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.bg.default",
+      "surface": "light.docs.color.background",
+      "text": "light.ink.default",
+      "muted": "light.docs.grayscale.11",
+      "accent": "core.accent.blue",
+      "border": "light.docs.color.borderDefault"
+     },
+     "dark": {
+      "page": "dark.docs.color.background",
+      "surface": "dark.docs.card.background",
+      "text": "dark.docs.color.body",
+      "muted": "dark.docs.grayscale.11",
+      "accent": "dark.docs.accent.default",
+      "border": "dark.docs.color.borderDefault"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.serif",
+     "core.font.family.docs",
+     "core.font.family.code"
+    ]
+   },
+   "source": "capture",
+   "capture": {
+    "method": "public-web",
+    "source": "www.hume.ai, dev.hume.ai, demo.hume.ai and app.hume.ai/log-in in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 86 element crops from the live DOM, plus a four-surface stylesheet harvest (1437 rules, 156 @font-face, resolved custom properties per surface: www 138 light, docs 676 light + 676 dark, demo 188, app 232). www/demo/app paint a single light theme - a .dark class and a dark colour-scheme emulation leave them unchanged; dev.hume.ai's header Theme menu (Light/Dark/System) repaints html.dark, verified by the painted surface and restored after. BOUNDARY: the demo playground sits behind an invitation email link, app.hume.ai past /log-in is the sign-in boundary, EVI/Octave TTS have no public surface post-pivot (demo.hume.ai/evi 404s), docs Search/Ask-AI and the API reference Send were never used - issuing a query or request is a side effect",
+    "timestamp": "2026-11-18T00:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "www.hume.ai/ (home, benchmark tab, playing state)",
+     "www.hume.ai/emotion-science",
+     "www.hume.ai/products/decision-model-api, /expression-apis, /human-feedback, /user-testing, /speech-data, /prism, /voiceeq-platform",
+     "www.hume.ai/solutions/develop-voice-models, /deploy-voice-agents",
+     "www.hume.ai/benchmark (category tab)",
+     "www.hume.ai/blog (category filter) and /blog/hume-audio-decision-benchmarks",
+     "www.hume.ai/publications, /about, /careers",
+     "www.hume.ai/contact-form (field-focused)",
+     "www.hume.ai/privacy-policy, /terms-of-use",
+     "www.hume.ai/explore/speech-prosody-model (canvas explorer)",
+     "www.hume.ai/this-page-does-not-exist (the not-found page)",
+     "dev.hume.ai/audio-decisions docs/overview, docs/quickstart/python, reference/decisions/create, changelog - light and dark via the header Theme menu",
+     "demo.hume.ai/decision-model/file (the invitation gate)",
+     "app.hume.ai/log-in (field-focused)",
+     "mobile passes on home, benchmark, blog, contact-form, docs-overview, demo-gate and log-in at 390x844"
+    ],
+    "gaps": [
+     "the signed-in platform (app.hume.ai past /log-in - dashboard, API keys, projects, billing) is the product's own boundary, never entered",
+     "the demo.hume.ai playground is gated on an invitation email link; the gate is the honest signed-out evidence",
+     "EVI and Octave TTS have no public surface after the pivot to the Audio Decision Model line - demo.hume.ai/evi answers 404; no EVI demo or mic-permission state exists to capture",
+     "the docs Search and 'Ask AI' were opened for their UI and closed with Escape - never queried; the API reference's Send was never pressed (a network side effect)",
+     "the /explore/speech-prosody-model explorer renders to canvas - its internals are not DOM and are documented as a gap",
+     "contact, newsletter and log-in fields were clicked into for the focus look only - never typed or submitted",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so a script-applied mousedown style is missing",
+     "the brand faces (Martina Plantijn, PP Fraktion Mono, Fellix, Fraktion) are licensed and not shipped; crops show them, the style guide falls back",
+     "full-page shots bound at eight chunks - blog-post and terms-of-use ran past one GPU texture and are stitched part tiles; bounds are in each .capture.json sidecar"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across two sessions including a rate-limit interruption: kit adaptation, the four-surface stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
+   }
   }
  ]
 }

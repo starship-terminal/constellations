@@ -1609,5 +1609,13 @@
    "Marketplace"
   ],
   "reason": "catalog.json describes a honeymoon cash-gift registry: the closure-notice home, marketing content pages (blog, destination trips, guides), the signed-out auth forms at rest and the public demo registry where guests fund a couple's listed gifts."
+ },
+ {
+  "referenceId": "systems:hume",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "catalog.json describes Hume's empathic voice-AI platform: the post-pivot Audio Decision Model marketing site, the dev.hume.ai docs, the invitation-gated demo playground and the app.hume.ai/log-in boundary."
  }
 ]

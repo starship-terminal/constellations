@@ -1,0 +1,115 @@
+file	inferred_name	hash	sizes	viewBox	style	seen_on	place	text_or_label
+icon-4f0f75d5.svg	icon-4f0f75d5	4f0f75d5	11x11 12x12 16x16	0 0 24 24	stroke	home; decision-model; emotion-science; benchmark; blog; blog-post; about; docs; docs-reference; docs search dialog; docs theme menu; docs dark; mobile	a; button; span	NEW Introducing the Hume Audio Decisions / Next / Next: For coding agents
+discord.svg	discord	1d529127	16x16	0 0 256 199	fill	home; decision-model; emotion-science; benchmark; blog; blog-post; about; mobile	a	Discord
+x-twitter.svg	x-twitter	5bbb6f82	12x12 16x16	0 0 24 24	fill	home; decision-model; emotion-science; benchmark; blog; blog-post; about; mobile	a	X/Twitter / Share on X
+github.svg	github	b36e9574	16x16	0 0 1024 1024	fill	home; decision-model; emotion-science; benchmark; blog; blog-post; about; mobile	a	GitHub
+youtube.svg	youtube	c23df320	16x16	0 0 24 24	fill	home; decision-model; emotion-science; benchmark; blog; blog-post; about; mobile	a	YouTube
+linkedin.svg	linkedin	c9f2b4e8	16x16	0 0 256 256	fill	home; decision-model; emotion-science; benchmark; blog; blog-post; about; mobile	a	LinkedIn
+products.svg	products	d3a94850	16x16	0 0 24 24	stroke	home; decision-model; emotion-science; benchmark; blog; blog-post; about	button	Products / Solutions / Benchmarks
+copy-page.svg	copy-page	0cc69986	16x16	0 0 24 24	stroke	docs; docs-reference; docs search dialog; docs theme menu; docs dark	button; button [&_svg]:pointer-events-none	Copy page / Copy to clipboard
+api-reference.svg	api-reference	3792e8b6	14x14	0 0 384 512	fill	docs; docs-reference; docs search dialog; docs theme menu; docs dark	a	API Reference
+search.svg	search	3fcb0bde	16x16	0 0 24 24	stroke	docs; docs-reference; docs search dialog; docs theme menu; docs dark	button [&_svg]:pointer-events-none	Search
+support.svg	support	52b4d7f7	14x14	0 0 512 512	fill	docs; docs-reference; docs search dialog; docs theme menu; docs dark	a	Support
+icon-8af3f8cd.svg	icon-8af3f8cd	8af3f8cd	12x12 16x16	0 0 24 24	stroke	home; emotion-science; benchmark; blog-post; mobile	a	Learn more about User Testing API / Learn more about Expression APIs / Learn more about Human Feedback API
+yes.svg	yes	8be452ed	16x16	0 0 24 24	stroke	docs; docs-reference; docs search dialog; docs theme menu; docs dark	button [&_svg]:pointer-events-none	Yes
+expand-code.svg	expand-code	b3faee22	16x16	0 0 24 24	stroke	docs; docs-reference; docs search dialog; docs theme menu; docs dark	button [&_svg]:pointer-events-none	Expand code
+no.svg	no	c7dbcd52	16x16	0 0 24 24	stroke	docs; docs-reference; docs search dialog; docs theme menu; docs dark	button [&_svg]:pointer-events-none	No
+changelog.svg	changelog	d4730538	14x14	0 0 512 512	fill	docs; docs-reference; docs search dialog; docs theme menu; docs dark	a	Changelog
+cookbooks.svg	cookbooks	d66a06fa	14x14	0 0 448 512	fill	docs; docs-reference; docs search dialog; docs theme menu; docs dark	a	Cookbooks
+audio-decisions.svg	audio-decisions	ebd8b747	12x12 16x16	0 0 24 24	stroke	docs; docs-reference; docs search dialog; docs theme menu; docs dark	button; button [&_.fern-docs-badge]:-ml-1.5	Audio Decisions / Voice agent QA / cURL
+documentation.svg	documentation	faaee109	14x14	0 0 512 512	fill	docs; docs-reference; docs search dialog; docs theme menu; docs dark	a	Documentation
+icon-09329f69.svg	icon-09329f69	09329f69	32x32	0 0 512 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	Interpreting answers Learn how to read e
+icon-302c2bf8.svg	icon-302c2bf8	302c2bf8	32x32	0 0 512 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	Introducing the Audio Decisions API Why 
+scroll-to-top.svg	scroll-to-top	50cc47e0	16x16	0 0 24 24	stroke	docs; docs search dialog; docs theme menu; docs dark	button	Scroll to top
+icon-546ab3a4.svg	icon-546ab3a4	546ab3a4	32x32	0 0 576 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	Runs Look up the status and request of p
+terms-of-use.svg	terms-of-use	56a981a8	16x16	0 0 24 24	stroke	docs; docs search dialog; docs theme menu; docs dark	a	Terms of use / Privacy policy / Status
+icon-5a311be7.svg	icon-5a311be7	5a311be7	32x32	0 0 512 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	Primitives Learn what each question type
+icon-5d184e9a.svg	icon-5d184e9a	5d184e9a	32x32	0 0 448 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	TypeScript quickstart Act on answers in 
+icon-7341d5c6.svg	icon-7341d5c6	7341d5c6	32x32	0 0 384 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	API reference Every parameter and field 
+icon-766c46b6.svg	icon-766c46b6	766c46b6	32x32	0 0 448 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	Python quickstart Score text-to-speech o
+built-with-aff1e95e.svg	built-with	aff1e95e	52x14	0 0 604 164	fill	docs; docs-reference; docs search dialog; docs theme menu	a	Built with
+icon-b79621ff.svg	icon-b79621ff	b79621ff	32x32	0 0 448 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	Build with a coding agent Point your cod
+ask-ai-bcf801d6.svg	ask-ai	bcf801d6	17x17	0 0 512 512	fill	docs; docs-reference; docs search dialog; docs theme menu	button	Ask AI
+report-incorrect-code.svg	report-incorrect-code	d02c3231	16x16	0 0 24 24	stroke	docs; docs search dialog; docs theme menu; docs dark	button [&_svg]:pointer-events-none	Report incorrect code
+icon-e09864c9.svg	icon-e09864c9	e09864c9	32x32	0 0 384 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	Use cases Learn which decisions the API 
+icon-e720274b.svg	icon-e720274b	e720274b	32x32	0 0 512 512	fill	docs; docs search dialog; docs theme menu; docs dark	a	Writing questions Learn how to write que
+theme.svg	theme	fd51656b	16x16	0 0 24 24	stroke	docs; docs-reference; docs search dialog; docs theme menu	button [&_svg]:pointer-events-none; button [&_svg]:size-icon	Theme / System
+add-question-4ee09870.svg	add-question	4ee09870	11x11 12x12 16x16	0 0 24 24	stroke	home; decision-model; mobile	span	Add question
+icon-70e6626c.svg	icon-70e6626c	70e6626c	16x16	0 0 24 24	stroke	emotion-science; benchmark; about	a	Read the study (opens in a new tab) / Explore the research (opens in a new tab / Read the benchmark whitepaper (opens in 
+play.svg	play	b70cae5a	10x10 11x11 12x12 14x14 18x18	0 0 24 24	fill	home; decision-model; mobile	button; span	Play / Watch Video
+dark.svg	dark	0640732f	16x16	0 0 24 24	stroke	docs theme menu; docs dark	button [&_svg]:size-icon; button [&_svg]:pointer-events-none	Dark / Theme
+icon-15b0e8af.svg	icon-15b0e8af	15b0e8af	11x11 12x12	0 0 24 24	fill	home; mobile	span	
+ask-ai-1b87bb98.svg	ask-ai	1b87bb98	16x16	0 0 512 512	fill	docs-reference; docs search dialog	button; div	Ask AI
+pick-one.svg	pick-one	1dbfca7e	12x12	0 0 24 24	stroke	home; mobile	span	Pick One / Yes/No / Scale
+add-question-3979c7e1.svg	add-question	3979c7e1	16x16	0 0 24 24	stroke	home; mobile	span	Add question
+icon-42c79811.svg	icon-42c79811	42c79811	12x12 20x20 28x28	0 0 24 24	stroke	decision-model; docs-reference	button	What is Hume’s audio decision model? / What is a decision model for audio or vo / How is the audio decision model differen
+icon-43ee084b.svg	icon-43ee084b	43ee084b	10x10 14x14 18x18	0 0 14 14	fill	home; mobile	p; span shadow-[0_0_1px_rgb(0_0_0/0.12)]	Hume Audio Decision Model
+stop-70d7f08a.svg	stop	70d7f08a	11x11 12x12	0 0 24 24	fill	home; mobile	button	Stop
+pause-91aa4dca.svg	pause	91aa4dca	11x11 12x12	0 0 24 24	fill	home; mobile	button; span	Pause
+icon-d171201e.svg	icon-d171201e	d171201e	41x41 48x48 55x55 56x56 59x59	0 0 56 56	stroke	home; mobile	span	
+copy-link.svg	copy-link	08f25c9b	14x14	0 0 24 24	stroke	blog-post	button	Copy link
+system.svg	system	0bfe9986	16x16	0 0 24 24	stroke	docs theme menu	button [&_svg]:size-icon	System
+scenarios-103e567a.svg	scenarios	103e567a	17x17	0 0 24 24	stroke	home	div	Scenarios
+model.svg	model	173e6fbb	12x12	0 0 24 24	stroke	blog-post	button	Model / AES / NISQA
+icon-199377de.svg	icon-199377de	199377de	19x14	0 0 22.5 15	fill	decision-model	span	
+overall.svg	overall	19952028	12x12	0 0 24 24	stroke	blog-post	button	Overall
+svg-size-3-75-19d4b6ad.svg	svg-size-3-75	19d4b6ad	15x15	0 0 24 24	stroke	home	span [&_svg]:size-3.75	
+add-question-1ea3b0ce.svg	add-question	1ea3b0ce	10x10	0 0 24 24	stroke	decision-model	span	Add Question
+icon-2a386c64.svg	icon-2a386c64	2a386c64	28x28	0 0 24 24	stroke	benchmark	li	Your criteria Tailored to the modality a
+sign-in-with-google-2a6d6a3b.svg	sign-in-with-google	2a6d6a3b	16x16	-24 0 310 262	fill	login	button [grid-area:1_/_1]	SIGN IN WITH GOOGLE
+icon-2da37a5e.svg	icon-2da37a5e	2da37a5e	12x12	0 0 24 24	fill	home	span	
+icon-2e1a848b.svg	icon-2e1a848b	2e1a848b	24x24	0 0 24.5 25	fill	blog	div	
+hide-2-properties.svg	hide-2-properties	30ff8445	12x12	0 0 24 24	stroke	docs-reference	button	Hide 2 properties / Hide 4 variants / Hide 1 property
+share-on-bluesky.svg	share-on-bluesky	3ca40b20	14x14	0 0 24 24	fill	blog-post	a	Share on Bluesky
+contact-sales.svg	contact-sales	3e205150	20x20 22x22	0 0 256 256	fill	demo-gate	a [grid-area:1_/_1]	Contact sales
+icon-40305905.svg	icon-40305905	40305905	16x16	0 0 24 24	stroke	decision-model	div	Stop Telehealth consultation 0:08 / 0:56 / Stop Telehealth consultation 0:09 / 0:56
+decisions.svg	decisions	44ec4a67	16x16	0 0 24 24	stroke	docs-reference	button	DECISIONS / RUNS
+02-listening-rubrics.svg	02-listening-rubrics	4817e690	16x16	0 0 24 24	stroke	emotion-science	li; div grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]	02 Listening rubrics / 03 Scoring methods / TTS 3.1 TTS 4.0
+start.svg	start	4832cd65	14x14	0 0 24 24	stroke	home	p; p shadow-[0_0_0_1px_rgb(206_194_255/0.75),0_0_14px_2px_rgb(183_166_239/0.28)]	Start
+scenarios-5001a3b3.svg	scenarios	5001a3b3	17x17	0 0 24 24	stroke	home	div	Scenarios
+icon-53f21a8e.svg	icon-53f21a8e	53f21a8e	28x28	0 0 24 24	stroke	benchmark	li	Checkpoint comparison Internal checkpoin
+icon-57022824.svg	icon-57022824	57022824	10x10	0 0 24 24	stroke	home	span	
+icon-58c2303a.svg	icon-58c2303a	58c2303a	19x14	0 0 513 342	fill	decision-model	span	
+svg-size-3-75-5ac670b7.svg	svg-size-3-75	5ac670b7	15x15	0 0 24 24	stroke	home	span [&_svg]:size-3.75	
+yes-no.svg	yes-no	5bdb414b	12x12	0 0 24 24	stroke	decision-model	span	Yes/No / Pick One / Scale
+microphone.svg	microphone	5d9c684a	16x16	0 0 24 24	stroke	decision-model	span	Microphone
+4-7-avg.svg	4-7-avg	5f6d8aa9	10x10	0 0 24 24	fill	home	span	4.7 avg
+svg-size-3-75-62d17fe0.svg	svg-size-3-75	62d17fe0	15x15	0 0 24 24	stroke	home	span [&_svg]:size-3.75	
+icon-677dc649.svg	icon-677dc649	677dc649	17x17 19x19 20x20 21x21 22x22	0 0 24 24	stroke	decision-model	span	
+ask-ai-6831a086.svg	ask-ai	6831a086	17x17	0 0 512 512	fill	docs dark	button	Ask AI
+show-password.svg	show-password	6a350787	16x16	0 0 24 24	stroke	login	button	Show password
+original-map.svg	original-map	73c93c1e	14x14	0 0 24 24	stroke	emotion-science	a	ORIGINAL MAP
+light.svg	light	750668a3	16x16	0 0 24 24	stroke	docs theme menu	button [&_svg]:size-icon	Light
+icon-759ec148.svg	icon-759ec148	759ec148	28x28	0 0 24 24	stroke	benchmark	li	Reusable regression A held-out suite to 
+pause-7979e1f8.svg	pause	7979e1f8	12x12	0 0 12 12	fill	blog-post	label	Pause
+open-menu.svg	open-menu	7b56c2c6	20x20	0 0 24 24	stroke	mobile	button	Open menu
+sign-in-with-apple.svg	sign-in-with-apple	7c3b2fcd	16x16	0 0 209 257	fill	login	button [grid-area:1_/_1]	SIGN IN WITH APPLE
+sign-in-with-google-7ec67e85.svg	sign-in-with-google	7ec67e85	20x20 21x21 22x22 23x23	0 0 256 256	fill	login	button [grid-area:1_/_1]	SIGN IN WITH GOOGLE / SIGN IN WITH APPLE / LOGGING IN... LOG IN
+sort-newest.svg	sort-newest	86b2474d	16x16	0 0 24 24	stroke	blog	button	Sort: Newest
+sample-call.svg	sample-call	881730e3	16x16	0 0 24 24	stroke	decision-model	span	Sample call
+stop-93d8405b.svg	stop	93d8405b	16x16	0 0 24 24	stroke	decision-model	span shadow-[0_1px_2px_rgb(0_0_0/0.06),0_0_0_1px_rgb(0_0_0/0.1)]	Stop
+built-with-961810c6.svg	built-with	961810c6	52x14	0 0 604 164	fill	docs dark	a	Built with
+icon-96bf2687.svg	icon-96bf2687	96bf2687	28x28	0 0 24 24	stroke	benchmark	li	Your results, private Condition-level an
+share-on-linkedin.svg	share-on-linkedin	9b2d3929	14x14	0 0 24 24	fill	blog-post	a	Share on LinkedIn
+svg-size-3-75-a3c44221.svg	svg-size-3-75	a3c44221	15x15	0 0 24 24	stroke	home	span [&_svg]:size-3.75	
+icon-a4bd5bc6.svg	icon-a4bd5bc6	a4bd5bc6	24x24	0 0 24 24	stroke	benchmark	li	02 Automated graders Defined criteria At
+svg-size-3-75-ac71e1b2.svg	svg-size-3-75	ac71e1b2	15x15	0 0 24 24	stroke	home	span [&_svg]:size-3.75	
+icon-afb1a00c.svg	icon-afb1a00c	afb1a00c	16x16	0 0 24 24	stroke	blog	span	
+scenarios-b41738f6.svg	scenarios	b41738f6	16x16	0 0 24 24	stroke	home	span	Scenarios
+close-search.svg	close-search	b49ec2b6	16x16	0 0 24 24	stroke	docs search dialog	button [&_svg]:pointer-events-none	Close search
+icon-bb6b5afb.svg	icon-bb6b5afb	bb6b5afb	20x16	0 85.333 512 341.333	fill	decision-model	span	
+icon-c4afaf7a.svg	icon-c4afaf7a	c4afaf7a	21x17	0 0 513 342	fill	decision-model	span	
+try-it.svg	try-it	cf375fca	12x12	0 0 24 24	fill	docs-reference	button [&_svg]:pointer-events-none	Try it
+curl.svg	curl	d01086dd	16x16	0 0 512 512	fill	docs-reference	button	cURL
+next-page.svg	next-page	d15b904d	16x16	0 0 24 24	stroke	blog	a	Next page
+upload-files.svg	upload-files	d2570b12	16x16	0 0 24 24	stroke	decision-model	span	Upload files
+icon-d5ea7cec.svg	icon-d5ea7cec	d5ea7cec	24x24	0 0 24 24	stroke	benchmark	li	03 Human raters Naturalness Expression C
+icon-d8430450.svg	icon-d8430450	d8430450	21x18	0 0 513 342	fill	decision-model	span	
+icon-dad70c93.svg	icon-dad70c93	dad70c93	20x16	0 0 513 342	fill	decision-model	span	
+show-property-path.svg	show-property-path	dbfd9936	14x14	0 0 24 24	stroke	docs-reference	button	Show property path
+icon-e93f695c.svg	icon-e93f695c	e93f695c	28x28	0 0 24 24	stroke	benchmark	li	Your system Model, agent, endpoint, or c
+icon-f6d31953.svg	icon-f6d31953	f6d31953	28x28	0 0 24 24	stroke	benchmark	li	Your conditions Scenarios, speakers, and
+icon-fb137c44.svg	icon-fb137c44	fb137c44	24x24	0 0 24 24	stroke	benchmark	li	01 Objective measures Accuracy Timing Ac
+share-on-threads.svg	share-on-threads	fcfae0f1	14x14	0 0 192 192	fill	blog-post	a	Share on Threads
+icon-fd4c7d16.svg	icon-fd4c7d16	fd4c7d16	24x24	0 0 24 24	stroke	decision-model	div	Searching for frustrated customer calls. / Sear
+blogs.svg	blogs	feba07a6	12x12	0 0 24 24	stroke	blog-post	a	Blogs
