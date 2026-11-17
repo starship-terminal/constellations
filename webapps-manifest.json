@@ -2559,8 +2559,8 @@
     342
    ],
    "description": "Anyone can cook",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kitchenstories",
    "notes": "",
    "batch": 9
   },

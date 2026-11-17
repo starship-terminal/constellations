@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -241,6 +241,13 @@ Access: signed out (every surface captured is public; the product sits at app.gr
 Access: signed out (every captured surface is public; sign-in, plan checkout, the help centre and account surfaces were link-observed only and never opened)
 - auth.hbomax.com sign-in, plan selection and checkout, help.hbomax.com and every account surface were observed as links only and never opened; no form was submitted and no trial or plan was started
 - carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
+
+## [Kitchen Stories](../systems/kitchenstories) — `kitchenstories`
+Access: signed out (every captured surface is public; checkout, profile, the recipe cart and rating submit were not followed)
+- Plus checkout: Jetzt kostenlos starten on https://pages.kitchenstories.com/de/plus links to https://www.kitchenstories.com/de/checkout and was not followed
+- Account: https://www.kitchenstories.com/profile (Dein Kitchen Stories Konto zieht um) was not signed into. /login and /anmelden return 404
+- Recipe rating submit (Abschicken / Bewerte das Rezept) on that recipe URL was not submitted
+- Contact form on https://www.kitchenstories.com/kontakt was not submitted
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)
