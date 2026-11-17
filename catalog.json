@@ -6224,7 +6224,8 @@
     "No standalone SVG icon set was lifted. Wordmark and illustrations stay in screenshots.",
     "Pressed states are DevTools-forced, so a script-only mousedown state is missing. Disabled, loading and error states were not mounted."
    ],
-   "durationMin": 180
+   "durationMin": 180,
+   "pr": "https://github.com/starship-terminal/constellations/pull/652"
   },
   "layoutGaps": {
    "icons/": "No standalone SVG icon set was lifted. The wordmark and mega-menu art are Jasper's artwork and stay in the screenshots and crops."
