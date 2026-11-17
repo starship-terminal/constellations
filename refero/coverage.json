@@ -927,6 +927,23 @@
         }
       ]
     },
+    "cohere.com": {
+      "catalog": [
+        {
+          "name": "Cohere",
+          "domain": "cohere.com",
+          "id": 576
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cohere",
+          "name": "Cohere",
+          "url": "https://cohere.com",
+          "name_match": true
+        }
+      ]
+    },
     "copy.ai": {
       "catalog": [
         {
@@ -2507,13 +2524,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "cohere.com": [
-      {
-        "name": "Cohere",
-        "domain": "cohere.com",
-        "id": 576
       }
     ],
     "coinbase.com": [

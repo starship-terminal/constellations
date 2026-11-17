@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): manual review of the package's own evidence: raw/components-computed.json measurements, screenshots, layout/motion/icon probes and the documented boundary list, graded against the web criteria wording",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Reviewed the captured evidence directly: tokens.json values against raw/css-vars.json utility declarations and raw/components-computed.json measurements, the components.md state tables, 94 crops and 28 screenshots, the sign-in boundary capture, and the known gaps. Greptile pass: alias normalisation, hidden-clone border provenance, FAQ expanded measurement, card-paint coverage guard, derived pressed note, control mocks and doc claims corrected.",
  "systems": [
   {
    "slug": "1password",
@@ -22149,103 +22149,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "hitchd",
+   "slug": "cohere",
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "Hitchd declares almost no custom properties (~10 radio-control flags), so the palette is measured: 10 flat colours in core.palette (ink #000000, cream #f6f3ef, heroInk/paper whites, muted #484a4c, fieldLine #d2d2d7, disabled greys, registry white, giftPrice #545759). No per-hue ramp exists on the site to capture."
+     "grade": "meets",
+     "evidence": "Real declared ramps tokenised from the utility layer: neutral 9 steps, quartz 9, blue 11, green 9, coral 8, plus volcanic 5, mushroom 5, marble 4, danger 5 and success 2 — 70 colours across the named Tailwind palette families (core.color.*), each citing its .bg-* rule."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "light.color.surface covers page (auth body #ffffff), cream (announcement strip), modal, menu and footer, all measured. Raised/overlay/scrim are not separated roles on the public surface - the modal paints flat white over the list."
+     "grade": "meets",
+     "evidence": "light.surface.page #fff (body), raised #f0eee9 (callout-card fill), dark #17171c (footer band), band #355146 (the green CTA band), banner #000 (promo strip) and overlay.scrim rgba(33,33,33,.2) (the declared .bg-black/20 mobile scrim). The dark surfaces are measured as islands inside the single light theme."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "Primary (text.ink), secondary (text.muted), inverse-on-photo (text.inverse), link, disabled label (action.disabledInk), hashtag, price and lead roles are measured. An on-accent text role does not exist publicly: the CTA is a teal text link and the pills are disabled."
+     "evidence": "light.text.primary #212121, nav #000, onDark #fafafa, onAccent/banner #fff, visited {coral.700} and muted {volcanic.700} are tokenised — the last from the declared disabled:text-volcanic-700 on the sign-in field, measured as the OAuth focus outline; it never paints as body text signed out. No live disabled or placeholder text role exists to capture."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "border.field (1px #d2d2d7 on the auth inputs) is measured. No strong or focus border role paints on the public surface - a field's focus ring is only reachable by focusing toward sign-in, a documented boundary."
+     "grade": "meets",
+     "evidence": "A real border ladder: border.subtle #dadce0 (OAuth rows), border.input #bdbdbd (the sign-in field), border.onDark #525260 (the 1px neutral-40 separator the footer's mobile accordion rows declare — measured on their hidden desktop clones and labelled as such) and the focus outlines (1px auto #101010; OAuth row 1px #616161 offset 4; CTA pill border-swap to neutral-95)."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "Accents are measured at default only: the teal Try It Free link #008cba, the disabled Continue pill #cdcfd0 and the disabled Give pill #c5c8ca. Hover and pressed were never forced (the only enabled control is a nav link; the auth/Give presses are the boundary)."
+     "grade": "meets",
+     "evidence": "Both pill fills measured through default/hover/focus-visible/pressed: dark (#17171c -> #000 on nav-cta) and light (white). cta-dark's own hover is recorded as an error state — the ease-button-gradient hover animation re-renders the node — and the identical swap is captured on nav-cta."
     },
     "F6": {
-     "grade": "missing",
-     "evidence": "No success, warning, danger or info colour appears on any captured surface or in the stylesheet harvest - the signed-out product carries no status components."
+     "grade": "partly",
+     "evidence": "danger (5 steps) and success (2 steps) are declared in the palette and tokenised, but they never paint in a validation/status role on the public surface; no warning or info family exists and nothing was submitted so no validation state was seen."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "Hitchd paints one light theme and every semantic role the package ships lives inside it. No dark variant, theme attribute or theme control exists on any surveyed page or app, so there is no parity gap."
+     "evidence": "One theme ships: every route paints the same light surface. The promo banner, footer band, green CTA band and product-hero dark islands are surfaces inside it, captured as light.* roles rather than a dark theme."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Five named families with real fallback stacks (DDNR display, Inter Variable text/auth/article, the registry's own display face 'classic'), a 10-step measured size scale (88px hero to 14px helper), weights 100-600, line heights and tracking, all measured per element."
+     "evidence": "Five families tokenised with full fallback stacks (font.family.ui Unica77 Cohere Web, display CohereVariable, displayMeasured CohereText — the face the hero actually paints, mono/eyebrow CohereMono), the declared web3-* type scale, and 10 measured sizes (96px hero, 72px product h1s, 60px section/mobile, 18/16/14px body scale)."
     },
     "F9": {
      "grade": "partly",
-     "evidence": "Five measured spacing tokens from real components (strip padding, field x-padding, button padding, card and modal padding). Hitchd publishes no spacing scale, so no stepped base unit exists to capture."
+     "evidence": "One declared primitive: core.spacing.unit .25rem/4px (.gap-1) — the gap ladder exists in the sheet (gap-0.5..36) but multiples are unnamed. Measured paddings live in component dimensions; no named spacing ladder is declared."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Corner radii measured per component (field 8px, auth/Give pills 50px and 100px, card, modal, CTA) plus the 1px field border width - the shape layer the public surface actually uses."
+     "evidence": "The custom declared radius scale is tokenised (rounded-sm 4px, md 6.8px, lg 12px, xl 22px, 2xl 30px, 3xl 1.5rem, full 9999px — not the Tailwind defaults) plus measured control 9999px and card 22px; 1px/2px border widths measured on the sign-in card and CTA pills."
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "Control geometry is measured per component (field 450x48, submit 48px high, Give pill 50px, closure header 96px, banner 98px, registry banner) and icon glyphs measured (24x24). The focus ring's width/offset was never capturable - documented gap."
+     "grade": "meets",
+     "evidence": "Control heights measured per component: nav-cta 36px, OAuth rows 40px, menu rows 44px, pill CTAs 53.2px, sign-in field 60px, banner 48px, header 60px, mobile bar 60px; social icons 24px, menu button 32px; focus ring 1px offset 0-4px."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "Component shadows are parsed into DTCG layers where they paint (card, modal, header checks; most Hitchd surfaces are flat). No named elevation levels are published by the product."
+     "grade": "missing",
+     "evidence": "Nothing on the public surface paints a real drop shadow: the pill CTAs use 2px transparent borders and 1px rings, and the focus-visible shadow stacks read rgba(0,0,0,0). No elevation ladder exists to tokenise — recorded, not invented."
     },
     "F13": {
      "grade": "meets",
-     "evidence": "145 moving transitions measured across 6 pages into core.motion duration and easing token groups (dominant 0.15s ease-in/ease-in-out); the probe records that the site ignores prefers-reduced-motion - measured, not assumed."
+     "evidence": "Declared durations .duration-0..1000 (150/200/300/500ms tokenised) plus measured nav-cta 0.3s and nav-item 0.2s; four curves tokenised (ease-in/out/in-out declared + the measured `ease` on the pills); the menu's 0.5s clip-path transition is measured, and the sheets declare motion-safe:/motion-reduce: variants gating the transform and glow effects on prefers-reduced-motion."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "raw/layout.json holds 22 page passes (landmarks, Foundation .row/.grid-x bands, fixed/sticky layers, scrollers) at both widths plus measured component geometry; Hitchd publishes no breakpoint or content-width scale as tokens."
+     "evidence": "Three declared content wrappers (max-w-web3-full-screen 2280px, internal 1920px, blog 1390px), the declared z layer names (background 0, content 20, nav 100) and per-component measured widths at two breakpoints (1440/390). Breakpoints are observed (lg:flex blocks, the 390 pass) but not named."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "About 8 of 19 checklist components paint publicly: button (Continue and Give pills), link (nav/footer/hashtag/CTA), text field (auth input), select (Sort by), menu (the hidden .mobile-menu drawer), dialog (gift modal), card (gift tile, blog row, auth card). Icon button, text area, checkbox, radio, switch, tabs, tooltip, toast, table, avatar and badge do not appear on the signed-out surface."
+     "evidence": "~10 of the 19 checklist components on the public surface: button (dark/light pills), icon button (banner close, hamburger, social), link (nav/footer/menu), menu (mobile overlay + scrim), tabs (pricing on/off), accordion (FAQ), card (callout), text field (sign-in email), submit button (green Log-in), badge (certification anchors). No select/checkbox/radio/switch/dialog/toast/table mounts signed out."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "Beyond default: the Sort by select's opened state and its filtered ('Still needed') state, the gift modal opened by its own card tap, and disabled buttons (Continue, Give) captured as real states. Hover/focus-visible/pressed were never forced on the auth controls - a documented gap."
+     "grade": "meets",
+     "evidence": "97 states across 39 components: default/hover/focus-visible/pressed on every interactive control, 'opened' on the FAQ accordion and mobile menu, 'focused' on the sign-in field, on/off on the pricing tabs. The single honest gap (cta-dark hover, node re-renders) is recorded as an error state."
     },
     "C3": {
-     "grade": "missing",
-     "evidence": "No focus ring is captured: focusing a field is the first step of signing in and was never done; the rest of the public surface shows no focus-visible painting."
+     "grade": "meets",
+     "evidence": "18 components captured a visible keyboard focus: the 1px #101010 auto outline on nav/banner/card/tab/FAQ/footer controls, the CTA's neutral-95 border swap, the OAuth row's 1px #616161 offset-4 outline and the mobile menu's #e59700 amber ring."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "components.md states the convention up front and every colour in its tables is followed by the palette token it matches; the spec values cite token names, not raw hex."
+     "evidence": "components.md writes every state in token terms — values followed by the matching core.color.* name — with the shared-values tables (focus, motion, card shapes, text) built from the same token map."
     },
     "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md covers the closure chrome stack, the content/prose pages, the auth card form pattern, the registry header/filter/gift-grid composition and the gift modal, plus a boundaries table. Empty/loading/error, onboarding and destructive patterns do not exist on the public surface."
+     "grade": "meets",
+     "evidence": "patterns.md covers every captured surface: banner+header chrome, the gradient pill language, the hero and callout sections, the pricing table/FAQ, the dark product heroes, the two footer bands, the sign-in card and the mobile pass."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "3 inline SVGs lifted to icons/unnamed/ plus 58 linked SVG references indexed in icons/INDEX.tsv (Hitchd's glyphs carry no names in the DOM). Fonts are named with provenance: DDNR + Inter Variable self-hosted, ~20 registry display faces, Google-served text faces - licences not published."
+     "evidence": "icon.png fetched from the declared apple-touch-icon (128px); 49 @font-face records harvested with their file URLs. No standalone SVG icon set was lifted — the glyphs in crops are the site's artwork."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states what was captured (three surfaces, two widths, one theme), how (read-only, at rest), the exact boundaries (auth, money path, internal-route bounces, redirected routes, the /blog truncation) and what to distrust."
+     "evidence": "README states the routes, widths, tooling and boundary, plus an explicit Known gaps section (the uncapturable cta-dark hover, unswitched pricing tabs, declared-only visited colour, the no-shadow finding and the screenshot-only routes)."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 8.04:1 light muted (light.color.text.muted) on surface (light.color.surface.cream)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.34:1 light muted (light.text.muted) on surface (light.surface.raised)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 147 of 147 tokens name their source"
+     "evidence": "Script: 160 of 160 tokens name their source"
     },
     "K2": {
-     "grade": "partly",
-     "evidence": "Script: 7 rules, 4 linking an image (needs 3+, all linked)"
+     "grade": "meets",
+     "evidence": "Script: 6 rules, each linking a screenshot or crop"
     },
     "K3": {
      "grade": "meets",
@@ -22264,19 +22264,19 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Hitchd",
-   "goodFor": "Honeymoon-registry and cash-gifting design: a Foundation marketing stack (self-hosted DDNR hairline serif + Inter Variable on warm paper #f6f3ef with a near-black ink) that is currently a one-viewport closure notice, plus two Angular apps - the couple auth surface (48px fields at 8px radius, 50px disabled pill) and the guest registry (sample banner + teal Try It Free link, couple hero in the registry's own display faces, Sort by select, gift tiles, and a card-tap gift modal with a disabled Give pill). One light theme; the money path and every internal registry route are documented boundaries",
-   "url": "https://www.hitchd.com",
+   "name": "Cohere",
+   "goodFor": "enterprise AI platform marketing: a Next.js/Tailwind v3/Sanity build painting one light theme (pureWhite ground, volcanic-900 ink) whose declared layer lives in utility rules - the named palette (volcanic/coral/mushroom/marble/quartz/onyx/neutral), the web3-* type scale and custom radii (rounded-xl 22px, rounded-2xl 30px) - with dark islands (pureBlack promo banner, neutral-15 footer, #355146 green CTA band), 9999px pill CTAs carrying a ::before quartz-500-to-coral-500 gradient sweep, and CohereText/Unica77/CohereMono type",
+   "url": "https://cohere.com",
    "captured": "2026-11-17",
    "themes": [
     "light"
    ],
    "platform": "web",
-   "category": "E-commerce",
+   "category": "AI research",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "manual review of the package's own evidence: raw/components-computed.json measurements, screenshots, layout/motion/icon probes and the documented boundary list, graded against the web criteria wording"
+ "reviewMethod": "Reviewed the captured evidence directly: tokens.json values against raw/css-vars.json utility declarations and raw/components-computed.json measurements, the components.md state tables, 94 crops and 28 screenshots, the sign-in boundary capture, and the known gaps. Greptile pass: alias normalisation, hidden-clone border provenance, FAQ expanded measurement, card-paint coverage guard, derived pressed note, control mocks and doc claims corrected."
 }

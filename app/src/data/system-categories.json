@@ -1529,6 +1529,14 @@
     "reason": "catalog.json describes a college career network: the students/employers/career-centers marketing stack, employer pricing and request-a-demo Marketo forms, a careers page with a departments filter, a blog and learn hub, legal and corporate pages, and the consumer app's signed-out 'Log in or sign up' card at /access - all signed-out, with the job feed and registration behind a Cloudflare boundary."
   },
   {
+    "referenceId": "systems:cohere",
+    "groupId": "web-categories",
+    "labels": [
+      "AI Tool"
+    ],
+    "reason": "catalog.json describes Cohere's enterprise AI platform marketing site: the Command/North product pages, per-model pricing rate table, models overview, developer and customer-story surfaces, legal pages and the dashboard.cohere.com sign-in boundary."
+  },
+  {
     "referenceId": "systems:hitchd",
     "groupId": "web-categories",
     "labels": [
