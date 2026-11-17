@@ -15573,7 +15573,7 @@
     ],
     "durationMin": 420,
     "durationNote": "wall-clock across the capture sessions including kit adaptation, the flaky Angular registry app's repeated measurement passes, and the offline build",
-    "pr": ""
+    "pr": "https://github.com/starship-terminal/constellations/pull/634"
    }
   }
  ]
