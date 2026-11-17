@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -241,6 +241,15 @@ Access: signed out (every surface captured is public; the product sits at app.gr
 Access: signed out (every captured surface is public; sign-in, plan checkout, the help centre and account surfaces were link-observed only and never opened)
 - auth.hbomax.com sign-in, plan selection and checkout, help.hbomax.com and every account surface were observed as links only and never opened; no form was submitted and no trial or plan was started
 - carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
+
+## [Jitter](../systems/jitter) — `jitter`
+Access: signed out (marketing routes are public; the editor, files, account, billing, SSO and OAuth sit behind sign-in; the login and signup cards were measured at rest and never submitted; contact-sales was not submitted; consent overlays were hidden, never answered)
+- the editor, files, account, trash and export sit behind sign-in at https://jitter.video/files and https://jitter.video/login/ and were never entered
+- SSO at https://jitter.video/sso and Continue with Google / Continue with SSO on https://jitter.video/login/ were measured at rest and never clicked
+- account creation past the card at https://jitter.video/join/ was never submitted, so the password step and onboarding at https://jitter.video/onboarding/ were not reached
+- checkout and billing at https://jitter.video/billing and the plan Get started actions on https://jitter.video/pricing/ were not followed
+- the contact-sales form at https://jitter.video/contact-sales/ was measured empty and never submitted
+- no validation, disabled, loading or toast state appears signed out because nothing was submitted
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)
