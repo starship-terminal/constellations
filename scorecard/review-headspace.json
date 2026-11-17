@@ -1,7 +1,7 @@
 {
  "F1": {
   "grade": "partly",
-  "evidence": "The declared set holds the stylesheets' small :root palette verbatim (27 names: --secondary-blue #0061ef, --primary-blue #0040ea, --orange #ff7e1d, --extended-yellow-100 #ffce00, --grey-for-bg #faf8f4, --2ndary-warm-grey-100 #f9f4f2, --primary-warm-grey-700 #2d2c2b, --silver-for-divider, red/green/blues), and light.color carries the measured brand/action/ink values that cross-check them. No per-hue ramp scale exists in the source stylesheets — Headspace compiles to Emotion classes, so ramp steps beyond the ~27 declared names are not published."
+  "evidence": "The declared set holds the stylesheets' small :root palette verbatim (27 names: --secondary-blue #0061ef, --primary-blue #0040ea, --orange #ff7e1d, --yellow #ffce00, --grey-for-bg #faf8f4, --2ndary-warm-grey-100 #f9f4f2, --primary-warm-grey-700 #2d2c2b, --silver-for-divider, red/green/blues), and light.color carries the measured brand/action/ink values that cross-check them. No per-hue ramp scale exists in the source stylesheets — Headspace compiles to Emotion classes, so ramp steps beyond the ~27 declared names are not published."
  },
  "F2": {
   "grade": "partly",

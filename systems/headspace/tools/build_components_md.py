@@ -38,7 +38,9 @@ BY_COLOR = {}
 # headspace: colours live under light.color.* and the declared set, not a
 # core.palette group.
 for setname in ("light", "declared"):
-    for n, t in flat(T.get(setname, {}).get("color", T.get(setname, {}))):
+    # Walk the whole set so the emitted name keeps its `color` segment
+    # (light.color.brand.blue), matching tokens.json exactly.
+    for n, t in flat(T.get(setname, {})):
         if t.get("$type") == "color":
             BY_COLOR.setdefault(t["$value"], f"{setname}.{n}")
 for n, t in flat(T.get("core", {}).get("palette", {})):
@@ -286,7 +288,7 @@ W("# Headspace components")
 W()
 W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from www.headspace.com, organizations.headspace.com, checkout.headspace.com and auth.headspace.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, redeemed, sent or submitted.")
 W()
-W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
+W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/layout.json](raw/layout.json).")
 W()
 W("How to read an entry:")
 W()

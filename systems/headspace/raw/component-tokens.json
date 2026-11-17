@@ -65,7 +65,7 @@
           "description": "Footer links and small print."
         },
         "button": {
-          "value": "16px",
+          "value": "14px",
           "type": "dimension",
           "source": "computed text-fontSize of nav-cta default (raw/components-computed.json)",
           "description": "Button labels."
@@ -97,7 +97,7 @@
           "description": "Card-heading / strong weight."
         },
         "button": {
-          "value": "500",
+          "value": "700",
           "type": "number",
           "source": "computed text-fontWeight of nav-cta default (raw/components-computed.json)",
           "description": "Button-label weight."
@@ -242,7 +242,12 @@
         "description": "A motion duration the site uses."
       },
       "easing": {
-        "value": "cubic-bezier(0.32, 0.94, 0.6, 1)",
+        "value": [
+          0.32,
+          0.94,
+          0.6,
+          1.0
+        ],
         "type": "cubicBezier",
         "source": "transition-timing-function measured on live components (raw/motion.json)",
         "description": "The easing curve most components transition with."
@@ -299,7 +304,7 @@
         "page": {
           "value": "#f9f4f2",
           "type": "color",
-          "source": "computed ancestor paint of nav-cta default (raw/components-computed.json)",
+          "source": "computed paint of div.css-15t8m5e inside nav-header default (raw/components-computed.json)",
           "description": "The warm-grey wash the page/menu wrapper paints (the same #f9f4f2 the auth ground and the declared --2ndary-warm-grey-100/--grey-for-bg-adjacent tokens carry)."
         },
         "auth-card": {
@@ -344,7 +349,7 @@
           "value": "#ffce00",
           "type": "color",
           "source": "computed backgroundColor of org-card default (raw/components-computed.json)",
-          "description": "The Headspace yellow a B2B highlight card paints (the declared --extended-yellow-100)."
+          "description": "The Headspace yellow a B2B highlight card paints (the declared --yellow)."
         }
       },
       "action": {

@@ -135,12 +135,13 @@ export async function paintedTheme(p) {
 // tags it with data-m-mark="<tag>" and returns a locator for it. up optionally
 // retargets an ancestor (closest()). Use where getByRole/hasText miss nodes
 // whose text lives in nested spans.
-export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0 } = {}) {
+export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0, notInside = null } = {}) {
   const ok = await page.evaluate(
-    ([src, flags, s, t, upSel, i, leafOnly, w, h]) => {
+    ([src, flags, s, t, upSel, i, leafOnly, w, h, insideBlock]) => {
       const re = new RegExp(src, flags);
       document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
       const els = [...document.querySelectorAll(s)].filter((n) => {
+        if (insideBlock && n.closest(insideBlock)) return false;
         const r = n.getBoundingClientRect();
         const cs = getComputedStyle(n);
         return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.opacity !== '0' && re.test((n.innerText || '').trim());
@@ -151,7 +152,7 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
       (upSel ? el.closest(upSel) || el : el).setAttribute('data-m-mark', t);
       return true;
     },
-    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH],
+    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH, notInside],
   );
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }

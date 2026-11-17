@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-17T08:17:45.259Z",
+ "capturedAt": "2026-11-17T10:41:48.434Z",
  "screenshot": "mobile-subscriptions-light-full.png",
  "sanitizedSourceUrl": "https://www.headspace.com/subscriptions",
  "requested": {
@@ -48,7 +48,7 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 8333
+   "height": 8327
   }
  },
  "png": {
@@ -56,13 +56,12 @@
   "height": 8327
  },
  "dimensionCheck": {
-  "status": "fail",
+  "status": "pass",
   "expected": {
    "width": 390,
-   "height": 8333
+   "height": 8327
   },
-  "basis": "stitchedParts",
-  "error": "Stitched PNG 390x8327, expected 390x8333 from the part clips"
+  "basis": "stitchedParts"
  },
  "visualReview": {
   "status": "pending",
@@ -87,7 +86,7 @@
    "x": 0,
    "y": 7000,
    "width": 390,
-   "height": 1333
+   "height": 1327
   }
  ]
 }

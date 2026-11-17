@@ -140,7 +140,7 @@ const CHROME = [
     }, states: [{ name: 'opened', via: 'the category link\'s own hover state, menu open', fn: async () => {} }, 'hover'] },
   { key: 'nav-cta', group: 'Marketing chrome', title: 'Header CTA ("Get 50% off")',
     desc: 'The pill call-to-action in the header, measured, never followed.',
-    sel: 'header a (text Get 50% off|Get started)', find: async (p) => await domFind(p, /get 50% off|get started|try (headspace|free)/i, { sel: 'header a, header button', tag: 'ncta', minW: 60, minH: 24 }), states: ['default', 'hover', 'focus-visible', 'pressed'] },
+    sel: 'header a (text Get 50% off|Get started)', find: async (p) => await domFind(p, /get 50% off|get started|try (headspace|free)/i, { sel: 'header a, header button', tag: 'ncta', minW: 60, minH: 24, notInside: 'dialog, [role="dialog"]' }), states: ['default', 'hover', 'focus-visible', 'pressed'] },
   { key: 'nav-login', group: 'Marketing chrome', title: '"Log in" link',
     desc: 'The sign-in link in the header, measured, never followed.',
     sel: 'header a (text Log in)', find: async (p) => await domFind(p, /^\s*log in\s*$/i, { sel: 'header a', tag: 'nli', minW: 20 }), states: ['default', 'hover', 'focus-visible'] },
@@ -361,9 +361,6 @@ for (const [key, g] of Object.entries(GROUPS)) {
     comp.title = spec.title;
     comp.desc = spec.desc;
     comp.selector = spec.sel;
-    comp.page = g.page;
-    comp.url = safeUrl(url);
-    comp.run = new Date().toISOString();
     comp.states ??= {};
     let loc;
     // A lookup miss must not erase states a previous run already measured —
@@ -381,6 +378,12 @@ for (const [key, g] of Object.entries(GROUPS)) {
     }
     delete comp.missing;
     delete comp.rerunMiss;
+    // Page attribution only lands when the element was actually found on this
+    // page: a failed rerun keeps the page/url of the run that measured the
+    // saved states instead of renaming another page's readings.
+    comp.page = g.page;
+    comp.url = safeUrl(url);
+    comp.run = new Date().toISOString();
     loc = loc.first();
     for (const st of spec.states) {
       const name = typeof st === 'string' ? st : (st.name || 'opened');
@@ -397,6 +400,8 @@ for (const [key, g] of Object.entries(GROUPS)) {
         await centre(loc).catch(() => {});
         const v = await styleOf(loc);
         v.via = viaText;
+        v.page = g.page;
+        v.url = safeUrl(url);
         v.crop = await crop(page, loc, `${spec.key}-${name}`).catch((e) => { log('  crop failed', spec.key, name, e.message.split('\n')[0]); return undefined; });
         v.run = new Date().toISOString();
         comp.states[name] = v;

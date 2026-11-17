@@ -1487,21 +1487,6 @@
      "transition": "0.2s ease-in-out"
     },
     {
-     "transition": "background-color 0.3s"
-    },
-    {
-     "transition": "background-color 0.3s"
-    },
-    {
-     "transition": "background-color 0.3s"
-    },
-    {
-     "transition": "background-color 0.3s"
-    },
-    {
-     "transition": "opacity 0.3s, height 0.3s, background-position 0.3s"
-    },
-    {
      "transition": "0.1s"
     },
     {
@@ -1539,6 +1524,21 @@
     },
     {
      "transition": "0.1s ease-in"
+    },
+    {
+     "transition": "background-color 0.3s"
+    },
+    {
+     "transition": "background-color 0.3s"
+    },
+    {
+     "transition": "background-color 0.3s"
+    },
+    {
+     "transition": "background-color 0.3s"
+    },
+    {
+     "transition": "opacity 0.3s, height 0.3s, background-position 0.3s"
     }
    ],
    "gift": [
@@ -2187,7 +2187,7 @@
    "selector": "header + div / [data-testid*=\"promo\" i]",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:08:56.562Z",
+   "run": "2026-11-17T10:30:13.047Z",
    "states": {
     "default": {
      "tag": "div",
@@ -2282,8 +2282,10 @@
       "textTransform": "none"
      },
      "via": "resting state",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-promo-strip-default.png",
-     "run": "2026-11-17T08:09:08.975Z"
+     "run": "2026-11-17T10:30:17.591Z"
     }
    }
   },
@@ -2294,7 +2296,7 @@
    "selector": "header",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:09:08.977Z",
+   "run": "2026-11-17T10:30:17.609Z",
    "states": {
     "default": {
      "tag": "header",
@@ -2486,8 +2488,10 @@
       "color": "rgb(45, 44, 43)"
      },
      "via": "resting state",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-header-default.png",
-     "run": "2026-11-17T08:09:15.137Z"
+     "run": "2026-11-17T10:30:18.657Z"
     }
    }
   },
@@ -2498,7 +2502,7 @@
    "selector": "header a[data-testid=\"logo-link\"]",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:09:15.138Z",
+   "run": "2026-11-17T10:30:18.772Z",
    "states": {
     "default": {
      "tag": "a",
@@ -2581,8 +2585,10 @@
       "top": "auto"
      },
      "via": "resting state",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-logo-default.png",
-     "run": "2026-11-17T08:09:16.467Z"
+     "run": "2026-11-17T10:30:19.876Z"
     },
     "hover": {
      "tag": "a",
@@ -2665,8 +2671,10 @@
       "top": "auto"
      },
      "via": "mouse hover over the element",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-logo-hover.png",
-     "run": "2026-11-17T08:09:18.854Z"
+     "run": "2026-11-17T10:30:21.772Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -2756,8 +2764,10 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-logo-focus-visible.png",
-     "run": "2026-11-17T08:09:20.178Z"
+     "run": "2026-11-17T10:30:23.207Z"
     }
    }
   },
@@ -2768,7 +2778,7 @@
    "selector": "header a[data-testid=\"navbar-category-link\"]",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:09:20.179Z",
+   "run": "2026-11-17T10:30:23.218Z",
    "states": {
     "default": {
      "tag": "a",
@@ -2851,8 +2861,10 @@
       "top": "auto"
      },
      "via": "resting state",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-category-default.png",
-     "run": "2026-11-17T08:09:21.061Z"
+     "run": "2026-11-17T10:30:24.395Z"
     },
     "hover": {
      "tag": "a",
@@ -2935,8 +2947,10 @@
       "top": "auto"
      },
      "via": "mouse hover over the element",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-category-hover.png",
-     "run": "2026-11-17T08:09:35.291Z"
+     "run": "2026-11-17T10:30:27.261Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -3026,8 +3040,10 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-category-focus-visible.png",
-     "run": "2026-11-17T08:09:46.447Z"
+     "run": "2026-11-17T10:30:47.025Z"
     }
    }
   },
@@ -3038,7 +3054,7 @@
    "selector": "header a[data-testid=\"navbar-subcategory-link\"] pane",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:09:47.153Z",
+   "run": "2026-11-17T10:30:48.537Z",
    "states": {
     "opened": {
      "tag": "div",
@@ -3149,8 +3165,10 @@
       "color": "rgb(45, 44, 43)"
      },
      "via": "a real pointer hover on the header category link — the pane's links were never followed",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-mega-menu-opened.png",
-     "run": "2026-11-17T08:10:09.085Z"
+     "run": "2026-11-17T10:30:51.509Z"
     }
    }
   },
@@ -3161,7 +3179,7 @@
    "selector": "header a[data-testid=\"navbar-subcategory-link\"]",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:10:09.254Z",
+   "run": "2026-11-17T10:30:52.944Z",
    "states": {
     "opened": {
      "tag": "a",
@@ -3251,8 +3269,10 @@
       "color": "rgb(45, 44, 43)"
      },
      "via": "the category link's own hover state, menu open",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-subcategory-opened.png",
-     "run": "2026-11-17T08:10:12.961Z"
+     "run": "2026-11-17T10:30:53.992Z"
     },
     "hover": {
      "tag": "a",
@@ -3342,8 +3362,10 @@
       "color": "rgb(45, 44, 43)"
      },
      "via": "mouse hover over the element",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-subcategory-hover.png",
-     "run": "2026-11-17T08:10:16.376Z"
+     "run": "2026-11-17T10:30:55.866Z"
     }
    }
   },
@@ -3354,31 +3376,31 @@
    "selector": "header a (text Get 50% off|Get started)",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:10:16.523Z",
+   "run": "2026-11-17T10:30:55.889Z",
    "states": {
     "default": {
      "tag": "a",
-     "classes": "css-rlwou3",
-     "text": "Get started with therapy",
+     "classes": "css-11fbkag",
+     "text": "Get 50% off",
      "rect": {
-      "x": 1112,
-      "y": 167.4,
-      "w": 280,
-      "h": 213
+      "x": 1267,
+      "y": 74,
+      "w": 125,
+      "h": 48
      },
      "style": {
-      "display": "inline",
-      "position": "static",
+      "display": "flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "width": "125px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "327px",
+      "minHeight": "auto",
+      "paddingTop": "14.3px",
+      "paddingRight": "24px",
+      "paddingBottom": "14.3px",
+      "paddingLeft": "24px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -3390,121 +3412,103 @@
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 238)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 238)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 238)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 238)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopWidth": "2px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "2px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "2px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "2px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "32px",
+      "borderTopRightRadius": "32px",
+      "borderBottomRightRadius": "32px",
+      "borderBottomLeftRadius": "32px",
+      "backgroundColor": "rgb(0, 97, 239)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(65, 61, 69, 0.2) 0px 2px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 238)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "\"Headspace Apercu\", sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "18.4px",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "15.4px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 238)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 238)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
+      "transitionProperty": "color, background-color, border-color, box-shadow, transform",
+      "transitionDuration": "0.15s, 0.15s, 0.15s, 0.15s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1)",
+      "transitionDelay": "0s, 0s, 0s, 0s, 0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
      "paint": [
       {
-       "node": "div.css-1gr7t27",
-       "size": "280.0x175.0",
+       "node": "a.css-11fbkag",
+       "size": "125.0x48.0",
+       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
        "bg": "rgb(0, 97, 239)",
-       "radius": "24px 24px 0px 0px"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "div.css-15t8m5e",
-       "radius": "24px",
-       "bg": "rgb(249, 244, 242)"
-      },
-      {
-       "up": 2,
-       "node": "dialog.css-1rhcoa3",
-       "shadow": "rgba(20, 19, 19, 0.2) 0px 1px 8px 0px",
-       "radius": "0px 0px 24px 24px",
-       "bg": "rgb(255, 255, 255)"
+       "shadow": "rgba(65, 61, 69, 0.2) 0px 2px 0px 0px",
+       "radius": "32px"
       }
      ],
      "textStyle": {
-      "node": "div.css-1mhfnji",
-      "text": "Get started with therapy",
+      "node": "span.css-1fvtd4u",
+      "text": "Get 50% off",
       "fontFamily": "\"Headspace Apercu\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "18.4px",
-      "fontWeight": "500",
+      "fontSize": "14px",
+      "lineHeight": "15.4px",
+      "fontWeight": "700",
       "letterSpacing": "normal",
-      "color": "rgb(45, 44, 43)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(45, 44, 43)"
-     },
      "via": "resting state",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-cta-default.png",
-     "run": "2026-11-17T08:10:49.773Z"
+     "run": "2026-11-17T10:30:57.721Z"
     },
     "hover": {
      "tag": "a",
-     "classes": "css-rlwou3",
-     "text": "",
+     "classes": "css-11fbkag",
+     "text": "Get 50% off",
      "rect": {
-      "x": 1112,
-      "y": 150,
-      "w": 280,
-      "h": 213
+      "x": 1267,
+      "y": 74,
+      "w": 125,
+      "h": 48
      },
      "style": {
-      "display": "inline",
-      "position": "static",
+      "display": "flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "width": "125px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "327px",
+      "minHeight": "auto",
+      "paddingTop": "14.3px",
+      "paddingRight": "24px",
+      "paddingBottom": "14.3px",
+      "paddingLeft": "24px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -3516,109 +3520,103 @@
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 238)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 238)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 238)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 238)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopWidth": "2px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "2px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "2px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "2px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "32px",
+      "borderTopRightRadius": "32px",
+      "borderBottomRightRadius": "32px",
+      "borderBottomLeftRadius": "32px",
+      "backgroundColor": "rgb(0, 64, 234)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(65, 61, 69, 0.2) 0px 2px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 238)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "\"Headspace Apercu\", sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "18.4px",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "15.4px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 238)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 238)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
+      "transitionProperty": "color, background-color, border-color, box-shadow, transform",
+      "transitionDuration": "0.15s, 0.15s, 0.15s, 0.15s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1)",
+      "transitionDelay": "0s, 0s, 0s, 0s, 0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
      "paint": [
       {
-       "node": "div.css-1gr7t27",
-       "size": "280.0x175.0",
-       "bg": "rgb(0, 97, 239)",
-       "radius": "24px 24px 0px 0px"
+       "node": "a.css-11fbkag",
+       "size": "125.0x48.0",
+       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
+       "bg": "rgb(0, 64, 234)",
+       "shadow": "rgba(65, 61, 69, 0.2) 0px 2px 0px 0px",
+       "radius": "32px"
       }
      ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "div.css-15t8m5e",
-       "radius": "24px",
-       "bg": "rgb(249, 244, 242)"
-      },
-      {
-       "up": 2,
-       "node": "dialog.css-1rhcoa3",
-       "shadow": "rgba(20, 19, 19, 0.2) 0px 1px 8px 0px",
-       "radius": "0px 0px 24px 24px",
-       "bg": "rgb(255, 255, 255)"
-      }
-     ],
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(45, 44, 43)"
+     "textStyle": {
+      "node": "span.css-1fvtd4u",
+      "text": "Get 50% off",
+      "fontFamily": "\"Headspace Apercu\", sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "15.4px",
+      "fontWeight": "700",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
      },
      "via": "mouse hover over the element",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-cta-hover.png",
-     "run": "2026-11-17T08:11:03.450Z"
+     "run": "2026-11-17T10:30:59.740Z"
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "css-rlwou3",
-     "text": "",
+     "classes": "css-11fbkag",
+     "text": "Get 50% off",
      "rect": {
-      "x": 1112,
-      "y": 150,
-      "w": 280,
-      "h": 213
+      "x": 1267,
+      "y": 74,
+      "w": 125,
+      "h": 48
      },
      "style": {
-      "display": "inline",
-      "position": "static",
+      "display": "flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "width": "125px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "327px",
+      "minHeight": "auto",
+      "paddingTop": "14.3px",
+      "paddingRight": "24px",
+      "paddingBottom": "14.3px",
+      "paddingLeft": "24px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -3630,109 +3628,104 @@
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 238)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 238)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 238)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 238)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopWidth": "2px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "2px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "2px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "2px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "32px",
+      "borderTopRightRadius": "32px",
+      "borderBottomRightRadius": "32px",
+      "borderBottomLeftRadius": "32px",
+      "backgroundColor": "rgb(0, 64, 234)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(65, 61, 69, 0.2) 0px 2px 0px 0px",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 238)",
-      "outlineOffset": "0px",
+      "outlineWidth": "2px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgb(0, 64, 234)",
+      "outlineOffset": "1px",
       "fontFamily": "\"Headspace Apercu\", sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "18.4px",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "15.4px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 238)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 238)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
+      "transitionProperty": "color, background-color, border-color, box-shadow, transform",
+      "transitionDuration": "0.15s, 0.15s, 0.15s, 0.15s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1)",
+      "transitionDelay": "0s, 0s, 0s, 0s, 0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
      "paint": [
       {
-       "node": "div.css-1gr7t27",
-       "size": "280.0x175.0",
-       "bg": "rgb(0, 97, 239)",
-       "radius": "24px 24px 0px 0px"
+       "node": "a.css-11fbkag",
+       "size": "125.0x48.0",
+       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
+       "bg": "rgb(0, 64, 234)",
+       "shadow": "rgba(65, 61, 69, 0.2) 0px 2px 0px 0px",
+       "outline": "2px solid rgb(0, 64, 234) offset 1px",
+       "radius": "32px"
       }
      ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "div.css-15t8m5e",
-       "radius": "24px",
-       "bg": "rgb(249, 244, 242)"
-      },
-      {
-       "up": 2,
-       "node": "dialog.css-1rhcoa3",
-       "shadow": "rgba(20, 19, 19, 0.2) 0px 1px 8px 0px",
-       "radius": "0px 0px 24px 24px",
-       "bg": "rgb(255, 255, 255)"
-      }
-     ],
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(45, 44, 43)"
+     "textStyle": {
+      "node": "span.css-1fvtd4u",
+      "text": "Get 50% off",
+      "fontFamily": "\"Headspace Apercu\", sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "15.4px",
+      "fontWeight": "700",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-cta-focus-visible.png",
-     "run": "2026-11-17T08:11:17.510Z"
+     "run": "2026-11-17T10:31:11.153Z"
     },
     "pressed": {
      "tag": "a",
-     "classes": "css-rlwou3",
-     "text": "",
+     "classes": "css-11fbkag",
+     "text": "Get 50% off",
      "rect": {
-      "x": 1112,
-      "y": 150,
-      "w": 280,
-      "h": 213
+      "x": 1267,
+      "y": 74,
+      "w": 125,
+      "h": 48
      },
      "style": {
-      "display": "inline",
-      "position": "static",
+      "display": "flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "width": "125px",
+      "height": "48px",
+      "minWidth": "auto",
+      "maxWidth": "327px",
+      "minHeight": "auto",
+      "paddingTop": "14.3px",
+      "paddingRight": "24px",
+      "paddingBottom": "14.3px",
+      "paddingLeft": "24px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -3744,85 +3737,79 @@
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 238)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 238)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 238)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 238)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopWidth": "2px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "2px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "2px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "2px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "32px",
+      "borderTopRightRadius": "32px",
+      "borderBottomRightRadius": "32px",
+      "borderBottomLeftRadius": "32px",
+      "backgroundColor": "rgb(0, 97, 239)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(65, 61, 69, 0.2) 0px 2px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 238)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "\"Headspace Apercu\", sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "18.4px",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "15.4px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 238)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 238)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
+      "transitionProperty": "color, background-color, border-color, box-shadow, transform",
+      "transitionDuration": "0.15s, 0.15s, 0.15s, 0.15s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1)",
+      "transitionDelay": "0s, 0s, 0s, 0s, 0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
      "paint": [
       {
-       "node": "div.css-1gr7t27",
-       "size": "280.0x175.0",
+       "node": "a.css-11fbkag",
+       "size": "125.0x48.0",
+       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
        "bg": "rgb(0, 97, 239)",
-       "radius": "24px 24px 0px 0px"
+       "shadow": "rgba(65, 61, 69, 0.2) 0px 2px 0px 0px",
+       "radius": "32px"
       }
      ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "div.css-15t8m5e",
-       "radius": "24px",
-       "bg": "rgb(249, 244, 242)"
-      },
-      {
-       "up": 2,
-       "node": "dialog.css-1rhcoa3",
-       "shadow": "rgba(20, 19, 19, 0.2) 0px 1px 8px 0px",
-       "radius": "0px 0px 24px 24px",
-       "bg": "rgb(255, 255, 255)"
-      }
-     ],
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(45, 44, 43)"
+     "textStyle": {
+      "node": "span.css-1fvtd4u",
+      "text": "Get 50% off",
+      "fontFamily": "\"Headspace Apercu\", sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "15.4px",
+      "fontWeight": "700",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
      },
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-cta-pressed.png",
-     "run": "2026-11-17T08:11:32.868Z"
+     "run": "2026-11-17T10:31:14.063Z"
     }
    }
   },
@@ -3833,7 +3820,7 @@
    "selector": "header a (text Log in)",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:11:32.890Z",
+   "run": "2026-11-17T10:31:14.145Z",
    "states": {
     "default": {
      "tag": "a",
@@ -3936,8 +3923,10 @@
       "textTransform": "none"
      },
      "via": "resting state",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-login-default.png",
-     "run": "2026-11-17T08:11:41.809Z"
+     "run": "2026-11-17T10:31:15.117Z"
     },
     "hover": {
      "tag": "a",
@@ -4041,7 +4030,8 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/nav-login-hover.png",
-     "run": "2026-11-17T08:11:46.804Z"
+     "run": "2026-11-17T08:11:46.804Z",
+     "rerunError": "locator.evaluate: Timeout 8000ms exceeded."
     },
     "focus-visible": {
      "tag": "a",
@@ -4145,8 +4135,10 @@
       "textTransform": "none"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/nav-login-focus-visible.png",
-     "run": "2026-11-17T08:11:49.196Z"
+     "run": "2026-11-17T10:31:39.472Z"
     }
    }
   },
@@ -4157,7 +4149,7 @@
    "selector": "footer",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:11:49.363Z",
+   "run": "2026-11-17T10:31:39.520Z",
    "states": {
     "default": {
      "tag": "footer",
@@ -4324,8 +4316,10 @@
       "color": "rgb(45, 44, 43)"
      },
      "via": "resting state",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/footer-default.png",
-     "run": "2026-11-17T08:11:51.337Z"
+     "run": "2026-11-17T10:31:50.799Z"
     }
    }
   },
@@ -4336,7 +4330,7 @@
    "selector": "footer a",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:11:51.339Z",
+   "run": "2026-11-17T10:31:52.257Z",
    "states": {
     "default": {
      "tag": "a",
@@ -4419,8 +4413,10 @@
       "top": "auto"
      },
      "via": "resting state",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/footer-link-default.png",
-     "run": "2026-11-17T08:11:52.508Z"
+     "run": "2026-11-17T10:31:53.957Z"
     },
     "hover": {
      "tag": "a",
@@ -4503,8 +4499,10 @@
       "top": "auto"
      },
      "via": "mouse hover over the element",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/footer-link-hover.png",
-     "run": "2026-11-17T08:11:54.484Z"
+     "run": "2026-11-17T10:31:58.577Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -4594,8 +4592,10 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/footer-link-focus-visible.png",
-     "run": "2026-11-17T08:11:55.931Z"
+     "run": "2026-11-17T10:32:11.778Z"
     }
    }
   },
@@ -4626,9 +4626,9 @@
    "title": "Hero headline (h1)",
    "desc": "The page's display headline in Headspace Apercu.",
    "selector": "main h1, h1",
-   "page": "mindful-families",
-   "url": "https://www.headspace.com/app/<id>",
-   "run": "2026-11-17T08:23:22.472Z",
+   "page": "share",
+   "url": "https://www.headspace.com/share-headspace",
+   "run": "2026-11-17T10:37:35.769Z",
    "states": {
     "default": {
      "tag": "h1",
@@ -4711,11 +4711,12 @@
       "top": "auto"
      },
      "via": "resting state",
+     "page": "share",
+     "url": "https://www.headspace.com/share-headspace",
      "crop": "components/crops/hero-h1-default.png",
-     "run": "2026-11-17T08:22:24.732Z"
+     "run": "2026-11-17T10:37:36.666Z"
     }
-   },
-   "rerunMiss": "absent on this run"
+   }
   },
   "hero-lede": {
    "group": "Hero and type",
@@ -4724,7 +4725,7 @@
    "selector": "main h1 + p / first main p",
    "page": "article",
    "url": "https://www.headspace.com/articles/<id>",
-   "run": "2026-11-17T08:18:24.762Z",
+   "run": "2026-11-17T10:35:51.480Z",
    "states": {
     "default": {
      "tag": "p",
@@ -4807,8 +4808,10 @@
       "top": "auto"
      },
      "via": "resting state",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/hero-lede-default.png",
-     "run": "2026-11-17T08:18:43.454Z"
+     "run": "2026-11-17T10:35:52.734Z"
     }
    }
   },
@@ -4819,7 +4822,7 @@
    "selector": "main a|button (text Get 50% off|Get started|Try)",
    "page": "article",
    "url": "https://www.headspace.com/articles/<id>",
-   "run": "2026-11-17T08:18:49.235Z",
+   "run": "2026-11-17T10:35:52.855Z",
    "states": {
     "default": {
      "tag": "a",
@@ -4924,8 +4927,10 @@
       "textTransform": "none"
      },
      "via": "resting state",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/hero-cta-default.png",
-     "run": "2026-11-17T08:18:59.074Z"
+     "run": "2026-11-17T10:35:54.028Z"
     },
     "hover": {
      "tag": "a",
@@ -5030,8 +5035,10 @@
       "textTransform": "none"
      },
      "via": "mouse hover over the element",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/hero-cta-hover.png",
-     "run": "2026-11-17T08:19:02.200Z"
+     "run": "2026-11-17T10:35:56.534Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -5137,8 +5144,10 @@
       "textTransform": "none"
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/hero-cta-focus-visible.png",
-     "run": "2026-11-17T08:19:05.228Z"
+     "run": "2026-11-17T10:36:03.563Z"
     },
     "pressed": {
      "tag": "a",
@@ -5243,8 +5252,10 @@
       "textTransform": "none"
      },
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/hero-cta-pressed.png",
-     "run": "2026-11-17T08:19:07.303Z"
+     "run": "2026-11-17T10:36:12.272Z"
     }
    }
   },
@@ -5255,7 +5266,7 @@
    "selector": "main h2",
    "page": "article",
    "url": "https://www.headspace.com/articles/<id>",
-   "run": "2026-11-17T08:19:07.984Z",
+   "run": "2026-11-17T10:36:12.962Z",
    "states": {
     "default": {
      "tag": "h2",
@@ -5338,8 +5349,10 @@
       "top": "auto"
      },
      "via": "resting state",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/prose-h2-default.png",
-     "run": "2026-11-17T08:19:12.344Z"
+     "run": "2026-11-17T10:36:20.873Z"
     }
    }
   },
@@ -5350,7 +5363,7 @@
    "selector": "main h3",
    "page": "article",
    "url": "https://www.headspace.com/articles/<id>",
-   "run": "2026-11-17T08:19:12.371Z",
+   "run": "2026-11-17T10:36:21.002Z",
    "states": {
     "default": {
      "tag": "h3",
@@ -5433,8 +5446,10 @@
       "top": "auto"
      },
      "via": "resting state",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/prose-h3-default.png",
-     "run": "2026-11-17T08:19:13.250Z"
+     "run": "2026-11-17T10:36:33.469Z"
     }
    }
   },
@@ -5445,7 +5460,7 @@
    "selector": "main p",
    "page": "article",
    "url": "https://www.headspace.com/articles/<id>",
-   "run": "2026-11-17T08:19:13.288Z",
+   "run": "2026-11-17T10:36:33.781Z",
    "states": {
     "default": {
      "tag": "p",
@@ -5540,8 +5555,10 @@
       "textTransform": "none"
      },
      "via": "resting state",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/prose-body-default.png",
-     "run": "2026-11-17T08:19:14.192Z"
+     "run": "2026-11-17T10:36:36.048Z"
     }
    }
   },
@@ -5552,7 +5569,7 @@
    "selector": "main p a, main li a",
    "page": "article",
    "url": "https://www.headspace.com/articles/<id>",
-   "run": "2026-11-17T08:19:14.194Z",
+   "run": "2026-11-17T10:36:36.295Z",
    "states": {
     "default": {
      "tag": "a",
@@ -5635,8 +5652,10 @@
       "top": "auto"
      },
      "via": "resting state",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/prose-link-default.png",
-     "run": "2026-11-17T08:19:15.048Z"
+     "run": "2026-11-17T10:36:37.875Z"
     },
     "hover": {
      "tag": "a",
@@ -5719,8 +5738,10 @@
       "top": "auto"
      },
      "via": "mouse hover over the element",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/prose-link-hover.png",
-     "run": "2026-11-17T08:19:16.884Z"
+     "run": "2026-11-17T10:36:41.295Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -5810,8 +5831,10 @@
       }
      ],
      "via": "keyboard focus (Shift+Tab, Tab)",
+     "page": "article",
+     "url": "https://www.headspace.com/articles/<id>",
      "crop": "components/crops/prose-link-focus-visible.png",
-     "run": "2026-11-17T08:19:18.173Z"
+     "run": "2026-11-17T10:36:42.769Z"
     }
    }
   },
@@ -5844,7 +5867,7 @@
    "selector": "input[type=\"email\"]",
    "page": "home",
    "url": "https://www.headspace.com/",
-   "run": "2026-11-17T08:12:43.449Z",
+   "run": "2026-11-17T10:32:47.521Z",
    "states": {
     "default": {
      "tag": "input",
@@ -5941,8 +5964,10 @@
       "fontSize": "16px"
      },
      "via": "resting state",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/newsletter-field-default.png",
-     "run": "2026-11-17T08:12:49.507Z"
+     "run": "2026-11-17T10:32:48.555Z"
     },
     "focused": {
      "tag": "input",
@@ -6040,8 +6065,10 @@
       "fontSize": "16px"
      },
      "via": "the field clicked into — nothing typed",
+     "page": "home",
+     "url": "https://www.headspace.com/",
      "crop": "components/crops/newsletter-field-focused.png",
-     "run": "2026-11-17T08:12:57.923Z"
+     "run": "2026-11-17T10:32:50.336Z"
     }
    }
   },

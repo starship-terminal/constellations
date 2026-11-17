@@ -2,7 +2,7 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from www.headspace.com, organizations.headspace.com, checkout.headspace.com and auth.headspace.com on 2026-11-17, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, redeemed, sent or submitted.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (46 components, 66 states). The page layouts are described in [raw/pages.md](raw/pages.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (46 components, 66 states). The page layouts are described in [raw/layout.json](raw/layout.json).
 
 How to read an entry:
 
@@ -63,7 +63,7 @@ Screenshots are named `{page}-light-{state}.png` (headspace.com has one theme). 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 12 components were given a real keyboard focus. 11 draw a ring: `nav-logo` (1px auto #101010 `light.accent.focus`, offset 1px), `nav-category` (1px auto #101010 `light.accent.focus`, offset 1px), `nav-login` (2px solid #0040ea `light.brand.blue-hover`, offset 1px), `footer-link` (1px auto #101010 `light.accent.focus`, offset 1px), `hero-cta` (2px solid #0040ea `light.brand.blue-hover`, offset 1px), `prose-link` (1px auto #101010 `light.accent.focus`, offset 1px), `subscribe-button` (2px solid #0040ea `light.brand.blue-hover`, offset 0px), `redeem-field` (1px auto #101010 `light.accent.focus`, offset 0px), `redeem-button` (2px solid #0040ea `light.brand.blue-hover`, offset 0px), `auth-continue` (2px solid #0040ea `light.brand.blue-hover`, offset 2px), `org-cta` (1px solid #000000, offset 5px). The other 1 draw none, so a keyboard user sees no change: `nav-cta`.
+**Focus.** 12 components were given a real keyboard focus. 12 draw a ring: `nav-logo` (1px auto #101010 `light.color.accent.focus`, offset 1px), `nav-category` (1px auto #101010 `light.color.accent.focus`, offset 1px), `nav-cta` (2px solid #0040ea `light.color.brand.blue-hover`, offset 1px), `nav-login` (2px solid #0040ea `light.color.brand.blue-hover`, offset 1px), `footer-link` (1px auto #101010 `light.color.accent.focus`, offset 1px), `hero-cta` (2px solid #0040ea `light.color.brand.blue-hover`, offset 1px), `prose-link` (1px auto #101010 `light.color.accent.focus`, offset 1px), `subscribe-button` (2px solid #0040ea `light.color.brand.blue-hover`, offset 0px), `redeem-field` (1px auto #101010 `light.color.accent.focus`, offset 0px), `redeem-button` (2px solid #0040ea `light.color.brand.blue-hover`, offset 0px), `auth-continue` (2px solid #0040ea `light.color.brand.blue-hover`, offset 2px), `org-cta` (1px solid #000000 `declared.black`, offset 5px). The other 0 draw none, so a keyboard user sees no change: .
 
 **Pressed.** The pressed states below were forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed. On the measured buttons the press keeps the resting fill (the blue pill stays `#0061ef`, the dark pill `#2d2c2b`) - Headspace answers the pointer with colour on hover instead.
 
@@ -71,7 +71,7 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.15s | `cubic-bezier(0.32, 0.94, 0.6, 1)` | background-color, border-color, box-shadow, color, transform | auth-continue, auth-sso, footer-link, hero-cta, m-hero-cta, m-nav-button, nav-login, redeem-button and more |
+| 0.15s | `cubic-bezier(0.32, 0.94, 0.6, 1)` | background-color, border-color, box-shadow, color, transform | auth-continue, auth-sso, footer-link, hero-cta, m-hero-cta, m-nav-button, nav-cta, nav-login and more |
 | 0.2s | `ease` | all | org-cta |
 
 **Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).
@@ -88,8 +88,8 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Auth card](#auth-card) | 1440 x 870.39 | - | 32px | #ffffff `light.surface.header` | transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 12px 40px 0px | 48px 40px |
-| [B2B card](#b2b-card) | 340 x 430 | - | 8px | #ffce00 `light.brand.yellow` | none | 32px 40px |
+| [Auth card](#auth-card) | 1440 x 870.39 | - | 32px | #ffffff `light.color.surface.header` | transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 12px 40px 0px | 48px 40px |
+| [B2B card](#b2b-card) | 340 x 430 | - | 8px | #ffce00 `light.color.brand.yellow` | none | 32px 40px |
 
 ## Components
 
@@ -100,14 +100,14 @@ The header and footer shared by every marketing page: the wordmark and orange do
 #### Promo strip
 The banner over the header ("Feel your best for 50% off →"). Read as `nav-promo-strip` on the home page.
 
-**Values (default).** size 1440 x 26; background transparent; text Headspace Apercu 18/26 500, #2d2c2b `light.ink.nav`.
+**Values (default).** size 1440 x 26; background transparent; text Headspace Apercu 18/26 500, #2d2c2b `light.color.ink.nav`.
 
 ![Promo strip default](components/crops/nav-promo-strip-default.png)
 
 #### Header bar
 The top bar: logo, the For You / For Business / For Providers / Our Plans / Resources / About categories, Log in, Help and the Get-50%-off CTA. Read as `nav-header` on the home page.
 
-**Values (default).** size 1440 x 80; padding 0px 48px; background #ffffff `light.surface.header`; text Headspace Apercu 16/18.4 400, #2d2c2b `light.ink.nav`; icon 16 x 16, #2d2c2b `light.ink.nav`.
+**Values (default).** size 1440 x 80; padding 0px 48px; background #ffffff `light.color.surface.header`; text Headspace Apercu 16/18.4 400, #2d2c2b `light.color.ink.nav`; icon 16 x 16, #2d2c2b `light.color.ink.nav`.
 
 ![Header bar default](components/crops/nav-header-default.png)
 
@@ -117,7 +117,7 @@ The headspace wordmark image in the header. Read as `nav-logo` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 152 x 80; background transparent; text Headspace Apercu 16/18.4 400, #0000ee |
-| focus-visible | outline 1px auto #101010 `light.accent.focus`, offset 1px |
+| focus-visible | outline 1px auto #101010 `light.color.accent.focus`, offset 1px |
 
 ![Logo link default](components/crops/nav-logo-default.png) ![Logo link hover](components/crops/nav-logo-hover.png) ![Logo link focus-visible](components/crops/nav-logo-focus-visible.png)
 
@@ -126,16 +126,16 @@ A top-level header link ("For You"): hovering it opens the mega-menu. Read as `n
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 52 x 18.39; background transparent; text Headspace Apercu 16/18.4 400, #2d2c2b `light.ink.nav` |
-| hover | size 56 x 18.39; text Headspace Apercu 16/18.4 700, #2d2c2b `light.ink.nav` |
-| focus-visible | size 56 x 18.39; outline 1px auto #101010 `light.accent.focus`, offset 1px; text Headspace Apercu 16/18.4 700, #2d2c2b `light.ink.nav` |
+| default | size 52 x 18.39; background transparent; text Headspace Apercu 16/18.4 400, #2d2c2b `light.color.ink.nav` |
+| hover | size 56 x 18.39; text Headspace Apercu 16/18.4 700, #2d2c2b `light.color.ink.nav` |
+| focus-visible | size 56 x 18.39; outline 1px auto #101010 `light.color.accent.focus`, offset 1px; text Headspace Apercu 16/18.4 700, #2d2c2b `light.color.ink.nav` |
 
 ![Nav category link default](components/crops/nav-category-default.png) ![Nav category link hover](components/crops/nav-category-hover.png) ![Nav category link focus-visible](components/crops/nav-category-focus-visible.png)
 
 #### Mega-menu pane (open)
 The dropdown pane of subcategory links under a hovered category. "opened" is a real pointer hover on the category link; the pane is read while the pointer rests inside it. Read as `nav-mega-menu` on the home page.
 
-**Values (opened).** size 223.52 x 204.78; background transparent; text Headspace Apercu 16/20.8 400, #44423f `light.ink.muted`; icon 16 x 16, #2d2c2b `light.ink.nav`.
+**Values (opened).** size 223.52 x 204.78; background transparent; text Headspace Apercu 16/20.8 400, #44423f `light.color.ink.muted`; icon 16 x 16, #2d2c2b `light.color.ink.nav`.
 
 ![Mega-menu pane (open) opened](components/crops/nav-mega-menu-opened.png)
 
@@ -144,7 +144,7 @@ One link inside the open mega-menu ("Meditation" under For You). Read as `nav-su
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| opened (same: hover) | size 94 x 20.8; background transparent; text Headspace Apercu 16/20.8 400, #44423f `light.ink.muted`; icon 16 x 16, #2d2c2b `light.ink.nav` |
+| opened (same: hover) | size 94 x 20.8; background transparent; text Headspace Apercu 16/20.8 400, #44423f `light.color.ink.muted`; icon 16 x 16, #2d2c2b `light.color.ink.nav` |
 
 ![Mega-menu link opened](components/crops/nav-subcategory-opened.png) ![Mega-menu link hover](components/crops/nav-subcategory-hover.png)
 
@@ -153,10 +153,9 @@ The pill call-to-action in the header, measured, never followed. Read as `nav-ct
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 280 x 213; background transparent; text Headspace Apercu 16/18.4 500, #2d2c2b `light.ink.nav`; icon 16 x 16, #2d2c2b `light.ink.nav` |
-| hover, focus-visible, pressed | text Headspace Apercu 16/18.4 400, #0000ee |
-
-Child layers that carry the look: div 280x175 background #0061ef `light.brand.blue` radius 24px 24px 0px 0px.
+| default (same: pressed) | size 125 x 48; padding 14.3px 24px; border 2px solid transparent; radius 32px; background #0061ef `light.color.brand.blue`; shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; text Headspace Apercu 14/15.4 700, #ffffff `light.color.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
+| hover | background #0040ea `light.color.brand.blue-hover` |
+| focus-visible | background #0040ea `light.color.brand.blue-hover`; outline 2px solid #0040ea `light.color.brand.blue-hover`, offset 1px |
 
 ![Header CTA ("Get 50% off") default](components/crops/nav-cta-default.png) ![Header CTA ("Get 50% off") hover](components/crops/nav-cta-hover.png) ![Header CTA ("Get 50% off") focus-visible](components/crops/nav-cta-focus-visible.png) ![Header CTA ("Get 50% off") pressed](components/crops/nav-cta-pressed.png)
 
@@ -165,18 +164,18 @@ The sign-in link in the header, measured, never followed. Read as `nav-login` on
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 46 x 48; border 2px solid transparent; radius 32px; background transparent; text Headspace Apercu 16/17.6 400, #2d2c2b `light.ink.nav`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
-| hover | size 48 x 48; text Headspace Apercu 16/17.6 700, #44423f `light.ink.muted` |
-| focus-visible | outline 2px solid #0040ea `light.brand.blue-hover`, offset 1px; text Headspace Apercu 16/17.6 400, #44423f `light.ink.muted` |
+| default | size 46 x 48; border 2px solid transparent; radius 32px; background transparent; text Headspace Apercu 16/17.6 400, #2d2c2b `light.color.ink.nav`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
+| hover | size 48 x 48; text Headspace Apercu 16/17.6 700, #44423f `light.color.ink.muted` |
+| focus-visible | outline 2px solid #0040ea `light.color.brand.blue-hover`, offset 1px; text Headspace Apercu 16/17.6 400, #44423f `light.color.ink.muted` |
 
 !["Log in" link default](components/crops/nav-login-default.png) !["Log in" link hover](components/crops/nav-login-hover.png) !["Log in" link focus-visible](components/crops/nav-login-focus-visible.png)
 
 #### Footer
 The page footer: link columns, app-store badges, the language selector and legal links. Read as `footer` on the home page.
 
-**Values (default).** size 1360 x 534.14; padding 0px 0px 40px 0px; background transparent; text Headspace Apercu 24/32 700, #4b4c4d `light.ink.primary`.
+**Values (default).** size 1360 x 534.14; padding 0px 0px 40px 0px; background transparent; text Headspace Apercu 24/32 700, #4b4c4d `light.color.ink.primary`.
 
-Child layers that carry the look: a 108x48 background #0061ef `light.brand.blue` border 2px solid transparent radius 32px shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; button 0x0 background #f9f4f2 `light.surface.page` border 2px solid #44423f `light.ink.muted` radius 32px; div 0x0 background #44423f `light.ink.muted` radius 8px shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px.
+Child layers that carry the look: a 108x48 background #0061ef `light.color.brand.blue` border 2px solid transparent radius 32px shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; button 0x0 background #f9f4f2 `light.color.surface.page` border 2px solid #44423f `light.color.ink.muted` radius 32px; div 0x0 background #44423f `light.color.ink.muted` radius 8px shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -185,9 +184,9 @@ A link in a footer column. Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 228.2 x 13.8; background transparent; text Headspace Apercu 12/13.8 500, #44423f `light.ink.muted`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1); opacity 0.7 |
+| default | size 228.2 x 13.8; background transparent; text Headspace Apercu 12/13.8 500, #44423f `light.color.ink.muted`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1); opacity 0.7 |
 | hover | opacity none |
-| focus-visible | outline 1px auto #101010 `light.accent.focus`, offset 1px |
+| focus-visible | outline 1px auto #101010 `light.color.accent.focus`, offset 1px |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png)
 
@@ -206,16 +205,16 @@ Not on the page when it was captured.
 The hero headline and lede on the captured pages, the section and card headings, body copy and the inline text link, all in Headspace Apercu.
 
 #### Hero headline (h1)
-The page's display headline in Headspace Apercu. Read as `hero-h1` on the mindful families page.
+The page's display headline in Headspace Apercu. Read as `hero-h1` on the guest pass page.
 
-**Values (default).** size 429.13 x 72; background transparent; text Headspace Apercu 64/72 700, #4b4c4d `light.ink.primary`.
+**Values (default).** size 429.13 x 72; background transparent; text Headspace Apercu 64/72 700, #4b4c4d `light.color.ink.primary`.
 
 ![Hero headline (h1) default](components/crops/hero-h1-default.png)
 
 #### Hero lede
 The paragraph under the hero headline. Read as `hero-lede` on the article page.
 
-**Values (default).** size 308.42 x 38.41; background transparent; text Headspace Apercu 16/19.2 700, #44423f `light.ink.muted`.
+**Values (default).** size 308.42 x 38.41; background transparent; text Headspace Apercu 16/19.2 700, #44423f `light.color.ink.muted`.
 
 ![Hero lede default](components/crops/hero-lede-default.png)
 
@@ -224,30 +223,30 @@ The pill call-to-action inside the hero ("Get 50% off" / "Get started"), measure
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 136 x 48; padding 13.2px 24px; border 2px solid transparent; radius 32px; background #0061ef `light.brand.blue`; shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; text Headspace Apercu 16/17.6 700, #ffffff `light.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
-| hover | background #0040ea `light.brand.blue-hover` |
-| focus-visible | background #0040ea `light.brand.blue-hover`; outline 2px solid #0040ea `light.brand.blue-hover`, offset 1px |
+| default (same: pressed) | size 136 x 48; padding 13.2px 24px; border 2px solid transparent; radius 32px; background #0061ef `light.color.brand.blue`; shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; text Headspace Apercu 16/17.6 700, #ffffff `light.color.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
+| hover | background #0040ea `light.color.brand.blue-hover` |
+| focus-visible | background #0040ea `light.color.brand.blue-hover`; outline 2px solid #0040ea `light.color.brand.blue-hover`, offset 1px |
 
 ![Hero primary CTA default](components/crops/hero-cta-default.png) ![Hero primary CTA hover](components/crops/hero-cta-hover.png) ![Hero primary CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero primary CTA pressed](components/crops/hero-cta-pressed.png)
 
 #### Section heading (h2)
 A mid-page section headline. Read as `prose-h2` on the article page.
 
-**Values (default).** size 780.86 x 38.41; background transparent; text Headspace Apercu 32/38.4 700, #4b4c4d `light.ink.primary`.
+**Values (default).** size 780.86 x 38.41; background transparent; text Headspace Apercu 32/38.4 700, #4b4c4d `light.color.ink.primary`.
 
 ![Section heading (h2) default](components/crops/prose-h2-default.png)
 
 #### Card heading (h3)
 A card or feature heading. Read as `prose-h3` on the article page.
 
-**Values (default).** size 301.31 x 27; background transparent; text Headspace Apercu 18/27 400, #141313 `light.action.secondary-hover`.
+**Values (default).** size 301.31 x 27; background transparent; text Headspace Apercu 18/27 400, #141313 `light.color.action.secondary-hover`.
 
 ![Card heading (h3) default](components/crops/prose-h3-default.png)
 
 #### Body copy
 A body paragraph. Read as `prose-body` on the article page.
 
-**Values (default).** size 1440 x 26; background transparent; text Headspace Apercu 18/26 500, #2d2c2b `light.ink.nav`.
+**Values (default).** size 1440 x 26; background transparent; text Headspace Apercu 18/26 500, #2d2c2b `light.color.ink.nav`.
 
 ![Body copy default](components/crops/prose-body-default.png)
 
@@ -256,8 +255,8 @@ A link inside body copy. Read as `prose-link` on the article page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 277 x 42; background transparent; text Headspace Apercu 14/24 400, #2d2c2b `light.ink.nav` |
-| focus-visible | outline 1px auto #101010 `light.accent.focus`, offset 1px |
+| default (same: hover) | size 277 x 42; background transparent; text Headspace Apercu 14/24 400, #2d2c2b `light.color.ink.nav` |
+| focus-visible | outline 1px auto #101010 `light.color.accent.focus`, offset 1px |
 
 ![Inline text link default](components/crops/prose-link-default.png) ![Inline text link hover](components/crops/prose-link-hover.png) ![Inline text link focus-visible](components/crops/prose-link-focus-visible.png)
 
@@ -280,9 +279,9 @@ A numbered feature tab on /app ("1 Guided meditations", "2 AI guidance", ...). I
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 205 x 30; background transparent; text Headspace Apercu 18/26 700, #ffffff `light.surface.header` |
+| default (same: hover) | size 205 x 30; background transparent; text Headspace Apercu 18/26 700, #ffffff `light.color.surface.header` |
 
-Child layers that carry the look: span 30x30 background #0061ef `light.brand.blue` radius 50%.
+Child layers that carry the look: span 30x30 background #0061ef `light.color.brand.blue` radius 50%.
 
 ![Feature tab default](components/crops/app-tab-default.png) ![Feature tab hover](components/crops/app-tab-hover.png)
 
@@ -296,9 +295,9 @@ The subscribe action on a plan/upsell card, measured, never pressed. Read as `su
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 151 x 57.8; padding 16px 32px; border 2px solid transparent; radius 32px; background #2d2c2b `light.ink.nav`; shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; text Headspace Apercu 18/19.8 700, #ffffff `light.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
-| hover | background #141313 `light.action.secondary-hover` |
-| focus-visible | background #141313 `light.action.secondary-hover`; outline 2px solid #0040ea `light.brand.blue-hover`, offset 0px |
+| default | size 151 x 57.8; padding 16px 32px; border 2px solid transparent; radius 32px; background #2d2c2b `light.color.ink.nav`; shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; text Headspace Apercu 18/19.8 700, #ffffff `light.color.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
+| hover | background #141313 `light.color.action.secondary-hover` |
+| focus-visible | background #141313 `light.color.action.secondary-hover`; outline 2px solid #0040ea `light.color.brand.blue-hover`, offset 0px |
 
 !["Subscribe" button default](components/crops/subscribe-button-default.png) !["Subscribe" button hover](components/crops/subscribe-button-hover.png) !["Subscribe" button focus-visible](components/crops/subscribe-button-focus-visible.png)
 
@@ -325,7 +324,7 @@ Not on the page when it was captured.
 #### Seat slider
 A range input on the plans page (member-count slider), measured at rest — never dragged. Read as `plan-slider` on the subscriptions page.
 
-**Values (default).** size 406.47 x 8; background #ffffff `light.surface.header`; text Headspace Apercu 16/18.4 400, #9d968e; opacity 0; placeholder #9d968e.
+**Values (default).** size 406.47 x 8; background #ffffff `light.color.surface.header`; text Headspace Apercu 16/18.4 400, #9d968e; opacity 0; placeholder #9d968e.
 
 ![Seat slider default](components/crops/plan-slider-default.png)
 
@@ -338,8 +337,8 @@ The footer's email input, clicked into — nothing typed. Read as `newsletter-fi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 281 x 58; padding 24px 16px 8px 16px; border 1px solid #d2d5de `light.line.field`; radius 8px; background #ffffff `light.surface.header`; text Headspace Apercu 16/24 400, #000000; placeholder #000000 |
-| focused | outline 1px auto #101010 `light.accent.focus`, offset 0px |
+| default | size 281 x 58; padding 24px 16px 8px 16px; border 1px solid #d2d5de `light.color.line.field`; radius 8px; background #ffffff `light.color.surface.header`; text Headspace Apercu 16/24 400, #000000 `declared.black`; placeholder #000000 `declared.black` |
+| focused | outline 1px auto #101010 `light.color.accent.focus`, offset 0px |
 
 ![Newsletter email field default](components/crops/newsletter-field-default.png) ![Newsletter email field focused](components/crops/newsletter-field-focused.png)
 
@@ -348,8 +347,8 @@ The "Enter your code" text input on /code, clicked into — nothing typed. Read 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 344 x 50; padding 12px 32px 12px 12px; radius 4px; background #ffffff `light.surface.header`; text Headspace Apercu 18/26 500, #000000; placeholder #757575 |
-| focused, focus-visible | outline 1px auto #101010 `light.accent.focus`, offset 0px |
+| default | size 344 x 50; padding 12px 32px 12px 12px; radius 4px; background #ffffff `light.color.surface.header`; text Headspace Apercu 18/26 500, #000000 `declared.black`; placeholder #757575 |
+| focused, focus-visible | outline 1px auto #101010 `light.color.accent.focus`, offset 0px |
 
 ![Redeem-code field default](components/crops/redeem-field-default.png) ![Redeem-code field focused](components/crops/redeem-field-focused.png) ![Redeem-code field focus-visible](components/crops/redeem-field-focus-visible.png)
 
@@ -358,9 +357,9 @@ The submit on /code, measured, never pressed. Read as `redeem-button` on the red
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 165 x 52; padding 14px 32px; radius 32px; background #0061ef `light.brand.blue`; shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; text Headspace Apercu 16/17.6 700, #ffffff `light.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
-| hover | background #0040ea `light.brand.blue-hover` |
-| focus-visible | background #0040ea `light.brand.blue-hover`; outline 2px solid #0040ea `light.brand.blue-hover`, offset 0px |
+| default | size 165 x 52; padding 14px 32px; radius 32px; background #0061ef `light.color.brand.blue`; shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; text Headspace Apercu 16/17.6 700, #ffffff `light.color.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
+| hover | background #0040ea `light.color.brand.blue-hover` |
+| focus-visible | background #0040ea `light.color.brand.blue-hover`; outline 2px solid #0040ea `light.color.brand.blue-hover`, offset 0px |
 
 !["Redeem code" button default](components/crops/redeem-button-default.png) !["Redeem code" button hover](components/crops/redeem-button-hover.png) !["Redeem code" button focus-visible](components/crops/redeem-button-focus-visible.png)
 
@@ -371,9 +370,9 @@ The Auth0 universal login on auth.headspace.com, reached through /login and /sig
 #### Auth card
 The centred card on auth.headspace.com (the universal login). Read as `auth-card` on the universal signup (auth.headspace.com) page.
 
-**Values (default).** size 1440 x 870.39; padding 48px 40px; background transparent; text Headspace Apercu 24/28.8 700, #1e212a; icon 16 x 16, #ffffff `light.surface.header`.
+**Values (default).** size 1440 x 870.39; padding 48px 40px; background transparent; text Headspace Apercu 24/28.8 700, #1e212a; icon 16 x 16, #ffffff `light.color.surface.header`.
 
-Child layers that carry the look: div 400x774.4 background #ffffff `light.surface.header` radius 32px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 12px 40px 0px; div 336x56 background #ffffff `light.surface.header` border 2px solid #e2ded9 radius 12px; button 336x48 background #0061ef `light.brand.blue` border 2px solid transparent radius 32px.
+Child layers that carry the look: div 400x774.4 background #ffffff `light.color.surface.header` radius 32px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 12px 40px 0px; div 336x56 background #ffffff `light.color.surface.header` border 2px solid #e2ded9 `declared.wary.grey.200` radius 12px; button 336x48 background #0061ef `light.color.brand.blue` border 2px solid transparent radius 32px.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -382,7 +381,7 @@ The email input on the universal login, clicked into — nothing typed. Read as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 300 x 24; background transparent; text MyCustomFont 16/24 400, #2d2c2b `light.ink.nav`; placeholder #2d2c2b `light.ink.nav` |
+| default (same: focused) | size 300 x 24; background transparent; text MyCustomFont 16/24 400, #2d2c2b `light.color.ink.nav`; placeholder #2d2c2b `light.color.ink.nav` |
 
 ![Email field default](components/crops/auth-email-default.png) ![Email field focused](components/crops/auth-email-focused.png)
 
@@ -391,9 +390,9 @@ The primary submit on the universal login, measured, never pressed. Read as `aut
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 336 x 48; padding 13.2px 24px; border 2px solid transparent; radius 32px; background #0061ef `light.brand.blue`; text MyCustomFont 16/17.6 700, #ffffff `light.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
-| hover | background #0040ea `light.brand.blue-hover` |
-| focus-visible | background #0040ea `light.brand.blue-hover`; outline 2px solid #0040ea `light.brand.blue-hover`, offset 2px |
+| default | size 336 x 48; padding 13.2px 24px; border 2px solid transparent; radius 32px; background #0061ef `light.color.brand.blue`; text MyCustomFont 16/17.6 700, #ffffff `light.color.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1) |
+| hover | background #0040ea `light.color.brand.blue-hover` |
+| focus-visible | background #0040ea `light.color.brand.blue-hover`; outline 2px solid #0040ea `light.color.brand.blue-hover`, offset 2px |
 
 !["Continue" button default](components/crops/auth-continue-default.png) !["Continue" button hover](components/crops/auth-continue-hover.png) !["Continue" button focus-visible](components/crops/auth-continue-focus-visible.png)
 
@@ -402,8 +401,8 @@ The secondary SSO submit, measured, never pressed. Read as `auth-sso` on the uni
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 336 x 48; padding 13.2px 24px; border 2px solid transparent; radius 32px; background #f9f4f2 `light.surface.page`; text MyCustomFont 16/17.6 700, #44423f `light.ink.muted`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1); icon 24 x 24, #44423f `light.ink.muted` |
-| hover | background #e5e7ec `light.action.tertiary-hover` |
+| default | size 336 x 48; padding 13.2px 24px; border 2px solid transparent; radius 32px; background #f9f4f2 `light.color.surface.page`; text MyCustomFont 16/17.6 700, #44423f `light.color.ink.muted`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1); icon 24 x 24, #44423f `light.color.ink.muted` |
+| hover | background #e5e7ec `light.color.action.tertiary-hover` |
 
 !["Continue with SSO" button default](components/crops/auth-sso-default.png) !["Continue with SSO" button hover](components/crops/auth-sso-hover.png)
 
@@ -433,7 +432,7 @@ The organizations.headspace.com business marketing pages on the same stack: the 
 #### B2B hero headline
 The organizations.headspace.com hero h1. Read as `org-h1` on the B2B employers page.
 
-**Values (default).** size 624 x 96; background transparent; text HS Apercu Bold 48/48 700, #ffffff `light.surface.header`.
+**Values (default).** size 624 x 96; background transparent; text HS Apercu Bold 48/48 700, #ffffff `light.color.surface.header`.
 
 ![B2B hero headline default](components/crops/org-h1-default.png)
 
@@ -442,16 +441,16 @@ The business-surface call-to-action ("Request a demo" / "Get started"), measured
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 183 x 50.16; padding 14.08px 32px; border 1px solid #ffffff `light.surface.header`; radius 800px; background #ffffff `light.surface.header`; text HS Apercu Medium 16/20 500, #2d2c2b `light.ink.nav`; transition all 0.2s ease |
-| hover | border 1px solid #ff7e1d `light.brand.orange`; background #ff7e1d `light.brand.orange`; text HS Apercu Medium 16/20 500, #ffffff `light.surface.header` |
-| focus-visible | outline 1px solid #000000, offset 5px |
+| default | size 183 x 50.16; padding 14.08px 32px; border 1px solid #ffffff `light.color.surface.header`; radius 800px; background #ffffff `light.color.surface.header`; text HS Apercu Medium 16/20 500, #2d2c2b `light.color.ink.nav`; transition all 0.2s ease |
+| hover | border 1px solid #ff7e1d `light.color.brand.orange`; background #ff7e1d `light.color.brand.orange`; text HS Apercu Medium 16/20 500, #ffffff `light.color.surface.header` |
+| focus-visible | outline 1px solid #000000 `declared.black`, offset 5px |
 
 ![B2B CTA default](components/crops/org-cta-default.png) ![B2B CTA hover](components/crops/org-cta-hover.png) ![B2B CTA focus-visible](components/crops/org-cta-focus-visible.png)
 
 #### B2B card
 A card on the B2B surface (stat, benefit or customer logo tile). Read as `org-card` on the B2B home page.
 
-**Values (default).** size 340 x 430; padding 32px 40px; radius 8px; background #ffce00 `light.brand.yellow`; text HS Apercu Bold 14/21 700, #2d2c2b `light.ink.nav`.
+**Values (default).** size 340 x 430; padding 32px 40px; radius 8px; background #ffce00 `light.color.brand.yellow`; text HS Apercu Bold 14/21 700, #2d2c2b `light.color.ink.nav`.
 
 ![B2B card default](components/crops/org-card-default.png)
 
@@ -462,7 +461,7 @@ The header and its nav sheet as a phone draws them, at 390 x 844.
 #### Mobile header
 The bar at 390px: logo and the nav button. Read as `m-nav-header` on the home page.
 
-**Values (default).** size 390 x 64; padding 0px 24px; background #ffffff `light.surface.header`; text Headspace Apercu 14/15.4 700, #ffffff `light.surface.header`.
+**Values (default).** size 390 x 64; padding 0px 24px; background #ffffff `light.color.surface.header`; text Headspace Apercu 14/15.4 700, #ffffff `light.color.surface.header`.
 
 ![Mobile header default](components/crops/m-nav-header-default.png)
 
@@ -471,7 +470,7 @@ The button that opens the nav sheet. Read as `m-nav-button` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 28 x 28; border 2px solid transparent; background transparent; text Headspace Apercu 16/17.6 700, #44423f `light.ink.muted`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1); icon 24 x 24, #44423f `light.ink.muted` |
+| default (same: hover) | size 28 x 28; border 2px solid transparent; background transparent; text Headspace Apercu 16/17.6 700, #44423f `light.color.ink.muted`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1); icon 24 x 24, #44423f `light.color.ink.muted` |
 
 ![Nav button default](components/crops/m-nav-button-default.png) ![Nav button hover](components/crops/m-nav-button-hover.png)
 
@@ -487,7 +486,7 @@ The hero CTA at 390 wide.
 #### Mobile hero CTA
 The hero call-to-action at 390px, measured, never followed. Read as `m-hero-cta` on the home page.
 
-**Values (default).** size 125 x 32.59; padding 14.3px 24px; border 2px solid transparent; radius 32px; background #0061ef `light.brand.blue`; shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; text Headspace Apercu 14/15.4 700, #ffffff `light.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1).
+**Values (default).** size 125 x 32.59; padding 14.3px 24px; border 2px solid transparent; radius 32px; background #0061ef `light.color.brand.blue`; shadow rgba(65, 61, 69, 0.2) 0px 2px 0px 0px; text Headspace Apercu 14/15.4 700, #ffffff `light.color.surface.header`; transition color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), background-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), border-color 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), box-shadow 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), transform 0.15s cubic-bezier(0.32, 0.94, 0.6, 1).
 
 ![Mobile hero CTA default](components/crops/m-hero-cta-default.png)
 

@@ -196,7 +196,7 @@ for key, comp, state, prop, desc in [
     ("field", "newsletter-field", "default", "backgroundColor", "An input field's ground."),
 ]:
     put(surf, key, comp, state, prop, "color", desc)
-put_ancestor(surf, "page", "nav-cta", "default", "The warm-grey wash the page/menu wrapper paints (the same #f9f4f2 the auth ground and the declared --2ndary-warm-grey-100/--grey-for-bg-adjacent tokens carry).")
+put_paint_node(surf, "page", "nav-header", "default", "css-15t8m5e", "The warm-grey wash the page/menu wrapper paints (the same #f9f4f2 the auth ground and the declared --2ndary-warm-grey-100/--grey-for-bg-adjacent tokens carry).")
 put_paint_node(surf, "auth-card", "auth-card", "default", "bg-card", "The white the universal-login card paints.")
 put_paint_node(surf, "footer-panel", "footer", "default", "css-1v3qhkq", "The dark panel band inside the footer.")
 
@@ -206,7 +206,7 @@ for key, comp, state, prop, desc in [
     ("blue-hover", "hero-cta", "hover", "backgroundColor", "The deeper blue primary CTAs shift to on hover (the declared --primary-blue)."),
     ("on-blue", "hero-cta", "default", "color", "Text on the blue CTA."),
     ("orange", "org-cta", "hover", "backgroundColor", "Headspace's signature orange — it surfaces as the B2B CTA's hover fill (the declared --orange)."),
-    ("yellow", "org-card", "default", "backgroundColor", "The Headspace yellow a B2B highlight card paints (the declared --extended-yellow-100)."),
+    ("yellow", "org-card", "default", "backgroundColor", "The Headspace yellow a B2B highlight card paints (the declared --yellow)."),
 ]:
     put(brand, key, comp, state, prop, "color", desc)
 
@@ -312,8 +312,10 @@ if durs:
                                   "description": "A motion duration the site uses."}
 if eases:
     top = sorted(set(eases), key=lambda e: -eases.count(e))[0]
-    mot["easing"] = {"value": top,
-                     "type": "cubicBezier" if "cubic-bezier" in top else "other",
+    bez = re.fullmatch(r"cubic-bezier\(\s*([-\d.]+)\s*,\s*([-\d.]+)\s*,\s*([-\d.]+)\s*,\s*([-\d.]+)\s*\)", top)
+    # DTCG cubicBezier values are the four numeric points, not the CSS string.
+    mot["easing"] = {"value": [float(x) for x in bez.groups()] if bez else top,
+                     "type": "cubicBezier" if bez else "other",
                      "source": "transition-timing-function measured on live components (raw/motion.json)",
                      "description": "The easing curve most components transition with."}
 behaviour = (MOTION.get("summary") or {}).get("behaviour")

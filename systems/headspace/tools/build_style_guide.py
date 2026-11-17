@@ -3,8 +3,8 @@
 
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
-theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
+`:root` and any theme set (here `light` and `declared`) joins it there too — the signed-out
+site has no dark mode. Aliases like {text.primary} become var(--text-primary).
 
 Placeholders in the template:
   /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
@@ -56,7 +56,7 @@ def css_val(name, t):
 
 
 # A light-only product has no dark set; every set that is missing renders as empty.
-# headspace adds an `org` set (the B2B host's own declared variables).
+# headspace adds a `declared` set (the small :root palette its stylesheets publish).
 SETS = [s for s in T.get("$metadata", {}).get("tokenSetOrder", ("core", "light", "dark")) if s in T]
 THEMES = [s for s in SETS if s != "core"]
 
@@ -77,20 +77,20 @@ for _set in THEMES:
 
 
 def slim(node):
+    # The template's flat() and tables read the DTCG shape ($value/$type), so the
+    # inlined copy keeps that shape; only the $-metadata container keys drop out.
     if isinstance(node, dict) and "$value" in node:
-        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
-        for k in ("compact", "darkVariationAxis"):
-            if k in node["$extensions"]:
-                out[k] = node["$extensions"][k]
+        out = {"$value": node["$value"], "$type": node["$type"],
+               "$extensions": {"source": node["$extensions"]["source"]}}
         if node.get("$description"):
-            out["d"] = node["$description"]
+            out["$description"] = node["$description"]
         return out
     return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
 
 
 # Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
 # from ending the script early. JSON.parse and a JS literal read it back unchanged.
-data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
+data = json.dumps({k: slim(T[k]) for k in SETS},
                   ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
 
 _uid = [0]

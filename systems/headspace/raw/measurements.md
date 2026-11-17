@@ -169,22 +169,20 @@ Page: home. Selector: `header a (text Get 50% off/Get started)`. States: default
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 280 x 213 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Headspace Apercu 16px/18.4px 400 | = | = | = |
+| Size (w x h) | 125 x 48 | = | = | = |
+| Padding | 14.3px 24px | = | = | = |
+| Border | 2px solid #000000 @ 0 | = | = | = |
+| Radius | 32px | = | = | = |
+| Background | #0061ef | #0040ea | #0040ea | = |
+| Box shadow | #413d45 @ 0.2 0px 2px 0px 0px | = | = | = |
+| Outline | none | = | 2px solid #0040ea offset 1px | = |
+| Font | Headspace Apercu 14px/15.4px 700 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #0000ee | = | = | = |
-| Text node | div.css-1mhfnji: Headspace Apercu 16px/18.4px 500, #2d2c2b | - | - | - |
-| Transition | none | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span.css-1fvtd4u: Headspace Apercu 14px/15.4px 700, #ffffff | = | = | = |
+| Transition | color, background-color, border-color, box-shadow, transform 0.15s, 0.15s, 0.15s, 0.15s, 0.15s cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1), cubic-bezier(0.32, 0.94, 0.6, 1) delay 0s, 0s, 0s, 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #2d2c2b | = | = | = |
-| Painted layers | div.css-1gr7t27 280.0x175.0 bg #0061ef r 24px 24px 0px 0px | = | = | = |
-| Ancestor paint | 1 up div.css-15t8m5e bg #f9f4f2; 2 up dialog.css-1rhcoa3 bg #ffffff shadow #141313 @ 0.2 0px 1px 8px 0px | = | = | = |
+| Painted layers | a.css-11fbkag 125.0x48.0 bg #0061ef border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 32px shadow #413d45 @ 0.2 0px 2px 0px 0px | a.css-11fbkag 125.0x48.0 bg #0040ea border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 32px shadow #413d45 @ 0.2 0px 2px 0px 0px | a.css-11fbkag 125.0x48.0 bg #0040ea border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 32px shadow #413d45 @ 0.2 0px 2px 0px 0px outline 2px solid #0040ea offset 1px | = |
 | How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
 Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
@@ -290,7 +288,7 @@ Not found on the page at capture time.
 
 Hero headline (h1). The page's display headline in Headspace Apercu.
 
-Page: mindful-families. Selector: `main h1, h1`. States: default.
+Page: share. Selector: `main h1, h1`. States: default.
 
 | Property | default |
 |---|---|
@@ -997,7 +995,7 @@ Headspace compiles its CSS to generated Emotion classes inline, so this list hol
 
 - ebb: `color 150ms cubic-bezier(0.32, 0.94, 0.6, 1), background-color 150ms cubic-bezier(0.32, 0.`, `opacity 0.3s ease-in-out`, `opacity 400ms cubic-bezier(0.32, 0.94, 0.6, 1), background-color 400ms cubic-bezier(0.32, `, `0.3s`, `0.1s`, `300ms ease-in`, `0.2s ease-in`, `0.4s`, `150ms ease-in`
 
-- family: `opacity 0.3s, height 0.3s, background-position 0.3s`, `0.2s ease-in-out`, `background-color 0.3s`, `0.1s`, `300ms ease-in`, `0.2s ease-in`, `0.4s`, `150ms ease-in`, `0.2s`, `0.25s ease-out`, `0.1s ease-in`
+- family: `opacity 0.3s, height 0.3s, background-position 0.3s`, `0.2s ease-in-out`, `0.1s`, `300ms ease-in`, `0.2s ease-in`, `0.4s`, `150ms ease-in`, `0.2s`, `0.25s ease-out`, `0.1s ease-in`, `background-color 0.3s`
 
 - gift: `color 150ms cubic-bezier(0.32, 0.94, 0.6, 1), background-color 150ms cubic-bezier(0.32, 0.`, `0.3s`, `0.1s`, `300ms ease-in`, `0.2s ease-in`, `0.4s`, `150ms ease-in`, `0.2s`, `0.25s ease-out`, `0.1s ease-in`
 

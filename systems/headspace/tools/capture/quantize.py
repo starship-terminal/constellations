@@ -83,6 +83,12 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
+    idx = [i for i, _ in ps]
+    # An interrupted capture leaves gaps in the tile sequence; joining the
+    # tiles that survived would silently drop the page between them.
+    if idx != list(range(len(idx))):
+        print(f'!! {name}: tiles are not contiguous ({idx}) — not stitched, not published')
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0
@@ -93,16 +99,28 @@ for name, ps in parts.items():
     print('stitched', name, sheet.size)
 
 n = 0
+failed = []
 for f in sorted(RAW.glob('*.png')):
     if '.part' in f.name:
+        continue
+    side = stitched.get(f.stem)
+    check = (side or {}).get('dimensionCheck') or {}
+    if f.stem in stitched and check.get('status') == 'fail':
+        # A stitched image whose own verification failed is evidence of an
+        # interrupted or shrunken capture — never publish it as a screenshot.
+        print(f'!! {f.name}: {check.get("error", "dimension check failed")} — not published')
+        failed.append(f.name)
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
     out_side = OUT / f'{f.name}.capture.json'
     out_side.unlink(missing_ok=True)   # never leave a previous run's measurements beside a new image
-    if stitched.get(f.stem):
-        out_side.write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
+    if side:
+        out_side.write_text(json.dumps(side, indent=1) + '\n')
     elif f.stem not in stitched and f.with_name(f.name + '.capture.json').exists():
         shutil.copyfile(f.with_name(f.name + '.capture.json'), out_side)
     n += 1
 print(n, 'screenshots ->', OUT)
+if failed:
+    print('FAILED checks:', ', '.join(failed))
+    sys.exit(1)
