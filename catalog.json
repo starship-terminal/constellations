@@ -16467,7 +16467,8 @@
      "The cookie preference center was not opened. The OneTrust banner was hidden and never answered",
      "The language and region dialog was opened. Confirm was not submitted"
     ],
-    "durationMin": 180
+    "durationMin": 180,
+    "pr": "https://github.com/starship-terminal/constellations/pull/643"
    }
   }
  ]
