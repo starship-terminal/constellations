@@ -728,6 +728,11 @@
       "assignedMedia": 36
     },
     {
+      "referenceId": "systems:clipchamp",
+      "media": 119,
+      "assignedMedia": 119
+    },
+    {
       "referenceId": "systems:clerk",
       "media": 77,
       "assignedMedia": 25
@@ -65953,6 +65958,1460 @@
           "termId": "web-ui-elements:switch-toggle",
           "rule": "ui-toggle",
           "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/company-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/company-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/education-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/education-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/features-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/features-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/forwork-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/forwork-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/mobile-features-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/mobile-features-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/mobile-home-light-menu-open.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/mobile-pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/mobile-pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/products-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/products-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/recorder-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/recorder-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/signin-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/stock-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/stock-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/templates-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/templates-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/whatsnew-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/screenshots/whatsnew-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/content-block-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/content-block-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/cta-secondary-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/cta-secondary-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/cta-secondary-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/cta-secondary-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/cta-white-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/cta-white-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/cta-white-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/cta-white-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/faq-item-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-cell-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-row-head-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-section-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/feature-tooltip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tooltip",
+          "rule": "ui-tooltip",
+          "reason": "Capture filename explicitly names tooltip; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/features-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-lang-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-social-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-social-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-social-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/footer-social-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/hero-subtitle-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/inline-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/inline-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/inline-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/inline-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/m-menu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/m-menu-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/m-menu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/m-menu-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/m-menu-open-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-signin-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-signin-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-signin-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-signin-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-submenu-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-submenu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/nav-submenu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/plan-head-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/plan-table-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/pricing-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/pricing-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/pricing-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/pricing-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/pricing-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/pricing-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/quote-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/rating-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/section-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/signin-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/signin-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/signin-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/signin-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "mediaId": "systems/clipchamp/components/crops/signin-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:segoe-ui",
+          "rule": "font-primary",
+          "reason": "Exact primary family Segoe UI from systems/clipchamp/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },

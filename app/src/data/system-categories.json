@@ -36,7 +36,9 @@
   {
     "referenceId": "systems:glossgenius",
     "groupId": "web-categories",
-    "labels": ["Scheduling Tools"],
+    "labels": [
+      "Scheduling Tools"
+    ],
     "reason": "catalog.json describes salon and spa business software: the published booking website's service list and date-picker flow are the captured workflows."
   },
   {
@@ -868,7 +870,7 @@
       "AI Tool",
       "Productivity"
     ],
-    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries — the AI Tool label."
+    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries \u2014 the AI Tool label."
   },
   {
     "referenceId": "systems:deel",
@@ -892,7 +894,7 @@
     "labels": [
       "AI Tool"
     ],
-    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) — the AI Tool label."
+    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) \u2014 the AI Tool label."
   },
   {
     "referenceId": "systems:chargetrip",
@@ -1192,7 +1194,7 @@
       "AI Tool",
       "Productivity"
     ],
-    "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog — the AI Tool label."
+    "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog \u2014 the AI Tool label."
   },
   {
     "referenceId": "systems:family",
@@ -1347,19 +1349,28 @@
   {
     "referenceId": "systems:clearful",
     "groupId": "web-categories",
-    "labels": ["Health & Wellness", "Productivity"],
+    "labels": [
+      "Health & Wellness",
+      "Productivity"
+    ],
     "reason": "catalog.json describes a guided-journal app: a marketing site for journaling flows, prompts library, pricing and a mobile-app download."
   },
   {
     "referenceId": "systems:clay-earth",
     "groupId": "web-categories",
-    "labels": ["Productivity", "Communication Tools"],
+    "labels": [
+      "Productivity",
+      "Communication Tools"
+    ],
     "reason": "catalog.json describes a relationship manager (personal CRM): unified contacts, notes and reminders, public pricing and the app.me.sh sign-in boundary."
   },
   {
     "referenceId": "systems:classpass",
     "groupId": "web-categories",
-    "labels": ["Health & Wellness", "Marketplace"],
+    "labels": [
+      "Health & Wellness",
+      "Marketplace"
+    ],
     "reason": "catalog.json describes a fitness-and-wellness booking marketplace: studio search with filter pills and venue cards, a credits-plan carousel, gift, corporate-wellness and studio-partner pages."
   },
   {
@@ -1437,19 +1448,28 @@
   {
     "referenceId": "systems:front",
     "groupId": "web-categories",
-    "labels": ["Communication Tools", "Business"],
+    "labels": [
+      "Communication Tools",
+      "Business"
+    ],
     "reason": "catalog.json describes an AI customer-operations platform: a shared-inbox/omnichannel product (email, chat, channels), customer-service marketing, pricing tiers, a help centre and developer docs."
   },
   {
     "referenceId": "systems:gofundme",
     "groupId": "web-categories",
-    "labels": ["Fundraising", "Marketplace"],
-    "reason": "catalog.json describes a crowdfunding platform: the home hero and header dropdowns, the /discover and /s browse grids of fundraiser cards, a public /f/<slug> fundraiser page, the /create/fundraiser/category wizard at rest, the /sign-in auth boundary and the /c/* marketing stack — all signed-out."
+    "labels": [
+      "Fundraising",
+      "Marketplace"
+    ],
+    "reason": "catalog.json describes a crowdfunding platform: the home hero and header dropdowns, the /discover and /s browse grids of fundraiser cards, a public /f/<slug> fundraiser page, the /create/fundraiser/category wizard at rest, the /sign-in auth boundary and the /c/* marketing stack \u2014 all signed-out."
   },
   {
     "referenceId": "systems:grammarly",
     "groupId": "web-categories",
-    "labels": ["AI Tool", "Productivity"],
+    "labels": [
+      "AI Tool",
+      "Productivity"
+    ],
     "reason": "catalog.json describes an AI writing assistant: marketing and pricing pages, a free grammar checker, paraphrasing tool, AI detector and word counter, all signed out."
   },
   {
@@ -1464,8 +1484,20 @@
   {
     "referenceId": "systems:grok",
     "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
+    "labels": [
+      "AI Tool",
+      "Development Tools"
+    ],
     "reason": "catalog.json describes the xAI/Grok developer documentation portal: quickstart and model docs, API reference, token pricing tables, rate limits, release notes, a cmdK search surface and the Grok help section."
+  },
+  {
+    "referenceId": "systems:clipchamp",
+    "groupId": "web-categories",
+    "labels": [
+      "Design & Media Editing",
+      "Productivity"
+    ],
+    "reason": "catalog.json describes Microsoft's Clipchamp video editor: marketing pages for the browser video editor, templates, stock library, pricing tiers and an education/work surface."
   },
   {
     "referenceId": "systems:grow",
