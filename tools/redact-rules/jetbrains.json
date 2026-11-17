@@ -1,0 +1,10 @@
+{
+  "_note": "Rules for systems/jetbrains. Public signed-out capture of jetbrains.com. Nothing was signed into, typed, searched, sent or submitted. The privacy policy publishes privacy@jetbrains.com; that is product-published contact copy and is kept.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@jetbrains\\.com$"
+    ]
+  }
+}

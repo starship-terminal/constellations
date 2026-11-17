@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -310,6 +310,13 @@ Access: signed out (every captured surface is public; the file dashboard, Paper/
 Access: read-only (the magazine is fully public; Shop and Courses lead off-domain and were measured as links, never followed)
 - the newsletter and Contact Form 7 fields were focused and filled with sample text then cleared - never submitted; the acceptance/checkbox native inputs are visibility:hidden/opacity:0 and the boxes are painted by their labels
 - breadcrumbs exist only in JSON-LD - no breadcrumb UI paints on the article; author archives and tag indexes reuse the feed layout and were not individually captured
+
+## [JetBrains](../systems/jetbrains) — `jetbrains`
+Access: signed out (account, checkout and downloads were not opened; the login card was measured at rest)
+- JetBrains Account at https://account.jetbrains.com/login (email field, signup, and the signed-in account) was measured at rest only; no OAuth button was pressed
+- Store checkout and Buy at https://www.jetbrains.com/store/ were not followed
+- Product downloads at https://www.jetbrains.com/products/ were not started; starting a download is a submit boundary and was not followed
+- The cookie dialog at https://www.jetbrains.com/ was hidden and never submitted
 
 ## [Deel](../systems/deel) — `deel`
 Access: read-only (the marketing site is fully public; the product lives behind app.deel.com - an authenticated boundary never reached; Book a demo, Claim offer and Log in were measured as destinations, never followed)
