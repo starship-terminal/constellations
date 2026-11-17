@@ -60,7 +60,7 @@ Screenshots are named `{page}-{theme}-{state}.png` where `{theme}` is the surfac
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 6 components were given a real keyboard focus. 6 draw an outline ring: `nav-link` (2px solid transparent, offset 2px), `nav-cta` (2px solid transparent, offset 2px), `button-secondary` (2px solid transparent, offset 2px), `button-counter` (2px solid transparent, offset 2px), `cli-install-select` (1px auto #101010, offset 0px), `app-send-button` (2px solid transparent, offset 2px).
+**Focus.** 6 components were given a real keyboard focus. 1 draw an outline ring: `cli-install-select` (1px auto #101010, offset 0px). 1 draw a focus ring as a shadow instead: `app-send-button`. 4 change only their border: `nav-link`, `nav-cta`, `button-secondary`, `button-counter`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -76,9 +76,9 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [App sidebar](#app-sidebar) | 49 x 900 | R: 1px solid rgba(255, 255, 255, 0.04) `dark.border.default` | - | transparent | none | 0 |
 | [Request tab card](#request-tab-card) | 104 x 28 | - | 6px | #201c1c `dark.bg.z2` | none | 4px 2px 4px 4px |
-| [URL field](#url-field) | 1026.5 x 44 | - | - | transparent | none | 0 |
+| [URL field](#url-field) | 848.5 x 44 | - | - | transparent | none | 8px 0px |
 | ["Send" button](#send-button) | 57 x 28 | - | 6px | #73dc8c `dark.accent.default` | rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.25) 0px 1px 2px 0px | 2px 12px |
-| [Environments manager](#environments-manager) | 1440 x 900 | - | - | #191515 `dark.bg.z0` | none | 0 |
+| [Environments manager](#environments-manager) | 1026.5 x 796 | - | - | #1c1818 `dark.bg.z1` | none | 0 |
 | [Testimonial card](#testimonial-card) | 360 x 238 | - | 10px | #4b78e6 `dark.altAccent.hover` | none | 44px 30px 30px 30px |
 | [Newsletter email input](#newsletter-email-input) | 427.33 x 44 | 2px solid transparent | 9999px | #3354a6 `light.code.blue` | none | 12px 12px 13px 20px |
 | [Post preview card](#post-preview-card) | 653 x 398.2 | - | - | transparent | none | 64px 0px 72px 0px |
@@ -432,7 +432,7 @@ HTTPie-for-Web signed out — the 'Incognito space': the left rail (space switch
 
 #### App sidebar
 The left rail (Layout_sidebar): space switcher, Collection/Drafts/Environments panel. Read as `app-sidebar` on the /app page.
-States read on 2026-11-17T10:53:42.659Z (default); 2026-11-17T10:54:03.690Z (light).
+States read on 2026-11-17T13:07:59.558Z (default); 2026-11-17T13:08:11.917Z (light).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -445,7 +445,7 @@ Child layers that carry the look: aside 49x900 border 1px solid; span 32x48; but
 
 #### "Incognito space" button
 The space switcher button. "opened" is its own press opening the current space's tab (variables/settings) in the strip — no dropdown menu paints for the unsigned product. Read as `app-space-button` on the /app page.
-States read on 2026-11-17T10:55:08.259Z (default); 2026-11-17T10:55:10.071Z (hover); 2026-11-17T10:55:13.088Z (opened).
+States read on 2026-11-17T13:08:51.171Z (default); 2026-11-17T13:08:52.999Z (hover); 2026-11-17T13:08:55.604Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -456,7 +456,7 @@ States read on 2026-11-17T10:55:08.259Z (default); 2026-11-17T10:55:10.071Z (hov
 
 #### "Drafts" shelf header
 The Drafts collection header in the sidebar panel — the unsaved-requests shelf. Read as `app-drafts-tab` on the /app page.
-States read on 2026-11-17T10:54:27.365Z (default); 2026-11-17T10:54:29.234Z (hover).
+States read on 2026-11-17T13:08:23.372Z (default); 2026-11-17T13:08:25.203Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -467,7 +467,7 @@ States read on 2026-11-17T10:54:27.365Z (default); 2026-11-17T10:54:29.234Z (hov
 
 #### "Environments" selector
 The Environments button in the tab bar — opens the environments manager panel. Read as `app-env-button` on the /app page.
-States read on 2026-11-17T10:55:16.856Z (default); 2026-11-17T10:55:21.110Z (hover); 2026-11-17T10:55:33.260Z (opened).
+States read on 2026-11-17T13:08:57.695Z (default); 2026-11-17T13:09:00.337Z (hover); 2026-11-17T13:09:03.165Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -479,7 +479,7 @@ States read on 2026-11-17T10:55:16.856Z (default); 2026-11-17T10:55:21.110Z (hov
 
 #### Drafts empty state
 The InfoBlock inside the Drafts shelf: "Drafts are your unsaved requests. Organize the ones you want to keep in a collection" — the signed-out draft list is empty. Read as `app-drafts-empty` on the /app page.
-Read on 2026-11-17T10:54:30.155Z.
+Read on 2026-11-17T13:08:26.143Z.
 
 **Values (default).** size 323.5 x 52; padding 8px; border 2px solid rgba(255, 255, 255, 0.04) `dark.border.default`; radius 8px; background transparent; text PolySans 12.8/16 400, rgba(245, 245, 240, 0.6) `dark.text.secondary`.
 
@@ -491,7 +491,7 @@ The request workspace: the tab card, the method menu (its own GET press paints t
 
 #### Request tab card
 The "GET untitled" draft tab (TabCard_tab, Tab_isActive) in the tab strip. Read as `app-request-tab` on the /app page.
-States read on 2026-11-17T10:54:31.034Z (default); 2026-11-17T10:54:32.872Z (hover).
+States read on 2026-11-17T13:08:27.012Z (default); 2026-11-17T13:08:28.861Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -501,7 +501,7 @@ States read on 2026-11-17T10:54:31.034Z (default); 2026-11-17T10:54:32.872Z (hov
 
 #### Method select (GET)
 The method dropdown button on the request line. "opened" is its own press painting the GET/HEAD/POST/… menu — closed with Escape. Read as `app-method-button` on the /app page.
-States read on 2026-11-17T10:54:33.821Z (default); 2026-11-17T10:54:35.644Z (hover); 2026-11-17T10:54:37.848Z (opened).
+States read on 2026-11-17T13:08:30.051Z (default); 2026-11-17T13:08:31.991Z (hover); 2026-11-17T13:08:34.559Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -513,20 +513,20 @@ States read on 2026-11-17T10:54:33.821Z (default); 2026-11-17T10:54:35.644Z (hov
 
 #### URL field
 The request URL editor (UrlBar, a CodeMirror single-line field) holding the prefilled httpie.io/hello. Read as `app-url-field` on the /app page.
-States read on 2026-11-17T10:54:38.913Z (default); 2026-11-17T10:54:40.286Z (focused).
+States read on 2026-11-17T13:08:35.647Z (default); 2026-11-17T13:08:37.253Z (focused).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 1026.5 x 44; background transparent; text PolySansMono 14.2/24 400, #73dc8c `dark.accent.default`; icon 12 x 12, #73dc8c `dark.accent.default`; layers div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5x44.0 #1c1818 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px 8px; div::before.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5pxx44px transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) 0px 0px 0px 1px inset 8px; div.cm-cursor.cm- |
-| focused | layers div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5x44.0 #201c1c transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px 8px; div::before.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5pxx44px transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) 0px 0px 0px 1px inset 8px; div.cm-cursor.cm- |
+| default | size 848.5 x 44; padding 8px 0px; background transparent; text PolySansMono 14.2/24 400, rgba(245, 245, 240, 0.35) `dark.text.placeholders`; layers div.cm-cursor.cm-cursor-primary 0.0x0.0 L:1px solid |
+| focused | layers div.cm-cursor.cm-cursor-primary 1.0x14.0 L:1px solid |
 
-Child layers that carry the look: div 1026.5x44 background #1c1818 `dark.bg.z1` radius 8px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) `light.border.subtle` 0px 0px 0px 1px; div::before 1026.5pxx44px radius 8px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) `dark.border.subtle` 0px 0px 0px 1px inset; div 0x0 border 1px solid.
+Child layers that carry the look: div 0x0 border 1px solid.
 
 ![URL field default](components/crops/app-url-field-default.png) ![URL field focused](components/crops/app-url-field-focused.png)
 
 #### "Send" button
 The request's primary action — measured at rest and with forcePseudoState only; a real press would issue a network request, so it is never fired. Read as `app-send-button` on the /app page.
-States read on 2026-11-17T10:54:41.174Z (default); 2026-11-17T10:54:42.986Z (hover); 2026-11-17T10:54:44.313Z (focus-visible); 2026-11-17T10:54:53.245Z (pressed).
+States read on 2026-11-17T13:08:38.148Z (default); 2026-11-17T13:08:40.051Z (hover); 2026-11-17T13:08:41.668Z (focus-visible); 2026-11-17T13:08:43.003Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -538,7 +538,7 @@ States read on 2026-11-17T10:54:41.174Z (default); 2026-11-17T10:54:42.986Z (hov
 
 #### Request panel tablist
 The Params / Headers / Auth / Body tablist (PanelTabs) above the request editor. Read as `app-panel-tabs` on the /app page.
-Read on 2026-11-17T10:54:59.419Z.
+Read on 2026-11-17T13:08:43.887Z.
 
 **Values (default).** size 237 x 28; background transparent; text PolySans 14.2/24 400, #f5f5f0 `dark.text.primary`; layers button.PanelTabButton_button__iYu6s.PanelTabs_aloneActiveTab___1VKK 64.0x28.0 rgba(255, 255, 255, 0.06) 6px.
 
@@ -548,7 +548,7 @@ Child layers that carry the look: button 64x28 background rgba(255, 255, 255, 0.
 
 #### Request panel tab
 One request panel tab ("Headers"). "selected" is its own activation — a local UI toggle. Read as `app-panel-tab` on the /app page.
-States read on 2026-11-17T10:55:01.047Z (default); 2026-11-17T10:55:03.380Z (hover); 2026-11-17T10:55:05.137Z (selected).
+States read on 2026-11-17T13:08:44.745Z (default); 2026-11-17T13:08:46.587Z (hover); 2026-11-17T13:08:48.353Z (selected).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -559,20 +559,20 @@ States read on 2026-11-17T10:55:01.047Z (default); 2026-11-17T10:55:03.380Z (hov
 ![Request panel tab default](components/crops/app-panel-tab-default.png) ![Request panel tab hover](components/crops/app-panel-tab-hover.png) ![Request panel tab selected](components/crops/app-panel-tab-selected.png)
 
 #### Param row checkbox
-The enable checkbox on a params row (Checkbox_input). Read as `app-param-checkbox` on the /app page.
-Read on 2026-11-17T10:55:05.998Z.
+The enable checkbox on a params row — the painted box is Checkbox_container; the real input is a hidden 1px control. Read as `app-param-checkbox` on the /app page.
+Read on 2026-11-17T13:08:49.220Z.
 
-**Values (default).** size 1 x 1; background transparent; text PolySans 16/12 400, #f5f5f0 `dark.text.primary`; placeholder #f5f5f0 `dark.text.primary`.
+**Values (default).** size 16 x 16; border 1px solid rgba(255, 255, 255, 0.04) `dark.border.default`; radius 4px; background transparent; text PolySans 16/12 400, #f5f5f0 `dark.text.primary`.
 
 ![Param row checkbox default](components/crops/app-param-checkbox-default.png)
 
 #### Response empty state
 The response panel before any send ("Not sent" — the send surface is never fired, so this resting panel is the honest evidence). Read as `app-response-empty` on the /app page.
-Read on 2026-11-17T10:55:07.400Z.
+Read on 2026-11-17T13:08:50.297Z.
 
-**Values (default).** size 1042.5 x 900; background transparent; text PolySansMono 8.5/16 400, #73dc8c `dark.accent.default`; icon 12 x 12, rgba(245, 245, 240, 0.6) `dark.text.secondary`; layers div::before.Container_container__Dzv7w.Tabs_tabsScrollableContainer__YxAiG 32pxx28px; div::after.Container_container__Dzv7w.Tabs_tabsScrollableContainer__YxAiG 32pxx28px; div.TabCard_tab__0R39Q.Tab_tab__eWtGS 104.0x28.0 #201c1c 2px solid transparent offset 2px 6px; span.Tabs_buttonSeparator__zk7D_.flex-shrink-0 1.0x28.0 L:1px solid; div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA .
+**Values (default).** size 599.3 x 712; background transparent; text PolySans 14.2/24 400, rgba(245, 245, 240, 0.6) `dark.text.secondary`; icon 48 x 48, rgba(245, 245, 240, 0.6) `dark.text.secondary`; layers div.PanelState_iconCircle__DPIoa.mb-2 64.0x64.0 rgba(255, 255, 255, 0.04) 9999px.
 
-Child layers that carry the look: div::before 32pxx28px image linear-gradient(90deg, #191515 `dark.bg.z0` 0px, rgba(25, 21, 21, 0) 100%); div::after 32pxx28px image linear-gradient(270deg, #191515 `dark.bg.z0` 0px, rgba(25, 21, 21, 0) 100%); div 104x28 background #201c1c `dark.bg.z2` radius 6px.
+Child layers that carry the look: div 64x64 background rgba(255, 255, 255, 0.04) `dark.border.default` radius 9999px.
 
 ![Response empty state default](components/crops/app-response-empty-default.png)
 
@@ -609,12 +609,12 @@ The environments manager the Environments button opens: Variables/Settings/Defau
 
 #### Environments manager
 The environments manager (Variables / Settings / Defaults tabs, "Create environment"), opened by the Environments selector's own press. Read as `app-env-panel` on the /app page.
-States read on 2026-11-17T10:12:03.335Z (opened); 2026-11-17T10:12:33.388Z (light).
+States read on 2026-11-17T13:09:36.622Z (opened); 2026-11-17T13:10:04.153Z (light).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| opened | size 1440 x 900; background #191515 `dark.bg.z0`; text PolySans 14.2/24 400, rgba(245, 245, 240, 0.6) `dark.text.secondary`; icon 30 x 32, #73dc8c `dark.accent.default` |
-| light | background #edede8 `light.bg.z0`; text PolySans 14.2/24 400, rgba(28, 24, 24, 0.6) `light.text.secondary`; icon 30 x 32, #52ab66 `light.accent.default` |
+| opened | size 1026.5 x 796; background #1c1818 `dark.bg.z1`; text PolySans 14.2/24 400, #f5f5f0 `dark.text.primary`; icon 16 x 16, rgba(245, 245, 240, 0.6) `dark.text.secondary` |
+| light | background #f5f5f0 `dark.text.primary`; text PolySans 14.2/24 400, #1c1818 `dark.bg.z1`; icon 16 x 16, rgba(28, 24, 24, 0.6) `light.text.secondary` |
 
 ![Environments manager opened](components/crops/app-env-panel-opened.png) ![Environments manager light](components/crops/app-env-panel-light.png)
 

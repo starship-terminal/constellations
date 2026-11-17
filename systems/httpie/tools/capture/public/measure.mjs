@@ -275,7 +275,7 @@ const APP = [
     ] },
   { key: 'app-url-field', group: 'Request builder', title: 'URL field',
     desc: 'The request URL editor (UrlBar, a CodeMirror single-line field) holding the prefilled httpie.io/hello.',
-    sel: '[class*="UrlBar_urlTextareaContainer"], .cm-content', find: (p) => p.locator('[class*="UrlBar"]').filter({ visible: true }).first(), states: ['default', 'focused'] },
+    sel: '[class*="UrlBar_urlTextareaContainer"]', find: (p) => p.locator('[class*="UrlBar_urlTextareaContainer"]').filter({ visible: true }).first(), states: ['default', 'focused'] },
   { key: 'app-send-button', group: 'Request builder', title: '"Send" button',
     desc: 'The request\'s primary action — measured at rest and with forcePseudoState only; a real press would issue a network request, so it is never fired.',
     sel: 'button (text Send)', find: (p) => p.locator('button').filter({ hasText: /^send$/i }).filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible', 'pressed'] },
@@ -291,11 +291,11 @@ const APP = [
       } },
     ] },
   { key: 'app-param-checkbox', group: 'Request builder', title: 'Param row checkbox',
-    desc: 'The enable checkbox on a params row (Checkbox_input).',
-    sel: 'input[type="checkbox"]', find: (p) => p.locator('input[type="checkbox"]').filter({ visible: true }).first(), states: ['default'] },
+    desc: 'The enable checkbox on a params row — the painted box is Checkbox_container; the real input is a hidden 1px control.',
+    sel: '[class*="Checkbox_container"]', find: (p) => p.locator('[class*="Checkbox_container"]').filter({ visible: true }).first(), states: ['default'] },
   { key: 'app-response-empty', group: 'Request builder', title: 'Response empty state',
     desc: 'The response panel before any send ("Not sent" — the send surface is never fired, so this resting panel is the honest evidence).',
-    sel: 'div (text Not sent)', find: async (p) => await pick(p, 'div, section', (el, r) => /not sent/i.test(el.innerText || '') && r.height > 30 && el.children.length < 8 ? el.children.length : Infinity, 're'), states: ['default'] },
+    sel: '[class*="PanelState_container"]', find: (p) => p.locator('[class*="PanelState_container"]').filter({ hasText: /not sent/i }).filter({ visible: true }).first(), states: ['default'] },
   // These two opened states displace the request surface (the space menu
   // dismisses with Escape, which can close the draft tab; the environments
   // manager covers the editor) — they run last so nothing they disturb is
@@ -352,11 +352,13 @@ const APP_TABS = [
 const APP_ENV = [
   { key: 'app-env-panel', group: 'Environments', title: 'Environments manager',
     desc: 'The environments manager (Variables / Settings / Defaults tabs, "Create environment"), opened by the Environments selector\'s own press.',
-    sel: '[class*="Environment"], aside', find: async (p) => {
+    sel: '[class*="SpaceTab_panel"], [class*="PanelContainer_container"]', find: async (p) => {
       const env = p.locator('button[class*="environmentSelector" i], button').filter({ hasText: /^environments$/i }).filter({ visible: true }).first();
       await env.click({ timeout: 4000 }).catch(() => {});
       await p.waitForTimeout(1200);
-      return p.locator('main, aside, [class*="Layout_sidePanel"], [class*="sidePanel" i]').filter({ hasText: /create environment|variables/i }).filter({ visible: true }).first();
+      // The manager paints as the tab strip's form panel (SpaceTab_panel)
+      // holding the Variables table — never the whole 1440×900 layout.
+      return p.locator('[class*="PanelContainer_container"]').filter({ hasText: /create environment|variables/i }).filter({ visible: true }).first();
     }, states: [{ name: 'opened', via: 'the Environments selector\'s own press' }, 'light'] },
   { key: 'app-env-create', group: 'Environments', title: '"Create environment" button',
     desc: 'The environments manager\'s primary action — measured, never pressed.',

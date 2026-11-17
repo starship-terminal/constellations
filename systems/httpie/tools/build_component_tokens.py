@@ -338,6 +338,25 @@ if C_PATH.exists():
         for t in ("light", "dark"):
             emit_at(t, path, leaf)
 
+    def measured_fill(comp, prop, path, label, note=None):
+        """The component's painted fill recorded per theme from the
+        measurement, for elements whose class paints a literal (or is
+        transparent over the page) rather than a themed role — each theme
+        set gets the value measured under it ('light' state where the
+        recording has one, else the default read)."""
+        st = C.get(comp, {}).get("states", {})
+        dark_v = (st.get("default", {}).get("style") or {}).get(prop)
+        if dark_v is None:
+            return
+        light_st = st.get("light") or {}
+        light_v = (light_st.get("style") or {}).get(prop) or dark_v
+        for t, v, src_state in (("light", light_v, "light" if light_st else "default"),
+                                ("dark", dark_v, "default")):
+            leaf = {"type": "color", "value": norm_lit(v) or v,
+                    "source": f"measured {comp} {src_state} on {C[comp].get('page')} ({label})" + (f" — {note}" if note else ""),
+                    "description": label}
+            emit_at(t, path, leaf)
+
     radius_tok("nav-cta", "default", "button.cta.radius", "CTA corner")
     radius_tok("button-secondary", "default", "button.secondary.radius", "secondary button corner")
     radius_tok("early-access-badge", "default", "badge.radius", "beta pill corner")
@@ -349,12 +368,21 @@ if C_PATH.exists():
     radius_tok("prose-pre", "default", "codeblock.radius", "code block corner")
     radius_tok("theme-toggle", "default", "themeToggle.radius", "theme control corner")
 
-    # The 'Go to App' primary button paints the accent role; the Send button
-    # too — aliases so each theme resolves its own accent.
-    theme_alias("nav-cta", "default", "backgroundColor", "component.button.cta.bg", "accent.default", "primary button fill")
+    # The 'Go to App' button hard-codes the accent green in both painted
+    # themes — it does NOT follow the accent role (light.accent.default is a
+    # different green), so the measured literal is the honest token.
+    measured_fill("nav-cta", "backgroundColor", "component.button.cta.bg", "primary button fill",
+                  "the class hard-codes this green in both themes; it is not the themed accent role")
+    # The Send button's dark measurement lands exactly on dark.accent.default
+    # — the app control paints var(--color-accent), so the alias stays; its
+    # light state was not measured.
     theme_alias("app-send-button", "default", "backgroundColor", "component.sendButton.bg", "accent.default", "Send fill")
-    theme_alias("site-nav", "default", "backgroundColor", "component.nav.bg", "bg.z0", "nav bar fill")
-    theme_alias("app-sidebar", "default", "backgroundColor", "component.appSidebar.bg", "bg.z1", "app rail fill")
+    # Both paint transparent: the page's bg.z0 shows through, which the
+    # measured rgba(0,0,0,0) records honestly.
+    measured_fill("site-nav", "backgroundColor", "component.nav.bg", "nav bar fill",
+                  "transparent — the page's bg.z0 shows through")
+    measured_fill("app-sidebar", "backgroundColor", "component.appSidebar.bg", "app rail fill",
+                  "transparent — the page's bg.z0 shows through")
     style_tok("nav-link", "hover", "color", "type.navLinkHover.color", "color", "nav link on hover")
     style_tok("post-title-link", "hover", "color", "type.linkHover.color", "color", "post title on hover")
     style_tok("prose-h1", "default", "fontSize", "type.articleTitle.size", "other", "article h1")
@@ -362,9 +390,14 @@ if C_PATH.exists():
 
     # Measured type styles as DTCG typography composites — DESIGN.md reads
     # tokens under core.typography. letterSpacing stays in px as measured.
+    # The recording holds two type reads: `style` is the component element's
+    # own computed style, `textStyle` the first real text node inside it.
+    # Where a wrapper's font differs from the label it holds (a tab card's
+    # 16px chrome vs its 8.5px mono label), the text node's reading is the
+    # token's honest value.
     def typ(comp, path, name, state="default"):
         st = C.get(comp, {}).get("states", {}).get(state, {})
-        s = st.get("style") or {}
+        s = st.get("textStyle") or st.get("style") or {}
         if not s.get("fontSize"):
             return
         style = {

@@ -36,16 +36,20 @@ code { font-family: var(--sg-mono); font-size: .9em; color: var(--accent-default
 .kv span { opacity: .65; }
 /* ---- mocks ---- */
 .mock { border: 1px solid var(--border-default, #e2e4e8); overflow: hidden; background: var(--bg-z0, #191515); color: var(--text-primary, #f5f5f0); border-radius: 12px; }
-.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-mobileHeader-height, 56px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--border-default, #e2e4e8); background: var(--root-background, #ffffff); }
+.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-mobileHeader-height, 56px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--border-default, #e2e4e8); background: var(--bg-z0, #191515); }
 .topbar .wm { font-weight: 600; font-size: 15px; letter-spacing: -0.02em; }
 .topbar .nav { opacity: .75; display: flex; gap: 14px; font-size: 13px; }
 .topbar .sp { flex: 1; }
 .topbar .pill { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 1px solid var(--border-default, #e2e4e8); border-radius: 999px; font-size: 12px; color: var(--text-secondary, rgba(245,245,240,.6)); background: var(--bg-z1, #1c1818); }
 .topbar .pill b { border: 1px solid var(--border-default, #e2e4e8); border-radius: 4px; padding: 1px 5px; font-weight: 500; font-size: 10px; }
-.topbar .theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; align-items: center; justify-content: center; color: var(--root-foreground, #13161c); background: transparent; font: inherit; cursor: pointer; padding: 0; }
+.topbar .theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; align-items: center; justify-content: center; color: var(--text-primary, #f5f5f0); background: transparent; font: inherit; cursor: pointer; padding: 0; }
 .topbar .theme:hover { background: var(--item-hover, rgba(255,255,255,.03)); }
 .shell { display: flex; }
-.sb { width: var(--component-appSidebar-width, 260px); flex: 0 0 auto; border-right: 1px solid var(--border-default, rgba(255,255,255,.04)); padding: 18px 14px; font-size: 13px; background: var(--component-appSidebar-bg, var(--bg-z1, #1c1818)); color: var(--text-primary, #f5f5f0); }
+/* The real /app pairs a 49px icon rail (component.appSidebar.width) with a
+   ~300px side panel when it opens; the mock paints the labelled panel, so it
+   keeps a fixed mock width rather than the rail's. The panel itself paints
+   transparent — bg.z0 shows through, exactly as the token records. */
+.sb { width: 240px; flex: 0 0 auto; border-right: 1px solid var(--border-default, rgba(255,255,255,.04)); padding: 18px 14px; font-size: 13px; background: var(--component-appSidebar-bg, transparent); color: var(--text-primary, #f5f5f0); }
 .sb .grp { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .55; margin: 14px 6px 6px; }
 .sb .ln { display: block; padding: 5px 10px; border-radius: var(--radius-base, .5rem); opacity: .8; }
 .sb .ln.on { opacity: 1; font-weight: 500; background: var(--item-selected, rgba(255,255,255,.06)); }

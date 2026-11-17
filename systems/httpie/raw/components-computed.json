@@ -5969,7 +5969,7 @@
    "selector": "aside[class*=\"Layout_sidebar\"]",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:53:13.708Z",
+   "run": "2026-11-17T13:07:58.538Z",
    "states": {
     "default": {
      "tag": "aside",
@@ -6091,7 +6091,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-sidebar-default.png",
-     "run": "2026-11-17T10:53:42.659Z"
+     "run": "2026-11-17T13:07:59.558Z"
     },
     "light": {
      "tag": "aside",
@@ -6213,7 +6213,7 @@
      },
      "via": "same element after the footer's own LIGHT MODE radio repaints html.light (the site boots html.dark, so light is the switched state)",
      "crop": "components/crops/app-sidebar-light.png",
-     "run": "2026-11-17T10:54:03.690Z"
+     "run": "2026-11-17T13:08:11.917Z"
     }
    }
   },
@@ -6224,7 +6224,7 @@
    "selector": "button (text Incognito space)",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:55:07.406Z",
+   "run": "2026-11-17T13:08:50.311Z",
    "states": {
     "default": {
      "tag": "span",
@@ -6308,7 +6308,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-space-button-default.png",
-     "run": "2026-11-17T10:55:08.259Z"
+     "run": "2026-11-17T13:08:51.171Z"
     },
     "hover": {
      "tag": "span",
@@ -6392,7 +6392,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-space-button-hover.png",
-     "run": "2026-11-17T10:55:10.071Z"
+     "run": "2026-11-17T13:08:52.999Z"
     },
     "opened": {
      "tag": "main",
@@ -6592,7 +6592,7 @@
      },
      "via": "the \"Incognito space\" switcher's own press (the current space's tab — variables/settings — opens in the strip)",
      "crop": "components/crops/app-space-button-opened.png",
-     "run": "2026-11-17T10:55:13.088Z"
+     "run": "2026-11-17T13:08:55.604Z"
     }
    }
   },
@@ -6603,7 +6603,7 @@
    "selector": "button (text Drafts)",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:54:23.652Z",
+   "run": "2026-11-17T13:08:22.391Z",
    "states": {
     "default": {
      "tag": "button",
@@ -6687,7 +6687,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-drafts-tab-default.png",
-     "run": "2026-11-17T10:54:27.365Z"
+     "run": "2026-11-17T13:08:23.372Z"
     },
     "hover": {
      "tag": "button",
@@ -6779,7 +6779,7 @@
      ],
      "via": "mouse hover over the element",
      "crop": "components/crops/app-drafts-tab-hover.png",
-     "run": "2026-11-17T10:54:29.234Z"
+     "run": "2026-11-17T13:08:25.203Z"
     }
    }
   },
@@ -6790,7 +6790,7 @@
    "selector": "button[class*=\"Tabs_environmentSelector\"], button (text Environments)",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:55:13.099Z",
+   "run": "2026-11-17T13:08:55.617Z",
    "states": {
     "default": {
      "tag": "button",
@@ -6893,7 +6893,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-env-button-default.png",
-     "run": "2026-11-17T10:55:16.856Z"
+     "run": "2026-11-17T13:08:57.695Z"
     },
     "hover": {
      "tag": "button",
@@ -7004,7 +7004,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-env-button-hover.png",
-     "run": "2026-11-17T10:55:21.110Z"
+     "run": "2026-11-17T13:09:00.337Z"
     },
     "opened": {
      "tag": "div",
@@ -7108,7 +7108,7 @@
      },
      "via": "the \"Environments\" button's own press (the manager panel open; Collection pressed to restore)",
      "crop": "components/crops/app-env-button-opened.png",
-     "run": "2026-11-17T10:55:33.260Z"
+     "run": "2026-11-17T13:09:03.165Z"
     }
    }
   },
@@ -7119,7 +7119,7 @@
    "selector": "[class*=\"TabCard_tab\"]",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:54:30.166Z",
+   "run": "2026-11-17T13:08:26.153Z",
    "states": {
     "default": {
      "tag": "div",
@@ -7231,7 +7231,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-request-tab-default.png",
-     "run": "2026-11-17T10:54:31.034Z"
+     "run": "2026-11-17T13:08:27.012Z"
     },
     "hover": {
      "tag": "div",
@@ -7343,7 +7343,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-request-tab-hover.png",
-     "run": "2026-11-17T10:54:32.872Z"
+     "run": "2026-11-17T13:08:28.861Z"
     }
    }
   },
@@ -7354,7 +7354,7 @@
    "selector": "button (text GET)",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:54:32.882Z",
+   "run": "2026-11-17T13:08:28.865Z",
    "states": {
     "default": {
      "tag": "button",
@@ -7466,7 +7466,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-method-button-default.png",
-     "run": "2026-11-17T10:54:33.821Z"
+     "run": "2026-11-17T13:08:30.051Z"
     },
     "hover": {
      "tag": "button",
@@ -7586,7 +7586,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-method-button-hover.png",
-     "run": "2026-11-17T10:54:35.644Z"
+     "run": "2026-11-17T13:08:31.991Z"
     },
     "opened": {
      "tag": "ul",
@@ -7753,7 +7753,7 @@
      },
      "via": "the method button's own press (GET/HEAD/POST/PUT/PATCH/DELETE/OPTIONS/Custom menu open; Escape restores)",
      "crop": "components/crops/app-method-button-opened.png",
-     "run": "2026-11-17T10:54:37.848Z"
+     "run": "2026-11-17T13:08:34.559Z"
     }
    }
   },
@@ -7761,33 +7761,33 @@
    "group": "Request builder",
    "title": "URL field",
    "desc": "The request URL editor (UrlBar, a CodeMirror single-line field) holding the prefilled httpie.io/hello.",
-   "selector": "[class*=\"UrlBar_urlTextareaContainer\"], .cm-content",
+   "selector": "[class*=\"UrlBar_urlTextareaContainer\"]",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:54:37.855Z",
+   "run": "2026-11-17T13:08:34.596Z",
    "states": {
     "default": {
      "tag": "div",
-     "classes": "UrlBar_container__nmDhi",
-     "text": "GET httpie.io/hello Send",
+     "classes": "UrlBar_urlTextareaContainer__REPsD TabHeadingRow_children__8Oq3G",
+     "text": "httpie.io/hello",
      "rect": {
-      "x": 405.5,
+      "x": 474.5,
       "y": 44,
-      "w": 1026.5,
+      "w": 848.5,
       "h": 44
      },
      "style": {
-      "display": "block",
+      "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "1026.5px",
+      "width": "848.5px",
       "height": "44px",
-      "minWidth": "auto",
+      "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "0px",
+      "paddingTop": "8px",
       "paddingRight": "0px",
-      "paddingBottom": "0px",
+      "paddingBottom": "8px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
@@ -7797,7 +7797,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "normal",
+      "alignItems": "center",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -7843,81 +7843,63 @@
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
-      "zIndex": "9",
+      "zIndex": "auto",
       "top": "0px"
      },
      "paint": [
-      {
-       "node": "div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA",
-       "size": "1026.5x44.0",
-       "bg": "rgb(28, 24, 24)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
-       "radius": "8px"
-      },
-      {
-       "node": "div::before.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA",
-       "size": "1026.5pxx44px",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) 0px 0px 0px 1px inset",
-       "radius": "8px"
-      },
       {
        "node": "div.cm-cursor.cm-cursor-primary",
        "size": "0.0x0.0",
        "border": "L:1px solid"
-      },
+      }
+     ],
+     "ancestors": [
       {
-       "node": "button.SubmitButton_sendButton__ZpsRE.Button_button__oR2Kf",
-       "size": "57.0x28.0",
-       "bg": "rgb(115, 220, 140)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.25) 0px 1px 2px 0px",
-       "radius": "6px"
+       "up": 1,
+       "node": "div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
+       "radius": "8px",
+       "bg": "rgb(28, 24, 24)"
       }
      ],
      "textStyle": {
-      "node": "span.Button_text__HlyT_",
-      "text": "GET",
+      "node": "span.cm-placeholder",
+      "text": "httpie.io/hello",
       "fontFamily": "PolySansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
       "fontSize": "14.2px",
       "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(115, 220, 140)",
+      "color": "rgba(245, 245, 240, 0.35)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 12,
-      "h": 12,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(115, 220, 140)"
-     },
      "via": "resting state",
      "crop": "components/crops/app-url-field-default.png",
-     "run": "2026-11-17T10:54:38.913Z"
+     "run": "2026-11-17T13:08:35.647Z"
     },
     "focused": {
      "tag": "div",
-     "classes": "UrlBar_container__nmDhi",
-     "text": "GET Enter a URL, AI prompt, or cURL command Send",
+     "classes": "UrlBar_urlTextareaContainer__REPsD TabHeadingRow_children__8Oq3G",
+     "text": "Enter a URL, AI prompt, or cURL command",
      "rect": {
-      "x": 405.5,
+      "x": 474.5,
       "y": 44,
-      "w": 1026.5,
+      "w": 848.5,
       "h": 44
      },
      "style": {
-      "display": "block",
+      "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "1026.5px",
+      "width": "848.5px",
       "height": "44px",
-      "minWidth": "auto",
+      "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "0px",
+      "paddingTop": "8px",
       "paddingRight": "0px",
-      "paddingBottom": "0px",
+      "paddingBottom": "8px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
@@ -7927,7 +7909,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "normal",
+      "alignItems": "center",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -7973,58 +7955,40 @@
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
-      "zIndex": "9",
+      "zIndex": "auto",
       "top": "0px"
      },
      "paint": [
       {
-       "node": "div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA",
-       "size": "1026.5x44.0",
-       "bg": "rgb(32, 28, 28)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
-       "radius": "8px"
-      },
-      {
-       "node": "div::before.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA",
-       "size": "1026.5pxx44px",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) 0px 0px 0px 1px inset",
-       "radius": "8px"
-      },
-      {
        "node": "div.cm-cursor.cm-cursor-primary",
        "size": "1.0x14.0",
        "border": "L:1px solid"
-      },
+      }
+     ],
+     "ancestors": [
       {
-       "node": "button.SubmitButton_sendButton__ZpsRE.Button_button__oR2Kf",
-       "size": "57.0x28.0",
-       "bg": "rgb(115, 220, 140)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.25) 0px 1px 2px 0px",
-       "radius": "6px"
+       "up": 1,
+       "node": "div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
+       "radius": "8px",
+       "bg": "rgb(32, 28, 28)"
       }
      ],
      "textStyle": {
-      "node": "span.Button_text__HlyT_",
-      "text": "GET",
+      "node": "span.cm-placeholder",
+      "text": "Enter a URL, AI prompt, or cURL command",
       "fontFamily": "PolySansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
       "fontSize": "14.2px",
       "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(115, 220, 140)",
+      "color": "rgba(245, 245, 240, 0.35)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 12,
-      "h": 12,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(115, 220, 140)"
-     },
      "via": "the field clicked into",
      "crop": "components/crops/app-url-field-focused.png",
-     "run": "2026-11-17T10:54:40.286Z"
+     "run": "2026-11-17T13:08:37.253Z"
     }
    }
   },
@@ -8035,7 +7999,7 @@
    "selector": "button (text Send)",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:54:40.294Z",
+   "run": "2026-11-17T13:08:37.264Z",
    "states": {
     "default": {
      "tag": "button",
@@ -8149,7 +8113,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-send-button-default.png",
-     "run": "2026-11-17T10:54:41.174Z"
+     "run": "2026-11-17T13:08:38.148Z"
     },
     "hover": {
      "tag": "button",
@@ -8263,7 +8227,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-send-button-hover.png",
-     "run": "2026-11-17T10:54:42.986Z"
+     "run": "2026-11-17T13:08:40.051Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -8378,7 +8342,7 @@
      },
      "via": "keyboard focus (Shift+Tab, Tab)",
      "crop": "components/crops/app-send-button-focus-visible.png",
-     "run": "2026-11-17T10:54:44.313Z"
+     "run": "2026-11-17T13:08:41.668Z"
     },
     "pressed": {
      "tag": "button",
@@ -8492,7 +8456,7 @@
      },
      "via": "CDP CSS.forcePseudoState(:active:hover) — no real press",
      "crop": "components/crops/app-send-button-pressed.png",
-     "run": "2026-11-17T10:54:53.245Z"
+     "run": "2026-11-17T13:08:43.003Z"
     }
    }
   },
@@ -8503,7 +8467,7 @@
    "selector": "[class*=\"PanelTabs_container\"]",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:54:54.956Z",
+   "run": "2026-11-17T13:08:43.021Z",
    "states": {
     "default": {
      "tag": "div",
@@ -8607,7 +8571,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-panel-tabs-default.png",
-     "run": "2026-11-17T10:54:59.419Z"
+     "run": "2026-11-17T13:08:43.887Z"
     }
    }
   },
@@ -8618,7 +8582,7 @@
    "selector": "button[class*=\"PanelTabButton\"]",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:54:59.639Z",
+   "run": "2026-11-17T13:08:43.893Z",
    "states": {
     "default": {
      "tag": "button",
@@ -8714,7 +8678,7 @@
      },
      "via": "resting state",
      "crop": "components/crops/app-panel-tab-default.png",
-     "run": "2026-11-17T10:55:01.047Z"
+     "run": "2026-11-17T13:08:44.745Z"
     },
     "hover": {
      "tag": "button",
@@ -8818,7 +8782,7 @@
      },
      "via": "mouse hover over the element",
      "crop": "components/crops/app-panel-tab-hover.png",
-     "run": "2026-11-17T10:55:03.380Z"
+     "run": "2026-11-17T13:08:46.587Z"
     },
     "selected": {
      "tag": "button",
@@ -8923,72 +8887,72 @@
      },
      "via": "the tab's own activation",
      "crop": "components/crops/app-panel-tab-selected.png",
-     "run": "2026-11-17T10:55:05.137Z"
+     "run": "2026-11-17T13:08:48.353Z"
     }
    }
   },
   "app-param-checkbox": {
    "group": "Request builder",
    "title": "Param row checkbox",
-   "desc": "The enable checkbox on a params row (Checkbox_input).",
-   "selector": "input[type=\"checkbox\"]",
+   "desc": "The enable checkbox on a params row — the painted box is Checkbox_container; the real input is a hidden 1px control.",
+   "selector": "[class*=\"Checkbox_container\"]",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:55:05.148Z",
+   "run": "2026-11-17T13:08:48.360Z",
    "states": {
     "default": {
-     "tag": "input",
-     "classes": "Checkbox_input__RgmiD",
+     "tag": "div",
+     "classes": "Checkbox_container__NK4I_",
      "text": "",
      "rect": {
-      "x": 420.5,
-      "y": 157.5,
-      "w": 1,
-      "h": 1
+      "x": 421.5,
+      "y": 150,
+      "w": 16,
+      "h": 16
      },
      "style": {
-      "display": "block",
-      "position": "absolute",
+      "display": "flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "1px",
-      "height": "1px",
-      "minWidth": "0px",
+      "width": "16px",
+      "height": "16px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
-      "marginTop": "-1px",
-      "marginRight": "-1px",
-      "marginBottom": "-1px",
-      "marginLeft": "-1px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
+      "alignItems": "center",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(245, 245, 240)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(245, 245, 240)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(245, 245, 240)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(245, 245, 240)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(255, 255, 255, 0.04)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(255, 255, 255, 0.04)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(255, 255, 255, 0.04)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(255, 255, 255, 0.04)",
+      "borderTopLeftRadius": "4px",
+      "borderTopRightRadius": "4px",
+      "borderBottomRightRadius": "4px",
+      "borderBottomLeftRadius": "4px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
@@ -9012,18 +8976,22 @@
       "cursor": "default",
       "opacity": "1",
       "transform": "none",
-      "overflow": "hidden",
+      "overflow": "visible",
       "zIndex": "auto",
-      "top": "8.5px"
+      "top": "0px"
      },
-     "placeholder": {
-      "color": "rgb(245, 245, 240)",
-      "opacity": "1",
-      "fontSize": "16px"
-     },
+     "paint": [
+      {
+       "node": "div.Checkbox_container__NK4I_",
+       "size": "16.0x16.0",
+       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "4px"
+      }
+     ],
      "via": "resting state",
      "crop": "components/crops/app-param-checkbox-default.png",
-     "run": "2026-11-17T10:55:05.998Z"
+     "run": "2026-11-17T13:08:49.220Z"
     }
    }
   },
@@ -9031,28 +8999,28 @@
    "group": "Request builder",
    "title": "Response empty state",
    "desc": "The response panel before any send (\"Not sent\" — the send surface is never fired, so this resting panel is the honest evidence).",
-   "selector": "div (text Not sent)",
+   "selector": "[class*=\"PanelState_container\"]",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:55:06.003Z",
+   "run": "2026-11-17T13:08:49.231Z",
    "states": {
     "default": {
      "tag": "div",
-     "classes": "ResizablePanels_reflexElement__z9akm vertical reflex-element",
-     "text": "GET untitled Environments GET httpie.io/hello Send Params Headers Auth Body name",
+     "classes": "PanelState_container__BPMHN",
+     "text": "Not sent",
      "rect": {
-      "x": 397.5,
-      "y": 0,
-      "w": 1042.5,
-      "h": 900
+      "x": 824.7,
+      "y": 140,
+      "w": 599.3,
+      "h": 712
      },
      "style": {
-      "display": "block",
-      "position": "static",
+      "display": "flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "1042.5px",
-      "height": "900px",
-      "minWidth": "0px",
+      "width": "599.297px",
+      "height": "712px",
+      "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
@@ -9066,9 +9034,9 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "alignItems": "normal",
-      "justifyContent": "normal",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -9114,116 +9082,38 @@
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
      "paint": [
       {
-       "node": "div::before.Container_container__Dzv7w.Tabs_tabsScrollableContainer__YxAiG",
-       "size": "32pxx28px",
-       "bgImage": "linear-gradient(90deg, rgb(25, 21, 21) 0px, rgba(25, 21, 21, 0) 100%)"
-      },
-      {
-       "node": "div::after.Container_container__Dzv7w.Tabs_tabsScrollableContainer__YxAiG",
-       "size": "32pxx28px",
-       "bgImage": "linear-gradient(270deg, rgb(25, 21, 21) 0px, rgba(25, 21, 21, 0) 100%)"
-      },
-      {
-       "node": "div.TabCard_tab__0R39Q.Tab_tab__eWtGS",
-       "size": "104.0x28.0",
-       "bg": "rgb(32, 28, 28)",
-       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px",
-       "radius": "6px"
-      },
-      {
-       "node": "span.Tabs_buttonSeparator__zk7D_.flex-shrink-0",
-       "size": "1.0x28.0",
-       "border": "L:1px solid"
-      },
-      {
-       "node": "div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA",
-       "size": "1026.5x44.0",
-       "bg": "rgb(28, 24, 24)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
-       "radius": "8px"
-      },
-      {
-       "node": "div::before.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA",
-       "size": "1026.5pxx44px",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) 0px 0px 0px 1px inset",
-       "radius": "8px"
-      },
-      {
-       "node": "div.cm-cursor.cm-cursor-primary",
-       "size": "0.0x0.0",
-       "border": "L:1px solid"
-      },
-      {
-       "node": "button.SubmitButton_sendButton__ZpsRE.Button_button__oR2Kf",
-       "size": "57.0x28.0",
-       "bg": "rgb(115, 220, 140)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.25) 0px 1px 2px 0px",
-       "radius": "6px"
-      },
-      {
-       "node": "div.Panel_panelSet__1cv0n.SpecTab_panelSet__sMmVT",
-       "size": "1026.5x796.0",
-       "bg": "rgb(28, 24, 24)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
-       "radius": "8px"
-      },
-      {
-       "node": "div::before.Panel_panelSet__1cv0n.SpecTab_panelSet__sMmVT",
-       "size": "1026.5pxx796px",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) 0px 0px 0px 1px inset",
-       "radius": "8px"
-      },
-      {
-       "node": "div.ResizablePanels_panel__squxR.Panel_type_form__fn2h9",
-       "size": "410.2x796.0",
-       "bg": "rgb(28, 24, 24)"
-      },
-      {
-       "node": "button.PanelTabButton_button__iYu6s.PanelTabs_aloneActiveTab___1VKK",
-       "size": "70.0x28.0",
-       "bg": "rgba(255, 255, 255, 0.06)",
-       "radius": "6px"
-      },
-      {
-       "node": "div.Checkbox_container__NK4I_",
-       "size": "16.0x16.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "4px"
-      },
-      {
-       "node": "div.AdornmentableTextControl_container__h_T_O.KeyValueItem_nameInput__frI7x",
-       "size": "130.3x28.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "6px"
+       "node": "div.PanelState_iconCircle__DPIoa.mb-2",
+       "size": "64.0x64.0",
+       "bg": "rgba(255, 255, 255, 0.04)",
+       "radius": "9999px"
       }
      ],
      "textStyle": {
-      "node": "span.font-code-micro.text-left",
-      "text": "GET",
-      "fontFamily": "PolySansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
-      "fontSize": "8.5px",
-      "lineHeight": "16px",
+      "node": "p.font-ui-main.text-center",
+      "text": "Not sent",
+      "fontFamily": "PolySans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14.2px",
+      "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(115, 220, 140)",
+      "color": "rgba(245, 245, 240, 0.6)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "icon": {
-      "w": 12,
-      "h": 12,
+      "w": 48,
+      "h": 48,
       "fill": "none",
       "stroke": "none",
       "color": "rgba(245, 245, 240, 0.6)"
      },
      "via": "resting state",
      "crop": "components/crops/app-response-empty-default.png",
-     "run": "2026-11-17T10:55:07.400Z"
+     "run": "2026-11-17T13:08:50.297Z"
     }
    }
   },
@@ -9656,27 +9546,27 @@
    "group": "Environments",
    "title": "Environments manager",
    "desc": "The environments manager (Variables / Settings / Defaults tabs, \"Create environment\"), opened by the Environments selector's own press.",
-   "selector": "[class*=\"Environment\"], aside",
+   "selector": "[class*=\"SpaceTab_panel\"], [class*=\"PanelContainer_container\"]",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:11:45.698Z",
+   "run": "2026-11-17T13:09:30.555Z",
    "states": {
     "opened": {
      "tag": "div",
-     "classes": "Layout_container__7m_2v Layout_withSidePanel__GJ5j7",
-     "text": "Incognito space Collection Drafts Drafts are your unsaved requests. Organize the",
+     "classes": "SpaceTab_panel__LJTwp Panel_type_form__fn2h9 PanelContainer_container__sgJTN",
+     "text": "Variables Settings Defaults Create environment name value",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 405.5,
+      "y": 96,
+      "w": 1026.5,
+      "h": 796
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
+      "width": "1026.5px",
+      "height": "796px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -9691,8 +9581,8 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "stretch",
+      "flexDirection": "column",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -9711,7 +9601,7 @@
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
       "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgb(25, 21, 21)",
+      "backgroundColor": "rgb(28, 24, 24)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -9743,128 +9633,132 @@
      },
      "paint": [
       {
-       "node": "div.Layout_container__7m_2v.Layout_withSidePanel__GJ5j7",
-       "size": "1440.0x900.0",
-       "bg": "rgb(25, 21, 21)"
+       "node": "div.SpaceTab_panel__LJTwp.Panel_type_form__fn2h9",
+       "size": "1026.5x796.0",
+       "bg": "rgb(28, 24, 24)"
       },
       {
-       "node": "aside.Layout_sidebar__OHKsB",
-       "size": "49.0x900.0",
-       "border": "R:1px solid"
-      },
-      {
-       "node": "span.Layout_logoLink__fn7pT",
-       "size": "32.0x48.0",
-       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px"
-      },
-      {
-       "node": "button.MenuItem_button__lVvmy.mt-1",
-       "size": "32.0x32.0",
-       "bg": "rgba(255, 255, 255, 0.06)",
-       "radius": "8px"
-      },
-      {
-       "node": "hr.m-1.border-t",
-       "size": "24.0x1.0",
-       "border": "T:1px solid"
-      },
-      {
-       "node": "button.Spaces_button__1Z_fv.Spaces_isTabOpen__nYdNt",
-       "size": "139.0x28.0",
+       "node": "button.PanelTabButton_button__iYu6s.PanelTabs_aloneActiveTab___1VKK",
+       "size": "74.0x28.0",
        "bg": "rgba(255, 255, 255, 0.06)",
        "radius": "6px"
       },
       {
-       "node": "div.EntityIcon_substrate__eAQqs.group-hover:bg-code-gray",
-       "size": "20.0x20.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(125, 125, 125)",
-       "radius": "4px"
-      },
-      {
-       "node": "span.Spaces_separator___hBhm.flex-shrink-0",
-       "size": "1.0x28.0",
-       "border": "L:1px solid"
-      },
-      {
-       "node": "button.AddCollectionListItem_button__Afd2r.Button_button__oR2Kf",
-       "size": "323.5x28.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(59, 94, 186) 0px 0px 0px 2px",
-       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px",
-       "radius": "6px"
-      },
-      {
-       "node": "div.IconSubstrate_substrate__u7UGM.IconSubstrate_size_s__xhCgp",
-       "size": "16.0x16.0",
-       "bg": "rgba(255, 255, 255, 0.04)",
-       "radius": "4px"
-      },
-      {
-       "node": "span.font-ui-secondary.text-left",
-       "size": "323.5x52.0",
-       "border": "T:2px solid | R:2px solid | B:2px solid | L:2px solid",
-       "radius": "8px"
-      },
-      {
-       "node": "div.Banner_container__btucS",
-       "size": "323.5x104.0",
+       "node": "th.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "200.0x36.0",
        "bg": "rgb(28, 24, 24)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
-       "radius": "8px"
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.04) 1px 0px 0px 0px"
       },
       {
-       "node": "div::before.Banner_container__btucS",
-       "size": "323.5pxx104px",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) 0px 0px 0px 1px inset",
-       "radius": "8px"
+       "node": "th::before.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "16pxx38px",
+       "bg": "rgb(28, 24, 24)"
       },
       {
-       "node": "button.flex-1.min-w-0",
-       "size": "307.5x24.0",
-       "bg": "rgba(255, 255, 255, 0.04)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.02) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.25) 0px 1px 2px 0px",
+       "node": "th::after.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "8pxx36px",
+       "bg": "rgb(28, 24, 24)",
+       "radius": "8px 0px 0px 8px"
+      },
+      {
+       "node": "th.VariablesTable_cell__rDhQm.VariablesTable_isDefaultEnv__uOQBX",
+       "size": "200.0x36.0",
+       "bg": "rgb(35, 31, 25)"
+      },
+      {
+       "node": "div.AdornmentableTextControl_container__h_T_O.MultilineInput_container__pe_B3",
+       "size": "152.0x24.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "4px"
+      },
+      {
+       "node": "th.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "594.5x36.0",
+       "bg": "rgb(28, 24, 24)"
+      },
+      {
+       "node": "th::after.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "8pxx36px",
+       "bg": "rgb(28, 24, 24)",
+       "radius": "0px 8px 8px 0px"
+      },
+      {
+       "node": "tr.VariablesTable_row__ElZLY.VariablesTable_size_m__uLmSF",
+       "size": "994.5x38.0",
+       "border": "T:1px solid | B:1px solid"
+      },
+      {
+       "node": "th.VariablesTable_cell__rDhQm.VariablesTable_isVariable__BuqTL",
+       "size": "200.0x36.0",
+       "bg": "rgb(28, 24, 24)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.04) 1px 0px 0px 0px"
+      },
+      {
+       "node": "th::before.VariablesTable_cell__rDhQm.VariablesTable_isVariable__BuqTL",
+       "size": "16pxx38px",
+       "bg": "rgb(28, 24, 24)"
+      },
+      {
+       "node": "th::after.VariablesTable_cell__rDhQm.VariablesTable_isVariable__BuqTL",
+       "size": "8pxx36px",
+       "bg": "rgb(28, 24, 24)",
+       "radius": "8px 0px 0px 8px"
+      },
+      {
+       "node": "div.AdornmentableTextControl_container__h_T_O.MultilineInput_container__pe_B3",
+       "size": "194.0x28.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "6px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "div.Panel_panelSet__1cv0n.SpaceTab_container__8k9ae",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
+       "radius": "8px",
+       "bg": "rgb(28, 24, 24)"
       }
      ],
      "textStyle": {
-      "node": "span.Button_text__HlyT_.Spaces_label__aPYNC",
-      "text": "Incognito space",
+      "node": "span.Button_text__HlyT_",
+      "text": "Variables",
       "fontFamily": "PolySans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
       "fontSize": "14.2px",
       "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgba(245, 245, 240, 0.6)",
+      "color": "rgb(245, 245, 240)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "icon": {
-      "w": 30,
-      "h": 32,
+      "w": 16,
+      "h": 16,
       "fill": "none",
       "stroke": "none",
-      "color": "rgb(115, 220, 140)"
+      "color": "rgba(245, 245, 240, 0.6)"
      },
      "via": "resting state",
      "crop": "components/crops/app-env-panel-opened.png",
-     "run": "2026-11-17T10:12:03.335Z"
+     "run": "2026-11-17T13:09:36.622Z"
     },
     "light": {
      "tag": "div",
-     "classes": "Layout_container__7m_2v Layout_withSidePanel__GJ5j7",
-     "text": "Incognito space Collection Drafts Drafts are your unsaved requests. Organize the",
+     "classes": "SpaceTab_panel__LJTwp Panel_type_form__fn2h9 PanelContainer_container__sgJTN",
+     "text": "Variables Settings Defaults Create environment name value",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 405.5,
+      "y": 96,
+      "w": 1026.5,
+      "h": 796
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
+      "width": "1026.5px",
+      "height": "796px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -9879,8 +9773,8 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "stretch",
+      "flexDirection": "column",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -9899,7 +9793,7 @@
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
       "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgb(237, 237, 232)",
+      "backgroundColor": "rgb(245, 245, 240)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -9931,114 +9825,115 @@
      },
      "paint": [
       {
-       "node": "div.Layout_container__7m_2v.Layout_withSidePanel__GJ5j7",
-       "size": "1440.0x900.0",
-       "bg": "rgb(237, 237, 232)"
+       "node": "div.SpaceTab_panel__LJTwp.Panel_type_form__fn2h9",
+       "size": "1026.5x796.0",
+       "bg": "rgb(245, 245, 240)"
       },
       {
-       "node": "aside.Layout_sidebar__OHKsB",
-       "size": "49.0x900.0",
-       "border": "R:1px solid"
-      },
-      {
-       "node": "span.Layout_logoLink__fn7pT",
-       "size": "32.0x48.0",
-       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px"
-      },
-      {
-       "node": "button.MenuItem_button__lVvmy.mt-1",
-       "size": "32.0x32.0",
-       "bg": "rgba(0, 0, 0, 0.06)",
-       "radius": "8px"
-      },
-      {
-       "node": "hr.m-1.border-t",
-       "size": "24.0x1.0",
-       "border": "T:1px solid"
-      },
-      {
-       "node": "button.Spaces_button__1Z_fv.Spaces_isTabOpen__nYdNt",
-       "size": "139.0x28.0",
+       "node": "button.PanelTabButton_button__iYu6s.PanelTabs_aloneActiveTab___1VKK",
+       "size": "74.0x28.0",
        "bg": "rgba(0, 0, 0, 0.06)",
        "radius": "6px"
       },
       {
-       "node": "div.EntityIcon_substrate__eAQqs.group-hover:bg-code-gray",
-       "size": "20.0x20.0",
-       "border": "T:1px solid | R:1px solid | B:1px solid | L:1px solid",
-       "bg": "rgb(125, 125, 125)",
-       "radius": "4px"
-      },
-      {
-       "node": "span.Spaces_separator___hBhm.flex-shrink-0",
-       "size": "1.0x28.0",
-       "border": "L:1px solid"
-      },
-      {
-       "node": "div.IconSubstrate_substrate__u7UGM.IconSubstrate_size_s__xhCgp",
-       "size": "16.0x16.0",
-       "bg": "rgba(0, 0, 0, 0.06)",
-       "radius": "4px"
-      },
-      {
-       "node": "span.font-ui-secondary.text-left",
-       "size": "323.5x52.0",
-       "border": "T:2px solid | R:2px solid | B:2px solid | L:2px solid",
-       "radius": "8px"
-      },
-      {
-       "node": "div.Banner_container__btucS",
-       "size": "323.5x104.0",
+       "node": "th.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "200.0x36.0",
        "bg": "rgb(245, 245, 240)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
-       "radius": "8px"
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 1px 0px 0px 0px"
       },
       {
-       "node": "div::before.Banner_container__btucS",
-       "size": "323.5pxx104px",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.016) 0px 0px 0px 1px inset",
-       "radius": "8px"
+       "node": "th::before.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "16pxx38px",
+       "bg": "rgb(245, 245, 240)"
       },
       {
-       "node": "button.flex-1.min-w-0",
-       "size": "307.5x24.0",
-       "bg": "rgba(0, 0, 0, 0.06)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.05) 0px 1px 4px 0px",
+       "node": "th::after.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "8pxx36px",
+       "bg": "rgb(245, 245, 240)",
+       "radius": "8px 0px 0px 8px"
+      },
+      {
+       "node": "th.VariablesTable_cell__rDhQm.VariablesTable_isDefaultEnv__uOQBX",
+       "size": "200.0x36.0",
+       "bg": "rgb(239, 239, 220)"
+      },
+      {
+       "node": "div.AdornmentableTextControl_container__h_T_O.MultilineInput_container__pe_B3",
+       "size": "152.0x24.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "4px"
       },
       {
-       "node": "div::before.Container_container__Dzv7w.Tabs_tabsScrollableContainer__YxAiG",
-       "size": "32pxx28px",
-       "bgImage": "linear-gradient(90deg, rgb(237, 237, 232) 0px, rgba(237, 237, 232, 0) 100%)"
+       "node": "th.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "594.5x36.0",
+       "bg": "rgb(245, 245, 240)"
       },
       {
-       "node": "div::after.Container_container__Dzv7w.Tabs_tabsScrollableContainer__YxAiG",
-       "size": "32pxx28px",
-       "bgImage": "linear-gradient(270deg, rgb(237, 237, 232) 0px, rgba(237, 237, 232, 0) 100%)"
+       "node": "th::after.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK",
+       "size": "8pxx36px",
+       "bg": "rgb(245, 245, 240)",
+       "radius": "0px 8px 8px 0px"
+      },
+      {
+       "node": "tr.VariablesTable_row__ElZLY.VariablesTable_size_m__uLmSF",
+       "size": "994.5x38.0",
+       "border": "T:1px solid | B:1px solid"
+      },
+      {
+       "node": "th.VariablesTable_cell__rDhQm.VariablesTable_isVariable__BuqTL",
+       "size": "200.0x36.0",
+       "bg": "rgb(245, 245, 240)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 1px 0px 0px 0px"
+      },
+      {
+       "node": "th::before.VariablesTable_cell__rDhQm.VariablesTable_isVariable__BuqTL",
+       "size": "16pxx38px",
+       "bg": "rgb(245, 245, 240)"
+      },
+      {
+       "node": "th::after.VariablesTable_cell__rDhQm.VariablesTable_isVariable__BuqTL",
+       "size": "8pxx36px",
+       "bg": "rgb(245, 245, 240)",
+       "radius": "8px 0px 0px 8px"
+      },
+      {
+       "node": "div.AdornmentableTextControl_container__h_T_O.MultilineInput_container__pe_B3",
+       "size": "194.0x28.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "6px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "div.Panel_panelSet__1cv0n.SpaceTab_container__8k9ae",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px",
+       "radius": "8px",
+       "bg": "rgb(245, 245, 240)"
       }
      ],
      "textStyle": {
-      "node": "span.Button_text__HlyT_.Spaces_label__aPYNC",
-      "text": "Incognito space",
+      "node": "span.Button_text__HlyT_",
+      "text": "Variables",
       "fontFamily": "PolySans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
       "fontSize": "14.2px",
       "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgba(28, 24, 24, 0.6)",
+      "color": "rgb(28, 24, 24)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "icon": {
-      "w": 30,
-      "h": 32,
+      "w": 16,
+      "h": 16,
       "fill": "none",
       "stroke": "none",
-      "color": "rgb(82, 171, 102)"
+      "color": "rgba(28, 24, 24, 0.6)"
      },
      "via": "same element after the footer's own LIGHT MODE radio repaints html.light (the site boots html.dark, so light is the switched state)",
      "crop": "components/crops/app-env-panel-light.png",
-     "run": "2026-11-17T10:12:33.388Z"
+     "run": "2026-11-17T13:10:04.153Z"
     }
    }
   },
@@ -10397,7 +10292,7 @@
    "selector": "[class*=\"InfoBlock_container\"]",
    "page": "/app",
    "url": "https://httpie.io/app",
-   "run": "2026-11-17T10:54:29.242Z",
+   "run": "2026-11-17T13:08:25.213Z",
    "states": {
     "default": {
      "tag": "span",
@@ -10489,7 +10384,7 @@
      ],
      "via": "resting state",
      "crop": "components/crops/app-drafts-empty-default.png",
-     "run": "2026-11-17T10:54:30.155Z"
+     "run": "2026-11-17T13:08:26.143Z"
     }
    }
   },

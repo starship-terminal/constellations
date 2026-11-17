@@ -83,6 +83,26 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
+    # A capture that died mid-loop leaves parts 0..k of n — stitching them
+    # would publish a truncated sheet as a full page. Tiles must number
+    # contiguously from 0; a gap means the run failed and the leftovers are
+    # evidence for the scratch dir, never a screenshot.
+    # public.mjs records the intended tile set in <name>.plan.json before
+    # shooting; the tiles must match it exactly. Without a plan (an older
+    # run) the contiguous check above stands.
+    plan_path = RAW / f'{name}.plan.json'
+    plan = json.loads(plan_path.read_text()) if plan_path.exists() else None
+    indices = [i for i, _ in ps]
+    if plan is not None:
+        if indices != list(range(plan.get('parts', len(ps)))):
+            print('skipping', name, '— tile set', indices,
+                  'does not match the recorded plan of', plan.get('parts'),
+                  'parts (a capture died mid-run; delete the tiles or recapture)')
+            continue
+    elif indices != list(range(len(ps))):
+        print('skipping', name, '— non-contiguous part set', indices,
+              '(a capture died mid-run; delete the tiles or recapture)')
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0

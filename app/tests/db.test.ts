@@ -974,6 +974,12 @@ test("version-twenty-five stores gain the HTTPie rows, without touching their ow
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:discord'",
   );
+  // The v26 seed also re-tops Hashnode's media rows: five+ mediaIds landed
+  // after the v25 seed ran, so a v25 store never received them. Drop one
+  // and the scoped top-up should restore just the missing pairs.
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE media_id='systems/hashnode/components/crops/app-sidebar-dark.png'",
+  );
   await store.client.execute("PRAGMA user_version=25");
   store.close();
   stores.splice(stores.indexOf(store), 1);
@@ -998,6 +1004,14 @@ test("version-twenty-five stores gain the HTTPie rows, without touching their ow
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:httpie").length,
+  ).toBeGreaterThan(0);
+  // The stranded Hashnode media pair lands too.
+  expect(
+    media.filter(
+      (row) =>
+        row.mediaId ===
+        "systems/hashnode/components/crops/app-sidebar-dark.png",
+    ).length,
   ).toBeGreaterThan(0);
   // The cleared discord rows stay cleared — the top-up seeds only its own
   // batch.

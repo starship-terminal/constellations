@@ -146,6 +146,9 @@ export async function paintedTheme(p) {
 
 export async function themeReached(p, want) {
   const s = await paintedTheme(p);
+  // A failed evaluate resolves {} — report nothing reached rather than
+  // letting the absent dark flag read as "light painted".
+  if (!('dark' in s)) return false;
   const darkPainted = s.dark || s.scheme === 'dark' || s.bodyDark === true || s.htmlDark === true;
   return want === 'dark' ? darkPainted && s.light !== true : !darkPainted;
 }

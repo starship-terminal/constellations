@@ -128,7 +128,11 @@ class Shooter {
     await wait(p, 1200);
     await p.evaluate(() => document.querySelectorAll('video').forEach((v) => v.pause())).catch(() => {});
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
-    const chunk = Math.floor(14000 / this.dpr);
+    // The bound is in CSS pixels: scale:'css' clips are CSS px and the
+    // documented bound (three chunks = 42k px) describes page coverage —
+    // dividing by dpr would halve mobile coverage. A @2x tile's PNG is
+    // 28k device px tall; still well inside what the stitcher handles.
+    const chunk = 14000;
     const f = `${RAW}/${this.prefix}-${name}`;
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
@@ -139,14 +143,32 @@ class Shooter {
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     const opts = (extra) => ({ path: extra, scale: 'css', timeout: 120000 });
+    const plan = { intendedHeight: hCap, pageHeight: H, chunk, parts: hCap <= chunk ? 0 : Math.ceil(hCap / chunk), scale: 'css' };
+    // Written before the tiles so quantize.py can prove the stitched set is
+    // whole — a mid-loop failure must never publish a truncated sheet.
+    fs.writeFileSync(`${f}.plan.json`, JSON.stringify(plan, null, 1) + '\n');
+    const shootTiles = async (extra = {}) => {
+      if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true, ...extra }, this.requested);
+      else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) }, ...extra }, this.requested);
+    };
+    const dropPartials = () => {
+      // A tile loop that dies mid-run leaves parts 0..k of n — the stitcher
+      // would publish a truncated sheet as a full page. Remove every tile so
+      // quantize.py has nothing partial to stitch.
+      for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png` || n === `${this.prefix}-${name}.plan.json`)) fs.unlinkSync(`${RAW}/${old}`);
+    };
     try {
       try {
-        if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true }, this.requested);
-        else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+        await shootTiles();
       } catch (e) {
         log('  ! full shot timed out/failed, retrying with animations disabled:', String(e.message).split('\n')[0]);
-        if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true, animations: 'disabled' }, this.requested);
-        else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) }, animations: 'disabled' }, this.requested);
+        dropPartials();
+        try {
+          await shootTiles({ animations: 'disabled' });
+        } catch (e2) {
+          dropPartials();
+          throw e2;
+        }
       }
     } finally {
       await restoreShell(p).catch(() => {});

@@ -949,12 +949,12 @@ Crops: `app-method-button-default.png`, `app-method-button-hover.png`, `app-meth
 
 URL field. The request URL editor (UrlBar, a CodeMirror single-line field) holding the prefilled httpie.io/hello.
 
-Page: /app. Selector: `[class*="UrlBar_urlTextareaContainer"], .cm-content`. States: default, focused.
+Page: /app. Selector: `[class*="UrlBar_urlTextareaContainer"]`. States: default, focused.
 
 | Property | default | focused |
 |---|---|---|
-| Size (w x h) | 1026.5 x 44 | = |
-| Padding | 0px | = |
+| Size (w x h) | 848.5 x 44 | = |
+| Padding | 8px 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
@@ -963,10 +963,10 @@ Page: /app. Selector: `[class*="UrlBar_urlTextareaContainer"], .cm-content`. Sta
 | Font | PolySans 16px/24px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #f5f5f0 | = |
-| Text node | span.Button_text__HlyT_: PolySansMono 14.2px/24px 400, #73dc8c | = |
+| Text node | span.cm-placeholder: PolySansMono 14.2px/24px 400, #f5f5f0 @ 0.35 | = |
 | Transition | none | = |
-| Icon | 12 x 12, colour #73dc8c | = |
-| Painted layers | div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5x44.0 bg #1c1818 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 0px 0px 1px; div::before.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5pxx44px r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.016 0px 0px 0px 1px inset; div.cm-cursor.cm-cursor-primary 0.0x0.0 border L:1px solid; button.SubmitButton_sendButton__ZpsRE.Button_button__oR2Kf 57.0x28.0 bg #73dc8c r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset, #000000 @ 0.25 0px 1px 2px 0px | div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5x44.0 bg #201c1c r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 0px 0px 1px; div::before.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5pxx44px r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.016 0px 0px 0px 1px inset; div.cm-cursor.cm-cursor-primary 1.0x14.0 border L:1px solid; button.SubmitButton_sendButton__ZpsRE.Button_button__oR2Kf 57.0x28.0 bg #73dc8c r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 0px 0px 1px inset, #000000 @ 0.25 0px 1px 2px 0px |
+| Painted layers | div.cm-cursor.cm-cursor-primary 0.0x0.0 border L:1px solid | div.cm-cursor.cm-cursor-primary 1.0x14.0 border L:1px solid |
+| Ancestor paint | 1 up div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA bg #1c1818 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 0px 0px 1px | 1 up div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA bg #201c1c shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 0px 0px 1px |
 | How | resting state | the field clicked into |
 
 Crops: `app-url-field-default.png`, `app-url-field-focused.png`.
@@ -1051,25 +1051,25 @@ Crops: `app-panel-tab-default.png`, `app-panel-tab-hover.png`, `app-panel-tab-se
 
 #### app-param-checkbox
 
-Param row checkbox. The enable checkbox on a params row (Checkbox_input).
+Param row checkbox. The enable checkbox on a params row — the painted box is Checkbox_container; the real input is a hidden 1px control.
 
-Page: /app. Selector: `input[type="checkbox"]`. States: default.
+Page: /app. Selector: `[class*="Checkbox_container"]`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1 x 1 |
+| Size (w x h) | 16 x 16 |
 | Padding | 0px |
-| Border | none |
-| Radius | 0px |
+| Border | 1px solid #ffffff @ 0.04 |
+| Radius | 4px |
 | Background | transparent |
-| Box shadow | none |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | Outline | none |
 | Font | PolySans 16px/12px 400 |
 | Letter spacing | normal |
 | Colour | #f5f5f0 |
 | Transition | none |
 | Cursor | default |
-| Placeholder | #f5f5f0, opacity 1 |
+| Painted layers | div.Checkbox_container__NK4I_ 16.0x16.0 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | How | resting state |
 
 Crops: `app-param-checkbox-default.png`.
@@ -1078,11 +1078,11 @@ Crops: `app-param-checkbox-default.png`.
 
 Response empty state. The response panel before any send ("Not sent" — the send surface is never fired, so this resting panel is the honest evidence).
 
-Page: /app. Selector: `div (text Not sent)`. States: default.
+Page: /app. Selector: `[class*="PanelState_container"]`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1042.5 x 900 |
+| Size (w x h) | 599.3 x 712 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -1092,10 +1092,10 @@ Page: /app. Selector: `div (text Not sent)`. States: default.
 | Font | PolySans 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #f5f5f0 |
-| Text node | span.font-code-micro.text-left: PolySansMono 8.5px/16px 400, #73dc8c |
+| Text node | p.font-ui-main.text-center: PolySans 14.2px/24px 400, #f5f5f0 @ 0.6 |
 | Transition | none |
-| Icon | 12 x 12, colour #f5f5f0 @ 0.6 |
-| Painted layers | div::before.Container_container__Dzv7w.Tabs_tabsScrollableContainer__YxAiG 32pxx28px image linear-gradient(90deg, #191515 0px, #191515 @ 0 100%); div::after.Container_container__Dzv7w.Tabs_tabsScrollableContainer__YxAiG 32pxx28px image linear-gradient(270deg, #191515 0px, #191515 @ 0 100%); div.TabCard_tab__0R39Q.Tab_tab__eWtGS 104.0x28.0 bg #201c1c r 6px outline 2px solid #000000 @ 0 offset 2px; span.Tabs_buttonSeparator__zk7D_.flex-shrink-0 1.0x28.0 border L:1px solid; div.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5x44.0 bg #1c1818 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 0px 0px 1px; div::before.TabHeadingRow_container__UR_wt.TabHeadingRow_editable__FhyxA 1026.5pxx44px r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.016 0px 0px 0px 1px inset |
+| Icon | 48 x 48, colour #f5f5f0 @ 0.6 |
+| Painted layers | div.PanelState_iconCircle__DPIoa.mb-2 64.0x64.0 bg #ffffff @ 0.04 r 9999px |
 | How | resting state |
 
 Crops: `app-response-empty-default.png`.
@@ -1181,24 +1181,25 @@ Crops: `app-auth-select-default.png`, `app-auth-select-hover.png`.
 
 Environments manager. The environments manager (Variables / Settings / Defaults tabs, "Create environment"), opened by the Environments selector's own press.
 
-Page: /app. Selector: `[class*="Environment"], aside`. States: opened, light.
+Page: /app. Selector: `[class*="SpaceTab_panel"], [class*="PanelContainer_container"]`. States: opened, light.
 
 | Property | opened | light |
 |---|---|---|
-| Size (w x h) | 1440 x 900 | = |
+| Size (w x h) | 1026.5 x 796 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
-| Background | #191515 | #edede8 |
+| Background | #1c1818 | #f5f5f0 |
 | Box shadow | none | = |
 | Outline | none | = |
 | Font | PolySans 16px/24px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #f5f5f0 | #1c1818 |
-| Text node | span.Button_text__HlyT_.Spaces_label__aPYNC: PolySans 14.2px/24px 400, #f5f5f0 @ 0.6 | span.Button_text__HlyT_.Spaces_label__aPYNC: PolySans 14.2px/24px 400, #1c1818 @ 0.6 |
+| Text node | span.Button_text__HlyT_: PolySans 14.2px/24px 400, #f5f5f0 | span.Button_text__HlyT_: PolySans 14.2px/24px 400, #1c1818 |
 | Transition | none | = |
-| Icon | 30 x 32, colour #73dc8c | 30 x 32, colour #52ab66 |
-| Painted layers | div.Layout_container__7m_2v.Layout_withSidePanel__GJ5j7 1440.0x900.0 bg #191515; aside.Layout_sidebar__OHKsB 49.0x900.0 border R:1px solid; span.Layout_logoLink__fn7pT 32.0x48.0 outline 2px solid #000000 @ 0 offset 2px; button.MenuItem_button__lVvmy.mt-1 32.0x32.0 bg #ffffff @ 0.06 r 8px; hr.m-1.border-t 24.0x1.0 border T:1px solid; button.Spaces_button__1Z_fv.Spaces_isTabOpen__nYdNt 139.0x28.0 bg #ffffff @ 0.06 r 6px | div.Layout_container__7m_2v.Layout_withSidePanel__GJ5j7 1440.0x900.0 bg #edede8; aside.Layout_sidebar__OHKsB 49.0x900.0 border R:1px solid; span.Layout_logoLink__fn7pT 32.0x48.0 outline 2px solid #000000 @ 0 offset 2px; button.MenuItem_button__lVvmy.mt-1 32.0x32.0 bg #000000 @ 0.06 r 8px; hr.m-1.border-t 24.0x1.0 border T:1px solid; button.Spaces_button__1Z_fv.Spaces_isTabOpen__nYdNt 139.0x28.0 bg #000000 @ 0.06 r 6px |
+| Icon | 16 x 16, colour #f5f5f0 @ 0.6 | 16 x 16, colour #1c1818 @ 0.6 |
+| Painted layers | div.SpaceTab_panel__LJTwp.Panel_type_form__fn2h9 1026.5x796.0 bg #1c1818; button.PanelTabButton_button__iYu6s.PanelTabs_aloneActiveTab___1VKK 74.0x28.0 bg #ffffff @ 0.06 r 6px; th.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK 200.0x36.0 bg #1c1818 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.04 1px 0px 0px 0px; th::before.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK 16pxx38px bg #1c1818; th::after.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK 8pxx36px bg #1c1818 r 8px 0px 0px 8px; th.VariablesTable_cell__rDhQm.VariablesTable_isDefaultEnv__uOQBX 200.0x36.0 bg #231f19 | div.SpaceTab_panel__LJTwp.Panel_type_form__fn2h9 1026.5x796.0 bg #f5f5f0; button.PanelTabButton_button__iYu6s.PanelTabs_aloneActiveTab___1VKK 74.0x28.0 bg #000000 @ 0.06 r 6px; th.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK 200.0x36.0 bg #f5f5f0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 1px 0px 0px 0px; th::before.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK 16pxx38px bg #f5f5f0; th::after.VariablesTable_cell__rDhQm.VariablesTable_isHeader___CzuK 8pxx36px bg #f5f5f0 r 8px 0px 0px 8px; th.VariablesTable_cell__rDhQm.VariablesTable_isDefaultEnv__uOQBX 200.0x36.0 bg #efefdc |
+| Ancestor paint | 1 up div.Panel_panelSet__1cv0n.SpaceTab_container__8k9ae bg #1c1818 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 0px 0px 1px | 1 up div.Panel_panelSet__1cv0n.SpaceTab_container__8k9ae bg #f5f5f0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 0px 0px 1px |
 | How | resting state | same element after the footer's own LIGHT MODE radio repaints html.light (the site boots html.dark, so light is the switched state) |
 
 Crops: `app-env-panel-opened.png`, `app-env-panel-light.png`.

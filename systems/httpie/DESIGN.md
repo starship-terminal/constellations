@@ -53,10 +53,10 @@ colors:
   code-purple: "#70389e"
   code-red: "#c7382e"
   code-yellow: "#999400"
-  component-button-cta-bg: "#52ab66"
+  component-button-cta-bg: "#73dc8c"
   component-sendButton-bg: "#52ab66"
-  component-nav-bg: "#edede8"
-  component-appSidebar-bg: "#f5f5f0"
+  component-nav-bg: "rgba(0, 0, 0, 0)"
+  component-appSidebar-bg: "rgba(0, 0, 0, 0)"
 typography:
   hero:
     fontFamily: "Pie Headline"
@@ -101,15 +101,15 @@ typography:
     lineHeight: "21px"
     letterSpacing: "0.165px"
   urlField:
-    fontFamily: "PolySans"
-    fontSize: "16px"
+    fontFamily: "PolySansMono"
+    fontSize: "14.2px"
     fontWeight: 400
     lineHeight: "24px"
   tabLabel:
-    fontFamily: "PolySans"
-    fontSize: "16px"
+    fontFamily: "PolySansMono"
+    fontSize: "8.5px"
     fontWeight: 400
-    lineHeight: "24px"
+    lineHeight: "16px"
   input:
     fontFamily: "Pie Body"
     fontSize: "16px"
@@ -155,7 +155,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-10 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Pie Body, Pie Headline, PolySans.
+10 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Pie Body, Pie Headline, PolySansMono.
 
 ### Fonts (from README.md)
 

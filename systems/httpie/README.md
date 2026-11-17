@@ -112,7 +112,7 @@ PLAYWRIGHT=... node tools/capture/public/public.mjs [page,…]                  
 PLAYWRIGHT=... node tools/capture/public/measure.mjs [group …]                 # raw/components-computed.json + crops
 PLAYWRIGHT=... node tools/capture/layout.mjs                                    # raw/layout.json
 PLAYWRIGHT=... node tools/capture/icons.mjs                                     # icons/
-PLAYWRIGHT=... node tools/capture/motion-probe.mjs                              # raw/motion.json
+PLAYWRIGHT=... node tools/capture/motion-probe.mjs --urls https://httpie.io/,https://httpie.io/cli,https://httpie.io/docs/desktop,https://httpie.io/app   # raw/motion.json
 python3 tools/capture/quantize.py /path/to/raw-shots                            # screenshots/
 ```
 

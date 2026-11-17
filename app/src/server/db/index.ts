@@ -332,11 +332,17 @@ export async function createResearchStore(directory: string) {
     if (version < 26) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
       // already at v25 never re-seeds, so the HTTPie rows would never
-      // arrive. Scoping keeps cleared labels on older packages cleared — an
-      // empty assignment reads as "never labelled", so an unscoped pass
-      // would restore rows the user deleted.
+      // arrive. systems:hashnode is included on the media side only: its
+      // seed gained five media rows for crops that landed after the v25
+      // top-up ran, which a v25 store would otherwise never receive (pairs
+      // already labelled are skipped). Scoping keeps cleared labels on
+      // older packages cleared — an empty assignment reads as "never
+      // labelled", so an unscoped pass would restore rows the user deleted.
       await seedNewCuratedCategories(tx, new Set(["systems:httpie"]));
-      await seedNewCuratedMediaTerms(tx, new Set(["systems:httpie"]));
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set(["systems:httpie", "systems:hashnode"]),
+      );
       await tx.execute("PRAGMA user_version = 26");
     }
     await tx.commit();
