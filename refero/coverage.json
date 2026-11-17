@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 178,
-    "system_domains": 169,
-    "matched_domains": 139,
-    "missing_domains": 294,
+    "system_packages": 179,
+    "system_domains": 170,
+    "matched_domains": 140,
+    "missing_domains": 293,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -906,6 +906,23 @@
           "slug": "clipchamp",
           "name": "Clipchamp",
           "url": "https://clipchamp.com",
+          "name_match": true
+        }
+      ]
+    },
+    "cofounder.co": {
+      "catalog": [
+        {
+          "name": "Cofounder",
+          "domain": "cofounder.co",
+          "id": 746
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cofounder",
+          "name": "Cofounder",
+          "url": "https://cofounder.co",
           "name_match": true
         }
       ]
@@ -2456,13 +2473,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "cofounder.co": [
-      {
-        "name": "Cofounder",
-        "domain": "cofounder.co",
-        "id": 746
       }
     ],
     "cohere.com": [
