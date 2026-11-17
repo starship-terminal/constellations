@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -518,6 +518,15 @@ Access: signed out (every captured surface is public; search results, product de
 - every post-auth surface - search results, product detail, cart, checkout, account and the brand portal - sits behind the sign-up/sign-in dialogs; every product tile links ?signUp=product, an authenticated boundary never crossed
 - the /apply stepper's steps past 1 need a submitted first step; step 1 was filled and cleared, never sent
 - the observed sign-up dialog mounts no Apple SSO button; signup-apple is recorded missing
+
+## [LEGO](../systems/lego) — `lego`
+Access: read-only (home, theme, bestsellers, product, offers, service, about and search are public signed out; sign-in, bag, checkout, wish list contents and membership signup were not entered)
+- Sign-in at https://www.lego.com/identity/login sits behind a LEGO account and was not entered
+- My Bag at https://www.lego.com/en-us/cart was not opened; Add to Bag was measured and never pressed, so the bag and checkout stay behind an account boundary
+- Checkout at the bag sits behind sign-in and was not entered
+- Wish list contents behind the header Wish List control sit behind a LEGO account and were not opened
+- Membership signup (Become a member / Insiders) was not submitted
+- The footer email subscription field was not submitted
 
 ## [Explore](../systems/explore) — `explore`
 Access: read-only (every public surface signed out; the site itself is offline - the product closed 2023-04-19 and the domain later lapsed - so all pages were replayed from a local Internet Archive mirror of the 2023-02-23 build, with the closure shell from the 2023-06-08 snapshot; auth forms were measured and typed into then cleared, never submitted; no backend was ever reached; member names and works on the SSR profiles are public archive records reproduced as captured)
