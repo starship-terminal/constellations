@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 24)
+    if (version > 28)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -331,13 +331,33 @@ export async function createResearchStore(directory: string) {
     }
     if (version < 26) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v25 never re-seeds, so the Hello Ivy rows would never
+      // already at v25 never re-seeds, so the Gumroad rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:gumroad"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:gumroad"]));
+      await tx.execute("PRAGMA user_version = 26");
+    }
+    if (version < 27) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v26 never re-seeds, so the Cofounder rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:cofounder"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:cofounder"]));
+      await tx.execute("PRAGMA user_version = 27");
+    }
+    if (version < 28) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v27 never re-seeds, so the Hello Ivy rows would never
       // arrive. Scoping keeps cleared labels on older packages cleared — an
       // empty assignment reads as "never labelled", so an unscoped pass
       // would restore rows the user deleted.
       await seedNewCuratedCategories(tx, new Set(["systems:helloivy"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:helloivy"]));
-      await tx.execute("PRAGMA user_version = 26");
+      await tx.execute("PRAGMA user_version = 28");
     }
     await tx.commit();
   } catch (error) {

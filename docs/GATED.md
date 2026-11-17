@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_120 of 178 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_122 of 180 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -189,6 +189,10 @@ Access: signed out (clay.earth 301-redirects to me.sh - the Clay product rebrand
 Access: signed out (the marketing routes are fully public; the editor sits behind app.clipchamp.com sign-in - the public login card was measured at rest, the email path where the only field lives was never entered; consent and promo overlays were hidden without answering them; CTA anchors to signup/login were never followed)
 - the editor itself - timeline, assets, export - sits behind app.clipchamp.com sign-in and was never crossed; the sign-in card was measured at rest but never submitted
 - no credentials field renders on the sign-in card until the email path is entered; that path was never crossed, so no field was measured
+
+## [Cofounder](../systems/cofounder) — `cofounder`
+Access: signed out (the marketing routes are fully public; the Cofounder OS sits behind app.cofounder.co sign-in - the login card was measured at rest only; CTA anchors to the app were never followed; the hero copy-prompt button writes the clipboard so it was never pressed; no form was submitted and nothing was authenticated)
+- the Cofounder OS - workspace, integrations, billing - sits behind app.cofounder.co sign-in and was never crossed; the login card was measured at rest but never submitted
 
 ## [Discord](../systems/discord) — `discord`
 Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)
@@ -676,6 +680,12 @@ Access: signed out (every captured surface is public; the signed-in workspace, s
 Access: signed out (every captured surface is public: hashnode.com marketing/feed/posts/profiles/product sections and townhall.hashnode.com; /login and every post-auth surface never entered; engineering.hashnode.com returned 429, help./docs./blog./api./support./changelog./weekly. subdomains do not resolve, status.hashnode.com is a Better Stack page not the product - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the search dialogs, Theme/More menus, FAQ and tab rows, the sidebar toggle, the phone nav button)
 - the signed-in product (/login and everything behind it - dashboard, editor, settings, the onboarding submit) is a boundary: the Sign in / Start your blog / Get Pro links were measured, never followed
 - five components read as absent on this pass (the profile sticky header, the Get Pro plan CTA, the deferred onboarding field, the blog article's pre wrapper, the blog search suggestion row) - recorded as missing, not measured as absent
+
+## [Gumroad](../systems/gumroad) — `gumroad`
+Access: signed out (every captured surface is public gumroad.com or a public creator subdomain; the seller dashboard, buyer library and settings stayed behind login; the public checkout was captured empty and never submitted; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the carousel arrow, the nav menu button, the Share popover, the billing-term select)
+- post-login surfaces: the seller dashboard (products, sales, payouts, analytics), the buyer library and account settings were never reached - the capture was signed out end to end
+- search results: the marketplace search fields were measured empty; no query was ever submitted
+- checkout beyond the empty public form: payment, confirmation and post-purchase screens were never reached
 
 ## [Hello Ivy](../systems/helloivy) — `helloivy`
 Access: signed out (every captured surface is public: www.helloivy.co marketing routes, app.helloivy.co/login at rest and the public share document, and the hosted /docs platform; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the Framer menu overlay, the footer's real 'Change theme' control, the pricing FAQ accordion, the share page's settings popover and the phone's menu drawer; every link was measured, never followed; the workspace and every post-auth surface was never entered)
