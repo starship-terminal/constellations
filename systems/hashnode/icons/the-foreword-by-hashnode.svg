@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40" aria-label="The foreword by Hashnode" width="16" height="16">
+<mask id="_R_2r9a6tb_">
+<rect width="40" height="40" rx="10" fill="white">
+</rect>
+<path d="M12.5 19.5a7.5 7.5 0 0 1 15 0Z" fill="black">
+</path>
+<g stroke="black" stroke-width="4.2" stroke-linecap="round">
+<path d="M9 24.5H31" stroke="#000000" stroke-width="4.2" stroke-linecap="round">
+</path>
+<path d="M9 31H23" stroke="#000000" stroke-width="4.2" stroke-linecap="round">
+</path>
+</g>
+</mask>
+<rect width="40" height="40" rx="10" mask="url(#_R_2r9a6tb_)" fill="currentColor">
+</rect>
+</svg>

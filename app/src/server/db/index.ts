@@ -321,13 +321,23 @@ export async function createResearchStore(directory: string) {
     }
     if (version < 25) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v24 never re-seeds, so the Gumroad rows would never
+      // already at v24 never re-seeds, so the Hashnode rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:hashnode"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:hashnode"]));
+      await tx.execute("PRAGMA user_version = 25");
+    }
+    if (version < 26) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v25 never re-seeds, so the Gumroad rows would never
       // arrive. Scoping keeps cleared labels on older packages cleared — an
       // empty assignment reads as "never labelled", so an unscoped pass
       // would restore rows the user deleted.
       await seedNewCuratedCategories(tx, new Set(["systems:gumroad"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:gumroad"]));
-      await tx.execute("PRAGMA user_version = 25");
+      await tx.execute("PRAGMA user_version = 26");
     }
     await tx.commit();
   } catch (error) {

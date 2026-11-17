@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 177,
-    "system_domains": 168,
-    "matched_domains": 138,
-    "missing_domains": 295,
+    "system_packages": 178,
+    "system_domains": 169,
+    "matched_domains": 139,
+    "missing_domains": 294,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2270,6 +2270,23 @@
         }
       ]
     },
+    "hashnode.com": {
+      "catalog": [
+        {
+          "name": "Hashnode",
+          "domain": "hashnode.com",
+          "id": 194
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hashnode",
+          "name": "Hashnode",
+          "url": "https://hashnode.com",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2593,13 +2610,6 @@
         "name": "Grow with Google",
         "domain": "grow.google",
         "id": 294
-      }
-    ],
-    "hashnode.com": [
-      {
-        "name": "Hashnode",
-        "domain": "hashnode.com",
-        "id": 194
       }
     ],
     "hbomax.com": [
