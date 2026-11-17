@@ -15230,7 +15230,8 @@
      "the Discover grid lazy-loads, so -full captures are bounded at eight chunks; anything past the bound is absent rather than scrolled"
     ],
     "durationMin": 300,
-    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass, the icon/motion/layout probes and the offline build"
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass, the icon/motion/layout probes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/627"
    }
   }
  ]
