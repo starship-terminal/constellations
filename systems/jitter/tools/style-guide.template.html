@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jitter style guide</title>
+<style>
+  :root {
+/*CORE*/
+/*LIGHT*/
+    --sg-sans: var(--font-family-body, Inter, sans-serif);
+    --sg-ui: var(--font-family-ui, "TWK Lausanne", sans-serif);
+    --sg-display: var(--font-family-display, "Euclid Circular B", sans-serif);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--surface-page); color: var(--text-primary); }
+  body { font: 400 16px/1.5 var(--sg-sans); }
+  header.top {
+    position: sticky; top: 0; z-index: 2;
+    display: flex; align-items: baseline; gap: 16px;
+    padding: 20px 32px;
+    background: var(--color-grey);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  header.top h1 { margin: 0; font: 600 20px/1 var(--sg-ui); letter-spacing: -0.02em; }
+  header.top p { margin: 0; color: var(--text-muted); font-size: 14px; }
+  main { max-width: 1080px; margin: 0 auto; padding: 40px 32px 80px; }
+  h2 { margin: 48px 0 8px; font: 600 28px/1.15 var(--sg-ui); letter-spacing: -0.03em; }
+  h2:first-child { margin-top: 0; }
+  .lead { margin: 0 0 20px; max-width: 68ch; color: var(--text-muted); }
+  .swatches, .pills, .type { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch {
+    width: 148px; min-height: 96px; padding: 12px; border-radius: 16px;
+    border: 1px solid var(--border-subtle);
+    display: flex; flex-direction: column; justify-content: flex-end; gap: 2px;
+  }
+  .swatch b { font: 600 13px/1.2 var(--sg-ui); }
+  .swatch small { font-size: 11px; opacity: 0.72; }
+  .pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: var(--button-height); padding: 0 22px; border: 0; border-radius: var(--button-radius);
+    font: 600 16px/1 var(--sg-ui); color: var(--text-primary);
+  }
+  .pill.ink { background: var(--button-black); color: var(--text-onInk); }
+  .pill.violet { background: var(--button-violet); }
+  .pill.yellow { background: var(--button-yellow); }
+  .pill.blue { background: var(--color-blue); }
+  .pill.grey { background: var(--color-grey); }
+  .typerow { width: 100%; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
+  .typerow .k { color: var(--text-muted); font-size: 12px; }
+  .sample-display { font: 600 40px/1.1 var(--sg-display); letter-spacing: -0.03em; }
+  .sample-ui { font: 600 20px/1.2 var(--sg-ui); }
+  .sample-body { font: 400 16px/1.5 var(--sg-sans); }
+  .card {
+    margin-top: 16px; max-width: 420px; padding: 28px; border-radius: 24px;
+    background: var(--surface-page); border: 1px solid var(--border-subtle);
+  }
+  .card h3 { margin: 0 0 8px; font: 600 22px/1.2 var(--sg-ui); }
+  .card p { margin: 0 0 16px; color: var(--text-muted); }
+  .field {
+    width: 100%; height: 48px; margin: 0 0 10px; padding: 0 14px;
+    border-radius: 0; border: 1px solid var(--border-subtle);
+    background: var(--surface-page); color: var(--text-primary); font: 400 16px/1 var(--sg-sans);
+  }
+  .field:focus { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .note { margin-top: 28px; color: var(--text-muted); font-size: 13px; max-width: 72ch; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+  th { font: 600 12px/1.3 var(--sg-ui); color: var(--text-muted); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Jitter style guide</h1>
+  <p>Public marketing surface, captured 2026-11-18, one light theme</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <p class="lead">Page white, ink near-black, a grey header band, and four button fills. Values are CSS custom properties from tokens.json. Screenshots are 256-colour PNGs; read colour from these swatches.</p>
+  <div class="swatches">
+    <div class="swatch" style="background:var(--surface-page);color:var(--text-primary)"><b>page</b><small>#ffffff</small></div>
+    <div class="swatch" style="background:var(--color-grey);color:var(--text-primary)"><b>grey</b><small>#f2f1f3</small></div>
+    <div class="swatch" style="background:var(--color-ink);color:var(--text-onInk)"><b>ink</b><small>#19171c</small></div>
+    <div class="swatch" style="background:var(--color-violet);color:var(--text-onAccent)"><b>violet</b><small>#b593ff</small></div>
+    <div class="swatch" style="background:var(--color-yellow);color:var(--text-onAccent)"><b>yellow</b><small>#f5ff63</small></div>
+    <div class="swatch" style="background:var(--color-blue);color:var(--text-primary)"><b>blue</b><small>#50b8ff</small></div>
+    <div class="swatch" style="background:var(--color-blue-strong);color:var(--text-primary)"><b>blue strong</b><small>#29a9ff</small></div>
+    <div class="swatch" style="background:var(--color-pink);color:var(--text-primary)"><b>pink</b><small>#fba6ec</small></div>
+    <div class="swatch" style="background:var(--surface-page);color:var(--text-muted)"><b>muted</b><small>#6e6e73</small></div>
+  </div>
+
+  <h2>Buttons</h2>
+  <p class="lead">Pills. The fill paints on an inner span on the live site. Radius is 50px. Small height is 52px, medium is 60px. Hover does not recolour the marketing fills.</p>
+  <div class="pills">
+    <span class="pill ink">Sign up</span>
+    <span class="pill violet">Start for free</span>
+    <span class="pill yellow">See stories</span>
+    <span class="pill blue">Get started</span>
+    <span class="pill grey">Continue with Google</span>
+  </div>
+
+  <h2>Type</h2>
+  <p class="lead">TWK Lausanne on controls, Inter on body, Euclid Circular B in the display faces. The files are proprietary and are not in this package, so a machine without them falls back to sans-serif.</p>
+  <div class="type">
+    <div class="typerow"><div class="k">display · Euclid Circular B · 600 · 40px</div><div class="sample-display">A fast and simple motion design tool</div></div>
+    <div class="typerow"><div class="k">ui · TWK Lausanne · 600 · 20px</div><div class="sample-ui">Sign up</div></div>
+    <div class="typerow"><div class="k">body · Inter · 400 · 16px</div><div class="sample-body">We'll sign you in, or create an account if you don't have one yet.</div></div>
+  </div>
+
+  <h2>Login card</h2>
+  <p class="lead">The public boundary. Measured empty. Google, SSO and email were never clicked.</p>
+  <div class="card">
+    <h3>Log in</h3>
+    <p>We'll sign you in, or create an account if you don't have one yet.</p>
+    <span class="pill grey" style="width:100%;margin-bottom:8px">Continue with Google</span>
+    <span class="pill" style="width:100%;margin-bottom:8px;background:var(--color-blue-strong)">Continue with SSO</span>
+    <input class="field" placeholder="Email" readonly>
+    <span class="pill violet" style="width:100%">Continue with email</span>
+  </div>
+
+  <h2>Space, size, radius</h2>
+  <table>
+    <thead><tr><th>Token</th><th>Value</th><th>Where</th></tr></thead>
+    <tbody>
+      <tr><td><code>radius.pill</code></td><td>50px</td><td>button-inner</td></tr>
+      <tr><td><code>radius.sheet</code></td><td>80px</td><td>footer inner, bottom corners only</td></tr>
+      <tr><td><code>space.header-offset</code></td><td>48px</td><td>--top-bar-offset at 1025px and up</td></tr>
+      <tr><td><code>space.header-offset-phone</code></td><td>20px</td><td>--top-bar-offset below 1025px</td></tr>
+      <tr><td><code>size.button-sm</code></td><td>52px</td><td>small pill</td></tr>
+      <tr><td><code>size.button-md</code></td><td>60px</td><td>medium pill</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Motion durations and curves live in tokens.json under core.motion. The spring <code>--ease-overshoot-linear</code> is a linear() curve and stays in motionNotTokenised. Reduced motion is partial on the home page and ignored on pricing and login. One theme only: there is no dark set.</p>
+</main>
+<script type="application/json" id="tokens">/*TOKENS*/null</script>
+</body>
+</html>

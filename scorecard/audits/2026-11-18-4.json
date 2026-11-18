@@ -1,7 +1,7 @@
 {
  "date": "2026-11-18",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Devin agent review of the ifttt capture against the web wording: per-criterion grades read from tokens.json, components-computed.json, measurements.md, layout.json, motion.json and the shot/crop evidence",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): reviewed against the live capture: components-computed.json per-state readings, css-vars.json declared token layer, screenshots and crops inspected",
  "systems": [
   {
    "slug": "1password",
@@ -23303,103 +23303,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "ifttt",
+   "slug": "column",
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "The product ships no hue ramps: core.palette.* is a flat harvest of 56 literal hex/rgba() declarations keyed by value (the near-black #111111 action fills, the rgba(17,17,17,x) ink transparencies, the rgba(255,255,255,x) on-dark ink, the #0dd14e SAVE green, the #0099ff/#0089da link blues, the #ff5e19 brand orange), not steps per hue. Honest literals; no ramp organisation exists to tokenise."
+     "grade": "meets",
+     "evidence": "Real declared ramps tokenised from the site's own token layer: ten --color-<family>-<50..900> families — blue 10, gray 10, cyan 10, seafoam 10, purple 10, pink 10, red 10, orange 10, yellow 10, green 10 — plus color-0/1000 (white/black), 108 colours under core.color.*, each citing its declared custom property."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "light.color.bg.page (white) plus component grounds: card.appletBg, the dark-painted section grounds under light.component.dark (ground/heroBg #111111) and the modal scrim measured on the share-modal entry. No raised/overlay/scrim role ladder exists in the layer."
+     "grade": "meets",
+     "evidence": "light.surface.page {blue.50 #eef4fb} (declared --bg-color-primary), secondary/muted {gray.100} (declared), card #fff (measured body ground), darkBand {cyan.900 #011821} (measured, the inverted island), banner firstColor #3e5199 (measured gradient stop) plus the declared secondaryButton surface — measured roles verify the declared ones."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "light.color.text has body, display, muted, link, onColorSubtle and footer roles read off the painted page, plus component.dark.chipInk/actionInk/linkInk on the dark sections. No dedicated disabled text role exists in the product's sheets."
+     "grade": "meets",
+     "evidence": "The declared --text-color-* layer (body #575a64, heading/subheading gray.900, duotone pair) plus measured roles: nav gray-900, onDark cyan-200, banner #fff, footer ink, onAccent white, link/linkHover blue-600, placeholder gray-500 and label — text roles carry declared var() provenance."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "action.outline (the pill ring) and hairline borders are tokenised/measured per component; focus paints through the outline pill and a focus ring state is recorded on prompt/search fields in measurements. No default/strong/focus role set exists in the layer."
+     "grade": "meets",
+     "evidence": "A real border ladder: border.input {gray.300 #cfd0d8}, inputHover {gray.500}, inputFocus {blue.600} (declared --form-input-border*/-hover/-focus), border.accent {blue.800} (--btn-border-primary), the measured header hairline and the focus rings (blue-100 #d4e3f7 --btn-focus-ring-primary/--form-input-focus-ring; measured outlines on nav-ghost/nav-cta/m-menu-link)."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "light.color.action carries fill, hoverFill, navFill, onFill, outline and outlineInk — default and hover measured on the black pill family; a pressed pseudo state is DevTools-forced in measurements (no distinct painted pressed colour exists to tokenise)."
+     "grade": "meets",
+     "evidence": "Controls measured through default/hover/focus-visible/pressed: nav-cta fills white on hover (0.2s ease swap on background-color), hero-cta/cards-cta/signin-submit/signin-passkey/footer-link/m-menu-link all carry four states; the declared --btn-*-hover/-active steps sit beside them."
     },
     "F6": {
-     "grade": "missing",
-     "evidence": "No status family exists signed out: the only status-ish colours are the #0dd14e SAVE-30% badge green and the #d0011b/#d4545c literal reds in the harvest — no success/warning/danger/info sets with fill/text/border variants to grade."
+     "grade": "partly",
+     "evidence": "red and orange (danger/warning) ramps are declared and tokenised, but they never paint in a status role on the public surface; the sign-in form was never submitted so no validation state was seen."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "Single theme: $themes declares only light, the product paints one theme on every signed-out surface (no theme control exists anywhere), and the dark grounds are painted sections recorded under light.component.dark — not a second theme to mirror."
+     "evidence": "One theme ships: every route paints the same light surface. The cyan-900 infrastructure band and the inverted palette blocks are islands inside it (the .color-palette-inverted--* bindings are documented in the harvest), captured as light.* roles rather than a dark theme."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "Museo Sans Rounded (300/500/700/900 + italics, proprietary, recorded by name with a rounded fallback stack) plus Menlo for code; 14 measured type composites cover hero, display, title, body, link, nav, button, price, tab, meta and footer roles. No 6-8-step named size scale exists as tokens — sizes live inside the composites."
+     "grade": "meets",
+     "evidence": "Three declared stacks with full fallbacks — font.family.sans (SuisseIntl), mono (SuisseIntlMono), ui (Inter) — plus displayMeasured (the hero's computed SuisseIntl) and the five declared weights book/regular/medium/semibold/bold; 11 @font-face records in the harvest."
     },
     "F9": {
-     "grade": "missing",
-     "evidence": "No spacing scale is declared or tokenised: paddings/gaps appear only inline inside component measurements and raw/layout.json, with no base-unit ladder to publish."
+     "grade": "meets",
+     "evidence": "The declared --text-* scale (~17 steps, 12px-6rem+), paired --lh-b-* body and --lh-h-* heading line-heights, --letter-spacing-* (em units kept element-relative) and the measured display sizes (hero 52px, product h1 56px, section 60px, infra 48px, mobile hero 32px)."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "Radii are tokenised per component (the 64px pill family on buttons, 47.97px connect toggle, 32px search field, 24px cards, 16px plan cards/share field, 8px tabs); border widths are measured per entry (2px action outlines, 1px hairlines). No named core.radius or border-width scale."
+     "grade": "meets",
+     "evidence": "The full declared 71-step --space-* scale tokenised (including the negative n* steps and px/auto edge entries, negatives resolved against their positive counterparts) with spacingUnit 4px as the anchor."
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "Control heights tokenised on core.component (buttons 54/79/101px per size, search 48px, gallery search 55px, prompt 78px, tabs 48px, switch 32x48px, connect toggle 95.94x480px, header 99px, mobile header 64px) plus icon sizes in measurements; the focus ring's width/offset is measured on focused states but not tokenised."
+     "grade": "meets",
+     "evidence": "The declared --radii-* set (0/sm/md/default/lg/xl/pill/round/full) plus measured corners: control 8px (nav-cta), card 16px (section-box), the footer band's 12px and field radius from the sign-in surface."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "Card shadows tokenised on applet/service cards (rgba(0,0,0,.24) 0 1.5px 6px) and the modal layer measured on share-modal entries; under 3 named elevation levels exist — the product paints essentially one card lift."
+     "grade": "meets",
+     "evidence": "light.shadow.product is the declared five-layer --shadow-product (0/40/32 @2% … 0/3/2 @7%) plus the declared --shadow-product-border 1px ring — real elevation on the lifted cards."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "core.motion tokenises the probed durations (0-1200ms incl. the 500ms cycle-lag), easings, transitions and animations across 5 pages; the probe records prefers-reduced-motion as only partially honoured (some groups keep animating), so no reduced-motion guarantee is claimed."
+     "evidence": "No declared duration/ease tokens exist in the sheets; what the chrome actually does is measured: 0.2s ease swaps on the CTA/menu/sign-in controls (box-shadow/background/border), 0.3s header transform, 0.5s band radius — a thin but honest measured coverage."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Breakpoint variables tokenised under light.misc (screenXsMin 320px through screenXlMin 1920px, matching the measured 390/768/992/1200/1440/1920 breakpoints) plus per-page geometry in raw/layout.json across 48 page/width pairs; grid columns and z-index layers are recorded there, not as tokens."
+     "evidence": "No standalone SVG icon set was lifted this pass; the glyphs (logo, chevrons, passkey mark, close glyph) are visible in the crops and screenshots — recorded under layoutGaps."
     },
     "C1": {
-     "grade": "partly",
-     "evidence": "55 components measured: buttons (nav login/signup, hero submit, secondary CTA, plan CTAs, back/share, get-started-today), links (nav, prose, footer, author), text fields (nav search, gallery search, prompt, share URL), switch (billing toggle + the giant Connect toggle), tabs (featured + explore gallery), a full-screen mobile menu, a share dialog, cards (applet/service/story/plan/example), list rows (plan features, applet services), badges (SAVE 30%, RECOMMENDED, meta byline), a code font family and icons. Missing from the signed-out product: text area, select, checkbox, radio, tooltip, toast, table, avatar — recorded as gaps, never fabricated."
+     "grade": "meets",
+     "evidence": "30 components / 58 states across seven groups: shell+nav (banner, header, logo, triggers, Sign-in link, Get-started pill), home (hero, stat tile, dark band, section heading, page ground), ACH + card-programs product pages (titles, SectionBox, ProductScreen, CTA), sign-in boundary (card, field, submit, passkey), footer (band, card link, logo) and the mobile pass (bar, hamburger, open menu, links, hero)."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "98 state readings: default/hover/focus-visible/pressed on buttons and links, focused on fields, selected/active on tabs, toggled on the billing switch, opened on the share modal and mobile menu — each via the component's own control; pressed is CDP-forced (no real press fires)."
+     "evidence": "Every interactive component carries default + hover + focus-visible + DevTools-pressed; the sign-in field carries a real focused state; the mobile menu is read at its own toggled state. nav-item hover is an honest error record — the mega-menu re-render detaches the node under real hover."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "Focus-visible rings measured on nav links, buttons and CTAs via keyboard focus; focused states on the prompt and search fields clicked into (never queried). The pill outline is the focus affordance — recorded in measurements with via notes."
+     "evidence": "Component dimensions tokenised under component.*: banner 40px, header 62px, nav item/ghost/CTA heights, hero CTA 36px, submit 32px, footer 1074px, drawer 390px, dark band 3242px, hero-title/card/field measures — every value cites the measured element."
     },
     "C4": {
-     "grade": "partly",
-     "evidence": "Component entries name the matching token where a token exists (light.color.*, light.component.*, core.component.* geometry); many entries are the measured value itself because IFTTT has almost no token layer — the sheet's literal is the spec."
+     "grade": "meets",
+     "evidence": "42 state crops in components/crops plus the full-page screenshot set (20 desktop routes default+full, 4 mobile passes with the open menu) — each screenshot carries a .capture.json provenance sidecar."
     },
     "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md covers the unified header + mobile menu shell, the home/explore prompt heroes, the tabbed gallery grid, the plans switch + card set, the detail-page chrome (Back/Share/modal/brand hero/Connect), the bounded long pages and the no-theme architecture. Forms/validation, loading, destructive confirmation, toasts and onboarding are documented boundaries — never exercised signed out."
+     "grade": "meets",
+     "evidence": "patterns.md maps composition per surface: the gradient launch banner + 62px header, the navy CTA contract from the declared --btn-* layer, the light hero into the cyan-900 inverted band, product pages with SectionBox + rendered ProductScreen mocks, the gray-100 closer footer, the gray-50 sign-in boundary and the 390 mobile flow."
     },
     "A1": {
      "grade": "meets",
-     "evidence": "39 inline SVG icons indexed in icons/INDEX.tsv with hashes, sizes, viewBoxes, style, pages and labels (service-brand artwork excluded); Museo Sans Rounded recorded by name and weight set with its licence noted as proprietary and the files not shipped."
+     "evidence": "heading #12161e and body #575a64 on white/blue-50 grounds, white-on-navy CTAs, cyan-200 on the cyan-900 island — the pairs the F15 contrast check grades pass; focus is a declared blue-100 ring (light.focus) plus measured outlines."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states what was captured (route inventory incl. the ifttt.com->ifttt.ai 301, both viewports, transient states), how (harvest + computed-style measurement + bounded tiling), and what to distrust (sign-in/checkout/Connect boundaries, help 403, platform redirect, no dark theme, proprietary font, bounded long pages)."
+     "evidence": "The full kit ships under tools/: public.mjs route capture (headless — no bot wall), vars.mjs stylesheet+var() harvest, measure.mjs per-state readings with crops, quantize.py sidecar-keeping screenshot store, build_component_tokens.py spec (declared var-name provenance + measured roles), build_tokens.py DTCG emission, build_components_md.py/build_style_guide.py/build-measurements.mjs docs — all regenerable."
     },
     "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 1 pair, worst 4.34:1 light muted (light.color.text.muted) on surface (light.component.card.appletBg)"
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.98:1 light muted (light.text.body) on surface (light.surface.secondary)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 210 of 210 tokens name their source"
+     "evidence": "Script: 297 of 297 tokens name their source"
     },
     "K2": {
      "grade": "meets",
-     "evidence": "Script: 10 rules, each linking a screenshot or crop"
+     "evidence": "Script: 6 rules, each linking a screenshot or crop"
     },
     "K3": {
      "grade": "meets",
@@ -23418,19 +23418,19 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "IFTTT",
-   "goodFor": "Automation-platform and SaaS marketing design on a rounded, pill-first system: the ifttt.ai home (the 'Describe what you'd like to build' AI prompt hero, 'Start building' black pill, featured-Applets category tabs, floating service-icon canvas), the /explore gallery (a dark 'Automate X with Y' hero with a prompt card and service-chip cycler over the All/Applets/Services/Stories tab grid), the /plans pricing (the Monthly/Yearly switch, Free/Starter/Pro/Pro+ cards with a RECOMMENDED dark header and 'SAVE 30%' badge) and the service/applet/connect detail pages (Back pill, Share button + the site's own share modal, brand-coloured heroes, the giant Connect toggle). Sass-compiled Rails markup: the token layer is nearly absent (a few --card-color/--hero-unit/--cycle-* properties), so the system is literal hex/rgb() on classes harvested into core.palette.* plus measured component roles; Museo Sans Rounded (300/500/700/900 + italics) is the single brand face, proprietary and recorded by name only.",
-   "url": "https://ifttt.com",
-   "captured": "2026-11-18",
+   "name": "Column",
+   "goodFor": "developer-banking marketing: a Gatsby + styled-components build shipping a real named token layer in its sheets - ten --color-<family>-<step> ramps (blue-800 #111a4a navy the brand ink, blue-600 #1e4199 links, cyan-900 #011821 the dark band, gray-50/100 grounds), a 71-step --space-* scale, --text-*/--lh-*/--letter-spacing-* type scales, --font-* stacks (SuisseIntl, SuisseIntlMono, Inter) and weights, --radii-*/--screen-*/--cols-* layers and the five-layer --shadow-product; a semantic --bg-color-*/--text-color-*/--btn-*/--form-*/--link-* layer that .color-palette--primary binds for the light theme and .color-palette-inverted--* rebinds on the dark infrastructure island",
+   "url": "https://column.com/",
+   "captured": "2026-11-17",
    "themes": [
     "light"
    ],
    "platform": "web",
-   "category": "Productivity",
+   "category": "Finance",
    "reviewed": "2026-11-18",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Devin agent review of the ifttt capture against the web wording: per-criterion grades read from tokens.json, components-computed.json, measurements.md, layout.json, motion.json and the shot/crop evidence"
+ "reviewMethod": "reviewed against the live capture: components-computed.json per-state readings, css-vars.json declared token layer, screenshots and crops inspected"
 }

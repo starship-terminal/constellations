@@ -1,0 +1,86 @@
+{
+  "F1": {
+    "grade": "partly",
+    "evidence": "Kraken publishes named primitives (--colors-ds-brand #7132f5, primary #101114, neutral #686b82, positive #08844f, negative #d11d45, warning #c39621, info #0079b4) and a semantic layer, not a 10-step hue ramp. core.color.neutral is a short ramp synthesised from named surface and content roles. A full 10-step ramp per hue is not in the public CSS."
+  },
+  "F2": {
+    "grade": "meets",
+    "evidence": "light.background.page #f6f5f9, canvas #ffffff, surface (raised) #ffffff, overlay #ffffff, sunken, and overlay.scrim from --colors-ds-semantic-overlay-scrim. The same roles exist under dark from /pro."
+  },
+  "F3": {
+    "grade": "meets",
+    "evidence": "light.text.primary #101114, secondary #686b82, muted #9497a9, disabled, inverse, on-accent #ffffff, link #7132f5. Dark remaps the same roles on /pro."
+  },
+  "F4": {
+    "grade": "meets",
+    "evidence": "light.border.default and subtle (rgba(104, 107, 130, 0.161)), strong #686b82, focus #7132f5. Measured focus-visible on nav Sign up is a 2px solid #7132f5 outline."
+  },
+  "F5": {
+    "grade": "meets",
+    "evidence": "light.accent.default #7132f5, hover #5b1ecf, pressed #5b1ecf, measured on nav Sign up, the hero Try Kraken button, and Continue. Pro's dark primary is near-white #f7f7fa with hover #e5e6ec."
+  },
+  "F6": {
+    "grade": "partly",
+    "evidence": "Status roles are declared and tokenised: positive, negative, warning and info, each with solid, subtle, on-solid, on-subtle and content. Price tables paint positive green and negative #d11d45. No warning or info control was mounted signed out, and no status badge was cropped as its own element."
+  },
+  "F7": {
+    "grade": "meets",
+    "evidence": "magic-light on / and magic-dark on /pro each resolve the same semantic names. light and dark token sets carry the same role paths."
+  },
+  "F8": {
+    "grade": "meets",
+    "evidence": "Kraken-Brand, Kraken-Product and Kraken-Mono with IBM Plex fallbacks. core.typography holds display1-4, heading1-6, body1-4, label1-3, caption1-2, editorial1, brand1, bodyMono1 and heroNumber. The home h1 measured Kraken-Brand 48px/56px weight 400."
+  },
+  "F9": {
+    "grade": "partly",
+    "evidence": "core.spacing is a derived 4px scale (4 through the measured 8, 12 and 16 button paddings). Kraken does not publish a space scale as custom properties. Declared component gaps (--spacing-ds-radio-*, checkbox gaps) are measured separately."
+  },
+  "F10": {
+    "grade": "meets",
+    "evidence": "--border-radius-ds-0 through 8 (0, 2, 4, 6, 8, 12, 16, 20, 32px) plus the 9999px round step, and component radii (button-md 12px, card 12px, dialog 20px). Borders are the semantic border roles plus the 1px field border measured on the sign-up email input."
+  },
+  "F11": {
+    "grade": "partly",
+    "evidence": "Control heights are measured: nav Sign up 36px, hero Try Kraken 48px, sign-up email 48px, sign-in Continue 52px, header 64px. No declared icon-size scale was published, and the focus ring's offset was not a separate token. Focus width is the 2px outline measured on the buttons."
+  },
+  "F12": {
+    "grade": "partly",
+    "evidence": "--box-shadow-ds-0 through 7 are declared. Single-layer shadows that parse are tokenised under core.elevation. Multi-layer and inset shadows were skipped. The public marketing chrome is mostly flat, so the steps are not each tied to a photographed card, popover and dialog use."
+  },
+  "F13": {
+    "grade": "meets",
+    "evidence": "raw/motion.json from the motion probe on /, /pro and /sign-up: durations and easing in core.motion, 1135 moving elements, reduce behaviour partial (1110 kept, 25 removed). The probe verified matchMedia under prefers-reduced-motion: reduce."
+  },
+  "F14": {
+    "grade": "partly",
+    "evidence": "Desktop 1440 and phone 390 are captured, header is 64px, the home hero title measures 651px wide. No published grid-column or z-index scale was extracted. Search and the phone menu are overlays in the screenshots, not a z-index token set."
+  },
+  "C1": {
+    "grade": "partly",
+    "evidence": "Present and captured: button, icon button (search), link, text field, tabs (Futures), menu (phone nav), dialog (search overlay), card (sign-in), list row and table (prices). Not present signed out: text area, checkbox, radio, switch, tooltip, toast, avatar, badge. Select (language) was not opened. That is 10 of 19."
+  },
+  "C2": {
+    "grade": "partly",
+    "evidence": "Hover, focus-visible and pressed are cropped for nav Sign up, Log in, the hero CTA and the Pro CTA. Email fields have a focused crop. Disabled, loading and error were not offered. Sign-up and sign-in were not submitted, so validation never appeared. Pressed is a forced :active."
+  },
+  "C3": {
+    "grade": "meets",
+    "evidence": "Focus-visible crops: nav-signup, nav-login, hero-cta, pro-cta, signup-email, signup-continue. The ring is a 2px solid #7132f5 outline on the light buttons and 2px #9d82fe on the Pro button."
+  },
+  "C4": {
+    "grade": "partly",
+    "evidence": "components.md names token paths (light.accent.default, radius 12 from --border-radius-ds-5) and also writes the measured hex and pixel values next to them so a reader can check the crop. It is not token-only."
+  },
+  "P1": {
+    "grade": "partly",
+    "evidence": "patterns.md covers the marketing shell, the hero field, the dark product band, the market table, search, and the sign-in card. Empty, loading, error, destructive confirmation and post-submit feedback were not on the public pages. Onboarding stops at the sign-up card."
+  },
+  "A1": {
+    "grade": "partly",
+    "evidence": "icon.png is the 128px apple-touch icon. Fonts are named with IBM Plex fallbacks; the proprietary files are not shipped. No standalone SVG icon set was indexed. layoutGaps records icons/ as not extracted."
+  },
+  "K1": {
+    "grade": "meets",
+    "evidence": "README states the 2026-11-18 public-web capture, the signed-out boundary, how values were read, and what to distrust (derived spacing, 256-colour PNGs, proprietary fonts, the Pro CTA measurement resolving to the nav control)."
+  }
+}

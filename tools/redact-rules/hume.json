@@ -1,0 +1,12 @@
+{
+  "_note": "Rules for systems/hume. Public signed-out capture of www.hume.ai, dev.hume.ai, demo.hume.ai and app.hume.ai/log-in: no surface paints machine-private data - nothing was signed into, typed, searched or submitted. Public author names, headshots and company logos on the about/careers/blog/testimonial surfaces are published content and are kept. The legal pages publish Hume's own contact addresses (hello@hume.ai, assist@hume.ai) and the contact form's field placeholder is the generic you@company.com - the product's own public copy, allowed.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@hume\\.ai$",
+      "@company\\.com$",
+      "@example\\.com$"
+    ]
+  }
+}

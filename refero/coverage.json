@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 190,
-    "system_domains": 181,
-    "matched_domains": 151,
-    "missing_domains": 282,
+    "system_packages": 210,
+    "system_domains": 201,
+    "matched_domains": 171,
+    "missing_domains": 262,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -957,6 +957,23 @@
           "slug": "coinbase",
           "name": "Coinbase",
           "url": "https://www.coinbase.com/en-sg",
+          "name_match": true
+        }
+      ]
+    },
+    "column.com": {
+      "catalog": [
+        {
+          "name": "Column",
+          "domain": "column.com",
+          "id": 509
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "column",
+          "name": "Column",
+          "url": "https://column.com/",
           "name_match": true
         }
       ]
@@ -2457,6 +2474,23 @@
         }
       ]
     },
+    "hume.ai": {
+      "catalog": [
+        {
+          "name": "Hume AI",
+          "domain": "hume.ai",
+          "id": 793
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hume",
+          "name": "Hume AI",
+          "url": "https://www.hume.ai",
+          "name_match": true
+        }
+      ]
+    },
     "ifttt.com": {
       "catalog": [
         {
@@ -2470,6 +2504,74 @@
           "slug": "ifttt",
           "name": "IFTTT",
           "url": "https://ifttt.com",
+          "name_match": true
+        }
+      ]
+    },
+    "jace.ai": {
+      "catalog": [
+        {
+          "name": "Jace AI",
+          "domain": "jace.ai",
+          "id": 838
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "jace",
+          "name": "Jace AI",
+          "url": "https://jace.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "jasper.ai": {
+      "catalog": [
+        {
+          "name": "Jasper AI",
+          "domain": "jasper.ai",
+          "id": 265
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "jasper",
+          "name": "Jasper AI",
+          "url": "https://www.jasper.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "jetbrains.com": {
+      "catalog": [
+        {
+          "name": "JetBrains",
+          "domain": "jetbrains.com",
+          "id": 28
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "jetbrains",
+          "name": "JetBrains",
+          "url": "https://www.jetbrains.com",
+          "name_match": true
+        }
+      ]
+    },
+    "jitter.video": {
+      "catalog": [
+        {
+          "name": "Jitter",
+          "domain": "jitter.video",
+          "id": 318
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "jitter",
+          "name": "Jitter",
+          "url": "https://jitter.video",
           "name_match": true
         }
       ]
@@ -2488,6 +2590,227 @@
           "name": "Handshake",
           "url": "https://joinhandshake.com",
           "name_match": false
+        }
+      ]
+    },
+    "kickstarter.com": {
+      "catalog": [
+        {
+          "name": "Kickstarter",
+          "domain": "kickstarter.com",
+          "id": 182
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kickstarter",
+          "name": "Kickstarter",
+          "url": "https://www.kickstarter.com",
+          "name_match": true
+        }
+      ]
+    },
+    "kinhive.com": {
+      "catalog": [
+        {
+          "name": "Kinhive",
+          "domain": "kinhive.com",
+          "id": 691
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kinhive",
+          "name": "Kinhive",
+          "url": "https://kinhive.com",
+          "name_match": true
+        }
+      ]
+    },
+    "kit.com": {
+      "catalog": [
+        {
+          "name": "Kit",
+          "domain": "kit.com",
+          "id": 558
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kit",
+          "name": "Kit",
+          "url": "https://kit.com",
+          "name_match": true
+        }
+      ]
+    },
+    "kitchen.co": {
+      "catalog": [
+        {
+          "name": "Kitchen.co",
+          "domain": "kitchen.co",
+          "id": 457
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kitchen",
+          "name": "Kitchen.co",
+          "url": "https://kitchen.co",
+          "name_match": true
+        }
+      ]
+    },
+    "kitchenstories.com": {
+      "catalog": [
+        {
+          "name": "Kitchen Stories",
+          "domain": "kitchenstories.com",
+          "id": 342
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kitchenstories",
+          "name": "Kitchen Stories",
+          "url": "https://www.kitchenstories.com",
+          "name_match": false
+        }
+      ]
+    },
+    "klarna.com": {
+      "catalog": [
+        {
+          "name": "Klarna",
+          "domain": "klarna.com",
+          "id": 272
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "klarna",
+          "name": "Klarna",
+          "url": "https://www.klarna.com/us/",
+          "name_match": true
+        }
+      ]
+    },
+    "kraken.com": {
+      "catalog": [
+        {
+          "name": "Kraken",
+          "domain": "kraken.com",
+          "id": 161
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kraken",
+          "name": "Kraken",
+          "url": "https://www.kraken.com",
+          "name_match": true
+        }
+      ]
+    },
+    "krea.ai": {
+      "catalog": [
+        {
+          "name": "Krea.ai",
+          "domain": "krea.ai",
+          "id": 495
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "krea",
+          "name": "Krea",
+          "url": "https://www.krea.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "krisp.ai": {
+      "catalog": [
+        {
+          "name": "Krisp",
+          "domain": "krisp.ai",
+          "id": 461
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "krisp",
+          "name": "Krisp",
+          "url": "https://krisp.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "lego.com": {
+      "catalog": [
+        {
+          "name": "LEGO",
+          "domain": "lego.com",
+          "id": 249
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lego",
+          "name": "LEGO",
+          "url": "https://www.lego.com/en-us",
+          "name_match": true
+        }
+      ]
+    },
+    "lemni.com": {
+      "catalog": [
+        {
+          "name": "Lemni",
+          "domain": "lemni.com",
+          "id": 608
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lemni",
+          "name": "Lemni",
+          "url": "https://www.lemni.com",
+          "name_match": true
+        }
+      ]
+    },
+    "lemonsqueezy.com": {
+      "catalog": [
+        {
+          "name": "Lemon Squeezy",
+          "domain": "lemonsqueezy.com",
+          "id": 321
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lemonsqueezy",
+          "name": "Lemon Squeezy",
+          "url": "https://www.lemonsqueezy.com",
+          "name_match": false
+        }
+      ]
+    },
+    "limitless.ai": {
+      "catalog": [
+        {
+          "name": "Limitless",
+          "domain": "limitless.ai",
+          "id": 551
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "limitless",
+          "name": "Limitless",
+          "url": "https://www.limitless.ai",
+          "name_match": true
         }
       ]
     },
@@ -2610,6 +2933,23 @@
         }
       ]
     },
+    "withjulienne.com": {
+      "catalog": [
+        {
+          "name": "Julienne",
+          "domain": "withjulienne.com",
+          "id": 531
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "julienne",
+          "name": "Julienne",
+          "url": "https://withjulienne.com",
+          "name_match": true
+        }
+      ]
+    },
     "youtube.com": {
       "catalog": [
         {
@@ -2660,13 +3000,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "column.com": [
-      {
-        "name": "Column",
-        "domain": "column.com",
-        "id": 509
       }
     ],
     "contra.com": [
@@ -2802,13 +3135,6 @@
         "id": 901
       }
     ],
-    "hume.ai": [
-      {
-        "name": "Hume AI",
-        "domain": "hume.ai",
-        "id": 793
-      }
-    ],
     "ikea.com": [
       {
         "name": "IKEA",
@@ -2844,130 +3170,11 @@
         "id": 319
       }
     ],
-    "jace.ai": [
-      {
-        "name": "Jace AI",
-        "domain": "jace.ai",
-        "id": 838
-      }
-    ],
-    "jasper.ai": [
-      {
-        "name": "Jasper AI",
-        "domain": "jasper.ai",
-        "id": 265
-      }
-    ],
-    "jetbrains.com": [
-      {
-        "name": "JetBrains",
-        "domain": "jetbrains.com",
-        "id": 28
-      }
-    ],
-    "jitter.video": [
-      {
-        "name": "Jitter",
-        "domain": "jitter.video",
-        "id": 318
-      }
-    ],
-    "kickstarter.com": [
-      {
-        "name": "Kickstarter",
-        "domain": "kickstarter.com",
-        "id": 182
-      }
-    ],
-    "kinhive.com": [
-      {
-        "name": "Kinhive",
-        "domain": "kinhive.com",
-        "id": 691
-      }
-    ],
-    "kit.com": [
-      {
-        "name": "Kit",
-        "domain": "kit.com",
-        "id": 558
-      }
-    ],
-    "kitchen.co": [
-      {
-        "name": "Kitchen.co",
-        "domain": "kitchen.co",
-        "id": 457
-      }
-    ],
-    "kitchenstories.com": [
-      {
-        "name": "Kitchen Stories",
-        "domain": "kitchenstories.com",
-        "id": 342
-      }
-    ],
-    "klarna.com": [
-      {
-        "name": "Klarna",
-        "domain": "klarna.com",
-        "id": 272
-      }
-    ],
-    "kraken.com": [
-      {
-        "name": "Kraken",
-        "domain": "kraken.com",
-        "id": 161
-      }
-    ],
-    "krea.ai": [
-      {
-        "name": "Krea.ai",
-        "domain": "krea.ai",
-        "id": 495
-      }
-    ],
-    "krisp.ai": [
-      {
-        "name": "Krisp",
-        "domain": "krisp.ai",
-        "id": 461
-      }
-    ],
-    "lego.com": [
-      {
-        "name": "LEGO",
-        "domain": "lego.com",
-        "id": 249
-      }
-    ],
-    "lemni.com": [
-      {
-        "name": "Lemni",
-        "domain": "lemni.com",
-        "id": 608
-      }
-    ],
-    "lemonsqueezy.com": [
-      {
-        "name": "Lemon Squeezy",
-        "domain": "lemonsqueezy.com",
-        "id": 321
-      }
-    ],
     "leonardo.ai": [
       {
         "name": "Leonardo.Ai",
         "domain": "leonardo.ai",
         "id": 922
-      }
-    ],
-    "limitless.ai": [
-      {
-        "name": "Limitless",
-        "domain": "limitless.ai",
-        "id": 551
       }
     ],
     "linkedin.com": [
@@ -4501,13 +4708,6 @@
         "id": 313
       }
     ],
-    "withjulienne.com": [
-      {
-        "name": "Julienne",
-        "domain": "withjulienne.com",
-        "id": 531
-      }
-    ],
     "wittl.co": [
       {
         "name": "Wittl",
@@ -4864,6 +5064,14 @@
     ],
     "x.ai": [
       {
+        "slug": "grok",
+        "name": "Grok / xAI Docs",
+        "url": "https://docs.x.ai",
+        "ios_guess": [
+          "Grok"
+        ]
+      },
+      {
         "slug": "grokbot",
         "name": "Grok Bot",
         "url": "https://x.ai/bot",
@@ -4874,14 +5082,6 @@
         "name": "Grok Bot (desktop)",
         "url": "https://x.ai/bot",
         "ios_guess": []
-      },
-      {
-        "slug": "grok",
-        "name": "Grok / xAI Docs",
-        "url": "https://docs.x.ai",
-        "ios_guess": [
-          "Grok"
-        ]
       }
     ],
     "zed.dev": [

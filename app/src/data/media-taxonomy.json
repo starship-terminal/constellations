@@ -668,6 +668,16 @@
       "assignedMedia": 35
     },
     {
+      "referenceId": "systems:buymeacoffee",
+      "media": 177,
+      "assignedMedia": 39
+    },
+    {
+      "referenceId": "systems:byborre",
+      "media": 166,
+      "assignedMedia": 166
+    },
+    {
       "referenceId": "systems:cakeequity",
       "media": 118,
       "assignedMedia": 118
@@ -678,14 +688,34 @@
       "assignedMedia": 168
     },
     {
+      "referenceId": "systems:calendly",
+      "media": 142,
+      "assignedMedia": 142
+    },
+    {
       "referenceId": "systems:calm",
       "media": 156,
       "assignedMedia": 51
     },
     {
+      "referenceId": "systems:canva",
+      "media": 133,
+      "assignedMedia": 61
+    },
+    {
       "referenceId": "systems:capy-desktop",
       "media": 818,
       "assignedMedia": 818
+    },
+    {
+      "referenceId": "systems:care",
+      "media": 185,
+      "assignedMedia": 64
+    },
+    {
+      "referenceId": "systems:cartesia",
+      "media": 215,
+      "assignedMedia": 49
     },
     {
       "referenceId": "systems:chargetrip",
@@ -718,24 +748,24 @@
       "assignedMedia": 71
     },
     {
-      "referenceId": "systems:clearful",
-      "media": 95,
-      "assignedMedia": 95
-    },
-    {
       "referenceId": "systems:clay-earth",
       "media": 127,
       "assignedMedia": 36
     },
     {
-      "referenceId": "systems:clipchamp",
-      "media": 119,
-      "assignedMedia": 119
+      "referenceId": "systems:clearful",
+      "media": 95,
+      "assignedMedia": 95
     },
     {
       "referenceId": "systems:clerk",
       "media": 77,
       "assignedMedia": 25
+    },
+    {
+      "referenceId": "systems:clipchamp",
+      "media": 119,
+      "assignedMedia": 119
     },
     {
       "referenceId": "systems:cloudflare",
@@ -763,14 +793,54 @@
       "assignedMedia": 26
     },
     {
+      "referenceId": "systems:column",
+      "media": 90,
+      "assignedMedia": 90
+    },
+    {
       "referenceId": "systems:conductor-desktop",
       "media": 569,
       "assignedMedia": 342
     },
     {
+      "referenceId": "systems:copy",
+      "media": 145,
+      "assignedMedia": 145
+    },
+    {
+      "referenceId": "systems:cosmos",
+      "media": 114,
+      "assignedMedia": 48
+    },
+    {
       "referenceId": "systems:coursera",
       "media": 891,
       "assignedMedia": 891
+    },
+    {
+      "referenceId": "systems:craft",
+      "media": 90,
+      "assignedMedia": 39
+    },
+    {
+      "referenceId": "systems:craftwork",
+      "media": 110,
+      "assignedMedia": 50
+    },
+    {
+      "referenceId": "systems:creativemarket",
+      "media": 140,
+      "assignedMedia": 140
+    },
+    {
+      "referenceId": "systems:cron",
+      "media": 73,
+      "assignedMedia": 73
+    },
+    {
+      "referenceId": "systems:curater",
+      "media": 125,
+      "assignedMedia": 37
     },
     {
       "referenceId": "systems:cursor-desktop",
@@ -783,9 +853,54 @@
       "assignedMedia": 68
     },
     {
+      "referenceId": "systems:cushion",
+      "media": 93,
+      "assignedMedia": 16
+    },
+    {
+      "referenceId": "systems:dailyartmagazine",
+      "media": 168,
+      "assignedMedia": 61
+    },
+    {
+      "referenceId": "systems:deel",
+      "media": 98,
+      "assignedMedia": 98
+    },
+    {
+      "referenceId": "systems:deezer",
+      "media": 221,
+      "assignedMedia": 221
+    },
+    {
+      "referenceId": "systems:delphi",
+      "media": 132,
+      "assignedMedia": 57
+    },
+    {
+      "referenceId": "systems:descript",
+      "media": 125,
+      "assignedMedia": 35
+    },
+    {
+      "referenceId": "systems:designmodo",
+      "media": 150,
+      "assignedMedia": 61
+    },
+    {
+      "referenceId": "systems:designstripe",
+      "media": 86,
+      "assignedMedia": 22
+    },
+    {
       "referenceId": "systems:devin-desktop",
       "media": 577,
       "assignedMedia": 577
+    },
+    {
+      "referenceId": "systems:digg",
+      "media": 149,
+      "assignedMedia": 29
     },
     {
       "referenceId": "systems:discord",
@@ -808,9 +923,259 @@
       "assignedMedia": 143
     },
     {
+      "referenceId": "systems:doctronic",
+      "media": 258,
+      "assignedMedia": 143
+    },
+    {
+      "referenceId": "systems:docusign",
+      "media": 236,
+      "assignedMedia": 79
+    },
+    {
+      "referenceId": "systems:dona",
+      "media": 98,
+      "assignedMedia": 98
+    },
+    {
+      "referenceId": "systems:doordash",
+      "media": 200,
+      "assignedMedia": 58
+    },
+    {
+      "referenceId": "systems:dopper",
+      "media": 147,
+      "assignedMedia": 64
+    },
+    {
+      "referenceId": "systems:doppler",
+      "media": 161,
+      "assignedMedia": 161
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "media": 271,
+      "assignedMedia": 128
+    },
+    {
+      "referenceId": "systems:drinkdouze",
+      "media": 175,
+      "assignedMedia": 69
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "media": 166,
+      "assignedMedia": 166
+    },
+    {
+      "referenceId": "systems:dub",
+      "media": 199,
+      "assignedMedia": 199
+    },
+    {
       "referenceId": "systems:duolingo",
       "media": 446,
       "assignedMedia": 272
+    },
+    {
+      "referenceId": "systems:editorx",
+      "media": 141,
+      "assignedMedia": 47
+    },
+    {
+      "referenceId": "systems:elektron",
+      "media": 136,
+      "assignedMedia": 54
+    },
+    {
+      "referenceId": "systems:elementor",
+      "media": 125,
+      "assignedMedia": 125
+    },
+    {
+      "referenceId": "systems:elevenlabs",
+      "media": 204,
+      "assignedMedia": 204
+    },
+    {
+      "referenceId": "systems:elevenmusic",
+      "media": 340,
+      "assignedMedia": 340
+    },
+    {
+      "referenceId": "systems:elevenreader",
+      "media": 222,
+      "assignedMedia": 222
+    },
+    {
+      "referenceId": "systems:endel",
+      "media": 188,
+      "assignedMedia": 60
+    },
+    {
+      "referenceId": "systems:endless",
+      "media": 239,
+      "assignedMedia": 67
+    },
+    {
+      "referenceId": "systems:endlesstools",
+      "media": 128,
+      "assignedMedia": 128
+    },
+    {
+      "referenceId": "systems:enode",
+      "media": 153,
+      "assignedMedia": 22
+    },
+    {
+      "referenceId": "systems:epicgames",
+      "media": 221,
+      "assignedMedia": 221
+    },
+    {
+      "referenceId": "systems:epidemicsound",
+      "media": 171,
+      "assignedMedia": 171
+    },
+    {
+      "referenceId": "systems:equals",
+      "media": 180,
+      "assignedMedia": 40
+    },
+    {
+      "referenceId": "systems:esquire",
+      "media": 187,
+      "assignedMedia": 63
+    },
+    {
+      "referenceId": "systems:exa",
+      "media": 196,
+      "assignedMedia": 196
+    },
+    {
+      "referenceId": "systems:exactly",
+      "media": 157,
+      "assignedMedia": 157
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "media": 189,
+      "assignedMedia": 13
+    },
+    {
+      "referenceId": "systems:expedia",
+      "media": 131,
+      "assignedMedia": 84
+    },
+    {
+      "referenceId": "systems:explore",
+      "media": 137,
+      "assignedMedia": 28
+    },
+    {
+      "referenceId": "systems:fable",
+      "media": 249,
+      "assignedMedia": 249
+    },
+    {
+      "referenceId": "systems:factory",
+      "media": 223,
+      "assignedMedia": 34
+    },
+    {
+      "referenceId": "systems:faire",
+      "media": 303,
+      "assignedMedia": 70
+    },
+    {
+      "referenceId": "systems:fal",
+      "media": 228,
+      "assignedMedia": 62
+    },
+    {
+      "referenceId": "systems:family",
+      "media": 169,
+      "assignedMedia": 169
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "media": 164,
+      "assignedMedia": 69
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "media": 165,
+      "assignedMedia": 165
+    },
+    {
+      "referenceId": "systems:fibery",
+      "media": 153,
+      "assignedMedia": 32
+    },
+    {
+      "referenceId": "systems:figma",
+      "media": 229,
+      "assignedMedia": 44
+    },
+    {
+      "referenceId": "systems:fingerprint",
+      "media": 248,
+      "assignedMedia": 52
+    },
+    {
+      "referenceId": "systems:fiverr",
+      "media": 187,
+      "assignedMedia": 65
+    },
+    {
+      "referenceId": "systems:flask",
+      "media": 161,
+      "assignedMedia": 46
+    },
+    {
+      "referenceId": "systems:flowmapp",
+      "media": 237,
+      "assignedMedia": 237
+    },
+    {
+      "referenceId": "systems:flutterflow",
+      "media": 213,
+      "assignedMedia": 213
+    },
+    {
+      "referenceId": "systems:foodnoms",
+      "media": 204,
+      "assignedMedia": 69
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "media": 202,
+      "assignedMedia": 47
+    },
+    {
+      "referenceId": "systems:fourthwall",
+      "media": 264,
+      "assignedMedia": 97
+    },
+    {
+      "referenceId": "systems:frame",
+      "media": 177,
+      "assignedMedia": 177
+    },
+    {
+      "referenceId": "systems:framer",
+      "media": 153,
+      "assignedMedia": 40
+    },
+    {
+      "referenceId": "systems:fresha",
+      "media": 222,
+      "assignedMedia": 222
+    },
+    {
+      "referenceId": "systems:front",
+      "media": 247,
+      "assignedMedia": 51
     },
     {
       "referenceId": "systems:gauth",
@@ -823,14 +1188,39 @@
       "assignedMedia": 91
     },
     {
+      "referenceId": "systems:getfernand",
+      "media": 226,
+      "assignedMedia": 226
+    },
+    {
       "referenceId": "systems:github-ios",
       "media": 122,
       "assignedMedia": 98
     },
     {
+      "referenceId": "systems:gladia",
+      "media": 201,
+      "assignedMedia": 32
+    },
+    {
+      "referenceId": "systems:glassnode",
+      "media": 230,
+      "assignedMedia": 45
+    },
+    {
+      "referenceId": "systems:glorify",
+      "media": 269,
+      "assignedMedia": 269
+    },
+    {
       "referenceId": "systems:glossgenius",
       "media": 248,
       "assignedMedia": 33
+    },
+    {
+      "referenceId": "systems:gofundme",
+      "media": 194,
+      "assignedMedia": 63
     },
     {
       "referenceId": "systems:grab",
@@ -843,6 +1233,11 @@
       "assignedMedia": 193
     },
     {
+      "referenceId": "systems:grok",
+      "media": 124,
+      "assignedMedia": 47
+    },
+    {
       "referenceId": "systems:grokbot",
       "media": 140,
       "assignedMedia": 78
@@ -853,14 +1248,69 @@
       "assignedMedia": 290
     },
     {
+      "referenceId": "systems:grow",
+      "media": 144,
+      "assignedMedia": 46
+    },
+    {
+      "referenceId": "systems:gumroad",
+      "media": 155,
+      "assignedMedia": 56
+    },
+    {
+      "referenceId": "systems:hashnode",
+      "media": 203,
+      "assignedMedia": 203
+    },
+    {
       "referenceId": "systems:hbomax",
       "media": 88,
       "assignedMedia": 21
     },
     {
+      "referenceId": "systems:headspace",
+      "media": 128,
+      "assignedMedia": 30
+    },
+    {
+      "referenceId": "systems:helloivy",
+      "media": 121,
+      "assignedMedia": 121
+    },
+    {
       "referenceId": "systems:hevy",
       "media": 200,
       "assignedMedia": 84
+    },
+    {
+      "referenceId": "systems:hitchd",
+      "media": 45,
+      "assignedMedia": 16
+    },
+    {
+      "referenceId": "systems:homerun",
+      "media": 211,
+      "assignedMedia": 211
+    },
+    {
+      "referenceId": "systems:httpie",
+      "media": 155,
+      "assignedMedia": 64
+    },
+    {
+      "referenceId": "systems:hume",
+      "media": 167,
+      "assignedMedia": 167
+    },
+    {
+      "referenceId": "systems:ifttt",
+      "media": 148,
+      "assignedMedia": 51
+    },
+    {
+      "referenceId": "systems:joinhandshake",
+      "media": 185,
+      "assignedMedia": 73
     },
     {
       "referenceId": "systems:linear",
@@ -981,446 +1431,6 @@
       "referenceId": "systems:zed-desktop",
       "media": 244,
       "assignedMedia": 244
-    },
-    {
-      "referenceId": "systems:buymeacoffee",
-      "media": 177,
-      "assignedMedia": 39
-    },
-    {
-      "referenceId": "systems:byborre",
-      "media": 166,
-      "assignedMedia": 166
-    },
-    {
-      "referenceId": "systems:calendly",
-      "media": 142,
-      "assignedMedia": 142
-    },
-    {
-      "referenceId": "systems:canva",
-      "media": 133,
-      "assignedMedia": 61
-    },
-    {
-      "referenceId": "systems:doordash",
-      "media": 200,
-      "assignedMedia": 58
-    },
-    {
-      "referenceId": "systems:dona",
-      "media": 98,
-      "assignedMedia": 98
-    },
-    {
-      "referenceId": "systems:drinkdouze",
-      "media": 175,
-      "assignedMedia": 69
-    },
-    {
-      "referenceId": "systems:doctronic",
-      "media": 258,
-      "assignedMedia": 143
-    },
-    {
-      "referenceId": "systems:docusign",
-      "media": 236,
-      "assignedMedia": 79
-    },
-    {
-      "referenceId": "systems:doppler",
-      "media": 161,
-      "assignedMedia": 161
-    },
-    {
-      "referenceId": "systems:dropbox",
-      "media": 166,
-      "assignedMedia": 166
-    },
-    {
-      "referenceId": "systems:dailyartmagazine",
-      "media": 168,
-      "assignedMedia": 61
-    },
-    {
-      "referenceId": "systems:deel",
-      "media": 98,
-      "assignedMedia": 98
-    },
-    {
-      "referenceId": "systems:care",
-      "media": 185,
-      "assignedMedia": 64
-    },
-    {
-      "referenceId": "systems:cartesia",
-      "media": 215,
-      "assignedMedia": 49
-    },
-    {
-      "referenceId": "systems:copy",
-      "media": 145,
-      "assignedMedia": 145
-    },
-    {
-      "referenceId": "systems:dopper",
-      "media": 147,
-      "assignedMedia": 64
-    },
-    {
-      "referenceId": "systems:cosmos",
-      "media": 114,
-      "assignedMedia": 48
-    },
-    {
-      "referenceId": "systems:craft",
-      "media": 90,
-      "assignedMedia": 39
-    },
-    {
-      "referenceId": "systems:craftwork",
-      "media": 110,
-      "assignedMedia": 50
-    },
-    {
-      "referenceId": "systems:creativemarket",
-      "media": 140,
-      "assignedMedia": 140
-    },
-    {
-      "referenceId": "systems:cron",
-      "media": 73,
-      "assignedMedia": 73
-    },
-    {
-      "referenceId": "systems:dribbble",
-      "media": 271,
-      "assignedMedia": 128
-    },
-    {
-      "referenceId": "systems:curater",
-      "media": 125,
-      "assignedMedia": 37
-    },
-    {
-      "referenceId": "systems:cushion",
-      "media": 93,
-      "assignedMedia": 16
-    },
-    {
-      "referenceId": "systems:dub",
-      "media": 199,
-      "assignedMedia": 199
-    },
-    {
-      "referenceId": "systems:elevenlabs",
-      "media": 204,
-      "assignedMedia": 204
-    },
-    {
-      "referenceId": "systems:elektron",
-      "media": 136,
-      "assignedMedia": 54
-    },
-    {
-      "referenceId": "systems:elementor",
-      "media": 125,
-      "assignedMedia": 125
-    },
-    {
-      "referenceId": "systems:endel",
-      "media": 188,
-      "assignedMedia": 60
-    },
-    {
-      "referenceId": "systems:editorx",
-      "media": 141,
-      "assignedMedia": 47
-    },
-    {
-      "referenceId": "systems:endlesstools",
-      "media": 128,
-      "assignedMedia": 128
-    },
-    {
-      "referenceId": "systems:elevenreader",
-      "media": 222,
-      "assignedMedia": 222
-    },
-    {
-      "referenceId": "systems:endless",
-      "media": 239,
-      "assignedMedia": 67
-    },
-    {
-      "referenceId": "systems:elevenmusic",
-      "media": 340,
-      "assignedMedia": 340
-    },
-    {
-      "referenceId": "systems:deezer",
-      "media": 221,
-      "assignedMedia": 221
-    },
-    {
-      "referenceId": "systems:epidemicsound",
-      "media": 171,
-      "assignedMedia": 171
-    },
-    {
-      "referenceId": "systems:enode",
-      "media": 153,
-      "assignedMedia": 22
-    },
-    {
-      "referenceId": "systems:delphi",
-      "media": 132,
-      "assignedMedia": 57
-    },
-    {
-      "referenceId": "systems:esquire",
-      "media": 187,
-      "assignedMedia": 63
-    },
-    {
-      "referenceId": "systems:descript",
-      "media": 125,
-      "assignedMedia": 35
-    },
-    {
-      "referenceId": "systems:exa",
-      "media": 196,
-      "assignedMedia": 196
-    },
-    {
-      "referenceId": "systems:exactly",
-      "media": 157,
-      "assignedMedia": 157
-    },
-    {
-      "referenceId": "systems:equals",
-      "media": 180,
-      "assignedMedia": 40
-    },
-    {
-      "referenceId": "systems:epicgames",
-      "media": 221,
-      "assignedMedia": 221
-    },
-    {
-      "referenceId": "systems:excalidraw",
-      "media": 189,
-      "assignedMedia": 13
-    },
-    {
-      "referenceId": "systems:expedia",
-      "media": 131,
-      "assignedMedia": 84
-    },
-    {
-      "referenceId": "systems:fable",
-      "media": 249,
-      "assignedMedia": 249
-    },
-    {
-      "referenceId": "systems:faire",
-      "media": 303,
-      "assignedMedia": 70
-    },
-    {
-      "referenceId": "systems:explore",
-      "media": 137,
-      "assignedMedia": 28
-    },
-    {
-      "referenceId": "systems:factory",
-      "media": 223,
-      "assignedMedia": 34
-    },
-    {
-      "referenceId": "systems:designstripe",
-      "media": 86,
-      "assignedMedia": 22
-    },
-    {
-      "referenceId": "systems:family",
-      "media": 169,
-      "assignedMedia": 169
-    },
-    {
-      "referenceId": "systems:fibery",
-      "media": 153,
-      "assignedMedia": 32
-    },
-    {
-      "referenceId": "systems:fal",
-      "media": 228,
-      "assignedMedia": 62
-    },
-    {
-      "referenceId": "systems:designmodo",
-      "media": 150,
-      "assignedMedia": 61
-    },
-    {
-      "referenceId": "systems:farfetch",
-      "media": 164,
-      "assignedMedia": 69
-    },
-    {
-      "referenceId": "systems:feedhive",
-      "media": 165,
-      "assignedMedia": 165
-    },
-    {
-      "referenceId": "systems:digg",
-      "media": 149,
-      "assignedMedia": 29
-    },
-    {
-      "referenceId": "systems:getfernand",
-      "media": 226,
-      "assignedMedia": 226
-    },
-    {
-      "referenceId": "systems:figma",
-      "media": 229,
-      "assignedMedia": 44
-    },
-    {
-      "referenceId": "systems:fingerprint",
-      "media": 248,
-      "assignedMedia": 52
-    },
-    {
-      "referenceId": "systems:flowmapp",
-      "media": 237,
-      "assignedMedia": 237
-    },
-    {
-      "referenceId": "systems:flask",
-      "media": 161,
-      "assignedMedia": 46
-    },
-    {
-      "referenceId": "systems:fiverr",
-      "media": 187,
-      "assignedMedia": 65
-    },
-    {
-      "referenceId": "systems:flutterflow",
-      "media": 213,
-      "assignedMedia": 213
-    },
-    {
-      "referenceId": "systems:foodnoms",
-      "media": 204,
-      "assignedMedia": 69
-    },
-    {
-      "referenceId": "systems:fourmula",
-      "media": 202,
-      "assignedMedia": 47
-    },
-    {
-      "referenceId": "systems:fourthwall",
-      "media": 264,
-      "assignedMedia": 97
-    },
-    {
-      "referenceId": "systems:framer",
-      "media": 153,
-      "assignedMedia": 40
-    },
-    {
-      "referenceId": "systems:fresha",
-      "media": 222,
-      "assignedMedia": 222
-    },
-    {
-      "referenceId": "systems:gladia",
-      "media": 201,
-      "assignedMedia": 32
-    },
-    {
-      "referenceId": "systems:frame",
-      "media": 177,
-      "assignedMedia": 177
-    },
-    {
-      "referenceId": "systems:glassnode",
-      "media": 230,
-      "assignedMedia": 45
-    },
-    {
-      "referenceId": "systems:grok",
-      "media": 124,
-      "assignedMedia": 47
-    },
-    {
-      "referenceId": "systems:front",
-      "media": 247,
-      "assignedMedia": 51
-    },
-    {
-      "referenceId": "systems:gofundme",
-      "media": 194,
-      "assignedMedia": 63
-    },
-    {
-      "referenceId": "systems:glorify",
-      "media": 269,
-      "assignedMedia": 269
-    },
-    {
-      "referenceId": "systems:grow",
-      "media": 144,
-      "assignedMedia": 46
-    },
-    {
-      "referenceId": "systems:hashnode",
-      "media": 203,
-      "assignedMedia": 203
-    },
-    {
-      "referenceId": "systems:gumroad",
-      "media": 155,
-      "assignedMedia": 56
-    },
-    {
-      "referenceId": "systems:joinhandshake",
-      "media": 185,
-      "assignedMedia": 73
-    },
-    {
-      "referenceId": "systems:helloivy",
-      "media": 121,
-      "assignedMedia": 121
-    },
-    {
-      "referenceId": "systems:hitchd",
-      "media": 45,
-      "assignedMedia": 16
-    },
-    {
-      "referenceId": "systems:headspace",
-      "media": 128,
-      "assignedMedia": 30
-    },
-    {
-      "referenceId": "systems:homerun",
-      "media": 211,
-      "assignedMedia": 211
-    },
-    {
-      "referenceId": "systems:httpie",
-      "media": 155,
-      "assignedMedia": 64
-    },
-    {
-      "referenceId": "systems:ifttt",
-      "media": 148,
-      "assignedMedia": 51
     }
   ],
   "assignments": [
@@ -78927,6 +78937,1066 @@
           "termId": "web-ux-patterns:filter-sorting",
           "rule": "ux-filter-sort",
           "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/ach-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/ach-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/bankaccounts-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/bankaccounts-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/booktransfers-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/booktransfers-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/cardprograms-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/cardprograms-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/careers-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/careers-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/checks-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/checks-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/company-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/company-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/contact-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/globalbanking-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/globalbanking-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/intlwires-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/intlwires-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/loanorig-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/loanorig-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/mobile-ach-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/mobile-ach-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/mobile-blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/mobile-blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/mobile-cardprograms-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/mobile-cardprograms-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/mobile-home-light-menu-open.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/multicurrency-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/multicurrency-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/privacy-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/privacy-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/realtime-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/realtime-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/security-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/security-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/signin-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/stablecoins-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/stablecoins-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/wire-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/screenshots/wire-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/cards-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/cards-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/cards-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/cards-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/cards-title-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/dark-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/m-menu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/m-menu-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/m-menu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/m-menu-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/m-menu-open-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-ghost-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-ghost-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-ghost-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-ghost-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/nav-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/product-screen-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/section-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/signin-passkey-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/signin-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/signin-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/signin-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:column",
+      "mediaId": "systems/column/components/crops/stat-figure-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/column/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },
@@ -320329,6 +321399,2128 @@
           "termId": "web-ui-elements:switch-toggle",
           "rule": "ui-toggle",
           "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/benchmark-light-category-tab.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/benchmark-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/benchmark-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/blog-light-category-filter.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/blog-post-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/blog-post-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/careers-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/careers-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/contact-form-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/contact-form-light-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/contact-form-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/decision-model-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/decision-model-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/demo-gate-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/demo-gate-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/deploy-agents-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/deploy-agents-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/develop-models-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/develop-models-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-changelog-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-changelog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-changelog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-overview-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-overview-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-overview-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-quickstart-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-quickstart-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-quickstart-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-reference-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-reference-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-reference-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/docs-reference-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/emotion-science-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/emotion-science-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/explore-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/explore-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/expression-apis-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/expression-apis-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/home-light-benchmark-tab.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/home-light-playing.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/human-feedback-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/human-feedback-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/login-light-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/login-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-benchmark-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-benchmark-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-contact-form-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-contact-form-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-demo-gate-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-docs-overview-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-docs-overview-light-drawer.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-docs-overview-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-home-light-drawer.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/mobile-login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/notfound-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/notfound-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/prism-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/prism-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/privacy-policy-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:privacy-policy",
+          "rule": "page-privacy",
+          "reason": "Capture filename explicitly names privacy policy; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/privacy-policy-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:privacy-policy",
+          "rule": "page-privacy",
+          "reason": "Capture filename explicitly names privacy policy; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/publications-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/publications-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/speech-data-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/speech-data-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/terms-of-use-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/terms-of-use-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/user-testing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/user-testing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/voiceeq-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/screenshots/voiceeq-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/benchmark-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/benchmark-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/benchmark-tab-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/blog-filter-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/blog-filter-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/blog-filter-selected.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/contact-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/contact-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/contact-select-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/contact-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/contact-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/contact-textarea-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/contact-textarea-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/demo-gate-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/demo-gate-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/demo-gate-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-code-block-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:code-snippet",
+          "rule": "ui-code",
+          "reason": "Capture filename explicitly names code snippet; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-code-block-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:code-snippet",
+          "rule": "ui-code",
+          "reason": "Capture filename explicitly names code snippet; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-inline-code-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-lang-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-lang-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-lang-tab-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-nav-dark.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-nav-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-search-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-search-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-side-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-side-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-theme-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-theme-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-theme-button-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-toc-dark.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/docs-toc-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/hero-headline-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-email-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-email-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-oauth-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-oauth-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-password-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-password-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-show-password-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-show-password-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/login-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/m-menu-button-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/m-nav-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/nav-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/nav-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/nav-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/nav-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/nav-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/nav-menu-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/nav-menu-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/newsletter-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/newsletter-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/newsletter-input-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/newsletter-input-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/player-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/player-card-playing.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/player-transport-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/player-transport-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/post-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/post-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/post-title-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/post-title-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/product-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/product-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/product-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/product-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/product-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/prose-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/prose-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/prose-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/prose-p-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/prose-table-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/scenario-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/scenario-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/section-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/site-footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/site-nav-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/social-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:hume",
+      "mediaId": "systems/hume/components/crops/social-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/hume/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
         }
       ]
     },

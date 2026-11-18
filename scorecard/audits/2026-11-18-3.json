@@ -1,7 +1,7 @@
 {
  "date": "2026-11-18",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Devin agent review of the ifttt capture against the web wording: per-criterion grades read from tokens.json, components-computed.json, measurements.md, layout.json, motion.json and the shot/crop evidence",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Signed-in pass on 2026-11-18: business-intent submitted, closed-signup SMP page captured, failed merchant login error measured. Dashboard not reached because new store signups are closed. Get started not followed.",
  "systems": [
   {
    "slug": "1password",
@@ -23303,103 +23303,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "ifttt",
+   "slug": "lemonsqueezy",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "The product ships no hue ramps: core.palette.* is a flat harvest of 56 literal hex/rgba() declarations keyed by value (the near-black #111111 action fills, the rgba(17,17,17,x) ink transparencies, the rgba(255,255,255,x) on-dark ink, the #0dd14e SAVE green, the #0099ff/#0089da link blues, the #ff5e19 brand orange), not steps per hue. Honest literals; no ramp organisation exists to tokenise."
+     "evidence": "The Webflow :root ramps are tokenised under core.color: neutral 8 steps, purple 9, yellow 7, pink 9, green 8, blue 8, orange 8, red 6, plum 2. Several hues stop short of about 10 steps because the stylesheet does not declare them. Steps are the product's own names (50, 100, 500), not a filled 10-step scale."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "light.color.bg.page (white) plus component grounds: card.appletBg, the dark-painted section grounds under light.component.dark (ground/heroBg #111111) and the modal scrim measured on the share-modal entry. No raised/overlay/scrim role ladder exists in the layer."
+     "grade": "meets",
+     "evidence": "light.surface.page #ffffff, raised #f7f7f8 (--grey-50, docs row hover), hero and footer #5423e7 (--purple-600), banner #ffc233, overlay the same purple on the mobile menu. Scrim is derived from --black-2 at 40% and labelled as such; the opened menu paints purple, not a dimmed scrim."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "light.color.text has body, display, muted, link, onColorSubtle and footer roles read off the painted page, plus component.dark.chipInk/actionInk/linkInk on the dark sections. No dedicated disabled text role exists in the product's sheets."
+     "grade": "meets",
+     "evidence": "light.text.primary #121217 (--black-2), secondary #6c6c89 (--gray-500), muted rgba(255,255,255,.6) on nav links, on-accent and on-hero #ffffff, link #7047eb, disabled #a9a9bc (--gray-300, declared, not shown on a disabled control)."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "action.outline (the pill ring) and hairline borders are tokenised/measured per component; focus paints through the outline pill and a focus ring state is recorded on prompt/search fields in measurements. No default/strong/focus role set exists in the layer."
+     "grade": "meets",
+     "evidence": "light.border.default #d1d1db (--border-color), strong #3f3f50 (--grey-700), focus #7047eb. Auth fields paint the focus colour as a 2px box-shadow ring. Marketing links use the browser outline #005fcc, recorded in the measurements, not promoted to a token."
     },
     "F5": {
      "grade": "partly",
-     "evidence": "light.color.action carries fill, hoverFill, navFill, onFill, outline and outlineInk — default and hover measured on the black pill family; a pressed pseudo state is DevTools-forced in measurements (no distinct painted pressed colour exists to tokenise)."
+     "evidence": "Auth submit hover is measured: #7047eb to #7e59ed. Hero pill hover is measured: frosted white to #ffd266. Pressed was forced with CSS forcePseudoState and often matches hover, because the stylesheet has no separate :active fill. accent-pressed aliases --purple-700, which is declared and not painted by a pressed control."
     },
     "F6": {
-     "grade": "missing",
-     "evidence": "No status family exists signed out: the only status-ish colours are the #0dd14e SAVE-30% badge green and the #d0011b/#d4545c literal reds in the harvest — no success/warning/danger/info sets with fill/text/border variants to grade."
+     "grade": "partly",
+     "evidence": "Success, warning, danger and info fills are the declared 500 steps (green #2dca72, yellow #ffc233, red #f53d6b, blue #00acff). The failed sign-in paints danger as text only: rgb(245, 61, 107) = #f53d6b on a transparent fill. Companions 50/100/200 are declared and unused. No status fill, text and border together on one control."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "Single theme: $themes declares only light, the product paints one theme on every signed-out surface (no theme control exists anywhere), and the dark grounds are painted sections recorded under light.component.dark — not a second theme to mirror."
+     "evidence": "The product ships one light theme on the marketing site, the docs and the auth card. Every semantic role in the light set is that theme. --dark-mode-bg-lighter is declared and unused, so it is not a second theme."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "Museo Sans Rounded (300/500/700/900 + italics, proprietary, recorded by name with a rounded fallback stack) plus Menlo for code; 14 measured type composites cover hero, display, title, body, link, nav, button, price, tab, meta and footer roles. No 6-8-step named size scale exists as tokens — sizes live inside the composites."
+     "grade": "meets",
+     "evidence": "Three families with fallbacks (Circular Pro Book, Inter, JetBrains Mono). Eight type styles: display 80/80, heading 56/63.84, title 26/31.72, body 18/30.6, body-strong 15/24, label 14/22.4 medium, caption 14/22.4, code 14/22.4. Weights 400 and 500. The code style uses the declared mono family at the caption size; a code block was not the source of that size."
     },
     "F9": {
-     "grade": "missing",
-     "evidence": "No spacing scale is declared or tokenised: paddings/gaps appear only inline inside component measurements and raw/layout.json, with no base-unit ladder to publish."
+     "grade": "meets",
+     "evidence": "core.space is an 8-step scale on a 4px base: 4, 8, 12, 16, 20, 24, 32, 40. The steps are the paddings and control heights measured on the nav pill, auth field and docs row."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "Radii are tokenised per component (the 64px pill family on buttons, 47.97px connect toggle, 32px search field, 24px cards, 16px plan cards/share field, 8px tabs); border widths are measured per entry (2px action outlines, 1px hairlines). No named core.radius or border-width scale."
+     "grade": "meets",
+     "evidence": "core.radius.pill 40px (marketing pills), control and docs 8px (auth fields, submit, docs rows), none 0 (banner). core.stroke.hairline 1px and focus 2px from the auth field ring."
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "Control heights tokenised on core.component (buttons 54/79/101px per size, search 48px, gallery search 55px, prompt 78px, tabs 48px, switch 32x48px, connect toggle 95.94x480px, header 99px, mobile header 64px) plus icon sizes in measurements; the focus ring's width/offset is measured on focused states but not tokenised."
+     "grade": "meets",
+     "evidence": "Control heights: nav pill 40px, auth field 40px, auth submit 48px, orchid pill 46px, hamburger 40px, checkbox 16px. Focus ring is 2px with no extra offset on the auth field (box-shadow 0 0 0 2px). Marketing focus is the browser outline, 1px, offset 1px, recorded in the measurements."
     },
     "F12": {
      "grade": "partly",
-     "evidence": "Card shadows tokenised on applet/service cards (rgba(0,0,0,.24) 0 1.5px 6px) and the modal layer measured on share-modal entries; under 3 named elevation levels exist — the product paints essentially one card lift."
+     "evidence": "Marketing chrome is flat. Auth fields use a 1px inset ring and a 1px drop, not a 3 to 5 level shadow scale. No card, popover or dialog shadow was measured. The package does not invent levels the product does not paint."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "core.motion tokenises the probed durations (0-1200ms incl. the 500ms cycle-lag), easings, transitions and animations across 5 pages; the probe records prefers-reduced-motion as only partially honoured (some groups keep animating), so no reduced-motion guarantee is claimed."
+     "evidence": "Two computed durations are tokenised: 100ms ease on marketing buttons, 150ms cubic-bezier(0.4, 0, 0.2, 1) on docs rows. Auth controls measure 0s. The reduced-motion probe was not run, so the package does not say whether the site honours prefers-reduced-motion."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Breakpoint variables tokenised under light.misc (screenXsMin 320px through screenXlMin 1920px, matching the measured 390/768/992/1200/1440/1920 breakpoints) plus per-page geometry in raw/layout.json across 48 page/width pairs; grid columns and z-index layers are recorded there, not as tokens."
+     "evidence": "Two widths were captured and recorded: 1440 and 390, with sidecars. The marketing nav collapses to a hamburger at 390. No column grid, content-max token or z-index scale was declared in the stylesheet harvest. The mobile menu sits over the hero; its z-index was not promoted to a token."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "55 components measured: buttons (nav login/signup, hero submit, secondary CTA, plan CTAs, back/share, get-started-today), links (nav, prose, footer, author), text fields (nav search, gallery search, prompt, share URL), switch (billing toggle + the giant Connect toggle), tabs (featured + explore gallery), a full-screen mobile menu, a share dialog, cards (applet/service/story/plan/example), list rows (plan features, applet services), badges (SAVE 30%, RECOMMENDED, meta byline), a code font family and icons. Missing from the signed-out product: text area, select, checkbox, radio, tooltip, toast, table, avatar — recorded as gaps, never fabricated."
+     "evidence": "Public surfaces show button, icon button, link, text field, select, checkbox, menu, list row and cards (price headline plus the closed-signup recommendation). That is 9 of 19 plus the SMP card. Text area, radio, switch, tabs, tooltip, toast, table, avatar and badge are not on the public pages. Dialog was screenshotted (docs search) and not measured. The merchant dashboard was not opened."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "98 state readings: default/hover/focus-visible/pressed on buttons and links, focused on fields, selected/active on tabs, toggled on the billing switch, opened on the share modal and mobile menu — each via the component's own control; pressed is CDP-forced (no real press fires)."
+     "evidence": "Buttons, links and the auth submit have hover, focus-visible and pressed crops. The email field has focused and filled. The checkbox has checked. The login error is a red sentence after a failed submit. Disabled and loading are not shown on any public control and were not invented."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "Focus-visible rings measured on nav links, buttons and CTAs via keyboard focus; focused states on the prompt and search fields clicked into (never queried). The pill outline is the focus affordance — recorded in measurements with via notes."
+     "evidence": "Focus-visible crops exist for nav pill, hero button, nav link, footer link, orchid and yellow pills, docs CTA, Google button and the forgot-password link. Auth email, password, select and name fields have a focused state with the 2px purple ring."
     },
     "C4": {
      "grade": "partly",
-     "evidence": "Component entries name the matching token where a token exists (light.color.*, light.component.*, core.component.* geometry); many entries are the measured value itself because IFTTT has almost no token layer — the sheet's literal is the spec."
+     "evidence": "components.md tables show computed colours and radii next to the crop, and point at tokens.json for the names. The rows themselves are not written as token names. Shared values live in the tokens file."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the unified header + mobile menu shell, the home/explore prompt heroes, the tabbed gallery grid, the plans switch + card set, the detail-page chrome (Back/Share/modal/brand hero/Connect), the bounded long pages and the no-theme architecture. Forms/validation, loading, destructive confirmation, toasts and onboarding are documented boundaries — never exercised signed out."
+     "evidence": "patterns.md covers the marketing shell, the docs shell, the pricing page, the sign-in card, the closed-signup SMP page and the customer order login. Empty/loading/error is the 404 plus the login error. Search is a screenshot. Destructive confirmation was not reached. Onboarding stops at closed signup. The merchant dashboard was not opened."
     },
     "A1": {
-     "grade": "meets",
-     "evidence": "39 inline SVG icons indexed in icons/INDEX.tsv with hashes, sizes, viewBoxes, style, pages and labels (service-brand artwork excluded); Museo Sans Rounded recorded by name and weight set with its licence noted as proprietary and the files not shipped."
+     "grade": "partly",
+     "evidence": "icon.png is the 128px apple-touch image. icons/INDEX.tsv names one arrow. The wordmark and lemon mark are the product's artwork and were not copied into the icon set. Fonts are named with licence or fallback in the README."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states what was captured (route inventory incl. the ifttt.com->ifttt.ai 301, both viewports, transient states), how (harvest + computed-style measurement + bounded tiling), and what to distrust (sign-in/checkout/Connect boundaries, help 403, platform redirect, no dark theme, proprietary font, bounded long pages)."
+     "evidence": "The README says what was captured, the date, the signed-out route, how the values were read, and what to distrust."
     },
     "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 1 pair, worst 4.34:1 light muted (light.color.text.muted) on surface (light.component.card.appletBg)"
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.73:1 light muted (light.text.secondary) on surface (light.surface.raised)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 210 of 210 tokens name their source"
+     "evidence": "Script: 134 of 134 tokens name their source"
     },
     "K2": {
      "grade": "meets",
-     "evidence": "Script: 10 rules, each linking a screenshot or crop"
+     "evidence": "Script: 6 rules, each linking a screenshot or crop"
     },
     "K3": {
      "grade": "meets",
@@ -23418,19 +23418,19 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "IFTTT",
-   "goodFor": "Automation-platform and SaaS marketing design on a rounded, pill-first system: the ifttt.ai home (the 'Describe what you'd like to build' AI prompt hero, 'Start building' black pill, featured-Applets category tabs, floating service-icon canvas), the /explore gallery (a dark 'Automate X with Y' hero with a prompt card and service-chip cycler over the All/Applets/Services/Stories tab grid), the /plans pricing (the Monthly/Yearly switch, Free/Starter/Pro/Pro+ cards with a RECOMMENDED dark header and 'SAVE 30%' badge) and the service/applet/connect detail pages (Back pill, Share button + the site's own share modal, brand-coloured heroes, the giant Connect toggle). Sass-compiled Rails markup: the token layer is nearly absent (a few --card-color/--hero-unit/--cycle-* properties), so the system is literal hex/rgb() on classes harvested into core.palette.* plus measured component roles; Museo Sans Rounded (300/500/700/900 + italics) is the single brand face, proprietary and recorded by name only.",
-   "url": "https://ifttt.com",
+   "name": "Lemon Squeezy",
+   "goodFor": "A merchant-of-record marketing site winding down onto Stripe: Webflow Client-First, a purple-600 hero (#5423e7), a yellow shutdown banner (#ffc233), 40px white pills, Circular Pro Book display and Inter UI, plus an 8px-radius auth card in the same purple",
+   "url": "https://www.lemonsqueezy.com",
    "captured": "2026-11-18",
    "themes": [
     "light"
    ],
    "platform": "web",
-   "category": "Productivity",
+   "category": "Finance",
    "reviewed": "2026-11-18",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Devin agent review of the ifttt capture against the web wording: per-criterion grades read from tokens.json, components-computed.json, measurements.md, layout.json, motion.json and the shot/crop evidence"
+ "reviewMethod": "Signed-in pass on 2026-11-18: business-intent submitted, closed-signup SMP page captured, failed merchant login error measured. Dashboard not reached because new store signups are closed. Get started not followed."
 }
