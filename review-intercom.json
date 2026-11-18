@@ -1,0 +1,86 @@
+{
+ "F1": {
+  "grade": "partly",
+  "evidence": "Neutral ramp is complete (color.neutral.* 17 stops white->off-black incl. gray steps and navy) and the blueprint blue ramp has ~12 stops (color.blue.* pale->black); the product accent hues (fin, sales, ecom, operator, voice) are single or paired stops, not ramps, and the .intercom-legacy hues are 3-stop (color/light/lightest). The Tailwind support hues exist as scattered steps (color.support.*), not ramps."
+ },
+ "F2": {
+  "grade": "partly",
+  "evidence": "light.background has page, chalk, canvas, card, inset, banner and helpGround - page, surface and raised are covered; no overlay or scrim role exists (the mobile sheet and mega-menu paint solid grounds)."
+ },
+ "F3": {
+  "grade": "meets",
+  "evidence": "light.text has primary, muted, onDark (on-accent), link, error, accent and nav-secondary/-tertiary; disabled ink lives as light.action.*.disabled-foreground on both button sets."
+ },
+ "F4": {
+  "grade": "meets",
+  "evidence": "light.border has default, strong, subtle and field plus a dedicated light.focus.ring (--color-focus-outline = --color-blue #000ce1), the measured keyboard focus."
+ },
+ "F5": {
+  "grade": "meets",
+  "evidence": "light.action.primary declares background/foreground/border across default, hover (#0007cb helpdesk) and active (helpdesk at 85%) plus disabled, and secondary mirrors it; the hover/pressed repaints were also measured live on the CTAs."
+ },
+ "F6": {
+  "grade": "partly",
+  "evidence": "Only danger is a semantic role on the painted surface (light.status.error + light.text.error). Success/warning hues exist only in the harvested palette layer (color.support.green/amber, color.legacy.success/warning/error families) and are not organised as fill/text/border roles; no info role exists on the signed-out surface."
+ },
+ "F7": {
+  "grade": "na",
+  "evidence": "The product ships one theme: every captured route paints body.theme-light and no dark class, attribute or prefers-color-scheme repaint exists (themeChecks in raw/css-vars.json). There is no second theme for parity to span."
+ },
+ "F8": {
+  "grade": "meets",
+  "evidence": "fontFamily.* carries 15 families with documented fallbacks (Saans, SaansMono, Serrif, MediumLL, IvoryLL, DmMono, the campaign faces, system); fontSize.* is a 4-breakpoint x ~12-style responsive scale (heading-1..6, callout, body-xl/lg/base, label, button) with weights, line heights and tracking, and typography.* composites name the roles the components paint."
+ },
+ "F9": {
+  "grade": "partly",
+  "evidence": "spacing.base is the Tailwind --spacing base (0.25rem) the utilities multiply; there is no named step scale (space-1..N) in the declared layer - component paddings/gaps are measured values, not steps."
+ },
+ "F10": {
+  "grade": "partly",
+  "evidence": "radius.xs..2xl is a declared 6-stop scale and component.button.radius (4px) plus measured card/menu radii are tokenised; border widths are measured (1px rings, black/20 field) but not tokenised - no border-width var exists."
+ },
+ "F11": {
+  "grade": "partly",
+  "evidence": "Measured geometry is tokenised (component.button.height 40px, padding-x, media.button-icon-height, field heights); icon sizes are indexed in icons/INDEX.tsv (12-26px); the focus ring's width/offset is not tokenised - only its colour is (light.focus.ring)."
+ },
+ "F12": {
+  "grade": "partly",
+  "evidence": "Only one shadow is tokenised (shadow.legacyNavMenu from --shadow-nav-light-menu); the marketing surface paints mostly border-ring cards, so the measured menu/popover shadows exist in components-computed but no 3-5 level elevation scale is declared."
+ },
+ "F13": {
+  "grade": "meets",
+  "evidence": "Durations are declared (default transition 150ms) and measured (motion.duration.*); the full --ease-* Penner library plus the default timing function are tokenised and steps()/linear() curves are preserved under notTokenised; the reduced-motion story is recorded per page in raw/motion.json (partially honoured)."
+ },
+ "F14": {
+  "grade": "partly",
+  "evidence": "container.xs..5xl + screen-3xl and zIndex.nav/nav-menu/nav-tooltip/overlay/modal/modal-control are tokenised, breakpoints are implicit in the fontSize.{mobile,tablet,small-desktop,desktop} tiers and raw/layout.json holds 33 page/viewport probes; explicit breakpoint px and grid-column counts are not tokenised."
+ },
+ "C1": {
+  "grade": "partly",
+  "evidence": "12 of 19 checklist components present on the signed-out surface: button, icon button (close-banner, menu, play), link, text field, select + listbox, checkbox, radio/segmented (the billing toggle), menu (mega-menu + mobile sheet), dialog (m-menu-overlay role=dialog), card, list row, badge. Textarea, switch, tabs, toast, table, avatar and a captured tooltip do not appear publicly - honest absence."
+ },
+ "C2": {
+  "grade": "meets",
+  "evidence": "Beyond default: real hover, keyboard focus-visible, CDP-forced pressed, selected (billing toggle), opened (mega-menu, FAQ, select listbox, mobile sheet) and declared+measured disabled on the button matrix - per-state tables across all 45 components in components.md."
+ },
+ "C3": {
+  "grade": "meets",
+  "evidence": "focus-visible states were captured for nav items, links, buttons, the input, select, checkbox and menu rows; the ring resolves to light.focus.ring (brand blue) and the crops show it."
+ },
+ "C4": {
+  "grade": "meets",
+  "evidence": "components.md writes every entry against tokens.json paths (computed values named to their matching token where one exists) and the state tables diff values, not prose."
+ },
+ "P1": {
+  "grade": "partly",
+  "evidence": "patterns.md covers the app shell (shared header + mega-menu + footer), the home/section grammar, pricing composition, the contact-sales form's first step, the help-center and changelog surfaces, mobile sheet, motion and focus; forms/validation, empty/loading/error, destructive confirmation and onboarding flows do not exist on the signed-out surface - the boundary is documented instead."
+ },
+ "A1": {
+  "grade": "meets",
+  "evidence": "55 inline SVGs indexed in icons/INDEX.tsv with inferred names, hashes, rendered sizes, viewBox and per-page provenance; every font family is named in fontFamily.* with its declared stack and the fallback behaviour documented (proprietary faces not shipped)."
+ },
+ "K1": {
+  "grade": "meets",
+  "evidence": "README records scope (every route, theme and width), exactly how values were read (stylesheet harvest, live-DOM geometry, screenshot theme verification, layout/motion/icon probes), what to distrust (boundaries, recapture-missed components, forced pressed states, partial reduced-motion) and a Do and don't list."
+ }
+}

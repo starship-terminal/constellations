@@ -503,11 +503,17 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedMediaTerms(tx, new Set(["systems:hume"]));
       await tx.execute("PRAGMA user_version = 39");
     }
+    if (version < 40) {
+      // Same one-shot top-up, scoped to this package: a store already at
+      // v39 never re-seeds, so the Intercom rows would never arrive.
+      // Scoping keeps cleared labels on older packages cleared.
+      await seedNewCuratedCategories(tx, new Set(["systems:intercom"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:intercom"]));
+      await tx.execute("PRAGMA user_version = 40");
+    }
     if (version < 43) {
-      // Versions 40, 41, and 42 are reserved for the IFTTT, Hers, and
-      // Leonardo seeds on their own branches. This top-up is scoped so a
-      // store already at v42 still gains Huddlekit, and cleared labels on
-      // older packages stay cleared.
+      // Versions 41 and 42 stay reserved for Hers and Leonardo. This top-up
+      // is scoped so a store already at v40 still gains Huddlekit.
       await seedNewCuratedCategories(tx, new Set(["systems:huddlekit"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:huddlekit"]));
       await tx.execute("PRAGMA user_version = 43");

@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 215,
-    "system_domains": 206,
-    "matched_domains": 176,
-    "missing_domains": 257,
+    "system_packages": 216,
+    "system_domains": 207,
+    "matched_domains": 177,
+    "missing_domains": 256,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2525,6 +2525,23 @@
         }
       ]
     },
+    "intercom.com": {
+      "catalog": [
+        {
+          "name": "Intercom",
+          "domain": "intercom.com",
+          "id": 91
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "intercom",
+          "name": "Intercom",
+          "url": "https://www.intercom.com",
+          "name_match": true
+        }
+      ]
+    },
     "jace.ai": {
       "catalog": [
         {
@@ -3232,13 +3249,6 @@
         "name": "Instagram",
         "domain": "instagram.com",
         "id": 196
-      }
-    ],
-    "intercom.com": [
-      {
-        "name": "Intercom",
-        "domain": "intercom.com",
-        "id": 91
       }
     ],
     "invisionapp.com": [
