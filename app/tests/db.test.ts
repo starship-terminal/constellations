@@ -733,9 +733,9 @@ test("version-twelve stores gain the Frame.io rows, without touching their own l
     categories.filter((row) => row.referenceId === "systems:frame"),
   ).toHaveLength(2);
   expect(
-    (
-      await migrated.listReferenceCategoryDetails(["systems:frame"])
-    ).map((row) => row.label),
+    (await migrated.listReferenceCategoryDetails(["systems:frame"])).map(
+      (row) => row.label,
+    ),
   ).toEqual(
     expect.arrayContaining(["Collaboration Tools", "Design & Media Editing"]),
   );
@@ -1383,9 +1383,9 @@ test("version-thirty stores gain the Hitchd rows, without touching their own lab
     categories.filter((row) => row.referenceId === "systems:hitchd"),
   ).toHaveLength(2);
   expect(
-    (
-      await migrated.listReferenceCategoryDetails(["systems:hitchd"])
-    ).map((row) => row.label),
+    (await migrated.listReferenceCategoryDetails(["systems:hitchd"])).map(
+      (row) => row.label,
+    ),
   ).toEqual(["Fundraising", "Marketplace"]);
   const media = await migrated.listMediaTermAssignments();
   expect(
@@ -1399,9 +1399,13 @@ test("version-thirty stores gain the Hitchd rows, without touching their own lab
       .filter((row) => row.referenceId === "systems:joinhandshake")
       .map((row) => row.mediaId),
   );
-  expect(jhMedia.has("systems/joinhandshake/screenshots/home-light-consent.png")).toBe(true);
   expect(
-    jhMedia.has("systems/joinhandshake/screenshots/mobile-home-light-drawer.png"),
+    jhMedia.has("systems/joinhandshake/screenshots/home-light-consent.png"),
+  ).toBe(true);
+  expect(
+    jhMedia.has(
+      "systems/joinhandshake/screenshots/mobile-home-light-drawer.png",
+    ),
   ).toBe(true);
   const remaining = await migrated.client.execute(
     "SELECT COUNT(DISTINCT media_id) AS n FROM media_term_assignments WHERE reference_id='systems:joinhandshake'",
@@ -1529,7 +1533,6 @@ test("version-thirty-two stores gain the Grow rows, without touching their own l
   ).toHaveLength(0);
 });
 
-
 test("version-thirty-three stores gain the Headspace rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v25 store opened before the Headspace rows existed: drop them and
@@ -1559,7 +1562,7 @@ test("version-thirty-three stores gain the Headspace rows, without touching thei
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-    ).toBe(39);
+  ).toBe(39);
   const categories = await migrated.listReferenceCategories();
   // The seed label (Health & Wellness) lands as one row.
   expect(
@@ -1583,7 +1586,6 @@ test("version-thirty-three stores gain the Headspace rows, without touching thei
     media.filter((row) => row.referenceId === "systems:discord"),
   ).toHaveLength(0);
 });
-
 
 test("version-thirty-four stores gain the Homerun rows, without touching their own labels", async () => {
   const { dir, store } = await open();
@@ -1624,7 +1626,7 @@ test("version-thirty-four stores gain the Homerun rows, without touching their o
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-    ).toBe(39);
+  ).toBe(39);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Business + Productivity) land as two rows.
   expect(
@@ -1663,7 +1665,6 @@ test("version-thirty-four stores gain the Homerun rows, without touching their o
     media.filter((row) => row.referenceId === "systems:discord"),
   ).toHaveLength(0);
 });
-
 
 test("version-thirty-five stores gain the HTTPie rows, without touching their own labels", async () => {
   const { dir, store } = await open();

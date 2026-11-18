@@ -79,11 +79,14 @@ async function callTool(name: string, args: Record<string, unknown>) {
     };
   }
   try {
-    const out = await spec.execute((parsed?.value ?? args) as never, {
-      toolCallId: "mcp",
-      messages: [],
-      context: undefined,
-    } as never);
+    const out = await spec.execute(
+      (parsed?.value ?? args) as never,
+      {
+        toolCallId: "mcp",
+        messages: [],
+        context: undefined,
+      } as never,
+    );
     const image = await imageBlock(out);
     return {
       content: [
