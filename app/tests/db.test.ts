@@ -525,7 +525,7 @@ test("version-thirteen stores gain the Calm rows, without touching their own lab
     ),
   ).toBe(43);
   const categories = await migrated.listReferenceCategories();
-  // The catalog category fitness lands as Fitness.
+  // The catalog classifies Calm as Fitness, and that label lands as one row.
   expect(
     categories.filter((row) => row.referenceId === "systems:calm"),
   ).toHaveLength(1);
@@ -661,7 +661,7 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
     ),
   ).toBe(43);
   const categories = await migrated.listReferenceCategories();
-  // Health & Wellness, Marketplace, and Fitness land as three rows.
+  // Fitness, Health & Wellness, and Marketplace land as three rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:classpass"),
   ).toHaveLength(3);
@@ -1564,7 +1564,7 @@ test("version-thirty-three stores gain the Headspace rows, without touching thei
     ),
   ).toBe(43);
   const categories = await migrated.listReferenceCategories();
-  // Health & Wellness and Fitness land as two rows.
+  // Fitness and Health & Wellness land as two rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:headspace"),
   ).toHaveLength(2);

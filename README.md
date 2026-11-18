@@ -418,6 +418,7 @@ what is open, with the evidence.
 | <img src="systems/macaw/icon.png" width="20" alt="macaw"> | [macaw](systems/macaw/README.md) | A cream Webflow marketing site with one coral action: Inter display at 53.6px, 8px controls, tinted pricing cards, and a quiet white secondary button | 2026-11-18 | light | not graded yet | none |
 | <img src="systems/manychat/icon.png" width="20" alt="manychat"> | [manychat](systems/manychat/README.md) | Chat-marketing pages: a white field, #0f0f0f ink, a #fa0cf7 neon-pink hero pill, a 68px black promo strip over a 92px nav, ManyChatGravity display at 72px against a 10px root, CoFo Sans Mono nav labels, 999px CTA pills, and a 369x662 pricing card at 24px radius | 2026-11-18 | light | not graded yet | `icons/` |
 | <img src="systems/matter/icon.png" width="20" alt="matter"> | [matter](systems/matter/README.md) | Near-black reading-app marketing pages: page #0d0d0d, surface #1e1f22, gray #969698, a blurple #6d7eec pill at 100px, MR-Camphor display over a system stack, an 8px and 30px radius pair, and a white sign-in card as the account boundary | 2026-11-18 | dark, light | not graded yet | `icons/` |
+| <img src="systems/maze/icon.png" width="20" alt="maze"> | [maze](systems/maze/README.md) | User-research product marketing: a warm neutral page, Phonic light display, a pill and a near-black demo button, an oklch palette, and a blue login action on an Inter card | 2026-11-18 | light | not graded yet | none |
 
 <!-- catalog:end -->
 
