@@ -18516,6 +18516,61 @@
       }
     },
     {
+      "slug": "sunsama",
+      "name": "Sunsama",
+      "url": "https://sunsama.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Daily-planner marketing on white, with an orange pill, DM Sans headlines, and a signed-out login on cool grey",
+      "tags": [
+        "web",
+        "marketing",
+        "productivity",
+        "planning",
+        "pricing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/sunsama/README.md",
+      "tokens": "systems/sunsama/tokens.json",
+      "styleGuide": "systems/sunsama/style-guide.html",
+      "preview": {
+        "cover": "systems/sunsama/screenshots/home-light-default.png",
+        "icon": "systems/sunsama/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.auth"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public marketing and signed-out login, 2026-11-19",
+        "route": "public-web",
+        "durationMin": 50
+      }
+    },
+    {
       "slug": "superset-desktop",
       "name": "Superset (desktop)",
       "url": "https://superset.sh",
