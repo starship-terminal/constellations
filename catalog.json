@@ -16477,7 +16477,7 @@
           "the phone report paints Window size too small and asks for 800px"
         ],
         "durationMin": 45,
-        "pr": ""
+        "pr": "https://github.com/starship-terminal/constellations/pull/683"
       }
     },
     {
