@@ -58,6 +58,28 @@ test('mobile layout viewport may differ from configured screenshot viewport', as
   assert.equal(result.configuredViewport.width, 390);
 });
 
+test('body.theme-light is recorded; a missing body does not throw', async t => {
+  const root = { scrollWidth: 1440, clientWidth: 1440, scrollHeight: 900, clientHeight: 900,
+    classList: [], getAttribute: () => null };
+  const body = { scrollWidth: 1440, clientWidth: 1440, scrollHeight: 900, clientHeight: 900,
+    classList: ['theme-light', 'hashed'], getAttribute: () => null };
+  const page = fakePage(1440, 900, { width: 1440, height: 900 }, { ...actual, devicePixelRatio: 1 });
+  page.evaluate = async callback => vm.runInNewContext(`(${callback.toString()})()`, {
+    document: { documentElement: root, body }, window: { visualViewport: null },
+    innerWidth: 1440, innerHeight: 900, devicePixelRatio: 1, scrollX: 0, scrollY: 0,
+    getComputedStyle: () => ({ colorScheme: 'normal' }),
+  });
+  const report = await screenshotWithMetadata(page, { path: temporary(t) });
+  assert.deepEqual(JSON.parse(JSON.stringify(report.actual.theme.classes)), ['theme-light']);
+  page.evaluate = async callback => vm.runInNewContext(`(${callback.toString()})()`, {
+    document: { documentElement: root, body: null }, window: { visualViewport: null },
+    innerWidth: 1440, innerHeight: 900, devicePixelRatio: 1, scrollX: 0, scrollY: 0,
+    getComputedStyle: () => ({ colorScheme: 'normal' }),
+  });
+  const bare = await screenshotWithMetadata(page, { path: temporary(t) });
+  assert.deepEqual(JSON.parse(JSON.stringify(bare.actual.theme.classes)), []);
+});
+
 test('browser probe retains safe theme fields and never reads URL or arbitrary root attributes', async t => {
   const root = { scrollWidth: 884, clientWidth: 884, scrollHeight: 1104, clientHeight: 1104,
     classList: ['hashed-class', 'dark', 'owner@example.test'],

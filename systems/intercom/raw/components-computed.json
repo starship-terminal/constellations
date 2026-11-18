@@ -300,7 +300,7 @@
    "url": "https://www.intercom.com/",
    "title": "Promo banner",
    "group": "Shell and navigation",
-   "desc": "The announcement row at the very top of the shared header (\"Introducing Fin 4 … Learn more\"): real chrome, kept.",
+   "desc": "The announcement row at the very top of the shared header (\"Introducing Fin 4 \u2026 Learn more\"): real chrome, kept.",
    "selector": "header banner row"
   },
   "header": {
@@ -2269,130 +2269,7 @@
    "selector": "header a[href*=signup]"
   },
   "nav-menu": {
-   "states": {
-    "opened": {
-     "tag": "div",
-     "classes": "shared-header-switch-card invisible absolute right-0",
-     "text": "",
-     "rect": {
-      "x": 1084,
-      "y": 107,
-      "w": 344,
-      "h": 112
-     },
-     "style": {
-      "display": "block",
-      "position": "absolute",
-      "boxSizing": "border-box",
-      "width": "344px",
-      "height": "112px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "18px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(211, 206, 198)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(211, 206, 198)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(211, 206, 198)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(211, 206, 198)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.95)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(17, 17, 17)",
-      "outlineOffset": "0px",
-      "fontFamily": "Saans, \"Saans Fallback\", \"Hiragino Kaku Gothic ProN\", \"Hiragino Sans\", \"Yu Gothic UI\", \"Yu Gothic\", Meiryo, \"Noto Sans JP\", ui-sans-serif, system-ui, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "24px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(17, 17, 17)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(17, 17, 17)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "0",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "40px"
-     },
-     "paint": [
-      {
-       "node": "div.shared-header-switch-card.invisible",
-       "size": "344.0x112.0",
-       "border": "T:1px solid rgb(211, 206, 198) | R:1px solid rgb(211, 206, 198) | B:1px solid rgb(211, 206, 198) | L:1px solid rgb(211, 206, 198)",
-       "bg": "oklab(0.999994 0.0000455678 0.0000200868 / 0.95)"
-      },
-      {
-       "node": "span.bg-fin.size-1",
-       "size": "4.0x4.0",
-       "bg": "rgb(255, 86, 0)"
-      },
-      {
-       "node": "span.bg-fin.size-1",
-       "size": "4.0x4.0",
-       "bg": "rgb(255, 86, 0)"
-      },
-      {
-       "node": "span.bg-fin.size-1",
-       "size": "4.0x4.0",
-       "bg": "rgb(255, 86, 0)"
-      },
-      {
-       "node": "span.bg-fin.size-1",
-       "size": "4.0x4.0",
-       "bg": "rgb(255, 86, 0)"
-      },
-      {
-       "node": "span.bg-fin.size-1",
-       "size": "4.0x4.0",
-       "bg": "rgb(255, 86, 0)"
-      },
-      {
-       "node": "span.bg-fin.size-1",
-       "size": "4.0x4.0",
-       "bg": "rgb(255, 86, 0)"
-      }
-     ],
-     "crop": "components/crops/nav-menu-opened.png",
-     "via": "own toggle",
-     "run": "2026-11-17"
-    }
-   },
+   "states": {},
    "page": "home",
    "view": "desktop",
    "run": "2026-11-17",
@@ -2400,7 +2277,9 @@
    "title": "Nav mega-menu",
    "group": "Shell and navigation",
    "desc": "The panel the Product/Customers/Resources triggers open (shared-header-switch-card): a white card with the nav-panel border and a drop shadow.",
-   "selector": "[class*=switch-card] / nav panel"
+   "selector": "[class*=switch-card] / nav panel",
+   "missing": true,
+   "captureNote": "The saved reading is a hidden switch-card (opacity 0), not the open Product panel. No correct overlay reading is in the raw file, so this entry is a gap until a recapture."
   },
   "hero-title": {
    "states": {
@@ -6641,108 +6520,7 @@
    "selector": "button.select"
   },
   "select-popup": {
-   "states": {
-    "opened": {
-     "tag": "div",
-     "classes": "select-popup overflow-y-auto border shadow-md",
-     "text": "1-1515-4950-199200-19992000-49995000+",
-     "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "-1px",
-      "marginRight": "0px",
-      "marginBottom": "-1px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(17, 17, 17)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(17, 17, 17)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(17, 17, 17)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(17, 17, 17)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgb(250, 249, 246)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(17, 17, 17)",
-      "outlineOffset": "0px",
-      "fontFamily": "Saans, \"Saans Fallback\", \"Hiragino Kaku Gothic ProN\", \"Hiragino Sans\", \"Yu Gothic UI\", \"Yu Gothic\", Meiryo, \"Noto Sans JP\", ui-sans-serif, system-ui, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "24px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(17, 17, 17)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(17, 17, 17)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "auto",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.select-popup.overflow-y-auto",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgb(17, 17, 17) | R:1px solid rgb(17, 17, 17) | B:1px solid rgb(17, 17, 17) | L:1px solid rgb(17, 17, 17)",
-       "bg": "rgb(250, 249, 246)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
-      }
-     ],
-     "icon": {
-      "w": 0,
-      "h": 0,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(17, 17, 17)"
-     },
-     "cropError": "no box for select-popup-opened",
-     "via": "own toggle",
-     "run": "2026-11-17"
-    }
-   },
+   "states": {},
    "page": "contact-sales",
    "view": "desktop",
    "run": "2026-11-17",
@@ -6750,7 +6528,9 @@
    "title": "Select popup",
    "group": "Contact sales form",
    "desc": "The open listbox of the select (div.select-popup): options list, held open by the select entry.",
-   "selector": "[role=listbox]"
+   "selector": "[role=listbox]",
+   "missing": true,
+   "captureNote": "The saved reading is a 0x0 listbox, not the open select popup. No correct overlay reading is in the raw file, so this entry is a gap until a recapture."
   },
   "checkbox": {
    "states": {
@@ -6845,7 +6625,7 @@
    "url": "https://www.intercom.com/contact-sales",
    "title": "Checkbox row",
    "group": "Contact sales form",
-   "desc": "The opt-in checkbox row (label.checkbox-label: \"Get updates about upcoming events…\"). Never ticked.",
+   "desc": "The opt-in checkbox row (label.checkbox-label: \"Get updates about upcoming events\u2026\"). Never ticked.",
    "selector": "label.checkbox-label"
   },
   "next-button": {
@@ -7227,7 +7007,7 @@
    "url": "https://www.intercom.com/contact-sales",
    "title": "Next button",
    "group": "Contact sales form",
-   "desc": "The form's black \"Next\" submit control (--button-primary-*, --button-radius, --button-height): measured with CDP-forced pseudo states only — never pressed, so the form was never advanced.",
+   "desc": "The form's black \"Next\" submit control (--button-primary-*, --button-radius, --button-height): measured with CDP-forced pseudo states only \u2014 never pressed, so the form was never advanced.",
    "selector": "button \"Next\""
   },
   "help-header": {
@@ -7235,7 +7015,7 @@
     "default": {
      "tag": "header",
      "classes": "DocsTopBar_bar__i14eF",
-     "text": "Contact sales View demo Start free trial Português do Brasil English Français De",
+     "text": "Contact sales View demo Start free trial Portugu\u00eas do Brasil English Fran\u00e7ais De",
      "rect": {
       "x": 0,
       "y": 0,
@@ -7378,7 +7158,7 @@
     "default": {
      "tag": "button",
      "classes": "DocsTopBar_search__tI7kY",
-     "text": "Search ⌘ K",
+     "text": "Search \u2318 K",
      "rect": {
       "x": 1284,
       "y": 14.5,
@@ -7483,7 +7263,7 @@
     "focused": {
      "tag": "button",
      "classes": "DocsTopBar_search__tI7kY",
-     "text": "Search ⌘ K",
+     "text": "Search \u2318 K",
      "rect": {
       "x": 1284,
       "y": 14.5,
@@ -7592,7 +7372,7 @@
    "url": "https://www.intercom.com/help/en/",
    "title": "Help search field",
    "group": "Help center",
-   "desc": "The help center search (\"Search for articles… ⌘K\"): focused once, nothing typed.",
+   "desc": "The help center search (\"Search for articles\u2026 \u2318K\"): focused once, nothing typed.",
    "selector": "search input/button"
   },
   "help-hero": {
@@ -8040,7 +7820,7 @@
    "url": "https://www.intercom.com/help/en/",
    "title": "Docs nav",
    "group": "Help center",
-   "desc": "The help center's expandable docs navigation tree (Overview, Getting Started, Operator, Fin AI Agent …).",
+   "desc": "The help center's expandable docs navigation tree (Overview, Getting Started, Operator, Fin AI Agent \u2026).",
    "selector": "nav"
   },
   "changes-title": {
@@ -8620,7 +8400,7 @@
     "default": {
      "tag": "header",
      "classes": "shared-header z-nav duration-250 fixed",
-     "text": "Introducing Fin 4. Learn more Start free trial Fin AI Agent →",
+     "text": "Introducing Fin 4. Learn more Start free trial Fin AI Agent \u2192",
      "rect": {
       "x": 0,
       "y": 0,
@@ -9300,170 +9080,7 @@
    "selector": "first visible h1"
   },
   "m-menu-overlay": {
-   "states": {
-    "opened": {
-     "tag": "div",
-     "classes": "text-off-black relative flex w-full",
-     "text": "Back Let's get your Intercom demo started Business email address * Get updates a",
-     "rect": {
-      "x": 16,
-      "y": 165.4,
-      "w": 358,
-      "h": 513.19
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "358px",
-      "height": "513.188px",
-      "minWidth": "auto",
-      "maxWidth": "620px",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "column",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(17, 17, 17)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(17, 17, 17)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(17, 17, 17)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(17, 17, 17)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgb(255, 255, 255)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(17, 17, 17)",
-      "outlineOffset": "0px",
-      "fontFamily": "Saans, \"Saans Fallback\", \"Hiragino Kaku Gothic ProN\", \"Hiragino Sans\", \"Yu Gothic UI\", \"Yu Gothic\", Meiryo, \"Noto Sans JP\", ui-sans-serif, system-ui, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "24px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(17, 17, 17)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(17, 17, 17)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div.text-off-black.relative",
-       "size": "358.0x513.2",
-       "bg": "rgb(255, 255, 255)"
-      },
-      {
-       "node": "span.absolute.size-2",
-       "size": "8.0x8.0",
-       "bg": "rgb(211, 206, 198)"
-      },
-      {
-       "node": "span.absolute.size-2",
-       "size": "8.0x8.0",
-       "bg": "rgb(211, 206, 198)"
-      },
-      {
-       "node": "span.absolute.size-2",
-       "size": "8.0x8.0",
-       "bg": "rgb(211, 206, 198)"
-      },
-      {
-       "node": "span.absolute.size-2",
-       "size": "8.0x8.0",
-       "bg": "rgb(211, 206, 198)"
-      },
-      {
-       "node": "a.text-inline-link.absolute",
-       "size": "31.0x15.4",
-       "bgImage": "linear-gradient(to right in oklab, rgb(17, 17, 17) 0%, rgb(17, 17, 17) 100%)"
-      },
-      {
-       "node": "input.input",
-       "size": "310.0x40.0",
-       "border": "T:1px solid rgb(17, 17, 17) | R:1px solid rgb(17, 17, 17) | B:1px solid rgb(17, 17, 17) | L:1px solid rgb(17, 17, 17)",
-       "bg": "rgb(241, 238, 233)",
-       "radius": "2px"
-      },
-      {
-       "node": "span.checkbox",
-       "size": "20.0x20.0",
-       "border": "T:1px solid oklab(0.177624 0.00000809133 0.00000356138 / 0.2) | R:1px solid oklab(0.177624 0.00000809133 0.00000356138 / 0.2) | B:1px solid oklab(0.177624 0.00000809133 0.00000356138 / 0.2) | L:1px solid oklab(0.177624 0.00000809133 0.00000356138 / 0.2)",
-       "bg": "rgb(250, 249, 246)"
-      },
-      {
-       "node": "a.text-inline-link",
-       "size": "132.0x14.0",
-       "bgImage": "linear-gradient(to right, oklab(0.177624 0.00000809133 0.00000356138 / 0.6) 0%, oklab(0.177624 0.00000809133 0.00000356138 / 0.6) 100%)"
-      },
-      {
-       "node": "button.font-inherit.m-0",
-       "size": "310.0x40.0",
-       "bg": "rgb(17, 17, 17)",
-       "radius": "4px"
-      },
-      {
-       "node": "div.absolute.inset-x-0",
-       "size": "358.0x4.0",
-       "bg": "oklab(0.177624 0.00000809133 0.00000356138 / 0.2)"
-      },
-      {
-       "node": "div.h-full.duration-300",
-       "size": "119.3x4.0",
-       "bg": "rgb(0, 7, 203)"
-      }
-     ],
-     "textStyle": {
-      "node": "a.text-inline-link.absolute",
-      "text": "Back",
-      "fontFamily": "Saans, \"Saans Fallback\", \"Hiragino Kaku Gothic ProN\", \"Hiragino Sans\", \"Yu Gothic UI\", \"Yu Gothic\", Meiryo, \"Noto Sans JP\", ui-sans-serif, system-ui, sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "15.4px",
-      "fontWeight": "400",
-      "letterSpacing": "normal",
-      "color": "rgb(17, 17, 17)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/m-menu-overlay-opened.png",
-     "via": "own toggle",
-     "run": "2026-11-17"
-    }
-   },
+   "states": {},
    "page": "home",
    "view": "mobile",
    "run": "2026-11-17",
@@ -9471,7 +9088,9 @@
    "title": "Mobile menu overlay",
    "group": "Mobile (390 wide)",
    "desc": "The full-height navigation sheet the mobile menu button opens (div[role=dialog].shared-header-portal, off-white ground).",
-   "selector": "[role=dialog].shared-header-portal"
+   "selector": "[role=dialog].shared-header-portal",
+   "missing": true,
+   "captureNote": "The saved reading is a demo form, not the navigation sheet. No correct overlay reading is in the raw file, so this entry is a gap until a recapture."
   },
   "footer": {
    "states": {

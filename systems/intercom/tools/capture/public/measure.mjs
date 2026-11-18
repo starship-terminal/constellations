@@ -30,7 +30,7 @@ const URLS = {
   home: '/', pricing: '/pricing', 'contact-sales': '/contact-sales',
   help: '/help/en/', changes: '/changes/en', blog: '/blog', helpdesk: '/helpdesk',
 };
-let page, cdp, current, view, context, run;
+let page, cdp, current, view, context, run, ctx0;
 const touched = new Set();
 const listed = new Map();
 // Page+viewport visits that actually loaded this run (not blocked): readings
@@ -48,9 +48,13 @@ async function newPage(key, { mobile = false, wait = 8000, dsf } = {}) {
   current = key;
   view = mobile ? 'mobile' : 'desktop';
   const b = context.browser();
+  // Close the previous context before opening another page. Overwriting
+  // `page` alone left earlier pages' scripts and animations running.
+  if (context && context !== ctx0) await context.close().catch(() => {});
   const ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: dsf ?? 2, userAgent: UA, locale: 'en-US' });
+  context = ctx;
   await patch(ctx);
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
@@ -59,7 +63,7 @@ async function newPage(key, { mobile = false, wait = 8000, dsf } = {}) {
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
   await open(page, BASE + URLS[key], { wait });
-  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
+  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); if (context === ctx) context = ctx0; return false; }
   opened.add(key + '|' + view);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
@@ -194,9 +198,15 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
-        if (opts.noToggle) via = 'menu held open by opts.open';
+        // opts.open already opened the overlay. Clicking the measured node
+        // again toggles it shut, so the reading lands on a hidden copy or a
+        // different element that happens to match the locator.
+        if (opts.open || opts.noToggle) via = 'menu held open by opts.open';
         else { await toggle(opts.toggleLoc || loc); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
+      if (opts.expect && !(await opts.expect(loc))) {
+        throw new Error(`opened target is not the intended ${key}`);
+      }
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
@@ -298,7 +308,9 @@ async function home() {
   await S('nav-login', q('header a[href*="sign_in"], header a[href*="/login"]'), B4, { group: g, title: 'Nav log in', desc: 'The "Log in" link to app.intercom.com; measured, never followed.', sel: 'header a[href*=sign_in]' }, { noScroll: true });
   await S('nav-cta', q('header a[href*="signup"]'), B4, { group: g, title: 'Nav CTA', desc: 'The black "Start free trial" button in the nav (--button-primary-* tokens, --button-radius 4px, height --button-height 40px); links to /signup, never followed.', sel: 'header a[href*=signup]' }, { noScroll: true });
   // The nav mega-menu, opened by its own Product trigger.
-  await S('nav-menu', q('[class*="nav-panel"], [class*="switch-card"], [data-state][class*="panel"], header [class*="popover"]'), ['opened'], { group: g, title: 'Nav mega-menu', desc: 'The panel the Product/Customers/Resources triggers open (shared-header-switch-card): a white card with the nav-panel border and a drop shadow.', sel: '[class*=switch-card] / nav panel' }, { noScroll: true, open: async () => { const t = q('header button').filter({ hasText: /^Product$/ }); await t.hover().catch(() => {}); await page.waitForTimeout(700); if ((await t.getAttribute('aria-expanded').catch(() => null)) !== 'true') await t.click().catch(() => {}); await page.waitForTimeout(800); } });
+  // The first switch-card in the DOM is a hidden variant (opacity 0). Measure
+  // the painted panel the Product trigger actually opens, and do not click it.
+  await S('nav-menu', q('[class*="nav-panel"], [class*="switch-card"], header [class*="popover"]').filter({ visible: true }), ['opened'], { group: g, title: 'Nav mega-menu', desc: 'The panel the Product/Customers/Resources triggers open (shared-header-switch-card): a white card with the nav-panel border and a drop shadow.', sel: 'visible nav panel' }, { noScroll: true, noReset: true, open: async () => { const t = q('header button').filter({ hasText: /^Product$/ }); await t.hover().catch(() => {}); await page.waitForTimeout(700); if ((await t.getAttribute('aria-expanded').catch(() => null)) !== 'true') await t.click().catch(() => {}); await page.waitForTimeout(800); }, expect: async (loc) => loc.evaluate((el) => getComputedStyle(el).opacity !== '0' && el.getBoundingClientRect().width > 0 && /product|customers|resources|inbox|fin/i.test(el.innerText || '')) });
   const h = G.home;
   await S('hero-title', q('main h1, h1'), ['default'], { group: h, title: 'Hero title', desc: 'The home hero headline ("A complete system for AI and human customer service", text-heading-2: Saans, tight tracking).', sel: 'first visible h1' }, { noScroll: true });
   await S('eyebrow', q('main span.text-label-lg, main [class*="eyebrow"], main [class*="label"]'), ['default'], { group: h, title: 'Eyebrow label', desc: 'A small label over a section (text-label-lg: SaansMono-family uppercase micro type).', sel: 'span.text-label-lg' });
@@ -330,7 +342,7 @@ async function contact() {
   await S('input-label', q('label.label'), ['default'], { group: g, title: 'Field label', desc: 'A field label (.label: "Business Email *").', sel: 'label.label' }, { noScroll: true });
   await S('input', q('input.input'), ['default', 'focused', 'filled'], { group: g, title: 'Text field', desc: 'The "Business email address" text input (.input: off-white fill, 2px radius, 40px). Sample text typed and deleted; nothing sent.', sel: 'input.input' });
   await S('select', q('button.select'), ['default', 'opened'], { group: g, title: 'Select (combobox)', desc: 'The "Your company size" select (button.select, same field styling as .input): its own listbox opened, nothing chosen.', sel: 'button.select' });
-  await S('select-popup', q('[role="listbox"]'), ['opened'], { group: g, title: 'Select popup', desc: 'The open listbox of the select (div.select-popup): options list, held open by the select entry.', sel: '[role=listbox]' }, { open: async () => { if (!(await q('[role="listbox"]').filter({ visible: true }).count())) { const s = await firstWide(q('button.select')); if (await s.count()) { await s.click().catch(() => {}); await page.waitForTimeout(800); } } } });
+  await S('select-popup', q('.select-popup, [role="listbox"]').filter({ visible: true }), ['opened'], { group: g, title: 'Select popup', desc: 'The open listbox of the select (div.select-popup): options list, held open by the select entry.', sel: 'visible .select-popup' }, { noReset: true, open: async () => { const openBox = q('.select-popup, [role="listbox"]').filter({ visible: true }); if (!(await openBox.count())) { const s = await firstWide(q('button.select')); if (await s.count()) { await s.click().catch(() => {}); await page.waitForTimeout(800); } } }, expect: async (loc) => loc.evaluate((el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0 && /select-popup|listbox/i.test((el.className || '') + ' ' + (el.getAttribute('role') || '')); }) });
   await S('checkbox', q('label.checkbox-label'), ['default'], { group: g, title: 'Checkbox row', desc: 'The opt-in checkbox row (label.checkbox-label: "Get updates about upcoming events…"). Never ticked.', sel: 'label.checkbox-label' });
   await S('next-button', q('button').filter({ hasText: /^Next$/ }), B4, { group: g, title: 'Next button', desc: 'The form\'s black "Next" submit control (--button-primary-*, --button-radius, --button-height): measured with CDP-forced pseudo states only — never pressed, so the form was never advanced.', sel: 'button "Next"' });
   save();
@@ -377,12 +389,14 @@ async function mobileHome() {
   await S('m-header', q('header.shared-header, header'), ['default'], { group: g, title: 'Mobile header', desc: 'The header at 390: logo + the menu button (the desktop nav unmounts).', sel: 'header' }, { noScroll: true });
   await S('m-menu-button', q('header button[aria-label*="navigation menu" i]'), B4, { group: g, title: 'Mobile menu button', desc: 'The hamburger toggle in the mobile header (aria-label "Open navigation menu"); opens the menu overlay.', sel: 'header menu button' }, { noScroll: true });
   await S('m-hero', q('main h1, h1'), ['default'], { group: g, title: 'Mobile hero', desc: 'The hero title at 390 (the responsive text-heading-*-mobile size).', sel: 'first visible h1' }, { noScroll: true });
-  await S('m-menu-overlay', q('[role="dialog"]'), ['opened'], { group: g, title: 'Mobile menu overlay', desc: 'The full-height navigation sheet the mobile menu button opens (div[role=dialog].shared-header-portal, off-white ground).', sel: '[role=dialog].shared-header-portal' }, { noScroll: true, open: async () => { const t = q('header button[aria-label*="navigation menu" i]'); if (await t.count()) { await t.click().catch(() => {}); await page.waitForTimeout(1200); } } });
+  await S('m-menu-overlay', q('[role="dialog"].shared-header-portal, .shared-header-portal[role="dialog"]').filter({ visible: true }), ['opened'], { group: g, title: 'Mobile menu overlay', desc: 'The full-height navigation sheet the mobile menu button opens (div[role=dialog].shared-header-portal, off-white ground).', sel: '[role=dialog].shared-header-portal' }, { noScroll: true, noReset: true, open: async () => { const t = q('header button[aria-label*="navigation menu" i]'); if (await t.count() && (await t.getAttribute('aria-expanded').catch(() => null)) !== 'true') { await t.click().catch(() => {}); await page.waitForTimeout(1200); } }, expect: async (loc) => loc.evaluate((el) => el.classList.contains('shared-header-portal') && /product|customers|pricing|resources/i.test(el.innerText || '') && !/business email/i.test(el.innerText || '')) });
   save();
 }
 
 // ---------------------------------------------------------------- driver
-const { browser, context: ctx0 } = await launch();
+const launched = await launch();
+const browser = launched.browser;
+ctx0 = launched.context;
 context = ctx0;
 run = new Date().toISOString().slice(0, 10);
 out._meta.read = run;

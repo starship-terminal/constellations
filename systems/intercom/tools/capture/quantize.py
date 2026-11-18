@@ -43,6 +43,37 @@ def pixel_scale(meta):
     return png['width'] / clip['width'] if clip and png and clip.get('width') and png.get('width') else 1
 
 
+def complete_tile_set(ps, metas):
+    """A finished capture is part0, part1, ... covering the recorded page height.
+
+    A failed second tile leaves part0 alone. That tile starts at 0 and covers
+    its own clip, which is not the page: the recorded document is taller.
+    A gap, a missing sidecar, or a set that stops short of that height is
+    rejected before any image is replaced.
+    """
+    indexes = [i for i, _ in ps]
+    if not indexes or indexes != list(range(len(indexes))):
+        return False
+    clips = [(m.get('capture') or {}).get('clip') if m else None for m in metas]
+    if not clips or any(not c or not c.get('height') for c in clips) or clips[0].get('y') != 0:
+        return False
+    for prev, nxt in zip(clips, clips[1:]):
+        if abs((prev['y'] + prev['height']) - nxt['y']) > 1:
+            return False
+    covered = clips[-1]['y'] + clips[-1]['height']
+    intended = None
+    for m in metas:
+        doc = ((m or {}).get('actual') or {}).get('documentSize') or {}
+        if doc.get('height'):
+            intended = doc['height']
+            break
+    # A single tile is a partial set unless it records the page it covers.
+    # Two or more contiguous tiles from y=0 are the completed set.
+    if intended is None:
+        return len(clips) > 1
+    return abs(covered - intended) <= 1
+
+
 def stitched_sidecar(name, sheet, tile_paths):
     """Rebuild name.png.capture.json from the part tiles' sidecars, or None when any tile cannot vouch.
 
@@ -81,8 +112,14 @@ for f in RAW.glob('*.part*.png'):
         continue
     parts.setdefault(m.group(1), []).append((int(m.group(2)), f))
 stitched = {}
+rejected = []
 for name, ps in parts.items():
     ps = sorted(ps)
+    metas = [sidecar_for(f) for _, f in ps]
+    if not complete_tile_set(ps, metas):
+        rejected.append(name)
+        print('skip', name, 'incomplete tile set', [i for i, _ in ps])
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0

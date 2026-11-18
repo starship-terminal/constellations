@@ -2,17 +2,17 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from www.intercom.com on 2026-11-17, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (45 components, 92 states). The page layouts are described in [raw/pages.md](raw/pages.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (45 components, 89 states). The page layouts are described in [raw/pages.md](raw/pages.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Saans 64/64 400, #111111`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (87 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (85 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
-Screenshots are named `{page}-light-{state}.png` (the site paints one theme, `body.theme-light`). Desktop shots are 1440 x 900 at 2x; `-full` shots are whole pages; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x). A page taller than one GPU texture is stitched from `-full.partN.png` tiles into one `-full.png`.
+Screenshots are named `{page}-light-{state}.png` (the site paints one theme, `body.theme-light`). Desktop shots are 1440 x 900 at 1x (the PNG matches the viewport); `-full` shots are whole pages at the same 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x). A page taller than one GPU texture is stitched from `-full.partN.png` tiles into one `-full.png`. Component crops stay at 2x.
 
 | Surface | URL | Screenshots |
 |---|---|---|
@@ -50,7 +50,7 @@ Screenshots are named `{page}-light-{state}.png` (the site paints one theme, `bo
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 13 components were given a real keyboard focus. 13 draw a ring: `nav-item` (1px auto #101010, offset 0px), `nav-link` (2px solid #101010, offset 2px), `nav-login` (1px auto #101010, offset 1px), `nav-cta` (2px solid #101010, offset 2px), `hero-cta` (2px solid #101010, offset 2px), `hero-secondary` (2px solid #101010, offset 2px), `billing-toggle` (1px auto #101010, offset 0px), `billing-toggle-off` (1px auto #101010, offset 0px), `promo-badge` (1px auto #101010, offset 0px), `next-button` (2px solid #101010, offset 2px), `m-menu-button` (1px auto #e59700, offset 0px), `footer-link` (1px auto #101010, offset 1px), `locale-select` (1px auto #101010, offset 1px). The other 0 draw none: . The ring is the brand blue (`--color-focus-outline` = `--color-blue`, #000ce1).
+**Focus.** 13 components were given a real keyboard focus. 13 draw a ring: `nav-item` (1px auto #101010, offset 0px), `nav-link` (2px solid #101010, offset 2px), `nav-login` (1px auto #101010, offset 1px), `nav-cta` (2px solid #101010, offset 2px), `hero-cta` (2px solid #101010, offset 2px), `hero-secondary` (2px solid #101010, offset 2px), `billing-toggle` (1px auto #101010, offset 0px), `billing-toggle-off` (1px auto #101010, offset 0px), `promo-badge` (1px auto #101010, offset 0px), `next-button` (2px solid #101010, offset 2px), `m-menu-button` (1px auto #e59700, offset 0px), `footer-link` (1px auto #101010, offset 1px), `locale-select` (1px auto #101010, offset 1px). The measured rings are black (`#101010`) on the desktop controls and orange (`#e59700`) on the mobile menu button. The declared `--color-focus-outline` (`--color-blue`, #000ce1) is a stylesheet value; these controls did not paint it.
 
 **Hover and pressed.** The primary buttons (nav CTA, hero CTA, the form's Next) repaint rather than transform: `--button-primary-hover-background` is the helpdesk blue #0007cb, the pressed state the same blue at 85%. Ghost nav items fill with `--color-chalk` on hover. Pressed was forced with DevTools, so a state a script adds on mousedown (if any) is missing.
 
@@ -80,18 +80,15 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Feature card](#feature-card) | 728 x 686 | 1px solid rgba(0, 0, 0, 0.1) `nav.hover` `nav.hover` | 8px | #ffffff `neutral.white` | transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px | 0 |
-| [Plan card](#plan-card) | 286 x 607.56 | - | 2px | rgba(0, 7, 203, 0.15) | none | 24px |
+| [Feature card](#feature-card) | 728 x 686 | 1px solid rgba(0, 0, 0, 0.06) | 14px | transparent | none | 0 |
+| [Plan card](#plan-card) | 286 x 607.56 | - | - | transparent | none | 24px |
 | [Promo badge button](#promo-badge-button) | 157 x 20.8 | - | 2px | rgba(0, 7, 203, 0.15) | none | 2px 8px |
-| [Nav mega-menu](#nav-mega-menu) | 344 x 112 | 1px solid #d3cec6 `neutral.clay` | - | rgba(255, 255, 255, 0.95) | none | 0 |
 | [FAQ accordion item](#faq-accordion-item) | 696.02 x 64 | - | - | transparent | none | 20px 0px |
 | [Text field](#text-field) | 448 x 40 | 1px solid rgba(17, 17, 17, 0.2) | 2px | #faf9f6 `neutral.offWhite` | none | 0px 12px |
 | [Select (combobox)](#select-combobox) | 448 x 40 | 1px solid rgba(17, 17, 17, 0.2) | 2px | #faf9f6 `neutral.offWhite` | none | 0px 12px |
-| [Select popup](#select-popup) | 0 x 0 | 1px solid #111111 `neutral.offBlack` | - | #faf9f6 `neutral.offWhite` | transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px | 0 |
 | [Help article card](#help-article-card) | 260.66 x 252 | 1px solid rgba(26, 26, 26, 0.15) | 8px | #ffffff `neutral.white` | none | 0 |
-| [Blog article card](#blog-article-card) | 696.5 x 274 | 1px solid rgba(0, 0, 0, 0.1) `nav.hover` `nav.hover` | - | - | none | 32px 32px 32px 0px |
+| [Blog article card](#blog-article-card) | 696.5 x 274 | T: 1px solid rgba(0, 0, 0, 0.1) `nav.hover` `nav.hover` 1px solid rgba(0, 0, 0, 0.1) `nav.hover` `nav.hover` | - | transparent | none | 32px 32px 32px 0px |
 | [Changelog entry](#changelog-entry) | 900 x 967.39 | - | 4px | #ffffff `neutral.white` | rgba(0, 0, 0, 0.03) 0px 3px 8px 0px | 0 |
-| [Mobile menu overlay](#mobile-menu-overlay) | 358 x 513.19 | 1px solid #111111 `neutral.offBlack` | 2px | #f1eee9 `neutral.chalk` | none | 0 |
 
 ## Components
 
@@ -171,9 +168,7 @@ The black "Start free trial" button in the nav (--button-primary-* tokens, --but
 #### Nav mega-menu
 The panel the Product/Customers/Resources triggers open (shared-header-switch-card): a white card with the nav-panel border and a drop shadow. Read as `nav-menu` on the Home page.
 
-**Values (opened).** size 344 x 112; border 1px solid #d3cec6 `neutral.clay`; background rgba(255, 255, 255, 0.95); text Saans 16/24 400, #111111 `neutral.offBlack`; opacity 0.
-
-![Nav mega-menu opened](components/crops/nav-menu-opened.png)
+The saved reading is a hidden switch-card (opacity 0), not the open Product panel. No correct overlay reading is in the raw file, so this entry is a gap until a recapture.
 
 ### Home
 
@@ -355,9 +350,7 @@ The "Your company size" select (button.select, same field styling as .input): it
 #### Select popup
 The open listbox of the select (div.select-popup): options list, held open by the select entry. Read as `select-popup` on the Contact sales page.
 
-**Values (opened).** size 0 x 0; border 1px solid #111111 `neutral.offBlack`; background #faf9f6 `neutral.offWhite`; text Saans 16/24 400, #111111 `neutral.offBlack`.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+The saved reading is a 0x0 listbox, not the open select popup. No correct overlay reading is in the raw file, so this entry is a gap until a recapture.
 
 #### Checkbox row
 The opt-in checkbox row (label.checkbox-label: "Get updates about upcoming events…"). Never ticked. Read as `checkbox` on the Contact sales page.
@@ -478,9 +471,9 @@ A footer link (Saans, muted); focus-visible carries the site outline. Read as `f
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 33 x 17; background transparent; image linear-gradient(to right in oklab, #000000 `neutral.black` 0%, #000000 `neutral.black` 100%); text Saans 14/17.5 400, #000000 `neutral.black`; transition background-size 0.2s ease-out; opacity 0.9 |
-| hover | opacity none |
-| focus-visible | outline 1px auto #101010, offset 1px; opacity none |
-| pressed | opacity none |
+| hover | opacity 1 |
+| focus-visible | outline 1px auto #101010, offset 1px; opacity 1 |
+| pressed | opacity 1 |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
@@ -490,9 +483,9 @@ The footer language selector ("English"). Read as `locale-select` on the Blog pa
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 44 x 17; background transparent; text Saans 14/17.5 400, #000000 `neutral.black`; opacity 0.9 |
-| hover | opacity none |
-| focus-visible | outline 1px auto #101010, offset 1px; opacity none |
-| pressed | opacity none |
+| hover | opacity 1 |
+| focus-visible | outline 1px auto #101010, offset 1px; opacity 1 |
+| pressed | opacity 1 |
 
 ![Locale selector default](components/crops/locale-select-default.png) ![Locale selector hover](components/crops/locale-select-hover.png) ![Locale selector focus-visible](components/crops/locale-select-focus-visible.png) ![Locale selector pressed](components/crops/locale-select-pressed.png)
 
@@ -527,9 +520,7 @@ The hero title at 390 (the responsive text-heading-*-mobile size). Read as `m-he
 #### Mobile menu overlay
 The full-height navigation sheet the mobile menu button opens (div[role=dialog].shared-header-portal, off-white ground). Read as `m-menu-overlay` on the Home page at 390 wide.
 
-**Values (opened).** size 358 x 513.19; background #ffffff `neutral.white`; text Saans 14/15.4 400, #111111 `neutral.offBlack`.
-
-![Mobile menu overlay opened](components/crops/m-menu-overlay-opened.png)
+The saved reading is a demo form, not the navigation sheet. No correct overlay reading is in the raw file, so this entry is a gap until a recapture.
 
 ## Icons
 

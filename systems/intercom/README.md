@@ -15,7 +15,7 @@ intercom.com is worth a capture because it declares a complete design layer to t
 | [patterns.md](patterns.md) | How the components combine: the shared header and mega-menu, the home grammar, pricing, the contact-sales form, the help center and changelog surfaces, mobile, motion and focus, and the boundary list. |
 | [components/crops/](components/crops) | Element crops at 2x, named `{component}-{state}.png`. |
 | [icons/](icons) | The inline SVG icons collected from the live pages, with `INDEX.tsv` naming each by role. |
-| [screenshots/](screenshots) | 44 quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900 at 2x; `-full` whole pages (the very tall /helpdesk/inbox and mobile pages stitched from `-full.partN.png` tiles); `mobile-*` shots at 390 x 844 at 2x; `home-light-nav-menu` the open mega-menu, `pricing-light-faq` an opened FAQ row, `contact-sales-light-select-open` the select listbox, `mobile-home-light-menu` the open nav sheet. |
+| [screenshots/](screenshots) | 44 quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900 at 1x (the PNG is 1440 x 900, `devicePixelRatio` 1); `-full` whole pages (the very tall /helpdesk/inbox and mobile pages stitched from `-full.partN.png` tiles); `mobile-*` shots at 390 x 844 at 2x; `home-light-nav-menu` the open mega-menu, `pricing-light-faq` an opened FAQ row, `contact-sales-light-select-open` the select listbox, `mobile-home-light-menu` the open nav sheet. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — 516 rules, 40 @font-face, 314 resolved root custom properties plus the scoped sets), `layout.json` (33 page/viewport geometry probes), `motion.json` (the animation probe over 6 pages), `pages.md` (layout notes), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
 | [capture.pr](capture.pr) | The pull request that shipped this capture. |
@@ -83,7 +83,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | page | #f4f3ec `light.background.page` |
 | surface | #ffffff `light.background.card` |
 | text | #111111 `light.text.primary` |
-| muted | #687282 `light.text.muted` |
+| muted | #6a7282 `light.text.muted` |
 | accent | #0007cb `light.accent.helpdesk` |
 | border | #d3cec6 `light.border.default` |
 
@@ -91,13 +91,13 @@ Fonts: `core.fontFamily.saans` is Saans, then 10 fallbacks; `core.fontFamily.saa
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 87 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 85 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| light | 16.97:1 pass | 18.88:1 pass | 4.37:1 fail | 4.86:1 pass |
+| light | 16.97:1 pass | 18.88:1 pass | 4.34:1 fail | 4.83:1 pass |
 
 3 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus.ring` #000ce1; `core.color.legacy.focus-outline` #000ce1.
 

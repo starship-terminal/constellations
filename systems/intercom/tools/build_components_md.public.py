@@ -184,7 +184,9 @@ def state_rows(c):
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
         for k in ORDER:
             if k in base and k not in p:
-                diff[k] = "none"
+                # props() omits a resting value (opacity 1, no radius). "none"
+                # is not a valid opacity, so keep the measured reset.
+                diff[k] = "1" if k == "opacity" else "none"
         if not diff:
             same.append(st)
             continue
@@ -304,7 +306,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-light-{state}.png` (the site paints one theme, `body.theme-light`). Desktop shots are 1440 x 900 at 2x; `-full` shots are whole pages; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x). A page taller than one GPU texture is stitched from `-full.partN.png` tiles into one `-full.png`.")
+W("Screenshots are named `{page}-light-{state}.png` (the site paints one theme, `body.theme-light`). Desktop shots are 1440 x 900 at 1x (the PNG matches the viewport); `-full` shots are whole pages at the same 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x). A page taller than one GPU texture is stitched from `-full.partN.png` tiles into one `-full.png`. Component crops stay at 2x.")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -340,7 +342,8 @@ for k, c in C.items():
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none: {', '.join(without)}. The ring is the brand blue (`--color-focus-outline` = `--color-blue`, #000ce1).")
+none = f" The other {len(without)} draw none: {', '.join(without)}." if without else ""
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}.{none} The measured rings are black (`#101010`) on the desktop controls and orange (`#e59700`) on the mobile menu button. The declared `--color-focus-outline` (`--color-blue`, #000ce1) is a stylesheet value; these controls did not paint it.")
 W()
 W("**Hover and pressed.** The primary buttons (nav CTA, hero CTA, the form's Next) repaint rather than transform: `--button-primary-hover-background` is the helpdesk blue #0007cb, the pressed state the same blue at 85%. Ghost nav items fill with `--color-chalk` on hover. Pressed was forced with DevTools, so a state a script adds on mousedown (if any) is missing.")
 W()
@@ -409,9 +412,8 @@ for k in ["feature-card", "plan-card", "promo-badge", "nav-menu", "faq-item", "i
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+    # A transparent card or a card with no radius keeps its own values. A child's
+    # fill, radius or border belongs to that child, not the card.
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
@@ -438,7 +440,7 @@ for g in groups:
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
         W()
         if c.get("missing"):
-            W("Not on the page when it was captured.")
+            W(c.get("captureNote") or "Not on the page when it was captured.")
             continue
         rows, states = state_rows(c)
         if len(states) == 1 and rows:

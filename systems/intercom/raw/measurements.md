@@ -197,26 +197,9 @@ Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, 
 
 Nav mega-menu. The panel the Product/Customers/Resources triggers open (shared-header-switch-card): a white card with the nav-panel border and a drop shadow.
 
-Page: home. Selector: `[class*=switch-card] / nav panel`. States: opened.
+Page: home. Selector: `[class*=switch-card] / nav panel`. States: .
 
-| Property | opened |
-|---|---|
-| Size (w x h) | 344 x 112 |
-| Padding | 0px |
-| Border | 1px solid #d3cec6 |
-| Radius | 0px |
-| Background | #ffffff @ 0.95 |
-| Box shadow | none |
-| Outline | none |
-| Font | Saans 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #111111 |
-| Transition | none |
-| Opacity | 0 |
-| Painted layers | div.shared-header-switch-card.invisible 344.0x112.0 bg #ffffff @ 0.95 border T:1px solid #d3cec6 / R:1px solid #d3cec6 / B:1px solid #d3cec6 / L:1px solid #d3cec6; span.bg-fin.size-1 4.0x4.0 bg #ff5600; span.bg-fin.size-1 4.0x4.0 bg #ff5600; span.bg-fin.size-1 4.0x4.0 bg #ff5600; span.bg-fin.size-1 4.0x4.0 bg #ff5600; span.bg-fin.size-1 4.0x4.0 bg #ff5600 |
-| How | own toggle |
-
-Crops: `nav-menu-opened.png`.
+Not found on the page at capture time.
 
 ### Home
 
@@ -682,26 +665,9 @@ Crops: `select-default.png`, `select-opened.png`.
 
 Select popup. The open listbox of the select (div.select-popup): options list, held open by the select entry.
 
-Page: contact-sales. Selector: `[role=listbox]`. States: opened.
+Page: contact-sales. Selector: `[role=listbox]`. States: .
 
-| Property | opened |
-|---|---|
-| Size (w x h) | 0 x 0 |
-| Padding | 0px |
-| Border | 1px solid #111111 |
-| Radius | 0px |
-| Background | #faf9f6 |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
-| Outline | none |
-| Font | Saans 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #111111 |
-| Transition | none |
-| Icon | 0 x 0, colour #111111 |
-| Painted layers | div.select-popup.overflow-y-auto 0.0x0.0 bg #faf9f6 border T:1px solid #111111 / R:1px solid #111111 / B:1px solid #111111 / L:1px solid #111111 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
-| How | own toggle |
-
-Crops: none.
+Not found on the page at capture time.
 
 #### checkbox
 
@@ -1063,26 +1029,9 @@ Crops: `m-hero-default.png`.
 
 Mobile menu overlay. The full-height navigation sheet the mobile menu button opens (div[role=dialog].shared-header-portal, off-white ground).
 
-Page: home. Selector: `[role=dialog].shared-header-portal`. States: opened.
+Page: home. Selector: `[role=dialog].shared-header-portal`. States: .
 
-| Property | opened |
-|---|---|
-| Size (w x h) | 358 x 513.19 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | #ffffff |
-| Box shadow | none |
-| Outline | none |
-| Font | Saans 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #111111 |
-| Text node | a.text-inline-link.absolute: Saans 14px/15.4px 400, #111111 |
-| Transition | none |
-| Painted layers | div.text-off-black.relative 358.0x513.2 bg #ffffff; span.absolute.size-2 8.0x8.0 bg #d3cec6; span.absolute.size-2 8.0x8.0 bg #d3cec6; span.absolute.size-2 8.0x8.0 bg #d3cec6; span.absolute.size-2 8.0x8.0 bg #d3cec6; a.text-inline-link.absolute 31.0x15.4 image linear-gradient(to right in oklab, #111111 0%, #111111 100%) |
-| How | own toggle |
-
-Crops: `m-menu-overlay-opened.png`.
+Not found on the page at capture time.
 
 ### Footer
 

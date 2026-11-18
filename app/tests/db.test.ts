@@ -1800,6 +1800,7 @@ test("version-thirty-seven stores gain the Intercom rows, without touching their
   ).toBe(38);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Communication Tools, Business) land as two rows.
+  // listReferenceCategoryDetails sorts by term id, so Business comes first.
   expect(
     categories.filter((row) => row.referenceId === "systems:intercom"),
   ).toHaveLength(2);
@@ -1807,7 +1808,7 @@ test("version-thirty-seven stores gain the Intercom rows, without touching their
     (await migrated.listReferenceCategoryDetails(["systems:intercom"])).map(
       (row) => row.label,
     ),
-  ).toEqual(["Communication Tools", "Business"]);
+  ).toEqual(["Business", "Communication Tools"]);
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:intercom").length,

@@ -151,16 +151,15 @@ const RESOLVE_BODY = `({ names, probeId }) => {
     const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3, m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3, s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3;
     return [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s].map((v) => Math.round(Math.min(1, Math.max(0, lin(v))) * 255));
   };
-  // CIE Lab (D65) -> sRGB, for the lab() declarations the progressive-override rules use.
+  // CSS lab() is D50. Convert to D65 (Bradford) before the sRGB matrix, the
+  // same path as css-colour.mjs. Treating the D50 XYZ as D65 shifts
+  // --color-blue-600 from #155dfc to #0062fb.
   const fromLab = (L, a, b) => {
-    const fy = (L + 16) / 116, fx = fy + a / 500, fz = fy - b / 200;
-    const f2i = (f) => { const f3 = f ** 3; return f3 > 216 / 24389 ? f3 : (116 * f - 16) / (24389 / 27); };
-    let X = 95.047 * f2i(fx) / 100, Y = 100 * f2i(fy) / 100, Z = 108.883 * f2i(fz) / 100;
-    return [
-      lin( 3.2406 * X - 1.5372 * Y - 0.4986 * Z),
-      lin(-0.9689 * X + 1.8758 * Y + 0.0415 * Z),
-      lin( 0.0557 * X - 0.2040 * Y + 1.0570 * Z),
-    ].map((v) => Math.round(Math.min(1, Math.max(0, v)) * 255));
+    const fy = (L + 16) / 116, fx = fy + a / 500, fz = fy - b / 200, e = 216 / 24389, k = 24389 / 27;
+    const finv = (t) => (t ** 3 > e ? t ** 3 : (116 * t - 16) / k);
+    const X = finv(fx) * 0.3457 / 0.3585, Y = L > k * e ? fy ** 3 : L / k, Z = finv(fz) * (1 - 0.3457 - 0.3585) / 0.3585;
+    const x = 0.955473421488075 * X - 0.02309845494876471 * Y + 0.06325924320057072 * Z, y = -0.0283697093338637 * X + 1.0099953980813041 * Y + 0.021041441191917323 * Z, z = 0.012314014864481998 * X - 0.020507649298898964 * Y + 1.330365926242124 * Z;
+    return [3.2409699419 * x - 1.5373831776 * y - 0.4986107603 * z, -0.9692436363 * x + 1.8759675015 * y + 0.0415550574 * z, 0.0556300797 * x - 0.2039769589 * y + 1.0569715142 * z].map((v) => Math.round(Math.min(1, Math.max(0, lin(v))) * 255));
   };
   const num = (x) => (x.endsWith('%') ? parseFloat(x) / 100 : parseFloat(x));
   const norm = (c) => {

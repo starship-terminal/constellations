@@ -39,12 +39,13 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     const configuredViewport = page.viewportSize();
     const actual = await page.evaluate(() => {
       const root = document.documentElement, body = document.body, visual = window.visualViewport;
+      const bodyClasses = body ? [...body.classList] : [];
       return {
         innerWidth, innerHeight, devicePixelRatio,
         theme: {
-          classes: [...root.classList].filter(name => name === 'light' || name === 'dark'),
+          classes: [...root.classList, ...bodyClasses].filter(name => name === 'light' || name === 'dark' || name === 'theme-light' || name === 'theme-dark'),
           attributes: Object.fromEntries(['data-theme', 'data-mode', 'data-color-mode'].flatMap(name => {
-            const value = root.getAttribute(name);
+            const value = root.getAttribute(name) || (body && body.getAttribute(name));
             return ['light', 'dark', 'system', 'auto'].includes(value) ? [[name, value]] : [];
           })),
           colorScheme: getComputedStyle(root).colorScheme,
