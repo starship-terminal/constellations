@@ -16647,7 +16647,7 @@
           "/terms",
           "/login"
         ],
-        "pr": "",
+        "pr": "https://github.com/starship-terminal/constellations/pull/676",
         "gaps": [
           "Downloads on a public image page require sign-in and were not pressed",
           "https://www.lummi.ai/login is the sign-in wall; Continue and Continue with Google were not pressed, so the account was not entered",
