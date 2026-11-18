@@ -2454,8 +2454,8 @@
     265
    ],
    "description": "AI that's built for marketing",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/jasper",
    "notes": "",
    "batch": 9
   },
