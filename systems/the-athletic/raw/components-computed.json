@@ -1,0 +1,84 @@
+{
+  "source": "getComputedStyle on visible elements, T3 preview browser, 2026-11-19. Viewport 1169x731, devicePixelRatio 2, html[data-theme=legacy]. Nothing was typed into a field, no account was created, and no checkout or card form was opened.",
+  "pages": {
+    "home": "https://www.nytimes.com/athletic/",
+    "subscribe": "https://www.nytimes.com/subscription/athletic?source=athletic",
+    "article": "https://www.nytimes.com/athletic/7787961/2026/11/18/nhl-goalies-mental-health-crisis/",
+    "about": "https://www.nytimes.com/athletic/about/",
+    "login": "https://www.nytimes.com/athletic/login2/",
+    "league": "https://www.nytimes.com/athletic/nfl/",
+    "notFound": "https://www.nytimes.com/athletic/this-page-does-not-exist-capture/"
+  },
+  "home": {
+    "primaryNav": {"cls": "DesktopNav_PrimaryNav__D_fTH", "bg": "rgb(26, 26, 26)", "h": 60},
+    "navLink": {"text": "NFL", "color": "rgb(255, 255, 255)", "font": "nyt-franklin, helvetica, arial, sans-serif", "size": "14px", "weight": "400", "lh": "40px", "ls": "0.25px", "pad": "0px 10px", "h": 60},
+    "login": {"text": "Log In", "color": "rgb(255, 255, 255)", "font": "nyt-franklin, Helvetica, Arial, sans-serif", "size": "14px", "weight": "600", "lh": "16.8px", "ls": "0.25px", "radius": "20px", "h": 28, "w": 38.5},
+    "trial": {"text": "Start a free trial", "bg": "rgb(183, 36, 36)", "color": "rgb(255, 255, 255)", "font": "nyt-franklin, NYTFranklin, franklin, sans-serif", "size": "14px", "weight": "700", "lh": "32px", "ls": "0.25px", "pad": "0px 16px", "radius": "2px", "h": 32, "w": 135, "hrefHost": "www.nytimes.com/subscription/athletic"},
+    "logo": {"w": 144, "h": 62, "fill": "#fff"},
+    "editionBanner": {"bg": "rgb(240, 240, 238)", "color": "rgb(0, 0, 0)", "font": "nyt-franklin", "size": "14px", "weight": "500", "lh": "16.8px", "ls": "0.25px", "radius": "4px", "shadow": "rgba(0, 0, 0, 0.15) 0px 4px 12px 0px", "w": 343},
+    "editionPrimary": {"text": "International", "bg": "rgb(0, 0, 0)", "color": "rgb(255, 255, 255)", "size": "14px", "weight": "600", "pad": "8px", "radius": "100px", "h": 32.8},
+    "editionSecondary": {"text": "Stay on this edition", "color": "rgb(0, 0, 0)", "size": "14px", "weight": "600", "ls": "0.25px"},
+    "heroLine": {"font": "nyt-cheltenham, Georgia, Times New Roman, times, serif", "size": "24px", "weight": "500", "lh": "28.8px", "color": "rgb(18, 18, 18)"},
+    "cardTitle": {"font": "nyt-franklin", "size": "14px", "weight": "500", "lh": "18.2px", "color": "rgb(18, 18, 18)"},
+    "footer": {"bg": "rgb(26, 26, 26)", "borderTop": "1px rgb(50, 50, 50)", "linkColor": "rgb(196, 196, 192)", "linkSize": "12px", "linkWeight": "500"},
+    "page": {"rootClass": "root legacy", "pageBg": "rgb(255, 255, 255)", "scrollHeight": 8167}
+  },
+  "subscribe": {
+    "note": "Marketing offer page. Radio plans and a Continue to checkout link. No card field was present. The link was not followed.",
+    "body": {"bg": "rgb(255, 255, 255)", "color": "rgb(54, 54, 54)"},
+    "h1": {"text": "Score all of The New York Times.", "font": "nyt-cheltenham", "size": "36px", "weight": "200", "lh": "41.4px", "color": "rgb(18, 18, 18)"},
+    "h2": {"text": "A subscription to The Athletic includes:", "font": "nyt-cheltenham", "size": "36px", "weight": "250", "lh": "41.4px", "color": "rgb(18, 18, 18)"},
+    "planSelected": {"text": "BEST VALUE $12.50/year Pay annually", "bg": "rgb(248, 248, 248)", "border": "1px solid rgb(38, 124, 48)", "radius": "3px", "pad": "14px 10px", "h": 70, "w": 157},
+    "planRest": {"text": "$1/month Pay monthly", "bg": "rgb(255, 255, 255)", "border": "1px solid rgb(223, 223, 223)", "radius": "3px", "pad": "14px 10px", "h": 70, "w": 157},
+    "badge": {"text": "BEST VALUE", "color": "rgb(244, 245, 242)", "size": "12px", "weight": "500", "ls": "0.4px"},
+    "price": {"text": "$12.50/year", "color": "rgb(54, 54, 54)", "size": "16px", "weight": "600", "font": "nyt-franklin"},
+    "cta": {"text": "Continue to checkout", "bg": "rgb(18, 18, 18)", "color": "rgb(255, 255, 255)", "font": "nyt-franklin", "size": "16px", "weight": "600", "lh": "44px", "radius": "4px", "h": 44, "w": 335, "followed": false}
+  },
+  "article": {
+    "headline": {"font": "nyt-cheltenham, georgia, times new roman, times, serif", "size": "40px", "weight": "400", "lh": "44px", "color": "rgb(18, 18, 18)", "pad": "0px 20px", "w": 714},
+    "body": {"font": "nyt-imperial, georgia, times new roman, times, serif", "size": "20px", "weight": "400", "lh": "30px", "color": "rgb(18, 18, 18)", "pad": "0px 24px", "w": 722},
+    "caption": {"font": "nyt-imperial", "size": "14px", "weight": "500", "lh": "19.46px", "color": "rgb(50, 50, 50)"},
+    "byline": {"font": "nyt-franklin", "color": "rgb(51, 51, 51)"},
+    "commentPill": {"text": "201", "bg": "rgb(255, 255, 255)", "color": "rgb(18, 18, 18)", "border": "1px rgb(196, 196, 192)", "radius": "32px", "pad": "4px 12px 4px 8px", "size": "12px", "weight": "500", "font": "nyt-franklin", "h": 32},
+    "nav": {"bg": "rgb(26, 26, 26)", "h": 47},
+    "paywall": false
+  },
+  "about": {
+    "title": {"text": "About Us", "font": "RegularSlab", "size": "42px", "weight": "400", "lh": "39.48px", "ls": "-0.21px", "color": "rgb(0, 0, 0)"},
+    "subtitle": {"font": "RegularSlab", "size": "27px", "weight": "400", "lh": "25.38px", "ls": "-0.135px", "color": "rgb(0, 0, 0)"},
+    "body": {"font": "nyt-franklin, helvetica, arial, sans-serif", "size": "18px", "weight": "400", "lh": "18px", "color": "rgb(18, 18, 18)", "maxWidth": "640px"},
+    "pageBg": "rgb(255, 255, 255)"
+  },
+  "login": {
+    "note": "The form is a cross-origin iframe at myaccount.nytimes.com/auth/iframe/register. contentDocument was null. The iframe was not entered and no account was created.",
+    "iframe": {"w": 552, "h": 478, "srcHost": "myaccount.nytimes.com"},
+    "column": {"w": 600, "pad": "0px 24px"},
+    "pageBg": "rgb(255, 255, 255)"
+  },
+  "league": {
+    "title": {"text": "NFL", "font": "nyt-franklin", "size": "28px", "weight": "700", "lh": "33.6px", "color": "rgb(18, 18, 18)"},
+    "secondaryNav": {"bg": "rgb(43, 43, 43)", "h": 40, "linkColor": "rgb(219, 219, 217)", "linkSize": "12px", "linkWeight": "500"},
+    "scoreRibbon": {"bg": "rgb(247, 247, 244)", "h": 69, "blockW": 140, "blockH": 65}
+  },
+  "search": {
+    "note": "Opened from the Open Search button on the league page. No query was typed.",
+    "scrim": {"bg": "rgba(0, 0, 0, 0.65)"},
+    "bar": {"bg": "rgb(255, 255, 255)", "h": 60},
+    "input": {"placeholder": "Search for writers or stories", "font": "nyt-franklin", "size": "16px", "pad": "6px 0px 7px", "h": 32, "w": 504, "radius": "0px", "border": "0px"},
+    "focus": {"outline": "rgb(0, 0, 0) none 3px", "boxShadow": "none"}
+  },
+  "notFound": {
+    "root": {"bg": "rgb(38, 38, 39)", "pad": "50px 0px 100px"},
+    "code": {"text": "404", "font": "nyt-franklin", "size": "107px", "weight": "400", "color": "rgb(0, 0, 0)"},
+    "sorry": {"text": "Sorry this page isn't available.", "font": "nyt-franklin", "size": "30px", "weight": "400", "color": "rgb(0, 0, 0)"},
+    "card": {"bg": "rgb(255, 255, 255)", "w": 227, "radius": "0px", "shadow": "none"}
+  },
+  "motion": {
+    "reducedMotionRules": 0,
+    "matchMediaReduce": false,
+    "computedDurations": ["0.1s all on score ribbon links", "0.3s all on edition options", "0.6s all on the ribbon track"],
+    "keyframesSampled": {"Modal_fadeIn": "0% opacity 0; 100% opacity 1", "Modal_fadeOut": "0% opacity 1; 100% opacity 0"},
+    "keyframeCount": 347,
+    "focusVisible": ".Pill_Pill:focus-visible { outline: rgb(240, 240, 238) solid 2px; outline-offset: 2px }"
+  }
+}
