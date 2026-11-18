@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 41)
+    if (version > 43)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -504,12 +504,16 @@ export async function createResearchStore(directory: string) {
       await tx.execute("PRAGMA user_version = 39");
     }
     if (version < 41) {
-      // Version 40 is reserved for the IFTTT seed on its own branch.
-      // This top-up is scoped so a store already at v40 still gains Hers,
-      // and cleared labels on older packages stay cleared.
+      // Version 40 stays reserved for IFTTT. A store already at v40 still gains Hers.
       await seedNewCuratedCategories(tx, new Set(["systems:forhers"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:forhers"]));
       await tx.execute("PRAGMA user_version = 41");
+    }
+    if (version < 43) {
+      // This top-up is scoped so a store already at v41 still gains Huddlekit.
+      await seedNewCuratedCategories(tx, new Set(["systems:huddlekit"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:huddlekit"]));
+      await tx.execute("PRAGMA user_version = 43");
     }
     await tx.commit();
   } catch (error) {

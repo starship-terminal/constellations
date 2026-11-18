@@ -621,7 +621,7 @@
     "referenceId": "systems:descript",
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],
-    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries — the AI Tool label."
+    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries \u2014 the AI Tool label."
   },
   {
     "referenceId": "systems:deel",
@@ -639,7 +639,7 @@
     "referenceId": "systems:cartesia",
     "groupId": "web-categories",
     "labels": ["AI Tool"],
-    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) — the AI Tool label."
+    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) \u2014 the AI Tool label."
   },
   {
     "referenceId": "systems:chargetrip",
@@ -849,7 +849,7 @@
     "referenceId": "systems:designstripe",
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],
-    "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog — the AI Tool label."
+    "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog \u2014 the AI Tool label."
   },
   {
     "referenceId": "systems:family",
@@ -1029,7 +1029,7 @@
     "referenceId": "systems:gofundme",
     "groupId": "web-categories",
     "labels": ["Fundraising", "Marketplace"],
-    "reason": "catalog.json describes a crowdfunding platform: the home hero and header dropdowns, the /discover and /s browse grids of fundraiser cards, a public /f/<slug> fundraiser page, the /create/fundraiser/category wizard at rest, the /sign-in auth boundary and the /c/* marketing stack — all signed-out."
+    "reason": "catalog.json describes a crowdfunding platform: the home hero and header dropdowns, the /discover and /s browse grids of fundraiser cards, a public /f/<slug> fundraiser page, the /create/fundraiser/category wizard at rest, the /sign-in auth boundary and the /c/* marketing stack \u2014 all signed-out."
   },
   {
     "referenceId": "systems:grammarly",
@@ -1089,7 +1089,7 @@
     "referenceId": "systems:grow",
     "groupId": "web-categories",
     "labels": ["Education"],
-    "reason": "catalog.json describes Google's Grow with Google program site: Career Certificate pages, the certificates catalog, AI training courses and graduate/partner stories — a public learning program, enrolment on Coursera."
+    "reason": "catalog.json describes Google's Grow with Google program site: Career Certificate pages, the certificates catalog, AI training courses and graduate/partner stories \u2014 a public learning program, enrolment on Coursera."
   },
   {
     "referenceId": "systems:cofounder",
@@ -1260,15 +1260,27 @@
     "reason": "catalog.json describes a signed-out stock library: a search palette and a public image page."
   },
   {
-    "referenceId": "systems:forhers",
+    "referenceId": "systems:huddlekit",
     "groupId": "web-categories",
-    "labels": ["Health & Wellness", "Marketplace"],
-    "reason": "catalog.json describes the Hers women's telehealth storefront: treatment verticals (weight loss, hair, skin, mental health, birth control, anti-aging, labs), product cards with prices, a BMI calculator, an editorial blog and a drug-information index - health and wellness products sold direct."
+    "labels": ["Collaboration Tools", "Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes Huddlekit's signed-out visual-annotation product for website feedback: the marketing site (features, solutions, pricing, integrations, compare, MCP, blog, support, free design tools) plus the app's anonymous login surface."
   },
   {
     "referenceId": "systems:macaw",
     "groupId": "web-categories",
     "labels": ["AI Tool"],
     "reason": "catalog.json describes a cream marketing site for an AI website builder: one coral action and tinted pricing cards."
+  },
+  {
+    "referenceId": "systems:matter",
+    "groupId": "web-categories",
+    "labels": ["Entertainment"],
+    "reason": "catalog.json describes near-black reading-app marketing: a blurple pill, display type, and a white sign-in card."
+  },
+  {
+    "referenceId": "systems:forhers",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Marketplace"],
+    "reason": "catalog.json describes the Hers women's telehealth storefront: treatment verticals (weight loss, hair, skin, mental health, birth control, anti-aging, labs), product cards with prices, a BMI calculator, an editorial blog and a drug-information index - health and wellness products sold direct."
   }
 ]
