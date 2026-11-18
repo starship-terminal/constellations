@@ -55,6 +55,7 @@ const result = await probe.evaluate((sheets) => {
           family: r.style.getPropertyValue('font-family'),
           weight: r.style.getPropertyValue('font-weight'),
           style: r.style.getPropertyValue('font-style'),
+          src: noUrl(r.style.getPropertyValue('src')),
         });
         continue;
       }
@@ -91,6 +92,7 @@ for (const [name, css] of sheets) {
 }
 const names = [...new Set(result.rules.flatMap((r) => Object.keys(r.properties)))].sort();
 const resolved = await probe.evaluate((names) => {
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const lin = (c) => (c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055);
   const fromOklab = (L, a, b) => {
     const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3;
@@ -121,7 +123,7 @@ const resolved = await probe.evaluate((names) => {
   document.body.appendChild(box);
   const out = {};
   for (const name of names) {
-    const raw = getComputedStyle(el).getPropertyValue(name).trim();
+    const raw = noUrl(getComputedStyle(el).getPropertyValue(name).trim());
     if (!raw) continue;
     const r = { raw: raw.slice(0, 180) };
     box.style.color = '';
