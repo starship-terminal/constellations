@@ -1,6 +1,6 @@
 # Limitless patterns
 
-Public pages only, 2026-11-18. The product behind sign-in is a boundary, recorded in [components.md](components.md) Gaps and in the catalog `capture.gaps`.
+Public pages plus the Sign Up Unavailable dialog, 2026-11-18. Lifelogs, settings and account were not reached. Recorded in [components.md](components.md) Gaps and in the catalog `capture.gaps`.
 
 ## Marketing frame
 
@@ -24,11 +24,15 @@ Solutions is a local menu, not a page. It groups links by use case, role, job an
 
 ## Sign-in wall
 
-`app.limitless.ai` redirects to `/signin`: a centered card, Continue with Google, an email field, a Privacy Policy link ([desktop](screenshots/signin-light-default.png), [phone](screenshots/mobile-signin-light-default.png)). Google is OAuth. The email field starts account creation. Both stop here. A Google One Tap chip can appear over the phone card; it was not used.
+`app.limitless.ai` redirects to `/signin`: a centered card, Continue with Google, an email field, a Privacy Policy link ([desktop](screenshots/signin-light-default.png), [phone](screenshots/mobile-signin-light-default.png)). Google is OAuth and was not pressed.
 
-## What is not on the public surface
+## Sign Up Unavailable
 
-Empty, loading and error states of the app, form validation, destructive confirmation, and onboarding all sit behind sign-in or behind a submit. The 404 at `/pricing` is the marketing site's not-found page ([shot](screenshots/notfound-light-default.png)), not an app error state.
+Submitting the email field (never Google) opens a Radix dialog on a 30% black scrim: title "Sign Up Unavailable", body that Limitless is no longer accepting new users, a mailto to support@limitless.ai for Pendant owners, and an OK control ([desktop](screenshots/signin-light-signup-unavailable.png), [phone](screenshots/mobile-signin-light-signup-unavailable.png), [crop](components/crops/signup-unavailable-dialog-default.png)). OK was not pressed. No CAPTCHA, phone or payment appeared. A Google One Tap chip can appear on phone; it was not used.
+
+## What is not on the captured surface
+
+Lifelogs, settings, account, empty/loading/error of the app, form validation, destructive confirmation, and onboarding all sit behind an account this capture could not create. The 404 at `/pricing` is the marketing site's not-found page ([shot](screenshots/notfound-light-default.png)), not an app error state.
 
 ## Motion
 

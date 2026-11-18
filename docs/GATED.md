@@ -243,11 +243,10 @@ Access: signed out (every captured surface is public; sign-in, plan checkout, th
 - carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
 
 ## [Limitless](../systems/limitless) — `limitless`
-Access: signed out (public marketing, docs, legal, help center, and the app.limitless.ai sign-in wall; Google and the email field were not used)
-- app.limitless.ai/signin: the signed-in app (lifelogs, Pendant settings, billing, account) was not entered
+Access: signed-out public marketing, docs, legal, help center, and the app.limitless.ai sign-in wall; a 2026-11-18 signed-in pass submitted the email field only (never Google) and stopped at Sign Up Unavailable (Limitless is no longer accepting new users). Lifelogs, settings and account were not entered. No Pendant purchased. No CAPTCHA, phone or payment.
+- app.limitless.ai/signin: submitting a new email opens Sign Up Unavailable (Limitless is no longer accepting new users); lifelogs, settings, billing and account were not entered
 - Continue with Google at https://app.limitless.ai/signin starts OAuth and was not pressed
-- the email field at https://app.limitless.ai/signin starts account creation and was not submitted
-- Pendant purchase is no longer offered to new customers; no checkout was opened
+- Pendant purchase is no longer offered to new customers; the unavailable dialog tells Pendant owners to email support; no checkout was opened
 - account deletion, documented at https://help.limitless.ai/en/articles/13005203-how-to-delete-your-limitless-account-and-data, was not opened
 - the Slack community invite at https://www.limitless.ai/community leaves the site and was not followed
 

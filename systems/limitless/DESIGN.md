@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Limitless"
-description: "A quiet light marketing site after an acquisition: white page, slate 900 display at 60px with tight tracking, Greycliff, purple-500 used only on the star and one filled action, pill nav, a 24px letter card, and a small sign-in card that stops at Google and an email field"
+description: "A quiet light marketing site after an acquisition: white page, slate 900 display at 60px with tight tracking, Greycliff, purple-500 used only on the star and one filled action, pill nav, a 24px letter card, and a sign-in card that opens Sign Up Unavailable for a new email"
 omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
@@ -29,6 +29,12 @@ colors:
   border: "#e2e8f0"
   footerInk: "#d1d5db"
   helpBand: "#8a54e1"
+  overlay: "rgba(0, 0, 0, 0.3)"
+  scrim: "rgba(0, 0, 0, 0.3)"
+  appInk: "#09090b"
+  appLink: "#7c3aed"
+  appAccentFrom: "#8436e2"
+  appAccentTo: "#6515c5"
 typography:
   display:
     fontFamily: "Greycliff"
@@ -71,6 +77,7 @@ rounded:
   menu: "6px"
   control: "8px"
   search: "10px"
+  dialog: "12px"
   card: "24px"
   pill: "9999px"
 spacing:
@@ -94,13 +101,13 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: A quiet light marketing site after an acquisition: white page, slate 900 display at 60px with tight tracking, Greycliff, purple-500 used only on the star and one filled action, pill nav, a 24px letter card, and a small sign-in card that stops at Google and an email field.
+Good for: A quiet light marketing site after an acquisition: white page, slate 900 display at 60px with tight tracking, Greycliff, purple-500 used only on the star and one filled action, pill nav, a 24px letter card, and a sign-in card that opens Sign Up Unavailable for a new email.
 
-Captured 2026-11-18, signed out (public marketing, docs, legal, help center, and the app.limitless.ai sign-in wall; Google and the email field were not used). Themes: light.
+Captured 2026-11-18, signed-out public marketing, docs, legal, help center, and the app.limitless.ai sign-in wall; a 2026-11-18 signed-in pass submitted the email field only (never Google) and stopped at Sign Up Unavailable (Limitless is no longer accepting new users). Lifelogs, settings and account were not entered. No Pendant purchased. No CAPTCHA, phone or payment.. Themes: light.
 
-Tokens and component notes for the public Limitless site (limitless.ai), captured **2026-11-18**, signed out, in headless Chromium. Desktop is 1440×900. Phone is 390×844. The site paints one light theme. Captured routes: `/`, `/privacy`, `/developers`, `/about`, `/careers`, `/support`, `/terms`, `/privacy-policy`, `/for/voice-recorder`, `/for/students`, the `/pricing` 404, `app.limitless.ai/signin` (the wall only), and `help.limitless.ai/en/`.
+Tokens and component notes for Limitless (limitless.ai), captured **2026-11-18**. Desktop is 1440×900. Phone is 390×844. One light theme. Public routes: `/`, `/privacy`, `/developers`, `/about`, `/careers`, `/support`, `/terms`, `/privacy-policy`, `/for/voice-recorder`, `/for/students`, the `/pricing` 404, `app.limitless.ai/signin` (the wall), and `help.limitless.ai/en/`. Signed-in attempt: the email field at `https://app.limitless.ai/signin` was submitted (never Google). Limitless answered with **Sign Up Unavailable**: it is no longer accepting new users. Lifelogs, settings and account were not entered. No Pendant was bought. No CAPTCHA, phone or payment appeared.
 
-Limitless is a Tailwind/Next.js marketing site on Greycliff. Colour is utility classes (slate, zinc, purple-500), not a custom-property system. The home page is an acquisition letter. Sign-in, the app, Pendant purchase, and account actions were not entered.
+Limitless marketing is Tailwind/Next.js on Greycliff. Colour is utility classes (slate, zinc, purple-500). The app host also declares shadcn HSL variables ([raw/app-css-vars.json](raw/app-css-vars.json)). The home page is an acquisition letter.
 
 <!-- brief:start -->
 <!-- brief:end -->
@@ -140,10 +147,11 @@ Shadows, resolved to CSS:
 | `core.elevation.card` | `0px 25px 50px -12px rgba(15, 23, 42, 0.15)` |
 | `core.elevation.popover` | `0px 12px 24px -8px rgba(15, 23, 42, 0.12)` |
 | `core.elevation.control` | `0px 1px 2px 0px rgba(0, 0, 0, 0.1)` |
+| `core.elevation.dialog` | `0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1)` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `code` 4px, `menu` 6px, `control` 8px, `search` 10px, `card` 24px, `pill` 9999px.
+Corner radii from `core.radius`: `code` 4px, `menu` 6px, `control` 8px, `search` 10px, `dialog` 12px, `card` 24px, `pill` 9999px.
 
 ## Components
 
@@ -161,8 +169,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- The app behind `https://app.limitless.ai/signin`. Google and the email field were measured and not used.
-- Pendant checkout. The site says the Pendant is no longer sold to new customers. No purchase flow was opened.
+- Lifelogs, settings and account. Submitting a new email at `https://app.limitless.ai/signin` opens Sign Up Unavailable. The product is no longer accepting new users. Continue with Google was not pressed.
+- Pendant checkout. The dialog and the marketing site both say the Pendant is not sold to new customers. No purchase flow was opened.
 - Support chat on `/support`. It is a third-party widget. It was not opened.
 - Help search results and article pages. The field was focused and not queried.
 - Ashby careers and the Slack community invite. Both leave the site.
@@ -180,6 +188,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 5. **Do round the letter card at 24px.** The acquisition letter is a soft card, not a flat column ([card](components/crops/letter-card-default.png)).
 6. **Do keep the sign-in card quiet.** White, 8px radius, one Google button, one email field, on a pale field ([sign-in](screenshots/signin-light-default.png)).
 7. **Don't invent a dark theme.** The public site does not paint one.
-8. **Don't style the signed-in app from this package.** Lifelogs, Pendant settings and billing were not captured ([sign-in wall](screenshots/signin-light-default.png)).
-9. **Don't follow Continue with Google or submit the email field.** Both leave the public surface.
+8. **Don't style lifelogs or settings from this package.** Those screens were not reached ([unavailable](screenshots/signin-light-signup-unavailable.png)).
+9. **Don't follow Continue with Google.** OAuth was not used ([sign-in wall](screenshots/signin-light-default.png)).
 10. **Don't copy the star or the Greycliff files.** The mark and the typeface are Limitless's. Tokens name the system.
+11. **Don't expect a new email to open the app.** Sign Up Unavailable is the gate ([dialog](components/crops/signup-unavailable-dialog-default.png)).

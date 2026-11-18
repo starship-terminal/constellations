@@ -38,7 +38,7 @@ Measured on the public site on 2026-11-18, light theme, 1440 CSS pixels. Crops a
 
 ## Field
 
-**Email** ([default](components/crops/email-field-default.png), [focused](components/crops/email-field-focused.png)). On the sign-in card. Placeholder "Continue with your email", zinc 800 ink, white fill. Nothing was typed. Submitting it starts account creation, so the field stops at focus.
+**Email** ([default](components/crops/email-field-default.png), [focused](components/crops/email-field-focused.png)). On the sign-in card. Placeholder "Continue with your email", zinc 800 ink, white fill. Submitting it (2026-11-18 signed-in pass) opened Sign Up Unavailable. Google was not used.
 
 **Help search** ([default](components/crops/search-field-default.png), [focused](components/crops/search-field-focused.png)). 18px on a translucent white pill over the purple help band. Focus turns the fill solid white and the ink `#1a1a1a`. Nothing was queried.
 
@@ -60,11 +60,13 @@ Measured on the public site on 2026-11-18, light theme, 1440 CSS pixels. Crops a
 
 **Continue with Google** ([default](components/crops/google-button-default.png), [hover](components/crops/google-button-hover.png), [focus](components/crops/google-button-focus-visible.png)). White, 8px radius, 48px tall, zinc 800 label, hairline shadow. Hover fills `#fafafa`. Focus adds a purple 700 ring. The button starts OAuth. It was not pressed.
 
+**Sign Up Unavailable** ([desktop](screenshots/signin-light-signup-unavailable.png), [phone](screenshots/mobile-signin-light-signup-unavailable.png), [crop](components/crops/signup-unavailable-dialog-default.png)). Radix `role=dialog`, max-width 448px, white card 12px radius `core.radius.dialog`, scrim `light.overlay` rgba(0,0,0,0.3). Title 20px / 600 zinc 950 `light.appInk`. Body 16px zinc 700. Caption 14px zinc 600 with a purple 700 mailto `light.appLink`. OK is 32px, 6px radius, white label on `linear-gradient(#8436e2 33%, #6515c5)` `light.appAccentFrom` / `light.appAccentTo`. Close is a 20px zinc 500 X. OK was not pressed.
+
 ## Gaps
 
-- Select, checkbox, radio, switch, tabs, tooltip, toast, table, avatar and badge do not appear on the signed-out marketing surface. The help cards show staff avatars; those are Intercom artwork, not a Limitless avatar component.
-- Disabled, loading, error and validation states were not reached. No form was submitted.
+- Select, checkbox, radio, switch, tabs, tooltip, toast, table, avatar and badge do not appear on the signed-out marketing surface or on this dialog. The help cards show staff avatars; those are Intercom artwork, not a Limitless avatar component.
+- Disabled, loading, error and validation states were not reached. The email submit opened a product gate, not a field error.
 - The support chat widget on `/support` is a third-party embed. It was not opened or typed into.
-- The signed-in app (lifelogs, Pendant settings, billing, account deletion) sits behind `https://app.limitless.ai/signin`.
-- Checkout and Pendant purchase are gone from the public site (the acquisition notice says the Pendant is no longer sold to new customers). No checkout was captured.
+- Lifelogs, settings, billing and account deletion were not reached. Limitless is no longer accepting new users.
+- Checkout and Pendant purchase were not opened. The dialog tells Pendant owners to email support@limitless.ai.
 - Ashby careers (`jobs.ashbyhq.com/limitless`) and the Slack community invite are off-site. Neither was followed.

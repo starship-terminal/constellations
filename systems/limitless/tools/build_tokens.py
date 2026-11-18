@@ -3,9 +3,10 @@
 
 Limitless ships one painted theme (light). Colour is Tailwind utilities
 (slate, zinc, purple-500) plus a few measured fills, not a custom-property
-system. Every value here was read from a computed style on 2026-11-18
-or derived from those readings. There is no dark set: the product does
-not paint one on the public surface.
+system on the marketing site. The app host declares shadcn HSL variables;
+those are in raw/app-css-vars.json. Every value here was read from a
+computed style on 2026-11-18 or derived from those readings. There is no
+dark set: the product does not paint one on the captured surfaces.
 """
 import json
 import pathlib
@@ -36,6 +37,7 @@ def font(value, source):
 
 
 M = "Measured computed style, public Limitless pages, 2026-11-18, light, 1440"
+A = "Measured computed style, app.limitless.ai Sign Up Unavailable dialog, 2026-11-18, light, 1440"
 D = "Derived from measured computed styles on the same capture"
 
 core = {
@@ -53,9 +55,11 @@ core = {
             "50": color("#f8fafc", f"{M}: carousel icon-button hover fill"),
         },
         "zinc": {
+            "950": color("#09090b", f"{A}: dialog title (text-xl tracking-tight)"),
             "800": color("#27272a", f"{M}: sign-in card ink and email field"),
-            "700": color("#3f3f46", f"{M}: menu item hover ink"),
-            "600": color("#52525b", f"{M}: Solutions menu item"),
+            "700": color("#3f3f46", f"{A}: dialog body (text-zinc-700); also {M}: menu item hover ink"),
+            "600": color("#52525b", f"{A}: dialog caption (text-zinc-600); also {M}: Solutions menu item"),
+            "500": color("#71717a", f"{A}: dialog close icon (text-zinc-500)"),
             "200": color("#e4e4e7", f"{D}: Tailwind zinc-200, the sign-in field hairline family"),
         },
         "gray": {
@@ -65,10 +69,13 @@ core = {
         "purple": {
             "500": color("#a855f7", f"{M}: Copy button and developer anchor (purple-500)"),
             "600": color("#9333ea", f"{M}: Copy button hover"),
-            "700": color("#7c3aed", f"{M}: sign-in Google button focus ring"),
+            "700": color("#7c3aed", f"{A}: dialog mailto link (text-primary); also {M}: sign-in Google button focus ring"),
+            "appFrom": color("#8436e2", f"{A}: OK button linear-gradient start rgb(132, 54, 226)"),
+            "appTo": color("#6515c5", f"{A}: OK button linear-gradient end rgb(101, 21, 197)"),
             "tint": color("rgba(109, 40, 217, 0.05)", f"{M}: Solutions menu item hover fill"),
         },
-        "white": color("#ffffff", f"{M}: page, cards, Google button"),
+        "white": color("#ffffff", f"{M}: page, cards, Google button; also {A}: dialog card"),
+        "scrim": color("rgba(0, 0, 0, 0.3)", f"{A}: dialog overlay bg-black/30"),
         "ink": color("#1a1a1a", f"{M}: help collection card text, search field focused"),
         "footer": color("#d1d5db", f"{M}: footer link on the dark footer band"),
         "navHover": color("rgba(51, 65, 85, 0.08)", f"{M}: nav link and Solutions hover fill"),
@@ -198,6 +205,7 @@ core = {
         "menu": dim("6px", f"{M}: Solutions menu item"),
         "control": dim("8px", f"{M}: FAQ summary, Google button, help card"),
         "search": dim("10px", f"{M}: help search field"),
+        "dialog": dim("12px", f"{A}: Sign Up Unavailable card (sm:rounded-xl)"),
         "card": dim("24px", f"{M}: letter card"),
         "pill": dim("9999px", f"{M}: nav links, Solutions, carousel arrows"),
     },
@@ -220,6 +228,14 @@ core = {
             "$type": "shadow",
             "$value": [{"color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px"}],
             "$extensions": {"source": f"{M}: carousel icon button"},
+        },
+        "dialog": {
+            "$type": "shadow",
+            "$value": [
+                {"color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "10px", "blur": "15px", "spread": "-3px"},
+                {"color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "4px", "blur": "6px", "spread": "-4px"},
+            ],
+            "$extensions": {"source": f"{A}: dialog inner card box-shadow (Tailwind shadow-lg)"},
         },
     },
     "layout": {
@@ -248,6 +264,12 @@ light = {
     "border": color("{color.slate.200}", f"{D}: hairline family around cards"),
     "footerInk": color("{color.footer}", f"{M}: footer links"),
     "helpBand": color("#8a54e1", f"Measured from the help center stylesheet harvest: purple header band"),
+    "overlay": color("{color.scrim}", f"{A}: fixed inset overlay bg-black/30"),
+    "scrim": color("{color.scrim}", f"{A}: same overlay, the dim behind the dialog"),
+    "appInk": color("{color.zinc.950}", f"{A}: dialog title"),
+    "appLink": color("{color.purple.700}", f"{A}: support mailto on the dialog"),
+    "appAccentFrom": color("{color.purple.appFrom}", f"{A}: OK fill gradient start"),
+    "appAccentTo": color("{color.purple.appTo}", f"{A}: OK fill gradient end"),
 }
 
 # Alias check
@@ -298,7 +320,7 @@ tokens = {
         "id": "light",
         "name": "Light",
         "selectedTokenSets": {"core": "source", "light": "enabled"},
-        "$description": "The only painted theme on the public Limitless site, 2026-11-18.",
+        "$description": "The only painted theme on captured Limitless surfaces, 2026-11-18 (marketing plus the app sign-in dialog).",
     }],
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }

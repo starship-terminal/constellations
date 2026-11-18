@@ -1,8 +1,8 @@
 # Limitless design reference
 
-Tokens and component notes for the public Limitless site (limitless.ai), captured **2026-11-18**, signed out, in headless Chromium. Desktop is 1440×900. Phone is 390×844. The site paints one light theme. Captured routes: `/`, `/privacy`, `/developers`, `/about`, `/careers`, `/support`, `/terms`, `/privacy-policy`, `/for/voice-recorder`, `/for/students`, the `/pricing` 404, `app.limitless.ai/signin` (the wall only), and `help.limitless.ai/en/`.
+Tokens and component notes for Limitless (limitless.ai), captured **2026-11-18**. Desktop is 1440×900. Phone is 390×844. One light theme. Public routes: `/`, `/privacy`, `/developers`, `/about`, `/careers`, `/support`, `/terms`, `/privacy-policy`, `/for/voice-recorder`, `/for/students`, the `/pricing` 404, `app.limitless.ai/signin` (the wall), and `help.limitless.ai/en/`. Signed-in attempt: the email field at `https://app.limitless.ai/signin` was submitted (never Google). Limitless answered with **Sign Up Unavailable**: it is no longer accepting new users. Lifelogs, settings and account were not entered. No Pendant was bought. No CAPTCHA, phone or payment appeared.
 
-Limitless is a Tailwind/Next.js marketing site on Greycliff. Colour is utility classes (slate, zinc, purple-500), not a custom-property system. The home page is an acquisition letter. Sign-in, the app, Pendant purchase, and account actions were not entered.
+Limitless marketing is Tailwind/Next.js on Greycliff. Colour is utility classes (slate, zinc, purple-500). The app host also declares shadcn HSL variables ([raw/app-css-vars.json](raw/app-css-vars.json)). The home page is an acquisition letter.
 
 | File | What it is |
 |---|---|
@@ -33,19 +33,19 @@ Scorecard: **12 of 25 met, 12 partly, 1 missing**; C5, V1, V2 are optional for a
 
 | Open | Grade | Evidence |
 |---|---|---|
-| F6 Status colours | Missing | The public marketing surface paints no success, warning, danger or info palette. Validation and error states sit behind sign-in or a submit, which was not crossed. |
-| F1 Colour ramps | Partly | core.color.slate is a measured 10-step ramp (50 to 900). Purple is only 500/600/700 plus a tint, zinc is 200/600/700/800, and gray is 100/900. Those are the painted Tailwind steps, not a ramp per hue. |
-| F2 Background roles | Partly | light.page, light.surface, light.surfaceMuted and light.surfaceCode are recorded. The public pages have no overlay or scrim role; the cookie dialog was hidden and not measured. |
-| F3 Text roles | Partly | Primary (light.text), secondary (light.textBody), muted (light.textMuted), on-accent (light.textOnAccent) and link (light.link) are tokens. No disabled text role appears on the signed-out surface. |
-| F4 Border roles | Partly | light.border is slate 200 and light.focus is the 1px #005fcc outline. No strong border role is painted on the public pages. |
-| F5 Accent states | Partly | Accent default is light.accent (purple 500) and hover is light.accentHover (purple 600), measured on Copy. Pressed was a forced :active and did not get its own token. |
-| F11 Sizing | Partly | Copy is 32px, carousel next is 40px, the Google button is 48px, and the focus outline is 1px. There is no size scale of control heights, no icon-size token, and no focus-ring offset token. |
+| F6 Status colours | Missing | The captured surfaces paint no success, warning, danger or info palette. --destructive is declared on app.limitless.ai :root and was not painted on the Sign Up Unavailable dialog. |
+| F1 Colour ramps | Partly | core.color.slate is a measured 10-step ramp (50 to 900). Purple is 500/600/700 plus appFrom/appTo and a tint, zinc is 200/500/600/700/800/950, and gray is 100/900. Those are the painted steps, not a ramp per hue. |
+| F2 Background roles | Partly | light.page, light.surface, light.surfaceMuted, light.surfaceCode, light.overlay and light.scrim are recorded. Overlay/scrim come from the Sign Up Unavailable dialog (bg-black/30). No raised role is painted. |
+| F3 Text roles | Partly | Primary (light.text), secondary (light.textBody), muted (light.textMuted), on-accent (light.textOnAccent) and link (light.link) are tokens. App dialog title is light.appInk. No disabled text role appears on the captured surfaces. |
+| F4 Border roles | Partly | light.border is slate 200 and light.focus is the 1px #005fcc outline. No strong border role is painted on the captured pages. |
+| F5 Accent states | Partly | Accent default is light.accent (purple 500) and hover is light.accentHover (purple 600), measured on Copy. The app OK button uses a measured gradient light.appAccentFrom to light.appAccentTo. Pressed on marketing controls was a forced :active and did not get its own token. |
+| F11 Sizing | Partly | Copy is 32px, carousel next is 40px, the Google button is 48px, the dialog OK is 32px, and the focus outline is 1px. There is no size scale of control heights, no icon-size token, and no focus-ring offset token. |
 | F14 Layout | Partly | core.layout records the 1440 and 390 capture widths, a 1024px letter card, 896px prose and a 64px nav. No breakpoint token, column grid or z-index layer scale was published in the product CSS. |
-| C1 Component coverage | Partly | Captured on the public surface: button, icon button, link, text field, menu, dialog (the sign-in card), card, list row. That is 8 of 19. Text area, select, checkbox, radio, switch, tabs, tooltip, toast, table, avatar and badge are not present signed out, and are recorded as such in the README coverage table. |
-| C2 States | Partly | Hover, focus-visible and pressed crops exist for nav and Copy; Google button has hover and focus. Disabled, loading, error and selected were not on the public pages and were not reached, because no form was submitted. |
+| C1 Component coverage | Partly | Captured: button, icon button, link, text field, menu, dialog (sign-in card and Sign Up Unavailable Radix dialog), card, list row. That is 8 of 19. Text area, select, checkbox, radio, switch, tabs, tooltip, toast, table, avatar and badge are not present on the captured surfaces. |
+| C2 States | Partly | Hover, focus-visible and pressed crops exist for nav and Copy; Google button has hover and focus. Disabled, loading, error and selected were not reached. Submitting the email field opened Sign Up Unavailable, not a field-error state. |
 | C4 Token-based specs | Partly | components.md names a token after each measured colour. Several entries still lead with the raw computed value (16px, 60px, #005fcc) beside the token, so the spec is not token-only. |
-| P1 Patterns | Partly | patterns.md writes the marketing frame, solutions menu, developer docs, FAQ, help center and sign-in wall. App shell, form validation, empty/loading/error, destructive confirmation, search results and onboarding are recorded as not captured because they sit behind sign-in or a submit. |
-| K2 Do and don't | Partly | Script: 10 rules, 7 linking an image (needs 3+, all linked) |
+| P1 Patterns | Partly | patterns.md writes the marketing frame, solutions menu, developer docs, FAQ, help center, sign-in wall and Sign Up Unavailable. App shell, form validation, empty/loading/error, destructive confirmation, search results and onboarding were not captured: Limitless is no longer accepting new users. |
+| K2 Do and don't | Partly | Script: 11 rules, 9 linking an image (needs 3+, all linked) |
 
 Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../../docs/PACKAGE.md)).
 
@@ -66,9 +66,10 @@ Read this before designing in this style. Take every value from [tokens.json](to
 5. Do round the letter card at 24px.
 6. Do keep the sign-in card quiet.
 7. Don't invent a dark theme.
-8. Don't style the signed-in app from this package.
-9. Don't follow Continue with Google or submit the email field.
+8. Don't style lifelogs or settings from this package.
+9. Don't follow Continue with Google.
 10. Don't copy the star or the Greycliff files.
+11. Don't expect a new email to open the app.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -83,11 +84,11 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #a855f7 `light.accent` |
 | border | #e2e8f0 `light.border` |
 
-Fonts: `core.font.family.sans` is Greycliff, then 5 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 7 type styles (`core.typography`), 6 radius steps (`core.radius`), 10 spacing steps (`core.space`).
+Fonts: `core.font.family.sans` is Greycliff, then 5 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 7 type styles (`core.typography`), 7 radius steps (`core.radius`), 10 spacing steps (`core.space`).
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 51 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 53 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -101,12 +102,12 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 ## How the values were read
 
-Computed styles on the live DOM, 2026-11-18, light, 1440. Hover is a real pointer. Focus-visible is keyboard. Pressed is a forced `:active` pseudo-class, so no control fired. The Enzuzo cookie banner was hidden with CSS. It was never clicked. Stylesheets were harvested into [raw/css-vars.json](raw/css-vars.json). Motion was probed on five URLs into [raw/motion.json](raw/motion.json).
+Computed styles on the live DOM, 2026-11-18, light, 1440. Hover is a real pointer. Focus-visible is keyboard. Pressed is a forced `:active` pseudo-class, so no control fired. The Enzuzo cookie banner was hidden with CSS. It was never clicked. Stylesheets were harvested into [raw/css-vars.json](raw/css-vars.json). App `:root` variables on the sign-in host are in [raw/app-css-vars.json](raw/app-css-vars.json). The Sign Up Unavailable dialog was measured after submitting the email field ([raw/gated-dialog.json](raw/gated-dialog.json)). Motion was probed on five URLs into [raw/motion.json](raw/motion.json). The email shown in the gated screenshots is a placeholder written over the field after submit, before the shot.
 
 ## What to distrust
 
-- The app behind `https://app.limitless.ai/signin`. Google and the email field were measured and not used.
-- Pendant checkout. The site says the Pendant is no longer sold to new customers. No purchase flow was opened.
+- Lifelogs, settings and account. Submitting a new email at `https://app.limitless.ai/signin` opens Sign Up Unavailable. The product is no longer accepting new users. Continue with Google was not pressed.
+- Pendant checkout. The dialog and the marketing site both say the Pendant is not sold to new customers. No purchase flow was opened.
 - Support chat on `/support`. It is a third-party widget. It was not opened.
 - Help search results and article pages. The field was focused and not queried.
 - Ashby careers and the Slack community invite. Both leave the site.
@@ -123,7 +124,7 @@ Greycliff (400, 500, 600, 700), loaded by Next as `__greycliff`. Licensed, not s
 
 | Item | Status |
 |---|---|
-| Colour roles | Captured. [tokens.json](tokens.json) `light.*`, from computed styles. |
+| Colour roles | Captured. [tokens.json](tokens.json) `light.*`, from computed styles. Overlay/scrim from the app dialog. |
 | Type roles | Captured. Display, heading, body, body-lg, label, caption, code. |
 | Spacing | Captured as a 4px scale derived from the measured paddings. |
 | Radii | Captured. 4, 6, 8, 10, 24, pill. |
@@ -143,7 +144,7 @@ Greycliff (400, 500, 600, 700), loaded by Next as `__greycliff`. Licensed, not s
 | Tabs | Not present signed out. |
 | Menu | Captured. Solutions menu. [shot](screenshots/home-light-solutions.png). |
 | Tooltip | Not present signed out. |
-| Dialog | The sign-in card is the public dialog. Cookie dialogs were hidden, not opened. |
+| Dialog | Captured. Sign-in card, and the Sign Up Unavailable Radix dialog ([shot](screenshots/signin-light-signup-unavailable.png), [crop](components/crops/signup-unavailable-dialog-default.png)). Cookie dialogs were hidden. |
 | Toast | Not present signed out. |
 | Card | Captured. Letter card, help collection. |
 | List row | Captured as the help collection card and the mobile menu rows. |
@@ -152,14 +153,14 @@ Greycliff (400, 500, 600, 700), loaded by Next as `__greycliff`. Licensed, not s
 | Badge | Not present signed out. |
 | Hover, focus, pressed | Captured on nav, Copy, Google button, carousel. |
 | Disabled, loading, error | Not captured. Nothing was submitted, and those states are not on the public pages. |
-| App shell | Not captured. Behind `https://app.limitless.ai/signin`. |
-| Form validation | Not captured. Email submit and support chat were not used. |
-| Empty, loading, error | Not captured in the app. The marketing 404 is [notfound](screenshots/notfound-light-default.png). |
-| Destructive confirmation | Not captured. Account deletion is behind sign-in (`help.limitless.ai` documents it; the flow was not opened). |
+| App shell | Not captured. Limitless is no longer accepting new users ([unavailable](screenshots/signin-light-signup-unavailable.png)). |
+| Form validation | Not captured. The email submit opened Sign Up Unavailable, not a field error. |
+| Empty, loading, error | Not captured in the app. The marketing 404 is [notfound](screenshots/notfound-light-default.png). The unavailable dialog is a product gate, not an app empty state. |
+| Destructive confirmation | Not captured. Account deletion is behind an account this capture could not create. |
 | Search results | Not captured. Help search was not queried. |
-| Onboarding | Not captured. Behind sign-in. |
+| Onboarding | Not captured. Sign-up is closed. |
 | Dark theme | Not present. The public site ships light only. |
-| Phone | Captured. Home, menu, developers, voice recorder, sign-in, help, about. |
+| Phone | Captured. Home, menu, developers, voice recorder, sign-in, Sign Up Unavailable, help, about. |
 
 ## Do and don't
 
@@ -170,9 +171,10 @@ Greycliff (400, 500, 600, 700), loaded by Next as `__greycliff`. Licensed, not s
 5. **Do round the letter card at 24px.** The acquisition letter is a soft card, not a flat column ([card](components/crops/letter-card-default.png)).
 6. **Do keep the sign-in card quiet.** White, 8px radius, one Google button, one email field, on a pale field ([sign-in](screenshots/signin-light-default.png)).
 7. **Don't invent a dark theme.** The public site does not paint one.
-8. **Don't style the signed-in app from this package.** Lifelogs, Pendant settings and billing were not captured ([sign-in wall](screenshots/signin-light-default.png)).
-9. **Don't follow Continue with Google or submit the email field.** Both leave the public surface.
+8. **Don't style lifelogs or settings from this package.** Those screens were not reached ([unavailable](screenshots/signin-light-signup-unavailable.png)).
+9. **Don't follow Continue with Google.** OAuth was not used ([sign-in wall](screenshots/signin-light-default.png)).
 10. **Don't copy the star or the Greycliff files.** The mark and the typeface are Limitless's. Tokens name the system.
+11. **Don't expect a new email to open the app.** Sign Up Unavailable is the gate ([dialog](components/crops/signup-unavailable-dialog-default.png)).
 
 ## Rebuild
 
