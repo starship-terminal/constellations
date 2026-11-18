@@ -18,7 +18,7 @@ forhers.com is worth a capture because its marketing stack ships **almost no nam
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — the inline styled-components blocks, the /shop scales, the resolved fluid-type variables, the font faces), `layout.json` (per-page shells), `motion.json` (the transition probe), `component-tokens.json` (the token-tree spec). |
 | [icons/](icons) | Distinct inline SVGs lifted from the pages, with `INDEX.tsv`. |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
-| [GitHub pull request 660](https://github.com/starship-terminal/constellations/pull/660) | The pull request that shipped this capture |
+| [capture.pr](capture.pr) | The pull request that shipped this capture: https://github.com/starship-terminal/constellations/pull/660 |
 
 ## Brief
 
