@@ -1008,6 +1008,11 @@
       "assignedMedia": 222
     },
     {
+      "referenceId": "systems:matter",
+      "media": 98,
+      "assignedMedia": 31
+    },
+    {
       "referenceId": "systems:endel",
       "media": 188,
       "assignedMedia": 60
@@ -169436,6 +169441,347 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/elevenreader/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/screenshots/home-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/screenshots/home-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/screenshots/signin-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/apple-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/apple-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/apple-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/apple-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-search-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-search-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-search-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/docs-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/footer-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/footer-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/footer-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/footer-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/google-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/install-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/install-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/install-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:matter",
+      "mediaId": "systems/matter/components/crops/install-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         }
       ]
     },
