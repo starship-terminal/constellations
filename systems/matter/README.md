@@ -27,7 +27,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 
 1. Do paint the marketing page near-black.
 2. Do make the primary action a blurple pill.
-3. Do set display type in MR-Camphor.
+3. Do set marketing type in MR-Camphor.
 4. Do keep the header at 62px.
 5. Do use 8px and 30px where the sheet names a radius.
 6. Don't style the reader from this package.
