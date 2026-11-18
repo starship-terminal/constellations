@@ -670,6 +670,7 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
       (row) => row.label,
     ),
   ).toEqual(["Fitness", "Health & Wellness", "Marketplace"]);
+  // Collaboration Tools, Design & Media Editing, and Productivity land as three rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:frame"),
   ).toHaveLength(3);
@@ -727,8 +728,9 @@ test("version-twelve stores gain the Frame.io rows, without touching their own l
     ),
   ).toBe(43);
   const categories = await migrated.listReferenceCategories();
-  // Collaboration Tools, Design & Media Editing, and Productivity land as
-  // three rows.
+  // Two seed labels (Collaboration Tools + Design & Media Editing) land as
+  // two rows.
+  // Collaboration Tools, Design & Media Editing, and Productivity land as three rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:frame"),
   ).toHaveLength(3);
@@ -1874,7 +1876,7 @@ test("version-thirty-eight stores gain the Hume rows, without touching their own
   ).toHaveLength(0);
 });
 
-test("version-thirty-nine stores gain the IFTTT, Intercom, and Huddlekit rows, without touching their own labels", async () => {
+test("version-thirty-nine stores gain the IFTTT, Intercom, Leonardo, and Huddlekit rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v39 store opened before these rows existed: drop them and rewind.
   await store.client.execute(
@@ -1888,6 +1890,12 @@ test("version-thirty-nine stores gain the IFTTT, Intercom, and Huddlekit rows, w
   );
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:ifttt'",
+  );
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:leonardo'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:leonardo'",
   );
   await store.client.execute(
     "DELETE FROM reference_categories WHERE reference_id='systems:huddlekit'",
@@ -1939,6 +1947,16 @@ test("version-thirty-nine stores gain the IFTTT, Intercom, and Huddlekit rows, w
   expect(
     media.filter((row) => row.referenceId === "systems:huddlekit").length,
   ).toBeGreaterThan(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:leonardo").length,
+  ).toBeGreaterThan(0);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:leonardo"),
+  ).toHaveLength(1);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:leonardo"]))[0]
+      .label,
+  ).toBe("AI Tool");
   expect(
     categories.filter((row) => row.referenceId === "systems:intercom"),
   ).toHaveLength(2);

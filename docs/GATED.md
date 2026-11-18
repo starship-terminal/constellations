@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_159 of 217 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_160 of 218 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -908,6 +908,17 @@ Access: signed-in pass attempted (email/password). The address was not registere
 - Stripe Managed Payments signup at https://dashboard.stripe.com/register/managed_payments and https://stripe.com/managed-payments were not opened; they are a different product
 - checkout and purchase are not on the public marketing pages and were not opened
 - CAPTCHA, phone verify and payout KYC did not appear
+
+## [Leonardo.Ai](../systems/leonardo) — `leonardo`
+Access: read-only (marketing pages, the signed-out app shell, public Blueprints, the login card and the docs getting-started page are public; Library, account, generation, checkout, API keys and OAuth were never entered; Start now, Subscribe, Log in, Generate and the provider buttons were measured where they painted, never followed; the prompt was filled and cleared; the consent overlay was hidden, never answered)
+- Library and other account routes redirect to https://app.leonardo.ai/auth/login — an authenticated boundary never reached
+- Generate on the signed-out prompt composer at https://app.leonardo.ai/ was measured and not submitted
+- Subscribe on https://leonardo.ai/pricing hands off to the app; checkout was not entered
+- OAuth at https://app.leonardo.ai/auth/login (Canva, Apple, Google, Microsoft) and Continue with Email were measured at rest, never followed; the email form and Turnstile were not submitted
+- API keys and the API console sit behind the account; https://leonardo.ai/api and the public docs page were captured, the console was not
+- Contact form at https://leonardo.ai/contact-us was not submitted
+- Team plans checkout at https://leonardo.ai/team-plans was not entered
+- Marketing nav controls (header, Pricing, Log in, Create, Start now) and the app rail, Sign up, Sign in and featured cards are in the screenshots and were not boxed on the measurement pass
 
 ## [Limitless](../systems/limitless) — `limitless`
 Access: signed-out public marketing, docs, legal, help center, and the app.limitless.ai sign-in wall; a 2026-11-18 signed-in pass submitted the email field only (never Google) and stopped at Sign Up Unavailable (Limitless is no longer accepting new users). Lifelogs, settings and account were not entered. No Pendant purchased. No CAPTCHA, phone or payment.

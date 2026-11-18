@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 217,
-    "system_domains": 208,
-    "matched_domains": 178,
-    "missing_domains": 255,
+    "system_packages": 218,
+    "system_domains": 209,
+    "matched_domains": 179,
+    "missing_domains": 254,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2848,6 +2848,23 @@
         }
       ]
     },
+    "leonardo.ai": {
+      "catalog": [
+        {
+          "name": "Leonardo.Ai",
+          "domain": "leonardo.ai",
+          "id": 922
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "leonardo",
+          "name": "Leonardo.Ai",
+          "url": "https://leonardo.ai",
+          "name_match": true
+        }
+      ]
+    },
     "limitless.ai": {
       "catalog": [
         {
@@ -3266,13 +3283,6 @@
         "name": "InVision",
         "domain": "invisionapp.com",
         "id": 319
-      }
-    ],
-    "leonardo.ai": [
-      {
-        "name": "Leonardo.Ai",
-        "domain": "leonardo.ai",
-        "id": 922
       }
     ],
     "linkedin.com": [
