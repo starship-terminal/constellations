@@ -1,0 +1,86 @@
+{
+  "F1": {
+    "grade": "partly",
+    "evidence": "KDS publishes semantic --kds-color-* roles, not a ~10-step ramp per hue. Accent families (blue, gray, green, purple, red, yellow) carry bold and subtle steps only. Neutrals are role names (surface primary/secondary, text primary/secondary, border subtle/bold), not a 10-step gray ramp."
+  },
+  "F2": {
+    "grade": "partly",
+    "evidence": "Page is light.color.background.surface.primary (#ffffff) and surface is surface.secondary (#fafafa). Raised is not a named role; elevation 1 is the card shadow instead. Overlay and scrim are not colour tokens. A creator-nav overlay transition is declared in the sheet and was not painted as a colour role."
+  },
+  "F3": {
+    "grade": "meets",
+    "evidence": "Primary light.color.text.primary #171717, secondary #4d4d4d, disabled light.color.text.disabled #b3b3b3, on-accent light.color.text.inverse.primary #ffffff on the near-black action, and link greens light.color.text.accent.green #037242 plus the measured campaign-tab hover #009e74."
+  },
+  "F4": {
+    "grade": "meets",
+    "evidence": "Default is light.color.border.subtle #e0e0e0 (fields and cards). Strong is light.color.border.bold #c9c9c9 (the For creators outline). Focus is light.color.border.focus #afaff9."
+  },
+  "F5": {
+    "grade": "meets",
+    "evidence": "Account action: background.action #171717, hover #000000, pressed #2c2c2c, measured on Sign in with Apple. Inverse banner pill: #ffffff / inverse-hover #f2f2f2 / inverse-pressed #e0e0e0. Pledge button measured #028858 rest and #015738 hover and pressed; that pair is not a --kds-color name."
+  },
+  "F6": {
+    "grade": "partly",
+    "evidence": "Danger, warning and info each have fill, text and border (background.danger.bold/subtle, text.accent.red, border.danger; warning and icon.info / text.accent.blue the same way). Success has green fills and text (background.accent.green.bold, text.accent.green, icon.green) but no border.success or border.accent.green.bold; only border.accent.green.subtle #06e584."
+  },
+  "F7": {
+    "grade": "meets",
+    "evidence": "The public site paints one light theme. tokens.json $themes lists only light. No theme toggle was found on the signed-out pages."
+  },
+  "F8": {
+    "grade": "partly",
+    "evidence": "Inter with a sans-serif fallback, seven sizes (12, 14, 16, 18, 22, 28, 48) and named roles in core.typography. Weights and line heights are recorded on those roles. The scale is derived from computed public styles, not a declared type-token group. One @font-face names Effra and was not the painted body family."
+  },
+  "F9": {
+    "grade": "partly",
+    "evidence": "core.spacing is a 4px module (0, 2, 4, 8, 12, 16, 24, 32, 40, 48, 64). 4, 8 and 16 come from the radius tokens. The other steps are derived. The atomic sheet publishes no --kds-spacing-* scale."
+  },
+  "F10": {
+    "grade": "meets",
+    "evidence": "core.radius.small/medium/large are 4, 8 and 16 from --kds-dimension-corner-radius-*. core.borderWidth.hairline is the measured 1px rule on fields, cards and the focus ring; borderWidth.none is 0."
+  },
+  "F11": {
+    "grade": "partly",
+    "evidence": "Control heights are measured (search and email 48px, pledge 46px, For creators 48px, Next 41px, filter toggle 48px). Sprite icons are 16 and 24. The focus colour is light.color.border.focus. Focus ring width and offset are not a named token; the 1px hairline is the measured border, not a separate ring spec."
+  },
+  "F12": {
+    "grade": "meets",
+    "evidence": "Five declared shadows, core.elevation.0 through 4, from --kds-shadow-0 to --kds-shadow-4. Uses recorded on the tokens: rest, card, popover, dialog, toast. The public page paints mostly flat; dialog and toast shadows were not opened signed-out."
+  },
+  "F13": {
+    "grade": "meets",
+    "evidence": "core.motion.duration.fast 100ms, nav 150ms, enter 300ms, and two cubic-bezier easings, from the atomic sheet. raw/motion.json records a prefers-reduced-motion probe on home, Discover and the project page: authored card and nav transitions are gated on no-preference and drop under reduce."
+  },
+  "F14": {
+    "grade": "partly",
+    "evidence": "Two widths were captured, 1440 and 390, and the phone header collapses the category row into a scroller. No breakpoint scale, column grid or z-index layer list was published as tokens. Content width is the measured page, not a named token."
+  },
+  "C1": {
+    "grade": "partly",
+    "evidence": "13 of 19 checklist components on the signed-out surface: button, icon button, link, text field, select, checkbox, radio (location radios in the Discover screenshot, not its own crop), tabs, menu, card, avatar, badge. Missing from the public surface: text area, switch, tooltip, dialog, toast, list row, table. Dialog and toast rules exist in the sheet and were not opened."
+  },
+  "C2": {
+    "grade": "meets",
+    "evidence": "Hover, focus and CDP-forced pressed on the banner pill, Sign in with Apple, search and campaign tab. Disabled on Continue (#b3b3b3) and Next. Loading is the Continue spinner while Turnstile is unresolved. Error never appears without submitting the form, so it is recorded as not captured rather than absent from the spec."
+  },
+  "C3": {
+    "grade": "meets",
+    "evidence": "Search field and login email were keyboard-focused and cropped. Focus colour is light.color.border.focus #afaff9. The search-focused crop is home-light-search-focused.png and components/crops/search-focused.png."
+  },
+  "C4": {
+    "grade": "meets",
+    "evidence": "components.md names a token path for each measured colour that matches a --kds-color-* role (brand, border.subtle, border.bold, text.secondary, text.placeholder, background.action, action-disabled, inverse-hover, inverse-pressed). Geometry cites core.radius.small. The pledge green is called out as measured, not a token name."
+  },
+  "P1": {
+    "grade": "partly",
+    "evidence": "patterns.md covers the app shell, the login and /start forms (never submitted, so no validation), search and filtering, and the project page as data display. Empty, loading and error of a submitted form, destructive confirmation, feedback after a pledge or save, and onboarding are not on the signed-out surface and are listed as such."
+  },
+  "A1": {
+    "grade": "meets",
+    "evidence": "21 sprite symbols extracted to icons/ and indexed by role in icons/INDEX.tsv. Inter is named with its Google Fonts source, the sans-serif fallback, and the note that Kickstarter does not publish a webfont licence on the captured pages. Effra is recorded as declared and unused for body text."
+  },
+  "K1": {
+    "grade": "meets",
+    "evidence": "README records the signed-out scope, headed Chrome because Cloudflare challenges headless Chromium, the hidden Transcend dialog, the capture date, how values were read, and a distrust list (derived spacing, derived type roles, pledge green, 256-colour PNGs, the status toast, the Turnstile spinner)."
+  }
+}

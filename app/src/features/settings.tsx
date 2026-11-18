@@ -8,6 +8,7 @@ import {
   Check,
   CheckCircle2,
   KeyRound,
+  Bot,
   Palette,
   Settings2,
   Sparkles,
@@ -44,6 +45,7 @@ const tabs = [
   { id: "appearance", label: "Appearance", icon: Palette },
   { id: "import", label: "Import", icon: BookmarkPlus },
   { id: "ai", label: "AI", icon: Sparkles },
+  { id: "agents", label: "Agents", icon: Bot },
 ] as const;
 type SettingsTab = (typeof tabs)[number]["id"];
 export function SettingsPage() {
@@ -61,6 +63,62 @@ export function SettingsPage() {
     </Suspense>
   );
 }
+function agentLines(origin: string) {
+  const base = origin || "https://<this-site>";
+  return [
+    { label: "MCP URL", text: `${base}/api/mcp` },
+    {
+      label: "Claude",
+      text: `claude mcp add --transport http constellations ${base}/api/mcp`,
+    },
+    { label: "swe", text: `swe mcp add constellations --url=${base}/api/mcp` },
+    {
+      label: "Codex",
+      text: `[mcp_servers.constellations]\nurl = "${base}/api/mcp"`,
+    },
+  ];
+}
+
+function AgentSettings() {
+  const [origin, setOrigin] = useState("");
+  const [copied, setCopied] = useState("");
+  useEffect(() => {
+    setOrigin(window.location.origin);
+  }, []);
+  return (
+    <section className="settings-section">
+      <div className="settings-section-label">
+        <Bot size={19} />
+        <div>
+          <h2>For agents</h2>
+          <p>
+            Point a coding agent at this app. The endpoint is read-only and
+            uses the same library tools as research.
+          </p>
+        </div>
+      </div>
+      <div className="settings-form">
+        {agentLines(origin).map((line) => (
+          <div className="settings-field" key={line.label}>
+            <span>{line.label}</span>
+            <code>{line.text}</code>
+            <button
+              type="button"
+              onClick={() => {
+                navigator.clipboard.writeText(line.text).then(() => {
+                  setCopied(line.label);
+                });
+              }}
+            >
+              {copied === line.label ? "Copied" : "Copy"}
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function SettingsContent() {
   const params = useSearchParams();
   const requested = params.get("tab");
@@ -200,6 +258,7 @@ function SettingsContent() {
       >
         {tab === "appearance" && <AppearanceSettings />}
         {tab === "import" && <BookmarkImport />}
+        {tab === "agents" && <AgentSettings />}
         {tab === "ai" &&
           (loading ? (
             <Spinner label="Loading settings…" />

@@ -1,7 +1,7 @@
 {
  "date": "2026-11-18",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): evidence walk of systems/coinbase's raw captures, declared CDS themes and generated docs",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture review",
  "systems": [
   {
    "slug": "1password",
@@ -23303,103 +23303,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "huddlekit",
+   "slug": "lemonsqueezy",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "No hue ramps exist to capture: the shadcn layer resolves 44 semantic roles per theme and a flat chart.1-5 set, plus literal brand oranges (#ea580d/#ff6900/#f54900 family) declared as single roles, not ~10-step scales per hue."
+     "evidence": "The Webflow :root ramps are tokenised under core.color: neutral 8 steps, purple 9, yellow 7, pink 9, green 8, blue 8, orange 8, red 6, plum 2. Several hues stop short of about 10 steps because the stylesheet does not declare them. Steps are the product's own names (50, 100, 500), not a filled 10-step scale."
     },
     "F2": {
      "grade": "meets",
-     "evidence": "Real surface ladder in both themes: root.background, color.page, card.default, popover.default, sidebar.background, canvas.default and accent/muted wells, resolved from --background/--color-page/--card/--popover/--sidebar/--canvas on :root and .dark."
+     "evidence": "light.surface.page #ffffff, raised #f7f7f8 (--grey-50, docs row hover), hero and footer #5423e7 (--purple-600), banner #ffc233, overlay the same purple on the mobile menu. Scrim is derived from --black-2 at 40% and labelled as such; the opened menu paints purple, not a dimmed scrim."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "foreground, muted.foreground, card/popover/secondary/accent foregrounds and primary.foreground (on-accent ink) resolve per theme. No dedicated disabled or link text role exists in the layer; links paint through foreground/accent."
+     "grade": "meets",
+     "evidence": "light.text.primary #121217 (--black-2), secondary #6c6c89 (--gray-500), muted rgba(255,255,255,.6) on nav links, on-accent and on-hero #ffffff, link #7047eb, disabled #a9a9bc (--gray-300, declared, not shown on a disabled control)."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "border.default, border.input and border.ring (focus, #ff6900/#f54900) plus sidebar.border resolve per theme. No 'strong' border step ships; emphasis borders reuse the ring literal or rgba() white hairlines in dark."
+     "grade": "meets",
+     "evidence": "light.border.default #d1d1db (--border-color), strong #3f3f50 (--grey-700), focus #7047eb. Auth fields paint the focus colour as a 2px box-shadow ring. Marketing links use the browser outline #005fcc, recorded in the measurements, not promoted to a token."
     },
     "F5": {
      "grade": "partly",
-     "evidence": "Each semantic fill ships a single default step (primary/secondary/accent/muted/destructive/sidebar/upgrade). Hover and pressed fills are painted per component, not declared as hover/pressed token steps, so there is no default/hover/pressed ladder to tokenise."
+     "evidence": "Auth submit hover is measured: #7047eb to #7e59ed. Hero pill hover is measured: frosted white to #ffd266. Pressed was forced with CSS forcePseudoState and often matches hover, because the stylesheet has no separate :active fill. accent-pressed aliases --purple-700, which is declared and not painted by a pressed control."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "Only destructive.default (#e7000b light, #ff6467 dark) exists as a status role. No success/warning/info family ships in the captured layer; chart.1-5 are data-viz literals, not status sets with fill/text/border variants."
+     "evidence": "Success, warning, danger and info fills are the declared 500 steps (green #2dca72, yellow #ffc233, red #f53d6b, blue #00acff). The stylesheet also declares 50/100/200 companions, but no public control shows a status fill, text and border together. No validation state was reached."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "44 token names resolve identically in light (:root) and dark (.dark / html.dark data-theme=dark), 154 custom properties resolved per theme; the dark set is real (app login repaints under prefers-color-scheme: dark, nested .dark sections on marketing pages)."
+     "evidence": "The product ships one light theme on the marketing site, the docs and the auth card. Every semantic role in the light set is that theme. --dark-mode-bg-lighter is declared and unused, so it is not a second theme."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "font.family.sans (Inter + Inter Fallback), geistMono and mono stacks; 10 sizes xs-7xl, 4 weights, 13 line heights, 5 tracking steps; plus 9 typography composites (articleTitle, body, bodyLink, navLink, button, input, oauthButton, faqQuestion, tabLabel) each with family/size/weight/line-height/tracking."
+     "evidence": "Three families with fallbacks (Circular Pro Book, Inter, JetBrains Mono). Eight type styles: display 80/80, heading 56/63.84, title 26/31.72, body 18/30.6, body-strong 15/24, label 14/22.4 medium, caption 14/22.4, code 14/22.4. Weights 400 and 500. The code style uses the declared mono family at the caption size; a code block was not the source of that size."
     },
     "F9": {
-     "grade": "partly",
-     "evidence": "space.unit (0.25rem, the Tailwind 4px base) and layout.sectionPadding/sectionGap/cardGap are tokenised, but the product declares no numbered spacing scale; component paddings are measured per entry in raw/measurements.md."
+     "grade": "meets",
+     "evidence": "core.space is an 8-step scale on a 4px base: 4, 8, 12, 16, 20, 24, 32, 40. The steps are the paddings and control heights measured on the nav pill, auth field and docs row."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Named radius scale xs/base/lg/md/xl/2xl (0.125rem-1rem) resolved from --radius-* vars plus per-component radii (button 12px, input 9999px, testimonial 16px, loginCard 0px); border widths measured per component entry."
+     "evidence": "core.radius.pill 40px (marketing pills), control and docs 8px (auth fields, submit, docs rows), none 0 (banner). core.stroke.hairline 1px and focus 2px from the auth field ring."
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "Control heights measured (cta 40px, secondary 32px, oauth 40px, inputs 36/48px, header 64px, tab 57px) and the focus ring colour is tokenised (border.ring), but the ring's width/offset are not declared in the harvested vars and were not invented."
+     "grade": "meets",
+     "evidence": "Control heights: nav pill 40px, auth field 40px, auth submit 48px, orchid pill 46px, hamburger 40px, checkbox 16px. Focus ring is 2px with no extra offset on the auth field (box-shadow 0 0 0 2px). Marketing focus is the browser outline, 1px, offset 1px, recorded in the measurements."
     },
     "F12": {
-     "grade": "missing",
-     "evidence": "No shadow scale ships: the stylesheet harvest declares box-shadow only as literal one-off values on a few components (captured in measurements), there is no named elevation ladder to tokenise."
+     "grade": "partly",
+     "evidence": "Marketing chrome is flat. Auth fields use a 1px inset ring and a 1px drop, not a 3 to 5 level shadow scale. No card, popover or dialog shadow was measured. The package does not invent levels the product does not paint."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Durations (20 steps 70ms-22s incl. marquee lengths), 10 easing curves and named animations (hero-reveal 600ms, enter 300ms, scattered-scroll, clients-stack, ping/pulse/spin) are tokenised from declared keyframes/transition vars. Reduced-motion overrides are not declared in the harvested CSS, so what changes under prefers-reduced-motion could not be recorded."
+     "evidence": "Two computed durations are tokenised: 100ms ease on marketing buttons, 150ms cubic-bezier(0.4, 0, 0.2, 1) on docs rows. Auth controls measure 0s. The reduced-motion probe was not run, so the package does not say whether the site honours prefers-reduced-motion."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Container widths xs-5xl, layout.sectionPadding/sectionGap and aspectVideo are tokenised and the header/nav geometry measured; breakpoints and z-index layers are not named in the layer (Tailwind utilities carry them per-element, captured in measurements)."
+     "evidence": "Two widths were captured and recorded: 1440 and 390, with sidecars. The marketing nav collapses to a hamburger at 390. No column grid, content-max token or z-index scale was declared in the stylesheet harvest. The mobile menu sits over the hero; its z-index was not promoted to a token."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "components.md covers the shippable signed-out set: buttons (cta/secondary/oauth/outline), links, text fields (login email, support search), nav bar + dropdown menu, tabs, plan cards, testimonial card, login card, consent banner, footer, mobile drawer. Modal/toast/checkbox/select/table do not exist on the signed-out surfaces and were not fabricated."
+     "evidence": "Public surfaces show button, icon button, link, text field, select, checkbox, menu, list row and a price headline used as a card. That is 9 of 19. Text area, radio, switch, tabs, tooltip, toast, table, avatar and badge are not on the public pages. Dialog was screenshotted (docs search) and not measured."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "Hover is measured per component (linkHover.color token, CTA/nav hover in measurements) and selected/disabled plan-card and tab states are captured; pressed and error states are not reachable signed-out and are marked as gaps rather than invented."
+     "grade": "meets",
+     "evidence": "Buttons, links and the auth submit have hover, focus-visible and pressed crops. The email field has focused and filled. The checkbox has checked. Disabled, loading and error are not shown on any public control and were not invented."
     },
     "C3": {
-     "grade": "partly",
-     "evidence": "The focus-ring colour is tokenised (border.ring #ff6900/#f54900) and ring usage is noted per component in measurements, but no signed-out element's painted focus-visible state was captured as a screenshot; the gap is documented."
+     "grade": "meets",
+     "evidence": "Focus-visible crops exist for nav pill, hero button, nav link, footer link, orchid and yellow pills, docs CTA, Google button and the forgot-password link. Auth email, password, select and name fields have a focused state with the 2px purple ring."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "Component entries in components.md and raw/component-tokens.json reference tokens ({primary.default} on button fills) or measured values with source notes, not bare literals."
+     "grade": "partly",
+     "evidence": "components.md tables show computed colours and radii next to the crop, and point at tokens.json for the names. The rows themselves are not written as token names. Shared values live in the tokens file."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md documents the marketing app shell (header/hero/footer incl. nested .dark sections), pricing plans, FAQ accordions, forms and the login card. Empty/loading/error and destructive flows require a session and are documented as un-captured gaps."
+     "evidence": "patterns.md covers the marketing shell, the docs shell, the pricing page and the sign-in card. Empty/loading/error is only the 404. Search is a screenshot. Destructive confirmation, validation and onboarding past the first register step were not reached."
     },
     "A1": {
-     "grade": "meets",
-     "evidence": "84 SVG icons collected and indexed by role in icons/INDEX.tsv; fonts named with provenance: Inter (variable, SIL OFL via @fontsource/self-hosted), Inter Fallback and Geist Mono (Vercel, OFL) declared in the 25 @font-face rules, plus the system mono stack."
+     "grade": "partly",
+     "evidence": "icon.png is the 128px apple-touch image. icons/INDEX.tsv names one arrow. The wordmark and lemon mark are the product's artwork and were not copied into the icon set. Fonts are named with licence or fallback in the README."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states scope (signed-out huddlekit.com + anonymous app login), how it was captured (Playwright, 1440/390, light default + real dark surfaces), the chunk bound on full-page stitches, and a 'what to distrust' list (unreachable subdomains, auth-gated app, no ramps/no shadows)."
+     "evidence": "The README says what was captured, the date, the signed-out route, how the values were read, and what to distrust."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.84:1 light muted (light.muted.foreground) on page (light.root.background)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.73:1 light muted (light.text.secondary) on surface (light.surface.raised)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 259 of 259 tokens name their source"
+     "evidence": "Script: 134 of 134 tokens name their source"
     },
     "K2": {
      "grade": "meets",
-     "evidence": "Script: 10 rules, each linking a screenshot or crop"
+     "evidence": "Script: 6 rules, each linking a screenshot or crop"
     },
     "K3": {
      "grade": "meets",
@@ -23418,20 +23418,19 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Huddlekit",
-   "goodFor": "design-feedback / website-annotation product design across two surfaces on one Tailwind v4 + shadcn-style token layer: huddlekit.com's signed-out marketing site (announcement bar, sticky header with hover-open Solutions/Resources fly-outs, a warm --color-page wash #f6f3f2, hero + feature-tab demos, a dark testimonial wall behind a Show-more toggle, plan-card pricing with a billing switch, FAQ accordions, a giant-wordmark dark footer) plus app.huddlekit.com/login, the only anonymous app surface (a square login card, orange 'Continue with Google', the 'Continue with email' reveal, a pill email field). Semantic roles --background/--foreground, --card/-popover/-primary/-secondary/-muted/-accent(+foregrounds), --destructive, --border/--input/--ring #ff6900, --upgrade #7357ff pro purple, --sidebar-*, --chart-1..5, --canvas, --mode-glow-strength, --color-primary-dark, --scroll-mask-*; --radius .75rem + --radius-xs..2xl, --spacing, --container-*, --section-*/--card-gap; the --text-xs..7xl ramp with --leading-*/--tracking-*; next/font --font-sans Inter + --font-geist-mono; --ease-*/--animate-*/--default-transition-* motion vars. Light-only site with nested .dark panels; the app paints html.dark under prefers-color-scheme",
-   "url": "https://huddlekit.com",
+   "name": "Lemon Squeezy",
+   "goodFor": "A merchant-of-record marketing site winding down onto Stripe: Webflow Client-First, a purple-600 hero (#5423e7), a yellow shutdown banner (#ffc233), 40px white pills, Circular Pro Book display and Inter UI, plus an 8px-radius auth card in the same purple",
+   "url": "https://www.lemonsqueezy.com",
    "captured": "2026-11-18",
    "themes": [
-    "light",
-    "dark"
+    "light"
    ],
    "platform": "web",
-   "category": "Productivity",
+   "category": "Finance",
    "reviewed": "2026-11-18",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "evidence walk of systems/coinbase's raw captures, declared CDS themes and generated docs"
+ "reviewMethod": "public-web capture review"
 }
