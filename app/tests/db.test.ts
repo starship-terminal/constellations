@@ -1873,15 +1873,50 @@ test("version-thirty-eight stores gain the Hume rows, without touching their own
   ).toHaveLength(0);
 });
 
+test("version-forty-one stores gain the Leonardo rows, without touching their own labels", async () => {
+  const { dir, store } = await open();
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:leonardo'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:leonardo'",
+  );
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:digg'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:digg'",
+  );
+  await store.client.execute("PRAGMA user_version=41");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(42);
+  const media = await migrated.listMediaTermAssignments();
+  expect(
+    media.filter((row) => row.referenceId === "systems:leonardo").length,
+  ).toBeGreaterThan(0);
+  const categories = await migrated.listReferenceCategories();
+  expect(
+    categories.filter((row) => row.referenceId === "systems:digg"),
+  ).toHaveLength(0);
+});
+
 test("future database versions are rejected without downgrading their schema", async () => {
   const { dir, store } = await open();
-  await store.client.execute("PRAGMA user_version=40");
+  await store.client.execute("PRAGMA user_version=43");
   await expect(createResearchStore(dir)).rejects.toThrow("newer application");
   expect(
     Number(
       (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
     ),
-  ).toBe(40);
+  ).toBe(43);
 });
 
 test("updateSettings writes JSON on a fresh row and on a conflicting row", async () => {

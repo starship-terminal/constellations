@@ -28,10 +28,17 @@ colors:
   color-text-disabled: "#737373"
   color-text-on-accent: "#ffffff"
   color-text-link: "#7c71f7"
-  color-border: "#262626"
-  color-accent: "#6e60ee"
-  color-card: "#ffffff"
-  color-sidebar: "#171717"
+  color-border-base: "#262626"
+  color-border-strong: "#404040"
+  color-border-focus: "rgba(110, 96, 238, 0.5)"
+  color-accent-base: "#6e60ee"
+  color-accent-hover: "#7c71f7"
+  color-accent-pressed: "#523be7"
+  color-card-base: "#ffffff"
+  color-card-foreground: "#0a0a0a"
+  color-sidebar-base: "#171717"
+  color-sidebar-foreground: "#f5f5f5"
+  color-sidebar-border: "#171717"
   color-positive-foreground: "#33ab71"
   color-negative-foreground: "#ff5d4b"
   color-warning-foreground: "#ffc533"
@@ -40,23 +47,35 @@ colors:
   color-status-negative: "#e32b16"
   color-status-warning: "#ffc533"
   color-status-danger: "#e7000b"
-  color-docs-page: "#ffffff"
+  color-docs-page-base: "#ffffff"
+  color-docs-page-muted: "#f9fafb"
   color-docs-overlay: "#ffffff"
   color-docs-text-primary: "#32343a"
   color-docs-text-muted: "#484c58"
   color-docs-text-minimum: "#666b79"
   color-docs-text-inverse: "#ffffff"
-  color-docs-border: "rgba(0, 0, 0, 0.1)"
+  color-docs-border-base: "rgba(0, 0, 0, 0.1)"
+  color-docs-border-strong: "rgba(0, 0, 0, 0.2)"
   color-docs-focus: "rgba(1, 43, 255, 0.25)"
-  color-docs-input: "#ffffff"
+  color-docs-input-base: "#ffffff"
+  color-docs-input-text: "#32343a"
   color-docs-accent: "#012bff"
   color-docs-success-text: "#00683a"
   color-docs-warning-text: "#947000"
   color-docs-danger-text: "#ad273c"
   color-docs-info: "#051c8e"
 rounded:
-  radius: "0.625rem"
-  border-radius: "4px"
+  radius-base: "0.25rem"
+  radius-sm: "0.125rem"
+  radius-xl: "12.4375px"
+  radius-4xl: "1.5rem"
+  radius-full: "1000rem"
+  border-radius-base: "8px"
+  border-radius-sm: "2px"
+  border-radius-md: "6px"
+  border-radius-lg: "8px"
+  border-radius-xl: "12px"
+  border-radius-full: "9999px"
 spacing:
   unit: "0.25rem"
 ---
@@ -82,11 +101,11 @@ Leonardo.Ai is worth a capture because the public product is one dark paint acro
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
 - **primary (#012bff):** `light.color.docs.accent`
-- **neutral (#ffffff):** `light.color.docs.page`
+- **neutral (#ffffff):** `light.color.docs.page.base`
 - **surface (#ffffff):** `light.color.docs.overlay`
 - **on-surface (#32343a):** `light.color.docs.text.primary`
 - **on-surface-variant (#484c58):** `light.color.docs.text.muted`
-- **outline (rgba(0, 0, 0, 0.1)):** `light.color.docs.border`
+- **outline (rgba(0, 0, 0, 0.1)):** `light.color.docs.border.base`
 
 ## Typography
 
@@ -106,7 +125,7 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `radius` 0.625rem, `border-radius` 4px.
+Corner radii from `core.radius`: `radius-base` 0.25rem, `radius-sm` 0.125rem, `radius-xl` 12.4375px, `radius-4xl` 1.5rem, `radius-full` 1000rem, `border-radius-base` 8px, `border-radius-sm` 2px, `border-radius-md` 6px, `border-radius-lg` 8px, `border-radius-xl` 12px, `border-radius-full` 9999px.
 
 ## Components
 

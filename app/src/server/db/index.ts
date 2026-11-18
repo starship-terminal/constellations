@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 39)
+    if (version > 42)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -496,6 +496,15 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx, new Set(["systems:hume"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:hume"]));
       await tx.execute("PRAGMA user_version = 39");
+    }
+    if (version < 42) {
+      // Versions 40 and 41 are reserved for the IFTTT and Hers seeds on
+      // their own branches. This top-up is scoped so a store already at
+      // v41 still gains Leonardo, and cleared labels on older packages
+      // stay cleared.
+      await seedNewCuratedCategories(tx, new Set(["systems:leonardo"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:leonardo"]));
+      await tx.execute("PRAGMA user_version = 42");
     }
     await tx.commit();
   } catch (error) {

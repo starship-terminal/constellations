@@ -2424,9 +2424,9 @@
     319
    ],
    "description": "Collaborate better",
-   "status": "pending",
+   "status": "uncapturable",
    "package": null,
-   "notes": "",
+   "notes": "Probed 2026-11-18: https://invisionapp.com and https://www.invisionapp.com (and /login, /pricing, /teams, /inside-design, /enterprise, /customers, /about, /freehand) return HTTP 301 from an AWS ELB to https://miro.com:443/, which serves Miro's live Framer marketing site (title AI Innovation Workspace | Miro), not InVision. Former product hosts do not resolve: projects, support, status, blog, app, login, freehand, studio, dsm, inspect.invisionapp.com. InVision shut its design-collaboration services on 2024-12-31 after selling Freehand to Miro in 2023-11; nothing honest of the product remains to capture.",
    "batch": 9
   },
   {
@@ -2439,8 +2439,8 @@
     838
    ],
    "description": "Your 24/7 email assistant that drafts for you",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/jace",
    "notes": "",
    "batch": 9
   },
@@ -2454,8 +2454,8 @@
     265
    ],
    "description": "AI that's built for marketing",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/jasper",
    "notes": "",
    "batch": 9
   },
@@ -2469,8 +2469,8 @@
     28
    ],
    "description": "Essential tools for software developers and teams",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/jetbrains",
    "notes": "",
    "batch": 9
   },
@@ -2484,8 +2484,8 @@
     318
    ],
    "description": "Fast and simple motion design tool",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/jitter",
    "notes": "",
    "batch": 9
   },
@@ -2499,8 +2499,8 @@
     531
    ],
    "description": "Save and Organize Your Favorite Recipes",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/julienne",
    "notes": "",
    "batch": 9
   },
@@ -2514,8 +2514,8 @@
     182
    ],
    "description": "Kickstarter exists to help bring creative projects to life",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kickstarter",
    "notes": "",
    "batch": 9
   },
@@ -2529,8 +2529,8 @@
     691
    ],
    "description": "Team matchmaking for women-led startups",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kinhive",
    "notes": "",
    "batch": 9
   },
@@ -2544,8 +2544,8 @@
     558
    ],
    "description": "Email-First Operating System for Creators",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kit",
    "notes": "",
    "batch": 9
   },
@@ -2559,8 +2559,8 @@
     342
    ],
    "description": "Anyone can cook",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kitchenstories",
    "notes": "",
    "batch": 9
   },
@@ -2574,8 +2574,8 @@
     457
    ],
    "description": "Collaborate with your team and clients to get things done",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kitchen",
    "notes": "",
    "batch": 9
   },
@@ -2589,8 +2589,8 @@
     272
    ],
    "description": "Shop, Track Purchases, Make Payments",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/klarna",
    "notes": "",
    "batch": 9
   },
@@ -2604,8 +2604,8 @@
     161
    ],
    "description": "Bitcoin & Cryptocurrency Exchange",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kraken",
    "notes": "",
    "batch": 9
   },
@@ -2619,8 +2619,8 @@
     495
    ],
    "description": "Generative AI made easy. Generate and enhance images and videos using powerful AI for free",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/krea",
    "notes": "",
    "batch": 9
   },
@@ -2634,8 +2634,8 @@
     461
    ],
    "description": "World's #1 Noise Cancelling App and AI Meeting Assistant",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/krisp",
    "notes": "",
    "batch": 9
   },
@@ -2649,8 +2649,8 @@
     249
    ],
    "description": "Explore the world of LEGO",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/lego",
    "notes": "",
    "batch": 9
   },
@@ -2664,8 +2664,8 @@
     608
    ],
    "description": "Set up custom Ai agents in minutes",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/lemni",
    "notes": "",
    "batch": 9
   },
@@ -2679,8 +2679,8 @@
     321
    ],
    "description": "Payments, tax & subscriptions for software companies",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/lemonsqueezy",
    "notes": "",
    "batch": 9
   },
@@ -2709,8 +2709,8 @@
     551
    ],
    "description": "Personalized AI powered by what you\u2019ve seen, said, and heard",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/limitless",
    "notes": "",
    "batch": 9
   },

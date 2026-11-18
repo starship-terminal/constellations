@@ -41,14 +41,14 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 
 | Role | dark | light |
 |---|---|---|
-| page | #0a0a0a `dark.color.page` | #ffffff `light.color.docs.page` |
+| page | #0a0a0a `dark.color.page` | #ffffff `light.color.docs.page.base` |
 | surface | #171717 `dark.color.surface` | #ffffff `light.color.docs.overlay` |
 | text | #fafafa `dark.color.text.primary` | #32343a `light.color.docs.text.primary` |
 | muted | #737373 `dark.color.text.muted` | #484c58 `light.color.docs.text.muted` |
-| accent | #6e60ee `dark.color.accent` | #012bff `light.color.docs.accent` |
-| border | #262626 `dark.color.border` | rgba(0, 0, 0, 0.1) `light.color.docs.border` |
+| accent | #6e60ee `dark.color.accent.base` | #012bff `light.color.docs.accent` |
+| border | #262626 `dark.color.border.base` | rgba(0, 0, 0, 0.1) `light.color.docs.border.base` |
 
-Fonts: `core.font.family.sans` is ui-sans-serif, then 6 fallbacks; `core.font.family.display` is ufficioDisplay, then 1 fallback; `core.font.family.mono` is ui-monospace, then 7 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 2 radius steps (`core.radius`), 1 spacing step (`core.spacing`).
+Fonts: `core.font.family.sans` is ui-sans-serif, then 6 fallbacks; `core.font.family.display` is leoSans, then 1 fallback; `core.font.family.mono` is ui-monospace, then 7 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 11 radius steps (`core.radius`), 1 spacing step (`core.spacing`).
 
 ### Using components
 
@@ -61,7 +61,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | dark | 18.96:1 pass | 17.17:1 pass | 4.17:1 fail | 3.78:1 fail |
 | light | 12.44:1 pass | 12.44:1 pass | 8.57:1 pass | 8.57:1 pass |
 
-6 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.docs.focus` rgba(68, 114, 208, 0.25); `light.color.docs.focus` rgba(1, 43, 255, 0.25).
+6 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.docs.focus` rgba(68, 114, 208, 0.25); `light.color.docs.focus` rgba(1, 43, 255, 0.25); `dark.color.border.focus` rgba(110, 96, 238, 0.5); `light.color.border.focus` rgba(110, 96, 238, 0.5).
 
 <!-- brief:end -->
 
