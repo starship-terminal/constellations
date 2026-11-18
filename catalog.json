@@ -18379,7 +18379,7 @@
         "model": "grok-4.7",
         "route": "public-web",
         "durationMin": 40,
-        "pr": ""
+        "pr": "https://github.com/starship-terminal/constellations/pull/825"
       },
       "layoutGaps": {
         "screenshots/": "preview_snapshot failed with 'The browser is not producing screenshot frames'; headless Playwright hit a Cloudflare interstitial on sora.com and was not used",
