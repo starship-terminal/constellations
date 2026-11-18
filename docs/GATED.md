@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_152 of 210 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -142,6 +142,18 @@ Access: signed out (every captured surface is public; the editor workspace, proj
 - /login was captured as a surface, never filled or submitted
 - checkout and signup were never followed; every Try-for-free, Get-Started and Choose-plan action was measured only
 
+## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
+Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)
+- the signed-in dashboard entirely: the page editor, membership/shop/extras managers, payouts, analytics and settings live behind /login and were never reached
+- the Stripe checkout behind the Support and Join buttons was never opened; both are submits, measured never pressed
+- /login and /signup were captured as cards, never submitted; the password input lives in a second step behind Continue-with-email and was never reached
+
+## [BYBORRE](../systems/byborre) — `byborre`
+Access: signed out (every captured surface is public; the Design Studio, dashboard, saved designs, ordering, checkout and account sit behind the /login panel and were never reached)
+- the signed-in product entirely: the Design Studio, dashboard, saved designs, ordering, checkout and account sit behind the 'Log in to continue' panel and were never reached
+- /login was captured open as a surface, never filled or submitted
+- order, cart, Get-in-touch and every external link (help-center, news, the pcon catalogue, careers, socials) were measured or screenshotted, never followed
+
 ## [Cake Equity](../systems/cakeequity) — `cakeequity`
 Access: signed out (every captured surface is public; the equity-management workspace, cap table, grants, documents, billing and checkout sit behind app.cakeequity.com and were never reached)
 - the signed-in workspace entirely: the equity app, cap table, grants, scenario models, documents, stakeholders, reports, billing and checkout live behind app.cakeequity.com and were never reached
@@ -156,11 +168,36 @@ Access: signed out (every captured surface is public; the product — scheduler,
 - signup, SSO and checkout were never followed; every Get-started/Sign-up-with/Continue action was measured only
 - booking pages vary per host: this capture is cal.com/peer's event type with its #292929 brand paint
 
+## [Calendly](../systems/calendly) — `calendly`
+Access: signed out (every captured surface is public; the workspace, event-type editor, integrations and billing sit behind /app/login and were never reached; the invitee confirmation past a time slot was never opened)
+- the signed-in workspace entirely: event types, availability, meetings, routing, workflows, contacts, integrations, analytics and billing live behind /app/login and were never reached
+- /login and /signup were captured as surfaces, never filled or submitted
+- the invitee confirmation past a time slot (name/email form, $53 payment step) was never reached; a day was selected but nothing was booked
+- /integrations redirects to /app/login signed out
+
 ## [Calm](../systems/calm) — `calm`
 Access: signed out (every captured surface is public; the product past the login card, playback, library, checkout and every signed-in surface were never reached)
 - the signed-in product entirely: playback, the home feed, library, profile, check-ins and checkout live behind the login card and were never reached
 - the login card was opened by its own button, measured, and never filled or submitted; the Try Calm for Free button navigates to /signup-flow, which stayed PerimeterX-blocked this run and is recorded as a boundary
 - no public pricing/plans page exists signed out: plan choices sit behind /signup-flow; /family (six premium accounts, SGD 93.99/year geolocated) and /gift (Gift a Year / Gift a Lifetime) are the public purchasable surfaces
+
+## [Canva](../systems/canva) — `canva`
+Access: signed out (every captured surface is public; the editor, Brand Kit, dashboards, teams, billing and account sit behind the /login and /signup cards and were never reached; no form was submitted and no account created). Served the Singapore region: prices render S$
+- the signed-in product entirely: the design editor, Brand Kit, dashboards, teams, billing and account sit behind the auth card and were never reached
+- /login and /signup captured as a surface; 'Continue with email' was pressed once to reveal the username field (a local UI step, focused and sample-filled then deleted) - Continue was never pressed and no form was submitted
+- Sign up, Get started, Start a free trial, Contact Sales and the OAuth providers were measured or screenshotted, never followed
+
+## [Care.com](../systems/care) — `care`
+Access: signed out (every captured surface is public; the member dashboard, messaging, bookings, payments, applications and plan checkout sit behind /vis/auth/login and were never reached; the login and get-started shells were measured as boundary cards, never filled)
+- the signed-in member product entirely: dashboard, messaging, bookings, payments, job applications and full caregiver profiles live behind auth and were never reached
+- the login email step and the get-started chooser were captured as boundary cards, never filled or submitted; the password step and two-factor screens were never reached
+- search, booking and checkout were never followed; every ZIP Search, City/State, Filter, provider link, Join-now and Get-started action was measured only
+
+## [Cartesia](../systems/cartesia) — `cartesia`
+Access: signed out (the marketing pages, the Clerk sign-in/sign-up cards and the Mintlify docs are public; the voice playground, console, cloning, agents, API keys and billing sit behind sign-in on play.cartesia.ai and were never reached; the live-agent calls were never started)
+- the signed-in playground entirely: the voice console, cloning, agents, files, API keys and billing live behind sign-in on play.cartesia.ai and were never reached
+- the sign-in/sign-up cards were measured as forms, never filled or submitted
+- checkout and onboarding were never followed; every Try Cartesia, Talk to Sales and plan CTA was measured only
 
 ## [Chargetrip](../systems/chargetrip) — `chargetrip`
 Access: signed out (every captured surface is public: the www.chargetrip.com marketing routes, the account.chargetrip.io sign-in card, and developers/playground shells as boundaries; the routing engine, dashboard, API keys and every form submit were never crossed; the Cookie Settings card was hidden, never answered)
@@ -174,16 +211,16 @@ Access: read-only (the marketing site, search, plans, features, how-it-works, fi
 - the product itself - class booking, member search results, credits, plan checkout and account pages - sits behind sign-in or payment and was never crossed
 - nav-login and nav-cta could not be given a real keyboard focus on this pass; their focus behaviour is published as unmeasured, not absent
 
-## [Clearful](../systems/clearful) — `clearful`
-Access: signed out (the marketing routes, /library, /journal-prompts and legal are fully public; the journal app sits behind app.clearful.com sign-in - the public sign-in card was measured through the Flutter semantics overlay, never submitted; several CTA anchors point at # and were never followed)
-- the journal app itself - entries, editor, settings - sits behind app.clearful.com sign-in and was never crossed; the sign-in card was measured but never submitted
-- the sign-in card is a Flutter canvas: its colours cannot be read by CSSOM, so light.app.* values are pixel-sampled off the captured screenshot and labelled as such
-
 ## [Mesh](../systems/clay-earth) — `clay-earth`
 Access: signed out (clay.earth 301-redirects to me.sh - the Clay product rebranded to Mesh, an Automattic product; every captured surface is public: the me.sh marketing routes and the app.me.sh sign-in card as a boundary; the app interior, plan checkout, downloads and every OAuth/sign-in action were never crossed; the sign-in e-mail field was focused and filled with placeholder text only)
 - the product itself: the Mesh app interior, plan checkout, downloads (/start targets) and every account surface sit behind app.me.sh and were never reached; the sign-in card was measured and its e-mail field focused and filled with placeholder text only, never submitted
 - no form was submitted, no plan purchased, no OAuth button pressed; the nav dropdowns and the mobile drawer were opened by their own toggles but nothing navigated
 - the marketing site runs three skins on one product: the black marketing routes, the warm-cream /pricing route and the light app.me.sh sign-in card (SF Pro, #ff6821) - all tokenised, none toggled by the user
+
+## [Clearful](../systems/clearful) — `clearful`
+Access: signed out (the marketing routes, /library, /journal-prompts and legal are fully public; the journal app sits behind app.clearful.com sign-in - the public sign-in card was measured through the Flutter semantics overlay, never submitted; several CTA anchors point at # and were never followed)
+- the journal app itself - entries, editor, settings - sits behind app.clearful.com sign-in and was never crossed; the sign-in card was measured but never submitted
+- the sign-in card is a Flutter canvas: its colours cannot be read by CSSOM, so light.app.* values are pixel-sampled off the captured screenshot and labelled as such
 
 ## [Clipchamp](../systems/clipchamp) — `clipchamp`
 Access: signed out (the marketing routes are fully public; the editor sits behind app.clipchamp.com sign-in - the public login card was measured at rest, the email path where the only field lives was never entered; consent and promo overlays were hidden without answering them; CTA anchors to signup/login were never followed)
@@ -203,147 +240,15 @@ Access: signed out (the marketing routes are fully public; the Coinbase product 
 - the Coinbase product - portfolio, trading, wallets - sits behind login.coinbase.com sign-in and was never crossed; the sign-in card was measured at rest but never submitted
 - the email field's focused border change lives on its container wrapper, not the input - the focused state records no outline change on the field itself
 
-## [Discord](../systems/discord) — `discord`
-Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)
-- the whole Discord client needs an account - /channels/* redirects to /login; joining a server, accepting an invite, messages and settings are an authenticated boundary never reached
-- the Join/Share/Nitro/submit controls were measured (hover/focus/pressed), never pressed - no account action was executed
-- auth fields were focused and filled then cleared, never submitted - no validation, error, loading or success state exists in this capture
-- /invite/<code> painted a dark frame but no invite card signed out in this pass - recorded as a boundary
-
-## [District](../systems/district) — `district`
-Access: signed out (booking and payment gate on the Zomato account and were never reached)
-- booking, payment, sign-in and every account surface need the Zomato account - the Book/Proceed CTAs and date pills were measured at every paintable state, never pressed
-
-## [DJI](../systems/dji) — `dji`
-Access: read-only (the /sg home, /camera-drones, /handheld, /mavic-4-pro, /support, /company, /where-to-buy/* and the /sg/mobile site are fully public signed out; the store (store.dji.com), Login/Register and checkout gate on a DJI account - an authenticated boundary never reached; the Store, Buy Now, Watch Video and search controls were measured at every paintable state, never followed or pressed)
-- the store (store.dji.com), Login/Register (member-service redirects) and checkout gate on a DJI account - an authenticated boundary never reached; the Store and Buy Now CTAs were measured, never followed
-
-## [Dock](../systems/dock) — `dock`
-Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)
-- the signed-in workspace entirely: rooms, deal portals, content library, learning paths, settings and billing live behind auth.dock.us and were never reached
-- the login/signup cards and the HubSpot demo form were measured as surfaces, never filled or submitted; their Continue/submit actions were never pressed
-
-## [GlossGenius](../systems/glossgenius) — `glossgenius`
-Access: signed out (every captured surface is public); the product app behind sign-in (calendar, clients, payments, marketing tools — app.glossgenius.com/ redirects to /calendar) was never reached; the login, signup, restore and demo forms were measured and typed into then cleared, never submitted; the published booking flow was browsed read-only to its public /book date-picker — no slot confirmed, no appointment booked; every CTA measured, never followed; no consent banner was observed on any host
-- everything post-login — the calendar, clients, payments, marketing and business tools behind app.glossgenius.com sign-in (the app root redirects to /calendar); an authenticated boundary never reached
-- submitted states: the login, signup, forgot-password and get-demo forms were typed into then cleared, never sent — validation, error, loading and success states are absent rather than measured
-- the booking flow stops at the public /book date-picker — slot confirmation, the YOUR DETAILS form and payment were never reached; 'Next' never pressed
-- the booking site is one business's skin (honeyhivesalon.glossgenius.com, Organic-style layout) — other businesses re-skin the same chrome through other .tokens_glossDS__* layout classes; booking tokens are this surface's resolution, not a universal brand set
-- an edge security-verification page blocked app.glossgenius.com/login on one pass; a retry in a fresh context succeeded and no challenge was answered by hand
-
-## [Grammarly](../systems/grammarly) — `grammarly`
-Access: signed out (every surface captured is public; the product sits at app.grammarly.com behind login)
-- app.grammarly.com and everything behind Log in / Sign up was never opened: the editor, dashboard, documents, account, billing and admin surfaces are signed-in and out of scope
-- no form was submitted (contact sales, sign-in, newsletter) and no checkout or trial started, so success and painted error states are missing
-- the free tools' result views (plagiarism report, AI-detector verdict, paraphrase output) each need a submit action the kit never performs; the grammar checker's live suggestion cards render in a product overlay outside the page's light DOM and are recorded missing
-
-## [HBO Max](../systems/hbomax) — `hbomax`
-Access: signed out (every captured surface is public; sign-in, plan checkout, the help centre and account surfaces were link-observed only and never opened)
-- auth.hbomax.com sign-in, plan selection and checkout, help.hbomax.com and every account surface were observed as links only and never opened; no form was submitted and no trial or plan was started
-- carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
-
-## [Intercom](../systems/intercom) — `intercom`
-Access: signed out (every captured surface is public: www.intercom.com marketing routes, the /help/en/ help center and /changes/en changelog; app.intercom.com, /signup onboarding, purchase and the contact-sales form's later steps never entered - the Log in / Start free trial / Get started / Contact sales links were measured, never followed; the Next submit was measured with forced pseudo states, never pressed; no select option was chosen and the marketing checkbox was never ticked; nothing was signed into, searched, chosen, uploaded, bought or submitted; the only presses were local UI toggles - the nav mega-menu, the billing switch, a FAQ row, the select's own listbox and the mobile menu button)
-- the signed-in product (app.intercom.com - inbox, tickets, reports) is a boundary: the Log in link was measured, never followed
-- trial onboarding (/signup), purchase and every conversion path past the marketing surface are boundaries, not captures
-- three header components (logo, nav-login, nav-cta) were measured on one pass and preserved on a later recapture that missed them - recorded as recaptureMissed provenance
-
-## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
-Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)
-- the signed-in dashboard entirely: the page editor, membership/shop/extras managers, payouts, analytics and settings live behind /login and were never reached
-- the Stripe checkout behind the Support and Join buttons was never opened; both are submits, measured never pressed
-- /login and /signup were captured as cards, never submitted; the password input lives in a second step behind Continue-with-email and was never reached
-
-## [BYBORRE](../systems/byborre) — `byborre`
-Access: signed out (every captured surface is public; the Design Studio, dashboard, saved designs, ordering, checkout and account sit behind the /login panel and were never reached)
-- the signed-in product entirely: the Design Studio, dashboard, saved designs, ordering, checkout and account sit behind the 'Log in to continue' panel and were never reached
-- /login was captured open as a surface, never filled or submitted
-- order, cart, Get-in-touch and every external link (help-center, news, the pcon catalogue, careers, socials) were measured or screenshotted, never followed
-
-## [Calendly](../systems/calendly) — `calendly`
-Access: signed out (every captured surface is public; the workspace, event-type editor, integrations and billing sit behind /app/login and were never reached; the invitee confirmation past a time slot was never opened)
-- the signed-in workspace entirely: event types, availability, meetings, routing, workflows, contacts, integrations, analytics and billing live behind /app/login and were never reached
-- /login and /signup were captured as surfaces, never filled or submitted
-- the invitee confirmation past a time slot (name/email form, $53 payment step) was never reached; a day was selected but nothing was booked
-- /integrations redirects to /app/login signed out
-
-## [Canva](../systems/canva) — `canva`
-Access: signed out (every captured surface is public; the editor, Brand Kit, dashboards, teams, billing and account sit behind the /login and /signup cards and were never reached; no form was submitted and no account created). Served the Singapore region: prices render S$
-- the signed-in product entirely: the design editor, Brand Kit, dashboards, teams, billing and account sit behind the auth card and were never reached
-- /login and /signup captured as a surface; 'Continue with email' was pressed once to reveal the username field (a local UI step, focused and sample-filled then deleted) - Continue was never pressed and no form was submitted
-- Sign up, Get started, Start a free trial, Contact Sales and the OAuth providers were measured or screenshotted, never followed
-
-## [DoorDash](../systems/doordash) — `doordash`
-Access: signed out (every captured surface is public; the address gate, sign-in, ordering, cart, checkout, DashPass and merchant/Dasher onboarding were never crossed; catalog bodies that hydrate from live APIs render as the product's own loading spinner)
-- the signed-in product entirely: the address gate, sign-in, ordering, cart, checkout, DashPass purchase, merchant and Dasher onboarding were never crossed; the identity.doordash.com OAuth anchors were measured, never followed
-- the address-search field was focused once for measurement, never filled or submitted; the cookie banner and dormant Turnstile nodes were hidden and never answered
-- icons: no standalone SVG set lifted this pass; icon.png is the site's published favicon (32 px source, the largest the site ships, upscaled to 128 px)
-
-## [Dona](../systems/dona) — `dona`
-Access: signed out (every captured surface is public: /, /about, /privacy-policy, /terms-of-service; the product on app.dona.ai sits behind sign-in and was never reached; the newsletter was never submitted and the cookie banner never answered)
-- app.dona.ai entirely: the to-do product — lists, the advertised light/dark/black UI themes, sync, accounts — lives behind sign-in and was never reached; Login and Try for free open that host and were never followed
-- external links (twitter.com/getdona, the Discord invite) were never followed
-
-## [Douze](../systems/drinkdouze) — `drinkdouze`
-Access: signed out (every captured surface is public; checkout, a filled cart, /account past the login/register forms and subscription management were never reached — nothing was added to the cart, no form was ever submitted, and no consent or newsletter overlay was ever answered)
-- checkout, a filled cart, payment, /account past the login and register forms, and subscription management were never reached — nothing was added to the cart and no submit was ever pressed
-- the subscription (Appstle) purchase-option radios did not render on load signed out — they appear in the variant screenshot after a pack-size is picked, never toggled
-
-## [Doctronic](../systems/doctronic) — `doctronic`
-Access: signed out (every captured surface is public; the chat product's threads, health record, prescriptions, appointments, account and billing sit behind the sign-in card and were never reached)
-- the signed-in product entirely: chat threads, health record, prescriptions, appointments, account and billing sit behind the sign-in card and were never reached
-- the ?modal=signin card was rendered from its public URL and measured; Log in with email, the OAuth buttons and Create an account were never pressed
-- Start chat, Send message, Check My Symptoms, the starter chips and the Anonymous badge were measured, never pressed — each would start a session or submit text
-- site-menu drawer and footer links to account surfaces were measured, never followed
-
-## [DocuSign](../systems/docusign) — `docusign`
-Access: signed out (every captured surface is public; the apps.docusign.com workspace, envelopes, templates and billing sit behind account.docusign.com and were never reached; no form was submitted, no plan purchased, no consent control answered)
-- the signed-in product entirely: envelopes, templates, CLM, workflows, billing and admin live behind account.docusign.com and were never reached
-- the trial, hero and sign-in forms were measured with sample text typed and deleted, never submitted
-- no plan was purchased and no Buy-now/Contact-sales/ Try-for-free CTA was followed past its public landing
-
-## [Doppler](../systems/doppler) — `doppler`
-Access: signed out (every captured surface is public; the product — the secrets dashboard, projects, configs, service tokens, logs and billing — sits behind sign-in on dashboard.doppler.com and was never reached; the demo request form was never submitted)
-- the signed-in product entirely: the secrets dashboard, projects, configs, service tokens, logs, integrations management and billing live behind sign-in on dashboard.doppler.com and were never reached; Start for Free and Sign In point off-site and were measured, never followed
-
-## [Dropbox](../systems/dropbox) — `dropbox`
-Access: signed out (every captured surface is public; the file dashboard, Paper/Dash/Replay/Sign workspaces, account and billing sit behind the auth cards and were never reached; dash.dropbox.com and the sign-in-embed hosts were never opened; the login/register fields were focused and sample-filled then deleted, never submitted)
-- the signed-in product entirely: the file dashboard, Paper/Dash/Replay/Sign workspaces, account, billing and checkout sit behind the auth cards and were never reached
-- /login and /register captured as surfaces: the email fields were focused and given sample text that was deleted; Continue, the SSO buttons and every Try-for-free/Buy-now/Get-started action were measured, never followed
-- the auth cards run an older susi sheet (lucida grande stack, 4px radii) distinct from the DIG marketing system
-
-## [DailyArt Magazine](../systems/dailyartmagazine) — `dailyartmagazine`
-Access: read-only (the magazine is fully public; Shop and Courses lead off-domain and were measured as links, never followed)
-- the newsletter and Contact Form 7 fields were focused and filled with sample text then cleared - never submitted; the acceptance/checkbox native inputs are visibility:hidden/opacity:0 and the boxes are painted by their labels
-- breadcrumbs exist only in JSON-LD - no breadcrumb UI paints on the article; author archives and tag indexes reuse the feed layout and were not individually captured
-
-## [Deel](../systems/deel) — `deel`
-Access: read-only (the marketing site is fully public; the product lives behind app.deel.com - an authenticated boundary never reached; Book a demo, Claim offer and Log in were measured as destinations, never followed)
-- the product lives behind app.deel.com - an authenticated boundary never reached; every Log in, Book a demo and Claim offer destination was measured, never followed
-
-## [Care.com](../systems/care) — `care`
-Access: signed out (every captured surface is public; the member dashboard, messaging, bookings, payments, applications and plan checkout sit behind /vis/auth/login and were never reached; the login and get-started shells were measured as boundary cards, never filled)
-- the signed-in member product entirely: dashboard, messaging, bookings, payments, job applications and full caregiver profiles live behind auth and were never reached
-- the login email step and the get-started chooser were captured as boundary cards, never filled or submitted; the password step and two-factor screens were never reached
-- search, booking and checkout were never followed; every ZIP Search, City/State, Filter, provider link, Join-now and Get-started action was measured only
-
-## [Cartesia](../systems/cartesia) — `cartesia`
-Access: signed out (the marketing pages, the Clerk sign-in/sign-up cards and the Mintlify docs are public; the voice playground, console, cloning, agents, API keys and billing sit behind sign-in on play.cartesia.ai and were never reached; the live-agent calls were never started)
-- the signed-in playground entirely: the voice console, cloning, agents, files, API keys and billing live behind sign-in on play.cartesia.ai and were never reached
-- the sign-in/sign-up cards were measured as forms, never filled or submitted
-- checkout and onboarding were never followed; every Try Cartesia, Talk to Sales and plan CTA was measured only
+## [Column](../systems/column) — `column`
+Access: signed out (the marketing routes are fully public; the Column product sits behind dashboard.column.com - the /login form was measured at rest only: the email field was focused once for its computed style, no text was typed, nothing submitted, and no passkey flow was started; the styled-components cookie banner was hidden, never answered)
+- the Column product - dashboard, ledgers, transfers - sits behind dashboard.column.com sign-in and was never crossed; the login form was measured at rest but never submitted
 
 ## [Copy.ai](../systems/copy) — `copy`
 Access: signed out (every captured surface is public; the workflows builder, GTM dashboards, chat, tables, teams, billing and account sit behind the login.copy.ai card and were never reached; the contact form's fields were focused and filled then cleared, no form was submitted and no account created)
 - the signed-in product entirely: the workflows builder, GTM dashboards, chat, tables, teams, billing and account sit behind the login.copy.ai card and were never reached
 - the login.copy.ai card captured as a surface; its email field was measured, never sent; both OAuth providers measured, never followed
 - the hero email capture and the contact form were focused and filled then cleared, never submitted; Get a Demo, Try for free, Get started, Sign up and Contact Sales never followed
-
-## [Dopper](../systems/dopper) — `dopper`
-Access: signed out (every captured surface is public; the customer account, checkout and filled cart behind the login and cart cards were never reached; no form was submitted, no account created, and the Cookiebot dialog was hidden, never answered). English locale, EUR prices
-- the signed-in product entirely: customer account, order history, checkout flow and the filled cart sit behind the login/cart cards and were never reached; Add to cart was measured, never really clicked
-- the login fields were focused, typed into and cleared - Sign in was never pressed and no form was submitted
-- the 'For Businesses' B2B portal, Digital Product Passport, Tap/Map/community apps and non-English locales are linked surfaces that were not captured
 
 ## [Cosmos](../systems/cosmos) — `cosmos`
 Access: signed out (every captured surface is public; the saved-element feed, boards, clusters and settings sit behind the /login card and were never reached; the login fields were focused and sample-filled then cleared, never submitted; no account created).
@@ -373,11 +278,6 @@ Access: signed out (every captured surface is public; the Cron app, its Notion C
 - the signed-in product entirely: the Cron app (calendar.cron.com) and the Notion Calendar successor it redirects to sit behind Login/Sign up and were never reached
 - Login, Sign up, the Notion Calendar banner link, Docs and the see-the-demo link were measured or screenshotted, never followed
 
-## [Dribbble](../systems/dribbble) — `dribbble`
-Access: signed out (every captured surface is public; posting shots, following, hiring flows, inboxes and dashboards sit behind /session/new and were never reached; the signed-out feed itself stops at one shot card plus a sign-up wall, which is where the package stops; no form was submitted and no account created)
-- the signed-in product entirely: posting, following, hiring flows, inboxes and dashboards sit behind sign-in and were never reached
-- /session/new and /signups/new captured as surfaces; the email field typed sample text and deleted it — nothing was submitted and no OAuth flow started; the Continue-with-Google GSI button is third-party-rendered and was hidden like every overlay, so it is a documented gap
-
 ## [Curater](../systems/curater) — `curater`
 Access: signed out (every captured surface is public; creating curations, the TasteScope questionnaire, saving items and settings sit behind 'Log in or sign up' / the Google SSO button and were never reached; nothing was submitted and no account created)
 - the signed-in product entirely: creating curations, the TasteScope questionnaire, saving items and settings sit behind 'Log in or sign up' / Google SSO and were never reached
@@ -390,6 +290,115 @@ Access: signed out (every captured surface is public; the real app sits behind L
 - Log in, Sign up, Get started, Talk to a human and the download/store links were measured or screenshotted, never followed
 - the FAQ accordion was toggled locally to measure its opened state; nothing was typed or submitted anywhere
 
+## [DailyArt Magazine](../systems/dailyartmagazine) — `dailyartmagazine`
+Access: read-only (the magazine is fully public; Shop and Courses lead off-domain and were measured as links, never followed)
+- the newsletter and Contact Form 7 fields were focused and filled with sample text then cleared - never submitted; the acceptance/checkbox native inputs are visibility:hidden/opacity:0 and the boxes are painted by their labels
+- breadcrumbs exist only in JSON-LD - no breadcrumb UI paints on the article; author archives and tag indexes reuse the feed layout and were not individually captured
+
+## [Deel](../systems/deel) — `deel`
+Access: read-only (the marketing site is fully public; the product lives behind app.deel.com - an authenticated boundary never reached; Book a demo, Claim offer and Log in were measured as destinations, never followed)
+- the product lives behind app.deel.com - an authenticated boundary never reached; every Log in, Book a demo and Claim offer destination was measured, never followed
+
+## [Deezer](../systems/deezer) — `deezer`
+Access: read-only (the marketing site, the public catalog pages and the account forms are fully public; everything behind account.deezer.com is an authenticated boundary never reached; Try-for-free, Sign-up, Mix, Play, queue and volume actions were measured, never followed; the login and signup forms were never submitted)
+- every post-login surface (library, Flow, playlists, downloads, settings, billing) lives behind account.deezer.com - an authenticated boundary never reached
+- the login and signup forms were measured as forms, never filled or submitted; validation, error and success states are absent rather than measured
+
+## [Delphi](../systems/delphi) — `delphi`
+Access: read-only (the home page, /discover/<topic> galleries, /search/<question> results, /<expert> profiles and /<expert>/chat are fully public signed out; creating a clone, saving perspectives and every post-login surface is an authenticated boundary never reached; Sign In, Continue with Google/Email, Share, Save, Expand, Personalize, suggested-question chips, the microphone and the chat send were measured, never followed or submitted)
+- creating a clone, saving perspectives, personalising results and every post-login surface need an account - an authenticated boundary never reached
+- the Sign-In/onboarding dialogs were measured as dialogs; Continue with Google/Email were never pressed, so the auth flow past the dialog is unmeasured
+
+## [Descript](../systems/descript) — `descript`
+Access: read-only (the marketing site is fully public; the product lives behind web.descript.com - its sign-in card was captured as a boundary, measured and never submitted; Sign in, Sign up, Get started and every plan CTA were measured as destinations, never followed)
+- the product lives behind web.descript.com - the sign-in card's buttons and email field were measured and the field typed/cleared, never submitted; no authenticated page was reached
+- Sign in, Sign up, Get started, Try free, Request a demo and every plan CTA were measured as outbound/form destinations, never followed
+
+## [Designmodo](../systems/designmodo) — `designmodo`
+Access: read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted)
+- the Postcards builder canvas, saving work and every post-login surface need an account - never reached
+- the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted
+- the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured
+
+## [Visual (designstripe)](../systems/designstripe) — `designstripe`
+Access: read-only (the home page, /assets library and /assets/<kind>/<set> galleries, /tools, /about, /contact and /blog articles are fully public signed out; the design agents, account asset downloads and every post-waitlist surface are an authenticated boundary never reached; the WAITLIST buttons, nav links, category tiles, tool cards and article links were measured, never followed or submitted)
+- the design agents, account asset downloads and every post-waitlist surface need an account - an authenticated boundary never reached
+
+## [Digg](../systems/digg) — `digg`
+Access: read-only (the home feed, category feeds, story pages, /u/<source> profiles, /login, /sign-up and /privacy are fully public signed out; voting, commenting, submitting, following and settings are an authenticated boundary never reached; the vote pills, comment and source links were measured, never followed or pressed, and the Clerk fields were focused/filled, never submitted)
+- voting, commenting, submitting, following sources and every account surface need an account - an authenticated boundary never reached; the digg-it pills and comment links gate on sign-in and were never pressed
+- the Clerk auth fields were focused and filled at /login and /sign-up, never submitted - no validation, error, loading or success state exists in this capture
+
+## [Discord](../systems/discord) — `discord`
+Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)
+- the whole Discord client needs an account - /channels/* redirects to /login; joining a server, accepting an invite, messages and settings are an authenticated boundary never reached
+- the Join/Share/Nitro/submit controls were measured (hover/focus/pressed), never pressed - no account action was executed
+- auth fields were focused and filled then cleared, never submitted - no validation, error, loading or success state exists in this capture
+- /invite/<code> painted a dark frame but no invite card signed out in this pass - recorded as a boundary
+
+## [District](../systems/district) — `district`
+Access: signed out (booking and payment gate on the Zomato account and were never reached)
+- booking, payment, sign-in and every account surface need the Zomato account - the Book/Proceed CTAs and date pills were measured at every paintable state, never pressed
+
+## [DJI](../systems/dji) — `dji`
+Access: read-only (the /sg home, /camera-drones, /handheld, /mavic-4-pro, /support, /company, /where-to-buy/* and the /sg/mobile site are fully public signed out; the store (store.dji.com), Login/Register and checkout gate on a DJI account - an authenticated boundary never reached; the Store, Buy Now, Watch Video and search controls were measured at every paintable state, never followed or pressed)
+- the store (store.dji.com), Login/Register (member-service redirects) and checkout gate on a DJI account - an authenticated boundary never reached; the Store and Buy Now CTAs were measured, never followed
+
+## [Dock](../systems/dock) — `dock`
+Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)
+- the signed-in workspace entirely: rooms, deal portals, content library, learning paths, settings and billing live behind auth.dock.us and were never reached
+- the login/signup cards and the HubSpot demo form were measured as surfaces, never filled or submitted; their Continue/submit actions were never pressed
+
+## [Doctronic](../systems/doctronic) — `doctronic`
+Access: signed out (every captured surface is public; the chat product's threads, health record, prescriptions, appointments, account and billing sit behind the sign-in card and were never reached)
+- the signed-in product entirely: chat threads, health record, prescriptions, appointments, account and billing sit behind the sign-in card and were never reached
+- the ?modal=signin card was rendered from its public URL and measured; Log in with email, the OAuth buttons and Create an account were never pressed
+- Start chat, Send message, Check My Symptoms, the starter chips and the Anonymous badge were measured, never pressed — each would start a session or submit text
+- site-menu drawer and footer links to account surfaces were measured, never followed
+
+## [DocuSign](../systems/docusign) — `docusign`
+Access: signed out (every captured surface is public; the apps.docusign.com workspace, envelopes, templates and billing sit behind account.docusign.com and were never reached; no form was submitted, no plan purchased, no consent control answered)
+- the signed-in product entirely: envelopes, templates, CLM, workflows, billing and admin live behind account.docusign.com and were never reached
+- the trial, hero and sign-in forms were measured with sample text typed and deleted, never submitted
+- no plan was purchased and no Buy-now/Contact-sales/ Try-for-free CTA was followed past its public landing
+
+## [Dona](../systems/dona) — `dona`
+Access: signed out (every captured surface is public: /, /about, /privacy-policy, /terms-of-service; the product on app.dona.ai sits behind sign-in and was never reached; the newsletter was never submitted and the cookie banner never answered)
+- app.dona.ai entirely: the to-do product — lists, the advertised light/dark/black UI themes, sync, accounts — lives behind sign-in and was never reached; Login and Try for free open that host and were never followed
+- external links (twitter.com/getdona, the Discord invite) were never followed
+
+## [DoorDash](../systems/doordash) — `doordash`
+Access: signed out (every captured surface is public; the address gate, sign-in, ordering, cart, checkout, DashPass and merchant/Dasher onboarding were never crossed; catalog bodies that hydrate from live APIs render as the product's own loading spinner)
+- the signed-in product entirely: the address gate, sign-in, ordering, cart, checkout, DashPass purchase, merchant and Dasher onboarding were never crossed; the identity.doordash.com OAuth anchors were measured, never followed
+- the address-search field was focused once for measurement, never filled or submitted; the cookie banner and dormant Turnstile nodes were hidden and never answered
+- icons: no standalone SVG set lifted this pass; icon.png is the site's published favicon (32 px source, the largest the site ships, upscaled to 128 px)
+
+## [Dopper](../systems/dopper) — `dopper`
+Access: signed out (every captured surface is public; the customer account, checkout and filled cart behind the login and cart cards were never reached; no form was submitted, no account created, and the Cookiebot dialog was hidden, never answered). English locale, EUR prices
+- the signed-in product entirely: customer account, order history, checkout flow and the filled cart sit behind the login/cart cards and were never reached; Add to cart was measured, never really clicked
+- the login fields were focused, typed into and cleared - Sign in was never pressed and no form was submitted
+- the 'For Businesses' B2B portal, Digital Product Passport, Tap/Map/community apps and non-English locales are linked surfaces that were not captured
+
+## [Doppler](../systems/doppler) — `doppler`
+Access: signed out (every captured surface is public; the product — the secrets dashboard, projects, configs, service tokens, logs and billing — sits behind sign-in on dashboard.doppler.com and was never reached; the demo request form was never submitted)
+- the signed-in product entirely: the secrets dashboard, projects, configs, service tokens, logs, integrations management and billing live behind sign-in on dashboard.doppler.com and were never reached; Start for Free and Sign In point off-site and were measured, never followed
+
+## [Dribbble](../systems/dribbble) — `dribbble`
+Access: signed out (every captured surface is public; posting shots, following, hiring flows, inboxes and dashboards sit behind /session/new and were never reached; the signed-out feed itself stops at one shot card plus a sign-up wall, which is where the package stops; no form was submitted and no account created)
+- the signed-in product entirely: posting, following, hiring flows, inboxes and dashboards sit behind sign-in and were never reached
+- /session/new and /signups/new captured as surfaces; the email field typed sample text and deleted it — nothing was submitted and no OAuth flow started; the Continue-with-Google GSI button is third-party-rendered and was hidden like every overlay, so it is a documented gap
+
+## [Douze](../systems/drinkdouze) — `drinkdouze`
+Access: signed out (every captured surface is public; checkout, a filled cart, /account past the login/register forms and subscription management were never reached — nothing was added to the cart, no form was ever submitted, and no consent or newsletter overlay was ever answered)
+- checkout, a filled cart, payment, /account past the login and register forms, and subscription management were never reached — nothing was added to the cart and no submit was ever pressed
+- the subscription (Appstle) purchase-option radios did not render on load signed out — they appear in the variant screenshot after a pack-size is picked, never toggled
+
+## [Dropbox](../systems/dropbox) — `dropbox`
+Access: signed out (every captured surface is public; the file dashboard, Paper/Dash/Replay/Sign workspaces, account and billing sit behind the auth cards and were never reached; dash.dropbox.com and the sign-in-embed hosts were never opened; the login/register fields were focused and sample-filled then deleted, never submitted)
+- the signed-in product entirely: the file dashboard, Paper/Dash/Replay/Sign workspaces, account, billing and checkout sit behind the auth cards and were never reached
+- /login and /register captured as surfaces: the email fields were focused and given sample text that was deleted; Continue, the SSO buttons and every Try-for-free/Buy-now/Get-started action were measured, never followed
+- the auth cards run an older susi sheet (lucida grande stack, 4px radii) distinct from the DIG marketing system
+
 ## [Dub](../systems/dub) — `dub`
 Access: signed out (every captured surface is public; the link-management workspace, analytics, domains, settings and billing sit behind /login on app.dub.co and were never reached; the login, register and contact-sales forms were measured, never filled past a deleted sample, never submitted; the docs search palette and Mintlify AI assistant were never opened)
 - the signed-in workspace entirely: link management, analytics, domains, tags, webhooks, integrations, settings and billing live behind app.dub.co/login and were never reached
@@ -397,12 +406,10 @@ Access: signed out (every captured surface is public; the link-management worksp
 - the demo-panel under the home hero is a published dashboard mock, not the app
 - hero-badge and sales-submit focus-visible recorded failed states (a real keyboard focus could not be held)
 
-## [ElevenLabs](../systems/elevenlabs) — `elevenlabs`
-Access: signed out (every captured surface is public; the Studio, agents platform, voice library, API keys, billing and account sit behind the /app/sign-in and /app/sign-up cards and were never reached; no form was submitted, no account created and the Cookiebot layer was hidden, never answered). The home TTS playground's Play was pressed once, a public affordance that generates without an account
-- the signed-in product entirely: the Studio, agents platform, voice library, API keys, billing and account sit behind the auth card; /app redirects to /app/sign-in and was never entered
-- /app/sign-in and /app/sign-up captured as surfaces; the email/password fields were focused and sample-filled then deleted, leaving the submits disabled and never pressed; no form was submitted
-- Sign up, Subscribe, Get API key, Contact Sales and the OAuth providers (Google / Apple / SSO) were measured or screenshotted, never followed
-- the home TTS playground's Play was pressed once and generated without an account; the voice-orb and sample-card play buttons were measured but not played, and the voice-chat launcher was never opened
+## [Editor X (Wix Studio)](../systems/editorx) — `editorx`
+Access: signed out (every captured surface is public; editorx.com 301s to wix.com/studio for every path except /pricing, which served its Premium-plans error pane at capture time; the Studio editor, workspaces and checkout sit behind Log In / Start Creating and were never reached; no form was submitted and no account created)
+- the signed-in product entirely: the Studio editor, workspaces, dashboards, signup and checkout sit behind Log In / Start Creating and were never reached
+- the only presses were local UI toggles: the Product dropdown, the FAQ expander, the mobile menu; no form was submitted and no action followed
 
 ## [Elektron](../systems/elektron) — `elektron`
 Access: signed out (every captured surface is public; the account dashboard, order history, serial-registered downloads and checkout sit behind the /my-account magic-login card and were never reached; no code was requested, no form submitted, nothing added to the cart and no account created)
@@ -416,33 +423,12 @@ Access: signed out (every captured surface is public; the Elementor editor, the 
 - /contact captured as a surface: the popup form was opened by its card, the name field sample-filled and deleted, the checkbox toggled locally - submit was never pressed and nothing was sent
 - Buy now, Get started, Log in and every signup action were measured or screenshotted, never followed (they open checkout or my.elementor.com)
 
-## [Endel](../systems/endel) — `endel`
-Access: signed out (every captured surface is public: the endel.io marketing pages plus app.endel.io's explore, player and sign-in card; the account, library, premium unlock/checkout and any form submit were never crossed; the Set Timer sheet, More flyout and mobile menu were opened by their own toggles and closed again)
-- the signed-in app entirely: account, library, sync, settings, purchase and the premium unlock/checkout the timer sheet's Unlock row starts were never reached; the FREEMIUM chip, scenario pills, Unlock, Continue and the OAuth buttons were measured, never pressed for real
-- no form was submitted and no account created: the footer newsletter field and the sign-in card's email field were measured, never sent; Try Today, Subscribe, Continue, Unlock and every outbound link were never followed
-- the home page's mid-page newsletter row (input-email, btn-subscribe) was not on the page at capture time; the footer's own field was painted instead
-
-## [Editor X (Wix Studio)](../systems/editorx) — `editorx`
-Access: signed out (every captured surface is public; editorx.com 301s to wix.com/studio for every path except /pricing, which served its Premium-plans error pane at capture time; the Studio editor, workspaces and checkout sit behind Log In / Start Creating and were never reached; no form was submitted and no account created)
-- the signed-in product entirely: the Studio editor, workspaces, dashboards, signup and checkout sit behind Log In / Start Creating and were never reached
-- the only presses were local UI toggles: the Product dropdown, the FAQ expander, the mobile menu; no form was submitted and no action followed
-
-## [Endless Tools](../systems/endlesstools) — `endlesstools`
-Access: signed out (every captured surface is public: / on endlesstools.io plus /login, /legal/privacy_policy and /legal/terms_of_use on app.endlesstools.io; the product editor behind sign-in was never reached; no form was submitted and the only presses were local UI toggles)
-- the editor entirely: the canvas, tools, panels, library and AI features live behind sign-in on app.endlesstools.io and were never reached; Start for free, the plan CTAs and Create team open signup and were never followed
-- the login card's two forms (OTP send-code and password) were measured and locally switched; neither was submitted, so the code entry, errors and signed-in redirect are uncaptured
-- the newsletter form was measured and its consent checkbox toggled for the capture; it was never submitted, so its success and any error state are uncaptured
-
-## [ElevenReader](../systems/elevenreader) — `elevenreader`
-Access: signed out (every captured surface is public: the marketing pages, one public audiobook page and the /reader sign-in/sign-up cards; the reader app - library, upload, player, settings, billing - sits behind /reader/sign-in and was never reached; the email forms were revealed by their own toggles and never submitted)
-- the reader app entirely: library, upload, the reader/player, settings and billing live behind /reader/sign-in and were never reached; /reader/sign-in and /reader/sign-up were captured as boundary cards
-- the OAuth buttons were never pressed; the email credential forms were revealed by their own 'with email' toggles (local UI, nothing sent), fields were focused and sample text was typed and deleted - no form was ever submitted, so error/success states are uncaptured
-
-## [Endless](../systems/endless) — `endless`
-Access: signed out (every captured surface is public; the workspace behind sign-up on s.endless.app, auth on clerk.endless.app, was never reached; no form was submitted and no tool was run)
-- the signed-in workspace entirely: chat, canvas, projects, files, MCP connections, billing and onboarding live behind s.endless.app (auth on clerk.endless.app) and were never reached
-- no form was ever submitted and no tool was ever run: the contact Send button and every Generate action were measured, not pressed, so success, error, progress and result-gallery states are uncaptured
-- checkout, plan purchase and localized routes were never reached
+## [ElevenLabs](../systems/elevenlabs) — `elevenlabs`
+Access: signed out (every captured surface is public; the Studio, agents platform, voice library, API keys, billing and account sit behind the /app/sign-in and /app/sign-up cards and were never reached; no form was submitted, no account created and the Cookiebot layer was hidden, never answered). The home TTS playground's Play was pressed once, a public affordance that generates without an account
+- the signed-in product entirely: the Studio, agents platform, voice library, API keys, billing and account sit behind the auth card; /app redirects to /app/sign-in and was never entered
+- /app/sign-in and /app/sign-up captured as surfaces; the email/password fields were focused and sample-filled then deleted, leaving the submits disabled and never pressed; no form was submitted
+- Sign up, Subscribe, Get API key, Contact Sales and the OAuth providers (Google / Apple / SSO) were measured or screenshotted, never followed
+- the home TTS playground's Play was pressed once and generated without an account; the voice-orb and sample-card play buttons were measured but not played, and the voice-chat launcher was never opened
 
 ## [ElevenMusic](../systems/elevenmusic) — `elevenmusic`
 Access: signed out (every captured surface is public: /, /explore, /charts, /tracks, /genres, /genres/electronic, /sounds, /tools, an artist profile, a playlist, /blog, /pricing, /login, /sign-in; Create/Composer/Library/Chat/publish, Likes, Remixes, Shares and search itself sit behind sign-in and were never entered or submitted)
@@ -451,35 +437,54 @@ Access: signed out (every captured surface is public: /, /explore, /charts, /tra
 - every Create button, prompt submit and Attach control was measured, never pressed — a prompt is a generation request
 - the Get-Pro and Start-free CTAs were measured, never followed past the public card; checkout is uncaptured
 
-## [Deezer](../systems/deezer) — `deezer`
-Access: read-only (the marketing site, the public catalog pages and the account forms are fully public; everything behind account.deezer.com is an authenticated boundary never reached; Try-for-free, Sign-up, Mix, Play, queue and volume actions were measured, never followed; the login and signup forms were never submitted)
-- every post-login surface (library, Flow, playlists, downloads, settings, billing) lives behind account.deezer.com - an authenticated boundary never reached
-- the login and signup forms were measured as forms, never filled or submitted; validation, error and success states are absent rather than measured
+## [ElevenReader](../systems/elevenreader) — `elevenreader`
+Access: signed out (every captured surface is public: the marketing pages, one public audiobook page and the /reader sign-in/sign-up cards; the reader app - library, upload, player, settings, billing - sits behind /reader/sign-in and was never reached; the email forms were revealed by their own toggles and never submitted)
+- the reader app entirely: library, upload, the reader/player, settings and billing live behind /reader/sign-in and were never reached; /reader/sign-in and /reader/sign-up were captured as boundary cards
+- the OAuth buttons were never pressed; the email credential forms were revealed by their own 'with email' toggles (local UI, nothing sent), fields were focused and sample text was typed and deleted - no form was ever submitted, so error/success states are uncaptured
 
-## [Epidemic Sound](../systems/epidemicsound) — `epidemicsound`
-Access: read-only (the marketing site, the public catalog, SFX and artist pages and the account forms are fully public; everything behind login.epidemicsound.com is an authenticated boundary never reached; Play, Download, Subscribe, Create-free-account and Log-in actions were measured, never followed; the login and signup forms were never submitted)
-- every post-login surface (library, playlists, downloads, billing, account settings) lives behind login.epidemicsound.com - an authenticated boundary never reached
-- the login and signup forms were measured at rest, never filled with real credentials or submitted; validation, error and success states are absent rather than measured
+## [Endel](../systems/endel) — `endel`
+Access: signed out (every captured surface is public: the endel.io marketing pages plus app.endel.io's explore, player and sign-in card; the account, library, premium unlock/checkout and any form submit were never crossed; the Set Timer sheet, More flyout and mobile menu were opened by their own toggles and closed again)
+- the signed-in app entirely: account, library, sync, settings, purchase and the premium unlock/checkout the timer sheet's Unlock row starts were never reached; the FREEMIUM chip, scenario pills, Unlock, Continue and the OAuth buttons were measured, never pressed for real
+- no form was submitted and no account created: the footer newsletter field and the sign-in card's email field were measured, never sent; Try Today, Subscribe, Continue, Unlock and every outbound link were never followed
+- the home page's mid-page newsletter row (input-email, btn-subscribe) was not on the page at capture time; the footer's own field was painted instead
+
+## [Endless](../systems/endless) — `endless`
+Access: signed out (every captured surface is public; the workspace behind sign-up on s.endless.app, auth on clerk.endless.app, was never reached; no form was submitted and no tool was run)
+- the signed-in workspace entirely: chat, canvas, projects, files, MCP connections, billing and onboarding live behind s.endless.app (auth on clerk.endless.app) and were never reached
+- no form was ever submitted and no tool was ever run: the contact Send button and every Generate action were measured, not pressed, so success, error, progress and result-gallery states are uncaptured
+- checkout, plan purchase and localized routes were never reached
+
+## [Endless Tools](../systems/endlesstools) — `endlesstools`
+Access: signed out (every captured surface is public: / on endlesstools.io plus /login, /legal/privacy_policy and /legal/terms_of_use on app.endlesstools.io; the product editor behind sign-in was never reached; no form was submitted and the only presses were local UI toggles)
+- the editor entirely: the canvas, tools, panels, library and AI features live behind sign-in on app.endlesstools.io and were never reached; Start for free, the plan CTAs and Create team open signup and were never followed
+- the login card's two forms (OTP send-code and password) were measured and locally switched; neither was submitted, so the code entry, errors and signed-in redirect are uncaptured
+- the newsletter form was measured and its consent checkbox toggled for the capture; it was never submitted, so its success and any error state are uncaptured
 
 ## [Enode](../systems/enode) — `enode`
 Access: read-only (the marketing site and the platform login page are fully public signed out; everything behind platform.enode.com - the dashboard, docs portal, API surfaces - is an authenticated boundary never reached; the contact and login forms were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; the dormant Cookiebot layer shows no banner and was never answered)
 - every post-login platform surface (dashboard, asset management, API keys) and docs.enode.com lives behind an account - an authenticated boundary never reached
 - the /contact, /contact/partnerships and platform login forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
 
-## [Delphi](../systems/delphi) — `delphi`
-Access: read-only (the home page, /discover/<topic> galleries, /search/<question> results, /<expert> profiles and /<expert>/chat are fully public signed out; creating a clone, saving perspectives and every post-login surface is an authenticated boundary never reached; Sign In, Continue with Google/Email, Share, Save, Expand, Personalize, suggested-question chips, the microphone and the chat send were measured, never followed or submitted)
-- creating a clone, saving perspectives, personalising results and every post-login surface need an account - an authenticated boundary never reached
-- the Sign-In/onboarding dialogs were measured as dialogs; Continue with Google/Email were never pressed, so the auth flow past the dialog is unmeasured
+## [Epic Games Store](../systems/epicgames) — `epicgames`
+Access: read-only (every captured surface is public: the storefront, the sign-in dialog, the support centre and the marketing home); the sign-in form and both search fields were measured, never submitted; Get, Add to Cart, Wishlist, Download, sort options and filter checkboxes were measured, never activated
+- every post-login surface (library, account, billing, cart, checkout) is an authenticated boundary never reached
+- the sign-in form was measured default/focused/filled, never submitted; validation, error and success states are absent rather than measured
+
+## [Epidemic Sound](../systems/epidemicsound) — `epidemicsound`
+Access: read-only (the marketing site, the public catalog, SFX and artist pages and the account forms are fully public; everything behind login.epidemicsound.com is an authenticated boundary never reached; Play, Download, Subscribe, Create-free-account and Log-in actions were measured, never followed; the login and signup forms were never submitted)
+- every post-login surface (library, playlists, downloads, billing, account settings) lives behind login.epidemicsound.com - an authenticated boundary never reached
+- the login and signup forms were measured at rest, never filled with real credentials or submitted; validation, error and success states are absent rather than measured
+
+## [Equals](../systems/equals) — `equals`
+Access: read-only (the marketing site, the go.equals.com sign-in card and the docs are fully public; the spreadsheet workspace and every post-login surface are an authenticated boundary never reached - app.equals.com did not answer; the sign-in and demo e-mail fields were focused and filled for measurement, then cleared, never submitted; Get-a-demo, plan and trial actions were measured, never followed)
+- the authenticated product - workbook, dashboards, datasources, settings and every post-login surface - was never reached; app.equals.com did not answer during the capture
+- the sign-in form and the demo e-mail captures were measured as fields, never submitted; validation, error and success states are absent rather than measured
+- the mobile capture of /use-cases/arr-dashboard/ hit a security challenge; component readings fall back to the desktop measurement
 
 ## [Esquire](../systems/esquire) — `esquire`
 Access: signed out (every surface captured is public; account.esquire.com sign-in and the shop.esquire.com subscription checkout are off-domain boundaries that were measured, never followed; the newsletter and search fields were typed into and cleared, never submitted)
 - every signed-in surface (bookmarks, comment counts, the premium archive) lives behind Sign In on account.esquire.com - an authenticated boundary never reached
 - the Join/Subscribe buttons lead to shop.esquire.com checkout - measured, never followed; purchase, payment and confirmation states are absent rather than measured
-
-## [Descript](../systems/descript) — `descript`
-Access: read-only (the marketing site is fully public; the product lives behind web.descript.com - its sign-in card was captured as a boundary, measured and never submitted; Sign in, Sign up, Get started and every plan CTA were measured as destinations, never followed)
-- the product lives behind web.descript.com - the sign-in card's buttons and email field were measured and the field typed/cleared, never submitted; no authenticated page was reached
-- Sign in, Sign up, Get started, Try free, Request a demo and every plan CTA were measured as outbound/form destinations, never followed
 
 ## [Exa](../systems/exa) — `exa`
 Access: read-only (every captured surface is public and signed out; the dashboard, API keys and playground behind auth.exa.ai were never reached - login routes rate-limited or redirected during reconnaissance; the login and e-mail fields were focused and filled then cleared, never submitted; the home demo's Run-preview arrow, Get-started and Sign-up actions were measured, never pressed)
@@ -492,17 +497,6 @@ Access: read-only (the marketing site, pricing, showcase, case studies, industri
 - the product itself - studio, model training, the image generator, credits, billing and every account surface - lives on threads.exactly.ai behind a Cloudflare check that was never bypassed
 - the Log in, Start-for-free and Book-a-demo links were measured, never followed; the scheduler was measured at rest - no day, time or contact detail was ever picked or typed
 
-## [Equals](../systems/equals) — `equals`
-Access: read-only (the marketing site, the go.equals.com sign-in card and the docs are fully public; the spreadsheet workspace and every post-login surface are an authenticated boundary never reached - app.equals.com did not answer; the sign-in and demo e-mail fields were focused and filled for measurement, then cleared, never submitted; Get-a-demo, plan and trial actions were measured, never followed)
-- the authenticated product - workbook, dashboards, datasources, settings and every post-login surface - was never reached; app.equals.com did not answer during the capture
-- the sign-in form and the demo e-mail captures were measured as fields, never submitted; validation, error and success states are absent rather than measured
-- the mobile capture of /use-cases/arr-dashboard/ hit a security challenge; component readings fall back to the desktop measurement
-
-## [Epic Games Store](../systems/epicgames) — `epicgames`
-Access: read-only (every captured surface is public: the storefront, the sign-in dialog, the support centre and the marketing home); the sign-in form and both search fields were measured, never submitted; Get, Add to Cart, Wishlist, Download, sort options and filter checkboxes were measured, never activated
-- every post-login surface (library, account, billing, cart, checkout) is an authenticated boundary never reached
-- the sign-in form was measured default/focused/filled, never submitted; validation, error and success states are absent rather than measured
-
 ## [Excalidraw](../systems/excalidraw) — `excalidraw`
 Access: read-only (the whole editor is public signed out; nothing was drawn, opened, saved, shared, exported or generated; Open, Save, Export actions, Live collaboration, Share, the AI tools, Reset the canvas and every Sign up were measured, never pressed; Excalidraw+ needs an account and was never reached)
 - Excalidraw+ (saved workspaces, cloud library, collaboration management, billing) needs an account and was never reached; no signup or login path was followed
@@ -512,6 +506,12 @@ Access: signed out (every captured surface is public); expedia.com answers autom
 - anything behind sign-in: trips, account, member pricing, checkout, booking, saved items
 - submitted states: search was never submitted; sort/filters never applied; only screenshot evidence for the opened sort menu
 
+## [Explore](../systems/explore) — `explore`
+Access: read-only (every public surface signed out; the site itself is offline - the product closed 2023-04-19 and the domain later lapsed - so all pages were replayed from a local Internet Archive mirror of the 2023-02-23 build, with the closure shell from the 2023-06-08 snapshot; auth forms were measured and typed into then cleared, never submitted; no backend was ever reached; member names and works on the SSR profiles are public archive records reproduced as captured)
+- every signed-in member surface (network feed, composer, notifications, saved, subscriptions, settings) plus the dark member-portfolio theme lives behind accounts that closed with the product - an authenticated boundary never reached
+- SPA routes whose API records were never archived (/user/*, /post/*) render signed-out shells; member profiles survive only in the three archived SSR HTML pages
+- the login/register/forgot-password fields were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+
 ## [Fable](../systems/fable) — `fable`
 Access: read-only (the marketing pages, /clubs, /books, genre/club/book detail pages, /discover, /signin, /signup, /support, /blog and /community-guidelines are fully public signed out; joined clubs, discussions, the reader, lists, streaks, cart and checkout need an account - an authenticated boundary never reached; the sign-in form and SSO buttons, Join, Want to read, store badges and every CTA were measured, never submitted, pressed or followed; the Osano consent layer was hidden, never answered)
 - every post-login surface (joined clubs, discussion threads, the book reader, lists, streaks and stats) needs an account - an authenticated boundary never reached
@@ -519,40 +519,17 @@ Access: read-only (the marketing pages, /clubs, /books, genre/club/book detail p
 - the sign-in and sign-up forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; 'Continue with Google/Apple' was never pressed
 - 'Join the club', 'Want to read', the spoiler toggle, 'Read more' and the FAQ accordion are local UI - the disclosure toggles were opened for capture and nothing was submitted or joined
 
-## [Faire](../systems/faire) — `faire`
-Access: signed out (every captured surface is public; search results, product detail, cart, checkout, account and the brand portal are behind the sign-up/sign-in dialogs - a documented authenticated boundary never crossed)
-- every post-auth surface - search results, product detail, cart, checkout, account and the brand portal - sits behind the sign-up/sign-in dialogs; every product tile links ?signUp=product, an authenticated boundary never crossed
-- the /apply stepper's steps past 1 need a submitted first step; step 1 was filled and cleared, never sent
-- the observed sign-up dialog mounts no Apple SSO button; signup-apple is recorded missing
-
-## [Explore](../systems/explore) — `explore`
-Access: read-only (every public surface signed out; the site itself is offline - the product closed 2023-04-19 and the domain later lapsed - so all pages were replayed from a local Internet Archive mirror of the 2023-02-23 build, with the closure shell from the 2023-06-08 snapshot; auth forms were measured and typed into then cleared, never submitted; no backend was ever reached; member names and works on the SSR profiles are public archive records reproduced as captured)
-- every signed-in member surface (network feed, composer, notifications, saved, subscriptions, settings) plus the dark member-portfolio theme lives behind accounts that closed with the product - an authenticated boundary never reached
-- SPA routes whose API records were never archived (/user/*, /post/*) render signed-out shells; member profiles survive only in the three archived SSR HTML pages
-- the login/register/forgot-password fields were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
-
 ## [Factory](../systems/factory) — `factory`
 Access: read-only (factory.com, docs.factory.com and the auth.factory.ai sign-in card are fully public signed out; everything behind app.factory.ai - the Droid console, missions and settings - is an authenticated boundary never reached; the /contact HubSpot form and the sign-in card were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; overlays were hidden, never answered)
 - every post-login app surface (the Droid console, missions, settings) sits behind app.factory.ai - an authenticated boundary never reached; the auth.factory.ai sign-in card is a different app that does not share the marketing token layer
 - the /contact HubSpot form and the sign-in card were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
 - factory.com/changelog and docs.factory.com/changelog answer a Vercel-login 404 shape; the working changelog at docs.factory.com/docs/changelog/release-notes was captured instead
 
-## [Visual (designstripe)](../systems/designstripe) — `designstripe`
-Access: read-only (the home page, /assets library and /assets/<kind>/<set> galleries, /tools, /about, /contact and /blog articles are fully public signed out; the design agents, account asset downloads and every post-waitlist surface are an authenticated boundary never reached; the WAITLIST buttons, nav links, category tiles, tool cards and article links were measured, never followed or submitted)
-- the design agents, account asset downloads and every post-waitlist surface need an account - an authenticated boundary never reached
-
-## [Family](../systems/family) — `family`
-Access: read-only (family.co marketing pages, /docs, /support and the app.family.co login are fully public signed out; the signed-in Aave Account product and the iOS wallet are authenticated/native boundaries never reached; Log In, Get Started, Download on iOS and every Watch link were measured, never followed, and the login field and support search were typed into and cleared, never submitted)
-- the signed-in Aave Account product and every post-login surface need an account - an authenticated boundary never reached
-- Log In, Get Started, Download on iOS and every Watch link were measured, never followed; the login field and support search were typed into and cleared, never submitted
-
-## [Fibery](../systems/fibery) — `fibery`
-Access: read-only (the marketing site, fibery.io/sign-up and fibery.io/login/ are fully public signed out; everything past login - workspaces, views, the app's dark/system theme - is an authenticated boundary never reached; the sign-up prompt and login e-mail field were typed into then cleared, never submitted; the OAuth POST forms were never pressed; the wizard never advanced; every link and CTA was measured, never followed; the consent layer and Intercom widget were hidden, never answered)
-- every post-login app surface - workspaces, entity views, whiteboards, automations, AI, admin - lives behind an account, an authenticated boundary never reached
-- the app's dark/system theme (advertised on the login page) is behind sign-in and was not captured; the token file deliberately ships core + light only
-- the sign-up wizard was never advanced past step one - 'Create workspace' and 'Start without AI' were never pressed - so steps 2+ and workspace creation are uncaptured
-- the sign-up prompt and login e-mail field were typed into then cleared and never submitted, and the OAuth POST forms were never pressed - validation, error, loading and success states are absent rather than measured
-- 'Book a demo' links to a scheduler that was never opened; 'Workspace SSO' was never followed
+## [Faire](../systems/faire) — `faire`
+Access: signed out (every captured surface is public; search results, product detail, cart, checkout, account and the brand portal are behind the sign-up/sign-in dialogs - a documented authenticated boundary never crossed)
+- every post-auth surface - search results, product detail, cart, checkout, account and the brand portal - sits behind the sign-up/sign-in dialogs; every product tile links ?signUp=product, an authenticated boundary never crossed
+- the /apply stepper's steps past 1 need a submitted first step; step 1 was filled and cleared, never sent
+- the observed sign-up dialog mounts no Apple SSO button; signup-apple is recorded missing
 
 ## [fal.ai](../systems/fal) — `fal`
 Access: read-only (the marketing pages, the explore catalog, the model and API pages, the docs and the login card are fully public; everything past login - dashboard, API keys, billing, deployments, sandbox, inference - is an authenticated boundary never reached; OAuth, Sign-in-to-run, Open-in-Sandbox, Download, Contact-Sales and Get-Started were measured, never followed; the prompt field was filled and cleared without running a model; the consent card was hidden, never answered)
@@ -560,11 +537,10 @@ Access: read-only (the marketing pages, the explore catalog, the model and API p
 - inference was never run: the prompt field was filled and cleared, Sign-in-to-run links to login signed out, Open-in-Sandbox and Download were measured, never followed
 - the OAuth buttons and Use-SSO were measured at rest, never followed; validation, error and success states are absent rather than measured
 
-## [Designmodo](../systems/designmodo) — `designmodo`
-Access: read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted)
-- the Postcards builder canvas, saving work and every post-login surface need an account - never reached
-- the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted
-- the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured
+## [Family](../systems/family) — `family`
+Access: read-only (family.co marketing pages, /docs, /support and the app.family.co login are fully public signed out; the signed-in Aave Account product and the iOS wallet are authenticated/native boundaries never reached; Log In, Get Started, Download on iOS and every Watch link were measured, never followed, and the login field and support search were typed into and cleared, never submitted)
+- the signed-in Aave Account product and every post-login surface need an account - an authenticated boundary never reached
+- Log In, Get Started, Download on iOS and every Watch link were measured, never followed; the login field and support search were typed into and cleared, never submitted
 
 ## [FARFETCH](../systems/farfetch) — `farfetch`
 Access: signed out (every captured surface is public); www.farfetch.com answers automation with Akamai 403 and the farfetch-contents.com CDNs with 429, so the DOM evidence is Wayback SSR snapshots served locally and painted by Farfetch's own archived CSS, fonts and images with scripts stripped
@@ -577,16 +553,13 @@ Access: signed out (every surface captured is public; the app.feedhive.com sign-
 - the sign-in, sign-up and bio-generator forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; the bio Generate button's desaturated #b9c0f5 is its resting style, not a measured disabled state
 - the app.feedhive.com values are a different design system (Chakra UI) kept as component.login.* literals, never the marketing roles
 
-## [Digg](../systems/digg) — `digg`
-Access: read-only (the home feed, category feeds, story pages, /u/<source> profiles, /login, /sign-up and /privacy are fully public signed out; voting, commenting, submitting, following and settings are an authenticated boundary never reached; the vote pills, comment and source links were measured, never followed or pressed, and the Clerk fields were focused/filled, never submitted)
-- voting, commenting, submitting, following sources and every account surface need an account - an authenticated boundary never reached; the digg-it pills and comment links gate on sign-in and were never pressed
-- the Clerk auth fields were focused and filled at /login and /sign-up, never submitted - no validation, error, loading or success state exists in this capture
-
-## [Fernand](../systems/getfernand) — `getfernand`
-Access: read-only (the marketing site, the signed-out app.getfernand.com/auth/login and /create forms, and help.getfernand.com in light and toggled dark are fully public; every post-login app surface - the inbox workspace, settings, API keys - is an authenticated boundary never reached; the login/signup forms were measured and typed into then cleared, never submitted; the 'Book a demo' Cal.com scheduler was measured, never activated; every link and CTA was measured, never followed; no consent banner was observed on any host)
-- every post-login app surface (the inbox workspace, conversation views, settings, API keys, team/AI-agent configuration) needs an account - an authenticated boundary never reached
-- the /auth/login and /create forms were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
-- the 'Book a demo' action loads the Cal.com scheduler; starting a real booking flow is a side effect, so it was measured at rest and never activated
+## [Fibery](../systems/fibery) — `fibery`
+Access: read-only (the marketing site, fibery.io/sign-up and fibery.io/login/ are fully public signed out; everything past login - workspaces, views, the app's dark/system theme - is an authenticated boundary never reached; the sign-up prompt and login e-mail field were typed into then cleared, never submitted; the OAuth POST forms were never pressed; the wizard never advanced; every link and CTA was measured, never followed; the consent layer and Intercom widget were hidden, never answered)
+- every post-login app surface - workspaces, entity views, whiteboards, automations, AI, admin - lives behind an account, an authenticated boundary never reached
+- the app's dark/system theme (advertised on the login page) is behind sign-in and was not captured; the token file deliberately ships core + light only
+- the sign-up wizard was never advanced past step one - 'Create workspace' and 'Start without AI' were never pressed - so steps 2+ and workspace creation are uncaptured
+- the sign-up prompt and login e-mail field were typed into then cleared and never submitted, and the OAuth POST forms were never pressed - validation, error, loading and success states are absent rather than measured
+- 'Book a demo' links to a scheduler that was never opened; 'Workspace SSO' was never followed
 
 ## [Figma](../systems/figma) — `figma`
 Access: signed out (every captured surface is public; the editor and every post-login surface - files, boards, Dev Mode in a file, Make projects, community profiles and publish flows, admin - is an authenticated boundary never reached; the /login, /signup, /contact and /make forms were measured and typed into then cleared, never submitted; every CTA, nav item and community card was measured, never followed; the consent layer was hidden, never answered; Cloudflare challenged the automation on /dev-mode/ and /customers/ in the first pass and retries in fresh sessions succeeded - no challenge was answered by hand; the dark theme is declared only - a complete :root[data-theme="dark"] token layer the stylesheets ship but no public page painted while captured)
@@ -598,23 +571,23 @@ Access: signed out (every captured surface is public; the dashboard and every po
 - the dashboard and every post-login surface (API keys, events explorer, playground, billing, admin) sits behind an account - an authenticated boundary never reached; dashboard /login and /signup were measured as forms, never submitted, and Continue with Google/GitHub/Microsoft were never followed
 - submitted states: the /contact-sales form, footer and blog newsletter fields, the demo fake-checkout field and the auth cards were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
 
-## [FlowMapp](../systems/flowmapp) — `flowmapp`
-Access: read-only (the www.flowmapp.com marketing pages, the signed-out app.flowmapp.com/signin, /signup and /restore forms, and the public /share/projects/215285 sitemap and user-flow demo viewers are fully public; every post-login app surface - the sitemap/user-flow editors, wireframes, content, estimation, dashboards, billing - is an authenticated boundary never reached; the auth and contact forms were measured and typed into then cleared, never submitted; every link and CTA was measured, never followed; no consent banner was observed on either host)
-- every post-login app surface (the sitemap/user-flow editors, wireframes, content planner, estimation and invoicing, project dashboard, team settings, billing) needs an account - an authenticated boundary never reached
-- the /signin, /signup, /restore and /contact-us forms were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
-- the mobile 390px pass on app.flowmapp.com/signin hit an anti-bot challenge; the desktop pass captured it - recorded as a gap, not bypassed
-
-## [Flask](../systems/flask) — `flask`
-Access: signed out (every captured surface is public; the product workspace behind /home and every post-login surface is an authenticated boundary never reached; /login was measured at rest, the Google and Email buttons never followed; the pricing billing switch was toggled for the monthly shot then toggled back; the FAQ accordions and the home demo's Version chip were opened locally; every link and CTA was measured, never followed; the public site paints dark only and no theme switcher or light theme was observed)
-- the product workspace behind /home and every post-login surface sits behind an account - an authenticated boundary never reached; Sign Up and Open Flask link to /home and were measured, never followed; /login was captured at rest, its Google and Email buttons never followed
-- submitted states: the login form was never submitted - validation, error, loading and success states are absent rather than measured
-
 ## [Fiverr](../systems/fiverr) — `fiverr`
 Access: signed out (every captured surface is public; the buyer/seller account, orders, inbox, checkout and every post-login surface is an authenticated boundary never reached; the hero search, join and login fields were measured and typed into then cleared, never submitted)
 - the buyer/seller account, orders, inbox, checkout and every post-login surface was never reached
 - the gig card's Continue was measured, never pressed — the order/checkout flow it leads to is uncaptured
 - Contact me was measured, never pressed — the message flow it fronts needs an account
 - the join and login forms were typed into then cleared, never submitted; Continue-with-* was never pressed
+
+## [Flask](../systems/flask) — `flask`
+Access: signed out (every captured surface is public; the product workspace behind /home and every post-login surface is an authenticated boundary never reached; /login was measured at rest, the Google and Email buttons never followed; the pricing billing switch was toggled for the monthly shot then toggled back; the FAQ accordions and the home demo's Version chip were opened locally; every link and CTA was measured, never followed; the public site paints dark only and no theme switcher or light theme was observed)
+- the product workspace behind /home and every post-login surface sits behind an account - an authenticated boundary never reached; Sign Up and Open Flask link to /home and were measured, never followed; /login was captured at rest, its Google and Email buttons never followed
+- submitted states: the login form was never submitted - validation, error, loading and success states are absent rather than measured
+
+## [FlowMapp](../systems/flowmapp) — `flowmapp`
+Access: read-only (the www.flowmapp.com marketing pages, the signed-out app.flowmapp.com/signin, /signup and /restore forms, and the public /share/projects/215285 sitemap and user-flow demo viewers are fully public; every post-login app surface - the sitemap/user-flow editors, wireframes, content, estimation, dashboards, billing - is an authenticated boundary never reached; the auth and contact forms were measured and typed into then cleared, never submitted; every link and CTA was measured, never followed; no consent banner was observed on either host)
+- every post-login app surface (the sitemap/user-flow editors, wireframes, content planner, estimation and invoicing, project dashboard, team settings, billing) needs an account - an authenticated boundary never reached
+- the /signin, /signup, /restore and /contact-us forms were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+- the mobile 390px pass on app.flowmapp.com/signin hit an anti-bot challenge; the desktop pass captured it - recorded as a gap, not bypassed
 
 ## [FlutterFlow](../systems/flutterflow) — `flutterflow`
 Access: signed out (every surface captured is public; the app sits at app.flutterflow.io behind login)
@@ -640,6 +613,11 @@ Access: signed out (every captured surface is public: the marketing pages, the p
 - nothing was purchased; the PDP size guide and product-finder quiz are local toggles that were opened, never a checkout
 - the nav 'Start now' modal navigates to /get-started on this build instead of opening; the auth shell was captured instead
 
+## [Frame.io](../systems/frame) — `frame`
+Access: signed out (every captured surface is public; the app and every post-login surface - projects, the review player, Camera to Cloud uploads, Drive and Transfer workspaces, admin, billing - is an authenticated boundary never reached; the accounts.frame.io/welcome sign-in and the /contact/form fields were measured and typed into then cleared, never submitted; every CTA, nav item, menu item and card was measured, never followed; no consent layer appeared for the en-US signed-out visitor and the cookie-preferences control was never pressed; the site ships no theme switch - every frame.io page paints the one dark theme, and accounts.frame.io/welcome is the lone light surface on a different stack)
+- the app and every post-login surface (projects, the review-and-approval player, Camera to Cloud uploads, Drive and Transfer workspaces, account, admin, billing) sits behind an account - an authenticated boundary never reached; accounts.frame.io/welcome was measured as a form, never submitted
+- submitted states: the /contact/form fields and the sign-in e-mail were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
+
 ## [Framer](../systems/framer) — `framer`
 Access: signed out (every captured surface is public; the dashboard, editor, CMS, publishing, workspaces and every post-login surface are an authenticated boundary never reached; /login was measured as a form, never submitted - /signup redirects to it - and Continue with Google was never followed; the pricing 'Yearly billing' switch, credits selects and every CTA/link were measured, never switched or followed; the 'We use cookies' consent card was hidden in the DOM, never answered; the public marketing stack and the community/gallery stack paint dark while /login is a separate light shell)
 - the dashboard, editor, CMS, publishing, workspaces and every post-login surface sit behind an account - an authenticated boundary never reached; /login was captured at rest, its Google button and Continue submit never followed, and /signup redirects to the same shell
@@ -655,26 +633,6 @@ Access: read-only (every captured surface is public: the consumer marketplace, t
 - the booking wizard stops at service selection: Continue was never pressed, so staff, time-slot, payment and confirmation steps are absent
 - venue content (staff, reviews, hours, prices) is that venue's published data, not a canonical template
 
-## [Gladia](../systems/gladia) — `gladia`
-Access: signed out (every captured surface is public; the app console and every post-login surface - API keys, transcription playground, usage, billing - is an authenticated boundary never reached; the /demo-request, pricing-calculator, login and signup fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the mega-menu opens by hover intent or keyboard, the pricing-mode toggle and FAQ accordions are local UI toggles, and the docs dark theme is the Mintlify site's own preference)
-- the app console and every post-login surface (API keys, transcription playground, usage, billing, settings) sits behind an account - an authenticated boundary never reached; app.gladia.io / and /signup were measured as forms, never submitted, and Continue-with SSO buttons were never followed
-- submitted states: the /demo-request form, the pricing-calculator fields and the auth cards were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
-
-## [Frame.io](../systems/frame) — `frame`
-Access: signed out (every captured surface is public; the app and every post-login surface - projects, the review player, Camera to Cloud uploads, Drive and Transfer workspaces, admin, billing - is an authenticated boundary never reached; the accounts.frame.io/welcome sign-in and the /contact/form fields were measured and typed into then cleared, never submitted; every CTA, nav item, menu item and card was measured, never followed; no consent layer appeared for the en-US signed-out visitor and the cookie-preferences control was never pressed; the site ships no theme switch - every frame.io page paints the one dark theme, and accounts.frame.io/welcome is the lone light surface on a different stack)
-- the app and every post-login surface (projects, the review-and-approval player, Camera to Cloud uploads, Drive and Transfer workspaces, account, admin, billing) sits behind an account - an authenticated boundary never reached; accounts.frame.io/welcome was measured as a form, never submitted
-- submitted states: the /contact/form fields and the sign-in e-mail were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
-
-## [Glassnode](../systems/glassnode) — `glassnode`
-Access: signed out (every captured surface is public; the signed-in Studio workbench - chart editor, saved dashboards, alerts, API keys, billing - is an authenticated boundary never reached; the newsletter, contact and Auth0 username fields were typed into then cleared, never submitted; every CTA, nav item and link was measured, never followed; the studio dark-theme layer is declared but has no public control, so dark.studio.* tokens are labelled declared-not-painted; the research, docs and registry theme controls are the sites' own toggles; the Auth0 landing URL's volatile ?state= is sanitized to origin+path in every sidecar)
-- the signed-in Studio workbench - chart editor, saved dashboards, alerts, API keys, billing and every post-login surface - sits behind an account; the Auth0 card was measured as a form, never submitted, and Continue with Google was never followed
-- submitted states: the newsletter, contact and Auth0 username fields were typed into then cleared - validation, error, loading and success states are absent rather than measured
-
-## [Grok / xAI Docs](../systems/grok) — `grok`
-Access: signed out (every captured surface is public docs.x.ai; grok.com's chat product never cleared the Cloudflare managed challenge and x.ai, console.x.ai, status.x.ai and accounts.x.ai returned Cloudflare 403 blocks from the capture host - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - theme button, Ctrl+K, sidebar chevrons, SDK tabs, the phone nav button)
-- x.ai, console.x.ai, status.x.ai and accounts.x.ai returned Cloudflare 403 'Sorry, you have been blocked' from the capture host - marketing, console, auth and status surfaces were never reached
-- dark-only declarations (--border, --input, --ring, --alert, --on-alert, --background-*, --content-*, --sb-*) exist in the dark token set alone and were never inferred for light
-
 ## [Front](../systems/front) — `front`
 Access: signed out (every captured surface is public; the workspace and every post-login surface is an authenticated boundary never reached; the demo, signup, auth and search fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the Qualified 'Quinn' widget was measured at rest, never opened; the app dark theme is the shell's own front-theme-preference mechanism, verified painted as html[data-theme=dark]; the marketing violet/light/gray sets are section themes, not a page-level switch)
 - the workspace and every post-login surface (inbox, contacts, rules, analytics, settings) sits behind an account - an authenticated boundary never reached; app /signin, /signup and /forgot-password were measured as forms, never submitted, and Google/Office 365/SAML SSO was never followed
@@ -683,12 +641,21 @@ Access: signed out (every captured surface is public; the workspace and every po
 - the marketing violet/light/gray sets are [data-theme] section themes of one page, not a user-selectable dark mode; the dark set is the app auth shell's own theme, a different stack
 - disabled, error, loading and validation states never appear signed out - nothing was submitted
 
-## [GoFundMe](../systems/gofundme) — `gofundme`
-Access: signed out (every captured surface is public; the account, the donation flow, checkout and every post-login surface is an authenticated boundary never reached; the wizard's postcode field and the sign-in email field were typed into then cleared, never submitted; 'Donate now', 'Share', 'Message', 'Continue', 'Sign in', 'Start a GoFundMe' were measured, never activated)
-- the account, the donation flow, checkout and every post-login surface was never reached
-- the /create wizard was captured at its first public step only; its category pills and 'Continue' were measured, never submitted - later wizard steps sit behind it
-- the /sign-in Welcome card was measured signed-out; the email field was typed into then cleared and 'Continue'/SSO were never pressed - no account was ever touched; in some headless passes the island does not hydrate and only the empty shell records
-- some measured components are missing or zero-sized where the route did not serve them in a given pass (the donations heading, the search heading, the sign-in card's buttons); gaps are recorded, not fabricated
+## [Fernand](../systems/getfernand) — `getfernand`
+Access: read-only (the marketing site, the signed-out app.getfernand.com/auth/login and /create forms, and help.getfernand.com in light and toggled dark are fully public; every post-login app surface - the inbox workspace, settings, API keys - is an authenticated boundary never reached; the login/signup forms were measured and typed into then cleared, never submitted; the 'Book a demo' Cal.com scheduler was measured, never activated; every link and CTA was measured, never followed; no consent banner was observed on any host)
+- every post-login app surface (the inbox workspace, conversation views, settings, API keys, team/AI-agent configuration) needs an account - an authenticated boundary never reached
+- the /auth/login and /create forms were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+- the 'Book a demo' action loads the Cal.com scheduler; starting a real booking flow is a side effect, so it was measured at rest and never activated
+
+## [Gladia](../systems/gladia) — `gladia`
+Access: signed out (every captured surface is public; the app console and every post-login surface - API keys, transcription playground, usage, billing - is an authenticated boundary never reached; the /demo-request, pricing-calculator, login and signup fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the mega-menu opens by hover intent or keyboard, the pricing-mode toggle and FAQ accordions are local UI toggles, and the docs dark theme is the Mintlify site's own preference)
+- the app console and every post-login surface (API keys, transcription playground, usage, billing, settings) sits behind an account - an authenticated boundary never reached; app.gladia.io / and /signup were measured as forms, never submitted, and Continue-with SSO buttons were never followed
+- submitted states: the /demo-request form, the pricing-calculator fields and the auth cards were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
+
+## [Glassnode](../systems/glassnode) — `glassnode`
+Access: signed out (every captured surface is public; the signed-in Studio workbench - chart editor, saved dashboards, alerts, API keys, billing - is an authenticated boundary never reached; the newsletter, contact and Auth0 username fields were typed into then cleared, never submitted; every CTA, nav item and link was measured, never followed; the studio dark-theme layer is declared but has no public control, so dark.studio.* tokens are labelled declared-not-painted; the research, docs and registry theme controls are the sites' own toggles; the Auth0 landing URL's volatile ?state= is sanitized to origin+path in every sidecar)
+- the signed-in Studio workbench - chart editor, saved dashboards, alerts, API keys, billing and every post-login surface - sits behind an account; the Auth0 card was measured as a form, never submitted, and Continue with Google was never followed
+- submitted states: the newsletter, contact and Auth0 username fields were typed into then cleared - validation, error, loading and success states are absent rather than measured
 
 ## [Glorify](../systems/glorify) — `glorify`
 Access: signed out (every captured surface is public; the signed-in workspace, saved files, billing and account settings are an authenticated boundary never reached; the auth and Craft fields were measured and typed into then cleared, never submitted; Login, Signup, Share, Download, Replace and 'Add to canvas' were measured, never pressed; no trial was started, no OAuth followed and nothing was purchased)
@@ -696,14 +663,35 @@ Access: signed out (every captured surface is public; the signed-in workspace, s
 - the login, register and Craft fields were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
 - the anonymous editor's file content, layers and canvas tools beyond the onboarding and the Craft dialog were not exercised - the scratch file was never saved
 
+## [GlossGenius](../systems/glossgenius) — `glossgenius`
+Access: signed out (every captured surface is public); the product app behind sign-in (calendar, clients, payments, marketing tools — app.glossgenius.com/ redirects to /calendar) was never reached; the login, signup, restore and demo forms were measured and typed into then cleared, never submitted; the published booking flow was browsed read-only to its public /book date-picker — no slot confirmed, no appointment booked; every CTA measured, never followed; no consent banner was observed on any host
+- everything post-login — the calendar, clients, payments, marketing and business tools behind app.glossgenius.com sign-in (the app root redirects to /calendar); an authenticated boundary never reached
+- submitted states: the login, signup, forgot-password and get-demo forms were typed into then cleared, never sent — validation, error, loading and success states are absent rather than measured
+- the booking flow stops at the public /book date-picker — slot confirmation, the YOUR DETAILS form and payment were never reached; 'Next' never pressed
+- the booking site is one business's skin (honeyhivesalon.glossgenius.com, Organic-style layout) — other businesses re-skin the same chrome through other .tokens_glossDS__* layout classes; booking tokens are this surface's resolution, not a universal brand set
+- an edge security-verification page blocked app.glossgenius.com/login on one pass; a retry in a fresh context succeeded and no challenge was answered by hand
+
+## [GoFundMe](../systems/gofundme) — `gofundme`
+Access: signed out (every captured surface is public; the account, the donation flow, checkout and every post-login surface is an authenticated boundary never reached; the wizard's postcode field and the sign-in email field were typed into then cleared, never submitted; 'Donate now', 'Share', 'Message', 'Continue', 'Sign in', 'Start a GoFundMe' were measured, never activated)
+- the account, the donation flow, checkout and every post-login surface was never reached
+- the /create wizard was captured at its first public step only; its category pills and 'Continue' were measured, never submitted - later wizard steps sit behind it
+- the /sign-in Welcome card was measured signed-out; the email field was typed into then cleared and 'Continue'/SSO were never pressed - no account was ever touched; in some headless passes the island does not hydrate and only the empty shell records
+- some measured components are missing or zero-sized where the route did not serve them in a given pass (the donations heading, the search heading, the sign-in card's buttons); gaps are recorded, not fabricated
+
+## [Grammarly](../systems/grammarly) — `grammarly`
+Access: signed out (every surface captured is public; the product sits at app.grammarly.com behind login)
+- app.grammarly.com and everything behind Log in / Sign up was never opened: the editor, dashboard, documents, account, billing and admin surfaces are signed-in and out of scope
+- no form was submitted (contact sales, sign-in, newsletter) and no checkout or trial started, so success and painted error states are missing
+- the free tools' result views (plagiarism report, AI-detector verdict, paraphrase output) each need a submit action the kit never performs; the grammar checker's live suggestion cards render in a product overlay outside the page's light DOM and are recorded missing
+
+## [Grok / xAI Docs](../systems/grok) — `grok`
+Access: signed out (every captured surface is public docs.x.ai; grok.com's chat product never cleared the Cloudflare managed challenge and x.ai, console.x.ai, status.x.ai and accounts.x.ai returned Cloudflare 403 blocks from the capture host - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - theme button, Ctrl+K, sidebar chevrons, SDK tabs, the phone nav button)
+- x.ai, console.x.ai, status.x.ai and accounts.x.ai returned Cloudflare 403 'Sorry, you have been blocked' from the capture host - marketing, console, auth and status surfaces were never reached
+- dark-only declarations (--border, --input, --ring, --alert, --on-alert, --background-*, --content-*, --sb-*) exist in the dark token set alone and were never inferred for light
+
 ## [Grow with Google](../systems/grow) — `grow`
 Access: signed out (every captured surface is public; enrolment on Coursera, Google accounts and all outbound links were measured, never followed; the footer's language select was never changed — its form posts to services.google.com; the hero YouTube embed was opened and closed, never played; no sign-in exists on grow.google)
 - enrolment and accounts live off grow.google (coursera.org, Google sign-in): every CTA was measured, never followed
-
-## [Hashnode](../systems/hashnode) — `hashnode`
-Access: signed out (every captured surface is public: hashnode.com marketing/feed/posts/profiles/product sections and townhall.hashnode.com; /login and every post-auth surface never entered; engineering.hashnode.com returned 429, help./docs./blog./api./support./changelog./weekly. subdomains do not resolve, status.hashnode.com is a Better Stack page not the product - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the search dialogs, Theme/More menus, FAQ and tab rows, the sidebar toggle, the phone nav button)
-- the signed-in product (/login and everything behind it - dashboard, editor, settings, the onboarding submit) is a boundary: the Sign in / Start your blog / Get Pro links were measured, never followed
-- five components read as absent on this pass (the profile sticky header, the Get Pro plan CTA, the deferred onboarding field, the blog article's pre wrapper, the blog search suggestion row) - recorded as missing, not measured as absent
 
 ## [Gumroad](../systems/gumroad) — `gumroad`
 Access: signed out (every captured surface is public gumroad.com or a public creator subdomain; the seller dashboard, buyer library and settings stayed behind login; the public checkout was captured empty and never submitted; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the carousel arrow, the nav menu button, the Share popover, the billing-term select)
@@ -711,10 +699,22 @@ Access: signed out (every captured surface is public gumroad.com or a public cre
 - search results: the marketplace search fields were measured empty; no query was ever submitted
 - checkout beyond the empty public form: payment, confirmation and post-purchase screens were never reached
 
-## [Handshake](../systems/joinhandshake) — `joinhandshake`
-Access: signed out (every captured surface is public: joinhandshake.com's marketing pages serve a plain load, and app.joinhandshake.com/access - the 'Log in or sign up' card - cleared its Cloudflare challenge intermittently and was captured on the loads that did; /explore, /signup, the registration flow and support.joinhandshake.com never cleared - blocked boundaries, not captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the nav's hover-opened mega menu, segment tabs, FAQ and department accordions, the phone's 'Open menu' button)
-- the consumer app's signed-in surfaces - /explore, /signup, registration, dashboards - are a blocked boundary: the Cloudflare managed challenge never cleared across fresh-context retries
-- the Marketo lead forms were measured at rest; no field was filled and nothing was submitted - validation, error and success states are absent
+## [Hashnode](../systems/hashnode) — `hashnode`
+Access: signed out (every captured surface is public: hashnode.com marketing/feed/posts/profiles/product sections and townhall.hashnode.com; /login and every post-auth surface never entered; engineering.hashnode.com returned 429, help./docs./blog./api./support./changelog./weekly. subdomains do not resolve, status.hashnode.com is a Better Stack page not the product - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the search dialogs, Theme/More menus, FAQ and tab rows, the sidebar toggle, the phone nav button)
+- the signed-in product (/login and everything behind it - dashboard, editor, settings, the onboarding submit) is a boundary: the Sign in / Start your blog / Get Pro links were measured, never followed
+- five components read as absent on this pass (the profile sticky header, the Get Pro plan CTA, the deferred onboarding field, the blog article's pre wrapper, the blog search suggestion row) - recorded as missing, not measured as absent
+
+## [HBO Max](../systems/hbomax) — `hbomax`
+Access: signed out (every captured surface is public; sign-in, plan checkout, the help centre and account surfaces were link-observed only and never opened)
+- auth.hbomax.com sign-in, plan selection and checkout, help.hbomax.com and every account surface were observed as links only and never opened; no form was submitted and no trial or plan was started
+- carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
+
+## [Headspace](../systems/headspace) — `headspace`
+Access: signed out (every captured surface is public); the member app behind auth.headspace.com login was never reached; the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never filled or submitted; no trial started, no plan bought, no code redeemed; every CTA measured, never followed; the OneTrust consent layer was hidden, never answered
+- everything post-login - the member home, meditation player, streaks, settings and the whole signed-in app behind auth.headspace.com; an authenticated boundary never reached
+- submitted states: the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never sent - validation, error, loading and success states are absent rather than measured
+- /pricing answers a real 404 ('Whoops! Something's changed'); the plans live on /subscriptions - a recorded absence, not a capture
+- the checkout shell's form fields, the feature/testimonial cards, the FAQ accordion, the plan cards and billing switch, the content tiles, the footer language selector and app badges, and the mobile nav sheet did not match the kit's structural selectors on this pass - recorded as absent components, not measured
 
 ## [Hello Ivy](../systems/helloivy) — `helloivy`
 Access: signed out (every captured surface is public: www.helloivy.co marketing routes, app.helloivy.co/login at rest and the public share document, and the hosted /docs platform; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the Framer menu overlay, the footer's real 'Change theme' control, the pricing FAQ accordion, the share page's settings popover and the phone's menu drawer; every link was measured, never followed; the workspace and every post-auth surface was never entered)
@@ -725,13 +725,6 @@ Access: signed out (every captured surface is public: www.helloivy.co marketing 
 Access: signed out (the marketing pages, content pages and demo registries are fully public; the auth forms were read at rest - nothing was focused, typed or submitted; the gift modal's Give/contribute flow and every payment step were never entered; the registry's internal routes /contributions, /payment-methods, /ask and /quick-thanks bounce the guest to / and were recorded as boundaries)
 - focus/hover/pressed states on the auth controls were never forced (focusing a field is the first step of signing in)
 - the registry's internal routes (/contributions, /payment-methods, /ask, /quick-thanks) bounce the signed-out guest to /
-
-## [Headspace](../systems/headspace) — `headspace`
-Access: signed out (every captured surface is public); the member app behind auth.headspace.com login was never reached; the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never filled or submitted; no trial started, no plan bought, no code redeemed; every CTA measured, never followed; the OneTrust consent layer was hidden, never answered
-- everything post-login - the member home, meditation player, streaks, settings and the whole signed-in app behind auth.headspace.com; an authenticated boundary never reached
-- submitted states: the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never sent - validation, error, loading and success states are absent rather than measured
-- /pricing answers a real 404 ('Whoops! Something's changed'); the plans live on /subscriptions - a recorded absence, not a capture
-- the checkout shell's form fields, the feature/testimonial cards, the FAQ accordion, the plan cards and billing switch, the content tiles, the footer language selector and app badges, and the mobile nav sheet did not match the kit's structural selectors on this pass - recorded as absent components, not measured
 
 ## [Homerun](../systems/homerun) — `homerun`
 Access: signed out (the marketing routes and careers site are fully public; the ATS and HR apps sit behind sign-in - both public login cards were measured at rest, never submitted; the public application wizard was never advanced past its first step; consent banners were hidden without answering them; sign-up/login/apply links were never followed)
@@ -744,6 +737,171 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Hume AI](../systems/hume) — `hume`
+Access: signed out (every captured surface is public: www.hume.ai marketing/product/blog/legal pages, the dev.hume.ai docs, the demo.hume.ai invitation gate and the app.hume.ai/log-in card; the demo playground is gated on an invitation email and was never entered, nothing past /log-in was entered, EVI/Octave TTS have no public surface post-pivot - demo.hume.ai/evi answers 404; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the docs Theme menu, the home player's transport, the benchmark tabs, the blog filters and the mobile drawer)
+- the signed-in platform (app.hume.ai past /log-in - dashboard, API keys, projects, billing) is the product's own boundary, never entered
+- contact, newsletter and log-in fields were clicked into for the focus look only - never typed or submitted
+
+## [Intercom](../systems/intercom) — `intercom`
+Access: signed out (every captured surface is public: www.intercom.com marketing routes, the /help/en/ help center and /changes/en changelog; app.intercom.com, /signup onboarding, purchase and the contact-sales form's later steps never entered - the Log in / Start free trial / Get started / Contact sales links were measured, never followed; the Next submit was measured with forced pseudo states, never pressed; no select option was chosen and the marketing checkbox was never ticked; nothing was signed into, searched, chosen, uploaded, bought or submitted; the only presses were local UI toggles - the nav mega-menu, the billing switch, a FAQ row, the select's own listbox and the mobile menu button)
+- the signed-in product (app.intercom.com - inbox, tickets, reports) is a boundary: the Log in link was measured, never followed
+- trial onboarding (/signup), purchase and every conversion path past the marketing surface are boundaries, not captures
+- three header components (logo, nav-login, nav-cta) were measured on one pass and preserved on a later recapture that missed them - recorded as recaptureMissed provenance
+
+## [Jace AI](../systems/jace) — `jace`
+Access: signed out (marketing routes are public; app.jace.ai/signin was measured at rest; app.jace.ai/signup was opened through the privacy notice to the Google/Outlook card; there is no email or password field; Google, Outlook and SSO were never pressed; the sales form was focused and a sample string typed then deleted, nothing submitted)
+- the inbox, drafts, labels, Flows, settings and billing sit behind Google or Outlook OAuth on https://app.jace.ai/signin and https://app.jace.ai/signup; there is no email or password field, so those surfaces were not reached
+- Continue with Google on sign-in and signup is an OAuth flow and was not pressed (hover, focus-visible and a DevTools-forced pressed state only)
+- Continue with Outlook on sign-in and signup is an OAuth flow and was not pressed (hover, focus-visible and forced pressed on signup)
+- Enterprise SSO at https://app.jace.ai/enterprise-sso (Launch the SSO portal) was not followed
+- the sales form at https://jace.ai/contact/sales (Send a request) was shown at rest, focused, and a sample string typed then deleted; it was not submitted, so no posted validation error was captured
+- checkout and payment sit behind sign-in and were not opened
+- account deletion and settings sit behind sign-in (public docs mention them) and were not opened
+- marketing home and pricing ignore prefers-reduced-motion; sign-in is partial (raw/motion.json)
+
+## [Jasper AI](../systems/jasper) — `jasper`
+Access: signed out (marketing routes on www.jasper.ai are public). Signed-in pass attempted 2026-11-18 via Continue with email on app.jasper.ai/auth/signup and /auth/login: continueWithEmail returned HTTP 401 and the page toasted 'Failed to send login link. Please contact support for further assistance.' No password field exists (passwordless). Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared. Canvas, agents, Brand IQ and campaigns were not reached. Transcend and cookie overlays were hidden, never answered
+- Product app (canvas, agents runtime, Brand IQ editor, campaigns) at https://app.jasper.ai/ was not reached. A signed-in pass on 2026-11-18 submitted Continue with email on /auth/signup and /auth/login; continueWithEmail returned HTTP 401 and the page toasted Failed to send login link. Please contact support for further assistance. No password field exists. Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared.
+- Signup and free trial at https://app.jasper.ai/auth/signup stay gated: Continue with email 401s, so no trial, onboarding or paid-plan screen was opened.
+- Get a Demo form at https://www.jasper.ai/demo was measured at rest and never submitted, so no validation, error or success state was captured.
+
+## [JetBrains](../systems/jetbrains) — `jetbrains`
+Access: signed out; Continue with email opened the signup email field; reCAPTCHA blocked the signed-in account
+- Signed-in JetBrains Account (profile and licenses) at https://account.jetbrains.com was not captured: Continue with email on /signup opened the email field, then Continue hit reCAPTCHA ('I'm not a robot') and capture stopped. No OAuth button was completed
+- Store checkout and Buy at https://www.jetbrains.com/store/ were not followed
+- Product downloads at https://www.jetbrains.com/products/ were not started; starting a download is a submit boundary and was not followed
+- The cookie dialog at https://www.jetbrains.com/ was hidden and never submitted
+
+## [Jitter](../systems/jitter) — `jitter`
+Access: signed in on a free email account; marketing plus files, account, trash, brand kit, onboarding and the editor were captured; Google/SSO were never clicked; billing checkout, paid export and Invite were not opened; Superagents Upgrade now was measured at rest
+- SSO at https://jitter.video/sso and Continue with Google / Continue with SSO on https://jitter.video/login/ were measured at rest and never clicked
+- checkout and billing at https://jitter.video/billing and Upgrade your plan / Upgrade now were measured at rest and never followed; no card was entered
+- Invite members and Send invites were measured at rest and never submitted
+- the contact-sales form at https://jitter.video/contact-sales/ was measured empty and never submitted
+- no validation, disabled or toast state was produced because no form was submitted after sign-in
+
+## [Handshake](../systems/joinhandshake) — `joinhandshake`
+Access: signed out (every captured surface is public: joinhandshake.com's marketing pages serve a plain load, and app.joinhandshake.com/access - the 'Log in or sign up' card - cleared its Cloudflare challenge intermittently and was captured on the loads that did; /explore, /signup, the registration flow and support.joinhandshake.com never cleared - blocked boundaries, not captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the nav's hover-opened mega menu, segment tabs, FAQ and department accordions, the phone's 'Open menu' button)
+- the consumer app's signed-in surfaces - /explore, /signup, registration, dashboards - are a blocked boundary: the Cloudflare managed challenge never cleared across fresh-context retries
+- the Marketo lead forms were measured at rest; no field was filled and nothing was submitted - validation, error and success states are absent
+
+## [Julienne](../systems/julienne) — `julienne`
+Access: signed out (public pages only: home, discover, a published recipe, ingredient search, a collection, team, roadmap, shop, privacy policy, signup at rest, and the cookbook gate; nothing typed, submitted, saved, cooked or bought; the only presses were the theme toggle, a discover filter chip, the marketing Menu button, and Log in opened and closed at rest)
+- the signed-in cookbook at https://withjulienne.com/cookbook is a boundary: signed out it shows Come back soon, and the account cookbook was not entered
+- Save on a recipe (https://withjulienne.com/days/11_17_2026/recipes/chef_muse_20261117_soup_season_e92685c034_10) was not pressed; saving needs an account
+- Cook on that recipe page was not pressed; cook mode needs an account
+- Log in and https://withjulienne.com/signup were read at rest; email, password, Google, Apple and Turnstile were never used
+- search was not typed or submitted; /search?ingredients=apple is a published browse link
+
+## [Kickstarter](../systems/kickstarter) — `kickstarter`
+Access: signed out (every captured surface is public; login, signup, pledge, save, checkout and the project editor past the first /start step were not entered; the email field was typed into and cleared; Continue, Next, Back this project, Save and Sign in with Apple were measured, never activated)
+- https://www.kickstarter.com/login — the account after Continue, and Sign in with Apple (OAuth), were not entered. The email field was typed into and cleared. Turnstile was not solved.
+- https://www.kickstarter.com/signup — redirects to /login. Account creation was not started.
+- https://www.kickstarter.com/projects/shirtaloon/hwfwm — Back this project, Remind me, and the share controls were measured and not followed. Pledge and checkout are gated.
+- https://www.kickstarter.com/start — the category step is public. Next was not pressed. The project editor, story, rewards, and launch sit behind an account.
+- Save this project on home and Discover cards requires an account and was not activated.
+- Comments, updates posting, messages, and the creator dashboard were not opened.
+
+## [Kinhive](../systems/kinhive) — `kinhive`
+Access: public site plus the join and sign-in 6-digit code step; contact, subscribe, and the hero email were not submitted; LinkedIn, store badges, template downloads, and Add to cart were not followed; the signed-in app was not opened because the code email never arrived
+- the signed-in app at https://kinhive.com/home, /matches, /chat, /cowork, /profile, /settings, /notifications, /community, /posts, /team, /room, and the other paths robots.txt disallows, was not opened: join POST /api/auth/join returned ok true and sign-in POST /api/auth/sign-in returned status sent, but no Kinhive message arrived at the capture inbox, and later submits returned Too many emails sent / Too many attempts
+- https://kinhive.com/join was submitted through the 6-digit code step; a wrong code and a send-rate limit were captured; the in-app onboarding after a valid code was not reached
+- https://kinhive.com/sign-in Email me a sign-in code was pressed; Continue with LinkedIn was not
+- https://kinhive.com/contact Send message was not submitted, so validation, error, and success states were not reached
+- the hero email, the mid-page capture email, and the footer Subscribe fields were not submitted
+- https://kinhive.com/shop/founders-hat Add to cart was not pressed, and checkout was not started; the cart drawer was opened empty at https://kinhive.com/shop
+- template Fill in online, Copy to Google Docs, and Download as Word on https://kinhive.com/templates/nda were not followed; those are submission and account boundaries
+
+## [Kit](../systems/kit) — `kit`
+Access: signed out (the creator app behind app.kit.com login was never reached)
+- the signed-in creator app at app.kit.com (dashboard, email designer, automations, subscribers, commerce) needs an account and was never reached
+- the request-a-demo form at https://kit.com/request-demo sits in a Chili Piper iframe (https://kit.chilipiper.com/concierge-router/demo-request-form) and was not submitted
+- password reset at https://app.kit.com/users/password/new is linked from the log-in card and was not followed
+- checkout and trial links on https://kit.com/pricing point at signup with a plan query (plan=1k, plan=1k-annual, plan=kit-free) and were measured, never followed
+- disabled, error, loading and validation states were not seen because no form was submitted
+- the product publishes no dark theme; the dark token set is empty on purpose
+- C5, V1 and V2 are not published by the product
+
+## [Kitchen.co](../systems/kitchen) — `kitchen`
+Access: signed in (free workspace after email signup; invites, creates, Upgrade, DocuMocu connect and Stripe checkout were not submitted)
+- Get a demo (https://kitchen.co/get-demo): the demo request form was not submitted
+- Lifetime checkout (https://kitchen.co/pricing Pay Now and Settings > Billing Buy Lifetime Access): Stripe checkout was not opened
+- Workspace theme customisation is paid (Settings > Branding > Theme & Colors Upgrade)
+- Invites, new folders, boards, conversations and clients were not created
+
+## [Kitchen Stories](../systems/kitchenstories) — `kitchenstories`
+Access: signed out (every captured surface is public; checkout, profile, the recipe cart and rating submit were not followed)
+- Plus checkout: Jetzt kostenlos starten on https://pages.kitchenstories.com/de/plus links to https://www.kitchenstories.com/de/checkout and was not followed
+- Account: https://www.kitchenstories.com/profile (Dein Kitchen Stories Konto zieht um) was not signed into. /login and /anmelden return 404
+- Recipe rating submit (Abschicken / Bewerte das Rezept) on that recipe URL was not submitted
+- Contact form on https://www.kitchenstories.com/kontakt was not submitted
+
+## [Klarna](../systems/klarna) — `klarna`
+Access: signed out (US marketing at www.klarna.com/us/ and the country picker at /international/ are public; the OneTrust banner was hidden and never answered; Sign in was opened once to the app.klarna.com QR interstitial and not followed; no account, checkout, search submission or purchase)
+- Klarna app sign-in at https://app.klarna.com/login?market=US&locale=en-US stops at a QR interstitial (Continue securely in the Klarna app). Continue on web? was not followed, so the typed sign-in form was not captured
+- Signed-in payments, purchases, portfolio, savings and account sit behind that sign-in and were not captured
+- Checkout was not started. Shop now and Get the app were not followed into a purchase
+- Search overlay on https://www.klarna.com/us/ was opened and not submitted, so search results were not captured
+- The language and region dialog was opened. Confirm was not submitted
+
+## [Kraken](../systems/kraken) — `kraken`
+Access: signed out (trading, wallets, account and any submitted form were not entered)
+- Sign-in at https://id.kraken.com/sign-in was photographed at rest. The email field was focused. Nothing was typed. Continue, Google, Apple and passkey were not followed.
+- Create an account at https://www.kraken.com/sign-up was photographed at rest. Continue was not submitted and the Google and Apple buttons were not followed.
+- Kraken Pro trading at https://pro.kraken.com/app/trade and the markets at https://pro.kraken.com/app/markets/spot sit behind sign-in. The /pro marketing page was captured. The app was not opened.
+- The consumer app at https://app.kraken.com/ and the product routes behind /app (xstocks, borrow, onchain, auto-earn, perpetual futures, Kraken+, dollar-cost averaging, crypto card) require an account. The /app marketing page was captured.
+- Portfolio, wallets, checkout, KYC and card issuance require an account and were not entered.
+- The institutions contact form on https://www.kraken.com/institutions (Get in touch) was not submitted.
+
+## [Krea](../systems/krea) — `krea`
+Access: read-only (the home shell, pricing, enterprise, blog, plugins, MCP, the image tool, docs, terms and the login card are public; a Continue with Email attempt on 2026-11-18 was stopped by Cloudflare Turnstile: GET /api/auth/email-flow returned 400 captcha_failed with no visible widget, so assets, train, nodes, account, billing, API keys, checkout and generation remain behind sign-in; Sign in, Sign up, OAuth, Book a call, Get Pro and Generate were measured, never followed except that one Email continue; the prompt and email fields were filled; consent overlays were hidden, never answered)
+- https://www.krea.ai/login is the auth boundary (Continue with Google, Continue with Apple, SSO, Continue with Email). Google, Apple and SSO were never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget). Stopped there
+- https://www.krea.ai/assets redirects to /login?redirect=%2Fassets. The signed-in asset library was not captured: the email pass never got past Turnstile
+- https://www.krea.ai/pricing plan buttons (Get Free, Get Basic, Get Pro, Get Max) open account or checkout and were measured, never followed
+- https://www.krea.ai/ and https://www.krea.ai/image Generate and the composer submit a generation. They were measured, never clicked
+- Train, Node Editor, account settings, billing and API keys sit behind sign-in and were not opened
+- composer-send, image-generate, price-card, faq-item, m-sidebar and m-signin were not found as stable elements on the measurement pass
+
+## [Krisp](../systems/krisp) — `krisp`
+Access: signed-in free account (passwordless email OTP); /meetings and recordings redirect to the desktop download gate; notes, settings and billing were captured; Upgrade and calendar OAuth were not followed
+- /meetings and recordings redirect to /setup (desktop app download) on this free account
+- Upgrade, Download for macOS, Connect Google/Outlook, Delete account and Enable 2FA were not pressed
+- Book a demo and Talk to Sales open https://krisp.ai/contact-sales/: a sales form, not submitted
+
+## [LEGO](../systems/lego) — `lego`
+Access: read-only (home, theme, bestsellers, product, offers, service, about and search are public signed out; sign-in, bag, checkout, wish list contents and membership signup were not entered)
+- Sign-in at https://www.lego.com/identity/login sits behind a LEGO account and was not entered
+- My Bag at https://www.lego.com/en-us/cart was not opened; Add to Bag was measured and never pressed, so the bag and checkout stay behind an account boundary
+- Checkout at the bag sits behind sign-in and was not entered
+- Wish list contents behind the header Wish List control sit behind a LEGO account and were not opened
+- Membership signup (Become a member / Insiders) was not submitted
+- The footer email subscription field was not submitted
+
+## [Lemni](../systems/lemni) — `lemni`
+Access: signed-in free account (email magic link at lemni.com/signin; Google unused). Public marketing plus the workplace app as the free trial shows it. Upgrade and payment were not followed.
+- Continue with Google at https://lemni.com/signin. Email magic link was used. Google was not clicked.
+- Upgrade and checkout at https://lemni.com/welcome/subscribe and the workplace sidebar Upgrade control. Captured at rest. Not pressed. No plan was bought.
+- Application form at https://www.lemni.com/company/apply. Not submitted.
+
+## [Lemon Squeezy](../systems/lemonsqueezy) — `lemonsqueezy`
+Access: signed-in pass attempted (email/password). The address was not registered. New store signups are closed: business-intent submits to a Stripe Managed Payments recommendation. Get started, Google, Twitter, bank connect and payout KYC were not followed. Merchant dashboard routes bounce to login. Customer order portal login was opened and not submitted.
+- the signed-in merchant dashboard at app.lemonsqueezy.com (products, orders, subscriptions, customers, discounts, affiliates, payouts, analytics, settings) was not opened: new store signups are closed, the email was not already registered, and those routes bounce to auth.lemonsqueezy.com/login
+- Stripe Managed Payments onboarding behind Get started on https://auth.lemonsqueezy.com/signup/smp was stopped (Stripe onboarding / take-payments stop)
+- Google and Twitter OAuth on https://auth.lemonsqueezy.com/login were measured as buttons and never followed
+- the password reset form at https://auth.lemonsqueezy.com/password/reset was not opened
+- the customer order portal magic-link on https://app.lemonsqueezy.com/my-orders/login was opened and not submitted
+- Stripe Managed Payments signup at https://dashboard.stripe.com/register/managed_payments and https://stripe.com/managed-payments were not opened; they are a different product
+- checkout and purchase are not on the public marketing pages and were not opened
+- CAPTCHA, phone verify and payout KYC did not appear
+
+## [Limitless](../systems/limitless) — `limitless`
+Access: signed-out public marketing, docs, legal, help center, and the app.limitless.ai sign-in wall; a 2026-11-18 signed-in pass submitted the email field only (never Google) and stopped at Sign Up Unavailable (Limitless is no longer accepting new users). Lifelogs, settings and account were not entered. No Pendant purchased. No CAPTCHA, phone or payment.
+- app.limitless.ai/signin: submitting a new email opens Sign Up Unavailable (Limitless is no longer accepting new users); lifelogs, settings, billing and account were not entered
+- Continue with Google at https://app.limitless.ai/signin starts OAuth and was not pressed
+- Pendant purchase is no longer offered to new customers; the unavailable dialog tells Pendant owners to email support; no checkout was opened
+- account deletion, documented at https://help.limitless.ai/en/articles/13005203-how-to-delete-your-limitless-account-and-data, was not opened
+- the Slack community invite at https://www.limitless.ai/community leaves the site and was not followed
 
 ## Gate noted in access text only
 

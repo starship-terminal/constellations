@@ -1,0 +1,733 @@
+{
+ "_meta": {
+  "readAt": "2026-11-18",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 15,
+  "removed": 0,
+  "reduced": 0,
+  "kept": 15,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "ignores",
+  "loops": [
+   "dots"
+  ]
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://www.lemni.com/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 3839,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 12,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 12,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": [
+     "dots"
+    ]
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "dots",
+        "durationMs": 1000,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "dots",
+        "durationMs": 1000,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "dots",
+       "outcome": "kept",
+       "from": 1000,
+       "to": 1000,
+       "loops": true
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.sc-bczSft.gFMuxm"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "dots",
+        "durationMs": 1000,
+        "delayMs": 150,
+        "easing": "ease",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "dots",
+        "durationMs": 1000,
+        "delayMs": 150,
+        "easing": "ease",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "dots",
+       "outcome": "kept",
+       "from": 1000,
+       "to": 1000,
+       "loops": true
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.sc-bczSft.gFMuxm"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "dots",
+        "durationMs": 1000,
+        "delayMs": 300,
+        "easing": "ease",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "dots",
+        "durationMs": 1000,
+        "delayMs": 300,
+        "easing": "ease",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "dots",
+       "outcome": "kept",
+       "from": 1000,
+       "to": 1000,
+       "loops": true
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.sc-bczSft.gFMuxm"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "dots",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".gFMuxm",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "dots",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gFMuxm:nth-of-type(2)",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "delayMs": 150
+      }
+     ]
+    },
+    {
+     "selector": ".gFMuxm:nth-of-type(3)",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "delayMs": 300
+      }
+     ]
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://www.lemni.com/pricing",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 374,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 0,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 0,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "no-motion",
+    "loops": []
+   },
+   "groups": [],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-3": {
+   "url": "https://www.lemni.com/docs",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1099,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 0,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 0,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "no-motion",
+    "loops": []
+   },
+   "groups": [],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-4": {
+   "url": "https://lemni.com/signup",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 164,
+   "capped": false,
+   "unreadableSheets": 2,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 3,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 3,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "width",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "width",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.sc-dcJsrY.jXtcMN.primary",
+      "div.sc-dcJsrY.jXtcMN.secondary"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "input.sc-eeDRCY.kTkBJV"
+     ]
+    }
+   ],
+   "keyframes": [],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".react-datepickerolidays .overlay, .react-datepickertext--holidays .overlay, .react-datepickerr-text--holidays .overlay, .react-datepickerext--holidays .overlay",
+     "context": [],
+     "transitions": [
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".react-datepickerisabled .overlay, .react-datepickertext--disabled .overlay, .react-datepickerr-text--disabled .overlay, .react-datepickerext--disabled .overlay",
+     "context": [],
+     "transitions": [
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".jXtcMN",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "width",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".jXtcMN.loader .sc-eqUAAy",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "p a, p .inline-link",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".kTkBJV",
+     "context": [],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".kTkBJV::-webkit-input-placeholder",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".kTkBJV::placeholder",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": []
+  }
+ }
+}
