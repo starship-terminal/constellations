@@ -98,7 +98,7 @@ async function resolve(theme) {
       const raw = noUrl(cs.getPropertyValue(n).trim());
       if (!raw) continue;
       root.style.setProperty('--probe', `var(${n})`);
-      const painted = getComputedStyle(root).getPropertyValue('--probe').trim();
+      const painted = noUrl(getComputedStyle(root).getPropertyValue('--probe').trim());
       out[n] = { raw: raw.slice(0, 180), value: (painted || raw).slice(0, 180) };
     }
     return out;

@@ -91,9 +91,9 @@ for name, ps in parts.items():
     # whose dimension check passes only against itself.
     nums = [n for n, _ in ps]
     metas = [sidecar_for(f) for _, f in ps]
-    # No sidecars at all: publish the stitch and write no sidecar. A partial
-    # set stays rejected below.
-    if all(m is None for m in metas):
+    # No sidecars at all, and a contiguous run from part0: publish the stitch
+    # and write no sidecar. A gap in the part numbers stays rejected.
+    if nums == list(range(len(ps))) and all(m is None for m in metas):
         ims = [Image.open(f).convert('RGB') for _, f in ps]
         sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
         y = 0

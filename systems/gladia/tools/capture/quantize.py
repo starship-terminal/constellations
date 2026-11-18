@@ -151,7 +151,12 @@ for name, ps in parts.items():
     for i in ims:
         sheet.paste(i, (0, y)); y += i.height
     sheet.save(RAW / f'{name}.png')
-    stitched[name] = stitched_sidecar(name, sheet, [f for _, f in ps], intended)
+    # No sidecars at all: publish the PNG and write no sidecar. A rebuilt
+    # sidecar with no clips would compare the sheet to itself and pass.
+    if all(sidecar_for(f) is None for _, f in ps):
+        stitched[name] = None
+    else:
+        stitched[name] = stitched_sidecar(name, sheet, [f for _, f in ps], intended)
     print('stitched', name, sheet.size)
 
 n = 0
