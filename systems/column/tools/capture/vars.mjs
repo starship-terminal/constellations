@@ -41,14 +41,15 @@ const { sheets, themeVars } = await page.evaluate(() => {
   });
   const themeVars = {};
   for (const sel of []) {
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const el = document.querySelector(sel);
     if (!el) continue;
     const cs = getComputedStyle(el);
     const vars = {};
     for (const name of el.style) {
       if (!name.startsWith('--')) continue;
-      const raw = el.style.getPropertyValue(name).trim();
-      const computed = cs.getPropertyValue(name).trim();
+      const raw = noUrl(el.style.getPropertyValue(name).trim());
+      const computed = noUrl(cs.getPropertyValue(name).trim());
       vars[name] = { raw, resolved: computed };
     }
     themeVars[sel] = vars;
@@ -87,7 +88,7 @@ const result = await probe.evaluate((sheets) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
-        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
         fonts.push(o);
         continue;
       }
