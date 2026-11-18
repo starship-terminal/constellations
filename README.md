@@ -413,6 +413,7 @@ what is open, with the evidence.
 | <img src="systems/lemonsqueezy/icon.png" width="20" alt="lemonsqueezy"> | [lemonsqueezy](systems/lemonsqueezy/README.md) | A merchant-of-record marketing site winding down onto Stripe: Webflow Client-First, a purple-600 hero (#5423e7), a yellow shutdown banner (#ffc233), 40px white pills, Circular Pro Book display and Inter UI, plus an 8px-radius auth card in the same purple | 2026-11-18 | light | not graded yet | none |
 | <img src="systems/limitless/icon.png" width="20" alt="limitless"> | [limitless](systems/limitless/README.md) | A quiet light marketing site after an acquisition: white page, slate 900 display at 60px with tight tracking, Greycliff, purple-500 used only on the star and one filled action, pill nav, a 24px letter card, and a sign-in card that opens Sign Up Unavailable for a new email | 2026-11-18 | light | not graded yet | none |
 | <img src="systems/lummi/icon.png" width="20" alt="lummi"> | [lummi](systems/lummi/README.md) | A signed-out stock library: white page, Inter display at tight tracking, one black primary button, 4px controls, pill tags, a search command palette, and a public image page with Download left unpressed | 2026-11-18 | light, dark | not graded yet | `icons/` |
+| <img src="systems/macaw/icon.png" width="20" alt="macaw"> | [macaw](systems/macaw/README.md) | A cream Webflow marketing site with one coral action: Inter display at 53.6px, 8px controls, tinted pricing cards, and a quiet white secondary button | 2026-11-18 | light | not graded yet | none |
 
 <!-- catalog:end -->
 

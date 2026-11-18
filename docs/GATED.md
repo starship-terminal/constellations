@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_153 of 211 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_154 of 212 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -909,6 +909,13 @@ Access: signed-out public marketing, browse, a public image page, and the /login
 - Generation (Create image, Create video) sits behind sign-in and was not opened
 - https://www.lummi.ai/pro links to a Stripe checkout and that checkout was not opened
 - The email field on /login was filled with a placeholder and cleared; the form was not submitted
+
+## [Macaw](../systems/macaw) — `macaw`
+Access: signed-out public marketing, pricing, contact, one free-tool page, and legal. The product app host did not resolve. No form was submitted.
+- app.macawhq.com sign-in and sign-up did not resolve (ERR_NAME_NOT_RESOLVED); the product app was not entered
+- the contact form was not submitted
+- Start free with Google starts a Google sign-in strategy and was not followed
+- no checkout was opened
 
 ## Gate noted in access text only
 
