@@ -15069,6 +15069,103 @@
       }
     },
     {
+      "slug": "intercom",
+      "name": "Intercom",
+      "url": "https://www.intercom.com",
+      "category": "messaging",
+      "platform": "web",
+      "goodFor": "customer-service platform marketing design across three surfaces on one Tailwind v4 token layer: the signed-out i2y4 marketing site (a Fin 4 promo strip + white shared-header with the Product mega-menu, cream --body-bg ground, Saans hero, off-black primary CTAs that repaint helpdesk-blue #0007cb on hover, feature cards at 14px radius, the pricing billing toggle + helpdesk-tint savings badge + plan columns + FAQ accordion, and the contact-sales first-step form with quiet 2px-radius fields on an off-white fill), plus the help center's white IvoryLL shell and the changelog's older header__lite MediumLL surface. Declared layer: warm neutral ramp --color-white/-off-white/-cream/-chalk/-canvas/-linen/-clay, blueprint blues, product accents --color-fin #ff5600 / --color-helpdesk / --color-sales / --color-ecom / --color-voice-*, responsive --text-{style}-{breakpoint} scale with --font-sans/-serif/-mono stacks (Saans, Serrif, SaansMono + campaign faces), --radius-*/--container-*/--z-index-*, the full --ease-* Penner set, the unlayered --button-* state matrix and .theme-light nav roles; scoped .brand-i2y4 and .intercom-legacy palettes",
+      "tags": [
+        "web",
+        "saas",
+        "customer-support",
+        "messaging",
+        "ai-agent",
+        "marketing",
+        "pricing",
+        "forms",
+        "docs",
+        "changelog",
+        "light",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-17",
+      "access": "signed out (every captured surface is public: www.intercom.com marketing routes, the /help/en/ help center and /changes/en changelog; app.intercom.com, /signup onboarding, purchase and the contact-sales form's later steps never entered - the Log in / Start free trial / Get started / Contact sales links were measured, never followed; the Next submit was measured with forced pseudo states, never pressed; no select option was chosen and the marketing checkbox was never ticked; nothing was signed into, searched, chosen, uploaded, bought or submitted; the only presses were local UI toggles - the nav mega-menu, the billing switch, a FAQ row, the select's own listbox and the mobile menu button)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/intercom/README.md",
+      "tokens": "systems/intercom/tokens.json",
+      "styleGuide": "systems/intercom/style-guide.html",
+      "preview": {
+        "cover": "systems/intercom/screenshots/home-light-default.png",
+        "icon": "systems/intercom/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.card",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent.helpdesk",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.saans",
+          "core.fontFamily.saansmono",
+          "core.fontFamily.ivoryll"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "www.intercom.com, intercom.com/help/en/ and intercom.com/changes/en in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass (plus 1920/1024 layout probes); computed styles and element crops from the live DOM, plus a stylesheet harvest (516 rules, 40 @font-face, 314 resolved root custom properties plus the .brand-i2y4, .intercom-legacy and [data-media-player] scoped sets resolved on their own probes). Every marketing page boots body.theme-light on the cream --body-bg ground; no dark surface exists (themeChecks in raw/css-vars.json). Pages taller than one GPU texture are shot in -full.partN.png chunks and stitched. BOUNDARY: app.intercom.com (the product behind Log in), /signup, purchase and the contact-sales form past step one were never entered",
+        "timestamp": "2026-11-17T20:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "routes": [
+          "intercom.com/",
+          "intercom.com/pricing",
+          "intercom.com/helpdesk",
+          "intercom.com/helpdesk/inbox",
+          "intercom.com/helpdesk/copilot",
+          "intercom.com/customers",
+          "intercom.com/integrations",
+          "intercom.com/security",
+          "intercom.com/view-demos",
+          "intercom.com/contact-sales (first step only)",
+          "intercom.com/why-choose-intercom",
+          "intercom.com/enterprise",
+          "intercom.com/blog",
+          "intercom.com/help/en/",
+          "intercom.com/changes/en",
+          "the Product mega-menu, an opened pricing FAQ row, the company-size select listbox and the 390px nav sheet as transient states",
+          "BLOCKED: app.intercom.com (post-auth product, never entered), /signup onboarding, checkout, the contact-sales form's later steps"
+        ],
+        "gaps": [
+          "the signed-in product (app.intercom.com - inbox, tickets, reports) is a boundary: the Log in link was measured, never followed",
+          "trial onboarding (/signup), purchase and every conversion path past the marketing surface are boundaries, not captures",
+          "the contact-sales form was never advanced past its first step: Next was measured with CDP-forced pseudo states only, no select option was chosen and the marketing checkbox was never ticked",
+          "no dark theme exists on the public surface - no dark class, attribute or prefers-color-scheme repaint (themeChecks in raw/css-vars.json); tokens.json ships no dark set, evidence of absence not a gap",
+          "three header components (logo, nav-login, nav-cta) were measured on one pass and preserved on a later recapture that missed them - recorded as recaptureMissed provenance",
+          "Serrif is declared under .brand-i2y4 but no captured page painted it, so its tokens describe the declared stack not a rendered sample",
+          "the Saans/Serrif/SaansMono/MediumLL/IvoryLL faces are proprietary and not shipped; crops show them, the style guide falls back to system fonts",
+          "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+          "prefers-reduced-motion is only partially honoured on the probed pages - per-page results in raw/motion.json",
+          "animated sections (hero canvases, marquee rows) keep moving, so two captures of the same view can differ"
+        ],
+        "durationMin": 300,
+        "durationNote": "wall-clock across the capture sessions including reachability probes, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass (with selector fixes for the changelog entry, blog card and mobile sheet), icon/motion/layout probes and the offline build"
+      }
+    },
+    {
       "slug": "jace",
       "name": "Jace AI",
       "url": "https://jace.ai",
