@@ -904,6 +904,14 @@ Access: signed-out public marketing, docs, legal, help center, and the app.limit
 - account deletion, documented at https://help.limitless.ai/en/articles/13005203-how-to-delete-your-limitless-account-and-data, was not opened
 - the Slack community invite at https://www.limitless.ai/community leaves the site and was not followed
 
+## [Lummi](../systems/lummi) — `lummi`
+Access: signed-out public marketing, browse, a public image page, and the /login wall. Downloads, the account, generation and checkout were not entered. Continue, Download, Google and the Stripe checkout link were not pressed.
+- Downloads on a public image page require sign-in and were not pressed
+- https://www.lummi.ai/login is the sign-in wall; Continue and Continue with Google were not pressed, so the account was not entered
+- Generation (Create image, Create video) sits behind sign-in and was not opened
+- https://www.lummi.ai/pro links to a Stripe checkout and that checkout was not opened
+- The email field on /login was filled with a placeholder and cleared; the form was not submitted
+
 ## Gate noted in access text only
 
 ### [1Password](../systems/1password) — `1password`
