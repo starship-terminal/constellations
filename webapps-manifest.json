@@ -2484,8 +2484,8 @@
     318
    ],
    "description": "Fast and simple motion design tool",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/jitter",
    "notes": "",
    "batch": 9
   },

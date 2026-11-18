@@ -1,0 +1,10 @@
+{
+  "_note": "Jitter signed-in capture. Owner email may appear on the check-email onboarding shot. Invite placeholders use example.com.",
+  "ocr": {
+    "email_allow": [
+      "@agentmail\\.to\\b",
+      "@example\\.com\\b",
+      "@jitter\\.video\\b"
+    ]
+  }
+}
