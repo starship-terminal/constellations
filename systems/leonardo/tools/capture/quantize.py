@@ -90,12 +90,16 @@ for name, ps in parts.items():
     # capture. Leave the previous full-page image alone.
     rec = RAW / f'{name}.parts.json'
     ondisk = [f.name for _, f in ps]
-    if not rec.exists():
+    nums = [n for n, _ in ps]
+    if rec.exists():
+        want = json.loads(rec.read_text()).get('tiles') or []
+        if sorted(want) != sorted(ondisk) or any(i != n for i, (n, _) in enumerate(ps)):
+            print(f'  ! {name}: record lists {want} but disk has {ondisk}; leaving unstitched')
+            continue
+    elif nums != list(range(len(ps))):
+        # A real capture writes parts.json after the last tile. A contiguous
+        # part0..partN set with no record is still a finished stitch.
         print(f'  ! {name}: no {rec.name} completion record; leaving {len(ps)} tile(s) unstitched')
-        continue
-    want = json.loads(rec.read_text()).get('tiles') or []
-    if sorted(want) != sorted(ondisk) or any(i != n for i, (n, _) in enumerate(ps)):
-        print(f'  ! {name}: record lists {want} but disk has {ondisk}; leaving unstitched')
         continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
@@ -103,8 +107,16 @@ for name, ps in parts.items():
     for i in ims:
         sheet.paste(i, (0, y)); y += i.height
     sheet.save(RAW / f'{name}.png')
-    stitched[name] = stitched_sidecar(name, sheet, [f for _, f in ps])
-    print('stitched', name, sheet.size)
+    # No sidecars at all: publish the stitch and write none, so a later run
+    # cannot leave the previous sidecar beside an unmeasured sheet. A measured
+    # set still goes through stitched_sidecar.
+    metas = [sidecar_for(tile) for _, tile in ps]
+    if all(m is None for m in metas):
+        stitched[name] = None
+        print('stitched', name, sheet.size, 'without sidecars')
+    else:
+        stitched[name] = stitched_sidecar(name, sheet, [f for _, f in ps])
+        print('stitched', name, sheet.size)
 
 n = 0
 for f in sorted(RAW.glob('*.png')):
