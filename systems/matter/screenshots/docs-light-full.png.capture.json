@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:29:16.437Z",
-  "screenshot": "mobile-docs-dark-default.png",
+  "capturedAt": "2026-11-18T09:28:15.017Z",
+  "screenshot": "docs-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
-      "width": 390,
-      "height": 844
+      "width": 1440,
+      "height": 900
     },
-    "deviceScaleFactor": 2
+    "deviceScaleFactor": 1
   },
   "configuredViewport": {
-    "width": 390,
-    "height": 844
+    "width": 1440,
+    "height": 900
   },
   "actual": {
-    "innerWidth": 390,
-    "innerHeight": 844,
-    "devicePixelRatio": 2,
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
     "theme": {
       "classes": [
         "light"
@@ -26,8 +26,8 @@
       "colorScheme": "light"
     },
     "visualViewport": {
-      "width": 390,
-      "height": 844,
+      "width": 1440,
+      "height": 900,
       "scale": 1,
       "offsetLeft": 0,
       "offsetTop": 0,
@@ -35,8 +35,8 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 390,
-      "height": 1325
+      "width": 1440,
+      "height": 965
     },
     "scroll": {
       "x": 0,
@@ -44,21 +44,21 @@
     }
   },
   "capture": {
-    "mode": "viewport",
+    "mode": "fullPage",
     "scale": "device",
     "clip": null
   },
   "png": {
-    "width": 780,
-    "height": 1688
+    "width": 1440,
+    "height": 965
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 780,
-      "height": 1688
+      "width": 1440,
+      "height": 965
     },
-    "basis": "configuredViewport"
+    "basis": "fullPage"
   },
   "visualReview": {
     "status": "pending",

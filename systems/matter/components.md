@@ -23,18 +23,18 @@ Screenshots are named `{page}-{theme}-state.png`. The marketing site paints `dar
 | Terms | `https://www.getmatter.com/terms` | [default](screenshots/terms-dark-default.png), [full](screenshots/terms-dark-full.png) |
 | Words That Matter | `https://words.getmatter.com/` | [default](screenshots/words-dark-default.png) |
 | Article | `https://words.getmatter.com/p/anu-coolhunt-before-sunrise-why-i` | [default](screenshots/article-dark-default.png), [full](screenshots/article-dark-full.png) |
-| Docs | `https://docs.getmatter.com/` | [default](screenshots/docs-dark-default.png), [full](screenshots/docs-dark-full.png), [light](screenshots/docs-dark-light.png) |
+| Docs | `https://docs.getmatter.com/` | [default](screenshots/docs-light-default.png), [full](screenshots/docs-light-full.png), [theme](screenshots/docs-light-theme.png) |
 | Sign in | `https://web.getmatter.com/` | [default](screenshots/signin-light-default.png) |
 | Home, phone | `https://www.getmatter.com/` | [default](screenshots/mobile-home-dark-default.png), [full](screenshots/mobile-home-dark-full.png) |
 | Article, phone | `https://words.getmatter.com/p/anu-coolhunt-before-sunrise-why-i` | [default](screenshots/mobile-article-dark-default.png), [full](screenshots/mobile-article-dark-full.png) |
-| Docs, phone | `https://docs.getmatter.com/` | [default](screenshots/mobile-docs-dark-default.png) |
+| Docs, phone | `https://docs.getmatter.com/` | [default](screenshots/mobile-docs-light-default.png) |
 | Sign in, phone | `https://web.getmatter.com/` | [default](screenshots/mobile-signin-light-default.png) |
 
 ### Overlays and transient states
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| Docs theme toggle | docs.getmatter.com | the theme button's own menu, then Light | [docs-dark-light](screenshots/docs-dark-light.png) |
+| Docs theme toggle | docs.getmatter.com | the theme button's own menu, then Light | [docs-light-theme](screenshots/docs-light-theme.png) |
 | Subscribe gate | words.getmatter.com | the publication home is the gate; Subscribe was never pressed | [words-dark-default](screenshots/words-dark-default.png) |
 | Sign-in card | web.getmatter.com | loaded signed out; OAuth never pressed; email focused, never filled, never submitted | [signin-light-default](screenshots/signin-light-default.png) |
 | Consent overlays | marketing pages | hidden, never answered | hidden before every shot and reading |
@@ -460,7 +460,7 @@ The marketing site paints one near-black theme. A `.dark` class on the probe res
 
 ### Fonts
 
-- **MR-Camphor** is the display face on the marketing headlines, loaded from getmatter.com. Body and UI fall back to the declared system stack.
+- **MR-Camphor** is the measured face on the marketing headlines, body, navigation, and buttons, loaded from getmatter.com. The system stack is the sign-in card.
 
 ### Screenshots
 

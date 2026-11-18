@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -172,7 +172,7 @@ function paint() {
   const fam = $('#fam-out');
   if (fam) fam.innerHTML = flat(TOK.core && TOK.core.font, 'font.').map(([n, t]) => `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'string' ? t.v : JSON.stringify(t.v)).slice(0, 90)}</span></div>`).join('');
   const meas = $('#meas-out');
-  if (meas) meas.innerHTML = flat(TOK.core && TOK.core.measured, 'measured.').map(([n, t]) => `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`).join('');
+  if (meas) meas.innerHTML = flat(TOK.dark && TOK.dark.component, 'component.').map(([n, t]) => `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'string' ? t.v : JSON.stringify(t.v))}</span></div>`).join('') || '<div>No measured component tokens.</div>';
 }
 paint();
 </script>

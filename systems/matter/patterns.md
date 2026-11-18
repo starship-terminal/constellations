@@ -20,7 +20,7 @@ A published article loads signed out ([article-dark-default](screenshots/article
 
 ## Docs and sign-in
 
-Docs ([docs-dark-default](screenshots/docs-dark-default.png)) is a public Mintlify home: heading ([docs-h1](components/crops/docs-h1-default.png)), a search button ([docs-search](components/crops/docs-search-default.png), never submitted), and an API link ([docs-card](components/crops/docs-card-default.png), never followed). A theme control switches that page to light ([docs-dark-light](screenshots/docs-dark-light.png)).
+Docs ([docs-light-default](screenshots/docs-light-default.png)) is a public Mintlify home: heading ([docs-h1](components/crops/docs-h1-default.png)), a search button ([docs-search](components/crops/docs-search-default.png), never submitted), and an API link ([docs-card](components/crops/docs-card-default.png), never followed). A theme control switches that page to light ([docs-light-theme](screenshots/docs-light-theme.png)).
 
 The reader sign-in card ([signin-light-default](screenshots/signin-light-default.png)) is a white page: heading ([signin-h1](components/crops/signin-h1-default.png)), Continue with Google ([google-button](components/crops/google-button-default.png), 340 x 48), Continue with Apple ([apple-button](components/crops/apple-button-default.png), 340 x 44), an email field ([email-field](components/crops/email-field-default.png), focused, never filled), and a 32px arrow ([email-continue](components/crops/email-continue-default.png), never pressed). That card is the sign-in boundary. The reader behind it is uncaptured.
 

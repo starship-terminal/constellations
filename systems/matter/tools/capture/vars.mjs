@@ -76,7 +76,8 @@ if (!bodies.size && !inlines.length) { console.log('no stylesheets harvested; cs
 const sheets = [...bodies.entries()].concat(inlines);
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+const probeContext = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+const probe = await probeContext.newPage();
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];

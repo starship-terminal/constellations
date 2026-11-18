@@ -162,7 +162,7 @@ export const PROPS = [
   'fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'letterSpacing', 'textTransform',
   'color', 'textDecorationLine', 'textDecorationColor', 'textDecorationThickness', 'textUnderlineOffset',
   'transitionProperty', 'transitionDuration', 'transitionTimingFunction', 'transitionDelay',
-  'cursor', 'opacity', 'transform', 'overflow', 'zIndex', 'top',
+  'cursor', 'opacity', 'transform', 'filter', 'overflow', 'zIndex', 'top',
 ];
 
 // Reads the computed style of the element, its ::before/::after if they paint

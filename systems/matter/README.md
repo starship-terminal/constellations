@@ -76,7 +76,7 @@ Not graded yet.
 
 1. **Do paint the marketing page near-black.** The field is `#0D0D0D`, text is white, nav text is `#969698`. See [home-dark-default](screenshots/home-dark-default.png).
 2. **Do make the primary action a blurple pill.** Get Matter is `#6D7EEC` at a 100px radius. See [nav-cta-default](components/crops/nav-cta-default.png).
-3. **Do set display type in MR-Camphor.** The hero is Camphor 700. Body and UI use the system stack. See [hero-h1-default](components/crops/hero-h1-default.png).
+3. **Do set marketing type in MR-Camphor.** The hero, the body paragraph, the navigation, and the buttons were measured in Camphor. The system stack is the sign-in card. See [hero-h1-default](components/crops/hero-h1-default.png).
 4. **Do keep the header at 62px.** Wordmark, gray links, Sign In, then the pill. See [header-default](components/crops/header-default.png).
 5. **Do use 8px and 30px where the sheet names a radius.** The pill is the measured 100px exception. See [tokens.json](tokens.json).
 6. **Don't style the reader from this package.** Library, highlights and settings sit behind sign-in. See [signin-light-default](screenshots/signin-light-default.png).

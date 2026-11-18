@@ -315,7 +315,7 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Docs theme toggle", "docs.getmatter.com", "the theme button's own menu, then Light", "[docs-dark-light](screenshots/docs-dark-light.png)"),
+    ("Docs theme toggle", "docs.getmatter.com", "the theme button's own menu, then Light", "[docs-light-theme](screenshots/docs-light-theme.png)"),
     ("Subscribe gate", "words.getmatter.com", "the publication home is the gate; Subscribe was never pressed", "[words-dark-default](screenshots/words-dark-default.png)"),
     ("Sign-in card", "web.getmatter.com", "loaded signed out; OAuth never pressed; email focused, never filled, never submitted", "[signin-light-default](screenshots/signin-light-default.png)"),
     ("Consent overlays", "marketing pages", "hidden, never answered", "hidden before every shot and reading"),
@@ -506,7 +506,7 @@ W("The marketing site paints one near-black theme. A `.dark` class on the probe 
 W()
 W("### Fonts")
 W()
-W("- **MR-Camphor** is the display face on the marketing headlines, loaded from getmatter.com. Body and UI fall back to the declared system stack.")
+W("- **MR-Camphor** is the measured face on the marketing headlines, body, navigation, and buttons, loaded from getmatter.com. The system stack is the sign-in card.")
 W()
 W("### Screenshots")
 W()
