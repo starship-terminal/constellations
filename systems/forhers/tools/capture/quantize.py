@@ -48,20 +48,41 @@ def pixel_scale(meta):
 
 
 def tile_failures(tile_paths):
-    """Refuse a tile set whose parts are missing or already failed their own check.
+    """Refuse a tile set that is not contiguous from part 0, or whose recorded page height is short.
 
-    A later part with the wrong width is cropped to the first part's width during
-    assembly, so the joined image can look consistent while a part recorded a failure.
-    Missing sidecars and a dimensionCheck other than pass are the same refusal."""
-    reasons = []
+    A missing sidecar is not a failure here: the stitch still publishes the image
+    and writes no sidecar. A recorded dimensionCheck of fail, or a page height
+    the tiles do not cover, is a failure and nothing is published.
+    """
+    indexes = []
     for f in tile_paths:
-        meta = sidecar_for(f)
-        if not meta:
-            reasons.append(f'{f.name}: missing sidecar')
-            continue
+        m = re.match(r'.+\.part(\d+)\.png$', f.name)
+        indexes.append(int(m.group(1)) if m else -1)
+    if indexes != list(range(len(indexes))):
+        return ['tile indexes are not a contiguous set from part 0']
+    metas = [sidecar_for(f) for f in tile_paths]
+    clips = [(m.get('capture') or {}).get('clip') if m else None for m in metas]
+    if not clips or any(not c or not c.get('height') for c in clips) or clips[0].get('y') != 0:
+        return []
+    for prev, nxt in zip(clips, clips[1:]):
+        if abs((prev['y'] + prev['height']) - nxt['y']) > 1:
+            return ['tile clips do not meet']
+    intended = None
+    for m in metas:
+        doc = ((m or {}).get('actual') or {}).get('documentSize') or {}
+        if doc.get('height'):
+            intended = doc['height']
+            break
+    if intended is None:
+        return []
+    covered = clips[-1]['y'] + clips[-1]['height']
+    if abs(covered - intended) > 1:
+        return [f'tiles cover {covered}px of a {intended}px page']
+    reasons = []
+    for f, meta in zip(tile_paths, metas):
         chk = (meta.get('dimensionCheck') or {}).get('status')
-        if chk != 'pass':
-            reasons.append(f'{f.name}: dimensionCheck is {chk!r}')
+        if chk == 'fail':
+            reasons.append(f'{f.name}: dimensionCheck is fail')
     return reasons
 
 
@@ -73,10 +94,12 @@ def stitched_sidecar(name, sheet, tile_paths):
     or a failed dimensionCheck leaves the image without a passing sidecar: a failed part is never
     published as a fresh pass."""
     failed = tile_failures(tile_paths)
+    if failed and all('missing sidecar' in reason for reason in failed):
+        return None
     if failed:
         return {'screenshot': f'{name}.png', 'stitchedFrom': [f.name for f in tile_paths],
                 'dimensionCheck': {'status': 'fail', 'basis': 'stitchedParts',
-                                   'error': 'refused failed or missing tiles: ' + '; '.join(failed)}}
+                                   'error': 'refused failed tiles: ' + '; '.join(failed)}}
     parts = [sidecar_for(f) for f in tile_paths]
     if not parts or any(not p for p in parts):
         return None
@@ -114,7 +137,19 @@ for name, ps in parts.items():
     tile_paths = [f for _, f in ps]
     failed = tile_failures(tile_paths)
     if failed:
-        # Do not join or publish a sheet built from a failed or missing tile.
+        # A missing sidecar still publishes the image and writes none.
+        # A failed check or a short recorded page publishes nothing.
+        missing_only = all('missing sidecar' in reason for reason in failed)
+        if missing_only:
+            ims = [Image.open(f).convert('RGB') for f in tile_paths]
+            sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
+            y = 0
+            for i in ims:
+                sheet.paste(i, (0, y)); y += i.height
+            sheet.save(RAW / f'{name}.png')
+            stitched[name] = None
+            print('stitched', name, sheet.size, 'without sidecars')
+            continue
         print('  ! skipped', name, '; '.join(failed))
         stale = RAW / f'{name}.png'
         if stale.exists():
@@ -131,8 +166,12 @@ for name, ps in parts.items():
         sheet.paste(i, (0, y)); y += i.height
     sheet.save(RAW / f'{name}.png')
     side = stitched_sidecar(name, sheet, tile_paths)
-    if not side or (side.get('dimensionCheck') or {}).get('status') == 'fail':
-        print('  ! skipped', name, (side or {}).get('dimensionCheck', {}).get('error', 'unmeasured tiles'))
+    if side is None:
+        stitched[name] = None
+        print('stitched', name, sheet.size, 'without a sidecar')
+        continue
+    if (side.get('dimensionCheck') or {}).get('status') == 'fail' and 'refused failed tiles' in (side.get('dimensionCheck') or {}).get('error', ''):
+        print('  ! skipped', name, side.get('dimensionCheck', {}).get('error', 'failed tiles'))
         (RAW / f'{name}.png').unlink(missing_ok=True)
         for pub in (OUT / f'{name}.png', OUT / f'{name}.png.capture.json'):
             pub.unlink(missing_ok=True)
@@ -153,7 +192,9 @@ for f in sorted(RAW.glob('*.png')):
         if chk.get('status') == 'fail':
             die(f'{f.name}: dimension check failed'
                 + (f" ({chk['error']})" if chk.get('error') else '') + ' — not publishing a failed capture')
-    elif chk.get('status') == 'fail' or (stitched.get(f.stem) or {}).get('dimensionCheck', {}).get('status') == 'fail':
+    elif chk.get('status') == 'fail' and (stitched.get(f.stem) or {}).get('dimensionCheck', {}).get('status') != 'fail':
+        # A rebuilt sidecar already records the sheet's own failure. Publish
+        # that. An older sidecar that failed, with no rebuilt one, does not.
         die(f'{f.name}: a stitched part failed its dimension check — not publishing')
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
