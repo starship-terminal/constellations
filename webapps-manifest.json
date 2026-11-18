@@ -2544,8 +2544,8 @@
     558
    ],
    "description": "Email-First Operating System for Creators",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kit",
    "notes": "",
    "batch": 9
   },
