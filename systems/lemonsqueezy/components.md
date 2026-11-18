@@ -1,9 +1,9 @@
 # Components
 
-Public Lemon Squeezy controls measured on 2026-11-18. Signed out. Nothing was submitted.
+Public Lemon Squeezy controls measured on 2026-11-18, plus the closed-signup card and a failed sign-in. Get started was not followed. The dashboard was not opened.
 Colours below are the computed values. The token names that hold the same values are in [tokens.json](tokens.json).
 
-Not present on the public surfaces: text area, radio, switch, tabs, tooltip, toast, table, avatar, badge. The signed-in app is the place those would live, and it was not opened.
+Not present on the public surfaces: text area, radio, switch, tabs, tooltip, toast, table, avatar, badge. New store signups are closed, so the signed-in app was not reached.
 
 ## Buttons
 
@@ -130,6 +130,17 @@ Page: https://www.lemonsqueezy.com/
 |---|---|---|---|---|---|
 | default | 40×40 | rgba(0, 0, 0, 0) | rgb(255, 255, 255) | 8px | [crop](components/crops/menu-button-default.png) |
 | hover | 40×40 | rgba(0, 0, 0, 0) | rgb(255, 255, 255) | 8px | [crop](components/crops/menu-button-hover.png) |
+
+### Get started
+
+Purple CTA on the closed-signup card. Measured, never followed (Stripe onboarding).
+
+Page: https://auth.lemonsqueezy.com/signup/smp
+
+| State | Size | Fill | Text | Radius | Crop |
+|---|---|---|---|---|---|
+| default | 372×48 | rgb(112, 71, 235) | rgb(255, 255, 255) | 8px | [crop](components/crops/smp-cta-default.png) |
+| hover | 372×48 | rgb(126, 89, 237) | rgb(255, 255, 255) | 8px | [crop](components/crops/smp-cta-hover.png) |
 
 ## Links
 
@@ -313,10 +324,30 @@ Page: https://www.lemonsqueezy.com/
 |---|---|---|---|---|---|
 | default | 390×162 | rgb(84, 35, 231) | rgb(18, 18, 23) | 0px | [crop](components/crops/mobile-menu-default.png) |
 
+### Managed Payments card
+
+Closed-signup recommendation card. Get started was not clicked.
+
+Page: https://auth.lemonsqueezy.com/signup/smp
+
+| State | Size | Fill | Text | Radius | Crop |
+|---|---|---|---|---|---|
+| default | 1440×900 | rgba(0, 0, 0, 0) | rgb(0, 0, 0) | 0px | [crop](components/crops/smp-card-default.png) |
+
+### Login error
+
+Server error after a failed email/password sign-in. The typed address was replaced with learner@example.com before the crop.
+
+Page: https://auth.lemonsqueezy.com/login
+
+| State | Size | Fill | Text | Radius | Crop |
+|---|---|---|---|---|---|
+| default | 496×24 | rgba(0, 0, 0, 0) | rgb(245, 61, 107) | 0px | [crop](components/crops/login-error-default.png) |
+
 ## Gaps
 
 - Text area, radio, switch, tabs, tooltip, toast, table, avatar and badge do not appear on the public marketing site, the docs or the sign-in card.
 - The docs search button and its dialog were not measured. The button's accessible name did not match the selector used on 2026-11-18. The search overlay is in [screenshots/docs-help-light-search.png](screenshots/docs-help-light-search.png).
-- Disabled, loading and error states are not shown on any public control. The sign-in form was not submitted, so its error state was not reached.
+- Disabled and loading are not shown on any public control. The sign-in error is the red sentence after a failed email/password submit. The register required-field tooltip is the browser's native one.
 - Hover on the marketing pills often moves a child overlay rather than the measured node's own fill. The primary hero button does change its own fill to yellow on hover. The auth submit changes from #7047eb to #7e59ed.
 - Focus on marketing links is the browser outline (1px auto, #005fcc). Focus on auth fields is a 2px #7047eb ring.

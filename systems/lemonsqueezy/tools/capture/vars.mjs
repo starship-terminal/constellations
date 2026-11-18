@@ -30,7 +30,7 @@ await page.waitForTimeout(2000);
 await hideConsent(page);
 const inline = await page.evaluate(() => [...document.querySelectorAll('style')].map((s) => s.textContent).join('\n'));
 const fontFaces = await page.evaluate(() => {
-  const fonts = [];
+  const faces = [];
   for (const sheet of [...document.styleSheets]) {
     let rules;
     try { rules = [...sheet.cssRules]; } catch { continue; }
@@ -38,7 +38,7 @@ const fontFaces = await page.evaluate(() => {
       for (const r of list) {
         if (r.type === CSSRule.FONT_FACE_RULE) {
           const src = r.style.getPropertyValue('src') || '';
-          fonts.push({
+          faces.push({
             family: (r.style.getPropertyValue('font-family') || '').replace(/["']/g, ''),
             weight: r.style.getPropertyValue('font-weight') || '400',
             style: r.style.getPropertyValue('font-style') || 'normal',
@@ -52,7 +52,7 @@ const fontFaces = await page.evaluate(() => {
     };
     walk(rules);
   }
-  return fonts;
+  return faces;
 });
 
 const css = cssBodies.map((s) => s.body).join('\n') + '\n' + inline;

@@ -125,15 +125,15 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: A merchant-of-record marketing site winding down onto Stripe: Webflow Client-First, a purple-600 hero (#5423e7), a yellow shutdown banner (#ffc233), 40px white pills, Circular Pro Book display and Inter UI, plus an 8px-radius auth card in the same purple.
 
-Captured 2026-11-18, signed out (marketing, docs, help, pricing, about, legal and the auth card are public; the dashboard, product editor, payouts, customers and settings sit behind auth.lemonsqueezy.com/login and were not opened; the sign-in form and the register business-intent step were not submitted; Google and Twitter OAuth were not followed; Stripe checkout was not opened). Themes: light.
+Captured 2026-11-18, signed-in pass attempted (email/password). The address was not registered. New store signups are closed: business-intent submits to a Stripe Managed Payments recommendation. Get started, Google, Twitter, bank connect and payout KYC were not followed. Merchant dashboard routes bounce to login. Customer order portal login was opened and not submitted.. Themes: light.
 
-A token set and component reference for Lemon Squeezy's public surface. It was read from **www.lemonsqueezy.com**, **docs.lemonsqueezy.com** and the sign-in card on **auth.lemonsqueezy.com/login** on **2026-11-18**, signed out, in headless Chromium at 1440×900 and 390×844.
+A token set and component reference for Lemon Squeezy's public surface. It was read from **www.lemonsqueezy.com**, **docs.lemonsqueezy.com** and **auth.lemonsqueezy.com** on **2026-11-18**, in headless Chromium at 1440×900 and 390×844.
 
 The marketing site is a Webflow build (Client-First classes, `data-wf-site`). Its colour ramps live on `:root` in the shared stylesheet: purple, yellow, pink, green, blue, orange, red, grey and plum. The hero paints `--purple-600` (`#5423e7`) with a frosted white pill. A yellow banner says sign-ups are closed and the product shuts down on 31 March 2027. The site ships one light theme. `--dark-mode-bg-lighter` is declared and unused on the pages captured.
 
 Display type is Circular Pro Book. UI type is Inter. JetBrains Mono is declared and barely used on the marketing pages. Controls on the marketing site are 40px-radius pills. The auth card uses 8px radius and the same purple (`#7047eb`) as a filled submit.
 
-The signed-in app, checkout, OAuth and every account surface were not opened.
+A signed-in pass was attempted with an email/password account. The address was not already registered. New store signups are closed: the business-intent step leads to a Stripe Managed Payments recommendation. Get started, Google, Twitter, bank connect and payout KYC were not followed. Merchant routes under app.lemonsqueezy.com bounce to login. The customer order portal login was opened and not submitted.
 
 ## Colors
 
@@ -197,11 +197,13 @@ Circular Pro Book and Circular XX are proprietary. The tokens name them and fall
 
 The docs search dialog was screenshotted and not measured. The selector missed the button.
 
+The merchant dashboard was not opened. New store signups are closed. The login error colour matches `--red-500`. The native register tooltip is browser chrome, not a designed error.
+
 ### Do and don't (from README.md)
 
 - **Do paint the hero on purple-600.** The field is `#5423e7`, the headline is Circular Pro Book at 80px, white, tracking about -3px. [home](screenshots/home-light-default.png)
 - **Do use the 40px pill on marketing, and the 8px control on the auth card.** They are two languages. [nav pill](components/crops/nav-button-default.png) [auth submit](components/crops/login-submit-default.png)
 - **Do keep the yellow banner when the page shows the shutdown notice.** It is `#ffc233` with ink text. [banner](components/crops/banner-default.png)
 - **Don't invent a dark theme.** The captured pages are light, with a purple hero. [home full](screenshots/home-light-full.png)
-- **Don't treat the sign-in card as the app.** The dashboard, products, payouts and settings were not opened. [login](screenshots/login-light-default.png)
+- **Don't treat the sign-in card as the app.** New store signups are closed. The dashboard was not opened. [closed signup](screenshots/register-smp-light-default.png)
 - **Don't copy the lemon mark or the wordmark into something that ships.** [icon](icon.png)

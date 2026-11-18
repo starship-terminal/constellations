@@ -5,8 +5,9 @@
 //   www.lemonsqueezy.com   Webflow marketing (Client-First). :root declares
 //                          the --purple-* / --yellow-* / --grey-* ramps.
 //   docs.lemonsqueezy.com  Mintlify docs (Tailwind, one light theme).
-//   auth.lemonsqueezy.com  the sign-in card. Measured at rest only.
-// Nothing is signed into, submitted, purchased or sent through OAuth.
+//   auth.lemonsqueezy.com  the sign-in card and the closed-signup SMP page.
+// Merchant dashboard is closed to new store signups. Get started, OAuth,
+// bank and payout KYC are not followed.
 // Consent overlays are hidden, never answered.
 import fs from 'node:fs';
 import path from 'node:path';

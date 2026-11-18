@@ -21,7 +21,7 @@
   },
   "F6": {
     "grade": "partly",
-    "evidence": "Success, warning, danger and info fills are the declared 500 steps (green #2dca72, yellow #ffc233, red #f53d6b, blue #00acff). The stylesheet also declares 50/100/200 companions, but no public control shows a status fill, text and border together. No validation state was reached."
+    "evidence": "Success, warning, danger and info fills are the declared 500 steps (green #2dca72, yellow #ffc233, red #f53d6b, blue #00acff). The failed sign-in paints danger as text only: rgb(245, 61, 107) = #f53d6b on a transparent fill. Companions 50/100/200 are declared and unused. No status fill, text and border together on one control."
   },
   "F7": {
     "grade": "meets",
@@ -58,11 +58,11 @@
 
   "C1": {
     "grade": "partly",
-    "evidence": "Public surfaces show button, icon button, link, text field, select, checkbox, menu, list row and a price headline used as a card. That is 9 of 19. Text area, radio, switch, tabs, tooltip, toast, table, avatar and badge are not on the public pages. Dialog was screenshotted (docs search) and not measured."
+    "evidence": "Public surfaces show button, icon button, link, text field, select, checkbox, menu, list row and cards (price headline plus the closed-signup recommendation). That is 9 of 19 plus the SMP card. Text area, radio, switch, tabs, tooltip, toast, table, avatar and badge are not on the public pages. Dialog was screenshotted (docs search) and not measured. The merchant dashboard was not opened."
   },
   "C2": {
     "grade": "meets",
-    "evidence": "Buttons, links and the auth submit have hover, focus-visible and pressed crops. The email field has focused and filled. The checkbox has checked. Disabled, loading and error are not shown on any public control and were not invented."
+    "evidence": "Buttons, links and the auth submit have hover, focus-visible and pressed crops. The email field has focused and filled. The checkbox has checked. The login error is a red sentence after a failed submit. Disabled and loading are not shown on any public control and were not invented."
   },
   "C3": {
     "grade": "meets",
@@ -74,7 +74,7 @@
   },
   "P1": {
     "grade": "partly",
-    "evidence": "patterns.md covers the marketing shell, the docs shell, the pricing page and the sign-in card. Empty/loading/error is only the 404. Search is a screenshot. Destructive confirmation, validation and onboarding past the first register step were not reached."
+    "evidence": "patterns.md covers the marketing shell, the docs shell, the pricing page, the sign-in card, the closed-signup SMP page and the customer order login. Empty/loading/error is the 404 plus the login error. Search is a screenshot. Destructive confirmation was not reached. Onboarding stops at closed signup. The merchant dashboard was not opened."
   },
   "A1": {
     "grade": "partly",

@@ -199,14 +199,15 @@ Access: signed out (the marketing routes are fully public; the Cohere product si
 - the Cohere product - North, Command, the dashboard - sits behind dashboard.cohere.com sign-in and was never crossed; the login card was measured at rest but never submitted
 
 ## [Lemon Squeezy](../systems/lemonsqueezy) — `lemonsqueezy`
-Access: signed out (marketing, docs, help, pricing, about, legal and the auth card are public; the dashboard, product editor, payouts, customers and settings sit behind auth.lemonsqueezy.com/login and were not opened; the sign-in form and the register business-intent step were not submitted; Google and Twitter OAuth were not followed; Stripe checkout was not opened)
-- the signed-in dashboard at app.lemonsqueezy.com: products, orders, subscriptions, customers, discounts, affiliates, payouts, analytics and settings sit behind https://auth.lemonsqueezy.com/login and were not opened
-- the customer order portal at https://app.lemonsqueezy.com/my-orders sits behind sign-in and was not opened
+Access: signed-in pass attempted (email/password). The address was not registered. New store signups are closed: business-intent submits to a Stripe Managed Payments recommendation. Get started, Google, Twitter, bank connect and payout KYC were not followed. Merchant dashboard routes bounce to login. Customer order portal login was opened and not submitted.
+- the signed-in merchant dashboard at app.lemonsqueezy.com (products, orders, subscriptions, customers, discounts, affiliates, payouts, analytics, settings) was not opened: new store signups are closed, the email was not already registered, and those routes bounce to auth.lemonsqueezy.com/login
+- Stripe Managed Payments onboarding behind Get started on https://auth.lemonsqueezy.com/signup/smp was stopped (Stripe onboarding / take-payments stop)
 - Google and Twitter OAuth on https://auth.lemonsqueezy.com/login were measured as buttons and never followed
 - the password reset form at https://auth.lemonsqueezy.com/password/reset was not opened
-- the register flow at https://auth.lemonsqueezy.com/register (business-intent step) was screenshotted and not submitted, so later account-creation steps were not reached
+- the customer order portal magic-link on https://app.lemonsqueezy.com/my-orders/login was opened and not submitted
 - Stripe Managed Payments signup at https://dashboard.stripe.com/register/managed_payments and https://stripe.com/managed-payments were not opened; they are a different product
 - checkout and purchase are not on the public marketing pages and were not opened
+- CAPTCHA, phone verify and payout KYC did not appear
 
 ## [Coinbase](../systems/coinbase) — `coinbase`
 Access: signed out (the marketing routes are fully public; the Coinbase product sits behind login.coinbase.com - the /signin redirect's card was measured at rest only: the email field was focused once for its computed style, no text was typed, nothing submitted, and no OAuth/passkey flow was started; the OneTrust consent layer was hidden, never answered)

@@ -1,6 +1,6 @@
 # Patterns
 
-How the public Lemon Squeezy pages are put together. Captured 2026-11-18, signed out.
+How the public Lemon Squeezy pages are put together. Captured 2026-11-18. The dashboard was not reached: new store signups are closed.
 
 ## Marketing shell
 
@@ -26,12 +26,26 @@ docs.lemonsqueezy.com is a Mintlify site. It reuses the marketing banner and pur
 
 ## Sign-in card
 
-auth.lemonsqueezy.com/login is a centred card on white. Lemon mark, then Google and Twitter buttons, an "Or" divider, email, password, a purple submit, a remember-me checkbox, and three text links. The card was measured at rest. Nothing was submitted. OAuth was not followed.
+auth.lemonsqueezy.com/login is a centred card on white. Lemon mark, then Google and Twitter buttons, an "Or" divider, email, password, a purple submit, a remember-me checkbox, and three text links. OAuth was not followed.
 
-The register route redirects to a business-intent step: name, website, country select, Continue. That step was screenshotted and not submitted.
+A failed email/password submit paints a single red sentence under the email field: "These credentials do not match our records." The colour is `#f53d6b` (`--red-500`).
 
-[login](screenshots/login-light-default.png) [register](screenshots/register-light-default.png)
+The register route redirects to a business-intent step: name, website, country select, Continue. Website URL is required. An empty submit shows the browser's native "Please fill out this field" tooltip.
+
+[login](screenshots/login-light-default.png) [login error](screenshots/login-light-error.png) [register](screenshots/register-light-default.png) [register validation](screenshots/register-light-validation.png)
+
+## Closed signup
+
+Submitting the business-intent step with a testing name and `https://example.com` lands on `/signup/smp`. The page says Lemon Squeezy is closed to new store signups and recommends Stripe Managed Payments. The purple card has a "Get started" CTA. That CTA was measured and not followed.
+
+[closed signup](screenshots/register-smp-light-default.png) [mobile](screenshots/mobile-register-smp-light-full.png)
+
+## Customer orders login
+
+app.lemonsqueezy.com/my-orders is a buyer portal. Unsigned, it shows a left-aligned "My Orders / Sign In" form and offers a magic link. The form was not submitted.
+
+[my orders](screenshots/my-orders-light-default.png)
 
 ## What is not here
 
-The dashboard, product editor, payouts, customers, checkout and any confirmation live behind sign-in or a submit. They are listed in the catalog `capture.gaps` and were not captured.
+Products, orders, customers, settings and the rest of the merchant dashboard sit behind a store account. New store signups are closed, so those pages bounce to the merchant login and were not opened. Stripe Managed Payments onboarding, bank connect and payout KYC were not followed.

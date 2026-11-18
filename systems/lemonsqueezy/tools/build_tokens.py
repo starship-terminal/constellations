@@ -297,7 +297,11 @@ light = {
     "status": {
         "success": color("success", var="--green-500"),
         "warning": color("warning", var="--yellow-500"),
-        "danger": color("danger", var="--red-500"),
+        "danger": color(
+            "danger",
+            var="--red-500",
+            source="css-var --red-500; computed color on the login error text after a failed sign-in is rgb(245, 61, 107) (#f53d6b), auth.lemonsqueezy.com/login, 2026-11-18",
+        ),
         "info": color("info", var="--blue-500"),
     },
     "component": {

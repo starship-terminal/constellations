@@ -1,12 +1,12 @@
 # Lemon Squeezy design reference
 
-A token set and component reference for Lemon Squeezy's public surface. It was read from **www.lemonsqueezy.com**, **docs.lemonsqueezy.com** and the sign-in card on **auth.lemonsqueezy.com/login** on **2026-11-18**, signed out, in headless Chromium at 1440×900 and 390×844.
+A token set and component reference for Lemon Squeezy's public surface. It was read from **www.lemonsqueezy.com**, **docs.lemonsqueezy.com** and **auth.lemonsqueezy.com** on **2026-11-18**, in headless Chromium at 1440×900 and 390×844.
 
 The marketing site is a Webflow build (Client-First classes, `data-wf-site`). Its colour ramps live on `:root` in the shared stylesheet: purple, yellow, pink, green, blue, orange, red, grey and plum. The hero paints `--purple-600` (`#5423e7`) with a frosted white pill. A yellow banner says sign-ups are closed and the product shuts down on 31 March 2027. The site ships one light theme. `--dark-mode-bg-lighter` is declared and unused on the pages captured.
 
 Display type is Circular Pro Book. UI type is Inter. JetBrains Mono is declared and barely used on the marketing pages. Controls on the marketing site are 40px-radius pills. The auth card uses 8px radius and the same purple (`#7047eb`) as a filled submit.
 
-The signed-in app, checkout, OAuth and every account surface were not opened.
+A signed-in pass was attempted with an email/password account. The address was not already registered. New store signups are closed: the business-intent step leads to a Stripe Managed Payments recommendation. Get started, Google, Twitter, bank connect and payout KYC were not followed. Merchant routes under app.lemonsqueezy.com bounce to login. The customer order portal login was opened and not submitted.
 
 | File | What it is |
 |---|---|
@@ -54,7 +54,7 @@ Fonts: `core.font.family.display` is Circularpro book, then 1 fallback; `core.fo
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 75 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 79 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -76,13 +76,13 @@ Scorecard: **15 of 25 met, 10 partly, 0 missing**; C5, V1, V2 are optional for a
 |---|---|---|
 | F1 Colour ramps | Partly | The Webflow :root ramps are tokenised under core.color: neutral 8 steps, purple 9, yellow 7, pink 9, green 8, blue 8, orange 8, red 6, plum 2. Several hues stop short of about 10 steps because the stylesheet does not declare them. Steps are the product's own names (50, 100, 500), not a filled 10-step scale. |
 | F5 Accent states | Partly | Auth submit hover is measured: #7047eb to #7e59ed. Hero pill hover is measured: frosted white to #ffd266. Pressed was forced with CSS forcePseudoState and often matches hover, because the stylesheet has no separate :active fill. accent-pressed aliases --purple-700, which is declared and not painted by a pressed control. |
-| F6 Status colours | Partly | Success, warning, danger and info fills are the declared 500 steps (green #2dca72, yellow #ffc233, red #f53d6b, blue #00acff). The stylesheet also declares 50/100/200 companions, but no public control shows a status fill, text and border together. No validation state was reached. |
+| F6 Status colours | Partly | Success, warning, danger and info fills are the declared 500 steps (green #2dca72, yellow #ffc233, red #f53d6b, blue #00acff). The failed sign-in paints danger as text only: rgb(245, 61, 107) = #f53d6b on a transparent fill. Companions 50/100/200 are declared and unused. No status fill, text and border together on one control. |
 | F12 Elevation | Partly | Marketing chrome is flat. Auth fields use a 1px inset ring and a 1px drop, not a 3 to 5 level shadow scale. No card, popover or dialog shadow was measured. The package does not invent levels the product does not paint. |
 | F13 Motion | Partly | Two computed durations are tokenised: 100ms ease on marketing buttons, 150ms cubic-bezier(0.4, 0, 0.2, 1) on docs rows. Auth controls measure 0s. The reduced-motion probe was not run, so the package does not say whether the site honours prefers-reduced-motion. |
 | F14 Layout | Partly | Two widths were captured and recorded: 1440 and 390, with sidecars. The marketing nav collapses to a hamburger at 390. No column grid, content-max token or z-index scale was declared in the stylesheet harvest. The mobile menu sits over the hero; its z-index was not promoted to a token. |
-| C1 Component coverage | Partly | Public surfaces show button, icon button, link, text field, select, checkbox, menu, list row and a price headline used as a card. That is 9 of 19. Text area, radio, switch, tabs, tooltip, toast, table, avatar and badge are not on the public pages. Dialog was screenshotted (docs search) and not measured. |
+| C1 Component coverage | Partly | Public surfaces show button, icon button, link, text field, select, checkbox, menu, list row and cards (price headline plus the closed-signup recommendation). That is 9 of 19 plus the SMP card. Text area, radio, switch, tabs, tooltip, toast, table, avatar and badge are not on the public pages. Dialog was screenshotted (docs search) and not measured. The merchant dashboard was not opened. |
 | C4 Token-based specs | Partly | components.md tables show computed colours and radii next to the crop, and point at tokens.json for the names. The rows themselves are not written as token names. Shared values live in the tokens file. |
-| P1 Patterns | Partly | patterns.md covers the marketing shell, the docs shell, the pricing page and the sign-in card. Empty/loading/error is only the 404. Search is a screenshot. Destructive confirmation, validation and onboarding past the first register step were not reached. |
+| P1 Patterns | Partly | patterns.md covers the marketing shell, the docs shell, the pricing page, the sign-in card, the closed-signup SMP page and the customer order login. Empty/loading/error is the 404 plus the login error. Search is a screenshot. Destructive confirmation was not reached. Onboarding stops at closed signup. The merchant dashboard was not opened. |
 | A1 Assets | Partly | icon.png is the 128px apple-touch image. icons/INDEX.tsv names one arrow. The wordmark and lemon mark are the product's artwork and were not copied into the icon set. Fonts are named with licence or fallback in the README. |
 
 Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../../docs/PACKAGE.md)).
@@ -91,7 +91,9 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-The colour ramps were read from the Webflow stylesheet's `:root` block. That sheet is cross-origin, so `tools/capture/vars.mjs` records the CSS response and parses the custom properties from the text. Computed control styles come from `tools/capture/public/measure.mjs`, which opens the live pages and records default, hover, focus-visible and pressed (pressed via CSS `forcePseudoState`, so no submit fires). Sample text typed into the email field was deleted. Nothing was submitted.
+The colour ramps were read from the Webflow stylesheet's `:root` block. That sheet is cross-origin, so `tools/capture/vars.mjs` records the CSS response and parses the custom properties from the text. Computed control styles come from `tools/capture/public/measure.mjs`, which opens the live pages and records default, hover, focus-visible and pressed (pressed via CSS `forcePseudoState`, so no submit fires). Sample text typed into the email field was deleted on the public pass.
+
+The signed-in pass submitted two forms: the business-intent step (testing name, `https://example.com`) and a failed merchant login. `tools/capture/public/gated.mjs` takes those screenshots. `tools/capture/public/measure-gated.mjs` measures the closed-signup card, the Get started button (never followed) and the login error text.
 
 Screenshots were taken at a measured 1440×900 (1x) and 390×844 (2x), then quantized to 256-colour sRGB PNGs. Read colours from the tokens, not the PNGs.
 
@@ -106,6 +108,8 @@ Focus on marketing links is the browser's default outline (`1px auto`, `#005fcc`
 Circular Pro Book and Circular XX are proprietary. The tokens name them and fall back to sans-serif. The font files are not in the repo. The style guide loads Inter from Google Fonts as the UI face.
 
 The docs search dialog was screenshotted and not measured. The selector missed the button.
+
+The merchant dashboard was not opened. New store signups are closed. The login error colour matches `--red-500`. The native register tooltip is browser chrome, not a designed error.
 
 ## Fonts
 
@@ -142,22 +146,24 @@ The docs search dialog was screenshotted and not measured. The selector missed t
 | Tooltip | Not present | |
 | Dialog | Not captured | Docs search overlay is in [docs-help search](screenshots/docs-help-light-search.png). The element was not measured |
 | Toast | Not present | |
-| Card | Captured as the price headline | [pricing](screenshots/pricing-light-default.png) |
+| Card | Captured | Price headline [pricing](screenshots/pricing-light-default.png). Closed-signup recommendation [smp](screenshots/register-smp-light-default.png) |
 | List row | Captured | [docs nav](components/crops/docs-nav-hover.png), [FAQ](components/crops/faq-open.png) |
 | Table | Not present | No data table on the public pages |
 | Avatar | Not present | Founder pills are links, not avatars |
 | Badge | Not present | |
 | Hover, focus, pressed | Captured | On buttons, links and the auth submit. Pressed is CSS forcePseudoState |
-| Disabled, loading, error | Not present | No public control shows them. The sign-in form was not submitted |
+| Disabled, loading, error | Error captured | Login error text `#f53d6b`. Disabled and loading not shown |
 | App shell | Captured | Banner, nav, footer. [home full](screenshots/home-light-full.png) |
-| Form with validation | Not captured | Sign-in and register sit at the boundary. Nothing submitted. [login](screenshots/login-light-default.png) |
+| Form with validation | Captured | Native required tooltip on register [validation](screenshots/register-light-validation.png). Server error on login [error](screenshots/login-light-error.png) |
 | Empty, loading, error pages | Captured for the 404 only | [not found](screenshots/notfound-light-default.png) |
 | Destructive confirmation | Not present | |
 | Search | Captured as a screenshot | [docs search](screenshots/docs-help-light-search.png). Query not typed |
-| Onboarding | Not captured | Register's first step is public and was not submitted. [register](screenshots/register-light-default.png) |
-| Dashboard, products, payouts, customers | Not captured | Behind sign-in. See catalog `capture.gaps` |
+| Onboarding | Captured to the closed-signup gate | Business-intent submitted. Next step is Stripe Managed Payments. [smp](screenshots/register-smp-light-default.png) |
+| Dashboard, products, orders, customers, settings | Not captured | New store signups closed. app.lemonsqueezy.com/* bounced to login. See catalog `capture.gaps` |
+| Customer order portal | Captured the unsigned login | [my orders](screenshots/my-orders-light-default.png). Magic link not sent |
 | Checkout and purchase | Not captured | No public checkout was opened |
 | OAuth | Not captured | Google and Twitter buttons measured, never followed |
+| Stripe onboarding | Stopped | Get started on `/signup/smp` was measured and not clicked |
 
 ## Do and don't
 
@@ -165,7 +171,7 @@ The docs search dialog was screenshotted and not measured. The selector missed t
 - **Do use the 40px pill on marketing, and the 8px control on the auth card.** They are two languages. [nav pill](components/crops/nav-button-default.png) [auth submit](components/crops/login-submit-default.png)
 - **Do keep the yellow banner when the page shows the shutdown notice.** It is `#ffc233` with ink text. [banner](components/crops/banner-default.png)
 - **Don't invent a dark theme.** The captured pages are light, with a purple hero. [home full](screenshots/home-light-full.png)
-- **Don't treat the sign-in card as the app.** The dashboard, products, payouts and settings were not opened. [login](screenshots/login-light-default.png)
+- **Don't treat the sign-in card as the app.** New store signups are closed. The dashboard was not opened. [closed signup](screenshots/register-smp-light-default.png)
 - **Don't copy the lemon mark or the wordmark into something that ships.** [icon](icon.png)
 
 ## Rebuild
@@ -173,9 +179,10 @@ The docs search dialog was screenshotted and not measured. The selector missed t
 ```bash
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/vars.mjs
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/public/measure.mjs
+PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/public/measure-gated.mjs
 python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
 python3 tools/build_components_md.py
 ```
 
-Screenshots: `RAW=~/.design-systems/lemonsqueezy/raw-shots node tools/capture/public/public.mjs`, then `python3 tools/capture/quantize.py ~/.design-systems/lemonsqueezy/raw-shots`.
+Screenshots: `RAW=~/.design-systems/lemonsqueezy/raw-shots node tools/capture/public/public.mjs`, then `python3 tools/capture/quantize.py ~/.design-systems/lemonsqueezy/raw-shots`. Closed-signup and login error: `RAW=~/.design-systems/lemonsqueezy/raw-shots node tools/capture/public/gated.mjs`.
