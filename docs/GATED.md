@@ -243,13 +243,12 @@ Access: signed out (every captured surface is public; sign-in, plan checkout, th
 - carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
 
 ## [Jitter](../systems/jitter) — `jitter`
-Access: signed out (marketing routes are public; the editor, files, account, billing, SSO and OAuth sit behind sign-in; the login and signup cards were measured at rest and never submitted; contact-sales was not submitted; consent overlays were hidden, never answered)
-- the editor, files, account, trash and export sit behind sign-in at https://jitter.video/files and https://jitter.video/login/ and were never entered
+Access: signed in on a free email account; marketing plus files, account, trash, brand kit, onboarding and the editor were captured; Google/SSO were never clicked; billing checkout, paid export and Invite were not opened; Superagents Upgrade now was measured at rest
 - SSO at https://jitter.video/sso and Continue with Google / Continue with SSO on https://jitter.video/login/ were measured at rest and never clicked
-- account creation past the card at https://jitter.video/join/ was never submitted, so the password step and onboarding at https://jitter.video/onboarding/ were not reached
-- checkout and billing at https://jitter.video/billing and the plan Get started actions on https://jitter.video/pricing/ were not followed
+- checkout and billing at https://jitter.video/billing and Upgrade your plan / Upgrade now were measured at rest and never followed; no card was entered
+- Invite members and Send invites were measured at rest and never submitted
 - the contact-sales form at https://jitter.video/contact-sales/ was measured empty and never submitted
-- no validation, disabled, loading or toast state appears signed out because nothing was submitted
+- no validation, disabled or toast state was produced because no form was submitted after sign-in
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)

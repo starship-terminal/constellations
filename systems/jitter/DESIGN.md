@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Jitter"
-description: "A motion-design marketing site: one light theme, pill buttons whose fill paints on an inner span (violet, yellow, blue, ink), TWK Lausanne on controls and Inter on body, a grey header band, and a public login card that stops at the OAuth boundary"
+description: "A motion-design tool: light marketing and files with pill CTAs (violet, yellow, blue, ink), a dark editor header with Share/Export, TWK Lausanne on marketing controls and Inter in the editor, plus free-account onboarding"
 omitted:
   - section: "typography"
     reason: "tokens.json has no typography tokens under `core.typography`"
@@ -29,6 +29,9 @@ colors:
   button-violet: "#b593ff"
   button-yellow: "#f5ff63"
   button-white: "#ffffff"
+  button-export: "#9262f0"
+  button-upgrade: "#7a40ed"
+  button-share: "#29a9ff"
 rounded:
   pill: "50px"
   sheet: "80px"
@@ -46,13 +49,13 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: A motion-design marketing site: one light theme, pill buttons whose fill paints on an inner span (violet, yellow, blue, ink), TWK Lausanne on controls and Inter on body, a grey header band, and a public login card that stops at the OAuth boundary.
+Good for: A motion-design tool: light marketing and files with pill CTAs (violet, yellow, blue, ink), a dark editor header with Share/Export, TWK Lausanne on marketing controls and Inter in the editor, plus free-account onboarding.
 
-Captured 2026-11-18, signed out (marketing routes are public; the editor, files, account, billing, SSO and OAuth sit behind sign-in; the login and signup cards were measured at rest and never submitted; contact-sales was not submitted; consent overlays were hidden, never answered). Themes: light.
+Captured 2026-11-18, signed in on a free email account; marketing plus files, account, trash, brand kit, onboarding and the editor were captured; Google/SSO were never clicked; billing checkout, paid export and Invite were not opened; Superagents Upgrade now was measured at rest. Themes: light.
 
-A token set and component reference for Jitter's public marketing surface. Read from **jitter.video** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844.
+A token set and component reference for Jitter's marketing site and the signed-in product. Read from **jitter.video** on **2026-11-18**, first signed out then on a free email account, in headless Chromium at 1440 x 900 and 390 x 844.
 
-Jitter is a motion design tool on the web. The public site is a React app with CSS-module classes. It paints one light theme. Body declares `--bg-color` `#ffffff`, `--primary-color` `#19171c`, `--primary-color-alt` `#fba6ec` and `--secondary-color` `#6e6e73`. Buttons are pills: the fill paints on `span.button-inner`, not on the anchor. Violet `#b593ff`, yellow `#f5ff63`, blue `#50b8ff` and ink `#19171c` are the fills that show. Type is TWK Lausanne on controls, Inter on body, Euclid Circular B in the display faces. The editor, account, billing and every OAuth path sit behind sign-in. The login card was measured at rest and never submitted.
+Jitter is a motion design tool on the web. The public site is a React app with CSS-module classes. It paints one light theme. Body declares `--bg-color` `#ffffff`, `--primary-color` `#19171c`, `--primary-color-alt` `#fba6ec` and `--secondary-color` `#6e6e73`. Buttons are pills: the fill paints on `span.button-inner`, not on the anchor. Violet `#b593ff`, yellow `#f5ff63`, blue `#50b8ff` and ink `#19171c` are the fills that show. Type is TWK Lausanne on marketing controls, Inter on body and in the editor. Euclid Circular B is the display face. Sign-in used email only: a magic link, never Google or SSO. Files, account, trash, brand kit, onboarding and the editor were captured. Billing checkout, paid export and Invite were not opened.
 
 ## Colors
 
@@ -116,4 +119,5 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Keep the page white and the ink near-black.** Page is `#ffffff`, text is `#19171c`. The header band is `#f2f1f3`. [home-light-default.png](screenshots/home-light-default.png)
 - **Colour a button by role.** Violet starts a trial, yellow points at stories, blue is the free plan, ink is Sign up. [pricing-light-default.png](screenshots/pricing-light-default.png)
 - **Don't invent a dark theme.** The site publishes one light theme. Dark bands inside a page are not a second theme. [login-light-default.png](screenshots/login-light-default.png)
-- **Don't follow a signup or OAuth control.** Those leave the public surface. Measure them at rest. [login-google-default.png](components/crops/login-google-default.png)
+- **Don't follow Google, SSO or a billing control.** Email sign-in is enough for the product. Upgrade your plan and Export stay at rest. [login-google-default.png](components/crops/login-google-default.png)
+- **Keep the editor header dark and square.** Share is a 32px blue chip. Export is a 48px violet slab with radius 0. Marketing stays pill-shaped. [editor-light-default.png](screenshots/editor-light-default.png)

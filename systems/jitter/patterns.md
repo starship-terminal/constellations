@@ -1,6 +1,6 @@
 # Patterns
 
-How the public pages combine. Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json).
+How the public pages and the signed-in product combine. Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json).
 
 ## Marketing shell
 
@@ -18,7 +18,23 @@ A search field and category links over a grid of public previews. See [templates
 
 ## Sign-in boundary
 
-`/login/` and `/join/` render the same card: Google, an email field, and Continue with email. See [login-light-default.png](screenshots/login-light-default.png). No button was clicked and nothing was typed.
+`/login/` and `/join/` render the same card: Google, an email field, and Continue with email. See [login-light-default.png](screenshots/login-light-default.png). Email Continue sends a magic link. Google and SSO were never clicked. The check-email screen is [join-light-check-email.png](screenshots/join-light-check-email.png).
+
+## Onboarding
+
+A blue motion sequence then: name, role, matching teams, invite teammates, start. Name and role were filled. Team join and invites were skipped. See [onboarding-light-name.png](screenshots/onboarding-light-name.png), [onboarding-light-role.png](screenshots/onboarding-light-role.png), [onboarding-light-start.png](screenshots/onboarding-light-start.png).
+
+## Files
+
+A light files shell: Drafts, Templates, workspace, Brand Kit, Trash, Create new file, Import from Figma. The header holds My files and a round avatar. See [files-light-default.png](screenshots/files-light-default.png). Account menu: My account, Logout. [files-light-account-menu.png](screenshots/files-light-account-menu.png). Empty team files: [team-light-default.png](screenshots/team-light-default.png).
+
+## Account
+
+`/account/` is My account: picture, name field, on the same files shell. [account-light-default.png](screenshots/account-light-default.png). Workspace settings show the Free Plan and an Upgrade your plan pill that was not pressed. [workspace-light-default.png](screenshots/workspace-light-default.png).
+
+## Editor
+
+A dark 48px header (back, title, Offline, Share, 100%, Export) over a light canvas. Design / Animate sit on the right. A Superagents promo card can sit on the canvas. Export and Upgrade now were measured at rest. [editor-light-default.png](screenshots/editor-light-default.png). Phone width shows a dark share/view of the file. [mobile-editor-light-default.png](screenshots/mobile-editor-light-default.png).
 
 ## Contact sales boundary
 

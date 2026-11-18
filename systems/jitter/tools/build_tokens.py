@@ -77,8 +77,10 @@ core = {
         "violet": color("#b593ff", "computed background of span.button-inner on the violet hero CTA, 2026-11-18"),
         "yellow": color("#f5ff63", "computed background of the yellow pill (Read customer stories), 2026-11-18"),
         "blue": color("#50b8ff", "computed background of the Free plan Get started pill, 2026-11-18"),
-        "blue-strong": color("#29a9ff", "computed background of Continue with SSO, 2026-11-18"),
+        "blue-strong": color("#29a9ff", "computed background of Continue with SSO, and of the editor Share button, rgb(41, 169, 255)"),
         "grey": color("#f2f1f3", "computed background of the header and the light-grey auth buttons, 2026-11-18"),
+        "violet-export": color("#9262f0", "computed background of the editor Export button, rgb(146, 98, 240)"),
+        "violet-upgrade": color("#7a40ed", "computed background of the editor Upgrade now chip, rgb(122, 64, 237)"),
     },
     "font": {
         "family": {
@@ -88,6 +90,7 @@ core = {
         },
         "weight": {
             "regular": tok(400, "fontWeight", "body text weight"),
+            "medium": tok(500, "fontWeight", "computed font-weight on the editor Share button"),
             "semibold": tok(600, "fontWeight", "computed font-weight on button controls"),
         },
         "size": {
@@ -108,6 +111,8 @@ core = {
     "size": {
         "button-sm": tok("52px", "dimension", "computed height of the small pill"),
         "button-md": tok("60px", "dimension", "computed height of the medium pill"),
+        "button-share": tok("32px", "dimension", "computed height of the editor Share button"),
+        "button-export": tok("48px", "dimension", "computed height of the editor Export button"),
         "desktop": tok("1440px", "dimension", "capture viewport width"),
         "phone": tok("390px", "dimension", "capture viewport width"),
     },
@@ -148,6 +153,9 @@ light = {
         "violet": tok("{color.violet}", "color", "hero CTA fill"),
         "yellow": tok("{color.yellow}", "color", "stories and subscribe fill"),
         "white": tok("{color.white}", "color", "white pill fill"),
+        "export": tok("{color.violet-export}", "color", "editor Export fill"),
+        "upgrade": tok("{color.violet-upgrade}", "color", "editor Upgrade now fill"),
+        "share": tok("{color.blue-strong}", "color", "editor Share fill"),
         "radius": tok("{radius.pill}", "dimension", "pill radius"),
         "height": tok("{size.button-sm}", "dimension", "small button height"),
     },
@@ -162,7 +170,7 @@ if motion_path.exists():
         core.setdefault("$extensions", {})["motionNotTokenised"] = skipped
 
 doc = {
-    "$description": "Jitter public marketing surface, captured 2026-11-18, signed out, one light theme.",
+    "$description": "Jitter marketing plus signed-in files, account, onboarding and editor, captured 2026-11-18. One light theme on marketing and files; the editor chrome is a dark header on a light canvas.",
     "core": core,
     "light": light,
     "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
