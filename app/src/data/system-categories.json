@@ -1306,5 +1306,11 @@
     "groupId": "web-categories",
     "labels": ["Health & Wellness", "Marketplace"],
     "reason": "catalog.json describes the Hers women's telehealth storefront: treatment verticals (weight loss, hair, skin, mental health, birth control, anti-aging, labs), product cards with prices, a BMI calculator, an editorial blog and a drug-information index - health and wellness products sold direct."
+  },
+  {
+    "referenceId": "systems:ifttt",
+    "groupId": "web-categories",
+    "labels": ["Productivity", "AI Tool"],
+    "reason": "catalog.json describes IFTTT's automation platform: the ifttt.ai marketing home (AI prompt hero), the explore applet/service/story gallery, the plans pricing, service/applet/connect detail pages, solutions, MCP, about/careers/partners and legal surfaces."
   }
 ]

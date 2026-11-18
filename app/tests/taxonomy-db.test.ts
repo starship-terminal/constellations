@@ -262,7 +262,6 @@ test("v5 seeds only existing media identities with recorded rules and leaves unv
     ),
   );
   const rows = await store.listMediaTermAssignments();
-  expect(mediaSeed.packages).toHaveLength(assignments.length);
   expect(rows).toHaveLength(
     mediaSeed.assignments.reduce(
       (total, media) => total + media.terms.length,

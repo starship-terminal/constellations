@@ -1876,7 +1876,7 @@ test("version-thirty-eight stores gain the Hume rows, without touching their own
   ).toHaveLength(0);
 });
 
-test("version-thirty-nine stores gain the Intercom, Hers, Leonardo, and Huddlekit rows, without touching their own labels", async () => {
+test("version-thirty-nine stores gain the IFTTT, Intercom, Hers, Leonardo, and Huddlekit rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v39 store opened before these rows existed: drop them and rewind.
   await store.client.execute(
@@ -1884,6 +1884,12 @@ test("version-thirty-nine stores gain the Intercom, Hers, Leonardo, and Huddleki
   );
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:intercom'",
+  );
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:ifttt'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:ifttt'",
   );
   await store.client.execute(
     "DELETE FROM reference_categories WHERE reference_id='systems:forhers'",
@@ -1925,6 +1931,14 @@ test("version-thirty-nine stores gain the Intercom, Hers, Leonardo, and Huddleki
   ).toBe(43);
   const categories = await migrated.listReferenceCategories();
   expect(
+    categories.filter((row) => row.referenceId === "systems:ifttt"),
+  ).toHaveLength(2);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:ifttt"])).map(
+      (row) => row.label,
+    ),
+  ).toEqual(["AI Tool", "Productivity"]);
+  expect(
     categories.filter((row) => row.referenceId === "systems:huddlekit"),
   ).toHaveLength(3);
   expect(
@@ -1933,6 +1947,9 @@ test("version-thirty-nine stores gain the Intercom, Hers, Leonardo, and Huddleki
     ),
   ).toEqual(["Collaboration Tools", "Design & Media Editing", "Productivity"]);
   const media = await migrated.listMediaTermAssignments();
+  expect(
+    media.filter((row) => row.referenceId === "systems:ifttt").length,
+  ).toBeGreaterThan(0);
   expect(
     media.filter((row) => row.referenceId === "systems:huddlekit").length,
   ).toBeGreaterThan(0);
