@@ -2664,8 +2664,8 @@
     608
    ],
    "description": "Set up custom Ai agents in minutes",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/lemni",
    "notes": "",
    "batch": 9
   },

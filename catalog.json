@@ -6666,6 +6666,82 @@
    }
   },
   {
+   "slug": "lemni",
+   "name": "Lemni",
+   "url": "https://www.lemni.com",
+   "category": "ai-agent",
+   "platform": "web",
+   "goodFor": "Quiet AI-agent marketing: a dark home and light inner pages, TWK Lausanne display with tight tracking, black pills, a glass Continue control, and a separate system-ui sign-in card",
+   "tags": [
+    "web",
+    "ai",
+    "agents",
+    "marketing",
+    "framer",
+    "signed-out",
+    "signed-in",
+    "dark-home",
+    "pill"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed-in free account (email magic link at lemni.com/signin; Google unused). Public marketing plus the workplace app as the free trial shows it. Upgrade and payment were not followed.",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/lemni/README.md",
+   "tokens": "systems/lemni/tokens.json",
+   "styleGuide": "systems/lemni/style-guide.html",
+   "preview": {
+    "cover": "systems/lemni/screenshots/home-dark-default.png",
+    "icon": "systems/lemni/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background.page",
+      "surface": "light.background.surface",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.accent.default",
+      "border": "light.border.stroke"
+     },
+     "dark": {
+      "page": "dark.background.page",
+      "surface": "dark.background.surface",
+      "text": "dark.text.primary",
+      "muted": "dark.text.secondary",
+      "accent": "dark.accent.default",
+      "border": "dark.border.stroke"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.sans",
+     "core.font.family.system"
+    ]
+   },
+   "capture": {
+    "harness": "Grok Build",
+    "model": "grok-4.7",
+    "route": "headless",
+    "durationMin": 270,
+    "pr": "https://github.com/starship-terminal/constellations/pull/656",
+    "gaps": [
+     "Continue with Google at https://lemni.com/signin. Email magic link was used. Google was not clicked.",
+     "Upgrade and checkout at https://lemni.com/welcome/subscribe and the workplace sidebar Upgrade control. Captured at rest. Not pressed. No plan was bought.",
+     "Application form at https://www.lemni.com/company/apply. Not submitted.",
+     "Community at https://community.lemni.com returned an empty body and was not captured."
+    ]
+   },
+   "layoutGaps": {
+    "icons/": "Marketing marks are Framer sprite references, not standalone SVGs. The wordmark is in the page screenshots and icon.png."
+   }
+  },
+  {
    "slug": "linear",
    "name": "Linear",
    "url": "https://linear.app",
