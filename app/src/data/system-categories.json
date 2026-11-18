@@ -1264,5 +1264,11 @@
     "groupId": "web-categories",
     "labels": ["Productivity", "AI Tool"],
     "reason": "catalog.json describes IFTTT's automation platform: the ifttt.ai marketing home (AI prompt hero), the explore applet/service/story gallery, the plans pricing, service/applet/connect detail pages, solutions, MCP, about/careers/partners and legal surfaces."
+  },
+  {
+    "referenceId": "systems:macaw",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a cream marketing site for an AI website builder: one coral action and tinted pricing cards."
   }
 ]

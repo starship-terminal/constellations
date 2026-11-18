@@ -661,7 +661,7 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
     ),
   ).toBe(40);
   const categories = await migrated.listReferenceCategories();
-  // Fitness is inserted ahead of the labels that were already there.
+  // Health & Wellness, Marketplace, and Fitness land as three rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:classpass"),
   ).toHaveLength(3);
@@ -1564,7 +1564,7 @@ test("version-thirty-three stores gain the Headspace rows, without touching thei
     ),
   ).toBe(40);
   const categories = await migrated.listReferenceCategories();
-  // Fitness is inserted ahead of the label that was already there.
+  // Health & Wellness and Fitness land as two rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:headspace"),
   ).toHaveLength(2);
