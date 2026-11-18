@@ -2619,8 +2619,8 @@
     495
    ],
    "description": "Generative AI made easy. Generate and enhance images and videos using powerful AI for free",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/krea",
    "notes": "",
    "batch": 9
   },
