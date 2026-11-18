@@ -179,6 +179,14 @@ def build() -> dict:
                         label = "Home" if original_label == "Home Page" and prefix == "ios" else original_label
                         if label not in terms[group] or not re.search(rf"(?:^|-)(?:{expression})(?:-|$)", name):
                             continue
+                        # forhers filenames this capture added that match a rule
+                        # without being that control. Accordion and menu toggles
+                        # are triggers, not switches. "pill" in wegovy-pill is
+                        # the medicine, not a chip. Other packages are unchanged.
+                        if system["slug"] == "forhers" and rule_id == "ui-toggle" and re.search(r"(?:^|-)(?:accordion-toggle|menu-toggle)(?:-|$)", name):
+                            continue
+                        if system["slug"] == "forhers" and rule_id == "ui-chips" and re.search(r"(?:^|-)wegovy-pill(?:-|$)", name):
+                            continue
                         if group == page_group:
                             # A profile button or account menu on another page
                             # is not evidence that the whole page is a profile.

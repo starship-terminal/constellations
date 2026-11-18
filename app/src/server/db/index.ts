@@ -517,8 +517,14 @@ export async function createResearchStore(directory: string) {
       );
       await tx.execute("PRAGMA user_version = 40");
     }
+    if (version < 41) {
+      // A store already at v40 still gains Hers.
+      await seedNewCuratedCategories(tx, new Set(["systems:forhers"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:forhers"]));
+      await tx.execute("PRAGMA user_version = 41");
+    }
     if (version < 42) {
-      // Version 41 stays reserved for Hers. A store already at v41 still gains Leonardo.
+      // A store already at v41 still gains Leonardo.
       await seedNewCuratedCategories(tx, new Set(["systems:leonardo"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:leonardo"]));
       await tx.execute("PRAGMA user_version = 42");

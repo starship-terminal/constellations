@@ -1876,7 +1876,7 @@ test("version-thirty-eight stores gain the Hume rows, without touching their own
   ).toHaveLength(0);
 });
 
-test("version-thirty-nine stores gain the IFTTT, Intercom, Leonardo, and Huddlekit rows, without touching their own labels", async () => {
+test("version-thirty-nine stores gain the IFTTT, Intercom, Hers, Leonardo, and Huddlekit rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v39 store opened before these rows existed: drop them and rewind.
   await store.client.execute(
@@ -1890,6 +1890,12 @@ test("version-thirty-nine stores gain the IFTTT, Intercom, Leonardo, and Huddlek
   );
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:ifttt'",
+  );
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:forhers'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:forhers'",
   );
   await store.client.execute(
     "DELETE FROM reference_categories WHERE reference_id='systems:leonardo'",
@@ -1967,6 +1973,17 @@ test("version-thirty-nine stores gain the IFTTT, Intercom, Leonardo, and Huddlek
   ).toEqual(["Business", "Communication Tools"]);
   expect(
     media.filter((row) => row.referenceId === "systems:intercom").length,
+  ).toBeGreaterThan(0);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:forhers"),
+  ).toHaveLength(2);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:forhers"])).map(
+      (row) => row.label,
+    ),
+  ).toEqual(["Health & Wellness", "Marketplace"]);
+  expect(
+    media.filter((row) => row.referenceId === "systems:forhers").length,
   ).toBeGreaterThan(0);
   expect(
     categories.filter((row) => row.referenceId === "systems:digg"),
