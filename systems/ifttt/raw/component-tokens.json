@@ -623,12 +623,6 @@
      "source": "measured hero-submit hover on home (primary fill on hover)",
      "description": "primary fill on hover"
     },
-    "navFill": {
-     "type": "color",
-     "value": "#111111",
-     "source": "measured plan-cta-filled default on plans (filled CTA pill on the white surfaces)",
-     "description": "filled CTA pill on the white surfaces"
-    },
     "outline": {
      "type": "color",
      "value": "#111111",
@@ -731,25 +725,11 @@
      "source": "measured plan-cta default on plans (plan card CTA border)",
      "description": "plan card CTA border"
     },
-    "ctaFill": {
-     "type": "color",
-     "value": "#111111",
-     "source": "measured plan-cta-filled default on plans (recommended plan CTA fill)",
-     "description": "recommended plan CTA fill"
-    },
     "recommendedBg": {
      "type": "color",
      "value": "#ffffff",
      "source": "measured plan-card-recommended default on plans (recommended plan card ground)",
      "description": "recommended plan card ground"
-    }
-   },
-   "badge": {
-    "ink": {
-     "type": "color",
-     "value": "#111111",
-     "source": "measured save-badge default on plans ('SAVE 30%' badge ink)",
-     "description": "'SAVE 30%' badge ink"
     }
    },
    "input": {
@@ -810,13 +790,13 @@
     "activeFill": {
      "type": "color",
      "value": "#111111",
-     "source": "measured featured-tab-active default on home (featured tab fill, active)",
+     "source": "measured featured-tab selected on home (featured tab fill, active)",
      "description": "featured tab fill, active"
     },
     "activeInk": {
      "type": "color",
      "value": "#ffffff",
-     "source": "measured featured-tab-active default on home (featured tab ink, active)",
+     "source": "measured featured-tab selected on home (featured tab ink, active)",
      "description": "featured tab ink, active"
     }
    }
@@ -1033,13 +1013,6 @@
     "type": "dimension",
     "value": "54px",
     "source": "measured back-button default on connect (detail 'Back' pill)"
-   }
-  },
-  "promptCard": {
-   "radius": {
-    "type": "dimension",
-    "value": "0px",
-    "source": "measured explore-prompt-card default on explore (prompt card corner)"
    }
   },
   "card": {

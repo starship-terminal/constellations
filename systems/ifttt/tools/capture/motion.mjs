@@ -163,9 +163,15 @@ const classify = (baseMs, reducedMs) => {
 // An animation paused under reduce is stopped, whatever its duration says.
 const stopped = (a) => a.playState === 'paused';
 
+// A zero duration is still a transition when its delay is not: IFTTT tooltips fade visibility in after
+// 300ms with duration 0. Removing it requires the delay to go away too.
+const transitionStopped = (t) => t.durationMs <= NEGLIGIBLE_MS && t.delayMs <= NEGLIGIBLE_MS;
+
 // What prefers-reduced-motion: reduce did to one element's motion. Items are matched by property
 // (transitions) or name (animations). Each is removed, shortened (both are reductions), kept, changed (the
-// same length with another easing or delay), increased (longer) or added (not there before). An animation
+// same length with another easing or delay), increased (longer) or added (not there before). Duration is
+// not enough: an unchanged delay on a zero-duration transition is kept, and a delay that shrinks while
+// the duration stays is shortened. An animation
 // that still runs forever after reduce, replacements included, is flagged `loops`. The element's outcome:
 // none (no motion either way); removed or reduced (every item is a reduction); kept (nothing was
 // reduced, nothing got worse); increased (nothing was reduced and something grew or was added); partial
@@ -176,9 +182,13 @@ export function diffMotion(base, reduced) {
   const reducedA = new Map((reduced?.animations || []).map((a) => [a.name, a]));
   for (const t of base?.transitions || []) {
     const r = reducedT.get(t.property);
-    let outcome = r ? classify(t.durationMs, r.durationMs) : 'removed';
+    let outcome = !r || transitionStopped(r) ? 'removed' : classify(t.durationMs, r.durationMs);
+    // classify() looks at duration only, so a zero-duration delay that did not change would be removed.
+    if (r && !transitionStopped(r) && outcome === 'removed' && r.delayMs > NEGLIGIBLE_MS) {
+      outcome = r.delayMs < t.delayMs ? 'shortened' : r.delayMs === t.delayMs ? 'kept' : 'increased';
+    }
     if (outcome === 'kept' && (r.easing !== t.easing || r.delayMs !== t.delayMs)) outcome = 'changed';
-    items.push({ kind: 'transition', key: t.property, outcome, from: t.durationMs, to: r ? r.durationMs : 0 });
+    items.push({ kind: 'transition', key: t.property, outcome, from: t.durationMs, to: r && !transitionStopped(r) ? r.durationMs : 0 });
     reducedT.delete(t.property);
   }
   for (const a of base?.animations || []) {

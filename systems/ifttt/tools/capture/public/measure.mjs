@@ -218,11 +218,20 @@ const HOME_SPECS = [
         await loc.click({ timeout: 4000 }).catch(() => {});
         await page.waitForTimeout(1200);
         return loc;
+      }, restore: async () => {
+        // A later default reading of .featured-tab.active must be Popular, not the tab this spec just selected.
+        const pop = page.locator('button.featured-tab').filter({ hasText: /^popular$/i }).first();
+        if (await pop.count()) { await pop.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(800); }
       } },
     ] },
   { key: 'featured-tab-active', group: 'Home', title: 'Featured tab, active',
-    desc: 'The resting "Popular" tab — the selected pill state.',
-    sel: 'button.featured-tab.active', find: (p) => p.locator('button.featured-tab.active:visible').first(), states: ['default'] },
+    desc: 'The resting "Popular" tab — the selected pill state. Measured only when its text is Popular, so a leftover selected tab is never stored as the resting default.',
+    sel: 'button.featured-tab.active', find: async (p) => {
+      const loc = p.locator('button.featured-tab.active:visible').first();
+      const text = ((await loc.innerText().catch(() => '')) || '').trim();
+      if (text && !/^popular$/i.test(text)) return p.locator('[data-m-mark="__none__"]');
+      return loc;
+    }, states: ['default'] },
   { key: 'service-chip', group: 'Home', title: 'Service icon chip',
     desc: 'One floating service icon in the hero automation canvas — the rounded-square brand tiles that drift across the hero.',
     sel: 'img, a, div', find: async (p) => await pick(p, '[class*="automation-apps"] img, [class*="app-icon"], [class*="service-icon"]', (el, r) => r.width > 20 && r.width < 130 ? r.y : Infinity, 'sc'), states: ['default'] },
@@ -242,8 +251,14 @@ const EXPLORE = [
     desc: 'textarea.prompt-hero-input inside the dark hero card — "tell us what you\'d like to automate". focused only; never submitted.',
     sel: 'textarea.prompt-hero-input', find: (p) => p.locator('textarea.prompt-hero-input:visible').first(), states: ['default', 'focused'] },
   { key: 'explore-prompt-card', group: 'Explore', title: 'Prompt card',
-    desc: 'The white card holding the prompt field and its "Start building" submit inside the dark hero.',
-    sel: '[class*="prompt"]', find: async (p) => await pick(p, '[class*="prompt-card"], [class*="prompt_hero"], form, [class*="prompt"]', (el, r) => r.width > 300 && r.height > 80 && el.querySelector('textarea') ? r.y : Infinity, 'ep'), states: ['default'] },
+    desc: 'The white card holding the prompt field and its "Start building" submit inside the dark hero. The dark hero section is explore-hero, not this card.',
+    sel: '[class*="prompt-card"], form:has(textarea.prompt-hero-input)', find: async (p) => await pick(p, '[class*="prompt-card"], form:has(textarea.prompt-hero-input)', (el, r, cs) => {
+      // The hero section also matches a bare [class*="prompt"] and holds the textarea as a descendant. Require the card itself: white, card-sized, and the textarea's nearest painted ancestor.
+      if (!el.querySelector('textarea.prompt-hero-input')) return Infinity;
+      if (r.width < 280 || r.width > 900 || r.height < 48 || r.height > 280) return Infinity;
+      if (cs.backgroundColor === 'rgba(0, 0, 0, 0)') return Infinity;
+      return r.y * 10000 + r.width;
+    }, 'ep'), states: ['default'] },
   { key: 'explore-service-chip', group: 'Explore', title: 'Service chip in hero',
     desc: 'a.explore-hero-service — a service name chip ("Pinterest") in the "Automate X with Y" cycler.',
     sel: 'a.explore-hero-service', find: (p) => p.locator('a.explore-hero-service:visible').first(), states: ['default', 'hover'] },
@@ -278,14 +293,27 @@ const PLANS = [
         await loc.click({ timeout: 4000 }).catch(() => {});
         await page.waitForTimeout(1200);
         return loc;
+      }, restore: async (loc) => {
+        // Clicking the switch leaves Monthly on. Later default readings (the badge, the plan cards) must see Yearly again.
+        const on = await loc.getAttribute('aria-checked').catch(() => null);
+        const cls = (await loc.getAttribute('class').catch(() => '')) || '';
+        if (on === 'false' || /switch-field-off/.test(cls) || !/switch-field-on/.test(cls)) {
+          await loc.click({ timeout: 4000 }).catch(() => {});
+          await page.waitForTimeout(800);
+        }
       } },
     ] },
   { key: 'billing-toggle-wrap', group: 'Plans', title: 'Billing toggle with labels',
     desc: 'div.credits-plans-toggle — Monthly | switch | Yearly + the "SAVE 30%" badge.',
     sel: 'div.credits-plans-toggle', find: (p) => p.locator('div.credits-plans-toggle:visible').first(), states: ['default'] },
   { key: 'save-badge', group: 'Plans', title: '"SAVE 30%" badge',
-    desc: 'The green discount badge beside the yearly label.',
-    sel: 'span, div', find: async (p) => await pick(p, 'span, div, em, strong', (el, r) => /save\s*30/i.test(el.innerText || '') && r.height < 60 && r.width < 200 ? r.x : Infinity, 'sb'), states: ['default'] },
+    desc: 'The green discount badge beside the yearly label. The billing row that contains it is billing-toggle-wrap, not the badge.',
+    sel: 'span.credits-plans-save, [class*="save"]', find: async (p) => await pick(p, 'span.credits-plans-save, [class*="credits-plans-save"], [class*="save-badge"]', (el, r) => {
+      const text = (el.innerText || '').trim();
+      if (!/^save\s*30%?$/i.test(text)) return Infinity;
+      if (r.height >= 40 || r.width >= 160 || r.width < 20) return Infinity;
+      return r.x;
+    }, 'sb'), states: ['default'] },
   { key: 'plan-card', group: 'Plans', title: 'Plan card (Free)',
     desc: 'A pricing card: name, $ price, credits line, feature list with check icons and a "Get started" outline CTA.',
     sel: 'div, li', find: async (p) => await pick(p, '[class*="price-list"] > *, [class*="plan"] li, li, div[class*="card"]', (el, r) => /free|\$0/i.test(el.innerText || '') && r.height > 200 && r.width > 150 && r.width < 700 ? r.x : Infinity, 'pc'), states: ['default'] },
@@ -302,8 +330,16 @@ const PLANS = [
     desc: 'The outlined button on a plan card — measured, never followed (it leads to checkout).',
     sel: 'a.button-tertiary', find: async (p) => await pick(p, 'a.button-tertiary', (el, r) => /get started/i.test(el.innerText || '') && r.y > 300 ? r.y : Infinity, 'cta'), states: ['default', 'hover', 'pressed'] },
   { key: 'plan-cta-filled', group: 'Plans', title: 'Plan CTA on the recommended card',
-    desc: 'The filled "Get started" on the Pro card — measured, never followed.',
-    sel: 'a.button-tertiary:not(.button-outlined)', find: async (p) => await pick(p, 'a.button-tertiary:not(.button-outlined)', (el, r) => /get started/i.test(el.innerText || '') ? r.y : Infinity, 'cf'), states: ['default', 'hover', 'pressed'] },
+    desc: 'The filled "Get started" on the Pro card — measured, never followed. The header signup is nav-signup; this one sits inside the recommended plan card, below the fold.',
+    sel: '[class*="price-list"] a.button-tertiary:not(.button-outlined), [class*="plan"] a.button-tertiary:not(.button-outlined)', find: async (p) => await pick(p, '[class*="price-list"] a, [class*="plan"] a, [class*="credits-plan"] a', (el, r) => {
+      if (!/get started/i.test(el.innerText || '')) return Infinity;
+      if (el.closest('header, .unified-header')) return Infinity;
+      if (r.y < 200) return Infinity;
+      if (el.classList.contains('button-outlined') || el.classList.contains('sign-up')) return Infinity;
+      const card = el.closest('li, [class*="card"], [class*="plan"]');
+      if (!card || !/recommended/i.test(card.innerText || '')) return Infinity;
+      return r.y;
+    }, 'cf'), states: ['default', 'hover', 'pressed'] },
 ];
 
 const DETAIL = [
@@ -519,6 +555,9 @@ for (const [key, g] of Object.entries(GROUPS)) {
         v.run = new Date().toISOString();
         comp.states[name] = v;
         log(' ', spec.key, name, 'ok');
+        // Put the control back only after this state's reading is stored, so a
+        // restore cannot overwrite the changed state with the resting one.
+        if (st && typeof st === 'object' && st.restore) await st.restore(loc);
       } catch (e) {
         // A failed rerun records the error beside the last good reading, not
         // over it — a good saved state outlives a transient failure.

@@ -13,16 +13,16 @@
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--light-color-text-body, #222); background: var(--light-color-bg-page, #fff); }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--color-text-body, #222); background: var(--color-bg-page, #fff); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.01em; }
-h2.sh { font: 700 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--light-color-action-outline, #e2e4e8); }
+h2.sh { font: 700 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-action-outline, #e2e4e8); }
 .lead { max-width: 62ch; opacity: .8; }
 .note { font-size: 13px; opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; color: var(--light-color-text-link, #09f); }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--color-text-link, #09f); }
 .pal-h { font: 700 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.onDark { padding: 10px; border-radius: 12px; background: var(--light-component-dark-ground, #111); color: #fff; }
+.pal.onDark { padding: 10px; border-radius: 12px; background: var(--component-dark-ground, #111); color: #fff; }
 .sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
 .sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); display: inline-flex; flex: 0 0 auto; }
 .sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
@@ -32,50 +32,50 @@ code { font-family: var(--sg-mono); font-size: .9em; color: var(--light-color-te
 .kv b { font-weight: 600; }
 .kv span { opacity: .65; }
 /* ---- mocks ---- */
-.mock { border: 1px solid var(--light-color-action-outline, #e2e4e8); overflow: hidden; background: var(--light-color-bg-page, #fff); color: var(--light-color-text-body, #222); border-radius: var(--component-card-plan-radius, 16px); }
-.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-header-height, 64px); padding: 0 20px; font-size: 14px; border-bottom: 1px solid var(--light-color-action-outline, #e2e4e8); background: var(--light-color-bg-page, #fff); }
+.mock { border: 1px solid var(--color-action-outline, #e2e4e8); overflow: hidden; background: var(--color-bg-page, #fff); color: var(--color-text-body, #222); border-radius: var(--component-card-plan-radius, 16px); }
+.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-header-height, 64px); padding: 0 20px; font-size: 14px; border-bottom: 1px solid var(--color-action-outline, #e2e4e8); background: var(--color-bg-page, #fff); }
 .topbar .wm { font-weight: 900; font-size: 19px; letter-spacing: -0.02em; }
 .topbar .nav { opacity: .8; display: flex; gap: 16px; font-size: 13px; }
-.topbar .search { flex: 1; display: flex; align-items: center; gap: 8px; height: var(--component-input-search-height, 40px); padding: 0 14px; border: 1px solid var(--light-component-input-searchBorder, #e2e4e8); border-radius: var(--component-input-search-radius, 20px); background: var(--light-component-input-searchBg, #fff); color: var(--light-color-text-muted, #666); font-size: 13px; max-width: 380px; margin: 0 12px; }
+.topbar .search { flex: 1; display: flex; align-items: center; gap: 8px; height: var(--component-input-search-height, 40px); padding: 0 14px; border: 1px solid var(--component-input-searchBorder, #e2e4e8); border-radius: var(--component-input-search-radius, 20px); background: var(--component-input-searchBg, #fff); color: var(--color-text-muted, #666); font-size: 13px; max-width: 380px; margin: 0 12px; }
 .topbar .sp { flex: 0 0 auto; margin-left: auto; display: flex; gap: 10px; align-items: center; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-small-height, 40px); padding: 0 18px; font-size: 14px; font-weight: 700; border-radius: 9999px; border: 1px solid transparent; font-family: var(--sg-sans); }
-.btn.primary { background: var(--light-color-action-fill, #111); color: var(--light-color-action-onFill, #fff); }
-.btn.outlined { background: transparent; border-color: var(--light-color-action-outline, #111); color: var(--light-color-action-outlineInk, #111); }
+.btn.primary { background: var(--color-action-fill, #111); color: var(--color-action-onFill, #fff); }
+.btn.outlined { background: transparent; border-color: var(--color-action-outline, #111); color: var(--color-action-outlineInk, #111); }
 .btn.big { height: var(--component-button-hero-height, 52px); padding: 0 28px; font-size: 16px; }
 .hero { padding: 44px 40px 36px; }
 .hero h3 { font: 900 44px/1.12 var(--sg-sans); letter-spacing: -0.01em; margin: 0 0 14px; max-width: 14ch; }
-.prompt { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border: 1px solid var(--light-color-action-outline, #e2e4e8); border-radius: var(--component-promptField-radius, 20px); background: var(--light-component-promptCard-fieldBg, #fff); color: var(--light-color-text-muted, #666); font-size: 15px; margin: 0 0 16px; max-width: 520px; }
+.prompt { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border: 1px solid var(--color-action-outline, #e2e4e8); border-radius: var(--component-promptField-radius, 20px); background: var(--component-promptCard-fieldBg, #fff); color: var(--color-text-muted, #666); font-size: 15px; margin: 0 0 16px; max-width: 520px; }
 .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
-.tab { display: inline-flex; align-items: center; height: var(--component-tab-height, 40px); padding: 0 16px; border-radius: var(--component-tab-radius, 9999px); border: 1px solid var(--light-color-action-outline, #e2e4e8); background: var(--light-component-tab-fill, #fff); font-size: 13px; font-weight: 600; }
-.tab.on { background: var(--light-component-tab-activeFill, #111); color: var(--light-component-tab-activeInk, #fff); border-color: transparent; }
+.tab { display: inline-flex; align-items: center; height: var(--component-tab-height, 40px); padding: 0 16px; border-radius: var(--component-tab-radius, 9999px); border: 1px solid var(--color-action-outline, #e2e4e8); background: var(--component-tab-fill, #fff); font-size: 13px; font-weight: 600; }
+.tab.on { background: var(--component-tab-activeFill, #111); color: var(--component-tab-activeInk, #fff); border-color: transparent; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; padding: 22px 40px 40px; }
-.acard { border: 1px solid var(--light-color-action-outline, #eee); border-radius: var(--component-card-applet-radius, 16px); padding: 18px; background: var(--light-component-card-appletBg, #fff); }
+.acard { border: 1px solid var(--color-action-outline, #eee); border-radius: var(--component-card-applet-radius, 16px); padding: 18px; background: var(--component-card-appletBg, #fff); }
 .acard .svc { display: flex; gap: 6px; margin-bottom: 12px; }
 .chip { width: var(--component-serviceIcon-size, 40px); height: var(--component-serviceIcon-size, 40px); border-radius: var(--component-serviceIcon-radius, 10px); display: inline-flex; align-items: center; justify-content: center; font: 700 12px/1 var(--sg-sans); color: #fff; }
 .acard b { display: block; font: 700 15px/1.45 var(--sg-sans); margin-bottom: 8px; }
 .acard .sub { font-size: 12.5px; opacity: .6; }
 /* the dark painted surfaces, as the explore hero and detail heroes paint them */
-.darkhero { background: var(--light-component-dark-ground, #111); color: #fff; padding: 40px; border-radius: 0; }
+.darkhero { background: var(--component-dark-ground, #111); color: #fff; padding: 40px; border-radius: 0; }
 .darkhero h3 { font: 900 34px/1.15 var(--sg-sans); margin: 0 0 18px; }
-.darkhero .svc-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--component-serviceChip-radius, 9999px); background: var(--light-component-dark-chipBg, #222); color: var(--light-component-dark-chipInk, #fff); font-size: 13px; font-weight: 600; margin: 0 6px 6px 0; }
-.darkhero .pc { margin-top: 18px; padding: 16px 18px; border-radius: var(--component-promptCard-radius, 20px); background: #fff; color: var(--light-color-text-muted, #666); font-size: 14px; max-width: 460px; }
-.darkhero .wbtn { margin-top: 16px; display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 9999px; background: var(--light-component-dark-actionFill, #fff); color: var(--light-component-dark-actionInk, #111); font-weight: 700; font-size: 14px; }
+.darkhero .svc-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--component-serviceChip-radius, 9999px); background: var(--component-dark-chipBg, #222); color: var(--component-dark-chipInk, #fff); font-size: 13px; font-weight: 600; margin: 0 6px 6px 0; }
+.darkhero .pc { margin-top: 18px; padding: 16px 18px; border-radius: var(--component-promptCard-radius, 20px); background: #fff; color: var(--color-text-muted, #666); font-size: 14px; max-width: 460px; }
+.darkhero .wbtn { margin-top: 16px; display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 9999px; background: var(--component-dark-actionFill, #fff); color: var(--component-dark-actionInk, #111); font-weight: 700; font-size: 14px; }
 /* plans */
 .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 0; }
-.pcard { border: 1px solid var(--light-color-action-outline, #e2e4e8); border-radius: var(--component-card-plan-radius, 16px); padding: 20px; background: #fff; }
-.pcard.rec { background: var(--light-component-planCard-recommendedBg, #fff); }
-.pcard .ribbon { display: inline-block; font: 700 10px/1 var(--sg-sans); letter-spacing: .1em; color: #fff; background: var(--light-color-action-fill, #111); padding: 5px 10px; border-radius: 9999px; margin-bottom: 10px; }
+.pcard { border: 1px solid var(--color-action-outline, #e2e4e8); border-radius: var(--component-card-plan-radius, 16px); padding: 20px; background: #fff; }
+.pcard.rec { background: var(--component-planCard-recommendedBg, #fff); }
+.pcard .ribbon { display: inline-block; font: 700 10px/1 var(--sg-sans); letter-spacing: .1em; color: #fff; background: var(--color-action-fill, #111); padding: 5px 10px; border-radius: 9999px; margin-bottom: 10px; }
 .pcard .price { font: 900 30px/1.1 var(--sg-sans); margin: 6px 0 2px; }
 .pcard ul { margin: 12px 0; padding: 0; list-style: none; font-size: 13px; }
 .pcard li { padding: 3px 0 3px 20px; position: relative; }
 .pcard li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; }
 .switchrow { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; font-size: 14px; font-weight: 600; }
-.sw-field { width: var(--component-switch-width, 52px); height: var(--component-switch-height, 28px); border-radius: var(--component-switch-radius, 9999px); background: var(--light-component-switch-trackOn, #111); position: relative; display: inline-block; }
+.sw-field { width: var(--component-switch-width, 52px); height: var(--component-switch-height, 28px); border-radius: var(--component-switch-radius, 9999px); background: var(--component-switch-trackOn, #111); position: relative; display: inline-block; }
 .sw-field i { position: absolute; top: 3px; right: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; }
-.badge { display: inline-block; font: 700 11px/1 var(--sg-sans); padding: 5px 9px; border-radius: 9999px; background: var(--light-component-badge-bg, #d7f5e0); color: var(--light-component-badge-ink, #0a7a3f); }
+.badge { display: inline-block; font: 700 11px/1 var(--sg-sans); padding: 5px 9px; border-radius: 9999px; background: var(--component-badge-bg, #d7f5e0); color: var(--component-badge-ink, #0a7a3f); }
 table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--light-color-action-outline, #e2e4e8); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--light-color-action-outline, #e2e4e8); }
+table.cmp td, table.cmp th { border: 1px solid var(--color-action-outline, #e2e4e8); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-action-outline, #e2e4e8); }
 .tr .ts { font-family: var(--sg-sans); }
 .tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
@@ -162,7 +162,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   // The light set's own roles, then the dark painted sections, each scoped
   // so a dark-painted swatch reads its token against its own ground.
   const lset = TOK.light || {};
-  const swatch = (n, t) => `<div class="sw"><span class="dot"><i style="background:var(${cssname('light.' + n)})"></i></span><div><div class="nm">${esc('light.' + n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+  const swatch = (n, t) => `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
   const roles = flat(lset.color || {}, 'color.').filter(([, t]) => t.t === 'color');
   if (roles.length) {
     h += `<div class="pal-h">light roles — the only theme: white ground, near-black ink, the black action pill</div><div class="pal">`;
@@ -172,7 +172,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   const dark = flat((lset.component || {}).dark || {}, 'component.dark.').filter(([, t]) => t.t === 'color');
   if (dark.length) {
     h += `<div class="pal-h">dark painted sections — /explore and the detail heroes (component tokens, not a theme)</div><div class="pal onDark">`;
-    for (const [n, t] of dark) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname('light.' + n)})"></i></span><div><div class="nm">${esc('light.' + n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    for (const [n, t] of dark) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }
   const rest = flat(lset.component || {}, 'component.').filter(([n, t]) => t.t === 'color' && !n.startsWith('component.dark.'));
@@ -207,7 +207,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
   let e = '';
   for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
-  const comp = flat((TOK.core || {}).component || {}, 'component.').filter(([n, t]) => t.t === 'other' && n.endsWith('Shadow'));
+  const comp = flat((TOK.core || {}).component || {}, 'component.').filter(([n, t]) => t.t === 'other' && (n.endsWith('.shadow') || n.endsWith('Shadow')));
   for (const [n, t] of comp) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
   $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
 })();

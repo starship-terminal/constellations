@@ -325,24 +325,7 @@ Featured tab, active. The resting "Popular" tab — the selected pill state.
 
 Page: home. Selector: `button.featured-tab.active`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 142 x 48 |
-| Padding | 11px 19px |
-| Border | 1px solid #111111 |
-| Radius | 8px |
-| Background | #111111 |
-| Box shadow | none |
-| Outline | none |
-| Font | Museo Sans Rounded 18px/24px 700 |
-| Letter spacing | normal |
-| Colour | #ffffff |
-| Transition | background-color 0.2s ease |
-| Cursor | pointer |
-| Painted layers | button.featured-tab.active 142.0x48.0 bg #111111 border T:1px solid #111111 / R:1px solid #111111 / B:1px solid #111111 / L:1px solid #111111 r 8px |
-| How | resting state |
-
-Crops: `featured-tab-active-default.png`.
+Selector missed the element. The saved element is the Smart home tab (text "Smart home", classes "featured-tab active"), left selected by the featured-tab reading. It is not the resting Popular tab. The style is kept on featured-tab's selected state, which is that same reading. Not republished as the Popular default.
 
 #### service-chip
 
@@ -508,27 +491,7 @@ Prompt card. The white card holding the prompt field and its "Start building" su
 
 Page: explore. Selector: `[class*="prompt"]`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 1440 x 579.36 |
-| Padding | 108px 48px |
-| Gap | 40px |
-| Border | none |
-| Radius | 0px |
-| Background | #111111 |
-| Background image | url(…) |
-| Box shadow | none |
-| Outline | none |
-| Font | Museo Sans Rounded 18px/21.6px 500 |
-| Letter spacing | normal |
-| Colour | #111111 |
-| Text node | span.explore-hero-title-lead: Museo Sans Rounded 32px/41.6px 700, #ffffff |
-| Transition | none |
-| Icon | 16 x 16, colour #ffffff |
-| Painted layers | section.explore-prompt-hero.explore-prompt-hero-ifttt-ai 1440.0x579.4 bg #111111; span.explore-hero-service-icon 40.0x40.0 bg #ec7505 r 12px; span.explore-hero-service-icon 40.0x40.0 bg #e60023 r 12px; span.explore-hero-service-icon 40.0x40.0 bg #0099ff r 12px; span.explore-hero-service-icon 40.0x40.0 bg #0062fe r 12px; span.explore-hero-service-icon 40.0x40.0 bg #ff0000 r 12px |
-| How | resting state |
-
-Crops: none.
+Selector missed the element. The saved element is section.explore-prompt-hero (1440 x 579, background #111111), the dark hero, not the white prompt card. No card-sized white ancestor is in the saved paint layers, so the card's size, radius and shadow are unmeasured. Not republished as the prompt card.
 
 #### explore-service-chip
 
@@ -771,25 +734,7 @@ Crops: `billing-toggle-wrap-default.png`.
 
 Page: plans. Selector: `span, div`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 193 x 56 |
-| Padding | 4px |
-| Gap | 16px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Museo Sans Rounded 18px/21.6px 500 |
-| Letter spacing | normal |
-| Colour | #111111 |
-| Text node | span.credits-plans-toggle-label.is-active: Museo Sans Rounded 16px/20.8px 700, #111111 |
-| Transition | none |
-| Painted layers | button.switch-field 48.0x32.0 bg #111111 @ 0.4 r 16px; span.switch-field-knob 28.0x28.0 bg #ffffff r 50%; span.credits-plans-save 65.0x20.6 bg #0dd14e r 6px |
-| How | resting state |
-
-Crops: `save-badge-default.png`.
+Selector missed the element. The saved element is div.credits-plans-toggle (193 x 56, text "Monthly Yearly SAVE 30%"), the whole billing row. span.credits-plans-save appears only as a paint-layer size (65.0x20.6, bg rgb(13, 209, 78), radius 6px) with no computed style of its own, so the badge's fill, ink and type are unmeasured. Not republished as the badge.
 
 #### plan-card
 
@@ -925,25 +870,7 @@ Plan CTA on the recommended card. The filled "Get started" on the Pro card — m
 
 Page: plans. Selector: `a.button-tertiary:not(.button-outlined)`. States: default, hover, pressed.
 
-| Property | default | hover | pressed |
-|---|---|---|---|
-| Size (w x h) | 162 x 54 | = | = |
-| Padding | 0px 28px | = | = |
-| Border | none | = | = |
-| Radius | 64px | = | = |
-| Background | #111111 | = | #111111 @ 0.6 |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Museo Sans Rounded 20px/22px 900 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #ffffff | = | = |
-| Transition | none | = | = |
-| Cursor | pointer | = | = |
-| Painted layers | a.button-tertiary.sign-up 162.0x54.0 bg #111111 r 64px | = | a.button-tertiary.sign-up 162.0x54.0 bg #111111 @ 0.6 r 64px |
-| How | resting state | mouse hover over the element | CDP CSS.forcePseudoState(:active:hover) — no real press |
-| Opacity | - | 0.8 | = |
-
-Crops: `plan-cta-filled-default.png`, `plan-cta-filled-hover.png`, `plan-cta-filled-pressed.png`.
+Selector missed the element. The saved element is a.button-tertiary.sign-up at y 22.5 (162 x 54), the header signup. The recommended card's filled CTA was not the element measured. Not republished as the plan CTA.
 
 ### Detail pages
 

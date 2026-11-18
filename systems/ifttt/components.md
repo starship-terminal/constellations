@@ -60,7 +60,7 @@ Screenshots are named `{page}-light-{state}.png`: IFTTT paints one theme on ever
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 4 components were given a real keyboard focus. 0 draw an outline ring: . The other 4 show no measured change: `nav-login`, `nav-signup`, `hero-submit`, `secondary-cta`.
+**Focus.** 4 components were given a real keyboard focus. 3 change their fill: `nav-signup`, `hero-submit`, `secondary-cta`. The other 1 show no measured change: `nav-login`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -82,7 +82,6 @@ Values that apply across entries, from the measurement files.
 | [Story card](#story-card) | 432 x 296.19 | - | 24px | transparent | none | 0 |
 | [Plan card (Free)](#plan-card-free) | 310 x 434.14 | 2px solid rgba(17, 17, 17, 0.1) `core.palette.pba1717` | 16px | #ffffff `light.color.bg.page` | none | 26px 22px 22px 22px |
 | [Plan card, recommended (Pro)](#plan-card-recommended-pro) | 310 x 456.14 | T: 24px solid #111111 `light.color.action.fill`; R: 2px solid #111111 `light.color.action.fill`; B: 2px solid #111111 `light.color.action.fill`; L: 2px solid #111111 `light.color.action.fill` | 16px | #ffffff `light.color.bg.page` | none | 26px 22px 22px 22px |
-| [Prompt card](#prompt-card) | 1440 x 579.36 | - | - | #111111 `light.color.action.fill` | none | 108px 48px |
 | ["Try these examples" card](#try-these-examples-card) | 660 x 111.36 | - | - | transparent | none | 0 |
 | [Header search field](#header-search-field) | 400 x 48 | 2px solid rgba(255, 255, 255, 0.3) `light.component.input.searchBorder` | 32px | #111111 `light.color.action.fill` | none | 12px 44px |
 | ["Describe what you'd like to build" field](#describe-what-youd-like-to-build-field) | 628 x 78 | - | - | transparent | none | 8px |
@@ -225,9 +224,7 @@ States read on 2026-11-17T21:19:11.102Z (default); 2026-11-17T21:19:13.064Z (hov
 The resting "Popular" tab — the selected pill state. Read as `featured-tab-active` on the home page.
 Read on 2026-11-17T21:19:16.438Z.
 
-**Values (default).** size 142 x 48; padding 11px 19px; border 1px solid #111111 `light.color.action.fill`; radius 8px; background #111111 `light.color.action.fill`; text Museo Sans Rounded 18/24 700, #ffffff `light.color.bg.page`; transition background-color 0.2s ease.
-
-![Featured tab, active default](components/crops/featured-tab-active-default.png)
+**Selector missed the element.** The saved element is the Smart home tab (text "Smart home", classes "featured-tab active"), left selected by the featured-tab reading. It is not the resting Popular tab. The style is kept on featured-tab's selected state, which is that same reading. Not republished as the Popular default. The saved style is not published as this component's measurement.
 
 #### Service icon chip
 One floating service icon in the hero automation canvas — the rounded-square brand tiles that drift across the hero. Read as `service-chip` on the home page.
@@ -293,9 +290,7 @@ States read on 2026-11-17T21:05:21.895Z (default); 2026-11-17T21:05:25.024Z (foc
 The white card holding the prompt field and its "Start building" submit inside the dark hero. Read as `explore-prompt-card` on the explore page.
 Read on 2026-11-17T21:05:43.664Z.
 
-**Values (default).** size 1440 x 579.36; padding 108px 48px; background #111111 `light.color.action.fill`; image url(…); text Museo Sans Rounded 32/41.6 700, #ffffff `light.color.bg.page`; icon 16 x 16, #ffffff `light.color.bg.page`.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+**Selector missed the element.** The saved element is section.explore-prompt-hero (1440 x 579, background #111111), the dark hero, not the white prompt card. No card-sized white ancestor is in the saved paint layers, so the card's size, radius and shadow are unmeasured. Not republished as the prompt card. The saved style is not published as this component's measurement.
 
 #### Service chip in hero
 a.explore-hero-service — a service name chip ("Pinterest") in the "Automate X with Y" cycler. Read as `explore-service-chip` on the explore page.
@@ -400,11 +395,7 @@ Child layers that carry the look: button 48x32 background rgba(17, 17, 17, 0.4) 
 The green discount badge beside the yearly label. Read as `save-badge` on the plans page.
 Read on 2026-11-17T20:33:21.572Z.
 
-**Values (default).** size 193 x 56; padding 4px; background transparent; text Museo Sans Rounded 16/20.8 700, #111111 `light.color.action.fill`; layers button.switch-field 48.0x32.0 rgba(17, 17, 17, 0.4) 16px; span.switch-field-knob 28.0x28.0 #ffffff 50%; span.credits-plans-save 65.0x20.6 #0dd14e 6px.
-
-Child layers that carry the look: button 48x32 background rgba(17, 17, 17, 0.4) `light.component.switch.trackOff` radius 16px; span 28x28 background #ffffff `light.color.bg.page` radius 50%; span 65x20.6 background #0dd14e `core.palette.saveGreen` radius 6px.
-
-!["SAVE 30%" badge default](components/crops/save-badge-default.png)
+**Selector missed the element.** The saved element is div.credits-plans-toggle (193 x 56, text "Monthly Yearly SAVE 30%"), the whole billing row. span.credits-plans-save appears only as a paint-layer size (65.0x20.6, bg rgb(13, 209, 78), radius 6px) with no computed style of its own, so the badge's fill, ink and type are unmeasured. Not republished as the badge. The saved style is not published as this component's measurement.
 
 #### Plan card (Free)
 A pricing card: name, $ price, credits line, feature list with check icons and a "Get started" outline CTA. Read as `plan-card` on the plans page.
@@ -453,13 +444,7 @@ States read on 2026-11-17T20:33:29.753Z (default); 2026-11-17T20:33:31.603Z (hov
 The filled "Get started" on the Pro card — measured, never followed. Read as `plan-cta-filled` on the plans page.
 States read on 2026-11-17T20:33:33.918Z (default); 2026-11-17T20:33:35.766Z (hover); 2026-11-17T20:33:37.063Z (pressed).
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 162 x 54; padding 0px 28px; radius 64px; background #111111 `light.color.action.fill`; text Museo Sans Rounded 20/22 900, #ffffff `light.color.bg.page` |
-| hover | opacity 0.8 |
-| pressed | background rgba(17, 17, 17, 0.6) `core.palette.grey` |
-
-![Plan CTA on the recommended card default](components/crops/plan-cta-filled-default.png) ![Plan CTA on the recommended card hover](components/crops/plan-cta-filled-hover.png) ![Plan CTA on the recommended card pressed](components/crops/plan-cta-filled-pressed.png)
+**Selector missed the element.** The saved element is a.button-tertiary.sign-up at y 22.5 (162 x 54), the header signup. The recommended card's filled CTA was not the element measured. Not republished as the plan CTA. The saved style is not published as this component's measurement.
 
 ### Detail pages
 

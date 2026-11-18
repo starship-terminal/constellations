@@ -3,14 +3,15 @@
   "readAt": "2026-11-18",
   "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
   "source": "public pages, headless Chromium, read at rest",
-  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial.",
+  "rebuilt": "outcomes recomputed from the saved base/reduced pairs by tools/capture/motion.mjs; the site was not recaptured"
  },
  "summary": {
   "moving": 565,
   "removed": 254,
   "reduced": 0,
-  "kept": 259,
-  "partial": 52,
+  "kept": 311,
+  "partial": 0,
   "increased": 0,
   "added": 0,
   "behaviour": "partial",
@@ -3957,11 +3958,11 @@
     "moving": 122,
     "removed": 0,
     "reduced": 0,
-    "kept": 88,
-    "partial": 34,
+    "kept": 122,
+    "partial": 0,
     "increased": 0,
     "added": 0,
-    "behaviour": "partial",
+    "behaviour": "ignores",
     "loops": []
    },
    "groups": [
@@ -4039,7 +4040,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "kept",
      "items": [
       {
        "kind": "transition",
@@ -4051,7 +4052,7 @@
       {
        "kind": "transition",
        "key": "visibility",
-       "outcome": "removed",
+       "outcome": "kept",
        "from": 0,
        "to": 0
       }
@@ -4956,11 +4957,11 @@
     "moving": 74,
     "removed": 0,
     "reduced": 0,
-    "kept": 56,
-    "partial": 18,
+    "kept": 74,
+    "partial": 0,
     "increased": 0,
     "added": 0,
-    "behaviour": "partial",
+    "behaviour": "ignores",
     "loops": []
    },
    "groups": [
@@ -5038,7 +5039,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "kept",
      "items": [
       {
        "kind": "transition",
@@ -5050,7 +5051,7 @@
       {
        "kind": "transition",
        "key": "visibility",
-       "outcome": "removed",
+       "outcome": "kept",
        "from": 0,
        "to": 0
       }

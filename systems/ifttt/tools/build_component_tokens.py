@@ -173,7 +173,10 @@ if L_PATH.exists():
 semantic("hero-submit", "backgroundColor", "color.action.fill", "primary action fill")
 semantic("hero-submit", "color", "color.action.onFill", "ink on the primary fill")
 semantic("hero-submit", "backgroundColor", "color.action.hoverFill", "primary fill on hover", state="hover")
-semantic("plan-cta-filled", "backgroundColor", "color.action.navFill", "filled CTA pill on the white surfaces")
+# color.action.navFill was read from plan-cta-filled, whose saved element is
+# the header signup, not the plan card. nav-signup already records the
+# dark-hero header pill. The light-header fill is not re-sourced from the
+# mis-keyed reading.
 semantic("plan-cta", "borderTopColor", "color.action.outline", "outlined pill border")
 semantic("plan-cta", "color", "color.action.outlineInk", "outlined pill ink")
 semantic("nav-login", "borderTopColor", "component.dark.outline", "outlined pill border on the dark heroes")
@@ -183,12 +186,14 @@ semantic("nav-signup", "color", "component.dark.navFillInk", "header 'Get starte
 semantic("secondary-cta", "borderTopColor", "color.action.secondaryOutline", "secondary CTA border")
 semantic("secondary-cta", "color", "color.action.secondaryInk", "secondary CTA ink")
 semantic("plan-cta", "borderTopColor", "component.planCard.ctaBorder", "plan card CTA border")
-semantic("plan-cta-filled", "backgroundColor", "component.planCard.ctaFill", "recommended plan CTA fill")
+# plan-cta-filled's saved reading is the header signup, not the Pro card CTA.
+# The token is omitted until a scoped recapture measures the card button.
 
 # links + badges
 semantic("prose-link", "color", "color.text.link", "link ink in prose")
-semantic("save-badge", "backgroundColor", "component.badge.bg", "'SAVE 30%' badge fill")
-semantic("save-badge", "color", "component.badge.ink", "'SAVE 30%' badge ink")
+# save-badge's saved reading is the whole billing row (transparent, 193x56),
+# and its paint layers are the switch, not a measured badge style. No badge
+# fill or ink is invented from that row.
 
 # dark-painted surfaces and their on-colour ink
 semantic("explore-hero", "backgroundColor", "component.dark.heroBg", "explore dark hero ground")
@@ -214,8 +219,11 @@ semantic("plan-card-recommended", "backgroundColor", "component.planCard.recomme
 semantic("billing-toggle", "backgroundColor", "component.switch.trackOn", "billing switch track (on)")
 semantic("billing-toggle", "backgroundColor", "component.switch.trackOff", "billing switch track (off)", state="toggled")
 semantic("featured-tab", "backgroundColor", "component.tab.fill", "featured tab fill")
-semantic("featured-tab-active", "backgroundColor", "component.tab.activeFill", "featured tab fill, active")
-semantic("featured-tab-active", "color", "component.tab.activeInk", "featured tab ink, active")
+# featured-tab-active's saved default is the Smart home tab left selected.
+# The selected state of featured-tab is that same reading, stored under the
+# state it belongs to.
+semantic("featured-tab", "backgroundColor", "component.tab.activeFill", "featured tab fill, active", state="selected")
+semantic("featured-tab", "color", "component.tab.activeInk", "featured tab ink, active", state="selected")
 
 # ----------------------------------------------------- literal palette
 # IFTTT's Sass-compiled classes hard-code their colours; literals already
@@ -353,7 +361,8 @@ radius_tok("plan-cta", "default", "button.planCta.radius", "plan CTA corner")
 radius_tok("connect-toggle", "default", "connectToggle.radius", "Connect toggle corner")
 radius_tok("nav-search", "default", "input.search.radius", "search field corner")
 radius_tok("hero-prompt", "default", "promptField.radius", "prompt textarea corner")
-radius_tok("explore-prompt-card", "default", "promptCard.radius", "prompt card corner")
+# explore-prompt-card's saved reading is the dark hero (section, 1440x579,
+# radius 0). The card's corner is not in that reading, so it is not emitted.
 radius_tok("share-url-field", "default", "input.shareField.radius", "share URL field corner")
 radius_tok("featured-tab", "default", "tab.radius", "featured tab corner")
 radius_tok("billing-toggle", "default", "switch.radius", "billing switch corner")
@@ -373,7 +382,8 @@ for comp, st, path, label in [
     ("applet-card", "default", "card.applet.shadow", "applet card shadow"),
     ("service-card", "default", "card.service.shadow", "service card shadow"),
     ("plan-card-recommended", "default", "card.planRecommended.shadow", "recommended card shadow"),
-    ("explore-prompt-card", "default", "promptCard.shadow", "prompt card shadow"),
+    # explore-prompt-card's saved element is the hero, whose shadow is none.
+    # The card's shadow is not in the reading.
     ("site-header", "default", "header.shadow", "header shadow"),
 ]:
     v = style_of(comp, st, "boxShadow")

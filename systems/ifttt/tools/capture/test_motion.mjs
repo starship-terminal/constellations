@@ -189,6 +189,19 @@ test('more motion under reduce is never a reduction', () => {
   assert.equal(smooth.outcome, 'increased');
 });
 
+test('an unchanged delay is kept, including a zero-duration visibility delay', () => {
+  // IFTTT tooltips: visibility changes after 300ms with duration 0, in both modes.
+  const tip = motionOf({ transitionProperty: 'opacity, visibility', transitionDuration: '300ms, 0s', transitionTimingFunction: 'ease, linear', transitionDelay: '0s, 300ms' });
+  const d = diffMotion(tip, tip);
+  assert.deepEqual(d.items.map((i) => [i.key, i.outcome]), [['opacity', 'kept'], ['visibility', 'kept']]);
+  assert.equal(d.outcome, 'kept');
+  const dropped = motionOf({ transitionProperty: 'opacity, visibility', transitionDuration: '300ms, 0s', transitionTimingFunction: 'ease, linear', transitionDelay: '0s, 0s' });
+  assert.equal(diffMotion(tip, dropped).items.find((i) => i.key === 'visibility').outcome, 'removed');
+  const sooner = structuredClone(tip);
+  sooner.transitions.find((t) => t.property === 'visibility').delayMs = 50;
+  assert.equal(diffMotion(tip, sooner).items.find((i) => i.key === 'visibility').outcome, 'shortened');
+});
+
 test('an animation paused under reduce is stopped, not kept or looping', () => {
   const run = motionOf({ animationName: 'spin', animationDuration: '1s', animationIterationCount: 'infinite', animationPlayState: 'running' });
   const paused = motionOf({ animationName: 'spin', animationDuration: '1s', animationIterationCount: 'infinite', animationPlayState: 'paused' });

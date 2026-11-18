@@ -3717,6 +3717,7 @@
    "page": "home",
    "url": "https://ifttt.ai/",
    "run": "2026-11-17T21:19:15.346Z",
+   "selectorMiss": "The saved element is the Smart home tab (text \"Smart home\", classes \"featured-tab active\"), left selected by the featured-tab reading. It is not the resting Popular tab. The style is kept on featured-tab's selected state, which is that same reading. Not republished as the Popular default.",
    "states": {
     "default": {
      "tag": "button",
@@ -5031,6 +5032,7 @@
    "page": "explore",
    "url": "https://ifttt.com/explore",
    "run": "2026-11-17T21:05:25.126Z",
+   "selectorMiss": "The saved element is section.explore-prompt-hero (1440 x 579, background #111111), the dark hero, not the white prompt card. No card-sized white ancestor is in the saved paint layers, so the card's size, radius and shadow are unmeasured. Not republished as the prompt card.",
    "states": {
     "default": {
      "tag": "section",
@@ -6828,6 +6830,7 @@
    "page": "plans",
    "url": "https://ifttt.com/plans",
    "run": "2026-11-17T20:33:19.899Z",
+   "selectorMiss": "The saved element is div.credits-plans-toggle (193 x 56, text \"Monthly Yearly SAVE 30%\"), the whole billing row. span.credits-plans-save appears only as a paint-layer size (65.0x20.6, bg rgb(13, 209, 78), radius 6px) with no computed style of its own, so the badge's fill, ink and type are unmeasured. Not republished as the badge.",
    "states": {
     "default": {
      "tag": "div",
@@ -7728,6 +7731,7 @@
    "page": "plans",
    "url": "https://ifttt.com/plans",
    "run": "2026-11-17T20:33:32.911Z",
+   "selectorMiss": "The saved element is a.button-tertiary.sign-up at y 22.5 (162 x 54), the header signup. The recommended card's filled CTA was not the element measured. Not republished as the plan CTA.",
    "states": {
     "default": {
      "tag": "a",

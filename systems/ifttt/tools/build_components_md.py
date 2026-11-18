@@ -440,17 +440,24 @@ for k, c in C.items():
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
+    # A fill change is a measured focus change even when no ring or border appears.
+    fill = s["backgroundColor"] != base["backgroundColor"] and s["backgroundColor"] != "rgba(0, 0, 0, 0)"
     desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
-parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
+    foc.append((k, ring or bool(child_ring), shadow, border, fill, desc))
+with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, fill, r in foc if ring]
+with_shadow = [f"`{k}`" for k, ring, sh, bd, fill, r in foc if not ring and sh]
+with_border = [f"`{k}`" for k, ring, sh, bd, fill, r in foc if not ring and not sh and bd]
+with_fill = [f"`{k}`" for k, ring, sh, bd, fill, r in foc if not ring and not sh and not bd and fill]
+without = [f"`{k}`" for k, ring, sh, bd, fill, r in foc if not ring and not sh and not bd and not fill]
+parts = []
+if with_ring:
+    parts.append(f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}.")
 if with_shadow:
     parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
 if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
+if with_fill:
+    parts.append(f"{len(with_fill)} change their fill: {', '.join(with_fill)}.")
 if without:
     parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
@@ -495,7 +502,7 @@ W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # the card-like components to compare in one table
-for k in ["applet-card", "service-card", "story-card", "plan-card", "plan-card-recommended", "explore-prompt-card", "example-prompt-card", "nav-search", "hero-prompt", "billing-toggle", "featured-tab", "connect-toggle"]:
+for k in ["applet-card", "service-card", "story-card", "plan-card", "plan-card-recommended", "example-prompt-card", "nav-search", "hero-prompt", "billing-toggle", "featured-tab", "connect-toggle"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
@@ -553,6 +560,9 @@ for g in groups:
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
+            continue
+        if c.get("selectorMiss"):
+            W(f"**Selector missed the element.** {c['selectorMiss']} The saved style is not published as this component's measurement.")
             continue
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
