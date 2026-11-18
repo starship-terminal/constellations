@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 210,
-    "system_domains": 201,
-    "matched_domains": 171,
-    "missing_domains": 262,
+    "system_packages": 211,
+    "system_domains": 202,
+    "matched_domains": 172,
+    "missing_domains": 261,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2831,6 +2831,23 @@
         }
       ]
     },
+    "lummi.ai": {
+      "catalog": [
+        {
+          "name": "Lummi",
+          "domain": "lummi.ai",
+          "id": 521
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lummi",
+          "name": "Lummi",
+          "url": "https://www.lummi.ai",
+          "name_match": true
+        }
+      ]
+    },
     "manus.im": {
       "catalog": [
         {
@@ -3245,13 +3262,6 @@
         "name": "Luma AI",
         "domain": "lumalabs.ai",
         "id": 448
-      }
-    ],
-    "lummi.ai": [
-      {
-        "name": "Lummi",
-        "domain": "lummi.ai",
-        "id": 521
       }
     ],
     "macawhq.com": [
