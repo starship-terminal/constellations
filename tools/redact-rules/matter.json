@@ -1,0 +1,10 @@
+{
+  "_note": "Matter publishes hello@getmatter.app and hello@getmatter.com on its public legal pages. Allow those product addresses. No rectangles: the street address on the terms page was not in the OCR hits.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@getmatter\\.app$",
+      "@getmatter\\.com$"
+    ]
+  }
+}
