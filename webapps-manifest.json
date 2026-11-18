@@ -2499,8 +2499,8 @@
     531
    ],
    "description": "Save and Organize Your Favorite Recipes",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/julienne",
    "notes": "",
    "batch": 9
   },
