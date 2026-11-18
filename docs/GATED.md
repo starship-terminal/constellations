@@ -740,10 +740,10 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
 
 ## [Jace AI](../systems/jace) — `jace`
-Access: signed out (marketing routes are public; app.jace.ai/signin was measured at rest, OAuth and SSO never followed, the sales form was focused and a sample string typed then deleted, nothing submitted)
-- the inbox, drafts, labels, Flows, settings and billing sit behind https://app.jace.ai/signin and were never crossed; the sign-in card was measured at rest
-- Continue with Google on https://app.jace.ai/signin is an OAuth flow and was not followed (hover and a DevTools-forced pressed state only)
-- Continue with Outlook on https://app.jace.ai/signin is an OAuth flow and was not followed (hover only)
+Access: signed out (marketing routes are public; app.jace.ai/signin was measured at rest; app.jace.ai/signup was opened through the privacy notice to the Google/Outlook card; there is no email or password field; Google, Outlook and SSO were never pressed; the sales form was focused and a sample string typed then deleted, nothing submitted)
+- the inbox, drafts, labels, Flows, settings and billing sit behind Google or Outlook OAuth on https://app.jace.ai/signin and https://app.jace.ai/signup; there is no email or password field, so those surfaces were not reached
+- Continue with Google on sign-in and signup is an OAuth flow and was not pressed (hover, focus-visible and a DevTools-forced pressed state only)
+- Continue with Outlook on sign-in and signup is an OAuth flow and was not pressed (hover, focus-visible and forced pressed on signup)
 - Enterprise SSO at https://app.jace.ai/enterprise-sso (Launch the SSO portal) was not followed
 - the sales form at https://jace.ai/contact/sales (Send a request) was shown at rest, focused, and a sample string typed then deleted; it was not submitted, so no posted validation error was captured
 - checkout and payment sit behind sign-in and were not opened

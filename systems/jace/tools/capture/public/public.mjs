@@ -1,6 +1,7 @@
 // Captures jace.ai public pages into RAW (full-colour PNGs). quantize.py
-// turns them into screenshots/. Signed-out only. Never follows signup, OAuth,
-// SSO, or a form submit. Consent overlays are hidden, never clicked.
+// turns them into screenshots/. Signed-out only. Follows signup as far as
+// the OAuth card. Never presses Google, Outlook, Apple, SSO, or a form
+// submit. Consent overlays are hidden, never clicked.
 //
 //   PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node public.mjs [page,page]
 import fs from 'fs';
@@ -102,6 +103,19 @@ const desktop = {
     // Boundary: the product sign-in card. No OAuth click, no typing, no submit.
     await S.view('default');
   } },
+  signup: { path: APP + '/signup', abs: true, run: async (p, S) => {
+    // Signup funnel, signed out. Click Continue and Continue to signup only.
+    // Never press Google, Outlook, Apple, or SSO. There is no email field.
+    await S.view('default');
+    await step('privacy', async () => {
+      const b = p.getByRole('button', { name: /^Continue$/ });
+      if (await b.count()) { await b.first().click(); await wait(p, 900); await S.view('privacy'); }
+    });
+    await step('oauth', async () => {
+      const b = p.getByRole('button', { name: /Continue to signup/i });
+      if (await b.count()) { await b.first().click(); await wait(p, 900); await S.view('oauth'); }
+    });
+  } },
   notfound: { path: '/features', run: async (p, S) => { await S.view('default'); } },
 };
 
@@ -114,6 +128,17 @@ const mobile = {
   pricing: { path: '/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
   blog: { path: '/blog', run: async (p, S) => { await S.view('default'); } },
   signin: { path: APP + '/signin', abs: true, run: async (p, S) => { await S.view('default'); } },
+  signup: { path: APP + '/signup', abs: true, run: async (p, S) => {
+    await S.view('default');
+    await step('privacy', async () => {
+      const b = p.getByRole('button', { name: /^Continue$/ });
+      if (await b.count()) { await b.first().click(); await wait(p, 900); await S.view('privacy'); }
+    });
+    await step('oauth', async () => {
+      const b = p.getByRole('button', { name: /Continue to signup/i });
+      if (await b.count()) { await b.first().click(); await wait(p, 900); await S.view('oauth'); }
+    });
+  } },
   docs: { path: '/docs/guides-getting-started', run: async (p, S) => { await S.view('default'); } },
 };
 

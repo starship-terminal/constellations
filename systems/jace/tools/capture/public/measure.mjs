@@ -2,10 +2,11 @@
 //
 //   PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: home pricing blog docs contact signin mobile.
-// The sales form and app.jace.ai/signin are boundaries: fields may be focused,
-// sample text is typed then deleted, and nothing is submitted. OAuth and SSO
-// buttons are measured, never pressed.
+// Pages: home pricing blog docs contact signin signup mobile.
+// The sales form, app.jace.ai/signin and /signup are boundaries: fields may
+// be focused, sample text is typed then deleted, and nothing is submitted.
+// Signup Continue and Continue to signup are clicked to open the OAuth card.
+// Google, Outlook and SSO buttons are measured, never pressed.
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, APP, launch, patch, open, closePromo, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
@@ -24,6 +25,7 @@ const URLS = {
   docs: BASE + '/docs/guides-getting-started',
   contact: BASE + '/contact/sales',
   signin: APP + '/signin',
+  signup: APP + '/signup',
 };
 let page, cdp, current, view, context, run;
 const touched = new Set();
@@ -177,6 +179,7 @@ const G = {
   docs: 'Docs',
   contact: 'Sales contact (boundary)',
   signin: 'App sign-in (boundary)',
+  signup: 'App signup (boundary)',
   mobile: 'Mobile (390 wide)',
 };
 
@@ -271,6 +274,30 @@ async function signin() {
   save();
 }
 
+async function signup() {
+  if (!(await newPage('signup'))) return;
+  const g = G.signup;
+  await S('signup-title', q('h1').first(), ['default'], { group: g, title: 'Signup title', desc: 'The first signup headline (Join +10,000). Boundary: no OAuth.', sel: 'h1' }, { noScroll: true });
+  await S('signup-continue', q('button').filter({ hasText: /^Continue$/ }).first(), B4, { group: g, title: 'Signup Continue', desc: 'The landing Continue control. Clicked once later to open the privacy card; states here are measured first.', sel: 'button Continue' }, { noScroll: true });
+  const cont = q('button').filter({ hasText: /^Continue$/ }).first();
+  if (await cont.count()) {
+    await cont.click().catch(() => {});
+    await page.waitForTimeout(800);
+  }
+  await S('signup-privacy-title', q('h1, h2').filter({ hasText: /privacy/i }).first(), ['default'], { group: g, title: 'Privacy title', desc: 'The privacy notice after Continue. Not a cookie banner.', sel: 'privacy heading' }, { noScroll: true });
+  await S('signup-privacy-continue', q('button').filter({ hasText: /Continue to signup/i }).first(), B4, { group: g, title: 'Continue to signup', desc: 'Advances to the OAuth card. Google and Outlook are not pressed.', sel: 'button Continue to signup' }, { noScroll: true });
+  const next = q('button').filter({ hasText: /Continue to signup/i }).first();
+  if (await next.count()) {
+    await next.click().catch(() => {});
+    await page.waitForTimeout(800);
+  }
+  await S('signup-oauth-title', q('h1').first(), ['default'], { group: g, title: 'Signup OAuth title', desc: 'Sign up with your work email. There is no email field: Google and Outlook only.', sel: 'h1' }, { noScroll: true });
+  await S('signup-google', q('button').filter({ hasText: /Continue with Google/ }).first(), B4, { group: g, title: 'Signup Google', desc: 'Continue with Google on signup. Measured, never pressed.', sel: 'button Continue with Google' }, { noScroll: true });
+  await S('signup-outlook', q('button').filter({ hasText: /Continue with Outlook/ }).first(), ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Signup Outlook', desc: 'Continue with Outlook on signup. Measured, never pressed.', sel: 'button Continue with Outlook' }, { noScroll: true });
+  await S('signup-email', q('input[type="email"], input[name="email"], input[placeholder*="email" i]').first(), ['default'], { group: g, title: 'Signup email field', desc: 'Expected email field. Missing on this product: OAuth only.', sel: 'input email' }, { noScroll: true });
+  save();
+}
+
 async function mobile() {
   if (!(await newPage('home', { mobile: true }))) return;
   const g = G.mobile;
@@ -289,12 +316,12 @@ async function mobile() {
 
 run = '2026-11-18';
 out._meta.read = run;
-out._meta.viewport = '1440 x 900 desktop, 390 x 844 mobile; marketing is light; app.jace.ai/signin is the dark product boundary';
+out._meta.viewport = '1440 x 900 desktop, 390 x 844 mobile; marketing is light; app.jace.ai/signin and /signup are the dark product boundary';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
 const pages = process.argv.slice(2);
-const plan = { home, pricing, blog, docs, contact, signin, mobile };
+const plan = { home, pricing, blog, docs, contact, signin, signup, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 try {
   for (const k of order) await plan[k]();

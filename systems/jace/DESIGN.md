@@ -139,13 +139,13 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: AI email assistant marketing plus a dark product shell: a Next.js/Tailwind v4 cream site (sand #fffefd, ink #2d2d2d, Geist Sans, Gelica display, 9999px pills, lemon #ffdc61 and ember #ff7d55) whose product token layer is a separate custom-property theme (bare :root dark #333437 / #fff2e7, light overrides only under html.light), Inter Variable and Instrument Serif in the product tokens, and a sign-in card of Google, Outlook and SSO.
 
-Captured 2026-11-18, signed out (marketing routes are public; app.jace.ai/signin was measured at rest, OAuth and SSO never followed, the sales form was focused and a sample string typed then deleted, nothing submitted). Themes: light, dark.
+Captured 2026-11-18, signed out (marketing routes are public; app.jace.ai/signin was measured at rest; app.jace.ai/signup was opened through the privacy notice to the Google/Outlook card; there is no email or password field; Google, Outlook and SSO were never pressed; the sales form was focused and a sample string typed then deleted, nothing submitted). Themes: light, dark.
 
-A token set and component reference for Jace AI's public surface, for building a cream marketing page with Gelica display type and pill controls, or a dark product shell that matches the sign-in card. It was read from **jace.ai** and **app.jace.ai/signin** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844.
+A token set and component reference for Jace AI's public surface, for building a cream marketing page with Gelica display type and pill controls, or a dark product shell that matches the sign-in card. It was read from **jace.ai**, **app.jace.ai/signin** and **app.jace.ai/signup** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844.
 
 Jace is an AI email assistant for Gmail and Outlook. The marketing site is a Next.js / Tailwind v4 build that paints one light cream page (`#fffefd` sand, `#2d2d2d` ink, Geist Sans body, Gelica display). The product design system is a separate custom-property layer that loads on the same origin: bare `:root` is the dark product theme (`--surface-default` `#333437`, `--text-body-color-default` `#fff2e7`), and light overrides live in `:root:where(.light, .light *)`. The marketing site does not add class `light`. Sign-in at `app.jace.ai/signin` paints the dark product theme. The product light set is measured from that selector, not observed on a marketing page.
 
-**Boundary:** the inbox, drafts, labels, Flows, settings and billing sit behind sign-in. Google, Outlook and SSO were never followed. The sales form at `/contact/sales` was shown at rest and not submitted.
+**Boundary:** the inbox, drafts, labels, Flows, settings and billing sit behind Google or Outlook OAuth. Signup was opened through the privacy notice to the OAuth card. There is no email or password field. Google, Outlook and SSO were never pressed. The sales form at `/contact/sales` was shown at rest and not submitted.
 
 ## Colors
 
@@ -204,7 +204,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Marketing is not the product light theme.** `light.*` is `html.light`. The cream page uses Tailwind utilities and the computed marketing tokens. Do not treat `#fffefd` as `light.surface.default` (that role is `#fffefd` only because the light product surface happens to share sand-50). Body ink on the marketing site is `#2d2d2d` (`core.color.marketing.ink`), not `light.text.body.default` (`#3e3f40`).
 - **`theme.accent` is not the brand.** `--theme-new-colors-accent` resolves to `#27272a` in both themes (a shadcn zinc). The painted brand is lemon `#ffdc61` (`--button-background-primary`) and ember `#ff7d55` (`core.color.ember.500`, `surface.brand`).
 - **Product type is not what marketing paints.** Tokens name Inter Variable and Instrument Serif. The marketing page computes Geist Sans and Gelica.
-- **Sign-in has no email field.** The card is Google, Outlook, SSO and Sign up. A work-email field in the style guide is a specimen of the sales field, not of sign-in.
+- **Sign-in and signup have no email field.** Both cards are Google and Outlook (sign-in also has SSO). "Work email" is the heading, not a field. A work-email field in the style guide is a specimen of the sales field.
 - **Pressed states are forced.** `CSS.forcePseudoState` applied `:active:hover`. Script-owned mousedown styles are missing.
 - **The Stacey Helbig quote on the sign-in panel is published marketing copy.** It is not a private account.
 - **The sales form ships with sample placeholders** (`John Doe`, `john.doe@company.com`). The committed page shot clears those placeholders before capture so the form reads empty. The filled crop still shows the capture's own `name@example.com`, typed and deleted.
@@ -217,8 +217,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Do paint marketing on sand with Geist body and Gelica display.** Page `#fffefd`, ink `#2d2d2d`, hero at weight 300. See [home-light-default](screenshots/home-light-default.png).
 - **Do use 9999px pills on the marketing site and 6px to 8px radii on product controls.** See [nav-cta-default](components/crops/nav-cta-default.png) and [signin-oauth-default](components/crops/signin-oauth-default.png).
 - **Do treat lemon and ember as the brand, and zinc as the shadcn accent.** Primary pill `#ffdc61`, ember `#ff7d55`. `theme.accent` `#27272a` is not the brand. See [hero-cta-default](components/crops/hero-cta-default.png).
-- **Do keep the product shell dark unless `html.light` is set.** Sign-in is `#333437` with `#fff2e7` text. See [signin-light-default](screenshots/signin-light-default.png).
-- **Don't treat the marketing page as `html.light`.** The class is absent. Product light tokens are a stylesheet reading.
-- **Don't follow Get started, Google, Outlook, SSO or Sign up and call the result public.** Those leave the signed-out surface. See [signin-oauth-default](components/crops/signin-oauth-default.png).
+- **Do keep the product shell dark unless `html.light` is set.** Sign-in and signup are `#333437` with `#fff2e7` text. See [signin-light-default](screenshots/signin-light-default.png).
+- **Don't treat the marketing page as `html.light`.** The class is absent. Product light tokens are a stylesheet reading. See [home-light-default](screenshots/home-light-default.png).
+- **Don't follow Get started, Google, Outlook or SSO and call the result public.** Those leave the signed-out surface. See [signin-oauth-default](components/crops/signin-oauth-default.png).
+- **Don't treat "work email" as a field.** Signup is Google and Outlook only. See [signup-light-oauth](screenshots/signup-light-oauth.png).
 - **Don't copy the wordmark or the homepage SVGs into anything that ships.** They are Jace's marks. See [logo-default](components/crops/logo-default.png).
-- **Don't assume reduced motion stops the marketing motion.** Home and pricing keep their transitions. See [raw/motion.json](raw/motion.json).
+- **Don't assume reduced motion stops the marketing motion.** Home and pricing keep their transitions. See [home-light-default](screenshots/home-light-default.png).

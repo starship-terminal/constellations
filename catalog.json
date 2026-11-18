@@ -16396,7 +16396,7 @@
    ],
    "shape": "reference",
    "captured": "2026-11-18",
-   "access": "signed out (marketing routes are public; app.jace.ai/signin was measured at rest, OAuth and SSO never followed, the sales form was focused and a sample string typed then deleted, nothing submitted)",
+   "access": "signed out (marketing routes are public; app.jace.ai/signin was measured at rest; app.jace.ai/signup was opened through the privacy notice to the Google/Outlook card; there is no email or password field; Google, Outlook and SSO were never pressed; the sales form was focused and a sample string typed then deleted, nothing submitted)",
    "themes": [
     "light",
     "dark"
@@ -16437,7 +16437,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "jace.ai and app.jace.ai/signin in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 90 element crops from the live DOM, plus a stylesheet harvest that resolves the product custom properties on bare :root (dark, the theme sign-in paints) and under html.light (declared, not painted on the marketing site). Marketing paint that the product tokens do not name is stored as core.color.marketing and core.font.marketingSans/marketingDisplay from computed styles. BOUNDARY: the inbox, drafts, labels, Flows, settings, billing and every OAuth/SSO/signup action sit behind sign-in and were never crossed; the sales form was not submitted",
+    "source": "jace.ai, app.jace.ai/signin and app.jace.ai/signup in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 109 element crops from the live DOM, plus a stylesheet harvest that resolves the product custom properties on bare :root (dark, the theme sign-in and signup paint) and under html.light (declared, not painted on the marketing site). Marketing paint that the product tokens do not name is stored as core.color.marketing and core.font.marketingSans/marketingDisplay from computed styles. BOUNDARY: signup was opened through the privacy notice to the OAuth card; there is no email or password field; Google, Outlook and SSO were never pressed, so inbox, drafts, labels, Flows, settings and billing were not reached; the sales form was not submitted",
     "timestamp": "2026-11-18T12:00:00Z",
     "harness": "Grok Build",
     "model": "grok-4.7",
@@ -16458,14 +16458,14 @@
      "/contact/sales",
      "/features",
      "app.jace.ai/signin",
-     "mobile /, /pricing, /blog, /docs and sign-in"
+     "app.jace.ai/signup (landing, privacy, OAuth card)",
+     "mobile /, /pricing, /blog, /docs, sign-in and signup"
     ],
     "gaps": [
-     "the inbox, drafts, labels, Flows, settings and billing sit behind https://app.jace.ai/signin and were never crossed; the sign-in card was measured at rest",
-     "Continue with Google on https://app.jace.ai/signin is an OAuth flow and was not followed (hover and a DevTools-forced pressed state only)",
-     "Continue with Outlook on https://app.jace.ai/signin is an OAuth flow and was not followed (hover only)",
+     "the inbox, drafts, labels, Flows, settings and billing sit behind Google or Outlook OAuth on https://app.jace.ai/signin and https://app.jace.ai/signup; there is no email or password field, so those surfaces were not reached",
+     "Continue with Google on sign-in and signup is an OAuth flow and was not pressed (hover, focus-visible and a DevTools-forced pressed state only)",
+     "Continue with Outlook on sign-in and signup is an OAuth flow and was not pressed (hover, focus-visible and forced pressed on signup)",
      "Enterprise SSO at https://app.jace.ai/enterprise-sso (Launch the SSO portal) was not followed",
-     "Sign up at https://app.jace.ai/signup, and the Get started / Get Started for Free / Try Pro / Start your free trial CTAs that leave for it, were not followed",
      "the sales form at https://jace.ai/contact/sales (Send a request) was shown at rest, focused, and a sample string typed then deleted; it was not submitted, so no posted validation error was captured",
      "checkout and payment sit behind sign-in and were not opened",
      "account deletion and settings sit behind sign-in (public docs mention them) and were not opened",
@@ -16475,8 +16475,8 @@
      "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
      "marketing home and pricing ignore prefers-reduced-motion; sign-in is partial (raw/motion.json)"
     ],
-    "durationMin": 180,
-    "durationNote": "wall-clock across the capture session including kit adaptation, route and DOM probing, the stylesheet harvest, screenshot and measurement passes, and the offline build",
+    "durationMin": 220,
+    "durationNote": "wall-clock across the public capture plus the signup-funnel pass (privacy notice and OAuth card); Google, Outlook and SSO were never pressed",
     "pr": "https://github.com/starship-terminal/constellations/pull/647"
    }
   }

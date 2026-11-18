@@ -1,6 +1,6 @@
 # Jace AI patterns
 
-How the public surfaces combine, read on 2026-11-18, signed out. Marketing pages are a light cream site. The product theme shows up only on the sign-in boundary.
+How the public surfaces combine, read on 2026-11-18, signed out. Marketing pages are a light cream site. The product theme shows up on the sign-in card and the signup funnel.
 
 ## Marketing shell
 
@@ -42,11 +42,23 @@ See [contact-light-default](screenshots/contact-light-default.png) and [text-fie
 
 ## Sign-in (boundary)
 
-`app.jace.ai/signin` is the dark product surface: `#333437` ground, `#fff2e7` body text, Inter Variable in the product tokens. The card offers Continue with Google, Continue with Outlook, Launch the SSO portal, and Sign up. There is no email field on this page. Buttons were hovered and focus-tested. Pressed states were forced in DevTools. No OAuth, SSO or signup flow was followed.
+`app.jace.ai/signin` is the dark product surface: `#333437` ground, `#fff2e7` body text, Inter Variable in the product tokens. The card offers Continue with Google, Continue with Outlook, Launch the SSO portal, and Sign up. There is no email field on this page. Buttons were hovered and focus-tested. Pressed states were forced in DevTools. No OAuth or SSO flow was followed.
 
 See [signin-light-default](screenshots/signin-light-default.png) and [signin-oauth-default](components/crops/signin-oauth-default.png).
 
 The filename says light because the capture route names the marketing theme. The paint is the product dark theme (bare `:root`). The product light theme (`html.light`) is declared and measured from the stylesheet. It is not what this page paints.
+
+## Signup (boundary)
+
+`app.jace.ai/signup` is the same dark product paint. Three screens, in order:
+
+1. Landing: a review carousel, "Join +10,000 people using Jace in their everyday work", a gradient Continue pill. See [signup-light-default](screenshots/signup-light-default.png) and [signup-continue-default](components/crops/signup-continue-default.png).
+2. Privacy: "Your privacy matters", two copy blocks, a gradient Continue to signup pill. This is a product notice, not a cookie banner. See [signup-light-privacy](screenshots/signup-light-privacy.png).
+3. OAuth card: "Sign up with your work email", Continue with Google, Continue with Outlook. There is no email field and no password field. Google and Outlook were measured, never pressed. See [signup-light-oauth](screenshots/signup-light-oauth.png).
+
+Phone 390 keeps the same three screens. See [mobile-signup-light-oauth](screenshots/mobile-signup-light-oauth.png).
+
+The inbox, drafts, labels, Flows and settings sit behind those OAuth buttons and were not reached.
 
 ## What is not on the public surface
 

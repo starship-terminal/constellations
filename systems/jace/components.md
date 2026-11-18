@@ -1,6 +1,6 @@
 # Jace AI components
 
-Public signed-out surfaces measured on 2026-11-18. Marketing pages are light. `app.jace.ai/signin` is the dark product boundary: buttons were measured, never pressed. The sales form was focused and a sample address was typed then deleted. Nothing was submitted.
+Public signed-out surfaces measured on 2026-11-18. Marketing pages are light. `app.jace.ai/signin` and `/signup` are the dark product boundary: Google, Outlook and SSO were measured, never pressed. Signup Continue and Continue to signup were clicked to open the OAuth card. There is no email field. The sales form was focused and a sample address was typed then deleted. Nothing was submitted.
 
 Crops live in [components/crops/](components/crops/). Full pages live in [screenshots/](screenshots/).
 
@@ -48,6 +48,14 @@ Crops live in [components/crops/](components/crops/). Full pages live in [screen
 | Mobile header | Mobile (390 wide) | default | [`m-header-default`](components/crops/m-header-default.png) |
 | Menu button | Mobile (390 wide) | missing |  |
 | Mobile headline | Mobile (390 wide) | default | [`m-hero-default`](components/crops/m-hero-default.png) |
+| Signup title | App signup (boundary) | default | [`signup-title-default`](components/crops/signup-title-default.png) |
+| Signup Continue | App signup (boundary) | default, hover, focus-visible, pressed | [`signup-continue-default`](components/crops/signup-continue-default.png) |
+| Privacy title | App signup (boundary) | default | [`signup-privacy-title-default`](components/crops/signup-privacy-title-default.png) |
+| Continue to signup | App signup (boundary) | default, hover, focus-visible, pressed | [`signup-privacy-continue-default`](components/crops/signup-privacy-continue-default.png) |
+| Signup OAuth title | App signup (boundary) | default | [`signup-oauth-title-default`](components/crops/signup-oauth-title-default.png) |
+| Signup Google | App signup (boundary) | default, hover, focus-visible, pressed | [`signup-google-default`](components/crops/signup-google-default.png) |
+| Signup Outlook | App signup (boundary) | default, hover, focus-visible, pressed | [`signup-outlook-default`](components/crops/signup-outlook-default.png) |
+| Signup email field | App signup (boundary) | missing |  |
 
 ## Shared values
 
@@ -55,10 +63,9 @@ Marketing body text is `rgb(45, 45, 45)` (`#2d2d2d`) in Geist Sans. Display type
 
 ## Gaps
 
-- The signed-in inbox, drafts, labels, Flows, settings and billing sit behind `app.jace.ai/signin`. The sign-in card was captured. Google, Outlook and SSO were not followed.
-- Signup at `app.jace.ai/signup` was not opened.
+- The signed-in inbox, drafts, labels, Flows, settings and billing sit behind Google or Outlook OAuth. Signup was opened through the privacy notice to the OAuth card. There is no email or password field. Google, Outlook and SSO were not pressed.
 - The sales form at `/contact/sales` was not submitted, so a posted validation error was not captured. The empty required field was read at rest.
-- No textarea is on the sales form. The message control is a select (`How can we help?`), not measured as a separate text area. The page ships with sample placeholders, cleared in the committed screenshot.
+- No textarea is on the sales form. The message control is a text field, not a separate text area. The page ships with sample placeholders, cleared in the committed screenshot.
 - The mobile home header has no separate hamburger. Log In and Get started sit in the bar, so the menu-open state is not present.
 - Checkbox, radio, switch, select, toast, dialog, tooltip and table are not on the public pages. The pricing FAQ is an accordion, recorded as the FAQ row.
 - The inbox table in the home hero is a public demo image, not the signed-in app.
