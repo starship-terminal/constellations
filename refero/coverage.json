@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 209,
-    "system_domains": 200,
-    "matched_domains": 170,
-    "missing_domains": 263,
+    "system_packages": 211,
+    "system_domains": 202,
+    "matched_domains": 172,
+    "missing_domains": 261,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2814,6 +2814,40 @@
         }
       ]
     },
+    "lummi.ai": {
+      "catalog": [
+        {
+          "name": "Lummi",
+          "domain": "lummi.ai",
+          "id": 521
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lummi",
+          "name": "Lummi",
+          "url": "https://www.lummi.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "macawhq.com": {
+      "catalog": [
+        {
+          "name": "Macaw",
+          "domain": "macawhq.com",
+          "id": 593
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "macaw",
+          "name": "Macaw",
+          "url": "https://macawhq.com",
+          "name_match": true
+        }
+      ]
+    },
     "manus.im": {
       "catalog": [
         {
@@ -3235,20 +3269,6 @@
         "name": "Luma AI",
         "domain": "lumalabs.ai",
         "id": 448
-      }
-    ],
-    "lummi.ai": [
-      {
-        "name": "Lummi",
-        "domain": "lummi.ai",
-        "id": 521
-      }
-    ],
-    "macawhq.com": [
-      {
-        "name": "Macaw",
-        "domain": "macawhq.com",
-        "id": 593
       }
     ],
     "mailchimp.com": [

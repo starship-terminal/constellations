@@ -1,6 +1,6 @@
 # Typecheck and build the gallery app (web/) whenever it or the data it reads
 # changes. The build prerenders pages from web/data/, so the job generates it
-# first with tools/catalog.py; the checkout has no Git LFS content, so the
+# first with tools/catalog.py. Checkout skips Git LFS smudge, so the
 # thumbnails fall back to the screenshot paths, which the build does not read.
 name: Web
 on:
@@ -16,6 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          lfs: false
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
