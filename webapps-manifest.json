@@ -2994,9 +2994,9 @@
     752
    ],
    "description": "It\u2019s the ultimate reading client for the open web",
-   "status": "pending",
-   "package": null,
-   "notes": "",
+   "status": "captured",
+   "package": "systems/matter",
+   "notes": "public signed-out marketing, a public article, docs, and the reader sign-in card. The reader app sits behind sign-in and was not reached. Subscribe, OAuth, and checkout were not submitted.",
    "batch": 10
   },
   {

@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 212,
-    "system_domains": 203,
-    "matched_domains": 173,
-    "missing_domains": 260,
+    "system_packages": 214,
+    "system_domains": 205,
+    "matched_domains": 175,
+    "missing_domains": 258,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2157,6 +2157,23 @@
         }
       ]
     },
+    "getmatter.com": {
+      "catalog": [
+        {
+          "name": "Matter",
+          "domain": "getmatter.com",
+          "id": 752
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "matter",
+          "name": "Matter",
+          "url": "https://www.getmatter.com",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -2470,6 +2487,23 @@
           "slug": "httpie",
           "name": "HTTPie",
           "url": "https://httpie.io",
+          "name_match": true
+        }
+      ]
+    },
+    "huddlekit.com": {
+      "catalog": [
+        {
+          "name": "Huddlekit",
+          "domain": "huddlekit.com",
+          "id": 901
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "huddlekit",
+          "name": "Huddlekit",
+          "url": "https://huddlekit.com",
           "name_match": true
         }
       ]
@@ -3127,13 +3161,6 @@
         "id": 907
       }
     ],
-    "getmatter.com": [
-      {
-        "name": "Matter",
-        "domain": "getmatter.com",
-        "id": 752
-      }
-    ],
     "getmocha.com": [
       {
         "name": "Mocha",
@@ -3160,13 +3187,6 @@
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "huddlekit.com": [
-      {
-        "name": "Huddlekit",
-        "domain": "huddlekit.com",
-        "id": 901
       }
     ],
     "ifttt.com": [

@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_154 of 212 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_156 of 214 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -442,6 +442,13 @@ Access: signed out (every captured surface is public: the marketing pages, one p
 - the reader app entirely: library, upload, the reader/player, settings and billing live behind /reader/sign-in and were never reached; /reader/sign-in and /reader/sign-up were captured as boundary cards
 - the OAuth buttons were never pressed; the email credential forms were revealed by their own 'with email' toggles (local UI, nothing sent), fields were focused and sample text was typed and deleted - no form was ever submitted, so error/success states are uncaptured
 
+## [Matter](../systems/matter) — `matter`
+Access: signed out (every captured surface is public: the marketing pages, one published article, the docs home and the web reader sign-in card; the reader app sits behind sign-in and was never reached; the email field was focused and never filled; Subscribe was never pressed, so that form was not submitted)
+- the reader app sits behind sign-in at web.getmatter.com and was never reached; the sign-in card was captured as the boundary
+- Continue with Google and Continue with Apple were never pressed; the email field was focused and never filled; the arrow was never pressed, so the form was not submitted
+- the publication Subscribe control was measured and never pressed, so that form was not submitted
+- Get Matter links to an App Store checkout that was never followed
+
 ## [Endel](../systems/endel) — `endel`
 Access: signed out (every captured surface is public: the endel.io marketing pages plus app.endel.io's explore, player and sign-in card; the account, library, premium unlock/checkout and any form submit were never crossed; the Set Timer sheet, More flyout and mobile menu were opened by their own toggles and closed again)
 - the signed-in app entirely: account, library, sync, settings, purchase and the premium unlock/checkout the timer sheet's Unlock row starts were never reached; the FREEMIUM chip, scenario pills, Unlock, Continue and the OAuth buttons were measured, never pressed for real
@@ -737,6 +744,13 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Huddlekit](../systems/huddlekit) — `huddlekit`
+Access: signed out (every captured surface is public: the huddlekit.com marketing site and app.huddlekit.com/login, the only surface the app serves anonymously; everything past /login 307-redirects an anonymous visitor and was never entered; Google OAuth and the email form's Continue were never submitted; try./demo./status./docs./help.huddlekit.com and app.huddlekit.io do not resolve - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the consent banner's Decline, the nav menus, FAQ and tab rows, the billing switch, Show-more, the email reveal, the phone's menu button)
+- the signed-in product (everything on app.huddlekit.com past /login - the annotation widget on a real site, the project dashboard, workspaces, settings, billing) is a boundary: the Sign in / Get started links were measured, never followed
+- huddlekit.com has no theme control: the dark token set is the .dark re-pointed declarations the app paints under prefers-color-scheme (verified on the login), and the site's dark footer/testimonial/MCP panels are component-level surfaces, not a page theme
+- no field was ever typed into (support search, contrast-checker inputs, the login email field were focused only), so validation, suggestion and error states are uncaptured; the email Continue and Google OAuth were never submitted
+- prefers-reduced-motion is only partly honoured - /pricing, /features and the login ignore it and the marquee/ping loops keep running; the probe's per-page verdicts are in raw/motion.json
 
 ## [Hume AI](../systems/hume) — `hume`
 Access: signed out (every captured surface is public: www.hume.ai marketing/product/blog/legal pages, the dev.hume.ai docs, the demo.hume.ai invitation gate and the app.hume.ai/log-in card; the demo playground is gated on an invitation email and was never entered, nothing past /log-in was entered, EVI/Octave TTS have no public surface post-pivot - demo.hume.ai/evi answers 404; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the docs Theme menu, the home player's transport, the benchmark tabs, the blog filters and the mobile drawer)
