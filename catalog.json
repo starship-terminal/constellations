@@ -16673,6 +16673,101 @@
       }
     },
     {
+      "slug": "lummi",
+      "name": "Lummi",
+      "url": "https://www.lummi.ai",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "A signed-out stock library: white page, Inter display at tight tracking, one black primary button, 4px controls, pill tags, a search command palette, and a public image page with Download left unpressed",
+      "tags": [
+        "web",
+        "media",
+        "stock",
+        "marketing",
+        "light",
+        "signed-out",
+        "masonry",
+        "search"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed-out public marketing, browse, a public image page, and the /login wall. Downloads, the account, generation and checkout were not entered. Continue, Download, Google and the Stripe checkout link were not pressed.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/lummi/README.md",
+      "tokens": "systems/lummi/tokens.json",
+      "styleGuide": "systems/lummi/style-guide.html",
+      "preview": {
+        "cover": "systems/lummi/screenshots/home-light-default.png",
+        "icon": "systems/lummi/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.textMuted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "date": "2026-11-18",
+        "version": "public site as of 2026-11-18",
+        "durationMin": 90,
+        "durationNote": "Public signed-out session. OneTrust hidden, never clicked. No sign-in, no download, no checkout.",
+        "routes": [
+          "/",
+          "/illustration",
+          "/3d",
+          "/explore",
+          "/s/photo/forest",
+          "/photo/textured-green-powder-_wioh",
+          "/creator/rena",
+          "/pro",
+          "/license",
+          "/updates",
+          "/about",
+          "/blog",
+          "/privacy",
+          "/terms",
+          "/login"
+        ],
+        "pr": "https://github.com/starship-terminal/constellations/pull/676",
+        "gaps": [
+          "Downloads on a public image page require sign-in and were not pressed",
+          "https://www.lummi.ai/login is the sign-in wall; Continue and Continue with Google were not pressed, so the account was not entered",
+          "Generation (Create image, Create video) sits behind sign-in and was not opened",
+          "https://www.lummi.ai/pro links to a Stripe checkout and that checkout was not opened",
+          "The email field on /login was filled with a placeholder and cleared; the form was not submitted",
+          "The OneTrust cookie banner was hidden and never clicked"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the wordmark and glyphs are visible in the screenshots"
+      }
+    },
+    {
       "slug": "manus",
       "name": "Manus",
       "url": "https://manus.im/app",
