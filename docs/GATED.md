@@ -312,8 +312,8 @@ Access: read-only (the magazine is fully public; Shop and Courses lead off-domai
 - breadcrumbs exist only in JSON-LD - no breadcrumb UI paints on the article; author archives and tag indexes reuse the feed layout and were not individually captured
 
 ## [JetBrains](../systems/jetbrains) — `jetbrains`
-Access: signed out (account, checkout and downloads were not opened; the login card was measured at rest)
-- JetBrains Account at https://account.jetbrains.com/login (email field, signup, and the signed-in account) was measured at rest only; no OAuth button was pressed
+Access: signed out; Continue with email opened the signup email field; reCAPTCHA blocked the signed-in account
+- Signed-in JetBrains Account (profile and licenses) at https://account.jetbrains.com was not captured: Continue with email on /signup opened the email field, then Continue hit reCAPTCHA ('I'm not a robot') and capture stopped. No OAuth button was completed
 - Store checkout and Buy at https://www.jetbrains.com/store/ were not followed
 - Product downloads at https://www.jetbrains.com/products/ were not started; starting a download is a submit boundary and was not followed
 - The cookie dialog at https://www.jetbrains.com/ was hidden and never submitted

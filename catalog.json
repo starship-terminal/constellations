@@ -9016,7 +9016,7 @@
    ],
    "shape": "reference",
    "captured": "2026-11-18",
-   "access": "signed out (account, checkout and downloads were not opened; the login card was measured at rest)",
+   "access": "signed out; Continue with email opened the signup email field; reCAPTCHA blocked the signed-in account",
    "themes": [
     "light",
     "dark"
@@ -9059,10 +9059,10 @@
     "model": "grok-4.7",
     "route": "public-web",
     "date": "2026-11-18",
-    "durationMin": 90,
+    "durationMin": 130,
     "pr": "644",
     "gaps": [
-     "JetBrains Account at https://account.jetbrains.com/login (email field, signup, and the signed-in account) was measured at rest only; no OAuth button was pressed",
+     "Signed-in JetBrains Account (profile and licenses) at https://account.jetbrains.com was not captured: Continue with email on /signup opened the email field, then Continue hit reCAPTCHA ('I'm not a robot') and capture stopped. No OAuth button was completed",
      "Store checkout and Buy at https://www.jetbrains.com/store/ were not followed",
      "Product downloads at https://www.jetbrains.com/products/ were not started; starting a download is a submit boundary and was not followed",
      "The cookie dialog at https://www.jetbrains.com/ was hidden and never submitted"

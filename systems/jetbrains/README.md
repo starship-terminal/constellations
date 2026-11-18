@@ -1,10 +1,10 @@
 # JetBrains design reference
 
-A token set and component reference for JetBrains' public site. It was read from **jetbrains.com** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, IntelliJ IDEA, the products index, the store, help, company, Academy (the education URL redirects there), the privacy notice, and the account login card at rest.
+A token set and component reference for JetBrains' public site. It was read from **jetbrains.com** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, IntelliJ IDEA, the products index, the store, help, company, Academy (the education URL redirects there), the privacy notice, the account login card at rest, and the signup email field after Continue with email.
 
 JetBrains paints two schemes with no visitor toggle. Home is a dark campaign: a 72px near-black header, a purple announcement strip, a photographic hero, and a near-black "Explore Air" pill. Store, help and the login card are light: a white field, `#343434` text, and a `#6b57ff` brand purple. Both schemes come from the Rescui token layer (`--rs-color-*`, JetBrains Sans). The signature control is a 40px pill with a 20px radius.
 
-**Boundary:** the account, checkout, downloads and IDE apps sit behind sign-in. The login card was measured at rest. No OAuth button was pressed, no email was typed, no form was submitted, and the cookie dialog was hidden rather than answered.
+**Boundary:** checkout, downloads and the IDE apps sit behind sign-in. Continue with email on account.jetbrains.com/signup opened the empty email field. Submitting that email hit reCAPTCHA and capture stopped, so profile and licenses were not reached. No OAuth button was completed. The cookie dialog was hidden rather than answered.
 
 | File | What it is |
 |---|---|
@@ -14,8 +14,8 @@ JetBrains paints two schemes with no visitor toggle. Home is a dark campaign: a 
 | [style-guide.html](style-guide.html) | Renders the tokens with a theme toggle |
 | [components.md](components.md) | Component inventory with crops and the Gaps |
 | [patterns.md](patterns.md) | How the header, home, store, docs and login card combine |
-| [components/crops/](components/crops) | 28 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 24 page captures, `{page}-light-{state}.png`, desktop 1440 and phone 390, each with a `.capture.json` sidecar |
+| [components/crops/](components/crops) | 30 element screenshots, `{component}-{state}.png` |
+| [screenshots/](screenshots) | 27 page captures, `{page}-light-{state}.png`, desktop 1440 and phone 390, each with a `.capture.json` sidecar |
 | [raw/](raw) | Unprocessed readings: [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [component-tokens.json](raw/component-tokens.json) |
 | [tools/](tools) | The builders and the capture kit |
 
@@ -51,7 +51,7 @@ Fonts: `core.font.family.sans` is JetBrains Sans, then 3 fallbacks; `core.font.f
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 28 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 30 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -80,11 +80,11 @@ Scorecard: **11 of 25 met, 13 partly, 1 missing**; C5, V1, V2 are optional for a
 | F13 Motion | Partly | Home and store were probed. 791 moving elements: 773 kept their timing under prefers-reduced-motion, 18 were removed, none were shortened. core.motion holds the measured durations and easings. That is partial reduced-motion support, not a product that stops motion. |
 | F14 Layout | Partly | Captures are 1440 and 390, recorded in sidecars. The header is 72px and content sits in a centred column. No column grid or z-index scale was measured as tokens. Phone shots show the menu collapsing into one icon button. |
 | F15 Contrast | Partly | Script: primary text passes; secondary fails 1 pair, worst 4.18:1 light muted (light.text.secondary) on surface (light.background.surface) |
-| C1 Component coverage | Partly | Captured on the public surface: button, icon button, link, search field, tabs, menu, card, badge, plus the header and OAuth rows. Missing from the signed-out pages: text area, select, checkbox, radio, switch, tooltip, dialog, toast, table, avatar, list row. Those are recorded as not present or gated, not invented. |
-| C2 States | Partly | Hover and focus were measured on the primary button, icon button and OAuth button. Selected is the store audience pill. Disabled, loading and error states do not appear signed out. Several hovers did not change the computed fill. |
-| C3 Focus | Partly | Focus was applied to the Explore Air button, the search icon button and the Google OAuth button, and crops exist. The computed outline did not paint a distinct ring on those controls. Focus colour is tokenised from the brand purple. |
+| C1 Component coverage | Partly | Captured on the public surface: button, icon button, link, search field, signup email field, tabs, menu, card, badge, plus the header and OAuth rows. Missing: text area, select, checkbox, radio, switch, tooltip, dialog, toast, table, avatar, list row. Signed-in account chrome was not reached: Continue after the signup email hit reCAPTCHA. |
+| C2 States | Partly | Hover and focus were measured on the primary button, icon button and OAuth button. Email field default and focus were measured empty. Selected is the store audience pill. Disabled, loading and error states do not appear signed out. Several hovers did not change the computed fill. |
+| C3 Focus | Partly | Focus was applied to the Explore Air button, the search icon button, the Google OAuth button and the signup email field, and crops exist. The computed outline did not paint a distinct ring on those controls. Focus colour is tokenised from the brand purple. |
 | C4 Token-based specs | Partly | components.md names token colours where they match, and also prints raw hex and pixel sizes next to the crops. Entries are not written only as token paths. |
-| P1 Patterns | Partly | patterns.md covers the header shell, the dark home, the product page, store filtering and price cards, the docs index, Academy, search, and the login boundary. Empty, loading, error, validation and destructive confirmation are absent signed out and recorded as such. |
+| P1 Patterns | Partly | patterns.md covers the header shell, the dark home, the product page, store filtering and price cards, the docs index, Academy, search, the login card, the empty signup email field, and the reCAPTCHA stop. Empty, loading, error, validation and destructive confirmation are absent signed out and recorded as such. Profile and licenses were not reached. |
 | A1 Assets | Partly | icon.png is the 128px apple-touch icon. Fonts are named with fallbacks. No icons/ index was extracted. Header glyphs stay in the crops. layoutGaps records that. |
 
 Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (No standalone SVG icon set was extracted. Header glyphs and product marks are visible in the crops and screenshots).
@@ -93,11 +93,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (No standalone SV
 
 ## How the values were read
 
-Declared colours come from the Rescui custom properties on jetbrains.com's stylesheets. `tools/capture/vars.mjs` loaded home, IntelliJ IDEA, the store and help, harvested the stylesheet bodies, and resolved each name in a probe document. Computed sizes come from `tools/capture/public/measure.mjs`, which measured buttons, the header, cards, the store badge, the login OAuth rows and the search field on the live pages. The cookie dialog (`#ch2-dialog`) was hidden with CSS. Nothing was clicked that would accept cookies, sign in, download or buy.
+Declared colours come from the Rescui custom properties on jetbrains.com's stylesheets. `tools/capture/vars.mjs` loaded home, IntelliJ IDEA, the store and help, harvested the stylesheet bodies, and resolved each name in a probe document. Computed sizes come from `tools/capture/public/measure.mjs`, which measured buttons, the header, cards, the store badge, the login OAuth rows, the search field and the signup email field on the live pages. The cookie dialog (`#ch2-dialog`) was hidden with CSS. Nothing was clicked that would accept cookies, complete a sign-in, download or buy.
 
 ## What to distrust
 
-Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the images. Home is labelled `light` in filenames because the kit names every shot that way. The dark values are the home campaign's declared roles, not a theme the visitor can switch. The pressed purple on light pages is derived, not measured. Hover on several pills did not change the computed fill. The email field behind "Continue with email" was not opened.
+Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the images. Home is labelled `light` in filenames because the kit names every shot that way. The dark values are the home campaign's declared roles, not a theme the visitor can switch. The pressed purple on light pages is derived, not measured. Hover on several pills did not change the computed fill. The signed-in account was not reached: Continue after the signup email hit reCAPTCHA.
 
 ## Fonts
 
@@ -117,7 +117,7 @@ JetBrains Sans is the marketing face, with Helvetica and Arial as fallbacks (`co
 | Button | Captured. [button-primary-default](components/crops/button-primary-default.png), [button-buy-default](components/crops/button-buy-default.png) |
 | Icon button | Captured. [icon-button-default](components/crops/icon-button-default.png) |
 | Link | Captured. [link-default](components/crops/link-default.png) |
-| Text field | Captured as the search field only. [search-field-opened](components/crops/search-field-opened.png). The email field is behind Continue with email and was not opened. |
+| Text field | Captured. Search: [search-field-opened](components/crops/search-field-opened.png). Signup email (empty, not submitted): [signup-email-light-default](screenshots/signup-email-light-default.png). |
 | Text area | Not present on the public signed-out pages. |
 | Select | Not present. The store audience control is a tab pill. |
 | Checkbox | Not present signed out. |
@@ -134,7 +134,7 @@ JetBrains Sans is the marketing face, with Helvetica and Arial as fallbacks (`co
 | Avatar | Not present. The account control is an icon button. |
 | Badge | Captured. [badge-default](components/crops/badge-default.png) |
 | App shell | Captured. [nav-default](components/crops/nav-default.png), [home-light-default](screenshots/home-light-default.png) |
-| Form with validation | Not captured. No public form was submitted. Login stops at the OAuth card. |
+| Form with validation | Not captured. The signup email was opened empty. Continue after the email hit reCAPTCHA and was not solved. [signup-email-light-captcha](screenshots/signup-email-light-captcha.png) |
 | Empty, loading, error | Not present on the public pages. |
 | Destructive confirmation | Not present signed out. |
 | Feedback after an action | Not captured. No action was submitted. |
@@ -149,7 +149,7 @@ JetBrains Sans is the marketing face, with Helvetica and Arial as fallbacks (`co
 - **Do use the 40px pill for primary actions.** Near-black `#19191c` on the dark home, brand purple `#6b57ff` on the light store. Radius 20px. [Explore Air](components/crops/button-primary-default.png), [Buy](components/crops/button-buy-default.png).
 - **Do keep the header dark on every page.** A 72px `#19191c` bar, white wordmark, grey nav text, 32px icon buttons. [Header](screenshots/store-light-default.png).
 - **Do treat home and the store as two schemes of one system.** Home is the dark campaign. Store and help are the light field. There is no theme switch. [Home](screenshots/home-light-default.png), [Store](screenshots/store-light-default.png).
-- **Don't invent a signed-in IDE from these pages.** The account, checkout and downloads stop at the login card. [Login](screenshots/login-light-default.png).
+- **Don't invent a signed-in IDE from these pages.** Profile and licenses stop at reCAPTCHA after the signup email. [Login](screenshots/login-light-default.png), [reCAPTCHA](screenshots/signup-email-light-captcha.png).
 - **Don't answer the cookie dialog in a rebuild of this capture.** It was hidden, not accepted. [Home](screenshots/home-light-default.png).
 - **Don't copy the JetBrains wordmark, product logos or hero photography into something that ships.** They are JetBrains' marks. [Hero](screenshots/home-light-default.png).
 

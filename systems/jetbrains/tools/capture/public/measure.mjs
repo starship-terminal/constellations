@@ -91,6 +91,11 @@ await record(page, 'oauth-button-email', page.getByRole('button', { name: 'Conti
 await record(page, 'link-signup', page.getByRole('link', { name: 'Create an account' }), ['default']);
 await record(page, 'login-card', page.locator('text=Log in to JetBrains').locator('xpath=ancestor::div[1]').first(), ['default']);
 
+await settle(page, ACCOUNT + '/signup');
+await page.getByRole('button', { name: 'Continue with email', exact: true }).click();
+await page.waitForTimeout(1500);
+await record(page, 'email-field', page.locator('#email, input[name="email"]').first(), ['default', 'focus']);
+
 await page.close();
 await context.close();
 

@@ -7,7 +7,9 @@
 // is no user theme switch, so every shot is labelled light. Desktop 1440x900 at 1x,
 // mobile 390x844 at 2x. Cookie banner (#ch2-dialog) is hidden, never answered.
 // Nothing is submitted, purchased, downloaded or signed into. Menu and search are
-// local UI toggles. account.jetbrains.com/login is shot at rest only.
+// local UI toggles. account.jetbrains.com/login is shot at rest. Continue with
+// email is opened on /signup so the email field can be measured; Continue after
+// the email is never pressed here (that submit hit reCAPTCHA).
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -84,6 +86,11 @@ const desktop = {
   education: { path: '/education/', run: async (p, S) => { await S.view('default'); } },
   legal: { path: '/legal/docs/privacy/privacy/', run: async (p, S) => { await S.view('default'); } },
   login: { url: ACCOUNT + '/login', run: async (p, S) => { await S.view('default'); } },
+  'signup-email': { url: ACCOUNT + '/signup', run: async (p, S) => {
+    await p.getByRole('button', { name: 'Continue with email', exact: true }).click();
+    await wait(p, 1500);
+    await S.view('default');
+  } },
 };
 
 const mobile = {
@@ -96,6 +103,11 @@ const mobile = {
   store: { path: '/store/?section=personal&billing=yearly', run: async (p, S) => { await S.view('default'); } },
   products: { path: '/products/', run: async (p, S) => { await S.view('default'); } },
   login: { url: ACCOUNT + '/login', run: async (p, S) => { await S.view('default'); } },
+  'signup-email': { url: ACCOUNT + '/signup', run: async (p, S) => {
+    await p.getByRole('button', { name: 'Continue with email', exact: true }).click();
+    await wait(p, 1500);
+    await S.view('default');
+  } },
 };
 
 const b = await chromium.launch();

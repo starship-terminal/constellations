@@ -73,13 +73,13 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: Developer-tool marketing: a dark 72px header, a purple announcement strip, 40px pills (near-black on the campaign home, #6b57ff on the store), JetBrains Sans, and a light pricing page of audience tabs and price cards.
 
-Captured 2026-11-18, signed out (account, checkout and downloads were not opened; the login card was measured at rest). Themes: light, dark.
+Captured 2026-11-18, signed out; Continue with email opened the signup email field; reCAPTCHA blocked the signed-in account. Themes: light, dark.
 
-A token set and component reference for JetBrains' public site. It was read from **jetbrains.com** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, IntelliJ IDEA, the products index, the store, help, company, Academy (the education URL redirects there), the privacy notice, and the account login card at rest.
+A token set and component reference for JetBrains' public site. It was read from **jetbrains.com** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, IntelliJ IDEA, the products index, the store, help, company, Academy (the education URL redirects there), the privacy notice, the account login card at rest, and the signup email field after Continue with email.
 
 JetBrains paints two schemes with no visitor toggle. Home is a dark campaign: a 72px near-black header, a purple announcement strip, a photographic hero, and a near-black "Explore Air" pill. Store, help and the login card are light: a white field, `#343434` text, and a `#6b57ff` brand purple. Both schemes come from the Rescui token layer (`--rs-color-*`, JetBrains Sans). The signature control is a 40px pill with a 20px radius.
 
-**Boundary:** the account, checkout, downloads and IDE apps sit behind sign-in. The login card was measured at rest. No OAuth button was pressed, no email was typed, no form was submitted, and the cookie dialog was hidden rather than answered.
+**Boundary:** checkout, downloads and the IDE apps sit behind sign-in. Continue with email on account.jetbrains.com/signup opened the empty email field. Submitting that email hit reCAPTCHA and capture stopped, so profile and licenses were not reached. No OAuth button was completed. The cookie dialog was hidden rather than answered.
 
 ## Colors
 
@@ -128,13 +128,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the images. Home is labelled `light` in filenames because the kit names every shot that way. The dark values are the home campaign's declared roles, not a theme the visitor can switch. The pressed purple on light pages is derived, not measured. Hover on several pills did not change the computed fill. The email field behind "Continue with email" was not opened.
+Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the images. Home is labelled `light` in filenames because the kit names every shot that way. The dark values are the home campaign's declared roles, not a theme the visitor can switch. The pressed purple on light pages is derived, not measured. Hover on several pills did not change the computed fill. The signed-in account was not reached: Continue after the signup email hit reCAPTCHA.
 
 ### Do and don't (from README.md)
 
 - **Do use the 40px pill for primary actions.** Near-black `#19191c` on the dark home, brand purple `#6b57ff` on the light store. Radius 20px. [Explore Air](components/crops/button-primary-default.png), [Buy](components/crops/button-buy-default.png).
 - **Do keep the header dark on every page.** A 72px `#19191c` bar, white wordmark, grey nav text, 32px icon buttons. [Header](screenshots/store-light-default.png).
 - **Do treat home and the store as two schemes of one system.** Home is the dark campaign. Store and help are the light field. There is no theme switch. [Home](screenshots/home-light-default.png), [Store](screenshots/store-light-default.png).
-- **Don't invent a signed-in IDE from these pages.** The account, checkout and downloads stop at the login card. [Login](screenshots/login-light-default.png).
+- **Don't invent a signed-in IDE from these pages.** Profile and licenses stop at reCAPTCHA after the signup email. [Login](screenshots/login-light-default.png), [reCAPTCHA](screenshots/signup-email-light-captcha.png).
 - **Don't answer the cookie dialog in a rebuild of this capture.** It was hidden, not accepted. [Home](screenshots/home-light-default.png).
 - **Don't copy the JetBrains wordmark, product logos or hero photography into something that ships.** They are JetBrains' marks. [Hero](screenshots/home-light-default.png).

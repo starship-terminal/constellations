@@ -1,6 +1,6 @@
 # JetBrains components
 
-Public components measured on jetbrains.com and account.jetbrains.com/login on 2026-11-18, signed out. Values are computed styles. Colours that match a declared `--rs-*` token name that token.
+Public components measured on jetbrains.com and account.jetbrains.com on 2026-11-18, signed out plus the empty signup email field. Values are computed styles. Colours that match a declared `--rs-*` token name that token.
 
 Crops live in [components/crops/](components/crops).
 
@@ -39,11 +39,13 @@ The hero's "Read the story" is white text with an arrow. The login card's "Creat
 
 ## Text field
 
-Search opens as a dark field labelled "⌘K for advanced search". The email field on the login card is behind "Continue with email" and was not opened.
+Search opens as a dark field labelled "⌘K for advanced search". Continue with email on /signup opens a labelled Email field. The field was measured empty; Continue after the email was not pressed in the rebuild (that submit hit reCAPTCHA).
 
 | State | Crop |
 |---|---|
 | search open | [search-field-opened](components/crops/search-field-opened.png) |
+| email | [email-field-default](components/crops/email-field-default.png) |
+| email focus | [email-field-focus](components/crops/email-field-focus.png) |
 
 ## Tabs
 
@@ -119,4 +121,4 @@ These checklist components are not on the public signed-out surface, so they wer
 - Avatar: the header account control is an icon button, not a user avatar.
 - List row: the mega menu is link columns, recorded as menu.
 - Disabled, loading and error states: none appear signed out.
-- Email field, signup form, checkout and the signed-in account: behind the login boundary. See the catalog `capture.gaps`.
+- Signup after the email field, checkout and the signed-in account: Continue after the email hit reCAPTCHA. See the catalog `capture.gaps`.

@@ -46,9 +46,9 @@ Shown in [education-light-default](screenshots/education-light-default.png).
 
 ## Login boundary
 
-account.jetbrains.com/login is a white card on a purple-to-yellow gradient. It offers OAuth rows (Google, GitHub, Apple, GitLab, WeChat, Bitbucket), "Continue with email", and "Create an account". Nothing was pressed. The email field, signup, and the account itself sit behind this card.
+account.jetbrains.com/login is a white card on a purple-to-yellow gradient. It offers OAuth rows (Google, GitHub, Apple, GitLab, WeChat, Bitbucket), "Continue with email", and "Create an account". Continue with email on /signup opens an empty Email field and a Continue pill. Submitting that email showed reCAPTCHA ("I'm not a robot"); capture stopped there. Profile and licenses were not reached. No OAuth flow was completed.
 
-Shown in [login-light-default](screenshots/login-light-default.png).
+Shown in [login-light-default](screenshots/login-light-default.png), [signup-email-light-default](screenshots/signup-email-light-default.png), and [signup-email-light-captcha](screenshots/signup-email-light-captcha.png).
 
 ## Search
 
