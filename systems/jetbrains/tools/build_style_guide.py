@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json + tools/style-guide.template.html.
 
-Every colour, radius, shadow and type style on the page is a CSS custom property generated from
+Every colour, radius and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
-theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
+`:root` and the `dark` set on `[data-mode="dark"]`. The header button sets data-mode on <html>
+so the store scheme and the home campaign can be compared. Aliases like {text.primary} become
+var(--text-primary).
 
 Placeholders in the template:
   /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks

@@ -145,8 +145,8 @@ function walk(node, prefix, out) {
   for (const [k, v] of Object.entries(node || {})) {
     if (k.startsWith('$')) continue;
     const path = prefix ? prefix + '.' + k : k;
-    if (v && v.$value && v.$type === 'color') out.push([path, v.$value]);
-    else if (v && typeof v === 'object' && !v.$value) walk(v, path, out);
+    if (v && v.v && v.t === 'color') out.push([path, v.v]);
+    else if (v && typeof v === 'object' && !v.v) walk(v, path, out);
   }
 }
 const colors = [];

@@ -88,7 +88,7 @@ function flat(node, prefix, out) {
   for (const [k, v] of Object.entries(node)) {
     if (k.startsWith('$')) continue;
     const path = prefix ? prefix + '.' + k : k;
-    if (v && typeof v === 'object' && '$value' in v) out.push([path, v.$value]);
+    if (v && typeof v === 'object' && 'v' in v) out.push([path, v.v]);
     else flat(v, path, out);
   }
   return out;

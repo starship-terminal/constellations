@@ -259,22 +259,26 @@ nav.sample a { color: var(--body); text-decoration: none; font: 500 14px var(--s
   </div>
 </main>
 <script>
-const colors = {"alert": "alert", "apricot": "apricot", "black": "black", "body": "#4b4b50", "butter": "#f8f2cf", "canvas": "#f6f6f4", "chartreuse": "chartreuse", "chartreuse-soft": "#f4f8cc", "chocolate": "chocolate", "cobalt": "#2448e3", "cobalt-deep": "cobalt-deep", "cobalt-soft": "#e9edff", "cream": "#fbfaf7", "destructive": "#d93a1f", "forest": "#13704a", "ink": "#111111", "kh-green": "kh-green", "kh-orange": "kh-orange", "kh-yellow": "#f4f8cc", "lavender": "#ebe3f1", "line": "#e6e6e3", "link": "#2448e3", "maroon": "maroon", "muted": "#6b6b70", "raised": "#eeeeeb", "red-700": "red-700", "tangerine": "tangerine", "tomato": "tomato", "tomato-soft": "#ffe8e1", "white": "#ffffff"};
+const palettes = {
+  light: {"alert": "#f2a516", "apricot": "#eda36a", "black": "#000000", "body": "#4b4b50", "butter": "#f8f2cf", "canvas": "#f6f6f4", "chartreuse": "#d4e31f", "chartreuse-soft": "#f4f8cc", "chocolate": "#33190d", "cobalt": "#2448e3", "cobalt-deep": "#1f3aa6", "cobalt-soft": "#e9edff", "cream": "#fbfaf7", "destructive": "#d93a1f", "forest": "#13704a", "ink": "#111111", "kh-green": "#d4e31f", "kh-orange": "#f0532c", "kh-yellow": "#f4f8cc", "lavender": "#ebe3f1", "line": "#e6e6e3", "link": "#2448e3", "maroon": "#5a2238", "muted": "#6b6b70", "raised": "#eeeeeb", "red-700": "#c10007", "tangerine": "#e8734f", "tomato": "#f0532c", "tomato-soft": "#ffe8e1", "white": "#ffffff"},
+  dark: {"alert": "#f2a516", "apricot": "#eda36a", "black": "#000000", "body": "#b6b6bb", "butter": "#2b2818", "canvas": "#1b1b1e", "chartreuse": "#d4e31f", "chartreuse-soft": "#2a2e10", "chocolate": "#33190d", "cobalt": "#6f8bff", "cobalt-deep": "#1f3aa6", "cobalt-soft": "#1b2244", "cream": "#18181b", "destructive": "#ff7a5c", "forest": "#3fbf86", "forest-soft": "#10261b", "ink": "#efeeea", "kh-green": "#d4e31f", "kh-orange": "#f0532c", "kh-yellow": "#2a2e10", "lavender": "#26222c", "line": "#2c2c30", "link": "#8ea4ff", "maroon": "#5a2238", "muted": "#8f8f95", "raised": "#26262a", "red-700": "#c10007", "tangerine": "#e8734f", "tomato": "#f0532c", "tomato-soft": "#3b1d16", "white": "#141416"}
+};
 const root = document.getElementById("colors");
-for (const [name, value] of Object.entries(colors)) {
-  const d = document.createElement("div");
-  d.className = "sw";
-  d.innerHTML = '<i style="background:var(--light-color-' + name + ')"></i><div><b>color.' + name + '</b><code>' + value + '</code></div>';
-  root.appendChild(d);
+function showPalette(mode) {
+  root.replaceChildren();
+  for (const [name, value] of Object.entries(palettes[mode])) {
+    const d = document.createElement("div");
+    d.className = "sw";
+    d.innerHTML = '<i style="background:var(--' + mode + '-color-' + name + ')"></i><div><b>color.' + name + '</b><code>' + value + '</code></div>';
+    root.appendChild(d);
+  }
 }
+showPalette("light");
 document.getElementById("theme").onclick = () => {
   const dark = document.documentElement.getAttribute("data-mode") !== "dark";
   document.documentElement.setAttribute("data-mode", dark ? "dark" : "light");
   document.getElementById("theme").textContent = dark ? "Light palette" : "Dark palette";
-  for (const i of root.querySelectorAll("i")) {
-    const name = i.nextElementSibling.querySelector("b").textContent.slice(6);
-    i.style.background = "var(--" + (dark ? "dark" : "light") + "-color-" + name + ")";
-  }
+  showPalette(dark ? "dark" : "light");
 };
 </script>
 </body>

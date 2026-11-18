@@ -34,7 +34,14 @@ def cssname(path):
 
 
 def alias(v):
-    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
+    # Definitions omit the set name (core.color.neutral.0 is --color-neutral-0).
+    # An alias that names a set has to drop that prefix or the var() misses.
+    def ref(m):
+        parts = m.group(1).split(".")
+        if parts and parts[0] in ("core", "light", "dark"):
+            parts = parts[1:]
+        return f"var({cssname('.'.join(parts))})"
+    return re.sub(r"\{([^{}]+)\}", ref, str(v))
 
 
 def css_val(name, t):

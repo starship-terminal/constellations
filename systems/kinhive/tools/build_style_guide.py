@@ -60,6 +60,22 @@ def block(setname):
     return "\n".join(lines)
 
 
+def literal(token):
+    """The printed swatch label. An alias to core resolves to that hex."""
+    v = token["$value"]
+    if not isinstance(v, str) or not v.startswith("{") or not v.endswith("}"):
+        return v
+    parts = v[1:-1].split(".")
+    if not parts or parts[0] != "core":
+        return v
+    node = T["core"]
+    for part in parts[1:]:
+        node = node.get(part) if isinstance(node, dict) else None
+    if isinstance(node, dict) and "$value" in node and not str(node["$value"]).startswith("{"):
+        return node["$value"]
+    return v
+
+
 def swatch(setname, group):
     rows = []
     node = T[setname].get(group) or T["core"].get(group) or {}
@@ -176,32 +192,34 @@ nav.sample a {{ color: var(--body); text-decoration: none; font: 500 14px var(--
   </div>
 </main>
 <script>
-const colors = {json.dumps({name: T["light"]["color"][name]["$value"] if not str(T["light"]["color"][name]["$value"]).startswith("{") else name for name in T["light"]["color"]})};
+const palettes = {{
+  light: {json.dumps({name: literal(T["light"]["color"][name]) for name in T["light"]["color"]})},
+  dark: {json.dumps({name: literal(T["dark"]["color"][name]) for name in T["dark"]["color"]})}
+}};
 const root = document.getElementById("colors");
-for (const [name, value] of Object.entries(colors)) {{
-  const d = document.createElement("div");
-  d.className = "sw";
-  d.innerHTML = '<i style="background:var(--light-color-' + name + ')"></i><div><b>color.' + name + '</b><code>' + value + '</code></div>';
-  root.appendChild(d);
+function showPalette(mode) {{
+  root.replaceChildren();
+  for (const [name, value] of Object.entries(palettes[mode])) {{
+    const d = document.createElement("div");
+    d.className = "sw";
+    d.innerHTML = '<i style="background:var(--' + mode + '-color-' + name + ')"></i><div><b>color.' + name + '</b><code>' + value + '</code></div>';
+    root.appendChild(d);
+  }}
 }}
+showPalette("light");
 document.getElementById("theme").onclick = () => {{
   const dark = document.documentElement.getAttribute("data-mode") !== "dark";
   document.documentElement.setAttribute("data-mode", dark ? "dark" : "light");
   document.getElementById("theme").textContent = dark ? "Light palette" : "Dark palette";
-  for (const i of root.querySelectorAll("i")) {{
-    const name = i.nextElementSibling.querySelector("b").textContent.slice(6);
-    i.style.background = "var(--" + (dark ? "dark" : "light") + "-color-" + name + ")";
-  }}
+  showPalette(dark ? "dark" : "light");
 }};
 </script>
 </body>
 </html>
 """
-# The f-string above doubled braces for CSS. The script block used doubled
-# braces too, which would emit literal {{ }}. Rebuild the script plainly.
-html = html.replace("for (const [name, value] of Object.entries(colors)) {{", "for (const [name, value] of Object.entries(colors)) {")
-html = html.replace("  root.appendChild(d);\n}}", "  root.appendChild(d);\n}")
-html = html.replace("document.getElementById(\"theme\").onclick = () => {{", "document.getElementById(\"theme\").onclick = () => {")
-html = html.replace("  }}\n}};\n</script>", "  }\n};\n</script>")
+# The f-string doubled braces so CSS emits single braces. The script block
+# used the same doubling, which would leave literal {{ }} in the page.
+script_at = html.index("<script>")
+html = html[:script_at] + html[script_at:].replace("{{", "{").replace("}}", "}")
 (HERE / "style-guide.html").write_text(html)
 print("style-guide.html", len(html))
