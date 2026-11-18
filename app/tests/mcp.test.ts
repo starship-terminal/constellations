@@ -8,10 +8,19 @@ test("tools/list advertises argument names and defaults", async () => {
     id: 1,
     method: "tools/list",
   });
-  const tools = (reply as { result: { tools: { name: string; inputSchema: {
-    properties: Record<string, { default?: unknown }>;
-    required?: string[];
-  } }[] } }).result.tools;
+  const tools = (
+    reply as {
+      result: {
+        tools: {
+          name: string;
+          inputSchema: {
+            properties: Record<string, { default?: unknown }>;
+            required?: string[];
+          };
+        }[];
+      };
+    }
+  ).result.tools;
   const read = tools.find((tool) => tool.name === "readPackageDocument");
   const media = tools.find((tool) => tool.name === "listReferenceMedia");
   expect(read?.inputSchema.properties.path.default).toBe("README.md");
@@ -28,7 +37,10 @@ test("a batch over the cap is one error, not a pile of image calls", async () =>
   }));
   const reply = await handleBatch(raw);
   expect(reply).toMatchObject({
-    error: { code: -32600, message: expect.stringContaining(String(MCP_BATCH_LIMIT)) },
+    error: {
+      code: -32600,
+      message: expect.stringContaining(String(MCP_BATCH_LIMIT)),
+    },
   });
 });
 
