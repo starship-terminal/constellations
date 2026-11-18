@@ -48,9 +48,11 @@ else:
 lines += [
     "## Gaps",
     "",
-    "The signed-in app at app.krisp.ai (login, sign-up, the meeting assistant) was not captured.",
+    "Recordings and /meetings redirect to /setup (desktop download) on this free account and were not captured as list views.",
+    "Upgrade, Download, Connect Google/Outlook, Delete account and Enable 2FA were measured at rest and not pressed.",
     "Book a demo posts to /contact-sales/ and was not submitted.",
-    "Text fields, selects, checkboxes, radios and toasts live on that form or inside the app.",
+    "Help centre at https://help.krisp.ai/hc/en-us was not captured.",
+    "Cookie settings (OneTrust) was hidden and never clicked.",
     "",
 ]
 (ROOT / "components.md").write_text("\n".join(lines))

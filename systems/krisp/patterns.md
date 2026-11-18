@@ -1,6 +1,6 @@
 # Krisp patterns
 
-Public marketing patterns from krisp.ai on 2026-11-18. The signed-in app is not in this package.
+Public marketing patterns from krisp.ai on 2026-11-18, plus the signed-in free-account app on app.krisp.ai the same day.
 
 ## Header
 
@@ -26,15 +26,28 @@ A centred question list. Opening a row reveals the answer under the question and
 
 Link columns for products, company and legal, including Cookie settings. Cookie settings was not clicked.
 
+## App shell
+
+A left sidebar: product switcher (Meeting Assistant), Invite teammates, Search, Noise Cancellation, Accent Conversion, Note Taker with My Notes / Shared with me / Action Items, Create folder, then settings/download/bell and the account chip. The notes canvas is a welcome banner plus an empty-state card. Upgrade sits top-right and was not pressed. Light: [app-notes-light-default](screenshots/app-notes-light-default.png). Dark: [app-notes-dark-default](screenshots/app-notes-dark-default.png). Phone: hamburger plus Upgrade. [mobile-app-notes-light-default](screenshots/mobile-app-notes-light-default.png).
+
+## Settings
+
+A nested vertical list (Account, Workspace, Meeting Assistant, App Behavior) and a content column of fields, switches, radios and outline buttons. Delete my account is a red fill. [app-settings-account-light-default](screenshots/app-settings-account-light-default.png). Appearance is Light / Dark / System; System was left as found. [app-settings-app-light-default](screenshots/app-settings-app-light-default.png).
+
+## Billing (free)
+
+Free plan at US $0 /per month, a Core upsell banner, seat management, no payment method. Upgrade was not pressed. [app-billing-light-default](screenshots/app-billing-light-default.png).
+
+## Onboarding gates
+
+`/setup` asks to download the desktop app. [app-setup-light-default](screenshots/app-setup-light-default.png). Phone `/setup` says continue on desktop. [mobile-app-setup-light-default](screenshots/mobile-app-setup-light-default.png). Connect calendar offers Google and Outlook and a Skip; neither calendar was connected. [app-connect-calendar-light-default](screenshots/app-connect-calendar-light-default.png). Action Items opens a Core paywall dialog. [app-action-items-light-default](screenshots/app-action-items-light-default.png).
+
 ## What is not a pattern here
 
-These patterns exist in the product and were not captured, because they sit behind a boundary:
-
-- App shell: the meeting assistant, notes and recordings at https://app.krisp.ai/login.
-- Forms and validation: https://krisp.ai/contact-sales/ (email, name, select, radios). Not submitted.
-- Onboarding: https://app.krisp.ai/sign-up.
-- Empty and loading states inside the app. The public error page is the 404 at https://krisp.ai/download/.
-- Destructive confirmation, search and filtering, and data tables were not present on the public pages.
+- Recordings and `/meetings`: they redirect to `/setup` on this free account.
+- Calendar OAuth, Upgrade checkout, desktop download, Delete account, Enable 2FA.
+- Forms and validation on https://krisp.ai/contact-sales/. Not submitted.
+- Help centre at https://help.krisp.ai/hc/en-us.
 
 ## Marketing shell
 

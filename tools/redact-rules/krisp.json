@@ -8,6 +8,12 @@
   ],
   "ocr": {
     "emails": true,
-    "net": true
+    "net": true,
+    "email_allow": [
+      "^kaichen@",
+      "^kaichen@agentmail\\.to$",
+      "@agentmail\\.to$",
+      "^assistant@"
+    ]
   }
 }

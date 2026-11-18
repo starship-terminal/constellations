@@ -49,25 +49,25 @@ Text link to app.krisp.ai/login. Measured, never followed.
 
 ### Book a demo button
 
-Near-black pill in the header. The control is a `div.button.btn--dark` wrapping a link to `/contact-sales/`. The crop and the size below are the wrapper. Paint lives on the inner `a`: background `{light.action.inverse}` (`#131032`), text `{light.text.on-accent}`, radius `{core.radius.sm}`, padding `{core.spacing.2}` `{core.spacing.5}`. Hover of the inner face is `{light.action.inverse-hover}` on the hero variant. Measured, never followed. Crop: [book-demo-default](components/crops/book-demo-default.png).
+Near-black pill in the header. The control is a div.button wrapping a link to /contact-sales/. Measured, never followed.
 
-| State | Size | Wrapper fill | Wrapper text | Radius |
+| State | Size | Fill | Text | Radius |
 |---|---|---|---|---|
-| default | 128.88×36 | transparent | `{light.text.primary}` | `{core.radius.sm}` |
-| hover | 128.88×36 | transparent | `{light.text.primary}` | `{core.radius.sm}` |
-| focus-visible | 128.88×36 | transparent | `{light.text.primary}` | `{core.radius.sm}` |
-| pressed | 128.88×36 | transparent | `{light.text.primary}` | `{core.radius.sm}` |
+| default | 128.88×36 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
+| hover | 128.88×36 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
+| focus-visible | 128.88×36 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
+| pressed | 128.88×36 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
 
 ### Get Krisp button
 
-Indigo primary pill. The control is a `div.button.btn--primary` wrapping a link. Paint lives on the inner `a`: background `{light.action.primary}` (`#614efa`), hover `{light.action.primary-hover}` (`#4a3bbe`), text `{light.text.on-accent}`, radius `{core.radius.sm}`, height `{core.size.button-sm}`. The sign-up destination was not followed. Crop: [get-krisp-default](components/crops/get-krisp-default.png).
+Indigo primary pill. Opens a download menu on the marketing site; the menu was opened for the opened state and the sign-up link was not followed.
 
-| State | Size | Wrapper fill | Wrapper text | Radius |
+| State | Size | Fill | Text | Radius |
 |---|---|---|---|---|
-| default | 124.53×36 | transparent | `{light.text.primary}` | `{core.radius.sm}` |
-| hover | 124.53×36 | transparent | `{light.text.primary}` | `{core.radius.sm}` |
-| focus-visible | 124.53×36 | transparent | `{light.text.primary}` | `{core.radius.sm}` |
-| pressed | 124.53×36 | transparent | `{light.text.primary}` | `{core.radius.sm}` |
+| default | 124.53×36 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
+| hover | 124.53×36 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
+| focus-visible | 124.53×36 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
+| pressed | 124.53×36 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
 
 ### Get Krisp menu
 
@@ -96,14 +96,14 @@ The "New" chip linking to a product page.
 
 ### Hero Get Krisp button
 
-The primary CTA under the headline. Same paint as the header Get Krisp face: `{light.action.primary}` on the inner `a`, text `{light.text.on-accent}`, radius `{core.radius.sm}`, height `{core.size.button}`. Measured, never followed. Crop: [hero-cta-default](components/crops/hero-cta-default.png).
+The primary CTA under the headline. Measured, never followed.
 
-| State | Size | Wrapper fill | Face fill | Radius |
+| State | Size | Fill | Text | Radius |
 |---|---|---|---|---|
-| default | 133.47×44 | transparent | `{light.action.primary}` | `{core.radius.sm}` |
-| hover | 133.47×44 | transparent | `{light.action.primary-hover}` | `{core.radius.sm}` |
-| focus-visible | 133.47×44 | transparent | `{light.action.primary}` | `{core.radius.sm}` |
-| pressed | 133.47×44 | transparent | `{light.action.primary}` | `{core.radius.sm}` |
+| default | 133.47×44 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
+| hover | 133.47×44 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
+| focus-visible | 133.47×44 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
+| pressed | 133.47×44 | rgba(0, 0, 0, 0) | rgb(19, 16, 50) | 8px |
 
 ### Footer
 
@@ -134,20 +134,20 @@ Monthly / Annually pill. Annually is the resting state and shows Save 50%.
 
 ### Plan card
 
-A pricing column: title, description, price, CTA. Fill `{light.background.surface}`, text `{light.text.primary}`, radius `{core.radius.lg}`, border `{core.borderWidth.hairline}` `{light.border.default}`, padding `{core.spacing.6}`. Crop: [plan-card-default](components/crops/plan-card-default.png).
+A pricing column: title, description, price, CTA.
 
 | State | Size | Fill | Text | Radius |
 |---|---|---|---|---|
-| default | 308×740.25 | `{light.background.surface}` | `{light.text.primary}` | `{core.radius.lg}` |
+| default | 308×740.25 | rgb(255, 255, 255) | rgb(19, 16, 50) | 16px |
 
 ### Highlighted plan card
 
-The Most popular column. Same surface as a plan card, with border `{core.borderWidth.strong}` `{light.border.highlight}`. Crop: [plan-card-highlight-default](components/crops/plan-card-highlight-default.png).
+The Most popular column.
 
-| State | Size | Fill | Border | Radius |
+| State | Size | Fill | Text | Radius |
 |---|---|---|---|---|
-| default | 308×740.25 | `{light.background.surface}` | `{light.border.highlight}` | `{core.radius.lg}` |
-| hover | 308×740.25 | `{light.background.surface}` | `{light.border.highlight}` | `{core.radius.lg}` |
+| default | 308×740.25 | rgb(255, 255, 255) | rgb(19, 16, 50) | 16px |
+| hover | 308×740.25 | rgb(255, 255, 255) | rgb(19, 16, 50) | 16px |
 
 ### Plan price
 
@@ -169,11 +169,11 @@ Try it Free / Start with Core. Measured, never followed (it links to app.krisp.a
 
 ### Most popular badge
 
-The badge on the highlighted plan. Fill `{light.action.primary}`, text near-white, radius `{core.radius.pill}`. Crop: [plan-badge-default](components/crops/plan-badge-default.png).
+The badge on the highlighted plan, if it is its own element.
 
 | State | Size | Fill | Text | Radius |
 |---|---|---|---|---|
-| default | 96.61×24 | `{light.action.primary}` | `{light.text.on-accent}` | `{core.radius.pill}` |
+| default | 96.61×24 | rgb(97, 78, 250) | rgb(247, 247, 248) | 999px |
 
 ## Product pages
 
@@ -230,9 +230,9 @@ The "With Krisp" demo switch on the noise-cancellation page. Not toggled if doin
 |---|---|---|---|---|
 | default | 642.83×64 | rgba(0, 0, 0, 0) | rgb(26, 26, 34) | 0px |
 
-### 404 page
+### not-found title
 
-`/download/` returns the marketing 404. The heading reads "Error 404: Page not found" in `{light.text.primary}`, with a construction illustration and a text link back to krisp.ai in `{light.text.link}`. The measurer's title selector missed the heading; the page itself is in [not-found-light-default](screenshots/not-found-light-default.png).
+Not found on the page during this run.
 
 ## Mobile (390 wide)
 
@@ -250,11 +250,8 @@ The "With Krisp" demo switch on the noise-cancellation page. Not toggled if doin
 
 ## Gaps
 
-The signed-in app at https://app.krisp.ai/login (the meeting assistant, notes, recordings and account settings) was not captured.
-Get Krisp and Try it Free go to https://app.krisp.ai/sign-up. Account creation was not followed.
-Book a demo and Talk to Sales open https://krisp.ai/contact-sales/, a sales form with email, name, select and radios. It was not submitted. Text fields, selects, checkboxes, radios and toasts live on that form or inside the app.
+Recordings and /meetings redirect to /setup (desktop download) on this free account and were not captured as list views.
+Upgrade, Download, Connect Google/Outlook, Delete account and Enable 2FA were measured at rest and not pressed.
+Book a demo posts to /contact-sales/ and was not submitted.
 Help centre at https://help.krisp.ai/hc/en-us was not captured.
 Cookie settings (OneTrust) was hidden and never clicked.
-The wordmark is an image, not a text node, so it has no crop. It is visible in [home-light-default](screenshots/home-light-default.png).
-Focus-visible was requested on the public buttons and did not paint a designed ring. `light.border.focus` records the accent as the nearest colour, not a measured outline.
-Text fields, selects, checkboxes, radios and toasts live on that form or inside the app.

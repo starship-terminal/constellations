@@ -740,10 +740,10 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
 
 ## [Krisp](../systems/krisp) — `krisp`
-Access: signed out (every captured surface is public; sign-in, sign-up and the contact-sales form were not followed)
-- Sign in at https://app.krisp.ai/login: the meeting assistant, notes, recordings and account settings sit behind sign-in and were not captured
-- Get Krisp and Try it Free go to https://app.krisp.ai/sign-up: account creation was not followed
-- Book a demo and Talk to Sales open https://krisp.ai/contact-sales/: a sales form with email, name, select and radios, not submitted
+Access: signed-in free account (passwordless email OTP); /meetings and recordings redirect to the desktop download gate; notes, settings and billing were captured; Upgrade and calendar OAuth were not followed
+- /meetings and recordings redirect to /setup (desktop app download) on this free account
+- Upgrade, Download for macOS, Connect Google/Outlook, Delete account and Enable 2FA were not pressed
+- Book a demo and Talk to Sales open https://krisp.ai/contact-sales/: a sales form, not submitted
 
 ## Gate noted in access text only
 

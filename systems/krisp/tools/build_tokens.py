@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
-"""Build tokens.json for Krisp's public marketing site.
+"""Build tokens.json for Krisp's public marketing site and signed-in app.
 
 Krisp (krisp.ai, theme krisp-v4) does not publish a custom-property token
-sheet. Colours, type and radii are literals in the theme CSS and on the
-painted elements. This builder writes those measured values, each with
-$extensions.source naming the selector or element they were read from on
-2026-11-18. There is one painted theme, so the semantic set is `light` and
-`dark` is empty.
-
-raw/foundation.json (written by tools/capture/public/foundations.mjs) supplies
-the computed readings when it exists. The literals below are the same values
-that script records; a missing file does not invent new colours.
+sheet on the marketing site. Colours, type and radii there are literals in
+the theme CSS. The signed-in app at app.krisp.ai ships named custom
+properties (canvas, surface, foreground, background-primary, status).
+`light` is the marketing site. `dark` is the signed-in app under
+prefers-color-scheme: dark with data-theme=auto. App light values are in
+raw/app-css-vars.json; they are not mixed into the marketing `light` set.
 
 Deterministic: same inputs, byte-identical output.
 """
@@ -84,6 +81,11 @@ core = {
             '"Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
             "fontFamily",
             "computed h1 font-family \"Plus Jakarta Sans\"; @font-face files under /wp-content/themes/krisp-v4/fonts/Jakarta/, krisp.ai 2026-11-18",
+        ),
+        "app": tok(
+            "Inter, Arial, Helvetica, sans-serif",
+            "fontFamily",
+            "computed document.body font-family on app.krisp.ai /meeting-notes 2026-11-18; app loads Inter from fonts.googleapis.com",
         ),
     },
     "fontWeight": {
@@ -167,8 +169,10 @@ light = {
         "secondary": color("{core.color.coral.500}", "declared .button.btn--secondary a background, krisp-v4 2026-11-18"),
     },
     "status": {
-        "success": color("{core.color.green.500}", "stylesheet harvest rgb(104, 182, 49), krisp-v4 2026-11-18. A single hue, not a fill/text/border triple."),
-        "danger": color("{core.color.red.500}", "stylesheet harvest rgb(235, 58, 65), krisp-v4 2026-11-18. A single hue, not a fill/text/border triple."),
+        "success": color("{core.color.green.500}", "stylesheet harvest rgb(104, 182, 49), krisp-v4 2026-11-18. A single hue on the marketing site."),
+        "danger": color("{core.color.red.500}", "stylesheet harvest rgb(235, 58, 65), krisp-v4 2026-11-18. A single hue on the marketing site. The app's fill/text/border triples are in the dark set."),
+        "warning": color("#fe6257", "app custom property --warning on app.krisp.ai 2026-11-18; marketing coral. Not a fill/text/border triple on the public site."),
+        "info": color("#038ce2", "app --background-information-dark-1 on app.krisp.ai light 2026-11-18"),
     },
     "shadow": {
         "menu": tok(
@@ -187,12 +191,64 @@ light = {
     },
 }
 
+S_APP = "computed custom property on app.krisp.ai, signed-in free account, 2026-11-18"
+
+dark = {
+    "background": {
+        "page": color("#1c1f20", S_APP + "; --canvas-lighter-1 under prefers-color-scheme: dark, data-theme=auto"),
+        "surface": color("#242729", S_APP + "; --surface-lighter-1 dark"),
+        "muted": color("#0f1011", S_APP + "; --canvas-lighter-2 dark"),
+        "inverse": color("#fefefe", S_APP + "; --surface-lighter-1-static"),
+    },
+    "text": {
+        "primary": color("#f5f5f5", S_APP + "; --foreground-neutral-darker-3 dark"),
+        "secondary": color("#e5e5e6", S_APP + "; --foreground-neutral-dark-3 dark"),
+        "muted": color("#9fa1a3", S_APP + "; --foreground-neutral-light-3 dark"),
+        "on-accent": color("#fefefe", S_APP + "; --foreground-neutral-lighter-1-static"),
+        "link": color("#b4abfd", S_APP + "; --foreground-primary-dark-1 dark"),
+        "disabled": color("#585b5d", S_APP + "; --foreground-neutral-light-1 dark"),
+    },
+    "border": {
+        "default": color("#2e3133", S_APP + "; --border-neutral-lighter-3 dark"),
+        "strong": color("#6c6e70", S_APP + "; --border-neutral-dark-3 dark"),
+        "focus": color("#b4abfd", S_APP + "; --border-primary-dark-1 dark"),
+        "highlight": color("#b4abfd", S_APP + "; --border-selected dark"),
+    },
+    "action": {
+        "primary": color("#b4abfd", S_APP + "; --background-primary-dark-1 dark (app primary fill in dark)"),
+        "primary-hover": color("#9487fb", S_APP + "; --background-primary-dark-1-nudge dark"),
+        "inverse": color("#fefefe", S_APP + "; --foreground-neutral-lighter-1-static"),
+    },
+    "status": {
+        "success": color("#79e0ca", S_APP + "; --background-success-dark-1 dark"),
+        "success-text": color("#a8f0e1", S_APP + "; --foreground-success-dark-2 dark"),
+        "success-border": color("#a8f0e1", S_APP + "; --border-success-dark-2 dark"),
+        "danger": color("#faa7ab", S_APP + "; --background-danger-dark-1 dark"),
+        "danger-text": color("#ffd9da", S_APP + "; --foreground-danger-dark-3 dark"),
+        "danger-border": color("#ffd9da", S_APP + "; --border-danger-dark-3 dark"),
+        "warning": color("#e59d00", S_APP + "; --background-warning-light-1 dark"),
+        "warning-text": color("#fff1ca", S_APP + "; --foreground-warning-darker-1 dark"),
+        "warning-border": color("#e59d00", S_APP + "; --border-warning-light-1 dark"),
+        "info": color("#87d3ff", S_APP + "; --background-information-dark-1 dark"),
+        "info-text": color("#b2e2ff", S_APP + "; --foreground-information-dark-2 dark"),
+        "info-border": color("#b2e2ff", S_APP + "; --border-information-dark-2 dark"),
+    },
+    "shadow": {
+        "menu": tok(
+            [{"color": "rgba(15, 16, 17, 0.52)", "offsetX": "0px", "offsetY": "1px", "blur": "8px", "spread": "0px"}],
+            "shadow",
+            S_APP + "; --elevation-default-10 first layer dark",
+        ),
+    },
+}
+
 doc = {
     "core": core,
     "light": light,
-    "dark": {},
+    "dark": dark,
     "$themes": [
         {"id": "light", "name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+        {"id": "dark", "name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
     ],
 }
 
