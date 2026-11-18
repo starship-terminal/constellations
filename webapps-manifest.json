@@ -2604,8 +2604,8 @@
     161
    ],
    "description": "Bitcoin & Cryptocurrency Exchange",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kraken",
    "notes": "",
    "batch": 9
   },
