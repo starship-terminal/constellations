@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scape style guide</title>
+<style>
+  :root {
+    --page: #fef5f0;
+    --surface: #fefaf7;
+    --ink: #000000;
+    --muted: rgba(0, 0, 0, 0.5);
+    --accent: #ec6ce7;
+    --banner: #ec6ce7;
+    --footer: #2e2e30;
+    --inverse: #fef5f0;
+    --border: rgba(0, 0, 0, 0.2);
+    --focus: #c1b1a0;
+    --pill: 100px;
+    --radius: 8px;
+    --control: 4px;
+    --display: "GrotzecCondensed", Inter, Impact, sans-serif;
+    --body: Visuelt, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; }
+  header.bar { background: var(--accent); color: rgb(33, 37, 41); padding: 10px 32px; font-size: 16px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 32px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 0.84; letter-spacing: 0; text-transform: uppercase; margin: 0 0 16px; }
+  h1 { font-size: 64px; }
+  h2 { font-size: 32px; margin-top: 48px; }
+  p { max-width: 68ch; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 72px; border-radius: var(--control); border: 1px solid var(--border); }
+  .name { font-size: 12px; margin-top: 6px; }
+  button, .btn { font-family: var(--body); font-size: 14px; line-height: 1; text-transform: uppercase; border-radius: var(--pill); padding: 10px 14px; height: 40px; cursor: pointer; }
+  .primary { background: transparent; color: #000; border: 1px solid #000; }
+  .secondary { background: #000; color: #fef5f0; border: 1px solid #000; }
+  .light { background: #fef5f0; color: #000; border: 1px solid rgba(0,0,0,0.2); }
+  .field { display: block; width: 280px; margin-top: 8px; padding: 12px 20px; border: 1px solid rgba(0,0,0,0.2); border-radius: var(--control); background: #fff; color: #000; font: 16px/1.2 var(--body); }
+  .field:focus-visible { outline: 1px solid var(--focus); outline-offset: -2px; }
+  .card { width: 240px; background: var(--surface); box-shadow: 0 0 16px rgba(0,0,0,0.12); }
+  .card .photo { height: 140px; background: #d0d0d9; }
+  .card .body { padding: 16px; }
+  .badge { display: inline-block; background: rgba(0,0,0,0.08); border-radius: 4px; padding: 4px; font-size: 10px; font-weight: 500; }
+  .plus { background: #feff55; }
+  footer.note { margin-top: 48px; background: var(--footer); color: var(--inverse); padding: 32px; }
+  a { color: #000; }
+</style>
+</head>
+<body>
+<header class="bar">Rates for 27/28 now live</header>
+<main>
+  <h1>Scape</h1>
+  <p>Public signed-out marketing site, measured on www.scape.com on 19 November 2026. One light theme. Display is Grotzec Condensed. Body is Visuelt. Buttons are pills.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#fef5f0"></div><div class="name">page #fef5f0</div></div>
+    <div class="swatch"><div class="chip" style="background:#fefaf7"></div><div class="name">surface #fefaf7</div></div>
+    <div class="swatch"><div class="chip" style="background:#000"></div><div class="name">text #000</div></div>
+    <div class="swatch"><div class="chip" style="background:#ec6ce7"></div><div class="name">accent #ec6ce7</div></div>
+    <div class="swatch"><div class="chip" style="background:#2e2e30"></div><div class="name">footer #2e2e30</div></div>
+    <div class="swatch"><div class="chip" style="background:#ff6110"></div><div class="name">orange #ff6110</div></div>
+    <div class="swatch"><div class="chip" style="background:#004247"></div><div class="name">dark green #004247</div></div>
+    <div class="swatch"><div class="chip" style="background:#44011e"></div><div class="name">dark red #44011e</div></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-family:var(--display);font-size:48px;line-height:0.84;font-weight:700;text-transform:uppercase">Student living</p>
+  <p>Body copy sits at 16px Visuelt with a 1.5 line height. Nav links are 16px. Buttons are 14px and uppercase.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Compare now</button>
+    <button class="secondary">Find a room</button>
+    <button class="light">Find a room</button>
+  </div>
+  <label>Email address
+    <input class="field" type="text" placeholder="Measured, not submitted">
+  </label>
+  <h2>Card</h2>
+  <div class="card">
+    <div class="photo"></div>
+    <div class="body">
+      <div class="name">Shoreditch | London</div>
+      <strong>Studios</strong> <span class="badge">STANDARD</span> <span class="badge plus">PLUS</span>
+      <div>From £428 per week</div>
+    </div>
+  </div>
+</main>
+<footer class="note">Footer on --scape-dark-grey, type in --scape-white.</footer>
+</body>
+</html>

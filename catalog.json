@@ -16923,8 +16923,13 @@
       "shape": "reference",
       "captured": "2026-11-18",
       "access": "signed-out public marketing, pricing, the auth login card, and one published sample report. No study started. No form submitted. No purchase.",
-      "themes": ["light"],
-      "widths": [1440, 390],
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
       "entry": "systems/maze/README.md",
       "tokens": "systems/maze/tokens.json",
       "styleGuide": "systems/maze/style-guide.html",
@@ -16941,7 +16946,10 @@
             "border": "light.border"
           }
         },
-        "fonts": ["core.font.family.display", "core.font.family.sans"]
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans"
+        ]
       },
       "source": "capture",
       "capture": {
@@ -18242,6 +18250,83 @@
         "model": "Claude Opus 5.5",
         "route": "dom-snapshot",
         "durationMin": null
+      }
+    },
+    {
+      "slug": "scape",
+      "name": "Scape",
+      "url": "https://www.scape.com/",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Student-accommodation marketing: cream page #fef5f0, pink #ec6ce7 announcement bar and wordmark, Grotzec Condensed uppercase display, Visuelt body, pill buttons, and a room-search grid",
+      "tags": [
+        "web",
+        "marketing",
+        "housing",
+        "student",
+        "light",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing only. Booking, payment, phone and the contact form were not entered. Cookie consent was dismissed with Reject All.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/scape/README.md",
+      "tokens": "systems/scape/tokens.json",
+      "styleGuide": "systems/scape/style-guide.html",
+      "preview": {
+        "cover": "systems/scape/screenshots/home-light-default.png",
+        "icon": "systems/scape/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.bg.page",
+            "surface": "light.bg.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "www.scape.com in the T3 preview browser for computed styles, then headless Playwright for screenshots after preview_snapshot failed to produce frames. Desktop 1440x900 @1x and phone 390x844 @2x.",
+        "timestamp": "2026-11-19T02:30:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "https://www.scape.com/",
+          "https://www.scape.com/student-accommodation-london/",
+          "https://www.scape.com/rooms/",
+          "https://www.scape.com/about/faq/",
+          "https://www.scape.com/contact-us/",
+          "https://www.scape.com/blog/",
+          "https://www.scape.com/company/",
+          "https://www.scape.com/about/privacy-policy/",
+          "mobile menu on the FAQ page"
+        ],
+        "gaps": [
+          "no site-wide dark theme",
+          "booking, payment, phone and the HubSpot contact form were not entered",
+          "preview screenshots failed; PNG evidence is headless Playwright",
+          "inline icons were not extracted as SVG files",
+          "disabled, error and loading states were not on the public pages"
+        ],
+        "durationMin": 90,
+        "durationNote": "one session: live measurement, headless screenshots, package write"
       }
     },
     {
