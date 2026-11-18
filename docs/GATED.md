@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -738,6 +738,13 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [IFTTT](../systems/ifttt) — `ifttt`
+Access: signed out (every captured surface is public: ifttt.ai marketing home and ifttt.com's /explore(+services,+stories,+applets) gallery, /plans pricing, /twitter and /todoist service pages, an applet page, /connect/discord/instagram, /solutions/productivity and /solutions/smart-home, /mcp, /about, /careers, /partners, /terms and a made-up-route 404; 'Log in', 'Get started' and every /join path measured, never followed; the Applet 'Connect' install toggle measured, never pressed; the plan CTAs never followed to checkout; help.ifttt.com answers HTTP 403 to automation - a documented blocked boundary; platform.ifttt.com redirects to ifttt.ai - no separate public platform surface; the App Store/Play badges link off-site and were never followed; nothing was signed into, typed, searched, shared, bought or submitted; the only presses were local UI toggles - the detail pages' Share button (its own modal, closed with its X), the plans Monthly/Yearly billing switch, the featured category tabs, 'show more' expanders and the mobile hamburger)
+- the signed-in product (Log in, Get started, /join, account surfaces) is a boundary - measured, never entered
+- the Applet 'Connect' toggle and any 'Connect' action are the install control - measured at rest, never pressed (installing is an account feature)
+- the plan cards' 'Get started' CTAs lead to checkout - measured, never followed
+- the search and prompt fields were clicked into for the focus look only, never queried or submitted - result surfaces are uncaptured
 
 ## Gate noted in access text only
 

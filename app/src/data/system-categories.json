@@ -870,7 +870,7 @@
    "AI Tool",
    "Productivity"
   ],
-  "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries — the AI Tool label."
+  "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries \u2014 the AI Tool label."
  },
  {
   "referenceId": "systems:deel",
@@ -894,7 +894,7 @@
   "labels": [
    "AI Tool"
   ],
-  "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) — the AI Tool label."
+  "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) \u2014 the AI Tool label."
  },
  {
   "referenceId": "systems:chargetrip",
@@ -1194,7 +1194,7 @@
    "AI Tool",
    "Productivity"
   ],
-  "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog — the AI Tool label."
+  "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog \u2014 the AI Tool label."
  },
  {
   "referenceId": "systems:family",
@@ -1461,7 +1461,7 @@
    "Fundraising",
    "Marketplace"
   ],
-  "reason": "catalog.json describes a crowdfunding platform: the home hero and header dropdowns, the /discover and /s browse grids of fundraiser cards, a public /f/<slug> fundraiser page, the /create/fundraiser/category wizard at rest, the /sign-in auth boundary and the /c/* marketing stack — all signed-out."
+  "reason": "catalog.json describes a crowdfunding platform: the home hero and header dropdowns, the /discover and /s browse grids of fundraiser cards, a public /f/<slug> fundraiser page, the /create/fundraiser/category wizard at rest, the /sign-in auth boundary and the /c/* marketing stack \u2014 all signed-out."
  },
  {
   "referenceId": "systems:grammarly",
@@ -1547,7 +1547,7 @@
   "labels": [
    "Education"
   ],
-  "reason": "catalog.json describes Google's Grow with Google program site: Career Certificate pages, the certificates catalog, AI training courses and graduate/partner stories — a public learning program, enrolment on Coursera."
+  "reason": "catalog.json describes Google's Grow with Google program site: Career Certificate pages, the certificates catalog, AI training courses and graduate/partner stories \u2014 a public learning program, enrolment on Coursera."
  },
  {
   "referenceId": "systems:cofounder",
@@ -1609,5 +1609,14 @@
    "Marketplace"
   ],
   "reason": "catalog.json describes a honeymoon cash-gift registry: the closure-notice home, marketing content pages (blog, destination trips, guides), the signed-out auth forms at rest and the public demo registry where guests fund a couple's listed gifts."
+ },
+ {
+  "referenceId": "systems:ifttt",
+  "groupId": "web-categories",
+  "labels": [
+   "Productivity",
+   "AI Tool"
+  ],
+  "reason": "catalog.json describes IFTTT's automation platform: the ifttt.ai marketing home (AI prompt hero), the explore applet/service/story gallery, the plans pricing, service/applet/connect detail pages, solutions, MCP, about/careers/partners and legal surfaces."
  }
 ]

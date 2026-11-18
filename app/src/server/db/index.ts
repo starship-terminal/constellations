@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 37)
+    if (version > 38)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -476,6 +476,16 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx, new Set(["systems:coinbase"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:coinbase"]));
       await tx.execute("PRAGMA user_version = 37");
+    }
+    if (version < 38) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v37 never re-seeds, so the IFTTT rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:ifttt"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:ifttt"]));
+      await tx.execute("PRAGMA user_version = 38");
     }
     await tx.commit();
   } catch (error) {
