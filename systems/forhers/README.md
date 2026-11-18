@@ -56,7 +56,7 @@ Fonts: `core.font.family.sans` is sofia-pro, then 4 fallbacks; `core.font.family
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 132 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 128 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -85,7 +85,7 @@ Scorecard: **17 of 25 met, 8 partly, 0 missing**; C5, V1, V2 are optional for a 
 | C1 Component coverage | Partly | 64 measured components cover button (three CTA weights), icon button (menu toggle, carousel arrows, slide indicators), link (nav, footer, underlined, drug, topic), text field (number, email), card (bento, content, treatment, product, testimonial, article, region), list/chip rows (A-Z chips, blog topics), accordion and badge (FDA). Select, checkbox, radio, switch, menu(open), tooltip, dialog, toast, textarea, avatar and table do not appear on the signed-out surface or are hydration-owned - recorded gaps. |
 | P1 Patterns | Partly | patterns.md documents the app shell (promo strip/header/footer and the mobile sticky action pill), the marketing-page composition, the shop treatment catalogue, the editorial and drug-index surfaces, the BMI/lead-capture forms, and motion/focus conventions. Validation, empty/loading/error, destructive confirmation, feedback and search/filtering are not published on the signed-out surface and are documented as gaps rather than patterns. |
 
-Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../../docs/PACKAGE.md)).
+Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): not in the file table above: `capture.pr`.
 
 <!-- health:end -->
 

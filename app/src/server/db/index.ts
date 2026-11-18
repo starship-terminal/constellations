@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 39)
+    if (version > 41)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -489,13 +489,21 @@ export async function createResearchStore(directory: string) {
     }
     if (version < 39) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v38 never re-seeds, so the Forhers rows would never
+      // already at v38 never re-seeds, so the Hume rows would never
       // arrive. Scoping keeps cleared labels on older packages cleared — an
       // empty assignment reads as "never labelled", so an unscoped pass
       // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:hume"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:hume"]));
+      await tx.execute("PRAGMA user_version = 39");
+    }
+    if (version < 41) {
+      // Version 40 is reserved for the IFTTT seed on its own branch.
+      // This top-up is scoped so a store already at v40 still gains Hers,
+      // and cleared labels on older packages stay cleared.
       await seedNewCuratedCategories(tx, new Set(["systems:forhers"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:forhers"]));
-      await tx.execute("PRAGMA user_version = 39");
+      await tx.execute("PRAGMA user_version = 41");
     }
     await tx.commit();
   } catch (error) {

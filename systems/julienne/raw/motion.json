@@ -1,0 +1,6353 @@
+{
+ "_meta": {
+  "readAt": "2026-11-18",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 1229,
+  "removed": 506,
+  "reduced": 0,
+  "kept": 723,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "partial",
+  "loops": [
+   "pulse"
+  ]
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://withjulienne.com/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 2908,
+   "capped": false,
+   "unreadableSheets": 2,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 388,
+    "removed": 151,
+    "reduced": 0,
+    "kept": 237,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background-position",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "scale",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-position",
+       "outcome": "removed",
+       "from": 350,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "scale",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      }
+     ],
+     "count": 108,
+     "nodes": [
+      "div.absolute.inset-0.rounded-full",
+      "button.ml-2.flex.items-center",
+      "button.flex.items-center.h-11"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 101,
+     "nodes": [
+      "button.flex-shrink-0.p-1.rounded-full",
+      "div.relative.overflow-hidden.group",
+      "input.w-full.pl-6.pr-4"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 99,
+     "nodes": [
+      "button.rounded.overflow-hidden.transition-transform"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 40,
+     "nodes": [
+      "img.h-full.w-full.object-cover",
+      "img.w-full.h-full.object-cover"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "img.w-5.h-5.transition-opacity"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "svg",
+      "div.hidden.gap-3.transition-all"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "a.font-inter.transition-opacity.font-normal",
+      "button.font-inter.transition-opacity.font-normal"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "a.w-full.px-6.font-inter",
+      "button.w-auto.px-6.bg-white"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "button.w-full.px-6.text-white",
+      "button.w-full.text-white.font-inter"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.relative.flex.shrink-0"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "header.site-header.fixed.top-0"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "grid-template-columns",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       },
+       {
+        "property": "margin",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "grid-template-columns",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "margin",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.grid.duration-300.ease-out"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "margin",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "margin",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "nav.pointer-events-auto.hidden.items-center"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "fadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "scroll",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "scroll-desktop",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "modalBackdropFadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "modalBackdropFadeOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "modalSlideIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "modalSlideOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "fadeOutAfterDelay",
+     "steps": [
+      {
+       "offset": "0%, 80%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ingredient-loader",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ingredient-loader",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".glass.glass-interactive",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".glass.glass-interactive:active:not(:disabled):not([aria-disabled=\"true\"])",
+     "declarations": {
+      "scale": "1"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".motion-safe\\:animate-spin",
+     "declarations": {
+      "animation-duration": "1s",
+      "animation-timing-function": "linear",
+      "animation-delay": "0s",
+      "animation-iteration-count": "infinite",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "spin",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".motion-reduce\\:transform-none",
+     "declarations": {
+      "transform": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".motion-reduce\\:transition-none",
+     "declarations": {
+      "transition-property": "none"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".animate-fadeIn",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fadeIn",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-pulse",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "pulse",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-slideUp",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideUp",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-spin",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".transition",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "-webkit-backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-columns\\,margin\\,opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-columns",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "margin",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-rows\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-rows",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[margin\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "margin",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-all",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-colors",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-opacity",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-transform",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-200",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-300",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-500",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 1, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".slide-up",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideUp",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".slide-down",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideDown",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-scroll",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "scroll",
+       "durationMs": 15000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-scroll-desktop",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "scroll-desktop",
+       "durationMs": 20000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ingredient-loader",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ingredient-loader",
+       "durationMs": 1400,
+       "delayMs": 0,
+       "easing": "steps(10, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".glass-interactive",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "scale",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".glass.glass-interactive",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "background-position",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "scale",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".motion-safe\\:animate-spin",
+     "context": [
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://withjulienne.com/discover",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 4427,
+   "capped": false,
+   "unreadableSheets": 2,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 770,
+    "removed": 319,
+    "reduced": 0,
+    "kept": 451,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background-position",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "scale",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-position",
+       "outcome": "removed",
+       "from": 350,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "scale",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      }
+     ],
+     "count": 183,
+     "nodes": [
+      "div.absolute.inset-0.rounded-full",
+      "button.ml-2.flex.items-center",
+      "button.flex.items-center.h-11"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 134,
+     "nodes": [
+      "button.flex-shrink-0.p-1.rounded-full",
+      "div.relative.overflow-hidden.group",
+      "a.block.relative.isolate"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 132,
+     "nodes": [
+      "button.rounded.overflow-hidden.transition-transform",
+      "img.w-full.h-full.object-contain"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 131,
+     "nodes": [
+      "img.h-full.w-full.object-cover",
+      "img.w-full.h-full.object-cover"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 105,
+     "nodes": [
+      "img.w-5.h-5.transition-opacity"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 26,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 22,
+     "nodes": [
+      "a.font-inter.transition-opacity.font-medium",
+      "a.font-inter.transition-opacity.font-normal",
+      "button.font-inter.transition-opacity.font-normal"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 16,
+     "nodes": [
+      "button.suggestion-prompt-button.font-inter.whitespace-nowrap"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 15,
+     "nodes": [
+      "svg",
+      "div.hidden.gap-3.transition-all"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "strokeRotate-stroke-2grzn6vv5",
+        "durationMs": 5850,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "strokeRotate-stroke-2grzn6vv5",
+       "outcome": "removed",
+       "from": 5850,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "rect"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.relative.flex.shrink-0"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "header.site-header.fixed.top-0"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "grid-template-columns",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       },
+       {
+        "property": "margin",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "grid-template-columns",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "margin",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.grid.duration-300.ease-out"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "grid-template-rows",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "grid-template-rows",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.grid.duration-300.ease-out"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "margin",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "margin",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "nav.pointer-events-auto.hidden.items-center"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "fadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "scroll",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "scroll-desktop",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "modalBackdropFadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "modalBackdropFadeOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "modalSlideIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "modalSlideOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "fadeOutAfterDelay",
+     "steps": [
+      {
+       "offset": "0%, 80%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ingredient-loader",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "strokeRotate-stroke-m7no13sjs",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "stroke-dashoffset"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "stroke-dashoffset"
+       ]
+      }
+     ],
+     "properties": [
+      "stroke-dashoffset"
+     ]
+    },
+    {
+     "name": "strokeRotate-stroke-2grzn6vv5",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "stroke-dashoffset"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "stroke-dashoffset"
+       ]
+      }
+     ],
+     "properties": [
+      "stroke-dashoffset"
+     ]
+    },
+    {
+     "name": "fadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ingredient-loader",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".glass.glass-interactive",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".glass.glass-interactive:active:not(:disabled):not([aria-disabled=\"true\"])",
+     "declarations": {
+      "scale": "1"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".motion-safe\\:animate-spin",
+     "declarations": {
+      "animation-duration": "1s",
+      "animation-timing-function": "linear",
+      "animation-delay": "0s",
+      "animation-iteration-count": "infinite",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "spin",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".motion-reduce\\:transform-none",
+     "declarations": {
+      "transform": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".motion-reduce\\:transition-none",
+     "declarations": {
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".animated-stroke-stroke-m7no13sjs",
+     "declarations": {
+      "animation-duration": "auto !important",
+      "animation-timing-function": "ease !important",
+      "animation-delay": "0s !important",
+      "animation-iteration-count": "1 !important",
+      "animation-direction": "normal !important",
+      "animation-fill-mode": "none !important",
+      "animation-play-state": "running !important",
+      "animation-name": "none !important",
+      "animation-timeline": "auto !important",
+      "animation-range-start": "normal !important",
+      "animation-range-end": "normal !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".animated-stroke-stroke-2grzn6vv5",
+     "declarations": {
+      "animation-duration": "auto !important",
+      "animation-timing-function": "ease !important",
+      "animation-delay": "0s !important",
+      "animation-iteration-count": "1 !important",
+      "animation-direction": "normal !important",
+      "animation-fill-mode": "none !important",
+      "animation-play-state": "running !important",
+      "animation-name": "none !important",
+      "animation-timeline": "auto !important",
+      "animation-range-start": "normal !important",
+      "animation-range-end": "normal !important"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".animate-fadeIn",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fadeIn",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-pulse",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "pulse",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-slideUp",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideUp",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-spin",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".transition",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "-webkit-backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-columns\\,margin\\,opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-columns",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "margin",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-rows\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-rows",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[margin\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "margin",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-all",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-colors",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-opacity",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-transform",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-200",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-300",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-500",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 1, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".slide-up",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideUp",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".slide-down",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideDown",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-scroll",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "scroll",
+       "durationMs": 15000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-scroll-desktop",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "scroll-desktop",
+       "durationMs": 20000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ingredient-loader",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ingredient-loader",
+       "durationMs": 1400,
+       "delayMs": 0,
+       "easing": "steps(10, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".glass-interactive",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "scale",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".glass.glass-interactive",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "background-position",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "scale",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".motion-safe\\:animate-spin",
+     "context": [
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-3": {
+   "url": "https://withjulienne.com/days/<id>/recipes/<id>",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 569,
+   "capped": false,
+   "unreadableSheets": 2,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 61,
+    "removed": 36,
+    "reduced": 0,
+    "kept": 25,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": [
+     "pulse"
+    ]
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "spin",
+        "durationMs": 1000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "spin",
+       "outcome": "removed",
+       "from": 1000,
+       "to": 0
+      }
+     ],
+     "count": 22,
+     "nodes": [
+      "span.h-4.w-4.rounded-full"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background-position",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "scale",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-position",
+       "outcome": "removed",
+       "from": 350,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "scale",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      }
+     ],
+     "count": 11,
+     "nodes": [
+      "div.absolute.inset-0.rounded-full",
+      "button.ml-2.flex.items-center",
+      "button.flex.items-center.h-11"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "button.flex-shrink-0.p-1.rounded-full",
+      "button.transition-colors.flex.items-center",
+      "button.px-6.text-black.font-inter"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 5,
+     "nodes": [
+      "svg",
+      "div.overflow-hidden.cursor-pointer.bg-black/5"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "header.site-header.fixed.top-0",
+      "a.transition-colors.duration-200"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "a.font-inter.transition-opacity.font-medium",
+      "a.font-inter.transition-opacity.font-normal",
+      "button.font-inter.transition-opacity.font-normal"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.w-full.h-full.transition-opacity",
+      "img.absolute.inset-0.w-full",
+      "div.right-panel.w-full.min-h-screen"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": [
+       {
+        "name": "fadeOutAfterDelay",
+        "durationMs": 2500,
+        "delayMs": 0,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "forwards",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": [
+       {
+        "name": "fadeOutAfterDelay",
+        "durationMs": 2500,
+        "delayMs": 0,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "forwards",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      },
+      {
+       "kind": "animation",
+       "key": "fadeOutAfterDelay",
+       "outcome": "kept",
+       "from": 2500,
+       "to": 2500
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "p.font-inter.italic.text-black/50"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "pulse",
+        "durationMs": 2000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "pulse",
+        "durationMs": 2000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "pulse",
+       "outcome": "kept",
+       "from": 2000,
+       "to": 2000,
+       "loops": true
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.absolute.inset-0.animate-pulse"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.relative.flex.shrink-0"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "grid-template-columns",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       },
+       {
+        "property": "margin",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "grid-template-columns",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "margin",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.grid.duration-300.ease-out"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "margin",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "margin",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "nav.pointer-events-auto.hidden.items-center"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "fadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "scroll",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "scroll-desktop",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "modalBackdropFadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "modalBackdropFadeOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "modalSlideIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "modalSlideOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "fadeOutAfterDelay",
+     "steps": [
+      {
+       "offset": "0%, 80%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ingredient-loader",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ingredient-loader",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".glass.glass-interactive",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".glass.glass-interactive:active:not(:disabled):not([aria-disabled=\"true\"])",
+     "declarations": {
+      "scale": "1"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".motion-safe\\:animate-spin",
+     "declarations": {
+      "animation-duration": "1s",
+      "animation-timing-function": "linear",
+      "animation-delay": "0s",
+      "animation-iteration-count": "infinite",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "spin",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".motion-reduce\\:transform-none",
+     "declarations": {
+      "transform": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".motion-reduce\\:transition-none",
+     "declarations": {
+      "transition-property": "none"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".animate-fadeIn",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fadeIn",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-pulse",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "pulse",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-slideUp",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideUp",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-spin",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".transition",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "-webkit-backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-columns\\,margin\\,opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-columns",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "margin",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-rows\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-rows",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[margin\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "margin",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-all",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-colors",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-opacity",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-transform",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-200",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-300",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-500",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 1, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".slide-up",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideUp",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".slide-down",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideDown",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-scroll",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "scroll",
+       "durationMs": 15000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-scroll-desktop",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "scroll-desktop",
+       "durationMs": 20000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ingredient-loader",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ingredient-loader",
+       "durationMs": 1400,
+       "delayMs": 0,
+       "easing": "steps(10, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".glass-interactive",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "scale",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".glass.glass-interactive",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "background-position",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "scale",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".motion-safe\\:animate-spin",
+     "context": [
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-4": {
+   "url": "https://withjulienne.com/team",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 155,
+   "capped": false,
+   "unreadableSheets": 2,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 10,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 10,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 5,
+     "nodes": [
+      "a.font-inter.transition-colors",
+      "button.flex.items-center.gap-2"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "a.flex.items-center.gap-2",
+      "div.absolute.right-0.top-full"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "header.fixed.top-0.left-0"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "fadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "scroll",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "scroll-desktop",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "modalBackdropFadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "modalBackdropFadeOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "modalSlideIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "modalSlideOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "fadeOutAfterDelay",
+     "steps": [
+      {
+       "offset": "0%, 80%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ingredient-loader",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ingredient-loader",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".glass.glass-interactive",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".glass.glass-interactive:active:not(:disabled):not([aria-disabled=\"true\"])",
+     "declarations": {
+      "scale": "1"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".motion-safe\\:animate-spin",
+     "declarations": {
+      "animation-duration": "1s",
+      "animation-timing-function": "linear",
+      "animation-delay": "0s",
+      "animation-iteration-count": "infinite",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "spin",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".motion-reduce\\:transform-none",
+     "declarations": {
+      "transform": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".motion-reduce\\:transition-none",
+     "declarations": {
+      "transition-property": "none"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".animate-fadeIn",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fadeIn",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-pulse",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "pulse",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-slideUp",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideUp",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-spin",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".transition",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "-webkit-backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-columns\\,margin\\,opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-columns",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "margin",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-rows\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-rows",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[margin\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "margin",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-all",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-colors",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-opacity",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-transform",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-200",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-300",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-500",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 1, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".slide-up",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideUp",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".slide-down",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "slideDown",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-scroll",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "scroll",
+       "durationMs": 15000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-scroll-desktop",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "scroll-desktop",
+       "durationMs": 20000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ingredient-loader",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ingredient-loader",
+       "durationMs": 1400,
+       "delayMs": 0,
+       "easing": "steps(10, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".glass-interactive",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "scale",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".glass.glass-interactive",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "background-position",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 240,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "scale",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".motion-safe\\:animate-spin",
+     "context": [
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  }
+ }
+}

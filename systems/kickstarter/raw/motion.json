@@ -1,0 +1,2220 @@
+{
+ "product": "kickstarter",
+ "read": "2026-11-18",
+ "source": "headed Chrome, atomic stylesheet parsed in a constructed sheet, computed motion on the live DOM",
+ "pages": {
+  "page-1": {
+   "url": "https://www.kickstarter.com/",
+   "matchMedia": false,
+   "moving": [
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "input.atomic-text-input",
+     "transition": "all 0.3s cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": "none 0s"
+    },
+    {
+     "node": "a.kds-button",
+     "transition": "outline-width, outline-color, outline-offset, background-color, border-color, box-shadow, color, fill, gap, margin, min-height, padding, outline 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "a.kds-button",
+     "transition": "outline-width, outline-color, outline-offset, background-color, border-color, box-shadow, color, fill, gap, margin, min-height, padding, outline 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "button.kds-button",
+     "transition": "outline-width, outline-color, outline-offset, background-color, border-color, box-shadow, color, fill, gap, margin, min-height, padding, outline 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".kds-accordion::details-content",
+     "context": [
+      "(prefers-reduced-motion: no-preference)"
+     ],
+     "transition": "outline-width 300ms cubic-bezier(0.42, 0, 0.58, 1) allow-discrete, outline-color, outline-offset, height, content-visibility",
+     "animation": ""
+    },
+    {
+     "selector": "kds-badge",
+     "context": [],
+     "transition": "background-color 250ms ease-out, color, border-color",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-chip",
+     "context": [],
+     "transition": "border-color 100ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-chip:where(:has(.kds-chip__remove))",
+     "context": [],
+     "transition": "border-color 100ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-modal[data-entering]",
+     "context": [],
+     "transition": "",
+     "animation": "200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s 1 normal both running modal-zoom"
+    },
+    {
+     "selector": ".kds-modal__overlay[data-entering]",
+     "context": [],
+     "transition": "",
+     "animation": "150ms ease-out 0s 1 normal forwards running modal-fade"
+    },
+    {
+     "selector": ".kds-modal__overlay[data-exiting]",
+     "context": [],
+     "transition": "",
+     "animation": "150ms ease-in 0s 1 reverse none running modal-fade"
+    },
+    {
+     "selector": ".kds-dialog:where(dialog)",
+     "context": [],
+     "transition": "overlay 250ms allow-discrete, display 250ms, opacity 250ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-dialog:where(dialog)::backdrop",
+     "context": [],
+     "transition": "backdrop-filter 250ms ease-out, background-color 250ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": "kds-disclosure__content, .kds-disclosure__content",
+     "context": [],
+     "transition": "visibility 0s var(--_delay, 100ms)",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-html-popover",
+     "context": [],
+     "transition": "display 200ms allow-discrete, top 200ms cubic-bezier(0.17, 0.84, 0.44, 1), right 200ms cubic-bezier(0.17, 0.84, 0.44, 1), bottom 200ms cubic-bezier(0.17, 0.84, ",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-html-popover::backdrop",
+     "context": [],
+     "transition": "background-color 200ms ease-out, backdrop-filter 200ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-progress-bar__fill",
+     "context": [],
+     "transition": "width 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ":where(.kds-progress-bar:not([aria-valuenow])) .kds-progress-bar__fill",
+     "context": [],
+     "transition": "",
+     "animation": "2s ease-in-out 0s infinite normal none running kds-progress-bar-indeterminate"
+    },
+    {
+     "selector": ".kds-toast",
+     "context": [],
+     "transition": "",
+     "animation": "500ms cubic-bezier(0.28, 0.84, 0.42, 1) 0s 1 normal none running kds-toast-enter"
+    },
+    {
+     "selector": ".kds-tooltip:where([data-entering], [data-exiting])",
+     "context": [],
+     "transition": "",
+     "animation": "100ms ease-out 0s 1 normal none running kds-tooltip"
+    },
+    {
+     "selector": ".kds-animate-spin",
+     "context": [],
+     "transition": "",
+     "animation": "1s linear 0s infinite normal none running kds-spin"
+    },
+    {
+     "selector": ".select, select, input",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable-ksr-green-500:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable-soft-black:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable-black:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".hover-slow",
+     "context": [],
+     "transition": "0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".hover-item-scale-1_05:hover",
+     "context": [],
+     "transition": "transform 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".link-blue",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-create-700",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-green",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-navy",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-red",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-white",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".primary-detail :where(.primary-detail__detail, .primary-detail__footer)",
+     "context": [
+      "(inline-size <= 599px)"
+     ],
+     "transition": "translate cubic-bezier(0, 1, 1, 1) var(--_duration),z-index linear 0s var(--_duration)",
+     "animation": ""
+    },
+    {
+     "selector": ".ksr-tooltip::before, .ksr-tooltip-manual::before, .ksr-tooltip-no-focus::before",
+     "context": [],
+     "transition": "0.18s ease-out 0.18s",
+     "animation": ""
+    },
+    {
+     "selector": ".transition-all",
+     "context": [],
+     "transition": "600ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".ksr-progress-slider__slider::-webkit-slider-thumb",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".ksr-progress-slider--video-player .ksr-progress-slider__slider::-webkit-slider-thumb",
+     "context": [],
+     "transition": "background-color 150ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".input-range__slider",
+     "context": [],
+     "transition": "transform 0.1s ease-out, box-shadow 0.1s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".input-range__slider-container",
+     "context": [],
+     "transition": "left 0.1s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".input-range__track",
+     "context": [],
+     "transition": "left 0.1s ease-out, width 0.1s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".shadow-hover::after",
+     "context": [],
+     "transition": "0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fade-appear-active",
+     "context": [],
+     "transition": "margin 300ms, opacity 600ms ease-in",
+     "animation": ""
+    },
+    {
+     "selector": ".bespoke-hover-transition-bottom-bar::after",
+     "context": [],
+     "transition": "height 0.3s, opacity 0.5s, transform 0.3s, color 0.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".hover-overlay-target .hover-overlay-item",
+     "context": [],
+     "transition": "opacity 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".break-ksr-module-link",
+     "context": [],
+     "transition": "",
+     "animation": "0.25s ease 0s infinite normal none running modulecursor"
+    },
+    {
+     "selector": ".marquee-left",
+     "context": [],
+     "transition": "",
+     "animation": "25s linear -8s infinite normal none running fromleft"
+    },
+    {
+     "selector": ".marquee-left",
+     "context": [
+      "(max-width: 1199px)"
+     ],
+     "transition": "",
+     "animation": "30s linear 0s infinite normal none running fromleft"
+    },
+    {
+     "selector": ".marquee-right",
+     "context": [],
+     "transition": "",
+     "animation": "25s linear -8s infinite normal none running fromright"
+    },
+    {
+     "selector": ".marquee-right",
+     "context": [
+      "(max-width: 1199px)"
+     ],
+     "transition": "",
+     "animation": "30s linear 0s infinite normal none running fromright"
+    },
+    {
+     "selector": ".break-ksr-badge-animation",
+     "context": [],
+     "transition": "",
+     "animation": "7s ease 0s infinite normal none running SlideBackgroundPosition"
+    },
+    {
+     "selector": ".truncated-post",
+     "context": [],
+     "transition": "border 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".truncated-post .truncated-post-body",
+     "context": [],
+     "transition": "max-height 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".border-transition",
+     "context": [],
+     "transition": "",
+     "animation": "3s ease 0s 1 normal forwards running borderAnimation"
+    },
+    {
+     "selector": ".drop-shadow-animate",
+     "context": [],
+     "transition": "",
+     "animation": "1s ease 0s 1 normal forwards running dropShadowPulse"
+    },
+    {
+     "selector": ".discover-more-link-in",
+     "context": [],
+     "transition": "",
+     "animation": "1s ease 0s 1 normal forwards running DiscoverMoreIn"
+    },
+    {
+     "selector": ".wiggle-emoji",
+     "context": [],
+     "transition": "",
+     "animation": "2.5s ease 0s infinite normal none running wiggle-emoji"
+    },
+    {
+     "selector": ".up-down-emoji",
+     "context": [],
+     "transition": "",
+     "animation": "2.5s ease 0s infinite normal none running up-down-emoji"
+    },
+    {
+     "selector": ".draft-project-anim",
+     "context": [],
+     "transition": "0.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".draft-project-anim div:first-child",
+     "context": [],
+     "transition": "background-color 1.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".draft-project-anim:hover div:first-child",
+     "context": [],
+     "transition": "background-color 0.01s",
+     "animation": ""
+    },
+    {
+     "selector": ".scissors-animated",
+     "context": [],
+     "transition": "",
+     "animation": "0.4s steps(3) 0s infinite normal none running play"
+    },
+    {
+     "selector": ".pledge-flow-accordion :where(.kds-icon)",
+     "context": [],
+     "transition": "transform 0.1s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".atomic-form-v1 input",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".atomic-form-v1 input:focus",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "textarea.atomic-text-input, input[type=\"text\"].atomic-text-input, input[type=\"email\"].atomic-text-input, input[type=\"password\"].atomic-text-",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "textarea.atomic-text-input:focus, input[type=\"text\"].atomic-text-input:focus, input[type=\"email\"].atomic-text-input:focus, input[type=\"passw",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".theme-build .animate-bottom-margin",
+     "context": [],
+     "transition": "margin-bottom 300ms",
+     "animation": ""
+    },
+    {
+     "selector": ".theme-onboarding .animate-bottom-margin",
+     "context": [],
+     "transition": "margin-bottom 300ms",
+     "animation": ""
+    },
+    {
+     "selector": ".theme-push .animate-bottom-margin",
+     "context": [],
+     "transition": "margin-bottom 300ms",
+     "animation": ""
+    },
+    {
+     "selector": ".form-checkbox .input-state-indicator, .form-checkbox .input-state-indicator::before, .form-checkbox .input-label:hover, .form-checkbox .inp",
+     "context": [],
+     "transition": "box-shadow 300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".category-menu__popover:where(:not([data-rac]))",
+     "context": [],
+     "transition": "opacity var(--_duration) ease-out 0s,transform var(--_duration) ease-out 0s,visibility 0s linear calc(0s + var(--_duration)),pointer-events 0s linear calc(0s + ",
+     "animation": ""
+    },
+    {
+     "selector": ".category-menu__popover:where(:not([data-rac])):where(:not([inert]))",
+     "context": [],
+     "transition": "opacity var(--_duration) ease-out 0s,transform var(--_duration) ease-out 0s,visibility 0s linear 0s,pointer-events 0s linear 0s",
+     "animation": ""
+    },
+    {
+     "selector": ".category-menu__popover:where([data-rac]):where([data-entering])",
+     "context": [],
+     "transition": "",
+     "animation": "slide var(--_duration) ease-out var(--_delay)"
+    },
+    {
+     "selector": ".category-menu__popover:where([data-rac]):where([data-exiting])",
+     "context": [],
+     "transition": "",
+     "animation": "slide var(--_duration) ease-out var(--_delay) reverse"
+    },
+    {
+     "selector": ".expandable-background",
+     "context": [],
+     "transition": "0.1s ease-in",
+     "animation": ""
+    },
+    {
+     "selector": ".progress-bar-pulse",
+     "context": [
+      "(prefers-reduced-motion: no-preference)"
+     ],
+     "transition": "",
+     "animation": "3s ease-out 0s infinite normal forwards running progress-bar-pulse"
+    },
+    {
+     "selector": ".notification-banner",
+     "context": [],
+     "transition": "max-height 0.3s, opacity 0.3s",
+     "animation": ""
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "kds-dialog-scroll-elevation",
+     "css": "@keyframes kds-dialog-scroll-elevation { \n  100% { box-shadow: var(--kds-elevation-1-x) var(--kds-elevation-1-y) var(--kds-elevation-1-blur) var(--kds-elevation-1-spread) var(--kds-elevation-1-shadow-color); background-color: var(--kds-elevation-1-surface-color); }\n}"
+    },
+    {
+     "name": "modal-zoom",
+     "css": "@keyframes modal-zoom { \n  0% { box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px; transform: scale(0.8); opacity: 0; }\n  100% { box-shadow: var(--kds-elevation-3-x) var(--kds-elevation-3-y) var(--kds-elevation-3-blur) var(--kds-elevation-3-spread) var(--kds-elevation-3-shadow-color); transform: scale(1)"
+    },
+    {
+     "name": "modal-fade",
+     "css": "@keyframes modal-fade { \n  0% { backdrop-filter: blur(0px); opacity: 0; }\n  100% { backdrop-filter: blur(4px); opacity: 1; }\n}"
+    },
+    {
+     "name": "kds-progress-bar-indeterminate",
+     "css": "@keyframes kds-progress-bar-indeterminate { \n  0% { transform: translateX(-100%); }\n  60%, 100% { transform: translateX(100%); }\n}"
+    },
+    {
+     "name": "kds-toast-enter",
+     "css": "@keyframes kds-toast-enter { \n  0% { scale: 1; translate: 0px calc(100% + 8px); opacity: 0; box-shadow: none; }\n  25% { scale: 0.95 1.2; translate: 0px -16px; box-shadow: none; }\n  80% { scale: 1.0125 0.95; translate: 0px; opacity: 1; box-shadow: var(--kds-shadow-2); }\n  100% { scale: 1; }\n}"
+    },
+    {
+     "name": "kds-tooltip",
+     "css": "@keyframes kds-tooltip { \n  0% { transform: var(--origin); opacity: 0; }\n  100% { transform: translateY(0px) translateX(0px); opacity: 1; }\n}"
+    },
+    {
+     "name": "kds-spin",
+     "css": "@keyframes kds-spin { \n  100% { transform: rotate(360deg); }\n}"
+    },
+    {
+     "name": "pulse",
+     "css": "@-webkit-keyframes pulse { \n  0% { opacity: 0.8; }\n  100% { opacity: 0.2; }\n}"
+    },
+    {
+     "name": "pulse",
+     "css": "@keyframes pulse { \n  0% { opacity: 0.8; }\n  100% { opacity: 0.2; }\n}"
+    },
+    {
+     "name": "animation-fade-out",
+     "css": "@-webkit-keyframes animation-fade-out { \n  0% { opacity: 1; }\n  100% { opacity: 0; }\n}"
+    },
+    {
+     "name": "animation-fade-out",
+     "css": "@keyframes animation-fade-out { \n  0% { opacity: 1; }\n  100% { opacity: 0; }\n}"
+    },
+    {
+     "name": "animation-bg-0-to-95-opacity",
+     "css": "@-webkit-keyframes animation-bg-0-to-95-opacity { \n  0% { background-color: rgba(255, 255, 255, 0); }\n  100% { background-color: rgba(255, 255, 255, 0.95); }\n}"
+    },
+    {
+     "name": "animation-bg-0-to-95-opacity",
+     "css": "@keyframes animation-bg-0-to-95-opacity { \n  0% { background-color: rgba(255, 255, 255, 0); }\n  100% { background-color: rgba(255, 255, 255, 0.95); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-20px",
+     "css": "@-webkit-keyframes animation-move-up-by-20px { \n  0% { transform: translateY(20px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-20px",
+     "css": "@keyframes animation-move-up-by-20px { \n  0% { transform: translateY(20px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-100px",
+     "css": "@-webkit-keyframes animation-move-up-by-100px { \n  0% { transform: translateY(100px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-100px",
+     "css": "@keyframes animation-move-up-by-100px { \n  0% { transform: translateY(100px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in",
+     "css": "@-webkit-keyframes animation-fade-in { \n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}"
+    },
+    {
+     "name": "animation-fade-in",
+     "css": "@keyframes animation-fade-in { \n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-up",
+     "css": "@-webkit-keyframes animation-fade-in-and-up { \n  0% { opacity: 0; transform: translateY(30px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-up",
+     "css": "@keyframes animation-fade-in-and-up { \n  0% { opacity: 0; transform: translateY(30px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-down",
+     "css": "@-webkit-keyframes animation-fade-in-and-down { \n  0% { opacity: 0; transform: translateY(-5px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-down",
+     "css": "@keyframes animation-fade-in-and-down { \n  0% { opacity: 0; transform: translateY(-5px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-slide-down",
+     "css": "@-webkit-keyframes animation-slide-down { \n  0% { opacity: 0; transform: translateY(-50px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-slide-down",
+     "css": "@keyframes animation-slide-down { \n  0% { opacity: 0; transform: translateY(-50px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-slide-up",
+     "css": "@-webkit-keyframes animation-slide-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-50px); }\n}"
+    },
+    {
+     "name": "animation-slide-up",
+     "css": "@keyframes animation-slide-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-50px); }\n}"
+    },
+    {
+     "name": "animation-fade-out-and-up",
+     "css": "@-webkit-keyframes animation-fade-out-and-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-5px); }\n}"
+    },
+    {
+     "name": "animation-fade-out-and-up",
+     "css": "@keyframes animation-fade-out-and-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-5px); }\n}"
+    },
+    {
+     "name": "bannerdismiss",
+     "css": "@-webkit-keyframes bannerdismiss { \n  0% { opacity: 100; }\n  100% { opacity: 0; }\n}"
+    }
+   ],
+   "reduced": [
+    {
+     "media": "(prefers-reduced-motion: no-preference)",
+     "sample": "@media (prefers-reduced-motion: no-preference) {\n  .kds-accordion::details-content { block-size: 0px; overflow: hidden; transition: outline-width 300ms cubic-bezier(0.42, 0, 0.58, 1) allow-discrete, outline-color, outline-offset, height, content-visibility; }\n  .kds-accordion[ope"
+    },
+    {
+     "media": "(prefers-reduced-motion: no-preference)",
+     "sample": "@media (prefers-reduced-motion: no-preference) {\n  .progress-bar-pulse { background: linear-gradient(270deg, rgb(5, 206, 120) 25%, rgb(210, 254, 235) 51%, rgb(5, 206, 120) 75%) 0% 0% / 400% 400%; animation: 3s ease-out 0s infinite normal forwards running progress-bar-pulse; }\n}"
+    },
+    {
+     "media": "screen and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (prefers-reduced-motion: no-preference) {\n  .has-creator-nav { --creator-nav-transition-duration: 150ms; }\n}"
+    },
+    {
+     "media": "screen and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (prefers-reduced-motion: no-preference) {\n  .creator-nav__submenu { transition-duration: ; transition-timing-function: ; transition-delay: ; transition-behavior: ; transition-property: translate; }\n}"
+    },
+    {
+     "media": "screen and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (prefers-reduced-motion: no-preference) {\n  .creator-nav__overlay { transition-duration: ; transition-timing-function: ; transition-delay: ; transition-behavior: ; transition-property: opacity, backdrop-filter; }\n}"
+    },
+    {
+     "media": "screen and (max-width: 599px) and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (max-width: 599px) and (prefers-reduced-motion: no-preference) {\n  .has-creator-nav :where(main:not(main main)), .has-creator-nav :where(main:not(main main)) ~ #global-footer, .has-creator-nav :where(main:not(main main)) ~ footer { transition-duration: ; transit"
+    }
+   ],
+   "matchMediaReduce": true
+  },
+  "page-2": {
+   "url": "https://www.kickstarter.com/discover",
+   "matchMedia": false,
+   "moving": [
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "input.atomic-text-input",
+     "transition": "all 0.3s cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": "none 0s"
+    },
+    {
+     "node": "a.kds-button",
+     "transition": "outline-width, outline-color, outline-offset, background-color, border-color, box-shadow, color, fill, gap, margin, min-height, padding, outline 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "a.kds-button",
+     "transition": "outline-width, outline-color, outline-offset, background-color, border-color, box-shadow, color, fill, gap, margin, min-height, padding, outline 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "button.kds-button",
+     "transition": "outline-width, outline-color, outline-offset, background-color, border-color, box-shadow, color, fill, gap, margin, min-height, padding, outline 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".kds-accordion::details-content",
+     "context": [
+      "(prefers-reduced-motion: no-preference)"
+     ],
+     "transition": "outline-width 300ms cubic-bezier(0.42, 0, 0.58, 1) allow-discrete, outline-color, outline-offset, height, content-visibility",
+     "animation": ""
+    },
+    {
+     "selector": "kds-badge",
+     "context": [],
+     "transition": "background-color 250ms ease-out, color, border-color",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-chip",
+     "context": [],
+     "transition": "border-color 100ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-chip:where(:has(.kds-chip__remove))",
+     "context": [],
+     "transition": "border-color 100ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-modal[data-entering]",
+     "context": [],
+     "transition": "",
+     "animation": "200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s 1 normal both running modal-zoom"
+    },
+    {
+     "selector": ".kds-modal__overlay[data-entering]",
+     "context": [],
+     "transition": "",
+     "animation": "150ms ease-out 0s 1 normal forwards running modal-fade"
+    },
+    {
+     "selector": ".kds-modal__overlay[data-exiting]",
+     "context": [],
+     "transition": "",
+     "animation": "150ms ease-in 0s 1 reverse none running modal-fade"
+    },
+    {
+     "selector": ".kds-dialog:where(dialog)",
+     "context": [],
+     "transition": "overlay 250ms allow-discrete, display 250ms, opacity 250ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-dialog:where(dialog)::backdrop",
+     "context": [],
+     "transition": "backdrop-filter 250ms ease-out, background-color 250ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": "kds-disclosure__content, .kds-disclosure__content",
+     "context": [],
+     "transition": "visibility 0s var(--_delay, 100ms)",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-html-popover",
+     "context": [],
+     "transition": "display 200ms allow-discrete, top 200ms cubic-bezier(0.17, 0.84, 0.44, 1), right 200ms cubic-bezier(0.17, 0.84, 0.44, 1), bottom 200ms cubic-bezier(0.17, 0.84, ",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-html-popover::backdrop",
+     "context": [],
+     "transition": "background-color 200ms ease-out, backdrop-filter 200ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-progress-bar__fill",
+     "context": [],
+     "transition": "width 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ":where(.kds-progress-bar:not([aria-valuenow])) .kds-progress-bar__fill",
+     "context": [],
+     "transition": "",
+     "animation": "2s ease-in-out 0s infinite normal none running kds-progress-bar-indeterminate"
+    },
+    {
+     "selector": ".kds-toast",
+     "context": [],
+     "transition": "",
+     "animation": "500ms cubic-bezier(0.28, 0.84, 0.42, 1) 0s 1 normal none running kds-toast-enter"
+    },
+    {
+     "selector": ".kds-tooltip:where([data-entering], [data-exiting])",
+     "context": [],
+     "transition": "",
+     "animation": "100ms ease-out 0s 1 normal none running kds-tooltip"
+    },
+    {
+     "selector": ".kds-animate-spin",
+     "context": [],
+     "transition": "",
+     "animation": "1s linear 0s infinite normal none running kds-spin"
+    },
+    {
+     "selector": ".select, select, input",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable-ksr-green-500:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable-soft-black:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable-black:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".hover-slow",
+     "context": [],
+     "transition": "0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".hover-item-scale-1_05:hover",
+     "context": [],
+     "transition": "transform 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".link-blue",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-create-700",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-green",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-navy",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-red",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-white",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".primary-detail :where(.primary-detail__detail, .primary-detail__footer)",
+     "context": [
+      "(inline-size <= 599px)"
+     ],
+     "transition": "translate cubic-bezier(0, 1, 1, 1) var(--_duration),z-index linear 0s var(--_duration)",
+     "animation": ""
+    },
+    {
+     "selector": ".ksr-tooltip::before, .ksr-tooltip-manual::before, .ksr-tooltip-no-focus::before",
+     "context": [],
+     "transition": "0.18s ease-out 0.18s",
+     "animation": ""
+    },
+    {
+     "selector": ".transition-all",
+     "context": [],
+     "transition": "600ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".ksr-progress-slider__slider::-webkit-slider-thumb",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".ksr-progress-slider--video-player .ksr-progress-slider__slider::-webkit-slider-thumb",
+     "context": [],
+     "transition": "background-color 150ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".input-range__slider",
+     "context": [],
+     "transition": "transform 0.1s ease-out, box-shadow 0.1s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".input-range__slider-container",
+     "context": [],
+     "transition": "left 0.1s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".input-range__track",
+     "context": [],
+     "transition": "left 0.1s ease-out, width 0.1s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".shadow-hover::after",
+     "context": [],
+     "transition": "0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fade-appear-active",
+     "context": [],
+     "transition": "margin 300ms, opacity 600ms ease-in",
+     "animation": ""
+    },
+    {
+     "selector": ".bespoke-hover-transition-bottom-bar::after",
+     "context": [],
+     "transition": "height 0.3s, opacity 0.5s, transform 0.3s, color 0.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".hover-overlay-target .hover-overlay-item",
+     "context": [],
+     "transition": "opacity 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".break-ksr-module-link",
+     "context": [],
+     "transition": "",
+     "animation": "0.25s ease 0s infinite normal none running modulecursor"
+    },
+    {
+     "selector": ".marquee-left",
+     "context": [],
+     "transition": "",
+     "animation": "25s linear -8s infinite normal none running fromleft"
+    },
+    {
+     "selector": ".marquee-left",
+     "context": [
+      "(max-width: 1199px)"
+     ],
+     "transition": "",
+     "animation": "30s linear 0s infinite normal none running fromleft"
+    },
+    {
+     "selector": ".marquee-right",
+     "context": [],
+     "transition": "",
+     "animation": "25s linear -8s infinite normal none running fromright"
+    },
+    {
+     "selector": ".marquee-right",
+     "context": [
+      "(max-width: 1199px)"
+     ],
+     "transition": "",
+     "animation": "30s linear 0s infinite normal none running fromright"
+    },
+    {
+     "selector": ".break-ksr-badge-animation",
+     "context": [],
+     "transition": "",
+     "animation": "7s ease 0s infinite normal none running SlideBackgroundPosition"
+    },
+    {
+     "selector": ".truncated-post",
+     "context": [],
+     "transition": "border 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".truncated-post .truncated-post-body",
+     "context": [],
+     "transition": "max-height 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".border-transition",
+     "context": [],
+     "transition": "",
+     "animation": "3s ease 0s 1 normal forwards running borderAnimation"
+    },
+    {
+     "selector": ".drop-shadow-animate",
+     "context": [],
+     "transition": "",
+     "animation": "1s ease 0s 1 normal forwards running dropShadowPulse"
+    },
+    {
+     "selector": ".discover-more-link-in",
+     "context": [],
+     "transition": "",
+     "animation": "1s ease 0s 1 normal forwards running DiscoverMoreIn"
+    },
+    {
+     "selector": ".wiggle-emoji",
+     "context": [],
+     "transition": "",
+     "animation": "2.5s ease 0s infinite normal none running wiggle-emoji"
+    },
+    {
+     "selector": ".up-down-emoji",
+     "context": [],
+     "transition": "",
+     "animation": "2.5s ease 0s infinite normal none running up-down-emoji"
+    },
+    {
+     "selector": ".draft-project-anim",
+     "context": [],
+     "transition": "0.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".draft-project-anim div:first-child",
+     "context": [],
+     "transition": "background-color 1.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".draft-project-anim:hover div:first-child",
+     "context": [],
+     "transition": "background-color 0.01s",
+     "animation": ""
+    },
+    {
+     "selector": ".scissors-animated",
+     "context": [],
+     "transition": "",
+     "animation": "0.4s steps(3) 0s infinite normal none running play"
+    },
+    {
+     "selector": ".pledge-flow-accordion :where(.kds-icon)",
+     "context": [],
+     "transition": "transform 0.1s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".atomic-form-v1 input",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".atomic-form-v1 input:focus",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "textarea.atomic-text-input, input[type=\"text\"].atomic-text-input, input[type=\"email\"].atomic-text-input, input[type=\"password\"].atomic-text-",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "textarea.atomic-text-input:focus, input[type=\"text\"].atomic-text-input:focus, input[type=\"email\"].atomic-text-input:focus, input[type=\"passw",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".theme-build .animate-bottom-margin",
+     "context": [],
+     "transition": "margin-bottom 300ms",
+     "animation": ""
+    },
+    {
+     "selector": ".theme-onboarding .animate-bottom-margin",
+     "context": [],
+     "transition": "margin-bottom 300ms",
+     "animation": ""
+    },
+    {
+     "selector": ".theme-push .animate-bottom-margin",
+     "context": [],
+     "transition": "margin-bottom 300ms",
+     "animation": ""
+    },
+    {
+     "selector": ".form-checkbox .input-state-indicator, .form-checkbox .input-state-indicator::before, .form-checkbox .input-label:hover, .form-checkbox .inp",
+     "context": [],
+     "transition": "box-shadow 300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".category-menu__popover:where(:not([data-rac]))",
+     "context": [],
+     "transition": "opacity var(--_duration) ease-out 0s,transform var(--_duration) ease-out 0s,visibility 0s linear calc(0s + var(--_duration)),pointer-events 0s linear calc(0s + ",
+     "animation": ""
+    },
+    {
+     "selector": ".category-menu__popover:where(:not([data-rac])):where(:not([inert]))",
+     "context": [],
+     "transition": "opacity var(--_duration) ease-out 0s,transform var(--_duration) ease-out 0s,visibility 0s linear 0s,pointer-events 0s linear 0s",
+     "animation": ""
+    },
+    {
+     "selector": ".category-menu__popover:where([data-rac]):where([data-entering])",
+     "context": [],
+     "transition": "",
+     "animation": "slide var(--_duration) ease-out var(--_delay)"
+    },
+    {
+     "selector": ".category-menu__popover:where([data-rac]):where([data-exiting])",
+     "context": [],
+     "transition": "",
+     "animation": "slide var(--_duration) ease-out var(--_delay) reverse"
+    },
+    {
+     "selector": ".expandable-background",
+     "context": [],
+     "transition": "0.1s ease-in",
+     "animation": ""
+    },
+    {
+     "selector": ".progress-bar-pulse",
+     "context": [
+      "(prefers-reduced-motion: no-preference)"
+     ],
+     "transition": "",
+     "animation": "3s ease-out 0s infinite normal forwards running progress-bar-pulse"
+    },
+    {
+     "selector": ".notification-banner",
+     "context": [],
+     "transition": "max-height 0.3s, opacity 0.3s",
+     "animation": ""
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "kds-dialog-scroll-elevation",
+     "css": "@keyframes kds-dialog-scroll-elevation { \n  100% { box-shadow: var(--kds-elevation-1-x) var(--kds-elevation-1-y) var(--kds-elevation-1-blur) var(--kds-elevation-1-spread) var(--kds-elevation-1-shadow-color); background-color: var(--kds-elevation-1-surface-color); }\n}"
+    },
+    {
+     "name": "modal-zoom",
+     "css": "@keyframes modal-zoom { \n  0% { box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px; transform: scale(0.8); opacity: 0; }\n  100% { box-shadow: var(--kds-elevation-3-x) var(--kds-elevation-3-y) var(--kds-elevation-3-blur) var(--kds-elevation-3-spread) var(--kds-elevation-3-shadow-color); transform: scale(1)"
+    },
+    {
+     "name": "modal-fade",
+     "css": "@keyframes modal-fade { \n  0% { backdrop-filter: blur(0px); opacity: 0; }\n  100% { backdrop-filter: blur(4px); opacity: 1; }\n}"
+    },
+    {
+     "name": "kds-progress-bar-indeterminate",
+     "css": "@keyframes kds-progress-bar-indeterminate { \n  0% { transform: translateX(-100%); }\n  60%, 100% { transform: translateX(100%); }\n}"
+    },
+    {
+     "name": "kds-toast-enter",
+     "css": "@keyframes kds-toast-enter { \n  0% { scale: 1; translate: 0px calc(100% + 8px); opacity: 0; box-shadow: none; }\n  25% { scale: 0.95 1.2; translate: 0px -16px; box-shadow: none; }\n  80% { scale: 1.0125 0.95; translate: 0px; opacity: 1; box-shadow: var(--kds-shadow-2); }\n  100% { scale: 1; }\n}"
+    },
+    {
+     "name": "kds-tooltip",
+     "css": "@keyframes kds-tooltip { \n  0% { transform: var(--origin); opacity: 0; }\n  100% { transform: translateY(0px) translateX(0px); opacity: 1; }\n}"
+    },
+    {
+     "name": "kds-spin",
+     "css": "@keyframes kds-spin { \n  100% { transform: rotate(360deg); }\n}"
+    },
+    {
+     "name": "pulse",
+     "css": "@-webkit-keyframes pulse { \n  0% { opacity: 0.8; }\n  100% { opacity: 0.2; }\n}"
+    },
+    {
+     "name": "pulse",
+     "css": "@keyframes pulse { \n  0% { opacity: 0.8; }\n  100% { opacity: 0.2; }\n}"
+    },
+    {
+     "name": "animation-fade-out",
+     "css": "@-webkit-keyframes animation-fade-out { \n  0% { opacity: 1; }\n  100% { opacity: 0; }\n}"
+    },
+    {
+     "name": "animation-fade-out",
+     "css": "@keyframes animation-fade-out { \n  0% { opacity: 1; }\n  100% { opacity: 0; }\n}"
+    },
+    {
+     "name": "animation-bg-0-to-95-opacity",
+     "css": "@-webkit-keyframes animation-bg-0-to-95-opacity { \n  0% { background-color: rgba(255, 255, 255, 0); }\n  100% { background-color: rgba(255, 255, 255, 0.95); }\n}"
+    },
+    {
+     "name": "animation-bg-0-to-95-opacity",
+     "css": "@keyframes animation-bg-0-to-95-opacity { \n  0% { background-color: rgba(255, 255, 255, 0); }\n  100% { background-color: rgba(255, 255, 255, 0.95); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-20px",
+     "css": "@-webkit-keyframes animation-move-up-by-20px { \n  0% { transform: translateY(20px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-20px",
+     "css": "@keyframes animation-move-up-by-20px { \n  0% { transform: translateY(20px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-100px",
+     "css": "@-webkit-keyframes animation-move-up-by-100px { \n  0% { transform: translateY(100px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-100px",
+     "css": "@keyframes animation-move-up-by-100px { \n  0% { transform: translateY(100px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in",
+     "css": "@-webkit-keyframes animation-fade-in { \n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}"
+    },
+    {
+     "name": "animation-fade-in",
+     "css": "@keyframes animation-fade-in { \n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-up",
+     "css": "@-webkit-keyframes animation-fade-in-and-up { \n  0% { opacity: 0; transform: translateY(30px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-up",
+     "css": "@keyframes animation-fade-in-and-up { \n  0% { opacity: 0; transform: translateY(30px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-down",
+     "css": "@-webkit-keyframes animation-fade-in-and-down { \n  0% { opacity: 0; transform: translateY(-5px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-down",
+     "css": "@keyframes animation-fade-in-and-down { \n  0% { opacity: 0; transform: translateY(-5px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-slide-down",
+     "css": "@-webkit-keyframes animation-slide-down { \n  0% { opacity: 0; transform: translateY(-50px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-slide-down",
+     "css": "@keyframes animation-slide-down { \n  0% { opacity: 0; transform: translateY(-50px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-slide-up",
+     "css": "@-webkit-keyframes animation-slide-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-50px); }\n}"
+    },
+    {
+     "name": "animation-slide-up",
+     "css": "@keyframes animation-slide-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-50px); }\n}"
+    },
+    {
+     "name": "animation-fade-out-and-up",
+     "css": "@-webkit-keyframes animation-fade-out-and-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-5px); }\n}"
+    },
+    {
+     "name": "animation-fade-out-and-up",
+     "css": "@keyframes animation-fade-out-and-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-5px); }\n}"
+    },
+    {
+     "name": "bannerdismiss",
+     "css": "@-webkit-keyframes bannerdismiss { \n  0% { opacity: 100; }\n  100% { opacity: 0; }\n}"
+    }
+   ],
+   "reduced": [
+    {
+     "media": "(prefers-reduced-motion: no-preference)",
+     "sample": "@media (prefers-reduced-motion: no-preference) {\n  .kds-accordion::details-content { block-size: 0px; overflow: hidden; transition: outline-width 300ms cubic-bezier(0.42, 0, 0.58, 1) allow-discrete, outline-color, outline-offset, height, content-visibility; }\n  .kds-accordion[ope"
+    },
+    {
+     "media": "(prefers-reduced-motion: no-preference)",
+     "sample": "@media (prefers-reduced-motion: no-preference) {\n  .progress-bar-pulse { background: linear-gradient(270deg, rgb(5, 206, 120) 25%, rgb(210, 254, 235) 51%, rgb(5, 206, 120) 75%) 0% 0% / 400% 400%; animation: 3s ease-out 0s infinite normal forwards running progress-bar-pulse; }\n}"
+    },
+    {
+     "media": "screen and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (prefers-reduced-motion: no-preference) {\n  .has-creator-nav { --creator-nav-transition-duration: 150ms; }\n}"
+    },
+    {
+     "media": "screen and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (prefers-reduced-motion: no-preference) {\n  .creator-nav__submenu { transition-duration: ; transition-timing-function: ; transition-delay: ; transition-behavior: ; transition-property: translate; }\n}"
+    },
+    {
+     "media": "screen and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (prefers-reduced-motion: no-preference) {\n  .creator-nav__overlay { transition-duration: ; transition-timing-function: ; transition-delay: ; transition-behavior: ; transition-property: opacity, backdrop-filter; }\n}"
+    },
+    {
+     "media": "screen and (max-width: 599px) and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (max-width: 599px) and (prefers-reduced-motion: no-preference) {\n  .has-creator-nav :where(main:not(main main)), .has-creator-nav :where(main:not(main main)) ~ #global-footer, .has-creator-nav :where(main:not(main main)) ~ footer { transition-duration: ; transit"
+    }
+   ],
+   "matchMediaReduce": true
+  },
+  "page-3": {
+   "url": "https://www.kickstarter.com/projects/shirtaloon/hwfwm",
+   "matchMedia": false,
+   "moving": [
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "input.atomic-text-input",
+     "transition": "all 0.3s cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": "none 0s"
+    },
+    {
+     "node": "a.kds-button",
+     "transition": "outline-width, outline-color, outline-offset, background-color, border-color, box-shadow, color, fill, gap, margin, min-height, padding, outline 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "a.kds-button",
+     "transition": "outline-width, outline-color, outline-offset, background-color, border-color, box-shadow, color, fill, gap, margin, min-height, padding, outline 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "button.kds-button",
+     "transition": "outline-width, outline-color, outline-offset, background-color, border-color, box-shadow, color, fill, gap, margin, min-height, padding, outline 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    },
+    {
+     "node": "svg.[object",
+     "transition": "outline-width, outline-color, outline-offset, fill, stroke 0.1s ease-out",
+     "animation": "none 0s"
+    },
+    {
+     "node": "div.category-menu__popover",
+     "transition": "opacity, transform, visibility, pointer-events 0.15s, 0.15s, 0s, 0s ease-out, ease-out, linear, linear",
+     "animation": "none 0s"
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".kds-accordion::details-content",
+     "context": [
+      "(prefers-reduced-motion: no-preference)"
+     ],
+     "transition": "outline-width 300ms cubic-bezier(0.42, 0, 0.58, 1) allow-discrete, outline-color, outline-offset, height, content-visibility",
+     "animation": ""
+    },
+    {
+     "selector": "kds-badge",
+     "context": [],
+     "transition": "background-color 250ms ease-out, color, border-color",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-chip",
+     "context": [],
+     "transition": "border-color 100ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-chip:where(:has(.kds-chip__remove))",
+     "context": [],
+     "transition": "border-color 100ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-modal[data-entering]",
+     "context": [],
+     "transition": "",
+     "animation": "200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s 1 normal both running modal-zoom"
+    },
+    {
+     "selector": ".kds-modal__overlay[data-entering]",
+     "context": [],
+     "transition": "",
+     "animation": "150ms ease-out 0s 1 normal forwards running modal-fade"
+    },
+    {
+     "selector": ".kds-modal__overlay[data-exiting]",
+     "context": [],
+     "transition": "",
+     "animation": "150ms ease-in 0s 1 reverse none running modal-fade"
+    },
+    {
+     "selector": ".kds-dialog:where(dialog)",
+     "context": [],
+     "transition": "overlay 250ms allow-discrete, display 250ms, opacity 250ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-dialog:where(dialog)::backdrop",
+     "context": [],
+     "transition": "backdrop-filter 250ms ease-out, background-color 250ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": "kds-disclosure__content, .kds-disclosure__content",
+     "context": [],
+     "transition": "visibility 0s var(--_delay, 100ms)",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-html-popover",
+     "context": [],
+     "transition": "display 200ms allow-discrete, top 200ms cubic-bezier(0.17, 0.84, 0.44, 1), right 200ms cubic-bezier(0.17, 0.84, 0.44, 1), bottom 200ms cubic-bezier(0.17, 0.84, ",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-html-popover::backdrop",
+     "context": [],
+     "transition": "background-color 200ms ease-out, backdrop-filter 200ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".kds-progress-bar__fill",
+     "context": [],
+     "transition": "width 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ":where(.kds-progress-bar:not([aria-valuenow])) .kds-progress-bar__fill",
+     "context": [],
+     "transition": "",
+     "animation": "2s ease-in-out 0s infinite normal none running kds-progress-bar-indeterminate"
+    },
+    {
+     "selector": ".kds-toast",
+     "context": [],
+     "transition": "",
+     "animation": "500ms cubic-bezier(0.28, 0.84, 0.42, 1) 0s 1 normal none running kds-toast-enter"
+    },
+    {
+     "selector": ".kds-tooltip:where([data-entering], [data-exiting])",
+     "context": [],
+     "transition": "",
+     "animation": "100ms ease-out 0s 1 normal none running kds-tooltip"
+    },
+    {
+     "selector": ".kds-animate-spin",
+     "context": [],
+     "transition": "",
+     "animation": "1s linear 0s infinite normal none running kds-spin"
+    },
+    {
+     "selector": ".select, select, input",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable-ksr-green-500:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable-soft-black:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".keyboard-focusable-black:focus",
+     "context": [],
+     "transition": "outline 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".hover-slow",
+     "context": [],
+     "transition": "0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".hover-item-scale-1_05:hover",
+     "context": [],
+     "transition": "transform 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".link-blue",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-create-700",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-green",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-navy",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-red",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".link-white",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".primary-detail :where(.primary-detail__detail, .primary-detail__footer)",
+     "context": [
+      "(inline-size <= 599px)"
+     ],
+     "transition": "translate cubic-bezier(0, 1, 1, 1) var(--_duration),z-index linear 0s var(--_duration)",
+     "animation": ""
+    },
+    {
+     "selector": ".ksr-tooltip::before, .ksr-tooltip-manual::before, .ksr-tooltip-no-focus::before",
+     "context": [],
+     "transition": "0.18s ease-out 0.18s",
+     "animation": ""
+    },
+    {
+     "selector": ".transition-all",
+     "context": [],
+     "transition": "600ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".ksr-progress-slider__slider::-webkit-slider-thumb",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".ksr-progress-slider--video-player .ksr-progress-slider__slider::-webkit-slider-thumb",
+     "context": [],
+     "transition": "background-color 150ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".input-range__slider",
+     "context": [],
+     "transition": "transform 0.1s ease-out, box-shadow 0.1s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".input-range__slider-container",
+     "context": [],
+     "transition": "left 0.1s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".input-range__track",
+     "context": [],
+     "transition": "left 0.1s ease-out, width 0.1s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".shadow-hover::after",
+     "context": [],
+     "transition": "0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fade-appear-active",
+     "context": [],
+     "transition": "margin 300ms, opacity 600ms ease-in",
+     "animation": ""
+    },
+    {
+     "selector": ".bespoke-hover-transition-bottom-bar::after",
+     "context": [],
+     "transition": "height 0.3s, opacity 0.5s, transform 0.3s, color 0.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".hover-overlay-target .hover-overlay-item",
+     "context": [],
+     "transition": "opacity 0.25s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".break-ksr-module-link",
+     "context": [],
+     "transition": "",
+     "animation": "0.25s ease 0s infinite normal none running modulecursor"
+    },
+    {
+     "selector": ".marquee-left",
+     "context": [],
+     "transition": "",
+     "animation": "25s linear -8s infinite normal none running fromleft"
+    },
+    {
+     "selector": ".marquee-left",
+     "context": [
+      "(max-width: 1199px)"
+     ],
+     "transition": "",
+     "animation": "30s linear 0s infinite normal none running fromleft"
+    },
+    {
+     "selector": ".marquee-right",
+     "context": [],
+     "transition": "",
+     "animation": "25s linear -8s infinite normal none running fromright"
+    },
+    {
+     "selector": ".marquee-right",
+     "context": [
+      "(max-width: 1199px)"
+     ],
+     "transition": "",
+     "animation": "30s linear 0s infinite normal none running fromright"
+    },
+    {
+     "selector": ".break-ksr-badge-animation",
+     "context": [],
+     "transition": "",
+     "animation": "7s ease 0s infinite normal none running SlideBackgroundPosition"
+    },
+    {
+     "selector": ".truncated-post",
+     "context": [],
+     "transition": "border 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".truncated-post .truncated-post-body",
+     "context": [],
+     "transition": "max-height 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".border-transition",
+     "context": [],
+     "transition": "",
+     "animation": "3s ease 0s 1 normal forwards running borderAnimation"
+    },
+    {
+     "selector": ".drop-shadow-animate",
+     "context": [],
+     "transition": "",
+     "animation": "1s ease 0s 1 normal forwards running dropShadowPulse"
+    },
+    {
+     "selector": ".discover-more-link-in",
+     "context": [],
+     "transition": "",
+     "animation": "1s ease 0s 1 normal forwards running DiscoverMoreIn"
+    },
+    {
+     "selector": ".wiggle-emoji",
+     "context": [],
+     "transition": "",
+     "animation": "2.5s ease 0s infinite normal none running wiggle-emoji"
+    },
+    {
+     "selector": ".up-down-emoji",
+     "context": [],
+     "transition": "",
+     "animation": "2.5s ease 0s infinite normal none running up-down-emoji"
+    },
+    {
+     "selector": ".draft-project-anim",
+     "context": [],
+     "transition": "0.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".draft-project-anim div:first-child",
+     "context": [],
+     "transition": "background-color 1.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".draft-project-anim:hover div:first-child",
+     "context": [],
+     "transition": "background-color 0.01s",
+     "animation": ""
+    },
+    {
+     "selector": ".scissors-animated",
+     "context": [],
+     "transition": "",
+     "animation": "0.4s steps(3) 0s infinite normal none running play"
+    },
+    {
+     "selector": ".pledge-flow-accordion :where(.kds-icon)",
+     "context": [],
+     "transition": "transform 0.1s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": ".atomic-form-v1 input",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".atomic-form-v1 input:focus",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "textarea.atomic-text-input, input[type=\"text\"].atomic-text-input, input[type=\"email\"].atomic-text-input, input[type=\"password\"].atomic-text-",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": "textarea.atomic-text-input:focus, input[type=\"text\"].atomic-text-input:focus, input[type=\"email\"].atomic-text-input:focus, input[type=\"passw",
+     "context": [],
+     "transition": "300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".theme-build .animate-bottom-margin",
+     "context": [],
+     "transition": "margin-bottom 300ms",
+     "animation": ""
+    },
+    {
+     "selector": ".theme-onboarding .animate-bottom-margin",
+     "context": [],
+     "transition": "margin-bottom 300ms",
+     "animation": ""
+    },
+    {
+     "selector": ".theme-push .animate-bottom-margin",
+     "context": [],
+     "transition": "margin-bottom 300ms",
+     "animation": ""
+    },
+    {
+     "selector": ".form-checkbox .input-state-indicator, .form-checkbox .input-state-indicator::before, .form-checkbox .input-label:hover, .form-checkbox .inp",
+     "context": [],
+     "transition": "box-shadow 300ms cubic-bezier(0.175, 0.885, 0.335, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".category-menu__popover:where(:not([data-rac]))",
+     "context": [],
+     "transition": "opacity var(--_duration) ease-out 0s,transform var(--_duration) ease-out 0s,visibility 0s linear calc(0s + var(--_duration)),pointer-events 0s linear calc(0s + ",
+     "animation": ""
+    },
+    {
+     "selector": ".category-menu__popover:where(:not([data-rac])):where(:not([inert]))",
+     "context": [],
+     "transition": "opacity var(--_duration) ease-out 0s,transform var(--_duration) ease-out 0s,visibility 0s linear 0s,pointer-events 0s linear 0s",
+     "animation": ""
+    },
+    {
+     "selector": ".category-menu__popover:where([data-rac]):where([data-entering])",
+     "context": [],
+     "transition": "",
+     "animation": "slide var(--_duration) ease-out var(--_delay)"
+    },
+    {
+     "selector": ".category-menu__popover:where([data-rac]):where([data-exiting])",
+     "context": [],
+     "transition": "",
+     "animation": "slide var(--_duration) ease-out var(--_delay) reverse"
+    },
+    {
+     "selector": ".expandable-background",
+     "context": [],
+     "transition": "0.1s ease-in",
+     "animation": ""
+    },
+    {
+     "selector": ".progress-bar-pulse",
+     "context": [
+      "(prefers-reduced-motion: no-preference)"
+     ],
+     "transition": "",
+     "animation": "3s ease-out 0s infinite normal forwards running progress-bar-pulse"
+    },
+    {
+     "selector": ".notification-banner",
+     "context": [],
+     "transition": "max-height 0.3s, opacity 0.3s",
+     "animation": ""
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "kds-dialog-scroll-elevation",
+     "css": "@keyframes kds-dialog-scroll-elevation { \n  100% { box-shadow: var(--kds-elevation-1-x) var(--kds-elevation-1-y) var(--kds-elevation-1-blur) var(--kds-elevation-1-spread) var(--kds-elevation-1-shadow-color); background-color: var(--kds-elevation-1-surface-color); }\n}"
+    },
+    {
+     "name": "modal-zoom",
+     "css": "@keyframes modal-zoom { \n  0% { box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px; transform: scale(0.8); opacity: 0; }\n  100% { box-shadow: var(--kds-elevation-3-x) var(--kds-elevation-3-y) var(--kds-elevation-3-blur) var(--kds-elevation-3-spread) var(--kds-elevation-3-shadow-color); transform: scale(1)"
+    },
+    {
+     "name": "modal-fade",
+     "css": "@keyframes modal-fade { \n  0% { backdrop-filter: blur(0px); opacity: 0; }\n  100% { backdrop-filter: blur(4px); opacity: 1; }\n}"
+    },
+    {
+     "name": "kds-progress-bar-indeterminate",
+     "css": "@keyframes kds-progress-bar-indeterminate { \n  0% { transform: translateX(-100%); }\n  60%, 100% { transform: translateX(100%); }\n}"
+    },
+    {
+     "name": "kds-toast-enter",
+     "css": "@keyframes kds-toast-enter { \n  0% { scale: 1; translate: 0px calc(100% + 8px); opacity: 0; box-shadow: none; }\n  25% { scale: 0.95 1.2; translate: 0px -16px; box-shadow: none; }\n  80% { scale: 1.0125 0.95; translate: 0px; opacity: 1; box-shadow: var(--kds-shadow-2); }\n  100% { scale: 1; }\n}"
+    },
+    {
+     "name": "kds-tooltip",
+     "css": "@keyframes kds-tooltip { \n  0% { transform: var(--origin); opacity: 0; }\n  100% { transform: translateY(0px) translateX(0px); opacity: 1; }\n}"
+    },
+    {
+     "name": "kds-spin",
+     "css": "@keyframes kds-spin { \n  100% { transform: rotate(360deg); }\n}"
+    },
+    {
+     "name": "pulse",
+     "css": "@-webkit-keyframes pulse { \n  0% { opacity: 0.8; }\n  100% { opacity: 0.2; }\n}"
+    },
+    {
+     "name": "pulse",
+     "css": "@keyframes pulse { \n  0% { opacity: 0.8; }\n  100% { opacity: 0.2; }\n}"
+    },
+    {
+     "name": "animation-fade-out",
+     "css": "@-webkit-keyframes animation-fade-out { \n  0% { opacity: 1; }\n  100% { opacity: 0; }\n}"
+    },
+    {
+     "name": "animation-fade-out",
+     "css": "@keyframes animation-fade-out { \n  0% { opacity: 1; }\n  100% { opacity: 0; }\n}"
+    },
+    {
+     "name": "animation-bg-0-to-95-opacity",
+     "css": "@-webkit-keyframes animation-bg-0-to-95-opacity { \n  0% { background-color: rgba(255, 255, 255, 0); }\n  100% { background-color: rgba(255, 255, 255, 0.95); }\n}"
+    },
+    {
+     "name": "animation-bg-0-to-95-opacity",
+     "css": "@keyframes animation-bg-0-to-95-opacity { \n  0% { background-color: rgba(255, 255, 255, 0); }\n  100% { background-color: rgba(255, 255, 255, 0.95); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-20px",
+     "css": "@-webkit-keyframes animation-move-up-by-20px { \n  0% { transform: translateY(20px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-20px",
+     "css": "@keyframes animation-move-up-by-20px { \n  0% { transform: translateY(20px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-100px",
+     "css": "@-webkit-keyframes animation-move-up-by-100px { \n  0% { transform: translateY(100px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-move-up-by-100px",
+     "css": "@keyframes animation-move-up-by-100px { \n  0% { transform: translateY(100px); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in",
+     "css": "@-webkit-keyframes animation-fade-in { \n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}"
+    },
+    {
+     "name": "animation-fade-in",
+     "css": "@keyframes animation-fade-in { \n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-up",
+     "css": "@-webkit-keyframes animation-fade-in-and-up { \n  0% { opacity: 0; transform: translateY(30px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-up",
+     "css": "@keyframes animation-fade-in-and-up { \n  0% { opacity: 0; transform: translateY(30px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-down",
+     "css": "@-webkit-keyframes animation-fade-in-and-down { \n  0% { opacity: 0; transform: translateY(-5px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-fade-in-and-down",
+     "css": "@keyframes animation-fade-in-and-down { \n  0% { opacity: 0; transform: translateY(-5px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-slide-down",
+     "css": "@-webkit-keyframes animation-slide-down { \n  0% { opacity: 0; transform: translateY(-50px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-slide-down",
+     "css": "@keyframes animation-slide-down { \n  0% { opacity: 0; transform: translateY(-50px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+     "name": "animation-slide-up",
+     "css": "@-webkit-keyframes animation-slide-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-50px); }\n}"
+    },
+    {
+     "name": "animation-slide-up",
+     "css": "@keyframes animation-slide-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-50px); }\n}"
+    },
+    {
+     "name": "animation-fade-out-and-up",
+     "css": "@-webkit-keyframes animation-fade-out-and-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-5px); }\n}"
+    },
+    {
+     "name": "animation-fade-out-and-up",
+     "css": "@keyframes animation-fade-out-and-up { \n  0% { opacity: 1; transform: translateY(0px); }\n  100% { opacity: 0; transform: translateY(-5px); }\n}"
+    },
+    {
+     "name": "bannerdismiss",
+     "css": "@-webkit-keyframes bannerdismiss { \n  0% { opacity: 100; }\n  100% { opacity: 0; }\n}"
+    }
+   ],
+   "reduced": [
+    {
+     "media": "(prefers-reduced-motion: no-preference)",
+     "sample": "@media (prefers-reduced-motion: no-preference) {\n  .kds-accordion::details-content { block-size: 0px; overflow: hidden; transition: outline-width 300ms cubic-bezier(0.42, 0, 0.58, 1) allow-discrete, outline-color, outline-offset, height, content-visibility; }\n  .kds-accordion[ope"
+    },
+    {
+     "media": "(prefers-reduced-motion: no-preference)",
+     "sample": "@media (prefers-reduced-motion: no-preference) {\n  .progress-bar-pulse { background: linear-gradient(270deg, rgb(5, 206, 120) 25%, rgb(210, 254, 235) 51%, rgb(5, 206, 120) 75%) 0% 0% / 400% 400%; animation: 3s ease-out 0s infinite normal forwards running progress-bar-pulse; }\n}"
+    },
+    {
+     "media": "screen and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (prefers-reduced-motion: no-preference) {\n  .has-creator-nav { --creator-nav-transition-duration: 150ms; }\n}"
+    },
+    {
+     "media": "screen and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (prefers-reduced-motion: no-preference) {\n  .creator-nav__submenu { transition-duration: ; transition-timing-function: ; transition-delay: ; transition-behavior: ; transition-property: translate; }\n}"
+    },
+    {
+     "media": "screen and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (prefers-reduced-motion: no-preference) {\n  .creator-nav__overlay { transition-duration: ; transition-timing-function: ; transition-delay: ; transition-behavior: ; transition-property: opacity, backdrop-filter; }\n}"
+    },
+    {
+     "media": "screen and (max-width: 599px) and (prefers-reduced-motion: no-preference)",
+     "sample": "@media screen and (max-width: 599px) and (prefers-reduced-motion: no-preference) {\n  .has-creator-nav :where(main:not(main main)), .has-creator-nav :where(main:not(main main)) ~ #global-footer, .has-creator-nav :where(main:not(main main)) ~ footer { transition-duration: ; transit"
+    }
+   ],
+   "matchMediaReduce": true
+  }
+ },
+ "verdict": "partial",
+ "note": "Authored motion (card hover, creator nav, progress pulse) is gated on prefers-reduced-motion: no-preference, so reduce removes those transitions. The public home at rest has little computed motion. A progress-bar pulse animation is declared only under no-preference."
+}

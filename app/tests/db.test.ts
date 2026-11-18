@@ -1821,14 +1821,14 @@ test("version-thirty-seven stores gain the Column rows, without touching their o
   ).toHaveLength(0);
 });
 
-test("version-thirty-eight stores gain the Forhers rows, without touching their own labels", async () => {
+test("version-thirty-eight stores gain the Hume rows, without touching their own labels", async () => {
   const { dir, store } = await open();
-  // A v38 store opened before the Forhers rows existed: drop them and rewind.
+  // A v38 store opened before the Hume rows existed: drop them and rewind.
   await store.client.execute(
-    "DELETE FROM reference_categories WHERE reference_id='systems:forhers'",
+    "DELETE FROM reference_categories WHERE reference_id='systems:hume'",
   );
   await store.client.execute(
-    "DELETE FROM media_term_assignments WHERE reference_id='systems:forhers'",
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:hume'",
   );
   // A user who cleared another package's labels: the scoped top-up must not
   // resurrect them (an empty assignment reads as "never labelled" to the
@@ -1851,7 +1851,54 @@ test("version-thirty-eight stores gain the Forhers rows, without touching their 
     ),
   ).toBe(39);
   const categories = await migrated.listReferenceCategories();
-  // The seed label (Health & Wellness) lands as one row.
+  // The seed label (AI Tool) lands as one row.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:hume"),
+  ).toHaveLength(1);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:hume"])).map(
+      (row) => row.label,
+    ),
+  ).toEqual(["AI Tool"]);
+  const media = await migrated.listMediaTermAssignments();
+  expect(
+    media.filter((row) => row.referenceId === "systems:hume").length,
+  ).toBeGreaterThan(0);
+  // The cleared digg rows stay cleared — the top-up seeds only its own batch.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:digg"),
+  ).toHaveLength(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:digg"),
+  ).toHaveLength(0);
+});
+
+test("version-forty stores gain the Hers rows, without touching their own labels", async () => {
+  const { dir, store } = await open();
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:forhers'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:forhers'",
+  );
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:digg'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:digg'",
+  );
+  await store.client.execute("PRAGMA user_version=40");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(41);
+  const categories = await migrated.listReferenceCategories();
   expect(
     categories.filter((row) => row.referenceId === "systems:forhers"),
   ).toHaveLength(1);
@@ -1864,7 +1911,6 @@ test("version-thirty-eight stores gain the Forhers rows, without touching their 
   expect(
     media.filter((row) => row.referenceId === "systems:forhers").length,
   ).toBeGreaterThan(0);
-  // The cleared digg rows stay cleared — the top-up seeds only its own batch.
   expect(
     categories.filter((row) => row.referenceId === "systems:digg"),
   ).toHaveLength(0);
@@ -1875,13 +1921,13 @@ test("version-thirty-eight stores gain the Forhers rows, without touching their 
 
 test("future database versions are rejected without downgrading their schema", async () => {
   const { dir, store } = await open();
-  await store.client.execute("PRAGMA user_version=40");
+  await store.client.execute("PRAGMA user_version=42");
   await expect(createResearchStore(dir)).rejects.toThrow("newer application");
   expect(
     Number(
       (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
     ),
-  ).toBe(40);
+  ).toBe(42);
 });
 
 test("updateSettings writes JSON on a fresh row and on a conflicting row", async () => {
