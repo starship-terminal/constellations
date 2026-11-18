@@ -187,7 +187,7 @@ Page: home. Selector: `a[href*="/signin"]`. States: default, hover, focus-visibl
 | Font | CoFo Sans Mono 12px/16.32px 400 | = | = | = |
 | Letter spacing | 0.12px | = | = | = |
 | Colour | #000000 | = | = | = |
-| Text node | span: CoFo Sans Mono 12px/16.32px 400, #000000 @ 0, ls 0.12px | = | = | = |
+| Text node | hidden duplicate span: CoFo Sans Mono 12px/16.32px 400, #000000 @ 0, ls 0.12px | = | = | = |
 | Transition | background, transform 0.3s, 0.3s ease, ease delay 0s, 0s | = | = | = |
 | Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = |
 | Cursor | pointer | = | = | = |
@@ -215,7 +215,7 @@ Page: home. Selector: `a (text GET STARTED, nav band y 60-180)`. States: default
 | Font | CoFo Sans Mono 12px/16.32px 400 | = | = | = |
 | Letter spacing | 0.12px | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span: CoFo Sans Mono 12px/16.32px 400, #000000 @ 0, ls 0.12px | = | = | = |
+| Text node | hidden duplicate span: CoFo Sans Mono 12px/16.32px 400, #000000 @ 0, ls 0.12px | = | = | = |
 | Transition | background, transform 0.3s, 0.3s ease, ease delay 0s, 0s | = | = | = |
 | Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = |
 | Cursor | pointer | = | = | = |
@@ -227,32 +227,19 @@ Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, 
 
 #### menu-item
 
-Mega-menu item. "Instagram — Automate your Instagram Marketing" inside the Product menu. Measured after the menu opened; never followed from the menu.
+Mega-menu item. The closed Product menu keeps these links in the DOM at opacity 0. They are not a captured open state. A refresh must wait until a menu link paints before saving them.
 
-Page: home. Selector: `a[href="/product/instagram"]`. States: default, focus-visible.
+Page: home. Selector: `a[href="/product/instagram"]`. States: .
 
-| Property | default | focus-visible |
-|---|---|---|
-| Size (w x h) | 192 x 113.69 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 0px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | Rooftop 15px/19.5px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #0f0f0f | = |
-| Text node | p.!mc-text-h5._4Y2iAa_underline_item: Rooftop 24px/25.92px 600, #0f0f0f, ls -0.72px | = |
-| Transition | transform, opacity 0.45s, 0.45s cubic-bezier(0.43, 0.195, 0.02, 1), cubic-bezier(0.43, 0.195, 0.02, 1) delay 0.05s | = |
-| Transform | matrix(1, 0, 0, 1, 0, 20) | = |
-| Opacity | 0 | = |
-| Cursor | pointer | = |
-| Painted layers | p.!mc-text-h5._4Y2iAa_underline_item 121.4x29.0 image linear-gradient(#0f0f0f, #0f0f0f) | = |
-| Ancestor paint | 3 up div._4Y2iAa_nav_item._4Y2iAa_underline shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | = |
-| How | at rest | Shift+Tab, Tab |
+Not found on the page at capture time.
 
-Crops: `menu-item-default.png`, `menu-item-focus-visible.png`.
+#### channel-card
+
+Channel menu item. The closed Product menu keeps these links in the DOM at opacity 0. They are not a captured open state. A refresh must wait until a menu link paints before saving them.
+
+Page: home. Selector: `a[href^="/product/"]`. States: .
+
+Not found on the page at capture time.
 
 #### footer
 
@@ -349,7 +336,7 @@ Page: home. Selector: `main a[href*="signup"]`. States: default, hover, focus-vi
 | Font | CoFo Sans Mono 14px/20px 400 | = | = | = |
 | Letter spacing | 0.14px | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span: CoFo Sans Mono 14px/20px 400, #000000 @ 0, ls 0.14px | = | = | = |
+| Text node | hidden duplicate span: CoFo Sans Mono 14px/20px 400, #000000 @ 0, ls 0.14px | = | = | = |
 | Transition | background, transform 0.3s, 0.3s ease, ease delay 0s, 0s | = | = | = |
 | Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = |
 | Cursor | pointer | = | = | = |
@@ -382,35 +369,6 @@ Page: home. Selector: `h2`. States: default.
 | How | at rest |
 
 Crops: `section-heading-default.png`.
-
-#### channel-card
-
-Channel card. A channel card (Instagram, TikTok, WhatsApp, Messenger or SMS). Measured, never followed.
-
-Page: home. Selector: `a[href^="/product/"]`. States: default, hover, focus-visible.
-
-| Property | default | hover | focus-visible |
-|---|---|---|---|
-| Size (w x h) | 192 x 113.69 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Rooftop 15px/19.5px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #0f0f0f | = | = |
-| Text node | p.!mc-text-h5._4Y2iAa_underline_item: Rooftop 24px/25.92px 600, #0f0f0f, ls -0.72px | = | = |
-| Transition | transform, opacity 0.45s, 0.45s cubic-bezier(0.43, 0.195, 0.02, 1), cubic-bezier(0.43, 0.195, 0.02, 1) delay 0.2s | = | = |
-| Transform | matrix(1, 0, 0, 1, 0, 20) | = | = |
-| Opacity | 0 | = | = |
-| Cursor | pointer | = | = |
-| Painted layers | p.!mc-text-h5._4Y2iAa_underline_item 77.0x29.0 image linear-gradient(#0f0f0f, #0f0f0f) | = | = |
-| Ancestor paint | 3 up div._4Y2iAa_nav_item._4Y2iAa_underline shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab |
-
-Crops: `channel-card-default.png`, `channel-card-hover.png`, `channel-card-focus-visible.png`.
 
 #### quote-card
 
@@ -539,7 +497,7 @@ Page: pricing. Selector: `a[href*="signup"]`. States: default, hover, focus-visi
 | Font | CoFo Sans Mono 12px/20px 400 | = | = | = |
 | Letter spacing | 0.12px | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span: CoFo Sans Mono 12px/20px 400, #000000 @ 0, ls 0.12px | = | = | = |
+| Text node | hidden duplicate span: CoFo Sans Mono 12px/20px 400, #000000 @ 0, ls 0.12px | = | = | = |
 | Transition | background, transform 0.3s, 0.3s ease, ease delay 0s, 0s | = | = | = |
 | Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = |
 | Cursor | pointer | = | = | = |
@@ -601,7 +559,7 @@ Page: instagram. Selector: `a[href*="signup"]`. States: default, hover, focus-vi
 | Font | CoFo Sans Mono 12px/16.32px 400 | = | = | = |
 | Letter spacing | 0.12px | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span: CoFo Sans Mono 12px/16.32px 400, #000000 @ 0, ls 0.12px | = | = | = |
+| Text node | hidden duplicate span: CoFo Sans Mono 12px/16.32px 400, #000000 @ 0, ls 0.12px | = | = | = |
 | Transition | background, transform 0.3s, 0.3s ease, ease delay 0s, 0s | = | = | = |
 | Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = |
 | Cursor | pointer | = | = | = |
@@ -766,7 +724,7 @@ Page: home. Selector: `a[href*="signup"]`. States: default, hover, focus-visible
 | Font | CoFo Sans Mono 12px/16.32px 400 | = | = | = |
 | Letter spacing | 0.12px | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span: CoFo Sans Mono 12px/16.32px 400, #000000 @ 0, ls 0.12px | = | = | = |
+| Text node | hidden duplicate span: CoFo Sans Mono 12px/16.32px 400, #000000 @ 0, ls 0.12px | = | = | = |
 | Transition | background, transform 0.3s, 0.3s ease, ease delay 0s, 0s | = | = | = |
 | Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = |
 | Opacity | 0 | = | = | = |

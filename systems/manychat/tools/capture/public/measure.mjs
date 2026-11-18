@@ -158,7 +158,18 @@ async function S(key, target, list, meta = {}, opts = {}) {
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
-  if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
+  let opened = '';
+  if (opts.open) {
+    await reset();
+    try { opened = await opts.open() || ''; } catch (e) { opened = 'open failed: ' + String(e.message).slice(0, 80); log('  ! open failed', key, String(e.message).slice(0, 80)); }
+    if (opts.requireOpen && !/painted|already open/.test(opened)) {
+      log('  ! menu did not paint', key, opened);
+      out.components[key].states = {};
+      out.components[key].missing = true;
+      out.components[key].recaptureNote = opened;
+      return;
+    }
+  }
   const loc = target.filter({ visible: true }).first();
   await loc.waitFor({ state: 'visible', timeout: 6000 }).catch(() => {});
   if (!(await loc.count())) {
@@ -328,16 +339,31 @@ function marked() {
   return page.locator('[data-mc-mark="1"]').first();
 }
 
-// Opens the Product mega dropdown. The nav label is a div, never a link.
+// Opens the Product mega dropdown and waits until a menu link paints.
+// A box with opacity 0 is the closed menu, not an open one. The nav label is a div.
 async function openProduct() {
-  const open = () => page.evaluate(() => [...document.querySelectorAll('a')].some((a) => /automate your instagram marketing/i.test(a.textContent || '') && a.getBoundingClientRect().height > 0 && a.getBoundingClientRect().top < 700));
-  if (await open()) return 'the Product menu was already open';
+  const painted = () => page.evaluate(() => [...document.querySelectorAll('a')].some((a) => {
+    if (!/automate your instagram marketing/i.test(a.textContent || '')) return false;
+    const r = a.getBoundingClientRect();
+    const cs = getComputedStyle(a);
+    if (!(r.height > 8 && r.width > 8 && r.top >= 0 && r.top < 700)) return false;
+    if (cs.visibility === 'hidden' || cs.display === 'none' || cs.opacity === '0') return false;
+    for (let n = a; n && n !== document.documentElement; n = n.parentElement) {
+      const pcs = getComputedStyle(n);
+      if (pcs.visibility === 'hidden' || pcs.display === 'none' || pcs.opacity === '0') return false;
+    }
+    return true;
+  }));
+  if (await painted()) return 'the Product menu was already open';
   const ok = await markOwnText('div, a, button', /^PRODUCT$/, { band: [40, 200], maxW: 160 });
   if (!ok) return 'no Product trigger';
   const item = marked();
   await item.click({ timeout: 4000 }).catch(() => item.evaluate((el) => el.click()));
-  await page.waitForTimeout(900);
-  return (await open()) ? 'clicked Product to open the mega dropdown' : 'clicked Product; the panel did not report open';
+  for (let i = 0; i < 8; i++) {
+    if (await painted()) return 'clicked Product; a menu link painted';
+    await page.waitForTimeout(250);
+  }
+  return 'clicked Product; no menu link painted';
 }
 
 const FIELD = ['default', 'focused', 'filled'];
@@ -367,12 +393,12 @@ async function home() {
   const ctaHit = await markOwnText('a', /^GET STARTED/, { band: [60, 180], maxW: 200, maxLen: 50 });
   log('  mark cta', JSON.stringify(ctaHit));
   await S('nav-cta', marked(), B4, { group: g, title: 'Get started pill', desc: 'The nav "Get started" pill. It opens the sign-up flow. Measured, never followed.', sel: 'a (text GET STARTED, nav band y 60-180)' }, { noScroll: true, replaceOnMiss: true, open: async () => { await markOwnText('a', /^GET STARTED/, { band: [60, 180], maxW: 200, maxLen: 50 }); return 'marked Get started'; } });
-  await S('menu-item', q('a[href="/product/instagram"]').filter({ hasText: /instagram/i }).filter({ visible: true }).first(), ['default', 'focus-visible'], { group: g, title: 'Mega-menu item', desc: '"Instagram — Automate your Instagram Marketing" inside the Product menu. Measured after the menu opened; never followed from the menu.', sel: 'a[href="/product/instagram"]' }, { open: openProduct, noScroll: true });
+  await S('menu-item', q('a[href="/product/instagram"]').filter({ hasText: /instagram/i }).filter({ visible: true }).first(), ['default', 'focus-visible'], { group: g, title: 'Mega-menu item', desc: '"Instagram — Automate your Instagram Marketing" inside the Product menu. Measured after a menu link painted; never followed from the menu.', sel: 'a[href="/product/instagram"]' }, { open: openProduct, noScroll: true, replaceOnMiss: true, requireOpen: true });
   const h = G.home;
   await S('hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero heading', desc: '"Social smarter, not harder." set in ManyChatGravity.', sel: 'h1' }, { noScroll: true });
   await S('hero-cta', q('a[href*="signup"]').filter({ hasText: /get started/i }).filter({ visible: true }).nth(1), B4, { group: h, title: 'Hero Get started', desc: 'The neon-pink hero pill. It opens sign-up. Measured, never followed.', sel: 'main a[href*="signup"]' });
   await S('section-heading', q('h2').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: 'A Rooftop section heading below the hero.', sel: 'h2' });
-  await S('channel-card', q('a[href="/product/tiktok"], a[href="/sms-marketing"]').filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Channel menu item', desc: 'The TikTok item inside the open Product menu (192 x 114). A page channel card was not separately cropped. Measured, never followed.', sel: 'a[href="/product/tiktok"]' }, { open: openProduct, noScroll: true });
+  await S('channel-card', q('a[href="/product/tiktok"], a[href="/sms-marketing"]').filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Channel menu item', desc: 'The TikTok item inside the open Product menu. Measured after a menu link painted; never followed.', sel: 'a[href="/product/tiktok"]' }, { open: openProduct, noScroll: true, replaceOnMiss: true, requireOpen: true });
   await S('quote-card', q('blockquote, figure, [class*="quote" i], [class*="testimonial" i]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Creator quote', desc: 'A published creator quote on the home page. Marketing copy, not an account.', sel: 'blockquote, figure' });
   await S('faq-item', q('button').filter({ hasText: /will using manychat/i }).filter({ visible: true }).first(), ['default', 'opened', 'focus-visible'], { group: h, title: 'FAQ accordion', desc: 'A home FAQ summary. Opened by its own click. Nothing was submitted.', sel: 'button' });
   await S('footer', q('footer').filter({ visible: true }).last(), ['default'], { group: g, title: 'Footer', desc: 'The footer band: product, company and legal columns.', sel: 'footer' });

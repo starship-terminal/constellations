@@ -83,18 +83,7 @@ const browser = await chromium.launch();
 const pages = {};
 try {
   if (SNAPS) {
-    // The signed-in route's own opener (lib.mjs reads SNAPS when it loads, so import it after the check).
-    const lib = await import('./signed-in/lib.mjs');
-    const labels = fs.readdirSync(SNAPS).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).filter((l) => fs.existsSync(path.join(SNAPS, `${l}.html`))).sort();
-    for (const label of labels) {
-      const meta = lib.metaOf(label);
-      const ctx = await lib.newContext(browser, meta);
-      try {
-        const page = await lib.openSnap(ctx, label);
-        pages[`${label}@${meta.w}`] = await readPage(page, label, meta.url);   // a copy's label is unique in SNAPS
-      } catch (e) { log('failed', label, String(e.message).split('\n')[0]); }
-      await ctx.close();
-    }
+    throw new Error('signed-in/lib.mjs is not part of this public capture; pass --urls instead of SNAPS');
   } else {
     for (const [i, url] of URLS.entries()) {
       const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, locale: 'en-US' });

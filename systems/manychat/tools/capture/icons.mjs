@@ -1,20 +1,28 @@
-// Collects every distinct inline <svg> icon on Gauth's public pages into icons/ and writes icons/INDEX.tsv.
+// Collects distinct inline <svg> icons on ManyChat's public pages into icons/
+// and writes icons/INDEX.tsv.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node icons.mjs
 //
-// Gauth's icons carry no name in the DOM, so a file is named from icon-names.tsv (geometry hash -> name)
-// when the hash is listed there, else from the aria-label or text of the button or link it sits in, else
-// from its CSS-module class, else `icon-<hash>`. Files whose geometry matches are one icon, listed once
-// with every page and place it was seen. Colour is kept as `currentColor` wherever the computed fill or
-// stroke equals the svg's text colour, so each icon recolours from CSS `color` the way it does on the site.
-// Adapted from the Coursera kit's icons.mjs.
+// ManyChat's icons carry no name in the DOM, so a file is named from
+// icon-names.tsv (geometry hash -> name) when the hash is listed there, else
+// from the aria-label or text of the button or link it sits in, else from its
+// class, else `icon-<hash>`. Files whose geometry matches are one icon, listed
+// once with every page and place it was seen. Colour is kept as `currentColor`
+// wherever the computed fill or stroke equals the svg's text colour.
 import crypto from 'crypto';
 import fs from 'fs';
-import { M, BASE, chromium, UA, closePromo, openStory } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
+import { BASE, chromium, closePromo, UA } from './public/lib.mjs';
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
 const wait = (p, ms) => p.waitForTimeout(ms);
+
+const PAGES = [
+  ['/', 'home'],
+  ['/pricing', 'pricing'],
+  ['/product/instagram', 'instagram'],
+  ['/resources/how-to', 'how-to'],
+];
 
 // Runs in the page: one record per icon-sized svg currently in the DOM.
 function collect() {
@@ -24,8 +32,9 @@ function collect() {
   return [...document.querySelectorAll('svg')].filter((s) => {
     const r = s.getBoundingClientRect();
     if (!(r.width >= 10 && r.width <= 64 && r.height >= 10 && r.height <= 64) || s.closest('svg svg')) return false;
-    if (s.closest('[class*="canvas_board"], [class*="pgc_playerSurface"], hyperframes-player, .katex')) return false; // lesson content, not UI
-    return getComputedStyle(s).visibility !== 'hidden';
+    const cs = getComputedStyle(s);
+    if (cs.visibility === 'hidden' || cs.display === 'none' || cs.opacity === '0') return false;
+    return true;
   }).map((s) => {
     const r = s.getBoundingClientRect(), col = rgb(getComputedStyle(s).color);
     const c = s.cloneNode(true);
@@ -77,55 +86,26 @@ async function scrollAll(p, tag) {
   for (let y = 0; y < h; y += 700) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 250); await grab(p, tag); }
   await p.evaluate(() => scrollTo(0, 0)); await wait(p, 400);
 }
-async function open(p, path, w = 6500) {
-  await p.goto(BASE + path, { waitUntil: 'load', timeout: 90000 }); await wait(p, w);
+async function open(p, path, w = 5000) {
+  await p.goto(BASE + path, { waitUntil: 'load', timeout: 90000 });
+  await wait(p, w);
+  await closePromo(p);
 }
-// A page that fails is recorded, and a run with any failure leaves the committed icons alone.
+
 const failed = [];
 async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(label); console.log('  skip', label, String(e.message).split('\n')[0]); } }
 
-const b = await chromium.launch();
+const b = await chromium.launch({ args: ['--disable-blink-features=AutomationControlled'] });
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
 const p = await ctx.newPage();
 
-await open(p, '/');
-await grab(p, 'home (promo dialog)');
-await closePromo(p);
-await scrollAll(p, 'home');
-for (const [path, tag] of [['/course/science', 'academy'], ['/course/math', 'academy'], ['/course/my', 'academy'], ['/news', 'news']]) {
-  await open(p, path); await closePromo(p); await scrollAll(p, tag);
+for (const [path, tag] of PAGES) {
+  await tryDo(tag, async () => { await open(p, path); await scrollAll(p, tag); });
 }
-await tryDo('create dialog', async () => { await open(p, '/course/my'); await closePromo(p); await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2000); await grab(p, 'academy (create dialog)'); });
-await open(p, '/course/math/algebra-1?unit=real-numbers-and-sets'); await closePromo(p); await grab(p, 'unit');
-await tryDo('science lesson', async () => {
-  await open(p, '/course/science/how-things-work-1/learn?entry_source=start&from=science', 7000);
-  await grab(p, 'lesson-science (audio dialog)');
-  const nn = p.getByRole('button', { name: 'Not now' }); if (await nn.count()) await nn.click();
-  await wait(p, 1500); await grab(p, 'lesson-science');
-  await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await grab(p, 'lesson-science (settings)');
-  await p.keyboard.press('Escape');
-  const pz = p.getByRole('button', { name: 'Pause' }); if (await pz.count()) await pz.click();
-  await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1200); await grab(p, 'lesson-science (ask tutor)');
-});
-await tryDo('math lesson', async () => {
-  await open(p, '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', 8000);
-  const c = p.getByRole('button', { name: 'Continue', exact: true }); if (await c.count()) { await c.click(); await wait(p, 3000); }
-  await grab(p, 'lesson-math');
-  await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1000); await grab(p, 'lesson-math (chapters)');
-});
-await tryDo('history lesson', async () => {
-  await open(p, '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', 8000);
-  await grab(p, 'lesson-history');
-  await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1000); await grab(p, 'lesson-history (chapters)');
-});
-await tryDo('atlas', async () => {
-  await open(p, '/atlas'); await closePromo(p); await scrollAll(p, 'atlas');
-  await openStory(p); await grab(p, 'atlas story');
-});
 await b.close();
 
-// The old set is replaced only after a complete collection, so a run that dies early or loses a page
-// cannot leave icons/ emptied or out of step with INDEX.tsv.
+// The old set is replaced only after a complete collection, so a run that dies
+// early or loses a page cannot leave icons/ emptied or out of step with INDEX.tsv.
 if (failed.length || !seen.size) {
   console.error(`not replacing icons/: ${failed.length ? 'failed pages: ' + failed.join(', ') : 'no icons collected'}`);
   process.exit(1);

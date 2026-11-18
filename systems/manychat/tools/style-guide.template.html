@@ -173,7 +173,8 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     const v = t.v || {};
     const rem = parseFloat(v.fontSize);
     const px = Number.isFinite(rem) ? Math.min(rem * 10, 72) : 16;
-    h += `<div class="tr"><span class="ts" style="font-size:${px}px;line-height:${esc(v.lineHeight || 1.2)};letter-spacing:${esc(v.letterSpacing || '0')}">${esc(n)} — Social smarter</span><span class="tv">${esc(v.fontSize)} / ${esc(v.lineHeight)} / ${esc(v.fontWeight)}</span></div>`;
+    const family = String(v.fontFamily || '').replace(/\{font\.family\.([^}]+)\}/, (_, key) => (TOK.core.font && TOK.core.font.family && TOK.core.font.family[key] && TOK.core.font.family[key].v) || 'inherit');
+    h += `<div class="tr"><span class="ts" style="font-family:${esc(family)};font-weight:${esc(v.fontWeight || 400)};font-size:${px}px;line-height:${esc(v.lineHeight || 1.2)};letter-spacing:${esc(v.letterSpacing || '0')}">${esc(n)}: Social smarter</span><span class="tv">${esc(v.fontSize)} / ${esc(v.lineHeight)} / ${esc(v.fontWeight)}</span></div>`;
   }
   $('#type-out').innerHTML = h;
   let f = '';

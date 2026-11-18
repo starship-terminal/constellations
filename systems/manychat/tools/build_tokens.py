@@ -69,7 +69,14 @@ def color_token(name, source):
 
 
 def dim_token(name, source):
-    return {"$value": dim(resolved(name)), "$type": "dimension", "$extensions": {"source": source}}
+    # The live site sets html { font-size: 10px }. The probe resolved rem
+    # against a 16px root, so a saved "32px" for 2rem is the wrong width.
+    # Keep the authored rem and resolve it at 10px.
+    raw = str((DECL.get(name) or {}).get("raw") or "").strip()
+    value = dim(raw) if raw.endswith("rem") else dim(resolved(name))
+    if value.endswith("rem"):
+        value = f"{float(value[:-3]) * 10:g}px"
+    return {"$value": value, "$type": "dimension", "$extensions": {"source": source + "; rem resolved at the 10px root"}}
 
 
 def other(name):
@@ -174,7 +181,9 @@ for step in TYPE_STEPS:
             fw = int(fw_raw.strip())
         if fw is None:
             fw = 400
-    family = "{font.family.display}" if step.startswith("h") or step.startswith("ds-3") or step.startswith("ds-2") else "{font.family.sans}"
+    # Pricing h3 computes to Rooftop. Only the display steps (h1, h2, the
+    # large ds sizes) were measured in ManyChatGravity.
+    family = "{font.family.display}" if step in ("h1", "h1-ai", "h2", "ds-3xl", "ds-2xl") else "{font.family.sans}"
     if step.endswith("mono"):
         family = "{font.family.mono}"
     typography[step] = {

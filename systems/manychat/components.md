@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from manychat.com on 2026-11-18, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, submitted or purchased. Product, the billing labels and the FAQ are local toggles. Log in, Get started and Start for free were measured, never followed. The Usercentrics privacy layer was hidden, never answered. app.manychat.com was never entered.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (31 components, 68 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (31 components, 63 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (68 files, named `{component}-{state}.png`). Desktop crops are 1x; phone crops are 2x. Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (63 files, named `{component}-{state}.png`). Desktop crops are 1x; phone crops are 2x. Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -37,7 +37,7 @@ Screenshots are named `{page}-{theme}-state.png`: every page paints `light`. Des
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 11 components were given a real keyboard focus. 11 show no measured change: `nav-plain-link`, `nav-login`, `nav-cta`, `menu-item`, `hero-cta`, `channel-card`, `faq-item`, `footer-link`, `price-cta`, `product-cta`, `m-cta`.
+**Focus.** 9 components were given a real keyboard focus. 9 show no measured change: `nav-plain-link`, `nav-login`, `nav-cta`, `hero-cta`, `faq-item`, `footer-link`, `price-cta`, `product-cta`, `m-cta`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -46,18 +46,16 @@ Values that apply across entries, from the measurement files.
 | Duration | Easing | Property | Where |
 |---|---|---|---|
 | 0.3s | `ease` | background, background-size, box-shadow, color, transform | footer-link, hero-cta, howto-card, m-cta, m-logo, nav-cta, nav-locale, nav-login and more |
-| 0.45s | `cubic-bezier(0.43, 0.195, 0.02, 1)` | opacity, transform | channel-card, header-nav, m-header, menu-item, nav-link, nav-plain-link |
+| 0.45s | `cubic-bezier(0.43, 0.195, 0.02, 1)` | transform | header-nav, m-header, nav-link, nav-plain-link |
 | 0.7s | `cubic-bezier(0.43, 0.195, 0.02, 1)` | opacity, transform | section-heading |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Channel menu item](#channel-menu-item) | 192 x 113.69 | - | - | transparent | none | 0 |
 | [Price card](#price-card) | 368.53 x 661.53 | - | 24px | #ffffff `core.color.raw.neutral-0` | none | 32px 32px 40px 32px |
 | [FAQ accordion](#faq-accordion) | 841.33 x 62.39 | - | - | transparent | none | 0 |
 | [Guide card](#guide-card) | 368 x 372.17 | 1px solid #f5f5f5 `core.color.raw.neutral-10` | - | transparent | rgba(0, 0, 0, 0.08) 0px 4px 8px 0px | 0 |
-| [Mega-menu item](#mega-menu-item) | 192 x 113.69 | - | - | transparent | none | 0 |
 
 ## Components
 
@@ -129,7 +127,7 @@ The EN language switch is a div. Measured; the locale was never changed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 99.92 x 44.31; padding 14px 20px; radius 999px; background transparent; text CoFo Sans Mono 12/16.32 400, transparent; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; a::before.p_y-s.p_x-l 99.9219pxx44.3125px T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 999px |
+| default (same: hover, focus-visible, pressed) | size 99.92 x 44.31; padding 14px 20px; radius 999px; background transparent; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; a::before.p_y-s.p_x-l 99.9219pxx44.3125px T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 999px |
 
 Child layers that carry the look: a::before 99.9219pxx44.3125px border 1px solid transparent radius 999px.
 
@@ -140,31 +138,19 @@ The nav "Get started" pill. It opens the sign-up flow. Measured, never followed.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, transparent; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, #0f0f0f `core.color.raw.neutral-900`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Get started pill default](components/crops/nav-cta-default.png) ![Get started pill hover](components/crops/nav-cta-hover.png) ![Get started pill focus-visible](components/crops/nav-cta-focus-visible.png) ![Get started pill pressed](components/crops/nav-cta-pressed.png)
 
 #### Mega-menu item
-"Instagram — Automate your Instagram Marketing" inside the Product menu. Measured after the menu opened; never followed from the menu. Read as `menu-item` on the home page.
+The closed Product menu keeps these links in the DOM at opacity 0. They are not a captured open state. A refresh must wait until a menu link paints before saving them. Read as `menu-item` on the home page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: focus-visible) | size 192 x 113.69; background transparent; text Rooftop 24/25.92 600, #0f0f0f `core.color.raw.neutral-900`; transition transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1), opacity 0.45s cubic-bezier(0.43, 0.195, 0.02, 1); transform translate(0px, 20px); opacity 0; layers p.!mc-text-h5._4Y2iAa_underline_item 121.4x29.0; ancestors div._4Y2iAa_nav_item._4Y2iAa_underline bg transparent |
-
-Child layers that carry the look: p 121.4x29 image linear-gradient(#0f0f0f `core.color.raw.neutral-900`, #0f0f0f `core.color.raw.neutral-900`.
-
-![Mega-menu item default](components/crops/menu-item-default.png) ![Mega-menu item focus-visible](components/crops/menu-item-focus-visible.png)
+Not on the page when it was captured.
 
 #### Channel menu item
-The TikTok item inside the open Product menu (192 x 114). A page channel card was not separately cropped. Measured, never followed. Read as `channel-card` on the home page.
+The closed Product menu keeps these links in the DOM at opacity 0. They are not a captured open state. A refresh must wait until a menu link paints before saving them. Read as `channel-card` on the home page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: hover, focus-visible) | size 192 x 113.69; background transparent; text Rooftop 24/25.92 600, #0f0f0f `core.color.raw.neutral-900`; transition transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1), opacity 0.45s cubic-bezier(0.43, 0.195, 0.02, 1); transform translate(0px, 20px); opacity 0; layers p.!mc-text-h5._4Y2iAa_underline_item 77.0x29.0; ancestors div._4Y2iAa_nav_item._4Y2iAa_underline bg transparent |
-
-Child layers that carry the look: p 77x29 image linear-gradient(#0f0f0f `core.color.raw.neutral-900`, #0f0f0f `core.color.raw.neutral-900`.
-
-![Channel menu item default](components/crops/channel-card-default.png) ![Channel menu item hover](components/crops/channel-card-hover.png) ![Channel menu item focus-visible](components/crops/channel-card-focus-visible.png)
+Not on the page when it was captured.
 
 #### Footer
 The footer band: product, company and legal columns. Read as `footer` on the home page.
@@ -198,7 +184,7 @@ The neon-pink hero pill. It opens sign-up. Measured, never followed. Read as `he
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 149.95 x 48; padding 14px 20px; radius 999px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 14/20 400, transparent; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 149.95 x 48; padding 14px 20px; radius 999px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 14/20 400, #ffffff `core.color.raw.neutral-0`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Hero Get started default](components/crops/hero-cta-default.png) ![Hero Get started hover](components/crops/hero-cta-hover.png) ![Hero Get started focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero Get started pressed](components/crops/hero-cta-pressed.png)
 
@@ -257,7 +243,7 @@ The Free plan card: $0, 25 active contacts, Start for free. Read as `price-card`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 304.53 x 48; padding 14px 20px; radius 999px; background #0f0f0f `core.color.raw.neutral-900`; text CoFo Sans Mono 12/20 400, transparent; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; ancestors div.relative.h-full bg #ffffff `core.color.raw.neutral-0` |
+| default (same: hover, focus-visible, pressed) | size 304.53 x 48; padding 14px 20px; radius 999px; background #0f0f0f `core.color.raw.neutral-900`; text CoFo Sans Mono 12/20 400, #ffffff `core.color.raw.neutral-0`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; ancestors div.relative.h-full bg #ffffff `core.color.raw.neutral-0` |
 
 ![Price CTA default](components/crops/price-cta-default.png) ![Price CTA hover](components/crops/price-cta-hover.png) ![Price CTA focus-visible](components/crops/price-cta-focus-visible.png) ![Price CTA pressed](components/crops/price-cta-pressed.png)
 
@@ -282,7 +268,7 @@ A product-page Get started pill. Measured, never followed. Read as `product-cta`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, transparent; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, #0f0f0f `core.color.raw.neutral-900`; transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Product CTA default](components/crops/product-cta-default.png) ![Product CTA hover](components/crops/product-cta-hover.png) ![Product CTA focus-visible](components/crops/product-cta-focus-visible.png) ![Product CTA pressed](components/crops/product-cta-pressed.png)
 
@@ -344,7 +330,7 @@ A Get started link at 390px. Measured, never followed. Read as `m-cta` on the ho
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 128.53 x 32.31; padding 8px 16px; radius 32px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 12/16.32 400, transparent; transition background 0.3s ease, transform 0.3s ease; opacity 0; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 128.53 x 32.31; padding 8px 16px; radius 32px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0`; transition background 0.3s ease, transform 0.3s ease; opacity 0; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Mobile Get started default](components/crops/m-cta-default.png) ![Mobile Get started hover](components/crops/m-cta-hover.png) ![Mobile Get started focus-visible](components/crops/m-cta-focus-visible.png) ![Mobile Get started pressed](components/crops/m-cta-pressed.png)
 

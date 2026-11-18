@@ -30,7 +30,11 @@ function props(v) {
   o.Font = `${fam(s.fontFamily)} ${s.fontSize}/${s.lineHeight} ${s.fontWeight}`;
   o['Letter spacing'] = s.letterSpacing;
   o.Colour = hex(s.color);
-  if (v.textStyle) o['Text node'] = `${v.textStyle.node}: ${fam(v.textStyle.fontFamily)} ${v.textStyle.fontSize}/${v.textStyle.lineHeight} ${v.textStyle.fontWeight}, ${hex(v.textStyle.color)}${v.textStyle.letterSpacing !== 'normal' ? ', ls ' + v.textStyle.letterSpacing : ''}`;
+  if (v.textStyle) {
+    const hidden = hex(v.textStyle.color) === '#000000 @ 0' || v.textStyle.color === 'transparent';
+    o['Text node'] = `${hidden ? 'hidden duplicate ' : ''}${v.textStyle.node}: ${fam(v.textStyle.fontFamily)} ${v.textStyle.fontSize}/${v.textStyle.lineHeight} ${v.textStyle.fontWeight}, ${hex(v.textStyle.color)}${v.textStyle.letterSpacing !== 'normal' ? ', ls ' + v.textStyle.letterSpacing : ''}`;
+    if (hidden) o.Colour = hex(s.color);
+  }
   o.Transition = s.transitionDuration === '0s' || !s.transitionDuration ? 'none' : `${s.transitionProperty} ${s.transitionDuration} ${s.transitionTimingFunction}${s.transitionDelay !== '0s' ? ' delay ' + s.transitionDelay : ''}`;
   if (s.transform && s.transform !== 'none') o.Transform = s.transform;
   if (s.opacity !== '1') o.Opacity = s.opacity;

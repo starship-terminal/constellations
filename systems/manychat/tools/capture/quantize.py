@@ -83,6 +83,15 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
+    plan = RAW / f'{name}.parts.json'
+    if not plan.exists():
+        print('skip', name, 'no parts record; leaving the previous screenshot')
+        continue
+    expected = json.loads(plan.read_text())
+    indexes = [i for i, _ in ps]
+    if not expected.get('complete') or indexes != list(range(expected.get('parts', 0))):
+        print('skip', name, 'tile set is incomplete; leaving the previous screenshot')
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0

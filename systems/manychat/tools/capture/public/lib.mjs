@@ -182,7 +182,11 @@ export async function styleOf(locator) {
       }
     }
     if (anc.length) out.ancestors = anc;
-    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, { acceptNode: (t) => (t.textContent.trim() && t.parentElement && t.parentElement.getBoundingClientRect().width > 1 && getComputedStyle(t.parentElement).visibility !== 'hidden' ? 1 : 3) });
+    const paints = (node) => {
+      const cs = getComputedStyle(node);
+      return cs.visibility !== 'hidden' && cs.display !== 'none' && cs.opacity !== '0' && cs.color !== 'rgba(0, 0, 0, 0)' && cs.color !== 'transparent';
+    };
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, { acceptNode: (t) => (t.textContent.trim() && t.parentElement && t.parentElement.getBoundingClientRect().width > 1 && paints(t.parentElement) ? 1 : 3) });
     const tn = walker.nextNode();
     if (tn && tn.parentElement !== el) {
       const t = tn.parentElement;

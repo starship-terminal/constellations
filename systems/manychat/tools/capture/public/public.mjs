@@ -77,12 +77,32 @@ class Shooter {
 }
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 
+async function menuPainted(p) {
+  return p.evaluate(() => [...document.querySelectorAll('a')].some((a) => {
+    if (!/automate your instagram marketing/i.test(a.textContent || '')) return false;
+    const r = a.getBoundingClientRect();
+    const cs = getComputedStyle(a);
+    if (!(r.height > 8 && r.width > 8 && r.top >= 0 && r.top < 700)) return false;
+    if (cs.visibility === 'hidden' || cs.display === 'none' || cs.opacity === '0') return false;
+    for (let n = a; n && n !== document.documentElement; n = n.parentElement) {
+      const pcs = getComputedStyle(n);
+      if (pcs.visibility === 'hidden' || pcs.display === 'none' || pcs.opacity === '0') return false;
+    }
+    return true;
+  }));
+}
+
 async function menuShot(p, S) {
   await step('menu', async () => {
-    const item = p.locator('header button, nav button, header a, nav a').filter({ hasText: /^PRODUCT$/ }).first();
-    if (!(await item.count())) return;
+    const item = p.locator('nav div, nav a, nav button, header div, header a, header button').filter({ hasText: /^PRODUCT$/ }).first();
+    if (!(await item.count())) { log('  menu trigger missing'); return; }
     await item.click({ timeout: 5000 }).catch(() => item.evaluate((el) => el.click()));
-    await wait(p, 900);
+    let painted = false;
+    for (let i = 0; i < 8; i++) {
+      if (await menuPainted(p)) { painted = true; break; }
+      await wait(p, 250);
+    }
+    if (!painted) { log('  menu did not paint; not saving home-light-menu'); return; }
     await S.view('menu');
     await p.keyboard.press('Escape').catch(() => {});
     await wait(p, 400);
@@ -105,10 +125,34 @@ async function drawerShot(p, S) {
 
 async function billingShot(p, S) {
   await step('billing', async () => {
-    const monthly = p.getByRole('button', { name: /^monthly$/i }).first();
-    if (!(await monthly.count())) return;
-    await monthly.click({ timeout: 5000 }).catch(() => {});
+    const hit = await p.evaluate(() => {
+      document.querySelectorAll('[data-mc-bill]').forEach((n) => n.removeAttribute('data-mc-bill'));
+      const text = (el) => (el.innerText || '').replace(/\s+/g, ' ').trim();
+      const nodes = [...document.querySelectorAll('label, button, div, span')].filter((el) => {
+        if (text(el) !== 'Monthly' && text(el) !== 'MONTHLY') return false;
+        const r = el.getBoundingClientRect();
+        const cs = getComputedStyle(el);
+        return r.width > 8 && r.width < 220 && r.top > 40 && r.top < 500
+          && cs.visibility !== 'hidden' && cs.display !== 'none' && cs.opacity !== '0';
+      });
+      nodes.sort((a, b) => a.getBoundingClientRect().width - b.getBoundingClientRect().width);
+      const el = nodes[0];
+      if (!el) return false;
+      el.setAttribute('data-mc-bill', '1');
+      return { tag: el.tagName, w: Math.round(el.getBoundingClientRect().width) };
+    });
+    if (!hit) { log('  monthly label missing; not saving pricing-light-monthly'); return; }
+    const monthly = p.locator('[data-mc-bill="1"]').first();
+    await monthly.click({ timeout: 5000 }).catch(() => monthly.evaluate((el) => el.click()));
     await wait(p, 700);
+    const selected = await p.evaluate(() => {
+      const el = document.querySelector('[data-mc-bill="1"]');
+      if (!el) return false;
+      const pressed = el.getAttribute('aria-pressed') === 'true' || el.getAttribute('aria-checked') === 'true';
+      const input = el.querySelector('input') || (el.htmlFor && document.getElementById(el.htmlFor));
+      return pressed || !!(input && input.checked) || /selected|active|current/i.test(el.className || '');
+    });
+    if (!selected) log('  monthly click did not report selected; saving the post-click frame anyway');
     await S.view('monthly');
   });
 }

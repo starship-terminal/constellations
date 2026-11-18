@@ -113,10 +113,16 @@ def props(v):
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
         o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
     t = v.get("textStyle")
-    if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
-    else:
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+    # ManyChat buttons duplicate the label. The first span is often
+    # transparent (button__before). A white computed colour on a white fill
+    # is that hidden copy too: the crop shows dark ink on white and white
+    # ink on the pink and black fills.
+    ink = colour(t["color"]) if t else colour(s["color"])
+    bg = colour(s["backgroundColor"])
+    if ink == "transparent" or (ink.startswith("#ffffff") and (bg.startswith("#ffffff") or "neutral-0" in bg)):
+        ink = "#0f0f0f `core.color.raw.neutral-900`" if bg.startswith("#ffffff") or "neutral-0" in bg else "#ffffff `core.color.raw.neutral-0`"
+    face = t if t else s
+    o["text"] = f"{font(face['fontSize'], face['lineHeight'], face['fontWeight'], face['fontFamily'])}, {ink}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]

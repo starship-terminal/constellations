@@ -46,31 +46,31 @@ typography:
     lineHeight: 0.82
     letterSpacing: "-0.02em"
   h3:
-    fontFamily: "ManyChatGravity"
+    fontFamily: "Rooftop"
     fontSize: "3.6rem"
     fontWeight: 600
     lineHeight: 1.08
     letterSpacing: "-0.04em"
   h3-regular:
-    fontFamily: "ManyChatGravity"
+    fontFamily: "Rooftop"
     fontSize: "3.6rem"
     fontWeight: 400
     lineHeight: 1.08
     letterSpacing: "-0.04em"
   h4:
-    fontFamily: "ManyChatGravity"
+    fontFamily: "Rooftop"
     fontSize: "2.8rem"
     fontWeight: 400
     lineHeight: 1.08
     letterSpacing: "-0.04em"
   h5:
-    fontFamily: "ManyChatGravity"
+    fontFamily: "Rooftop"
     fontSize: "2.4rem"
     fontWeight: 600
     lineHeight: 1.08
     letterSpacing: "-0.03em"
   h6:
-    fontFamily: "ManyChatGravity"
+    fontFamily: "Rooftop"
     fontSize: "2rem"
     fontWeight: 600
     lineHeight: 1.4
@@ -154,27 +154,27 @@ typography:
     lineHeight: 1.33
     letterSpacing: "0.125px"
 rounded:
-  "12": "19.1875px"
-  "16": "25.5938px"
-  "20": "32px"
-  "24": "38.3906px"
-  "32": "51.1875px"
-  "4": "6.39062px"
-  "48": "76.7969px"
-  "8": "12.7969px"
+  "12": "12px"
+  "16": "16px"
+  "20": "20px"
+  "24": "24px"
+  "32": "32px"
+  "4": "4px"
+  "48": "48px"
+  "8": "8px"
   full: "999px"
 spacing:
-  "2rem": "32px"
-  "4rem": "64px"
-  "6rem": "96px"
-  "8rem": "128px"
-  "10rem": "160px"
-  "12rem": "192px"
-  "16rem": "256px"
-  "18rem": "288px"
-  "24rem": "384px"
-  section-gap-default: "288px"
-  section-gap-compact: "128px"
+  "2rem": "20px"
+  "4rem": "40px"
+  "6rem": "60px"
+  "8rem": "80px"
+  "10rem": "100px"
+  "12rem": "120px"
+  "16rem": "160px"
+  "18rem": "180px"
+  "24rem": "240px"
+  section-gap-default: "180px"
+  section-gap-compact: "80px"
 components:
   button:
     rounded: "999px"
@@ -217,7 +217,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Layout
 
-Spacing from `core.spacing`: `2rem` 32px, `4rem` 64px, `6rem` 96px, `8rem` 128px, `10rem` 160px, `12rem` 192px, `16rem` 256px, `18rem` 288px, `24rem` 384px, `section-gap-default` 288px, `section-gap-compact` 128px.
+Spacing from `core.spacing`: `2rem` 20px, `4rem` 40px, `6rem` 60px, `8rem` 80px, `10rem` 100px, `12rem` 120px, `16rem` 160px, `18rem` 180px, `24rem` 240px, `section-gap-default` 180px, `section-gap-compact` 80px.
 
 ## Elevation & Depth
 
@@ -225,7 +225,7 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `12` 19.1875px, `16` 25.5938px, `20` 32px, `24` 38.3906px, `32` 51.1875px, `4` 6.39062px, `48` 76.7969px, `8` 12.7969px, `full` 999px.
+Corner radii from `core.radius`: `12` 12px, `16` 16px, `20` 20px, `24` 24px, `32` 32px, `4` 4px, `48` 48px, `8` 8px, `full` 999px.
 
 ## Components
 
