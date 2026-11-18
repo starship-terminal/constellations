@@ -14459,7 +14459,8 @@
      "the tallest full-page captures are bounded (birth-control ~53k px, bmi-calculator ~23k px) and truncate from the bottom; the sidecars note the document height"
     ],
     "durationMin": 900,
-    "durationNote": "wall-clock across the blocked-live probing, the Wayback mirror build and asset warming, the screenshot and re-shoot passes, the stylesheet harvest, component measurement, the offline build and review"
+    "durationNote": "wall-clock across the blocked-live probing, the Wayback mirror build and asset warming, the screenshot and re-shoot passes, the stylesheet harvest, component measurement, the offline build and review",
+    "pr": "https://github.com/starship-terminal/constellations/pull/660"
    }
   },
   {
