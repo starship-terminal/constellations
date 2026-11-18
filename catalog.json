@@ -16621,7 +16621,7 @@
         "version": "public site as of 2026-11-18",
         "durationMin": 26,
         "durationNote": "Public signed-out session from the first page shot. App host did not resolve.",
-        "pr": "",
+        "pr": "https://github.com/starship-terminal/constellations/pull/677",
         "routes": [
           "/",
           "/pricing",
