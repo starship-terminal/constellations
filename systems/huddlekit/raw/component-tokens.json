@@ -332,19 +332,6 @@
      "source": "measured prose-p on /blog/introducing-huddlekit (default state)"
     }
    },
-   "bodyLink": {
-    "$value": {
-     "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
-     "fontSize": "14px",
-     "fontWeight": 500,
-     "lineHeight": "20px"
-    },
-    "$type": "typography",
-    "$description": "a body-text link inside the article",
-    "$extensions": {
-     "source": "measured prose-link on /blog/introducing-huddlekit (default state)"
-    }
-   },
    "navLink": {
     "$value": {
      "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
@@ -395,19 +382,6 @@
     "$description": "the 'Continue with Google' label",
     "$extensions": {
      "source": "measured app-google-button on /login (default state)"
-    }
-   },
-   "faqQuestion": {
-    "$value": {
-     "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
-     "fontSize": "14px",
-     "fontWeight": 500,
-     "lineHeight": "20px"
-    },
-    "$type": "typography",
-    "$description": "a FAQ question row",
-    "$extensions": {
-     "source": "measured faq-question on / (default state)"
     }
    },
    "tabLabel": {
@@ -936,18 +910,6 @@
     "source": "measured consent-banner default on / (consent banner corner)"
    }
   },
-  "planCard": {
-   "width": {
-    "type": "dimension",
-    "value": "274.66px",
-    "source": "measured plan-card default on /pricing (a /pricing plan card)"
-   },
-   "radius": {
-    "type": "dimension",
-    "value": "0px",
-    "source": "measured plan-card default on /pricing (plan card corner)"
-   }
-  },
   "loginCard": {
    "width": {
     "type": "dimension",
@@ -994,13 +956,6 @@
     "type": "dimension",
     "value": "64px",
     "source": "measured m-header default on / (phone top bar)"
-   }
-  },
-  "mobileDrawer": {
-   "width": {
-    "type": "dimension",
-    "value": "62px",
-    "source": "measured m-nav-drawer opened on / (opened nav sheet)"
    }
   },
   "card": {

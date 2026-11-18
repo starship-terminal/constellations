@@ -184,12 +184,14 @@ export async function setAppTheme(p, want) {
 // tags it with data-m-mark="<tag>" and returns a locator for it. up optionally
 // retargets an ancestor (closest()). Use where getByRole/hasText miss nodes
 // whose text lives in nested spans.
-export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0 } = {}) {
+export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0, scope = null } = {}) {
   const ok = await page.evaluate(
-    ([src, flags, s, t, upSel, i, leafOnly, w, h]) => {
+    ([src, flags, s, t, upSel, i, leafOnly, w, h, scopeSel]) => {
       const re = new RegExp(src, flags);
       document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
-      const els = [...document.querySelectorAll(s)].filter((n) => {
+      const roots = scopeSel ? [...document.querySelectorAll(scopeSel)] : [document];
+      if (scopeSel && !roots.length) return false;
+      const els = roots.flatMap((root) => [...root.querySelectorAll(s)]).filter((n) => {
         const r = n.getBoundingClientRect();
         const cs = getComputedStyle(n);
         return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.opacity !== '0' && re.test((n.innerText || '').trim());
@@ -197,10 +199,16 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
       const pool = leafOnly ? els.filter((n) => !els.some((o) => o !== n && n.contains(o))) : els;
       const el = pool[i] || els[i];
       if (!el) return false;
-      (upSel ? el.closest(upSel) || el : el).setAttribute('data-m-mark', t);
+      // A requested ancestor that is not there is a miss. Falling back to the
+      // matched node would record a link as the drawer or the section.
+      const target = upSel ? el.closest(upSel) : el;
+      // closest() includes the node itself. A link that also matches the
+      // ancestor selector is still the link, not the drawer or the section.
+      if (!target || (upSel && (target === el || el.matches(upSel)))) return false;
+      target.setAttribute('data-m-mark', t);
       return true;
     },
-    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH],
+    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH, scope],
   );
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }

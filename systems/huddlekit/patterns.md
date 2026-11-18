@@ -14,7 +14,7 @@ Every huddlekit.com page shares one frame. An **announcement bar** (`announce-ba
 
 ## Pricing
 
-`/pricing` ([full](screenshots/pricing-light-full.png)) is the standard marketing pattern: a monthly/annual **billing switch** (`billing-switch`, captured `pricing-light-billing-toggle`), three **plan cards** (`plan-card` — flat radius-0 slabs; the featured plan inverted dark-on-light) each with its `plan-cta` button, a testimonial strip, a feature-comparison table, **compare-alternatives link cards** (`compare-link-card` → the /compare pages) and another FAQ accordion (`pricing-light-faq-open`), closing on the dark footer CTA.
+`/pricing` ([full](screenshots/pricing-light-full.png)) is the standard marketing pattern: a monthly/annual **billing switch** (`billing-switch`, captured `pricing-light-billing-toggle`), three plan slabs (visible in the page shot; the `plan-card` measurement read the "Free forever" label and is marked missing, so no card radius is tokenised), each with its `plan-cta` button, a testimonial strip, a feature-comparison table, **compare-alternatives link cards** (`compare-link-card` → the /compare pages) and another FAQ accordion (`pricing-light-faq-open`), closing on the dark footer CTA.
 
 ## The dark panels
 

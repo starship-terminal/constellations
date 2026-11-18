@@ -3,7 +3,7 @@
 
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` (hashnode.com paints light by default); the `dark` set goes on
+`:root` (huddlekit.com paints light by default); the `dark` set goes on
 `[data-mode="dark"]`/`.dark`, so the guide's dark-scoped swatches resolve it. Aliases like {color.blue.500}
 become var(--color-blue-500).
 

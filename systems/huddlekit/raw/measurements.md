@@ -541,27 +541,9 @@ Crops: `show-more-default.png`, `show-more-hover.png`, `show-more-focus-visible.
 
 FAQ accordion question. A question row in the page FAQ accordion. "opened" is its own press revealing the answer.
 
-Page: /. Selector: `button[aria-expanded]`. States: default, hover, focus-visible, opened.
+Page: /. Selector: `button[aria-expanded]`. States: .
 
-| Property | default | hover | focus-visible | opened |
-|---|---|---|---|---|
-| Size (w x h) | 85 x 20 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 4px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #111827 | #111827 @ 0.7 | = | #111827 @ 0.7 |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 14 x 14, colour #111827 | 14 x 14, colour #111827 @ 0.7 | = | 14 x 14, colour #111827 @ 0.7 |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | the question row's own press (answer visible; pressed again to close) |
-
-Crops: `faq-question-default.png`, `faq-question-hover.png`, `faq-question-focus-visible.png`, `faq-question-opened.png`.
+The saved states read the header Solutions trigger (85x20), not a question row. Selectors are scoped to main button[aria-expanded] whose label contains "?". Not remeasured: no live recapture.
 
 ### Pricing
 
@@ -569,25 +551,9 @@ Crops: `faq-question-default.png`, `faq-question-hover.png`, `faq-question-focus
 
 Plan card. A pricing plan card on /pricing (name, price, feature list, CTA).
 
-Page: /pricing. Selector: `main box (priced plan)`. States: default.
+Page: /pricing. Selector: `main box (priced plan)`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 274.66 x 16 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Inter 12px/16px 500 |
-| Letter spacing | normal |
-| Colour | #747170 |
-| Transition | none |
-| Ancestor paint | 1 up div.bg-muted.w-full bg #f6f3f2 |
-| How | resting state |
-
-Crops: `plan-card-default.png`.
+The saved state reads the "Free forever" label (274.66x16), not a plan card. The picker now requires a price, a call to action, several lines and height of at least 160. Not remeasured: no live recapture.
 
 #### billing-switch
 
@@ -813,26 +779,9 @@ Crops: `contact-copy-default.png`, `contact-copy-hover.png`, `contact-copy-focus
 
 Contact channel row. A contact row on /contact ("Sales, inquiries & partnerships" + the published hello@huddlekit.com).
 
-Page: /contact. Selector: `main box (contact row)`. States: default.
+Page: /contact. Selector: `main box (contact row)`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 179 x 28 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Inter 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #111827 |
-| Text node | a.focus:ring-primary.text-lg: Inter 18px/28px 500, #111827 |
-| Transition | none |
-| Ancestor paint | 2 up div.bg-card.border-border/50 bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 1px 3px 0px, #000000 @ 0.1 0px 1px 2px -1px |
-| How | resting state |
-
-Crops: `contact-row-default.png`.
+The saved state reads only hello@huddlekit.com (179x28), not the channel row. The picker now requires the channel name and the address together. Not remeasured: no live recapture.
 
 ### Prose
 
@@ -914,26 +863,9 @@ Crops: `prose-p-default.png`.
 
 Prose link. A body-text link inside the article.
 
-Page: /blog/introducing-huddlekit. Selector: `main :is(p,li) a`. States: default, hover, focus-visible.
+Page: /blog/introducing-huddlekit. Selector: `main :is(p,li) a`. States: .
 
-| Property | default | hover | focus-visible |
-|---|---|---|---|
-| Size (w x h) | 40 x 20 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | 1px auto #ff6900 @ 0.5 offset 1px |
-| Font | Inter 14px/20px 500 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #747170 | #111827 | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
-| Cursor | pointer | = | = |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
-| Painted layers | - | = | a.hover:text-foreground.transition-colors 40.0x20.0 outline 1px auto #ff6900 @ 0.5 offset 1px |
-
-Crops: `prose-link-default.png`, `prose-link-hover.png`, `prose-link-focus-visible.png`.
+The saved states read the breadcrumb "Home" (40x20), not a link in the article. The selector is now article :is(p, li) a. Not remeasured: no live recapture.
 
 #### breadcrumb
 
@@ -1022,26 +954,9 @@ Crops: `compare-toc-default.png`.
 
 Feature-check list row. A checklist row in the comparison (a lucide check / badge icon + capability line).
 
-Page: /compare/pastel-alternative. Selector: `li`. States: default.
+Page: /compare/pastel-alternative. Selector: `li`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 40 x 20 |
-| Padding | 0px |
-| Gap | 6px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Inter 14px/20px 500 |
-| Letter spacing | normal |
-| Colour | #747170 |
-| Text node | a.hover:text-foreground.transition-colors: Inter 14px/20px 500, #747170 |
-| Transition | none |
-| How | resting state |
-
-Crops: `compare-check-item-default.png`.
+The saved state reads the breadcrumb "Home", not a checklist row. The selector now requires a list item that holds an svg and a longer label. Not remeasured: no live recapture.
 
 ### App login
 
@@ -1265,25 +1180,9 @@ Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-fo
 
 Nav sheet (open). The opened navigation panel — the "Toggle menu" press drops an absolute rounded-md sheet under the sticky header; the press happens in find().
 
-Page: /. Selector: `header div[class*="absolute"]`. States: opened.
+Page: /. Selector: `header div[class*="absolute"]`. States: .
 
-| Property | opened |
-|---|---|
-| Size (w x h) | 62 x 17 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Inter 14px/20px 500 |
-| Letter spacing | normal |
-| Colour | #a3a09f |
-| Transition | none |
-| Cursor | pointer |
-| How | the "Toggle menu" button's own press; the open sheet is read |
-
-Crops: `m-nav-drawer-opened.png`.
+The saved state reads the Features link (62x17). domFind no longer falls back to that link when the drawer ancestor is absent. Not remeasured: no live recapture. 62px is not the drawer width.
 
 ## Transitions declared in the readable stylesheets
 

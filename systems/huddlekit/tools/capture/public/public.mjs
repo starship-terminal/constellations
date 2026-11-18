@@ -67,16 +67,27 @@ class Shooter {
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     const opts = (extra) => ({ path: extra, scale: 'css', timeout: 120000 });
+    // capturedHeight is the bound this pass meant to cover. quantize.py
+    // refuses a stitch whose tiles do not span it, so a later tile that
+    // fails after retry cannot publish a shortened sheet as checked.
+    const partCount = hCap <= chunk ? 1 : Math.ceil(hCap / chunk);
+    const tileRequest = (i) => ({ ...this.requested, capturedHeight: hCap, partCount, partIndex: i });
     try {
       try {
-        if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true }, this.requested);
-        else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+        if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true }, tileRequest(0));
+        else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, tileRequest(i));
       } catch (e) {
         log('  ! full shot timed out/failed, retrying with animations disabled:', String(e.message).split('\n')[0]);
-        if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true, animations: 'disabled' }, this.requested);
-        else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) }, animations: 'disabled' }, this.requested);
+        // Drop tiles from the failed attempt. A retry that also fails must
+        // not leave them for quantize.py to stitch as a complete sheet.
+        for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
+        if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true, animations: 'disabled' }, tileRequest(0));
+        else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) }, animations: 'disabled' }, tileRequest(i));
       }
-    } catch (e) { log('  ! full shot failed:', String(e.message).split('\n')[0]); }
+    } catch (e) {
+      log('  ! full shot failed:', String(e.message).split('\n')[0]);
+      for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
+    }
     await p.evaluate(() => document.querySelectorAll('video').forEach((v) => v.play().catch(() => {}))).catch(() => {});
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
@@ -102,7 +113,9 @@ async function navMenu(p, S, name) {
 
 // A FAQ accordion row's own press reveals the answer — a local UI toggle.
 async function faqOpen(p, S, re = /\?/) {
-  const q = p.locator('button[aria-expanded]').filter({ visible: true }).first();
+  // The header's Solutions trigger is also button[aria-expanded]. A question
+  // lives in main and its label ends with "?".
+  const q = p.locator('main button[aria-expanded]').filter({ hasText: re }).filter({ visible: true }).first();
   if (!(await q.count())) { log('  ! faq accordion missing'); return; }
   await q.click({ timeout: 4000 }).catch(() => {});
   await wait(p, 900);

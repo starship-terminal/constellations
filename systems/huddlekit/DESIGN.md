@@ -62,11 +62,6 @@ typography:
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
-  bodyLink:
-    fontFamily: "Inter"
-    fontSize: "14px"
-    fontWeight: 500
-    lineHeight: "20px"
   navLink:
     fontFamily: "Inter"
     fontSize: "14px"
@@ -84,11 +79,6 @@ typography:
     lineHeight: "20px"
   oauthButton:
     fontFamily: "inter"
-    fontSize: "14px"
-    fontWeight: 500
-    lineHeight: "20px"
-  faqQuestion:
-    fontFamily: "Inter"
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "20px"
@@ -142,7 +132,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-9 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Inter, inter.
+7 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Inter, inter.
 
 ### Fonts (from README.md)
 
@@ -194,7 +184,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 3. **Do let the nested `.dark` panels carry dark.** The footer, testimonial wall and MCP card re-point the same tokens — #0e0b0d ground, #e3e0df ink, white-alpha borders, the orange kept ([testimonial](components/crops/testimonial-card-dark-default.png), [footer](screenshots/home-light-full.png)).
 4. **Do match the app's dark under an OS preference.** `html.dark` + `data-theme="dark"` is the painted path; `--primary` stays #ea580d while `--border` goes `rgba(255,255,255,0.08)` ([dark login](screenshots/app-login-dark-default.png)).
 5. **Do compose the chrome as bar → header → sections → dark footer.** Announcement bar, sticky header with hover-open menus, warm content sections, the giant wordmark footer ([full page](screenshots/home-light-full.png)).
-6. **Do keep plan and login cards square.** `plan-card` and `app-login-card` paint 0px radii while buttons and the pill email field stay rounded — the radius mix is the product's ([plan](components/crops/plan-card-default.png), [login card](components/crops/app-login-card-default.png)).
+6. **Do keep the login card square.** `app-login-card` paints a 0px radius while buttons and the pill email field stay rounded ([login card](components/crops/app-login-card-default.png)). The pricing slabs look square in the page shots ([pricing](screenshots/pricing-light-full.png)); `plan-card` itself was not measured (the saved reading was the "Free forever" label, now marked missing).
 7. **Don't style the signed-in product from this package.** Everything past /login is a boundary — widget, dashboard, workspace ([login](screenshots/app-login-light-default.png)).
 8. **Don't invent typed, error or result states.** No field was ever typed into and nothing was submitted; focus rings are captured, validation is not ([email field](components/crops/app-email-input-focused.png)).
 9. **Don't fake a site dark mode.** The marketing site paints light only — `dark` is the app's `.dark` re-pointing, not a site theme ([dark panel](components/crops/mcp-card-dark-default.png)).

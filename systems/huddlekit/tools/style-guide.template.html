@@ -3,105 +3,141 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hashnode style guide</title>
-<meta name="description" content="hashnode.com design tokens and the signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<title>Huddlekit style guide</title>
+<meta name="description" content="huddlekit.com design tokens and the signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
 <style>
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: var(--font-family-sans, ui-sans-serif, system-ui, sans-serif);
+  --sg-sans: var(--font-family-sans, Inter, ui-sans-serif, system-ui, sans-serif);
   --sg-mono: var(--font-family-mono, ui-monospace, "SF Mono", Menlo, monospace);
 }
 [data-mode="dark"], .dark {
 /*DARK*/
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--root-foreground, #13161c); background: var(--root-background, #ffffff); }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--root-foreground, #111827); background: var(--color-page, #f6f3f2); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #e2e4e8); }
-.lead { max-width: 62ch; opacity: .8; }
-.note { font-size: 13px; opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; color: var(--link-default, #2962ff); }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
+h1 { font: 500 40px/1.15 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.03em; color: var(--root-foreground, #111827); }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground, #747170); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #e4e4e7); }
+.lead { max-width: 66ch; color: var(--root-foreground, #111827); }
+.note { font-size: 13px; color: var(--muted-foreground, #747170); max-width: 66ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--primary-default, #ea580d); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground, #747170); margin: 18px 0 6px; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.dark { padding: 10px; border-radius: 10px; background: var(--root-background, #0d0f14); color: var(--root-foreground, #e6e8eb); }
+.pal.dark { padding: 10px; border-radius: 10px; background: var(--root-background, #0e0b0d); color: var(--root-foreground, #e3e0df); }
 .sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; flex: 0 0 auto; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e4e4e7); display: inline-flex; flex: 0 0 auto; }
 .sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
 .sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .7; color: inherit; }
 .kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
 .kv b { font-weight: 500; }
-.kv span { opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--border-default, #e2e4e8); overflow: hidden; background: var(--root-background, #ffffff); color: var(--root-foreground, #13161c); border-radius: 12px; }
-.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-mobileHeader-height, 56px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--border-default, #e2e4e8); background: var(--root-background, #ffffff); }
-.topbar .wm { font-weight: 600; font-size: 15px; letter-spacing: -0.02em; }
-.topbar .nav { opacity: .75; display: flex; gap: 14px; font-size: 13px; }
-.topbar .sp { flex: 1; }
-.topbar .pill { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 1px solid var(--border-default, #e2e4e8); border-radius: var(--radius-base, .5rem); font-size: 12px; color: var(--muted-foreground, #63666d); background: var(--surface-default, #f7f8fa); }
-.topbar .pill b { border: 1px solid var(--border-default, #e2e4e8); border-radius: 4px; padding: 1px 5px; font-weight: 500; font-size: 10px; }
-.topbar .theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; align-items: center; justify-content: center; color: var(--root-foreground, #13161c); background: transparent; font: inherit; cursor: pointer; padding: 0; }
-.topbar .theme:hover { background: var(--accent-default, #e9ebef); }
-.shell { display: flex; }
-.sb { width: var(--component-sidebar-width, 280px); flex: 0 0 auto; border-right: 1px solid var(--border-default, #e2e4e8); padding: 18px 14px; font-size: 13px; background: var(--sidebar-background, #fff); color: var(--sidebar-foreground, #13161c); }
-.sb .grp { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .55; margin: 14px 6px 6px; }
-.sb .ln { display: block; padding: 5px 10px; border-radius: var(--radius-base, .5rem); opacity: .8; }
-.sb .ln.on { opacity: 1; font-weight: 500; background: var(--accent-default, #e9ebef); }
-.art { flex: 1; padding: 28px 34px 40px; min-width: 0; }
-.art h3 { font: 500 30px/1.25 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 10px; }
-.art p { font-size: 14.5px; line-height: 1.7; color: var(--root-foreground, #13161c); margin: 0 0 14px; max-width: 62ch; }
-.art .ic { font-family: var(--sg-mono); font-size: .88em; color: var(--link-default, #2962ff); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 16px; font-size: 13.5px; font-weight: 500; border-radius: var(--radius-base, .5rem); border: 1px solid transparent; }
-.btn.primary { background: var(--primary-default, #181b20); color: var(--primary-foreground, #ffffff); }
-.btn.ghost { background: transparent; border-color: var(--border-default, #e2e4e8); color: var(--root-foreground, #13161c); }
-.codeblk { background: var(--codeBlock-codeBlock, #15171c); color: #e6edf3; border-radius: var(--component-codeblock-radius, 8px); font: 400 12.5px/1.7 var(--sg-mono); padding: 14px 16px; margin: 16px 0; }
-.codeblk .tab { display: inline-block; padding: 3px 10px; border-radius: 6px; font-size: 11px; margin: 0 4px 10px 0; background: rgba(255,255,255,.08); }
-.codeblk .tab.on { background: rgba(255,255,255,.2); font-weight: 600; }
-.codeblk .kw { color: #82aaff; }
-.codeblk .str { color: #c3e88d; }
-.codeblk .fn { color: #ffcb6b; }
-.codeblk .cm { color: #697098; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e2e4e8); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #e2e4e8); }
+.kv span { opacity: .7; }
+.mock { border: 1px solid var(--border-default, #e4e4e7); overflow: hidden; background: var(--root-background, #ffffff); color: var(--root-foreground, #111827); border-radius: 12px; }
+.announce { display: flex; align-items: center; justify-content: center; min-height: 36px; padding: 6px 16px; font-size: 13px; background: var(--color-page, #f6f3f2); color: var(--root-foreground, #111827); border-bottom: 1px solid var(--border-default, #e4e4e7); }
+.header { display: flex; align-items: center; gap: 16px; height: var(--component-header-height, 64px); padding: 0 24px; font-size: 14px; background: var(--root-background, #ffffff); border-bottom: 1px solid var(--border-default, #e4e4e7); }
+.header .wm { font-weight: 560; font-size: 18px; letter-spacing: -0.03em; }
+.header .nav { display: flex; gap: 16px; color: var(--root-foreground, #111827); font-weight: 500; font-size: 14px; }
+.header .sp { flex: 1; }
+.header .signin { color: var(--root-foreground, #111827); font-size: 14px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-cta-height, 40px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: var(--component-button-cta-radius, 12px); border: 1px solid transparent; }
+.btn.primary { background: var(--primary-default, #ea580d); color: var(--primary-foreground, #fff7ed); }
+.btn.secondary { height: var(--component-button-secondary-height, 32px); background: var(--secondary-default, #ede9e7); color: var(--secondary-foreground, #18181b); font-size: 13px; }
+.btn.outline { background: transparent; border-color: var(--border-default, #e4e4e7); color: var(--root-foreground, #111827); }
+.hero { padding: 72px 40px 56px; text-align: center; background: var(--color-page, #f6f3f2); }
+.hero h3 { font: 500 40px/1.15 var(--sg-sans); letter-spacing: -0.03em; margin: 0 auto 14px; max-width: 18ch; }
+.hero p { margin: 0 auto 24px; max-width: 46ch; color: var(--muted-foreground, #747170); }
+.herorow { display: flex; gap: 12px; justify-content: center; align-items: center; }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--layout-card-gap, 1rem); padding: 28px; background: var(--root-background, #ffffff); }
+.plan { border: 1px solid var(--border-default, #e4e4e7); background: var(--card-default, #ffffff); color: var(--card-foreground, #111827); padding: 20px; min-height: 180px; }
+.plan .name { font-weight: 600; font-size: 16px; }
+.plan .price { font-size: 28px; letter-spacing: -0.03em; margin: 8px 0; }
+.plan .sub { font-size: 12px; color: var(--muted-foreground, #747170); margin-bottom: 16px; }
+.plan.pro { background: var(--root-foreground, #111827); color: var(--root-background, #ffffff); }
+.plan.pro .sub { color: var(--muted-foreground, #747170); }
+.footer { background: var(--root-background, #0e0b0d); color: var(--root-foreground, #e3e0df); padding: 36px 28px 28px; }
+.footer .cols { display: flex; gap: 40px; font-size: 13px; }
+.footer .cols b { display: block; font-size: 12px; margin-bottom: 8px; color: var(--root-foreground, #e3e0df); }
+.footer .cols span { display: block; line-height: 1.9; color: var(--muted-foreground, #747170); }
+.footer .word { margin-top: 28px; font-size: 42px; letter-spacing: -0.04em; opacity: .35; }
+.login { max-width: var(--component-loginCard-width, 320px); margin: 28px auto; padding: 28px 24px; background: var(--card-default, #ffffff); color: var(--card-foreground, #111827); border-radius: var(--component-loginCard-radius, 0px); border: 1px solid var(--border-default, #e4e4e7); text-align: center; }
+.login .wm { font-weight: 560; letter-spacing: -0.03em; margin-bottom: 8px; }
+.login h3 { font: 500 22px/1.3 var(--sg-sans); margin: 0 0 18px; }
+.login .btn { width: 100%; margin-bottom: 8px; }
+.login .field { height: 36px; border-radius: var(--component-input-radius, 9999px); border: 1px solid var(--border-input, #e4e4e7); display: flex; align-items: center; padding: 0 14px; color: var(--muted-foreground, #747170); font-size: 14px; margin-bottom: 8px; }
+.upgrade { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--upgrade-default, #7357ff); }
+table.cmp { border-collapse: collapse; font-size: 14px; width: 100%; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e4e4e7); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #e4e4e7); }
 .tr .ts { font-family: var(--sg-sans); }
 .tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-.tile { border: 1px solid var(--border-default, #e2e4e8); border-radius: var(--radius-base, .5rem); padding: 16px; font-size: 13px; background: var(--surface-default, #f7f8fa); color: var(--card-foreground, #13161c); }
-.tile b { display: block; font: 600 15px/1.4 var(--sg-sans); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Hashnode style guide</h1>
-  <p class="note">hashnode.com + townhall.hashnode.com — signed-out public evidence only.</p>
+  <h1>Huddlekit style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Every swatch below is a token. The mock is a reconstruction from those tokens, not captured pixels. The real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
 
-  <h2 class="sh">hashnode.com, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the shadcn-style semantic roles (<code>--background</code>/<code>--foreground</code>, <code>--primary</code>/<code>--secondary</code>/<code>--accent</code>/<code>--muted</code>/<code>--card</code>/<code>--popover</code> + foregrounds, <code>--destructive</code>/<code>--success</code>/<code>--warning</code> families, <code>--border</code>/<code>--input</code>/<code>--ring</code>), the <code>--brand</code>/<code>--link</code> blue (<code>#2962ff</code>), the <code>--sidebar-*</code> and <code>--chart-*</code> sets, the <code>--code-block</code>/<code>--reading-text</code>/<code>--surface</code>/<code>--scrim</code>/<code>--selection</code> roles, the scene palettes (<code>--pro-*</code> gold, <code>--buildful</code> green, <code>--ai-*</code>, the <code>--landing-*</code> and <code>--tod-*</code> hero art), the <code>--elevation-*</code> shadow stacks, the system-stack + Inter faces on the <code>--text-*</code> ramp and the <code>--text-body</code>/<code>-reading</code>/<code>-title-*</code> prose roles, and the measured geometry (<code>component.*</code>) read off the live DOM. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from hashnode.com and townhall.hashnode.com, signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). Both surfaces paint <b>light by default</b> — the <code>light</code> token set is that painted surface — and hashnode.com's own sidebar Theme menu (Light / Dark / System) flips <code>html.dark</code>, re-pointing the roles to the <code>dark</code> set; on the blog engine the same repaint comes from <code>prefers-color-scheme</code> (its own toggle produced no repaint headless). <code>--command</code> exists in dark only. Inter is loaded through next/font and not bundled here: samples fall back to system fonts. /login and every post-auth surface, engineering.hashnode.com (429) and the NXDOMAIN docs/help/api subdomains are documented boundaries, not captures.</p>
+  <h2 class="sh">huddlekit.com, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. huddlekit.com and app.huddlekit.com share a Tailwind v4 <code>@theme</code> plus a shadcn-style semantic layer: <code>--background</code>/<code>--foreground</code>, <code>--card</code>, <code>--popover</code>, <code>--primary</code> (the #ea580d orange) and its foreground, <code>--secondary</code>, <code>--muted</code>, <code>--accent</code>, <code>--destructive</code>, <code>--border</code>/<code>--input</code>/<code>--ring</code>, <code>--upgrade</code> (the #7357ff pro purple), <code>--sidebar-*</code>, <code>--chart-1..5</code>, the marketing site's <code>--color-page</code> warm wash (#f6f3f2), and the app's <code>--canvas</code>. Radii, spacing, containers, the Inter and Geist Mono faces, and the measured header and control sizes sit in <code>core</code>.</p>
+  <p class="note">Read from huddlekit.com and app.huddlekit.com/login, signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). The marketing site paints light only. Its nested <code>.dark</code> panels (footer, testimonials, the MCP card) re-point the same names. The app paints <code>html.dark</code> under <code>prefers-color-scheme</code>. There is no theme menu on the marketing site. Inter is loaded through next/font and is not bundled here, so samples fall back to system fonts.</p>
 
-  <h2 class="sh">The surface</h2>
-  <p class="lead">hashnode.com is a viewport-high app shell: a <code>--sidebar-*</code> rail (logo, Home/Feed/Pro/Agents nav, Search &#8984;K, Theme and More buttons, a solid "Start your blog" CTA, a Sign-in link) beside the scrolling feed of post cards. townhall.hashnode.com is the hosted blog engine on the same system: a sticky header (wordmark, a pill <code>--surface</code> nav, Search and theme buttons) over the index and the article page with its table-of-contents rail and tinted <code>--code-block</code> panels.</p>
-  <div class="mock" id="docs-mock" data-mode="light">
-    <div class="topbar"><span class="wm">hashnode</span><span class="nav"><span>Feed</span><span>Pro</span><span>Agents</span></span><span class="sp"></span><span class="pill">Search <b>&#8984;K</b></span><button type="button" class="theme" id="theme-toggle" aria-pressed="false" title="Switch to dark theme">&#9789;</button></div>
-    <div class="shell">
-      <div class="sb"><div class="grp">Navigate</div><span class="ln on">Home</span><span class="ln">Feed</span><span class="ln">Hashnode Pro</span><span class="ln">For Agents</span><div class="grp">Community</div><span class="ln">Hackathons</span><span class="ln">Changelog</span></div>
-      <div class="art"><h3>Why DIY QA doesn&rsquo;t work anymore</h3><p>A 2025 guide to E2E testing for modern web apps — the post card row sits on <span class="ic">bg-background</span>, its title inks <span class="ic">fg-foreground</span> and the excerpt mutes to <span class="ic">fg-muted-foreground</span>.</p>
-        <div class="codeblk"><span class="tab on">MCP server</span><span class="tab">Agent skill</span><span class="tab">CLI</span><br>
-        <span class="kw">npx</span> -y <span class="fn">hashnode</span>@latest <span class="cm"># the /agents install command</span></div>
-        <span class="btn primary">Start your blog, free</span>&nbsp;&nbsp;<span class="btn ghost">Sign in</span></div>
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">An announcement bar on the warm page wash, then a sticky header (wordmark, Features, Solutions, Resources, Pricing, Sign in, and the secondary Get started control). The hero sits on <code>--color-page</code> with the orange primary call to action.</p>
+  <div class="mock">
+    <div class="announce">New: hand feedback to your AI agent over MCP</div>
+    <div class="header">
+      <span class="wm">Huddlekit</span>
+      <span class="nav"><span>Features</span><span>Solutions</span><span>Resources</span><span>Pricing</span></span>
+      <span class="sp"></span>
+      <span class="signin">Sign in</span>
+      <span class="btn secondary">Get started</span>
+    </div>
+    <div class="hero">
+      <h3>The visual annotation tool for website feedback</h3>
+      <p>Draw on the page, leave a comment, and hand it to the team.</p>
+      <div class="herorow"><span class="btn primary">Get started for free</span><span class="btn outline">5-star reviews</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing slabs</h2>
+  <p class="lead">Three plan slabs on <code>/pricing</code>, reconstructed from the page shot. The saved <code>plan-card</code> reading was the "Free forever" label, so no plan-card width or radius is tokenised here. Prices on the live page are in the screenshots.</p>
+  <div class="mock"><div class="plans">
+    <div class="plan"><div class="name">Free</div><div class="price">$0</div><div class="sub">Free forever</div><span class="btn outline">Sign up free</span></div>
+    <div class="plan pro"><div class="name">Pro</div><div class="price">Pro</div><div class="sub">The featured slab</div><span class="btn primary">Get started</span><div class="upgrade">upgrade</div></div>
+    <div class="plan"><div class="name">Team</div><div class="price">Team</div><div class="sub">Shared workspace</div><span class="btn outline">Sign up free</span></div>
+  </div></div>
+
+  <h2 class="sh">Dark footer</h2>
+  <p class="lead">The marketing footer is a nested <code>.dark</code> panel, not a page theme. It re-points <code>--background</code> and <code>--foreground</code> to the dark set (#0e0b0d ground, #e3e0df ink) and keeps the orange primary.</p>
+  <div class="mock"><div class="footer dark">
+    <div class="cols">
+      <div><b>Product</b><span>Features</span><span>Pricing</span><span>MCP</span></div>
+      <div><b>Solutions</b><span>Agencies</span><span>Product teams</span></div>
+      <div><b>Resources</b><span>Blog</span><span>Support</span><span>Manifesto</span></div>
+    </div>
+    <div class="word">Huddlekit</div>
+  </div></div>
+
+  <h2 class="sh">App login</h2>
+  <p class="lead">app.huddlekit.com/login is the only anonymous app surface. The card is square (<code>loginCard.radius</code> 0px). Continue with Google paints <code>--primary</code>. Continue with email reveals a pill field. Nothing on this card was submitted.</p>
+  <div class="mock" style="background:var(--canvas-default, #efeceb); padding: 8px 0 24px;">
+    <div class="login">
+      <div class="wm">Huddlekit</div>
+      <h3>Sign in to Huddlekit</h3>
+      <span class="btn primary">Continue with Google</span>
+      <span class="btn secondary">Continue with email</span>
+      <div class="field">Enter your email</div>
     </div>
   </div>
 
   <h2 class="sh">Palette</h2>
-  <p class="lead">The semantic roles under <code>light.*</code> are the painted default (white ground, near-black ink, the <code>#2962ff</code> brand/link blue); <code>dark.*</code> resolves the same declarations inside <code>html.dark</code> (#0d0f14 ground, #e6e8eb ink, #6293ff blue) — including the dark-only <code>command</code> name. <code>sidebar.*</code>, <code>chart.*</code>, <code>codeBlock.*</code>, <code>selection.*</code> and <code>scrollbar.*</code> are their own role sets; <code>pro.*</code>, <code>buildful.*</code>, <code>ai.*</code>, <code>landing.*</code> and <code>tod.*</code> are the scene palettes (Pro gold, the green accent, the AI gradient, the landing and time-of-day hero art), all re-pointed per theme.</p>
+  <p class="lead"><code>light.*</code> is the painted default (white ground, #111827 ink, #ea580d primary, #f6f3f2 page wash). <code>dark.*</code> is the same names re-pointed for the app's dark OS preference and the nested dark panels (#0e0b0d ground, #e3e0df ink, the orange kept). Swatches in the dark block sit inside <code>.dark</code> so they resolve that set.</p>
   <div id="roles-out"></div>
 
   <h2 class="sh">Spacing, radius, layout and motion</h2>
-  <p class="lead">Spacing is the Tailwind <code>--spacing</code> unit (0.25rem); radii are <code>--radius</code> .5rem and <code>--radius-xs</code> .125rem (pills clamp to 9999px); <code>container.*</code> and <code>breakpoint.*</code> carry the layout scales and <code>component.*</code> the measured chrome — sidebar width, CTA height, dialog and card sizes, the mobile drawer. <code>motion.*</code> is the measured set from the reduced-motion probe (docs/decisions/0001): the durations and easing curves elements actually run, the transitions and animations, and what <code>prefers-reduced-motion</code> changes.</p>
+  <p class="lead">Spacing is the Tailwind <code>--spacing</code> unit (0.25rem). <code>--radius</code> is 0.75rem. <code>component.*</code> holds geometry that was measured on the right element: header height, CTA height and radius, the login card, the consent banner. Plan-card width and mobile-drawer width are absent until a recapture reads those containers. <code>motion.*</code> is the reduced-motion probe: durations, easing, and what <code>prefers-reduced-motion</code> changes.</p>
   <div id="spacing-out" class="kv"></div>
   <div id="motion-out" class="kv"></div>
 
@@ -109,7 +145,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e2e4e8); p
   <div id="elev-out" class="kv"></div>
 
   <h2 class="sh">Type</h2>
-  <p class="lead">Two font chains: <code>--font-app</code> (the system sans stack, the UI face) and <code>--font-inter</code> (Inter through next/font, the product face), plus <code>--font-mono</code> for code. The <code>--text-*</code> ramp runs xs&ndash;6xl with paired line-heights and the prose roles <code>--text-body</code>/<code>-label</code>/<code>-reading</code>/<code>-small</code>/<code>-subtitle</code>/<code>-title-2..4</code> carry size, weight, tracking and leading; weights are the named <code>--font-weight-*</code> steps (300&ndash;700). Below that, the <code>core.typography.*</code> composites — the article title, headings, body, code and control styles measured off the live DOM. Samples fall back to system sans because Inter is not bundled.</p>
+  <p class="lead"><code>--font-sans</code> is Inter through next/font. <code>--font-geist-mono</code> is the code face. <code>--font-mono</code> is the system mono stack. Samples below fall back to system fonts because the licensed files are not bundled.</p>
   <div id="type-out"></div>
   <div id="typ-out"></div>
   <div id="fam-out" class="kv"></div>
@@ -117,7 +153,8 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e2e4e8); p
   <h2 class="sh">Measured extras</h2>
   <div id="meas-out" class="kv"></div>
 
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --background/--foreground/--primary/--font-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and dark states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Reading</th><th>Where it landed</th></tr><tr><td>Stylesheet harvest</td><td>Declared <code>--background</code>, <code>--primary</code>, <code>--font-*</code> and the rest of the semantic layer, resolved under light and under <code>.dark</code></td></tr><tr><td>Live DOM</td><td>Hover, focus-visible, DevTools-forced pressed, and opened states, each named with the element it was read from</td></tr><tr><td>Withdrawn readings</td><td>FAQ, prose link, plan card, contact row and the mobile drawer matched navigation or a label. Those tokens are not published.</td></tr></table>
 </main>
 <script>
 const TOK = /*TOKENS*/null;
@@ -135,11 +172,9 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }
-  for (const [setname, label] of [['light', 'light roles — the painted default (both surfaces boot html.light)'], ['dark', 'dark roles — the Theme menu / prefers-color-scheme repaints html.dark']]) {
+  for (const [setname, label] of [['light', 'light roles, the painted default'], ['dark', 'dark roles, the app OS preference and nested .dark panels']]) {
     const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
     if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values.
     h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
     for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
@@ -158,12 +193,6 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
   for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const setname of ['light', 'dark']) {
-    const misc = flat((TOK[setname] || {}).misc || {}, setname + '.misc.');
-    if (!misc.length) continue;
-    m += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} misc</b></div>`;
-    for (const [n, t] of misc) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
-  }
   $('#spacing-out').innerHTML = m;
 })();
 
@@ -171,14 +200,6 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
   let e = '';
   for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
-  // The product's five-level --elevation-* stacks live per theme, not in
-  // core.shadow — render both so the real scale is inspectable.
-  for (const setname of ['light', 'dark']) {
-    const group = flat((TOK[setname] || {}).elevation || {}, setname + '.elevation.');
-    if (!group.length) continue;
-    e += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} elevation</b></div>`;
-    for (const [n, t] of group) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
-  }
   $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
 })();
 
@@ -216,11 +237,10 @@ const resolveVal = (v, depth) => {
   let h = '';
   for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
     const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The Hashnode blog</span><span class="tv">${esc(t.v)}</span></div>`;
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Huddlekit</span><span class="tv">${esc(t.v)}</span></div>`;
   }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Huddlekit</span><span class="tv">${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Hashnode</span><span class="tv">${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
   $('#type-out').innerHTML = h;
   let f = '';
@@ -228,9 +248,6 @@ const resolveVal = (v, depth) => {
   $('#fam-out').innerHTML = f;
 })();
 
-// The measured core.typography.* composites — the styles the live DOM paints,
-// not just the declared scales. Samples fall back to system fonts (Inter is
-// not bundled).
 (function typ() {
   let h = '';
   for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
@@ -238,22 +255,9 @@ const resolveVal = (v, depth) => {
     const fs = parseFloat(v.fontSize) || 14;
     const mono = /mono/i.test(String(v.fontFamily));
     const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
-    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — The Hashnode blog 0123</span><span class="tv">${esc(meta)}</span></div>`;
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — Huddlekit 0123</span><span class="tv">${esc(meta)}</span></div>`;
   }
   $('#typ-out').innerHTML = h;
-})();
-
-// The mock's theme button flips data-mode the way hashnode's own Theme menu flips
-// html.dark — the [data-mode="dark"] block carries the dark token set.
-(function themeToggle() {
-  const btn = $('#theme-toggle'), mock = $('#docs-mock');
-  if (!btn || !mock) return;
-  btn.addEventListener('click', () => {
-    const dark = mock.getAttribute('data-mode') !== 'dark';
-    mock.setAttribute('data-mode', dark ? 'dark' : 'light');
-    btn.setAttribute('aria-pressed', String(dark));
-    btn.title = dark ? 'Switch to light theme' : 'Switch to dark theme';
-  });
 })();
 </script>
 </body>

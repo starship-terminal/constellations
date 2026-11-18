@@ -209,7 +209,7 @@ const HOME = [
     ] },
   { key: 'faq-question', group: 'Home', title: 'FAQ accordion question',
     desc: 'A question row in the page FAQ accordion. "opened" is its own press revealing the answer.',
-    sel: 'button[aria-expanded]', find: (p) => p.locator('button[aria-expanded]').filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible',
+    sel: 'main button[aria-expanded] (question text)', find: (p) => p.locator('main button[aria-expanded]').filter({ hasText: /\?/ }).filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible',
       { name: 'opened', via: 'the question row\'s own press (answer visible; pressed again to close)', fn: async (loc) => {
         await loc.click({ timeout: 4000 }).catch(() => {});
         await page.waitForTimeout(700);
@@ -250,11 +250,14 @@ const PRICING = [
   { key: 'plan-card', group: 'Pricing', title: 'Plan card',
     desc: 'A pricing plan card on /pricing (name, price, feature list, CTA).',
     sel: 'main box (priced plan)', find: async (p) => await pick(p, 'main div, main section, main article', (el, r) => {
-      if (r.width < 200 || r.width > 720) return Infinity;
+      if (r.width < 200 || r.width > 720 || r.height < 160) return Infinity;
       const t = el.innerText || '';
-      if (!/\$\s*\d|€\s*\d|\d+\s*\/|per month|monthly/i.test(t) && !/\bfree\b|\bpro\b|\bteam\b/i.test(t)) return Infinity;
-      if (!/sign up|get started|free/i.test(t)) return Infinity;
-      return el.querySelectorAll('*').length;   // the smallest box holding a plan is the card, not the page
+      if (!/\$\s*\d|€\s*\d|\d+\s*\/\s*(mo|month)|per month|monthly/i.test(t)) return Infinity;
+      if (!/sign up|get started/i.test(t)) return Infinity;
+      // The fewest descendants otherwise lands on the "Free forever" label.
+      // A plan card holds a price, a feature list and a call to action.
+      if ((t.match(/\n/g) || []).length < 4) return Infinity;
+      return el.querySelectorAll('*').length;
     }, 'pc'), states: ['default'] },
   { key: 'billing-switch', group: 'Pricing', title: 'Billing switch',
     desc: 'A monthly/annual switch on the plan cards (role=switch, data-state=checked, bg-primary on). "off" is its own press — then pressed back.',
@@ -297,9 +300,13 @@ const CONTACT = [
   { key: 'contact-row', group: 'Contact', title: 'Contact channel row',
     desc: 'A contact row on /contact ("Sales, inquiries & partnerships" + the published hello@huddlekit.com).',
     sel: 'main box (contact row)', find: async (p) => await pick(p, 'main div, main section', (el, r) => {
-      if (r.width < 150 || r.width > 900) return Infinity;
+      if (r.width < 280 || r.width > 900 || r.height < 40) return Infinity;
       const t = el.innerText || '';
+      // The email node alone also matches huddlekit.com. A row names the
+      // channel and publishes the address.
       if (!/huddlekit\.com/i.test(t)) return Infinity;
+      if (!/sales|inquir|partnership|support|press|hello@/i.test(t)) return Infinity;
+      if (!/@/.test(t) || (t.match(/\n/g) || []).length < 1) return Infinity;
       return el.querySelectorAll('*').length;
     }, 'cr'), states: ['default'] },
 ];
@@ -315,7 +322,7 @@ const PROSE = [
   { key: 'prose-p', group: 'Prose', title: 'Body paragraph',
     desc: 'A paragraph of article prose.', sel: 'main p (sentence)', find: (p) => p.locator('main p').filter({ visible: true }).filter({ hasText: /\S+(\s+\S+){7,}/ }).first(), states: ['default'] },
   { key: 'prose-link', group: 'Prose', title: 'Prose link',
-    desc: 'A body-text link inside the article.', sel: 'main :is(p,li) a', find: (p) => p.locator('main :is(p,li) a').filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible'] },
+    desc: 'A body-text link inside the article.', sel: 'article :is(p, li) a', find: (p) => p.locator('article :is(p, li) a, main article :is(p, li) a').filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible'] },
   { key: 'breadcrumb', group: 'Prose', title: 'Breadcrumb',
     desc: 'The Home / Blog / … breadcrumb above the article.', sel: 'nav[aria-label*="breadcrumb" i], nav', find: (p) => p.locator('nav[aria-label*="breadcrumb" i], nav').filter({ hasText: /blog/i }).filter({ visible: true }).first(), states: ['default'] },
 ];
@@ -331,7 +338,7 @@ const COMPARE = [
     desc: 'The Contents navigation on a comparison page.', sel: 'nav, aside', find: async (p) => await domFind(p, /contents/i, { sel: 'nav, aside, h2, div', tag: 'ct', up: 'nav, aside', minW: 80 }), states: ['default'] },
   { key: 'compare-check-item', group: 'Compare', title: 'Feature-check list row',
     desc: 'A checklist row in the comparison (a lucide check / badge icon + capability line).',
-    sel: 'li', find: (p) => p.locator('main li').filter({ visible: true }).filter({ hasText: /\w{4}/ }).first(), states: ['default'] },
+    sel: 'main li:has(svg)', find: (p) => p.locator('main li').filter({ has: p.locator('svg') }).filter({ visible: true }).filter({ hasText: /\w{6,}/ }).first(), states: ['default'] },
 ];
 
 const APP_LOGIN = [
@@ -384,12 +391,12 @@ const MOBILE = [
       const ham = p.getByRole('button', { name: /toggle menu|menu/i }).filter({ visible: true }).first();
       await ham.click({ timeout: 5000 }).catch(() => ham.evaluate((el) => el.click()).catch(() => {}));
       await p.waitForTimeout(1500);
-      return await domFind(p, /^features$/i, { sel: 'a', tag: 'mn', up: 'div[class*="absolute"]', minW: 60 });
+      return await domFind(p, /^features$/i, { sel: 'a', tag: 'mn', up: 'div[class*="absolute"]', minW: 60, scope: 'header' });
     }, states: [{ name: 'opened', via: 'the "Toggle menu" button\'s own press; the open sheet is read', fn: async (loc) => {
       // reset() pressed Escape — re-open before reading.
       const ham = page.getByRole('button', { name: /toggle menu|menu/i }).filter({ visible: true }).first();
       if (await ham.count()) { await ham.click({ timeout: 5000 }).catch(() => {}); await page.waitForTimeout(1500); }
-      return await domFind(page, /^features$/i, { sel: 'a', tag: 'mn2', up: 'div[class*="absolute"]', minW: 60 });
+      return await domFind(page, /^features$/i, { sel: 'a', tag: 'mn2', up: 'div[class*="absolute"]', minW: 60, scope: 'header' });
     } }] },
 ];
 

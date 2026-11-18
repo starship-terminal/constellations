@@ -67,7 +67,7 @@ for (const g of groups) {
     const states = Object.keys(c.states);
     W(`Page: ${c.page}. Selector: \`${esc(c.selector)}\`. States: ${states.join(', ')}.`);
     W('');
-    if (c.missing) { W('Not found on the page at capture time.'); continue; }
+    if (c.missing) { W(c.missingReason || 'Not found on the page at capture time.'); continue; }
     const rows = {};
     for (const st of states) {
       const v = c.states[st];

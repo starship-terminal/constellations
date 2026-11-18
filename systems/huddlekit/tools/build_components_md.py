@@ -562,7 +562,7 @@ for g in groups:
             W(" ".join(prov))
         W()
         if c.get("missing"):
-            W("Not on the page when it was captured.")
+            W(c.get("missingReason") or "Not on the page when it was captured.")
             continue
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
@@ -617,6 +617,7 @@ W()
 W("### States")
 W()
 W("- **Pressed** was forced with DevTools (`CSS.forcePseudoState` :active:hover) on the controls that carry it, so a state a script adds on mousedown (if any) is missing.")
+W("- **These lookups matched the wrong node and are marked missing, not republished:** `faq-question` read the header Solutions trigger; `prose-link` and `compare-check-item` read the breadcrumb Home; `plan-card` read the Free forever label; `contact-row` read only the email; `m-nav-drawer` read the Features link (62px is not the drawer width). The selectors now refuse those nodes. No live recapture was run, so no replacement measurements were invented.")
 W("- **The fields were never typed into** — the support search, the contrast checker's inputs and the login's email field were focused for their focus look; nothing was entered, so validation and suggestion states are uncaptured.")
 W("- **The login's 'Continue' and 'Continue with Google'** were never pressed (they submit); the email form's resting open state is captured, its submit states are not.")
 W("- **Copy-to-clipboard and 'Get started'** — measured, never pressed (clipboard and sign-up flows).")

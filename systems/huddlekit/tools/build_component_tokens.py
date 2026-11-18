@@ -261,14 +261,16 @@ if C_PATH.exists():
     geom("cta-secondary", "default", "h", "button.secondary.height", "header 'Get started' button")
     geom("nav-menu-surface", "opened", "w", "navMenu.width", "the open Solutions nav popover")
     geom("consent-banner", "default", "w", "consentBanner.width", "the cookie consent banner")
-    geom("plan-card", "default", "w", "planCard.width", "a /pricing plan card")
+    # planCard.width / planCard.radius stay out until a recapture reads the
+    # full card. The saved reading is the "Free forever" label (274.66x16).
     geom("app-login-card", "default", "w", "loginCard.width", "the sign-in panel")
     geom("app-google-button", "default", "h", "button.oauth.height", "'Continue with Google'")
     geom("support-search", "default", "h", "input.supportSearch.height", "the /support search field")
     geom("app-email-input", "default", "h", "input.loginEmail.height", "the login email field")
     geom("feature-tab", "default", "h", "tab.height", "a vertical feature tab row")
     geom("m-header", "default", "h", "mobileHeader.height", "phone top bar")
-    geom("m-nav-drawer", "opened", "w", "mobileDrawer.width", "opened nav sheet")
+    # mobileDrawer.width stays out until a recapture reads the sheet. The
+    # saved reading is the Features link (62px), not the drawer.
 
     def style_tok(comp, state, prop, path, ty, label):
         st = C.get(comp, {}).get("states", {}).get(state, {})
@@ -320,7 +322,7 @@ if C_PATH.exists():
     radius_tok("consent-banner", "default", "consentBanner.radius", "consent banner corner")
     radius_tok("support-search", "default", "input.radius", "text field corner")
     radius_tok("app-login-card", "default", "loginCard.radius", "sign-in panel corner")
-    radius_tok("plan-card", "default", "planCard.radius", "plan card corner")
+    # planCard.radius: see the note above geom(); the label's 0px is not the card.
     radius_tok("testimonial-card-dark", "default", "card.testimonial.radius", "dark testimonial card corner")
     # The 'Get started for free' CTA and the login's 'Continue with Google'
     # both paint the primary role, declared per theme.
@@ -354,12 +356,14 @@ if C_PATH.exists():
 
     typ("prose-h1", "typography.articleTitle", "the blog article title")
     typ("prose-p", "typography.body", "article body text")
-    typ("prose-link", "typography.bodyLink", "a body-text link inside the article")
+    # bodyLink stays out until a recapture reads a link inside the article.
+    # The saved reading is the breadcrumb "Home".
     typ("nav-link", "typography.navLink", "a header nav label")
     typ("cta-primary", "typography.button", "the primary CTA label")
     typ("support-search", "typography.input", "the /support search field")
     typ("app-google-button", "typography.oauthButton", "the 'Continue with Google' label")
-    typ("faq-question", "typography.faqQuestion", "a FAQ question row")
+    # faqQuestion stays out until a recapture reads a question row. The saved
+    # reading is the header "Solutions" trigger.
     typ("feature-tab", "typography.tabLabel", "a feature tab label")
 
 (RAW / "component-tokens.json").write_text(json.dumps(TREE, indent=1, ensure_ascii=False) + "\n")

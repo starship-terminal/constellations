@@ -29,7 +29,7 @@
  },
  "F8": {
   "grade": "meets",
-  "evidence": "font.family.sans (Inter + Inter Fallback), geistMono and mono stacks; 10 sizes xs-7xl, 4 weights, 13 line heights, 5 tracking steps; plus 9 typography composites (articleTitle, body, bodyLink, navLink, button, input, oauthButton, faqQuestion, tabLabel) each with family/size/weight/line-height/tracking."
+  "evidence": "font.family.sans (Inter + Inter Fallback), geistMono and mono stacks; 10 sizes xs-7xl, 4 weights, 13 line heights, 5 tracking steps; plus 7 typography composites (articleTitle, body, navLink, button, input, oauthButton, tabLabel) each with family/size/weight/line-height/tracking. bodyLink and faqQuestion were withdrawn: those readings were the breadcrumb and the header Solutions trigger."
  },
  "F9": {
   "grade": "partly",
@@ -49,7 +49,7 @@
  },
  "F13": {
   "grade": "partly",
-  "evidence": "Durations (20 steps 70ms-22s incl. marquee lengths), 10 easing curves and named animations (hero-reveal 600ms, enter 300ms, scattered-scroll, clients-stack, ping/pulse/spin) are tokenised from declared keyframes/transition vars. Reduced-motion overrides are not declared in the harvested CSS, so what changes under prefers-reduced-motion could not be recorded."
+  "evidence": "Durations (20 steps 70ms-22s incl. marquee lengths), 10 easing curves and named animations (hero-reveal 600ms, enter 300ms, scattered-scroll, clients-stack, ping/pulse/spin) are tokenised from declared keyframes and transition vars. raw/motion.json records the reduced-motion probe on five pages (/, /pricing, /features, /mcp, the login): behaviour partial, 209 moving, 10 removed, 197 kept; /pricing, /features and the login ignore the preference and the marquee/ping loops keep running. Partly, because the product does not stop motion under prefers-reduced-motion."
  },
  "F14": {
   "grade": "partly",
@@ -57,15 +57,15 @@
  },
  "C1": {
   "grade": "partly",
-  "evidence": "components.md covers the shippable signed-out set: buttons (cta/secondary/oauth/outline), links, text fields (login email, support search), nav bar + dropdown menu, tabs, plan cards, testimonial card, login card, consent banner, footer, mobile drawer. Modal/toast/checkbox/select/table do not exist on the signed-out surfaces and were not fabricated."
+  "evidence": "components.md covers the signed-out set that was measured: buttons (cta/secondary/oauth/outline), links, text fields (login email, support search), nav bar and dropdown, tabs, testimonial card, login card, consent banner, footer. plan-card, contact-row, faq-question, prose-link, compare-check-item and the mobile drawer are marked missing (those readings were a label, an email, the header, the breadcrumb, or a 62px Features link). Modal/toast/checkbox/select/table do not exist on the signed-out surfaces and were not fabricated."
  },
  "C2": {
   "grade": "partly",
-  "evidence": "Hover is measured per component (linkHover.color token, CTA/nav hover in measurements) and selected/disabled plan-card and tab states are captured; pressed and error states are not reachable signed-out and are marked as gaps rather than invented."
+  "evidence": "Hover, focus-visible and opened/selected states are measured per component (linkHover.color, feature-tab selected, billing-switch off, FAQ and menu opened). Pressed is a DevTools-forced :active:hover on seven controls (consent-accept, cta-primary, cta-secondary, plan-cta, contact-copy, app-google-button, app-email-button), saved in raw/components-computed.json and components/crops. Error, loading and disabled states are not reachable signed-out and stay gaps. Partly, because those states were not invented."
  },
  "C3": {
   "grade": "partly",
-  "evidence": "The focus-ring colour is tokenised (border.ring #ff6900/#f54900) and ring usage is noted per component in measurements, but no signed-out element's painted focus-visible state was captured as a screenshot; the gap is documented."
+  "evidence": "18 components have a keyboard focus-visible reading with crops (components/crops/*-focus-visible.png). nav-link and tool-color-input draw a 1px outline ring; 15 others draw the ring as a shadow, including cta-primary and app-google-button. border.ring is #ff6900/#f54900. Partly, because app-continue-button showed no painted change and several interactive components have no focus shot."
  },
  "C4": {
   "grade": "meets",

@@ -4,13 +4,13 @@ The discovery list of every page and view captured, then one entry per component
 
 **Where this was read.** Two public surfaces carry the system: huddlekit.com itself — the signed-out marketing site (home, features, solutions, pricing, integrations, compare, MCP, manifesto, blog, support, tools, contact, legal) — and app.huddlekit.com/login, the one surface the app serves anonymously. The marketing site paints light only; its `.dark` rules re-point the same custom properties inside nested dark panels (the footer, the dark testimonials, the MCP card), measured as their own components. The app paints `html.dark` under prefers-color-scheme — the login's `dark` states are measured on that painted dark surface. Everything past /login redirects an anonymous visitor back to it; try./demo./status./docs./help. hosts and app.huddlekit.io do not resolve. All of those are boundaries listed under Gaps, not captures.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (48 components, 116 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (48 components, 105 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (116 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (105 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -64,7 +64,7 @@ Screenshots are named `{page}-{theme}-{state}.png` where `{theme}` is the surfac
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 20 components were given a real keyboard focus. 3 draw an outline ring: `nav-link` (1px auto rgba(255, 105, 0, 0.5), offset 1px), `tool-color-input` (1px auto rgba(255, 105, 0, 0.5), offset 0px), `prose-link` (1px auto rgba(255, 105, 0, 0.5), offset 1px). 15 draw a focus ring as a shadow instead: `consent-decline`, `consent-accept`, `cta-primary`, `cta-secondary`, `cta-outline`, `testimonial-card-dark`, `show-more`, `billing-switch`, `plan-cta`, `support-search`, `tool-text-input`, `contact-copy`, `app-google-button`, `app-email-button`, `m-menu-button`. The other 2 show no measured change: `faq-question`, `app-continue-button`.
+**Focus.** 18 components were given a real keyboard focus. 2 draw an outline ring: `nav-link` (1px auto rgba(255, 105, 0, 0.5), offset 1px), `tool-color-input` (1px auto rgba(255, 105, 0, 0.5), offset 0px). 15 draw a focus ring as a shadow instead: `consent-decline`, `consent-accept`, `cta-primary`, `cta-secondary`, `cta-outline`, `testimonial-card-dark`, `show-more`, `billing-switch`, `plan-cta`, `support-search`, `tool-text-input`, `contact-copy`, `app-google-button`, `app-email-button`, `m-menu-button`. The other 1 show no measured change: `app-continue-button`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -82,14 +82,12 @@ Values that apply across entries, from the measurement files.
 | [Site header](#site-header) | 976 x 64 | - | - | transparent | none | 0 |
 | [Nav popover (open)](#nav-popover-open) | 194 x 154 | 1px solid #e4e4e7 `light.border.default` | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px | 0 |
 | [Cookie consent banner](#cookie-consent-banner) | 352 x 174 | 1px solid #e4e4e7 `light.border.default` | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px | 8px |
-| [Plan card](#plan-card) | 274.66 x 16 | - | - | transparent | none | 0 |
 | [Integration card](#integration-card) | 314.66 x 196 | - | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 24px |
 | [Integration page card](#integration-page-card) | 314.66 x 196 | - | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 24px |
 | [Dark testimonial card](#dark-testimonial-card) | 645.33 x 384 | - | 16px | #0e0b0d `core.component.component.footer.bg` | rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 24px |
 | [Dark MCP panel](#dark-mcp-panel) | 976 x 88 | - | 16px | #0e0b0d `core.component.component.footer.bg` | rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 24px |
 | [Support category card](#support-category-card) | 480 x 172 | - | 16px | #ffffff `light.card.default` | rgba(0, 0, 0, 0.05) 0px 1px 2px 0px | 24px |
 | [Sign-in panel](#sign-in-panel) | 320 x 168 | - | - | transparent | none | 0 |
-| [Nav sheet (open)](#nav-sheet-open) | 62 x 17 | - | - | transparent | none | 0 |
 | [Site footer (dark)](#site-footer-dark) | 1440 x 860.02 | T: 1px solid rgba(255, 255, 255, 0.08) | - | #0e0b0d `core.component.component.footer.bg` | none | 0 |
 
 ## Components
@@ -331,14 +329,8 @@ States read on 2026-11-17T16:29:52.186Z (default); 2026-11-17T16:29:54.019Z (hov
 
 #### FAQ accordion question
 A question row in the page FAQ accordion. "opened" is its own press revealing the answer. Read as `faq-question` on the home page.
-States read on 2026-11-17T16:29:58.609Z (default); 2026-11-17T16:30:00.449Z (hover); 2026-11-17T16:30:01.737Z (focus-visible); 2026-11-17T16:30:03.379Z (opened).
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: focus-visible) | size 85 x 20; background transparent; text Inter 14/20 500, #111827 `light.root.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #111827 `light.root.foreground` |
-| hover, opened | text Inter 14/20 500, rgba(17, 24, 39, 0.7) `core.component.type.linkHover.color`; icon 14 x 14, rgba(17, 24, 39, 0.7) `core.component.type.linkHover.color` |
-
-![FAQ accordion question default](components/crops/faq-question-default.png) ![FAQ accordion question hover](components/crops/faq-question-hover.png) ![FAQ accordion question focus-visible](components/crops/faq-question-focus-visible.png) ![FAQ accordion question opened](components/crops/faq-question-opened.png)
+The saved states read the header Solutions trigger (85x20), not a question row. Selectors are scoped to main button[aria-expanded] whose label contains "?". Not remeasured: no live recapture.
 
 ### Pricing
 
@@ -346,11 +338,8 @@ The /pricing page: the plan cards, the monthly/annual billing switch, the per-pl
 
 #### Plan card
 A pricing plan card on /pricing (name, price, feature list, CTA). Read as `plan-card` on the pricing page.
-Read on 2026-11-17T15:10:09.552Z.
 
-**Values (default).** size 274.66 x 16; background transparent; text Inter 12/16 500, #747170 `light.muted.foreground`.
-
-![Plan card default](components/crops/plan-card-default.png)
+The saved state reads the "Free forever" label (274.66x16), not a plan card. The picker now requires a price, a call to action, several lines and height of at least 160. Not remeasured: no live recapture.
 
 #### Billing switch
 A monthly/annual switch on the plan cards (role=switch, data-state=checked, bg-primary on). "off" is its own press — then pressed back. Read as `billing-switch` on the pricing page.
@@ -457,11 +446,8 @@ States read on 2026-11-17T15:12:08.753Z (default); 2026-11-17T15:12:10.724Z (hov
 
 #### Contact channel row
 A contact row on /contact ("Sales, inquiries & partnerships" + the published hello@huddlekit.com). Read as `contact-row` on the contact page.
-Read on 2026-11-17T15:12:15.030Z.
 
-**Values (default).** size 179 x 28; background transparent; text Inter 18/28 500, #111827 `light.root.foreground`.
-
-![Contact channel row default](components/crops/contact-row-default.png)
+The saved state reads only hello@huddlekit.com (179x28), not the channel row. The picker now requires the channel name and the address together. Not remeasured: no live recapture.
 
 ### Prose
 
@@ -493,15 +479,8 @@ Read on 2026-11-17T15:12:33.572Z.
 
 #### Prose link
 A body-text link inside the article. Read as `prose-link` on the blog article page.
-States read on 2026-11-17T15:12:39.881Z (default); 2026-11-17T15:12:43.820Z (hover); 2026-11-17T15:12:46.108Z (focus-visible).
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 40 x 20; background transparent; text Inter 14/20 500, #747170 `light.muted.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | text Inter 14/20 500, #111827 `light.root.foreground` |
-| focus-visible | outline 1px auto rgba(255, 105, 0, 0.5), offset 1px; layers a.hover:text-foreground.transition-colors 40.0x20.0 1px auto rgba(255, 105, 0, 0.5) offset 1px |
-
-![Prose link default](components/crops/prose-link-default.png) ![Prose link hover](components/crops/prose-link-hover.png) ![Prose link focus-visible](components/crops/prose-link-focus-visible.png)
+The saved states read the breadcrumb "Home" (40x20), not a link in the article. The selector is now article :is(p, li) a. Not remeasured: no live recapture.
 
 #### Breadcrumb
 The Home / Blog / … breadcrumb above the article. Read as `breadcrumb` on the blog article page.
@@ -541,11 +520,8 @@ Child layers that carry the look: div 293.3x304 background #ffffff `light.card.d
 
 #### Feature-check list row
 A checklist row in the comparison (a lucide check / badge icon + capability line). Read as `compare-check-item` on the compare page page.
-Read on 2026-11-17T15:13:24.450Z.
 
-**Values (default).** size 40 x 20; background transparent; text Inter 14/20 500, #747170 `light.muted.foreground`.
-
-![Feature-check list row default](components/crops/compare-check-item-default.png)
+The saved state reads the breadcrumb "Home", not a checklist row. The selector now requires a list item that holds an svg and a longer label. Not remeasured: no live recapture.
 
 ### App login
 
@@ -651,11 +627,8 @@ States read on 2026-11-17T16:34:24.451Z (default); 2026-11-17T16:34:26.497Z (hov
 
 #### Nav sheet (open)
 The opened navigation panel — the "Toggle menu" press drops an absolute rounded-md sheet under the sticky header; the press happens in find(). Read as `m-nav-drawer` on the home page.
-Read on 2026-11-17T16:34:31.951Z.
 
-**Values (opened).** size 62 x 17; background transparent; text Inter 14/20 500, #a3a09f.
-
-![Nav sheet (open) opened](components/crops/m-nav-drawer-opened.png)
+The saved state reads the Features link (62x17). domFind no longer falls back to that link when the drawer ancestor is absent. Not remeasured: no live recapture. 62px is not the drawer width.
 
 ## Icons
 
@@ -763,6 +736,7 @@ The signed-in product was never entered: everything on **app.huddlekit.com** pas
 ### States
 
 - **Pressed** was forced with DevTools (`CSS.forcePseudoState` :active:hover) on the controls that carry it, so a state a script adds on mousedown (if any) is missing.
+- **These lookups matched the wrong node and are marked missing, not republished:** `faq-question` read the header Solutions trigger; `prose-link` and `compare-check-item` read the breadcrumb Home; `plan-card` read the Free forever label; `contact-row` read only the email; `m-nav-drawer` read the Features link (62px is not the drawer width). The selectors now refuse those nodes. No live recapture was run, so no replacement measurements were invented.
 - **The fields were never typed into** — the support search, the contrast checker's inputs and the login's email field were focused for their focus look; nothing was entered, so validation and suggestion states are uncaptured.
 - **The login's 'Continue' and 'Continue with Google'** were never pressed (they submit); the email form's resting open state is captured, its submit states are not.
 - **Copy-to-clipboard and 'Get started'** — measured, never pressed (clipboard and sign-up flows).
