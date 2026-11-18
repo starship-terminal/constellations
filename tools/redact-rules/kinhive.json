@@ -1,5 +1,5 @@
 {
-  "_note": "Rules for systems/kinhive. A public signed-out capture. Nothing was submitted. support@kinhive.com and press@kinhive.com are the product's published contact lines on the contact, privacy, and footer pages. you@email.com and you@company.com are the site's own empty-field placeholders. The OCR email net stays on with those addresses allowed.",
+  "_note": "Rules for systems/kinhive. Public pages plus the join and sign-in code step. Capture-account addresses are replaced with you@email.com before shots. support@kinhive.com and press@kinhive.com are the product's published contact lines on the contact, privacy, and footer pages. you@email.com and you@company.com are the site's own empty-field placeholders. The OCR email net stays on with those addresses allowed.",
   "ocr": {
     "emails": true,
     "email_allow": [

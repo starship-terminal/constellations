@@ -243,10 +243,10 @@ Access: signed out (every captured surface is public; sign-in, plan checkout, th
 - carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
 
 ## [Kinhive](../systems/kinhive) — `kinhive`
-Access: signed out (every captured surface is public; join, sign-in, contact, subscribe, and the hero email were measured at rest and never submitted; LinkedIn, store badges, template downloads, and Add to cart were not followed; the signed-in app was not opened)
-- the signed-in app at https://kinhive.com/home, /matches, /chat, /cowork, /profile, /settings, /notifications, /community, /posts, /team, /room, and the other paths robots.txt disallows, sits behind sign-in and was not opened
-- https://kinhive.com/join was measured at rest and never submitted, so the 6-digit email code step and everything after it were not reached
-- https://kinhive.com/sign-in was measured at rest; Email me a sign-in code and Continue with LinkedIn were not pressed
+Access: public site plus the join and sign-in 6-digit code step; contact, subscribe, and the hero email were not submitted; LinkedIn, store badges, template downloads, and Add to cart were not followed; the signed-in app was not opened because the code email never arrived
+- the signed-in app at https://kinhive.com/home, /matches, /chat, /cowork, /profile, /settings, /notifications, /community, /posts, /team, /room, and the other paths robots.txt disallows, was not opened: join POST /api/auth/join returned ok true and sign-in POST /api/auth/sign-in returned status sent, but no Kinhive message arrived at the capture inbox, and later submits returned Too many emails sent / Too many attempts
+- https://kinhive.com/join was submitted through the 6-digit code step; a wrong code and a send-rate limit were captured; the in-app onboarding after a valid code was not reached
+- https://kinhive.com/sign-in Email me a sign-in code was pressed; Continue with LinkedIn was not
 - https://kinhive.com/contact Send message was not submitted, so validation, error, and success states were not reached
 - the hero email, the mid-page capture email, and the footer Subscribe fields were not submitted
 - https://kinhive.com/shop/founders-hat Add to cart was not pressed, and checkout was not started; the cart drawer was opened empty at https://kinhive.com/shop

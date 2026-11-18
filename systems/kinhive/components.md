@@ -1,6 +1,6 @@
 # Kinhive components
 
-Measured from the public site on 2026-11-18, signed out, at 1440 and 390. Values are the declared custom properties in [tokens.json](tokens.json) where a computed colour matches one, and computed sizes where the site uses a Tailwind utility. Crops are in [components/crops/](components/crops).
+Measured from the public site on 2026-11-18 at 1440 and 390, plus the join and sign-in code step after those forms were submitted. Values are the declared custom properties in [tokens.json](tokens.json) where a computed colour matches one, and computed sizes where the site uses a Tailwind utility. Crops are in [components/crops/](components/crops).
 
 ## Promo bar
 
@@ -32,7 +32,7 @@ Name, email, a topic select, and a message textarea sit on a canvas panel. The s
 
 ## Join and sign-in
 
-`/join` and `/sign-in` drop the marketing chrome for a split layout: a form column and a photograph. Fields are white, line-bordered, 8px radius. Continue and "Email me a sign-in code" are full-width ink buttons. LinkedIn is an outlined button. Neither form was submitted, and the LinkedIn button was not followed. See [join-continue-default](components/crops/join-continue-default.png), [join-linkedin-default](components/crops/join-linkedin-default.png), [signin-submit-default](components/crops/signin-submit-default.png).
+`/join` and `/sign-in` drop the marketing chrome for a split layout: a form column and a photograph. Fields are white, line-bordered, 8px radius. Continue and "Email me a sign-in code" are full-width ink buttons. LinkedIn is an outlined button and was not followed. After Continue, the form asks for a 6-digit code. Continue stays grey until six digits are entered. A wrong code and a send-rate limit both paint `--color-destructive` #d93a1f as body text, sampled as (217, 58, 31) on the error screenshot. See [join-continue-default](components/crops/join-continue-default.png), [join-code-field-default](components/crops/join-code-field-default.png), [join-continue-disabled](components/crops/join-continue-disabled.png), [join-code-error](components/crops/join-code-error.png), [join-rate-limit-error](components/crops/join-rate-limit-error.png), [signin-code-field-default](components/crops/signin-code-field-default.png).
 
 ## Cart
 
@@ -41,7 +41,7 @@ The shop cart is a right-hand drawer. Empty state copy and a "Browse the shop" l
 ## Gaps
 
 - Checkbox, radio, switch, tooltip, toast, table, avatar, and badge do not appear on the public surface. The chartreuse icon chips in the mega-menu are the closest badge.
-- Disabled, loading, error, and success states do not appear. Join, sign-in, contact, subscribe, and the hero email were not submitted, so validation colours stayed dormant. `--color-destructive` (#d93a1f) and `--color-alert` (#f2a516) are declared and unused on these pages.
+- Loading and success states do not appear. Contact, subscribe, and the hero email were not submitted. `--color-alert` (#f2a516) is still unused. `--color-destructive` (#d93a1f) paints as join and sign-in error text.
 - Pressed and hover were not forced. The ink CTA declares `hover:bg-[#2a2a2c]`, recorded as `light.action.fill-hover`.
-- The signed-in app (`/home`, `/matches`, `/chat`, `/cowork`, `/profile`, `/settings`, and the other robots.txt disallows) was not opened.
+- The signed-in app (`/home`, `/matches`, `/chat`, `/cowork`, `/profile`, `/settings`, and the other robots.txt disallows) was not opened: the 6-digit code email never arrived.
 - Focus rings are the browser outline plus `focus:ring-3 focus:ring-ink/10` on fields. A designed focus token beyond `light.border.focus` (ink) was not isolated.

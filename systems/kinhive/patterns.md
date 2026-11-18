@@ -1,6 +1,6 @@
 # Kinhive patterns
 
-How the public pages combine the components. Screenshots are in [screenshots/](screenshots).
+How the public pages combine the components, including the join and sign-in code step. Screenshots are in [screenshots/](screenshots).
 
 ## Marketing chrome
 
@@ -24,7 +24,7 @@ Blog, templates, funding, and resources share a pattern: an Affairs headline, a 
 
 ## Auth edge
 
-Join and sign-in leave the marketing chrome. A form sits on white at the left, a photograph at the right, with "Fewer, better introductions." set into the photo. Continue and the sign-in code button were not pressed. LinkedIn was not followed. See [join-light-default](screenshots/join-light-default.png) and [signin-light-default](screenshots/signin-light-default.png).
+Join and sign-in leave the marketing chrome. A form sits on white at the left, a photograph at the right, with "Fewer, better introductions." set into the photo. LinkedIn was not followed. Continue sends a 6-digit code: Continue stays grey until the field has six digits, a wrong code paints tomato error text, and too many sends paint a rate-limit line. The code email never arrived, so the signed-in app was not opened. See [join-light-default](screenshots/join-light-default.png), [join-code-light-default](screenshots/join-code-light-default.png), [join-code-light-error](screenshots/join-code-light-error.png), [join-light-rate-limit](screenshots/join-light-rate-limit.png), [signin-code-light-default](screenshots/signin-code-light-default.png), and [signin-light-rate-limit](screenshots/signin-light-rate-limit.png).
 
 ## Contact
 
