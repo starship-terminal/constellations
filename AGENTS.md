@@ -385,3 +385,34 @@ git lfs status
 ```bash
 git ls-files -s | awk '$1=="100644"' | cut -f2 | grep -Ei '\.(png|jpe?g|gif|webp|zip|gz|woff2?|ttf|otf|fig|ico|mp4|mov)$' | xargs -I{} sh -c 'git check-attr filter -- "{}" | grep -q "filter: lfs" || echo "not in LFS: {}"'
 ```
+
+## CI
+
+Three workflows, in [.github/workflows/](.github/workflows). A new package
+does not need a workflow edit: the jobs already glob every `systems/` folder
+and every catalog entry. Edit a workflow when a new app, a new committed
+generator, or a data file outside the path filters appears.
+
+| Workflow | Runs when | Fails when |
+|---|---|---|
+| [check.yml](.github/workflows/check.yml) | Every pull request and every push to `main` | `make check`, then `make test`, then `make docs`. The checkout has no Git LFS files, so a test that needs a real screenshot or `refero.db` skips. |
+| [app.yml](.github/workflows/app.yml) | A pull request that touches `app/`, `systems/`, `catalog.json`, `refero/catalog.json`, or `tools/catalog.py` | Prettier on `app/`, the media taxonomy seed, the float-parity fixture, Next typegen, typecheck, the app tests, and a production build. |
+| [web.yml](.github/workflows/web.yml) | A pull request that touches `web/`, `tools/catalog.py`, or `catalog.json` | Typecheck, the gallery unit tests, `tools/catalog.py build`, and a production build. |
+
+`make check` stops at the first stale file. The usual chain after a catalog
+or package change is: `make brief`, `make design-md`, `python3 tools/refero/coverage.py`,
+`python3 tools/gated.py`, `python3 tools/health.py`, and, when `app/` will run,
+`python3 app/scripts/build-media-taxonomy.py`. A catalog `goodFor` edit also
+leaves the newest `scorecard/audits/*.json` behind, and `grade.py --check`
+fails on that. Run the whole chain and confirm `make check` exits 0 before
+pushing. One generator at a time ships the next stale file as the next red run.
+
+A failure that names another package is still this branch's job when that
+package is in the tree. Do not leave it for a later PR because it also fails
+on `main`.
+
+When a check fails, read the finished log before changing anything.
+`gh run view <run> --log-failed` often prints only the exit code. Pull the
+step log, or open the failed step, and quote the line that names the file
+(`Brief is stale`, `coverage.json is stale`, `Media taxonomy seed is stale`).
+Do not report a run as still going once `gh pr view` shows it completed.
