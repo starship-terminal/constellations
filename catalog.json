@@ -6421,7 +6421,8 @@
      "Marketing nav controls (header, Pricing, Log in, Create, Start now) and the app rail, Sign up, Sign in and featured cards are in the screenshots and were not boxed on the measurement pass"
     ],
     "durationMin": 180,
-    "durationNote": "wall-clock across the capture session including kit adaptation, stylesheet harvest, screenshot and measurement passes, and the offline build"
+    "durationNote": "wall-clock across the capture session including kit adaptation, stylesheet harvest, screenshot and measurement passes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/664"
    },
    "layoutGaps": {
     "icons/": "no standalone SVG set was lifted; the wordmark, rail glyphs and OAuth marks are visible in the crops and screenshots"
