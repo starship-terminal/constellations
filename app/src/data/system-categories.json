@@ -1264,5 +1264,11 @@
     "groupId": "web-categories",
     "labels": ["Communication Tools"],
     "reason": "catalog.json describes chat-marketing pages: a neon-pink hero pill, a black promo strip, and pricing cards."
+  },
+  {
+    "referenceId": "systems:macaw",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a cream marketing site for an AI website builder: one coral action and tinted pricing cards."
   }
 ]
