@@ -896,7 +896,7 @@
   {
     "referenceId": "systems:district",
     "groupId": "web-categories",
-    "labels": ["Entertainment", "Travel & Booking"],
+    "labels": ["Entertainment", "Travel & Booking", "Scheduling Tools"],
     "reason": "catalog.json describes a live-event and venue booking product (District by Zomato): movie and venue cards, artist pages, ticket purchase flows and a gated checkout."
   },
   {
@@ -950,7 +950,7 @@
   {
     "referenceId": "systems:foodnoms",
     "groupId": "web-categories",
-    "labels": ["Health & Wellness"],
+    "labels": ["Health & Wellness", "Fitness"],
     "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
   },
   {
@@ -968,7 +968,7 @@
   {
     "referenceId": "systems:classpass",
     "groupId": "web-categories",
-    "labels": ["Health & Wellness", "Marketplace"],
+    "labels": ["Health & Wellness", "Marketplace", "Fitness"],
     "reason": "catalog.json describes a fitness-and-wellness booking marketplace: studio search with filter pills and venue cards, a credits-plan carousel, gift, corporate-wellness and studio-partner pages."
   },
   {
@@ -998,8 +998,8 @@
   {
     "referenceId": "systems:calm",
     "groupId": "web-categories",
-    "labels": ["Health & Wellness"],
-    "reason": "catalog.json describes the Calm sleep-and-meditation app: the marketing pages, a dark signed-out /app/* preview shell, a login card and the health.calm.com B2B surface; the product past login is gated."
+    "labels": ["Fitness"],
+    "reason": "catalog.json classifies Calm as fitness: meditation-app marketing, a signed-out app preview, and a login card."
   },
   {
     "referenceId": "systems:fresha",
@@ -1010,19 +1010,19 @@
   {
     "referenceId": "systems:gladia",
     "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
+    "labels": ["AI Tool", "Development Tools", "Entertainment"],
     "reason": "catalog.json describes an audio-transcription and speech-AI developer platform: the marketing pages, usage-based pricing with a calculator, the Mintlify docs site and the app-shell auth cards."
   },
   {
     "referenceId": "systems:frame",
     "groupId": "web-categories",
-    "labels": ["Collaboration Tools", "Design & Media Editing"],
+    "labels": ["Collaboration Tools", "Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a video review-and-collaboration product: marketing and feature pages, a pricing grid, customer and integration indexes, a contact form and the accounts sign-in surface."
   },
   {
     "referenceId": "systems:front",
     "groupId": "web-categories",
-    "labels": ["Communication Tools", "Business"],
+    "labels": ["Communication Tools", "Business", "Productivity"],
     "reason": "catalog.json describes an AI customer-operations platform: a shared-inbox/omnichannel product (email, chat, channels), customer-service marketing, pricing tiers, a help centre and developer docs."
   },
   {
@@ -1076,7 +1076,7 @@
   {
     "referenceId": "systems:headspace",
     "groupId": "web-categories",
-    "labels": ["Health & Wellness"],
+    "labels": ["Health & Wellness", "Fitness"],
     "reason": "catalog.json describes the Headspace meditation-and-sleep product: the marketing pages, the free-preview content library, the plans block, the signed-out Auth0 auth cards, the checkout shell and the organizations.headspace.com B2B surface; the member app past login is gated."
   },
   {
@@ -1144,5 +1144,125 @@
     "groupId": "web-categories",
     "labels": ["AI Tool"],
     "reason": "catalog.json describes Hume's empathic voice-AI platform: the post-pivot Audio Decision Model marketing site, the dev.hume.ai docs, the invitation-gated demo playground and the app.hume.ai/log-in boundary."
+  },
+  {
+    "referenceId": "systems:jace",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes an AI email assistant: a cream Next.js marketing site and a separate dark product theme."
+  },
+  {
+    "referenceId": "systems:jasper",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes Jasper's enterprise marketing site: declared swatch ramps, brand ink, and a flame primary."
+  },
+  {
+    "referenceId": "systems:jetbrains",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes JetBrains developer-tool marketing: a dark header, purple announcement strip, and a light pricing page."
+  },
+  {
+    "referenceId": "systems:jitter",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a motion-design tool: light marketing with pill CTAs and a dark editor header."
+  },
+  {
+    "referenceId": "systems:julienne",
+    "groupId": "web-categories",
+    "labels": ["Fitness"],
+    "reason": "catalog.json describes recipe-app marketing and public discovery, classified as fitness."
+  },
+  {
+    "referenceId": "systems:kickstarter",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a crowdfunding marketplace: a shipped KDS token layer, project cards, and Discover filters."
+  },
+  {
+    "referenceId": "systems:kinhive",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes editorial SaaS marketing: a chocolate promo strip, Affairs headlines, and an ink action fill."
+  },
+  {
+    "referenceId": "systems:kit",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes creator marketing for an email product: a blue announcement strip and a soft-black hero."
+  },
+  {
+    "referenceId": "systems:kitchen",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes agency marketing plus a signed-in client portal."
+  },
+  {
+    "referenceId": "systems:kitchenstories",
+    "groupId": "web-categories",
+    "labels": ["Entertainment"],
+    "reason": "catalog.json describes a recipe magazine: a sticky wordmark header and recipe cards with a time chip."
+  },
+  {
+    "referenceId": "systems:klarna",
+    "groupId": "web-categories",
+    "labels": ["Finance"],
+    "reason": "catalog.json describes shopper marketing in Klarna UI: ink, brand pink pills, and Klarna Title display."
+  },
+  {
+    "referenceId": "systems:kraken",
+    "groupId": "web-categories",
+    "labels": ["Finance"],
+    "reason": "catalog.json describes crypto-exchange marketing: a purple primary, a market table, and a light/dark pair."
+  },
+  {
+    "referenceId": "systems:krea",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a dark generative-media app: a sidebar shell, a prompt composer, and a pricing page."
+  },
+  {
+    "referenceId": "systems:krisp",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes voice-AI marketing plus a signed-in notes app."
+  },
+  {
+    "referenceId": "systems:lego",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes toy retail: a yellow header, pill search, and an Add to Bag action."
+  },
+  {
+    "referenceId": "systems:lemni",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes AI-agent marketing: a dark home, light inner pages, and a separate sign-in card."
+  },
+  {
+    "referenceId": "systems:lemonsqueezy",
+    "groupId": "web-categories",
+    "labels": ["Finance"],
+    "reason": "catalog.json describes a merchant-of-record marketing site: a purple hero and a shutdown banner."
+  },
+  {
+    "referenceId": "systems:limitless",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a quiet marketing site for an AI memory product after an acquisition."
+  },
+  {
+    "referenceId": "systems:lummi",
+    "groupId": "web-categories",
+    "labels": ["Entertainment"],
+    "reason": "catalog.json describes a signed-out stock library: a search palette and a public image page."
+  },
+  {
+    "referenceId": "systems:manychat",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools"],
+    "reason": "catalog.json describes chat-marketing pages: a neon-pink hero pill, a black promo strip, and pricing cards."
   }
 ]
