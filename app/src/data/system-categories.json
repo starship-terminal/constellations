@@ -1284,6 +1284,12 @@
     "reason": "catalog.json describes chat-marketing pages: a neon-pink hero pill, a black promo strip, and pricing cards."
   },
   {
+    "referenceId": "systems:intercom",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Business"],
+    "reason": "catalog.json describes an AI customer-service platform: shared inbox, Fin AI agent, helpdesk marketing, pricing, a help centre and changelog - the same product category as systems:front."
+  },
+  {
     "referenceId": "systems:leonardo",
     "groupId": "web-categories",
     "labels": ["AI Tool"],
