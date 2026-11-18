@@ -31,31 +31,60 @@ for name, tok in flat(T["core"]["color"]):
         BY.setdefault(tok["$value"].lower(), name)
 
 
-def hex_of(c):
-    m = re.fullmatch(r"rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[\d.]+)?\)", c or "")
-    if not m:
-        return None
-    return "#%02x%02x%02x" % tuple(int(x) for x in m.group(1, 2, 3))
-
-
 def colour(c):
-    h = hex_of(c)
-    if not h:
-        return c or ""
-    tok = BY.get(h)
-    return f"{h} `{tok}`" if tok else h
+    if not c:
+        return ""
+    m = re.fullmatch(r"rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)", c)
+    if not m:
+        return c
+    alpha = m.group(4)
+    if alpha is not None and float(alpha) == 0:
+        return "transparent"
+    h = "#%02x%02x%02x" % tuple(int(x) for x in m.group(1, 2, 3))
+    shown = h
+    if alpha is not None and float(alpha) < 1:
+        shown = f"{h} / {alpha}"
+    tok = BY.get(h) if shown == h else None
+    return f"{shown} `{tok}`" if tok else shown
+
+
+TEXT_KEYS = ("color", "fontSize", "fontWeight", "fontFamily")
+PAINT_KEYS = (
+    ("backgroundColor", "fill"),
+    ("color", "ink"),
+    ("fontSize", "size"),
+    ("fontWeight", "weight"),
+    ("fontFamily", "font"),
+    ("borderTopLeftRadius", "radius"),
+    ("outlineWidth", "outline"),
+    ("outlineColor", "outline colour"),
+    ("boxShadow", "shadow"),
+)
+
+
+def paint(s):
+    style = dict(s.get("style") or {})
+    text = s.get("textStyle") or {}
+    for key in TEXT_KEYS:
+        if text.get(key):
+            style[key] = text[key]
+    return style
 
 
 def row(state, s, base):
-    style = s.get("style") or {}
+    style = paint(s)
     bits = []
-    for key, label in (("backgroundColor", "fill"), ("color", "ink"), ("fontSize", "size"), ("fontWeight", "weight"), ("borderTopLeftRadius", "radius"), ("fontFamily", "font")):
+    for key, label in PAINT_KEYS:
         val = style.get(key)
-        if not val or (base and base.get(key) == val):
+        if not val or val in ("none", "0px") or (base and base.get(key) == val):
             continue
-        shown = colour(val) if "olor" in key else val
+        if key == "outlineColor" and (style.get("outlineWidth") or "0px") in ("0px", "0", "none"):
+            continue
+        shown = colour(val) if "olor" in key or key == "boxShadow" else val
         if key == "fontFamily":
             shown = shown.split(",")[0].strip('"')
+        if key == "boxShadow" and len(shown) > 80:
+            shown = shown[:77] + "..."
         bits.append(f"{label} {shown}")
     rect = s.get("rect") or {}
     size = f"{round(rect.get('w', 0))}×{round(rect.get('h', 0))}"
@@ -96,7 +125,7 @@ for group, items in groups.items():
                 lines.append(f"| {name} |  | {s['error']} | {s.get('via', '')} | |")
                 continue
             lines.append(row(name, s, base))
-            base = base or (s.get("style") or {})
+            base = base or paint(s)
         lines.append("")
 
 (ROOT / "components.md").write_text("\n".join(lines) + "\n")

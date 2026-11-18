@@ -58,12 +58,12 @@ async function settle(p) {
 }
 
 async function lazyScroll(p) {
-  let last = 0;
-  for (let i = 0; i < 16; i++) {
+  // Walk to the bottom. An unchanged height is not the bottom: images with
+  // reserved space do not grow the document when they load.
+  const cap = 8 * Math.floor(14000 / (p.viewportSize()?.deviceScaleFactor || 1));
+  for (let y = 0; y < cap; y += 700) {
     const h = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body?.scrollHeight || 0));
-    if (h === last && i > 2) break;
-    last = h;
-    const y = Math.min(i * 700, Math.max(0, h - 800));
+    if (y >= h - 800) break;
     await p.evaluate((yy) => scrollTo(0, yy), y);
     await wait(p, 160);
   }
@@ -92,8 +92,9 @@ class Shooter {
         const full = `${RAW}/${this.prefix}-full.png`;
         if (!fs.existsSync(full)) await this.full();
         const { execFileSync } = await import('node:child_process');
+        const crop = path.join(path.dirname(fileURLToPath(import.meta.url)), 'crop-top.py');
         execFileSync('python3', [
-          '/tmp/maze-crop-top.py', full, file,
+          crop, full, file,
           String(this.vw * this.dpr), String(900 * this.dpr),
         ], { stdio: 'inherit' });
         log('  cropped viewport from full page, h1 was', h1y);

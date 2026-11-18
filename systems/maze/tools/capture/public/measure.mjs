@@ -301,8 +301,10 @@ if (await demoField.count()) {
 }
 save();
 
-// Phone width: the menu trigger.
+// Phone width: the menu trigger. Close the desktop browser first. launch()
+// starts a new one, and the old process would stay open.
 await context.close();
+await browser.close();
 ({ browser, context } = await launch({ width: 390, height: 844, mobile: true }));
 await newPage(BASE + '/');
 await states('m-menu', page.getByRole('button', { name: /open navigation/i }), ['default', 'pressed'], {

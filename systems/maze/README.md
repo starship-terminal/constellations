@@ -33,16 +33,16 @@ Read this before designing in this style. Take every value from [tokens.json](to
 
 ### Principles
 
-1. Do
-2. Do
-3. Do
-4. Do
-5. Do
-6. Don't
-7. Don't
-8. Don't
-9. Don't
-10. Don't
+1. Do paint the page on neutral 100 and the cards on white.
+2. Do set the hero in Phonic light.
+3. Do use a pill for Try Maze for free and a near-black fill for Get a demo.
+4. Do use the blue action on Log in and on the report Sign up.
+5. Do keep the login card at 8px radius on a lime collage.
+6. Don't invent a dark theme.
+7. Don't start a study from the promo bar.
+8. Don't submit the demo form or the login form.
+9. Don't treat the phone report as the product.
+10. Don't ship the Phonic files.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -52,9 +52,9 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 |---|---|
 | page | #f5f4f0 `light.page` |
 | surface | #ffffff `light.surface` |
-| text | #000000 `light.text` |
+| text | #1c1c1c `light.text` |
 | muted | #706f6c `light.textBody` |
-| accent | #000000 `light.accent` |
+| accent | #1c1c1c `light.accent` |
 | border | #eae6e1 `light.border` |
 
 Fonts: `core.font.family.display` is Phonic, then 1 fallback; `core.font.family.sans` is Inter, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 8 radius steps (`core.radius`), 8 spacing steps (`core.space`).
@@ -67,7 +67,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| light | 19.08:1 pass | 21.00:1 pass | 4.56:1 pass | 5.02:1 pass |
+| light | 15.48:1 pass | 17.04:1 pass | 4.56:1 pass | 5.02:1 pass |
 
 4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus` #1b66da.
 
@@ -121,16 +121,16 @@ Not captured: the signed-in workspace, studies, signup, checkout, SSO, password 
 
 ## Do and don't
 
-- **Do** paint the page on neutral 100 and the cards on white. [home-light-default](screenshots/home-light-default.png)
-- **Do** set the hero in Phonic light. [home-light-default](screenshots/home-light-default.png)
-- **Do** use a pill for Try Maze for free and a near-black fill for Get a demo. [home-light-default](screenshots/home-light-default.png)
-- **Do** use the blue action on Log in and on the report Sign up. [login-light-default](screenshots/login-light-default.png)
-- **Do** keep the login card at 8px radius on a lime collage. [login-light-default](screenshots/login-light-default.png)
-- **Don't** invent a dark theme. The captured surfaces paint one light theme. [pricing-light-default](screenshots/pricing-light-default.png)
-- **Don't** start a study from the promo bar. [home-light-full](screenshots/home-light-full.png)
-- **Don't** submit the demo form or the login form. [demo-light-default](screenshots/demo-light-default.png)
-- **Don't** treat the phone report as the product. It asks for 800px. [mobile-report-light-default](screenshots/mobile-report-light-default.png)
-- **Don't** ship the Phonic files. The family name is the token. [home-light-default](screenshots/home-light-default.png)
+- **Do paint the page on neutral 100 and the cards on white.** [home-light-default](screenshots/home-light-default.png)
+- **Do set the hero in Phonic light.** [home-light-default](screenshots/home-light-default.png)
+- **Do use a pill for Try Maze for free and a near-black fill for Get a demo.** [home-light-default](screenshots/home-light-default.png)
+- **Do use the blue action on Log in and on the report Sign up.** [login-light-default](screenshots/login-light-default.png)
+- **Do keep the login card at 8px radius on a lime collage.** [login-light-default](screenshots/login-light-default.png)
+- **Don't invent a dark theme.** The captured surfaces paint one light theme. [pricing-light-default](screenshots/pricing-light-default.png)
+- **Don't start a study from the promo bar.** [home-light-full](screenshots/home-light-full.png)
+- **Don't submit the demo form or the login form.** [demo-light-default](screenshots/demo-light-default.png)
+- **Don't treat the phone report as the product.** It asks for 800px. [mobile-report-light-default](screenshots/mobile-report-light-default.png)
+- **Don't ship the Phonic files.** The family name is the token. [home-light-default](screenshots/home-light-default.png)
 
 ## Rebuild
 

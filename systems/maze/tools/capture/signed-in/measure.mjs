@@ -125,7 +125,7 @@ const HELPERS = () => {
   document.addEventListener('submit', (e) => e.preventDefault(), true);
 };
 
-// Computed properties recorded for every component and state (the gauth set).
+// Computed properties recorded for every component and state.
 const PROPS = [
   'display', 'position', 'boxSizing', 'width', 'height', 'minWidth', 'maxWidth', 'minHeight',
   'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',

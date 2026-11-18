@@ -10,19 +10,19 @@ omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
-  primary: "#000000"
+  primary: "#1c1c1c"
   neutral: "#f5f4f0"
   surface: "#ffffff"
-  on-surface: "#000000"
+  on-surface: "#1c1c1c"
   on-surface-variant: "#706f6c"
   outline: "#eae6e1"
   page: "#f5f4f0"
-  text: "#000000"
+  text: "#1c1c1c"
   textBody: "#706f6c"
   textMuted: "#9e9b94"
   textOnAccent: "#ffffff"
-  accent: "#000000"
-  accentHover: "#1c1c1c"
+  accent: "#1c1c1c"
+  accentHover: "#3c3c3c"
   link: "#0568fd"
   action: "#0568fd"
   focus: "#1b66da"
@@ -76,10 +76,10 @@ Maze marketing is Next.js and Tailwind v4. Colour is an oklch custom-property pa
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#000000):** `light.accent`
+- **primary (#1c1c1c):** `light.accent`
 - **neutral (#f5f4f0):** `light.page`
 - **surface (#ffffff):** `light.surface`
-- **on-surface (#000000):** `light.text`
+- **on-surface (#1c1c1c):** `light.text`
 - **on-surface-variant (#706f6c):** `light.textBody`
 - **outline (#eae6e1):** `light.border`
 
@@ -130,13 +130,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### Do and don't (from README.md)
 
-- **Do** paint the page on neutral 100 and the cards on white. [home-light-default](screenshots/home-light-default.png)
-- **Do** set the hero in Phonic light. [home-light-default](screenshots/home-light-default.png)
-- **Do** use a pill for Try Maze for free and a near-black fill for Get a demo. [home-light-default](screenshots/home-light-default.png)
-- **Do** use the blue action on Log in and on the report Sign up. [login-light-default](screenshots/login-light-default.png)
-- **Do** keep the login card at 8px radius on a lime collage. [login-light-default](screenshots/login-light-default.png)
-- **Don't** invent a dark theme. The captured surfaces paint one light theme. [pricing-light-default](screenshots/pricing-light-default.png)
-- **Don't** start a study from the promo bar. [home-light-full](screenshots/home-light-full.png)
-- **Don't** submit the demo form or the login form. [demo-light-default](screenshots/demo-light-default.png)
-- **Don't** treat the phone report as the product. It asks for 800px. [mobile-report-light-default](screenshots/mobile-report-light-default.png)
-- **Don't** ship the Phonic files. The family name is the token. [home-light-default](screenshots/home-light-default.png)
+- **Do paint the page on neutral 100 and the cards on white.** [home-light-default](screenshots/home-light-default.png)
+- **Do set the hero in Phonic light.** [home-light-default](screenshots/home-light-default.png)
+- **Do use a pill for Try Maze for free and a near-black fill for Get a demo.** [home-light-default](screenshots/home-light-default.png)
+- **Do use the blue action on Log in and on the report Sign up.** [login-light-default](screenshots/login-light-default.png)
+- **Do keep the login card at 8px radius on a lime collage.** [login-light-default](screenshots/login-light-default.png)
+- **Don't invent a dark theme.** The captured surfaces paint one light theme. [pricing-light-default](screenshots/pricing-light-default.png)
+- **Don't start a study from the promo bar.** [home-light-full](screenshots/home-light-full.png)
+- **Don't submit the demo form or the login form.** [demo-light-default](screenshots/demo-light-default.png)
+- **Don't treat the phone report as the product.** It asks for 800px. [mobile-report-light-default](screenshots/mobile-report-light-default.png)
+- **Don't ship the Phonic files.** The family name is the token. [home-light-default](screenshots/home-light-default.png)
