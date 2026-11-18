@@ -2709,8 +2709,8 @@
     551
    ],
    "description": "Personalized AI powered by what you\u2019ve seen, said, and heard",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/limitless",
    "notes": "",
    "batch": 9
   },

@@ -6336,6 +6336,70 @@
    }
   },
   {
+   "slug": "limitless",
+   "name": "Limitless",
+   "url": "https://www.limitless.ai",
+   "category": "ai-agent",
+   "platform": "web",
+   "goodFor": "A quiet light marketing site after an acquisition: white page, slate 900 display at 60px with tight tracking, Greycliff, purple-500 used only on the star and one filled action, pill nav, a 24px letter card, and a sign-in card that opens Sign Up Unavailable for a new email",
+   "tags": [
+    "web",
+    "marketing",
+    "light",
+    "signed-out",
+    "signup-closed",
+    "tailwind",
+    "pill-nav",
+    "ai"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed-out public marketing, docs, legal, help center, and the app.limitless.ai sign-in wall; a 2026-11-18 signed-in pass submitted the email field only (never Google) and stopped at Sign Up Unavailable (Limitless is no longer accepting new users). Lifelogs, settings and account were not entered. No Pendant purchased. No CAPTCHA, phone or payment.",
+   "themes": ["light"],
+   "widths": [1440, 390],
+   "entry": "systems/limitless/README.md",
+   "tokens": "systems/limitless/tokens.json",
+   "styleGuide": "systems/limitless/style-guide.html",
+   "preview": {
+    "cover": "systems/limitless/screenshots/home-light-default.png",
+    "icon": "systems/limitless/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.page",
+      "surface": "light.surface",
+      "text": "light.text",
+      "muted": "light.textBody",
+      "accent": "light.accent",
+      "border": "light.border"
+     }
+    },
+    "fonts": ["core.font.family.sans"]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "limitless.ai in headless Chromium, desktop 1440x900 and phone 390x844. Computed styles. Enzuzo banner hidden, never clicked. Sign-in wall measured. Email field submitted on a throwaway account; Sign Up Unavailable dialog measured at 1440 and 390. Google not used.",
+    "timestamp": "2026-11-18T12:00:00Z",
+    "harness": "Grok Build",
+    "model": "grok-4.6",
+    "route": "public-web",
+    "routes": ["/", "/privacy", "/developers", "/about", "/careers", "/support", "/terms", "/privacy-policy", "/for/voice-recorder", "/for/students", "/pricing", "app.limitless.ai/signin", "help.limitless.ai/en/"],
+    "gaps": [
+     "app.limitless.ai/signin: submitting a new email opens Sign Up Unavailable (Limitless is no longer accepting new users); lifelogs, settings, billing and account were not entered",
+     "Continue with Google at https://app.limitless.ai/signin starts OAuth and was not pressed",
+     "Pendant purchase is no longer offered to new customers; the unavailable dialog tells Pendant owners to email support; no checkout was opened",
+     "support chat at https://www.limitless.ai/support is a third-party widget and was not opened",
+     "help search at https://help.limitless.ai/en/ was focused and not queried; article pages were not opened",
+     "account deletion, documented at https://help.limitless.ai/en/articles/13005203-how-to-delete-your-limitless-account-and-data, was not opened",
+     "open roles at https://jobs.ashbyhq.com/limitless leave the site and were not followed",
+     "the Slack community invite at https://www.limitless.ai/community leaves the site and was not followed",
+     "the Enzuzo cookie banner was hidden and never clicked"
+    ],
+    "durationMin": 130,
+    "durationNote": "Public signed-out session plus a signed-in email pass that stopped at Sign Up Unavailable.",
+    "pr": "645"
+   }
+  },
+  {
    "slug": "linear",
    "name": "Linear",
    "url": "https://linear.app",
