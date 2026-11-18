@@ -1148,6 +1148,11 @@
       "assignedMedia": 69
     },
     {
+      "referenceId": "systems:forhers",
+      "media": 170,
+      "assignedMedia": 51
+    },
+    {
       "referenceId": "systems:fourmula",
       "media": 202,
       "assignedMedia": 47
@@ -204702,6 +204707,567 @@
           "termId": "web-ui-elements:table",
           "rule": "ui-table",
           "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/accordion-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/accordion-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/accordion-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/accordion-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/accordion-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/article-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/article-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/carousel-arrow-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/carousel-arrow-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/carousel-arrow-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/carousel-arrow-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/content-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/content-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/disabled-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/fda-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-fineprint-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-fineprint-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-fineprint-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-fineprint-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-social-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-social-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-social-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/footer-social-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/login-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/login-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/login-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/login-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/m-bento-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/m-content-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/m-text-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/product-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/product-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/region-dialog-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/text-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/text-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/text-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/tile-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/tile-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/topic-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/topic-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/topic-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/topic-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/treatment-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:forhers",
+      "mediaId": "systems/forhers/components/crops/treatment-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         }
       ]
     },

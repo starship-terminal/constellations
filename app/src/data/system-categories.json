@@ -1258,5 +1258,11 @@
     "groupId": "web-categories",
     "labels": ["Entertainment"],
     "reason": "catalog.json describes a signed-out stock library: a search palette and a public image page."
+  },
+  {
+    "referenceId": "systems:forhers",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Marketplace"],
+    "reason": "catalog.json describes the Hers women's telehealth storefront: treatment verticals (weight loss, hair, skin, mental health, birth control, anti-aging, labs), product cards with prices, a BMI calculator, an editorial blog and a drug-information index - health and wellness products sold direct."
   }
 ]
