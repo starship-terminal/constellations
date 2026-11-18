@@ -1413,6 +1413,11 @@
       "assignedMedia": 31
     },
     {
+      "referenceId": "systems:macaw",
+      "media": 82,
+      "assignedMedia": 82
+    },
+    {
       "referenceId": "systems:manus",
       "media": 1007,
       "assignedMedia": 540
@@ -271552,6 +271557,1128 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/lummi/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/contact-light-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/contact-light-field-focus.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/contact-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/contact-light-invalid.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/home-light-nav-hover.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/home-light-primary-hover.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/home-light-resources-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/missing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/mobile-contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/mobile-home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/mobile-pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/mobile-pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/mobile-tool-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/pricing-light-faq-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/pricing-light-monthly.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/privacy-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/privacy-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/terms-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/terms-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/tool-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/screenshots/tool-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/billing-monthly-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/billing-monthly-selected.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/billing-yearly-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/billing-yearly-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-google-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-google-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-primary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-primary-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-primary-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-primary-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-secondary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-secondary-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-secondary-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/button-secondary-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/display-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/faq-answer-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/faq-question-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/faq-question-expanded.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/faq-question-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/field-label-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/legal-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/m-button-primary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/m-navbar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:navigation-bar",
+          "rule": "ui-navbar",
+          "reason": "Capture filename explicitly names navigation bar; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/m-plan-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/navbar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:navigation-bar",
+          "rule": "ui-navbar",
+          "reason": "Capture filename explicitly names navigation bar; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/plan-pro-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/plan-scale-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/plan-starter-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/pricing-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/privacy-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/sales-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/send-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/send-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/send-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/text-area-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/text-area-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/text-area-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/text-area-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/text-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/text-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/text-field-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/text-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/text-field-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/tool-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/tool-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:macaw",
+      "mediaId": "systems/macaw/components/crops/tool-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/macaw/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
         }
       ]
     },
