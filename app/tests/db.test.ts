@@ -1874,21 +1874,31 @@ test("version-thirty-eight stores gain the Hume rows, without touching their own
   ).toHaveLength(0);
 });
 
-test("version-forty-two stores gain the Huddlekit rows, without touching their own labels", async () => {
+test("version-thirty-nine stores gain the Intercom and Huddlekit rows, without touching their own labels", async () => {
   const { dir, store } = await open();
+  // A v39 store opened before these rows existed: drop them and rewind.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:intercom'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:intercom'",
+  );
   await store.client.execute(
     "DELETE FROM reference_categories WHERE reference_id='systems:huddlekit'",
   );
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:huddlekit'",
   );
+  // A user who cleared another package's labels: the scoped top-up must not
+  // resurrect them (an empty assignment reads as "never labelled" to the
+  // unscoped seed).
   await store.client.execute(
     "DELETE FROM reference_categories WHERE reference_id='systems:digg'",
   );
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:digg'",
   );
-  await store.client.execute("PRAGMA user_version=42");
+  await store.client.execute("PRAGMA user_version=39");
   store.close();
   stores.splice(stores.indexOf(store), 1);
   const migrated = await createResearchStore(dir);
@@ -1911,6 +1921,17 @@ test("version-forty-two stores gain the Huddlekit rows, without touching their o
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:huddlekit").length,
+  ).toBeGreaterThan(0);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:intercom"),
+  ).toHaveLength(2);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:intercom"])).map(
+      (row) => row.label,
+    ),
+  ).toEqual(["Business", "Communication Tools"]);
+  expect(
+    media.filter((row) => row.referenceId === "systems:intercom").length,
   ).toBeGreaterThan(0);
   expect(
     categories.filter((row) => row.referenceId === "systems:digg"),

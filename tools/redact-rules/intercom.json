@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/intercom. Public signed-out capture of www.intercom.com, intercom.com/help/en/ and intercom.com/changes/en: no capture-machine-private values appear - nothing was signed into, searched, chosen, uploaded, bought or submitted; the only typed value was the throwaway name@example.com filled-state reading, deleted on the spot. The addresses below are Intercom's own published placeholder, example and contact addresses on its marketing, help and changelog pages (including the fictional clara.clifford@examply.com inside its product screenshot mocks), allow-listed the way other packages allow-list their vendors'.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@intercom\\.com$",
+   "@intercom\\.io$",
+   "@examply\\.com$",
+   "@example\\.com$",
+   "@company\\.com$"
+  ],
+  "net": true
+ }
+}

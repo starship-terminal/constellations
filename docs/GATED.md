@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_156 of 214 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_157 of 215 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -756,6 +756,12 @@ Access: signed out (every captured surface is public: the huddlekit.com marketin
 Access: signed out (every captured surface is public: www.hume.ai marketing/product/blog/legal pages, the dev.hume.ai docs, the demo.hume.ai invitation gate and the app.hume.ai/log-in card; the demo playground is gated on an invitation email and was never entered, nothing past /log-in was entered, EVI/Octave TTS have no public surface post-pivot - demo.hume.ai/evi answers 404; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the docs Theme menu, the home player's transport, the benchmark tabs, the blog filters and the mobile drawer)
 - the signed-in platform (app.hume.ai past /log-in - dashboard, API keys, projects, billing) is the product's own boundary, never entered
 - contact, newsletter and log-in fields were clicked into for the focus look only - never typed or submitted
+
+## [Intercom](../systems/intercom) — `intercom`
+Access: signed out (every captured surface is public: www.intercom.com marketing routes, the /help/en/ help center and /changes/en changelog; app.intercom.com, /signup onboarding, purchase and the contact-sales form's later steps never entered - the Log in / Start free trial / Get started / Contact sales links were measured, never followed; the Next submit was measured with forced pseudo states, never pressed; no select option was chosen and the marketing checkbox was never ticked; nothing was signed into, searched, chosen, uploaded, bought or submitted; the only presses were local UI toggles - the nav mega-menu, the billing switch, a FAQ row, the select's own listbox and the mobile menu button)
+- the signed-in product (app.intercom.com - inbox, tickets, reports) is a boundary: the Log in link was measured, never followed
+- trial onboarding (/signup), purchase and every conversion path past the marketing surface are boundaries, not captures
+- three header components (logo, nav-login, nav-cta) were measured on one pass and preserved on a later recapture that missed them - recorded as recaptureMissed provenance
 
 ## [Jace AI](../systems/jace) — `jace`
 Access: signed out (marketing routes are public; app.jace.ai/signin was measured at rest; app.jace.ai/signup was opened through the privacy notice to the Google/Outlook card; there is no email or password field; Google, Outlook and SSO were never pressed; the sales form was focused and a sample string typed then deleted, nothing submitted)
