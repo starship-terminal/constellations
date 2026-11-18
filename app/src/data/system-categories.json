@@ -1272,6 +1272,12 @@
     "reason": "catalog.json describes a cream marketing site for an AI website builder: one coral action and tinted pricing cards."
   },
   {
+    "referenceId": "systems:matter",
+    "groupId": "web-categories",
+    "labels": ["Entertainment"],
+    "reason": "catalog.json describes near-black reading-app marketing: a blurple pill, display type, and a white sign-in card."
+  },
+  {
     "referenceId": "systems:ifttt",
     "groupId": "web-categories",
     "labels": ["Productivity", "AI Tool"],

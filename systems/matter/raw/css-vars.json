@@ -1,0 +1,749 @@
+{
+ "readAt": "2026-11-18",
+ "source": "the stylesheet bodies read during live loads of getmatter.com (home, /web-extension, /privacy) from network responses plus inline <style> blocks, re-parsed with CSSStyleSheet; resolved in a probe carrying the real sheets, plain (:root, the near-black surface the marketing site paints) and with a .dark class (no public marketing page applies it) at 1440 x 900",
+ "sheets": [
+  "https://www.getmatter.com/_next/static/css/70cf0548738b2ff6.css (7732 bytes)",
+  "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css (13982 bytes)",
+  "https://www.getmatter.com/_next/static/css/6f43e64db4b3d3f4.css (1295 bytes)",
+  "https://www.getmatter.com/_next/static/css/e1600bdd7b2f7a64.css (9497 bytes)",
+  "https://www.getmatter.com/_next/static/css/239fa14cdc5dc984.css (188 bytes)",
+  "https://www.getmatter.com/_next/static/css/47bc2435d54e5a3f.css (9664 bytes)",
+  "https://www.getmatter.com/_next/static/css/67fb8d6dff8eccb6.css (2417 bytes)"
+ ],
+ "counts": {
+  "rules": 24,
+  "fonts": 4,
+  "names": {
+   "theme": 35,
+   "app": 4,
+   "skins": 0,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[theme] :root": 34,
+   "[theme] @media screen and (max-width: 1440px) :root": 10,
+   "[theme] @media screen and (max-width: 1280px) :root": 8,
+   "[theme] @media screen and (max-width: 428px) :root": 5,
+   "[theme] .Lead_phones__dTLLT": 1,
+   "[theme] @media screen and (max-width: 1440px) .Lead_phones__dTLLT": 1,
+   "[theme] @media screen and (max-width: 1280px) .Lead_phones__dTLLT": 1,
+   "[theme] @media screen and (max-width: 428px) .Lead_phones__dTLLT": 1,
+   "[app] .FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *": 4,
+   "[app] @media screen and (max-width: 1440px) .FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *": 4,
+   "[app] @media screen and (min-width: 1151px) and (max-width: 1439px) .FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *": 4,
+   "[app] @media screen and (max-width: 1150px) .FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *": 4,
+   "[app] .FeatureCard_card__itiPg": 4,
+   "[app] @media screen and (max-width: 1440px) .FeatureCard_card__itiPg": 4,
+   "[app] @media screen and (max-width: 1280px) .FeatureCard_card__itiPg": 4,
+   "[app] @media screen and (max-width: 1000px) .FeatureCard_card__itiPg": 4
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://www.getmatter.com/_next/static/css/70cf0548738b2ff6.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--mr-color-black": "#0d0d0d",
+    "--mr-color-dark-2": "#1e1f22",
+    "--mr-color-dark-3": "#2f3034",
+    "--mr-color-light-2": "#f4f4f4",
+    "--mr-color-light-3": "#f8f8f8",
+    "--mr-color-gray": "#969698",
+    "--mr-color-gray-light": "#dfdfdf",
+    "--mr-color-white": "#fff",
+    "--mr-color-blurple": "#6d7eec",
+    "--mr-border-radius-s": "8px",
+    "--mr-border-radius-m": "30px",
+    "--mr-gradient-accent": "linear-gradient(210.25deg,#3e467c33 18.42%,#fff0 75.82%),#6d7eec",
+    "--mr-text-shadow-accent": "0px 1px 0px #00000026",
+    "--mr-content-200": "#00000087",
+    "--mr-content-300": "#000000bf",
+    "--mr-content-400": "#000000f2",
+    "--mr-col-13": "650px",
+    "--mr-phone-width": "350px",
+    "--mr-phone-shadow": "drop-shadow(0px 30px 50px #00000040) drop-shadow(0px 30px 30px #00000026)",
+    "--mr-column": "50px",
+    "--mr-left-offset-cols": "9",
+    "--mr-left-offset-cols-pull": "4",
+    "--mr-horizontal-margin-s": "200px",
+    "--mr-horizontal-margin-m": "450px",
+    "--mr-spacer-xl": "88px",
+    "--mr-spacer-xxl": "150px",
+    "--mr-spacer-hero": "196px",
+    "--mr-spacer-hero-text": "106px",
+    "--mr-logos-width": "700px",
+    "--mr-bp-mobile": "428px",
+    "--mr-bp-tablet-portrait": "600px",
+    "--mr-bp-laptop-small": "1280px",
+    "--mr-bp-laptop-medium": "1440px",
+    "--mr-font-system": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\""
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/70cf0548738b2ff6.css",
+   "selector": ":root",
+   "context": [
+    "@media screen and (max-width: 1440px)"
+   ],
+   "properties": {
+    "--mr-horizontal-margin-s": "113px",
+    "--mr-horizontal-margin-m": "338px",
+    "--mr-column": "45px",
+    "--mr-left-offset-cols": "5",
+    "--mr-left-offset-cols-pull": "2",
+    "--mr-spacer-xxl": "135px",
+    "--mr-spacer-hero": "102px",
+    "--mr-spacer-hero-text": "52px",
+    "--mr-phone-width": "315px",
+    "--mr-logos-width": "700px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/70cf0548738b2ff6.css",
+   "selector": ":root",
+   "context": [
+    "@media screen and (max-width: 1280px)"
+   ],
+   "properties": {
+    "--mr-horizontal-margin-s": "100px",
+    "--mr-horizontal-margin-m": "300px",
+    "--mr-column": "40px",
+    "--mr-spacer-xxl": "120px",
+    "--mr-spacer-hero": "121px",
+    "--mr-spacer-hero-text": "39px",
+    "--mr-phone-width": "280px",
+    "--mr-logos-width": "600px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/70cf0548738b2ff6.css",
+   "selector": ":root",
+   "context": [
+    "@media screen and (max-width: 428px)"
+   ],
+   "properties": {
+    "--mr-spacer-xxl": "70px",
+    "--mr-spacer-hero": "21px",
+    "--mr-spacer-hero-text": "39px",
+    "--mr-phone-width": "240px",
+    "--mr-logos-width": "500px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".Lead_phones__dTLLT",
+   "context": [],
+   "properties": {
+    "--mr-overlap": "-25px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".Lead_phones__dTLLT",
+   "context": [
+    "@media screen and (max-width: 1440px)"
+   ],
+   "properties": {
+    "--mr-overlap": "-27.5px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".Lead_phones__dTLLT",
+   "context": [
+    "@media screen and (max-width: 1280px)"
+   ],
+   "properties": {
+    "--mr-overlap": "-20px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".Lead_phones__dTLLT",
+   "context": [
+    "@media screen and (max-width: 428px)"
+   ],
+   "properties": {
+    "--mr-overlap": "-67.5px"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *",
+   "context": [],
+   "properties": {
+    "--offset": "150px",
+    "--negativeOffset": "-150px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *",
+   "context": [
+    "@media screen and (max-width: 1440px)"
+   ],
+   "properties": {
+    "--offset": "135px",
+    "--negativeOffset": "-135px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *",
+   "context": [
+    "@media screen and (min-width: 1151px) and (max-width: 1439px)"
+   ],
+   "properties": {
+    "--offset": "120px",
+    "--negativeOffset": "-120px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *",
+   "context": [
+    "@media screen and (max-width: 1150px)"
+   ],
+   "properties": {
+    "--offset": "0",
+    "--negativeOffset": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".FeatureCard_card__itiPg",
+   "context": [],
+   "properties": {
+    "--col-left": "350px",
+    "--col-right": "600px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".FeatureCard_card__itiPg",
+   "context": [
+    "@media screen and (max-width: 1440px)"
+   ],
+   "properties": {
+    "--col-left": "315px",
+    "--col-right": "540px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".FeatureCard_card__itiPg",
+   "context": [
+    "@media screen and (max-width: 1280px)"
+   ],
+   "properties": {
+    "--col-left": "280px",
+    "--col-right": "480px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/4ede35f1b3bc2f4f.css",
+   "selector": ".FeatureCard_card__itiPg",
+   "context": [
+    "@media screen and (max-width: 1000px)"
+   ],
+   "properties": {
+    "--col-left": "1fr",
+    "--col-right": "1fr"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/47bc2435d54e5a3f.css",
+   "selector": ".FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *",
+   "context": [],
+   "properties": {
+    "--offset": "150px",
+    "--negativeOffset": "-150px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/47bc2435d54e5a3f.css",
+   "selector": ".FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *",
+   "context": [
+    "@media screen and (max-width: 1440px)"
+   ],
+   "properties": {
+    "--offset": "135px",
+    "--negativeOffset": "-135px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/47bc2435d54e5a3f.css",
+   "selector": ".FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *",
+   "context": [
+    "@media screen and (min-width: 1151px) and (max-width: 1439px)"
+   ],
+   "properties": {
+    "--offset": "120px",
+    "--negativeOffset": "-120px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/47bc2435d54e5a3f.css",
+   "selector": ".FeatureCard_cards___4mOk.FeatureCard_offset__wRbxz > *",
+   "context": [
+    "@media screen and (max-width: 1150px)"
+   ],
+   "properties": {
+    "--offset": "0",
+    "--negativeOffset": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/47bc2435d54e5a3f.css",
+   "selector": ".FeatureCard_card__itiPg",
+   "context": [],
+   "properties": {
+    "--col-left": "350px",
+    "--col-right": "600px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/47bc2435d54e5a3f.css",
+   "selector": ".FeatureCard_card__itiPg",
+   "context": [
+    "@media screen and (max-width: 1440px)"
+   ],
+   "properties": {
+    "--col-left": "315px",
+    "--col-right": "540px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/47bc2435d54e5a3f.css",
+   "selector": ".FeatureCard_card__itiPg",
+   "context": [
+    "@media screen and (max-width: 1280px)"
+   ],
+   "properties": {
+    "--col-left": "280px",
+    "--col-right": "480px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/47bc2435d54e5a3f.css",
+   "selector": ".FeatureCard_card__itiPg",
+   "context": [
+    "@media screen and (max-width: 1000px)"
+   ],
+   "properties": {
+    "--col-left": "1fr",
+    "--col-right": "1fr"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://www.getmatter.com/_next/static/css/70cf0548738b2ff6.css",
+   "font-family": "MR-Camphor",
+   "font-weight": "400",
+   "font-style": "normal",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/70cf0548738b2ff6.css",
+   "font-family": "MR-Camphor",
+   "font-weight": "400",
+   "font-style": "italic",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/70cf0548738b2ff6.css",
+   "font-family": "MR-Camphor",
+   "font-weight": "700",
+   "font-style": "normal",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.getmatter.com/_next/static/css/70cf0548738b2ff6.css",
+   "font-family": "MR-Camphor",
+   "font-weight": "700",
+   "font-style": "italic",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--mr-border-radius-m": {
+    "raw": "30px",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--mr-border-radius-s": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--mr-bp-laptop-medium": {
+    "raw": "1440px",
+    "kind": "dimension",
+    "value": "1440px"
+   },
+   "--mr-bp-laptop-small": {
+    "raw": "1280px",
+    "kind": "dimension",
+    "value": "1280px"
+   },
+   "--mr-bp-mobile": {
+    "raw": "428px",
+    "kind": "dimension",
+    "value": "428px"
+   },
+   "--mr-bp-tablet-portrait": {
+    "raw": "600px",
+    "kind": "dimension",
+    "value": "600px"
+   },
+   "--mr-col-13": {
+    "raw": "650px",
+    "kind": "dimension",
+    "value": "650px"
+   },
+   "--mr-color-black": {
+    "raw": "#0d0d0d",
+    "kind": "color",
+    "value": "#0d0d0d"
+   },
+   "--mr-color-blurple": {
+    "raw": "#6d7eec",
+    "kind": "color",
+    "value": "#6d7eec"
+   },
+   "--mr-color-dark-2": {
+    "raw": "#1e1f22",
+    "kind": "color",
+    "value": "#1e1f22"
+   },
+   "--mr-color-dark-3": {
+    "raw": "#2f3034",
+    "kind": "color",
+    "value": "#2f3034"
+   },
+   "--mr-color-gray": {
+    "raw": "#969698",
+    "kind": "color",
+    "value": "#969698"
+   },
+   "--mr-color-gray-light": {
+    "raw": "#dfdfdf",
+    "kind": "color",
+    "value": "#dfdfdf"
+   },
+   "--mr-color-light-2": {
+    "raw": "#f4f4f4",
+    "kind": "color",
+    "value": "#f4f4f4"
+   },
+   "--mr-color-light-3": {
+    "raw": "#f8f8f8",
+    "kind": "color",
+    "value": "#f8f8f8"
+   },
+   "--mr-color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--mr-column": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--mr-content-200": {
+    "raw": "#00000087",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.53)"
+   },
+   "--mr-content-300": {
+    "raw": "#000000bf",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.75)"
+   },
+   "--mr-content-400": {
+    "raw": "#000000f2",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.95)"
+   },
+   "--mr-font-system": {
+    "raw": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\"",
+    "kind": "fontFamily",
+    "value": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\""
+   },
+   "--mr-gradient-accent": {
+    "raw": "linear-gradient(210.25deg,#3e467c33 18.42%,#fff0 75.82%),#6d7eec",
+    "kind": "other"
+   },
+   "--mr-horizontal-margin-m": {
+    "raw": "300px",
+    "kind": "dimension",
+    "value": "300px"
+   },
+   "--mr-horizontal-margin-s": {
+    "raw": "100px",
+    "kind": "dimension",
+    "value": "100px"
+   },
+   "--mr-left-offset-cols": {
+    "raw": "5",
+    "kind": "number",
+    "value": 5
+   },
+   "--mr-left-offset-cols-pull": {
+    "raw": "2",
+    "kind": "number",
+    "value": 2
+   },
+   "--mr-logos-width": {
+    "raw": "600px",
+    "kind": "dimension",
+    "value": "600px"
+   },
+   "--mr-phone-shadow": {
+    "raw": "drop-shadow(0px 30px 50px #00000040) drop-shadow(0px 30px 30px #00000026)",
+    "kind": "other"
+   },
+   "--mr-phone-width": {
+    "raw": "280px",
+    "kind": "dimension",
+    "value": "280px"
+   },
+   "--mr-spacer-hero": {
+    "raw": "121px",
+    "kind": "dimension",
+    "value": "121px"
+   },
+   "--mr-spacer-hero-text": {
+    "raw": "39px",
+    "kind": "dimension",
+    "value": "39px"
+   },
+   "--mr-spacer-xl": {
+    "raw": "88px",
+    "kind": "dimension",
+    "value": "88px"
+   },
+   "--mr-spacer-xxl": {
+    "raw": "120px",
+    "kind": "dimension",
+    "value": "120px"
+   },
+   "--mr-text-shadow-accent": {
+    "raw": "0px 1px 0px #00000026",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.15) 0px 1px 0px 0px"
+   }
+  },
+  "light": {
+   "--mr-border-radius-m": {
+    "raw": "30px",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--mr-border-radius-s": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--mr-bp-laptop-medium": {
+    "raw": "1440px",
+    "kind": "dimension",
+    "value": "1440px"
+   },
+   "--mr-bp-laptop-small": {
+    "raw": "1280px",
+    "kind": "dimension",
+    "value": "1280px"
+   },
+   "--mr-bp-mobile": {
+    "raw": "428px",
+    "kind": "dimension",
+    "value": "428px"
+   },
+   "--mr-bp-tablet-portrait": {
+    "raw": "600px",
+    "kind": "dimension",
+    "value": "600px"
+   },
+   "--mr-col-13": {
+    "raw": "650px",
+    "kind": "dimension",
+    "value": "650px"
+   },
+   "--mr-color-black": {
+    "raw": "#0d0d0d",
+    "kind": "color",
+    "value": "#0d0d0d"
+   },
+   "--mr-color-blurple": {
+    "raw": "#6d7eec",
+    "kind": "color",
+    "value": "#6d7eec"
+   },
+   "--mr-color-dark-2": {
+    "raw": "#1e1f22",
+    "kind": "color",
+    "value": "#1e1f22"
+   },
+   "--mr-color-dark-3": {
+    "raw": "#2f3034",
+    "kind": "color",
+    "value": "#2f3034"
+   },
+   "--mr-color-gray": {
+    "raw": "#969698",
+    "kind": "color",
+    "value": "#969698"
+   },
+   "--mr-color-gray-light": {
+    "raw": "#dfdfdf",
+    "kind": "color",
+    "value": "#dfdfdf"
+   },
+   "--mr-color-light-2": {
+    "raw": "#f4f4f4",
+    "kind": "color",
+    "value": "#f4f4f4"
+   },
+   "--mr-color-light-3": {
+    "raw": "#f8f8f8",
+    "kind": "color",
+    "value": "#f8f8f8"
+   },
+   "--mr-color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--mr-column": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--mr-content-200": {
+    "raw": "#00000087",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.53)"
+   },
+   "--mr-content-300": {
+    "raw": "#000000bf",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.75)"
+   },
+   "--mr-content-400": {
+    "raw": "#000000f2",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.95)"
+   },
+   "--mr-font-system": {
+    "raw": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\"",
+    "kind": "fontFamily",
+    "value": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\""
+   },
+   "--mr-gradient-accent": {
+    "raw": "linear-gradient(210.25deg,#3e467c33 18.42%,#fff0 75.82%),#6d7eec",
+    "kind": "other"
+   },
+   "--mr-horizontal-margin-m": {
+    "raw": "300px",
+    "kind": "dimension",
+    "value": "300px"
+   },
+   "--mr-horizontal-margin-s": {
+    "raw": "100px",
+    "kind": "dimension",
+    "value": "100px"
+   },
+   "--mr-left-offset-cols": {
+    "raw": "5",
+    "kind": "number",
+    "value": 5
+   },
+   "--mr-left-offset-cols-pull": {
+    "raw": "2",
+    "kind": "number",
+    "value": 2
+   },
+   "--mr-logos-width": {
+    "raw": "600px",
+    "kind": "dimension",
+    "value": "600px"
+   },
+   "--mr-phone-shadow": {
+    "raw": "drop-shadow(0px 30px 50px #00000040) drop-shadow(0px 30px 30px #00000026)",
+    "kind": "other"
+   },
+   "--mr-phone-width": {
+    "raw": "280px",
+    "kind": "dimension",
+    "value": "280px"
+   },
+   "--mr-spacer-hero": {
+    "raw": "121px",
+    "kind": "dimension",
+    "value": "121px"
+   },
+   "--mr-spacer-hero-text": {
+    "raw": "39px",
+    "kind": "dimension",
+    "value": "39px"
+   },
+   "--mr-spacer-xl": {
+    "raw": "88px",
+    "kind": "dimension",
+    "value": "88px"
+   },
+   "--mr-spacer-xxl": {
+    "raw": "120px",
+    "kind": "dimension",
+    "value": "120px"
+   },
+   "--mr-text-shadow-accent": {
+    "raw": "0px 1px 0px #00000026",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.15) 0px 1px 0px 0px"
+   }
+  }
+ }
+}
