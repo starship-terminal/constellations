@@ -61,6 +61,14 @@ def tile_failures(tile_paths):
     if indexes != list(range(len(indexes))):
         return ['tile indexes are not a contiguous set from part 0']
     metas = [sidecar_for(f) for f in tile_paths]
+    reasons = []
+    for f, meta in zip(tile_paths, metas):
+        if meta is None:
+            reasons.append(f'{f.name}: missing sidecar')
+        elif (meta.get('dimensionCheck') or {}).get('status') == 'fail':
+            reasons.append(f"{f.name}: dimensionCheck is 'fail'")
+    if reasons:
+        return reasons
     clips = [(m.get('capture') or {}).get('clip') if m else None for m in metas]
     if not clips or any(not c or not c.get('height') for c in clips) or clips[0].get('y') != 0:
         return []
@@ -78,12 +86,7 @@ def tile_failures(tile_paths):
     covered = clips[-1]['y'] + clips[-1]['height']
     if abs(covered - intended) > 1:
         return [f'tiles cover {covered}px of a {intended}px page']
-    reasons = []
-    for f, meta in zip(tile_paths, metas):
-        chk = (meta.get('dimensionCheck') or {}).get('status')
-        if chk == 'fail':
-            reasons.append(f'{f.name}: dimensionCheck is fail')
-    return reasons
+    return []
 
 
 def stitched_sidecar(name, sheet, tile_paths):
@@ -137,20 +140,10 @@ for name, ps in parts.items():
     tile_paths = [f for _, f in ps]
     failed = tile_failures(tile_paths)
     if failed:
-        # A missing sidecar still publishes the image and writes none.
-        # A failed check or a short recorded page publishes nothing.
-        missing_only = all('missing sidecar' in reason for reason in failed)
-        if missing_only:
-            ims = [Image.open(f).convert('RGB') for f in tile_paths]
-            sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
-            y = 0
-            for i in ims:
-                sheet.paste(i, (0, y)); y += i.height
-            sheet.save(RAW / f'{name}.png')
-            stitched[name] = None
-            print('stitched', name, sheet.size, 'without sidecars')
-            continue
-        print('  ! skipped', name, '; '.join(failed))
+        # A failed check or a missing sidecar is not a finished capture.
+        # Publish nothing, and drop any earlier stitch of this name.
+        print('  ! skipped', name, '; '.join(failed), flush=True)
+        sys.stdout.flush()
         stale = RAW / f'{name}.png'
         if stale.exists():
             stale.unlink()
