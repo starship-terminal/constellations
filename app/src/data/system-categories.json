@@ -1260,6 +1260,12 @@
     "reason": "catalog.json describes a signed-out stock library: a search palette and a public image page."
   },
   {
+    "referenceId": "systems:huddlekit",
+    "groupId": "web-categories",
+    "labels": ["Collaboration Tools", "Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes Huddlekit's signed-out visual-annotation product for website feedback: the marketing site (features, solutions, pricing, integrations, compare, MCP, blog, support, free design tools) plus the app's anonymous login surface."
+  },
+  {
     "referenceId": "systems:macaw",
     "groupId": "web-categories",
     "labels": ["AI Tool"],

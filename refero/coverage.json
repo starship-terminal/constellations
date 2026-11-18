@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 211,
-    "system_domains": 202,
-    "matched_domains": 172,
-    "missing_domains": 261,
+    "system_packages": 212,
+    "system_domains": 203,
+    "matched_domains": 173,
+    "missing_domains": 260,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2474,6 +2474,23 @@
         }
       ]
     },
+    "huddlekit.com": {
+      "catalog": [
+        {
+          "name": "Huddlekit",
+          "domain": "huddlekit.com",
+          "id": 901
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "huddlekit",
+          "name": "Huddlekit",
+          "url": "https://huddlekit.com",
+          "name_match": true
+        }
+      ]
+    },
     "hume.ai": {
       "catalog": [
         {
@@ -3143,13 +3160,6 @@
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "huddlekit.com": [
-      {
-        "name": "Huddlekit",
-        "domain": "huddlekit.com",
-        "id": 901
       }
     ],
     "ifttt.com": [
