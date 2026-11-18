@@ -28,7 +28,7 @@ See [demo-light-default.png](screenshots/demo-light-default.png), [demo-field-de
 
 ## Login boundary
 
-`https://app.jasper.ai/` redirects to `https://app.jasper.ai/auth/login`. The card is white, with the red wordmark, Continue with Google, an email field, and a blue Continue with email. That blue is product auth chrome, not the marketing flame or navy. Nothing was typed. Google was not followed. Sign up was not followed.
+`https://app.jasper.ai/` redirects to `https://app.jasper.ai/auth/login`. The card is white, with the red wordmark, Continue with Google, an email field, and a blue Continue with email. That blue is product auth chrome, not the marketing flame or navy. There is no password field. Continue with email was submitted on 2026-11-18 on both `/auth/login` and `/auth/signup`; `continueWithEmail` returned HTTP 401 and the page toasted "Failed to send login link. Please contact support for further assistance." Google was not followed. Canvas, agents, Brand IQ and campaigns were not reached.
 
 See [signin-light-default.png](screenshots/signin-light-default.png).
 

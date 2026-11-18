@@ -243,9 +243,9 @@ Access: signed out (every captured surface is public; sign-in, plan checkout, th
 - carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
 
 ## [Jasper AI](../systems/jasper) — `jasper`
-Access: signed out (marketing routes on www.jasper.ai are public; the product sits behind app.jasper.ai - the login card at /auth/login was measured at rest, no credentials typed, nothing submitted, Google OAuth not followed; Transcend and cookie overlays were hidden, never answered)
-- Product app (canvas, agents runtime, Brand IQ editor, campaigns) at https://app.jasper.ai/ sits behind sign-in. Login card at https://app.jasper.ai/auth/login was measured at rest. Google OAuth was not followed. Nothing was submitted.
-- Signup and free trial at https://app.jasper.ai/auth/signup were not followed.
+Access: signed out (marketing routes on www.jasper.ai are public). Signed-in pass attempted 2026-11-18 via Continue with email on app.jasper.ai/auth/signup and /auth/login: continueWithEmail returned HTTP 401 and the page toasted 'Failed to send login link. Please contact support for further assistance.' No password field exists (passwordless). Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared. Canvas, agents, Brand IQ and campaigns were not reached. Transcend and cookie overlays were hidden, never answered
+- Product app (canvas, agents runtime, Brand IQ editor, campaigns) at https://app.jasper.ai/ was not reached. A signed-in pass on 2026-11-18 submitted Continue with email on /auth/signup and /auth/login; continueWithEmail returned HTTP 401 and the page toasted Failed to send login link. Please contact support for further assistance. No password field exists. Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared.
+- Signup and free trial at https://app.jasper.ai/auth/signup stay gated: Continue with email 401s, so no trial, onboarding or paid-plan screen was opened.
 - Get a Demo form at https://www.jasper.ai/demo was measured at rest and never submitted, so no validation, error or success state was captured.
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`

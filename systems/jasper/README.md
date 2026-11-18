@@ -4,7 +4,7 @@ A token set and component reference for Jasper's public marketing site. It was r
 
 Jasper's marketing site is a Webflow build. The declared layer is custom properties: `--swatch--*` ramps, `--_theme---*` roles rebound by `.u-theme-light` and `.u-theme-dark`, plus type, spacing and radius scales. Pages paint light (page `#ffffff`, text `#00063d`, primary button flame `#fa4028`). Dark is an island rebinding (footer and code bands), not a page-wide toggle. UI type is ABC ROM. Display type is Feature.
 
-The product app sits behind `https://app.jasper.ai/`. The login card was measured at rest. Nothing was typed, submitted, or sent through Google OAuth.
+The product app sits behind `https://app.jasper.ai/`. The login card was measured at rest. A signed-in pass on 2026-11-18 used Continue with email on `/auth/signup` and `/auth/login`. The API `continueWithEmail` returned HTTP 401 and the page toasted "Failed to send login link. Please contact support for further assistance." There is no password field. Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared. Canvas, agents, Brand IQ and campaigns were not reached.
 
 | File | What it is |
 |---|---|
@@ -75,14 +75,14 @@ Scorecard: **11 of 25 met, 13 partly, 1 missing**; C5, V1, V2 are optional for a
 | F2 Background roles | Partly | Page (light.background #ffffff) and surface (light.background-secondary #f2f2f3) are declared theme roles. Raised, overlay and scrim are not separate tokens. The mega-menu scrim is a full-viewport wrap, not a named role. |
 | F3 Text roles | Partly | Primary text is light.text #00063d. Muted is light.text-muted #5e5d5f from --swatch--dark-700, because the theme layer declares no secondary text role. On-accent is button text #ffffff. No disabled text role was mounted. Link colour is the same ink as body, not a separate role. |
 | F4 Border roles | Partly | light.border #00063d is the declared border role and is strong. No separate focus-border token. Focus rings were measured per control and several draw none. |
-| F6 Status colours | Partly | Green, yellow, pink and violet swatches are declared. They are not wired as success, warning, danger and info roles with fill, text and border. Nothing was submitted, so no status state painted. |
+| F6 Status colours | Partly | Green, yellow, pink and violet swatches are declared. They are not wired as success, warning, danger and info roles with fill, text and border. Continue with email 401d with a login-link toast; that is not a named status role. |
 | F11 Sizing | Partly | Measured control heights: nav 80px, primary buttons about 48px, login controls about 32px. No named size ladder (sm/md/lg) and no declared focus-ring width token. Several controls draw no focus ring. |
 | F14 Layout | Partly | Captured at 1440 and 390. Hero content is 840px inside a 1320px section. Breakpoints and z-index layers are not named tokens. The phone menu does not mount. |
-| C1 Component coverage | Partly | Public surface has button, link, text field, menu, card, list row, table (pricing chart), badge. Icon button, textarea, select, checkbox, radio, switch, tabs, tooltip, dialog, toast and avatar are not present or sit behind sign-in. About 8 of 19. |
-| C2 States | Partly | Hover, focus-visible and pressed are captured on the measured buttons and links. Disabled, loading and error were not mounted because forms were not submitted. |
+| C1 Component coverage | Partly | Public surface has button, link, text field, menu, card, list row, table (pricing chart), badge. Icon button, textarea, select, checkbox, radio, switch, tabs, tooltip, dialog and avatar are not present or sit behind sign-in. A login-link failure toast appeared during the signed-in pass and was not cropped. About 8 of 19. |
+| C2 States | Partly | Hover, focus-visible and pressed are captured on the measured buttons and links. Disabled and loading were not mounted on public pages. Continue with email produced an auth-send failure toast (HTTP 401), not a field-validation error. |
 | C3 Focus | Partly | Focus-visible was applied to the measured controls. Several draw no ring, which is what the page does. Recorded in components.md. |
 | C4 Token-based specs | Partly | Colour roles in components.md cite palette tokens when the hex matches. Geometry in the entries is still the measured px from components-computed.json, not a token alias. |
-| P1 Patterns | Partly | patterns.md covers the marketing shell, hero, pricing chart, demo form boundary and login boundary. Validation, empty, loading, error, destructive confirmation, search and onboarding sit behind submission or sign-in and are recorded as gaps. |
+| P1 Patterns | Partly | patterns.md covers the marketing shell, hero, pricing chart, demo form boundary and login boundary, including the 2026-11-18 continueWithEmail 401. Validation, empty, loading, destructive confirmation, search, onboarding, canvas, agents, Brand IQ and campaigns were not reached. |
 | A1 Assets | Partly | icon.png is the 128px webclip. Fonts are named with fallbacks and called commercial. No standalone SVG icon set was lifted. icons/ is a layout gap. |
 | K2 Do and don't | Partly | Script: 6 rules, 5 linking an image (needs 3+, all linked) |
 
@@ -96,7 +96,7 @@ Declared values come from the Webflow stylesheet. `tools/capture/vars.mjs` resol
 
 ## What to distrust
 
-The login card on `app.jasper.ai` is the product's auth chrome (white card, blue Continue with email). It is not the marketing navy and flame system. Do not mix those colours into a marketing screen. The phone menu was not opened: at 390 the desktop `.nav_menu` is `display: none` and no hamburger mounts, so [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) is the hero, not an open menu. `m-menu-open` and `m-nav-item` crops grabbed the visible Log In link and a hero chip, not a menu panel. `text-link` and `faq-item` were not found. Pricing has no FAQ accordion on the captured page. The demo form and the login form were never submitted, so there is no error, disabled, or success state. Dark screenshots were not taken. The dark token set is the declared `.u-theme-dark` rebinding, measured from CSS, not from a page-wide theme switch. The email placeholder `jenny@example.com` is Jasper's published sample on the login field. It was not typed.
+The login card on `app.jasper.ai` is the product's auth chrome (white card, blue Continue with email). It is not the marketing navy and flame system. Do not mix those colours into a marketing screen. The phone menu was not opened: at 390 the desktop `.nav_menu` is `display: none` and no hamburger mounts, so [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) is the hero, not an open menu. `m-menu-open` and `m-nav-item` crops grabbed the visible Log In link and a hero chip, not a menu panel. `text-link` and `faq-item` were not found. Pricing has no FAQ accordion on the captured page. The demo form was never submitted. Continue with email on login and signup was submitted and failed with HTTP 401; the failure toast is recorded as a gap, not as a product validation state. Dark screenshots were not taken. The dark token set is the declared `.u-theme-dark` rebinding, measured from CSS, not from a page-wide theme switch. The email placeholder `jenny@example.com` is Jasper's published sample on the login field. It was not typed.
 
 ## Fonts
 
@@ -126,20 +126,20 @@ ABC ROM is the UI face (`"ABC ROM", Arial, sans-serif`), weights 450, 500, 600 a
 | Menu | captured | Desktop Platform mega-menu. [home-light-menu.png](screenshots/home-light-menu.png), [nav-dropdown-default.png](components/crops/nav-dropdown-default.png). Phone menu not captured: no hamburger mounts at 390 |
 | Tooltip | not present | No tooltip on the captured public pages |
 | Dialog | not captured | Consent dialogs were hidden and never accepted. No product dialog is public |
-| Toast | not present | Nothing was submitted, so no toast appeared |
+| Toast | not captured | Continue with email painted "Failed to send login link. Please contact support for further assistance." That is an auth-send failure, not a product toast on canvas/agents. Not screenshotted (the email field held the capture inbox) |
 | Card | captured | [card-default.png](components/crops/card-default.png), [demo-card-default.png](components/crops/demo-card-default.png) |
 | List row | captured | Footer link row and dropdown link. [footer-link-default.png](components/crops/footer-link-default.png) |
 | Table | captured | Pricing comparison chart. [pricing-light-default.png](screenshots/pricing-light-default.png), [price-card-default.png](components/crops/price-card-default.png) |
 | Avatar | not present | No user avatar on the signed-out pages |
 | Badge | captured | The red New chip on the home hero. [home-light-default.png](screenshots/home-light-default.png) |
 | Hover, focus-visible, pressed | captured | On buttons and links that were measured. See crops named `*-hover`, `*-focus-visible`, `*-pressed` |
-| Disabled, loading, error | not captured | Forms were not submitted and no disabled control was mounted on the public pages |
+| Disabled, loading, error | not captured | Demo form was not submitted. Continue with email returned HTTP 401 and toasted Failed to send login link; that toast was not cropped. No disabled control was mounted on the public pages |
 | App shell | captured | Marketing nav and footer. [header-default.png](components/crops/header-default.png), [footer-default.png](components/crops/footer-default.png) |
-| Form with validation | not captured | Demo form at `https://www.jasper.ai/demo` and login at `https://app.jasper.ai/auth/login` were measured at rest and never submitted |
+| Form with validation | not captured | Demo form at `https://www.jasper.ai/demo` was measured at rest and never submitted. Login/signup Continue with email was submitted and 401d (Failed to send login link), which is an auth-send failure, not field validation |
 | Empty, loading, error states | not present | The public marketing pages do not show those states |
 | Destructive confirmation | not present | No destructive action on the public pages |
 | Search and filtering | not present | No search field on the captured public pages |
-| Onboarding | not captured | Signup at `https://app.jasper.ai/auth/signup` is behind account creation and was not followed |
+| Onboarding | not captured | Signup at `https://app.jasper.ai/auth/signup`: Continue with email returned HTTP 401 (Failed to send login link). No onboarding, canvas, agents, Brand IQ or campaigns screen loaded |
 | Light theme | captured | Every screenshot |
 | Dark theme | not captured | `.u-theme-dark` is tokenised from CSS. No page-wide dark switch was found, so no dark page screenshot was taken |
 | Desktop 1440 | captured | Sidecars record 1440 x 900 at devicePixelRatio 1 |
@@ -171,7 +171,7 @@ Scratch screenshots stay in `~/.design-systems/jasper/` and never enter git. Qua
 
 These were not captured. They are recorded so a later pass can backfill them.
 
-- Product app (canvas, agents runtime, Brand IQ editor, campaigns) at `https://app.jasper.ai/`. The login card at `https://app.jasper.ai/auth/login` was measured at rest. Google OAuth was not followed. Nothing was submitted.
-- Signup and free trial at `https://app.jasper.ai/auth/signup`. Free Trial links were not followed.
+- Product app (canvas, agents runtime, Brand IQ editor, campaigns) at `https://app.jasper.ai/`. A 2026-11-18 signed-in pass submitted Continue with email on `/auth/signup` and `/auth/login`. `continueWithEmail` returned HTTP 401 and the page toasted "Failed to send login link. Please contact support for further assistance." No password field exists. Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared.
+- Signup and free trial at `https://app.jasper.ai/auth/signup`. Continue with email 401s, so no trial that needs a card was started.
 - Get a Demo form at `https://www.jasper.ai/demo`. The HubSpot form was measured at rest and never submitted.
 - Help center and courses at `https://help.jasper.ai/`.

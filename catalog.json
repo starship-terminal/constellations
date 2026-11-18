@@ -6164,7 +6164,7 @@
   ],
   "shape": "reference",
   "captured": "2026-11-18",
-  "access": "signed out (marketing routes on www.jasper.ai are public; the product sits behind app.jasper.ai - the login card at /auth/login was measured at rest, no credentials typed, nothing submitted, Google OAuth not followed; Transcend and cookie overlays were hidden, never answered)",
+  "access": "signed out (marketing routes on www.jasper.ai are public). Signed-in pass attempted 2026-11-18 via Continue with email on app.jasper.ai/auth/signup and /auth/login: continueWithEmail returned HTTP 401 and the page toasted 'Failed to send login link. Please contact support for further assistance.' No password field exists (passwordless). Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared. Canvas, agents, Brand IQ and campaigns were not reached. Transcend and cookie overlays were hidden, never answered",
   "themes": [
    "light"
   ],
@@ -6196,7 +6196,7 @@
   },
   "capture": {
    "method": "public-web",
-   "source": "www.jasper.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest of --swatch--*, --_theme---*, --_typography---* and --_spacing---* resolved in .u-theme-light and .u-theme-dark. Consent overlays were hidden, never clicked. The app.jasper.ai/auth/login card was measured at rest.",
+   "source": "www.jasper.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest of --swatch--*, --_theme---*, --_typography---* and --_spacing---* resolved in .u-theme-light and .u-theme-dark. Consent overlays were hidden, never clicked. The app.jasper.ai/auth/login card was measured at rest. A 2026-11-18 signed-in pass used Continue with email on /auth/signup and /auth/login in headed Chrome and the preview browser; continueWithEmail returned HTTP 401 (Failed to send login link) so the product app was not entered.",
    "timestamp": "2026-11-18T12:00:00Z",
    "harness": "Grok",
    "model": "grok-4.7",
@@ -6212,11 +6212,12 @@
     "/legal",
     "/demo",
     "app.jasper.ai/auth/login",
+    "app.jasper.ai/auth/signup",
     "mobile / and /pricing"
    ],
    "gaps": [
-    "Product app (canvas, agents runtime, Brand IQ editor, campaigns) at https://app.jasper.ai/ sits behind sign-in. Login card at https://app.jasper.ai/auth/login was measured at rest. Google OAuth was not followed. Nothing was submitted.",
-    "Signup and free trial at https://app.jasper.ai/auth/signup were not followed.",
+    "Product app (canvas, agents runtime, Brand IQ editor, campaigns) at https://app.jasper.ai/ was not reached. A signed-in pass on 2026-11-18 submitted Continue with email on /auth/signup and /auth/login; continueWithEmail returned HTTP 401 and the page toasted Failed to send login link. Please contact support for further assistance. No password field exists. Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared.",
+    "Signup and free trial at https://app.jasper.ai/auth/signup stay gated: Continue with email 401s, so no trial, onboarding or paid-plan screen was opened.",
     "Get a Demo form at https://www.jasper.ai/demo was measured at rest and never submitted, so no validation, error or success state was captured.",
     "Help center and courses at https://help.jasper.ai/ were not captured.",
     "Phone menu was not captured: at 390 the desktop .nav_menu is display:none and no hamburger mounts.",
@@ -6224,7 +6225,7 @@
     "No standalone SVG icon set was lifted. Wordmark and illustrations stay in screenshots.",
     "Pressed states are DevTools-forced, so a script-only mousedown state is missing. Disabled, loading and error states were not mounted."
    ],
-   "durationMin": 180,
+   "durationMin": 270,
    "pr": "https://github.com/starship-terminal/constellations/pull/652"
   },
   "layoutGaps": {

@@ -90,13 +90,13 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 Good for: enterprise marketing-site design: a Webflow build with declared --swatch--* ramps and --_theme---* roles rebound by .u-theme-light and .u-theme-dark, page #ffffff, brand ink #00063d, flame primary #fa4028, ABC ROM UI type and Feature display type, dark islands rather than a page-wide theme switch.
 
-Captured 2026-11-18, signed out (marketing routes on www.jasper.ai are public; the product sits behind app.jasper.ai - the login card at /auth/login was measured at rest, no credentials typed, nothing submitted, Google OAuth not followed; Transcend and cookie overlays were hidden, never answered). Themes: light.
+Captured 2026-11-18, signed out (marketing routes on www.jasper.ai are public). Signed-in pass attempted 2026-11-18 via Continue with email on app.jasper.ai/auth/signup and /auth/login: continueWithEmail returned HTTP 401 and the page toasted 'Failed to send login link. Please contact support for further assistance.' No password field exists (passwordless). Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared. Canvas, agents, Brand IQ and campaigns were not reached. Transcend and cookie overlays were hidden, never answered. Themes: light.
 
 A token set and component reference for Jasper's public marketing site. It was read from **www.jasper.ai** on **2026-11-18**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Routes: home, platform, agents, pricing, brand, blog, company, legal, the demo form at rest, and the login card at **app.jasper.ai/auth/login**.
 
 Jasper's marketing site is a Webflow build. The declared layer is custom properties: `--swatch--*` ramps, `--_theme---*` roles rebound by `.u-theme-light` and `.u-theme-dark`, plus type, spacing and radius scales. Pages paint light (page `#ffffff`, text `#00063d`, primary button flame `#fa4028`). Dark is an island rebinding (footer and code bands), not a page-wide toggle. UI type is ABC ROM. Display type is Feature.
 
-The product app sits behind `https://app.jasper.ai/`. The login card was measured at rest. Nothing was typed, submitted, or sent through Google OAuth.
+The product app sits behind `https://app.jasper.ai/`. The login card was measured at rest. A signed-in pass on 2026-11-18 used Continue with email on `/auth/signup` and `/auth/login`. The API `continueWithEmail` returned HTTP 401 and the page toasted "Failed to send login link. Please contact support for further assistance." There is no password field. Google OAuth was not followed. No CAPTCHA, phone, payment or KYC appeared. Canvas, agents, Brand IQ and campaigns were not reached.
 
 ## Colors
 
@@ -145,7 +145,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The login card on `app.jasper.ai` is the product's auth chrome (white card, blue Continue with email). It is not the marketing navy and flame system. Do not mix those colours into a marketing screen. The phone menu was not opened: at 390 the desktop `.nav_menu` is `display: none` and no hamburger mounts, so [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) is the hero, not an open menu. `m-menu-open` and `m-nav-item` crops grabbed the visible Log In link and a hero chip, not a menu panel. `text-link` and `faq-item` were not found. Pricing has no FAQ accordion on the captured page. The demo form and the login form were never submitted, so there is no error, disabled, or success state. Dark screenshots were not taken. The dark token set is the declared `.u-theme-dark` rebinding, measured from CSS, not from a page-wide theme switch. The email placeholder `jenny@example.com` is Jasper's published sample on the login field. It was not typed.
+The login card on `app.jasper.ai` is the product's auth chrome (white card, blue Continue with email). It is not the marketing navy and flame system. Do not mix those colours into a marketing screen. The phone menu was not opened: at 390 the desktop `.nav_menu` is `display: none` and no hamburger mounts, so [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png) is the hero, not an open menu. `m-menu-open` and `m-nav-item` crops grabbed the visible Log In link and a hero chip, not a menu panel. `text-link` and `faq-item` were not found. Pricing has no FAQ accordion on the captured page. The demo form was never submitted. Continue with email on login and signup was submitted and failed with HTTP 401; the failure toast is recorded as a gap, not as a product validation state. Dark screenshots were not taken. The dark token set is the declared `.u-theme-dark` rebinding, measured from CSS, not from a page-wide theme switch. The email placeholder `jenny@example.com` is Jasper's published sample on the login field. It was not typed.
 
 ### Do and don't (from README.md)
 
