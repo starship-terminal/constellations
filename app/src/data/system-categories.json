@@ -1258,5 +1258,11 @@
     "groupId": "web-categories",
     "labels": ["Entertainment"],
     "reason": "catalog.json describes a signed-out stock library: a search palette and a public image page."
+  },
+  {
+    "referenceId": "systems:ifttt",
+    "groupId": "web-categories",
+    "labels": ["Productivity", "AI Tool"],
+    "reason": "catalog.json describes IFTTT's automation platform: the ifttt.ai marketing home (AI prompt hero), the explore applet/service/story gallery, the plans pricing, service/applet/connect detail pages, solutions, MCP, about/careers/partners and legal surfaces."
   }
 ]
