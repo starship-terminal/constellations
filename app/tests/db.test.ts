@@ -661,27 +661,27 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
     ),
   ).toBe(39);
   const categories = await migrated.listReferenceCategories();
-  // The seed labels (Health & Wellness + Marketplace) land as two rows.
+  // Fitness, Health & Wellness, and Marketplace land as three rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:classpass"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   expect(
     (await migrated.listReferenceCategoryDetails(["systems:classpass"])).map(
       (row) => row.label,
     ),
-  ).toEqual(["Health & Wellness", "Marketplace"]);
+  ).toEqual(["Fitness", "Health & Wellness", "Marketplace"]);
   expect(
     categories.filter((row) => row.referenceId === "systems:frame"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   expect(
     categories.filter((row) => row.referenceId === "systems:gladia"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   expect(
     categories.filter((row) => row.referenceId === "systems:glassnode"),
   ).toHaveLength(2);
   expect(
     categories.filter((row) => row.referenceId === "systems:front"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:classpass").length,
@@ -1564,15 +1564,15 @@ test("version-thirty-three stores gain the Headspace rows, without touching thei
     ),
   ).toBe(39);
   const categories = await migrated.listReferenceCategories();
-  // The seed label (Health & Wellness) lands as one row.
+  // Fitness and Health & Wellness land as two rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:headspace"),
-  ).toHaveLength(1);
+  ).toHaveLength(2);
   expect(
     (await migrated.listReferenceCategoryDetails(["systems:headspace"])).map(
       (row) => row.label,
     ),
-  ).toEqual(["Health & Wellness"]);
+  ).toEqual(["Fitness", "Health & Wellness"]);
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:headspace").length,

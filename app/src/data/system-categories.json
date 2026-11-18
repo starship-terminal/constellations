@@ -1264,5 +1264,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool"],
     "reason": "catalog.json describes creator generative-media marketing: a black canvas, a violet wordmark, and a signed-out app shell."
+  },
+  {
+    "referenceId": "systems:macaw",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a cream marketing site for an AI website builder: one coral action and tinted pricing cards."
   }
 ]
