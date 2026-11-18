@@ -14373,6 +14373,96 @@
    }
   },
   {
+   "slug": "forhers",
+   "name": "For Hers",
+   "url": "https://www.forhers.com/",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "women's telehealth storefront and marketing: forhers.com (the Hims & Hers women's arm) paints a near-black rgba(0,0,0,.89) ink on white with sage (#e4eee6-#f5faf6) and cream (#faf8f2/#f4f1e6) washes, the #338585 Hers teal ramp, the #d5ff5d promo lime and a black radius-full action pill pinned to the phone viewport; CareSans fluid display type (letter-spacing -0.0625em) over sofia-pro/SofiaProWeb UI type (IvarSoft declared but unused), a promo strip over a 57px header and the #e8eae8 footer slab, bento/treatment/product cards with three CTA weights, a BMI calculator with a #b6dd64 submit, an editorial blog and an A-Z drug index in #0077ab link blue; the styled-components sheets ship no colour token layer beyond the /shop --unit-u*/--spacing-s*/--grid-* scales, so the palette is measured",
+   "tags": [
+    "web",
+    "telehealth",
+    "health",
+    "wellness",
+    "e-commerce",
+    "styled-components",
+    "light",
+    "marketing",
+    "signed-out",
+    "wayback"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured route is public marketing, catalogue, editorial or tool surface; Log in, the slide menu, the quiz/intake flow, consultations, prescriptions, orders and checkout are gated destinations measured at rest only - the BMI and lead-capture fields were clicked into and typed-then-cleared, nothing was submitted, and www.forhers.com answers this network with a Cloudflare managed challenge so the evidence is Wayback SSR, never the live origin)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/forhers/README.md",
+   "tokens": "systems/forhers/tokens.json",
+   "styleGuide": "systems/forhers/style-guide.html",
+   "preview": {
+    "cover": "systems/forhers/screenshots/home-light-default.png",
+    "icon": "systems/forhers/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.bg.page",
+      "surface": "light.bg.sage",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.accent.teal",
+      "border": "light.border.hairline"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.display"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "forhers.com from headless Chromium (Playwright) against Wayback Machine SSR snapshots served locally - www.forhers.com answers every automated request from this network with a Cloudflare managed challenge (HTTP 403, cf-mitigated: challenge, headed and headless alike), so the DOM is the archived markup painted by the real archived styled-components and inline sheets with every script stripped - desktop 1440x900 and 390x844 mobile passes; computed styles and 132 element crops from the archived DOM, plus a stylesheet harvest (the inline sheets, the /shop --unit-u*/--spacing-s*/--grid-*/--*Height scales, the fluid-type --base-font-size/--scale machinery and the @font-face list). Selectors ride the styled-components sc-* class hooks. BOUNDARY: sign-in, member account, consultation/intake, prescriptions, orders and checkout were never crossed; nothing was typed past cleared fields, submitted or authenticated; hydration-owned states (slide menu, login menu, accordion expansion, carousels, Read more) are gaps, not reconstructions; ~79 archived asset URLs never resolved and stay visibly missing",
+    "timestamp": "2026-11-17T20:05:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/weight-loss",
+     "/hair-loss",
+     "/skin-care",
+     "/mental-health",
+     "/birth-control",
+     "/product",
+     "/anti-aging",
+     "/wegovy-pill",
+     "/labs",
+     "/benefits",
+     "/quality",
+     "/blog",
+     "/blog article",
+     "/bmi-calculator",
+     "/drugs information index",
+     "mobile /, /weight-loss, /product, /bmi-calculator and /blog article at 390"
+    ],
+    "gaps": [
+     "the live origin was never reached - Cloudflare's managed challenge holds every automated route at HTTP 403, so all evidence is archived, dated in the capture sidecars",
+     "scripts are stripped from the archived SSR, so hydration-owned surfaces never open: the slide menu, the login menu, accordion expansion, carousel scrolling, the quiz/intake flow and Read more - captured closed, recorded as gaps",
+     "sign-in, the member account, consultation/intake, prescriptions, orders and checkout were never opened; forms were measured empty, success/error/post-submit states uncaptured by design",
+     "~79 archived asset URLs never resolved from the Wayback mirror - blank or broken imagery in the screenshots is a recorded gap, not the design",
+     "several archived page stylesheets (weight-loss and related routes) resolved zero-byte or unavailable; the screenshots were re-shot after mirror warming and the residual gaps are documented",
+     "no dark theme exists on the observed surface - no theme control, no dark selector, colorScheme: normal on every shot; the dark token set ships empty and the dark harvest pass re-reads root values",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "the tallest full-page captures are bounded (birth-control ~53k px, bmi-calculator ~23k px) and truncate from the bottom; the sidecars note the document height"
+    ],
+    "durationMin": 900,
+    "durationNote": "wall-clock across the blocked-live probing, the Wayback mirror build and asset warming, the screenshot and re-shoot passes, the stylesheet harvest, component measurement, the offline build and review"
+   }
+  },
+  {
    "slug": "fourmula",
    "name": "Fourmula",
    "url": "https://fourmula.ai",

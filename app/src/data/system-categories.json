@@ -1618,5 +1618,13 @@
    "Development Tools"
   ],
   "reason": "catalog.json describes developer banking APIs - ledgers, transfers, bank accounts and card issuing - a finance product sold to developers."
+ },
+ {
+  "referenceId": "systems:forhers",
+  "groupId": "web-categories",
+  "labels": [
+   "Health & Wellness"
+  ],
+  "reason": "catalog.json describes the Hers women's telehealth storefront: treatment verticals (weight loss, hair, skin, mental health, birth control, anti-aging, labs), product cards with prices, a BMI calculator, an editorial blog and a drug-information index - health and wellness products sold direct."
  }
 ]
