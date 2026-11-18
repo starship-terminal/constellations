@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -241,6 +241,12 @@ Access: signed out (every surface captured is public; the product sits at app.gr
 Access: signed out (every captured surface is public; sign-in, plan checkout, the help centre and account surfaces were link-observed only and never opened)
 - auth.hbomax.com sign-in, plan selection and checkout, help.hbomax.com and every account surface were observed as links only and never opened; no form was submitted and no trial or plan was started
 - carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
+
+## [Intercom](../systems/intercom) — `intercom`
+Access: signed out (every captured surface is public: www.intercom.com marketing routes, the /help/en/ help center and /changes/en changelog; app.intercom.com, /signup onboarding, purchase and the contact-sales form's later steps never entered - the Log in / Start free trial / Get started / Contact sales links were measured, never followed; the Next submit was measured with forced pseudo states, never pressed; no select option was chosen and the marketing checkbox was never ticked; nothing was signed into, searched, chosen, uploaded, bought or submitted; the only presses were local UI toggles - the nav mega-menu, the billing switch, a FAQ row, the select's own listbox and the mobile menu button)
+- the signed-in product (app.intercom.com - inbox, tickets, reports) is a boundary: the Log in link was measured, never followed
+- trial onboarding (/signup), purchase and every conversion path past the marketing surface are boundaries, not captures
+- three header components (logo, nav-login, nav-cta) were measured on one pass and preserved on a later recapture that missed them - recorded as recaptureMissed provenance
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)
