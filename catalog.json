@@ -16567,6 +16567,81 @@
       }
     },
     {
+      "slug": "macaw",
+      "name": "Macaw",
+      "url": "https://macawhq.com",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "A cream Webflow marketing site with one coral action: Inter display at 53.6px, 8px controls, tinted pricing cards, and a quiet white secondary button",
+      "tags": [
+        "web",
+        "marketing",
+        "light",
+        "signed-out",
+        "webflow",
+        "saas",
+        "ai",
+        "coral"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed-out public marketing, pricing, contact, one free-tool page, and legal. The product app host did not resolve. No form was submitted.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/macaw/README.md",
+      "tokens": "systems/macaw/tokens.json",
+      "styleGuide": "systems/macaw/style-guide.html",
+      "preview": {
+        "cover": "systems/macaw/screenshots/home-light-default.png",
+        "icon": "systems/macaw/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textBody",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "date": "2026-11-18",
+        "version": "public site as of 2026-11-18",
+        "durationMin": 26,
+        "durationNote": "Public signed-out session from the first page shot. App host did not resolve.",
+        "pr": "",
+        "routes": [
+          "/",
+          "/pricing",
+          "/contact-us",
+          "/free-tools/blog-title-generator",
+          "/terms-and-conditions",
+          "/privacy-policy"
+        ],
+        "gaps": [
+          "app.macawhq.com sign-in and sign-up did not resolve (ERR_NAME_NOT_RESOLVED); the product app was not entered",
+          "docs.macawhq.com did not resolve; the Documentation menu item is href=# and was not followed",
+          "the blog menu item is href=#; /blog redirects to / and no article was opened",
+          "the contact form was not submitted",
+          "Get started and Contact our sales team leave for sign-up or a sales path and were not followed",
+          "Start free with Google starts a Google sign-in strategy and was not followed",
+          "no checkout was opened"
+        ]
+      }
+    },
+    {
       "slug": "manus",
       "name": "Manus",
       "url": "https://manus.im/app",
