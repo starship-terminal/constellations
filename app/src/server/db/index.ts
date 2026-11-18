@@ -180,8 +180,14 @@ export async function createResearchStore(directory: string) {
       // would never arrive. Scoping keeps cleared labels on older packages
       // cleared — an empty assignment reads as "never labelled", so an
       // unscoped pass would restore rows the user deleted.
-      await seedNewCuratedCategories(tx, new Set(["systems:frame", "systems:fourthwall"]));
-      await seedNewCuratedMediaTerms(tx, new Set(["systems:frame", "systems:fourthwall"]));
+      await seedNewCuratedCategories(
+        tx,
+        new Set(["systems:frame", "systems:fourthwall"]),
+      );
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set(["systems:frame", "systems:fourthwall"]),
+      );
       await tx.execute("PRAGMA user_version = 13");
     }
     if (version < 14) {
