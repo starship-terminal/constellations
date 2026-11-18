@@ -92,8 +92,8 @@ function AgentSettings() {
         <div>
           <h2>For agents</h2>
           <p>
-            Point a coding agent at this app. The endpoint is read-only and
-            uses the same library tools as research.
+            Point a coding agent at this app. The endpoint is read-only and uses
+            the same library tools as research.
           </p>
         </div>
       </div>

@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 209,
-    "system_domains": 200,
-    "matched_domains": 170,
-    "missing_domains": 263,
+    "system_packages": 210,
+    "system_domains": 201,
+    "matched_domains": 171,
+    "missing_domains": 262,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2157,6 +2157,23 @@
         }
       ]
     },
+    "getmatter.com": {
+      "catalog": [
+        {
+          "name": "Matter",
+          "domain": "getmatter.com",
+          "id": 752
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "matter",
+          "name": "Matter",
+          "url": "https://www.getmatter.com",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -3074,13 +3091,6 @@
         "name": "Google Gemini",
         "domain": "gemini.google",
         "id": 907
-      }
-    ],
-    "getmatter.com": [
-      {
-        "name": "Matter",
-        "domain": "getmatter.com",
-        "id": 752
       }
     ],
     "getmocha.com": [
