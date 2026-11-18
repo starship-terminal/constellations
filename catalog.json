@@ -18727,6 +18727,70 @@
       }
     },
     {
+      "slug": "typefully",
+      "name": "Typefully",
+      "url": "https://typefully.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Social scheduler marketing: white or charcoal page, blue accent pills, OAuth row, pricing columns, email dialog",
+      "tags": [
+        "web",
+        "saas",
+        "marketing",
+        "social",
+        "scheduler",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the email dialog; the form was not submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/typefully/README.md",
+      "tokens": "systems/typefully/tokens.json",
+      "styleGuide": "systems/typefully/style-guide.html",
+      "preview": {
+        "cover": "systems/typefully/screenshots/home-light-default.png",
+        "icon": "systems/typefully/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.accent",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.action.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.inter"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45
+      },
+      "layoutGaps": {
+        "icons/": "Inline SVGs were on the page but were not extracted. The wordmark is in the screenshots and icon.png is the apple-touch icon."
+      }
+    },
+    {
       "slug": "untitled-stream",
       "name": "Untitled",
       "url": "https://untitled.stream",
