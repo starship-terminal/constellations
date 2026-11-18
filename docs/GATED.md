@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_151 of 209 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_152 of 210 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -896,6 +896,11 @@ Access: signed-out public marketing, docs, legal, help center, and the app.limit
 - Pendant purchase is no longer offered to new customers; the unavailable dialog tells Pendant owners to email support; no checkout was opened
 - account deletion, documented at https://help.limitless.ai/en/articles/13005203-how-to-delete-your-limitless-account-and-data, was not opened
 - the Slack community invite at https://www.limitless.ai/community leaves the site and was not followed
+
+## [ManyChat](../systems/manychat) — `manychat`
+Access: read-only (the marketing site is public signed out; the bot builder and the in-app template library sit behind sign-in at app.manychat.com, never entered; Log in, Get started and Start for free were measured, never followed; checkout was not submitted)
+- the bot builder and the in-app template library sit behind sign-in at app.manychat.com; Log in and Get started were measured, never followed
+- checkout was not submitted; Monthly and Annual were toggled locally
 
 ## Gate noted in access text only
 
