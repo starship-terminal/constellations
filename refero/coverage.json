@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 209,
-    "system_domains": 200,
-    "matched_domains": 170,
-    "missing_domains": 263,
+    "system_packages": 211,
+    "system_domains": 202,
+    "matched_domains": 172,
+    "missing_domains": 261,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2814,6 +2814,23 @@
         }
       ]
     },
+    "lummi.ai": {
+      "catalog": [
+        {
+          "name": "Lummi",
+          "domain": "lummi.ai",
+          "id": 521
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lummi",
+          "name": "Lummi",
+          "url": "https://www.lummi.ai",
+          "name_match": true
+        }
+      ]
+    },
     "manus.im": {
       "catalog": [
         {
@@ -2827,6 +2844,23 @@
           "slug": "manus",
           "name": "Manus",
           "url": "https://manus.im/app",
+          "name_match": true
+        }
+      ]
+    },
+    "manychat.com": {
+      "catalog": [
+        {
+          "name": "ManyChat",
+          "domain": "manychat.com",
+          "id": 90
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "manychat",
+          "name": "ManyChat",
+          "url": "https://manychat.com",
           "name_match": true
         }
       ]
@@ -3237,13 +3271,6 @@
         "id": 448
       }
     ],
-    "lummi.ai": [
-      {
-        "name": "Lummi",
-        "domain": "lummi.ai",
-        "id": 521
-      }
-    ],
     "macawhq.com": [
       {
         "name": "Macaw",
@@ -3270,13 +3297,6 @@
         "name": "Mangomint",
         "domain": "mangomint.com",
         "id": 698
-      }
-    ],
-    "manychat.com": [
-      {
-        "name": "ManyChat",
-        "domain": "manychat.com",
-        "id": 90
       }
     ],
     "mapbox.com": [
