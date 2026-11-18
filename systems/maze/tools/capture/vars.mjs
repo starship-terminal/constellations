@@ -50,13 +50,9 @@ const result = await probe.evaluate((sheets) => {
   const walk = (list, ctx, file) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
-        fonts.push({
-          file,
-          family: r.style.getPropertyValue('font-family'),
-          weight: r.style.getPropertyValue('font-weight'),
-          style: r.style.getPropertyValue('font-style'),
-          src: noUrl(r.style.getPropertyValue('src')),
-        });
+        const o = { file };
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
+        fonts.push(o);
         continue;
       }
       if (r.cssRules && !r.style) {
