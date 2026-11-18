@@ -2529,8 +2529,8 @@
     691
    ],
    "description": "Team matchmaking for women-led startups",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kinhive",
    "notes": "",
    "batch": 9
   },

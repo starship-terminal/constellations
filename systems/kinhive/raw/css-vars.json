@@ -1,0 +1,2974 @@
+{
+ "readAt": "2026-11-18",
+ "source": "the stylesheet bodies read during a live signed-out load of kinhive.com / (the linked _next/static CSS chunks from network responses plus any inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets at 1440 x 900. The dark pass sets html[data-app-theme=system] and emulates prefers-color-scheme: dark, which is how the declared dark palette is scoped.",
+ "sheets": [
+  "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css (3452 bytes)",
+  "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css (106881 bytes)"
+ ],
+ "counts": {
+  "rules": 166,
+  "fonts": 12,
+  "names": {
+   "theme": 65,
+   "app": 8,
+   "skins": 24,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 71
+  },
+  "bySelector": {
+   "[theme] .R0FIha_variable": 1,
+   "[theme] .hMGRVW_variable": 1,
+   "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:block))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) *, ::before, ::after, ::backdrop": 71,
+   "[theme] @layer theme :root, :host": 63,
+   "[theme] @layer theme @supports (color:lab(0% 0 0)) :root, :host": 1,
+   "[tailwind] @layer utilities .-translate-x-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-x-full": 1,
+   "[tailwind] @layer utilities .translate-x-0": 1,
+   "[tailwind] @layer utilities .-translate-y-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-y-\\[calc\\(100\\%\\+10px\\)\\]": 1,
+   "[tailwind] @layer utilities .scale-110": 3,
+   "[tailwind] @layer utilities .scale-125": 3,
+   "[tailwind] @layer utilities .-scale-x-100": 1,
+   "[tailwind] @layer utilities :where(.space-y-1 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-1\\.5 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-2 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-2\\.5 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-3 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-3\\.5 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-4 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-5 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-6 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-8 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.divide-y > :not(:last-child))": 1,
+   "[tailwind] @layer utilities .border-dashed": 1,
+   "[tailwind] @layer utilities .bg-gradient-to-b": 1,
+   "[tailwind] @layer utilities .bg-gradient-to-t": 1,
+   "[tailwind] @layer utilities .from-black\\/45": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .from-black\\/45": 1,
+   "[tailwind] @layer utilities .from-black\\/55": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .from-black\\/55": 1,
+   "[tailwind] @layer utilities .from-black\\/60": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .from-black\\/60": 1,
+   "[tailwind] @layer utilities .from-black\\/70": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .from-black\\/70": 1,
+   "[tailwind] @layer utilities .from-white": 2,
+   "[tailwind] @layer utilities .from-75\\%": 1,
+   "[tailwind] @layer utilities .via-black\\/10": 3,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .via-black\\/10": 1,
+   "[tailwind] @layer utilities .via-black\\/20": 3,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .via-black\\/20": 1,
+   "[tailwind] @layer utilities .via-black\\/25": 3,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .via-black\\/25": 1,
+   "[tailwind] @layer utilities .via-white\\/90": 3,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .via-white\\/90": 1,
+   "[tailwind] @layer utilities .to-transparent": 2,
+   "[tailwind] @layer utilities .leading-5": 1,
+   "[tailwind] @layer utilities .leading-6": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.1\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.02\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.2\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.05\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.06\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.6\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.08\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.15\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.25\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.65\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[14px\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[18px\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[19px\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[22px\\]": 1,
+   "[tailwind] @layer utilities .leading-none": 1,
+   "[tailwind] @layer utilities .leading-relaxed": 1,
+   "[tailwind] @layer utilities .leading-snug": 1,
+   "[tailwind] @layer utilities .leading-tight": 1,
+   "[tailwind] @layer utilities .font-bold": 1,
+   "[tailwind] @layer utilities .font-medium": 1,
+   "[tailwind] @layer utilities .font-normal": 1,
+   "[tailwind] @layer utilities .font-semibold": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.01em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.02em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.03em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.005em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.5px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.8px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.025em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-1px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[0\\.1em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[0\\.08em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[0\\.12em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[0\\.16em\\]": 1,
+   "[tailwind] @layer utilities .tracking-wide": 1,
+   "[tailwind] @layer utilities .tabular-nums": 1,
+   "[tailwind] @layer utilities .shadow": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_0_0_1px_var\\(--color-line\\)\\,0_2px_8px_rgba\\(34\\,32\\,31\\,\\.06\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_1px_1px_rgba\\(17\\,17\\,17\\,\\.03\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_1px_1px_rgba\\(17\\,17\\,17\\,\\.04\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_1px_2px_rgba\\(17\\,17\\,17\\,\\.04\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_1px_3px_rgba\\(0\\,0\\,0\\,\\.25\\)\\,0_0_0_\\.5px_rgba\\(0\\,0\\,0\\,\\.06\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_2px_8px_rgba\\(0\\,0\\,0\\,\\.3\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_8px_24px_rgba\\(17\\,17\\,17\\,\\.12\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_8px_30px_rgba\\(17\\,17\\,17\\,\\.12\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_24px_40px_-24px_rgba\\(0\\,0\\,0\\,0\\.18\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[inset_0_0_0_1px_rgba\\(34\\,32\\,31\\,\\.12\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[inset_0_0_0_1px_var\\(--color-line\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[inset_0_1px_0_rgba\\(255\\,255\\,255\\,\\.12\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-lg": 1,
+   "[tailwind] @layer utilities .shadow-none": 1,
+   "[tailwind] @layer utilities .shadow-sm": 1,
+   "[tailwind] @layer utilities .ring, .ring-1": 1,
+   "[tailwind] @layer utilities .ring-2": 1,
+   "[tailwind] @layer utilities .ring-4": 1,
+   "[tailwind] @layer utilities .ring-\\[1\\.5px\\]": 1,
+   "[tailwind] @layer utilities .ring-ink": 1,
+   "[tailwind] @layer utilities .ring-ink\\/15": 1,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .ring-ink\\/15": 1,
+   "[tailwind] @layer utilities .ring-white": 1,
+   "[tailwind] @layer utilities .ring-white\\/80": 1,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .ring-white\\/80": 1,
+   "[tailwind] @layer utilities .ring-offset-2": 2,
+   "[tailwind] @layer utilities .blur-3xl": 1,
+   "[tailwind] @layer utilities .blur-\\[3px\\]": 1,
+   "[tailwind] @layer utilities .grayscale": 1,
+   "[tailwind] @layer utilities .saturate-\\[\\.6\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur": 1,
+   "[tailwind] @layer utilities .backdrop-blur-md": 1,
+   "[tailwind] @layer utilities .duration-75": 1,
+   "[tailwind] @layer utilities .duration-100": 1,
+   "[tailwind] @layer utilities .duration-200": 1,
+   "[tailwind] @layer utilities .duration-300": 1,
+   "[tailwind] @layer utilities .duration-500": 1,
+   "[tailwind] @layer utilities .ease-linear": 1,
+   "[tailwind] @layer utilities .outline-none": 1,
+   "[tailwind] @layer utilities @media (hover: hover) :is(:where(.group):hover .group-hover\\:translate-x-0\\.5)": 1,
+   "[tailwind] @layer utilities :is(:where(.peer):checked ~ .peer-checked\\:translate-x-4)": 1,
+   "[tailwind] @layer utilities .focus-within\\:shadow-\\[0_0_0_1px_rgba\\(34\\,32\\,31\\,\\.35\\)\\]:focus-within": 1,
+   "[tailwind] @layer utilities .focus-within\\:ring-2:focus-within": 1,
+   "[tailwind] @layer utilities .focus-within\\:ring-ink\\/40:focus-within": 1,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .focus-within\\:ring-ink\\/40:focus-within": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:scale-110:hover": 3,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:shadow-\\[0_4px_14px_rgba\\(17\\,17\\,17\\,\\.06\\)\\]:hover": 1,
+   "[tailwind] @layer utilities .focus\\:ring-3:focus": 1,
+   "[tailwind] @layer utilities .focus\\:ring-ink\\/10:focus": 1,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .focus\\:ring-ink\\/10:focus": 1,
+   "[tailwind] @layer utilities .focus\\:ring-white\\/15:focus": 1,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .focus\\:ring-white\\/15:focus": 1,
+   "[tailwind] @layer utilities .focus\\:outline-none:focus": 1,
+   "[tailwind] @layer utilities .active\\:scale-90:active": 3,
+   "[tailwind] @layer utilities @media (min-width: 40rem) .sm\\:scale-100": 3,
+   "[tailwind] @layer utilities @media (min-width: 64rem) .lg\\:translate-x-0": 1,
+   "[tailwind] @layer utilities @media (min-width: 64rem) .lg\\:backdrop-blur-none": 1,
+   "[tailwind] @layer utilities .\\[\\&\\>\\*\\]\\:\\!scale-100 > *": 3,
+   "[app] :root": 4,
+   "[app] @media (max-width: 1023.98px) body:has([data-tabbar])": 2,
+   "[app] .chamfer": 1,
+   "[app] .kh-hero-card": 1,
+   "[app] @media (min-width: 640px) .kh-hero-card": 1,
+   "[app] .chamfer-top": 1,
+   "[skins] html[data-app-theme=\"dark\"]": 21,
+   "[skins] @media (prefers-color-scheme: dark) html[data-app-theme=\"system\"]": 21,
+   "[skins] html[data-app-theme] .kh-light, html[data-app-theme] [class~=\"bg-black\"], html[data-app-theme] [class*=\"bg-black/\"]": 10,
+   "[skins] html[data-app-theme] :is([class~=\"bg-chartreuse\"], [class~=\"bg-kh-green\"], [class~=\"bg-kh-green/60\"], [class~=\"bg-tomato\"])": 2,
+   "[app] html[data-preview-strip]": 1,
+   "[app] .kh-sankey": 3,
+   "[skins] html[data-app-theme=\"dark\"] .kh-sankey": 3,
+   "[skins] @media (prefers-color-scheme: dark) html[data-app-theme=\"system\"] .kh-sankey": 3
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "selector": ".R0FIha_variable",
+   "context": [],
+   "properties": {
+    "--font-figtree": "\"Figtree\", \"Figtree Fallback\""
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "selector": ".hMGRVW_variable",
+   "context": [],
+   "properties": {
+    "--font-affairs": "\"affairs\", \"affairs Fallback\", Georgia, serif"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme"
+   ],
+   "properties": {
+    "--font-sans": "var(--font-figtree), ui-sans-serif, system-ui, sans-serif",
+    "--font-mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "--color-red-700": "#bf000f",
+    "--color-black": "#000",
+    "--color-white": "#fff",
+    "--spacing": ".25rem",
+    "--container-xs": "20rem",
+    "--container-xl": "36rem",
+    "--text-xs": ".8125rem",
+    "--text-xs--line-height": "1.45",
+    "--text-sm": ".9375rem",
+    "--text-sm--line-height": "1.5",
+    "--text-xl": "1.25rem",
+    "--text-xl--line-height": "calc(1.75 / 1.25)",
+    "--font-weight-normal": "400",
+    "--font-weight-medium": "500",
+    "--font-weight-semibold": "600",
+    "--font-weight-bold": "700",
+    "--tracking-wide": ".025em",
+    "--leading-tight": "1.25",
+    "--leading-snug": "1.375",
+    "--leading-relaxed": "1.625",
+    "--radius-sm": ".25rem",
+    "--radius-md": ".375rem",
+    "--radius-lg": ".5rem",
+    "--radius-xl": ".75rem",
+    "--radius-2xl": "1rem",
+    "--animate-ping": "ping 1s cubic-bezier(0, 0, .2, 1) infinite",
+    "--animate-pulse": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "--blur-md": "12px",
+    "--blur-3xl": "64px",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+    "--default-font-family": "var(--font-sans)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--font-heading": "var(--font-affairs), Georgia, serif",
+    "--color-ink": "#111",
+    "--color-body": "#4b4b50",
+    "--color-muted": "#6b6b70",
+    "--color-line": "#e6e6e3",
+    "--color-canvas": "#f6f6f4",
+    "--color-raised": "#eeeeeb",
+    "--color-cream": "#fbfaf7",
+    "--color-cobalt": "#2448e3",
+    "--color-cobalt-soft": "#e9edff",
+    "--color-chartreuse": "#d4e31f",
+    "--color-chartreuse-soft": "#f4f8cc",
+    "--color-tomato": "#f0532c",
+    "--color-tomato-soft": "#ffe8e1",
+    "--color-forest": "#13704a",
+    "--color-maroon": "#5a2238",
+    "--color-lavender": "#ebe3f1",
+    "--color-butter": "#f8f2cf",
+    "--color-chocolate": "#33190d",
+    "--color-apricot": "#eda36a",
+    "--color-tangerine": "#e8734f",
+    "--color-cobalt-deep": "#1f3aa6",
+    "--color-link": "#2448e3",
+    "--color-kh-green": "#d4e31f",
+    "--color-kh-orange": "#f0532c",
+    "--color-kh-yellow": "#f4f8cc",
+    "--color-alert": "#f2a516",
+    "--color-destructive": "#d93a1f"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme",
+    "@supports (color:lab(0% 0 0))"
+   ],
+   "properties": {
+    "--color-red-700": "lab(40.4273% 67.2623 53.7441)"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--kh-header": "calc(3rem + env(safe-area-inset-top))",
+    "--kh-tabbar-h": "0px",
+    "--kh-float-bottom": "max(1rem, env(safe-area-inset-bottom))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": "body:has([data-tabbar])",
+   "context": [
+    "@media (max-width: 1023.98px)"
+   ],
+   "properties": {
+    "--kh-tabbar-h": "calc(4rem + env(safe-area-inset-bottom))",
+    "--kh-float-bottom": "calc(var(--kh-tabbar-h) + .75rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".chamfer",
+   "context": [],
+   "properties": {
+    "--cut": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".kh-hero-card",
+   "context": [],
+   "properties": {
+    "--cut": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".kh-hero-card",
+   "context": [
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--cut": "22px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".chamfer-top",
+   "context": [],
+   "properties": {
+    "--cut": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--preview-strip-h": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": "html[data-preview-strip]",
+   "context": [],
+   "properties": {
+    "--preview-strip-h": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".kh-sankey",
+   "context": [],
+   "properties": {
+    "--flow": "#2448e3",
+    "--exit": "#e8734f",
+    "--ribbon": ".2"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": "html[data-app-theme=\"dark\"]",
+   "context": [],
+   "properties": {
+    "--color-ink": "#efeeea",
+    "--color-body": "#b6b6bb",
+    "--color-muted": "#8f8f95",
+    "--color-line": "#2c2c30",
+    "--color-canvas": "#1b1b1e",
+    "--color-raised": "#26262a",
+    "--color-white": "#141416",
+    "--color-cream": "#18181b",
+    "--color-link": "#8ea4ff",
+    "--color-cobalt": "#6f8bff",
+    "--color-cobalt-soft": "#1b2244",
+    "--color-chartreuse-soft": "#2a2e10",
+    "--color-kh-yellow": "#2a2e10",
+    "--color-tomato-soft": "#3b1d16",
+    "--color-forest-soft": "#10261b",
+    "--color-butter": "#2b2818",
+    "--color-lavender": "#26222c",
+    "--color-destructive": "#ff7a5c",
+    "--color-forest": "#3fbf86",
+    "--lightningcss-light": "",
+    "--lightningcss-dark": "initial"
+   },
+   "bin": "skins"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": "html[data-app-theme=\"system\"]",
+   "context": [
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--color-ink": "#efeeea",
+    "--color-body": "#b6b6bb",
+    "--color-muted": "#8f8f95",
+    "--color-line": "#2c2c30",
+    "--color-canvas": "#1b1b1e",
+    "--color-raised": "#26262a",
+    "--color-white": "#141416",
+    "--color-cream": "#18181b",
+    "--color-link": "#8ea4ff",
+    "--color-cobalt": "#6f8bff",
+    "--color-cobalt-soft": "#1b2244",
+    "--color-chartreuse-soft": "#2a2e10",
+    "--color-kh-yellow": "#2a2e10",
+    "--color-tomato-soft": "#3b1d16",
+    "--color-forest-soft": "#10261b",
+    "--color-butter": "#2b2818",
+    "--color-lavender": "#26222c",
+    "--color-destructive": "#ff7a5c",
+    "--color-forest": "#3fbf86",
+    "--lightningcss-light": "",
+    "--lightningcss-dark": "initial"
+   },
+   "bin": "skins"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": "html[data-app-theme] .kh-light, html[data-app-theme] [class~=\"bg-black\"], html[data-app-theme] [class*=\"bg-black/\"]",
+   "context": [],
+   "properties": {
+    "--color-ink": "#111",
+    "--color-body": "#4b4b50",
+    "--color-muted": "#6b6b70",
+    "--color-line": "#e6e6e3",
+    "--color-canvas": "#f6f6f4",
+    "--color-raised": "#eeeeeb",
+    "--color-white": "#fff",
+    "--color-cream": "#fbfaf7",
+    "--color-link": "#2448e3",
+    "--color-cobalt": "#2448e3"
+   },
+   "bin": "skins"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": "html[data-app-theme] :is([class~=\"bg-chartreuse\"], [class~=\"bg-kh-green\"], [class~=\"bg-kh-green/60\"], [class~=\"bg-tomato\"])",
+   "context": [],
+   "properties": {
+    "--color-ink": "#111",
+    "--color-white": "#fff"
+   },
+   "bin": "skins"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": "html[data-app-theme=\"dark\"] .kh-sankey",
+   "context": [],
+   "properties": {
+    "--flow": "#5f7cf2",
+    "--exit": "#d9653f",
+    "--ribbon": ".32"
+   },
+   "bin": "skins"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": "html[data-app-theme=\"system\"] .kh-sankey",
+   "context": [
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--flow": "#5f7cf2",
+    "--exit": "#d9653f",
+    "--ribbon": ".32"
+   },
+   "bin": "skins"
+  }
+ ],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:block))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b))))"
+   ],
+   "properties": {
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-translate-z": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-scale-z": "1",
+    "--tw-rotate-x": "initial",
+    "--tw-rotate-y": "initial",
+    "--tw-rotate-z": "initial",
+    "--tw-skew-x": "initial",
+    "--tw-skew-y": "initial",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-space-y-reverse": "0",
+    "--tw-divide-y-reverse": "0",
+    "--tw-border-style": "solid",
+    "--tw-gradient-position": "initial",
+    "--tw-gradient-from": "#0000",
+    "--tw-gradient-via": "#0000",
+    "--tw-gradient-to": "#0000",
+    "--tw-gradient-stops": "initial",
+    "--tw-gradient-via-stops": "initial",
+    "--tw-gradient-from-position": "0%",
+    "--tw-gradient-via-position": "50%",
+    "--tw-gradient-to-position": "100%",
+    "--tw-leading": "initial",
+    "--tw-font-weight": "initial",
+    "--tw-tracking": "initial",
+    "--tw-ordinal": "initial",
+    "--tw-slashed-zero": "initial",
+    "--tw-numeric-figure": "initial",
+    "--tw-numeric-spacing": "initial",
+    "--tw-numeric-fraction": "initial",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-color": "initial",
+    "--tw-shadow-alpha": "100%",
+    "--tw-inset-shadow": "0 0 #0000",
+    "--tw-inset-shadow-color": "initial",
+    "--tw-inset-shadow-alpha": "100%",
+    "--tw-ring-color": "initial",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-inset-ring-color": "initial",
+    "--tw-inset-ring-shadow": "0 0 #0000",
+    "--tw-ring-inset": "initial",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-outline-style": "solid",
+    "--tw-blur": "initial",
+    "--tw-brightness": "initial",
+    "--tw-contrast": "initial",
+    "--tw-grayscale": "initial",
+    "--tw-hue-rotate": "initial",
+    "--tw-invert": "initial",
+    "--tw-opacity": "initial",
+    "--tw-saturate": "initial",
+    "--tw-sepia": "initial",
+    "--tw-drop-shadow": "initial",
+    "--tw-drop-shadow-color": "initial",
+    "--tw-drop-shadow-alpha": "100%",
+    "--tw-drop-shadow-size": "initial",
+    "--tw-backdrop-blur": "initial",
+    "--tw-backdrop-brightness": "initial",
+    "--tw-backdrop-contrast": "initial",
+    "--tw-backdrop-grayscale": "initial",
+    "--tw-backdrop-hue-rotate": "initial",
+    "--tw-backdrop-invert": "initial",
+    "--tw-backdrop-opacity": "initial",
+    "--tw-backdrop-saturate": "initial",
+    "--tw-backdrop-sepia": "initial",
+    "--tw-duration": "initial",
+    "--tw-ease": "initial"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".-translate-x-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".-translate-x-full",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "-100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".translate-x-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".-translate-y-\\[calc\\(100\\%\\+10px\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(100% + 10px) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".scale-110",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "110%",
+    "--tw-scale-y": "110%",
+    "--tw-scale-z": "110%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".scale-125",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "125%",
+    "--tw-scale-y": "125%",
+    "--tw-scale-z": "125%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".-scale-x-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "calc(100% * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-1 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-1\\.5 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-2 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-2\\.5 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-3 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-3\\.5 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-4 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-5 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-6 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.space-y-8 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":where(.divide-y > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-divide-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".border-dashed",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-border-style": "dashed"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".bg-gradient-to-b",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".bg-gradient-to-t",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to top in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/45",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "#00000073"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/45",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-black) 45%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/45",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/55",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "#0000008c"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/55",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-black) 55%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/55",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/60",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "#0009"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/60",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-black) 60%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/60",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/70",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "#000000b3"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/70",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-black) 70%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-black\\/70",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-white",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "var(--color-white)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".from-75\\%",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from-position": "75%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-black\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "#0000001a"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-black\\/10",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-black) 10%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-black\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-black\\/20",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "#0003"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-black\\/20",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-black) 20%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-black\\/20",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-black\\/25",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "#00000040"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-black\\/25",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-black) 25%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-black\\/25",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-white\\/90",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "#ffffffe6"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-white\\/90",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-white) 90%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".via-white\\/90",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".to-transparent",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "transparent",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-5",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "calc(var(--spacing) * 5)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-6",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "calc(var(--spacing) * 6)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.1\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.02\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.02"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.2\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.2"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.05\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.05"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.06\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.06"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.6\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.6"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.08\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.08"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.15\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.15"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.25\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.25"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[1\\.65\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.65"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[14px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "14px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[18px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "18px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[19px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "19px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-\\[22px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "22px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-relaxed",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-relaxed)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-snug",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-snug)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".leading-tight",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-tight)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".font-bold",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-bold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".font-medium",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".font-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".font-semibold",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-semibold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[-0\\.01em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.01em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[-0\\.02em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.02em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[-0\\.03em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.03em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[-0\\.005em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.005em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[-0\\.5px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.5px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[-0\\.8px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.8px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[-0\\.025em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.025em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[-1px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-1px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[0\\.1em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": ".1em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[0\\.08em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": ".08em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[0\\.12em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": ".12em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-\\[0\\.16em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": ".16em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tracking-wide",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "var(--tracking-wide)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".tabular-nums",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-numeric-spacing": "tabular-nums"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[0_0_0_1px_var\\(--color-line\\)\\,0_2px_8px_rgba\\(34\\,32\\,31\\,\\.06\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 0 1px var(--tw-shadow-color,var(--color-line)), 0 2px 8px var(--tw-shadow-color,#22201f0f)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[0_1px_1px_rgba\\(17\\,17\\,17\\,\\.03\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 1px var(--tw-shadow-color,#11111108)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[0_1px_1px_rgba\\(17\\,17\\,17\\,\\.04\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 1px var(--tw-shadow-color,#1111110a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[0_1px_2px_rgba\\(17\\,17\\,17\\,\\.04\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 2px var(--tw-shadow-color,#1111110a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[0_1px_3px_rgba\\(0\\,0\\,0\\,\\.25\\)\\,0_0_0_\\.5px_rgba\\(0\\,0\\,0\\,\\.06\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 3px var(--tw-shadow-color,#00000040), 0 0 0 .5px var(--tw-shadow-color,#0000000f)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[0_2px_8px_rgba\\(0\\,0\\,0\\,\\.3\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 2px 8px var(--tw-shadow-color,#0000004d)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[0_8px_24px_rgba\\(17\\,17\\,17\\,\\.12\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 8px 24px var(--tw-shadow-color,#1111111f)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[0_8px_30px_rgba\\(17\\,17\\,17\\,\\.12\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 8px 30px var(--tw-shadow-color,#1111111f)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[0_24px_40px_-24px_rgba\\(0\\,0\\,0\\,0\\.18\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 24px 40px -24px var(--tw-shadow-color,#0000002e)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[inset_0_0_0_1px_rgba\\(34\\,32\\,31\\,\\.12\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "inset 0 0 0 1px var(--tw-shadow-color,#22201f1f)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[inset_0_0_0_1px_var\\(--color-line\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "inset 0 0 0 1px var(--tw-shadow-color,var(--color-line))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-\\[inset_0_1px_0_rgba\\(255\\,255\\,255\\,\\.12\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "inset 0 1px 0 var(--tw-shadow-color,#ffffff1f)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-lg",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 10px 15px -3px var(--tw-shadow-color,#0000001a), 0 4px 6px -4px var(--tw-shadow-color,#0000001a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 #0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".shadow-sm",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring, .ring-1",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset, ) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-4",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset, ) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-\\[1\\.5px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset, ) 0 0 0 calc(1.5px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-ink",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-ink)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-ink\\/15",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "#11111126"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-ink\\/15",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-ink) 15%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-white",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-white)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-white\\/80",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "#fffc"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-white\\/80",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-white) 80%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ring-offset-2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-offset-width": "2px",
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset, ) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".blur-3xl",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-blur": "blur(var(--blur-3xl))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".blur-\\[3px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-blur": "blur(3px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".grayscale",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-grayscale": "grayscale(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".saturate-\\[\\.6\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-saturate": "saturate(.6)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".backdrop-blur",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".backdrop-blur-md",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-md))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".duration-75",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": "75ms"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".duration-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".1s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".duration-200",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".2s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".duration-300",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".duration-500",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".5s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".ease-linear",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "linear"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".outline-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":is(:where(.group):hover .group-hover\\:translate-x-0\\.5)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * .5)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ":is(:where(.peer):checked ~ .peer-checked\\:translate-x-4)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * 4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus-within\\:shadow-\\[0_0_0_1px_rgba\\(34\\,32\\,31\\,\\.35\\)\\]:focus-within",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 0 1px var(--tw-shadow-color,#22201f59)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus-within\\:ring-2:focus-within",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset, ) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus-within\\:ring-ink\\/40:focus-within",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "#1116"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus-within\\:ring-ink\\/40:focus-within",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-ink) 40%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".hover\\:scale-110:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-scale-x": "110%",
+    "--tw-scale-y": "110%",
+    "--tw-scale-z": "110%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".hover\\:shadow-\\[0_4px_14px_rgba\\(17\\,17\\,17\\,\\.06\\)\\]:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-shadow": "0 4px 14px var(--tw-shadow-color,#1111110f)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus\\:ring-3:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset, ) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus\\:ring-ink\\/10:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "#1111111a"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus\\:ring-ink\\/10:focus",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-ink) 10%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus\\:ring-white\\/15:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "#ffffff26"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus\\:ring-white\\/15:focus",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab, var(--color-white) 15%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".focus\\:outline-none:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".active\\:scale-90:active",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "90%",
+    "--tw-scale-y": "90%",
+    "--tw-scale-z": "90%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".sm\\:scale-100",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 40rem)"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".lg\\:translate-x-0",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 64rem)"
+   ],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".lg\\:backdrop-blur-none",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 64rem)"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/28hbcie_z1n5j.css",
+   "selector": ".\\[\\&\\>\\*\\]\\:\\!scale-100 > *",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "Figtree",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "Figtree",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "Figtree",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "Figtree",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "Figtree",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "Figtree",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "Figtree",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "Figtree",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "\"Figtree Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "94.32%",
+   "descent-override": "24.82%",
+   "line-gap-override": "0%",
+   "size-adjust": "100.72%"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "affairs",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "affairs",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://kinhive.com/_next/static/immutable/chunks/1_qvg1v_m7w_2.css",
+   "font-family": "\"affairs Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "88.3%",
+   "descent-override": "22.89%",
+   "line-gap-override": "0%",
+   "size-adjust": "107.92%"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--animate-ping": {
+    "raw": "ping 1s cubic-bezier(0, 0, .2, 1) infinite",
+    "kind": "other"
+   },
+   "--animate-pulse": {
+    "raw": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "kind": "other"
+   },
+   "--blur-3xl": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--blur-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--color-alert": {
+    "raw": "#f2a516",
+    "kind": "color",
+    "value": "#f2a516"
+   },
+   "--color-apricot": {
+    "raw": "#eda36a",
+    "kind": "color",
+    "value": "#eda36a"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-body": {
+    "raw": "#b6b6bb",
+    "kind": "color",
+    "value": "#b6b6bb"
+   },
+   "--color-butter": {
+    "raw": "#2b2818",
+    "kind": "color",
+    "value": "#2b2818"
+   },
+   "--color-canvas": {
+    "raw": "#1b1b1e",
+    "kind": "color",
+    "value": "#1b1b1e"
+   },
+   "--color-chartreuse": {
+    "raw": "#d4e31f",
+    "kind": "color",
+    "value": "#d4e31f"
+   },
+   "--color-chartreuse-soft": {
+    "raw": "#2a2e10",
+    "kind": "color",
+    "value": "#2a2e10"
+   },
+   "--color-chocolate": {
+    "raw": "#33190d",
+    "kind": "color",
+    "value": "#33190d"
+   },
+   "--color-cobalt": {
+    "raw": "#6f8bff",
+    "kind": "color",
+    "value": "#6f8bff"
+   },
+   "--color-cobalt-deep": {
+    "raw": "#1f3aa6",
+    "kind": "color",
+    "value": "#1f3aa6"
+   },
+   "--color-cobalt-soft": {
+    "raw": "#1b2244",
+    "kind": "color",
+    "value": "#1b2244"
+   },
+   "--color-cream": {
+    "raw": "#18181b",
+    "kind": "color",
+    "value": "#18181b"
+   },
+   "--color-destructive": {
+    "raw": "#ff7a5c",
+    "kind": "color",
+    "value": "#ff7a5c"
+   },
+   "--color-forest": {
+    "raw": "#3fbf86",
+    "kind": "color",
+    "value": "#3fbf86"
+   },
+   "--color-forest-soft": {
+    "raw": "#10261b",
+    "kind": "color",
+    "value": "#10261b"
+   },
+   "--color-ink": {
+    "raw": "#efeeea",
+    "kind": "color",
+    "value": "#efeeea"
+   },
+   "--color-kh-green": {
+    "raw": "#d4e31f",
+    "kind": "color",
+    "value": "#d4e31f"
+   },
+   "--color-kh-orange": {
+    "raw": "#f0532c",
+    "kind": "color",
+    "value": "#f0532c"
+   },
+   "--color-kh-yellow": {
+    "raw": "#2a2e10",
+    "kind": "color",
+    "value": "#2a2e10"
+   },
+   "--color-lavender": {
+    "raw": "#26222c",
+    "kind": "color",
+    "value": "#26222c"
+   },
+   "--color-line": {
+    "raw": "#2c2c30",
+    "kind": "color",
+    "value": "#2c2c30"
+   },
+   "--color-link": {
+    "raw": "#8ea4ff",
+    "kind": "color",
+    "value": "#8ea4ff"
+   },
+   "--color-maroon": {
+    "raw": "#5a2238",
+    "kind": "color",
+    "value": "#5a2238"
+   },
+   "--color-muted": {
+    "raw": "#8f8f95",
+    "kind": "color",
+    "value": "#8f8f95"
+   },
+   "--color-raised": {
+    "raw": "#26262a",
+    "kind": "color",
+    "value": "#26262a"
+   },
+   "--color-red-700": {
+    "raw": "lab(40.4273% 67.2623 53.7441)",
+    "kind": "color",
+    "value": "#c10007"
+   },
+   "--color-tangerine": {
+    "raw": "#e8734f",
+    "kind": "color",
+    "value": "#e8734f"
+   },
+   "--color-tomato": {
+    "raw": "#f0532c",
+    "kind": "color",
+    "value": "#f0532c"
+   },
+   "--color-tomato-soft": {
+    "raw": "#3b1d16",
+    "kind": "color",
+    "value": "#3b1d16"
+   },
+   "--color-white": {
+    "raw": "#141416",
+    "kind": "color",
+    "value": "#141416"
+   },
+   "--container-xl": {
+    "raw": "36rem",
+    "kind": "dimension",
+    "value": "576px"
+   },
+   "--container-xs": {
+    "raw": "20rem",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--default-mono-font-family": {
+    "raw": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--font-mono": {
+    "raw": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+   },
+   "--font-weight-bold": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--font-weight-semibold": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--kh-float-bottom": {
+    "raw": "max(1rem, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--kh-header": {
+    "raw": "calc(3rem + 0px)",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--kh-tabbar-h": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--leading-relaxed": {
+    "raw": "1.625",
+    "kind": "number",
+    "value": 1.625
+   },
+   "--leading-snug": {
+    "raw": "1.375",
+    "kind": "number",
+    "value": 1.375
+   },
+   "--leading-tight": {
+    "raw": "1.25",
+    "kind": "number",
+    "value": 1.25
+   },
+   "--preview-strip-h": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--radius-2xl": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--radius-lg": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--radius-md": {
+    "raw": ".375rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--radius-sm": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--radius-xl": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--text-sm": {
+    "raw": ".9375rem",
+    "kind": "dimension",
+    "value": "15px"
+   },
+   "--text-sm--line-height": {
+    "raw": "1.5",
+    "kind": "number",
+    "value": 1.5
+   },
+   "--text-xl": {
+    "raw": "1.25rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--text-xl--line-height": {
+    "raw": "calc(1.75 / 1.25)",
+    "kind": "other"
+   },
+   "--text-xs": {
+    "raw": ".8125rem",
+    "kind": "dimension",
+    "value": "13px"
+   },
+   "--text-xs--line-height": {
+    "raw": "1.45",
+    "kind": "number",
+    "value": 1.45
+   },
+   "--tracking-wide": {
+    "raw": ".025em",
+    "kind": "dimension",
+    "value": "0.390625px"
+   }
+  },
+  "light": {
+   "--animate-ping": {
+    "raw": "ping 1s cubic-bezier(0, 0, .2, 1) infinite",
+    "kind": "other"
+   },
+   "--animate-pulse": {
+    "raw": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "kind": "other"
+   },
+   "--blur-3xl": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--blur-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--color-alert": {
+    "raw": "#f2a516",
+    "kind": "color",
+    "value": "#f2a516"
+   },
+   "--color-apricot": {
+    "raw": "#eda36a",
+    "kind": "color",
+    "value": "#eda36a"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-body": {
+    "raw": "#4b4b50",
+    "kind": "color",
+    "value": "#4b4b50"
+   },
+   "--color-butter": {
+    "raw": "#f8f2cf",
+    "kind": "color",
+    "value": "#f8f2cf"
+   },
+   "--color-canvas": {
+    "raw": "#f6f6f4",
+    "kind": "color",
+    "value": "#f6f6f4"
+   },
+   "--color-chartreuse": {
+    "raw": "#d4e31f",
+    "kind": "color",
+    "value": "#d4e31f"
+   },
+   "--color-chartreuse-soft": {
+    "raw": "#f4f8cc",
+    "kind": "color",
+    "value": "#f4f8cc"
+   },
+   "--color-chocolate": {
+    "raw": "#33190d",
+    "kind": "color",
+    "value": "#33190d"
+   },
+   "--color-cobalt": {
+    "raw": "#2448e3",
+    "kind": "color",
+    "value": "#2448e3"
+   },
+   "--color-cobalt-deep": {
+    "raw": "#1f3aa6",
+    "kind": "color",
+    "value": "#1f3aa6"
+   },
+   "--color-cobalt-soft": {
+    "raw": "#e9edff",
+    "kind": "color",
+    "value": "#e9edff"
+   },
+   "--color-cream": {
+    "raw": "#fbfaf7",
+    "kind": "color",
+    "value": "#fbfaf7"
+   },
+   "--color-destructive": {
+    "raw": "#d93a1f",
+    "kind": "color",
+    "value": "#d93a1f"
+   },
+   "--color-forest": {
+    "raw": "#13704a",
+    "kind": "color",
+    "value": "#13704a"
+   },
+   "--color-ink": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--color-kh-green": {
+    "raw": "#d4e31f",
+    "kind": "color",
+    "value": "#d4e31f"
+   },
+   "--color-kh-orange": {
+    "raw": "#f0532c",
+    "kind": "color",
+    "value": "#f0532c"
+   },
+   "--color-kh-yellow": {
+    "raw": "#f4f8cc",
+    "kind": "color",
+    "value": "#f4f8cc"
+   },
+   "--color-lavender": {
+    "raw": "#ebe3f1",
+    "kind": "color",
+    "value": "#ebe3f1"
+   },
+   "--color-line": {
+    "raw": "#e6e6e3",
+    "kind": "color",
+    "value": "#e6e6e3"
+   },
+   "--color-link": {
+    "raw": "#2448e3",
+    "kind": "color",
+    "value": "#2448e3"
+   },
+   "--color-maroon": {
+    "raw": "#5a2238",
+    "kind": "color",
+    "value": "#5a2238"
+   },
+   "--color-muted": {
+    "raw": "#6b6b70",
+    "kind": "color",
+    "value": "#6b6b70"
+   },
+   "--color-raised": {
+    "raw": "#eeeeeb",
+    "kind": "color",
+    "value": "#eeeeeb"
+   },
+   "--color-red-700": {
+    "raw": "lab(40.4273% 67.2623 53.7441)",
+    "kind": "color",
+    "value": "#c10007"
+   },
+   "--color-tangerine": {
+    "raw": "#e8734f",
+    "kind": "color",
+    "value": "#e8734f"
+   },
+   "--color-tomato": {
+    "raw": "#f0532c",
+    "kind": "color",
+    "value": "#f0532c"
+   },
+   "--color-tomato-soft": {
+    "raw": "#ffe8e1",
+    "kind": "color",
+    "value": "#ffe8e1"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--container-xl": {
+    "raw": "36rem",
+    "kind": "dimension",
+    "value": "576px"
+   },
+   "--container-xs": {
+    "raw": "20rem",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--default-mono-font-family": {
+    "raw": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--font-mono": {
+    "raw": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+   },
+   "--font-weight-bold": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--font-weight-semibold": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--kh-float-bottom": {
+    "raw": "max(1rem, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--kh-header": {
+    "raw": "calc(3rem + 0px)",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--kh-tabbar-h": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--leading-relaxed": {
+    "raw": "1.625",
+    "kind": "number",
+    "value": 1.625
+   },
+   "--leading-snug": {
+    "raw": "1.375",
+    "kind": "number",
+    "value": 1.375
+   },
+   "--leading-tight": {
+    "raw": "1.25",
+    "kind": "number",
+    "value": 1.25
+   },
+   "--preview-strip-h": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--radius-2xl": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--radius-lg": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--radius-md": {
+    "raw": ".375rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--radius-sm": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--radius-xl": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--text-sm": {
+    "raw": ".9375rem",
+    "kind": "dimension",
+    "value": "15px"
+   },
+   "--text-sm--line-height": {
+    "raw": "1.5",
+    "kind": "number",
+    "value": 1.5
+   },
+   "--text-xl": {
+    "raw": "1.25rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--text-xl--line-height": {
+    "raw": "calc(1.75 / 1.25)",
+    "kind": "other"
+   },
+   "--text-xs": {
+    "raw": ".8125rem",
+    "kind": "dimension",
+    "value": "13px"
+   },
+   "--text-xs--line-height": {
+    "raw": "1.45",
+    "kind": "number",
+    "value": 1.45
+   },
+   "--tracking-wide": {
+    "raw": ".025em",
+    "kind": "dimension",
+    "value": "0.390625px"
+   }
+  }
+ }
+}
