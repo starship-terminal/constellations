@@ -18042,6 +18042,68 @@
       }
     },
     {
+      "slug": "rows",
+      "name": "Rows",
+      "url": "https://rows.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A cream marketing site with plum ink and a yellow 2px-radius CTA: GT Flexa headlines, Output Sans body, banded sections, pricing cards",
+      "tags": [
+        "web",
+        "marketing",
+        "spreadsheet",
+        "cream",
+        "yellow-accent"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "public marketing, signed out. Login and signup routes on rows.com 404. The Superhuman Docs handoff is company SSO plus email behind reCAPTCHA and was not entered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/rows/README.md",
+      "tokens": "systems/rows/tokens.json",
+      "styleGuide": "systems/rows/style-guide.html",
+      "preview": {
+        "cover": "systems/rows/screenshots/product-light-default.png",
+        "icon": "systems/rows/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.white",
+            "text": "light.color.ink",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.display",
+          "core.fontFamily.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "rows.com marketing, 2026-11-19",
+        "durationMin": 90,
+        "notes": [
+          "computed styles on /product, /pricing, /features, /ai, /integrations, /templates, /about, /blog, /community, /docs and the marketing 404",
+          "no CSS custom properties on the loaded sheets",
+          "preview browser returned no screenshot frames; PNGs are headless Playwright on pages that loaded without a Cloudflare challenge",
+          "login was not submitted"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "No standalone SVG icon set was lifted. The wordmark and social marks are artwork in the screenshots."
+      }
+    },
+    {
       "slug": "raycast-desktop",
       "name": "Raycast (desktop)",
       "url": "https://www.raycast.com",
