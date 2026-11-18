@@ -1290,6 +1290,12 @@
     "reason": "catalog.json describes an AI customer-service platform: shared inbox, Fin AI agent, helpdesk marketing, pricing, a help centre and changelog - the same product category as systems:front."
   },
   {
+    "referenceId": "systems:maze",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes user-research marketing: a warm page, Phonic display, and a blue login action."
+  },
+  {
     "referenceId": "systems:leonardo",
     "groupId": "web-categories",
     "labels": ["AI Tool"],

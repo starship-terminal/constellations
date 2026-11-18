@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 216,
-    "system_domains": 207,
-    "matched_domains": 177,
-    "missing_domains": 256,
+    "system_packages": 217,
+    "system_domains": 208,
+    "matched_domains": 178,
+    "missing_domains": 255,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2950,6 +2950,23 @@
         }
       ]
     },
+    "maze.co": {
+      "catalog": [
+        {
+          "name": "Maze",
+          "domain": "maze.co",
+          "id": 581
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "maze",
+          "name": "Maze",
+          "url": "https://maze.co",
+          "name_match": true
+        }
+      ]
+    },
     "openai.com": {
       "catalog": [
         {
@@ -3361,13 +3378,6 @@
         "name": "MasterClass",
         "domain": "masterclass.com",
         "id": 133
-      }
-    ],
-    "maze.co": [
-      {
-        "name": "Maze",
-        "domain": "maze.co",
-        "id": 581
       }
     ],
     "medium.com": [
