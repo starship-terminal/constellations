@@ -2574,8 +2574,8 @@
     457
    ],
    "description": "Collaborate with your team and clients to get things done",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kitchen",
    "notes": "",
    "batch": 9
   },

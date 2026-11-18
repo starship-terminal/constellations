@@ -1,0 +1,7 @@
+{
+  "_note": "Workspace screenshots show the capture account as member@example.com after live DOM redaction. example.com is the reserved documentation domain, not private data, allowed.",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["@example\\.com$"]
+  }
+}
