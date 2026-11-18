@@ -55,6 +55,10 @@ def complete_tile_set(ps, metas):
     if not indexes or indexes != list(range(len(indexes))):
         return False
     clips = [(m.get('capture') or {}).get('clip') if m else None for m in metas]
+    # No sidecars at all: publish the stitch and write no sidecar. A partial
+    # set, one tile measured and another not, stays rejected.
+    if all(m is None for m in metas):
+        return True
     if not clips or any(not c or not c.get('height') for c in clips) or clips[0].get('y') != 0:
         return False
     for prev, nxt in zip(clips, clips[1:]):
@@ -68,7 +72,8 @@ def complete_tile_set(ps, metas):
             intended = doc['height']
             break
     # A single tile is a partial set unless it records the page it covers.
-    # Two or more contiguous tiles from y=0 are the completed set.
+    # Two or more contiguous tiles from y=0 are the completed set when no
+    # tile recorded a page height. A recorded height must be met.
     if intended is None:
         return len(clips) > 1
     return abs(covered - intended) <= 1
