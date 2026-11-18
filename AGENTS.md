@@ -36,7 +36,7 @@ in the web/ app, and app/ covers the same stores plus research;
 ```
 catalog.json            index of every systems/ package: slug, platform, tags,
                         goodFor, preview paths, capture provenance
-systems/<slug>/         the packages (160). Standard parts:
+systems/<slug>/         the packages (192). Standard parts:
   README.md               Brief (generated) + what was captured + Health (generated)
   tokens.json             every value, evidence-labelled
   DESIGN.md               generated export, one theme, no provenance

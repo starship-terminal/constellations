@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 191,
-    "system_domains": 182,
-    "matched_domains": 152,
-    "missing_domains": 281,
+    "system_packages": 192,
+    "system_domains": 183,
+    "matched_domains": 153,
+    "missing_domains": 280,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2508,6 +2508,23 @@
         }
       ]
     },
+    "leonardo.ai": {
+      "catalog": [
+        {
+          "name": "Leonardo.Ai",
+          "domain": "leonardo.ai",
+          "id": 922
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "leonardo",
+          "name": "Leonardo.Ai",
+          "url": "https://leonardo.ai",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2964,13 +2981,6 @@
         "name": "Lemon Squeezy",
         "domain": "lemonsqueezy.com",
         "id": 321
-      }
-    ],
-    "leonardo.ai": [
-      {
-        "name": "Leonardo.Ai",
-        "domain": "leonardo.ai",
-        "id": 922
       }
     ],
     "limitless.ai": [

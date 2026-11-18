@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_133 of 191 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_134 of 192 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -245,6 +245,16 @@ Access: signed out (every surface captured is public; the product sits at app.gr
 Access: signed out (every captured surface is public; sign-in, plan checkout, the help centre and account surfaces were link-observed only and never opened)
 - auth.hbomax.com sign-in, plan selection and checkout, help.hbomax.com and every account surface were observed as links only and never opened; no form was submitted and no trial or plan was started
 - carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
+
+## [Leonardo.Ai](../systems/leonardo) — `leonardo`
+Access: read-only (marketing pages, the signed-out app shell, public Blueprints, the login card and the docs getting-started page are public; Library, account, generation, checkout, API keys and OAuth were never entered; Start now, Subscribe, Log in, Generate and the provider buttons were measured where they painted, never followed; the prompt was filled and cleared; the consent overlay was hidden, never answered)
+- Library and other account routes redirect to https://app.leonardo.ai/auth/login — an authenticated boundary never reached
+- Generate on the signed-out prompt composer at https://app.leonardo.ai/ was measured and not submitted
+- Subscribe on https://leonardo.ai/pricing hands off to the app; checkout was not entered
+- OAuth at https://app.leonardo.ai/auth/login (Canva, Apple, Google, Microsoft) and Continue with Email were measured at rest, never followed; the email form and Turnstile were not submitted
+- API keys and the API console sit behind the account; https://leonardo.ai/api and the public docs page were captured, the console was not
+- Team plans checkout at https://leonardo.ai/team-plans was not entered
+- Marketing nav controls (header, Pricing, Log in, Create, Start now) and the app rail, Sign up, Sign in and featured cards are in the screenshots and were not boxed on the measurement pass
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)
