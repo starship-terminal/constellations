@@ -243,9 +243,9 @@ Access: signed out (every captured surface is public; sign-in, plan checkout, th
 - carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
 
 ## [Lemni](../systems/lemni) — `lemni`
-Access: signed out (public marketing pages and the resting sign-in shell; no account created, no form submitted)
-- Sign-in submit and Continue with Google at https://lemni.com/signin (reached from https://lemni.com/signup, nav Continue, and pricing Try For Free). The resting shell was captured. The form was not submitted and Google was not clicked.
-- Authenticated product (agent builder, knowledge, actions, inbox, workplace, billing) behind https://lemni.com/signin. app.lemni.com, go.lemni.com and dashboard.lemni.com did not connect.
+Access: signed-in free account (email magic link at lemni.com/signin; Google unused). Public marketing plus the workplace app as the free trial shows it. Upgrade and payment were not followed.
+- Continue with Google at https://lemni.com/signin. Email magic link was used. Google was not clicked.
+- Upgrade and checkout at https://lemni.com/welcome/subscribe and the workplace sidebar Upgrade control. Captured at rest. Not pressed. No plan was bought.
 - Application form at https://www.lemni.com/company/apply. Not submitted.
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`

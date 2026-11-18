@@ -1,6 +1,6 @@
 # Lemni patterns
 
-How the public pages combine the controls in [components.md](components.md). Captured signed out on 2026-11-18 at 1440 and 390.
+How the pages combine the controls in [components.md](components.md). Public marketing and the signed-in free product, 2026-11-18, 1440 and 390.
 
 ## Marketing shell
 
@@ -48,12 +48,60 @@ Public documentation, not the signed-in product. A horizontal section row (Basic
 
 ## Sign-in boundary
 
-`https://lemni.com/signin` (reached from `/signup`, `/login`, nav Continue and Try For Free) is a separate React shell on the apex host. Light ground, system-ui, a 32 px title, a Google button, an email field, and a black Continue bar at 12 px radius. The resting page was captured at 1440 and 390. Continue, Continue with Google, and any submit were not used.
+`https://lemni.com/signin` (reached from `/signup`, `/login`, nav Continue and Try For Free) is a separate React shell on the apex host. Light ground, system-ui, a 32 px title, a Google button, an email field, and a black Continue bar at 12 px radius. Continue with Google was not used. Email Continue sends a magic link.
 
 ![Sign-in](screenshots/signin-light-default.png)
 
 ![Sign-in phone](screenshots/mobile-signin-light-default.png)
 
+## Onboarding
+
+After the magic link, `/welcome` asks for first and last name, `/welcome/space` creates a workplace, `/welcome/subscribe` is a paid plan, `/welcome/tutorial` is a video with Skip Tutorial. The plan page was captured. Upgrade was not pressed. Skip Tutorial opens the free workplace.
+
+![Subscribe](screenshots/app-subscribe-light-default.png)
+
+![Tutorial](screenshots/app-tutorial-light-default.png)
+
+## Workplace shell
+
+A 260 px `#f1f3f4` sidebar (Inbox, Assigned, Agents, Knowledge, Behavior, Actions, Settings), a free-trial Upgrade card, Tutorials and Docs tiles. The product is light-only. Phone inbox shows the thread list; the hamburger opens the same nav. Agents on a 390-wide viewport shows "Please use Lemni on desktop."
+
+![Inbox](screenshots/app-inbox-light-default.png)
+
+![Phone nav](screenshots/mobile-app-inbox-light-nav-open.png)
+
+![Phone desktop gate](screenshots/mobile-app-agents-light-default.png)
+
+## Agent builder
+
+Stock agents (Webshop Support and four others) sit Disabled. The right column lists Enabled and Suggested actions. Enable Agent was not pressed. The centre pane can sit on a spinner while the agent body loads.
+
+![Agents](screenshots/app-agents-light-default.png)
+
+## Knowledge
+
+Datasets (General, Gmail, Shopify, Stripe, Hubspot) and an empty drop zone. Add Webpage and Upload File were not used.
+
+![Knowledge](screenshots/app-knowledge-light-default.png)
+
+## Actions store
+
+A searchable grid of action cards plus a Code actions Create control. Create and Install were not pressed.
+
+![Actions](screenshots/app-actions-light-default.png)
+
+## Empty inbox
+
+No threads todo, Filter and Sort at rest, and a four-step setup list. Invite and Add Webpages And Files were not pressed. A Reconnecting toast can sit over the page on this client.
+
+## Workplace settings
+
+`?workspaceSettings=members` opens a dialog on a white 80% overlay: Members, Details, Connections, Usage, Plan, About. The members list shows the owner. Invite was not sent. `?settings=profile` opens Account (name, email, avatar). Fields were not edited.
+
+![Members](screenshots/app-workspace-settings-light-default.png)
+
+![Account](screenshots/app-profile-light-default.png)
+
 ## What is not a pattern here
 
-Empty, loading and error states do not appear on the public pages. There is no search, no filter rail, no data table, no destructive confirm, and no onboarding outside the sign-in wall. The application form at `/company/apply` was not submitted. `community.lemni.com` returned an empty body. `app.lemni.com`, `go.lemni.com` and `dashboard.lemni.com` did not connect.
+Error and destructive confirm were not shown. The application form at `/company/apply` was not submitted. `community.lemni.com` returned an empty body. Checkout behind Upgrade was not opened.

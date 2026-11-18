@@ -56,7 +56,7 @@
      "h": 30
     },
     {
-     "t": "Community\n\n↗",
+     "t": "Community\n\n\u2197",
      "x": 822,
      "y": 10,
      "w": 91,
@@ -132,7 +132,7 @@
      "h": 30
     },
     {
-     "t": "Community\n\n↗",
+     "t": "Community\n\n\u2197",
      "x": 822,
      "y": 10,
      "w": 91,
@@ -208,7 +208,7 @@
      "h": 30
     },
     {
-     "t": "Community\n\n↗",
+     "t": "Community\n\n\u2197",
      "x": 822,
      "y": 10,
      "w": 91,
@@ -249,7 +249,7 @@
    "inputs": [
     {
      "type": "email",
-     "ph": "Email…",
+     "ph": "Email\u2026",
      "x": 540,
      "y": 518,
      "w": 360,
@@ -446,7 +446,7 @@
    "inputs": [
     {
      "type": "email",
-     "ph": "Email…",
+     "ph": "Email\u2026",
      "x": 20,
      "y": 490,
      "w": 350,
@@ -470,6 +470,59 @@
      "h": 21
     }
    ]
+  },
+  "app-inbox-1440": {
+   "vw": 1440,
+   "vh": 900,
+   "scrollH": 900,
+   "bodyBg": "rgb(246, 246, 248)",
+   "bodyColor": "rgb(0, 0, 0)",
+   "sidebar": {
+    "w": 260,
+    "bg": "rgb(241, 243, 244)",
+    "font": "system-ui 13px"
+   },
+   "nav": null,
+   "h1": null,
+   "footer": null,
+   "inputs": [],
+   "links": []
+  },
+  "app-settings-1440": {
+   "vw": 1440,
+   "vh": 900,
+   "scrollH": 900,
+   "bodyBg": "rgb(246, 246, 248)",
+   "overlay": {
+    "bg": "rgba(255, 255, 255, 0.8)",
+    "w": 1440,
+    "h": 900
+   },
+   "nav": null,
+   "h1": null,
+   "footer": null,
+   "inputs": [
+    {
+     "type": "email",
+     "ph": "name@myworkspace.com",
+     "w": 461,
+     "h": 28,
+     "radius": "8px"
+    }
+   ],
+   "links": []
+  },
+  "app-inbox-390": {
+   "vw": 390,
+   "vh": 844,
+   "scrollH": 844,
+   "bodyBg": "rgb(246, 246, 248)",
+   "note": "Inbox list plus setup column peek; hamburger opens the workplace nav.",
+   "nav": null,
+   "h1": null,
+   "footer": null,
+   "inputs": [],
+   "links": []
   }
  }
 }

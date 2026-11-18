@@ -1,8 +1,8 @@
 {
-  "_note": "Public marketing copy. visitor@example.com is the capture's own placeholder typed into the sign-in field and then cleared. support@lemni.com and any other @lemni.com address is published on the site.",
+  "_note": "Public marketing copy. visitor@example.com is the capture's own placeholder typed into the sign-in field and then cleared. support@lemni.com and any other @lemni.com address is published on the site. name@myworkspace.com is the invite-field placeholder. lemnl.com is an OCR miss of lemni.com.",
   "ocr": {
     "emails": true,
-    "email_allow": ["@example\\.com$", "@lemni\\.com$", "@lemni\\.ai$", "@acme\\.com$", "@apple\\.com$", "@yahoo\\.co\\.jp$", "@krijnrijshouwer\\.com$"]
+    "email_allow": ["@example\\.com$", "@lemni\\.com$", "@lemni\\.ai$", "@lemnl\\.com$", "@acme\\.com$", "@apple\\.com$", "@yahoo\\.co\\.jp$", "@krijnrijshouwer\\.com$", "@agentmail\\.to$", "@myworkspace\\.com$"]
   },
   "wrap_ignore": [
     "screenshots/mobile-docs-light-full.png",
