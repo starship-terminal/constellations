@@ -4488,6 +4488,97 @@
    }
   },
   {
+   "slug": "lemonsqueezy",
+   "name": "Lemon Squeezy",
+   "url": "https://www.lemonsqueezy.com",
+   "category": "finance",
+   "platform": "web",
+   "goodFor": "A merchant-of-record marketing site winding down onto Stripe: Webflow Client-First, a purple-600 hero (#5423e7), a yellow shutdown banner (#ffc233), 40px white pills, Circular Pro Book display and Inter UI, plus an 8px-radius auth card in the same purple",
+   "tags": [
+    "web",
+    "payments",
+    "merchant-of-record",
+    "subscriptions",
+    "webflow",
+    "light",
+    "pills",
+    "marketing",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed-in pass attempted (email/password). The address was not registered. New store signups are closed: business-intent submits to a Stripe Managed Payments recommendation. Get started, Google, Twitter, bank connect and payout KYC were not followed. Merchant dashboard routes bounce to login. Customer order portal login was opened and not submitted.",
+   "themes": ["light"],
+   "widths": [1440, 390],
+   "entry": "systems/lemonsqueezy/README.md",
+   "tokens": "systems/lemonsqueezy/tokens.json",
+   "styleGuide": "systems/lemonsqueezy/style-guide.html",
+   "preview": {
+    "cover": "systems/lemonsqueezy/screenshots/home-light-default.png",
+    "icon": "systems/lemonsqueezy/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.raised",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.accent",
+      "border": "light.border.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.sans",
+     "core.font.family.mono"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "www.lemonsqueezy.com (Webflow), docs.lemonsqueezy.com (Mintlify) and auth.lemonsqueezy.com in headless Chromium, desktop 1440x900 and a 390x844 mobile pass, on 2026-11-18. Colour ramps read from the cross-origin stylesheet :root. Component styles computed on the live DOM. Consent overlays hidden, never answered. Business-intent was submitted with a testing name; Get started was not followed. A failed merchant login was submitted to capture the error. Google and Twitter OAuth were not followed.",
+    "timestamp": "2026-11-18T12:00:00Z",
+    "harness": "Grok Build",
+    "model": "grok-4.7",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/help",
+     "/about",
+     "/blog/saying-goodbye-to-lemon-squeezy",
+     "/privacy",
+     "/terms",
+     "/creators-guide",
+     "/why-did-lemon-squeeezy-charge-me",
+     "/features (404)",
+     "docs.lemonsqueezy.com/",
+     "docs.lemonsqueezy.com/help",
+     "docs.lemonsqueezy.com/api",
+     "docs.lemonsqueezy.com/migration",
+     "auth.lemonsqueezy.com/login",
+     "auth.lemonsqueezy.com/register",
+     "auth.lemonsqueezy.com/signup/business-intent",
+     "auth.lemonsqueezy.com/signup/smp",
+     "app.lemonsqueezy.com/my-orders/login",
+     "mobile / /pricing /help docs login smp"
+    ],
+    "gaps": [
+     "the signed-in merchant dashboard at app.lemonsqueezy.com (products, orders, subscriptions, customers, discounts, affiliates, payouts, analytics, settings) was not opened: new store signups are closed, the email was not already registered, and those routes bounce to auth.lemonsqueezy.com/login",
+     "Stripe Managed Payments onboarding behind Get started on https://auth.lemonsqueezy.com/signup/smp was stopped (Stripe onboarding / take-payments stop)",
+     "Google and Twitter OAuth on https://auth.lemonsqueezy.com/login were measured as buttons and never followed",
+     "the password reset form at https://auth.lemonsqueezy.com/password/reset was not opened",
+     "the customer order portal magic-link on https://app.lemonsqueezy.com/my-orders/login was opened and not submitted",
+     "Stripe Managed Payments signup at https://dashboard.stripe.com/register/managed_payments and https://stripe.com/managed-payments were not opened; they are a different product",
+     "checkout and purchase are not on the public marketing pages and were not opened",
+     "the docs search dialog on https://docs.lemonsqueezy.com/help was screenshotted and not measured; no query was typed",
+     "CAPTCHA, phone verify and payout KYC did not appear"
+    ],
+    "date": "2026-11-18",
+    "version": "public site as of 2026-11-18 (shutdown banner: 31 March 2027; new store signups closed)",
+    "durationMin": 150,
+    "pr": "https://github.com/starship-terminal/constellations/pull/640"
+   }
+  },
+  {
    "slug": "coinbase",
    "name": "Coinbase",
    "url": "https://www.coinbase.com/en-sg",
