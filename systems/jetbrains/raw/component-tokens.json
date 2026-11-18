@@ -1,0 +1,627 @@
+{
+ "_about": "Rescui tokens declared on jetbrains.com stylesheets, resolved in raw/css-vars.json, plus measured control sizes from the public pages.",
+ "core": {
+  "color": {
+   "black": {
+    "var": "--rs-color-black",
+    "type": "color",
+    "description": "Rescui black, the near-black ink #19191c"
+   },
+   "white": {
+    "var": "--rs-color-white",
+    "type": "color",
+    "description": "Rescui white"
+   },
+   "grey": {
+    "5": {
+     "var": "--rs-color-grey-5",
+     "type": "color",
+     "description": "Rescui grey 5"
+    },
+    "10": {
+     "var": "--rs-color-grey-10",
+     "type": "color",
+     "description": "Rescui grey 10"
+    },
+    "20": {
+     "var": "--rs-color-grey-20",
+     "type": "color",
+     "description": "Rescui grey 20"
+    },
+    "30": {
+     "var": "--rs-color-grey-30",
+     "type": "color",
+     "description": "Rescui grey 30"
+    },
+    "40": {
+     "var": "--rs-color-grey-40",
+     "type": "color",
+     "description": "Rescui grey 40"
+    },
+    "50": {
+     "var": "--rs-color-grey-50",
+     "type": "color",
+     "description": "Rescui grey 50"
+    },
+    "60": {
+     "var": "--rs-color-grey-60",
+     "type": "color",
+     "description": "Rescui grey 60"
+    },
+    "70": {
+     "var": "--rs-color-grey-70",
+     "type": "color",
+     "description": "Rescui grey 70"
+    },
+    "80": {
+     "var": "--rs-color-grey-80",
+     "type": "color",
+     "description": "Rescui grey 80"
+    },
+    "90": {
+     "var": "--rs-color-grey-90",
+     "type": "color",
+     "description": "Rescui grey 90"
+    },
+    "95": {
+     "var": "--rs-color-grey-95",
+     "type": "color",
+     "description": "Rescui grey 95"
+    }
+   },
+   "primary": {
+    "light": {
+     "var": "--rs-color-primary-light-theme",
+     "type": "color",
+     "description": "Brand purple on light pages"
+    },
+    "light-dim": {
+     "var": "--rs-color-primary-dim-light-theme",
+     "type": "color"
+    },
+    "light-fog": {
+     "var": "--rs-color-primary-fog-light-theme",
+     "type": "color"
+    },
+    "dark": {
+     "var": "--rs-color-primary-dark-theme",
+     "type": "color",
+     "description": "Brand purple on dark pages"
+    },
+    "dark-dim": {
+     "var": "--rs-color-primary-dim-dark-theme",
+     "type": "color"
+    },
+    "dark-fog": {
+     "var": "--rs-color-primary-fog-dark-theme",
+     "type": "color"
+    }
+   },
+   "pink": {
+    "value": "#f31199",
+    "type": "color",
+    "source": "measured css custom property --main-page-pink on home ._page",
+    "description": "Home campaign pink"
+   },
+   "danger": {
+    "light": {
+     "var": "--rs-color-danger-light-theme",
+     "type": "color"
+    },
+    "dark": {
+     "var": "--rs-color-danger-dark-theme",
+     "type": "color"
+    }
+   },
+   "danger_bg": {
+    "light": {
+     "var": "--rs-color-danger-bg-light-theme",
+     "type": "color"
+    },
+    "dark": {
+     "var": "--rs-color-danger-bg-dark-theme",
+     "type": "color"
+    }
+   },
+   "success": {
+    "var": "--rs-color-success",
+    "type": "color"
+   },
+   "success_bg": {
+    "var": "--rs-color-success-bg",
+    "type": "color"
+   },
+   "warning": {
+    "var": "--rs-color-warning",
+    "type": "color"
+   },
+   "warning_bg": {
+    "var": "--rs-color-warning-bg",
+    "type": "color"
+   },
+   "black-alpha": {
+    "5": {
+     "var": "--rs-color-black-t5",
+     "type": "color"
+    },
+    "10": {
+     "var": "--rs-color-black-t10",
+     "type": "color"
+    },
+    "20": {
+     "var": "--rs-color-black-t20",
+     "type": "color"
+    },
+    "30": {
+     "var": "--rs-color-black-t30",
+     "type": "color"
+    },
+    "40": {
+     "var": "--rs-color-black-t40",
+     "type": "color"
+    },
+    "50": {
+     "var": "--rs-color-black-t50",
+     "type": "color"
+    },
+    "60": {
+     "var": "--rs-color-black-t60",
+     "type": "color"
+    },
+    "70": {
+     "var": "--rs-color-black-t70",
+     "type": "color"
+    },
+    "80": {
+     "var": "--rs-color-black-t80",
+     "type": "color"
+    },
+    "90": {
+     "var": "--rs-color-black-t90",
+     "type": "color"
+    },
+    "95": {
+     "var": "--rs-color-black-t95",
+     "type": "color"
+    }
+   },
+   "white-alpha": {
+    "5": {
+     "var": "--rs-color-white-t5",
+     "type": "color"
+    },
+    "10": {
+     "var": "--rs-color-white-t10",
+     "type": "color"
+    },
+    "20": {
+     "var": "--rs-color-white-t20",
+     "type": "color"
+    },
+    "30": {
+     "var": "--rs-color-white-t30",
+     "type": "color"
+    },
+    "40": {
+     "var": "--rs-color-white-t40",
+     "type": "color"
+    },
+    "50": {
+     "var": "--rs-color-white-t50",
+     "type": "color"
+    },
+    "60": {
+     "var": "--rs-color-white-t60",
+     "type": "color"
+    },
+    "70": {
+     "var": "--rs-color-white-t70",
+     "type": "color"
+    },
+    "80": {
+     "var": "--rs-color-white-t80",
+     "type": "color"
+    },
+    "90": {
+     "var": "--rs-color-white-t90",
+     "type": "color"
+    },
+    "95": {
+     "var": "--rs-color-white-t95",
+     "type": "color"
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "sans": {
+     "value": "\"JetBrains Sans\", Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "measured computed font-family on header links and the Explore Air button, jetbrains.com home 2026-11-18",
+     "description": "JetBrains Sans, the marketing UI face"
+    },
+    "ui": {
+     "value": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "measured computed font-family on account.jetbrains.com/login, the --rs-font-family-ui fallback stack"
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "measured font-weight 400 on body copy"
+    },
+    "medium": {
+     "value": 500,
+     "type": "fontWeight",
+     "source": "measured font-weight on nav and button labels where the sheet sets 500"
+    },
+    "bold": {
+     "value": 700,
+     "type": "fontWeight",
+     "source": "measured font-weight on display headings"
+    }
+   },
+   "size": {
+    "caption": {
+     "value": "13px",
+     "type": "dimension",
+     "source": "measured 13px captions on store cards"
+    },
+    "body": {
+     "value": "16px",
+     "type": "dimension",
+     "source": "measured 16px body and button label, --rs-text-2-font-size"
+    },
+    "lead": {
+     "value": "18px",
+     "type": "dimension",
+     "source": "measured 18px lead on product pages"
+    },
+    "title": {
+     "value": "24px",
+     "type": "dimension",
+     "source": "measured 24px section titles"
+    },
+    "display": {
+     "value": "48px",
+     "type": "dimension",
+     "source": "measured display size on the home hero"
+    }
+   },
+   "line-height": {
+    "body": {
+     "value": "24px",
+     "type": "dimension",
+     "source": "declared --rs-text-2-line-height 24px"
+    },
+    "tight": {
+     "value": "1.1",
+     "type": "number",
+     "source": "measured line-height on display headings"
+    }
+   }
+  },
+  "spacing": {
+   "2": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "measured 2px icon nudge"
+   },
+   "4": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "4px base step"
+   },
+   "8": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "8px step"
+   },
+   "12": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "12px step"
+   },
+   "16": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "16px step, header gutters"
+   },
+   "24": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "24px step"
+   },
+   "32": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "32px step"
+   },
+   "48": {
+    "value": "48px",
+    "type": "dimension",
+    "source": "48px section gap"
+   },
+   "64": {
+    "value": "64px",
+    "type": "dimension",
+    "source": "declared --rs-card-padding 64px on home cards"
+   }
+  },
+  "radius": {
+   "sm": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "measured 4px on small chips"
+   },
+   "md": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared --rs-card-border-radius 8px on tool cards"
+   },
+   "pill": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "measured 20px radius on the Explore Air pill button"
+   },
+   "round": {
+    "value": "999px",
+    "type": "dimension",
+    "source": "pill controls that resolve to a full capsule"
+   }
+  },
+  "borderWidth": {
+   "hairline": {
+    "value": "1px",
+    "type": "dimension",
+    "source": "measured 1px borders on outline buttons and cards"
+   },
+   "focus": {
+    "value": "3px",
+    "type": "dimension",
+    "source": "declared --rs-card-focus-border-width 3px"
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "page": {
+    "var": "--rs-color-white",
+    "type": "color",
+    "description": "Store and help page field"
+   },
+   "surface": {
+    "var": "--rs-color-grey-5",
+    "type": "color",
+    "description": "Raised grey wash, education and cards"
+   },
+   "raised": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "overlay": {
+    "var": "--rs-color-black-t40",
+    "type": "color"
+   },
+   "scrim": {
+    "var": "--rs-color-black-t50",
+    "type": "color"
+   }
+  },
+  "text": {
+   "primary": {
+    "value": "#343434",
+    "type": "color",
+    "source": "measured computed color rgb(52, 52, 52) on store body text, 2026-11-18"
+   },
+   "secondary": {
+    "var": "--rs-color-grey-60",
+    "type": "color"
+   },
+   "disabled": {
+    "var": "--rs-color-grey-40",
+    "type": "color"
+   },
+   "on-accent": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "link": {
+    "var": "--rs-color-primary-light-theme",
+    "type": "color"
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--rs-color-grey-20",
+    "type": "color"
+   },
+   "strong": {
+    "var": "--rs-color-grey-50",
+    "type": "color"
+   },
+   "focus": {
+    "var": "--rs-color-primary-light-theme",
+    "type": "color"
+   }
+  },
+  "accent": {
+   "var": "--rs-color-primary-light-theme",
+   "type": "color",
+   "description": "Light-theme brand purple #6b57ff"
+  },
+  "accent-hover": {
+   "var": "--rs-color-primary-dim-light-theme",
+   "type": "color"
+  },
+  "accent-pressed": {
+   "value": "#5646cc",
+   "type": "color",
+   "source": "derived: primary light pressed one step darker than #6b57ff; labelled derived because no pressed primary was measured on a light page"
+  },
+  "focus": {
+   "var": "--rs-color-primary-light-theme",
+   "type": "color"
+  },
+  "status": {
+   "success": {
+    "var": "--rs-color-success",
+    "type": "color"
+   },
+   "warning": {
+    "var": "--rs-color-warning",
+    "type": "color"
+   },
+   "danger": {
+    "var": "--rs-color-danger-light-theme",
+    "type": "color"
+   },
+   "info": {
+    "var": "--rs-color-primary-light-theme",
+    "type": "color"
+   }
+  }
+ },
+ "dark": {
+  "background": {
+   "page": {
+    "var": "--rs-color-black",
+    "type": "color",
+    "description": "Home campaign field #19191c"
+   },
+   "surface": {
+    "var": "--rs-color-grey-90",
+    "type": "color",
+    "description": "Home audience cards #303033"
+   },
+   "raised": {
+    "var": "--rs-color-grey-95",
+    "type": "color"
+   },
+   "overlay": {
+    "var": "--rs-color-white-t20",
+    "type": "color"
+   },
+   "scrim": {
+    "var": "--rs-color-black-t80",
+    "type": "color"
+   }
+  },
+  "text": {
+   "primary": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "secondary": {
+    "var": "--rs-color-white-t70",
+    "type": "color"
+   },
+   "disabled": {
+    "var": "--rs-color-white-t40",
+    "type": "color"
+   },
+   "on-accent": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "link": {
+    "var": "--rs-color-primary-dark-theme",
+    "type": "color"
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--rs-color-white-t20",
+    "type": "color"
+   },
+   "strong": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "focus": {
+    "var": "--rs-color-white",
+    "type": "color"
+   }
+  },
+  "accent": {
+   "var": "--rs-color-primary-dark-theme",
+   "type": "color",
+   "description": "Dark-theme brand purple #8473ff"
+  },
+  "accent-hover": {
+   "var": "--rs-color-primary-dim-dark-theme",
+   "type": "color"
+  },
+  "accent-pressed": {
+   "var": "--rs-color-primary-dim-dark-theme",
+   "type": "color"
+  },
+  "focus": {
+   "var": "--rs-color-white",
+   "type": "color"
+  },
+  "status": {
+   "success": {
+    "var": "--rs-color-success",
+    "type": "color"
+   },
+   "warning": {
+    "var": "--rs-color-warning",
+    "type": "color"
+   },
+   "danger": {
+    "var": "--rs-color-danger-dark-theme",
+    "type": "color"
+   },
+   "info": {
+    "var": "--rs-color-primary-dark-theme",
+    "type": "color"
+   }
+  }
+ },
+ "component": {
+  "button": {
+   "radius": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "measured border-radius on the Explore Air button"
+   },
+   "padding-x": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "measured horizontal padding on the Explore Air button"
+   },
+   "height": {
+    "value": "40px",
+    "type": "dimension",
+    "source": "measured height of size-M buttons"
+   },
+   "font-size": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "measured font-size on the Explore Air button"
+   }
+  },
+  "card": {
+   "radius": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared --rs-card-border-radius 8px on home tool cards"
+   },
+   "padding": {
+    "value": "64px",
+    "type": "dimension",
+    "source": "declared --rs-card-padding 64px"
+   }
+  },
+  "nav": {
+   "height": {
+    "value": "64px",
+    "type": "dimension",
+    "source": "measured sticky header height on jetbrains.com"
+   }
+  }
+ }
+}

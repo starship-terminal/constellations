@@ -2469,8 +2469,8 @@
     28
    ],
    "description": "Essential tools for software developers and teams",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/jetbrains",
    "notes": "",
    "batch": 9
   },
