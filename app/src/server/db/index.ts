@@ -504,11 +504,17 @@ export async function createResearchStore(directory: string) {
       await tx.execute("PRAGMA user_version = 39");
     }
     if (version < 40) {
-      // Same one-shot top-up, scoped to this package: a store already at
-      // v39 never re-seeds, so the IFTTT rows would never arrive.
+      // Same one-shot top-up, scoped to these packages: a store already at
+      // v39 never re-seeds, so the IFTTT and Intercom rows would never arrive.
       // Scoping keeps cleared labels on older packages cleared.
-      await seedNewCuratedCategories(tx, new Set(["systems:ifttt"]));
-      await seedNewCuratedMediaTerms(tx, new Set(["systems:ifttt"]));
+      await seedNewCuratedCategories(
+        tx,
+        new Set(["systems:ifttt", "systems:intercom"]),
+      );
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set(["systems:ifttt", "systems:intercom"]),
+      );
       await tx.execute("PRAGMA user_version = 40");
     }
     if (version < 43) {

@@ -1874,8 +1874,15 @@ test("version-thirty-eight stores gain the Hume rows, without touching their own
   ).toHaveLength(0);
 });
 
-test("version-thirty-nine stores gain the IFTTT rows, without touching their own labels", async () => {
+test("version-thirty-nine stores gain the IFTTT, Intercom, and Huddlekit rows, without touching their own labels", async () => {
   const { dir, store } = await open();
+  // A v39 store opened before these rows existed: drop them and rewind.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:intercom'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:intercom'",
+  );
   await store.client.execute(
     "DELETE FROM reference_categories WHERE reference_id='systems:ifttt'",
   );
@@ -1888,6 +1895,9 @@ test("version-thirty-nine stores gain the IFTTT rows, without touching their own
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:huddlekit'",
   );
+  // A user who cleared another package's labels: the scoped top-up must not
+  // resurrect them (an empty assignment reads as "never labelled" to the
+  // unscoped seed).
   await store.client.execute(
     "DELETE FROM reference_categories WHERE reference_id='systems:digg'",
   );
@@ -1928,6 +1938,17 @@ test("version-thirty-nine stores gain the IFTTT rows, without touching their own
   ).toBeGreaterThan(0);
   expect(
     media.filter((row) => row.referenceId === "systems:huddlekit").length,
+  ).toBeGreaterThan(0);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:intercom"),
+  ).toHaveLength(2);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:intercom"])).map(
+      (row) => row.label,
+    ),
+  ).toEqual(["Business", "Communication Tools"]);
+  expect(
+    media.filter((row) => row.referenceId === "systems:intercom").length,
   ).toBeGreaterThan(0);
   expect(
     categories.filter((row) => row.referenceId === "systems:digg"),

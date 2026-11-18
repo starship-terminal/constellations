@@ -14978,24 +14978,30 @@
       }
     },
     {
-      "slug": "ifttt",
-      "name": "IFTTT",
-      "url": "https://ifttt.com",
-      "category": "productivity",
+      "slug": "intercom",
+      "name": "Intercom",
+      "url": "https://www.intercom.com",
+      "category": "messaging",
       "platform": "web",
-      "goodFor": "Automation-platform and SaaS marketing design on a rounded, pill-first system: the ifttt.ai home (the 'Describe what you'd like to build' AI prompt hero, 'Start building' black pill, featured-Applets category tabs, floating service-icon canvas), the /explore gallery (a dark 'Automate X with Y' hero with a prompt card and service-chip cycler over the All/Applets/Services/Stories tab grid), the /plans pricing (the Monthly/Yearly switch, Free/Starter/Pro/Pro+ cards with a RECOMMENDED dark header and 'SAVE 30%' badge) and the service/applet/connect detail pages (Back pill, Share button + the site's own share modal, brand-coloured heroes, the giant Connect toggle). Sass-compiled Rails markup: the token layer is nearly absent (a few --card-color/--hero-unit/--cycle-* properties), so the system is literal hex/rgb() on classes harvested into core.palette.* plus measured component roles; Museo Sans Rounded (300/500/700/900 + italics) is the single brand face, proprietary and recorded by name only.",
+      "goodFor": "customer-service platform marketing design across three surfaces on one Tailwind v4 token layer: the signed-out i2y4 marketing site (a Fin 4 promo strip + white shared-header with the Product mega-menu, cream --body-bg ground, Saans hero, off-black primary CTAs that repaint helpdesk-blue #0007cb on hover, feature cards at 14px radius, the pricing billing toggle + helpdesk-tint savings badge + plan columns + FAQ accordion, and the contact-sales first-step form with quiet 2px-radius fields on an off-white fill), plus the help center's white IvoryLL shell and the changelog's older header__lite MediumLL surface. Declared layer: warm neutral ramp --color-white/-off-white/-cream/-chalk/-canvas/-linen/-clay, blueprint blues, product accents --color-fin #ff5600 / --color-helpdesk / --color-sales / --color-ecom / --color-voice-*, responsive --text-{style}-{breakpoint} scale with --font-sans/-serif/-mono stacks (Saans, Serrif, SaansMono + campaign faces), --radius-*/--container-*/--z-index-*, the full --ease-* Penner set, the unlayered --button-* state matrix and .theme-light nav roles; scoped .brand-i2y4 and .intercom-legacy palettes",
       "tags": [
         "web",
-        "productivity",
-        "automation",
+        "saas",
+        "customer-support",
+        "messaging",
+        "ai-agent",
         "marketing",
         "pricing",
+        "forms",
+        "docs",
+        "changelog",
+        "light",
         "signed-out",
         "design-tokens"
       ],
       "shape": "reference",
-      "captured": "2026-11-18",
-      "access": "signed out (every captured surface is public: ifttt.ai marketing home and ifttt.com's /explore(+services,+stories,+applets) gallery, /plans pricing, /twitter and /todoist service pages, an applet page, /connect/discord/instagram, /solutions/productivity and /solutions/smart-home, /mcp, /about, /careers, /partners, /terms and a made-up-route 404; 'Log in', 'Get started' and every /join path measured, never followed; the Applet 'Connect' install toggle measured, never pressed; the plan CTAs never followed to checkout; help.ifttt.com answers HTTP 403 to automation - a documented blocked boundary; platform.ifttt.com redirects to ifttt.ai - no separate public platform surface; the App Store/Play badges link off-site and were never followed; nothing was signed into, typed, searched, shared, bought or submitted; the only presses were local UI toggles - the detail pages' Share button (its own modal, closed with its X), the plans Monthly/Yearly billing switch, the featured category tabs, 'show more' expanders and the mobile hamburger)",
+      "captured": "2026-11-17",
+      "access": "signed out (every captured surface is public: www.intercom.com marketing routes, the /help/en/ help center and /changes/en changelog; app.intercom.com, /signup onboarding, purchase and the contact-sales form's later steps never entered - the Log in / Start free trial / Get started / Contact sales links were measured, never followed; the Next submit was measured with forced pseudo states, never pressed; no select option was chosen and the marketing checkbox was never ticked; nothing was signed into, searched, chosen, uploaded, bought or submitted; the only presses were local UI toggles - the nav mega-menu, the billing switch, a FAQ row, the select's own listbox and the mobile menu button)",
       "themes": [
         "light"
       ],
@@ -15003,75 +15009,69 @@
         1440,
         390
       ],
-      "entry": "systems/ifttt/README.md",
-      "tokens": "systems/ifttt/tokens.json",
-      "styleGuide": "systems/ifttt/style-guide.html",
+      "entry": "systems/intercom/README.md",
+      "tokens": "systems/intercom/tokens.json",
+      "styleGuide": "systems/intercom/style-guide.html",
       "preview": {
-        "cover": "systems/ifttt/screenshots/home-light-default.png",
-        "icon": "systems/ifttt/icon.png",
+        "cover": "systems/intercom/screenshots/home-light-default.png",
+        "icon": "systems/intercom/icon.png",
         "swatches": {
           "light": {
-            "page": "light.color.bg.page",
-            "surface": "light.component.planCard.recommendedBg",
-            "text": "light.color.text.body",
-            "muted": "light.color.text.muted",
-            "accent": "light.color.action.fill",
-            "border": "light.color.action.outline"
+            "page": "light.background.page",
+            "surface": "light.background.card",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent.helpdesk",
+            "border": "light.border.default"
           }
         },
         "fonts": [
-          "core.font.family.brand"
+          "core.fontFamily.saans",
+          "core.fontFamily.saansmono",
+          "core.fontFamily.ivoryll"
         ]
       },
       "source": "capture",
       "capture": {
         "method": "public-web",
-        "source": "ifttt.com and ifttt.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 @2x mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest across nine surfaces (the web-assets.ifttt.com/builds/assets/*.css bundles per section, the @font-face declarations, the handful of real custom properties, and every literal colour declaration). IFTTT paints one theme - there is no theme control on any surface - so light is the only shot set; the dark grounds on /explore and the service/applet/connect heroes are painted sections measured in place. Full-page shots are bounded at eight 14k px CSS chunks with the truncation in each sidecar (the explore galleries and terms run 18k-46k px and were tiled). BOUNDARY: sign-in, /join and every account surface never entered; the 'Connect' install toggle never pressed; plan CTAs never followed to checkout; help.ifttt.com returns 403 to automation on every route (the docs/help product is a blocked boundary, not a capture); platform.ifttt.com 301s to ifttt.ai; /pricing is not a live route (/plans is the pricing surface); App/Play store links are off-site and were never followed",
-        "timestamp": "2026-11-18T00:00:00Z",
+        "source": "www.intercom.com, intercom.com/help/en/ and intercom.com/changes/en in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass (plus 1920/1024 layout probes); computed styles and element crops from the live DOM, plus a stylesheet harvest (516 rules, 40 @font-face, 314 resolved root custom properties plus the .brand-i2y4, .intercom-legacy and [data-media-player] scoped sets resolved on their own probes). Every marketing page boots body.theme-light on the cream --body-bg ground; no dark surface exists (themeChecks in raw/css-vars.json). Pages taller than one GPU texture are shot in -full.partN.png chunks and stitched. BOUNDARY: app.intercom.com (the product behind Log in), /signup, purchase and the contact-sales form past step one were never entered",
+        "timestamp": "2026-11-17T20:00:00Z",
         "harness": "Devin",
         "model": "SWE-2 Max",
         "route": "public-web",
         "routes": [
-          "ifttt.ai/ (the marketing home - ifttt.com 301s here)",
-          "ifttt.com/explore",
-          "ifttt.com/explore/services",
-          "ifttt.com/explore/stories",
-          "ifttt.com/explore/applets",
-          "ifttt.com/plans (the pricing surface - /pricing is not a live route)",
-          "ifttt.com/twitter (service page, dark hero, share modal, 'show more')",
-          "ifttt.com/todoist (service page, light hero)",
-          "ifttt.com/applets/A38TqjpD-start-irobot-cleaning-when-you-leave-home (applet page, brand hero, Connect toggle)",
-          "ifttt.com/connect/discord/instagram (connect page)",
-          "ifttt.com/solutions/productivity",
-          "ifttt.com/solutions/smart-home",
-          "ifttt.com/mcp",
-          "ifttt.com/about",
-          "ifttt.com/careers",
-          "ifttt.com/partners",
-          "ifttt.com/terms",
-          "ifttt.com/this-page-does-not-exist-capture (404)",
-          "390px passes on home (with the hamburger's full-screen menu), explore, plans, a service page and the applet page",
-          "transient states: the share modal, the Monthly/Yearly switch repaint, a featured tab repaint, the prompt focus, 'show more', the mobile menu",
-          "BLOCKED: help.ifttt.com (HTTP 403 to automation on every route - the docs/help product), sign-in/join/account surfaces, the 'Connect' install action, checkout, platform.ifttt.com (redirects to ifttt.ai), the off-site app-store links"
+          "intercom.com/",
+          "intercom.com/pricing",
+          "intercom.com/helpdesk",
+          "intercom.com/helpdesk/inbox",
+          "intercom.com/helpdesk/copilot",
+          "intercom.com/customers",
+          "intercom.com/integrations",
+          "intercom.com/security",
+          "intercom.com/view-demos",
+          "intercom.com/contact-sales (first step only)",
+          "intercom.com/why-choose-intercom",
+          "intercom.com/enterprise",
+          "intercom.com/blog",
+          "intercom.com/help/en/",
+          "intercom.com/changes/en",
+          "the Product mega-menu, an opened pricing FAQ row, the company-size select listbox and the 390px nav sheet as transient states",
+          "BLOCKED: app.intercom.com (post-auth product, never entered), /signup onboarding, checkout, the contact-sales form's later steps"
         ],
         "gaps": [
-          "the signed-in product (Log in, Get started, /join, account surfaces) is a boundary - measured, never entered",
-          "the Applet 'Connect' toggle and any 'Connect' action are the install control - measured at rest, never pressed (installing is an account feature)",
-          "the plan cards' 'Get started' CTAs lead to checkout - measured, never followed",
-          "help.ifttt.com answers HTTP 403 to automation on every route - the help centre is a documented blocked boundary, not a capture",
-          "platform.ifttt.com redirects to ifttt.ai - no separate public platform surface exists",
-          "the App Store and Play Store badges link off-site (apps.apple.com, play.google.com) - external surfaces, out of scope",
-          "/pricing is not a live route; /plans is the pricing surface and a made-up route was captured as the product's 404",
-          "the search and prompt fields were clicked into for the focus look only, never queried or submitted - result surfaces are uncaptured",
-          "the share modal's 'Copy' was measured inside the opened modal, never pressed (a clipboard side effect); the social share icons were never followed",
-          "the explore galleries and terms run 18k-46k px tall - full-page shots are tiled and bounded at eight 14k px chunks, the bound recorded in each sidecar",
-          "Museo Sans Rounded is proprietary woff2 loaded by the site and not shipped; crops show it, the style guide falls back to a rounded system face",
+          "the signed-in product (app.intercom.com - inbox, tickets, reports) is a boundary: the Log in link was measured, never followed",
+          "trial onboarding (/signup), purchase and every conversion path past the marketing surface are boundaries, not captures",
+          "the contact-sales form was never advanced past its first step: Next was measured with CDP-forced pseudo states only, no select option was chosen and the marketing checkbox was never ticked",
+          "no dark theme exists on the public surface - no dark class, attribute or prefers-color-scheme repaint (themeChecks in raw/css-vars.json); tokens.json ships no dark set, evidence of absence not a gap",
+          "three header components (logo, nav-login, nav-cta) were measured on one pass and preserved on a later recapture that missed them - recorded as recaptureMissed provenance",
+          "Serrif is declared under .brand-i2y4 but no captured page painted it, so its tokens describe the declared stack not a rendered sample",
+          "the Saans/Serrif/SaansMono/MediumLL/IvoryLL faces are proprietary and not shipped; crops show them, the style guide falls back to system fonts",
           "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
-          "IFTTT paints one theme; no dark theme exists to tokenise - the dark grounds are painted sections recorded under light.component.dark"
+          "prefers-reduced-motion is only partially honoured on the probed pages - per-page results in raw/motion.json",
+          "animated sections (hero canvases, marquee rows) keep moving, so two captures of the same view can differ"
         ],
-        "durationMin": 240,
-        "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest and resolution, the screenshot pass, the measurement pass and the offline build",
-        "pr": "https://github.com/starship-terminal/constellations/pull/661"
+        "durationMin": 300,
+        "durationNote": "wall-clock across the capture sessions including reachability probes, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass (with selector fixes for the changelog entry, blog card and mobile sheet), icon/motion/layout probes and the offline build"
       }
     },
     {
@@ -18680,6 +18680,103 @@
       },
       "layoutGaps": {
         "icons/": "Zed's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "ifttt",
+      "name": "IFTTT",
+      "url": "https://ifttt.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Automation-platform and SaaS marketing design on a rounded, pill-first system: the ifttt.ai home (the 'Describe what you'd like to build' AI prompt hero, 'Start building' black pill, featured-Applets category tabs, floating service-icon canvas), the /explore gallery (a dark 'Automate X with Y' hero with a prompt card and service-chip cycler over the All/Applets/Services/Stories tab grid), the /plans pricing (the Monthly/Yearly switch, Free/Starter/Pro/Pro+ cards with a RECOMMENDED dark header and 'SAVE 30%' badge) and the service/applet/connect detail pages (Back pill, Share button + the site's own share modal, brand-coloured heroes, the giant Connect toggle). Sass-compiled Rails markup: the token layer is nearly absent (a few --card-color/--hero-unit/--cycle-* properties), so the system is literal hex/rgb() on classes harvested into core.palette.* plus measured component roles; Museo Sans Rounded (300/500/700/900 + italics) is the single brand face, proprietary and recorded by name only.",
+      "tags": [
+        "web",
+        "productivity",
+        "automation",
+        "marketing",
+        "pricing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (every captured surface is public: ifttt.ai marketing home and ifttt.com's /explore(+services,+stories,+applets) gallery, /plans pricing, /twitter and /todoist service pages, an applet page, /connect/discord/instagram, /solutions/productivity and /solutions/smart-home, /mcp, /about, /careers, /partners, /terms and a made-up-route 404; 'Log in', 'Get started' and every /join path measured, never followed; the Applet 'Connect' install toggle measured, never pressed; the plan CTAs never followed to checkout; help.ifttt.com answers HTTP 403 to automation - a documented blocked boundary; platform.ifttt.com redirects to ifttt.ai - no separate public platform surface; the App Store/Play badges link off-site and were never followed; nothing was signed into, typed, searched, shared, bought or submitted; the only presses were local UI toggles - the detail pages' Share button (its own modal, closed with its X), the plans Monthly/Yearly billing switch, the featured category tabs, 'show more' expanders and the mobile hamburger)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/ifttt/README.md",
+      "tokens": "systems/ifttt/tokens.json",
+      "styleGuide": "systems/ifttt/style-guide.html",
+      "preview": {
+        "cover": "systems/ifttt/screenshots/home-light-default.png",
+        "icon": "systems/ifttt/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.component.planCard.recommendedBg",
+            "text": "light.color.text.body",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.action.fill",
+            "border": "light.color.action.outline"
+          }
+        },
+        "fonts": [
+          "core.font.family.brand"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "ifttt.com and ifttt.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 @2x mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest across nine surfaces (the web-assets.ifttt.com/builds/assets/*.css bundles per section, the @font-face declarations, the handful of real custom properties, and every literal colour declaration). IFTTT paints one theme - there is no theme control on any surface - so light is the only shot set; the dark grounds on /explore and the service/applet/connect heroes are painted sections measured in place. Full-page shots are bounded at eight 14k px CSS chunks with the truncation in each sidecar (the explore galleries and terms run 18k-46k px and were tiled). BOUNDARY: sign-in, /join and every account surface never entered; the 'Connect' install toggle never pressed; plan CTAs never followed to checkout; help.ifttt.com returns 403 to automation on every route (the docs/help product is a blocked boundary, not a capture); platform.ifttt.com 301s to ifttt.ai; /pricing is not a live route (/plans is the pricing surface); App/Play store links are off-site and were never followed",
+        "timestamp": "2026-11-18T00:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "routes": [
+          "ifttt.ai/ (the marketing home - ifttt.com 301s here)",
+          "ifttt.com/explore",
+          "ifttt.com/explore/services",
+          "ifttt.com/explore/stories",
+          "ifttt.com/explore/applets",
+          "ifttt.com/plans (the pricing surface - /pricing is not a live route)",
+          "ifttt.com/twitter (service page, dark hero, share modal, 'show more')",
+          "ifttt.com/todoist (service page, light hero)",
+          "ifttt.com/applets/A38TqjpD-start-irobot-cleaning-when-you-leave-home (applet page, brand hero, Connect toggle)",
+          "ifttt.com/connect/discord/instagram (connect page)",
+          "ifttt.com/solutions/productivity",
+          "ifttt.com/solutions/smart-home",
+          "ifttt.com/mcp",
+          "ifttt.com/about",
+          "ifttt.com/careers",
+          "ifttt.com/partners",
+          "ifttt.com/terms",
+          "ifttt.com/this-page-does-not-exist-capture (404)",
+          "390px passes on home (with the hamburger's full-screen menu), explore, plans, a service page and the applet page",
+          "transient states: the share modal, the Monthly/Yearly switch repaint, a featured tab repaint, the prompt focus, 'show more', the mobile menu",
+          "BLOCKED: help.ifttt.com (HTTP 403 to automation on every route - the docs/help product), sign-in/join/account surfaces, the 'Connect' install action, checkout, platform.ifttt.com (redirects to ifttt.ai), the off-site app-store links"
+        ],
+        "gaps": [
+          "the signed-in product (Log in, Get started, /join, account surfaces) is a boundary - measured, never entered",
+          "the Applet 'Connect' toggle and any 'Connect' action are the install control - measured at rest, never pressed (installing is an account feature)",
+          "the plan cards' 'Get started' CTAs lead to checkout - measured, never followed",
+          "help.ifttt.com answers HTTP 403 to automation on every route - the help centre is a documented blocked boundary, not a capture",
+          "platform.ifttt.com redirects to ifttt.ai - no separate public platform surface exists",
+          "the App Store and Play Store badges link off-site (apps.apple.com, play.google.com) - external surfaces, out of scope",
+          "/pricing is not a live route; /plans is the pricing surface and a made-up route was captured as the product's 404",
+          "the search and prompt fields were clicked into for the focus look only, never queried or submitted - result surfaces are uncaptured",
+          "the share modal's 'Copy' was measured inside the opened modal, never pressed (a clipboard side effect); the social share icons were never followed",
+          "the explore galleries and terms run 18k-46k px tall - full-page shots are tiled and bounded at eight 14k px chunks, the bound recorded in each sidecar",
+          "Museo Sans Rounded is proprietary woff2 loaded by the site and not shipped; crops show it, the style guide falls back to a rounded system face",
+          "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+          "IFTTT paints one theme; no dark theme exists to tokenise - the dark grounds are painted sections recorded under light.component.dark"
+        ],
+        "durationMin": 240,
+        "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest and resolution, the screenshot pass, the measurement pass and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/661"
       }
     }
   ]
