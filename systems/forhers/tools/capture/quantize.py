@@ -47,12 +47,36 @@ def pixel_scale(meta):
     return png['width'] / clip['width'] if clip and png and clip.get('width') and png.get('width') else 1
 
 
+def tile_failures(tile_paths):
+    """Refuse a tile set whose parts are missing or already failed their own check.
+
+    A later part with the wrong width is cropped to the first part's width during
+    assembly, so the joined image can look consistent while a part recorded a failure.
+    Missing sidecars and a dimensionCheck other than pass are the same refusal."""
+    reasons = []
+    for f in tile_paths:
+        meta = sidecar_for(f)
+        if not meta:
+            reasons.append(f'{f.name}: missing sidecar')
+            continue
+        chk = (meta.get('dimensionCheck') or {}).get('status')
+        if chk != 'pass':
+            reasons.append(f'{f.name}: dimensionCheck is {chk!r}')
+    return reasons
+
+
 def stitched_sidecar(name, sheet, tile_paths):
     """Rebuild name.png.capture.json from the part tiles' sidecars, or None when any tile cannot vouch.
 
     Tile clips are CSS pixels, so the stitched clip stays in CSS pixels and the expected PNG size is
-    each clip times its pixel scale (a 2x capture is twice its clip). A tile with no sidecar or no clip
-    leaves the image without one: unmeasured shots are never marked as checked."""
+    each clip times its pixel scale (a 2x capture is twice its clip). A tile with no sidecar, no clip,
+    or a failed dimensionCheck leaves the image without a passing sidecar: a failed part is never
+    published as a fresh pass."""
+    failed = tile_failures(tile_paths)
+    if failed:
+        return {'screenshot': f'{name}.png', 'stitchedFrom': [f.name for f in tile_paths],
+                'dimensionCheck': {'status': 'fail', 'basis': 'stitchedParts',
+                                   'error': 'refused failed or missing tiles: ' + '; '.join(failed)}}
     parts = [sidecar_for(f) for f in tile_paths]
     if not parts or any(not p for p in parts):
         return None
@@ -87,25 +111,50 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
-    ims = [Image.open(f).convert('RGB') for _, f in ps]
+    tile_paths = [f for _, f in ps]
+    failed = tile_failures(tile_paths)
+    if failed:
+        # Do not join or publish a sheet built from a failed or missing tile.
+        print('  ! skipped', name, '; '.join(failed))
+        stale = RAW / f'{name}.png'
+        if stale.exists():
+            stale.unlink()
+            stale.with_name(stale.name + '.capture.json').unlink(missing_ok=True)
+        for pub in (OUT / f'{name}.png', OUT / f'{name}.png.capture.json'):
+            pub.unlink(missing_ok=True)
+        stitched[name] = False
+        continue
+    ims = [Image.open(f).convert('RGB') for f in tile_paths]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0
     for i in ims:
         sheet.paste(i, (0, y)); y += i.height
     sheet.save(RAW / f'{name}.png')
-    stitched[name] = stitched_sidecar(name, sheet, [f for _, f in ps])
+    side = stitched_sidecar(name, sheet, tile_paths)
+    if not side or (side.get('dimensionCheck') or {}).get('status') == 'fail':
+        print('  ! skipped', name, (side or {}).get('dimensionCheck', {}).get('error', 'unmeasured tiles'))
+        (RAW / f'{name}.png').unlink(missing_ok=True)
+        for pub in (OUT / f'{name}.png', OUT / f'{name}.png.capture.json'):
+            pub.unlink(missing_ok=True)
+        stitched[name] = False
+        continue
+    stitched[name] = side
     print('stitched', name, sheet.size)
 
 n = 0
 for f in sorted(RAW.glob('*.png')):
     if '.part' in f.name:
         continue
+    if stitched.get(f.stem) is False:
+        continue  # failed or missing tiles: nothing valid to publish
+    chk = (sidecar_for(f) or {}).get('dimensionCheck') or {}
     if f.stem not in stitched:
         # A failed rerun can leave an older PNG behind, and its sidecar says so: never publish it.
-        chk = (sidecar_for(f) or {}).get('dimensionCheck') or {}
         if chk.get('status') == 'fail':
             die(f'{f.name}: dimension check failed'
                 + (f" ({chk['error']})" if chk.get('error') else '') + ' — not publishing a failed capture')
+    elif chk.get('status') == 'fail' or (stitched.get(f.stem) or {}).get('dimensionCheck', {}).get('status') == 'fail':
+        die(f'{f.name}: a stitched part failed its dimension check — not publishing')
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
     out_side = OUT / f'{f.name}.capture.json'

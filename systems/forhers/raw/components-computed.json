@@ -74,7 +74,7 @@
      "z": "auto",
      "pos": "sticky",
      "rect": "1440x55@0,0",
-     "text": "The GLP-1 pill is here. ||Check it out ➜"
+     "text": "The GLP-1 pill is here. ||Check it out \u279c"
     }
    ],
    "hair-loss": [
@@ -134,14 +134,14 @@
      "z": "901",
      "pos": "fixed",
      "rect": "422x207@508,315",
-     "text": "Select your plan||TRY IT OUT||$25.00 / b"
+     "text": "Select your\u00a0plan||TRY IT OUT||$25.00 / b"
     },
     {
      "node": "div.popover-style__PopoverContent-sc-e53d14a4-3",
      "z": "901",
      "pos": "fixed",
      "rect": "633x712@403,29",
-     "text": "Important Safety Information||What is th"
+     "text": "Important Safety\u00a0Information||What is th"
     },
     {
      "node": "div.popover-style__PopoverScrim-sc-e53d14a4-2",
@@ -527,7 +527,7 @@
     "default": {
      "tag": "section",
      "classes": "_navigation-banner_1e874_11 _navigation-banner-transition_1e874_26 _banner-overhang_1e874_50 _sticky-behavior-transition_1e874_79",
-     "text": "Treat yourself to thicker hair - Try Hers →",
+     "text": "Treat yourself to thicker hair - Try Hers \u2192",
      "rect": {
       "x": 0,
       "y": 0,
@@ -1735,7 +1735,7 @@
    "url": "https://www.forhers.com/mental-health",
    "title": "Log in control",
    "group": "Header and site chrome",
-   "desc": "The \"Log in\" button/link; measured, never pressed — its menu and the account are hydration- and auth-gated.",
+   "desc": "The \"Log in\" button/link; measured, never pressed \u2014 its menu and the account are hydration- and auth-gated.",
    "selector": "GlobalNavigationLogin / Log in link"
   },
   "menu-toggle": {
@@ -2237,7 +2237,7 @@
     "default": {
      "tag": "h1",
      "classes": "sc-aXZVg wl-headline-style__HeadlineWrapper-sc-d7aed818-0 kNMRot gmYQQx",
-     "text": "The care you’ve always deserved",
+     "text": "The care you\u2019ve always deserved",
      "rect": {
       "x": 24,
       "y": -8978,
@@ -2323,239 +2323,20 @@
    "url": "https://www.forhers.com/",
    "title": "Hero headline",
    "group": "Home page (marketing stack)",
-   "desc": "\"The care you’ve always deserved\" — the IvarSoft serif hero.",
+   "desc": "\"The care you\u2019ve always deserved\" \u2014 the IvarSoft serif hero.",
    "selector": "first h1"
   },
   "bento-card": {
-   "states": {
-    "default": {
-     "tag": "a",
-     "classes": "simple-link-style__InternalLink-sc-f547addf-1 eCnpmd button-style__SimpleLink-sc-de21aabe-6 wl-hero-style__WLHeroCtaLink-sc-9cac5ed3-6",
-     "text": "Get started",
-     "rect": {
-      "x": 649.8,
-      "y": 426.7,
-      "w": 140.45,
-      "h": 48
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "140.453px",
-      "height": "48px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "22.4px",
-      "letterSpacing": "-0.176px",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "button.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5",
-       "size": "140.5x48.0",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
-       "bg": "rgb(197, 237, 130)",
-       "radius": "48px"
-      },
-      {
-       "node": "button::before.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5",
-       "size": "144.453pxx52px",
-       "border": "T:2px solid rgba(255, 255, 255, 0) | R:2px solid rgba(255, 255, 255, 0) | B:2px solid rgba(255, 255, 255, 0) | L:2px solid rgba(255, 255, 255, 0)",
-       "radius": "48px"
-      }
-     ],
-     "textStyle": {
-      "node": "span.sc-aXZVg.eyoLiW",
-      "text": "Get started",
-      "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "19.2px",
-      "fontWeight": "500",
-      "letterSpacing": "0.04px",
-      "color": "rgb(52, 60, 43)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/bento-card-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "a",
-     "classes": "simple-link-style__InternalLink-sc-f547addf-1 eCnpmd button-style__SimpleLink-sc-de21aabe-6 wl-hero-style__WLHeroCtaLink-sc-9cac5ed3-6",
-     "text": "Get started",
-     "rect": {
-      "x": 649.8,
-      "y": 426.7,
-      "w": 140.45,
-      "h": 48
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "140.453px",
-      "height": "48px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "22.4px",
-      "letterSpacing": "-0.176px",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "button.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5",
-       "size": "140.5x48.0",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
-       "bg": "rgb(157, 189, 103)",
-       "radius": "48px"
-      },
-      {
-       "node": "button::before.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5",
-       "size": "144.453pxx52px",
-       "border": "T:2px solid rgba(255, 255, 255, 0) | R:2px solid rgba(255, 255, 255, 0) | B:2px solid rgba(255, 255, 255, 0) | L:2px solid rgba(255, 255, 255, 0)",
-       "radius": "48px"
-      }
-     ],
-     "textStyle": {
-      "node": "span.sc-aXZVg.eyoLiW",
-      "text": "Get started",
-      "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "19.2px",
-      "fontWeight": "500",
-      "letterSpacing": "0.04px",
-      "color": "rgb(52, 60, 43)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/bento-card-hover.png",
-     "via": "mouse hover"
-    }
-   },
+   "states": {},
    "page": "home",
    "run": "2026-11-17",
    "url": "https://www.forhers.com/",
    "title": "Bento card",
    "group": "Home page (marketing stack)",
    "desc": "A hero bento tile (category card: headline, image, arrow); measured, never followed.",
-   "selector": "BentoContentCard"
+   "selector": "BentoContentCard",
+   "invalidReading": "Selector matched the wrong element (see measure.mjs). Not republished as this component until a recapture with the scoped selector.",
+   "missing": true
   },
   "tile-card": {
    "states": {
@@ -2848,7 +2629,7 @@
     "default": {
      "tag": "div",
      "classes": "wl-sidekick-style__ProductCardWrapper-sc-6d946ce3-3 hlrkPY",
-     "text": "Wegovy® Pill From $149/mo† Semaglutide",
+     "text": "Wegovy\u00ae Pill From $149/mo\u2020 Semaglutide",
      "rect": {
       "x": 186,
       "y": 256.2,
@@ -2962,7 +2743,7 @@
     "hover": {
      "tag": "div",
      "classes": "wl-sidekick-style__ProductCardWrapper-sc-6d946ce3-3 hlrkPY",
-     "text": "Wegovy® Pill From $149/mo† Semaglutide",
+     "text": "Wegovy\u00ae Pill From $149/mo\u2020 Semaglutide",
      "rect": {
       "x": 186,
       "y": 256.2,
@@ -3832,7 +3613,7 @@
     "default": {
      "tag": "p",
      "classes": "_text-body-m-max-medium_ncjzh_53 _text-body-m-min-medium-max-large_ncjzh_471 _text-body-m-min-large_ncjzh_889 text-ND600",
-     "text": "Personalized mental health services that fit your needs—on your schedule.",
+     "text": "Personalized mental health services that fit your needs\u2014on your schedule.",
      "rect": {
       "x": 834.1,
       "y": 122,
@@ -5806,7 +5587,7 @@
     "default": {
      "tag": "div",
      "classes": "wl-sidekick-style__ProductCardWrapper-sc-6d946ce3-3 hlrkPY",
-     "text": "Wegovy® Pill From $149/mo† Semaglutide",
+     "text": "Wegovy\u00ae Pill From $149/mo\u2020 Semaglutide",
      "rect": {
       "x": 186,
       "y": 256.2,
@@ -5920,7 +5701,7 @@
     "hover": {
      "tag": "div",
      "classes": "wl-sidekick-style__ProductCardWrapper-sc-6d946ce3-3 hlrkPY",
-     "text": "Wegovy® Pill From $149/mo† Semaglutide",
+     "text": "Wegovy\u00ae Pill From $149/mo\u2020 Semaglutide",
      "rect": {
       "x": 186,
       "y": 256.2,
@@ -6042,146 +5823,17 @@
    "recaptureMissed": "2026-11-17"
   },
   "card-price": {
-   "states": {
-    "default": {
-     "tag": "a",
-     "classes": "wl-sidekick-style__ProductCard-sc-6d946ce3-4 gFjMRV",
-     "text": "Wegovy® Pill From $149/mo† Semaglutide",
-     "rect": {
-      "x": 186,
-      "y": 256.2,
-      "w": 320,
-      "h": 389
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "320px",
-      "height": "389px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "column",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "24px",
-      "borderTopRightRadius": "24px",
-      "borderBottomRightRadius": "24px",
-      "borderBottomLeftRadius": "24px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "linear-gradient(rgb(159, 176, 137), rgb(123, 137, 103))",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "22.4px",
-      "letterSpacing": "-0.176px",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "transform",
-      "transitionDuration": "0.2s",
-      "transitionTimingFunction": "ease-in-out",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "::after": {
-      "content": "\"\"",
-      "width": "320px",
-      "height": "389px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "linear-gradient(rgb(125, 143, 102), rgb(83, 98, 64))",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRadius": "0px",
-      "inset": "0px 0px 0px 0px",
-      "opacity": "0",
-      "transition": "opacity 0.2s linear"
-     },
-     "paint": [
-      {
-       "node": "a.wl-sidekick-style__ProductCard-sc-6d946ce3-4.gFjMRV",
-       "size": "320.0x389.0",
-       "bgImage": "linear-gradient(rgb(159, 176, 137), rgb(123, 137, 103))",
-       "radius": "24px"
-      },
-      {
-       "node": "a::after.wl-sidekick-style__ProductCard-sc-6d946ce3-4.gFjMRV",
-       "size": "320pxx389px",
-       "bgImage": "linear-gradient(rgb(125, 143, 102), rgb(83, 98, 64))"
-      },
-      {
-       "node": "div::after.wl-sidekick-style__ProductImageWrapper-sc-6d946ce3-2.iA-DSMA",
-       "size": "64pxx8px",
-       "bgImage": "radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 80%)",
-       "radius": "50%"
-      }
-     ],
-     "textStyle": {
-      "node": "h4.sc-aXZVg.wl-sidekick-style__ProductTitle-sc-6d946ce3-10",
-      "text": "Wegovy",
-      "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
-      "fontSize": "28px",
-      "lineHeight": "31.5px",
-      "fontWeight": "460",
-      "letterSpacing": "-0.0466693px",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/card-price-default.png",
-     "via": "at rest"
-    }
-   },
+   "states": {},
    "page": "home",
    "run": "2026-11-17",
    "url": "https://www.forhers.com/",
    "title": "Price line",
    "group": "Shop pages (weight-loss, hair, skin, mental-health, birth-control, product, labs, benefits)",
-   "desc": "The \"From $149/mo †\" price line on a treatment/product card.",
+   "desc": "The \"From $149/mo \u2020\" price line on a treatment/product card.",
    "selector": "price text inside a card",
-   "recaptureMissed": "2026-11-17"
+   "recaptureMissed": "2026-11-17",
+   "invalidReading": "Selector matched the wrong element (see measure.mjs). Not republished as this component until a recapture with the scoped selector.",
+   "missing": true
   },
   "accordion": {
    "states": {
@@ -9951,7 +9603,7 @@
     "default": {
      "tag": "div",
      "classes": "regional-redirect-popupstyle__RegionalRedirectPopupWrapper-web-components__sc-o05fs-0 dVvNUF",
-     "text": "It looks like you're visiting from Canada 🇨🇦 Would you like to go to our Canad",
+     "text": "It looks like you're visiting from Canada \ud83c\udde8\ud83c\udde6 Would you like to go to our Canad",
      "rect": {
       "x": 1036,
       "y": 649.6,
@@ -10080,7 +9732,7 @@
    "url": "https://www.forhers.com/drugs/info",
    "title": "Regional redirect card",
    "group": "Content pages (blog, article, quality, drugs-info)",
-   "desc": "The \"It looks like you’re visiting from Canada\" redirect card, the one dialog the signed-out SSR paints. Its CTA was measured, never followed; the card was hidden, never answered.",
+   "desc": "The \"It looks like you\u2019re visiting from Canada\" redirect card, the one dialog the signed-out SSR paints. Its CTA was measured, never followed; the card was hidden, never answered.",
    "selector": "RegionalRedirectPopupWrapper"
   },
   "region-cta": {
@@ -10618,178 +10270,16 @@
    "selector": "h1"
   },
   "prose-p": {
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "global-navigation-headerstyle__GlobalNavigationSection-navigation__sc-o5ejvm-3 fMPbVY",
-     "text": "All Weight Loss Menopause Mental Health Hair Skin News",
-     "rect": {
-      "x": 0,
-      "y": 59,
-      "w": 1440,
-      "h": 56
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "56px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "16px",
-      "paddingBottom": "0px",
-      "paddingLeft": "16px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgba(0, 0, 0, 0.89)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgba(0, 0, 0, 0.89)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgba(0, 0, 0, 0.89)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgba(0, 0, 0, 0.89)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgba(0, 0, 0, 0.89)",
-      "outlineOffset": "0px",
-      "fontFamily": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "22.4px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgba(0, 0, 0, 0.89)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgba(0, 0, 0, 0.89)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "a.sc-4263aab9-2.dUetuz",
-       "size": "18.0x18.0",
-       "border": "B:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.sc-4263aab9-2.dUetuz",
-       "size": "85.0x18.0",
-       "border": "B:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.sc-4263aab9-2.dUetuz",
-       "size": "87.0x18.0",
-       "border": "B:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.sc-4263aab9-2.dUetuz",
-       "size": "104.0x18.0",
-       "border": "B:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.sc-4263aab9-2.dUetuz",
-       "size": "31.0x18.0",
-       "border": "B:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.sc-4263aab9-2.dUetuz",
-       "size": "30.0x18.0",
-       "border": "B:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.sc-4263aab9-2.dUetuz",
-       "size": "39.0x18.0",
-       "border": "B:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "button.elementsstyle__ButtonReset-web-components__sc-u730hl-0.linkstyle__ButtonLink-web-components__sc-kz1v8b-1",
-       "size": "48.0x48.0",
-       "border": "B:2px solid rgba(0, 0, 0, 0)",
-       "radius": "48px"
-      },
-      {
-       "node": "button::before.elementsstyle__ButtonReset-web-components__sc-u730hl-0.linkstyle__ButtonLink-web-components__sc-kz1v8b-1",
-       "size": "autoxcalc(100% + 2px)",
-       "border": "T:1px solid rgba(0, 0, 0, 0.03) | R:1px solid rgba(0, 0, 0, 0.03) | B:1px solid rgba(0, 0, 0, 0.03) | L:1px solid rgba(0, 0, 0, 0.03)",
-       "radius": "48px"
-      },
-      {
-       "node": "button.elementsstyle__ButtonReset-web-components__sc-u730hl-0.linkstyle__ButtonLink-web-components__sc-kz1v8b-1",
-       "size": "48.0x48.0",
-       "border": "B:2px solid rgba(0, 0, 0, 0)",
-       "radius": "48px"
-      },
-      {
-       "node": "button::before.elementsstyle__ButtonReset-web-components__sc-u730hl-0.linkstyle__ButtonLink-web-components__sc-kz1v8b-1",
-       "size": "autoxcalc(100% + 2px)",
-       "border": "T:1px solid rgba(0, 0, 0, 0.03) | R:1px solid rgba(0, 0, 0, 0.03) | B:1px solid rgba(0, 0, 0, 0.03) | L:1px solid rgba(0, 0, 0, 0.03)",
-       "radius": "48px"
-      }
-     ],
-     "textStyle": {
-      "node": "a.sc-4263aab9-2.dUetuz",
-      "text": "All",
-      "fontFamily": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "16px",
-      "fontWeight": "400",
-      "letterSpacing": "normal",
-      "color": "rgba(0, 0, 0, 0.89)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 61.19,
-      "h": 24,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(0, 0, 238)"
-     },
-     "crop": "components/crops/prose-p-default.png",
-     "via": "at rest"
-    }
-   },
+   "states": {},
    "page": "blog-post",
    "run": "2026-11-17",
    "url": "https://www.forhers.com/blog/zoloft-weight-loss",
    "title": "Body paragraph",
    "group": "Content pages (blog, article, quality, drugs-info)",
    "desc": "A body paragraph in the article prose.",
-   "selector": "article p"
+   "selector": "article p",
+   "invalidReading": "Selector matched the wrong element (see measure.mjs). Not republished as this component until a recapture with the scoped selector.",
+   "missing": true
   },
   "prose-h2": {
    "states": {},
@@ -11120,7 +10610,7 @@
     "default": {
      "tag": "p",
      "classes": "cactus-typography-component__TypographyBase-sc-22492af4-0 eidNdA cactus-typography-component__TypographyWithSensibleMargins-sc-22492af4-1 fybEot",
-     "text": "At Hims & Hers, we’re committed to providing safe, high-quality personalized car",
+     "text": "At Hims & Hers, we\u2019re committed to providing safe, high-quality personalized car",
      "rect": {
       "x": 344,
       "y": 366.2,
@@ -11665,7 +11155,7 @@
    "url": "https://www.forhers.com/tools/bmi-calculator",
    "title": "Number field",
    "group": "Forms and tools (bmi-calculator, lead capture)",
-   "desc": "A labelled number input (\"feet\"/\"inches\"/\"pounds\"); focused and typed into then cleared — never submitted.",
+   "desc": "A labelled number input (\"feet\"/\"inches\"/\"pounds\"); focused and typed into then cleared \u2014 never submitted.",
    "selector": "TextInputElement input"
   },
   "email-field": {
@@ -11964,7 +11454,7 @@
    "url": "https://www.forhers.com/tools/bmi-calculator",
    "title": "Email field",
    "group": "Forms and tools (bmi-calculator, lead capture)",
-   "desc": "The lead-capture email input; focused and typed into then cleared — never submitted.",
+   "desc": "The lead-capture email input; focused and typed into then cleared \u2014 never submitted.",
    "selector": "input[type=email]"
   },
   "form-submit": {
@@ -13817,7 +13307,7 @@
    "url": "https://www.forhers.com/drugs/info",
    "title": "Topic link",
    "group": "Content pages (blog, article, quality, drugs-info)",
-   "desc": "A topic link in the drugs index sub-nav (All / Weight Loss / …).",
+   "desc": "A topic link in the drugs index sub-nav (All / Weight Loss / \u2026).",
    "selector": "sub-nav topic link"
   },
   "m-header": {

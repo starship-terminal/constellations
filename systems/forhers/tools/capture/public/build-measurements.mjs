@@ -66,13 +66,14 @@ for (const g of groups) {
     W('');
     W(`${c.title}.${c.desc ? ' ' + c.desc : ''}`);
     W('');
-    const states = Object.keys(c.states);
-    W(`Page: ${c.page}. Selector: \`${esc(c.selector)}\`. States: ${states.join(', ')}.`);
+    const states = Object.keys(c.states).filter((st) => !c.states[st].excluded);
+    W(`Page: ${c.page}. Selector: \`${esc(c.selector)}\`. States: ${states.join(', ') || 'none'}.`);
     W('');
-    if (c.missing) { W('Not found on the page at capture time.'); continue; }
+    if (c.missing || c.invalidReading) { W(c.invalidReading || 'Not found on the page at capture time.'); continue; }
     const rows = {};
     for (const st of states) {
       const v = c.states[st];
+      if (v.rerunError) { rows.Error = rows.Error || {}; rows.Error[st] = v.rerunError; continue; }
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }

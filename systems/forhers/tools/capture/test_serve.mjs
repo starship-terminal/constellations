@@ -25,19 +25,24 @@ test('servePages never serves or caches a file outside its roots', { skip: !serv
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ff-serve-'));
   const pages = path.join(root, 'pages');
   const assets = path.join(root, 'assets');
-  fs.mkdirSync(path.join(assets, 'cdn-images'), { recursive: true });
+  fs.mkdirSync(path.join(assets, 'www.forhers.com', 'css'), { recursive: true });
+  fs.mkdirSync(path.join(assets, 'cloudinary.forhims.com', 'image'), { recursive: true });
   fs.mkdirSync(pages, { recursive: true });
   fs.writeFileSync(path.join(root, 'secret.txt'), 'SECRET');
   fs.writeFileSync(path.join(assets, 'secret.txt'), 'SECRET');
   fs.writeFileSync(path.join(pages, 'home.html'), '<p>home</p>');
-  fs.writeFileSync(path.join(assets, 'cdn-images', 'a.png'), 'PNG');
+  fs.writeFileSync(path.join(assets, 'www.forhers.com', 'css', 'a.png'), 'PNG');
+  fs.writeFileSync(path.join(assets, 'cloudinary.forhims.com', 'image', 'a.png'), 'CDN');
   const { srv, port } = await servePages(pages, assets);
   try {
     assert.equal((await get(port, '/pages/home.html')).body, '<p>home</p>');
-    assert.equal((await get(port, '/cdn-images/a.png')).body, 'PNG');
+    assert.equal((await get(port, '/css/a.png')).body, 'PNG');
+    assert.equal((await get(port, '/asset/cloudinary.forhims.com/image/a.png')).body, 'CDN');
     for (const bad of [
-      '/cdn-images/..%2fsecret.txt', '/cdn-images/..%2f..%2fsecret.txt', '/cdn-images/%2e%2e%2f%2e%2e%2fsecret.txt',
-      '/cdn-images/../secret.txt', '/pages/..%2fsecret.txt', '/pages/%2e%2e/secret.txt', '/pages/%00',
+      '/css/..%2fsecret.txt', '/css/..%2f..%2fsecret.txt', '/css/%2e%2e%2f%2e%2e%2fsecret.txt',
+      '/css/../secret.txt', '/pages/..%2fsecret.txt', '/pages/%2e%2e/secret.txt', '/pages/%00',
+      '/asset/%2e%2e/secret.txt', '/asset/..%2fsecret.txt', '/asset/%2e%2e/%2e%2e/secret.txt',
+      '/asset/evil.example/secret.txt',
     ]) {
       const r = await get(port, bad);
       assert.ok(r.status === 404 || r.status === 400, `${bad} -> ${r.status}`);

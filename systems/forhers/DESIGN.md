@@ -76,9 +76,10 @@ typography:
     letterSpacing: "0.401913px"
   body:
     fontFamily: "sofia-pro"
-    fontSize: "16px"
+    fontSize: "20px"
     fontWeight: 400
-    lineHeight: "16px"
+    lineHeight: "28px"
+    letterSpacing: "-0.317647px"
   body-comfortable:
     fontFamily: "sofia-pro"
     fontSize: "20px"
@@ -257,7 +258,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### Do and don't (from README.md)
 
-1. **Do set display type in CareSans and UI type in sofia-pro.** Headings run the fluid `CareSans` face at `letter-spacing: -0.0625em`; body, nav, controls and prose run `sofia-pro/SofiaProWeb`. IvarSoft is declared in `@font-face` but nothing applies it — do not spec it. See [hero-headline](components/crops/hero-headline-default.png) and [page-heading](components/crops/page-heading-default.png).
+1. **Do set display type in CareSans and UI type in sofia-pro.** Headings run the fluid `CareSans` face at `letter-spacing: -0.0625em`; body, nav, controls and prose run `sofia-pro/SofiaProWeb`. IvarSoft is declared in `@font-face` but nothing applies it — do not spec it. See [hero-heading](components/crops/hero-heading-default.png) and [page-heading](components/crops/page-heading-default.png).
 2. **Do keep the field white with sage and cream washes.** Sections alternate `#ffffff` with the sage steps (`#e4eee6`, `#f2f9f4`, `#f5faf6`) and cream (`#faf8f2`, `#f4f1e6`); the footer is the `#e8eae8` slab. See [home-light-full](screenshots/home-light-full.png).
 3. **Do reserve the teal for brand moments.** `#338585` is the Hers teal; it and its ramp (`#13262e`–`#9cccbc`) paint accents, selected states and brand surfaces, not every accent. See [treatment-card](components/crops/treatment-card-default.png).
 4. **Do make the phone's primary action the black pill.** Mobile pages pin a `9999px`-radius black CTA to the viewport foot; on desktop the same actions sit inline as square-cornered controls. See [mobile-product-light-default](screenshots/mobile-product-light-default.png) and [cta-primary](components/crops/cta-primary-default.png).

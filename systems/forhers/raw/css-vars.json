@@ -14836,8 +14836,8 @@
    "--gridColumn": {
     "raw": "calc(100vw / 24)",
     "kind": "dimension",
-    "value": "53.3281px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "60px",
+    "note": "viewport-relative, resolved at 1440 x 900 (100vw / 24)"
    },
    "--gridGutter": {
     "raw": "0rem",
@@ -15039,8 +15039,8 @@
    "--gridColumn": {
     "raw": "calc(100vw / 24)",
     "kind": "dimension",
-    "value": "53.3281px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "60px",
+    "note": "viewport-relative, resolved at 1440 x 900 (100vw / 24)"
    },
    "--gridGutter": {
     "raw": "0rem",

@@ -18,7 +18,7 @@ forhers.com is worth a capture because its marketing stack ships **almost no nam
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — the inline styled-components blocks, the /shop scales, the resolved fluid-type variables, the font faces), `layout.json` (per-page shells), `motion.json` (the transition probe), `component-tokens.json` (the token-tree spec). |
 | [icons/](icons) | Distinct inline SVGs lifted from the pages, with `INDEX.tsv`. |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
-| [capture.pr](capture.pr) | The pull request that shipped this capture |
+| [GitHub pull request 660](https://github.com/starship-terminal/constellations/pull/660) | The pull request that shipped this capture |
 
 ## Brief
 
@@ -91,7 +91,7 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## Do and don't
 
-1. **Do set display type in CareSans and UI type in sofia-pro.** Headings run the fluid `CareSans` face at `letter-spacing: -0.0625em`; body, nav, controls and prose run `sofia-pro/SofiaProWeb`. IvarSoft is declared in `@font-face` but nothing applies it — do not spec it. See [hero-headline](components/crops/hero-headline-default.png) and [page-heading](components/crops/page-heading-default.png).
+1. **Do set display type in CareSans and UI type in sofia-pro.** Headings run the fluid `CareSans` face at `letter-spacing: -0.0625em`; body, nav, controls and prose run `sofia-pro/SofiaProWeb`. IvarSoft is declared in `@font-face` but nothing applies it — do not spec it. See [hero-heading](components/crops/hero-heading-default.png) and [page-heading](components/crops/page-heading-default.png).
 2. **Do keep the field white with sage and cream washes.** Sections alternate `#ffffff` with the sage steps (`#e4eee6`, `#f2f9f4`, `#f5faf6`) and cream (`#faf8f2`, `#f4f1e6`); the footer is the `#e8eae8` slab. See [home-light-full](screenshots/home-light-full.png).
 3. **Do reserve the teal for brand moments.** `#338585` is the Hers teal; it and its ramp (`#13262e`–`#9cccbc`) paint accents, selected states and brand surfaces, not every accent. See [treatment-card](components/crops/treatment-card-default.png).
 4. **Do make the phone's primary action the black pill.** Mobile pages pin a `9999px`-radius black CTA to the viewport foot; on desktop the same actions sit inline as square-cornered controls. See [mobile-product-light-default](screenshots/mobile-product-light-default.png) and [cta-primary](components/crops/cta-primary-default.png).

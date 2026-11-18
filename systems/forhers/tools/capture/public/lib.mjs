@@ -93,9 +93,11 @@ export function servePages(pagesDir, assetsDir) {
     return rel !== '' && !rel.startsWith('..') && !path.isAbsolute(rel);
   };
   const mirror = (host, rel) => {
+    if (!ASSET_HOSTS.includes(host) && host !== 'www.forhers.com') return Promise.resolve(null);
     const safe = rel.replace(/[^\w\-.~/%+,;=:@()]/g, '');
     const dest = path.resolve(assetsDir, host, safe);
-    if (!inside(path.join(assetsDir, host), dest)) return Promise.resolve(null);
+    // Always check against the fixed assets root, never a folder the host chose.
+    if (!inside(assetsDir, dest)) return Promise.resolve(null);
     if (fs.existsSync(dest)) return Promise.resolve(dest);
     if (inflight.has(dest)) return inflight.get(dest);
     const wb = `https://web.archive.org/web/${ASSET_TS}id_/https://${host}/${safe}`;
@@ -128,7 +130,17 @@ export function servePages(pagesDir, assetsDir) {
     };
     const ext = u.match(/^\/asset\/([^/]+)\/(.+)$/);
     if (ext) {
-      mirror(ext[1], ext[2]).then((f) => (f ? send(f) : (res.writeHead(404), res.end('nf'))));
+      // The host is part of the path. Only the mirrored hosts are allowed, and
+      // the check is against the fixed assets root, so a host of ".." cannot
+      // move dest or the checked folder to the parent of assetsDir.
+      const host = ext[1];
+      if (!ASSET_HOSTS.includes(host) || host.includes('..') || host.includes('/') || host.includes('\\')) {
+        res.writeHead(404); res.end('nf'); return;
+      }
+      mirror(host, ext[2]).then((f) => {
+        if (!f || !inside(assetsDir, f)) { res.writeHead(404); res.end('nf'); return; }
+        send(f);
+      });
       return;
     }
     if (SITE_PREFIXES.some((p) => u.startsWith(p))) {

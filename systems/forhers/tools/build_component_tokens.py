@@ -173,15 +173,15 @@ for key, comp, desc in [
      "The home hero headline — CareSans at its fluid max (57px at 1440, weight 410, "
      "letter-spacing -0.0625em, line-height 1). Base size 40 scaled by --scale."),
     ("display-page", "page-heading",
-     "The category-page H1 (weight-loss, hair-loss, …) — sofia-pro 87px, the largest sans size."),
+     "The category-page H1 (weight-loss, hair-loss, …) — CareSans, about 53px at 1440, weight 410."),
     ("title", "article-title",
      "The editorial title — blog article H1 and the lead-capture headline, sofia-pro 62px."),
     ("card-title", "product-card",
      "Card and product names — CareSans 28px/31.5 at weight 460."),
     ("dek", "page-dek",
      "The CareSans dek under a page heading — 18.5px."),
-    ("body", "prose-p",
-     "The default reading size — sofia-pro 16px."),
+    ("body", "prose-body",
+     "The default reading size — sofia-pro 20px/28. The article paragraph reading was the wrong element and is not published."),
     ("body-comfortable", "prose-body",
      "The wider-measure prose body — sofia-pro 20px/28 at the muted ink."),
     ("small", "disclaimer",
@@ -240,7 +240,7 @@ put(grid, ("column-margin",), lit("56px", "dimension",
     "The 4-gap margin inside the 1266 shell."))
 put(grid, ("content-max-width",), ref("--grid-content-max-width", "dimension", "The 1195px text column inside the grid."))
 put(grid, ("marketing-column",), ref("--gridColumn", "dimension",
-    "The marketing stack's own column unit ((100vw - 3rem) / 13 ≈ 53.33px at 1440)."))
+    "The marketing stack's column unit at the captured width (calc(100vw / 24) = 60px at 1440)."))
 chrome = lay.setdefault("chrome", {})
 put(chrome, ("header-height",), ref("--headerHeight", "dimension", "The 56px sticky header."))
 put(chrome, ("global-nav-row-height",), ref("--global-nav-header-row-height", "dimension", "The 48px global-nav row."))
@@ -579,7 +579,7 @@ for name, cname, desc in [
     ("menu-toggle-track", "menu-toggle",
      "Menu icon button: the same 6% ink wash on hover and pressed."),
     ("cta-tertiary-track", "cta-tertiary",
-     "The small tertiary button: #efefef fill, 2px black stroke, black label; the painted states match rest."),
+     "The tertiary action: rest is a near-transparent fill with dark text; hover paints a 65% ink fill and white text, and pressed darkens the fill further."),
     ("accordion-toggle-track", "accordion-toggle",
      "Accordion row: #757575 grey at rest; hover lifts the label to the .65 ink."),
     ("blog-topic-track", "blog-topic",

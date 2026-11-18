@@ -9,8 +9,10 @@ except ImportError:  # the repo's tools are stdlib-only; Pillow is optional
 SRC = pathlib.Path(__file__).resolve().parent / "capture" / "quantize.py"
 
 
-def run(raw_files):
-    """Copy quantize.py into a throwaway package layout so screenshots/ lands in the temp dir."""
+def run(raw_files, tiles=None):
+    """Copy quantize.py into a throwaway package layout so screenshots/ lands in the temp dir.
+
+    tiles is {sheet_name: [(part_name, status, size)]}. A failed or missing part must not publish."""
     tmp = pathlib.Path(tempfile.mkdtemp())
     try:
         (tmp / "tools" / "capture").mkdir(parents=True)
@@ -21,6 +23,16 @@ def run(raw_files):
             Image.new("RGB", (8, 8), (200, 10, 10)).save(raw / name)
             if status is not None:
                 (raw / f"{name}.capture.json").write_text(json.dumps({"dimensionCheck": {"status": status}}))
+        for sheet, parts in (tiles or {}).items():
+            for i, (status, size) in enumerate(parts):
+                name = f"{sheet}.part{i}.png"
+                Image.new("RGB", size, (10, 10, 200)).save(raw / name)
+                if status is not None:
+                    (raw / f"{name}.capture.json").write_text(json.dumps({
+                        "dimensionCheck": {"status": status},
+                        "capture": {"clip": {"x": 0, "y": i * size[1], "width": size[0], "height": size[1]}, "scale": "css"},
+                        "png": {"width": size[0], "height": size[1]},
+                    }))
         r = subprocess.run([sys.executable, str(tmp / "tools" / "capture" / "quantize.py"), str(raw)], capture_output=True, text=True)
         return r, sorted(p.name for p in (tmp / "screenshots").glob("*"))
     finally:
@@ -43,6 +55,18 @@ class Quantize(unittest.TestCase):
         r, out = run({"a.png": None})
         self.assertEqual(r.returncode, 0, r.stderr)
         self.assertEqual(out, ["a.png"])
+
+    def test_failed_tile_is_not_stitched_or_published(self):
+        r, out = run({}, tiles={"long": [("pass", (8, 4)), ("fail", (12, 4))]})
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual(out, [])
+        self.assertIn("dimensionCheck is 'fail'", r.stdout + r.stderr)
+
+    def test_missing_tile_sidecar_is_not_stitched_or_published(self):
+        r, out = run({}, tiles={"long": [("pass", (8, 4)), (None, (8, 4))]})
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual(out, [])
+        self.assertIn("missing sidecar", r.stdout + r.stderr)
 
 
 if __name__ == "__main__":

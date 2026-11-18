@@ -1,6 +1,6 @@
 <svg width="20" height="20" viewBox="0 0 504 504" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<polygon points="0 0.159 503.841 0.159 503.841 503.94 0 503.94" fill="#000000">
+<polygon id="path-1" points="0 0.159 503.841 0.159 503.841 503.94 0 503.94" fill="#000000">
 </polygon>
 </defs>
 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

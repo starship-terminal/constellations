@@ -139,13 +139,20 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    // Keep the page this state was actually read on. comp() already rewrote the
+    // entry's page/url/run for the current pass; a later failed state must not
+    // inherit that rewrite.
+    c.states[state] = { ...s, crop: file, via: opts.via, page: current, url: URLS[current], run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
+    // A failed re-read must not erase an earlier successful one, and must not
+    // leave that earlier reading labelled as this page's evidence.
     const prev = c.states[state];
-    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    if (prev && prev.style) {
+      prev.rerunError = String(e.message || e).slice(0, 200);
+      c.states[state] = { ...prev, excluded: 'failed replacement; earlier reading kept, not republished as this page' };
+    } else c.states[state] = { error: String(e.message || e).slice(0, 200) };
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -205,12 +212,21 @@ async function S(key, target, list, meta = {}, opts = {}) {
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
-      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-      else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      if (prev && prev.style) {
+        prev.rerunError = String(e.message || e).slice(0, 200);
+        out.components[key].states[st] = { ...prev, excluded: 'failed replacement; earlier reading kept, not republished as this page' };
+      } else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
+  }
+  // A listed state that failed its re-read kept the earlier evidence under
+  // rerunError. Restore the entry's page/run/url so that kept reading is not
+  // published as this pass.
+  if (keep && list.some((st) => out.components[key].states[st]?.rerunError || out.components[key].states[st]?.excluded)) {
+    Object.assign(out.components[key], keep);
+    out.components[key].recaptureMissed = run;
   }
   await reset();
 }
@@ -264,7 +280,7 @@ async function shopChrome() {
   await S('cta-underlined', q('a[class*="_format-underlined-"]').filter({ visible: true }).first(), B4, { group: g, title: 'Underlined link', desc: 'The underlined "Important safety information" action; measured, never followed.', sel: '_format-underlined-*' });
   await S('content-card', q('article[data-content*="contentcard" i], [data-testid="card"] article, article[class*="media-first_component"]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Content card', desc: 'A rounded media-first content card in the rails (gradient surface, image, heading, CTA stack).', sel: 'data-content=componentngcontentcard' });
   await S('treatment-card', q('[class*="treatment-card_treatment-card"], [class*="wl-sidekick-style__ProductCard"]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Treatment card', desc: 'A medication treatment card (name, drug, price "From $149/mo", CTA stack).', sel: 'treatment-card / ProductCard' });
-  await S('card-price', q('[class*="treatment-card"] [class*="price" i], [class*="ProductCard"] *').filter({ hasText: /from \$|\/mo/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Price line', desc: 'The "From $149/mo †" price line on a treatment/product card.', sel: 'price text inside a card' });
+  await S('card-price', q('[class*="treatment-card"] [class*="price" i], [class*="ProductCard"] [class*="Price"], [class*="ProductCard"] [class*="price"]').filter({ hasText: /from \$|\/mo/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Price line', desc: 'The "From $149/mo †" price line on a treatment/product card.', sel: 'price text inside a card' });
   await S('accordion', q('[class*="accordion_"], [class*="AccordionWrapper"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Accordion', desc: 'The FAQ accordion block; the first panel ships open in SSR, toggles need hydration.', sel: 'accordion_* / AccordionWrapper' });
   await S('accordion-toggle', q('[class*="accordion_heading-container"] button, [class*="accordion_heading-container"], [class*="AccordionTitle"] button, [class*="AccordionTitle"]').filter({ visible: true }).first(), B4, { group: g, title: 'Accordion toggle', desc: 'An accordion row toggle (title + icon); measured, never toggled.', sel: 'accordion heading/title' });
   await S('disclaimer', q('[class*="disclaimer_frame"], [class*="DisclaimerWrapper"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Disclaimer', desc: 'The collapsed legal disclaimer block (grey text, expandable).', sel: 'disclaimer_frame / DisclaimerWrapper' });
@@ -279,7 +295,7 @@ async function home() {
   await header();
   const g = G.home;
   await S('hero-heading', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Hero headline', desc: '"The care you\u2019ve always deserved" — the IvarSoft serif hero.', sel: 'first h1' }, { noScroll: true });
-  await S('bento-card', q('[class*="BentoContentCard"], [class*="Bento"] article, [class*="Bento"] a').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Bento card', desc: 'A hero bento tile (category card: headline, image, arrow); measured, never followed.', sel: 'BentoContentCard' });
+  await S('bento-card', q('[class*="BentoContentCard"], [class*="Bento"] article').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Bento card', desc: 'A hero bento tile (category card: headline, image, arrow); measured, never followed.', sel: 'BentoContentCard' });
   await S('tile-card', q('[class*="homepage-image-style"], [class*="tile" i] a, section a:has(img)').filter({ hasText: /hair|menopause|health|begin/i }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Category tile', desc: 'A category entry tile ("Grow fuller hair" / "Treat menopause"); measured, never followed.', sel: 'category tile link' });
   await S('quiz-tile', q('a').filter({ hasText: /unsure where to begin|start here/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Quiz entry tile', desc: 'The "Unsure where to begin? Start here" quiz entry tile; measured, never followed (the quiz is a client app).', sel: 'tile with Start here' });
   await S('product-card', q('[class*="wl-sidekick-style__ProductCard"], [class*="ProductCard"]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Product card', desc: 'A GLP-1 product card in the lineup rail (image, name, drug, price, CTA).', sel: 'wl-sidekick ProductCard' });
@@ -328,7 +344,7 @@ async function contentPage(key) {
   }
   if (key === 'blog-post') {
     await S('article-title', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Article title', desc: 'The article H1.', sel: 'h1' }, { noScroll: true });
-    await S('prose-p', q('article p, [class*="MarkdownMediaQueryWrapper"] p, main p, [class*="P"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Body paragraph', desc: 'A body paragraph in the article prose.', sel: 'article p' });
+    await S('prose-p', q('article p, [class*="MarkdownMediaQueryWrapper"] p, main article p').filter({ visible: true }).first(), ['default'], { group: g, title: 'Body paragraph', desc: 'A body paragraph in the article prose.', sel: 'article p' });
     await S('prose-h2', q('article h2, main h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Section heading', desc: 'An in-article section heading.', sel: 'article h2' });
     await S('prose-link', q('article p a, main p a').filter({ visible: true }).first(), B4, { group: g, title: 'Inline link', desc: 'An inline link inside the article body; measured, never followed.', sel: 'article p a' });
     await S('prose-list', q('article li, main li, [class*="OrderedList"] li').filter({ visible: true }).first(), ['default'], { group: g, title: 'List item', desc: 'A list item in the article body.', sel: 'article li' });

@@ -184,7 +184,7 @@ def state_rows(c):
     # not hold a real keyboard focus) is not a captured state: it is reported
     # separately so a failed attempt can never read as a measured absence of a
     # focus ring.
-    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
+    states = [s for s in c["states"] if "style" in c["states"][s] and not c["states"][s].get("excluded") and c["states"][s].get("via") != "focus failed"]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -251,7 +251,7 @@ PAGE_NAME = {
 GROUP_INTRO = {
     "Header and site chrome": "The sticky top chrome shared by the marketing pages: the lime promo strip, the 56px header (the 'hers' wordmark, category nav links, the circular Log in and menu icon buttons). Measured on the drug index page, where the chrome paints identically.",
     "Home page (marketing stack)": "The signed-out landing (/): the CareSans hero headline over wide category tiles, the bento/product cards, the FDA badge, the testimonial card and the section CTA. The quiz entry tile and slide indicator paint only after hydration.",
-    "Shop pages (weight-loss, hair, skin, mental-health, birth-control, product, labs, benefits)": "The category storefronts and product detail pages (/weight-loss, /hair-loss, /skin-care, /mental-health, /birth-control, /hair-loss/minoxidil-biotin-chew, /skin-care/anti-aging, /weight-loss/wegovy-pill, /labs, /benefits): the 87px page heading, treatment/product cards with prices, the CTA trio, content cards, the accordion, carousel controls, disclaimers and 'Read more' toggles.",
+    "Shop pages (weight-loss, hair, skin, mental-health, birth-control, product, labs, benefits)": "The category storefronts and product detail pages (/weight-loss, /hair-loss, /skin-care, /mental-health, /birth-control, /hair-loss/minoxidil-biotin-chew, /skin-care/anti-aging, /weight-loss/wegovy-pill, /labs, /benefits): the CareSans page heading (about 53px at 1440), treatment/product cards with prices, the CTA trio, content cards, the accordion, carousel controls, disclaimers and 'Read more' toggles.",
     "Content pages (blog, article, quality, drugs-info)": "The editorial surfaces (/blog, a blog article, /quality-and-safety, /drugs/info): article cards and topic chips on the index, the article title/byline/prose roles, the A-Z chips and drug index links, and the regional-redirect card measured as the dialog it is (then hidden).",
     "Forms and tools (bmi-calculator, lead capture)": "The BMI calculator (/tools/bmi-calculator): the number fields, the email field, the #b6dd64 lime Calculate submit, the painted disabled button, the result dial, the lead-capture block and the privacy disclosure. Fields were typed into and cleared; nothing was submitted.",
     "Footer": "The site footer: the 'visit hims.com' cross-promo, section columns of links, the social icon wells and the fineprint/legal line.",
@@ -464,8 +464,8 @@ for g in groups:
         where = PAGE_NAME.get(c["page"], c["page"])
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
         W()
-        if c.get("missing"):
-            W("Not on the page when it was captured.")
+        if c.get("missing") or c.get("invalidReading"):
+            W(c.get("invalidReading") or "Not on the page when it was captured.")
             continue
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)

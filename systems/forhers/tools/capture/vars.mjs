@@ -111,6 +111,10 @@ const result = await probe.evaluate((sheets) => {
 }, sheets);
 
 // ---- resolution: probe document with the real sheets at 1440 x 900 ----
+// browser.newPage() is 1280 wide by default. The capture declared 1440, and
+// viewport-relative values (calc(100vw / 24) is 60px there, 53.3281px at 1280)
+// must be resolved at that width.
+await probe.setViewportSize({ width: 1440, height: 900 });
 const shell = () => '<!doctype html><html><head>'
   + sheets.map(([n, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
   + '</head><body><div id="probe-root"></div></body></html>';

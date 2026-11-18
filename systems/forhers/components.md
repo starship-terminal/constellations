@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from forhers.com on 2026-11-17, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. www.forhers.com answers a Cloudflare managed challenge to this network, so the DOM is Wayback Machine SSR snapshots (2025-12-23 to 2026-11-11, per page) served locally and painted by their archived styled-components and bundled CSS with scripts removed — nothing was signed into, submitted or bought; hover/focus/pressed states were forced, and the controls hydration owns (the slide menu, the Log-in menu, accordion panels, quiz starts) stay closed rather than faked. Nav, card, footer and drug-index links were measured, never followed; the form fields were typed into and cleared, never submitted.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (64 components, 133 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (64 components, 129 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (132 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (128 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -65,7 +65,7 @@ Values that apply across entries, from the measurement files.
 | 0.1s | `ease-in` | all | topic-tab |
 | 0.2s | `cubic-bezier(0.28, 0.13, 0.38, 1)` | background, box-shadow, transform | disabled-button |
 | 0.2s | `cubic-bezier(0.33, 0, 0, 1)` | background-color, color | email-field, m-text-field, text-field |
-| 0.2s | `ease-in-out` | background, background-color, border-color, box-shadow, color, outline-color, outline-offset, text-decoration-color, transform | blog-topic, card-price, cta-secondary, cta-tertiary, m-cta-primary |
+| 0.2s | `ease-in-out` | background, background-color, border-color, box-shadow, color, outline-color, outline-offset, text-decoration-color, transform | blog-topic, cta-secondary, cta-tertiary, m-cta-primary |
 | 0.2s | `linear` | opacity | product-card, treatment-card |
 | 0.3s | `ease` | backdrop-filter, background-color, border-color, box-shadow, color, fill, stroke, transform | form-submit, m-header, slide-dot |
 | 0.3s | `ease-in-out` | background-color, border-color, color, text-decoration-color | carousel-arrow, footer-social, nav-link |
@@ -78,7 +78,6 @@ Values that apply across entries, from the measurement files.
 | [Product card](#product-card) | 320 x 389 | - | - | transparent | none | 0 |
 | [Treatment card](#treatment-card) | 320 x 389 | - | - | transparent | none | 0 |
 | [Category tile](#category-tile) | 337 x 100 | - | 24px | transparent | none | 0px 8px 0px 16px |
-| [Bento card](#bento-card) | 140.45 x 48 | - | - | transparent | none | 0 |
 | [Content card](#content-card) | 438 x 584 | - | 16px | transparent | none | 25px |
 | [Article card](#article-card) | 691.89 x 389.19 | - | - | transparent | none | 0 |
 | [Testimonial card](#testimonial-card) | 546 x 745.25 | - | - | transparent | none | 0px 36px |
@@ -164,14 +163,7 @@ The signed-out landing (/): the CareSans hero headline over wide category tiles,
 #### Bento card
 A hero bento tile (category card: headline, image, arrow); measured, never followed. Read as `bento-card` on the home page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 140.45 x 48; background transparent; text CareSans 16/19.2 500, #343c2b `core.palette.forest.600`; layers button.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5 140.5x48.0 rgb(197, 237, 130) T:2px solid rgba(0, 0, 0, 0) / R:2px solid rgba(0, 0, 0, 0) / B:2px solid rgba(0, 0, 0, 0) / L:2px solid rgba(0, 0, 0, 0) 48px; button::before.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5 144.453pxx52px T:2px solid rgba(255, 255, 255, 0) /  |
-| hover | layers button.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5 140.5x48.0 rgb(157, 189, 103) T:2px solid rgba(0, 0, 0, 0) / R:2px solid rgba(0, 0, 0, 0) / B:2px solid rgba(0, 0, 0, 0) / L:2px solid rgba(0, 0, 0, 0) 48px; button::before.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5 144.453pxx52px T:2px solid rgba(255, 255, 255, 0) /  |
-
-Child layers that carry the look: button 140.5x48 background #c5ed82 `core.palette.lime.450` border 2px solid transparent radius 48px; button::before 144.453pxx52px border 2px solid rgba(255, 255, 255, 0) radius 48px.
-
-![Bento card default](components/crops/bento-card-default.png) ![Bento card hover](components/crops/bento-card-hover.png)
+Selector matched the wrong element (see measure.mjs). Not republished as this component until a recapture with the scoped selector.
 
 #### Category tile
 A category entry tile ("Grow fuller hair" / "Treat menopause"); measured, never followed. Read as `tile-card` on the home page.
@@ -228,7 +220,7 @@ Child layers that carry the look: button 151.5x48 background #c5ed82 `core.palet
 
 ### Shop pages (weight-loss, hair, skin, mental-health, birth-control, product, labs, benefits)
 
-The category storefronts and product detail pages (/weight-loss, /hair-loss, /skin-care, /mental-health, /birth-control, /hair-loss/minoxidil-biotin-chew, /skin-care/anti-aging, /weight-loss/wegovy-pill, /labs, /benefits): the 87px page heading, treatment/product cards with prices, the CTA trio, content cards, the accordion, carousel controls, disclaimers and 'Read more' toggles.
+The category storefronts and product detail pages (/weight-loss, /hair-loss, /skin-care, /mental-health, /birth-control, /hair-loss/minoxidil-biotin-chew, /skin-care/anti-aging, /weight-loss/wegovy-pill, /labs, /benefits): the CareSans page heading (about 53px at 1440), treatment/product cards with prices, the CTA trio, content cards, the accordion, carousel controls, disclaimers and 'Read more' toggles.
 
 #### Page heading
 The serif section heading ("Weight loss that works" / "Lose weight the way you want"). Read as `page-heading` on the mental health page.
@@ -316,9 +308,7 @@ Child layers that carry the look: a 320x389 image linear-gradient(#9fb089 `core.
 #### Price line
 The "From $149/mo †" price line on a treatment/product card. Read as `card-price` on the home page.
 
-**Values (default).** size 320 x 389; radius 24px; background transparent; image linear-gradient(#9fb089 `core.palette.sage-green.550`, #7b8967 `core.palette.sage-green.650`); text CareSans 28/31.5 460, #ffffff `core.palette.paper.white`; transition transform 0.2s ease-in-out; layers ::after rgba(0, 0, 0, 0) 0px none 0.
-
-![Price line default](components/crops/card-price-default.png)
+Selector matched the wrong element (see measure.mjs). Not republished as this component until a recapture with the scoped selector.
 
 #### Accordion
 The FAQ accordion block; the first panel ships open in SSR, toggles need hydration. Read as `accordion` on the mental health page.
@@ -439,11 +429,7 @@ The article H1. Read as `article-title` on the blog article page.
 #### Body paragraph
 A body paragraph in the article prose. Read as `prose-p` on the blog article page.
 
-**Values (default).** size 1440 x 56; padding 0px 16px; background transparent; text sofia-pro 16/16 400, rgba(0, 0, 0, 0.89) `core.palette.ink.a89`; icon 61.19 x 24, #0000ee; layers a.sc-4263aab9-2.dUetuz 18.0x18.0 B:2px solid rgba(0, 0, 0, 0); a.sc-4263aab9-2.dUetuz 85.0x18.0 B:2px solid rgba(0, 0, 0, 0); a.sc-4263aab9-2.dUetuz 87.0x18.0 B:2px solid rgba(0, 0, 0, 0); a.sc-4263aab9-2.dUetuz 104.0x18.0 B:2px solid rgba(0, 0, 0, 0); a.sc-4263aab9-2.dUetuz 31.0x18.0 B:2px solid rgba(0, 0, 0, 0); a.sc-4263aab9-2.dUetuz 30.0x18.0 B:2px solid rgba(0, 0, 0, 0).
-
-Child layers that carry the look: a 18x18 border 2px solid transparent; a 85x18 border 2px solid transparent; a 87x18 border 2px solid transparent.
-
-![Body paragraph default](components/crops/prose-p-default.png)
+Selector matched the wrong element (see measure.mjs). Not republished as this component until a recapture with the scoped selector.
 
 #### Section heading
 An in-article section heading. Read as `prose-h2` on the blog article page.

@@ -194,27 +194,9 @@ Crops: `hero-heading-default.png`.
 
 Bento card. A hero bento tile (category card: headline, image, arrow); measured, never followed.
 
-Page: home. Selector: `BentoContentCard`. States: default, hover.
+Page: home. Selector: `BentoContentCard`. States: none.
 
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 140.45 x 48 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 0px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | CareSans 16px/22.4px 400 | = |
-| Letter spacing | -0.176px | = |
-| Colour | #ffffff | = |
-| Text node | span.sc-aXZVg.eyoLiW: CareSans 16px/19.2px 500, #343c2b, ls 0.04px | = |
-| Transition | none | = |
-| Cursor | pointer | = |
-| Painted layers | button.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5 140.5x48.0 bg #c5ed82 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 48px; button::before.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5 144.453pxx52px border T:2px solid #ffffff @ 0 / R:2px solid #ffffff @ 0 / B:2px solid #ffffff @ 0 / L:2px solid #ffffff @ 0 r 48px | button.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5 140.5x48.0 bg #9dbd67 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 48px; button::before.elements-style__ButtonReset-sc-82b26c75-0.button-style__ButtonVariant-sc-de21aabe-5 144.453pxx52px border T:2px solid #ffffff @ 0 / R:2px solid #ffffff @ 0 / B:2px solid #ffffff @ 0 / L:2px solid #ffffff @ 0 r 48px |
-| How | at rest | mouse hover |
-
-Crops: `bento-card-default.png`, `bento-card-hover.png`.
+Selector matched the wrong element (see measure.mjs). Not republished as this component until a recapture with the scoped selector.
 
 #### tile-card
 
@@ -249,7 +231,7 @@ Crops: `tile-card-default.png`, `tile-card-hover.png`.
 
 Quiz entry tile. The "Unsure where to begin? Start here" quiz entry tile; measured, never followed (the quiz is a client app).
 
-Page: home. Selector: `tile with Start here`. States: .
+Page: home. Selector: `tile with Start here`. States: none.
 
 Not found on the page at capture time.
 
@@ -564,29 +546,9 @@ Crops: `treatment-card-default.png`, `treatment-card-hover.png`.
 
 Price line. The "From $149/mo †" price line on a treatment/product card.
 
-Page: home. Selector: `price text inside a card`. States: default.
+Page: home. Selector: `price text inside a card`. States: none.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 320 x 389 |
-| Padding | 0px |
-| Border | none |
-| Radius | 24px |
-| Background | transparent |
-| Background image | linear-gradient(#9fb089, #7b8967) |
-| Box shadow | none |
-| Outline | none |
-| Font | CareSans 16px/22.4px 400 |
-| Letter spacing | -0.176px |
-| Colour | #ffffff |
-| Text node | h4.sc-aXZVg.wl-sidekick-style__ProductTitle-sc-6d946ce3-10: CareSans 28px/31.5px 460, #ffffff, ls -0.0466693px |
-| Transition | transform 0.2s ease-in-out |
-| Cursor | pointer |
-| ::after | 320px x 389px, absolute, bg #000000 @ 0 linear-gradient(#7d8f66, #536240), radius 0px |
-| Painted layers | a.wl-sidekick-style__ProductCard-sc-6d946ce3-4.gFjMRV 320.0x389.0 image linear-gradient(#9fb089, #7b8967) r 24px; a::after.wl-sidekick-style__ProductCard-sc-6d946ce3-4.gFjMRV 320pxx389px image linear-gradient(#7d8f66, #536240); div::after.wl-sidekick-style__ProductImageWrapper-sc-6d946ce3-2.iA-DSMA 64pxx8px image radial-gradient(#000000 @ 0.3, #000000 @ 0 80%) r 50% |
-| How | at rest |
-
-Crops: `card-price-default.png`.
+Selector matched the wrong element (see measure.mjs). Not republished as this component until a recapture with the scoped selector.
 
 #### accordion
 
@@ -978,33 +940,15 @@ Crops: `article-title-default.png`.
 
 Body paragraph. A body paragraph in the article prose.
 
-Page: blog-post. Selector: `article p`. States: default.
+Page: blog-post. Selector: `article p`. States: none.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 1440 x 56 |
-| Padding | 0px 16px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | sofia-pro 16px/22.4px 400 |
-| Letter spacing | normal |
-| Colour | #000000 @ 0.89 |
-| Text node | a.sc-4263aab9-2.dUetuz: sofia-pro 16px/16px 400, #000000 @ 0.89 |
-| Transition | none |
-| Icon | 61.19 x 24, colour #0000ee, fill #000000 |
-| Painted layers | a.sc-4263aab9-2.dUetuz 18.0x18.0 border B:2px solid #000000 @ 0; a.sc-4263aab9-2.dUetuz 85.0x18.0 border B:2px solid #000000 @ 0; a.sc-4263aab9-2.dUetuz 87.0x18.0 border B:2px solid #000000 @ 0; a.sc-4263aab9-2.dUetuz 104.0x18.0 border B:2px solid #000000 @ 0; a.sc-4263aab9-2.dUetuz 31.0x18.0 border B:2px solid #000000 @ 0; a.sc-4263aab9-2.dUetuz 30.0x18.0 border B:2px solid #000000 @ 0 |
-| How | at rest |
-
-Crops: `prose-p-default.png`.
+Selector matched the wrong element (see measure.mjs). Not republished as this component until a recapture with the scoped selector.
 
 #### prose-h2
 
 Section heading. An in-article section heading.
 
-Page: blog-post. Selector: `article h2`. States: .
+Page: blog-post. Selector: `article h2`. States: none.
 
 Not found on the page at capture time.
 
@@ -1012,7 +956,7 @@ Not found on the page at capture time.
 
 Inline link. An inline link inside the article body; measured, never followed.
 
-Page: blog-post. Selector: `article p a`. States: .
+Page: blog-post. Selector: `article p a`. States: none.
 
 Not found on the page at capture time.
 
@@ -1114,7 +1058,7 @@ Crops: `prose-body-default.png`.
 
 A-Z chip. A grey circular letter chip in "Browse A-Z"; measured, never followed.
 
-Page: drugs-info. Selector: `A-Z letter link`. States: .
+Page: drugs-info. Selector: `A-Z letter link`. States: none.
 
 Not found on the page at capture time.
 

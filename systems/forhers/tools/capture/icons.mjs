@@ -15,7 +15,7 @@
 // Adapted from the Coursera kit's icons.mjs.
 import crypto from 'crypto';
 import fs from 'fs';
-import { M, chromium, UA, closePromo, servePages, open as openPage, launch, PAGES, SCRATCH } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
+import { closePromo, servePages, launch, PAGES, SCRATCH } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -49,7 +49,10 @@ function collect() {
     });
     c.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
     for (const a of ['id', 'class', 'focusable', 'aria-hidden', 'aria-labelledby', 'style', 'data-testid']) c.removeAttribute(a);
-    const refs = new Set([...c.outerHTML.matchAll(/url\(#([^)]+)\)/g)].map((m) => m[1].replace(/&quot;|"/g, '')));
+    // url(#id) and href="#id" / xlink:href="#id" both name a kept id. Instagram's
+    // frame is a <use xlink:href="#path-1"> inside a mask; dropping that id
+    // empties the mask.
+    const refs = new Set([...c.outerHTML.matchAll(/(?:url\(#|href="#|xlink:href="#)([^)"]+)/g)].map((m) => m[1].replace(/&quot;|"/g, '')));
     c.querySelectorAll('[id],[class],[style]').forEach((e) => { if (!refs.has(e.id)) e.removeAttribute('id'); e.removeAttribute('class'); if (e.tagName !== 'mask') e.removeAttribute('style'); });
     c.querySelectorAll('image').forEach((e) => e.remove());
     if (!c.hasAttribute('viewBox')) c.setAttribute('viewBox', `0 0 ${c.getAttribute('width') || Math.round(r.width)} ${c.getAttribute('height') || Math.round(r.height)}`.replace(/px/g, ''));
@@ -90,7 +93,15 @@ const { srv, port } = await servePages(`${SCRATCH}/pages`, `${SCRATCH}/assets`);
 const { browser: b, context: ctx } = await launch({ width: 1440, height: 900 });
 const p = await ctx.newPage();
 
-const open = (key, w = 5000) => openPage(p, `http://127.0.0.1:${port}/pages/${key}.html`, { wait: w });
+async function open(key, w = 5000) {
+  const url = `http://127.0.0.1:${port}/pages/${key}.html`;
+  const res = await p.goto(url, { waitUntil: 'load', timeout: 120000 });
+  if (!res || res.status() >= 400) throw new Error(`${key}: page ${res ? res.status() : 'missing'}`);
+  const body = await p.evaluate(() => (document.body && document.body.innerText || '').length).catch(() => 0);
+  if (body < 200) throw new Error(`${key}: page has no expected contents`);
+  await p.waitForFunction(() => document.fonts && document.fonts.status === 'loaded', undefined, { timeout: 15000 }).catch(() => {});
+  await p.waitForTimeout(w);
+}
 
 // forhers's signed-out surfaces only: every archived public page, nothing
 // clicked that hydration owns (menus, accordions, quiz starts) — those stay

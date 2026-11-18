@@ -109,7 +109,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--hairline); padding: 6px 14p
   </div>
 
   <h2 class="sh">The shop cards</h2>
-  <p class="lead">Category pages open with the 87px sofia-pro page heading, then treatment cards: cream or sage surfaces with the 24px radius, CareSans 28px names and the price line. Actions are the black pill primary, the outlined tertiary and the underlined link.</p>
+  <p class="lead">Category pages open with the CareSans page heading (about 53px at 1440), then treatment cards: cream or sage surfaces with the 24px radius, CareSans 28px names and the price line. Actions are the black pill primary, the outlined tertiary and the underlined link.</p>
   <div class="mock">
     <div class="cards">
       <div class="tcard"><div class="ph"></div><b>Minoxidil + biotin chew</b><div class="pr">from $35/mo</div></div>
@@ -244,8 +244,9 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
     const v = t.v || {};
     const fam = String(v.fontFamily || '').split(',')[0].replace(/"/g, '').replace(/'/g, '');
-    const spec = [v.fontSize, v.lineHeight && '/' + v.lineHeight, v.fontWeight && ' ' + v.fontWeight, v.textTransform && ' ' + v.textTransform].filter(Boolean).join('');
-    h += `<div class="tr"><span class="ts" style='font-size:${Math.min(parseFloat(v.fontSize) || 14, 40)}px;font-family:${(v.fontFamily || 'inherit')};line-height:${v.lineHeight || 'normal'};text-transform:${v.textTransform || 'none'}'>${esc(n)} — forhers</span><span class="tv">${esc(fam)} ${esc(spec)}</span></div>`;
+    const spec = [v.fontSize, v.lineHeight && '/' + v.lineHeight, v.fontWeight && ' ' + v.fontWeight, v.letterSpacing && v.letterSpacing !== 'normal' && ' ' + v.letterSpacing, v.textTransform && ' ' + v.textTransform].filter(Boolean).join('');
+    const ls = v.letterSpacing && v.letterSpacing !== 'normal' ? v.letterSpacing : 'normal';
+    h += `<div class="tr"><span class="ts" style='font-size:${Math.min(parseFloat(v.fontSize) || 14, 40)}px;font-family:${(v.fontFamily || 'inherit')};font-weight:${v.fontWeight || 400};letter-spacing:${ls};line-height:${v.lineHeight || 'normal'};text-transform:${v.textTransform || 'none'}'>${esc(n)} — forhers</span><span class="tv">${esc(fam)} ${esc(spec)}</span></div>`;
   }
   $('#styles-out').innerHTML = h;
 })();

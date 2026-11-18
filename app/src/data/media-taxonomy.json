@@ -1324,8 +1324,8 @@
     },
     {
       "referenceId": "systems:forhers",
-      "media": 174,
-      "assignedMedia": 61
+      "media": 170,
+      "assignedMedia": 51
     },
     {
       "referenceId": "systems:fourmula",
@@ -297061,28 +297061,6 @@
     },
     {
       "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/screenshots/wegovy-pill-light-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/screenshots/wegovy-pill-light-full.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
       "mediaId": "systems/forhers/components/crops/accordion-default.png",
       "terms": [
         {
@@ -297097,11 +297075,6 @@
       "mediaId": "systems/forhers/components/crops/accordion-toggle-default.png",
       "terms": [
         {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        },
-        {
           "termId": "web-ui-elements:accordion-collapse",
           "rule": "ui-accordion",
           "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
@@ -297112,11 +297085,6 @@
       "referenceId": "systems:forhers",
       "mediaId": "systems/forhers/components/crops/accordion-toggle-focus-visible.png",
       "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        },
         {
           "termId": "web-ui-elements:accordion-collapse",
           "rule": "ui-accordion",
@@ -297129,11 +297097,6 @@
       "mediaId": "systems/forhers/components/crops/accordion-toggle-hover.png",
       "terms": [
         {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        },
-        {
           "termId": "web-ui-elements:accordion-collapse",
           "rule": "ui-accordion",
           "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
@@ -297144,11 +297107,6 @@
       "referenceId": "systems:forhers",
       "mediaId": "systems/forhers/components/crops/accordion-toggle-pressed.png",
       "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        },
         {
           "termId": "web-ui-elements:accordion-collapse",
           "rule": "ui-accordion",
@@ -297170,39 +297128,6 @@
     {
       "referenceId": "systems:forhers",
       "mediaId": "systems/forhers/components/crops/article-card-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/components/crops/bento-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/components/crops/bento-card-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/components/crops/card-price-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -297510,67 +297435,12 @@
     },
     {
       "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/components/crops/m-menu-toggle-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
       "mediaId": "systems/forhers/components/crops/m-text-field-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:text-field",
           "rule": "ui-text-field",
           "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/components/crops/menu-toggle-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/components/crops/menu-toggle-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/components/crops/menu-toggle-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:forhers",
-      "mediaId": "systems/forhers/components/crops/menu-toggle-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
         }
       ]
     },
