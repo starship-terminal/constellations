@@ -1258,5 +1258,11 @@
     "groupId": "web-categories",
     "labels": ["Entertainment"],
     "reason": "catalog.json describes a signed-out stock library: a search palette and a public image page."
+  },
+  {
+    "referenceId": "systems:maze",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes user-research marketing: a warm page, Phonic display, and a blue login action."
   }
 ]
