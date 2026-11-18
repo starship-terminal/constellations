@@ -669,7 +669,7 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
     (await migrated.listReferenceCategoryDetails(["systems:classpass"])).map(
       (row) => row.label,
     ),
-  ).toEqual(["Health & Wellness", "Marketplace", "Fitness"]);
+  ).toEqual(["Fitness", "Health & Wellness", "Marketplace"]);
   expect(
     categories.filter((row) => row.referenceId === "systems:frame"),
   ).toHaveLength(3);
@@ -1572,7 +1572,7 @@ test("version-thirty-three stores gain the Headspace rows, without touching thei
     (await migrated.listReferenceCategoryDetails(["systems:headspace"])).map(
       (row) => row.label,
     ),
-  ).toEqual(["Health & Wellness", "Fitness"]);
+  ).toEqual(["Fitness", "Health & Wellness"]);
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:headspace").length,
