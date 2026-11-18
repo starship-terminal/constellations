@@ -137,8 +137,8 @@ for (const r of result.rules) {
   }
 }
 
-const RESOLVE_BODY = `({ names, probeId }) => {
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\\((?!\\s*['"]?(?:data:|#))\\s*(?:"(?:[^"\\\\]|\\\\.)*"|'(?:[^'\\\\]|\\\\.)*'|(?:[^)\\\\]|\\\\.)*)\\s*\\)/gi, 'url(…)') : v);
+const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+const RESOLVE_BODY = `({ names, probeId, noUrl }) => {
   const host = document.getElementById(probeId);
   const box = document.createElement('div');
   box.style.cssText = 'position:absolute;left:0;top:0;width:1000px;height:1000px;visibility:hidden';
@@ -203,7 +203,11 @@ const RESOLVE_BODY = `({ names, probeId }) => {
   box.remove();
   return out;
 }`;
-const resolveIn = async (names, probeId) => page2.evaluate(new Function('a', 'return (' + RESOLVE_BODY + ')(a)'), { names, probeId });
+const resolveIn = async (names, probeId) => page2.evaluate(({ names, probeId, body, noUrlSource }) => {
+  const fn = new Function('a', 'return (' + body + ')(a)');
+  const pageNoUrl = new Function('return (' + noUrlSource + ')')();
+  return fn({ names, probeId, noUrl: pageNoUrl });
+}, { names, probeId, body: RESOLVE_BODY, noUrlSource: noUrl.toString() });
 const resolved = {
   light: await resolveIn(want, 'probe-root'),
   scopes: {
