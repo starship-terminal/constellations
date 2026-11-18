@@ -1264,5 +1264,11 @@
     "groupId": "web-categories",
     "labels": ["Productivity"],
     "reason": "catalog.json describes user-research marketing: a warm page, Phonic display, and a blue login action."
+  },
+  {
+    "referenceId": "systems:macaw",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a cream marketing site for an AI website builder: one coral action and tinted pricing cards."
   }
 ]
