@@ -549,9 +549,9 @@ Access: read-only (the marketing site, fibery.io/sign-up and fibery.io/login/ ar
 - 'Book a demo' links to a scheduler that was never opened; 'Workspace SSO' was never followed
 
 ## [Krea](../systems/krea) — `krea`
-Access: read-only (the home shell, pricing, enterprise, blog, plugins, MCP, the image tool, docs, terms and the login card are public; assets, train, nodes, account, billing, API keys, checkout and generation sit behind sign-in and were never reached; Sign in, Sign up, OAuth, Book a call, Get Pro and Generate were measured, never followed; the prompt and email fields were filled and cleared; consent overlays were hidden, never answered)
-- https://www.krea.ai/login is the auth boundary (Continue with Google, Continue with Apple, SSO, Continue with Email). Controls were measured, never followed, and the email field was filled and cleared
-- https://www.krea.ai/assets redirects to /login?redirect=%2Fassets. The signed-in asset library was not captured
+Access: read-only (the home shell, pricing, enterprise, blog, plugins, MCP, the image tool, docs, terms and the login card are public; a Continue with Email attempt on 2026-11-18 was stopped by Cloudflare Turnstile: GET /api/auth/email-flow returned 400 captcha_failed with no visible widget, so assets, train, nodes, account, billing, API keys, checkout and generation remain behind sign-in; Sign in, Sign up, OAuth, Book a call, Get Pro and Generate were measured, never followed except that one Email continue; the prompt and email fields were filled; consent overlays were hidden, never answered)
+- https://www.krea.ai/login is the auth boundary (Continue with Google, Continue with Apple, SSO, Continue with Email). Google, Apple and SSO were never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget). Stopped there
+- https://www.krea.ai/assets redirects to /login?redirect=%2Fassets. The signed-in asset library was not captured: the email pass never got past Turnstile
 - https://www.krea.ai/pricing plan buttons (Get Free, Get Basic, Get Pro, Get Max) open account or checkout and were measured, never followed
 - https://www.krea.ai/ and https://www.krea.ai/image Generate and the composer submit a generation. They were measured, never clicked
 - Train, Node Editor, account settings, billing and API keys sit behind sign-in and were not opened

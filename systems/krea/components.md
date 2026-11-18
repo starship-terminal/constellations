@@ -1,6 +1,6 @@
 # Krea components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from www.krea.ai on 2026-11-17, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. The public app paints html.dark. Nothing was signed into, submitted or purchased. Sign in, Log in, Sign up, Continue with Google/Apple/SSO/Email, Book a call and Generate were measured, never followed. Consent overlays were hidden, never answered.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from www.krea.ai on 2026-11-17, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. The public app paints html.dark. Nothing was signed into or purchased. Sign in, Log in, Sign up, Continue with Google/Apple/SSO, Book a call and Generate were measured, never followed. Continue with Email was submitted once on 2026-11-18 and stopped on captcha_failed. Consent overlays were hidden, never answered.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (42 components, 90 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -505,12 +505,12 @@ No standalone SVG icon set was lifted on this pass. The wordmark, tool glyphs an
 
 ### Account, generation and checkout
 
-The signed-in product sits behind https://www.krea.ai/login. This package covers public signed-out pages only. Sign in, Sign up for free, Log in, Continue with Google, Continue with Apple, SSO and Continue with Email were measured and never followed. No account was created and no OAuth flow was opened.
+The signed-in product sits behind https://www.krea.ai/login. This package covers public signed-out pages only. Sign in, Sign up for free, Log in, Continue with Google, Continue with Apple and SSO were measured and never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget) and the pass stopped. No account was created and no OAuth flow was opened.
 
 ### Pages
 
-- **https://www.krea.ai/login.** Welcome to Krea, the Google, Apple and SSO buttons, and the email field. The email field was filled and cleared. Continue with Email was never clicked.
-- **https://www.krea.ai/assets.** Redirects to /login?redirect=%2Fassets. The signed-in asset library was not captured.
+- **https://www.krea.ai/login.** Welcome to Krea, the Google, Apple and SSO buttons, and the email field. Continue with Email was submitted once; Turnstile returned captcha_failed.
+- **https://www.krea.ai/assets.** Redirects to /login?redirect=%2Fassets. The signed-in asset library was not captured: the email pass never got past Turnstile.
 - **https://www.krea.ai/pricing.** Get Free, Get Basic, Get Pro and Get Max open account or checkout. They were measured, never followed.
 - **https://www.krea.ai/enterprise.** Book a call is a sales form. It was measured, never followed.
 - **https://www.krea.ai/ and https://www.krea.ai/image.** Generate and the composer submit a generation. They were measured, never clicked.

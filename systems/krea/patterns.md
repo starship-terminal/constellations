@@ -30,7 +30,7 @@ https://www.krea.ai/docs is a separate docs surface. It was shot, and its sheets
 
 ## Login boundary
 
-https://www.krea.ai/login is "Welcome to Krea" (`login-h1`) with Continue with Google, Continue with Apple, Single Sign-On (SSO) (`login-google`, `login-apple`, `login-sso`, about 352 x 46) and an email field (`login-email`). Continue with Email (`login-email-btn`) is the blue button. The email field was filled with a throwaway address and cleared. No provider was followed and nothing was submitted. Terms and Privacy links were measured. See [login-dark-default](screenshots/login-dark-default.png).
+https://www.krea.ai/login is "Welcome to Krea" (`login-h1`) with Continue with Google, Continue with Apple, Single Sign-On (SSO) (`login-google`, `login-apple`, `login-sso`, about 352 x 46) and an email field (`login-email`). Continue with Email (`login-email-btn`) is the blue button. Google, Apple and SSO were never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget) and the signed-in pass stopped. Terms and Privacy links were measured. See [login-dark-default](screenshots/login-dark-default.png).
 
 ## Phone (390 x 844)
 

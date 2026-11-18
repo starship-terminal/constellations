@@ -4,7 +4,7 @@ A token set and component reference for Krea's public signed-out website, for bu
 
 Krea paints one public theme, `html.dark`. The Tailwind v4 `@theme` layer on `:root,:host` declares a primary grey ramp (`--color-primary-0` through `--color-primary-1000`, including 150, 250, 850 and 975), action colours (`--color-action` `#006eff`, hover `#0064fe`, green `#65f223`, purple `#af00ff`), radius steps, a 4px spacing base, and Suisse Intl. Semantic roles (`--background`, `--foreground`, `--card`, `--sidebar`, `--destructive`, `--warning`, `--success`) live on `.dark`. The body field is `--color-primary-950` `#101010`. Those painted roles are stored in the light token set, because this library's catalog reads a light semantic set. The dark set is empty. There is no public light switch. Docs uses a separate sheet set and is not folded into the app tokens.
 
-**Boundary:** everything past login (assets, train, node editor, account, billing, API keys, checkout and generation) was never reached. Sign in, Sign up, Continue with Google, Apple, SSO and Email, Book a call, Get Free, Get Basic, Get Pro, Get Max, Claim offer and Generate were measured, never followed. The email and prompt fields were filled and cleared. Consent overlays were hidden, never answered.
+**Boundary:** everything past login (assets, train, node editor, account, billing, API keys, checkout and generation) was never reached. Sign in, Sign up, Continue with Google, Apple and SSO, Book a call, Get Free, Get Basic, Get Pro, Get Max, Claim offer and Generate were measured, never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget) and the pass stopped. The prompt field was filled and cleared. Consent overlays were hidden, never answered.
 
 | File | What it is |
 |---|---|
@@ -168,8 +168,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Onboarding | The public home is the signed-out start. Account onboarding is behind login |
 | Desktop 1440 and phone 390 | Captured. Phone shots are 1x because the page forces devicePixelRatio to 1 |
 | Light theme | Not present as a shipped public theme. html.light was resolved as a comparison and is not in the tokens |
-| Login | Captured at the boundary. See [login-dark-default](screenshots/login-dark-default.png). Nothing submitted |
-| Signed-in product | Not captured. Assets, train, nodes, account, billing, API keys and checkout sit behind sign-in |
+| Login | Captured at the boundary. See [login-dark-default](screenshots/login-dark-default.png). Continue with Email was submitted once; Turnstile returned captcha_failed |
+| Signed-in product | Not captured. 2026-11-18 email pass stopped on GET /api/auth/email-flow 400 captcha_failed (Cloudflare Turnstile, no visible widget). Assets, train, nodes, account, billing, API keys and checkout remain behind sign-in |
 | Icons | Not captured as an SVG set. Glyphs are visible in crops and screenshots. Recorded as a layout gap |
 | Fonts | Named with fallback stacks. Files are not redistributed |
 
