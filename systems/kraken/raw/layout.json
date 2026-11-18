@@ -1,0 +1,13 @@
+{
+  "product": "kraken",
+  "captured": "2026-11-18",
+  "widths": [1440, 390],
+  "themes": ["magic-light", "magic-dark"],
+  "shell": {
+    "headerHeight": "64px",
+    "desktop": 1440,
+    "phone": 390,
+    "content": "centred marketing column, full-bleed dark bands"
+  },
+  "notes": "Header is transparent. Page token is --colors-ds-semantic-surface-page. Dark pages set data-theme=magic-dark on body."
+}
