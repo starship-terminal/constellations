@@ -16721,6 +16721,105 @@
       }
     },
     {
+      "slug": "leonardo",
+      "name": "Leonardo.Ai",
+      "url": "https://leonardo.ai",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "creator-first generative media: a black marketing canvas with a violet #6e60ee wordmark and a white Start now pill, a signed-out #0a0a0a app shell (white display heading, prompt bar, muted Generate, icon rail) and a dark ReadMe docs page whose light color mode is declared, not painted",
+      "tags": [
+        "web",
+        "ai",
+        "generative-media",
+        "image",
+        "video",
+        "dark",
+        "violet-accent",
+        "prompt",
+        "docs",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "read-only (marketing pages, the signed-out app shell, public Blueprints, the login card and the docs getting-started page are public; Library, account, generation, checkout, API keys and OAuth were never entered; Start now, Subscribe, Log in, Generate and the provider buttons were measured where they painted, never followed; the prompt was filled and cleared; the consent overlay was hidden, never answered)",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/leonardo/README.md",
+      "tokens": "systems/leonardo/tokens.json",
+      "styleGuide": "systems/leonardo/style-guide.html",
+      "preview": {
+        "cover": "systems/leonardo/screenshots/home-dark-default.png",
+        "icon": "systems/leonardo/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.muted",
+            "accent": "dark.color.accent.base",
+            "border": "dark.color.border.base"
+          },
+          "light": {
+            "page": "light.color.docs.page.base",
+            "surface": "light.color.docs.overlay",
+            "text": "light.color.docs.text.primary",
+            "muted": "light.color.docs.text.muted",
+            "accent": "light.color.docs.accent",
+            "border": "light.color.docs.border.base"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.display",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "leonardo.ai, app.leonardo.ai and docs.leonardo.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass, on 2026-11-18. Colour roles are declared custom properties. Component values are measured computed styles. Library, account, generation, checkout and OAuth are a documented boundary",
+        "timestamp": "2026-11-18T07:00:00Z",
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/api",
+          "/learn",
+          "/contact-us",
+          "/ai-image-generator",
+          "/this-page-does-not-exist",
+          "app.leonardo.ai/ (signed-out shell)",
+          "app.leonardo.ai/blueprints/platform",
+          "app.leonardo.ai/auth/login",
+          "docs.leonardo.ai/docs/getting-started",
+          "mobile / (incl. nav drawer), app shell, login"
+        ],
+        "gaps": [
+          "Library and other account routes redirect to https://app.leonardo.ai/auth/login \u2014 an authenticated boundary never reached",
+          "Generate on the signed-out prompt composer at https://app.leonardo.ai/ was measured and not submitted",
+          "Subscribe on https://leonardo.ai/pricing hands off to the app; checkout was not entered",
+          "OAuth at https://app.leonardo.ai/auth/login (Canva, Apple, Google, Microsoft) and Continue with Email were measured at rest, never followed; the email form and Turnstile were not submitted",
+          "API keys and the API console sit behind the account; https://leonardo.ai/api and the public docs page were captured, the console was not",
+          "Contact form at https://leonardo.ai/contact-us was not submitted",
+          "Team plans checkout at https://leonardo.ai/team-plans was not entered",
+          "Marketing nav controls (header, Pricing, Log in, Create, Start now) and the app rail, Sign up, Sign in and featured cards are in the screenshots and were not boxed on the measurement pass"
+        ],
+        "durationMin": 180,
+        "durationNote": "wall-clock across the capture session including kit adaptation, stylesheet harvest, screenshot and measurement passes, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/664"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG set was lifted; the wordmark, rail glyphs and OAuth marks are visible in the crops and screenshots"
+      }
+    },
+    {
       "slug": "limitless",
       "name": "Limitless",
       "url": "https://www.limitless.ai",

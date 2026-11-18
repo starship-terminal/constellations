@@ -2694,8 +2694,8 @@
     922
    ],
    "description": "Generative AI Platform for Images, Art & Video",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/leonardo",
    "notes": "",
    "batch": 9
   },
