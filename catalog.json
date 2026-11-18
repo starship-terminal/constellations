@@ -16410,6 +16410,77 @@
       }
     },
     {
+      "slug": "maze",
+      "name": "Maze",
+      "url": "https://maze.co",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "User-research product marketing: a warm neutral page, Phonic light display, a pill and a near-black demo button, an oklch palette, and a blue login action on an Inter card",
+      "tags": [
+        "web",
+        "research",
+        "marketing",
+        "light",
+        "signed-out",
+        "tailwind",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed-out public marketing, pricing, the auth login card, and one published sample report. No study started. No form submitted. No purchase.",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/maze/README.md",
+      "tokens": "systems/maze/tokens.json",
+      "styleGuide": "systems/maze/style-guide.html",
+      "preview": {
+        "cover": "systems/maze/screenshots/home-light-default.png",
+        "icon": "systems/maze/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textBody",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": ["core.font.family.display", "core.font.family.sans"]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "maze.co, auth.maze.co/login and a published sample report on app.maze.co, headless Chromium, desktop 1440x900 and phone 390x844. CookieYes and OneTrust hidden, never clicked. The survey promo hidden, never opened.",
+        "timestamp": "2026-11-18T09:17:00Z",
+        "harness": "Grok / T3",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "maze.co/",
+          "maze.co/pricing/",
+          "maze.co/platform/",
+          "maze.co/platform/ux-reporting/",
+          "maze.co/customers/",
+          "maze.co/demo/",
+          "maze.co/resources/user-research-report/",
+          "auth.maze.co/login",
+          "app.maze.co/report/Banking-App-Usability-Test/3pvvlrkzmvlpob/intro"
+        ],
+        "gaps": [
+          "app.maze.co past the public report redirects to sign-in; the workspace was not entered",
+          "auth.maze.co/signup and the Starter Sign up now link were not followed",
+          "the login form was not submitted; the password field was never filled",
+          "the demo form and the footer newsletter were not submitted",
+          "Take the survey on the promo bar opens a live study at t.maze.co and was not started",
+          "SSO and password reset were not opened",
+          "the phone report paints Window size too small and asks for 800px"
+        ],
+        "durationMin": 45,
+        "pr": ""
+      }
+    },
+    {
       "slug": "linear",
       "name": "Linear",
       "url": "https://linear.app",

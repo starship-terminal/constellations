@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maze style guide</title>
+<meta name="description" content="Maze public signed-out tokens, rendered from tokens.json. One light theme.">
+<style>
+:root {
+  --color-neutral-0: #ffffff;
+  --color-neutral-000: #ffffff;
+  --color-neutral-50: #f6f6f6;
+  --color-neutral-100: #f5f4f0;
+  --color-neutral-200: #eae6e1;
+  --color-neutral-300: #d2cec6;
+  --color-neutral-400: #9e9b94;
+  --color-neutral-500: #706f6c;
+  --color-neutral-600: #3c3c3c;
+  --color-neutral-700: #1c1c1c;
+  --color-neutral-800: #454545;
+  --color-neutral-900: #000000;
+  --color-neutral-950: #1a1a1a;
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #f0f9ff;
+  --color-blue-200: #cce7ff;
+  --color-blue-300: #96c8ff;
+  --color-blue-400: #5d9fff;
+  --color-blue-500: #1b66da;
+  --color-blue-600: #0a4aae;
+  --color-blue-700: #052961;
+  --color-blue-800: #193cb8;
+  --color-blue-900: #1c398e;
+  --color-lime-100: #f9ffdb;
+  --color-lime-200: #eefdab;
+  --color-lime-300: #dbf570;
+  --color-lime-400: #b9e20d;
+  --color-lime-500: #92b116;
+  --color-lime-600: #657b0e;
+  --color-lime-700: #4b5b0a;
+  --color-cyan-100: #eefaf6;
+  --color-cyan-200: #ddf4ec;
+  --color-cyan-300: #adeeda;
+  --color-cyan-400: #79dec0;
+  --color-cyan-500: #41b492;
+  --color-cyan-600: #1b7e60;
+  --color-cyan-700: #036246;
+  --color-purple-50: #faf5ff;
+  --color-purple-100: #f4ecfe;
+  --color-purple-200: #e0cafc;
+  --color-purple-300: #c095f9;
+  --color-purple-400: #a366ff;
+  --color-purple-500: #7825f4;
+  --color-purple-600: #5703bf;
+  --color-purple-700: #34057c;
+  --color-purple-800: #824dbb;
+  --color-purple-850: #6b3f9d;
+  --color-purple-900: #392e45;
+  --color-red-50: #fef2f2;
+  --color-red-100: #ffe5ed;
+  --color-red-200: #ffccdb;
+  --color-red-300: #fe769f;
+  --color-red-400: #fc1258;
+  --color-red-500: #d10241;
+  --color-red-600: #a30534;
+  --color-red-700: #73013e;
+  --color-red-800: #9f0712;
+  --color-red-900: #82181a;
+  --color-yellow-50: #fefce8;
+  --color-yellow-100: #fff9e5;
+  --color-yellow-200: #ffecb4;
+  --color-yellow-300: #fdda72;
+  --color-yellow-400: #ffc300;
+  --color-yellow-500: #e69900;
+  --color-yellow-600: #bf711c;
+  --color-yellow-700: #995200;
+  --color-yellow-800: #894b00;
+  --color-yellow-900: #733e0a;
+  --color-white: #ffffff;
+  --color-error: #d10241;
+  --color-success: #1b7e60;
+  --color-action: #0568fd;
+  --font-family-display: Phonic, sans-serif;
+  --font-family-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-7xl: 72px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-pill: 9999px;
+  --layout-page: 1440px;
+  --layout-phone: 390px;
+  --layout-navHeight: 80px;
+  --layout-content: 1152px;
+  --layout-prose: 896px;
+  --page: var(--color-neutral-100);
+  --surface: var(--color-white);
+  --text: var(--color-neutral-900);
+  --textBody: var(--color-neutral-500);
+  --textMuted: var(--color-neutral-400);
+  --textOnAccent: var(--color-white);
+  --accent: var(--color-neutral-900);
+  --accentHover: var(--color-neutral-700);
+  --link: var(--color-action);
+  --action: var(--color-action);
+  --focus: var(--color-blue-500);
+  --border: var(--color-neutral-200);
+  --error: var(--color-error);
+  --success: var(--color-success);
+  --lime: var(--color-lime-400);
+  --sg-display: Phonic, ui-sans-serif, system-ui, sans-serif;
+  --sg-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 300 56px/1 var(--sg-display); letter-spacing: -1.5px; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--textBody); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--textBody); }
+code { font-family: var(--sg-mono); font-size: 13px; color: var(--link); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: var(--textBody); }
+.bar { display: flex; align-items: center; gap: 18px; height: 80px; padding: 0 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.bar .mark { font: 500 22px/1 var(--sg-display); }
+.bar a { color: var(--text); text-decoration: none; font-size: 13px; letter-spacing: .04em; }
+.bar .sp { flex: 1; }
+.hero { padding: 48px 0 16px; }
+.hero h3 { margin: 0; font: 300 64px/1 var(--sg-display); letter-spacing: -1.6px; max-width: 12ch; }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 8px; background: var(--accent); color: var(--textOnAccent); border: 0; font: 500 14px/1 var(--sg-sans); }
+.pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 9999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font: 500 14px/1 var(--sg-sans); }
+.action { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 8px; background: var(--action); color: var(--textOnAccent); font: 600 16px/1 var(--sg-sans); }
+.field { display: flex; align-items: center; height: 48px; width: 320px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--textMuted); }
+.lime { margin-top: 16px; height: 72px; border-radius: 16px; background: var(--lime); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--textBody); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Maze</h1>
+  <p>Public marketing site, pricing, the auth login card and a published sample report, captured 2026-11-18. One light theme. Phonic and Inter are licensed and not loaded here; the page uses the system fallback.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>neutral 100</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>white</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>neutral 900</span></div>
+    <div class="sw"><i style="background:var(--textBody)"></i><b>body</b><span>neutral 500</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>near black</span></div>
+    <div class="sw"><i style="background:var(--action)"></i><b>action</b><span>login blue</span></div>
+    <div class="sw"><i style="background:var(--lime)"></i><b>lime</b><span>lime 400</span></div>
+    <div class="sw"><i style="background:var(--error)"></i><b>error</b><span>red 500</span></div>
+    <div class="sw"><i style="background:var(--success)"></i><b>success</b><span>cyan 600</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <div class="bar">
+    <span class="mark">Maze</span>
+    <a>PLATFORM</a><a>PRICING</a>
+    <span class="sp"></span>
+    <span class="pill">Try Maze for free</span>
+    <span class="btn">Get a demo</span>
+  </div>
+  <div class="hero">
+    <h3>Research at the pace of change</h3>
+    <p>Display is Phonic light. Marketing CTAs are a pill and a near-black fill at 8px.</p>
+    <p><span class="pill">Try Maze for free</span> <span class="btn">Get a demo</span></p>
+  </div>
+  <p><span class="field">Email</span></p>
+  <p><span class="action">Log in</span></p>
+  <div class="lime"></div>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Weight</th></tr>
+    <tr><td>Display</td><td>72px token, hero is larger</td><td>300</td></tr>
+    <tr><td>Heading</td><td>36px</td><td>300</td></tr>
+    <tr><td>Body</td><td>16px</td><td>400</td></tr>
+    <tr><td>Label</td><td>14px</td><td>500</td></tr>
+  </table>
+  <p>Values are the measured public surface. See <code>tokens.json</code> for provenance.</p>
+</main>
+</body>
+</html>
