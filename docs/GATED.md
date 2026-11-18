@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_155 of 213 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_156 of 214 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -441,6 +441,13 @@ Access: signed out (every captured surface is public: /, /explore, /charts, /tra
 Access: signed out (every captured surface is public: the marketing pages, one public audiobook page and the /reader sign-in/sign-up cards; the reader app - library, upload, player, settings, billing - sits behind /reader/sign-in and was never reached; the email forms were revealed by their own toggles and never submitted)
 - the reader app entirely: library, upload, the reader/player, settings and billing live behind /reader/sign-in and were never reached; /reader/sign-in and /reader/sign-up were captured as boundary cards
 - the OAuth buttons were never pressed; the email credential forms were revealed by their own 'with email' toggles (local UI, nothing sent), fields were focused and sample text was typed and deleted - no form was ever submitted, so error/success states are uncaptured
+
+## [Matter](../systems/matter) — `matter`
+Access: signed out (every captured surface is public: the marketing pages, one published article, the docs home and the web reader sign-in card; the reader app sits behind sign-in and was never reached; the email field was focused and never filled; Subscribe was never pressed, so that form was not submitted)
+- the reader app sits behind sign-in at web.getmatter.com and was never reached; the sign-in card was captured as the boundary
+- Continue with Google and Continue with Apple were never pressed; the email field was focused and never filled; the arrow was never pressed, so the form was not submitted
+- the publication Subscribe control was measured and never pressed, so that form was not submitted
+- Get Matter links to an App Store checkout that was never followed
 
 ## [Endel](../systems/endel) — `endel`
 Access: signed out (every captured surface is public: the endel.io marketing pages plus app.endel.io's explore, player and sign-in card; the account, library, premium unlock/checkout and any form submit were never crossed; the Set Timer sheet, More flyout and mobile menu were opened by their own toggles and closed again)
