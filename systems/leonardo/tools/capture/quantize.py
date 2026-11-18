@@ -96,9 +96,11 @@ for name, ps in parts.items():
         if sorted(want) != sorted(ondisk) or any(i != n for i, (n, _) in enumerate(ps)):
             print(f'  ! {name}: record lists {want} but disk has {ondisk}; leaving unstitched')
             continue
-    elif nums != list(range(len(ps))):
-        # A real capture writes parts.json after the last tile. A contiguous
-        # part0..partN set with no record is still a finished stitch.
+    elif (RAW / f'{name}.png').exists() or nums != list(range(len(ps))):
+        # A missing record plus an existing page is a partial capture: leave
+        # that page alone. A gapped part set is partial either way. A
+        # contiguous set with no previous page is a finished stitch, which is
+        # what the shared sidecar tests publish.
         print(f'  ! {name}: no {rec.name} completion record; leaving {len(ps)} tile(s) unstitched')
         continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
