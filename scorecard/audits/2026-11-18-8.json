@@ -1,7 +1,7 @@
 {
  "date": "2026-11-18",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture review, carried from the Intercom capture branch",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Public signed-out capture of lummi.ai on 2026-11-18, measured in headless Chromium at 1440 and 390. Grades set from the package README, tokens and screenshots.",
  "systems": [
   {
    "slug": "1password",
@@ -25872,103 +25872,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "intercom",
+   "slug": "lummi",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "Neutral ramp is complete (color.neutral.* 17 stops white->off-black incl. gray steps and navy) and the blueprint blue ramp has ~12 stops (color.blue.* pale->black); the product accent hues (fin, sales, ecom, operator, voice) are single or paired stops, not ramps, and the .intercom-legacy hues are 3-stop (color/light/lightest). The Tailwind support hues exist as scattered steps (color.support.*), not ramps."
+     "evidence": "No hue ramps. The painted set is ink, white, muted zinc and one black accent. --yellow and --highlight are single declared roles, not 10-step ramps."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "light.background has page, chalk, canvas, card, inset, banner and helpGround - page, surface and raised are covered; no overlay or scrim role exists (the mobile sheet and mega-menu paint solid grounds)."
+     "evidence": "Page, surface, overlay (popover) and scrim (bg-black/80) are captured. A raised role distinct from surface was not declared."
     },
     "F3": {
-     "grade": "meets",
-     "evidence": "light.text has primary, muted, onDark (on-accent), link, error, accent and nav-secondary/-tertiary; disabled ink lives as light.action.*.disabled-foreground on both button sets."
+     "grade": "partly",
+     "evidence": "Primary, secondary (muted-foreground), faint, and on-accent are captured. Disabled text was not shown. Links use the same ink as primary text."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "light.border has default, strong, subtle and field plus a dedicated light.focus.ring (--color-focus-outline = --color-blue #000ce1), the measured keyboard focus."
+     "grade": "partly",
+     "evidence": "Default border and a 2px focus outline are captured. A strong border role was not declared."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "light.action.primary declares background/foreground/border across default, hover (#0007cb helpdesk) and active (helpdesk at 85%) plus disabled, and secondary mirrors it; the hover/pressed repaints were also measured live on the CTAs."
+     "evidence": "Try Pro and Continue have default, hover and pressed fills. Pressed was forced with CSS.forcePseudoState and matches hover."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "Only danger is a semantic role on the painted surface (light.status.error + light.text.error). Success/warning hues exist only in the harvested palette layer (color.support.green/amber, color.legacy.success/warning/error families) and are not organised as fill/text/border roles; no info role exists on the signed-out surface."
+     "evidence": "Danger, warning (yellow) and info (highlight) are single declared colours. Success was an empty custom property. None has a fill, text and border trio."
     },
     "F7": {
-     "grade": "na",
-     "evidence": "The product ships one theme: every captured route paints body.theme-light and no dark class, attribute or prefers-color-scheme repaint exists (themeChecks in raw/css-vars.json). There is no second theme for parity to span."
+     "grade": "partly",
+     "evidence": "Every captured role has a --*-dark twin. Those twins were not painted. The public pages stayed light."
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "fontFamily.* carries 15 families with documented fallbacks (Saans, SaansMono, Serrif, MediumLL, IvoryLL, DmMono, the campaign faces, system); fontSize.* is a 4-breakpoint x ~12-style responsive scale (heading-1..6, callout, body-xl/lg/base, label, button) with weights, line heights and tracking, and typography.* composites name the roles the components paint."
+     "grade": "partly",
+     "evidence": "Inter with Inter Fallback, plus DM Sans on /pro. Sizes run 12, 14, 16, 18, 20, 64, 104 and 141px, with weights and line heights. Display, heading, body, label and caption are named. No code role was shown."
     },
     "F9": {
      "grade": "partly",
-     "evidence": "spacing.base is the Tailwind --spacing base (0.25rem) the utilities multiply; there is no named step scale (space-1..N) in the declared layer - component paddings/gaps are measured values, not steps."
+     "evidence": "4px base with measured 8, 12, 16, 24 and 40. Not a full declared scale."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "radius.xs..2xl is a declared 6-stop scale and component.button.radius (4px) plus measured card/menu radii are tokenised; border widths are measured (1px rings, black/20 field) but not tokenised - no border-width var exists."
+     "grade": "meets",
+     "evidence": "4px controls, 2px tabs, 6px menus, 8px cards, pill tags, 1px borders."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Measured geometry is tokenised (component.button.height 40px, padding-x, media.button-icon-height, field heights); icon sizes are indexed in icons/INDEX.tsv (12-26px); the focus ring's width/offset is not tokenised - only its colour is (light.focus.ring)."
+     "evidence": "40px header controls, 48px fields, 20px icons, 2px focus outline. Offset was 2px on the dialog, not recorded as a token. No small/medium/large control scale."
     },
     "F12": {
      "grade": "partly",
-     "evidence": "Only one shadow is tokenised (shadow.legacyNavMenu from --shadow-nav-light-menu); the marketing surface paints mostly border-ring cards, so the measured menu/popover shadows exist in components-computed but no 3-5 level elevation scale is declared."
+     "evidence": "One menu/dialog shadow was measured. No 3 to 5 level ramp."
     },
     "F13": {
-     "grade": "meets",
-     "evidence": "Durations are declared (default transition 150ms) and measured (motion.duration.*); the full --ease-* Penner library plus the default timing function are tokenised and steps()/linear() curves are preserved under notTokenised; the reduced-motion story is recorded per page in raw/motion.json (partially honoured)."
+     "grade": "partly",
+     "evidence": "150ms and 300ms with cubic-bezier(0.4, 0, 0.2, 1). prefers-reduced-motion was not reduced in this browser, so the reduced-motion change was not captured."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "container.xs..5xl + screen-3xl and zIndex.nav/nav-menu/nav-tooltip/overlay/modal/modal-control are tokenised, breakpoints are implicit in the fontSize.{mobile,tablet,small-desktop,desktop} tiers and raw/layout.json holds 33 page/viewport probes; explicit breakpoint px and grid-column counts are not tokenised."
+     "evidence": "1440 and 390 are captured. Content widths, grid columns and z-index layers were not recorded as a scale."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "12 of 19 checklist components present on the signed-out surface: button, icon button (close-banner, menu, play), link, text field, select + listbox, checkbox, radio/segmented (the billing toggle), menu (mega-menu + mobile sheet), dialog (m-menu-overlay role=dialog), card, list row, badge. Textarea, switch, tabs, toast, table, avatar and a captured tooltip do not appear publicly - honest absence."
+     "evidence": "Button, icon button, link, text field, tabs, menu, dialog, card, list row, avatar and badge are on the public pages. Text area, select, checkbox, radio, tooltip, toast and table are not. The switch is visible in the Tools menu and was not measured on its own."
     },
     "C2": {
-     "grade": "meets",
-     "evidence": "Beyond default: real hover, keyboard focus-visible, CDP-forced pressed, selected (billing toggle), opened (mega-menu, FAQ, select listbox, mobile sheet) and declared+measured disabled on the button matrix - per-state tables across all 45 components in components.md."
+     "grade": "partly",
+     "evidence": "Buttons and links have hover, focus-visible and pressed. The email field has focused and filled. Selected is the Photos tab. Disabled, loading and error were not shown."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "focus-visible states were captured for nav items, links, buttons, the input, select, checkbox and menu rows; the ring resolves to light.focus.ring (brand blue) and the crops show it."
+     "evidence": "Focus-visible is a 2px solid outline on the nav link, Try Pro, Log in, the icon button, Continue and the email field."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "components.md writes every entry against tokens.json paths (computed values named to their matching token where one exists) and the state tables diff values, not prose."
+     "grade": "partly",
+     "evidence": "components.md names the token for each measured colour. Several sizes are still raw px next to the token."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the app shell (shared header + mega-menu + footer), the home/section grammar, pricing composition, the contact-sales form's first step, the help-center and changelog surfaces, mobile sheet, motion and focus; forms/validation, empty/loading/error, destructive confirmation and onboarding flows do not exist on the signed-out surface - the boundary is documented instead."
+     "evidence": "App shell, search and filtering, and the image list are written. Form validation, empty, loading, destructive confirmation, feedback and onboarding were not on the signed-out surface. A missing-path page stands in for error."
     },
     "A1": {
-     "grade": "meets",
-     "evidence": "55 inline SVGs indexed in icons/INDEX.tsv with inferred names, hashes, rendered sizes, viewBox and per-page provenance; every font family is named in fontFamily.* with its declared stack and the fallback behaviour documented (proprietary faces not shipped)."
+     "grade": "partly",
+     "evidence": "Inter and DM Sans are named with their fallbacks. No icon set was indexed."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README records scope (every route, theme and width), exactly how values were read (stylesheet harvest, live-DOM geometry, screenshot theme verification, layout/motion/icon probes), what to distrust (boundaries, recapture-missed components, forced pressed states, partial reduced-motion) and a Do and don't list."
+     "evidence": "The README records the date, the route, the widths, what was not pressed, and what to distrust."
     },
     "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 1 pair, worst 4.34:1 light muted (light.text.muted) on page (light.background.page)"
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.83:1 light muted (light.textMuted) on page (light.page)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 531 of 531 tokens name their source"
+     "evidence": "Script: 100 of 100 tokens name their source"
     },
     "K2": {
      "grade": "partly",
-     "evidence": "Script: 11 rules, 7 linking an image (needs 3+, all linked)"
+     "evidence": "Script: 6 rules, 3 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
@@ -25987,19 +25987,20 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Intercom",
-   "goodFor": "customer-service platform marketing design across three surfaces on one Tailwind v4 token layer: the signed-out i2y4 marketing site (a Fin 4 promo strip + white shared-header with the Product mega-menu, cream --body-bg ground, Saans hero, off-black primary CTAs that repaint helpdesk-blue #0007cb on hover, feature cards at 14px radius, the pricing billing toggle + helpdesk-tint savings badge + plan columns + FAQ accordion, and the contact-sales first-step form with quiet 2px-radius fields on an off-white fill), plus the help center's white IvoryLL shell and the changelog's older header__lite MediumLL surface. Declared layer: warm neutral ramp --color-white/-off-white/-cream/-chalk/-canvas/-linen/-clay, blueprint blues, product accents --color-fin #ff5600 / --color-helpdesk / --color-sales / --color-ecom / --color-voice-*, responsive --text-{style}-{breakpoint} scale with --font-sans/-serif/-mono stacks (Saans, Serrif, SaansMono + campaign faces), --radius-*/--container-*/--z-index-*, the full --ease-* Penner set, the unlayered --button-* state matrix and .theme-light nav roles; scoped .brand-i2y4 and .intercom-legacy palettes",
-   "url": "https://www.intercom.com",
-   "captured": "2026-11-17",
+   "name": "Lummi",
+   "goodFor": "A signed-out stock library: white page, Inter display at tight tracking, one black primary button, 4px controls, pill tags, a search command palette, and a public image page with Download left unpressed",
+   "url": "https://www.lummi.ai",
+   "captured": "2026-11-18",
    "themes": [
-    "light"
+    "light",
+    "dark"
    ],
    "platform": "web",
-   "category": "Messaging",
+   "category": "Media",
    "reviewed": "2026-11-18",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "public-web capture review, carried from the Intercom capture branch"
+ "reviewMethod": "Public signed-out capture of lummi.ai on 2026-11-18, measured in headless Chromium at 1440 and 390. Grades set from the package README, tokens and screenshots."
 }
