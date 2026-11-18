@@ -31,13 +31,14 @@ await hideConsent(page);
 const inline = await page.evaluate(() => [...document.querySelectorAll('style')].map((s) => s.textContent).join('\n'));
 const fontFaces = await page.evaluate(() => {
   const faces = [];
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   for (const sheet of [...document.styleSheets]) {
     let rules;
     try { rules = [...sheet.cssRules]; } catch { continue; }
     const walk = (list) => {
       for (const r of list) {
         if (r.type === CSSRule.FONT_FACE_RULE) {
-          const src = r.style.getPropertyValue('src') || '';
+          const src = noUrl(r.style.getPropertyValue('src') || '');
           faces.push({
             family: (r.style.getPropertyValue('font-family') || '').replace(/["']/g, ''),
             weight: r.style.getPropertyValue('font-weight') || '400',
@@ -67,6 +68,7 @@ for (const block of rootBlocks) {
 await page.goto(DOCS + '/', { waitUntil: 'domcontentloaded', timeout: 45000 });
 await page.waitForTimeout(1800);
 const docs = await page.evaluate(() => {
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const keep = {};
   for (const sheet of [...document.styleSheets]) {
     let rules;
@@ -75,7 +77,7 @@ const docs = await page.evaluate(() => {
       for (const r of list) {
         if (r.style && r.selectorText && /:root|html/.test(r.selectorText) && !r.selectorText.includes('*')) {
           for (const n of r.style) {
-            if (n.startsWith('--') && !n.startsWith('--tw-')) keep[n] = r.style.getPropertyValue(n).trim();
+            if (n.startsWith('--') && !n.startsWith('--tw-')) keep[n] = noUrl(r.style.getPropertyValue(n).trim());
           }
         }
         if (r.cssRules) try { walk([...r.cssRules]); } catch { /* skip */ }

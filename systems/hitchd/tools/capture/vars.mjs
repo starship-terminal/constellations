@@ -118,6 +118,7 @@ const shell = '<!doctype html><html class="' + escAttr(htmlClass) + '"><head>'
 const want = [...new Set(result.rules.flatMap((r) => Object.keys(r.properties)))].filter((n) => !/^--(tw-|_)/.test(n)).sort();
 await probe.setContent(shell, { waitUntil: 'load' });
 const resolved = await probe.evaluate((names) => {
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const readEl = document.getElementById('probe-root');
   const box = document.createElement('div');
   box.style.cssText = 'position:absolute;left:0;top:0;width:1000px;height:1000px;visibility:hidden';
@@ -126,7 +127,7 @@ const resolved = await probe.evaluate((names) => {
   document.body.appendChild(box);
   const out = {};
   for (const name of names) {
-    const raw = getComputedStyle(readEl).getPropertyValue(name).trim();
+    const raw = noUrl(getComputedStyle(readEl).getPropertyValue(name).trim());
     if (!raw) continue;
     const r = { raw: raw.length > 300 ? raw.slice(0, 300) + '…' : raw };
     p.removeAttribute('style');

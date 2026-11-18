@@ -1258,11 +1258,5 @@
     "groupId": "web-categories",
     "labels": ["Entertainment"],
     "reason": "catalog.json describes a signed-out stock library: a search palette and a public image page."
-  },
-  {
-    "referenceId": "systems:manychat",
-    "groupId": "web-categories",
-    "labels": ["Communication Tools"],
-    "reason": "catalog.json describes chat-marketing pages: a neon-pink hero pill, a black promo strip, and pricing cards."
   }
 ]

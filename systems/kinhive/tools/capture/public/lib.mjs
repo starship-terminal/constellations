@@ -137,10 +137,11 @@ export async function readBox(page, locator) {
   const handle = await locator.elementHandle();
   if (!handle) return null;
   const box = await handle.evaluate((el, props) => {
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const cs = getComputedStyle(el);
     const r = el.getBoundingClientRect();
     const o = { x: r.x, y: r.y, w: r.width, h: r.height };
-    for (const p of props) o[p] = cs[p];
+    for (const p of props) o[p] = noUrl(cs[p]);
     o.text = (el.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 180);
     return o;
   }, PROPS);
