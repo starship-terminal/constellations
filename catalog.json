@@ -18784,6 +18784,7 @@
         "harness": "Grok Build",
         "model": "grok-4.7",
         "route": "public-web",
+        "pr": "https://github.com/starship-terminal/constellations/pull/870",
         "durationMin": 45
       },
       "layoutGaps": {
