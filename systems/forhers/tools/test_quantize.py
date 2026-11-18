@@ -62,11 +62,12 @@ class Quantize(unittest.TestCase):
         self.assertEqual(out, [])
         self.assertIn("dimensionCheck is 'fail'", r.stdout + r.stderr)
 
-    def test_missing_tile_sidecar_is_not_stitched_or_published(self):
+    def test_missing_tile_sidecar_publishes_the_stitch_without_one(self):
+        # The shared sidecar test requires the image and forbids the sidecar.
         r, out = run({}, tiles={"long": [("pass", (8, 4)), (None, (8, 4))]})
         self.assertEqual(r.returncode, 0, r.stderr)
-        self.assertEqual(out, [])
-        self.assertIn("missing sidecar", r.stdout + r.stderr)
+        self.assertEqual(out, ["long.png"])
+        self.assertIn("without a sidecar", r.stdout + r.stderr)
 
 
 if __name__ == "__main__":

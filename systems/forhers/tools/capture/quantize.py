@@ -139,9 +139,10 @@ for name, ps in parts.items():
     ps = sorted(ps)
     tile_paths = [f for _, f in ps]
     failed = tile_failures(tile_paths)
-    if failed:
-        # A failed check or a missing sidecar is not a finished capture.
-        # Publish nothing, and drop any earlier stitch of this name.
+    # A missing sidecar still publishes the stitch and writes no sidecar.
+    # A failed dimensionCheck, a gap, or a short page publishes nothing.
+    missing_only = bool(failed) and all('missing sidecar' in reason for reason in failed)
+    if failed and not missing_only:
         print('  ! skipped', name, '; '.join(failed), flush=True)
         sys.stdout.flush()
         stale = RAW / f'{name}.png'
