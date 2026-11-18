@@ -1,0 +1,989 @@
+{
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "type": "fontFamily",
+     "var": "--font-sans",
+     "description": "the product face — \"Inter\",\"Inter Fallback\",sans-serif loaded through next/font; body text and UI"
+    },
+    "inter": {
+     "type": "fontFamily",
+     "var": "--font-inter",
+     "description": "Inter — the next/font face itself (with its metrics-matched fallback)"
+    },
+    "geistMono": {
+     "type": "fontFamily",
+     "var": "--font-geist-mono",
+     "description": "Geist Mono — the next/font mono face (with fallback); code and MCP snippets"
+    },
+    "mono": {
+     "type": "fontFamily",
+     "var": "--font-mono",
+     "description": "the mono face — ui-monospace system stack; inline code and pre blocks"
+    }
+   },
+   "weight": {
+    "bold": {
+     "type": "fontWeight",
+     "var": "--font-weight-bold"
+    },
+    "medium": {
+     "type": "fontWeight",
+     "var": "--font-weight-medium"
+    },
+    "normal": {
+     "type": "fontWeight",
+     "var": "--font-weight-normal"
+    },
+    "semibold": {
+     "type": "fontWeight",
+     "var": "--font-weight-semibold"
+    }
+   },
+   "size": {
+    "xs": {
+     "type": "dimension",
+     "var": "--text-xs"
+    },
+    "sm": {
+     "type": "dimension",
+     "var": "--text-sm"
+    },
+    "base": {
+     "type": "dimension",
+     "var": "--text-base"
+    },
+    "lg": {
+     "type": "dimension",
+     "var": "--text-lg"
+    },
+    "xl": {
+     "type": "dimension",
+     "var": "--text-xl"
+    },
+    "2xl": {
+     "type": "dimension",
+     "var": "--text-2xl"
+    },
+    "3xl": {
+     "type": "dimension",
+     "var": "--text-3xl"
+    },
+    "4xl": {
+     "type": "dimension",
+     "var": "--text-4xl"
+    },
+    "5xl": {
+     "type": "dimension",
+     "var": "--text-5xl"
+    },
+    "7xl": {
+     "type": "dimension",
+     "var": "--text-7xl"
+    }
+   },
+   "lineHeight": {
+    "2xl": {
+     "type": "number",
+     "var": "--text-2xl--line-height"
+    },
+    "3xl": {
+     "type": "number",
+     "var": "--text-3xl--line-height"
+    },
+    "4xl": {
+     "type": "number",
+     "var": "--text-4xl--line-height"
+    },
+    "5xl": {
+     "type": "number",
+     "var": "--text-5xl--line-height"
+    },
+    "7xl": {
+     "type": "number",
+     "var": "--text-7xl--line-height"
+    },
+    "base": {
+     "type": "number",
+     "var": "--text-base--line-height"
+    },
+    "lg": {
+     "type": "number",
+     "var": "--text-lg--line-height"
+    },
+    "sm": {
+     "type": "number",
+     "var": "--text-sm--line-height"
+    },
+    "xl": {
+     "type": "number",
+     "var": "--text-xl--line-height"
+    },
+    "xs": {
+     "type": "number",
+     "var": "--text-xs--line-height"
+    },
+    "normal": {
+     "type": "number",
+     "var": "--leading-normal"
+    },
+    "relaxed": {
+     "type": "number",
+     "var": "--leading-relaxed"
+    },
+    "snug": {
+     "type": "number",
+     "var": "--leading-snug"
+    },
+    "tight": {
+     "type": "number",
+     "var": "--leading-tight"
+    }
+   },
+   "tracking": {
+    "normal": {
+     "type": "other",
+     "var": "--tracking-normal"
+    },
+    "tight": {
+     "type": "other",
+     "var": "--tracking-tight"
+    },
+    "tighter": {
+     "type": "other",
+     "var": "--tracking-tighter"
+    },
+    "wider": {
+     "type": "other",
+     "var": "--tracking-wider"
+    },
+    "widest": {
+     "type": "other",
+     "var": "--tracking-widest"
+    }
+   }
+  },
+  "radius": {
+   "base": {
+    "type": "dimension",
+    "var": "--radius"
+   },
+   "2xl": {
+    "type": "dimension",
+    "var": "--radius-2xl"
+   },
+   "lg": {
+    "type": "dimension",
+    "var": "--radius-lg"
+   },
+   "md": {
+    "type": "dimension",
+    "var": "--radius-md"
+   },
+   "xl": {
+    "type": "dimension",
+    "var": "--radius-xl"
+   },
+   "xs": {
+    "type": "dimension",
+    "var": "--radius-xs"
+   }
+  },
+  "space": {
+   "unit": {
+    "type": "dimension",
+    "var": "--spacing",
+    "description": "the 4px unit the spacing scale multiplies"
+   }
+  },
+  "container": {
+   "2xl": {
+    "type": "dimension",
+    "var": "--container-2xl"
+   },
+   "3xl": {
+    "type": "dimension",
+    "var": "--container-3xl"
+   },
+   "4xl": {
+    "type": "dimension",
+    "var": "--container-4xl"
+   },
+   "5xl": {
+    "type": "dimension",
+    "var": "--container-5xl"
+   },
+   "lg": {
+    "type": "dimension",
+    "var": "--container-lg"
+   },
+   "md": {
+    "type": "dimension",
+    "var": "--container-md"
+   },
+   "sm": {
+    "type": "dimension",
+    "var": "--container-sm"
+   },
+   "xl": {
+    "type": "dimension",
+    "var": "--container-xl"
+   },
+   "xs": {
+    "type": "dimension",
+    "var": "--container-xs"
+   }
+  },
+  "ease": {
+   "in": {
+    "type": "cubicBezier",
+    "var": "--ease-in"
+   },
+   "inOut": {
+    "type": "cubicBezier",
+    "var": "--ease-in-out"
+   },
+   "out": {
+    "type": "cubicBezier",
+    "var": "--ease-out"
+   },
+   "default": {
+    "type": "cubicBezier",
+    "var": "--default-transition-timing-function"
+   }
+  },
+  "duration": {
+   "default": {
+    "type": "duration",
+    "var": "--default-transition-duration"
+   }
+  },
+  "blur": {
+   "md": {
+    "type": "dimension",
+    "var": "--blur-md"
+   },
+   "sm": {
+    "type": "dimension",
+    "var": "--blur-sm"
+   }
+  },
+  "animation": {
+   "ping": {
+    "type": "other",
+    "var": "--animate-ping",
+    "description": "animation shorthand as declared"
+   },
+   "pulse": {
+    "type": "other",
+    "var": "--animate-pulse",
+    "description": "animation shorthand as declared"
+   },
+   "spin": {
+    "type": "other",
+    "var": "--animate-spin",
+    "description": "animation shorthand as declared"
+   }
+  },
+  "layout": {
+   "aspectVideo": {
+    "type": "other",
+    "var": "--aspect-video"
+   },
+   "sectionPadding": {
+    "type": "dimension",
+    "var": "--section-padding"
+   },
+   "sectionGap": {
+    "type": "dimension",
+    "var": "--section-gap"
+   },
+   "cardGap": {
+    "type": "dimension",
+    "var": "--card-gap"
+   }
+  },
+  "typography": {
+   "articleTitle": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+     "fontSize": "44px",
+     "fontWeight": 500,
+     "lineHeight": "48.4px",
+     "letterSpacing": "-2.2px"
+    },
+    "$type": "typography",
+    "$description": "the blog article title",
+    "$extensions": {
+     "source": "measured prose-h1 on /blog/introducing-huddlekit (default state)"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "article body text",
+    "$extensions": {
+     "source": "measured prose-p on /blog/introducing-huddlekit (default state)"
+    }
+   },
+   "navLink": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 500,
+     "lineHeight": "20px"
+    },
+    "$type": "typography",
+    "$description": "a header nav label",
+    "$extensions": {
+     "source": "measured nav-link on / (default state)"
+    }
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 500,
+     "lineHeight": "20px"
+    },
+    "$type": "typography",
+    "$description": "the primary CTA label",
+    "$extensions": {
+     "source": "measured cta-primary on / (default state)"
+    }
+   },
+   "input": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 500,
+     "lineHeight": "20px"
+    },
+    "$type": "typography",
+    "$description": "the /support search field",
+    "$extensions": {
+     "source": "measured support-search on /support (default state)"
+    }
+   },
+   "oauthButton": {
+    "$value": {
+     "fontFamily": "inter, \"inter Fallback\"",
+     "fontSize": "14px",
+     "fontWeight": 500,
+     "lineHeight": "20px"
+    },
+    "$type": "typography",
+    "$description": "the 'Continue with Google' label",
+    "$extensions": {
+     "source": "measured app-google-button on /login (default state)"
+    }
+   },
+   "tabLabel": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "a feature tab label",
+    "$extensions": {
+     "source": "measured feature-tab on / (default state)"
+    }
+   }
+  }
+ },
+ "light": {
+  "primary": {
+   "default": {
+    "type": "color",
+    "var": "--primary"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--primary-foreground"
+   }
+  },
+  "secondary": {
+   "default": {
+    "type": "color",
+    "var": "--secondary"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--secondary-foreground"
+   }
+  },
+  "accent": {
+   "default": {
+    "type": "color",
+    "var": "--accent"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--accent-foreground"
+   }
+  },
+  "muted": {
+   "default": {
+    "type": "color",
+    "var": "--muted"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--muted-foreground"
+   }
+  },
+  "card": {
+   "default": {
+    "type": "color",
+    "var": "--card"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--card-foreground"
+   }
+  },
+  "popover": {
+   "default": {
+    "type": "color",
+    "var": "--popover"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--popover-foreground"
+   }
+  },
+  "destructive": {
+   "default": {
+    "type": "color",
+    "var": "--destructive"
+   }
+  },
+  "border": {
+   "default": {
+    "type": "color",
+    "var": "--border"
+   },
+   "input": {
+    "type": "color",
+    "var": "--input"
+   },
+   "ring": {
+    "type": "color",
+    "var": "--ring"
+   }
+  },
+  "sidebar": {
+   "background": {
+    "type": "color",
+    "var": "--sidebar"
+   },
+   "accent": {
+    "type": "color",
+    "var": "--sidebar-accent"
+   },
+   "accentForeground": {
+    "type": "color",
+    "var": "--sidebar-accent-foreground"
+   },
+   "border": {
+    "type": "color",
+    "var": "--sidebar-border"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--sidebar-foreground"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--sidebar-primary"
+   },
+   "primaryForeground": {
+    "type": "color",
+    "var": "--sidebar-primary-foreground"
+   },
+   "ring": {
+    "type": "color",
+    "var": "--sidebar-ring"
+   }
+  },
+  "chart": {
+   "1": {
+    "type": "color",
+    "var": "--chart-1"
+   },
+   "2": {
+    "type": "color",
+    "var": "--chart-2"
+   },
+   "3": {
+    "type": "color",
+    "var": "--chart-3"
+   },
+   "4": {
+    "type": "color",
+    "var": "--chart-4"
+   },
+   "5": {
+    "type": "color",
+    "var": "--chart-5"
+   }
+  },
+  "upgrade": {
+   "default": {
+    "type": "color",
+    "var": "--upgrade"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--upgrade-foreground"
+   },
+   "mutedForeground": {
+    "type": "color",
+    "var": "--upgrade-muted-foreground"
+   }
+  },
+  "canvas": {
+   "default": {
+    "type": "color",
+    "var": "--canvas"
+   }
+  },
+  "mode": {
+   "glowStrength": {
+    "type": "number",
+    "var": "--mode-glow-strength"
+   }
+  },
+  "scrollMask": {
+   "bottom": {
+    "type": "other",
+    "var": "--scroll-mask-b-from"
+   },
+   "left": {
+    "type": "other",
+    "var": "--scroll-mask-l-from"
+   },
+   "right": {
+    "type": "other",
+    "var": "--scroll-mask-r-from"
+   },
+   "top": {
+    "type": "other",
+    "var": "--scroll-mask-t-from"
+   }
+  },
+  "color": {
+   "page": {
+    "type": "color",
+    "var": "--color-page"
+   },
+   "primaryDark": {
+    "type": "color",
+    "var": "--color-primary-dark"
+   }
+  },
+  "root": {
+   "background": {
+    "type": "color",
+    "var": "--background"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--foreground"
+   }
+  },
+  "component": {
+   "button": {
+    "cta": {
+     "bg": {
+      "type": "color",
+      "value": "{primary.default}",
+      "source": "measured cta-primary default on / (CTA fill) — the element's class paints the primary.default role, so each theme resolves its own",
+      "description": "CTA fill"
+     }
+    },
+    "oauth": {
+     "bg": {
+      "type": "color",
+      "value": "{primary.default}",
+      "source": "measured app-google-button default on /login ('Continue with Google' fill) — the element's class paints the primary.default role, so each theme resolves its own",
+      "description": "'Continue with Google' fill"
+     }
+    }
+   }
+  }
+ },
+ "dark": {
+  "primary": {
+   "default": {
+    "type": "color",
+    "var": "--primary"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--primary-foreground"
+   }
+  },
+  "secondary": {
+   "default": {
+    "type": "color",
+    "var": "--secondary"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--secondary-foreground"
+   }
+  },
+  "accent": {
+   "default": {
+    "type": "color",
+    "var": "--accent"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--accent-foreground"
+   }
+  },
+  "muted": {
+   "default": {
+    "type": "color",
+    "var": "--muted"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--muted-foreground"
+   }
+  },
+  "card": {
+   "default": {
+    "type": "color",
+    "var": "--card"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--card-foreground"
+   }
+  },
+  "popover": {
+   "default": {
+    "type": "color",
+    "var": "--popover"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--popover-foreground"
+   }
+  },
+  "destructive": {
+   "default": {
+    "type": "color",
+    "var": "--destructive"
+   }
+  },
+  "border": {
+   "default": {
+    "type": "color",
+    "var": "--border"
+   },
+   "input": {
+    "type": "color",
+    "var": "--input"
+   },
+   "ring": {
+    "type": "color",
+    "var": "--ring"
+   }
+  },
+  "sidebar": {
+   "background": {
+    "type": "color",
+    "var": "--sidebar"
+   },
+   "accent": {
+    "type": "color",
+    "var": "--sidebar-accent"
+   },
+   "accentForeground": {
+    "type": "color",
+    "var": "--sidebar-accent-foreground"
+   },
+   "border": {
+    "type": "color",
+    "var": "--sidebar-border"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--sidebar-foreground"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--sidebar-primary"
+   },
+   "primaryForeground": {
+    "type": "color",
+    "var": "--sidebar-primary-foreground"
+   },
+   "ring": {
+    "type": "color",
+    "var": "--sidebar-ring"
+   }
+  },
+  "chart": {
+   "1": {
+    "type": "color",
+    "var": "--chart-1"
+   },
+   "2": {
+    "type": "color",
+    "var": "--chart-2"
+   },
+   "3": {
+    "type": "color",
+    "var": "--chart-3"
+   },
+   "4": {
+    "type": "color",
+    "var": "--chart-4"
+   },
+   "5": {
+    "type": "color",
+    "var": "--chart-5"
+   }
+  },
+  "upgrade": {
+   "default": {
+    "type": "color",
+    "var": "--upgrade"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--upgrade-foreground"
+   },
+   "mutedForeground": {
+    "type": "color",
+    "var": "--upgrade-muted-foreground"
+   }
+  },
+  "canvas": {
+   "default": {
+    "type": "color",
+    "var": "--canvas"
+   }
+  },
+  "mode": {
+   "glowStrength": {
+    "type": "number",
+    "var": "--mode-glow-strength"
+   }
+  },
+  "scrollMask": {
+   "bottom": {
+    "type": "other",
+    "var": "--scroll-mask-b-from"
+   },
+   "left": {
+    "type": "other",
+    "var": "--scroll-mask-l-from"
+   },
+   "right": {
+    "type": "other",
+    "var": "--scroll-mask-r-from"
+   },
+   "top": {
+    "type": "other",
+    "var": "--scroll-mask-t-from"
+   }
+  },
+  "color": {
+   "page": {
+    "type": "color",
+    "var": "--color-page"
+   },
+   "primaryDark": {
+    "type": "color",
+    "var": "--color-primary-dark"
+   }
+  },
+  "root": {
+   "background": {
+    "type": "color",
+    "var": "--background"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--foreground"
+   }
+  },
+  "component": {
+   "button": {
+    "cta": {
+     "bg": {
+      "type": "color",
+      "value": "{primary.default}",
+      "source": "measured cta-primary default on / (CTA fill) — the element's class paints the primary.default role, so each theme resolves its own",
+      "description": "CTA fill"
+     }
+    },
+    "oauth": {
+     "bg": {
+      "type": "color",
+      "value": "{primary.default}",
+      "source": "measured app-google-button default on /login ('Continue with Google' fill) — the element's class paints the primary.default role, so each theme resolves its own",
+      "description": "'Continue with Google' fill"
+     }
+    }
+   }
+  }
+ },
+ "component": {
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "measured nav-header default on / (the site header bar)"
+   }
+  },
+  "button": {
+   "cta": {
+    "height": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "measured cta-primary default on / ('Get started for free' CTA)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "measured cta-primary default on / (CTA corner)"
+    }
+   },
+   "secondary": {
+    "height": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "measured cta-secondary default on / (header 'Get started' button)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "measured cta-secondary default on / (secondary button corner)"
+    }
+   },
+   "oauth": {
+    "height": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "measured app-google-button default on /login ('Continue with Google')"
+    }
+   },
+   "outline": {
+    "radius": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "measured cta-outline default on / (outline button corner)"
+    }
+   }
+  },
+  "navMenu": {
+   "width": {
+    "type": "dimension",
+    "value": "194px",
+    "source": "measured nav-menu-surface opened on / (the open Solutions nav popover)"
+   }
+  },
+  "consentBanner": {
+   "width": {
+    "type": "dimension",
+    "value": "352px",
+    "source": "measured consent-banner default on / (the cookie consent banner)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "measured consent-banner default on / (consent banner corner)"
+   }
+  },
+  "loginCard": {
+   "width": {
+    "type": "dimension",
+    "value": "320px",
+    "source": "measured app-login-card default on /login (the sign-in panel)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "measured app-login-card default on /login (sign-in panel corner)"
+   }
+  },
+  "input": {
+   "supportSearch": {
+    "height": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "measured support-search default on /support (the /support search field)"
+    }
+   },
+   "loginEmail": {
+    "height": {
+     "type": "dimension",
+     "value": "36px",
+     "source": "measured app-email-input default on /login (the login email field)"
+    }
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "measured support-search default on /support (text field corner)",
+    "description": "all four corners measure the full-radius clamp — a pill"
+   }
+  },
+  "tab": {
+   "height": {
+    "type": "dimension",
+    "value": "57px",
+    "source": "measured feature-tab default on / (a vertical feature tab row)"
+   }
+  },
+  "mobileHeader": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "measured m-header default on / (phone top bar)"
+   }
+  },
+  "card": {
+   "testimonial": {
+    "radius": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "measured testimonial-card-dark default on / (dark testimonial card corner)"
+    }
+   }
+  },
+  "component": {
+   "footer": {
+    "bg": {
+     "type": "color",
+     "value": "oklch(0.1543 0.007 338.1)",
+     "source": "measured footer default on / (dark footer fill (the .dark --background role))"
+    }
+   }
+  },
+  "type": {
+   "linkHover": {
+    "color": {
+     "type": "color",
+     "value": "oklab(0.2101 -0.00297811 -0.0318611 / 0.7)",
+     "source": "measured nav-link hover on / (nav link on hover)"
+    }
+   }
+  }
+ }
+}
