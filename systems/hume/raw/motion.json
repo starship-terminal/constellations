@@ -6,13 +6,13 @@
   "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
  },
  "summary": {
-  "moving": 1136,
-  "removed": 981,
+  "moving": 1162,
+  "removed": 1079,
   "reduced": 0,
   "kept": 83,
-  "partial": 72,
+  "partial": 0,
   "increased": 0,
-  "added": 3545,
+  "added": 0,
   "behaviour": "partial",
   "loops": [
    "spin"
@@ -35,49 +35,16 @@
    },
    "summary": {
     "moving": 308,
-    "removed": 281,
+    "removed": 308,
     "reduced": 0,
     "kept": 0,
-    "partial": 27,
+    "partial": 0,
     "increased": 0,
-    "added": 1736,
-    "behaviour": "partial",
+    "added": 0,
+    "behaviour": "honours",
     "loops": []
    },
    "groups": [
-    {
-     "base": {
-      "transitions": [],
-      "animations": []
-     },
-     "reduced": {
-      "transitions": [
-       {
-        "property": "all",
-        "durationMs": 0.001,
-        "delayMs": 0,
-        "easing": "ease"
-       }
-      ],
-      "animations": []
-     },
-     "outcome": "added",
-     "items": [
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
-      }
-     ],
-     "count": 1736,
-     "nodes": [
-      "html",
-      "head",
-      "meta"
-     ]
-    },
     {
      "base": {
       "transitions": [
@@ -536,20 +503,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "tile-pop",
        "outcome": "removed",
        "from": 450,
-       "to": 0.001
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.001
       }
      ],
@@ -6017,7 +5977,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -6025,13 +5985,6 @@
        "outcome": "removed",
        "from": 1000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 1,
@@ -6066,7 +6019,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -6074,13 +6027,6 @@
        "outcome": "removed",
        "from": 900,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 1,
@@ -11481,49 +11427,16 @@
    },
    "summary": {
     "moving": 729,
-    "removed": 686,
+    "removed": 729,
     "reduced": 0,
     "kept": 0,
-    "partial": 43,
+    "partial": 0,
     "increased": 0,
-    "added": 1533,
-    "behaviour": "partial",
+    "added": 0,
+    "behaviour": "honours",
     "loops": []
    },
    "groups": [
-    {
-     "base": {
-      "transitions": [],
-      "animations": []
-     },
-     "reduced": {
-      "transitions": [
-       {
-        "property": "all",
-        "durationMs": 0.001,
-        "delayMs": 0,
-        "easing": "ease"
-       }
-      ],
-      "animations": []
-     },
-     "outcome": "added",
-     "items": [
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
-      }
-     ],
-     "count": 1530,
-     "nodes": [
-      "html",
-      "head",
-      "meta"
-     ]
-    },
     {
      "base": {
       "transitions": [
@@ -12884,37 +12797,6 @@
     {
      "base": {
       "transitions": [],
-      "animations": []
-     },
-     "reduced": {
-      "transitions": [
-       {
-        "property": "opacity",
-        "durationMs": 0.001,
-        "delayMs": 0,
-        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
-       }
-      ],
-      "animations": []
-     },
-     "outcome": "added",
-     "items": [
-      {
-       "kind": "transition",
-       "key": "opacity",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
-      }
-     ],
-     "count": 3,
-     "nodes": [
-      "span.absolute.top-4.grid"
-     ]
-    },
-    {
-     "base": {
-      "transitions": [],
       "animations": [
        {
         "name": "spin",
@@ -12950,20 +12832,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "spin",
        "outcome": "removed",
        "from": 1000,
-       "to": 0.001
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.001
       }
      ],
@@ -12999,7 +12874,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13007,13 +12882,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13048,7 +12916,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13056,13 +12924,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13097,7 +12958,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13105,13 +12966,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13146,7 +13000,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13154,13 +13008,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13195,7 +13042,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13203,13 +13050,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13244,7 +13084,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13252,13 +13092,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13293,7 +13126,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13301,13 +13134,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13342,7 +13168,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13350,13 +13176,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13391,7 +13210,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13399,13 +13218,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13440,7 +13252,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13448,13 +13260,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13489,7 +13294,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13497,13 +13302,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13538,7 +13336,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13546,13 +13344,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13587,7 +13378,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13595,13 +13386,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13636,7 +13420,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13644,13 +13428,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13685,7 +13462,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13693,13 +13470,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13734,7 +13504,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13742,13 +13512,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13783,7 +13546,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13791,13 +13554,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -13832,7 +13588,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -13840,13 +13596,6 @@
        "outcome": "removed",
        "from": 1800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 2,
@@ -14091,7 +13840,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -14099,13 +13848,6 @@
        "outcome": "removed",
        "from": 900,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 1,
@@ -14140,7 +13882,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -14148,13 +13890,6 @@
        "outcome": "removed",
        "from": 900,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 1,
@@ -14200,20 +13935,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "pulse",
        "outcome": "removed",
        "from": 2000,
-       "to": 0.001
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.001
       }
      ],
@@ -14249,7 +13977,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -14257,13 +13985,6 @@
        "outcome": "removed",
        "from": 26000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 1,
@@ -19854,7 +19575,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 202,
+   "scanned": 285,
    "capped": false,
    "unreadableSheets": 1,
    "sheetsTruncated": {
@@ -19863,20 +19584,27 @@
     "customProperties": false
    },
    "summary": {
-    "moving": 3,
-    "removed": 1,
+    "moving": 28,
+    "removed": 28,
     "reduced": 0,
     "kept": 0,
-    "partial": 2,
+    "partial": 0,
     "increased": 0,
-    "added": 276,
-    "behaviour": "partial",
+    "added": 0,
+    "behaviour": "honours",
     "loops": []
    },
    "groups": [
     {
      "base": {
-      "transitions": [],
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
       "animations": []
      },
      "reduced": {
@@ -19890,21 +19618,80 @@
       ],
       "animations": []
      },
-     "outcome": "added",
+     "outcome": "removed",
      "items": [
       {
        "kind": "transition",
        "key": "all",
-       "outcome": "added",
-       "from": 0,
+       "outcome": "removed",
+       "from": 200,
        "to": 0.001
       }
      ],
-     "count": 276,
+     "count": 18,
      "nodes": [
-      "html",
-      "head",
-      "meta"
+      "div.css-1n1cntr",
+      "div.css-4vpwj2",
+      "span.css-1kvznib"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border-color",
+        "durationMs": 0.001,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 0.001,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0.001
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0.001
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "input.css-14aefq",
+      "input.css-1fa2akl",
+      "input.css-lo2uh4"
      ]
     },
     {
@@ -19934,7 +19721,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -19942,13 +19729,6 @@
        "outcome": "removed",
        "from": 900,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.001
       }
      ],
      "count": 1,
@@ -19958,19 +19738,15 @@
     },
     {
      "base": {
-      "transitions": [],
-      "animations": [
+      "transitions": [
        {
-        "name": "pulse",
-        "durationMs": 2000,
+        "property": "all",
+        "durationMs": 100,
         "delayMs": 0,
-        "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
-        "iterationCount": "infinite",
-        "direction": "normal",
-        "fillMode": "none",
-        "playState": "running"
+        "easing": "ease"
        }
-      ]
+      ],
+      "animations": []
      },
      "reduced": {
       "transitions": [
@@ -19983,26 +19759,19 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
-      {
-       "kind": "animation",
-       "key": "pulse",
-       "outcome": "removed",
-       "from": 2000,
-       "to": 0
-      },
       {
        "kind": "transition",
        "key": "all",
-       "outcome": "added",
-       "from": 0,
+       "outcome": "removed",
+       "from": 100,
        "to": 0.001
       }
      ],
      "count": 1,
      "nodes": [
-      "div[role=status].flex.h-full.animate-pulse"
+      "div.css-1oeeh11-control"
      ]
     },
     {
@@ -20459,6 +20228,44 @@
      "count": 1,
      "nodes": [
       "a.group/button.inline-flex.items-center"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 0.001,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0.001
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.css-1xc3v61-indicatorContainer"
      ]
     }
    ],
@@ -23511,6 +23318,198 @@
       }
      ],
      "animations": []
+    },
+    {
+     "selector": ".css-14aefq",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-4vpwj2",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-1kvznib",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-1fa2akl",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-lo2uh4",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-5hrcg3",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-24kwk4",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-ledt34",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-1px7gbw",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-1j9xixx",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-1oeeh11-control",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".css-1xc3v61-indicatorContainer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
     }
    ],
    "customProperties": [
@@ -23558,7 +23557,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 1209,
+   "scanned": 1206,
    "capped": false,
    "unreadableSheets": 0,
    "sheetsTruncated": {
@@ -23567,8 +23566,8 @@
     "customProperties": false
    },
    "summary": {
-    "moving": 87,
-    "removed": 13,
+    "moving": 88,
+    "removed": 14,
     "reduced": 0,
     "kept": 74,
     "partial": 0,
@@ -24089,6 +24088,112 @@
      "count": 2,
      "nodes": [
       "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "fern-header-tabs-overflow",
+        "durationMs": 0,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running",
+        "durationRaw": "auto"
+       },
+       {
+        "name": "fern-header-tabs-fade-start",
+        "durationMs": 0,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running",
+        "durationRaw": "auto"
+       },
+       {
+        "name": "fern-header-tabs-fade-end",
+        "durationMs": 0,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running",
+        "durationRaw": "auto"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "fern-header-tabs-overflow",
+        "durationMs": 0,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running",
+        "durationRaw": "auto"
+       },
+       {
+        "name": "fern-header-tabs-fade-start",
+        "durationMs": 0,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running",
+        "durationRaw": "auto"
+       },
+       {
+        "name": "fern-header-tabs-fade-end",
+        "durationMs": 0,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running",
+        "durationRaw": "auto"
+       }
+      ]
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "fern-header-tabs-overflow",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      },
+      {
+       "kind": "animation",
+       "key": "fern-header-tabs-fade-start",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      },
+      {
+       "kind": "animation",
+       "key": "fern-header-tabs-fade-end",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div[role=tablist].fern-header-tabs-list"
      ]
     },
     {
@@ -25067,6 +25172,50 @@
      ]
     },
     {
+     "name": "fern-header-tabs-overflow",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "padding-inline-end",
+        "padding-inline-start"
+       ]
+      }
+     ],
+     "properties": [
+      "padding-inline-end",
+      "padding-inline-start"
+     ]
+    },
+    {
+     "name": "fern-header-tabs-fade-start",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": []
+      },
+      {
+       "offset": "100%",
+       "properties": []
+      }
+     ],
+     "properties": []
+    },
+    {
+     "name": "fern-header-tabs-fade-end",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": []
+      },
+      {
+       "offset": "100%",
+       "properties": []
+      }
+     ],
+     "properties": []
+    },
+    {
      "name": "fern-sidebar-marquee",
      "steps": [
       {
@@ -25780,6 +25929,17 @@
     },
     {
      "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".fern-header-tabs-scroll-button",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
      "selector": ".fern-tab-menu-panel, .fern-tab-menu-panel[data-state=\"open\"]",
      "declarations": {
       "transform": "none"
@@ -26323,6 +26483,55 @@
      ],
      "animations": [],
      "viaVar": true
+    },
+    {
+     "selector": ".fern-header-tabs-list",
+     "context": [
+      "@layer components",
+      "@supports (animation-timeline:scroll())"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fern-header-tabs-overflow",
+       "durationRaw": "auto",
+       "easing": "linear",
+       "fillMode": "both"
+      },
+      {
+       "name": "fern-header-tabs-fade-start",
+       "durationRaw": "auto",
+       "easing": "linear",
+       "fillMode": "both"
+      },
+      {
+       "name": "fern-header-tabs-fade-end",
+       "durationRaw": "auto",
+       "easing": "linear",
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".fern-header-tabs-scroll-button",
+     "context": [
+      "@layer components"
+     ],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "visibility",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
     },
     {
      "selector": ".fern-tab-menu-panel",
@@ -28306,7 +28515,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 216,
+   "scanned": 214,
    "capped": false,
    "unreadableSheets": 1,
    "sheetsTruncated": {

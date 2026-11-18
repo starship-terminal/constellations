@@ -57,6 +57,10 @@ DECL = {
     for surface, surf in V["surfaces"].items()
 }
 
+# The surface key is an internal label, not a hostname: docs lives on
+# dev.hume.ai, not docs.hume.ai.
+HOST = {"www": "www.hume.ai", "docs": "dev.hume.ai", "demo": "demo.hume.ai", "app": "app.hume.ai"}
+
 
 def norm_color(v):
     """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla() -> #rrggbb or rgba(r, g, b, a)."""
@@ -177,7 +181,7 @@ def leaf(path, spec, theme):
         if name not in decl:
             raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({surface}, {theme})")
         val = decl[name]
-        src = f"css-var {name} ({surface}.hume.ai, {theme})"
+        src = f"css-var {name} ({HOST.get(surface, surface + '.hume.ai')}, {theme})"
         if spec.get("source"):
             src += "; " + spec["source"]
     else:

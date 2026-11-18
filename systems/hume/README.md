@@ -41,7 +41,7 @@ hume.ai is worth a capture because the product line pivoted from EVI/Octave TTS 
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw files, never the images. The rendered brand strings, author names, headshots and company logos are the product's published content.
 - **The brand faces render from licensed files** the site loads; crops show them, the style guide falls back to system fonts — the font files are never shipped.
 - **Pressed states** are DevTools-forced; a script-applied mousedown style would not show.
-- **Reduced motion is only partly honoured** — `raw/motion.json` records `partial` on www and the docs (83 moving elements kept, a `spin` loader still loops) and `ignores` on the demo and app surfaces. The package records the product's behaviour, it does not tidy it.
+- **Reduced motion is only partly honoured** — `raw/motion.json` records `honours` on the www pages (the authored `*, ::before, ::after { transition-duration: 0.001ms; animation-duration: 0.001ms }` reset stops every moving element), `partial` on the docs (14 of 88 moving elements stopped, 74 keep moving) and `ignores` on the demo and app surfaces (the `spin` loader still loops). The package records the product's behaviour, it does not tidy it.
 - **Three components' focus-visible rings** are the only real keyboard focus captured; where a ring could not be held the entry says so instead of claiming one.
 
 ## Fonts

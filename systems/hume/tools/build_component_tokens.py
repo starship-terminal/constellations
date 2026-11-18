@@ -59,6 +59,10 @@ S = V["surfaces"]
 R = {k: s["resolved"] for k, s in S.items()}          # R["www"]["light"][name]
 TREE = {"core": {}, "light": {}, "dark": {}, "component": {}}
 
+# The surface key is an internal label, not a hostname: docs lives on
+# dev.hume.ai, not docs.hume.ai.
+HOST = {"www": "www.hume.ai", "docs": "dev.hume.ai", "demo": "demo.hume.ai", "app": "app.hume.ai"}
+
 
 def _is_leaf(node):
     return isinstance(node, dict) and "type" in node and ("value" in node or "var" in node)
@@ -275,7 +279,7 @@ for surf in ("www", "docs", "demo", "app"):
         seen_names.add(name)
         uses = "; ".join(u["selector"][:100] for u in d["uses"][:3])
         lit(v, "color",
-            f"literal in {surf}.hume.ai's stylesheets (raw/css-vars.json palette, {d['count']} declarations; e.g. {uses})",
+            f"literal in {HOST.get(surf, surf + '.hume.ai')}'s stylesheets (raw/css-vars.json palette, {d['count']} declarations; e.g. {uses})",
             "core", f"palette.{name}")
 
 # ------------------------------------------------- measured type scale

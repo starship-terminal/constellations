@@ -142,10 +142,11 @@ class Shooter {
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     const opts = (extra) => ({ path: extra, scale: 'css', timeout: 120000 });
     const plan = { intendedHeight: hCap, pageHeight: H, chunk, parts: hCap <= chunk ? 0 : Math.ceil(hCap / chunk), scale: 'css' };
-    // Written before the tiles so quantize.py can prove the stitched set is
-    // whole — a mid-loop failure must never publish a truncated sheet.
-    fs.writeFileSync(`${f}.plan.json`, JSON.stringify(plan, null, 1) + '\n');
     const shootTiles = async (extra = {}) => {
+      // Written at the start of every attempt (a retry after dropPartials()
+      // has to leave one too) so quantize.py can prove the stitched set is
+      // whole — a mid-loop failure must never publish a truncated sheet.
+      fs.writeFileSync(`${f}.plan.json`, JSON.stringify(plan, null, 1) + '\n');
       if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true, ...extra }, this.requested);
       else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) }, ...extra }, this.requested);
     };
@@ -189,7 +190,7 @@ async function darkPass(p, name, vw, vh, dpr, url, shots = ['default']) {
 }
 
 const BOTH = async (p, S) => { await S.view('default'); await S.full(); };
-const BOTH_DARK = async (p, S, ctx, name, url) => { await S.view('default'); await S.full(); ctx.extra += await darkPass(p, name, 1440, 900, 1, url, ['default']); };
+const BOTH_DARK = (name, url) => async (p, S, ctx) => { await BOTH(p, S); ctx.extra += await darkPass(p, name, 1440, 900, 1, url, ['default']); };
 
 // www.hume.ai — every shot is `*-light-*`: the only theme the surface has.
 const desktop = {
@@ -285,10 +286,10 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
-  notfound: { url: BASE + '/products', wait: 6000, prefix: 'notfound-light', run: async (p, S) => {
+  notfound: { url: BASE + '/this-page-does-not-exist', wait: 6000, prefix: 'notfound-light', run: async (p, S) => {
     // /products redirects to / — documented, not a 404 surface. A stray
-    // path is probed for the real not-found page.
-    await p.goto(BASE + '/this-page-does-not-exist', { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
+    // path is probed for the real not-found page: the spec URL is the stray
+    // path itself so the sidecars cite what was actually captured.
     await wait(p, 5000);
     await S.view('default');
     await S.full();
@@ -298,7 +299,7 @@ const desktop = {
 // dev.hume.ai — the docs. Light is the painted default; `dark` shots are
 // the header Theme menu's own Dark press, verified and restored.
 const docs = {
-  'docs-overview': { url: DOCS + '/audio-decisions/docs/overview', wait: 8000, prefix: 'docs-overview-light', dark: 'docs-overview', run: BOTH_DARK },
+  'docs-overview': { url: DOCS + '/audio-decisions/docs/overview', wait: 8000, prefix: 'docs-overview-light', dark: 'docs-overview', run: BOTH_DARK('docs-overview', DOCS + '/audio-decisions/docs/overview') },
   'docs-quickstart': { url: DOCS + '/audio-decisions/docs/quickstart/python', wait: 7000, prefix: 'docs-quickstart-light', dark: 'docs-quickstart', run: async (p, S, ctx) => {
     await BOTH(p, S);
     ctx.extra += await darkPass(p, 'docs-quickstart', 1440, 900, 1, DOCS + '/audio-decisions/docs/quickstart/python', ['default']);

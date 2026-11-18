@@ -473,52 +473,52 @@
    "pd32f2f": {
     "type": "color",
     "value": "#d32f2f",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 29 declarations; e.g. :where([data-fern-style=\"color:#D32F2F;--shiki-dark:#89DDFF\"]); :where([data-fern-style=\"color:#D32F2F;--shiki-dark:#C792EA\"]); :where([data-fern-style=\"color:#D32F2F;--shiki-dark:#FFCB6B\"]))"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 29 declarations; e.g. :where([data-fern-style=\"color:#D32F2F;--shiki-dark:#89DDFF\"]); :where([data-fern-style=\"color:#D32F2F;--shiki-dark:#C792EA\"]); :where([data-fern-style=\"color:#D32F2F;--shiki-dark:#FFCB6B\"]))"
    },
    "p24292e": {
     "type": "color",
     "value": "#24292e",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 24 declarations; e.g. :where([data-fern-style=\"animation-duration:0s;background-color:#ffffff;--shiki-dark-bg:#212121;colo; :where([data-fern-style=\"color:#24292EFF;--shiki-dark:#EEFFFF\"]); :where([data-fern-style=\"background-color:#ffffff;--shiki-dark-bg:#212121;color:#24292eff;--shiki-da)"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 24 declarations; e.g. :where([data-fern-style=\"animation-duration:0s;background-color:#ffffff;--shiki-dark-bg:#212121;colo; :where([data-fern-style=\"color:#24292EFF;--shiki-dark:#EEFFFF\"]); :where([data-fern-style=\"background-color:#ffffff;--shiki-dark-bg:#212121;color:#24292eff;--shiki-da)"
    },
    "p22863a": {
     "type": "color",
     "value": "#22863a",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 19 declarations; e.g. :where([data-fern-style=\"color:#22863A;--shiki-dark:#89DDFF\"]); :where([data-fern-style=\"color:#22863A;--shiki-dark:#C3E88D\"]); :where([data-fern-style=\"color:#22863A;--shiki-dark:#EEFFFF\"]))"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 19 declarations; e.g. :where([data-fern-style=\"color:#22863A;--shiki-dark:#89DDFF\"]); :where([data-fern-style=\"color:#22863A;--shiki-dark:#C3E88D\"]); :where([data-fern-style=\"color:#22863A;--shiki-dark:#EEFFFF\"]))"
    },
    "p6f42c1": {
     "type": "color",
     "value": "#6f42c1",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. :where([data-fern-style=\"color:#6F42C1;--shiki-dark:#FFCB6B\"]); :where([data-fern-style=\"color:#6F42C1;--shiki-dark:#FFCB6B\"]); :where([data-fern-style=\"color:#6F42C1;--shiki-dark:#FFCB6B\"]))"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. :where([data-fern-style=\"color:#6F42C1;--shiki-dark:#FFCB6B\"]); :where([data-fern-style=\"color:#6F42C1;--shiki-dark:#FFCB6B\"]); :where([data-fern-style=\"color:#6F42C1;--shiki-dark:#FFCB6B\"]))"
    },
    "p2b5581": {
     "type": "color",
     "value": "#2b5581",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. :where([data-fern-style=\"color:#2B5581;--shiki-dark:#C3E88D\"]); :where([data-fern-style=\"color:#2B5581;--shiki-dark:#C3E88D\"]); :where([data-fern-style=\"color:#2B5581;--shiki-dark:#C3E88D\"]))"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. :where([data-fern-style=\"color:#2B5581;--shiki-dark:#C3E88D\"]); :where([data-fern-style=\"color:#2B5581;--shiki-dark:#C3E88D\"]); :where([data-fern-style=\"color:#2B5581;--shiki-dark:#C3E88D\"]))"
    },
    "p212121": {
     "type": "color",
     "value": "#212121",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. :where([data-fern-style=\"color:#212121;--shiki-dark:#89DDFF\"]); :where([data-fern-style=\"color:#212121;--shiki-dark:#89DDFF\"]); :where([data-fern-style=\"color:#212121;--shiki-dark:#89DDFF\"]))"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. :where([data-fern-style=\"color:#212121;--shiki-dark:#89DDFF\"]); :where([data-fern-style=\"color:#212121;--shiki-dark:#89DDFF\"]); :where([data-fern-style=\"color:#212121;--shiki-dark:#89DDFF\"]))"
    },
    "p1976d2": {
     "type": "color",
     "value": "#1976d2",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 6 declarations; e.g. :where([data-fern-style=\"color:#1976D2;--shiki-dark:#F78C6C\"]); :where([data-fern-style=\"color:#1976D2;--shiki-dark:#F78C6C\"]); :where([data-fern-style=\"color:#1976D2;--shiki-dark:#F78C6C\"]))"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 6 declarations; e.g. :where([data-fern-style=\"color:#1976D2;--shiki-dark:#F78C6C\"]); :where([data-fern-style=\"color:#1976D2;--shiki-dark:#F78C6C\"]); :where([data-fern-style=\"color:#1976D2;--shiki-dark:#F78C6C\"]))"
    },
    "paaaaaa": {
     "type": "color",
     "value": "#aaaaaa",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 5 declarations; e.g. .ais-RangeSlider .rheostat-background; .ais-RangeSlider .rheostat-background; .ais-RangeSlider .rheostat-background)"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 5 declarations; e.g. .ais-RangeSlider .rheostat-background; .ais-RangeSlider .rheostat-background; .ais-RangeSlider .rheostat-background)"
    },
    "p333333x": {
     "type": "color",
     "value": "#333333",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 5 declarations; e.g. .ais-RangeSlider .rheostat-progress; .rheostat-handle; .rheostat-handle)"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 5 declarations; e.g. .ais-RangeSlider .rheostat-progress; .rheostat-handle; .rheostat-handle)"
    },
    "peaeef3": {
     "type": "color",
     "value": "#eaeef3",
-    "source": "literal in docs.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-\\[\\#eaeef3\\]; .border-\\[\\#eaeef3\\]; .border-\\[\\#eaeef3\\])"
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-\\[\\#eaeef3\\]; .border-\\[\\#eaeef3\\]; .border-\\[\\#eaeef3\\])"
    },
    "pba0000": {
     "type": "color",

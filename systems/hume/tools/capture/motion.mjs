@@ -192,10 +192,17 @@ export function diffMotion(base, reduced) {
   }
   if (base?.scrollBehavior) items.push({ kind: 'scroll', key: 'scroll-behavior', outcome: reduced?.scrollBehavior ? 'kept' : 'removed' });
   else if (reduced?.scrollBehavior) items.push({ kind: 'scroll', key: 'scroll-behavior', outcome: 'added' });
-  for (const t of reducedT.values()) items.push({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs });
+  for (const t of reducedT.values()) {
+    // A reset like `* { transition-duration: 0.001ms }` reads as motion that exists
+    // only under reduce — the same NEGLIGIBLE_MS cutoff as classify() applies, so a
+    // sub-millisecond addition is not counted as movement the product added.
+    if (t.durationMs <= NEGLIGIBLE_MS) continue;
+    items.push({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs });
+  }
   for (const a of reducedA.values()) {
+    if (stopped(a) || a.durationMs <= NEGLIGIBLE_MS) continue;
     const item = { kind: 'animation', key: a.name, outcome: 'added', from: 0, to: a.durationMs };
-    if (!stopped(a) && a.iterationCount === 'infinite') item.loops = true;
+    if (a.iterationCount === 'infinite') item.loops = true;
     items.push(item);
   }
   const REDUCING = new Set(['removed', 'shortened']);

@@ -20,7 +20,7 @@
 body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--ink-default, #1b1918); background: var(--bg-default, #fdfdfc); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.03em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--docs-color-border-default, #e7e5e4); }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--docs-color-borderDefault, #e7e5e4); }
 .lead { max-width: 62ch; opacity: .8; }
 .note { font-size: 13px; opacity: .65; max-width: 62ch; }
 code { font-family: var(--sg-mono); font-size: .9em; color: var(--docs-accent-9, #6e50aa); }
@@ -36,47 +36,47 @@ code { font-family: var(--sg-mono); font-size: .9em; color: var(--docs-accent-9,
 .kv b { font-weight: 500; }
 .kv span { opacity: .65; }
 /* ---- mocks ---- */
-.mock { border: 1px solid var(--docs-color-border, #e7e5e4); overflow: hidden; background: var(--bg-default, #fdfdfc); color: var(--ink-default, #1b1918); border-radius: var(--component-loginCard-radius, 12px); }
-.mock .topbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 56px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--docs-color-border, #e7e5e4); background: var(--component-nav-bg, transparent); }
+.mock { border: 1px solid var(--docs-color-borderDefault, #e7e5e4); overflow: hidden; background: var(--bg-default, #fdfdfc); color: var(--ink-default, #1b1918); border-radius: var(--component-loginCard-radius, 12px); }
+.mock .topbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 56px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--docs-color-borderDefault, #e7e5e4); background: var(--component-nav-bg, transparent); }
 .topbar .wm { font-weight: 600; font-size: 15px; letter-spacing: -0.02em; }
 .topbar .nav { opacity: .75; display: flex; gap: 14px; font-size: 13px; }
 .topbar .sp { flex: 1; }
-.topbar .theme { width: 28px; height: 28px; border-radius: var(--component-docsSearch-radius, 6px); border: 1px solid var(--docs-color-border, #e7e5e4); display: inline-flex; align-items: center; justify-content: center; color: inherit; background: transparent; font: inherit; cursor: pointer; padding: 0; }
+.topbar .theme { width: 28px; height: 28px; border-radius: var(--component-docsSearch-radius, 6px); border: 1px solid var(--docs-color-borderDefault, #e7e5e4); display: inline-flex; align-items: center; justify-content: center; color: inherit; background: transparent; font: inherit; cursor: pointer; padding: 0; }
 .topbar .theme:hover { background: rgba(0,0,0,.04); }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-cta-height, 36px); padding: 0 16px; font-size: 13.5px; font-weight: 500; border-radius: var(--component-button-cta-radius, 999px); border: 1px solid transparent; }
-.btn.primary { background: var(--component-button-cta-bg, #1b1918); color: #fdfdfc; }
-.btn.ghost { background: transparent; border-color: var(--docs-color-border, #e7e5e4); color: inherit; }
+.btn.primary { background: var(--component-button-cta-bg, #1b1918); color: var(--ink-default, #1b1918); }
+.btn.ghost { background: transparent; border-color: var(--docs-color-borderDefault, #e7e5e4); color: inherit; }
 .wash { display: flex; gap: 8px; flex-wrap: wrap; padding: 18px 20px; }
 .wash .chip { height: 34px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: 999px; font-size: 12.5px; color: #1b1918; }
 .hero { padding: 26px 34px 30px; min-width: 0; }
-.hero h3 { font: 500 var(--title-lg, 38px)/1.15 var(--sg-sans); letter-spacing: -0.03em; margin: 0 0 10px; }
+.hero h3 { font: 300 var(--title-lg, 38px)/1.15 var(--sg-serif); letter-spacing: -0.03em; margin: 0 0 10px; }
 .hero p { font-size: 14.5px; line-height: 1.7; margin: 0 0 14px; max-width: 62ch; }
 .hero .ic { font-family: var(--sg-mono); font-size: .88em; }
 /* the docs mock: every fill is a --docs-* var, so data-mode="dark" repaints
    the real html.dark values the header Theme menu paints. */
-.dmock { background: var(--docs-color-background, #fff); color: var(--docs-color-body, #44403c); border-color: var(--docs-color-border, #e7e5e4); }
-.dmock .topbar { background: var(--docs-header-background, #fff); border-color: var(--docs-color-border, #e7e5e4); }
+.dmock { background: var(--docs-color-background, #fff); color: var(--docs-color-body, #44403c); border-color: var(--docs-color-borderDefault, #e7e5e4); }
+.dmock .topbar { background: var(--docs-header-background, #fff); border-color: var(--docs-color-borderDefault, #e7e5e4); }
 .dmock .shell { display: flex; }
-.dmock .sb { width: var(--component-docsSidebar-width, 240px); flex: 0 0 auto; border-right: 1px solid var(--docs-color-border, #e7e5e4); padding: 18px 14px; font-size: 13px; background: var(--docs-sidebar-background, transparent); }
+.dmock .sb { width: var(--component-docsSidebar-width, 240px); flex: 0 0 auto; border-right: 1px solid var(--docs-color-borderDefault, #e7e5e4); padding: 18px 14px; font-size: 13px; background: var(--docs-sidebar-background, transparent); }
 .dmock .sb .grp { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .55; margin: 14px 6px 6px; }
 .dmock .sb .ln { display: block; padding: 5px 10px; border-radius: 6px; opacity: .8; }
 .dmock .sb .ln.on { opacity: 1; font-weight: 500; background: rgba(127,127,127,.12); }
 .dmock .art { flex: 1; padding: 28px 34px 40px; min-width: 0; }
 .dmock .art h3 { font: 500 26px/1.25 var(--sg-sans); margin: 0 0 10px; }
 .dmock .art p { font-size: 14.5px; line-height: 1.7; margin: 0 0 14px; max-width: 62ch; }
-.dmock .search { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 10px; border: 1px solid var(--docs-color-border, #e7e5e4); border-radius: var(--component-docsSearch-radius, 6px); font-size: 12.5px; opacity: .8; }
+.dmock .search { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 10px; border: 1px solid var(--docs-color-borderDefault, #e7e5e4); border-radius: var(--component-docsSearch-radius, 6px); font-size: 12.5px; opacity: .8; }
 .dmock .codeblk { background: var(--component-docsCode-bg, var(--docs-code-background, #f5f4f3)); color: inherit; border-radius: var(--component-docsCodeBlock-radius, 8px); font: 400 12.5px/1.7 var(--sg-mono); padding: 14px 16px; margin: 16px 0; }
 .dmock .codeblk .kw { color: var(--docs-primitive-choice, #6fd3b5); }
 .dmock .codeblk .fn { color: var(--docs-primitive-noul, #7a93e0); }
 .dmock .codeblk .str { color: var(--docs-primitive-span, #a08ae0); }
 .dmock .codeblk .cm { color: var(--docs-primitive-score, #e6b89a); }
 table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--docs-color-border, #e7e5e4); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--docs-color-border, #e7e5e4); }
+table.cmp td, table.cmp th { border: 1px solid var(--docs-color-borderDefault, #e7e5e4); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--docs-color-borderDefault, #e7e5e4); }
 .tr .ts { font-family: var(--sg-sans); }
 .tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-.tile { border: 1px solid var(--docs-color-border, #e7e5e4); border-radius: var(--component-postCard-radius, 8px); padding: 16px; font-size: 13px; background: var(--bg-default, #fdfdfc); color: var(--ink-default, #1b1918); }
+.tile { border: 1px solid var(--docs-color-borderDefault, #e7e5e4); border-radius: var(--component-postCard-radius, 8px); padding: 16px; font-size: 13px; background: var(--bg-default, #fdfdfc); color: var(--ink-default, #1b1918); }
 .tile b { display: block; font: 600 15px/1.4 var(--sg-sans); margin-bottom: 4px; }
 .tile .sub { opacity: .65; font-size: 12px; }
 </style>
@@ -91,11 +91,11 @@ table.cmp td, table.cmp th { border: 1px solid var(--docs-color-border, #e7e5e4)
   <p class="note">Read from hume.ai's signed-out surfaces in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). Three of the four surfaces paint <b>light only</b> — www.hume.ai, demo.hume.ai and app.hume.ai have no theme control at all, and none is invented. The dev.hume.ai docs carry the one real control: the header Theme button&rsquo;s own Light / Dark / System menu repaints <code>html.dark</code>, so the <code>dark</code> token set holds only the docs&rsquo; painted dark (#1c1917 warm-black ground). The brand faces (Martina Plantijn, PP Fraktion Mono / Fraktion, Fellix, M PLUS 1) are licensed and not bundled — samples fall back to system faces; Inter is open-licensed. The app.hume.ai platform past /log-in, the demo.hume.ai playground (invitation-gated) and the retired EVI/Octave line are documented boundaries, not captures.</p>
 
   <h2 class="sh">The www surface — light only</h2>
-  <p class="lead">www.hume.ai is a warm off-white editorial surface in Inter: a quiet nav (the wordmark, Emotion Science, the Products / Solutions / Benchmarks / Resources menu buttons, the near-black &ldquo;See a Demo&rdquo; pill) over hero sections washed with the pastel accent ramp — pink, mint, sky, apricot, lilac — and the scripted customer-call player that animates the audio-decision pipeline.</p>
+  <p class="lead">www.hume.ai is a warm off-white editorial surface: Inter body and UI under Martina Plantijn serif headlines — a quiet nav (the wordmark, Emotion Science, the Products / Solutions / Benchmarks / Resources menu buttons, the white &ldquo;See a Demo&rdquo; pill) over hero sections washed with the pastel accent ramp — pink, mint, sky, apricot, lilac — and the scripted customer-call player that animates the audio-decision pipeline.</p>
   <div class="mock">
     <div class="topbar"><span class="wm">Hume</span><span class="nav"><span>Emotion Science</span><span>Products</span><span>Solutions</span><span>Benchmarks</span><span>Resources</span></span><span class="sp"></span><span class="btn primary" style="height:30px;padding:0 14px;font-size:12.5px">See a Demo</span></div>
     <div class="hero"><h3>Measure and improve real-world voice AI performance</h3><p>The hero and section washes compose the pastel ramp: <span class="ic">accent.pink</span>, <span class="ic">accent.mint</span>, <span class="ic">accent.sky</span>, the <span class="ic">gradient.*</span> stops — on the <span class="ic">#fdfdfc</span> ground.</p>
-      <div class="wash"><span class="chip" style="background:var(--accent-pink)">accent.pink</span><span class="chip" style="background:var(--accent-mint)">accent.mint</span><span class="chip" style="background:var(--accent-sky)">accent.sky</span><span class="chip" style="background:var(--accent-orange)">accent.orange</span><span class="chip" style="background:var(--gradient-lilac)">gradient.lilac</span></div>
+      <div class="wash"><span class="chip" style="background:var(--accent-pink)">accent.pink</span><span class="chip" style="background:var(--accent-mint)">accent.mint</span><span class="chip" style="background:var(--accent-sky)">accent.sky</span><span class="chip" style="background:var(--accent-orange)">accent.orange</span><span class="chip" style="background:var(--gradientStop-lilac)">gradient.lilac</span></div>
       <span class="btn primary">See a Demo</span>&nbsp;&nbsp;<span class="btn ghost">Contact sales</span></div>
   </div>
 
