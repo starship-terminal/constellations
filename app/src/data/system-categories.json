@@ -1264,5 +1264,11 @@
     "groupId": "web-categories",
     "labels": ["Communication Tools", "Business"],
     "reason": "catalog.json describes an AI customer-service platform: shared inbox, Fin AI agent, helpdesk marketing, pricing, a help centre and changelog - the same product category as systems:front."
+  },
+  {
+    "referenceId": "systems:macaw",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a cream marketing site for an AI website builder: one coral action and tinted pricing cards."
   }
 ]
