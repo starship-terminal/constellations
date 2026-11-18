@@ -1278,6 +1278,12 @@
     "reason": "catalog.json describes near-black reading-app marketing: a blurple pill, display type, and a white sign-in card."
   },
   {
+    "referenceId": "systems:manychat",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools"],
+    "reason": "catalog.json describes chat-marketing pages: a neon-pink hero pill, a black promo strip, and pricing cards."
+  },
+  {
     "referenceId": "systems:intercom",
     "groupId": "web-categories",
     "labels": ["Communication Tools", "Business"],

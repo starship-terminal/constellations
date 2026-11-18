@@ -1,0 +1,6340 @@
+{
+ "readAt": "2026-11-18",
+ "source": "the stylesheet bodies read during live /, /pricing and /product/instagram loads on manychat.com (stylesheet responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets at 1440 x 900 — the page paints a single light theme",
+ "sheets": [
+  "https://mccdn.me/martech/next-lp/_next/static/chunks/1v3jzhh6r1d9-.css (29507 bytes)",
+  "https://mccdn.me/martech/next-lp/_next/static/chunks/1j__46mvzec2r.css (5992 bytes)",
+  "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css (51478 bytes)",
+  "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css (250677 bytes)",
+  "https://mccdn.me/martech/next-lp/_next/static/chunks/14pqr4bk1yftp.css (39439 bytes)",
+  "https://app.manychat.com/css/auth.css (79968 bytes)",
+  "https://fonts.googleapis.com/css (1578 bytes)",
+  "https://fonts.googleapis.com/css2 (2450 bytes)",
+  "https://accounts.google.com/gsi/style (696 bytes)",
+  "inline-pricing-0 (1279 bytes)",
+  "inline-pricing-1 (42622 bytes)",
+  "inline-instagram-0 (1279 bytes)",
+  "inline-instagram-1 (42622 bytes)"
+ ],
+ "counts": {
+  "rules": 332,
+  "fonts": 22,
+  "names": {
+   "theme": 225,
+   "app": 106,
+   "skins": 0,
+   "vendor": 3,
+   "utility": 18,
+   "tailwind": 66
+  },
+  "bySelector": {
+   "[app] .ey39-W_container": 2,
+   "[app] .RPeRbW_slide": 4,
+   "[app] .vxsHqa_slide": 4,
+   "[vendor] @media (min-width: 768px) .vxsHqa_main_container": 1,
+   "[vendor] @layer utilities :root": 1,
+   "[vendor] @layer utilities .swiper-lazy-preloader-white": 1,
+   "[vendor] @layer utilities .swiper-lazy-preloader-black": 1,
+   "[app] .vBx9Ga_container": 1,
+   "[app] @media (min-width: 1200px) .vBx9Ga_container": 1,
+   "[app] ._1f_hia_chess": 1,
+   "[app] .TWlo_a_chess": 1,
+   "[app] .I5jB1W_card": 5,
+   "[app] .zcnI6q_pagination": 2,
+   "[theme] .TSrufa_variable": 1,
+   "[app] .YISCcG_image_container.YISCcG_img_loading::before": 1,
+   "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) *, ::before, ::after, ::backdrop": 66,
+   "[theme] @layer theme :root, :host": 225,
+   "[theme] @layer theme @supports (color:lab(0% 0 0)) :root, :host": 20,
+   "[app] @layer utilities .bg-grid-pattern-card": 1,
+   "[app] @layer utilities .bg-grid-color-pattern": 4,
+   "[app] @layer utilities @media (min-width: 768px) .bg-grid-color-pattern": 1,
+   "[app] @layer utilities @media (min-width: 1024px) .bg-grid-color-pattern": 3,
+   "[tailwind] @layer utilities .-translate-x-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-x-1\\/2\\!": 1,
+   "[tailwind] @layer utilities .-translate-x-4": 1,
+   "[tailwind] @layer utilities .-translate-x-\\[3\\.7rem\\]": 1,
+   "[tailwind] @layer utilities .-translate-x-\\[5rem\\]": 1,
+   "[tailwind] @layer utilities .-translate-x-\\[56\\.7\\%\\]": 1,
+   "[tailwind] @layer utilities .-translate-x-\\[109\\%\\]": 1,
+   "[tailwind] @layer utilities .-translate-x-\\[calc\\(50\\%\\+1\\.1rem\\)\\]": 1,
+   "[tailwind] @layer utilities .-translate-x-\\[calc\\(100\\%\\+1\\.2rem\\)\\]": 1,
+   "[tailwind] @layer utilities .translate-x-0": 1,
+   "[tailwind] @layer utilities .translate-x-full": 1,
+   "[tailwind] @layer utilities .-translate-y-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-y-24": 1,
+   "[tailwind] @layer utilities .-translate-y-48": 1,
+   "[tailwind] @layer utilities .-translate-y-\\[0\\.4rem\\]": 1,
+   "[tailwind] @layer utilities .-translate-y-\\[1\\.6rem\\]": 1,
+   "[tailwind] @layer utilities .-translate-y-full": 1,
+   "[tailwind] @layer utilities .translate-y-0": 1,
+   "[tailwind] @layer utilities .translate-y-1": 1,
+   "[tailwind] @layer utilities .translate-y-4": 1,
+   "[tailwind] @layer utilities .translate-y-10rem": 1,
+   "[tailwind] @layer utilities .translate-y-\\[-5rem\\]": 1,
+   "[tailwind] @layer utilities .translate-y-\\[-14\\.65rem\\]": 1,
+   "[tailwind] @layer utilities .translate-y-\\[0\\.4rem\\]": 1,
+   "[tailwind] @layer utilities .translate-y-\\[1rem\\]": 1,
+   "[tailwind] @layer utilities .translate-y-\\[5rem\\]": 1,
+   "[tailwind] @layer utilities .translate-y-\\[8rem\\]": 1,
+   "[tailwind] @layer utilities .translate-y-\\[calc\\(var\\(--progress\\)_\\*_30\\%\\)\\]": 1,
+   "[tailwind] @layer utilities .translate-y-\\[calc\\(var\\(--progress\\,0\\)\\*60vh-30vh\\)\\]": 1,
+   "[tailwind] @layer utilities .translate-y-full": 1,
+   "[tailwind] @layer utilities .translate-z-0": 1,
+   "[tailwind] @layer utilities .scale-0": 3,
+   "[tailwind] @layer utilities .scale-50": 3,
+   "[tailwind] @layer utilities .scale-90": 3,
+   "[tailwind] @layer utilities .scale-95": 3,
+   "[tailwind] @layer utilities .scale-100": 3,
+   "[tailwind] @layer utilities .-scale-x-100": 1,
+   "[tailwind] @layer utilities .scale-x-0": 1,
+   "[tailwind] @layer utilities .scale-x-100": 1,
+   "[tailwind] @layer utilities .scale-x-\\[-1\\]": 1,
+   "[tailwind] @layer utilities .-scale-y-100": 1,
+   "[tailwind] @layer utilities .scale-y-0": 1,
+   "[tailwind] @layer utilities :where(.space-x-\\[-1rem\\] > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.divide-y > :not(:last-child))": 1,
+   "[tailwind] @layer utilities .border-dashed": 1,
+   "[tailwind] @layer utilities .border-none": 1,
+   "[tailwind] @layer utilities .border-solid": 1,
+   "[tailwind] @layer utilities .bg-linear-to-b": 1,
+   "[tailwind] @layer utilities @supports (background-image:linear-gradient(in lab, red, red)) .bg-linear-to-b": 1,
+   "[tailwind] @layer utilities .bg-linear-to-t": 1,
+   "[tailwind] @layer utilities @supports (background-image:linear-gradient(in lab, red, red)) .bg-linear-to-t": 1,
+   "[tailwind] @layer utilities .from-transparent": 2,
+   "[tailwind] @layer utilities .to-raw-neutral-900": 2,
+   "[tailwind] @layer utilities .to-\\[191\\.05\\%\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[0\\.82\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.1\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.4\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.6\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[100\\%\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[130\\%\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[150\\%\\]": 1,
+   "[tailwind] @layer utilities .leading-none": 1,
+   "[tailwind] @layer utilities .\\!font-\\[600\\]": 1,
+   "[tailwind] @layer utilities .\\!font-\\[700\\]": 1,
+   "[tailwind] @layer utilities .\\!font-bold": 1,
+   "[tailwind] @layer utilities .\\!font-normal": 1,
+   "[tailwind] @layer utilities .font-\\[900\\]": 1,
+   "[tailwind] @layer utilities .font-black": 1,
+   "[tailwind] @layer utilities .font-bold": 1,
+   "[tailwind] @layer utilities .font-medium": 1,
+   "[tailwind] @layer utilities .font-normal": 1,
+   "[tailwind] @layer utilities .font-semibold": 1,
+   "[tailwind] @layer utilities .\\!tracking-\\[0\\.01em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.01em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.02em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.03rem\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.04em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[0\\.01em\\]": 1,
+   "[tailwind] @layer utilities .shadow-xl\\/4": 2,
+   "[tailwind] @layer utilities @supports (color:lab(0% 0 0)) .shadow-xl\\/4": 1,
+   "[tailwind] @layer utilities .\\!shadow-none": 1,
+   "[tailwind] @layer utilities .shadow": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_0\\.4rem_1\\.17rem_0_rgba\\(156\\,156\\,156\\,0\\.1\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_0_0_1px_\\#edf2ed\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_1px_6rem_rgba\\(0\\,0\\,0\\,0\\.1\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_1px_6rem_rgba\\(0\\,0\\,0\\,0\\.08\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_1px_80px_0_rgba\\(0\\,0\\,0\\,0\\.04\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_4px_8px_0_rgba\\(0\\,0\\,0\\,0\\.08\\)\\]": 1,
+   "[tailwind] @layer utilities .shadow-\\[0px_8px_24px_0px_\\#00000014\\]": 1,
+   "[tailwind] @layer utilities .shadow-none": 1,
+   "[tailwind] @layer utilities .ring": 1,
+   "[tailwind] @layer utilities .ring-\\[0\\.4rem\\]": 1,
+   "[tailwind] @layer utilities .ring-neutral": 1,
+   "[tailwind] @layer utilities .ring-raw-neutral-10": 1,
+   "[tailwind] @layer utilities .blur": 1,
+   "[tailwind] @layer utilities .blur-\\[60px\\]": 1,
+   "[tailwind] @layer utilities .drop-shadow-\\[0_0_12px_rgba\\(0\\,0\\,0\\,0\\.08\\)\\]": 2,
+   "[tailwind] @layer utilities .invert": 1,
+   "[tailwind] @layer utilities .backdrop-blur-3xl": 1,
+   "[tailwind] @layer utilities .backdrop-blur-\\[2rem\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur-\\[6rem\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur-\\[10px\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur-\\[15px\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur-\\[20px\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur-\\[40px\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur-\\[60px\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur-xl": 1,
+   "[tailwind] @layer utilities .\\!duration-300": 1,
+   "[tailwind] @layer utilities .duration-150": 1,
+   "[tailwind] @layer utilities .duration-200": 1,
+   "[tailwind] @layer utilities .duration-300": 1,
+   "[tailwind] @layer utilities .duration-450": 1,
+   "[tailwind] @layer utilities .duration-500": 1,
+   "[tailwind] @layer utilities .duration-600": 1,
+   "[tailwind] @layer utilities .duration-700": 1,
+   "[tailwind] @layer utilities .duration-1000": 1,
+   "[tailwind] @layer utilities .duration-2000": 1,
+   "[tailwind] @layer utilities .duration-\\[400ms\\]": 1,
+   "[tailwind] @layer utilities .duration-\\[600ms\\]": 1,
+   "[tailwind] @layer utilities .duration-\\[700ms\\]": 1,
+   "[tailwind] @layer utilities .duration-\\[16500ms\\]": 1,
+   "[tailwind] @layer utilities .ease-\\[ease\\]": 1,
+   "[tailwind] @layer utilities .ease-\\[var\\(--ease\\)\\]": 1,
+   "[tailwind] @layer utilities .ease-in-out": 1,
+   "[tailwind] @layer utilities .ease-mc": 1,
+   "[tailwind] @layer utilities .ease-out": 1,
+   "[tailwind] @layer utilities .outline-none": 1,
+   "[utility] @layer utilities .\\!\\[--top-banner-height\\:0rem\\]": 1,
+   "[utility] @layer utilities .\\[--content-width\\:100\\%\\]": 1,
+   "[utility] @layer utilities .\\[--creatorworld-banner-height\\:5\\.4rem\\]": 1,
+   "[utility] @layer utilities .\\[--float-duration\\:2\\.6s\\]": 1,
+   "[utility] @layer utilities .\\[--float-duration\\:3\\.2s\\]": 1,
+   "[utility] @layer utilities .\\[--float-duration\\:3\\.8s\\]": 1,
+   "[utility] @layer utilities .\\[--float-x\\:-2\\.2rem\\]": 1,
+   "[utility] @layer utilities .\\[--float-x\\:-2\\.4rem\\]": 1,
+   "[utility] @layer utilities .\\[--float-x\\:2rem\\]": 1,
+   "[utility] @layer utilities .\\[--float-y\\:-1\\.2rem\\]": 1,
+   "[utility] @layer utilities .\\[--float-y\\:-2\\.4rem\\]": 1,
+   "[utility] @layer utilities .\\[--float-y\\:0\\.8rem\\]": 1,
+   "[utility] @layer utilities .\\[--grid-pattern-color\\:rgba\\(0\\,0\\,0\\,0\\.08\\)\\]": 1,
+   "[utility] @layer utilities .\\[--grid-pattern-color\\:rgba\\(255\\,255\\,255\\,0\\.08\\)\\]": 1,
+   "[utility] @layer utilities .\\[--num-cols\\:3\\]": 1,
+   "[utility] @layer utilities .\\[--num-cols\\:4\\]": 1,
+   "[utility] @layer utilities .\\[--page-margin\\:1\\.6rem\\]": 1,
+   "[utility] @layer utilities .\\[--parallax-x\\:-3\\.4rem\\]": 1,
+   "[utility] @layer utilities .\\[--parallax-x\\:2\\.1rem\\]": 1,
+   "[utility] @layer utilities .\\[--parallax-x\\:4\\.1rem\\]": 1,
+   "[utility] @layer utilities .\\[--parallax-y\\:-2\\.1rem\\]": 1,
+   "[utility] @layer utilities .\\[--parallax-y\\:4\\.1rem\\]": 1,
+   "[utility] @layer utilities .\\[--parallax-y\\:4\\.4rem\\]": 1,
+   "[utility] @layer utilities .\\[--sidebar-track\\:var\\(--page-margin\\)\\]": 1,
+   "[utility] @layer utilities .\\[--sz\\:7\\.4rem\\]": 1,
+   "[utility] @layer utilities .\\[--zoom\\:1\\]": 1,
+   "[tailwind] @layer utilities :is(.\\*\\:translate-y-\\[8rem\\] > *)": 1,
+   "[tailwind] @layer utilities .group-odd\\:backdrop-blur-\\[20px\\]:is(:where(.group):nth-child(2n+1) *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:translate-x-0:is(:where(.group):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:translate-y-2:is(:where(.group):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:scale-100:is(:where(.group):hover *)": 3,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:scale-105:is(:where(.group):hover *)": 3,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/accordion\\:translate-x-8:is(:where(.group\\/accordion):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/accordion\\:scale-x-75:is(:where(.group\\/accordion):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/button\\:-translate-y-full:is(:where(.group\\/button):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/button\\:translate-y-0:is(:where(.group\\/button):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/leader\\:-translate-y-0:is(:where(.group\\/leader):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/leader\\:-translate-y-48:is(:where(.group\\/leader):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/prevnext\\:-translate-x-2:is(:where(.group\\/prevnext):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/prevnext\\:translate-x-2:is(:where(.group\\/prevnext):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/select\\:-translate-x-4:is(:where(.group\\/select):hover *)": 1,
+   "[tailwind] @layer utilities .group-has-\\[\\:is\\(input\\,textarea\\)\\:is\\(\\:focus\\,\\:not\\(\\:-moz-placeholder\\)\\)\\]\\:-translate-y-1\\/2:is(:where(.group):has(:is(input, textarea):is(:focus, :not(:placeholder-shown))) *), .group-has-\\[": 1,
+   "[tailwind] @layer utilities .before\\:-translate-x-1\\/2::before": 1,
+   "[tailwind] @layer utilities .before\\:translate-x-1\\/2::before": 1,
+   "[tailwind] @layer utilities .before\\:-translate-y-1\\/2::before": 1,
+   "[tailwind] @layer utilities .before\\:translate-y-0::before": 1,
+   "[tailwind] @layer utilities .before\\:translate-y-4::before": 1,
+   "[tailwind] @layer utilities .before\\:scale-y-0::before": 1,
+   "[tailwind] @layer utilities .before\\:bg-linear-to-b::before": 1,
+   "[tailwind] @layer utilities @supports (background-image:linear-gradient(in lab, red, red)) .before\\:bg-linear-to-b::before": 1,
+   "[tailwind] @layer utilities .before\\:from-black\\/0::before": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .before\\:from-black\\/0::before": 1,
+   "[tailwind] @layer utilities .before\\:from-transparent::before": 2,
+   "[tailwind] @layer utilities .before\\:via-black\\/0::before": 3,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .before\\:via-black\\/0::before": 1,
+   "[tailwind] @layer utilities .before\\:via-transparent::before": 3,
+   "[tailwind] @layer utilities .before\\:to-black\\/50::before": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .before\\:to-black\\/50::before": 1,
+   "[tailwind] @layer utilities .before\\:to-black\\/60::before": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .before\\:to-black\\/60::before": 1,
+   "[tailwind] @layer utilities .before\\:blur-\\[60px\\]::before": 1,
+   "[tailwind] @layer utilities .before\\:duration-300::before": 1,
+   "[tailwind] @layer utilities .before\\:duration-450::before": 1,
+   "[tailwind] @layer utilities .before\\:ease-in-out::before": 1,
+   "[tailwind] @layer utilities .before\\:content-\\[\\\"\\\"\\]::before, .before\\:content-\\[\\'\\'\\]::before": 1,
+   "[tailwind] @layer utilities .before\\:content-\\[\\'\\/\\'\\]::before": 1,
+   "[tailwind] @layer utilities .before\\:content-\\[\\'—\\'\\]::before": 1,
+   "[tailwind] @layer utilities .after\\:translate-x-\\[1\\.6rem\\]::after": 1,
+   "[tailwind] @layer utilities .after\\:-translate-y-4::after": 1,
+   "[tailwind] @layer utilities .after\\:translate-y-0::after": 1,
+   "[tailwind] @layer utilities .after\\:bg-gradient-to-t::after": 1,
+   "[tailwind] @layer utilities .after\\:from-black::after": 2,
+   "[tailwind] @layer utilities .after\\:from-raw-neutral-900::after": 2,
+   "[tailwind] @layer utilities .after\\:from-\\[-40\\%\\]::after": 1,
+   "[tailwind] @layer utilities .after\\:to-transparent::after": 2,
+   "[tailwind] @layer utilities .after\\:duration-300::after": 1,
+   "[tailwind] @layer utilities .after\\:content-\\[\\'\\'\\]::after": 1,
+   "[tailwind] @layer utilities .after\\:content-\\[\\'\\>\\'\\]::after": 1,
+   "[utility] @layer utilities @media (hover: hover) .hover\\:\\[--zoom\\:1\\.05\\]:hover": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:before\\:scale-y-100:hover::before": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:before\\:to-black\\/70:hover::before": 2,
+   "[tailwind] @layer utilities @media (hover: hover) @supports (color:color-mix(in lab, red, red)) .hover\\:before\\:to-black\\/70:hover::before": 1,
+   "[tailwind] @layer utilities .focus\\:outline-none:focus": 1,
+   "[tailwind] @layer utilities .active\\:scale-95:active": 3,
+   "[tailwind] @layer utilities :where(.swiper-slide-active) .in-\\[\\.swiper-slide-active\\]\\:scale-100": 3,
+   "[tailwind] @layer utilities .has-\\[zd-autocomplete\\]\\:ring-\\[0\\.4rem\\]:has(:is(zd-autocomplete))": 1,
+   "[tailwind] @layer utilities .has-\\[zd-autocomplete\\]\\:ring-neutral:has(:is(zd-autocomplete))": 1,
+   "[tailwind] @layer utilities .has-\\[zd-autocomplete\\.absolute\\]\\:after\\:content-\\[\\'\\'\\]:has(:is(zd-autocomplete.absolute))::after": 1,
+   "[tailwind] @layer utilities :is(.data-open\\:\\*\\:translate-y-0[data-open] > *)": 1,
+   "[tailwind] @layer utilities .data-\\[open\\=true\\]\\:ring-\\[0\\.4rem\\][data-open=\"true\"]": 1,
+   "[tailwind] @layer utilities .data-\\[open\\=true\\]\\:ring-neutral[data-open=\"true\"]": 1,
+   "[tailwind] @layer utilities .data-\\[open\\=true\\]\\:ring-raw-neutral-10[data-open=\"true\"]": 1,
+   "[tailwind] @layer utilities @media not all and (min-width: 1512px) .max-huge\\:scale-75": 3,
+   "[tailwind] @layer utilities @media not all and (min-width: 1152px) .max-md-next\\:\\!font-\\[600\\]": 1,
+   "[tailwind] @layer utilities @media not all and (min-width: 768px) .max-sm\\:tracking-\\[0\\.01em\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 576px) :where(.tn\\:space-x-5 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:translate-x-0": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:-translate-y-1\\/2": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:translate-y-0": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:scale-75": 3,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:border-none": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:leading-\\[0\\.85\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:leading-\\[90\\%\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:leading-\\[150\\%\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:font-black": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:font-bold": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:tracking-\\[-0\\.02em\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 768px) .sm\\:duration-500": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--card-width\\:calc\\(\\(100dvw_-_2_\\*_var\\(--page-padding\\)_-_var\\(--cards-gap\\)\\)_\\/_2\\)\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--content-width\\:58\\.6rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--creatorworld-banner-height\\:6\\.8rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--num-cols\\:5\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--num-cols\\:7\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--page-margin\\:3\\.2rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--page-padding\\:3\\.2rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--sidebar-track\\:10rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--sidebar-width\\:4\\.8rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--slider-offset\\:8dvw\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:\\[--sz\\:9\\.9rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 768px) .sm\\:data-\\[sidebar\\=expanded\\]\\:\\[--sidebar-width\\:21\\.6rem\\][data-sidebar=\"expanded\"]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1024px) .md\\:-translate-x-1\\/2": 1,
+   "[tailwind] @layer utilities @media (min-width: 1024px) .md\\:translate-x-0": 1,
+   "[tailwind] @layer utilities @media (min-width: 1024px) .md\\:translate-x-\\[-4\\.7rem\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1024px) .md\\:translate-y-0": 1,
+   "[tailwind] @layer utilities @media (min-width: 1024px) .md\\:scale-100": 3,
+   "[tailwind] @layer utilities @media (min-width: 1024px) :where(.md\\:space-x-0 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities @media (min-width: 1024px) .md\\:leading-\\[120\\%\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1024px) .md\\:shadow-\\[0_0\\.4rem_1\\.17rem_0_rgba\\(156\\,156\\,156\\,0\\.25\\)\\]": 1,
+   "[utility] @layer utilities @media (min-width: 1024px) .md\\:\\[--card-width\\:calc\\(\\(100dvw_-_2_\\*_\\(var\\(--page-padding\\)_\\+_var\\(--slider-offset\\)\\)_-_2_\\*_var\\(--cards-gap\\)\\)_\\/_3\\)\\]": 1,
+   "[utility] @layer utilities @media (min-width: 1024px) .md\\:\\[--content-width\\:59rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 1024px) .md\\:\\[--page-margin\\:4\\.8rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 1024px) .md\\:\\[--sidebar-track\\:16\\.8rem\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1024px) @media (hover: hover) .md\\:group-hover\\/search-btn\\:scale-110:is(:where(.group\\/search-btn):hover *)": 3,
+   "[tailwind] @layer utilities @media (min-width: 1024px) .md\\:before\\:content-none::before": 1,
+   "[utility] @layer utilities @media (min-width: 1024px) .md\\:data-\\[sidebar\\=expanded\\]\\:\\[--sidebar-track\\:28\\.8rem\\][data-sidebar=\"expanded\"]": 1,
+   "[app] @layer utilities @media (min-width: 1280px) .lg\\:bg-grid-pattern-card": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:-translate-x-\\[10vw\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:-translate-x-\\[15vw\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:-translate-x-\\[calc\\(\\(100vw-26rem\\)\\/12\\*7\\+14rem\\)\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:translate-x-0": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:translate-x-1\\.6rem": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:translate-x-\\[calc\\(var\\(--offset\\,0px\\)-25\\%\\+0\\.5rem\\)\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:translate-x-\\[var\\(--mouse-x\\)\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:translate-y-\\[var\\(--mouse-y\\)\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:leading-\\[0\\.89\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:backdrop-blur-lg": 1,
+   "[utility] @layer utilities @media (min-width: 1280px) .lg\\:\\[--num-cols\\:7\\]": 1,
+   "[utility] @layer utilities @media (min-width: 1280px) .lg\\:\\[--num-cols\\:10\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 1280px) .lg\\:odd\\:translate-y-\\[calc\\(-10\\%-2rem-var\\(--progress\\,0\\)\\*66\\%\\)\\]:nth-child(2n+1)": 1,
+   "[tailwind] @layer utilities @media (min-width: 1512px) .huge\\:-translate-x-1\\/2": 1,
+   "[tailwind] @layer utilities @media (min-width: 1512px) .huge\\:scale-100": 3,
+   "[utility] @layer utilities @media (min-width: 1512px) .huge\\:\\[--content-width\\:68\\.9rem\\]": 1,
+   "[utility] @layer utilities @media (min-width: 1512px) .huge\\:\\[--sz\\:11\\.6rem\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:-translate-x-\\[calc\\(\\(100vw-8rem\\)\\/1\\.5\\+4rem\\)\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:-translate-x-\\[calc\\(\\(100vw-9rem\\)\\/12\\*7\\+4rem\\)\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:-translate-y-4": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:translate-y-0": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:translate-y-\\[none\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:shadow-\\[0_0_0_60rem_rgba\\(0\\,0\\,0\\,0\\.15\\)\\]": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:backdrop-blur-3xl": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:backdrop-blur-none": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:duration-300": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:duration-500": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) @media (hover: hover) .xl\\:group-hover\\/submenu\\:translate-y-0:is(:where(.group\\/submenu):hover *)": 1,
+   "[tailwind] @layer utilities @media (min-width: 80rem) .xl\\:group-has-\\[button\\:active\\]\\/submenu\\:-translate-y-4:is(:where(.group\\/submenu):has(:is(button:active)) *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) @media (hover: hover) .hover-hover\\:group-hover\\:translate-x-0\\.8rem:is(:where(.group):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) @media (hover: hover) .hover-hover\\:hover\\:shadow-\\[0_8px_16px_10px_rgba\\(0\\,0\\,0\\,0\\.08\\)\\]:hover": 1,
+   "[tailwind] @layer utilities .\\[\\&_strong\\]\\:font-semibold strong": 1,
+   "[tailwind] @layer utilities .\\[\\&\\:not\\(\\:first-child\\)\\]\\:before\\:content-\\[\\'\\'\\]:not(:first-child)::before": 1,
+   "[tailwind] @layer utilities .\\[\\&\\:nth-child\\(2\\)\\]\\:before\\:content-none:nth-child(2)::before": 1,
+   "[theme] @layer utilities @media (min-width: 768px) :root": 18,
+   "[theme] @layer utilities @media (min-width: 1024px) :root": 9,
+   "[theme] @layer utilities @media (min-width: 1512px) :root": 25,
+   "[app] :root": 70,
+   "[app] @media (min-width: 1024px) :root": 1,
+   "[app] @layer utilities :root": 15,
+   "[app] @layer utilities @media (min-width: 576px) :root": 2,
+   "[app] @layer utilities .trigger": 1
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "selector": ".TSrufa_variable",
+   "context": [],
+   "properties": {
+    "--font-inter": "\"Inter\", \"Inter Fallback\""
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme"
+   ],
+   "properties": {
+    "--font-sans": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "--font-mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "--color-red-50": "#fef2f2",
+    "--color-red-200": "#ffcaca",
+    "--color-red-400": "#ff6568",
+    "--color-red-700": "#bf000f",
+    "--color-amber-100": "#fef3c6",
+    "--color-amber-200": "#fee685",
+    "--color-amber-600": "#dd7400",
+    "--color-amber-800": "#953d00",
+    "--color-amber-900": "#7b3306",
+    "--color-green-100": "#dcfce7",
+    "--color-green-200": "#b9f8cf",
+    "--color-green-500": "#00c758",
+    "--color-green-800": "#016630",
+    "--color-green-900": "#0d542b",
+    "--color-slate-200": "#e2e8f0",
+    "--color-slate-950": "#020618",
+    "--color-gray-200": "#e5e7eb",
+    "--color-gray-400": "#99a1af",
+    "--color-gray-500": "#6a7282",
+    "--color-gray-700": "#364153",
+    "--color-black": "#000",
+    "--color-white": "#fff",
+    "--spacing": ".25rem",
+    "--breakpoint-sm": "768px",
+    "--breakpoint-md": "1024px",
+    "--breakpoint-lg": "1280px",
+    "--breakpoint-xl": "80rem",
+    "--container-sm": "24rem",
+    "--text-xs": ".75rem",
+    "--text-xs--line-height": "calc(1 / .75)",
+    "--text-sm": ".875rem",
+    "--text-sm--line-height": "calc(1.25 / .875)",
+    "--text-base": "1rem",
+    "--text-base--line-height": "calc(1.5 / 1)",
+    "--text-lg": "1.125rem",
+    "--text-lg--line-height": "calc(1.75 / 1.125)",
+    "--font-weight-normal": "400",
+    "--font-weight-medium": "500",
+    "--font-weight-semibold": "600",
+    "--font-weight-bold": "700",
+    "--font-weight-black": "900",
+    "--ease-out": "cubic-bezier(0, 0, .2, 1)",
+    "--ease-in-out": "cubic-bezier(.4, 0, .2, 1)",
+    "--blur-lg": "16px",
+    "--blur-xl": "24px",
+    "--blur-3xl": "64px",
+    "--aspect-video": "16 / 9",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+    "--default-font-family": "var(--font-sans)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--breakpoint-huge": "1512px",
+    "--spacing-0.4rem": ".4rem",
+    "--spacing-0.8rem": ".8rem",
+    "--spacing-1.2rem": "1.2rem",
+    "--spacing-1.6rem": "1.6rem",
+    "--spacing-2rem": "2rem",
+    "--spacing-2.4rem": "2.4rem",
+    "--spacing-3.2rem": "3.2rem",
+    "--spacing-4rem": "4rem",
+    "--spacing-4.8rem": "4.8rem",
+    "--spacing-6rem": "6rem",
+    "--spacing-6.4rem": "6.4rem",
+    "--spacing-8rem": "8rem",
+    "--spacing-10rem": "10rem",
+    "--spacing-12rem": "12rem",
+    "--spacing-16rem": "16rem",
+    "--spacing-18rem": "18rem",
+    "--spacing-24rem": "24rem",
+    "--spacing-section-gap-default": "var(--spacing-18rem)",
+    "--spacing-section-gap-compact": "var(--spacing-8rem)",
+    "--radius-4": ".4rem",
+    "--radius-8": ".8rem",
+    "--radius-12": "1.2rem",
+    "--radius-16": "1.6rem",
+    "--radius-20": "2rem",
+    "--radius-24": "2.4rem",
+    "--radius-32": "3.2rem",
+    "--radius-48": "4.8rem",
+    "--radius-full": "999px",
+    "--font-gravity": "ManyChatGravity, sans-serif",
+    "--font-gravity--font-feature-settings": "\"ss02\" 0",
+    "--font-cofo": "CoFo Sans Mono, sans-serif",
+    "--font-rooftop": "Rooftop, sans-serif",
+    "--font-inter": "var(--font-inter), sans-serif",
+    "--color-neutral": "var(--raw-neutral-10)",
+    "--color-light-grey": "#f6f6f6",
+    "--color-grey-12": "#edf2ed1f",
+    "--color-error": "var(--raw-constant-error)",
+    "--color-fill-opacity": "transparent",
+    "--color-transparent": "transparent",
+    "--color-black-05": "#0000000d",
+    "--color-black-30": "#0000004d",
+    "--color-brand-dusk": "var(--brand-dusk)",
+    "--color-brand-ecru": "var(--brand-ecru)",
+    "--color-brand-hazel": "var(--brand-hazel)",
+    "--color-brand-powder": "var(--brand-powder)",
+    "--color-brand-thistle": "var(--brand-thistle)",
+    "--color-brand-amethyst": "var(--brand-amethyst)",
+    "--color-brand-cobalt": "var(--brand-cobalt)",
+    "--color-brand-currant": "var(--brand-currant)",
+    "--color-brand-gold": "var(--brand-gold)",
+    "--color-brand-kelp": "var(--brand-kelp)",
+    "--color-brand-vivid-orange": "var(--brand-vivid-orange)",
+    "--color-brand-hyper-yellow": "var(--brand-hyper-yellow)",
+    "--color-brand-neon-pink": "var(--brand-neon-pink)",
+    "--color-brand-electric-cyan": "var(--brand-electric-cyan)",
+    "--color-brand-sharp-green": "var(--brand-sharp-green)",
+    "--color-raw-neutral-0": "var(--raw-neutral-0)",
+    "--color-raw-neutral-10": "var(--raw-neutral-10)",
+    "--color-raw-neutral-20": "var(--raw-neutral-20)",
+    "--color-raw-neutral-700": "var(--raw-neutral-700)",
+    "--color-raw-neutral-800": "var(--raw-neutral-800)",
+    "--color-raw-neutral-900": "var(--raw-neutral-900)",
+    "--color-raw-constant-error": "var(--raw-constant-error)",
+    "--color-raw-constant-success": "var(--raw-constant-success)",
+    "--color-semantic-background-primary": "var(--semantic-background-primary)",
+    "--color-semantic-background-secondary": "var(--semantic-background-secondary)",
+    "--color-semantic-surface-primary": "var(--semantic-surface-primary)",
+    "--color-semantic-surface-secondary": "var(--semantic-surface-secondary)",
+    "--color-semantic-surface-tertiary": "var(--semantic-surface-tertiary)",
+    "--color-semantic-text-primary": "var(--semantic-text-primary)",
+    "--color-semantic-text-secondary": "var(--semantic-text-secondary)",
+    "--color-semantic-border-default": "var(--semantic-border-default)",
+    "--color-semantic-divider-default": "var(--semantic-divider-default)",
+    "--color-semantic-overlay-default": "var(--semantic-overlay-default)",
+    "--color-semantic-state-hover": "var(--semantic-state-hover)",
+    "--color-semantic-state-pressed": "var(--semantic-state-pressed)",
+    "--color-semantic-utility-error": "var(--semantic-utility-error)",
+    "--color-semantic-utility-success": "var(--semantic-utility-success)",
+    "--container-mc": "127.2rem",
+    "--container-mc-wide": "141.6rem",
+    "--text-ui": "15px",
+    "--text-ui--line-height": "1.2",
+    "--text-ui--font-weight": "400",
+    "--text-ui-bold": "15px",
+    "--text-ui-bold--line-height": "1.2",
+    "--text-ui-bold--font-weight": "700",
+    "--text-label": "1.2rem",
+    "--text-label--line-height": "1.36",
+    "--text-label--letter-spacing": ".01em",
+    "--text-label--font-weight": "400",
+    "--text-caption": "1.2rem",
+    "--text-caption--line-height": "1.4",
+    "--text-caption--letter-spacing": ".01em",
+    "--text-caption--font-weight": "400",
+    "--text-body": "1.4rem",
+    "--text-body--line-height": "1.4",
+    "--text-body--letter-spacing": ".01em",
+    "--text-body--font-weight": "400",
+    "--text-h6": "1.4rem",
+    "--text-h6--line-height": "1.4",
+    "--text-h6--letter-spacing": "-.01em",
+    "--text-h6--font-weight": "600",
+    "--text-h5": "2rem",
+    "--text-h5--line-height": "1.08",
+    "--text-h5--letter-spacing": "-.03em",
+    "--text-h5--font-weight": "600",
+    "--text-h4": "2.4rem",
+    "--text-h4--line-height": "1.08",
+    "--text-h4--letter-spacing": "-.04em",
+    "--text-h4--font-weight": "400",
+    "--text-h3": "2.4rem",
+    "--text-h3--line-height": "1.08",
+    "--text-h3--letter-spacing": "-.04em",
+    "--text-h3--font-weight": "600",
+    "--text-h3-regular": "2.4rem",
+    "--text-h3-regular--line-height": "1.08",
+    "--text-h3-regular--letter-spacing": "-.04em",
+    "--text-h3-regular--font-weight": "400",
+    "--text-h2": "3.2rem",
+    "--text-h2--line-height": ".82",
+    "--text-h2--letter-spacing": "-.02em",
+    "--text-h2--font-weight": "normal",
+    "--text-h1": "4.4rem",
+    "--text-h1--line-height": ".82",
+    "--text-h1--letter-spacing": "-.02em",
+    "--text-h1--font-weight": "normal",
+    "--text-h1-ai": "3.6rem",
+    "--text-h1-ai--line-height": ".96",
+    "--text-h1-ai--letter-spacing": "-.02em",
+    "--text-h1-ai--font-weight": "normal",
+    "--text-ds-3xl": "4.4rem",
+    "--text-ds-3xl--line-height": ".82",
+    "--text-ds-3xl--letter-spacing": "-.02em",
+    "--text-ds-3xl--font-weight": "normal",
+    "--text-ds-2xl": "3.2rem",
+    "--text-ds-2xl--line-height": ".88",
+    "--text-ds-2xl--letter-spacing": "-.02em",
+    "--text-ds-2xl--font-weight": "400",
+    "--text-ds-xl": "2.4rem",
+    "--text-ds-xl--line-height": "1.17",
+    "--text-ds-xl--letter-spacing": "-.04em",
+    "--text-ds-xl--font-weight": "700",
+    "--text-ds-l": "2.4rem",
+    "--text-ds-l--line-height": "1.17",
+    "--text-ds-l--letter-spacing": "-.04em",
+    "--text-ds-l--font-weight": "700",
+    "--text-ds-m": "2rem",
+    "--text-ds-m--line-height": "1.2",
+    "--text-ds-m--letter-spacing": "-.03em",
+    "--text-ds-m--font-weight": "700",
+    "--text-ds-base": "1.4rem",
+    "--text-ds-base--line-height": "1.43",
+    "--text-ds-base--letter-spacing": ".01em",
+    "--text-ds-base--font-weight": "400",
+    "--text-ds-s": "1.4rem",
+    "--text-ds-s--line-height": "1.43",
+    "--text-ds-s--letter-spacing": ".01em",
+    "--text-ds-s--font-weight": "400",
+    "--text-ds-xs": "1.2rem",
+    "--text-ds-xs--line-height": "1.33",
+    "--text-ds-xs--letter-spacing": ".01em",
+    "--text-ds-xs--font-weight": "400",
+    "--text-ds-xs-mono": "1.2rem",
+    "--text-ds-xs-mono--line-height": "1.33",
+    "--text-ds-xs-mono--letter-spacing": ".01em",
+    "--text-ds-xs-mono--font-weight": "400",
+    "--text-ds-xss": "1.2rem",
+    "--text-ds-xss--line-height": "1.33",
+    "--text-ds-xss--letter-spacing": ".01em",
+    "--text-ds-xss--font-weight": "400",
+    "--ease-mc": "cubic-bezier(.43, .195, .02, 1)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme",
+    "@supports (color:lab(0% 0 0))"
+   ],
+   "properties": {
+    "--color-red-50": "lab(96.5005% 4.18508 1.52328)",
+    "--color-red-200": "lab(86.017% 19.8815 7.75869)",
+    "--color-red-400": "lab(63.7053% 60.745 31.3109)",
+    "--color-red-700": "lab(40.4273% 67.2623 53.7441)",
+    "--color-amber-100": "lab(95.916% -1.21653 23.111)",
+    "--color-amber-200": "lab(91.7203% -.505269 49.9084)",
+    "--color-amber-600": "lab(60.3514% 40.5624 87.1228)",
+    "--color-amber-800": "lab(37.8822% 37.1699 52.2718)",
+    "--color-amber-900": "lab(31.2288% 30.2627 40.0378)",
+    "--color-green-100": "lab(96.1861% -13.8464 6.52365)",
+    "--color-green-200": "lab(92.4222% -26.4702 12.9427)",
+    "--color-green-500": "lab(70.5521% -66.5147 45.8073)",
+    "--color-green-800": "lab(37.4616% -36.7971 22.9692)",
+    "--color-green-900": "lab(30.797% -29.6927 17.382)",
+    "--color-slate-200": "lab(91.7353% -.998765 -4.76968)",
+    "--color-slate-950": "lab(1.76974% 1.32743 -9.28855)",
+    "--color-gray-200": "lab(91.6229% -.159115 -2.26791)",
+    "--color-gray-400": "lab(65.9269% -.832707 -8.17473)",
+    "--color-gray-500": "lab(47.7841% -.393182 -10.0268)",
+    "--color-gray-700": "lab(27.1134% -.956401 -12.3224)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":root",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--text-h1": "5.6rem",
+    "--text-h1-ai": "4.8rem",
+    "--text-h1-ai--line-height": "1",
+    "--text-h2": "4rem",
+    "--text-h6": "1.6rem",
+    "--text-h6--letter-spacing": "-.02em",
+    "--text-body": "1.6rem",
+    "--text-body--letter-spacing": "0",
+    "--text-ds-3xl": "5.6rem",
+    "--text-ds-3xl--line-height": ".86",
+    "--text-ds-2xl": "4rem",
+    "--text-ds-2xl--line-height": ".8",
+    "--text-ds-base": "1.6rem",
+    "--text-ds-base--line-height": "1.5",
+    "--text-ds-base--letter-spacing": "0",
+    "--text-ds-s": "1.6rem",
+    "--text-ds-s--line-height": "1.5",
+    "--text-ds-s--letter-spacing": "0"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":root",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--text-h1": "7.2rem",
+    "--text-h1-ai": "5.6rem",
+    "--text-h2": "5.6rem",
+    "--text-h3": "3.6rem",
+    "--text-h3-regular": "3.6rem",
+    "--text-h4": "2.8rem",
+    "--text-h5": "2.4rem",
+    "--text-h6": "2rem",
+    "--text-caption": "1.4rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":root",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1512px)"
+   ],
+   "properties": {
+    "--text-h1": "8.8rem",
+    "--text-h1-ai": "6.4rem",
+    "--text-h3": "4rem",
+    "--text-h3-regular": "4rem",
+    "--text-h4": "3.2rem",
+    "--text-label": "1.4rem",
+    "--text-label--line-height": "1.4",
+    "--text-body": "2rem",
+    "--text-ds-3xl": "8.8rem",
+    "--text-ds-3xl--line-height": ".82",
+    "--text-ds-3xl--letter-spacing": "-.02em",
+    "--text-ds-3xl--font-weight": "normal",
+    "--text-ds-2xl--line-height": "1.1",
+    "--text-ds-2xl--letter-spacing": "-.04em",
+    "--text-ds-xl": "3.2rem",
+    "--text-ds-xl--line-height": "1.13",
+    "--text-ds-m": "2.4rem",
+    "--text-ds-m--line-height": "1.17",
+    "--text-ds-base": "2rem",
+    "--text-ds-base--line-height": "1.4",
+    "--text-ds-base--letter-spacing": "0",
+    "--text-ds-xs": "1.4rem",
+    "--text-ds-xs--line-height": "1.43",
+    "--text-ds-xs-mono": "1.4rem",
+    "--text-ds-xs-mono--line-height": "1.43"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/1v3jzhh6r1d9-.css",
+   "selector": ".ey39-W_container",
+   "context": [],
+   "properties": {
+    "--avatar-size": "calc(4.4rem + 2 * var(--x-xxs))",
+    "--active-avatar-size": "calc(6.2rem + 2 * var(--x-xxs))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/1v3jzhh6r1d9-.css",
+   "selector": ".RPeRbW_slide",
+   "context": [],
+   "properties": {
+    "--duration": "0",
+    "--rotate": "0",
+    "--translateX": "0",
+    "--opatity": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/1v3jzhh6r1d9-.css",
+   "selector": ".vxsHqa_slide",
+   "context": [],
+   "properties": {
+    "--duration": "0",
+    "--rotate": "0",
+    "--translateX": "0",
+    "--opatity": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "selector": ".vBx9Ga_container",
+   "context": [],
+   "properties": {
+    "--top-bar-height": "6rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "selector": ".vBx9Ga_container",
+   "context": [
+    "@media (min-width: 1200px)"
+   ],
+   "properties": {
+    "--top-bar-height": "12rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "selector": "._1f_hia_chess",
+   "context": [],
+   "properties": {
+    "--border-color": "#000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "selector": ".TWlo_a_chess",
+   "context": [],
+   "properties": {
+    "--border-color": "#000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "selector": ".I5jB1W_card",
+   "context": [],
+   "properties": {
+    "--x": "0",
+    "--y": "0",
+    "--x-content": "0",
+    "--y-content": "0",
+    "--scale": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "selector": ".zcnI6q_pagination",
+   "context": [],
+   "properties": {
+    "--active-color": "var(--active-color)",
+    "--inactive-color": "var(--inactive-color)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "selector": ".YISCcG_image_container.YISCcG_img_loading::before",
+   "context": [],
+   "properties": {
+    "--hero-skeleton-speed": "1.2s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".bg-grid-pattern-card",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--num-cols": "7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".bg-grid-color-pattern",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--cell": "33.5vw",
+    "--line": "1px",
+    "--vignette-coordinates": "85.75% 58.95% at 49.87% 47.1%",
+    "--vignette-colors": "#fff9 0%, #fff0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".bg-grid-color-pattern",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--cell": "16.667vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".bg-grid-color-pattern",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--cell": "12.5vw",
+    "--vignette-coordinates": "81.22% 50% at 50% 50%",
+    "--vignette-colors": "#d9d9d999 0%, #fff0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:bg-grid-pattern-card",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--num-cols": "7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--brand-dusk": "#e5bdbe",
+    "--brand-ecru": "#e1e090",
+    "--brand-hazel": "#98e891",
+    "--brand-powder": "#96dae2",
+    "--brand-thistle": "#d2b6de",
+    "--brand-amethyst": "#7b34ce",
+    "--brand-cobalt": "#3b42c4",
+    "--brand-currant": "#bc1e5d",
+    "--brand-gold": "#c18900",
+    "--brand-kelp": "#007257",
+    "--brand-vivid-orange": "#ff4b00",
+    "--brand-hyper-yellow": "#fff100",
+    "--brand-neon-pink": "#fa0cf7",
+    "--brand-electric-cyan": "#00f6ff",
+    "--brand-sharp-green": "#00f613",
+    "--raw-neutral-0": "#fff",
+    "--raw-neutral-10": "#f5f5f5",
+    "--raw-neutral-20": "#ebebeb",
+    "--raw-neutral-700": "#242424",
+    "--raw-neutral-800": "#171717",
+    "--raw-neutral-900": "#0f0f0f",
+    "--raw-constant-error": "#c81e1e",
+    "--raw-constant-success": "#067647",
+    "--raw-alpha-6": ".06",
+    "--raw-alpha-8": ".08",
+    "--raw-alpha-10": ".1",
+    "--raw-alpha-12": ".12",
+    "--raw-alpha-16": ".16",
+    "--raw-alpha-24": ".24",
+    "--raw-alpha-40": ".4",
+    "--raw-alpha-56": ".56",
+    "--raw-alpha-60": ".6",
+    "--semantic-background-primary": "var(--raw-neutral-0)",
+    "--semantic-background-secondary": "var(--raw-neutral-10)",
+    "--semantic-surface-primary": "var(--raw-neutral-0)",
+    "--semantic-surface-secondary": "var(--raw-neutral-10)",
+    "--semantic-surface-tertiary": "var(--raw-neutral-20)",
+    "--semantic-text-primary": "var(--raw-neutral-900)",
+    "--semantic-text-secondary": "rgba(15, 15, 15, var(--raw-alpha-60))",
+    "--semantic-border-default": "rgba(15, 15, 15, var(--raw-alpha-8))",
+    "--semantic-divider-default": "rgba(15, 15, 15, var(--raw-alpha-8))",
+    "--semantic-overlay-default": "rgba(15, 15, 15, var(--raw-alpha-40))",
+    "--semantic-state-hover": "rgba(15, 15, 15, var(--raw-alpha-6))",
+    "--semantic-state-pressed": "rgba(15, 15, 15, var(--raw-alpha-12))",
+    "--semantic-utility-error": "var(--raw-constant-error)",
+    "--semantic-utility-success": "var(--raw-constant-success)",
+    "--black": "var(--raw-neutral-900)",
+    "--white": "var(--raw-neutral-0)",
+    "--grey": "var(--raw-neutral-10)",
+    "--black-10": "#0000001a",
+    "--black-30": "#0000004d",
+    "--violet": "#785eea",
+    "--pitch-black": "#131414",
+    "--dark-violet": "#5437d7",
+    "--old-grey": "var(--semantic-overlay-default)",
+    "--blue-grey": "#d1e9f8",
+    "--dark-grey": "rgba(255, 255, 255, var(--raw-alpha-40))",
+    "--border-grey": "var(--semantic-border-default)",
+    "--red": "var(--raw-constant-error)",
+    "--light-red": "#fbf0f0",
+    "--light-green": "#ddfbf1",
+    "--grey-green": "#e8efec",
+    "--pink": "#f7e0db",
+    "--text-selection": "var(--brand-ecru)",
+    "--text-selection-transparent": "#e1e090cc",
+    "--ease": "cubic-bezier(.43, .195, .02, 1)",
+    "--bounce": "cubic-bezier(.17, .67, .3, 1.33)",
+    "--line-width": "1px",
+    "--top-bar-height": "6rem",
+    "--top-banner-height": "0rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":root",
+   "context": [
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--top-bar-height": "9.2rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/14pqr4bk1yftp.css",
+   "selector": ":root",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--y-xxxs": ".25rem",
+    "--y-xxs": ".4rem",
+    "--y-xs": ".8rem",
+    "--y-s": "1.6rem",
+    "--y-m": "2.4rem",
+    "--y-l": "3.2rem",
+    "--y-xl": "4.8rem",
+    "--y-xxl": "6.4rem",
+    "--x-xxs": ".4rem",
+    "--x-xs": ".8rem",
+    "--x-s": "1.6rem",
+    "--x-m": "2.4rem",
+    "--x-l": "3.2rem",
+    "--x-xl": "4.8rem",
+    "--x-xxl": "6.4rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/14pqr4bk1yftp.css",
+   "selector": ":root",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 576px)"
+   ],
+   "properties": {
+    "--y-xxl": "9.6rem",
+    "--x-xxl": "9.6rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/14pqr4bk1yftp.css",
+   "selector": ".trigger",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--y-offset": "5rem"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/1v3jzhh6r1d9-.css",
+   "selector": ".vxsHqa_main_container",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--height": "0"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/1j__46mvzec2r.css",
+   "selector": ":root",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/1j__46mvzec2r.css",
+   "selector": ".swiper-lazy-preloader-white",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--swiper-preloader-color": "#fff"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/1j__46mvzec2r.css",
+   "selector": ".swiper-lazy-preloader-black",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--swiper-preloader-color": "#000"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\!\\[--top-banner-height\\:0rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--top-banner-height": "0rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--content-width\\:100\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--content-width": "100%"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--creatorworld-banner-height\\:5\\.4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--creatorworld-banner-height": "5.4rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--float-duration\\:2\\.6s\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--float-duration": "2.6s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--float-duration\\:3\\.2s\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--float-duration": "3.2s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--float-duration\\:3\\.8s\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--float-duration": "3.8s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--float-x\\:-2\\.2rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--float-x": "-2.2rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--float-x\\:-2\\.4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--float-x": "-2.4rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--float-x\\:2rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--float-x": "2rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--float-y\\:-1\\.2rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--float-y": "-1.2rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--float-y\\:-2\\.4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--float-y": "-2.4rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--float-y\\:0\\.8rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--float-y": ".8rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--grid-pattern-color\\:rgba\\(0\\,0\\,0\\,0\\.08\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--grid-pattern-color": "#00000014"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--grid-pattern-color\\:rgba\\(255\\,255\\,255\\,0\\.08\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--grid-pattern-color": "#ffffff14"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--num-cols\\:3\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--num-cols": "3"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--num-cols\\:4\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--num-cols": "4"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--page-margin\\:1\\.6rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--page-margin": "1.6rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--parallax-x\\:-3\\.4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--parallax-x": "-3.4rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--parallax-x\\:2\\.1rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--parallax-x": "2.1rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--parallax-x\\:4\\.1rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--parallax-x": "4.1rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--parallax-y\\:-2\\.1rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--parallax-y": "-2.1rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--parallax-y\\:4\\.1rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--parallax-y": "4.1rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--parallax-y\\:4\\.4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--parallax-y": "4.4rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--sidebar-track\\:var\\(--page-margin\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--sidebar-track": "var(--page-margin)"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--sz\\:7\\.4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--sz": "7.4rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[--zoom\\:1\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--zoom": "1"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".hover\\:\\[--zoom\\:1\\.05\\]:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--zoom": "1.05"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--card-width\\:calc\\(\\(100dvw_-_2_\\*_var\\(--page-padding\\)_-_var\\(--cards-gap\\)\\)_\\/_2\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--card-width": "calc((100dvw - 2 * var(--page-padding) - var(--cards-gap)) / 2)"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--content-width\\:58\\.6rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--content-width": "58.6rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--creatorworld-banner-height\\:6\\.8rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--creatorworld-banner-height": "6.8rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--num-cols\\:5\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--num-cols": "5"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--num-cols\\:7\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--num-cols": "7"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--page-margin\\:3\\.2rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--page-margin": "3.2rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--page-padding\\:3\\.2rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--page-padding": "3.2rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--sidebar-track\\:10rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--sidebar-track": "10rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--sidebar-width\\:4\\.8rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--sidebar-width": "4.8rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--slider-offset\\:8dvw\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--slider-offset": "8dvw"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:\\[--sz\\:9\\.9rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--sz": "9.9rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:data-\\[sidebar\\=expanded\\]\\:\\[--sidebar-width\\:21\\.6rem\\][data-sidebar=\"expanded\"]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--sidebar-width": "21.6rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:\\[--card-width\\:calc\\(\\(100dvw_-_2_\\*_\\(var\\(--page-padding\\)_\\+_var\\(--slider-offset\\)\\)_-_2_\\*_var\\(--cards-gap\\)\\)_\\/_3\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--card-width": "calc((100dvw - 2 * (var(--page-padding) + var(--slider-offset)) - 2 * var(--cards-gap)) / 3)"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:\\[--content-width\\:59rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--content-width": "59rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:\\[--page-margin\\:4\\.8rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--page-margin": "4.8rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:\\[--sidebar-track\\:16\\.8rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--sidebar-track": "16.8rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:data-\\[sidebar\\=expanded\\]\\:\\[--sidebar-track\\:28\\.8rem\\][data-sidebar=\"expanded\"]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--sidebar-track": "28.8rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:\\[--num-cols\\:7\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--num-cols": "7"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:\\[--num-cols\\:10\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--num-cols": "10"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".huge\\:\\[--content-width\\:68\\.9rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1512px)"
+   ],
+   "properties": {
+    "--content-width": "68.9rem"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".huge\\:\\[--sz\\:11\\.6rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1512px)"
+   ],
+   "properties": {
+    "--sz": "11.6rem"
+   },
+   "bin": "utility"
+  }
+ ],
+ "tailwind": [
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b))))"
+   ],
+   "properties": {
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-translate-z": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-scale-z": "1",
+    "--tw-rotate-x": "initial",
+    "--tw-rotate-y": "initial",
+    "--tw-rotate-z": "initial",
+    "--tw-skew-x": "initial",
+    "--tw-skew-y": "initial",
+    "--tw-space-x-reverse": "0",
+    "--tw-divide-y-reverse": "0",
+    "--tw-border-style": "solid",
+    "--tw-gradient-position": "initial",
+    "--tw-gradient-from": "#0000",
+    "--tw-gradient-via": "#0000",
+    "--tw-gradient-to": "#0000",
+    "--tw-gradient-stops": "initial",
+    "--tw-gradient-via-stops": "initial",
+    "--tw-gradient-from-position": "0%",
+    "--tw-gradient-via-position": "50%",
+    "--tw-gradient-to-position": "100%",
+    "--tw-leading": "initial",
+    "--tw-font-weight": "initial",
+    "--tw-tracking": "initial",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-color": "initial",
+    "--tw-shadow-alpha": "100%",
+    "--tw-inset-shadow": "0 0 #0000",
+    "--tw-inset-shadow-color": "initial",
+    "--tw-inset-shadow-alpha": "100%",
+    "--tw-ring-color": "initial",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-inset-ring-color": "initial",
+    "--tw-inset-ring-shadow": "0 0 #0000",
+    "--tw-ring-inset": "initial",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-outline-style": "solid",
+    "--tw-blur": "initial",
+    "--tw-brightness": "initial",
+    "--tw-contrast": "initial",
+    "--tw-grayscale": "initial",
+    "--tw-hue-rotate": "initial",
+    "--tw-invert": "initial",
+    "--tw-opacity": "initial",
+    "--tw-saturate": "initial",
+    "--tw-sepia": "initial",
+    "--tw-drop-shadow": "initial",
+    "--tw-drop-shadow-color": "initial",
+    "--tw-drop-shadow-alpha": "100%",
+    "--tw-drop-shadow-size": "initial",
+    "--tw-backdrop-blur": "initial",
+    "--tw-backdrop-brightness": "initial",
+    "--tw-backdrop-contrast": "initial",
+    "--tw-backdrop-grayscale": "initial",
+    "--tw-backdrop-hue-rotate": "initial",
+    "--tw-backdrop-invert": "initial",
+    "--tw-backdrop-opacity": "initial",
+    "--tw-backdrop-saturate": "initial",
+    "--tw-backdrop-sepia": "initial",
+    "--tw-duration": "initial",
+    "--tw-ease": "initial",
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-x-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-x-1\\/2\\!",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-x-4",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * -4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-x-\\[3\\.7rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(3.7rem * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-x-\\[5rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(5rem * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-x-\\[56\\.7\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(56.7% * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-x-\\[109\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(109% * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-x-\\[calc\\(50\\%\\+1\\.1rem\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(50% + 1.1rem) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-x-\\[calc\\(100\\%\\+1\\.2rem\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(100% + 1.2rem) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-x-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-x-full",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-y-24",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * -24)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-y-48",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * -48)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-y-\\[0\\.4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(.4rem * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-y-\\[1\\.6rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(1.6rem * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-translate-y-full",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "-100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-1",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "var(--spacing)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-4",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * 4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-10rem",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "var(--spacing-10rem)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-\\[-5rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "-5rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-\\[-14\\.65rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "-14.65rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-\\[0\\.4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": ".4rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-\\[1rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "1rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-\\[5rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "5rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-\\[8rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "8rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-\\[calc\\(var\\(--progress\\)_\\*_30\\%\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--progress) * 30%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-\\[calc\\(var\\(--progress\\,0\\)\\*60vh-30vh\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--progress,0) * 60vh - 30vh)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-y-full",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".translate-z-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-z": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".scale-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "0%",
+    "--tw-scale-y": "0%",
+    "--tw-scale-z": "0%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".scale-50",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "50%",
+    "--tw-scale-y": "50%",
+    "--tw-scale-z": "50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".scale-90",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "90%",
+    "--tw-scale-y": "90%",
+    "--tw-scale-z": "90%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".scale-95",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "95%",
+    "--tw-scale-y": "95%",
+    "--tw-scale-z": "95%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".scale-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-scale-x-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "calc(100% * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".scale-x-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "0%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".scale-x-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".scale-x-\\[-1\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "-1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".-scale-y-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-y": "calc(100% * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".scale-y-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-y": "0%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":where(.space-x-\\[-1rem\\] > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":where(.divide-y > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-divide-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".border-dashed",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-border-style": "dashed"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".border-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-border-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".border-solid",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-border-style": "solid"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".bg-linear-to-b",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".bg-linear-to-b",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".bg-linear-to-t",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to top"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".bg-linear-to-t",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to top in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".from-transparent",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "transparent",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".to-raw-neutral-900",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "var(--color-raw-neutral-900)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".to-\\[191\\.05\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to-position": "191.05%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".leading-\\[0\\.82\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": ".82"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".leading-\\[1\\.1\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".leading-\\[1\\.4\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.4"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".leading-\\[1\\.6\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.6"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".leading-\\[100\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".leading-\\[130\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "130%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".leading-\\[150\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "150%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".leading-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\!font-\\[600\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "600"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\!font-\\[700\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "700"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\!font-bold",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-bold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\!font-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".font-\\[900\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "900"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".font-black",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-black)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".font-bold",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-bold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".font-medium",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".font-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".font-semibold",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-semibold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\!tracking-\\[0\\.01em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": ".01em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".tracking-\\[-0\\.01em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.01em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".tracking-\\[-0\\.02em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.02em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".tracking-\\[-0\\.03rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.03rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".tracking-\\[-0\\.04em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.04em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".tracking-\\[0\\.01em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": ".01em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-xl\\/4",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow-alpha": "4%",
+    "--tw-shadow": "0 20px 25px -5px var(--tw-shadow-color,#0000000a), 0 8px 10px -6px var(--tw-shadow-color,#0000000a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-xl\\/4",
+   "context": [
+    "@layer utilities",
+    "@supports (color:lab(0% 0 0))"
+   ],
+   "properties": {
+    "--tw-shadow": "0 20px 25px -5px var(--tw-shadow-color,lab(0% 0 0/.04)), 0 8px 10px -6px var(--tw-shadow-color,lab(0% 0 0/.04))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\!shadow-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 #0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-shadow-color,#0000001a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-\\[0_0\\.4rem_1\\.17rem_0_rgba\\(156\\,156\\,156\\,0\\.1\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 .4rem 1.17rem 0 var(--tw-shadow-color,#9c9c9c1a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-\\[0_0_0_1px_\\#edf2ed\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 0 1px var(--tw-shadow-color,#edf2ed)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-\\[0_1px_6rem_rgba\\(0\\,0\\,0\\,0\\.1\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 6rem var(--tw-shadow-color,#0000001a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-\\[0_1px_6rem_rgba\\(0\\,0\\,0\\,0\\.08\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 6rem var(--tw-shadow-color,#00000014)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-\\[0_1px_80px_0_rgba\\(0\\,0\\,0\\,0\\.04\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 1px 80px 0 var(--tw-shadow-color,#0000000a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-\\[0_4px_8px_0_rgba\\(0\\,0\\,0\\,0\\.08\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 4px 8px 0 var(--tw-shadow-color,#00000014)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-\\[0px_8px_24px_0px_\\#00000014\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0px 8px 24px 0px var(--tw-shadow-color,#00000014)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".shadow-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 #0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".ring",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".ring-\\[0\\.4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(.4rem + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".ring-neutral",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-neutral)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".ring-raw-neutral-10",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-raw-neutral-10)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".blur",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".blur-\\[60px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-blur": "blur(60px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".drop-shadow-\\[0_0_12px_rgba\\(0\\,0\\,0\\,0\\.08\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-drop-shadow-size": "drop-shadow(0 0 12px var(--tw-drop-shadow-color,#00000014))",
+    "--tw-drop-shadow": "var(--tw-drop-shadow-size)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".invert",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-invert": "invert(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".backdrop-blur-3xl",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-3xl))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".backdrop-blur-\\[2rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(2rem)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".backdrop-blur-\\[6rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(6rem)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".backdrop-blur-\\[10px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(10px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".backdrop-blur-\\[15px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(15px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".backdrop-blur-\\[20px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(20px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".backdrop-blur-\\[40px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(40px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".backdrop-blur-\\[60px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(60px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".backdrop-blur-xl",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-xl))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\!duration-300",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-150",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".15s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-200",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".2s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-300",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-450",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".45s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-500",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".5s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-600",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".6s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-700",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".7s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-1000",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": "1s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-2000",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": "2s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-\\[400ms\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".4s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-\\[600ms\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".6s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-\\[700ms\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".7s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".duration-\\[16500ms\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": "16.5s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".ease-\\[ease\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "ease"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".ease-\\[var\\(--ease\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".ease-in-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-in-out)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".ease-mc",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-mc)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".ease-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-out)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".outline-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":is(.\\*\\:translate-y-\\[8rem\\] > *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "8rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-odd\\:backdrop-blur-\\[20px\\]:is(:where(.group):nth-child(2n+1) *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(20px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\:translate-x-0:is(:where(.group):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\:translate-y-2:is(:where(.group):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * 2)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\:scale-100:is(:where(.group):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\:scale-105:is(:where(.group):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-scale-x": "105%",
+    "--tw-scale-y": "105%",
+    "--tw-scale-z": "105%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\/accordion\\:translate-x-8:is(:where(.group\\/accordion):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * 8)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\/accordion\\:scale-x-75:is(:where(.group\\/accordion):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-scale-x": "75%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\/button\\:-translate-y-full:is(:where(.group\\/button):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-y": "-100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\/button\\:translate-y-0:is(:where(.group\\/button):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\/leader\\:-translate-y-0:is(:where(.group\\/leader):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\/leader\\:-translate-y-48:is(:where(.group\\/leader):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * -48)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\/prevnext\\:-translate-x-2:is(:where(.group\\/prevnext):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * -2)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\/prevnext\\:translate-x-2:is(:where(.group\\/prevnext):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * 2)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-hover\\/select\\:-translate-x-4:is(:where(.group\\/select):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing) * -4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".group-has-\\[\\:is\\(input\\,textarea\\)\\:is\\(\\:focus\\,\\:not\\(\\:-moz-placeholder\\)\\)\\]\\:-translate-y-1\\/2:is(:where(.group):has(:is(input, textarea):is(:focus, :not(:placeholder-shown))) *), .group-has-\\[",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:-translate-x-1\\/2::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:translate-x-1\\/2::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(1 / 2 * 100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:-translate-y-1\\/2::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:translate-y-0::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:translate-y-4::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * 4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:scale-y-0::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-y": "0%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:bg-linear-to-b::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:bg-linear-to-b::before",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:from-black\\/0::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "#0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:from-black\\/0::before",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-black) 0%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:from-black\\/0::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:from-transparent::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "transparent",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:via-black\\/0::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "#0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:via-black\\/0::before",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-black) 0%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:via-black\\/0::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:via-transparent::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "transparent",
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:to-black\\/50::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "#00000080"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:to-black\\/50::before",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-black) 50%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:to-black\\/50::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:to-black\\/60::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "#0009"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:to-black\\/60::before",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-black) 60%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:to-black\\/60::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:blur-\\[60px\\]::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-blur": "blur(60px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:duration-300::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:duration-450::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".45s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:ease-in-out::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-in-out)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:content-\\[\\\"\\\"\\]::before, .before\\:content-\\[\\'\\'\\]::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:content-\\[\\'\\/\\'\\]::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\"/\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".before\\:content-\\[\\'—\\'\\]::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\"—\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:translate-x-\\[1\\.6rem\\]::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "1.6rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:-translate-y-4::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * -4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:translate-y-0::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:bg-gradient-to-t::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to top in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:from-black::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "var(--color-black)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:from-raw-neutral-900::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "var(--color-raw-neutral-900)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:from-\\[-40\\%\\]::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from-position": "-40%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:to-transparent::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "transparent",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:duration-300::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:content-\\[\\'\\'\\]::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".after\\:content-\\[\\'\\>\\'\\]::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\">\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".hover\\:before\\:scale-y-100:hover::before",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-scale-y": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".hover\\:before\\:to-black\\/70:hover::before",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-gradient-to": "#000000b3"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".hover\\:before\\:to-black\\/70:hover::before",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-black) 70%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".hover\\:before\\:to-black\\/70:hover::before",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".focus\\:outline-none:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".active\\:scale-95:active",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "95%",
+    "--tw-scale-y": "95%",
+    "--tw-scale-z": "95%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":where(.swiper-slide-active) .in-\\[\\.swiper-slide-active\\]\\:scale-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".has-\\[zd-autocomplete\\]\\:ring-\\[0\\.4rem\\]:has(:is(zd-autocomplete))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(.4rem + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".has-\\[zd-autocomplete\\]\\:ring-neutral:has(:is(zd-autocomplete))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-neutral)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".has-\\[zd-autocomplete\\.absolute\\]\\:after\\:content-\\[\\'\\'\\]:has(:is(zd-autocomplete.absolute))::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":is(.data-open\\:\\*\\:translate-y-0[data-open] > *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".data-\\[open\\=true\\]\\:ring-\\[0\\.4rem\\][data-open=\"true\"]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,) 0 0 0 calc(.4rem + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".data-\\[open\\=true\\]\\:ring-neutral[data-open=\"true\"]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-neutral)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".data-\\[open\\=true\\]\\:ring-raw-neutral-10[data-open=\"true\"]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-raw-neutral-10)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".max-huge\\:scale-75",
+   "context": [
+    "@layer utilities",
+    "@media not all and (min-width: 1512px)"
+   ],
+   "properties": {
+    "--tw-scale-x": "75%",
+    "--tw-scale-y": "75%",
+    "--tw-scale-z": "75%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".max-md-next\\:\\!font-\\[600\\]",
+   "context": [
+    "@layer utilities",
+    "@media not all and (min-width: 1152px)"
+   ],
+   "properties": {
+    "--tw-font-weight": "600"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".max-sm\\:tracking-\\[0\\.01em\\]",
+   "context": [
+    "@layer utilities",
+    "@media not all and (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-tracking": ".01em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":where(.tn\\:space-x-5 > :not(:last-child))",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 576px)"
+   ],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:translate-x-0",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:-translate-y-1\\/2",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:translate-y-0",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:scale-75",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-scale-x": "75%",
+    "--tw-scale-y": "75%",
+    "--tw-scale-z": "75%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:border-none",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-border-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:leading-\\[0\\.85\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-leading": ".85"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:leading-\\[90\\%\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-leading": "90%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:leading-\\[150\\%\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-leading": "150%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:font-black",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-black)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:font-bold",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-bold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:tracking-\\[-0\\.02em\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-tracking": "-.02em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".sm\\:duration-500",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-duration": ".5s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:-translate-x-1\\/2",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:translate-x-0",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:translate-x-\\[-4\\.7rem\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "-4.7rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:translate-y-0",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:scale-100",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ":where(.md\\:space-x-0 > :not(:last-child))",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:leading-\\[120\\%\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-leading": "120%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:shadow-\\[0_0\\.4rem_1\\.17rem_0_rgba\\(156\\,156\\,156\\,0\\.25\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-shadow": "0 .4rem 1.17rem 0 var(--tw-shadow-color,#9c9c9c40)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:group-hover\\/search-btn\\:scale-110:is(:where(.group\\/search-btn):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-scale-x": "110%",
+    "--tw-scale-y": "110%",
+    "--tw-scale-z": "110%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".md\\:before\\:content-none::before",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-content": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:-translate-x-\\[10vw\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(10vw * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:-translate-x-\\[15vw\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(15vw * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:-translate-x-\\[calc\\(\\(100vw-26rem\\)\\/12\\*7\\+14rem\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc((100vw - 26rem) / 12 * 7 + 14rem) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:translate-x-0",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:translate-x-1\\.6rem",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "var(--spacing-1\\.6rem)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:translate-x-\\[calc\\(var\\(--offset\\,0px\\)-25\\%\\+0\\.5rem\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--offset,0px) - 25% + .5rem)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:translate-x-\\[var\\(--mouse-x\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "var(--mouse-x)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:translate-y-\\[var\\(--mouse-y\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "var(--mouse-y)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:leading-\\[0\\.89\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-leading": ".89"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:backdrop-blur-lg",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-lg))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".lg\\:odd\\:translate-y-\\[calc\\(-10\\%-2rem-var\\(--progress\\,0\\)\\*66\\%\\)\\]:nth-child(2n+1)",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(-10% - 2rem - var(--progress,0) * 66%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".huge\\:-translate-x-1\\/2",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1512px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".huge\\:scale-100",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1512px)"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:-translate-x-\\[calc\\(\\(100vw-8rem\\)\\/1\\.5\\+4rem\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc((100vw - 8rem) / 1.5 + 4rem) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:-translate-x-\\[calc\\(\\(100vw-9rem\\)\\/12\\*7\\+4rem\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc((100vw - 9rem) / 12 * 7 + 4rem) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:-translate-y-4",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * -4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:translate-y-0",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:translate-y-\\[none\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-translate-y": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:shadow-\\[0_0_0_60rem_rgba\\(0\\,0\\,0\\,0\\.15\\)\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 0 60rem var(--tw-shadow-color,#00000026)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:backdrop-blur-3xl",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-3xl))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:backdrop-blur-none",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:duration-300",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:duration-500",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-duration": ".5s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:group-hover\\/submenu\\:translate-y-0:is(:where(.group\\/submenu):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".xl\\:group-has-\\[button\\:active\\]\\/submenu\\:-translate-y-4:is(:where(.group\\/submenu):has(:is(button:active)) *)",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 80rem)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing) * -4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".hover-hover\\:group-hover\\:translate-x-0\\.8rem:is(:where(.group):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-x": "var(--spacing-0\\.8rem)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".hover-hover\\:hover\\:shadow-\\[0_8px_16px_10px_rgba\\(0\\,0\\,0\\,0\\.08\\)\\]:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-shadow": "0 8px 16px 10px var(--tw-shadow-color,#00000014)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[\\&_strong\\]\\:font-semibold strong",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-semibold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[\\&\\:not\\(\\:first-child\\)\\]\\:before\\:content-\\[\\'\\'\\]:not(:first-child)::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "selector": ".\\[\\&\\:nth-child\\(2\\)\\]\\:before\\:content-none:nth-child(2)::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "none"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/2y03kppn_i5g0.css",
+   "font-family": "\"Inter Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "90.44%",
+   "descent-override": "22.52%",
+   "line-gap-override": "0%",
+   "size-adjust": "107.12%"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "font-family": "Rooftop",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "font-family": "Rooftop",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "font-family": "ManyChatGravity",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://mccdn.me/martech/next-lp/_next/static/chunks/3o4hvaphfkye-.css",
+   "font-family": "\"CoFo Sans Mono\"",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Lato",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Lato",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Lato",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Lato",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--aspect-video": {
+    "raw": "16 / 9",
+    "kind": "other"
+   },
+   "--black": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "#0f0f0f"
+   },
+   "--black-10": {
+    "raw": "#0000001a",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--black-30": {
+    "raw": "#0000004d",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.3)"
+   },
+   "--blue-grey": {
+    "raw": "#d1e9f8",
+    "kind": "color",
+    "value": "#d1e9f8"
+   },
+   "--blur-3xl": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--blur-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--blur-xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--border-grey": {
+    "raw": "rgba(15, 15, 15, .08)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.08)"
+   },
+   "--bounce": {
+    "raw": "cubic-bezier(.17, .67, .3, 1.33)",
+    "kind": "easing",
+    "value": "cubic-bezier(.17, .67, .3, 1.33)"
+   },
+   "--brand-amethyst": {
+    "raw": "#7b34ce",
+    "kind": "color",
+    "value": "#7b34ce"
+   },
+   "--brand-cobalt": {
+    "raw": "#3b42c4",
+    "kind": "color",
+    "value": "#3b42c4"
+   },
+   "--brand-currant": {
+    "raw": "#bc1e5d",
+    "kind": "color",
+    "value": "#bc1e5d"
+   },
+   "--brand-dusk": {
+    "raw": "#e5bdbe",
+    "kind": "color",
+    "value": "#e5bdbe"
+   },
+   "--brand-ecru": {
+    "raw": "#e1e090",
+    "kind": "color",
+    "value": "#e1e090"
+   },
+   "--brand-electric-cyan": {
+    "raw": "#00f6ff",
+    "kind": "color",
+    "value": "#00f6ff"
+   },
+   "--brand-gold": {
+    "raw": "#c18900",
+    "kind": "color",
+    "value": "#c18900"
+   },
+   "--brand-hazel": {
+    "raw": "#98e891",
+    "kind": "color",
+    "value": "#98e891"
+   },
+   "--brand-hyper-yellow": {
+    "raw": "#fff100",
+    "kind": "color",
+    "value": "#fff100"
+   },
+   "--brand-kelp": {
+    "raw": "#007257",
+    "kind": "color",
+    "value": "#007257"
+   },
+   "--brand-neon-pink": {
+    "raw": "#fa0cf7",
+    "kind": "color",
+    "value": "#fa0cf7"
+   },
+   "--brand-powder": {
+    "raw": "#96dae2",
+    "kind": "color",
+    "value": "#96dae2"
+   },
+   "--brand-sharp-green": {
+    "raw": "#00f613",
+    "kind": "color",
+    "value": "#00f613"
+   },
+   "--brand-thistle": {
+    "raw": "#d2b6de",
+    "kind": "color",
+    "value": "#d2b6de"
+   },
+   "--brand-vivid-orange": {
+    "raw": "#ff4b00",
+    "kind": "color",
+    "value": "#ff4b00"
+   },
+   "--breakpoint-huge": {
+    "raw": "1512px",
+    "kind": "dimension",
+    "value": "1512px"
+   },
+   "--breakpoint-lg": {
+    "raw": "1280px",
+    "kind": "dimension",
+    "value": "1280px"
+   },
+   "--breakpoint-md": {
+    "raw": "1024px",
+    "kind": "dimension",
+    "value": "1024px"
+   },
+   "--breakpoint-sm": {
+    "raw": "768px",
+    "kind": "dimension",
+    "value": "768px"
+   },
+   "--breakpoint-xl": {
+    "raw": "80rem",
+    "kind": "dimension",
+    "value": "1280px"
+   },
+   "--color-amber-100": {
+    "raw": "lab(95.916% -1.21653 23.111)",
+    "kind": "color",
+    "value": "#fef3c6"
+   },
+   "--color-amber-200": {
+    "raw": "lab(91.7203% -.505269 49.9084)",
+    "kind": "color",
+    "value": "#fee685"
+   },
+   "--color-amber-600": {
+    "raw": "lab(60.3514% 40.5624 87.1228)",
+    "kind": "color",
+    "value": "#e17100"
+   },
+   "--color-amber-800": {
+    "raw": "lab(37.8822% 37.1699 52.2718)",
+    "kind": "color",
+    "value": "#973c00"
+   },
+   "--color-amber-900": {
+    "raw": "lab(31.2288% 30.2627 40.0378)",
+    "kind": "color",
+    "value": "#7b3306"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-black-05": {
+    "raw": "#0000000d",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.05)"
+   },
+   "--color-black-30": {
+    "raw": "#0000004d",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.3)"
+   },
+   "--color-brand-amethyst": {
+    "raw": "#7b34ce",
+    "kind": "color",
+    "value": "#7b34ce"
+   },
+   "--color-brand-cobalt": {
+    "raw": "#3b42c4",
+    "kind": "color",
+    "value": "#3b42c4"
+   },
+   "--color-brand-currant": {
+    "raw": "#bc1e5d",
+    "kind": "color",
+    "value": "#bc1e5d"
+   },
+   "--color-brand-dusk": {
+    "raw": "#e5bdbe",
+    "kind": "color",
+    "value": "#e5bdbe"
+   },
+   "--color-brand-ecru": {
+    "raw": "#e1e090",
+    "kind": "color",
+    "value": "#e1e090"
+   },
+   "--color-brand-electric-cyan": {
+    "raw": "#00f6ff",
+    "kind": "color",
+    "value": "#00f6ff"
+   },
+   "--color-brand-gold": {
+    "raw": "#c18900",
+    "kind": "color",
+    "value": "#c18900"
+   },
+   "--color-brand-hazel": {
+    "raw": "#98e891",
+    "kind": "color",
+    "value": "#98e891"
+   },
+   "--color-brand-hyper-yellow": {
+    "raw": "#fff100",
+    "kind": "color",
+    "value": "#fff100"
+   },
+   "--color-brand-kelp": {
+    "raw": "#007257",
+    "kind": "color",
+    "value": "#007257"
+   },
+   "--color-brand-neon-pink": {
+    "raw": "#fa0cf7",
+    "kind": "color",
+    "value": "#fa0cf7"
+   },
+   "--color-brand-powder": {
+    "raw": "#96dae2",
+    "kind": "color",
+    "value": "#96dae2"
+   },
+   "--color-brand-sharp-green": {
+    "raw": "#00f613",
+    "kind": "color",
+    "value": "#00f613"
+   },
+   "--color-brand-thistle": {
+    "raw": "#d2b6de",
+    "kind": "color",
+    "value": "#d2b6de"
+   },
+   "--color-brand-vivid-orange": {
+    "raw": "#ff4b00",
+    "kind": "color",
+    "value": "#ff4b00"
+   },
+   "--color-error": {
+    "raw": "#c81e1e",
+    "kind": "color",
+    "value": "#c81e1e"
+   },
+   "--color-fill-opacity": {
+    "raw": "transparent",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--color-gray-200": {
+    "raw": "lab(91.6229% -.159115 -2.26791)",
+    "kind": "color",
+    "value": "#e5e7eb"
+   },
+   "--color-gray-400": {
+    "raw": "lab(65.9269% -.832707 -8.17473)",
+    "kind": "color",
+    "value": "#99a1af"
+   },
+   "--color-gray-500": {
+    "raw": "lab(47.7841% -.393182 -10.0268)",
+    "kind": "color",
+    "value": "#6a7282"
+   },
+   "--color-gray-700": {
+    "raw": "lab(27.1134% -.956401 -12.3224)",
+    "kind": "color",
+    "value": "#364153"
+   },
+   "--color-green-100": {
+    "raw": "lab(96.1861% -13.8464 6.52365)",
+    "kind": "color",
+    "value": "#dcfce7"
+   },
+   "--color-green-200": {
+    "raw": "lab(92.4222% -26.4702 12.9427)",
+    "kind": "color",
+    "value": "#b9f8cf"
+   },
+   "--color-green-500": {
+    "raw": "lab(70.5521% -66.5147 45.8073)",
+    "kind": "color",
+    "value": "#00c950"
+   },
+   "--color-green-800": {
+    "raw": "lab(37.4616% -36.7971 22.9692)",
+    "kind": "color",
+    "value": "#026630"
+   },
+   "--color-green-900": {
+    "raw": "lab(30.797% -29.6927 17.382)",
+    "kind": "color",
+    "value": "#0d542b"
+   },
+   "--color-grey-12": {
+    "raw": "#edf2ed1f",
+    "kind": "color",
+    "value": "rgba(237, 242, 237, 0.12)"
+   },
+   "--color-light-grey": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   },
+   "--color-neutral": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--color-raw-constant-error": {
+    "raw": "#c81e1e",
+    "kind": "color",
+    "value": "#c81e1e"
+   },
+   "--color-raw-constant-success": {
+    "raw": "#067647",
+    "kind": "color",
+    "value": "#067647"
+   },
+   "--color-raw-neutral-0": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--color-raw-neutral-10": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--color-raw-neutral-20": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--color-raw-neutral-700": {
+    "raw": "#242424",
+    "kind": "color",
+    "value": "#242424"
+   },
+   "--color-raw-neutral-800": {
+    "raw": "#171717",
+    "kind": "color",
+    "value": "#171717"
+   },
+   "--color-raw-neutral-900": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "#0f0f0f"
+   },
+   "--color-red-200": {
+    "raw": "lab(86.017% 19.8815 7.75869)",
+    "kind": "color",
+    "value": "#ffc9c9"
+   },
+   "--color-red-400": {
+    "raw": "lab(63.7053% 60.745 31.3109)",
+    "kind": "color",
+    "value": "#ff6467"
+   },
+   "--color-red-50": {
+    "raw": "lab(96.5005% 4.18508 1.52328)",
+    "kind": "color",
+    "value": "#fef2f2"
+   },
+   "--color-red-700": {
+    "raw": "lab(40.4273% 67.2623 53.7441)",
+    "kind": "color",
+    "value": "#c10007"
+   },
+   "--color-semantic-background-primary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--color-semantic-background-secondary": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--color-semantic-border-default": {
+    "raw": "rgba(15, 15, 15, .08)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.08)"
+   },
+   "--color-semantic-divider-default": {
+    "raw": "rgba(15, 15, 15, .08)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.08)"
+   },
+   "--color-semantic-overlay-default": {
+    "raw": "rgba(15, 15, 15, .4)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.4)"
+   },
+   "--color-semantic-state-hover": {
+    "raw": "rgba(15, 15, 15, .06)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.06)"
+   },
+   "--color-semantic-state-pressed": {
+    "raw": "rgba(15, 15, 15, .12)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.12)"
+   },
+   "--color-semantic-surface-primary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--color-semantic-surface-secondary": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--color-semantic-surface-tertiary": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--color-semantic-text-primary": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "#0f0f0f"
+   },
+   "--color-semantic-text-secondary": {
+    "raw": "rgba(15, 15, 15, .6)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.6)"
+   },
+   "--color-semantic-utility-error": {
+    "raw": "#c81e1e",
+    "kind": "color",
+    "value": "#c81e1e"
+   },
+   "--color-semantic-utility-success": {
+    "raw": "#067647",
+    "kind": "color",
+    "value": "#067647"
+   },
+   "--color-slate-200": {
+    "raw": "lab(91.7353% -.998765 -4.76968)",
+    "kind": "color",
+    "value": "#e2e8f0"
+   },
+   "--color-slate-950": {
+    "raw": "lab(1.76974% 1.32743 -9.28855)",
+    "kind": "color",
+    "value": "#020618"
+   },
+   "--color-transparent": {
+    "raw": "transparent",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--container-mc": {
+    "raw": "127.2rem",
+    "kind": "dimension",
+    "value": "2035.19px"
+   },
+   "--container-mc-wide": {
+    "raw": "141.6rem",
+    "kind": "dimension",
+    "value": "2265.59px"
+   },
+   "--container-sm": {
+    "raw": "24rem",
+    "kind": "dimension",
+    "value": "384px"
+   },
+   "--dark-grey": {
+    "raw": "rgba(255, 255, 255, .4)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.4)"
+   },
+   "--dark-violet": {
+    "raw": "#5437d7",
+    "kind": "color",
+    "value": "#5437d7"
+   },
+   "--default-font-family": {
+    "raw": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "kind": "fontFamily",
+    "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+   },
+   "--default-mono-font-family": {
+    "raw": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--ease": {
+    "raw": "cubic-bezier(.43, .195, .02, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.43, .195, .02, 1)"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--ease-mc": {
+    "raw": "cubic-bezier(.43, .195, .02, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.43, .195, .02, 1)"
+   },
+   "--ease-out": {
+    "raw": "cubic-bezier(0, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0, 0, .2, 1)"
+   },
+   "--font-cofo": {
+    "raw": "CoFo Sans Mono, sans-serif",
+    "kind": "fontFamily",
+    "value": "CoFo Sans Mono, sans-serif"
+   },
+   "--font-gravity": {
+    "raw": "ManyChatGravity, sans-serif",
+    "kind": "fontFamily",
+    "value": "ManyChatGravity, sans-serif"
+   },
+   "--font-gravity--font-feature-settings": {
+    "raw": "\"ss02\" 0",
+    "kind": "other"
+   },
+   "--font-mono": {
+    "raw": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+   },
+   "--font-rooftop": {
+    "raw": "Rooftop, sans-serif",
+    "kind": "fontFamily",
+    "value": "Rooftop, sans-serif"
+   },
+   "--font-sans": {
+    "raw": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "kind": "fontFamily",
+    "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+   },
+   "--font-weight-black": {
+    "raw": "900",
+    "kind": "number",
+    "value": 900
+   },
+   "--font-weight-bold": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--font-weight-semibold": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--grey": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--grey-green": {
+    "raw": "#e8efec",
+    "kind": "color",
+    "value": "#e8efec"
+   },
+   "--light-green": {
+    "raw": "#ddfbf1",
+    "kind": "color",
+    "value": "#ddfbf1"
+   },
+   "--light-red": {
+    "raw": "#fbf0f0",
+    "kind": "color",
+    "value": "#fbf0f0"
+   },
+   "--line-width": {
+    "raw": "1px",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--old-grey": {
+    "raw": "rgba(15, 15, 15, .4)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.4)"
+   },
+   "--pink": {
+    "raw": "#f7e0db",
+    "kind": "color",
+    "value": "#f7e0db"
+   },
+   "--pitch-black": {
+    "raw": "#131414",
+    "kind": "color",
+    "value": "#131414"
+   },
+   "--radius-12": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "19.1875px"
+   },
+   "--radius-16": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "25.5938px"
+   },
+   "--radius-20": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--radius-24": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "38.3906px"
+   },
+   "--radius-32": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "51.1875px"
+   },
+   "--radius-4": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "6.39062px"
+   },
+   "--radius-48": {
+    "raw": "4.8rem",
+    "kind": "dimension",
+    "value": "76.7969px"
+   },
+   "--radius-8": {
+    "raw": ".8rem",
+    "kind": "dimension",
+    "value": "12.7969px"
+   },
+   "--radius-full": {
+    "raw": "999px",
+    "kind": "dimension",
+    "value": "999px"
+   },
+   "--raw-alpha-10": {
+    "raw": ".1",
+    "kind": "number",
+    "value": 0.1
+   },
+   "--raw-alpha-12": {
+    "raw": ".12",
+    "kind": "number",
+    "value": 0.12
+   },
+   "--raw-alpha-16": {
+    "raw": ".16",
+    "kind": "number",
+    "value": 0.16
+   },
+   "--raw-alpha-24": {
+    "raw": ".24",
+    "kind": "number",
+    "value": 0.24
+   },
+   "--raw-alpha-40": {
+    "raw": ".4",
+    "kind": "number",
+    "value": 0.4
+   },
+   "--raw-alpha-56": {
+    "raw": ".56",
+    "kind": "number",
+    "value": 0.56
+   },
+   "--raw-alpha-6": {
+    "raw": ".06",
+    "kind": "number",
+    "value": 0.06
+   },
+   "--raw-alpha-60": {
+    "raw": ".6",
+    "kind": "number",
+    "value": 0.6
+   },
+   "--raw-alpha-8": {
+    "raw": ".08",
+    "kind": "number",
+    "value": 0.08
+   },
+   "--raw-constant-error": {
+    "raw": "#c81e1e",
+    "kind": "color",
+    "value": "#c81e1e"
+   },
+   "--raw-constant-success": {
+    "raw": "#067647",
+    "kind": "color",
+    "value": "#067647"
+   },
+   "--raw-neutral-0": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--raw-neutral-10": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--raw-neutral-20": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--raw-neutral-700": {
+    "raw": "#242424",
+    "kind": "color",
+    "value": "#242424"
+   },
+   "--raw-neutral-800": {
+    "raw": "#171717",
+    "kind": "color",
+    "value": "#171717"
+   },
+   "--raw-neutral-900": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "#0f0f0f"
+   },
+   "--red": {
+    "raw": "#c81e1e",
+    "kind": "color",
+    "value": "#c81e1e"
+   },
+   "--semantic-background-primary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--semantic-background-secondary": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--semantic-border-default": {
+    "raw": "rgba(15, 15, 15, .08)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.08)"
+   },
+   "--semantic-divider-default": {
+    "raw": "rgba(15, 15, 15, .08)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.08)"
+   },
+   "--semantic-overlay-default": {
+    "raw": "rgba(15, 15, 15, .4)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.4)"
+   },
+   "--semantic-state-hover": {
+    "raw": "rgba(15, 15, 15, .06)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.06)"
+   },
+   "--semantic-state-pressed": {
+    "raw": "rgba(15, 15, 15, .12)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.12)"
+   },
+   "--semantic-surface-primary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--semantic-surface-secondary": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--semantic-surface-tertiary": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--semantic-text-primary": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "#0f0f0f"
+   },
+   "--semantic-text-secondary": {
+    "raw": "rgba(15, 15, 15, .6)",
+    "kind": "color",
+    "value": "rgba(15, 15, 15, 0.6)"
+   },
+   "--semantic-utility-error": {
+    "raw": "#c81e1e",
+    "kind": "color",
+    "value": "#c81e1e"
+   },
+   "--semantic-utility-success": {
+    "raw": "#067647",
+    "kind": "color",
+    "value": "#067647"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--spacing-0.4rem": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "6.39062px"
+   },
+   "--spacing-0.8rem": {
+    "raw": ".8rem",
+    "kind": "dimension",
+    "value": "12.7969px"
+   },
+   "--spacing-1.2rem": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "19.1875px"
+   },
+   "--spacing-1.6rem": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "25.5938px"
+   },
+   "--spacing-10rem": {
+    "raw": "10rem",
+    "kind": "dimension",
+    "value": "160px"
+   },
+   "--spacing-12rem": {
+    "raw": "12rem",
+    "kind": "dimension",
+    "value": "192px"
+   },
+   "--spacing-16rem": {
+    "raw": "16rem",
+    "kind": "dimension",
+    "value": "256px"
+   },
+   "--spacing-18rem": {
+    "raw": "18rem",
+    "kind": "dimension",
+    "value": "288px"
+   },
+   "--spacing-2.4rem": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "38.3906px"
+   },
+   "--spacing-24rem": {
+    "raw": "24rem",
+    "kind": "dimension",
+    "value": "384px"
+   },
+   "--spacing-2rem": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--spacing-3.2rem": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "51.1875px"
+   },
+   "--spacing-4.8rem": {
+    "raw": "4.8rem",
+    "kind": "dimension",
+    "value": "76.7969px"
+   },
+   "--spacing-4rem": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--spacing-6.4rem": {
+    "raw": "6.4rem",
+    "kind": "dimension",
+    "value": "102.391px"
+   },
+   "--spacing-6rem": {
+    "raw": "6rem",
+    "kind": "dimension",
+    "value": "96px"
+   },
+   "--spacing-8rem": {
+    "raw": "8rem",
+    "kind": "dimension",
+    "value": "128px"
+   },
+   "--spacing-section-gap-compact": {
+    "raw": "8rem",
+    "kind": "dimension",
+    "value": "128px"
+   },
+   "--spacing-section-gap-default": {
+    "raw": "18rem",
+    "kind": "dimension",
+    "value": "288px"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   },
+   "--text-base": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-base--line-height": {
+    "raw": "calc(1.5 / 1)",
+    "kind": "other"
+   },
+   "--text-body": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "25.5938px"
+   },
+   "--text-body--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-body--letter-spacing": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--text-body--line-height": {
+    "raw": "1.4",
+    "kind": "number",
+    "value": 1.4
+   },
+   "--text-caption": {
+    "raw": "1.4rem",
+    "kind": "dimension",
+    "value": "22.3906px"
+   },
+   "--text-caption--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-caption--letter-spacing": {
+    "raw": ".01em",
+    "kind": "dimension",
+    "value": "0.125px"
+   },
+   "--text-caption--line-height": {
+    "raw": "1.4",
+    "kind": "number",
+    "value": 1.4
+   },
+   "--text-ds-2xl": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--text-ds-2xl--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-ds-2xl--letter-spacing": {
+    "raw": "-.02em",
+    "kind": "other"
+   },
+   "--text-ds-2xl--line-height": {
+    "raw": ".8",
+    "kind": "number",
+    "value": 0.8
+   },
+   "--text-ds-3xl": {
+    "raw": "5.6rem",
+    "kind": "dimension",
+    "value": "89.5938px"
+   },
+   "--text-ds-3xl--font-weight": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--text-ds-3xl--letter-spacing": {
+    "raw": "-.02em",
+    "kind": "other"
+   },
+   "--text-ds-3xl--line-height": {
+    "raw": ".86",
+    "kind": "number",
+    "value": 0.86
+   },
+   "--text-ds-base": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "25.5938px"
+   },
+   "--text-ds-base--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-ds-base--letter-spacing": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--text-ds-base--line-height": {
+    "raw": "1.5",
+    "kind": "number",
+    "value": 1.5
+   },
+   "--text-ds-l": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "38.3906px"
+   },
+   "--text-ds-l--font-weight": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--text-ds-l--letter-spacing": {
+    "raw": "-.04em",
+    "kind": "other"
+   },
+   "--text-ds-l--line-height": {
+    "raw": "1.17",
+    "kind": "number",
+    "value": 1.17
+   },
+   "--text-ds-m": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--text-ds-m--font-weight": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--text-ds-m--letter-spacing": {
+    "raw": "-.03em",
+    "kind": "other"
+   },
+   "--text-ds-m--line-height": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--text-ds-s": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "25.5938px"
+   },
+   "--text-ds-s--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-ds-s--letter-spacing": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--text-ds-s--line-height": {
+    "raw": "1.5",
+    "kind": "number",
+    "value": 1.5
+   },
+   "--text-ds-xl": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "38.3906px"
+   },
+   "--text-ds-xl--font-weight": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--text-ds-xl--letter-spacing": {
+    "raw": "-.04em",
+    "kind": "other"
+   },
+   "--text-ds-xl--line-height": {
+    "raw": "1.17",
+    "kind": "number",
+    "value": 1.17
+   },
+   "--text-ds-xs": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "19.1875px"
+   },
+   "--text-ds-xs--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-ds-xs--letter-spacing": {
+    "raw": ".01em",
+    "kind": "dimension",
+    "value": "0.125px"
+   },
+   "--text-ds-xs--line-height": {
+    "raw": "1.33",
+    "kind": "number",
+    "value": 1.33
+   },
+   "--text-ds-xs-mono": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "19.1875px"
+   },
+   "--text-ds-xs-mono--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-ds-xs-mono--letter-spacing": {
+    "raw": ".01em",
+    "kind": "dimension",
+    "value": "0.125px"
+   },
+   "--text-ds-xs-mono--line-height": {
+    "raw": "1.33",
+    "kind": "number",
+    "value": 1.33
+   },
+   "--text-ds-xss": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "19.1875px"
+   },
+   "--text-ds-xss--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-ds-xss--letter-spacing": {
+    "raw": ".01em",
+    "kind": "dimension",
+    "value": "0.125px"
+   },
+   "--text-ds-xss--line-height": {
+    "raw": "1.33",
+    "kind": "number",
+    "value": 1.33
+   },
+   "--text-h1": {
+    "raw": "7.2rem",
+    "kind": "dimension",
+    "value": "115.188px"
+   },
+   "--text-h1--font-weight": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--text-h1--letter-spacing": {
+    "raw": "-.02em",
+    "kind": "other"
+   },
+   "--text-h1--line-height": {
+    "raw": ".82",
+    "kind": "number",
+    "value": 0.82
+   },
+   "--text-h1-ai": {
+    "raw": "5.6rem",
+    "kind": "dimension",
+    "value": "89.5938px"
+   },
+   "--text-h1-ai--font-weight": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--text-h1-ai--letter-spacing": {
+    "raw": "-.02em",
+    "kind": "other"
+   },
+   "--text-h1-ai--line-height": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--text-h2": {
+    "raw": "5.6rem",
+    "kind": "dimension",
+    "value": "89.5938px"
+   },
+   "--text-h2--font-weight": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--text-h2--letter-spacing": {
+    "raw": "-.02em",
+    "kind": "other"
+   },
+   "--text-h2--line-height": {
+    "raw": ".82",
+    "kind": "number",
+    "value": 0.82
+   },
+   "--text-h3": {
+    "raw": "3.6rem",
+    "kind": "dimension",
+    "value": "57.5938px"
+   },
+   "--text-h3--font-weight": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--text-h3--letter-spacing": {
+    "raw": "-.04em",
+    "kind": "other"
+   },
+   "--text-h3--line-height": {
+    "raw": "1.08",
+    "kind": "number",
+    "value": 1.08
+   },
+   "--text-h3-regular": {
+    "raw": "3.6rem",
+    "kind": "dimension",
+    "value": "57.5938px"
+   },
+   "--text-h3-regular--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-h3-regular--letter-spacing": {
+    "raw": "-.04em",
+    "kind": "other"
+   },
+   "--text-h3-regular--line-height": {
+    "raw": "1.08",
+    "kind": "number",
+    "value": 1.08
+   },
+   "--text-h4": {
+    "raw": "2.8rem",
+    "kind": "dimension",
+    "value": "44.7969px"
+   },
+   "--text-h4--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-h4--letter-spacing": {
+    "raw": "-.04em",
+    "kind": "other"
+   },
+   "--text-h4--line-height": {
+    "raw": "1.08",
+    "kind": "number",
+    "value": 1.08
+   },
+   "--text-h5": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "38.3906px"
+   },
+   "--text-h5--font-weight": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--text-h5--letter-spacing": {
+    "raw": "-.03em",
+    "kind": "other"
+   },
+   "--text-h5--line-height": {
+    "raw": "1.08",
+    "kind": "number",
+    "value": 1.08
+   },
+   "--text-h6": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--text-h6--font-weight": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--text-h6--letter-spacing": {
+    "raw": "-.02em",
+    "kind": "other"
+   },
+   "--text-h6--line-height": {
+    "raw": "1.4",
+    "kind": "number",
+    "value": 1.4
+   },
+   "--text-label": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "19.1875px"
+   },
+   "--text-label--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-label--letter-spacing": {
+    "raw": ".01em",
+    "kind": "dimension",
+    "value": "0.125px"
+   },
+   "--text-label--line-height": {
+    "raw": "1.36",
+    "kind": "number",
+    "value": 1.36
+   },
+   "--text-lg": {
+    "raw": "1.125rem",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-lg--line-height": {
+    "raw": "calc(1.75 / 1.125)",
+    "kind": "other"
+   },
+   "--text-selection": {
+    "raw": "#e1e090",
+    "kind": "color",
+    "value": "#e1e090"
+   },
+   "--text-selection-transparent": {
+    "raw": "#e1e090cc",
+    "kind": "color",
+    "value": "rgba(225, 224, 144, 0.8)"
+   },
+   "--text-sm": {
+    "raw": ".875rem",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-sm--line-height": {
+    "raw": "calc(1.25 / .875)",
+    "kind": "other"
+   },
+   "--text-ui": {
+    "raw": "15px",
+    "kind": "dimension",
+    "value": "15px"
+   },
+   "--text-ui--font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--text-ui--line-height": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--text-ui-bold": {
+    "raw": "15px",
+    "kind": "dimension",
+    "value": "15px"
+   },
+   "--text-ui-bold--font-weight": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--text-ui-bold--line-height": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--text-xs": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--text-xs--line-height": {
+    "raw": "calc(1 / .75)",
+    "kind": "other"
+   },
+   "--top-banner-height": {
+    "raw": "0rem",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--top-bar-height": {
+    "raw": "9.2rem",
+    "kind": "dimension",
+    "value": "147.188px"
+   },
+   "--violet": {
+    "raw": "#785eea",
+    "kind": "color",
+    "value": "#785eea"
+   },
+   "--white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--x-l": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "51.1875px"
+   },
+   "--x-m": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "38.3906px"
+   },
+   "--x-s": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "25.5938px"
+   },
+   "--x-xl": {
+    "raw": "4.8rem",
+    "kind": "dimension",
+    "value": "76.7969px"
+   },
+   "--x-xs": {
+    "raw": ".8rem",
+    "kind": "dimension",
+    "value": "12.7969px"
+   },
+   "--x-xxl": {
+    "raw": "9.6rem",
+    "kind": "dimension",
+    "value": "153.594px"
+   },
+   "--x-xxs": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "6.39062px"
+   },
+   "--y-l": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "51.1875px"
+   },
+   "--y-m": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "38.3906px"
+   },
+   "--y-s": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "25.5938px"
+   },
+   "--y-xl": {
+    "raw": "4.8rem",
+    "kind": "dimension",
+    "value": "76.7969px"
+   },
+   "--y-xs": {
+    "raw": ".8rem",
+    "kind": "dimension",
+    "value": "12.7969px"
+   },
+   "--y-xxl": {
+    "raw": "9.6rem",
+    "kind": "dimension",
+    "value": "153.594px"
+   },
+   "--y-xxs": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "6.39062px"
+   },
+   "--y-xxxs": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   }
+  }
+ }
+}
