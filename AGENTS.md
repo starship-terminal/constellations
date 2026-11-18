@@ -395,7 +395,7 @@ generator, or a data file outside the path filters appears.
 
 | Workflow | Runs when | Fails when |
 |---|---|---|
-| [check.yml](.github/workflows/check.yml) | Every pull request and every push to `main` | `make check`, then `make test`, then `make docs`. The checkout has no Git LFS files, so a test that needs a real screenshot or `refero.db` skips. |
+| [check.yml](.github/workflows/check.yml) | Every pull request and every push to `main` | Two jobs. `check` runs `make check` then `make test`. `docs` runs `make docs` and asserts `site/gallery` is absent. Checkout skips Git LFS smudge, so a test that needs a real screenshot or `refero.db` skips. |
 | [app.yml](.github/workflows/app.yml) | A pull request that touches `app/`, `systems/`, `catalog.json`, `refero/catalog.json`, or `tools/catalog.py` | Prettier on `app/`, the media taxonomy seed, the float-parity fixture, Next typegen, typecheck, the app tests, and a production build. |
 | [web.yml](.github/workflows/web.yml) | A pull request that touches `web/`, `tools/catalog.py`, or `catalog.json` | Typecheck, the gallery unit tests, `tools/catalog.py build`, and a production build. |
 
