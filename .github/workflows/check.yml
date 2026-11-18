@@ -2,8 +2,10 @@
 # request, so a commit that forgot `make brief`/`make grade` (a systems/**,
 # catalog.json or tools change, say) fails here. `make check` covers catalog.json, Brief sections,
 # scorecard data and scripted grades, and every README's Health section.
-# `make test` runs the tools' tests and every package's own tests; the checkout
-# has no Git LFS content, so tests that read a real screenshot or refero.db skip.
+# `make test` runs the tools' tests and every package's own tests. The checkout
+# skips Git LFS smudge, so tests that read a real screenshot or refero.db skip.
+# The docs job builds the site the home server serves. It runs beside the tests
+# so a green check does not wait out the site build.
 name: Check
 on:
   push:
@@ -16,6 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          lfs: false
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
@@ -25,8 +32,22 @@ jobs:
       - name: Install the tools' Python dependencies
         run: pip install -r requirements.txt -r tools/requirements-capture.txt
       - run: make test
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          lfs: false
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
       # The docs site the home server serves: scorecard pages, then site.py.
       # Nothing else in CI builds it, so a broken page or renderer fails here.
+      - name: Install the site builder's dependencies
+        run: pip install -r requirements.txt
       - name: Build the docs site
         run: make docs
       - name: The docs site never ships the gallery

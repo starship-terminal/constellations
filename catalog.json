@@ -11423,7 +11423,7 @@
       "url": "https://www.fiverr.com",
       "category": "e-commerce",
       "platform": "web",
-      "goodFor": "freelance-marketplace design: a white sticky header with a Browse-categories drawer and a green Join pill, the dark photographic hero band with a dark-skinned search form, Macan type, popular-service chips, a /categories directory, gig cards with star ratings and localized 'From S$xx' pricing, the Basic/Standard/Premium package tablist on a gig page's pricing card, and the /join + /login auth edge \u2014 all measured as computed styles (the site's stylesheet is a hashed atomic layer with no named token layer)",
+      "goodFor": "freelance-marketplace design: a white sticky header with a Browse-categories drawer and a green Join pill, the dark photographic hero band with a dark-skinned search form, Macan type, popular-service chips, a /categories directory, gig cards with star ratings and localized 'From S$xx' pricing, the Basic/Standard/Premium package tablist on a gig page's pricing card, and the /join + /login auth edge, all measured as computed styles (the site's stylesheet is a hashed atomic layer with no named token layer)",
       "tags": [
         "web",
         "marketplace",

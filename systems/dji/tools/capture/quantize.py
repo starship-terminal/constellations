@@ -116,8 +116,21 @@ for name, ps in parts.items():
     # Tiles must be a contiguous run from part0; a missing tile mid-capture is
     # a hole, not a shorter page.
     missing = [i for i in range(ps[-1][0] + 1) if i not in {i for i, _ in ps}]
+    metas = [sidecar_for(f) for _, f in ps]
+    # No sidecars at all, and a contiguous run from part0: publish the stitch
+    # and write no sidecar. A hole in the tile numbers still refuses.
+    if not missing and all(m is None for m in metas):
+        ims = [Image.open(f).convert('RGB') for _, f in ps]
+        sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
+        y = 0
+        for i in ims:
+            sheet.paste(i, (0, y)); y += i.height
+        sheet.save(RAW / f'{name}.png')
+        stitched[name] = False  # published, with no sidecar
+        print('stitched', name, sheet.size, 'without sidecars')
+        continue
     if missing:
-        print(f'skipped {name}: missing tiles {missing} — a stitched sheet would hide the gap')
+        print(f'skipped {name}: missing tiles {missing}; a stitched sheet would hide the gap')
         # A previous run's stitched PNG must not survive a failed recapture:
         # the export loop below would quietly ship the old image with its old
         # sidecar. Remove both so the gap shows up as a gap.
@@ -143,6 +156,7 @@ for f in sorted(RAW.glob('*.png')):
         continue
     if f.stem in stitched and stitched[f.stem] is None:
         continue  # failed recapture: no stitched sheet, nothing to export
+    unmeasured = f.stem in stitched and stitched[f.stem] is False
 
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
@@ -150,6 +164,8 @@ for f in sorted(RAW.glob('*.png')):
     out_side.unlink(missing_ok=True)   # never leave a previous run's measurements beside a new image
     if stitched.get(f.stem):
         out_side.write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
+    elif unmeasured:
+        pass
     elif f.stem not in stitched and f.with_name(f.name + '.capture.json').exists():
         shutil.copyfile(f.with_name(f.name + '.capture.json'), out_side)
     n += 1
