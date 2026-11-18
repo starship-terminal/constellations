@@ -511,9 +511,14 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedMediaTerms(tx, new Set(["systems:intercom"]));
       await tx.execute("PRAGMA user_version = 40");
     }
+    if (version < 42) {
+      // Version 41 stays reserved for Hers. A store already at v41 still gains Leonardo.
+      await seedNewCuratedCategories(tx, new Set(["systems:leonardo"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:leonardo"]));
+      await tx.execute("PRAGMA user_version = 42");
+    }
     if (version < 43) {
-      // Versions 41 and 42 stay reserved for Hers and Leonardo. This top-up
-      // is scoped so a store already at v40 still gains Huddlekit.
+      // This top-up is scoped so a store already at v42 still gains Huddlekit.
       await seedNewCuratedCategories(tx, new Set(["systems:huddlekit"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:huddlekit"]));
       await tx.execute("PRAGMA user_version = 43");
