@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_156 of 214 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_157 of 215 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -933,6 +933,11 @@ Access: signed-out public marketing, pricing, contact, one free-tool page, and l
 - the contact form was not submitted
 - Start free with Google starts a Google sign-in strategy and was not followed
 - no checkout was opened
+
+## [ManyChat](../systems/manychat) — `manychat`
+Access: read-only (the marketing site is public signed out; the bot builder and the in-app template library sit behind sign-in at app.manychat.com, never entered; Log in, Get started and Start for free were measured, never followed; checkout was not submitted)
+- the bot builder and the in-app template library sit behind sign-in at app.manychat.com; Log in and Get started were measured, never followed
+- checkout was not submitted; Monthly and Annual were toggled locally
 
 ## Gate noted in access text only
 

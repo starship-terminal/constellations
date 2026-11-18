@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 214,
-    "system_domains": 205,
-    "matched_domains": 175,
-    "missing_domains": 258,
+    "system_packages": 215,
+    "system_domains": 206,
+    "matched_domains": 176,
+    "missing_domains": 257,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2899,6 +2899,23 @@
         }
       ]
     },
+    "manychat.com": {
+      "catalog": [
+        {
+          "name": "ManyChat",
+          "domain": "manychat.com",
+          "id": 90
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "manychat",
+          "name": "ManyChat",
+          "url": "https://manychat.com",
+          "name_match": true
+        }
+      ]
+    },
     "maze.co": {
       "catalog": [
         {
@@ -3327,13 +3344,6 @@
         "name": "Mangomint",
         "domain": "mangomint.com",
         "id": 698
-      }
-    ],
-    "manychat.com": [
-      {
-        "name": "ManyChat",
-        "domain": "manychat.com",
-        "id": 90
       }
     ],
     "mapbox.com": [
