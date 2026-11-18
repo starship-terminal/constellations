@@ -155,6 +155,36 @@ light = {
     },
 }
 
+app_vars_path = RAW / "app-vars.json"
+workspace = {}
+if app_vars_path.exists():
+    app_vars = json.loads(app_vars_path.read_text())
+    prim = app_vars.get("primitives") or {}
+    def k(name, fallback=None):
+        return prim.get(name) or fallback
+    workspace = {
+        "accent": color(k("--k-accent-color", "#0165e1"), "--k-accent-color on the signed-in workspace"),
+        "blue": color(k("--k-color-blue", "#0165e1"), "--k-color-blue"),
+        "danger": color(k("--k-color-red", "#ee543b"), "--k-color-red"),
+        "success": color(k("--k-color-green", "#41c660"), "--k-color-green"),
+        "warning": color(k("--k-color-yellow", "#fec30c"), "--k-color-yellow"),
+        "text": color("#333333", "document.body color rgb(51, 51, 51) on the workspace"),
+        "page": color("#ffffff", "document.body background-color on the workspace"),
+        "sand": color(k("--k-color-gray-f8", "#f8f6f4"), "--k-color-gray-f8"),
+        "rail": color(k("--k-color-black-03-solid", "#f7f7f7"), "--k-color-black-03-solid, the rail surface"),
+        "button-height": dim(k("--k-button-size-s-height", "28px"), "--k-button-size-s-height"),
+        "button-radius": dim(k("--k-border-radius-6", "6px"), "--k-border-radius-6, action buttons"),
+        "font-13": dim(k("--k-font-size-13", "13px"), "--k-font-size-13"),
+        "font-14": dim(k("--k-font-size-14", "14px"), "--k-font-size-14"),
+    }
+    core["font"]["family"]["app"] = font_family(
+        app_vars.get("bodyFont") or '-apple-system, "system-ui", "Segoe UI", Roboto, "Noto Sans", Ubuntu, "Droid Sans", "Helvetica Neue", sans-serif',
+        "document.body font-family on the signed-in workspace",
+    )
+
+if workspace:
+    light["workspace"] = workspace
+
 # Alias component colours that match semantic roles.
 if light["component"]["plan-card-bg"]["$value"] in ("rgba(0, 0, 0, 0)", "transparent"):
     light["component"]["plan-card-bg"] = {
@@ -164,7 +194,7 @@ if light["component"]["plan-card-bg"]["$value"] in ("rgba(0, 0, 0, 0)", "transpa
     }
 
 doc = {
-    "$description": "Kitchen.co public marketing surface, measured 2026-11-18. One theme.",
+    "$description": "Kitchen.co marketing site and signed-in workspace, measured 2026-11-18. One painted theme.",
     "core": core,
     "light": light,
     "dark": {},

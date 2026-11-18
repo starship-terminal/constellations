@@ -5,7 +5,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 J = json.loads((ROOT / "raw" / "components-computed.json").read_text())
-C = J["components"]
+C = dict(J["components"])
+app_path = ROOT / "raw" / "app-computed.json"
+if app_path.exists():
+    app = json.loads(app_path.read_text())
+    for k, v in (app.get("components") or {}).items():
+        C[k] = v
 
 def hexish(c):
     return (c or "").replace("|", "/")
@@ -14,7 +19,7 @@ lines = []
 W = lines.append
 W("# Kitchen.co components")
 W("")
-W("Measured on kitchen.co on 2026-11-18, signed out, desktop 1440 and phone 390. Hover is a real pointer. Focus-visible is keyboard focus. Pressed is a DevTools `:hover:active` force, so no link fired. Login, signup, demo and Stripe checkout were not submitted.")
+W("Measured on kitchen.co on 2026-11-18. Public pages were signed out. Workspace components were measured on a free signed-in workspace at 1440 and 390. Hover is a real pointer. Focus-visible is keyboard focus. Pressed on marketing controls is a DevTools `:hover:active` force. Signup was completed; invites, creates, DocuMocu connect, Upgrade and Stripe checkout were not submitted.")
 W("")
 W("## Inventory")
 W("")
@@ -52,10 +57,9 @@ for k, c in C.items():
 
 W("## Gaps")
 W("")
-W("- Text area, select, checkbox, radio, switch, tooltip, dialog, toast, table and badge do not paint on the public marketing pages that were captured.")
-W("- Tabs exist in the stylesheet (`.plans-tabs__button`, `.js-tabs-v2__tab`) but no plans tab was in the DOM on `/pricing` during this capture.")
-W("- Feature cards use illustration bands rather than a `.card` atom on the home page, so that selector missed. The plan card, review card and article search field were measured instead.")
-W("- Disabled, loading, error and selected states sit behind form submission, checkout or the signed-in app.")
-W("- The product app at `*.kitchen.co` workspaces was not entered. Login stops at the workspace URL field.")
+W("- Marketing pages still omit text area, select, checkbox, radio, switch, tooltip, toast and badge.")
+W("- The workspace shows tabs (All Tasks / Completed), a members table, a proposals dialog, empty states and a yellow Upgrade control. Invite Members, Create Client, Connect DocuMocu, Buy DocuMocu, Buy Lifetime Access and Upgrade were not pressed.")
+W("- Theme customisation is paid: Settings > Branding > Theme & Colors shows Upgrade. The free workspace has one light theme.")
+W("- Stripe checkout was not opened. Billing was captured as the free-plan settings page.")
 (ROOT / "components.md").write_text("\n".join(lines) + "\n")
 print("components.md", len(lines), "lines")

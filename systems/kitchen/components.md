@@ -1,6 +1,6 @@
 # Kitchen.co components
 
-Measured on kitchen.co on 2026-11-18, signed out, desktop 1440 and phone 390. Hover is a real pointer. Focus-visible is keyboard focus. Pressed is a DevTools `:hover:active` force, so no link fired. Login, signup, demo and Stripe checkout were not submitted.
+Measured on kitchen.co on 2026-11-18. Public pages were signed out. Workspace components were measured on a free signed-in workspace at 1440 and 390. Hover is a real pointer. Focus-visible is keyboard focus. Pressed on marketing controls is a DevTools `:hover:active` force. Signup was completed; invites, creates, DocuMocu connect, Upgrade and Stripe checkout were not submitted.
 
 ## Inventory
 
@@ -35,6 +35,19 @@ Measured on kitchen.co on 2026-11-18, signed out, desktop 1440 and phone 390. Ho
 | Menu button | Mobile | home | default |
 | Mobile drawer | Mobile | home | default |
 | Mobile nav link | Mobile | home | default |
+| Rail Home | App chrome | home | default |
+| Rail Inbox | App chrome | home | hover |
+| Workspace search | Fields | home | default |
+| Get started card | Cards | home | default, hover |
+| Tree row | List row | home | default |
+| Empty heading | Type | home | default |
+| Account avatar | Avatar | home | default |
+| Primary button | Buttons | clients | default, hover |
+| Tasks tab | Tabs | tasks | selected, default |
+| Upgrade badge button | Buttons | settings | default |
+| Settings row | List row | settings | default |
+| Proposals dialog | Dialog | dialog | default |
+| Dialog primary | Buttons | dialog | default |
 
 ## Entries
 
@@ -338,10 +351,129 @@ Selector `mobile-nav-link` on `https://kitchen.co/`.
 - **default.** 350 x 34.8 px. Background rgba(0, 0, 0, 0). Text rgb(29, 28, 29). Font 24px / 700 Graphik. Radius 0px. Padding 0px 0px.
   ![mobile-nav-link default](components/crops/mobile-nav-link-default.png)
 
+### Rail Home
+
+Left rail Home control.
+
+Selector `app-nav-home` on `https://<workspace>.kitchen.co`.
+
+- **default.** 40 x 44 px. Background rgba(0, 0, 0, 0). Text rgba(0, 0, 0, 0.84). Font 13.3333px / 400 -apple-system. Radius 0px. Padding 0px 0px.
+  ![app-nav-home default](components/crops/app-app-nav-home-default.png)
+
+### Rail Inbox
+
+Left rail Inbox control.
+
+Selector `app-nav-inbox` on `https://<workspace>.kitchen.co`.
+
+- **hover.** 40 x 44 px. Background rgba(0, 0, 0, 0). Text rgba(0, 0, 0, 0.84). Font 13.3333px / 400 -apple-system. Radius 0px. Padding 0px 0px.
+  ![app-nav-inbox hover](components/crops/app-app-nav-inbox-hover.png)
+
+### Workspace search
+
+Top search field.
+
+Selector `app-search` on `https://<workspace>.kitchen.co`.
+
+- **default.** missing
+
+### Get started card
+
+Home empty-state jumbo button.
+
+Selector `app-jumbo` on `https://<workspace>.kitchen.co`.
+
+- **default.** 160 x 96 px. Background rgba(0, 0, 0, 0). Text rgb(0, 0, 0). Font 13.3333px / 400 -apple-system. Radius 8px. Padding 16px 16px.
+  ![app-jumbo default](components/crops/app-app-jumbo-default.png)
+- **hover.** 160 x 96 px. Background rgba(0, 0, 0, 0.04). Text rgb(0, 0, 0). Font 13.3333px / 400 -apple-system. Radius 8px. Padding 16px 16px.
+  ![app-jumbo hover](components/crops/app-app-jumbo-hover.png)
+
+### Tree row
+
+Home tree-view row.
+
+Selector `app-tree` on `https://<workspace>.kitchen.co`.
+
+- **default.** 232 x 28 px. Background rgba(0, 0, 0, 0). Text rgba(0, 0, 0, 0.84). Font 13px / 400 -apple-system. Radius 0px. Padding 0px 4px.
+  ![app-tree default](components/crops/app-app-tree-default.png)
+
+### Empty heading
+
+Home empty-state heading.
+
+Selector `app-heading` on `https://<workspace>.kitchen.co`.
+
+- **default.** 172.47 x 32 px. Background rgba(0, 0, 0, 0). Text rgba(0, 0, 0, 0.84). Font 20px / 500 -apple-system. Radius 0px. Padding 0px 0px.
+  ![app-heading default](components/crops/app-app-heading-default.png)
+
+### Account avatar
+
+Header account chip.
+
+Selector `app-avatar` on `https://<workspace>.kitchen.co`.
+
+- **default.** missing
+
+### Primary button
+
+Create Client filled blue button.
+
+Selector `app-primary` on `https://<workspace>.kitchen.co`.
+
+- **default.** 110.94 x 28 px. Background rgba(0, 0, 0, 0.06). Text rgba(0, 0, 0, 0.84). Font 13px / 400 -apple-system. Radius 6px. Padding 0px 8px.
+  ![app-primary default](components/crops/app-app-primary-default.png)
+- **hover.** 110.94 x 28 px. Background rgba(0, 0, 0, 0.1). Text rgba(0, 0, 0, 0.84). Font 13px / 400 -apple-system. Radius 6px. Padding 0px 8px.
+  ![app-primary hover](components/crops/app-app-primary-hover.png)
+
+### Tasks tab
+
+All Tasks / Completed tabs.
+
+Selector `app-tab` on `https://<workspace>.kitchen.co`.
+
+- **selected.** 97.83 x 24 px. Background rgba(0, 0, 0, 0). Text rgb(77, 77, 77). Font 24px / 700 -apple-system. Radius 0px. Padding 0px 0px.
+  ![app-tab selected](components/crops/app-app-tab-selected.png)
+- **default.** 123.55 x 24 px. Background rgba(0, 0, 0, 0). Text rgba(0, 0, 0, 0.3). Font 24px / 700 -apple-system. Radius 0px. Padding 0px 0px.
+  ![app-tab default](components/crops/app-app-tab-default.png)
+
+### Upgrade badge button
+
+Yellow Upgrade control on billing.
+
+Selector `app-upgrade` on `https://<workspace>.kitchen.co`.
+
+- **default.** 68.45 x 28 px. Background rgb(254, 195, 12). Text rgba(0, 0, 0, 0.84). Font 13px / 400 -apple-system. Radius 6px. Padding 0px 8px.
+  ![app-upgrade default](components/crops/app-app-upgrade-default.png)
+
+### Settings row
+
+Billing plan information row.
+
+Selector `app-list-row` on `https://<workspace>.kitchen.co`.
+
+- **default.** 789.25 x 20 px. Background rgba(0, 0, 0, 0). Text rgba(0, 0, 0, 0.36). Font 12px / 400 -apple-system. Radius 0px. Padding 0px 0px.
+  ![app-list-row default](components/crops/app-app-list-row-default.png)
+
+### Proposals dialog
+
+DocuMocu connect dialog. Buy was not pressed.
+
+Selector `app-dialog` on `https://<workspace>.kitchen.co`.
+
+- **default.** 1440 x 900 px. Background rgba(0, 0, 0, 0.24). Text rgb(51, 51, 51). Font 14px / 400 -apple-system. Radius 0px. Padding 0px 0px.
+  ![app-dialog default](components/crops/app-app-dialog-default.png)
+
+### Dialog primary
+
+Buy DocuMocu in the dialog. Not pressed.
+
+Selector `app-dialog-primary` on `https://<workspace>.kitchen.co`.
+
+- **default.** missing
+
 ## Gaps
 
-- Text area, select, checkbox, radio, switch, tooltip, dialog, toast, table and badge do not paint on the public marketing pages that were captured.
-- Tabs exist in the stylesheet (`.plans-tabs__button`, `.js-tabs-v2__tab`) but no plans tab was in the DOM on `/pricing` during this capture.
-- Feature cards use illustration bands rather than a `.card` atom on the home page, so that selector missed. The plan card, review card and article search field were measured instead.
-- Disabled, loading, error and selected states sit behind form submission, checkout or the signed-in app.
-- The product app at `*.kitchen.co` workspaces was not entered. Login stops at the workspace URL field.
+- Marketing pages still omit text area, select, checkbox, radio, switch, tooltip, toast and badge.
+- The workspace shows tabs (All Tasks / Completed), a members table, a proposals dialog, empty states and a yellow Upgrade control. Invite Members, Create Client, Connect DocuMocu, Buy DocuMocu, Buy Lifetime Access and Upgrade were not pressed.
+- Theme customisation is paid: Settings > Branding > Theme & Colors shows Upgrade. The free workspace has one light theme.
+- Stripe checkout was not opened. Billing was captured as the free-plan settings page.

@@ -5,7 +5,7 @@
   },
   "F2": {
     "grade": "partly",
-    "evidence": "Page (#ffffff), sand surface (#f8f6f4) and the promo strip (#1d1c1d) are measured. No raised, overlay or scrim role paints on the public pages after the cookie overlay was hidden."
+    "evidence": "Marketing page, sand and promo strip are measured. The workspace adds a pale rail and a dimmed overlay behind the Proposals dialog. No separate scrim token was named."
   },
   "F3": {
     "grade": "partly",
@@ -20,8 +20,8 @@
     "evidence": "Coral and ink buttons were measured at rest, hover, focus-visible and DevTools-forced pressed. The fills do not change. The states were captured; the product does not restyle them."
   },
   "F6": {
-    "grade": "missing",
-    "evidence": "No success, warning, danger or info colour paints on the public marketing pages. Forms were not submitted, so validation colours stayed hidden."
+    "grade": "partly",
+    "evidence": "The workspace declares --k-color-red #ee543b, --k-color-green #41c660 and --k-color-yellow #fec30c. Yellow paints on Upgrade. Green paints on the DocuMocu checklist. No info colour was measured."
   },
   "F7": {
     "grade": "meets",
@@ -29,7 +29,7 @@
   },
   "F8": {
     "grade": "partly",
-    "evidence": "Graphik is the only family, with a Helvetica Neue / Arial fallback. Measured sizes are 16, 18, 22 and 72px. Weights in use are 400 and 700. Named roles are hero, body, button, nav and FAQ, not a full display/heading/label/caption/code scale."
+    "evidence": "Marketing uses Graphik 16/18/22/72. The workspace uses the system UI stack at 13 and 14px (--k-font-size-*). No caption/code role was named."
   },
   "F9": {
     "grade": "missing",
@@ -44,8 +44,8 @@
     "evidence": "Small header buttons are 44px tall. Coral and plan buttons are 52px. The phone Menu control is 34px. No designed focus-ring width or offset was measured."
   },
   "F12": {
-    "grade": "missing",
-    "evidence": "Plan cards, the Solutions menu and the phone drawer do not cast a measured box-shadow. The site is flat."
+    "grade": "partly",
+    "evidence": "Marketing cards are flat. The workspace --k-* layer declares shadows on dialogs and cards. The Proposals dialog was captured; its crop filled the viewport so the shadow was not isolated as a token."
   },
   "F13": {
     "grade": "partly",
@@ -57,11 +57,11 @@
   },
   "C1": {
     "grade": "partly",
-    "evidence": "Public pages show button, icon button (Menu), link, text field, menu, card, list row (FAQ) and avatar. Text area, select, checkbox, radio, switch, tabs, tooltip, dialog, toast, table and badge do not paint on the captured pages. That is 8 of 19."
+    "evidence": "Marketing plus workspace now show button, icon button, link, text field, tabs, menu, dialog, card, list row, table, avatar and badge. Text area, select, radio, switch, tooltip and toast still do not paint. Checkbox exists on create-workspace opt-in and was not measured."
   },
   "C2": {
     "grade": "partly",
-    "evidence": "Buttons have hover, focus-visible and pressed. The FAQ row opens. Fields have focused. Disabled, loading, error and selected do not appear without submitting a form or entering the app."
+    "evidence": "Marketing buttons have hover, focus-visible and pressed. Workspace primary was hovered. Tasks tabs show selected vs unselected. Disabled, loading and error were not held as screenshots."
   },
   "C3": {
     "grade": "partly",
@@ -73,7 +73,7 @@
   },
   "P1": {
     "grade": "partly",
-    "evidence": "patterns.md covers the marketing chrome, the hero, the pricing columns and the login gate. Forms with validation, empty/loading/error, destructive confirmation, feedback and onboarding sit behind submit or sign-in and are recorded as gaps."
+    "evidence": "patterns.md covers marketing chrome, pricing, signup, the workspace rail, empty lists, the Proposals dialog and free-plan billing. Destructive confirmation and action feedback were not shown because nothing was written."
   },
   "A1": {
     "grade": "partly",
@@ -81,6 +81,6 @@
   },
   "K1": {
     "grade": "meets",
-    "evidence": "The README states the date, the signed-out public route, the widths, how values were read, and what to distrust."
+    "evidence": "The README states the date, the public route, the signed-in free workspace, the widths, how --k-* values were read, and what to distrust."
   }
 }

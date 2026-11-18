@@ -740,12 +740,11 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
 
 ## [Kitchen.co](../systems/kitchen) — `kitchen`
-Access: signed out (public marketing pages; the workspace app, signup submit, demo submit and Stripe checkout were not entered)
-- Workspace app (https://kitchen.co/login redirects to https://kitchen.co/login/workspace): Continue was not pressed, so the signed-in client portal was not captured
-- Get started (https://kitchen.co/get-started): the email signup form was measured and not submitted
+Access: signed in (free workspace after email signup; invites, creates, Upgrade, DocuMocu connect and Stripe checkout were not submitted)
 - Get a demo (https://kitchen.co/get-demo): the demo request form was not submitted
-- Lifetime checkout (https://kitchen.co/pricing Pay Now links to buy.stripe.com): Stripe checkout was not opened
-- Buy (https://kitchen.co/buy): the lifetime offer page is public; purchase was not started
+- Lifetime checkout (https://kitchen.co/pricing Pay Now and Settings > Billing Buy Lifetime Access): Stripe checkout was not opened
+- Workspace theme customisation is paid (Settings > Branding > Theme & Colors Upgrade)
+- Invites, new folders, boards, conversations and clients were not created
 
 ## Gate noted in access text only
 

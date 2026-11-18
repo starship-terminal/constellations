@@ -16379,7 +16379,7 @@
    "url": "https://kitchen.co",
    "category": "productivity",
    "platform": "web",
-   "goodFor": "Agency marketing sites: a black promo strip, white page, Graphik headlines, a 5px coral call to action and ink buttons, three-column pricing, and a workspace login gate",
+   "goodFor": "Agency marketing plus a signed-in client portal: Graphik coral marketing, then a system-UI workspace with a left rail, blue #0165e1 actions, empty states and a separate phone portal",
    "tags": [
     "web",
     "saas",
@@ -16388,11 +16388,12 @@
     "coral",
     "pricing",
     "light",
-    "signed-out"
+    "signed-in",
+    "sidebar"
    ],
    "shape": "reference",
    "captured": "2026-11-18",
-   "access": "signed out (public marketing pages; the workspace app, signup submit, demo submit and Stripe checkout were not entered)",
+   "access": "signed in (free workspace after email signup; invites, creates, Upgrade, DocuMocu connect and Stripe checkout were not submitted)",
    "themes": [
     "light"
    ],
@@ -16422,19 +16423,19 @@
    },
    "capture": {
     "harness": "Grok Build",
-    "model": "grok-4.7",
-    "route": "public-web",
+    "model": "grok-4.6",
+    "route": "headless",
     "date": "2026-11-18",
-    "version": "marketing site, main.css id 34f42d00dd489cfa18358327b0fd45c4",
-    "durationMin": 90,
-    "durationNote": "Public capture of kitchen.co: route probe, kit adaptation, screenshot and measurement passes, motion probe, offline build.",
+    "version": "marketing site plus free workspace; workspace --k-* token layer",
+    "durationMin": 180,
+    "durationNote": "Public capture plus signed-in pass: email signup, workspace empty states at 1440 and 390, --k-* primitives, no payments.",
     "pr": "https://github.com/starship-terminal/constellations/pull/641",
     "gaps": [
-     "Workspace app (https://kitchen.co/login redirects to https://kitchen.co/login/workspace): Continue was not pressed, so the signed-in client portal was not captured",
-     "Get started (https://kitchen.co/get-started): the email signup form was measured and not submitted",
      "Get a demo (https://kitchen.co/get-demo): the demo request form was not submitted",
-     "Lifetime checkout (https://kitchen.co/pricing Pay Now links to buy.stripe.com): Stripe checkout was not opened",
-     "Buy (https://kitchen.co/buy): the lifetime offer page is public; purchase was not started"
+     "Lifetime checkout (https://kitchen.co/pricing Pay Now and Settings > Billing Buy Lifetime Access): Stripe checkout was not opened",
+     "DocuMocu connect and Buy in the Proposals dialog were not pressed",
+     "Workspace theme customisation is paid (Settings > Branding > Theme & Colors Upgrade)",
+     "Invites, new folders, boards, conversations and clients were not created"
     ]
    },
    "layoutGaps": {
