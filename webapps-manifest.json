@@ -2514,8 +2514,8 @@
     182
    ],
    "description": "Kickstarter exists to help bring creative projects to life",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/kickstarter",
    "notes": "",
    "batch": 9
   },
