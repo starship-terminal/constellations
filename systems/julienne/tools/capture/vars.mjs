@@ -81,6 +81,7 @@ async function resolve(theme) {
   const names = [...new Set(result.rules.flatMap((r) => Object.keys(r.properties)))].filter((n) => !n.startsWith('--tw-')).sort();
   return probe.evaluate((want) => {
     const readEl = document.getElementById('probe-root');
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const box = document.createElement('div');
     box.style.cssText = 'position:absolute;width:1000px;height:200px;visibility:hidden';
     const child = document.createElement('div');
@@ -88,7 +89,7 @@ async function resolve(theme) {
     document.body.appendChild(box);
     const out = {};
     for (const name of want) {
-      const raw = getComputedStyle(readEl).getPropertyValue(name).trim() || getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+      const raw = noUrl(getComputedStyle(readEl).getPropertyValue(name).trim()) || noUrl(getComputedStyle(document.documentElement).getPropertyValue(name).trim());
       if (!raw) { out[name] = { kind: 'missing' }; continue; }
       const r = { raw: raw.length > 240 ? raw.slice(0, 240) + '…' : raw };
       child.removeAttribute('style');
