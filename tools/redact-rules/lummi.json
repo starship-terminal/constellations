@@ -1,0 +1,7 @@
+{
+  "_note": "Public signed-out capture. The login shot types the placeholder not-submitted@example.com and does not submit it. The terms page prints Lummi's published hi@lummi.ai. Neither is a private address.",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["@example\\.com$", "@lummi\\.ai$"]
+  }
+}

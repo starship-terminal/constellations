@@ -1,7 +1,7 @@
 {
  "date": "2026-11-18",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Reviewed against the public signed-out marketing capture on 2026-11-18. Scripted criteria stay with the grader.",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Public signed-out capture of lummi.ai on 2026-11-18, measured in headless Chromium at 1440 and 390. Grades set from the package README, tokens and screenshots.",
  "systems": [
   {
    "slug": "1password",
@@ -25872,103 +25872,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "manychat",
+   "slug": "lummi",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "Named brand colours (neon-pink, electric-cyan, dusk through kelp) and a short raw-neutral set (0, 10, 20, 700, 800, 900). Not a 10-step ramp per hue."
+     "evidence": "No hue ramps. The painted set is ink, white, muted zinc and one black accent. --yellow and --highlight are single declared roles, not 10-step ramps."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "light.background.page and secondary, plus surface primary/secondary/tertiary. No raised, overlay or scrim role paints on the public pages. The drawer was not captured."
+     "evidence": "Page, surface, overlay (popover) and scrim (bg-black/80) are captured. A raised role distinct from surface was not declared."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "text.primary, text.secondary, text.on-accent and text.on-ink. No dedicated link colour and no disabled role."
+     "evidence": "Primary, secondary (muted-foreground), faint, and on-accent are captured. Disabled text was not shown. Links use the same ink as primary text."
     },
     "F4": {
      "grade": "partly",
-     "evidence": "border.default is rgba(15, 15, 15, 0.08). No strong border and no designed focus border. Keyboard focus on 11 controls showed no measured outline."
+     "evidence": "Default border and a 2px focus outline are captured. A strong border role was not declared."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "Accent is the neon-pink hero pill. Hover and pressed were forced on the pill and showed no measured colour change."
+     "grade": "meets",
+     "evidence": "Try Pro and Continue have default, hover and pressed fills. Pressed was forced with CSS.forcePseudoState and matches hover."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "status.error (#c81e1e) and status.success (#067647) are declared semantic colours. They do not paint on the captured pages, and warning and info are absent."
+     "evidence": "Danger, warning (yellow) and info (highlight) are single declared colours. Success was an empty custom property. None has a fill, text and border trio."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "The site paints one light theme and has no theme switch. The dark set is empty on purpose."
+     "grade": "partly",
+     "evidence": "Every captured role has a --*-dark twin. Those twins were not painted. The public pages stayed light."
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "Three families with fallbacks (ManyChatGravity, Rooftop, CoFo Sans Mono) and a rem type ramp of more than 8 steps, with weight, line-height and letter-spacing. The site sets html font-size to 10px."
+     "grade": "partly",
+     "evidence": "Inter with Inter Fallback, plus DM Sans on /pro. Sizes run 12, 14, 16, 18, 20, 64, 104 and 141px, with weights and line heights. Display, heading, body, label and caption are named. No code role was shown."
     },
     "F9": {
      "grade": "partly",
-     "evidence": "Declared spacing steps in rem (2, 4, 6, 8, 10, 12, 16, 18, 24, plus section gaps) against the 10px root. Not a single 4px or 8px base unit."
+     "evidence": "4px base with measured 8, 12, 16, 24 and 40. Not a full declared scale."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "Radius scale from 4 to 48 plus full (999px). Border widths are measured on controls, not a named width scale."
+     "grade": "meets",
+     "evidence": "4px controls, 2px tabs, 6px menus, 8px cards, pill tags, 1px borders."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Nav height 92px, hero pill 48px, nav pill 44px, price CTA 48px, phone pill 32px. No icon-size scale. Focus ring was not painted on the measured controls."
+     "evidence": "40px header controls, 48px fields, 20px icons, 2px focus outline. Offset was 2px on the dialog, not recorded as a token. No small/medium/large control scale."
     },
     "F12": {
-     "grade": "missing",
-     "evidence": "No card, popover or dialog shadow scale was measured on the public pages. The Free card paints no box-shadow."
+     "grade": "partly",
+     "evidence": "One menu/dialog shadow was measured. No 3 to 5 level ramp."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "core.motion.ease is cubic-bezier(0.43, 0.195, 0.02, 1). Component transitions are 0.3s and 0.45s. A reduced-motion probe on nav a shortened the transition to 0.01ms. Durations are not a named scale."
+     "evidence": "150ms and 300ms with cubic-bezier(0.4, 0, 0.2, 1). prefers-reduced-motion was not reduced in this browser, so the reduced-motion change was not captured."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Desktop 1440 and phone 390 are recorded. The home phone pass measured innerWidth 392. Sticky chrome z-index is in the measurement meta. Grid columns are not tokenised."
+     "evidence": "1440 and 390 are captured. Content widths, grid columns and z-index layers were not recorded as a scale."
     },
     "C1": {
-     "grade": "missing",
-     "evidence": "Public pages paint button, link, menu, card and a FAQ list row. Icon button, text field, text area, select, checkbox, radio, switch, tabs, tooltip, dialog, toast, table, avatar and badge were not present or not captured."
+     "grade": "partly",
+     "evidence": "Button, icon button, link, text field, tabs, menu, dialog, card, list row, avatar and badge are on the public pages. Text area, select, checkbox, radio, tooltip, toast and table are not. The switch is visible in the Tools menu and was not measured on its own."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "Hover, focus-visible and pressed were measured on the pills and links. Opened was measured on the FAQ and the Product menu. Disabled, loading, error and selected do not paint on the public surface."
+     "evidence": "Buttons and links have hover, focus-visible and pressed. The email field has focused and filled. Selected is the Photos tab. Disabled, loading and error were not shown."
     },
     "C3": {
-     "grade": "partly",
-     "evidence": "Keyboard focus was applied to 11 controls. None drew a measured outline. Product, EN and Annual could not hold focus (divs and a span)."
+     "grade": "meets",
+     "evidence": "Focus-visible is a 2px solid outline on the nav link, Try Pro, Log in, the icon button, Continue and the email field."
     },
     "C4": {
      "grade": "partly",
-     "evidence": "components.md names a token when a measured colour matches. Sizes, fonts and radii that do not match a token stay as measured values."
+     "evidence": "components.md names the token for each measured colour. Several sizes are still raw px next to the token."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the chrome band, the hero, pricing, the guide index, the footer and the phone pass. Forms, empty, loading, error, search and onboarding sit behind sign-in."
+     "evidence": "App shell, search and filtering, and the image list are written. Form validation, empty, loading, destructive confirmation, feedback and onboarding were not on the signed-out surface. A missing-path page stands in for error."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts are named with fallbacks and are not shipped. No icons/ set. The wordmark and channel marks are in the crops. layoutGaps records the missing icon extraction."
+     "evidence": "Inter and DM Sans are named with their fallbacks. No icon set was indexed."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README says what was captured, how, the 10px root, and what to distrust: sign-in, checkout, the drawer, and the missing template gallery."
+     "evidence": "The README records the date, the route, the widths, what was not pressed, and what to distrust."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.02:1 light muted (light.text.secondary) on page (light.background.page)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.83:1 light muted (light.textMuted) on page (light.page)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 96 of 96 tokens name their source"
+     "evidence": "Script: 100 of 100 tokens name their source"
     },
     "K2": {
      "grade": "partly",
-     "evidence": "Script: 8 rules, 5 linking an image (needs 3+, all linked)"
+     "evidence": "Script: 6 rules, 3 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
@@ -25987,19 +25987,20 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "ManyChat",
-   "goodFor": "Chat-marketing pages: a white field, #0f0f0f ink, a #fa0cf7 neon-pink hero pill, a 68px black promo strip over a 92px nav, ManyChatGravity display at 72px against a 10px root, CoFo Sans Mono nav labels, 999px CTA pills, and a 369x662 pricing card at 24px radius",
-   "url": "https://manychat.com",
+   "name": "Lummi",
+   "goodFor": "A signed-out stock library: white page, Inter display at tight tracking, one black primary button, 4px controls, pill tags, a search command palette, and a public image page with Download left unpressed",
+   "url": "https://www.lummi.ai",
    "captured": "2026-11-18",
    "themes": [
-    "light"
+    "light",
+    "dark"
    ],
    "platform": "web",
-   "category": "Messaging",
+   "category": "Media",
    "reviewed": "2026-11-18",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Reviewed against the public signed-out marketing capture on 2026-11-18. Scripted criteria stay with the grader."
+ "reviewMethod": "Public signed-out capture of lummi.ai on 2026-11-18, measured in headless Chromium at 1440 and 390. Grades set from the package README, tokens and screenshots."
 }
