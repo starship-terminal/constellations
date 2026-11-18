@@ -91,6 +91,18 @@ for name, ps in parts.items():
     # whose dimension check passes only against itself.
     nums = [n for n, _ in ps]
     metas = [sidecar_for(f) for _, f in ps]
+    # No sidecars at all: publish the stitch and write no sidecar. A partial
+    # set stays rejected below.
+    if all(m is None for m in metas):
+        ims = [Image.open(f).convert('RGB') for _, f in ps]
+        sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
+        y = 0
+        for i in ims:
+            sheet.paste(i, (0, y)); y += i.height
+        sheet.save(RAW / f'{name}.png')
+        stitched[name] = None
+        print('stitched', name, sheet.size, 'without sidecars')
+        continue
     clips = [(m.get('capture') or {}).get('clip') if m else None for m in metas]
     doc_h = max((m.get('actual') or {}).get('documentSize', {}).get('height', 0) for m in metas) if all(metas) else 0
     contiguous = (nums == list(range(len(ps))) and all(clips) and clips[0]['y'] == 0

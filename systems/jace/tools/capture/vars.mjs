@@ -40,7 +40,8 @@ const live = await page.evaluate(() => {
   const root = getComputedStyle(document.documentElement);
   const pick = ['--surface-default', '--text-body-color-default', '--button-background-primary-default', '--font-family-sans', '--font-family-serif', '--motion-enter-duration', '--elevation-raised'];
   const vars = {};
-  for (const n of pick) vars[n] = root.getPropertyValue(n).trim();
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+  for (const n of pick) vars[n] = noUrl(root.getPropertyValue(n).trim());
   return {
     url: location.href,
     bodyBg: body.backgroundColor, bodyColor: body.color, bodyFont: body.fontFamily,
@@ -71,7 +72,8 @@ try {
     }
     const uniq = [...new Set(names)];
     const resolved = {};
-    for (const n of uniq) resolved[n] = root.getPropertyValue(n).trim();
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+    for (const n of uniq) resolved[n] = noUrl(root.getPropertyValue(n).trim());
     return {
       url: location.href,
       title: document.title,

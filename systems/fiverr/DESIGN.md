@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Fiverr"
-description: "freelance-marketplace design: a white sticky header with a Browse-categories drawer and a green Join pill, the dark photographic hero band with a dark-skinned search form, Macan type, popular-service chips, a /categories directory, gig cards with star ratings and localized 'From S$xx' pricing, the Basic/Standard/Premium package tablist on a gig page's pricing card, and the /join + /login auth edge — all measured as computed styles (the site's stylesheet is a hashed atomic layer with no named token layer)"
+description: "freelance-marketplace design: a white sticky header with a Browse-categories drawer and a green Join pill, the dark photographic hero band with a dark-skinned search form, Macan type, popular-service chips, a /categories directory, gig cards with star ratings and localized 'From S$xx' pricing, the Basic/Standard/Premium package tablist on a gig page's pricing card, and the /join + /login auth edge, all measured as computed styles (the site's stylesheet is a hashed atomic layer with no named token layer)"
 omitted:
   - section: "typography"
     reason: "tokens.json has no typography tokens under `core.typography`"
@@ -49,7 +49,7 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: freelance-marketplace design: a white sticky header with a Browse-categories drawer and a green Join pill, the dark photographic hero band with a dark-skinned search form, Macan type, popular-service chips, a /categories directory, gig cards with star ratings and localized 'From S$xx' pricing, the Basic/Standard/Premium package tablist on a gig page's pricing card, and the /join + /login auth edge — all measured as computed styles (the site's stylesheet is a hashed atomic layer with no named token layer).
+Good for: freelance-marketplace design: a white sticky header with a Browse-categories drawer and a green Join pill, the dark photographic hero band with a dark-skinned search form, Macan type, popular-service chips, a /categories directory, gig cards with star ratings and localized 'From S$xx' pricing, the Basic/Standard/Premium package tablist on a gig page's pricing card, and the /join + /login auth edge, all measured as computed styles (the site's stylesheet is a hashed atomic layer with no named token layer).
 
 Captured 2026-11-16, signed out (every captured surface is public; the buyer/seller account, orders, inbox, checkout and every post-login surface is an authenticated boundary never reached; the hero search, join and login fields were measured and typed into then cleared, never submitted). Themes: light.
 

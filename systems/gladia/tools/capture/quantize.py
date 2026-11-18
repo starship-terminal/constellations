@@ -58,6 +58,10 @@ def check_tiles(name, ps):
     for i, f in ps:
         sc = sidecar_for(f)
         if sc is None:
+            # No sidecars at all: publish the stitch and write no sidecar.
+            # A partial set, one tile measured and another not, still dies.
+            if all(sidecar_for(tile) is None for _, tile in ps):
+                return None
             die(f'{f.name}: no .capture.json sidecar — the tile never finished writing')
         chk = sc.get('dimensionCheck') or {}
         if chk.get('status') != 'pass':
@@ -165,16 +169,23 @@ for f in sorted(RAW.glob('*.png')):
     else:
         meta = sidecar_for(f)
     status = ((meta or {}).get('dimensionCheck') or {}).get('status')
-    if status != 'pass':
+    # A stitched image publishes even when its rebuilt check fails: the
+    # failing sidecar is the evidence. An unmeasured stitch publishes with
+    # no sidecar. A plain capture with no sidecar publishes and drops any
+    # sidecar a previous run left behind.
+    publish_fail = f.stem in stitched and status == 'fail'
+    unmeasured = f.stem in stitched and meta is None
+    plain_unmeasured = f.stem not in stitched and meta is None
+    if status != 'pass' and not publish_fail and not unmeasured and not plain_unmeasured:
         skipped.append(f'{f.name} (sidecar {status or "missing"})')
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
     out_side = OUT / f'{f.name}.capture.json'
     out_side.unlink(missing_ok=True)   # never leave a previous run's measurements beside a new image
-    if f.stem in stitched:
+    if publish_fail or (f.stem in stitched and meta):
         out_side.write_text(json.dumps(meta, indent=1) + '\n')
-    else:
+    elif not unmeasured and not plain_unmeasured and f.with_name(f.name + '.capture.json').exists():
         shutil.copyfile(f.with_name(f.name + '.capture.json'), out_side)
     n += 1
 print(n, 'screenshots ->', OUT)

@@ -90,11 +90,12 @@ async function resolve(theme) {
   await p.setContent(shell, { waitUntil: 'domcontentloaded' });
   if (theme === 'dark') await p.evaluate(() => document.documentElement.classList.add('dark'));
   const values = await p.evaluate((names) => {
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const root = document.documentElement;
     const cs = getComputedStyle(root);
     const out = {};
     for (const n of names) {
-      const raw = cs.getPropertyValue(n).trim();
+      const raw = noUrl(cs.getPropertyValue(n).trim());
       if (!raw) continue;
       root.style.setProperty('--probe', `var(${n})`);
       const painted = getComputedStyle(root).getPropertyValue('--probe').trim();
