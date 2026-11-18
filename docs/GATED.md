@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_152 of 210 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_153 of 211 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -896,6 +896,14 @@ Access: signed-out public marketing, docs, legal, help center, and the app.limit
 - Pendant purchase is no longer offered to new customers; the unavailable dialog tells Pendant owners to email support; no checkout was opened
 - account deletion, documented at https://help.limitless.ai/en/articles/13005203-how-to-delete-your-limitless-account-and-data, was not opened
 - the Slack community invite at https://www.limitless.ai/community leaves the site and was not followed
+
+## [Maze](../systems/maze) — `maze`
+Access: signed-out public marketing, pricing, the auth login card, and one published sample report. No study started. No form submitted. No purchase.
+- app.maze.co past the public report redirects to sign-in; the workspace was not entered
+- auth.maze.co/signup and the Starter Sign up now link were not followed
+- the login form was not submitted; the password field was never filled
+- the demo form and the footer newsletter were not submitted
+- SSO and password reset were not opened
 
 ## [Lummi](../systems/lummi) — `lummi`
 Access: signed-out public marketing, browse, a public image page, and the /login wall. Downloads, the account, generation and checkout were not entered. Continue, Download, Google and the Stripe checkout link were not pressed.
