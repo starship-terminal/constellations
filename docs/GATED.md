@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_152 of 210 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_153 of 211 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -904,6 +904,11 @@ Access: signed-out public marketing, browse, a public image page, and the /login
 - Generation (Create image, Create video) sits behind sign-in and was not opened
 - https://www.lummi.ai/pro links to a Stripe checkout and that checkout was not opened
 - The email field on /login was filled with a placeholder and cleared; the form was not submitted
+
+## [ManyChat](../systems/manychat) — `manychat`
+Access: read-only (the marketing site is public signed out; the bot builder and the in-app template library sit behind sign-in at app.manychat.com, never entered; Log in, Get started and Start for free were measured, never followed; checkout was not submitted)
+- the bot builder and the in-app template library sit behind sign-in at app.manychat.com; Log in and Get started were measured, never followed
+- checkout was not submitted; Monthly and Annual were toggled locally
 
 ## Gate noted in access text only
 
