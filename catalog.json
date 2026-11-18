@@ -16923,8 +16923,13 @@
       "shape": "reference",
       "captured": "2026-11-18",
       "access": "signed-out public marketing, pricing, the auth login card, and one published sample report. No study started. No form submitted. No purchase.",
-      "themes": ["light"],
-      "widths": [1440, 390],
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
       "entry": "systems/maze/README.md",
       "tokens": "systems/maze/tokens.json",
       "styleGuide": "systems/maze/style-guide.html",
@@ -16941,7 +16946,10 @@
             "border": "light.border"
           }
         },
-        "fonts": ["core.font.family.display", "core.font.family.sans"]
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans"
+        ]
       },
       "source": "capture",
       "capture": {
@@ -18374,6 +18382,66 @@
       },
       "layoutGaps": {
         "icons/": "Spotify's icons and logo are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "square",
+      "name": "Square",
+      "url": "https://squareup.com/",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Payments marketing and signed-out login chrome: white page, blue #006AFF pills, Square Sans Display headlines, Cash Sans nav, and a login split with black Continue pills and an 8px field",
+      "tags": [
+        "web",
+        "finance",
+        "payments",
+        "marketing",
+        "signed-out",
+        "light",
+        "pill",
+        "blue"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing pages and the login email step were measured; nothing was typed or submitted; the signup wall was recorded and not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/square/README.md",
+      "tokens": "systems/square/tokens.json",
+      "styleGuide": "systems/square/style-guide.html",
+      "preview": {
+        "cover": "systems/square/icon.png",
+        "icon": "systems/square/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.color.accent",
+            "border": "light.border.field"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.text",
+          "core.fontFamily.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45,
+        "version": "public marketing and signed-out login, 2026-11-19"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot failed twice with The browser is not producing screenshot frames. No PNG was invented.",
+        "components/": "no crops, because the preview browser produced no screenshot frames",
+        "icons/": "Square wordmark and glyphs were not lifted; they stay on squareup.com"
       }
     },
     {
