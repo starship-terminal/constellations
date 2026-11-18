@@ -52,7 +52,7 @@ const css = fs.readFileSync(cssFile, 'utf8').replace(/^\/\* https?:\/\/[^\n]*\n/
 console.log('parsing', cssFile, 'bytes', css.length);
 
 const live = await page.evaluate(async (cssText) => {
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const sheet = new CSSStyleSheet();
   await sheet.replace(cssText);
   document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
@@ -91,8 +91,8 @@ const live = await page.evaluate(async (cssText) => {
   for (const d of decls) for (const k of Object.keys(d.props)) names.add(k);
   const resolved = {};
   for (const name of names) {
-    const v = cs.getPropertyValue(name).trim();
-    if (v) resolved[name] = noUrl(v);
+    const v = noUrl(cs.getPropertyValue(name).trim());
+    if (v) resolved[name] = v;
   }
   const reduceRules = [];
   const walkReduce = (list, ctx) => {

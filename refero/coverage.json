@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 211,
-    "system_domains": 202,
-    "matched_domains": 172,
-    "missing_domains": 261,
+    "system_packages": 210,
+    "system_domains": 201,
+    "matched_domains": 171,
+    "missing_domains": 262,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2831,23 +2831,6 @@
         }
       ]
     },
-    "macawhq.com": {
-      "catalog": [
-        {
-          "name": "Macaw",
-          "domain": "macawhq.com",
-          "id": 593
-        }
-      ],
-      "pkgs": [
-        {
-          "slug": "macaw",
-          "name": "Macaw",
-          "url": "https://macawhq.com",
-          "name_match": true
-        }
-      ]
-    },
     "manus.im": {
       "catalog": [
         {
@@ -3269,6 +3252,13 @@
         "name": "Luma AI",
         "domain": "lumalabs.ai",
         "id": 448
+      }
+    ],
+    "macawhq.com": [
+      {
+        "name": "Macaw",
+        "domain": "macawhq.com",
+        "id": 593
       }
     ],
     "mailchimp.com": [

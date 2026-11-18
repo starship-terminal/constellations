@@ -123,7 +123,7 @@ const result = await probe.evaluate((sheets) => {
       const sel = r.selectorText || '';
       for (let i = 0; i < r.style.length; i++) {
         const k = r.style[i];
-        const v = r.style.getPropertyValue(k).trim();
+        const v = noUrl(r.style.getPropertyValue(k).trim());
         if (k && k.startsWith('--')) { props[k] = noUrl(v); n++; }
         if (/var\(--/.test(v) && sel && !/\\\[--/.test(sel)) {
           for (const cls of sel.split(',')) {

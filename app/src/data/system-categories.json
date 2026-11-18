@@ -1258,11 +1258,5 @@
     "groupId": "web-categories",
     "labels": ["Entertainment"],
     "reason": "catalog.json describes a signed-out stock library: a search palette and a public image page."
-  },
-  {
-    "referenceId": "systems:macaw",
-    "groupId": "web-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json describes a cream marketing site for an AI website builder: one coral action and tinted pricing cards."
   }
 ]

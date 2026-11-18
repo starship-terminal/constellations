@@ -99,7 +99,7 @@ export async function styleOf(locator) {
     };
     for (const pe of ['::before', '::after']) {
       const p = getComputedStyle(el, pe);
-      if (p.content && p.content !== 'none' && p.content !== 'normal') out[pe] = { content: p.content.slice(0, 40), style: pick(p) };
+      if (p.content && p.content !== 'none' && p.content !== 'normal') out[pe] = { content: noUrl(p.content).slice(0, 40), style: pick(p) };
     }
     return out;
   }, PROPS);
