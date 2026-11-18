@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 217,
-    "system_domains": 208,
-    "matched_domains": 178,
-    "missing_domains": 255,
+    "system_packages": 218,
+    "system_domains": 209,
+    "matched_domains": 179,
+    "missing_domains": 254,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2038,6 +2038,23 @@
         }
       ]
     },
+    "forhers.com": {
+      "catalog": [
+        {
+          "name": "Hers",
+          "domain": "forhers.com",
+          "id": 782
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "forhers",
+          "name": "For Hers",
+          "url": "https://www.forhers.com/",
+          "name_match": false
+        }
+      ]
+    },
     "fourmula.ai": {
       "catalog": [
         {
@@ -3189,13 +3206,6 @@
         "name": "Fibery",
         "domain": "fibery.io",
         "id": 415
-      }
-    ],
-    "forhers.com": [
-      {
-        "name": "Hers",
-        "domain": "forhers.com",
-        "id": 782
       }
     ],
     "forhims.co.uk": [

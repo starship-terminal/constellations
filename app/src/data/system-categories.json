@@ -1300,5 +1300,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool"],
     "reason": "catalog.json describes creator generative-media marketing: a black canvas, a violet wordmark, and a signed-out app shell."
+  },
+  {
+    "referenceId": "systems:forhers",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Marketplace"],
+    "reason": "catalog.json describes the Hers women's telehealth storefront: treatment verticals (weight loss, hair, skin, mental health, birth control, anti-aging, labs), product cards with prices, a BMI calculator, an editorial blog and a drug-information index - health and wellness products sold direct."
   }
 ]
