@@ -387,10 +387,10 @@ test("version-nine stores gain the District rows, without touching their own lab
     ),
   ).toBe(40);
   const categories = await migrated.listReferenceCategories();
-  // Two seed labels (Entertainment + Travel & Booking) land as two rows.
+  // Entertainment, Travel & Booking, and Scheduling Tools land as three rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:district"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   expect(
     (await migrated.listReferenceCategoryDetails(["systems:district"]))[0]
       .label,
@@ -525,13 +525,13 @@ test("version-thirteen stores gain the Calm rows, without touching their own lab
     ),
   ).toBe(40);
   const categories = await migrated.listReferenceCategories();
-  // One seed label (Health & Wellness) lands as one row.
+  // The catalog category fitness lands as Fitness.
   expect(
     categories.filter((row) => row.referenceId === "systems:calm"),
   ).toHaveLength(1);
   expect(
     (await migrated.listReferenceCategoryDetails(["systems:calm"]))[0].label,
-  ).toBe("Health & Wellness");
+  ).toBe("Fitness");
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:calm").length,
@@ -661,27 +661,27 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
     ),
   ).toBe(40);
   const categories = await migrated.listReferenceCategories();
-  // The seed labels (Health & Wellness + Marketplace) land as two rows.
+  // Health & Wellness, Marketplace, and Fitness land as three rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:classpass"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   expect(
     (await migrated.listReferenceCategoryDetails(["systems:classpass"])).map(
       (row) => row.label,
     ),
-  ).toEqual(["Health & Wellness", "Marketplace"]);
+  ).toEqual(["Health & Wellness", "Marketplace", "Fitness"]);
   expect(
     categories.filter((row) => row.referenceId === "systems:frame"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   expect(
     categories.filter((row) => row.referenceId === "systems:gladia"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   expect(
     categories.filter((row) => row.referenceId === "systems:glassnode"),
   ).toHaveLength(2);
   expect(
     categories.filter((row) => row.referenceId === "systems:front"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:classpass").length,
@@ -727,11 +727,11 @@ test("version-twelve stores gain the Frame.io rows, without touching their own l
     ),
   ).toBe(40);
   const categories = await migrated.listReferenceCategories();
-  // Two seed labels (Collaboration Tools + Design & Media Editing) land as
-  // two rows.
+  // Collaboration Tools, Design & Media Editing, and Productivity land as
+  // three rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:frame"),
-  ).toHaveLength(2);
+  ).toHaveLength(3);
   expect(
     (await migrated.listReferenceCategoryDetails(["systems:frame"])).map(
       (row) => row.label,
@@ -1564,15 +1564,15 @@ test("version-thirty-three stores gain the Headspace rows, without touching thei
     ),
   ).toBe(40);
   const categories = await migrated.listReferenceCategories();
-  // The seed label (Health & Wellness) lands as one row.
+  // Health & Wellness and Fitness land as two rows.
   expect(
     categories.filter((row) => row.referenceId === "systems:headspace"),
-  ).toHaveLength(1);
+  ).toHaveLength(2);
   expect(
     (await migrated.listReferenceCategoryDetails(["systems:headspace"])).map(
       (row) => row.label,
     ),
-  ).toEqual(["Health & Wellness"]);
+  ).toEqual(["Health & Wellness", "Fitness"]);
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:headspace").length,
