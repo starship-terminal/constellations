@@ -16466,7 +16466,8 @@
      "IFTTT paints one theme; no dark theme exists to tokenise - the dark grounds are painted sections recorded under light.component.dark"
     ],
     "durationMin": 240,
-    "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest and resolution, the screenshot pass, the measurement pass and the offline build"
+    "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest and resolution, the screenshot pass, the measurement pass and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/661"
    }
   }
  ]
