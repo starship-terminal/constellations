@@ -230,20 +230,25 @@ export function groupRecords(records, examples = 3) {
 }
 
 // Counts per outcome and the page's overall behaviour under reduce: no-motion, honours (every moving
-// element is removed or reduced; more motion never counts), ignores (every one is kept) or partial. `loops` names the animations
-// that keep looping, the case reduced motion exists for.
+// element is removed or reduced, and nothing new starts), ignores (every one is kept) or partial.
+// `added` is motion too: a page that only starts an animation under reduce is not no-motion, and a
+// page that stops one animation while starting another does not honour the preference.
+// `loops` names the animations that keep looping, the case reduced motion exists for.
 export function summarise(groups) {
   const counts = { removed: 0, reduced: 0, kept: 0, partial: 0, increased: 0, added: 0 };
   const loops = new Set();
   let moving = 0;
   for (const g of groups) {
     counts[g.outcome] = (counts[g.outcome] || 0) + g.count;
-    if (g.outcome !== 'added') moving += g.count;
+    // A replacement (old animation removed, new one added) is outcome partial,
+    // so the added item has to be counted on its own or the new motion disappears.
+    if (g.outcome !== 'added' && g.items.some((i) => i.outcome === 'added')) counts.added += g.count;
+    moving += g.count;
     for (const i of g.items) if (i.loops) loops.add(i.key);
   }
   let behaviour;
   if (!moving) behaviour = 'no-motion';
-  else if (!counts.kept && !counts.partial && !counts.increased) behaviour = 'honours';
+  else if (!counts.kept && !counts.partial && !counts.increased && !counts.added) behaviour = 'honours';
   else if (counts.kept === moving) behaviour = 'ignores';
   else behaviour = 'partial';
   return { moving, ...counts, behaviour, loops: [...loops].sort() };
@@ -257,7 +262,7 @@ export function mergeSummaries(list) {
     for (const k of Object.keys(total)) total[k] += s[k] || 0;
     for (const l of s.loops || []) loops.add(l);
   }
-  const behaviour = !total.moving ? 'no-motion' : !total.kept && !total.partial && !total.increased ? 'honours' : total.kept === total.moving ? 'ignores' : 'partial';
+  const behaviour = !total.moving ? 'no-motion' : !total.kept && !total.partial && !total.increased && !total.added ? 'honours' : total.kept === total.moving ? 'ignores' : 'partial';
   return { ...total, behaviour, loops: [...loops].sort() };
 }
 

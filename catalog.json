@@ -6416,7 +6416,7 @@
      "Subscribe on https://leonardo.ai/pricing hands off to the app; checkout was not entered",
      "OAuth at https://app.leonardo.ai/auth/login (Canva, Apple, Google, Microsoft) and Continue with Email were measured at rest, never followed; the email form and Turnstile were not submitted",
      "API keys and the API console sit behind the account; https://leonardo.ai/api and the public docs page were captured, the console was not",
-     "Contact form submission at https://leonardo.ai/contact-us was not sent",
+     "Contact form at https://leonardo.ai/contact-us was not submitted",
      "Team plans checkout at https://leonardo.ai/team-plans was not entered",
      "Marketing nav controls (header, Pricing, Log in, Create, Start now) and the app rail, Sign up, Sign in and featured cards are in the screenshots and were not boxed on the measurement pass"
     ],

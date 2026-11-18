@@ -1,4 +1,4 @@
-// Collects every distinct inline <svg> icon on Gauth's public pages into icons/ and writes icons/INDEX.tsv.
+// Collects every distinct inline <svg> icon on Leonardo.Ai's signed-out pages into icons/ and writes icons/INDEX.tsv.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node icons.mjs
 //
@@ -10,7 +10,7 @@
 // Adapted from the Coursera kit's icons.mjs.
 import crypto from 'crypto';
 import fs from 'fs';
-import { M, BASE, chromium, UA, closePromo, openStory } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
+import { BASE, APP, DOCS, closePromo, launch, open } from './public/lib.mjs';
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -77,52 +77,27 @@ async function scrollAll(p, tag) {
   for (let y = 0; y < h; y += 700) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 250); await grab(p, tag); }
   await p.evaluate(() => scrollTo(0, 0)); await wait(p, 400);
 }
-async function open(p, path, w = 6500) {
-  await p.goto(BASE + path, { waitUntil: 'load', timeout: 90000 }); await wait(p, w);
-}
-// A page that fails is recorded, and a run with any failure leaves the committed icons alone.
+// Signed-out Leonardo pages. Nothing is followed through login, OAuth or Generate.
+const PAGES = [
+  [BASE + '/', 'home'],
+  [BASE + '/pricing', 'pricing'],
+  [APP + '/', 'app'],
+  [APP + '/auth/login', 'login'],
+  [DOCS + '/docs/getting-started', 'docs'],
+];
 const failed = [];
 async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(label); console.log('  skip', label, String(e.message).split('\n')[0]); } }
 
-const b = await chromium.launch();
-const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
-const p = await ctx.newPage();
-
-await open(p, '/');
-await grab(p, 'home (promo dialog)');
-await closePromo(p);
-await scrollAll(p, 'home');
-for (const [path, tag] of [['/course/science', 'academy'], ['/course/math', 'academy'], ['/course/my', 'academy'], ['/news', 'news']]) {
-  await open(p, path); await closePromo(p); await scrollAll(p, tag);
+const { browser, context } = await launch();
+const p = await context.newPage();
+for (const [url, tag] of PAGES) {
+  await tryDo(tag, async () => {
+    await open(p, url);
+    await closePromo(p);
+    await scrollAll(p, tag);
+  });
 }
-await tryDo('create dialog', async () => { await open(p, '/course/my'); await closePromo(p); await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2000); await grab(p, 'academy (create dialog)'); });
-await open(p, '/course/math/algebra-1?unit=real-numbers-and-sets'); await closePromo(p); await grab(p, 'unit');
-await tryDo('science lesson', async () => {
-  await open(p, '/course/science/how-things-work-1/learn?entry_source=start&from=science', 7000);
-  await grab(p, 'lesson-science (audio dialog)');
-  const nn = p.getByRole('button', { name: 'Not now' }); if (await nn.count()) await nn.click();
-  await wait(p, 1500); await grab(p, 'lesson-science');
-  await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await grab(p, 'lesson-science (settings)');
-  await p.keyboard.press('Escape');
-  const pz = p.getByRole('button', { name: 'Pause' }); if (await pz.count()) await pz.click();
-  await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1200); await grab(p, 'lesson-science (ask tutor)');
-});
-await tryDo('math lesson', async () => {
-  await open(p, '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', 8000);
-  const c = p.getByRole('button', { name: 'Continue', exact: true }); if (await c.count()) { await c.click(); await wait(p, 3000); }
-  await grab(p, 'lesson-math');
-  await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1000); await grab(p, 'lesson-math (chapters)');
-});
-await tryDo('history lesson', async () => {
-  await open(p, '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', 8000);
-  await grab(p, 'lesson-history');
-  await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1000); await grab(p, 'lesson-history (chapters)');
-});
-await tryDo('atlas', async () => {
-  await open(p, '/atlas'); await closePromo(p); await scrollAll(p, 'atlas');
-  await openStory(p); await grab(p, 'atlas story');
-});
-await b.close();
+await browser.close();
 
 // The old set is replaced only after a complete collection, so a run that dies early or loses a page
 // cannot leave icons/ emptied or out of step with INDEX.tsv.

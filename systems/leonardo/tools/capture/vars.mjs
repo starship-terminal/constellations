@@ -94,20 +94,28 @@ const result = await probe.evaluate((sheets) => {
   return { rules, fonts, errors };
 }, sheets);
 
-// ---- resolution: probe document with the real sheets, light and dark ----
-const shell = (attr, cls) => '<!doctype html><html' + (attr ? ' ' + attr : '') + '><head>'
-  + sheets.map(([n, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
+// ---- resolution: one probe document per host, then light and dark ----
+// Marketing, the app and the docs all declare names such as --font-weight-bold
+// and --radius. Loading every sheet into one page lets the last host win, so
+// each host is resolved in its own document and the readings stay separate.
+const HOSTS = ['marketing', 'app', 'docs'];
+const hostOf = (file) => HOSTS.find((h) => file.startsWith(h + ' ')) || 'other';
+const sheetsByHost = Object.fromEntries(HOSTS.map((h) => [h, sheets.filter(([n]) => hostOf(n) === h)]));
+const shell = (hostSheets, attr, cls) => '<!doctype html><html' + (attr ? ' ' + attr : '') + '><head>'
+  + hostSheets.map(([, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
   + '</head><body><div id="probe-wrap"' + (cls ? ' class="' + cls + '"' : '') + '><div id="probe-root"></div></div></body></html>';
 const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]
   .filter((n) => !/^--(tw-|_|lightningcss-)/.test(n)).sort();
 const resolved = {};
+const resolvedByHost = {};
 // dji.com scopes its semantic layer to section classes, not a root
 // attribute: `:root .light-theme` and `:root .dark-theme` re-declare
 // --primary/--bg/--border/… (section wrappers opt into dark or light
 // paint — the dark hero sections are themed, not baked). The plain and
 // data-theme passes resolve the unscoped layer (identical — no theme
 // attribute ships); the theme passes compute inside a wrapper carrying
-// the product's own class.
+// the product's own class. Each pass runs once per host so a shared name
+// keeps the value that host declared.
 const PASSES = {
   plain: ['', ''],
   light: ['data-theme="light"', ''],
@@ -116,8 +124,12 @@ const PASSES = {
   colorModeDark: ['data-color-mode="dark"', ''],
   htmlDark: ['class="dark"', ''],
 };
+for (const host of HOSTS) resolvedByHost[host] = {};
 for (const [pass, [attr, cls]] of Object.entries(PASSES)) {
-  await probe.setContent(shell(attr, cls), { waitUntil: 'load' });
+  resolved[pass] = {};
+  for (const host of HOSTS) {
+    if (!sheetsByHost[host].length) continue;
+    await probe.setContent(shell(sheetsByHost[host], attr, cls), { waitUntil: 'load' });
   resolved[pass] = await probe.evaluate((names) => {
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const box = document.createElement('div');
@@ -183,6 +195,18 @@ for (const [pass, [attr, cls]] of Object.entries(PASSES)) {
     box.remove();
     return out;
   }, want);
+    resolvedByHost[host][pass] = resolved[pass];
+  }
+  // Publish one flat pass for readers that still look up a name once.
+  // A name only one host declares keeps that reading. A name several
+  // hosts declare keeps the product host (app, then marketing): docs
+  // ReadMe names such as --font-weight-bold must not overwrite it.
+  // resolvedByHost keeps every host, so a later rebuild can pick explicitly.
+  for (const host of ['app', 'marketing', 'docs']) {
+    for (const [name, reading] of Object.entries(resolvedByHost[host][pass] || {})) {
+      if (!(name in resolved[pass])) resolved[pass][name] = { ...reading, host };
+    }
+  }
 }
 await probeCtx.close().catch(() => {});
 await browser.close();
@@ -226,9 +250,11 @@ const out = {
   tailwind: ok.filter((r) => r.bin === 'tailwind'),
   fonts: result.fonts,
   resolved,
+  resolvedByHost,
 };
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
 fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
 console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names theme ${out.counts.names.theme}, app ${out.counts.names.app}, skins ${out.counts.names.skins}, vendor ${out.counts.names.vendor}, utility ${out.counts.names.utility}, tailwind ${out.counts.names.tailwind}`);
 console.log(`resolved: ${Object.keys(resolved).map((k) => k + ' ' + Object.keys(resolved[k]).length).join(', ')}`);
+console.log(`resolvedByHost: ${HOSTS.map((h) => h + ' ' + Object.keys(resolvedByHost[h].plain || {}).length).join(', ')}`);
 for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 25)) console.log(`  ${v}\t${k.slice(0, 150)}`);

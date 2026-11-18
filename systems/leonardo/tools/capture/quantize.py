@@ -4,10 +4,12 @@ usage: python3 tools/capture/quantize.py RAW_DIR
 
 Playwright screenshots are already sRGB, so there is no profile conversion, only quantization. A page
 taller than one GPU texture is captured by public.mjs as name.part0.png, name.part1.png, ...; those are
-stitched top to bottom into name.png first (the stitched full-colour copy stays in RAW_DIR). The
-full-colour originals are kept in RAW_DIR only; screenshots/ gets the 256-colour versions that are
-committed. Flat UI colours are exact, gradients and photographs band a little, so read exact colours
-from raw/css-vars.json and raw/components-computed.json. Adapted from the Coursera kit.
+stitched top to bottom into name.png first, and only when name.parts.json lists exactly those tiles
+(the stitched full-colour copy stays in RAW_DIR). A partial tile set is left unstitched: stitching it
+would replace the full-page image with a truncated one. The full-colour originals are kept in RAW_DIR
+only; screenshots/ gets the 256-colour versions that are committed. Flat UI colours are exact,
+gradients and photographs band a little, so read exact colours from raw/css-vars.json and
+raw/components-computed.json. Adapted from the Coursera kit.
 
 Every image's .capture.json sidecar travels with it: a plain capture's sidecar is copied next to the
 quantized PNG, and a stitched image's sidecar is rebuilt from its part tiles' sidecars — the parts'
@@ -20,7 +22,7 @@ import json, pathlib, re, shutil, sys
 
 REF = pathlib.Path(__file__).resolve().parent.parent.parent
 RAW = pathlib.Path(sys.argv[1])
-OUT = REF / 'screenshots'
+OUT = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else REF / 'screenshots'
 OUT.mkdir(exist_ok=True)
 
 
@@ -83,6 +85,18 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
+    # public.mjs writes name.parts.json only after the last tile lands. A set
+    # without that record, or whose tiles do not match it, is a partial
+    # capture. Leave the previous full-page image alone.
+    rec = RAW / f'{name}.parts.json'
+    ondisk = [f.name for _, f in ps]
+    if not rec.exists():
+        print(f'  ! {name}: no {rec.name} completion record; leaving {len(ps)} tile(s) unstitched')
+        continue
+    want = json.loads(rec.read_text()).get('tiles') or []
+    if sorted(want) != sorted(ondisk) or any(i != n for i, (n, _) in enumerate(ps)):
+        print(f'  ! {name}: record lists {want} but disk has {ondisk}; leaving unstitched')
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0

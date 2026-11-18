@@ -148,6 +148,23 @@ test('summarise and mergeSummaries name the page behaviour', () => {
   assert.equal(mergeSummaries([summarise(kept), summarise(gone)]).behaviour, 'partial');
   assert.equal(mergeSummaries([summarise(gone), summarise(gone)]).behaviour, 'honours');
   assert.equal(mergeSummaries([]).behaviour, 'no-motion');
+  // motion that only appears under reduce is still motion
+  const onlyAdded = groupRecords([{ node: 'a', base: motionOf({}), reduced: motionOf({ animationName: 'pulse', animationDuration: '1s', animationIterationCount: 'infinite' }) }]);
+  assert.equal(onlyAdded[0].outcome, 'added');
+  const onlyAddedSummary = summarise(onlyAdded);
+  assert.equal(onlyAddedSummary.behaviour, 'partial');
+  assert.equal(onlyAddedSummary.moving, 1);
+  assert.equal(onlyAddedSummary.added, 1);
+  assert.equal(onlyAddedSummary.removed, 0);
+  assert.deepEqual(summarise(onlyAdded).loops, ['pulse']);
+  // stopping one animation and starting another does not honour the preference
+  const spin = motionOf({ animationName: 'spin', animationDuration: '1s', animationIterationCount: 'infinite' });
+  const pulse = motionOf({ animationName: 'pulse', animationDuration: '1s', animationIterationCount: 'infinite' });
+  const swapped = summarise(groupRecords([{ node: 'a', base: spin, reduced: pulse }]));
+  assert.equal(swapped.behaviour, 'partial');
+  assert.notEqual(swapped.behaviour, 'honours');
+  assert.equal(swapped.added, 1);
+  assert.equal(mergeSummaries([summarise(onlyAdded)]).behaviour, 'partial');
 });
 
 test('declaredOf records only what the rule authors', () => {

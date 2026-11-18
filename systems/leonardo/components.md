@@ -2,7 +2,7 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from leonardo.ai, app.leonardo.ai and docs.leonardo.ai on 2026-11-18, signed out, in headless Chromium at 1440 x 900 (the Phone group at 390 x 844), with computed styles read from the running page. Nothing was signed into, generated, purchased or submitted. Log in, Start now, Subscribe, Generate and the OAuth buttons were measured where they painted, never followed. Marketing, the signed-out app and the public docs page paint one dark theme.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (34 components, 55 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/components-computed.json](raw/components-computed.json) (34 components, 55 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
@@ -60,7 +60,7 @@ Values that apply across entries, from the measurement files.
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Learn card](#learn-card) | 590.39 x 598.11 | - | - | transparent | none | 0 |
-| [Continue with Canva](#continue-with-canva) | 240.5 x 32.5 | - | 9.75px | rgba(255, 255, 255, 0.1) `color.docs.border` `color.docs.border` | none | 6.5px 13px |
+| [Continue with Canva](#continue-with-canva) | 240.5 x 32.5 | - | 9.75px | rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base` | none | 6.5px 13px |
 | [Generate button](#generate-button) | 97.28 x 32.5 | - | 13000px | #262626 `color.hover` | none | 6.5px 19.5px |
 
 ## Components
@@ -134,7 +134,7 @@ Not on the page when it was captured.
 #### API hero
 The public API marketing heading. Read as `api-h1` on the API page.
 
-**Values (default).** size 1188.34 x 174.14; background transparent; text leoSans 64.5/58.05 900, #6e60ee `color.purple`.
+**Values (default).** size 1188.34 x 174.14; background transparent; text leoSans 64.5/58.05 900, #6e60ee `color.purple.base`.
 
 ![API hero default](components/crops/api-h1-default.png)
 
@@ -211,8 +211,8 @@ An aspect-ratio chip on the signed-out composer. Measured at rest. Not selected,
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 66.03 x 32.5; padding 6.5px 13px; radius 13000px; background rgba(255, 255, 255, 0.1) `color.docs.border` `color.docs.border`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
-| hover | background rgba(255, 255, 255, 0.2) |
+| default | size 66.03 x 32.5; padding 6.5px 13px; radius 13000px; background rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
+| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` `color.docs.border.strong` |
 | focus-visible | shadow rgba(110, 96, 238, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(23, 23, 23, 0.8) |
 
@@ -243,7 +243,7 @@ A blueprint category chip. Measured at rest. Read as `bp-chip` on the blueprints
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 52 x 31.25; padding 6.5px 13px; border 1px solid #7c71f7 `color.text.link`; radius 13000px; background rgba(110, 96, 238, 0.15); text canvaSans 11.37/16.25 500, #fafafa `color.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default (same: hover, pressed) | size 52 x 31.25; padding 6.5px 13px; border 1px solid #7c71f7 `color.purple.400`; radius 13000px; background rgba(110, 96, 238, 0.15); text canvaSans 11.37/16.25 500, #fafafa `color.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | focus-visible | shadow #ffffff 0px 0px 0px 0px, rgba(110, 96, 238, 0.5) 0px 0px 0px 4px |
 
 ![Category chip default](components/crops/bp-chip-default.png) ![Category chip hover](components/crops/bp-chip-hover.png) ![Category chip focus-visible](components/crops/bp-chip-focus-visible.png) ![Category chip pressed](components/crops/bp-chip-pressed.png)
@@ -264,8 +264,8 @@ An OAuth button. Measured at rest. Never followed. Read as `li-canva` on the log
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border` `color.docs.border`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #ffffff `color.white` |
-| hover | background rgba(255, 255, 255, 0.2) |
+| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #ffffff `color.white` |
+| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` `color.docs.border.strong` |
 | focus-visible | shadow rgba(110, 96, 238, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(23, 23, 23, 0.8) |
 
@@ -276,8 +276,8 @@ An OAuth button. Measured at rest. Never followed. Read as `li-google` on the lo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border` `color.docs.border`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
-| hover | background rgba(255, 255, 255, 0.2) |
+| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
+| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` `color.docs.border.strong` |
 | focus-visible | shadow rgba(110, 96, 238, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(23, 23, 23, 0.8) |
 
@@ -288,8 +288,8 @@ The email path control. Measured. Not clicked, so the email form was not submitt
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border` `color.docs.border`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
-| hover | background rgba(255, 255, 255, 0.2) |
+| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
+| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` `color.docs.border.strong` |
 | focus-visible | shadow rgba(110, 96, 238, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(23, 23, 23, 0.8) |
 
@@ -300,7 +300,7 @@ The public login FAQ link. Measured, not followed. Read as `li-help` on the logi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 70.86 x 18; background transparent; text canvaSans 13/19.5 500, #7c71f7 `color.text.link` |
+| default (same: hover, pressed) | size 70.86 x 18; background transparent; text canvaSans 13/19.5 500, #7c71f7 `color.purple.400` |
 | focus-visible | outline 1px auto #005fcc, offset 1px; layers a.text-highlight-foreground.text-sm 70.9x18.0 1px auto #005fcc offset 1px |
 
 ![Need help link default](components/crops/li-help-default.png) ![Need help link hover](components/crops/li-help-hover.png) ![Need help link focus-visible](components/crops/li-help-focus-visible.png) ![Need help link pressed](components/crops/li-help-pressed.png)
@@ -331,8 +331,8 @@ A sidebar documentation link. Hover measured. Not followed. Read as `docs-nav` o
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 91.06 x 32; padding 10px; border 1px solid transparent; radius 6px; background rgba(255, 255, 255, 0.1) `color.docs.border`; text Twemoji Country Flags 14/normal 500, #ffffff `color.white`; transition background-color 0.15s cubic-bezier(0.16, 1, 0.3, 1), border 0.15s cubic-bezier(0.16, 1, 0.3, 1) |
-| hover | border 1px solid rgba(255, 255, 255, 0.1) `color.docs.border` |
+| default | size 91.06 x 32; padding 10px; border 1px solid transparent; radius 6px; background rgba(255, 255, 255, 0.1) `color.docs.border.base`; text Twemoji Country Flags 14/normal 500, #ffffff `color.white`; transition background-color 0.15s cubic-bezier(0.16, 1, 0.3, 1), border 0.15s cubic-bezier(0.16, 1, 0.3, 1) |
+| hover | border 1px solid rgba(255, 255, 255, 0.1) `color.docs.border.base` |
 
 ![Docs nav link default](components/crops/docs-nav-default.png) ![Docs nav link hover](components/crops/docs-nav-hover.png)
 

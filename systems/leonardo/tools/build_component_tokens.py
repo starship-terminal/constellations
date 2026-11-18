@@ -47,11 +47,35 @@ def measured(value, source, ty="color"):
     return {"value": value, "type": ty, "source": source}
 
 
+def is_leaf(node):
+    return isinstance(node, dict) and ("type" in node or "value" in node or "var" in node)
+
+
 def put(tree, parts, leaf):
+    """Place a leaf without letting it share a path with a group.
+
+    A base name such as --color-purple and a ramp step such as --purple-50
+    used to land on the same node: the base value and the children. build()
+    then treated the node as one value and dropped the ramp. A value that
+    would collide with children (or with an existing value) moves to "base".
+    """
     node = tree
     for p in parts[:-1]:
-        node = node.setdefault(p, {})
-    node[parts[-1]] = leaf
+        child = node.get(p)
+        if is_leaf(child):
+            node[p] = {"base": child}
+        elif child is None:
+            node[p] = {}
+        node = node[p]
+    key = parts[-1]
+    existing = node.get(key)
+    if isinstance(existing, dict) and not is_leaf(existing):
+        existing["base"] = leaf
+    elif is_leaf(existing):
+        node[key] = {"base": existing}
+        node[key]["base"] = leaf
+    else:
+        node[key] = leaf
 
 
 def slug_parts(name):
@@ -272,21 +296,34 @@ def rect(comp, state="default"):
     return (C.get(comp) or {}).get("states", {}).get(state, {}).get("rect") or {}
 
 
-def family(comp):
-    raw = style(comp).get("fontFamily") or ""
-    return raw.split(",")[0].strip().strip('"')
+def paint(comp):
+    """The visible text style. textStyle is the inner text node; the wrapper
+    style is the fallback when the capture recorded none."""
+    state = (C.get(comp) or {}).get("states", {}).get("default", {}) or {}
+    text = state.get("textStyle") or {}
+    wrap = state.get("style") or {}
+    if text:
+        return text, "textStyle"
+    return wrap, "wrapper"
+
+
+def family_of(raw):
+    return (raw or "").split(",")[0].strip().strip('"')
 
 
 if style("mkt-h1"):
-    put(SPEC["core"], ["font", "size", "display"], measured(style("mkt-h1").get("fontSize"), "measured mkt-h1 font-size on leonardo.ai/", "dimension"))
-    put(SPEC["core"], ["font", "weight", "display"], measured(style("mkt-h1").get("fontWeight"), "measured mkt-h1 font-weight", "fontWeight"))
-    put(SPEC["core"], ["font", "family", "display"], measured(family("mkt-h1") + ", sans-serif", "measured mkt-h1 font-family ufficioDisplay", "fontFamily"))
+    paint_style, via = paint("mkt-h1")
+    put(SPEC["core"], ["font", "size", "display"], measured(paint_style.get("fontSize"), f"measured mkt-h1 {via} font-size on leonardo.ai/", "dimension"))
+    put(SPEC["core"], ["font", "weight", "display"], measured(paint_style.get("fontWeight"), f"measured mkt-h1 {via} font-weight", "fontWeight"))
+    put(SPEC["core"], ["font", "family", "display"], measured(family_of(paint_style.get("fontFamily")) + ", sans-serif", f"measured mkt-h1 {via} font-family", "fontFamily"))
 if style("app-h1"):
-    put(SPEC["core"], ["font", "size", "app-display"], measured(style("app-h1").get("fontSize"), "measured app-h1 font-size on app.leonardo.ai/", "dimension"))
-    put(SPEC["core"], ["font", "weight", "app-display"], measured(style("app-h1").get("fontWeight"), "measured app-h1 font-weight", "fontWeight"))
-    put(SPEC["core"], ["font", "family", "app-display"], measured(family("app-h1") + ", sans-serif", "measured app-h1 font-family leoRenaisans", "fontFamily"))
+    paint_style, via = paint("app-h1")
+    put(SPEC["core"], ["font", "size", "app-display"], measured(paint_style.get("fontSize"), f"measured app-h1 {via} font-size on app.leonardo.ai/", "dimension"))
+    put(SPEC["core"], ["font", "weight", "app-display"], measured(paint_style.get("fontWeight"), f"measured app-h1 {via} font-weight", "fontWeight"))
+    put(SPEC["core"], ["font", "family", "app-display"], measured(family_of(paint_style.get("fontFamily")) + ", sans-serif", f"measured app-h1 {via} font-family", "fontFamily"))
 if style("api-h1"):
-    put(SPEC["core"], ["font", "family", "marketing"], measured(family("api-h1") + ", sans-serif", "measured api-h1 font-family leoSans", "fontFamily"))
+    paint_style, via = paint("api-h1")
+    put(SPEC["core"], ["font", "family", "marketing"], measured(family_of(paint_style.get("fontFamily")) + ", sans-serif", f"measured api-h1 {via} font-family", "fontFamily"))
 if style("app-generate"):
     put(SPEC["component"], ["generate", "height"], measured(rect("app-generate").get("h"), "measured app-generate height", "dimension"))
     put(SPEC["component"], ["generate", "radius"], measured(style("app-generate").get("borderTopLeftRadius"), "measured app-generate radius", "dimension"))

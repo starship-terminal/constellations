@@ -48,7 +48,20 @@ class Shooter {
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    else {
+      const tiles = [];
+      for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+        const tile = `${f}.part${i}.png`;
+        await screenshotWithMetadata(p, { path: tile, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+        tiles.push(path.basename(tile));
+      }
+      // Written only after the last tile lands. quantize.py refuses to stitch
+      // a set that has no record, or whose tiles do not match this list.
+      fs.writeFileSync(`${f}.parts.json`, JSON.stringify({
+        tiles, height: hCap, pageHeight: H, truncated: H > MAXH,
+        captured: new Date().toISOString(),
+      }, null, 2) + '\n');
+    }
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
