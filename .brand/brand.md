@@ -1,6 +1,6 @@
 # Constellations brand kit
 
-Mark 2-7. Kit folder: `brand/`. Marks are letter-free; only the lockups and banners carry the name.
+Mark 2-7. Kit folder: `.brand/`. Marks are letter-free; only the lockups and banners carry the name.
 
 ## Palette
 
