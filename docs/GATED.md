@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_151 of 209 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_152 of 210 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -896,6 +896,14 @@ Access: signed-out public marketing, docs, legal, help center, and the app.limit
 - Pendant purchase is no longer offered to new customers; the unavailable dialog tells Pendant owners to email support; no checkout was opened
 - account deletion, documented at https://help.limitless.ai/en/articles/13005203-how-to-delete-your-limitless-account-and-data, was not opened
 - the Slack community invite at https://www.limitless.ai/community leaves the site and was not followed
+
+## [Lummi](../systems/lummi) — `lummi`
+Access: signed-out public marketing, browse, a public image page, and the /login wall. Downloads, the account, generation and checkout were not entered. Continue, Download, Google and the Stripe checkout link were not pressed.
+- Downloads on a public image page require sign-in and were not pressed
+- https://www.lummi.ai/login is the sign-in wall; Continue and Continue with Google were not pressed, so the account was not entered
+- Generation (Create image, Create video) sits behind sign-in and was not opened
+- https://www.lummi.ai/pro links to a Stripe checkout and that checkout was not opened
+- The email field on /login was filled with a placeholder and cleared; the form was not submitted
 
 ## Gate noted in access text only
 

@@ -42,9 +42,10 @@ const bodyResolved = await page.evaluate(() => {
     };
     try { walk(rules); } catch { /* skip */ }
   }
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const out = {};
   for (const n of [...new Set(names)]) {
-    const v = cs.getPropertyValue(n).trim();
+    const v = noUrl(cs.getPropertyValue(n).trim());
     if (v) out[n] = v.slice(0, 200);
   }
   return {
@@ -112,7 +113,8 @@ for (const f of result.fonts) {
   const k = fontKey(f);
   if (seenFonts.has(k)) continue;
   seenFonts.add(k);
-  fonts.push({ ...f, src: f.src ? 'url(…)' : f.src });
+  const bare = (font) => font;
+  fonts.push(bare({ ...f, src: f.src ? 'url(...)' : f.src }));
 }
 
 const out = {
