@@ -1,0 +1,69 @@
+{
+  "captured": "2026-11-19",
+  "product": "Wittl",
+  "startUrl": "https://wittl.co/",
+  "live": {
+    "https://wittl.co/": "ERR_NAME_NOT_RESOLVED in the T3 preview browser",
+    "https://www.wittl.co/": "ERR_NAME_NOT_RESOLVED in the T3 preview browser",
+    "dns": "SERVFAIL at 1.1.1.1 and 8.8.8.8. WHOIS names NS1.HOVER.COM and NS2.HOVER.COM. Both returned REFUSED for wittl.co A, with and without recursion. Domain updated 2026-11-07, expiry 2027-09-26."
+  },
+  "preview": {
+    "tab": "https://web.archive.org/web/20251108094303/https://www.wittl.co/",
+    "title": "Internet Archive: Temporarily Offline",
+    "snapshot": "The browser is not producing screenshot frames"
+  },
+  "source": {
+    "html": "https://web.archive.org/web/20251108094303/https://www.wittl.co/?ref=a1.gallery",
+    "archiveTimestamp": "20251108094303",
+    "originalDate": "2025-11-08",
+    "stylesheet": "styled-components rules inlined in that HTML (22832 bytes). The linked /_next/static/css/4fc40b27ac7e3c41.css capture is only two @font-face rules.",
+    "render": "Scripts stripped. file:// render in headless Chromium. Public marketing HTML only. No login page was opened."
+  },
+  "viewports": [
+    {
+      "requested": [
+        1440,
+        900
+      ],
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 1440,
+        "height": 900,
+        "scale": 1
+      },
+      "scrollHeight": 8909,
+      "png": "screenshots/home-light-default.png",
+      "pngPixels": [
+        1440,
+        8909
+      ]
+    },
+    {
+      "requested": [
+        390,
+        844
+      ],
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 390,
+        "height": 844,
+        "scale": 1
+      },
+      "scrollHeight": 9011,
+      "png": "screenshots/home-light-phone.png",
+      "pngPixels": [
+        780,
+        18022
+      ]
+    }
+  ],
+  "notEntered": [
+    "No email, phone, card, company SSO, or signup form was submitted.",
+    "https://app.wittl.co and https://app.wittl.co/auth/sign-up were not opened. The live domain does not resolve, and the rule limits AgentMail to an email-only form on a reachable public page.",
+    "No payment, booking, or checkout."
+  ]
+}

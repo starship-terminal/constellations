@@ -1,0 +1,135 @@
+{
+  "viewport": "1440x900, devicePixelRatio 1, file:// render of the 2025-11-08 archived homepage",
+  "body": {
+    "color": "rgb(20, 22, 22)",
+    "backgroundColor": "rgb(252, 252, 252)",
+    "fontFamily": "Denim, -apple-system, \"Helvetica Neue\", Helvetica, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "28px",
+    "letterSpacing": "normal"
+  },
+  "selection": {
+    "backgroundColor": "rgb(193, 250, 107)",
+    "color": "rgb(38, 57, 33)"
+  },
+  "h1": {
+    "text": "Helping growing teams to hire smarter.",
+    "fontFamily": "\"FF More Pro\", Georgia, Times, \"Times New Roman\", serif",
+    "fontSize": "48.4211px",
+    "lineHeight": "48.4211px",
+    "letterSpacing": "-0.968421px",
+    "fontWeight": "400",
+    "color": "rgb(20, 22, 22)",
+    "authored": "calc(32px + (56 - 32) * ((100vw - 400px) / (1920 - 400)))"
+  },
+  "h1At390": {
+    "fontSize": "31.8421px",
+    "lineHeight": "31.8421px",
+    "letterSpacing": "-0.636842px"
+  },
+  "header": {
+    "backgroundColor": "rgb(255, 255, 255)"
+  },
+  "nav": {
+    "maxWidth": "1024px",
+    "padding": "28px 0px",
+    "width": 1024,
+    "height": 102
+  },
+  "shell": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderBottomLeftRadius": "40px",
+    "marginBottom": "900px"
+  },
+  "buttonPrimary": {
+    "selector": "a.kcyxOU",
+    "text": "Get started",
+    "backgroundColor": "rgb(38, 57, 33)",
+    "spanAuthoredColor": "#fff",
+    "computedColorOnAnchor": "rgb(20, 22, 22)",
+    "height": "46px",
+    "padding": "0px 24px",
+    "borderRadius": "4px",
+    "fontSizeAuthored": "18px",
+    "transition": "all 0.2s ease-in-out",
+    "hoverBackground": "rgb(38, 57, 33)",
+    "focusOutline": "none",
+    "focusBoxShadow": "none"
+  },
+  "buttonSecondary": {
+    "selector": "a.eBOQwx",
+    "text": "Login",
+    "backgroundColor": "rgb(243, 243, 241)",
+    "spanColor": "rgb(20, 22, 22)",
+    "height": "46px",
+    "padding": "0px 24px",
+    "borderRadius": "4px"
+  },
+  "navLinkHover": {
+    "backgroundColor": "rgb(243, 243, 241)",
+    "padding": "8px 16px",
+    "borderRadius": "4px"
+  },
+  "muted": {
+    "color": "rgb(160, 161, 161)",
+    "fontSize": "20px",
+    "lineHeight": "1.2"
+  },
+  "quote": {
+    "color": "rgb(66, 68, 68)",
+    "fontSize": "20px",
+    "lineHeight": "24px"
+  },
+  "check": {
+    "width": "24px",
+    "height": "24px",
+    "backgroundColor": "rgb(193, 250, 107)",
+    "borderRadius": "4px"
+  },
+  "badge": {
+    "backgroundColor": "rgb(193, 250, 107)",
+    "fontSize": "12px",
+    "lineHeight": "12px",
+    "borderRadius": "99px",
+    "padding": "8px"
+  },
+  "card": {
+    "backgroundColor": "rgb(243, 243, 241)",
+    "borderRadius": "4px",
+    "padding": "40px"
+  },
+  "featureWash": {
+    "backgroundColor": "rgb(231, 253, 188)",
+    "borderRadius": "4px"
+  },
+  "border": {
+    "color": "rgb(230, 230, 230)",
+    "width": "1px"
+  },
+  "footer": {
+    "opacity": "0",
+    "pointerEvents": "none",
+    "position": "fixed",
+    "backgroundColor": "rgb(20, 22, 22)",
+    "linkColor": "rgb(255, 255, 255)",
+    "note": "Revealed by page scroll in the live product. Left at rest in this render. Colours are computed, not a forced state."
+  },
+  "overlay": {
+    "backgroundColor": "rgb(160, 161, 161)",
+    "opacity": "0"
+  },
+  "accordion": {
+    "padding": "20px",
+    "fontSizeAuthored": "20px",
+    "panelHeightAfterClick": 0,
+    "note": "Click did not expand the panel. Height is scripted."
+  },
+  "reducedMotion": {
+    "matchMedia": true,
+    "ctaTransitionDuration": "0.2s",
+    "verdict": "ignores"
+  },
+  "boxShadow": "none on measured controls",
+  "theme": "light only. No data-theme, no prefers-color-scheme rule in the inlined sheet. color-scheme media matched light."
+}
