@@ -12693,6 +12693,84 @@
    }
   },
   {
+   "slug": "lego",
+   "name": "LEGO",
+   "url": "https://www.lego.com/en-us",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "toy retail and brand shop design: a declared Skroll token layer (--ds-color-*, --ds-layout-spacing-*, --ds-layout-radius-*, --ds-shadow-*), a yellow header on a white page, pill search, emphasis-orange Add to Bag (#e96f14) beside primary blue (#005ad2), Cera Pro type, and product-leaf cards",
+   "tags": [
+    "web",
+    "e-commerce",
+    "retail",
+    "toys",
+    "design-tokens",
+    "light",
+    "cera-pro",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "read-only (home, theme, bestsellers, product, offers, service, about and search are public signed out; sign-in, bag, checkout, wish list contents and membership signup were not entered)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/lego/README.md",
+   "tokens": "systems/lego/tokens.json",
+   "styleGuide": "systems/lego/style-guide.html",
+   "preview": {
+    "cover": "systems/lego/screenshots/home-default.png",
+    "icon": "systems/lego/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.page",
+      "surface": "light.surface",
+      "text": "light.text",
+      "muted": "light.muted",
+      "accent": "light.accent",
+      "border": "light.border"
+     }
+    },
+    "fonts": [
+     "core.font.family.ui"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "lego.com/en-us in headless Chromium, desktop 1440x900 and phone 390x844. Computed styles and crops from the live DOM. The shop declares a Skroll token layer (--ds-*). Consent and the age-gate dialog were hidden, never clicked.",
+    "timestamp": "2026-11-18T12:00:00Z",
+    "harness": "Grok Build",
+    "model": "grok-4.7",
+    "route": "public-web",
+    "routes": [
+     "/en-us",
+     "/en-us/themes/city",
+     "/en-us/categories/bestsellers",
+     "/en-us/product/dump-truck-front-end-loader-60494",
+     "/en-us/page/lego-offers-promotions",
+     "/en-us/service",
+     "/en-us/aboutus",
+     "/en-us/search?q=city"
+    ],
+    "gaps": [
+     "Sign-in at https://www.lego.com/identity/login sits behind a LEGO account and was not entered",
+     "My Bag at https://www.lego.com/en-us/cart was not opened; Add to Bag was measured and never pressed, so the bag and checkout stay behind an account boundary",
+     "Checkout at the bag sits behind sign-in and was not entered",
+     "Wish list contents behind the header Wish List control sit behind a LEGO account and were not opened",
+     "Membership signup (Become a member / Insiders) was not submitted",
+     "The footer email subscription field was not submitted",
+     "The filter panel did not open, so filter contents are unmeasured"
+    ],
+    "pr": 642,
+    "durationMin": 90,
+    "durationNote": "public-web capture on 2026-11-18, including kit adaptation, stylesheet harvest, screenshot and measurement passes"
+   }
+  },
+  {
    "slug": "explore",
    "name": "Explore",
    "url": "https://explore.family",

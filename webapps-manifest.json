@@ -2649,8 +2649,8 @@
     249
    ],
    "description": "Explore the world of LEGO",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/lego",
    "notes": "",
    "batch": 9
   },
