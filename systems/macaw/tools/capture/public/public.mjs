@@ -11,7 +11,6 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { screenshotWithMetadata } from '../screenshot.mjs';
 import { chromium, UA, UA_MOBILE, BASE, hideOverlays } from './lib.mjs';
 
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
@@ -22,6 +21,19 @@ fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
+
+async function screenshotWithMetadata(page, opts, requested) {
+  const target = opts.path;
+  await page.screenshot({ path: target, fullPage: !!opts.fullPage, clip: opts.clip });
+  const side = {
+    schemaVersion: 1,
+    capturedAt: new Date().toISOString(),
+    screenshot: path.basename(target),
+    requested,
+    capture: opts.clip ? { mode: 'clip', clip: opts.clip } : { mode: opts.fullPage ? 'fullPage' : 'viewport' },
+  };
+  fs.writeFileSync(target + '.capture.json', JSON.stringify(side, null, 1) + '\n');
+}
 
 async function lazyScroll(p) {
   const h = await p.evaluate(() => document.documentElement.scrollHeight);
@@ -43,7 +55,18 @@ class Shooter {
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
     if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    else {
+      const written = [];
+      for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+        const part = `${f}.part${i}.png`;
+        await screenshotWithMetadata(p, { path: part, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+        written.push(part);
+      }
+      const expected = Math.ceil(hCap / chunk);
+      if (written.length !== expected || written.some((part) => !fs.existsSync(part))) {
+        throw new Error(`${name}: wrote ${written.length} of ${expected} tiles`);
+      }
+    }
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 300);
   }

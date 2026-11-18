@@ -10,7 +10,7 @@ committed. Flat UI colours are exact, gradients and photographs band a little, s
 from raw/css-vars.json and raw/components-computed.json. Adapted from the Coursera kit.
 
 Every image's .capture.json sidecar travels with it: a plain capture's sidecar is copied next to the
-quantized PNG, and a stitched image's sidecar is rebuilt from its part tiles' sidecars — the parts'
+quantized PNG, and a stitched image's sidecar is rebuilt from its part tiles' sidecars. The parts'
 clips recorded under partClip, the union under capture.clip, and a fresh dimensionCheck against the
 stitched PNG's real pixel size (a part's own check can never vouch for the sheet). A stitched image
 whose tiles lack sidecars gets none.
@@ -83,6 +83,10 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
+    indexes = [i for i, _ in ps]
+    if indexes != list(range(indexes[-1] + 1)):
+        print('skip', name, 'tiles are not a complete 0..n run:', indexes)
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0

@@ -13,7 +13,6 @@ import sys
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 sys.path.insert(0, str(HERE / "tools"))
-import motion as motion_mod
 
 MOTION = json.loads((RAW / "motion.json").read_text()) if (RAW / "motion.json").exists() else None
 
@@ -108,7 +107,7 @@ core = {
         },
         "weight": {
             "regular": num(400, f"{M}: body copy", "fontWeight"),
-            "medium": num(500, f"{M}: Advanced AI Writer eyebrow", "fontWeight"),
+            "medium": num(500, f"{M}: field label", "fontWeight"),
             "semibold": num(600, f"{M}: nav links and buttons", "fontWeight"),
             "bold": num(700, f"{M}: h1 and section headings", "fontWeight"),
         },
@@ -129,6 +128,7 @@ core = {
             "button": dim("22px", f"{D}: 14.8px button label at the sheet's 1.5 line"),
         },
         "tracking": {
+            "display": dim("-1.608px", f"{M}: home h1 letter-spacing"),
             "heading": dim("-0.72px", f"{M}: example card h3 letter-spacing"),
             "section": dim("-0.544px", f"{M}: article h2 letter-spacing"),
         },
@@ -141,8 +141,9 @@ core = {
                 "fontSize": "{font.size.display}",
                 "fontWeight": "{font.weight.bold}",
                 "lineHeight": "{font.lineHeight.display}",
+                "letterSpacing": "{font.tracking.display}",
             },
-            "$extensions": {"source": f"{M}: h1"},
+            "$extensions": {"source": f"{M}: h1, letter-spacing -1.608px"},
         },
         "heading": {
             "$type": "typography",
@@ -180,16 +181,17 @@ core = {
             "$value": {
                 "fontFamily": "{font.family.sans}",
                 "fontSize": "{font.size.label}",
-                "fontWeight": "{font.weight.regular}",
+                "fontWeight": "{font.weight.medium}",
                 "lineHeight": "21px",
             },
-            "$extensions": {"source": f"{M}: field label, 14px, 21px tall"},
+            "$extensions": {"source": f"{M}: field label, 14px / 500, 21px tall"},
         },
     },
     "space": {
         "2": dim("8px", f"{M}: field vertical padding"),
         "3": dim("12px", f"{M}: text area vertical padding"),
-        "4": dim("16px", f"{D}: the 1rem step the sheet uses for FAQ padding"),
+        "4": dim("16px", f"{M}: plan card padding-bottom, the 1rem step"),
+        "6": dim("24px", f"{D}: FAQ question padding-top and padding-bottom, 1.5rem in .faq01_question"),
         "5": dim("18px", f"{M}: button horizontal padding"),
         "8": dim("32px", f"{M}: navbar padding-left and padding-right, 2rem"),
         "10": dim("40px", f"{M}: plan card padding-top"),
@@ -251,6 +253,7 @@ tokens = {
 }
 
 if MOTION:
+    import motion as motion_mod
     core["motion"] = motion_mod.tokens(MOTION)
 
 (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")

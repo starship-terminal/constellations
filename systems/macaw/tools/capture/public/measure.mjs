@@ -139,10 +139,10 @@ async function S(key, target, list, meta = {}, opts = {}) {
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
   const loc = opts.byBox ? await withBox(target) : target.filter({ visible: true }).first();
-  if (!(await loc.count())) { log('  ! missing', key); out.components[key].missing = true; return; }
+  if (!(await loc.count())) { log('  ! missing', key); markMissing(key); return; }
   if (opts.byBox) {
     const box = await loc.boundingBox();
-    if (!box || box.width < 2 || box.height < 2) { log('  ! missing', key, 'no box'); out.components[key].missing = true; return; }
+    if (!box || box.width < 2 || box.height < 2) { log('  ! missing', key, 'no box'); markMissing(key); return; }
   }
   for (const st of list) {
     let undo, via;
@@ -184,6 +184,11 @@ async function S(key, target, list, meta = {}, opts = {}) {
 }
 
 const q = (sel) => page.locator(sel);
+
+function markMissing(key) {
+  out.components[key].missing = true;
+  out.components[key].states = {};
+}
 
 // Playwright treats Webflow w-nav-link nodes as hidden even when the box is on screen.
 async function withBox(loc) {

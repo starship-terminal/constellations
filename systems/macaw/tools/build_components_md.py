@@ -15,7 +15,7 @@ lines = [
     "|---|---|---|",
 ]
 for key, c in C.items():
-    states = ", ".join(c.get("states") or []) or ("missing" if c.get("missing") else "none")
+    states = "missing" if c.get("missing") else (", ".join(c.get("states") or []) or "none")
     crop = ""
     for st, v in (c.get("states") or {}).items():
         if v.get("crop"):

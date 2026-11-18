@@ -36,6 +36,7 @@ typography:
     fontSize: "53.6px"
     fontWeight: 700
     lineHeight: "64.3px"
+    letterSpacing: "-1.608px"
   heading:
     fontFamily: "Inter"
     fontSize: "36px"
@@ -55,7 +56,7 @@ typography:
   caption:
     fontFamily: "Inter"
     fontSize: "14px"
-    fontWeight: 400
+    fontWeight: 500
     lineHeight: "21px"
 rounded:
   control: "8px"
@@ -64,6 +65,7 @@ spacing:
   "2": "8px"
   "3": "12px"
   "4": "16px"
+  "6": "24px"
   "5": "18px"
   "8": "32px"
   "10": "40px"
@@ -106,7 +108,7 @@ Inter, loaded from Google Fonts on the live site (`Inter:regular,500,600,700`). 
 
 ## Layout
 
-Spacing from `core.space`: `2` 8px, `3` 12px, `4` 16px, `5` 18px, `8` 32px, `10` 40px.
+Spacing from `core.space`: `2` 8px, `3` 12px, `4` 16px, `6` 24px, `5` 18px, `8` 32px, `10` 40px.
 
 ## Elevation & Depth
 

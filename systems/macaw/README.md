@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #f66658 `light.accent` |
 | border | #d0d5dd `light.border` |
 
-Fonts: `core.font.family.sans` is Inter, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 5 type styles (`core.typography`), 2 radius steps (`core.radius`), 6 spacing steps (`core.space`).
+Fonts: `core.font.family.sans` is Inter, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 5 type styles (`core.typography`), 2 radius steps (`core.radius`), 7 spacing steps (`core.space`).
 
 ### Using components
 
@@ -144,7 +144,7 @@ Inter, loaded from Google Fonts on the live site (`Inter:regular,500,600,700`). 
 cd systems/macaw
 python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
-python3 tools/capture/public/build-measurements.mjs
+node tools/capture/public/build-measurements.mjs
 python3 tools/build_components_md.py
 ```
 
