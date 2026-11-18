@@ -1,0 +1,8 @@
+<svg role="img" preserveAspectRatio="none" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+<path d="M25 50a25 25 0 1 0 0-50 25 25 0 0 0 0 50" fill="#d80027">
+</path>
+<path d="M38.04 20.65h-8.7v-8.7h-8.69v8.7h-8.7v8.7h8.7v8.7h8.7v-8.7h8.7z" fill="#f0f0f0">
+</path>
+<circle cx="25" cy="25" r="25" stroke-width="1" fill="#ffffff" stroke="currentColor">
+</circle>
+</svg>
