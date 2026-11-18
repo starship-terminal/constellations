@@ -20,7 +20,7 @@ os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
 META = J["_meta"]
-LAYOUT = json.load(open("raw/layout.json"))
+LAYOUT = json.load(open("raw/layout.json")) if os.path.exists("raw/layout.json") else {}
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens

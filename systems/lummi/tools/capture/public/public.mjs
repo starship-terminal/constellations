@@ -64,8 +64,12 @@ class Shooter {
   }
 }
 
+const failed = [];
 const step = async (label, fn) => {
-  try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); }
+  try { await fn(); } catch (e) {
+    failed.push(label);
+    log('  FAILED', label, String(e.message).split('\n')[0]);
+  }
 };
 
 async function openTools(p) {
@@ -183,10 +187,16 @@ for (const { k, mob } of runs) {
     await p.keyboard.press('Escape').catch(() => {});
     await spec.run(p, S);
   } catch (e) {
+    failed.push(name);
     log('  PAGE FAILED', name, e.message.split('\n')[0]);
+    if (fs.existsSync(RAW)) for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${name}-light`))) fs.unlinkSync(`${RAW}/${old}`);
   }
   total += S.count;
   await ctx.close();
 }
 log('done', total, 'screenshots ->', RAW);
 await b.close();
+if (failed.length) {
+  log('failed', failed.join(', '));
+  process.exit(1);
+}

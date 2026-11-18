@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
-LAYOUT = json.load(open("raw/layout.json"))
+LAYOUT = json.load(open("raw/layout.json")) if os.path.exists("raw/layout.json") else {}
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens

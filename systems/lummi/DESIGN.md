@@ -41,7 +41,7 @@ typography:
     fontSize: "141.12px"
     fontWeight: 600
     lineHeight: "144px"
-    letterSpacing: "-4px"
+    letterSpacing: "-7.056px"
   heading:
     fontFamily: "Inter"
     fontSize: "64px"

@@ -105,8 +105,43 @@ td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--bor
   <p class="note">The login card was measured. Continue was not pressed. The address below is a placeholder, not an account.</p>
   <div class="field">Email address</div>
   <p><button class="btn" type="button">Continue</button></p>
+  <h2>Token values</h2>
+  <p class="note">Every group below is read from the token tree. A colour paints its swatch. Other values are printed as recorded.</p>
+  <div id="tokens"></div>
 </main>
 <script>
+const TOKENS = /*TOKENS*/null;
+function walk(node, prefix, out) {
+  out = out || [];
+  if (!node || typeof node !== "object") return out;
+  if ("v" in node) { out.push([prefix, node]); return out; }
+  for (const [k, v] of Object.entries(node)) {
+    if (k.startsWith("$")) continue;
+    walk(v, prefix ? prefix + "." + k : k, out);
+  }
+  return out;
+}
+const host = document.getElementById("tokens");
+for (const set of ["core", "light", "dark"]) {
+  const rows = walk(TOKENS[set], set);
+  if (!rows.length) continue;
+  const h = document.createElement("h3");
+  h.textContent = set;
+  host.appendChild(h);
+  const table = document.createElement("table");
+  for (const [path, token] of rows) {
+    const tr = document.createElement("tr");
+    const value = typeof token.v === "string" ? token.v : JSON.stringify(token.v);
+    const paint = typeof token.v === "string" && (token.v.startsWith("#") || token.v.startsWith("rgb"));
+    tr.innerHTML = "<td></td><td></td><td></td>";
+    const cells = tr.children;
+    cells[0].textContent = path;
+    cells[1].textContent = value;
+    if (paint) cells[2].style.background = value;
+    table.appendChild(tr);
+  }
+  host.appendChild(table);
+}
 document.getElementById('theme').addEventListener('click', () => {
   const html = document.documentElement;
   const on = html.getAttribute('data-mode') === 'dark';

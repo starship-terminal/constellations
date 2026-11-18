@@ -58,7 +58,7 @@ core = {
         "wash": color("#f4f4f5", f"{M}: icon-button hover and tag pill rgb(244, 244, 245)"),
         "black": color("#000000", f"{M}: Try Pro for free fill"),
         "zinc700": color("#3f3f46", f"{M}: Try Pro and Continue hover rgb(63, 63, 70)"),
-        "proYellow": color("#f5c518", f"{D}: the word Pro inside Try Pro for free is painted yellow; the hex is the declared --yellow role, not a sampled glyph"),
+        "proYellow": color("#e7b008", f"{D}: declared --yellow 45 93% 47%, converted from HSL. The word Pro is painted with this role, not a sampled glyph"),
     },
     "font": {
         "family": {
@@ -98,7 +98,7 @@ core = {
                 "fontSize": "{font.size.display}",
                 "fontWeight": "{font.weight.semibold}",
                 "lineHeight": "{font.lineHeight.display}",
-                "letterSpacing": "-4px",
+                "letterSpacing": "-7.056px",
             },
             "$extensions": {"source": f"{M}: home h1, tracking-tighter"},
         },
