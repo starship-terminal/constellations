@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_133 of 191 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -742,6 +742,11 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Hume AI](../systems/hume) — `hume`
+Access: signed out (every captured surface is public: www.hume.ai marketing/product/blog/legal pages, the dev.hume.ai docs, the demo.hume.ai invitation gate and the app.hume.ai/log-in card; the demo playground is gated on an invitation email and was never entered, nothing past /log-in was entered, EVI/Octave TTS have no public surface post-pivot - demo.hume.ai/evi answers 404; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the docs Theme menu, the home player's transport, the benchmark tabs, the blog filters and the mobile drawer)
+- the signed-in platform (app.hume.ai past /log-in - dashboard, API keys, projects, billing) is the product's own boundary, never entered
+- contact, newsletter and log-in fields were clicked into for the focus look only - never typed or submitted
 
 ## Gate noted in access text only
 
