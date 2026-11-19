@@ -184,8 +184,11 @@ export function diffMotion(base, reduced) {
     const r = reducedT.get(t.property);
     let outcome = !r || transitionStopped(r) ? 'removed' : classify(t.durationMs, r.durationMs);
     // classify() looks at duration only, so a zero-duration transition whose delay did not change would be removed.
+    // When the base also had no real duration, the delay is the motion and decides; when the base ran
+    // for a while and reduce left only the delay, the transition was shortened (300ms + 300ms to 0 + 300ms).
     if (r && !transitionStopped(r) && outcome === 'removed' && r.delayMs > NEGLIGIBLE_MS) {
-      outcome = r.delayMs < t.delayMs ? 'shortened' : r.delayMs === t.delayMs ? 'kept' : 'increased';
+      if (t.durationMs > NEGLIGIBLE_MS) outcome = 'shortened';
+      else outcome = r.delayMs < t.delayMs ? 'shortened' : r.delayMs === t.delayMs ? 'kept' : 'increased';
     }
     if (outcome === 'kept' && (r.easing !== t.easing || r.delayMs !== t.delayMs)) outcome = 'changed';
     items.push({ kind: 'transition', key: t.property, outcome, from: t.durationMs, to: r && !transitionStopped(r) ? r.durationMs : 0 });

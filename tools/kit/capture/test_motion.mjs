@@ -139,6 +139,11 @@ test('a negligible unmatched entry under reduce is not added motion', () => {
   const still = motionOf({ animationName: 'none', animationPlayState: 'paused', transitionProperty: 'all', transitionDuration: '0.01ms' });
   still.animations = [{ name: 'other', durationMs: 0.01, delayMs: 0, easing: 'ease', iterationCount: '1', direction: 'normal', fillMode: 'none', playState: 'running' }];
   assert.equal(diffMotion(base, still).outcome, 'removed');
+  // a paused animation under reduce is stopped whatever its duration, so it adds no motion either
+  const paused = motionOf({});
+  paused.animations = [{ name: 'pulse-reduced', durationMs: 2000, delayMs: 0, easing: 'ease', iterationCount: 'infinite', direction: 'normal', fillMode: 'none', playState: 'paused' }];
+  assert.deepEqual(diffMotion(motionOf({}), paused).items, []);
+  assert.equal(diffMotion(base, paused).outcome, 'removed');
   // an unreadable duration on an unmatched property is not provably
   // negligible: it still counts as added motion
   const raw = motionOf({ transitionProperty: 'color', transitionDuration: 'var(--d)' });
@@ -158,6 +163,11 @@ test('an unchanged delay is kept, including a zero-duration visibility delay', (
   const sooner = structuredClone(tip);
   sooner.transitions.find((t) => t.property === 'visibility').delayMs = 50;
   assert.equal(diffMotion(tip, sooner).items.find((i) => i.key === 'visibility').outcome, 'shortened');
+  // a 300ms transition whose duration reduce takes to 0 while its 300ms delay stays was shortened, not kept
+  const fade = motionOf({ transitionProperty: 'opacity', transitionDuration: '300ms', transitionDelay: '300ms' });
+  const waitOnly = motionOf({ transitionProperty: 'opacity', transitionDuration: '0s', transitionDelay: '300ms' });
+  assert.equal(diffMotion(fade, waitOnly).items[0].outcome, 'shortened');
+  assert.equal(summarise(groupRecords([{ node: 'a', base: fade, reduced: waitOnly }])).behaviour, 'honours');
 });
 
 test('a delayed zero-duration transition that appears only under reduce is added motion', () => {
