@@ -19,10 +19,16 @@ const EVENT = "ds-prefs";
 // What the server renders; the first effect replaces it with the DOM's value.
 const SERVER: Prefs = { theme: "system", resolved: "dark", collapsed: false };
 
+const asTheme = (v: string | null): Theme => (v === "light" || v === "dark" ? v : "system");
+
+// This tab's choice, kept in memory so it holds when storage is blocked or
+// full (the save is best-effort); null until this tab chooses or hears one.
+let choice: Theme | null = null;
+
 const stored = (): Theme => {
+  if (choice) return choice;
   try {
-    const v = localStorage.getItem("ds-theme");
-    return v === "light" || v === "dark" ? v : "system";
+    return asTheme(localStorage.getItem("ds-theme"));
   } catch {
     return "system";
   }
@@ -42,6 +48,7 @@ const applyNav = (c: boolean) => {
 };
 
 export function setTheme(t: Theme) {
+  choice = t;
   document.documentElement.dataset.theme = t === "system" ? systemTheme() : t;
   try {
     if (t === "system") localStorage.removeItem("ds-theme");
@@ -65,8 +72,10 @@ export function usePrefs(): Prefs {
     const sync = () => setPrefs(read());
     // Another tab changed a pref: apply it to this document too.
     const onStorage = (e: StorageEvent) => {
-      if (e.key === "ds-theme")
-        document.documentElement.dataset.theme = e.newValue === "light" || e.newValue === "dark" ? e.newValue : systemTheme();
+      if (e.key === "ds-theme") {
+        choice = asTheme(e.newValue);
+        document.documentElement.dataset.theme = choice === "system" ? systemTheme() : choice;
+      }
       else if (e.key === "ds-nav") applyNav(e.newValue === "collapsed");
       else return;
       sync();
