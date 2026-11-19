@@ -1263,7 +1263,12 @@ def check() -> list[str]:
         if not cover or not (ROOT / cover).exists():
             problems.append(f"{slug}: preview.cover {cover} does not exist")
         icon = s["preview"].get("icon")
-        if not icon or not (ROOT / icon).exists():
+        # A package that declares icon.png under layoutGaps (the product publishes no icon)
+        # has no icon to point at; layout_problems holds the declaration to the folder.
+        icon_gap = isinstance(s.get("layoutGaps"), dict) and "icon.png" in s["layoutGaps"]
+        if icon_gap and not icon:
+            pass
+        elif not icon or not (ROOT / icon).exists():
             problems.append(f"{slug}: preview.icon {icon} does not exist; run `python3 tools/fetch_icon.py {slug}`")
         problems += palette_problems(slug, s["preview"], s.get("themes", []))
         try:
