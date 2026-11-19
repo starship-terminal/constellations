@@ -51,8 +51,11 @@ describe("per-product sampling", () => {
     const first = queryScreens(items, { perProduct: 1, limit: 2 });
     expect(names(first.items)).toEqual(["alpha:home-0", "beta:home-0"]);
     expect(first.total).toBe(7);
+    // Only the three sampled captures can be paged.
+    expect(first.pageable).toBe(3);
     const rest = queryScreens(items, { perProduct: 1, limit: 2, offset: 2 });
     expect(names(rest.items)).toEqual(["gamma:home-0"]);
+    expect(queryScreens(items, { limit: 2 }).pageable).toBe(7);
   });
 
   it("leaves results alone without perProduct", () => {
