@@ -99,7 +99,8 @@ class SeedLagTest(unittest.TestCase):
             return taxonomy.build()
 
     def matches(self, head, committed, files=None, base_ref="main",
-                branch_seed=None, branch_catalog=None, head_sha="refs/pr-head"):
+                branch_seed=None, branch_catalog=None, head_sha="refs/pr-head",
+                script_changed=False, script_matches_branch=True):
         catalog = taxonomy.catalog
         shown = json.dumps(self.base)
         listed = b"\0".join(path.encode() for path in (files if files is not None else self.files)) + b"\0"
@@ -117,9 +118,12 @@ class SeedLagTest(unittest.TestCase):
             if args[:2] == ["git", "ls-tree"]:
                 return mock.Mock(stdout=listed, returncode=0)
             if args[:2] == ["git", "diff"]:
-                return mock.Mock(stdout="", returncode=0)
+                changed = "app/scripts/build-media-taxonomy.py\n" if script_changed else ""
+                return mock.Mock(stdout=changed, returncode=0)
             if args[:2] == ["git", "rev-parse"]:
-                return mock.Mock(stdout="same\n", returncode=0)
+                blob = "branch\n" if args[2].startswith(head_sha) else (
+                    "branch\n" if script_matches_branch else "merge\n")
+                return mock.Mock(stdout=blob, returncode=0)
             raise AssertionError(args)
 
         env = {"GITHUB_BASE_REF": base_ref, "GITHUB_HEAD_SHA": head_sha} if base_ref else {}
@@ -140,6 +144,21 @@ class SeedLagTest(unittest.TestCase):
         branch = {"systems": [self.old, self.added]}
         self.assertTrue(self.matches(
             self.head, seed, branch_seed=seed, branch_catalog=json.dumps(branch)))
+
+    def test_a_script_that_matches_the_branch_is_accepted(self):
+        # The branch seed differs, so the shortcut does not return early.
+        # The merge copy of the script matches the branch, so a base-only
+        # script change is not a capture edit.
+        self.assertTrue(self.matches(
+            self.head, self.prior_seed([self.old]),
+            branch_seed={"packages": []}, script_changed=True,
+            script_matches_branch=True))
+
+    def test_a_script_that_differs_from_the_branch_is_rejected(self):
+        self.assertFalse(self.matches(
+            self.head, self.prior_seed([self.old]),
+            branch_seed={"packages": []}, script_changed=True,
+            script_matches_branch=False))
 
     def test_a_seed_that_differs_from_the_branch_head_is_rejected(self):
         seed = self.prior_seed([self.old])
