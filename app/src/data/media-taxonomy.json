@@ -323856,17 +323856,6 @@
     },
     {
       "referenceId": "systems:sentry",
-      "mediaId": "systems/sentry/screenshots/breadth-mixed/organization-auth-plan-dialog-loaded-dark.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:sentry",
       "mediaId": "systems/sentry/screenshots/breadth/account-authorized-dark.png",
       "terms": [
         {
@@ -324176,6 +324165,17 @@
     {
       "referenceId": "systems:sentry",
       "mediaId": "systems/sentry/screenshots/breadth/organization-scrubbing-dialog-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth-mixed/organization-auth-plan-dialog-loaded-dark.png",
       "terms": [
         {
           "termId": "web-ui-elements:dialog-modal-window",
