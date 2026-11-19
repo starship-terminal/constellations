@@ -20343,6 +20343,83 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pi",
+      "name": "Pi",
+      "url": "https://pi.ai/",
+      "category": "ai-chat",
+      "platform": "web",
+      "goodFor": "Personal AI chat chrome: cream page and forest pill in light, near-black page and green pill in dark, 280px sidebar, Grenette greeting, DM Sans controls, and a public Framer marketing home",
+      "tags": [
+        "web",
+        "ai",
+        "chat",
+        "signed-out",
+        "marketing",
+        "light",
+        "dark"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. The greeting chat and the login page were measured. No account was created. OAuth and phone were not entered.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/pi/README.md",
+      "tokens": "systems/pi/tokens.json",
+      "styleGuide": "systems/pi/style-guide.html",
+      "preview": {
+        "cover": "systems/pi/icon.png",
+        "icon": "systems/pi/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.background.action",
+            "border": "dark.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.grenette",
+          "core.font.family.dm-sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "pi.ai build juIFpXZqgjaavTaiQttUo, hey.pi.ai Framer last-modified 2026-08-14",
+        "route": "public-web",
+        "pr": "https://github.com/starship-terminal/constellations/pull/741",
+        "durationMin": 50,
+        "gaps": [
+          "preview_snapshot returned no screenshot frames, so screenshots/ and components/crops are empty",
+          "login offers Google, Apple, Facebook, email and phone. None was entered. Phone and payment were out of scope",
+          "signed-in chat, settings, voice and saved history were not reached",
+          "hover, pressed, disabled, loading and error were not painted"
+        ]
+      },
+      "layoutGaps": {
+          "icons/": "no standalone SVG set was lifted. The inline wordmark was not exported, and the preview browser produced no frames to crop from.",
+          "components/": "Empty of crops. The browser returned no frames.",
+          "screenshots/": "Empty. The browser returned no frames."
+    }
     }
   ]
 }
