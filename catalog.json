@@ -20343,6 +20343,70 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+    "slug": "revenuecat",
+    "name": "RevenueCat",
+    "url": "https://www.revenuecat.com/",
+    "category": "finance",
+    "platform": "web",
+    "goodFor": "Subscription-product marketing: navy type on a gray-50 canvas, pill blue actions, a ghost sales button, and a signed-out app in Inter on a near-black surface",
+    "tags": [
+      "web",
+      "saas",
+      "subscriptions",
+      "marketing",
+      "finance",
+      "pill"
+    ],
+    "shape": "reference",
+    "captured": "2026-11-19",
+    "access": "signed out (public marketing and the login/signup pages; no account created)",
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "widths": [
+      1440,
+      390
+    ],
+    "entry": "systems/revenuecat/README.md",
+    "tokens": "systems/revenuecat/tokens.json",
+    "styleGuide": "systems/revenuecat/style-guide.html",
+    "preview": {
+      "cover": "systems/revenuecat/screenshots/home-light-default.png",
+      "icon": "systems/revenuecat/icon.png",
+      "swatches": {
+        "light": {
+          "page": "light.background.page",
+          "surface": "light.background.surface",
+          "text": "light.text.primary",
+          "muted": "light.text.secondary",
+          "accent": "light.action.default",
+          "border": "light.border.default"
+        },
+        "dark": {
+          "page": "dark.background.page",
+          "surface": "dark.background.surface",
+          "text": "dark.text.primary",
+          "muted": "dark.text.secondary",
+          "accent": "dark.action.default",
+          "border": "dark.border.default"
+        }
+      },
+      "fonts": [
+        "core.font.family.object-sans",
+        "core.font.family.helvetica-neue",
+        "core.font.family.inter"
+      ]
+    },
+    "capture": {
+      "harness": "Grok",
+      "model": "grok-4.7",
+      "route": "public-web",
+      "durationMin": 90,
+      "version": "unrecorded"
     }
+  }
   ]
 }
