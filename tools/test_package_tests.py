@@ -194,6 +194,25 @@ class MainTest(unittest.TestCase):
         self.assertEqual(code, 1, out)
         self.assertIn("a package test changed the checkout: ?? tools/stray.txt", out)
 
+    def test_a_test_that_changes_an_already_dirty_or_untracked_file_fails_the_run(self):
+        for target, change in (("tools/keep.txt", "write_text('edited again')"),   # tracked, already modified
+                               ("tools/scratch.txt", "write_text('changed')"),      # untracked
+                               ("tools/scratch.txt", "unlink()")):                 # untracked, removed
+            escape = ("import pathlib, unittest\nclass T(unittest.TestCase):\n    def test_it(self):\n"
+                      f"        (pathlib.Path('../../..').resolve() / {target!r}).{change}\n")
+            with self.subTest(target=target, change=change), tempfile.TemporaryDirectory() as tmp:
+                root = self.tree(tmp, ["one"])
+                write(root, "tools/keep.txt", "")
+                write(root, "systems/one/tools/test_escape.py", escape)
+                subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+                subprocess.run(["git", "add", "."], cwd=root, check=True)
+                write(root, "tools/keep.txt", "edited before the run")
+                write(root, "tools/scratch.txt", "untracked before the run")
+                code, out = self.main(root)
+                self.assertEqual(code, 1, out)
+                self.assertIn(f"a package test changed the checkout: ", out)
+                self.assertIn(target, out.split("changed the checkout: ", 1)[1])
+
     def test_unknown_slug_is_refused(self):
         with tempfile.TemporaryDirectory() as tmp:
             code, _ = self.main(self.tree(tmp, ["one"]), ["nope"])

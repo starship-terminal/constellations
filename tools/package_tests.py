@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import hashlib
 import importlib.util
 import json
 import os
@@ -133,7 +134,8 @@ def run_file(package: Path, rel: str) -> tuple[bool, str, str]:
         node = shutil.which("node")
         if not node:
             return True, "skipped: needs Node.js", ""
-        cmd = [node, "--test", path.name]
+        # TAP explicitly: newer Node versions default to the spec reporter even when piped.
+        cmd = [node, "--test", "--test-reporter=tap", path.name]
     try:
         proc = subprocess.run(cmd, cwd=path.parent, capture_output=True, text=True, timeout=TIMEOUT,
                               stdin=subprocess.DEVNULL)
@@ -158,14 +160,34 @@ def run_package(root: Path, slug: str, files: list[str]) -> list[tuple[str, bool
         return [(rel, *run_file(package, rel)) for rel in files]
 
 
-def git_status(root: Path) -> list[str] | None:
-    """The checkout's `git status` entries, or None outside a git checkout."""
+def git_state(root: Path) -> dict[str, str | None] | None:
+    """{`git status` entry: digest of that file's contents} for the checkout, or None
+    outside a git checkout. The digest catches a test that changes a file that was
+    already modified or untracked, whose status entry stays the same."""
     try:
         out = subprocess.run(["git", "-C", str(root), "status", "--porcelain=v1", "-z", "--untracked-files=all"],
                              capture_output=True, check=True).stdout
     except (OSError, subprocess.CalledProcessError):
         return None
-    return sorted(e.decode("utf-8", "surrogateescape") for e in out.split(b"\0") if e)
+    state = {}
+    entries = iter(out.split(b"\0"))
+    for raw in entries:
+        if not raw:
+            continue
+        entry = raw.decode("utf-8", "surrogateescape")
+        if entry[:1] in "RC":
+            next(entries, None)  # a rename or copy carries its source path as the next field
+        path = root / entry[3:]
+        try:
+            state[entry] = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+        except OSError:
+            state[entry] = None
+    return state
+
+
+def changed_entries(before: dict, after: dict) -> list[str]:
+    """Status entries that appeared, disappeared, or whose file contents changed."""
+    return sorted(e for e in set(before) | set(after) if before.get(e, "absent") != after.get(e, "absent"))
 
 
 def load_expected(root: Path) -> dict[str, str]:
@@ -191,7 +213,7 @@ def main(argv: list[str], root: Path = ROOT) -> int:
         print(f"no tests for: {', '.join(sorted(set(args.slugs) - set(found)))}", file=sys.stderr)
         return 2
     expected = load_expected(root)
-    before = git_status(root)
+    before = git_state(root)
     failed, known, fixed = [], [], []
     with concurrent.futures.ThreadPoolExecutor(max(1, args.jobs)) as pool:
         runs = {slug: pool.submit(run_package, root, slug, files) for slug, files in found.items()}
@@ -217,8 +239,8 @@ def main(argv: list[str], root: Path = ROOT) -> int:
                                          or k.split("/", 2)[2] not in found[k.split("/", 2)[1]])
     for key in stale:
         print(f"{EXPECTED} lists {key}, which is not a package test file", file=sys.stderr)
-    after = git_status(root)
-    dirtied = sorted(set(after or []) - set(before or [])) if before is not None else []
+    after = git_state(root)
+    dirtied = changed_entries(before, after or {}) if before is not None else []
     for entry in dirtied:
         print(f"a package test changed the checkout: {entry}", file=sys.stderr)
     files = sum(len(v) for v in found.values())
