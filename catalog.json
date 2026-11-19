@@ -20343,6 +20343,73 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "weavy",
+      "name": "Weavy",
+      "url": "https://www.weavy.ai/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Creative-workflow marketing with a lemon action fill, tight oversized display type, and a signed-out SSO card on a dark shell",
+      "tags": [
+        "web",
+        "design",
+        "ai",
+        "marketing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing at weave.figma.com, the redirect from weavy.ai, plus app.weavy.ai/signin; SSO buttons were not clicked)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/weavy/README.md",
+      "tokens": "systems/weavy/tokens.json",
+      "styleGuide": "systems/weavy/style-guide.html",
+      "preview": {
+        "cover": "systems/weavy/screenshots/home-light-default.png",
+        "icon": "systems/weavy/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.marketing.page",
+            "surface": "light.color.marketing.surface",
+            "text": "light.color.marketing.text",
+            "muted": "light.color.marketing.muted",
+            "accent": "light.color.marketing.lemon",
+            "border": "light.color.marketing.border"
+          },
+          "dark": {
+            "page": "dark.color.app.page",
+            "surface": "dark.color.app.surface",
+            "text": "dark.color.app.text",
+            "muted": "dark.color.app.text-secondary",
+            "accent": "dark.color.app.brand",
+            "border": "dark.color.app.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.figma-sans",
+          "core.font.family.dm-sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50,
+        "version": "Figma Weave marketing, signed-out sign-in, 2026-11-19"
+      },
+      "layoutGaps": {
+        "icons/": "Icon extraction was not run. The wordmark and social marks stay in the screenshots.",
+        "components/": "Crops were not cut. preview_snapshot produced no frames, and the sign-in page was not opened in a second browser."
+      }
     }
   ]
 }
