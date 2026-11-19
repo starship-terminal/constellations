@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_163 of 230 packages name gated surfaces in their gaps; 57 more mark a gate in their access text; 10 report none._
+_163 of 231 packages name gated surfaces in their gaps; 58 more mark a gate in their access text; 10 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -1149,6 +1149,9 @@ the owner's signed-in Zed (Free plan) on a scratch folder; colours from Zed's pu
 
 ### [Wiza](../systems/wiza) — `wiza`
 signed out. Public marketing pages measured. Login was opened and not submitted. Signup hit Cloudflare and was not driven. No phone, card, or company SSO was entered.
+
+### [Whereby](../systems/whereby) — `whereby`
+signed out (public marketing and the login form; the email was focused and not submitted)
 
 ## No gated surface recorded
 

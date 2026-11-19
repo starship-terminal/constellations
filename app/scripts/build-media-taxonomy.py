@@ -334,7 +334,47 @@ def matches_base(result: dict, committed: dict) -> bool:
     finally:
         catalog.load_catalog = saved_catalog
         catalog.list_images = saved_images
-    return committed == base_result
+    if committed == base_result:
+        return True
+    # The seed may lag packages already merged to the base. It is still
+    # current when it is exactly the derivation of the packages it names.
+    return seed_is_prior_derivation(committed, head_rows, base_files)
+
+
+def seed_is_prior_derivation(committed: dict, head_rows: dict,
+                             base_files: set[str]) -> bool:
+    """True when the seed derives an unchanged subset of this catalog."""
+    named = {p["referenceId"].removeprefix("systems:")
+             for p in committed.get("packages") or []}
+    if not named or not named <= set(head_rows):
+        return False
+    for row in head_rows.values():
+        if row.get("slug") not in named:
+            continue
+        for folder, exts in (
+            ("screenshots", catalog.IMAGE_EXT),
+            ("components", catalog.COMPONENT_EXT),
+        ):
+            for item in catalog.list_images(row, folder, exts):
+                if item["path"] not in base_files:
+                    return False
+    kept = [row for row in catalog.load_catalog()["systems"]
+            if row.get("slug") in named]
+    saved_catalog = catalog.load_catalog
+    saved_images = catalog.list_images
+
+    def kept_images(system, folder, exts):
+        items = saved_images(system, folder, exts)
+        return [item for item in items if item["path"] in base_files]
+
+    catalog.load_catalog = lambda: {"systems": kept}
+    catalog.list_images = kept_images
+    try:
+        prior = build()
+    finally:
+        catalog.load_catalog = saved_catalog
+        catalog.list_images = saved_images
+    return committed == prior
 
 
 def main() -> None:

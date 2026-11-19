@@ -76,7 +76,31 @@ def gated_matches_base(systems, current: str) -> bool:
         return False
     if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
         return False
-    return current == render(base["systems"])
+    if current == render(base["systems"]):
+        return True
+    # The roll-up may lag packages already merged to the base. It is still
+    # current when it is exactly the render of the packages it names.
+    return gated_is_prior_render(systems, current)
+
+
+def slugs_in_gated(text: str) -> set[str]:
+    """Slugs the committed roll-up rendered a section for."""
+    linked = set(re.findall(r"\]\(\.\./systems/([^)/\s]+)\)", text))
+    marker = "## No gated surface recorded"
+    open_slugs = set()
+    if marker in text:
+        open_slugs = set(re.findall(r"`([^`]+)`", text.split(marker, 1)[1]))
+    return linked | open_slugs
+
+
+def gated_is_prior_render(systems, current: str) -> bool:
+    """True when the file renders an unchanged subset of this catalog."""
+    named = slugs_in_gated(current)
+    slugs = {s.get("slug") for s in systems}
+    if not named or not named <= slugs:
+        return False
+    kept = [s for s in systems if s.get("slug") in named]
+    return current == render(kept)
 
 
 def render(systems):

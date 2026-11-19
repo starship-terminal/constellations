@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 230,
-    "system_domains": 221,
-    "matched_domains": 190,
-    "missing_domains": 243,
+    "system_packages": 231,
+    "system_domains": 222,
+    "matched_domains": 191,
+    "missing_domains": 242,
     "system_domains_absent_from_catalog": 31
   },
   "matched": {
@@ -3222,6 +3222,23 @@
         }
       ]
     },
+    "whereby.com": {
+      "catalog": [
+        {
+          "name": "Whereby",
+          "domain": "whereby.com",
+          "id": 286
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "whereby",
+          "name": "Whereby",
+          "url": "https://whereby.com",
+          "name_match": true
+        }
+      ]
+    },
     "withjulienne.com": {
       "catalog": [
         {
@@ -4889,13 +4906,6 @@
         "name": "WhatsApp",
         "domain": "whatsapp.com",
         "id": 154
-      }
-    ],
-    "whereby.com": [
-      {
-        "name": "Whereby",
-        "domain": "whereby.com",
-        "id": 286
       }
     ],
     "windy.com": [
