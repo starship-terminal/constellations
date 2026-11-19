@@ -28,6 +28,8 @@ const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 out._meta ??= {};
 if (out._meta.storyUrl) out._meta.storyUrl = safeUrl(out._meta.storyUrl);   // an earlier run's, if story is not rerun
 out.components ??= {};
+// an earlier run's entries, if their page is not rerun, lose any query they were recorded with
+for (const c of Object.values(out.components)) if (c.url) c.url = safeUrl(c.url);
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 
@@ -109,7 +111,7 @@ async function toggle(loc, { allowLink = false } = {}) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && BASE + URLS[current] }, meta);
+  Object.assign(c, { page: current, run, url: URLS[current] && safeUrl(BASE + URLS[current]) }, meta);   // no query: it can carry a session or campaign token
   touched.add(key);
   c.states ??= {};
   return c;
