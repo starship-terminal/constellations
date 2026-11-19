@@ -26,6 +26,18 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "webapps-manifest.json"
 STATES = ("not-started", "partial", "done", "not-applicable")
+PROBE = (
+    "not-tried",
+    "code-sent",
+    "signed-in",
+    "password",
+    "oauth-only",
+    "captcha",
+    "phone",
+    "needs-other-info",
+    "closed",
+    "no-form",
+)
 REQUIRED_REVIEW = ("offered", "screens", "gaps", "not_submitted")
 # The three places a signed-in walk stops early. Each must be answered.
 WALK = ("nav", "settings", "create")
@@ -43,6 +55,12 @@ def check_app(app):
     if state not in STATES:
         problems.append(f"{name}: login-extracted must be one of {', '.join(STATES)}")
         return problems
+    probe = app.get("login-probe")
+    if probe not in PROBE:
+        problems.append(f"{name}: login-probe must be one of {', '.join(PROBE)}")
+        return problems
+    if probe != "not-tried" and not (app.get("notes") or "").strip():
+        problems.append(f"{name}: a login probe needs the result in notes")
     review = app.get("login-review")
     if state == "done":
         problems.extend(_review_problems(name, app, review, require_walk=True))

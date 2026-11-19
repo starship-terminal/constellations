@@ -32,6 +32,27 @@ pass is missing until the field moves.
 | `done` | The review below passed. |
 | `not-applicable` | The product has no signed-in web surface. |
 
+Each app also has `login-probe`. It records whether an email code can
+sign in, and nothing else. The address is the capture inbox. The probe
+stops at the code step: it does not open the product, and it does not
+set `login-extracted`.
+
+| Value | Meaning |
+|---|---|
+| `not-tried` | No probe yet. This is the default. |
+| `code-sent` | The site sent a code or magic link to the inbox. |
+| `signed-in` | A signed-in page was reached on an earlier pass. |
+| `password` | The form asks for a password and sends no code. |
+| `oauth-only` | The only path is Google, Apple, or SSO. |
+| `captcha` | A challenge blocked the form. |
+| `phone` | The form asks for a phone number. |
+| `needs-other-info` | The next step asks for a name or other field, and no code was sent. |
+| `closed` | Signups are closed, or the account was rejected. |
+| `no-form` | No email field was found. |
+
+`notes` says which URL was opened and what the page did. A probe that
+is not `not-tried` without that note fails `make check`.
+
 `done` does not mean every gated feature was reached. It means the
 agent opened every signed-in screen the account could show, saved a
 file for each, and wrote the rest as gaps. `make check` runs

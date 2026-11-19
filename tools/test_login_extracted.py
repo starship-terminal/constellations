@@ -47,6 +47,7 @@ def app(**over):
         "package": "systems/luma",
         "notes": "",
         "login-extracted": "not-started",
+        "login-probe": "not-tried",
     }
     row.update(over)
     return row
@@ -57,6 +58,23 @@ class LoginExtractedTest(unittest.TestCase):
         row = app()
         del row["login-extracted"]
         self.assertTrue(login.check_app(row))
+
+    def test_a_missing_probe_fails(self):
+        row = app()
+        del row["login-probe"]
+        self.assertTrue(any("login-probe" in p for p in login.check_app(row)))
+
+    def test_a_probe_without_a_note_fails(self):
+        problems = login.check_app(app(**{"login-probe": "code-sent"}))
+        self.assertTrue(any("notes" in p for p in problems))
+
+    def test_a_probe_with_a_note_passes(self):
+        row = app(**{"login-probe": "password", "notes": "https://example.com/login asked for a password"})
+        self.assertEqual(login.check_app(row), [])
+
+    def test_needs_other_info_is_a_probe(self):
+        row = app(**{"login-probe": "needs-other-info", "notes": "https://example.com/login asked for a full name"})
+        self.assertEqual(login.check_app(row), [])
 
     def test_not_started_needs_no_review(self):
         self.assertEqual(login.check_app(app()), [])

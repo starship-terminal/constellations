@@ -7,7 +7,8 @@
     "Escalate only real blockers: CAPTCHA loops, phone/SMS verification, payment walls, org SSO or invite gates, hardware keys. Set status to \"blocked\" with the reason in notes instead of deferring silently.",
     "Capture functionality, not just design: walk onboarding and the core flows (first run, main screens, settings, key actions). The refero style for the same domain is landing-page design only; do not reuse it as app evidence.",
     "One app per PR: when it merges set status to \"captured\" and package to the systems/<slug>. Keep this manifest in the commit.",
-    "login-extracted tracks the signed-in pass. Leave it not-started until that pass starts. Set partial with the stop reason in notes, or done only after login-review names every screen the signed-in navigation offered. A review of the first page is not done."
+    "login-extracted tracks the signed-in pass. Leave it not-started until that pass starts. Set partial with the stop reason in notes, or done only after login-review names every screen the signed-in navigation offered. A review of the first page is not done.",
+    "login-probe records whether an email code can sign in. Leave it not-tried until the probe runs. Set code-sent, signed-in, password, oauth-only, captcha, phone, closed, or no-form, and write the URL and the page result in notes. The probe does not open the product."
   ],
   "totals": {
     "apps": 418,
@@ -27,8 +28,9 @@
       "description": "Password Manager for Families, Enterprise & Business",
       "status": "captured",
       "package": "systems/1password",
-      "notes": "public marketing surface only; the vault is credential-gated (account + secret key + master password) and out of scope. start.1password.com gates headless browsers to /unsupported, captured as the boundary",
+      "notes": "public marketing surface only; the vault is credential-gated (account + secret key + master password) and out of scope. start.1password.com gates headless browsers to /unsupported, captured as the boundary https://my.1password.com/signin asked for a Secret Key and a password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -43,8 +45,9 @@
       "description": "Organize your music the way you want",
       "status": "captured",
       "package": "systems/untitled-stream",
-      "notes": "public marketing surface + login card; legal pages intermittently Cloudflare-gated. Reject-all on the consent card 403s into the Remix error boundary so the card is hidden, never clicked",
+      "notes": "public marketing surface + login card; legal pages intermittently Cloudflare-gated. Reject-all on the consent card 403s into the Remix error boundary so the card is hidden, never clicked https://untitled.stream/sign-up/email sent a verification code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 1
     },
     {
@@ -59,8 +62,9 @@
       "description": "Make Your App Happen",
       "status": "captured",
       "package": "systems/aaply",
-      "notes": "public marketing surface only (Tilda site); the app host go.aaply.app returned Not found on every route, captured as the boundary",
+      "notes": "public marketing surface only (Tilda site); the app host go.aaply.app returned Not found on every route, captured as the boundary https://go.aaply.app/login and /signup both returned Not found. The marketing site links there and offers no email field.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
@@ -75,8 +79,9 @@
       "description": "Music production with Live and Push",
       "status": "captured",
       "package": "systems/ableton",
-      "notes": "",
+      "notes": "https://www.ableton.com/en/login/ asks for email or username plus a password. Register asks for a password too. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -91,8 +96,9 @@
       "description": "AI-powered data management platform",
       "status": "captured",
       "package": "systems/aboard",
-      "notes": "",
+      "notes": "https://aboard.com/ is a consulting site. No sign-in link and no email field.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
@@ -107,8 +113,9 @@
       "description": "Joyful HR",
       "status": "captured",
       "package": "systems/aboardhr",
-      "notes": "",
+      "notes": "https://app.aboardhr.com/login said no user for the capture inbox. https://app.aboardhr.com/signup requires a phone number. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "phone",
       "batch": 1
     },
     {
@@ -123,8 +130,9 @@
       "description": "Crypto invoice & B2B payments",
       "status": "captured",
       "package": "systems/acctual",
-      "notes": "",
+      "notes": "https://app.acctual.com/sign-in asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -139,8 +147,9 @@
       "description": "Shop the official site",
       "status": "captured",
       "package": "systems/acnestudios",
-      "notes": "",
+      "notes": "https://www.acnestudios.com/sg/en/lookup accepted the email, then registration asked for a password, a date of birth, and a phone. No code was sent. The form was not submitted.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -155,8 +164,9 @@
       "description": "Online Booking & Appointment Scheduling",
       "status": "captured",
       "package": "systems/acuityscheduling",
-      "notes": "",
+      "notes": "https://www.acuityscheduling.com/login.php asks for email and password, or Squarespace. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -171,8 +181,9 @@
       "description": "More than sportswear and workout clothes",
       "status": "captured",
       "package": "systems/adidas",
-      "notes": "global .com Akamai IP-blocked; package covers adidas.com.cn",
+      "notes": "global .com Akamai IP-blocked; package covers adidas.com.cn https://www.adidas.com/us/account-login accepted the email in the field, then Continue did nothing. No code was sent and no next field appeared.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
@@ -187,8 +198,9 @@
       "description": "Formulations for Skin, Hair & Body",
       "status": "captured",
       "package": "systems/aesop",
-      "notes": "",
+      "notes": "https://www.aesop.com/account/login returned a blank page. The storefront has no sign-in link and no email field.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
@@ -203,8 +215,9 @@
       "description": "Vacation rentals, cabins, beach houses, & more",
       "status": "captured",
       "package": "systems/airbnb",
-      "notes": "",
+      "notes": "https://www.airbnb.com.sg/login sent a confirmation code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 1
     },
     {
@@ -219,8 +232,9 @@
       "description": "Create apps that perfectly fit your team's needs",
       "status": "captured",
       "package": "systems/airtable",
-      "notes": "",
+      "notes": "https://airtable.com/login stopped at Verify it is you and reported unusual traffic. No email field was reached.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 1
     },
     {
@@ -235,8 +249,9 @@
       "description": "Comfortable, Sustainable Shoes & Apparel",
       "status": "captured",
       "package": "systems/allbirds",
-      "notes": "captured signed out at 1440x900 + 390x844; systems/allbirds; PR #438",
+      "notes": "captured signed out at 1440x900 + 390x844; systems/allbirds; PR #438 https://accounts.allbirds.com/authentication/login sent a code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 1
     },
     {
@@ -251,8 +266,9 @@
       "description": "Wellness Club",
       "status": "captured",
       "package": "systems/aloyoga",
-      "notes": "",
+      "notes": "https://www.aloyoga.com/en-sg/account/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -267,8 +283,9 @@
       "description": "Meet the all-in-one calendar. Schedule time for todos, events, and contacts with joy",
       "status": "captured",
       "package": "systems/amie",
-      "notes": "",
+      "notes": "https://calendar.amie.so/login offers Login with browser and no email field. https://app.amie.so/login is a 404.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
@@ -283,8 +300,9 @@
       "description": "Real-Time Interactive AI Avatars API",
       "status": "captured",
       "package": "systems/anam",
-      "notes": "",
+      "notes": "https://lab.anam.ai/login asks for email and password, or Google, GitHub, or SSO. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -299,8 +317,9 @@
       "description": "Working to build reliable, interpretable, and steerable AI systems",
       "status": "captured",
       "package": "systems/anthropic",
-      "notes": "",
+      "notes": "https://claude.ai/login sent a verification link to the capture inbox. The link was not opened. Google, Apple, and SSO are also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 1
     },
     {
@@ -315,8 +334,9 @@
       "description": "The supergraph: a new layer in your stack",
       "status": "captured",
       "package": "systems/apollographql",
-      "notes": "",
+      "notes": "https://studio.apollographql.com/login asks for email and password, or GitHub or SSO. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -331,8 +351,9 @@
       "description": "Build like a team of hundreds",
       "status": "captured",
       "package": "systems/appwrite",
-      "notes": "",
+      "notes": "https://appwrite.io/sign-in asks for email and password, or GitHub, GitLab, Bitbucket, Google, or a passkey. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -347,8 +368,9 @@
       "description": "Arcade is an interactive demo platform that allows teams to create effortlessly beautiful demos in minutes",
       "status": "captured",
       "package": "systems/arcade",
-      "notes": "",
+      "notes": "https://app.arcade.software/auth said check your email for the sign-in link. The link was not opened. Google, Microsoft, and Apple are also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 2
     },
     {
@@ -363,8 +385,9 @@
       "description": "Shop for Women, Men, Children, Homeware & Travel",
       "status": "captured",
       "package": "systems/arket",
-      "notes": "Akamai 403s on root and PDPs; shell and dialog components measured from reachable category routes; no dark theme, no spacing or elevation scale",
+      "notes": "Akamai 403s on root and PDPs; shell and dialog components measured from reachable category routes; no dark theme, no spacing or elevation scale https://www.arket.com/en-ww/account/ sent a verification code to the capture inbox and asked to create an account. The code was not entered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 2
     },
     {
@@ -379,8 +402,9 @@
       "description": "Video calls loved by extraordinary teams",
       "status": "uncapturable",
       "package": null,
-      "notes": "domain parked on GoDaddy for-sale; around.com is an unrelated site; product defunct, nothing honest to capture",
+      "notes": "domain parked on GoDaddy for-sale; around.com is an unrelated site; product defunct, nothing honest to capture https://around.co/ is a GoDaddy for-sale page. No sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "closed",
       "batch": 2
     },
     {
@@ -395,8 +419,9 @@
       "description": "Design and Animate Like Never Before",
       "status": "captured",
       "package": "systems/artboardstudio",
-      "notes": "editor and app surfaces behind sign-in; marketing routes captured",
+      "notes": "editor and app surfaces behind sign-in; marketing routes captured https://app.artboard.studio/ Continue with Email asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -411,8 +436,9 @@
       "description": "Manage your team's work, projects, & tasks online",
       "status": "captured",
       "package": "systems/asana",
-      "notes": "app behind sign-in; public marketing surface captured; declared-but-unbound --darkmode-* roles recorded as declared evidence",
+      "notes": "app behind sign-in; public marketing surface captured; declared-but-unbound --darkmode-* roles recorded as declared evidence https://app.asana.com/-/login accepted the email, then signup offered Google, Microsoft, or a stuck Signing Up state. No code was sent. The form was not submitted.",
       "login-extracted": "not-started",
+      "login-probe": "oauth-only",
       "batch": 2
     },
     {
@@ -427,8 +453,9 @@
       "description": "Online Shopping",
       "status": "captured",
       "package": "systems/asos",
-      "notes": "",
+      "notes": "https://my.asos.com/account/login accepted the email, then Continue said it could not submit the details. Google, Facebook, and Apple are also offered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 2
     },
     {
@@ -443,8 +470,9 @@
       "description": "The data-driven CRM",
       "status": "captured",
       "package": "systems/attio",
-      "notes": "pre-existing package; verified complete against docs/PACKAGE.md during batch 2",
+      "notes": "pre-existing package; verified complete against docs/PACKAGE.md during batch 2 https://app.attio.com/login opened the signed-in onboarding page in this browser. No new code was requested.",
       "login-extracted": "not-started",
+      "login-probe": "signed-in",
       "batch": 2
     },
     {
@@ -459,8 +487,9 @@
       "description": "Des vêtements et accessoires fonctionnels et durables pour les professionnels du cinéma et de la musique",
       "status": "captured",
       "package": "systems/avnier",
-      "notes": "",
+      "notes": "https://avnier.com/account/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -475,8 +504,9 @@
       "description": "Best Web Design Trends",
       "status": "captured",
       "package": "systems/awwwards",
-      "notes": "",
+      "notes": "https://www.awwwards.com/login asks for email or username and a password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -491,8 +521,9 @@
       "description": "A new professional network for GenAI builders",
       "status": "captured",
       "package": "systems/b150",
-      "notes": "app.b150.ai rate-limits anonymous fetches (HTTP 429) and is a documented boundary; marketing surface captured",
+      "notes": "app.b150.ai rate-limits anonymous fetches (HTTP 429) and is a documented boundary; marketing surface captured https://app.b150.ai/auth/signup asks for a full name, email, and a password, or Google. No code was sent. The form was not submitted.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -507,8 +538,9 @@
       "description": "Product research so simple, you'll never skip it again",
       "status": "captured",
       "package": "systems/ballpark",
-      "notes": "",
+      "notes": "https://ballparkhq.com/sign-in asks for email and password, or Google or SSO. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -523,8 +555,9 @@
       "description": "App Builder: No Code",
       "status": "captured",
       "package": "systems/base44",
-      "notes": "app.base44.com never signed into; declared-but-unpainted .dark token set and empty app-side --sem-* vars recorded as declared/boundary evidence",
+      "notes": "app.base44.com never signed into; declared-but-unpainted .dark token set and empty app-side --sem-* vars recorded as declared/boundary evidence https://app.base44.com/login accepted the email, then asked for a password. Google, Apple, and GitHub are also offered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -539,8 +572,9 @@
       "description": "A Link in Bio, but Rich and Beautiful",
       "status": "uncapturable",
       "package": null,
-      "notes": "301-redirects to linktr.ee; Bento was acquired and shut down; no usable Wayback snapshots; a capture would be a parked domain or Linktree, not Bento",
+      "notes": "301-redirects to linktr.ee; Bento was acquired and shut down; no usable Wayback snapshots; a capture would be a parked domain or Linktree, not Bento https://bento.me redirects to https://linktr.ee/. The Bento product is gone. No Bento sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "closed",
       "batch": 2
     },
     {
@@ -555,8 +589,9 @@
       "description": "Design in 3D together",
       "status": "captured",
       "package": "systems/bezi",
-      "notes": "",
+      "notes": "https://www.bezi.com/ has a desktop download and no web sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 2
     },
     {
@@ -571,8 +606,9 @@
       "description": "Free Link in Bio Tool for Instagram & TikTok",
       "status": "captured",
       "package": "systems/biosites",
-      "notes": "",
+      "notes": "https://biosites.com/editor?loginUser=true opens a Squarespace login that asks for email and password, or Google, Apple, or Facebook. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -587,8 +623,9 @@
       "description": "Delivers business and markets news, data, analysis, and video to the world",
       "status": "captured",
       "package": "systems/bloomberg",
-      "notes": "",
+      "notes": "https://www.bloomberg.com/account/login stopped on Are you a robot. No email field was reached.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 2
     },
     {
@@ -603,8 +640,9 @@
       "description": "The meal kit that puts quality first",
       "status": "captured",
       "package": "systems/blueapron",
-      "notes": "",
+      "notes": "https://www.blueapron.com/login stopped on a Cloudflare attention page. No email field was reached.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 2
     },
     {
@@ -619,8 +657,9 @@
       "description": "Free Storyboard Software",
       "status": "captured",
       "package": "systems/boords",
-      "notes": "",
+      "notes": "https://app.boords.com/login asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -635,8 +674,9 @@
       "description": "Learn Languages Online: Start for Free",
       "status": "captured",
       "package": "systems/busuu",
-      "notes": "",
+      "notes": "https://www.busuu.com/en/login asks for email and password, or Apple, Facebook, or SSO. A mobile number is optional. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -651,8 +691,9 @@
       "description": "The all-in-one video editor for modern brands",
       "status": "captured",
       "package": "systems/butter",
-      "notes": "cursor badge only paints for real pointer input and is captured in its hidden state; paywalled product surfaces out of scope",
+      "notes": "cursor badge only paints for real pointer input and is captured in its hidden state; paywalled product surfaces out of scope https://www.butter.video/login asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -667,8 +708,9 @@
       "description": "For Creators and Artists",
       "status": "captured",
       "package": "systems/buymeacoffee",
-      "notes": "",
+      "notes": "https://buymeacoffee.com/login asks for email and password, or Google, Facebook, Apple, or Twitter. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -683,8 +725,9 @@
       "description": "Create a textile from scratch",
       "status": "captured",
       "package": "systems/byborre",
-      "notes": "",
+      "notes": "https://byborre.com/?redirectTo=/dashboard Login/Sign-up asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -699,8 +742,9 @@
       "description": "The intuitive equity platform for fast-growing startups",
       "status": "captured",
       "package": "systems/cakeequity",
-      "notes": "",
+      "notes": "https://app.cakeequity.com/login accepted the email, then asked for a password. Google and LinkedIn are also offered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -715,8 +759,9 @@
       "description": "Open Scheduling Infrastructure",
       "status": "captured",
       "package": "systems/cal",
-      "notes": "",
+      "notes": "https://app.cal.com/auth/login asks for email and password, or Google, Microsoft, or SAML. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -731,8 +776,9 @@
       "description": "Meeting Scheduling Software and AI Meeting Tools",
       "status": "captured",
       "package": "systems/calendly",
-      "notes": "",
+      "notes": "https://calendly.com/login said no account exists for the capture inbox. Signup at https://calendly.com/app/signup asks for a name and password. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -747,8 +793,9 @@
       "description": "#1 app for sleep and meditation",
       "status": "captured",
       "package": "systems/calm",
-      "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary).",
+      "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary). https://www.calm.com/login returned Access to this page has been denied with a blank page and a captcha script. No email field was reached.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 3
     },
     {
@@ -763,8 +810,9 @@
       "description": "Visual Suite for Everyone",
       "status": "captured",
       "package": "systems/canva",
-      "notes": "",
+      "notes": "https://www.canva.com/login/ accepted the email, then asked for a full name to create an account. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "needs-other-info",
       "batch": 3
     },
     {
@@ -779,8 +827,9 @@
       "description": "When it's not you, it's Care.com",
       "status": "captured",
       "package": "systems/care",
-      "notes": "",
+      "notes": "https://www.care.com/login accepted the email, then asked for a password. Google and Apple are also offered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -795,8 +844,9 @@
       "description": "The fastest, ultra-realistic voice AI platform",
       "status": "captured",
       "package": "systems/cartesia",
-      "notes": "",
+      "notes": "https://play.cartesia.ai/sign-in sent a verification code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 3
     },
     {
@@ -811,8 +861,9 @@
       "description": "EV routing and e-mobility software",
       "status": "captured",
       "package": "systems/chargetrip",
-      "notes": "Captured signed out 2026-11-12 from the WIP branch (measurements complete then); screenshots and the derived pipeline finished 2026-11-16. Boundaries: account.chargetrip.io sign-in measured never submitted; developers/playground shells only; nothing booked or sent; Cookie Settings card hidden, never answered.",
+      "notes": "Captured signed out 2026-11-12 from the WIP branch (measurements complete then); screenshots and the derived pipeline finished 2026-11-16. Boundaries: account.chargetrip.io sign-in measured never submitted; developers/playground shells only; nothing booked or sent; Cookie Settings card hidden, never answered. https://account.chargetrip.io/sign-in sent a one-time login link to the capture inbox. The link was not opened.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 3
     },
     {
@@ -827,8 +878,9 @@
       "description": "Book Fitness Classes & Salon Appointments",
       "status": "captured",
       "package": "systems/classpass",
-      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/607: signed-out marketing routes plus /login and /walkthrough as boundaries. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/607: signed-out marketing routes plus /login and /walkthrough as boundaries. Manifest row was left pending after merge. https://classpass.com/login asks for email and password, or Apple or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -843,8 +895,9 @@
       "description": "Move beyond the CRM",
       "status": "captured",
       "package": "systems/clay-earth",
-      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/608 as systems/clay-earth. clay.earth 301-redirects to me.sh (Mesh, Automattic). Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/608 as systems/clay-earth. clay.earth 301-redirects to me.sh (Mesh, Automattic). Manifest row was left pending after merge. https://clay.earth/login redirects to https://me.sh/login. https://app.me.sh/login?signin is a desktop download page with no web sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 3
     },
     {
@@ -859,8 +912,9 @@
       "description": "The Best Journal and Diary App for Personal Growth",
       "status": "captured",
       "package": "systems/clearful",
-      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/609: signed-out marketing, /library, and the app.clearful.com sign-in boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/609: signed-out marketing, /library, and the app.clearful.com sign-in boundary. Manifest row was left pending after merge. https://app.clearful.com/#/sign-in asks for email and password, or Apple or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -875,8 +929,9 @@
       "description": "Online video editor by Microsoft ",
       "status": "captured",
       "package": "systems/clipchamp",
-      "notes": "",
+      "notes": "https://app.clipchamp.com/login redirected to https://clipchamp.com/en/unsupported-browser/. This browser cannot open the editor. No email field was reached.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 3
     },
     {
@@ -891,8 +946,9 @@
       "description": "Cofounder plugs into your existing tools, writes automations, and organizes workflows",
       "status": "captured",
       "package": "systems/cofounder",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/630: signed-out marketing plus app.cofounder.co/os/login as a boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/630: signed-out marketing plus app.cofounder.co/os/login as a boundary. Manifest row was left pending after merge. https://app.cofounder.co/os/login offers only Google and GitHub. No email field.",
       "login-extracted": "not-started",
+      "login-probe": "oauth-only",
       "batch": 3
     },
     {
@@ -907,8 +963,9 @@
       "description": "The World's Leading AI Platform for Enterprise",
       "status": "captured",
       "package": "systems/cohere",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/636: public marketing surface and sign-in boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/636: public marketing surface and sign-in boundary. Manifest row was left pending after merge. https://dashboard.cohere.com/welcome/login asks for email and password, or Google or GitHub. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -923,8 +980,9 @@
       "description": "Buy and Sell Bitcoin, Ethereum, and more with trust",
       "status": "captured",
       "package": "systems/coinbase",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/637: public marketing surface (en-sg) and login.coinbase.com sign-in boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/637: public marketing surface (en-sg) and login.coinbase.com sign-in boundary. Manifest row was left pending after merge. https://login.coinbase.com/signin accepted the email, then asked for a password. Passkey, Google, and Apple are also offered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -939,8 +997,9 @@
       "description": "The developer infrastructure bank",
       "status": "captured",
       "package": "systems/column",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/638: public marketing surface and dashboard.column.com/login sign-in boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/638: public marketing surface and dashboard.column.com/login sign-in boundary. Manifest row was left pending after merge. https://dashboard.column.com/login accepted the email, then asked for a password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -955,8 +1014,9 @@
       "description": "The super fast color palettes generator!",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email code reached the signed-in Coolors app. The address was the capture inbox.",
       "login-extracted": "not-started",
+      "login-probe": "signed-in",
       "batch": 3
     },
     {
@@ -971,8 +1031,9 @@
       "description": "Stablecoin banking for global businesses",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://dashboard.copperx.io/login Sign in with Email showed an email field, then Continue stayed disabled. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 3
     },
     {
@@ -987,8 +1048,9 @@
       "description": "The only AI platform purpose-built for outcomes",
       "status": "captured",
       "package": "systems/copy",
-      "notes": "",
+      "notes": "https://app.copy.ai/login sent a code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 4
     },
     {
@@ -1003,8 +1065,9 @@
       "description": "Curate your universe",
       "status": "captured",
       "package": "systems/cosmos",
-      "notes": "",
+      "notes": "https://www.cosmos.so/login asks for username or email and a password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1019,8 +1082,9 @@
       "description": "Your space for notes, tasks, and big ideas",
       "status": "captured",
       "package": "systems/craft",
-      "notes": "",
+      "notes": "https://docs.craft.do/ sent a code to the capture inbox. The code was not entered. Google, Apple, Microsoft, and SSO are also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 4
     },
     {
@@ -1035,8 +1099,9 @@
       "description": "Interface assets for designers, developers, and startup creatives",
       "status": "captured",
       "package": "systems/craftwork",
-      "notes": "",
+      "notes": "https://craftwork.design/login offers a one-time code, then said the email domain is not allowed. No code was sent. Google is also offered.",
       "login-extracted": "not-started",
+      "login-probe": "closed",
       "batch": 4
     },
     {
@@ -1051,8 +1116,9 @@
       "description": "Bring your creative ideas to life",
       "status": "captured",
       "package": "systems/creativemarket",
-      "notes": "",
+      "notes": "https://creativemarket.com/sign-in stopped on a Cloudflare security verification. No email field was reached.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 4
     },
     {
@@ -1067,8 +1133,9 @@
       "description": "Next generation calendar for professionals and teams",
       "status": "captured",
       "package": "systems/cron",
-      "notes": "",
+      "notes": "https://www.cron.com/ redirects login to https://app.notion.com/login. Notion said the email domain is invalid. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "closed",
       "batch": 4
     },
     {
@@ -1083,8 +1150,9 @@
       "description": "A platform for curating and discovering taste.",
       "status": "captured",
       "package": "systems/curater",
-      "notes": "",
+      "notes": "https://curater.org/ Sign in or create account opens only Google sign-in. No email field on the site.",
       "login-extracted": "not-started",
+      "login-probe": "oauth-only",
       "batch": 4
     },
     {
@@ -1099,8 +1167,9 @@
       "description": "Workplace communication for distributed teams",
       "status": "captured",
       "package": "systems/cushion",
-      "notes": "",
+      "notes": "https://app.cushion.so/login sent a login link to the capture inbox. The link was not opened. Google is also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 4
     },
     {
@@ -1115,8 +1184,9 @@
       "description": "Your feedback hub, on autopilot",
       "status": "uncapturable",
       "package": null,
-      "notes": "acquired by Atlassian 2025-09-03, standalone product sunset 2025-10-31; cycle.app is an unpublished Webflow site serving the generic 404 on every path; nothing honest to capture",
+      "notes": "acquired by Atlassian 2025-09-03, standalone product sunset 2025-10-31; cycle.app is an unpublished Webflow site serving the generic 404 on every path; nothing honest to capture https://cycle.app/ and https://cycle.app/login are 404 pages. No sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 4
     },
     {
@@ -1131,8 +1201,9 @@
       "description": "The place full of art where it gains the voice it deserves",
       "status": "captured",
       "package": "systems/dailyartmagazine",
-      "notes": "public read-only magazine; Shop and Courses are external stores measured as links, never followed. Newsletter and Contact Form 7 fields were filled with sample text and cleared, never submitted. Third-party ad slots are layout evidence only",
+      "notes": "public read-only magazine; Shop and Courses are external stores measured as links, never followed. Newsletter and Contact Form 7 fields were filled with sample text and cleared, never submitted. Third-party ad slots are layout evidence only https://www.dailyartmagazine.com/login is a page-not-found article site. No sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 4
     },
     {
@@ -1147,8 +1218,9 @@
       "description": "Payroll & Compliance for International Teams",
       "status": "captured",
       "package": "systems/deel",
-      "notes": "",
+      "notes": "https://app.deel.com/login asks for email and password, or the Deel app, SSO, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1163,8 +1235,9 @@
       "description": "Listen to music online",
       "status": "captured",
       "package": "systems/deezer",
-      "notes": "",
+      "notes": "https://account.deezer.com/en-us/login/ asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1179,8 +1252,9 @@
       "description": "Scale Your Insight. Stay Focused on What Matters",
       "status": "captured",
       "package": "systems/delphi",
-      "notes": "",
+      "notes": "https://www.delphi.ai/login redirects to https://www.delphi.co/. Sign In links back to the same page. No email field was reached.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 4
     },
     {
@@ -1195,8 +1269,9 @@
       "description": "Edit videos & podcasts like a doc ",
       "status": "captured",
       "package": "systems/descript",
-      "notes": "",
+      "notes": "https://web.descript.com/login sent a 6-digit passcode to the capture inbox. The code was not entered. A password path is also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 4
     },
     {
@@ -1211,8 +1286,9 @@
       "description": "Level up your designs faster",
       "status": "captured",
       "package": "systems/designmodo",
-      "notes": "public signed-out pass only: marketing, /postcards/pricing, /email-templates, the /my-account/sign-in form and the signed-out Postcards gallery (Welcome-back modal dismissed locally); the builder canvas and every post-login surface stay account-only",
+      "notes": "public signed-out pass only: marketing, /postcards/pricing, /email-templates, the /my-account/sign-in form and the signed-out Postcards gallery (Welcome-back modal dismissed locally); the builder canvas and every post-login surface stay account-only https://designmodo.com/my-account/sign-in/ asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1227,8 +1303,9 @@
       "description": "Generate branded designs and endless post ideas",
       "status": "captured",
       "package": "systems/designstripe",
-      "notes": "public signed-out pass only (designstripe.com redirects to visual.app): marketing, /assets library and set galleries, /tools, /about, /contact, /blog; the design agents and every post-waitlist surface stay account-only",
+      "notes": "public signed-out pass only (designstripe.com redirects to visual.app): marketing, /assets library and set galleries, /tools, /about, /contact, /blog; the design agents and every post-waitlist surface stay account-only https://designstripe.com/login redirects to https://visual.app/login, a 404. The product is now Visual and its login is a waitlist. No sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "closed",
       "batch": 4
     },
     {
@@ -1243,8 +1320,9 @@
       "description": "News, before it trends",
       "status": "captured",
       "package": "systems/digg",
-      "notes": "",
+      "notes": "https://digg.com/login asks for email and password, or Google or X. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1259,8 +1337,9 @@
       "description": "Your Place to Talk and Hang Out",
       "status": "captured",
       "package": "systems/discord",
-      "notes": "",
+      "notes": "https://discord.com/login asks for email or phone and a password, or a QR code or passkey. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1275,8 +1354,9 @@
       "description": "Movies, Events, Dining, Sports & Concerts Nearby",
       "status": "captured",
       "package": "systems/district",
-      "notes": "",
+      "notes": "https://www.district.in/login says the page was not found. The home Login control did not open a form.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 4
     },
     {
@@ -1291,8 +1371,9 @@
       "description": "The Future Of Possible",
       "status": "captured",
       "package": "systems/dji",
-      "notes": "",
+      "notes": "https://account.dji.com/login asks for email and password, or Apple, Google, or Facebook. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1307,8 +1388,9 @@
       "description": "Makes it easy to create sales proposals, onboarding plans, client portals, and project hubs",
       "status": "captured",
       "package": "systems/dock",
-      "notes": "",
+      "notes": "https://auth.dock.us/login asks for a Dock subdomain before any email. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "needs-other-info",
       "batch": 5
     },
     {
@@ -1323,8 +1405,9 @@
       "description": "Your Personal AI Doctor",
       "status": "captured",
       "package": "systems/doctronic",
-      "notes": "",
+      "notes": "https://www.doctronic.ai/?modal=signin offers a login code by email. Get Login Code did not advance after the capture inbox was entered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 5
     },
     {
@@ -1339,8 +1422,9 @@
       "description": "#1 in Electronic Signature and Intelligent Agreement Management",
       "status": "captured",
       "package": "systems/docusign",
-      "notes": "",
+      "notes": "https://account.docusign.com/ accepted the email, then asked for a password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1355,8 +1439,9 @@
       "description": "A more humane to-do list",
       "status": "captured",
       "package": "systems/dona",
-      "notes": "",
+      "notes": "https://app.dona.ai/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1371,8 +1456,9 @@
       "description": "Food, grocery and retail - fast same day delivery",
       "status": "captured",
       "package": "systems/doordash",
-      "notes": "",
+      "notes": "https://identity.doordash.com/auth stopped on a Cloudflare security verification. No email field was reached.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 5
     },
     {
@@ -1387,8 +1473,9 @@
       "description": "Just Refill",
       "status": "captured",
       "package": "systems/dopper",
-      "notes": "",
+      "notes": "https://dopper.com/account/login is a not-found page. The shop has no account sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 5
     },
     {
@@ -1403,8 +1490,9 @@
       "description": "Redefines how engineering teams handle secrets",
       "status": "captured",
       "package": "systems/doppler",
-      "notes": "",
+      "notes": "https://dashboard.doppler.com/login asks for email and password, or Google or GitHub. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1419,8 +1507,9 @@
       "description": "Mixology-crafted non-alcoholic cocktails to elevate your mood",
       "status": "captured",
       "package": "systems/drinkdouze",
-      "notes": "",
+      "notes": "https://drinkdouze.com/en/account/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1435,8 +1524,9 @@
       "description": "Community for designers",
       "status": "captured",
       "package": "systems/dribbble",
-      "notes": "",
+      "notes": "https://dribbble.com/session/new sent a passcode to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 5
     },
     {
@@ -1451,8 +1541,9 @@
       "description": "Secure Cloud Storage",
       "status": "captured",
       "package": "systems/dropbox",
-      "notes": "",
+      "notes": "https://www.dropbox.com/login accepted the email, then signup asked for a name and password. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1467,8 +1558,9 @@
       "description": "Link Management for Modern Marketing Teams",
       "status": "captured",
       "package": "systems/dub",
-      "notes": "",
+      "notes": "https://app.dub.co/login said no account exists. Signup at https://app.dub.co/register asks for a password. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1483,8 +1575,9 @@
       "description": "The new standard in website design",
       "status": "captured",
       "package": "systems/editorx",
-      "notes": "",
+      "notes": "https://www.editorx.com/login redirects to Wix Studio. https://users.wix.com/signin said the email has no account, then signup asked for a password. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1499,8 +1592,9 @@
       "description": "Swedish developer and manufacturer of musical instruments",
       "status": "captured",
       "package": "systems/elektron",
-      "notes": "",
+      "notes": "https://www.elektron.se/login asks for email and password. A code path is also offered and was not used. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1515,8 +1609,9 @@
       "description": "Create a Website Design Your Future",
       "status": "captured",
       "package": "systems/elementor",
-      "notes": "",
+      "notes": "https://my.elementor.com/login/ shows Sign in but never rendered an email field or a button. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 5
     },
     {
@@ -1531,8 +1626,9 @@
       "description": "Free AI Voice Generator & Voice Agents Platform",
       "status": "captured",
       "package": "systems/elevenlabs",
-      "notes": "",
+      "notes": "https://elevenlabs.io/app/sign-in asks for email and password, or Google, Apple, or SSO. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1547,8 +1643,9 @@
       "description": "AI Music Generator — Create & Stream Music",
       "status": "captured",
       "package": "systems/elevenmusic",
-      "notes": "",
+      "notes": "https://elevenmusic.io/login offers Google and Apple. Continue with Email stayed disabled after the capture inbox was entered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 5
     },
     {
@@ -1563,8 +1660,9 @@
       "description": "Free Text Read Aloud App",
       "status": "captured",
       "package": "systems/elevenreader",
-      "notes": "",
+      "notes": "https://elevenreader.io/reader/sign-in asks for email and password, or Google or Apple. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1579,8 +1677,9 @@
       "description": "Personalized soundscapes",
       "status": "captured",
       "package": "systems/endel",
-      "notes": "",
+      "notes": "https://app.endel.io/login accepted the email and opened the signed-in app. No password or code was asked. The product was not walked.",
       "login-extracted": "not-started",
+      "login-probe": "signed-in",
       "batch": 5
     },
     {
@@ -1595,8 +1694,9 @@
       "description": "Infinite Tools, One Place",
       "status": "captured",
       "package": "systems/endless",
-      "notes": "",
+      "notes": "https://endless.io/login redirects to https://endless.app/. Sign in asks for email and password, or Apple, Google, or Microsoft. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1611,8 +1711,9 @@
       "description": "No-coding tool to create 3D assets",
       "status": "captured",
       "package": "systems/endlesstools",
-      "notes": "",
+      "notes": "https://app.endlesstools.io/login sent a sign-in code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 5
     },
     {
@@ -1627,8 +1728,9 @@
       "description": "One integration, connect to 1000+ energy devices",
       "status": "captured",
       "package": "systems/enode",
-      "notes": "",
+      "notes": "https://enode.com/login is 404. Sign in opens https://platform.enode.com/login, which sent a login link to the capture inbox (\"Check your email\"). Link not opened. SAML SSO also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 6
     },
     {
@@ -1643,8 +1745,9 @@
       "description": "A curated digital storefront for PC and Mac",
       "status": "captured",
       "package": "systems/epicgames",
-      "notes": "",
+      "notes": "https://www.epicgames.com/id/login asks for email and password, or console and social sign-in. No code was sent. https://www.epicgames.com/login stopped on a Cloudflare check and was not retried.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1659,8 +1762,9 @@
       "description": "Bring your story to life | Music & SFX for videos",
       "status": "captured",
       "package": "systems/epidemicsound",
-      "notes": "",
+      "notes": "https://www.epidemicsound.com/login/ opens a Keycloak form at login.epidemicsound.com with email and password, or Google, Apple, or SSO. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1675,8 +1779,9 @@
       "description": "The fastest way for startups to do any analysis",
       "status": "captured",
       "package": "systems/equals",
-      "notes": "",
+      "notes": "https://equals.app/login redirects to a Netlify 404 on equals.com. Sign in opens https://go.equals.com/auth/new. The capture inbox was entered and the page said \"We couldn't find an account for that email.\" New accounts are a demo request, not a signup form. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "closed",
       "batch": 6
     },
     {
@@ -1691,8 +1796,9 @@
       "description": "Men's Fashion, Cocktails, Politics, Interviews",
       "status": "captured",
       "package": "systems/esquire",
-      "notes": "",
+      "notes": "https://www.esquire.com/ Sign In opens https://www.mylo.id/login. After the capture inbox, the next page was passkey signup (\"Creating your passkey account\"). No code was sent. The passkey was not created. Google, Facebook, Apple, Microsoft, and user ID plus password are also offered.",
       "login-extracted": "not-started",
+      "login-probe": "needs-other-info",
       "batch": 6
     },
     {
@@ -1707,8 +1813,9 @@
       "description": "Web Search API, AI Search Engine, & Website Crawler",
       "status": "captured",
       "package": "systems/exa",
-      "notes": "",
+      "notes": "https://dashboard.exa.ai/login opens https://auth.exa.ai/ with Google, email, and SSO. Continue with email was blocked: \"This sign-in attempt was blocked for security reasons.\" A Cloudflare turnstile field was present. No code was sent. Do not retry.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 6
     },
     {
@@ -1723,8 +1830,9 @@
       "description": "Bespoke AI models, built for your brand",
       "status": "captured",
       "package": "systems/exactly",
-      "notes": "",
+      "notes": "https://exactly.ai/login is 404. Log in opens https://threads.exactly.ai/login, which stopped on Cloudflare security verification (403). No email field. Do not retry.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 6
     },
     {
@@ -1739,8 +1847,9 @@
       "description": "Whiteboarding tool with hand drawn like experience",
       "status": "captured",
       "package": "systems/excalidraw",
-      "notes": "",
+      "notes": "The free board at https://excalidraw.com/ has no account. Sign in on https://plus.excalidraw.com/ opens https://app.excalidraw.com/sign-up. Passwordless email asks to \"Verify you're human\" before Send magic link. No code was sent. Do not retry.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 6
     },
     {
@@ -1755,8 +1864,9 @@
       "description": "Vacation Homes, Hotels, Car Rentals, Flights",
       "status": "captured",
       "package": "systems/expedia",
-      "notes": "",
+      "notes": "https://www.expedia.com/login returned 429 \"Bot or Not?\" (\"We can't tell if you're a human or a bot.\"). No email field. Do not retry.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 6
     },
     {
@@ -1771,8 +1881,9 @@
       "description": "Brand new platform for creatives",
       "status": "captured",
       "package": "systems/explore",
-      "notes": "",
+      "notes": "https://explore.family and https://explore.family/login do not resolve (ERR_NAME_NOT_RESOLVED). No sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 6
     },
     {
@@ -1787,8 +1898,9 @@
       "description": "Share the joy of reading with online book clubs",
       "status": "captured",
       "package": "systems/fable",
-      "notes": "",
+      "notes": "https://fable.co/login is a missing page. The homepage offers Get the app and has no email sign-in form. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 6
     },
     {
@@ -1803,8 +1915,9 @@
       "description": "Build faster with AI coding agents",
       "status": "captured",
       "package": "systems/factory",
-      "notes": "",
+      "notes": "https://factory.ai/login redirects to https://factory.com/login, a Vercel login page with an email field and Google, GitHub, ChatGPT, SAML, and passkey. Continue with Email did not advance after the capture inbox was entered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 6
     },
     {
@@ -1819,8 +1932,9 @@
       "description": "Wholesale Platform",
       "status": "captured",
       "package": "systems/faire",
-      "notes": "",
+      "notes": "https://www.faire.com/?signIn=1 asks for email and password, or Google or Apple. Cookie banner was present and was not accepted. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1835,8 +1949,9 @@
       "description": "Easiest & most cost-effective way to use Gen AI",
       "status": "captured",
       "package": "systems/fal",
-      "notes": "",
+      "notes": "https://fal.ai/login offers GitHub, Google, Microsoft, and SSO only. No email field. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "oauth-only",
       "batch": 6
     },
     {
@@ -1851,8 +1966,9 @@
       "description": "Your favorite crypto wallet",
       "status": "captured",
       "package": "systems/family",
-      "notes": "",
+      "notes": "https://family.co/login is 404. Log in opens https://app.family.co/ (now Aave Account), which emailed a 6-digit verification code after the capture inbox. Code not entered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 6
     },
     {
@@ -1867,8 +1983,9 @@
       "description": "The Global Destination For Modern Luxury",
       "status": "captured",
       "package": "systems/farfetch",
-      "notes": "",
+      "notes": "https://www.farfetch.com/sg/ Sign in dialog asks for email and password, or a one-time code, Google, Apple, or Facebook. The one-time code path was not used. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1883,8 +2000,9 @@
       "description": "Create content at scale",
       "status": "captured",
       "package": "systems/feedhive",
-      "notes": "",
+      "notes": "https://www.feedhive.com/login is 404. Login opens https://app.feedhive.com/signin with email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1899,8 +2017,9 @@
       "description": "The fast, calm customer support platform for SaaS",
       "status": "captured",
       "package": "systems/getfernand",
-      "notes": "",
+      "notes": "https://getfernand.com/login is 404. Log in opens https://app.getfernand.com/auth/login with work email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1915,8 +2034,9 @@
       "description": "Build your company workspace with no code",
       "status": "captured",
       "package": "systems/fibery",
-      "notes": "",
+      "notes": "https://fibery.io/login offers Google, Microsoft, and Continue with Email. The email path asks for work email and password. No code was sent. Workspace SSO also offered.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1931,8 +2051,9 @@
       "description": "The Collaborative Interface Design Tool",
       "status": "captured",
       "package": "systems/figma",
-      "notes": "public signed-out surfaces only (marketing pages, /community and the /login /signup product-shell cards); the editor and every post-login surface is behind an account. Cloudflare challenged some routes; fresh-session retries succeeded",
+      "notes": "public signed-out surfaces only (marketing pages, /community and the /login /signup product-shell cards); the editor and every post-login surface is behind an account. Cloudflare challenged some routes; fresh-session retries succeeded https://www.figma.com/login asks for email and password, or Google or single sign-on. Cookie banner was present and was not accepted. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1947,8 +2068,9 @@
       "description": "Identify Every Web Visitor & Mobile Device",
       "status": "captured",
       "package": "systems/fingerprint",
-      "notes": "",
+      "notes": "https://fingerprint.com/login/ is a missing page. The dashboard at https://dashboard.fingerprint.com/login offers Google, GitHub, and Microsoft. Continue with email asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -1963,8 +2085,9 @@
       "description": "Freelance Services Marketplace",
       "status": "captured",
       "package": "systems/fiverr",
-      "notes": "",
+      "notes": "https://www.fiverr.com/login Continue with email asks for email or username and password, or Google, Apple, or Facebook. A headless load earlier hit a human-check page. The interactive form loaded. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -1979,8 +2102,9 @@
       "description": "Video collaboration platform ",
       "status": "captured",
       "package": "systems/flask",
-      "notes": "",
+      "notes": "https://flask.do/login sent a login link to the capture inbox (\"Login link sent\"). Link not opened. Google also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 7
     },
     {
@@ -1995,8 +2119,9 @@
       "description": "UX planning platform",
       "status": "captured",
       "package": "systems/flowmapp",
-      "notes": "",
+      "notes": "https://flowmapp.com/login is a missing page. Sign in is https://app.flowmapp.com/signin with email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2011,8 +2136,9 @@
       "description": "Build applications faster than ever",
       "status": "captured",
       "package": "systems/flutterflow",
-      "notes": "",
+      "notes": "https://app.flutterflow.io/login is a Flutter canvas. Sign in asks for email and password, or Google, Apple, GitHub, or Microsoft. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2027,8 +2153,9 @@
       "description": "Nutrition Tracker",
       "status": "captured",
       "package": "systems/foodnoms",
-      "notes": "",
+      "notes": "https://foodnoms.com/login is a 404. The site only offers Get the App for the iOS app. No web sign-in form.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 7
     },
     {
@@ -2043,8 +2170,9 @@
       "description": "AI Product Generation",
       "status": "captured",
       "package": "systems/fourmula",
-      "notes": "",
+      "notes": "https://fourmula.ai/login is a 404. The app account is https://app.fourmula.ai/auth with email and password, or Google. No code was sent. Cookie banner was not accepted.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2059,8 +2187,9 @@
       "description": "Products and shops your community will love",
       "status": "captured",
       "package": "systems/fourthwall",
-      "notes": "",
+      "notes": "https://fourthwall.com/login downloaded instead of rendering. Log in opens a Keycloak form at auth.fourthwall.com with email and password, or Google or Apple. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2075,8 +2204,9 @@
       "description": "One platform for all your creative work",
       "status": "captured",
       "package": "systems/frame",
-      "notes": "",
+      "notes": "https://next.frame.io/login is page not found. Opening https://app.frame.io/ redirected to https://accounts.frame.io/welcome with email and password. Cookie banner was rejected. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2091,8 +2221,9 @@
       "description": "The internet is your canvas",
       "status": "captured",
       "package": "systems/framer",
-      "notes": "",
+      "notes": "https://framer.com/login accepted the capture inbox and said \"Verification link sent.\" Link not opened. Google also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 7
     },
     {
@@ -2107,8 +2238,9 @@
       "description": "Instantly book salons and spas nearby",
       "status": "captured",
       "package": "systems/fresha",
-      "notes": "",
+      "notes": "https://fresha.com/login is a 404. Partner login at https://partners.fresha.com/users/login sent a 6-digit code (\"Confirm your email\"). Code not entered. Mobile, Google, Apple, and passkey also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 7
     },
     {
@@ -2123,8 +2255,9 @@
       "description": "Front is a customer communication hub",
       "status": "captured",
       "package": "systems/front",
-      "notes": "",
+      "notes": "https://app.frontapp.com/signin asks for email and password, or Google, Office 365, or SAML SSO. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2139,8 +2272,9 @@
       "description": "Audio Transcription API",
       "status": "captured",
       "package": "systems/gladia",
-      "notes": "",
+      "notes": "https://app.gladia.io/signin asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2155,8 +2289,9 @@
       "description": "On-chain market intelligence",
       "status": "captured",
       "package": "systems/glassnode",
-      "notes": "",
+      "notes": "https://studio.glassnode.com/login is page not found. Log in opens https://auth.glassnode.com/ with email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2171,8 +2306,9 @@
       "description": "Online Graphic Design Tool for E-com Business Owners",
       "status": "captured",
       "package": "systems/glorify",
-      "notes": "",
+      "notes": "https://app.glorify.com/dashboard/login asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2187,8 +2323,9 @@
       "description": "All-In-One Salon, Spa & Medspa Software",
       "status": "captured",
       "package": "systems/glossgenius",
-      "notes": "public marketing, signed-out auth (/login, /signup, /forgot-password) and a real published booking website read only to its public /book date-picker; everything post-login and past the date-picker is out of scope",
+      "notes": "public marketing, signed-out auth (/login, /signup, /forgot-password) and a real published booking website read only to its public /book date-picker; everything post-login and past the date-picker is out of scope https://app.glossgenius.com/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2203,8 +2340,9 @@
       "description": "The #1 Crowdfunding and Fundraising Platform",
       "status": "captured",
       "package": "systems/gofundme",
-      "notes": "",
+      "notes": "https://www.gofundme.com/sign-in rendered an empty page with no email field and no buttons. https://app.gofundme.com/login was a fundraiser-not-found page. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 7
     },
     {
@@ -2219,8 +2357,9 @@
       "description": "Meet Gemini, Google's AI assistant",
       "status": "captured",
       "package": "systems/gemini",
-      "notes": "",
+      "notes": "https://gemini.google.com/app has no site email field. Sign in is a Google account button. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "oauth-only",
       "batch": 7
     },
     {
@@ -2235,8 +2374,9 @@
       "description": "Free Online Writing Assistant",
       "status": "captured",
       "package": "systems/grammarly",
-      "notes": "",
+      "notes": "https://www.grammarly.com/login is a missing page. https://www.grammarly.com/signin accepted the capture inbox and said \"We couldn't find an account.\" Create-account was not opened. Google, Facebook, Apple, and SSO also offered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "closed",
       "batch": 7
     },
     {
@@ -2251,8 +2391,9 @@
       "description": "Understand the universe",
       "status": "captured",
       "package": "systems/grok",
-      "notes": "",
+      "notes": "https://grok.com/login stopped on Cloudflare and was not retried. The account form is https://accounts.x.ai/sign-in. Login with email then asks for an email sign-in code or a password. Neither was submitted. No code was sent. Google, X, Apple, and GitHub also offered. Cookie banner was rejected.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2267,8 +2408,9 @@
       "description": "Grow your small business or career",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://grow.google/ redirects to a Singapore skills site with no account sign-in. https://grow.google/intl/en/ is 404. No email form.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 8
     },
     {
@@ -2283,8 +2425,9 @@
       "description": "Earn your first dollar online with Gumroad",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://gumroad.com/login asks for email and password, or Apple, Google, X, Stripe, or a passkey. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2299,8 +2442,9 @@
       "description": "Careers start here ",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.joinhandshake.com/access accepted the capture inbox, then asked \"I'm here to hire\" or \"I'm here for a job.\" Neither was chosen. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "needs-other-info",
       "batch": 8
     },
     {
@@ -2315,8 +2459,9 @@
       "description": "Create, collaborate, and scale your blogs and docs",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://hashnode.com/login stopped on a Vercel Security Checkpoint (\"Failed to verify your browser\", code 21). No email field. Do not retry.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 8
     },
     {
@@ -2331,8 +2476,9 @@
       "description": "Stream HBO, series, movies, and more",
       "status": "captured",
       "package": "systems/hbomax",
-      "notes": "signed-out marketing site only (/sg/en): auth.hbomax.com, play.hbomax.com and help.hbomax.com were link-observed, never opened",
+      "notes": "signed-out marketing site only (/sg/en): auth.hbomax.com, play.hbomax.com and help.hbomax.com were link-observed, never opened https://www.hbomax.com/login returned Access Denied before any form. No email field. Do not retry.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 8
     },
     {
@@ -2347,8 +2493,9 @@
       "description": "Meditation and Sleep Made Simple",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://auth.headspace.com/ login accepted the capture inbox, then asked for a password. Password not submitted. No code was sent. Facebook and Spotify also offered.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2363,8 +2510,9 @@
       "description": "The Project Management Tool for Creative Teams",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.helloivy.co/login asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2379,8 +2527,9 @@
       "description": "Beauty Solutions for your water",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://account.helloklean.com/ sign-in sent a code to the capture inbox (\"Enter code / Sent to\"). Code not entered. Marketing consent was not checked.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 8
     },
     {
@@ -2395,8 +2544,9 @@
       "description": "Hers for Women's Health ",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.forhers.com/login stopped on Cloudflare security verification. No email field. Do not retry.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 8
     },
     {
@@ -2411,8 +2561,9 @@
       "description": "Telehealth for a healthy, handsome you",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.forhims.co.uk/customer/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2427,8 +2578,9 @@
       "description": "Wedding Website & Honeymoon Registry",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.hitchd.com/login asks for email and password, or Facebook. A reCAPTCHA field is present on the password form. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2443,8 +2595,9 @@
       "description": "Beautiful ATS & HR tool for modern teams",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.homerun.co/login asks for email and password, or Google or Microsoft. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2459,8 +2612,9 @@
       "description": "API testing client that flows with you",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://httpie.io/login is a missing page. https://httpie.io/app opens the API client in an incognito space with no account form. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 8
     },
     {
@@ -2475,8 +2629,9 @@
       "description": "Visual annotation tool for website feedback",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://huddlekit.com/login is 404. https://app.huddlekit.com/login Continue with email sent a 6-digit code (\"We've sent a 6-digit code\"). Code not entered. Cookie banner was declined. Google also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 8
     },
     {
@@ -2491,8 +2646,9 @@
       "description": "The world's most realistic & expressive voice AI",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.hume.ai/log-in asks for email and password, or Google or Apple. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2507,8 +2663,9 @@
       "description": "Automate business & home",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://ifttt.ai/login asks for email or username and password, or Google, Apple, or Facebook. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2523,8 +2680,9 @@
       "description": "Affordable Furniture and Home Inspiration",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.ikea.com/sg/en/profile/login/ asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2539,8 +2697,9 @@
       "description": "The largest online grocery marketplace in North America",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.instacart.com/login asks for an email, then offers Continue, or Google, Facebook, or phone. The email was not submitted, so no code was sent. A reCAPTCHA field is on the page.",
       "login-extracted": "not-started",
+      "login-probe": "needs-other-info",
       "batch": 8
     },
     {
@@ -2555,8 +2714,9 @@
       "description": "Bringing you closer to the people and things you love",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.instagram.com/accounts/login/ asks for mobile number, username, or email, plus a password, or Facebook. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2571,8 +2731,9 @@
       "description": "The complete AI-first customer service solution",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.intercom.com/admins/sign_in asks for work email and password, or Google or SAML SSO. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 8
     },
     {
@@ -2587,8 +2748,9 @@
       "description": "Collaborate better",
       "status": "uncapturable",
       "package": null,
-      "notes": "Probed 2026-11-18: https://invisionapp.com and https://www.invisionapp.com (and /login, /pricing, /teams, /inside-design, /enterprise, /customers, /about, /freehand) return HTTP 301 from an AWS ELB to https://miro.com:443/, which serves Miro's live Framer marketing site (title AI Innovation Workspace | Miro), not InVision. Former product hosts do not resolve: projects, support, status, blog, app, login, freehand, studio, dsm, inspect.invisionapp.com. InVision shut its design-collaboration services on 2024-12-31 after selling Freehand to Miro in 2023-11; nothing honest of the product remains to capture.",
+      "notes": "Probed 2026-11-18: https://invisionapp.com and https://www.invisionapp.com (and /login, /pricing, /teams, /inside-design, /enterprise, /customers, /about, /freehand) return HTTP 301 from an AWS ELB to https://miro.com:443/, which serves Miro's live Framer marketing site (title AI Innovation Workspace | Miro), not InVision. Former product hosts do not resolve: projects, support, status, blog, app, login, freehand, studio, dsm, inspect.invisionapp.com. InVision shut its design-collaboration services on 2024-12-31 after selling Freehand to Miro in 2023-11; nothing honest of the product remains to capture. https://www.invisionapp.com/ redirects to https://miro.com/. Miro login rejected the capture inbox: \"This email can not be registered, please try another domain.\" No code was sent. Google, Microsoft, and SSO also offered.",
       "login-extracted": "not-started",
+      "login-probe": "closed",
       "batch": 9
     },
     {
@@ -2603,8 +2765,9 @@
       "description": "Your 24/7 email assistant that drafts for you",
       "status": "captured",
       "package": "systems/jace",
-      "notes": "",
+      "notes": "https://app.jace.ai/signin offers Google, Outlook, and an SSO portal only. No email field. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "oauth-only",
       "batch": 9
     },
     {
@@ -2619,8 +2782,9 @@
       "description": "AI that's built for marketing",
       "status": "captured",
       "package": "systems/jasper",
-      "notes": "",
+      "notes": "https://app.jasper.ai/auth/login has Continue with email. After the capture inbox, the page said \"Failed to send login link.\" No code was sent. Google also offered.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 9
     },
     {
@@ -2635,8 +2799,9 @@
       "description": "Essential tools for software developers and teams",
       "status": "captured",
       "package": "systems/jetbrains",
-      "notes": "",
+      "notes": "https://account.jetbrains.com/login offers Google, GitHub, Apple, GitLab, WeChat, and Bitbucket. Continue with email showed an email field, and Continue did not advance. No code was sent. Cookie banner was not accepted.",
       "login-extracted": "not-started",
+      "login-probe": "no-form",
       "batch": 9
     },
     {
@@ -2651,8 +2816,9 @@
       "description": "Fast and simple motion design tool",
       "status": "captured",
       "package": "systems/jitter",
-      "notes": "",
+      "notes": "https://jitter.video/login sent a temporary login link to the capture inbox (\"Check your email\"). Link not opened. Google and SSO also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 9
     },
     {
@@ -2667,8 +2833,9 @@
       "description": "Save and Organize Your Favorite Recipes",
       "status": "captured",
       "package": "systems/julienne",
-      "notes": "",
+      "notes": "https://withjulienne.com/login redirects home. The Log in dialog asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2683,8 +2850,9 @@
       "description": "Kickstarter exists to help bring creative projects to life",
       "status": "captured",
       "package": "systems/kickstarter",
-      "notes": "",
+      "notes": "https://www.kickstarter.com/login stopped on Cloudflare security verification. No email field. Do not retry.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 9
     },
     {
@@ -2699,8 +2867,9 @@
       "description": "Team matchmaking for women-led startups",
       "status": "captured",
       "package": "systems/kinhive",
-      "notes": "",
+      "notes": "https://kinhive.com/login is 404. https://kinhive.com/sign-in sent a sign-in code (\"We sent a code\"). Code not entered. LinkedIn also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 9
     },
     {
@@ -2715,8 +2884,9 @@
       "description": "Email-First Operating System for Creators",
       "status": "captured",
       "package": "systems/kit",
-      "notes": "",
+      "notes": "https://app.kit.com/users/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2731,8 +2901,9 @@
       "description": "Anyone can cook",
       "status": "captured",
       "package": "systems/kitchenstories",
-      "notes": "",
+      "notes": "https://www.kitchenstories.com/profile Login opens a Contentpass account form at my.contentpass.net with email and password. No code was sent. A consent banner was present and was not accepted.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2747,8 +2918,9 @@
       "description": "Collaborate with your team and clients to get things done",
       "status": "captured",
       "package": "systems/kitchen",
-      "notes": "",
+      "notes": "https://kitchen.co/login/workspace asks for a workspace Kitchen URL before any email. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "needs-other-info",
       "batch": 9
     },
     {
@@ -2763,8 +2935,9 @@
       "description": "Shop, Track Purchases, Make Payments",
       "status": "captured",
       "package": "systems/klarna",
-      "notes": "",
+      "notes": "https://app.klarna.com/login asks for a country of residence before any email. No country was chosen. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "needs-other-info",
       "batch": 9
     },
     {
@@ -2779,8 +2952,9 @@
       "description": "Bitcoin & Cryptocurrency Exchange",
       "status": "captured",
       "package": "systems/kraken",
-      "notes": "",
+      "notes": "https://www.kraken.com/sign-in asks for email or username and password, or Google or Apple. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2795,8 +2969,9 @@
       "description": "Generative AI made easy. Generate and enhance images and videos using powerful AI for free",
       "status": "captured",
       "package": "systems/krea",
-      "notes": "",
+      "notes": "https://www.krea.ai/login offers Google, Apple, SSO, and email. Continue with email said \"We couldn't verify this browser.\" No code was sent. Do not retry.",
       "login-extracted": "not-started",
+      "login-probe": "captcha",
       "batch": 9
     },
     {
@@ -2811,8 +2986,9 @@
       "description": "World's #1 Noise Cancelling App and AI Meeting Assistant",
       "status": "captured",
       "package": "systems/krisp",
-      "notes": "",
+      "notes": "https://krisp.ai/wp-login.php asks for username or email and password. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2827,8 +3003,9 @@
       "description": "Explore the world of LEGO",
       "status": "captured",
       "package": "systems/lego",
-      "notes": "",
+      "notes": "https://www.lego.com/en-sg/login is a missing page. https://identity.lego.com/ asks for a birth year before any email. Birth year was not entered. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "needs-other-info",
       "batch": 9
     },
     {
@@ -2843,8 +3020,9 @@
       "description": "Set up custom Ai agents in minutes",
       "status": "captured",
       "package": "systems/lemni",
-      "notes": "",
+      "notes": "https://lemni.com/signin sent a sign-in link to the capture inbox (\"Check your inbox\"). Link not opened. Google also offered.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 9
     },
     {
@@ -2859,8 +3037,9 @@
       "description": "Payments, tax & subscriptions for software companies",
       "status": "captured",
       "package": "systems/lemonsqueezy",
-      "notes": "",
+      "notes": "https://auth.lemonsqueezy.com/login asks for email and password, or Google or Twitter. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2875,8 +3054,9 @@
       "description": "Generative AI Platform for Images, Art & Video",
       "status": "captured",
       "package": null,
-      "notes": "",
+      "notes": "https://leonardo.ai/login is page not found. https://app.leonardo.ai/auth/login asks for email and password, or Canva, Apple, Google, or Microsoft. No code was sent.",
       "login-extracted": "not-started",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2891,8 +3071,9 @@
       "description": "Personalized AI powered by what you’ve seen, said, and heard",
       "status": "captured",
       "package": "systems/limitless",
-      "notes": "",
+      "notes": "https://www.limitless.ai/ says Limitless has been acquired by Meta. https://app.limitless.ai/signin says \"Sign Up Unavailable\" and is no longer accepting new users. No code was sent. Google also offered.",
       "login-extracted": "not-started",
+      "login-probe": "closed",
       "batch": 9
     },
     {
@@ -2909,6 +3090,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -2925,6 +3107,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -2941,6 +3124,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -2957,6 +3141,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -2973,6 +3158,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -2989,6 +3175,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3005,6 +3192,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3019,7 +3207,7 @@
       "description": "Luma is all you need to host a memorable event.",
       "status": "pending",
       "package": "systems/luma",
-      "notes": "Signed-in host shell captured 2026-11-20. Account menu and the settings account tab were deleted, not committed. Guest list, check-in, blasts, and a published editor need an event this trial does not have.",
+      "notes": "Signed-in host shell captured 2026-11-20. Account menu and the settings account tab were deleted, not committed. Guest list, check-in, blasts, and a published editor need an event this trial does not have. Email code reached the empty host shell.",
       "login-extracted": "done",
       "login-review": {
         "offered": {
@@ -3082,6 +3270,7 @@
           "passkey"
         ]
       },
+      "login-probe": "signed-in",
       "batch": 10
     },
     {
@@ -3098,6 +3287,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3114,6 +3304,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3130,6 +3321,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3146,6 +3338,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3162,6 +3355,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3178,6 +3372,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3194,6 +3389,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3210,6 +3406,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3226,6 +3423,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3242,6 +3440,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3258,6 +3457,7 @@
       "package": "systems/matter",
       "notes": "public signed-out marketing, a public article, docs, and the reader sign-in card. The reader app sits behind sign-in and was not reached. Subscribe, OAuth, and checkout were not submitted.",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3274,6 +3474,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 10
     },
     {
@@ -3290,6 +3491,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3306,6 +3508,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3322,6 +3525,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3338,6 +3542,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3354,6 +3559,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3370,6 +3576,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3386,6 +3593,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3404,6 +3612,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3420,6 +3629,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3436,6 +3646,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3452,6 +3663,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3468,6 +3680,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3484,6 +3697,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3500,6 +3714,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3516,6 +3731,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3532,6 +3748,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3548,6 +3765,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3564,6 +3782,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3580,6 +3799,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3596,6 +3816,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 11
     },
     {
@@ -3612,6 +3833,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3628,6 +3850,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3644,6 +3867,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3660,6 +3884,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3676,6 +3901,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3692,6 +3918,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3708,6 +3935,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3724,6 +3952,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3740,6 +3969,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3756,6 +3986,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3772,6 +4003,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3788,6 +4020,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3804,6 +4037,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3820,6 +4054,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3836,6 +4071,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3852,6 +4088,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3868,6 +4105,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3884,6 +4122,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3900,6 +4139,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3916,6 +4156,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 12
     },
     {
@@ -3932,6 +4173,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -3948,6 +4190,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -3964,6 +4207,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -3980,6 +4224,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -3996,6 +4241,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4012,6 +4258,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4028,6 +4275,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4044,6 +4292,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4060,6 +4309,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4076,6 +4326,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4092,6 +4343,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4108,6 +4360,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4124,6 +4377,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4140,6 +4394,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4156,6 +4411,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4172,6 +4428,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4188,6 +4445,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4204,6 +4462,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4220,6 +4479,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4236,6 +4496,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 13
     },
     {
@@ -4252,6 +4513,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4268,6 +4530,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4284,6 +4547,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4300,6 +4564,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4316,6 +4581,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4332,6 +4598,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4348,6 +4615,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4364,6 +4632,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4380,6 +4649,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4396,6 +4666,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4412,6 +4683,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4428,6 +4700,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4444,6 +4717,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4460,6 +4734,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4476,6 +4751,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4492,6 +4768,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4508,6 +4785,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4524,6 +4802,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4540,6 +4819,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4556,6 +4836,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 14
     },
     {
@@ -4572,6 +4853,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4588,6 +4870,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4604,6 +4887,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4620,6 +4904,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4636,6 +4921,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4652,6 +4938,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4668,6 +4955,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4684,6 +4972,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4700,6 +4989,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4716,6 +5006,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4732,6 +5023,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4748,6 +5040,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4764,6 +5057,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4780,6 +5074,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4796,6 +5091,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4812,6 +5108,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4828,6 +5125,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4844,6 +5142,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4860,6 +5159,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4876,6 +5176,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 15
     },
     {
@@ -4892,6 +5193,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -4908,6 +5210,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -4924,6 +5227,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -4940,6 +5244,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -4956,6 +5261,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -4972,6 +5278,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -4988,6 +5295,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5004,6 +5312,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5020,6 +5329,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5036,6 +5346,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5052,6 +5363,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5068,6 +5380,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5084,6 +5397,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5100,6 +5414,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5116,6 +5431,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5132,6 +5448,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5148,6 +5465,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5164,6 +5482,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5180,6 +5499,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5196,6 +5516,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 16
     },
     {
@@ -5212,6 +5533,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5228,6 +5550,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5244,6 +5567,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5260,6 +5584,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5274,8 +5599,9 @@
       "description": "3D Design tool in the browser with real-time collaboration",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "2026-11-19 email code arrived for app.spline.design. The company-size step did not advance, so the product was not opened.",
       "login-extracted": "not-started",
+      "login-probe": "code-sent",
       "batch": 17
     },
     {
@@ -5292,6 +5618,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5308,6 +5635,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5324,6 +5652,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5340,6 +5669,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5356,6 +5686,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5372,6 +5703,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5388,6 +5720,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5404,6 +5737,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5420,6 +5754,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5436,6 +5771,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5452,6 +5788,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5468,6 +5805,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5484,6 +5822,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5500,6 +5839,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5516,6 +5856,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 17
     },
     {
@@ -5532,6 +5873,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5548,6 +5890,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5564,6 +5907,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5580,6 +5924,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5596,6 +5941,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5612,6 +5958,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5628,6 +5975,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5644,6 +5992,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5660,6 +6009,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5676,6 +6026,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5692,6 +6043,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5708,6 +6060,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5724,6 +6077,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5740,6 +6094,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5756,6 +6111,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5772,6 +6128,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5788,6 +6145,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5804,6 +6162,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5820,6 +6179,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5836,6 +6196,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 18
     },
     {
@@ -5852,6 +6213,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -5868,6 +6230,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -5884,6 +6247,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -5900,6 +6264,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -5916,6 +6281,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -5932,6 +6298,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -5948,6 +6315,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -5964,6 +6332,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -5980,6 +6349,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -5996,6 +6366,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6012,6 +6383,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6028,6 +6400,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6044,6 +6417,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6060,6 +6434,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6076,6 +6451,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6092,6 +6468,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6108,6 +6485,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6124,6 +6502,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6140,6 +6519,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6156,6 +6536,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 19
     },
     {
@@ -6172,6 +6553,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6188,6 +6570,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6204,6 +6587,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6220,6 +6604,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6236,6 +6621,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6252,6 +6638,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6268,6 +6655,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6284,6 +6672,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6300,6 +6689,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6316,6 +6706,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6332,6 +6723,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6348,6 +6740,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6364,6 +6757,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6380,6 +6774,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6396,6 +6791,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6412,6 +6808,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6428,6 +6825,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6444,6 +6842,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6460,6 +6859,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6476,6 +6876,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 20
     },
     {
@@ -6492,6 +6893,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6508,6 +6910,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6524,6 +6927,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6540,6 +6944,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6556,6 +6961,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6572,6 +6978,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6588,6 +6995,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6604,6 +7012,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6620,6 +7029,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6636,6 +7046,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6652,6 +7063,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6668,6 +7080,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6684,6 +7097,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6700,6 +7114,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6716,6 +7131,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6732,6 +7148,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6748,6 +7165,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     },
     {
@@ -6764,6 +7182,7 @@
       "package": null,
       "notes": "",
       "login-extracted": "not-started",
+      "login-probe": "not-tried",
       "batch": 21
     }
   ]
