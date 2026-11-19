@@ -368,9 +368,9 @@
       "description": "Arcade is an interactive demo platform that allows teams to create effortlessly beautiful demos in minutes",
       "status": "captured",
       "package": "systems/arcade",
-      "notes": "",
+      "notes": "https://app.arcade.software/auth said check your email for the sign-in link. The link was not opened. Google, Microsoft, and Apple are also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 2
     },
     {
@@ -385,9 +385,9 @@
       "description": "Shop for Women, Men, Children, Homeware & Travel",
       "status": "captured",
       "package": "systems/arket",
-      "notes": "Akamai 403s on root and PDPs; shell and dialog components measured from reachable category routes; no dark theme, no spacing or elevation scale",
+      "notes": "Akamai 403s on root and PDPs; shell and dialog components measured from reachable category routes; no dark theme, no spacing or elevation scale https://www.arket.com/en-ww/account/ sent a verification code to the capture inbox and asked to create an account. The code was not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 2
     },
     {
@@ -402,9 +402,9 @@
       "description": "Video calls loved by extraordinary teams",
       "status": "uncapturable",
       "package": null,
-      "notes": "domain parked on GoDaddy for-sale; around.com is an unrelated site; product defunct, nothing honest to capture",
+      "notes": "domain parked on GoDaddy for-sale; around.com is an unrelated site; product defunct, nothing honest to capture https://around.co/ is a GoDaddy for-sale page. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 2
     },
     {
@@ -419,9 +419,9 @@
       "description": "Design and Animate Like Never Before",
       "status": "captured",
       "package": "systems/artboardstudio",
-      "notes": "editor and app surfaces behind sign-in; marketing routes captured",
+      "notes": "editor and app surfaces behind sign-in; marketing routes captured https://app.artboard.studio/ Continue with Email asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -436,9 +436,9 @@
       "description": "Manage your team's work, projects, & tasks online",
       "status": "captured",
       "package": "systems/asana",
-      "notes": "app behind sign-in; public marketing surface captured; declared-but-unbound --darkmode-* roles recorded as declared evidence",
+      "notes": "app behind sign-in; public marketing surface captured; declared-but-unbound --darkmode-* roles recorded as declared evidence https://app.asana.com/-/login accepted the email, then signup offered Google, Microsoft, or a stuck Signing Up state. No code was sent. The form was not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 2
     },
     {
@@ -453,9 +453,9 @@
       "description": "Online Shopping",
       "status": "captured",
       "package": "systems/asos",
-      "notes": "",
+      "notes": "https://my.asos.com/account/login accepted the email, then Continue said it could not submit the details. Google, Facebook, and Apple are also offered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 2
     },
     {
@@ -470,9 +470,9 @@
       "description": "The data-driven CRM",
       "status": "captured",
       "package": "systems/attio",
-      "notes": "pre-existing package; verified complete against docs/PACKAGE.md during batch 2",
+      "notes": "pre-existing package; verified complete against docs/PACKAGE.md during batch 2 https://app.attio.com/login opened the signed-in onboarding page in this browser. No new code was requested.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 2
     },
     {
@@ -487,9 +487,9 @@
       "description": "Des vêtements et accessoires fonctionnels et durables pour les professionnels du cinéma et de la musique",
       "status": "captured",
       "package": "systems/avnier",
-      "notes": "",
+      "notes": "https://avnier.com/account/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -504,9 +504,9 @@
       "description": "Best Web Design Trends",
       "status": "captured",
       "package": "systems/awwwards",
-      "notes": "",
+      "notes": "https://www.awwwards.com/login asks for email or username and a password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -521,9 +521,9 @@
       "description": "A new professional network for GenAI builders",
       "status": "captured",
       "package": "systems/b150",
-      "notes": "app.b150.ai rate-limits anonymous fetches (HTTP 429) and is a documented boundary; marketing surface captured",
+      "notes": "app.b150.ai rate-limits anonymous fetches (HTTP 429) and is a documented boundary; marketing surface captured https://app.b150.ai/auth/signup asks for a full name, email, and a password, or Google. No code was sent. The form was not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -538,9 +538,9 @@
       "description": "Product research so simple, you'll never skip it again",
       "status": "captured",
       "package": "systems/ballpark",
-      "notes": "",
+      "notes": "https://ballparkhq.com/sign-in asks for email and password, or Google or SSO. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -555,9 +555,9 @@
       "description": "App Builder: No Code",
       "status": "captured",
       "package": "systems/base44",
-      "notes": "app.base44.com never signed into; declared-but-unpainted .dark token set and empty app-side --sem-* vars recorded as declared/boundary evidence",
+      "notes": "app.base44.com never signed into; declared-but-unpainted .dark token set and empty app-side --sem-* vars recorded as declared/boundary evidence https://app.base44.com/login accepted the email, then asked for a password. Google, Apple, and GitHub are also offered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -572,9 +572,9 @@
       "description": "A Link in Bio, but Rich and Beautiful",
       "status": "uncapturable",
       "package": null,
-      "notes": "301-redirects to linktr.ee; Bento was acquired and shut down; no usable Wayback snapshots; a capture would be a parked domain or Linktree, not Bento",
+      "notes": "301-redirects to linktr.ee; Bento was acquired and shut down; no usable Wayback snapshots; a capture would be a parked domain or Linktree, not Bento https://bento.me redirects to https://linktr.ee/. The Bento product is gone. No Bento sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 2
     },
     {
@@ -589,9 +589,9 @@
       "description": "Design in 3D together",
       "status": "captured",
       "package": "systems/bezi",
-      "notes": "",
+      "notes": "https://www.bezi.com/ has a desktop download and no web sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 2
     },
     {
@@ -606,9 +606,9 @@
       "description": "Free Link in Bio Tool for Instagram & TikTok",
       "status": "captured",
       "package": "systems/biosites",
-      "notes": "",
+      "notes": "https://biosites.com/editor?loginUser=true opens a Squarespace login that asks for email and password, or Google, Apple, or Facebook. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -623,9 +623,9 @@
       "description": "Delivers business and markets news, data, analysis, and video to the world",
       "status": "captured",
       "package": "systems/bloomberg",
-      "notes": "",
+      "notes": "https://www.bloomberg.com/account/login stopped on Are you a robot. No email field was reached.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 2
     },
     {
@@ -640,9 +640,9 @@
       "description": "The meal kit that puts quality first",
       "status": "captured",
       "package": "systems/blueapron",
-      "notes": "",
+      "notes": "https://www.blueapron.com/login stopped on a Cloudflare attention page. No email field was reached.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 2
     },
     {
@@ -657,9 +657,9 @@
       "description": "Free Storyboard Software",
       "status": "captured",
       "package": "systems/boords",
-      "notes": "",
+      "notes": "https://app.boords.com/login asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -674,9 +674,9 @@
       "description": "Learn Languages Online: Start for Free",
       "status": "captured",
       "package": "systems/busuu",
-      "notes": "",
+      "notes": "https://www.busuu.com/en/login asks for email and password, or Apple, Facebook, or SSO. A mobile number is optional. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
@@ -691,9 +691,9 @@
       "description": "The all-in-one video editor for modern brands",
       "status": "captured",
       "package": "systems/butter",
-      "notes": "cursor badge only paints for real pointer input and is captured in its hidden state; paywalled product surfaces out of scope",
+      "notes": "cursor badge only paints for real pointer input and is captured in its hidden state; paywalled product surfaces out of scope https://www.butter.video/login asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 2
     },
     {
