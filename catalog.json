@@ -20343,6 +20343,83 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "mural",
+      "name": "Mural",
+      "url": "https://www.mural.co",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Visual collaboration marketing: a black hero, STK Bureau display, a floating white nav pill, a jade start button, and a red auth action on a grey page",
+      "tags": [
+        "web",
+        "collaboration",
+        "whiteboard",
+        "marketing",
+        "light",
+        "signed-out",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "public marketing pages and the signed-out login and signup. No account created. No form submitted.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/mural/README.md",
+      "tokens": "systems/mural/tokens.json",
+      "styleGuide": "systems/mural/style-guide.html",
+      "preview": {
+        "cover": "systems/mural/screenshots/home-light-default.png",
+        "icon": "systems/mural/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "www.mural.co and app.mural.co/signin and /signup, headless Chromium, desktop 1440x900 and phone 390 CSS px at 2x. Overlays hidden, never accepted. No form submitted.",
+        "timestamp": "2026-11-19T00:32:00Z",
+        "harness": "Grok / T3",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "www.mural.co/",
+          "www.mural.co/pricing",
+          "www.mural.co/product",
+          "www.mural.co/templates",
+          "www.mural.co/enterprise",
+          "www.mural.co/integrations",
+          "app.mural.co/signin",
+          "app.mural.co/signup"
+        ],
+        "gaps": [
+          "the signed-in workspace was not entered",
+          "signup and login were not submitted",
+          "no password field appeared, because the email was not sent",
+          "the Product menu did not open from the headless click",
+          "phone auth screenshots failed the viewport dimension check and are full-page 780x1688",
+          "no dark theme switch was found on these pages"
+        ],
+        "durationMin": 70,
+        "pr": ""
+      }
     }
   ]
 }
