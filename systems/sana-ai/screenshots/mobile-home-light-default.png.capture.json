@@ -1,0 +1,19 @@
+{
+  "capturedAt": "2026-11-18T18:28:09.590Z",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 390,
+    "height": 844,
+    "scale": 1
+  },
+  "title": "Sana Agents",
+  "sanitizedSourceUrl": "https://sana.ai/",
+  "note": "headless Playwright. T3 preview could not produce screenshot frames. Public page had already loaded in the preview tab with no Cloudflare challenge."
+}

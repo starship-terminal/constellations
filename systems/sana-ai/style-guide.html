@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sana AI style guide</title>
+<style>
+  :root {
+    --ink: #0a1217;
+    --white: #fff;
+    --paper: #fafafa;
+    --night: #131314;
+    --night-2: #1e1f20;
+    --fog: #e8e8e8;
+    --muted: rgba(10, 18, 23, 0.4);
+    --fog-40: rgba(232, 232, 232, 0.4);
+    --lime: #cdfe00;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--white); color: var(--ink); font: 400 16px/1.5 "Sana Sans", -apple-system, "Segoe UI", sans-serif; }
+  header { padding: 28px 32px; }
+  header h1 { margin: 0; font: 400 48px/0.95 "Sana Sans", "Segoe UI", sans-serif; letter-spacing: -1.4px; }
+  header p { margin: 8px 0 0; max-width: 62ch; }
+  main { padding: 0 32px 48px; max-width: 1080px; }
+  h2 { font: 500 20px/1.4 "Sana Sans", "Segoe UI", sans-serif; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .sw { border-radius: 12px; overflow: hidden; border: 1px solid rgba(10, 18, 23, 0.1); }
+  .sw i { display: block; height: 64px; }
+  .sw span { display: block; padding: 8px 10px; font-size: 12px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+  button, .pill { font: 450 14px/1.4 "Sana Sans", "Segoe UI", sans-serif; }
+  .signin { background: var(--ink); color: var(--white); border: 0; border-radius: 36px; padding: 4px 16px; height: 36px; }
+  .explore { background: var(--ink); color: var(--white); border: 1px solid transparent; border-radius: 24px; padding: 8px 16px; height: 39px; }
+  .accept { background: var(--ink); color: var(--white); border: 0; border-radius: 9999px; padding: 6px 16px; height: 36px; font-weight: 500; }
+  .necessary { background: transparent; color: var(--ink); border: 1px solid rgba(10, 18, 23, 0.1); border-radius: 9999px; padding: 6px 16px; height: 36px; font-weight: 500; }
+  .dark-panel { background: var(--night); color: var(--fog); border-radius: 18px; padding: 24px; margin-top: 24px; }
+  .dark-panel h2 { color: var(--fog); }
+  .field { width: 352px; height: 48px; border-radius: 24px; border: 1px solid rgba(232, 232, 232, 0.15); background: transparent; color: var(--fog); padding: 12px 24px; font: 500 14px/1.4 "Sana Sans", "Segoe UI", sans-serif; }
+  .field::placeholder { color: var(--fog-40); }
+  .submit { background: rgba(232, 232, 232, 0.04); color: var(--fog-40); border: 1px solid transparent; border-radius: 9999px; padding: 12px 24px; height: 44px; font-weight: 500; }
+  .back { background: var(--fog); color: var(--night); border: 0; border-radius: 9999px; padding: 12px 20px; height: 44px; font-weight: 500; }
+  .navpill { display: inline-flex; background: var(--night-2); border-radius: 9999px; height: 44px; align-items: center; }
+  .navpill span { color: rgba(232, 232, 232, 0.6); font: 500 13px/1.5 "Sana Sans", "Segoe UI", sans-serif; padding: 12px 16px; }
+  .card { width: 280px; height: 180px; border-radius: 24px; background: var(--paper); overflow: hidden; padding: 16px; }
+  .card b { display: block; font-weight: 450; }
+  .card span { color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Superintelligence for work</h1>
+  <p>Give your teams the tools they need to thrive in an AI-first world.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#0a1217"></i><span>ink #0a1217</span></div>
+    <div class="sw"><i style="background:#ffffff"></i><span>white #ffffff</span></div>
+    <div class="sw"><i style="background:#fafafa"></i><span>paper #fafafa</span></div>
+    <div class="sw"><i style="background:#131314"></i><span>night #131314</span></div>
+    <div class="sw"><i style="background:#1e1f20"></i><span>night secondary #1e1f20</span></div>
+    <div class="sw"><i style="background:#e8e8e8"></i><span>fog #e8e8e8</span></div>
+    <div class="sw"><i style="background:#cdfe00"></i><span>lime #cdfe00, declared</span></div>
+    <div class="sw"><i style="background:#ff3b30"></i><span>alert #ff3b30, declared</span></div>
+  </div>
+  <h2>Home controls</h2>
+  <div class="row">
+    <button class="signin">Sign in</button>
+    <button class="explore">Explore</button>
+    <button class="accept">Accept</button>
+    <button class="necessary">Only necessary</button>
+  </div>
+  <div class="card">
+    <b>Sana Learn</b>
+    <span>AI-native learning platform</span>
+  </div>
+  <div class="dark-panel">
+    <h2>Sign-in, dark</h2>
+    <div class="navpill"><span>Overview</span><span>Privacy and terms</span><span>FAQ</span></div>
+    <p style="font-weight:500;font-size:34px;line-height:1.4;margin:16px 0 8px">Welcome to Sana</p>
+    <input class="field" placeholder="name@work-email.com" aria-label="Work email">
+    <div class="row">
+      <button class="submit">Enter your work email</button>
+      <button class="back">Back</button>
+    </div>
+  </div>
+</main>
+</body>
+</html>

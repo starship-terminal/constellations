@@ -19808,6 +19808,85 @@
       "layoutGaps": {
         "icons/": "Inline SVGs and the wordmark were on the page but were not extracted. icon.png is the site icon."
       }
+    },
+{
+      "slug": "sana-ai",
+      "name": "Sana AI",
+      "url": "https://sana.ai/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "AI-work marketing: a white page, an ink Sign in pill, two photographic product cards with Explore pills, and a dark signed-out email form",
+      "tags": [
+        "web",
+        "ai",
+        "marketing",
+        "saas",
+        "signed-out",
+        "ink"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing page plus the email sign-in form; an AgentMail address was typed, the one-time code was not entered, Google was not clicked, and no company SSO was offered)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/sana-ai/README.md",
+      "tokens": "systems/sana-ai/tokens.json",
+      "styleGuide": "systems/sana-ai/style-guide.html",
+      "preview": {
+        "cover": "systems/sana-ai/screenshots/home-light-default.png",
+        "icon": "systems/sana-ai/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.background.action",
+            "border": "dark.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "sana.ai and sana.ai/sign-in-to-sana. The T3 preview tab loaded both and computed styles were read there. The preview tab could not produce screenshot frames, so the home screenshots were taken in headless Playwright after those pages had already loaded with no Cloudflare challenge. A headless shot of the sign-in page painted it light while the live page is dark, so it was discarded.",
+        "timestamp": "2026-11-19T02:30:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/sign-in-to-sana"
+        ],
+        "gaps": [
+          "the product app sits behind a one-time code and was not entered",
+          "Google sign-in is an iframe and was not clicked",
+          "no company SSO was offered",
+          "the preview browser could not produce screenshot frames",
+          "the sign-in page has no screenshot because a headless shot disagreed with the live dark page",
+          "the Products dropdown was mounted and not opened",
+          "pressed and loading button states were not on the page",
+          "lime accent and alert colours are declared and were not painted on a measured control"
+        ],
+        "durationMin": 45,
+        "pr": "https://github.com/starship-terminal/constellations/pull/808"
+      }
     }
   ]
 }
