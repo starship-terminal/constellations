@@ -67,14 +67,16 @@ def init_db():
 
 
 def has_truthy_html(result_json):
-    """True when the stored result has a component with a truthy html
-    (resolved text or an unresolved "$xx" reference)."""
+    """True when the stored result has a component with resolved html. A
+    leftover "$xx" reference is not html, so its style stays selected."""
     try:
         result = json.loads(result_json or "")
     except json.JSONDecodeError:
         return False
     comps = (result.get("designSystem") or {}).get("components") or []
-    return any(isinstance(c, dict) and c.get("html") for c in comps)
+    return any(isinstance(c, dict) and c.get("html")
+               and not (isinstance(c["html"], str) and REF_RE.match(c["html"]))
+               for c in comps)
 
 
 def resolve_ref(blob_bytes, ref_id):
@@ -99,7 +101,8 @@ def resolve_components(result, blob_bytes):
 
     Returns (resolved, unresolved): how many components ended up with real
     HTML (already-text values count) versus how many "$xx" refs could not
-    be resolved and were left in place.
+    be resolved. Like fetch.resolve_component_html, an unresolved ref and
+    "$undefined" become None, never a "$xx" string stored as html.
     """
     comps = (result.get("designSystem") or {}).get("components") or []
     resolved = unresolved = 0
@@ -107,9 +110,12 @@ def resolve_components(result, blob_bytes):
         if not isinstance(c, dict):
             continue
         h = c.get("html")
-        if isinstance(h, str) and REF_RE.match(h):
+        if h == "$undefined":
+            c["html"] = None
+        elif isinstance(h, str) and REF_RE.match(h):
             text = resolve_ref(blob_bytes, h[1:])
             if text is None:
+                c["html"] = None
                 unresolved += 1
             else:
                 c["html"] = text
