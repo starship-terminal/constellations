@@ -5,7 +5,7 @@
   "email_allow": [
    "@enode\\.(com|io|energy)$",
    "@enod\\w*\\.\\w+$",
-   "example\\.com$"
+   "@example\\.com$"
   ]
  },
  "families": []

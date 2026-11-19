@@ -530,5 +530,58 @@ class RulesText(unittest.TestCase):
                 self.assertEqual(R.rules_text_leaks(json.loads(f.read_text())), [])
 
 
+@unittest.skipIf(R is None, "Pillow and numpy are not installed")
+class AllowEntries(unittest.TestCase):
+    """A package rules file's email_allow may pass named addresses, never a stranger's."""
+
+    def test_broad_entries_are_refused(self):
+        for entry in [".*", "@.+", ".*@.*", "^.+@", r"@\w+\.com$",          # every address
+                      r"@gmail\.com$", r"@mail\.com$", r"@yahoo\.co\.jp$",  # a whole free-mail domain
+                      r"@agentmail\.to\b", r"@email\.com$",
+                      "name@", "you@", r"^assistant@", "name@.*",               # a local part at any domain
+                      r"example\.com$", "owner", "(", 7]:
+            with self.subTest(entry=entry):
+                self.assertIsNotNone(R.allow_entry_problem(entry))
+        self.assertTrue(R.email_allowed("jane.doe.private@gmail.com", [r"@gmail\.com$"]))  # what it used to let by
+
+    def test_pinned_entries_pass(self):
+        for entry in [r"@example\.(com|org)$", r"@vendor\.biz$", r"\.example$", r"^owner@mine\.test$",
+                      r"satoshi@gmail\.com$", r"^hello@vendor\.biz$", r"wagmi@[0-9][0-9.x]*", r"@everyone$"]:
+            with self.subTest(entry=entry):
+                self.assertIsNone(R.allow_entry_problem(entry))
+
+    def test_check_and_apply_refuse_a_rules_file_with_an_allow_all_entry(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d) / "pkg"
+            pkg.mkdir()
+            Image.new("RGB", (4, 4)).save(pkg / "a.png")
+            pats = Path(d) / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]], "email_allow": ["^owner@"]}))
+            rules = Path(d) / "r.json"
+            rules.write_text(json.dumps({"ocr": {"email_allow": [r"@vendor\.biz$", ".*"]}}))
+            for argv in (["check", str(pkg), "--patterns", str(pats), "--rules", str(rules)],
+                         ["apply", str(pkg), "--rules", str(rules), "--patterns", str(pats)]):
+                err = io.StringIO()
+                with mock.patch.object(R, "ocr_words", return_value=[]), contextlib.redirect_stderr(err), \
+                     contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                    R.main(argv)
+                self.assertEqual(cm.exception.code, 2, argv)
+                self.assertIn('".*" passes any address', err.getvalue())
+                self.assertNotIn("vendor", err.getvalue())                 # only the refused entry is named
+            # the private patterns file is the owner's: its bare-local-part entry is not refused
+            rules.write_text(json.dumps({"ocr": {"email_allow": [r"@vendor\.biz$"]}}))
+            with mock.patch.object(R, "ocr_words", return_value=[]), contextlib.redirect_stdout(io.StringIO()), \
+                 self.assertRaises(SystemExit) as cm:
+                R.main(["check", str(pkg), "--patterns", str(pats), "--rules", str(rules)])
+            self.assertEqual(cm.exception.code, 0)
+
+    def test_every_committed_rules_file_pins_its_allow_entries(self):
+        for f in sorted(R.RULES_DIR.glob("*.json")):
+            allow = json.loads(f.read_text()).get("ocr", {}).get("email_allow", [])
+            for entry in allow:
+                with self.subTest(rules=f.name, entry=entry):
+                    self.assertIsNone(R.allow_entry_problem(entry))
+
 if __name__ == "__main__":
     unittest.main()

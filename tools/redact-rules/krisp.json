@@ -10,10 +10,8 @@
     "emails": true,
     "net": true,
     "email_allow": [
-      "^kaichen@",
-      "^kaichen@agentmail\\.to$",
-      "@agentmail\\.to$",
-      "^assistant@"
+      "^kaichen@agentm(ail)?(\\.to?)?$",
+      "^assistant@krisp\\.ai(to)?$"
     ]
   }
 }

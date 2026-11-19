@@ -5,7 +5,7 @@
   "email_allow": [
    "@fibery\\.(com|io)$",
    "@fiber\\w*\\.\\w+$",
-   "example\\.com$"
+   "@example\\.com$"
   ]
  },
  "families": []
