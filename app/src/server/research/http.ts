@@ -9,7 +9,18 @@ export class HttpError extends Error {
     super(message);
   }
 }
-export function mutationGuard(request: Request) {
+/**
+ * Refuses a mutation a browser could send from another site: a foreign
+ * Origin, `Sec-Fetch-Site: cross-site`, or a body that is not JSON (a
+ * cross-site form or `text/plain` POST needs no preflight).
+ * `originlessClients` lets a request with neither Origin nor Sec-Fetch-Site
+ * through the private origin too: MCP clients send neither header, and a
+ * browser on another site always sends one of them.
+ */
+export function mutationGuard(
+  request: Request,
+  { originlessClients = false }: { originlessClients?: boolean } = {},
+) {
   const actualHost = request.headers.get("host");
   if (actualHost && !isAllowedHost(actualHost)) {
     throw new HttpError(
@@ -57,6 +68,7 @@ export function mutationGuard(request: Request) {
   const configured = privateOrigin();
   if (
     !origin &&
+    !originlessClients &&
     configured &&
     actualHost === configured.host &&
     request.headers.get("sec-fetch-site") !== "same-origin"

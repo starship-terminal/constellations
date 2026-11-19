@@ -257,6 +257,72 @@ class RefreshAndReviewTest(unittest.TestCase):
         self.assertEqual((problems, warnings), ([], []))
 
 
+class SiblingSnapshotTest(unittest.TestCase):
+    """Two capture branches each write a snapshot from the same base; neither review may
+    be lost once both merge, whichever snapshot sorts newest."""
+    CRITERIA = SnapshotTest.CRITERIA
+    BASE = {"date": "2026-10-16", "method": "Review.", "_seq": 1, "systems": [
+        {"slug": "x", "grades": {"C1": {"grade": "partly", "evidence": "11/19"}}}]}
+    CATALOG = [{"slug": "x"}, {"slug": "y"}]
+
+    def write(self, base, date, reviews):
+        with mock.patch.object(grade, "scripted", return_value={}):
+            out = grade.snapshot(self.CRITERIA, base, self.CATALOG, date, {}, reviews, "Method.")
+        return out | {"_seq": 1}
+
+    def siblings(self):
+        a = self.write(self.BASE, "2026-10-17", {"x": {"C1": {"grade": "meets", "evidence": "17/19"}}})
+        b = self.write(self.BASE, "2026-10-18", {"y": {"C1": {"grade": "partly", "evidence": "9/19"}}})
+        return a, b
+
+    def test_the_newest_sibling_alone_drops_the_other_review_and_check_fails(self):
+        a, b = self.siblings()
+        problems, warnings = grade.lost_reviews(self.CRITERIA, [self.BASE, a, b], {"x", "y"}, known={})
+        self.assertEqual(len(problems), 1, problems)
+        self.assertIn("x: the review dated 2026-10-17 in scorecard/audits/2026-10-17.json", problems[0])
+        self.assertEqual(warnings, [])
+
+    def test_carry_forward_keeps_both_reviews_in_either_order(self):
+        a, b = self.siblings()
+        for order in ([self.BASE, a, b], [self.BASE, b | {"date": "2026-10-17"}, a | {"date": "2026-10-18"}]):
+            base, restored = grade.carry_forward(self.CRITERIA, order, {"x", "y"})
+            by = {s["slug"]: s for s in base["systems"]}
+            self.assertEqual(by["x"]["grades"]["C1"]["grade"], "meets")
+            self.assertEqual(by["x"]["reviewed"], "2026-10-17")
+            self.assertEqual(by["y"]["grades"]["C1"]["grade"], "partly")
+            self.assertEqual(len(restored), 1)
+            with mock.patch.object(grade, "scripted", return_value={}):
+                later = grade.snapshot(self.CRITERIA, base, self.CATALOG, "2026-10-19") | {"_seq": 1}
+            self.assertEqual(grade.lost_reviews(self.CRITERIA, order + [later], {"x", "y"}, known={}), ([], []))
+
+    def test_the_newer_review_wins_over_a_sibling_carrying_the_old_one(self):
+        a = self.write(self.BASE, "2026-10-17", {"x": {"C1": {"grade": "meets", "evidence": "17/19"}}})
+        # b was branched before a's review and re-reviewed only y, so it carries x's base grade.
+        b = self.write(self.BASE, "2026-10-18", {"y": {"C1": {"grade": "partly", "evidence": "9/19"}}})
+        base, _ = grade.carry_forward(self.CRITERIA, [self.BASE, a, b], {"x", "y"})
+        x = next(s for s in base["systems"] if s["slug"] == "x")
+        self.assertEqual(x["grades"]["C1"], {"grade": "meets", "evidence": "17/19"})
+        # A later re-review that lowers the grade wins in turn.
+        c = self.write(base, "2026-10-19", {"x": {"C1": {"grade": "missing", "evidence": "0/19"}}})
+        base, restored = grade.carry_forward(self.CRITERIA, [self.BASE, a, b, c], {"x", "y"})
+        self.assertEqual(next(s for s in base["systems"] if s["slug"] == "x")["grades"]["C1"]["grade"], "missing")
+        self.assertEqual(restored, [])
+
+    def test_a_package_gone_from_the_catalog_is_not_brought_back(self):
+        a, b = self.siblings()
+        base, restored = grade.carry_forward(self.CRITERIA, [self.BASE, a, b], {"y"})
+        self.assertEqual([s["slug"] for s in base["systems"]], [s["slug"] for s in b["systems"]])
+        self.assertEqual(restored, [])
+
+    def test_a_known_loss_warns_only_for_that_review(self):
+        a, b = self.siblings()
+        audits = [self.BASE, a, b]
+        problems, warnings = grade.lost_reviews(self.CRITERIA, audits, {"x", "y"}, known={"x": "2026-10-17"})
+        self.assertEqual((problems, len(warnings)), ([], 1))
+        problems, _ = grade.lost_reviews(self.CRITERIA, audits, {"x", "y"}, known={"x": "2026-10-01"})
+        self.assertEqual(len(problems), 1)
+
+
 class PlatformTest(unittest.TestCase):
     """A package is graded against its platform's wording, and grades set against another
     wording are flagged until a review sets them again."""

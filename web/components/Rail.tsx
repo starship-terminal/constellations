@@ -53,9 +53,9 @@ export function Rail() {
   const pathname = usePathname();
   const chat = useChat();
 
-  const { theme, collapsed } = usePrefs();
+  const { resolved, collapsed } = usePrefs();
 
-  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+  const toggleTheme = () => setTheme(resolved === "dark" ? "light" : "dark");
 
   const toggleNav = (e: React.MouseEvent<HTMLButtonElement>) => {
     setCollapsed(!collapsed);

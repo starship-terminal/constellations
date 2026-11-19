@@ -1,0 +1,23 @@
+{
+  "_note": "Rules for systems/discord. A public signed-out capture. The /login card's 'Log in with QR Code' panel draws a QR code that encodes a short-lived remote-auth sign-in token, a credential: the code is painted out (a solid fill of its own white tile, inset inside the tile's quiet zone so the ring samples white) in every image that shows it: the QR-panel crop, the auth-card crop and both login screenshots. A recapture hides the code before shooting (HIDE_LOGIN_QR in tools/capture/public/lib.mjs).",
+  "families": [
+    {
+      "name": "login QR code, QR-panel crop",
+      "files": ["components/crops/lg-qr-default.png"],
+      "size": [[512, 676]],
+      "rects": [[90, 26, 422, 358, "solid"]]
+    },
+    {
+      "name": "login QR code, auth-card crop",
+      "files": ["components/crops/lg-card-default.png"],
+      "size": [[800, 430]],
+      "rects": [[559, 61, 721, 223, "solid"]]
+    },
+    {
+      "name": "login QR code, login screenshots",
+      "files": ["screenshots/login-default.png", "screenshots/login-full.png"],
+      "size": [[1440, 900]],
+      "rects": [[878, 296, 1042, 458, "solid"]]
+    }
+  ]
+}

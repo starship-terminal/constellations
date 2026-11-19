@@ -65,7 +65,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | Discovery | DISCOVERABLE SERVERS display, search box, category pills, server-card grid | [servers](screenshots/servers-default.png), [full](screenshots/servers-full.png) |
 | Gaming discovery | The same grid filtered to the Gaming category | [servers-gaming](screenshots/servers-gaming-default.png), [full](screenshots/servers-gaming-full.png) |
 | Server detail | Banner, verified name, member counts, Join CTA, Share, category chips | [server](screenshots/server-default.png), [full](screenshots/server-full.png) |
-| Log in | Auth card on the brand backdrop: email/password fields, blurple Log In, QR panel | [login](screenshots/login-default.png), [full](screenshots/login-full.png) |
+| Log in | Auth card on the brand backdrop: email/password fields, blurple Log In, QR panel (its code painted out of every image: it encodes a sign-in token) | [login](screenshots/login-default.png), [full](screenshots/login-full.png) |
 | Register | The register card with its fields and Create Account | [register](screenshots/register-default.png), [full](screenshots/register-full.png) |
 | Mobile | Phone marketing bar, discovery heading, search, server cards | [mobile home](screenshots/mobile-home-default.png), [mobile servers](screenshots/mobile-servers-default.png) |
 
