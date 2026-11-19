@@ -1,0 +1,491 @@
+{
+  "captured": "2026-11-19",
+  "method": "T3 preview_evaluate on the live page. getComputedStyle and stylesheet rule text. No screenshot frames: preview_snapshot returned 'The browser is not producing screenshot frames' twice.",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "note": "The preview tab filled the window. It is not a 1440 or 390 capture. Phone width was not measured."
+  },
+  "pages": {
+    "home": {
+      "url": "https://voicenotes.com/",
+      "title": "Voicenotes - The notetaker for your confidential meetings",
+      "html": {
+        "class": "landing-bg",
+        "backgroundColor": "rgb(250, 249, 245)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      },
+      "header": {
+        "backgroundColor": "rgba(250, 249, 245, 0.95)",
+        "height": 70,
+        "class": "bg-[#FAF9F5]/95 border-transparent fixed inset-x-0 top-0 z-50 w-full border-b"
+      },
+      "h1": {
+        "text": "The notetaker for your confidential meetings.",
+        "fontFamily": "P22MackinacPro-Medium, serif",
+        "fontSize": "48px",
+        "lineHeight": "56px",
+        "letterSpacing": "-1.4px",
+        "fontWeight": "400",
+        "color": "rgb(13, 13, 13)",
+        "class": "max-w-[873px] font-mackinac-medium text-[60px] leading-[68px] tracking-[-1.8px]"
+      },
+      "h2": {
+        "fontFamily": "InstrumentSerif-Regular, serif",
+        "fontSize": "60px",
+        "lineHeight": "60px",
+        "letterSpacing": "-1.2px",
+        "color": "rgb(34, 34, 34)",
+        "class": "font-instrument-regular tracking-[-0.02em] text-6xl text-dark22"
+      },
+      "lede": {
+        "fontFamily": "\"Inter Regular\", serif",
+        "fontSize": "18px",
+        "lineHeight": "28px",
+        "color": "rgb(13, 13, 13)"
+      },
+      "navLink": {
+        "fontFamily": "\"Inter Medium\", serif",
+        "fontSize": "16px",
+        "lineHeight": "21px",
+        "color": "rgb(13, 13, 13)",
+        "padding": "6px 12px",
+        "borderRadius": "9999px",
+        "height": 35
+      },
+      "navPrimary": {
+        "text": "Start for free",
+        "backgroundColor": "rgb(13, 13, 13)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "\"Inter Medium\", serif",
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "padding": "12px 20px",
+        "borderRadius": "9999px",
+        "height": 36
+      },
+      "navSecondary": {
+        "text": "Book a demo",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(13, 13, 13)",
+        "border": "1px solid rgb(13, 13, 13)",
+        "fontSize": "14px",
+        "padding": "12px 20px",
+        "borderRadius": "9999px",
+        "height": 36
+      },
+      "heroPrimary": {
+        "text": "Book a demo",
+        "backgroundColor": "rgb(13, 13, 13)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "\"Inter SemiBold\", serif",
+        "fontSize": "15px",
+        "lineHeight": "20px",
+        "padding": "12px 24px",
+        "borderRadius": "9999px",
+        "height": 46
+      },
+      "heroSecondary": {
+        "text": "Start for free",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(13, 13, 13)",
+        "border": "1px solid rgb(13, 13, 13)",
+        "fontFamily": "\"Inter SemiBold\", serif",
+        "fontSize": "15px",
+        "padding": "12px 24px",
+        "borderRadius": "9999px",
+        "height": 46
+      }
+    },
+    "loginModal": {
+      "url": "https://voicenotes.com/",
+      "openedBy": "click Log in",
+      "scrim": "rgba(0, 0, 0, 0.5)",
+      "card": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "width": 450,
+        "padding": "40px 24px",
+        "borderRadius": "16px",
+        "color": "rgb(13, 13, 13)",
+        "class": "w-[450px] bg-white dark:bg-darkTheme2 rounded-2xl"
+      },
+      "title": {
+        "text": "Welcome back!",
+        "color": "rgb(16, 24, 40)",
+        "fontFamily": "\"Inter Medium\", serif",
+        "fontSize": "24px",
+        "lineHeight": "32px",
+        "class": "text-dark28 font-inter-medium text-3xl !text-2xl"
+      },
+      "providerButton": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(13, 13, 13)",
+        "border": "1px solid rgba(13, 13, 13, 0.1)",
+        "fontFamily": "\"Inter Regular\", serif",
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "padding": "12px 16px",
+        "borderRadius": "12px",
+        "height": 44,
+        "width": 306,
+        "transition": "0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+        "hoverBackground": "rgba(13, 13, 13, 0.03)",
+        "hoverSource": "stylesheet .tw-grey-bordered-btn:hover"
+      },
+      "emailField": {
+        "type": "email",
+        "placeholder": "Email Address",
+        "backgroundColor": "rgba(13, 13, 13, 0.05)",
+        "color": "rgb(13, 13, 13)",
+        "border": "2px solid rgba(0, 0, 0, 0)",
+        "borderRadius": "16px",
+        "padding": "0px 16px",
+        "fontFamily": "\"Inter Regular\", serif",
+        "fontSize": "14px",
+        "height": 48,
+        "width": 306,
+        "focusBorder": "rgb(13, 13, 13)",
+        "hoverBackground": "rgba(13, 13, 13, 0.1)",
+        "rule": ".tw-input-common-v2"
+      },
+      "passwordField": {
+        "type": "password",
+        "placeholder": "Password",
+        "sameAs": "emailField"
+      },
+      "continue": {
+        "backgroundColor": "rgba(13, 13, 13, 0.85)",
+        "note": "computed while the rule .tw-dark-btn-rounded-2xl sets background rgb(13, 13, 13) and :hover sets rgba(13, 13, 13, 0.85)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "\"Inter Medium\", serif",
+        "fontSize": "14px",
+        "padding": "12px 16px",
+        "borderRadius": "16px",
+        "height": 48,
+        "width": 306
+      },
+      "signupLink": {
+        "href": "/signup",
+        "color": "rgba(0, 0, 0, 0.5)",
+        "textDecoration": "underline",
+        "fontFamily": "\"Inter Medium\", serif",
+        "fontSize": "14px"
+      },
+      "close": {
+        "width": 32,
+        "height": 32,
+        "borderRadius": "9999px"
+      },
+      "notSubmitted": "Email and password fields were focused for measurement only. Nothing was typed or submitted. The form asks for a password, so AgentMail signup was not used."
+    },
+    "pricing": {
+      "url": "https://voicenotes.com/pricing",
+      "htmlBackground": "rgb(250, 249, 245)",
+      "h1": {
+        "text": "Pricing",
+        "fontFamily": "P22MackinacPro-Book, serif",
+        "fontSize": "44px",
+        "lineHeight": "66px",
+        "letterSpacing": "-0.8px",
+        "color": "rgb(13, 13, 13)",
+        "class": "font-mackinac-regular text-[52px] xl:text-[44px]"
+      },
+      "lede": {
+        "fontSize": "18px",
+        "color": "rgb(13, 13, 13)",
+        "width": 468
+      },
+      "billingTrack": {
+        "backgroundColor": "rgb(242, 241, 237)",
+        "borderRadius": "9999px",
+        "padding": "2px",
+        "height": 42,
+        "class": "rounded-full bg-[#f2f1ed] p-0.5"
+      },
+      "billingSelected": {
+        "text": "Annual",
+        "color": "rgb(13, 13, 13)",
+        "fontFamily": "\"Inter Regular\", serif",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      },
+      "billingIdle": {
+        "text": "Monthly",
+        "color": "rgba(13, 13, 13, 0.6)"
+      },
+      "badge": {
+        "text": "2 months free",
+        "backgroundColor": "rgb(230, 249, 235)",
+        "color": "rgb(0, 97, 25)",
+        "border": "1px rgba(46, 204, 86, 0.08)",
+        "fontSize": "12px",
+        "padding": "4px 8px",
+        "borderRadius": "48px"
+      },
+      "planCard": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "1px solid rgba(34, 34, 34, 0.08)",
+        "borderRadius": "4px",
+        "padding": "16px 16px 28px",
+        "width": 234,
+        "class": "bg-white border border-[rgba(34,34,34,0.08)] rounded dark:bg-darkTheme"
+      },
+      "planName": {
+        "fontFamily": "P22MackinacPro-Book, serif",
+        "fontSize": "22px",
+        "color": "rgb(13, 13, 13)"
+      },
+      "price": {
+        "fontFamily": "P22MackinacPro-Medium, serif",
+        "fontSize": "36px",
+        "lineHeight": "44px",
+        "letterSpacing": "-2px",
+        "color": "rgb(13, 13, 13)"
+      },
+      "ctaQuiet": {
+        "backgroundColor": "rgb(230, 229, 224)",
+        "color": "rgb(13, 13, 13)",
+        "border": "1px solid rgba(34, 34, 34, 0.08)",
+        "borderRadius": "9999px",
+        "height": 44,
+        "fontFamily": "\"Inter Medium\", serif",
+        "fontSize": "16px"
+      },
+      "ctaPrimary": {
+        "backgroundColor": "rgb(13, 13, 13)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "9999px",
+        "height": 44
+      },
+      "faq": {
+        "question": {
+          "fontFamily": "\"Inter Regular\", serif",
+          "fontSize": "16px",
+          "color": "rgb(13, 13, 13)",
+          "padding": "16px 0px",
+          "height": 56
+        },
+        "answerOpen": {
+          "display": "grid",
+          "gridTemplateRows": "68px",
+          "color": "rgb(0, 0, 0)",
+          "fontSize": "16px",
+          "lineHeight": "24px"
+        }
+      },
+      "sectionHeading": {
+        "fontFamily": "P22MackinacPro-Book, serif",
+        "fontSize": "32px",
+        "lineHeight": "48px",
+        "letterSpacing": "-1.2px",
+        "color": "rgb(13, 13, 13)"
+      }
+    },
+    "enterprise": {
+      "url": "https://voicenotes.com/enterprise",
+      "h1": {
+        "text": "Bring Voicenotes to your team",
+        "fontFamily": "InstrumentSerif-Regular, serif",
+        "fontSize": "60px",
+        "lineHeight": "60px",
+        "letterSpacing": "-1.2px",
+        "color": "rgb(13, 13, 13)"
+      },
+      "form": "iframe https://kyls3j7z4tt.typeform.com/meetvoicenotes. Not entered."
+    },
+    "brandAssets": {
+      "url": "https://voicenotes.com/brand-assets",
+      "h1": {
+        "text": "Voicenotes Brand Assets",
+        "fontFamily": "\"Inter Medium\", serif",
+        "fontSize": "48px",
+        "lineHeight": "48px",
+        "color": "rgb(13, 13, 13)"
+      },
+      "htmlBackground": "rgba(0, 0, 0, 0)",
+      "note": "No landing-bg class. Page background is transparent at the html element."
+    },
+    "blogIndex": {
+      "url": "https://voicenotes.com/blog/",
+      "bodyBackground": "rgb(250, 249, 245)",
+      "bodyColor": "rgb(29, 29, 29)",
+      "bodyFont": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+      "h1": {
+        "text": "Blog",
+        "fontFamily": "\"P22 Mackinac Pro\", Georgia, \"Times New Roman\", serif",
+        "fontSize": "80px",
+        "lineHeight": "86px",
+        "letterSpacing": "-1.6px",
+        "fontWeight": "400",
+        "color": "rgb(29, 29, 29)"
+      },
+      "lede": {
+        "color": "rgba(29, 29, 29, 0.6)",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      },
+      "cta": {
+        "text": "Try Voicenotes",
+        "backgroundColor": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "1000px",
+        "padding": "11px 19px",
+        "height": 40,
+        "fontSize": "16px"
+      },
+      "postTitle": {
+        "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "color": "rgb(29, 29, 29)"
+      }
+    },
+    "blogPost": {
+      "url": "https://voicenotes.com/blog/uncategorized/are-ai-meeting-notetakers-safe-for-confidential-business-meetings/",
+      "h1": {
+        "fontFamily": "\"P22 Mackinac Pro\", Georgia, \"Times New Roman\", serif",
+        "fontSize": "56px",
+        "lineHeight": "60px",
+        "letterSpacing": "-1px",
+        "color": "rgb(29, 29, 29)"
+      },
+      "h2": {
+        "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+        "fontSize": "24px",
+        "lineHeight": "32px",
+        "letterSpacing": "-0.6px",
+        "fontWeight": "500",
+        "color": "rgb(29, 29, 29)"
+      },
+      "paragraph": {
+        "color": "rgba(29, 29, 29, 0.6)",
+        "fontSize": "18px",
+        "lineHeight": "28.8px"
+      },
+      "link": {
+        "color": "rgb(0, 136, 255)",
+        "textDecoration": "underline"
+      }
+    },
+    "reviews": {
+      "url": "https://voicenotes.com/reviews",
+      "hero": {
+        "text": "Loved by 850,000+ note-takers.",
+        "fontFamily": "\"Inter SemiBold\", serif",
+        "fontSize": "24px",
+        "lineHeight": "32px",
+        "color": "rgb(13, 13, 13)",
+        "class": "text-dark text-2xl font-inter-semiBold"
+      },
+      "login": {
+        "fontFamily": "\"Inter Medium\", serif",
+        "fontSize": "14px",
+        "padding": "6px 12px",
+        "borderRadius": "8px",
+        "height": 32,
+        "href": "javascript:void(null)"
+      }
+    }
+  },
+  "fontFaces": [
+    {"family": "Inter Regular", "src": "/_nuxt/Inter-Regular.aSe4hpkI.ttf"},
+    {"family": "Inter Light", "src": "/_nuxt/Inter-Light.C-rjYzED.ttf"},
+    {"family": "Inter Medium", "src": "/_nuxt/Inter-Medium.COKxvYe5.ttf"},
+    {"family": "Inter Bold", "src": "/_nuxt/Inter-Bold.DHeK16mP.ttf"},
+    {"family": "Inter Black", "src": "/_nuxt/Inter-Black.C2VOATmq.ttf"},
+    {"family": "Inter SemiBold", "src": "/_nuxt/Inter-SemiBold.CXOlOdAT.ttf"},
+    {"family": "InstrumentSerif-Italic", "src": "/_nuxt/InstrumentSerif-Italic.D67hM5si.ttf"},
+    {"family": "InstrumentSerif-Regular", "src": "/_nuxt/InstrumentSerif-Regular.D2fgtoWl.ttf"},
+    {"family": "P22MackinacPro-Medium", "src": "/_nuxt/P22MackinacPro-Medium.BB9zstjp.otf"},
+    {"family": "P22MackinacPro-Book", "src": "/_nuxt/P22MackinacPro-Book.9pQEHMk4.otf"}
+  ],
+  "namedColors": {
+    "dark": "rgb(13, 13, 13)",
+    "dark22": "rgb(34, 34, 34)",
+    "dark28": "rgb(16, 24, 40)",
+    "darkTheme2": "rgb(39, 40, 41)",
+    "grey71": "rgb(113, 113, 113)",
+    "grey82": "rgb(130, 130, 130)",
+    "grey8D": "rgb(141, 141, 141)",
+    "grey9B": "rgb(155, 155, 155)",
+    "greyCC": "rgb(204, 204, 204)",
+    "greyD9": "rgb(217, 217, 217)",
+    "greyEB": "rgb(233, 233, 235)",
+    "greyEE": "rgb(238, 238, 238)",
+    "greyF9": "rgb(249, 249, 249)",
+    "primary": "rgb(14, 57, 52)",
+    "primary47": "rgb(39, 79, 71)",
+    "blueFF": "rgb(0, 122, 255)",
+    "blueF2": "rgb(29, 161, 242)",
+    "blueB0": "rgb(0, 113, 176)",
+    "blue9F": "rgb(35, 84, 159)",
+    "blueAB": "rgb(57, 64, 171)",
+    "green42": "rgb(88, 169, 66)",
+    "green61": "rgb(97, 196, 84)",
+    "red38": "rgb(255, 69, 56)",
+    "red1B": "rgb(185, 28, 27)",
+    "page": "rgb(250, 249, 245)",
+    "sand": "rgb(242, 241, 237)",
+    "quietButton": "rgb(230, 229, 224)",
+    "infoWash": "rgb(234, 242, 248)",
+    "sky": "rgb(0, 179, 248)",
+    "link": "rgb(0, 136, 255)",
+    "successBadgeBg": "rgb(230, 249, 235)",
+    "successBadgeText": "rgb(0, 97, 25)",
+    "ink": "rgb(29, 29, 29)",
+    "zinc400": "rgb(161, 161, 170)",
+    "zinc900": "rgb(24, 24, 27)",
+    "zinc100": "rgb(244, 244, 245)"
+  },
+  "classUsageOnHome": {
+    "text-dark": 60,
+    "text-grey71": 85,
+    "text-dark22": 6,
+    "font-inter-regular": 150,
+    "font-inter-semiBold": 39,
+    "font-inter-medium": 25,
+    "font-instrument-regular": 6,
+    "font-mackinac-medium": 2,
+    "bg-white": 18,
+    "text-blueF2": 2
+  },
+  "radii": {
+    "rounded-md": "6px",
+    "rounded-lg": "8px",
+    "rounded-xl": "12px",
+    "rounded-2xl": "16px",
+    "rounded-3xl": "24px",
+    "rounded-[18px]": "18px",
+    "rounded-[32px]": "32px",
+    "rounded-[3px]": "3px",
+    "rounded-[5px]": "5px",
+    "rounded-full": "9999px",
+    "pricingCard": "4px"
+  },
+  "spacing": {
+    "gap-1": "4px",
+    "gap-2": "8px",
+    "gap-3": "12px",
+    "gap-4": "16px",
+    "gap-6": "24px",
+    "gap-10": "40px",
+    "p-4": "16px",
+    "p-5": "20px"
+  },
+  "contentWidths": ["520px", "620px", "630px", "720px", "760px", "873px", "1240px"],
+  "breakpoints": ["480px", "768px", "769px", "991px", "992px", "1024px", "1200px", "1400px", "1900px"],
+  "motion": {
+    "buttonTransition": "0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+    "other": "0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+    "reducedMotion": "Landing sheets set animation to none and transition to none, or 0.01ms, under prefers-reduced-motion: reduce. Verdict from stylesheet rules: honours, partial, because some demo animations are stopped and others only shortened."
+  },
+  "dark": {
+    "live": "prefers-color-scheme dark was set on the tab. html stayed class landing-bg, background rgb(250, 249, 245). The marketing page did not switch.",
+    "declared": "Stylesheet rules under :where(.dark, .dark *) name dark:bg-darkTheme2 rgb(39, 40, 41), dark text greyEE rgb(238, 238, 238), and inverted button colours. No .dark ancestor was on the public pages, so those values were not computed on a live element."
+  }
+}

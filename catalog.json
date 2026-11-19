@@ -20343,6 +20343,62 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "voicenotes",
+      "name": "Voicenotes",
+      "url": "https://voicenotes.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Warm-paper meeting-notes marketing: cream page, ink filled pills, Mackinac and Instrument Serif headlines, Inter controls, a 16px login card and 4px pricing cards",
+      "tags": [
+        "web",
+        "meetings",
+        "notes",
+        "saas",
+        "marketing",
+        "serif"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Login modal opened. Email and password fields were not submitted.",
+      "themes": [
+        "light"
+      ],
+      "widths": [],
+      "entry": "systems/voicenotes/README.md",
+      "tokens": "systems/voicenotes/tokens.json",
+      "styleGuide": "systems/voicenotes/style-guide.html",
+      "preview": {
+        "cover": "systems/voicenotes/icon.png",
+        "icon": "systems/voicenotes/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.mackinac",
+          "core.font.family.inter"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 90,
+        "version": "marketing site, 2026-11-19"
+      },
+      "layoutGaps": {
+        "icons/": "inline SVGs were not extracted; the site icon is icon.png",
+        "screenshots/": "preview_snapshot returned 'The browser is not producing screenshot frames' twice, so no PNG was saved",
+        "components/": "no crops, because there are no screenshots to crop"
+      }
     }
   ]
 }
