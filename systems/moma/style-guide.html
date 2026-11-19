@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoMA style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --text: #000000;
+    --muted: #767676;
+    --accent: #00b7f2;
+    --surface: #eeeeee;
+    --footer: #444444;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.4 Helvetica, sans-serif; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 24px 48px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; }
+  header strong { font-weight: 900; font-size: 28px; letter-spacing: -0.02em; }
+  header span { background: var(--accent); color: #000; padding: 12px 16px; font-weight: 700; }
+  main { padding: 32px 48px 80px; max-width: 1100px; }
+  h2 { font-size: 28px; font-weight: 900; letter-spacing: -0.02em; margin: 40px 0 12px; }
+  .swatches, .types { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+  .sw { display: flex; gap: 10px; align-items: center; border: 1px solid #eee; padding: 8px; }
+  .sw i { width: 36px; height: 36px; border: 1px solid #ddd; display: block; flex: none; }
+  code { font-family: ui-monospace, monospace; font-size: 12px; }
+  .sw span, .ty small, .sp span { color: var(--muted); display: block; font-size: 12px; }
+  .ty { padding: 8px 0; border-bottom: 1px solid #eee; }
+  .sp { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .sp i { height: 12px; background: #000; display: block; }
+  .rd { width: 88px; height: 48px; border: 2px solid #000; display: inline-flex; align-items: center; justify-content: center; margin: 8px 8px 0 0; font-size: 12px; }
+  .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .btn { background: #000; color: #fff; border: 0; padding: 14px 18px; font-weight: 900; font-size: 16px; }
+  .ghost { background: #eee; color: #000; padding: 14px 18px; font-weight: 700; }
+  .tickets { background: var(--accent); color: #000; padding: 14px 18px; font-weight: 700; }
+  .field { border: 0; border-bottom: 1px solid #000; padding: 8px 2px; font-size: 18px; width: 280px; }
+  .card { background: #d5faea; padding: 24px; width: 240px; }
+  .card strong { color: #8a015f; font-size: 28px; letter-spacing: -0.02em; }
+  footer { background: var(--footer); color: #fff; padding: 32px 48px; }
+</style>
+</head>
+<body>
+<header>
+  <strong>MoMA</strong>
+  <span>Tickets</span>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches"><div class="sw"><i style="background:#ffffff"></i><div><code>page</code><span>#ffffff</span></div></div><div class="sw"><i style="background:#eeeeee"></i><div><code>surface</code><span>#eeeeee</span></div></div><div class="sw"><i style="background:#000000"></i><div><code>text</code><span>#000000</span></div></div><div class="sw"><i style="background:#767676"></i><div><code>muted</code><span>#767676</span></div></div><div class="sw"><i style="background:#00b7f2"></i><div><code>accent</code><span>#00b7f2</span></div></div><div class="sw"><i style="background:#000000"></i><div><code>border</code><span>#000000</span></div></div><div class="sw"><i style="background:#e42d00"></i><div><code>danger</code><span>#e42d00</span></div></div><div class="sw"><i style="background:#444444"></i><div><code>footer</code><span>#444444</span></div></div><div class="sw"><i style="background:#f752bd"></i><div><code>brand.1</code><span>#f752bd</span></div></div><div class="sw"><i style="background:#e82046"></i><div><code>brand.2</code><span>#e82046</span></div></div><div class="sw"><i style="background:#ff585d"></i><div><code>brand.3</code><span>#ff585d</span></div></div><div class="sw"><i style="background:#ffa096"></i><div><code>brand.4</code><span>#ffa096</span></div></div><div class="sw"><i style="background:#ff8f1c"></i><div><code>brand.5</code><span>#ff8f1c</span></div></div><div class="sw"><i style="background:#fac300"></i><div><code>brand.6</code><span>#fac300</span></div></div><div class="sw"><i style="background:#8fc421"></i><div><code>brand.7</code><span>#8fc421</span></div></div><div class="sw"><i style="background:#02b042"></i><div><code>brand.8</code><span>#02b042</span></div></div><div class="sw"><i style="background:#6bdcc5"></i><div><code>brand.9</code><span>#6bdcc5</span></div></div><div class="sw"><i style="background:#00b7f2"></i><div><code>brand.10</code><span>#00b7f2</span></div></div><div class="sw"><i style="background:#5e96ff"></i><div><code>brand.11</code><span>#5e96ff</span></div></div><div class="sw"><i style="background:#ab79e6"></i><div><code>brand.12</code><span>#ab79e6</span></div></div><div class="sw"><i style="background:#0e0e0e"></i><div><code>membership.1</code><span>#0e0e0e</span></div></div><div class="sw"><i style="background:#565e53"></i><div><code>membership.2</code><span>#565e53</span></div></div><div class="sw"><i style="background:#f6f6f7"></i><div><code>membership.3</code><span>#f6f6f7</span></div></div><div class="sw"><i style="background:#002e61"></i><div><code>membership.4</code><span>#002e61</span></div></div><div class="sw"><i style="background:#09509f"></i><div><code>membership.5</code><span>#09509f</span></div></div><div class="sw"><i style="background:#d5faea"></i><div><code>membership.6</code><span>#d5faea</span></div></div><div class="sw"><i style="background:#024b20"></i><div><code>membership.7</code><span>#024b20</span></div></div><div class="sw"><i style="background:#007933"></i><div><code>membership.8</code><span>#007933</span></div></div><div class="sw"><i style="background:#c8ff97"></i><div><code>membership.9</code><span>#c8ff97</span></div></div><div class="sw"><i style="background:#5e5e00"></i><div><code>membership.10</code><span>#5e5e00</span></div></div><div class="sw"><i style="background:#ad9200"></i><div><code>membership.11</code><span>#ad9200</span></div></div><div class="sw"><i style="background:#feffb9"></i><div><code>membership.12</code><span>#feffb9</span></div></div><div class="sw"><i style="background:#8a015f"></i><div><code>membership.13</code><span>#8a015f</span></div></div><div class="sw"><i style="background:#b33370"></i><div><code>membership.14</code><span>#b33370</span></div></div><div class="sw"><i style="background:#f6c1e6"></i><div><code>membership.15</code><span>#f6c1e6</span></div></div><div class="sw"><i style="background:#943800"></i><div><code>membership.16</code><span>#943800</span></div></div><div class="sw"><i style="background:#bd3c00"></i><div><code>membership.17</code><span>#bd3c00</span></div></div><div class="sw"><i style="background:#ffe6e2"></i><div><code>membership.18</code><span>#ffe6e2</span></div></div></div>
+  <h2>Type</h2>
+  <p>MoMA Sans is proprietary. This page falls back to Helvetica, the stack's second family.</p>
+  <div class="types"><div class="ty" style="font-weight:900;font-size:60px;line-height:60px;letter-spacing:-1.2px;font-family:Helvetica,sans-serif">display<small>60px / 60px / 900</small></div><div class="ty" style="font-weight:900;font-size:40px;line-height:40px;letter-spacing:-0.8px;font-family:Helvetica,sans-serif">title<small>40px / 40px / 900</small></div><div class="ty" style="font-weight:900;font-size:30px;line-height:30px;letter-spacing:-0.6px;font-family:Helvetica,sans-serif">card-title<small>30px / 30px / 900</small></div><div class="ty" style="font-weight:400;font-size:18px;line-height:18px;letter-spacing:normal;font-family:Helvetica,sans-serif">body<small>18px / 18px / 400</small></div><div class="ty" style="font-weight:400;font-size:16px;line-height:18px;letter-spacing:normal;font-family:Helvetica,sans-serif">ui<small>16px / 18px / 400</small></div><div class="ty" style="font-weight:400;font-size:13.333px;line-height:normal;letter-spacing:normal;font-family:Helvetica,sans-serif">nav<small>13.333px / normal / 400</small></div><div class="ty" style="font-weight:400;font-size:10px;line-height:10px;letter-spacing:normal;font-family:Helvetica,sans-serif">chrome<small>10px / 10px / 400</small></div></div>
+  <h2>Spacing</h2>
+  <div class="sp"><i style="width:32px"></i><code>page</code><span>32px</span></div><div class="sp"><i style="width:48px"></i><code>page-fixed</code><span>48px</span></div><div class="sp"><i style="width:166px"></i><code>header</code><span>166px</span></div><div class="sp"><i style="width:2px"></i><code>focus</code><span>2px</span></div><div class="sp"><i style="width:8px"></i><code>control-pad</code><span>8px</span></div>
+  <h2>Radius</h2>
+  <div class="rd" style="border-radius:0px"><code>none</code><span>0px</span></div><div class="rd" style="border-radius:4px"><code>focus</code><span>4px</span></div><div class="rd" style="border-radius:999px"><code>pill</code><span>999px</span></div>
+  <h2>Controls</h2>
+  <div class="controls">
+    <button class="btn">Plan your visit</button>
+    <span class="tickets">Tickets</span>
+    <span class="ghost">Donate</span>
+    <input class="field" placeholder="Email" aria-label="Email">
+  </div>
+  <h2>Membership card</h2>
+  <div class="card"><strong>Access</strong><p>$110 / year</p><button class="btn">Join or renew</button></div>
+</main>
+<footer>MoMA footer gray 444</footer>
+</body>
+</html>

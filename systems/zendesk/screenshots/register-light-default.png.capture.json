@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-11-18T21:03:08.416Z",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "theme": "light",
+  "sanitizedSourceUrl": "https://www.zendesk.com/sg/register/",
+  "note": "background outside the trial dialog painted flat before commit so the demo inbox is not stored",
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "redaction": "demo inbox outside the trial dialog painted flat before commit"
+}

@@ -1,0 +1,26 @@
+{
+  "capturedAt": "2026-11-19T00:00:00Z",
+  "sanitizedSourceUrl": "https://www.twitch.tv/directory/category/just-chatting",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "devicePixelRatio": 2
+  },
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2
+  },
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "themeClass": "tw-root--hover js-focus-visible tw-root--theme-dark",
+  "title": "Just Chatting - Twitch",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Headless Chromium after the same URL loaded in the T3 preview tab without a Cloudflare challenge. Preview screenshots failed: The browser is not producing screenshot frames. Visual review of the PNG is separate from the CSS readings, which came from the 1169x731 preview tab."
+}

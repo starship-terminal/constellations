@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-11-18T16:33:22.145Z",
+  "name": "home-dark-faq-open",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "href": "https://copilot.com/",
+    "title": "Microsoft Copilot | Sign in",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "theme": "dark",
+    "colorScheme": "dark",
+    "scrollH": 2844,
+    "bodyBg": "rgb(31, 31, 31)"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "source": "https://copilot.com/"
+}

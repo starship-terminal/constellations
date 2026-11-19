@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supercut style guide</title>
+<style>
+:root {
+  --page: #100e0e;
+  --text: #fdfff0;
+  --muted: #969692;
+  --surface: #181616;
+  --accent: #ff0055;
+  --cream: #fdfff0;
+  --ink: #100e0e;
+  --border: #242424;
+  --sans: InterVariable, Inter, ui-sans-serif, system-ui, sans-serif;
+  --display: "Inter Display", InterVariable, Inter, ui-sans-serif, system-ui, sans-serif;
+}
+body { margin: 0; background: var(--page); color: var(--text); font: 15px/20px var(--sans); }
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 { font: 500 40px/46px var(--display); letter-spacing: -0.4px; margin: 0 0 8px; }
+h2 { font: 500 24px/30px var(--display); letter-spacing: -0.24px; margin: 40px 0 12px; }
+p { color: var(--muted); max-width: 62ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: 14px; border: 1px solid var(--border); }
+.swatch span { display: block; margin-top: 6px; font-size: 13px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 9999px; border: 1px solid transparent; font-weight: 500; text-decoration: none; }
+.btn.primary { background: var(--cream); color: var(--ink); }
+.btn.secondary { background: #fdfff00d; color: #fdfff0b3; border-color: #fdfff01a; }
+.nav { color: var(--muted); font-size: 13px; font-weight: 500; }
+.card { background: var(--surface); border: 1px solid #212121; border-radius: 14px; padding: 16px; max-width: 320px; box-shadow: 0 12px 40px #000000cc; }
+.badge { display: inline-flex; height: 32px; align-items: center; padding: 0 14px; border-radius: 9999px; font-size: 13px; font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Supercut</h1>
+  <p>Public signed-out marketing, measured 2026-11-19. Dark only. The cream pill is the action. Pink #ff0055 is a token, not the button fill.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#100e0e"></i><span>page #100e0e</span></div>
+    <div class="swatch"><i style="background:#fdfff0"></i><span>foreground #fdfff0</span></div>
+    <div class="swatch"><i style="background:#969692"></i><span>muted #969692</span></div>
+    <div class="swatch"><i style="background:#181616"></i><span>menu #181616</span></div>
+    <div class="swatch"><i style="background:#ff0055"></i><span>primary token #ff0055</span></div>
+    <div class="swatch"><i style="background:#242424"></i><span>border #242424</span></div>
+  </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn primary" href="#buttons">Get started free</a>
+    <a class="btn secondary" href="#buttons">Talk to us</a>
+    <span class="nav">Log in</span>
+  </div>
+  <h2>Menu surface</h2>
+  <div class="card">
+    <strong>Capture</strong>
+    <p>Camera and screen in 4K.</p>
+    <span class="badge" style="background:#4ade8033;color:#4ade80">PRO</span>
+    <span class="badge" style="background:#60a5fa40;color:#60a5fa">ENTERPRISE</span>
+  </div>
+</main>
+</body>
+</html>

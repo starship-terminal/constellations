@@ -1,0 +1,112 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1},
+    "note": "T3 preview pane, not a requested 1440 or 390. preview_snapshot failed: The browser is not producing screenshot frames."
+  },
+  "pages": {
+    "home": "https://usepastel.com/",
+    "plans": "https://usepastel.com/plans",
+    "features": "https://usepastel.com/features",
+    "login": "https://usepastel.com/login",
+    "signup": "https://usepastel.com/signup"
+  },
+  "stylesheet": "https://cdn.prod.website-files.com/68238a5c61225b1bc1b4c01d/css/pastel-marketing.webflow.shared.28fda8ef8.min.css",
+  "theme": "light only. No data-theme, .dark, or prefers-color-scheme switch was on the pages opened.",
+  "computed": {
+    "home": {
+      "body": {"backgroundColor": "rgb(255, 255, 255)", "color": "rgb(17, 17, 17)", "fontFamily": "Figtree, sans-serif", "fontSize": "14px", "lineHeight": "20px"},
+      "announcementBar": {"backgroundColor": "rgb(22, 93, 251)", "padding": "10px 20px", "height": 40},
+      "announcementText": {"declared": "color #fff; font-size 15px; font-weight 500"},
+      "nav": {"height": 68, "color": "rgb(17, 17, 17)", "backgroundColor": "rgba(0, 0, 0, 0)"},
+      "navLink": {"class": "navbar-button", "color": "rgb(17, 17, 17)", "fontSize": "16px", "fontWeight": "500", "padding": "6px 12px", "borderRadius": "4px", "lineHeight": "20px"},
+      "login": {"color": "rgb(17, 17, 17)", "border": "1px solid rgba(152, 152, 152, 0.45)", "borderRadius": "10px", "padding": "10px 22px", "height": 42, "fontSize": "16px", "fontWeight": "500"},
+      "signup": {"backgroundColor": "rgb(69, 71, 69)", "color": "rgb(255, 255, 255)", "borderRadius": "10px", "padding": "11px 16px", "height": 42, "fontSize": "16px", "fontWeight": "500"},
+      "h1": {"class": "main-h1", "color": "rgb(17, 17, 17)", "fontSize": "52.605px", "fontWeight": "400", "lineHeight": "57.8655px", "letterSpacing": "-0.8px", "fontFamily": "Figtree, sans-serif"},
+      "quote": {"class": "quote-small-text header", "color": "rgb(17, 17, 17)", "fontSize": "21px", "lineHeight": "27.93px", "fontWeight": "400"},
+      "quoteName": {"color": "rgb(17, 17, 17)", "fontSize": "14px", "fontWeight": "600", "lineHeight": "18px"},
+      "trial": {"class": "button", "backgroundColor": "rgb(22, 93, 251)", "color": "rgb(255, 255, 255)", "borderRadius": "10px", "padding": "11px 22px", "fontSize": "16px", "fontWeight": "500", "lineHeight": "24px", "height": 46},
+      "watchDemo": {"class": "button button-transparent", "backgroundColor": "rgba(0, 0, 0, 0)", "color": "rgb(69, 64, 60)", "border": "1px solid rgb(215, 211, 209)", "borderRadius": "10px", "padding": "11px 22px", "fontSize": "16px", "fontWeight": "500", "height": 48},
+      "finePrint": {"fontSize": "14px", "lineHeight": "20px", "color": "rgb(17, 17, 17)"},
+      "sectionDark": {"backgroundColor": "rgb(245, 245, 244)", "padding": "0px 93.5156px"},
+      "h2": {"class": "heading-2", "color": "rgb(34, 34, 34)", "fontSize": "45px", "fontWeight": "400", "lineHeight": "48.15px"},
+      "h2Section": {"class": "heading-2 section-heading", "fontSize": "45px", "lineHeight": "56.25px", "letterSpacing": "-0.72px", "color": "rgb(34, 34, 34)"},
+      "pill": {"class": "section-heading-pill", "backgroundColor": "rgb(244, 244, 244)", "borderRadius": "120px", "padding": "7px 18px", "height": 34, "fontSize": "14px"}
+    },
+    "plans": {
+      "h1": {"fontSize": "52.605px", "fontWeight": "400", "lineHeight": "57.8655px", "letterSpacing": "-0.8px", "color": "rgb(17, 17, 17)", "width": 800},
+      "planGrey": {"backgroundColor": "rgb(245, 245, 244)", "border": "1px solid rgba(80, 80, 80, 0.3)", "width": 269},
+      "planPurple": {"backgroundColor": "rgb(233, 228, 255)", "border": "1px solid rgba(80, 80, 80, 0.3)"},
+      "planTitle": {"fontSize": "21px", "fontWeight": "600", "lineHeight": "21px", "color": "rgb(17, 17, 17)"},
+      "pricingButton": {"backgroundColor": "rgb(18, 185, 129)", "color": "rgb(255, 255, 255)", "borderRadius": "10px", "padding": "11px 22px", "fontSize": "18px", "fontWeight": "500", "height": 46},
+      "toggle": {"backgroundColor": "rgb(227, 227, 227)", "borderRadius": "20px", "width": 70, "height": 36},
+      "toggleKnob": {"backgroundColor": "rgb(135, 135, 135)", "borderRadius": "100%", "width": 28, "height": 28},
+      "messages": {"backgroundColor": "rgb(186, 230, 252)", "class": "messages-section"}
+    },
+    "features": {
+      "h1": {"class": "features-hero-heading", "color": "rgb(28, 25, 23)", "fontSize": "36px", "fontWeight": "400", "lineHeight": "49.5px", "fontFamily": "Figtree, sans-serif"},
+      "splitHeading": {"color": "rgb(28, 25, 23)", "fontSize": "20px", "fontWeight": "400"},
+      "calloutPill": {"backgroundColor": "rgb(219, 234, 254)", "color": "rgb(37, 99, 235)", "borderRadius": "100px", "padding": "4px 14px", "fontSize": "14px", "fontWeight": "500", "height": 28},
+      "signupSection": {"backgroundColor": "rgb(79, 119, 255)", "padding": "80px 20px 100px"},
+      "signupButton": {"backgroundColor": "rgb(46, 82, 204)", "color": "rgb(255, 255, 255)", "borderRadius": "6px", "padding": "0px 40px", "height": 62, "fontSize": "16px", "fontWeight": "500"}
+    },
+    "login": {
+      "body": {"backgroundColor": "rgb(245, 245, 244)", "color": "rgb(0, 0, 0)", "fontFamily": "Figtree, sans-serif", "fontSize": "16px", "class": "pastel-app bg-gray-100"},
+      "card": {"backgroundColor": "rgb(255, 255, 255)", "borderRadius": "12px", "padding": "0px 24px", "width": 550, "boxShadow": "none"},
+      "h1": {"color": "rgb(68, 64, 60)", "fontSize": "30px", "fontWeight": "500", "lineHeight": "36px", "fontFamily": "Figtree, Helvetica, Arial, sans-serif"},
+      "or": {"color": "rgb(120, 113, 108)", "fontSize": "16px"},
+      "label": {"color": "rgb(28, 25, 23)", "fontSize": "16px", "fontWeight": "500"},
+      "fieldWrapRest": {"borderRadius": "6px", "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgb(214, 211, 209) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px", "height": 48},
+      "fieldWrapFocus": {"boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgb(51, 93, 236) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px", "transition": "0.1s background-color, border-color, color, fill, stroke cubic-bezier(0.4, 0, 0.2, 1)"},
+      "input": {"padding": "12px 16px", "fontSize": "16px", "fontFamily": "Figtree, Helvetica, Arial, sans-serif", "height": 48, "width": 400},
+      "submit": {"backgroundColor": "rgb(79, 119, 255)", "color": "rgb(255, 255, 255)", "borderRadius": "8px", "padding": "12px 20px", "fontSize": "16px", "fontWeight": "500", "height": 48},
+      "link": {"color": "rgb(79, 119, 255)", "fontSize": "16px", "fontWeight": "500"},
+      "googleIframe": {"title": "Sign in with Google Button", "width": 420, "height": 44}
+    },
+    "signup": {
+      "h1": {"text": "Get feedback without the back & forth", "color": "rgb(68, 64, 60)", "fontSize": "30px", "fontWeight": "500"},
+      "fields": ["name", "email", "password"],
+      "legal": {"color": "rgb(120, 113, 108)", "fontSize": "13px"},
+      "submit": {"text": "Sign up", "backgroundColor": "rgb(79, 119, 255)", "borderRadius": "8px", "height": 48, "fontWeight": "500"},
+      "note": "Password field is required. Form was not submitted."
+    }
+  },
+  "declared": {
+    "body": "color:#111;font-family:Figtree,sans-serif",
+    "button": "color:#fff;background-color:#165dfb;border-radius:10px;padding:11px 22px;font-size:16px;font-weight:500;line-height:24px",
+    "buttonTransparent": "color:#45403c;background-color:#0000;border:1px solid #d7d3d1",
+    "buttonPricing": "background-color:#12b981;font-size:18px",
+    "navbarButtonHover": "background-color:#f5f5f4",
+    "navbarButtonTransition": "background-color .12s, opacity .12s",
+    "buttonPrimary": "background-color:#1a1b1f;padding:12px 25px;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:all .2s",
+    "buttonPrimaryHover": "background-color:#32343a",
+    "buttonPrimaryActive": "background-color:#43464d",
+    "heading2": "color:#222;font-size:45px;font-weight:400;line-height:107%",
+    "heading3": "color:#222;font-size:35px;font-weight:400;line-height:100%",
+    "mainH1": "letter-spacing:-.8px;font-size:clamp(3em,4.5vw,5em);font-weight:400;line-height:110%",
+    "quoteCard": "border:1.1px solid #d1dee8;border-radius:9px;padding:30px 43px;box-shadow:0 11px 16.5px -3.3px #0000001a,0 4.4px 6.6px -4.4px #0000001a",
+    "planContainer": "border:1px solid #5050504d",
+    "planPurple": "background-color:#e9e4ff",
+    "cardPill": "color:#505050;background-color:#e9e6e4;border-radius:120px;padding:4px 14px;font-size:14px",
+    "cardPillLive": "color:#165dfb;background-color:#d8e5ff",
+    "codeBox": "color:#f5f5f4;background-color:#222;border-radius:10px;font-family:Menlo,Monaco,monospace;font-size:16px;padding:16px 24px",
+    "footerLink": "color:#222;font-size:16px;line-height:32px;text-decoration:none",
+    "footerHeader": "color:#222;font-size:16px;font-weight:600;line-height:32px",
+    "focusVisibleNav": "outline:2px solid #0050bd;color:#0050bd;border-radius:4px",
+    "wInputFocus": "border-color:#3898ec",
+    "wButton": "background-color:#3898ec;color:#fff;padding:9px 15px;border-radius:0",
+    "customPropertiesOnRoot": ["--pricing-toggle-monthly:600", "--pricing-toggle-annual:400"]
+  },
+  "notEntered": [
+    "login form (email and password)",
+    "signup form (name, email, password, privacy and terms agreement)",
+    "SSO at /sso",
+    "Google sign-in iframe",
+    "forgot-password",
+    "pricing checkout and Contact us",
+    "Intercom messenger"
+  ]
+}

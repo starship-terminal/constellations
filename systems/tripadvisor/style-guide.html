@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tripadvisor style guide</title>
+<style>
+:root {
+  --core-font-family-sans: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  --core-font-family-serif: Georgia, "Times New Roman", "Century Schoolbook L", serif;
+  --core-font-family-mono: "Trip Sans Mono", Courier, monospace, Arial, sans-serif;
+  --core-font-weight-regular: 400;
+  --core-font-weight-medium: 700;
+  --core-font-weight-bold: 800;
+  --core-font-weight-ultra: 900;
+  --core-typography-body-small: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 400, 'fontSize': '12px', 'lineHeight': '16px'};
+  --core-typography-body: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 400, 'fontSize': '14px', 'lineHeight': '18px'};
+  --core-typography-body-large: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 400, 'fontSize': '16px', 'lineHeight': '24px'};
+  --core-typography-label: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 700, 'fontSize': '14px', 'lineHeight': '18px'};
+  --core-typography-label-small: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 700, 'fontSize': '12px', 'lineHeight': '16px'};
+  --core-typography-title-small: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 700, 'fontSize': '18px', 'lineHeight': '22px'};
+  --core-typography-title: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 800, 'fontSize': '20px', 'lineHeight': '24px'};
+  --core-typography-title-large: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 800, 'fontSize': '28px', 'lineHeight': '32px'};
+  --core-typography-display: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 900, 'fontSize': '54px', 'lineHeight': '65px'};
+  --core-typography-display-mobile: {'fontFamily': '{core.font.family.sans}', 'fontWeight': 900, 'fontSize': '28px', 'lineHeight': '32px'};
+  --core-typography-editorial: {'fontFamily': '{core.font.family.serif}', 'fontWeight': 400, 'fontSize': '20px', 'lineHeight': '24px'};
+  --core-radius-small: 4px;
+  --core-radius-medium: 6px;
+  --core-radius-large: 8px;
+  --core-radius-xlarge: 12px;
+  --core-radius-full: 1000px;
+  --core-border-width-hairline: 1px;
+  --core-border-width-strong: 2px;
+  --core-spacing-inline-xxx-small: 2px;
+  --core-spacing-inline-xx-small: 4px;
+  --core-spacing-inline-x-small: 8px;
+  --core-spacing-inline-small: 12px;
+  --core-spacing-inline-medium: 16px;
+  --core-spacing-inline-large: 24px;
+  --core-spacing-inline-x-large: 32px;
+  --core-spacing-inline-xx-large: 40px;
+  --core-spacing-inset-xx-small: 4px;
+  --core-spacing-inset-x-small: 8px;
+  --core-spacing-inset-small: 12px;
+  --core-spacing-inset-medium: 16px;
+  --core-spacing-inset-large: 24px;
+  --core-spacing-inset-x-large: 32px;
+  --core-spacing-inset-xx-large: 40px;
+  --core-spacing-inset-xxx-large: 64px;
+  --core-spacing-stack-component-xx-small: 2px;
+  --core-spacing-stack-component-x-small: 4px;
+  --core-spacing-stack-component-small: 8px;
+  --core-spacing-stack-component-medium: 12px;
+  --core-spacing-stack-component-large: 16px;
+  --core-spacing-stack-component-x-large: 24px;
+  --core-spacing-stack-layout-xx-small: 24px;
+  --core-spacing-stack-layout-x-small: 32px;
+  --core-spacing-stack-layout-small: 40px;
+  --core-spacing-stack-layout-medium: 48px;
+  --core-spacing-stack-layout-large: 56px;
+  --core-spacing-stack-layout-x-large: 64px;
+  --core-spacing-stack-layout-xx-large: 80px;
+  --core-spacing-gap-01: 2px;
+  --core-spacing-gap-05: 4px;
+  --core-spacing-gap-10: 8px;
+  --core-spacing-gap-20: 16px;
+  --core-spacing-gap-30: 24px;
+  --core-spacing-gap-40: 32px;
+  --core-spacing-gap-50: 40px;
+  --core-spacing-gap-60: 48px;
+  --core-spacing-gap-70: 56px;
+  --core-spacing-gap-80: 64px;
+  --core-spacing-gap-100: 80px;
+  --core-spacing-gap-120: 96px;
+  --core-spacing-page-margin: 24px;
+  --core-spacing-grid-spacing: 16px;
+  --core-spacing-desktop-gutter-medium: 16px;
+  --core-spacing-desktop-margin-large: 24px;
+  --core-spacing-desktop-margin-giant: 80px;
+  --core-spacing-max-content-width: 1136px;
+  --core-spacing-breakpoint-small: 768px;
+  --core-spacing-breakpoint-medium: 1024px;
+  --core-spacing-breakpoint-large: 1184px;
+  --core-elevation-small: 0 2px 4px #00000029;
+  --core-elevation-medium: 0 2px 12px #00000029;
+  --core-elevation-large: 0 2px 56px #0000001a;
+  --core-motion-easing-trip: cubic-bezier(0.25, 0.1, 0, 1);
+  --core-motion-duration-color: 100ms;
+  --core-component-button-primary-background: #002b11;
+  --core-component-button-primary-text: #f7f7f7;
+  --core-component-button-primary-radius: 1000px;
+  --core-component-button-brand-background: #00eb5b;
+  --core-component-button-brand-text: #002b11;
+  --core-component-button-brand-border: #00ab42;
+  --core-component-button-brand-radius: 1000px;
+  --core-component-field-background: #f7f7f7;
+  --core-component-field-border: #768a79;
+  --core-component-field-radius: 4px;
+  --core-component-field-height: 48px;
+  --core-component-search-radius: 1000px;
+  --core-component-card-radius: 8px;
+  --light-color-background-page: #fff;
+  --light-color-background-inverse: #000;
+  --light-color-surface-base: #fff;
+  --light-color-surface-neutral-weak: #f7f7f7;
+  --light-color-surface-neutral-weakest: #fcfcfc;
+  --light-color-surface-neutral-medium: #eaeaea;
+  --light-color-surface-neutral-strong: #d7d6d6;
+  --light-color-surface-neutral-strongest: #b9b7b7;
+  --light-color-surface-brand-primary: #002b11;
+  --light-color-surface-brand-accent: #00531c;
+  --light-color-surface-brand-green: #00eb5b;
+  --light-color-surface-notification: #90003d;
+  --light-color-text-primary: #002b11;
+  --light-color-text-secondary: #38443a;
+  --light-color-text-header: #002b11;
+  --light-color-text-inverse: #fff;
+  --light-color-text-header-inverse: #f7f7f7;
+  --light-color-border-base: #dfe1df;
+  --light-color-border-primary: #002b11;
+  --light-color-border-strong: #768a79;
+  --light-color-icon-primary: #002b11;
+  --light-color-icon-secondary: #38443a;
+  --light-color-icon-tertiary: #768a79;
+  --light-color-logo-default: #002b11;
+  --light-color-logo-inverse: #f7f7f7;
+  --light-color-action-brand-background: #00eb5b;
+  --light-color-action-brand-border: #00ab42;
+  --light-color-action-brand-content: #002b11;
+  --light-color-action-primary-background: #002b11;
+  --light-color-action-primary-content: #f7f7f7;
+  --light-color-action-secondary-background: #fff;
+  --light-color-action-secondary-border: #002b11;
+  --light-color-action-secondary-content: #002b11;
+  --light-color-action-disabled-background: #b9b7b7;
+  --light-color-action-disabled-border: #888484;
+  --light-color-action-disabled-content: #888484;
+  --light-color-link-default: #002b11;
+  --light-color-link-hover: #0f6326;
+  --light-color-link-pressed: #0f6326;
+  --light-color-link-visited: #00852f;
+  --light-color-link-forum: #006699;
+  --light-color-input-background: #fff;
+  --light-color-input-border: #768a79;
+  --light-color-input-border-focus: #002b11;
+  --light-color-input-label: #002b11;
+  --light-color-input-placeholder: #38443a;
+  --light-color-input-disabled: #888484;
+  --light-color-focus-ring: #00f;
+  --light-color-focus-ring-inverse: #fff;
+  --light-color-state-hover: #00000014;
+  --light-color-state-pressed: #0000001f;
+  --light-color-menu-background: #fff;
+  --light-color-menu-selected: #dfe1df;
+  --light-color-messaging-error: #b61753;
+  --light-color-messaging-error-weak: #ffd9df;
+  --light-color-messaging-error-strong: #3f0017;
+  --light-color-messaging-guidance: #00852f;
+  --light-color-messaging-guidance-weak: #b3f2b2;
+  --light-color-messaging-warning: #ff7733;
+  --light-color-rating-bubble: #00852f;
+  --light-color-rating-star: #38443a;
+  --light-color-rating-track: #eaeaea;
+  --light-color-scrim-modal: #0006;
+  --light-color-marketing-trip-green: #00eb5b;
+  --light-color-marketing-trip-moss: #00ab42;
+  --light-color-marketing-trip-pine: #002b11;
+  --light-color-marketing-trip-yellow: #ffef0e;
+  --light-color-marketing-trip-rewards: #b2ff1a;
+}
+body { margin: 0; background: var(--light-color-background-page); color: var(--light-color-text-primary); font: 400 16px/24px "Trip Sans VF", "Trip Sans", Arial, sans-serif; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font: 900 44px/48px "Trip Sans VF", "Trip Sans", Arial, sans-serif; letter-spacing: 0.02em; margin: 0 0 8px; }
+h2 { font: 800 20px/24px "Trip Sans VF", "Trip Sans", Arial, sans-serif; margin: 40px 0 12px; }
+.note { color: var(--light-color-text-secondary); font-size: 14px; line-height: 18px; max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 150px; }
+.sw i { display: block; height: 64px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--light-color-border-base); }
+.sw span, .sw code { display: block; font-size: 12px; line-height: 16px; }
+.sw code { color: var(--light-color-text-secondary); }
+.pills { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 1000px; font-weight: 700; }
+.search { display: flex; align-items: center; gap: 8px; height: 58px; padding: 0 8px 0 16px; border: 1px solid #768a79; border-radius: 1000px; box-shadow: 0 2px 4px #00000029; background: #fff; max-width: 640px; }
+.search input { flex: 1; border: 0; font: 16px/24px Arial, sans-serif; color: #38443a; outline: none; background: transparent; }
+.search button { height: 48px; padding: 0 20px; border-radius: 1000px; border: 1px solid #00ab42; background: #00eb5b; color: #002b11; font-weight: 700; }
+.field { display: block; width: 320px; height: 48px; padding: 4px 8px; border: 2px solid #768a79; border-radius: 4px; background: #f7f7f7; font: 14px Arial, sans-serif; }
+.card { width: 220px; }
+.card .photo { height: 140px; border-radius: 8px; background: #f7f7f7; }
+.card strong { display: block; margin-top: 8px; }
+footer.demo { margin-top: 24px; background: #f7f7f7; padding: 32px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Tripadvisor</h1>
+<p class="note">Rendered from tokens.json. Light values were computed on tripadvisor.com, signed out, 2026-11-19. Dark tokens are declared and were not painted. Trip Sans is proprietary and is not loaded here.</p>
+<h2>Colour</h2>
+<div class="row">
+<div class="sw"><i style="background:#fff"></i><span>page</span><code>#ffffff</code></div>
+<div class="sw"><i style="background:#f7f7f7"></i><span>surface</span><code>#f7f7f7</code></div>
+<div class="sw"><i style="background:#002b11"></i><span>text</span><code>#002b11</code></div>
+<div class="sw"><i style="background:#38443a"></i><span>muted</span><code>#38443a</code></div>
+<div class="sw"><i style="background:#00eb5b"></i><span>brand</span><code>#00eb5b</code></div>
+<div class="sw"><i style="background:#00ab42"></i><span>brand border</span><code>#00ab42</code></div>
+<div class="sw"><i style="background:#dfe1df"></i><span>border</span><code>#dfe1df</code></div>
+<div class="sw"><i style="background:#768a79"></i><span>input border</span><code>#768a79</code></div>
+<div class="sw"><i style="background:#b61753"></i><span>error</span><code>#b61753</code></div>
+<div class="sw"><i style="background:#00852f"></i><span>bubble</span><code>#00852f</code></div>
+<div class="sw"><i style="background:#006699"></i><span>forum link</span><code>#006699</code></div>
+</div>
+<h2>Type</h2>
+<p style="font:900 54px/65px Arial, sans-serif; letter-spacing:1.08px; margin:0">Where to?</p>
+<p class="note">Home h1 at 1169px computed 900 54px/65px, letter-spacing 1.08px. At 390px the same heading computed 900 28px/32px.</p>
+<p style="font:800 20px/24px Arial, sans-serif">Find things to do by interest</p>
+<p>Places to go, things to do, hotels. Body computed 16px Trip Sans VF.</p>
+<h2>Controls</h2>
+<div class="pills">
+<span class="pill" style="background:#002b11;color:#f7f7f7">Sign in</span>
+<span class="pill" style="background:#00eb5b;color:#002b11;border:1px solid #00ab42">Search</span>
+<span class="pill" style="background:#fff;color:#002b11;border:1px solid #fff">Discover</span>
+</div>
+<h2>Search</h2>
+<form class="search" action="#">
+<input placeholder="Places to go, things to do, hotels..." aria-label="Search">
+<button type="button">Search</button>
+</form>
+<p class="note">At rest: 1px #768a79, radius 1000px, shadow 0 2px 4px #00000029. Focused shell measured 2px #f7f7f7, radius 12px, shadow 0 2px 12px #00000029.</p>
+<h2>Field</h2>
+<input class="field" placeholder="Email" aria-label="Email">
+<h2>Card</h2>
+<div class="card">
+<div class="photo"></div>
+<strong>Fushimi Inari-taisha Shrine</strong>
+<span style="color:#38443a;font-size:14px">4.6</span>
+</div>
+<footer class="demo">Footer surface is #f7f7f7, padding 32px 0.</footer>
+<h2>Dark, declared</h2>
+<p class="note">These values come from the dark stylesheet rule. The live pages did not set data-dark-theme-supported, so they were not painted.</p>
+<div class="row">
+<div class="sw"><i style="background:#000"></i><span>color.background.page</span><code>#000</code></div>
+<div class="sw"><i style="background:#000"></i><span>color.surface.base</span><code>#000</code></div>
+<div class="sw"><i style="background:#f7f7f7"></i><span>color.text.primary</span><code>#f7f7f7</code></div>
+<div class="sw"><i style="background:#f7f7f7"></i><span>color.text.header</span><code>#f7f7f7</code></div>
+<div class="sw"><i style="background:#d7d6d6"></i><span>color.text.secondary</span><code>#d7d6d6</code></div>
+<div class="sw"><i style="background:#5e5959"></i><span>color.border.base</span><code>#5e5959</code></div>
+<div class="sw"><i style="background:#fff"></i><span>color.border.primary</span><code>#fff</code></div>
+<div class="sw"><i style="background:#f7f7f7"></i><span>color.icon.primary</span><code>#f7f7f7</code></div>
+<div class="sw"><i style="background:#d7d6d6"></i><span>color.icon.secondary</span><code>#d7d6d6</code></div>
+<div class="sw"><i style="background:#f7f7f7"></i><span>color.logo.default</span><code>#f7f7f7</code></div>
+<div class="sw"><i style="background:#00eb5b"></i><span>color.action.brand.background</span><code>#00eb5b</code></div>
+<div class="sw"><i style="background:#fff"></i><span>color.action.primary.background</span><code>#fff</code></div>
+<div class="sw"><i style="background:#002b11"></i><span>color.action.primary.content</span><code>#002b11</code></div>
+<div class="sw"><i style="background:#002b11"></i><span>color.action.secondary.background</span><code>#002b11</code></div>
+<div class="sw"><i style="background:#f7f7f7"></i><span>color.action.secondary.content</span><code>#f7f7f7</code></div>
+<div class="sw"><i style="background:#262323"></i><span>color.input.background</span><code>#262323</code></div>
+</div>
+</div>
+</body>
+</html>

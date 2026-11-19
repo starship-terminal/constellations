@@ -1,0 +1,40 @@
+{
+  "moving": 1799,
+  "groups": [
+    {
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "animationName": "none",
+      "animationDuration": "0s",
+      "examples": [
+        "DIV.",
+        "DIV.border-soft ring-soft [:where(&>:not([hi"
+      ]
+    },
+    {
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "animationName": "none",
+      "animationDuration": "1.2s",
+      "examples": [
+        "DIV._sharedDuration_orhia_1 flex-1 min-w-0",
+        "DIV._sharedDuration_orhia_1 flex-1 min-w-0"
+      ]
+    }
+  ],
+  "motionVars": {
+    "animation-delay": "0s",
+    "animation-duration": "0s",
+    "transition-behavior": "normal",
+    "transition-delay": "0s",
+    "transition-duration": "0s",
+    "transition-property": "all",
+    "transition-timing-function": "ease",
+    "view-transition-class": "none",
+    "view-transition-group": "normal",
+    "view-transition-name": "root"
+  },
+  "reduce": false
+}

@@ -1,0 +1,4 @@
+file	role	source
+wordmark.svg	wordmark	header svg.logo-svg on https://o-p-e-n.com/, fill rewritten to currentColor from #eeece7
+menu.svg	menu	header svg.o-icon.menu-toggle, 24px filled circle
+safari-pinned-tab.svg	mask-icon	https://o-p-e-n.com/safari-pinned-tab.svg

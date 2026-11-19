@@ -1,0 +1,5650 @@
+{
+ "_meta": {
+  "readAt": "2026-11-19",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 14,
+  "removed": 0,
+  "reduced": 0,
+  "kept": 14,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "ignores",
+  "loops": []
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://meiro.cc/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1293,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 3,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 3,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomIn",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomIn",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "bbZoomIn",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomOut",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomOut",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "bbZoomOut",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.bb-feedback-button-icon"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleap-pulse",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "45%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapSlideIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "top"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "top"
+       ]
+      }
+     ],
+     "properties": [
+      "top"
+     ]
+    },
+    {
+     "name": "gleapBgGrowShrink2",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapBgGrowShrink3",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetScale",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetFade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "gleapWidgetOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetFadeOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "gleapSurveyCardIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetSlideUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetSlideDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapFadeInUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapFadeInUpMobile",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapNotificationIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbRedDotPulse",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "bbFadeOutRight",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "bbFadeOutDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbFadeInOpacity",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "bbZoomOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbZoomIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbRecIconContFade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "fill"
+       ]
+      }
+     ],
+     "properties": [
+      "fill"
+     ]
+    },
+    {
+     "name": "bb-suc-fill",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "box-shadow"
+       ]
+      }
+     ],
+     "properties": [
+      "box-shadow"
+     ]
+    },
+    {
+     "name": "bbRecIconFade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "fill"
+       ]
+      }
+     ],
+     "properties": [
+      "fill"
+     ]
+    },
+    {
+     "name": "animate-fade-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "gleapFadeInUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".gleap-notification-container--stack, .gleap-notification-container--stack .gleap-notification-card",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".gleap-frame-container--survey, .gleap-frame-container--survey-page, .gleap-frame-container--survey-full",
+     "declarations": {
+      "animation-duration": "0.15s !important",
+      "animation-timing-function": "ease-out !important",
+      "animation-delay": "0s !important",
+      "animation-iteration-count": "1 !important",
+      "animation-direction": "normal !important",
+      "animation-fill-mode": "both !important",
+      "animation-play-state": "running !important",
+      "animation-name": "gleapWidgetFade !important",
+      "animation-timeline": "auto !important",
+      "animation-range-start": "normal !important",
+      "animation-range-end": "normal !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".gleap-frame-container--survey.gleap-frame-container--closing, .gleap-frame-container--survey-full.gleap-frame-container--closing",
+     "declarations": {
+      "animation-duration": "0.15s !important",
+      "animation-timing-function": "ease-in !important",
+      "animation-delay": "0s !important",
+      "animation-iteration-count": "1 !important",
+      "animation-direction": "normal !important",
+      "animation-fill-mode": "both !important",
+      "animation-play-state": "running !important",
+      "animation-name": "gleapWidgetFadeOut !important",
+      "animation-timeline": "auto !important",
+      "animation-range-start": "normal !important",
+      "animation-range-end": "normal !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".gleap-frame-container--survey .gleap-frame-container-inner, .gleap-frame-container--survey-page .gleap-frame-container-inner",
+     "declarations": {
+      "transition-behavior": "normal !important",
+      "transition-duration": "0s !important",
+      "transition-timing-function": "ease !important",
+      "transition-delay": "0s !important",
+      "transition-property": "none !important"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-width",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": [
+      {
+       "name": "gleapWidgetScale",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 1.2, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      },
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tooltip-hotspot-animation",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleap-pulse",
+       "durationMs": 5000,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tooltip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "visibility",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-b-shown",
+     "context": [],
+     "transitions": [
+      {
+       "property": "margin",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-b-shown.gleap-b-clip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "padding",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-b-f .gleap-b",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapSlideIn",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container iframe",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-frame-loader",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "delayMs": 350,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-frame-loader--animate .gleap-bg-c2",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapBgGrowShrink2",
+       "durationMs": 7000,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-loader--animate .gleap-bg-c3",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapBgGrowShrink3",
+       "durationMs": 6000,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-loader-image-wrap",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-frame-container--survey",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapSurveyCardIn",
+       "durationMs": 420,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      },
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 180,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey-full, [dir=\"rtl\"].gleap-frame-container--survey-full",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 280,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey-full.gleap-frame-container--closing",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFadeOut",
+       "durationMs": 220,
+       "delayMs": 0,
+       "easing": "ease-in",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container.gleap-frame-container--survey-page, [dir=\"rtl\"].gleap-frame-container.gleap-frame-container--survey-page",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey-page.gleap-frame-container--animate .gleap-frame-container-inner",
+     "context": [],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 280,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-frame-container--closing",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetOut",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-item, .gleap-notification-item-news, .gleap-notification-item-checklist",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapNotificationIn",
+       "durationMs": 450,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-item-container, .gleap-notification-item-news-container, .gleap-notification-item-checklist-container",
+     "context": [],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-notification-container--stack",
+     "context": [],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-notification-container--stack .gleap-notification-card",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      },
+      {
+       "property": "clip-path",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-notification-container:hover .gleap-notification-close",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 700,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-close",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 700,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey.gleap-frame-container--animate .gleap-frame-container-inner",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 280,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button--red-dot",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbRedDotPulse",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open.bb-feedback-button--survey",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "delayMs": 150,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button--classic-button-style",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 200,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open.bb-feedback-button--classic-button-style",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeOutRight",
+       "durationMs": 200,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button .bb-logo-logo",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomIn",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button .bb-logo-arrowdown",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button .bb-logo-arrowdown",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomOut"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open .bb-logo-arrowdown",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomIn"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open .bb-logo-logo",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomOut"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--springing .bb-feedback-button-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 550,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.2, 2, 0.45, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button--pressed .bb-feedback-button-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 110,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.2, 0, 0.4, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button--open .bb-feedback-button-text",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeOutDown"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-rec-on-circle",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbRecIconFade",
+       "durationMs": 2000,
+       "iterationCount": "infinite",
+       "direction": "alternate"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-rec-on-cont",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbRecIconContFade",
+       "durationMs": 2000,
+       "iterationCount": "infinite",
+       "direction": "alternate"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-capture-editor-drag-info",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-capture-toolbar",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-capture-toolbar-item .bb-tooltip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "[dir=\"rtl\"].gleap-frame-container, .gleap-frame-container",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetSlideUp",
+       "durationMs": 340,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      },
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--closing",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetSlideDown",
+       "durationMs": 260,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey, [dir=\"rtl\"].gleap-frame-container--survey",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [
+      {
+       "property": "bottom",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+      },
+      {
+       "property": "max-height",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+      }
+     ],
+     "animations": [
+      {
+       "name": "gleapWidgetSlideUp",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1.2, 0.36, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      },
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tour-popover-video-pointer .gleap-tour-popover-footer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-tour-fade .gleap-tour-overlay",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "animate-fade-in",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tour-fade .gleap-tour-popover",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "animate-fade-in",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tour-video-playpause",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-tour-popover-close-btn",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-modal",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapFadeInUp",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-agent-popup",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapFadeInUp",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey, .gleap-frame-container--survey-page, .gleap-frame-container--survey-full",
+     "context": [
+      "@media (prefers-reduced-motion: reduce)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey.gleap-frame-container--closing, .gleap-frame-container--survey-full.gleap-frame-container--closing",
+     "context": [
+      "@media (prefers-reduced-motion: reduce)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFadeOut",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://meiro.cc/pricing",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 870,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 3,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 3,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomIn",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomIn",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "bbZoomIn",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomOut",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomOut",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "bbZoomOut",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.bb-feedback-button-icon"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleap-pulse",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "45%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapSlideIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "top"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "top"
+       ]
+      }
+     ],
+     "properties": [
+      "top"
+     ]
+    },
+    {
+     "name": "gleapBgGrowShrink2",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapBgGrowShrink3",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetScale",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetFade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "gleapWidgetOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetFadeOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "gleapSurveyCardIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetSlideUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapWidgetSlideDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapFadeInUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapFadeInUpMobile",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapNotificationIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbRedDotPulse",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "bbFadeOutRight",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "bbFadeOutDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbFadeInOpacity",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "bbZoomOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbZoomIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbRecIconContFade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "fill"
+       ]
+      }
+     ],
+     "properties": [
+      "fill"
+     ]
+    },
+    {
+     "name": "bb-suc-fill",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "box-shadow"
+       ]
+      }
+     ],
+     "properties": [
+      "box-shadow"
+     ]
+    },
+    {
+     "name": "bbRecIconFade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "fill"
+       ]
+      }
+     ],
+     "properties": [
+      "fill"
+     ]
+    },
+    {
+     "name": "animate-fade-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "gleapFadeInUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".gleap-notification-container--stack, .gleap-notification-container--stack .gleap-notification-card",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".gleap-frame-container--survey, .gleap-frame-container--survey-page, .gleap-frame-container--survey-full",
+     "declarations": {
+      "animation-duration": "0.15s !important",
+      "animation-timing-function": "ease-out !important",
+      "animation-delay": "0s !important",
+      "animation-iteration-count": "1 !important",
+      "animation-direction": "normal !important",
+      "animation-fill-mode": "both !important",
+      "animation-play-state": "running !important",
+      "animation-name": "gleapWidgetFade !important",
+      "animation-timeline": "auto !important",
+      "animation-range-start": "normal !important",
+      "animation-range-end": "normal !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".gleap-frame-container--survey.gleap-frame-container--closing, .gleap-frame-container--survey-full.gleap-frame-container--closing",
+     "declarations": {
+      "animation-duration": "0.15s !important",
+      "animation-timing-function": "ease-in !important",
+      "animation-delay": "0s !important",
+      "animation-iteration-count": "1 !important",
+      "animation-direction": "normal !important",
+      "animation-fill-mode": "both !important",
+      "animation-play-state": "running !important",
+      "animation-name": "gleapWidgetFadeOut !important",
+      "animation-timeline": "auto !important",
+      "animation-range-start": "normal !important",
+      "animation-range-end": "normal !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".gleap-frame-container--survey .gleap-frame-container-inner, .gleap-frame-container--survey-page .gleap-frame-container-inner",
+     "declarations": {
+      "transition-behavior": "normal !important",
+      "transition-duration": "0s !important",
+      "transition-timing-function": "ease !important",
+      "transition-delay": "0s !important",
+      "transition-property": "none !important"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-width",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": [
+      {
+       "name": "gleapWidgetScale",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 1.2, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      },
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tooltip-hotspot-animation",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleap-pulse",
+       "durationMs": 5000,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tooltip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "visibility",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-b-shown",
+     "context": [],
+     "transitions": [
+      {
+       "property": "margin",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-b-shown.gleap-b-clip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "padding",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-b-f .gleap-b",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapSlideIn",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container iframe",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-frame-loader",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "delayMs": 350,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-frame-loader--animate .gleap-bg-c2",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapBgGrowShrink2",
+       "durationMs": 7000,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-loader--animate .gleap-bg-c3",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapBgGrowShrink3",
+       "durationMs": 6000,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-loader-image-wrap",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-frame-container--survey",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapSurveyCardIn",
+       "durationMs": 420,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      },
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 180,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey-full, [dir=\"rtl\"].gleap-frame-container--survey-full",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 280,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey-full.gleap-frame-container--closing",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFadeOut",
+       "durationMs": 220,
+       "delayMs": 0,
+       "easing": "ease-in",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container.gleap-frame-container--survey-page, [dir=\"rtl\"].gleap-frame-container.gleap-frame-container--survey-page",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey-page.gleap-frame-container--animate .gleap-frame-container-inner",
+     "context": [],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 280,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-frame-container--closing",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetOut",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-item, .gleap-notification-item-news, .gleap-notification-item-checklist",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapNotificationIn",
+       "durationMs": 450,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-item-container, .gleap-notification-item-news-container, .gleap-notification-item-checklist-container",
+     "context": [],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-notification-container--stack",
+     "context": [],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-notification-container--stack .gleap-notification-card",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      },
+      {
+       "property": "clip-path",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-notification-container:hover .gleap-notification-close",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 700,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-close",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 700,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey.gleap-frame-container--animate .gleap-frame-container-inner",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 280,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button--red-dot",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbRedDotPulse",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open.bb-feedback-button--survey",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "delayMs": 150,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button--classic-button-style",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 200,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open.bb-feedback-button--classic-button-style",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeOutRight",
+       "durationMs": 200,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button .bb-logo-logo",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomIn",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button .bb-logo-arrowdown",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button .bb-logo-arrowdown",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomOut"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open .bb-logo-arrowdown",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomIn"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open .bb-logo-logo",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomOut"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--springing .bb-feedback-button-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 550,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.2, 2, 0.45, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button--pressed .bb-feedback-button-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 110,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.2, 0, 0.4, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button--open .bb-feedback-button-text",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeOutDown"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-rec-on-circle",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbRecIconFade",
+       "durationMs": 2000,
+       "iterationCount": "infinite",
+       "direction": "alternate"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-rec-on-cont",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbRecIconContFade",
+       "durationMs": 2000,
+       "iterationCount": "infinite",
+       "direction": "alternate"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-capture-editor-drag-info",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-capture-toolbar",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-capture-toolbar-item .bb-tooltip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "[dir=\"rtl\"].gleap-frame-container, .gleap-frame-container",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetSlideUp",
+       "durationMs": 340,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      },
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--closing",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetSlideDown",
+       "durationMs": 260,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey, [dir=\"rtl\"].gleap-frame-container--survey",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [
+      {
+       "property": "bottom",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+      },
+      {
+       "property": "max-height",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+      }
+     ],
+     "animations": [
+      {
+       "name": "gleapWidgetSlideUp",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1.2, 0.36, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      },
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tour-popover-video-pointer .gleap-tour-popover-footer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-tour-fade .gleap-tour-overlay",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "animate-fade-in",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tour-fade .gleap-tour-popover",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "animate-fade-in",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tour-video-playpause",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-tour-popover-close-btn",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-modal",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapFadeInUp",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-agent-popup",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapFadeInUp",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey, .gleap-frame-container--survey-page, .gleap-frame-container--survey-full",
+     "context": [
+      "@media (prefers-reduced-motion: reduce)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFade",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-frame-container--survey.gleap-frame-container--closing, .gleap-frame-container--survey-full.gleap-frame-container--closing",
+     "context": [
+      "@media (prefers-reduced-motion: reduce)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapWidgetFadeOut",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-3": {
+   "url": "https://app.meiro.cc/login",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 70,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 8,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 8,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 5,
+     "nodes": [
+      "input.block.w-full.transition-colors",
+      "button[role=button].bg-acid-200.text-gray-900.text-sh2",
+      "a.cursor-pointer.font-normal.underline"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomIn",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomIn",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "bbZoomIn",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomOut",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bbZoomOut",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "bbZoomOut",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.bb-feedback-button-icon"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "mulShdSpin",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "box-shadow"
+       ]
+      },
+      {
+       "offset": "12.5%",
+       "properties": [
+        "box-shadow"
+       ]
+      },
+      {
+       "offset": "25%",
+       "properties": [
+        "box-shadow"
+       ]
+      },
+      {
+       "offset": "37.5%",
+       "properties": [
+        "box-shadow"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "box-shadow"
+       ]
+      },
+      {
+       "offset": "62.5%",
+       "properties": [
+        "box-shadow"
+       ]
+      },
+      {
+       "offset": "75%",
+       "properties": [
+        "box-shadow"
+       ]
+      },
+      {
+       "offset": "87.5%",
+       "properties": [
+        "box-shadow"
+       ]
+      }
+     ],
+     "properties": [
+      "box-shadow"
+     ]
+    },
+    {
+     "name": "show-price",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "hide-price",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "m-skeleton--wave",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "m-skeleton--fade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "skeleton-loading",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "gleap-pulse",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "45%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapSlideIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "top"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "top"
+       ]
+      }
+     ],
+     "properties": [
+      "top"
+     ]
+    },
+    {
+     "name": "gleapFadeInUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "gleapFadeInUpMobile",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbFadeOutRight",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "bbFadeOutDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbFadeInOpacity",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "bbZoomOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbZoomIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "bbRecIconContFade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "fill"
+       ]
+      }
+     ],
+     "properties": [
+      "fill"
+     ]
+    },
+    {
+     "name": "bb-suc-fill",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "box-shadow"
+       ]
+      }
+     ],
+     "properties": [
+      "box-shadow"
+     ]
+    },
+    {
+     "name": "bbRecIconFade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "fill"
+       ]
+      }
+     ],
+     "properties": [
+      "fill"
+     ]
+    },
+    {
+     "name": "animate-fade-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".tippy-box",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform"
+      },
+      {
+       "property": "visibility"
+      },
+      {
+       "property": "opacity"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".tippy-box[data-inertia][data-state=\"visible\"]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.54, 1.5, 0.38, 1.11)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".animate-spin",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".transition",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "-webkit-backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-all",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-colors",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-opacity",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-transform",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".delay-300",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-100",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 100
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-150",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 150
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-200",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-300",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-500",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-700",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 700
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-75",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 75
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-\\[350ms\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 350
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-\\[400ms\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 400
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-\\[450ms\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 450
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-\\[500ms\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-\\[550ms\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 550
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-\\[cubic-bezier\\(\\.22\\,\\.21\\,\\.36\\,1\\)\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.22, 0.21, 0.36, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 1, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-linear",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".hover\\:duration-150:hover",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 150
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".sm\\:duration-700",
+     "context": [
+      "@media (min-width: 640px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 700
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".signin-btn::before",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".signin-btn::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".regenerate-gradient::before",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".sucker",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".colors .item",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".lf-wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".lf-wrapper::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".lf-frame",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".lf-frame textarea",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".q-wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".q-wrapper::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".q-frame",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".q-frame textarea",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".q-frame .answers label.correct-answer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".q-frame .answers label.incorrect-answer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".slider-state-tap .slider-connect, .slider-state-tap .slider-origin",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".r-wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".r-wrapper::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".r-frame",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".r-frame textarea",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".sp-wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".sp-wrapper::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".sp-frame",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".sp-frame textarea",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".loader",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "mulShdSpin",
+       "durationMs": 1100,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gradient-btn[data-v-2b391169]::before",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".preview-bg-image",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".preview-bg-image::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".show-price",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "show-price",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".hide-price",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "hide-price",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ql-snow.ql-toolbar button",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ql-snow.ql-toolbar button:hover",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ql-snow.ql-toolbar button:hover svg path, .ql-snow.ql-toolbar button:hover svg line",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ql-snow.ql-toolbar button.ql-active svg line:hover, .ql-snow.ql-toolbar button.ql-active svg path:hover",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".m-skeleton--wave::after",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "m-skeleton--wave",
+       "durationMs": 1500,
+       "delayMs": 500,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".m-skeleton--blink::after",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "m-skeleton--fade",
+       "durationMs": 1500,
+       "delayMs": 500,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".m-skeleton--fade",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "q-skeleton--fade",
+       "durationMs": 1500,
+       "delayMs": 500,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".m-skeleton-dark--wave::after",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "m-skeleton--wave",
+       "durationMs": 1500,
+       "delayMs": 500,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".wp-switch-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "background",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".wp-switch-label::after, .wp-switch-label::before",
+     "context": [],
+     "transitions": [
+      {
+       "property": "inherit",
+       "durationRaw": "inherit",
+       "easing": "inherit"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".wp-switch-handle",
+     "context": [],
+     "transitions": [
+      {
+       "property": "left",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "margin-left",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".wp-tag-switch-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "background",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".wp-tag-switch-label::after, .wp-tag-switch-label::before",
+     "context": [],
+     "transitions": [
+      {
+       "property": "inherit",
+       "durationRaw": "inherit",
+       "easing": "inherit"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".wp-tag-switch-handle",
+     "context": [],
+     "transitions": [
+      {
+       "property": "left",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "margin-left",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-frame-container",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-width",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": [
+      {
+       "name": "gleapFadeInUp",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tooltip-hotspot-animation",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleap-pulse",
+       "durationMs": 5000,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tooltip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "visibility",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-b-shown",
+     "context": [],
+     "transitions": [
+      {
+       "property": "margin",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-b-f .gleap-b",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapSlideIn",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-item",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 700,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-container:hover .gleap-notification-close",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 700,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-close",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 700,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-item-checklist-container",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fadeIn",
+       "durationMs": 450,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-notification-item-news-container",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fadeIn",
+       "durationMs": 450,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-feedback-button--classic-button-style",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeInOpacity",
+       "durationMs": 200,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open.bb-feedback-button--classic-button-style",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeOutRight",
+       "durationMs": 200,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button .bb-logo-logo",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomIn",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button .bb-logo-arrowdown",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "durationMs": 300,
+       "fillMode": "both"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button .bb-logo-arrowdown",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomOut"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open .bb-logo-arrowdown",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomIn"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open .bb-logo-logo",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbZoomOut"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-feedback-button--open .bb-feedback-button-text",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbFadeOutDown"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-rec-on-circle",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbRecIconFade",
+       "durationMs": 2000,
+       "iterationCount": "infinite",
+       "direction": "alternate"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-rec-on-cont",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bbRecIconContFade",
+       "durationMs": 2000,
+       "iterationCount": "infinite",
+       "direction": "alternate"
+      }
+     ]
+    },
+    {
+     "selector": ".bb-capture-editor-drag-info",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-capture-toolbar",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bb-capture-toolbar-item .bb-tooltip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "[dir=\"rtl\"].gleap-frame-container, .gleap-frame-container",
+     "context": [
+      "@media only screen and (max-width: 450px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "gleapFadeInUpMobile"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tour-popover-video-pointer .gleap-tour-popover-footer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-tour-fade .gleap-tour-overlay",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "animate-fade-in",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tour-fade .gleap-tour-popover",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "animate-fade-in",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".gleap-tour-video-playpause",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gleap-tour-popover-close-btn",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": []
+  }
+ }
+}

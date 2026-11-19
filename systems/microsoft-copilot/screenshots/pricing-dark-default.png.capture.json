@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-11-18T16:34:07.283Z",
+  "name": "pricing-dark-default",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "href": "https://www.microsoft.com/en-sg/copilot/pricing/business",
+    "title": "Microsoft Copilot Plans and Pricing—AI for Business | Microsoft 365",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "theme": null,
+    "colorScheme": "normal",
+    "scrollH": 10153,
+    "bodyBg": "rgb(255, 253, 251)"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "source": "https://www.microsoft.com/en-sg/copilot/pricing/business"
+}

@@ -1,0 +1,38 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview browser, preview_evaluate",
+  "screenshotFrames": false,
+  "screenshotError": "The browser is not producing screenshot frames",
+  "pages": [
+    {
+      "url": "https://www.nytimes.com/",
+      "title": "The New York Times - Breaking News, US News, World News and Videos",
+      "signedOut": true,
+      "htmlClass": "nytapp-vi-homepage tpl-always-light nytapp-vi-homepage",
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1169, "height": 731, "scale": 1, "offsetLeft": 0, "offsetTop": 0},
+      "note": "A 1440 CSS-pixel width was not reached. The first 271px of the page is an advertisement slot (data-testid StandardAd), not product chrome."
+    },
+    {
+      "url": "https://www.nytimes.com/subscription?campaignId=9YU8R&source=bar1",
+      "title": "The New York Times: Digital and Home Delivery Subscriptions",
+      "signedOut": true,
+      "htmlClass": "tpl-always-light",
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1169, "height": 731, "scale": 1},
+      "note": "Public offer page. Continue to checkout was not followed."
+    },
+    {
+      "url": "https://myaccount.nytimes.com/auth/login",
+      "title": "Enter email - The New York Times",
+      "signedOut": true,
+      "desktop": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "visualViewport": {"width": 1169, "height": 731, "scale": 1}},
+      "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}},
+      "note": "Email field was not filled. Continue, Google, Apple, and work-or-school SSO were not clicked. redirect_uri query was stripped from this record."
+    }
+  ]
+}

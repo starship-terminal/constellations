@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-18T18:08:39.936Z",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "status": 404,
+  "sanitizedSourceUrl": "https://resume.io/this-route-does-not-exist-capture",
+  "url": "https://resume.io/this-route-does-not-exist-capture",
+  "title": "Page not found · Resume.io · Resume.io",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "cookieOpen": false,
+  "screenshotFrames": "headless Playwright PNG. T3 preview returned: The browser is not producing screenshot frames."
+}

@@ -1,0 +1,3084 @@
+{
+  "captured": "2026-11-19",
+  "method": "getComputedStyle on live public pages in headless Chromium. Pseudo states via CSS.forcePseudoState. No form submitted.",
+  "home": {
+    "eyebrow": {
+      "text": "AI-POWERED CUSTOMER SERVICE PLATFORM",
+      "box": {
+        "x": 169,
+        "y": 392,
+        "w": 656,
+        "h": 18
+      },
+      "cls": "Headingstyle__HeadingRoot-sc-6ks3it-0 hxgCYN",
+      "tag": "H1",
+      "color": "rgb(245, 245, 242)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "fs": "14px",
+      "fw": "700",
+      "lh": "18.2px",
+      "ls": "0.75px",
+      "tt": "uppercase",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "h": "18.1875px",
+      "w": "655.75px",
+      "shadow": "none",
+      "outline": "rgb(245, 245, 242) none 0px",
+      "outlineOffset": "0px",
+      "borderW": "0px",
+      "borderC": "rgb(245, 245, 242)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0s ease"
+    },
+    "display": {
+      "text": "Build for better outcomes",
+      "box": {
+        "x": 169,
+        "y": 419,
+        "w": 656,
+        "h": 143
+      },
+      "cls": "Headingstyle__HeadingRoot-sc-6ks3it-0 eNYZgE",
+      "tag": "H1",
+      "color": "rgb(245, 245, 242)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "fs": "68px",
+      "fw": "500",
+      "lh": "71.4px",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "h": "142.781px",
+      "w": "655.75px",
+      "shadow": "none",
+      "outline": "rgb(245, 245, 242) none 0px",
+      "outlineOffset": "0px",
+      "borderW": "0px",
+      "borderC": "rgb(245, 245, 242)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0s ease"
+    },
+    "lede": {
+      "text": "Go beyond answers to improve customer and employee experiences with the Zendesk Outcome AI\u2122 Platform. Trusted by 32,000+",
+      "box": {
+        "x": 169,
+        "y": 585,
+        "w": 656,
+        "h": 46
+      },
+      "cls": "Textstyle__TextRoot-sc-1qs4xfy-0 cigHvb",
+      "tag": "P",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "fs": "16px",
+      "fw": "400",
+      "lh": "23.2px",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "h": "46.375px",
+      "w": "655.75px",
+      "shadow": "none",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outlineOffset": "0px",
+      "borderW": "0px",
+      "borderC": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0s ease"
+    },
+    "trialNote": {
+      "text": "14-day free trial.",
+      "box": {
+        "x": 188,
+        "y": 664,
+        "w": 107,
+        "h": 18
+      },
+      "cls": "",
+      "tag": "STRONG",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "fs": "14px",
+      "fw": "700",
+      "lh": "19.6px",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "h": "auto",
+      "w": "auto",
+      "shadow": "none",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outlineOffset": "0px",
+      "borderW": "0px",
+      "borderC": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0s ease"
+    },
+    "email": {
+      "text": "Enter work email",
+      "box": {
+        "x": 169,
+        "y": 699,
+        "w": 416,
+        "h": 48
+      },
+      "cls": "StyledTextInput-sc-k12n8x-0 iuaMBd Inputstyle__InputRoot-sc-1pu3v0n-0 fiOLCb",
+      "tag": "INPUT",
+      "color": "rgb(17, 17, 13)",
+      "bg": "rgb(255, 255, 255)",
+      "radius": "12px",
+      "fs": "15px",
+      "fw": "400",
+      "lh": "21px",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "12px",
+        "12px",
+        "12px",
+        "12px"
+      ],
+      "h": "48px",
+      "w": "416.297px",
+      "shadow": "rgb(213, 213, 210) 0px 0px 0px 1px inset",
+      "outline": "rgb(17, 17, 13) none 0px",
+      "outlineOffset": "0px",
+      "borderW": "0px",
+      "borderC": "rgb(17, 17, 13)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0.25s, 0.1s, 0.25s, 0.25s, 0.25s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out"
+    },
+    "submit": {
+      "text": "Try it for free",
+      "box": {
+        "x": 605,
+        "y": 699,
+        "w": 164,
+        "h": 48
+      },
+      "cls": "Linkstyle__LinkRoot-sc-1n8u9ej-6 jIIEvJ Buttonstyle__ButtonRoot-sc-yyucvh-2 jDsRKe",
+      "tag": "BUTTON",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(209, 244, 112)",
+      "radius": "16px",
+      "fs": "18px",
+      "fw": "600",
+      "lh": "28px",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "10px",
+        "20px",
+        "10px",
+        "20px"
+      ],
+      "h": "48px",
+      "w": "163.703px",
+      "shadow": "none",
+      "outline": "rgba(0, 0, 0, 0) solid 2px",
+      "outlineOffset": "3px",
+      "borderW": "0px",
+      "borderC": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+    },
+    "navTry": {
+      "text": "Try it for free",
+      "box": {
+        "x": 1162,
+        "y": 106,
+        "w": 127,
+        "h": 43
+      },
+      "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+      "tag": "A",
+      "color": "rgb(17, 17, 13)",
+      "bg": "rgb(209, 244, 112)",
+      "radius": "16px",
+      "fs": "16px",
+      "fw": "600",
+      "lh": "23px",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "10px",
+        "16px",
+        "10px",
+        "16px"
+      ],
+      "h": "43px",
+      "w": "127.172px",
+      "shadow": "none",
+      "outline": "rgba(0, 0, 0, 0) solid 2px",
+      "outlineOffset": "3px",
+      "borderW": "0px",
+      "borderC": "rgb(17, 17, 13)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+    },
+    "navDemo": {
+      "text": "View demo",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+      "tag": "A",
+      "color": "rgb(17, 17, 13)",
+      "bg": "rgb(209, 244, 112)",
+      "radius": "16px",
+      "fs": "16px",
+      "fw": "600",
+      "lh": "23px",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "10px",
+        "16px",
+        "10px",
+        "16px"
+      ],
+      "h": "auto",
+      "w": "auto",
+      "shadow": "none",
+      "outline": "rgba(0, 0, 0, 0) solid 2px",
+      "outlineOffset": "3px",
+      "borderW": "0px",
+      "borderC": "rgb(17, 17, 13)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+    },
+    "promo": {
+      "text": "CX Trends 2027",
+      "box": {
+        "x": 478,
+        "y": 19,
+        "w": 104,
+        "h": 18
+      },
+      "cls": "",
+      "tag": "STRONG",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "fs": "14px",
+      "fw": "700",
+      "lh": "19.6px",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "h": "auto",
+      "w": "auto",
+      "shadow": "none",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outlineOffset": "0px",
+      "borderW": "0px",
+      "borderC": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0s ease"
+    },
+    "checkbox": {
+      "text": "",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "cls": "StyledRadioInput-sc-qsavpv-0 StyledCheckInput-sc-176jxxe-0 cvEzwk kuBRtv Checkboxstyle__CheckboxRoot-sc-10o24iq-2 gJlzen",
+      "tag": "INPUT",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "fs": "13.3333px",
+      "fw": "400",
+      "lh": "normal",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "h": "16px",
+      "w": "16px",
+      "shadow": "none",
+      "outline": "rgb(0, 0, 0) none 0px",
+      "outlineOffset": "0px",
+      "borderW": "0px",
+      "borderC": "rgb(0, 0, 0)",
+      "opacity": "0",
+      "td": "none",
+      "trans": "0s ease"
+    },
+    "submitStates": {
+      "label": "submit",
+      "default": {
+        "text": "Try it for free",
+        "box": {
+          "x": 605,
+          "y": 699,
+          "w": 164,
+          "h": 48
+        },
+        "cls": "Linkstyle__LinkRoot-sc-1n8u9ej-6 jIIEvJ Buttonstyle__ButtonRoot-sc-yyucvh-2 jDsRKe",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "18px",
+        "fw": "600",
+        "lh": "28px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "20px",
+          "10px",
+          "20px"
+        ],
+        "h": "48px",
+        "w": "163.703px",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgb(255, 255, 255)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "hover": {
+        "text": "Try it for free",
+        "box": {
+          "x": 605,
+          "y": 699,
+          "w": 164,
+          "h": 48
+        },
+        "cls": "Linkstyle__LinkRoot-sc-1n8u9ej-6 jIIEvJ Buttonstyle__ButtonRoot-sc-yyucvh-2 jDsRKe",
+        "color": "rgba(255, 255, 255, 1)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "18px",
+        "fw": "600",
+        "lh": "28px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "20px",
+          "10px",
+          "20px"
+        ],
+        "h": "48px",
+        "w": "163.703px",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgba(255, 255, 255, 1)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "focus": {
+        "text": "Try it for free",
+        "box": {
+          "x": 605,
+          "y": 699,
+          "w": 164,
+          "h": 48
+        },
+        "cls": "Linkstyle__LinkRoot-sc-1n8u9ej-6 jIIEvJ Buttonstyle__ButtonRoot-sc-yyucvh-2 jDsRKe",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "18px",
+        "fw": "600",
+        "lh": "28px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "20px",
+          "10px",
+          "20px"
+        ],
+        "h": "48px",
+        "w": "163.703px",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgb(255, 255, 255)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "active": {
+        "text": "Try it for free",
+        "box": {
+          "x": 605,
+          "y": 699,
+          "w": 164,
+          "h": 48
+        },
+        "cls": "Linkstyle__LinkRoot-sc-1n8u9ej-6 jIIEvJ Buttonstyle__ButtonRoot-sc-yyucvh-2 jDsRKe",
+        "color": "rgba(255, 255, 255, 1)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "18px",
+        "fw": "600",
+        "lh": "28px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "20px",
+          "10px",
+          "20px"
+        ],
+        "h": "48px",
+        "w": "163.703px",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgba(255, 255, 255, 1)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "focus-visible": {
+        "text": "Try it for free",
+        "box": {
+          "x": 605,
+          "y": 699,
+          "w": 164,
+          "h": 48
+        },
+        "cls": "Linkstyle__LinkRoot-sc-1n8u9ej-6 jIIEvJ Buttonstyle__ButtonRoot-sc-yyucvh-2 jDsRKe",
+        "color": "rgba(255, 255, 255, 0.99)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "18px",
+        "fw": "600",
+        "lh": "28px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "20px",
+          "10px",
+          "20px"
+        ],
+        "h": "48px",
+        "w": "163.703px",
+        "shadow": "none",
+        "outline": "rgba(213, 213, 210, 0.004) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgba(255, 255, 255, 0.99)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      }
+    },
+    "navTryStates": {
+      "label": "navTry",
+      "default": {
+        "text": "Try it for free",
+        "box": {
+          "x": 1162,
+          "y": 106,
+          "w": 127,
+          "h": 43
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "43px",
+        "w": "127.172px",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgb(17, 17, 13)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "hover": {
+        "text": "Try it for free",
+        "box": {
+          "x": 1162,
+          "y": 106,
+          "w": 127,
+          "h": 43
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgba(17, 17, 13, 1)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "43px",
+        "w": "127.172px",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgba(17, 17, 13, 1)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "focus": {
+        "text": "Try it for free",
+        "box": {
+          "x": 1162,
+          "y": 106,
+          "w": 127,
+          "h": 43
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "43px",
+        "w": "127.172px",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgb(17, 17, 13)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "active": {
+        "text": "Try it for free",
+        "box": {
+          "x": 1162,
+          "y": 106,
+          "w": 127,
+          "h": 43
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgba(17, 17, 13, 0.85)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "43px",
+        "w": "127.172px",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgba(17, 17, 13, 0.85)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.1s, 0.1s, 0.1s, 0.1s, 0.1s, 0.25s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out"
+      },
+      "focus-visible": {
+        "text": "Try it for free",
+        "box": {
+          "x": 1162,
+          "y": 106,
+          "w": 127,
+          "h": 43
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgba(17, 17, 13, 0.7)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "43px",
+        "w": "127.172px",
+        "shadow": "none",
+        "outline": "rgba(17, 17, 13, 0.004) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgba(17, 17, 13, 0.7)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      }
+    },
+    "demoStates": {
+      "label": "demo",
+      "default": {
+        "text": "View demo",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "auto",
+        "w": "auto",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgb(17, 17, 13)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "hover": {
+        "text": "View demo",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgba(17, 17, 13, 0.7)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "auto",
+        "w": "auto",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgba(17, 17, 13, 0.7)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "focus": {
+        "text": "View demo",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "auto",
+        "w": "auto",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgb(17, 17, 13)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      },
+      "active": {
+        "text": "View demo",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgba(17, 17, 13, 0.7)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "auto",
+        "w": "auto",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgba(17, 17, 13, 0.7)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.1s, 0.1s, 0.1s, 0.1s, 0.1s, 0.25s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out"
+      },
+      "focus-visible": {
+        "text": "View demo",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "cls": "StyledButton-sc-qe3ace-0 StyledAnchor-sc-xshgmo-0 gmtpxB eLyIGa Linkstyle__LinkRoot-sc-1n8u9ej-6 bSzcRF Buttonstyle__ButtonRoot-sc-yyucvh-2 ",
+        "color": "rgba(17, 17, 13, 0.7)",
+        "bg": "rgb(209, 244, 112)",
+        "radius": "16px",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "10px",
+          "16px",
+          "10px",
+          "16px"
+        ],
+        "h": "auto",
+        "w": "auto",
+        "shadow": "none",
+        "outline": "rgba(17, 17, 13, 0.47) solid 2px",
+        "outlineOffset": "3px",
+        "borderW": "0px",
+        "borderC": "rgba(17, 17, 13, 0.7)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.6s cubic-bezier(0.7, 0, 0.3, 1)"
+      }
+    },
+    "emailStates": {
+      "label": "email",
+      "default": {
+        "text": "Enter work email",
+        "box": {
+          "x": 169,
+          "y": 699,
+          "w": 416,
+          "h": 48
+        },
+        "cls": "StyledTextInput-sc-k12n8x-0 iuaMBd Inputstyle__InputRoot-sc-1pu3v0n-0 fiOLCb",
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "12px",
+          "12px",
+          "12px"
+        ],
+        "h": "48px",
+        "w": "416.297px",
+        "shadow": "rgb(213, 213, 210) 0px 0px 0px 1px inset",
+        "outline": "rgb(17, 17, 13) none 0px",
+        "outlineOffset": "0px",
+        "borderW": "0px",
+        "borderC": "rgb(17, 17, 13)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.25s, 0.1s, 0.25s, 0.25s, 0.25s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out"
+      },
+      "hover": {
+        "text": "Enter work email",
+        "box": {
+          "x": 169,
+          "y": 699,
+          "w": 416,
+          "h": 48
+        },
+        "cls": "StyledTextInput-sc-k12n8x-0 iuaMBd Inputstyle__InputRoot-sc-1pu3v0n-0 fiOLCb",
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "12px",
+          "12px",
+          "12px"
+        ],
+        "h": "48px",
+        "w": "416.297px",
+        "shadow": "rgb(213, 213, 210) 0px 0px 0px 1px inset",
+        "outline": "rgb(17, 17, 13) none 0px",
+        "outlineOffset": "0px",
+        "borderW": "0px",
+        "borderC": "rgb(17, 17, 13)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.25s, 0.1s, 0.25s, 0.25s, 0.25s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out"
+      },
+      "focus": {
+        "text": "Enter work email",
+        "box": {
+          "x": 169,
+          "y": 699,
+          "w": 416,
+          "h": 48
+        },
+        "cls": "StyledTextInput-sc-k12n8x-0 iuaMBd Inputstyle__InputRoot-sc-1pu3v0n-0 fiOLCb",
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "12px",
+          "12px",
+          "12px"
+        ],
+        "h": "48px",
+        "w": "416.297px",
+        "shadow": "rgb(213, 213, 210) 0px 0px 0px 1.76869px inset",
+        "outline": "rgb(17, 17, 13) none 0px",
+        "outlineOffset": "0px",
+        "borderW": "0px",
+        "borderC": "rgb(17, 17, 13)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.25s, 0.1s, 0.25s, 0.25s, 0.25s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out"
+      },
+      "active": {
+        "text": "Enter work email",
+        "box": {
+          "x": 169,
+          "y": 699,
+          "w": 416,
+          "h": 48
+        },
+        "cls": "StyledTextInput-sc-k12n8x-0 iuaMBd Inputstyle__InputRoot-sc-1pu3v0n-0 fiOLCb",
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "12px",
+          "12px",
+          "12px"
+        ],
+        "h": "48px",
+        "w": "416.297px",
+        "shadow": "rgb(213, 213, 210) 0px 0px 0px 2px inset",
+        "outline": "rgb(17, 17, 13) none 0px",
+        "outlineOffset": "0px",
+        "borderW": "0px",
+        "borderC": "rgb(17, 17, 13)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.25s, 0.1s, 0.25s, 0.25s, 0.25s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out"
+      },
+      "focus-visible": {
+        "text": "Enter work email",
+        "box": {
+          "x": 169,
+          "y": 699,
+          "w": 416,
+          "h": 48
+        },
+        "cls": "StyledTextInput-sc-k12n8x-0 iuaMBd Inputstyle__InputRoot-sc-1pu3v0n-0 fiOLCb",
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "12px",
+          "12px",
+          "12px"
+        ],
+        "h": "48px",
+        "w": "416.297px",
+        "shadow": "rgb(255, 255, 255) 0px 2px 4px 0px, rgb(17, 17, 13) 0px 4px 12px 0px",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "1px",
+        "borderW": "0px",
+        "borderC": "rgb(17, 17, 13)",
+        "opacity": "1",
+        "td": "none",
+        "trans": "0.25s, 0.1s, 0.25s, 0.25s, 0.25s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out"
+      }
+    },
+    "emailRealFocus": {
+      "text": "Enter work email",
+      "box": {
+        "x": 169,
+        "y": 682,
+        "w": 416,
+        "h": 48
+      },
+      "color": "rgb(17, 17, 13)",
+      "bg": "rgb(255, 255, 255)",
+      "radius": "12px",
+      "fs": "15px",
+      "fw": "400",
+      "lh": "21px",
+      "ls": "normal",
+      "tt": "none",
+      "pad": [
+        "12px",
+        "12px",
+        "12px",
+        "12px"
+      ],
+      "h": "48px",
+      "w": "416.297px",
+      "shadow": "rgb(17, 17, 13) 0px 0px 0px 2px inset",
+      "outline": "rgb(213, 213, 210) solid 2px",
+      "outlineOffset": "3px",
+      "borderW": "0px",
+      "borderC": "rgb(17, 17, 13)",
+      "opacity": "1",
+      "td": "none",
+      "trans": "0.25s, 0.1s, 0.25s, 0.25s, 0.25s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out"
+    },
+    "sections": [
+      {
+        "cls": "sc-f23d7fd5-11 dYKuBV sc-dda81aa4-5 MKxes active",
+        "y": 184,
+        "h": 772,
+        "bg": "rgb(17, 17, 13)",
+        "color": "rgb(0, 0, 0)",
+        "text": "AI-POWERED CUSTOMER SERVICE PLATFORM Build for better outcomes Go beyo"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 kLnTED",
+        "y": 956,
+        "h": 224,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "OVER 32,000 SERVICE TEAMS TRUST ZENDESK AI"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 kLnTED",
+        "y": 1180,
+        "h": 973,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Turn AI ambition into outcomes. Watch unscripted sessions with leaders"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 jpVCTe",
+        "y": 2153,
+        "h": 1909,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "AI that gets smarter with every resolution. Achieve up to 80% automati"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 kLnTED",
+        "y": 4062,
+        "h": 445,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Trillions of data points turned into billions of successful outcomes. "
+      },
+      {
+        "cls": "sc-f23d7fd5-11 eKGAwU",
+        "y": 4507,
+        "h": 510,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "ZENDESK + FORETHOUGHT NEW Standalone AI agents for any platform Deploy"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 kLnTED",
+        "y": 5017,
+        "h": 448,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "The new CX Trends 2027 report is here Discover the five trends definin"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 ieLUdS sc-c59dd320-0 gmBSrZ",
+        "y": 5465,
+        "h": 1023,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Designed for AI-first customer service A unified system that brings AI"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 jpVCTe",
+        "y": 6488,
+        "h": 926,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Extend the power of AI-first service across your entire organisation. "
+      },
+      {
+        "cls": "sc-f23d7fd5-11 eMkLAk",
+        "y": 7414,
+        "h": 788,
+        "bg": "rgb(32, 53, 36)",
+        "color": "rgb(0, 0, 0)",
+        "text": "REPORT Zendesk named a Leader in the 2026 Gartner\u00ae Magic Quadrant\u2122 for"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 kLnTED",
+        "y": 8202,
+        "h": 885,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Built for businesses of all sizes From startups to enterprises, we del"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 eKGAwU",
+        "y": 9087,
+        "h": 612,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Connect your ecosystem. Your way. Quickly integrate your favourite too"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 kLnTED",
+        "y": 9699,
+        "h": 1084,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Revisit the stage with bold headliners, industry thought leaders, and "
+      },
+      {
+        "cls": "sc-f23d7fd5-11 kLnTED",
+        "y": 10784,
+        "h": 692,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Additional resources PRODUCT FEATURED A powerful, flexible platform Le"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 kLnTED",
+        "y": 11475,
+        "h": 423,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Pricing built for your success Get faster resolutions, happier custome"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 iQVaPn",
+        "y": 11898,
+        "h": 296,
+        "bg": "rgb(32, 53, 36)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Launch your first AI agent today Try it for free Get a demo"
+      },
+      {
+        "cls": "sc-f23d7fd5-11 iQVaPn",
+        "y": 12194,
+        "h": 263,
+        "bg": "rgb(32, 53, 36)",
+        "color": "rgb(0, 0, 0)",
+        "text": "Need to know more? View FAQs"
+      },
+      {
+        "cls": "StyledPanel-sc-1piryze-0 ktrbNb Accordionstyle__AccordionPanel-sc-1baakjb-4 iJCTbI",
+        "y": 12433,
+        "h": 133,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "text": ""
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "AI Summit 2026 is now available to stream",
+        "color": "rgb(17, 17, 13)",
+        "fs": "18px",
+        "fw": "500",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H2",
+        "text": "AI Summit 2026 is now available to stream",
+        "color": "rgb(17, 17, 13)",
+        "fs": "18px",
+        "fw": "500",
+        "lh": "23px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H1",
+        "text": "AI-POWERED CUSTOMER SERVICE PLATFORM",
+        "color": "rgb(245, 245, 242)",
+        "fs": "14px",
+        "fw": "700",
+        "lh": "18.2px",
+        "ls": "0.75px",
+        "tt": "uppercase"
+      },
+      {
+        "tag": "H1",
+        "text": "Build for better outcomes",
+        "color": "rgb(245, 245, 242)",
+        "fs": "68px",
+        "fw": "500",
+        "lh": "71.4px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H2",
+        "text": "OVER 32,000 SERVICE TEAMS TRUST ZENDESK AI",
+        "color": "rgb(17, 17, 13)",
+        "fs": "14px",
+        "fw": "700",
+        "lh": "18.2px",
+        "ls": "0.75px",
+        "tt": "uppercase"
+      },
+      {
+        "tag": "H2",
+        "text": "AI that gets smarter with every resolution.",
+        "color": "rgb(17, 17, 13)",
+        "fs": "42px",
+        "fw": "500",
+        "lh": "48.3px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H3",
+        "text": "Every conversation becomes a learning signal",
+        "color": "rgb(17, 17, 13)",
+        "fs": "26px",
+        "fw": "500",
+        "lh": "32.5px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H3",
+        "text": "Zendesk AI turns signals into improvement",
+        "color": "rgb(17, 17, 13)",
+        "fs": "26px",
+        "fw": "500",
+        "lh": "32.5px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H3",
+        "text": "Faster resolutions. Stronger loyalty. Better outcomes.",
+        "color": "rgb(17, 17, 13)",
+        "fs": "26px",
+        "fw": "500",
+        "lh": "32.5px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H3",
+        "text": "Trillions of data points turned into billions of successful outcomes.",
+        "color": "rgb(17, 17, 13)",
+        "fs": "26px",
+        "fw": "500",
+        "lh": "32.5px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H2",
+        "text": "Standalone AI agents for any platform",
+        "color": "rgb(17, 17, 13)",
+        "fs": "42px",
+        "fw": "500",
+        "lh": "48.3px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H2",
+        "text": "The new CX Trends 2027 report is here",
+        "color": "rgb(245, 245, 242)",
+        "fs": "26px",
+        "fw": "500",
+        "lh": "32.5px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H2",
+        "text": "Designed for AI-first customer service",
+        "color": "rgb(245, 245, 242)",
+        "fs": "42px",
+        "fw": "500",
+        "lh": "48.3px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H3",
+        "text": "Manage high volume autonomously",
+        "color": "rgb(245, 245, 242)",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23.2px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H3",
+        "text": "Launch in minutes, not months",
+        "color": "rgb(245, 245, 242)",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23.2px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H3",
+        "text": "Scale without adding headcount",
+        "color": "rgb(245, 245, 242)",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23.2px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H3",
+        "text": "Trust every AI-driven resolution",
+        "color": "rgb(245, 245, 242)",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23.2px",
+        "ls": "normal",
+        "tt": "none"
+      },
+      {
+        "tag": "H3",
+        "text": "Modernise voice with agentic AI",
+        "color": "rgb(245, 245, 242)",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23.2px",
+        "ls": "normal",
+        "tt": "none"
+      }
+    ]
+  },
+  "controls": {
+    "login": {
+      "h1": {
+        "text": "Sign in to Zendesk",
+        "tag": "H1",
+        "box": {
+          "x": 497,
+          "y": 253,
+          "w": 445,
+          "h": 48
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "42px",
+        "fw": "500",
+        "lh": "48.3px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ],
+        "h": "48.2969px",
+        "w": "445.156px",
+        "shadow": "none",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "pageBg": {
+        "body": "rgb(255, 255, 255)",
+        "main": "rgb(255, 255, 255)"
+      },
+      "subdomain": {
+        "text": "",
+        "tag": "INPUT",
+        "box": {
+          "x": 497,
+          "y": 356,
+          "w": 445,
+          "h": 48
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(17, 17, 13, 0.05)",
+        "radius": "12px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "120px",
+          "12px",
+          "12px"
+        ],
+        "h": "48px",
+        "w": "445.156px",
+        "shadow": "rgba(17, 17, 13, 0.47) 0px 0px 0px 1px inset",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "suffix": {
+        "text": ".zendesk.com",
+        "tag": "P",
+        "box": {
+          "x": 816,
+          "y": 357,
+          "w": 126,
+          "h": 46
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "16px",
+        "fw": "500",
+        "lh": "22.4px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "0px",
+          "12px",
+          "0px",
+          "12px"
+        ],
+        "h": "46px",
+        "w": "125.812px",
+        "shadow": "none",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "signin": {
+        "default": {
+          "text": "Sign in",
+          "tag": "BUTTON",
+          "box": {
+            "x": 497,
+            "y": 468,
+            "w": 445,
+            "h": 48
+          },
+          "color": "rgb(17, 17, 13)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "445.156px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgb(17, 17, 13)",
+          "td": "none"
+        },
+        "hover": {
+          "text": "Sign in",
+          "tag": "BUTTON",
+          "box": {
+            "x": 497,
+            "y": 468,
+            "w": 445,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 1)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "445.156px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 1)",
+          "td": "none"
+        },
+        "focus-visible": {
+          "text": "Sign in",
+          "tag": "BUTTON",
+          "box": {
+            "x": 497,
+            "y": 468,
+            "w": 445,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 0.996)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "445.156px",
+          "shadow": "none",
+          "outline": "rgba(17, 17, 13, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.996)",
+          "td": "none"
+        },
+        "active": {
+          "text": "Sign in",
+          "tag": "BUTTON",
+          "box": {
+            "x": 497,
+            "y": 468,
+            "w": 445,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 0.99)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "445.156px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.99)",
+          "td": "none"
+        }
+      },
+      "trial": {
+        "default": {
+          "text": "New here? Start free trial",
+          "tag": "A",
+          "box": {
+            "x": 497,
+            "y": 528,
+            "w": 445,
+            "h": 48
+          },
+          "color": "rgb(17, 17, 13)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "445.156px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgb(17, 17, 13)",
+          "td": "none"
+        },
+        "hover": {
+          "text": "New here? Start free trial",
+          "tag": "A",
+          "box": {
+            "x": 497,
+            "y": 528,
+            "w": 445,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 1)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "445.156px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 1)",
+          "td": "none"
+        },
+        "focus-visible": {
+          "text": "New here? Start free trial",
+          "tag": "A",
+          "box": {
+            "x": 497,
+            "y": 528,
+            "w": 445,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 0.996)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "445.156px",
+          "shadow": "none",
+          "outline": "rgba(17, 17, 13, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.996)",
+          "td": "none"
+        },
+        "active": {
+          "text": "New here? Start free trial",
+          "tag": "A",
+          "box": {
+            "x": 497,
+            "y": 528,
+            "w": 445,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 0.99)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "445.156px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.99)",
+          "td": "none"
+        }
+      },
+      "forgot": {
+        "missing": true
+      },
+      "productLink": {
+        "text": "Sign in to Chat",
+        "tag": "A",
+        "box": {
+          "x": 506,
+          "y": 705,
+          "w": 95,
+          "h": 26
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "4px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "14px",
+        "fw": "600",
+        "lh": "23.5px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ],
+        "h": "25.5px",
+        "w": "94.5156px",
+        "shadow": "none",
+        "outline": "rgba(0, 0, 0, 0) none 0px off 0px",
+        "border": "0px rgba(0, 0, 0, 0)",
+        "td": "none"
+      },
+      "subdomainFocus": {
+        "text": "",
+        "tag": "INPUT",
+        "box": {
+          "x": 497,
+          "y": 356,
+          "w": 445,
+          "h": 48
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(17, 17, 13, 0.09)",
+        "radius": "12px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "120px",
+          "12px",
+          "12px"
+        ],
+        "h": "48px",
+        "w": "445.156px",
+        "shadow": "rgb(17, 17, 13) 0px 0px 0px 2px inset",
+        "outline": "rgba(17, 17, 13, 0.47) solid 2px off 3px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      }
+    },
+    "pricing": {
+      "h1": {
+        "text": "Pricing for the #1 AI customer service solution",
+        "tag": "H1",
+        "box": {
+          "x": 281,
+          "y": 261,
+          "w": 879,
+          "h": 48
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "42px",
+        "fw": "500",
+        "lh": "48.3px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ],
+        "h": "48.2969px",
+        "w": "878.859px",
+        "shadow": "none",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "accentSpan": {
+        "hColor": "rgb(17, 17, 13)",
+        "fs": "42px",
+        "fw": "500",
+        "lh": "48.3px",
+        "spans": [
+          {
+            "text": "#1 AI customer service solution",
+            "color": "rgb(112, 163, 42)",
+            "fw": "500"
+          }
+        ]
+      },
+      "tab": {
+        "missing": true
+      },
+      "tabIdle": {
+        "missing": true
+      },
+      "buy": {
+        "default": {
+          "text": "Buy now",
+          "tag": "A",
+          "box": {
+            "x": 181,
+            "y": 648,
+            "w": 222,
+            "h": 43
+          },
+          "color": "rgb(17, 17, 13)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "600",
+          "lh": "23px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "16px",
+            "10px",
+            "16px"
+          ],
+          "h": "43px",
+          "w": "221.5px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgb(17, 17, 13)",
+          "td": "none"
+        },
+        "hover": {
+          "text": "Buy now",
+          "tag": "A",
+          "box": {
+            "x": 181,
+            "y": 648,
+            "w": 222,
+            "h": 43
+          },
+          "color": "rgba(17, 17, 13, 1)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "600",
+          "lh": "23px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "16px",
+            "10px",
+            "16px"
+          ],
+          "h": "43px",
+          "w": "221.5px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 1)",
+          "td": "none"
+        },
+        "focus-visible": {
+          "text": "Buy now",
+          "tag": "A",
+          "box": {
+            "x": 181,
+            "y": 648,
+            "w": 222,
+            "h": 43
+          },
+          "color": "rgba(17, 17, 13, 0.996)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "600",
+          "lh": "23px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "16px",
+            "10px",
+            "16px"
+          ],
+          "h": "43px",
+          "w": "221.5px",
+          "shadow": "none",
+          "outline": "rgba(17, 17, 13, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.996)",
+          "td": "none"
+        },
+        "active": {
+          "text": "Buy now",
+          "tag": "A",
+          "box": {
+            "x": 181,
+            "y": 648,
+            "w": 222,
+            "h": 43
+          },
+          "color": "rgba(17, 17, 13, 0.984)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "600",
+          "lh": "23px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "16px",
+            "10px",
+            "16px"
+          ],
+          "h": "43px",
+          "w": "221.5px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.984)",
+          "td": "none"
+        }
+      },
+      "badge": {
+        "text": "MOST POPULAR",
+        "tag": "SPAN",
+        "box": {
+          "x": 789,
+          "y": 354,
+          "w": 144,
+          "h": 32
+        },
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgb(17, 17, 13)",
+        "radius": "40px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "14px",
+        "fw": "700",
+        "lh": "14px",
+        "ls": "0.75px",
+        "tt": "uppercase",
+        "pad": [
+          "9.1px",
+          "14px",
+          "9.1px",
+          "14px"
+        ],
+        "h": "32.1875px",
+        "w": "143.859px",
+        "shadow": "none",
+        "outline": "rgb(255, 255, 255) none 0px off 0px",
+        "border": "0px rgb(255, 255, 255)",
+        "td": "none"
+      },
+      "card": {
+        "bg": "rgba(17, 17, 13, 0.05)",
+        "radius": "40px",
+        "shadow": "none",
+        "w": 270,
+        "h": 630,
+        "color": "rgb(0, 0, 0)"
+      },
+      "price": {
+        "text": "US$\u00a019",
+        "tag": "SPAN",
+        "box": {
+          "x": 181,
+          "y": 581,
+          "w": 62,
+          "h": 28
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "20px",
+        "fw": "600",
+        "lh": "28px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ],
+        "h": "28px",
+        "w": "62.125px",
+        "shadow": "none",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "contactSales": {
+        "default": {
+          "text": "Contact Sales",
+          "tag": "A",
+          "box": {
+            "x": 1281,
+            "y": 49,
+            "w": 135,
+            "h": 43
+          },
+          "color": "rgb(17, 17, 13)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "600",
+          "lh": "23px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "16px",
+            "10px",
+            "16px"
+          ],
+          "h": "43px",
+          "w": "135.422px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgb(17, 17, 13)",
+          "td": "none"
+        },
+        "hover": {
+          "text": "Contact Sales",
+          "tag": "A",
+          "box": {
+            "x": 1281,
+            "y": 49,
+            "w": 135,
+            "h": 43
+          },
+          "color": "rgba(17, 17, 13, 1)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "600",
+          "lh": "23px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "16px",
+            "10px",
+            "16px"
+          ],
+          "h": "43px",
+          "w": "135.422px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 1)",
+          "td": "none"
+        },
+        "focus-visible": {
+          "text": "Contact Sales",
+          "tag": "A",
+          "box": {
+            "x": 1281,
+            "y": 49,
+            "w": 135,
+            "h": 43
+          },
+          "color": "rgba(17, 17, 13, 0.996)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "600",
+          "lh": "23px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "16px",
+            "10px",
+            "16px"
+          ],
+          "h": "43px",
+          "w": "135.422px",
+          "shadow": "none",
+          "outline": "rgba(17, 17, 13, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.996)",
+          "td": "none"
+        },
+        "active": {
+          "text": "Contact Sales",
+          "tag": "A",
+          "box": {
+            "x": 1281,
+            "y": 49,
+            "w": 135,
+            "h": 43
+          },
+          "color": "rgba(17, 17, 13, 0.984)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "600",
+          "lh": "23px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "16px",
+            "10px",
+            "16px"
+          ],
+          "h": "43px",
+          "w": "135.422px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.984)",
+          "td": "none"
+        }
+      }
+    },
+    "register": {
+      "h1": {
+        "text": "Start your free 14-day trial",
+        "tag": "H1",
+        "box": {
+          "x": 414,
+          "y": 283,
+          "w": 612,
+          "h": 33
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "26px",
+        "fw": "500",
+        "lh": "32.5px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ],
+        "h": "32.5px",
+        "w": "612px",
+        "shadow": "none",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "note": {
+        "text": "100% free. No credit card required.",
+        "tag": "H4",
+        "box": {
+          "x": 414,
+          "y": 339,
+          "w": 612,
+          "h": 23
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "16px",
+        "fw": "600",
+        "lh": "23.2px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ],
+        "h": "23.1875px",
+        "w": "612px",
+        "shadow": "none",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "email": {
+        "text": "name@company.com",
+        "tag": "INPUT",
+        "box": {
+          "x": 414,
+          "y": 449,
+          "w": 612,
+          "h": 48
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(17, 17, 13, 0.11)",
+        "radius": "12px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "30px",
+          "12px",
+          "12px"
+        ],
+        "h": "48px",
+        "w": "612px",
+        "shadow": "rgb(17, 17, 13) 0px 0px 0px 2px inset",
+        "outline": "rgba(17, 17, 13, 0.47) solid 2px off 3px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "error": {
+        "missing": true
+      },
+      "getStarted": {
+        "default": {
+          "text": "Get started",
+          "tag": "BUTTON",
+          "box": {
+            "x": 414,
+            "y": 569,
+            "w": 612,
+            "h": 48
+          },
+          "color": "rgb(17, 17, 13)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "612px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgb(17, 17, 13)",
+          "td": "none"
+        },
+        "hover": {
+          "text": "Get started",
+          "tag": "BUTTON",
+          "box": {
+            "x": 414,
+            "y": 569,
+            "w": 612,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 1)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "612px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 1)",
+          "td": "none"
+        },
+        "focus-visible": {
+          "text": "Get started",
+          "tag": "BUTTON",
+          "box": {
+            "x": 414,
+            "y": 569,
+            "w": 612,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 0.996)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "612px",
+          "shadow": "none",
+          "outline": "rgba(17, 17, 13, 0.004) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.996)",
+          "td": "none"
+        },
+        "active": {
+          "text": "Get started",
+          "tag": "BUTTON",
+          "box": {
+            "x": 414,
+            "y": 569,
+            "w": 612,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 0.984)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "16px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "18px",
+          "fw": "600",
+          "lh": "28px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "612px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px off 3px",
+          "border": "0px rgba(17, 17, 13, 0.984)",
+          "td": "none"
+        }
+      },
+      "dialog": {
+        "bg": "rgb(255, 255, 255)",
+        "radius": "16px",
+        "shadow": "rgba(0, 0, 0, 0.15) 0px 10px 50px 20px",
+        "w": 692
+      },
+      "emailFocus": {
+        "text": "name@company.com",
+        "tag": "INPUT",
+        "box": {
+          "x": 414,
+          "y": 449,
+          "w": 612,
+          "h": 48
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(17, 17, 13, 0.11)",
+        "radius": "12px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "30px",
+          "12px",
+          "12px"
+        ],
+        "h": "48px",
+        "w": "612px",
+        "shadow": "rgb(17, 17, 13) 0px 0px 0px 2px inset",
+        "outline": "rgba(17, 17, 13, 0.47) solid 2px off 3px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      }
+    },
+    "help": {
+      "search": {
+        "text": "Search",
+        "tag": "INPUT",
+        "box": {
+          "x": 192,
+          "y": 318,
+          "w": 508,
+          "h": 48
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgb(255, 255, 255)",
+        "radius": "100px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "16px",
+        "fw": "400",
+        "lh": "24px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "4px",
+          "60px",
+          "4px",
+          "16px"
+        ],
+        "h": "48px",
+        "w": "508px",
+        "shadow": "rgba(17, 17, 13, 0.47) 0px 0px 0px 1px inset",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(213, 213, 210)",
+        "td": "none"
+      },
+      "freeTrial": {
+        "default": {
+          "text": "Free trial",
+          "tag": "A",
+          "box": {
+            "x": 1042,
+            "y": 50,
+            "w": 112,
+            "h": 48
+          },
+          "color": "rgb(17, 17, 13)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "100px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "700",
+          "lh": "24px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "112.078px",
+          "shadow": "none",
+          "outline": "rgba(0, 0, 0, 0) none 0px off 0px",
+          "border": "2px rgba(0, 0, 0, 0)",
+          "td": "none"
+        },
+        "hover": {
+          "text": "Free trial",
+          "tag": "A",
+          "box": {
+            "x": 1042,
+            "y": 50,
+            "w": 112,
+            "h": 48
+          },
+          "color": "rgb(17, 17, 13)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "100px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "700",
+          "lh": "24px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "112.078px",
+          "shadow": "none",
+          "outline": "rgb(17, 17, 13) none 0px off 0px",
+          "border": "2px rgba(17, 17, 13, 0.7)",
+          "td": "none"
+        },
+        "focus-visible": {
+          "text": "Free trial",
+          "tag": "A",
+          "box": {
+            "x": 1042,
+            "y": 50,
+            "w": 112,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 0.7)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "100px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "700",
+          "lh": "24px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "112.078px",
+          "shadow": "none",
+          "outline": "rgba(17, 17, 13, 0.7) none 0px off 1px",
+          "border": "2px rgba(17, 17, 13, 0.7)",
+          "td": "none"
+        },
+        "active": {
+          "text": "Free trial",
+          "tag": "A",
+          "box": {
+            "x": 1042,
+            "y": 50,
+            "w": 112,
+            "h": 48
+          },
+          "color": "rgba(17, 17, 13, 0.7)",
+          "bg": "rgb(209, 244, 112)",
+          "radius": "100px",
+          "font": "\"Vanilla Sans\", Arial, sans-serif",
+          "fs": "16px",
+          "fw": "700",
+          "lh": "24px",
+          "ls": "normal",
+          "tt": "none",
+          "pad": [
+            "10px",
+            "20px",
+            "10px",
+            "20px"
+          ],
+          "h": "48px",
+          "w": "112.078px",
+          "shadow": "none",
+          "outline": "rgba(17, 17, 13, 0.7) none 0px off 0px",
+          "border": "2px rgba(17, 17, 13, 0.7)",
+          "td": "none"
+        }
+      },
+      "heading": {
+        "text": "Welcome to Zendesk help",
+        "tag": "H2",
+        "box": {
+          "x": 188,
+          "y": 183,
+          "w": 516,
+          "h": 48
+        },
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "42px",
+        "fw": "500",
+        "lh": "48.3px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ],
+        "h": "48.2969px",
+        "w": "516px",
+        "shadow": "none",
+        "outline": "rgb(255, 255, 255) none 0px off 0px",
+        "border": "0px rgb(255, 255, 255)",
+        "td": "none"
+      },
+      "body": {
+        "bg": "rgb(255, 255, 255)",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "color": "rgb(0, 0, 0)"
+      }
+    },
+    "contact": {
+      "h1": {
+        "text": "Get in touch with sales",
+        "tag": "H1",
+        "box": {
+          "x": 169,
+          "y": 206,
+          "w": 539,
+          "h": 48
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "42px",
+        "fw": "500",
+        "lh": "48.3px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "0px",
+          "0px",
+          "0px",
+          "0px"
+        ],
+        "h": "48.2969px",
+        "w": "539px",
+        "shadow": "none",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "email": {
+        "text": "Work email",
+        "tag": "INPUT",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(17, 17, 13, 0.05)",
+        "radius": "12px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "12px",
+          "12px",
+          "12px"
+        ],
+        "h": "auto",
+        "w": "100%",
+        "shadow": "rgba(17, 17, 13, 0.47) 0px 0px 0px 1px inset",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "textarea": {
+        "text": "",
+        "tag": "TEXTAREA",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(17, 17, 13, 0.05)",
+        "radius": "12px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "12px",
+          "12px",
+          "12px"
+        ],
+        "h": "auto",
+        "w": "100%",
+        "shadow": "rgba(17, 17, 13, 0.47) 0px 0px 0px 1px inset",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      },
+      "select": {
+        "text": "SelectAfghanistanAlbaniaAlgeriaAmerican SamoaAndorraAngolaAnguillaAntarcticaAntigua and Ba",
+        "tag": "SELECT",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "12px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "40px",
+          "12px",
+          "12px"
+        ],
+        "h": "auto",
+        "w": "100%",
+        "shadow": "rgba(17, 17, 13, 0.47) 0px 0px 0px 1px inset",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgba(0, 0, 0, 0)",
+        "td": "none"
+      },
+      "send": {
+        "missing": true
+      },
+      "emailFocus": {
+        "text": "Work email",
+        "tag": "INPUT",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "color": "rgb(17, 17, 13)",
+        "bg": "rgba(17, 17, 13, 0.05)",
+        "radius": "12px",
+        "font": "\"Vanilla Sans\", Arial, sans-serif",
+        "fs": "15px",
+        "fw": "400",
+        "lh": "21px",
+        "ls": "normal",
+        "tt": "none",
+        "pad": [
+          "12px",
+          "12px",
+          "12px",
+          "12px"
+        ],
+        "h": "auto",
+        "w": "100%",
+        "shadow": "rgba(17, 17, 13, 0.47) 0px 0px 0px 1px inset",
+        "outline": "rgb(17, 17, 13) none 0px off 0px",
+        "border": "0px rgb(17, 17, 13)",
+        "td": "none"
+      }
+    },
+    "garden": {
+      "body": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(41, 50, 57)",
+        "font": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", Arial, sans-serif",
+        "size": "14px"
+      },
+      "h1": {
+        "text": "Welcome to Garden",
+        "color": "rgb(41, 50, 57)",
+        "fs": "48px",
+        "fw": "700",
+        "lh": "56px",
+        "font": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", Arial, sans-serif"
+      },
+      "varCount": 0
+    },
+    "theme": {
+      "colorScheme": "normal",
+      "darkClass": "",
+      "match": false
+    }
+  },
+  "homeColourFrequency": {
+    "colors": [
+      [
+        "rgb(0, 0, 0)",
+        600
+      ],
+      [
+        "rgb(255, 255, 255)",
+        437
+      ],
+      [
+        "rgb(17, 17, 13)",
+        282
+      ],
+      [
+        "rgb(245, 245, 242)",
+        101
+      ],
+      [
+        "rgb(112, 163, 42)",
+        96
+      ],
+      [
+        "rgba(17, 17, 13, 0.714)",
+        2
+      ],
+      [
+        "rgba(255, 255, 255, 0.996)",
+        2
+      ],
+      [
+        "rgb(209, 244, 112)",
+        2
+      ]
+    ],
+    "bgs": [
+      [
+        "rgb(255, 255, 255)",
+        20
+      ],
+      [
+        "rgb(209, 244, 112)",
+        18
+      ],
+      [
+        "rgba(17, 17, 13, 0.05)",
+        18
+      ],
+      [
+        "rgb(245, 245, 242)",
+        12
+      ],
+      [
+        "rgba(17, 17, 13, 0.5)",
+        9
+      ],
+      [
+        "rgb(32, 53, 36)",
+        6
+      ],
+      [
+        "rgb(17, 17, 13)",
+        4
+      ],
+      [
+        "rgba(17, 17, 13, 0.11)",
+        4
+      ],
+      [
+        "rgb(66, 67, 62)",
+        2
+      ],
+      [
+        "rgb(53, 94, 52)",
+        2
+      ],
+      [
+        "rgba(255, 255, 255, 0.9)",
+        1
+      ],
+      [
+        "rgba(17, 17, 13, 0.18)",
+        1
+      ],
+      [
+        "rgba(17, 17, 13, 0.32)",
+        1
+      ],
+      [
+        "rgba(17, 17, 13, 0.47)",
+        1
+      ]
+    ],
+    "radii": [
+      [
+        "4px",
+        110
+      ],
+      [
+        "16px",
+        47
+      ],
+      [
+        "40px",
+        15
+      ],
+      [
+        "20px",
+        11
+      ],
+      [
+        "12px",
+        9
+      ],
+      [
+        "0px 0px 20px 20px",
+        9
+      ],
+      [
+        "100%",
+        7
+      ],
+      [
+        "8px",
+        2
+      ],
+      [
+        "32px",
+        1
+      ]
+    ],
+    "fonts": [
+      [
+        "\"Vanilla Sans\", Arial, sans-serif",
+        1518
+      ],
+      [
+        "Arial",
+        4
+      ]
+    ],
+    "sizes": [
+      [
+        "16px/400/16px",
+        464
+      ],
+      [
+        "16px/400/0px",
+        132
+      ],
+      [
+        "14px/400/21px",
+        128
+      ],
+      [
+        "16px/400/23.2px",
+        126
+      ],
+      [
+        "16px/600/23.2px",
+        88
+      ],
+      [
+        "72px/500/79.2px",
+        70
+      ],
+      [
+        "18px/600/28px",
+        65
+      ],
+      [
+        "16px/400/24px",
+        58
+      ],
+      [
+        "16px/600/26px",
+        47
+      ],
+      [
+        "16px/600/23px",
+        33
+      ],
+      [
+        "72px/500/72px",
+        25
+      ],
+      [
+        "14px/400/14px",
+        24
+      ],
+      [
+        "40px/500/40px",
+        23
+      ],
+      [
+        "26px/500/40px",
+        23
+      ],
+      [
+        "14px/700/18.2px",
+        22
+      ],
+      [
+        "0px/400/0px",
+        22
+      ],
+      [
+        "16px/700/23.2px",
+        20
+      ],
+      [
+        "16px/500/0px",
+        20
+      ],
+      [
+        "15px/400/21px",
+        16
+      ],
+      [
+        "16px/500/16px",
+        13
+      ],
+      [
+        "42px/500/48.3px",
+        13
+      ],
+      [
+        "14px/400/normal",
+        11
+      ],
+      [
+        "26px/500/32.5px",
+        10
+      ],
+      [
+        "14px/400/19.6px",
+        9
+      ],
+      [
+        "15px/500/18.75px",
+        8
+      ]
+    ]
+  },
+  "registerErrorRing": "rgb(184, 66, 66) 0px 0px 0px 2px inset on input[placeholder=name@company.com] with aria-invalid=true, before any typing, https://www.zendesk.com/sg/register/"
+}

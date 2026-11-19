@@ -1,0 +1,14 @@
+{
+  "capturedAt": "2026-11-19T04:22:00Z",
+  "viewportDesktop": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 1 },
+  "viewportPhone": { "innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2 },
+  "note": "Computed styles from headless Chromium on public whatsapp.com pages. The T3 preview tab loaded the same home page (innerWidth 1169) and confirmed the same colours, type and radii, but it returned no screenshot frames. No custom properties are declared on :root. Colours below are computed rgb() normalised to hex.",
+  "pages": {
+    "home": "https://www.whatsapp.com/",
+    "download": "https://www.whatsapp.com/download",
+    "privacy": "https://www.whatsapp.com/privacy",
+    "calling": "https://www.whatsapp.com/calling",
+    "contact": "https://www.whatsapp.com/contact",
+    "security": "https://www.whatsapp.com/security"
+  }
+}

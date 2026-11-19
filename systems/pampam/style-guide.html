@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PamPam style guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --ink: #1b1917;
+    --muted: #9894a8;
+    --body: #2c2936;
+    --white: #ffffff;
+    --cream: #faf2ec;
+    --plan: #fbfcfd;
+    --off: #fefefe;
+    --black: #000000;
+    --accent: #4b72f3;
+    --accent-border: #2b3ea7;
+    --success: #00a917;
+    --success-fill: #e5ffe8;
+    --switch: #006e0b;
+    --focus: #ff9a50;
+    --border: #dde1f1;
+    --sans: Inter, "inter Fallback", sans-serif;
+    --display: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--white); color: var(--ink); font: 550 16px/24px var(--sans); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+  h1 { font: 400 48px/1.08 var(--display); margin: 0 0 8px; }
+  h2 { font: 400 28px/1.08 var(--display); margin: 40px 0 12px; }
+  p.note { color: var(--muted); max-width: 68ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .swatch i { display: block; height: 64px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08); }
+  .swatch span { display: block; margin-top: 6px; font-size: 13px; color: var(--muted); }
+  .specimen { margin: 8px 0; }
+  .display { font: 400 80px/86.4px var(--display); }
+  .section { font: 400 48px/51.84px var(--display); }
+  .feature { font: 400 28px/30.24px var(--display); }
+  .lede { font: 550 19px/28px var(--sans); color: var(--muted); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; border: 0; cursor: default; }
+  .btn-primary { height: 40px; padding: 12px; border-radius: 8px; background: var(--black); color: var(--white); font: 550 16px/0 var(--sans); }
+  .btn-accent { height: 64px; padding: 20px 32px; border-radius: 12px; background: var(--accent); color: var(--white); border: 1px solid var(--accent-border); box-shadow: rgba(0,0,0,0.3) 0 1px 2px, #6387f4 0 2px 0 inset; font: 550 19px/28px var(--sans); }
+  .btn-secondary { height: 64px; padding: 20px 32px; border-radius: 12px; background: var(--off); color: #8a8a8a; border: 1px solid rgba(0,0,0,0.1); box-shadow: rgba(0,0,0,0.1) 0 1px 3px; font: 550 19px/28px var(--sans); }
+  .field { display: flex; align-items: center; gap: 8px; width: 406px; max-width: 100%; height: 66px; padding: 0 12px 0 20px; background: var(--white); border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; box-shadow: rgba(0,0,0,0.05) 0 1px 2px -1px, rgba(0,0,0,0.05) 0 2px 4px -2px; }
+  .field input { flex: 1; border: 0; outline: 0; font: 550 16px/24px var(--sans); color: #222; background: transparent; min-width: 0; }
+  .field input::placeholder { color: #8f8f8f; }
+  .card { width: 216px; padding: 24px; border-radius: 16px; background: var(--cream); border: 1px solid rgba(0,0,0,0.02); }
+  .card b { display: block; font-weight: 600; }
+  .card span { color: var(--muted); }
+  .plan { width: 220px; padding: 24px; border-radius: 16px; background: var(--plan); }
+  .plan.selected { border: 2px solid var(--border); }
+  .price { font: 700 32px/24px var(--sans); }
+  .badge { display: inline-block; margin-top: 8px; padding: 4px 8px; border-radius: 999px; background: var(--success-fill); color: var(--success); font: 550 14px/20px var(--sans); }
+  .menu { width: 126px; padding: 8px 0; background: var(--white); border: 1px solid rgba(0,0,0,0.05); border-radius: 6px; box-shadow: rgba(14,18,22,0.2) 0 6px 20px -10px; }
+  .menu a { display: block; padding: 8px 12px; color: #666; text-decoration: none; font-weight: 400; }
+  .switch { width: 56px; height: 36px; border-radius: 24px; background: var(--switch); padding: 8px; display: flex; justify-content: flex-end; box-shadow: rgba(0,0,0,0.18) 0 0 2px inset; }
+  .switch i { width: 20px; height: 20px; border-radius: 18px; background: white; display: block; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(0,0,0,0.08); vertical-align: top; }
+  th { color: var(--muted); font-weight: 550; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>PamPam</h1>
+  <p class="note">Light only. Values are the computed styles from pampam.city on 2026-11-19. Nineties is not loaded here. The display specimens use a serif stand-in. Inter is loaded from Google Fonts.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#1b1917"></i><span>ink #1b1917</span></div>
+    <div class="swatch"><i style="background:#9894a8"></i><span>muted #9894a8</span></div>
+    <div class="swatch"><i style="background:#2c2936"></i><span>body #2c2936</span></div>
+    <div class="swatch"><i style="background:#faf2ec"></i><span>cream #faf2ec</span></div>
+    <div class="swatch"><i style="background:#fbfcfd"></i><span>plan #fbfcfd</span></div>
+    <div class="swatch"><i style="background:#4b72f3"></i><span>accent #4b72f3</span></div>
+    <div class="swatch"><i style="background:#006e0b"></i><span>switch #006e0b</span></div>
+    <div class="swatch"><i style="background:#00a917"></i><span>success #00a917</span></div>
+    <div class="swatch"><i style="background:#e5ffe8"></i><span>success fill #e5ffe8</span></div>
+    <div class="swatch"><i style="background:#ff9a50"></i><span>focus #ff9a50</span></div>
+    <div class="swatch"><i style="background:#dde1f1"></i><span>border #dde1f1</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="specimen display">Put your world on the map.</p>
+  <p class="note">Display is 80px / 86.4px, weight 400, family nineties. This page substitutes a serif.</p>
+  <p class="specimen section">Create interactive maps in minutes.</p>
+  <p class="specimen feature">How do I make my own custom map?</p>
+  <p class="specimen lede">PamPam is an AI map maker to make your own custom maps, travel maps and map animations.</p>
+
+  <h2>Controls</h2>
+  <div class="row" style="align-items:center">
+    <span class="btn btn-primary">Make map</span>
+    <span class="btn btn-accent">Get Explorer</span>
+    <span class="btn btn-secondary">Try it for free</span>
+    <span class="switch"><i></i></span>
+    <span class="badge">Save 37%</span>
+  </div>
+  <div class="field" style="margin-top:16px">
+    <input placeholder="Famous startups in London" value="">
+    <span class="btn btn-primary">Make map</span>
+  </div>
+  <div class="row" style="margin-top:16px; align-items:flex-start">
+    <div class="card"><b>Startup Maps</b><span>Show startup ecosystems on a map.</span></div>
+    <div class="plan selected"><div>Explorer</div><div class="price">$5</div><span class="badge">Save 37%</span></div>
+    <div class="menu"><a>Travelers</a><a>Tourism</a><a>Startup Maps</a><a>Real Estate</a><a>Nonprofits</a></div>
+  </div>
+
+  <h2>Tokens</h2>
+  <p class="note">Every value is in <a href="tokens.json">tokens.json</a>. This page is a specimen, not a second source.</p>
+</div>
+</body>
+</html>

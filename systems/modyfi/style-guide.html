@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Modyfi style guide</title>
+<style>
+  body { margin: 0; background: #000; color: #fff; font: 16px/1.5 Inter, Arial, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-weight: 600; letter-spacing: -1px; font-size: 40px; }
+  h2 { margin-top: 40px; font-size: 22px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid #182233; border-radius: 12px; overflow: hidden; }
+  .chip { height: 72px; }
+  .meta { padding: 8px 10px; font-size: 12px; color: #c9c9c9; }
+  .meta b { color: #fff; display: block; }
+  .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin: 16px 0; }
+  button, a.btn { border-radius: 15px; padding: 8px 16px; font-size: 13px; text-decoration: none; display: inline-block; }
+  .signup { background: #ff0357; color: #fff; border: 2px solid #ff035778; }
+  .cta { background: #fff; color: #000; font-weight: 600; padding: 16px 24px; border: 0; }
+  .login { background: transparent; color: #ffffffcc; border: 2px solid transparent; }
+  p.note { color: #c9c9c9; max-width: 62ch; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Modyfi</h1>
+  <p class="note">Rendered from tokens.json. Values were read from the Wayback replay of www.modyfi.com on 2026-11-19. The live site is a Webflow 404. One theme.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div class="meta"><b>background</b>#000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="meta"><b>heading</b>#ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#c9c9c9"></div><div class="meta"><b>paragraph</b>#c9c9c9</div></div>
+    <div class="swatch"><div class="chip" style="background:#ff0357"></div><div class="meta"><b>accent</b>#ff0357</div></div>
+    <div class="swatch"><div class="chip" style="background:#0b82d8"></div><div class="meta"><b>accent-blue</b>#0b82d8</div></div>
+    <div class="swatch"><div class="chip" style="background:#d8dfe9cc"></div><div class="meta"><b>link</b>#d8dfe9cc</div></div>
+    <div class="swatch"><div class="chip" style="background:#182233"></div><div class="meta"><b>border</b>#182233</div></div>
+    <div class="swatch"><div class="chip" style="background:#1d2838"></div><div class="meta"><b>surface</b>#1d2838</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff1f"></div><div class="meta"><b>stroke</b>#ffffff1f</div></div>
+    <div class="swatch"><div class="chip" style="background:#ff035778"></div><div class="meta"><b>magenta-transparent</b>#ff035778</div></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-size:56px;line-height:67.2px;letter-spacing:-3px;font-weight:600;margin:0">Design without limits</p>
+  <p style="font-size:48px;line-height:57.6px;letter-spacing:-1px;font-weight:600">Explore what the community has been making</p>
+  <p style="font-size:17.6px;line-height:31.68px;letter-spacing:-1px;color:#c9c9c9;max-width:42ch">Modyfi is the design platform built for multidisciplinary designers.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn signup" href="#signup">Sign up</a>
+    <a class="btn login" href="#login">Log in</a>
+    <a class="btn cta" href="#cta">Start playing for free</a>
+  </div>
+</main>
+</body>
+</html>

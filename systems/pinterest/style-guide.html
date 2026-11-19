@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pinterest style guide</title>
+<meta name="description" content="Pinterest public signed-out tokens, rendered from tokens.json.">
+<style>
+:root {
+  --page: #ffffff;
+  --surface: #ffffff;
+  --subtle: #f6f6f3;
+  --secondary: #e5e5e0;
+  --action: #e60023;
+  --action-hover: #cc001f;
+  --action-pressed: #b2001b;
+  --inverse: #000000;
+  --text: #000000;
+  --text-secondary: #211922;
+  --subtle-text: #62625b;
+  --disabled: #91918c;
+  --on-action: #ffffff;
+  --link: #2b48d4;
+  --stroke: #91918c;
+  --decorative: #c8c8c1;
+  --focus: #435ee5;
+  --error: #b60c0c;
+  --success: #097239;
+  --warning: #b24700;
+  --info: #435ee5;
+  --radius-card: 8px;
+  --radius-field: 12px;
+  --radius-button: 16px;
+  --font: "Pin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/1.4 var(--font); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 900 48px/1.1 var(--font); letter-spacing: -0.5px; margin: 0 0 8px; }
+h2 { font: 700 28px/1.1 var(--font); letter-spacing: -0.5px; margin: 40px 0 12px; }
+p { color: var(--text-secondary); max-width: 70ch; }
+.note { font-size: 12px; color: var(--subtle-text); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--decorative); display: block; }
+.sw b { display: block; font-size: 12px; }
+.sw span { font-size: 12px; color: var(--subtle-text); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 8px 16px; border: 0; border-radius: 16px; font: 400 12px/1 var(--font); cursor: pointer; }
+.btn.primary { background: var(--action); color: var(--on-action); }
+.btn.secondary { background: var(--secondary); color: var(--text); }
+.field { width: min(402px, 100%); }
+.field label { display: block; font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+.field input { width: 100%; height: 56px; border: 1px solid var(--stroke); border-radius: 12px; padding: 16px 11px; font: 400 16px/1.4 var(--font); background: transparent; color: var(--text); }
+.field input::placeholder { color: #757575; }
+.search { height: 48px; border-radius: 12px; background: var(--secondary); display: flex; align-items: center; padding: 0 16px; color: var(--subtle-text); max-width: 619px; }
+.card { width: 180px; border-radius: 8px; overflow: hidden; background: var(--subtle); }
+.card .art { height: 120px; background: var(--secondary); }
+.card p { margin: 8px; font-size: 16px; font-weight: 700; color: var(--text); }
+.footer { margin-top: 24px; background: var(--inverse); color: var(--on-action); padding: 24px; border-radius: 8px; }
+.footer a { color: var(--link); text-decoration: none; font-weight: 500; }
+.bar { height: 80px; display: flex; align-items: center; gap: 8px; }
+.typerow { padding: 12px 0; border-bottom: 1px solid var(--decorative); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Pinterest</h1>
+  <p>Public signed-out chrome, measured on 19 November 2026. Values come from Gestalt custom properties on the homepage and from computed styles. Pin Sans is not loaded here, so the system face stands in.</p>
+  <p class="note">Dark theme was not on the page. Screenshot frames were unavailable, so this page is the specimen.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><div><b>page</b><span>#ffffff</span></div></div>
+    <div class="sw"><i style="background:#f6f6f3"></i><div><b>subtle</b><span>#f6f6f3</span></div></div>
+    <div class="sw"><i style="background:#e5e5e0"></i><div><b>secondary</b><span>#e5e5e0</span></div></div>
+    <div class="sw"><i style="background:#e60023"></i><div><b>action</b><span>#e60023</span></div></div>
+    <div class="sw"><i style="background:#cc001f"></i><div><b>action hover</b><span>#cc001f</span></div></div>
+    <div class="sw"><i style="background:#b2001b"></i><div><b>action pressed</b><span>#b2001b</span></div></div>
+    <div class="sw"><i style="background:#000000"></i><div><b>text</b><span>#000000</span></div></div>
+    <div class="sw"><i style="background:#211922"></i><div><b>chrome text</b><span>#211922</span></div></div>
+    <div class="sw"><i style="background:#62625b"></i><div><b>subtle text</b><span>#62625b</span></div></div>
+    <div class="sw"><i style="background:#2b48d4"></i><div><b>link</b><span>#2b48d4</span></div></div>
+    <div class="sw"><i style="background:#91918c"></i><div><b>stroke</b><span>#91918c</span></div></div>
+    <div class="sw"><i style="background:#435ee5"></i><div><b>focus</b><span>#435ee5</span></div></div>
+    <div class="sw"><i style="background:#b60c0c"></i><div><b>error</b><span>#b60c0c</span></div></div>
+    <div class="sw"><i style="background:#097239"></i><div><b>success</b><span>#097239</span></div></div>
+    <div class="sw"><i style="background:#b24700"></i><div><b>warning</b><span>#b24700</span></div></div>
+  </div>
+
+  <h2>Type</h2>
+  <div class="typerow" style="font:900 48px/1.1 var(--font);letter-spacing:-0.5px">Create the life you love on Pinterest</div>
+  <div class="typerow" style="font:700 28px/1.1 var(--font);letter-spacing:-0.5px">Welcome to Pinterest</div>
+  <div class="typerow" style="font:400 16px/1.4 var(--font)">Search for easy dinners, fashion, etc.</div>
+  <div class="typerow" style="font:400 12px/1.5 var(--font);color:#211922">Email</div>
+
+  <h2>Chrome</h2>
+  <div class="bar">
+    <strong style="font-size:18px;letter-spacing:-0.3px">Pinterest</strong>
+    <span style="padding:8px 16px">Explore</span>
+    <div class="search" style="flex:1">Search for easy dinners, fashion, etc.</div>
+    <button class="btn primary">Log in</button>
+    <button class="btn secondary">Sign up</button>
+  </div>
+
+  <h2>Signup wall</h2>
+  <p>Recorded, not submitted. Birthday and Google continue were on the page and were left alone.</p>
+  <div class="field">
+    <label>Email</label>
+    <input type="email" placeholder="Enter your email" readonly>
+  </div>
+  <div class="field" style="margin-top:12px">
+    <label>Password</label>
+    <input type="text" placeholder="Create a password" readonly>
+  </div>
+  <div style="margin-top:16px"><button class="btn primary">Continue</button></div>
+
+  <h2>Card</h2>
+  <div class="card"><div class="art"></div><p>Holiday mocktails</p></div>
+
+  <h2>Footer</h2>
+  <div class="footer">Get the app <a href="#policy">Privacy Policy</a></div>
+</div>
+</body>
+</html>

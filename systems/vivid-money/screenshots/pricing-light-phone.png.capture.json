@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-18T20:23:13.237Z",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://vivid.money/en-eu/business/plans/?activeTab=companies",
+    "title": "Plans built for every business | Vivid Europe",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "theme": "light"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview browser, preview_evaluate on the attached page",
+  "screenshotFrames": "preview_snapshot failed twice: The browser is not producing screenshot frames",
+  "viewport": {
+    "requestedDesktop": {"width": 1440, "height": 900},
+    "measuredDesktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}},
+    "requestedPhone": {"width": 390, "height": 844},
+    "measuredPhone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}},
+    "note": "preview_resize to 1440x900 and 390x844 reported a host viewport of 1280x800, then preview_evaluate read the CSS viewport above."
+  },
+  "pages": {
+    "home": {
+      "url": "https://wandb.ai/site",
+      "title": "Weights & Biases: The AI developer platform",
+      "body": {"backgroundColor": "rgb(26, 28, 31)", "color": "rgb(255, 255, 255)", "fontFamily": "\"Source Sans 3\", sans-serif", "fontSize": "20px", "lineHeight": "30px", "fontWeight": "400"},
+      "scrollHeight": 4039,
+      "header": {"height": 96, "y": 60, "backgroundColor": "rgba(0, 0, 0, 0)", "position": "static"},
+      "logo": {"src": "https://site.wandb.ai/wp-content/uploads/2023/05/WnB_dark-mode.svg", "width": 245, "height": 48, "x": 24, "y": 84},
+      "h1": {"text": "AI is easy to productionize", "fontFamily": "\"Source Serif 4\", serif", "fontSize": "72px", "fontWeight": "600", "lineHeight": "72px", "color": "rgb(255, 255, 255)", "padding": "54px 0px 36px"},
+      "nav": {
+        "docs": {"color": "rgb(0, 175, 194)", "fontSize": "20px", "fontWeight": "400", "fontFamily": "\"Source Sans Pro\", sans-serif"},
+        "pricing": {"color": "rgb(0, 175, 194)", "fontSize": "20px", "fontWeight": "400"},
+        "contact": {"color": "rgb(255, 255, 255)", "fontSize": "16px", "letterSpacing": "6%", "textTransform": "uppercase"},
+        "login": {"color": "rgb(255, 173, 51)", "fontSize": "16px", "letterSpacing": "6%", "textTransform": "uppercase", "hoverColor": "rgb(255, 173, 51)"},
+        "signup": {"color": "rgb(255, 255, 255)", "fontSize": "16px", "letterSpacing": "6%", "textTransform": "uppercase"},
+        "menuHover": "rgb(0, 175, 194)",
+        "menuActive": "rgb(0, 175, 194)"
+      },
+      "weaveCta": {
+        "id": "homepage-weave-cta",
+        "backgroundImage": "linear-gradient(270deg, rgb(16, 191, 204) 0%, rgb(0, 151, 171) 100%)",
+        "color": "rgb(26, 28, 31)",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "lineHeight": "18px",
+        "letterSpacing": "0.96px",
+        "textTransform": "uppercase",
+        "padding": "21px 35px",
+        "borderRadius": "8px",
+        "phonePadding": "15px 24px"
+      },
+      "copyButton": {"backgroundColor": "rgba(224, 224, 224, 0.2)", "color": "rgb(187, 187, 187)", "borderRadius": "8px", "padding": "0px 8px", "boxShadow": "rgba(0, 0, 0, 0.2) 0px 2px 0px 0px", "fontSize": "16px", "letterSpacing": "0.96px", "textTransform": "uppercase"},
+      "code": {"fontFamily": "Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace", "fontSize": "12px", "color": "rgb(248, 248, 242)", "borderRadius": "3.6px", "padding": "0px 0px 0px 24px", "panelBackground": "rgb(43, 48, 56)", "panelRadius": "0px 0px 8px 8px"},
+      "sectionBackgrounds": ["rgb(26, 28, 31)", "rgb(32, 34, 38)", "rgb(32, 35, 40)", "rgb(33, 36, 41)", "rgb(39, 39, 42)", "rgb(40, 42, 47)", "rgb(43, 48, 56)", "rgb(52, 58, 66)"],
+      "cardRadius": "12px 12px 0px 0px",
+      "h2Samples": [
+        {"text": "The world’s leading AI teams trust Weights & Biases", "fontSize": "38px", "fontWeight": "400", "color": "rgb(255, 255, 255)", "lineHeight": "45.6px"},
+        {"text": "Weights & Biases mobile app", "fontSize": "38px", "fontWeight": "400", "color": "rgb(255, 204, 51)", "lineHeight": "45.6px"}
+      ],
+      "focusOutline": "rgb(255, 255, 255) auto 3px",
+      "hiddenBanner": {"class": "wb-banner", "backgroundColor": "rgb(220, 38, 38)", "color": "rgb(255, 255, 255)", "display": "none"},
+      "motion": {"navTransition": "all 0.4s ease", "headerButtonTransition": "all 0.1s ease", "headerBarTransition": "all 0.3s ease", "keyframes": ["slide-infinite", "draw-stroke", "jp-search-animated-ellipsis-bounce", "jetpack-search-skeleton-shimmer"], "prefersReducedMotion": false}
+    },
+    "pricing": {
+      "url": "https://wandb.ai/site/pricing-privately-hosted/",
+      "requested": "https://wandb.ai/site/privately-hosted-pricing/",
+      "title": "Explore Weights & Biases pricing plans",
+      "h1": {"text": "Privately-Hosted Pricing", "fontFamily": "\"Source Serif 4\", sans-serif", "fontSize": "54px", "fontWeight": "400", "lineHeight": "66px", "color": "rgb(255, 255, 255)"},
+      "planTitle": {"fontFamily": "\"Source Serif 4\"", "fontSize": "26px", "fontWeight": "400", "color": "rgb(255, 255, 255)"},
+      "price": {"text": "$0/mo", "fontSize": "20px"},
+      "getStarted": {"text": "GET STARTED", "href": "https://id.coreweave.com/signup", "color": "rgb(250, 250, 250)", "fontSize": "16px", "fontWeight": "600", "letterSpacing": "0.96px", "padding": "16px 36px", "borderRadius": "8px", "height": 49, "width": 316},
+      "contactUs": {"text": "CONTACT US", "href": "/site/contact/", "sameAs": "getStarted"},
+      "social": {"backgroundColor": "rgb(54, 54, 54)", "color": "rgb(0, 175, 194)", "borderRadius": "50%", "size": 42},
+      "note": "Cloud-hosted pricing link points at https://coreweave.com/forge-pricing. Not followed into a plan purchase."
+    },
+    "login": {
+      "url": "https://id.coreweave.com/login?next=%2Fwandb",
+      "arrivedFrom": "https://wandb.ai/",
+      "title": "Forge",
+      "colorScheme": "light",
+      "htmlStyle": "color-scheme: light",
+      "rootBackground": "rgb(248, 248, 248)",
+      "body": {"color": "rgb(43, 48, 56)", "fontFamily": "\"Source Sans 3\", sans-serif", "fontSize": "16px", "lineHeight": "24px", "fontWeight": "400"},
+      "banner": {"backgroundColor": "rgb(255, 207, 77)", "color": "rgb(43, 48, 56)", "padding": "12px", "fontSize": "16px", "height": 48},
+      "h1": {"fontSize": "44.8px", "fontWeight": "700", "lineHeight": "60.48px", "letterSpacing": "-0.448px", "color": "rgb(26, 29, 36)"},
+      "subhead": {"fontSize": "16.96px", "lineHeight": "29.68px", "color": "rgb(75, 83, 92)"},
+      "eyebrow": {"fontSize": "10.4px", "fontWeight": "600", "letterSpacing": "0.936px", "lineHeight": "24px", "color": "rgb(121, 128, 138)", "textTransform": "uppercase"},
+      "heading": {"text": "Log in to your account", "fontSize": "28px", "fontWeight": "600", "lineHeight": "24px", "letterSpacing": "0.1px", "color": "rgb(26, 29, 36)"},
+      "social": {"backgroundColor": "rgb(253, 253, 253)", "color": "rgb(26, 29, 36)", "border": "1px solid rgb(232, 232, 233)", "borderRadius": "8px", "padding": "10px 16px", "fontSize": "16px", "fontWeight": "500", "lineHeight": "24px", "height": 46, "width": 458},
+      "email": {"backgroundColor": "rgb(255, 255, 255)", "color": "rgb(43, 48, 56)", "border": "1px solid rgb(223, 224, 226)", "borderRadius": "4px", "padding": "4px 8px", "fontSize": "16px", "height": 32, "width": 458, "focusOutline": "none"},
+      "label": {"fontSize": "16px", "fontWeight": "600", "lineHeight": "22.4px", "letterSpacing": "0.1px", "color": "rgb(43, 48, 56)"},
+      "primary": {"text": "Log in", "backgroundColor": "rgb(5, 65, 233)", "color": "rgb(255, 255, 255)", "borderRadius": "4px", "padding": "0px 8px", "fontSize": "16px", "fontWeight": "500", "lineHeight": "16px", "gap": "5px", "height": 32, "width": 458, "focusOutline": "auto 1px rgb(0, 114, 235)"},
+      "ghost": {"text": "Forgot your password?", "backgroundColor": "rgba(0, 0, 0, 0)", "color": "rgb(63, 70, 79)", "borderRadius": "4px", "padding": "0px 8px", "fontSize": "16px", "fontWeight": "500", "height": 32},
+      "cookie": {"backgroundColor": "rgb(5, 65, 233)", "color": "rgb(255, 255, 255)", "borderRadius": "4px", "padding": "0px 32px", "fontSize": "13.7885px", "fontWeight": "600", "letterSpacing": "0.137885px", "height": 32},
+      "viewport": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "visualViewportScale": 1}
+    },
+    "signup": {
+      "url": "https://id.coreweave.com/signup",
+      "heading": "Create your account",
+      "subhead": "Sign up with your email to get started.",
+      "fields": ["email"],
+      "social": ["Continue with Google", "Continue with GitHub", "Continue with Microsoft"],
+      "submit": {"text": "Sign up", "backgroundColor": "rgb(5, 65, 233)", "color": "rgb(255, 255, 255)", "borderRadius": "4px", "height": 32, "fontWeight": "500", "focusOutline": "rgb(0, 114, 235) auto 1px"},
+      "or": {"color": "rgb(75, 83, 92)", "fontSize": "14px"},
+      "submitted": false,
+      "reason": "Email form also offers Google, GitHub and Microsoft. Rule allows AgentMail only for an email-only form. Nothing was typed or submitted."
+    }
+  }
+}

@@ -1,0 +1,2 @@
+file	role	source
+wordmark.svg	Wordmark, mark in yellow and word in white	Inline SVG in .navbar2_logo-link on https://www.thenavia.com/, viewBox 0 0 124 36. Fills were var(--nav-logo-mark) and var(--nav-logo-text); the light-nav values #E8FF39 and #FFFFFF are written in.

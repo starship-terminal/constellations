@@ -1,0 +1,69 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview browser, preview_evaluate on the live attached page",
+  "screenshots": "unavailable. preview_snapshot returned: The browser is not producing screenshot frames.",
+  "viewportDesktop": {
+    "url": "https://www.netflix.com/sg/",
+    "title": "Netflix Singapore – Watch series online, watch films online",
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1},
+    "note": "Fill viewport of the preview pane. A 1440 CSS-pixel width was not reached."
+  },
+  "viewportPhone": {
+    "url": "https://www.netflix.com/sg/login",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 390, "height": 844, "scale": 1},
+    "note": "preview_resize freeform 390x844. The tool's reported viewport object stayed 1280x800; window.innerWidth was 390."
+  },
+  "pages": {
+    "home": "https://www.netflix.com/sg/ redirected from https://www.netflix.com/. Signed out. English. No account, no card, no playback.",
+    "login": "https://www.netflix.com/sg/login. Signed-out chrome only. The form was not submitted."
+  },
+  "theme": "One dark marketing theme. html color-scheme is normal. No light theme switch on these pages.",
+  "fontFamily": "\"Netflix Sans\", \"Helvetica Neue\", \"Segoe UI\", Roboto, Ubuntu, sans-serif",
+  "page": {
+    "background": "rgb(0, 0, 0)",
+    "text": "rgb(255, 255, 255)"
+  },
+  "home": {
+    "h1": {"text": "Unlimited films, series and more", "fontSize": "40px", "fontWeight": "700", "lineHeight": "50px", "color": "rgb(255, 255, 255)", "letterSpacing": "normal"},
+    "subhead": {"text": "Starts at $15.98. Cancel at any time.", "fontSize": "16px", "fontWeight": "400", "lineHeight": "normal", "color": "rgb(255, 255, 255)", "marginBottom": "24px"},
+    "ctaPrompt": {"tag": "H3", "text": "Ready to watch? Enter your email to create or restart your membership.", "fontSize": "16px", "fontWeight": "400", "lineHeight": "24px", "color": "rgb(255, 255, 255)"},
+    "signIn": {"tag": "A", "uia": "header-login-link", "href": "/sg/login", "background": "rgb(229, 9, 20)", "color": "rgb(255, 255, 255)", "fontSize": "14px", "fontWeight": "500", "lineHeight": "14px", "padding": "4px 16px", "minHeight": "32px", "borderRadius": "4px", "height": "32px", "transition": "background-color 0.25s cubic-bezier(0.4, 0, 0.68, 0.06), border-color 0.25s cubic-bezier(0.4, 0, 0.68, 0.06)"},
+    "getStarted": {"tag": "BUTTON", "background": "rgb(229, 9, 20)", "color": "rgb(255, 255, 255)", "fontSize": "18px", "fontWeight": "500", "lineHeight": "18px", "padding": "12px 24px", "minHeight": "56px", "height": "56px", "borderRadius": "4px", "marginLeft": "8px"},
+    "emailFieldChrome": {"background": "rgba(22, 22, 22, 0.7)", "border": "1px solid rgba(128, 128, 128, 0.7)", "borderRadius": "4px", "height": "56px"},
+    "emailInput": {"color": "rgb(255, 255, 255)", "fontSize": "16px", "fontWeight": "400", "lineHeight": "24px", "padding": "24px 16px 8px", "height": "56px"},
+    "emailLabel": {"color": "rgba(255, 255, 255, 0.7)", "fontSize": "16px", "fontWeight": "400", "lineHeight": "24px", "transition": "top 0.25s cubic-bezier(0.4, 0, 0.68, 0.06), font-size 0.25s cubic-bezier(0.4, 0, 0.68, 0.06), line-height 0.25s cubic-bezier(0.4, 0, 0.68, 0.06)"},
+    "h2": {"fontSize": "24px", "fontWeight": "500", "lineHeight": "normal", "color": "rgb(255, 255, 255)"},
+    "valueCard": {"backgroundImage": "linear-gradient(149deg, rgb(25, 34, 71) 0%, rgb(33, 14, 23) 96.86%)", "borderRadius": "16px", "size": "499x198 at 1169px viewport", "title": {"fontSize": "20px", "fontWeight": "500", "color": "rgb(255, 255, 255)"}, "body": {"fontSize": "16px", "color": "rgba(255, 255, 255, 0.7)"}, "padding": "24px 24px 96px on the inner text column"},
+    "trendingTile": {"background": "rgb(35, 35, 35)", "borderRadius": "8px", "size": "140x196", "gapToNext": "44px"},
+    "faqItem": {"background": "rgb(45, 45, 45)", "padding": "24px", "fontSize": "24px", "fontWeight": "400", "color": "rgb(255, 255, 255)", "minHeight": "84px"},
+    "faqAnswer": {"background": "rgb(45, 45, 45)", "padding": "0px 24px", "fontSize": "24px", "fontWeight": "400", "color": "rgb(255, 255, 255)", "scrollHeight": 265, "visibleHeightAfterClick": 0, "note": "aria-expanded became true. The panel did not paint open in this hidden preview pane."},
+    "footerLink": {"color": "rgba(255, 255, 255, 0.7)", "fontSize": "14px", "fontWeight": "400", "lineHeight": "21px", "textDecorationLine": "underline", "borderRadius": "2px"},
+    "footerContact": {"color": "rgba(255, 255, 255, 0.7)", "fontSize": "16px", "fontWeight": "400"},
+    "contentInset": "80px from the viewport left at 1169px",
+    "headerHeight": "80px",
+    "heroHeight": "760px",
+    "heroScrim": "linear-gradient(12deg, rgba(0, 0, 0, 0.85) 36%, and further stops toward transparent). Full stop list was truncated in the reader at 160 characters.",
+    "sectionMargin": {"trending": "margin-bottom 64px"}
+  },
+  "login": {
+    "h1": {"text": "Enter your info to sign in", "fontSize": "32px", "fontWeight": "700", "lineHeight": "normal", "color": "rgb(255, 255, 255)"},
+    "subhead": {"text": "Or get started with a new account.", "fontSize": "18px", "fontWeight": "400", "color": "rgba(255, 255, 255, 0.7)"},
+    "continue": {"background": "rgb(229, 9, 20)", "color": "rgb(255, 255, 255)", "fontSize": "18px", "fontWeight": "500", "lineHeight": "18px", "padding": "8px 16px", "height": "48px", "borderRadius": "4px", "widthAt1169": 440, "widthAt390": 350},
+    "emailChrome": {"background": "rgba(22, 22, 22, 0.7)", "border": "1px solid rgba(128, 128, 128, 0.7)", "borderRadius": "4px", "height": "56px", "widthAt1169": 440},
+    "passwordChrome": {"background": "rgba(22, 22, 22, 0.7)", "border": "1px solid rgba(128, 128, 128, 0.7)", "borderRadius": "4px", "height": "40px"},
+    "help": {"color": "rgb(68, 142, 244)", "fontSize": "16px", "fontWeight": "400", "textDecorationLine": "underline", "borderRadius": "2px"},
+    "formColumnWidth": "440px at 1169",
+    "cardPadding": "32px 20px on the outer column",
+    "notSubmitted": true
+  },
+  "logo": {
+    "wordmark": "img[data-hawkins-id=BrandNetflixLogotype], 148x40 CSS px",
+    "inlineN": "svg[data-uia=n-logo] viewBox 225 0 552 1000. Path fills #b1060e, #b1060e, url(radialGradient), #e50914. The third path markup was truncated, so the N mark SVG was not saved."
+  }
+}

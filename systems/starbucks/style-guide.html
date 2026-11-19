@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Starbucks public marketing, style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --hero: #006242;
+    --cream: #f5f1eb;
+    --holiday: #bf0d3f;
+    --card: #f1ece4;
+    --text: rgba(0, 0, 0, 0.87);
+    --strong: rgba(0, 0, 0, 0.9);
+    --muted: rgba(0, 0, 0, 0.58);
+    --accent: #00754a;
+    --brand: #006141;
+    --black: #000000;
+    --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 24px; letter-spacing: -0.16px; }
+  header.bar { height: 100px; display: flex; align-items: center; gap: 24px; padding: 0 40px; }
+  header.bar strong { font-size: 14px; font-weight: 700; letter-spacing: 1.4px; color: var(--strong); }
+  main { max-width: 1264px; margin: 0 auto; padding: 0 40px 80px; }
+  h1 { font-size: 36px; line-height: 50.4px; font-weight: 600; letter-spacing: -0.36px; }
+  h2 { font-size: 24px; line-height: 33.6px; font-weight: 600; letter-spacing: -0.24px; margin-top: 40px; }
+  .note { color: var(--muted); font-size: 14px; line-height: 21px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .swatch i { display: block; height: 64px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); }
+  .swatch span { display: block; font-size: 13px; margin-top: 6px; }
+  .hero { background: var(--hero); color: white; border-radius: 0; padding: 32px; display: flex; justify-content: space-between; align-items: center; }
+  .band { background: var(--cream); color: var(--hero); padding: 32px; margin-top: 16px; }
+  .band.red { background: var(--holiday); color: white; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+  button, .pill { font-family: var(--font); font-size: 14px; font-weight: 600; letter-spacing: -0.16px; line-height: 16.8px; border-radius: 50px; padding: 7px 16px; height: 33px; }
+  .primary { background: var(--black); color: white; border: 1px solid var(--black); }
+  .secondary { background: transparent; color: var(--text); border: 1px solid var(--text); }
+  .accent { background: var(--accent); color: white; border: 1px solid var(--accent); height: 35px; font-size: 16px; }
+  .outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); height: 35px; font-size: 16px; }
+  .on-green { background: transparent; color: white; border: 1px solid white; height: 35px; font-size: 16px; }
+  .card { background: var(--card); border-radius: 32px; padding: 24px; width: 280px; }
+  .type p { margin: 8px 0; }
+  .display { font-size: 50px; line-height: 60px; font-weight: 700; }
+  .title { font-size: 36px; line-height: 50.4px; font-weight: 600; }
+  .heading { font-size: 28px; line-height: 38.78px; font-weight: 700; }
+  .nav { font-size: 14px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+  footer.note { margin-top: 48px; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <span style="color:#006141;font-weight:700">Starbucks</span>
+  <strong>MENU</strong>
+  <strong>REWARDS</strong>
+  <strong>GIFT CARDS</strong>
+  <span style="flex:1"></span>
+  <button class="secondary">Sign in</button>
+  <button class="primary">Join now</button>
+</header>
+<main>
+  <p class="note">Public marketing, light only. SoDoSans is proprietary and not shipped, so this page uses Helvetica Neue. Values match tokens.json.</p>
+  <h1>Starbucks public marketing</h1>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="swatch"><i style="background:#006242"></i><span>hero #006242</span></div>
+    <div class="swatch"><i style="background:#1e3932"></i><span>house #1e3932</span></div>
+    <div class="swatch"><i style="background:#00754a"></i><span>accent #00754a</span></div>
+    <div class="swatch"><i style="background:#006141"></i><span>starbucks #006141</span></div>
+    <div class="swatch"><i style="background:#f5f1eb"></i><span>cream #f5f1eb</span></div>
+    <div class="swatch"><i style="background:#bf0d3f"></i><span>holiday #bf0d3f</span></div>
+    <div class="swatch"><i style="background:#f1ece4"></i><span>card #f1ece4</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>primary action #000</span></div>
+    <div class="swatch"><i style="background:rgba(0,0,0,0.58)"></i><span>muted 58%</span></div>
+  </div>
+  <h2>Type</h2>
+  <div class="type">
+    <p class="display">Free coffee is just the beginning</p>
+    <p class="title">Contact us</p>
+    <p class="heading">Menu</p>
+    <p style="font-size:24px;line-height:33.6px;font-weight:600">Holiday flavors are in town!</p>
+    <p>Body at 16px, line-height 24px, tracking -0.01em.</p>
+    <p class="nav">Menu</p>
+    <p class="note">Copyright line, 14px, 58% black.</p>
+  </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary">Join now</button>
+    <button class="secondary">Sign in</button>
+    <button class="accent">Join now</button>
+    <button class="outline">See the holiday menu</button>
+  </div>
+  <div class="hero">
+    <div>
+      <div style="font-size:19px;font-weight:600">It's a great day for coffee</div>
+    </div>
+    <button class="on-green">Start an order</button>
+  </div>
+  <div class="band">
+    <div style="font-size:24px;font-weight:600;color:#006242">Holiday flavors are in town!</div>
+    <div class="row"><button class="outline">See the holiday menu</button></div>
+  </div>
+  <h2>Card</h2>
+  <div class="card">
+    <strong>Partner card</strong>
+    <p class="note">32px radius, #f1ece4, no shadow. Measured on rewards.</p>
+  </div>
+  <h2>Focus</h2>
+  <p>Keyboard focus on a nav link is a 2px solid #00754a outline, offset 2px, with a 5px white box-shadow. Radius of the focused link is 2px.</p>
+  <footer class="note">No dark theme on the public site. Account, order, and payment surfaces were not entered.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Synthesia.io style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #090b22;
+    --muted: #68686a;
+    --brand: #3e57da;
+    --line: #dadadd;
+    --subtle: #f7f7f7;
+    --sans: "Basiersquare Webfont", ui-sans-serif, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/1.5 var(--sans); }
+  header, main { max-width: 1040px; margin: 0 auto; padding: 32px 24px; }
+  h1 { font-weight: 500; font-size: 40px; letter-spacing: -0.8px; margin: 0 0 8px; }
+  h2 { font-weight: 500; font-size: 24px; margin: 40px 0 12px; }
+  p { color: #363636; max-width: 70ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .sw { width: 140px; }
+  .sw i { display: block; height: 64px; border-radius: 8px; border: 1px solid var(--line); }
+  .sw span { display: block; font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .btn { display: inline-flex; align-items: center; height: 38px; padding: 8px 16px; border-radius: 8px; background: #090b22; color: #fff; font-weight: 500; font-size: 14px; text-decoration: none; box-shadow: 0 2px 10px #10182814; }
+  .btn.sec { background: #fff; color: #090b22; border-radius: 10px; height: 48px; padding: 12px 18px; box-shadow: inset 0 0 0 1px #dadadd; }
+  .field { width: 280px; height: 48px; border-radius: 8px; border: 1px solid #dadadd; padding: 0 12px; font: inherit; }
+  code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Synthesia.io</h1>
+  <p>Public marketing tokens measured on synthesia.io, 2026-11-19. One theme. The brand face is licensed and not loaded here.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn" href="#controls">Get started</a>
+    <a class="btn sec" href="#controls">Book demo</a>
+    <input class="field" placeholder="Work email" aria-label="Work email">
+  </div>
+  <h2>Type</h2>
+  <p style="font-size:56px;line-height:56px;letter-spacing:-3.08px;font-weight:500;color:#090b22">AI Video and Avatar platform for business</p>
+  <p>Body is 16px Basiersquare Webfont, #363636. Nav links are 16px #68686a.</p>
+</main>
+<script>
+const swatches = [
+  ["Page", "#ffffff"], ["Ink", "#090b22"], ["Text", "#363636"], ["Muted", "#68686a"],
+  ["Brand", "#3e57da"], ["Brand hover", "#2c43b8"], ["Subtle", "#f7f7f7"], ["Border", "#dadadd"],
+  ["Error", "#d92d20"], ["Success", "#15a261"], ["Warning", "#f79009"], ["Lime", "#86cb3c"]
+];
+document.getElementById("swatches").innerHTML = swatches.map(([n, c]) =>
+  `<div class="sw"><i style="background:${c}"></i><span>${n}<br><code>${c}</code></span></div>`).join("");
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "page-1": {
+      "url": "https://tilda.cc/",
+      "verdict": "no-authored-reduce",
+      "note": "Computed transitions on marketing buttons are 0.2s ease-in-out. Fetched stylesheets declare no prefers-reduced-motion rule. Emulation was not run because the preview browser could not paint frames and a second Playwright session was not opened for motion emulation."
+    }
+  },
+  "computed": {
+    "button": "background-color, color, border-color, box-shadow, opacity, transform, gap | 0.2s | ease-in-out",
+    "placeholderDeclared": "transform .2s linear",
+    "spinnerDeclared": "spin .75s linear infinite on .ts-btn_load, not shown"
+  }
+}

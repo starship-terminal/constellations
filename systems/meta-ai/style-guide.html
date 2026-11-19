@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta AI style guide</title>
+<style>
+:root {
+  --light-surface-page: #ffffff;
+  --light-surface-control: #ffffff;
+  --light-text-primary: #111112;
+  --light-text-body: #1c1e21;
+  --light-text-muted: #686a6e;
+  --light-border-control: #e0e2e4;
+  --light-border-field: #686a6e;
+  --light-accent: #111112;
+  color-scheme: light;
+  --page: var(--light-surface-page);
+  --ink: var(--light-text-primary);
+  --muted: var(--light-text-muted);
+  --card: var(--light-surface-control);
+  --line: var(--light-border-control);
+}
+[data-mode="dark"] {
+  --dark-surface-page: #181819;
+  --dark-surface-raised: #28292b;
+  --dark-surface-sidebarElevated: #343435;
+  --dark-surface-wash: #1f1f20;
+  --dark-surface-code: #1f1f20;
+  --dark-surface-blurThick: #383838cc;
+  --dark-surface-elevated: #ffffff1f;
+  --dark-surface-highlight: #ffffff0f;
+  --dark-surface-inverted: #fff;
+  --dark-text-primary: #fff;
+  --dark-text-secondary: #f2f7ff87;
+  --dark-text-tertiary: #f1f6ff61;
+  --dark-text-quaternary: #f0f6ff4f;
+  --dark-text-link: #1793ff;
+  --dark-text-onAccent: #fff;
+  --dark-text-onInverted: #111112;
+  --dark-text-destructive: #fa4758;
+  --dark-text-warning: #f1916e;
+  --dark-text-success: #07b123;
+  --dark-text-code: #d1d3d5;
+  --dark-accent: #1793ff;
+  --dark-accentPressed: #0064d4;
+  --dark-border-subtle: #ffffff1f;
+  --dark-border-scroll: #1f1f20;
+  --dark-icon-primary: #fff;
+  --dark-icon-secondary: #f2f7ff87;
+  --dark-icon-destructive: #fa4758;
+  --dark-button-glassBackground: #00000080;
+  --dark-button-glassText: #fff;
+  --dark-focus-ring: #1793ff;
+  --dark-status-destructiveFill: #dc262626;
+  --dark-status-successFill: #22c55e26;
+  --dark-status-warningFill: #fbbf2426;
+  --color-blue-025: #f5fbff;
+  --color-blue-050: #e6f7ff;
+  --color-blue-100: #cbf1ff;
+  --color-blue-1000: #002659;
+  --color-blue-1050: #001d47;
+  --color-blue-1075: #001739;
+  --color-blue-1100: #00102c;
+  --color-blue-150: #b8eaff;
+  --color-blue-200: #98dcff;
+  --color-blue-250: #82cfff;
+  --color-blue-300: #68bfff;
+  --color-blue-350: #58b5ff;
+  --color-blue-400: #43a9ff;
+  --color-blue-450: #2d9dff;
+  --color-blue-500: #1793ff;
+  --color-blue-550: #007ffd;
+  --color-blue-600: #006ee4;
+  --color-blue-650: #0064d4;
+  --color-blue-700: #0058be;
+  --color-blue-750: #004eab;
+  --color-blue-800: #00489d;
+  --color-blue-850: #004190;
+  --color-blue-900: #00377b;
+  --color-blue-950: #00306d;
+  --color-indigo-025: #f7faff;
+  --color-indigo-050: #ecf5ff;
+  --color-indigo-100: #daecff;
+  --color-indigo-1000: #181f61;
+  --color-indigo-1050: #11174d;
+  --color-indigo-1075: #0c113e;
+  --color-indigo-1100: #080c30;
+  --color-indigo-150: #cce3ff;
+  --color-indigo-200: #b7d3ff;
+  --color-indigo-250: #a7c5ff;
+  --color-indigo-300: #95b3ff;
+  --color-indigo-350: #8ba9ff;
+  --color-indigo-400: #7f9bff;
+  --color-indigo-450: #748fff;
+  --color-indigo-500: #6b84ff;
+  --color-indigo-550: #5b70ff;
+  --color-indigo-600: #4c5cf5;
+  --color-indigo-650: #4553e4;
+  --color-indigo-700: #3c48ce;
+  --color-indigo-750: #3540b9;
+  --color-indigo-800: #303aaa;
+  --color-indigo-850: #2b359b;
+  --color-indigo-900: #242c85;
+  --color-indigo-950: #1f2776;
+  --color-green-025: #f5fcf5;
+  --color-green-050: #e6fbe5;
+  --color-green-100: #ccf8ca;
+  --color-green-1000: #003400;
+  --color-green-1050: #002800;
+  --color-green-1075: #002000;
+  --color-green-1100: #001700;
+  --color-green-150: #b8f4b6;
+  --color-green-200: #98eb96;
+  --color-green-250: #81e080;
+  --color-green-300: #67d468;
+  --color-green-350: #57cc59;
+  --color-green-400: #40c246;
+  --color-green-450: #27b934;
+  --color-green-500: #07b123;
+  --color-green-550: #00a006;
+  --color-green-600: #008d00;
+  --color-green-650: #008200;
+  --color-green-700: #007300;
+  --color-green-750: #006700;
+  --color-green-800: #005e00;
+  --color-green-850: #005600;
+  --color-green-900: #004900;
+  --color-green-950: #004000;
+  --color-red-025: #fff8f7;
+  --color-red-050: #ffefee;
+  --color-red-100: #ffdedd;
+  --color-red-1000: #510712;
+  --color-red-1050: #40050c;
+  --color-red-1075: #330408;
+  --color-red-1100: #270205;
+  --color-red-150: #ffd1d0;
+  --color-red-200: #ffb9b8;
+  --color-red-250: #ffa4a5;
+  --color-red-300: #ff8c90;
+  --color-red-350: #ff7d82;
+  --color-red-400: #ff6972;
+  --color-red-450: #ff5562;
+  --color-red-500: #fa4758;
+  --color-red-550: #e7354a;
+  --color-red-600: #cf263e;
+  --color-red-650: #c01f37;
+  --color-red-700: #ad172f;
+  --color-red-750: #9b1329;
+  --color-red-800: #8e1125;
+  --color-red-850: #820f21;
+  --color-red-900: #6f0b1b;
+  --color-red-950: #630a18;
+  --color-rose-025: #fff8f9;
+  --color-rose-050: #ffeef1;
+  --color-rose-100: #ffdde5;
+  --color-rose-1000: #50071c;
+  --color-rose-1050: #3f0414;
+  --color-rose-1075: #33030f;
+  --color-rose-1100: #27020a;
+  --color-rose-150: #ffd0da;
+  --color-rose-200: #ffb7c7;
+  --color-rose-250: #ffa2b6;
+  --color-rose-300: #ff8aa3;
+  --color-rose-350: #ff7a96;
+  --color-rose-400: #ff6687;
+  --color-rose-450: #ff5379;
+  --color-rose-500: #f74570;
+  --color-rose-550: #e53462;
+  --color-rose-600: #cd2554;
+  --color-rose-650: #bf1d4c;
+  --color-rose-700: #ab1543;
+  --color-rose-750: #99123b;
+  --color-rose-800: #8d1036;
+  --color-rose-850: #810e30;
+  --color-rose-900: #6e0a28;
+  --color-rose-950: #620923;
+  --color-aiGray-025: #fafafa;
+  --color-aiGray-050: #f3f4f5;
+  --color-aiGray-100: #e9eaeb;
+  --color-aiGray-1000: #28292b;
+  --color-aiGray-1050: #1f1f20;
+  --color-aiGray-1075: #181819;
+  --color-aiGray-1100: #111112;
+  --color-aiGray-150: #e0e2e4;
+  --color-aiGray-200: #d1d3d5;
+  --color-aiGray-250: #c4c6c9;
+  --color-aiGray-300: #b5b7bb;
+  --color-aiGray-350: #acafb2;
+  --color-aiGray-400: #a1a4a8;
+  --color-aiGray-450: #989b9e;
+  --color-aiGray-500: #8f9296;
+  --color-aiGray-550: #818487;
+  --color-aiGray-600: #717477;
+  --color-aiGray-650: #686a6e;
+  --color-aiGray-700: #5c5e61;
+  --color-aiGray-750: #525456;
+  --color-aiGray-800: #4b4d4f;
+  --color-aiGray-850: #454548;
+  --color-aiGray-900: #383b3d;
+  --color-aiGray-950: #323435;
+  --font-family-optimistic: optimisticAI, optimisticAI Fallback, Optimistic, system-ui, sans-serif;
+  --font-family-optimisticDeclared: optimisticAI, optimisticAI Fallback;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-mono: optimisticMono, optimisticMono Fallback, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-22: 22px;
+  --radius-32: 32px;
+  --radius-pill: 9999px;
+  --radius-auth: 16px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --size-sidebarCollapsed: 56px;
+  --size-sidebarExpanded: 256px;
+  --size-iconButton: 32px;
+  --size-headerButton: 36px;
+  --size-composer: 107px;
+  --size-conversation: 768px;
+  color-scheme: dark;
+  --page: var(--dark-surface-page);
+  --ink: var(--dark-text-primary);
+  --muted: var(--dark-text-secondary);
+  --card: var(--dark-surface-raised);
+  --line: var(--dark-border-subtle);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/22px optimisticAI, system-ui, sans-serif; }
+header { display: flex; gap: 16px; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--page); }
+header h1 { font: 400 20px/25px optimisticAI, system-ui, sans-serif; margin: 0; flex: 1; }
+button.theme { border: 0; border-radius: 9999px; padding: 0 14px; height: 36px; background: var(--dark-surface-elevated, rgba(255,255,255,.12)); color: var(--ink); font: 500 14px/20px system-ui, sans-serif; cursor: pointer; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h2 { font: 400 30px/34px optimisticAI, system-ui, sans-serif; margin: 40px 0 12px; }
+p { color: var(--muted); max-width: 68ch; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+.swatch { width: 72px; height: 48px; border-radius: 12px; border: 1px solid var(--line); }
+.pill { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 9999px; font: 500 14px/20px system-ui, sans-serif; color: #fff; background: transparent; border: 0; }
+.pill.fill { background: rgba(255, 255, 255, 0.12); }
+.composer { width: min(768px, 100%); height: 107px; border-radius: 32px; background: rgba(56, 56, 56, 0.8); padding: 16px; color: #fff; }
+.bubble { display: inline-block; border-radius: 22px; background: rgba(255, 255, 255, 0.12); padding: 10px 16px; color: #fff; }
+.auth { background: #fff; color: #111112; border-radius: 16px; padding: 24px; max-width: 560px; }
+.auth .btn { height: 54px; border-radius: 16px; border: 1px solid #e0e2e4; display: flex; align-items: center; justify-content: center; margin-top: 12px; }
+.field { height: 60px; border-radius: 16px; border: 1px solid #686a6e; margin-top: 12px; padding: 10px 16px; color: #686a6e; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Meta AI</h1>
+  <button class="theme" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Theme</button>
+</header>
+<main>
+  <p>Values measured on www.meta.ai and auth.meta.com on 2026-11-19. The product page ships with html.dark. The auth card is a separate light surface. Optimistic is not loaded here, so type falls back to system-ui.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch" style="background:#181819" title="page"></div>
+    <div class="swatch" style="background:#28292b" title="raised"></div>
+    <div class="swatch" style="background:rgba(255,255,255,.12)" title="elevated"></div>
+    <div class="swatch" style="background:#1793ff" title="link and focus"></div>
+    <div class="swatch" style="background:#0064d4" title="accent"></div>
+    <div class="swatch" style="background:#fff; color:#111" title="text"></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-size:48px;line-height:52px;color:var(--ink);font-weight:400">Meta AI, the personal assistant</p>
+  <p style="font-size:30px;line-height:34px;color:var(--ink)">Edit photos with ease</p>
+  <p style="font-size:18px;line-height:27px;color:var(--ink)">Ask Meta AI anything</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="pill">Log in</span>
+    <span class="pill fill">Download app</span>
+    <span class="pill fill" style="height:40px;backdrop-filter:blur(36px)">Learn more</span>
+  </div>
+  <div class="composer">Ask Meta AI anything...</div>
+  <p></p>
+  <div class="bubble">Change the background to a neutral blue</div>
+  <h2>Auth card</h2>
+  <div class="auth">
+    <strong>Log in or create an account</strong>
+    <div class="btn">Continue with Facebook</div>
+    <div class="field">Mobile number or email address</div>
+  </div>
+  <h2>Tokens</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td><code>dark.surface.page</code></td><td>#181819</td></tr>
+    <tr><td><code>dark.text.primary</code></td><td>#ffffff</td></tr>
+    <tr><td><code>dark.text.secondary</code></td><td>#f2f7ff87</td></tr>
+    <tr><td><code>dark.accent</code></td><td>#1793ff</td></tr>
+    <tr><td><code>core.radius.pill</code></td><td>9999px</td></tr>
+    <tr><td><code>core.motion.duration.fast</code></td><td>150ms</td></tr>
+  </table>
+</main>
+</body>
+</html>

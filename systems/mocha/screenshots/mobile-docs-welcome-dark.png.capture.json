@@ -1,0 +1,22 @@
+{
+  "source": "headless Chromium via Playwright, 2026-11-19",
+  "file": "mobile-docs-welcome-dark.png",
+  "meta": {
+    "name": "mobile-docs-welcome-dark",
+    "url": "https://docs.getmocha.com/welcome",
+    "title": "Welcome - Mocha",
+    "status": 200,
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "visualViewport": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    },
+    "theme": "dark",
+    "capturedAt": "2026-11-18T16:36:16.529Z",
+    "fullPage": true,
+    "scrollHeight": 3054
+  }
+}

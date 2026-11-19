@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Runway style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --inverse: #0c0c0c;
+    --neutral: #262626;
+    --secondary: #eef1f5;
+    --inverse-cta: #f7f7f7;
+    --accent: #2b22fa;
+    --text: #0c0c0c;
+    --secondary-text: #404040;
+    --muted: #7c7c7c;
+    --footer: #666e7a;
+    --on-inverse: #ffffff;
+    --on-secondary: #1a1a1a;
+    --field-border: #dfdfe4;
+    --sans: abcNormal, Inter, sans-serif;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--secondary-text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 24px;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-weight: 400; font-size: 56px; line-height: 61.6px; letter-spacing: -0.84px; color: var(--text); margin: 0 0 8px; }
+  h2 { font-weight: 400; font-size: 24px; line-height: 30px; letter-spacing: -0.18px; color: var(--text); margin: 40px 0 12px; }
+  p { margin: 0 0 16px; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 8px; border: 1px solid #0c0c0c1a; }
+  .name { font-size: 13px; line-height: 16.9px; letter-spacing: -0.26px; color: var(--footer); margin-top: 6px; }
+  button, .btn {
+    font-family: var(--sans);
+    font-weight: 600;
+    border: 0;
+    cursor: default;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .primary { background: var(--neutral); color: var(--on-inverse); border-radius: 6px; height: 32px; padding: 6px 10px; font-size: 14px; }
+  .secondary { background: var(--secondary); color: var(--on-secondary); border-radius: 6px; height: 32px; padding: 6px 10px; font-size: 14px; }
+  .inverse { background: var(--inverse-cta); color: var(--text); border-radius: 8px; height: 40px; padding: 8px 12px; font-size: 16px; }
+  .plan { background: var(--inverse); color: var(--on-inverse); border-radius: 9999px; height: 36px; padding: 10px 16px; font-size: 14px; letter-spacing: -0.14px; }
+  .accent { background: var(--accent); color: var(--on-inverse); border-radius: 9999px; height: 34px; padding: 10px 16px; font-size: 14px; }
+  .hero {
+    background: var(--inverse);
+    color: var(--on-inverse);
+    border-radius: 12px;
+    padding: 48px 32px;
+    margin-top: 24px;
+  }
+  .hero p { color: var(--on-inverse); max-width: 36rem; }
+  input {
+    display: block;
+    width: 360px;
+    max-width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid var(--field-border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font: 16px/16px Normal, Inter, sans-serif;
+    margin-bottom: 12px;
+  }
+  .note { font-size: 12px; line-height: 16.8px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Runway</h1>
+  <p>Public marketing, light only. Values are the computed styles from runway.com on 19 November 2026.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#0c0c0c"></div><div class="name">inverse #0c0c0c</div></div>
+    <div class="swatch"><div class="chip" style="background:#262626"></div><div class="name">neutral #262626</div></div>
+    <div class="swatch"><div class="chip" style="background:#eef1f5"></div><div class="name">secondary #eef1f5</div></div>
+    <div class="swatch"><div class="chip" style="background:#2b22fa"></div><div class="name">accent #2b22fa</div></div>
+    <div class="swatch"><div class="chip" style="background:#404040"></div><div class="name">text #404040</div></div>
+    <div class="swatch"><div class="chip" style="background:#7c7c7c"></div><div class="name">muted #7c7c7c</div></div>
+    <div class="swatch"><div class="chip" style="background:#666e7a"></div><div class="name">footer #666e7a</div></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-size:56px;line-height:61.6px;letter-spacing:-0.84px;font-weight:400;color:#0c0c0c">Intelligent tools</p>
+  <p style="font-size:16px;line-height:25.6px">Runway is building foundational Real-World Intelligence.</p>
+  <p class="note">abcNormal is the marketing face. It is not committed. This page falls back to Inter.</p>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary">Try Runway</button>
+    <button class="secondary">Login</button>
+    <button class="inverse">Try Runway for free</button>
+    <button class="plan">Get Pro</button>
+    <button class="accent">Get Max</button>
+  </div>
+  <div class="hero">
+    <p style="font-size:36px;line-height:39.6px;letter-spacing:-0.54px;font-weight:400;margin:0 0 12px">Intelligent tools for scaling content and teams.</p>
+    <button class="inverse">Try Runway for free</button>
+  </div>
+  <h2>Sign-in field</h2>
+  <input placeholder="Username or Email" aria-label="Username or Email">
+  <p class="note">Measured on the signed-out login page. No value was entered.</p>
+</main>
+</body>
+</html>

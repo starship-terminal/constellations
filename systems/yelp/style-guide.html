@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yelp style guide</title>
+<style>
+:root {
+  --color-ref-black-100: #000000;
+  --color-ref-blue-100: #E1F4FE;
+  --color-ref-blue-200: #C1E8FF;
+  --color-ref-blue-300: #82C1FF;
+  --color-ref-blue-400: #218AF8;
+  --color-ref-blue-500: #1A6DC3;
+  --color-ref-blue-600: #1F5E98;
+  --color-ref-blue-700: #00497C;
+  --color-ref-blue-800: #283A52;
+  --color-ref-blue-900: #203043;
+  --color-ref-named-clear-black: #000000;
+  --color-ref-named-clear-white: #FFFFFF;
+  --color-ref-named-foreign-apple: #000000;
+  --color-ref-named-foreign-facebook: #0866FF;
+  --color-ref-named-foreign-github: #6A737D;
+  --color-ref-named-foreign-google: #E24A29;
+  --color-ref-named-foreign-line: #06C755;
+  --color-ref-named-foreign-linkedin: #2867B2;
+  --color-ref-named-foreign-rss: #C9400E;
+  --color-ref-named-foreign-twitter: #000000;
+  --color-ref-named-transparent: #000000;
+  --color-ref-gold-100: #FCEFD1;
+  --color-ref-gold-200: #F7E1A9;
+  --color-ref-gold-300: #EF9B00;
+  --color-ref-gold-400: #D2701F;
+  --color-ref-gold-500: #AF5100;
+  --color-ref-gold-600: #92481B;
+  --color-ref-gold-700: #713713;
+  --color-ref-gold-800: #503223;
+  --color-ref-gold-900: #3D2A22;
+  --color-ref-gray-100: #F7F7F7;
+  --color-ref-gray-1000: #282828;
+  --color-ref-gray-1100: #242424;
+  --color-ref-gray-1200: #1F1F1F;
+  --color-ref-gray-1300: #171717;
+  --color-ref-gray-1400: #0F0F0F;
+  --color-ref-gray-200: #F0F0F0;
+  --color-ref-gray-300: #E3E3E3;
+  --color-ref-gray-400: #C8C9CA;
+  --color-ref-gray-500: #898A8B;
+  --color-ref-gray-600: #6B6D6F;
+  --color-ref-gray-700: #5C5D61;
+  --color-ref-gray-800: #45474A;
+  --color-ref-gray-850: #38393C;
+  --color-ref-gray-900: #2D2E2F;
+  --color-ref-green-100: #DEF6E7;
+  --color-ref-green-200: #C3ECD7;
+  --color-ref-green-300: #3CD495;
+  --color-ref-green-400: #029E6A;
+  --color-ref-green-500: #007C52;
+  --color-ref-green-600: #006A45;
+  --color-ref-green-700: #005234;
+  --color-ref-green-800: #253F2D;
+  --color-ref-green-900: #223328;
+  --color-ref-lime-100: #E1F7DC;
+  --color-ref-lime-200: #CBEDBF;
+  --color-ref-lime-300: #60D448;
+  --color-ref-lime-400: #419D28;
+  --color-ref-lime-500: #327C1E;
+  --color-ref-lime-600: #306918;
+  --color-ref-lime-700: #1E5100;
+  --color-ref-lime-800: #2A3E26;
+  --color-ref-lime-900: #253221;
+  --color-ref-orange-100: #FFEDDD;
+  --color-ref-orange-200: #FFDDBF;
+  --color-ref-orange-300: #FFA67C;
+  --color-ref-orange-400: #E4622E;
+  --color-ref-orange-500: #C04214;
+  --color-ref-orange-600: #A8320F;
+  --color-ref-orange-700: #862300;
+  --color-ref-orange-800: #562E27;
+  --color-ref-orange-900: #432822;
+  --color-ref-purple-100: #F4EEFF;
+  --color-ref-purple-200: #EADEFF;
+  --color-ref-purple-300: #D1ACF9;
+  --color-ref-purple-400: #AB6AF3;
+  --color-ref-purple-500: #8C47D9;
+  --color-ref-purple-600: #7443AD;
+  --color-ref-purple-700: #5A3387;
+  --color-ref-purple-800: #413061;
+  --color-ref-purple-900: #34284D;
+  --color-ref-red-100: #FFECEC;
+  --color-ref-red-200: #FFDBDA;
+  --color-ref-red-300: #FFA3A0;
+  --color-ref-red-400: #FA4848;
+  --color-ref-red-500: #D71616;
+  --color-ref-red-600: #B51C1C;
+  --color-ref-red-700: #930000;
+  --color-ref-red-800: #672121;
+  --color-ref-red-900: #511E1E;
+  --color-ref-ribbon-100: #FFCC4B;
+  --color-ref-ribbon-200: #FFAD48;
+  --color-ref-ribbon-300: #FF8742;
+  --color-ref-ribbon-400: #FF643D;
+  --color-ref-ribbon-500: #FB433C;
+  --color-ref-teal-100: #D9F6FD;
+  --color-ref-teal-200: #B6EDF7;
+  --color-ref-teal-300: #42CBEF;
+  --color-ref-teal-400: #0396BC;
+  --color-ref-teal-500: #007692;
+  --color-ref-teal-600: #046578;
+  --color-ref-teal-700: #004E5D;
+  --color-ref-teal-800: #283C42;
+  --color-ref-teal-900: #203236;
+  --color-ref-white-100: #FFFFFF;
+  --color-ref-yelp-100: #FF1A1A;
+  --color-ref-yelp-200: #F40D15;
+  --color-rating-five: #FB433C;
+  --color-rating-four: #FF643D;
+  --color-rating-one: #FFCC4B;
+  --color-rating-three: #FF8742;
+  --color-rating-two: #FFAD48;
+  --color-rating-zero: #C8C9CA;
+  --font-family-display: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-ui: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --radius-link: 4px;
+  --radius-search: 8px;
+  --radius-loginField: 3px;
+  --radius-pill: 20px;
+  --radius-chip: 10000px;
+  --spacing-chipPadY: 7px;
+  --spacing-chipPadX: 11px;
+  --spacing-buttonPadY: 8px;
+  --spacing-buttonPadX: 16px;
+  --spacing-headerPadTop: 24px;
+  --spacing-headerPadX: 40px;
+  --spacing-fieldPadY: 13px;
+  --spacing-fieldPadX: 15px;
+  --size-button: 40px;
+  --size-search: 48px;
+  --size-chip: 32px;
+  --size-loginField: 30px;
+  --size-star: 20px;
+  --shadow-search: 0px 0px 18px 0px #00000029;
+  --color-bg-attention-strong: #C04214;
+  --color-bg-attention-subtle: #FFEDDD;
+  --color-bg-brandPrimary-strong-default: #D71616;
+  --color-bg-brandPrimary-strong-hovered: #B51C1C;
+  --color-bg-brandPrimary-subtle-default: #FFECEC;
+  --color-bg-brandPrimary-subtle-hovered: #FFDBDA;
+  --color-bg-brandSecondary-strong-default: #007692;
+  --color-bg-brandSecondary-strong-hovered: #046578;
+  --color-bg-brandSecondary-subtle-default: #D9F6FD;
+  --color-bg-brandSecondary-subtle-hovered: #B6EDF7;
+  --color-bg-clear: #FFFFFF;
+  --color-bg-critical-strong: #D71616;
+  --color-bg-critical-subtle: #FFECEC;
+  --color-bg-default: #FFFFFF;
+  --color-bg-disabled: #E3E3E3;
+  --color-bg-foreign-apple-default: #000000;
+  --color-bg-foreign-apple-disabled: #000000;
+  --color-bg-foreign-apple-hovered: #000000;
+  --color-bg-foreign-facebook-default: #0866FF;
+  --color-bg-foreign-facebook-disabled: #0866FF;
+  --color-bg-foreign-facebook-hovered: #0866FF;
+  --color-bg-foreign-github-default: #6A737D;
+  --color-bg-foreign-github-disabled: #6A737D;
+  --color-bg-foreign-github-hovered: #6A737D;
+  --color-bg-foreign-line-default: #06C755;
+  --color-bg-foreign-line-disabled: #06C755;
+  --color-bg-foreign-line-hovered: #06C755;
+  --color-bg-foreign-linkedin-default: #2867B2;
+  --color-bg-foreign-linkedin-disabled: #2867B2;
+  --color-bg-foreign-linkedin-hovered: #2867B2;
+  --color-bg-foreign-rss-default: #C9400E;
+  --color-bg-foreign-rss-disabled: #C9400E;
+  --color-bg-foreign-rss-hovered: #C9400E;
+  --color-bg-foreign-twitter-default: #000000;
+  --color-bg-foreign-twitter-disabled: #000000;
+  --color-bg-foreign-twitter-hovered: #000000;
+  --color-bg-highlight-subtle: #FFCC4B;
+  --color-bg-hollow-default: #FFFFFF;
+  --color-bg-hovered: #6B6D6F;
+  --color-bg-info-strong: #1A6DC3;
+  --color-bg-info-subtle: #E1F4FE;
+  --color-bg-moderate-default: #E3E3E3;
+  --color-bg-moderate-hovered: #000000;
+  --color-bg-negative-strong: #D71616;
+  --color-bg-negative-subtle: #FFECEC;
+  --color-bg-onDim-hovered: #FFFFFF;
+  --color-bg-onDim-moderate-default: #FFFFFF;
+  --color-bg-onDim-moderate-hovered: #FFFFFF;
+  --color-bg-ongoing-strong: #1A6DC3;
+  --color-bg-ongoing-subtle: #E1F4FE;
+  --color-bg-positive-strong: #007C52;
+  --color-bg-positive-subtle: #DEF6E7;
+  --color-bg-pressed-default: #FFFFFF;
+  --color-bg-pressed-subtle: #2D2E2F;
+  --color-bg-prestige-strong: #AF5100;
+  --color-bg-prestige-subtle: #FCEFD1;
+  --color-bg-prime-strong: #2D2E2F;
+  --color-bg-prime-subtle: #F0F0F0;
+  --color-bg-promo-strong: #327C1E;
+  --color-bg-promo-subtle: #E1F7DC;
+  --color-bg-strong-default: #6B6D6F;
+  --color-bg-strong-hovered: #5C5D61;
+  --color-bg-stronger-default: #2D2E2F;
+  --color-bg-stronger-hovered: #45474A;
+  --color-bg-subtle-default: #F0F0F0;
+  --color-bg-subtle-hovered: #F7F7F7;
+  --color-bg-upgrade-strong: #8C47D9;
+  --color-bg-upgrade-subtle: #F4EEFF;
+  --color-border-attention: #C04214;
+  --color-border-brandPrimary: #D71616;
+  --color-border-brandSecondary: #007692;
+  --color-border-clear: #000000;
+  --color-border-critical: #D71616;
+  --color-border-default: #C8C9CA;
+  --color-border-disabled: #E3E3E3;
+  --color-border-focused: #007692;
+  --color-border-hollow-brandPrimary: #D71616;
+  --color-border-hovered: #6B6D6F;
+  --color-border-info: #1A6DC3;
+  --color-border-negative: #D71616;
+  --color-border-onDim-default: #FFFFFF;
+  --color-border-onDim-disabled: #45474A;
+  --color-border-onDim-focused: #42CBEF;
+  --color-border-onDim-hovered: #898A8B;
+  --color-border-ongoing: #1A6DC3;
+  --color-border-positive: #007C52;
+  --color-border-promo: #327C1E;
+  --color-border-stack: #FFFFFF;
+  --color-border-stronger: #2D2E2F;
+  --color-border-subtle: #E3E3E3;
+  --color-border-upgrade: #8C47D9;
+  --color-dataViz-blue-default: #218AF8;
+  --color-dataViz-blue-onStronger: #1A6DC3;
+  --color-dataViz-blue-subtle: #218AF8;
+  --color-dataViz-forecast-default: #898A8B;
+  --color-dataViz-forecast-onStronger: #6B6D6F;
+  --color-dataViz-forecast-subtle: #6B6D6F;
+  --color-dataViz-green-default: #029E6A;
+  --color-dataViz-green-onStronger: #007C52;
+  --color-dataViz-green-subtle: #029E6A;
+  --color-dataViz-orange-default: #E4622E;
+  --color-dataViz-orange-onStronger: #C04214;
+  --color-dataViz-orange-subtle: #E4622E;
+  --color-dataViz-purple-default: #AB6AF3;
+  --color-dataViz-purple-onStronger: #8C47D9;
+  --color-dataViz-purple-subtle: #AB6AF3;
+  --color-dataViz-teal-default: #0396BC;
+  --color-dataViz-teal-onStronger: #007692;
+  --color-dataViz-teal-subtle: #0396BC;
+  --color-dataViz-yellow-default: #FFCC4B;
+  --color-dataViz-yellow-onStronger: #AF5100;
+  --color-dataViz-yellow-subtle: #FFCC4B;
+  --color-divider-default: #E3E3E3;
+  --color-divider-onDim-default: #5C5D61;
+  --color-divider-onDim-subtle: #45474A;
+  --color-divider-subtle: #F0F0F0;
+  --color-icon-ai: #FA4848;
+  --color-icon-attention: #C04214;
+  --color-icon-blue: #218AF8;
+  --color-icon-brandPrimary: #D71616;
+  --color-icon-brandSecondary: #007692;
+  --color-icon-critical: #D71616;
+  --color-icon-default: #2D2E2F;
+  --color-icon-disabled: #C8C9CA;
+  --color-icon-green: #029E6A;
+  --color-icon-info: #1A6DC3;
+  --color-icon-link-default: #007692;
+  --color-icon-link-onStronger: #42CBEF;
+  --color-icon-negative: #D71616;
+  --color-icon-onDim-attention: #FFA67C;
+  --color-icon-onDim-critical: #FFA3A0;
+  --color-icon-onDim-default: #FFFFFF;
+  --color-icon-onDim-disabled: #5C5D61;
+  --color-icon-onDim-info: #82C1FF;
+  --color-icon-onDim-link-default: #42CBEF;
+  --color-icon-onDim-negative: #FFA3A0;
+  --color-icon-onDim-ongoing: #82C1FF;
+  --color-icon-onDim-positive: #3CD495;
+  --color-icon-onDim-promo: #60D448;
+  --color-icon-onDim-subtle: #C8C9CA;
+  --color-icon-onDim-upgrade: #D1ACF9;
+  --color-icon-onStrong: #FFFFFF;
+  --color-icon-onStronger: #FFFFFF;
+  --color-icon-ongoing: #1A6DC3;
+  --color-icon-orange: #E4622E;
+  --color-icon-placeholder: #E3E3E3;
+  --color-icon-positive: #007C52;
+  --color-icon-prestige: #AF5100;
+  --color-icon-prime: #6B6D6F;
+  --color-icon-promo: #327C1E;
+  --color-icon-red: #FA4848;
+  --color-icon-subtle: #6B6D6F;
+  --color-icon-teal: #0396BC;
+  --color-icon-upgrade: #8C47D9;
+  --color-link-default: #007692;
+  --color-link-heading: #2D2E2F;
+  --color-link-onDim-default: #42CBEF;
+  --color-link-onDim-heading: #FFFFFF;
+  --color-link-onDim-subtle: #C8C9CA;
+  --color-link-onStronger: #42CBEF;
+  --color-link-subtle: #6B6D6F;
+  --color-overlay-blurred: #FFFFFF;
+  --color-overlay-scrim: #000000;
+  --color-shadow-floating: #000000;
+  --color-shadow-raised: #000000;
+  --color-surface-backdrop: #000000;
+  --color-surface-default: #FFFFFF;
+  --color-surface-floating: #FFFFFF;
+  --color-surface-offset: #F7F7F7;
+  --color-surface-onDim-sticky: #171717;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-stage: #FFFFFF;
+  --color-surface-sticky: #FFFFFF;
+  --color-text-attention: #C04214;
+  --color-text-brandPrimary: #D71616;
+  --color-text-brandSecondary: #007692;
+  --color-text-critical: #D71616;
+  --color-text-default: #2D2E2F;
+  --color-text-disabled: #C8C9CA;
+  --color-text-info: #1A6DC3;
+  --color-text-negative: #D71616;
+  --color-text-onDim-attention: #FFA67C;
+  --color-text-onDim-brandPrimary: #FFA3A0;
+  --color-text-onDim-brandSecondary: #42CBEF;
+  --color-text-onDim-critical: #FFA3A0;
+  --color-text-onDim-default: #FFFFFF;
+  --color-text-onDim-disabled: #5C5D61;
+  --color-text-onDim-info: #82C1FF;
+  --color-text-onDim-negative: #FFA3A0;
+  --color-text-onDim-ongoing: #82C1FF;
+  --color-text-onDim-positive: #3CD495;
+  --color-text-onDim-promo: #60D448;
+  --color-text-onDim-subtle: #C8C9CA;
+  --color-text-onDim-upgrade: #D1ACF9;
+  --color-text-onHollow-brandPrimary: #D71616;
+  --color-text-onStrong: #FFFFFF;
+  --color-text-onStronger: #FFFFFF;
+  --color-text-ongoing: #1A6DC3;
+  --color-text-positive: #007C52;
+  --color-text-prestige: #AF5100;
+  --color-text-prime: #6B6D6F;
+  --color-text-promo: #327C1E;
+  --color-text-subtle: #6B6D6F;
+  --color-text-upgrade: #8C47D9;
+  --component-signup-bg: var(--color-bg-brandPrimary-strong-default);
+  --component-signup-text: var(--color-text-onStrong);
+  --component-signup-radius: 20px;
+  --component-signup-height: 40px;
+  --component-signup-padding: 8px;
+  --component-login-bg: #F0F0F0;
+  --component-login-text: var(--color-text-default);
+  --component-login-radius: 20px;
+  --component-login-height: 40px;
+  --component-search-bg: var(--color-surface-default);
+  --component-search-text: var(--color-text-default);
+  --component-search-radius: 8px;
+  --component-search-height: 48px;
+  --component-searchButton-bg: var(--color-bg-brandPrimary-strong-default);
+  --component-searchButton-text: var(--color-text-onStrong);
+  --component-searchButton-radius: 8px;
+  --component-searchButton-height: 48px;
+  --component-chip-bg: var(--color-surface-default);
+  --component-chip-text: var(--color-text-default);
+  --component-chip-radius: 10000px;
+  --component-chip-height: 32px;
+  --component-focus-outline: var(--color-border-focused);
+  --sg-display: var(--font-family-display);
+  --sg-ui: var(--font-family-ui);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg-default); color: var(--color-text-default); font: 400 16px/24px var(--sg-ui); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 32px/40px var(--sg-display); margin: 0 0 8px; }
+h2 { font: 700 20px/28px var(--sg-display); margin: 40px 0 12px; }
+p { max-width: 68ch; color: var(--color-text-subtle); }
+.row { display: flex; flex-wrap: wrap; gap: 16px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 56px; border-radius: 8px; border: 1px solid var(--color-border-subtle); }
+.sw b, .sw span { display: block; font-size: 12px; line-height: 16px; }
+.sw span { color: var(--color-text-subtle); }
+.btn { display: inline-flex; align-items: center; height: var(--component-signup-height); padding: 8px 16px; border-radius: var(--component-signup-radius); background: var(--component-signup-bg); color: var(--component-signup-text); border: 1px solid var(--component-signup-bg); font: 400 16px/16px var(--sg-ui); text-decoration: none; }
+.btn:focus-visible { outline: 2px solid var(--component-focus-outline); outline-offset: 2px; }
+.ghost { background: var(--component-login-bg); color: var(--component-login-text); border-color: var(--component-login-bg); border-radius: var(--component-login-radius); }
+.field { display: flex; height: var(--component-search-height); border-radius: var(--component-search-radius); box-shadow: var(--shadow-search); overflow: hidden; background: var(--component-search-bg); max-width: 520px; }
+.field input { flex: 1; border: 0; padding: 13px 15px; font: 400 16px/20px var(--sg-ui); color: var(--component-search-text); background: transparent; }
+.field button { width: 56px; border: 0; background: var(--component-searchButton-bg); color: var(--component-searchButton-text); border-radius: var(--component-searchButton-radius); }
+.chip { height: var(--component-chip-height); padding: 7px 11px; border-radius: var(--component-chip-radius); border: 1px solid var(--color-border-default); background: var(--component-chip-bg); color: var(--component-chip-text); font: 600 12px/16px var(--sg-ui); }
+.stars i { display: inline-block; width: 20px; height: 20px; border-radius: 4px; margin-right: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Yelp</h1>
+  <p>Public signed-out surfaces, measured 2026-11-19. One theme. The red is brand primary. The burst and the wordmark are Yelp's marks and are not redrawn here.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--color-bg-default)"></i><b>page</b><span>color.bg.default</span></div>
+    <div class="sw"><i style="background:var(--color-surface-offset)"></i><b>surface offset</b><span>color.surface.offset</span></div>
+    <div class="sw"><i style="background:var(--color-text-default)"></i><b>text</b><span>color.text.default</span></div>
+    <div class="sw"><i style="background:var(--color-text-subtle)"></i><b>muted</b><span>color.text.subtle</span></div>
+    <div class="sw"><i style="background:var(--color-bg-brandPrimary-strong-default)"></i><b>brand</b><span>color.bg.brandPrimary.strong.default</span></div>
+    <div class="sw"><i style="background:var(--color-border-default)"></i><b>border</b><span>color.border.default</span></div>
+    <div class="sw"><i style="background:var(--color-link-default)"></i><b>link</b><span>color.link.default</span></div>
+    <div class="sw"><i style="background:var(--color-bg-positive-strong)"></i><b>positive</b><span>color.bg.positive.strong</span></div>
+  </div>
+  <h2>Rating</h2>
+  <div class="stars">
+    <i style="background:var(--color-rating-one)"></i>
+    <i style="background:var(--color-rating-two)"></i>
+    <i style="background:var(--color-rating-three)"></i>
+    <i style="background:var(--color-rating-four)"></i>
+    <i style="background:var(--color-rating-five)"></i>
+    <i style="background:var(--color-rating-zero)"></i>
+  </div>
+  <h2>Controls</h2>
+  <div class="row" style="align-items:center">
+    <a class="btn" href="#signup">Sign Up</a>
+    <a class="btn ghost" href="#login">Log In</a>
+    <button class="chip" type="button">Price</button>
+  </div>
+  <div class="field" style="margin-top:16px">
+    <input aria-label="Find" placeholder="things to do, nail salons, plumbers">
+    <button type="button" aria-label="Search">Search</button>
+  </div>
+  <p>Focus on Sign Up, measured on the about page, is a 2px solid outline in the link colour (#007692).</p>
+</main>
+</body>
+</html>

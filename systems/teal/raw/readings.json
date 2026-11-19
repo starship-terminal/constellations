@@ -1,0 +1,141 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview browser, live getComputedStyle. Screenshot frames failed. Headless Playwright hit Cloudflare on marketing and app hosts.",
+  "viewports": {
+    "marketing": {
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1169,
+        "height": 731,
+        "scale": 1
+      }
+    },
+    "note": "Fill viewport, not a requested 1440 or 390."
+  },
+  "pages": {
+    "home": "https://www.tealhq.com/",
+    "pricing": "https://www.tealhq.com/pricing",
+    "resumeChecker": "https://www.tealhq.com/tool/resume-checker",
+    "signIn": "https://app.tealhq.com/sign-in",
+    "signUp": "https://app.tealhq.com/sign-up"
+  },
+  "marketing": {
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(51, 51, 51)",
+      "fontFamily": "Roobert, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "20.8px"
+    },
+    "h1": {
+      "fontSize": "64px",
+      "lineHeight": "64px",
+      "fontWeight": "600",
+      "letterSpacing": "-2px",
+      "color": "rgb(51, 51, 51)"
+    },
+    "headerHeight": 67,
+    "signup": {
+      "backgroundColor": "rgb(245, 181, 1)",
+      "color": "rgb(45, 45, 45)",
+      "height": 41,
+      "padding": "10px 24px",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "class": "rounded-full bg-[#f5b501]"
+    },
+    "login": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(45, 45, 45)",
+      "border": "1px solid rgb(45, 45, 45)",
+      "height": 43,
+      "padding": "10px 24px",
+      "fontSize": "15px",
+      "fontWeight": "500"
+    },
+    "cta": {
+      "backgroundColor": "rgb(245, 181, 1)",
+      "color": "rgb(0, 0, 0)",
+      "height": 53,
+      "padding": "16px 32px",
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "letterSpacing": "-0.4px",
+      "borderRadius": "100px",
+      "class": "btn--yellow"
+    },
+    "navLink": {
+      "color": "rgb(51, 51, 51)",
+      "hoverColorDeclared": "#005149",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "letterSpacing": "-0.16px",
+      "padding": "24px 20px"
+    },
+    "bands": {
+      "featurePanel": "rgb(90, 111, 236)",
+      "howItWorks": "rgb(245, 181, 1)",
+      "examples": "rgb(90, 111, 236)",
+      "templates": "rgb(249, 211, 103)",
+      "tealBand": "rgb(0, 81, 73)",
+      "featureCard": "rgb(233, 243, 243)",
+      "footer": "rgb(121, 30, 63)"
+    }
+  },
+  "app": {
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(10, 10, 10)",
+      "fontFamily": "Inter, system-ui, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "20px"
+    },
+    "signInTitle": {
+      "fontSize": "24px",
+      "fontWeight": "600",
+      "lineHeight": "32px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "field": {
+      "height": 36,
+      "padding": "8px 12px",
+      "borderRadius": "3px",
+      "border": "0.5px solid rgb(204, 204, 204)",
+      "fontSize": "14px"
+    },
+    "fieldFocusShadow": "rgb(255, 255, 255) 0px 0px 0px 1px, rgb(0, 82, 73) 0px 0px 0px 2px, rgba(0, 82, 73, 0.25) 0px 0px 0px 4px",
+    "submit": {
+      "backgroundColor": "rgb(244, 179, 1)",
+      "color": "rgb(23, 23, 23)",
+      "height": 40,
+      "padding": "8px 32px",
+      "borderRadius": "24px",
+      "fontSize": "14px",
+      "fontWeight": "600"
+    },
+    "linkedin": {
+      "backgroundColor": "rgb(36, 39, 171)",
+      "color": "rgb(250, 250, 250)",
+      "height": 40,
+      "borderRadius": "24px",
+      "fontWeight": "500"
+    },
+    "link": {
+      "color": "rgb(0, 82, 73)"
+    },
+    "muted": "rgb(115, 115, 115)",
+    "primaryDeclared": "#005249",
+    "accentDeclared": "#f4b301"
+  },
+  "declaredMarketing": {
+    "--color-teal-green": "#005149",
+    "--color-teal-yellow": "#f5b501",
+    "--color-teal-purple": "#5a6fec",
+    "--color-ink": "#333",
+    "--colors--pheasant-red": "#791e3f",
+    "--colors--goldfinch-yellow": "#f5b501",
+    "--colors--teal-700": "#005149"
+  }
+}

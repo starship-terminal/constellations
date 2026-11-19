@@ -1,0 +1,4 @@
+role	file	note
+favicon-light	not extracted	https://variant.com/favicon-light.svg declared as icon and apple-touch-icon
+favicon-dark	not extracted	https://variant.com/favicon-dark.svg declared as icon and apple-touch-icon
+homepage-inline	not extracted	6 inline SVGs on the homepage. Not copied. Brand artwork stays on the site.

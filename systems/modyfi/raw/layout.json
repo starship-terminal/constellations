@@ -1,0 +1,53 @@
+{
+  "source": "measured boxes on archived pages",
+  "pages": {
+    "home": {
+      "title": "Modyfi - Design without limits",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1
+    },
+    "about": {
+      "title": "About",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1
+    },
+    "modifiers": {
+      "title": "Modifiers - Modyfi",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1
+    },
+    "contact": {
+      "title": "Contact Modyfi - Let's talk..",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1
+    },
+    "roadmap": {
+      "title": "Roadmap",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1
+    },
+    "opportunities": {
+      "title": "Opportunities",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1
+    },
+    "made-with": {
+      "title": "Made with Modyfi",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1
+    },
+    "joining": {
+      "title": "Internet Archive: Temporarily Offline",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1
+    }
+  }
+}

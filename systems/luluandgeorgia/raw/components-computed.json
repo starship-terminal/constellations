@@ -1,0 +1,1008 @@
+{
+ "_meta": {
+  "product": "Lulu and Georgia",
+  "site": "https://www.luluandgeorgia.com",
+  "captured": "2026-11-18",
+  "route": "public signed-out"
+ },
+ "components": {
+  "nav-link": {
+   "states": {
+    "default": {
+     "tag": "a",
+     "text": "FURNITURE",
+     "rect": {
+      "x": 243,
+      "y": 182,
+      "w": 71,
+      "h": 56
+     },
+     "fontFamily": "\"Soehne Buch\", sans-serif",
+     "fontSize": "11px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "1.2px",
+     "textTransform": "uppercase",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/nav-link-default.png"
+    },
+    "hover": {
+     "tag": "a",
+     "text": "FURNITURE",
+     "rect": {
+      "x": 243,
+      "y": 182,
+      "w": 71,
+      "h": 56
+     },
+     "fontFamily": "\"Soehne Buch\", sans-serif",
+     "fontSize": "11px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "1.2px",
+     "textTransform": "uppercase",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/nav-link-hover.png"
+    }
+   },
+   "title": "Category link",
+   "group": "link"
+  },
+  "sale-link": {
+   "states": {
+    "default": {
+     "error": "missing"
+    }
+   },
+   "title": "Sale link",
+   "group": "link"
+  },
+  "search": {
+   "states": {
+    "default": {
+     "tag": "input",
+     "text": "Search",
+     "rect": {
+      "x": 270,
+      "y": 60,
+      "w": 925,
+      "h": 44
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(116, 116, 116)",
+     "backgroundColor": "rgb(235, 235, 235)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "none",
+     "borderTopColor": "rgb(116, 116, 116)",
+     "borderRadius": "0px",
+     "padding": "8px 12px",
+     "boxShadow": "none",
+     "outline": "rgb(116, 116, 116) none 0px",
+     "outlineOffset": "-2px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/search-default.png"
+    },
+    "focus": {
+     "tag": "input",
+     "text": "Search",
+     "rect": {
+      "x": 270,
+      "y": 60,
+      "w": 925,
+      "h": 44
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(116, 116, 116)",
+     "backgroundColor": "rgb(235, 235, 235)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "none",
+     "borderTopColor": "rgb(116, 116, 116)",
+     "borderRadius": "0px",
+     "padding": "8px 12px",
+     "boxShadow": "none",
+     "outline": "rgb(116, 116, 116) none 0px",
+     "outlineOffset": "2px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/search-focus.png"
+    },
+    "filled": {
+     "tag": "input",
+     "text": "Search",
+     "rect": {
+      "x": 270,
+      "y": 60,
+      "w": 883,
+      "h": 44
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(116, 116, 116)",
+     "backgroundColor": "rgb(235, 235, 235)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "none",
+     "borderTopColor": "rgb(116, 116, 116)",
+     "borderRadius": "0px",
+     "padding": "8px 12px",
+     "boxShadow": "none",
+     "outline": "rgb(116, 116, 116) none 0px",
+     "outlineOffset": "2px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/search-filled.png"
+    }
+   },
+   "title": "Search field",
+   "group": "text field"
+  },
+  "icon-account": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "text": "Sign In",
+     "rect": {
+      "x": 1261,
+      "y": 71,
+      "w": 22,
+      "h": 22
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "12px",
+     "fontWeight": "400",
+     "lineHeight": "16px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/icon-account-default.png"
+    }
+   },
+   "title": "Account icon button",
+   "group": "icon button"
+  },
+  "icon-cart": {
+   "states": {
+    "default": {
+     "tag": "a",
+     "text": "cart",
+     "rect": {
+      "x": 1377,
+      "y": 72,
+      "w": 23,
+      "h": 21
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "12px",
+     "fontWeight": "400",
+     "lineHeight": "16px",
+     "letterSpacing": "normal",
+     "textTransform": "uppercase",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/icon-cart-default.png"
+    }
+   },
+   "title": "Bag icon button",
+   "group": "icon button"
+  },
+  "hero-cta": {
+   "states": {
+    "default": {
+     "error": "missing"
+    },
+    "hover": {
+     "error": "missing"
+    }
+   },
+   "title": "Hero button",
+   "group": "button"
+  },
+  "promo-bar": {
+   "states": {
+    "default": {
+     "tag": "a",
+     "text": "COMPLIMENTARY DESIGN SERVICES | LEARN MORE",
+     "rect": {
+      "x": 30,
+      "y": 0,
+      "w": 1380,
+      "h": 40
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(255, 255, 255)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(255, 255, 255) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "0",
+     "textDecoration": "none",
+     "crop": "components/crops/promo-bar-default.png"
+    }
+   },
+   "title": "Announcement bar",
+   "group": "badge"
+  },
+  "account-link": {
+   "states": {
+    "default": {
+     "tag": "a",
+     "text": "SIGN IN / CREATE ACCOUNT",
+     "rect": {
+      "x": 1072,
+      "y": 108,
+      "w": 352,
+      "h": 24
+     },
+     "fontFamily": "\"Soehne Buch\", sans-serif",
+     "fontSize": "13px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "0.65px",
+     "textTransform": "uppercase",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/account-link-default.png"
+    }
+   },
+   "title": "Account drawer link",
+   "group": "link"
+  },
+  "cart-drawer": {
+   "states": {
+    "empty": {
+     "error": "missing"
+    }
+   },
+   "title": "Cart drawer",
+   "group": "dialog"
+  },
+  "product-card": {
+   "states": {
+    "default": {
+     "tag": "a",
+     "text": "EXCLUSIVE",
+     "rect": {
+      "x": 32,
+      "y": 254,
+      "w": 323,
+      "h": 421
+     },
+     "fontFamily": "\"Soehne Buch\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/product-card-default.png"
+    }
+   },
+   "title": "Product card",
+   "group": "card"
+  },
+  "badge": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "text": "EXCLUSIVE",
+     "rect": {
+      "x": 32,
+      "y": 239,
+      "w": 324,
+      "h": 421
+     },
+     "fontFamily": "\"Soehne Buch\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/badge-default.png"
+    }
+   },
+   "title": "Product badge",
+   "group": "badge"
+  },
+  "filter-btn": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "text": "ALL FILTERS",
+     "rect": {
+      "x": 32,
+      "y": 426,
+      "w": 154,
+      "h": 42
+     },
+     "fontFamily": "\"Soehne Buch\", sans-serif",
+     "fontSize": "13px",
+     "fontWeight": "400",
+     "lineHeight": "24px",
+     "letterSpacing": "1.1px",
+     "textTransform": "uppercase",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "1px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(235, 235, 235)",
+     "borderRadius": "0px",
+     "padding": "8px 10px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/filter-btn-default.png"
+    }
+   },
+   "title": "Filter button",
+   "group": "button"
+  },
+  "atc": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "text": "ADD TO CART",
+     "rect": {
+      "x": 968,
+      "y": 430,
+      "w": 382,
+      "h": 40
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "13px",
+     "fontWeight": "800",
+     "lineHeight": "24px",
+     "letterSpacing": "2px",
+     "textTransform": "uppercase",
+     "color": "rgb(255, 255, 255)",
+     "backgroundColor": "rgb(26, 23, 19)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "8px 16px",
+     "boxShadow": "none",
+     "outline": "rgb(255, 255, 255) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/atc-default.png"
+    },
+    "hover": {
+     "tag": "button",
+     "text": "ADD TO CART",
+     "rect": {
+      "x": 968,
+      "y": 430,
+      "w": 382,
+      "h": 40
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "13px",
+     "fontWeight": "800",
+     "lineHeight": "24px",
+     "letterSpacing": "2px",
+     "textTransform": "uppercase",
+     "color": "rgb(255, 255, 255)",
+     "backgroundColor": "rgb(26, 23, 19)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "8px 16px",
+     "boxShadow": "none",
+     "outline": "rgb(255, 255, 255) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "0.8",
+     "textDecoration": "none",
+     "crop": "components/crops/atc-hover.png"
+    },
+    "pressed": {
+     "tag": "button",
+     "text": "ADD TO CART",
+     "rect": {
+      "x": 968,
+      "y": 430,
+      "w": 382,
+      "h": 40
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "13px",
+     "fontWeight": "800",
+     "lineHeight": "24px",
+     "letterSpacing": "2px",
+     "textTransform": "uppercase",
+     "color": "rgb(255, 255, 255)",
+     "backgroundColor": "rgb(26, 23, 19)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "8px 16px",
+     "boxShadow": "none",
+     "outline": "rgb(255, 255, 255) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "0.8",
+     "textDecoration": "none",
+     "crop": "components/crops/atc-pressed.png"
+    },
+    "focus": {
+     "tag": "button",
+     "text": "ADD TO CART",
+     "rect": {
+      "x": 968,
+      "y": 430,
+      "w": 382,
+      "h": 40
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "13px",
+     "fontWeight": "800",
+     "lineHeight": "24px",
+     "letterSpacing": "2px",
+     "textTransform": "uppercase",
+     "color": "rgb(255, 255, 255)",
+     "backgroundColor": "rgb(26, 23, 19)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "8px 16px",
+     "boxShadow": "none",
+     "outline": "rgb(255, 255, 255) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "0.8",
+     "textDecoration": "none",
+     "crop": "components/crops/atc-focus.png"
+    }
+   },
+   "title": "Add to cart",
+   "group": "button"
+  },
+  "product-title": {
+   "states": {
+    "default": {
+     "tag": "h1",
+     "text": "Sachs Dining Table",
+     "rect": {
+      "x": 968,
+      "y": 280,
+      "w": 168,
+      "h": 28
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "20px",
+     "fontWeight": "400",
+     "lineHeight": "28px",
+     "letterSpacing": "normal",
+     "textTransform": "capitalize",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(229, 229, 229)",
+     "borderRadius": "0px",
+     "padding": "0px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/product-title-default.png"
+    }
+   },
+   "title": "Product title",
+   "group": "type"
+  },
+  "variant-select": {
+   "states": {
+    "default": {
+     "error": "missing"
+    }
+   },
+   "title": "Variant select",
+   "group": "select"
+  },
+  "qty": {
+   "states": {
+    "default": {
+     "tag": "input",
+     "text": "Quantity",
+     "rect": {
+      "x": 1352,
+      "y": 430,
+      "w": 28,
+      "h": 40
+     },
+     "fontFamily": "\"Soehne Leicht\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "16px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(26, 23, 19)",
+     "backgroundColor": "rgb(255, 255, 255)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "solid",
+     "borderTopColor": "rgb(115, 115, 115)",
+     "borderRadius": "0px",
+     "padding": "8px",
+     "boxShadow": "none",
+     "outline": "rgb(26, 23, 19) none 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/qty-default.png"
+    }
+   },
+   "title": "Quantity field",
+   "group": "text field"
+  },
+  "wishlist": {
+   "states": {
+    "default": {
+     "error": "missing"
+    }
+   },
+   "title": "Wishlist icon button",
+   "group": "icon button"
+  },
+  "login-email": {
+   "states": {
+    "default": {
+     "tag": "input",
+     "text": "Email",
+     "rect": {
+      "x": 532,
+      "y": 490,
+      "w": 337,
+      "h": 48
+     },
+     "fontFamily": "\"Libre Franklin\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "18.9px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(0, 0, 0)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "none",
+     "borderTopColor": "rgb(0, 0, 0)",
+     "borderRadius": "12px 0px 0px 12px",
+     "padding": "14.05px 10px",
+     "boxShadow": "none",
+     "outline": "rgba(0, 0, 0, 0) solid 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/login-email-default.png"
+    },
+    "focus": {
+     "tag": "input",
+     "text": "Email",
+     "rect": {
+      "x": 532,
+      "y": 490,
+      "w": 337,
+      "h": 48
+     },
+     "fontFamily": "\"Libre Franklin\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "18.9px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(0, 0, 0)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "none",
+     "borderTopColor": "rgb(0, 0, 0)",
+     "borderRadius": "12px 0px 0px 12px",
+     "padding": "14.05px 10px",
+     "boxShadow": "none",
+     "outline": "rgba(0, 0, 0, 0) solid 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/login-email-focus.png"
+    },
+    "filled": {
+     "tag": "input",
+     "text": "Email",
+     "rect": {
+      "x": 532,
+      "y": 490,
+      "w": 337,
+      "h": 48
+     },
+     "fontFamily": "\"Libre Franklin\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "18.9px",
+     "letterSpacing": "normal",
+     "textTransform": "none",
+     "color": "rgb(0, 0, 0)",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "borderTopWidth": "0px",
+     "borderTopStyle": "none",
+     "borderTopColor": "rgb(0, 0, 0)",
+     "borderRadius": "12px 0px 0px 12px",
+     "padding": "22.05px 10px 6.05px",
+     "boxShadow": "none",
+     "outline": "rgba(0, 0, 0, 0) solid 0px",
+     "outlineOffset": "0px",
+     "opacity": "1",
+     "textDecoration": "none",
+     "crop": "components/crops/login-email-filled.png"
+    }
+   },
+   "title": "Login email",
+   "group": "text field"
+  },
+  "login-password": {
+   "states": {
+    "default": {
+     "error": "missing"
+    }
+   },
+   "title": "Login password",
+   "group": "text field"
+  },
+  "login-submit": {
+   "states": {
+    "default": {
+     "error": "missing"
+    },
+    "hover": {
+     "error": "missing"
+    }
+   },
+   "title": "Sign in button",
+   "group": "button"
+  }
+ },
+ "foundations": {
+  "viewport": {
+   "w": 1440,
+   "h": 900,
+   "dpr": 2
+  },
+  "body": {
+   "text": "Skip to main content Click to view our Accessibility Stateme",
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "letterSpacing": "normal",
+   "color": "rgb(26, 23, 19)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "borderRadius": "0px",
+   "borderTop": "0px solid rgb(229, 229, 229)",
+   "padding": "0px",
+   "height": 12098,
+   "boxShadow": "none"
+  },
+  "htmlBg": "rgba(0, 0, 0, 0)",
+  "h1": {
+   "text": "FURNITURE",
+   "fontFamily": "\"Iskry Bold\", sans-serif",
+   "fontSize": "26px",
+   "fontWeight": "400",
+   "lineHeight": "40px",
+   "letterSpacing": "1.2px",
+   "color": "rgb(26, 23, 19)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "borderRadius": "0px",
+   "borderTop": "0px solid rgb(229, 229, 229)",
+   "padding": "0px",
+   "height": 40,
+   "boxShadow": "none"
+  },
+  "nav": {
+   "text": "",
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "letterSpacing": "normal",
+   "color": "rgb(26, 23, 19)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "borderRadius": "0px",
+   "borderTop": "0px solid rgb(229, 229, 229)",
+   "padding": "0px",
+   "height": 36,
+   "boxShadow": "none"
+  },
+  "promo": {
+   "text": "COMPLIMENTARY DESIGN SERVICES | LEARN MORE",
+   "fontFamily": "\"Soehne Leicht\", sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "letterSpacing": "normal",
+   "color": "rgb(255, 255, 255)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "borderRadius": "0px",
+   "borderTop": "0px solid rgb(229, 229, 229)",
+   "padding": "0px",
+   "height": 40,
+   "boxShadow": "none"
+  },
+  "promoLink": null,
+  "search": {
+   "text": "Search for rugs, furniture, and more",
+   "fontFamily": "\"Soehne Leicht\", sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "letterSpacing": "normal",
+   "color": "rgb(116, 116, 116)",
+   "backgroundColor": "rgb(235, 235, 235)",
+   "borderRadius": "0px",
+   "borderTop": "0px none rgb(116, 116, 116)",
+   "padding": "8px 12px",
+   "height": 44,
+   "boxShadow": "none"
+  },
+  "heroCta": null,
+  "sale": {
+   "text": "SALE",
+   "fontFamily": "\"Soehne Buch\", sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "letterSpacing": "1.2px",
+   "color": "rgb(177, 21, 21)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "borderRadius": "0px",
+   "borderTop": "0px solid rgb(229, 229, 229)",
+   "padding": "0px",
+   "height": 56,
+   "boxShadow": "none"
+  },
+  "atc": null,
+  "card": {
+   "text": "Giftcards",
+   "fontFamily": "\"Soehne Leicht\", sans-serif",
+   "fontSize": "13px",
+   "fontWeight": "400",
+   "lineHeight": "16px",
+   "letterSpacing": "normal",
+   "color": "rgb(26, 23, 19)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "borderRadius": "0px",
+   "borderTop": "0px solid rgb(229, 229, 229)",
+   "padding": "16px 16px 16px 48px",
+   "height": 0,
+   "boxShadow": "none"
+  },
+  "price": {
+   "text": "From $4,648",
+   "fontFamily": "\"Soehne Buch\", sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "letterSpacing": "normal",
+   "color": "rgb(26, 23, 19)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "borderRadius": "0px",
+   "borderTop": "0px solid rgb(229, 229, 229)",
+   "padding": "0px",
+   "height": 32,
+   "boxShadow": "none"
+  },
+  "header": {
+   "text": "Bestsellers Collaborations Inspiration Trade Program Contrac",
+   "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "letterSpacing": "normal",
+   "color": "rgb(26, 23, 19)",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "borderRadius": "0px",
+   "borderTop": "0px solid rgb(229, 229, 229)",
+   "padding": "0px",
+   "height": 198,
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"
+  },
+  "faces": [
+   "Iskry Regular 400",
+   "Iskry Bold normal",
+   "Soehne Buch 300",
+   "Soehne Kraftig normal",
+   "Soehne Leicht normal",
+   "Soehne Leicht 300",
+   "Söhne 400",
+   "Iskry 400",
+   "custom_stylux_font_0 normal"
+  ],
+  "collection": {
+   "title": "Shop Furniture | Sofas, Chairs, Tables & More | Lulu and Georgia",
+   "h1": "\"Iskry Bold\", sans-serif",
+   "h1size": "26px",
+   "h1text": "FURNITURE"
+  },
+  "product": {
+   "title": "Sachs Dining Table",
+   "priceText": "$2,798",
+   "price": {
+    "color": "rgb(26, 23, 19)",
+    "fontSize": "16px",
+    "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "fontWeight": "400"
+   },
+   "h1": {
+    "font": "\"Soehne Leicht\", sans-serif",
+    "size": "20px",
+    "color": "rgb(26, 23, 19)"
+   }
+  },
+  "login": {
+   "title": "Sign in - Lulu and Georgia",
+   "url": "/authentication/29928226915/login",
+   "hasForm": true,
+   "text": "Sign In\n\nSign in or create an account\n\nor\nEmail me with news and offers\nUse email instead\nEmail\nSubmit\nPrivacy policy\nexternalNewWindow\nnewWindow\nexternal"
+  },
+  "motion": [
+   {
+    "tag": "A",
+    "text": "Accessibility Information",
+    "property": "all",
+    "duration": "0.5s",
+    "timing": "ease-in-out"
+   },
+   {
+    "tag": "BUTTON",
+    "text": "",
+    "property": "opacity",
+    "duration": "0.15s",
+    "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   {
+    "tag": "A",
+    "text": "COMPLIMENTARY DESIGN SERVICES ",
+    "property": "opacity",
+    "duration": "0.5s",
+    "timing": "ease-in-out"
+   },
+   {
+    "tag": "A",
+    "text": "THE MORE THE MERRIER |\nSHOP AL",
+    "property": "opacity",
+    "duration": "0.5s",
+    "timing": "ease-in-out"
+   },
+   {
+    "tag": "A",
+    "text": "100+ NEW STYLES ADDED |\nSHOP S",
+    "property": "opacity",
+    "duration": "0.5s",
+    "timing": "ease-in-out"
+   },
+   {
+    "tag": "BUTTON",
+    "text": "",
+    "property": "opacity",
+    "duration": "0.15s",
+    "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   {
+    "tag": "A",
+    "text": "View Bag",
+    "property": "all",
+    "duration": "0.2s",
+    "timing": "ease"
+   },
+   {
+    "tag": "A",
+    "text": "Continue to Checkout",
+    "property": "all",
+    "duration": "0.2s",
+    "timing": "ease"
+   }
+  ]
+ }
+}

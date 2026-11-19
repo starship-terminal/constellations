@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-18T20:23:28.580Z",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "href": "https://vivid.money/en-eu/customers/",
+    "title": "Customer stories | Vivid Business",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "theme": "light"
+  }
+}

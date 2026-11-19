@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>Pryzm style guide</title>
+<style>
+  :root {
+    --page: #000000;
+    --surface: #141414;
+    --text: #fafafa;
+    --muted: #ffffff99;
+    --accent: #e5e5e5;
+    --on-accent: #171717;
+    --border: #ffffff1c;
+    --secondary: #262626;
+    --sans: Inter, "Inter Fallback", sans-serif;
+    --heading: Poppins, "Poppins Fallback", sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/24px var(--sans); }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font: 600 48px/50.4px var(--heading); letter-spacing: -0.96px; margin: 0 0 8px; }
+  h2 { font: 600 24px/32px var(--heading); letter-spacing: -0.48px; margin: 40px 0 12px; }
+  p { color: var(--muted); }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 72px; border-radius: 14px; border: 1px solid var(--border); }
+  .name { font-size: 12px; margin-top: 6px; }
+  .hex { font-size: 12px; color: var(--muted); }
+  button, .btn { font: 500 12px/19.5px var(--sans); height: 32px; padding: 0 10px; border-radius: 8px; border: 1px solid transparent; }
+  .primary { background: var(--accent); color: var(--on-accent); }
+  .secondary { background: var(--secondary); color: var(--text); }
+  .outline { background: oklab(0.999998 0 0 / 0.045); color: var(--text); border-color: var(--border); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 16px; width: 220px; }
+  .field { display: block; width: 280px; height: 44px; border-radius: 8px; border: 1px solid var(--border); background: #000; color: var(--text); padding: 0 12px; font: 14px/20px var(--sans); }
+  .note { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pryzm</h1>
+  <p class="note">Dark tokens measured on pryzm.design. The light :root palette was declared and not painted.</p>
+  <h2>Color</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div class="name">page</div><div class="hex">#000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#141414"></div><div class="name">surface</div><div class="hex">#141414</div></div>
+    <div class="swatch"><div class="chip" style="background:#fafafa"></div><div class="name">text</div><div class="hex">#fafafa</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff99"></div><div class="name">muted</div><div class="hex">#ffffff99</div></div>
+    <div class="swatch"><div class="chip" style="background:#e5e5e5"></div><div class="name">accent</div><div class="hex">#e5e5e5</div></div>
+    <div class="swatch"><div class="chip" style="background:#262626"></div><div class="name">secondary</div><div class="hex">#262626</div></div>
+    <div class="swatch"><div class="chip" style="background:#ff6568"></div><div class="name">destructive</div><div class="hex">#ff6568</div></div>
+    <div class="swatch"><div class="chip" style="background:#1447e6"></div><div class="name">sidebar-primary</div><div class="hex">#1447e6</div></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font:600 36px/40px var(--heading);letter-spacing:-0.72px;color:var(--text)">Inspiration Gallery</p>
+  <p class="note">Body is Inter 16px. Headings are Poppins.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Get Pryzm Pro</button>
+    <button class="secondary">Open Flow</button>
+    <button class="outline">Browse inspiration</button>
+  </div>
+  <p><input class="field" placeholder="Email address*"></p>
+  <h2>Card</h2>
+  <div class="card">
+    <strong>Ink Facet</strong>
+    <p class="note">18px radius, #141414 fill, 1px border at white 11%.</p>
+  </div>
+</main>
+</body>
+</html>

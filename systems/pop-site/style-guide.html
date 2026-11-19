@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pop Site style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --text: #171717;
+    --muted: #545454;
+    --accent: #3b82f6;
+    --border: #e3e3e3;
+    --field: #fafafc;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 500 15px/1.4 Satoshi, ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 1000px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 51px; line-height: 51px; letter-spacing: -3.82px; font-weight: 500; margin: 0 0 8px; }
+  h2 { font-size: 19px; letter-spacing: -0.57px; margin: 40px 0 12px; }
+  p { color: var(--muted); }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .sw { width: 140px; }
+  .sw i { display: block; height: 56px; border-radius: 10px; border: 1px solid #e3e3e3; }
+  .sw b, .sw code { display: block; font-size: 12px; font-weight: 500; }
+  .sw code { color: var(--muted); }
+  table { border-collapse: collapse; width: 100%; }
+  td { border-bottom: 1px solid #e3e3e3; padding: 10px 8px; vertical-align: middle; }
+  .claim { display: inline-flex; align-items: center; height: 40px; padding: 0 24px; border-radius: 26px; color: #fff; background: linear-gradient(110deg, #00a8f5, #3b82f6); }
+  .signin { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: 999px; color: #fff; background: linear-gradient(90.54deg, #1e293b 6.97%, #0f172a 93.03%); }
+  .field { display: inline-flex; height: 40px; border-radius: 999px; overflow: hidden; background: #fff; border: 1px solid #e3e3e3; }
+  .field span { padding: 10px 16px; color: #6e6e73; }
+  .field b { background: #fafafc; padding: 10px 16px; border-radius: 0 999px 999px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pop Site</h1>
+  <p>Measured from pop.site and the signed-out screen at app.pop.site. Light only.</p>
+  <h2>Colour</h2>
+  <div class="swatches"><div class="sw"><i style="background:#ffffff"></i><b>page</b><code>#ffffff</code></div><div class="sw"><i style="background:#ffffff"></i><b>surface</b><code>#ffffff</code></div><div class="sw"><i style="background:#171717"></i><b>text</b><code>#171717</code></div><div class="sw"><i style="background:#545454"></i><b>muted</b><code>#545454</code></div><div class="sw"><i style="background:#3b82f6"></i><b>accent</b><code>#3b82f6</code></div><div class="sw"><i style="background:#e3e3e3"></i><b>border</b><code>#e3e3e3</code></div><div class="sw"><i style="background:#3b82f6"></i><b>focus</b><code>#3b82f6</code></div><div class="sw"><i style="background:#ffffff"></i><b>on-accent</b><code>#ffffff</code></div><div class="sw"><i style="background:#fafafc"></i><b>field</b><code>#fafafc</code></div><div class="sw"><i style="background:#f3f3f3"></i><b>auth-page</b><code>#f3f3f3</code></div><div class="sw"><i style="background:#1e293b"></i><b>auth-text</b><code>#1e293b</code></div><div class="sw"><i style="background:#64748b"></i><b>auth-muted</b><code>#64748b</code></div><div class="sw"><i style="background:#e5e5e5"></i><b>auth-border</b><code>#e5e5e5</code></div><div class="sw"><i style="background:#2563eb"></i><b>auth-link</b><code>#2563eb</code></div><div class="sw"><i style="background:#e2e8f0"></i><b>auth-shell-border</b><code>#e2e8f0</code></div><div class="sw"><i style="background:#3b82f6"></i><b>component.claim.background</b><code>#3b82f6</code></div><div class="sw"><i style="background:#ffffff"></i><b>component.claim.text</b><code>#ffffff</code></div><div class="sw"><i style="background:#1e293b"></i><b>component.signin.background</b><code>#1e293b</code></div><div class="sw"><i style="background:#ffffff"></i><b>component.signin.text</b><code>#ffffff</code></div><div class="sw"><i style="background:#ffffff"></i><b>component.field.background</b><code>#ffffff</code></div><div class="sw"><i style="background:#1e293b"></i><b>component.field.text</b><code>#1e293b</code></div><div class="sw"><i style="background:#171717"></i><b>marketing.ink</b><code>#171717</code></div><div class="sw"><i style="background:#545454"></i><b>marketing.ink-soft</b><code>#545454</code></div><div class="sw"><i style="background:#6e6e73"></i><b>marketing.muted</b><code>#6e6e73</code></div><div class="sw"><i style="background:#ffffff"></i><b>marketing.page</b><code>#ffffff</code></div><div class="sw"><i style="background:#fafafc"></i><b>marketing.field</b><code>#fafafc</code></div><div class="sw"><i style="background:#e3e3e3"></i><b>marketing.line</b><code>#e3e3e3</code></div><div class="sw"><i style="background:#d2d2d7"></i><b>marketing.line-strong</b><code>#d2d2d7</code></div><div class="sw"><i style="background:#3b82f6"></i><b>marketing.blue</b><code>#3b82f6</code></div><div class="sw"><i style="background:#478eff"></i><b>marketing.blue-bright</b><code>#478eff</code></div><div class="sw"><i style="background:#00a8f5"></i><b>marketing.cyan</b><code>#00a8f5</code></div><div class="sw"><i style="background:#00276b"></i><b>marketing.navy</b><code>#00276b</code></div><div class="sw"><i style="background:#ffed90"></i><b>marketing.highlight</b><code>#ffed90</code></div></div>
+  <h2>Type</h2>
+  <table><tr><td>display</td><td style="font-family:Satoshi, sans-serif;font-size:51px;font-weight:500;line-height:51px;letter-spacing:-3.82px">Make a stunning site.</td><td><code>51px / 500</code></td></tr><tr><td>title</td><td style="font-family:Satoshi, sans-serif;font-size:19px;font-weight:500;line-height:26.6px;letter-spacing:-0.57px">Make a stunning site.</td><td><code>19px / 500</code></td></tr><tr><td>nav</td><td style="font-family:Satoshi, sans-serif;font-size:15px;font-weight:500;line-height:19.5px;letter-spacing:-0.45px">Make a stunning site.</td><td><code>15px / 500</code></td></tr><tr><td>auth-title</td><td style="font-family:satoshi, sans-serif;font-size:18px;font-weight:700;line-height:27px;letter-spacing:normal">Make a stunning site.</td><td><code>18px / 700</code></td></tr><tr><td>label</td><td style="font-family:satoshi, sans-serif;font-size:14px;font-weight:500;line-height:21px;letter-spacing:normal">Make a stunning site.</td><td><code>14px / 500</code></td></tr><tr><td>body</td><td style="font-family:satoshi, sans-serif;font-size:16px;font-weight:400;line-height:24px;letter-spacing:normal">Make a stunning site.</td><td><code>16px / 400</code></td></tr></table>
+  <h2>Controls</h2>
+  <p><span class="claim">Claim your site</span></p>
+  <p><span class="field"><span>yourname</span><b>.pop.site</b></span></p>
+  <p><span class="signin">Sign in</span></p>
+</main>
+</body>
+</html>

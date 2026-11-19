@@ -1,0 +1,98 @@
+{
+  "captured": "2026-11-19",
+  "method": "getComputedStyle on the live signed-out page in the T3 preview browser. No styles were invented. Hover was not forced. Focus was applied with element.focus() on the sign-in email field only.",
+  "pages": {
+    "home": {
+      "url": "https://www.washingtonpost.com/",
+      "htmlClass": "js-enabled wpds-dark",
+      "body": {"backgroundColor": "rgb(20, 20, 20)", "color": "rgb(255, 255, 255)", "fontFamily": "Franklin, Arial, Helvetica, sans-serif", "fontSize": "16px"},
+      "nav": {"tag": "NAV", "height": 60, "backgroundColor": "rgb(20, 20, 20)", "color": "rgb(255, 255, 255)", "display": "flex", "borderRadius": "0px"},
+      "sectionBar": {"tag": "UL", "class": "wpds-c-HSxXB", "height": 48, "padding": "8px 0px", "backgroundColor": "rgba(0, 0, 0, 0)"},
+      "sectionPill": {"text": "Politics", "backgroundColor": "rgb(20, 20, 20)", "color": "rgb(255, 255, 255)", "fontFamily": "Franklin", "fontSize": "16px", "fontWeight": "700", "lineHeight": "16px", "padding": "8px 16px", "borderRadius": "9999px", "height": 30, "textDecoration": "none"},
+      "subscribe": {"text": "Save and subscribe", "tag": "A", "hrefHost": "subscribe.washingtonpost.com", "backgroundColor": "rgb(22, 109, 252)", "color": "rgb(255, 255, 255)", "fontFamily": "Franklin, Franklin-fallback, sans-serif", "fontSize": "16px", "fontWeight": "700", "lineHeight": "16px", "padding": "8px 16px", "borderRadius": "9999px", "height": 32, "gap": "8px", "width": 175, "followed": false},
+      "signIn": {"text": "Sign in", "tag": "A", "backgroundColor": "rgba(0, 0, 0, 0)", "color": "rgb(255, 255, 255)", "fontSize": "16px", "fontWeight": "700", "padding": "8px 16px", "borderRadius": "9999px", "height": 40, "width": 81, "gap": "8px", "followed": true, "note": "opened the public sign-in page later; the form was not submitted"},
+      "iconButton": {"ariaLabel": "Search and browse sections", "height": 36, "width": 36, "padding": "8px", "borderRadius": "9999px", "fontSize": "0px", "backgroundColor": "rgba(0, 0, 0, 0)", "color": "rgb(255, 255, 255)"},
+      "alerts": {"text": "News Alerts", "height": 36, "padding": "8px", "borderRadius": "9999px", "fontSize": "0px", "fontWeight": "700"},
+      "logo": {"ariaLabel": "Logo of The Washington Post", "svgHeight": 80, "svgWidth": 520, "linkWidthAt1440": 920, "fill": "rgb(255, 255, 255)"},
+      "slogan": {"text": "Democracy Dies in Darkness", "color": "rgb(161, 161, 161)", "backgroundColor": "rgb(20, 20, 20)", "fontFamily": "Georgia", "fontSize": "18px", "fontWeight": "400", "lineHeight": "22.5px", "height": 20},
+      "storyHeadlineLarge": {"tag": "H2", "fontFamily": "Postoni", "fontSize": "26px", "fontWeight": "700", "lineHeight": "28.6px", "color": "rgb(222, 222, 222)", "letterSpacing": "normal"},
+      "storyHeadlineMedium": {"tag": "H2", "fontFamily": "Postoni", "fontSize": "20px", "fontWeight": "700", "lineHeight": "22px", "color": "rgb(222, 222, 222)"},
+      "storyHeadlineSmall": {"tag": "H2", "fontFamily": "Postoni", "fontSize": "18px", "fontWeight": "700", "lineHeight": "21px", "color": "rgb(222, 222, 222)"},
+      "byline": {"class": "byline gray-dark font-xxxs", "color": "rgb(161, 161, 161)", "fontFamily": "Franklin", "fontSize": "14px", "fontWeight": "400", "lineHeight": "17.5px"},
+      "leadImage": {"width": 628, "height": 419, "note": "first main image at the 1440 CSS viewport"},
+      "footer": {"width": 1024, "color": "rgb(255, 255, 255)", "fontSize": "16px", "fontFamily": "Franklin, Arial, Helvetica, sans-serif"}
+    },
+    "article": {
+      "url": "https://www.washingtonpost.com/entertainment/video-games/2026/11/18/grand-theft-auto-vi-is-an-astonishing-american-epic/",
+      "htmlClass": "wpds-dark js-enabled",
+      "kicker": {"text": "Video Games", "color": "rgb(255, 255, 255)", "fontFamily": "Franklin", "fontSize": "16px", "fontWeight": "700", "lineHeight": "20px"},
+      "headline": {"tag": "H1", "fontFamily": "Postoni", "fontSize": "48px", "fontWeight": "700", "lineHeight": "52.8px", "color": "rgb(255, 255, 255)", "width": 640},
+      "dek": {"tag": "P", "fontFamily": "Franklin", "fontSize": "20px", "fontWeight": "300", "lineHeight": "25px", "color": "rgb(255, 255, 255)", "width": 640},
+      "timestamp": {"tag": "TIME", "color": "rgb(127, 127, 127)", "fontFamily": "Franklin", "fontSize": "16px", "fontWeight": "400", "lineHeight": "20px", "text": "November 18, 2026 at 6:00 a.m. EST"},
+      "body": {"tag": "P", "fontFamily": "georgia", "fontSize": "20px", "fontWeight": "400", "lineHeight": "32px", "color": "rgb(255, 255, 255)", "padding": "0px 0px 24px", "width": 640},
+      "paywallCard": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "width": 460,
+        "height": 534,
+        "border": "1px solid rgb(233, 233, 233)",
+        "boxShadow": "rgba(0, 0, 0, 0.2) 0px 2px 0px 0px",
+        "borderRadius": "0px",
+        "badge": {"text": "BLACK FRIDAY SALE", "color": "rgb(17, 17, 17)", "fontSize": "12px", "fontWeight": "700", "lineHeight": "15px", "padding": "0px 8px 0px 4px", "parentBorder": "1px solid rgb(17, 17, 17)", "parentBackground": "rgb(255, 255, 255)"},
+        "offerHeadline": {"tag": "H1", "fontFamily": "Postoni", "fontSize": "32px", "fontWeight": "700", "lineHeight": "35.2px", "color": "rgb(42, 42, 42)", "padding": "0px 24px"},
+        "benefit": {"fontSize": "12px", "lineHeight": "15px", "color": "rgb(17, 17, 17)", "fontWeight": "400"},
+        "planLabel": {"color": "rgb(22, 109, 252)", "fontSize": "12px", "fontWeight": "700"},
+        "planPrice": {"fontFamily": "Postoni", "fontSize": "20px", "fontWeight": "400", "lineHeight": "25px", "color": "rgb(17, 17, 17)"},
+        "planMeta": {"color": "rgb(89, 89, 89)", "fontSize": "12px"},
+        "already": {"color": "rgb(89, 89, 89)", "fontSize": "14px", "lineHeight": "17.5px"},
+        "signInLink": {"color": "rgb(89, 89, 89)", "fontSize": "14px", "fontWeight": "300", "textDecoration": "not recorded as underline"},
+        "email": {"type": "email", "name": "email", "height": 48, "width": 294, "padding": "20px 8px 8px", "fontSize": "16px", "color": "rgb(17, 17, 17)", "border": "0px none", "borderRadius": "0px", "label": "Add your email address", "labelColor": "rgb(89, 89, 89)", "filled": false, "submitted": false},
+        "moreOffers": {"text": "View more offers", "color": "rgb(89, 89, 89)", "fontSize": "14px", "fontWeight": "400", "padding": "8px 0px", "height": 34, "followed": false}
+      }
+    },
+    "signin": {
+      "url": "https://www.washingtonpost.com/subscribe/signin/",
+      "title": "Sign in to The Washington Post",
+      "htmlClass": "",
+      "challenge": false,
+      "bodyColor": "rgb(0, 0, 0)",
+      "bodyFont": "Franklin, Franklin-fallback, sans-serif",
+      "heading": {"text": "Sign in or create account", "fontFamily": "Postoni", "fontSize": "24px", "fontWeight": "700", "color": "rgb(17, 17, 17)", "width": 340},
+      "formWidth": 340,
+      "email": {"height": 48, "width": 294, "padding": "20px 8px 8px", "fontSize": "16px", "color": "rgb(17, 17, 17)", "border": "0px none"},
+      "fieldChrome": {"backgroundColor": "rgb(255, 255, 255)", "border": "1px solid rgb(87, 132, 197)", "borderRadius": "2px", "height": 50, "width": 340, "note": "measured after email.focus(); the blue border is the focused field chrome"},
+      "next": {"text": "Next", "type": "submit", "backgroundColor": "rgb(22, 109, 252)", "color": "rgb(255, 255, 255)", "fontSize": "16px", "fontWeight": "700", "padding": "12px 16px", "borderRadius": "9999px", "height": 40, "width": 340, "submitted": false},
+      "oauth": {"backgroundColor": "rgb(255, 255, 255)", "color": "rgb(17, 17, 17)", "border": "1px solid rgba(0, 0, 0, 0.1)", "borderRadius": "9999px", "height": 40, "padding": "12px 16px", "fontSize": "16px", "fontWeight": "700", "width": 340, "labels": ["Continue with Amazon", "Continue with Facebook", "Continue with Google", "Continue with Apple"], "pressed": false},
+      "sso": {"text": "Continue with SSO", "color": "rgb(115, 115, 115)", "fontSize": "16px", "fontWeight": "300", "pressed": false},
+      "divider": {"text": "or", "color": "rgb(89, 89, 89)", "fontSize": "16px"},
+      "logo": {"fill": "rgb(0, 0, 0)", "width": 200, "height": 30}
+    },
+    "politics": {
+      "url": "https://www.washingtonpost.com/politics/",
+      "htmlClass": "wpds-dark js-enabled",
+      "title": {"text": "Politics", "tag": "H1", "fontFamily": "Franklin, Franklin-fallback, sans-serif", "fontSize": "48px", "fontWeight": "700", "lineHeight": "60px", "color": "rgb(255, 255, 255)", "desktopWidth": 162},
+      "follow": {"text": "Follow", "height": 24, "width": 24, "padding": "5px", "borderRadius": "9999px", "border": "1px rgba(255, 255, 255, 0.1)", "backgroundColor": "rgb(20, 20, 20)", "fontSize": "0px", "pressed": false},
+      "topicLink": {"text": "Donald Trump", "fontSize": "16px", "fontWeight": "400", "padding": "8px 0px", "color": "rgb(255, 255, 255)", "borderRadius": "0px"}
+    },
+    "mobile390": {
+      "method": "documentElement width forced to 390px because preview_resize to 390 left the browser viewport at 1280. After the force, innerWidth was 390, innerHeight 844, devicePixelRatio 2, --wpds--screenSize small.",
+      "page": "https://www.washingtonpost.com/politics/",
+      "navHeight": 60,
+      "menuButton": {"width": 36, "height": 36, "ariaLabel": "Search and browse sections"},
+      "sectionTitle": {"fontSize": "28px", "lineHeight": "35px", "fontWeight": "700", "fontFamily": "Franklin"},
+      "signIn": {"fontSize": "14px", "lineHeight": "14px", "height": 40, "padding": "8px 16px", "borderRadius": "9999px", "width": 75},
+      "subscribe": {"fontSize": "16px", "height": 30, "padding": "8px 12px", "borderRadius": "9999px", "width": 149, "backgroundColor": "rgb(22, 109, 252)"}
+    }
+  },
+  "motion": {
+    "subscribeTransition": "background 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+    "signInOnHomeTransition": "color 0.3s linear",
+    "reducedMotionRulesRead": 19,
+    "reducedMotionSample": ".wpds-c-kSOqLF { transition: none; }",
+    "focusVisibleUserAgent": ":focus-visible { outline: highlight auto 1px; }",
+    "focusRulesCounted": 143,
+    "prefersColorSchemeRules": 0,
+    "stylesheets": 30,
+    "stylesheetsBlocked": 1
+  }
+}

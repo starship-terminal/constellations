@@ -1,0 +1,1 @@
+No screenshots. On 2026-11-19 the T3 preview browser loaded the pages and `preview_evaluate` could read computed styles, then `preview_snapshot` returned "The browser is not producing screenshot frames." Values were kept. Frames were not invented.

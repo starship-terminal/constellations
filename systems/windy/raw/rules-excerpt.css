@@ -1,0 +1,12 @@
+:root{--dynamic-scale:1}
+.dark-content{--color-text-primary:var(--color-gray-light);--color-text-secondary:var(--color-yellow);--color-text-link:var(--color-orange-light);--color-header:var(--color-orange-light);--color-icons:var(--color-orange-light);--color-background-primary:var(--color-black);--color-background-secondary:var(--color-gray);--color-ui-primary:var(--color-red);--color-ui-secondary:var(--color-red-light);--color-ui-background:var(--color-gray-dark);--color-border:var(--color-gray-dark);--color-border-selected:var(--color-orange-light)}
+html[lang=de] body,html[lang=nl] body{-webkit-hyphens:auto;hyphens:auto}
+.button,.premium-button{cursor:pointer;-webkit-tap-highlight-color:initial;appearance:none;text-align:center;box-sizing:border-box;color:var(--color-white);background-color:var(--color-ui-primary);border:0;border-radius:2em;outline:none;justify-content:center;align-items:center;margin:.5em;padding:.25em 1em;font-weight:300;line-height:normal;display:inline-flex;position:relative}
+.button,.premium-button{cursor:pointer;-webkit-tap-highlight-color:initial;appearance:none;text-align:center;box-sizing:border-box;color:var(--color-white);background-color:var(--color-ui-primary);border:0;border-radius:2em;outline:none;justify-content:center;align-items:center;margin:.5em;padding:.25em 1em;font-weight:300;line-height:normal;display:inline-flex;position:relative}
+.switch__item{text-align:center;text-overflow:ellipsis;color:var(--color-text-primary);border-radius:1em;justify-content:center;align-items:center;padding:.3em 1em;line-height:normal;display:flex;position:relative;-webkit-tap-highlight-color:transparent!important}
+.plugin-popup{opacity:0;z-index:100;border-radius:8px;width:fit-content;height:fit-content;margin:auto;transition:opacity .5s ease-out;position:fixed;inset:0;box-shadow:0 0 4px #000}
+.rounded-box{border-radius:8px;padding:.5em 1em}
+.size-s{font-size:12px}
+.size-m{font-size:14px}
+.form-group label{padding:.3em 0;font-size:14px;line-height:1.2em;display:block}
+.menu-items{line-height:2}

@@ -1,0 +1,87 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. Only mailchimp.com Plums/CXP roles are tokenised (yellow CTA, caviar ink, Tally / Graphik Web, the declared spacing steps, the CTA radius). The home page embeds a Navattic demo whose sheets declare Tailwind --color-*, --radius-*, --ease-* and --spacing. Those values belong to capture.navattic.com and are left out. HSL channel strings that did not resolve to a colour are left out. The public pages are light-only: the dark set stays empty.",
+  "core": {
+    "color": {
+      "caviar": { "var": "--cta-text-color", "type": "color", "description": "The ink the CTA text and stroke paint. Resolved #231e15." },
+      "yellow": { "var": "--cta-background-color", "type": "color", "description": "The primary CTA fill. Resolved #ffe01b." },
+      "disabled": { "var": "--cta-background-color-disabled", "type": "color" }
+    },
+    "font": {
+      "family": {
+        "sans": { "var": "--typeface--base", "type": "fontFamily", "description": "The marketing UI stack: Tally, then Graphik Web." }
+      },
+      "weight": {
+        "nav": { "var": "--nav-label-weight", "type": "fontWeight" },
+        "copyBold": { "var": "--copy-bold-weight", "type": "fontWeight" },
+        "eyebrow": { "var": "--copy-eyebrow-weight", "type": "fontWeight" },
+        "badge": { "var": "--badge-square-weight", "type": "fontWeight" },
+        "cta": { "var": "--cta-text-weight", "type": "fontWeight" }
+      },
+      "size": {
+        "legal": { "var": "--copy-legal-size", "type": "dimension" },
+        "info": { "var": "--copy-info-size", "type": "dimension" },
+        "regular": { "var": "--copy-regular-size", "type": "dimension" },
+        "small": { "var": "--copy-small-size", "type": "dimension" },
+        "medium": { "var": "--copy-medium-size", "type": "dimension" },
+        "large": { "var": "--copy-large-size", "type": "dimension" },
+        "jumbo": { "var": "--copy-jumbo-size", "type": "dimension" },
+        "cta": { "var": "--cta-text-size", "type": "dimension" }
+      },
+      "line": {
+        "legal": { "var": "--copy-legal-line", "type": "number" },
+        "info": { "var": "--copy-info-line", "type": "number" },
+        "regular": { "var": "--copy-regular-line", "type": "number" },
+        "small": { "var": "--copy-small-line", "type": "number" },
+        "medium": { "var": "--copy-medium-line", "type": "number" },
+        "large": { "var": "--copy-large-line", "type": "number" },
+        "jumbo": { "var": "--copy-jumbo-line", "type": "number" },
+        "cta": { "var": "--cta-line-height", "type": "number" }
+      }
+    },
+    "spacing": {
+      "s1": { "var": "--spacing-1", "type": "dimension" },
+      "s2": { "var": "--spacing-2", "type": "dimension" },
+      "s3": { "var": "--spacing-3", "type": "dimension" },
+      "s4": { "var": "--spacing-4", "type": "dimension" },
+      "s5": { "var": "--spacing-5", "type": "dimension" },
+      "s6": { "var": "--spacing-6", "type": "dimension" },
+      "s7": { "var": "--spacing-7", "type": "dimension" },
+      "s8": { "var": "--spacing-8", "type": "dimension" },
+      "module": { "var": "--module-padding", "type": "dimension" }
+    },
+    "radius": {
+      "cta": { "var": "--cta-border-radius", "type": "dimension", "description": "The marketing CTA pill radius. The --radius-* scale is declared by the embedded Navattic demo and is not tokenised." }
+    }
+  },
+  "light": {
+    "background": {
+      "page": { "value": "#ffffff", "type": "color", "source": "measured document.body backgroundColor on mailchimp.com /" },
+      "cta": { "var": "--cta-background-color", "type": "color" },
+      "ctaDisabled": { "var": "--cta-background-color-disabled", "type": "color" },
+      "selection": { "var": "--selection-background-color", "type": "color" }
+    },
+    "text": {
+      "primary": { "var": "--heading-color", "type": "color" },
+      "copy": { "var": "--copy-color", "type": "color" },
+      "muted": { "var": "--copy-color-light", "type": "color" },
+      "onCta": { "var": "--cta-text-color", "type": "color" },
+      "link": { "var": "--link-color", "type": "color" }
+    },
+    "border": {
+      "cta": { "var": "--cta-stroke-color", "type": "color" },
+      "ctaWidth": { "var": "--cta-stroke-width", "type": "dimension" }
+    },
+    "action": {
+      "fill": { "var": "--cta-background-color", "type": "color" },
+      "text": { "var": "--cta-text-color", "type": "color" },
+      "stroke": { "var": "--cta-stroke-color", "type": "color" },
+      "depth": { "var": "--cta-depth-color", "type": "color" },
+      "hoverLink": { "var": "--link-background-hovered", "type": "color" }
+    },
+    "elevation": {
+      "shadow": { "var": "--elevation-shadow-color", "type": "color" }
+    }
+  },
+  "dark": {},
+  "component": {}
+}

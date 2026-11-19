@@ -1,0 +1,247 @@
+{
+  "opened": true,
+  "href": "https://www.perplexity.ai/",
+  "inputs": [
+    {
+      "tag": "A",
+      "type": null,
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Create new teammate",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Search",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Computer",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Model",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Search anything Get fast and accurate answers from the most ",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Get work done with Computer NEW Hand off your projects to ge",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Continue with Google",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Continue with Apple",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "INPUT",
+      "type": "email",
+      "ph": "Enter your email",
+      "text": "",
+      "name": "email",
+      "autocomplete": "email"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Continue with email",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Single sign-on (SSO)",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "Close",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "ph": null,
+      "text": "Perplexity Terms of Service",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "A",
+      "type": null,
+      "ph": null,
+      "text": "Privacy Notice",
+      "name": null,
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "ph": null,
+      "text": "",
+      "name": null,
+      "autocomplete": null
+    }
+  ],
+  "dialogText": "Sign up below to unlock the full potential of Perplexity\nContinue with Google\nContinue with Apple\nContinue with email\nSingle sign-on (SSO)\nClose\nBy continuing, you agree to the\nPerplexity Terms of Service and Privacy Notice"
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "name": "home-light-default",
+    "png": {
+      "width": 2880,
+      "height": 1800
+    },
+    "url": "https://www.nudea.com/",
+    "title": "Nudea | Wearable Wellness"
+  },
+  {
+    "name": "home-light-scrolled",
+    "png": {
+      "width": 2880,
+      "height": 1800
+    },
+    "url": "https://www.nudea.com/",
+    "title": "Nudea | Wearable Wellness"
+  },
+  {
+    "name": "product-light-default",
+    "png": {
+      "width": 2880,
+      "height": 1800
+    },
+    "url": "https://www.nudea.com/products/the-classic-flannel-pj-set-mulberry_gingham",
+    "title": "The Flannel PJ Set | Pyjama Gift Set | Long Sleeve Pyjama Set | Nudea"
+  },
+  {
+    "name": "collection-light-default",
+    "png": {
+      "width": 2880,
+      "height": 1800
+    },
+    "url": "https://www.nudea.com/collections/bras",
+    "title": "Best bras for women | Sustainable bras | Nudea Bras"
+  },
+  {
+    "name": "about-light-default",
+    "png": {
+      "width": 2880,
+      "height": 1800
+    },
+    "url": "https://www.nudea.com/pages/about",
+    "title": "About Us | Our Story | Nudea Underwear"
+  },
+  {
+    "name": "search-light-default",
+    "png": {
+      "width": 2880,
+      "height": 1800
+    },
+    "url": "https://www.nudea.com/search",
+    "title": "Search: 151 results found for \"bra\" – Nudea"
+  },
+  {
+    "name": "sustainability-light-default",
+    "png": {
+      "width": 2880,
+      "height": 1800
+    },
+    "url": "https://www.nudea.com/pages/sustainability",
+    "title": "Our Sustainability Journey | Being B Corp | Sustainable Underwear – Nudea"
+  },
+  {
+    "name": "home-light-phone",
+    "png": {
+      "width": 780,
+      "height": 1688
+    },
+    "url": "https://www.nudea.com/",
+    "title": "Nudea | Wearable Wellness"
+  },
+  {
+    "name": "collection-light-phone",
+    "png": {
+      "width": 780,
+      "height": 1688
+    },
+    "url": "https://www.nudea.com/collections/bras",
+    "title": "Best bras for women | Sustainable bras | Nudea Bras"
+  }
+]

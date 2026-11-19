@@ -1,0 +1,35 @@
+{
+  "capturedAt": "2026-11-18T16:30:13.766Z",
+  "name": "home-dark-default",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1,
+    "fullPage": false
+  },
+  "measured": {
+    "href": "https://copilot.com/",
+    "title": "Microsoft Copilot | Sign in",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    },
+    "theme": "dark",
+    "colorScheme": "dark",
+    "scrollH": 2932
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "source": "https://copilot.com/ public signed-out",
+  "note": "measured CSS width matches request"
+}

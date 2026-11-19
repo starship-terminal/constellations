@@ -1,0 +1,17 @@
+{
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "dpr": 2,
+  "h2": {
+    "fontSize": "30px",
+    "letterSpacing": "-1.5px",
+    "lineHeight": "36px",
+    "fontWeight": "700"
+  },
+  "article": {
+    "pad": "80px 20px",
+    "maxW": "768px",
+    "w": 390
+  },
+  "headerH": 80
+}

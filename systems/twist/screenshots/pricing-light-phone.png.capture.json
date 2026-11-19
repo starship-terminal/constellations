@@ -1,0 +1,11 @@
+{
+  "source": "headless Playwright after the page had loaded in the T3 preview browser without a Cloudflare challenge",
+  "devicePixelRatio": 2,
+  "previewScreenshotError": "The browser is not producing screenshot frames",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "png": [
+    780,
+    1688
+  ]
+}

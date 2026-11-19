@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prose style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --cream: #f9f7f2;
+    --ink: #323429;
+    --heading: #4d523c;
+    --footer: #161716;
+    --muted: #6c6c6c;
+    --promo: #f69371;
+    --hairline: #eaeaea;
+    --card: #f1ece0;
+    --selected: #e2d9c2;
+    --disabled: #a6a6a6;
+    --serif: Times, "Times New Roman", serif;
+    --sans: "Helvetica Neue", Helvetica, sans-serif;
+    --mono: "Courier New", Courier, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/1.5 var(--sans); }
+  header { background: var(--ink); color: #fff; padding: 16px 24px; }
+  header p { margin: 4px 0 0; font: 400 12px/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+  h2 { font: 300 32px/1.1 var(--serif); letter-spacing: -0.03em; margin: 40px 0 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .swatch i { display: block; height: 64px; border: 1px solid var(--hairline); }
+  .swatch span { display: block; font: 400 12px/1.4 var(--mono); margin-top: 6px; }
+  .pill { display: inline-grid; place-items: center; height: 48px; padding: 15px 32px; border-radius: 60px; border: 1px solid var(--ink); background: var(--ink); color: #fff; font: 500 12px/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
+  .pill.inverse { background: #fff; color: var(--ink); border-color: #fff; }
+  .pill.promo { background: var(--promo); color: var(--ink); border-color: var(--promo); }
+  .pill.disabled { background: var(--disabled); border-color: var(--disabled); }
+  .card { width: 360px; border: 1px solid var(--card); border-radius: 10px; overflow: hidden; display: flex; }
+  .card .thumb { width: 101px; background: var(--cream); }
+  .card .copy { padding: 16px 24px; font-size: 14px; }
+  .field { border-bottom: 2px solid var(--ink); padding: 8px 16px; max-width: 400px; }
+  .field label { display: block; color: var(--muted); font-size: 16px; }
+  .banner { background: var(--ink); color: #fff; text-align: center; font-size: 12px; line-height: 18px; height: 40px; display: flex; align-items: center; justify-content: center; }
+  .footer { background: var(--footer); color: #fff; padding: 24px; font-size: 14px; }
+  .note { color: var(--muted); font-size: 14px; max-width: 68ch; }
+</style>
+</head>
+<body>
+<header>
+  <strong>Prose</strong>
+  <p>Light only. Values from tokens.json. Saol and Simplon are not loaded here.</p>
+</header>
+<main>
+  <p class="note">Public marketing capture, 2026-11-19. No dark theme exists in the stylesheet. Screenshots were not saved: the preview browser did not produce frames.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#323429"></i><span>primary-400 #323429</span></div>
+    <div class="swatch"><i style="background:#4d523c"></i><span>primary-300 #4d523c</span></div>
+    <div class="swatch"><i style="background:#dce0d2"></i><span>primary-100 #dce0d2</span></div>
+    <div class="swatch"><i style="background:#f9f7f2"></i><span>neutral-200 #f9f7f2</span></div>
+    <div class="swatch"><i style="background:#f1ece0"></i><span>neutral-300 #f1ece0</span></div>
+    <div class="swatch"><i style="background:#161716"></i><span>neutral-900 #161716</span></div>
+    <div class="swatch"><i style="background:#f69371"></i><span>accent-200 #f69371</span></div>
+    <div class="swatch"><i style="background:#ead7f3"></i><span>tertiary-200 #ead7f3</span></div>
+    <div class="swatch"><i style="background:#ecff92"></i><span>highlight-200 #ecff92</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font: 300 40px/1.1 var(--serif); letter-spacing: -0.03em; margin: 0">Custom haircare</p>
+  <p class="note">Heading 2 is Saol 300, 2.5rem, line-height 1.1, tracking -0.03em. This page substitutes Times.</p>
+  <p style="font: 400 12px/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase">Get your formula</p>
+  <h2>Buttons</h2>
+  <div class="row">
+    <span class="pill">Get your formula</span>
+    <span class="pill inverse">Get your formula</span>
+    <span class="pill promo">Get your formula</span>
+    <span class="pill disabled">Sign in</span>
+  </div>
+  <h2>Choice card</h2>
+  <div class="card"><div class="thumb"></div><div class="copy">Custom Haircare<br>14px Simplon Norm, radius 10px, border #f1ece0</div></div>
+  <h2>Field</h2>
+  <div class="field"><label>Email address</label></div>
+  <p class="note">Sign-in field: white fill, 2px #323429 underline from ::after, label #6c6c6c.</p>
+</main>
+<div class="banner">Black Friday Sale: 70% off + 4 free gifts</div>
+<div class="footer">Footer #161716, links 14px white.</div>
+</body>
+</html>

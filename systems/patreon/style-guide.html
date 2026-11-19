@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patreon style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff99;
+    --text: #1a1a1a;
+    --muted: #959595;
+    --accent: #000000;
+    --on-accent: #ffffff;
+    --border: #1a1a1a;
+    --hero: #94bbff;
+    --highlight: #0e87eb;
+    --primary: #5fc1f1;
+    --login-page: #020202;
+    --field: #78777640;
+    --sso-border: #dadce0;
+    --radius-pill: 30px;
+    --radius-control: 8px;
+    --radius-sso: 4px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/1.45 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-weight: 250; font-size: 48px; letter-spacing: -1.5px; margin: 0 0 8px; }
+  h2 { font-size: 20px; font-weight: 400; margin: 36px 0 12px; }
+  p { max-width: 68ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; }
+  .swatch { width: 140px; }
+  .swatch i { display: block; height: 64px; border-radius: 8px; border: 1px solid #0000001a; }
+  .swatch span { display: block; font-size: 12px; margin-top: 6px; }
+  .hero { background: var(--hero); color: #fff; border-radius: 12px; padding: 28px; }
+  .hero h3 { margin: 0 0 16px; font-weight: 250; font-size: 40px; letter-spacing: -1.5px; line-height: 0.95; }
+  a.btn, button.btn { display: inline-flex; align-items: center; height: 47px; padding: 0 21px; border-radius: var(--radius-pill); font-size: 13.5px; font-weight: 350; letter-spacing: -0.24px; text-decoration: none; border: 1px solid #fff; }
+  a.fill { background: #fff; color: #000; }
+  a.ghost { background: transparent; color: #fff; }
+  a.ink { background: #000; color: #fff; border-color: #000; }
+  .login { background: var(--login-page); color: #fff; border-radius: 12px; padding: 28px; max-width: 448px; }
+  .login h3 { font: 500 26px/33.8px "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: -0.52px; margin: 0 0 16px; }
+  .login button, .login .field { width: 100%; height: 40px; font-size: 14px; }
+  .login .sso { background: #fff; color: #000; border: 1px solid var(--sso-border); border-radius: var(--radius-sso); font-weight: 550; }
+  .login .field { margin-top: 12px; background: var(--field); border: 0; border-radius: var(--radius-control); color: #fff; padding: 0 12px; }
+  .login .go { margin-top: 12px; background: #fff; color: #000; border: 0; border-radius: var(--radius-control); font-weight: 550; }
+  code { font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Patreon</h1>
+  <p>Public signed-out styles measured on 19 November 2026. Oracle and ABC Oracle Plus Variable are not loaded here, so the specimens use Helvetica Neue. Values come from <a href="tokens.json">tokens.json</a>.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#ffffff"></i><span>Page #ffffff</span></div>
+    <div class="swatch"><i style="background:#1a1a1a"></i><span>Text #1a1a1a</span></div>
+    <div class="swatch"><i style="background:#959595"></i><span>Muted #959595</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>Accent #000000</span></div>
+    <div class="swatch"><i style="background:#94bbff"></i><span>Hero band #94bbff</span></div>
+    <div class="swatch"><i style="background:#5fc1f1"></i><span>Primary token #5fc1f1</span></div>
+    <div class="swatch"><i style="background:#0e87eb"></i><span>Highlight #0e87eb</span></div>
+    <div class="swatch"><i style="background:#020202"></i><span>Login page #020202</span></div>
+  </div>
+
+  <h2>Header buttons</h2>
+  <div class="hero">
+    <h3>Your wildest creative reality</h3>
+    <div class="row">
+      <a class="ghost btn" href="#">Log in</a>
+      <a class="fill btn" href="#">Get Started</a>
+      <a class="ink btn" href="#">Get started</a>
+    </div>
+  </div>
+  <p>The white pill is the header Get Started on a dark hero. The black pill is the in-page Get started on a light section. Both are 47px tall with a 30px radius at 1440.</p>
+
+  <h2>Login wall</h2>
+  <div class="login">
+    <h3>Log in or sign up</h3>
+    <button class="sso" type="button">Continue with Apple</button>
+    <div class="field" role="textbox" aria-label="Email">Email</div>
+    <button class="go" type="button">Continue</button>
+  </div>
+  <p>Measured on /login and not submitted. SSO radius is 4px. The email field and Continue use 8px.</p>
+</main>
+</body>
+</html>

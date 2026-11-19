@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Workflow style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --text: #1a1a1a;
+    --muted: #f6f6f6;
+    --ink: #1a1a1a;
+    --on-ink: #f6f6f6;
+    --radius: 8px;
+    --display: Crimson Pro, Times New Roman, sans-serif;
+    --body: Inter, Arial, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 14px/21px var(--body); }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font: 300 32px/32px var(--display); margin: 0 0 8px; }
+  h2 { font: 300 32px/32px var(--display); margin: 40px 0 12px; }
+  p { max-width: 62ch; }
+  .swatches, .radii, .spaces { display: grid; gap: 12px; }
+  .swatches { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .sw { display: flex; gap: 12px; align-items: center; }
+  .sw i { width: 48px; height: 48px; border-radius: 8px; border: 1px solid rgba(26,26,26,.12); display: block; }
+  .sw b, .sw code, .sw span { display: block; }
+  code { font: 12px/16px ui-monospace, monospace; }
+  .radii { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  .cell i { display: block; width: 64px; height: 40px; background: var(--muted); border: 1px solid rgba(26,26,26,.2); }
+  .spaces { grid-template-columns: 1fr; }
+  .space { display: flex; align-items: center; gap: 12px; }
+  .space i { height: 12px; background: var(--ink); display: block; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; height: 40px; padding: 8px 16px; border-radius: var(--radius); text-decoration: none; }
+  .quiet { background: #f6f6f6; color: #1a1a1a; }
+  .dark { background: #1a1a1a; color: #f6f6f6; }
+  .chip { border: 1px solid rgba(26,26,26,.12); border-radius: 9999px; padding: 8px 16px; height: 32px; display: inline-flex; align-items: center; }
+  .approve { background: #e9f6ee; color: #547e69; border-radius: 5px; padding: 6px 10px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Workflow</h1>
+  <p>Light specimens from the public marketing site, measured 2026-11-19. Crimson Pro and Inter are not loaded here.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><div><b>Page</b><code>light.background.page</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#f6f4f0"></i><div><b>Canvas</b><code>light.background.canvas</code><span>#f6f4f0</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>Surface</b><code>light.background.surface</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#f6f6f6"></i><div><b>Muted surface</b><code>light.background.muted</code><span>#f6f6f6</span></div></div>
+<div class="sw"><i style="background:#1a1a1a"></i><div><b>Text</b><code>light.text.primary</code><span>#1a1a1a</span></div></div>
+<div class="sw"><i style="background:#1a1a1aa6"></i><div><b>Muted text</b><code>light.text.secondary</code><span>#1a1a1aa6</span></div></div>
+<div class="sw"><i style="background:#f6f6f6"></i><div><b>Text on ink</b><code>light.text.on-invert</code><span>#f6f6f6</span></div></div>
+<div class="sw"><i style="background:#1a1a1a1f"></i><div><b>Border</b><code>light.border.default</code><span>#1a1a1a1f</span></div></div>
+<div class="sw"><i style="background:#1a1a1a"></i><div><b>Focus</b><code>light.border.focus</code><span>#1a1a1a</span></div></div>
+<div class="sw"><i style="background:#f6f6f6"></i><div><b>Quiet button</b><code>light.button.secondary</code><span>#f6f6f6</span></div></div>
+<div class="sw"><i style="background:#1a1a1a"></i><div><b>Ink button</b><code>light.button.dark</code><span>#1a1a1a</span></div></div>
+<div class="sw"><i style="background:#e9f6ee"></i><div><b>Approve</b><code>light.status.approve</code><span>#e9f6ee</span></div></div>
+<div class="sw"><i style="background:#60886f"></i><div><b>Switch on</b><code>light.status.switch-on</code><span>#60886f</span></div></div>
+<div class="sw"><i style="background:#923d56"></i><div><b>Error text</b><code>light.text.error</code><span>#923d56</span></div></div>
+<div class="sw"><i style="background:#547e69"></i><div><b>Success text</b><code>light.text.success</code><span>#547e69</span></div></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font: 300 32px/32px var(--display)">Design feedback and revisions, all in one place</p>
+  <p>Body is 14px Inter with a 21px line. The features page heading computed at 60.992px.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn quiet">Try now</a>
+    <a class="btn dark">Get started for free</a>
+    <span class="chip">Collecting feedback</span>
+    <span class="approve">Approve</span>
+  </div>
+  <h2>Radius</h2>
+  <div class="radii">
+    <div class="cell"><i style="border-radius:4px"></i><span>small 4px</span></div><div class="cell"><i style="border-radius:8px"></i><span>medium 8px</span></div><div class="cell"><i style="border-radius:12px"></i><span>large 12px</span></div><div class="cell"><i style="border-radius:9999px"></i><span>full 9999px</span></div><div class="cell"><i style="border-radius:5px"></i><span>approve 5px</span></div><div class="cell"><i style="border-radius:24px"></i><span>switch 24px</span></div>
+  </div>
+  <h2>Space</h2>
+  <div class="spaces">
+    <div class="space"><i style="width:4px"></i><span>3xs 4px</span></div><div class="space"><i style="width:8px"></i><span>2xs 8px</span></div><div class="space"><i style="width:12px"></i><span>xs 12px</span></div><div class="space"><i style="width:16px"></i><span>sm 16px</span></div><div class="space"><i style="width:24px"></i><span>md 24px</span></div><div class="space"><i style="width:32px"></i><span>lg 32px</span></div><div class="space"><i style="width:40px"></i><span>xl 40px</span></div><div class="space"><i style="width:48px"></i><span>2xl 48px</span></div><div class="space"><i style="width:72px"></i><span>3xl 72px</span></div><div class="space"><i style="width:80px"></i><span>4xl 80px</span></div><div class="space"><i style="width:112px"></i><span>5xl 112px</span></div><div class="space"><i style="width:144px"></i><span>6xl 144px</span></div>
+  </div>
+</main>
+</body>
+</html>

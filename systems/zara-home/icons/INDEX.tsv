@@ -1,0 +1,2 @@
+file	role
+logo.svg	Wordmark used in the header (img.logo-img, 150 by 26px). Fetched from static.zarahome.net. Fill is the path's own black; the homepage tints the img via CSS.

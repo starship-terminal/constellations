@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-18T17:52:37.475Z",
+  "name": "home-light-mobile",
+  "url": "https://www.polaroid.com/en_sg",
+  "title": "Polaroid EU | Official Online Store",
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "vv": {
+    "width": 390,
+    "height": 844,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "png": {
+    "w": 780,
+    "h": 1688
+  },
+  "note": "viewport screenshot, headless Chromium, public page, no Cloudflare challenge"
+}

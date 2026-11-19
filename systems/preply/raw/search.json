@@ -1,0 +1,17 @@
+{
+  "wrap": {
+    "cls": "styles_PickerRoot__JDjRX styles_PreSearchAutocompleteWrapperNoBorder__vXBle styles_InlineWrapper__Ng",
+    "bg": "rgb(255, 255, 255)",
+    "radius": "8px",
+    "border": "2px rgb(220, 220, 229)",
+    "h": 48,
+    "pad": "0px 16px",
+    "shadow": "none"
+  },
+  "input": {
+    "size": "16px",
+    "color": "rgb(18, 17, 23)",
+    "ph": "English",
+    "font": "Figtree"
+  }
+}

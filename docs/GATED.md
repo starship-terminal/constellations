@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_165 of 238 packages name gated surfaces in their gaps; 63 more mark a gate in their access text; 10 report none._
+_273 of 460 packages name gated surfaces in their gaps; 166 more mark a gate in their access text; 21 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -988,6 +988,599 @@ Access: signed out (public marketing page plus the /auth sign-in and sign-up vie
 - the product app sits behind sign-in and was not entered
 - sign-up asks for a full name as well as email, so nothing was typed and nothing was submitted
 
+## [Wrike](../systems/wrike) — `wrike`
+Access: signed out. Public marketing pages and the login email step were measured. Nothing was typed or submitted. Next, Google, Apple, Office, OTP, company SSO, demo, and Contact us were not entered.
+- password step, OTP, Google, Apple, Office, and company SSO were not entered
+- trial submit, demo request, and Contact us were not followed
+
+## [Coolors](../systems/coolors) — `coolors`
+Access: signed in (kaichen@agentmail.to, created in the attached T3 preview browser and confirmed with the emailed color code). Pro checkout was not opened.
+- Pro checkout was not opened and was not submitted
+- saved palettes and account settings were not walked
+
+## [Copperx](../systems/copperx) — `copperx`
+Access: read-only (the marketing site is public; dashboard.copperx.io and payout.copperx.io are authenticated hosts named by the Log in dialog and never opened; no account, payment, KYC or wallet flow was entered)
+- dashboard.copperx.io is the payment-gateway account host named by the Log in dialog; it was not opened
+- payout.copperx.io is the financial-account host named by the same dialog; wallets, cards, payouts and KYC were not entered
+- no account was created and no field was filled
+- Contact Sales links to a Google Form and was not submitted
+- the site publishes one light theme; no dark theme was captured
+
+## [Hello Klean](../systems/helloklean) — `helloklean`
+Access: signed out for every screenshot. A Shopify customer account was created by email code and the empty Orders and Profile pages were opened in the owner's browser; those screens were not saved because the preview host stopped producing frames. Checkout, payment, a filled cart and the Skio portal were not entered. Consent overlays were hidden, never clicked.
+- account.helloklean.com Orders and Profile were opened after email-code signup and not saved: the preview host stopped producing screenshot frames. Orders was empty. Profile showed the capture inbox, no address and no payment method
+- checkout, payment, a filled cart and address entry were not entered
+- the Skio subscription portal at /a/account/login refused the inbox until an order exists
+
+## [Hims](../systems/hims) — `hims`
+Access: signed out on the marketing routes; one account created at /customer/login (email and password only) so the care portal shell could be captured. Phone, birthday, payment edit, consultation and clinician chat were not entered. Ketch consent was hidden, never clicked
+- https://www.forhims.co.uk/customer/profile: Payment Methods Edit was not opened. No card was added.
+- No government ID was requested on the account step. The next medical step was left closed.
+
+## [IKEA](../systems/ikea) — `ikea`
+Access: signed out (every captured surface is public on www.ikea.com/sg/en; the global country picker at www.ikea.com was captured as the page ikea.com actually serves; login, signup, the bag, checkout and payment were not entered; Add to cart, Log in and the OneTrust banner were measured or hidden, never activated)
+- https://www.ikea.com/sg/en/profile/login/ — the account after Log in, and signup, were not entered. The email field was measured and not submitted.
+- https://www.ikea.com/sg/en/cart/ — the bag and checkout were not opened. Add to cart was measured and never pressed. No card was entered.
+- https://www.ikea.com/sg/en/favourites/ — the shopping list requires an account and was not opened.
+
+## [Instacart](../systems/instacart) — `instacart`
+Access: signed out for every committed screenshot. An email account was created in the attached preview browser and the storefront loaded with ZIP 94105; those frames could not be saved, so the package ships the public capture. No card, street address, or phone number was submitted.
+- checkout, payment, order placement and a saved street address were not used
+- phone OTP is an alternate login path and was not taken
+
+## [Instagram](../systems/instagram) — `instagram`
+Access: signed out (login wall, desktop email signup, password reset, about.instagram.com, help.instagram.com, the locations directory, the privacy center, and the public @instagram profile behind its signup dialog; no field was filled, Submit and Continue were never pressed, Facebook login was never followed, and the phone signup path stops at a mobile-number demand)
+- logged-in app (feed, stories, reels, DMs, settings) sits behind sign-in and was never entered
+- desktop signup was photographed at rest; Submit was never pressed, so validation, the confirmation code and onboarding were not reached
+- Facebook login was not followed
+- pressed, loading and error states were not provoked because a press submits
+
+## [LinkedIn](../systems/linkedin) — `linkedin`
+Access: signed out (guest home, public jobs search, company page, a published profile, and the user agreement load without a session; the feed, messaging, and Easy Apply sit behind sign-in and were never reached; Sign in, Join now, Apply, Follow, and Message were measured, never followed; the login form was not submitted)
+- the feed, messaging, and Easy Apply sit behind sign-in and were never reached; Sign in, Join now, Apply, Follow, and Message were measured, never followed
+- the /login form was captured at rest and was not submitted
+- Premium redirected to the sign-in wall; the people directory returned an auth wall (HTTP 999)
+
+## [Linktree](../systems/linktree) — `linktree`
+Access: signed out (marketing pages and the official public profile load without an account; the login wall was measured and not submitted)
+- the product behind sign-in: the editor, dashboard, analytics and billing were never reached; the login wall was measured and not submitted
+- no form was submitted and no checkout was followed; the claim field was filled with a throwaway string and cleared, and plan Select buttons were measured but never pressed
+- share and OAuth buttons on the public profile and the login wall were measured, never activated
+
+## [Literal.club](../systems/literal) — `literal`
+Access: signed out (every captured surface is public; sign-in, register, Want to read, Follow, Like, Comment, import, and supporter checkout were measured or seen and not activated; email and password were not typed)
+- https://literal.club/signin: the account after Sign in was not submitted. Sign in with Apple is OAuth and was not activated. Email and password were not typed. Forgot password was not followed.
+- https://literal.club/register: account creation was not submitted.
+- https://literal.club/book/the-midnight-library-mrpx0: Want to read, Like, and Comment need an account and were not activated.
+- https://literal.club/kikimeower: Follow needs an account and was not activated.
+- https://literal.club/import/goodreads: Start importing was not submitted. Import needs an account.
+- https://literal.club/supporter: checkout and payment were not followed.
+- Search results were not loaded because the search form was not submitted.
+- The library, writing a review, clubs, goals, messages, and the signed-in dashboard were not opened.
+
+## [Loom](../systems/loom) — `loom`
+Access: signed-out public marketing, pricing, legal, the /login wall, and one public share page. SSO, signup Continue, Contact Sales, checkout, and recording were not pressed. No CAPTCHA.
+- https://www.loom.com/login is a sign-in wall: SSO and Continue were not pressed, so the library, recorder, and account were not entered
+- https://www.loom.com/signup redirects to id.atlassian.com and the form was not submitted
+- pricing Try for free, Sign up, and Contact Sales lead to signup or a sales form and were not followed; no checkout was opened
+- the library, recording, and workspace settings sit behind sign-in. Phone home and menu shots show a Chrome Google sign-in sheet; Continue on that sheet was not pressed
+- the OneTrust cookie banner was hidden and never clicked, so no consent choice was submitted
+
+## [LottieFiles](../systems/lottiefiles) — `lottiefiles`
+Access: signed out (the editor, the dashboard and checkout sit behind sign-in and were never opened)
+- sign-in, Sign up, Log in and the Google one-tap sheet were seen and not used; the editor and the dashboard were not opened
+- checkout and plan upgrade links on pricing go to app.lottiefiles.com and were not followed
+- search was focused and not submitted
+
+## [Lovable](../systems/lovable) — `lovable`
+Access: signed out (every captured surface is public; the builder was never signed into and no form was submitted)
+- the builder behind sign-in was never signed into; Log in, Get started and the docs signup link were measured, never followed
+- no form was submitted: the prompt composer, the log-in email field and the enterprise demo form were not submitted, and Continue and the OAuth buttons were never pressed
+- checkout was not reached; plan CTAs were measured, never followed, and the credit combobox list was not opened
+
+## [Lulu and Georgia](../systems/luluandgeorgia) — `luluandgeorgia`
+Access: signed out (every captured surface is public; account, checkout, add to cart, wishlist, and the Shop sign-in Continue were not entered; the search field and the login email were typed into and cleared)
+- https://www.luluandgeorgia.com/account/login redirects to a Shop sign-in on shopify.com. Continue with shop was not clicked. The email field was typed into and cleared. Account creation was not started.
+- Add to cart on the product page was measured in hover, focus, and pressed and was not clicked. Checkout was not opened.
+- Wishlist, registry, and trade login sit behind an account and were not activated.
+- The filter drawer's Apply was not pressed, so no filtered results were submitted.
+- The Klaviyo newsletter form was not submitted.
+
+## [Luma](../systems/luma) — `luma`
+Access: signed out (marketing pages, Discover, one public event page and the sign-in card are public; the host dashboard, event editor, guest list, check-in, blasts and billing sit behind sign-in and were never reached; registration, ticket purchase and access-code entry were not submitted)
+- the host dashboard, event editor, guest list, check-in, blasts and billing sit behind sign-in and were never reached
+- /home redirects to sign-in signed out
+- /signin was captured as a card and never submitted
+- Create Your First Event links to /create, which opens a sign-in dialog, and was never followed
+- registration, ticket purchase and access-code entry were not submitted
+- Follow and Create Event require sign-in and were never pressed
+- Get Luma Plus links to /calendar/manage/plus, which is checkout and was never opened
+
+## [Luma AI](../systems/lumalabs) — `lumalabs`
+Access: read-only (home, pricing, about, API, enterprise, Ray, news, MCP, careers, docs and the other public marketing pages are signed out; the app at app.lumalabs.ai redirects to a sign-up host and was not entered; Sign In, Try for free, Start Now, Use the API and the enterprise Submit were measured, never followed; the home prompt was filled and cleared; consent overlays were hidden, never answered)
+- https://app.lumalabs.ai redirects to a WorkOS sign-up host. Sign In and Try for free were measured and never followed. Generation, account, billing and API keys sit behind sign-in and were not opened.
+- https://lumalabs.ai/pricing Start Now was measured and never followed. Following it is a sign-in and a checkout.
+- https://lumalabs.ai/enterprise Submit was hovered and never clicked, so the sales form was not submitted.
+- The home prompt was filled and cleared. Submit prompt was measured and never clicked, so no generation was started.
+
+## [Mailchimp](../systems/mailchimp) — `mailchimp`
+Access: signed out (the account and campaign builder behind login.mailchimp.com were never reached)
+- the signed-in account and campaign builder (audiences, the email designer, automations, reports, billing) need sign-in and were never reached
+- signup at https://login.mailchimp.com/signup/ was not started and was not submitted
+- the log-in form at https://login.mailchimp.com/ was measured; the username field was typed into and cleared; Log in was never clicked; sign-in was not started
+- password reset (Forgot username, Forgot password) is linked from the log-in card and was not followed
+- checkout and trial links on https://mailchimp.com/pricing/marketing/ point at /signup/ with a plan query and were measured, never followed; checkout was not started
+- Request a demo and Chat with Sales are linked from pricing and were not submitted
+- admin.mailchimp.com redirects to the log-in card; the account was never reached
+- disabled, error, loading and validation states were not seen because no form was submitted
+- the product publishes no dark theme on the public pages; a Tailwind .dark class exists in the sheets and was not painted; the dark token set is empty on purpose
+- C5, V1 and V2 are not published by the product
+
+## [Make](../systems/make) — `make`
+Access: signed-out public marketing, pricing, templates, integrations, and the make.com/login sign-in wall. Scenarios and the editor sit behind sign-in and were not entered. No form was submitted. No CAPTCHA was passed. No purchase was made.
+- make.com/login is a sign-in wall; email and password were focused and not submitted, and scenarios, the editor, Make Grid and account settings were not entered
+- Continue with Google and Continue with SSO at https://www.make.com/login start OAuth and were not pressed
+- make.com/register shows a CAPTCHA and was not submitted
+- Get started on pricing links to register and was not followed into an account
+- Talk to sales and Enterprise checkout were not submitted
+- Opening a template into the scenario editor requires sign-in and was not done
+
+## [Mangomint](../systems/mangomint) — `mangomint`
+Access: signed out (every captured surface is public); the salon admin behind sign-in (calendar, clients, payments, checkout) was never reached; the login, forgot-password, demo and trial forms were measured and typed into then cleared, never submitted; the public booking page loaded signed out with an empty service list and Rebook was not pressed; no slot confirmed, no appointment booked
+- the salon admin behind sign-in (calendar, clients, payments, checkout) was never reached; Log In was not submitted
+- the login, forgot-password, demo and trial forms were measured and typed into then cleared, never submitted, so validation, error, loading and success states are absent
+- the public booking page loaded signed out with an empty service list; Rebook was not pressed, so no slot and no checkout were reached
+- no dark theme is painted signed out; the navy login wall is a surface, not a theme toggle
+
+## [Mapbox](../systems/mapbox) — `mapbox`
+Access: signed out (marketing, pricing, contact, and public docs). The account console and token creation sit behind sign-in and were never opened. The contact form was not submitted. The OneTrust banner was hidden, never answered.
+- the account console, token creation, and Studio sit behind sign-in on account.mapbox.com and were never opened; no token was created
+- the contact form was focused and its request-type list was opened, not submitted; checkout was never reached
+
+## [Marathon](../systems/marathon) — `marathon`
+Access: signed-out public archive. /sign-in and /register redirect home and were not submitted. Get Started was not used as checkout. No purchase.
+- /sign-in redirects to /; the sign-in form was not submitted and no fields painted
+- /register redirects to /; registration was not submitted
+- Get Started links to /register and was not used as checkout; no purchase, no payment, no billing portal
+- Book A Demo embeds SavvyCal and was not submitted
+- app.onmarathon.com account, dashboard and workspace are behind sign-in; the agencies page shows a public demo board only
+
+## [MasterClass](../systems/masterclass) — `masterclass`
+Access: signed out (every captured surface is public); the member library, lesson player and payment sit behind sign-in or checkout and were never reached; the sign-in form and the find-my-classes quiz were measured empty and not submitted; no trial was started and no plan was bought; the OneTrust consent layer was hidden, never clicked
+- the signed-in library, lesson player and account sit behind sign-in and were never reached
+- checkout payment and account steps were not opened; the membership picker was viewed only and no plan was purchased
+- the sign-in form at /auth/login was measured empty and not submitted
+- the find-my-classes quiz was not submitted
+
+## [Medium](../systems/medium) — `medium`
+Access: signed out (home, membership, about, blog, one public staff story, plans, the sign-in card and the email step at rest, and the help center are public; Continue, Select, OAuth, Create one and checkout were not pressed; the signed-in home, editor and settings were not entered)
+- signed-in home, editor, settings and checkout were not entered
+- Continue, Select, OAuth and Create one were not pressed
+
+## [Melius](../systems/melius) — `melius`
+Access: signed out (marketing routes, docs.melius.com, and the app.melius.com login and signup cards; nothing submitted; Google, billing and the newsletter were not followed)
+- app.melius.com past the login and signup cards was not entered
+- Google OAuth was not followed
+- the login and signup forms were not submitted; the password field was never filled
+- the newsletter and contact forms were not submitted
+
+## [Mercury](../systems/mercury) — `mercury`
+Access: signed out (marketing pages, the login boundary at app.mercury.com/login, and the public demo at demo.mercury.com/dashboard; no signup, KYC, payment, or account)
+- Sign-in at https://app.mercury.com/login was photographed at rest and with the email field focused. Nothing was typed. Log in, Continue with passkey, Forgot password and Open Account were not followed.
+- Signup at https://app.mercury.com/signup, KYC, payments, cards and treasury were not opened.
+- The public demo at https://demo.mercury.com/dashboard was photographed. Open account, Move money and the task list were not followed. It is a published demo, not an account.
+- The blog search was focused and not submitted.
+
+## [Meta AI](../systems/meta-ai) — `meta-ai`
+Access: signed out. The product page at www.meta.ai was read in the T3 preview browser. Log in opened auth.meta.com. The email field was focused and left empty. Continue was not pressed. No message was sent.
+- Auth stopped before submit. The flow offers a mobile number, which was not used.
+- The product page had no light theme toggle. Light tokens are the auth card only.
+
+## [Missive](../systems/missive) — `missive`
+Access: signed-out public marketing and the mail login, signup and SSO screens. No form submitted. No demo booked. No purchase.
+- the signed-in inbox was not entered; login, signup and SSO were not submitted
+- password reset is not a public route: #forgot, #forgot-password and #reset redirect to login; /forgot is a 404
+- Google and Apple sign-in were not clicked
+- checkout, card, phone and government ID were not asked for on these routes and were not entered
+
+## [Mocha](../systems/mocha) — `mocha`
+Access: signed out. Public docs at docs.getmocha.com. Product hosts on mocha.app return 410. getmocha.com does not resolve. No signup, no login, no payment.
+- app, login, auth, dashboard, studio, and build on mocha.app return the same 410 page
+- signup is closed; no account was created
+- no form was submitted and the search dialog was left empty
+
+## [Modyfi](../systems/modyfi) — `modyfi`
+Access: signed out. Live modyfi.com and www.modyfi.com return a Webflow 404. app.modyfi.com does not resolve. Values are from Wayback snapshots of the public pages. Login and signup were not followed.
+- the signed-in editor at app.modyfi.com was never opened. Login and Sign up were measured on the marketing nav and not followed
+- no payment, phone, or government ID step was reached
+
+## [MoMA](../systems/moma) — `moma`
+Access: signed out (every captured surface is public; Tickets, Donate, Join or renew, and Continue were not pressed; the login email was focused and not submitted)
+- https://visit.moma.org/select Tickets was not followed. No purchase.
+- https://membership.moma.org/ Join or renew and Gift it were measured and not pressed.
+- https://www.moma.org/auth/login the email field was focused. Continue was not pressed. A second launch of this URL returned a Cloudflare challenge and that launch stopped.
+- Search was opened and not submitted.
+- /members/ is a 404. Membership marketing is membership.moma.org.
+
+## [Monarch Money](../systems/monarch-money) — `monarch-money`
+Access: signed-out public marketing on www.monarch.com, plus the app.monarch.com/login and /signup walls photographed and not submitted. No account created. No bank linked. No card, phone or government ID entered.
+- app.monarch.com/login and /signup were photographed and not submitted; no account, bank link, card, phone or government ID
+- Continue with Apple and Continue with Google start OAuth and were not pressed
+- the signed-in app (accounts, transactions, budgets, goals, reports, advice, settings) was not entered
+- the app stylesheet at static.monarch.com was not resolved on the painted sign-in page (cross-origin CSSOM)
+
+## [monday.com](../systems/monday) — `monday`
+Access: signed out (public marketing pages and auth.monday.com login and signup; no account created; forms measured and cleared, never submitted; Google and Microsoft were not followed; the contact form asks for a phone number, so that flow stopped)
+- the signed-in workspace (boards, items, automations, dashboards, settings) sits behind login and was never reached
+- login and signup at 390px show a desktop-or-app gate, not the form
+- nothing was submitted, so validation, error, loading and success states are absent
+- Google and Microsoft sign-in were not followed
+
+## [MSCHF](../systems/mschf) — `mschf`
+Access: signed out (the host has no account; the index and the Nuxt 404 are public)
+- there is no account, no light theme, and no form on this host
+- section.subscription is declared and not mounted
+
+## [Mural](../systems/mural) — `mural`
+Access: public marketing pages and the signed-out login and signup. No account created. No form submitted.
+- the signed-in workspace was not entered
+- signup and login were not submitted
+- phone auth screenshots failed the viewport dimension check and are full-page 780x1688
+
+## [MWM](../systems/mwm) — `mwm`
+Access: signed out (marketing pages are public; console and create were captured at their sign-in screens and not submitted)
+- signed-in console and create were not reached; provider buttons and Sign In were not activated
+
+## [MyMind](../systems/mymind) — `mymind`
+Access: signed out. Public marketing pages and the access.mymind.com sign-in panel. Google and Apple buttons were not pressed. No email field was present.
+- Sign-in is Google and Apple only. The email-only signup the capture rule allows was not on the page, so AgentMail was not used.
+- Checkout and plan purchase on /pricing were not opened.
+
+## [Navia](../systems/navia) — `navia`
+Access: signed out (home, blog, one article, contact, privacy, and the app.thenavia.com gate are public; contact was not filled; Sign In, Sign Up, Book a demo and checkout were not pressed)
+- signed-in app was not entered; Sign In and Sign Up were not pressed
+- contact form asks for a phone number and was not filled or submitted
+
+## [New Balance](../systems/new-balance) — `new-balance`
+Access: signed out (home, men's listing, one product page, customer care, login form)
+- Add to Bag, login, checkout and account creation were not submitted
+
+## [Nextdoor](../systems/nextdoor) — `nextdoor`
+Access: signed out; public marketing and the login card only; address verification not entered
+- signup and login: forms not submitted
+
+## [Nike](../systems/nike) — `nike`
+Access: signed out (every captured surface is public); nike.com redirects to the Singapore storefront
+- accounts.nike.com returned Access Denied; sign-in form not measured
+- bag, checkout, and member account not entered
+- help field border visible but computed width 0
+
+## [Onefinestay](../systems/onefinestay) — `onefinestay`
+Access: signed out (public marketing only; enquire was measured empty and not submitted; no booking, card, or account)
+- enquire asks for a phone number and was not filled or submitted
+- no booking, availability check, account, or payment
+
+## [OneSoil](../systems/onesoil) — `onesoil`
+Access: signed out (public marketing and help center; contact form not submitted; app shell empty)
+- contact form asks for a phone number and was not submitted; no validation, error, or success state
+- app.onesoil.ai returned an empty page; no login form was measured and no account was created
+
+## [Open](../systems/open) — `open`
+Access: signed out. Public pages on o-p-e-n.com. Sign-in was opened through the email step and not submitted. No Apple, phone, card, or booking.
+- email was not submitted; Apple and phone sign-in were not entered
+- no card, credit pack, or booking
+
+## [Orchids](../systems/orchids) — `orchids`
+Access: signed out. Public docs at docs.orchids.app. orchids.app and www.orchids.app return a paused Vercel deployment. No signup, no login, no payment.
+- orchids.app and www.orchids.app are a paused Vercel deployment, including login, signup, pricing, blog, and careers
+- no email was entered and no account was created
+- no payment, card, phone, or government ID was requested or given
+
+## [Overflow](../systems/overflow) — `overflow`
+Access: signed out (public marketing pages and the signed-out shell at /n/signin and /n/signup; forms were not submitted; Google, SSO, download, subscribe and payment were not entered)
+- sign-in and sign-up forms were not submitted; Google and SSO were not clicked
+- payment, desktop download and newsletter subscribe were not entered
+
+## [Pastel](../systems/pastel) — `pastel`
+Access: signed out (marketing home, plans and features are public; login and signup were measured and not submitted because both ask for a password; SSO, Google, forgot-password and checkout were not entered)
+- signed-in dashboard at https://usepastel.com/home was not reached
+- login and signup both require a password, so neither form was submitted
+- SSO at /sso, Google sign-in, and forgot-password were not entered
+- pricing checkout and Contact us were not entered
+
+## [Patreon](../systems/patreon) — `patreon`
+Access: signed out (public marketing and the login wall only; no account, no email, no pledge, no card)
+- signup wall measured and not submitted
+
+## [Peak Performance](../systems/peak-performance) — `peak-performance`
+Access: signed out (home and the women's jackets collection are public; bag, checkout and account were not entered)
+- product page, bag, checkout and account were not entered
+
+## [Pedestal](../systems/pedestal) — `pedestal`
+Access: signed out on www.pedestal.com; one email-only Shopify Customer Account sign-in, orders empty, no checkout
+- checkout, payment, phone, and the contact form were not submitted
+- Shopify Customer Account uses a different theme and is not tokenised
+
+## [Perplexity](../systems/perplexity) — `perplexity`
+Access: signed out. Product home, hub, pricing, enterprise, terms, and a 404 were read. Sign In was opened. Continue with email, Google, Apple, and SSO were not submitted. No card, phone, or Pro checkout.
+- Sign-in was opened and not submitted. The form also offers Google, Apple, and SSO, so the email field was not used.
+- Pro checkout, phone, and card were not entered.
+
+## [Pi](../systems/pi) — `pi`
+Access: signed out. The greeting chat and the login page were measured. No account was created. OAuth and phone were not entered.
+- login offers Google, Apple, Facebook, email and phone. None was entered. Phone and payment were out of scope
+
+## [Pinterest](../systems/pinterest) — `pinterest`
+Access: signed out (public marketing and signup wall only; account was not created)
+- signup wall observed and not submitted: no account, no login, no Google continue, no birthday entered
+- signed-in boards, pins, and account settings not entered
+
+## [Pitch](../systems/pitch) — `pitch`
+Access: signed out (public marketing pages plus the auth.pitch.com login form; the email field was focused, nothing was typed, nothing was submitted, and Google, Apple and SSO were not followed)
+- the product app sits behind auth.pitch.com and was not entered
+- Google, Apple and SSO were not followed
+- no email was typed and nothing was submitted, so no error, loading or signed-in state was shown
+
+## [Play](../systems/play) — `play`
+Access: signed out (public archive replays only; the live host did not resolve and no account was created)
+- signed-out login iframe did not paint
+
+## [Playbook](../systems/playbook) — `playbook`
+Access: signed out (public marketing pages plus the /sign-in form; the email field was already focused, nothing was typed, nothing was submitted, and Google and Apple were not followed)
+- the product app sits behind sign-in and was not entered
+- no email was typed and nothing was submitted, so no error, loading or signed-in state was shown
+
+## [Polar](../systems/polar) — `polar`
+Access: signed out. Public marketing and the auth wall only. https://polar.sh/signup redirects to https://polar.sh/auth. The form was not submitted. Google, Apple and GitHub were not followed. No card, bank or KYC step was entered.
+- signup wall at https://polar.sh/auth was opened and not submitted
+- Google, Apple and GitHub OAuth were not followed
+- signed-in dashboard was not opened
+
+## [Pop Site](../systems/pop-site) — `pop-site`
+Access: signed out. Public marketing at pop.site plus the signed-out sign-in and sign-up screens at app.pop.site. No form was submitted. Google SSO was not entered. No payment.
+- signed-in app was not entered; sign-in asks for a password or Google
+- sign-up was not submitted; it asks for email and a password
+
+## [Portrait](../systems/portrait) — `portrait`
+Access: public marketing plus email-only signup. Wallet, card, and payment were not entered.
+- wallet connect and payment not entered
+
+## [Preply](../systems/preply) — `preply`
+Access: signed out (public marketing and login chrome; form not submitted)
+- signup not entered: not email-only (student/tutor plus Google, Facebook, Apple, corporate SSO)
+- login form not submitted
+- no phone, booking, or card
+- second headless login load hit Cloudflare; field focus not re-measured
+
+## [Product Hunt](../systems/product-hunt) — `product-hunt`
+Access: signed out (public pages only; OAuth login was not entered; the newsletter email form was submitted and the confirmation link did not complete; votes and follows were not clicked)
+- https://www.producthunt.com/login is OAuth only (LinkedIn, GitHub, X, Google, Facebook, Apple). None were entered. No email field.
+
+## [Pryzm](../systems/pryzm) — `pryzm`
+Access: signed out (public marketing, gallery, lab shell, docs and the sign-in form; account was not created)
+- account creation was not submitted
+- Google sign-in was not clicked
+- checkout was not opened
+
+## [Raus](../systems/raus) — `raus`
+Access: signed out (public marketing only; search was not submitted; no booking, card, phone, or account)
+- no booking, date selection, account, card, phone, or newsletter signup
+
+## [Relume](../systems/relume) — `relume`
+Access: signed out (public marketing and the login page; no email, password, Google, or SSO was entered)
+- login form requires a password and offers Google and SSO, so it was not submitted
+
+## [Replo](../systems/replo) — `replo`
+Access: signed out. Public marketing pages and the signed-out login form. Nothing typed, nothing submitted.
+- login form not submitted and not screenshotted
+- payment not entered
+
+## [Resend](../systems/resend) — `resend`
+Access: Public marketing and signed-out login and signup. Signup was filled with an email and a password, then cleared, and not submitted. Google and GitHub were not followed. No API key was created. No card was entered.
+- signed-in dashboard was not opened
+- Google and GitHub on login and signup were not followed
+- signup was filled and cleared and not submitted
+
+## [Revolut](../systems/revolut) — `revolut`
+Access: signed out. Public marketing pages and the SSO sign-in wall only. The phone field was not filled. No account was created. No card, email, passkey, Google, or Apple flow was started.
+- Signup, Create account, phone, email, passkey, Google and Apple were not entered. The SSO wall is the boundary.
+
+## [Ripple](../systems/ripple) — `ripple`
+Access: signed out (wallet, account, KYC and the sales form were not entered)
+- Wallet connect, sign-in, account creation and KYC were not entered.
+- https://ripple.com/contact/sales/ embeds a form from go.ripple.com. It was not filled and not submitted.
+- Search was typed into (payments) and not submitted.
+
+## [Rivian](../systems/rivian) — `rivian`
+Access: signed out (every captured surface is public); the vehicle builder, reserve, demo-drive booking, trade-in, and account were not entered
+- vehicle builder, reserve, demo-drive booking, trade-in, and checkout not entered
+- sign-in form measured and not submitted; reCAPTCHA present; no account created
+
+## [Rork](../systems/rork) — `rork`
+Access: signed out (public pages and the sign-in dialog; email was not submitted and OAuth was not entered)
+- T3 preview browser tools were not registered, so readings are from headless Chrome on public pages
+
+## [ROVR](../systems/rovr) — `rovr`
+Access: signed out (public home, moods, schedule, about, privacy, and the /login gate; Google and Apple buttons were not pressed; no email field was on the page)
+- /login is Google and Apple only; those buttons were not pressed and /sign-up was not opened
+
+## [SAVEE](../systems/savee) — `savee`
+Access: Public marketing and signed-out login. The email field was filled, then cleared, and not submitted. Google and Apple were not followed. No card was entered.
+- magic link was not submitted
+- Google and Apple on login were not followed
+- contact form was not submitted
+
+## [SeatGeek](../systems/seatgeek) — `seatgeek`
+Access: signed out (public marketing and browse only; login hit a DataDome interstitial and was not passed; no ticket bought, no card entered, no account created)
+- /login is a DataDome interstitial and was not passed
+- no ticket purchase, card, phone, or account creation
+
+## [ShareWillow](../systems/sharewillow) — `sharewillow`
+Access: signed out. Public marketing and the login form were read. Nothing was typed or submitted. Signup is a six-step password form with reCAPTCHA, so it was not filled in. Phone sign-in, payment, and the signed-in app were not entered.
+- No dark theme on the marketing site or the login page.
+- Phone sign-in, payment, payroll, and the signed-in app were not entered.
+- Login checkbox was already checked. Unchecked fill was not read.
+
+## [Shopify](../systems/shopify) — `shopify`
+Access: signed out. Public marketing pages and the account lookup form only. Start for free was not opened (paid trial). Email, password, passkey, Google, Apple, Facebook, and WhatsApp were not submitted. No card, phone, or KYC was entered. No store was created.
+- Email, password, passkey, Google, Apple, Facebook, and WhatsApp were not submitted.
+
+## [Shuttle](../systems/shuttle) — `shuttle`
+Access: Public marketing and signed-out space, login and signup. Signup and login were not submitted. Both include a Cloudflare Turnstile. No card was entered.
+- signup and login were not submitted because both include a Cloudflare Turnstile
+
+## [Skiff](../systems/skiff) — `skiff`
+Access: signed-out. The home page is the Notion acquisition notice. Product marketing pages, the whitepaper and the report form were measured. No account was created. The report form was not submitted.
+- No account was created. Signed-in Mail, Pages, Drive and Calendar were not entered.
+- The report form at https://skiff.com/report was measured empty and not submitted.
+
+## [Skillshare](../systems/skillshare) — `skillshare`
+Access: signed out (public marketing and signed-out login chrome only; no membership, card, or email signup was started)
+- Sign In opens an in-page sheet. It was not activated. Continue with Google, Facebook, Apple, and email were not clicked. No email was submitted and no card was entered.
+
+## [SoundCloud](../systems/soundcloud) — `soundcloud`
+Access: signed out (public listener home, discover, terms, company contact, and the sign-in card; no account, email, or paid plan was started)
+- Feed, Library, and Upload ask for an account and were not entered.
+- Sign-in Continue, OAuth, and the email field were not submitted. No card, phone, or paid plan was opened.
+
+## [Spyglass](../systems/spyglass) — `spyglass`
+Access: signed out. Public marketing pages and the signed-out /sign-in and /sign-up forms. Email was not entered. Google was not clicked. No plan CTA was followed.
+- email form not submitted
+- Google OAuth not entered
+- plan checkout not entered
+
+## [SSENSE](../systems/ssense) — `ssense`
+Access: signed out (public marketing and storefront only; login was opened and not submitted; bag, wishlist, and checkout were not entered)
+- Add to bag, wishlist, login Continue, bag, and checkout were not entered
+
+## [Stellate](../systems/stellate) — `stellate`
+Access: Public marketing and signed-out login and signup. Signup was an email field. Submitting it sent a magic link. The magic link was not opened. GitHub and GitLab were not followed. No card was entered.
+- signed-in dashboard was not opened
+
+## [Stocksy](../systems/stocksy) — `stocksy`
+Access: signed out. Public browse only. Login, cart, checkout, follow, share and the business request were not submitted.
+- Login, signup, cart, checkout, Add to Cart, Follow, Share and the business request were not submitted.
+
+## [Stocktwits](../systems/stocktwits) — `stocktwits`
+Access: signed out. Public home, symbol, about, widgets, subscriptions, enterprise, privacy, sign-in and signup were read. No account was created. No password, card, phone, brokerage, or KYC field was filled.
+- signup was not submitted, so later account steps were not opened
+
+## [Stripe](../systems/stripe) — `stripe`
+Access: signed out (marketing pages, docs.stripe.com, and the login and register walls at dashboard.stripe.com; no signup, KYC, card, or account)
+- Sign-in at https://dashboard.stripe.com/login was photographed at rest. Nothing was typed. Sign in, Google, Passkey, SSO and Forgot password were not followed.
+- Register at https://dashboard.stripe.com/register was photographed and not submitted. No account was created. No card, bank, phone or government ID was entered.
+- The blurred dashboard behind the register card is the wall's backdrop, not a signed-in capture.
+- Menus, the country select and the newsletter form were not opened or submitted.
+
+## [Synthesia.io](../systems/synthesia-io) — `synthesia-io`
+Access: signed out. Public marketing pages only. Login wall at login.synthesia.io was loaded and not submitted. Book demo was not submitted because it asks for a phone number. No card, no paid plan.
+- signup not started: login offers email and Google, and book demo requires a phone number
+- no card, checkout, or paid plan
+
+## [Tango](../systems/tango) — `tango`
+Access: Public marketing plus signed-out login and signup on app.tango.us. Email was entered. Password, name, Google and Turnstile were not. No card was entered. tango.us was not captured as a separate site.
+- signup name form was not submitted
+
+## [The Dinner Ladies](../systems/the-dinner-ladies) — `the-dinner-ladies`
+Access: signed out (home, about, the public menu, contact, delivery info and one product page are public; account, checkout, cart, newsletter and the suburb search were not entered)
+- no order, no cart open, no email, no phone, no suburb search, no account, no checkout
+
+## [The Leap](../systems/the-leap) — `the-leap`
+Access: Public marketing and signed-out login. Signup redirected to login, so no account was created. Google and Thinkific were not followed. No card was entered.
+- signup at accounts.theleap.co/signup redirected to login, so AgentMail was not used
+
+## [Threads](../systems/threads) — `threads`
+Access: signed out (public home feed, login card, signup dialog, and /login chrome only; no account created, Instagram login not followed, no phone entered, Log in not pressed)
+- signup wall not entered: no account, no Instagram login, no phone number, Log in not pressed
+- logged-in app (composer, messages, activity, profile, settings) not entered
+
+## [Trip](../systems/trip) — `trip`
+Access: signed out (home, hotels landing, customer support, and the email sign-in form are public; the email field was focused and not filled; Search, Continue, Google, Apple, and Facebook were not pressed; no booking, payment, phone, or account was submitted)
+- search was not submitted; no results, filters, map, or empty state
+- sign-in email was focused only; Continue, Google, Apple, and Facebook were not pressed; no account, phone, card, or code
+- no booking, payment, or checkout
+
+## [Tripadvisor](../systems/tripadvisor) — `tripadvisor`
+Access: signed out; marketing and search only. Sign in, join, booking, tickets, and payment were not submitted. The join card had no phone field.
+- Sign in and Join were opened and not submitted. Continue with Google was not followed. No phone or card field was filled.
+- See tickets, Book now, and the hotel search were not submitted.
+
+## [Trulia](../systems/trulia) — `trulia`
+Access: signed out (homepage only; listing navigation hit a PerimeterX wall and was not entered)
+- sign-in, phone, and agent contact were not entered
+
+## [Uber Eats](../systems/uber-eats) — `uber-eats`
+Access: signed out (public marketing only; login, signup, checkout and address entry were not opened)
+- login, signup, checkout, phone, card and address entry were not opened
+
+## [Urban Outfitters](../systems/urban-outfitters) — `urban-outfitters`
+Access: signed out (public marketing pages and the sign-in dialog only; no phone, email, bag, or card was entered)
+- bag, checkout, and payment were not opened
+
+## [Vercel](../systems/vercel) — `vercel`
+Access: Public marketing, Geist docs, and signed-out login. Email was not filled. Signup was not submitted. Google, GitHub, ChatGPT, SAML SSO, and Passkey were not followed. No card was entered. No paid team was created. No org SSO was accepted.
+- signed-in dashboard was not opened
+- signup was not submitted
+- Google, GitHub, ChatGPT, SAML SSO, and Passkey were not followed
+- no org SSO was accepted
+
+## [Visitors](../systems/visitors) — `visitors`
+Access: signed out. Public marketing pages plus /login and /register. The email form was not submitted because a Turnstile field is present. Google and GitHub were not clicked. Trial and checkout were not followed.
+- Turnstile on login and register, so the email form was not submitted
+- trial and checkout not followed
+
+## [Weekrise](../systems/weekrise) — `weekrise`
+Access: signed out (public marketing, academy, privacy, and the login and signup forms; nothing submitted)
+- Signed-in app was not entered. Signup asks for a name as well as email, so no account was created.
+- Google sign-in was not used.
+
+## [West Elm](../systems/west-elm) — `west-elm`
+Access: signed out (homepage, collection, product and the public account email form)
+- Did not add to cart, check out, enter a card, or submit the email overlay or the account email form
+
+## [WhatsApp](../systems/whatsapp) — `whatsapp`
+Access: signed out (every captured surface is public marketing; web.whatsapp.com was not opened; no phone number was entered; no QR pairing surface was opened; Download and Log in were measured, never followed)
+- Download, Log in and the Mac app link were measured, never followed
+
+## [Wynde](../systems/wynde) — `wynde`
+Access: signed out. Public home, terms, and privacy were measured. Login at app.wynde.io was opened and not submitted. No email, phone, card, or Google SSO was entered.
+- email form not submitted
+- Google SSO not pressed
+
+## [X](../systems/x) — `x`
+Access: signed out (login chrome, a missing-route shell, terms, privacy and about.x.com were read; no email, phone or password was typed; Continue, Google, Apple, Sign In and Log in were not pressed; no account was created and nothing was posted)
+- preview_snapshot failed twice: The browser is not producing screenshot frames. Login, missing-route and about screenshots were not invented
+- no email, phone, username or password was typed; Continue, Google, Apple, Sign In and Log in were not pressed
+
+## [Xbox](../systems/xbox) — `xbox`
+Access: signed out (home, games, consoles, Game Pass, search, and one product page are public; Sign in, cart, BUY, and JOIN GAME PASS were not followed)
+- Sign in, Microsoft account, cart, checkout, and JOIN GAME PASS subscription form were not entered
+
+## [Yelp](../systems/yelp) — `yelp`
+Access: signed out. Homepage, public search, one business page, about, the login form (not submitted) and a 404. No password, name, ZIP, phone, card or reservation was entered.
+- signup and login not submitted: the form asks for a password, a name and a ZIP
+
+## [ZARA](../systems/zara) — `zara`
+Access: signed out (location gate and US storefront, new arrivals, one product page, search, help, empty bag, logon form measured and not submitted, a made-up 404; nothing added to the bag)
+- add to bag, checkout, card, phone, address, and account creation were not entered
+- the logon email field was not submitted
+
+## [Zara Home](../systems/zara-home) — `zara-home`
+Access: signed out (worldwide market gate, International homepage, category, product, search, error page)
+- Did not add to bag, check out, enter a card, phone or address, or create an account
+
+## [Zellerfeld](../systems/zellerfeld) — `zellerfeld`
+Access: signed out (public store, product, FAQ, reviews, creators, newsletter, policies, and the sign-in card; no purchase, size, card, phone, or email was entered)
+- checkout, size selection, card, phone, Google sign-in, sign-up, and newsletter submit were not entered
+
+## [Zendesk](../systems/zendesk) — `zendesk`
+Access: signed out (www.zendesk.com marketing, /login, /pricing, /contact, /demo step 1, /register first step, support.zendesk.com/hc/en-us, and garden.zendesk.com as a separate site screenshot). No email was typed. No form was submitted. No card, phone, or company SSO was entered. The agent workspace was not opened.
+- the signed-in agent workspace was not entered
+- register, contact, login and demo forms were not submitted; no email was typed
+- no card, phone number, or company SSO was entered
+- the register error message text colour was not isolated from a script node
+- the secondary View demo ring was visible in a screenshot and not isolated in computed style (border width 0)
+
 ## Gate noted in access text only
 
 ### [1Password](../systems/1password) — `1password`
@@ -1179,6 +1772,315 @@ signed out (homepage, one article, the public offers page, and the email sign-in
 ### [Retool](../systems/retool) — `retool`
 signed out. Homepage, pricing, login, signup and docs. No email was typed. Signup was not submitted. No demo, SSO, card or database.
 
+### [Clay](../systems/clay) — `clay`
+signed out. clay.earth 301s to me.sh. Public marketing pages and the app.me.sh sign-in card were measured. No email was typed. Apple, Google, SSO, Create account, and Sign in with email were not clicked. No phone, card, or CRM import.
+
+### [Contra](../systems/contra) — `contra`
+signed out (public marketing and the empty log-in form; sign-up was not submitted)
+
+### [Meiro](../systems/meiro) — `meiro`
+signed out (public marketing pages and the signed-out app shell at app.meiro.cc; the builder and checkout were never reached; the email field was focused; a one-character probe was typed and cleared; no form was submitted)
+
+### [Metaview](../systems/metaview) — `metaview`
+signed out (marketing is public; sign-in and sign-up were opened and not submitted)
+
+### [Microsoft Copilot](../systems/microsoft-copilot) — `microsoft-copilot`
+signed out (copilot.com marketing pages are public; sign-in redirects to a Microsoft account page and was not submitted)
+
+### [Microsoft Teams](../systems/microsoft-teams) — `microsoft-teams`
+signed out (the Teams client needs a Microsoft account and was not opened)
+
+### [Miro](../systems/miro) — `miro`
+signed-out public marketing, pricing, product, templates, login and signup. Signup rejected the capture inbox. No board created. No purchase.
+
+### [MonoDesk](../systems/monodesk) — `monodesk`
+signed out (public marketing pages and app.monodesk.com/login and /create; nothing submitted)
+
+### [n8n](../systems/n8n) — `n8n`
+signed out. Marketing pages and app.n8n.cloud login/register. No email was submitted and no workflow was opened.
+
+### [Navan](../systems/navan) — `navan`
+signed out. Public marketing pages only. The identifier page was measured and left. No email, signup, SSO, booking or card.
+
+### [Netflix](../systems/netflix) — `netflix`
+signed out. Public marketing and login chrome only. No account, no card, no playback.
+
+### [Nothing](../systems/nothing) — `nothing`
+read-only public signed-out pages (home, about, nothing-os, phone-4a-pro, support centre). Account login asks for a password and was not entered. Add to bag and contact-support were not submitted.
+
+### [Nudea](../systems/nudea) — `nudea`
+signed out (public marketing only; account, checkout, payment and the fitting-room booking were not entered)
+
+### [Officevibe](../systems/officevibe) — `officevibe`
+signed out (public Workleap marketing and login.workleap.com; no company workspace, no survey, login and demo forms not submitted)
+
+### [Oku](../systems/oku) — `oku`
+public signed-out pages only; sign-in, join and reset were measured and not submitted; pricing Subscribe was not followed
+
+### [OpenSea](../systems/opensea) — `opensea`
+signed out (home, collection, activity, discover, drops, tools and terms were public; the connect dialog was opened and closed; no wallet was connected and nothing was submitted). Dark was the live theme. Light is the declared .light pair, resolved on a probe, and was not switched on.
+
+### [Outchat](../systems/outchat) — `outchat`
+signed out. Public marketing from a Wayback replay. Login form was a spinner and was not entered
+
+### [PamPam](../systems/pampam) — `pampam`
+signed out (home, pricing, about, features, blog, and /login measured; login is a Google button with no email field, so nothing was signed up for; plan buttons were not followed; no card, phone, or government ID was entered)
+
+### [Parallel](../systems/parallel) — `parallel`
+signed out (public marketing plus /login and /signup; LinkedIn not clicked; no email submitted; trial not started)
+
+### [Parallel](../systems/parallel-ai) — `parallel-ai`
+signed out; public marketing, pricing, docs, and the login form. Email, Google, and SSO were not submitted
+
+### [Partiful](../systems/partiful) — `partiful`
+signed out (login is a phone field; no email, no event created)
+
+### [PayPal](../systems/paypal) — `paypal`
+signed out (marketing pages and the login email step were measured; nothing was typed or submitted; the signup wall was recorded and not entered)
+
+### [Peerlist](../systems/peerlist) — `peerlist`
+signed out (public marketing, jobs, scroll, launchpad, search, login, and signup; signup was not submitted)
+
+### [Pexels](../systems/pexels) — `pexels`
+signed out. Public pages on pexels.com. Join and login were opened and not submitted. No card, phone, or download.
+
+### [Pixso](../systems/pixso) — `pixso`
+signed out (public marketing and the login form; no account created)
+
+### [PlayStation](../systems/playstation) — `playstation`
+signed out (the Sony account form was not entered)
+
+### [Pocket](../systems/pocket) — `pocket`
+signed out. The public site is a shutdown notice. No account was created.
+
+### [Polaroid](../systems/polaroid) — `polaroid`
+signed out (public marketing and the public log-in page; Continue and Add to Bag were measured and not submitted; no account, card, or phone)
+
+### [Prime Video](../systems/prime-video) — `prime-video`
+signed out. Public marketing and login chrome only. No account, no card, no playback.
+
+### [Programa](../systems/programa) — `programa`
+signed out (public marketing pages plus the login and register forms; no account was created and no credentials were entered)
+
+### [Promova](../systems/promova) — `promova`
+signed out (public marketing and the /sign-up form were measured; the form was not submitted)
+
+### [Prose](../systems/prose) — `prose`
+signed out. Public marketing only. The consultation quiz, checkout, and sign-in submission were not entered.
+
+### [Quizlet](../systems/quizlet) — `quizlet`
+signed out. Login and signup were opened. No email, password, birthday, phone or card was submitted
+
+### [Rarible](../systems/rarible) — `rarible`
+signed out. Public explore, one collection, drops, terms, FAQ, phone nav, search empty state, and the Login dialog. Dialog closed. No wallet, no email submit, no Buy Now, no og.rarible.com, no rwa.rarible.com.
+
+### [Raster](../systems/raster) — `raster`
+public signed out. Sign-in was opened and measured (Google and an email-link field). The email was not submitted. Google was not used. No card, phone, or checkout.
+
+### [Reclaim AI](../systems/reclaim-ai) — `reclaim-ai`
+signed out. Marketing pages and app.reclaim.ai/login measured. Login is Google, Microsoft, Dropbox and SSO only, so no email signup was attempted and no calendar OAuth was connected. Contact form measured inside its HubSpot iframe and not submitted.
+
+### [Record Club](../systems/record-club) — `record-club`
+signed out. Public marketing, browse, releases, one public album page, help, about, supporter pricing, login and register were read and not submitted. Apple and Google were not pressed. Checkout was not opened.
+
+### [Reown](../systems/reown) — `reown`
+signed out (marketing, docs, and the sign-in wall; no wallet, no API key)
+
+### [Resume.io](../systems/resume-io) — `resume-io`
+signed out (public marketing plus the sign-in email step, not submitted)
+
+### [RevenueCat](../systems/revenuecat) — `revenuecat`
+signed out (public marketing and the login/signup pages; no account created)
+
+### [Rise](../systems/rise) — `rise`
+signed out (the app shut down on 2025-03-31; login and signup 404)
+
+### [Rive](../systems/rive) — `rive`
+signed out (login and signup were measured and not submitted)
+
+### [Riverside](../systems/riverside) — `riverside`
+signed out (public marketing and the studio login and register forms; no account created)
+
+### [Robinhood](../systems/robinhood) — `robinhood`
+signed out (US marketing and login chrome only; signup stopped at the region search; no account, email, password, card, bank, or KYC)
+
+### [Rox](../systems/rox) — `rox`
+signed out (login is Auth0 with Google and Microsoft; no email was submitted)
+
+### [Saint Laurent](../systems/saint-laurent) — `saint-laurent`
+signed out; public marketing only; bag, checkout, and account not entered
+
+### [Scale AI](../systems/scale-ai) — `scale-ai`
+signed out (public marketing and the signed-out dashboard login; no account created)
+
+### [Shop](../systems/shop) — `shop`
+signed out (signup wall opened and not submitted)
+
+### [Sketch](../systems/sketch) — `sketch`
+signed out (public marketing and the signed-out sign-in and signup pages; signup was not submitted)
+
+### [Slab](../systems/slab) — `slab`
+signed out. Public marketing and the signed-out login page. Register asks for email, full name and password, so it was not submitted. Google signup was not clicked. No company SSO, card, phone or KYC step was entered.
+
+### [Slite](../systems/slite) — `slite`
+signed out (home, pricing, features, the sign-in card and the create-account card at rest are public; Google, Apple, Slack, Continue with email, Find your workspaces, Book demo, Get started, Contact Sales and checkout were not pressed)
+
+### [Sonarworks](../systems/sonarworks) — `sonarworks`
+signed out (public marketing and the login and signup forms; no account created, no card entered)
+
+### [Soundtrap](../systems/soundtrap) — `soundtrap`
+signed out (public marketing and login chrome; OAuth not followed; no card entered)
+
+### [SpatialChat](../systems/spatial-chat) — `spatial-chat`
+signed out (marketing home and /pricing measured; login at app.spatial.chat/login measured and not submitted; Buy Now, Stripe trial, Book a Demo, Google, and Apple not followed)
+
+### [Squarespace](../systems/squarespace) — `squarespace`
+signed out (public marketing and login chrome; no account, trial, or card)
+
+### [Stable Audio](../systems/stable-audio) — `stable-audio`
+signed out (public marketing home, pricing, plugin, terms and a 404 were measured; nav Sign in opened the AuthKit email form, which was focused and not submitted; no signup, Google continue, card, phone, plan checkout, newsletter submit or plugin download)
+
+### [Stage.so](../systems/stage-so) — `stage-so`
+public listing only; the Stage product and any login are gone
+
+### [Starbucks](../systems/starbucks) — `starbucks`
+signed out (public marketing only; Sign in and Join now were not followed into a form; no card, phone, or payment was entered)
+
+### [Steel](../systems/steel) — `steel`
+signed out (public marketing, docs, brand kit, and the email sign-in form; the form was filled and cleared, not submitted)
+
+### [Suno](../systems/suno) — `suno`
+signed out. Public home, careers and about were measured. Log in opened a provider dialog and was closed. No email, phone, OAuth, card or paid plan was entered.
+
+### [Super.so](../systems/super-so) — `super-so`
+signed out (public marketing plus login and signup chrome; signup was not submitted)
+
+### [Supercut](../systems/supercut) — `supercut`
+Public marketing and signed-out login and signup choice pages. Google, email, and SSO were not followed. No card, phone, or company SSO was entered.
+
+### [Superlist](../systems/superlist) — `superlist`
+signed out (public marketing plus the Flutter sign-in screen; the magic link was not sent)
+
+### [Teachable](../systems/teachable) — `teachable`
+signed out (public marketing pages plus the Teachable Accounts sign-in chrome; no account created, no password typed, no card entered)
+
+### [Teal](../systems/teal) — `teal`
+signed out (public marketing plus sign-in and sign-up; nothing submitted)
+
+### [Tesla](../systems/tesla) — `tesla`
+signed out, public marketing only (homepage, Model Y, Solar Panels, Support, About). Configurator, shop, and account were not entered
+
+### [The New York Times](../systems/the-new-york-times) — `the-new-york-times`
+signed out (homepage, public subscription offer, and email login chrome; no account, no card, no checkout)
+
+### [The Org](../systems/the-org) — `the-org`
+signed out (homepage, pricing, about, contact, a public company page, the 404, and the login and signup forms were measured; Google, Microsoft, passkey and SSO were not followed; no email was submitted; no account was created)
+
+### [The Washington Post](../systems/the-washington-post) — `the-washington-post`
+signed out (public home, Politics section, one article and the public sign-in card; Subscribe, checkout, OAuth, SSO and the email form were not submitted; no card was entered)
+
+### [The Weather Channel](../systems/the-weather-channel) — `the-weather-channel`
+signed out (public forecast and legal pages; login form was not submitted)
+
+### [Tidal](../systems/tidal) — `tidal`
+signed out; public player, download page and OAuth login chrome; no plan, card or OAuth continue
+
+### [TikTok](../systems/tiktok) — `tiktok`
+signed out. Public marketing and login chrome only. No account, no phone, no email.
+
+### [Tilda](../systems/tilda) — `tilda`
+public marketing site and signed-out login, measured in the T3 preview browser; login not submitted
+
+### [Time2book](../systems/time2book) — `time2book`
+signed out (public marketing and the email login form; no account created)
+
+### [Todoist](../systems/todoist) — `todoist`
+signed out (public marketing and the login form; signup was not submitted)
+
+### [Tome](../systems/tome) — `tome`
+signed out. https://tome.app/ and /login both return the host 404. No email form, so no signup. No payment.
+
+### [TravelPerk](../systems/travelperk) — `travelperk`
+signed out. Public marketing pages only. travelperk.com redirected to perk.com. The login page was measured and left. No email, signup, SSO, booking or card.
+
+### [TwelveLabs](../systems/twelvelabs) — `twelvelabs`
+Public marketing plus signed-out login on auth.twelvelabs.io. Email was entered. Password was not typed. Google was not followed. HubSpot contact form and reCAPTCHA were not filled. No card was entered. No API key was created.
+
+### [Twist](../systems/twist) — `twist`
+signed out. Public home, pricing, and Why async measured. /login email field filled with an AgentMail address and submitted; the name and password step was not filled. Google, Apple, the Typeform waitlist, and checkout were not opened.
+
+### [Twitch](../systems/twitch) — `twitch`
+signed out (public home, directory, and signup wall; no account created)
+
+### [Typeform](../systems/typeform) — `typeform`
+signed out (marketing pages and the login; the email was not submitted)
+
+### [Uber](../systems/uber) — `uber`
+signed out (US ride, about, business, and drive pages measured; signup wall at auth.uber.com/v2 measured and not entered; no phone, email, card, or ride)
+
+### [Understory](../systems/understory) — `understory`
+signed out (public marketing and the backoffice login; signup was opened and not submitted)
+
+### [Variant](../systems/variant) — `variant`
+signed out. Homepage, /authentication and /terms-and-privacy measured. Email field typed only to read the enabled button, then cleared. Not submitted. Google sign-in not clicked. No payment.
+
+### [Vectary](../systems/vectary) — `vectary`
+signed out (login and signup were opened and not submitted)
+
+### [Vevo](../systems/vevo) — `vevo`
+signed out (public marketing site; no account, phone or card)
+
+### [Vimeo](../systems/vimeo) — `vimeo`
+signed out (marketing, watch feed, pricing, and the login dialog; no account created)
+
+### [Visual Electric](../systems/visual-electric) — `visual-electric`
+signed out (archived public pages; the live apex has no DNS and the login host returned Cloudflare 1014)
+
+### [Vivid Money](../systems/vivid-money) — `vivid-money`
+signed out (public marketing and the business login chrome; no email, phone, card or KYC was entered)
+
+### [Voicenotes](../systems/voicenotes) — `voicenotes`
+signed out. Login modal opened. Email and password fields were not submitted.
+
+### [Volkshotel](../systems/volkshotel) — `volkshotel`
+signed out (public marketing only; booking, gift card and the newsletter iframe were not entered)
+
+### [VSCO](../systems/vsco) — `vsco`
+signed out (public marketing and the login form; nothing submitted)
+
+### [Walmart](../systems/walmart) — `walmart`
+signed out (public marketing only; Sign in was not followed; no card, phone, or address was entered)
+
+### [Wealthsimple](../systems/wealthsimple) — `wealthsimple`
+signed out (Canada marketing and login chrome only; signup stopped at preferred name, email, and password; no account, email, password, card, bank, or KYC)
+
+### [Weavy](../systems/weavy) — `weavy`
+signed out (public marketing at weave.figma.com, the redirect from weavy.ai, plus app.weavy.ai/signin; SSO buttons were not clicked)
+
+### [Webflow](../systems/webflow) — `webflow`
+signed out (login and signup were not entered; /login is a PerimeterX hold page)
+
+### [Weights & Biases](../systems/weights-biases) — `weights-biases`
+signed out. Marketing home and privately hosted pricing were public. Forge login and signup were measured and not submitted. Signup offers Google, GitHub and Microsoft as well as email, so no account was created. No card, plan, or API key was entered.
+
+### [Windy](../systems/windy) — `windy`
+signed out (login asks for email and password plus Google, Apple, and Facebook; nothing was entered)
+
+### [Wise](../systems/wise) — `wise`
+signed out. Public marketing pages and the login wall only. Email and password fields were left empty. No account, phone, card, bank details, or KYC was entered. No transfer was started. Google, Facebook, Apple, and passkey were not clicked.
+
+### [Wix](../systems/wix) — `wix`
+signed out (homepage, pricing, and the email login; the form was not submitted)
+
+### [Womp](../systems/womp) — `womp`
+signed out (public marketing pages, the auth card, and a public print preview; the editor was never reached)
+
+### [Workflow](../systems/workflow) — `workflow`
+signed out (marketing home, features, pricing, contact; login rendered a spinner; no account created)
+
+### [Zapier](../systems/zapier) — `zapier`
+signed out. Home, pricing, login and signup were measured. Signup was not submitted. SSO was not followed.
+
 ## No gated surface recorded
 
-`ableton`, `allbirds`, `anam`, `attio`, `gauth`, `raycast-desktop`, `refero-design`, `sora`, `sunsama`, `wittl`
+`ableton`, `allbirds`, `anam`, `attio`, `gauth`, `raycast-desktop`, `refero-design`, `sora`, `sunsama`, `wittl`, `memotron`, `nomad-goods`, `on`, `ozone`, `pattern-brands`, `runway`, `savvycal`, `seed`, `spline`, `tidycal`, `unsplash`

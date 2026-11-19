@@ -1,0 +1,81 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview tab",
+  "viewport": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "visualViewport": {"width": 1169, "height": 731, "scale": 1}},
+  "screenshots": "preview_snapshot returned The browser is not producing screenshot frames. No screenshots were invented.",
+  "pages": [
+    "https://www.tango.ai/",
+    "https://www.tango.ai/pricing",
+    "https://www.tango.ai/enterprise",
+    "https://app.tango.us/sign-in",
+    "https://app.tango.us/sign-up",
+    "https://app.tango.us/sign-up/email"
+  ],
+  "marketing": {
+    "stylesheet": "https://cdn.prod.website-files.com/6a71ad46b387474c9bb9694e/css/tangosite.webflow.shared.e710940c9.min.css",
+    "body": {"backgroundColor": "rgb(250, 250, 250)", "color": "rgb(56, 56, 56)", "fontFamily": "\"Apercu Pro\", Arial, sans-serif"},
+    "colorScheme": "normal",
+    "prefersColorScheme": "dark",
+    "htmlClass": "w-mod-js wf-lato-active w-mod-ix",
+    "theme": "one light marketing theme. prefers-color-scheme dark did not switch the page.",
+    "h1": {
+      "text": "Turn any process into a shareable how-to guide in minutes.",
+      "fontFamily": "Gelica, Arial, sans-serif",
+      "fontSize": "63.4314px",
+      "fontWeight": "400",
+      "lineHeight": "69.7746px",
+      "color": "rgb(0, 0, 0)",
+      "backgroundImage": "linear-gradient(109deg, rgb(255, 163, 198) 0%, rgb(255, 124, 47) 40%, rgb(253, 213, 67) 100%)",
+      "backgroundClip": "text",
+      "webkitTextFillColor": "rgb(0, 0, 0)"
+    },
+    "lede": {"fontFamily": "Apercu Pro", "fontSize": "21.2129px", "lineHeight": "27.5767px", "color": "rgb(56, 56, 56)", "fontWeight": "400"},
+    "nav": {"position": "fixed", "height": "80.43px", "backgroundColor": "rgba(0, 0, 0, 0)", "tokenHeight": "4rem"},
+    "logo": {"color": "rgb(249, 101, 15)", "child": "svg"},
+    "buttons": {
+      "primaryHeader": {"text": "Get started for free", "backgroundColor": "rgb(111, 38, 208)", "color": "rgb(255, 255, 255)", "border": "1.5px solid rgba(0, 0, 0, 0)", "padding": "13.5161px 19.0321px", "height": "52.4px", "radius": "731px", "fontSize": "16px", "fontWeight": "400", "fontFamily": "Apercu Pro"},
+      "primaryHero": {"padding": "16px 21.0321px", "height": "60.2px", "backgroundColor": "rgb(111, 38, 208)", "color": "rgb(255, 255, 255)", "radius": "731px"},
+      "secondary": {"text": "See a demo", "backgroundColor": "rgba(0, 0, 0, 0)", "color": "rgb(111, 38, 208)", "border": "1.5px solid rgb(111, 38, 208)", "padding": "13.5161px 19.0321px", "height": "52.4px", "radius": "731px"},
+      "login": {"text": "Login", "color": "rgb(0, 0, 0)", "backgroundColor": "rgba(0, 0, 0, 0)", "border": "1.5px solid rgba(0, 0, 0, 0)", "height": "24px", "radius": "731px"},
+      "transition": "all 0.35s ease",
+      "hoverRule": ".button:hover background var(--color--brand--transparent), color and border var(--color--purple--400). Not shown live."
+    },
+    "pricing": {
+      "h1": {"text": "Capture and share your expertise today.", "fontSize": "41.0964px", "lineHeight": "45.2061px", "fontFamily": "Gelica", "fontWeight": "400"},
+      "price": {"fontFamily": "Gelica", "fontSize": "35.0321px", "lineHeight": "42.0386px", "color": "rgb(0, 0, 0)"},
+      "card": {"backgroundColor": "rgb(250, 250, 250)", "padding": "24px", "radius": "16px", "width": "340px", "height": "567px", "borderFree": "1px solid rgb(152, 149, 149)", "borderPro": "1px solid rgb(249, 101, 15)"},
+      "annual": {"backgroundColor": "rgb(249, 101, 15)", "color": "rgb(255, 255, 255)", "padding": "8px 16px", "height": "38.8px", "radius": "731px", "width": "206.7px"},
+      "monthly": {"backgroundColor": "rgba(0, 0, 0, 0)", "color": "rgb(56, 56, 56)"},
+      "toggleWrap": {"backgroundColor": "rgb(255, 255, 255)", "padding": "8px", "radius": "731px", "boxShadow": "rgba(0, 0, 0, 0.06) 0px 1px 8px 0px", "height": "54.8px"},
+      "switch": {"role": "switch", "ariaChecked": "false", "width": "32.1px", "height": "18.5px", "backgroundColor": "rgb(255, 255, 255)", "border": "1px solid rgb(111, 38, 208)", "radius": "11px", "padding": "2px", "knob": {"width": "12.5px", "height": "12.5px", "backgroundColor": "rgb(111, 38, 208)", "radius": "731px"}},
+      "table": {"width": "952px", "borderCollapse": "collapse", "th": {"fontWeight": "700", "fontSize": "16px", "color": "rgb(56, 56, 56)"}, "td": {"fontSize": "16px", "padding": "0px"}}
+    },
+    "enterprise": {
+      "h1": {"text": "Roll out software people actually adopt.", "fontSize": "59.1607px", "fontFamily": "Gelica", "color": "rgb(255, 255, 255)", "backgroundClip": "text"},
+      "sales": {"backgroundColor": "rgb(255, 140, 73)", "color": "rgb(0, 0, 0)", "radius": "731px", "padding": "16px 21.0321px", "height": "60px", "border": "1.5px solid transparent"},
+      "banner": {"text": "NEW Tango MCP is now live!", "backgroundColor": "rgb(111, 38, 208)", "color": "rgb(203, 213, 225)", "height": "52px"}
+    }
+  },
+  "app": {
+    "host": "app.tango.us",
+    "note": "Signed-out login and signup only. This host is the product app, not tango.us as a separate brand.",
+    "bodyFont": "Apercu, ui-sans-serif, system-ui, sans-serif",
+    "panel": {"backgroundColor": "rgb(250, 249, 250)", "width": "404px", "height": "667px", "radius": "32px"},
+    "pageColumn": {"width": "468px", "backgroundColor": "transparent"},
+    "h2": {"text": "Sign in to Tango", "fontFamily": "Gelica, serif", "fontSize": "32px", "fontWeight": "400", "lineHeight": "41.6px", "letterSpacing": "-0.1px", "color": "rgb(37, 31, 45)"},
+    "lede": {"text": "Step-by-step guidance right on your screen.", "fontFamily": "Apercu, sans-serif", "fontSize": "15px", "fontWeight": "400", "lineHeight": "24.75px", "letterSpacing": "0.1px", "color": "rgb(82, 77, 89)"},
+    "divider": {"text": "or sign in with email", "fontSize": "13px", "color": "rgb(117, 113, 123)", "letterSpacing": "0.1px"},
+    "label": {"fontSize": "12px", "fontWeight": "500", "color": "rgb(82, 77, 89)", "letterSpacing": "0.1px"},
+    "field": {"backgroundColor": "rgb(255, 255, 255)", "border": "1px solid rgb(150, 148, 154)", "radius": "10px", "height": "36px", "inputPadding": "8px 12px", "inputFontSize": "13px", "inputColor": "rgb(37, 31, 45)", "placeholder": "rgb(194, 192, 198)"},
+    "focus": {"border": "1px solid rgb(111, 38, 208)", "outline": "rgb(222, 196, 243) solid 3px"},
+    "google": {"backgroundColor": "transparent", "color": "rgb(93, 27, 152)", "border": "1px solid rgb(222, 196, 243)", "radius": "10px", "height": "40px", "padding": "8px 16px", "fontSize": "13px", "fontWeight": "500", "letterSpacing": "0.1px", "boxShadow": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px", "width": "408px"},
+    "continueDisabled": {"backgroundColor": "rgb(232, 230, 234)", "color": "rgb(155, 152, 160)", "cursor": "not-allowed", "height": "40px", "radius": "10px", "fontSize": "13px", "fontWeight": "500"},
+    "continueEnabled": {"backgroundColor": "rgb(111, 38, 208)", "color": "rgb(255, 255, 255)", "cursor": "pointer"},
+    "textButton": {"text": "Create an account", "color": "rgb(82, 77, 89)", "backgroundColor": "transparent", "height": "40px", "radius": "10px", "fontSize": "13px", "fontWeight": "500"},
+    "passwordHint": {"text": "At least 8 characters", "color": "rgb(155, 152, 160)", "fontSize": "12px", "fontWeight": "400"},
+    "help": {"width": "48px", "height": "48px", "radius": "9999px", "backgroundColor": "rgb(232, 230, 234)", "color": "rgb(82, 77, 89)"},
+    "demoCard": {"border": "1px solid rgb(232, 230, 234)", "radius": "24px", "width": "314px", "height": "224px", "label": "public demo, not a signed-in dashboard"},
+    "buttonTransition": "background, color, border, border-color, opacity, box-shadow 0.2s ease-in-out",
+    "reducedMotionRules": 6
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "captured": "2026-11-19",
+  "source": "headless Playwright after the public page loaded without a Cloudflare challenge",
+  "devicePixelRatio": 2,
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "note": null
+}

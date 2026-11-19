@@ -1,0 +1,83 @@
+[
+  {
+    "name": "home",
+    "status": 200,
+    "finalUrl": "https://www.synthesia.io/",
+    "title": "Synthesia: #1 AI Video Platform for Business",
+    "vars": 126,
+    "cookie": null
+  },
+  {
+    "name": "pricing",
+    "status": 200,
+    "finalUrl": "https://www.synthesia.io/pricing",
+    "title": "Synthesia Pricing - Compare Free and Paid Plans",
+    "vars": 126,
+    "cookie": null
+  },
+  {
+    "name": "enterprise",
+    "status": 200,
+    "finalUrl": "https://www.synthesia.io/enterprise",
+    "title": "Synthesia Enterprise - Create AI Videos at Scale",
+    "vars": 126,
+    "cookie": null
+  },
+  {
+    "name": "video",
+    "status": 200,
+    "finalUrl": "https://www.synthesia.io/video",
+    "title": "Discover Synthesia's AI Video Platform Features",
+    "vars": 126,
+    "cookie": null
+  },
+  {
+    "name": "book-demo",
+    "status": 200,
+    "finalUrl": "https://www.synthesia.io/book-a-demo",
+    "title": "Book your 30-minute Synthesia demo here",
+    "vars": 126,
+    "cookie": null
+  },
+  {
+    "name": "blog",
+    "status": 200,
+    "finalUrl": "https://www.synthesia.io/blog",
+    "title": "Synthesia Blog | How-to guides, Case Studies, and more",
+    "vars": 0,
+    "cookie": null
+  },
+  {
+    "name": "features-avatars",
+    "status": 200,
+    "finalUrl": "https://www.synthesia.io/features/avatars",
+    "title": "Free AI Avatar Generator - Create Fully Customizable Avatars",
+    "vars": 0,
+    "cookie": null
+  },
+  {
+    "name": "missing",
+    "status": 404,
+    "finalUrl": "https://www.synthesia.io/this-page-does-not-exist-capture",
+    "title": "Not Found",
+    "vars": 126,
+    "cookie": null
+  },
+  {
+    "name": "login",
+    "error": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+  },
+  {
+    "name": "mobile-home",
+    "actual": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 2
+    },
+    "nav": {
+      "tag": "DIV",
+      "cls": "navbar_menu-items-wrapper",
+      "aria": null
+    }
+  }
+]

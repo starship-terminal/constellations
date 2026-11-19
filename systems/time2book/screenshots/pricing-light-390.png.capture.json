@@ -1,0 +1,19 @@
+{
+  "capturedAt": "2026-11-18T19:48:02.529Z",
+  "sourceUrl": "https://www.time2book.me/pricing",
+  "title": "Pricing Fitness Studio Software | Time2book",
+  "status": 200,
+  "measured": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "scrollH": 8145,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "theme": "light",
+  "note": "Headless Playwright after T3 preview frames failed."
+}

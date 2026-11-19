@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Navan style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --muted: #f1f1f9;
+    --tint: #f0f0ff;
+    --tint-selected: #e1e2fe;
+    --action: #6307f8;
+    --ink: #15002c;
+    --secondary: #5a5a72;
+    --quiet: #70708f;
+    --stroke: #c6c6d2;
+    --inverse: #ffffff;
+    --footer: #15002c;
+    --login: #f5f5f8;
+    --login-ink: #1e212a;
+    --login-action: #131316;
+    --login-border: #a14be3;
+    --sans: Inter, "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+    --serif: Sanomat, ui-serif, Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--muted); color: var(--ink); font-family: var(--sans); font-weight: 300; font-size: 16px; line-height: 24px; letter-spacing: -0.02em; }
+  header { background: var(--footer); color: var(--inverse); padding: 48px 40px 32px; }
+  header p { max-width: 640px; color: #e1e2fe; }
+  h1, h2, .serif { font-family: var(--serif); font-weight: 600; letter-spacing: 0; }
+  h1 { font-size: 45px; line-height: 54px; margin: 0 0 12px; }
+  main { padding: 32px 40px 80px; max-width: 1100px; }
+  h2 { font-size: 28px; line-height: 34px; margin: 36px 0 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; background: var(--surface); border-radius: 14px; overflow: hidden; border: 1px solid var(--stroke); }
+  .swatch i { display: block; height: 72px; }
+  .swatch span { display: block; padding: 8px 10px 10px; font-size: 13px; line-height: 18px; }
+  .swatch code { font-family: var(--sans); font-size: 12px; color: var(--secondary); }
+  .specimen { background: var(--surface); border-radius: 14px; padding: 24px; margin: 8px 0; }
+  .btn { display: inline-flex; align-items: center; height: 44px; padding: 10px 28px; border-radius: 9999px; border: 2px solid var(--action); background: var(--action); color: white; font-size: 14px; font-weight: 400; letter-spacing: -0.02em; text-decoration: none; }
+  .btn.dark { background: var(--ink); border-color: var(--ink); }
+  .btn.ghost { background: white; color: var(--ink); border-width: 1px; height: 40px; padding: 0 20px; }
+  .tile { width: 180px; height: 80px; border-radius: 12px; background: var(--tint); display: flex; align-items: flex-end; padding: 12px; font-size: 15px; }
+  .tile.on { background: var(--tint-selected); }
+  .plan { width: 280px; background: white; border: 1px solid var(--action); border-radius: 20px; padding: 22px 24px; }
+  .plan strong { display: block; color: var(--action); font-weight: 300; font-size: 21px; }
+  .plan em { display: block; font-style: normal; font-size: 30px; font-weight: 700; margin: 8px 0; }
+  .plan p { color: var(--secondary); font-size: 15px; margin: 4px 0; }
+  .login { background: var(--login); border-radius: 12px; padding: 28px; max-width: 420px; }
+  .login h3 { font-family: var(--serif); font-size: 32px; margin: 0 0 16px; color: var(--login-ink); }
+  .field { height: 52px; border-radius: 10px; border: 1px solid var(--login-border); box-shadow: 0 0 0 1px var(--login-border); padding: 20px 16px 6px; background: transparent; width: 100%; font: inherit; }
+  .continue { margin-top: 12px; height: 52px; width: 100%; border: 0; border-radius: 100px; background: var(--login-action); color: white; font-size: 16px; }
+  table { border-collapse: collapse; width: 100%; background: white; border-radius: 14px; overflow: hidden; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--stroke); font-size: 14px; font-weight: 400; }
+  .note { color: var(--secondary); font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Navan</h1>
+  <p>Public marketing surfaces, measured 19 November 2026. Light only. The signed-in product and any dark theme were not opened.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#ffffff"></i><span>Page<br><code>#ffffff</code></span></div>
+    <div class="swatch"><i style="background:#f1f1f9"></i><span>Muted section<br><code>#f1f1f9</code></span></div>
+    <div class="swatch"><i style="background:#f0f0ff"></i><span>Tint<br><code>#f0f0ff</code></span></div>
+    <div class="swatch"><i style="background:#e1e2fe"></i><span>Selected tile<br><code>#e1e2fe</code></span></div>
+    <div class="swatch"><i style="background:#6307f8"></i><span>Action<br><code>#6307f8</code></span></div>
+    <div class="swatch"><i style="background:#15002c"></i><span>Ink and footer<br><code>#15002c</code></span></div>
+    <div class="swatch"><i style="background:#5a5a72"></i><span>Secondary text<br><code>#5a5a72</code></span></div>
+    <div class="swatch"><i style="background:#c6c6d2"></i><span>Stroke<br><code>#c6c6d2</code></span></div>
+    <div class="swatch"><i style="background:#f5f5f8"></i><span>Login page<br><code>#f5f5f8</code></span></div>
+    <div class="swatch"><i style="background:#131316"></i><span>Login continue<br><code>#131316</code></span></div>
+    <div class="swatch"><i style="background:#a14be3"></i><span>Login focus<br><code>#a14be3</code></span></div>
+  </div>
+  <h2>Type</h2>
+  <div class="specimen">
+    <div class="serif" style="font-size:45px;line-height:54px">Business travel &amp; expense management. Solved.</div>
+    <p class="note">Sanomat 600, 45/54 on the homepage at 1440. At 390 the same role computes to 25/30.</p>
+    <p>Inter 300, 16/24, letter-spacing -2%. Nav items are Inter 400 at 14/19.</p>
+  </div>
+  <h2>Controls</h2>
+  <div class="row" style="align-items:center">
+    <a class="btn" href="#">Get started</a>
+    <a class="btn dark" href="#">Request a demo</a>
+    <a class="btn ghost" href="#">Reject All Cookies</a>
+  </div>
+  <p class="note">Primary and dark buttons are 44px pills, padding 10px 28px, 2px border. The cookie secondary button is 40px with a 1px ink border.</p>
+  <div class="row" style="margin-top:16px">
+    <div class="tile">Create a company travel program</div>
+    <div class="tile on">Book trips for employees &amp; execs</div>
+  </div>
+  <h2>Plan card</h2>
+  <div class="plan">
+    <strong>Navan Business</strong>
+    <em>Free</em>
+    <a class="btn" href="#">Get started</a>
+    <p>Global travel inventory and exclusive rates</p>
+    <p>Unlimited policy and approval workflows</p>
+  </div>
+  <p class="note">Measured card is 509 by 776, radius 20px, 1px #6307f8 border, padding 30px 42px 17px.</p>
+  <h2>Sign-in boundary</h2>
+  <div class="login">
+    <h3>Welcome to Navan!</h3>
+    <input class="field" placeholder="Email address" disabled>
+    <button class="continue" type="button" disabled>Continue</button>
+  </div>
+  <p class="note">Drawn from computed styles on the identifier page. The email field was not filled and Continue was not pressed.</p>
+  <h2>Token paths</h2>
+  <table>
+    <tr><th>Role</th><th>Token</th><th>Value</th></tr>
+    <tr><td>Page</td><td>light.background.page</td><td>#ffffff</td></tr>
+    <tr><td>Surface</td><td>light.background.surface</td><td>#ffffff</td></tr>
+    <tr><td>Text</td><td>light.text.primary</td><td>#15002c</td></tr>
+    <tr><td>Muted</td><td>light.text.secondary</td><td>#5a5a72</td></tr>
+    <tr><td>Accent</td><td>light.background.action</td><td>#6307f8</td></tr>
+    <tr><td>Border</td><td>light.border.stroke</td><td>#c6c6d2</td></tr>
+  </table>
+</main>
+</body>
+</html>

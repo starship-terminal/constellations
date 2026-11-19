@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seed style guide</title>
+<style>
+:root {
+  --page: #fcfcf7;
+  --ink: #1c3a13;
+  --soft: #3d5b34;
+  --snow: #fcfcf7;
+  --foam: #eff1e4;
+  --yellow: #f6f7ef;
+  --bright: #d3fa99;
+  --lemon: #e9f0ca;
+  --error: #eb5757;
+  --warning: #ebb057;
+  --line: #d2d8d0;
+  --faded: #778971;
+  --glass: rgba(87, 94, 85, 0.35);
+  --am: #eae081;
+  --dm: #b7c194;
+  --pm: #b0d1be;
+  --dvs: #844b4a;
+  --sans: "Seed Sans", Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/1.4 var(--sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-weight: 350; font-size: 40px; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font-weight: 350; font-size: 24px; letter-spacing: -0.015em; margin: 40px 0 12px; }
+p.lead { max-width: 62ch; color: rgba(28, 58, 19, 0.7); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 64px; border-radius: 8px; border: 1px solid var(--line); }
+.sw b { display: block; font-size: 13px; font-weight: 500; margin-top: 6px; }
+.sw span { display: block; font-size: 12px; color: var(--faded); }
+.pill { display: inline-flex; align-items: center; height: 52px; padding: 16px 24px; border-radius: 1000px; background: var(--ink); color: var(--snow); font-weight: 350; font-size: 16px; letter-spacing: -0.04px; text-decoration: none; }
+.pill.inv { background: var(--snow); color: var(--ink); border: 1px solid var(--line); }
+.badge { display: inline-flex; height: 25px; align-items: center; padding: 4px 8px; border-radius: 1000px; background: var(--bright); color: var(--ink); font-size: 12px; font-weight: 500; }
+.field { width: 327px; max-width: 100%; height: 48px; border-radius: 8px; border: 1px solid rgba(252, 252, 247, 0.2); background: transparent; color: white; padding: 14px 20px; font: 350 14px/1 var(--sans); }
+.glass { width: 375px; max-width: 100%; padding: 16px; border-radius: 32px; background: var(--glass); color: var(--snow); backdrop-filter: blur(19px); }
+.option { width: 100%; max-width: 552px; height: 72px; border-radius: 16px; border: 1px solid #d2d8d0; background: var(--snow); color: var(--ink); text-align: left; padding: 16px 24px; font: 350 18px/1.2 var(--sans); }
+.note { font-size: 13px; color: var(--faded); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Seed</h1>
+  <p class="lead">Measured from seed.com on 2026-11-19. Light only. Seed Sans is not loaded here, so Helvetica stands in.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#1c3a13"></i><b>seed green</b><span>#1c3a13</span></div>
+    <div class="sw"><i style="background:#3d5b34"></i><b>soft green</b><span>#3d5b34</span></div>
+    <div class="sw"><i style="background:#fcfcf7"></i><b>snow</b><span>#fcfcf7</span></div>
+    <div class="sw"><i style="background:#f6f7ef"></i><b>yellowish white</b><span>#f6f7ef</span></div>
+    <div class="sw"><i style="background:#eff1e4"></i><b>foam</b><span>#eff1e4</span></div>
+    <div class="sw"><i style="background:#d3fa99"></i><b>bright green</b><span>#d3fa99</span></div>
+    <div class="sw"><i style="background:#e9f0ca"></i><b>lemongrass</b><span>#e9f0ca</span></div>
+    <div class="sw"><i style="background:#d2d8d0"></i><b>faded green</b><span>#d2d8d0</span></div>
+    <div class="sw"><i style="background:#eb5757"></i><b>error</b><span>#eb5757</span></div>
+    <div class="sw"><i style="background:#ebb057"></i><b>warning</b><span>#ebb057</span></div>
+    <div class="sw"><i style="background:#eae081"></i><b>AM-02</b><span>#eae081</span></div>
+    <div class="sw"><i style="background:#b7c194"></i><b>DM-02</b><span>#b7c194</span></div>
+    <div class="sw"><i style="background:#b0d1be"></i><b>PM-02</b><span>#b0d1be</span></div>
+    <div class="sw"><i style="background:#844b4a"></i><b>VS-01</b><span>#844b4a</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-weight:300;font-size:64px;line-height:1.5;letter-spacing:-0.02em;margin:0">Strains</p>
+  <p class="note">Display, 64px / 300 / -2%. Science page.</p>
+  <p style="font-weight:350;font-size:48px;line-height:1.1;letter-spacing:-0.025em;margin:16px 0 0">A life-changing health routine</p>
+  <p class="note">Hero, 48px / 350 / -1.2px. 32px at 390.</p>
+  <p style="font-size:16px;line-height:1.4;max-width:42ch">Daily probiotic and prebiotic clinically validated to relieve bloating, gas, and irregularity.</p>
+  <p class="note">Body, 16px / 400 / 22.4px.</p>
+  <h2>Controls</h2>
+  <p><span class="pill">Start Now</span> <span class="pill inv">Take the Quiz</span> <span class="badge">Bestseller</span></p>
+  <div class="glass">
+    <p style="font-weight:500;font-size:20px;letter-spacing:-0.2px;margin:0 0 8px">Welcome back</p>
+    <p style="font-size:14px;margin:0 0 12px">Enter your email to access your account.</p>
+    <input class="field" placeholder="Email address" aria-label="Email address">
+  </div>
+  <p><button class="option" type="button">1-2 times a day</button></p>
+  <p class="note">Quiz option, 72px, radius 16px, border #d2d8d0. Not submitted.</p>
+</div>
+</body>
+</html>

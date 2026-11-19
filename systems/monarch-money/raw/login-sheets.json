@@ -1,0 +1,106 @@
+{
+ "title": "Monarch | Sign in",
+ "sheetCount": 11,
+ "sheets": [
+  {
+   "href": "inline",
+   "n": 421
+  },
+  {
+   "href": "inline",
+   "n": 9
+  },
+  {
+   "href": "https://static.monarch.com/osano.css",
+   "err": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cann"
+  },
+  {
+   "href": "https://static.monarch.com/react-toggle.css",
+   "err": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cann"
+  },
+  {
+   "href": "https://static.monarch.com/static/css/main.6ee92ac8.css",
+   "err": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cann"
+  },
+  {
+   "href": "inline",
+   "n": 77
+  },
+  {
+   "href": "inline",
+   "n": 82
+  },
+  {
+   "href": "inline",
+   "n": 81
+  },
+  {
+   "href": "inline",
+   "n": 1
+  },
+  {
+   "href": "inline",
+   "n": 9
+  },
+  {
+   "href": "inline",
+   "n": 13
+  }
+ ],
+ "varCount": 8,
+ "varNames": [
+  "--fade-transition-time",
+  "--slide-transition-time",
+  "--gap",
+  "--peek",
+  "--scale",
+  "--shrink",
+  "--height",
+  "--offset-y"
+ ],
+ "sample": {
+  "--fade-transition-time": {
+   "sel": ".osano-cm-window",
+   "v": "700ms"
+  },
+  "--slide-transition-time": {
+   "sel": ".osano-cm-window",
+   "v": "400ms"
+  },
+  "--gap": {
+   "sel": "[data-mds=\"toast\"]",
+   "v": "var(--space-xs)"
+  },
+  "--peek": {
+   "sel": "[data-mds=\"toast\"]",
+   "v": "var(--space-sm)"
+  },
+  "--scale": {
+   "sel": "[data-mds=\"toast\"]",
+   "v": "calc(max(0, 1 - (var(--toast-index) * 0.05)))"
+  },
+  "--shrink": {
+   "sel": "[data-mds=\"toast\"]",
+   "v": "calc(1 - var(--scale))"
+  },
+  "--height": {
+   "sel": "[data-mds=\"toast\"]",
+   "v": "var(--toast-frontmost-height, var(--toast-height))"
+  },
+  "--offset-y": {
+   "sel": "[data-mds=\"toast\"]",
+   "v": "calc(\n      var(--toast-offset-y, 0px) * -1\n      + (var(--toast-index) * var(--gap) * -1)\n      + var(--toast-swipe-movement-y, 0px)\n    )"
+  }
+ },
+ "body": {
+  "bg": "rgb(246, 245, 243)",
+  "color": "rgb(34, 32, 29)",
+  "font": "Oracle, sans-serif"
+ },
+ "form": {
+  "bg": "rgba(0, 0, 0, 0)",
+  "color": "rgb(34, 32, 29)",
+  "font": "Oracle, sans-serif",
+  "radius": "0px"
+ }
+}

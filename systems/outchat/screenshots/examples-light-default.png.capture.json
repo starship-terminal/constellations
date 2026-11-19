@@ -1,0 +1,17 @@
+{
+  "url": "http://127.0.0.1:8765/examples/",
+  "meta": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vw": 1440,
+    "vh": 900,
+    "scale": 1
+  },
+  "info": {
+    "text": "Made in Outchat",
+    "vis": "visible",
+    "color": "rgb(0, 0, 0)"
+  },
+  "source": "wayback 20260520072344 local replay, entrance overlay removed for the shot"
+}

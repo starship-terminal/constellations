@@ -1,0 +1,46 @@
+{
+  "note": "Cross-origin stylesheets on static.tildacdn.net were blocked from the CSSOM. Declarations below were fetched with curl and confirmed against computed styles where a live element existed.",
+  "stylesheets": [
+    "https://static.tildacdn.net/css/tilda-grid-3.0.min.css",
+    "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+    "https://static.tildacdn.net/css/fonts-tildasans.css",
+    "https://app.tildacdn.net/tfront/dashboard/t-sign.min.css?ver=v26092505"
+  ],
+  "fontFace": "TildaSans, weight 250-1000, woff2 from static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2",
+  "declaredColors": [
+    "#000",
+    "#000000",
+    "#2015FF",
+    "#222",
+    "#7f7f7f",
+    "#a1a1a1",
+    "#f0f0f0",
+    "#fa876b",
+    "#ff8562",
+    "#fff",
+    "#ef6b50",
+    "#f8ad70",
+    "#ffe8c7",
+    "#fef9f6",
+    "#fad0c0",
+    "#111",
+    "#171717"
+  ],
+  "signIn": {
+    "body": "linear-gradient(to top right, #ef6b50, #f8ad70)",
+    "form": "hsla(0,0%,100%,.1); border-radius 8px; padding 30px 55px 37px",
+    "inputRest": "border-bottom 1px solid hsla(0,0%,100%,.3)",
+    "inputFocus": "border-bottom 1px solid #fff",
+    "button": "#ffe8c7",
+    "buttonHover": "#fef9f6",
+    "placeholderLogin": "#fad0c0",
+    "narrow": "@media (max-width: 980px) body background #ea966b, gradient removed",
+    "reducedMotion": "no prefers-reduced-motion rule in t-sign.min.css or the fetched marketing sheets"
+  },
+  "marketingCustomProperties": {
+    "--t-headline-font": "'TildaSans',Arial,sans-serif",
+    "--t-text-font": "'TildaSans',Arial,sans-serif",
+    "--border-width": "0px or 1px per button instance",
+    "--t396-speedhover": "0.2s"
+  }
+}

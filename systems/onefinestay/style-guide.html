@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>onefinestay style guide</title>
+<style>
+:root {
+  --font-family-display: tiempos, tiempos Fallback, serif;
+  --font-family-ui: akkurat, akkurat Fallback, serif;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-bold: 700;
+  --typography-display: var(--core-fontWeight-regular) 64px/72px var(--core-font-family-display) 0px;
+  --typography-heading: var(--core-fontWeight-regular) 40px/48px var(--core-font-family-display) 0px;
+  --typography-heading-phone: var(--core-fontWeight-regular) 32px/40px var(--core-font-family-display) 0px;
+  --typography-card-title: var(--core-fontWeight-regular) 20px/28px var(--core-font-family-display) 0px;
+  --typography-body: var(--core-fontWeight-regular) 16px/24px var(--core-font-family-ui) 0px;
+  --typography-nav: var(--core-fontWeight-regular) 14px/20px var(--core-font-family-ui) 0px;
+  --typography-label: var(--core-fontWeight-bold) 12px/16px var(--core-font-family-ui) 0px;
+  --typography-eyebrow: var(--core-fontWeight-bold) 14px/24px var(--core-font-family-ui) 0.35px;
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-control: 10px;
+  --radius-chip: 24px;
+  --radius-3xl: 24px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-header: 80px;
+  --spacing-narrow: 890px;
+  --motion-duration-default: 200ms;
+  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-out: cubic-bezier(0, 0, 0.2, 1);
+  --surface-page: #ffffff;
+  --surface-card: #ffffff;
+  --surface-beige: #f3ece8;
+  --surface-board: #f4f1ed;
+  --surface-footer: #3b393f;
+  --surface-header-solid: #ffffff;
+  --text-primary: #26232a;
+  --text-ink: #0a0a0a;
+  --text-muted: #706e72;
+  --text-placeholder: #a3a0a4;
+  --text-on-footer: #ffffff;
+  --text-on-hero: #ffffff;
+  --accent: #ff8065;
+  --brand-100: #fef3ef;
+  --brand-400: #fe7f63;
+  --brand-500: #ff8065;
+  --brand-600: #ff8065;
+  --brand-700: #e16c4f;
+  --brand-900: #c84908;
+  --neutral-100: #f6f5f6;
+  --neutral-200: #e9e8ea;
+  --neutral-300: #c9c8ca;
+  --neutral-400: #a3a0a4;
+  --neutral-500: #9d9c9f;
+  --neutral-550: #888888;
+  --neutral-600: #706e72;
+  --neutral-700: #3b393f;
+  --neutral-800: #323232;
+  --neutral-900: #26232a;
+  --status-green-200: #b5e1d9;
+  --status-green-500: #079c81;
+  --status-green-800: #064d40;
+  --status-red-500: #ff0000;
+  --status-red-700: #d0011c;
+  --status-destructive: #e7000b;
+  --status-blue-500: #0066cc;
+  --border-subtle: #e5e5e5;
+  --border-field: #c9c8ca;
+  --border-on-hero: #ffffff;
+  --focus: #0066cc;
+  --shadow-search: 0px 6px 24px 0px rgba(0, 0, 0, 0.05);
+  --component-button-primary-bg: #26232a;
+  --component-button-primary-text: #ffffff;
+  --component-button-primary-radius: 2px;
+  --component-button-primary-height: 48px;
+  --component-button-brand-bg: #c84908;
+  --component-button-brand-text: #ffffff;
+  --component-button-brand-radius: 2px;
+  --component-button-brand-height: 40px;
+  --component-button-search-bg: #ff8065;
+  --component-button-search-radius: 0px;
+  --component-button-search-size: 40px;
+  --component-field-bg: rgba(0, 0, 0, 0);
+  --component-field-text: #26232a;
+  --component-field-radius: 2px;
+}
+body { margin: 0; background: var(--light-surface-page); color: var(--light-text-primary); font: var(--core-typography-body); }
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 { font: var(--core-typography-heading); margin: 0 0 8px; }
+h2 { font: var(--core-typography-nav); letter-spacing: 0.35px; text-transform: uppercase; color: var(--light-accent); margin: 40px 0 12px; }
+p.lede { max-width: 42rem; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border: 1px solid var(--light-border-field); border-radius: var(--core-radius-xs); }
+.swatch span { display: block; font: var(--core-typography-label); margin-top: 6px; }
+.spec { font: var(--core-typography-card-title); font-style: italic; }
+.btn { display: inline-flex; align-items: center; height: var(--light-component-button-primary-height); padding: 0 16px; border-radius: var(--light-component-button-primary-radius); background: var(--light-component-button-primary-bg); color: var(--light-component-button-primary-text); font-weight: 700; border: 2px solid var(--light-component-button-primary-bg); }
+.btn-brand { display: inline-flex; align-items: center; height: var(--light-component-button-brand-height); padding: 0 16px; border-radius: var(--light-component-button-brand-radius); background: var(--light-component-button-brand-bg); color: var(--light-component-button-brand-text); font-weight: 700; border: 0; }
+.btn-ghost { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 2px; background: transparent; color: var(--light-text-primary); border: 1px solid var(--light-border-field); font-weight: 700; }
+.search { display: flex; align-items: center; gap: 8px; width: 360px; height: 56px; padding: 8px; background: #fff; border-radius: 2px; box-shadow: var(--light-shadow-search); }
+.search span { flex: 1; color: var(--light-text-placeholder); font-size: 14px; }
+.search b { width: 40px; height: 40px; background: var(--light-component-button-search-bg); }
+.field { display: flex; flex-direction: column; gap: 4px; width: 280px; border: 1px solid var(--light-border-field); border-radius: var(--light-component-field-radius); padding: 12px 16px; }
+.field small { font: var(--core-typography-label); }
+.field em { font-style: normal; color: var(--light-text-placeholder); }
+.chip { display: inline-flex; align-items: center; height: 38px; padding: 8px 16px; border-radius: var(--core-radius-chip); border: 1px solid var(--light-border-field); font-size: 14px; }
+footer.demo { margin-top: 24px; background: var(--light-surface-footer); color: var(--light-text-on-footer); padding: 64px 48px; }
+</style>
+</head>
+<body>
+<main>
+<h1>onefinestay</h1>
+<p class="lede">Public marketing tokens, measured on 19 November 2026. Headings are Tiempos. UI text is Akkurat. The coral search control is brand 500. The booking control is brand 900. Both fonts are proprietary and are not loaded here, so the page falls through the stack.</p>
+
+<h2>Colour</h2>
+<div class="row">
+<div class="swatch"><i style="background:var(--light-surface-page)"></i><span>page</span></div>
+<div class="swatch"><i style="background:var(--light-text-primary)"></i><span>text</span></div>
+<div class="swatch"><i style="background:var(--light-text-muted)"></i><span>muted</span></div>
+<div class="swatch"><i style="background:var(--light-accent)"></i><span>accent</span></div>
+<div class="swatch"><i style="background:var(--light-brand-900)"></i><span>brand 900</span></div>
+<div class="swatch"><i style="background:var(--light-surface-footer)"></i><span>footer</span></div>
+<div class="swatch"><i style="background:var(--light-surface-beige)"></i><span>beige</span></div>
+<div class="swatch"><i style="background:var(--light-border-field)"></i><span>field border</span></div>
+<div class="swatch"><i style="background:var(--light-focus)"></i><span>focus</span></div>
+</div>
+
+<h2>Type</h2>
+<p style="font:var(--core-typography-display); margin:0">Where good taste travels</p>
+<p style="font:var(--core-typography-heading); margin:12px 0 0">Enjoy the finest luxury vacation rentals</p>
+<p class="spec">Cadogan Street IV</p>
+<p>At onefinestay, every home is carefully chosen for its perspective as much as its address.</p>
+<p style="font:var(--core-typography-eyebrow); text-transform:uppercase; color:var(--light-accent)">London vacation rentals you will love</p>
+
+<h2>Controls</h2>
+<div class="row" style="align-items:center">
+<button class="btn">Submit</button>
+<button class="btn-brand">Check Availability</button>
+<button class="btn-ghost">View all 26 photos</button>
+<span class="chip">Garden</span>
+</div>
+<div class="search" style="margin-top:16px"><span>Dates</span><b></b></div>
+<div class="field" style="margin-top:16px"><small>FIRST NAME*</small><em>First</em></div>
+<footer class="demo">Footer sits on neutral 700.</footer>
+</main>
+</body>
+</html>

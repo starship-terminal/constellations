@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tango style guide</title>
+<style>
+:root {
+  --page: #fafafa;
+  --raised: #ffffff;
+  --panel: #faf9fa;
+  --text: #383838;
+  --ink: #251f2d;
+  --secondary: #524d59;
+  --muted: #75717b;
+  --accent: #6f26d0;
+  --accent-hover: #5d1b98;
+  --highlight: #f9650f;
+  --orange-face: #ff8c49;
+  --pink: #ffa3c6;
+  --yellow: #fdd543;
+  --border: #cccccc;
+  --card-border: #989595;
+  --field-border: #96949a;
+  --focus: #dec4f3;
+  --disabled: #9b98a0;
+  --disabled-surface: #e8e6ea;
+  --font-display: Gelica, Georgia, serif;
+  --font-body: "Apercu Pro", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 22.4px;
+}
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 0 0 8px;
+  color: #000;
+}
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 32px; margin: 40px 0 12px; color: var(--ink); }
+p { color: var(--secondary); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 128px; }
+.swatch i { display: block; height: 64px; border-radius: 16px; border: 1px solid var(--border); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; color: var(--muted); }
+.primary, .secondary, .sales, .annual, .ghost, .field {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 100vh;
+}
+.primary {
+  height: 52px;
+  padding: 0 19px;
+  border: 1.5px solid transparent;
+  background: var(--accent);
+  color: #fff;
+}
+.secondary {
+  height: 52px;
+  padding: 0 19px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+}
+.sales {
+  height: 60px;
+  padding: 0 21px;
+  border: 1.5px solid transparent;
+  background: var(--orange-face);
+  color: #000;
+}
+.annual {
+  height: 39px;
+  padding: 0 16px;
+  border: 0;
+  background: var(--highlight);
+  color: #fff;
+}
+.app {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+.app.disabled {
+  background: var(--disabled-surface);
+  color: var(--disabled);
+}
+.field {
+  display: block;
+  width: 320px;
+  height: 36px;
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--field-border);
+  background: #fff;
+  color: var(--ink);
+  font-size: 13px;
+}
+.field:focus { outline: 3px solid var(--focus); border-color: var(--accent); }
+.gradient {
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(109deg, #ffa3c6 0%, #ff7c2f 40%, #fdd543 100%);
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Tango</h1>
+  <p>Measured light marketing and signed-out app chrome. Viewport was 1169 by 731. No screenshots.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#fafafa"></i><span>page #fafafa</span></div>
+    <div class="swatch"><i style="background:#faf9fa"></i><span>panel #faf9fa</span></div>
+    <div class="swatch"><i style="background:#383838"></i><span>text #383838</span></div>
+    <div class="swatch"><i style="background:#6f26d0"></i><span>accent #6f26d0</span></div>
+    <div class="swatch"><i style="background:#f9650f"></i><span>highlight #f9650f</span></div>
+    <div class="swatch"><i style="background:#ff8c49"></i><span>sales #ff8c49</span></div>
+    <div class="swatch"><i style="background:#cccccc"></i><span>border #cccccc</span></div>
+    <div class="swatch"><i style="background:#96949a"></i><span>field #96949a</span></div>
+  </div>
+  <h2>Hero gradient</h2>
+  <div class="gradient"></div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary">Get started for free</button>
+    <button class="secondary">See a demo</button>
+    <button class="sales">Talk to sales</button>
+    <button class="annual">Annual pricing</button>
+    <button class="app">Continue</button>
+    <button class="app disabled">Continue</button>
+  </div>
+  <h2>Field</h2>
+  <label style="font-size:12px;font-weight:500;color:#524d59;letter-spacing:0.1px">Work Email*</label>
+  <input class="field" placeholder="Email">
+</main>
+</body>
+</html>

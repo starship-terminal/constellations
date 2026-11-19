@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-19",
+  "browser": "T3 preview tab tab_56_b476fa69-d865-4d9c-9974-6281ced1c8e8",
+  "screenshot": "unavailable. preview_snapshot returned: The browser is not producing screenshot frames. Headless Playwright returned Cloudflare HTTP 403. No PNG was kept.",
+  "passes": [
+    {
+      "page": "https://www.stocksy.com/",
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewport": { "width": 1169, "height": 731, "scale": 1, "offsetLeft": 0, "offsetTop": 0 }
+    },
+    {
+      "page": "https://www.stocksy.com/pricing",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": { "width": 1440, "height": 900, "scale": 1, "offsetLeft": 0, "offsetTop": 0 }
+    },
+    {
+      "page": "https://www.stocksy.com/",
+      "note": "after preview_resize freeform 390x844",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": { "width": 390, "height": 844, "scale": 1, "offsetLeft": 0, "offsetTop": 0 }
+    }
+  ]
+}

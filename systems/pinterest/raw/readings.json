@@ -1,0 +1,111 @@
+{
+  "captured": "2026-11-19",
+  "url": "https://www.pinterest.com/",
+  "theme": {
+    "gestaltTheme": "calico",
+    "gestaltColorScheme": "lightMode",
+    "colorScheme": "normal",
+    "prefersColorSchemeDark": true,
+    "pageStayedLight": true
+  },
+  "viewports": [
+    {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1440,
+        "height": 900,
+        "scale": 1,
+        "offsetLeft": 0,
+        "offsetTop": 0
+      },
+      "page": "https://www.pinterest.com/"
+    },
+    {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 390,
+        "height": 844,
+        "scale": 1
+      },
+      "page": "https://www.pinterest.com/",
+      "note": "header links overflow past 390; search input width 0"
+    },
+    {
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1169,
+        "height": 731,
+        "scale": 1
+      },
+      "page": "https://www.pinterest.com/ and /ideas/"
+    }
+  ],
+  "screenshots": "unavailable. preview_snapshot returned: The browser is not producing screenshot frames.",
+  "notEntered": [
+    "Did not create an account",
+    "Did not log in",
+    "Did not submit the signup form (email, password, birthday)",
+    "Did not continue with Google",
+    "Did not follow a board"
+  ],
+  "signupWall": {
+    "home": "Welcome to Pinterest, email, password, birthday, Continue, Continue with Google",
+    "ideas": "Welcome to Pinterest, Log in to discover more ideas just for you, email, password, Forgot password?, Log in, Continue with Google, Continue with QR code"
+  },
+  "computed": {
+    "hero": {
+      "text": "Create the life you love on Pinterest",
+      "size": "48px",
+      "weight": "900",
+      "lh": "52.8px",
+      "ls": "-0.5px",
+      "color": "#000000"
+    },
+    "loginButton": {
+      "bg": "#e60023",
+      "radius": "16px",
+      "height": 48,
+      "pad": "8px 16px",
+      "computedColor": "#000000"
+    },
+    "signupButton": {
+      "bg": "#e5e5e0",
+      "radius": "16px",
+      "height": 48
+    },
+    "searchShell1440": {
+      "bg": "#e5e5e0",
+      "radius": "12px",
+      "height": 48,
+      "width": 619
+    },
+    "emailField": {
+      "border": "1px solid #91918c",
+      "radius": "12px",
+      "height": 56,
+      "fontSize": "16px",
+      "placeholder": "#757575"
+    },
+    "footer": {
+      "bg": "#000000"
+    },
+    "cardRadius": "8px"
+  },
+  "stylesheet": "https://s.pinimg.com/webapp/www/index-858e9ed112257e62.css declares .unauth-homepage-brand-module{background:linear-gradient(180deg,#f6f6f3,hsla(60,14%,96%,0))}",
+  "variableCountOnRoot": 2713,
+  "gaps": [
+    "Screenshot frames unavailable, so screenshots/ and components/crops/ are empty",
+    "Dark theme not shown: OS preferred dark, page stayed lightMode",
+    "Signup wall not submitted",
+    "Signed-in app, boards, pins, and account settings not entered",
+    "Hover and pressed colours are declared tokens, not a live pointer state",
+    "Focus ring not forced on a control",
+    "390 viewport overflows the desktop header; a dedicated phone shell was not measured"
+  ]
+}

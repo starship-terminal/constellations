@@ -1,0 +1,67 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {
+    "width": 1169,
+    "height": 731,
+    "devicePixelRatio": 2
+  },
+  "screenshotFrames": "The browser is not producing screenshot frames.",
+  "pages": {
+    "https://www.vsco.co/": {
+      "title": "VSCO: Photo Editor + Filters, Community, and Business Tools",
+      "bodyClass": "background-color-black-ish js-logged-out",
+      "body": {
+        "background": "#111111",
+        "color": "#ffffff",
+        "font": "VSCO Gothic, sans-serif",
+        "fontSize": "14.0686px",
+        "lineHeight": "21.1029px",
+        "fontWeight": 400
+      },
+      "h1": {
+        "text": "EVERYTHING A PHOTOGRAPHER NEEDS",
+        "fontSize": "87.9287px",
+        "lineHeight": "79.1359px",
+        "fontWeight": 500,
+        "color": "#000000",
+        "textTransform": "uppercase"
+      },
+      "nav": {
+        "height": 88,
+        "padding": "0px 40px",
+        "background": "#ffffff"
+      },
+      "customProperties": {
+        "--white": "white",
+        "--black": "black",
+        "--light-grey": "#f2f2f2",
+        "--v1-gold": "#ffbc3c",
+        "--surface-green": "#4d7d3f",
+        "--v1-dark-grey": "#737373",
+        "--gold-on-white": "#b2994f",
+        "--black-ish": "#111",
+        "--light-grey-hover": "#aaa",
+        "--dark-grey": "#1e1e1e",
+        "--100-red-l": "#f73100"
+      }
+    },
+    "https://vsco.co/user/login": {
+      "title": "Log in to VSCO | Sign into vsco.co",
+      "methods": [
+        "email and password",
+        "Log in with Google",
+        "Log in with Apple",
+        "Sign up link"
+      ],
+      "submitted": false,
+      "fieldRestBorder": "#d9d9d9",
+      "fieldFocusBorder": "#525252",
+      "invalidEmailBlur": "no error painted"
+    },
+    "https://www.vsco.co/subscribe/plans": {
+      "title": "VSCO Pricing & Membership Plans | Free, Pro & One",
+      "bodyBackground": "#f2f2f2",
+      "checkout": "not entered"
+    }
+  }
+}

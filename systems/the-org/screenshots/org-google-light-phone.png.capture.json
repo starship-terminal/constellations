@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-18T19:06:35.998Z",
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "measured": {
+    "href": "https://theorg.com/org/google",
+    "title": "Google | The Org",
+    "w": 390,
+    "h": 844,
+    "dpr": 1,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    },
+    "challenge": false,
+    "text": "Google\n152,777 people · 0 jobs\n\nFollow\n\nGoogle's mission is to organize the world’s information and make it universally accessible and useful.\n\nIndustries\n\nCloud, Email +4\n\nHeadqua"
+  },
+  "note": "Headless Playwright after the same public URL loaded in the T3 preview tab without a Cloudflare challenge. Preview screenshots failed with: The browser is not producing screenshot frames."
+}

@@ -1,0 +1,12 @@
+{
+  "capturedAt": "2026-11-18T16:35:13.398Z",
+  "name": "login-light-default",
+  "measured": {
+    "href": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+    "title": "Sign in to your account",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1
+  },
+  "note": "Microsoft account sign-in card. Nothing typed or submitted."
+}

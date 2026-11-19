@@ -1,0 +1,307 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 Code preview browser, live page.evaluate",
+  "screenshotFrames": "The browser is not producing screenshot frames. Measurements kept. No screenshots invented.",
+  "viewport": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "visualViewport": {"width": 1169, "height": 731, "scale": 1}},
+  "pages": {
+    "home": {
+      "url": "https://www.todoist.com/",
+      "title": "Todoist | A To-Do List to Organize Your Work & Life",
+      "challenge": false,
+      "themeClass": "todoistTheme",
+      "colorScheme": "normal",
+      "dataTheme": null
+    },
+    "pricing": {
+      "url": "https://www.todoist.com/pricing",
+      "title": "Pricing | Todoist",
+      "challenge": false
+    },
+    "login": {
+      "url": "https://app.todoist.com/auth/login?locale=en",
+      "title": "Log in to Todoist",
+      "challenge": false,
+      "colorScheme": "light",
+      "note": "Redirected from www.todoist.com/auth/login. App shell. Signed out."
+    },
+    "signup": {
+      "url": "https://app.todoist.com/auth/signup?locale=en",
+      "title": "Sign up for a free Todoist account",
+      "challenge": false,
+      "fields": ["email", "password"],
+      "sso": ["Google", "Facebook", "Apple"],
+      "turnstile": true,
+      "phone": false,
+      "entered": false
+    }
+  },
+  "computed": {
+    "home.body": {
+      "backgroundColor": "oklch(0.9945 0.0017 67.8)",
+      "color": "rgb(37, 34, 30)",
+      "fontFamily": "Graphik-1bbd4a4c7a2fb472",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "source": "document.body on https://www.todoist.com/ at 1169x731"
+    },
+    "home.h1.visible": {
+      "text": "The task system you'll actually stick with",
+      "color": "rgb(37, 34, 30)",
+      "fontFamily": "Graphik-1bbd4a4c7a2fb472",
+      "fontSize": "55px",
+      "fontWeight": "600",
+      "lineHeight": "63.25px",
+      "letterSpacing": "-0.55px",
+      "width": 802,
+      "height": 127,
+      "source": "visible h1 on home, viewport 1169"
+    },
+    "home.lede": {
+      "color": "rgba(37, 34, 30, 0.66)",
+      "fontFamily": "Inter-5486e50ce5a4efdf",
+      "fontSize": "20.5008px",
+      "fontWeight": "500",
+      "lineHeight": "32.8013px",
+      "width": 802,
+      "source": "paragraph under the visible h1"
+    },
+    "home.cta.primary.xl": {
+      "text": "Start for free",
+      "backgroundColor": "oklch(0.6147 0.1986 30.12)",
+      "color": "oklch(1 0 0)",
+      "padding": "12px 16px",
+      "borderRadius": "15px",
+      "fontFamily": "Inter-5486e50ce5a4efdf",
+      "fontSize": "18.5px",
+      "fontWeight": "600",
+      "lineHeight": "25.9px",
+      "letterSpacing": "0.185px",
+      "height": 64,
+      "width": 149,
+      "boxShadow": "none",
+      "source": "hero a.Start for free, class _primary_ _xl_"
+    },
+    "home.cta.primary.xl.focus": {
+      "backgroundColor": "oklch(0.6147 0.1986 30.12)",
+      "boxShadow": "oklch(0.9451 0.0168 215.46) 0px 0px 0px 4px, oklch(0.6772 0.1122 245.18) 0px 0px 0px 1px",
+      "outline": "none",
+      "source": "same control after element.focus()"
+    },
+    "home.nav.link": {
+      "text": "Individual",
+      "color": "rgb(37, 34, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "padding": "9px 14px",
+      "borderRadius": "8px",
+      "fontFamily": "Inter-5486e50ce5a4efdf",
+      "fontSize": "15.5px",
+      "fontWeight": "500",
+      "lineHeight": "20.925px",
+      "letterSpacing": "0.155px",
+      "height": 39,
+      "source": "visible nav link"
+    },
+    "home.nav": {
+      "height": 72,
+      "padding": "0px 24px",
+      "display": "grid",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "source": "nav._navbarContainer"
+    },
+    "pricing.h1": {
+      "text": "Plans and pricing",
+      "fontSize": "55px",
+      "fontWeight": "600",
+      "fontFamily": "Graphik-1bbd4a4c7a2fb472",
+      "color": "rgb(37, 34, 30)",
+      "source": "https://www.todoist.com/pricing h1"
+    },
+    "pricing.card": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderTop": "1px solid oklch(0.2538 0.0086 75.21 / 0.12)",
+      "borderRadius": "10px",
+      "padding": "24px 32px",
+      "width": 363,
+      "boxShadow": "none",
+      "source": "pricing article (Beginner / Pro / Business)"
+    },
+    "pricing.planName": {
+      "fontSize": "31px",
+      "fontWeight": "600",
+      "fontFamily": "Graphik-1bbd4a4c7a2fb472",
+      "color": "rgb(37, 34, 30)",
+      "source": "h2/h3 Beginner, Pro, Business"
+    },
+    "pricing.secondaryButton": {
+      "text": "Get started",
+      "backgroundColor": "rgba(37, 34, 30, 0.07)",
+      "color": "rgb(37, 34, 30)",
+      "padding": "9px 14px",
+      "borderRadius": "8px",
+      "fontSize": "15.5008px",
+      "fontWeight": "600",
+      "height": 39,
+      "source": "Beginner plan link"
+    },
+    "login.body": {
+      "backgroundColor": "rgb(252, 250, 248)",
+      "color": "rgb(32, 32, 32)",
+      "fontFamily": "-apple-system",
+      "fontSize": "13px",
+      "source": "document.body on app.todoist.com/auth/login"
+    },
+    "login.h1": {
+      "text": "Welcome back!",
+      "fontSize": "32px",
+      "fontWeight": "700",
+      "color": "rgb(32, 32, 32)",
+      "width": 376,
+      "source": "visible h1"
+    },
+    "login.sso": {
+      "text": "Continue with Google",
+      "height": 48,
+      "width": 376,
+      "padding": "0px 16px",
+      "borderRadius": "6px",
+      "border": "1px solid rgb(229, 229, 229)",
+      "fontSize": "18px",
+      "fontWeight": "700",
+      "color": "rgb(32, 32, 32)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "source": "SSO anchors, not clicked"
+    },
+    "login.submit": {
+      "text": "Log in",
+      "backgroundColor": "rgb(211, 51, 34)",
+      "color": "rgb(255, 255, 255)",
+      "height": 48,
+      "width": 376,
+      "borderRadius": "6px",
+      "fontSize": "18px",
+      "fontWeight": "700",
+      "padding": "0px 16px",
+      "source": "submit button, not clicked"
+    },
+    "login.link": {
+      "color": "rgb(211, 51, 34)",
+      "fontSize": "13px",
+      "source": "Forgot your password?, Sign up, Terms"
+    },
+    "login.field.rest": {
+      "border": "1px solid rgb(229, 229, 229)",
+      "borderRadius": "6px",
+      "padding": "8px 8px 4px",
+      "height": 65,
+      "source": "email field wrapper, ancestor 3"
+    },
+    "login.field.focus": {
+      "border": "1px solid rgb(184, 184, 184)",
+      "boxShadow": "none",
+      "outline": "none",
+      "source": "same wrapper after input.focus()"
+    },
+    "login.label": {
+      "fontSize": "12px",
+      "color": "rgb(32, 32, 32)",
+      "source": "Email label"
+    },
+    "login.input": {
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "color": "rgb(32, 32, 32)",
+      "source": "email input"
+    }
+  },
+  "customProperties": {
+    "marketing": {
+      "note": "Resolved on :root at https://www.todoist.com/. Osano cookie-banner variables excluded. 561 non-osano names resolved; this file keeps the roles used as tokens.",
+      "--neutral": "oklch(99.45% .0017 67.8)",
+      "--display-onlight-primary": "oklch(25.38% .0086 75.21)",
+      "--display-onlight-secondary": "oklch(25.38% .0086 75.21/.66)",
+      "--display-onlight-tertiary": "oklch(25.38% .0086 75.21/.49)",
+      "--display-onlight-brand-product": "oklch(61.47% .1986 30.12)",
+      "--display-onlight-brand-product-darker": "oklch(56.45% .1938 31.13)",
+      "--actionable-primary-background-idle": "oklch(61.47% .1986 30.12)",
+      "--actionable-primary-background-onhover": "oklch(56.45% .1938 31.13)",
+      "--actionable-secondary-background-idle": "oklch(25.38% .0086 75.21/.07)",
+      "--actionable-secondary-background-onhover": "oklch(25.38% .0086 75.21/.12)",
+      "--card-background-idle": "oklch(100% 0 0)",
+      "--card-border-idle": "oklch(25.38% .0086 75.21/.18)",
+      "--card-border-radius": "10px",
+      "--elevated-background": "oklch(100% 0 0)",
+      "--field-outline-border-idle": "oklch(25.38% .0086 75.21/.22)",
+      "--field-outline-border-onhover": "oklch(25.38% .0086 75.21/.32)",
+      "--shadow-focusvisible-default": "0 0 0 4px oklch(94.51% .0168 215.46), 0 0 0 1px oklch(67.72% .1122 245.18)",
+      "--shadow-focusvisible-error": "0 0 0 4px oklch(93.7% .0286 17.67), 0 0 0 1px oklch(67.21% .1762 32.88)",
+      "--shadow-overlay": "0 14px 19px -9px #25221e12, 0 10px 48px #25221e2e",
+      "--tone-positive": "oklch(53.22% .0947 141.17)",
+      "--tone-critical": "oklch(61.47% .1986 30.12)",
+      "--color-td-primary": "#e44232",
+      "--color-td-cta-hover": "#ee5244",
+      "--color-td-cta-active": "#d1453b",
+      "--color-td-secondary-light": "#fff9f3",
+      "--product-ui-priority-1": "#dc4c3e",
+      "--product-ui-priority-2": "#eb8909",
+      "--product-ui-priority-3": "#2a67e2",
+      "--product-ui-priority-4": "#999",
+      "--productui-sidebar": "#fcfaf8",
+      "--font-family-sans": "Graphik-1bbd4a4c7a2fb472, fallback Arial, Helvetica Neue, Helvetica, Arial, sans-serif",
+      "--font-family-body": "Inter-5486e50ce5a4efdf, fallback Arial, Helvetica Neue, Helvetica, Arial, sans-serif",
+      "--font-family-serif": "Caecilia, fallback Times New Roman, serif",
+      "--border-radius-sm": "6px",
+      "--border-radius-base": "8px",
+      "--border-radius-lg": "10px",
+      "--border-radius-xl": "13px",
+      "--border-radius-2xl": "15px",
+      "--border-radius-full": "9999px",
+      "--space-4": "0.25rem",
+      "--space-8": "0.5rem",
+      "--space-12": "0.75rem",
+      "--space-16": "1rem",
+      "--space-24": "1.5rem",
+      "--space-32": "2rem",
+      "--space-48": "3rem",
+      "--space-64": "4rem",
+      "--animation-duration-150": "0.15s",
+      "--animation-duration-350": "0.35s",
+      "--animation-ease-base": "cubic-bezier(.2, .8, .2, 1)",
+      "--opacity-disabled": "0.4",
+      "--brand-600": "oklch(61.47% .1986 30.12)",
+      "--grey-900": "oklch(25.38% .0086 75.21)",
+      "--greyopaque-50": "#fcfaf8",
+      "--greyopaque-900": "#25221e"
+    },
+    "app": {
+      "note": "Resolved on :root at https://app.todoist.com/auth/login. Product library, light.",
+      "--product-library-background-base-primary": "#fff",
+      "--product-library-background-base-secondary": "#fcfaf8",
+      "--product-library-background-overlay": "rgba(0,0,0,.4)",
+      "--product-library-display-primary-idle-tint": "#202020",
+      "--product-library-display-secondary-idle-tint": "#666",
+      "--product-library-display-tertiary-idle-tint": "#999",
+      "--product-library-display-accent-primary-tint": "#d33322",
+      "--product-library-actionable-primary-idle-fill": "#d33322",
+      "--product-library-actionable-primary-hover-fill": "#c3392c",
+      "--product-library-actionable-primary-disabled-fill": "#eda59e",
+      "--product-library-actionable-primary-on-idle-tint": "#fff",
+      "--product-library-border-idle-tint": "#e5e5e5",
+      "--product-library-border-focus-tint": "#b8b8b8",
+      "--product-library-info-positive-primary-idle-fill": "#058527",
+      "--product-library-info-warning-primary-on-idle-fill": "#eb8909",
+      "--product-library-info-attention-primary-idle-fill": "#dc4c3e",
+      "--product-library-info-neutral-primary-idle-fill": "#316fea",
+      "--product-library-radius-button": "6px",
+      "--product-library-radius-input-field": "6px",
+      "--product-library-radius-dialog": "10px",
+      "--product-library-radius-card": "12px",
+      "--td-ui-font-family": "-apple-system, BlinkMacSystemFont, Segoe UI, Noto Sans, system-ui, sans-serif",
+      "--td-ui-font-size-caption": "12px",
+      "--td-ui-font-size-copy": "13px",
+      "--td-ui-font-size-body": "14px",
+      "--td-ui-font-size-subtitle": "16px",
+      "--td-ui-font-size-header-xlarge": "32px",
+      "--td-ui-font-weight-strong": "700"
+    }
+  }
+}

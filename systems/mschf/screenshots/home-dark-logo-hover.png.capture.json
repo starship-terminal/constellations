@@ -1,0 +1,31 @@
+{
+  "capturedAt": "2026-11-18T16:33:08.973Z",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    },
+    "scrollHeight": 8148,
+    "colorScheme": "normal"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "sourceUrl": "https://mschf.com/",
+  "theme": "dark",
+  "note": "live headless Chromium; Cloudflare did not challenge"
+}

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nextdoor style guide</title>
+<style>
+:root {
+  --page: #FFFFFF;
+  --surface: #FFFFFF;
+  --base: #F0F2F5;
+  --text: #232F46;
+  --muted: #576580;
+  --accent: #1B8751;
+  --on-accent: #FFFFFF;
+  --border: #CAD3E5;
+  --danger: #C90B11;
+  --info: #1197DE;
+  --warning: #F6BF56;
+  --radius-pill: 10000px;
+  --radius-field: 12px;
+  --sans: system-ui, -apple-system, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+}
+[data-mode="dark"] {
+  --page: #262626;
+  --surface: #333333;
+  --base: #1A1A1A;
+  --text: #DFE6F2;
+  --muted: #ABB7CC;
+  --accent: #1B8751;
+  --on-accent: #FFFFFF;
+  --border: #576580;
+  --danger: #F15A5F;
+  --info: #1197DE;
+  --warning: #EA9B11;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 420 16px/20px var(--sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-size: 28px; line-height: 32px; font-weight: 620; margin: 0 0 8px; }
+h2 { font-size: 22px; line-height: 26px; font-weight: 620; margin: 32px 0 12px; }
+p { color: var(--muted); max-width: 68ch; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { display: flex; gap: 8px; align-items: center; font-size: 13px; }
+.sw i { width: 36px; height: 36px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--border); }
+button, .btn { border: 0; cursor: pointer; font: 420 16px/20px var(--sans); }
+.brand { height: 48px; padding: 8px 24px; border-radius: var(--radius-pill); background: var(--accent); color: var(--on-accent); }
+.neutral { height: 48px; padding: 8px 24px; border-radius: var(--radius-pill); background: var(--base); color: var(--text); }
+.medium { height: 40px; padding: 8px 16px; border-radius: var(--radius-pill); background: transparent; color: var(--text); }
+field { display: block; }
+input.field { display: block; width: min(352px, 100%); height: 56px; border: 0; border-radius: var(--radius-field); padding: 22px 12px 8px; background: transparent; color: var(--text); box-shadow: inset 0 0 0 1px var(--border); font: 420 16px/20px var(--sans); }
+input.field:focus { outline: none; box-shadow: inset 0 0 0 2px var(--text); }
+.card { width: min(400px, 100%); background: var(--surface); border-radius: 12px; padding: 24px; box-shadow: inset 0 0 0 1px var(--border); display: flex; flex-direction: column; gap: 12px; }
+a { color: var(--text); }
+footer a { color: var(--muted); font-weight: 620; font-size: 14px; text-decoration: none; }
+.toggle { margin-left: auto; font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="row">
+    <h1>Nextdoor</h1>
+    <label class="toggle"><input type="checkbox" id="theme"> Dark (declared)</label>
+  </div>
+  <p>Public signed-out surfaces, 2026-11-19. Specimens use the measured tokens. Saans is not loaded. Dark values were declared and not painted.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#FFFFFF"></i> page #FFFFFF</div>
+    <div class="sw"><i style="background:#F0F2F5"></i> base #F0F2F5</div>
+    <div class="sw"><i style="background:#232F46"></i> text #232F46</div>
+    <div class="sw"><i style="background:#576580"></i> muted #576580</div>
+    <div class="sw"><i style="background:#1B8751"></i> accent #1B8751</div>
+    <div class="sw"><i style="background:#CAD3E5"></i> border #CAD3E5</div>
+    <div class="sw"><i style="background:#1197DE"></i> info #1197DE</div>
+    <div class="sw"><i style="background:#C90B11"></i> danger #C90B11</div>
+    <div class="sw"><i style="background:#F6BF56"></i> warning #F6BF56</div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font-size:32px;line-height:36px;font-weight:620;color:var(--text)">Shout 32 / 36</p>
+  <p style="font-size:22px;line-height:26px;font-weight:620;color:var(--text)">Section 22 / 26, the homepage headline size</p>
+  <p style="font-size:16px;line-height:20px;font-weight:420;color:var(--text)">Body 16 / 20. Discover your neighborhood.</p>
+  <p style="font-size:14px;line-height:18px;font-weight:420;color:var(--muted)">Detail 14 / 18, muted.</p>
+
+  <h2>Controls</h2>
+  <div class="card">
+    <strong>Discover your neighborhood</strong>
+    <div class="row">
+      <button class="neutral" type="button">Continue with Google</button>
+    </div>
+    <input class="field" type="email" placeholder="Email address" aria-label="Email address">
+    <button class="brand" type="button">Continue</button>
+    <a href="#privacy">Privacy Policy</a>
+  </div>
+  <p>The card on the live page is 400px wide, 12px radius, 24px padding. Buttons are 48px pills. The field is 56px with a 12px radius.</p>
+  <div class="row">
+    <button class="medium" type="button">Partners</button>
+    <button class="neutral" type="button">Log in</button>
+    <button class="brand" type="button">Sign up</button>
+  </div>
+</div>
+<script>
+document.getElementById("theme").addEventListener("change", (e) => {
+  document.documentElement.dataset.mode = e.target.checked ? "dark" : "light";
+});
+</script>
+</body>
+</html>

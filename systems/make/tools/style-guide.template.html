@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make style guide</title>
+<meta name="description" content="Make public-site tokens, rendered from tokens.json. One light theme.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Satoshi, Arial, sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 500 40px/48px var(--sg-sans); letter-spacing: -1px; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--textBody); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--textBody); }
+code { font-family: var(--sg-mono); font-size: 13px; color: var(--link); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: var(--textBody); }
+.bar { display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 20px; border-bottom: 1px solid var(--border); }
+.bar .mark { font-weight: 800; color: var(--accent); }
+.bar a { color: var(--textTertiary); text-decoration: none; font-size: 14px; }
+.bar .sp { flex: 1; }
+.hero { text-align: center; padding: 48px 16px; }
+.hero h3 { margin: 0; font: 500 48px/58px var(--sg-sans); letter-spacing: -1.2px; color: var(--text); }
+.btn { display: inline-flex; align-items: center; height: 47px; padding: 0 18px; border-radius: 8px; background: var(--accent); color: var(--textOnAccent); border: 0; font: 400 16px/1 var(--sg-sans); }
+.btn-secondary { display: inline-flex; align-items: center; height: 47px; padding: 0 18px; border-radius: 8px; background: var(--page); color: var(--textBody); border: 1px solid var(--border); font: 400 16px/1 var(--sg-sans); margin-left: 8px; }
+.badge { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 9999px; background: var(--badgeFill); color: var(--badgeText); font-size: 14px; }
+.save { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 9999px; background: var(--successFill); color: var(--successText); font-size: 14px; margin-left: 8px; }
+.field { display: flex; align-items: center; height: 56px; padding: 0 16px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--textMuted); box-shadow: 0 5px 10px rgba(0,0,0,.12); max-width: 520px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--textBody); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Make</h1>
+  <p>Public marketing, pricing and templates, captured 2026-11-18. One light theme. Satoshi is licensed and not loaded here; the page uses Arial.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>white</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>neutral 900</span></div>
+    <div class="sw"><i style="background:var(--textBody)"></i><b>body</b><span>neutral 600</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>brand 600</span></div>
+    <div class="sw"><i style="background:var(--accentHover)"></i><b>accent hover</b><span>brand 700</span></div>
+    <div class="sw"><i style="background:var(--link)"></i><b>link</b><span>brand 700</span></div>
+    <div class="sw"><i style="background:var(--surfaceMuted)"></i><b>muted</b><span>neutral 100</span></div>
+    <div class="sw"><i style="background:var(--successText)"></i><b>success</b><span>green 800</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <div class="bar">
+    <span class="mark">make</span>
+    <a>Product</a><a>Pricing</a><a>Templates</a>
+    <span class="sp"></span>
+    <a>Sign in</a>
+  </div>
+  <div class="hero">
+    <h3>Plans that grow with you</h3>
+    <p>Display is 60px medium, tracking -1.2px, neutral 900.</p>
+    <button class="btn">Try it free</button>
+    <button class="btn-secondary">Talk to sales</button>
+  </div>
+  <p><span class="badge">Popular</span><span class="save">Save 15%</span></p>
+  <p><span class="field">Search templates...</span></p>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Use</th></tr>
+    <tr><td>Display</td><td>60 / 72</td><td>Home headline</td></tr>
+    <tr><td>Heading</td><td>48</td><td>Pricing headline</td></tr>
+    <tr><td>Credits</td><td>36</td><td>10,000 credits/mo</td></tr>
+    <tr><td>Price</td><td>30</td><td>Plan price</td></tr>
+    <tr><td>Body</td><td>16 / 24</td><td>Buttons and copy</td></tr>
+  </table>
+</main>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pi style guide</title>
+<meta name="description" content="Pi (pi.ai) design tokens measured from the signed-out chat and the public marketing site, rendered from tokens.json.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap">
+<style>
+:root {
+  --page: #FAF3EA;
+  --surface: #F7EFE4;
+  --raised: #FCFAF7;
+  --text: #1A4631;
+  --muted: #655E55;
+  --accent: #1A4631;
+  --on-accent: #FCFAF7;
+  --border: #E1D3C0;
+  --input: #FCFAF7;
+  --input-border: #D9C9B4;
+  --link: #038247;
+  --error: #D42600;
+  --submit: #038247;
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --page: #131212;
+  --surface: #1A1918;
+  --raised: #242322;
+  --text: #D8D4CE;
+  --muted: #B4AFA7;
+  --accent: #289A62;
+  --on-accent: #242322;
+  --border: #504A42;
+  --input: #2C2A28;
+  --input-border: #4B4844;
+  --link: #43A774;
+  --error: #DE5A3D;
+  --submit: #43A774;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--text); }
+body { font: 500 16px/1.4 "DM Sans", ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.16px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+h1 { font: 400 32px/35.2px "Source Serif 4", Georgia, serif; letter-spacing: -0.48px; margin: 0; }
+h2 { font: 400 22px/31.9px "Source Serif 4", Georgia, serif; letter-spacing: -0.22px; margin: 36px 0 12px; }
+p.note { color: var(--muted); max-width: 72ch; }
+button.toggle { margin-left: auto; height: 48px; padding: 0 16px; border-radius: 48px; border: 1px solid var(--border); background: var(--page); color: var(--muted); font: inherit; cursor: pointer; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--border); display: block; }
+.sw b { display: block; font-size: 13px; }
+.sw span { color: var(--muted); font-size: 12px; font-weight: 500; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 16px 0; }
+.pill { height: 48px; padding: 0 16px; border-radius: 48px; border: 0; background: var(--accent); color: var(--on-accent); font: inherit; }
+.ghost { height: 48px; padding: 0 16px; border-radius: 48px; border: 1px solid var(--border); background: var(--page); color: var(--muted); font: inherit; }
+.oauth { height: 56px; min-width: 280px; padding: 0 16px; border-radius: 48px; border: 1.5px solid var(--border); background: var(--raised); color: var(--text); font: inherit; }
+.round { width: 40px; height: 40px; border-radius: 9999px; border: 0; background: var(--submit); color: var(--on-accent); }
+.field { height: 40px; width: min(100%, 360px); border-radius: 10px; border: 1px solid var(--input-border); background: var(--input); color: var(--text); padding: 0 16px; font: inherit; }
+.sidebar { width: 280px; max-width: 100%; background: var(--surface); border-right: 1px solid var(--border); padding: 16px; border-radius: 0; }
+.greeting { font: 400 22px/31.9px "Source Serif 4", Georgia, serif; letter-spacing: -0.22px; max-width: 36rem; }
+a.sample { color: var(--link); }
+.hero { font: 400 40px/38px "Source Serif 4", Georgia, serif; letter-spacing: -1.2px; margin: 0; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; }
+code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Pi</h1>
+  <button class="toggle" type="button" id="theme">Dark</button>
+</header>
+<p class="note">Values are the computed styles and declared custom properties read from pi.ai and hey.pi.ai on 19 November 2026. Grenette is proprietary, so this page sets Source Serif 4 in its place. DM Sans is loaded from Google Fonts.</p>
+
+<h2>Colour</h2>
+<div class="swatches" id="swatches"></div>
+
+<h2>Type</h2>
+<p class="greeting">Hey, I'm Pi. Your personal AI.</p>
+<p class="hero">The world's first personal intelligence</p>
+<p>Log in to save your chat history past 60 days.</p>
+<p class="note">Label, 14px, weight 500. What should Pi call you?</p>
+
+<h2>Controls</h2>
+<div class="row">
+  <button class="pill" type="button">Log in</button>
+  <button class="ghost" type="button">Sign up for free</button>
+  <button class="round" type="button" aria-label="Submit name">↑</button>
+</div>
+<div class="row">
+  <button class="oauth" type="button">Continue with Google</button>
+</div>
+<div class="row">
+  <input class="field" aria-label="What should Pi call you?" placeholder="Your name">
+</div>
+<p><a class="sample" href="https://inflection.ai/terms-of-service">Terms</a></p>
+
+<h2>Sidebar</h2>
+<div class="sidebar">
+  <p>Greetings from Pi</p>
+  <p class="note">Help and feedback</p>
+  <button class="pill" type="button">Log in</button>
+</div>
+
+<h2>Radii and spacing</h2>
+<table>
+  <tr><th>Token</th><th>Value</th><th>Where it was read</th></tr>
+  <tr><td><code>radius.icon</code></td><td>10px</td><td>Sidebar toggle</td></tr>
+  <tr><td><code>radius.row</code></td><td>8px</td><td>Help and feedback</td></tr>
+  <tr><td><code>radius.input</code></td><td>10px</td><td>Name field</td></tr>
+  <tr><td><code>radius.pill</code></td><td>48px</td><td>Log in, Sign up for free</td></tr>
+  <tr><td><code>radius.round</code></td><td>9999px</td><td>Submit name</td></tr>
+  <tr><td><code>radius.marketing-cta</code></td><td>40px</td><td>hey.pi.ai Try Pi</td></tr>
+  <tr><td><code>spacing.sidebar</code></td><td>280px</td><td>Side menu</td></tr>
+  <tr><td><code>spacing.control</code></td><td>40px</td><td>Icon button and name field</td></tr>
+  <tr><td><code>spacing.button</code></td><td>48px</td><td>Header Log in</td></tr>
+  <tr><td><code>spacing.button-tall</code></td><td>56px</td><td>Sidebar Log in and OAuth buttons</td></tr>
+</table>
+</div>
+<script>
+const swatches = [
+  ["page", "--page"],
+  ["surface", "--surface"],
+  ["raised", "--raised"],
+  ["text", "--text"],
+  ["muted", "--muted"],
+  ["accent", "--accent"],
+  ["on accent", "--on-accent"],
+  ["border", "--border"],
+  ["input", "--input"],
+  ["link", "--link"],
+  ["error", "--error"]
+];
+const root = document.getElementById("swatches");
+const cs = () => getComputedStyle(document.documentElement);
+for (const [name, prop] of swatches) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i></i><div><b></b><span></span></div>";
+  el.querySelector("b").textContent = name;
+  el.dataset.prop = prop;
+  root.appendChild(el);
+}
+function paint() {
+  const style = cs();
+  for (const el of root.querySelectorAll(".sw")) {
+    const value = style.getPropertyValue(el.dataset.prop).trim();
+    el.querySelector("i").style.background = value;
+    el.querySelector("span").textContent = value;
+  }
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.dataset.theme === "dark" ? "light" : "dark";
+  html.dataset.theme = next;
+  document.getElementById("theme").textContent = next === "dark" ? "Light" : "Dark";
+  paint();
+});
+paint();
+</script>
+</body>
+</html>
