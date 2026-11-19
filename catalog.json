@@ -20343,6 +20343,62 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "steel",
+      "name": "Steel",
+      "url": "https://steel.dev",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "Dark developer marketing for browser infrastructure: a near-black page, mono uppercase 6px buttons, coloured page bands, and a signed-out email sign-in",
+      "tags": [
+        "web",
+        "developer",
+        "saas",
+        "ai",
+        "agent",
+        "marketing",
+        "dark",
+        "mono"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing, docs, brand kit, and the email sign-in form; the form was filled and cleared, not submitted)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/steel/README.md",
+      "tokens": "systems/steel/tokens.json",
+      "styleGuide": "systems/steel/style-guide.html",
+      "preview": {
+        "cover": "systems/steel/icon.png",
+        "icon": "systems/steel/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.raised",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/818"
+      }
     }
   ]
 }

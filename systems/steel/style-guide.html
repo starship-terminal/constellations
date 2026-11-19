@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steel style guide</title>
+<style>
+:root {
+  --dark-page: #141414;
+  --dark-docs: #111110;
+  --dark-text: #eeeeec;
+  --dark-muted: #b4b3ad;
+  --dark-dim: #7d7b74;
+  --dark-surface: #191918;
+  --dark-accent: #eeeeec;
+  --dark-on-accent: #111110;
+  --dark-border: #3c3b38;
+  --dark-border-subtle: #2d2c2a;
+  --dark-focus: #05a5ff;
+  --dark-danger: #ff8a88;
+  --dark-success: #3dd68c;
+  --dark-warning: #ffc100;
+  --dark-info: #6abaff;
+  --dark-hero: #99e1e0;
+  --dark-scale: #00c6c5;
+  --dark-field: #2a2a28;
+  --light-page: #ffffff;
+  --light-text: #21201c;
+  --light-muted: #63635e;
+  --light-surface: #f0f0ef;
+  --light-accent: #21201c;
+  --light-border: #cfcfca;
+  --font-sans: schengenA, "schengenA Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: schengenAMono, ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-inter: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--dark-page);
+  color: var(--dark-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+}
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 { font-weight: 400; font-size: 60px; line-height: 60.6px; letter-spacing: -1.2px; margin: 0 0 8px; }
+h2 { font-weight: 400; font-size: 28px; margin: 40px 0 12px; }
+p { color: var(--dark-muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 128px; }
+.swatch i { display: block; height: 64px; border-radius: 6px; border: 1px solid var(--dark-border); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; color: var(--dark-muted); font-family: var(--font-mono); }
+button, .ghost, .field {
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 0;
+  font: 400 12px/16px var(--font-mono);
+  letter-spacing: 0.18px;
+  text-transform: uppercase;
+}
+.primary { background: var(--dark-accent); color: #141414; }
+.quiet { background: #222221; color: var(--dark-text); }
+.signin { background: #ffffff; color: #000000; height: 32px; }
+.field {
+  background: var(--dark-field);
+  color: var(--dark-text);
+  font-family: var(--font-inter);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  width: 280px;
+}
+.note { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Steel</h1>
+  <p>Measured on steel.dev, 19 November 2026. Dark marketing is the default. Light was read after the brand-kit Light control, then restored.</p>
+  <h2>Dark</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#141414"></i><span>page #141414</span></div>
+    <div class="swatch"><i style="background:#191918"></i><span>surface #191918</span></div>
+    <div class="swatch"><i style="background:#eeeeec"></i><span>text #eeeeec</span></div>
+    <div class="swatch"><i style="background:#b4b3ad"></i><span>muted #b4b3ad</span></div>
+    <div class="swatch"><i style="background:#eeeeec"></i><span>accent #eeeeec</span></div>
+    <div class="swatch"><i style="background:#3c3b38"></i><span>border #3c3b38</span></div>
+    <div class="swatch"><i style="background:#05a5ff"></i><span>focus #05a5ff</span></div>
+    <div class="swatch"><i style="background:#99e1e0"></i><span>hero #99e1e0</span></div>
+    <div class="swatch"><i style="background:#00c6c5"></i><span>scale #00c6c5</span></div>
+    <div class="swatch"><i style="background:#3dd68c"></i><span>success #3dd68c</span></div>
+    <div class="swatch"><i style="background:#ff8a88"></i><span>danger #ff8a88</span></div>
+    <div class="swatch"><i style="background:#ffc100"></i><span>warning #ffc100</span></div>
+  </div>
+  <h2>Light</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="swatch"><i style="background:#f0f0ef"></i><span>surface #f0f0ef</span></div>
+    <div class="swatch"><i style="background:#21201c"></i><span>text #21201c</span></div>
+    <div class="swatch"><i style="background:#63635e"></i><span>muted #63635e</span></div>
+    <div class="swatch"><i style="background:#21201c"></i><span>accent #21201c</span></div>
+    <div class="swatch"><i style="background:#cfcfca"></i><span>border #cfcfca</span></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary" type="button">Start for free</button>
+    <button class="signin" type="button">Sign in</button>
+    <button class="quiet" type="button">Contact sales</button>
+    <input class="field" placeholder="Email address" aria-label="Email address">
+  </div>
+  <p class="note">Buttons are 6px radius, 12px mono, uppercase. The email field is Inter 13px on #2a2a28. Focus outline measured as 1px solid #05a5ff.</p>
+</main>
+</body>
+</html>
