@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitch style guide</title>
+<style>
+  :root {
+    --violet: #5318eb;
+    --violet-deep: #280f62;
+    --ink: #0c021c;
+    --body: #363636;
+    --lilac: #c6a5ff;
+    --lilac-wash: #ebe3fe;
+    --lime: #c4ee87;
+    --white: #fff;
+    --login: #6b53ff;
+    --muted: #939da8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--white); color: var(--ink); font: 400 16px/1.5 "Eina 03 Regular", "Segoe UI", sans-serif; }
+  header { padding: 28px 32px; background: var(--violet-deep); color: var(--white); }
+  header h1 { margin: 0; font: 700 40px/1.1 "Mark Pro Bold", "Segoe UI", sans-serif; letter-spacing: -0.04em; }
+  header p { margin: 8px 0 0; max-width: 62ch; }
+  main { padding: 32px; max-width: 1080px; }
+  h2 { font: 700 28px/1.2 "Mark Pro Bold", "Segoe UI", sans-serif; letter-spacing: -0.02em; color: var(--violet-deep); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .sw { border-radius: 12px; overflow: hidden; border: 1px solid var(--lilac-wash); }
+  .sw i { display: block; height: 64px; }
+  .sw span { display: block; padding: 8px 10px; font-size: 12px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+  button, .pill { border: 0; cursor: default; font: 700 16px/1.2 "Eina 03 Bold", "Segoe UI", sans-serif; }
+  .login { background: var(--white); color: var(--ink); border-radius: 30px; padding: 12px 16px; }
+  .signup { background: var(--lime); color: var(--ink); border-radius: 4px; padding: 10px 12px; }
+  .generate { background: var(--violet); color: var(--white); border-radius: 4px; padding: 8px 12px 8px 16px; font-weight: 400; font-size: 14px; }
+  .continue { background: var(--login); color: var(--white); border-radius: 8px; padding: 12px 24px; opacity: 0.5; font: 500 14px/21px Lato, Helvetica, Arial, sans-serif; }
+  .field { width: 300px; height: 40px; border-radius: 8px; border: 1px solid rgba(43, 42, 53, 0.12); padding: 0 8px; font: 400 14px/21px Lato, Helvetica, Arial, sans-serif; }
+  .field:focus { outline: none; border-color: var(--login); box-shadow: 0 0 0 1px var(--login); }
+  .card { width: 280px; border-radius: 32px; border: 1px solid var(--lilac-wash); overflow: hidden; }
+  .card b { display: block; padding: 16px; font: 700 14px/1.4 "Space Mono", ui-monospace, monospace; letter-spacing: 0.5px; }
+  .card .body { padding: 16px; font: 700 40px/1.1 "Mark Pro Bold", "Segoe UI", sans-serif; }
+  .note { color: var(--body); max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Pitch</h1>
+  <p>Public marketing and signed-out login. Values are the measured tokens. Mark Pro and Eina 03 are not loaded here, so the samples fall back to the system sans.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#5318eb"></i><span>violet #5318eb</span></div>
+    <div class="sw"><i style="background:#280f62"></i><span>violet-deep #280f62</span></div>
+    <div class="sw"><i style="background:#0c021c"></i><span>ink #0c021c</span></div>
+    <div class="sw"><i style="background:#363636"></i><span>body #363636</span></div>
+    <div class="sw"><i style="background:#c6a5ff"></i><span>lilac #c6a5ff</span></div>
+    <div class="sw"><i style="background:#ebe3fe"></i><span>lilac wash #ebe3fe</span></div>
+    <div class="sw"><i style="background:#c4ee87"></i><span>lime #c4ee87</span></div>
+    <div class="sw"><i style="background:#6b53ff"></i><span>login action #6b53ff</span></div>
+    <div class="sw"><i style="background:#939da8"></i><span>muted #939da8</span></div>
+  </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="login">Log in</button>
+    <button class="signup">Sign up</button>
+    <button class="generate">Generate</button>
+    <button class="continue">Continue with email</button>
+  </div>
+  <p class="note">Continue with email is shown at the disabled opacity 0.5. The colour underneath is #6b53ff.</p>
+  <h2>Field</h2>
+  <input class="field" placeholder="Work email">
+  <h2>Plan cards</h2>
+  <div class="row">
+    <div class="card"><b style="background:#ebe3fe;color:#280f62">FREE</b><div class="body">$0</div></div>
+    <div class="card"><b style="background:#c6a5ff;color:#0c021c">PLUS</b><div class="body">$10</div></div>
+    <div class="card"><b style="background:#5318eb;color:#fff">TEAM</b><div class="body">$15</div></div>
+    <div class="card"><b style="background:#280f62;color:#fff">BUSINESS</b><div class="body">$20</div></div>
+  </div>
+</main>
+</body>
+</html>

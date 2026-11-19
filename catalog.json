@@ -20343,6 +20343,81 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pitch",
+      "name": "Pitch",
+      "url": "https://pitch.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Presentation-product marketing: a purple Framer hero, a lime Sign up chip beside a white Log in pill, four plan cards that share a body and change the header, and a signed-out login card on a violet gradient",
+      "tags": [
+        "web",
+        "presentations",
+        "marketing",
+        "saas",
+        "violet",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing pages plus the auth.pitch.com login form; the email field was focused, nothing was typed, nothing was submitted, and Google, Apple and SSO were not followed)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/pitch/README.md",
+      "tokens": "systems/pitch/tokens.json",
+      "styleGuide": "systems/pitch/style-guide.html",
+      "preview": {
+        "cover": "systems/pitch/screenshots/home-light-default.png",
+        "icon": "systems/pitch/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.card",
+            "text": "light.text.heading",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.plan"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "pitch.com and auth.pitch.com. The T3 preview tab loaded both and computed styles were read there. The preview tab could not produce screenshot frames, so screenshots and the 1440 and 390 passes were taken in headless Playwright on pages that had already loaded with no Cloudflare challenge. Nothing was typed or submitted.",
+        "timestamp": "2026-11-19T00:35:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/product",
+          "/pricing",
+          "/templates",
+          "auth.pitch.com/login",
+          "auth.pitch.com/login#/sign-in/email"
+        ],
+        "gaps": [
+          "the product app sits behind auth.pitch.com and was not entered",
+          "Google, Apple and SSO were not followed",
+          "no email was typed and nothing was submitted, so no error, loading or signed-in state was shown",
+          "the preview browser could not produce screenshot frames, so the PNGs are headless Playwright",
+          "no dark theme was on the public pages",
+          "nav menus were not opened",
+          "pressed and loading button states were not on the page"
+        ],
+        "durationMin": 70,
+        "pr": "https://github.com/starship-terminal/constellations/pull/748"
+      }
     }
   ]
 }
