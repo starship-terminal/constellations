@@ -18,6 +18,11 @@ and two refero.db tables — collections(slug, url, title, description) and
 collection_styles(collection_slug, section, rank, style_uuid) — rebuilt in
 one transaction each run.
 
+The store is rebuilt from the pages fetched, so a run writes nothing unless
+every listed page fetched: a failed page exits non-zero with the store left
+as it was, and so does a sitemap that lists no pages. --limit N fetches only
+the first N pages as a dry run and never writes the store.
+
 Usage:
     python3 tools/refero/fetch_collections.py [--workers 4] [--limit N]
 """
@@ -214,7 +219,9 @@ def write_atomic(path, text):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--workers", type=int, default=4)
-    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--limit", type=int, default=0,
+                    help="fetch only the first N pages; a dry run that "
+                         "never writes the store")
     args = ap.parse_args()
 
     xml = get(SITEMAP).decode()
@@ -223,6 +230,8 @@ def main():
     if args.limit:
         urls = urls[:args.limit]
     print(f"sitemap: {len(urls)} collection pages")
+    if not urls:
+        sys.exit("sitemap lists no collection pages; store left unchanged")
 
     results, failures = {}, []
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
@@ -235,6 +244,13 @@ def main():
             except Exception as ex:
                 failures.append((slug, url, str(ex)[:200]))
                 print(f"FAIL {slug}: {ex}", file=sys.stderr)
+
+    # The tables and collections.json are rebuilt from `results` alone, so a
+    # page missing from it would delete that collection from the store.
+    if failures:
+        sys.exit(f"failed {len(failures)} pages: "
+                 + ", ".join(s for s, _, _ in failures)
+                 + "; store left unchanged")
 
     db = sqlite3.connect(DB)
     db.execute("PRAGMA busy_timeout=30000")
@@ -272,6 +288,12 @@ def main():
             ],
         })
 
+    if args.limit:
+        db.close()
+        print(f"\n--limit {args.limit}: dry run, {len(collections)} collections "
+              f"parsed; store not written")
+        return
+
     doc = {
         "version": 1,
         "about": "Curated collections scraped from styles.refero.design — "
@@ -306,9 +328,6 @@ def main():
     if skipped:
         print(f"skipped {len(skipped)} pages with no styles: "
               + ", ".join(s for s, _ in skipped))
-    if failures:
-        print(f"failed {len(failures)} pages: "
-              + ", ".join(s for s, _, _ in failures))
     db.close()
     refero_dump.refresh(DB)
 
