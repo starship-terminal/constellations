@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telescope style guide</title>
+<style>
+  :root {
+    --page: #f4f3f0;
+    --ink: #1a1915;
+    --surface: #ffffff;
+    --muted: #82868e;
+    --accent: #e3f794;
+    --blue: #0671ff;
+    --danger: #d80000;
+    --border: #1a191533;
+    color-scheme: light;
+  }
+  [data-mode="dark"] {
+    --page: #2b2b2e;
+    --ink: #e3e5e7;
+    --surface: #3b3d3f;
+    --muted: #afb0b1;
+    --accent: #0671ff;
+    --blue: #0671ff;
+    --danger: #e48881;
+    --border: #ffffff;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 400 19px/1.15 Beausite, "Source Serif 4", Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+  header, main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+  header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  h1 { font: 400 3rem/1.15 Beausite, "Source Serif 4", Georgia, serif; margin: 0; letter-spacing: -0.02em; }
+  h2 { font: 400 1.4rem/1.2 Beausite, Georgia, serif; margin: 32px 0 12px; }
+  p { max-width: 62ch; }
+  button.toggle {
+    font: 400 0.65rem/1.1 "DM Mono", ui-monospace, monospace;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--page);
+    border: 0;
+    height: 2.65rem;
+    padding: 0 1rem;
+    cursor: pointer;
+  }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--border); min-height: 88px; padding: 10px; font: 400 0.65rem/1.1 "DM Mono", ui-monospace, monospace; letter-spacing: 0.03em; text-transform: uppercase; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.65rem;
+    padding: 0 1.35rem;
+    background: var(--accent);
+    color: #1a1915;
+    font: 400 0.65rem/1.1 "DM Mono", ui-monospace, monospace;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 999px;
+  }
+  .auth {
+    width: 360px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #2b2b2e;
+    color: #e3e5e7;
+    padding: 24px;
+    border-radius: 8px;
+  }
+  .auth button, .auth input {
+    font: 600 14px/20px Beausite, ui-sans-serif, system-ui, sans-serif;
+    border-radius: 8px;
+    height: 40px;
+    border: 0;
+  }
+  .auth .google { background: #3b3d3f; color: #e3e5e7; }
+  .auth input {
+    height: 54px;
+    background: #2b2b2e;
+    color: #e3e5e7;
+    border: 1px solid #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px;
+  }
+  .auth .continue { background: #3b3d3f; color: #4e4f50; }
+  .auth .legal { font: 400 12px/16px Beausite, ui-sans-serif, system-ui, sans-serif; color: #afb0b1; }
+  .label { font: 400 0.65rem/1.1 "DM Mono", ui-monospace, monospace; letter-spacing: 0.03em; text-transform: uppercase; }
+  a { color: inherit; }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Source+Serif+4:opsz,wght@8..60,400&display=swap">
+</head>
+<body>
+<header>
+  <div>
+    <p class="label">Telescope</p>
+    <h1>Real recommendations</h1>
+  </div>
+  <button class="toggle" type="button" id="theme">Dark login</button>
+</header>
+<main>
+  <p>Public marketing page is beige <span class="label">#f4f3f0</span> with Beausite and a yellow Sign up pill. The signed-out login page mounts <span class="label">.dark</span>.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Marketing button</h2>
+  <div class="row">
+    <span class="pill">Sign up</span>
+    <span class="label">Login</span>
+  </div>
+  <h2>Signed-out login</h2>
+  <div class="auth">
+    <button class="google" type="button">Continue with Google</button>
+    <span class="label" style="text-align:center">or</span>
+    <input type="email" placeholder="Enter your email" aria-label="Enter your email">
+    <button class="continue" type="button">Continue</button>
+    <p class="legal">By continuing, you agree to the Terms of Use and acknowledge the Privacy Policy and Code of Conduct</p>
+  </div>
+</main>
+<script>
+  const roles = [
+    ["page", "--page"],
+    ["ink", "--ink"],
+    ["surface", "--surface"],
+    ["muted", "--muted"],
+    ["accent", "--accent"],
+    ["border", "--border"]
+  ];
+  const root = document.documentElement;
+  const box = document.getElementById("swatches");
+  function paint() {
+    const cs = getComputedStyle(root);
+    box.innerHTML = roles.map(([name, v]) => {
+      const hex = cs.getPropertyValue(v).trim();
+      return `<div class="swatch" style="background:${hex};color:${name === "page" || name === "surface" || name === "accent" ? "#1a1915" : "#f4f3f0"}">${name}<br>${hex}</div>`;
+    }).join("");
+  }
+  document.getElementById("theme").addEventListener("click", () => {
+    const dark = root.getAttribute("data-mode") === "dark";
+    root.setAttribute("data-mode", dark ? "light" : "dark");
+    document.getElementById("theme").textContent = dark ? "Dark login" : "Marketing light";
+    paint();
+  });
+  paint();
+</script>
+</body>
+</html>

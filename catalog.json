@@ -19887,6 +19887,71 @@
         "durationMin": 45,
         "pr": "https://github.com/starship-terminal/constellations/pull/808"
       }
+    },
+{
+      "slug": "telescope",
+      "name": "Telescope",
+      "url": "https://telescope.fyi/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Editorial recommendation marketing: beige page, Beausite headlines, DM Mono labels, a yellow pill button, and a separate dark email login",
+      "tags": [
+        "web",
+        "media",
+        "editorial",
+        "marketing",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing page and /login; email and Google were not submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/telescope/README.md",
+      "tokens": "systems/telescope/tokens.json",
+      "styleGuide": "systems/telescope/style-guide.html",
+      "preview": {
+        "cover": "systems/telescope/screenshots/home-light-desktop.png",
+        "icon": "systems/telescope/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.ink",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          },
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.ink",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.beausite",
+          "core.font.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40
+      },
+      "layoutGaps": {
+        "icons/": "The wordmark is an inline SVG on /login and was not saved. The Google mark is a brand icon and is not kept. Marketing UI marks are in the screenshots.",
+        "components/": "The preview browser produced no screenshot frames, so no element crops were cut."
+      }
     }
   ]
 }
