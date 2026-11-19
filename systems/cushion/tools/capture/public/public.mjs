@@ -13,10 +13,14 @@
 // Sign up are header links, never followed; any consent/chat overlay is hidden, never
 // answered. Nothing is submitted, signed into or followed off the site.
 import fs from 'fs';
+import path from 'node:path';
+import os from 'node:os';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots stay outside the repo (docs/PACKAGE.md): quantize.py writes the
+// committed screenshots/ from this scratch folder.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'cushion', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
