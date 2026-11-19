@@ -48,12 +48,18 @@ export async function patch(context) {
     Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
+  // The mask goes in as soon as the document has a root element, not at DOMContentLoaded: the
+  // routes load with waitUntil 'commit', and the QR panel can paint before that event fires.
   await context.addInitScript((css) => {
-    document.addEventListener('DOMContentLoaded', () => {
+    const add = () => {
+      if (document.getElementById('capture-hide-login-qr')) return;
       const s = document.createElement('style');
+      s.id = 'capture-hide-login-qr';
       s.textContent = css;
       (document.head || document.documentElement).appendChild(s);
-    }, { once: true });
+    };
+    if (document.documentElement) add();
+    else new MutationObserver((_, o) => { if (document.documentElement) { o.disconnect(); add(); } }).observe(document, { childList: true });
   }, HIDE_LOGIN_QR);
 }
 
