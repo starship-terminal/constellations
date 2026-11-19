@@ -20343,6 +20343,72 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pedestal",
+      "name": "Pedestal",
+      "url": "https://www.pedestal.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Danish TV-stand storefront: near-white page, one blue action, FK Display titles, Suisse Intl UI, 74px fields, 4px radii",
+      "tags": [
+        "web",
+        "ecommerce",
+        "furniture",
+        "shopify",
+        "light",
+        "one-accent"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out on www.pedestal.com; one email-only Shopify Customer Account sign-in, orders empty, no checkout",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/pedestal/README.md",
+      "tokens": "systems/pedestal/tokens.json",
+      "styleGuide": "systems/pedestal/style-guide.html",
+      "preview": {
+        "cover": "systems/pedestal/icon.png",
+        "icon": "systems/pedestal/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.background.action",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "theme t/30",
+        "pr": "none",
+        "durationMin": 70,
+        "gaps": [
+          "preview_snapshot returned no screenshot frames, so screenshots/ and components/crops are empty",
+          "phone width 390 was not captured",
+          "dark theme is not in the theme sheet",
+          "checkout, payment, phone, and the contact form were not submitted",
+          "Shopify Customer Account uses a different theme and is not tokenised"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "Inline SVG artwork was not extracted; the wordmark and icons stay on the live page (docs/RIGHTS.md).",
+        "screenshots/": "The preview browser returned 'The browser is not producing screenshot frames', so no page PNG was saved.",
+        "components/": "No crops. The same screenshot-frame failure blocked element captures."
+      }
     }
   ]
 }
