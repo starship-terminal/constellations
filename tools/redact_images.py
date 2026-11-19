@@ -21,7 +21,9 @@ block: email_allow, wrap_ignore) and prints which file it loaded; `--rules` name
 Run it on a clean checkout of the package; to redo it after changing a rule, `git checkout` the
 package's images first, because a painted-over image no longer holds the pixels a rule was written
 against. Needs Pillow and numpy, and `tesseract` on PATH. Only Pillow, numpy and the
-patterns file are read; no private value is ever written by this tool, and none belongs in a rules file.
+patterns file are read; no private value is ever written by this tool, and none belongs in a rules file:
+`check` fails when a rules file's own text (its notes, family names, keep lists) holds an email address
+its email_allow does not pass or a phone-number-shaped string. Say what a family hides, not the value.
 
 Rules file (JSON, committed, coordinates and generic UI words only):
 
@@ -435,6 +437,59 @@ def email_allowed(addr, allow):
     return False
 
 
+# A rules file is committed, so it must never hold the values it paints out: a note names the kind of
+# value and where it sits, never the value. These find what slipped in anyway.
+PHONE_RUN = re.compile(r"\+?\(?\d[\d ().-]*\d\)?")
+ISO_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
+RESERVED_DOMAIN = re.compile(r"(^|\.)(example(\.(com|org|net))?|test|invalid|localhost)$", re.I)
+
+
+def _rule_strings(o, path=""):
+    """(JSON path, string) for every string in a rules file except its own ocr.email_allow list."""
+    if isinstance(o, dict):
+        for k, v in o.items():
+            if path == "ocr" and k == "email_allow":
+                continue
+            yield from _rule_strings(v, f"{path}.{k}" if path else k)
+    elif isinstance(o, list):
+        for i, v in enumerate(o):
+            yield from _rule_strings(v, f"{path}[{i}]")
+    elif isinstance(o, str):
+        yield path, o
+
+
+def _phone_shaped(s):
+    """Whether s holds a phone-number-shaped run: 2 to 6 consecutive digit groups joined by spaces,
+    dots, hyphens or brackets, 9 to 15 digits in all. Every window of a long run is tried, so two
+    numbers side by side, or a number next to a date, still count. An ISO date is never part of one."""
+    for m in PHONE_RUN.finditer(ISO_DATE.sub(",", s)):
+        groups = [len(g) for g in re.findall(r"\d+", m.group())]
+        for i in range(len(groups)):
+            for j in range(i + 1, min(i + 6, len(groups))):
+                if 9 <= sum(groups[i:j + 1]) <= 15:
+                    return True
+    return False
+
+
+def rules_text_leaks(rules):
+    """Where a rules file's own text holds a private-looking value: an email address that neither its
+    ocr.email_allow nor a reserved test domain (example.com, .test, .example, .invalid) passes, also
+    when a regex escapes its dots, or a phone-number-shaped string (see _phone_shaped). Returns
+    "path: kind" lines, never the value, so the report itself leaks nothing."""
+    ocr = rules.get("ocr") if isinstance(rules, dict) else None
+    allow = ocr.get("email_allow", []) if isinstance(ocr, dict) else []
+    out = []
+    for path, s in _rule_strings(rules):
+        # A keep regex spells an address with escaped dots (person@host\.com): read it unescaped too.
+        addrs = {m.group().rstrip(".") for t in (s, re.sub(r"\\(.)", r"\1", s)) for m in EMAIL.finditer(t)}
+        for addr in sorted(addrs):
+            if not RESERVED_DOMAIN.search(addr.partition("@")[2]) and not email_allowed(addr, allow):
+                out.append(f"{path}: an email address its email_allow does not pass")
+        if _phone_shaped(s):
+            out.append(f"{path}: a phone-number-shaped string")
+    return out
+
+
 def find_private(words, patterns, emails, email_allow):
     """Boxes (x0, y0, x1, y1) of OCR words that fall inside a pattern or email match, per line."""
     lines = {}
@@ -561,11 +616,16 @@ def cmd_check(args):
     if not patterns:
         sys.exit("no patterns read; a check against nothing proves nothing")
     rules_file = package_rules(pkg, args.rules)
-    cfg = {}
+    cfg, leaks = {}, []
     if rules_file:
-        cfg = dict(read_json_object(rules_file, "rules file").get("ocr", {}))
+        rules = read_json_object(rules_file, "rules file")
+        cfg = dict(rules.get("ocr", {}))
         print(f"rules: {rules_file if args.rules else 'tools/redact-rules/' + rules_file.name}"
               + ("" if args.rules else " (loaded for this package)"), flush=True)
+        # The rules file is committed too: it may describe what it hides, never hold it.
+        leaks = rules_text_leaks(rules)
+        for leak in leaks:
+            print(f"LEAK {rules_file.name} {leak}; describe the value instead of writing it", flush=True)
         # A rules file steers `apply`; it never switches a detector off in the check that guards a commit.
         for key in ("emails", "net"):
             if cfg.get(key, True) is not True:
@@ -601,8 +661,9 @@ def cmd_check(args):
         if found or wrapped:
             bad += 1
             print(f"HIT {f.relative_to(pkg) if pkg in f.parents else f}: {len(found)} match boxes" + (" (spans lines)" if wrapped else ""))
-    print(f"{len(targets)} images read, {bad} with a match" + (f" or unreadable ({len(unreadable)})" if unreadable else ""))
-    return 1 if bad else 0
+    print(f"{len(targets)} images read, {bad} with a match" + (f" or unreadable ({len(unreadable)})" if unreadable else "")
+          + (f"; {len(leaks)} private-looking values in the rules file" if leaks else ""))
+    return 1 if bad or leaks else 0
 
 
 def cmd_lines(args):

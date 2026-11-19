@@ -1,6 +1,7 @@
 """Tests for tools/refero/mirror_media.py beyond download() itself: the db
-guard, the per-file job, ffmpeg compression, and the command line (--check,
---only, --limit, --force, --compress-videos). urllib.request.urlopen and
+guard, the per-file job, ffmpeg compression, the untrusted-row guards (slug and
+URL scheme), and the command line (--check,
+--only, --limit, --force, --compress-videos). The download opener and
 subprocess.run are mocked; the db and the media root are temporary, so
 nothing reaches the network or ~/services. Run with `make test`."""
 import io
@@ -9,6 +10,7 @@ import sys
 import tempfile
 import unittest
 import urllib.error
+import urllib.request
 from pathlib import Path
 from types import SimpleNamespace
 from unittest import mock
@@ -117,7 +119,7 @@ class DoJobTest(MirrorTmp):
     def test_a_download_job_reports_downloaded(self):
         dest = self.tmp / "shots" / "acme.jpg"
         dest.parent.mkdir()
-        with mock.patch.object(mirror_media.urllib.request, "urlopen", side_effect=serve):
+        with mock.patch.object(mirror_media.OPENER, "open", side_effect=serve):
             result = mirror_media.do_job(("shots", "acme", "https://cdn/s.jpg", dest, False), None)
         self.assertEqual(result, ("shots", "downloaded", False, None))
         self.assertEqual(dest.read_bytes(), b"shot")
@@ -125,7 +127,7 @@ class DoJobTest(MirrorTmp):
     def test_a_failed_download_reports_the_slug_and_the_error(self):
         dest = self.tmp / "shots" / "acme.jpg"
         dest.parent.mkdir()
-        with mock.patch.object(mirror_media.urllib.request, "urlopen", side_effect=serve):
+        with mock.patch.object(mirror_media.OPENER, "open", side_effect=serve):
             kind, status, compressed, err = mirror_media.do_job(
                 ("shots", "acme", "https://cdn/missing.jpg", dest, False), None)
         self.assertEqual((kind, status, compressed), ("shots", "failed", False))
@@ -137,7 +139,7 @@ class DoJobTest(MirrorTmp):
         dest.parent.mkdir()
         dest.write_bytes(b"x" * 100)
         with mock.patch.object(mirror_media, "compress_video", return_value=True) as shrink, \
-             mock.patch.object(mirror_media.urllib.request, "urlopen") as opened:
+             mock.patch.object(mirror_media.OPENER, "open") as opened:
             result = mirror_media.do_job(("videos", "acme", None, dest, True), "/bin/ffmpeg")
         self.assertEqual(result, ("videos", "skipped", True, None))
         shrink.assert_called_once_with(dest, "/bin/ffmpeg")
@@ -146,7 +148,7 @@ class DoJobTest(MirrorTmp):
     def test_images_are_never_compressed(self):
         dest = self.tmp / "shots" / "acme.jpg"
         dest.parent.mkdir()
-        with mock.patch.object(mirror_media.urllib.request, "urlopen", side_effect=serve), \
+        with mock.patch.object(mirror_media.OPENER, "open", side_effect=serve), \
              mock.patch.object(mirror_media, "compress_video") as shrink:
             mirror_media.do_job(("shots", "acme", "https://cdn/s.jpg", dest, True), "/bin/ffmpeg")
         shrink.assert_not_called()
@@ -154,7 +156,7 @@ class DoJobTest(MirrorTmp):
     def test_an_ffmpeg_failure_is_reported_but_keeps_the_download(self):
         dest = self.tmp / "videos" / "acme.mp4"
         dest.parent.mkdir()
-        with mock.patch.object(mirror_media.urllib.request, "urlopen", side_effect=serve), \
+        with mock.patch.object(mirror_media.OPENER, "open", side_effect=serve), \
              mock.patch.object(mirror_media, "compress_video",
                                side_effect=RuntimeError("bad codec")):
             result = mirror_media.do_job(("videos", "acme", "https://cdn/v.mp4", dest, True),
@@ -249,7 +251,7 @@ class MainCheckTest(MirrorTmp):
 
 class MainDownloadTest(MirrorTmp):
     def run_main(self, *argv, **kw):
-        with mock.patch.object(mirror_media.urllib.request, "urlopen", side_effect=serve) as opened:
+        with mock.patch.object(mirror_media.OPENER, "open", side_effect=serve) as opened:
             result = self.main(*argv, **kw)
         return result, opened
 
@@ -318,7 +320,7 @@ class MainDownloadTest(MirrorTmp):
         with mock.patch.object(sys, "argv", argv), \
              mock.patch.object(mirror_media.refero_media, "default_media_root",
                                return_value=self.media), \
-             mock.patch.object(mirror_media.urllib.request, "urlopen", side_effect=serve), \
+             mock.patch.object(mirror_media.OPENER, "open", side_effect=serve), \
              mock.patch("sys.stdout", new_callable=io.StringIO):
             mirror_media.main()
         self.assertTrue((self.media / "shots" / "beta.jpg").exists())
@@ -327,7 +329,7 @@ class MainDownloadTest(MirrorTmp):
 class MainCompressTest(MirrorTmp):
     def test_a_missing_ffmpeg_warns_and_mirrors_raw(self):
         self.make_db(FULL)
-        with mock.patch.object(mirror_media.urllib.request, "urlopen", side_effect=serve), \
+        with mock.patch.object(mirror_media.OPENER, "open", side_effect=serve), \
              mock.patch.object(mirror_media.Path, "home", return_value=self.tmp):
             code, _, err = self.main("--only", "videos", "--compress-videos", which=None)
         self.assertIsNone(code)
@@ -338,7 +340,7 @@ class MainCompressTest(MirrorTmp):
         self.make_db(FULL)
         (self.media / "videos").mkdir(parents=True)
         (self.media / "videos" / "acme.mp4").write_bytes(b"x" * 100)
-        with mock.patch.object(mirror_media.urllib.request, "urlopen") as opened, \
+        with mock.patch.object(mirror_media.OPENER, "open") as opened, \
              mock.patch.object(mirror_media, "compress_video", return_value=True) as shrink:
             code, out, _ = self.main("--only", "videos", "--compress-videos",
                                      which="/bin/ffmpeg")
@@ -349,13 +351,85 @@ class MainCompressTest(MirrorTmp):
 
     def test_new_videos_are_downloaded_then_compressed(self):
         self.make_db(FULL)
-        with mock.patch.object(mirror_media.urllib.request, "urlopen", side_effect=serve), \
+        with mock.patch.object(mirror_media.OPENER, "open", side_effect=serve), \
              mock.patch.object(mirror_media, "compress_video", return_value=False) as shrink:
             code, out, _ = self.main("--only", "videos,posters", "--compress-videos",
                                      which="/bin/ffmpeg")
         self.assertIsNone(code)
         self.assertEqual(shrink.call_count, 1)  # the poster is an image
         self.assertIn("compressed", out)
+
+
+class UntrustedRowTest(MirrorTmp):
+    """A styles row arrives through the committed text dump, so its slug and
+    URLs are untrusted: neither may reach a local file or leave the root."""
+
+    def test_media_dest_refuses_a_path_like_slug(self):
+        for bad in ("../x", "../../etc/x", "a/b", "Acme", "", "-a", "a--b", None):
+            with self.assertRaises(ValueError, msg=repr(bad)):
+                mirror_media.media_dest(self.media, "shots", bad)
+        self.assertEqual(mirror_media.media_dest(self.media, "shots", "acme-2"),
+                         self.media / "shots" / "acme-2.jpg")
+
+    def test_download_refuses_a_non_https_url_without_opening_it(self):
+        secret = self.tmp / "secret.jpg"
+        secret.write_bytes(b"local file")
+        dest = self.tmp / "shots" / "acme.jpg"
+        dest.parent.mkdir()
+        for url in (secret.as_uri(), "http://cdn/s.jpg", "ftp://cdn/s.jpg"):
+            with mock.patch.object(mirror_media.OPENER, "open") as opened, \
+                    self.assertRaises(ValueError, msg=url):
+                mirror_media.download("shots", url, dest)
+            opened.assert_not_called()
+        self.assertFalse(dest.exists())
+
+    def test_a_redirect_away_from_https_is_refused(self):
+        handler = mirror_media.HttpsOnlyRedirect()
+        req = urllib.request.Request("https://cdn/s.jpg")
+        for target in ("http://cdn/s.jpg", "file:///etc/hosts"):
+            with self.assertRaises(mirror_media.NotHttps, msg=target):
+                handler.redirect_request(req, None, 302, "Found", {}, target)
+        followed = handler.redirect_request(req, None, 302, "Found", {}, "https://cdn2/s.jpg")
+        self.assertEqual(followed.full_url, "https://cdn2/s.jpg")
+        self.assertTrue(any(isinstance(h, mirror_media.HttpsOnlyRedirect)
+                            for h in mirror_media.OPENER.handlers))
+
+    def test_a_refused_redirect_is_not_retried_and_writes_nothing(self):
+        dest = self.tmp / "shots" / "acme.jpg"
+        dest.parent.mkdir()
+        refused = mirror_media.NotHttps("refusing a non-https redirect to 'http://cdn/s.jpg'")
+        with mock.patch.object(mirror_media.OPENER, "open", side_effect=refused) as opened, \
+                self.assertRaises(mirror_media.NotHttps):
+            mirror_media.download("shots", "https://cdn/s.jpg", dest)
+        self.assertEqual(opened.call_count, 1)
+        self.assertFalse(dest.exists())
+
+    def test_a_file_url_in_the_db_is_never_copied_into_the_mirror(self):
+        secret = self.tmp / "secret.jpg"
+        secret.write_bytes(b"local file")
+        self.make_db(("gamma", secret.as_uri(), None, None, None, None, None))
+        code, _, err = self.main("--only", "shots")  # real opener: it must not run
+        self.assertIsNone(code)
+        self.assertIn("FAIL gamma: refusing a non-https url", err)
+        self.assertFalse((self.media / "shots" / "gamma.jpg").exists())
+
+    def test_a_path_like_slug_is_skipped_and_nothing_lands_outside_the_root(self):
+        self.make_db(("../../escape", "https://cdn/s.jpg", None, None, None, None, None),
+                     SHOT_ONLY)
+        with mock.patch.object(mirror_media.OPENER, "open",
+                               side_effect=serve) as opened:
+            code, _, err = self.main("--only", "shots")
+        self.assertIsNone(code)
+        self.assertIn("FAIL '../../escape': unsafe slug, skipped", err)
+        self.assertEqual(opened.call_count, 1)  # beta only
+        self.assertTrue((self.media / "shots" / "beta.jpg").exists())
+        self.assertEqual(sorted(p.name for p in self.tmp.rglob("escape*")), [])
+
+    def test_check_fails_on_an_unsafe_slug(self):
+        self.make_db(("a/b", "https://cdn/s.jpg", None, None, None, None, None))
+        code, _, err = self.main("--check", "--only", "shots")
+        self.assertIn("1 styles rows have an unsafe slug", code)
+        self.assertIn("FAIL 'a/b'", err)
 
 
 if __name__ == "__main__":

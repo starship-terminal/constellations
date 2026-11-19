@@ -54,10 +54,15 @@ class KitQuantizeTest(unittest.TestCase):
             # Newer copies carry the capture sidecars through to screenshots/ and
             # write a stitched sidecar for tiled images; older copies quantize only.
             expected = ["page.png"] + (["page.png.capture.json"] if "stitchedParts" in source.read_text() else [])
-            self.assertEqual(sorted(p.name for p in (tmp / "pkg" / "screenshots").iterdir()), expected)
+            # The kit (and a copy that took its fix) keeps x.partial.png as the screenshot it is; older
+            # copies drop it from screenshots/ without a word (finding 05-12, left for the package wave).
+            if "TILE.match(f.name)" in source.read_text():
+                expected.append("x.partial.png")
+            self.assertEqual(sorted(p.name for p in (tmp / "pkg" / "screenshots").iterdir()), sorted(expected))
+            return expected
 
     def test_a_partial_name_is_not_a_tile(self):
-        self.run_copy(KIT)
+        self.assertIn("x.partial.png", self.run_copy(KIT))
 
     def test_every_package_copy_skips_a_partial_name(self):
         self.assertTrue(COPIES)
