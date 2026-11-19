@@ -9,6 +9,7 @@ import {
   pyJsonStringify,
 } from "@/server/sources/pyjson";
 import { getReference } from "@/server/sources";
+import { pyRound } from "@/server/sources/tokens";
 import fixture from "./fixtures/float-parity.json";
 import { repoFixture } from "./helpers";
 
@@ -89,6 +90,9 @@ test("package tokens print floats as catalog.py's export does", async () => {
   );
   // A DTCG colour with float components and alpha still becomes hex.
   expect(byName.get("core.wash")!.value).toBe(python["--wash"]);
+  // 0.3 and 0.7 land on .5 after * 255: Python rounds those to even.
+  expect(python["--half"]).toBe("#4cb2804c");
+  expect(byName.get("core.half")!.value).toBe(python["--half"]);
 });
 
 test("the research tool hands the model the same text Python would print", async () => {
@@ -125,4 +129,11 @@ test("reference detail shows floats the way str(float) prints them", async () =>
   expect(shown.get("core.spacing.unit")).toBe("8.0");
   expect(shown.get("core.spacing.pair")).toBe("4.0, 0.5");
   expect(shown.get("core.radius.card")).toBe("2.5");
+});
+
+test("pyRound rounds halves to the even neighbour, as Python's round() does", () => {
+  expect([0.5, 1.5, 2.5, 76.5, 178.5, 127.5, -0.5, -1.5].map(pyRound)).toEqual([
+    0, 2, 2, 76, 178, 128, 0, -2,
+  ]);
+  expect([76.4, 76.6, 0, 255].map(pyRound)).toEqual([76, 77, 0, 255]);
 });
