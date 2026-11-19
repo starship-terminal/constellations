@@ -20343,6 +20343,69 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "oku",
+      "name": "Oku",
+      "url": "https://oku.club",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "A reading tracker with a dark page at #131314, Fabric Serif display, Inter UI, an olive ink button, 8px cards and a quiet sign-in form",
+      "tags": [
+        "web",
+        "reading",
+        "books",
+        "dark",
+        "serif",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "public signed-out pages only; sign-in, join and reset were measured and not submitted; pricing Subscribe was not followed",
+      "themes": ["dark", "light"],
+      "widths": [1440, 390],
+      "entry": "systems/oku/README.md",
+      "tokens": "systems/oku/tokens.json",
+      "styleGuide": "systems/oku/style-guide.html",
+      "preview": {
+        "cover": "systems/oku/icon.png",
+        "icon": "systems/oku/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text-primary",
+            "muted": "dark.color.text-muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
+          },
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text-primary",
+            "muted": "light.color.text-muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.display",
+          "core.fontFamily.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "web-inspector",
+        "durationMin": 90,
+        "version": "public site, 2026-11-19",
+        "pr": "https://github.com/starship-terminal/constellations/pull/722"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned: The browser is not producing screenshot frames",
+        "components/": "no crops, because the preview browser produced no screenshot frames",
+        "icons/": "the wordmark and shelf glyphs are inline SVG and were not lifted"
+      }
     }
   ]
 }
