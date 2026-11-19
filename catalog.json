@@ -20343,6 +20343,67 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "webflow",
+      "name": "Webflow",
+      "url": "https://webflow.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Dark-first marketing chrome: blue announcement bar, 4px blue CTA, 8px pricing cards, yearly toggle, black Enterprise band",
+      "tags": [
+        "web",
+        "saas",
+        "marketing",
+        "design-tool",
+        "pricing",
+        "dark"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (login and signup were not entered; /login is a PerimeterX hold page)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/webflow/README.md",
+      "tokens": "systems/webflow/tokens.json",
+      "styleGuide": "systems/webflow/style-guide.html",
+      "preview": {
+        "cover": "systems/webflow/screenshots/home-dark-desktop.png",
+        "icon": "systems/webflow/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.accent",
+            "border": "light.border.stroke"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.background.accent",
+            "border": "dark.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.visual-sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40
+      }
     }
   ]
 }
