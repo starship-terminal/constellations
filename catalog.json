@@ -20343,6 +20343,85 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "robinhood",
+      "name": "Robinhood",
+      "url": "https://robinhood.com/us/en/",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Brokerage marketing and signed-out login: black nav, lime #CCFF00 banner and pills, Martina Plantijn hero, Capsule Sans on controls, app dark page #000000 with green #00C805.",
+      "tags": [
+        "web",
+        "finance",
+        "brokerage",
+        "marketing",
+        "signed-out",
+        "pills",
+        "lime"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (US marketing and login chrome only; signup stopped at the region search; no account, email, password, card, bank, or KYC)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/robinhood/README.md",
+      "tokens": "systems/robinhood/tokens.json",
+      "styleGuide": "systems/robinhood/style-guide.html",
+      "preview": {
+        "cover": "systems/robinhood/screenshots/home-light-default.png",
+        "icon": "systems/robinhood/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          },
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.capsule-text",
+          "core.font.martina",
+          "core.font.phonic"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "light.color."
+        ],
+        "typography": [
+          "core.typography."
+        ],
+        "rounded": [
+          "core.radius."
+        ],
+        "spacing": [
+          "core.spacing."
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50,
+        "version": "signed-out web, 2026-11-19"
+      }
     }
   ]
 }
