@@ -15,11 +15,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 KIT = ROOT / "tools" / "kit" / "capture"
-PACKAGES = {
-    "claude": "signed-in", "coursera": "signed-in", "manus": "signed-in", "chatgpt": "signed-in",
-    "notebooklm": "signed-in", "duolingo": "signed-in", "linear": "signed-in", "brilliant": "signed-in",
-    "researchrabbit": "", "sentry": "signed-in",
-}
+# Every copy of the kit's snapshot inside a package: label (the folder's path under systems/,
+# which starts with the slug) -> the folder holding snapshot.js beside unsnap.py. Found, not
+# listed, whatever the layout (tools/capture/, capture/, a vendored tools/kit/), so a package
+# that copies the kit later is checked from its first commit.
+PACKAGES = {p.parent.relative_to(ROOT / "systems").as_posix(): p.parent
+            for p in sorted((ROOT / "systems").glob("*/**/snapshot.js"))
+            if (p.parent / "unsnap.py").is_file()}
 SIGNED = [
     "https://bucket.s3.amazonaws.com/a.png?X-Amz-Algorithm=AWS4&X-Amz-Signature=abc",
     "https://storage.googleapis.com/b/o.png?X-Goog-Signature=abc",
@@ -32,8 +34,28 @@ SIGNED = [
 PLAIN = ["https://example.test/page?unit=7", "https://example.test/a?tokenizer=1&sigma=2"]
 
 
-def folder(slug):
-    return ROOT / "systems" / slug / "tools" / "capture" / PACKAGES[slug]
+def folder(label):
+    return PACKAGES[label]
+
+
+def slug_of(label):
+    return label.split("/")[0]
+
+
+def capture_root(label):
+    """The capture/ folder a copy sits in (its measure scripts live there too)."""
+    d = folder(label)
+    return next((a for a in (d, *d.parents) if a.name == "capture"), d)
+
+
+def distinct(name):
+    """One slug per distinct copy of `name` across PACKAGES. Most copies are byte-identical,
+    so the tests that run a copy (node, a subprocess) run each distinct one once; the
+    cheap text checks still read every package."""
+    seen = {}
+    for slug in PACKAGES:
+        seen.setdefault((folder(slug) / name).read_bytes(), slug)
+    return list(seen.values())
 
 
 def load(path, name):
@@ -45,6 +67,17 @@ def load(path, name):
 
 class PackageSnapshots(unittest.TestCase):
     kit = json.loads((KIT / "signed-in" / "signed-params.json").read_text())
+
+    def test_every_package_copy_is_found(self):
+        # The list is discovered: the ten packages it once named, and every later copy.
+        self.assertGreaterEqual(len(PACKAGES), 200)
+        slugs = {slug_of(label) for label in PACKAGES}
+        for slug in ("claude", "coursera", "manus", "chatgpt", "notebooklm", "duolingo", "linear",
+                     "brilliant", "researchrabbit", "sentry", "navia", "unsplash", "clay", "onefinestay"):
+            self.assertIn(slug, slugs)
+        for slug in PACKAGES:
+            for name in ("snapshot.js", "unsnap.py", "signed-params.json"):
+                self.assertTrue((folder(slug) / name).is_file(), (slug, name))
 
     def test_each_copy_carries_the_kit_list(self):
         want = {"prefixes": self.kit["prefixes"], "params": self.kit["params"]}
@@ -97,7 +130,7 @@ const out = cases.map(([el]) => {
 });
 console.log(JSON.stringify(out));
 """
-        for slug in PACKAGES:
+        for slug in distinct("snapshot.js"):
             defs, lines = self.input_rule((folder(slug) / "snapshot.js").read_text(), slug)
             rule = defs + "".join(l.strip() + "\n" for l in lines)
             res = subprocess.run(["node", "-e", harness % (json.dumps(cases), json.dumps(rule))],
@@ -120,7 +153,7 @@ console.log(JSON.stringify(out));
         # &amp; or a ;-separated query; Sentry's older copy ran from a colour's # into a later
         # url(...?sig=) and cut the CSS between. Every copy that cuts signed queries carries the kit's line.
         kit_sig, kit_cut = self.cut_signed_js((KIT / "signed-in" / "snapshot.js").read_text(), "kit")
-        copies = sorted(p for p in (ROOT / "systems").glob("*/tools/capture/**/snapshot.js") if "cutSigned" in p.read_text())
+        copies = sorted(p for p in (ROOT / "systems").glob("*/**/snapshot.js") if "cutSigned" in p.read_text())
         self.assertGreaterEqual(len(copies), len(PACKAGES))
         # abs() only cleans src/href/srcset/poster, so a signed URL in data-src, an inline style or an
         # inlined stylesheet reached the copy and unsnap.py refused it (coursera, manus, chatgpt,
@@ -146,13 +179,15 @@ console.log(JSON.stringify(out));
             '<img data-src="https://x/p?crop=(0,0);b:c&token=abc">': '<img data-src="https://x/p">',
             'https://example.test/page?unit=7;b:2': 'https://example.test/page?unit=7;b:2',
         }
+        ran = set()
         for path in copies:
             label = str(path.relative_to(ROOT))
             sig, cut = self.cut_signed_js(path.read_text(), label)
             self.assertEqual(cut, kit_cut, label)
             flat = lambda s: [l.strip() for l in s.splitlines()]
             self.assertEqual(flat(sig), flat(kit_sig), label)   # the regex cutSigned tests each match with
-            if shutil.which("node"):
+            if shutil.which("node") and (sig, cut) not in ran:   # identical code behaves identically
+                ran.add((sig, cut))
                 js = sig + "\n" + cut + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map(cutSigned)))"
                 res = subprocess.run(["node", "-e", js], capture_output=True, text=True)
                 self.assertEqual(res.returncode, 0, (label, res.stderr))
@@ -164,7 +199,7 @@ console.log(JSON.stringify(out));
 
     def test_unsnap_flags_every_signed_url(self):
         for slug in PACKAGES:
-            mod = load(folder(slug) / "unsnap.py", f"unsnap_{slug}")
+            mod = load(folder(slug) / "unsnap.py", "unsnap_" + re.sub(r"\W", "_", slug))
             for u in SIGNED:
                 self.assertTrue(mod.SIGNED.search(u), (slug, u))
             for u in PLAIN:
@@ -188,7 +223,7 @@ console.log(JSON.stringify(out));
     def test_unsnap_checks_page_and_meta_and_needs_the_redaction_file(self):
         redact = {"replace": [["Jane Doe", "g", "A User"]]}
         meta = {"label": "home", "url": "https://x.example/"}
-        for slug in PACKAGES:
+        for slug in distinct("unsnap.py"):
             res, out = self.run_unsnap(slug, "<p>hi</p>", meta, redact)
             self.assertEqual(res.returncode, 0, (slug, res.stderr))
             self.assertNotIn("title", json.loads((out / "home.json").read_text()), slug)
@@ -205,7 +240,7 @@ console.log(JSON.stringify(out));
             # A name in the metadata, which the older copies never checked. Duolingo and NotebookLM
             # apply the replacements themselves, so for them the URL comes out rewritten.
             res, out = self.run_unsnap(slug, "<p>hi</p>", dict(meta, url="https://x.example/Jane Doe"), redact)
-            if slug in ("duolingo", "notebooklm"):
+            if slug_of(slug) in ("duolingo", "notebooklm"):
                 self.assertEqual(res.returncode, 0, (slug, res.stderr))
                 self.assertEqual(json.loads((out / "home.json").read_text())["url"], "https://x.example/A User")
             else:
@@ -214,8 +249,8 @@ console.log(JSON.stringify(out));
 
     def test_unsnap_meets_accented_names_in_the_metadata(self):
         redact = {"replace": [["Jos\u00e9 Doe", "g", "A User"]]}
-        for slug in PACKAGES:
-            if slug in ("duolingo", "notebooklm"):
+        for slug in distinct("unsnap.py"):
+            if slug_of(slug) in ("duolingo", "notebooklm"):
                 continue   # they rewrite the URL themselves; covered above
             res, out = self.run_unsnap(slug, "<p>hi</p>", {"label": "home", "url": "https://x.example/Jos\u00e9 Doe"}, redact)
             self.assertIn("LEAK", res.stderr, slug)
@@ -224,7 +259,7 @@ console.log(JSON.stringify(out));
     def test_measure_scripts_read_a_copy_without_a_title(self):
         # unsnap.py drops the title, so a reader that dereferences it would throw on every new copy.
         for slug in PACKAGES:
-            for f in (ROOT / "systems" / slug / "tools" / "capture").rglob("*.mjs"):
+            for f in capture_root(slug).rglob("*.mjs"):
                 for m in re.finditer(r"\bm\.title\.", f.read_text()):
                     line = f.read_text()[:m.start()].rsplit("\n", 1)[-1]
                     self.assertTrue(line.endswith("m.title ? { title: "), f"{f.relative_to(ROOT)} reads m.title without a guard")
@@ -267,7 +302,7 @@ for (const [slug, file] of %s) {
 await b.close();
 console.log(JSON.stringify(res));
 """ % (json.dumps(Path(PLAYWRIGHT).as_uri()),
-       json.dumps([[s, str(folder(s) / "snapshot.js")] for s in PACKAGES]), json.dumps(self.PAGE))
+       json.dumps([[s, str(folder(s) / "snapshot.js")] for s in distinct("snapshot.js")]), json.dumps(self.PAGE))
         res = subprocess.run(["node", "--input-type=module", "-e", script], capture_output=True, text=True, timeout=300)
         self.assertEqual(res.returncode, 0, res.stderr[-2000:])
         for slug, out in json.loads(res.stdout).items():
