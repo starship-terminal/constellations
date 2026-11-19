@@ -1,0 +1,178 @@
+{
+  "source": "getComputedStyle(document.documentElement) on https://navan.com/ at 1440x900, dpr 2, 2026-11-19. Tailwind --tw-* runtime vars omitted. Marketing site only.",
+  "href": "https://navan.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "htmlClass": "is-guest",
+  "stylesheets": [
+    "https://navan.com/_next/static/css/b9bdd45fb4f1a61e.css",
+    "https://navan.com/_next/static/css/f6cbdbe805fe9eba.css",
+    "https://navan.com/_next/static/css/161dc671a462adfb.css",
+    "https://navan.com/_next/static/css/2874bf580e2e9bf7.css"
+  ],
+  "buildId": "TPZ67uXuDD8_LITwPLM6o",
+  "color": {
+    "blurple": {
+      "50": "#f0f0ff",
+      "100": "#e1e2fe",
+      "150": "#c3c4fd",
+      "200": "#a6a7ff",
+      "250": "#9799ff",
+      "300": "#9783fb",
+      "350": "#8e6afb",
+      "400": "#7c51fa",
+      "450": "#6939f9",
+      "500": "#6307f8",
+      "550": "#5900de",
+      "600": "#4800c5",
+      "650": "#4200ab",
+      "700": "#360092",
+      "750": "#320579",
+      "800": "#1b005f",
+      "850": "#200046",
+      "900": "#15002c"
+    },
+    "blue": {
+      "50": "#f0f0ff",
+      "100": "#c3c4fd",
+      "200": "#a6a7fc",
+      "300": "#8e6afb",
+      "400": "#6939f9",
+      "500": "#6307f8",
+      "600": "#4800c5",
+      "700": "#360092",
+      "800": "#1b005f",
+      "900": "#15002c"
+    },
+    "gray": {
+      "50": "#fcfcfe",
+      "100": "#f9f9fd",
+      "150": "#f7f7fb",
+      "200": "#f4f4fa",
+      "250": "#f1f1f9",
+      "300": "#eeeef5",
+      "350": "#e2e2e9",
+      "400": "#c6c6d2",
+      "450": "#a9a9bc",
+      "500": "#8d8da5",
+      "550": "#70708f",
+      "600": "#5a5a72",
+      "650": "#434356",
+      "700": "#2d2d39",
+      "750": "#22222a",
+      "800": "#0a0214",
+      "900": "#0a0214",
+      "F1": "#f1f5f9"
+    },
+    "aqua": {
+      "50": "#f1fbf9",
+      "100": "#dff3f0",
+      "150": "#d5f1ef",
+      "200": "#c7ede9",
+      "250": "#b9e9e3",
+      "300": "#ace4de",
+      "350": "#9edfd9",
+      "400": "#90dbd3",
+      "450": "#82d7cd",
+      "500": "#74d2c8",
+      "550": "#5bb8ac",
+      "600": "#419f97",
+      "650": "#288576",
+      "700": "#0e6c63",
+      "750": "#005350",
+      "800": "#003639",
+      "850": "#002017"
+    },
+    "lilac": {
+      "50": "#fbf5ff",
+      "100": "#f8ecff",
+      "150": "#f4e2ff",
+      "200": "#f0d8ff",
+      "250": "#edcfff",
+      "300": "#e9c5ff",
+      "350": "#e5bbff",
+      "400": "#e2b2ff",
+      "450": "#dea8ff",
+      "500": "#da9eff",
+      "550": "#c185e5",
+      "600": "#a76bcc",
+      "650": "#8e52b2",
+      "700": "#743899",
+      "750": "#5b1f80",
+      "800": "#410566",
+      "850": "#28004d",
+      "875": "#280041",
+      "900": "#0e0033"
+    },
+    "red": {
+      "50": "#feeded",
+      "100": "#fedbdb",
+      "200": "#fdc9c9",
+      "300": "#fcb6b6",
+      "400": "#fba4a4",
+      "500": "#fb9292",
+      "600": "#fa8080",
+      "700": "#f85c5c",
+      "800": "#f84949"
+    },
+    "yellow": {
+      "50": "#fffbe9",
+      "100": "#fff7d3",
+      "200": "#fef3bd",
+      "300": "#feefa7",
+      "400": "#feeb91",
+      "500": "#fee67c",
+      "600": "#fee266",
+      "700": "#fdde50",
+      "800": "#fdda3a"
+    },
+    "tan": {
+      "50": "#fff4ee",
+      "100": "#feddcb",
+      "200": "#ffbba6",
+      "300": "#ff997a",
+      "400": "#ff774d",
+      "500": "#ff6637"
+    },
+    "black": {
+      "700": "#222",
+      "800": "#000",
+      "900": "#060000"
+    },
+    "white": {
+      "900": "#fff",
+      "1000": "#fff"
+    },
+    "named": {
+      "orange-500": "#ff6637",
+      "swiper-theme": "#007aff",
+      "dark-blue-lhg": "#06164d"
+    }
+  },
+  "screen": {
+    "xs": "380px",
+    "sm": "576px",
+    "md": "768px",
+    "lg": "1025px",
+    "xl": "1230px",
+    "xxl": "1440px"
+  },
+  "chrome": {
+    "announcement": "55px",
+    "nav": "77px",
+    "promo": "50px"
+  },
+  "gradients": {
+    "announce": "linear-gradient(117deg,#7c51fa,#1b005f,#7c51fa)",
+    "blurple": "linear-gradient(95.12deg,#320579 .48%,#6307f8 99.68%)",
+    "section-fade": "linear-gradient(180deg,#fff,#f1f1f9)"
+  }
+}

@@ -20343,6 +20343,67 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "navan",
+      "name": "Navan",
+      "url": "https://navan.com",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Travel and expense marketing: a blurple pill on a white nav, Sanomat headlines over Inter, a 20px plan card with a purple stroke, and a separate near-black login pill",
+      "tags": [
+        "web",
+        "travel",
+        "expense",
+        "saas",
+        "marketing",
+        "pricing",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages only. The identifier page was measured and left. No email, signup, SSO, booking or card.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/navan/README.md",
+      "tokens": "systems/navan/tokens.json",
+      "styleGuide": "systems/navan/style-guide.html",
+      "preview": {
+        "cover": "systems/navan/icon.png",
+        "icon": "systems/navan/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.serif"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "Next build TPZ67uXuDD8_LITwPLM6o",
+        "route": "public-web",
+        "durationMin": 50,
+        "pr": ""
+      },
+      "layoutGaps": {
+        "screenshots/": "The preview browser returned no screenshot frames, so no page captures were saved",
+        "components/": "No crops. Same missing frames"
+      }
     }
   ]
 }
