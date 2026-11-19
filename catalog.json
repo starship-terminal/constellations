@@ -20343,6 +20343,65 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "officevibe",
+      "name": "Officevibe",
+      "url": "https://officevibe.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "HR product marketing that has moved onto a parent brand: ivory and white surfaces, leapin-blue pill buttons, ABC Favorit display, navy footer, pricing cards, a separate signed-out login",
+      "tags": [
+        "web",
+        "hr",
+        "saas",
+        "marketing",
+        "workleap",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public Workleap marketing and login.workleap.com; no company workspace, no survey, login and demo forms not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/officevibe/README.md",
+      "tokens": "systems/officevibe/tokens.json",
+      "styleGuide": "systems/officevibe/style-guide.html",
+      "preview": {
+        "cover": "systems/officevibe/icon.png",
+        "icon": "systems/officevibe/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50,
+        "pr": "https://github.com/starship-terminal/constellations/pull/718",
+        "version": "public site 2026-11-19"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned 'The browser is not producing screenshot frames'; no PNG was saved",
+        "components/": "no component crops; the same screenshot failure",
+        "icons/": "inline SVGs were visible but the icon extraction pass was not run; no screenshot frames to crop"
+      }
     }
   ]
 }
