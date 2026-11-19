@@ -1,0 +1,194 @@
+{
+  "capturedAt": "2026-11-19",
+  "note": "Computed styles from the T3 preview tab. Screenshot frames failed ('The browser is not producing screenshot frames'), so these rows have no paired preview PNG. The marketing button crop was taken later in headless Playwright on the same public URL.",
+  "button-brand": {
+    "source": "Submit button 'Continue with email' in the signed-out auth dialog on https://vimeo.com/watch, and the same control on https://vimeo.com/log_in at 390px",
+    "background": "#17d5ff",
+    "color": "#000000",
+    "radius": "16px",
+    "height": "48px",
+    "padding": "0px 20px",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "fontFamily": "ABCRepro-Medium",
+    "widthDesktop": "360px",
+    "widthPhone": "350px"
+  },
+  "button-primary": {
+    "source": "Link 'Join' in the watch header, https://vimeo.com/watch, and 'Contact sales' on https://vimeo.com/upgrade-plan",
+    "background": "#0e1216",
+    "color": "#f9fafb",
+    "radius": "12px",
+    "height": "40px",
+    "padding": "0px 16px",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "fontFamily": "ABCRepro-Medium",
+    "pricingRadius": "16px",
+    "pricingHeight": "48px",
+    "pricingFontSize": "16px"
+  },
+  "button-secondary": {
+    "source": "Button 'Log in' in the watch header, https://vimeo.com/watch",
+    "background": "rgba(26, 54, 93, 0.08)",
+    "color": "#0e1216",
+    "radius": "12px",
+    "height": "40px",
+    "padding": "0px 16px",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "fontFamily": "ABCRepro-Medium",
+    "border": "0px"
+  },
+  "button-social": {
+    "source": "Button 'Continue with Google' in the auth dialog, https://vimeo.com/watch. Facebook and Apple matched these metrics.",
+    "background": "#ffffff",
+    "color": "#0e1216",
+    "borderColor": "rgba(26, 70, 128, 0.12)",
+    "borderWidth": "1px",
+    "radius": "10px",
+    "height": "48px",
+    "padding": "0px 16px",
+    "fontSize": "14px",
+    "fontWeight": "600",
+    "fontFamily": "ABCRepro-Regular, sans-serif",
+    "transition": "0.17s, 0.05s, 0s, 0.13s ease-in-out on all, font-size, width, padding"
+  },
+  "button-marketing": {
+    "source": "Link 'Start for free' and header link 'Join', https://vimeo.com/solutions/marketing, 1440x900",
+    "background": "#17d5ff",
+    "color": "#141a20",
+    "radius": "12px",
+    "height": "48px",
+    "padding": "12px 16px",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "fontFamily": "ABCRepro, ABCRepro Fallback, InterTight, InterTight Fallback, Helvetica, Arial, sans-serif",
+    "focusOutline": "rgb(0, 129, 158) auto 1px",
+    "focusOutlineOffset": "1px"
+  },
+  "field": {
+    "source": "input#unified_auth_email in the auth dialog, and the watch search input",
+    "background": "rgba(255, 255, 255, 0.64)",
+    "color": "#0e1216",
+    "radius": "12px",
+    "height": "40px",
+    "fontSize": "14px",
+    "fontFamily": "ABCRepro-Regular, sans-serif",
+    "outline": "rgba(41, 81, 128, 0.24) solid 1px",
+    "outlineColor": "rgba(41, 81, 128, 0.24)",
+    "boxShadow": "rgb(0, 173, 239) 0px 0px 0px 0px",
+    "labelColor": "#3d4751"
+  },
+  "dialog": {
+    "source": "section[role=dialog] opened by Log in on https://vimeo.com/watch",
+    "background": "#ffffff",
+    "color": "#0e1216",
+    "radius": "20px",
+    "width": "592px",
+    "height": "525px",
+    "shadow": "rgba(255, 255, 255, 0) 0px 0px 0px 0.5px, rgba(11, 26, 41, 0.12) 0px 4px 32px 0px",
+    "titleSize": "20px",
+    "titleWeight": "500",
+    "titleFont": "ABCRepro-Medium, sans-serif",
+    "bodyColor": "#3d4751",
+    "bodySize": "14px",
+    "bodyWeight": "350",
+    "linkColor": "#00aacf"
+  },
+  "nav-selected": {
+    "source": "Sidebar link 'Explore' on https://vimeo.com/watch, selected",
+    "background": "rgba(26, 54, 93, 0.08)",
+    "color": "#0e1216",
+    "radius": "12px",
+    "height": "40px",
+    "width": "220px",
+    "fontSize": "16px",
+    "padding": "4px 8px 4px 6px"
+  },
+  "chip": {
+    "source": "Category button 'Staff Picks' on https://vimeo.com/watch",
+    "background": "rgba(255, 255, 255, 0.64)",
+    "color": "#0e1216",
+    "radius": "12px",
+    "height": "40px",
+    "fontSize": "14px",
+    "padding": "0px 16px"
+  },
+  "switch": {
+    "source": "Billing frequency switch on https://vimeo.com/upgrade-plan, checked (yearly)",
+    "track": "#0e1216",
+    "thumb": "#f9fafb",
+    "width": "50px",
+    "height": "28px",
+    "radius": "48px",
+    "thumbSize": "24px"
+  },
+  "badge": {
+    "source": "Text 'Save 40%' on https://vimeo.com/upgrade-plan",
+    "background": "#58a628",
+    "color": "#000000",
+    "radius": "6px",
+    "fontSize": "16px"
+  },
+  "plan-card": {
+    "source": "Plan surface on https://vimeo.com/upgrade-plan",
+    "background": "#ffffff",
+    "radius": "36.8px",
+    "recommendedBanner": "#8a5ee8",
+    "recommendedText": "#ffffff",
+    "recommendedRadius": "20px 20px 0px 0px"
+  },
+  "type": {
+    "marketingHero": {
+      "source": "Heading 'Turn video into your most powerful marketing engine', https://vimeo.com/solutions/marketing",
+      "fontSize": "72px",
+      "fontWeight": "500",
+      "lineHeight": "72px",
+      "letterSpacing": "-3.6px",
+      "color": "#141a20",
+      "fontFamily": "ABCRepro, ABCRepro Fallback, InterTight, InterTight Fallback, Helvetica, Arial, sans-serif"
+    },
+    "marketingEyebrow": {
+      "source": "h1 'VIDEO MARKETING AND LEAD GEN'",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "-0.6px",
+      "color": "#141a20",
+      "fontFamily": "ABCReproMono, ABCReproMono Fallback"
+    },
+    "marketingSub": {
+      "source": "Paragraph under the marketing hero",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "24.3px",
+      "letterSpacing": "-0.54px",
+      "color": "#4c5864"
+    },
+    "pricingH1": {
+      "source": "h1 on https://vimeo.com/upgrade-plan",
+      "fontSize": "92px",
+      "fontWeight": "500",
+      "lineHeight": "92px",
+      "letterSpacing": "-1.44px",
+      "color": "#000000",
+      "fontFamily": "ABCRepro-Medium, sans-serif"
+    },
+    "price": {
+      "source": "p.chakra-text showing S$13.08 on the pricing page. The currency is Singapore dollars in this session; the figure is geo-priced and is not a token.",
+      "fontSize": "48px",
+      "fontWeight": "500",
+      "lineHeight": "67.2px",
+      "letterSpacing": "-0.48px",
+      "fontFamily": "ABCRepro-Medium, sans-serif"
+    }
+  },
+  "shell": {
+    "watchPage": "#f6f8fa",
+    "watchNav": "#f6f8fa",
+    "marketingHeader": {"background": "#fafcfd", "height": "84px", "position": "fixed"},
+    "marketingFooter": {"background": "#fafcfd"},
+    "phoneWatch": {"viewport": "390x844", "devicePixelRatio": 2, "joinRadius": "8px", "joinHeight": "32px"}
+  }
+}
