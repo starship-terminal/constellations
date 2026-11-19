@@ -19107,6 +19107,61 @@
         "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest and resolution, the screenshot pass, the measurement pass and the offline build",
         "pr": "https://github.com/starship-terminal/constellations/pull/661"
       }
+    },
+    {
+      "slug": "wiza",
+      "name": "Wiza",
+      "url": "https://wiza.co",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "B2B marketing sites on a purple ink system: Britti Sans headings, an 8px primary button in #26114a, white secondary buttons, fluid type and spacing, and a separate login app in #7e43ff",
+      "tags": [
+        "web",
+        "marketing",
+        "saas",
+        "pricing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages measured. Login was opened and not submitted. Signup hit Cloudflare and was not driven. No phone, card, or company SSO was entered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/wiza/README.md",
+      "tokens": "systems/wiza/tokens.json",
+      "styleGuide": "systems/wiza/style-guide.html",
+      "preview": {
+        "cover": "systems/wiza/icon.png",
+        "icon": "systems/wiza/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.component.pricingCardFeatured.background",
+            "text": "light.color.ink",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.ink"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "version": "wiza.co public marketing, Webflow shared CSS wiza-dev.webflow.shared.5a7165800.min.css, measured 2026-11-19"
+      }
     }
   ]
 }
