@@ -20343,6 +20343,79 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "masterclass",
+      "name": "MasterClass",
+      "url": "https://www.masterclass.com",
+      "category": "learning",
+      "platform": "web",
+      "goodFor": "Celebrity-instructor class marketing on a near-black ground: Sohne type, one pink #e32652 action, an 8px control radius, a class landing page with a still and a membership card, and a three-column annual plan picker",
+      "tags": [
+        "web",
+        "learning",
+        "classes",
+        "marketing",
+        "dark",
+        "signed-out",
+        "pricing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (every captured surface is public); the member library, lesson player and payment sit behind sign-in or checkout and were never reached; the sign-in form and the find-my-classes quiz were measured empty and not submitted; no trial was started and no plan was bought; the OneTrust consent layer was hidden, never clicked",
+      "themes": ["dark"],
+      "widths": [1440, 390],
+      "entry": "systems/masterclass/README.md",
+      "tokens": "systems/masterclass/tokens.json",
+      "styleGuide": "systems/masterclass/style-guide.html",
+      "preview": {
+        "cover": "systems/masterclass/screenshots/home-dark-default.png",
+        "icon": "systems/masterclass/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.page.default",
+            "surface": "dark.color.surface.raised",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.muted",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sohne"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "www.masterclass.com in headless Chromium (Playwright), desktop 1440x900 and phone 390x844; computed styles from the live DOM. The site declares a --mc-color-* custom-property layer (571 applied on :root). Tokens are those applied values.",
+        "timestamp": "2026-11-18T09:20:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/classes/revolutionize-your-workflows-with-ai",
+          "/checkout",
+          "/auth/login",
+          "/categories",
+          "/gift",
+          "/for-business",
+          "/find-my-classes",
+          "mobile /, class landing, and /checkout"
+        ],
+        "gaps": [
+          "the signed-in library, lesson player and account sit behind sign-in and were never reached",
+          "checkout payment and account steps were not opened; the membership picker was viewed only and no plan was purchased",
+          "the sign-in form at /auth/login was measured empty and not submitted",
+          "the find-my-classes quiz was not submitted",
+          "pressed states were not captured: CDP CSS.forcePseudoState failed because the CSS agent was not enabled"
+        ],
+        "durationMin": 50,
+        "durationNote": "One public signed-out session: recon, screenshots, measurements, package build."
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the wordmark and glyphs are visible in the screenshots"
+      }
     }
   ]
 }
