@@ -40,16 +40,35 @@ SIGNED = [
     "https://app.example.test/cb?code=abc",
     "https://app.example.test/cb?id_token=abc",
     "https://proxy.example.test/?u=https%3A%2F%2Fx%2Fy.png%3Ftoken%3Dabc",
+    "https://maps.example.test/embed?q=x&key=AIzaFAKEKEY",
+    "https://api.example.test/v1?api_key=abc", "https://api.example.test/v1?apikey=abc",
+    "https://app.example.test/cb?oauth_token=abc", "https://app.example.test/x?auth_token=abc",
+    "https://app.example.test/x?csrf_token=abc", "https://app.example.test/x#jwt=abc",
+    "https://app.example.test/x?session=abc", "https://app.example.test/x?client_secret=abc",
+    "https://cdn.example.test/v.mp4?hdnts=exp=1~acl=x", "https://cdn.example.test/v.mp4?__token__=abc",
+    "https://api.example.test/v1?api-key=abc", "https://api.example.test/v1?access_key=abc",
+    "https://app.example.test/x?session_id=abc", "https://app.example.test/x?sessionid=abc",
+    "https://cdn.example.test/v.mp4?hmac=abc", "https://app.example.test/x?xsrf_token=abc",
+    "https://app.example.test/x?session_token=abc", "https://api.example.test/v1?api_token=abc",
+    "https://acct.example.test/c/f.png?sas_token=abc",
+    "https://app.example.test/cb?refresh_token=abc", "https://app.example.test/x?auth=abc",
 ]
 PLAIN = [
     "https://example.test/page?unit=7",
     "https://example.test/a?tokenizer=1&sigma=2&codec=h264",
+    "https://example.test/a?keyword=x&monkey=1&sessions=3&jwtx=1",
     "https://example.test/docs#tokens",
     "color:#fff",
 ]
 
 
 class SharedList(unittest.TestCase):
+    def test_every_listed_name_has_a_signed_example(self):
+        # so dropping a name from the list cannot pass silently
+        spec = json.loads((SIGNED_IN / "signed-params.json").read_text())
+        for name in spec["params"]:
+            self.assertTrue(any(re.search(r"(?:[?&#]|%3F|%26|%23)(?:amp;)?" + re.escape(name) + r"(?:=|%3D)", u) for u in SIGNED), name)
+
     def test_every_reader_flags_the_same_urls(self):
         for u in SIGNED:
             self.assertTrue(catalog.SIGNED_URL.search(u), u)
