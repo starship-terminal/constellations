@@ -370,5 +370,9 @@ describe("real library normalization", () => {
       "# Stored reference",
     );
     expect(detail?.exports).not.toHaveProperty("variables.css");
+    // No favicon service learns which entries are browsed: with no recorded
+    // favicon there is no remote fallback at all.
+    expect(items[0].iconFallback).toBeNull();
+    expect(JSON.stringify([items, detail])).not.toContain("gstatic");
   });
 });

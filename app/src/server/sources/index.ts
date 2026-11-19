@@ -132,11 +132,9 @@ async function normalize(
     videoFallback: measured
       ? null
       : cdnUrl(row.videoRemote) || remoteUrl(meta?.video_url),
-    iconFallback: measured
-      ? null
-      : remoteUrl(row.source_url || meta?.source_url)
-        ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=128&url=${encodeURIComponent(row.source_url || meta?.source_url)}`
-        : null,
+    // Only the favicon Refero recorded. A favicon service fallback would tell
+    // that service which private library entries are being browsed.
+    iconFallback: measured ? null : remoteUrl(meta?.favicon_url),
     icon: measured
       ? await imageUrl(row.preview?.icon || row.icon)
       : await referoMedia(`/refero-media/favicons/${row.slug}.png`, null),
@@ -562,7 +560,6 @@ async function referoStyleMedia(
   slug: string,
   meta: Raw | null,
   entity: Raw | null,
-  sourceUrl: string | null,
 ): Promise<ReferenceMedia[]> {
   const media: ReferenceMedia[] = [];
   const candidates: Record<string, Raw> = entity?.media || {
@@ -588,11 +585,7 @@ async function referoStyleMedia(
     },
     favicon: {
       local: `/refero-media/favicons/${slug}.png`,
-      remote:
-        meta?.favicon_url ||
-        (sourceUrl
-          ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=128&url=${encodeURIComponent(sourceUrl)}`
-          : null),
+      remote: meta?.favicon_url,
     },
   };
   const labels: Record<string, string> = {
@@ -664,12 +657,7 @@ export async function getReferenceMedia(
   ]);
   return {
     reference,
-    media: await referoStyleMedia(
-      slug,
-      meta,
-      entity,
-      remoteUrl(meta?.source_url || entity?.source_url),
-    ),
+    media: await referoStyleMedia(slug, meta, entity),
   };
 }
 export async function getReference(id: string): Promise<LibraryDetail | null> {
@@ -725,7 +713,7 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
     const design = ds || entity?.ds || {};
     sourceUrl = remoteUrl(meta?.source_url || entity?.source_url);
     descriptionLong = design.description || item.description;
-    media = await referoStyleMedia(slug, meta, entity, sourceUrl);
+    media = await referoStyleMedia(slug, meta, entity);
     const row = refero.get(slug) || {};
     const similar = entity?.similar || design.similar || [];
     interpreted = {
