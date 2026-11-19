@@ -1143,6 +1143,32 @@ class RepositoryTest(unittest.TestCase):
         self.assertEqual(problems, [f"{first['slug']}: platform 'tv' is not one of web, mobile, desktop",
                                     f"{second['slug']}: missing field platform"])
 
+    def _icon_problems(self, mutate):
+        import copy
+        from unittest import mock
+        data = copy.deepcopy(catalog.load_catalog())
+        entry = next(s for s in data["systems"] if s.get("preview", {}).get("icon"))
+        mutate(entry)
+        with mock.patch.object(catalog, "load_catalog", return_value=data):
+            return entry["slug"], [p for p in catalog.check() if "preview.icon" in p]
+
+    def test_a_declared_icon_gap_needs_no_preview_icon(self):
+        # A product with no icon declares icon.png under layoutGaps; check() must not then
+        # also demand preview.icon (the two rules contradicted each other for tome).
+        def gap(entry):
+            del entry["preview"]["icon"]
+            entry["layoutGaps"] = dict(entry.get("layoutGaps", {}), **{"icon.png": "no icon published"})
+        slug, problems = self._icon_problems(gap)
+        self.assertEqual(problems, [])
+
+    def test_no_icon_and_no_declared_gap_is_a_problem(self):
+        def bare(entry):
+            del entry["preview"]["icon"]
+            entry.get("layoutGaps", {}).pop("icon.png", None)
+        slug, problems = self._icon_problems(bare)
+        self.assertIn(f"{slug}: preview.icon None does not exist; run `python3 tools/fetch_icon.py {slug}`",
+                      problems)
+
     def test_every_platform_in_the_catalog_is_known(self):
         platforms = {s["slug"]: s["platform"] for s in catalog.load_catalog()["systems"]}
         self.assertTrue(set(platforms.values()) <= set(catalog.PLATFORMS))

@@ -23,6 +23,8 @@ await page.waitForTimeout(2500);
 await hideOverlays(page);
 
 const data = await page.evaluate(async () => {
+  // The page runs apart from this module, so the masking helper is defined here.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const sheets = [...document.styleSheets];
   const declared = {};
   const fonts = [];
@@ -32,17 +34,18 @@ const data = await page.evaluate(async () => {
     for (const rule of list) {
       rules++;
       if (rule.type === CSSRule.FONT_FACE_RULE) {
-        fonts.push({
+        const o = {
           family: rule.style.getPropertyValue('font-family').replace(/['"]/g, ''),
           weight: rule.style.getPropertyValue('font-weight'),
           style: rule.style.getPropertyValue('font-style'),
-          src: (rule.style.getPropertyValue('src') || '').slice(0, 180),
-        });
+          src: noUrl(rule.style.getPropertyValue('src') || '').slice(0, 180),
+        };
+        fonts.push(o);
       }
       if (rule.style) {
         for (let i = 0; i < rule.style.length; i++) {
           const name = rule.style[i];
-          if (name.startsWith('--')) declared[name] = rule.style.getPropertyValue(name).trim();
+          if (name.startsWith('--')) declared[name] = noUrl(rule.style.getPropertyValue(name).trim());
         }
       }
       if (rule.cssRules) {
@@ -55,7 +58,7 @@ const data = await page.evaluate(async () => {
   }
   const cs = getComputedStyle(document.documentElement);
   const resolved = {};
-  for (const name of Object.keys(declared)) resolved[name] = cs.getPropertyValue(name).trim();
+  for (const name of Object.keys(declared)) resolved[name] = noUrl(cs.getPropertyValue(name).trim());
   const body = getComputedStyle(document.body);
   return {
     declared,
