@@ -103,6 +103,40 @@ SIGNED_IN = {
 }
 
 
+CLEAR = {"backgroundColor": "rgba(0, 0, 0, 0)", "borderTopLeftRadius": "0px", "borderTopRightRadius": "0px",
+         "borderBottomRightRadius": "0px", "borderBottomLeftRadius": "0px"}
+
+
+def card(style, paint, w=300, h=200):
+    v = state(style)
+    v["rect"] = {"x": 0, "y": 0, "w": w, "h": h}
+    v["paint"] = paint
+    return {"title": "Card", "group": "Cards", "page": "home", "states": {"default": v}}
+
+
+class CardShapes(unittest.TestCase):
+    def rows(self, cards):
+        with tempfile.TemporaryDirectory() as d:
+            md = build(package(d, "build_components_md.public.py", {"_meta": {"read": "2026-01-02"}, "components": cards}))
+        table = md.split("**Card shapes.**", 1)[1].split("\n\n", 2)[1]
+        return [r.split(" | ") for r in table.splitlines()[2:]]
+
+    def test_a_card_row_borrows_only_a_child_that_covers_the_card(self):
+        rows = self.rows({
+            # the root paints nothing; only a 40x20 CTA ::before paints, which is not the card
+            "lesson-card": card(CLEAR, [{"node": "a::before", "size": "40px x20px", "bg": "rgb(20, 95, 228)", "radius": "9999px"}]),
+            # the root paints nothing; an inner box covering it carries the look
+            "unit-card": card(CLEAR, [{"node": "div.inner", "size": "300.0x198.0", "bg": "rgb(255, 255, 255)", "radius": "16px"}]),
+            # the root paints its own fill; a small rounded badge inside must not lend it a radius
+            "story-card": card({"backgroundColor": "rgb(255, 255, 255)", **{k: v for k, v in CLEAR.items() if k != "backgroundColor"}},
+                               [{"node": "span.badge", "size": "30.0x16.0", "bg": "rgb(255, 0, 0)", "radius": "8px"}]),
+        })
+        lesson, unit, story = rows
+        self.assertEqual(lesson[3:5], ["-", "transparent"])
+        self.assertEqual(unit[3:5], ["16px", "#ffffff (on `div.inner`)"])
+        self.assertEqual(story[3:5], ["-", "#ffffff"])
+
+
 class SignedInComponentsBuilder(unittest.TestCase):
     def test_focus_without_focus_visible_is_left_out_of_the_tally(self):
         with tempfile.TemporaryDirectory() as d:

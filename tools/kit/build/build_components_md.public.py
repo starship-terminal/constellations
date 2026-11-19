@@ -394,6 +394,16 @@ def grid_of(key):
 for page in ["home", "academy-science", "academy-math", "unit", "lesson-math", "atlas"]:
     W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390)) + " |")
 W()
+def covering_layer(st):
+    """The first painted layer inside the component that fills or frames at least 90% of its box."""
+    area = st["rect"]["w"] * st["rect"]["h"]
+    for x in st.get("paint") or []:
+        dims = [float(n) for n in re.findall(r"[\d.]+", x.get("size", ""))[:2]]
+        if len(dims) == 2 and area and dims[0] * dims[1] >= 0.9 * area and (x.get("bg") or x.get("border")):
+            return x
+    return None
+
+
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
@@ -408,9 +418,15 @@ for k in ["lesson-card", "unit-card", "story-card", "feature-card", "solution-op
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+    if p["background"] == "transparent" and "radius" not in p and "border" not in p and st.get("paint"):
+        # The root paints nothing: its look is a painted child that covers it (at least 90% of its box),
+        # named in the row. A smaller child (a CTA's ::before, a badge, a divider) is not the card, so the
+        # row then keeps the root's own values.
+        p0 = covering_layer(st)
+        if p0:
+            p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"),
+                     background=(colour(p0["bg"]) if p0.get("bg") else "-") + f" (on `{p0['node']}`)",
+                     shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
