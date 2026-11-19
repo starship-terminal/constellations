@@ -6,7 +6,8 @@
     "Sign-in is the owner's, not the agent's: when a flow needs an authenticated account (Google OAuth, email signup), pause and hand the browser to the owner to sign in, then continue. Never create accounts or complete OAuth yourself.",
     "Escalate only real blockers: CAPTCHA loops, phone/SMS verification, payment walls, org SSO or invite gates, hardware keys. Set status to \"blocked\" with the reason in notes instead of deferring silently.",
     "Capture functionality, not just design: walk onboarding and the core flows (first run, main screens, settings, key actions). The refero style for the same domain is landing-page design only; do not reuse it as app evidence.",
-    "One app per PR: when it merges set status to \"captured\" and package to the systems/<slug>. Keep this manifest in the commit."
+    "One app per PR: when it merges set status to \"captured\" and package to the systems/<slug>. Keep this manifest in the commit.",
+    "login-extracted tracks the signed-in pass. Leave it not-started until that pass starts. Set partial with the stop reason in notes, or done only after login-review names every screen the signed-in navigation offered. A review of the first page is not done."
   ],
   "totals": {
     "apps": 418,
@@ -27,6 +28,7 @@
       "status": "captured",
       "package": "systems/1password",
       "notes": "public marketing surface only; the vault is credential-gated (account + secret key + master password) and out of scope. start.1password.com gates headless browsers to /unsupported, captured as the boundary",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -42,6 +44,7 @@
       "status": "captured",
       "package": "systems/untitled-stream",
       "notes": "public marketing surface + login card; legal pages intermittently Cloudflare-gated. Reject-all on the consent card 403s into the Remix error boundary so the card is hidden, never clicked",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -57,6 +60,7 @@
       "status": "captured",
       "package": "systems/aaply",
       "notes": "public marketing surface only (Tilda site); the app host go.aaply.app returned Not found on every route, captured as the boundary",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -72,6 +76,7 @@
       "status": "captured",
       "package": "systems/ableton",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -87,6 +92,7 @@
       "status": "captured",
       "package": "systems/aboard",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -102,6 +108,7 @@
       "status": "captured",
       "package": "systems/aboardhr",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -117,6 +124,7 @@
       "status": "captured",
       "package": "systems/acctual",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -132,6 +140,7 @@
       "status": "captured",
       "package": "systems/acnestudios",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -147,6 +156,7 @@
       "status": "captured",
       "package": "systems/acuityscheduling",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -162,6 +172,7 @@
       "status": "captured",
       "package": "systems/adidas",
       "notes": "global .com Akamai IP-blocked; package covers adidas.com.cn",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -177,6 +188,7 @@
       "status": "captured",
       "package": "systems/aesop",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -192,6 +204,7 @@
       "status": "captured",
       "package": "systems/airbnb",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -207,6 +220,7 @@
       "status": "captured",
       "package": "systems/airtable",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -222,6 +236,7 @@
       "status": "captured",
       "package": "systems/allbirds",
       "notes": "captured signed out at 1440x900 + 390x844; systems/allbirds; PR #438",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -237,6 +252,7 @@
       "status": "captured",
       "package": "systems/aloyoga",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -252,6 +268,7 @@
       "status": "captured",
       "package": "systems/amie",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -267,6 +284,7 @@
       "status": "captured",
       "package": "systems/anam",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -282,6 +300,7 @@
       "status": "captured",
       "package": "systems/anthropic",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -297,6 +316,7 @@
       "status": "captured",
       "package": "systems/apollographql",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -312,6 +332,7 @@
       "status": "captured",
       "package": "systems/appwrite",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 1
     },
     {
@@ -327,6 +348,7 @@
       "status": "captured",
       "package": "systems/arcade",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -342,6 +364,7 @@
       "status": "captured",
       "package": "systems/arket",
       "notes": "Akamai 403s on root and PDPs; shell and dialog components measured from reachable category routes; no dark theme, no spacing or elevation scale",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -357,6 +380,7 @@
       "status": "uncapturable",
       "package": null,
       "notes": "domain parked on GoDaddy for-sale; around.com is an unrelated site; product defunct, nothing honest to capture",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -372,6 +396,7 @@
       "status": "captured",
       "package": "systems/artboardstudio",
       "notes": "editor and app surfaces behind sign-in; marketing routes captured",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -387,6 +412,7 @@
       "status": "captured",
       "package": "systems/asana",
       "notes": "app behind sign-in; public marketing surface captured; declared-but-unbound --darkmode-* roles recorded as declared evidence",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -402,6 +428,7 @@
       "status": "captured",
       "package": "systems/asos",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -417,6 +444,7 @@
       "status": "captured",
       "package": "systems/attio",
       "notes": "pre-existing package; verified complete against docs/PACKAGE.md during batch 2",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -432,6 +460,7 @@
       "status": "captured",
       "package": "systems/avnier",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -447,6 +476,7 @@
       "status": "captured",
       "package": "systems/awwwards",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -462,6 +492,7 @@
       "status": "captured",
       "package": "systems/b150",
       "notes": "app.b150.ai rate-limits anonymous fetches (HTTP 429) and is a documented boundary; marketing surface captured",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -477,6 +508,7 @@
       "status": "captured",
       "package": "systems/ballpark",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -492,6 +524,7 @@
       "status": "captured",
       "package": "systems/base44",
       "notes": "app.base44.com never signed into; declared-but-unpainted .dark token set and empty app-side --sem-* vars recorded as declared/boundary evidence",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -507,6 +540,7 @@
       "status": "uncapturable",
       "package": null,
       "notes": "301-redirects to linktr.ee; Bento was acquired and shut down; no usable Wayback snapshots; a capture would be a parked domain or Linktree, not Bento",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -522,6 +556,7 @@
       "status": "captured",
       "package": "systems/bezi",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -537,6 +572,7 @@
       "status": "captured",
       "package": "systems/biosites",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -552,6 +588,7 @@
       "status": "captured",
       "package": "systems/bloomberg",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -567,6 +604,7 @@
       "status": "captured",
       "package": "systems/blueapron",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -582,6 +620,7 @@
       "status": "captured",
       "package": "systems/boords",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -597,6 +636,7 @@
       "status": "captured",
       "package": "systems/busuu",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -612,6 +652,7 @@
       "status": "captured",
       "package": "systems/butter",
       "notes": "cursor badge only paints for real pointer input and is captured in its hidden state; paywalled product surfaces out of scope",
+      "login-extracted": "not-started",
       "batch": 2
     },
     {
@@ -627,6 +668,7 @@
       "status": "captured",
       "package": "systems/buymeacoffee",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -642,6 +684,7 @@
       "status": "captured",
       "package": "systems/byborre",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -657,6 +700,7 @@
       "status": "captured",
       "package": "systems/cakeequity",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -672,6 +716,7 @@
       "status": "captured",
       "package": "systems/cal",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -687,6 +732,7 @@
       "status": "captured",
       "package": "systems/calendly",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -702,6 +748,7 @@
       "status": "captured",
       "package": "systems/calm",
       "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary).",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -717,6 +764,7 @@
       "status": "captured",
       "package": "systems/canva",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -732,6 +780,7 @@
       "status": "captured",
       "package": "systems/care",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -747,6 +796,7 @@
       "status": "captured",
       "package": "systems/cartesia",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -762,6 +812,7 @@
       "status": "captured",
       "package": "systems/chargetrip",
       "notes": "Captured signed out 2026-11-12 from the WIP branch (measurements complete then); screenshots and the derived pipeline finished 2026-11-16. Boundaries: account.chargetrip.io sign-in measured never submitted; developers/playground shells only; nothing booked or sent; Cookie Settings card hidden, never answered.",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -777,6 +828,7 @@
       "status": "captured",
       "package": "systems/classpass",
       "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/607: signed-out marketing routes plus /login and /walkthrough as boundaries. Manifest row was left pending after merge.",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -792,6 +844,7 @@
       "status": "captured",
       "package": "systems/clay-earth",
       "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/608 as systems/clay-earth. clay.earth 301-redirects to me.sh (Mesh, Automattic). Manifest row was left pending after merge.",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -807,6 +860,7 @@
       "status": "captured",
       "package": "systems/clearful",
       "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/609: signed-out marketing, /library, and the app.clearful.com sign-in boundary. Manifest row was left pending after merge.",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -822,6 +876,7 @@
       "status": "captured",
       "package": "systems/clipchamp",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -837,6 +892,7 @@
       "status": "captured",
       "package": "systems/cofounder",
       "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/630: signed-out marketing plus app.cofounder.co/os/login as a boundary. Manifest row was left pending after merge.",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -852,6 +908,7 @@
       "status": "captured",
       "package": "systems/cohere",
       "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/636: public marketing surface and sign-in boundary. Manifest row was left pending after merge.",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -867,6 +924,7 @@
       "status": "captured",
       "package": "systems/coinbase",
       "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/637: public marketing surface (en-sg) and login.coinbase.com sign-in boundary. Manifest row was left pending after merge.",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -882,6 +940,7 @@
       "status": "captured",
       "package": "systems/column",
       "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/638: public marketing surface and dashboard.column.com/login sign-in boundary. Manifest row was left pending after merge.",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -897,6 +956,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -912,6 +972,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 3
     },
     {
@@ -927,6 +988,7 @@
       "status": "captured",
       "package": "systems/copy",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -942,6 +1004,7 @@
       "status": "captured",
       "package": "systems/cosmos",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -957,6 +1020,7 @@
       "status": "captured",
       "package": "systems/craft",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -972,6 +1036,7 @@
       "status": "captured",
       "package": "systems/craftwork",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -987,6 +1052,7 @@
       "status": "captured",
       "package": "systems/creativemarket",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1002,6 +1068,7 @@
       "status": "captured",
       "package": "systems/cron",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1017,6 +1084,7 @@
       "status": "captured",
       "package": "systems/curater",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1032,6 +1100,7 @@
       "status": "captured",
       "package": "systems/cushion",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1047,6 +1116,7 @@
       "status": "uncapturable",
       "package": null,
       "notes": "acquired by Atlassian 2025-09-03, standalone product sunset 2025-10-31; cycle.app is an unpublished Webflow site serving the generic 404 on every path; nothing honest to capture",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1062,6 +1132,7 @@
       "status": "captured",
       "package": "systems/dailyartmagazine",
       "notes": "public read-only magazine; Shop and Courses are external stores measured as links, never followed. Newsletter and Contact Form 7 fields were filled with sample text and cleared, never submitted. Third-party ad slots are layout evidence only",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1077,6 +1148,7 @@
       "status": "captured",
       "package": "systems/deel",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1092,6 +1164,7 @@
       "status": "captured",
       "package": "systems/deezer",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1107,6 +1180,7 @@
       "status": "captured",
       "package": "systems/delphi",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1122,6 +1196,7 @@
       "status": "captured",
       "package": "systems/descript",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1137,6 +1212,7 @@
       "status": "captured",
       "package": "systems/designmodo",
       "notes": "public signed-out pass only: marketing, /postcards/pricing, /email-templates, the /my-account/sign-in form and the signed-out Postcards gallery (Welcome-back modal dismissed locally); the builder canvas and every post-login surface stay account-only",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1152,6 +1228,7 @@
       "status": "captured",
       "package": "systems/designstripe",
       "notes": "public signed-out pass only (designstripe.com redirects to visual.app): marketing, /assets library and set galleries, /tools, /about, /contact, /blog; the design agents and every post-waitlist surface stay account-only",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1167,6 +1244,7 @@
       "status": "captured",
       "package": "systems/digg",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1182,6 +1260,7 @@
       "status": "captured",
       "package": "systems/discord",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1197,6 +1276,7 @@
       "status": "captured",
       "package": "systems/district",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1212,6 +1292,7 @@
       "status": "captured",
       "package": "systems/dji",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 4
     },
     {
@@ -1227,6 +1308,7 @@
       "status": "captured",
       "package": "systems/dock",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1242,6 +1324,7 @@
       "status": "captured",
       "package": "systems/doctronic",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1257,6 +1340,7 @@
       "status": "captured",
       "package": "systems/docusign",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1272,6 +1356,7 @@
       "status": "captured",
       "package": "systems/dona",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1287,6 +1372,7 @@
       "status": "captured",
       "package": "systems/doordash",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1302,6 +1388,7 @@
       "status": "captured",
       "package": "systems/dopper",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1317,6 +1404,7 @@
       "status": "captured",
       "package": "systems/doppler",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1332,6 +1420,7 @@
       "status": "captured",
       "package": "systems/drinkdouze",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1347,6 +1436,7 @@
       "status": "captured",
       "package": "systems/dribbble",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1362,6 +1452,7 @@
       "status": "captured",
       "package": "systems/dropbox",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1377,6 +1468,7 @@
       "status": "captured",
       "package": "systems/dub",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1392,6 +1484,7 @@
       "status": "captured",
       "package": "systems/editorx",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1407,6 +1500,7 @@
       "status": "captured",
       "package": "systems/elektron",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1422,6 +1516,7 @@
       "status": "captured",
       "package": "systems/elementor",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1437,6 +1532,7 @@
       "status": "captured",
       "package": "systems/elevenlabs",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1452,6 +1548,7 @@
       "status": "captured",
       "package": "systems/elevenmusic",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1467,6 +1564,7 @@
       "status": "captured",
       "package": "systems/elevenreader",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1482,6 +1580,7 @@
       "status": "captured",
       "package": "systems/endel",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1497,6 +1596,7 @@
       "status": "captured",
       "package": "systems/endless",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1512,6 +1612,7 @@
       "status": "captured",
       "package": "systems/endlesstools",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 5
     },
     {
@@ -1527,6 +1628,7 @@
       "status": "captured",
       "package": "systems/enode",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1542,6 +1644,7 @@
       "status": "captured",
       "package": "systems/epicgames",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1557,6 +1660,7 @@
       "status": "captured",
       "package": "systems/epidemicsound",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1572,6 +1676,7 @@
       "status": "captured",
       "package": "systems/equals",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1587,6 +1692,7 @@
       "status": "captured",
       "package": "systems/esquire",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1602,6 +1708,7 @@
       "status": "captured",
       "package": "systems/exa",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1617,6 +1724,7 @@
       "status": "captured",
       "package": "systems/exactly",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1632,6 +1740,7 @@
       "status": "captured",
       "package": "systems/excalidraw",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1647,6 +1756,7 @@
       "status": "captured",
       "package": "systems/expedia",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1662,6 +1772,7 @@
       "status": "captured",
       "package": "systems/explore",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1677,6 +1788,7 @@
       "status": "captured",
       "package": "systems/fable",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1692,6 +1804,7 @@
       "status": "captured",
       "package": "systems/factory",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1707,6 +1820,7 @@
       "status": "captured",
       "package": "systems/faire",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1722,6 +1836,7 @@
       "status": "captured",
       "package": "systems/fal",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1737,6 +1852,7 @@
       "status": "captured",
       "package": "systems/family",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1752,6 +1868,7 @@
       "status": "captured",
       "package": "systems/farfetch",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1767,6 +1884,7 @@
       "status": "captured",
       "package": "systems/feedhive",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1782,6 +1900,7 @@
       "status": "captured",
       "package": "systems/getfernand",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1797,6 +1916,7 @@
       "status": "captured",
       "package": "systems/fibery",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1812,6 +1932,7 @@
       "status": "captured",
       "package": "systems/figma",
       "notes": "public signed-out surfaces only (marketing pages, /community and the /login /signup product-shell cards); the editor and every post-login surface is behind an account. Cloudflare challenged some routes; fresh-session retries succeeded",
+      "login-extracted": "not-started",
       "batch": 6
     },
     {
@@ -1827,6 +1948,7 @@
       "status": "captured",
       "package": "systems/fingerprint",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1842,6 +1964,7 @@
       "status": "captured",
       "package": "systems/fiverr",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1857,6 +1980,7 @@
       "status": "captured",
       "package": "systems/flask",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1872,6 +1996,7 @@
       "status": "captured",
       "package": "systems/flowmapp",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1887,6 +2012,7 @@
       "status": "captured",
       "package": "systems/flutterflow",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1902,6 +2028,7 @@
       "status": "captured",
       "package": "systems/foodnoms",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1917,6 +2044,7 @@
       "status": "captured",
       "package": "systems/fourmula",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1932,6 +2060,7 @@
       "status": "captured",
       "package": "systems/fourthwall",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1947,6 +2076,7 @@
       "status": "captured",
       "package": "systems/frame",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1962,6 +2092,7 @@
       "status": "captured",
       "package": "systems/framer",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1977,6 +2108,7 @@
       "status": "captured",
       "package": "systems/fresha",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -1992,6 +2124,7 @@
       "status": "captured",
       "package": "systems/front",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -2007,6 +2140,7 @@
       "status": "captured",
       "package": "systems/gladia",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -2022,6 +2156,7 @@
       "status": "captured",
       "package": "systems/glassnode",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -2037,6 +2172,7 @@
       "status": "captured",
       "package": "systems/glorify",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -2052,6 +2188,7 @@
       "status": "captured",
       "package": "systems/glossgenius",
       "notes": "public marketing, signed-out auth (/login, /signup, /forgot-password) and a real published booking website read only to its public /book date-picker; everything post-login and past the date-picker is out of scope",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -2067,6 +2204,7 @@
       "status": "captured",
       "package": "systems/gofundme",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -2082,6 +2220,7 @@
       "status": "captured",
       "package": "systems/gemini",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -2097,6 +2236,7 @@
       "status": "captured",
       "package": "systems/grammarly",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -2112,6 +2252,7 @@
       "status": "captured",
       "package": "systems/grok",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 7
     },
     {
@@ -2127,6 +2268,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2142,6 +2284,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2157,6 +2300,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2172,6 +2316,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2187,6 +2332,7 @@
       "status": "captured",
       "package": "systems/hbomax",
       "notes": "signed-out marketing site only (/sg/en): auth.hbomax.com, play.hbomax.com and help.hbomax.com were link-observed, never opened",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2202,6 +2348,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2217,6 +2364,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2232,6 +2380,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2247,6 +2396,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2262,6 +2412,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2277,6 +2428,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2292,6 +2444,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2307,6 +2460,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2322,6 +2476,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2337,6 +2492,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2352,6 +2508,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2367,6 +2524,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2382,6 +2540,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2397,6 +2556,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2412,6 +2572,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 8
     },
     {
@@ -2427,6 +2588,7 @@
       "status": "uncapturable",
       "package": null,
       "notes": "Probed 2026-11-18: https://invisionapp.com and https://www.invisionapp.com (and /login, /pricing, /teams, /inside-design, /enterprise, /customers, /about, /freehand) return HTTP 301 from an AWS ELB to https://miro.com:443/, which serves Miro's live Framer marketing site (title AI Innovation Workspace | Miro), not InVision. Former product hosts do not resolve: projects, support, status, blog, app, login, freehand, studio, dsm, inspect.invisionapp.com. InVision shut its design-collaboration services on 2024-12-31 after selling Freehand to Miro in 2023-11; nothing honest of the product remains to capture.",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2442,6 +2604,7 @@
       "status": "captured",
       "package": "systems/jace",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2457,6 +2620,7 @@
       "status": "captured",
       "package": "systems/jasper",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2472,6 +2636,7 @@
       "status": "captured",
       "package": "systems/jetbrains",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2487,6 +2652,7 @@
       "status": "captured",
       "package": "systems/jitter",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2502,6 +2668,7 @@
       "status": "captured",
       "package": "systems/julienne",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2517,6 +2684,7 @@
       "status": "captured",
       "package": "systems/kickstarter",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2532,6 +2700,7 @@
       "status": "captured",
       "package": "systems/kinhive",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2547,6 +2716,7 @@
       "status": "captured",
       "package": "systems/kit",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2562,6 +2732,7 @@
       "status": "captured",
       "package": "systems/kitchenstories",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2577,6 +2748,7 @@
       "status": "captured",
       "package": "systems/kitchen",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2592,6 +2764,7 @@
       "status": "captured",
       "package": "systems/klarna",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2607,6 +2780,7 @@
       "status": "captured",
       "package": "systems/kraken",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2622,6 +2796,7 @@
       "status": "captured",
       "package": "systems/krea",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2637,6 +2812,7 @@
       "status": "captured",
       "package": "systems/krisp",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2652,6 +2828,7 @@
       "status": "captured",
       "package": "systems/lego",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2667,6 +2844,7 @@
       "status": "captured",
       "package": "systems/lemni",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2682,6 +2860,7 @@
       "status": "captured",
       "package": "systems/lemonsqueezy",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2697,6 +2876,7 @@
       "status": "captured",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2712,6 +2892,7 @@
       "status": "captured",
       "package": "systems/limitless",
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 9
     },
     {
@@ -2727,6 +2908,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2742,6 +2924,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2757,6 +2940,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2772,6 +2956,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2787,6 +2972,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2802,6 +2988,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2817,6 +3004,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2830,8 +3018,70 @@
       ],
       "description": "Luma is all you need to host a memorable event.",
       "status": "pending",
-      "package": null,
-      "notes": "",
+      "package": "systems/luma",
+      "notes": "Signed-in host shell captured 2026-11-20. Account menu and the settings account tab were deleted, not committed. Guest list, check-in, blasts, and a published editor need an event this trial does not have.",
+      "login-extracted": "done",
+      "login-review": {
+        "offered": {
+          "nav": {
+            "items": ["Events", "Calendars", "Notifications"],
+            "reached": ["Events", "Calendars", "Notifications"]
+          },
+          "settings": {
+            "items": ["Preferences", "Payment"],
+            "reached": ["Preferences", "Payment"]
+          },
+          "create": {
+            "items": ["Create Event", "Create Calendar"],
+            "reached": ["Create Event", "Create Calendar"]
+          }
+        },
+        "screens": [
+          {"name": "Events", "file": "screenshots/signed-in-home-dark-desktop.png"},
+          {"name": "Events full", "file": "screenshots/signed-in-home-dark-desktop-full.png"},
+          {"name": "Events light", "file": "screenshots/signed-in-home-light-desktop.png"},
+          {"name": "Events past", "file": "screenshots/signed-in-home-past-dark-narrow.png"},
+          {"name": "Events past full", "file": "screenshots/signed-in-home-past-dark-narrow-full.png"},
+          {"name": "Events past light", "file": "screenshots/signed-in-home-past-light-narrow.png"},
+          {"name": "Calendars", "file": "screenshots/signed-in-calendars-dark-desktop.png"},
+          {"name": "Calendars full", "file": "screenshots/signed-in-calendars-dark-desktop-full.png"},
+          {"name": "Calendars light", "file": "screenshots/signed-in-calendars-light-desktop.png"},
+          {"name": "Calendars tour", "file": "screenshots/signed-in-calendars-tour-dark-narrow.png"},
+          {"name": "Calendars tour full", "file": "screenshots/signed-in-calendars-tour-dark-narrow-full.png"},
+          {"name": "Calendars tour light", "file": "screenshots/signed-in-calendars-tour-light-narrow.png"},
+          {"name": "Create Calendar", "file": "screenshots/signed-in-create-calendar-dark-narrow.png"},
+          {"name": "Create Calendar full", "file": "screenshots/signed-in-create-calendar-dark-narrow-full.png"},
+          {"name": "Create Calendar light", "file": "screenshots/signed-in-create-calendar-light-narrow.png"},
+          {"name": "Create Event", "file": "screenshots/signed-in-create-dark-desktop.png"},
+          {"name": "Create Event full", "file": "screenshots/signed-in-create-dark-desktop-full.png"},
+          {"name": "Create Event light", "file": "screenshots/signed-in-create-light-desktop.png"},
+          {"name": "Create Event open", "file": "screenshots/signed-in-create-open-dark-narrow.png"},
+          {"name": "Create Event open full", "file": "screenshots/signed-in-create-open-dark-narrow-full.png"},
+          {"name": "Create Event open light", "file": "screenshots/signed-in-create-open-light-narrow.png"},
+          {"name": "Notifications", "file": "screenshots/signed-in-notifications-dark-narrow.png"},
+          {"name": "Notifications full", "file": "screenshots/signed-in-notifications-dark-narrow-full.png"},
+          {"name": "Notifications light", "file": "screenshots/signed-in-notifications-light-narrow.png"},
+          {"name": "Payment", "file": "screenshots/signed-in-settings-payment-dark-narrow.png"},
+          {"name": "Payment full", "file": "screenshots/signed-in-settings-payment-dark-narrow-full.png"},
+          {"name": "Payment light", "file": "screenshots/signed-in-settings-payment-light-narrow.png"},
+          {"name": "Preferences", "file": "screenshots/signed-in-settings-preferences-dark-narrow.png"},
+          {"name": "Preferences full", "file": "screenshots/signed-in-settings-preferences-dark-narrow-full.png"},
+          {"name": "Preferences light", "file": "screenshots/signed-in-settings-preferences-light-narrow.png"}
+        ],
+        "gaps": [
+          "guest list, check-in, and blasts: the trial has no event",
+          "published event editor, theme, visibility, and notification menus: no event was created",
+          "account menu and the settings account tab: the snap still held the email, so those files were deleted",
+          "Events past, Calendars tour, Create Calendar, Create Event open, Notifications, Preferences, and Payment are 492 wide, not desktop"
+        ],
+        "not_submitted": [
+          "create event",
+          "create calendar",
+          "payment",
+          "phone number",
+          "passkey"
+        ]
+      },
       "batch": 10
     },
     {
@@ -2847,6 +3097,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2862,6 +3113,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2877,6 +3129,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2892,6 +3145,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2907,6 +3161,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2922,6 +3177,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2937,6 +3193,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2952,6 +3209,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2967,6 +3225,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2982,6 +3241,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -2997,6 +3257,7 @@
       "status": "captured",
       "package": "systems/matter",
       "notes": "public signed-out marketing, a public article, docs, and the reader sign-in card. The reader app sits behind sign-in and was not reached. Subscribe, OAuth, and checkout were not submitted.",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -3012,6 +3273,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 10
     },
     {
@@ -3027,6 +3289,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3042,6 +3305,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3057,6 +3321,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3072,6 +3337,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3087,6 +3353,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3102,6 +3369,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3117,6 +3385,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3134,6 +3403,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3149,6 +3419,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3164,6 +3435,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3179,6 +3451,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3194,6 +3467,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3209,6 +3483,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3224,6 +3499,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3239,6 +3515,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3254,6 +3531,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3269,6 +3547,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3284,6 +3563,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3299,6 +3579,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3314,6 +3595,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 11
     },
     {
@@ -3329,6 +3611,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3344,6 +3627,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3359,6 +3643,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3374,6 +3659,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3389,6 +3675,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3404,6 +3691,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3419,6 +3707,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3434,6 +3723,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3449,6 +3739,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3464,6 +3755,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3479,6 +3771,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3494,6 +3787,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3509,6 +3803,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3524,6 +3819,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3539,6 +3835,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3554,6 +3851,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3569,6 +3867,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3584,6 +3883,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3599,6 +3899,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3614,6 +3915,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 12
     },
     {
@@ -3629,6 +3931,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3644,6 +3947,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3659,6 +3963,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3674,6 +3979,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3689,6 +3995,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3704,6 +4011,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3719,6 +4027,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3734,6 +4043,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3749,6 +4059,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3764,6 +4075,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3779,6 +4091,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3794,6 +4107,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3809,6 +4123,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3824,6 +4139,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3839,6 +4155,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3854,6 +4171,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3869,6 +4187,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3884,6 +4203,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3899,6 +4219,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3914,6 +4235,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 13
     },
     {
@@ -3929,6 +4251,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -3944,6 +4267,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -3959,6 +4283,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -3974,6 +4299,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -3989,6 +4315,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4004,6 +4331,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4019,6 +4347,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4034,6 +4363,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4049,6 +4379,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4064,6 +4395,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4079,6 +4411,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4094,6 +4427,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4109,6 +4443,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4124,6 +4459,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4139,6 +4475,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4154,6 +4491,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4169,6 +4507,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4184,6 +4523,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4199,6 +4539,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4214,6 +4555,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 14
     },
     {
@@ -4229,6 +4571,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4244,6 +4587,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4259,6 +4603,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4274,6 +4619,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4289,6 +4635,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4304,6 +4651,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4319,6 +4667,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4334,6 +4683,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4349,6 +4699,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4364,6 +4715,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4379,6 +4731,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4394,6 +4747,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4409,6 +4763,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4424,6 +4779,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4439,6 +4795,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4454,6 +4811,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4469,6 +4827,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4484,6 +4843,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4499,6 +4859,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4514,6 +4875,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 15
     },
     {
@@ -4529,6 +4891,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4544,6 +4907,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4559,6 +4923,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4574,6 +4939,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4589,6 +4955,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4604,6 +4971,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4619,6 +4987,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4634,6 +5003,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4649,6 +5019,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4664,6 +5035,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4679,6 +5051,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4694,6 +5067,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4709,6 +5083,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4724,6 +5099,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4739,6 +5115,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4754,6 +5131,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4769,6 +5147,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4784,6 +5163,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4799,6 +5179,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4814,6 +5195,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 16
     },
     {
@@ -4829,6 +5211,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4844,6 +5227,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4859,6 +5243,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4874,6 +5259,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4889,6 +5275,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4904,6 +5291,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4919,6 +5307,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4934,6 +5323,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4949,6 +5339,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4964,6 +5355,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4979,6 +5371,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -4994,6 +5387,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -5009,6 +5403,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -5024,6 +5419,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -5039,6 +5435,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -5054,6 +5451,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -5069,6 +5467,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -5084,6 +5483,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -5099,6 +5499,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -5114,6 +5515,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 17
     },
     {
@@ -5129,6 +5531,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5144,6 +5547,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5159,6 +5563,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5174,6 +5579,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5189,6 +5595,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5204,6 +5611,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5219,6 +5627,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5234,6 +5643,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5249,6 +5659,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5264,6 +5675,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5279,6 +5691,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5294,6 +5707,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5309,6 +5723,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5324,6 +5739,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5339,6 +5755,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5354,6 +5771,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5369,6 +5787,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5384,6 +5803,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5399,6 +5819,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5414,6 +5835,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 18
     },
     {
@@ -5429,6 +5851,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5444,6 +5867,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5459,6 +5883,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5474,6 +5899,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5489,6 +5915,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5504,6 +5931,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5519,6 +5947,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5534,6 +5963,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5549,6 +5979,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5564,6 +5995,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5579,6 +6011,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5594,6 +6027,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5609,6 +6043,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5624,6 +6059,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5639,6 +6075,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5654,6 +6091,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5669,6 +6107,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5684,6 +6123,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5699,6 +6139,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5714,6 +6155,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 19
     },
     {
@@ -5729,6 +6171,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5744,6 +6187,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5759,6 +6203,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5774,6 +6219,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5789,6 +6235,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5804,6 +6251,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5819,6 +6267,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5834,6 +6283,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5849,6 +6299,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5864,6 +6315,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5879,6 +6331,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5894,6 +6347,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5909,6 +6363,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5924,6 +6379,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5939,6 +6395,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5954,6 +6411,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5969,6 +6427,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5984,6 +6443,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -5999,6 +6459,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -6014,6 +6475,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 20
     },
     {
@@ -6029,6 +6491,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6044,6 +6507,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6059,6 +6523,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6074,6 +6539,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6089,6 +6555,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6104,6 +6571,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6119,6 +6587,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6134,6 +6603,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6149,6 +6619,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6164,6 +6635,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6179,6 +6651,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6194,6 +6667,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6209,6 +6683,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6224,6 +6699,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6239,6 +6715,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6254,6 +6731,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6269,6 +6747,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     },
     {
@@ -6284,6 +6763,7 @@
       "status": "pending",
       "package": null,
       "notes": "",
+      "login-extracted": "not-started",
       "batch": 21
     }
   ]
