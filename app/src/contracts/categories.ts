@@ -130,6 +130,9 @@ export function categorySeedGaps(
   return problems;
 }
 
+/** The category filter for references that carry no category term. */
+export const UNCATEGORISED = "uncategorised";
+
 /** Old deep links remain usable; new links carry namespaced database term IDs. */
 export function matchesCategory(
   item: {
@@ -140,6 +143,7 @@ export function matchesCategory(
   query: string,
 ): boolean {
   if (!query) return true;
+  if (query === UNCATEGORISED) return !item.categoryIds?.length;
   const labels =
     (Object.hasOwn(legacyCategoryLabels, query)
       ? legacyCategoryLabels[query]
