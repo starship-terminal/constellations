@@ -20343,6 +20343,78 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "replo",
+      "name": "Replo",
+      "url": "https://www.replo.app/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "A dark marketing site for a store builder: black page, cream type in Archivo, editorial plan names, cream and black pills, and a separate Inter login form.",
+      "tags": [
+        "web",
+        "e-commerce",
+        "marketing",
+        "pricing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages and the signed-out login form. Nothing typed, nothing submitted.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/replo/README.md",
+      "tokens": "systems/replo/tokens.json",
+      "styleGuide": "systems/replo/style-guide.html",
+      "preview": {
+        "cover": "systems/replo/screenshots/home-light-default.png",
+        "icon": "systems/replo/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.card",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.accent",
+            "border": "dark.border.card"
+          }
+        },
+        "fonts": [
+          "core.font.family.marketing",
+          "core.font.family.auth"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 70,
+        "source": "www.replo.app and dashboard.replo.app in a T3 preview tab at 1440x900, device pixel ratio 2. Computed styles from the live DOM. Public screenshots in headless Playwright after those pages loaded with no Cloudflare challenge. The preview tab could not produce screenshot frames. Login was measured and not screenshotted. Nothing was typed or submitted.",
+        "routes": [
+          "https://www.replo.app/",
+          "https://www.replo.app/pricing",
+          "https://www.replo.app/contact",
+          "https://www.replo.app/case-studies",
+          "https://www.replo.app/this-page-does-not-exist-capture",
+          "https://dashboard.replo.app/auth/signup",
+          "https://dashboard.replo.app/auth/login"
+        ],
+        "gaps": [
+          "signed-in product not entered",
+          "login form not submitted and not screenshotted",
+          "no hover, focus-visible, error, or disabled state forced",
+          "docs.replo.app not opened",
+          "Shopify and Google not clicked",
+          "payment not entered"
+        ]
+      }
     }
   ]
 }
