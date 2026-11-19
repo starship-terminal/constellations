@@ -1285,6 +1285,56 @@ def check() -> list[str]:
             if not isinstance(resolver_for(s["tokens"]).lookup(path), str):
                 problems.append(f"{slug}: font token {path} does not resolve")
         problems += design_md_problems(s)
+    manifest = ROOT / "webapps-manifest.json"
+    if manifest.is_file():
+        problems += manifest_problems(json.loads(manifest.read_text(encoding="utf-8")), catalog["systems"])
+    return problems
+
+
+@functools.lru_cache(maxsize=1)
+def _coverage_module():
+    spec = importlib.util.spec_from_file_location(
+        "refero_coverage", Path(__file__).resolve().parent / "refero" / "coverage.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _root_domain(url_or_host: str | None) -> str:
+    """tools/refero/coverage.py's matching rule, so the queue and the coverage file agree."""
+    coverage = _coverage_module()
+    return coverage.root_domain(coverage.host_of(url_or_host))
+
+
+def manifest_problems(manifest: dict, systems: list[dict]) -> list[str]:
+    """webapps-manifest.json against catalog.json, so the capture queue cannot drift:
+    a captured app names a package the catalog has, an app that is not captured names
+    none and has no package on its domain, and the totals match the rows."""
+    problems = []
+    apps = manifest.get("apps") if isinstance(manifest.get("apps"), list) else []
+    slugs = {s.get("slug") for s in systems}
+    domains: dict[str, list[str]] = {}
+    for s in systems:
+        domains.setdefault(_root_domain(s.get("url")), []).append(s.get("slug"))
+    for app in apps:
+        where = f"webapps-manifest.json {app.get('domain')}"
+        package, status = app.get("package"), app.get("status")
+        if status == "captured":
+            if not isinstance(package, str) or package.removeprefix("systems/") not in slugs:
+                problems.append(f"{where}: captured, but its package {package!r} is not in catalog.json")
+            continue
+        if package:
+            problems.append(f"{where}: status {status!r} with package {package!r}; a package means captured")
+        taken = domains.get(_root_domain(app.get("domain")))
+        if taken:
+            problems.append(f"{where}: status {status!r}, but catalog.json already has "
+                            f"{', '.join('systems/' + s for s in taken)} on that domain; mark it captured")
+    totals = manifest.get("totals") or {}
+    if totals.get("apps") != len(apps):
+        problems.append(f"webapps-manifest.json: totals.apps is {totals.get('apps')}, the file lists {len(apps)}")
+    batches = max((a.get("batch") for a in apps if isinstance(a.get("batch"), int)), default=0)
+    if totals.get("batches") != batches:
+        problems.append(f"webapps-manifest.json: totals.batches is {totals.get('batches')}, the highest batch is {batches}")
     return problems
 
 

@@ -15,6 +15,36 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog  # noqa: E402
 
 
+class ManifestTest(unittest.TestCase):
+    SYSTEMS = [{"slug": "alpha", "url": "https://www.alpha.example"}, {"slug": "beta", "url": "https://app.beta.example"}]
+
+    def manifest(self, *apps, totals=None):
+        apps = list(apps)
+        batches = max((a.get("batch", 1) for a in apps), default=0)
+        return {"totals": totals or {"apps": len(apps), "batches": batches}, "apps": apps}
+
+    def app(self, domain, status, package=None, batch=1):
+        return {"domain": domain, "status": status, "package": package, "batch": batch}
+
+    def test_a_consistent_manifest_is_clean(self):
+        m = self.manifest(self.app("alpha.example", "captured", "systems/alpha"),
+                          self.app("gamma.example", "pending", batch=2))
+        self.assertEqual(catalog.manifest_problems(m, self.SYSTEMS), [])
+
+    def test_each_kind_of_drift_is_named(self):
+        m = self.manifest(self.app("alpha.example", "captured"),                     # no package
+                          self.app("beta.example", "pending"),                       # beta is captured
+                          self.app("gamma.example", "uncapturable", "systems/gamma"),  # package without capture
+                          totals={"apps": 9, "batches": 4})
+        problems = catalog.manifest_problems(m, self.SYSTEMS)
+        self.assertEqual(len(problems), 5, problems)
+        self.assertIn("alpha.example: captured, but its package None is not in catalog.json", problems[0])
+        self.assertIn("beta.example: status 'pending', but catalog.json already has systems/beta", problems[1])
+        self.assertIn("gamma.example: status 'uncapturable' with package 'systems/gamma'", problems[2])
+        self.assertIn("totals.apps is 9, the file lists 3", problems[3])
+        self.assertIn("totals.batches is 4, the highest batch is 1", problems[4])
+
+
 class ResolverTest(unittest.TestCase):
     def setUp(self):
         self.res = catalog.Resolver({
