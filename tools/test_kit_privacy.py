@@ -40,10 +40,17 @@ SIGNED = [
     "https://app.example.test/cb?code=abc",
     "https://app.example.test/cb?id_token=abc",
     "https://proxy.example.test/?u=https%3A%2F%2Fx%2Fy.png%3Ftoken%3Dabc",
+    "https://maps.example.test/embed?q=x&key=AIzaFAKEKEY",
+    "https://api.example.test/v1?api_key=abc", "https://api.example.test/v1?apikey=abc",
+    "https://app.example.test/cb?oauth_token=abc", "https://app.example.test/x?auth_token=abc",
+    "https://app.example.test/x?csrf_token=abc", "https://app.example.test/x#jwt=abc",
+    "https://app.example.test/x?session=abc", "https://app.example.test/x?client_secret=abc",
+    "https://cdn.example.test/v.mp4?hdnts=exp=1~hmac=abc", "https://cdn.example.test/v.mp4?__token__=abc",
 ]
 PLAIN = [
     "https://example.test/page?unit=7",
     "https://example.test/a?tokenizer=1&sigma=2&codec=h264",
+    "https://example.test/a?keyword=x&monkey=1&sessions=3&jwtx=1",
     "https://example.test/docs#tokens",
     "color:#fff",
 ]
