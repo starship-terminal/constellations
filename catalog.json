@@ -20343,6 +20343,90 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "stellate",
+      "name": "Stellate",
+      "url": "https://stellate.co",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A grey GraphQL marketing site: TT Commons, blue #608bd8 buttons, magenta and red product buttons, 8px radius, and a Nextra docs shell that follows the system theme",
+      "tags": [
+        "web",
+        "developer",
+        "graphql",
+        "marketing",
+        "docs",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "Public marketing and signed-out login and signup. Signup was an email field. Submitting it sent a magic link. The magic link was not opened. GitHub and GitLab were not followed. No card was entered.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/stellate/README.md",
+      "tokens": "systems/stellate/tokens.json",
+      "styleGuide": "systems/stellate/style-guide.html",
+      "preview": {
+        "cover": "systems/stellate/icon.png",
+        "icon": "systems/stellate/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.raised",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.raised",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.docs",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "stellate.co marketing, login, signup, pricing, docs and a product page in a T3 preview tab, CSS viewport 1169x731 at devicePixelRatio 2, on 2026-11-19. Computed styles read live. Screenshot frames failed.",
+        "timestamp": "2026-11-19T02:45:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public site 2026-11-19",
+        "durationMin": 45,
+        "routes": [
+          "/",
+          "/login",
+          "/signup",
+          "/login/submitted",
+          "/pricing",
+          "/docs",
+          "/docs/quickstart",
+          "/graphql-edge-caching"
+        ],
+        "gaps": [
+          "preview_snapshot returned The browser is not producing screenshot frames, so no screenshots or crops were saved",
+          "magic link was not opened",
+          "signed-in dashboard was not opened",
+          "GitHub and GitLab were not followed",
+          "no card was entered",
+          "viewport was 1169, not 1440 and not 390"
+        ]
+      }
     }
   ]
 }
