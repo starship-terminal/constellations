@@ -20343,6 +20343,72 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "peak-performance",
+      "name": "Peak Performance",
+      "url": "https://www.peakperformance.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Outdoor retail storefront: lime 30px promo bar, white 44px nav over a search bar, 96px uppercase hero, 24px pills, flush 360px product tiles, 450px filter sheet",
+      "tags": [
+        "web",
+        "retail",
+        "fashion",
+        "magento",
+        "marketing",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (home and the women's jackets collection are public; bag, checkout and account were not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/peak-performance/README.md",
+      "tokens": "systems/peak-performance/tokens.json",
+      "styleGuide": "systems/peak-performance/style-guide.html",
+      "preview": {
+        "icon": "systems/peak-performance/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.primary.background",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text"
+        ],
+        "cover": "systems/peak-performance/screenshots/tokens-light-plate.png"
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "Peak2024 styles.min.css version1794987467",
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/749",
+        "gaps": [
+          "no live page screenshot: preview browser returned 'The browser is not producing screenshot frames'. preview.cover is a colour plate of measured tokens, not a capture of the shop",
+          "product page, bag, checkout and account were not entered",
+          "PerimeterX denied the host after the collection filter sheet",
+          "390px width not captured",
+          "icon.png not fetched: homepage returned 403"
+        ]
+      },
+      "layoutGaps": {
+        "components/": "no screenshots were produced, so no crops were cut",
+        "icons/": "the icon font Icon-Peak2024 was not converted to SVG"
+      }
     }
   ]
 }
