@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "teachable",
+      "name": "Teachable",
+      "url": "https://teachable.com",
+      "category": "learning",
+      "platform": "web",
+      "goodFor": "Course-platform marketing on a black nav and chartreuse pill: Ivypresto Headline display type over Peridot body, a 900px pill radius, and a separate signed-out accounts chrome",
+      "tags": [
+        "web",
+        "learning",
+        "courses",
+        "marketing",
+        "pricing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing pages plus the Teachable Accounts sign-in chrome; no account created, no password typed, no card entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/teachable/README.md",
+      "tokens": "systems/teachable/tokens.json",
+      "styleGuide": "systems/teachable/style-guide.html",
+      "preview": {
+        "cover": "systems/teachable/screenshots/home-light-default.png",
+        "icon": "systems/teachable/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.page",
+            "text": "light.color.text.body",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.action.fill",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.heading",
+          "core.font.family.body"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "www.teachable.com Webflow site 687904fb2b26c434698c47e9, page 68b18a352897a262d4000b50; sso.teachable.com Teachable Accounts sign-in",
+        "durationMin": 90,
+        "method": "public-web",
+        "timestamp": "2026-11-19T00:00:00Z"
+      }
     }
   ]
 }
