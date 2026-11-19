@@ -90,10 +90,13 @@ the last screenshot, from the navigation that is actually on screen.
    `python3 tools/refero/coverage.py` when check flags it stale; all
    binaries are LFS.
 6. **Rubric review before done** — `python3 tools/grade.py --write
-   --review <slug>=<grades.json> --method "<how>"`; every non-`yes`
-   criterion gets a written justification (AGENTS.md rule).
-7. One PR per app (`gh pr create`); catalog `capture` block carries
-   `pr`, `durationMin`/`durationNote`, `route`, `model`, `date`.
+   --review <slug>=<grades.json> --method "<how>"`; every criterion
+   that cannot grade `meets` gets a written justification (AGENTS.md
+   rule).
+7. One PR per app (`gh pr create`); the catalog `capture` block carries
+   the fields in [CAPTURE.md](CAPTURE.md) step 7: `harness`, `model`,
+   `route` and `durationMin` (required; `tools/catalog.py` checks them),
+   plus `version` and `pr`.
 8. Greptile will review: fix valid comments in the package's own
    builders, reply `in_reply_to` on every comment, resolve every
    thread via GraphQL `resolveReviewThread`. Then merge
@@ -108,11 +111,13 @@ the last screenshot, from the navigation that is actually on screen.
 ## Running on the Linux homeserver
 
 The whole public pipeline runs headless on `ssh home` (Ubuntu 24.04,
-`~/designs` clone). Deel was captured, built, OCR-scanned, committed
+from a clone of this repo; the deploy trigger's default clone is
+`~/dev/constellations`, `DESIGNS_REPO` in
+[deploy_trigger.py](../scripts/deploy_trigger.py)). Deel was captured, built, OCR-scanned, committed
 and PR'd there end-to-end — the Mac only needs to be involved when you
 want to eyeball an image locally.
 
-- **Worktree:** `GIT_LFS_SKIP_SMUDGE=1 git -C ~/designs worktree add
+- **Worktree:** `GIT_LFS_SKIP_SMUDGE=1 git -C <clone> worktree add
   ~/ds-<slug> -b capture-<slug> origin/main`. The skip matters: a
   plain checkout tries to fetch every package's LFS images and stalls.
   New captures produce their own LFS objects, nothing else is needed.

@@ -11,7 +11,7 @@ Status describes implementation in this checkout, not a live QA pass or release 
 - **DESIGN.md export**: hand a DESIGN.md-reading tool a generated one-theme export of any package, regenerated from its tokens and README. Status: implemented. Surface: CLI. Entry point: `make design-md` (`tools/catalog.py design-md`), `systems/<slug>/DESIGN.md`. Tests: `tools/test_catalog.py`.
 - **DESIGN.md lint**: lint every package's DESIGN.md with Google's pinned linter through `npx` in a temp dir. Status: implemented. Surface: CLI. Entry point: `make lint-design-md`. Tests: `tools/test_catalog.py`.
 - **Package app icons**: see each product's 128 px icon on gallery cards and the README catalog table, and fetch or refresh it from the product's site. Status: implemented. Surface: CLI. Entry point: `python3 tools/fetch_icon.py <slug>` (`--host`, `--url`, `--all`). Tests: `tools/test_fetch_icon.py`.
-- **Gated-surface queue**: read the generated list of surfaces captures skipped behind sign-in, account, checkout or submission, and fail when it is stale. Status: implemented. Surface: CLI. Entry point: `python3 tools/gated.py [--check]`, `docs/GATED.md`. Tests: none.
+- **Gated-surface queue**: read the generated list of surfaces captures skipped behind sign-in, account, checkout or submission, and fail when it is stale. Status: implemented. Surface: CLI. Entry point: `python3 tools/gated.py [--check]`, `docs/GATED.md`. Tests: `tools/test_gated.py`.
 
 ## Library CLI (make and tools/catalog.py)
 - **Target list**: list documented make targets with a one-line description. Status: implemented. Surface: CLI. Entry point: `make help`. Tests: none.
