@@ -20343,6 +20343,93 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "shopify",
+      "name": "Shopify",
+      "url": "https://www.shopify.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "commerce marketing and signed-out login chrome: a dark home (page #000000, section #02090a, white 9999px pills, Shopify-Inter 330 display, shop purple #5433eb) and a Polaris login form (text #303030, field #f3f3f3, link and focus #005bd3, 8px controls)",
+      "tags": [
+        "web",
+        "e-commerce",
+        "commerce",
+        "marketing",
+        "signed-out",
+        "polaris",
+        "design-tokens",
+        "dark",
+        "light",
+        "pills"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages and the account lookup form only. Start for free was not opened (paid trial). Email, password, passkey, Google, Apple, Facebook, and WhatsApp were not submitted. No card, phone, or KYC was entered. No store was created.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/shopify/README.md",
+      "tokens": "systems/shopify/tokens.json",
+      "styleGuide": "systems/shopify/style-guide.html",
+      "preview": {
+        "cover": "systems/shopify/icon.png",
+        "icon": "systems/shopify/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.marketing",
+          "core.font.identity"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "Live computed styles in the T3 preview browser on 2026-11-19. Home redirected to https://www.shopify.com/sg. Pricing was https://www.shopify.com/sg/pricing. Log in was https://accounts.shopify.com/lookup, measured and not submitted. The preview browser did not produce screenshot frames, so screenshots/ is empty.",
+        "timestamp": "2026-11-19T00:00:00Z",
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/sg",
+          "/sg/pricing",
+          "accounts.shopify.com/lookup"
+        ],
+        "gaps": [
+          "Start for free links to admin.shopify.com/signup with paid_trial_experience and was not opened.",
+          "Email, password, passkey, Google, Apple, Facebook, and WhatsApp were not submitted.",
+          "No card, phone, government ID, or KYC was entered. No store was created.",
+          "The preview browser returned 'The browser is not producing screenshot frames', so no live screenshot was saved.",
+          "Viewport was the fill tab at 1169 by 731 CSS pixels, devicePixelRatio 2. No 1440 or 390 pass.",
+          "Hover, pressed, disabled, error, and loading were not forced.",
+          "prefers-reduced-motion was not emulated.",
+          "No standalone SVG icon set was lifted. icon.png is the site apple-touch-icon, resized from 120 to 128."
+        ],
+        "durationMin": 40
+      },
+      "layoutGaps": {
+        "components/": "The preview browser did not produce screenshot frames, so no element crops were cut."
+      }
     }
   ]
 }
