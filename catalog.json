@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "understory",
+      "name": "Understory",
+      "url": "https://www.understory.io/",
+      "category": "events",
+      "platform": "web",
+      "goodFor": "Experience-booking marketing: beige page, condensed uppercase headlines, moss and citrus buttons, plan cards, and a signed-out login card",
+      "tags": [
+        "web",
+        "events",
+        "booking",
+        "marketing",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the backoffice login; signup was opened and not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/understory/README.md",
+      "tokens": "systems/understory/tokens.json",
+      "styleGuide": "systems/understory/style-guide.html",
+      "preview": {
+        "cover": "systems/understory/icon.png",
+        "icon": "systems/understory/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "marketing Webflow CSS 6968cc3e; backoffice data-panda-theme backoffice-light",
+        "route": "public-web",
+        "pr": "https://github.com/starship-terminal/constellations/pull/859",
+        "durationMin": 40
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned: The browser is not producing screenshot frames. No screenshot was invented.",
+        "components/": "No crops. The same screenshot-frame failure blocked element captures.",
+        "icons/": "Inline SVGs were visible in the DOM. The icon extraction pass was not run, and no screenshot frames were available to check them."
+      }
     }
   ]
 }
