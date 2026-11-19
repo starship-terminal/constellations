@@ -20343,6 +20343,65 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "prose",
+      "name": "Prose",
+      "url": "https://prose.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "custom haircare and skincare marketing: olive ink #323429 on white, cream #f9f7f2 cards, Saol light display over Simplon Norm, 48px radius-60 action pills, a 40px sale banner over a 55px nav",
+      "tags": [
+        "web",
+        "e-commerce",
+        "beauty",
+        "haircare",
+        "marketing",
+        "signed-out",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing only. The consultation quiz, checkout, and sign-in submission were not entered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/prose/README.md",
+      "tokens": "systems/prose/tokens.json",
+      "styleGuide": "systems/prose/style-guide.html",
+      "preview": {
+        "cover": "systems/prose/icon.png",
+        "icon": "systems/prose/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.bg.page",
+            "surface": "light.bg.cream",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.bg.action",
+            "border": "light.border.hairline"
+          }
+        },
+        "fonts": [
+          "core.font.family.heading",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "unversioned marketing site",
+        "durationMin": 70,
+        "pr": "https://github.com/starship-terminal/constellations/pull/759"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot failed twice with 'The browser is not producing screenshot frames'. Computed styles were read from the live page. No page PNG was invented."
+      }
     }
   ]
 }

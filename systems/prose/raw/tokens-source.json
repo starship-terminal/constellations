@@ -1,0 +1,22 @@
+{
+  "measuredAt": "2026-11-19",
+  "url": "https://prose.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "mobile": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2
+  },
+  "stylesheet": "https://cdn.prose.com/build/client/assets/root-LQqObtzz.css",
+  "theme": "light only. No .dark, data-theme, or prefers-color-scheme rule in the fetched stylesheet.",
+  "screenshots": "T3 preview_snapshot failed twice: The browser is not producing screenshot frames. No PNG of the page was saved."
+}
