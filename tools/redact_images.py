@@ -519,6 +519,9 @@ def allow_entry_problem(entry):
         re.compile(entry, re.I)
     except re.error as e:
         return f"is not a valid regex ({e})"
+    unmodelled = _unmodelled_construct(entry)
+    if unmodelled:
+        return f"uses {unmodelled}, which this check cannot vet: write the address or domain plainly"
     if any(email_allowed(f"{lp}@{d}", [entry]) for lp in PROBE_LOCALS for d in PROBE_DOMAINS):
         return "passes any address"
     # An entry that can reach a free-mail domain must be one literal address: no class, group,
@@ -541,6 +544,58 @@ def allow_entry_problem(entry):
             local = sample.partition("@")[0] or PROBE_LOCALS[0]
             if any(email_allowed(f"{local}@{d}", [entry]) for d in PROBE_DOMAINS):
                 return "passes its local part at any domain: write the whole address"
+    return None
+
+
+def _unmodelled_construct(entry, cap=64):
+    """The first regex construct in an allow entry that _regex_samples does not model, or None. The
+    vetting below trusts strings drawn from the entry, so anything that can narrow or couple what
+    the regex accepts without showing in those strings (lookaround, backreference, conditional,
+    atomic or possessive forms, inline flags) is refused outright, as is an entry with more
+    alternatives than the sampler draws."""
+    P = _re_parser
+    try:
+        parsed = P.parse(entry, re.I)
+    except Exception:
+        return "a pattern this Python cannot parse"
+    if parsed.state.flags & ~(re.I | re.U):
+        return "an inline flag"
+    plain = {P.LITERAL, P.NOT_LITERAL, P.ANY, P.AT}
+    in_items = {P.LITERAL, P.RANGE, P.CATEGORY, P.NEGATE}
+
+    def walk(items):
+        for op, av in items:
+            if op in plain:
+                continue
+            if op is P.IN:
+                if any(o not in in_items for o, _ in av):
+                    return "an unusual character class"
+            elif op is P.BRANCH:
+                for b in av[1]:
+                    bad = walk(b)
+                    if bad:
+                        return bad
+            elif op is P.SUBPATTERN:
+                if av[1] or av[2]:
+                    return "an inline flag"
+                bad = walk(av[3])
+                if bad:
+                    return bad
+            elif op in (P.MAX_REPEAT, P.MIN_REPEAT):
+                bad = walk(av[2])
+                if bad:
+                    return bad
+            else:
+                return {P.ASSERT: "a lookaround", P.ASSERT_NOT: "a lookaround", P.GROUPREF: "a backreference",
+                        P.GROUPREF_EXISTS: "a conditional group", getattr(P, "ATOMIC_GROUP", None): "an atomic group",
+                        getattr(P, "POSSESSIVE_REPEAT", None): "a possessive repeat"}.get(op, f"the regex construct {op}")
+        return None
+
+    bad = walk(parsed)
+    if bad:
+        return bad
+    if len(_regex_samples(entry, cap=cap + 1)) > cap:
+        return f"more than {cap} alternatives"
     return None
 
 

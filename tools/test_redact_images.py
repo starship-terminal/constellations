@@ -543,6 +543,10 @@ class AllowEntries(unittest.TestCase):
                       r"^[a-z]+@gmail\.com$", r"^[a-z]{2,8}@gmail\.com$", r"^(jane|john)@yahoo\.com$",  # a pattern of
                       r"^\w+\.\w+@outlook\.com$", r"^satoshi[0-9]?@gmail\.com$",                    # free-mail boxes
                       r"^satoshi2?@gmail\.com$", r"^[bc]{2}@gmail\.com$", r"^c?hen@gma[il]l\.com$",
+                      r"^(?=vip)[a-z]+@gmail\.com$", r"^[a-z]+(?<=vip)@gmail\.com$",             # forms the
+                      r"^(?!x)\w+@vendor\.biz$", r"^(a)\1@gmail\.com$", r"(?x) a @gmail\.com",  # sampler cannot
+                      r"(?i:a)@gmail\.com$", r"^(?>a+)@gmail\.com$", r"^a++@gmail\.com$",         # model
+                      "^(" + "|".join(f"u{i}" for i in range(70)) + ")@vendor\\.biz$",
                       r"example\.com$", "owner", "(", 7]:
             with self.subTest(entry=entry):
                 self.assertIsNotNone(R.allow_entry_problem(entry))
