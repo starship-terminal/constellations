@@ -20343,6 +20343,59 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "squarespace",
+      "name": "Squarespace",
+      "url": "https://www.squarespace.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Website-builder marketing: photo hero with a white action, inverted light header, 4px buttons, square login underlines, pill billing toggle, 24px pricing cards",
+      "tags": [
+        "web",
+        "marketing",
+        "saas",
+        "website-builder",
+        "login",
+        "pricing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and login chrome; no account, trial, or card)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/squarespace/README.md",
+      "tokens": "systems/squarespace/tokens.json",
+      "styleGuide": "systems/squarespace/style-guide.html",
+      "preview": {
+        "cover": "systems/squarespace/screenshots/home-light-default.png",
+        "icon": "systems/squarespace/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.ink",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.line"
+          }
+        },
+        "fonts": [
+          "core.font.family.clarkson",
+          "core.font.family.clarkson-login"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45
+      }
     }
   ]
 }
