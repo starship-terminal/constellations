@@ -20343,6 +20343,63 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "todoist",
+      "name": "Todoist",
+      "url": "https://www.todoist.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Task-app marketing: warm off-white page, Graphik display, Inter buttons, oklch red CTA, quiet 7% ink secondary, pricing cards; signed-out login is a separate system font and hex red",
+      "tags": [
+        "web",
+        "productivity",
+        "tasks",
+        "marketing",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the login form; signup was not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/todoist/README.md",
+      "tokens": "systems/todoist/tokens.json",
+      "styleGuide": "systems/todoist/style-guide.html",
+      "preview": {
+        "cover": "systems/todoist/icon.png",
+        "icon": "systems/todoist/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.card"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "T3 Code",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "version": "public site and app login, 2026-11-19"
+      },
+      "layoutGaps": {
+        "components/": "no element crops; the preview browser returned The browser is not producing screenshot frames",
+        "screenshots/": "no page captures; the preview browser returned The browser is not producing screenshot frames",
+        "icons/": "icon harvest was not run; the site icon is icon.png from the 32px favicon"
+      }
     }
   ]
 }
