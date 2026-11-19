@@ -20343,6 +20343,68 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "typeform",
+      "name": "Typeform",
+      "url": "https://www.typeform.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Form product marketing: warm off-white page, dark hero, Tobias display at weight 400, 12px ink pills, white plan cards",
+      "tags": [
+        "web",
+        "forms",
+        "saas",
+        "marketing",
+        "pricing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing pages and the login; the email was not submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/typeform/README.md",
+      "tokens": "systems/typeform/tokens.json",
+      "styleGuide": "systems/typeform/style-guide.html",
+      "preview": {
+        "cover": "systems/typeform/screenshots/home-light-default.png",
+        "icon": "systems/typeform/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.accent",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.action.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "typeform-website.webflow.shared.8fcc5a9b2",
+        "route": "public-web",
+        "durationMin": 70
+      }
     }
   ]
 }
