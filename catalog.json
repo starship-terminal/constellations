@@ -20343,6 +20343,89 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "modyfi",
+      "name": "Modyfi",
+      "url": "https://www.modyfi.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A shut-down design-tool marketing site: black field, white Jokker display at 56px with -3px tracking, grey body (#c9c9c9), a magenta Sign up outline (#ff0357, filled on hover), and a white 15px pill as the primary action",
+      "tags": [
+        "web",
+        "design-tool",
+        "marketing",
+        "webflow",
+        "dark",
+        "signed-out",
+        "archived"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Live modyfi.com and www.modyfi.com return a Webflow 404. app.modyfi.com does not resolve. Values are from Wayback snapshots of the public pages. Login and signup were not followed.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/modyfi/README.md",
+      "tokens": "systems/modyfi/tokens.json",
+      "styleGuide": "systems/modyfi/style-guide.html",
+      "preview": {
+        "cover": "systems/modyfi/screenshots/home-dark-default.png",
+        "icon": "systems/modyfi/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.display",
+          "core.font.body",
+          "core.font.ui"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "www.modyfi.com public pages replayed from the Internet Archive on 2026-11-19. Live hosts are a Webflow 404 (modyfi.com, www.modyfi.com) or NXDOMAIN (app.modyfi.com). Computed styles and screenshots from headless Chromium. The T3 preview browser also opened the live 404 and the Wayback homepage and confirmed the same :root colours.",
+        "timestamp": "2026-11-19T16:40:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/ (Wayback 20250219221151)",
+          "/about (20241210063443)",
+          "/modifiers (20250416105018)",
+          "/contact (20241111015058)",
+          "/roadmap (20250326115027)",
+          "/opportunities (20250415063401)",
+          "/made-with-modyfi (20250512130342)",
+          "mobile / (20250219221151)"
+        ],
+        "gaps": [
+          "live modyfi.com and www.modyfi.com return Webflow's 404 page. app.modyfi.com does not resolve (ERR_NAME_NOT_RESOLVED). The product shut down on 2025-06-13 after the Figma acquisition",
+          "the signed-in editor at app.modyfi.com was never opened. Login and Sign up were measured on the marketing nav and not followed",
+          "/privacy snapshot 20241210053539 did not yield a readable product page in this run",
+          "the joining-Figma post snapshot 20250415033856 returned Internet Archive Temporarily Offline and was left out",
+          "Webflow IX2 motion is JavaScript-driven and was not given durations",
+          "no text field, checkbox, dialog, toast, or table paints on the signed-out marketing pages",
+          "no payment, phone, or government ID step was reached"
+        ],
+        "date": "2026-11-19",
+        "version": "public marketing site, Wayback snapshot 2025-02-19 (product shut down 2025-06-13)",
+        "durationMin": 90,
+        "pr": ""
+      },
+      "layoutGaps": {
+        "icons/": "The wordmark and nav glyphs are in the screenshots. No standalone SVG set was lifted. The site icon is the published favicon, resized from 32px to 128px."
+      }
     }
   ]
 }
