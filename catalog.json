@@ -20343,6 +20343,60 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "time2book",
+      "name": "Time2book",
+      "url": "https://time2book.me",
+      "category": "fitness",
+      "platform": "web",
+      "goodFor": "Fitness-studio marketing: ink promo bar, white nav, pill buttons, three-column pricing, signed-out email login",
+      "tags": [
+        "web",
+        "fitness",
+        "saas",
+        "marketing",
+        "pill",
+        "booking"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the email login form; no account created)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/time2book/README.md",
+      "tokens": "systems/time2book/tokens.json",
+      "styleGuide": "systems/time2book/style-guide.html",
+      "preview": {
+        "cover": "systems/time2book/screenshots/home-light-default.png",
+        "icon": "systems/time2book/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.background.page",
+            "surface": "light.color.background.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45,
+        "pr": "https://github.com/starship-terminal/constellations/pull/872"
+      }
     }
   ]
 }

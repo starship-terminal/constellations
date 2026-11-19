@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-18T19:47:34.103Z",
+  "sourceUrl": "https://www.time2book.me/pricing",
+  "title": "Pricing Fitness Studio Software | Time2book",
+  "status": 200,
+  "theme": "light",
+  "state": "default",
+  "requestedViewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "scrollH": 4994
+  },
+  "note": "Headless Playwright. T3 preview_snapshot returned: The browser is not producing screenshot frames. Measurements were taken in the T3 preview tab before this shot."
+}
