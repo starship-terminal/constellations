@@ -20343,6 +20343,55 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "shop",
+      "name": "Shop",
+      "url": "https://shop.app/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Shopify consumer shopping chrome: near-white page, left icon rail, frosted search, purple pill Continue, 20px product tiles",
+      "tags": [
+        "web",
+        "commerce",
+        "shopping",
+        "shopify",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (signup wall opened and not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [],
+      "entry": "systems/shop/README.md",
+      "tokens": "systems/shop/tokens.json",
+      "styleGuide": "systems/shop/style-guide.html",
+      "preview": {
+        "cover": "systems/shop/icon.png",
+        "icon": "systems/shop/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.standard",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40
+      }
     }
   ]
 }
