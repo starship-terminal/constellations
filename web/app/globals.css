@@ -344,7 +344,7 @@ dl.meta code { font-size: 12px; background: var(--sunken); padding: 1px 5px; bor
 dl.meta.snippets { display: block; }
 dl.meta.snippets .snip-row { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; column-gap: 14px; row-gap: 6px; align-items: start; margin-bottom: 7px; }
 dl.meta.snippets dd { display: contents; }
-dl.meta.snippets code { min-width: 0; }
+dl.meta.snippets code { min-width: 0; white-space: pre-wrap; } /* the Codex snippet is two lines */
 @media (max-width: 639px) {
   dl.meta.snippets .snip-row { grid-template-columns: minmax(0, 1fr) auto; align-items: center; margin-bottom: 14px; }
   dl.meta.snippets code { grid-column: 1 / -1; grid-row: 2; }
