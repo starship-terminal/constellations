@@ -1,0 +1,158 @@
+{
+  "source": "live computed styles and declared custom properties on https://www.dinnerladies.com.au/, read 2026-11-19 in the T3 preview browser (tab attached, screenshot frames unavailable)",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "theme": {
+    "name": "dinnerladies-v12/main",
+    "schema_name": "The Dinner Ladies",
+    "schema_version": "3.0.0",
+    "role": "main",
+    "shop": "the-dinner-ladies.myshopify.com",
+    "currency": "AUD"
+  },
+  "pages": [
+    {
+      "url": "https://www.dinnerladies.com.au/",
+      "title": "Meal Delivery | Online Food Delivery | The Dinner Ladies"
+    },
+    {
+      "url": "https://www.dinnerladies.com.au/pages/about",
+      "title": "Our Story | Home-Style Frozen Meals Since 2007 \u2013 The Dinner Ladies"
+    },
+    {
+      "url": "https://www.dinnerladies.com.au/collections/all",
+      "title": "Our Menu - Delivered Meals - The Dinner Ladies"
+    },
+    {
+      "url": "https://www.dinnerladies.com.au/pages/contact",
+      "title": "Contact Us \u2013 The Dinner Ladies"
+    },
+    {
+      "url": "https://www.dinnerladies.com.au/pages/delivery-info",
+      "title": "Delivery Areas & Fees | Frozen Meals \u2013 The Dinner Ladies"
+    },
+    {
+      "url": "https://www.dinnerladies.com.au/products/classic-beef-lasagne",
+      "title": "Classic beef lasagne | The Dinner Ladies"
+    }
+  ],
+  "root": {
+    "--font-body-family": "'Denim Regular', sans-serif",
+    "--font-body-style": "normal",
+    "--font-body-weight": "400",
+    "--font-body-weight-bold": "700",
+    "--font-heading-family": "'Denim SemiBold', sans-serif",
+    "--font-heading-style": "normal",
+    "--font-heading-weight": "600",
+    "--font-heading-family-extended": "'Denim Medium', sans-serif",
+    "--font-heading-weight-extended": "500",
+    "--font-body-scale": "1",
+    "--font-heading-scale": "1",
+    "--brand-main-background": "#fff1e6",
+    "--brand-bg": "#fde4d1",
+    "--brand-main-red": "#dd1f26",
+    "--brand-secondary-red": "#790000",
+    "--brand-light-brown": "#932c00",
+    "--brand-mint": "#baceb6",
+    "--brand-grey": "#dbe7ef",
+    "--brand-black": "#2b261b",
+    "--brand-tabacco-brown": "#6b5f45",
+    "--brand-white": "#ffffff",
+    "--brand-extended-blue": "#337bff",
+    "--brand-extended-yellow": "#ffb402",
+    "--brand-extended-green": "#7ebd4c",
+    "--brand-extended-skin": "#efbfb9",
+    "--brand-extended-black": "#000000",
+    "--color-background": "255,241,230",
+    "--gradient-background": "#fff1e6",
+    "--color-foreground": "0,0,0",
+    "--color-background-contrast": "255,170,102",
+    "--color-shadow": "43,38,27",
+    "--color-button": "221,31,38",
+    "--color-button-text": "255,255,255",
+    "--color-secondary-button": "255,241,230",
+    "--color-secondary-button-text": "43,38,27",
+    "--color-link": "43,38,27",
+    "--color-badge-foreground": "0,0,0",
+    "--color-badge-background": "255,241,230",
+    "--color-badge-border": "0,0,0",
+    "--page-width": "160rem",
+    "--buttons-radius": "0px",
+    "--buttons-border-width": "1px",
+    "--buttons-border-opacity": "1.0",
+    "--inputs-radius": "0px",
+    "--inputs-border-width": "1px",
+    "--inputs-border-opacity": "0.55",
+    "--variant-pills-radius": "40px",
+    "--badge-corner-radius": "4.0rem",
+    "--media-radius": "20px",
+    "--text-boxes-radius": "20px",
+    "--popup-corner-radius": "0px",
+    "--product-card-corner-radius": "0.0rem",
+    "--grid-desktop-vertical-spacing": "8px",
+    "--grid-desktop-horizontal-spacing": "8px",
+    "--grid-mobile-vertical-spacing": "4px",
+    "--grid-mobile-horizontal-spacing": "4px",
+    "--spacing-sections-desktop": "0px",
+    "--spacing-sections-mobile": "0px",
+    "--duration-short": "100ms",
+    "--duration-default": "200ms",
+    "--duration-announcement-bar": "250ms",
+    "--duration-medium": "300ms",
+    "--duration-long": "500ms",
+    "--duration-extra-long": "600ms",
+    "--duration-extended": "3s",
+    "--ease-out-slow": "cubic-bezier(0, 0, 0.3, 1)",
+    "--animation-slide-in": "slideIn var(--duration-extra-long) var(--ease-out-slow) forwards",
+    "--animation-fade-in": "fadeIn var(--duration-extra-long) var(--ease-out-slow)",
+    "--alpha-button-background": "1",
+    "--alpha-link": "0.85"
+  },
+  "schemes": {
+    "color-background-2": {
+      "background": "255,255,255",
+      "foreground": "18,18,18",
+      "button": "221,29,29",
+      "buttonText": "255,255,255"
+    },
+    "color-inverse": {
+      "background": "0,0,0",
+      "foreground": "255,255,255",
+      "button": "255,255,255",
+      "buttonText": "0,0,0"
+    },
+    "color-accent-1": {
+      "background": "186,206,182",
+      "foreground": "0,0,0",
+      "button": "221,31,38",
+      "gradient": "#baceb6"
+    },
+    "color-accent-2": {
+      "background": "253,228,209",
+      "foreground": "0,0,0",
+      "button": "221,31,38",
+      "gradient": "#fde4d1"
+    },
+    "color-scheme-red": {
+      "id": "c82df121-321e-4f6e-aef7-202459d7df4d",
+      "background": "221,29,29",
+      "gradient": "#dd1d1d",
+      "foreground": "0,0,0"
+    },
+    "color-scheme-tabacco": {
+      "id": "e7ead12b-e17d-4c7f-a7d8-3063c1a880da",
+      "background": "107,95,69",
+      "gradient": "#6b5f45",
+      "foreground": "255,255,255"
+    }
+  },
+  "yellowRgbNote": "Declared --brand-extended-yellow is #ffb402. The sibling --brand-extended-yellow-rgb is 25, 180, 2, which does not match the hex. The hex is the colour token; the rgb triple is recorded as a gap, not used."
+}

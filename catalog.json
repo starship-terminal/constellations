@@ -20343,6 +20343,84 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "the-dinner-ladies",
+      "name": "The Dinner Ladies",
+      "url": "https://www.dinnerladies.com.au/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Food retail marketing on a cream page: Shopify theme tokens (--brand-main-background #fff1e6, --brand-main-red #dd1f26, --brand-grey #dbe7ef selected fill, --brand-black #2b261b ink), Denim Regular / Medium / SemiBold, square 0px buttons at 47px with 1px tracking, 2px ink borders on cards and fields, 3px collection chips, a black announcement bar, and a red 25px ticker",
+      "tags": [
+        "web",
+        "food",
+        "retail",
+        "marketing",
+        "shopify",
+        "light",
+        "signed-out",
+        "denim"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (home, about, the public menu, contact, delivery info and one product page are public; account, checkout, cart, newsletter and the suburb search were not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/the-dinner-ladies/README.md",
+      "tokens": "systems/the-dinner-ladies/tokens.json",
+      "styleGuide": "systems/the-dinner-ladies/style-guide.html",
+      "preview": {
+      "cover": "systems/the-dinner-ladies/icon.png",
+        "icon": "systems/the-dinner-ladies/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.peach",
+            "text": "light.text.ink",
+            "muted": "light.text.body",
+            "accent": "light.action.primary",
+            "border": "light.border.ink"
+          }
+        },
+        "fonts": [
+          "core.font.family.body",
+          "core.font.family.heading"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "live DOM on www.dinnerladies.com.au in the T3 preview browser, computed styles and declared custom properties. Screenshot frames were unavailable, so no PNGs were saved",
+        "timestamp": "2026-11-19T03:10:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "dinnerladies-v12/main schema 3.0.0",
+        "routes": [
+          "/",
+          "/pages/about",
+          "/collections/all",
+          "/pages/contact",
+          "/pages/delivery-info",
+          "/products/classic-beef-lasagne"
+        ],
+        "gaps": [
+          "preview browser returned 'The browser is not producing screenshot frames'; no screenshots or crops",
+          "viewport stayed at 1169x731; 1440 and 390 were not measured",
+          "no order, no cart open, no email, no phone, no suburb search, no account, no checkout",
+          "hover, pressed, disabled, loading and error were not forced",
+          "prefers-reduced-motion was not emulated",
+          "favicon was 64px on the CDN and scaled to 128px"
+        ],
+        "durationMin": 40
+      },
+      "layoutGaps": {
+        "screenshots/": "The preview browser did not produce screenshot frames, so no page PNGs were saved.",
+        "components/": "Component crops need those screenshots. The folder is absent for the same reason."
+      }
     }
   ]
 }
