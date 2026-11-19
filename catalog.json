@@ -20343,6 +20343,66 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "supercut",
+      "name": "Supercut",
+      "url": "https://supercut.ai/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "A dark marketing site for a screen recorder: cream pills on #100e0e, Inter Display headlines, muted #969692 nav, and a 14px product menu",
+      "tags": [
+        "web",
+        "marketing",
+        "video",
+        "dark",
+        "signed-out",
+        "screen-recorder"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "Public marketing and signed-out login and signup choice pages. Google, email, and SSO were not followed. No card, phone, or company SSO was entered.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/supercut/README.md",
+      "tokens": "systems/supercut/tokens.json",
+      "styleGuide": "systems/supercut/style-guide.html",
+      "preview": {
+        "cover": "systems/supercut/screenshots/home-dark.png",
+        "icon": "systems/supercut/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.foreground",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.cream",
+            "border": "dark.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans",
+          "core.font.family.root"
+        ]
+      },
+      "notes": "Public site is dark only. Marketing buttons are cream, not the #ff0055 primary token.",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public site 2026-11-19",
+        "durationMin": 50
+      },
+      "layoutGaps": {
+        "components/": "No element crops. preview_snapshot returned The browser is not producing screenshot frames. Page screenshots are in screenshots/.",
+        "icons/": "The header wordmark SVG was only partly read. icon.png is the site apple-touch-icon. No icon set was saved."
+      }
     }
   ]
 }
