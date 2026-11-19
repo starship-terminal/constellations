@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-11-18T20:24:05.788Z",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "w": 390,
+    "h": 844,
+    "scale": 1
+  },
+  "sanitizedSourceUrl": "https://www.walmart.com/",
+  "theme": "light"
+}

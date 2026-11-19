@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "walmart",
+      "name": "Walmart",
+      "url": "https://www.walmart.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Retail storefront on a true-blue header: a 52px pill search, navy department chips, spark yellow as a declared accent, split bold prices, and EverydaySans. Public signed-out pages only.",
+      "tags": [
+        "web",
+        "marketing",
+        "signed-out",
+        "retail",
+        "e-commerce",
+        "pill",
+        "brand"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing only; Sign in was not followed; no card, phone, or address was entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/walmart/README.md",
+      "tokens": "systems/walmart/tokens.json",
+      "styleGuide": "systems/walmart/style-guide.html",
+      "preview": {
+        "cover": "systems/walmart/screenshots/home-light-default.png",
+        "icon": "systems/walmart/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.accent-bg",
+            "border": "light.border.strong"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.everyday-sans"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "Walmart's spark and icons are the brand's artwork and are not kept here (docs/RIGHTS.md)"
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "walmart.com public signed-out storefront, 2026-11-19",
+        "durationMin": 50
+      }
     }
   ]
 }
