@@ -1,0 +1,263 @@
+{
+  "captured": "2026-11-19",
+  "product": "Record Club",
+  "url": "https://record.club/",
+  "browser": "T3 preview tab, reuseExistingTab false, profile default",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}}
+  },
+  "html": {
+    "class": "js no-touch",
+    "dataTheme": "system",
+    "fontSize": "10px",
+    "colorSchemeWhenSystemDark": "dark",
+    "colorSchemeWhenDataThemeLight": "light"
+  },
+  "themeSwitch": {
+    "selectors": [
+      ":root[data-theme=\"light\"] { color-scheme: light }",
+      ":root[data-theme=\"dark\"] { color-scheme: dark }",
+      ":root[data-theme=\"system\"][data-system-theme=\"light\"] { color-scheme: light }",
+      ":root[data-theme=\"system\"][data-system-theme=\"dark\"] { color-scheme: dark }",
+      ":root[data-theme=\"system\"] { color-scheme: light dark }"
+    ],
+    "note": "The attached session resolved prefers-color-scheme: dark, so data-theme=system painted dark until data-theme was set to light in the page. That attribute is the product's own theme switch. No account setting was changed."
+  },
+  "rootComputed": {
+    "light": {
+      "htmlBackground": "rgb(255, 255, 255)",
+      "bodyColor": "rgb(44, 42, 37)",
+      "bodyFont": "\"GT America\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "bodyFontSize": "15px",
+      "bodyLineHeight": "22.5px",
+      "bodyWeight": "400"
+    },
+    "dark": {
+      "htmlBackground": "rgb(23, 23, 23)",
+      "bodyColor": "rgb(238, 238, 238)",
+      "observedOn": "https://record.club/browse and https://record.club/login before the light attribute was set"
+    }
+  },
+  "customProperties": {
+    "source": "getComputedStyle(document.documentElement) on https://record.club/ and again on /browse. Values are the authored light-dark() form the browser returned, not the csstools fallback.",
+    "--light": "238,238,238",
+    "--dark": "44,42,37",
+    "--bg": "light-dark(#fff, #171717)",
+    "--fg": "light-dark(rgb(44, 42, 37), rgb(238, 238, 238))",
+    "--color-text": "light-dark(#2c2a25, #fff)",
+    "--color-text-light": "light-dark(rgba(55, 53, 47, 0.65), #999)",
+    "--color-text-extra-light": "light-dark(rgba(55, 53, 47, 0.5), #676767)",
+    "--text-muted": "light-dark(rgba(55, 53, 47, 0.45), hsla(0, 0%, 100%, 0.45))",
+    "--text-muted-darker": "light-dark(rgba(55, 53, 47, 0.55), hsla(0, 0%, 100%, 0.5))",
+    "--text-muted-lighter": "light-dark(rgba(55, 53, 47, 0.3), hsla(0, 0%, 100%, 0.3))",
+    "--color-meta-gray": "light-dark(rgba(55, 53, 47, 0.45), #727171)",
+    "--color-line-default": "light-dark(#e5e5e5, #2d2d2d)",
+    "--color-line-darker": "light-dark(rgba(55, 53, 47, 0.16), #3f3f3f)",
+    "--color-brand": "light-dark(#6e36ff, #ab68ff)",
+    "--color-brand-default": "#6e36ff",
+    "--color-star-rated": "light-dark(#fcbf49, #f4b12f)",
+    "--color-supporter-badge": "light-dark(#f9b200, #ffc761)",
+    "--context-menu-bg": "light-dark(#fff, #262626)",
+    "--context-menu-bg-hover": "light-dark(#f9f9f9, #353535)",
+    "--modal-bg": "light-dark(#fff, #1f1f1f)",
+    "--btn-icon-hover": "light-dark(rgba(0, 0, 0, 0.05), hsla(0, 0%, 100%, 0.05))",
+    "--focus-ring-color": "#71a2f3",
+    "--site-nav-bar-height": "calc(5.2rem + max(0.6rem, var(--sab)))",
+    "--tab-bar-offset": "calc(9rem + var(--sab))",
+    "--tab-bar-width": "min(calc(100vw - 4rem), 38rem)",
+    "--audio-preview-bar-gap": "0.75rem",
+    "--audio-preview-bar-offset": "0px",
+    "--modal-radius": "1.2rem",
+    "--shadow-elevated": "0 0 0 0.5px light-dark(rgba(0, 0, 0, 0.06), hsla(0, 0%, 100%, 0.08)), 0 1px 2px light-dark(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.14)), 0 4px 8px light-dark(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.11)), 0 12px 24px light-dark(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.12)), 0 24px 48px light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.14))"
+  },
+  "authoredBrand": {
+    "note": "A later stylesheet rule on :root sets --color-brand to #9b56ef and --color-brand-default to #6e1fff. The winning computed value, after the oklab media query, is the light-dark pair below. Tokens use the computed value.",
+    "computedBrand": "light-dark(#6e36ff, #ab68ff)",
+    "computedBrandDefault": "#6e36ff",
+    "losingRule": {"--color-brand": "#9b56ef", "--color-brand-default": "#6e1fff"}
+  },
+  "fonts": {
+    "faces": [
+      {"family": "GT America", "weight": 400, "style": "normal", "src": "/assets/fonts/GT-America-Standard-Regular.woff2"},
+      {"family": "GT America", "weight": 400, "style": "italic", "src": "/assets/fonts/GT-America-Standard-Regular-Italic.woff2"},
+      {"family": "GT America", "weight": 500, "style": "normal", "src": "/assets/fonts/GT-America-Standard-Medium.woff2"},
+      {"family": "GT America", "weight": 500, "style": "italic", "src": "/assets/fonts/GT-America-Standard-Medium-Italic.woff2"},
+      {"family": "GT America", "weight": 600, "style": "normal", "src": "/assets/fonts/GT-America-Standard-Bold.woff2", "note": "The file is named Bold and is declared at weight 600."},
+      {"family": "GT America", "weight": 900, "style": "normal", "src": "/assets/fonts/GT-America-Standard-Black.woff2"},
+      {"family": "GT America Mono", "weight": 400, "style": "normal", "src": "/assets/fonts/GT-America-Standard-Mono.woff2"},
+      {"family": "GTFAdieu", "weight": 700, "style": "normal", "src": "/assets/fonts/Adieu-Bold.woff2"}
+    ],
+    "licence": "Grilli Type. Proprietary. Not committed."
+  },
+  "pages": {
+    "home": {
+      "url": "https://record.club/",
+      "title": "Record Club",
+      "themeRead": "light (data-theme left at system, but the first paint of the home computed light body colour rgb(44, 42, 37) and white html background before the session's dark preference was re-checked on later routes)",
+      "h1": {"cls": "heading heading-main text-align-center", "font": "GTFAdieu", "size": "50px", "line": "55px", "weight": "700", "tracking": "-0.5px", "color": "rgb(20, 20, 20)"},
+      "lede": {"size": "20px", "line": "28.88px", "weight": "400", "color": "rgba(55, 53, 47, 0.65)", "font": "GT America"},
+      "header": {"cls": "site-header site-header-logged-out", "height": "76px"},
+      "headerInner": {"pad": "0px 28px", "gap": "30px", "height": "76px"},
+      "navLink": {"cls": "btn btn--small btn--neutral", "bg": "rgba(0, 0, 0, 0)", "color": "rgb(44, 42, 37)", "radius": "7px", "pad": "7.5px 10px", "height": "33px", "size": "15px", "border": "1.5px solid transparent"},
+      "joinSmall": {"cls": "btn btn--small btn--primary", "text": "Join for free", "bg": "rgb(18, 18, 18)", "color": "rgb(252, 252, 252)", "radius": "8px", "pad": "6.75px 10px", "height": "32px", "size": "15px"},
+      "heroPrimary": {"cls": "btn btn--x-large btn--primary", "text": "Create free account", "bg": "rgb(18, 18, 18)", "color": "rgb(252, 252, 252)", "radius": "8px", "pad": "0px 24px", "height": "50px", "size": "17px", "tracking": "-0.238px", "line": "25.5px"},
+      "heroOutline": {"cls": "btn btn--x-large btn--outline", "text": "Get the app", "bg": "rgb(255, 255, 255)", "color": "rgb(44, 42, 37)", "radius": "8px", "pad": "0px 24px", "height": "50px", "size": "17px", "tracking": "-0.238px"},
+      "iconButton": {"cls": "btn btn--neutral btn--icon-only", "text": "Show more", "radius": "100%", "sizeBox": "38px", "color": "rgb(87, 87, 87)"},
+      "bento": {"cls": "bento-item", "bg": "rgb(250, 250, 250)", "radius": "16px"},
+      "footer": {"cls": "site-footer", "bg": "rgb(245, 245, 245)", "pad": "45px 0px 22.5px", "size": "13px", "line": "19.5px"},
+      "introPadTop": "121px",
+      "phone": {"headerHeight": "56px", "hamburger": "42px wide, display block", "h1Size": "29.64px", "h1Line": "32.604px", "h1Tracking": "-0.2964px", "h1Width": "358px"}
+    },
+    "about": {
+      "url": "https://record.club/about",
+      "title": "About – Record Club",
+      "themeRead": "light",
+      "headingMain": {"cls": "heading heading-main", "font": "GTFAdieu", "size": "44px", "line": "48.4px", "weight": "700", "tracking": "-0.44px", "color": "rgb(20, 20, 20)"},
+      "headingSmall": {"size": "21px", "line": "27.3px", "weight": "500", "tracking": "-0.315px", "color": "rgb(44, 42, 37)", "font": "GT America"},
+      "headingXLarge": {"size": "36px", "line": "43.2px", "weight": "500", "tracking": "-0.72px", "color": "rgb(20, 20, 20)"},
+      "headingLarge": {"size": "30px", "line": "36px", "weight": "500", "tracking": "-0.6px", "color": "rgb(20, 20, 20)"}
+    },
+    "browse": {
+      "url": "https://record.club/browse",
+      "title": "Browse – Record Club",
+      "themeRead": "dark under data-theme=system and data-system-theme=dark, then light after data-theme=light",
+      "dark": {
+        "htmlBg": "rgb(23, 23, 23)",
+        "bodyColor": "rgb(238, 238, 238)",
+        "h1Color": "rgb(238, 238, 238)",
+        "h1Size": "44px",
+        "h1Weight": "700",
+        "card": {"cls": "explore-card card card--outline", "border": "1px solid rgb(63, 63, 63)", "radius": "9px", "color": "rgb(238, 238, 238)", "bg": "transparent"},
+        "badgeNew": {"cls": "badge badge--new", "color": "rgb(157, 157, 157)", "size": "10.5px", "weight": "500", "radius": "3px"},
+        "artwork": {"width": "237px", "height": "237px"}
+      },
+      "lightAfterAttribute": {
+        "htmlBg": "rgb(255, 255, 255)",
+        "bodyColor": "rgb(44, 42, 37)",
+        "h1Color": "rgb(20, 20, 20)",
+        "note": "The explore card kept a dark border rgb(63, 63, 63) and light text rgb(238, 238, 238) after the attribute flip. Recorded as observed, not used as the light card token."
+      }
+    },
+    "login": {
+      "url": "https://record.club/login",
+      "title": "Record Club",
+      "signedOut": true,
+      "submitted": false,
+      "providers": ["Continue with Apple", "Continue with Google", "email and password"],
+      "notEmailOnly": true,
+      "dark": {
+        "canvasBg": "rgb(23, 23, 23)",
+        "h1": {"text": "Welcome back.", "font": "GTFAdieu", "size": "44px", "line": "48.4px", "weight": "700", "tracking": "-0.44px", "color": "rgb(238, 238, 238)"},
+        "oauth": {"bg": "rgb(255, 255, 255)", "color": "rgb(17, 17, 17)", "radius": "8px", "pad": "0px 18px", "height": "46px", "size": "15px", "tracking": "-0.21px", "width": "480px"},
+        "email": {"bg": "rgb(72, 72, 72)", "color": "rgb(240, 240, 240)", "radius": "7px", "pad": "6.5px 18px", "height": "46px", "placeholder": "Enter your email address"},
+        "password": {"bg": "rgb(51, 51, 51)", "color": "rgb(240, 240, 240)", "radius": "7px", "pad": "6.5px 18px", "height": "46px"},
+        "continueDisabled": {"cls": "btn btn--x-large btn--primary btn--disabled", "bg": "rgb(60, 60, 60)", "color": "rgb(87, 87, 87)", "radius": "8px", "height": "46px"},
+        "divider": {"color": "not read in dark", "size": "13px"}
+      },
+      "light": {
+        "canvasBg": "rgb(255, 255, 255)",
+        "h1Color": "rgb(20, 20, 20)",
+        "oauth": {"bg": "rgb(255, 255, 255)", "color": "rgb(17, 17, 17)"},
+        "emailBg": "rgb(72, 72, 72)",
+        "passwordBg": "rgb(51, 51, 51)",
+        "continueDisabled": {"bg": "rgb(60, 60, 60)", "color": "rgb(87, 87, 87)"},
+        "divider": {"cls": "divider-with-text", "color": "rgba(55, 53, 47, 0.45)", "size": "13px", "text": "Or continue with email"},
+        "note": "Email, password and the disabled Continue button kept dark fills after data-theme=light. Those fills are recorded as dark-field values. The light field fill was read later on /register after focus."
+      }
+    },
+    "register": {
+      "url": "https://record.club/register",
+      "title": "Join the community – Record Club",
+      "h1": "Join the community.",
+      "submitted": false,
+      "providers": ["Continue with Apple", "Continue with Google", "email and password"],
+      "phoneOrCard": false,
+      "lightFocusedEmail": {"bg": "rgb(242, 242, 242)", "color": "rgb(34, 34, 34)", "placeholderColor": "rgb(156, 156, 156)", "radius": "7px", "height": "48px"},
+      "label": {"text": "Email", "size": "14px", "weight": "400", "color": "rgb(44, 42, 37)"},
+      "unfocusedEmailBeforeFocus": {"bg": "rgb(51, 51, 51)", "color": "rgb(240, 240, 240)"}
+    },
+    "help": {
+      "url": "https://record.club/help",
+      "title": "Help – Record Club",
+      "themeRead": "light",
+      "h1": {"text": "How can we help?", "font": "GTFAdieu", "size": "44px", "weight": "700", "tracking": "-0.44px", "color": "rgb(20, 20, 20)"}
+    },
+    "releases": {
+      "url": "https://record.club/releases",
+      "title": "Releases – Record Club",
+      "themeRead": "light",
+      "h1": {"cls": "heading heading-secondary", "font": "GTFAdieu", "size": "37px", "weight": "700", "color": "rgb(20, 20, 20)"},
+      "artworkInner": {"radius": "4px", "size": "186px"},
+      "title": {"cls": "title", "size": "13px", "weight": "400", "color": "rgb(44, 42, 37)"},
+      "chipActive": {"text": "All", "radius": "8px", "pad": "0px 14px", "height": "32px", "color": "rgb(44, 42, 37)", "size": "15px"},
+      "chipIdle": {"color": "rgba(55, 53, 47, 0.65)", "radius": "8px", "height": "32px"}
+    },
+    "release": {
+      "url": "https://record.club/releases/albums/2hollis-pirouette",
+      "title": "Pirouette (2026) by 2hollis – Record Club",
+      "themeRead": "light, with some controls still painting dark fills",
+      "heading": {"cls": "release-headings release-headings--x-large", "font": "GT America", "size": "35px", "line": "42px", "weight": "500", "tracking": "-0.35px", "color": "rgb(44, 42, 37)"},
+      "artwork": {"radius": "4px", "size": "270px"},
+      "typeLabel": {"text": "ALBUM", "size": "13px", "weight": "500", "color": "rgba(55, 53, 47, 0.45)"},
+      "statLabel": {"size": "10px", "weight": "400", "tracking": "0.5px", "transform": "uppercase", "color": "rgb(155, 155, 155)"},
+      "navActive": {"text": "Overview", "size": "15px", "weight": "400", "color": "rgb(44, 42, 37)", "height": "54px"},
+      "listened": {"radius": "8px", "pad": "9.375px 12px", "color": "rgb(127, 127, 127)", "note": "fill stayed dark-grey text after the light attribute"}
+    },
+    "notFound": {
+      "url": "https://record.club/this-route-does-not-exist-capture",
+      "title": "Page not found – Record Club",
+      "h1": {"text": "Page not found", "font": "GTFAdieu", "size": "44px", "weight": "700", "color": "rgb(20, 20, 20)"},
+      "body": "Oh no! We can't find the page you've requested."
+    },
+    "supporter": {
+      "url": "https://record.club/supporter",
+      "title": "Become a supporter – Record Club",
+      "width": 390,
+      "h1": {"text": "Become a supporter.", "size": "27px", "color": "rgb(20, 20, 20)"},
+      "price": "$4 per month",
+      "billing": ["Monthly", "Yearly"],
+      "checkout": "not entered"
+    }
+  },
+  "buttonRules": {
+    "source": "stylesheet rules read on the release page",
+    ".btn--primary": {"background": "light-dark(rgb(18, 18, 18), rgb(255, 255, 255))", "color": "light-dark(rgb(252, 252, 252), rgb(17, 17, 17))"},
+    ".btn--primary:hover": {"background": "light-dark(rgb(43, 43, 43), rgb(198, 198, 198))", "color": "light-dark(rgb(252, 252, 252), rgb(17, 17, 17))"},
+    ".btn--primary:active": {"background": "light-dark(rgb(60, 60, 60), rgb(202, 202, 202))"},
+    ".btn--primary[disabled]": {"background": "light-dark(rgb(54, 54, 54), rgb(60, 60, 60))", "color": "light-dark(gray, rgb(87, 87, 87))"},
+    ".btn--neutral": {"background": "transparent", "color": "var(--fg)"},
+    ".btn--neutral:hover": {"background": "transparent", "color": "var(--color-brand)"},
+    ".btn--outline": {"background": "var(--bg)", "borderColor": "transparent", "note": "outline is drawn by ::before/::after with currentColor"},
+    ":focus-visible": {"outlineColor": "light-dark(rgb(196, 196, 196), rgb(84, 84, 84))"}
+  },
+  "motion": {
+    "button": {"property": "color, background-color, opacity, border-color, transform", "duration": "0.18s", "easing": "cubic-bezier(0.59, 0.01, 0.28, 1)"},
+    "logoMark": {"duration": "0.3s", "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)", "property": "transform", "media": "prefers-reduced-motion: no-preference"},
+    "reducedMotion": {"selector": "*", "media": "prefers-reduced-motion: reduce", "transitionDuration": "0.01ms", "animationDuration": "0.01ms", "animationIterationCount": "1", "scrollBehavior": "auto"},
+    "verdict": "honours",
+    "movingElementsOnReleasePage": 143
+  },
+  "headingScaleDeclared": {
+    "htmlFontSize": "10px",
+    ".heading-main": "4.4rem",
+    ".heading-secondary": "3.7rem",
+    ".heading-large": "3rem",
+    ".heading-medium": "2.4rem",
+    ".heading-small": "1.9rem",
+    ".heading-label": "1.6rem",
+    ".heading-strong": "1.4rem",
+    ".heading-bump": "1.5rem",
+    ".heading": "line-height 1.5"
+  },
+  "screenshots": {
+    "status": "not captured",
+    "reason": "preview_snapshot failed twice with: The browser is not producing screenshot frames. Headless Playwright against https://record.club/ returned HTTP 403 and a Cloudflare 'Just a moment...' interstitial, so it was not used."
+  },
+  "notEntered": [
+    "Apple and Google sign-in buttons were not pressed",
+    "email and password were not typed and Continue was not submitted",
+    "supporter checkout was not opened",
+    "no card, phone, or KYC field was filled"
+  ]
+}
