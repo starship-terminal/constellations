@@ -20343,6 +20343,57 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "soundtrap",
+      "name": "Soundtrap",
+      "url": "https://www.soundtrap.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Music-product marketing with a dark 90px nav, Matter type, a purple #6551ff primary, pill CTAs on the marketing site and 8px fields on the signed-out login page",
+      "tags": ["web", "music", "saas", "marketing", "login", "pill"],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and login chrome; OAuth not followed; no card entered)",
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
+      "entry": "systems/soundtrap/README.md",
+      "tokens": "systems/soundtrap/tokens.json",
+      "styleGuide": "systems/soundtrap/style-guide.html",
+      "preview": {
+        "cover": "systems/soundtrap/icon.png",
+        "icon": "systems/soundtrap/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent.default",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": ["core.font.family.matter"]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/832"
+      },
+      "layoutGaps": {
+        "screenshots/": "The preview browser returned no screenshot frames, so no page captures were saved.",
+        "components/": "No crops. The same screenshot-frame failure left no component images."
+      }
     }
   ]
 }

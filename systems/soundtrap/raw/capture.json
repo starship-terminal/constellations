@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 Code preview browser, live page, read-only DOM",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}}
+  },
+  "screenshotFrames": "The preview browser returned: The browser is not producing screenshot frames. No screenshots were invented.",
+  "pages": [
+    {"url": "https://www.soundtrap.com/musicmakers", "title": "Free Online Music & Beat Maker | Soundtrap", "note": "https://www.soundtrap.com/ redirects here. Signed out. Dark nav, dark hero, light sections."},
+    {"url": "https://www.soundtrap.com/login", "title": "Soundtrap Login", "note": "Signed-out login chrome. Email and password fields measured. OAuth buttons (Google, Apple, Facebook, Microsoft School Account) were not followed. Nothing submitted."},
+    {"url": "https://www.soundtrap.com/pricing", "title": "Pricing | Soundtrap", "note": "Public pricing. Plan cards and FAQ measured. No card entered. Try-it-free buttons not followed."},
+    {"url": "https://www.soundtrap.com/content/features", "title": "Soundtrap Features — For music makers, by music makers", "note": "Public features page. Dark nav, light body, purple heading."}
+  ],
+  "stylesheets": [
+    "https://static.soundtrap.com/website-react/_next/static/css/2e9a6afac7e3a0d9.css",
+    "https://static.soundtrap.com/app/styles.9e42af9b384c9ff4.css"
+  ],
+  "notEntered": [
+    "No email, password, or OTP submitted",
+    "OAuth (Google, Apple, Facebook, Microsoft School Account) not followed",
+    "No card, phone, government ID, or checkout",
+    "Cookie preference center was already closed; not answered",
+    "Studio, signup, education, and blog not entered past the public marketing chrome"
+  ]
+}

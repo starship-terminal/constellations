@@ -1,0 +1,23 @@
+{
+  "source": "Stylesheet rules in 2e9a6afac7e3a0d9.css, read from the live page. A full motion-probe.mjs pass was not run. The preview browser could not produce screenshot frames, and a separate headless session was not started against login.",
+  "fontFace": [
+    {"family": "Matter", "style": "normal", "weight": "100 1000", "display": "swap", "srcHost": "static.soundtrap.com/mango-foundation"},
+    {"family": "Matter", "style": "oblique 0deg 9deg", "weight": "100 1000", "display": "swap"}
+  ],
+  "documentFonts": "Matter normal 100-1000 status loaded on /musicmakers. Oblique face unloaded.",
+  "reducedMotion": [
+    "@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth } }",
+    "@media (prefers-reduced-motion: no-preference) { .motion-safe\\:scroll-smooth { scroll-behavior: smooth }; .motion-safe\\:transition-opacity { transition-property: opacity; transition-duration: .15s } }",
+    "@media (prefers-reduced-motion: reduce) { .motion-reduce\\:scroll-auto { scroll-behavior: auto } }"
+  ],
+  "keyframes": ["pulse", "shrink-expand", "enter", "exit"],
+  "transitions": {
+    "--transition-colors": "background-color 0.1s ease-out, color 0.1s ease-out",
+    "--transition-colors-time": "0.1s",
+    "--transition-colors-easing": "ease-out",
+    "nav": "transition-all duration-300 ease-in (Tailwind classes on the marketing nav)",
+    "headerItem": "transition duration-300 hover:border-current hover:ease-in",
+    "enterExit": "animation-duration: .15s on data-state open/closed"
+  },
+  "gap": "Computed transition lists per element, and a second pass under emulated prefers-reduced-motion, were not taken. The reduce verdict is therefore a gap, not a finding that the product ignores the setting."
+}
