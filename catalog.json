@@ -20343,6 +20343,104 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "instagram",
+      "name": "Instagram",
+      "url": "https://www.instagram.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "signed-out social login and marketing: a split login wall (promo pane plus a white form column, 22px blue pill, system UI stack, #0095f6 links), a desktop email signup column, a phone path that asks for a mobile number, and about.instagram.com's Instagram Sans headlines with the yellow-to-purple spectrum",
+      "tags": [
+        "web",
+        "social",
+        "media",
+        "marketing",
+        "login",
+        "forms",
+        "light",
+        "dark",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (login wall, desktop email signup, password reset, about.instagram.com, help.instagram.com, the locations directory, the privacy center, and the public @instagram profile behind its signup dialog; no field was filled, Submit and Continue were never pressed, Facebook login was never followed, and the phone signup path stops at a mobile-number demand)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/instagram/README.md",
+      "tokens": "systems/instagram/tokens.json",
+      "styleGuide": "systems/instagram/style-guide.html",
+      "preview": {
+        "cover": "systems/instagram/screenshots/login-light-default.png",
+        "icon": "systems/instagram/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.accent.default",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.system",
+          "core.font.family.instagram-sans",
+          "core.font.family.mono"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "www.instagram.com, about.instagram.com, help.instagram.com and privacycenter.instagram.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass, confirmed first in the T3 preview browser. Computed styles and element crops from the live DOM, plus a stylesheet harvest (1157 resolved custom properties on the login wall, 1834 on about.instagram.com). Dark is the same login URL with __ig-dark-mode forced on the root: the promo pane goes dark and the form stays light. BOUNDARY: the logged-in app was never entered; desktop signup was photographed at rest and not submitted; the phone signup path asks for a mobile number and was not continued; Facebook login was not followed; the public @instagram profile is behind a signup dialog",
+        "timestamp": "2026-11-19T16:30:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "instagram.com/",
+          "instagram.com/accounts/emailsignup/",
+          "instagram.com/accounts/password/reset/",
+          "instagram.com/explore/locations/",
+          "instagram.com/instagram/ (signup dialog, grid not scraped)",
+          "about.instagram.com/",
+          "about.instagram.com/features",
+          "help.instagram.com/",
+          "privacycenter.instagram.com/policy/",
+          "BLOCKED: the logged-in feed, stories, reels, DMs and settings; phone signup past the mobile-number demand; Facebook login"
+        ],
+        "gaps": [
+          "logged-in app (feed, stories, reels, DMs, settings) sits behind sign-in and was never entered",
+          "desktop signup was photographed at rest; Submit was never pressed, so validation, the confirmation code and onboarding were not reached",
+          "phone signup asks for a mobile number first and shows Sign up with email disabled; that path was not continued",
+          "Facebook login was not followed",
+          "the public @instagram profile loads behind a signup dialog; the grid was not scraped",
+          "forcing __ig-dark-mode darkens the promo pane only; the form has no live dark theme on the signed-out wall",
+          "pressed, loading and error states were not provoked because a press submits",
+          "Instagram Sans files are not shipped; the style guide falls back to the system stack"
+        ],
+        "durationMin": 90,
+        "durationNote": "one session: preview confirmation, kit adaptation, stylesheet harvest, screenshot and measurement passes, motion probe, offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/691"
+      },
+      "layoutGaps": {
+        "icons/": "No standalone SVG set was extracted. The glyph and wordmark are Meta artwork, recorded in the crops, and RIGHTS.md says not to lift them into icons/ for reuse."
+      }
     }
   ]
 }
