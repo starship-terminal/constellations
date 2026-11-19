@@ -214,7 +214,8 @@ export function diffMotion(base, reduced) {
     items.push({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs });
   }
   for (const a of reducedA.values()) {
-    if (stopped(a) || (!a.durationRaw && a.durationMs <= NEGLIGIBLE_MS)) continue;
+    // a 0s animation with a real delay (animation: reveal 0s 300ms forwards) still changes the page after the delay
+    if (stopped(a) || (!a.durationRaw && a.durationMs <= NEGLIGIBLE_MS && (a.delayMs || 0) <= NEGLIGIBLE_MS)) continue;
     const item = { kind: 'animation', key: a.name, outcome: 'added', from: 0, to: a.durationMs };
     if (a.iterationCount === 'infinite') item.loops = true;
     items.push(item);

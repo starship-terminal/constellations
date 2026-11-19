@@ -143,6 +143,11 @@ test('a negligible unmatched entry under reduce is not added motion', () => {
   const paused = motionOf({});
   paused.animations = [{ name: 'pulse-reduced', durationMs: 2000, delayMs: 0, easing: 'ease', iterationCount: 'infinite', direction: 'normal', fillMode: 'none', playState: 'paused' }];
   assert.deepEqual(diffMotion(motionOf({}), paused).items, []);
+  // a zero-duration animation with a real delay still applies its last frame after the delay: added
+  const reveal = motionOf({ animationName: 'reveal', animationDuration: '0s', animationDelay: '300ms', animationFillMode: 'forwards' });
+  const rv = diffMotion(motionOf({}), reveal);
+  assert.deepEqual(rv.items.map((i) => [i.key, i.outcome]), [['reveal', 'added']]);
+  assert.equal(summarise(groupRecords([{ node: 'a', base: motionOf({}), reduced: reveal }])).behaviour, 'partial');
   assert.equal(diffMotion(base, paused).outcome, 'removed');
   // an unreadable duration on an unmatched property is not provably
   // negligible: it still counts as added motion
