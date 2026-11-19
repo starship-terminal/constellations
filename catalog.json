@@ -20343,6 +20343,79 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "miro",
+      "name": "Miro",
+      "url": "https://miro.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Visual collaboration marketing and signed-out auth: a cool gray page, Roobert titles, a #3859ff plan button, a warmer auth page, and flat 20px plan cards",
+      "tags": [
+        "web",
+        "whiteboard",
+        "collaboration",
+        "marketing",
+        "light",
+        "signed-out",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed-out public marketing, pricing, product, templates, login and signup. Signup rejected the capture inbox. No board created. No purchase.",
+      "themes": ["light"],
+      "widths": [1169],
+      "entry": "systems/miro/README.md",
+      "tokens": "systems/miro/tokens.json",
+      "styleGuide": "systems/miro/style-guide.html",
+      "layoutGaps": {
+        "components/": "No crops. The preview pane returned no screenshot frames",
+        "icons/": "Inline icons were not exported. The preview pane returned no screenshot frames",
+        "screenshots/": "The preview pane returned no screenshot frames, so no page captures were saved"
+      },
+      "preview": {
+        "cover": "systems/miro/icon.png",
+        "icon": "systems/miro/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": ["core.font.family.display", "core.font.family.noto"]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "miro.com public pages and signed-out login and signup, read in the T3 preview browser. Computed styles only. No screenshots.",
+        "timestamp": "2026-11-18T16:29:00Z",
+        "harness": "Grok / T3",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "miro.com/",
+          "miro.com/pricing/",
+          "miro.com/products/ai-workflows/",
+          "miro.com/ai-trust/",
+          "miro.com/templates/",
+          "miro.com/login/",
+          "miro.com/signup/",
+          "miro.com/app/"
+        ],
+        "gaps": [
+          "preview pane produced no screenshot frames",
+          "viewport was 1169x731, not 1440 or 390",
+          "miro.com/app/ redirected to signup",
+          "signup rejected kaichen@agentmail.to before sending mail",
+          "no board, menu, dialog or toast was opened",
+          "dark theme was not present on public pages"
+        ],
+        "durationMin": 70
+      }
     }
   ]
 }
