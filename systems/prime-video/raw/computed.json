@@ -1,0 +1,240 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview_evaluate on a live attached tab",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1169, "height": 731, "scale": 1 }
+  },
+  "screenshots": "unavailable. preview_snapshot returned: The browser is not producing screenshot frames.",
+  "pages": {
+    "marketing": {
+      "requested": "https://www.primevideo.com/",
+      "landed": "https://www.primevideo.com/offers/nonprimehomepage",
+      "title": "Welcome to Prime Video",
+      "challenge": false,
+      "body": {
+        "backgroundColor": "rgb(0, 5, 13)",
+        "color": "rgb(15, 17, 17)",
+        "fontFamily": "\"Amazon Ember\", \"Amazon Arabic Ember\", Arial, sans-serif"
+      },
+      "nav": {
+        "backgroundColor": "rgb(0, 5, 13)",
+        "height": "60px",
+        "padding": "0px 26px",
+        "customProperty": "--dv-pvnav-height: 60px"
+      },
+      "footer": {
+        "backgroundColor": "rgb(34, 34, 34)",
+        "color": "rgb(129, 151, 164)",
+        "fontSize": "15px",
+        "lineHeight": "19px",
+        "padding": "24px"
+      },
+      "hero": {
+        "backgroundImage": "linear-gradient(to right, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 58%), url(1440x675_MLP_SG_nov26.jpg)"
+      },
+      "h1": {
+        "class": "_text_1qfim_61 _heading-800_1qfim_118",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "36px",
+        "fontWeight": "700",
+        "lineHeight": "40px",
+        "letterSpacing": "normal",
+        "width": 529
+      },
+      "bodyCopy": {
+        "fontSize": "18px",
+        "lineHeight": "25px",
+        "fontWeight": "400",
+        "color": "rgb(255, 255, 255)",
+        "width": 529
+      },
+      "finePrint": {
+        "text": "*After your free trial, Amazon Prime is just S$4.99/month.",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "fontWeight": "400"
+      },
+      "navLink": {
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "letterSpacing": "0.49px",
+        "padding": "0px 12px",
+        "height": "38px",
+        "borderRadius": "8px",
+        "transition": "color 0.1s, background-color 0.1s, box-shadow 0.1s"
+      },
+      "joinPrime": {
+        "backgroundColor": "rgba(26, 152, 255, 0.8)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "letterSpacing": "0.49px",
+        "padding": "0px 12px",
+        "height": "38px",
+        "width": 97,
+        "borderRadius": "8px",
+        "transition": "color 0.1s, background-color 0.1s, box-shadow 0.1s"
+      },
+      "trialButton": {
+        "text": "Start your 30-day free trial",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(0, 5, 13)",
+        "fontSize": "18px",
+        "fontWeight": "500",
+        "lineHeight": "22px",
+        "padding": "8px 18px",
+        "height": "60px",
+        "borderRadius": "8px",
+        "transition": "transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s cubic-bezier(0.25, 1, 0.5, 1), color 0.2s cubic-bezier(0.25, 1, 0.5, 1), outline 0.2s cubic-bezier(0.25, 1, 0.5, 1)"
+      },
+      "footerLink": {
+        "color": "rgb(121, 184, 243)",
+        "fontSize": "15px",
+        "lineHeight": "19px",
+        "fontWeight": "400"
+      },
+      "focus": {
+        "navLink": "rgb(241, 241, 241) solid 2px, offset -2px",
+        "firstFocusable": "rgb(229, 151, 0) auto 5px, offset -2px"
+      },
+      "logo": {
+        "src": "https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png",
+        "rendered": "80x16",
+        "natural": "320x62"
+      }
+    },
+    "signupWall": {
+      "requested": "https://www.primevideo.com/signup",
+      "landed": "https://www.amazon.sg/ap/signin",
+      "title": "Amazon Sign-In",
+      "entered": false,
+      "submitted": false,
+      "body": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(15, 17, 17)",
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "14px"
+      },
+      "card": {
+        "class": "a-box",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "1px solid rgb(213, 217, 217)",
+        "borderRadius": "8px",
+        "width": 350,
+        "innerPadding": "20px 26px"
+      },
+      "heading": {
+        "text": "Sign in",
+        "fontSize": "20px",
+        "fontWeight": "400",
+        "lineHeight": "28px",
+        "padding": "0px 0px 4px"
+      },
+      "label": {
+        "text": "Enter mobile number or email",
+        "fontSize": "14px",
+        "fontWeight": "700",
+        "lineHeight": "20px"
+      },
+      "email": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(15, 17, 17)",
+        "border": "1px solid rgb(33, 98, 161)",
+        "borderRadius": "8px",
+        "padding": "5px 11px",
+        "height": "32px",
+        "fontSize": "14px",
+        "note": "border colour is the focused field. Unfocused password border was rgb(136, 140, 140)."
+      },
+      "continue": {
+        "backgroundColor": "rgb(255, 216, 20)",
+        "color": "rgb(15, 17, 17)",
+        "border": "1px solid rgb(255, 216, 20)",
+        "borderRadius": "100px",
+        "height": "32px",
+        "fontSize": "14px",
+        "fontWeight": "400"
+      },
+      "link": {
+        "color": "rgb(33, 98, 161)",
+        "fontSize": "14px"
+      },
+      "legal": {
+        "fontSize": "12px",
+        "lineHeight": "16px",
+        "color": "rgb(33, 98, 161)"
+      }
+    }
+  },
+  "customProperties": {
+    "note": "Named --fable-* and --dv* properties resolved on :root. Colour roles live in hashed --__* names and were not mapped to roles, so they are not tokenised.",
+    "spacing": {
+      "--fable-spacing-000": "0px",
+      "--fable-spacing-010": "1px",
+      "--fable-spacing-015": "2px",
+      "--fable-spacing-025": "3px",
+      "--fable-spacing-035": "4px",
+      "--fable-spacing-040": "5px",
+      "--fable-spacing-050": "6px",
+      "--fable-spacing-065": "8px",
+      "--fable-spacing-075": "9px",
+      "--fable-spacing-085": "10px",
+      "--fable-spacing-088": "11px",
+      "--fable-spacing-100": "12px",
+      "--fable-spacing-113": "14px",
+      "--fable-spacing-125": "15px",
+      "--fable-spacing-133": "16px",
+      "--fable-spacing-150": "18px",
+      "--fable-spacing-200": "24px",
+      "--fable-spacing-300": "36px",
+      "--fable-spacing-400": "48px",
+      "--fable-spacing-600": "72px"
+    },
+    "typography": {
+      "--fable-typography-heading-800-fontsize": "36px",
+      "--fable-typography-heading-800-line-height": "40px",
+      "--fable-typography-heading-800-font-weight": "700",
+      "--fable-typography-heading-800-letter-spacing": "0em",
+      "--fable-typography-heading-600-fontsize": "32px",
+      "--fable-typography-heading-600-line-height": "36px",
+      "--fable-typography-heading-400-fontsize": "28px",
+      "--fable-typography-heading-400-line-height": "39px",
+      "--fable-typography-heading-400-letter-spacing": ".04em",
+      "--fable-typography-heading-200-fontsize": "18px",
+      "--fable-typography-heading-200-line-height": "22px",
+      "--fable-typography-heading-200-letter-spacing": ".02em",
+      "--fable-typography-heading-100-fontsize": "18px",
+      "--fable-typography-heading-100-line-height": "25px",
+      "--fable-typography-body-fontsize": "18px",
+      "--fable-typography-body-line-height": "25px",
+      "--fable-typography-body-font-weight": "400",
+      "--fable-typography-label-600-fontsize": "18px",
+      "--fable-typography-label-600-line-height": "22px",
+      "--fable-typography-label-600-font-weight": "500",
+      "--fable-typography-label-400-fontsize": "16px",
+      "--fable-typography-label-400-line-height": "22px",
+      "--fable-typography-label-400-letter-spacing": ".06em",
+      "--fable-typography-label-100-fontsize": "14px",
+      "--fable-typography-label-100-line-height": "18px",
+      "--fable-typography-label-90-fontsize": "11px",
+      "--fable-typography-label-90-line-height": "11px"
+    },
+    "component": {
+      "--fable-button-primary-height-min": "60px",
+      "--fable-button-primary-padding-vertical": "8px",
+      "--fable-dialog-border-top-radius": "24px",
+      "--fable-dialog-border-bottom-radius": "24px",
+      "--fable-dialog-width-max": "725px",
+      "--fable-notifications-toast-border-radius": "8px",
+      "--fable-drawer-width-max": "475px",
+      "--dv-pvnav-height": "60px",
+      "--dva-page-max-width": "1920px",
+      "--dva-page-min-width": "300px"
+    }
+  }
+}
