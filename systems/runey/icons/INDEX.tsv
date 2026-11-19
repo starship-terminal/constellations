@@ -1,0 +1,4 @@
+file	role	source
+	wordmark	The nav wordmark is an inline SVG image, data URI, 73 by 20 CSS pixels. It is not a separate file in this folder.
+	favicon	https://runey.app/favicon.svg and https://runey.app/apple-touch-icon.png. The 128 px PNG is systems/runey/icon.png.
+	ui	Feature chips, the hero arrow and the menu icon are Lucide strokes (users, clipboard-list, send, arrow-right, chevron-down, menu). They are the Lucide set, not Runey artwork, so they are not copied here.

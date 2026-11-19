@@ -1,0 +1,19 @@
+{
+  "capturedAt": "2026-11-19T02:05:00Z",
+  "requestedViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "devicePixelRatio": 2,
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "visualViewport": {
+    "width": 390,
+    "height": 844,
+    "scale": 1
+  },
+  "pngWidth": 780,
+  "pngHeight": 18046,
+  "sanitizedSourceUrl": "https://runey.app/",
+  "note": "phone width. Quantized to 256-colour sRGB. The T3 preview tab could not produce screenshot frames."
+}
