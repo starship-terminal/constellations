@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partiful style guide</title>
+<style>
+:root {
+  --page: #f7f7f7;
+  --surface: #ffffff;
+  --hero: #000000;
+  --cream: #fdfdfb;
+  --ink: #111111;
+  --muted: #777772;
+  --on-hero: #ffffff;
+  --on-hero-muted: #ececec;
+  --fill: #111111;
+  --on-fill: #fdfdfb;
+  --stroke: #ececec;
+  --janky: "Partiful Janky Inter Display Regular", sans-serif;
+  --lausanne: "TWK Lausanne Pan 300", sans-serif;
+  --app: Lausanne, "Helvetica Neue", Helvetica, sans-serif;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --page: #111111;
+  --surface: #ffffff0d;
+  --hero: #111111;
+  --cream: #ffffff;
+  --ink: #ffffff;
+  --muted: #ffffff99;
+  --on-hero: #ffffff;
+  --on-hero-muted: #ffffff99;
+  --fill: #ffffff;
+  --on-fill: #000000;
+  --stroke: #ffffff1a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 300 16.8px/20.16px var(--lausanne); letter-spacing: -0.336px; }
+header, main { max-width: 960px; margin: 0 auto; padding: 32px 16px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { font: 400 40px/40px var(--janky); letter-spacing: 0; text-transform: uppercase; margin: 0; }
+h2 { font: 400 24px/28px var(--lausanne); letter-spacing: -0.4px; margin: 32px 0 12px; }
+button.toggle { background: var(--fill); color: var(--on-fill); border: 0; border-radius: 200px; padding: 16px 24px; font: 600 16px/19.2px var(--lausanne); letter-spacing: 0; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: 4px; border: 1px solid var(--stroke); }
+.swatch span { display: block; font: 400 12px/16px var(--app); margin-top: 8px; letter-spacing: 0; }
+.hero { background: var(--hero); color: var(--on-hero); border-radius: 4px; padding: 48px; }
+.hero h2 { color: var(--on-hero); font: 400 46px/46px var(--janky); letter-spacing: 0; text-transform: uppercase; margin: 0 0 12px; }
+.hero p { color: var(--on-hero-muted); margin: 0 0 16px; font: 400 19.2px/23.04px var(--lausanne); letter-spacing: -0.384px; }
+.pills { display: flex; gap: 12px; flex-wrap: wrap; }
+.pill { display: inline-flex; align-items: center; height: 51px; padding: 16px 24px; border-radius: 4px; font: 600 16px/19.2px var(--lausanne); text-decoration: none; }
+.pill.solid { background: var(--cream); color: #000000; }
+.pill.ghost { background: #111111; color: #fdfdfb; border-radius: 200px; }
+[data-mode="dark"] .pill.ghost { background: #ffffff0d; color: #ffffff; border: 1px solid #ffffff66; border-radius: 800px; }
+.field { margin-top: 16px; display: flex; gap: 8px; max-width: 400px; }
+.field span, .field input { background: #ffffff0d; border: 1px solid #ffffff1a; border-radius: 4px; color: #ffffff; height: 52px; }
+.field span { width: 80px; display: flex; align-items: center; justify-content: center; }
+.field input { flex: 1; padding: 1px 12px; font: 400 18px/25.2px var(--app); }
+[data-mode="light"] .field span, [data-mode="light"] .field input { background: var(--surface); color: var(--ink); border-color: var(--stroke); }
+nav.float { background: #fdfdfbcc; color: #111111; border-radius: 50px; padding: 10px 12px 10px 20px; display: flex; gap: 8px; align-items: center; box-shadow: 1px 3px 16px 4px #0000000a; width: fit-content; }
+nav.float b { font: 500 16px/19.2px var(--lausanne); letter-spacing: -0.4px; font-weight: 500; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Partiful</h1>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Theme</button>
+</header>
+<main>
+  <p>Values measured on the public signed-out site, 2026-11-19. Proprietary faces fall back when they are not installed.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#f7f7f7"></i><span>page #f7f7f7</span></div>
+    <div class="swatch"><i style="background:#ffffff"></i><span>surface #ffffff</span></div>
+    <div class="swatch"><i style="background:#111111"></i><span>ink #111111</span></div>
+    <div class="swatch"><i style="background:#777772"></i><span>muted #777772</span></div>
+    <div class="swatch"><i style="background:#fdfdfb"></i><span>cream #fdfdfb</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>hero #000000</span></div>
+    <div class="swatch"><i style="background:#ececec"></i><span>stroke #ececec</span></div>
+    <div class="swatch"><i style="background:#9ccfff"></i><span>link #9ccfff</span></div>
+    <div class="swatch"><i style="background:#ab76f6"></i><span>primary token #ab76f6</span></div>
+    <div class="swatch"><i style="background:#252464"></i><span>token page #252464</span></div>
+  </div>
+  <h2>Marketing nav</h2>
+  <nav class="float"><b>Invites</b><b>Explore</b><b>Log in</b></nav>
+  <h2>Hero</h2>
+  <div class="hero">
+    <h2>Parties are back</h2>
+    <p>Create invites and discover events</p>
+    <div class="pills">
+      <a class="pill solid" href="#create">Create event</a>
+      <a class="pill ghost" href="#login">Log in</a>
+    </div>
+  </div>
+  <h2>App shell field</h2>
+  <div class="field"><span>SG</span><input placeholder="Phone number" aria-label="Phone number" readonly></div>
+</main>
+</body>
+</html>

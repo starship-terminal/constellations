@@ -20343,6 +20343,59 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "partiful",
+      "name": "Partiful",
+      "url": "https://partiful.com",
+      "category": "events",
+      "platform": "web",
+      "goodFor": "Invitation marketing: cream floating nav, black hero, janky display type, pill CTAs, plus a separate dark Lausanne app shell",
+      "tags": ["web", "events", "invitations", "marketing", "rsvp", "dark"],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (login is a phone field; no email, no event created)",
+      "themes": ["light", "dark"],
+      "widths": [1169],
+      "entry": "systems/partiful/README.md",
+      "tokens": "systems/partiful/tokens.json",
+      "styleGuide": "systems/partiful/style-guide.html",
+      "preview": {
+        "cover": "systems/partiful/icon.png",
+        "icon": "systems/partiful/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.fill",
+            "border": "light.border.stroke"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.action.fill",
+            "border": "dark.border.stroke"
+          }
+        },
+        "fonts": ["core.font.family.janky", "core.font.family.lausanne", "core.font.family.app"]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "not recorded",
+        "pr": "https://github.com/starship-terminal/constellations/pull/736",
+        "durationMin": 40
+      },
+      "layoutGaps": {
+        "screenshots/": "Cover is the site icon, not a page screenshot. preview_snapshot failed: The browser is not producing screenshot frames.",
+        "components/": "No crops. The same screenshot failure.",
+        "icons/": "Inline SVGs were not extracted. The site icon is icon.png, fetched from the marketing favicon."
+      }
     }
   ]
 }
