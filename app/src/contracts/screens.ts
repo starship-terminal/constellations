@@ -33,7 +33,8 @@ export interface ScreenQuery {
   /**
    * Keep at most this many captures per product and order the rest
    * round-robin across products (first-seen order), so a page of results
-   * shows many products. `total` still counts every match.
+   * shows many products. `total` still counts every match; page by
+   * `pageable`, which counts the sampled captures.
    */
   perProduct?: number;
 }
@@ -44,6 +45,9 @@ export interface ScreenFacet {
 export interface ScreenResponse {
   items: ScreenItem[];
   total: number;
+  /** How many captures offset/limit can page through: `total`, or the
+   * sampled count when `perProduct` is set. */
+  pageable: number;
   /** Actual platform/kind corpus counts, before reference, text or term filters. */
   termCounts: Record<string, number>;
   facets: {

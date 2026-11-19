@@ -5,6 +5,7 @@ import { MockLanguageModelV4, simulateReadableStream } from "ai/test";
 import { tempStore } from "./helpers";
 import {
   modelHistory,
+  providerFailure,
   researchPrompt,
   researchTools,
   streamResearch,
@@ -288,6 +289,7 @@ test("provider stream errors keep partial text and never expose provider error c
     },
   });
   const release = vi.fn();
+  const logged = vi.spyOn(console, "error").mockImplementation(() => {});
   const response = await streamResearch({
     model,
     conversation,
@@ -298,6 +300,14 @@ test("provider stream errors keep partial text and never expose provider error c
   const text = await response.text();
   expect(text).toContain("The model request failed");
   expect(text).not.toContain("private-provider-secret");
+  // The operator gets a log line with the error's name, never its message.
+  expect(logged).toHaveBeenCalledWith("research: model request failed", {
+    name: "Error",
+  });
+  expect(JSON.stringify(logged.mock.calls)).not.toContain(
+    "private-provider-secret",
+  );
+  logged.mockRestore();
   expect(
     JSON.stringify((await store.getConversation(conversation.id))?.messages),
   ).toContain("A finding before failure");
@@ -371,4 +381,17 @@ test("custom compatible chat mode reports text-only and supplies no image data",
   expect(content).toMatchObject({ type: "content", value: [{ type: "text" }] });
   expect(JSON.stringify(content)).toContain("no image supplied");
   expect(JSON.stringify(content)).not.toContain("AQID");
+});
+
+test("a provider failure logs its name and HTTP status, never its body", () => {
+  const failure = Object.assign(new Error("Incorrect API key sk-test-123"), {
+    name: "AI_APICallError",
+    statusCode: 401,
+    responseBody: '{"error":"sk-test-123"}',
+  });
+  expect(providerFailure(failure)).toEqual({
+    name: "AI_APICallError",
+    status: 401,
+  });
+  expect(providerFailure("timeout")).toEqual({ name: "string" });
 });

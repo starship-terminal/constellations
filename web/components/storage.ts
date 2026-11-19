@@ -10,10 +10,19 @@ const readJSON = (key: string): unknown => {
   }
 };
 
-/** The saved model provider object ("ds-provider"), or null. */
+/** The saved model provider object ("ds-provider"), or null. Only string
+    fields are kept (a number or boolean becomes its text): a hand edit or an
+    older schema can leave `{"model": 1}` or `null` there, and every reader
+    calls string methods on the fields. */
 export const readStoredProvider = (): Record<string, string> | null => {
   const p = readJSON("ds-provider");
-  return p && typeof p === "object" && !Array.isArray(p) ? (p as Record<string, string>) : null;
+  if (!p || typeof p !== "object" || Array.isArray(p)) return null;
+  const out: Record<string, string> = {};
+  for (const [k, v] of Object.entries(p)) {
+    if (typeof v === "string") out[k] = v;
+    else if (typeof v === "number" || typeof v === "boolean") out[k] = String(v);
+  }
+  return out;
 };
 
 /** Saved media paths ("ds-saved"). */

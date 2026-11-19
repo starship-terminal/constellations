@@ -124,5 +124,22 @@ class ShotTest(unittest.TestCase):
         self.assertEqual(self.shot("4242"), (0, ["screencapture", "sips"]))
 
 
+class KitNativeBuilderTests(unittest.TestCase):
+    """tools/kit/native carries its own tests (test_build_tokens.py, test_measure.py), which a package
+    copies with the builders. `unittest discover -s tools` does not reach them (the folder is no
+    package), so they run here, in their own interpreter from that folder, as a package's would."""
+
+    def test_the_kit_native_tests_pass(self):
+        folder = NATIVE.parent.parent / "native"
+        names = sorted(p.name for p in folder.glob("test_*.py"))
+        self.assertIn("test_build_tokens.py", names)
+        done = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", str(folder), "-t", str(folder), "-p", "test_*.py", "-v"],
+                              cwd=folder, capture_output=True, text=True, timeout=300)
+        self.assertEqual(done.returncode, 0, done.stderr[-3000:])
+        ran = [ln for ln in done.stderr.splitlines() if ln.startswith("Ran ")]
+        self.assertTrue(ran and int(ran[-1].split()[1]) > 0, done.stderr[-500:])
+        for name in names:   # every file's tests were found
+            self.assertIn(f"({name[:-3]}.", done.stderr, name)
+
 if __name__ == "__main__":
     unittest.main()

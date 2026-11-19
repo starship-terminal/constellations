@@ -3,6 +3,7 @@
 // no session, so GET is 405 and DELETE is an empty acknowledgement.
 import { handleBatch, MCP_BODY_LIMIT } from "@/server/mcp";
 import { isAllowedHost } from "@/server/request-host";
+import { HttpError, mutationGuard } from "@/server/research/http";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -59,6 +60,15 @@ async function readBody(request: Request) {
 
 export async function POST(request: Request) {
   if (!isAllowedHost(request.headers.get("host"))) return refused();
+  // Tool calls run server-side, so a page on another site must not be able
+  // to start them with a no-preflight POST. MCP clients send no Origin or
+  // Sec-Fetch-Site and still pass; they must send application/json.
+  try {
+    mutationGuard(request, { originlessClients: true });
+  } catch (error) {
+    if (!(error instanceof HttpError)) throw error;
+    return Response.json({ error: error.message }, { status: error.status });
+  }
   const declared = request.headers.get("content-length");
   if (declared && /^\d+$/.test(declared) && Number(declared) > MCP_BODY_LIMIT) {
     return tooLarge();

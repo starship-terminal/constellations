@@ -11,6 +11,7 @@
 // States:
 //   hover          real mouse hover, 450ms settle for transitions
 //   focus-visible  keyboard: focus, Shift+Tab, Tab, so the browser sees a keyboard focus
+//                  (recorded as skipped, with no style or crop, when focus does not land)
 //   pressed        CDP CSS.forcePseudoState [active, hover]; no mouse button is pressed,
 //                  so no link or submit button can fire
 //   focused        the field clicked into (a text field only)
@@ -20,7 +21,7 @@
 //                  sends a question, creates a course, signs in or uploads is ever pressed
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, open, closePromo, openStory, styleOf, crop, centre, RAW } from './lib.mjs';
+import { BASE, M, launch, open, closePromo, openStory, styleOf, crop, centre, RAW, REF, CROPS } from './lib.mjs';
 import { safeUrl } from '../safe-url.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
@@ -173,7 +174,16 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (st === 'focus-visible' && via === 'focus failed') {
+        // Keyboard focus never reached the element, so a reading now would be the element at rest
+        // saved as its focus. Record the miss instead (the builders list it as "focus could not be
+        // captured"), and drop the crop an earlier run saved for this state.
+        const prev = out.components[key].states[st];
+        const old = prev?.crop && path.resolve(REF, prev.crop);
+        if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
+        out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via };
+        log('  -', key, st, 'skipped: focus failed');
+      } else await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
