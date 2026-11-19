@@ -20343,6 +20343,84 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "moma",
+      "name": "MoMA",
+      "url": "https://www.moma.org",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "museum marketing: a 10px root and MoMA Sans, square corners, black actions, ticket blue #00b7f2, a gray Donate chip, and an 18-step membership palette on white",
+      "tags": [
+        "web",
+        "museum",
+        "marketing",
+        "editorial",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (every captured surface is public; Tickets, Donate, Join or renew, and Continue were not pressed; the login email was focused and not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/moma/README.md",
+      "tokens": "systems/moma/tokens.json",
+      "styleGuide": "systems/moma/style-guide.html",
+      "preview": {
+        "cover": "systems/moma/screenshots/home-light-default.png",
+        "icon": "systems/moma/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "method": "public-web",
+        "date": "2026-11-19",
+        "timestamp": "2026-11-19T05:40:00Z",
+        "version": "sol.css 7be4943c",
+        "durationMin": 70,
+        "routes": [
+          "/",
+          "/visit/",
+          "/calendar/exhibitions",
+          "/calendar/exhibitions/5910",
+          "/calendar",
+          "/collection/",
+          "/auth/login",
+          "https://membership.moma.org/"
+        ],
+        "gaps": [
+          "https://visit.moma.org/select Tickets was not followed. No purchase.",
+          "https://donate.moma.org/ Donate was not followed. No card, no donation.",
+          "https://membership.moma.org/ Join or renew and Gift it were measured and not pressed.",
+          "https://www.moma.org/auth/login the email field was focused. Continue was not pressed. A second launch of this URL returned a Cloudflare challenge and that launch stopped.",
+          "Search was opened and not submitted.",
+          "/members/ is a 404. Membership marketing is membership.moma.org."
+        ],
+        "pr": ""
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the wordmark SVG is in the header crop"
+      }
     }
   ]
 }

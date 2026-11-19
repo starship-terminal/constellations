@@ -1,0 +1,217 @@
+{
+  "tickets": null,
+  "donate": {
+    "x": 1108.84375,
+    "y": 14,
+    "w": 106.015625,
+    "h": 54.5,
+    "fontSize": "10px",
+    "fontWeight": "400",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "pad": "8px",
+    "border": "0px none rgb(0, 0, 0)",
+    "letterSpacing": "normal",
+    "lineHeight": "10px",
+    "text": "Donate"
+  },
+  "visit": {
+    "x": 120,
+    "y": 109,
+    "w": 62.5234375,
+    "h": 32.5078125,
+    "fontSize": "13.3333px",
+    "fontWeight": "400",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "pad": "8px",
+    "border": "0px none rgb(0, 0, 0)",
+    "letterSpacing": "normal",
+    "lineHeight": "normal",
+    "text": "Visit"
+  },
+  "wordmark": {
+    "x": 128,
+    "y": 32,
+    "w": 209,
+    "h": 53
+  },
+  "visitHover": {
+    "color": "rgb(0, 0, 0)",
+    "textDecoration": "none",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  "membership": {
+    "h1": {
+      "text": "Discover more as a member",
+      "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+      "fontSize": "60px",
+      "fontWeight": "900",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "letterSpacing": "-1.2px",
+      "lineHeight": "60px",
+      "box": {
+        "x": 314,
+        "y": 109,
+        "w": 811,
+        "h": 60
+      }
+    },
+    "buttons": [
+      {
+        "text": "",
+        "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "pad": "8px",
+        "letterSpacing": "normal",
+        "lineHeight": "10px",
+        "box": {
+          "x": 120,
+          "y": 24,
+          "w": 238,
+          "h": 38
+        }
+      },
+      {
+        "text": "Redeem gift",
+        "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "pad": "8px",
+        "letterSpacing": "normal",
+        "lineHeight": "10px",
+        "box": {
+          "x": 872,
+          "y": 24,
+          "w": 145,
+          "h": 30
+        }
+      },
+      {
+        "text": "Log in to your membership",
+        "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "pad": "8px",
+        "letterSpacing": "normal",
+        "lineHeight": "normal",
+        "box": {
+          "x": 1049,
+          "y": 24,
+          "w": 271,
+          "h": 30
+        }
+      },
+      {
+        "text": "Access 1 cardholder $110 / year $94 tax-deductible Unlimited free admission Free",
+        "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "letterSpacing": "normal",
+        "lineHeight": "10px",
+        "box": {
+          "x": 131,
+          "y": 301,
+          "w": 272,
+          "h": 361
+        }
+      },
+      {
+        "text": "Join or renew",
+        "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "pad": "8px",
+        "letterSpacing": "normal",
+        "lineHeight": "10px",
+        "box": {
+          "x": 153,
+          "y": 690,
+          "w": 144,
+          "h": 55
+        }
+      },
+      {
+        "text": "Gift it",
+        "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "pad": "8px",
+        "letterSpacing": "normal",
+        "lineHeight": "10px",
+        "box": {
+          "x": 297,
+          "y": 690,
+          "w": 82,
+          "h": 55
+        }
+      },
+      {
+        "text": "Explore 2 cardholders $200 / year $179 tax-deductible All Access benefits, plus:",
+        "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "letterSpacing": "normal",
+        "lineHeight": "10px",
+        "box": {
+          "x": 433,
+          "y": 301,
+          "w": 272,
+          "h": 367
+        }
+      },
+      {
+        "text": "Join or renew",
+        "fontFamily": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "pad": "8px",
+        "letterSpacing": "normal",
+        "lineHeight": "10px",
+        "box": {
+          "x": 455,
+          "y": 690,
+          "w": 144,
+          "h": 55
+        }
+      }
+    ],
+    "bodyFont": "\"MoMA Sans\", \"MoMA Sans\", Helvetica, sans-serif",
+    "bodyBg": "rgba(0, 0, 0, 0)",
+    "bodyColor": "rgb(0, 0, 0)",
+    "title": "MoMA Membership | Categories"
+  },
+  "capturedAt": "2026-11-18T16:35:40.217Z"
+}
