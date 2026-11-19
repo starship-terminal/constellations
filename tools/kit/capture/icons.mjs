@@ -44,7 +44,19 @@ function collect() {
     });
     c.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
     for (const a of ['id', 'class', 'focusable', 'aria-hidden', 'aria-labelledby', 'style', 'data-testid']) c.removeAttribute(a);
-    const refs = new Set([...c.outerHTML.matchAll(/url\(#([^)]+)\)/g)].map((m) => m[1].replace(/&quot;|"/g, '')));
+    // A <use> drawing a symbol defined elsewhere on the page (a sprite sheet) would draw nothing once the
+    // icon stands alone, so the symbol is copied into the icon's own <defs>.
+    for (const u of c.querySelectorAll('use')) {
+      const id = (u.getAttribute('href') || u.getAttribute('xlink:href') || '').replace(/^#/, '');
+      if (!id || c.querySelector(`[id="${CSS.escape(id)}"]`)) continue;
+      const t = document.getElementById(id);
+      if (!t) continue;
+      const defs = c.querySelector('defs') || c.insertBefore(document.createElementNS('http://www.w3.org/2000/svg', 'defs'), c.firstChild);
+      defs.appendChild(t.cloneNode(true));
+    }
+    // Every id something in the icon points at is kept: url(#x) (masks, gradients, clip paths) and a <use>'s href.
+    const refsOf = (html) => new Set([...html.matchAll(/url\((?:&quot;|["'])?#([^)"'&]+)|\b(?:xlink:)?href="#([^"]+)"/g)].map((m) => m[1] || m[2]));
+    const refs = refsOf(c.outerHTML);
     c.querySelectorAll('[id],[class],[style]').forEach((e) => { if (!refs.has(e.id)) e.removeAttribute('id'); e.removeAttribute('class'); if (e.tagName !== 'mask') e.removeAttribute('style'); });
     c.querySelectorAll('image').forEach((e) => e.remove());
     if (!c.hasAttribute('viewBox')) c.setAttribute('viewBox', `0 0 ${c.getAttribute('width') || Math.round(r.width)} ${c.getAttribute('height') || Math.round(r.height)}`.replace(/px/g, ''));

@@ -31,6 +31,21 @@ class CssColour(unittest.TestCase):
             self.assertIn("from '../css-colour.mjs'", (CAPTURE / rel).read_text(), rel)
 
 
+@unittest.skipIf(NODE is None, "node is not on PATH")
+class IconRefs(unittest.TestCase):
+    def test_every_id_an_icon_points_at_is_kept(self):
+        # icons.mjs strips every id but the ones the icon refers to; it knew only url(#x), so a <use href="#x">
+        # lost its target and the saved icon drew nothing.
+        line = next(l.strip() for l in (CAPTURE / "icons.mjs").read_text().splitlines() if l.strip().startswith("const refsOf = "))
+        svg = ('<svg><defs><symbol id="s1"><path d="M0 0"/></symbol><linearGradient id="g1"/><clipPath id="c-2"/></defs>'
+               '<use href="#s1"/><use xlink:href="#s2"/><rect fill="url(#g1)" clip-path="url(&quot;#c-2&quot;)"/>'
+               '<rect mask="url(\'#m3\')"/><a href="https://x.test/#nope"></a></svg>')
+        res = subprocess.run([NODE, "-e", line + f"\nconsole.log(JSON.stringify([...refsOf({json.dumps(svg)})].sort()))"],
+                             capture_output=True, text=True, timeout=30)
+        self.assertEqual(res.returncode, 0, res.stderr)
+        self.assertEqual(json.loads(res.stdout), ["c-2", "g1", "m3", "s1", "s2"])
+
+
 @unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
 class MeasureArgs(unittest.TestCase):
     def test_a_bad_jobs_count_stops_instead_of_running_no_workers(self):
