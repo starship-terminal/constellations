@@ -20343,6 +20343,50 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "travelperk",
+      "name": "TravelPerk",
+      "url": "https://www.perk.com/",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Travel and expense marketing: a lime pill on an off-white page, OTSono display at 80/72, 28px plan cards, and a separate Perk Sans login with an 8px off-black button",
+      "tags": ["web", "travel", "expense", "saas", "marketing", "pricing", "light", "signed-out"],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages only. travelperk.com redirected to perk.com. The login page was measured and left. No email, signup, SSO, booking or card.",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/travelperk/README.md",
+      "tokens": "systems/travelperk/tokens.json",
+      "styleGuide": "systems/travelperk/style-guide.html",
+      "preview": {
+        "cover": "systems/travelperk/icon.png",
+        "icon": "systems/travelperk/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": ["core.font.family.display", "core.font.family.ui"]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "perk.com public marketing, 2026-11-19",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": ""
+      },
+      "layoutGaps": {
+        "screenshots/": "The preview browser returned no screenshot frames, so no page captures were saved",
+        "components/": "No crops. Same missing frames"
+      }
     }
   ]
 }
