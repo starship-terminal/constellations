@@ -385,12 +385,15 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
 
 
 def coverage_shared_ok(expected: dict, actual: dict) -> bool:
-    """Every domain in both files has the same derived row."""
+    """Every domain in the committed file has the same row somewhere in
+    the merged derivation. A later capture can move a domain from missing
+    to matched; that move is fine. A changed row is not."""
+    expected_flat = {}
     for key in ("matched", "missing", "systems_absent_from_catalog"):
-        expected_map = expected.get(key) or {}
-        actual_map = actual.get(key) or {}
-        for dom in set(expected_map) & set(actual_map):
-            if expected_map[dom] != actual_map[dom]:
+        expected_flat.update(expected.get(key) or {})
+    for key in ("matched", "missing", "systems_absent_from_catalog"):
+        for dom, row in (actual.get(key) or {}).items():
+            if dom in expected_flat and expected_flat[dom] != row:
                 return False
     return True
 
