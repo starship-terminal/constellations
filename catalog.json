@@ -20343,6 +20343,71 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "onesoil",
+      "name": "OneSoil",
+      "url": "https://onesoil.ai/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Agriculture marketing site: cream page, glass pill nav, green pill primary, black pill secondary, 13px fields, forest data band",
+      "tags": [
+        "web",
+        "marketing",
+        "agriculture",
+        "signed-out",
+        "light",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and help center; contact form not submitted; app shell empty)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/onesoil/README.md",
+      "tokens": "systems/onesoil/tokens.json",
+      "styleGuide": "systems/onesoil/style-guide.html",
+      "preview": {
+        "cover": "systems/onesoil/screenshots/home-light-default.png",
+        "icon": "systems/onesoil/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.primary.background",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "none",
+        "pr": "none",
+        "durationMin": 40,
+        "gaps": [
+          "preview browser could not produce screenshot frames; screenshots are headless Playwright after the public pages loaded without a challenge",
+          "contact form asks for a phone number and was not submitted; no validation, error, or success state",
+          "app.onesoil.ai returned an empty page; no login form was measured and no account was created",
+          "no dark theme on the marketing site",
+          "help.onesoil.ai is a separate Noto Sans product and is not the marketing token set",
+          "icons were not lifted"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "inline SVGs were not extracted; the logo and menu glyphs are in the screenshots"
+      }
     }
   ]
 }

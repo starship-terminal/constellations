@@ -1,0 +1,29 @@
+{
+  "ok": 2,
+  "blocked": 0,
+  "transitions": [],
+  "anims": [],
+  "reduce": [],
+  "keyframes": [
+    {
+      "name": "dropdown-in",
+      "css": "@keyframes dropdown-in { \n  0% { opacity: 0; transform: translateY(-6px); }\n  100% { opacity: 1; transform: translateY(0px); }\n}"
+    },
+    {
+      "name": "marquee",
+      "css": "@keyframes marquee { \n  0% { transform: translate(0px); }\n  100% { transform: translate(-50%); }\n}"
+    },
+    {
+      "name": "marquee-rtl",
+      "css": "@keyframes marquee-rtl { \n  0% { transform: translate(0px); }\n  100% { transform: translate(50%); }\n}"
+    },
+    {
+      "name": "spin",
+      "css": "@keyframes spin { \n  100% { transform: rotate(1turn); }\n}"
+    },
+    {
+      "name": "home-testimonials-fill-drain",
+      "css": "@keyframes home-testimonials-fill-drain { \n  0% { left: 0px; right: 100%; }\n  50% { left: 0px; right: 0px; }\n  100% { left: 100%; right: 0px; }\n}"
+    }
+  ]
+}
