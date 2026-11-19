@@ -20343,6 +20343,68 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pexels",
+      "name": "Pexels",
+      "url": "https://www.pexels.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Stock-photo marketing: white page, Canva Sans, a 48px #191919 Join control with 12px radius, a #f7f7f7 search field, black 30px pill tabs, and an alien #54ca84 download button",
+      "tags": [
+        "web",
+        "media",
+        "marketing",
+        "photos",
+        "search",
+        "signed-out",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public pages on pexels.com. Join and login were opened and not submitted. No card, phone, or download.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/pexels/README.md",
+      "tokens": "systems/pexels/tokens.json",
+      "styleGuide": "systems/pexels/style-guide.html",
+      "preview": {
+        "cover": "systems/pexels/screenshots/home-light-default.png",
+        "icon": "systems/pexels/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 55
+      }
     }
   ]
 }
