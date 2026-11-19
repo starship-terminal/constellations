@@ -104,12 +104,11 @@ test("a v43 store with user rows gains the packages seeded since, and keeps its 
   // Rewind to a v43 store: no ledger, and none of the later packages' rows.
   await store.client.execute("DROP TABLE category_seed_ledger");
   await store.client.execute("DROP TABLE media_seed_ledger");
-  for (const referenceId of laterReferences)
-    for (const table of ["media_term_assignments", "reference_categories"])
-      await store.client.execute({
-        sql: `DELETE FROM ${table} WHERE reference_id=?`,
-        args: [referenceId],
-      });
+  for (const table of ["media_term_assignments", "reference_categories"])
+    await store.client.execute({
+      sql: `DELETE FROM ${table} WHERE reference_id IN (SELECT value FROM json_each(?))`,
+      args: [JSON.stringify(laterReferences)],
+    });
   await store.client.execute("PRAGMA user_version=43");
   const before = (await store.listMediaTermAssignments()).length;
   close(store);
@@ -117,11 +116,10 @@ test("a v43 store with user rows gains the packages seeded since, and keeps its 
   const { store: migrated } = await open(dir);
   expect(await version(migrated)).toBe(RESEARCH_DB_VERSION);
   // Every later package's seed rows arrived.
-  expect((await migrated.listMediaTermAssignments()).length).toBe(
-    before + laterTermCount,
-  );
-  for (const referenceId of laterReferences)
-    expect((await mediaRows(migrated, referenceId)).length).toBeGreaterThan(0);
+  const arrived = await migrated.listMediaTermAssignments();
+  expect(arrived.length).toBe(before + laterTermCount);
+  const labelled = new Set(arrived.map((row) => row.referenceId));
+  expect(laterReferences.filter((id) => !labelled.has(id))).toEqual([]);
   // Intercom's migration was renumbered below v43 after v43 first shipped,
   // so a store already at v43 skipped it: the ledger still delivers it.
   expect(laterReferences).toContain("systems:intercom");
@@ -165,7 +163,8 @@ test("a v43 store with user rows gains the packages seeded since, and keeps its 
   close(migrated);
   const { store: reopened } = await open(dir);
   expect((await reopened.listMediaTermAssignments()).length).toBe(after);
-});
+  // Four store opens over the full seed: more than the default 15 s on CI.
+}, 120_000);
 
 test("a store already at the latest version gains a package the seed added later, with no migration", async () => {
   const { dir, store } = await open();
