@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-18T16:32:28.551Z",
+  "sanitizedSourceUrl": "https://www.microsoft.com/en-us/microsoft-teams/",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "documentHeight": 11445
+  },
+  "title": "Video Conferencing, Meetings, Calling | Microsoft Teams",
+  "finalHost": "www.microsoft.com/en-us/microsoft-teams/group-chat-software/"
+}

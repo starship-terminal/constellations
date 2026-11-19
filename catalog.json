@@ -20343,6 +20343,61 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "microsoft-teams",
+      "name": "Microsoft Teams",
+      "url": "https://www.microsoft.com/en-us/microsoft-teams/",
+      "category": "messaging",
+      "platform": "web",
+      "goodFor": "Collaboration-product marketing: white 54px universal header, purple #5d5bd4 8px-radius actions, Segoe UI Variable Display 62px hero on a #f4fafd wash, outlined Sign in, pricing pill switcher",
+      "tags": [
+        "web",
+        "microsoft",
+        "teams",
+        "marketing",
+        "collaboration",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (the Teams client needs a Microsoft account and was not opened)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/microsoft-teams/README.md",
+      "tokens": "systems/microsoft-teams/tokens.json",
+      "styleGuide": "systems/microsoft-teams/style-guide.html",
+      "preview": {
+        "cover": "systems/microsoft-teams/screenshots/home-light-default.png",
+        "icon": "systems/microsoft-teams/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.heading",
+            "muted": "light.text.footer",
+            "accent": "light.background.action",
+            "border": "light.border.subtle"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "microsoft.com marketing, 2026-11-19",
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/702"
+      }
     }
   ]
 }
