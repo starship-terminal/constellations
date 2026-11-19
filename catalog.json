@@ -20343,6 +20343,69 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "west-elm",
+      "name": "West Elm",
+      "url": "https://www.westelm.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Furniture retail: square-corner storefront, Sanomat headlines, GT Eesti Text UI, conversion red reserved for sale price and add to cart",
+      "tags": [
+        "web",
+        "retail",
+        "furniture",
+        "editorial",
+        "square",
+        "serif-display"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (homepage, collection, product and the public account email form)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/west-elm/README.md",
+      "tokens": "systems/west-elm/tokens.json",
+      "styleGuide": "systems/west-elm/style-guide.html",
+      "preview": {
+        "cover": "systems/west-elm/screenshots/specimen-light-default.png",
+        "icon": "systems/west-elm/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.conversion",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.serif",
+          "core.fontFamily.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "westelm.com public site, 2026-11-19",
+        "durationMin": 50,
+        "gaps": [
+          "Screenshots of the site were not saved: preview_snapshot returned 'The browser is not producing screenshot frames'. Headless Playwright returned 403 Restricted Access.",
+          "Viewport was the preview pane at 1169x731, not 1440 or 390",
+          "Dark theme not shown",
+          "Did not add to cart, check out, enter a card, or submit the email overlay or the account email form"
+        ]
+      },
+      "layoutGaps": {
+        "components/": "element crops need screenshots of the product, which the preview browser did not produce",
+        "icons/": "icon extraction was not run; the header mark is an inline SVG and the favicon is an ico"
+      }
     }
   ]
 }
