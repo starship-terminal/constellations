@@ -469,5 +469,54 @@ class Matching(unittest.TestCase):
             self.assertEqual(R.load_email_allow([]), [])
 
 
+@unittest.skipIf(R is None, "Pillow and numpy are not installed")
+class RulesText(unittest.TestCase):
+    """A rules file is committed: its notes may say what a family hides, never hold the value."""
+
+    def test_leaks_are_named_by_path_and_kind_never_by_value(self):
+        rules = {"_note": "the popup shows jane.roe@acme-widgets.biz and +1 555 010 0199",
+                 "families": [{"name": "call 555-010-0199", "files": ["a.png"], "rects": [[0, 0, 10, 10]]}],
+                 "ocr": {"email_allow": ["^nobody@acme-widgets\\.biz$"]}}
+        leaks = R.rules_text_leaks(rules)
+        self.assertEqual(leaks, ["_note: an email address its email_allow does not pass",
+                                 "_note: a phone-number-shaped string",
+                                 "families[0].name: a phone-number-shaped string"])
+        self.assertFalse(any("555" in x or "jane" in x for x in leaks))
+
+    def test_allowed_reserved_and_non_phone_values_pass(self):
+        rules = {"_note": "placeholders name@example.com, a@b.test, support@vendor-x.biz; captured 2026-10-23; "
+                          "size [2880, 1800]; version 1.2.3.4",
+                 "families": [{"rects": [[800, 25385, 1115, 25520]], "size": [[2880, 1800]]}],
+                 "ocr": {"email_allow": ["^support@vendor-x\\.biz$", "nobody@listed-only-here\\.biz"],
+                         "keep": ["^help@vendor-x\\.biz$"]}}
+        self.assertEqual(R.rules_text_leaks(rules), [])     # email_allow itself is never read as text
+
+    def test_check_fails_on_a_rules_file_holding_a_value(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d)
+            Image.new("RGB", (4, 4)).save(pkg / "a.png")
+            pats = pkg / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]]}))
+            rules = pkg / "r.json"
+            rules.write_text(json.dumps({"_note": "painted out jane.roe@acme-widgets.biz"}))
+            with mock.patch.object(R, "ocr_words", return_value=[]), \
+                 contextlib.redirect_stdout(io.StringIO()) as out, self.assertRaises(SystemExit) as cm:
+                R.main(["check", d, "--patterns", str(pats), "--rules", str(rules)])
+            self.assertEqual(cm.exception.code, 1)
+            self.assertIn("LEAK r.json _note: an email address", out.getvalue())
+            self.assertNotIn("jane.roe", out.getvalue())
+            rules.write_text(json.dumps({"_note": "painted out a demo user's email address"}))
+            with mock.patch.object(R, "ocr_words", return_value=[]), \
+                 contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                R.main(["check", d, "--patterns", str(pats), "--rules", str(rules)])
+            self.assertEqual(cm.exception.code, 0)
+
+    def test_every_committed_rules_file_is_free_of_values(self):
+        for f in sorted(R.RULES_DIR.glob("*.json")):
+            with self.subTest(rules=f.name):
+                self.assertEqual(R.rules_text_leaks(json.loads(f.read_text())), [])
+
+
 if __name__ == "__main__":
     unittest.main()
