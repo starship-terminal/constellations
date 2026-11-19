@@ -60,17 +60,26 @@ export async function boundedFile(
     return null;
   }
 }
-export async function readText(rel: string): Promise<string | null> {
+// A package file is bounded by its own package folder, anything else by the
+// repository root.
+function repoFile(rel: string): Promise<string | null> {
   const root = repoRoot();
   const parts = rel.split("/");
   const packagePath =
     ["systems", "refero"].includes(parts[0]) && parts.length > 2;
-  const file = await boundedFile(
+  return boundedFile(
     packagePath
       ? path.join(/* turbopackIgnore: true */ root, parts[0], parts[1])
       : root,
     packagePath ? parts.slice(2).join("/") : rel,
   );
+}
+/** Whether readText could find the file, without reading it. */
+export async function hasFile(rel: string): Promise<boolean> {
+  return (await repoFile(rel)) !== null;
+}
+export async function readText(rel: string): Promise<string | null> {
+  const file = await repoFile(rel);
   if (!file) return null;
   try {
     const text = await fs.readFile(/* turbopackIgnore: true */ file, "utf8");

@@ -50,6 +50,16 @@ class Templates(unittest.TestCase):
         self.assertNotIn("<selector>", head)
 
 
+class ReadDates(unittest.TestCase):
+    def test_no_kit_script_records_a_fixed_read_date(self):
+        # signed-in/measure.mjs wrote read: '2026-10-04' (the example's capture day) on every run, and the
+        # builders print it as the day the styles were read.
+        import re
+        bad = [f"{p.relative_to(CAPTURE)}:{n}" for p in sorted(CAPTURE.rglob("*.mjs")) if not p.name.startswith("test_")
+               for n, line in enumerate(p.read_text().splitlines(), 1) if re.search(r"\bread: ['\"`]\d{4}-\d\d-\d\d", line)]
+        self.assertEqual(bad, [])
+
+
 @unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
 class MeasureArgs(unittest.TestCase):
     def test_a_bad_jobs_count_stops_instead_of_running_no_workers(self):

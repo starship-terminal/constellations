@@ -16,6 +16,17 @@ export async function copyOutcome(text: string, copy: (t: string) => Promise<voi
   }
 }
 
+type Timer = ReturnType<typeof setTimeout>;
+
+/** Show `next` now and the idle label COPY_RESET_MS later. A previous pending
+    revert (`pending`) is cancelled first, so a second click restarts the
+    countdown instead of reverting early. Returns the new timer. */
+export function flash(show: (s: CopyState) => void, next: CopyState, pending?: Timer): Timer {
+  clearTimeout(pending);
+  show(next);
+  return setTimeout(() => show("idle"), COPY_RESET_MS);
+}
+
 export function copyLabel(state: CopyState): string {
   return state === "copied" ? "Copied" : state === "failed" ? "Copy failed" : "Copy";
 }

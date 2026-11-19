@@ -134,11 +134,15 @@ def main() -> None:
             if f.read(64).startswith(b"version https://git-lfs"):
                 sys.exit("error: refero.db is a Git LFS pointer; "
                          "run: git lfs install && git lfs pull")
-    db = sqlite3.connect(db_path)
+    # Autocommit mode plus an explicit transaction: the legacy implicit one
+    # never covers DROP or CREATE (and executescript commits first), so a
+    # failed insert would leave the table dropped or empty.
+    db = sqlite3.connect(db_path, isolation_level=None)
     db.execute("PRAGMA busy_timeout=30000")
-    with db:
+    db.execute("BEGIN IMMEDIATE")
+    try:
         db.execute("DROP TABLE IF EXISTS screens")
-        db.executescript(SCHEMA)
+        db.execute(SCHEMA)
         db.executemany(
             """INSERT INTO screens
                (entry_type, entry_id, entry_key, shot_uuid, shot_url,
@@ -149,7 +153,12 @@ def main() -> None:
               s["shot_url"], s["thumb_url"], s["page_url"], s["page_id"],
               json.dumps(s["colors"]) if s["colors"] else None,
               s["shot_created_at"], s["fetched_at"]) for s in screens])
-    db.close()
+        db.execute("COMMIT")
+    except BaseException:
+        db.execute("ROLLBACK")
+        raise
+    finally:
+        db.close()
     refero_dump.refresh(db_path)
 
     directory = {

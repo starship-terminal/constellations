@@ -362,6 +362,26 @@ export function modelHistory(
       }),
   }));
 }
+/** What a provider failure may log: its class name and HTTP status only. */
+export function providerFailure(error: unknown): {
+  name: string;
+  status?: number;
+} {
+  const fields =
+    error && typeof error === "object"
+      ? (error as { name?: unknown; statusCode?: unknown; status?: unknown })
+      : {};
+  const status =
+    typeof fields.statusCode === "number"
+      ? fields.statusCode
+      : typeof fields.status === "number"
+        ? fields.status
+        : undefined;
+  return {
+    name: typeof fields.name === "string" ? fields.name : typeof error,
+    ...(status === undefined ? {} : { status }),
+  };
+}
 export async function streamResearch({
   model,
   conversation,
@@ -400,7 +420,12 @@ export async function streamResearch({
     maxRetries: 1,
     abortSignal: signal,
     timeout: { totalMs: 120000 },
-    onError: () => {},
+    // The client only ever sees a fixed message, so the operator needs a
+    // server-side line: the error's name and HTTP status, never its message
+    // or body, which can echo a key or the prompt.
+    onError: ({ error }) => {
+      console.error("research: model request failed", providerFailure(error));
+    },
   });
   return result.toUIMessageStreamResponse({
     originalMessages: conversation.messages,

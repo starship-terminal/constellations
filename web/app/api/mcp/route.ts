@@ -3,7 +3,7 @@
 // JSON-RPC message (or a batch) in, the replies as application/json out;
 // notification-only bodies get 202. Stateless: no session header, GET gets a
 // 405 because there is no SSE stream to open. Mirrors server/mcp.py exactly.
-import { call, SPECS } from "@/lib/chat/library";
+import { call, SPECS, ToolError } from "@/lib/chat/library";
 import { handleBatch, textOverLimit, tooLargeResponse } from "@/lib/mcp-batch";
 
 export const dynamic = "force-dynamic";
@@ -36,8 +36,12 @@ async function callTool(name: string, args: unknown) {
     return { content: [{ type: "text", text: JSON.stringify(out) }] };
   } catch (e) {
     // One malformed call must never end the session: report it as a tool
-    // error and keep the caller's loop alive.
-    return { content: [{ type: "text", text: String(e instanceof Error ? e.message : e).slice(0, 400) }], isError: true };
+    // error and keep the caller's loop alive. A ToolError's text is written for
+    // the caller (call() strips server detail); anything else is a bug, whose
+    // detail goes to the log only, as server/mcp.py's _call does.
+    if (e instanceof ToolError) return { content: [{ type: "text", text: e.message.slice(0, 400) }], isError: true };
+    console.error(`mcp: ${name}:`, e);
+    return { content: [{ type: "text", text: `${name} failed` }], isError: true };
   }
 }
 
