@@ -18323,6 +18323,71 @@
       }
     },
     {
+      "slug": "sora",
+      "name": "Sora",
+      "url": "https://sora.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "A signed-out sunset notice: black page, secondary sentence, one inverse Export control",
+      "tags": [
+        "web",
+        "video",
+        "openai",
+        "sunset",
+        "dark"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public sunset page; no signup form was shown)",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/sora/README.md",
+      "tokens": "systems/sora/tokens.json",
+      "styleGuide": "systems/sora/style-guide.html",
+      "preview": {
+        "cover": "systems/sora/icon.png",
+        "icon": "systems/sora/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.background.primary",
+            "surface": "dark.color.background.secondary",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.control.button-background",
+            "border": "dark.color.border.primary"
+          },
+          "light": {
+            "page": "light.color.background.primary",
+            "surface": "light.color.background.secondary",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.control.button-background",
+            "border": "light.color.border.primary"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/825"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot failed with 'The browser is not producing screenshot frames'; headless Playwright hit a Cloudflare interstitial on sora.com and was not used",
+        "icons/": "the sunset page rendered no inline icons; the apple-touch icon is icon.png",
+        "components/": "no screenshot frames, so component crops were not cut"
+      }
+    },
+    {
       "slug": "spotify",
       "name": "Spotify",
       "url": "https://www.spotify.com",
