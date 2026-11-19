@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "starbucks",
+      "name": "Starbucks",
+      "url": "https://www.starbucks.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Coffee-brand marketing on a pill-button, full-bleed band system: a transparent 100px header, black Join now and outlined Sign in, green hero bands, cream and holiday-red feature bands, 50px pills, and SoDoSans. Public signed-out pages only.",
+      "tags": [
+        "web",
+        "marketing",
+        "signed-out",
+        "food",
+        "retail",
+        "pill",
+        "brand"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing only; Sign in and Join now were not followed into a form; no card, phone, or payment was entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/starbucks/README.md",
+      "tokens": "systems/starbucks/tokens.json",
+      "styleGuide": "systems/starbucks/style-guide.html",
+      "preview": {
+        "cover": "systems/starbucks/screenshots/home-light-default.png",
+        "icon": "systems/starbucks/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.card",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.accent-bg",
+            "border": "light.border.strong"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sodo-sans"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "Starbucks icons and the siren are the brand's artwork and are not kept here (docs/RIGHTS.md)"
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "starbucks.com public marketing, 2026-11-19",
+        "durationMin": 70
+      }
     }
   ]
 }
