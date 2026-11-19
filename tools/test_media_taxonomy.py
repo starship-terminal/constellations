@@ -4,6 +4,7 @@ from __future__ import annotations
 import importlib.util
 import json
 import os
+import subprocess
 import unittest
 from unittest import mock
 from pathlib import Path
@@ -97,21 +98,31 @@ class SeedLagTest(unittest.TestCase):
                 mock.patch.object(catalog, "list_images", side_effect=self.images):
             return taxonomy.build()
 
-    def matches(self, head, committed, files=None, base_ref="main"):
+    def matches(self, head, committed, files=None, base_ref="main",
+                branch_seed=None, branch_catalog=None, head_sha="refs/pr-head"):
         catalog = taxonomy.catalog
         shown = json.dumps(self.base)
         listed = b"\0".join(path.encode() for path in (files if files is not None else self.files)) + b"\0"
 
         def fake_run(args, **kwargs):
+            if args[:2] == ["git", "show"] and args[2].endswith(":catalog.json"):
+                payload = branch_catalog if args[2].startswith(head_sha) and branch_catalog else shown
+                return mock.Mock(stdout=payload, returncode=0)
+            if args[:2] == ["git", "show"] and args[2].endswith(":app/src/data/media-taxonomy.json"):
+                if branch_seed is None:
+                    raise subprocess.CalledProcessError(1, args)
+                return mock.Mock(stdout=json.dumps(branch_seed), returncode=0)
             if args[:2] == ["git", "show"]:
                 return mock.Mock(stdout=shown, returncode=0)
             if args[:2] == ["git", "ls-tree"]:
                 return mock.Mock(stdout=listed, returncode=0)
             if args[:2] == ["git", "diff"]:
                 return mock.Mock(stdout="", returncode=0)
+            if args[:2] == ["git", "rev-parse"]:
+                return mock.Mock(stdout="same\n", returncode=0)
             raise AssertionError(args)
 
-        env = {"GITHUB_BASE_REF": base_ref} if base_ref else {}
+        env = {"GITHUB_BASE_REF": base_ref, "GITHUB_HEAD_SHA": head_sha} if base_ref else {}
         with mock.patch.dict(os.environ, env, clear=False), \
                 mock.patch.object(taxonomy.subprocess, "run", fake_run), \
                 mock.patch.object(catalog, "load_catalog", return_value=head), \
@@ -123,6 +134,20 @@ class SeedLagTest(unittest.TestCase):
 
     def test_an_older_seed_is_accepted(self):
         self.assertTrue(self.matches(self.head, self.prior_seed([self.old])))
+
+    def test_a_seed_matching_the_branch_head_is_accepted_when_main_moved(self):
+        seed = self.prior_seed([self.old])
+        branch = {"systems": [self.old, self.added]}
+        self.assertTrue(self.matches(
+            self.head, seed, branch_seed=seed, branch_catalog=json.dumps(branch)))
+
+    def test_a_seed_that_differs_from_the_branch_head_is_rejected(self):
+        seed = self.prior_seed([self.old])
+        seed["coverage"] = "hand edited"
+        branch = {"systems": [self.old, self.added]}
+        self.assertFalse(self.matches(
+            self.head, seed, branch_seed=self.prior_seed([self.old]),
+            branch_catalog=json.dumps(branch)))
 
     def test_changed_generated_content_is_rejected(self):
         seed = self.prior_seed([self.old])
