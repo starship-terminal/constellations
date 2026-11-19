@@ -76,7 +76,8 @@ def atomic_write(path: Path, text: str) -> None:
         # web server reading the result as another user (the design-systems
         # deploy serves `site/` through a containerised nginx) would answer 403.
         os.fchmod(fd, 0o644)
-        with os.fdopen(fd, "w") as f:
+        # UTF-8 whatever the locale: generated files hold non-ASCII text ("café").
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
             f.write(text)
         os.replace(tmp, path)
     except BaseException:
@@ -1305,17 +1306,18 @@ def file_table(readme: str) -> list[str]:
 
 def git_ignored(paths: list[Path]) -> set[Path]:
     """The paths git ignores here (a package's local fonts/, say). Outside a git checkout,
-    or without git, nothing counts as ignored."""
+    or without git, nothing counts as ignored. NUL-separated both ways: without `-z` git
+    quotes a non-ASCII name in its answer, which then matches no path asked about."""
     if not paths:
         return set()
     try:
-        out = subprocess.run(["git", "-C", str(ROOT), "check-ignore", "--stdin"], capture_output=True, text=True,
-                             input="\n".join(str(p) for p in paths), timeout=30)
+        out = subprocess.run(["git", "-C", str(ROOT), "check-ignore", "-z", "--stdin"], capture_output=True,
+                             input=b"\0".join(os.fsencode(p) for p in paths), timeout=30)
     except (OSError, subprocess.SubprocessError):
         return set()
     if out.returncode not in (0, 1):
         return set()
-    return {Path(line) for line in out.stdout.splitlines() if line}
+    return {Path(os.fsdecode(p)) for p in out.stdout.split(b"\0") if p}
 
 
 def layout_gaps(slug: str) -> tuple[list[str], list[str]]:
