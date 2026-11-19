@@ -20343,6 +20343,77 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "raus",
+      "name": "Raus",
+      "url": "https://www.raus.life/",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Cabin-rental marketing: cream page, forest headlines, a sky promo strip, an orange Book now pill, a yellow search pill with a magenta circle, ink 20px buttons, Neue Haas Unica plus a serif display face",
+      "tags": [
+        "web",
+        "travel",
+        "rental",
+        "cabins",
+        "marketing",
+        "signed-out",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing only; search was not submitted; no booking, card, phone, or account)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/raus/README.md",
+      "tokens": "systems/raus/tokens.json",
+      "styleGuide": "systems/raus/style-guide.html",
+      "preview": {
+        "cover": "systems/raus/icon.png",
+        "icon": "systems/raus/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.card",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.orange",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned 'The browser is not producing screenshot frames' on 2026-11-19. Computed styles were kept. No screenshot was invented.",
+        "components/": "No crops, for the same screenshot-frame failure. Component values are in components.md and raw/notes.md."
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "live site 2026-11-19",
+        "pr": "none",
+        "durationMin": 55,
+        "method": "public-web",
+        "source": "www.raus.life in the T3 preview browser. Computed styles on the live page. preview_snapshot could not produce frames.",
+        "timestamp": "2026-11-19T01:50:00Z",
+        "gaps": [
+          "no screenshots or crops: the preview browser did not produce screenshot frames",
+          "no booking, date selection, account, card, phone, or newsletter signup",
+          "hover, pressed, disabled, loading and error states were not painted",
+          "date, guest, region and filter menus were not opened",
+          "dark theme was not declared",
+          "reduced motion was not emulated"
+        ]
+      }
     }
   ]
 }
