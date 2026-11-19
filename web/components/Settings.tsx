@@ -14,6 +14,7 @@ import { agentSnippets } from "@/lib/agent-snippets";
 import { SnippetCopyButton } from "@/components/CopyButton";
 
 export interface SettingsStats {
+  /** The checkout's folder name, never its absolute path. */
   repo: string;
   systems: number | null;
   refero: number | null;
