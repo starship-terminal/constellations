@@ -38,8 +38,16 @@ def number(value: str, source: str) -> dict:
     return {"$type": "number", "$value": value, "$extensions": {"source": source}}
 
 
+def bezier_points(value: str) -> list:
+    """"0.25, 0.1, 0.25, 1" as the four numbers DTCG's cubicBezier holds. A string would
+    export as a bare number list, which is not a CSS easing."""
+    points = [float(p) for p in value.split(",")]
+    assert len(points) == 4, value
+    return [int(p) if p.is_integer() else p for p in points]
+
+
 def cubic(value: str, source: str) -> dict:
-    return {"$type": "cubicBezier", "$value": value, "$extensions": {"source": source}}
+    return {"$type": "cubicBezier", "$value": bezier_points(value), "$extensions": {"source": source}}
 
 
 def rgb_hex(rgb: str) -> str:

@@ -33,7 +33,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 4. Do flip roles on an event page.
 5. Do set the landing title at 80px and weight 500.
 6. Do round plan cards to 24px.
-7. Don't style the host product from this package.
+7. Don't invent a guest list from these shots.
 8. Don't follow Create or Plus.
 9. Don't submit the sign-in card.
 10. Don't treat Discover titles as a fixed catalog.
