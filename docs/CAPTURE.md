@@ -132,6 +132,16 @@ the capture mode and scale. Live-browser captures should record the same
 fields through their supported APIs. A passing dimension check leaves visual
 review pending and does not establish a CSS-to-PNG crop transform.
 
+A signed-in pass is not finished when the first post-login page loads.
+Before the last screenshot, write `login-review.offered` from the
+signed-in navigation, the settings area, and the create or empty-state
+flow. Open every item those three areas show. Record each opened screen
+in `login-review.screens`, with the file that shows it, before setting
+`login-extracted` to `done`. A review of one screenshot fails the check,
+and so does a package screenshot the review never names. The check is
+`python3 tools/login_extracted.py --check`, and the states are in
+[HANDOVER.md](HANDOVER.md).
+
 Open every final screenshot before ticking its coverage row. For a popup,
 confirm the whole popup is inside the image and its entrance animation has
 finished; recapture blank or clipped images. Keep the screenshot and CSS

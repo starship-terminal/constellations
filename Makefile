@@ -38,12 +38,13 @@ scorecard: ## Validate the scorecard's audit data
 grade: ## Re-grade the scripted criteria into a new audit snapshot, then rewrite every README's Health section
 	@$(PYTHON) tools/grade.py --write && $(PYTHON) tools/scorecard.py --check
 
-check: ## Validate catalog.json and the refero stores; fail on a stale Brief, DESIGN.md, scorecard or Health section
+check: ## Validate catalog.json, the refero stores, and login-extracted; fail on a stale Brief, DESIGN.md, scorecard or Health section
 	@$(PYTHON) tools/catalog.py check
 	@$(PYTHON) tools/refero/check.py
 	@$(PYTHON) tools/brief.py --check
 	@$(PYTHON) tools/grade.py --check
 	@$(PYTHON) tools/gated.py --check
+	@$(PYTHON) tools/login_extracted.py --check
 
 brief: ## Rewrite every package README's Brief from its catalog entry, tokens and README
 	@$(PYTHON) tools/brief.py

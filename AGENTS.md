@@ -135,7 +135,7 @@ Makefile                `make help` lists targets; `make dev` is the way in
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | You are about to copy a value and need to know how far to trust it |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | You are adding or refreshing a product; start from [tools/kit/](tools/kit) |
 | [docs/FIELD-NOTES.md](docs/FIELD-NOTES.md) | A capture is going wrong — the table of what has already gone wrong and the fix that worked |
-| [docs/HANDOVER.md](docs/HANDOVER.md) | You are picking up the capture program (manifest batches, worktree pattern, review loop, merge train, cleanup) |
+| [docs/HANDOVER.md](docs/HANDOVER.md) | You are picking up the capture program (manifest batches, `login-extracted`, the signed-in review, worktree pattern, merge train, cleanup) |
 | [docs/RIGHTS.md](docs/RIGHTS.md) | Anything might leave this repo |
 | [docs/decisions/](docs/decisions) | You want to know why the library works the way it does; each file is one decision (0001: [motion tokens and the reduced-motion probe](docs/decisions/0001-motion-tokens.md)) |
 | [docs/TODO.md](docs/TODO.md) | You are picking up open work; the list is newest first |
