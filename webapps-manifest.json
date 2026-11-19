@@ -2748,9 +2748,9 @@
       "description": "Collaborate better",
       "status": "uncapturable",
       "package": null,
-      "notes": "Probed 2026-11-18: https://invisionapp.com and https://www.invisionapp.com (and /login, /pricing, /teams, /inside-design, /enterprise, /customers, /about, /freehand) return HTTP 301 from an AWS ELB to https://miro.com:443/, which serves Miro's live Framer marketing site (title AI Innovation Workspace | Miro), not InVision. Former product hosts do not resolve: projects, support, status, blog, app, login, freehand, studio, dsm, inspect.invisionapp.com. InVision shut its design-collaboration services on 2024-12-31 after selling Freehand to Miro in 2023-11; nothing honest of the product remains to capture.",
+      "notes": "Probed 2026-11-18: https://invisionapp.com and https://www.invisionapp.com (and /login, /pricing, /teams, /inside-design, /enterprise, /customers, /about, /freehand) return HTTP 301 from an AWS ELB to https://miro.com:443/, which serves Miro's live Framer marketing site (title AI Innovation Workspace | Miro), not InVision. Former product hosts do not resolve: projects, support, status, blog, app, login, freehand, studio, dsm, inspect.invisionapp.com. InVision shut its design-collaboration services on 2024-12-31 after selling Freehand to Miro in 2023-11; nothing honest of the product remains to capture. https://www.invisionapp.com/ redirects to https://miro.com/. Miro login rejected the capture inbox: \"This email can not be registered, please try another domain.\" No code was sent. Google, Microsoft, and SSO also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 9
     },
     {
@@ -2765,9 +2765,9 @@
       "description": "Your 24/7 email assistant that drafts for you",
       "status": "captured",
       "package": "systems/jace",
-      "notes": "",
+      "notes": "https://app.jace.ai/signin offers Google, Outlook, and an SSO portal only. No email field. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 9
     },
     {
@@ -2782,9 +2782,9 @@
       "description": "AI that's built for marketing",
       "status": "captured",
       "package": "systems/jasper",
-      "notes": "",
+      "notes": "https://app.jasper.ai/auth/login has Continue with email. After the capture inbox, the page said \"Failed to send login link.\" No code was sent. Google also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 9
     },
     {
@@ -2799,9 +2799,9 @@
       "description": "Essential tools for software developers and teams",
       "status": "captured",
       "package": "systems/jetbrains",
-      "notes": "",
+      "notes": "https://account.jetbrains.com/login offers Google, GitHub, Apple, GitLab, WeChat, and Bitbucket. Continue with email showed an email field, and Continue did not advance. No code was sent. Cookie banner was not accepted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 9
     },
     {
@@ -2816,9 +2816,9 @@
       "description": "Fast and simple motion design tool",
       "status": "captured",
       "package": "systems/jitter",
-      "notes": "",
+      "notes": "https://jitter.video/login sent a temporary login link to the capture inbox (\"Check your email\"). Link not opened. Google and SSO also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 9
     },
     {
@@ -2833,9 +2833,9 @@
       "description": "Save and Organize Your Favorite Recipes",
       "status": "captured",
       "package": "systems/julienne",
-      "notes": "",
+      "notes": "https://withjulienne.com/login redirects home. The Log in dialog asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2850,9 +2850,9 @@
       "description": "Kickstarter exists to help bring creative projects to life",
       "status": "captured",
       "package": "systems/kickstarter",
-      "notes": "",
+      "notes": "https://www.kickstarter.com/login stopped on Cloudflare security verification. No email field. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 9
     },
     {
@@ -2867,9 +2867,9 @@
       "description": "Team matchmaking for women-led startups",
       "status": "captured",
       "package": "systems/kinhive",
-      "notes": "",
+      "notes": "https://kinhive.com/login is 404. https://kinhive.com/sign-in sent a sign-in code (\"We sent a code\"). Code not entered. LinkedIn also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 9
     },
     {
@@ -2884,9 +2884,9 @@
       "description": "Email-First Operating System for Creators",
       "status": "captured",
       "package": "systems/kit",
-      "notes": "",
+      "notes": "https://app.kit.com/users/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2901,9 +2901,9 @@
       "description": "Anyone can cook",
       "status": "captured",
       "package": "systems/kitchenstories",
-      "notes": "",
+      "notes": "https://www.kitchenstories.com/profile Login opens a Contentpass account form at my.contentpass.net with email and password. No code was sent. A consent banner was present and was not accepted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2918,9 +2918,9 @@
       "description": "Collaborate with your team and clients to get things done",
       "status": "captured",
       "package": "systems/kitchen",
-      "notes": "",
+      "notes": "https://kitchen.co/login/workspace asks for a workspace Kitchen URL before any email. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 9
     },
     {
@@ -2935,9 +2935,9 @@
       "description": "Shop, Track Purchases, Make Payments",
       "status": "captured",
       "package": "systems/klarna",
-      "notes": "",
+      "notes": "https://app.klarna.com/login asks for a country of residence before any email. No country was chosen. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 9
     },
     {
@@ -2952,9 +2952,9 @@
       "description": "Bitcoin & Cryptocurrency Exchange",
       "status": "captured",
       "package": "systems/kraken",
-      "notes": "",
+      "notes": "https://www.kraken.com/sign-in asks for email or username and password, or Google or Apple. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -2969,9 +2969,9 @@
       "description": "Generative AI made easy. Generate and enhance images and videos using powerful AI for free",
       "status": "captured",
       "package": "systems/krea",
-      "notes": "",
+      "notes": "https://www.krea.ai/login offers Google, Apple, SSO, and email. Continue with email said \"We couldn't verify this browser.\" No code was sent. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 9
     },
     {
@@ -2986,9 +2986,9 @@
       "description": "World's #1 Noise Cancelling App and AI Meeting Assistant",
       "status": "captured",
       "package": "systems/krisp",
-      "notes": "",
+      "notes": "https://krisp.ai/wp-login.php asks for username or email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -3003,9 +3003,9 @@
       "description": "Explore the world of LEGO",
       "status": "captured",
       "package": "systems/lego",
-      "notes": "",
+      "notes": "https://www.lego.com/en-sg/login is a missing page. https://identity.lego.com/ asks for a birth year before any email. Birth year was not entered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 9
     },
     {
@@ -3020,9 +3020,9 @@
       "description": "Set up custom Ai agents in minutes",
       "status": "captured",
       "package": "systems/lemni",
-      "notes": "",
+      "notes": "https://lemni.com/signin sent a sign-in link to the capture inbox (\"Check your inbox\"). Link not opened. Google also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 9
     },
     {
@@ -3037,9 +3037,9 @@
       "description": "Payments, tax & subscriptions for software companies",
       "status": "captured",
       "package": "systems/lemonsqueezy",
-      "notes": "",
+      "notes": "https://auth.lemonsqueezy.com/login asks for email and password, or Google or Twitter. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -3054,9 +3054,9 @@
       "description": "Generative AI Platform for Images, Art & Video",
       "status": "captured",
       "package": null,
-      "notes": "",
+      "notes": "https://leonardo.ai/login is page not found. https://app.leonardo.ai/auth/login asks for email and password, or Canva, Apple, Google, or Microsoft. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 9
     },
     {
@@ -3071,9 +3071,9 @@
       "description": "Personalized AI powered by what you’ve seen, said, and heard",
       "status": "captured",
       "package": "systems/limitless",
-      "notes": "",
+      "notes": "https://www.limitless.ai/ says Limitless has been acquired by Meta. https://app.limitless.ai/signin says \"Sign Up Unavailable\" and is no longer accepting new users. No code was sent. Google also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 9
     },
     {
