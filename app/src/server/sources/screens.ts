@@ -4,8 +4,7 @@ import type {
   ScreenQuery,
   ScreenResponse,
 } from "@/contracts/screens";
-import { listCapturedMedia } from "./index";
-import { repoRoot } from "./files";
+import { listCapturedMedia, MAX_CACHE_AGE, sourceStamp } from "./index";
 import { categoryGroup, matchesCategory } from "@/contracts/categories";
 import { withReferenceCategories } from "@/server/taxonomy/library";
 import { getStore } from "@/server/db";
@@ -20,7 +19,7 @@ export function validScreenTermId(value: string): boolean {
 }
 
 const pending = new Map<string, Promise<ScreenItem[]>>();
-let cache: { key: string; until: number; items: ScreenItem[] } | undefined;
+let cache: { key: string; loadedAt: number; items: ScreenItem[] } | undefined;
 export function validScreenId(value: string): boolean {
   if (value.length > 2400) return false;
   const match = /^systems:([a-z0-9][a-z0-9-]*):(.+)$/.exec(value);
@@ -33,12 +32,12 @@ export function validScreenId(value: string): boolean {
   );
 }
 async function capturedScreens(): Promise<ScreenItem[]> {
-  const key = [
-    repoRoot(),
-    process.env.DESIGN_SYSTEMS_MEDIA,
-    process.env.DESIGN_SYSTEMS_MEDIA_BASE,
-  ].join("|");
-  if (cache?.key === key && cache.until > Date.now()) return cache.items;
+  // Listing every capture resolves each screenshot and crop on disk, so the
+  // list lives as long as the library sources do: until a catalog, generated
+  // data or the media mirror changes, and at most MAX_CACHE_AGE.
+  const key = await sourceStamp();
+  if (cache?.key === key && Date.now() - cache.loadedAt < MAX_CACHE_AGE)
+    return cache.items;
   const current = pending.get(key);
   if (current) return current;
   const load = (async () => {
@@ -57,7 +56,7 @@ async function capturedScreens(): Promise<ScreenItem[]> {
         return [{ id, reference, media: asset }];
       }),
     );
-    cache = { key, until: Date.now() + 30_000, items };
+    cache = { key, loadedAt: Date.now(), items };
     return items;
   })();
   pending.set(key, load);
