@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stable Audio style guide</title>
+<style>
+  :root {
+    --page: #000000;
+    --card: #0B0B0B;
+    --text: #FFFFFF;
+    --muted: #CFCDC6;
+    --faint: #8E8E8E;
+    --accent: #D27929;
+    --primary: #ABA185;
+    --home: #BC6C25;
+    --on: #000000;
+    --line: rgba(255,255,255,0.22);
+    --line-faint: rgba(255,255,255,0.10);
+    --focus: #FFB703;
+    --paper: #F3F0EA;
+    --ink: #0B0B0A;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--sans); }
+  main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 46px; line-height: 1.06; letter-spacing: -1.38px; font-weight: 600; margin: 0 0 8px; }
+  h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; margin: 40px 0 12px; }
+  p { color: var(--muted); max-width: 68ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border: 1px solid var(--line-faint); }
+  .name { font: 500 11px/1.2 var(--mono); letter-spacing: 0.44px; color: var(--faint); margin-top: 6px; }
+  .val { font-size: 12px; color: var(--muted); }
+  button, .btn { font: 600 15px/1 var(--sans); height: 44px; padding: 0 20px; border-radius: 0; border: 1px solid transparent; background: var(--primary); color: var(--on); }
+  button.home { background: var(--home); border-color: var(--home); }
+  button.secondary { background: transparent; color: #E8E8E8; border-color: var(--line); font-weight: 500; }
+  button.outline { background: transparent; color: var(--text); border-color: var(--text); font-weight: 500; height: 32px; padding: 0 14px; font-size: 13px; }
+  button:focus-visible { outline: 2px solid var(--focus); }
+  .card { background: var(--card); border: 1px solid var(--line-faint); border-radius: 4px; padding: 24px; width: 240px; }
+  .card strong { display: block; font-size: 20px; }
+  .price { font-size: 37.52px; font-weight: 600; letter-spacing: -1.13px; margin: 8px 0; }
+  .badge { font: 500 10px/10px var(--mono); letter-spacing: 0.2px; color: var(--primary); border: 1px solid var(--primary); padding: 4px 6px; }
+  .paper { background: var(--paper); color: var(--ink); padding: 16px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line-faint); }
+  th { color: var(--faint); font-weight: 500; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <p class="name">STABLE AUDIO · PUBLIC SIGNED-OUT · DARK</p>
+  <h1>Style guide</h1>
+  <p>Values are the computed styles and custom properties read on 19 November 2026. The preview browser did not produce screenshot frames, so this page is the specimen. Neue Haas Grotesk Text Pro is proprietary and is not loaded here. The fallback is Helvetica Neue.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#000"></div><div class="name">PAGE</div><div class="val">#000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#0B0B0B"></div><div class="name">CARD</div><div class="val">#0B0B0B</div></div>
+    <div class="swatch"><div class="chip" style="background:#FFFFFF"></div><div class="name">TEXT</div><div class="val">#FFFFFF</div></div>
+    <div class="swatch"><div class="chip" style="background:#CFCDC6"></div><div class="name">MUTED</div><div class="val">#CFCDC6</div></div>
+    <div class="swatch"><div class="chip" style="background:#D27929"></div><div class="name">ACCENT</div><div class="val">#D27929</div></div>
+    <div class="swatch"><div class="chip" style="background:#ABA185"></div><div class="name">PRIMARY</div><div class="val">#ABA185</div></div>
+    <div class="swatch"><div class="chip" style="background:#BC6C25"></div><div class="name">HOME PRIMARY</div><div class="val">#BC6C25</div></div>
+    <div class="swatch"><div class="chip" style="background:#FFB703"></div><div class="name">FOCUS</div><div class="val">#FFB703</div></div>
+  </div>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="home">Start free</button>
+    <button>Get Session</button>
+    <button class="secondary">Sign in</button>
+    <button class="outline">Contact us</button>
+  </div>
+  <p>Home primary is the amber fill. Pricing, plugin and the 404 Go home button use the quartz fill. Corners are square. Large controls are 44px tall.</p>
+
+  <h2>Pricing card</h2>
+  <div class="card">
+    <span class="badge">RECOMMENDED</span>
+    <strong>Session</strong>
+    <div class="price">$30/mo</div>
+    <p style="color:#CFCDC6">For regular sessions and creative iteration.</p>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font-size:72px;line-height:73.44px;letter-spacing:-2.52px;font-weight:600;color:#fff;margin:0">Shape the <span style="color:#D27929">sound</span></p>
+  <p style="font:500 11px/13.2px var(--mono);letter-spacing:0.44px;color:#8E8E8E">NOW PLAYING</p>
+  <p>Pick a genre, instruments and mood for your starting point.</p>
+
+  <h2>Declared paper ramp</h2>
+  <div class="paper">
+    <strong>:root paper, not painted on the marketing pages.</strong>
+    <p style="color:#5C5B53">--sx-paper #F3F0EA, --sx-ink-900 #0B0B0A, --sx-primary #F9A916. The captured pages stayed on the dark scope.</p>
+  </div>
+
+  <h2>Space and radius</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th><th>Where</th></tr>
+    <tr><td>space 1 to 16</td><td>4, 8, 12, 16, 20, 24, 32, 40, 48, 64 px</td><td>--sx-sp-*</td></tr>
+    <tr><td>control radius</td><td>0</td><td>--sx-r-control and computed buttons</td></tr>
+    <tr><td>pricing card</td><td>4px</td><td>.PricingNext_card</td></tr>
+    <tr><td>pill token</td><td>999px</td><td>declared, not painted on these pages</td></tr>
+  </table>
+</main>
+</body>
+</html>
