@@ -20343,6 +20343,50 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pixso",
+      "name": "Pixso",
+      "url": "https://pixso.net/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Design-tool marketing and a signed-out login card: Figtree marketing type, black 8px buttons, a separate blue login submit, frosted 54px nav",
+      "tags": ["web", "design-tool", "saas", "marketing", "login"],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the login form; no account created)",
+      "themes": ["light"],
+      "widths": [1169],
+      "entry": "systems/pixso/README.md",
+      "tokens": "systems/pixso/tokens.json",
+      "styleGuide": "systems/pixso/style-guide.html",
+      "preview": {
+        "cover": "systems/pixso/icon.png",
+        "icon": "systems/pixso/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.background.brand",
+            "border": "light.border.input"
+          }
+        },
+        "fonts": ["core.font.family.marketing", "core.font.family.login"]
+      },
+      "capture": {
+        "harness": "T3 Code",
+        "model": "grok-4.7",
+        "route": "web-inspector",
+        "durationMin": 40,
+        "version": "public site, 2026-11-19"
+      },
+      "layoutGaps": {
+        "components/": "no crops; the same screenshot failure. Component values are in components.md from computed styles.",
+        "icons/": "inline SVGs were on the login card and were not extracted. No icon font pass was run.",
+        "screenshots/": "preview_snapshot returned no frames: The browser is not producing screenshot frames. Computed styles were read. No PNG of the page was invented. preview.cover points at icon.png so the catalog has a file; it is the site favicon, not a page capture."
+      }
     }
   ]
 }
