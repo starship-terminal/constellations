@@ -20343,6 +20343,84 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "monday",
+      "name": "monday.com",
+      "url": "https://monday.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Work-management marketing and signed-out auth: a white Webflow home with a purple 160px pill, and an auth.monday.com login that paints the product token layer (Figtree UI, Poppins headings, 4px blue buttons)",
+      "tags": [
+        "web",
+        "saas",
+        "productivity",
+        "work-management",
+        "marketing",
+        "pricing",
+        "signed-out",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing pages and auth.monday.com login and signup; no account created; forms measured and cleared, never submitted; Google and Microsoft were not followed; the contact form asks for a phone number, so that flow stopped)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/monday/README.md",
+      "tokens": "systems/monday/tokens.json",
+      "styleGuide": "systems/monday/style-guide.html",
+      "preview": {
+        "cover": "systems/monday/screenshots/home-light-default.png",
+        "icon": "systems/monday/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.marketing.accent",
+            "border": "light.border.ui"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent",
+            "border": "dark.border.ui"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.poppins",
+          "core.fontFamily.figtree"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/monday/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "login stylesheet login_monday-8806bd5209647dffbca6",
+        "durationMin": 90,
+        "durationNote": "one session: public and auth pages in headless Chromium, stylesheet harvest, component measurements, screenshots, and the offline build",
+        "gaps": [
+          "the signed-in workspace (boards, items, automations, dashboards, settings) sits behind login and was never reached",
+          "login and signup at 390px show a desktop-or-app gate, not the form",
+          "the dark set is declared on .dark-app-theme and was not painted on any signed-out page",
+          "nothing was submitted, so validation, error, loading and success states are absent",
+          "Google and Microsoft sign-in were not followed",
+          "the contact-sales form asks for a phone number, so that flow stopped at the empty form",
+          "checkbox, radio, switch, tabs, tooltip, dialog, toast and an open nav menu were not captured"
+        ]
+      }
     }
   ]
 }
