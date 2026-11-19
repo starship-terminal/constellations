@@ -101,6 +101,15 @@ describe("sanitizeHtml", () => {
     assert.equal(out, '<a href="https://acme.example/docs" target="_blank" rel="noopener">a</a><a href="#setup">b</a>');
   });
 
+  it("drops closed comments, keeps an unclosed one as text, and stays linear", () => {
+    assert.equal(sanitizeHtml("<b>a</b><!-- x -->c", { base: "x.md" }), "<b>a</b>c");
+    assert.equal(sanitizeHtml("<b>a</b><!-- x", { base: "x.md" }), "<b>a</b>&lt;!-- x");
+    const many = "<!--".repeat(50_000);
+    const t = performance.now();
+    assert.equal(sanitizeHtml(many, { base: "x.md" }), "&lt;!--".repeat(50_000));
+    assert.ok(performance.now() - t < 1000, "unclosed comments rescanned the block");
+  });
+
   it("honours remoteImages off for raw images too", () => {
     assert.equal(sanitizeHtml('<img src="https://tracker.example/p.gif">', { base: "x.md", remoteImages: false }), "<img>");
   });
