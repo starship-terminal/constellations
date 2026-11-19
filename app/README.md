@@ -57,7 +57,7 @@ Measured package records and interpreted Refero styles retain separate source id
 - A batch holds at most 8 calls, because one image tool reply can be several megabytes of base64; the other two have no cap.
 - A body without `Content-Length` is accepted and counted as it streams, refused past the 256 KB cap; `web/` refuses such a request with 411.
 
-Empty bodies (400, -32600) and bodies that are not UTF-8 or not JSON (400, -32700) are refused as `server/routes.py` refuses them. The endpoint checks the Host header like every route; it does not check `Origin`, `Sec-Fetch-Site` or the content type.
+Empty bodies (400, -32600) and bodies that are not UTF-8 or not JSON (400, -32700) are refused as `server/routes.py` refuses them. Before reading the body, the endpoint checks the Host header like every route and runs the same guard as the app's other writes: a foreign `Origin` or `Sec-Fetch-Site: cross-site` is refused (403), and the body must be sent as `Content-Type: application/json` (415 otherwise), so a page on another site cannot start tool calls with a no-preflight form or `text/plain` POST. MCP clients send no `Origin` or `Sec-Fetch-Site`, so they pass, through the private origin too ([private deployment](docs/DEPLOYMENT.md)).
 
 ## Categorisation
 
