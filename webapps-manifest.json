@@ -28,9 +28,9 @@
       "description": "Password Manager for Families, Enterprise & Business",
       "status": "captured",
       "package": "systems/1password",
-      "notes": "public marketing surface only; the vault is credential-gated (account + secret key + master password) and out of scope. start.1password.com gates headless browsers to /unsupported, captured as the boundary",
+      "notes": "public marketing surface only; the vault is credential-gated (account + secret key + master password) and out of scope. start.1password.com gates headless browsers to /unsupported, captured as the boundary https://my.1password.com/signin asked for a Secret Key and a password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -45,9 +45,9 @@
       "description": "Organize your music the way you want",
       "status": "captured",
       "package": "systems/untitled-stream",
-      "notes": "public marketing surface + login card; legal pages intermittently Cloudflare-gated. Reject-all on the consent card 403s into the Remix error boundary so the card is hidden, never clicked",
+      "notes": "public marketing surface + login card; legal pages intermittently Cloudflare-gated. Reject-all on the consent card 403s into the Remix error boundary so the card is hidden, never clicked https://untitled.stream/sign-up/email sent a verification code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 1
     },
     {
@@ -62,9 +62,9 @@
       "description": "Make Your App Happen",
       "status": "captured",
       "package": "systems/aaply",
-      "notes": "public marketing surface only (Tilda site); the app host go.aaply.app returned Not found on every route, captured as the boundary",
+      "notes": "public marketing surface only (Tilda site); the app host go.aaply.app returned Not found on every route, captured as the boundary https://go.aaply.app/login and /signup both returned Not found. The marketing site links there and offers no email field.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
@@ -79,9 +79,9 @@
       "description": "Music production with Live and Push",
       "status": "captured",
       "package": "systems/ableton",
-      "notes": "",
+      "notes": "https://www.ableton.com/en/login/ asks for email or username plus a password. Register asks for a password too. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -96,9 +96,9 @@
       "description": "AI-powered data management platform",
       "status": "captured",
       "package": "systems/aboard",
-      "notes": "",
+      "notes": "https://aboard.com/ is a consulting site. No sign-in link and no email field.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
@@ -113,9 +113,9 @@
       "description": "Joyful HR",
       "status": "captured",
       "package": "systems/aboardhr",
-      "notes": "",
+      "notes": "https://app.aboardhr.com/login said no user for the capture inbox. https://app.aboardhr.com/signup requires a phone number. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "phone",
       "batch": 1
     },
     {
@@ -130,9 +130,9 @@
       "description": "Crypto invoice & B2B payments",
       "status": "captured",
       "package": "systems/acctual",
-      "notes": "",
+      "notes": "https://app.acctual.com/sign-in asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -147,9 +147,9 @@
       "description": "Shop the official site",
       "status": "captured",
       "package": "systems/acnestudios",
-      "notes": "",
+      "notes": "https://www.acnestudios.com/sg/en/lookup accepted the email, then registration asked for a password, a date of birth, and a phone. No code was sent. The form was not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -164,9 +164,9 @@
       "description": "Online Booking & Appointment Scheduling",
       "status": "captured",
       "package": "systems/acuityscheduling",
-      "notes": "",
+      "notes": "https://www.acuityscheduling.com/login.php asks for email and password, or Squarespace. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -181,9 +181,9 @@
       "description": "More than sportswear and workout clothes",
       "status": "captured",
       "package": "systems/adidas",
-      "notes": "global .com Akamai IP-blocked; package covers adidas.com.cn",
+      "notes": "global .com Akamai IP-blocked; package covers adidas.com.cn https://www.adidas.com/us/account-login accepted the email in the field, then Continue did nothing. No code was sent and no next field appeared.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
