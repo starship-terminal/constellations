@@ -20343,6 +20343,62 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "monodesk",
+      "name": "MonoDesk",
+      "url": "https://www.monodesk.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Freelance-creative workspace marketing: blue grid page, darker blue rounded header, highlighter pill CTA (#d1ff6e on #026232), white pricing slab, signed-out login card",
+      "tags": [
+        "web",
+        "productivity",
+        "freelance",
+        "saas",
+        "marketing",
+        "pricing",
+        "signed-out",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing pages and app.monodesk.com/login and /create; nothing submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/monodesk/README.md",
+      "tokens": "systems/monodesk/tokens.json",
+      "styleGuide": "systems/monodesk/style-guide.html",
+      "preview": {
+        "cover": "systems/monodesk/screenshots/home-light-default.png",
+        "icon": "systems/monodesk/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.geist",
+          "core.font.family.geistMono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/704"
+      }
     }
   ]
 }
