@@ -1,11 +1,14 @@
 """Tests for server/mcp.py's JSON-RPC handling: malformed messages get a
 JSON-RPC error and never end the stdio session. Run with `make test`."""
+import contextlib
 import importlib.util
+import io
 import json
 import subprocess
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 SERVER = Path(__file__).resolve().parent.parent / "server"
 
@@ -60,6 +63,67 @@ class MalformedRequestTest(unittest.TestCase):
             mcp._tool_specs = original
         self.assertEqual(out, {"jsonrpc": "2.0", "id": 7,
                                "error": {"code": -32603, "message": "internal error"}})
+
+
+class DispatchTest(unittest.TestCase):
+    def _call(self, name, args=None):
+        out = mcp.handle({"jsonrpc": "2.0", "id": 1, "method": "tools/call",
+                          "params": {"name": name, "arguments": args or {}}})
+        return out["result"]
+
+    def test_unknown_method_and_tool(self):
+        out = mcp.handle({"jsonrpc": "2.0", "id": 1, "method": "resources/list"})
+        self.assertEqual(out["error"], {"code": -32601, "message": "no method 'resources/list'"})
+        out = mcp.handle({"jsonrpc": "2.0", "id": 2, "method": "tools/call", "params": {"name": "rm_rf"}})
+        self.assertEqual(out["error"], {"code": -32602, "message": "unknown tool 'rm_rf'"})
+
+    def test_initialize_echoes_a_string_protocol_version_only(self):
+        init = lambda v: mcp.handle({"jsonrpc": "2.0", "id": 1, "method": "initialize",
+                                     "params": {"protocolVersion": v}})["result"]
+        self.assertEqual(init("2025-06-18")["protocolVersion"], "2025-06-18")
+        self.assertEqual(init(5)["protocolVersion"], "2025-03-26")
+        self.assertEqual(init(None)["serverInfo"], mcp.SERVER_INFO)
+
+    def test_tool_os_error_never_reaches_the_client(self):
+        # An OSError names an absolute path; the caller learns only the tool and the type.
+        spec = mcp.library._BY_NAME["get_style"]
+        boom = FileNotFoundError(2, "No such file or directory", "/srv/private/checkout/catalog.json")
+        log = io.StringIO()
+        with mock.patch.dict(spec, {"fn": mock.Mock(side_effect=boom)}), \
+                contextlib.redirect_stderr(log):
+            out = self._call("get_style", {"slug": "linear"})
+        self.assertTrue(out["isError"])
+        self.assertEqual(out["content"], [{"type": "text", "text": "get_style failed (FileNotFoundError)"}])
+        self.assertIn("/srv/private/checkout", log.getvalue())
+
+    def test_bad_argument_message_is_kept(self):
+        spec = mcp.library._BY_NAME["get_style"]
+        with mock.patch.dict(spec, {"fn": mock.Mock(side_effect=ValueError("invalid literal for int(): 'x'"))}):
+            out = self._call("get_style", {"slug": "linear"})
+        self.assertEqual(out["content"][0]["text"], "get_style failed: invalid literal for int(): 'x'")
+
+    def test_non_tool_error_is_generic(self):
+        log = io.StringIO()
+        with mock.patch.object(mcp.library, "call", side_effect=RuntimeError("/srv/private/x")), \
+                contextlib.redirect_stderr(log):
+            out = self._call("get_style", {"slug": "linear"})
+        self.assertEqual(out, {"content": [{"type": "text", "text": "get_style failed"}], "isError": True})
+        self.assertIn("/srv/private/x", log.getvalue())
+
+    def test_view_media_becomes_an_image_block(self):
+        img = {"url": "/media/systems/x/a.png", "name": "a.png", "data": "QUJD", "media_type": "image/png"}
+        with mock.patch.object(mcp.library, "call", return_value={"_image": img}):
+            out = self._call("view_media", {"path": "systems/x/a.png"})
+        self.assertEqual(out["content"][1], {"type": "image", "data": "QUJD", "mimeType": "image/png"})
+        self.assertEqual(json.loads(out["content"][0]["text"]), {"url": img["url"], "name": "a.png"})
+
+    def test_real_tool_refuses_a_path_like_slug_without_leaking_the_checkout(self):
+        root = str(SERVER.parent)
+        for args in ({"slug": "../../etc/passwd"}, {"slug": "/etc/passwd"}, {"slug": "x" * 50_000}):
+            out = self._call("get_style", args)
+            self.assertTrue(out["isError"], args)
+            self.assertNotIn(root, out["content"][0]["text"])
+            self.assertLessEqual(len(out["content"][0]["text"]), 400)
 
 
 class BatchTest(unittest.TestCase):

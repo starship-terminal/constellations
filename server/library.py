@@ -503,8 +503,16 @@ def call(name: str, args: dict) -> dict:
         result = spec["fn"](**args)
     except ToolError:
         raise
-    except Exception as e:
+    except (TypeError, ValueError) as e:
+        # A bad argument (int("x"), a wrong type): the message is about the
+        # caller's own input.
         raise ToolError(f"{name} failed: {e}")
+    except Exception as e:
+        # Anything else (an OSError names an absolute path, sqlite errors name
+        # the store) is logged here and reaches the caller, and through the
+        # chat a third-party model, only as its type.
+        print(f"library: {name}: {type(e).__name__}: {e}", file=sys.stderr)
+        raise ToolError(f"{name} failed ({type(e).__name__})")
     if "_image" in result:
         return result
     size = _json_size(result)
