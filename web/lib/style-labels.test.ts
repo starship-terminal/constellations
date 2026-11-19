@@ -27,6 +27,8 @@ describe("themeLabel", () => {
     assert.equal(themeLabel("light-mobile"), "mobile");
     assert.equal(themeLabel("light-high-contrast"), "high contrast");
     assert.equal(themeLabel("dark-experimental"), "dark (exp.)");
+    // Polaris ships this id; both replacements apply.
+    assert.equal(themeLabel("light-high-contrast-experimental"), "high contrast (exp.)");
   });
 
   it("leaves other ids alone", () => {
