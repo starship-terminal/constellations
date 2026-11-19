@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retool style guide</title>
+<style>
+:root {
+  --core-color-raw-black-0: #000000;
+  --core-color-raw-black-1: #0e0e0e;
+  --core-color-raw-black-2: #151515;
+  --core-color-raw-black-3: #242424;
+  --core-color-raw-black-4: #2e2f2d;
+  --core-color-raw-black-5: #3f403d;
+  --core-color-raw-white-0: #ffffff;
+  --core-color-raw-white-1: #f7f8f4;
+  --core-color-raw-white-2: #e9ebdf;
+  --core-color-raw-white-3: #cbccc4;
+  --core-color-raw-white-4: #b6b8af;
+  --core-color-raw-white-5: #94958e;
+  --core-color-raw-gray: #8b867f;
+  --core-color-raw-gray-lightened: #c8bfb5;
+  --core-color-raw-gray-lightest: #ded9d3;
+  --core-color-raw-gray-darkened: #433e38;
+  --core-color-raw-gray-darkest: #282522;
+  --core-color-raw-blue: #518dd2;
+  --core-color-raw-blue-light: #71a2da;
+  --core-color-raw-blue-lighter: #b0ccea;
+  --core-color-raw-blue-lightest: #d8e6f3;
+  --core-color-raw-blue-dark: #2d4c71;
+  --core-color-raw-blue-darker: #1b2e44;
+  --core-color-raw-blue-darkest: #101e2d;
+  --core-color-raw-green: #4d9987;
+  --core-color-raw-orange: #e8765e;
+  --core-color-raw-pink: #cc64ce;
+  --core-color-raw-purple: #9874d2;
+  --core-color-raw-red: #ef4444;
+  --core-color-raw-yellow: #eca438;
+  --core-color-raw-lime: #e0d643;
+  --core-color-raw-critical-8: #e79295;
+  --core-color-raw-critical-10: #f15264;
+  --core-color-raw-critical-11: #c72844;
+  --core-color-raw-critical-12: #651722;
+  --core-color-raw-success-8: #52bb9d;
+  --core-color-raw-success-10: #11997a;
+  --core-color-raw-success-11: #008163;
+  --core-color-raw-success-12: #1a3c32;
+  --core-color-raw-warning-8: #e0a24e;
+  --core-color-raw-warning-10: #f1a42e;
+  --core-color-raw-warning-11: #aa6800;
+  --core-color-raw-warning-12: #4b371d;
+  --core-color-login-page: #ffffff;
+  --core-color-login-text: #222222;
+  --core-color-login-text-ink: #151515;
+  --core-color-login-muted: #808080;
+  --core-color-login-disabled: #b3b3b3;
+  --core-color-login-field: #f7f8f4;
+  --core-color-login-button: #151515;
+  --core-color-login-button-text: #f7f8f4;
+  --core-color-login-google-border: #ebebeb;
+  --core-color-login-focus: #518dd2;
+  --core-color-login-brand: #3170f9;
+  --core-color-login-critical: #dc2626;
+  --core-color-login-success: #059669;
+  --core-color-login-warning: #cd6f00;
+  --core-font-family-display: saansFont, saansFont Fallback, sans-serif;
+  --core-font-family-ui: pxGroteskFont, pxGroteskFont Fallback, sans-serif;
+  --core-font-family-sans: Inter, -apple-system, system-ui, sans-serif;
+  --core-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --core-radius-pill: 9999px;
+  --core-radius-login-field: 8px;
+  --core-radius-login-button: 6px;
+  --core-radius-card: 12px;
+  --core-radius-sm: 4px;
+  --core-radius-md: 6px;
+  --core-radius-lg: 8px;
+  --core-radius-xl: 12px;
+  --core-radius-2xl: 16px;
+  --core-radius-3xl: 24px;
+  --core-spacing-hairline: 1px;
+  --core-spacing-2: 8px;
+  --core-spacing-3: 12px;
+  --core-spacing-4: 16px;
+  --core-spacing-5: 20px;
+  --core-spacing-6: 24px;
+  --core-spacing-nav: 80px;
+  --core-spacing-banner: 40px;
+  --core-spacing-button: 40px;
+  --core-spacing-login-button: 44px;
+  --core-spacing-field: 40px;
+  --core-motion-duration-button: 300ms;
+  --core-motion-duration-default: 150ms;
+  --core-motion-easing-in-out: cubic-bezier(0.72, 0, 0.12, 1);
+  --core-motion-easing-out: cubic-bezier(0.12, 1, 0.72, 1);
+  --core-motion-easing-out-soft: cubic-bezier(0.24, 0.01, 0.36, 1);
+  --core-shadow-login-google: 0px 1px 2px 0px #0000000a;
+  --light-page: #e9ebdf;
+  --light-surface: #f7f8f4;
+  --light-muted-surface: #cbccc4;
+  --light-text: #151515;
+  --light-muted: #242424;
+  --light-accent: #518dd2;
+  --light-border: #1515151f;
+  --light-border-strong: #8b867f;
+  --light-button: #151515;
+  --light-button-text: #e9ebdf;
+  --light-button-hover: #2e2f2d;
+  --light-focus: #518dd2;
+  --light-scrim: #00000099;
+  --light-footer: #151515;
+  --light-critical: #c72844;
+  --light-alert: #e79295;
+  color-scheme: light;
+  --page: var(--light-page);
+  --surface: var(--light-surface);
+  --text: var(--light-text);
+  --muted: var(--light-muted);
+  --accent: var(--light-accent);
+  --border: var(--light-border);
+  --button: var(--light-button);
+  --button-text: var(--light-button-text);
+}
+[data-mode="dark"] {
+  --dark-page: #151515;
+  --dark-surface: #242424;
+  --dark-muted-surface: #0e0e0e;
+  --dark-text: #e9ebdf;
+  --dark-muted: #cbccc4;
+  --dark-accent: #518dd2;
+  --dark-border: #e9ebdf1f;
+  --dark-border-strong: #8b867f;
+  --dark-button: #e9ebdf;
+  --dark-button-text: #151515;
+  --dark-button-hover: #ffffff;
+  --dark-focus: #151515;
+  --dark-scrim: #00000099;
+  --dark-footer: #151515;
+  --dark-critical: #f15264;
+  --dark-alert: #651722;
+  color-scheme: dark;
+  --page: var(--dark-page);
+  --surface: var(--dark-surface);
+  --text: var(--dark-text);
+  --muted: var(--dark-muted);
+  --accent: var(--dark-accent);
+  --border: var(--dark-border);
+  --button: var(--dark-button);
+  --button-text: var(--dark-button-text);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px Inter, ui-sans-serif, system-ui, sans-serif; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+h1 { font: 300 40px/44px ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.02em; margin: 0; }
+h2 { font: 380 22px/28px ui-sans-serif, system-ui, sans-serif; margin: 40px 0 12px; }
+p { max-width: 72ch; color: var(--muted); }
+button.theme { background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 9999px; height: 40px; padding: 0 20px; cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--border); }
+.swatch span, .swatch code { display: block; font-size: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; border-radius: 9999px; background: var(--button); color: var(--button-text); text-decoration: none; font-size: 13px; }
+.btn.line { background: transparent; color: var(--text); border: 1px solid #8b867f; }
+.field { display: block; width: 320px; height: 40px; padding: 0 16px; border: 0; border-radius: 8px; background: #f7f8f4; color: #151515; }
+.field:focus { outline: 2px solid #518dd2; outline-offset: 2px; }
+.card { border: 1px solid var(--border); border-radius: 12px; padding: 24px; max-width: 360px; }
+code { font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Retool</h1>
+  <button class="theme" type="button" id="theme">Theme</button>
+</header>
+<p>Values from computed styles on retool.com, login.retool.com and docs.retool.com, 2026-11-19. Saans and PX Grotesk are not loaded here. The light set is the class probe, not a painted marketing theme.</p>
+<h2>Semantic</h2>
+<div class="row" id="swatches"><div class="swatch"><i style="background:var(--dark-page)"></i><span>page</span><code>var(--dark-page)</code></div>
+<div class="swatch"><i style="background:var(--dark-surface)"></i><span>surface</span><code>var(--dark-surface)</code></div>
+<div class="swatch"><i style="background:var(--dark-text)"></i><span>text</span><code>var(--dark-text)</code></div>
+<div class="swatch"><i style="background:var(--dark-muted)"></i><span>muted</span><code>var(--dark-muted)</code></div>
+<div class="swatch"><i style="background:var(--dark-accent)"></i><span>accent</span><code>var(--dark-accent)</code></div>
+<div class="swatch"><i style="background:var(--dark-border)"></i><span>border</span><code>var(--dark-border)</code></div>
+<div class="swatch"><i style="background:var(--dark-button)"></i><span>button</span><code>var(--dark-button)</code></div>
+<div class="swatch"><i style="background:var(--dark-button-text)"></i><span>button-text</span><code>var(--dark-button-text)</code></div>
+<div class="swatch"><i style="background:var(--dark-critical)"></i><span>critical</span><code>var(--dark-critical)</code></div></div>
+<h2>Controls</h2>
+<div class="row">
+  <a class="btn" href="#buttons">Start for free</a>
+  <a class="btn line" href="#buttons">Book a demo</a>
+</div>
+<h2>Login field</h2>
+<input class="field" placeholder="name@company.com" aria-label="Email">
+<h2>Pricing card</h2>
+<div class="card">
+  <strong>Free</strong>
+  <p>AI credits per month</p>
+  <a class="btn" href="#card">Get started for free</a>
+</div>
+</div>
+<script>
+const root = document.documentElement;
+const button = document.getElementById("theme");
+function paint() {
+  const mode = root.getAttribute("data-mode");
+  button.textContent = mode === "dark" ? "Dark" : "Light";
+  document.getElementById("swatches").innerHTML = `<div class="swatch"><i style="background:var(--dark-page)"></i><span>page</span><code>var(--dark-page)</code></div>
+<div class="swatch"><i style="background:var(--dark-surface)"></i><span>surface</span><code>var(--dark-surface)</code></div>
+<div class="swatch"><i style="background:var(--dark-text)"></i><span>text</span><code>var(--dark-text)</code></div>
+<div class="swatch"><i style="background:var(--dark-muted)"></i><span>muted</span><code>var(--dark-muted)</code></div>
+<div class="swatch"><i style="background:var(--dark-accent)"></i><span>accent</span><code>var(--dark-accent)</code></div>
+<div class="swatch"><i style="background:var(--dark-border)"></i><span>border</span><code>var(--dark-border)</code></div>
+<div class="swatch"><i style="background:var(--dark-button)"></i><span>button</span><code>var(--dark-button)</code></div>
+<div class="swatch"><i style="background:var(--dark-button-text)"></i><span>button-text</span><code>var(--dark-button-text)</code></div>
+<div class="swatch"><i style="background:var(--dark-critical)"></i><span>critical</span><code>var(--dark-critical)</code></div>`.replaceAll("dark-", mode + "-").replaceAll("var(--dark-", "var(--" + mode + "-");
+}
+button.addEventListener("click", () => {
+  root.setAttribute("data-mode", root.getAttribute("data-mode") === "dark" ? "light" : "dark");
+  paint();
+});
+paint();
+</script>
+</body>
+</html>
