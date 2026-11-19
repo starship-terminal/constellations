@@ -134,7 +134,7 @@ export async function styleOf(locator) {
       const p = getComputedStyle(el, pe);
       if (p.content && p.content !== 'none' && p.content !== 'normal') {
         out[pe] = {
-          content: p.content.slice(0, 40), width: p.width, height: p.height, position: p.position,
+          content: noUrl(p.content).slice(0, 40), width: p.width, height: p.height, position: p.position,
           backgroundColor: p.backgroundColor, backgroundImage: noUrl(p.backgroundImage),
           borderRadius: p.borderRadius, boxShadow: noUrl(p.boxShadow),
         };
