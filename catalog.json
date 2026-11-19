@@ -20343,6 +20343,84 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "ssense",
+      "name": "SSENSE",
+      "url": "https://www.ssense.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Signed-out luxury retail: a 55px fixed header with a centred wordmark and 11px uppercase chrome, square black Add to bag, 2:3 product cards, grey struck-through sale prices, and a separate editorial scale in Favorit and JHA Times Now",
+      "tags": [
+        "web",
+        "e-commerce",
+        "fashion",
+        "luxury",
+        "retail",
+        "signed-out",
+        "product-grid"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and storefront only; login was opened and not submitted; bag, wishlist, and checkout were not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/ssense/README.md",
+      "tokens": "systems/ssense/tokens.json",
+      "styleGuide": "systems/ssense/style-guide.html",
+      "preview": {
+        "cover": "systems/ssense/icon.png",
+        "icon": "systems/ssense/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.favorit",
+          "core.font.family.times-now"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "en-sg public site, 2026-11-19",
+        "durationMin": 90,
+        "method": "T3 preview browser, computed styles via preview_evaluate. preview_snapshot failed with 'The browser is not producing screenshot frames', so no screenshots were saved.",
+        "at": "2026-11-19",
+        "routes": [
+          "/en-sg",
+          "/en-sg/men",
+          "/en-sg/men/product/rick-owens/black-adidas-edition-springblade-sneakers/715859867",
+          "/en-sg/account/login",
+          "/en-sg/men?q=rick",
+          "/en-sg/customer-service",
+          "/en-sg/editorial/culture/ruby-justice-thelot-in-defense-of-being-on-line"
+        ],
+        "gaps": [
+          "preview_snapshot failed: The browser is not producing screenshot frames. No screenshots or crops.",
+          "viewport was the pane at 1169x731, dpr 2. 1440 and 390 were not measured.",
+          "dark theme was not painted",
+          "Add to bag, wishlist, login Continue, bag, and checkout were not entered",
+          "hover, pressed, loading, and error were not painted",
+          "reduced-motion pass was not run"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "No icon set was extracted. The wordmark is an inline SVG measured on the header; screenshot frames were not produced.",
+        "screenshots/": "preview_snapshot failed twice with 'The browser is not producing screenshot frames'. Computed styles were kept. No screenshot was invented.",
+        "components/": "Element crops need screenshots. The same frame failure left components/crops empty."
+      }
     }
   ]
 }

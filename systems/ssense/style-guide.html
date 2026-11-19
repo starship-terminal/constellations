@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<title>SSENSE style guide</title>
+<style>
+:root {
+  --font-family-favorit: Favorit SSENSE Inter;
+  --font-family-favorit-inter1: Favorit SSENSE Inter1;
+  --font-family-favorit-regular: "Favorit SSENSE Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-times-now: JHA Times Now;
+  --font-family-inter: interFont, interFont Fallback;
+  --typography-chrome: 400 11px/15px var(--font-family-favorit);
+  --typography-storefront: 400 11px/15px var(--font-family-inter);
+  --typography-login-heading: 400 11px/14.96px var(--font-family-favorit);
+  --typography-faq-title: 400 15px/20px var(--font-family-favorit);
+  --typography-faq-group: 700 13px/20px var(--font-family-favorit);
+  --typography-tile-headline: 400 19px/26px var(--font-family-favorit-inter1);
+  --typography-tile-label: 100 12.35px/16px var(--font-family-favorit-inter1);
+  --typography-row-title: 400 28.5px/34px var(--font-family-favorit-inter1);
+  --typography-editorial-hero: 100 49.875px/56px var(--font-family-favorit-inter1);
+  --typography-editorial-deck: 100 40px/44px var(--font-family-times-now);
+  --typography-editorial-body: 100 30px/34px var(--font-family-times-now);
+  --typography-category-serif: 100 13px/16px var(--font-family-times-now);
+  --radius-none: 0px;
+  --radius-cta: 10px;
+  --spacing-5: 5px;
+  --spacing-9: 9px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-18: 18px;
+  --spacing-20: 20px;
+  --spacing-25: 25px;
+  --spacing-55: 55px;
+  --spacing-68: 68px;
+  --motion-drawer: 0.2s;
+  --motion-main: 0.35s;
+  --motion-dot: 0.1s;
+  --background-page: rgb(255, 255, 255);
+  --background-surface: rgb(255, 255, 255);
+  --background-action: rgb(0, 0, 0);
+  --background-muted: rgb(251, 251, 251);
+  --background-disabled: rgb(182, 182, 182);
+  --text-primary: rgb(0, 0, 0);
+  --text-secondary: rgb(51, 51, 51);
+  --text-muted: rgb(136, 136, 136);
+  --text-on-action: rgb(255, 255, 255);
+  --text-placeholder: rgb(182, 182, 182);
+  --border-stroke: rgb(182, 182, 182);
+  --border-strong: rgb(0, 0, 0);
+  --border-field: rgb(119, 119, 119);
+  --border-editorial: rgb(151, 151, 151);
+  --focus-outline: rgb(229, 151, 0);
+  --component-header-bg: rgb(255, 255, 255);
+  --component-header-height: 55px;
+  --component-button-bg: rgb(0, 0, 0);
+  --component-button-text: rgb(255, 255, 255);
+  --component-button-radius: 0px;
+  --component-button-height: 35px;
+  --component-field-bg: rgba(0, 0, 0, 0);
+  --component-field-text: rgb(0, 0, 0);
+  --component-field-radius: 0px;
+  --component-field-height: 30px;
+  --component-cta-bg: rgba(0, 0, 0, 0);
+  --component-cta-text: rgb(51, 51, 51);
+  --component-cta-radius: 10px;
+  --component-cta-height: 36px;
+}
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 11px/15px "Favorit SSENSE Inter", Helvetica, Arial, sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 55px 20px 40px; }
+h1 { font-size: 15px; font-weight: 400; line-height: 20px; letter-spacing: 0.09px; text-transform: uppercase; }
+h2 { font-size: 13px; font-weight: 700; line-height: 20px; margin-top: 32px; }
+p.note { color: rgb(136, 136, 136); max-width: 62em; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 48px; border: 1px solid rgb(182, 182, 182); }
+.swatch span, .swatch code { display: block; font-size: 11px; line-height: 15px; }
+.type { margin: 10px 0; color: rgb(51, 51, 51); }
+.row { display: flex; gap: 10px; align-items: center; margin: 12px 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 35px; padding: 0 18px; background: var(--background-action); color: var(--text-on-action); border: 1px solid rgb(0, 0, 0); text-transform: uppercase; }
+.cta { display: inline-flex; align-items: center; height: 36px; padding: 0 18px; border: 1px solid var(--border-editorial); border-radius: var(--radius-cta); color: var(--text-secondary); text-transform: uppercase; }
+.field { display: block; width: 380px; max-width: 100%; height: 30px; box-sizing: border-box; border: 1px solid var(--border-strong); padding: 0 6px; background: transparent; color: var(--text-primary); font: inherit; }
+.was { color: var(--text-muted); text-decoration: line-through; margin-left: 5px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>SSENSE</h1>
+  <p class="note">Measured signed out on ssense.com/en-sg, 2026-11-19, viewport 1169 by 731. Light only. Proprietary fonts fall back to Helvetica in this file.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:rgb(255, 255, 255)"></i><span>background-page</span><code>rgb(255, 255, 255)</code></div><div class="swatch"><i style="background:rgb(255, 255, 255)"></i><span>background-surface</span><code>rgb(255, 255, 255)</code></div><div class="swatch"><i style="background:rgb(0, 0, 0)"></i><span>background-action</span><code>rgb(0, 0, 0)</code></div><div class="swatch"><i style="background:rgb(251, 251, 251)"></i><span>background-muted</span><code>rgb(251, 251, 251)</code></div><div class="swatch"><i style="background:rgb(182, 182, 182)"></i><span>background-disabled</span><code>rgb(182, 182, 182)</code></div><div class="swatch"><i style="background:rgb(0, 0, 0)"></i><span>text-primary</span><code>rgb(0, 0, 0)</code></div><div class="swatch"><i style="background:rgb(51, 51, 51)"></i><span>text-secondary</span><code>rgb(51, 51, 51)</code></div><div class="swatch"><i style="background:rgb(136, 136, 136)"></i><span>text-muted</span><code>rgb(136, 136, 136)</code></div><div class="swatch"><i style="background:rgb(255, 255, 255)"></i><span>text-on-action</span><code>rgb(255, 255, 255)</code></div><div class="swatch"><i style="background:rgb(182, 182, 182)"></i><span>text-placeholder</span><code>rgb(182, 182, 182)</code></div><div class="swatch"><i style="background:rgb(182, 182, 182)"></i><span>border-stroke</span><code>rgb(182, 182, 182)</code></div><div class="swatch"><i style="background:rgb(0, 0, 0)"></i><span>border-strong</span><code>rgb(0, 0, 0)</code></div><div class="swatch"><i style="background:rgb(119, 119, 119)"></i><span>border-field</span><code>rgb(119, 119, 119)</code></div><div class="swatch"><i style="background:rgb(151, 151, 151)"></i><span>border-editorial</span><code>rgb(151, 151, 151)</code></div><div class="swatch"><i style="background:rgb(229, 151, 0)"></i><span>focus-outline</span><code>rgb(229, 151, 0)</code></div><div class="swatch"><i style="background:rgb(255, 255, 255)"></i><span>component-header-bg</span><code>rgb(255, 255, 255)</code></div><div class="swatch"><i style="background:rgb(0, 0, 0)"></i><span>component-button-bg</span><code>rgb(0, 0, 0)</code></div><div class="swatch"><i style="background:rgb(255, 255, 255)"></i><span>component-button-text</span><code>rgb(255, 255, 255)</code></div><div class="swatch"><i style="background:rgba(0, 0, 0, 0)"></i><span>component-field-bg</span><code>rgba(0, 0, 0, 0)</code></div><div class="swatch"><i style="background:rgb(0, 0, 0)"></i><span>component-field-text</span><code>rgb(0, 0, 0)</code></div><div class="swatch"><i style="background:rgba(0, 0, 0, 0)"></i><span>component-cta-bg</span><code>rgba(0, 0, 0, 0)</code></div><div class="swatch"><i style="background:rgb(51, 51, 51)"></i><span>component-cta-text</span><code>rgb(51, 51, 51)</code></div>
+  </div>
+  <h2>Type</h2>
+  <p class="type" style="font: 400 11px/15px {font.family.favorit};letter-spacing:0px">typography-chrome · SSENSE</p><p class="type" style="font: 400 11px/15px {font.family.inter};letter-spacing:0px">typography-storefront · SSENSE</p><p class="type" style="font: 400 11px/14.96px {font.family.favorit};letter-spacing:0.09px">typography-login-heading · SSENSE</p><p class="type" style="font: 400 15px/20px {font.family.favorit};letter-spacing:0px">typography-faq-title · SSENSE</p><p class="type" style="font: 700 13px/20px {font.family.favorit};letter-spacing:0px">typography-faq-group · SSENSE</p><p class="type" style="font: 400 19px/26px {font.family.favorit-inter1};letter-spacing:-0.25px">typography-tile-headline · SSENSE</p><p class="type" style="font: 100 12.35px/16px {font.family.favorit-inter1};letter-spacing:-0.05px">typography-tile-label · SSENSE</p><p class="type" style="font: 400 28.5px/34px {font.family.favorit-inter1};letter-spacing:-0.5px">typography-row-title · SSENSE</p><p class="type" style="font: 100 49.875px/56px {font.family.favorit-inter1};letter-spacing:-2px">typography-editorial-hero · SSENSE</p><p class="type" style="font: 100 40px/44px {font.family.times-now};letter-spacing:-1px">typography-editorial-deck · SSENSE</p><p class="type" style="font: 100 30px/34px {font.family.times-now};letter-spacing:-0.65px">typography-editorial-body · SSENSE</p><p class="type" style="font: 100 13px/16px {font.family.times-now};letter-spacing:0px">typography-category-serif · SSENSE</p>
+  <h2>Controls</h2>
+  <div class="row"><button class="btn" type="button">Add to bag</button><button class="cta" type="button">Shop menswear</button></div>
+  <label>Email address</label>
+  <input class="field" type="email" aria-label="Email address">
+  <p>$645 <span class="was">$885</span></p>
+</main>
+</body>
+</html>
