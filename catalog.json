@@ -20343,6 +20343,73 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "rive",
+      "name": "Rive",
+      "url": "https://rive.app",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Dark motion-tool marketing: black page, Orbitron display, white uppercase CTA, amber brand, blue auth action on a white panel",
+      "tags": [
+        "web",
+        "marketing",
+        "motion",
+        "design-tool",
+        "dark",
+        "mono"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (login and signup were measured and not submitted)",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/rive/README.md",
+      "tokens": "systems/rive/tokens.json",
+      "styleGuide": "systems/rive/style-guide.html",
+      "preview": {
+        "cover": "systems/rive/icon.png",
+        "icon": "systems/rive/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.textMuted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          },
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 70,
+        "version": "public site 2026-11-19"
+      },
+      "layoutGaps": {
+        "screenshots/": "The T3 preview browser returned 'The browser is not producing screenshot frames' on every snapshot, so no page capture was saved.",
+        "components/": "No crops. Screenshot frames failed, so component evidence is the computed-style JSON in raw/.",
+        "icons/": "Inline SVGs were seen (nav chevrons) but the icon extraction pass was not run, and no screenshot could confirm them."
+      }
     }
   ]
 }
