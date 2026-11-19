@@ -392,11 +392,28 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
     # it matches the branch tip.
     branch_rows = branch_catalog()
     if branch_rows is not None and set(branch_rows) < set(head_rows):
-        if all(head_rows.get(slug) == row for slug, row in branch_rows.items()):
-            branch_expected = coverage_mod.build(
-                directory, {**head_catalog, "systems": list(branch_rows.values())})
-            if actual == branch_expected:
-                return True
+        if any(head_rows.get(slug) != row for slug, row in branch_rows.items()):
+            # The branch tip edited a row the merge also carries. That is a
+            # capture edit, whether or not the committed file matches it.
+            return False
+        branch_expected = coverage_mod.build(
+            directory, {**head_catalog, "systems": list(branch_rows.values())})
+        if actual == branch_expected:
+            return True
+    # A checker-only pull request adds no catalog row, so the return below
+    # would reject a file that still lags packages already on main. Accept
+    # that derivation only when it omits a base package and every package
+    # it names still matches the base. A renamed row fails that second
+    # check. A file that matches the base keeps going.
+    named = packages_in_coverage(actual)
+    rows_match = all(
+        slug not in base_rows or head_rows.get(slug) == base_rows[slug]
+        for slug in named)
+    if (named < set(base_rows)
+            and rows_match
+            and actual != expected
+            and coverage_is_prior_derivation(directory, head_catalog, actual)):
+        return True
     if not set(head_rows) - set(base_rows):
         return False
     # The committed file may be the current base, or a base that already
@@ -462,8 +479,53 @@ def coverage_is_prior_derivation(directory: dict, head_catalog: dict,
         return False
     kept = [base_rows[slug] if slug in base_rows else head_rows[slug]
             for slug in named]
-    return actual == coverage_mod.build(
-        directory, {**base, "systems": kept})
+    built = coverage_mod.build(directory, {**base, "systems": kept})
+    return coverage_same_rows(actual, built)
+
+
+def coverage_same_rows(actual: dict, built: dict) -> bool:
+    """True when both files name the same domain rows, ignoring order.
+
+    The builder walks catalog systems in list order, and a subset built
+    from a set walks them in hash order. The same packages then produce
+    the same domain rows in a different order. A changed row still fails."""
+    def rows(doc):
+        found = {}
+        for key in ("matched", "missing", "systems_absent_from_catalog"):
+            for dom, row in (doc.get(key) or {}).items():
+                found[dom] = (key, row)
+        return found
+    left, right = rows(actual), rows(built)
+    if set(left) != set(right):
+        return False
+    # Counts do not depend on package order. A wrong total is a hand edit.
+    if actual.get("totals") != built.get("totals"):
+        return False
+    return all(same_coverage_row(left[dom], right[dom]) for dom in left)
+
+
+def same_coverage_row(left, right) -> bool:
+    key_l, row_l = left
+    key_r, row_r = right
+    if key_l != key_r:
+        return False
+    return _order_free(row_l) == _order_free(row_r)
+
+
+def _order_free(value):
+    """The value with list order removed and every field kept.
+
+    Package lists and catalog lists change order when the subset walks a
+    set. A changed name, url, or name_match stays a difference."""
+    if isinstance(value, list):
+        return sorted((_order_free(item) for item in value), key=_sort_key)
+    if isinstance(value, dict):
+        return {key: _order_free(item) for key, item in value.items()}
+    return value
+
+
+def _sort_key(value) -> str:
+    return json.dumps(value, sort_keys=True, default=str)
 
 
 def _pkg_slugs(row) -> set[str]:
