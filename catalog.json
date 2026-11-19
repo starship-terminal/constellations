@@ -20343,6 +20343,91 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "meta-ai",
+      "name": "Meta AI",
+      "url": "https://www.meta.ai/",
+      "category": "ai-chat",
+      "platform": "web",
+      "goodFor": "Signed-out assistant marketing: a dark page (#181819) with optimisticAI, 9999px pills, a 32px-radius glass composer, and a separate light auth card at 16px radius",
+      "tags": [
+        "web",
+        "ai",
+        "chat",
+        "assistant",
+        "dark",
+        "signed-out",
+        "pills"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. The product page at www.meta.ai was read in the T3 preview browser. Log in opened auth.meta.com. The email field was focused and left empty. Continue was not pressed. No message was sent.",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/meta-ai/README.md",
+      "tokens": "systems/meta-ai/tokens.json",
+      "styleGuide": "systems/meta-ai/style-guide.html",
+      "preview": {
+        "cover": "systems/meta-ai/icon.png",
+        "icon": "systems/meta-ai/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.raised",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent",
+            "border": "dark.border.subtle"
+          },
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.control",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.control"
+          }
+        },
+        "fonts": [
+          "core.font.family.optimistic",
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "www.meta.ai in the T3 Code preview browser, desktop innerWidth 1440 and phone innerWidth 390. Computed styles read with preview_evaluate. curl to the same host returned HTTP 403, so headless Playwright was not launched. preview_snapshot failed four times with no screenshot frames.",
+        "timestamp": "2026-11-19T00:30:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "unversioned public web, 2026-11-19",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "auth.meta.com login card",
+          "auth.meta.com email step (focused, not submitted)"
+        ],
+        "gaps": [
+          "No page screenshots. preview_snapshot returned no frames. Headless Playwright was not used because curl got HTTP 403.",
+          "Signed-in chat, history and settings were not entered.",
+          "Auth stopped before submit. The flow offers a mobile number, which was not used.",
+          "The product page had no light theme toggle. Light tokens are the auth card only.",
+          "Settings menu did not open."
+        ],
+        "pr": "https://github.com/starship-terminal/constellations/pull/694",
+        "durationMin": 50
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned no frames four times (The browser is not producing screenshot frames). curl to www.meta.ai returned HTTP 403, so headless Playwright was not launched. No substitute image is stored as a screenshot.",
+        "components/": "Component crops need page screenshots. The same capture failure left this folder out."
+      }
     }
   ]
 }
