@@ -20343,6 +20343,87 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "wealthsimple",
+      "name": "Wealthsimple",
+      "url": "https://www.wealthsimple.com/en-ca",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Brokerage marketing and signed-out login: off-white page #FCFCFC, slate pills, The Future and Tiempos, app dark page #0D0D0D with a #F2F2F2 login pill.",
+      "tags": [
+        "web",
+        "finance",
+        "brokerage",
+        "marketing",
+        "signed-out",
+        "pills"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (Canada marketing and login chrome only; signup stopped at preferred name, email, and password; no account, email, password, card, bank, or KYC)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/wealthsimple/README.md",
+      "tokens": "systems/wealthsimple/tokens.json",
+      "styleGuide": "systems/wealthsimple/style-guide.html",
+      "preview": {
+        "cover": "systems/wealthsimple/icon.png",
+        "icon": "systems/wealthsimple/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          },
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.future",
+          "core.font.tiempos",
+          "core.font.sans"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "light.color."
+        ],
+        "typography": [
+          "core.typography."
+        ],
+        "rounded": [
+          "core.radius."
+        ],
+        "spacing": [
+          "core.spacing."
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "Preview snapshot failed with 'The browser is not producing screenshot frames'. Headless Chromium against the same public URLs returned HTTP 403 from a security service, so those frames were discarded.",
+        "components/": "Element crops need screenshots. The same preview and headless capture failure left components/crops empty."
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45,
+        "version": "signed-out web, 2026-11-19"
+      }
     }
   ]
 }
