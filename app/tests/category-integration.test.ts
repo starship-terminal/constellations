@@ -9,6 +9,8 @@ import {
   type CuratedCategory,
 } from "@/contracts/categories";
 import { queryScreens } from "@/server/sources/screens";
+import { platformSearch } from "@/features/catalog-search-state";
+import { taxonomyGroups } from "@/contracts/taxonomy";
 import assignments from "@/data/system-categories.json";
 import catalog from "../../catalog.json";
 import { libraryItem, tempStore } from "./helpers";
@@ -139,6 +141,37 @@ describe("database categories across apps and screens", () => {
     expect(cleared.category).toBe("");
     expect(cleared.categoryIds).toEqual([]);
     expect(matchesCategory(cleared, UNCATEGORISED)).toBe(true);
+  });
+  it("keeps an uncurated package under its category when a platform switch rewrites the link", async () => {
+    const seeded = new Set(assignments.map((entry) => entry.referenceId));
+    const finance = catalogRows().find(
+      (row) =>
+        !seeded.has(`systems:${row.slug}`) &&
+        row.category === "finance" &&
+        row.platform === "web",
+    );
+    expect(finance).toBeDefined();
+    const [reference] = await withReferenceCategories([
+      libraryItem(finance!.slug, { category: "finance" }),
+    ]);
+    const rewritten = platformSearch(
+      new URLSearchParams("category=finance"),
+      "web",
+      taxonomyGroups,
+      [],
+    ).get("category")!;
+    expect(rewritten).toBe("web-categories:finance");
+    expect(matchesCategory(reference, "finance")).toBe(true);
+    expect(matchesCategory(reference, rewritten)).toBe(true);
+    // A link naming several labels is never rewritten, so a package with
+    // only that catalog category is not spread across those labels' terms.
+    const productivity = libraryItem("uncurated-planner", {
+      category: "productivity",
+    });
+    expect(matchesCategory(productivity, "productivity")).toBe(true);
+    expect(
+      matchesCategory(productivity, "web-categories:development-tools"),
+    ).toBe(false);
   });
   it("hydrates from SQLite and shares the same assignments with screen filters", async () => {
     // Edit a private store: the shared one feeds the other tests in this file.

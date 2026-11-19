@@ -155,5 +155,17 @@ export function matchesCategory(
     return item.categoryIds.some((id) =>
       targets.includes(categorySlug(id.split(":").at(-1) || id)),
     );
-  return categoryGroup(item.category) === categoryGroup(query);
+  if (categoryGroup(item.category) === categoryGroup(query)) return true;
+  // An item with only a catalog category (a package the seed never curated)
+  // also matches the one term its old link names. Switching platform
+  // rewrites such a link, `finance` say, to that term's ID. A link naming
+  // several labels stays a link, so it never needs this.
+  const own = Object.hasOwn(legacyCategoryLabels, item.category)
+    ? legacyCategoryLabels[item.category]
+    : undefined;
+  return (
+    query.includes(":") &&
+    typeof own === "string" &&
+    targets.includes(categorySlug(own))
+  );
 }
