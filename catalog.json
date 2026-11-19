@@ -20343,6 +20343,96 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "stocksy",
+      "name": "Stocksy",
+      "url": "https://www.stocksy.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "A dark stock-library browse: black page, Poppins at light weights, a #0ae47c pill on search and add-to-cart, white fields on the dark shell, and a public pricing list with no checkout button.",
+      "tags": [
+        "web",
+        "media",
+        "stock",
+        "photography",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public browse only. Login, cart, checkout, follow, share and the business request were not submitted.",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/stocksy/README.md",
+      "tokens": "systems/stocksy/tokens.json",
+      "styleGuide": "systems/stocksy/style-guide.html",
+      "preview": {
+        "cover": "systems/stocksy/icon.png",
+        "icon": "systems/stocksy/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.surface",
+            "text": "dark.color.text.strong",
+            "muted": "dark.color.text.muted",
+            "accent": "dark.color.action.fill",
+            "border": "dark.color.border.default"
+          },
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.surface",
+            "text": "light.color.text.body",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.action.fill",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.brand"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "Live T3 preview browser, computed styles via preview_evaluate. Desktop 1440x900 and phone 390x844, plus one 1169x731 fill pass. No screenshots.",
+        "timestamp": "2026-11-19T00:00:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "https://www.stocksy.com/",
+          "https://www.stocksy.com/pricing",
+          "https://www.stocksy.com/search/photo?text=ocean",
+          "https://www.stocksy.com/photo/7746947/young-man-lays-in-bed-binge-watching-shows-on-his-laptop",
+          "https://www.stocksy.com/category/healthcare",
+          "https://www.stocksy.com/service/about/",
+          "https://www.stocksy.com/business",
+          "https://www.stocksy.com/resources",
+          "https://www.stocksy.com/this-page-does-not-exist-capture",
+          "https://www.stocksy.com/user/login (gate only)"
+        ],
+        "gaps": [
+          "No screenshots. preview_snapshot failed: The browser is not producing screenshot frames. Headless Playwright returned Cloudflare HTTP 403.",
+          "Login, signup, cart, checkout, Add to Cart, Follow, Share and the business request were not submitted.",
+          "The business form asks for a phone number.",
+          "Hover and pressed states were not forced on live controls.",
+          "Hamburger menu, cookie preference toggles, select menu, tooltip, toast, checkbox, radio and switch were not captured.",
+          "No computed prefers-reduced-motion pass."
+        ],
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/834"
+      },
+    "layoutGaps": {
+          "components/": "The preview browser produced no screenshot frames, so no component crops were saved.",
+          "screenshots/": "The preview browser produced no screenshot frames. No image was invented. The catalog cover is icon.png."
     }
+  }
   ]
 }

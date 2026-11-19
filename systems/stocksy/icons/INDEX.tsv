@@ -1,0 +1,19 @@
+file	role	source
+shopping-cart.svg	Cart. Injected in the nav from /dist/images/icons/shopping-cart.svg.	/dist/images/icons/shopping-cart.svg
+search.svg	Search. Public icon file /dist/images/icons/search.svg.	/dist/images/icons/search.svg
+heart.svg	Like. Public icon file. The photo page Like control uses a heart.	/dist/images/icons/heart.svg
+user.svg	Account. Public icon file /dist/images/icons/user.svg.	/dist/images/icons/user.svg
+menu.svg	Mobile menu. Public icon file /dist/images/icons/menu.svg. The 390 nav exposes a hamburger.	/dist/images/icons/menu.svg
+chevron-down.svg	Disclosure. Inline chevron on nav and filter rows.	/dist/images/icons/chevron-down.svg
+image.svg	Search by image. Inline stroke icon beside the hero visual-search control.	/dist/images/icons/image.svg
+globe.svg	Insights. Inline globe in the nav.	/dist/images/icons/globe.svg
+camera.svg	Public icon file /dist/images/icons/camera.svg.	/dist/images/icons/camera.svg
+play.svg	Video. Public icon file /dist/images/icons/play.svg.	/dist/images/icons/play.svg
+download.svg	Public icon file /dist/images/icons/download.svg. Not seen pressed.	/dist/images/icons/download.svg
+plus.svg	Public icon file /dist/images/icons/plus.svg.	/dist/images/icons/plus.svg
+check.svg	Public icon file /dist/images/icons/check.svg.	/dist/images/icons/check.svg
+star.svg	Public icon file /dist/images/icons/star.svg.	/dist/images/icons/star.svg
+eye.svg	Show password. Public icon file. The login form has a Show control; the icon file exists.	/dist/images/icons/eye.svg
+mail.svg	Public icon file /dist/images/icons/mail.svg.	/dist/images/icons/mail.svg
+x.svg	Close. Public icon file /dist/images/icons/x.svg.	/dist/images/icons/x.svg
+logo.svg	Wordmark. Fetched from /dist/images/logoStocksy.svg. Seen in the nav.	/dist/images/logoStocksy.svg
