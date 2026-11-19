@@ -20343,6 +20343,94 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "overflow",
+      "name": "Overflow",
+      "url": "https://overflow.io/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "User-flow product marketing on a light Inter site: black 8px primary buttons, a blue-violet hero wash with a 56px extra-bold headline, grey section bands, 24px plan cards, and a signed-out app shell with an ice-blue panel and a #0071db action",
+      "tags": [
+        "web",
+        "marketing",
+        "design-tools",
+        "saas",
+        "light",
+        "signed-out",
+        "inter"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing pages and the signed-out shell at /n/signin and /n/signup; forms were not submitted; Google, SSO, download, subscribe and payment were not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/overflow/README.md",
+      "tokens": "systems/overflow/tokens.json",
+      "styleGuide": "systems/overflow/style-guide.html",
+      "preview": {
+        "cover": "systems/overflow/screenshots/home-light-default.png",
+        "icon": "systems/overflow/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.app-action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.inter",
+          "core.font.family.interVar"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "overflow.io in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass, on 2026-11-19. Marketing values are computed styles. The signed-out shell's 257 custom properties were resolved on body at /n/signin. No form was submitted.",
+        "timestamp": "2026-11-19T01:40:00Z",
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing/",
+          "/features/",
+          "/how-it-works/",
+          "/download/",
+          "/examples/",
+          "/blog/",
+          "/enterprise/",
+          "/integrations/",
+          "/stories/",
+          "/n/signin",
+          "/n/signup",
+          "mobile /, /pricing/, /n/signin"
+        ],
+        "gaps": [
+          "signed-in product never entered",
+          "sign-in and sign-up forms were not submitted; Google and SSO were not clicked",
+          "signup asks for a name and a password, so it is not an email-only form and AgentMail was not used",
+          "/n/forgot returns the app 404",
+          "support.overflow.io returned 403",
+          "no dark theme: prefers-color-scheme dark did not repaint either surface",
+          "hero gradient stops are painted, not a CSS background-image",
+          "payment, desktop download and newsletter subscribe were not entered"
+        ],
+        "durationMin": 90,
+        "durationNote": "wall-clock across the capture session including the page probe, stylesheet harvest, measurement passes and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/745"
+      },
+      "layoutGaps": {
+        "icons/": "the icomoon icon font is not shipped; a few inline SVGs are in icons/ and the rest are visible in the screenshots"
+      }
     }
   ]
 }
