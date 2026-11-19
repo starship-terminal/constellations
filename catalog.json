@@ -20343,6 +20343,92 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "stripe",
+      "name": "Stripe",
+      "url": "https://stripe.com",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Payments marketing: a 36px navy announcement bar, a 76px header, Sohne at weight 300, a 4px purple #533afd button, and a login wall that stops at the card",
+      "tags": [
+        "web",
+        "finance",
+        "payments",
+        "marketing",
+        "light",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing pages, docs.stripe.com, and the login and register walls at dashboard.stripe.com; no signup, KYC, card, or account)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/stripe/README.md",
+      "tokens": "systems/stripe/tokens.json",
+      "styleGuide": "systems/stripe/style-guide.html",
+      "preview": {
+        "cover": "systems/stripe/screenshots/home-light-default.png",
+        "icon": "systems/stripe/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "stripe.com, docs.stripe.com and dashboard.stripe.com/login and /register in headless Chromium, desktop 1440x900 and phone 390x844, on 2026-11-19. The T3 preview browser read the home DOM and did not produce screenshot frames. Custom properties were read from the marketing CSS and resolved on documentElement. Component styles were computed on the live DOM. Login and register were photographed and not submitted.",
+        "timestamp": "2026-11-19T02:40:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/products",
+          "/customers",
+          "/enterprise",
+          "/startups",
+          "/contact/sales",
+          "/about",
+          "/newsroom",
+          "/jobs",
+          "/privacy",
+          "docs.stripe.com",
+          "dashboard.stripe.com/login",
+          "dashboard.stripe.com/register",
+          "mobile / /pricing login"
+        ],
+        "gaps": [
+          "Sign-in at https://dashboard.stripe.com/login was photographed at rest. Nothing was typed. Sign in, Google, Passkey, SSO and Forgot password were not followed.",
+          "Register at https://dashboard.stripe.com/register was photographed and not submitted. No account was created. No card, bank, phone or government ID was entered.",
+          "The blurred dashboard behind the register card is the wall's backdrop, not a signed-in capture.",
+          "The T3 preview browser returned 'The browser is not producing screenshot frames'. Screenshots are from headless Chromium on public pages that loaded without a Cloudflare challenge.",
+          "Cookie banners were hidden in CSS and never clicked.",
+          "Menus, the country select and the newsletter form were not opened or submitted.",
+          "Dark mode was not painted on these pages.",
+          "Long pages are cropped to the top 6000px. Phone shots are one viewport."
+        ],
+        "durationMin": 70,
+        "pr": ""
+      }
     }
   ]
 }
