@@ -95,10 +95,18 @@ the last screenshot, from the navigation that is actually on screen.
    builders, reply `in_reply_to` on every comment, resolve every
    thread via GraphQL `resolveReviewThread`. Then merge
    `origin/main` (`--theirs` for catalog.json/README.md/AGENTS.md/
-   scorecard/refero-coverage/media-taxonomy; re-append your package's
+   refero-coverage/media-taxonomy; re-append your package's
    catalog entry + category keys; bump AGENTS "the packages (N)" to
    the real `systems/` dir count), regenerate, re-check, push.
-9. Merge when every thread is resolved (`gh pr merge --squash`), then
+   Never resolve `scorecard/` by taking one side: rerun `make grade`
+   after merging main. When both sides added a snapshot under the same
+   name (`scorecard/audits/<date>-N.json`), keep main's file at that
+   name (`git checkout --theirs <path>`) and save your side's copy
+   under the next free number (`git show :2:<path> >
+   scorecard/audits/<date>-<next>.json`), so no snapshot is dropped,
+   then rerun `make grade`.
+9. Merge when every check is green and every thread is resolved
+   (`gh pr merge --squash`); a red check blocks the merge. Then
    **clean up**: `git worktree remove`, delete `~/.design-systems/<slug>`,
    delete the merged branch.
 
@@ -159,8 +167,9 @@ want to eyeball an image locally.
 - GitHub's `mergeable` lags: after each squash merge, sibling PRs go
   CONFLICTING on the shared generated files. Budget one
   merge-main+regen cycle per PR; the procedure above is mechanical.
-- CI (check/app/build/web jobs) fails fast on a repo billing issue —
-  known, not a code failure; local `make check` is the gate.
+- CI is the gate. The Check workflow runs on every pull request, and
+  Web and Research app run when their paths change; a red check blocks
+  the merge. Run `make check` locally before pushing.
 - Parallelism: one worktree per app + background subagents works;
   transcripts die on session churn but worktrees survive on disk.
 - Scratch dirs can fill the disk (an unbounded tiler once wrote
