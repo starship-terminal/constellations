@@ -136,6 +136,22 @@ class CardShapes(unittest.TestCase):
         self.assertEqual(unit[3:5], ["16px", "#ffffff (on `div.inner`)"])
         self.assertEqual(story[3:5], ["-", "#ffffff"])
 
+    def test_a_rounded_unpainted_root_borrows_and_a_wide_short_child_does_not(self):
+        rounded = {**CLEAR, **{f"border{c}Radius": "24px" for c in ("TopLeft", "TopRight", "BottomRight", "BottomLeft")}}
+        rows = self.rows({
+            # a transparent, borderless root with only a radius (Gauth's settings popover): the same-sized
+            # white child is its look, border and shadow included
+            "settings-popover": card(rounded, [{"node": "div.panel", "size": "300.0x200.0", "bg": "rgb(255, 255, 255)",
+                                                "border": "T:1px solid rgb(0, 0, 0)", "shadow": "rgba(0, 0, 0, 0.2) 0px 4px 12px 0px"}]),
+            # a 600x100 child has more area than the 300x200 card but covers at most half of it
+            "feature-card": card(CLEAR, [{"node": "div.strip", "size": "600.0x100.0", "bg": "rgb(255, 0, 0)", "radius": "4px"}]),
+        })
+        feature, popover = rows   # in the builder's card order
+        self.assertEqual(popover[3:5], ["24px", "#ffffff (on `div.panel`)"])
+        self.assertIn("#000000", popover[2])
+        self.assertNotEqual(popover[5], "none")
+        self.assertEqual(feature[3:5], ["-", "transparent"])
+
 
 class SignedInComponentsBuilder(unittest.TestCase):
     def test_focus_without_focus_visible_is_left_out_of_the_tally(self):
