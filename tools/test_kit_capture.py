@@ -40,7 +40,9 @@ class OneLightSwitch(unittest.TestCase):
         own = [f.name for f in sorted(signed.glob("*.mjs")) if f.name != "lib.mjs" and "setAttribute('data-mode'" in f.read_text()]
         self.assertEqual(own, [])
         for f in ("render.mjs", "measure.mjs"):
-            self.assertRegex((signed / f).read_text(), r"\bsetLight\b", f)
+            # a call, not the import or a comment: code lines only, and an awaited call with an argument
+            code = "\n".join(l for l in (signed / f).read_text().splitlines() if not l.lstrip().startswith("//"))
+            self.assertRegex(code, r"\bawait setLight\(\w+\)", f)
 
 
 @unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
