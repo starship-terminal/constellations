@@ -20014,6 +20014,65 @@
         "route": "public-web",
         "durationMin": 40
       }
+    },
+{
+      "slug": "skyscanner",
+      "name": "Skyscanner",
+      "url": "https://www.skyscanner.com",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Travel search marketing: an ink hero, white 72px search row, blue Search button, 8px chips and 18px tabs, Skyscanner Relative",
+      "tags": [
+        "web",
+        "travel",
+        "search",
+        "flights",
+        "marketing",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing and the search form only. Cookie banner dismissed with essential only. Login modal closed. No email, booking, card or phone.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/skyscanner/README.md",
+      "tokens": "systems/skyscanner/tokens.json",
+      "styleGuide": "systems/skyscanner/style-guide.html",
+      "preview": {
+        "cover": "systems/skyscanner/icon.png",
+        "icon": "systems/skyscanner/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.relative"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "www.skyscanner.com.sg public homepage",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": ""
+      },
+      "layoutGaps": {
+        "screenshots/": "The preview browser returned no screenshot frames, so no page captures were saved",
+        "components/": "No crops. Same missing frames"
+      }
     }
   ]
 }
