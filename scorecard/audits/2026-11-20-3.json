@@ -1,7 +1,7 @@
 {
  "date": "2026-11-20",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture review. On 2026-11-20 the reviews of classpass, clay-earth, clearful, dji, forhers, huddlekit and intercom, which their captures wrote to review files but never merged, were merged unchanged from those files, and ikea's review was rebuilt from the Health section of commit 109098807; ikea's six meets grades (F3, F5, F7, F8, F9, K1) have no surviving evidence text.",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture review. On 2026-11-20 the reviews of classpass, clay-earth, clearful, dji, forhers, huddlekit and intercom, which their captures wrote to review files but never merged, were merged unchanged from those files; so were the later reviews of chargetrip (after its mismeasured-surface fix) and kitchen (its signed-in recapture), whose snapshots were overwritten by same-named sibling snapshots. ikea's review was rebuilt from the Health section of commit 109098807; its six meets grades (F3, F5, F7, F8, F9, K1) have no surviving evidence text.",
  "systems": [
   {
    "slug": "1password",
@@ -23834,7 +23834,7 @@
     },
     "F4": {
      "grade": "partly",
-     "evidence": "border.subtle #e4e1d5 and border.onDark #4d4846 tokenise the dashed hairlines inside the plan cards, and light.focus #005fcc the browser auto outline. No default/strong border ladder - fields are borderless fills and most borders are 0px."
+     "evidence": "border.subtle #e4e1d5 and border.onDark #4d4846 tokenise the dashed hairlines inside the plan cards, and light.focus #101010 the auto outline the header/footer controls draw (plan/slider/form controls still draw #005fcc). No default/strong border ladder - fields are borderless fills and most borders are 0px."
     },
     "F5": {
      "grade": "partly",
@@ -23862,7 +23862,7 @@
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights measured in light.component (48px CTA, 40px nav/plan pills, 46px sign-in field) and the 1px #005fcc focus ring is tokenised as light.focus; no named control-size ladder and icon sizes are recorded only on the entries."
+     "evidence": "Control heights measured in light.component (48px CTA, 40px nav/plan pills, 46px sign-in field) and the 1px auto focus ring is tokenised as light.focus (#101010; #005fcc on plan/slider/form controls); no named control-size ladder and icon sizes are recorded only on the entries."
     },
     "F12": {
      "grade": "partly",
@@ -23882,11 +23882,11 @@
     },
     "C2": {
      "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed on every interactive entry (pressed via CDP), focused on the six fields, filled on form-input and signin-input (test text typed and cleared), opened on the Products flyout. No disabled/error/loading/selected states exist on the captured routes; no form was ever submitted."
+     "evidence": "default/hover/focus-visible/pressed attempted on every interactive entry (pressed via CDP); 97 of 99 state slots measured - the nav-cta and nav-signin hover slots timed out and are published as unmeasured, not filled in. focused on the six fields, filled on form-input and signin-input (test text typed and cleared), opened on the Products flyout and mobile menu. No disabled/error/loading/selected states exist on the captured routes; no form was ever submitted."
     },
     "C3": {
      "grade": "partly",
-     "evidence": "13 of 14 drivable controls show a visible 1px #005fcc focus ring (tokenised as light.focus); nav-item (the Products trigger) could not be given a real keyboard focus - recorded as a miss, not an absence."
+     "evidence": "13 of 14 drivable controls draw a visible 1px focus outline - #101010 on header/footer controls (tokenised as light.focus), #005fcc on the plan/slider/form controls, oklch on the sign-in pair; nav-item (the Products trigger) could not be given a real keyboard focus - recorded as a miss, not an absence."
     },
     "C4": {
      "grade": "meets",
@@ -23933,7 +23933,7 @@
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "reviewed": "2026-11-16",
+   "reviewed": "2026-11-20",
    "reviewedPlatform": "web",
    "name": "Chargetrip",
    "goodFor": "Warm-cream B2B SaaS pages with an editorial serif: a #efede5 paper ground under near-white #fffffb cards, a warm ink ramp (#262322 text and dark fills, #877f78 muted), one #f94d00 orange for every action, Geist for UI paired with Cirka at an 88/64/48 display scale, dark hero and plan-card islands inside the single light theme, and 8/10/12/16/24px radii",
@@ -25240,7 +25240,7 @@
     },
     "F2": {
      "grade": "partly",
-     "evidence": "Page (#ffffff), sand surface (#f8f6f4) and the promo strip (#1d1c1d) are measured. No raised, overlay or scrim role paints on the public pages after the cookie overlay was hidden."
+     "evidence": "Marketing page, sand and promo strip are measured. The workspace adds a pale rail and a dimmed overlay behind the Proposals dialog. No separate scrim token was named."
     },
     "F3": {
      "grade": "partly",
@@ -25255,8 +25255,8 @@
      "evidence": "Coral and ink buttons were measured at rest, hover, focus-visible and DevTools-forced pressed. The fills do not change. The states were captured; the product does not restyle them."
     },
     "F6": {
-     "grade": "missing",
-     "evidence": "No success, warning, danger or info colour paints on the public marketing pages. Forms were not submitted, so validation colours stayed hidden."
+     "grade": "partly",
+     "evidence": "The workspace declares --k-color-red #ee543b, --k-color-green #41c660 and --k-color-yellow #fec30c. Yellow paints on Upgrade. Green paints on the DocuMocu checklist. No info colour was measured."
     },
     "F7": {
      "grade": "meets",
@@ -25264,7 +25264,7 @@
     },
     "F8": {
      "grade": "partly",
-     "evidence": "Graphik is the only family, with a Helvetica Neue / Arial fallback. Measured sizes are 16, 18, 22 and 72px. Weights in use are 400 and 700. Named roles are hero, body, button, nav and FAQ, not a full display/heading/label/caption/code scale."
+     "evidence": "Marketing uses Graphik 16/18/22/72. The workspace uses the system UI stack at 13 and 14px (--k-font-size-*). No caption/code role was named."
     },
     "F9": {
      "grade": "missing",
@@ -25279,8 +25279,8 @@
      "evidence": "Small header buttons are 44px tall. Coral and plan buttons are 52px. The phone Menu control is 34px. No designed focus-ring width or offset was measured."
     },
     "F12": {
-     "grade": "missing",
-     "evidence": "Plan cards, the Solutions menu and the phone drawer do not cast a measured box-shadow. The site is flat."
+     "grade": "partly",
+     "evidence": "Marketing cards are flat. The workspace --k-* layer declares shadows on dialogs and cards. The Proposals dialog was captured; its crop filled the viewport so the shadow was not isolated as a token."
     },
     "F13": {
      "grade": "partly",
@@ -25292,11 +25292,11 @@
     },
     "C1": {
      "grade": "partly",
-     "evidence": "Public pages show button, icon button (Menu), link, text field, menu, card, list row (FAQ) and avatar. Text area, select, checkbox, radio, switch, tabs, tooltip, dialog, toast, table and badge do not paint on the captured pages. That is 8 of 19."
+     "evidence": "Marketing plus workspace now show button, icon button, link, text field, tabs, menu, dialog, card, list row, table, avatar and badge. Text area, select, radio, switch, tooltip and toast still do not paint. Checkbox exists on create-workspace opt-in and was not measured."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "Buttons have hover, focus-visible and pressed. The FAQ row opens. Fields have focused. Disabled, loading, error and selected do not appear without submitting a form or entering the app."
+     "evidence": "Marketing buttons have hover, focus-visible and pressed. Workspace primary was hovered. Tasks tabs show selected vs unselected. Disabled, loading and error were not held as screenshots."
     },
     "C3": {
      "grade": "partly",
@@ -25308,7 +25308,7 @@
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the marketing chrome, the hero, the pricing columns and the login gate. Forms with validation, empty/loading/error, destructive confirmation, feedback and onboarding sit behind submit or sign-in and are recorded as gaps."
+     "evidence": "patterns.md covers marketing chrome, pricing, signup, the workspace rail, empty lists, the Proposals dialog and free-plan billing. Destructive confirmation and action feedback were not shown because nothing was written."
     },
     "A1": {
      "grade": "partly",
@@ -25316,7 +25316,7 @@
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README states the date, the signed-out public route, the widths, how values were read, and what to distrust."
+     "evidence": "The README states the date, the public route, the signed-in free workspace, the widths, how --k-* values were read, and what to distrust."
     },
     "C5": {
      "grade": "na",
@@ -25347,7 +25347,7 @@
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "reviewed": "2026-11-18",
+   "reviewed": "2026-11-20",
    "reviewedPlatform": "web",
    "name": "Kitchen.co",
    "goodFor": "Agency marketing plus a signed-in client portal: Graphik coral marketing, then a system-UI workspace with a left rail, blue #0165e1 actions, empty states and a separate phone portal",
@@ -27673,5 +27673,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "public-web capture review. On 2026-11-20 the reviews of classpass, clay-earth, clearful, dji, forhers, huddlekit and intercom, which their captures wrote to review files but never merged, were merged unchanged from those files, and ikea's review was rebuilt from the Health section of commit 109098807; ikea's six meets grades (F3, F5, F7, F8, F9, K1) have no surviving evidence text."
+ "reviewMethod": "public-web capture review. On 2026-11-20 the reviews of classpass, clay-earth, clearful, dji, forhers, huddlekit and intercom, which their captures wrote to review files but never merged, were merged unchanged from those files; so were the later reviews of chargetrip (after its mismeasured-surface fix) and kitchen (its signed-in recapture), whose snapshots were overwritten by same-named sibling snapshots. ikea's review was rebuilt from the Health section of commit 109098807; its six meets grades (F3, F5, F7, F8, F9, K1) have no surviving evidence text."
 }
