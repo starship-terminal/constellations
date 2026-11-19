@@ -21,8 +21,10 @@ skipped with a note.
 
 import argparse
 import json
+import os
 import re
 import sqlite3
+import subprocess
 import sys
 from pathlib import Path
 
@@ -294,7 +296,10 @@ def check(refero: Path) -> list[str]:
                                     f"does not match meta.json")
 
     # ---- coverage.json: a generated diff (directory.json x the systems
-    # catalog.json); recompute it and demand the file match exactly
+    # catalog.json); recompute it and demand the file match exactly.
+    # A pull request that only adds catalog rows cannot regenerate this
+    # file for the merge commit, because the merge is not on a branch.
+    # Compare the added rows against the base file instead.
     try:
         directory = json.loads((refero / "directory.json").read_text())
         systems_cat = json.loads((ROOT / "catalog.json").read_text())
@@ -307,7 +312,8 @@ def check(refero: Path) -> list[str]:
         except (OSError, json.JSONDecodeError) as e:
             problems.append(f"refero/coverage.json does not parse: {e}")
         else:
-            if actual_cov != expected_cov:
+            if actual_cov != expected_cov and not coverage_matches_base(
+                    directory, systems_cat, actual_cov, expected_cov):
                 problems.append("refero/coverage.json is stale; "
                                 "run tools/refero/coverage.py")
 
@@ -319,6 +325,91 @@ def check(refero: Path) -> list[str]:
             problems.append(f"refero/README.md says {m.group(1)} styles; "
                             f"{len(dirs)} folders exist")
     return problems
+
+
+def base_catalog(head_catalog: dict) -> dict | None:
+    """The catalog on the pull request's base, when GitHub is merging one.
+
+    Returns None outside a pull request, or when the base blob cannot be
+    read. The caller then keeps the exact-match rule."""
+    base = os.environ.get("GITHUB_BASE_REF")
+    if not base:
+        return None
+    try:
+        raw = subprocess.run(
+            ["git", "show", f"origin/{base}:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        return json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return None
+
+
+def coverage_matches_base(directory: dict, head_catalog: dict,
+                          actual: dict, expected: dict) -> bool:
+    """True when the committed file matches the base, and this pull request
+    only adds catalog rows.
+
+    Removing or editing a row changes the derived coverage, so that still
+    fails until the file is regenerated."""
+    base = base_catalog(head_catalog)
+    if base is None:
+        return False
+    base_rows = {s.get("slug"): s for s in base.get("systems") or []}
+    head_rows = {s.get("slug"): s for s in head_catalog.get("systems") or []}
+    if not base_rows or not set(head_rows) >= set(base_rows):
+        return False
+    if not set(head_rows) - set(base_rows):
+        return False
+    # An edited existing row can change the derived coverage. Only a pure
+    # addition leaves the committed file valid.
+    for slug, row in base_rows.items():
+        if head_rows.get(slug) != row:
+            return False
+    # The committed file may be the current base, or a base that already
+    # included some of the added rows (the PR regenerated it, then main
+    # gained other captures). Either way the shared rows must agree, and
+    # every domain in the committed file must still be derived from the
+    # merged catalog. A hand-edited domain fails.
+    base_expected = coverage_mod.build(directory, base)
+    if actual == base_expected or actual == expected:
+        return True
+    # The branch regenerated coverage against an older base. Shared domains
+    # must still match the merge. A domain only the branch file has must be
+    # one of the rows this pull request adds, unchanged.
+    added = [row for slug, row in head_rows.items() if slug not in base_rows]
+    added_expected = coverage_mod.build(
+        directory, {**head_catalog, "systems": list(base.get("systems") or []) + added})
+    return (coverage_shared_ok(expected, actual)
+            and coverage_extras_are_added(actual, expected, added_expected))
+
+
+def coverage_shared_ok(expected: dict, actual: dict) -> bool:
+    """Every domain in the committed file has the same row somewhere in
+    the merged derivation. A later capture can move a domain from missing
+    to matched; that move is fine. A changed row is not."""
+    expected_flat = {}
+    for key in ("matched", "missing", "systems_absent_from_catalog"):
+        expected_flat.update(expected.get(key) or {})
+    for key in ("matched", "missing", "systems_absent_from_catalog"):
+        for dom, row in (actual.get(key) or {}).items():
+            if dom in expected_flat and expected_flat[dom] != row:
+                return False
+    return True
+
+
+def coverage_extras_are_added(actual: dict, expected: dict, added_expected: dict) -> bool:
+    """A domain only the committed file has is exactly what the added rows derive."""
+    for key in ("matched", "missing", "systems_absent_from_catalog"):
+        actual_map = actual.get(key) or {}
+        expected_map = expected.get(key) or {}
+        added_map = added_expected.get(key) or {}
+        for dom, row in actual_map.items():
+            if dom in expected_map:
+                continue
+            if added_map.get(dom) != row:
+                return False
+    return True
 
 
 def main() -> None:
