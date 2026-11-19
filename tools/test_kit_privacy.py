@@ -401,7 +401,10 @@ class JavaScriptHalves(unittest.TestCase):
     def test_electron_vars_record_no_url_or_query(self):
         # shot.mjs writes every root custom property beside the screenshot; a signed-in app can set one
         # to an avatar or asset URL that carries a signature.
-        src = js_block(HERE / "kit/capture/electron/shot.mjs", "const noUrl", "const noQuery")
+        shot = (HERE / "kit/capture/electron/shot.mjs").read_text()
+        src = next(l.strip() for l in shot.splitlines() if l.strip().startswith("const noUrl = "))
+        self.assertIn("vars.vars = scrubQueries(vars.vars);", shot)   # the recorded values go through no-query.mjs
+        mod = (HERE / "kit/capture/no-query.mjs").as_uri()
         self.assertEqual(re.search(r"const noUrl = .*?: v\);", src).group(0),
                          re.search(r"const noUrl = .*?: v\);", (HERE / "kit/capture/vars.mjs").read_text()).group(0))
         cases = {
@@ -414,13 +417,17 @@ class JavaScriptHalves(unittest.TestCase):
             '//cdn.example.test/avatar.png?token=secret': '//cdn.example.test/avatar.png',
             '"//cdn.example.test/a.png#access_token=abc"': '"//cdn.example.test/a.png"',
             'image-set("//cdn.example.test/a.png?sig=1" 1x, //cdn.example.test/b.png?sig=2 2x)': 'image-set("//cdn.example.test/a.png" 1x, //cdn.example.test/b.png 2x)',
+            '/media/avatar.png?token=secret': '/media/avatar.png',
+            '"avatar.png?sig=abc"': '"avatar.png"',
             'calc(100% - 2px)': 'calc(100% - 2px)',
             'url(data:image/svg+xml,abc) no-repeat': 'url(data:image/svg+xml,abc) no-repeat',
             '#5e6ad2': '#5e6ad2',
             '0 1px 2px rgba(0, 0, 0, 0.1)': '0 1px 2px rgba(0, 0, 0, 0.1)',
             '': '',
         }
-        got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map((v) => noQuery(noUrl(v)))))")
+        script = (f"import({json.dumps(mod)}).then(({{ noQuery }}) => {{ {src}\n"
+                  f"console.log(JSON.stringify({json.dumps(list(cases))}.map((v) => noQuery(noUrl(v))))); }})")
+        got = self.node(script)
         self.assertEqual(got, list(cases.values()))
         for v in got:
             self.assertFalse(catalog.SIGNED_URL.search(v), v)
@@ -431,6 +438,13 @@ class JavaScriptHalves(unittest.TestCase):
         src = js_block(HERE / "kit/capture/electron/shot.mjs", "const noUrl", "const read")
         got = self.node(stub + src + "\nconsole.log(JSON.stringify(['--a', '--b', '--c'].map(read)))")
         self.assertEqual(got, ["", "blue", "url(…)"])
+
+    def test_vars_mjs_writes_its_output_through_the_query_scrub(self):
+        # vars.mjs records declared and resolved values and selectors; noUrl only sees url(), so a bare,
+        # scheme-relative or relative URL with a query kept it until the whole output went through scrubQueries.
+        src = (HERE / "kit/capture/vars.mjs").read_text()
+        self.assertIn("JSON.stringify(scrubQueries(out), null, 1)", src)
+        self.assertIn("from './no-query.mjs'", src)
 
     def test_font_face_ids_tell_apart_files_the_masked_src_cannot(self):
         # noUrl turns every font file URL into url(…), so two faces of one family, weight and style that

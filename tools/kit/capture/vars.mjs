@@ -24,6 +24,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { scrubQueries } from './no-query.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
@@ -216,7 +217,8 @@ const out = {
   resolved,
 };
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
-fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
+// noUrl only sees url(); a bare, scheme-relative or relative URL in a value or a selector loses its query here.
+fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(scrubQueries(out), null, 1) + '\n');
 console.log(`resolved: light ${Object.keys(resolved.light).length}, dark ${Object.keys(resolved.dark).length}, compact differs ${Object.keys(resolved.compact).length}`);
 console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names cds ${out.counts.names.cds}, app ${out.counts.names.app}, tailwind ${out.counts.names.tailwind}`);
 for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 30)) console.log(`  ${v}\t${k.slice(0, 160)}`);

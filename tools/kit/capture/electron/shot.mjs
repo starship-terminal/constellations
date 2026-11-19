@@ -14,6 +14,7 @@
 // Quit the app and open it normally afterwards; an open port lets any local process drive it.
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { safeUrl } from '../safe-url.mjs';
+import { scrubQueries } from '../no-query.mjs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const [out, name, prefix = 'https://'] = process.argv.slice(2).filter(a => !a.startsWith('--'));
 const hover = process.argv.find(a => a.startsWith('--hover='))?.slice(8);
@@ -44,16 +45,11 @@ const vars = await page.evaluate(() => {
       for (const p of r.style) if (p.startsWith('--')) names.add(p);
   }
   // A custom property can hold a url() or a bare URL with a signed or per-account query (an
-  // avatar, a token-bearing asset), so every value goes through noUrl and loses any URL query.
+  // avatar, a token-bearing asset), so every value goes through noUrl here and noQuery (no-query.mjs) below.
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
-  // (a url() is already url(…) here, so a bare URL's query runs to the next space or quote; brackets
-  // can sit inside it, as in ?crop=(0,0)&token=…)
-  // A protocol-relative URL (//cdn.example/a.png?token=…) is a URL too: it starts at a value's start or
-  // after a space, quote, bracket or comma.
-  const noQuery = (v) => v.replace(/(\bhttps?:\/\/|(?:^|(?<=[\s"'(,]))\/\/)([^\s"'?#]*)[?#][^\s"']*/gi, '$1$2');
   const html = getComputedStyle(document.documentElement), body = getComputedStyle(document.body);
   // body's value wins whenever body declares one, a blank override included; trimmed only after
-  const read = (n) => { const b = noUrl(body.getPropertyValue(n)); return noQuery((b !== '' ? b : noUrl(html.getPropertyValue(n))).trim()); };
+  const read = (n) => { const b = noUrl(body.getPropertyValue(n)); return (b !== '' ? b : noUrl(html.getPropertyValue(n))).trim(); };
   const v = {};
   for (const n of [...names].sort()) v[n] = read(n);
   return { url: location.href, themeClass: document.documentElement.className, dpr: devicePixelRatio,
@@ -62,6 +58,7 @@ const vars = await page.evaluate(() => {
 if (hover) await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] });
 const { writeFileSync } = await import('node:fs');
 vars.url = safeUrl(vars.url);
+vars.vars = scrubQueries(vars.vars);   // a bare, scheme-relative or relative URL in a value keeps no query
 writeFileSync(`${out}/${name}.vars.json`, JSON.stringify(vars, null, 1) + '\n');
 console.log(`${out}/${name}.png`, Object.keys(vars.vars).length, 'variables');
 await browser.close().catch(() => {});
