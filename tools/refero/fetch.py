@@ -116,16 +116,31 @@ MEDIA_URL_FIELDS = {
 # kept around to re-check against; they were dropped rather than carried.
 
 
+# The largest response get() reads: well above any page or API listing
+# Refero serves, and a bound on what a misbehaving server can make us hold.
+MAX_RESPONSE = 64 * 1024 * 1024
+
+
+class TooLarge(ValueError):
+    """A response body over MAX_RESPONSE bytes."""
+
+
 def get(url, binary=True, tries=4):
+    """GET url with retry/backoff. Raises TooLarge, without retrying, for a
+    body over MAX_RESPONSE bytes."""
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers=UA)
-            data = urllib.request.urlopen(req, timeout=90).read()
-            return data if binary else data.decode("utf-8", "replace")
+            with urllib.request.urlopen(req, timeout=90) as r:
+                data = r.read(MAX_RESPONSE + 1)
+            break
         except Exception:
             if i == tries - 1:
                 raise
             time.sleep(2 ** i)
+    if len(data) > MAX_RESPONSE:
+        raise TooLarge(f"{url}: response over {MAX_RESPONSE} bytes")
+    return data if binary else data.decode("utf-8", "replace")
 
 
 def slugify(name):

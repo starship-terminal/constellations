@@ -2,7 +2,7 @@
 """Fetch Refero's curated collections into refero/collections.json + db tables.
 
 Reads https://styles.refero.design/sitemaps/collections.xml, fetches every
-listed page (except the homepage), and parses each collection's sections and
+listed page on that host over https (except the homepage), and parses each collection's sections and
 ordered style references out of the page's __next_f.push flight payload.
 
 Flight structure (verified 2026-10): each editorial section is an h2 with
@@ -30,12 +30,11 @@ import os
 import re
 import sqlite3
 import sys
-import time
-import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
+import fetch as refero_fetch  # noqa: E402  (its get(): retries and a size cap)
 
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
@@ -43,12 +42,6 @@ DB = REFERO / "refero.db"
 OUT = REFERO / "collections.json"
 BASE = "https://styles.refero.design"
 SITEMAP = BASE + "/sitemaps/collections.xml"
-
-UA = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                  "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml",
-}
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS collections (
@@ -87,16 +80,24 @@ ITEMLIST_RE = re.compile(
     r'"position":\d+,"url":"https://styles\.refero\.design/style/([0-9a-f-]{36})"')
 
 
-def get(url, binary=True, tries=4):
-    for i in range(tries):
-        try:
-            req = urllib.request.Request(url, headers=UA)
-            data = urllib.request.urlopen(req, timeout=90).read()
-            return data if binary else data.decode("utf-8", "replace")
-        except Exception:
-            if i == tries - 1:
-                raise
-            time.sleep(2 ** i)
+# fetch.get: retry/backoff and a cap on the response size.
+get = refero_fetch.get
+
+
+def collection_urls(xml):
+    """The sitemap's page URLs, minus the homepage and anything off-site.
+
+    The sitemap is third-party data, so only https URLs on BASE are fetched:
+    a file://, plain-http or other-host <loc> is reported and skipped."""
+    urls = []
+    for u in (u.strip() for u in LOC_RE.findall(xml)):
+        if u.rstrip("/") == BASE:  # the homepage
+            continue
+        if u.startswith(BASE + "/"):
+            urls.append(u)
+        else:
+            print(f"SKIP off-site sitemap url {u!r}", file=sys.stderr)
+    return urls
 
 
 def flight_blob(page):
@@ -217,9 +218,7 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args()
 
-    xml = get(SITEMAP).decode()
-    urls = [u.strip() for u in LOC_RE.findall(xml)]
-    urls = [u for u in urls if u.rstrip("/") != BASE]  # skip homepage
+    urls = collection_urls(get(SITEMAP).decode())
     if args.limit:
         urls = urls[:args.limit]
     print(f"sitemap: {len(urls)} collection pages")

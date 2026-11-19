@@ -17,6 +17,7 @@ from unittest import mock
 TOOLS = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS / "refero"))
 import fetch  # noqa: E402
+import fetch_collections  # noqa: E402
 
 UUID = "00000000-0000-0000-0000-00000000000a"
 UUID_B = "00000000-0000-0000-0000-00000000000b"
@@ -47,8 +48,8 @@ class Resp:
     def __init__(self, body):
         self.body = body.encode() if isinstance(body, str) else body
 
-    def read(self):
-        return self.body
+    def read(self, n=-1):
+        return self.body if n < 0 else self.body[:n]
 
     def __enter__(self):
         return self
@@ -99,6 +100,34 @@ class GetTest(NoSleep):
         with urlopen([OSError("a"), OSError("b")]) as opened, self.assertRaises(OSError):
             fetch.get("https://x", tries=2)
         self.assertEqual(opened.call_count, 2)
+
+
+    def test_a_body_over_the_cap_raises_without_a_retry(self):
+        with mock.patch.object(fetch, "MAX_RESPONSE", 4), \
+                urlopen([Resp("12345"), Resp("ok")]) as opened, \
+                self.assertRaises(fetch.TooLarge):
+            fetch.get("https://x")
+        self.assertEqual(opened.call_count, 1)
+        with mock.patch.object(fetch, "MAX_RESPONSE", 4), urlopen([Resp("1234")]):
+            self.assertEqual(fetch.get("https://x"), b"1234")  # exactly the cap is fine
+
+
+class CollectionUrlsTest(unittest.TestCase):
+    def test_only_https_pages_on_the_refero_host_are_kept(self):
+        base = fetch_collections.BASE
+        locs = [f"{base}/", f" {base}/collections/dark ", f"{base}/design-md/guide",
+                "file:///etc/passwd", "http://styles.refero.design/collections/x",
+                "https://192.168.1.1/admin", "https://styles.refero.design.example/x",
+                "ftp://styles.refero.design/x", base]
+        xml = "<urlset>" + "".join(f"<url><loc>{u}</loc></url>" for u in locs) + "</urlset>"
+        with mock.patch("sys.stderr", new_callable=io.StringIO) as err:
+            urls = fetch_collections.collection_urls(xml)
+        self.assertEqual(urls, [f"{base}/collections/dark", f"{base}/design-md/guide"])
+        self.assertEqual(err.getvalue().count("SKIP off-site sitemap url"), 5)
+        self.assertIn("'file:///etc/passwd'", err.getvalue())
+
+    def test_pages_are_fetched_through_the_capped_get(self):
+        self.assertIs(fetch_collections.get, fetch.get)
 
 
 class SitemapAndPageTest(NoSleep):
