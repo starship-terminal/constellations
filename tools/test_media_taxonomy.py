@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import os
 import unittest
 from unittest import mock
 from pathlib import Path
@@ -46,6 +47,18 @@ class FontEvidenceTest(unittest.TestCase):
             result = taxonomy.build()
         fonts = [t["termId"] for a in result["assignments"] for t in a["terms"] if t["termId"].startswith("web-fonts:")]
         self.assertEqual(fonts, ["web-fonts:inter"])
+
+
+class BaseTreeFilesTest(unittest.TestCase):
+    def test_non_ascii_capture_name_stays_unquoted(self):
+        raw = b"systems/cafe/screenshots/caf\xc3\xa9-dark.png\0systems/cafe/screenshots/plain.png\0"
+        with mock.patch.dict(os.environ, {"GITHUB_BASE_REF": "main"}), \
+                mock.patch.object(taxonomy.subprocess, "run", return_value=mock.Mock(stdout=raw)):
+            files = taxonomy._base_tree_files()
+        self.assertEqual(files, {
+            "systems/cafe/screenshots/café-dark.png",
+            "systems/cafe/screenshots/plain.png",
+        })
 
 
 if __name__ == "__main__":
