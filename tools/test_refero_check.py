@@ -1,5 +1,6 @@
 """Tests for tools/refero/check.py. Run with `make test`."""
 import json
+import os
 import shutil
 import sqlite3
 import sys
@@ -199,6 +200,57 @@ class ReferoCheckTest(unittest.TestCase):
         (self.refero / "catalog.json").write_text(json.dumps(cat))
         self.assertIn("refero/catalog.json: alpha name does not match meta.json",
                       refero_check.check(self.refero))
+
+
+class CoverageLagTest(unittest.TestCase):
+    """coverage_matches_base accepts a file that predates packages on main."""
+
+    def setUp(self):
+        self.directory = {"web_sites": [
+            {"name": "Alpha", "domain": "alpha.example", "id": "1"},
+            {"name": "Beta", "domain": "beta.example", "id": "2"},
+            {"name": "Newer", "domain": "newer.example", "id": "3"},
+        ], "ios_apps": []}
+        self.alpha = {"slug": "alpha", "name": "Alpha", "url": "https://alpha.example"}
+        self.beta = {"slug": "beta", "name": "Beta", "url": "https://beta.example"}
+        self.newer = {"slug": "newer", "name": "Newer", "url": "https://newer.example"}
+        self.added = {"slug": "added", "name": "Added", "url": "https://added.example"}
+        self.base = {"systems": [self.alpha, self.beta, self.newer]}
+        self.head = {"systems": [self.alpha, self.beta, self.newer, self.added]}
+        self.prior = refero_check.coverage_mod.build(
+            self.directory, {"systems": [self.alpha, self.beta]})
+
+    def matches(self, head, actual, base_ref="main"):
+        env = {"GITHUB_BASE_REF": base_ref} if base_ref else {}
+        shown = json.dumps(self.base)
+
+        def fake_run(args, **kwargs):
+            self.assertIn("catalog.json", args[-1])
+            return unittest.mock.Mock(stdout=shown, returncode=0)
+
+        with unittest.mock.patch.dict(os.environ, env, clear=False), \
+                unittest.mock.patch.object(refero_check.subprocess, "run", fake_run):
+            if not base_ref:
+                os.environ.pop("GITHUB_BASE_REF", None)
+            expected = refero_check.coverage_mod.build(self.directory, head)
+            return refero_check.coverage_matches_base(
+                self.directory, head, actual, expected)
+
+    def test_an_older_derivation_is_accepted(self):
+        self.assertTrue(self.matches(self.head, self.prior))
+
+    def test_a_hand_edited_file_is_rejected(self):
+        edited = json.loads(json.dumps(self.prior))
+        edited["totals"]["system_packages"] = 1
+        self.assertFalse(self.matches(self.head, edited))
+
+    def test_an_edited_existing_row_is_rejected(self):
+        head = json.loads(json.dumps(self.head))
+        head["systems"][0]["name"] = "Alpha edited"
+        self.assertFalse(self.matches(head, self.prior))
+
+    def test_without_a_pull_request_base_the_exemption_does_not_apply(self):
+        self.assertFalse(self.matches(self.head, self.prior, base_ref=None))
 
 
 if __name__ == "__main__":
