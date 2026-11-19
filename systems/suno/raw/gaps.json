@@ -1,0 +1,15 @@
+{
+  "screenshots": "The T3 preview browser opened https://suno.com/ and returned page state, then preview_snapshot failed with: The browser is not producing screenshot frames. No PNG was invented. screenshots/ holds this note only.",
+  "crops": "No component crops. The same screenshot failure blocked every crop.",
+  "icons": "Inline SVGs were visible in the DOM (wordmark, social marks, chevrons) but were not extracted to SVG files.",
+  "lightTheme": "color-scheme on the signed-out pages was dark. Light token names (--color-background-primary-light, --color-foreground-*-on-light, --color-border-*-on-light) were declared on :root and copied into the light set. No light surface was shown, so those values are declarations, not computed styles of a light page.",
+  "phoneWidth": "The viewport stayed at 1169x731 CSS pixels, devicePixelRatio 2. A 390px width was not measured.",
+  "signup": "Log in opened a dialog titled Welcome to Suno with Continue with Google, Continue with Apple, Continue with Phone, Discord, Facebook and Microsoft. No email-only field was shown. Phone, OAuth and payment were not entered. The dialog was closed.",
+  "paidPlans": "Get Pro, Get Premier and Get Platinum were measured on the home pricing section and not followed. No card was entered.",
+  "jobs": "Careers lists Apply now links to jobs.ashbyhq.com. Those applications were not opened.",
+  "app": "The signed-in creator (/create, Studio, Voices) is behind the sign-in dialog. It was not entered.",
+  "motionReduce": "prefers-reduced-motion was not emulated. Nav links declare motion-reduce:transition-none. A reduce verdict was not measured.",
+  "hoverFocusPressed": "Hover, focus-visible, pressed, disabled, loading and error states were not forced. Resting computed styles only.",
+  "checkboxRadioSwitchSelectTable": "Not present on the signed-out marketing pages that were read.",
+  "cloudflare": "No Cloudflare challenge was shown on the pages that loaded."
+}

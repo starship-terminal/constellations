@@ -20343,6 +20343,67 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "suno",
+      "name": "Suno",
+      "url": "https://suno.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Dark AI-music marketing: cream pill on #101012, Editorial New display, strawberry accent, plan cards and a provider sign-in dialog",
+      "tags": [
+        "web",
+        "media",
+        "music",
+        "marketing",
+        "dark",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public home, careers and about were measured. Log in opened a provider dialog and was closed. No email, phone, OAuth, card or paid plan was entered.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/suno/README.md",
+      "tokens": "systems/suno/tokens.json",
+      "styleGuide": "systems/suno/style-guide.html",
+      "preview": {
+        "cover": "systems/suno/icon.png",
+        "icon": "systems/suno/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.secondary",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.tertiary",
+            "accent": "dark.color.accent.brand",
+            "border": "dark.color.border.primary"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.serif",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "web-inspector",
+        "version": "marketing site, 2026-11-19",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/816"
+      },
+      "layoutGaps": {
+          "icons/": "Inline SVGs were not extracted to files. The preview browser produced no screenshot frames, so icon crops were not cut either.",
+          "components/": "crops/ is empty. No component PNG was cut."
+    },
+      "notes": "Dark values are computed styles at 1169px CSS width. Light token names exist on :root and were not shown. No screenshots."
     }
   ]
 }
