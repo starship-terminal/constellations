@@ -977,7 +977,13 @@ export async function call(name: string, args: Obj | null): Promise<Obj> {
     result = await spec.fn(clean);
   } catch (e) {
     if (e instanceof ToolError) throw e;
-    throw new ToolError(`${name} failed: ${e instanceof Error ? e.message : String(e)}`);
+    // A bad argument's message is about the caller's own input. Anything else
+    // (a filesystem error names an absolute path) is logged here and reaches
+    // the caller, and through the chat a third-party model, only as its type.
+    if (e instanceof TypeError || e instanceof RangeError || e instanceof SyntaxError)
+      throw new ToolError(`${name} failed: ${e.message}`);
+    console.error(`library: ${name}:`, e);
+    throw new ToolError(`${name} failed (${e instanceof Error ? e.name : typeof e})`);
   }
   if ("_image" in result) return result;
   const size = jsonSize(result);
