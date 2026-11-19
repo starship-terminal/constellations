@@ -1,0 +1,38 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview tab tab_73_b476fa69-d865-4d9c-9974-6281ced1c8e8",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewportScale": 1
+  },
+  "theme": {
+    "htmlClass": "dark-theme",
+    "colorScheme": "dark",
+    "bodyBackground": "rgb(0, 0, 0)",
+    "bodyColor": "rgb(237, 237, 237)"
+  },
+  "pages": [
+    "https://vercel.com/",
+    "https://vercel.com/login",
+    "https://vercel.com/pricing",
+    "https://vercel.com/design",
+    "https://vercel.com/geist/introduction",
+    "https://vercel.com/geist/colors",
+    "https://vercel.com/geist/button",
+    "https://vercel.com/docs"
+  ],
+  "screenshot": "preview_snapshot returned The browser is not producing screenshot frames",
+  "notEntered": [
+    "signup form not submitted",
+    "Google",
+    "GitHub",
+    "ChatGPT",
+    "SAML SSO",
+    "Passkey",
+    "no card",
+    "no paid team",
+    "no org SSO accepted"
+  ]
+}

@@ -20343,6 +20343,89 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "vercel",
+      "name": "Vercel",
+      "url": "https://vercel.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A black developer marketing site on Geist: 64px display, light gray primary buttons, 6px and 8px radii, a blue link, and a signed-out login that stays on the page",
+      "tags": [
+        "web",
+        "developer",
+        "hosting",
+        "marketing",
+        "dark",
+        "geist",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "Public marketing, Geist docs, and signed-out login. Email was not filled. Signup was not submitted. Google, GitHub, ChatGPT, SAML SSO, and Passkey were not followed. No card was entered. No paid team was created. No org SSO was accepted.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/vercel/README.md",
+      "tokens": "systems/vercel/tokens.json",
+      "styleGuide": "systems/vercel/style-guide.html",
+      "preview": {
+        "cover": "systems/vercel/icon.png",
+        "icon": "systems/vercel/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.raised",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "vercel.com marketing, login, pricing, design, Geist, and docs in a T3 preview tab, CSS viewport 1169x731 at devicePixelRatio 2, on 2026-11-19. Computed styles read live. Screenshot frames failed.",
+        "timestamp": "2026-11-19T04:30:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public site 2026-11-19",
+        "durationMin": 45,
+        "routes": [
+          "/",
+          "/login",
+          "/pricing",
+          "/design",
+          "/geist/introduction",
+          "/geist/colors",
+          "/geist/button",
+          "/docs"
+        ],
+        "gaps": [
+          "preview_snapshot returned The browser is not producing screenshot frames, so no screenshots or crops were saved",
+          "signed-in dashboard was not opened",
+          "signup was not submitted",
+          "email field was not filled",
+          "Google, GitHub, ChatGPT, SAML SSO, and Passkey were not followed",
+          "no card was entered",
+          "no paid team was created",
+          "no org SSO was accepted",
+          "light theme switcher was not opened",
+          "viewport was 1169, not 1440 and not 390"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned The browser is not producing screenshot frames. Measurements were kept. No screenshots were invented. The catalog cover is icon.png.",
+        "components/": "No crops. The same screenshot-frame failure. Component values are in components.md."
+      }
     }
   ]
 }
