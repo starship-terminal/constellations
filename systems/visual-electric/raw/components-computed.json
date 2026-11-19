@@ -1,0 +1,246 @@
+{
+  "viewport": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1},
+  "home": {
+    "url": "https://web.archive.org/web/20251108131511id_/https://visualelectric.com/",
+    "bodyBackground": "rgb(0, 0, 0)",
+    "banner": {
+      "text": "Visual Electric has been acquired by Perplexity Learn more ->",
+      "background": "rgb(255, 60, 0)",
+      "height": "32px",
+      "width": "1440px"
+    },
+    "bannerLink": {
+      "text": "Learn more ->",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Maison Neue Demi, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "16.8px",
+      "fontWeight": "400"
+    },
+    "navLink": {
+      "text": "Inspo",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Inter, Inter Placeholder, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "19.2px",
+      "fontWeight": "400"
+    },
+    "login": {
+      "text": "Login",
+      "height": "35px",
+      "padding": "8px 11px",
+      "borderRadius": "100px",
+      "labelColor": "rgb(255, 255, 255)",
+      "labelFont": "Inter, Inter Placeholder, sans-serif",
+      "labelSize": "16px",
+      "labelLineHeight": "19.2px",
+      "labelWeight": "400"
+    },
+    "heroButton": {
+      "text": "Get Started",
+      "background": "rgb(255, 60, 0)",
+      "height": "47px",
+      "padding": "14px 32px",
+      "borderRadius": "100px",
+      "labelColor": "rgb(255, 255, 255)",
+      "labelFont": "Inter, Inter Placeholder, sans-serif",
+      "labelSize": "16px",
+      "labelLineHeight": "19.2px",
+      "labelWeight": "400"
+    },
+    "display": {
+      "text": "creative workflow",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Maison Neue Ext Demi, Maison Neue Ext Demi Placeholder, sans-serif",
+      "fontSize": "60px",
+      "lineHeight": "60px",
+      "letterSpacing": "-1.8px",
+      "fontWeight": "400"
+    },
+    "subhead": {
+      "text": "Turn ideas into images, designs, and videos. Powered by AI, directed by you.",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Maison Neue Medium, Maison Neue Medium Placeholder, sans-serif",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "-0.6px",
+      "fontWeight": "400"
+    }
+  },
+  "pricing": {
+    "url": "https://web.archive.org/web/20251128161608id_/https://visualelectric.com/pricing",
+    "bodyBackground": "rgb(255, 255, 255)",
+    "nav": {
+      "background": "rgb(255, 255, 255)",
+      "height": "80px",
+      "padding": "16px 0px",
+      "gap": "20px"
+    },
+    "navLink": {
+      "text": "Log in",
+      "color": "rgb(15, 15, 15)",
+      "fontFamily": "Maison Neue Book, Maison Neue Book Placeholder, sans-serif",
+      "fontSize": "18px",
+      "lineHeight": "28.8px",
+      "fontWeight": "400",
+      "transition": "color 0.2s cubic-bezier(0.44, 0, 0.56, 1)"
+    },
+    "navHoverDeclared": "--framer-link-hover-text-color: #08354780",
+    "headerButton": {
+      "text": "Get started",
+      "background": "rgb(255, 60, 0)",
+      "height": "40px",
+      "padding": "4px 24px",
+      "borderRadius": "64px",
+      "labelColor": "rgb(255, 255, 255)",
+      "labelFont": "Maison Neue Book, Maison Neue Book Placeholder, sans-serif",
+      "labelSize": "18px",
+      "labelLineHeight": "28.8px",
+      "labelWeight": "400"
+    },
+    "lede": {
+      "text": "Get started with Visual Electric for free.",
+      "color": "rgb(15, 15, 15)",
+      "fontFamily": "Maison Neue Book, Maison Neue Book Placeholder, sans-serif",
+      "fontSize": "22px",
+      "lineHeight": "33px",
+      "letterSpacing": "-0.5px",
+      "fontWeight": "400"
+    },
+    "billingTrack": {
+      "background": "rgba(15, 15, 15, 0.05)",
+      "borderRadius": "24px",
+      "padding": "2px",
+      "height": "39px"
+    },
+    "billingSelected": {
+      "background": "rgb(255, 255, 255)",
+      "borderRadius": "24px",
+      "padding": "8px"
+    },
+    "billingLabel": {
+      "text": "Annually",
+      "color": "rgb(15, 15, 15)",
+      "fontFamily": "Maison Neue Book, Maison Neue Book Placeholder, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "19.2px",
+      "fontWeight": "400"
+    },
+    "save": {
+      "text": "Save 20%",
+      "color": "rgba(15, 15, 15, 0.5)",
+      "fontFamily": "Maison Neue Book, Maison Neue Book Placeholder, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "19.2px"
+    },
+    "planName": {
+      "text": "FREE",
+      "color": "rgb(255, 60, 0)",
+      "fontFamily": "Maison Neue Mono Regular, Maison Neue Mono Regular Placeholder, monospace",
+      "fontSize": "16px",
+      "lineHeight": "17.6px",
+      "fontWeight": "400",
+      "textTransform": "uppercase"
+    },
+    "price": {
+      "text": "$0",
+      "color": "rgb(15, 15, 15)",
+      "fontFamily": "Maison Neue Light, Maison Neue Light Placeholder, sans-serif",
+      "fontSize": "32px",
+      "lineHeight": "44.8px",
+      "fontWeight": "400"
+    },
+    "priceSuffix": {
+      "text": "per month",
+      "color": "rgba(15, 15, 15, 0.5)",
+      "fontFamily": "Inter, Inter Placeholder, sans-serif",
+      "fontSize": "13px",
+      "lineHeight": "15.6px",
+      "fontWeight": "400"
+    },
+    "outlineButton": {
+      "text": "Get started",
+      "height": "40px",
+      "padding": "8px",
+      "borderRadius": "24px",
+      "labelColor": "rgb(255, 60, 0)",
+      "labelFont": "Maison Neue Book, Maison Neue Book Placeholder, sans-serif",
+      "labelSize": "16px",
+      "labelLineHeight": "24px",
+      "labelWeight": "400",
+      "border": "visible in the screenshot as an orange stroke; computed border on the anchor was 0px"
+    },
+    "feature": {
+      "text": "Roll over volts",
+      "color": "rgb(15, 15, 15)",
+      "fontFamily": "Maison Neue Book, Maison Neue Book Placeholder, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "25.6px",
+      "fontWeight": "400"
+    },
+    "headerShadow": "rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.063) 0px 10px 10px -3.75px",
+    "stepperButton": {
+      "height": "40px",
+      "width": "40px",
+      "padding": "1px 6px",
+      "border": "1px solid rgba(15, 15, 15, 0.1)",
+      "borderRadius": "24px 0px 0px 24px",
+      "fontFamily": "Maison Neue Mono Regular, monospace",
+      "fontSize": "16px"
+    }
+  },
+  "whatsNew": {
+    "url": "https://web.archive.org/web/20251002173404id_/https://visualelectric.com/whats-new",
+    "bodyBackground": "rgb(255, 255, 255)",
+    "title": {
+      "text": "WHAT'S NEW",
+      "color": "rgb(25, 25, 25)",
+      "fontFamily": "VisualElectric, then the system mono stack",
+      "fontSize": "64px",
+      "lineHeight": "96px",
+      "letterSpacing": "normal",
+      "fontWeight": "400"
+    },
+    "date": {
+      "text": "Jul 22, 2025",
+      "color": "rgb(255, 60, 0)",
+      "fontFamily": "MaisonNeueMonoRegular, SF Mono, SFMono-Regular, ui-monospace, Menlo, Monaco, Cascadia Mono, Segoe UI Mono, Roboto Mono, Oxygen Mono, Ubuntu Monospace, Source Code Pro, Fira Mono, Droid Sans Mono, Courier New, monospace",
+      "fontSize": "13px",
+      "lineHeight": "19.5px",
+      "fontWeight": "400"
+    },
+    "itemTitle": {
+      "text": "Organize Canvases within Projects",
+      "color": "rgb(25, 25, 25)",
+      "fontFamily": "MaisonNeue, sans-serif",
+      "fontSize": "22px",
+      "lineHeight": "33px",
+      "fontWeight": "300"
+    },
+    "itemBody": {
+      "text": "Group canvases by idea, shoot, or campaign with Projects",
+      "color": "color(srgb 0.0980392 0.0980392 0.0980392 / 0.5)",
+      "fontFamily": "MaisonNeue, sans-serif",
+      "fontSize": "15px",
+      "lineHeight": "22.5px",
+      "fontWeight": "400"
+    },
+    "navLogin": {
+      "text": "Log in",
+      "color": "rgb(25, 25, 25)",
+      "fontFamily": "MaisonNeue, sans-serif",
+      "fontSize": "16px"
+    }
+  },
+  "framerTokensDeclared": {
+    "source": "Inline style block on the archived pricing page, not a live computed custom property (getComputedStyle on :root returned none of these names).",
+    "--token-db167968-2267-4a12-88b8-ed1f418c2ce0": "#ff3c00",
+    "--token-034e0a42-a6c9-47e9-a6b2-047aba0b1715": "#0f0f0f",
+    "--token-638ceb94-e615-41cd-b132-73d94a444aef": "#fff",
+    "--token-65dd59e6-9923-4750-8ac6-5573b7f61316": "#fafaff",
+    "--token-6e49e370-02dd-41f3-a72f-504918d5a06a": "#0f0f0f80",
+    "--token-876698a3-009f-4a21-9a68-fe3451f6b5da": "#0f0f0f0d",
+    "--framer-font-family": "Inter, Inter Placeholder, sans-serif",
+    "--framer-link-hover-text-color": "#ffffff80"
+  }
+}

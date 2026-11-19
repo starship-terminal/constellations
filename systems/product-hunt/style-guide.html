@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Product Hunt style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #f9fafb;
+    --tertiary: #f2f4f7;
+    --text: #101828;
+    --muted: #344054;
+    --quiet: #475467;
+    --brand: #ff6154;
+    --brand-600: #db5246;
+    --brand-25: #ffe8e6;
+    --border: #eaecf0;
+    --inverse: #101828;
+    --success: #17b26a;
+    --font: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font-family: var(--font); }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 24px; line-height: 32px; font-weight: 600; margin: 0 0 8px; }
+  h2 { font-size: 18px; line-height: 28px; font-weight: 600; margin: 32px 0 12px; }
+  p { color: var(--muted); font-size: 14px; line-height: 24px; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .swatch { width: 120px; }
+  .chip { height: 48px; border-radius: 4px; border: 1px solid var(--border); }
+  .label { font-size: 12px; line-height: 20px; margin-top: 4px; }
+  button, .pill { font-family: inherit; font-size: 16px; font-weight: 600; line-height: 24px; border-radius: 9999px; height: 40px; padding: 0 16px; }
+  .primary { background: var(--brand); color: #fff; border: 0; }
+  .secondary { background: #fff; color: var(--muted); border: 2px solid var(--border); }
+  .search { background: var(--tertiary); color: #4b587c; border: 1px solid transparent; border-radius: 9999px; height: 40px; padding: 0 16px; width: 216px; font-size: 16px; }
+  .badge { background: var(--brand-25); color: var(--brand-600); font-size: 12px; font-weight: 600; letter-spacing: 0.3px; padding: 0 8px; border-radius: 9999px; line-height: 20px; }
+  .vote { width: 52px; height: 52px; border: 2px solid var(--border); border-radius: 12px; background: #fff; color: var(--muted); font-weight: 600; }
+  footer.demo { background: var(--inverse); color: #fff; padding: 16px; border-radius: 4px; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Product Hunt</h1>
+  <p>Light specimens from computed styles on the public site, 2026-11-18. Dark is declared and not shown.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#f9fafb"></div><div class="label">surface #f9fafb</div></div>
+    <div class="swatch"><div class="chip" style="background:#f2f4f7"></div><div class="label">tertiary #f2f4f7</div></div>
+    <div class="swatch"><div class="chip" style="background:#101828"></div><div class="label">text #101828</div></div>
+    <div class="swatch"><div class="chip" style="background:#344054"></div><div class="label">muted #344054</div></div>
+    <div class="swatch"><div class="chip" style="background:#ff6154"></div><div class="label">brand #ff6154</div></div>
+    <div class="swatch"><div class="chip" style="background:#eaecf0"></div><div class="label">border #eaecf0</div></div>
+    <div class="swatch"><div class="chip" style="background:#17b26a"></div><div class="label">success #17b26a</div></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-size:48px;line-height:56px;font-weight:600;color:#101828">Category display</p>
+  <p style="font-size:30px;line-height:38px;font-weight:700;color:#21293c">About title</p>
+  <p style="font-size:24px;line-height:32px;font-weight:600;color:#101828">Top Products Launching Today</p>
+  <p style="font-size:16px;line-height:24px;font-weight:400;color:#344054">Body and navigation at 16px.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Sign in</button>
+    <button class="secondary">Subscribe</button>
+    <input class="search" placeholder="Search ( ⌘ + k )" aria-label="Search">
+    <span class="badge">NEW</span>
+    <button class="vote">69</button>
+  </div>
+  <h2>Footer</h2>
+  <footer class="demo">Engineering and Development</footer>
+</main>
+</body>
+</html>

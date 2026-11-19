@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Play style guide</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --page: #000000;
+    --surface: #171717;
+    --card: #262626;
+    --pro: #261d35;
+    --chip: #ffffff12;
+    --text: #ffffff;
+    --muted: #707070;
+    --accent: #17ffa6;
+    --ink: #212121;
+    --on-accent: #000000;
+    --purple: #b476ff;
+    --pro-button: #aa6cf6;
+    --white: #ffffff;
+    --offwhite: #f5f5f7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font: 400 15px/22px Inter, ui-sans-serif, system-ui, sans-serif;
+  }
+  main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font: 400 40px/44px "TWK Everett Medium", Inter, sans-serif; letter-spacing: -1.5px; margin: 0 0 8px; }
+  h2 { font: 400 24px/29px "TWK Everett Medium", Inter, sans-serif; letter-spacing: -0.5px; margin: 40px 0 12px; }
+  p { color: var(--offwhite); max-width: 68ch; }
+  .note { color: var(--muted); font-size: 13px; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 8px; border: 1px solid #ffffff12; }
+  .label { font-size: 12px; margin-top: 6px; }
+  .label span { display: block; color: var(--muted); }
+  button.primary, button.inverse, button.pro, button.quiet {
+    border: 0;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 6px;
+    font: 600 13px/16px "Inter Tight", Inter, sans-serif;
+    letter-spacing: 0.52px;
+  }
+  button.primary { background: var(--accent); color: var(--ink); }
+  button.inverse { background: var(--white); color: var(--on-accent); border-radius: 8px; font-weight: 500; letter-spacing: 0; font-family: Inter, sans-serif; }
+  button.pro { background: var(--pro-button); color: var(--on-accent); border-radius: 8px; font-weight: 500; letter-spacing: 0; font-family: Inter, sans-serif; }
+  button.quiet { background: #212121; color: var(--accent); border-radius: 8px; font-weight: 500; letter-spacing: 0; font-family: Inter, sans-serif; }
+  .hero {
+    font: 400 40px/44px "TWK Everett Medium", Inter, sans-serif;
+    letter-spacing: -1px;
+    margin: 12px 0;
+  }
+  a { color: var(--accent); }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid #ffffff12; }
+  th { color: var(--muted); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Play</h1>
+  <p>Public marketing styles measured from Internet Archive replays of createwithplay.com. The live host did not resolve on 19 November 2026. TWK Everett Medium is not loaded here, so headlines fall back to Inter.</p>
+  <p class="note">Values come from <a href="tokens.json">tokens.json</a>. This page does not invent a light theme.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div class="label">Page <span>#000000</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#171717"></div><div class="label">Surface <span>#171717</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#262626"></div><div class="label">Card <span>#262626</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#261d35"></div><div class="label">Pro card <span>#261d35</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#17ffa6"></div><div class="label">Accent <span>#17ffa6</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#b476ff"></div><div class="label">Pro text <span>#b476ff</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#aa6cf6"></div><div class="label">Choose Pro <span>#aa6cf6</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">Inverse <span>#ffffff</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#707070"></div><div class="label">Muted <span>#707070</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#f5f5f7"></div><div class="label">Offwhite <span>#f5f5f7</span></div></div>
+  </div>
+
+  <h2>Type</h2>
+  <div class="hero">Design, prototype, and ship.</div>
+  <p>Play AI is built into the design canvas. Hero copy on the January 2026 homepage was 64px TWK Everett Medium, line-height 70.4px, white on black.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary" type="button">Get Started for Free</button>
+    <button class="inverse" type="button">Contact Us</button>
+    <button class="pro" type="button">Choose Pro</button>
+    <button class="quiet" type="button">Get Started</button>
+  </div>
+  <p class="note">Nav primary is 32px tall, 6px radius, #17ffa6 fill, #212121 label. Plan buttons are 231 by 32px, 8px radius. Hover and focus-visible were not visible on the measured primary link.</p>
+
+  <h2>What is missing</h2>
+  <table>
+    <tr><th>Item</th><th>Status</th></tr>
+    <tr><td>Light theme</td><td>Not on the captured marketing pages</td></tr>
+    <tr><td>Signed-out login form</td><td>Embedded dashboard frame did not paint</td></tr>
+    <tr><td>Focus ring</td><td>Computed outline was none</td></tr>
+    <tr><td>Text field, checkbox, dialog</td><td>Not on the public pages that loaded</td></tr>
+  </table>
+</main>
+</body>
+</html>

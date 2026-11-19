@@ -1,0 +1,65 @@
+{
+  "select": {
+    "text": "Select",
+    "color": "rgb(11, 40, 51)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "9999px",
+    "pad": "0px 16px",
+    "size": "16px",
+    "weight": "500",
+    "font": "pplxSans",
+    "h": 40,
+    "border": "1px color(srgb 0.0431373 0.156863 0.2 / 0.15)"
+  },
+  "getStarted": {
+    "text": "Get started",
+    "color": "rgb(251, 251, 251)",
+    "bg": "color(srgb 0.145098 0.145098 0.145098)",
+    "radius": "9999px",
+    "pad": "0px 16px",
+    "size": "16px",
+    "weight": "500",
+    "font": "pplxSans",
+    "h": 40,
+    "border": "1px rgba(0, 0, 0, 0)"
+  },
+  "popular": {
+    "text": "Popular",
+    "color": "rgb(1, 106, 113)",
+    "bg": "rgb(198, 226, 227)",
+    "radius": "6px",
+    "pad": "4px 8px",
+    "size": "12px",
+    "weight": "500",
+    "font": "pplxSans",
+    "h": 24,
+    "border": "0px color(srgb 0.0431373 0.156863 0.2 / 0.15)",
+    "parentBg": "rgb(253, 251, 250)",
+    "parentRadius": "10px",
+    "parentBorder": "1px rgba(1, 106, 113, 0.65)"
+  },
+  "price": {
+    "text": "$17",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "pad": "0px",
+    "size": "24px",
+    "weight": "500",
+    "font": "pplxSans",
+    "h": 17,
+    "border": "0px color(srgb 0.0431373 0.156863 0.2 / 0.15)"
+  },
+  "individual": {
+    "text": "Individual",
+    "color": "rgb(37, 37, 37)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "9999px",
+    "pad": "8px 16px",
+    "size": "14px",
+    "weight": "600",
+    "font": "pplxSans",
+    "h": 34,
+    "border": "0px color(srgb 0.0431373 0.156863 0.2 / 0.15)"
+  }
+}

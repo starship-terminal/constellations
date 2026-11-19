@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Officevibe style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #f9f8f6;
+    --soft: #f0e9e1;
+    --inverse: #0c1754;
+    --action: #2545ff;
+    --text: #171417;
+    --muted: #676665;
+    --extralight: #a2a2a2;
+    --on-accent: #ffffff;
+    --on-inverse: #f9f8f6;
+    --link: #2545ff;
+    --border: #e6e6e4;
+    --success: #4abd80;
+    --warning: #f28107;
+    --danger: #fa7249;
+    --info: #6e8bff;
+    --popular: #ffc13a;
+    --login-page: #f8f6f3;
+    --login-text: #3c3c3c;
+    --login-link: #3b57ff;
+    --display: Abcfavoritvariable, Arial, sans-serif;
+    --body: "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.4; }
+  header, main { max-width: 80rem; margin: 0 auto; padding: 2rem; }
+  h1 { font-family: var(--display); font-weight: 400; letter-spacing: -0.05em; font-size: 3rem; line-height: 1; margin: 0 0 0.5rem; }
+  h2 { font-family: var(--display); font-weight: 400; letter-spacing: -0.02em; font-size: 2rem; line-height: 1.1; margin: 2rem 0 0.75rem; }
+  p.lede { color: var(--muted); max-width: 42rem; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem; }
+  .swatch { border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; background: var(--page); }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+  .row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+  a.button, button.login { display: inline-block; border: 2px solid var(--action); background: var(--action); color: var(--on-accent); border-radius: 100px; padding: 0.7em 2em; font: 500 1rem/1.1 var(--body); text-decoration: none; }
+  a.button.secondary { background: transparent; color: var(--link); }
+  .login-page { background: var(--login-page); border-radius: 1rem; padding: 2rem; max-width: 28rem; }
+  .login-card { background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(37, 69, 255, 0.1), 0 12px 24px rgba(37, 58, 177, 0.05), 0 32px 40px rgba(37, 58, 177, 0.05); }
+  .login-card h3 { font-family: "ABC Favorit", Helvetica, Arial, sans-serif; font-weight: 680; font-size: 24px; line-height: 32px; margin: 0 0 8px; color: var(--login-text); }
+  label { display: block; color: #6c6c6b; font-size: 16px; margin-bottom: 4px; }
+  input { width: 100%; height: 46px; border: 1px solid #b3b3b1; border-radius: 24px; padding: 8px 16px; font: 400 16px/1.5 var(--body); color: var(--login-text); }
+  button.login { width: 100%; height: 46px; border-width: 1px; border-radius: 24px; margin-top: 12px; background: #2545ff; color: #f9f8f6; }
+  .card { background: #fff; border-radius: 24px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(37, 69, 255, 0.1), 0 12px 24px rgba(37, 58, 177, 0.05); max-width: 280px; }
+  .popular { background: var(--popular); border-radius: 24px 24px 0 0; padding: 0.4rem 1rem; font-size: 0.75rem; font-weight: 500; }
+  footer.band { background: var(--inverse); color: var(--on-inverse); padding: 2rem; border-radius: 1rem; }
+  .type-sample { margin: 0.4rem 0; }
+  .gap { color: var(--muted); font-size: 0.875rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Officevibe</h1>
+  <p class="lede">Public Workleap marketing and the signed-out login, measured 2026-11-19. Specimens use the measured values. Screenshots were not captured: the preview browser returned no frames.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="swatch"><i style="background:#f9f8f6"></i><span>surface #f9f8f6</span></div>
+    <div class="swatch"><i style="background:#f0e9e1"></i><span>soft #f0e9e1</span></div>
+    <div class="swatch"><i style="background:#171417"></i><span>text #171417</span></div>
+    <div class="swatch"><i style="background:#676665"></i><span>muted #676665</span></div>
+    <div class="swatch"><i style="background:#2545ff"></i><span>accent #2545ff</span></div>
+    <div class="swatch"><i style="background:#e6e6e4"></i><span>border #e6e6e4</span></div>
+    <div class="swatch"><i style="background:#0c1754"></i><span>footer #0c1754</span></div>
+    <div class="swatch"><i style="background:#f8f6f3"></i><span>login page #f8f6f3</span></div>
+    <div class="swatch"><i style="background:#3c3c3c"></i><span>login text #3c3c3c</span></div>
+    <div class="swatch"><i style="background:#4abd80"></i><span>success #4abd80</span></div>
+    <div class="swatch"><i style="background:#f28107"></i><span>warning #f28107</span></div>
+    <div class="swatch"><i style="background:#fa7249"></i><span>danger #fa7249</span></div>
+    <div class="swatch"><i style="background:#ffc13a"></i><span>popular #ffc13a</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="type-sample" style="font-family:var(--display);font-size:58px;line-height:1;letter-spacing:-0.05em;font-weight:400">Officevibe and employee engagement</p>
+  <p class="type-sample" style="font-family:var(--display);font-size:43px;line-height:1.1;letter-spacing:-0.02em">Simple insight. Clear direction.</p>
+  <p class="type-sample">Body is Inter hosted at 1rem / 1.4, colour #171417. At the measured 1169px viewport the root was 15.436px, so 1rem painted as 15.436px.</p>
+  <p class="gap">ABC Favorit Variable and Martina Plantijn are the display and highlight families. They are commercial faces and are not bundled here.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="button" href="#button">Book a demo</a>
+    <a class="button secondary" href="#button">Let's chat</a>
+  </div>
+  <p class="gap">Hover colour for the filled button was not isolated. The default .button rule sets background to --background-color--bg-brand-default (#2545ff) and a 100px radius. Focus outline on a focused button was rgb(37, 69, 255) auto 3px.</p>
+
+  <h2>Pricing card</h2>
+  <div>
+    <div class="popular">Most popular</div>
+    <div class="card" style="border-radius:0 0 24px 24px">
+      <strong>Pro</strong>
+      <p>Starting at $11,999 USD</p>
+      <a class="button" href="#card">Book a demo</a>
+    </div>
+  </div>
+
+  <h2>Signed-out login</h2>
+  <div class="login-page">
+    <div class="login-card">
+      <h3>Let's leap in!</h3>
+      <label for="email">Email or mobile number</label>
+      <input id="email" type="text" placeholder="">
+      <button class="login" type="button">Next</button>
+    </div>
+  </div>
+  <p class="gap">The identifier accepts a mobile number, so the form was not submitted. No self-serve email-only trial was shown.</p>
+
+  <h2>Footer band</h2>
+  <footer class="band">Boardroom navy #0c1754 with text #f9f8f6.</footer>
+</main>
+</body>
+</html>

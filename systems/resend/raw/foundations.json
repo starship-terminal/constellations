@@ -1,0 +1,271 @@
+{
+  "source": "getComputedStyle on resend.com, 2026-11-19, T3 preview tab, viewport 1169x731 at devicePixelRatio 2",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "htmlClass": "dark",
+  "colorScheme": "dark",
+  "metaThemeColor": "#000000",
+  "pages": [
+    "https://resend.com/",
+    "https://resend.com/login",
+    "https://resend.com/signup",
+    "https://resend.com/pricing",
+    "https://resend.com/brand",
+    "https://resend.com/docs/introduction"
+  ],
+  "screenshotFrames": "preview_snapshot returned: The browser is not producing screenshot frames. No screenshots invented.",
+  "colors": {
+    "page": "#000000",
+    "text": "#f0f0f0",
+    "muted": "#a1a4a5",
+    "white": "#ffffff",
+    "black": "#000000",
+    "accent": "#ffffff",
+    "accentHover": "#f0f0f0",
+    "textOnAccent": "#000000",
+    "placeholder": "#52595b",
+    "gray": {
+      "1": "#141517",
+      "2": "#191b1e",
+      "3": "#212629",
+      "4": "#293034",
+      "5": "#333b3e",
+      "6": "#3b4345",
+      "7": "#434a4d",
+      "8": "#52595b",
+      "9": "#6e7679",
+      "10": "#878d8f",
+      "11": "#a1a4a5",
+      "12": "#f0f0f0"
+    },
+    "lightGray": {
+      "1": "#f0f0f0",
+      "11": "#0d0d0d",
+      "12": "#191919"
+    },
+    "forgeGreen": "#44ffa4",
+    "forgeRed": "#fe4e54",
+    "automationOrange": "#8f3e1e",
+    "codeText": "#ebeced",
+    "slate12": "#ecedef",
+    "pricingBorder": "color(display-p3 0.882 0.949 0.996 / 0.183)",
+    "buttonBorder": "oklab(0.999994 0.0000455678 0.0000200868 / 0.05)",
+    "disabledText": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+    "satisfied": "color(display-p3 0.434 0.828 0.573)",
+    "docsDarkPage": "#09090b",
+    "docsLightPage": "#ffffff",
+    "docsLightText": "#161616",
+    "docsLightMuted": "#6f6f6f",
+    "docsLightLink": "#101828",
+    "docsDarkText": "#dedede",
+    "docsDarkMuted": "#9e9e9e",
+    "docsSearchLightBorder": "#eeeeee"
+  },
+  "fonts": {
+    "sans": "'Inter Website', ui-sans-serif, system-ui, sans-serif",
+    "display": "\"aBCFavorit\", ui-sans-serif, system-ui, sans-serif",
+    "displayComputed": "aBCFavorit, ui-sans-serif, system-ui, sans-serif",
+    "hero": "domaine, ui-sans-serif, system-ui, sans-serif",
+    "mono": "'Commit Mono Website', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+    "docs": "Inter, -apple-system, system-ui, sans-serif",
+    "auth": "appInter"
+  },
+  "type": {
+    "hero": {
+      "size": "96px",
+      "weight": 400,
+      "lineHeight": "96px",
+      "letterSpacing": "-0.96px",
+      "font": "domaine"
+    },
+    "pricingH1": {
+      "size": "76.8px",
+      "weight": 400,
+      "lineHeight": "76.8px",
+      "letterSpacing": "-0.768px"
+    },
+    "h2": {
+      "size": "56px",
+      "weight": 400,
+      "lineHeight": "67.2px",
+      "letterSpacing": "-2.8px",
+      "font": "aBCFavorit"
+    },
+    "authH1": {
+      "size": "28px",
+      "weight": 500,
+      "lineHeight": "34px",
+      "letterSpacing": "-0.72px",
+      "font": "aBCFavorit"
+    },
+    "docsH1": {
+      "size": "36px",
+      "weight": 600,
+      "lineHeight": "40px",
+      "font": "Inter"
+    },
+    "lede": {
+      "size": "18px",
+      "weight": 400,
+      "lineHeight": "27px",
+      "color": "#a1a4a5"
+    },
+    "body": {
+      "size": "16px",
+      "weight": 400,
+      "lineHeight": "24px"
+    },
+    "nav": {
+      "size": "14px",
+      "weight": 500,
+      "lineHeight": "20px"
+    },
+    "button": {
+      "size": "14px",
+      "weight": 600,
+      "lineHeight": "20px"
+    },
+    "buttonLg": {
+      "size": "16px",
+      "weight": 600,
+      "lineHeight": "24px"
+    },
+    "label": {
+      "size": "14px",
+      "weight": 400,
+      "lineHeight": "20px",
+      "color": "#a1a4a5"
+    },
+    "hint": {
+      "size": "12px",
+      "weight": 400
+    },
+    "code": {
+      "size": "14px",
+      "font": "Commit Mono Website",
+      "color": "#ebeced"
+    }
+  },
+  "radius": {
+    "xs": "2px",
+    "sm": "4px",
+    "md": "6px",
+    "lg": "8px",
+    "xl": "12px",
+    "2xl": "16px",
+    "3xl": "24px",
+    "4xl": "32px",
+    "button": "16px",
+    "field": "16px",
+    "pricingCard": "16px",
+    "docsSearch": "12px"
+  },
+  "space": {
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "20px",
+    "6": "24px",
+    "unit": "4px"
+  },
+  "components": {
+    "navLink": {
+      "height": "58px",
+      "pad": "4px 16px",
+      "size": "14px",
+      "weight": "500",
+      "color": "#a1a4a5"
+    },
+    "login": {
+      "height": "40px",
+      "pad": "0px 16px",
+      "radius": "16px",
+      "size": "14px",
+      "weight": "600",
+      "color": "#a1a4a5"
+    },
+    "getStartedNav": {
+      "height": "40px",
+      "pad": "0px 16px",
+      "radius": "16px",
+      "size": "14px",
+      "weight": "600",
+      "color": "#ffffff",
+      "border": "2px solid white/5"
+    },
+    "getStartedHero": {
+      "height": "48px",
+      "pad": "0px 20px",
+      "radius": "16px",
+      "size": "16px",
+      "weight": "600",
+      "color": "#ffffff",
+      "backgroundImage": "linear-gradient(104deg, rgba(253, 253, 253, 0.05) 5%, rgba(240, 240, 228, 0.1) 100%)",
+      "transition": "0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "ghost": {
+      "height": "48px",
+      "pad": "0px 20px",
+      "radius": "16px",
+      "size": "16px",
+      "weight": "600",
+      "color": "#a1a4a5"
+    },
+    "oauth": {
+      "height": "48px",
+      "pad": "0px 20px",
+      "radius": "16px",
+      "width": "248px",
+      "size": "16px",
+      "weight": "600",
+      "color": "#ffffff"
+    },
+    "submitDisabled": {
+      "height": "48px",
+      "radius": "16px",
+      "size": "14px",
+      "weight": "600",
+      "opacity": "0.3",
+      "cursor": "not-allowed",
+      "color": "oklab white / 0.5"
+    },
+    "field": {
+      "height": "48px",
+      "radius": "16px",
+      "pad": "0px 16px",
+      "size": "16px",
+      "border": "2px solid oklab white / 0.05",
+      "placeholder": "oklab white / 0.5",
+      "width": "512px"
+    },
+    "pricingCard": {
+      "width": "271px",
+      "pad": "24px",
+      "radius": "16px",
+      "border": "1px display-p3 slate / 0.183"
+    },
+    "docsSearchLight": {
+      "bg": "#ffffff",
+      "color": "#6f6f6f",
+      "radius": "12px",
+      "border": "#eeeeee"
+    }
+  },
+  "notEntered": [
+    "signup form was filled then cleared and not submitted",
+    "Google and GitHub OAuth not followed",
+    "no API key created",
+    "no card entered",
+    "signed-in dashboard not opened",
+    "Stripe hCaptcha iframe present on signup, not interacted with"
+  ]
+}

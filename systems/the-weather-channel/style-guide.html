@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Weather Channel style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --muted: #f2f2f2;
+    --action: #252422;
+    --action-strong: #0d142a;
+    --hero: #0e1d25;
+    --text: #252422;
+    --secondary: #676767;
+    --on-action: #ffffff;
+    --link: #3a61cc;
+    --accent: #007ea8;
+    --sunrise: #cb4a14;
+    --border: rgba(0, 0, 0, 0.08);
+    --focus: #3a61cc;
+    --font: Inter, "Inter Fallback", sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 24px; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-size: 24px; line-height: 27.6px; letter-spacing: -0.48px; font-weight: 800; margin: 0 0 8px; }
+  h2 { font-size: 20px; line-height: 23px; letter-spacing: -0.4px; font-weight: 700; margin: 32px 0 12px; }
+  p { margin: 0 0 12px; }
+  .note { color: var(--secondary); font-size: 14px; font-weight: 500; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 56px; border-radius: 16px; border: 1px solid var(--border); }
+  .swatch span { display: block; font-size: 12px; font-weight: 700; margin-top: 6px; }
+  .hero { background: var(--hero); color: #fff; border-radius: 16px; padding: 24px; }
+  .temp { font-size: 120px; line-height: 104px; letter-spacing: -4.8px; font-weight: 800; }
+  .condition { font-size: 18px; font-weight: 700; line-height: 23px; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+  .sign { background: var(--action); color: var(--on-action); height: 48px; padding: 0 16px; border-radius: 24px; font-weight: 700; font-size: 14px; border: 0; }
+  .tab { height: 48px; padding: 0 16px; border-radius: 24px; border: 0; font-weight: 700; font-size: 14px; background: transparent; color: var(--text); }
+  .tab.on { background: var(--muted); color: var(--link); }
+  .details { background: var(--action-strong); color: #fff; border: 0; border-radius: 8px; padding: 12px 16px; font-size: 16px; }
+  .field { height: 48px; border-radius: 24px; border: 2px solid var(--focus); padding: 4px 16px; font: inherit; font-size: 14px; }
+  a { color: var(--link); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<main>
+  <h1>The Weather Channel</h1>
+  <p class="note">Public signed-out surfaces, measured 19 November 2026. Light only. Values are the computed styles in tokens.json.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><span>Page #ffffff</span></div>
+    <div class="swatch"><div class="chip" style="background:#f2f2f2"></div><span>Muted #f2f2f2</span></div>
+    <div class="swatch"><div class="chip" style="background:#252422"></div><span>Action #252422</span></div>
+    <div class="swatch"><div class="chip" style="background:#0d142a"></div><span>Action strong #0d142a</span></div>
+    <div class="swatch"><div class="chip" style="background:#0e1d25"></div><span>Hero #0e1d25</span></div>
+    <div class="swatch"><div class="chip" style="background:#3a61cc"></div><span>Link #3a61cc</span></div>
+    <div class="swatch"><div class="chip" style="background:#007ea8"></div><span>Accent #007ea8</span></div>
+    <div class="swatch"><div class="chip" style="background:#cb4a14"></div><span>Sunrise #cb4a14</span></div>
+  </div>
+
+  <h2>Hero</h2>
+  <div class="hero">
+    <div class="temp">79°</div>
+    <p class="condition">Light Rain</p>
+    <p>Feels Like 86° · High 89° · Low 77°</p>
+  </div>
+
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="sign" type="button">Downtown Core</button>
+    <button class="tab on" type="button">Today</button>
+    <button class="tab" type="button">Hourly</button>
+    <button class="tab" type="button">10-Day</button>
+    <button class="details" type="button">See details</button>
+  </div>
+  <div class="row">
+    <input class="field" type="text" value="" placeholder="Search for a location" aria-label="Search for a location">
+  </div>
+  <p><a href="#">Improve location precision</a></p>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Weight</th><th>Tracking</th></tr>
+    <tr><td>Display temperature</td><td>120px</td><td>800</td><td>-4.8px</td></tr>
+    <tr><td>Title</td><td>24px</td><td>800</td><td>-0.48px</td></tr>
+    <tr><td>Section</td><td>20px</td><td>700</td><td>-0.4px</td></tr>
+    <tr><td>Body</td><td>16px</td><td>400</td><td>0</td></tr>
+    <tr><td>Label</td><td>14px</td><td>700</td><td>0</td></tr>
+    <tr><td>Hour time</td><td>12px</td><td>700</td><td>0</td></tr>
+  </table>
+</main>
+</body>
+</html>

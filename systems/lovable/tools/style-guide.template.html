@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lovable style guide</title>
+<meta name="description" content="Lovable (lovable.dev) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Camera Plain Variable", ui-sans-serif, system-ui, sans-serif;
+  --sg-display: "Camera Plain Variable", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: "Roboto Mono Variable", ui-monospace, Menlo, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #030303); background: var(--page, #f5f5f5); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 600 40px/1.15 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.03em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--text-secondary, #5c5c5c); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #c9c9c9); }
+.lead { max-width: 62ch; color: var(--text-secondary, #5c5c5c); }
+.note { font-size: 13px; color: var(--text-secondary, #5c5c5c); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary, #5c5c5c); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #c9c9c9); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-secondary, #5c5c5c); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-secondary, #5c5c5c); }
+.mode { position: fixed; top: 14px; right: 18px; z-index: 5; font: 500 12px/1 var(--sg-sans); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border, #c9c9c9); background: var(--surface, #fff); color: var(--text, #030303); cursor: pointer; }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border, #d9d5ce); border-radius: var(--radius-lg, 16px); overflow: hidden; background: var(--background, #f9f8f6); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 56px; padding: 0 20px; background: var(--page, #f5f5f5); border-bottom: 1px solid var(--border, #c9c9c9); font-size: 14px; }
+.navbar .wm { font: 500 16px/1 var(--sg-display); letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 32px; padding: 0 16px; border-radius: 999px; font-size: 14px; font-weight: 400; border: 1px solid transparent; }
+.btn.primary { background: var(--inverse, #000); color: var(--text-on-accent, #fff); }
+.btn.ghost { background: var(--surface, #fff); color: var(--text, #030303); }
+.hero { background: var(--page, #f5f5f5); color: var(--text, #030303); padding: 72px 40px; font: 600 36px/1.16 var(--sg-display); letter-spacing: -0.03em; text-align: center; }
+.hero small { display: block; font: 400 16px/1.25 var(--sg-sans); color: var(--text-secondary, #5c5c5c); margin: 20px auto 26px; max-width: 46ch; letter-spacing: 0; }
+.composer { background: var(--surface, #fff); border-radius: 16px; max-width: 640px; margin: 0 auto; padding: 16px; text-align: left; }
+.composer .ta { font: 400 16px/1.25 var(--sg-sans); color: var(--text-secondary, #5c5c5c); min-height: 40px; }
+.field { display: flex; align-items: center; height: 44px; border-radius: 999px; padding: 0 16px; font-size: 16px; color: var(--text, #030303); max-width: 420px; background: var(--surface, #fff); margin-bottom: 8px; box-shadow: inset 0 2px 2px -1px rgba(0,0,0,.04); }
+.submit { border: 0; height: 44px; padding: 0 18px; border-radius: 999px; background: var(--inverse, #000); color: var(--text-on-accent, #fff); font: 480 16px/1 var(--sg-sans); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #c9c9c9); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<button class="mode" id="mode">Dark</button>
+<main>
+  <h1>Lovable style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Lovable, measured</h2>
+  <p class="lead">Every swatch below is a CSS custom property generated from <code>tokens.json</code>. Marketing pages paint light. The dark set is <code>html.dark</code>, painted on the enterprise demo form. Camera Plain Variable is the UI face. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from lovable.dev on 2026-11-18, signed out, in headless Chromium. Consent overlays were hidden, never clicked. The builder was never signed into. Nothing was submitted.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A 56px header on warm gray. Log in is a white pill. Get started is an inverse pill. The accent is blue, not a second brand colour on the chrome.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">Lovable</span><span>Solutions</span><span>Resources</span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Log in</span><span class="btn primary">Get started</span></div>
+    <div class="hero">Build something Lovable
+      <small>Ask Lovable to create a landing page.</small>
+      <div class="composer"><div class="ta">Ask Lovable to create a landing page for my...</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Log in</h2>
+  <p class="lead">44px pill OAuth buttons, a 44px email field and a 44px inverse Continue. Continue was measured and never pressed.</p>
+  <div class="mock" style="padding:20px">
+    <div class="field">Email</div>
+    <span class="submit" style="display:inline-flex;align-items:center;width:350px;justify-content:center">Continue</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Page is <code>light.page</code> #f5f5f5. Text is <code>light.text</code> #030303. Accent is <code>light.accent</code> #1f55f1. The inverse pill is <code>light.inverse</code>.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 38px CTA, 36px fields and OAuth buttons, the 56px billing toggle, 66px build tiles, the 8px control corner and the header and footer blocks at 1440px.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, expanded and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+document.getElementById('mode').addEventListener('click', () => {
+  const d = document.documentElement;
+  d.setAttribute('data-mode', d.getAttribute('data-mode') === 'dark' ? '' : 'dark');
+});
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const theme of ['light', 'dark']) {
+    const roles = flat(TOK[theme] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (roles.length) {
+      h += `<div class="pal-h">${theme} roles</div><div class="pal">`;
+      for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.light && TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

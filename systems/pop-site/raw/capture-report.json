@@ -1,0 +1,36 @@
+{
+  "pages": [
+    {
+      "name": "home",
+      "status": 200,
+      "url": "https://pop.site/",
+      "title": "Pop Site - Make your free personal site. For Creators, Freelancers & Businesses",
+      "blocked": false,
+      "text": "Pricing\n\nBlog\n\nCreate Account\n\nLog In\n\nJoin 10K+ People\n\nMake a stunning site.\n\nUsed by 10K+ people in over 50 countries.\n\n.pop.site\n\nClaim your site\n\nNo credit card required.\n\nPow"
+    },
+    {
+      "name": "pricing",
+      "status": 200,
+      "url": "https://pop.site/pricing",
+      "title": "Pop Site - Make your free personal site. For Creators, Freelancers & Businesses",
+      "blocked": false,
+      "text": "Pricing\n\nBlog\n\nCreate Account\n\nLog In\n\nPricing\n\nFree to create and share.\n\nFor pro-level features, plans start at just $10/mo\n\n.pop.site\n\nClaim your pop.site\n\nPop Website Technolog"
+    },
+    {
+      "name": "blog",
+      "status": 200,
+      "url": "https://pop.site/blog",
+      "title": "Pop Site Blog - Linktree Alternatives & Site Tips 2026",
+      "blocked": false,
+      "text": "Pricing\n\nBlog\n\nCreate Account\n\nLog In\n\nPop Site Blog\nMeet the New Pop Site\n\nSep 2, 2026\n\nWhy Pop Site Analytics Are Powerful\n\nAug 13, 2026\n\nPro Tips\n\nPop Site vs. Squarespace: The "
+    },
+    {
+      "name": "signin",
+      "status": 200,
+      "url": "https://app.pop.site/?signin",
+      "title": "Pop Site",
+      "blocked": false,
+      "text": "Sign in to continue\nEmail\nPassword\nReset Password?\nSign in\n\nDon't have an account?\n\nSign up\nor\nContinue with Google\nTerms\nPrivacy"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SoundCloud style guide</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #121212; color: #ffffff; font: 400 14px/20px Söhne, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header, main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+  h1 { font-size: 28px; line-height: 36px; font-weight: 600; margin: 0 0 8px; }
+  h2 { font-size: 22px; line-height: 28px; font-weight: 600; margin: 36px 0 12px; }
+  p.lead { color: #999999; max-width: 68ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+  .sw i { width: 44px; height: 44px; border-radius: 4px; box-shadow: inset 0 0 0 1px #ffffff29; display: block; }
+  .sw b { display: block; font-size: 12px; }
+  .sw span, .ty small { color: #999999; font-size: 12px; font-weight: 400; }
+  .ty { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid #ffffff29; align-items: baseline; }
+  .sp { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .sp i { height: 12px; background: #ff5500; display: block; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .pill { display: inline-flex; align-items: center; height: 36px; padding: 0 18px; border-radius: 9999px; font-weight: 600; border: 0; }
+  .white { background: #ffffff; color: #000000; }
+  .black { background: #000000; color: #ffffff; }
+  .soft { background: #f3f3f3; color: #121212; height: 32px; padding: 0 24px; font-size: 17px; }
+  .oauth { display: inline-flex; align-items: center; justify-content: center; height: 48px; width: 280px; border-radius: 100px; background: transparent; color: #ffffff; font-weight: 600; border: 1px solid #ffffff29; }
+  .field { height: 54px; width: 280px; border-radius: 4px; background: #303030; color: #ffffff; border: 0; padding: 0 16px; }
+  .link { color: #699fff; }
+  code { font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SoundCloud</h1>
+  <p class="lead">Public signed-out surfaces, measured 2026-11-19. Dark is the listener home. Light is the standalone auth page and the phone home bar. Söhne is proprietary and falls back to the system sans here. Values come from tokens.json.</p>
+</header>
+<main>
+  <h2>Colour, dark</h2>
+  <div class="grid">
+    <div class="sw"><i style="background:#121212"></i><div><b>page</b><span>#121212</span></div></div>
+    <div class="sw"><i style="background:#303030"></i><div><b>surface</b><span>#303030</span></div></div>
+    <div class="sw"><i style="background:#ffffff"></i><div><b>text</b><span>#ffffff</span></div></div>
+    <div class="sw"><i style="background:#999999"></i><div><b>muted</b><span>#999999</span></div></div>
+    <div class="sw"><i style="background:#ff5500"></i><div><b>accent</b><span>#ff5500</span></div></div>
+    <div class="sw"><i style="background:#ffffff29"></i><div><b>border</b><span>#ffffff29</span></div></div>
+    <div class="sw"><i style="background:#f3f3f3"></i><div><b>button-soft</b><span>#f3f3f3</span></div></div>
+    <div class="sw"><i style="background:#699fff"></i><div><b>link</b><span>#699fff</span></div></div>
+  </div>
+  <h2>Colour, light</h2>
+  <div class="grid">
+    <div class="sw"><i style="background:#ffffff"></i><div><b>page</b><span>#ffffff</span></div></div>
+    <div class="sw"><i style="background:#f3f3f3"></i><div><b>surface</b><span>#f3f3f3</span></div></div>
+    <div class="sw"><i style="background:#121212"></i><div><b>text</b><span>#121212</span></div></div>
+    <div class="sw"><i style="background:#666666"></i><div><b>muted</b><span>#666666</span></div></div>
+    <div class="sw"><i style="background:#044dd2"></i><div><b>link</b><span>#044dd2</span></div></div>
+    <div class="sw"><i style="background:#e76b9f"></i><div><b>contact-pink</b><span>#e76b9f</span></div></div>
+    <div class="sw"><i style="background:#ab87e2"></i><div><b>contact-lilac</b><span>#ab87e2</span></div></div>
+  </div>
+  <h2>Type</h2>
+  <div class="ty"><div class="k">hero<small>65px / 55.25px · 800</small></div><div style="font-size:40px;font-weight:800;letter-spacing:-1.3px;line-height:1">Discover.</div></div>
+  <div class="ty"><div class="k">page-title<small>28px / 36px · 600</small></div><div style="font-size:28px;font-weight:600;line-height:36px">Discover Tracks and Playlists</div></div>
+  <div class="ty"><div class="k">section<small>22px / 28px · 600</small></div><div style="font-size:22px;font-weight:600">Artists to watch out for</div></div>
+  <div class="ty"><div class="k">lede<small>19px / 20.9px · 600</small></div><div style="font-size:19px;font-weight:600">Discover your next obsession.</div></div>
+  <div class="ty"><div class="k">body<small>14px / 20px · 400</small></div><div>Search for artists, bands, tracks, podcasts</div></div>
+  <h2>Radius and space</h2>
+  <div class="sp"><i style="width:999px;max-width:100%;border-radius:9999px"></i><span>pill 9999px</span></div>
+  <div class="sp"><i style="width:16px"></i><span>hero card 16px</span></div>
+  <div class="sp"><i style="width:4px"></i><span>field and mobile control 4px</span></div>
+  <div class="sp"><i style="width:3px"></i><span>header search 3px</span></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="pill white">Sign in</span>
+    <span class="pill black">Create account</span>
+    <span class="pill soft">Get started</span>
+    <span class="oauth">Continue with Google</span>
+    <input class="field" placeholder="Your email address or profile URL" aria-label="Email">
+    <span class="link">Learn More</span>
+  </div>
+</main>
+</body>
+</html>

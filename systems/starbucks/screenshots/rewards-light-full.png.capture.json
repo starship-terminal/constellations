@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-11-18T18:41:05.926Z",
+  "requestedViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 2,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "scrollH": 6411,
+  "scrollW": 1440,
+  "fullPage": true,
+  "note": "Headless Chromium. Screenshot frames were unavailable in the T3 preview tab.",
+  "packageFile": "rewards-light-full.png",
+  "png": {
+    "width": 2880,
+    "height": 12822
+  },
+  "quantized": "sRGB 256-colour median-cut"
+}

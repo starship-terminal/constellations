@@ -1,0 +1,1277 @@
+{
+ "readAt": "2026-11-18",
+ "source": "masterclass.com public signed-out stylesheets (linked + inline), harvested in headless Chromium. The product paints one dark theme; --mc-color-* and --mc-theme-* are the declared token layer.",
+ "sheets": [
+  {
+   "name": "https://www.masterclass.com/_next/static/css/ce008118a9229298.css",
+   "bytes": 1352
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/d7992c6b97b19d94.css",
+   "bytes": 6642
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css",
+   "bytes": 362208
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/4503cd3349c28aa4.css",
+   "bytes": 3679
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/c7fb4975ac39439f.css",
+   "bytes": 1356
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/a9fca4f708abb5aa.css",
+   "bytes": 1067
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/9f39a3157f7f9f6d.css",
+   "bytes": 42416
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/237242c7fc153365.css",
+   "bytes": 26250
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/7a2425c25d31bd4e.css",
+   "bytes": 7970
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/5547adbe6d0a726e.css",
+   "bytes": 4513
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/3372d6d61b65457a.css",
+   "bytes": 12214
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/5d90638963458f05.css",
+   "bytes": 8725
+  },
+  {
+   "name": "https://www.masterclass.com/_next/static/css/5e6ea29965dd79f2.css",
+   "bytes": 4570
+  },
+  {
+   "name": "inline-0 @ /",
+   "bytes": 295
+  },
+  {
+   "name": "inline-1 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-2 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-3 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-4 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-5 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-6 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-7 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-8 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-9 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-10 @ /",
+   "bytes": 56
+  },
+  {
+   "name": "inline-0 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 295
+  },
+  {
+   "name": "inline-1 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-2 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-3 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-4 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-5 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-6 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-7 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-8 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-9 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-10 @ /classes/revolutionize-your-workflows-with-ai",
+   "bytes": 56
+  },
+  {
+   "name": "inline-0 @ /checkout",
+   "bytes": 295
+  },
+  {
+   "name": "inline-0 @ /auth/login",
+   "bytes": 6609
+  },
+  {
+   "name": "inline-1 @ /auth/login",
+   "bytes": 295
+  },
+  {
+   "name": "inline-0 @ /categories",
+   "bytes": 295
+  },
+  {
+   "name": "inline-1 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-2 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-3 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-4 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-5 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-6 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-7 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-8 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-9 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-10 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-11 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-12 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-13 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-14 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-15 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-16 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-17 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-18 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-19 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-20 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-21 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-22 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-23 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-24 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-25 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-26 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-27 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-28 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-29 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-30 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-31 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-32 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-33 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-34 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-35 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-36 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-37 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-38 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-39 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-40 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-41 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-42 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-43 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-44 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-45 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-46 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-47 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-48 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-49 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-50 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-51 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-52 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-53 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-54 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-55 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-56 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-57 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-58 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-59 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-60 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-61 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-62 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-63 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-64 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-65 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-66 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-67 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-68 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-69 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-70 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-71 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-72 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-73 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-74 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-75 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-76 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-77 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-78 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-79 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-80 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-81 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-82 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-83 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-84 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-85 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-86 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-87 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-88 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-89 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-90 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-91 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-92 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-93 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-94 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-95 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-96 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-97 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-98 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-99 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-100 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-101 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-102 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-103 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-104 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-105 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-106 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-107 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-108 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-109 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-110 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-111 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-112 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-113 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-114 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-115 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-116 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-117 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-118 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-119 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-120 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-121 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-122 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-123 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-124 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-125 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-126 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-127 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-128 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-129 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-130 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-131 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-132 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-133 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-134 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-135 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-136 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-137 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-138 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-139 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-140 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-141 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-142 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-143 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-144 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-145 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-146 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-147 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-148 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-149 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-150 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-151 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-152 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-153 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-154 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-155 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-156 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-157 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-158 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-159 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-160 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-161 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-162 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-163 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-164 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-165 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-166 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-167 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-168 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-169 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-170 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-171 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-172 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-173 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-174 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-175 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-176 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-177 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-178 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-179 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-180 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-181 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-182 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-183 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-184 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-185 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-186 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-187 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-188 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-189 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-190 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-191 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-192 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-193 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-194 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-195 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-196 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-197 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-198 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-199 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-200 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-201 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-202 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-203 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-204 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-205 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-206 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-207 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-208 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-209 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-210 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-211 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-212 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-213 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-214 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-215 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-216 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-217 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-218 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-219 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-220 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-221 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-222 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-223 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-224 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-225 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-226 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-227 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-228 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-229 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-230 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-231 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-232 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-233 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-234 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-235 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-236 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-237 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-238 @ /categories",
+   "bytes": 56
+  },
+  {
+   "name": "inline-0 @ /gift",
+   "bytes": 295
+  },
+  {
+   "name": "inline-1 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-2 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-3 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-4 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-5 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-6 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-7 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-8 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-9 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-10 @ /gift",
+   "bytes": 56
+  },
+  {
+   "name": "inline-0 @ /for-business",
+   "bytes": 2345
+  },
+  {
+   "name": "inline-1 @ /for-business",
+   "bytes": 295
+  }
+ ],
+ "counts": {
+  "rules": 2,
+  "fonts": 11,
+  "names": {
+   "mc": 0,
+   "app": 2,
+   "tailwind": 0
+  }
+ },
+ "errors": [],
+ "mc": [],
+ "app": [
+  {
+   "file": "https://www.masterclass.com/_next/static/css/9f39a3157f7f9f6d.css",
+   "selector": "",
+   "context": [],
+   "properties": {
+    "--compare-glow-angle": "360deg"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.masterclass.com/_next/static/css/237242c7fc153365.css",
+   "selector": "",
+   "context": [],
+   "properties": {
+    "--pro-banner-rim-angle": "360deg"
+   },
+   "bin": "app"
+  }
+ ],
+ "fonts": [
+  {
+   "family": "Sohne",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css"
+  },
+  {
+   "family": "Sohne",
+   "weight": "600",
+   "style": "normal",
+   "file": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css"
+  },
+  {
+   "family": "Sohne Schmal",
+   "weight": "600",
+   "style": "normal",
+   "file": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css"
+  },
+  {
+   "family": "Impact-fallback",
+   "weight": "",
+   "style": "",
+   "file": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css"
+  },
+  {
+   "family": "Sohne",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css"
+  },
+  {
+   "family": "Sohne",
+   "weight": "600",
+   "style": "normal",
+   "file": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css"
+  },
+  {
+   "family": "Sohne Schmal",
+   "weight": "600",
+   "style": "normal",
+   "file": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css"
+  },
+  {
+   "family": "Impact-fallback",
+   "weight": "",
+   "style": "",
+   "file": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css"
+  },
+  {
+   "family": "Helvetica",
+   "weight": "",
+   "style": "",
+   "file": "https://www.masterclass.com/_next/static/css/feca7a44c19b0be7.css"
+  },
+  {
+   "family": "Ivar Display Condensed",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.masterclass.com/_next/static/css/9f39a3157f7f9f6d.css"
+  },
+  {
+   "family": "Ivar Headline",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.masterclass.com/_next/static/css/237242c7fc153365.css"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--compare-glow-angle": {
+    "raw": "0deg",
+    "kind": "other"
+   },
+   "--pro-banner-rim-angle": {
+    "raw": "0deg",
+    "kind": "other"
+   }
+  }
+ }
+}

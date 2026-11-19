@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-18T17:03:23.215Z",
+  "name": "contact-light-field-focused",
+  "theme": "light",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "scrollH": 1776,
+  "scrollW": 1440,
+  "url": "https://onesoil.ai/en/contact-us",
+  "fullPage": false,
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "screenshotFrames": "preview browser reported: The browser is not producing screenshot frames. Headless Playwright captured this public marketing page after it loaded without a challenge."
+}

@@ -1,0 +1,785 @@
+{
+  "source": "Computed styles on missiveapp.com and mail.missiveapp.com, signed out, 2026-11-19, light, 1440. Hover is a real pointer. Pressed is CSS.forcePseudoState :active. No form submitted.",
+  "capturedAt": "2026-11-18T16:36:23.405Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "components": {
+    "nav-try": {
+      "page": "https://missiveapp.com/",
+      "selector": "[data-m=\"nav-try\"]",
+      "states": {
+        "default": {
+          "text": "Try for free",
+          "box": {
+            "x": 1221,
+            "y": 8,
+            "w": 99,
+            "h": 44
+          },
+          "style": {
+            "backgroundColor": "rgb(34, 102, 237)",
+            "color": "rgb(255, 255, 255)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 0px",
+            "height": "44px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "Try for free",
+          "box": {
+            "x": 1221,
+            "y": 8,
+            "w": 99,
+            "h": 44
+          },
+          "style": {
+            "backgroundColor": "rgb(34, 102, 237)",
+            "color": "rgb(255, 255, 255)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 0px",
+            "height": "44px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "pressed": null,
+        "focus": {
+          "text": "Try for free",
+          "box": {
+            "x": 1221,
+            "y": 8,
+            "w": 99,
+            "h": 44
+          },
+          "style": {
+            "backgroundColor": "rgb(34, 102, 237)",
+            "color": "rgb(255, 255, 255)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 95, 204) auto 1px",
+            "height": "44px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        }
+      }
+    },
+    "nav-login": {
+      "page": "https://missiveapp.com/",
+      "selector": "[data-m=\"nav-login\"]",
+      "states": {
+        "default": {
+          "text": "Log in",
+          "box": {
+            "x": 1046,
+            "y": 8,
+            "w": 65,
+            "h": 44
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(52, 54, 58)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(52, 54, 58)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(52, 54, 58) none 0px",
+            "height": "44px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "Log in",
+          "box": {
+            "x": 1046,
+            "y": 8,
+            "w": 65,
+            "h": 44
+          },
+          "style": {
+            "backgroundColor": "rgb(245, 246, 246)",
+            "color": "rgb(52, 54, 58)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(52, 54, 58)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(52, 54, 58) none 0px",
+            "height": "44px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "pressed": null
+      }
+    },
+    "nav-demo": {
+      "page": "https://missiveapp.com/",
+      "selector": "[data-m=\"nav-demo\"]",
+      "states": {
+        "default": {
+          "text": "Book a demo",
+          "box": {
+            "x": 1110,
+            "y": 8,
+            "w": 111,
+            "h": 44
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(52, 54, 58)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(52, 54, 58)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(52, 54, 58) none 0px",
+            "height": "44px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "Book a demo",
+          "box": {
+            "x": 1110,
+            "y": 8,
+            "w": 111,
+            "h": 44
+          },
+          "style": {
+            "backgroundColor": "rgb(245, 246, 246)",
+            "color": "rgb(52, 54, 58)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(52, 54, 58)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(52, 54, 58) none 0px",
+            "height": "44px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "pressed": null
+      }
+    },
+    "hero-title": {
+      "page": "https://missiveapp.com/",
+      "selector": "h1",
+      "states": {
+        "default": {
+          "text": "Inbox collaboration for teams that run on email",
+          "box": {
+            "x": 336,
+            "y": 141,
+            "w": 768,
+            "h": 120
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(52, 54, 58)",
+            "fontFamily": "\"Tiempos Headline\", \"Times New Roman\", sans-serif",
+            "fontSize": "56px",
+            "fontWeight": "400",
+            "lineHeight": "60px",
+            "letterSpacing": "normal",
+            "borderRadius": "0px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(52, 54, 58)",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(52, 54, 58) none 0px",
+            "height": "120px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        }
+      }
+    },
+    "hero-body": {
+      "page": "https://missiveapp.com/",
+      "selector": "h1 + p, p.text-2xl, p.text-color-b",
+      "states": {
+        "default": {
+          "text": "See what’s going on, know who’s doing what, and collaborate behind the scenes — ",
+          "box": {
+            "x": 400,
+            "y": 293,
+            "w": 640,
+            "h": 56
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(100, 108, 118)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "20px",
+            "fontWeight": "400",
+            "lineHeight": "28px",
+            "letterSpacing": "normal",
+            "borderRadius": "0px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(100, 108, 118)",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(100, 108, 118) none 0px",
+            "height": "56px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        }
+      }
+    },
+    "watch-demo": {
+      "page": "https://missiveapp.com/",
+      "selector": "[data-m=\"watch-demo\"]",
+      "states": {
+        "default": {
+          "text": "Watch demo",
+          "box": {
+            "x": 729,
+            "y": 397,
+            "w": 157,
+            "h": 54
+          },
+          "style": {
+            "backgroundColor": "rgb(245, 246, 246)",
+            "color": "rgb(52, 54, 58)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "17.84px",
+            "fontWeight": "500",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "1px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgb(228, 230, 233)",
+            "padding": "16px 24px",
+            "boxShadow": "none",
+            "outline": "rgb(52, 54, 58) none 0px",
+            "height": "54px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "Watch demo",
+          "box": {
+            "x": 729,
+            "y": 397,
+            "w": 157,
+            "h": 54
+          },
+          "style": {
+            "backgroundColor": "rgb(245, 246, 246)",
+            "color": "rgb(52, 54, 58)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "17.84px",
+            "fontWeight": "500",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "1px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgb(205, 208, 212)",
+            "padding": "16px 24px",
+            "boxShadow": "none",
+            "outline": "rgb(52, 54, 58) none 0px",
+            "height": "54px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "pressed": null
+      }
+    },
+    "hero-try": {
+      "page": "https://missiveapp.com/",
+      "selector": "a.button-base.w-button",
+      "states": {
+        "default": {
+          "text": "Pricing",
+          "box": {
+            "x": 392,
+            "y": 8,
+            "w": 70,
+            "h": 44
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(52, 54, 58)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(52, 54, 58)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(52, 54, 58) none 0px",
+            "height": "44px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "Pricing",
+          "box": {
+            "x": 392,
+            "y": 8,
+            "w": 70,
+            "h": 44
+          },
+          "style": {
+            "backgroundColor": "rgb(245, 246, 246)",
+            "color": "rgb(52, 54, 58)",
+            "fontFamily": "Inter, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(52, 54, 58)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgb(52, 54, 58) none 0px",
+            "height": "44px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "pressed": null
+      }
+    },
+    "login-title": {
+      "page": "https://mail.missiveapp.com/#login",
+      "selector": "h1",
+      "states": {
+        "default": null
+      }
+    },
+    "login-google": {
+      "page": "https://mail.missiveapp.com/#login",
+      "selector": "button",
+      "states": {
+        "default": {
+          "text": "Continue with Google",
+          "box": {
+            "x": 174,
+            "y": 239,
+            "w": 372,
+            "h": 45
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(46, 48, 52)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "padding": "12px 24px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(46, 48, 52, 0.14) 0px 0px 0px 1px inset",
+            "outline": "rgb(46, 48, 52) none 0px",
+            "height": "45px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "Continue with Google",
+          "box": {
+            "x": 174,
+            "y": 239,
+            "w": 372,
+            "h": 45
+          },
+          "style": {
+            "backgroundColor": "rgba(46, 48, 52, 0.05)",
+            "color": "rgb(46, 48, 52)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "padding": "12px 24px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(46, 48, 52, 0.14) 0px 0px 0px 1px inset",
+            "outline": "rgb(46, 48, 52) none 0px",
+            "height": "45px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "pressed": null
+      }
+    },
+    "login-email": {
+      "page": "https://mail.missiveapp.com/#login",
+      "selector": "input[type=\"email\"]",
+      "states": {
+        "default": {
+          "text": "Enter your email address…",
+          "box": {
+            "x": 174,
+            "y": 486,
+            "w": 372,
+            "h": 43
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(46, 48, 52)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "1px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgba(46, 48, 52, 0.14)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgba(0, 0, 0, 0) solid 2px",
+            "height": "43px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "Enter your email address…",
+          "box": {
+            "x": 174,
+            "y": 486,
+            "w": 372,
+            "h": 43
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(46, 48, 52)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "1px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgba(46, 48, 52, 0.22)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgba(0, 0, 0, 0) solid 2px",
+            "height": "43px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "pressed": null,
+        "focus": {
+          "text": "Enter your email address…",
+          "box": {
+            "x": 174,
+            "y": 486,
+            "w": 372,
+            "h": 43
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(46, 48, 52)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "1px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgb(6, 119, 249)",
+            "padding": "12px",
+            "boxShadow": "none",
+            "outline": "rgba(0, 0, 0, 0) solid 2px",
+            "height": "43px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        }
+      }
+    },
+    "login-password": {
+      "page": "https://mail.missiveapp.com/#login",
+      "selector": "input[type=\"password\"]",
+      "states": {
+        "default": {
+          "text": "••••••••",
+          "box": {
+            "x": 174,
+            "y": 572,
+            "w": 372,
+            "h": 43
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(46, 48, 52)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "1px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgba(46, 48, 52, 0.14)",
+            "padding": "12px 40px 12px 12px",
+            "boxShadow": "none",
+            "outline": "rgba(0, 0, 0, 0) solid 2px",
+            "height": "43px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "••••••••",
+          "box": {
+            "x": 174,
+            "y": 572,
+            "w": 372,
+            "h": 43
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(46, 48, 52)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "1px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgba(46, 48, 52, 0.22)",
+            "padding": "12px 40px 12px 12px",
+            "boxShadow": "none",
+            "outline": "rgba(0, 0, 0, 0) solid 2px",
+            "height": "43px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "pressed": null
+      }
+    },
+    "login-submit": {
+      "page": "https://mail.missiveapp.com/#login",
+      "selector": "button[type=\"submit\"]",
+      "states": {
+        "default": {
+          "text": "Log in",
+          "box": {
+            "x": 174,
+            "y": 683,
+            "w": 372,
+            "h": 45
+          },
+          "style": {
+            "backgroundColor": "rgb(34, 102, 237)",
+            "color": "rgb(255, 255, 255)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "padding": "12px 24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 0px",
+            "height": "45px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "Log in",
+          "box": {
+            "x": 174,
+            "y": 683,
+            "w": 372,
+            "h": 45
+          },
+          "style": {
+            "backgroundColor": "rgb(27, 81, 218)",
+            "color": "rgb(255, 255, 255)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "8px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(0, 0, 0)",
+            "padding": "12px 24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 0px",
+            "height": "45px",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "pressed": null
+      }
+    },
+    "login-link": {
+      "page": "https://mail.missiveapp.com/#login",
+      "selector": "a",
+      "states": {
+        "default": {
+          "text": "Forgot your password?",
+          "box": {
+            "x": 395,
+            "y": 632,
+            "w": 151,
+            "h": 17
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(6, 119, 249)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "lineHeight": "19.6px",
+            "letterSpacing": "normal",
+            "borderRadius": "4px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(6, 119, 249)",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(6, 119, 249) none 0px",
+            "height": "auto",
+            "opacity": "1",
+            "textDecorationLine": "none"
+          }
+        },
+        "hover": {
+          "text": "Forgot your password?",
+          "box": {
+            "x": 395,
+            "y": 632,
+            "w": 151,
+            "h": 17
+          },
+          "style": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(34, 102, 237)",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Helvetica Neue\", \"Apple Color Emoji\", sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "lineHeight": "19.6px",
+            "letterSpacing": "normal",
+            "borderRadius": "4px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(34, 102, 237)",
+            "padding": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(34, 102, 237) none 0px",
+            "height": "auto",
+            "opacity": "1",
+            "textDecorationLine": "underline"
+          }
+        },
+        "pressed": null
+      }
+    },
+    "billing-switch": {
+      "page": "https://missiveapp.com/pricing",
+      "selector": "[data-m=\"billing-switch\"], [role=\"switch\"]",
+      "states": {
+        "default": null
+      }
+    },
+    "plan-card": {
+      "page": "https://missiveapp.com/pricing",
+      "selector": "[data-m=\"plan-card\"]",
+      "states": {
+        "default": null
+      }
+    }
+  }
+}

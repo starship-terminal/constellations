@@ -1,0 +1,73 @@
+{
+  "transitions": [
+    {
+      "sel": ".swiper-watch-progress .swiper-slide-visible .swiper-lazy-preloader, .swiper:not(.swiper-watch-progress) .swiper-lazy-pr",
+      "transition": "",
+      "animation": "swiper-preloader-spin",
+      "duration": "1s",
+      "timing": "linear",
+      "media": ""
+    },
+    {
+      "sel": ".transition",
+      "transition": "",
+      "animation": "",
+      "duration": "150ms",
+      "timing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "media": ""
+    },
+    {
+      "sel": ".duration-\\[0\\.1s\\]",
+      "transition": "",
+      "animation": "",
+      "duration": "0.1s",
+      "timing": "",
+      "media": ""
+    },
+    {
+      "sel": ".duration-\\[0\\.2s\\]",
+      "transition": "",
+      "animation": "",
+      "duration": "0.2s",
+      "timing": "",
+      "media": ""
+    },
+    {
+      "sel": ".transition",
+      "transition": "",
+      "animation": "",
+      "duration": "150ms",
+      "timing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "media": ""
+    },
+    {
+      "sel": ".transition-colors",
+      "transition": "",
+      "animation": "",
+      "duration": "150ms",
+      "timing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "media": ""
+    },
+    {
+      "sel": ".duration-200",
+      "transition": "",
+      "animation": "",
+      "duration": "200ms",
+      "timing": "",
+      "media": ""
+    },
+    {
+      "sel": ".duration-300",
+      "transition": "",
+      "animation": "",
+      "duration": "300ms",
+      "timing": "",
+      "media": ""
+    }
+  ],
+  "keyframes": [
+    "swiper-preloader-spin"
+  ],
+  "reduce": [],
+  "matchReduce": false
+}

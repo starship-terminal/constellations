@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uber style guide</title>
+<style>
+:root {
+  --accent-background-primary-bold: #1175dd;
+  --accent-background-primary-disabled: rgba(225, 238, 254, 0.75);
+  --accent-background-primary-subtle: #f1f7ff;
+  --accent-border-primary-accessible: #1175dd;
+  --accent-border-primary-bold: #1175dd;
+  --accent-border-primary-subtle: rgba(185, 216, 255, 0.7);
+  --accent-content-ongradient: #ffffff;
+  --accent-content-primary: #0968ca;
+  --accent-gradient-stop-1: #054181;
+  --accent-gradient-stop-2: #094ead;
+  --accent-gradient-stop-3: #2355fa;
+  --background-always-dark: #000000;
+  --background-always-light: #ffffff;
+  --background-base: #fcfcfc;
+  --background-disabled: rgba(224, 224, 224, 0.6);
+  --background-inverse-primary: #111111;
+  --background-inverse-secondary: #272727;
+  --background-inverse-statelayer-hover: rgba(236, 236, 236, 0.15);
+  --background-inverse-statelayer-pressed: rgba(236, 236, 236, 0.2);
+  --background-material-primary: rgba(255, 255, 255, 0.82);
+  --background-material-secondary: rgba(255, 255, 255, 0.96);
+  --background-material-tertiary: rgba(252, 252, 252, 0.98);
+  --background-overlay-art: rgba(255, 255, 255, 0);
+  --background-primary: #ffffff;
+  --background-secondary: #f6f6f6;
+  --background-statelayer-hover: rgba(17, 17, 17, 0.06);
+  --background-statelayer-pressed: rgba(17, 17, 17, 0.1);
+  --background-tertiary: #ececec;
+  --background-track: rgba(107, 107, 107, 0.06);
+  --border-accessible: #838383;
+  --border-bold: #111111;
+  --border-inverse-accessible: #777777;
+  --border-inverse-bold: #ececec;
+  --border-inverse-subtle: rgba(82, 82, 82, 0.7);
+  --border-material-primary: rgba(255, 255, 255, 0.4);
+  --border-material-secondary: #ffffff;
+  --border-material-tertiary: #ffffff;
+  --border-subtle: rgba(196, 196, 196, 0.45);
+  --content-always-dark: #111111;
+  --content-always-light: #ececec;
+  --content-blue-material-onbold: #ffffff;
+  --content-crimson-material-onbold: #ffffff;
+  --content-disabled: #c4c4c4;
+  --content-green-material-onbold: #ffffff;
+  --content-inverse-primary: #fcfcfc;
+  --content-inverse-secondary: #d2d2d2;
+  --content-inverse-tertiary: #aaaaaa;
+  --content-legal: #0968ca;
+  --content-orange-material-onbold: #000000;
+  --content-primary: #111111;
+  --content-red-material-onbold: #ffffff;
+  --content-secondary: #525252;
+  --content-tertiary: #6b6b6b;
+  --content-yellow-material-onbold: #000000;
+  --error-background-bold: #cc2609;
+  --error-background-disabled: rgba(254, 230, 225, 0.75);
+  --error-background-statelayer-hover: rgba(254, 230, 225, 0.25);
+  --error-background-statelayer-pressed: rgba(254, 230, 225, 0.5);
+  --error-background-subtle: #fee6e1;
+  --error-border-accessible: #f3381b;
+  --error-border-bold: #e42500;
+  --error-border-subtle: rgba(254, 172, 156, 0.7);
+  --error-content-disabled: #fe9783;
+  --error-content-onbold: #fffcfb;
+  --error-content-oninverse: #feac9c;
+  --error-content-onsubtle: #b4230b;
+  --error-content-primary: #cc2609;
+  --gradient-scrim-stop-1: rgba(17, 17, 17, 0.06);
+  --gradient-scrim-stop-2: rgba(17, 17, 17, 0.16);
+  --gradient-scrim-stop-3: rgba(0, 0, 0, 0.54);
+  --info-background-bold: #111111;
+  --info-background-disabled: rgba(224, 224, 224, 0.75);
+  --info-background-subtle: #ececec;
+  --info-border-accessible: #838383;
+  --info-border-bold: #111111;
+  --info-border-subtle: rgba(196, 196, 196, 0.7);
+  --info-content-disabled: #b7b7b7;
+  --info-content-onbold: #ececec;
+  --info-content-oninverse: #c4c4c4;
+  --info-content-onsubtle: #474747;
+  --info-content-primary: #6b6b6b;
+  --success-background-bold: #108041;
+  --success-background-disabled: rgba(214, 246, 216, 0.75);
+  --success-background-subtle: #edfbed;
+  --success-border-accessible: #08914a;
+  --success-border-bold: #06c167;
+  --success-border-subtle: rgba(103, 227, 140, 0.7);
+  --success-content-disabled: #45db7d;
+  --success-content-onbold: #f8fff8;
+  --success-content-oninverse: #67e38c;
+  --success-content-onsubtle: #095625;
+  --success-content-primary: #097337;
+  --warning-background-bold: #fc9026;
+  --warning-background-disabled: rgba(255, 232, 216, 0.75);
+  --warning-background-subtle: #ffe8d8;
+  --warning-border-accessible: #c16803;
+  --warning-border-bold: #fc9026;
+  --warning-border-subtle: rgba(255, 185, 132, 0.7);
+  --warning-content-disabled: #fea65d;
+  --warning-content-onbold: #0e0907;
+  --warning-content-oninverse: #ffb984;
+  --warning-content-onsubtle: #8a480b;
+  --warning-content-primary: #9b5203;
+  --component-button-primary-bg: #111111;
+  --component-button-primary-text: #fcfcfc;
+  --component-button-nav-bg: #111111;
+  --component-button-nav-text: #fcfcfc;
+  --component-button-signup-bg: #ffffff;
+  --component-button-signup-text: #000000;
+  --component-field-bg: #f6f6f6;
+  --component-header-bg: #000000;
+  --component-banner-bg: #eff4fe;
+  color-scheme: light;
+  --page: var(--background-primary);
+  --ink: var(--content-primary);
+  --muted: var(--content-secondary);
+  --line: var(--border-subtle);
+}
+[data-theme="dark"] {
+  --accent-background-primary-bold: #3691fb;
+  --accent-background-primary-disabled: rgba(14, 37, 74, 0.75);
+  --accent-background-primary-subtle: #0f1c31;
+  --accent-border-primary-accessible: #6faefd;
+  --accent-border-primary-bold: #6faefd;
+  --accent-border-primary-subtle: rgba(17, 117, 221, 0.3);
+  --accent-content-ongradient: #ffffff;
+  --accent-content-primary: #6faefd;
+  --accent-gradient-stop-1: #054181;
+  --accent-gradient-stop-2: #094ead;
+  --accent-gradient-stop-3: #2355fa;
+  --background-always-dark: #272727;
+  --background-always-light: #e0e0e0;
+  --background-base: #111111;
+  --background-disabled: rgba(71, 71, 71, 0.6);
+  --background-inverse-primary: #e0e0e0;
+  --background-inverse-secondary: #d2d2d2;
+  --background-inverse-statelayer-hover: rgba(17, 17, 17, 0.15);
+  --background-inverse-statelayer-pressed: rgba(17, 17, 17, 0.2);
+  --background-material-primary: rgba(39, 39, 39, 0.9);
+  --background-material-secondary: rgba(39, 39, 39, 0.96);
+  --background-material-tertiary: rgba(39, 39, 39, 0.98);
+  --background-overlay-art: rgba(0, 0, 0, 0.16);
+  --background-primary: #1c1c1c;
+  --background-secondary: #272727;
+  --background-statelayer-hover: rgba(236, 236, 236, 0.1);
+  --background-statelayer-pressed: rgba(236, 236, 236, 0.15);
+  --background-tertiary: #3b3b3b;
+  --background-track: rgba(95, 95, 95, 0.2);
+  --border-accessible: #909090;
+  --border-bold: #ececec;
+  --border-inverse-accessible: #6b6b6b;
+  --border-inverse-bold: #111111;
+  --border-inverse-subtle: rgba(183, 183, 183, 0.7);
+  --border-material-primary: rgba(236, 236, 236, 0);
+  --border-material-secondary: rgba(255, 255, 255, 0);
+  --border-material-tertiary: rgba(236, 236, 236, 0);
+  --border-subtle: rgba(107, 107, 107, 0.45);
+  --content-always-dark: #111111;
+  --content-always-light: #ececec;
+  --content-blue-material-onbold: #ffffff;
+  --content-crimson-material-onbold: #ffffff;
+  --content-disabled: #525252;
+  --content-green-material-onbold: #ffffff;
+  --content-inverse-primary: #111111;
+  --content-inverse-secondary: #272727;
+  --content-inverse-tertiary: #474747;
+  --content-legal: #6faefd;
+  --content-orange-material-onbold: #000000;
+  --content-primary: #ececec;
+  --content-red-material-onbold: #ffffff;
+  --content-secondary: #d2d2d2;
+  --content-tertiary: #aaaaaa;
+  --content-yellow-material-onbold: #000000;
+  --error-background-bold: #cc2609;
+  --error-background-disabled: rgba(72, 18, 9, 0.75);
+  --error-background-statelayer-hover: rgba(49, 17, 11, 0.2);
+  --error-background-statelayer-pressed: rgba(49, 17, 11, 0.35);
+  --error-background-subtle: #31110b;
+  --error-border-accessible: #fc4f34;
+  --error-border-bold: #fc6a51;
+  --error-border-subtle: rgba(243, 56, 27, 0.3);
+  --error-content-disabled: #9d1701;
+  --error-content-onbold: #fffcfb;
+  --error-content-oninverse: #711002;
+  --error-content-onsubtle: #ffc1b4;
+  --error-content-primary: #fe9783;
+  --gradient-scrim-stop-1: rgba(17, 17, 17, 0.72);
+  --gradient-scrim-stop-2: rgba(10, 10, 10, 0.54);
+  --gradient-scrim-stop-3: rgba(10, 10, 10, 0.54);
+  --info-background-bold: #e0e0e0;
+  --info-background-disabled: rgba(71, 71, 71, 0.75);
+  --info-background-subtle: #3b3b3b;
+  --info-border-accessible: #909090;
+  --info-border-bold: #ececec;
+  --info-border-subtle: rgba(119, 119, 119, 0.7);
+  --info-content-disabled: #6b6b6b;
+  --info-content-onbold: #111111;
+  --info-content-oninverse: #3b3b3b;
+  --info-content-onsubtle: #e0e0e0;
+  --info-content-primary: #aaaaaa;
+  --success-background-bold: #1db060;
+  --success-background-disabled: rgba(4, 60, 20, 0.75);
+  --success-background-subtle: #132d16;
+  --success-border-accessible: #1db060;
+  --success-border-bold: #06c167;
+  --success-border-subtle: rgba(8, 145, 74, 0.3);
+  --success-content-disabled: #097337;
+  --success-content-onbold: #080b08;
+  --success-content-oninverse: #04491b;
+  --success-content-onsubtle: #b7f1bf;
+  --success-content-primary: #2dce73;
+  --warning-background-bold: #ec8102;
+  --warning-background-disabled: rgba(77, 34, 4, 0.8);
+  --warning-background-subtle: #391e0e;
+  --warning-border-accessible: #d47612;
+  --warning-border-bold: #fc9026;
+  --warning-border-subtle: rgba(171, 93, 11, 0.3);
+  --warning-content-disabled: #9b5203;
+  --warning-content-onbold: #0e0907;
+  --warning-content-oninverse: #5c2b05;
+  --warning-content-onsubtle: #ffd9bd;
+  --warning-content-primary: #fc9026;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/24px UberMoveText, UberMove, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+header { display: flex; gap: 16px; align-items: center; padding: 16px 24px; background: #000; color: #fff; }
+header h1 { margin: 0; font: 400 24px/32px UberMove, UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+header button { margin-left: auto; height: 36px; padding: 10px 12px; border: 0; border-radius: 999px; background: #fff; color: #000; font: 500 14px/16px UberMoveText, UberMove, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
+h2 { font: 700 36px/44px UberMove, UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 40px 0 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 44px; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--line); }
+.sw b { display: block; font: 500 12px/16px ui-monospace, monospace; }
+.sw span { color: var(--muted); font-size: 12px; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: end; }
+.rad i { display: block; width: 64px; height: 40px; background: var(--background-secondary); box-shadow: inset 0 0 0 1px var(--line); }
+.rad span { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.ty { display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.ty p { margin: 0; }
+.btn { display: inline-flex; align-items: center; height: 48px; padding: 14px 25px; border-radius: 8px; background: var(--component-button-primary-bg, #111); color: var(--component-button-primary-text, #fcfcfc); font: 500 16px/20px UberMoveText, UberMove, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.pill { display: inline-flex; align-items: center; height: 36px; padding: 10px 12px; border-radius: 999px; background: #111; color: #fcfcfc; font: 500 14px/16px UberMoveText, UberMove, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.field { height: 56px; width: 280px; border-radius: 8px; background: #f6f6f6; color: #111; display: flex; align-items: center; padding: 0 16px; }
+.note { color: var(--muted); max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Uber</h1>
+  <span>Signed-out public capture</span>
+  <button type="button" id="theme">Dark tokens</button>
+</header>
+<main>
+  <p class="note">Values are the v2 Base tokens from Uber's public stylesheet, with aliases resolved, plus computed styles from the signed-out ride page. Dark tokens are declared for data-theme=dark. The marketing pages measured here stay in light.</p>
+  <h2>Colour</h2>
+  <div class="grid">
+<div class="sw"><i style="background:var(--accent-background-primary-bold)"></i><div><b>accent.background.primary.bold</b><span>#1175dd</span></div></div>
+<div class="sw"><i style="background:var(--accent-background-primary-disabled)"></i><div><b>accent.background.primary.disabled</b><span>rgba(225, 238, 254, 0.75)</span></div></div>
+<div class="sw"><i style="background:var(--accent-background-primary-subtle)"></i><div><b>accent.background.primary.subtle</b><span>#f1f7ff</span></div></div>
+<div class="sw"><i style="background:var(--accent-border-primary-accessible)"></i><div><b>accent.border.primary.accessible</b><span>#1175dd</span></div></div>
+<div class="sw"><i style="background:var(--accent-border-primary-bold)"></i><div><b>accent.border.primary.bold</b><span>#1175dd</span></div></div>
+<div class="sw"><i style="background:var(--accent-border-primary-subtle)"></i><div><b>accent.border.primary.subtle</b><span>rgba(185, 216, 255, 0.7)</span></div></div>
+<div class="sw"><i style="background:var(--accent-content-ongradient)"></i><div><b>accent.content.ongradient</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--accent-content-primary)"></i><div><b>accent.content.primary</b><span>#0968ca</span></div></div>
+<div class="sw"><i style="background:var(--accent-gradient-stop-1)"></i><div><b>accent.gradient.stop.1</b><span>#054181</span></div></div>
+<div class="sw"><i style="background:var(--accent-gradient-stop-2)"></i><div><b>accent.gradient.stop.2</b><span>#094ead</span></div></div>
+<div class="sw"><i style="background:var(--accent-gradient-stop-3)"></i><div><b>accent.gradient.stop.3</b><span>#2355fa</span></div></div>
+<div class="sw"><i style="background:var(--background-always-dark)"></i><div><b>background.always.dark</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:var(--background-always-light)"></i><div><b>background.always.light</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--background-base)"></i><div><b>background.base</b><span>#fcfcfc</span></div></div>
+<div class="sw"><i style="background:var(--background-disabled)"></i><div><b>background.disabled</b><span>rgba(224, 224, 224, 0.6)</span></div></div>
+<div class="sw"><i style="background:var(--background-inverse-primary)"></i><div><b>background.inverse.primary</b><span>#111111</span></div></div>
+<div class="sw"><i style="background:var(--background-inverse-secondary)"></i><div><b>background.inverse.secondary</b><span>#272727</span></div></div>
+<div class="sw"><i style="background:var(--background-inverse-statelayer-hover)"></i><div><b>background.inverse.statelayer.hover</b><span>rgba(236, 236, 236, 0.15)</span></div></div>
+<div class="sw"><i style="background:var(--background-inverse-statelayer-pressed)"></i><div><b>background.inverse.statelayer.pressed</b><span>rgba(236, 236, 236, 0.2)</span></div></div>
+<div class="sw"><i style="background:var(--background-material-primary)"></i><div><b>background.material.primary</b><span>rgba(255, 255, 255, 0.82)</span></div></div>
+<div class="sw"><i style="background:var(--background-material-secondary)"></i><div><b>background.material.secondary</b><span>rgba(255, 255, 255, 0.96)</span></div></div>
+<div class="sw"><i style="background:var(--background-material-tertiary)"></i><div><b>background.material.tertiary</b><span>rgba(252, 252, 252, 0.98)</span></div></div>
+<div class="sw"><i style="background:var(--background-overlay-art)"></i><div><b>background.overlay.art</b><span>rgba(255, 255, 255, 0)</span></div></div>
+<div class="sw"><i style="background:var(--background-primary)"></i><div><b>background.primary</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--background-secondary)"></i><div><b>background.secondary</b><span>#f6f6f6</span></div></div>
+<div class="sw"><i style="background:var(--background-statelayer-hover)"></i><div><b>background.statelayer.hover</b><span>rgba(17, 17, 17, 0.06)</span></div></div>
+<div class="sw"><i style="background:var(--background-statelayer-pressed)"></i><div><b>background.statelayer.pressed</b><span>rgba(17, 17, 17, 0.1)</span></div></div>
+<div class="sw"><i style="background:var(--background-tertiary)"></i><div><b>background.tertiary</b><span>#ececec</span></div></div>
+<div class="sw"><i style="background:var(--background-track)"></i><div><b>background.track</b><span>rgba(107, 107, 107, 0.06)</span></div></div>
+<div class="sw"><i style="background:var(--border-accessible)"></i><div><b>border.accessible</b><span>#838383</span></div></div>
+<div class="sw"><i style="background:var(--border-bold)"></i><div><b>border.bold</b><span>#111111</span></div></div>
+<div class="sw"><i style="background:var(--border-inverse-accessible)"></i><div><b>border.inverse.accessible</b><span>#777777</span></div></div>
+<div class="sw"><i style="background:var(--border-inverse-bold)"></i><div><b>border.inverse.bold</b><span>#ececec</span></div></div>
+<div class="sw"><i style="background:var(--border-inverse-subtle)"></i><div><b>border.inverse.subtle</b><span>rgba(82, 82, 82, 0.7)</span></div></div>
+<div class="sw"><i style="background:var(--border-material-primary)"></i><div><b>border.material.primary</b><span>rgba(255, 255, 255, 0.4)</span></div></div>
+<div class="sw"><i style="background:var(--border-material-secondary)"></i><div><b>border.material.secondary</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--border-material-tertiary)"></i><div><b>border.material.tertiary</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--border-subtle)"></i><div><b>border.subtle</b><span>rgba(196, 196, 196, 0.45)</span></div></div>
+<div class="sw"><i style="background:var(--content-always-dark)"></i><div><b>content.always.dark</b><span>#111111</span></div></div>
+<div class="sw"><i style="background:var(--content-always-light)"></i><div><b>content.always.light</b><span>#ececec</span></div></div>
+<div class="sw"><i style="background:var(--content-blue-material-onbold)"></i><div><b>content.blue.material.onbold</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--content-crimson-material-onbold)"></i><div><b>content.crimson.material.onbold</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--content-disabled)"></i><div><b>content.disabled</b><span>#c4c4c4</span></div></div>
+<div class="sw"><i style="background:var(--content-green-material-onbold)"></i><div><b>content.green.material.onbold</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--content-inverse-primary)"></i><div><b>content.inverse.primary</b><span>#fcfcfc</span></div></div>
+<div class="sw"><i style="background:var(--content-inverse-secondary)"></i><div><b>content.inverse.secondary</b><span>#d2d2d2</span></div></div>
+<div class="sw"><i style="background:var(--content-inverse-tertiary)"></i><div><b>content.inverse.tertiary</b><span>#aaaaaa</span></div></div>
+<div class="sw"><i style="background:var(--content-legal)"></i><div><b>content.legal</b><span>#0968ca</span></div></div>
+<div class="sw"><i style="background:var(--content-orange-material-onbold)"></i><div><b>content.orange.material.onbold</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:var(--content-primary)"></i><div><b>content.primary</b><span>#111111</span></div></div>
+<div class="sw"><i style="background:var(--content-red-material-onbold)"></i><div><b>content.red.material.onbold</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--content-secondary)"></i><div><b>content.secondary</b><span>#525252</span></div></div>
+<div class="sw"><i style="background:var(--content-tertiary)"></i><div><b>content.tertiary</b><span>#6b6b6b</span></div></div>
+<div class="sw"><i style="background:var(--content-yellow-material-onbold)"></i><div><b>content.yellow.material.onbold</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:var(--error-background-bold)"></i><div><b>error.background.bold</b><span>#cc2609</span></div></div>
+<div class="sw"><i style="background:var(--error-background-disabled)"></i><div><b>error.background.disabled</b><span>rgba(254, 230, 225, 0.75)</span></div></div>
+<div class="sw"><i style="background:var(--error-background-statelayer-hover)"></i><div><b>error.background.statelayer.hover</b><span>rgba(254, 230, 225, 0.25)</span></div></div>
+<div class="sw"><i style="background:var(--error-background-statelayer-pressed)"></i><div><b>error.background.statelayer.pressed</b><span>rgba(254, 230, 225, 0.5)</span></div></div>
+<div class="sw"><i style="background:var(--error-background-subtle)"></i><div><b>error.background.subtle</b><span>#fee6e1</span></div></div>
+<div class="sw"><i style="background:var(--error-border-accessible)"></i><div><b>error.border.accessible</b><span>#f3381b</span></div></div>
+<div class="sw"><i style="background:var(--error-border-bold)"></i><div><b>error.border.bold</b><span>#e42500</span></div></div>
+<div class="sw"><i style="background:var(--error-border-subtle)"></i><div><b>error.border.subtle</b><span>rgba(254, 172, 156, 0.7)</span></div></div>
+<div class="sw"><i style="background:var(--error-content-disabled)"></i><div><b>error.content.disabled</b><span>#fe9783</span></div></div>
+<div class="sw"><i style="background:var(--error-content-onbold)"></i><div><b>error.content.onbold</b><span>#fffcfb</span></div></div>
+<div class="sw"><i style="background:var(--error-content-oninverse)"></i><div><b>error.content.oninverse</b><span>#feac9c</span></div></div>
+<div class="sw"><i style="background:var(--error-content-onsubtle)"></i><div><b>error.content.onsubtle</b><span>#b4230b</span></div></div>
+<div class="sw"><i style="background:var(--error-content-primary)"></i><div><b>error.content.primary</b><span>#cc2609</span></div></div>
+<div class="sw"><i style="background:var(--gradient-scrim-stop-1)"></i><div><b>gradient.scrim.stop.1</b><span>rgba(17, 17, 17, 0.06)</span></div></div>
+<div class="sw"><i style="background:var(--gradient-scrim-stop-2)"></i><div><b>gradient.scrim.stop.2</b><span>rgba(17, 17, 17, 0.16)</span></div></div>
+<div class="sw"><i style="background:var(--gradient-scrim-stop-3)"></i><div><b>gradient.scrim.stop.3</b><span>rgba(0, 0, 0, 0.54)</span></div></div>
+<div class="sw"><i style="background:var(--info-background-bold)"></i><div><b>info.background.bold</b><span>#111111</span></div></div>
+<div class="sw"><i style="background:var(--info-background-disabled)"></i><div><b>info.background.disabled</b><span>rgba(224, 224, 224, 0.75)</span></div></div>
+<div class="sw"><i style="background:var(--info-background-subtle)"></i><div><b>info.background.subtle</b><span>#ececec</span></div></div>
+<div class="sw"><i style="background:var(--info-border-accessible)"></i><div><b>info.border.accessible</b><span>#838383</span></div></div>
+<div class="sw"><i style="background:var(--info-border-bold)"></i><div><b>info.border.bold</b><span>#111111</span></div></div>
+<div class="sw"><i style="background:var(--info-border-subtle)"></i><div><b>info.border.subtle</b><span>rgba(196, 196, 196, 0.7)</span></div></div>
+<div class="sw"><i style="background:var(--info-content-disabled)"></i><div><b>info.content.disabled</b><span>#b7b7b7</span></div></div>
+<div class="sw"><i style="background:var(--info-content-onbold)"></i><div><b>info.content.onbold</b><span>#ececec</span></div></div>
+<div class="sw"><i style="background:var(--info-content-oninverse)"></i><div><b>info.content.oninverse</b><span>#c4c4c4</span></div></div>
+<div class="sw"><i style="background:var(--info-content-onsubtle)"></i><div><b>info.content.onsubtle</b><span>#474747</span></div></div>
+<div class="sw"><i style="background:var(--info-content-primary)"></i><div><b>info.content.primary</b><span>#6b6b6b</span></div></div>
+<div class="sw"><i style="background:var(--success-background-bold)"></i><div><b>success.background.bold</b><span>#108041</span></div></div>
+<div class="sw"><i style="background:var(--success-background-disabled)"></i><div><b>success.background.disabled</b><span>rgba(214, 246, 216, 0.75)</span></div></div>
+<div class="sw"><i style="background:var(--success-background-subtle)"></i><div><b>success.background.subtle</b><span>#edfbed</span></div></div>
+<div class="sw"><i style="background:var(--success-border-accessible)"></i><div><b>success.border.accessible</b><span>#08914a</span></div></div>
+<div class="sw"><i style="background:var(--success-border-bold)"></i><div><b>success.border.bold</b><span>#06c167</span></div></div>
+<div class="sw"><i style="background:var(--success-border-subtle)"></i><div><b>success.border.subtle</b><span>rgba(103, 227, 140, 0.7)</span></div></div>
+<div class="sw"><i style="background:var(--success-content-disabled)"></i><div><b>success.content.disabled</b><span>#45db7d</span></div></div>
+<div class="sw"><i style="background:var(--success-content-onbold)"></i><div><b>success.content.onbold</b><span>#f8fff8</span></div></div>
+<div class="sw"><i style="background:var(--success-content-oninverse)"></i><div><b>success.content.oninverse</b><span>#67e38c</span></div></div>
+<div class="sw"><i style="background:var(--success-content-onsubtle)"></i><div><b>success.content.onsubtle</b><span>#095625</span></div></div>
+<div class="sw"><i style="background:var(--success-content-primary)"></i><div><b>success.content.primary</b><span>#097337</span></div></div>
+<div class="sw"><i style="background:var(--warning-background-bold)"></i><div><b>warning.background.bold</b><span>#fc9026</span></div></div>
+<div class="sw"><i style="background:var(--warning-background-disabled)"></i><div><b>warning.background.disabled</b><span>rgba(255, 232, 216, 0.75)</span></div></div>
+<div class="sw"><i style="background:var(--warning-background-subtle)"></i><div><b>warning.background.subtle</b><span>#ffe8d8</span></div></div>
+<div class="sw"><i style="background:var(--warning-border-accessible)"></i><div><b>warning.border.accessible</b><span>#c16803</span></div></div>
+<div class="sw"><i style="background:var(--warning-border-bold)"></i><div><b>warning.border.bold</b><span>#fc9026</span></div></div>
+<div class="sw"><i style="background:var(--warning-border-subtle)"></i><div><b>warning.border.subtle</b><span>rgba(255, 185, 132, 0.7)</span></div></div>
+<div class="sw"><i style="background:var(--warning-content-disabled)"></i><div><b>warning.content.disabled</b><span>#fea65d</span></div></div>
+<div class="sw"><i style="background:var(--warning-content-onbold)"></i><div><b>warning.content.onbold</b><span>#0e0907</span></div></div>
+<div class="sw"><i style="background:var(--warning-content-oninverse)"></i><div><b>warning.content.oninverse</b><span>#ffb984</span></div></div>
+<div class="sw"><i style="background:var(--warning-content-onsubtle)"></i><div><b>warning.content.onsubtle</b><span>#8a480b</span></div></div>
+<div class="sw"><i style="background:var(--warning-content-primary)"></i><div><b>warning.content.primary</b><span>#9b5203</span></div></div>
+<div class="sw"><i style="background:var(--component-button-primary-bg)"></i><div><b>component.button.primary.bg</b><span>#111111</span></div></div>
+<div class="sw"><i style="background:var(--component-button-primary-text)"></i><div><b>component.button.primary.text</b><span>#fcfcfc</span></div></div>
+<div class="sw"><i style="background:var(--component-button-nav-bg)"></i><div><b>component.button.nav.bg</b><span>#111111</span></div></div>
+<div class="sw"><i style="background:var(--component-button-nav-text)"></i><div><b>component.button.nav.text</b><span>#fcfcfc</span></div></div>
+<div class="sw"><i style="background:var(--component-button-signup-bg)"></i><div><b>component.button.signup.bg</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:var(--component-button-signup-text)"></i><div><b>component.button.signup.text</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:var(--component-field-bg)"></i><div><b>component.field.bg</b><span>#f6f6f6</span></div></div>
+<div class="sw"><i style="background:var(--component-header-bg)"></i><div><b>component.header.bg</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:var(--component-banner-bg)"></i><div><b>component.banner.bg</b><span>#eff4fe</span></div></div>
+  </div>
+  <h2>Radius</h2>
+  <div class="row">
+<div class="rad"><i style="border-radius:6px"></i><span>6 6px</span></div>
+<div class="rad"><i style="border-radius:8px"></i><span>8 8px</span></div>
+<div class="rad"><i style="border-radius:12px"></i><span>12 12px</span></div>
+<div class="rad"><i style="border-radius:16px"></i><span>16 16px</span></div>
+<div class="rad"><i style="border-radius:24px"></i><span>24 24px</span></div>
+<div class="rad"><i style="border-radius:32px"></i><span>32 32px</span></div>
+<div class="rad"><i style="border-radius:1000px"></i><span>full 1000px</span></div>
+  </div>
+  <h2>Type</h2>
+  <div>
+<div class="ty"><code>typography.display</code><p style="font:700 52px/64px {family.display}">Request a ride</p></div>
+<div class="ty"><code>typography.heading</code><p style="font:700 36px/44px {family.display}">Request a ride</p></div>
+<div class="ty"><code>typography.nav</code><p style="font:500 14px/16px {family.body}">Request a ride</p></div>
+<div class="ty"><code>typography.body</code><p style="font:400 16px/24px {family.body}">Request a ride</p></div>
+<div class="ty"><code>typography.label</code><p style="font:400 14px/20px {family.body}">Request a ride</p></div>
+  </div>
+  <h2>Chrome</h2>
+  <div class="row">
+    <span class="pill">Ride</span>
+    <span class="btn">See prices</span>
+    <span class="field">Pickup location</span>
+  </div>
+</main>
+<script>
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  html.setAttribute("data-theme", next);
+  document.getElementById("theme").textContent = next === "dark" ? "Light tokens" : "Dark tokens";
+});
+</script>
+</body>
+</html>

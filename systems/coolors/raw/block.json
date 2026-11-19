@@ -1,0 +1,94 @@
+{
+  "capturedAt": "2026-11-18T16:05:19Z",
+  "product": "Coolors",
+  "domain": "coolors.co",
+  "catalogName": "Coolors",
+  "description": "The super fast color palettes generator!",
+  "verdict": "blocked",
+  "reason": "Cloudflare managed challenge on every probed public route. HTTP 403, cf-mitigated: challenge, title Just a moment.... Headless Playwright stayed on the same interstitial (status 403, Ray ID a5c833ed7a3d5f2e). Capture stopped. No challenge was solved, no consent control was clicked, no account was created, and no product colour, type or component was inferred.",
+  "curlProbes": [
+    {
+      "url": "https://coolors.co/",
+      "method": "curl -sI",
+      "status": 403,
+      "cfMitigated": "challenge",
+      "server": "cloudflare",
+      "contentType": "text/html; charset=UTF-8",
+      "cfRay": "a5c836c0aa0570b5-SIN",
+      "title": "Just a moment..."
+    },
+    {
+      "url": "https://coolors.co/palettes/trending",
+      "method": "curl -sI",
+      "status": 403,
+      "cfMitigated": "challenge",
+      "server": "cloudflare",
+      "contentType": "text/html; charset=UTF-8",
+      "cfRay": "a5c836c16c25fd41-SIN",
+      "title": "Just a moment..."
+    },
+    {
+      "url": "https://coolors.co/generate",
+      "method": "curl -sI",
+      "status": 403,
+      "cfMitigated": "challenge",
+      "server": "cloudflare",
+      "contentType": "text/html; charset=UTF-8",
+      "cfRay": "a5c836c1fd26b4ca-SIN",
+      "title": "Just a moment..."
+    },
+    {
+      "url": "https://coolors.co/login",
+      "method": "curl -sI",
+      "status": 403,
+      "cfMitigated": "challenge",
+      "server": "cloudflare",
+      "contentType": "text/html; charset=UTF-8",
+      "cfRay": "a5c836c289359998-SIN",
+      "title": "Just a moment..."
+    },
+    {
+      "url": "https://coolors.co/pro",
+      "method": "curl -sI",
+      "status": 403,
+      "cfMitigated": "challenge",
+      "server": "cloudflare",
+      "contentType": "text/html; charset=UTF-8",
+      "cfRay": "a5c836c34d5cfe00-SIN",
+      "title": "Just a moment..."
+    },
+    {
+      "url": "https://www.coolors.co/",
+      "method": "curl -sI",
+      "status": 403,
+      "cfMitigated": "challenge",
+      "server": "cloudflare",
+      "contentType": "text/html; charset=UTF-8",
+      "cfRay": "a5c836c3fdb71b63-SIN",
+      "title": "Just a moment..."
+    }
+  ],
+  "playwrightProbe": {
+    "route": "public headless Playwright",
+    "playwright": "~/.design-systems/pw/node_modules/playwright/index.mjs",
+    "headless": true,
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "url": "https://coolors.co/",
+    "status": 403,
+    "title": "Just a moment...",
+    "finalUrlQuery": "__cf_chl_rt_tk present",
+    "body": "coolors.co Performing security verification. This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot. Ray ID: a5c833ed7a3d5f2e. Performance and Security by Cloudflare. Privacy",
+    "stopped": "challenge did not clear; no second headless launch and no bypass"
+  },
+  "notMeasured": [
+    "the palette generator",
+    "trending and popular palettes",
+    "login, account and saved palettes",
+    "Pro and checkout",
+    "theme, type, spacing and components"
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "focus": {
+    "outline": "rgb(255, 255, 255) none 0px",
+    "outlineOffset": "0px",
+    "boxShadow": "none",
+    "ring": "0 0 #0000",
+    "outlineColor": "rgb(255, 255, 255)",
+    "outlineWidth": "0px",
+    "before": {
+      "content": "none",
+      "boxShadow": "none",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "border": "0px solid rgb(255, 255, 255)"
+    },
+    "after": {
+      "content": "none",
+      "boxShadow": "none",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "border": "0px solid rgb(255, 255, 255)",
+      "position": "static",
+      "inset": "auto"
+    }
+  },
+  "sheets": [
+    {
+      "sel": "button.wrapper:hover, a.wrapper:hover",
+      "media": null,
+      "css": "button.wrapper:hover, a.wrapper:hover { background-color: rgba(0, 0, 0, 0); }"
+    },
+    {
+      "sel": "button.wrapper:focus-visible, a.wrapper:focus-visible",
+      "media": null,
+      "css": "button.wrapper:focus-visible, a.wrapper:focus-visible { border-radius: 2px; }"
+    },
+    {
+      "sel": "button:hover, a.button:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button:hover, a.button:hover { background-color: var(--color-green-accent-10); }"
+    },
+    {
+      "sel": "button.positive:hover, a.button.positive:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button.positive:hover, a.button.positive:hover { background-color: var(--color-green-accent-90); border-color: var(--color-green-accent-90); }"
+    },
+    {
+      "sel": "button.black:hover, a.button.black:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button.black:hover, a.button.black:hover { background-color: var(--color-black-10); }"
+    },
+    {
+      "sel": "button.positive.black:hover, a.button.positive.black:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button.positive.black:hover, a.button.positive.black:hover { background-color: var(--color-black-70); border-color: var(--color-black-70); }"
+    },
+    {
+      "sel": "button.white:hover, a.button.white:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button.white:hover, a.button.white:hover { background-color: var(--color-white-10); }"
+    },
+    {
+      "sel": "button.positive.white:hover, a.button.positive.white:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button.positive.white:hover, a.button.positive.white:hover { background-color: var(--color-white-90); border-color: var(--color-white-90); }"
+    },
+    {
+      "sel": "button.house-green:hover, a.button.house-green:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button.house-green:hover, a.button.house-green:hover { background-color: var(--color-house-green-10); }"
+    },
+    {
+      "sel": "button.positive.house-green:hover, a.button.positive.house-green:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button.positive.house-green:hover, a.button.positive.house-green:hover { background-color: var(--color-house-green-90); border-color: var(--color-house-green-90); }"
+    },
+    {
+      "sel": "button.red:hover, a.button.red:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button.red:hover, a.button.red:hover { background-color: var(--color-red-10); }"
+    },
+    {
+      "sel": "button.positive.red:hover, a.button.positive.red:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": "button.positive.red:hover, a.button.positive.red:hover { background-color: var(--color-red-90); border-color: var(--color-red-90); }"
+    },
+    {
+      "sel": ".icon-button:hover",
+      "media": "(hover: hover) and (pointer: fine)",
+      "css": ".icon-button:hover { background-color: var(--color-black-10); transition: 0.3s; }"
+    },
+    {
+      "sel": ".truste-button1:hover",
+      "media": null,
+      "css": ".truste-button1:hover { text-decoration: underline; }"
+    },
+    {
+      "sel": ".truste-button2:hover",
+      "media": null,
+      "css": ".truste-button2:hover { background-color: rgb(2, 93, 52); }"
+    },
+    {
+      "sel": ".truste-button3:hover",
+      "media": null,
+      "css": ".truste-button3:hover { text-decoration: underline; }"
+    },
+    {
+      "sel": ".truste-button2:focus",
+      "media": null,
+      "css": ".truste-button2:focus { outline: rgb(0, 117, 74) solid 2px; border-radius: 50px; outline-offset: 2px; }"
+    }
+  ],
+  "menu": {
+    "tiles": [],
+    "sidebar": [
+      {
+        "t": "Our Company",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.58)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "t": "Our Coffee",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.58)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "t": "About Starbucks",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.58)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "t": "Starbucks Archive",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.58)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "t": "Investor Relations",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.58)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "t": "Customer Service",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.58)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "t": "Contact Us",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.58)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "t": "",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "t": "",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "t": "",
+        "fs": "16px",
+        "fw": "400",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "bg": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  "rewards": {
+    "tabs": [
+      {
+        "t": "25★ Stars",
+        "selected": "true",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "fw": "400",
+        "fs": "16px",
+        "borderBottom": "0px none rgba(0, 0, 0, 0.87)",
+        "after": {
+          "h": "auto",
+          "bg": "rgba(0, 0, 0, 0)",
+          "content": "none"
+        }
+      },
+      {
+        "t": "60★ Stars",
+        "selected": "false",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "fw": "400",
+        "fs": "16px",
+        "borderBottom": "0px none rgba(0, 0, 0, 0.87)",
+        "after": {
+          "h": "auto",
+          "bg": "rgba(0, 0, 0, 0)",
+          "content": "none"
+        }
+      },
+      {
+        "t": "100★ Stars",
+        "selected": "false",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "fw": "400",
+        "fs": "16px",
+        "borderBottom": "0px none rgba(0, 0, 0, 0.87)",
+        "after": {
+          "h": "auto",
+          "bg": "rgba(0, 0, 0, 0)",
+          "content": "none"
+        }
+      },
+      {
+        "t": "200★ Stars",
+        "selected": "false",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "fw": "400",
+        "fs": "16px",
+        "borderBottom": "0px none rgba(0, 0, 0, 0.87)",
+        "after": {
+          "h": "auto",
+          "bg": "rgba(0, 0, 0, 0)",
+          "content": "none"
+        }
+      },
+      {
+        "t": "300★ Stars",
+        "selected": "false",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "fw": "400",
+        "fs": "16px",
+        "borderBottom": "0px none rgba(0, 0, 0, 0.87)",
+        "after": {
+          "h": "auto",
+          "bg": "rgba(0, 0, 0, 0)",
+          "content": "none"
+        }
+      },
+      {
+        "t": "400★ Stars",
+        "selected": "false",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "fw": "400",
+        "fs": "16px",
+        "borderBottom": "0px none rgba(0, 0, 0, 0.87)",
+        "after": {
+          "h": "auto",
+          "bg": "rgba(0, 0, 0, 0)",
+          "content": "none"
+        }
+      }
+    ],
+    "hero": {
+      "fs": "50px",
+      "fw": "700",
+      "lh": "60px",
+      "ls": "2px",
+      "color": "rgb(44, 61, 40)",
+      "font": "SoDoSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    },
+    "eyebrow": {
+      "t": "STARBUCKS® REWARDS",
+      "fs": "19px",
+      "fw": "700",
+      "ls": "1.9px",
+      "tt": "uppercase",
+      "color": "rgb(122, 82, 49)"
+    }
+  },
+  "loc": {
+    "input": {
+      "tag": "INPUT",
+      "cls": "text-sm pr7 input___OKfLA pac-target-input",
+      "bg": "rgb(255, 255, 255)",
+      "border": "",
+      "radius": "0px",
+      "shadow": "none",
+      "h": 35,
+      "w": 398,
+      "pad": "0px 48px 0px 2px",
+      "fs": "19px",
+      "color": "rgba(0, 0, 0, 0.87)"
+    },
+    "wrap": {
+      "tag": "FORM",
+      "cls": "form___kkW_g flex-grow",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgba(0, 0, 0, 0.87)",
+      "radius": "0px",
+      "shadow": "none",
+      "h": 35,
+      "w": 398,
+      "pad": "0px",
+      "fs": "16px",
+      "color": "rgba(0, 0, 0, 0.87)"
+    },
+    "radios": [
+      {
+        "name": "orderType",
+        "checked": true,
+        "label": "Pickup",
+        "color": "rgb(255, 255, 255)",
+        "fw": "600",
+        "fs": "16px",
+        "bg": "rgb(0, 117, 74)"
+      },
+      {
+        "name": "orderType",
+        "checked": false,
+        "label": "Delivery",
+        "color": "rgb(0, 117, 74)",
+        "fw": "600",
+        "fs": "16px",
+        "bg": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  "careers": {
+    "url": "https://careers.starbucks.com/",
+    "h1": {
+      "font": "\"Starbucks Serif\", serif",
+      "fs": "49px",
+      "fw": "400",
+      "lh": "58.8px",
+      "ls": "normal",
+      "color": "rgb(0, 98, 65)"
+    },
+    "input": {
+      "border": "1px solid rgb(0, 98, 65)",
+      "radius": "8px",
+      "pad": "12px 16px",
+      "fs": "16px",
+      "h": 50,
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Arial"
+    },
+    "btn": {
+      "bg": "rgb(0, 98, 65)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "999px",
+      "fs": "16px",
+      "fw": "600",
+      "pad": "12px 24px",
+      "font": "\"SoDo Sans\", sans-serif"
+    },
+    "faces": [
+      {
+        "family": "\"SoDo Sans\"",
+        "weight": "400",
+        "src": "url(\"../../assets/fonts/SoDoSans-Regular.woff2\") format(\"woff2\"), url(\"../../assets/fonts/SoDoSans-Regular.woff\") format(\"woff\")"
+      },
+      {
+        "family": "\"SoDo Sans\"",
+        "weight": "600",
+        "src": "url(\"../../assets/fonts/SoDoSans-SemiBold.woff2\") format(\"woff2\"), url(\"../../assets/fonts/SoDoSans-SemiBold.woff\") format(\"woff\")"
+      },
+      {
+        "family": "\"SoDo Sans\"",
+        "weight": "700",
+        "src": "url(\"../../assets/fonts/SoDoSans-Bold.woff2\") format(\"woff2\"), url(\"../../assets/fonts/SoDoSans-Bold.woff\") format(\"woff\")"
+      },
+      {
+        "family": "\"Starbucks Serif\"",
+        "weight": "400",
+        "src": "url(\"../../assets/fonts/StarbucksSerif-Regular.woff2\") format(\"woff2\"), url(\"../../assets/fonts/StarbucksSerif-Regular.woff\") format(\"woff\")"
+      },
+      {
+        "family": "\"Starbucks Serif\"",
+        "weight": "400",
+        "src": "url(\"../../assets/fonts/StarbucksSerif-Italic.woff2\") format(\"woff2\"), url(\"../../assets/fonts/StarbucksSerif-Italic.woff\") format(\"woff\")"
+      },
+      {
+        "family": "\"Starbucks Serif\"",
+        "weight": "700",
+        "src": "url(\"../../assets/fonts/StarbucksSerif-Bold.woff2\") format(\"woff2\"), url(\"../../assets/fonts/StarbucksSerif-Bold.woff\") format(\"woff\")"
+      },
+      {
+        "family": "\"SoDo Sans\"",
+        "weight": "300",
+        "src": "url(\"https://careers.starbucks.com/wp-content/themes/starbucks-careers/assets/fonts/SoDoSans-Light.woff2\") format(\"woff2\")"
+      },
+      {
+        "family": "\"SoDo Sans\"",
+        "weight": "400",
+        "src": "url(\"https://careers.starbucks.com/wp-content/themes/starbucks-careers/assets/fonts/SoDoSans-Regular.woff2\") format(\"woff2\")"
+      },
+      {
+        "family": "\"SoDo Sans\"",
+        "weight": "500",
+        "src": "url(\"https://careers.starbucks.com/wp-content/themes/starbucks-careers/assets/fonts/SoDoSans-SemiBold.woff2\") format(\"woff2\")"
+      },
+      {
+        "family": "\"SoDo Sans\"",
+        "weight": "600",
+        "src": "url(\"https://careers.starbucks.com/wp-content/themes/starbucks-careers/assets/fonts/SoDoSans-Bold.woff2\") format(\"woff2\")"
+      },
+      {
+        "family": "\"Starbucks Serif\"",
+        "weight": "400",
+        "src": "url(\"https://careers.starbucks.com/wp-content/themes/starbucks-careers/assets/fonts/StarbucksSerif-Regular.woff2\") format(\"woff2\")"
+      },
+      {
+        "family": "\"Starbucks Serif\"",
+        "weight": "400",
+        "src": "url(\"https://careers.starbucks.com/wp-content/themes/starbucks-careers/assets/fonts/StarbucksSerif-Italic.woff2\") format(\"woff2\")"
+      },
+      {
+        "family": "\"Starbucks Serif\"",
+        "weight": "700",
+        "src": "url(\"https://careers.starbucks.com/wp-content/themes/starbucks-careers/assets/fonts/StarbucksSerif-Bold.woff2\") format(\"woff2\")"
+      },
+      {
+        "family": "WistiaPlayerInterNumbersSemiBold",
+        "weight": "",
+        "src": "url(\"data:application/x-font-woff;charset=utf-8;base64,d09GMk9UVE8AAAaMAAwAAAAACgAAAAZBAAMD1wAAAAAAAAAAAAAAAAAAAAAAAAAADYpwGhQbIBwqBmAAgTIBN"
+      }
+    ],
+    "loaded": [
+      "SoDo Sans 400",
+      "SoDo Sans 600",
+      "SoDo Sans 700",
+      "Starbucks Serif 400",
+      "SoDo Sans 400",
+      "SoDo Sans 500",
+      "SoDo Sans 600",
+      "Starbucks Serif 400"
+    ]
+  },
+  "signin": {
+    "url": "https://www.starbucks.com/account/signin",
+    "title": "",
+    "text": "Skip to main content About Us Our Company Our Coffee About Starbucks Starbucks Archive Investor Relations Customer Service Contact Us Careers Culture and Values Belonging at Starbucks College Achievement Plan Alumni Community U.S. Careers International Careers Social Impact Communities Starbucks Foundation Sustainability Environmental and Social Impact Reporting For Business Partners Landlord Supp",
+    "inputs": [],
+    "buttons": [
+      "About Us",
+      "Careers",
+      "Social Impact",
+      "For Business Partners",
+      "Ways to Shop",
+      "Cookie Preferences"
+    ],
+    "status": 200
+  }
+}

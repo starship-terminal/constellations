@@ -1,0 +1,1772 @@
+{
+  "url": "https://www.starbucks.com/store-locator",
+  "title": "Café Locator: Starbucks Coffee Company",
+  "inner": [
+    1440,
+    900
+  ],
+  "dpr": 2,
+  "vv": {
+    "w": 1440,
+    "h": 900,
+    "scale": 1
+  },
+  "scrollH": 900,
+  "htmlFs": "10px",
+  "body": {
+    "tag": "BODY",
+    "role": null,
+    "text": "Skip to main content MENU REWARDS GIFT CARDS STARBUCKS® SHOP Find a café Sign in Join now ",
+    "href": null,
+    "type": null,
+    "placeholder": null,
+    "disabled": false,
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900,
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgba(0, 0, 0, 0.87)",
+    "borderTop": "0px none rgba(0, 0, 0, 0.87)",
+    "border": "0px none rgba(0, 0, 0, 0.87)",
+    "radius": "0px",
+    "shadow": "none",
+    "pad": "0px",
+    "gap": "normal",
+    "fs": "16px",
+    "fw": "400",
+    "lh": "24px",
+    "ls": "-0.16px",
+    "font": "SoDoSans",
+    "tt": "none",
+    "outline": "rgba(0, 0, 0, 0.87) none 0px",
+    "display": "block"
+  },
+  "header": {
+    "tag": "HEADER",
+    "role": null,
+    "text": "MENU REWARDS GIFT CARDS STARBUCKS® SHOP Find a café Sign in Join now",
+    "href": null,
+    "type": null,
+    "placeholder": null,
+    "disabled": false,
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 99,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgba(0, 0, 0, 0.87)",
+    "borderTop": "0px none rgba(0, 0, 0, 0.87)",
+    "border": "0px none rgba(0, 0, 0, 0.87)",
+    "radius": "0px",
+    "shadow": "none",
+    "pad": "0px",
+    "gap": "normal",
+    "fs": "16px",
+    "fw": "400",
+    "lh": "24px",
+    "ls": "-0.16px",
+    "font": "SoDoSans",
+    "tt": "none",
+    "outline": "rgba(0, 0, 0, 0.87) none 0px",
+    "display": "block"
+  },
+  "footerPaint": null,
+  "headings": [
+    {
+      "tag": "H3",
+      "role": null,
+      "text": "Zoomed out too far",
+      "href": null,
+      "type": null,
+      "placeholder": null,
+      "disabled": false,
+      "x": 42,
+      "y": 275,
+      "w": 516,
+      "h": 39,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "borderTop": "0px none rgba(0, 0, 0, 0.87)",
+      "border": "0px none rgba(0, 0, 0, 0.87)",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px",
+      "gap": "normal",
+      "fs": "28px",
+      "fw": "600",
+      "lh": "38.78px",
+      "ls": "-0.16px",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgba(0, 0, 0, 0.87) none 0px",
+      "display": "block"
+    }
+  ],
+  "paragraphs": [
+    {
+      "tag": "P",
+      "role": null,
+      "text": "Try searching for a location or zooming in to see results.",
+      "href": null,
+      "type": null,
+      "placeholder": null,
+      "disabled": false,
+      "x": 42,
+      "y": 330,
+      "w": 516,
+      "h": 24,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.58)",
+      "borderTop": "0px none rgba(0, 0, 0, 0.58)",
+      "border": "0px none rgba(0, 0, 0, 0.58)",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px",
+      "gap": "normal",
+      "fs": "16px",
+      "fw": "400",
+      "lh": "24px",
+      "ls": "-0.16px",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgba(0, 0, 0, 0.58) none 0px",
+      "display": "block"
+    }
+  ],
+  "buttons": [
+    {
+      "tag": "A",
+      "role": null,
+      "text": "Skip to main content",
+      "href": "#content",
+      "type": null,
+      "placeholder": null,
+      "disabled": false,
+      "x": 1180,
+      "y": -54,
+      "w": 196,
+      "h": 33,
+      "bg": "rgb(0, 117, 74)",
+      "color": "rgb(255, 255, 255)",
+      "borderTop": "0px none rgb(255, 255, 255)",
+      "border": "0px none rgb(255, 255, 255)",
+      "radius": "50px",
+      "shadow": "rgba(0, 0, 0, 0.24) 0px 2px 4px 0px",
+      "pad": "7px 16px",
+      "gap": "normal",
+      "fs": "16px",
+      "fw": "700",
+      "lh": "19.2px",
+      "ls": "-0.16px",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "display": "inline-block"
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "text": "Sign in",
+      "href": null,
+      "type": "button",
+      "placeholder": null,
+      "disabled": false,
+      "x": 1211,
+      "y": 33,
+      "w": 80,
+      "h": 33,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "borderTop": "1px solid rgba(0, 0, 0, 0.87)",
+      "border": "1px solid rgba(0, 0, 0, 0.87)",
+      "radius": "50px",
+      "shadow": "none",
+      "pad": "7px 16px",
+      "gap": "normal",
+      "fs": "14px",
+      "fw": "600",
+      "lh": "16.8px",
+      "ls": "normal",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgba(0, 0, 0, 0.87) none 0px",
+      "display": "block"
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "text": "Join now",
+      "href": "/account/create",
+      "type": null,
+      "placeholder": null,
+      "disabled": false,
+      "x": 1307,
+      "y": 33,
+      "w": 93,
+      "h": 33,
+      "bg": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderTop": "1px solid rgb(0, 0, 0)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "radius": "50px",
+      "shadow": "none",
+      "pad": "7px 16px",
+      "gap": "normal",
+      "fs": "14px",
+      "fw": "600",
+      "lh": "16.8px",
+      "ls": "-0.16px",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "display": "block"
+    },
+    {
+      "tag": "BUTTON",
+      "role": null,
+      "text": "Filter",
+      "href": null,
+      "type": "button",
+      "placeholder": null,
+      "disabled": false,
+      "x": 462,
+      "y": 190,
+      "w": 74,
+      "h": 35,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 117, 74)",
+      "borderTop": "1px solid rgb(0, 117, 74)",
+      "border": "1px solid rgb(0, 117, 74)",
+      "radius": "50px",
+      "shadow": "none",
+      "pad": "7px 16px",
+      "gap": "normal",
+      "fs": "16px",
+      "fw": "600",
+      "lh": "19.2px",
+      "ls": "normal",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgb(0, 117, 74) none 0px",
+      "display": "block"
+    }
+  ],
+  "links": [
+    {
+      "tag": "A",
+      "role": null,
+      "text": "Home, Starbucks",
+      "href": "https://www.starbucks.com",
+      "type": null,
+      "placeholder": null,
+      "disabled": false,
+      "x": 40,
+      "y": 24,
+      "w": 51,
+      "h": 58,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "borderTop": "0px none rgba(0, 0, 0, 0.87)",
+      "border": "0px none rgba(0, 0, 0, 0.87)",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px",
+      "gap": "normal",
+      "fs": "16px",
+      "fw": "400",
+      "lh": "24px",
+      "ls": "-0.16px",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgba(0, 0, 0, 0.87) none 0px",
+      "display": "block"
+    },
+    {
+      "tag": "A",
+      "role": null,
+      "text": "Open this area in Google Maps (opens a new window)",
+      "href": "https://maps.google.com/maps",
+      "type": null,
+      "placeholder": null,
+      "disabled": false,
+      "x": 581,
+      "y": 874,
+      "w": 66,
+      "h": 26,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "borderTop": "0px none rgba(0, 0, 0, 0.87)",
+      "border": "0px none rgba(0, 0, 0, 0.87)",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px",
+      "gap": "normal",
+      "fs": "11px",
+      "fw": "400",
+      "lh": "normal",
+      "ls": "-0.16px",
+      "font": "Roboto",
+      "tt": "none",
+      "outline": "rgba(0, 0, 0, 0.87) none 0px",
+      "display": "inline"
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "INPUT",
+      "role": null,
+      "text": "",
+      "href": null,
+      "type": "radio",
+      "placeholder": null,
+      "disabled": false,
+      "x": 105,
+      "y": 124,
+      "w": 177,
+      "h": 33,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderTop": "0px none rgb(255, 255, 255)",
+      "border": "0px none rgb(255, 255, 255)",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px",
+      "gap": "normal",
+      "fs": "16px",
+      "fw": "600",
+      "lh": "normal",
+      "ls": "normal",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "display": "block"
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "text": "",
+      "href": null,
+      "type": "radio",
+      "placeholder": null,
+      "disabled": false,
+      "x": 282,
+      "y": 124,
+      "w": 189,
+      "h": 33,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 117, 74)",
+      "borderTop": "0px none rgb(0, 117, 74)",
+      "border": "0px none rgb(0, 117, 74)",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px",
+      "gap": "normal",
+      "fs": "16px",
+      "fw": "600",
+      "lh": "normal",
+      "ls": "normal",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgb(0, 117, 74) none 0px",
+      "display": "block"
+    },
+    {
+      "tag": "INPUT",
+      "role": null,
+      "text": "Enter a location to search for Starbucks cafés",
+      "href": null,
+      "type": "search",
+      "placeholder": "Find a café",
+      "disabled": false,
+      "x": 40,
+      "y": 190,
+      "w": 398,
+      "h": 35,
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "borderTop": "0px none rgba(0, 0, 0, 0.87)",
+      "border": "0px none rgba(0, 0, 0, 0.87)",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "0px 48px 0px 2px",
+      "gap": "normal",
+      "fs": "19px",
+      "fw": "400",
+      "lh": "normal",
+      "ls": "normal",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgba(0, 0, 0, 0.87) none 0px",
+      "display": "block"
+    }
+  ],
+  "cards": [
+    {
+      "tag": "ARTICLE",
+      "role": null,
+      "text": "Zoomed out too far Try searching for a location or zooming in to see results.",
+      "href": null,
+      "type": null,
+      "placeholder": null,
+      "disabled": false,
+      "x": 2,
+      "y": 251,
+      "w": 572,
+      "h": 127,
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "borderTop": "0px none rgba(0, 0, 0, 0.87)",
+      "border": "0px none rgba(0, 0, 0, 0.87)",
+      "radius": "0px",
+      "shadow": "none",
+      "pad": "24px 16px 24px 40px",
+      "gap": "normal",
+      "fs": "13px",
+      "fw": "400",
+      "lh": "19.5px",
+      "ls": "-0.16px",
+      "font": "SoDoSans",
+      "tt": "none",
+      "outline": "rgba(0, 0, 0, 0.87) none 0px",
+      "display": "flex"
+    }
+  ],
+  "tabs": [],
+  "dialogs": [],
+  "cookie": null,
+  "navLinks": [
+    {
+      "t": "",
+      "href": "https://www.starbucks.com",
+      "fs": "16px",
+      "fw": "400",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "ls": "-0.16px",
+      "tt": "none"
+    },
+    {
+      "t": "MENU",
+      "href": "/menu",
+      "fs": "14px",
+      "fw": "700",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "ls": "1.4px",
+      "tt": "uppercase"
+    },
+    {
+      "t": "REWARDS",
+      "href": "/rewards",
+      "fs": "14px",
+      "fw": "700",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "ls": "1.4px",
+      "tt": "uppercase"
+    },
+    {
+      "t": "GIFT CARDS",
+      "href": "/gift",
+      "fs": "14px",
+      "fw": "700",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "ls": "1.4px",
+      "tt": "uppercase"
+    },
+    {
+      "t": "STARBUCKS® SHOP",
+      "href": "https://www.shop.starbucks.com/?utm_medium=website&utm_source=starbucks_main_nav&utm_campaign=shopstarbucks&utm_content=shop_home",
+      "fs": "14px",
+      "fw": "700",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "ls": "1.4px",
+      "tt": "uppercase"
+    },
+    {
+      "t": "Find a café",
+      "href": "/store-locator",
+      "fs": "14px",
+      "fw": "600",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "ls": "-0.16px",
+      "tt": "none"
+    },
+    {
+      "t": "Join now",
+      "href": "/account/create",
+      "fs": "14px",
+      "fw": "600",
+      "color": "rgb(255, 255, 255)",
+      "ls": "-0.16px",
+      "tt": "none"
+    }
+  ],
+  "root": {},
+  "faces": [
+    {
+      "family": "Material Symbols Outlined",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Google Sans Text",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "SoDoSans",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "SoDoSans",
+      "weight": "600",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "SoDoSans",
+      "weight": "700",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "StarbucksSerifCA",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    }
+  ],
+  "fontFaces": [
+    {
+      "family": "SoDoSans",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(\"/app-assets/a04d3c474ae54100589f.woff\")"
+    },
+    {
+      "family": "SoDoSans",
+      "weight": "600",
+      "style": "normal",
+      "src": "url(\"/app-assets/9072643e9f07efac73cc.woff\")"
+    },
+    {
+      "family": "SoDoSans",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(\"/app-assets/891bac4bf2cf726a4a3c.woff\")"
+    },
+    {
+      "family": "StarbucksSerifCA",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(\"/app-assets/d93bca7fdf0bfae75e35.woff\")"
+    }
+  ],
+  "sections": [
+    {
+      "cls": "px7 lg-px9 py2 deliveryToggle___cuk5t",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "h": 67,
+      "w": 576
+    },
+    {
+      "cls": "locatorControls___xuVoV",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "h": 83,
+      "w": 576
+    },
+    {
+      "cls": "flex position-relative overflow-hidden flex-grow base___PfwXc",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "h": 651,
+      "w": 1440
+    },
+    {
+      "cls": "flex flex-column justify-between base___AG44e",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "h": 651,
+      "w": 576
+    }
+  ],
+  "focusables": 54,
+  "status": 200,
+  "cookieAction": "not-home",
+  "pageId": "store-locator"
+}

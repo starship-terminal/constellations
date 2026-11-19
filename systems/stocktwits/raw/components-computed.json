@@ -1,0 +1,237 @@
+{
+  "captured": "2026-11-19",
+  "source": "getComputedStyle in the T3 preview tab. No screenshot frames.",
+  "cookie": "viewMode=lightMode on first load. html class was light. data-theme was unset until the reading set it and then removed it.",
+  "controls": {
+    "continueWithApple": {
+      "page": "https://stocktwits.com/",
+      "height": "40px",
+      "width": "268px",
+      "padding": "0px 20px",
+      "gap": "8px",
+      "radius": "9999px",
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgb(229, 229, 234)",
+      "fontSize": "15px",
+      "fontWeight": "600",
+      "lineHeight": "22.5px",
+      "shadow": "none"
+    },
+    "loginLink": {
+      "page": "https://stocktwits.com/",
+      "color": "rgb(27, 102, 231)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "background": "transparent"
+    },
+    "signUpOrLogIn": {
+      "page": "https://stocktwits.com/",
+      "height": "36px",
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid transparent",
+      "radius": "9999px",
+      "fontSize": "15px",
+      "fontWeight": "600",
+      "note": "Filled shell control. Not the --primary-button-background blue."
+    },
+    "searchPill": {
+      "page": "https://stocktwits.com/",
+      "height": "36px",
+      "width": "400px",
+      "padding": "0px 0px 0px 16px",
+      "gap": "12px",
+      "radius": "9999px",
+      "background": "rgb(242, 242, 247)",
+      "placeholder": "Search stocks, crypto, and people"
+    },
+    "header": {
+      "page": "https://stocktwits.com/",
+      "height": "90px",
+      "background": "rgb(255, 255, 255)",
+      "token": "--header 90px"
+    },
+    "sidebar": {
+      "page": "https://stocktwits.com/",
+      "width": "300px",
+      "paddingTop": "58px",
+      "background": "rgb(255, 255, 255)",
+      "displayAt390": "none"
+    },
+    "mobileHeader": {
+      "page": "https://stocktwits.com/",
+      "width": "390px",
+      "height": "52px",
+      "borderBottom": "1px rgb(242, 242, 247)"
+    },
+    "useApp": {
+      "page": "https://stocktwits.com/ at 390px",
+      "height": "24px",
+      "padding": "0px 12px",
+      "radius": "9999px",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "background": "rgb(255, 255, 255)",
+      "border": "1px rgb(229, 229, 234)"
+    },
+    "forYouTab": {
+      "height": "41px",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "40px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "liveCallsBadge": {
+      "background": "rgb(239, 232, 255)",
+      "color": "rgb(129, 70, 255)",
+      "padding": "4px 8px",
+      "radius": "9999px",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "height": "24px"
+    },
+    "symbolTicker": {
+      "page": "https://stocktwits.com/symbol/AAPL",
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "lineHeight": "28px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "symbolName": {
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "color": "rgb(99, 99, 102)"
+    },
+    "symbolPrice": {
+      "fontSize": "30px",
+      "fontWeight": "600",
+      "lineHeight": "34px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "symbolChange": {
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "color": "rgb(18, 135, 96)",
+      "class": "text-price-positive"
+    },
+    "signinField": {
+      "page": "https://stocktwits.com/signin?next=%2F",
+      "height": "40px",
+      "width": "400px",
+      "padding": "8px 12px",
+      "radius": "8px",
+      "background": "rgb(242, 242, 247)",
+      "fontSize": "16px",
+      "placeholderColor": "rgb(156, 163, 175)",
+      "focusOutline": "none",
+      "focusShadow": "none"
+    },
+    "signinSubmitDisabled": {
+      "background": "rgb(209, 209, 214)",
+      "color": "rgb(255, 255, 255)",
+      "height": "40px",
+      "radius": "9999px",
+      "disabled": true
+    },
+    "welcome": {
+      "page": "https://stocktwits.com/signin?next=%2F",
+      "fontSize": "57.6px",
+      "fontWeight": "900",
+      "lineHeight": "57.6px",
+      "color": "rgb(255, 255, 255)",
+      "panelBackground": "rgb(0, 0, 0)",
+      "panelWidth": "719px"
+    },
+    "signupFields": {
+      "page": "https://stocktwits.com/signup?next=%2F",
+      "inputs": ["email"],
+      "also": "Continue with Apple",
+      "submitted": false
+    },
+    "aboutHero": {
+      "page": "https://stocktwits.com/about",
+      "fontSize": "80px",
+      "fontWeight": "700",
+      "lineHeight": "74px",
+      "letterSpacing": "-2.4px",
+      "color": "rgb(255, 255, 255)",
+      "width": "530px",
+      "panelBackground": "rgb(0, 0, 0)",
+      "panelBackgroundImage": "linear-gradient(rgba(0, 0, 0, 0) 32.59%, rgba(0, 0, 0, 0.6)), linear-gradient(291deg, rgba(150, 102, 255, 0.44) ...)"
+    },
+    "aboutSignUp": {
+      "background": "transparent",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px rgba(255, 255, 255, 0.5)",
+      "radius": "9999px",
+      "height": "40px"
+    },
+    "aboutGetStarted": {
+      "height": "56px",
+      "padding": "0px 28px",
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "radius": "9999px",
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)"
+    },
+    "aboutCard": {
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "40px",
+      "padding": "60px 24px 24px",
+      "shadow": "none"
+    },
+    "planCard": {
+      "page": "https://stocktwits.com/subscriptions",
+      "background": "rgb(255, 255, 255)",
+      "radius": "12px",
+      "padding": "40px 20px 20px",
+      "shadow": "rgba(0, 0, 0, 0.05) 0px 10px 20px 0px",
+      "width": "289px",
+      "nameSize": "36px",
+      "nameWeight": "700",
+      "priceSize": "24px",
+      "strikeColor": "rgb(174, 174, 178)",
+      "subscribeBackground": "rgb(0, 0, 0)",
+      "subscribeColor": "rgb(255, 255, 255)"
+    },
+    "enterpriseField": {
+      "page": "https://stocktwits.com/enterprise",
+      "height": "53px",
+      "width": "480px",
+      "padding": "15px 32px 4px 15px",
+      "radius": "6px",
+      "border": "1px rgb(229, 229, 234)",
+      "background": "rgb(255, 255, 255)",
+      "labelColor": "rgb(142, 142, 147)",
+      "submitted": false
+    },
+    "widgetChange": {
+      "page": "https://stocktwits.com/widgets",
+      "color": "rgb(221, 51, 29)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "titleSize": "48px",
+      "titleWeight": "700"
+    },
+    "privacyTitle": {
+      "page": "https://stocktwits.com/about/legal/privacy",
+      "fontSize": "36px",
+      "fontWeight": "700",
+      "lineHeight": "42px"
+    },
+    "onetrustAccept": {
+      "background": "rgb(29, 104, 215)",
+      "color": "rgb(255, 255, 255)",
+      "height": "42px",
+      "padding": "12px 10px",
+      "radius": "2px",
+      "fontSize": "13.008px",
+      "fontWeight": "600",
+      "note": "Vendor banner. Not a Stocktwits control. Left unclicked."
+    }
+  }
+}

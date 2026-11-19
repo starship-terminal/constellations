@@ -1,0 +1,329 @@
+{
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "body": {
+    "backgroundColor": "rgb(255, 241, 230)",
+    "color": "rgba(0, 0, 0, 0.75)",
+    "fontFamily": "\"Denim Regular\", sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "28.8px",
+    "letterSpacing": "0.6px"
+  },
+  "announcementBar": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "selector": ".utility-bar.color-inverse",
+    "linkFontSize": "14px",
+    "linkLetterSpacing": "0.6px",
+    "height": 40
+  },
+  "header": {
+    "backgroundColor": "rgb(255, 241, 230)",
+    "height": 131,
+    "navItem": {
+      "fontFamily": "\"Demin SemiBold\", sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "600",
+      "letterSpacing": "0.3px",
+      "lineHeight": "19.5px",
+      "textTransform": "uppercase",
+      "padding": "12px 8px",
+      "color": "rgba(0, 0, 0, 0.75)",
+      "focusOutline": "rgba(0, 0, 0, 0.5) solid 2px",
+      "focusBoxShadow": "rgba(0, 0, 0, 0.3) 0px 0px 2px 0px"
+    }
+  },
+  "cartButton": {
+    "backgroundColor": "rgb(221, 31, 38)",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "\"Denim SemiBold\", sans-serif",
+    "fontSize": "15px",
+    "fontWeight": "600",
+    "padding": "10px 20px",
+    "borderRadius": "5px",
+    "height": 37,
+    "text": "CART [0]"
+  },
+  "searchInput": {
+    "backgroundColor": "rgb(255, 241, 230)",
+    "color": "rgb(43, 38, 27)",
+    "border": "2px solid rgb(43, 38, 27)",
+    "fontSize": "20px",
+    "fontWeight": "600",
+    "padding": "15px 98px 15px 15px",
+    "borderRadius": "0px",
+    "height": 45,
+    "placeholder": "Search"
+  },
+  "primaryButton": {
+    "selector": "a.button.button--primary.button--octagon",
+    "backgroundColor": "rgb(221, 29, 29)",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "\"Denim SemiBold\", sans-serif",
+    "fontSize": "15px",
+    "fontWeight": "600",
+    "letterSpacing": "1px",
+    "lineHeight": "18px",
+    "textTransform": "uppercase",
+    "padding": "0px 30px",
+    "borderRadius": "0px",
+    "height": 47,
+    "transition": "box-shadow 0.1s ease",
+    "focusAfterBoxShadow": "rgba(255, 255, 255, 0) 0px 0px 0px 1px, rgb(221, 29, 29) 0px 0px 0px 1px"
+  },
+  "inkButton": {
+    "selector": "a.uf-our-story__button--octagon",
+    "backgroundColor": "rgb(43, 38, 27)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "15px",
+    "fontWeight": "600",
+    "letterSpacing": "0.3px",
+    "padding": "2px 30px",
+    "height": 31,
+    "borderRadius": "0px",
+    "text": "CONTINUE READING"
+  },
+  "redButton": {
+    "selector": "a.button.button--primary",
+    "backgroundColor": "rgb(221, 31, 38)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "15px",
+    "padding": "0px 30px",
+    "height": 47,
+    "borderRadius": "0px",
+    "textTransform": "uppercase"
+  },
+  "addToCart": {
+    "backgroundColor": "rgb(221, 31, 38)",
+    "color": "rgb(255, 255, 255)",
+    "border": "2px solid rgb(43, 38, 27)",
+    "fontFamily": "\"Denim SemiBold\", sans-serif",
+    "fontSize": "17px",
+    "fontWeight": "600",
+    "padding": "0px 30px",
+    "height": 60,
+    "borderRadius": "0px",
+    "text": "ADD TO CART"
+  },
+  "variantSelected": {
+    "text": "SERVES 2 $26.50",
+    "backgroundColor": "rgb(219, 231, 239)",
+    "color": "rgb(0, 0, 0)",
+    "border": "2px solid rgb(43, 38, 27)",
+    "fontFamily": "\"Denim Medium\", sans-serif",
+    "fontSize": "17px",
+    "fontWeight": "600",
+    "padding": "16px 0px",
+    "height": 75,
+    "borderRadius": "0px"
+  },
+  "variantRest": {
+    "text": "SERVES 4 $41.00",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border": "2px solid rgb(43, 38, 27)",
+    "fontSize": "17px",
+    "fontWeight": "600",
+    "padding": "16px 0px",
+    "height": 75,
+    "borderRadius": "0px"
+  },
+  "collectionChipActive": {
+    "text": "ALL DINNERS",
+    "backgroundColor": "rgb(219, 231, 239)",
+    "color": "rgb(0, 0, 0)",
+    "border": "1px solid rgb(0, 0, 0)",
+    "borderRadius": "3px",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "padding": "4px",
+    "height": 27,
+    "fontFamily": "\"Denim SemiBold\", sans-serif"
+  },
+  "collectionChipRest": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "border": "1px solid rgb(0, 0, 0)",
+    "borderRadius": "3px",
+    "fontSize": "14px",
+    "padding": "4px",
+    "height": 27
+  },
+  "productCard": {
+    "border": "2px solid rgb(0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "4px"
+  },
+  "productTitle": {
+    "fontFamily": "\"Denim SemiBold\", sans-serif",
+    "fontSize": "20px",
+    "fontWeight": "600",
+    "color": "rgb(0, 0, 0)"
+  },
+  "badgeBestSeller": {
+    "fontFamily": "\"Denim SemiBold\", sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "600",
+    "color": "rgba(0, 0, 0, 0.75)",
+    "backgroundColor": "transparent"
+  },
+  "ticker": {
+    "backgroundColor": "rgb(221, 31, 38)",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "\"Denim SemiBold\", sans-serif",
+    "fontSize": "25px",
+    "fontWeight": "600",
+    "height": 60
+  },
+  "heroHeading": {
+    "text": "READY-TO-HEAT, HOMELY MEALS. DELIVERED TO YOUR DOOR.",
+    "fontSize": "40px",
+    "fontWeight": "600",
+    "lineHeight": "44px",
+    "letterSpacing": "0.6px",
+    "textTransform": "uppercase",
+    "color": "rgb(18, 18, 18)",
+    "fontFamily": "\"Denim SemiBold\", sans-serif"
+  },
+  "sectionHeading": {
+    "text": "BITE INTO A BEST SELLER",
+    "fontSize": "48px",
+    "fontWeight": "500",
+    "lineHeight": "52.8px",
+    "letterSpacing": "0.6px",
+    "textTransform": "uppercase",
+    "color": "rgb(0, 0, 0)"
+  },
+  "productH1": {
+    "text": "CLASSIC BEEF LASAGNE",
+    "fontSize": "48px",
+    "fontWeight": "600",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "\"Denim SemiBold\", sans-serif"
+  },
+  "pageH1": {
+    "selector": "delivery-info h1",
+    "fontSize": "40px",
+    "fontWeight": "600",
+    "color": "rgb(0, 0, 0)"
+  },
+  "contactHeading": {
+    "fontSize": "40px",
+    "fontWeight": "600",
+    "color": "rgb(18, 18, 18)"
+  },
+  "contactCardHeading": {
+    "fontSize": "18px",
+    "fontWeight": "600",
+    "color": "rgb(255, 255, 255)"
+  },
+  "footer": {
+    "backgroundColor": "rgb(255, 241, 230)",
+    "padding": "36px 0px",
+    "heading": {
+      "fontSize": "40px",
+      "fontWeight": "600",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Denim SemiBold\", sans-serif"
+    },
+    "columnHeading": {
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "color": "rgb(43, 38, 27)",
+      "fontFamily": "\"Denim Medium\", sans-serif"
+    }
+  },
+  "newsletterInput": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Arial",
+    "fontSize": "16px",
+    "padding": "15px 50px 15px 15px",
+    "borderRadius": "5px",
+    "height": 45,
+    "placeholder": "Enter your email..."
+  },
+  "newsletterSubmit": {
+    "backgroundColor": "rgb(221, 31, 38)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "12px",
+    "fontWeight": "600",
+    "padding": "10px 15px",
+    "borderRadius": "5px",
+    "height": 31,
+    "text": "SUBMIT"
+  },
+  "suburbInput": {
+    "name": "address-finder-input",
+    "placeholder": "Select your suburb",
+    "page": "/pages/delivery-info"
+  },
+  "deliveryTable": {
+    "backgroundColor": "rgb(253, 228, 209)"
+  },
+  "filterSummary": {
+    "text": "FILTER",
+    "fontSize": "16px",
+    "fontFamily": "\"Denim Regular\", sans-serif"
+  },
+  "sortLabel": {
+    "text": "SORT BY:",
+    "fontSize": "14px",
+    "color": "rgba(0, 0, 0, 0.85)"
+  },
+  "quantityButton": {
+    "width": 45,
+    "height": 60,
+    "fontSize": "18px",
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "transparent"
+  },
+  "accordion": {
+    "fontSize": "38px",
+    "fontFamily": "\"Denim medium\", sans-serif",
+    "border": "2px solid rgb(0, 0, 0)",
+    "padding": "18px",
+    "height": 84
+  },
+  "collectionBannerHeading": {
+    "fontSize": "70px",
+    "fontWeight": "900",
+    "color": "rgb(255, 255, 255)",
+    "text": "CHRISTMAS"
+  },
+  "motion": {
+    "prefersReducedMotion": false,
+    "buttonTransition": "box-shadow 100ms ease",
+    "declaredDurations": [
+      "100ms",
+      "200ms",
+      "250ms",
+      "300ms",
+      "500ms",
+      "600ms",
+      "3s"
+    ],
+    "easing": "cubic-bezier(0, 0, 0.3, 1)",
+    "keyframesSeen": [
+      "slideIn",
+      "fadeIn",
+      "translateAnnouncementSlideIn",
+      "translateAnnouncementSlideOut",
+      "animateMenuOpen",
+      "shake",
+      "pulse",
+      "slideDown"
+    ],
+    "reduceMediaRulesPresent": true,
+    "reduceEmulation": "not run; preview browser cannot emulate prefers-reduced-motion and screenshot frames were unavailable, so the honour verdict is a gap"
+  }
+}

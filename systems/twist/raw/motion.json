@@ -1,0 +1,19 @@
+{
+  "source": "Declared rules read from the live stylesheets in the T3 preview browser. prefers-reduced-motion was not emulated.",
+  "marketing": {
+    "customProperties": {
+      "--animation-duration-150": "150ms",
+      "--animation-duration-350": "350ms",
+      "--animation-duration-600": "600ms",
+      "--animation-ease-base": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "--card-active-transition": "transform cubic-bezier(0.2, 0.8, 0.2, 1) 150ms",
+      "--card-active-transform": "scale(0.98)"
+    },
+    "reducedMotion": "not emulated"
+  },
+  "login": {
+    "fieldTransition": "color, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+    "reducedMotionRulesFound": 0,
+    "keyboardFocus": "box-shadow rgb(0, 138, 166) 0 0 0 1px, rgb(0, 212, 255) 0 0 0 4px under [data-whatinput=keyboard]"
+  }
+}

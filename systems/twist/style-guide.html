@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twist style guide</title>
+<meta name="description" content="Twist public marketing and signed-out login, rendered from measured tokens.">
+<style>
+:root {
+  --page: #FAFAFA;
+  --surface: #FFFFFF;
+  --ink: #222829;
+  --muted: #5C6A6D;
+  --accent: #008AA6;
+  --on-accent: #FFFFFF;
+  --link: #006780;
+  --banner: #FFF9F0;
+  --banner-border: #E5CBA7;
+  --field: #C4C7C8;
+  --disabled: #99D0DB;
+  --radius: 8px;
+  --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --display: "Tiempos Headline", Georgia, serif;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --page: #141414;
+  --surface: #222A2B;
+  --ink: #ECEEEE;
+  --muted: #8FA0A3;
+  --accent: #008099;
+  --on-accent: #ECEEEE;
+  --link: #22A5BF;
+  --banner: #1D2425;
+  --banner-border: #53595B;
+  --field: #53595B;
+  --disabled: #00404C;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/24px var(--font); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 18px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; }
+h1 { font: 300 48px/56px var(--display); letter-spacing: -0.96px; margin: 24px 0 8px; }
+h2 { font: 300 32px/40px var(--display); margin: 40px 0 12px; }
+p.lead { margin: 0 0 16px; color: var(--muted); font-size: 21px; line-height: 33.6px; }
+button.theme { border: 1px solid var(--field); background: var(--surface); color: var(--ink); border-radius: 6px; padding: 7px 11px; font: 500 15.5px/21px var(--font); cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 56px; border-radius: 8px; border: 1px solid var(--field); }
+.swatch span { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--on-accent); font: 600 17px/24px var(--font); letter-spacing: 0.17px; padding: 9px 14px; text-decoration: none; }
+.btn.disabled { background: var(--disabled); }
+.nav { color: var(--ink); font: 500 15.5px/21px var(--font); letter-spacing: 0.155px; padding: 7px 11px; border-radius: 6px; text-decoration: none; }
+.link { color: var(--link); text-decoration: none; }
+.banner { background: var(--banner); border: 1px solid var(--banner-border); padding: 12px 16px; }
+.field { max-width: 360px; }
+.field label { display: block; font: 500 12px/20px var(--font); }
+.field .box { border: 1px solid var(--field); border-radius: 8px; padding: 3px 10px 5px; background: transparent; }
+.field input { width: 100%; border: 0; background: transparent; color: var(--ink); font: 400 16px/24px var(--font); padding: 0; }
+.field input:focus { outline: none; }
+.note { font-size: 14px; color: var(--muted); max-width: 68ch; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--field); }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <strong>Twist</strong>
+  <button class="theme" type="button" id="theme">Dark tokens</button>
+</header>
+<h1>Work communication that won’t distract you all day</h1>
+<p class="lead">Twist is an async messaging app that makes collaboration easy from anywhere by using threads to organize your conversations.</p>
+<p class="banner">Twist is being replaced by Todoist Comms and will close on March 1, 2027. <a class="link" href="#">Schedule your move</a></p>
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+<h2>Controls</h2>
+<div class="row">
+  <a class="nav" href="#">Log in</a>
+  <a class="btn" href="#">Log in</a>
+  <span class="btn disabled">Continue with email</span>
+</div>
+<h2>Field</h2>
+<div class="field">
+  <div class="box">
+    <label>Email</label>
+    <input type="email" placeholder="Enter your email…" value="">
+  </div>
+</div>
+<p class="note">Dark values are the declared <code>data-theme="dark"</code> set from the login stylesheets. The marketing pages paint light only.</p>
+<h2>Type</h2>
+<table>
+  <tr><th>Role</th><th>Size</th><th>Weight</th></tr>
+  <tr><td>Hero</td><td>86px</td><td>300</td></tr>
+  <tr><td>Section</td><td>74px</td><td>300</td></tr>
+  <tr><td>Pricing title</td><td>64px</td><td>300</td></tr>
+  <tr><td>Lede</td><td>21px</td><td>400</td></tr>
+  <tr><td>Button</td><td>17px</td><td>600</td></tr>
+  <tr><td>Nav</td><td>15.5px</td><td>500</td></tr>
+</table>
+</div>
+<script>
+const swatches = [
+  ["page", "--page"],
+  ["surface", "--surface"],
+  ["ink", "--ink"],
+  ["muted", "--muted"],
+  ["accent", "--accent"],
+  ["link", "--link"],
+  ["banner", "--banner"],
+  ["disabled", "--disabled"]
+];
+const row = document.getElementById("swatches");
+for (const [name, v] of swatches) {
+  const d = document.createElement("div");
+  d.className = "swatch";
+  d.innerHTML = "<i style=\"background:var(" + v + ")\"></i><span>" + name + "</span>";
+  row.appendChild(d);
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.getElementById("theme").textContent = next === "dark" ? "Light tokens" : "Dark tokens";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-11-18T16:33:46.457Z",
+  "name": "home-dark-mobile-nav",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "href": "https://copilot.com/",
+    "title": "Microsoft Copilot | Sign in",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "theme": "dark",
+    "colorScheme": "dark",
+    "scrollH": 3476,
+    "bodyBg": "rgb(31, 31, 31)"
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "source": "https://copilot.com/"
+}

@@ -1,0 +1,29 @@
+{
+  "url": "https://visitors.now/",
+  "status": 200,
+  "title": "Visitors - Privacy-friendly Google Analytics alternative",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "colorScheme": "light"
+  },
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 8119,
+    "colorScheme": "normal",
+    "darkMq": false
+  },
+  "png": {
+    "bytes": 182527,
+    "width": 1440,
+    "height": 900
+  }
+}

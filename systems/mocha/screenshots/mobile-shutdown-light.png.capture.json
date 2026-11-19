@@ -1,0 +1,20 @@
+{
+  "source": "headless Chromium via Playwright, 2026-11-19",
+  "file": "mobile-shutdown-light.png",
+  "meta": {
+    "name": "mobile-shutdown-light",
+    "url": "https://app.mocha.app/",
+    "title": "This app is no longer available",
+    "status": 410,
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "visualViewport": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    },
+    "theme": "",
+    "capturedAt": "2026-11-18T16:36:22.503Z"
+  }
+}

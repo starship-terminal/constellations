@@ -1,0 +1,101 @@
+[
+ {
+  "page": "home",
+  "status": 200,
+  "title": "AI-powered visual workspace for team collaboration | Mural",
+  "href": "https://www.mural.co/"
+ },
+ {
+  "page": "pricing",
+  "status": 200,
+  "title": "Mural pricing | From free to enterprise-grade plans",
+  "href": "https://www.mural.co/pricing"
+ },
+ {
+  "page": "product",
+  "status": 200,
+  "title": "The Visual Work Platform Designed to Improve Teamwork | Mural",
+  "href": "https://www.mural.co/product"
+ },
+ {
+  "page": "templates",
+  "status": 200,
+  "title": "Mural Templates: Ready-to-Use Templates for Teams | Mural",
+  "href": "https://www.mural.co/templates"
+ },
+ {
+  "page": "enterprise",
+  "status": 200,
+  "title": "Visual collaboration at the enterprise level | Mural",
+  "href": "https://www.mural.co/enterprise"
+ },
+ {
+  "page": "integrations",
+  "status": 200,
+  "title": "Integrations | Mural",
+  "href": "https://www.mural.co/integrations"
+ },
+ {
+  "page": "signin",
+  "status": 200,
+  "title": "Login to Your Mural Account and Collaborate • Mural",
+  "href": "https://app.mural.co/signin"
+ },
+ {
+  "page": "signup",
+  "text": "Log in Sign up for free Work email By continuing, I agree to Mural's Collaborator Notice & Privacy Statement . Sign up Or Sign up with Google",
+  "href": "https://app.mural.co/signup"
+ },
+ {
+  "page": "signup",
+  "status": 200,
+  "title": "Create a Free Mural Account for Team Collaboration • Mural",
+  "href": "https://app.mural.co/signup"
+ },
+ {
+  "page": "mobile-home",
+  "status": 200,
+  "title": "AI-powered visual workspace for team collaboration | Mural",
+  "href": "https://www.mural.co/"
+ },
+ {
+  "page": "mobile-pricing",
+  "status": 200,
+  "title": "Mural pricing | From free to enterprise-grade plans",
+  "href": "https://www.mural.co/pricing"
+ },
+ {
+  "page": "mobile-product",
+  "status": 200,
+  "title": "The Visual Work Platform Designed to Improve Teamwork | Mural",
+  "href": "https://www.mural.co/product"
+ },
+ {
+  "page": "mobile-templates",
+  "status": 200,
+  "title": "Mural Templates: Ready-to-Use Templates for Teams | Mural",
+  "href": "https://www.mural.co/templates"
+ },
+ {
+  "page": "mobile-enterprise",
+  "status": 200,
+  "title": "Visual collaboration at the enterprise level | Mural",
+  "href": "https://www.mural.co/enterprise"
+ },
+ {
+  "page": "mobile-integrations",
+  "status": 200,
+  "title": "Integrations | Mural",
+  "href": "https://www.mural.co/integrations"
+ },
+ {
+  "page": "mobile-signin",
+  "url": "https://app.mural.co/signin",
+  "error": "Screenshot dimension mismatch: PNG 780x1688, expected 390x844"
+ },
+ {
+  "page": "mobile-signup",
+  "url": "https://app.mural.co/signup",
+  "error": "Screenshot dimension mismatch: PNG 780x1688, expected 390x844"
+ }
+]

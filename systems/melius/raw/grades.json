@@ -1,0 +1,23 @@
+{
+  "F1": {"grade": "partly", "evidence": "Named hues are single steps (--color-orange, --color-yellow, --color-gray-dark-1 through gray-light-3), not 10-step ramps. Neutrals exist as named steps, not a sorted 50-900 scale."},
+  "F2": {"grade": "partly", "evidence": "Page, surface and nav are tokens. Overlay and scrim are not tokenised. The login card sits on the product canvas with no measured scrim token."},
+  "F3": {"grade": "partly", "evidence": "Primary, muted and on-accent are tokens. Disabled and link are not separate roles. Nav links use offwhite on the dark bar."},
+  "F4": {"grade": "partly", "evidence": "Border is gray-light-3. Focus on nav links measured a 2px orange outline. No strong border role."},
+  "F5": {"grade": "partly", "evidence": "Accent default is orange. Nav hover fills gray-dark-2. Pressed is a forced pseudo-class and did not change the orange fill."},
+  "F6": {"grade": "partly", "evidence": "Red-500 and green-600 are declared. Warning and info are not a status set. No fill, text and border triple per status."},
+  "F7": {"grade": "meets", "evidence": "The marketing site ships one light theme. Pricing is a dark island, not a second theme, so there is no second set to pair."},
+  "F8": {"grade": "partly", "evidence": "Reckless, Ease, Geist Mono and Inter are named with fallbacks. The size scale is the Tailwind steps plus a measured 56px hero. Line heights and named caption/label roles are thin."},
+  "F9": {"grade": "meets", "evidence": "Spacing is a 4px unit (--spacing 0.25rem) with derived steps through 56px."},
+  "F10": {"grade": "meets", "evidence": "Radius steps xs through 3xl are declared. Buttons measure 6px, which is radius-md."},
+  "F11": {"grade": "partly", "evidence": "Nav controls are 40px and the hero CTA is 48px. Icon sizes and a focus-ring offset are not a sizing scale. Focus width on nav links is 2px."},
+  "F12": {"grade": "missing", "evidence": "No elevation scale. The plan card shadow was measured once and not tokenised as a level."},
+  "F13": {"grade": "meets", "evidence": "raw/motion.json covers home, pricing and login. Reduced motion is partial: 165 of 574 moving elements stop, and pricing-card-glow-breathe keeps looping."},
+  "F14": {"grade": "partly", "evidence": "Desktop 1440 and phone 390 are captured. Container widths are tokens. Grid columns and z-index layers are not a written scale."},
+  "C1": {"grade": "partly", "evidence": "Button, link, text field, menu, card and dialog are captured. Text area, select, checkbox, radio, switch, tabs, tooltip, toast, table, avatar and badge are missing or only visible in a screenshot."},
+  "C2": {"grade": "partly", "evidence": "Hover, focus-visible and pressed are captured on nav and hero buttons. Disabled, loading, selected and error were not shown."},
+  "C3": {"grade": "meets", "evidence": "Nav links, Sign In, Start for Free and the hero CTA have a focus-visible crop. The nav link outline is 2px orange."},
+  "C4": {"grade": "partly", "evidence": "components.md names a core colour token when the computed hex matches. Sizes stay in px."},
+  "P1": {"grade": "partly", "evidence": "patterns.md covers the marketing frame, product menu, pricing, auth cards, docs and phone. Empty, error, destructive confirmation and search are not written as patterns."},
+  "A1": {"grade": "partly", "evidence": "The header wordmark is in icons/ with INDEX.tsv. The icon set is not indexed. Fonts are named with fallbacks and not shipped."},
+  "K1": {"grade": "meets", "evidence": "The README says what was captured, how the values were read, and what to distrust."}
+}

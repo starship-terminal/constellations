@@ -1,0 +1,10 @@
+{
+  "cls": "flex flex-col w-[100%] gap-[10px] pt-[40px] pr-[40px] pb-[40px] pl-[40px] border-[#000000] border-opacity-[5%] relative rounded-[12px] overflow-hidden",
+  "border": "0px solid rgba(0, 0, 0, 0.05)",
+  "borderColor": "rgba(0, 0, 0, 0.05)",
+  "radius": "12px",
+  "bg": "rgba(0, 0, 0, 0)",
+  "shadow": "none",
+  "parentBorder": "0px solid rgb(229, 231, 235)",
+  "parentCls": "flex flex-row gap-[12px] w-[100%] max-w-[768px] md:flex-col"
+}

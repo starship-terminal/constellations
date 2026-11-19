@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-18T17:28:22.363Z",
+  "source": "https://pitch.com/pricing",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 2
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "scrollH": 5959
+  },
+  "note": "headless Playwright; T3 preview could not produce screenshot frames"
+}

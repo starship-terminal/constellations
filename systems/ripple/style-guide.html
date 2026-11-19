@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ripple style guide</title>
+<style>
+:root {
+  --color-bds-color-black: #000000;
+  --color-bds-color-white: #ffffff;
+  --color-bds-color-blue-100: #f2faff;
+  --color-bds-color-blue-200: #b5dfff;
+  --color-bds-color-blue-300: #78beff;
+  --color-bds-color-blue-400: #3b96ff;
+  --color-bds-color-blue-500: #006aff;
+  --color-bds-color-blue-600: #004bcc;
+  --color-bds-color-blue-700: #003099;
+  --color-bds-color-blue-800: #001b66;
+  --color-bds-color-blue-900: #000b33;
+  --color-bds-color-gray-25: #f8f8f8;
+  --color-bds-color-gray-50: #f2f2f3;
+  --color-bds-color-gray-100: #e4e5e7;
+  --color-bds-color-gray-200: #c9cbcf;
+  --color-bds-color-gray-300: #acb1b9;
+  --color-bds-color-gray-400: #8f96a3;
+  --color-bds-color-gray-500: #707a8f;
+  --color-bds-color-gray-600: #586074;
+  --color-bds-color-gray-700: #404759;
+  --color-bds-color-gray-800: #2a2f3c;
+  --color-bds-color-gray-900: #14171f;
+  --color-bds-color-green-100: #bdf5ef;
+  --color-bds-color-green-200: #7ae0d6;
+  --color-bds-color-green-300: #009994;
+  --color-bds-color-green-400: #05696d;
+  --color-bds-color-green-500: #09262b;
+  --color-bds-color-orange-100: #ffdcd0;
+  --color-bds-color-orange-200: #feb9a7;
+  --color-bds-color-orange-300: #ff7f66;
+  --color-bds-color-orange-400: #cb4526;
+  --color-bds-color-orange-500: #471200;
+  --color-bds-color-pink-100: #e9deff;
+  --color-bds-color-pink-200: #d191ff;
+  --color-bds-color-pink-300: #c247ff;
+  --color-bds-color-pink-400: #7b099e;
+  --color-bds-color-pink-500: #39003d;
+  --color-bds-color-purple-100: #d1d5ff;
+  --color-bds-color-purple-200: #a19dff;
+  --color-bds-color-purple-300: #6c47ff;
+  --color-bds-color-purple-400: #4417bf;
+  --color-bds-color-purple-500: #2b0160;
+  --color-bds-neutral-25: #f8f8f8;
+  --color-bds-neutral-50: #f2f2f3;
+  --color-bds-neutral-100: #e4e5e7;
+  --color-bds-neutral-200: #c9cbcf;
+  --color-bds-neutral-300: #acb1b9;
+  --color-bds-neutral-400: #8f96a3;
+  --color-bds-neutral-500: #707a8f;
+  --color-bds-neutral-600: #586074;
+  --color-bds-neutral-700: #404759;
+  --color-bds-neutral-800: #2a2f3c;
+  --color-bds-neutral-900: #14171f;
+  --color-bds-neutral-black: #000000;
+  --color-bds-neutral-white: #ffffff;
+  --color-bds-primary-100: #f2faff;
+  --color-bds-primary-200: #b5dfff;
+  --color-bds-primary-300: #78beff;
+  --color-bds-primary-400: #3b96ff;
+  --color-bds-primary-500: #006aff;
+  --color-bds-primary-600: #004bcc;
+  --color-bds-primary-700: #003099;
+  --color-bds-primary-800: #001b66;
+  --color-bds-primary-900: #000b33;
+  --color-bds-secondary-green-100: #bdf5ef;
+  --color-bds-secondary-green-200: #7ae0d6;
+  --color-bds-secondary-green-300: #009994;
+  --color-bds-secondary-green-400: #05696d;
+  --color-bds-secondary-green-500: #09262b;
+  --color-bds-secondary-orange-100: #ffdcd0;
+  --color-bds-secondary-orange-200: #feb9a7;
+  --color-bds-secondary-orange-300: #ff7f66;
+  --color-bds-secondary-orange-400: #cb4526;
+  --color-bds-secondary-orange-500: #471200;
+  --color-bds-secondary-pink-100: #e9deff;
+  --color-bds-secondary-pink-200: #d191ff;
+  --color-bds-secondary-pink-300: #c247ff;
+  --color-bds-secondary-pink-400: #7b099e;
+  --color-bds-secondary-pink-500: #39003d;
+  --color-bds-secondary-purple-100: #d1d5ff;
+  --color-bds-secondary-purple-200: #a19dff;
+  --color-bds-secondary-purple-300: #6c47ff;
+  --color-bds-secondary-purple-400: #4417bf;
+  --color-bds-secondary-purple-500: #2b0160;
+  --color-color-black: #000000;
+  --color-color-white: #ffffff;
+  --color-color-blue-2-5: #f5fbff;
+  --color-color-blue-5: #e5f8ff;
+  --color-color-blue-10: #ccefff;
+  --color-color-blue-15: #b3e5ff;
+  --color-color-blue-20: #99d8ff;
+  --color-color-blue-30: #66beff;
+  --color-color-blue-40: #33a3ff;
+  --color-color-blue-50: #008cff;
+  --color-color-blue-55: #0067e5;
+  --color-color-blue-60: #005bcc;
+  --color-color-blue-70: #003d99;
+  --color-color-blue-80: #002666;
+  --color-color-blue-90: #001133;
+  --color-color-gray-2-5: #fafafa;
+  --color-color-gray-5: #f1f2f3;
+  --color-color-gray-10: #e5e7e8;
+  --color-color-gray-15: #d6d9db;
+  --color-color-gray-20: #c9cccf;
+  --color-color-gray-25: #fafafa;
+  --color-color-gray-30: #aeb3b7;
+  --color-color-gray-40: #939a9f;
+  --color-color-gray-50: #777f86;
+  --color-color-gray-60: #5e676e;
+  --color-color-gray-70: #454d54;
+  --color-color-gray-75: #394046;
+  --color-color-gray-80: #2e3439;
+  --color-color-gray-85: #21272c;
+  --color-color-gray-90: #141a1f;
+  --color-color-green-2-5: #f4ffe6;
+  --color-color-green-5: #e9ffcc;
+  --color-color-green-10: #d3fa9e;
+  --color-color-green-15: #c7f986;
+  --color-color-green-20: #a6ed5e;
+  --color-color-green-30: #7cdc3a;
+  --color-color-green-40: #52c322;
+  --color-color-green-50: #29ae13;
+  --color-color-green-60: #0f8923;
+  --color-color-green-70: #006622;
+  --color-color-green-80: #004d26;
+  --color-color-green-90: #003311;
+  --color-color-orange-2-5: #fff2e5;
+  --color-color-orange-5: #ffe5cc;
+  --color-color-orange-10: #facd9e;
+  --color-color-orange-15: #ffbe80;
+  --color-color-orange-20: #ffaf66;
+  --color-color-orange-30: #ff9d4c;
+  --color-color-orange-40: #f5853d;
+  --color-color-orange-50: #e55d19;
+  --color-color-orange-60: #c23a0a;
+  --color-color-orange-70: #992700;
+  --color-color-orange-80: #651a01;
+  --color-color-orange-90: #330d00;
+  --color-color-pink-2-5: #fff5f7;
+  --color-color-pink-5: #ffe5eb;
+  --color-color-pink-10: #ffccd8;
+  --color-color-pink-15: #ffb2c5;
+  --color-color-pink-20: #ff99b1;
+  --color-color-pink-30: #ff668b;
+  --color-color-pink-40: #f04275;
+  --color-color-pink-50: #df2063;
+  --color-color-pink-60: #bd0f5a;
+  --color-color-pink-70: #940443;
+  --color-color-pink-80: #66002c;
+  --color-color-pink-90: #330016;
+  --color-color-purple: #b7a8ff;
+  --color-color-new-blue-5: #e7f3ff;
+  --color-color-new-blue-20: #abe2ff;
+  --color-color-new-blue-30: #6dc3ff;
+  --color-color-new-blue-50: #006aff;
+  --color-color-new-blue-60: #0146c7;
+  --color-color-new-blue-90: #001c5c;
+  --color-color-rose-2-5: #f7eef0;
+  --color-color-rose-5: #eedfe4;
+  --color-color-rose-10: #d9bfc7;
+  --color-color-rose-15: #ccb3ba;
+  --color-color-rose-20: #bea7ae;
+  --color-color-rose-30: #b398a0;
+  --color-color-rose-40: #a88a98;
+  --color-color-rose-50: #8c737a;
+  --color-color-rose-60: #705c62;
+  --color-color-rose-70: #544549;
+  --color-color-rose-80: #382e31;
+  --color-color-rose-90: #1c1718;
+  --color-color-sage-2-5: #f3f7ee;
+  --color-color-sage-5: #e7eedf;
+  --color-color-sage-10: #cdd9bf;
+  --color-color-sage-15: #bfccb3;
+  --color-color-sage-20: #b2bea7;
+  --color-color-sage-30: #a6b398;
+  --color-color-sage-40: #99a88a;
+  --color-color-sage-50: #808c73;
+  --color-color-sage-60: #66705c;
+  --color-color-sage-70: #4d5445;
+  --color-color-sage-80: #33382e;
+  --color-color-sage-90: #1a1c17;
+  --color-color-sand-2-5: #f7f4ee;
+  --color-color-sand-5: #ede8df;
+  --color-color-sand-10: #d9d2bf;
+  --color-color-sand-15: #ccc5b3;
+  --color-color-sand-20: #bebaa7;
+  --color-color-sand-30: #b3ac98;
+  --color-color-sand-40: #a8a18a;
+  --color-color-sand-50: #8c8873;
+  --color-color-sand-60: #706c5c;
+  --color-color-sand-70: #545245;
+  --color-color-sand-80: #38362e;
+  --color-color-sand-90: #1c1c17;
+  --color-color-steel-2-5: #eef3f7;
+  --color-color-steel-5: #dfe7ed;
+  --color-color-steel-10: #bfcdd9;
+  --color-color-steel-15: #b3c1cc;
+  --color-color-steel-20: #a7b4be;
+  --color-color-steel-30: #98a7b3;
+  --color-color-steel-40: #8a9ba8;
+  --color-color-steel-50: #73818c;
+  --color-color-steel-60: #5c6770;
+  --color-color-steel-70: #454d54;
+  --color-color-steel-80: #2e3438;
+  --color-color-steel-90: #171a1c;
+  --color-color-swell-green-dark: #13b32d;
+  --color-color-swell-green-light: #cdff63;
+  --color-color-swell-orange: #ff7f66;
+  --color-color-swell-purple: #e8a8ff;
+  --color-color-swell-red: #ff0f00;
+  --font-family-display: rippleFont, "rippleFont Fallback", Arial, sans-serif;
+  --font-family-ui: rippleBdsFont, "rippleBdsFont Fallback", Ripple, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fontWeight-book: 350;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-bold: 700;
+  --typography-display: var(--fontWeight-medium) 68px/80px var(--font-family-display);
+  --typography-display-tablet: var(--fontWeight-medium) 49px/64px var(--font-family-display);
+  --typography-display-phone: var(--fontWeight-medium) 42px/56px var(--font-family-display);
+  --typography-hero: var(--fontWeight-medium) 93px/104px var(--font-family-display);
+  --typography-headline: var(--fontWeight-medium) 36px/48px var(--font-family-display);
+  --typography-title: var(--fontWeight-medium) 22px/32px var(--font-family-display);
+  --typography-lede: var(--fontWeight-book) 19px/28px var(--font-family-display);
+  --typography-body: var(--fontWeight-regular) 16px/24px var(--font-family-display);
+  --typography-ui: var(--fontWeight-regular) 16px/24px var(--font-family-ui);
+  --typography-button: var(--fontWeight-medium) 16px/24px var(--font-family-display);
+  --typography-meta: var(--fontWeight-regular) 14px/20px var(--font-family-ui);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-nav: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 40px;
+  --radius-full: 9999px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 18px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-header: 80px;
+  --spacing-control: 40px;
+  --spacing-nav: 36px;
+  --size-icon-button: 40px;
+  --size-control: 40px;
+  --size-nav-item: 36px;
+  --size-drawer-item: 56px;
+  --size-logo: 24px;
+  --layout-container: 1480px;
+  --layout-content: 1152px;
+  --layout-page-desktop: 1440px;
+  --layout-page-phone: 390px;
+  --borderWidth-contact: 2px;
+  --borderWidth-focus: 3px;
+  --shadow-button-inset: inset 0px 3px 12px 0px rgba(0, 91, 204, 0.9), inset 0px -3px 4px 0px rgba(0, 91, 204, 0.8);
+  --shadow-menu: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+  --shadow-search: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-focus: 0px 0px 0px 1px #ffffff, 0px 0px 0px 3px #006aff;
+  --motion-duration-fast: 150ms;
+  --motion-duration-short: 200ms;
+  --motion-duration-medium: 300ms;
+  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-enter: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --surface-page: #ffffff;
+  --surface-hero: #ffffff;
+  --surface-raised: #fafafa;
+  --surface-white: #ffffff;
+  --surface-muted: #f2f2f3;
+  --surface-field: #e4e5e7;
+  --surface-accordion: #e5e7e8;
+  --surface-footer: #141a1f;
+  --surface-menu-card: #f8f8f8;
+  --surface-featured: #000b33;
+  --surface-scrim: rgba(16, 19, 21, 0.47);
+  --text-primary: #141a1f;
+  --text-on-dark: #fafafa;
+  --text-on-accent: #f1f2f3;
+  --text-muted: #707a8f;
+  --text-field: #586074;
+  --text-link: #005bcc;
+  --text-link-bright: #008cff;
+  --text-stat: #0067e5;
+  --text-current: #006aff;
+  --text-ink: #000000;
+  --accent: #006aff;
+  --accent-hover: #003d99;
+  --accent-deep: #005bcc;
+  --border-subtle: #e4e5e7;
+  --border-strong: #141a1f;
+  --border-focus: #006aff;
+  --status-success: #009994;
+  --status-warning: #e55d19;
+  --status-danger: #ff0f00;
+  --status-info: #006aff;
+  --gradient-hero: linear-gradient(92deg, #0052b6 0%, #33a3ff 66.48%, #0067e5 97.37%);
+  --component-button-primary-background: #005bcc;
+  --component-button-primary-text: #f1f2f3;
+  --component-button-primary-radius: var(--radius-pill);
+  --component-button-primary-height: var(--size-control);
+  --component-button-primary-padding: 8px;
+  --component-button-secondary-text: var(--text-ink);
+  --component-button-secondary-radius: var(--radius-full);
+  --component-button-secondary-height: var(--size-control);
+  --component-icon-button-background: #f2f2f3;
+  --component-icon-button-radius: var(--radius-full);
+  --component-icon-button-size: var(--size-icon-button);
+  --component-text-field-background: #e4e5e7;
+  --component-text-field-text: #586074;
+  --component-text-field-radius: var(--radius-md);
+  --component-text-field-height: var(--size-control);
+  --component-nav-item-text: var(--text-ink);
+  --component-nav-item-radius: var(--radius-nav);
+  --component-nav-item-height: var(--size-nav-item);
+  color-scheme: light;
+  --sg: "rippleFont", "Avenir Next", "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 400 16px/24px var(--sg); }
+header { position: sticky; top: 0; background: var(--surface-white); border-bottom: 1px solid var(--border-subtle); padding: 16px 32px; display: flex; gap: 24px; align-items: center; }
+header strong { font-weight: 500; }
+header span { color: var(--text-muted); font-size: 14px; }
+main { max-width: 1152px; margin: 0 auto; padding: 32px 32px 80px; }
+h2 { font: 500 36px/48px var(--sg); letter-spacing: -0.5px; margin: 48px 0 12px; }
+p { max-width: 70ch; }
+.hero { background: var(--surface-hero); color: var(--text-on-dark); border-radius: 12px; padding: 48px 32px; }
+.hero h1 { margin: 0 0 12px; font: var(--typography-display); letter-spacing: -1px; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+.btn { display: inline-flex; align-items: center; height: var(--component-button-primary-height); padding: 8px 16px; border-radius: var(--component-button-primary-radius); background: var(--accent-deep); color: var(--text-on-accent); font: var(--typography-button); border: 0; box-shadow: var(--shadow-button-inset); }
+.btn-quiet { display: inline-flex; align-items: center; height: 40px; padding: 6px 18px; border-radius: 9999px; border: 2px solid var(--text-ink); color: var(--text-ink); background: transparent; font: var(--typography-ui); text-decoration: none; }
+.icon { width: 40px; height: 40px; border-radius: 9999px; background: var(--component-icon-button-background); border: 0; }
+.field { height: 40px; width: 280px; border: 0; border-radius: 4px; background: var(--component-text-field-background); color: var(--component-text-field-text); padding: 8px 16px; font: var(--typography-body); box-shadow: var(--shadow-focus); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { border-radius: 8px; overflow: hidden; border: 1px solid var(--border-subtle); }
+.sw i { display: block; height: 56px; }
+.sw b, .sw small { display: block; padding: 6px 8px 0; font-size: 12px; }
+.sw small { color: var(--text-muted); padding-bottom: 8px; }
+.card { background: var(--surface-raised); border-radius: 8px; padding: 16px; max-width: 360px; }
+.grad { font: var(--typography-hero); letter-spacing: -1px; background: var(--gradient-hero); -webkit-background-clip: text; background-clip: text; color: transparent; margin: 0; }
+</style>
+</head>
+<body>
+<header>
+  <strong>Ripple</strong>
+  <span>Public marketing, light only. Values from tokens.json.</span>
+</header>
+<main>
+  <section class="hero">
+    <h1>The new standard for modern finance</h1>
+    <p>Ripple gives businesses everything they need to operate across traditional and digital finance.</p>
+    <div class="row">
+      <button class="btn">Explore Our Solutions</button>
+    </div>
+  </section>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Type</h2>
+  <p class="grad">Enabling the Internet of Value</p>
+  <p style="font: var(--typography-lede)">Lede at 19px / 28px, weight 350.</p>
+  <p>Body at 16px / 24px.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="btn">Talk to Our Team</button>
+    <a class="btn-quiet" href="#contact">Contact Sales</a>
+    <button class="icon" aria-label="Open search"></button>
+    <input class="field" placeholder="Search ripple.com" value="payments">
+  </div>
+  <div class="card">
+    <strong>Payments</strong>
+    <p style="color: var(--text-muted); font-size: 14px;">One platform for all your payments infrastructure needs</p>
+  </div>
+</main>
+<script>
+const roles = [
+  ["page", "var(--surface-page)", "#ffffff"],
+  ["hero", "var(--surface-hero)", "#ffffff"],
+  ["raised", "var(--surface-raised)", "#fafafa"],
+  ["text", "var(--text-primary)", "#141a1f"],
+  ["muted", "var(--text-muted)", "#707a8f"],
+  ["accent", "var(--accent)", "#006aff"],
+  ["on accent", "var(--text-on-accent)", "#f1f2f3"],
+  ["link", "var(--text-link)", "#005bcc"]
+];
+const box = document.getElementById("swatches");
+for (const [name, bg, hex] of roles) {
+  const d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = "<i></i><b></b><small></small>";
+  d.querySelector("i").style.background = bg;
+  d.querySelector("b").textContent = name;
+  d.querySelector("small").textContent = hex;
+  box.appendChild(d);
+}
+</script>
+</body>
+</html>

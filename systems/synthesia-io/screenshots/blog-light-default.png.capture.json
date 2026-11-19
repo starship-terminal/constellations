@@ -1,0 +1,25 @@
+{
+  "screenshot": "blog-light-default.png",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device"
+  },
+  "note": "headless Chromium; preview browser returned no screenshot frames"
+}

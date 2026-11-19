@@ -1,0 +1,4100 @@
+{
+ "_meta": {
+  "readAt": "2026-11-19",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 114,
+  "removed": 101,
+  "reduced": 0,
+  "kept": 13,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "partial",
+  "loops": []
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://copilot.com/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 948,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 72,
+    "removed": 65,
+    "reduced": 0,
+    "kept": 7,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 9,
+     "nodes": [
+      "div.module-cta"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 9,
+     "nodes": [
+      "a[role=button].module-card"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 9,
+     "nodes": [
+      "div.module-gradient-overlay"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "div.faq-item.expanded",
+      "div.faq-item"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "div.faq-answer"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "button.faq-question-button"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "span.faq-toggle-icon"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 100,
+       "to": 0
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "span.faq-toggle-tooltip"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "button[role=tab].copilotcom-tab.active",
+      "button[role=tab].copilotcom-tab"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-webkit-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-moz-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-o-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-webkit-box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-moz-box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-webkit-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-moz-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-o-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-webkit-box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-moz-box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-webkit-transform",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-moz-transform",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-o-transform",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-webkit-box-shadow",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-moz-box-shadow",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "a.module-download-cta"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "copilotcomHeroReveal",
+        "durationMs": 200,
+        "delayMs": 160,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "copilotcomHeroReveal",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "p.newexp-hero-subtitle-bebop.copilotcom-hero-reveal-subtitle"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "copilotcomHeroReveal",
+        "durationMs": 200,
+        "delayMs": 240,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "copilotcomHeroReveal",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.newexp-hero-cta-buttons.copilotcom-hero-reveal-cta"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "copilotcomHeroReveal",
+        "durationMs": 200,
+        "delayMs": 80,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "copilotcomHeroReveal",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "h1.newexp-hero-title-bebop.copilotcom-hero-reveal-title"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.faq-expand-all"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "-webkit-box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "-moz-box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "-webkit-box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "-moz-box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "-webkit-box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "-moz-box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "a[role=button].newexp-btn.newexp-btn-primary-bebop"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "fluentOpacity",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "fluentOpacity",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "fluentPosition",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "fluentPosition",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ccm-title-shimmer",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "ccm-title-shimmer",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "ccm-title-shimmer-hover",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "ccm-title-shimmer-hover",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "unauth-prompt-loading-spin",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "unauth-prompt-loading-spin",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "chipSlideIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "chipSlideIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "pillsFadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "pillsFadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "copilotcomHeroReveal",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "copilotcomHeroReveal",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".desktop-app-launch-page-logo img",
+     "declarations": {
+      "width": "96px",
+      "height": "96px"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".fluent-motion",
+     "declarations": {
+      "animation-duration": "auto !important",
+      "animation-timing-function": "ease !important",
+      "animation-delay": "0s !important",
+      "animation-iteration-count": "1 !important",
+      "animation-direction": "normal !important",
+      "animation-fill-mode": "none !important",
+      "animation-play-state": "running !important",
+      "animation-name": "none !important",
+      "animation-timeline": "auto !important",
+      "animation-range-start": "normal !important",
+      "animation-range-end": "normal !important",
+      "opacity": "1 !important",
+      "transform": "translateY(0px) !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".faq-answer, .faq-item, .faq-question-button, .faq-toggle-icon, .faq-toggle-tooltip",
+     "declarations": {
+      "transition-behavior": "normal !important",
+      "transition-duration": "0s !important",
+      "transition-timing-function": "ease !important",
+      "transition-delay": "0s !important",
+      "transition-property": "none !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".cta-icon, .module-card, .module-cta, .module-gradient-overlay, .module-image",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".module-card:hover, .module-cta:hover",
+     "declarations": {
+      "transform": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".entity-chip",
+     "declarations": {
+      "animation-duration": "auto !important",
+      "animation-timing-function": "ease !important",
+      "animation-delay": "0s !important",
+      "animation-iteration-count": "1 !important",
+      "animation-direction": "normal !important",
+      "animation-fill-mode": "none !important",
+      "animation-play-state": "running !important",
+      "animation-name": "none !important",
+      "animation-timeline": "auto !important",
+      "animation-range-start": "normal !important",
+      "animation-range-end": "normal !important",
+      "opacity": "1 !important",
+      "transform": "none !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".unauth-prompt-pill",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".unauth-prompt-pills",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".unauth-prompt-view-more",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".copilotcom-hero-reveal-cta, .copilotcom-hero-reveal-subtitle, .copilotcom-hero-reveal-title",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".animated-link--text, .hero, .personalization",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".animated-link--text",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".hero, .personalization",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".hero--rounded, .m365-hero-treatmentA--rounded, .personalization--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".hero--rounded, .personalization--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".m365-hero-treatmentA--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".m365-hero--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".shy-header",
+     "context": [],
+     "transitions": [
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".desktop-app-launch-page-download-button, .desktop-app-launch-page-webapp-button",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "-webkit-box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "-moz-box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".unauth-app--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".fluent-motion",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fluentOpacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      },
+      {
+       "name": "fluentPosition",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 0, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".fluent-appear",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fluentOpacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".fluent-appear-slow",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fluentOpacity",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".img-hero-cta-button.fluent-motion",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "delayMs": 400
+      }
+     ]
+    },
+    {
+     "selector": ".newexp-hero-title-bebop.fluent-motion",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fluentOpacity",
+       "durationMs": 200,
+       "delayMs": 200,
+       "easing": "cubic-bezier(0, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      },
+      {
+       "name": "fluentPosition",
+       "durationMs": 400,
+       "delayMs": 200,
+       "easing": "cubic-bezier(0, 0, 0, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      },
+      {
+       "name": "ccm-title-shimmer",
+       "durationMs": 6000,
+       "delayMs": 800,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".newexp-hero-title-bebop.shimmer-hover",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ccm-title-shimmer-hover",
+       "durationMs": 3000,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".newexp-btn",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "-webkit-box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "-moz-box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".newexp-btn-link",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-download-cta",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-webkit-transform",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-moz-transform",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-o-transform",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-webkit-box-shadow",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-moz-box-shadow",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-expand-all",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-item",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-question-button",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-toggle-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-toggle-tooltip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-answer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-card",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-card:focus-visible, .module-card:hover",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-cta",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-gradient-overlay",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-card:focus-visible, .module-cta:focus-visible",
+     "context": [],
+     "transitions": [
+      {
+       "property": "outline",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-card.loading .module-image",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "pulse",
+       "durationMs": 1500,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".unauth-prompt-input-border",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".unauth-prompt-overlay",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".unauth-prompt-submit",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "cursor",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".unauth-prompt-submit img",
+     "context": [],
+     "transitions": [
+      {
+       "property": "filter",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-webkit-filter",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".unauth-prompt-submit.loading::before",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "unauth-prompt-loading-spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".unauth-prompt-suggestions",
+     "context": [],
+     "transitions": [
+      {
+       "property": "margin-top",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".unauth-prompt-suggestion",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".unauth-prompt-suggestion::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".entity-chip",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "chipSlideIn",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 0, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".unauth-prompt-pills",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "pillsFadeIn",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".unauth-prompt-pill",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".unauth-prompt-view-more",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".copilotcom-hero-reveal-title",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "copilotcomHeroReveal",
+       "durationMs": 200,
+       "delayMs": 80,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".copilotcom-hero-reveal-subtitle",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "copilotcomHeroReveal",
+       "durationMs": 200,
+       "delayMs": 160,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".copilotcom-hero-reveal-cta",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "copilotcomHeroReveal",
+       "durationMs": 200,
+       "delayMs": 240,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".copilotcom-modules-tabs .copilotcom-tab",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://copilot.com/download",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 796,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 42,
+    "removed": 36,
+    "reduced": 0,
+    "kept": 6,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "article.module-card.module-card--noninteractive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "div.module-gradient-overlay"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.faq-item.expanded",
+      "div.faq-item"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.faq-answer"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "button.faq-question-button"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.faq-toggle-icon"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 100,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.faq-toggle-tooltip"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "button[role=tab].copilotcom-tab.active",
+      "button[role=tab].copilotcom-tab"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-webkit-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-moz-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-o-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-webkit-box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-moz-box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-webkit-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-moz-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-o-transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-webkit-box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "-moz-box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-webkit-transform",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-moz-transform",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-o-transform",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-webkit-box-shadow",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      },
+      {
+       "kind": "transition",
+       "key": "-moz-box-shadow",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "a.module-download-cta"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "downloadHeroReveal",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "downloadHeroReveal",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "img.download-hero-logo.download-hero-reveal-logo"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "downloadHeroReveal",
+        "durationMs": 200,
+        "delayMs": 160,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "downloadHeroReveal",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "p.newexp-hero-subtitle-bebop.download-hero-reveal-subtitle"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "downloadHeroReveal",
+        "durationMs": 200,
+        "delayMs": 240,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "downloadHeroReveal",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.newexp-hero-cta-buttons.download-hero-reveal-cta"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "downloadHeroReveal",
+        "durationMs": 200,
+        "delayMs": 80,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "downloadHeroReveal",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "h1.newexp-hero-title-bebop.download-hero-reveal-title"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.faq-expand-all"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "-webkit-box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "-moz-box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "-webkit-box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "-moz-box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "-webkit-box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "-moz-box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "a[role=button].newexp-btn.newexp-btn-primary-bebop"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "fluentOpacity",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "fluentOpacity",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "fluentPosition",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "fluentPosition",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ccm-title-shimmer",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "ccm-title-shimmer",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "ccm-title-shimmer-hover",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "ccm-title-shimmer-hover",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "downloadHeroReveal",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "downloadHeroReveal",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".desktop-app-launch-page-logo img",
+     "declarations": {
+      "width": "96px",
+      "height": "96px"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".fluent-motion",
+     "declarations": {
+      "animation-duration": "auto !important",
+      "animation-timing-function": "ease !important",
+      "animation-delay": "0s !important",
+      "animation-iteration-count": "1 !important",
+      "animation-direction": "normal !important",
+      "animation-fill-mode": "none !important",
+      "animation-play-state": "running !important",
+      "animation-name": "none !important",
+      "animation-timeline": "auto !important",
+      "animation-range-start": "normal !important",
+      "animation-range-end": "normal !important",
+      "opacity": "1 !important",
+      "transform": "translateY(0px) !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".faq-answer, .faq-item, .faq-question-button, .faq-toggle-icon, .faq-toggle-tooltip",
+     "declarations": {
+      "transition-behavior": "normal !important",
+      "transition-duration": "0s !important",
+      "transition-timing-function": "ease !important",
+      "transition-delay": "0s !important",
+      "transition-property": "none !important"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".cta-icon, .module-card, .module-cta, .module-gradient-overlay, .module-image",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".module-card:hover, .module-cta:hover",
+     "declarations": {
+      "transform": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".download-hero-reveal-cta, .download-hero-reveal-logo, .download-hero-reveal-subtitle, .download-hero-reveal-title",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".animated-link--text, .hero, .personalization",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".animated-link--text",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".hero, .personalization",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".hero--rounded, .m365-hero-treatmentA--rounded, .personalization--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".hero--rounded, .personalization--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".m365-hero-treatmentA--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".m365-hero--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".shy-header",
+     "context": [],
+     "transitions": [
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".desktop-app-launch-page-download-button, .desktop-app-launch-page-webapp-button",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "-webkit-box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "-moz-box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".unauth-app--rounded",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".fluent-motion",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fluentOpacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      },
+      {
+       "name": "fluentPosition",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 0, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".fluent-appear",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fluentOpacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".fluent-appear-slow",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fluentOpacity",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".img-hero-cta-button.fluent-motion",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "delayMs": 400
+      }
+     ]
+    },
+    {
+     "selector": ".newexp-hero-title-bebop.fluent-motion",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fluentOpacity",
+       "durationMs": 200,
+       "delayMs": 200,
+       "easing": "cubic-bezier(0, 0, 1, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      },
+      {
+       "name": "fluentPosition",
+       "durationMs": 400,
+       "delayMs": 200,
+       "easing": "cubic-bezier(0, 0, 0, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      },
+      {
+       "name": "ccm-title-shimmer",
+       "durationMs": 6000,
+       "delayMs": 800,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".newexp-hero-title-bebop.shimmer-hover",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ccm-title-shimmer-hover",
+       "durationMs": 3000,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".newexp-btn",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "-webkit-box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "-moz-box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".newexp-btn-link",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-download-cta",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-webkit-transform",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-moz-transform",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-o-transform",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-webkit-box-shadow",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-moz-box-shadow",
+       "durationMs": 120,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-expand-all",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-item",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-question-button",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-toggle-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-toggle-tooltip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faq-answer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-card",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-card:focus-visible, .module-card:hover",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-cta",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-gradient-overlay",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-card:focus-visible, .module-cta:focus-visible",
+     "context": [],
+     "transitions": [
+      {
+       "property": "outline",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".module-card.loading .module-image",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "pulse",
+       "durationMs": 1500,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".copilotcom-modules-tabs .copilotcom-tab",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".download-hero-reveal-logo",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "downloadHeroReveal",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".download-hero-reveal-title",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "downloadHeroReveal",
+       "durationMs": 200,
+       "delayMs": 80,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".download-hero-reveal-subtitle",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "downloadHeroReveal",
+       "durationMs": 200,
+       "delayMs": 160,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".download-hero-reveal-cta",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "downloadHeroReveal",
+       "durationMs": 200,
+       "delayMs": 240,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  }
+ }
+}

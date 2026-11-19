@@ -1,0 +1,30 @@
+{
+  "captured": "2026-11-19",
+  "harness": "Grok Build",
+  "model": "grok-4.7",
+  "route": "public-web",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "themeColor": "#F8FAFC",
+  "stylesheet": "https://stellate.co/_next/static/css/a9a11ad3660297e7.css",
+  "screenshotFrames": "preview_snapshot returned The browser is not producing screenshot frames",
+  "entered": [
+    "email on https://stellate.co/signup, which posted to the magic-link confirmation"
+  ],
+  "notEntered": [
+    "magic link",
+    "GitHub",
+    "GitLab",
+    "card",
+    "phone",
+    "signed-in dashboard"
+  ]
+}

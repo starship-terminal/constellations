@@ -1,0 +1,4 @@
+file	role	source
+logo.svg	wordmark, currentColor forest green on the header	https://www.raus.life/ header Logo.jsx, 2026-11-19
+arrow.svg	promo arrow inside Book now!	https://www.raus.life/ promo link, 2026-11-19
+close.svg	phone menu close control after the menu button was clicked	https://www.raus.life/ at innerWidth 390, 2026-11-19

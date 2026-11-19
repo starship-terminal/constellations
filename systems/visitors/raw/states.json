@@ -1,0 +1,99 @@
+{
+  "featuresMenu": {
+    "text": "Revenue attribution\nSee which of your channels bring in your most revenue.\nRevenue updates in real-time\nOne-click Stripe sync\nPer-visitor revenue\nLearn more",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "shadow": "none",
+    "pad": "24px 32px",
+    "w": 484
+  },
+  "pricing": {
+    "found": true,
+    "text": "Pricing\nSimplified pricing\n\nNo confusing tiers. You just pay for the events usage you need, everything is included.\n\nMonthly events\n\nEvents are primarily pageviews. They are distributed over all of your projects.\n\nMonthly\nYearly\n-20%\n10K\nfor\n$\n9\n/mo\nStart 14 day free trial\n\nChange or cancel your plan at any given moment.\n\nUnlimited websites\nRealtime analytics\nGDPR compliant\nPerformance insights\nForever retention\nRevenue tracking\nVisitor profiles\nCustom events\nFunnel analysis\nSuperior support\n\nSimulated realtime for 10K\n\n1\npeople/min",
+    "bg": "rgba(0, 0, 0, 0)",
+    "buttons": [
+      {
+        "text": "Monthly",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(24, 25, 37)",
+        "radius": "3.35544e+07px",
+        "h": "32px",
+        "pad": "0px 16px"
+      },
+      {
+        "text": "Yearly\n-20%",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(24, 25, 37)",
+        "radius": "3.35544e+07px",
+        "h": "32px",
+        "pad": "0px 10px 0px 16px"
+      },
+      {
+        "text": "Start 14 day free trial",
+        "bg": "rgb(145, 141, 246)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "3.35544e+07px",
+        "h": "44px",
+        "pad": "0px 20px"
+      },
+      {
+        "text": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(102, 102, 102)",
+        "radius": "3.35544e+07px",
+        "h": "28px",
+        "pad": "0px"
+      },
+      {
+        "text": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(102, 102, 102)",
+        "radius": "0px",
+        "h": "23px",
+        "pad": "0px"
+      }
+    ]
+  },
+  "cta": {
+    "before": {
+      "bg": "rgb(145, 141, 246)",
+      "color": "rgb(255, 255, 255)",
+      "shadow": "none",
+      "transform": "none"
+    },
+    "hover": {
+      "bg": "rgb(145, 141, 246)",
+      "color": "rgb(255, 255, 255)",
+      "shadow": "none",
+      "transform": "none",
+      "filter": "none",
+      "opacity": "0.9"
+    }
+  },
+  "loginFocus": {
+    "outline": "rgb(187, 188, 195) none 0px",
+    "outlineOffset": "0px",
+    "boxShadow": "none",
+    "color": "rgb(187, 188, 195)"
+  },
+  "ctaFocus": {
+    "outline": "rgb(255, 255, 255) none 0px",
+    "outlineOffset": "0px",
+    "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+  },
+  "nav": {
+    "header": {
+      "bg": "rgb(20, 20, 31)",
+      "color": "rgb(102, 102, 102)",
+      "h": "auto",
+      "position": "fixed",
+      "backdrop": "blur(16px)",
+      "border": "0px solid rgb(102, 102, 102)",
+      "pad": "0px"
+    },
+    "logo": {
+      "w": 0,
+      "h": 0
+    }
+  }
+}

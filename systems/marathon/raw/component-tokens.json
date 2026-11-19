@@ -1,0 +1,197 @@
+{
+  "_meta": {
+    "product": "Marathon",
+    "readAt": "2026-11-18",
+    "source": "Computed styles on https://onmarathon.com public pages, desktop 1440x900, html.light. Colour roles alias the CSS variables in raw/css-vars.json. Sizes are the computed px values (root font is 110%, so 1rem is 17.6px)."
+  },
+  "core": {
+    "font": {
+      "family": {
+        "sans": {
+          "type": "fontFamily",
+          "value": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+          "source": "computed font-family on body (html class light, body class font-sans); @font-face Inter variable 100-900 in the Next stylesheet, src redacted to url(…)"
+        }
+      }
+    },
+    "typography": {
+      "display": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "81.4px",
+          "fontWeight": 500,
+          "lineHeight": "81.4px",
+          "letterSpacing": "0px"
+        },
+        "source": "measured h1 on /for-agencies, computed font-size 81.4px / line-height 81.4px / weight 500"
+      },
+      "heading": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "46.2px",
+          "fontWeight": 500,
+          "lineHeight": "46.2px",
+          "letterSpacing": "0px"
+        },
+        "source": "measured h2 'Thanks for everything.' on /, computed 46.2px / 46.2px / 500"
+      },
+      "price": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "66px",
+          "fontWeight": 500,
+          "lineHeight": "99px",
+          "letterSpacing": "0px"
+        },
+        "source": "measured p.font-display '$0' on /pricing, computed 66px / 99px / 500"
+      },
+      "body": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "15px",
+          "fontWeight": 400,
+          "lineHeight": "22.5px",
+          "letterSpacing": "0px"
+        },
+        "source": "measured first main paragraph on /, computed 15px / 22.5px / 400"
+      },
+      "label": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "15.4px",
+          "fontWeight": 500,
+          "lineHeight": "22px",
+          "letterSpacing": "0px"
+        },
+        "source": "measured nav link and Get Started button, computed 15.4px / 22px / 500 (14px at 110% root)"
+      },
+      "caption": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontSize": "13.2px",
+          "fontWeight": 500,
+          "lineHeight": "17.6px",
+          "letterSpacing": "0px"
+        },
+        "source": "measured archive banner and Popular badge, computed 13.2px / 17.6px / 500 (12px at 110% root)"
+      }
+    },
+    "radius": {
+      "none": {"type": "dimension", "value": "0px", "source": "measured banner and headings, border-radius 0px"},
+      "md": {"type": "dimension", "value": "12px", "source": "measured demo iframe, border-radius 12px"},
+      "lg": {"type": "dimension", "value": "17.6px", "source": "computed .rounded-lg on a probe div, 17.6px (calc(var(--radius) * 1) at 110% root; --radius is 1rem)"},
+      "full": {"type": "dimension", "value": "9999px", "source": "measured Get Started, Pay Annually and Popular, border-radius 9999px"}
+    },
+    "space": {
+      "1": {"type": "dimension", "value": "4.4px", "source": "derived: 0.25rem at the measured 17.6px root (110%). Tailwind step, not a named Marathon token"},
+      "2": {"type": "dimension", "value": "8.8px", "source": "measured segment padding-top 8.8px and badge padding-right 8.8px"},
+      "3": {"type": "dimension", "value": "13.2px", "source": "measured banner padding-top 13.2px and primary button padding-right 13.2px"},
+      "4": {"type": "dimension", "value": "17.6px", "source": "measured banner padding-right 17.6px (1rem at 110% root)"},
+      "5": {"type": "dimension", "value": "22px", "source": "measured segment padding-right 22px"},
+      "8": {"type": "dimension", "value": "31.68px", "source": "measured large Get Started padding-right 31.68px"}
+    },
+    "size": {
+      "controlSm": {"type": "dimension", "value": "39.6px", "source": "measured header Get Started and Pay Annually height 39.5938px, and the phone menu button 39.5938px"},
+      "controlMd": {"type": "dimension", "value": "48.4px", "source": "measured pricing and agencies Get Started height 48.3906px"},
+      "badge": {"type": "dimension", "value": "22px", "source": "measured Popular badge height 21.9688px"},
+      "banner": {"type": "dimension", "value": "44px", "source": "measured archive banner height 43.9688px"},
+      "icon": {"type": "dimension", "value": "36px", "source": "measured phone Open menu button width 39.6px; the painted glyph sits inside that circle. Icon file itself is the wordmark SVG"}
+    },
+    "border": {
+      "hairline": {"type": "dimension", "value": "1px", "source": "header bottom border observed as a 1px hairline on the screenshots; cards use box-shadow 0 0 0 1px rather than a border-width"}
+    },
+    "elevation": {
+      "ring": {
+        "type": "shadow",
+        "value": [{"offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "1px", "color": "rgba(0, 0, 0, 0.1)"}],
+        "source": "measured demo iframe box-shadow rgba(0, 0, 0, 0.1) 0px 0px 0px 1px"
+      }
+    },
+    "motion": {
+      "duration": {
+        "fast": {"type": "duration", "value": "150ms", "source": "measured transition-duration 0.15s on nav links, buttons and the archive banner"}
+      },
+      "easing": {
+        "ease": {"type": "cubicBezier", "value": [0.25, 0.1, 0.25, 1], "source": "derived: computed transition-timing-function ease on those controls, expanded to the CSS keyword's control points"}
+      }
+    }
+  },
+  "light": {
+    "page": {"type": "color", "var": "--background", "description": "Page field. Computed on the public pages as white; the visible field reads slightly off-white from the body class, and the token is the declared variable."},
+    "surface": {"type": "color", "var": "--card"},
+    "text": {"type": "color", "var": "--foreground"},
+    "textMuted": {"type": "color", "var": "--muted-foreground"},
+    "textOnAccent": {"type": "color", "var": "--primary-foreground"},
+    "textLink": {"type": "color", "var": "--foreground", "source": "text links use the foreground colour and add an underline on hover; there is no separate link colour"},
+    "border": {"type": "color", "var": "--border"},
+    "borderStrong": {"type": "color", "var": "--input-focus"},
+    "focus": {"type": "color", "value": "#005fcc", "source": "measured focus-visible outline-color rgb(0, 95, 204) on links and buttons. Browser default, not a Marathon custom property"},
+    "accent": {"type": "color", "var": "--primary"},
+    "accentHover": {"type": "color", "var": "--primary-hover", "description": "Declared. The filled Get Started button hovers to #404040, not this lime."},
+    "accentPressed": {"type": "color", "var": "--primary-hover", "source": "pressed uses the same declared hover token; CDP active+hover on the lime banner did not change its fill"},
+    "ink": {"type": "color", "var": "--foreground", "description": "Filled button face. Get Started, selected segment and Pro card button."},
+    "inkHover": {"type": "color", "value": "#404040", "source": "measured primary button hover and pressed background rgb(64, 64, 64)"},
+    "onInk": {"type": "color", "value": "#ffffff", "source": "measured primary button color oklch(1 0 0), resolved #ffffff"},
+    "secondary": {"type": "color", "var": "--secondary"},
+    "secondaryHover": {"type": "color", "var": "--secondary-hover"},
+    "secondaryText": {"type": "color", "var": "--secondary-foreground"},
+    "muted": {"type": "color", "var": "--muted"},
+    "destructive": {"type": "color", "var": "--destructive", "description": "Declared. No destructive control was painted on a public page."},
+    "destructiveText": {"type": "color", "var": "--destructive-foreground"}
+  },
+  "dark": {
+    "page": {"type": "color", "var": "--background", "description": "Declared on .dark. Not painted on a public page."},
+    "surface": {"type": "color", "var": "--card"},
+    "text": {"type": "color", "var": "--foreground"},
+    "textMuted": {"type": "color", "var": "--muted-foreground"},
+    "textOnAccent": {"type": "color", "var": "--primary-foreground"},
+    "border": {"type": "color", "var": "--border"},
+    "borderStrong": {"type": "color", "var": "--input-focus"},
+    "accent": {"type": "color", "var": "--primary"},
+    "accentHover": {"type": "color", "var": "--primary-hover"},
+    "secondary": {"type": "color", "var": "--secondary"},
+    "secondaryHover": {"type": "color", "var": "--secondary-hover"},
+    "secondaryText": {"type": "color", "var": "--secondary-foreground"},
+    "muted": {"type": "color", "var": "--muted"},
+    "destructive": {"type": "color", "var": "--destructive"},
+    "destructiveText": {"type": "color", "var": "--destructive-foreground"}
+  },
+  "component": {
+    "button": {
+      "primary": {
+        "bg": {"type": "color", "var": "--foreground", "source": "Get Started header button background oklch(0.15 0 0)"},
+        "text": {"type": "color", "value": "#ffffff", "source": "Get Started color oklch(1 0 0)"},
+        "radius": {"type": "dimension", "value": "9999px", "source": "measured border-radius 9999px"},
+        "height": {"type": "dimension", "value": "39.6px", "source": "measured height 39.5938px"},
+        "hoverBg": {"type": "color", "value": "#404040", "source": "measured hover background rgb(64, 64, 64)"}
+      },
+      "secondary": {
+        "bg": {"type": "color", "var": "--secondary"},
+        "text": {"type": "color", "var": "--secondary-foreground"},
+        "hoverBg": {"type": "color", "var": "--secondary-hover"},
+        "radius": {"type": "dimension", "value": "9999px", "source": "measured Free-plan Get Started"},
+        "height": {"type": "dimension", "value": "48.4px", "source": "measured height 48.3906px"}
+      }
+    },
+    "badge": {
+      "bg": {"type": "color", "var": "--foreground"},
+      "text": {"type": "color", "value": "#ffffff", "source": "Popular badge color oklch(1 0 0)"},
+      "radius": {"type": "dimension", "value": "9999px", "source": "measured"}
+    },
+    "banner": {
+      "bg": {"type": "color", "var": "--primary"},
+      "text": {"type": "color", "var": "--primary-foreground"}
+    },
+    "focus": {
+      "width": {"type": "dimension", "value": "1px", "source": "measured outline-width 1px on focus-visible"},
+      "color": {"type": "color", "value": "#005fcc", "source": "measured outline-color rgb(0, 95, 204)"},
+      "offset": {"type": "dimension", "value": "1px", "source": "measured outline-offset 1px on links and buttons; 0px on the pricing segment"}
+    }
+  }
+}

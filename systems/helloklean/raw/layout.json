@@ -1,0 +1,953 @@
+{
+  "captured": "2026-11-18T16:29:22.307Z",
+  "pages": [
+    {
+      "url": "https://helloklean.com/en-int",
+      "title": "Hello Klean | Beauty Solutions for your water",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 3524,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 34,
+        "y": 210,
+        "w": 343,
+        "h": 213,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 92,
+        "w": 1440,
+        "h": 2845.4,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 2937.4,
+        "w": 1440,
+        "h": 587,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "home",
+      "requestedWidth": 1440
+    },
+    {
+      "url": "https://helloklean.com/en-int/collections/filters",
+      "title": "Filters – Hello Klean",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 5065,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 34,
+        "y": 210,
+        "w": 343,
+        "h": 258,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 92,
+        "w": 1440,
+        "h": 4385.7,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 4477.7,
+        "w": 1440,
+        "h": 587,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "shop",
+      "requestedWidth": 1440
+    },
+    {
+      "url": "https://helloklean.com/en-int/products/hello-klean-skin-filter",
+      "title": "Hello Klean Skin Filter",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 8565,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 34,
+        "y": 210,
+        "w": 343,
+        "h": 258,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 92,
+        "w": 1440,
+        "h": 7886.3,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 7978.3,
+        "w": 1440,
+        "h": 587,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": {
+        "text": "Skin Filter",
+        "tag": "h1",
+        "cls": "heading-2",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "name": "product",
+      "requestedWidth": 1440
+    },
+    {
+      "url": "https://helloklean.com/en-int/pages/faqs",
+      "title": "FAQs – Hello Klean",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 8840,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 34,
+        "y": 210,
+        "w": 343,
+        "h": 213,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 92,
+        "w": 1440,
+        "h": 8160.8,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 8252.8,
+        "w": 1440,
+        "h": 587,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "faq",
+      "requestedWidth": 1440
+    },
+    {
+      "url": "https://helloklean.com/en-int/pages/about-us",
+      "title": "About Us – Hello Klean",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 5497,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 34,
+        "y": 210,
+        "w": 343,
+        "h": 213,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 92,
+        "w": 1440,
+        "h": 4818,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 4910,
+        "w": 1440,
+        "h": 587,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "about",
+      "requestedWidth": 1440
+    },
+    {
+      "url": "https://helloklean.com/en-int",
+      "title": "Hello Klean | Beauty Solutions for your water",
+      "innerWidth": 1024,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1024,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 4660,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 1024,
+        "h": 3787.9,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 3871.9,
+        "w": 1024,
+        "h": 788.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "home",
+      "requestedWidth": 1024
+    },
+    {
+      "url": "https://helloklean.com/en-int/collections/filters",
+      "title": "Filters – Hello Klean",
+      "innerWidth": 1024,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1024,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 7439,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 1024,
+        "h": 6566.6,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 6650.6,
+        "w": 1024,
+        "h": 788.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "shop",
+      "requestedWidth": 1024
+    },
+    {
+      "url": "https://helloklean.com/en-int/products/hello-klean-skin-filter",
+      "title": "Hello Klean Skin Filter",
+      "innerWidth": 1024,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1024,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 8666,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 1024,
+        "h": 7793.2,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 7877.2,
+        "w": 1024,
+        "h": 788.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": {
+        "text": "Skin Filter",
+        "tag": "h1",
+        "cls": "heading-2",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "name": "product",
+      "requestedWidth": 1024
+    },
+    {
+      "url": "https://helloklean.com/en-int/pages/faqs",
+      "title": "FAQs – Hello Klean",
+      "innerWidth": 1024,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1024,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 8869,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 1024,
+        "h": 7996.2,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 8080.2,
+        "w": 1024,
+        "h": 788.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "faq",
+      "requestedWidth": 1024
+    },
+    {
+      "url": "https://helloklean.com/en-int/pages/about-us",
+      "title": "About Us – Hello Klean",
+      "innerWidth": 1024,
+      "innerHeight": 900,
+      "dpr": 1,
+      "visualViewport": {
+        "w": 1024,
+        "h": 900,
+        "scale": 1
+      },
+      "scrollHeight": 6001,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 1024,
+        "h": 5128.5,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 5212.5,
+        "w": 1024,
+        "h": 788.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "about",
+      "requestedWidth": 1024
+    },
+    {
+      "url": "https://helloklean.com/en-int",
+      "title": "Hello Klean | Beauty Solutions for your water",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 2,
+      "visualViewport": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      },
+      "scrollHeight": 3735,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 390,
+        "h": 2865.1,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 2949.1,
+        "w": 390,
+        "h": 785.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "home",
+      "requestedWidth": 390
+    },
+    {
+      "url": "https://helloklean.com/en-int/collections/filters",
+      "title": "Filters – Hello Klean",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 2,
+      "visualViewport": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      },
+      "scrollHeight": 5716,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 390,
+        "h": 4846.4,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 4930.4,
+        "w": 390,
+        "h": 785.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "shop",
+      "requestedWidth": 390
+    },
+    {
+      "url": "https://helloklean.com/en-int/products/hello-klean-skin-filter",
+      "title": "Hello Klean Skin Filter",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 2,
+      "visualViewport": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      },
+      "scrollHeight": 8362,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 390,
+        "h": 7492.8,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 7576.8,
+        "w": 390,
+        "h": 785.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": {
+        "text": "Skin Filter",
+        "tag": "h1",
+        "cls": "heading-2",
+        "x": 14,
+        "y": 94,
+        "w": 362,
+        "h": 33,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "name": "product",
+      "requestedWidth": 390
+    },
+    {
+      "url": "https://helloklean.com/en-int/pages/faqs",
+      "title": "FAQs – Hello Klean",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 2,
+      "visualViewport": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      },
+      "scrollHeight": 8218,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 390,
+        "h": 7348.8,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 7432.8,
+        "w": 390,
+        "h": 785.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "faq",
+      "requestedWidth": 390
+    },
+    {
+      "url": "https://helloklean.com/en-int/pages/about-us",
+      "title": "About Us – Hello Klean",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 2,
+      "visualViewport": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      },
+      "scrollHeight": 4477,
+      "header": null,
+      "announcement": {
+        "tag": "section",
+        "cls": "shopify-section shopify-section-group-announcement-bar-group announcement-bar",
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 30,
+        "position": "relative",
+        "bg": "rgb(29, 29, 31)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "nav": {
+        "tag": "nav",
+        "cls": "sublinks-container",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "main": {
+        "tag": "main",
+        "cls": "content-for-layout focus-none",
+        "x": 0,
+        "y": 84,
+        "w": 390,
+        "h": 3607.8,
+        "position": "static",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(29, 29, 31)"
+      },
+      "footer": {
+        "tag": "footer",
+        "cls": "site-footer",
+        "x": 0,
+        "y": 3691.8,
+        "w": 390,
+        "h": 785.5,
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(245, 244, 241)"
+      },
+      "h1": null,
+      "name": "about",
+      "requestedWidth": 390
+    }
+  ]
+}

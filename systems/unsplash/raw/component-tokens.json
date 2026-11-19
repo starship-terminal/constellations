@@ -1,0 +1,120 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}}
+  },
+  "pages": [
+    "https://unsplash.com/",
+    "https://unsplash.com/explore",
+    "https://unsplash.com/plus",
+    "https://unsplash.com/s/photos/lighthouse",
+    "https://unsplash.com/s/photos/nature",
+    "https://unsplash.com/photos/a-lighthouse-sitting-on-top-of-a-cliff-next-to-the-ocean-HNo7GRYY9Bw",
+    "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+    "https://unsplash.com/license",
+    "https://unsplash.com/about",
+    "https://unsplash.com/this-page-does-not-exist-capture (rewrote to /@this-page-does-not-exist-capture, title Page not found)",
+    "https://unsplash.com/login (measured, not submitted)",
+    "https://unsplash.com/t/wallpapers"
+  ],
+  "components": {
+    "search": {
+      "form": {"background": "rgb(238, 238, 238)", "border": "1px solid rgb(238, 238, 238)", "radius": "24px", "height": "40px", "role": "search"},
+      "input": {"fontSize": "14px", "lineHeight": "20px", "weight": "400", "color": "rgb(17, 17, 17)", "placeholder": "Search photos and illustrations", "placeholderColor": "var(--color-gray-700)"}
+    },
+    "primaryButton": {
+      "small": {"height": "32px", "fontSize": "14px", "lineHeight": "30px", "paddingInline": "11px", "radius": "8px", "background": "rgb(17, 17, 17)", "color": "rgb(255, 255, 255)", "weight": "500", "shadow": "rgba(0, 0, 0, 0.08) 0px 1px 1px 0px", "gradient": "linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.1) 100%)"},
+      "medium": {"height": "44px", "fontSize": "15px", "lineHeight": "42px", "paddingInline": "16px", "radius": "8px"},
+      "large": {"height": "56px", "fontSize": "18px", "paddingInline": "24px"},
+      "hoverDeclared": "background-color var(--button-primary-background-color-hover) which is #222 in .light",
+      "disabled": {"background": "rgb(238, 238, 238)", "color": "rgb(118, 118, 118)", "cursor": "not-allowed"}
+    },
+    "outlineButton": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(118, 118, 118)",
+      "border": "1px solid rgb(209, 209, 209)",
+      "radius": "8px",
+      "shadow": "rgba(0, 0, 0, 0.08) 0px 1px 1px 0px",
+      "hover": "border-color var(--color-gray-700); color var(--color-black); shadow rgba(0, 0, 0, 0.1) 0px 1px 2px"
+    },
+    "secondaryButton": {
+      "background": "rgb(0, 127, 255)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "8px",
+      "declared": ".secondary-Qhy_qo background-color var(--color-blue)"
+    },
+    "textLink": {
+      "color": "rgb(118, 118, 118)",
+      "size": "14px",
+      "weight": "500",
+      "hover": "var(--color-black)",
+      "transition": "color 0.1s ease-in-out, opacity 0.1s ease-in-out"
+    },
+    "navTab": {
+      "height": "64px",
+      "size": "14px",
+      "weight": "500",
+      "inactive": "rgb(118, 118, 118)",
+      "active": "rgb(17, 17, 17)",
+      "activeMark": "inset 0 -2px var(--color-black)"
+    },
+    "filterChip": {
+      "height": "32px",
+      "radius": "8px",
+      "border": "1px solid rgb(238, 238, 238)",
+      "padding": "5px 8px 5px 11px",
+      "size": "14px",
+      "weight": "500"
+    },
+    "tag": {
+      "background": "rgb(238, 238, 238)",
+      "color": "rgb(85, 85, 85)",
+      "radius": "6px",
+      "padding": "4px 10px",
+      "height": "28px",
+      "size": "14px"
+    },
+    "textField": {
+      "page": "/login",
+      "height": "40px",
+      "radius": "8px",
+      "border": "1px solid rgb(209, 209, 209)",
+      "padding": "6px 12px",
+      "fontSize": "14px",
+      "background": "rgb(255, 255, 255)",
+      "focusOutline": "rgb(229, 151, 0) auto 5px"
+    },
+    "billingToggle": {
+      "track": {"background": "rgb(245, 245, 245)", "radius": "32px", "padding": "4px", "height": "42px"},
+      "thumb": {"background": "rgb(255, 255, 255)", "radius": "24px", "height": "34px", "shadow": "rgba(0, 0, 0, 0.08) 0px 1px 3px 0px"},
+      "activeLabel": {"color": "rgb(17, 17, 17)", "weight": "500", "size": "15px"},
+      "inactiveLabel": {"color": "rgb(118, 118, 118)"}
+    },
+    "planCard": {
+      "border": "2px solid rgb(238, 238, 238)",
+      "radius": "24px",
+      "padding": "32px",
+      "width": "450px"
+    },
+    "dealPill": {
+      "background": "rgba(60, 180, 110, 0.1)",
+      "color": "rgb(55, 168, 102)",
+      "radius": "36px",
+      "padding": "4px 12px",
+      "weight": "500"
+    },
+    "exploreCardImage": {"radius": "8px", "width": 240, "height": 142},
+    "promoModule": {"radius": "8px", "overflow": "hidden"},
+    "avatar": {"width": 32, "height": 32, "radius": "50%"},
+    "popup": {"background": "rgb(255, 255, 255)", "radius": "8px", "shadow": "rgba(0, 0, 0, 0.15) 0px 8px 16px 0px"},
+    "burgerMenu": {"background": "rgb(255, 255, 255)", "radius": "8px", "width": 358, "shadow": "rgba(0, 0, 0, 0.06) 0px 4px 8px -4px, rgba(0, 0, 0, 0.08) 0px 16px 24px -8px"},
+    "radio": {"width": "16px", "height": "16px", "radius": "50%", "border": "1.5px solid rgb(209, 209, 209)", "checkedDot": "8px inset box-shadow of var(--color-blue)"},
+    "focusRing": "1px auto rgb(229, 151, 0) on links; outline-offset 4px on .baseInteractive:focus-visible",
+    "shell": {
+      "sidebar": {"width": 64, "padding": "12px", "background": "rgb(255, 255, 255)", "position": "sticky"},
+      "topnav": {"height": 64, "padding": "12px 24px", "gap": "16px", "background": "rgb(255, 255, 255)"},
+      "phoneNav": {"height": 56, "padding": "8px 12px"}
+    }
+  }
+}

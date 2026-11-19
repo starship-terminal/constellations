@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-18T18:42:26.104Z",
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "png": {
+    "width": 780,
+    "height": 2094
+  },
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "dpr": 2,
+  "vv": {
+    "width": 390,
+    "height": 844,
+    "scale": 1
+  },
+  "title": "stage.so for sale | Spaceship.com",
+  "url": "https://stage.so/",
+  "source": "headless-chromium after preview tab loaded the same public URL with no Cloudflare challenge"
+}

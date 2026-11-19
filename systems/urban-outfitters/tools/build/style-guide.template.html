@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Urban Outfitters style guide</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #222222;
+      --muted: #707070;
+      --line: #dddddd;
+      --wash: #f5f5f5;
+      --sale: #d83604;
+      --promo: #3a8700;
+      --strip: #eb4034;
+      --disabled: #aaaaaa;
+      --focus: #707070;
+      --font: Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      line-height: 16.8px;
+    }
+    header.site {
+      position: sticky;
+      top: 0;
+      background: var(--page);
+      z-index: 2;
+    }
+    .strip {
+      background: var(--strip);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .strip a { color: #fff; }
+    .util {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+      padding: 12px 24px 0;
+      letter-spacing: 0.5px;
+    }
+    .brand {
+      text-align: center;
+      font-size: 22px;
+      line-height: 30.8px;
+      font-weight: 100;
+      letter-spacing: 0.5px;
+      margin: 8px 0;
+    }
+    nav.primary {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      height: 60px;
+      align-items: center;
+    }
+    nav.primary a {
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      padding: 10px 12px;
+    }
+    main { max-width: 1040px; margin: 0 auto; padding: 32px 24px 80px; }
+    h2 { font-size: 16px; font-weight: 400; letter-spacing: 0.5px; line-height: 22.4px; }
+    h3 { font-size: 12px; font-weight: 400; letter-spacing: 0.5px; color: var(--muted); }
+    .swatches, .type, .row { display: grid; gap: 12px; }
+    .swatches { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .swatch { border: 1px solid var(--line); }
+    .swatch i { display: block; height: 64px; }
+    .swatch span { display: block; padding: 8px; }
+    .specimen { margin: 8px 0 20px; }
+    button.cart, button.next {
+      background: var(--ink);
+      color: #fff;
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      font: 700 16px/22.4px var(--font);
+      letter-spacing: 0.5px;
+      padding: 10px 20px;
+      min-height: 45px;
+    }
+    button.cart:hover, button.next:hover { background: var(--muted); border-color: var(--muted); }
+    button.cart:disabled { background: var(--disabled); border-color: var(--disabled); }
+    input, select {
+      font: 16px/normal var(--font);
+      letter-spacing: 0.2px;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      padding: 10px;
+      height: 45px;
+    }
+    select { border-color: var(--muted); border-radius: 5px; }
+    .chip {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      margin-right: 4px;
+    }
+    .swatch-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--ink);
+      display: inline-block;
+      background: #6e7c8a;
+    }
+    .tabs { display: flex; width: 396px; }
+    .tabs span { flex: 1; padding: 0 0 8px; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .tabs span.on { color: var(--ink); border-bottom: 2px solid var(--ink); }
+    .card { border-bottom: 1px solid var(--line); padding: 16px 0; }
+    .sale { color: var(--sale); font-size: 22px; font-weight: 100; letter-spacing: 0.5px; }
+    .was { text-decoration: line-through; margin-left: 8px; }
+    .deal { color: var(--promo); }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 1.5px solid var(--focus);
+      outline-offset: 2px;
+    }
+    table { border-collapse: collapse; width: 100%; }
+    td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); font-weight: 400; }
+    .note { color: var(--muted); max-width: 68ch; }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="strip">
+      <span>Extra 40% Off All Sale Items</span>
+      <a href="#shop">Shop Now</a>
+    </div>
+    <div class="util">
+      <span>Stores</span>
+      <span>Sign In / Sign Up</span>
+    </div>
+    <div class="brand">Urban Outfitters</div>
+    <nav class="primary" aria-label="primary">
+      <a href="#new">New</a>
+      <a href="#women">Women's</a>
+      <a href="#men">Men's</a>
+      <a href="#home">Home</a>
+    </nav>
+  </header>
+  <main>
+    <p class="note">Values are the ones measured on urbanoutfitters.com on 2026-11-19. Helvetica stands in for the licensed face. MonoSpec is named in tokens and is not embedded.</p>
+
+    <h2>Colour</h2>
+    <div class="swatches">
+      <div class="swatch"><i style="background:#ffffff"></i><span>Page #ffffff</span></div>
+      <div class="swatch"><i style="background:#222222"></i><span>Ink #222222</span></div>
+      <div class="swatch"><i style="background:#707070"></i><span>Muted #707070</span></div>
+      <div class="swatch"><i style="background:#dddddd"></i><span>Line #dddddd</span></div>
+      <div class="swatch"><i style="background:#f5f5f5"></i><span>Wash #f5f5f5</span></div>
+      <div class="swatch"><i style="background:#d83604"></i><span>Sale #d83604</span></div>
+      <div class="swatch"><i style="background:#3a8700"></i><span>Promo #3a8700</span></div>
+      <div class="swatch"><i style="background:#eb4034"></i><span>Strip #eb4034</span></div>
+      <div class="swatch"><i style="background:#006acc"></i><span>Alert #006acc</span></div>
+    </div>
+
+    <h2>Type</h2>
+    <p class="specimen" style="font-size:22px;line-height:30.8px;font-weight:100;letter-spacing:0.5px">BDG Kayla Low-Rise Jeans</p>
+    <p class="specimen" style="font-size:18px;line-height:25.2px;letter-spacing:0.5px">Women's Clothing</p>
+    <p class="specimen" style="font-size:16px;line-height:22.4px;letter-spacing:0.5px">Extra 40% Off Sale</p>
+    <p class="specimen">New, Women's, Men's. Utility and nav sit at 12px with 0.5px tracking.</p>
+
+    <h2>Buttons</h2>
+    <p><button class="cart" type="button">Get It Before It's Gone</button></p>
+    <p><button class="next" type="button">Next</button></p>
+    <p><button class="cart" type="button" disabled>Unavailable</button></p>
+
+    <h2>Fields</h2>
+    <p><input aria-label="Search" placeholder="What are you looking for?"></p>
+    <p>
+      <select aria-label="Country Code"><option>65</option></select>
+      <input aria-label="Phone Number" placeholder="Phone Number">
+    </p>
+    <div class="tabs" role="tablist">
+      <span class="on">Mobile Number</span>
+      <span>Email</span>
+    </div>
+
+    <h2>Product</h2>
+    <div class="card">
+      <div>BDG Kayla Low-Rise Jeans</div>
+      <div><span class="sale">$39.99</span> <span class="was">$69.00</span></div>
+      <div class="deal">Extra 40% off in Cart</div>
+      <p><span class="swatch-dot"></span></p>
+      <p><span class="chip">24</span><span class="chip">25</span><span class="chip">26</span><span class="chip">27</span></p>
+    </div>
+
+    <h2>Token index</h2>
+    <table>
+      <tr><th>Role</th><th>Token</th><th>Value</th></tr>
+      <tr><td>Page</td><td>light.background.page</td><td>#ffffff</td></tr>
+      <tr><td>Surface</td><td>light.background.secondary</td><td>#f5f5f5</td></tr>
+      <tr><td>Text</td><td>light.text.primary</td><td>#222222</td></tr>
+      <tr><td>Muted</td><td>light.text.secondary</td><td>#707070</td></tr>
+      <tr><td>Accent</td><td>light.action.primary</td><td>#222222</td></tr>
+      <tr><td>Border</td><td>light.border.default</td><td>#dddddd</td></tr>
+    </table>
+  </main>
+</body>
+</html>

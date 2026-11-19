@@ -1,0 +1,53 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 Code preview browser, grok-4.7",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "requestedWidths": {
+    "desktop": 1440,
+    "phone": 390
+  },
+  "actualWidth": 1169,
+  "screenshotFrames": "preview_snapshot failed: The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again. Called twice. No PNG was saved.",
+  "pages": [
+    {
+      "url": "https://pixso.net/",
+      "title": "Pixso: Collaborative UI/UX Design Tool with AI",
+      "challenge": false
+    },
+    {
+      "url": "https://pixso.net/pricing/",
+      "title": "Pixso Pricing Plans for Starter, Organization and Enterprise",
+      "challenge": false
+    },
+    {
+      "url": "https://pixso.net/user/login/",
+      "title": "Sign in",
+      "challenge": false,
+      "state": "signed out, Log in then Sign up for free on the same URL"
+    },
+    {
+      "url": "https://pixso.net/ui-design-collaboration/",
+      "title": "UI Design Tool for Apps and Websites | Pixso",
+      "challenge": false
+    }
+  ],
+  "notEntered": [
+    "No email submitted. The AgentMail inbox was not used.",
+    "No password typed.",
+    "No Google or NAVER login.",
+    "No SSO.",
+    "No payment, card, phone, or KYC.",
+    "Signed-in app at pixso.net/app/ was not opened."
+  ],
+  "prefersColorScheme": "dark on the host, but the marketing and login pages rendered light. No dark theme control was found on these pages.",
+  "reducedMotion": "No prefers-reduced-motion rules were found in the login stylesheets that the CSSOM could read. Motion probe was not run because preview_snapshot could not attach and a new headless session was not started against the login page."
+}

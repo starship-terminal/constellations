@@ -1,0 +1,11 @@
+{
+  "captured": "2026-11-18T20:27:55.910Z",
+  "url": "https://www.windy.com/?1.287,103.851,5",
+  "title": "Windy: Wind map & weather forecast",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "devicePixelRatio": 2,
+  "resultCount": 13
+}

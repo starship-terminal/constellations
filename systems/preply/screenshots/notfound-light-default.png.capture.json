@@ -1,0 +1,23 @@
+{
+  "href": "https://preply.com/en/this-page-does-not-exist-capture",
+  "title": "",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollH": 1732,
+  "theme": "tokyo-ui",
+  "colorScheme": "normal",
+  "dark": false,
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-18T17:52:39.672Z",
+  "fullPage": false,
+  "screenshotFrames": "headless-playwright (T3 preview returned: The browser is not producing screenshot frames)"
+}

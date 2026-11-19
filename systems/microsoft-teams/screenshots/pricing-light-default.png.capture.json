@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-18T16:32:08.499Z",
+  "sanitizedSourceUrl": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-options",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "documentHeight": 10262
+  },
+  "title": "Microsoft Teams Pricing for Business: Plans & Features",
+  "finalHost": "www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options"
+}

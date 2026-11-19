@@ -1,0 +1,107 @@
+{
+  "source": "getComputedStyle in the T3 preview browser on https://docs.orchids.app/ and https://docs.orchids.app/plans-and-token-usage, 2026-11-19. Dark was the page default (html.dark, prefers-color-scheme dark). Light was read after clicking Switch to light theme. Search dialog opened empty and closed. No query typed. No form submitted. Start a Project was not followed. Viewport at first read was 1169x731, dpr 2. Plan cards were re-read after a resize request; the browser reported innerWidth 1440.",
+  "components": {
+    "page": {
+      "dark": { "htmlBackground": "rgb(14, 12, 12)", "bodyColor": "rgb(255, 255, 255)", "prose": "rgb(166, 163, 159)" },
+      "light": { "htmlBackground": "rgb(255, 255, 255)", "bodyColor": "rgb(0, 0, 0)", "prose": "rgb(70, 67, 63)" }
+    },
+    "heading": {
+      "h1": { "fontSize": "36px", "fontWeight": "600", "lineHeight": "40px", "letterSpacing": "-0.9px", "fontFamily": "Inter", "lightColor": "rgb(30, 27, 23)", "darkColor": "rgb(230, 227, 223)" },
+      "bodyLead": { "fontSize": "18px", "fontWeight": "400", "lineHeight": "28px", "lightColor": "rgb(70, 67, 63)", "darkColor": "rgb(166, 163, 159)" }
+    },
+    "link-accent": {
+      "note": "Start a Project. The anchor is transparent. The amber colour is on the inner span.",
+      "light": { "spanColor": "rgb(252, 170, 38)", "fontSize": "14px", "fontWeight": "500", "lineHeight": "20px", "anchorHeight": 32, "anchorPadding": "6px 0px" },
+      "dark": { "spanColor": "rgb(252, 170, 38)", "fontSize": "14px", "fontWeight": "500" },
+      "hover": "Stylesheet rule .group-hover\\:text-primary sets rgb(var(--primary)). A synthetic hover class did not change the computed colour."
+    },
+    "link-quiet": {
+      "note": "Support, next to Start a Project, light theme.",
+      "color": "rgb(87, 85, 81)",
+      "fontSize": "14px",
+      "fontWeight": "500"
+    },
+    "search": {
+      "height": 36,
+      "borderRadius": "8px",
+      "padding": "0px 12px 0px 14px",
+      "fontSize": "14px",
+      "gap": "8px",
+      "light": { "background": "rgb(255, 255, 255)", "color": "rgb(119, 117, 113)", "ring": "oklab(0.716774 0.00172406 0.00650185 / 0.3) 0px 0px 0px 1px" },
+      "dark": { "background": "rgb(14, 12, 12)", "color": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)", "ring": "oklab(0.450084 0.000673607 0.0068959 / 0.3) 0px 0px 0px 1px" }
+    },
+    "button-copy": {
+      "height": 34,
+      "padding": "6px 12px",
+      "borderRadius": "12px 0px 0px 12px",
+      "fontSize": "16px",
+      "light": { "background": "rgb(255, 255, 255)", "color": "rgb(70, 67, 63)", "border": "1px solid rgb(230, 227, 223)" },
+      "dark": { "background": "rgb(14, 12, 12)", "color": "rgb(213, 211, 207)", "border": "1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.07)" }
+    },
+    "nav-current": {
+      "ariaCurrent": "page",
+      "color": "rgb(252, 170, 38)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "height": 32,
+      "padding": "6px 12px 6px 16px",
+      "background": "rgba(0, 0, 0, 0)",
+      "focusVisible": "outline rgb(252, 170, 38) none 3px; outlineOffset 0px. The stylesheet sets :focus-visible { outline-color: rgb(var(--primary) / 1) }. The focused Introduction link did not paint a visible outline in this read."
+    },
+    "theme-switch": {
+      "selected": { "aria": "Switch to system theme", "background": "rgb(30, 27, 23)", "color": "rgb(230, 227, 223)", "size": "20px", "radius": "9999px" },
+      "rest": { "background": "rgba(0, 0, 0, 0)", "color": "rgb(119, 117, 113)", "size": "20px", "radius": "9999px" }
+    },
+    "card": {
+      "backgroundDark": "rgb(14, 12, 12)",
+      "border": "1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderRadius": "16px",
+      "padding": "20px 24px",
+      "lightBackground": "rgb(255, 255, 255)",
+      "lightBorder": "oklab(0.169312 0.000832312 0.00865754 / 0.1)"
+    },
+    "search-dialog": {
+      "theme": "light",
+      "overlay": "oklab(0 0 0 / 0.4)",
+      "overlayTransition": "0.25s cubic-bezier(0.22, 1, 0.36, 1)",
+      "dialog": { "background": "rgb(255, 255, 255)", "borderRadius": "20px", "width": 640, "heightWhenEmpty": 62, "ring": "oklab(0.169312 0.000832312 0.00865754 / 0.06) 0px 0px 0px 1px" },
+      "input": { "color": "rgb(17, 15, 11)", "fontSize": "16px", "height": 36, "background": "transparent", "placeholder": "Search..." },
+      "inputFocus": { "outline": "rgb(252, 170, 38) none 0px" }
+    },
+    "assistant": {
+      "textarea": { "fontSize": "14px", "colorLight": "rgb(30, 27, 23)", "padding": "10px 40px 10px 14px", "height": 60, "placeholder": "Ask a question..." },
+      "sendDisabled": { "size": "24px", "radius": "9999px", "background": "oklab(0.799063 0.0490309 0.15406 / 0.3)", "color": "rgb(119, 117, 113)", "disabled": true }
+    },
+    "plan-card": {
+      "note": "Mintlify card on the pricing docs page. Classes mint-rounded-lg mint-border mint-border-white/10 mint-bg-white/5 mint-p-6. In light theme the white-on-white treatment is faint.",
+      "background": "rgba(255, 255, 255, 0.05)",
+      "border": "1px solid rgba(255, 255, 255, 0.1)",
+      "borderRadius": "8px",
+      "padding": "24px",
+      "name": { "fontSize": "18px", "fontWeight": "600", "color": "rgb(70, 67, 63)" },
+      "price": { "fontSize": "20px", "fontWeight": "600", "color": "rgb(70, 67, 63)" },
+      "muted": { "fontSize": "14px", "opacity": "0.7", "color": "rgb(70, 67, 63)" },
+      "widthAt1440": 322
+    },
+    "table": {
+      "th": { "fontSize": "14px", "fontWeight": "600", "color": "oklch(0.21 0.034 264.665)", "padding": "0px 8px 8px 0px" },
+      "td": { "fontSize": "14px", "fontWeight": "400", "color": "rgb(70, 67, 63)", "height": 37 }
+    },
+    "code": {
+      "fontFamily": "Paper Mono",
+      "fontSize": "14px",
+      "color": "rgb(31, 35, 40)",
+      "background": "transparent"
+    },
+    "h2-prose": {
+      "fontSize": "24px",
+      "fontWeight": "600",
+      "lineHeight": "32px",
+      "color": "oklch(0.21 0.034 264.665)"
+    },
+    "header": { "height": 112, "widthAt1169": 1169 },
+    "sidebarLink": { "width": 247, "height": 32 },
+    "content": { "width": 749, "mainPadding": "40px 20px 0px 96px" }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "viewport": {
+    "preview": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "visualViewport": {"width": 1169, "height": 731, "scale": 1}},
+    "note": "The preview pane would not paint screenshot frames. Playwright at 1440x900 captured /about and the 404. Homepage, search and the business page returned a DataDome block in headless Chromium, so those screenshots are a gap. Computed styles for those pages were read in the preview tab before the block."
+  },
+  "home": {
+    "url": "https://www.yelp.com/",
+    "title": "Restaurants, Dentists, Bars, Beauty Salons, Doctors - Yelp",
+    "h1": {"text": "Get that perfect fit", "font": "Poppins, \"Helvetica Neue\", Helvetica, Arial, sans-serif", "size": "48px", "weight": "700", "lineHeight": "56px", "letterSpacing": "-0.4px", "color": "rgb(255, 255, 255)"},
+    "signup": {"text": "Sign Up", "bg": "rgb(215, 22, 22)", "color": "rgb(255, 255, 255)", "height": "40px", "padding": "8px 16px", "radius": "20px", "border": "1px solid rgb(215, 22, 22)", "font": "Arial", "size": "13.3333px"},
+    "login": {"text": "Log In", "bg": "rgba(255, 255, 255, 0)", "color": "rgb(255, 255, 255)", "height": "40px", "padding": "8px 16px", "radius": "20px", "border": "2px solid rgba(255, 255, 255, 0.4)"},
+    "searchForm": {"height": "48px", "radius": "8px", "shadow": "rgba(0, 0, 0, 0.16) 0px 0px 18px 0px"},
+    "searchInput": {"font": "\"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif", "size": "16px", "lineHeight": "20px", "color": "rgb(45, 46, 47)", "padding": "13px 15px", "radius": "8px", "height": "46px"},
+    "category": {"text": "Restaurants", "color": "rgb(255, 255, 255)", "size": "16px", "padding": "16px 44px 16px 16px", "radius": "4px", "lineHeight": "22px"},
+    "heroChip": {"text": "Sewing alterations", "bg": "rgb(215, 22, 22)", "color": "rgb(255, 255, 255)", "height": "40px", "padding": "8px 16px", "radius": "20px"}
+  },
+  "search": {
+    "url": "https://www.yelp.com/search?find_desc=coffee&find_loc=San+Francisco%2C+CA",
+    "h1": {"size": "24px", "lineHeight": "32px", "weight": "700", "font": "Poppins", "color": "rgb(45, 46, 47)"},
+    "headerBg": "rgb(255, 255, 255)",
+    "signin": {"text": "Sign in", "bg": "rgb(240, 240, 240)", "color": "rgb(45, 46, 47)", "height": "40px", "padding": "8px 16px", "radius": "20px", "border": "1px solid rgb(240, 240, 240)"},
+    "searchButton": {"bg": "rgb(215, 22, 22)", "color": "rgb(255, 255, 255)", "height": "48px", "radius": "8px", "padding": "8px 16px"},
+    "chip": {"text": "Price", "bg": "rgb(255, 255, 255)", "color": "rgb(45, 46, 47)", "border": "1px solid rgb(200, 201, 202)", "height": "32px", "padding": "7px 11px", "radius": "10000px", "font": "Open Sans", "size": "12px", "weight": "600"},
+    "resultName": {"text": "Kope House", "size": "20px", "weight": "700", "font": "Poppins", "color": "rgb(45, 46, 47)"},
+    "star": {"aria": "3.7 star rating", "svg": "20x20", "fill": "rgba(var(--sem-color-bg-rating-three), 1)", "icon": "rgba(var(--sem-color-icon-onStrong), 1)"},
+    "footerBg": "rgb(247, 247, 247)"
+  },
+  "biz": {
+    "url": "https://www.yelp.com/biz/kop%C3%AA-house-san-francisco",
+    "h1": {"size": "48px", "lineHeight": "56px", "letterSpacing": "-0.4px", "weight": "700", "color": "rgb(255, 255, 255)", "font": "Poppins"},
+    "rating": "4.6 star rating",
+    "writeReview": {"bg": "rgb(215, 22, 22)", "color": "rgb(255, 255, 255)", "height": "40px", "padding": "8px 16px", "radius": "20px"},
+    "seeHours": {"color": "rgb(255, 255, 255)", "border": "1px solid rgba(255, 255, 255, 0.4)", "radius": "20px", "height": "32px"}
+  },
+  "about": {
+    "url": "https://www.yelp.com/about",
+    "h1": {"text": "Yelp connects people with great local businesses.", "size": "60px", "lineHeight": "75px", "weight": "700", "color": "rgb(255, 255, 255)", "font": "Poppins"},
+    "login": {"bg": "rgb(240, 240, 240)", "color": "rgb(45, 46, 47)", "height": "40px", "padding": "8px 16px", "radius": "20px"},
+    "signup": {"bg": "rgb(215, 22, 22)", "color": "rgb(255, 255, 255)", "height": "40px", "radius": "20px"},
+    "focus": {"element": "Sign Up", "outline": "rgb(0, 118, 146) solid 2px"}
+  },
+  "login": {
+    "url": "https://www.yelp.com/login",
+    "entered": false,
+    "reason": "Form asks for email and password, plus first name, last name, city and ZIP on the signup pane. Not an email-only form. Nothing was typed or submitted.",
+    "bodyBg": "rgb(245, 245, 245)",
+    "email": {"height": "30px", "padding": "5px 9px", "radius": "3px", "border": "1px solid rgb(153, 153, 153)", "font": "Helvetica Neue", "size": "14px", "color": "rgb(51, 51, 51)", "width": "300px"},
+    "loginButton": {"bg": "rgb(211, 35, 35)", "color": "rgb(255, 255, 255)", "height": "43px", "width": "300px", "radius": "3px", "weight": "700", "font": "Helvetica Neue", "size": "16px"},
+    "signupLink": {"color": "rgb(0, 115, 187)", "size": "14px"}
+  },
+  "notFound": {
+    "url": "https://www.yelp.com/this-page-does-not-exist-capture",
+    "title": "Page not found (404)",
+    "h1": {"text": "We're sorry. We can't find the page you're looking for.", "size": "28px", "lineHeight": "36px", "weight": "700", "color": "rgb(45, 46, 47)", "font": "Poppins"}
+  },
+  "fontsLoaded": ["Poppins 500", "Poppins 700", "Open Sans 400", "Open Sans 600", "Open Sans 700"],
+  "theme": "light only on the public pages. matchMedia prefers-color-scheme dark was true in the preview browser and the page stayed light. No data-theme and no dark custom-property block was applied."
+}

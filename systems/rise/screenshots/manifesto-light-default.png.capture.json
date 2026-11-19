@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-18T18:06:56.876Z",
+  "screenshot": "manifesto-light-default.png",
+  "sanitizedSourceUrl": "https://risecalendar.com/manifesto",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "title": "Rise — Projects, tasks, time. Together.",
+    "theme": {
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 2146
+    }
+  },
+  "png": {
+    "width": 2880,
+    "height": 4292
+  },
+  "capture": {
+    "mode": "fullPage",
+    "scale": "device"
+  },
+  "note": "Headless Playwright after the preview browser returned: The browser is not producing screenshot frames. No Cloudflare challenge.",
+  "visualReview": {
+    "status": "pending"
+  }
+}

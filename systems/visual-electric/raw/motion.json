@@ -1,0 +1,18 @@
+{
+  "method": "Computed transition on the pricing nav link, plus a search of the pricing stylesheet for prefers-reduced-motion. A full motion-probe emulation was not run.",
+  "pricingNavLink": {
+    "transition": "color 0.2s cubic-bezier(0.44, 0, 0.56, 1)",
+    "evidence": "Measured"
+  },
+  "appShellDeclared": {
+    "duration": "0.15s",
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "source": "--default-transition-duration and --default-transition-timing-function on :root of the app stylesheet",
+    "evidence": "Measured"
+  },
+  "reducedMotion": {
+    "pricingStylesheet": false,
+    "verdict": "not captured",
+    "reason": "prefers-reduced-motion was not emulated. The pricing stylesheet has no prefers-reduced-motion rule."
+  }
+}

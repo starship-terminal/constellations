@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-11-18T17:48:26.624Z",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    }
+  },
+  "url": "https://www.playbook.com/sign-in",
+  "title": "Playbook - Creative Storage",
+  "note": "Headless Playwright. The T3 preview tab loaded this URL with no Cloudflare challenge, then could not produce screenshot frames."
+}

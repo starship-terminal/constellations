@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slab style guide</title>
+<style>
+:root {
+  --coral: #ff4143;
+  --plum: #42022e;
+  --plum-button: #7e0048;
+  --slate: #2f4050;
+  --text: #455360;
+  --muted: #939598;
+  --yellow: #fcb415;
+  --cyan: #50c5dc;
+  --maroon: #741448;
+  --google: #4285f4;
+  --page: #ffffff;
+  --account: #fcf9f8;
+  --focus: #e59700;
+  --sans: whitney, system-ui, helvetica, sans-serif;
+  --serif: sentinel, georgia, serif;
+  --account-sans: "Untitled Sans", system-ui, helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 18px/28px var(--sans); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font: 400 42px/52px var(--serif); letter-spacing: -0.75px; color: var(--plum); margin: 0 0 8px; }
+h2 { font: 400 28px/36px var(--serif); margin: 36px 0 12px; }
+p.note { color: var(--muted); font-size: 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: 6px; border: 1px solid #ebecec; }
+.sw span { display: block; font-size: 12px; margin-top: 6px; }
+.hero { background: var(--plum); color: #fff; padding: 32px; border-radius: 6px; }
+.hero h2 { color: #fff; margin-top: 0; }
+.btn { display: inline-block; background: var(--coral); color: #fff; border: 0; border-radius: 6px; padding: 16px 24px; font: 600 18px/24px var(--sans); }
+.btn.gray { background: var(--slate); }
+.btn.yellow { background: var(--yellow); }
+.btn.cyan { background: var(--cyan); }
+.btn.maroon { background: var(--maroon); }
+.btn.account { background: var(--plum-button); border-radius: 2px; padding: 8px 12px; font: 500 14px/17px var(--account-sans); }
+.field { background: #fff; border-radius: 6px; height: 56px; padding: 0 12px; font: 400 18px/56px var(--sans); color: #939598; box-shadow: rgba(0,0,0,0.1) 0 0 0 1px; display: inline-block; min-width: 220px; }
+.card { background: #fff; border: 1px solid rgba(125,106,104,0.2); border-radius: 4px; box-shadow: rgba(106,52,33,0.06) 0 0 23px; padding: 32px; max-width: 360px; background-color: #fff; }
+.account-page { background: var(--account); padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Slab</h1>
+  <p class="note">Measured on slab.com, 2026-11-19. Whitney and Sentinel are not loaded here, so the fallbacks show.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#42022e"></i><span>plum #42022e</span></div>
+    <div class="sw"><i style="background:#ff4143"></i><span>coral #ff4143</span></div>
+    <div class="sw"><i style="background:#2f4050"></i><span>slate #2f4050</span></div>
+    <div class="sw"><i style="background:#455360"></i><span>text #455360</span></div>
+    <div class="sw"><i style="background:#939598"></i><span>muted #939598</span></div>
+    <div class="sw"><i style="background:#7e0048"></i><span>account #7e0048</span></div>
+    <div class="sw"><i style="background:#fcb415"></i><span>yellow #fcb415</span></div>
+    <div class="sw"><i style="background:#50c5dc"></i><span>cyan #50c5dc</span></div>
+    <div class="sw"><i style="background:#741448"></i><span>maroon #741448</span></div>
+    <div class="sw"><i style="background:#fcf9f8"></i><span>account page #fcf9f8</span></div>
+  </div>
+  <h2>Marketing hero</h2>
+  <div class="hero">
+    <h2>Build a culture of knowledge-sharing today.</h2>
+    <p>Easily create, organize, and discover knowledge.</p>
+    <span class="field">Work Email</span>
+    <button class="btn" type="button">Get Started</button>
+  </div>
+  <h2>Pricing buttons</h2>
+  <div class="row">
+    <button class="btn gray" type="button">Get Started</button>
+    <button class="btn yellow" type="button">Get Started</button>
+    <button class="btn cyan" type="button">Get Started</button>
+    <button class="btn maroon" type="button">Contact Sales</button>
+  </div>
+  <h2>Login card</h2>
+  <div class="account-page">
+    <div class="card">
+      <p style="font:500 25px/32px var(--account-sans); letter-spacing:-0.5px; color:#333; margin:0 0 12px">Welcome back!</p>
+      <button class="btn account" type="button">Continue</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

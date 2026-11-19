@@ -1,0 +1,53 @@
+[
+  {
+    "name": "home",
+    "url": "https://www.yelp.com/",
+    "blocked": true,
+    "status": 403,
+    "title": "yelp.com"
+  },
+  {
+    "name": "search",
+    "url": "https://www.yelp.com/search?find_desc=coffee&find_loc=San+Francisco%2C+CA",
+    "blocked": true,
+    "status": 403,
+    "title": "yelp.com"
+  },
+  {
+    "name": "biz",
+    "url": "https://www.yelp.com/biz/kop%C3%AA-house-san-francisco",
+    "blocked": true,
+    "status": 403,
+    "title": "yelp.com"
+  },
+  {
+    "name": "about",
+    "url": "https://www.yelp.com/about",
+    "title": "About Us | Yelp",
+    "status": 200,
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "scrollH": 1823,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  {
+    "name": "notfound",
+    "url": "https://www.yelp.com/this-page-does-not-exist-capture",
+    "title": "Page not found (404)",
+    "status": 404,
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "scrollH": 934,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  }
+]

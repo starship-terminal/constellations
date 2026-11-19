@@ -1,0 +1,186 @@
+{
+  "captured": "2026-11-19",
+  "page": "https://www.nytimes.com/",
+  "htmlClass": "tpl-always-light",
+  "note": "Resolved custom properties on :root while the homepage carried tpl-always-light. Light values are what the page painted. always-dark and user-inverse names are recorded as declared pairs, not as a painted theme. 28 stylesheets were cross-origin and unreadable. 30 stylesheets were readable. 521 custom properties were collected.",
+  "stylesheetCounts": {"readable": 30, "blocked": 28, "customProperties": 521},
+  "light": {
+    "content": {
+      "primary": "#121212",
+      "primaryDim": "#363636",
+      "secondary": "#5a5a5a",
+      "secondaryDim": "#727272",
+      "accent": "#346eb7",
+      "accentDim": "#326891",
+      "positive": "#267c30",
+      "negative": "#a90111",
+      "breaking": "#d0021b",
+      "placeholder": "#8b8b8b"
+    },
+    "stroke": {
+      "primary": "#121212",
+      "secondary": "#959595",
+      "tertiary": "#dfdfdf"
+    },
+    "background": {
+      "primary": "#fff",
+      "secondary": "#f8f8f8",
+      "tertiary": "#ebebeb",
+      "highlight": "#fefad1",
+      "scrim": "#12121299",
+      "elevated": "#fff"
+    },
+    "colorAlias": {
+      "backgroundElevated": "#fff",
+      "backgroundPrimary": "#fff",
+      "backgroundQuaternary": "#c7c7c7",
+      "backgroundSecondary": "#f8f8f8",
+      "backgroundTertiary": "#ebebeb",
+      "backgroundInversePrimary": "#121212",
+      "backgroundInverseSecondary": "#363636",
+      "backgroundOverlay": "#121212",
+      "contentPrimary": "#121212",
+      "contentSecondary": "#363636",
+      "contentTertiary": "#5a5a5a",
+      "contentQuaternary": "#727272",
+      "contentQuintary": "#8b8b8b",
+      "contentInversePrimary": "#fff",
+      "overlayBlack": "#000",
+      "signalAccent": "#2671dc",
+      "signalBreaking": "#d0021b",
+      "signalDeveloping": "#e6540a",
+      "signalEditorial": "#326891",
+      "signalHighlight": "#fefad1",
+      "signalNegative": "#a90111",
+      "signalPositive": "#267c30",
+      "strokePrimary": "#121212",
+      "strokeSecondary": "#8b8b8b",
+      "strokeTertiary": "#c7c7c7",
+      "strokeQuaternary": "#dfdfdf",
+      "strokeInversePrimary": "#fff",
+      "staticWhite": "#fff",
+      "staticGray100": "#000"
+    }
+  },
+  "declaredDarkPairs": {
+    "note": "From --tpl-color-*-always-dark. Not painted on these pages. html carried tpl-always-light.",
+    "contentPrimary": "#f8f8f8",
+    "contentPrimaryDim": "#dfdfdf",
+    "contentSecondary": "#bbb",
+    "contentSecondaryDim": "#a3a3a3",
+    "contentAccent": "#6ba1dd",
+    "contentAccentDim": "#7ca7c8",
+    "contentPositive": "#63a859",
+    "contentNegative": "#ea7980",
+    "contentBreaking": "#e14e5b",
+    "backgroundPrimary": "#121212",
+    "backgroundSecondary": "#2a2a2a",
+    "backgroundTertiary": "#424242",
+    "backgroundHighlight": "#35352f",
+    "backgroundElevated": "#2a2a2a",
+    "strokePrimary": "#f8f8f8",
+    "strokeTertiary": "#424242"
+  },
+  "type": {
+    "families": {
+      "cheltenham": "nyt-cheltenham, cheltenham-fallback-georgia, cheltenham-fallback-noto, georgia, \"times new roman\", times, serif",
+      "cheltenhamSmall": "nyt-cheltenham-small, georgia, \"times new roman\", times, serif",
+      "cheltenhamCond": "nyt-cheltenham-cond, georgia, \"times new roman\", times, serif",
+      "franklin": "nyt-franklin, helvetica, arial, sans-serif",
+      "imperial": "nyt-imperial, georgia, \"times new roman\", times, serif",
+      "karnak": "nyt-karnak, georgia, \"times new roman\", times, serif"
+    },
+    "weights": {
+      "ultraLight": "100",
+      "thin": "200",
+      "light": "300",
+      "regular": "400",
+      "medium": "500",
+      "semiBold": "600",
+      "bold": "700",
+      "extraBold": "800",
+      "black": "900"
+    },
+    "roles": {
+      "labelRegular": "500 .6875rem/1.25 nyt-franklin, helvetica, arial, sans-serif",
+      "labelLetterSpacing": ".1em",
+      "labelTransform": "uppercase",
+      "body14": "400 .875rem/1.39 nyt-imperial, georgia, \"times new roman\", times, serif",
+      "body16": "400 1rem/1.39 nyt-imperial, georgia, \"times new roman\", times, serif",
+      "body20": "400 1.25rem/1.5 nyt-imperial, georgia, \"times new roman\", times, serif",
+      "headlineNews22": "700 1.375rem/1.15 nyt-cheltenham, cheltenham-fallback-georgia, cheltenham-fallback-noto, georgia, \"times new roman\", times, serif",
+      "headlineFeature24": "300 1.5rem/1.15 nyt-cheltenham, cheltenham-fallback-georgia, cheltenham-fallback-noto, georgia, \"times new roman\", times, serif",
+      "text16": "500 1rem/1.3 nyt-franklin, helvetica, arial, sans-serif",
+      "title16": "600 1rem/1.3 nyt-franklin, helvetica, arial, sans-serif"
+    }
+  },
+  "space": {
+    "0-5": ".25rem",
+    "1": ".5rem",
+    "1-5": ".75rem",
+    "2": "1rem",
+    "3": "1.5rem",
+    "4": "2rem",
+    "5": "2.5rem",
+    "6": "3rem",
+    "8": "4rem",
+    "10": "5rem"
+  },
+  "border": {
+    "1": ".0625rem",
+    "2": ".125rem",
+    "3": ".1875rem"
+  },
+  "rule": {
+    "horizontalPrimary": ".125rem solid #121212",
+    "horizontalSecondary": ".0625rem solid #121212",
+    "horizontalTertiary": ".0625rem solid #dfdfdf"
+  },
+  "button": {
+    "contentColor": "#121212",
+    "borderColor": "#121212",
+    "borderWidth": "1px",
+    "backgroundColor": "#fff",
+    "backgroundColorPressed": "#121212",
+    "backgroundOpacity": "0%",
+    "backgroundOpacityPressed": "12%",
+    "opacityDisabled": "40%",
+    "shape": "3px",
+    "standardHeight": "44px",
+    "compactHeight": "32px",
+    "expandedHeight": "56px",
+    "extraCompactHeight": "24px",
+    "emphasisContent": "#f8f8f8",
+    "emphasisBackground": "#121212",
+    "emphasisBackgroundOpacity": "100%",
+    "emphasisBackgroundOpacityPressed": "80%",
+    "iconShape": "9999px",
+    "iconBorder": "#dfdfdf"
+  },
+  "dialog": {
+    "background": "#fff",
+    "backdrop": "#12121299",
+    "titleColor": "#121212",
+    "descriptionColor": "#5a5a5a",
+    "maxWidth": "536px",
+    "padding": "2rem",
+    "cornerRadius": "3px",
+    "shadow": "0px 0px 5px #00000026"
+  },
+  "toast": {
+    "background": "#f8f8f8",
+    "content": "#121212",
+    "shape": "3px",
+    "minHeight": "56px",
+    "maxWidth": "400px",
+    "paddingHorizontal": "1rem",
+    "paddingVertical": ".75rem"
+  },
+  "tile": {
+    "background": "#fff",
+    "border": "#dfdfdf",
+    "borderWidth": "1px",
+    "cornerRadius": "0px",
+    "padding": ".5rem"
+  }
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teal style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+}
+[data-mode="app"] {
+/*APP*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--light-color-page); color: var(--light-color-ink); font: 400 16px/20.8px var(--core-font-marketing); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+h1 { font: 600 40px/40px var(--core-font-marketing); letter-spacing: -1px; margin: 0; }
+h2 { font: 600 24px/32px var(--core-font-marketing); margin: 40px 0 12px; }
+button.theme { margin-left: auto; height: 41px; padding: 10px 24px; border-radius: 100px; border: 1px solid var(--light-color-loginBorder); background: var(--light-color-surface); color: var(--light-color-loginBorder); font: 500 15px/20px var(--core-font-marketing); cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 56px; border-radius: 16px; border: 1px solid var(--light-color-border); }
+.sw b, .sw span { display: block; font-size: 12px; line-height: 16px; }
+.sw span { color: var(--light-color-muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.btn.primary { height: 53px; padding: 16px 32px; border-radius: 100px; background: var(--light-color-yellow); color: var(--light-color-onYellow); font: 600 20px/20.8px var(--core-font-marketing); letter-spacing: -0.4px; }
+.btn.header { height: 41px; padding: 10px 24px; border-radius: 100px; background: var(--light-color-yellow); color: var(--light-color-onYellowHeader); font: 500 15px/20.8px var(--core-font-marketing); }
+.btn.outline { height: 43px; padding: 10px 24px; border-radius: 100px; background: var(--light-color-surface); color: var(--light-color-loginBorder); border: 1px solid var(--light-color-loginBorder); font: 500 15px/20.8px var(--core-font-marketing); }
+.field { width: 384px; height: 36px; padding: 8px 12px; border-radius: 3px; border: 0.5px solid #cccccc; font: 400 14px/20px var(--core-font-app); }
+[data-mode="app"] body { font-family: var(--core-font-app); color: var(--app-color-ink); }
+.note { max-width: 64ch; color: var(--light-color-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Teal</h1>
+  <button class="theme" type="button" id="theme">App tokens</button>
+</header>
+<p class="note">Public marketing colours and the signed-out app colours, from live computed styles on 2026-11-19. The toggle swaps the swatch set. It does not invent a dark theme.</p>
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+<h2>Controls</h2>
+<div class="row">
+  <a class="btn primary">Build My Resume</a>
+  <a class="btn header">Sign up</a>
+  <a class="btn outline">Log in</a>
+</div>
+<h2>App field</h2>
+<input class="field" placeholder="Email" readonly>
+</div>
+<script>
+const T = /*TOKENS*/null;
+const light = [
+  ["page", "--light-color-page"],
+  ["surface", "--light-color-surface"],
+  ["ink", "--light-color-ink"],
+  ["yellow", "--light-color-yellow"],
+  ["teal", "--light-color-teal"],
+  ["purple", "--light-color-purple"],
+  ["pheasant", "--light-color-pheasant"],
+  ["border", "--light-color-border"]
+];
+const app = [
+  ["page", "--app-color-page"],
+  ["ink", "--app-color-ink"],
+  ["muted", "--app-color-muted"],
+  ["brand", "--app-color-brand"],
+  ["accent", "--app-color-accent"],
+  ["linkedin", "--app-color-linkedin"],
+  ["border", "--app-color-border"],
+  ["focus", "--app-color-focusRing"]
+];
+function paint(rows) {
+  const box = document.getElementById("swatches");
+  box.innerHTML = rows.map(([name, v]) => `<div class="sw"><i style="background:var(${v})"></i><b>${name}</b><span>${v}</span></div>`).join("");
+}
+paint(light);
+document.getElementById("theme").onclick = () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "app" ? "light" : "app";
+  html.setAttribute("data-mode", next);
+  paint(next === "app" ? app : light);
+};
+</script>
+</body>
+</html>

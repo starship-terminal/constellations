@@ -1,0 +1,7 @@
+{
+  "url": "https://login.synthesia.io/",
+  "title": "Sign in",
+  "text": "Welcome to Synthesia Email Continue with email OR Continue with Google Don't have an account? Sign up Terms of Service and Privacy Policy",
+  "challenge": false,
+  "note": "Loaded signed out. The query string was removed before commit. Nothing typed or submitted. Controls seen: email field, Continue with email, Continue with Google, Sign up."
+}

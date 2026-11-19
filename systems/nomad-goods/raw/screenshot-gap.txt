@@ -1,0 +1,7 @@
+Preview snapshot failed twice on 2026-11-19.
+
+Tab: https://nomadgoods.com/sg/ then https://nomadgoods.com/sg/pages/about
+Error: Preview automation snapshot failed: The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again.
+
+No PNG was written. Computed styles in readings.json were kept.
+The catalog cover points at icon.png because preview.cover must exist and no page frame was produced.

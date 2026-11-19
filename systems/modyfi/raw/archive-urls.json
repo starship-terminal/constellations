@@ -1,0 +1,65 @@
+{
+  "captured": "2026-11-19",
+  "live": "webflow-404",
+  "pages": {
+    "home": {
+      "url": "https://web.archive.org/web/20250219221151/https://www.modyfi.com/",
+      "ok": true,
+      "title": "Modyfi - Design without limits"
+    },
+    "about": {
+      "url": "https://web.archive.org/web/20241210063443/https://www.modyfi.com/about",
+      "ok": true,
+      "title": "About"
+    },
+    "modifiers": {
+      "url": "https://web.archive.org/web/20250416105018/https://www.modyfi.com/modifiers",
+      "ok": true,
+      "title": "Modifiers - Modyfi"
+    },
+    "contact": {
+      "url": "https://web.archive.org/web/20241111015058/https://www.modyfi.com/contact",
+      "ok": true,
+      "title": "Contact Modyfi - Let's talk.."
+    },
+    "privacy": {
+      "url": "https://web.archive.org/web/20241210053539/https://www.modyfi.com/privacy",
+      "ok": false
+    },
+    "roadmap": {
+      "url": "https://web.archive.org/web/20250326115027/https://www.modyfi.com/roadmap",
+      "ok": true,
+      "title": "Roadmap"
+    },
+    "opportunities": {
+      "url": "https://web.archive.org/web/20250415063401/https://www.modyfi.com/opportunities",
+      "ok": true,
+      "title": "Opportunities"
+    },
+    "made-with": {
+      "url": "https://web.archive.org/web/20250512130342/https://www.modyfi.com/made-with-modyfi",
+      "ok": true,
+      "title": "Made with Modyfi"
+    },
+    "joining": {
+      "url": "https://web.archive.org/web/20250415033856/https://www.modyfi.com/post/modyfi-joining-figma",
+      "ok": true,
+      "title": "Internet Archive: Temporarily Offline"
+    },
+    "mobile-home": {
+      "url": "https://web.archive.org/web/20250219221151/https://www.modyfi.com/",
+      "ok": false,
+      "error": "Screenshot dimension mismatch: PNG 780x1688, expected 390x844"
+    },
+    "mobile-about": {
+      "url": "https://web.archive.org/web/20241210063443/https://www.modyfi.com/about",
+      "ok": false,
+      "error": "Screenshot dimension mismatch: PNG 780x1688, expected 390x844"
+    },
+    "mobile-modifiers": {
+      "url": "https://web.archive.org/web/20250416105018/https://www.modyfi.com/modifiers",
+      "ok": false,
+      "error": "Screenshot dimension mismatch: PNG 780x1688, expected 390x844"
+    }
+  }
+}

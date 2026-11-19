@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TravelPerk style guide</title>
+<style>
+  :root {
+    --page: #f5f5eb;
+    --surface: #f5f5eb;
+    --paper: #fafaf5;
+    --action: #beff50;
+    --ink: #14140f;
+    --muted: #6e6e64;
+    --quiet: #919183;
+    --stroke: #d2d2c8;
+    --white: #ffffff;
+    --negative: #d20f46;
+    --pink: #fab9fa;
+    --cyan: #82dcfa;
+    --orange: #ff8c5f;
+    --purple: #c8a0ff;
+    --sans: OTSono, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    --ui: "Perk Sans", -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 24px; font-weight: 400; }
+  header { padding: 64px 40px 32px; }
+  h1 { font-size: 60px; line-height: 60px; font-weight: 500; letter-spacing: -0.03em; margin: 0 0 12px; }
+  header p { max-width: 640px; color: var(--muted); font-size: 18px; line-height: 24px; }
+  main { padding: 8px 40px 80px; max-width: 1100px; }
+  h2 { font-size: 28px; line-height: 32px; font-weight: 500; letter-spacing: -0.02em; margin: 36px 0 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 148px; background: var(--white); border-radius: 18px; overflow: hidden; }
+  .swatch i { display: block; height: 72px; }
+  .swatch span { display: block; padding: 8px 10px 12px; font-size: 14px; line-height: 18px; }
+  .swatch code { font-size: 12px; color: var(--muted); }
+  .specimen { background: var(--white); border-radius: 28px; padding: 32px; margin: 8px 0; }
+  .display { font-size: 80px; line-height: 72px; font-weight: 500; letter-spacing: -0.03em; margin: 0; }
+  .btn { display: inline-flex; align-items: center; height: 40px; padding: 16px 12px 16px 16px; border-radius: 26px; border: 1px solid transparent; background: var(--action); color: var(--ink); font: 400 16px/24px var(--sans); text-decoration: none; }
+  .btn.ghost { background: transparent; border-color: var(--ink); }
+  .plan { width: 280px; background: var(--surface); border-radius: 28px; padding: 32px; }
+  .plan strong { display: block; font-size: 40px; line-height: 42px; font-weight: 500; letter-spacing: -0.03em; }
+  .plan em { display: block; font-style: normal; font-size: 60px; line-height: 60px; font-weight: 500; letter-spacing: -0.03em; margin: 12px 0; }
+  .plan p { color: var(--muted); font-size: 18px; line-height: 24px; margin: 0; }
+  .login { background: var(--white); border-radius: 8px; padding: 32px; max-width: 448px; font-family: var(--ui); }
+  .login h3 { font-family: var(--ui); font-size: 20px; line-height: 24px; font-weight: 400; margin: 0 0 16px; }
+  .login label { display: block; font-size: 16px; line-height: 24px; margin-bottom: 4px; }
+  .field { height: 44px; width: 100%; border-radius: 8px; border: 2px solid var(--ink); padding: 0 8px 0 10px; font: 400 16px/24px var(--ui); }
+  .error { color: var(--negative); font-size: 16px; margin: 8px 0 0; }
+  .signin { margin-top: 16px; height: 44px; width: 100%; border-radius: 8px; border: 1px solid var(--ink); background: var(--ink); color: var(--white); font: 500 16px/24px var(--ui); }
+  .sso { margin-top: 8px; height: 44px; width: 100%; border-radius: 8px; border: 1px solid var(--ink); background: transparent; color: var(--ink); font: 500 16px/24px var(--ui); }
+  .note { color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>TravelPerk</h1>
+  <p>Public marketing at perk.com, measured 19 November 2026. Light only. The signed-in product was not opened. OTSono is not on this machine, so specimens fall back to the system sans.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#f5f5eb"></i><span>Page and card<br><code>#f5f5eb</code></span></div>
+    <div class="swatch"><i style="background:#fafaf5"></i><span>Paper<br><code>#fafaf5</code></span></div>
+    <div class="swatch"><i style="background:#beff50"></i><span>Perk<br><code>#beff50</code></span></div>
+    <div class="swatch"><i style="background:#14140f"></i><span>Off-black<br><code>#14140f</code></span></div>
+    <div class="swatch"><i style="background:#6e6e64"></i><span>Muted text<br><code>#6e6e64</code></span></div>
+    <div class="swatch"><i style="background:#919183"></i><span>Quiet border<br><code>#919183</code></span></div>
+    <div class="swatch"><i style="background:#ffffff"></i><span>Login page<br><code>#ffffff</code></span></div>
+    <div class="swatch"><i style="background:#d20f46"></i><span>Error<br><code>#d20f46</code></span></div>
+    <div class="swatch"><i style="background:#fab9fa"></i><span>Pink<br><code>#fab9fa</code></span></div>
+    <div class="swatch"><i style="background:#82dcfa"></i><span>Cyan<br><code>#82dcfa</code></span></div>
+    <div class="swatch"><i style="background:#ff8c5f"></i><span>Orange<br><code>#ff8c5f</code></span></div>
+    <div class="swatch"><i style="background:#c8a0ff"></i><span>Purple<br><code>#c8a0ff</code></span></div>
+  </div>
+  <h2>Type</h2>
+  <div class="specimen">
+    <p class="display">Automate travel</p>
+    <p class="note">Display 80/72, weight 500, tracking -0.03em. Phone heading is 36/38.</p>
+  </div>
+  <h2>Buttons</h2>
+  <p>
+    <a class="btn" href="#buttons">Book a demo</a>
+    <a class="btn ghost" href="#buttons">Explore our product</a>
+  </p>
+  <p class="note">40px tall at desktop, 48px at 390. Radius 26px. Transition 200ms ease-in-out.</p>
+  <h2>Plan card</h2>
+  <div class="plan">
+    <strong>Premium</strong>
+    <em>$6</em>
+    <p>Starting at, per active user. Padding 32px, radius 28px.</p>
+  </div>
+  <h2>Login boundary</h2>
+  <div class="login">
+    <h3>Sign in</h3>
+    <label>Email</label>
+    <input class="field" type="email" placeholder="someone@company.com" disabled>
+    <p class="error">An unexpected error occurred. Please try again.</p>
+    <button class="signin" type="button">Sign in</button>
+    <button class="sso" type="button">Sign in with SSO</button>
+  </div>
+  <p class="note">Perk Sans, 8px radius, 44px controls. The field was left empty. SSO was not opened.</p>
+</main>
+</body>
+</html>

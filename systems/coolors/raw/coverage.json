@@ -1,0 +1,21 @@
+{
+  "product": "Coolors",
+  "domain": "coolors.co",
+  "capturedAt": "2026-11-18",
+  "route": "public-web",
+  "verdict": "blocked",
+  "viewportsRequested": [
+    {"name": "desktop", "width": 1440, "height": 900},
+    {"name": "mobile", "width": 390, "height": 844}
+  ],
+  "viewportsMeasured": [],
+  "themesObserved": [],
+  "note": "The desktop probe never left the Cloudflare challenge, so the mobile 390x844 pass was not started. No CSS viewport of Coolors was measured. The screenshot in screenshots/ is a labelled record of that block, not a live product paint.",
+  "checklist": {
+    "foundations": "not captured: no stylesheet loaded",
+    "components": "not captured: see components.md",
+    "patterns": "not captured: see patterns.md",
+    "themes": "not observed",
+    "widths": "desktop probe blocked; mobile pass not started"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-18T20:52:42.837Z",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "source": "https://x.com/en/privacy",
+  "title": "X Privacy Policy",
+  "note": "viewport screenshot, not full page. T3 preview frames were unavailable. Public page already loaded in the preview browser without a Cloudflare challenge."
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-18T17:50:26.738Z",
+  "screenshot": "field-email-focus.png",
+  "sanitizedSourceUrl": "https://app.pop.site/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "light dark"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 900
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "clip",
+    "scale": "device",
+    "clip": {
+      "x": 534,
+      "y": 315.921875,
+      "width": 372,
+      "height": 54
+    }
+  },
+  "png": {
+    "width": 744,
+    "height": 108
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 744,
+      "height": 108
+    },
+    "basis": "clip"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
+}

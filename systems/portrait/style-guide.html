@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portrait style guide</title>
+<style>
+  :root {
+    --page: #f7f7f7;
+    --surface: #ffffff;
+    --text: #353535;
+    --heading: #08304c;
+    --muted: #585858;
+    --quiet: #797979;
+    --fill: #2c2c2c;
+    --border: #dedede;
+    --info: #dff3ff;
+    --info-text: #084e72;
+    --warn: #ffebd6;
+    --warn-text: #bd6100;
+    --focus: #e59700;
+  }
+  [data-mode="dark"] {
+    --page: #141414;
+    --surface: #141414;
+    --text: #ffffff;
+    --muted: #c7c7c7;
+    --quiet: #9f9f9f;
+    --border: #ffffff1f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-size: 31px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; color: var(--heading); margin: 0 0 8px; }
+  h2 { font-size: 20px; font-weight: 500; color: var(--heading); margin: 32px 0 12px; }
+  p { max-width: 68ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .swatch { width: 72px; height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+  button, .pill { border: 0; border-radius: 9999px; font: 540 16px/1 ui-sans-serif, system-ui, sans-serif; }
+  .primary { background: var(--fill); color: #fff; height: 44px; padding: 0 20px; }
+  .signup { background: #fff; color: var(--fill); height: 36px; padding: 0 16px; box-shadow: 0 0 0 3px #26c0ff; }
+  .quiet { background: transparent; color: var(--muted); height: 36px; padding: 0 16px; }
+  .badge { background: var(--info); color: var(--info-text); border-radius: 9999px; padding: 0 10px; height: 24px; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; }
+  .badge.warn { background: var(--warn); color: var(--warn-text); border-radius: 4px; height: 18px; font-size: 11px; font-weight: 500; }
+  input { height: 50px; border-radius: 25px; border: 1px solid #ebebeb; padding: 0 16px; font: 14px/1 ui-sans-serif, system-ui, sans-serif; color: #4d4d4d; }
+  .note { font-size: 13px; color: var(--quiet); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Portrait</h1>
+  <p>Measured from portrait.so on 2026-11-19. Basier Circle and Switzer are not loaded here. The system faces stand in.</p>
+  <p><button type="button" onclick="document.documentElement.toggleAttribute('data-mode')">Toggle dark page colour</button></p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch" style="background:#f7f7f7" title="page"></div>
+    <div class="swatch" style="background:#ffffff" title="surface"></div>
+    <div class="swatch" style="background:#353535" title="text"></div>
+    <div class="swatch" style="background:#08304c" title="heading"></div>
+    <div class="swatch" style="background:#2c2c2c" title="fill"></div>
+    <div class="swatch" style="background:#26c0ff" title="brand blue 400"></div>
+    <div class="swatch" style="background:#e600c2" title="brand pink 600"></div>
+    <div class="swatch" style="background:#ff494e" title="brand red 500"></div>
+    <div class="swatch" style="background:#ffa13e" title="brand orange 500"></div>
+    <div class="swatch" style="background:#00cc3d" title="brand green 600"></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary" type="button">Create your Portrait</button>
+    <button class="signup" type="button">Sign up</button>
+    <button class="quiet" type="button">Log in</button>
+    <span class="badge">New</span>
+    <span class="badge warn">NEW</span>
+  </div>
+  <p class="note">Focus outline on Log in was #e59700, with outline-style none.</p>
+  <h2>Field</h2>
+  <input placeholder="your@email.com" aria-label="Email">
+</main>
+</body>
+</html>

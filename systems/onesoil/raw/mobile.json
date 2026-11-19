@@ -1,0 +1,57 @@
+{
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "vv": {
+    "w": 390,
+    "h": 844,
+    "scale": 1
+  },
+  "h1": {
+    "size": "36px",
+    "lh": "37.8px",
+    "ls": "-1.44px",
+    "color": "rgb(21, 21, 21)"
+  },
+  "headerH": 120,
+  "headerPad": "0px 24px",
+  "burger": [
+    {
+      "text": "EN",
+      "aria": "EN",
+      "w": 110,
+      "h": 48
+    },
+    {
+      "text": "",
+      "aria": "Open menu",
+      "w": 48,
+      "h": 48
+    },
+    {
+      "text": "Products",
+      "aria": null,
+      "w": 0,
+      "h": 0
+    },
+    {
+      "text": "Solutions",
+      "aria": null,
+      "w": 0,
+      "h": 0
+    },
+    {
+      "text": "Company",
+      "aria": null,
+      "w": 0,
+      "h": 0
+    },
+    {
+      "text": "EN",
+      "aria": "EN",
+      "w": 0,
+      "h": 0
+    }
+  ],
+  "scrollH": 6690
+}

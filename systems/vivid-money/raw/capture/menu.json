@@ -1,0 +1,40 @@
+{
+  "panel": [
+    {
+      "text": "EXPENSE MANAGEMENT Corporate cards Team ",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(125, 51, 246)",
+      "radius": "12px",
+      "shadow": "rgba(0, 0, 0, 0.08) 0px 8px 32px 0px",
+      "size": "15px",
+      "weight": "400",
+      "pad": "24px",
+      "w": 1152,
+      "h": 704
+    },
+    {
+      "text": "",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(125, 51, 246)",
+      "radius": "12px",
+      "shadow": "rgba(0, 0, 0, 0.08) 0px 8px 32px 0px",
+      "size": "15px",
+      "weight": "400",
+      "pad": "24px",
+      "w": 1152,
+      "h": 276
+    },
+    {
+      "text": "",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(125, 51, 246)",
+      "radius": "12px",
+      "shadow": "rgba(0, 0, 0, 0.08) 0px 8px 32px 0px",
+      "size": "15px",
+      "weight": "400",
+      "pad": "24px",
+      "w": 1152,
+      "h": 236
+    }
+  ]
+}

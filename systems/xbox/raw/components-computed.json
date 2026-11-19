@@ -1,0 +1,100 @@
+{
+  "viewportPreview": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "dpr": 2
+  },
+  "screenshots": {
+    "desktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1
+    },
+    "phone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1
+    }
+  },
+  "components": {
+    "headerDark": {
+      "bg": "rgb(27, 29, 27)",
+      "color": "rgb(255, 255, 255)",
+      "height": 54,
+      "fontSize": 16,
+      "source": "header.uhf-theme--dark on home"
+    },
+    "navButton": {
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "13px",
+      "pad": "1px 8px",
+      "height": 54,
+      "radius": "0px",
+      "weight": 400
+    },
+    "ctaHeavy": {
+      "bg": "rgb(155, 240, 11)",
+      "color": "rgb(5, 75, 22)",
+      "font": "SegoeProBlack",
+      "size": "15px",
+      "weight": 900,
+      "pad": "5px 20px 5px 22px",
+      "height": 32,
+      "radius": "0px",
+      "transition": "all 0.2s ease-in-out",
+      "hoverComputed": "unchanged on the live hero CTA"
+    },
+    "ctaLight": {
+      "bg": "transparent",
+      "color": "rgb(255, 255, 255) or rgb(16, 124, 16) or rgb(155, 240, 11) by modifier",
+      "size": "15px",
+      "weight": 900,
+      "height": 41,
+      "radius": "0px"
+    },
+    "badge": {
+      "bg": "rgb(255, 216, 0)",
+      "color": "rgb(0, 0, 0)",
+      "size": "13px",
+      "weight": 700,
+      "ls": "0.975px",
+      "pad": "0px 7px 1px",
+      "height": 18,
+      "radius": "0px"
+    },
+    "footer": {
+      "bg": "rgb(242, 242, 242)",
+      "color": "rgb(97, 97, 97)",
+      "linkSize": "11px"
+    },
+    "searchCard": {
+      "bg": "rgb(249, 249, 249)",
+      "color": "rgb(61, 70, 90)",
+      "radius": "4px",
+      "shadow": "0 1px 2px rgba(0,0,0,.11), 0 3px 7px rgba(0,0,0,.13)",
+      "width": 176
+    },
+    "buyNowSearch": {
+      "border": "2px solid rgb(255, 255, 255)",
+      "color": "rgb(61, 70, 90)",
+      "radius": "4px",
+      "height": 40,
+      "pad": "0px 8px"
+    },
+    "productTitle": {
+      "font": "Bahnschrift Light",
+      "size": "40px",
+      "weight": 400,
+      "color": "rgb(255, 255, 255)"
+    },
+    "getGamePass": {
+      "fillSampled": "#008746",
+      "note": "painted in screenshots; live preview DOM had not painted the control"
+    },
+    "buyButton": {
+      "fillSampled": "#484e58",
+      "label": "white",
+      "note": "sampled from product-light-phone.png"
+    }
+  }
+}

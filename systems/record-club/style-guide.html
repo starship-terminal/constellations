@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Record Club style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #fafafa;
+    --text: #2c2a25;
+    --muted: rgba(55, 53, 47, 0.65);
+    --accent: #121212;
+    --accent-text: #fcfcfc;
+    --border: #e5e5e5;
+    --brand: #6e36ff;
+    --field: #f2f2f2;
+    --footer: #f5f5f5;
+  }
+  [data-mode="dark"] {
+    --page: #171717;
+    --surface: #171717;
+    --text: #eeeeee;
+    --muted: #999999;
+    --accent: #ffffff;
+    --accent-text: #111111;
+    --border: #2d2d2d;
+    --brand: #ab68ff;
+    --field: #484848;
+    --footer: #171717;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/22.5px "GT America", -apple-system, system-ui, sans-serif; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+  header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 32px; }
+  h1 { font: 700 44px/48.4px GTFAdieu, "GT America", sans-serif; letter-spacing: -0.44px; margin: 0; }
+  h2 { font: 500 24px/28.8px "GT America", sans-serif; letter-spacing: -0.48px; margin: 40px 0 12px; }
+  p { color: var(--muted); max-width: 68ch; }
+  button.theme { margin-left: auto; background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font: inherit; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .sw { border: 1px solid var(--border); border-radius: 9px; overflow: hidden; }
+  .sw i { display: block; height: 56px; }
+  .sw span { display: block; padding: 8px 10px; font-size: 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; border: 1.5px solid transparent; text-decoration: none; }
+  .btn-primary { background: var(--accent); color: var(--accent-text); height: 50px; padding: 0 24px; font-size: 17px; letter-spacing: -0.238px; }
+  .btn-neutral { background: transparent; color: var(--text); height: 33px; padding: 7.5px 10px; border-radius: 7px; font-size: 15px; }
+  .field { background: var(--field); color: var(--text); border: 0; border-radius: 7px; height: 46px; padding: 6.5px 18px; font: inherit; width: 280px; }
+  .radii span { display: inline-block; width: 64px; height: 40px; border: 1px solid var(--border); margin-right: 8px; }
+  code { font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Record Club</h1>
+    <button class="theme" type="button" id="theme">Dark</button>
+  </header>
+  <p>Measured signed-out values from record.club on 2026-11-19. GT America and GTFAdieu are proprietary and are not loaded here. No screenshots were captured.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Type</h2>
+  <p style="font: 700 44px/48.4px GTFAdieu, sans-serif; letter-spacing: -0.44px; color: var(--text);">Display 44 / 700</p>
+  <p style="font: 400 20px/28.88px sans-serif; color: var(--muted);">Lede 20 / 400, muted.</p>
+  <p style="font: 400 15px/22.5px sans-serif; color: var(--text);">Body 15 / 22.5.</p>
+  <h2>Buttons and field</h2>
+  <div class="row">
+    <a class="btn btn-primary">Create free account</a>
+    <a class="btn btn-neutral">Browse</a>
+    <input class="field" placeholder="Enter your email address" aria-label="Email">
+  </div>
+  <h2>Radius</h2>
+  <div class="radii">
+    <span style="border-radius: 4px"></span>
+    <span style="border-radius: 7px"></span>
+    <span style="border-radius: 8px"></span>
+    <span style="border-radius: 9px"></span>
+    <span style="border-radius: 16px"></span>
+  </div>
+  <p>4px artwork, 7px field and neutral button, 8px primary, 9px explore card, 16px bento.</p>
+</div>
+<script>
+const light = [
+  ["Page", "#ffffff"], ["Bento", "#fafafa"], ["Text", "#2c2a25"],
+  ["Heading", "#141414"], ["Muted ink", "#37352f"], ["Primary", "#121212"],
+  ["On primary", "#fcfcfc"], ["Brand", "#6e36ff"], ["Line", "#e5e5e5"],
+  ["Field", "#f2f2f2"], ["Star", "#fcbf49"], ["Focus token", "#71a2f3"]
+];
+const dark = [
+  ["Page", "#171717"], ["Text", "#eeeeee"], ["Muted", "#999999"],
+  ["Primary", "#ffffff"], ["On primary", "#111111"], ["Brand", "#ab68ff"],
+  ["Line", "#2d2d2d"], ["Field", "#484848"], ["Menu", "#262626"],
+  ["Modal", "#1f1f1f"], ["Star", "#f4b12f"], ["Card border", "#3f3f3f"]
+];
+const box = document.getElementById("swatches");
+function paint(rows) {
+  box.innerHTML = rows.map(([n, c]) => `<div class="sw"><i style="background:${c}"></i><span>${n}<br><code>${c}</code></span></div>`).join("");
+}
+paint(light);
+document.getElementById("theme").onclick = () => {
+  const darkOn = document.documentElement.getAttribute("data-mode") === "dark";
+  document.documentElement.setAttribute("data-mode", darkOn ? "light" : "dark");
+  document.getElementById("theme").textContent = darkOn ? "Dark" : "Light";
+  paint(darkOn ? light : dark);
+};
+</script>
+</body>
+</html>

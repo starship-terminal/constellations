@@ -1,0 +1,356 @@
+{
+  "title": "Synthesia Pricing - Compare Free and Paid Plans",
+  "h1": "Pricing that scales with your needs",
+  "cards": [
+    {
+      "cls": "pricing-tabs position-relative w-tabs",
+      "text": "FOR INDIVIDUALS FOR BUSINESS Basic US$0 /month 500 CREDITS / MONTH Get started Free allowance Syren ",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 1216,
+      "h": 7439,
+      "y": 266
+    },
+    {
+      "cls": "pricing-tabs-content w-tab-content",
+      "text": "Basic US$0 /month 500 CREDITS / MONTH Get started Free allowance Syren NEW Share your content online",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 1216,
+      "h": 7311,
+      "y": 394
+    },
+    {
+      "cls": "pricing-grid",
+      "text": "Basic US$0 /month 500 CREDITS / MONTH Get started Free allowance Syren NEW Share your content online",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 1216,
+      "h": 1088,
+      "y": 394
+    },
+    {
+      "cls": "tooltip-container is-pricing-credits",
+      "text": "What are Credits?Credits are now the shared currency across all AI usage-based features - one common",
+      "bg": "rgb(9, 11, 34)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "8px",
+      "shadow": "rgba(16, 24, 40, 0.08) 0px 6px 20px 0px",
+      "w": 0,
+      "h": 0,
+      "y": 0
+    },
+    {
+      "cls": "tooltip-container is-pricing-credits",
+      "text": "What are Credits?Credits are now the shared currency across all AI usage-based features - one common",
+      "bg": "rgb(9, 11, 34)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "8px",
+      "shadow": "rgba(16, 24, 40, 0.08) 0px 6px 20px 0px",
+      "w": 0,
+      "h": 0,
+      "y": 0
+    },
+    {
+      "cls": "pricing-tab-container",
+      "text": "Basic US$0/mo try for free Get started Starter US$18/mo US$216/yr, billed yearly Get started Pro US$",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 1216,
+      "h": 5918,
+      "y": 1787
+    },
+    {
+      "cls": "pricing-table-top _4col",
+      "text": "Basic US$0/mo try for free Get started Starter US$18/mo US$216/yr, billed yearly Get started Pro US$",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 1216,
+      "h": 176,
+      "y": 1787
+    },
+    {
+      "cls": "pricing-col-top",
+      "text": "Basic US$0/mo try for free Get started",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 284.1,
+      "h": 176,
+      "y": 1787
+    },
+    {
+      "cls": "pricing-table_top-content-wrap",
+      "text": "Basic US$0/mo try for free Get started",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 283.1,
+      "h": 176,
+      "y": 1787
+    },
+    {
+      "cls": "pricing-col-top",
+      "text": "Starter US$18/mo US$216/yr, billed yearly Get started",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 284.1,
+      "h": 176,
+      "y": 1787
+    },
+    {
+      "cls": "pricing-table_top-content-wrap",
+      "text": "Starter US$18/mo US$216/yr, billed yearly Get started",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 283.1,
+      "h": 176,
+      "y": 1787
+    },
+    {
+      "cls": "pricing-col-top mobile-border",
+      "text": "Pro US$64/mo US$768/yr, billed yearly Get started",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 284.1,
+      "h": 176,
+      "y": 1787
+    },
+    {
+      "cls": "pricing-table_top-content-wrap is-right",
+      "text": "Pro US$64/mo US$768/yr, billed yearly Get started",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 282.1,
+      "h": 176,
+      "y": 1787
+    },
+    {
+      "cls": "pricing-table-content-wrap mobile-padding-right",
+      "text": "Workspaces Seats 1 editor 1 editor, 3 guests 1 editor, 5 guests Usage limits 10 minutes of video / m",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 1216,
+      "h": 688,
+      "y": 1963
+    },
+    {
+      "cls": "pricing-block-row",
+      "text": "Workspaces",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "12px",
+      "shadow": "none",
+      "w": 1216,
+      "h": 94,
+      "y": 1963
+    },
+    {
+      "cls": "pricing-col-m-sticky",
+      "text": "Workspaces",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 363.7,
+      "h": 94,
+      "y": 1963
+    },
+    {
+      "cls": "pricing-block-content_wrap",
+      "text": "Workspaces",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 339.7,
+      "h": 70,
+      "y": 1975
+    },
+    {
+      "cls": "pricing-col-content",
+      "text": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 284.1,
+      "h": 94,
+      "y": 1963
+    },
+    {
+      "cls": "pricing-col-content",
+      "text": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 284.1,
+      "h": 94,
+      "y": 1963
+    },
+    {
+      "cls": "pricing-col-content",
+      "text": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 284.1,
+      "h": 94,
+      "y": 1963
+    }
+  ],
+  "prices": [
+    {
+      "tag": "H1",
+      "cls": "heading-medium text-color-primary",
+      "text": "Pricing that scales with your needs",
+      "size": "44px",
+      "weight": "500",
+      "color": "rgb(9, 11, 34)"
+    },
+    {
+      "tag": "DIV",
+      "cls": "heading-xsmall text-color-primary",
+      "text": "Basic",
+      "size": "26px",
+      "weight": "500",
+      "color": "rgb(9, 11, 34)"
+    },
+    {
+      "tag": "P",
+      "cls": "heading-xsmall is-regular text-color-primary",
+      "text": "US$0 /month",
+      "size": "26px",
+      "weight": "400",
+      "color": "rgb(9, 11, 34)"
+    },
+    {
+      "tag": "DIV",
+      "cls": "heading-xsmall text-color-primary",
+      "text": "Starter",
+      "size": "26px",
+      "weight": "500",
+      "color": "rgb(9, 11, 34)"
+    },
+    {
+      "tag": "P",
+      "cls": "heading-xsmall is-regular text-color-primary",
+      "text": "US$29 US$14 first month /month",
+      "size": "26px",
+      "weight": "400",
+      "color": "rgb(9, 11, 34)"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "heading-xsmall is-regular text-color-primary",
+      "text": "US$18 /month",
+      "size": "26px",
+      "weight": "400",
+      "color": "rgb(9, 11, 34)"
+    },
+    {
+      "tag": "DIV",
+      "cls": "heading-xsmall text-color-primary z-2",
+      "text": "Pro",
+      "size": "26px",
+      "weight": "500",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "P",
+      "cls": "heading-xsmall is-regular text-color-primary",
+      "text": "US$89 US$49 first month /month",
+      "size": "26px",
+      "weight": "400",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "heading-xsmall is-regular text-color-primary",
+      "text": "US$64 /month",
+      "size": "26px",
+      "weight": "400",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "cls": "heading-medium text-color-primary text-align-center",
+      "text": "Compare plans",
+      "size": "44px",
+      "weight": "500",
+      "color": "rgb(9, 11, 34)"
+    },
+    {
+      "tag": "DIV",
+      "cls": "heading-xsmall text-color-primary z-2",
+      "text": "Business",
+      "size": "26px",
+      "weight": "500",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "P",
+      "cls": "heading-xsmall is-regular text-color-primary",
+      "text": "US$99 US$84 /month",
+      "size": "26px",
+      "weight": "400",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "P",
+      "cls": "heading-xsmall is-regular text-color-primary",
+      "text": "US$99 /month",
+      "size": "26px",
+      "weight": "400",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "DIV",
+      "cls": "heading-small text-color-primary z-2",
+      "text": "Enterprise",
+      "size": "34px",
+      "weight": "500",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "DIV",
+      "cls": "heading-xsmall text-color-primary z-2",
+      "text": "Let's talk.",
+      "size": "26px",
+      "weight": "500",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "cls": "heading-medium text-color-primary text-align-center",
+      "text": "Compare plans",
+      "size": "44px",
+      "weight": "500",
+      "color": "rgb(9, 11, 34)"
+    }
+  ]
+}

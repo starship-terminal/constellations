@@ -1,0 +1,137 @@
+{
+  "source": "getComputedStyle and CSSOM on https://pop.site/ and https://app.pop.site/?signin, 2026-11-19, signed out, light. Viewport 1169x731 in the T3 preview tab (dpr 2) and 1440x900 in headless Chromium (dpr 2).",
+  "marketing": {
+    "note": "Framer hashed tokens on body. Names are the hash. Values are the declared colours.",
+    "selector": "body",
+    "tokens": {
+      "0b12ad74-9094-410e-935d-51b5c5537668": "#3b82f6",
+      "15ca1af0-2da4-4bbd-9f08-3fc0f29b6d8b": "#fff",
+      "fa705767-5e35-486a-bb40-ab4d203a212e": "#fafafc",
+      "a1f53698-a178-4eb8-9899-2999dea13655": "#e3e3e3",
+      "29dd526f-4234-4459-9db5-a1733fe58a26": "#d2d2d7",
+      "66acd1d2-52d6-4a61-bf7e-f53145f51819": "#6e6e73",
+      "4da5a6b8-0988-4de4-b536-2545a7e0ca93": "#171717",
+      "51154332-dea8-4968-a246-7ef834ce1e02": "#478eff",
+      "27624316-603b-43f0-8d23-774029505797": "#2222221a",
+      "a8970b24-0404-4f8d-b99b-2f43e1b745c0": "#ffed90",
+      "72d87fa3-d934-48b4-bf37-ec16b049dabf": "#3b82f6",
+      "57da7360-b622-4a78-9f9e-6ac7cf96d64f": "#00276b",
+      "c3414e66-8414-4267-8f3b-56cf4e74f9a3": "#fff",
+      "6c8d10ba-463b-4990-b64f-32918ca2d4f2": "#fdfdfd",
+      "7e7d9213-6afe-4309-afa8-7dccf478cb0d": "#dedede",
+      "6e6e337d-28cc-44d1-a0da-bb7b5b6c59e1": "#000",
+      "66b6d7ff-ba33-4d69-8906-b2633b6d4a86": "#545454",
+      "4e110321-98f8-47ee-937e-751736baa2db": "gray",
+      "95a8f7e0-de26-4a21-abd8-7324f048c094": "#bdbdbd",
+      "285ef153-d569-42f5-b925-84d6d4b8fa63": "#000",
+      "50035390-3908-4921-abeb-233ceaab1b03": "#000",
+      "778dc32c-fa91-4f86-8154-267d5648c0d5": "#474d50",
+      "271ffd78-22b3-4fe7-958b-4f72926745f7": "#00a8f5"
+    }
+  },
+  "app": {
+    "note": "Radix-style ramps declared on :root, .light, .light-theme. Dark counterparts exist for blue and slate under .dark, .dark-theme and were not applied to the painted page.",
+    "light": {
+      "blue": {
+        "1": "#fbfdff",
+        "2": "#f4faff",
+        "3": "#e6f4fe",
+        "4": "#d5efff",
+        "5": "#c2e5ff",
+        "6": "#acd8fc",
+        "7": "#8ec8f6",
+        "8": "#5eb1ef",
+        "9": "#0090ff",
+        "10": "#0588f0",
+        "11": "#0d74ce",
+        "12": "#113264"
+      },
+      "slate": {
+        "1": "#fcfcfd",
+        "2": "#f9f9fb",
+        "3": "#f0f0f3",
+        "4": "#e8e8ec",
+        "5": "#e0e1e6",
+        "6": "#d9d9e0",
+        "7": "#cdced6",
+        "8": "#b9bbc6",
+        "9": "#8b8d98",
+        "10": "#80838d",
+        "11": "#60646c",
+        "12": "#1c2024"
+      },
+      "grass": {
+        "1": "#fbfefb",
+        "2": "#f5fbf5",
+        "3": "#e9f6e9",
+        "4": "#daf1db",
+        "5": "#c9e8ca",
+        "6": "#b2ddb5",
+        "7": "#94ce9a",
+        "8": "#65ba74",
+        "9": "#46a758",
+        "10": "#3e9b4f",
+        "11": "#2a7e3b",
+        "12": "#203c25"
+      },
+      "amber": {
+        "1": "#fefdfb",
+        "2": "#fefbe9",
+        "3": "#fff7c2",
+        "4": "#ffee9c",
+        "5": "#fbe577",
+        "6": "#f3d673",
+        "7": "#e9c162",
+        "8": "#e2a336",
+        "9": "#ffc53d",
+        "10": "#ffba18",
+        "11": "#ab6400",
+        "12": "#4f3422"
+      },
+      "red": {
+        "1": "#fffcfc",
+        "2": "#fff7f7",
+        "3": "#feebec",
+        "4": "#ffdbdc",
+        "5": "#ffcdce",
+        "6": "#fdbdbe",
+        "7": "#f4a9aa",
+        "8": "#eb8e90",
+        "9": "#e5484d",
+        "10": "#dc3e42",
+        "11": "#ce2c31",
+        "12": "#641723"
+      }
+    },
+    "darkDeclared": {
+      "blue": {
+        "1": "#0d1520",
+        "2": "#111927",
+        "3": "#0d2847",
+        "4": "#003362",
+        "5": "#004074",
+        "6": "#104d87",
+        "7": "#205d9e",
+        "8": "#2870bd",
+        "9": "#0090ff",
+        "10": "#3b9eff",
+        "11": "#70b8ff",
+        "12": "#c2e6ff"
+      },
+      "slate": {
+        "1": "#111113",
+        "2": "#18191b",
+        "3": "#212225",
+        "4": "#272a2d",
+        "5": "#2e3135",
+        "6": "#363a3f",
+        "7": "#43484e",
+        "8": "#5a6169",
+        "9": "#696e77",
+        "10": "#777b84",
+        "11": "#b0b4ba",
+        "12": "#edeef0"
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rox style guide</title>
+<style>
+  :root {
+    --page: #f7f6f4;
+    --surface: #fafafa;
+    --ink: #0c0a09;
+    --muted: #57534d;
+    --action: #0c0a09;
+    --border: #e7e5e4;
+    --field: #f4f4f3;
+    --blue: #0b63e8;
+    --stone-400: #a6a09b;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.4 system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-weight: 420; font-size: 42px; letter-spacing: -0.84px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 20px; font-weight: 500; margin: 40px 0 12px; }
+  p { color: var(--muted); max-width: 62ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border: 1px solid var(--border); }
+  .swatch span { display: block; font-size: 12px; margin-top: 4px; }
+  .swatch code { font-size: 11px; color: var(--muted); }
+  button, .btn { font: 500 16px/16px system-ui, sans-serif; border: 0; border-radius: 0; padding: 12px 24px 13px; cursor: default; }
+  .btn-ink { background: #0c0a09; color: #fafafa; }
+  .btn-paper { background: #fafafa; color: #0c0a09; box-shadow: 0.5px 0.5px 0.5px 0 rgba(255,255,255,.25) inset, -0.5px -0.5px 1px 0 rgba(0,0,0,.12) inset, 1px 1px 2px 0 rgba(0,0,0,.08) inset; }
+  .btn-charcoal { background: #403f3e; color: #fafafa; }
+  .field { background: var(--field); border-radius: 4px; padding: 16px; width: 320px; color: var(--stone-400); font-size: 14px; box-shadow: 0 0.48px 0.48px -1.875px rgba(0,0,0,.08), 0 4px 4px -3px rgba(0,0,0,.03); }
+  .card { background: var(--surface); border: 1px solid #d6d3d1; padding: 24px; width: 280px; }
+  .card strong { font-size: 42px; font-weight: 420; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  .note { font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Rox</h1>
+  <p>Public marketing site, measured 2026-11-19. Light only. Display type on the live site is Season Mix Trial at weight 420. This page uses system-ui because the trial face is not committed.</p>
+
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+
+  <h2>Type</h2>
+  <p class="note">56px display, 42px title, 30px heading, 14px nav at weight 500, 16px button label. See tokens.json core.typography.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="btn-ink">Get in touch</button>
+    <button class="btn-paper">Start now</button>
+    <button class="btn-charcoal">Start for free</button>
+  </div>
+  <p class="note">Marketing buttons are square. Radius 0 was computed on the nav, the plan button and the contact submit.</p>
+
+  <h2>Field</h2>
+  <div class="field">Enter your email</div>
+  <p class="note">Contact field wrapper is #f4f4f3, radius 4px, padding 16px, height 49px.</p>
+
+  <h2>Plan card</h2>
+  <div class="card">
+    <div class="note">INDIVIDUAL</div>
+    <p>starts at</p>
+    <strong>$100</strong>
+    <div style="margin-top:16px"><button class="btn-charcoal">Start for free</button></div>
+  </div>
+
+  <h2>Scales</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td>radius.none</td><td>0px</td></tr>
+    <tr><td>radius.field</td><td>4px</td></tr>
+    <tr><td>radius.auth-control</td><td>10px</td></tr>
+    <tr><td>radius.auth-card</td><td>14px</td></tr>
+    <tr><td>spacing.nav-button</td><td>8px 13px</td></tr>
+    <tr><td>spacing.button</td><td>12px 24px 13px</td></tr>
+    <tr><td>spacing.field</td><td>16px</td></tr>
+    <tr><td>spacing.form-card</td><td>40px</td></tr>
+  </table>
+  <p class="note">Auth radii come from the signed-out Auth0 card, not from the marketing site. There is no dark theme.</p>
+</main>
+<script>
+const chips = [
+  ["page", "#f7f6f4"],
+  ["surface", "#fafafa"],
+  ["ink", "#0c0a09"],
+  ["ink soft", "#1c1917"],
+  ["muted", "#57534d"],
+  ["stone 400", "#a6a09b"],
+  ["field", "#f4f4f3"],
+  ["action", "#403f3e"],
+  ["blue token", "#0b63e8"],
+  ["auth page", "#efedea"],
+  ["auth card", "#fafaf9"],
+  ["error token", "#E38268"]
+];
+const row = document.getElementById("swatches");
+for (const [name, value] of chips) {
+  const el = document.createElement("div");
+  el.className = "swatch";
+  el.innerHTML = `<div class="chip" style="background:${value}"></div><span>${name}</span><code>${value}</code>`;
+  row.appendChild(el);
+}
+</script>
+</body>
+</html>

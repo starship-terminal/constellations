@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-18T20:22:55.448Z",
+  "sanitizedSourceUrl": "https://www.whatsapp.com/download",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "title": "Download WhatsApp",
+    "h1": "Download WhatsApp",
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 2922
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    },
+    "challenge": false
+  },
+  "screenshot": "download-light-full.png",
+  "capture": {
+    "mode": "fullPage",
+    "scale": "css",
+    "clip": null
+  },
+  "png": {
+    "width": 1440,
+    "height": 2922
+  },
+  "dimensionCheck": {
+    "status": "full-page",
+    "expected": {
+      "width": 1440,
+      "height": null
+    },
+    "basis": "css-scale"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents."
+  }
+}

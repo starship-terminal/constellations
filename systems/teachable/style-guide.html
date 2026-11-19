@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teachable style guide</title>
+<style>
+:root {
+  --font-family-heading: Ivyprestoheadline, Georgia, sans-serif;
+  --font-family-body: Peridotpenormvf, Arial, sans-serif;
+  --font-family-accounts: system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-accountsDisplay: Reckless-Light, Palatino, Garamond, Georgia, serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-xbold: 800;
+  --color-brand-yellow: #e6ff32;
+  --color-brand-yellowLight: #f5fad2;
+  --color-brand-blueDark: #1c4774;
+  --color-brand-blueLight: #b6f2e8;
+  --color-brand-gold: #ffd700;
+  --color-brand-greyLight: #f0f0f0;
+  --color-brand-greyMid: #bfbfbf;
+  --color-brand-orangeLight: #fae6b6;
+  --color-brand-redDark: #7f2a23;
+  --color-brand-coolBeige: #f6f2ee;
+  --color-neutral-black: #000000;
+  --color-neutral-white: #ffffff;
+  --color-neutral-n666: #666666;
+  --color-neutral-n444: #444444;
+  --color-neutral-n222: #222222;
+  --color-neutral-n111: #111111;
+  --color-neutral-naaa: #aaaaaa;
+  --color-neutral-nccc: #cccccc;
+  --color-neutral-neee: #eeeeee;
+  --color-neutral-footerLink: #a0a0a0;
+  --color-accounts-ink: #212338;
+  --color-accounts-slate: #6b6d7c;
+  --color-accounts-plumette: #4a4e6d;
+  --color-accounts-greyArea: #e2e2e9;
+  --color-accounts-teachableGreen: #e6ff32;
+  --color-accounts-primary100: #e7ff33;
+  --color-accounts-primary20: #faffd6;
+  --color-accounts-textPrimary: #222222;
+  --color-accounts-textHelper: #646464;
+  --color-accounts-textError: #aa3228;
+  --color-accounts-linePrimary: #e4e4e4;
+  --color-accounts-containerPrimary: #fbfbfb;
+  --color-accounts-blue140: #1c4774;
+  --color-accounts-red140: #7f2a23;
+  --color-accounts-green100: #38ba5f;
+  --radius-pill: 900px;
+  --radius-small: 0.25rem;
+  --radius-medium: 0.6rem;
+  --radius-large: 1rem;
+  --radius-xlarge: 1.5rem;
+  --radius-accountsInput: 5px;
+  --radius-accountsButton: 4px;
+  --radius-planFeatured: 8.98px;
+  --space-xxsmall: 0.25rem;
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 2rem;
+  --space-large: 3rem;
+  --space-xlarge: 4rem;
+  --space-xxlarge: 5rem;
+  --space-huge: 6rem;
+  --space-buttonPadY: 14.9666px;
+  --space-buttonPadX: 22.4499px;
+  --space-accountsInputPadY: 8px;
+  --space-accountsInputPadX: 16px;
+  --space-accountsButtonPadX: 32px;
+  --size-borderThin: 1px;
+  --size-borderNormal: 0.125rem;
+  --size-borderBold: 0.25rem;
+  --size-navHeight: 79px;
+  --size-marqueeHeight: 48px;
+  --size-buttonHeight: 48px;
+  --size-inputHeight: 40px;
+  --size-loginButtonHeight: 38px;
+  --size-formWidth: 420px;
+  --size-containerLarge: 86rem;
+  --size-containerMedium: 68rem;
+  --size-containerSmall: 48rem;
+  --size-mobileNavHeight: 59px;
+  --size-menuButton: 20px;
+  --focus-offset: 0.125rem;
+  --focus-width: 0.125rem;
+  --focus-state: #bfbfbf;
+  --color-bg-page: var(--color-neutral-white);
+  --color-bg-nav: var(--color-neutral-black);
+  --color-bg-footer: var(--color-neutral-black);
+  --color-bg-inverse: var(--color-neutral-black);
+  --color-text-body: var(--color-neutral-black);
+  --color-text-onNav: var(--color-neutral-white);
+  --color-text-onFooter: var(--color-neutral-footerLink);
+  --color-text-muted: var(--color-neutral-n666);
+  --color-text-error: var(--color-brand-redDark);
+  --color-action-fill: var(--color-brand-yellow);
+  --color-action-fillText: var(--color-neutral-black);
+  --color-action-fillBorder: var(--color-neutral-black);
+  --color-action-black: var(--color-neutral-black);
+  --color-action-blackText: var(--color-neutral-white);
+  --color-action-outline: var(--color-neutral-white);
+  --color-action-outlineText: var(--color-neutral-white);
+  --color-action-plan: var(--color-brand-blueDark);
+  --color-action-planText: var(--color-neutral-white);
+  --color-border-default: var(--color-neutral-black);
+  --color-border-onNav: var(--color-neutral-white);
+  --color-accounts-page: var(--color-neutral-white);
+  --color-accounts-text: var(--color-accounts-ink);
+  --color-accounts-label: var(--color-accounts-slate);
+  --color-accounts-input: var(--color-neutral-white);
+  --color-accounts-inputBorder: var(--color-accounts-plumette);
+  --color-accounts-button: var(--color-accounts-teachableGreen);
+  --color-accounts-buttonText: var(--color-accounts-ink);
+  --color-accounts-buttonBorder: var(--color-neutral-black);
+  --component-button-background: var(--color-action-fill);
+  --component-button-text: var(--color-action-fillText);
+  --component-button-radius: 900px;
+  --component-button-padding: 14.9666px;
+  --component-button-height: 48px;
+  --component-nav-background: var(--color-bg-nav);
+  --component-nav-text: var(--color-text-onNav);
+  --component-nav-height: 79px;
+  --component-field-background: var(--color-accounts-input);
+  --component-field-text: var(--color-accounts-text);
+  --component-field-radius: 5px;
+  --component-field-height: 40px;
+  --component-field-padding: 8px;
+  --component-loginButton-background: var(--color-accounts-button);
+  --component-loginButton-text: var(--color-accounts-buttonText);
+  --component-loginButton-radius: 4px;
+  --component-loginButton-height: 38px;
+  --sg-serif: Georgia, "Times New Roman", serif;
+  --sg-sans: Arial, system-ui, sans-serif;
+  --sg-mono: ui-monospace, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg-page); color: var(--color-text-body); font: 400 16px/1.5 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { background: var(--color-bg-nav); color: var(--color-text-onNav); padding: 16px 24px; display: flex; gap: 16px; align-items: center; }
+header a { color: inherit; }
+h1 { font: 400 40px/1 var(--sg-serif); margin: 0 0 8px; }
+h2 { font: 400 32px/1.1 var(--sg-serif); margin: 40px 0 8px; }
+p { max-width: 70ch; }
+code { font-family: var(--sg-mono); font-size: 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+.sw { display: flex; gap: 8px; align-items: center; min-width: 220px; }
+.sw i { width: 36px; height: 36px; border-radius: 8px; box-shadow: inset 0 0 0 1px #0003; display: block; }
+.btn { display: inline-flex; align-items: center; border-radius: var(--component-button-radius); padding: var(--component-button-padding) 22px; background: var(--component-button-background); color: var(--component-button-text); border: 1px solid var(--color-action-fillBorder); font: 600 15px/1 var(--sg-sans); text-decoration: none; }
+.btn.black { background: var(--color-action-black); color: var(--color-action-blackText); border-color: var(--color-action-black); }
+.btn.outline { background: transparent; color: var(--color-action-outlineText); border-color: var(--color-action-outline); }
+.field { width: 280px; height: var(--component-field-height); border-radius: var(--component-field-radius); border: 1px solid var(--color-accounts-inputBorder); padding: var(--component-field-padding) 16px; font: 400 14px/1.5 var(--sg-sans); }
+.login { width: 280px; height: var(--component-loginButton-height); border-radius: var(--component-loginButton-radius); background: var(--component-loginButton-background); color: var(--component-loginButton-text); border: 1px solid var(--color-accounts-buttonBorder); font: 400 14px/1 system-ui, sans-serif; }
+.navdemo { background: var(--component-nav-background); color: var(--component-nav-text); height: var(--component-nav-height); display: flex; align-items: center; gap: 16px; padding: 0 20px; border-radius: 8px; }
+.card { border: 2px solid var(--color-action-plan); border-radius: var(--radius-planFeatured); padding: 16px; width: 240px; }
+.note { color: var(--color-text-muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <strong>Teachable</strong>
+  <span>style guide, light only</span>
+</header>
+<div class="wrap">
+  <h1>Teachable, measured</h1>
+  <p>Values come from <code>tokens.json</code>. The public site is Webflow. The signed-out accounts page is a separate Teachable Accounts stylesheet. Ivypresto Headline, Peridot PE and Reckless are not loaded here. Display type uses Georgia. Body type uses Arial.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--color-bg-page)"></i><span>page<br><code>#ffffff</code></span></div>
+    <div class="sw"><i style="background:var(--color-bg-nav)"></i><span>nav<br><code>#000000</code></span></div>
+    <div class="sw"><i style="background:var(--color-action-fill)"></i><span>accent<br><code>#e6ff32</code></span></div>
+    <div class="sw"><i style="background:var(--color-action-plan)"></i><span>plan<br><code>#1c4774</code></span></div>
+    <div class="sw"><i style="background:var(--color-text-muted)"></i><span>muted<br><code>#666666</code></span></div>
+    <div class="sw"><i style="background:var(--color-accounts-text)"></i><span>accounts ink<br><code>#212338</code></span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font:400 48px/1 var(--sg-serif);margin:0">The future of your education business</p>
+  <p class="note">h1 is Ivypresto Headline 5rem / 1. This line is Georgia.</p>
+  <p style="font:400 19px/1.5 var(--sg-sans)">Body is Peridot PE 1.3rem / 1.5. This line is Arial.</p>
+  <h2>Controls</h2>
+  <div class="navdemo">
+    <span>Pricing</span>
+    <span style="text-decoration:underline">Creator login</span>
+    <a class="btn outline" href="#components">Contact sales</a>
+    <a class="btn" href="#components">Start for free</a>
+  </div>
+  <div class="row">
+    <a class="btn black" href="#components">Explore demo</a>
+    <div class="card"><strong>Builder</strong><p>$69/mo</p><a class="btn" style="background:var(--color-action-plan);color:#fff;border-color:var(--color-action-plan)" href="#components">Try for free</a></div>
+  </div>
+  <h2>Accounts sign-in</h2>
+  <p style="font:400 32px/1.5 Palatino, Georgia, serif;margin:0">Log in to Teachable</p>
+  <div class="row" style="flex-direction:column;align-items:flex-start">
+    <input class="field" placeholder="name@example.com" aria-label="Email">
+    <button class="login" type="button">Log In</button>
+  </div>
+  <p class="note">The accounts button radius is 4px. The marketing pill radius is 900px. They are different controls.</p>
+</div>
+</body>
+</html>

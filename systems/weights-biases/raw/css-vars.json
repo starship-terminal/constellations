@@ -1,0 +1,96 @@
+{
+  "marketing": {
+    "url": "https://wandb.ai/site",
+    "note": "Elementor global tokens declared on the marketing stylesheets. WordPress preset colours are the theme defaults, not the W&B brand, and are listed under wordpressPresets so they are not treated as product roles.",
+    "brand": {
+      "--e-global-color-586eaa9": "#1A1C1F",
+      "--e-global-color-accent": "#00AFC2",
+      "--e-global-color-primary": "#FFFFFF",
+      "--e-global-color-secondary": "#FFCC33",
+      "--e-global-color-text": "#ADB0B5",
+      "--e-global-typography-accent-font-family": "\"Source Sans 3\"",
+      "--e-global-typography-accent-font-size": "16px",
+      "--e-global-typography-accent-font-weight": "400",
+      "--e-global-typography-accent-line-height": "18px",
+      "--e-global-typography-primary-font-family": "\"Source Sans 3\"",
+      "--e-global-typography-primary-font-size": "20px",
+      "--e-global-typography-primary-font-weight": "400",
+      "--e-global-typography-primary-line-height": "28px",
+      "--e-global-typography-secondary-font-family": "\"Source Sans 3\"",
+      "--e-global-typography-secondary-font-size": "20px",
+      "--e-global-typography-secondary-font-weight": "400",
+      "--e-global-typography-text-font-family": "\"Source Sans 3\"",
+      "--e-global-typography-text-font-size": "14px",
+      "--e-global-typography-text-font-weight": "400",
+      "--e-global-typography-text-line-height": "28px",
+      "--container-max-width": "1392px",
+      "--container-default-padding-top": "72px",
+      "--container-default-padding-bottom": "72px"
+    }
+  },
+  "forge": {
+    "url": "https://id.coreweave.com/login?next=%2Fwandb",
+    "note": "276 custom properties on the signed-out Forge login. light-dark() values are the declared form. The page forced color-scheme: light, so computed colours in raw/computed.json are the light side.",
+    "palette": {
+      "--cobalt-700": "#0072eb",
+      "--cobalt-800": "#0541e9",
+      "--moon-50": "#fdfdfd",
+      "--moon-100": "#f8f8f8",
+      "--moon-200": "#e8e8e9",
+      "--moon-250": "#dfe0e2",
+      "--moon-500": "#79808a",
+      "--moon-650": "#4b535c",
+      "--moon-700": "#3f464f",
+      "--moon-800": "#2b3038",
+      "--moon-900": "#1a1d24",
+      "--moon-950": "#171a1f",
+      "--oblivion": "#0d0f12",
+      "--white": "#fff",
+      "--gold-400": "#ffcf4d",
+      "--cactus-500": "#92c23a",
+      "--green-500": "#00b26e",
+      "--red-500": "#ff3d5a",
+      "--teal-450": "#10bfcc",
+      "--magenta-500": "#cb51f0",
+      "--sienna-500": "#f27641",
+      "--blue-500": "#397eed",
+      "--purple-500": "#8465f0"
+    },
+    "roles": {
+      "--primary-text": "light-dark(var(--moon-800), var(--moon-200))",
+      "--secondary-text": "light-dark(var(--moon-650), var(--moon-350))",
+      "--tertiary-text": "var(--moon-500)",
+      "--default-border-color": "light-dark(var(--moon-250), var(--moon-750))",
+      "--default-border-width": ".075rem",
+      "--focus-ring-color": "light-dark(var(--cobalt-700), var(--cobalt-500))",
+      "--forge-frame-bg": "light-dark(var(--moon-50), var(--moon-950))",
+      "--default-font-family": "\"Source Sans 3\", sans-serif"
+    },
+    "radius": {
+      "--border-radius-xs": ".125rem",
+      "--border-radius-sm": ".25rem",
+      "--border-radius-md": ".375rem",
+      "--border-radius-lg": ".5rem",
+      "--border-radius-xl": ".75rem"
+    },
+    "spacing": {
+      "--spacing-0": "0",
+      "--spacing-1": ".125rem",
+      "--spacing-2": ".25rem",
+      "--spacing-3": ".375rem",
+      "--spacing-4": ".5rem",
+      "--spacing-5": ".75rem",
+      "--spacing-6": "1rem",
+      "--spacing-7": "1.5rem",
+      "--spacing-8": "2rem",
+      "--spacing-9": "3rem",
+      "--spacing-10": "4rem"
+    },
+    "shadow": {
+      "--shadow-block-sm": "0 4px 8px 0 var(--shadow-color-sm)",
+      "--shadow-block-md": "0 12px 24px 0 var(--shadow-color-md)",
+      "--shadow-block-lg": "0 24px 48px 0 var(--shadow-color-lg)",
+      "--shadow-color-sm": "light-dark( color-mix(in srgb, var(--oblivion) 4%, transparent), color-mix(in srgb, var(--oblivion) 16%, transparent) )"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+file	role	source
+menu.svg	mobile menu	inline SVG, aria-label Toggle mobile menu, www.zendesk.com header, 2026-11-19
+account.svg	account	inline SVG inside the Sign in link, www.zendesk.com header, 2026-11-19
+external.svg	external link	Garden external-icon SVG rendered on the marketing header, data-garden-id buttons.external_icon, 2026-11-19

@@ -1,0 +1,191 @@
+{
+  "source": "Wayback Machine replay of https://ozone.pro/, capture 20240506015935 (SSR released 2024-04-29)",
+  "replayUrl": "https://web.archive.org/web/20240506015935/https://ozone.pro/",
+  "readOn": "2026-11-19",
+  "reader": "T3 preview_evaluate getComputedStyle on the attached replay",
+  "notLive": "https://ozone.tech/ is NXDOMAIN (whois.nic.tech: available for registration, 2026-11-18). https://ozone.pro/ and https://www.ozone.pro/ return Framer HTTP 404 Site Not Found. app.ozone.tech has no A record.",
+  "screenshot": "preview_snapshot failed twice: The browser is not producing screenshot frames. No screenshot was invented.",
+  "viewport1440": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {"width": 1440, "height": 900, "scale": 1},
+    "note": "Set with preview_resize freeform 1440x900. A first read at the fill viewport was 1280x801, dpr 1. Phone freeform 390x844 reported innerWidth 390, innerHeight 844, dpr 1."
+  },
+  "page": {
+    "background": "rgb(0, 0, 0)",
+    "scrollHeight": 5725,
+    "mainOffsetHeight": 5658
+  },
+  "nav": {
+    "name": "Desktop",
+    "background": "rgba(0, 0, 0, 0.48)",
+    "backdropFilter": "blur(10px)",
+    "height1440": 68,
+    "padding": "0px 16px",
+    "height390": 36,
+    "width390": 390,
+    "link": {
+      "fontFamily": "Inter Soft Medium, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "16.8px",
+      "color": "rgb(255, 255, 255)"
+    }
+  },
+  "hero": {
+    "name": "Hero",
+    "background": "rgb(66, 36, 255)",
+    "borderRadius": "32px",
+    "width1440": 1408,
+    "height1440": 1080,
+    "note": "An earlier read at 1280 CSS px reported rgb(6, 86, 226) and radius 32px. The 1440 read is the one stored as the hero fill."
+  },
+  "h1": {
+    "text": "Supercharge your video creation",
+    "fontFamily": "PolySans Bulky Wide, PolySans Bulky Wide Placeholder, sans-serif",
+    "fontSize1440": "64px",
+    "lineHeight1440": "72px",
+    "fontWeight": "400",
+    "letterSpacing": "normal",
+    "color": "rgb(255, 255, 255)",
+    "fontSize390": "40px",
+    "lineHeight390": "48px"
+  },
+  "lede": {
+    "text": "Ozone is the fastest way to create engaging short-form video",
+    "fontFamily": "Inter, Inter Placeholder, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "500",
+    "lineHeight": "32px",
+    "color": "rgb(255, 255, 255)"
+  },
+  "buttons": {
+    "primary": {
+      "name": "Primary",
+      "label": "Try For Free",
+      "background": "rgb(31, 120, 255)",
+      "labelColor": "rgb(255, 255, 255)",
+      "labelFont": "Inter, Inter Placeholder, sans-serif",
+      "labelSize": "14px",
+      "labelWeight": "600",
+      "labelLineHeight": "20px",
+      "labelLetterSpacing": "-0.14px",
+      "paddingNav": "8px 14px",
+      "borderRadius": "100px",
+      "boxShadow": "rgba(54, 92, 251, 0.08) 0px 1px 2px 0px, rgba(255, 255, 255, 0.4) 0px 0px 6px 0px inset",
+      "heightNav": 36,
+      "widthNav": 109
+    },
+    "secondary": {
+      "name": "Secondary",
+      "label": "Watch Trailer",
+      "background": "rgba(255, 255, 255, 0.08)",
+      "padding": "16px 22px",
+      "borderRadius": "100px",
+      "height": 52,
+      "width": 156,
+      "labelMatchesPrimary": true
+    },
+    "tertiary": {
+      "name": "Tertiary",
+      "label": "Try For Free",
+      "background": "rgb(0, 0, 0)",
+      "padding": "16px 22px",
+      "borderRadius": "100px",
+      "height": 52,
+      "width": 151
+    }
+  },
+  "chip": {
+    "text": "Ozone raised $7.1M seed round",
+    "background": "rgba(0, 0, 0, 0.32)",
+    "borderRadius": "8px",
+    "padding": "4px 8px",
+    "labelFont": "Inter Soft Medium, sans-serif",
+    "labelSize": "14px",
+    "labelColor": "rgb(255, 255, 255)"
+  },
+  "tag": {
+    "background": "rgba(0, 0, 0, 0.08)",
+    "borderRadius": "100px",
+    "padding": "7px 11px",
+    "labelSize": "12px",
+    "labelWeight": "500",
+    "labelLetterSpacing": "-0.12px",
+    "labelLineHeight": "14px",
+    "labelColor": "rgb(255, 255, 255)",
+    "labelFont": "Inter, Inter Placeholder, sans-serif"
+  },
+  "h2": {
+    "text": "Save hours",
+    "fontFamily": "PolySans Slim Wide, PolySans Slim Wide Placeholder, sans-serif",
+    "fontSize": "56px",
+    "lineHeight": "64px",
+    "fontWeight": "400",
+    "color": "rgb(255, 255, 255)"
+  },
+  "h3": {
+    "examples": ["Text to Image and Video", "Cloud Based Solution", "Collaborate in real time", "Auto Captioning"],
+    "fontFamily": "PolySans Neutral Wide, PolySans Neutral Wide Placeholder, sans-serif",
+    "fontSize": "20px",
+    "lineHeight": "24px",
+    "fontWeight": "400",
+    "color": "rgb(255, 255, 255)"
+  },
+  "bodyMuted": {
+    "text": "We envision a future where content creation is synonymous with storytelling.",
+    "fontFamily": "Inter, Inter Placeholder, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgba(255, 255, 255, 0.72)"
+  },
+  "eyebrow": {
+    "text": "USEFUL",
+    "fontFamily": "PolySans Neutral Wide, PolySans Neutral Wide Placeholder, sans-serif",
+    "fontSize": "10px",
+    "lineHeight": "12px",
+    "letterSpacing": "4px",
+    "color": "rgba(255, 255, 255, 0.72)"
+  },
+  "footerWordmark": {
+    "fontFamily": "Allotrope Variable Compressed Thin Compressed Thin, sans-serif",
+    "fontSize": "500px",
+    "lineHeight": "250px",
+    "letterSpacing": "5px",
+    "colorsSampled": ["rgb(0, 49, 128)", "rgb(0, 53, 138)", "rgb(0, 57, 148)"]
+  },
+  "surfaces": {
+    "commentPanel": {"background": "rgb(18, 19, 20)", "borderRadius": "8px"},
+    "compose": {"background": "rgb(23, 25, 27)", "borderRadius": "0px 0px 6px 6px"},
+    "tabs": {"background": "rgb(28, 29, 32)"},
+    "featureCard": {"background": "rgb(0, 0, 0)", "borderRadius": "24px"},
+    "closingBand": {
+      "background": "rgb(31, 120, 255)",
+      "borderRadius": "200px",
+      "padding": "64px",
+      "boxShadow": "rgb(0, 0, 0) 0px 32px 50px 0px, rgba(255, 255, 255, 0.4) -24px -16px 48px 0px inset"
+    }
+  },
+  "demoSwatches": ["rgb(223, 254, 62)", "rgb(95, 254, 126)", "rgb(255, 187, 1)", "rgb(176, 222, 254)", "rgb(121, 73, 245)", "rgb(73, 197, 137)", "rgb(255, 106, 0)", "rgb(255, 129, 220)", "rgb(17, 108, 255)"],
+  "fontsLoaded": {
+    "PolySans Slim Wide": "error",
+    "Inter Soft Medium": "error",
+    "PolySans Bulky Wide": "error",
+    "PolySans Neutral Wide": "error",
+    "Allotrope Variable Compressed Thin Compressed Thin": "error",
+    "Inter": "unloaded or error",
+    "note": "Computed font-family still names these families. The replay did not finish loading the font files, so metrics may be fallback metrics. Do not treat a screenshot of this replay as the product's type rendering."
+  },
+  "links": [
+    {"text": "Home", "href": "https://ozone.pro/"},
+    {"text": "Blog", "href": "https://ozone.pro/blog"},
+    {"text": "Careers", "href": "https://jobs.ashbyhq.com/Ozone"},
+    {"text": "Login", "href": "https://app.ozone.tech/login"},
+    {"text": "Try For Free", "href": "https://app.ozone.tech/register"},
+    {"text": "X - Twitter", "href": "https://twitter.com/ozonefuture"},
+    {"text": "Instagram", "href": "https://www.instagram.com/ozonefuture/"},
+    {"text": "Linkedin", "href": "https://www.linkedin.com/company/ozoneapp/"}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "source": "Stylesheet read of https://docs.orchids.app/_mintlify/assets/index-B79MREzt.css and computed transition on the open search overlay, 2026-11-19. The kit motion probe was not run. prefers-reduced-motion was false in the preview tab.",
+  "declared": {
+    "defaultDuration": ".15s",
+    "defaultEasing": "cubic-bezier(.4, 0, .2, 1)",
+    "easeIn": "cubic-bezier(.4, 0, 1, 1)",
+    "easeOut": "cubic-bezier(0, 0, .2, 1)",
+    "overlayEasing": "cubic-bezier(0.22, 1, 0.36, 1)",
+    "overlayDuration": "0.25s",
+    "durationShort": "150ms",
+    "durationLong": "250ms",
+    "pulse": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "spin": "spin 1s linear infinite"
+  },
+  "reducedMotion": {
+    "rule": "@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}",
+    "also": "toc indicator transition-property none; .twoslash * transition none",
+    "verdict": "honours",
+    "note": "Authored rule only. Not re-read under emulateMedia."
+  }
+}
