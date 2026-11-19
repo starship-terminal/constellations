@@ -392,15 +392,27 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
     # it matches the branch tip.
     branch_rows = branch_catalog()
     if branch_rows is not None and set(branch_rows) < set(head_rows):
-        if all(head_rows.get(slug) == row for slug, row in branch_rows.items()):
-            branch_expected = coverage_mod.build(
-                directory, {**head_catalog, "systems": list(branch_rows.values())})
-            if actual == branch_expected:
-                return True
-    # A checker-only pull request adds no catalog row. The committed file
-    # can still lag packages already on main. Accept that derivation
-    # before the add-only return below rejects it.
-    if coverage_is_prior_derivation(directory, head_catalog, actual):
+        if any(head_rows.get(slug) != row for slug, row in branch_rows.items()):
+            # The branch tip edited a row the merge also carries. That is a
+            # capture edit, whether or not the committed file matches it.
+            return False
+        branch_expected = coverage_mod.build(
+            directory, {**head_catalog, "systems": list(branch_rows.values())})
+        if actual == branch_expected:
+            return True
+    # A checker-only pull request adds no catalog row, so the return below
+    # would reject a file that still lags packages already on main. Accept
+    # that derivation only when it omits a base package and every package
+    # it names still matches the base. A renamed row fails that second
+    # check. A file that matches the base keeps going.
+    named = packages_in_coverage(actual)
+    rows_match = all(
+        slug not in base_rows or head_rows.get(slug) == base_rows[slug]
+        for slug in named)
+    if (named < set(base_rows)
+            and rows_match
+            and actual != expected
+            and coverage_is_prior_derivation(directory, head_catalog, actual)):
         return True
     if not set(head_rows) - set(base_rows):
         return False

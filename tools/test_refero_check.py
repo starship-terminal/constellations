@@ -250,6 +250,13 @@ class CoverageLagTest(unittest.TestCase):
         branch = {"systems": list(self.base["systems"]) + [extra]}
         self.assertTrue(self.matches(self.base, self.prior, branch_catalog=branch))
 
+    def test_a_checker_only_file_that_matches_the_merge_is_not_a_lag(self):
+        # The file matches the merge, so the early lag check must leave it
+        # for the add-only return. That return rejects a checker-only pull
+        # request whose file is simply current.
+        current = refero_check.coverage_mod.build(self.directory, self.base)
+        self.assertFalse(self.matches(self.base, current))
+
     def test_a_hand_edited_file_is_rejected(self):
         edited = json.loads(json.dumps(self.prior))
         edited["totals"]["system_packages"] = 1
