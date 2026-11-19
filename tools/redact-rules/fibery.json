@@ -3,8 +3,8 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@fibery\\.(com|io)$",
-   "@fiber\\w*\\.\\w+$",
+   "@fibery\\.com$",
+   "@fibery\\.io$",
    "@example\\.com$"
   ]
  },

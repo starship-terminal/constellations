@@ -4,9 +4,9 @@
   "emails": true,
   "email_allow": [
    "@flowmapp\\.com$",
-   "@flowm?app?\\w*\\.\\w+$",
-   "@flowmap+\\w*\\.\\w+$",
-   "@example\\.(com|org|inc)$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
    "@everyone$",
    "@here$"
   ]

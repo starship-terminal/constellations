@@ -3,8 +3,8 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@fable\\.(co|com)$",
-   "@fable\\w*\\.\\w+$",
+   "@fable\\.co$",
+   "@fable\\.com$",
    "@example\\.com$"
   ]
  },

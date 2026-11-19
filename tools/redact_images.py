@@ -11,10 +11,9 @@ finds anything the rectangles missed, using the same detection patterns as `tool
     python3 tools/redact_images.py check systems/manus --patterns ~/.design-systems/cleanup-redact.json
     python3 tools/redact_images.py lines systems/manus/screenshots/home-dark.png   # author a rules file
 
-`check` never lets a rules file switch a detector off (its ocr.emails or ocr.net), and an email_allow
-entry must match a whole part of an address (see email_allowed). `check` and `apply` refuse a rules
-file whose email_allow entry passes any address, every address at a free-mail domain, or a bare local
-part at any domain (see allow_entry_problem): list the exact address instead. `check` reads every image file under the package that git does not ignore (any folder, every frame;
+`check` never lets a rules file switch a detector off (its ocr.emails or ocr.net). A rules file's
+email_allow entry is one exact address or one @domain, never a pattern, and never a free-mail domain
+(see allow_entry_text); `check` and `apply` refuse a file holding anything else. `check` reads every image file under the package that git does not ignore (any folder, every frame;
 a file of an image type it cannot read fails the check), and the package's own rules file, tools/redact-rules/<slug>.json, when one exists (its ocr
 block: email_allow, wrap_ignore) and prints which file it loaded; `--rules` names another one instead.
 `apply` never guesses: it edits files, so its `--rules` stays required.
@@ -81,10 +80,6 @@ import warnings
 from pathlib import Path
 
 import numpy as np
-try:
-    import re._parser as _re_parser          # Python 3.11+
-except ImportError:  # pragma: no cover
-    import sre_parse as _re_parser
 from PIL import Image, ImageFilter, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -494,179 +489,64 @@ def rules_text_leaks(rules):
         if _phone_shaped(s):
             out.append(f"{path}: a phone-number-shaped string")
     return out
-# Mailbox domains anyone can sign up at. An allow entry that passes every address at one of them
-# passes a stranger's personal address too, so a package rules file names the exact address instead.
+# Mailbox domains anyone can sign up at: an allow entry may name one address there, never the domain.
 FREE_MAIL = ("gmail.com", "googlemail.com", "yahoo.com", "yahoo.co.jp", "yahoo.co.uk", "ymail.com",
              "outlook.com", "hotmail.com", "live.com", "msn.com", "icloud.com", "me.com", "mac.com",
              "proton.me", "protonmail.com", "pm.me", "mail.com", "email.com", "aol.com", "gmx.com", "gmx.de",
              "gmx.net", "web.de", "yandex.com", "yandex.ru", "mail.ru", "qq.com", "163.com", "126.com",
              "zoho.com", "fastmail.com", "hey.com", "tutanota.com", "naver.com", "agentmail.to")
-# Addresses no real entry should pass: random local parts at random domains.
-PROBE_LOCALS = ("q7zk2vx9", "jane.doe.private")
-# One address spelled out: plain characters and escaped dots, plus or hyphens only, optionally anchored.
-LITERAL_ADDRESS = re.compile(r"\^?(?:[\w-]|\\[.+-])+@(?:[\w-]|\\[.-])+(?:\$|\\b)?")
-PROBE_DOMAINS = ("m4qz8wr2.com", "x9v2k7.org", "pz3n8q.io", "w7k2j9.co", "kq8z3v.net", "zz9q.qx7v")
+# The reserved .example top-level domain (RFC 2606) can never hold a real mailbox, so an address
+# there is a placeholder wherever it shows; no rules file needs to list it.
+EXAMPLE_TLD = re.compile(r"\.example$", re.I)
+REGEX_META = re.compile(r"[.^$*+?{}\[\]\\|()]")
+ALLOW_TEXT = re.compile(r"[\w.+-]*@[\w.-]+")
+
+
+def allow_entry_text(entry):
+    """(plain text, None) for a package rules file's email_allow entry, or (None, why it is refused).
+    An entry is one exact address (`^support@vendor\\.com$`) or one `@domain` suffix
+    (`@vendor\\.com$`): optional ^ and $ (or a trailing \\b) anchors are dropped and \\. \\- \\+
+    unescaped, and nothing else regex-like may remain, so validation never has to read a pattern.
+    A suffix may not name a free-mail domain. The owner's private patterns file is not held to this."""
+    if not isinstance(entry, str) or not entry:
+        return None, "is empty or not a string"
+    core = entry[1:] if entry.startswith("^") else entry
+    for end in ("$", "\\b"):
+        if core.endswith(end) and not core.endswith("\\" + end):
+            core = core[:-len(end)]
+            break
+    if REGEX_META.search(re.sub(r"\\[.+-]", "", core)):
+        return None, "is a regex pattern: list exact addresses, one per entry, or one @domain"
+    text = re.sub(r"\\([.+-])", r"\1", core)
+    if not ALLOW_TEXT.fullmatch(text):
+        return None, "is not one address or one @domain: list exact addresses, one per entry"
+    domain = text.partition("@")[2].lower()
+    if text.startswith("@") and any(domain == d or domain.endswith("." + d) for d in FREE_MAIL):
+        return None, f"allows every address at the free-mail domain {domain}: list exact addresses, one per entry"
+    return text, None
 
 
 def allow_entry_problem(entry):
-    """Why a package rules file's ocr.email_allow entry is refused, or None. An entry must pin a domain
-    (`@vendor\\.com$`, a whole address, or a `\\.example$` label suffix): it may not pass every address
-    (`.*`), a free-mail domain other than through one literal address (`@gmail\\.com$`,
-    `^[a-z]+@gmail\\.com$`, `^satoshi2?@gmail\\.com$`), or a local part at any domain (`name@`). The private patterns file is the owner's and is not held to this."""
-    if not isinstance(entry, str):
-        return "is not a string"
-    try:
-        re.compile(entry, re.I)
-    except re.error as e:
-        return f"is not a valid regex ({e})"
-    unmodelled = _unmodelled_construct(entry)
-    if unmodelled:
-        return f"uses {unmodelled}, which this check cannot vet: write the address or domain plainly"
-    if any(email_allowed(f"{lp}@{d}", [entry]) for lp in PROBE_LOCALS for d in PROBE_DOMAINS):
-        return "passes any address"
-    # An entry that can reach a free-mail domain must be one literal address: no class, group,
-    # repeat or alternation anywhere, so it passes exactly one mailbox (case aside, as the check
-    # ignores case). Reach is tried with the probes and with local parts drawn from the entry.
-    locals_ = set(PROBE_LOCALS) | {"qzkvxwmj"} | {
-        smp.partition("@")[0] for picks, extra in ((_CLASS_PICKS, 0), (_CLASS_PICKS_ALT, 1))
-        for smp in _regex_samples(entry, picks=picks, extra=extra) if "@" in smp}
-    locals_.discard("")
-    reach = next((d for d in FREE_MAIL if any(email_allowed(f"{lp}@{d}", [entry]) for lp in locals_)), None)
-    if reach and not LITERAL_ADDRESS.fullmatch(entry):
-        return f"can match addresses at the free-mail domain {reach}: write one exact address"
-    if "@" not in entry:
-        if not entry.startswith("\\."):
-            return "names no domain: write @domain or the whole address"
-    elif not re.search(r"[\w\\\[(]", entry[entry.rfind("@") + 1:]):
-        return "is a local part with no domain: write the whole address"
-    for sample in _regex_samples(entry):
-        if "@" in sample:
-            local = sample.partition("@")[0] or PROBE_LOCALS[0]
-            if any(email_allowed(f"{local}@{d}", [entry]) for d in PROBE_DOMAINS):
-                return "passes its local part at any domain: write the whole address"
-    return None
+    """Why allow_entry_text refuses an entry, or None."""
+    return allow_entry_text(entry)[1]
 
 
-def _unmodelled_construct(entry, cap=64):
-    """The first regex construct in an allow entry that _regex_samples does not model, or None. The
-    vetting below trusts strings drawn from the entry, so anything that can narrow or couple what
-    the regex accepts without showing in those strings (lookaround, backreference, conditional,
-    atomic or possessive forms, inline flags) is refused outright, as is an entry with more
-    alternatives than the sampler draws."""
-    P = _re_parser
-    try:
-        parsed = P.parse(entry, re.I)
-    except Exception:
-        return "a pattern this Python cannot parse"
-    if parsed.state.flags & ~(re.I | re.U):
-        return "an inline flag"
-    plain = {P.LITERAL, P.NOT_LITERAL, P.ANY, P.AT}
-    in_items = {P.LITERAL, P.RANGE, P.CATEGORY, P.NEGATE}
-
-    def walk(items):
-        for op, av in items:
-            if op in plain:
-                continue
-            if op is P.IN:
-                if any(o not in in_items for o, _ in av):
-                    return "an unusual character class"
-            elif op is P.BRANCH:
-                for b in av[1]:
-                    bad = walk(b)
-                    if bad:
-                        return bad
-            elif op is P.SUBPATTERN:
-                if av[1] or av[2]:
-                    return "an inline flag"
-                bad = walk(av[3])
-                if bad:
-                    return bad
-            elif op in (P.MAX_REPEAT, P.MIN_REPEAT):
-                bad = walk(av[2])
-                if bad:
-                    return bad
-            else:
-                return {P.ASSERT: "a lookaround", P.ASSERT_NOT: "a lookaround", P.GROUPREF: "a backreference",
-                        P.GROUPREF_EXISTS: "a conditional group", getattr(P, "ATOMIC_GROUP", None): "an atomic group",
-                        getattr(P, "POSSESSIVE_REPEAT", None): "a possessive repeat"}.get(op, f"the regex construct {op}")
-        return None
-
-    bad = walk(parsed)
-    if bad:
-        return bad
-    if len(_regex_samples(entry, cap=cap + 1)) > cap:
-        return f"more than {cap} alternatives"
-    return None
-
-
-_CLASS_PICKS = "a0.-_xZ@ "
-_CLASS_PICKS_ALT = "z9_-.qA@ "
-
-
-def _in_class(ch, items):
-    P, neg, hit = _re_parser, False, False
-    for op, av in items:
-        if op is P.NEGATE:
-            neg = True
-        elif op is P.LITERAL:
-            hit = hit or ord(ch) == av
-        elif op is P.RANGE:
-            hit = hit or av[0] <= ord(ch) <= av[1]
-        elif op is P.CATEGORY:
-            rx = {P.CATEGORY_DIGIT: r"\d", P.CATEGORY_NOT_DIGIT: r"\D", P.CATEGORY_WORD: r"\w",
-                  P.CATEGORY_NOT_WORD: r"\W", P.CATEGORY_SPACE: r"\s", P.CATEGORY_NOT_SPACE: r"\S"}.get(av)
-            hit = hit or bool(rx and re.fullmatch(rx, ch))
-    return hit != neg
-
-
-def _regex_samples(entry, cap=64, picks=_CLASS_PICKS, extra=0):
-    """Strings the regex matches: one per combination of its alternatives (at most cap), each repeat
-    taken its minimum (at least once) plus `extra` times where the bound allows, and each character
-    class by its first member in `picks`. So a grouped or alternated local part, `^(assistant)@...`,
-    is tried the way the matcher reads it rather than as written."""
-    P = _re_parser
-
-    def seq(items):
-        outs = [""]
-        for op, av in items:
-            outs = [o + a for o in outs for a in node(op, av)][:cap]
-        return outs
-
-    def node(op, av):
-        if op is P.LITERAL:
-            return [chr(av)]
-        if op in (P.NOT_LITERAL, P.ANY):
-            c = picks[0]
-            return [c if op is P.ANY or av != ord(c) else "b"]
-        if op is P.IN:
-            return [next((c for c in picks if _in_class(c, av)), None)
-                    or next((chr(i) for i in range(33, 127) if _in_class(chr(i), av)), "a")]
-        if op is P.BRANCH:
-            return [x for b in av[1] for x in seq(b)][:cap]
-        if op is P.SUBPATTERN:
-            return seq(av[-1])
-        if op in (P.MAX_REPEAT, P.MIN_REPEAT, getattr(P, "POSSESSIVE_REPEAT", None)):
-            lo, hi, sub = av
-            n = min(max(lo, 1) + extra, hi) if hi else 0
-            return [x * n for x in seq(sub)]
-        if op is getattr(P, "ATOMIC_GROUP", None):
-            return seq(av)
-        return [""]                         # anchors, lookarounds, backreferences: no characters
-
-    try:
-        return seq(_re_parser.parse(entry, re.I))
-    except Exception:
-        return []
-
-
-def validate_email_allow(rules_file, entries):
-    """Stop with one error line when a package rules file's email_allow holds an entry that
-    allow_entry_problem refuses."""
+def package_allow(rules_file, entries):
+    """A package rules file's email_allow as the regexes email_allowed reads: each entry's plain text,
+    escaped, so an address matches exactly and an @domain matches the address's whole domain, both
+    case-insensitively. Stops with one error line naming every refused entry."""
     if not isinstance(entries, list):
-        input_error(f"{rules_file}: ocr.email_allow must be a list of regexes")
-    bad = [(e, p) for e in entries if (p := allow_entry_problem(e))]
+        input_error(f"{rules_file}: ocr.email_allow must be a list of entries")
+    out, bad = [], []
+    for e in entries:
+        text, why = allow_entry_text(e)
+        if why:
+            bad.append(f"{json.dumps(e)} {why}")
+        else:
+            out.append(re.escape(text))
     if bad:
-        input_error(f"{rules_file}: ocr.email_allow " + "; ".join(f"{json.dumps(e)} {p}" for e, p in bad))
+        input_error(f"{rules_file}: ocr.email_allow " + "; ".join(bad))
+    return out
 
 
 def find_private(words, patterns, emails, email_allow):
@@ -687,7 +567,7 @@ def find_private(words, patterns, emails, email_allow):
         hits = [m.span() for p in rx for m in p.finditer(text)]
         if emails:
             hits += [m.span() for m in EMAIL.finditer(text)
-                     if not email_allowed(m.group(), email_allow)]
+                     if not email_allowed(m.group(), email_allow) and not EXAMPLE_TLD.search(m.group().rstrip("."))]
         for s, e in hits:
             for a, b, box in spans:
                 if a < e and b > s:
@@ -722,9 +602,9 @@ def cmd_apply(args):
     pkg = Path(args.package)
     rules = read_json_object(args.rules, "rules file")
     ocr_cfg = dict(rules.get("ocr", {}))
-    validate_email_allow(args.rules, ocr_cfg.get("email_allow", []))
+    allow = package_allow(args.rules, ocr_cfg.get("email_allow", []))
     patterns = load_patterns(args.patterns) if args.patterns else []
-    ocr_cfg["email_allow"] = ocr_cfg.get("email_allow", []) + load_email_allow(args.patterns)
+    ocr_cfg["email_allow"] = allow + load_email_allow(args.patterns)
     global_keep = [re.compile(k, re.I) for k in ocr_cfg.get("keep", [])]
     only = args.only
     deleted, edited, flagged = set(), 0, []
@@ -800,7 +680,7 @@ def cmd_check(args):
     if rules_file:
         rules = read_json_object(rules_file, "rules file")
         cfg = dict(rules.get("ocr", {}))
-        validate_email_allow(rules_file, cfg.get("email_allow", []))
+        cfg["email_allow"] = package_allow(rules_file, cfg.get("email_allow", []))
         print(f"rules: {rules_file if args.rules else 'tools/redact-rules/' + rules_file.name}"
               + ("" if args.rules else " (loaded for this package)"), flush=True)
         # The rules file is committed too: it may describe what it hides, never hold it.

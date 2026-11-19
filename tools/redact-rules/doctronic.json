@@ -3,10 +3,10 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@example\\.(com|org)$",
+   "@example\\.com$",
+   "@example\\.org$",
    "@doctronic\\.ai$",
-   "^sup[a-z]*@d[a-z.]*al$",
-   "^pri[a-z]*@d[a-z.]*al$"
+   "@doctronic\\.al$"
   ]
  },
  "families": []

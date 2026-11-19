@@ -3,9 +3,15 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@glorify(app)?\\.(com|co|app)$",
-   "@glorif\\w*\\.\\w+$",
-   "@example\\.(com|org|inc)$",
+   "@glorify\\.app$",
+   "@glorify\\.co$",
+   "@glorify\\.com$",
+   "@glorifyapp\\.app$",
+   "@glorifyapp\\.co$",
+   "@glorifyapp\\.com$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
    "@everyone$",
    "@here$"
   ]

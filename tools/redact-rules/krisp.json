@@ -13,7 +13,8 @@
       "^kaichen@agentmail\\.to$",
       "^kaichen@agentmail\\.t$",
       "^kaichen@agentm$",
-      "^assistant@krisp\\.ai(to)?$"
+      "^assistant@krisp\\.ai$",
+      "^assistant@krisp\\.aito$"
     ]
   }
 }

@@ -229,10 +229,10 @@ class Commands(unittest.TestCase):
                 return seen[0], out.getvalue()
 
             allow, out = run()                                      # no --rules: the package's own file
-            self.assertEqual(allow, ["@own\\.test$"])
+            self.assertEqual(allow, [re.escape("@own.test")])     # read as its plain text, escaped
             self.assertEqual(out.count("rules: tools/redact-rules/demo.json"), 1)
             allow, out = run("--rules", str(other))                 # an explicit file wins
-            self.assertEqual(allow, ["@other\\.test$"])
+            self.assertEqual(allow, [re.escape("@other.test")])
             self.assertIn(f"rules: {other}", out)
             self.assertNotIn("demo.json", out)
             own.unlink()                                            # no file for the package: nothing loaded
@@ -532,33 +532,53 @@ class RulesText(unittest.TestCase):
 
 @unittest.skipIf(R is None, "Pillow and numpy are not installed")
 class AllowEntries(unittest.TestCase):
-    """A package rules file's email_allow may pass named addresses, never a stranger's."""
+    """A package rules file's email_allow is exact addresses or one @domain each, never a pattern."""
 
-    def test_broad_entries_are_refused(self):
-        for entry in [".*", "@.+", ".*@.*", "^.+@", r"@\w+\.com$",          # every address
-                      r"@gmail\.com$", r"@mail\.com$", r"@yahoo\.co\.jp$",  # a whole free-mail domain
-                      r"@agentmail\.to\b", r"@email\.com$",
-                      "name@", "you@", r"^assistant@", "name@.*",               # a local part at any domain
-                      r"^(assistant)@[\w.-]+$", r"^(?:a|assistant)@[\w.-]+\.\w+$", r"^as+istant@.+$",
-                      r"^[a-z]+@gmail\.com$", r"^[a-z]{2,8}@gmail\.com$", r"^(jane|john)@yahoo\.com$",  # a pattern of
-                      r"^\w+\.\w+@outlook\.com$", r"^satoshi[0-9]?@gmail\.com$",                    # free-mail boxes
-                      r"^satoshi2?@gmail\.com$", r"^[bc]{2}@gmail\.com$", r"^c?hen@gma[il]l\.com$",
-                      r"^(?=vip)[a-z]+@gmail\.com$", r"^[a-z]+(?<=vip)@gmail\.com$",             # forms the
-                      r"^(?!x)\w+@vendor\.biz$", r"^(a)\1@gmail\.com$", r"(?x) a @gmail\.com",  # sampler cannot
-                      r"(?i:a)@gmail\.com$", r"^(?>a+)@gmail\.com$", r"^a++@gmail\.com$",         # model
-                      "^(" + "|".join(f"u{i}" for i in range(70)) + ")@vendor\\.biz$",
-                      r"example\.com$", "owner", "(", 7]:
+    def test_patterns_and_free_mail_domains_are_refused(self):
+        cases = {
+            "the three bypasses review found": [r"^(assistant)@[\w.-]+$", r"^[a-z]+@gmail\.com$",
+                                                r"^(?=vip)[a-z]+@gmail\.com$"],
+            "alternation": [r"@example\.(com|org)$", r"^(jane|john)@vendor\.biz$", "a@x\\.biz|.*"],
+            "character classes": [r"^sup[a-z]*@vendor\.biz$", r"^satoshi[0-9]@gmail\.com$", r"@\w+\.com$"],
+            "quantifiers": [r"^satoshi2?@gmail\.com$", ".*", "@.+", r"^a{2}@vendor\.biz$", r"^as+istant@vendor\.biz$"],
+            "groups": [r"^(?:a)@vendor\.biz$", r"^(a)@vendor\.biz$"],
+            "backreferences": [r"^(a)\1@vendor\.biz$"],
+            "lookarounds": [r"^[a-z]+(?<=vip)@gmail\.com$", r"^(?!x)a@vendor\.biz$"],
+            "inline flags": [r"(?i)a@vendor\.biz", r"(?x) a @vendor\.biz"],
+            "an unescaped dot": ["name@example.com", r"@vendor.biz$"],
+            "an empty or non-text entry": ["", 7, None],
+            "no domain": ["name@", "you@", r"^assistant@", "owner", r"\.example$", r"example\.com$"],
+            "a free-mail domain": [r"@gmail\.com$", r"@mail\.com$", r"@yahoo\.co\.jp$", r"@agentmail\.to\b",
+                                   r"@email\.com$", r"@mail\.gmail\.com"],
+        }
+        for kind, entries in cases.items():
+            for entry in entries:
+                with self.subTest(kind=kind, entry=entry):
+                    self.assertIsNotNone(R.allow_entry_problem(entry))
+
+    def test_exact_addresses_and_vendor_domains_pass(self):
+        for entry, text in [(r"^support@vendor\.biz$", "support@vendor.biz"), (r"@vendor\.biz$", "@vendor.biz"),
+                            (r"@example\.inc", "@example.inc"), (r"satoshi@gmail\.com$", "satoshi@gmail.com"),
+                            (r"^ALICE@gmail\.com$", "ALICE@gmail.com"), (r"john\.doe\+1@gmail\.com\b", "john.doe+1@gmail.com"),
+                            (r"^kaichen@agentm$", "kaichen@agentm"), (r"@my-shop\.biz", "@my-shop.biz")]:
             with self.subTest(entry=entry):
-                self.assertIsNotNone(R.allow_entry_problem(entry))
-        self.assertTrue(R.email_allowed("jane.doe.private@gmail.com", [r"@gmail\.com$"]))  # what it used to let by
+                self.assertEqual(R.allow_entry_text(entry), (text, None))
 
-    def test_pinned_entries_pass(self):
-        for entry in [r"@example\.(com|org)$", r"@vendor\.biz$", r"\.example$", r"^owner@mine\.test$",
-                      r"satoshi@gmail\.com$", r"^ALICE@gmail\.com$", r"john\.doe\+1@gmail\.com$", r"^hello@vendor\.biz$", r"wagmi@[0-9][0-9.x]*", r"@everyone$"]:
-            with self.subTest(entry=entry):
-                self.assertIsNone(R.allow_entry_problem(entry))
+    def test_an_address_matches_exactly_and_a_domain_matches_the_whole_domain(self):
+        allow = R.package_allow("r.json", [r"^ALICE@gmail\.com$", r"@vendor\.biz$"])
+        for addr, ok in [("alice@gmail.com", True), ("Alice@Gmail.com.", True), ("alice2@gmail.com", False),
+                         ("bob@gmail.com", False), ("xalice@gmail.com", False), ("a@vendor.biz", True),
+                         ("A@VENDOR.BIZ", True), ("a@sub.vendor.biz", False), ("a@vendor.biz.evil.test", False),
+                         ("vendor.biz@evil.test", False)]:
+            with self.subTest(addr=addr):
+                self.assertEqual(R.email_allowed(addr, allow), ok)
 
-    def test_check_and_apply_refuse_a_rules_file_with_an_allow_all_entry(self):
+    def test_the_reserved_example_tld_needs_no_entry(self):
+        w = lambda a: [(a, 0, 0, 10, 10, ("1", "1", "1"))]
+        self.assertEqual(R.find_private(w("learner@acme.example"), [], True, []), [])
+        self.assertEqual(len(R.find_private(w("x@acme.example.evil.test"), [], True, [])), 1)
+
+    def test_check_and_apply_refuse_a_rules_file_with_a_pattern(self):
         from unittest import mock
         with tempfile.TemporaryDirectory() as d:
             pkg = Path(d) / "pkg"
@@ -575,21 +595,22 @@ class AllowEntries(unittest.TestCase):
                      contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
                     R.main(argv)
                 self.assertEqual(cm.exception.code, 2, argv)
-                self.assertIn('".*" passes any address', err.getvalue())
+                self.assertIn('".*" is a regex pattern', err.getvalue())
                 self.assertNotIn("vendor", err.getvalue())                 # only the refused entry is named
-            # the private patterns file is the owner's: its bare-local-part entry is not refused
+            # the private patterns file is the owner's: its pattern entry is not refused
             rules.write_text(json.dumps({"ocr": {"email_allow": [r"@vendor\.biz$"]}}))
             with mock.patch.object(R, "ocr_words", return_value=[]), contextlib.redirect_stdout(io.StringIO()), \
                  self.assertRaises(SystemExit) as cm:
                 R.main(["check", str(pkg), "--patterns", str(pats), "--rules", str(rules)])
             self.assertEqual(cm.exception.code, 0)
 
-    def test_every_committed_rules_file_pins_its_allow_entries(self):
+    def test_every_committed_rules_file_lists_exact_entries(self):
         for f in sorted(R.RULES_DIR.glob("*.json")):
             allow = json.loads(f.read_text()).get("ocr", {}).get("email_allow", [])
             for entry in allow:
                 with self.subTest(rules=f.name, entry=entry):
                     self.assertIsNone(R.allow_entry_problem(entry))
+
 
 if __name__ == "__main__":
     unittest.main()
