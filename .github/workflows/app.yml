@@ -31,14 +31,6 @@ jobs:
           lfs: false
         env:
           GIT_LFS_SKIP_SMUDGE: 1
-      # The taxonomy check compares the seed to the base catalog. A depth-1
-      # pull-request checkout has the merge commit only, so fetch the base.
-      - name: Fetch the pull request base and head
-        if: github.event_name == 'pull_request'
-        run: |
-          git fetch --depth=1 origin "${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
-          git fetch --depth=1 origin "${{ github.event.pull_request.head.sha }}:refs/pr-head"
-          echo "GITHUB_HEAD_SHA=refs/pr-head" >> "$GITHUB_ENV"
       - uses: actions/setup-node@v7
         with:
           node-version: 22

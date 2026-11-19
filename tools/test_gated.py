@@ -1,9 +1,11 @@
 """tools/gated.py parses its arguments strictly: an unknown flag exits 2 and writes nothing."""
 import importlib.util
+import io
 import json
 import os
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -31,13 +33,6 @@ class GatedFlagsTest(unittest.TestCase):
         if mtime is not None:
             self.assertEqual(mtime, OUT.stat().st_mtime_ns)
 
-    def test_check_writes_nothing_and_reports_current_state(self):
-        mtime = OUT.stat().st_mtime_ns
-        r = run("--check")
-        self.assertIn(r.returncode, (0, 1), r.stderr)
-        self.assertEqual(mtime, OUT.stat().st_mtime_ns)
-        self.assertTrue("gated ok" in r.stdout or "stale" in r.stdout, r.stdout)
-
     def test_help_exits_0(self):
         r = run("--help")
         self.assertEqual(r.returncode, 0)
@@ -49,8 +44,9 @@ gated = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gated)
 
 
-class GatedLagTest(unittest.TestCase):
-    """gated_matches_base accepts a roll-up that predates packages on main."""
+class GatedCheckTest(unittest.TestCase):
+    """--check demands the exact render of the catalog, on a pull request and on main
+    alike: a roll-up that lags captures already on main is stale."""
 
     def entry(self, slug, gap=None, access="signed out"):
         return {"slug": slug, "name": slug.title(), "access": access,
@@ -59,38 +55,43 @@ class GatedLagTest(unittest.TestCase):
     def setUp(self):
         self.alpha = self.entry("alpha", "sign-in was not entered")
         self.beta = self.entry("beta", access="public marketing")
-        self.newer = self.entry("newer", "login was not submitted")
-        self.added = self.entry("added", access="public marketing")
-        self.base = [self.alpha, self.beta, self.newer]
-        self.head = [self.alpha, self.beta, self.newer, self.added]
-        self.prior = gated.render([self.alpha, self.beta])
+        self.added = self.entry("added", "login was not submitted")
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        (self.root / "docs").mkdir()
+        (self.root / "catalog.json").write_text(json.dumps({"systems": [self.alpha, self.beta, self.added]}))
+        self.addCleanup(self.tmp.cleanup)
 
-    def matches(self, systems, current, base_ref="main"):
-        shown = json.dumps({"systems": self.base})
+    def check(self, committed, env=None):
+        out = self.root / "docs" / "GATED.md"
+        if committed is None:
+            out.unlink(missing_ok=True)
+        else:
+            out.write_text(committed)
+        pr = {"GITHUB_BASE_REF": "main", "GITHUB_HEAD_SHA": "refs/pr-head"}
+        with mock.patch.object(gated, "ROOT", self.root), mock.patch.object(gated, "OUT", out), \
+                mock.patch.dict(os.environ, env if env is not None else pr), \
+                mock.patch("sys.stdout", new_callable=io.StringIO) as printed:
+            code = gated.main(["--check"])
+        self.assertEqual(out.read_text() if out.exists() else None, committed)  # --check writes nothing
+        return code, printed.getvalue()
 
-        def fake_run(args, **kwargs):
-            return mock.Mock(stdout=shown, returncode=0)
+    def test_the_exact_render_passes(self):
+        self.assertEqual(self.check(gated.render([self.alpha, self.beta, self.added])), (0, "gated ok\n"))
 
-        env = {"GITHUB_BASE_REF": base_ref} if base_ref else {}
-        with mock.patch.dict(os.environ, env, clear=False), \
-                mock.patch.object(gated.subprocess, "run", fake_run):
-            if not base_ref:
-                os.environ.pop("GITHUB_BASE_REF", None)
-            return gated.gated_matches_base(systems, current)
+    def test_a_roll_up_that_lags_main_fails_even_on_a_pull_request(self):
+        code, printed = self.check(gated.render([self.alpha, self.beta]))
+        self.assertEqual(code, 1)
+        self.assertIn("stale", printed)
 
-    def test_an_older_roll_up_is_accepted(self):
-        self.assertTrue(self.matches(self.head, self.prior))
+    def test_a_roll_up_still_naming_a_removed_package_fails(self):
+        removed = self.entry("removed", "checkout was not entered")
+        self.assertEqual(self.check(gated.render([self.alpha, self.beta, self.added, removed]))[0], 1)
 
-    def test_a_changed_existing_row_is_rejected(self):
-        changed = json.loads(json.dumps(self.head))
-        changed[0]["capture"]["gaps"] = ["checkout was not entered"]
-        self.assertFalse(self.matches(changed, self.prior))
-
-    def test_a_hand_edited_roll_up_is_rejected(self):
-        self.assertFalse(self.matches(self.head, self.prior.replace("Alpha", "Hand")))
-
-    def test_without_a_pull_request_base_the_exemption_does_not_apply(self):
-        self.assertFalse(self.matches(self.head, self.prior, base_ref=None))
+    def test_a_hand_edit_and_a_missing_file_fail(self):
+        text = gated.render([self.alpha, self.beta, self.added])
+        self.assertEqual(self.check(text.replace("Alpha", "Hand"))[0], 1)
+        self.assertEqual(self.check(None)[0], 1)
 
 
 if __name__ == "__main__":

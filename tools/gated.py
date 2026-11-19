@@ -13,9 +13,7 @@ Usage:
 """
 import argparse
 import json
-import os
 import re
-import subprocess
 import sys
 from pathlib import Path
 
@@ -51,80 +49,6 @@ def gate_lines(entry):
         if GATE.search(gap):
             lines.append(gap.strip())
     return lines
-
-
-def gated_matches_base(systems, current: str) -> bool:
-    """True when GitHub is merging a pull request that only adds catalog
-    rows, and the committed roll-up still matches the base catalog.
-
-    A capture pull request cannot rewrite this file for the merge commit.
-    Editing or removing an existing row still fails the check."""
-    base_ref = os.environ.get("GITHUB_BASE_REF")
-    if not base_ref:
-        return False
-    try:
-        raw = subprocess.run(
-            ["git", "show", f"origin/{base_ref}:catalog.json"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout
-        base = json.loads(raw)
-    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-        return False
-    base_rows = {s.get("slug"): s for s in base.get("systems") or []}
-    head_rows = {s.get("slug"): s for s in systems}
-    if not base_rows:
-        return False
-    if any(slug in base_rows and head_rows[slug] != base_rows[slug]
-           for slug in head_rows):
-        return False
-    # This pull request regenerated the roll-up, then main gained another
-    # capture. Compare the committed file to the branch blob. Re-rendering
-    # needs every package's gaps, and the merge tree has the later files.
-    sha = os.environ.get("GITHUB_HEAD_SHA") if base_ref else None
-    if sha:
-        try:
-            branch_text = subprocess.run(
-                ["git", "show", f"{sha}:docs/GATED.md"],
-                cwd=ROOT, check=True, capture_output=True, text=True,
-            ).stdout
-            raw = subprocess.run(
-                ["git", "show", f"{sha}:catalog.json"],
-                cwd=ROOT, check=True, capture_output=True, text=True,
-            ).stdout
-            branch_rows = {s.get("slug"): s for s in json.loads(raw).get("systems") or []}
-        except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-            branch_text = None
-            branch_rows = None
-        if (branch_text is not None and current == branch_text
-                and branch_rows and set(branch_rows) < set(head_rows)
-                and all(head_rows.get(slug) == row
-                        for slug, row in branch_rows.items())):
-            return True
-    if current == render(base["systems"]):
-        return True
-    # The roll-up may lag packages already merged to the base. It is still
-    # current when it is exactly the render of the packages it names.
-    return gated_is_prior_render(systems, current)
-
-
-def slugs_in_gated(text: str) -> set[str]:
-    """Slugs the committed roll-up rendered a section for."""
-    linked = set(re.findall(r"\]\(\.\./systems/([^)/\s]+)\)", text))
-    marker = "## No gated surface recorded"
-    open_slugs = set()
-    if marker in text:
-        open_slugs = set(re.findall(r"`([^`]+)`", text.split(marker, 1)[1]))
-    return linked | open_slugs
-
-
-def gated_is_prior_render(systems, current: str) -> bool:
-    """True when the file renders an unchanged subset of this catalog."""
-    named = slugs_in_gated(current)
-    slugs = {s.get("slug") for s in systems}
-    if not named or not named <= slugs:
-        return False
-    kept = [s for s in systems if s.get("slug") in named]
-    return current == render(kept)
 
 
 def render(systems):
@@ -177,7 +101,7 @@ def main(argv=None):
     text = render(systems)
     if args.check:
         current = OUT.read_text() if OUT.exists() else ""
-        if current != text and not gated_matches_base(systems, current):
+        if current != text:
             print("docs/GATED.md is stale — run python3 tools/gated.py")
             return 1
         print("gated ok")
