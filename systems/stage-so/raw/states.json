@@ -1,0 +1,199 @@
+{
+  "focus": {
+    "outline": "rgb(255, 255, 255) none 0px",
+    "outlineOffset": "0px",
+    "boxShadow": "none",
+    "bg": "rgb(57, 78, 255)"
+  },
+  "hover": {
+    "bg": "rgb(57, 78, 255)",
+    "boxShadow": "none",
+    "color": "rgb(255, 255, 255)",
+    "filter": "none",
+    "transform": "none"
+  },
+  "linkRest": {
+    "color": "rgba(255, 255, 255, 0.7)",
+    "td": "none",
+    "fw": "400"
+  },
+  "linkHover": {
+    "color": "rgba(255, 255, 255, 0.7)",
+    "td": "underline"
+  },
+  "features": [
+    {
+      "cls": "benefits",
+      "text": "Buyer protection program\n\nFast and easy transfer\n\nFlexible p",
+      "color": "rgb(87, 87, 88)",
+      "fs": "16px",
+      "fw": "400",
+      "lh": "24px",
+      "w": 1440,
+      "h": 104
+    },
+    {
+      "cls": "benefits__content gb-container",
+      "text": "Buyer protection program\n\nFast and easy transfer\n\nFlexible p",
+      "color": "rgb(255, 255, 255)",
+      "fs": "16px",
+      "fw": "400",
+      "lh": "24px",
+      "w": 1440,
+      "h": 32
+    },
+    {
+      "cls": "benefits__divider gb-d-md-none",
+      "text": "",
+      "color": "rgb(128, 128, 128)",
+      "fs": "16px",
+      "fw": "400",
+      "lh": "24px",
+      "w": 0,
+      "h": 0
+    },
+    {
+      "cls": "benefits__item",
+      "text": "Buyer protection program",
+      "color": "rgb(255, 255, 255)",
+      "fs": "16px",
+      "fw": "400",
+      "lh": "24px",
+      "w": 411,
+      "h": 32
+    },
+    {
+      "cls": "benefits__item-text",
+      "text": "Buyer protection program",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "fs": "18px",
+      "fw": "700",
+      "lh": "28px",
+      "w": 210,
+      "h": 28
+    },
+    {
+      "cls": "benefits__item",
+      "text": "Fast and easy transfer",
+      "color": "rgb(255, 255, 255)",
+      "fs": "16px",
+      "fw": "400",
+      "lh": "24px",
+      "w": 411,
+      "h": 32
+    },
+    {
+      "cls": "benefits__item-text",
+      "text": "Fast and easy transfer",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "fs": "18px",
+      "fw": "700",
+      "lh": "28px",
+      "w": 181,
+      "h": 28
+    },
+    {
+      "cls": "benefits__item",
+      "text": "Flexible payment methods",
+      "color": "rgb(255, 255, 255)",
+      "fs": "16px",
+      "fw": "400",
+      "lh": "24px",
+      "w": 411,
+      "h": 32
+    },
+    {
+      "cls": "benefits__item-text",
+      "text": "Flexible payment methods",
+      "color": "rgba(255, 255, 255, 0.8)",
+      "fs": "18px",
+      "fw": "700",
+      "lh": "28px",
+      "w": 215,
+      "h": 28
+    }
+  ],
+  "after": {
+    "checked": true,
+    "buyChecked": false,
+    "offer": null,
+    "buy": {
+      "cls": "domain-card-with-options__option domain-card-with-options__option--buy-now",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(87, 87, 88)",
+      "border": "0px none rgb(87, 87, 88)",
+      "radius": "0px",
+      "fs": "16px",
+      "fw": "400",
+      "w": 456,
+      "h": 86,
+      "display": "block"
+    },
+    "input": {
+      "cls": "domain-card-with-options__price domain-card-with-options__price--input gb-text-right",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(43, 43, 45)",
+      "border": "0px none rgb(43, 43, 45)",
+      "radius": "0px",
+      "fs": "38px",
+      "fw": "700",
+      "w": 28,
+      "h": 42,
+      "display": "inline-block"
+    },
+    "radio": {
+      "cls": "gb-radio gb-selectable",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(87, 87, 88)",
+      "border": "0px none rgb(87, 87, 88)",
+      "radius": "0px",
+      "fs": "16px",
+      "fw": "400",
+      "w": 330,
+      "h": 24,
+      "display": "block"
+    }
+  },
+  "motion": [
+    {
+      "cls": "mp-header__logo-link",
+      "transition": "all 0s",
+      "animation": "none"
+    },
+    {
+      "cls": "",
+      "transition": "all 0s",
+      "animation": "none"
+    },
+    {
+      "cls": "domain__card domain-card-with-options",
+      "transition": "all 0s",
+      "animation": "none"
+    },
+    {
+      "cls": "domain__card-payment-cta gb-button gb-button--brand gb-butto",
+      "transition": "all 0s",
+      "animation": "none"
+    },
+    {
+      "cls": "",
+      "transition": "all 0s",
+      "animation": "none"
+    },
+    {
+      "cls": "gb-modal__close-button gb-modal-header__close gb-button gb-b",
+      "transition": "all 0s",
+      "animation": "none"
+    },
+    {
+      "cls": "gb-dropdown__close gb-button gb-button--icon gb-button--gray",
+      "transition": "all 0s",
+      "animation": "none"
+    },
+    {
+      "cls": "gb-button gb-button--block gb-button--brand gb-is-disabled",
+      "transition": "all 0s",
+      "animation": "none"
+    }
+  ]
+}

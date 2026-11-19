@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>stage.so listing style guide</title>
+<style>
+  :root {
+    --navy: #171f66;
+    --white: #ffffff;
+    --ink: #2b2b2d;
+    --muted: #575758;
+    --placeholder: #cbcbcc;
+    --option: #f9f9f9;
+    --brand: #394eff;
+    --on-navy: rgba(255, 255, 255, 0.8);
+    --on-navy-soft: rgba(255, 255, 255, 0.7);
+    --footer: rgba(255, 255, 255, 0.05);
+    --radio-ring: rgba(7, 7, 12, 0.21);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--navy); color: var(--white); font: 400 16px/24px "GB Proxima Nova", -apple-system, "Segoe UI", sans-serif; }
+  header, main { padding: 28px 32px; max-width: 880px; }
+  h1 { margin: 0; font-size: 48px; line-height: 50px; font-weight: 700; letter-spacing: -0.208px; }
+  h2 { font-size: 18px; line-height: 28px; font-weight: 700; }
+  p { color: var(--on-navy); max-width: 62ch; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .sw { border-radius: 16px; overflow: hidden; background: var(--white); color: var(--ink); }
+  .sw i { display: block; height: 64px; }
+  .sw span { display: block; padding: 8px 10px; font-size: 12px; line-height: 16px; }
+  .card {
+    background: var(--white);
+    color: var(--muted);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 456px;
+    box-shadow: inset 0 1px 0 rgba(23, 24, 26, 0.06), 0 1.5px 3px rgba(23, 24, 26, 0.09), 0 3px 6px rgba(23, 24, 26, 0.07);
+  }
+  .kicker { margin: 6px 0 24px; font-size: 14px; font-weight: 500; letter-spacing: 4px; line-height: 21px; text-transform: uppercase; }
+  .row { display: flex; justify-content: space-between; align-items: center; background: var(--option); padding: 22px 0; }
+  .price { color: var(--ink); font-size: 32px; font-weight: 700; line-height: 38px; }
+  .next {
+    display: flex; align-items: center; justify-content: center;
+    height: 40px; margin-top: 16px; border: 0; border-radius: 24px;
+    background: var(--brand); color: var(--white); font: 700 16px/24px "GB Proxima Nova", -apple-system, "Segoe UI", sans-serif;
+    width: 100%;
+  }
+  .mark { width: 16px; height: 16px; border-radius: 9999px; background: var(--white); outline: 5px solid var(--brand); display: inline-block; margin-right: 12px; }
+  .mark.rest { outline: 1px solid var(--radio-ring); }
+  footer { background: var(--footer); color: var(--white); padding: 16px 32px; font-size: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <p>Domain for sale</p>
+  <h1>stage.so</h1>
+  <p>This page records the Spaceship listing that answered https://stage.so/ on 19 November 2026. It is not the discontinued Stage design product.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#171f66"></i><span>navy #171f66</span></div>
+    <div class="sw"><i style="background:#ffffff"></i><span>white #ffffff</span></div>
+    <div class="sw"><i style="background:#2b2b2d"></i><span>ink #2b2b2d</span></div>
+    <div class="sw"><i style="background:#575758"></i><span>muted #575758</span></div>
+    <div class="sw"><i style="background:#394eff"></i><span>brand #394eff</span></div>
+    <div class="sw"><i style="background:#f9f9f9"></i><span>option #f9f9f9</span></div>
+    <div class="sw"><i style="background:#cbcbcc"></i><span>placeholder #cbcbcc</span></div>
+    <div class="sw"><i style="background:rgba(255,255,255,0.8)"></i><span>on navy 80%</span></div>
+  </div>
+  <h2>Purchase card</h2>
+  <div class="card">
+    <p class="kicker">Get this domain</p>
+    <div class="row"><span><i class="mark"></i>Buy now</span><span class="price">$3,900</span></div>
+    <div class="row" style="background:transparent"><span><i class="mark rest"></i>Make offer</span><span class="price" style="color:#cbcbcc">$</span></div>
+    <button class="next" type="button">Next</button>
+  </div>
+</main>
+<footer>Listed with spaceship.com</footer>
+</body>
+</html>

@@ -20343,6 +20343,58 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "stage-so",
+      "name": "Stage.so",
+      "url": "https://stage.so/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A discontinued product whose public host is now a Spaceship domain listing: navy field, white purchase card, brand pill",
+      "tags": [
+        "web",
+        "domain",
+        "listing",
+        "discontinued"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "public listing only; the Stage product and any login are gone",
+      "themes": [
+        "listing"
+      ],
+      "widths": [
+        1169,
+        1440,
+        390
+      ],
+      "entry": "systems/stage-so/README.md",
+      "tokens": "systems/stage-so/tokens.json",
+      "styleGuide": "systems/stage-so/style-guide.html",
+      "preview": {
+        "cover": "systems/stage-so/screenshots/listing-desktop-default.png",
+        "icon": "systems/stage-so/icon.png",
+        "swatches": {
+          "listing": {
+            "page": "listing.background.page",
+            "surface": "listing.background.surface",
+            "text": "listing.text.primary",
+            "muted": "listing.text.secondary",
+            "accent": "listing.background.action",
+            "border": "listing.border.radio-rest"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "version": "spaceship-for-sale listing, product discontinued"
+      }
     }
   ]
 }
