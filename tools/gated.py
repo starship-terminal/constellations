@@ -77,24 +77,27 @@ def gated_matches_base(systems, current: str) -> bool:
     if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
         return False
     # This pull request regenerated the roll-up, then main gained another
-    # capture. The committed file matches the branch tip in that case.
-    sha = os.environ.get("GITHUB_HEAD_SHA") if os.environ.get("GITHUB_BASE_REF") else None
-    branch = None
+    # capture. Compare the committed file to the branch blob. Re-rendering
+    # needs every package's gaps, and the merge tree has the later files.
+    sha = os.environ.get("GITHUB_HEAD_SHA") if base_ref else None
     if sha:
         try:
+            branch_text = subprocess.run(
+                ["git", "show", f"{sha}:docs/GATED.md"],
+                cwd=ROOT, check=True, capture_output=True, text=True,
+            ).stdout
             raw = subprocess.run(
                 ["git", "show", f"{sha}:catalog.json"],
                 cwd=ROOT, check=True, capture_output=True, text=True,
             ).stdout
-            branch = json.loads(raw)
+            branch_rows = {s.get("slug"): s for s in json.loads(raw).get("systems") or []}
         except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-            branch = None
-    if branch is not None:
-        branch_rows = {s.get("slug"): s for s in branch.get("systems") or []}
-        if (set(branch_rows) < set(head_rows)
+            branch_text = None
+            branch_rows = None
+        if (branch_text is not None and current == branch_text
+                and branch_rows and set(branch_rows) < set(head_rows)
                 and all(head_rows.get(slug) == row
-                        for slug, row in branch_rows.items())
-                and current == render(list(branch_rows.values()))):
+                        for slug, row in branch_rows.items())):
             return True
     if current == render(base["systems"]):
         return True

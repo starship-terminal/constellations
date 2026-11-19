@@ -37,8 +37,8 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           git fetch --depth=1 origin "${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
-          git fetch --depth=1 origin "${{ github.event.pull_request.head.sha }}"
-          echo "GITHUB_HEAD_SHA=${{ github.event.pull_request.head.sha }}" >> "$GITHUB_ENV"
+          git fetch --depth=1 origin "${{ github.event.pull_request.head.sha }}:refs/pr-head"
+          echo "GITHUB_HEAD_SHA=refs/pr-head" >> "$GITHUB_ENV"
       - uses: actions/setup-node@v7
         with:
           node-version: 22
