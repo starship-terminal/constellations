@@ -220,6 +220,46 @@ def build() -> dict:
     }
 
 
+
+def _branch_seed() -> tuple[dict | None, dict | None]:
+    """The pull request head's seed and catalog rows, when GitHub set them."""
+    sha = os.environ.get("GITHUB_HEAD_SHA") if os.environ.get("GITHUB_BASE_REF") else None
+    if not sha:
+        return None, None
+    try:
+        seed = json.loads(subprocess.run(
+            ["git", "show", f"{sha}:app/src/data/media-taxonomy.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout)
+        raw = subprocess.run(
+            ["git", "show", f"{sha}:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        rows = {s.get("slug"): s for s in json.loads(raw).get("systems") or []}
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return None, None
+    return seed, rows
+
+
+def _same_as_branch(path: str) -> bool:
+    """True when HEAD's copy of path equals the pull request head's copy."""
+    sha = os.environ.get("GITHUB_HEAD_SHA") if os.environ.get("GITHUB_BASE_REF") else None
+    if not sha:
+        return False
+    try:
+        branch = subprocess.run(
+            ["git", "rev-parse", f"{sha}:{path}"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout.strip()
+        head = subprocess.run(
+            ["git", "rev-parse", f"HEAD:{path}"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return False
+    return branch == head
+
+
 def _head_touches(path: str) -> bool:
     """True when the merge commit's copy of path differs from the base.
 
@@ -289,31 +329,20 @@ def matches_base(result: dict, committed: dict) -> bool:
     head_rows = {s.get("slug"): s for s in catalog.load_catalog()["systems"]}
     # This pull request regenerated the seed, then main gained another
     # package. The committed seed matches the branch tip in that case.
-    sha = os.environ.get("GITHUB_HEAD_SHA") if os.environ.get("GITHUB_BASE_REF") else None
-    if sha:
-        try:
-            branch_seed = json.loads(subprocess.run(
-                ["git", "show", f"{sha}:app/src/data/media-taxonomy.json"],
-                cwd=ROOT, check=True, capture_output=True, text=True,
-            ).stdout)
-            raw = subprocess.run(
-                ["git", "show", f"{sha}:catalog.json"],
-                cwd=ROOT, check=True, capture_output=True, text=True,
-            ).stdout
-            branch_rows = {s.get("slug"): s for s in json.loads(raw).get("systems") or []}
-        except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-            branch_seed = None
-            branch_rows = None
-        if (branch_seed is not None and committed == branch_seed
-                and branch_rows and set(branch_rows) <= set(head_rows)
-                and all(head_rows.get(slug) == row for slug, row in branch_rows.items())
-                and set(head_rows) - set(branch_rows)):
-            return True
+    branch_seed, branch_rows = _branch_seed()
+    if (branch_seed is not None and committed == branch_seed
+            and branch_rows and set(branch_rows) <= set(head_rows)
+            and all(head_rows.get(slug) == row for slug, row in branch_rows.items())
+            and set(head_rows) - set(branch_rows)):
+        return True
     if not set(head_rows) > slugs:
         return False
     # A pull request that edits this script changes the derived rules.
-    # That PR regenerates the seed. A capture PR does not touch the script.
-    if _head_touches("app/scripts/build-media-taxonomy.py"):
+    # The merge commit can also carry the base copy of the script when
+    # main edited it after the branch started. That is not a capture edit.
+    # Reject only a script that differs from both the base and the branch.
+    if (_head_touches("app/scripts/build-media-taxonomy.py")
+            and not _same_as_branch("app/scripts/build-media-taxonomy.py")):
         return False
     base_files = _base_tree_files()
     if base_files is None:

@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 235,
-    "system_domains": 226,
-    "matched_domains": 195,
-    "missing_domains": 238,
+    "system_packages": 238,
+    "system_domains": 229,
+    "matched_domains": 198,
+    "missing_domains": 235,
     "system_domains_absent_from_catalog": 31
   },
   "matched": {
@@ -3001,6 +3001,23 @@
         }
       ]
     },
+    "newyorker.com": {
+      "catalog": [
+        {
+          "name": "The New Yorker",
+          "domain": "newyorker.com",
+          "id": 63
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "the-new-yorker",
+          "name": "The New Yorker",
+          "url": "https://www.newyorker.com/",
+          "name_match": true
+        }
+      ]
+    },
     "nytimes.com": {
       "catalog": [
         {
@@ -3052,6 +3069,23 @@
         }
       ]
     },
+    "retool.com": {
+      "catalog": [
+        {
+          "name": "Retool",
+          "domain": "retool.com",
+          "id": 213
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "retool",
+          "name": "Retool",
+          "url": "https://retool.com",
+          "name_match": true
+        }
+      ]
+    },
     "rows.com": {
       "catalog": [
         {
@@ -3065,6 +3099,23 @@
           "slug": "rows",
           "name": "Rows",
           "url": "https://rows.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "runey.app": {
+      "catalog": [
+        {
+          "name": "Runey",
+          "domain": "runey.app",
+          "id": 883
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "runey",
+          "name": "Runey",
+          "url": "https://runey.app/",
           "name_match": true
         }
       ]
@@ -3821,13 +3872,6 @@
         "id": 309
       }
     ],
-    "newyorker.com": [
-      {
-        "name": "The New Yorker",
-        "domain": "newyorker.com",
-        "id": 63
-      }
-    ],
     "nextdoor.com": [
       {
         "name": "Nextdoor",
@@ -4220,13 +4264,6 @@
         "id": 226
       }
     ],
-    "retool.com": [
-      {
-        "name": "Retool",
-        "domain": "retool.com",
-        "id": 213
-      }
-    ],
     "revenuecat.com": [
       {
         "name": "RevenueCat",
@@ -4302,13 +4339,6 @@
         "name": "Rox",
         "domain": "rox.com",
         "id": 847
-      }
-    ],
-    "runey.app": [
-      {
-        "name": "Runey",
-        "domain": "runey.app",
-        "id": 883
       }
     ],
     "runwayml.com": [

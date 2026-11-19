@@ -1626,6 +1626,41 @@
       "referenceId": "systems:whereby",
       "media": 11,
       "assignedMedia": 11
+    },
+    {
+      "referenceId": "systems:sana-ai",
+      "media": 7,
+      "assignedMedia": 5
+    },
+    {
+      "referenceId": "systems:telescope",
+      "media": 2,
+      "assignedMedia": 2
+    },
+    {
+      "referenceId": "systems:slack",
+      "media": 0,
+      "assignedMedia": 0
+    },
+    {
+      "referenceId": "systems:skyscanner",
+      "media": 0,
+      "assignedMedia": 0
+    },
+    {
+      "referenceId": "systems:the-new-yorker",
+      "media": 0,
+      "assignedMedia": 0
+    },
+    {
+      "referenceId": "systems:runey",
+      "media": 23,
+      "assignedMedia": 23
+    },
+    {
+      "referenceId": "systems:retool",
+      "media": 0,
+      "assignedMedia": 0
     }
   ],
   "assignments": [
@@ -346498,6 +346533,426 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/whereby/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sana-ai",
+      "mediaId": "systems/sana-ai/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sana-ai",
+      "mediaId": "systems/sana-ai/components/crops/button-explore-agents.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sana-ai",
+      "mediaId": "systems/sana-ai/components/crops/button-explore-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sana-ai",
+      "mediaId": "systems/sana-ai/components/crops/button-signin-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sana-ai",
+      "mediaId": "systems/sana-ai/components/crops/card-product.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:telescope",
+      "mediaId": "systems/telescope/screenshots/home-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:telescope",
+      "mediaId": "systems/telescope/screenshots/home-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/screenshots/auth-light-signin.png",
+      "terms": [
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/screenshots/auth-light-signup.png",
+      "terms": [
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/screenshots/home-light-cookie.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/screenshots/home-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/billing-toggle.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/button-ghost.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/button-google.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/button-primary-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/button-primary.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/button-secondary.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/button-signin.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/card-auth.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/card-plan.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/card-quote.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/chip-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/faq-closed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/faq-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/field-email-focus.png",
+      "terms": [
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/field-email.png",
+      "terms": [
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/field-password.png",
+      "terms": [
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:runey",
+      "mediaId": "systems/runey/components/crops/link-nav.png",
+      "terms": [
+        {
+          "termId": "web-fonts:poppins",
+          "rule": "font-primary",
+          "reason": "Exact primary family Poppins from systems/runey/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
         }
       ]
     }

@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_164 of 235 packages name gated surfaces in their gaps; 61 more mark a gate in their access text; 10 report none._
+_165 of 238 packages name gated surfaces in their gaps; 63 more mark a gate in their access text; 10 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -983,6 +983,11 @@ Access: signed out (public marketing page plus the email sign-in form; an AgentM
 - no company SSO was offered
 - the sign-in page has no screenshot because a headless shot disagreed with the live dark page
 
+## [Runey](../systems/runey) — `runey`
+Access: signed out (public marketing page plus the /auth sign-in and sign-up views; nothing was typed, nothing was submitted, and Google was not followed)
+- the product app sits behind sign-in and was not entered
+- sign-up asks for a full name as well as email, so nothing was typed and nothing was submitted
+
 ## Gate noted in access text only
 
 ### [1Password](../systems/1password) — `1password`
@@ -1167,6 +1172,12 @@ signed out. Public marketing at slack.com/intl/en-sg/ and pricing. Sign-in chrom
 
 ### [Skyscanner](../systems/skyscanner) — `skyscanner`
 signed out. Public marketing and the search form only. Cookie banner dismissed with essential only. Login modal closed. No email, booking, card or phone.
+
+### [The New Yorker](../systems/the-new-yorker) — `the-new-yorker`
+signed out (homepage, one article, the public offers page, and the email sign-in step; nothing submitted)
+
+### [Retool](../systems/retool) — `retool`
+signed out. Homepage, pricing, login, signup and docs. No email was typed. Signup was not submitted. No demo, SSO, card or database.
 
 ## No gated surface recorded
 
