@@ -19952,6 +19952,68 @@
         "icons/": "The wordmark is an inline SVG on /login and was not saved. The Google mark is a brand icon and is not kept. Marketing UI marks are in the screenshots.",
         "components/": "The preview browser produced no screenshot frames, so no element crops were cut."
       }
+    },
+{
+      "slug": "slack",
+      "name": "Slack",
+      "url": "https://slack.com",
+      "category": "messaging",
+      "platform": "web",
+      "goodFor": "Public marketing and signed-out sign-in chrome: white page, purple 4px primary button, aubergine 12px auth controls",
+      "tags": [
+        "web",
+        "messaging",
+        "marketing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing at slack.com/intl/en-sg/ and pricing. Sign-in chrome at slack.com/signin measured and not submitted. Signup, workspace URL, Google, Microsoft, Apple, company SSO and card were not entered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/slack/README.md",
+      "tokens": "systems/slack/tokens.json",
+      "styleGuide": "systems/slack/style-guide.html",
+      "preview": {
+        "cover": "systems/slack/icon.png",
+        "icon": "systems/slack/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.marketingHeading",
+          "core.font.family.marketingBody",
+          "core.font.family.authBody"
+        ]
+      },
+      "source": {
+        "path": "https://slack.com/intl/en-sg/ and https://slack.com/signin",
+        "excluded": [
+          "signup",
+          "workspace",
+          "sso",
+          "card"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40
+      }
     }
   ]
 }

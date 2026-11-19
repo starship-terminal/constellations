@@ -1,0 +1,86 @@
+{
+  "source": "getComputedStyle on slack.com, 2026-11-19, T3 preview tab. Marketing https://slack.com/intl/en-sg/ and https://slack.com/intl/en-sg/pricing at 1169x731 and 390x844, devicePixelRatio 2. Sign-in https://slack.com/signin#/signin at 1169x731. No workspace, no SSO, no card.",
+  "viewport": {
+    "desktop": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "note": "preview_resize freeform 390x844. preview_status still reported 1280x800. getComputedStyle reads used innerWidth 390."}
+  },
+  "colors": {
+    "page": "#ffffff",
+    "surface": "#ffffff",
+    "text": "#1d1c1d",
+    "muted": "#454447",
+    "legal": "#696969",
+    "accent": "#730394",
+    "border": "#e5e5e5",
+    "focus": "#1264a3",
+    "nav": "rgba(0, 0, 0, 0)",
+    "brand": {
+      "aubergine": "#4a154b",
+      "black": "#1d1c1d",
+      "horchatta": "#f4ede4",
+      "slack_blue": "#36c5f0",
+      "slack_green": "#2eb67d",
+      "slack_yellow": "#ecb22e",
+      "slack_red": "#e01e5a",
+      "white": "#ffffff"
+    },
+    "semantic": {
+      "contentPry": "#1d1c1d",
+      "contentSec": "#454447",
+      "contentTer": "#5e5d60",
+      "contentHgl1": "#1264a3",
+      "contentHgl2": "#007a5a",
+      "contentImp": "#c01343",
+      "basePry": "#ffffff",
+      "baseSec": "#f8f8f8",
+      "baseTer": "#eaeaea",
+      "otlPry": "#7c7a7f",
+      "otlSec": "#5e5d6073",
+      "otlTer": "#5e5d6021",
+      "otlHgl1": "#1264a3",
+      "otlImp": "#e01e5a"
+    },
+    "marketing": {
+      "aubergine": "#481a54",
+      "primaryButton": "#730394",
+      "secondaryText": "#730394",
+      "navText": "#000000",
+      "h1": "#000000",
+      "onAubergine": "#ffffff",
+      "eyebrow": "#868686",
+      "strike": "#747474",
+      "promoFill": "#f9f0ff",
+      "promoBorder": "#d17dfe",
+      "featuredPlanBorder": "#a350af",
+      "planBorder": "#e5e5e5",
+      "fieldFocus": "#1264a3",
+      "authButton": "#4a154b",
+      "googleBorder": "#5e5d6073",
+      "link": "#1264a3",
+      "footerLink": "#696969"
+    }
+  },
+  "fonts": {
+    "marketingHeading": "Salesforce-Avant-Garde, system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif",
+    "marketingBody": "Salesforce-Sans, system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif",
+    "authBody": "Slack-Lato, Slack-Fractions, appleLogo, sans-serif",
+    "mono": "Slack-Roboto-Mono, Monaco, Menlo, Consolas, \"Courier New\", monospace"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 #0000000c",
+    "base": "0 1px 3px 0 #00000019, 0 1px 2px -1px #00000019",
+    "md": "0 2px 4px -2px #00000019, 0 4px 6px -1px #00000019",
+    "lg": "0 4px 6px -4px #00000019, 0 10px 15px -3px #00000019",
+    "pricing": "rgba(24, 24, 24, 0.1) 0px 4px 16px 0px",
+    "focus": "rgb(18, 100, 163) 0px 0px 0px 1px, color(srgb 0.0705882 0.392157 0.639216 / 0.3) 0px 0px 0px 5px"
+  },
+  "logoFills": {
+    "wordmark": "#181818",
+    "markRed": "#E3066A",
+    "markBlue": "#00B3FF",
+    "markGreen": "#41B658",
+    "markYellow": "#FCC003",
+    "source": "https://a.slack-edge.com/bv1-13/slack_logo-97f7334.svg fetched from the sign-in page img"
+  },
+  "screenshots": "preview_snapshot failed twice with: The browser is not producing screenshot frames. No frames were invented."
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slack style guide</title>
+<style>
+:root {
+  --page: #ffffff;
+  --text: #1d1c1d;
+  --muted: #454447;
+  --accent: #730394;
+  --aubergine: #4a154b;
+  --section: #481a54;
+  --border: #e5e5e5;
+  --focus: #1264a3;
+  --promo: #f9f0ff;
+  --promo-border: #d17dfe;
+  --blue: #36c5f0;
+  --green: #2eb67d;
+  --yellow: #ecb22e;
+  --red: #e01e5a;
+  --horchata: #f4ede4;
+  --font-heading: "Salesforce-Avant-Garde", system-ui, sans-serif;
+  --font-body: "Salesforce-Sans", system-ui, sans-serif;
+  --font-auth: "Slack-Lato", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 { font-family: var(--font-heading); font-weight: 700; font-size: 48px; line-height: 53.76px; letter-spacing: -0.576px; margin: 0 0 8px; }
+h2 { font-family: var(--font-heading); font-weight: 600; font-size: 28px; margin: 40px 0 12px; }
+p { color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.chip { height: 72px; border-radius: 8px; border: 1px solid var(--border); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; color: var(--text); }
+button, .btn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.798px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 12px 16px;
+  border: 0;
+}
+.primary { background: var(--accent); color: #fff; }
+.secondary { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.auth {
+  font-family: var(--font-auth);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
+  background: var(--aubergine);
+  color: #fff;
+  border-radius: 12px;
+  height: 44px;
+  padding: 0 16px 3px;
+}
+input {
+  font-family: var(--font-auth);
+  font-size: 18px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 12px;
+  height: 44px;
+  width: 280px;
+  box-shadow: 0 0 0 1px var(--focus), 0 0 0 5px color-mix(in srgb, var(--focus) 30%, transparent);
+}
+.pill {
+  display: inline-block;
+  background: var(--promo);
+  border: 1px solid var(--promo-border);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #000;
+}
+.band { background: var(--section); color: #fff; padding: 24px; border-radius: 8px; margin-top: 16px; }
+.band h3 { font-family: var(--font-heading); font-weight: 600; margin: 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Slack</h1>
+  <p>Public marketing and signed-out sign-in chrome. Values are computed styles from 2026-11-19. Fonts fall back when Salesforce-Avant-Garde, Salesforce-Sans, and Slack-Lato are not installed.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><span>Page #ffffff</span></div>
+    <div class="swatch"><div class="chip" style="background:#1d1c1d"></div><span>Text #1d1c1d</span></div>
+    <div class="swatch"><div class="chip" style="background:#454447"></div><span>Muted #454447</span></div>
+    <div class="swatch"><div class="chip" style="background:#730394"></div><span>Accent #730394</span></div>
+    <div class="swatch"><div class="chip" style="background:#4a154b"></div><span>Aubergine #4a154b</span></div>
+    <div class="swatch"><div class="chip" style="background:#481a54"></div><span>Section #481a54</span></div>
+    <div class="swatch"><div class="chip" style="background:#e5e5e5"></div><span>Border #e5e5e5</span></div>
+    <div class="swatch"><div class="chip" style="background:#1264a3"></div><span>Focus #1264a3</span></div>
+    <div class="swatch"><div class="chip" style="background:#36c5f0"></div><span>Slack blue #36c5f0</span></div>
+    <div class="swatch"><div class="chip" style="background:#2eb67d"></div><span>Slack green #2eb67d</span></div>
+    <div class="swatch"><div class="chip" style="background:#ecb22e"></div><span>Slack yellow #ecb22e</span></div>
+    <div class="swatch"><div class="chip" style="background:#e01e5a"></div><span>Slack red #e01e5a</span></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary" type="button">Get started</button>
+    <button class="secondary" type="button">Request a demo</button>
+    <button class="auth" type="button">Sign in with email</button>
+  </div>
+  <p><input type="email" value="name@work-email.com" readonly aria-label="Email, focused state"></p>
+  <p><span class="pill">50% off for three months</span></p>
+  <div class="band"><h3>Reimagine what’s possible with AI and agents</h3></div>
+</main>
+</body>
+</html>
