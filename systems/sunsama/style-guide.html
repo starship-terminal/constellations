@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunsama style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --warm: #f6f5f1;
+    --surface: #ffffff;
+    --muted-surface: #fafafa;
+    --feature: #f8f8f8;
+    --auth-page: #f7f8fa;
+    --ink: #202228;
+    --auth-ink: #413f39;
+    --muted: #20222899;
+    --auth-muted: #787878;
+    --placeholder: #b4b4b4;
+    --accent: #ff891c;
+    --accent-hover: #db7414;
+    --deep: #f06351;
+    --on-accent: #ffffff;
+    --link: #2ca7ff;
+    --border: #f2f2f2;
+    --border-strong: #dcdcdc;
+    --focus: #8cb4f0;
+    --email: #d2d2d2;
+    --sans: "DM Sans", sans-serif;
+    --auth: Avenir, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 24px;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 40px 80px; }
+  h1 { font-weight: 600; font-size: 48px; line-height: 55.68px; letter-spacing: -0.48px; margin: 0 0 12px; }
+  h2 { font-weight: 600; font-size: 24px; line-height: 25.44px; margin: 40px 0 12px; }
+  p { color: var(--muted); margin: 0 0 16px; max-width: 40rem; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 10px; border: 1px solid var(--border); }
+  .name { font-size: 14px; line-height: 20px; color: var(--ink); margin-top: 6px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    border: 0;
+    text-decoration: none;
+    padding: 10px 22px;
+  }
+  .primary { background: var(--accent); color: var(--on-accent); }
+  .outline { background: var(--surface); color: var(--accent); border: 3px solid var(--accent); }
+  .auth {
+    background: var(--auth-page);
+    padding: 40px;
+    border-radius: 16px;
+    width: 320px;
+  }
+  .card {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06);
+    font-family: var(--auth);
+  }
+  .oauth, .email, .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: var(--auth);
+    font-size: 15px;
+    font-weight: 500;
+    height: 45px;
+    margin: 0 0 8px;
+  }
+  .oauth { background: #fff; color: var(--auth-ink); border: 1px solid var(--border-strong); }
+  .email { background: var(--email); color: #fff; border: 0; }
+  .field {
+    justify-content: flex-start;
+    height: 42.5px;
+    padding: 11px 14px;
+    color: var(--placeholder);
+    border: 1px solid var(--focus);
+    background: transparent;
+  }
+  .link { color: var(--link); font-family: var(--auth); font-size: 13px; font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Sunsama</h1>
+  <p>Public marketing and the signed-out login. Light only. Values are the computed styles from 19 November 2026.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#f6f5f1"></div><div class="name">warm #f6f5f1</div></div>
+    <div class="swatch"><div class="chip" style="background:#fafafa"></div><div class="name">muted surface #fafafa</div></div>
+    <div class="swatch"><div class="chip" style="background:#f7f8fa"></div><div class="name">auth page #f7f8fa</div></div>
+    <div class="swatch"><div class="chip" style="background:#202228"></div><div class="name">ink #202228</div></div>
+    <div class="swatch"><div class="chip" style="background:#ff891c"></div><div class="name">accent #ff891c</div></div>
+    <div class="swatch"><div class="chip" style="background:#db7414"></div><div class="name">hover #db7414</div></div>
+    <div class="swatch"><div class="chip" style="background:#2ca7ff"></div><div class="name">link #2ca7ff</div></div>
+    <div class="swatch"><div class="chip" style="background:#8cb4f0"></div><div class="name">focus #8cb4f0</div></div>
+    <div class="swatch"><div class="chip" style="background:#d2d2d2"></div><div class="name">email button #d2d2d2</div></div>
+  </div>
+
+  <h2>Marketing button</h2>
+  <div class="row">
+    <a class="btn primary">Start for Free</a>
+    <a class="btn outline">View integration</a>
+  </div>
+
+  <h2>Login card</h2>
+  <div class="auth">
+    <div class="card">
+      <div class="oauth">Log in with Google</div>
+      <div class="field">jane@company.com</div>
+      <button class="email" type="button">Log in with email</button>
+      <a class="link">Recover password</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
