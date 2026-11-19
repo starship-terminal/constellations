@@ -25,9 +25,12 @@ jobs:
           GIT_LFS_SKIP_SMUDGE: 1
       # make check compares generated files to the base catalog. A depth-1
       # pull-request checkout has the merge commit only, so fetch the base.
-      - name: Fetch the pull request base
+      - name: Fetch the pull request base and head
         if: github.event_name == 'pull_request'
-        run: git fetch --depth=1 origin "${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+        run: |
+          git fetch --depth=1 origin "${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+          git fetch --depth=1 origin "${{ github.event.pull_request.head.sha }}"
+          echo "GITHUB_HEAD_SHA=${{ github.event.pull_request.head.sha }}" >> "$GITHUB_ENV"
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"

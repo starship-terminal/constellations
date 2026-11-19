@@ -332,10 +332,14 @@ def branch_catalog() -> dict | None:
 
     GitHub checks the merge commit, so the working tree already includes
     captures that landed on the base after this branch was pushed. The
-    branch tip is the second parent. None when that parent is unreadable."""
+    workflow fetches the branch tip to GITHUB_HEAD_SHA. A depth-1 checkout
+    has no second parent, so HEAD^2 is not that tip."""
+    sha = os.environ.get("GITHUB_HEAD_SHA")
+    if not sha or not os.environ.get("GITHUB_BASE_REF"):
+        return None
     try:
         raw = subprocess.run(
-            ["git", "show", "HEAD^2:catalog.json"],
+            ["git", "show", f"{sha}:catalog.json"],
             cwd=ROOT, check=True, capture_output=True, text=True,
         ).stdout
         catalog = json.loads(raw)
@@ -409,7 +413,7 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
     added = [row for slug, row in head_rows.items() if slug not in base_rows]
     added_expected = coverage_mod.build(
         directory, {**head_catalog, "systems": list(base.get("systems") or []) + added})
-    if (coverage_shared_ok(expected, actual)
+    if (coverage_shared_ok(added_expected, actual)
             and coverage_extras_are_added(actual, expected, added_expected)):
         return True
     # The committed file may also lag packages already merged to the base.
@@ -462,17 +466,36 @@ def coverage_is_prior_derivation(directory: dict, head_catalog: dict,
         directory, {**base, "systems": kept})
 
 
+def _pkg_slugs(row) -> set[str]:
+    pkgs = row if isinstance(row, list) else (row or {}).get("pkgs") or []
+    return {pkg.get("slug") for pkg in pkgs if isinstance(pkg, dict) and pkg.get("slug")}
+
+
 def coverage_shared_ok(expected: dict, actual: dict) -> bool:
-    """Every domain in the committed file has the same row somewhere in
-    the merged derivation. A later capture can move a domain from missing
-    to matched; that move is fine. A changed row is not."""
+    """Every domain in the committed file still agrees with the merge.
+
+    A later capture can move a domain from missing to matched. An added
+    package on a domain the file already covers changes the package list
+    without making the file stale. A package the file names and the merge
+    does not, or a changed package row, still fails."""
     expected_flat = {}
     for key in ("matched", "missing", "systems_absent_from_catalog"):
         expected_flat.update(expected.get(key) or {})
     for key in ("matched", "missing", "systems_absent_from_catalog"):
         for dom, row in (actual.get(key) or {}).items():
-            if dom in expected_flat and expected_flat[dom] != row:
+            if dom not in expected_flat:
+                continue
+            other = expected_flat[dom]
+            if _pkg_slugs(row) - _pkg_slugs(other):
                 return False
+            other_pkgs = other if isinstance(other, list) else (other or {}).get("pkgs") or []
+            by_slug = {pkg.get("slug"): pkg for pkg in other_pkgs if isinstance(pkg, dict)}
+            pkgs = row if isinstance(row, list) else (row or {}).get("pkgs") or []
+            for pkg in pkgs:
+                if not isinstance(pkg, dict) or pkg.get("slug") not in by_slug:
+                    continue
+                if pkg != by_slug[pkg.get("slug")]:
+                    return False
     return True
 
 

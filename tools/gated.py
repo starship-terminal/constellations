@@ -78,14 +78,17 @@ def gated_matches_base(systems, current: str) -> bool:
         return False
     # This pull request regenerated the roll-up, then main gained another
     # capture. The committed file matches the branch tip in that case.
-    try:
-        raw = subprocess.run(
-            ["git", "show", "HEAD^2:catalog.json"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout
-        branch = json.loads(raw)
-    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
-        branch = None
+    sha = os.environ.get("GITHUB_HEAD_SHA") if os.environ.get("GITHUB_BASE_REF") else None
+    branch = None
+    if sha:
+        try:
+            raw = subprocess.run(
+                ["git", "show", f"{sha}:catalog.json"],
+                cwd=ROOT, check=True, capture_output=True, text=True,
+            ).stdout
+            branch = json.loads(raw)
+        except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+            branch = None
     if branch is not None:
         branch_rows = {s.get("slug"): s for s in branch.get("systems") or []}
         if (set(branch_rows) < set(head_rows)
