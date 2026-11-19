@@ -20343,6 +20343,78 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "url": "https://copilot.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Microsoft Copilot public signed-out marketing: dark #1f1f1f page, white 16px-radius sign-in button, Segoe Serif Display hero, pill tabs, 24px cards, and a Microsoft account sign-in boundary",
+      "tags": [
+        "web",
+        "ai",
+        "microsoft",
+        "marketing",
+        "dark",
+        "signed-out",
+        "chat"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (copilot.com marketing pages are public; sign-in redirects to a Microsoft account page and was not submitted)",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/microsoft-copilot/README.md",
+      "tokens": "systems/microsoft-copilot/tokens.json",
+      "styleGuide": "systems/microsoft-copilot/style-guide.html",
+      "preview": {
+        "cover": "systems/microsoft-copilot/screenshots/home-dark-default.png",
+        "icon": "systems/microsoft-copilot/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.background.action",
+            "border": "dark.border.stroke"
+          },
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.strong"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "copilot.com public page 2026-11-19",
+        "route": "public-web",
+        "pr": "https://github.com/starship-terminal/constellations/pull/698",
+        "durationMin": 40,
+        "routes": [
+          "https://copilot.com/",
+          "https://copilot.com/download",
+          "https://copilot.com/cowork",
+          "https://copilot.com/login (Microsoft account card, not submitted)",
+          "phone 390"
+        ]
+      }
     }
   ]
 }
