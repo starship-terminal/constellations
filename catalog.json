@@ -20343,6 +20343,111 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "literal",
+      "name": "Literal.club",
+      "url": "https://literal.club",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "A reading social site: warm-white page, Inter UI and Libre Baskerville display, square green Join #278458, a 4px --size scale, public book and profile pages, and a real dark set that follows prefers-color-scheme",
+      "tags": [
+        "web",
+        "books",
+        "reading",
+        "social",
+        "editorial",
+        "serif-display",
+        "light",
+        "dark",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (every captured surface is public; sign-in, register, Want to read, Follow, Like, Comment, import, and supporter checkout were measured or seen and not activated; email and password were not typed)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/literal/README.md",
+      "tokens": "systems/literal/tokens.json",
+      "styleGuide": "systems/literal/style-guide.html",
+      "preview": {
+        "cover": "systems/literal/screenshots/home-light-default.png",
+        "icon": "systems/literal/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.ui.overlayBackground",
+            "surface": "light.ui.boxBackground",
+            "text": "light.text.primary",
+            "muted": "light.text.discreet",
+            "accent": "light.accent.primary",
+            "border": "light.ui.outline"
+          },
+          "dark": {
+            "page": "dark.ui.boxBackground",
+            "surface": "dark.ui.overlayBackground",
+            "text": "dark.text.primary",
+            "muted": "dark.text.discreet",
+            "accent": "dark.accent.primary",
+            "border": "dark.ui.outline"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.serif"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/literal/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "literal.club public signed-out surface in a real Chrome window attached over CDP, desktop 1440x900 and phone 390x844. Cloudflare challenges headless Chromium. The managed challenge cleared on its own and was never clicked. No consent banner was posted.",
+        "timestamp": "2026-11-18T09:15:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/explore",
+          "/book/the-midnight-library-mrpx0",
+          "/kikimeower",
+          "/signin",
+          "/register",
+          "/press",
+          "/legal",
+          "/privacy-policy",
+          "/terms-and-conditions",
+          "/supporter",
+          "/guides",
+          "/developers",
+          "/contact",
+          "/app",
+          "/changelog",
+          "/book-tracker-app",
+          "/book-club-app",
+          "/about",
+          "/import/goodreads"
+        ],
+        "gaps": [
+          "https://literal.club/signin: the account after Sign in was not submitted. Sign in with Apple is OAuth and was not activated. Email and password were not typed. Forgot password was not followed.",
+          "https://literal.club/register: account creation was not submitted.",
+          "https://literal.club/book/the-midnight-library-mrpx0: Want to read, Like, and Comment need an account and were not activated.",
+          "https://literal.club/kikimeower: Follow needs an account and was not activated.",
+          "https://literal.club/import/goodreads: Start importing was not submitted. Import needs an account.",
+          "https://literal.club/supporter: checkout and payment were not followed.",
+          "Search results were not loaded because the search form was not submitted.",
+          "The library, writing a review, clubs, goals, messages, and the signed-in dashboard were not opened."
+        ],
+        "durationMin": 150,
+        "date": "2026-11-18",
+        "pr": "https://github.com/starship-terminal/constellations/pull/681"
+      }
     }
   ]
 }
