@@ -20343,6 +20343,62 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "tidycal",
+      "name": "TidyCal",
+      "url": "https://tidycal.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Scheduling marketing on white and oatmeal, with a blue primary button, Poppins headlines, and a signed-out login card",
+      "tags": [
+        "web",
+        "marketing",
+        "productivity",
+        "scheduling",
+        "pricing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/tidycal/README.md",
+      "tokens": "systems/tidycal/tokens.json",
+      "styleGuide": "systems/tidycal/style-guide.html",
+      "preview": {
+        "cover": "systems/tidycal/screenshots/home-light-default.png",
+        "icon": "systems/tidycal/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.display"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public marketing, 2026-11-19",
+        "route": "public-web",
+        "durationMin": 50,
+        "pr": "https://github.com/starship-terminal/constellations/pull/840"
+      }
     }
   ]
 }
