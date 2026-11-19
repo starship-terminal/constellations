@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nike style guide</title>
+<style>
+  body { margin: 0; background: #ffffff; color: #111111; font: 400 16px/24px Helvetica, Arial, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; }
+  p { color: #707072; max-width: 68ch; }
+  h2 { font-size: 20px; font-weight: 500; margin: 40px 0 12px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sw { display: flex; gap: 10px; align-items: center; }
+  .sw i { width: 40px; height: 40px; border-radius: 4px; box-shadow: inset 0 0 0 1px #cacacb; display: block; }
+  .sw code, .ty code { display: block; font-size: 12px; }
+  .sw span { color: #707072; font-size: 12px; }
+  .ty { padding: 10px 0; border-bottom: 1px solid #cacacb; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; background: #f5f5f5; padding: 24px; border-radius: 8px; }
+  button.primary { height: 60px; padding: 18px 24px; border: 0; border-radius: 30px; background: #111111; color: #ffffff; font: 500 16px/24px Helvetica, Arial, sans-serif; }
+  button.on-image { height: 36px; padding: 6px 16px; border: 0; border-radius: 30px; background: #ffffff; color: #111111; font: 500 16px/24px Helvetica, Arial, sans-serif; }
+  .search { height: 36px; width: 240px; border: 0; border-radius: 24px; background: #f5f5f5; padding: 0 16px; font: 500 16px/24px Helvetica, Arial, sans-serif; }
+  .chip { height: 48px; min-width: 160px; border-radius: 4px; border: 1px solid #cacacb; background: #ffffff; color: #111111; font: 400 16px/24px Helvetica, Arial, sans-serif; }
+  .chip.disabled { background: #e5e5e5; color: #9e9ea0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Nike</h1>
+  <p>Public signed-out storefront, nike.com/sg, 2026-11-19. One light theme. Helvetica Now is proprietary and is not loaded here. The specimens fall back to Helvetica.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><div><code>light.page</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#f5f5f5"></i><div><code>light.surface</code><span>#f5f5f5</span></div></div>
+<div class="sw"><i style="background:#111111"></i><div><code>light.text</code><span>#111111</span></div></div>
+<div class="sw"><i style="background:#707072"></i><div><code>light.muted</code><span>#707072</span></div></div>
+<div class="sw"><i style="background:#111111"></i><div><code>light.accent</code><span>#111111</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>light.on-accent</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#cacacb"></i><div><code>light.border</code><span>#cacacb</span></div></div>
+<div class="sw"><i style="background:#707072"></i><div><code>light.border-strong</code><span>#707072</span></div></div>
+<div class="sw"><i style="background:#1151ff"></i><div><code>light.link</code><span>#1151ff</span></div></div>
+<div class="sw"><i style="background:#1151ff"></i><div><code>light.focus</code><span>#1151ff</span></div></div>
+<div class="sw"><i style="background:#d30005"></i><div><code>light.critical</code><span>#d30005</span></div></div>
+<div class="sw"><i style="background:#007d48"></i><div><code>light.success</code><span>#007d48</span></div></div>
+<div class="sw"><i style="background:#fedf35"></i><div><code>light.warning</code><span>#fedf35</span></div></div>
+<div class="sw"><i style="background:#d33918"></i><div><code>light.badge</code><span>#d33918</span></div></div>
+<div class="sw"><i style="background:#ff5000"></i><div><code>light.orange</code><span>#ff5000</span></div></div>
+<div class="sw"><i style="background:#e5e5e5"></i><div><code>light.disabled-fill</code><span>#e5e5e5</span></div></div>
+<div class="sw"><i style="background:#9e9ea0"></i><div><code>light.disabled-text</code><span>#9e9ea0</span></div></div>
+<div class="sw"><i style="background:#707072"></i><div><code>light.hover</code><span>#707072</span></div></div>
+<div class="sw"><i style="background:#1111115c"></i><div><code>light.scrim</code><span>#1111115c</span></div></div>
+<div class="sw"><i style="background:#1f1f21"></i><div><code>light.inverse</code><span>#1f1f21</span></div></div>
+  </div>
+  <h2>Type</h2>
+  <div class="ty" style="font-family:Helvetica Now Text, Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;line-height:24px"><code>core.typography.body-1</code> Just Do It. 16px / 24px</div>
+<div class="ty" style="font-family:Helvetica Now Text, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;line-height:21px"><code>core.typography.body-2</code> Just Do It. 14px / 21px</div>
+<div class="ty" style="font-family:Helvetica Now Text, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;line-height:18px"><code>core.typography.body-3</code> Just Do It. 12px / 18px</div>
+<div class="ty" style="font-family:Helvetica Now Display Bold, Helvetica, Arial, sans-serif;font-size:24px;font-weight:500;line-height:28.8px"><code>core.typography.title-3</code> Just Do It. 24px / 28.8px</div>
+<div class="ty" style="font-family:Helvetica Now Display Medium, Helvetica, Arial, sans-serif;font-size:20px;font-weight:500;line-height:24px"><code>core.typography.title-4</code> Just Do It. 20px / 24px</div>
+<div class="ty" style="font-family:Helvetica Now Text Medium, Helvetica, Arial, sans-serif;font-size:16px;font-weight:500;line-height:24px"><code>core.typography.button</code> Just Do It. 16px / 24px</div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Add to Bag</button>
+    <button class="on-image">Shop</button>
+    <input class="search" placeholder="Search" aria-label="Search">
+    <button class="chip">US M 9 / W 10.5</button>
+    <button class="chip disabled">US M 6 / W 7.5</button>
+  </div>
+</main>
+</body>
+</html>

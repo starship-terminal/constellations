@@ -20343,6 +20343,77 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "nike",
+      "name": "Nike",
+      "url": "https://www.nike.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Sportswear storefront in black on white: 60px header, 30px pill buttons, Helvetica Now, square product photos, orange only for badges",
+      "tags": [
+        "web",
+        "ecommerce",
+        "sportswear",
+        "retail",
+        "monochrome"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (every captured surface is public); nike.com redirects to the Singapore storefront",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/nike/README.md",
+      "tokens": "systems/nike/tokens.json",
+      "styleGuide": "systems/nike/style-guide.html",
+      "preview": {
+        "cover": "systems/nike/screenshots/home-light-default.png",
+        "icon": "systems/nike/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.text",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "nike.com/sg 2026-11-19",
+        "durationMin": 40,
+        "method": "public-web",
+        "source": "www.nike.com/sg signed out. Computed custom properties and component styles from the live DOM. Screenshots in headless Chromium after the public page loaded without a challenge.",
+        "timestamp": "2026-11-19T01:10:00Z",
+        "routes": [
+          "/",
+          "/sg/w/mens-shoes-nik1zy7ok",
+          "/sg/t/air-force-1-07-lx-mens-shoes-9BAc6JtU/IV6822-399",
+          "/sg/help",
+          "/sg/retail",
+          "/sg/membership"
+        ],
+        "gaps": [
+          "accounts.nike.com returned Access Denied; sign-in form not measured",
+          "bag, checkout, and member account not entered",
+          "dark theme not present",
+          "help field border visible but computed width 0",
+          "reduced-motion emulation not run"
+        ]
+      }
     }
   ]
 }
