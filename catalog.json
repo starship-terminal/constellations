@@ -20343,6 +20343,88 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "nextdoor",
+      "name": "Nextdoor",
+      "url": "https://nextdoor.com/",
+      "category": "directory",
+      "platform": "web",
+      "goodFor": "Neighborhood marketing: green pill primary actions, gray pill secondary actions, 56px fields with a 12px radius, and blue-gray text on white",
+      "tags": [
+        "web",
+        "neighborhood",
+        "marketing",
+        "signed-out",
+        "pills",
+        "forms",
+        "single-accent"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out; public marketing and the login card only; address verification not entered",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/nextdoor/README.md",
+      "tokens": "systems/nextdoor/tokens.json",
+      "styleGuide": "systems/nextdoor/style-guide.html",
+      "preview": {
+        "cover": "systems/nextdoor/icon.png",
+        "icon": "systems/nextdoor/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          },
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
+          }
+        },
+        "fonts": [
+          "core.typography.familyBody"
+        ]
+      },
+      "source": {
+        "path": "systems/nextdoor/raw (declared custom properties and computed styles; no screenshots)"
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "web-inspector",
+        "method": "T3 preview browser, live getComputedStyle and declared CSS. preview_snapshot returned no frames",
+        "source": "https://nextdoor.com/",
+        "at": "2026-11-19",
+        "pr": "",
+        "routes": [
+          "/",
+          "/login/",
+          "https://about.nextdoor.com/",
+          "https://help.nextdoor.com/s/article/Privacy-Policy-2026"
+        ],
+        "gaps": [
+          "address and neighborhood verification: not entered",
+          "signup and login: forms not submitted",
+          "dark theme: declared, not painted",
+          "screenshots: preview browser returned no frames"
+        ],
+        "durationMin": 40
+      },
+      "layoutGaps": {}
     }
   ]
 }
