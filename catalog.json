@@ -20343,6 +20343,69 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "synthesia-io",
+      "name": "Synthesia.io",
+      "url": "https://www.synthesia.io/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "AI-video marketing sites: white page, near-black 8px action buttons, indigo brand text, Basier Square type, and a public pricing table",
+      "tags": [
+        "web",
+        "media",
+        "video",
+        "marketing",
+        "pricing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages only. Login wall at login.synthesia.io was loaded and not submitted. Book demo was not submitted because it asks for a phone number. No card, no paid plan.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/synthesia-io/README.md",
+      "tokens": "systems/synthesia-io/tokens.json",
+      "styleGuide": "systems/synthesia-io/style-guide.html",
+      "preview": {
+        "cover": "systems/synthesia-io/screenshots/home-light-default.png",
+        "icon": "systems/synthesia-io/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.default",
+            "surface": "light.color.bg.subtle",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.tertiary",
+            "accent": "core.color.ink",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.brand"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public marketing site, 2026-11-19",
+        "route": "public-web",
+        "pr": "https://github.com/starship-terminal/constellations/pull/844",
+        "durationMin": 45,
+        "gaps": [
+          "signed-in app not entered",
+          "signup not started: login offers email and Google, and book demo requires a phone number",
+          "no card, checkout, or paid plan",
+          "preview browser returned no screenshot frames; screenshots are headless Chromium on pages that loaded without a Cloudflare challenge",
+          "dark theme not present on the public pages"
+        ]
+      }
     }
   ]
 }

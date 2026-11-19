@@ -1,0 +1,24 @@
+{
+  "screenshot": "login-light-signed-out.png",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device"
+  },
+  "note": "signed-out login.synthesia.io wall. Nothing typed or submitted. Query string not stored."
+}
