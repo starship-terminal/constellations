@@ -214,8 +214,10 @@ export function diffMotion(base, reduced) {
     items.push({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs });
   }
   for (const a of reducedA.values()) {
-    // a 0s animation with a real delay (animation: reveal 0s 300ms forwards) still changes the page after the delay
-    if (stopped(a) || (!a.durationRaw && a.durationMs <= NEGLIGIBLE_MS && (a.delayMs || 0) <= NEGLIGIBLE_MS)) continue;
+    // A 0s animation changes the page only through its fill: with a real delay and fill-mode forwards,
+    // backwards or both (animation: reveal 0s 300ms forwards) it still applies a frame; with fill none it never does.
+    const fills = /^(forwards|backwards|both)$/.test(a.fillMode || 'none');
+    if (stopped(a) || (!a.durationRaw && a.durationMs <= NEGLIGIBLE_MS && ((a.delayMs || 0) <= NEGLIGIBLE_MS || !fills))) continue;
     const item = { kind: 'animation', key: a.name, outcome: 'added', from: 0, to: a.durationMs };
     if (a.iterationCount === 'infinite') item.loops = true;
     items.push(item);
