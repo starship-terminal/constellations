@@ -20343,6 +20343,84 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "rivian",
+      "name": "Rivian",
+      "url": "https://rivian.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Electric-vehicle marketing in black on white: a 56px floating header, a #ffaa00 Demo drive pill, black 56px Reserve and Sign in pills, Adventure type, and 12px cards against full-pill controls",
+      "tags": [
+        "web",
+        "automotive",
+        "marketing",
+        "ecommerce",
+        "light",
+        "yellow-accent",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (every captured surface is public); the vehicle builder, reserve, demo-drive booking, trade-in, and account were not entered",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/rivian/README.md",
+      "tokens": "systems/rivian/tokens.json",
+      "styleGuide": "systems/rivian/style-guide.html",
+      "preview": {
+        "cover": "systems/rivian/screenshots/home-light-default.png",
+        "icon": "systems/rivian/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.adventure",
+          "core.font.family.adventure-font"
+        ]
+      },
+      "source": {
+        "path": "live DOM on rivian.com plus headless Chromium screenshots after the public page loaded without a challenge"
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "rivian.com 2026-11-19",
+        "durationMin": 50,
+        "method": "public-web",
+        "source": "rivian.com signed out. Computed custom properties and component styles from the live DOM in the T3 preview browser. Screenshots in headless Chromium after the public homepage loaded without a Cloudflare challenge. The preview browser returned 'The browser is not producing screenshot frames'.",
+        "timestamp": "2026-11-19T02:10:00Z",
+        "routes": [
+          "/",
+          "/r2",
+          "/experience/charging",
+          "/support",
+          "/legal/terms",
+          "/auth/login"
+        ],
+        "gaps": [
+          "vehicle builder, reserve, demo-drive booking, trade-in, and checkout not entered",
+          "sign-in form measured and not submitted; reCAPTCHA present; no account created",
+          "dark theme not present",
+          "Demo drive hover and pressed are declared classes, not a computed state",
+          "charging loader green not read from computed style",
+          "reduced-motion emulation not run",
+          "T3 preview browser did not produce screenshot frames"
+        ]
+      }
     }
   ]
 }
