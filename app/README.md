@@ -51,7 +51,7 @@ Measured package records and interpreted Refero styles retain separate source id
 
 ## Categorisation
 
-Refero's recorded vocabulary is seeded into the app's SQLite database by migration v4. Web and iOS category headers read `/api/taxonomy` and preserve the original platform-specific labels and order, including categories with no local captures. App-owned assignments retag measured systems without rewriting captured token evidence. See [category migration](docs/category-migration.md) for mapping rationale. JSON files are versioned seed inputs; SQLite owns runtime vocabulary and assignments. Reopening the app preserves manual assignment changes.
+Refero's recorded vocabulary is seeded into the app's SQLite database by migration v4. Web and iOS category headers read `/api/taxonomy` and preserve the original platform-specific labels and order, including categories with no local captures. App-owned assignments retag measured systems without rewriting captured token evidence. See [category migration](docs/category-migration.md) for mapping rationale. JSON files are versioned seed inputs; SQLite owns runtime vocabulary and assignments. Reopening the app preserves manual assignment changes. Seed rows added later (a new package in `system-categories.json` or `media-taxonomy.json`) reach an existing database on its next open: a seed ledger records which packages and media each database has been offered, so no per-package migration is needed and a label the user cleared is never restored.
 
 ## Docs
 

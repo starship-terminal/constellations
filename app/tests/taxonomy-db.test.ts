@@ -2,7 +2,11 @@ import { afterEach, expect, test } from "vitest";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { createResearchStore, type ResearchStore } from "@/server/db";
+import {
+  createResearchStore,
+  RESEARCH_DB_VERSION,
+  type ResearchStore,
+} from "@/server/db";
 import { taxonomyGroups, taxonomySnapshots } from "@/contracts/taxonomy";
 import assignments from "@/data/system-categories.json";
 import mediaSeed from "@/data/media-taxonomy.json";
@@ -70,7 +74,7 @@ test("v3 migration preserves research state and seeds vocabulary atomically", as
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   expect(await migrated.listTaxonomyGroups()).toEqual(taxonomyGroups);
   expect(
     (await migrated.getConversation(conversation.id))?.messages[0].parts[0],
@@ -343,7 +347,7 @@ test("v4 upgrade preserves manual categories and v5 reopening preserves manual m
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   expect(
     (await migrated.listReferenceCategories()).filter(
       (row) => row.referenceId === "systems:linear",
@@ -464,7 +468,7 @@ test("v4 upgrade skips deleted vocabulary terms without blocking research or res
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   expect(
     (await migrated.getConversation(conversation.id))?.messages[0].parts[0],
   ).toEqual({ type: "text", text: "Keep this prompt" });

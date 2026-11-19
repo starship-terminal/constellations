@@ -192,6 +192,143 @@ export async function seedNewCuratedMediaTerms(
   }
 }
 
+/**
+ * The seed ledger (v44) records every seed key a store has been offered:
+ * a (reference, category group) for the category seed and a (reference,
+ * media) pair for the media seed. A key in the ledger is never seeded again,
+ * so a label the user cleared stays cleared. A key missing from it is new to
+ * this store and is seeded on the next open by topUpSeeds, so a package added
+ * to the seed JSON needs no migration of its own.
+ */
+export const seedLedgerMigration = [
+  `CREATE TABLE IF NOT EXISTS category_seed_ledger (reference_id TEXT NOT NULL, group_id TEXT NOT NULL, PRIMARY KEY(reference_id,group_id))`,
+  `CREATE TABLE IF NOT EXISTS media_seed_ledger (reference_id TEXT NOT NULL, media_id TEXT NOT NULL, PRIMARY KEY(reference_id,media_id))`,
+];
+
+// Two text columns per row: 400 rows stay below SQLite's 999-parameter limit.
+async function recordLedger(
+  tx: Transaction,
+  table: "category_seed_ledger" | "media_seed_ledger",
+  column: "group_id" | "media_id",
+  keys: readonly (readonly [string, string])[],
+) {
+  for (let offset = 0; offset < keys.length; offset += 400) {
+    const batch = keys.slice(offset, offset + 400);
+    await tx.execute({
+      sql: `INSERT OR IGNORE INTO ${table}(reference_id,${column}) VALUES ${batch.map(() => "(?,?)").join(",")}`,
+      args: batch.flat(),
+    });
+  }
+}
+
+/**
+ * Migration v44 starts the ledger on a store that ran the per-package
+ * migrations (v4-v43). Every such store had been offered seed rows for the
+ * 219 references frozen in seed-ledger-v43.json, so their current seed keys
+ * are recorded as offered: an empty one there was cleared by the user.
+ * Every other seed key is left for topUpSeeds to offer.
+ */
+export async function backfillSeedLedger(tx: Transaction) {
+  const { default: frozen } = await import("@/data/seed-ledger-v43.json");
+  const { default: categories } = await import("@/data/system-categories.json");
+  const { default: media } = await import("@/data/media-taxonomy.json");
+  const offered = new Set(frozen.references);
+  await recordLedger(
+    tx,
+    "category_seed_ledger",
+    "group_id",
+    categories
+      .filter((row) => offered.has(row.referenceId))
+      .map((row) => [row.referenceId, row.groupId] as const),
+  );
+  await recordLedger(
+    tx,
+    "media_seed_ledger",
+    "media_id",
+    media.assignments
+      .filter((row) => offered.has(row.referenceId))
+      .map((row) => [row.referenceId, row.mediaId] as const),
+  );
+}
+
+/**
+ * Runs on every open, after the migrations. Offers each seed key the ledger
+ * has not seen: its curated rows are inserted unless the store already holds
+ * rows for that key (a manual choice), and the key is recorded either way.
+ */
+export async function topUpSeeds(tx: Transaction) {
+  const offeredCategories = new Set(
+    (
+      await tx.execute("SELECT reference_id,group_id FROM category_seed_ledger")
+    ).rows.map((row) => `${row.reference_id}\u0000${row.group_id}`),
+  );
+  const { default: categories } = await import("@/data/system-categories.json");
+  const newCategories = new Set(
+    categories
+      .filter(
+        (row) =>
+          !offeredCategories.has(`${row.referenceId}\u0000${row.groupId}`),
+      )
+      .map((row) => row.referenceId),
+  );
+  if (newCategories.size) {
+    await seedNewCuratedCategories(tx, newCategories);
+    await recordLedger(
+      tx,
+      "category_seed_ledger",
+      "group_id",
+      categories
+        .filter((row) => newCategories.has(row.referenceId))
+        .map((row) => [row.referenceId, row.groupId] as const),
+    );
+  }
+  const offeredMedia = new Set(
+    (
+      await tx.execute("SELECT reference_id,media_id FROM media_seed_ledger")
+    ).rows.map((row) => `${row.reference_id}\u0000${row.media_id}`),
+  );
+  const { default: media } = await import("@/data/media-taxonomy.json");
+  const newMedia = media.assignments.filter(
+    (row) => !offeredMedia.has(`${row.referenceId}\u0000${row.mediaId}`),
+  );
+  if (newMedia.length) {
+    await seedNewCuratedMediaTerms(
+      tx,
+      new Set(newMedia.map((row) => row.referenceId)),
+      new Set(newMedia.map((row) => row.mediaId)),
+    );
+    await recordLedger(
+      tx,
+      "media_seed_ledger",
+      "media_id",
+      newMedia.map((row) => [row.referenceId, row.mediaId] as const),
+    );
+  }
+}
+
+/**
+ * Seed references with no media rows at all. The unscoped v6-v8 top-ups are
+ * limited to these, so a package the user had partly cleared keeps its
+ * cleared rows cleared.
+ */
+export async function referencesWithoutMedia(
+  tx: Transaction,
+): Promise<Set<string>> {
+  const { default: seed } = await import("@/data/media-taxonomy.json");
+  const labelled = new Set(
+    (
+      await tx.execute(
+        "SELECT DISTINCT reference_id FROM media_term_assignments",
+      )
+    ).rows.map((row) => String(row.reference_id)),
+  );
+  return new Set(
+    seed.assignments
+      .map((row) => row.referenceId)
+      .filter((referenceId) => !labelled.has(referenceId)),
+  );
+}
+
 /** Called only inside migration v4's transaction. JSON is seed evidence. */
 export async function seedTaxonomy(tx: Transaction) {
   const { taxonomySnapshots } = await import("@/contracts/taxonomy");
@@ -413,6 +550,12 @@ export function taxonomyStore(client: Client) {
             sql: "INSERT INTO reference_categories(reference_id,term_id,reason,origin) VALUES(?,?,?,'manual')",
             args: [referenceId, termId, reason],
           });
+        // A manual choice settles the seed key, so a seed row added later
+        // never overrides it, not even an empty one.
+        await tx.execute({
+          sql: "INSERT OR IGNORE INTO category_seed_ledger(reference_id,group_id) VALUES(?,?)",
+          args: [referenceId, groupId],
+        });
         await tx.commit();
       } catch (error) {
         await tx.rollback();

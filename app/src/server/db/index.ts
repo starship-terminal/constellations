@@ -17,7 +17,14 @@ import {
   seedMediaTaxonomy,
   seedNewCuratedCategories,
   seedNewCuratedMediaTerms,
+  seedLedgerMigration,
+  backfillSeedLedger,
+  topUpSeeds,
+  referencesWithoutMedia,
 } from "./taxonomy";
+
+/** The schema version this build writes. A newer store is refused. */
+export const RESEARCH_DB_VERSION = 44;
 
 // Versioned migrations apply atomically, and never touch the canonical library.
 const migrations = [
@@ -78,7 +85,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 43)
+    if (version > RESEARCH_DB_VERSION)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -111,8 +118,10 @@ export async function createResearchStore(directory: string) {
       // The v4/v5 seeds run once, guarded, so a store already at v5 never saw
       // curated rows added to the seed JSON since. Top up only references and
       // media the user has not labelled; manual choices are never overwritten.
+      // Media is topped up only for packages with no media rows at all, so
+      // rows a user cleared on a labelled package stay cleared.
       await seedNewCuratedCategories(tx);
-      await seedNewCuratedMediaTerms(tx);
+      await seedNewCuratedMediaTerms(tx, await referencesWithoutMedia(tx));
       await tx.execute("PRAGMA user_version = 6");
     }
     if (version < 7) {
@@ -122,7 +131,7 @@ export async function createResearchStore(directory: string) {
       // references the user has not labelled; manual choices are never
       // overwritten.
       await seedNewCuratedCategories(tx);
-      await seedNewCuratedMediaTerms(tx);
+      await seedNewCuratedMediaTerms(tx, await referencesWithoutMedia(tx));
       await tx.execute("PRAGMA user_version = 7");
     }
     if (version < 8) {
@@ -131,7 +140,7 @@ export async function createResearchStore(directory: string) {
       // and media assignments) would never arrive. Idempotent; manual
       // choices are never overwritten.
       await seedNewCuratedCategories(tx);
-      await seedNewCuratedMediaTerms(tx);
+      await seedNewCuratedMediaTerms(tx, await referencesWithoutMedia(tx));
       await tx.execute("PRAGMA user_version = 8");
     }
     if (version < 9) {
@@ -535,6 +544,16 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedMediaTerms(tx, new Set(["systems:huddlekit"]));
       await tx.execute("PRAGMA user_version = 43");
     }
+    if (version < 44) {
+      // The per-package top-ups above end here. The seed ledger records what
+      // each store has been offered, and topUpSeeds below offers the rest.
+      for (const statement of seedLedgerMigration) await tx.execute(statement);
+      await backfillSeedLedger(tx);
+      await tx.execute("PRAGMA user_version = 44");
+    }
+    // Every open: seed rows for packages and media the seed JSON gained since
+    // this store last opened. Never add a per-package migration for this.
+    await topUpSeeds(tx);
     await tx.commit();
   } catch (error) {
     await tx.rollback();

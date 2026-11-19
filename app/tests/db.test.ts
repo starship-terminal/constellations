@@ -4,7 +4,11 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { createClient } from "@libsql/client";
-import { createResearchStore, type ResearchStore } from "@/server/db";
+import {
+  createResearchStore,
+  RESEARCH_DB_VERSION,
+  type ResearchStore,
+} from "@/server/db";
 const stores: ResearchStore[] = [],
   directories: string[] = [];
 async function open() {
@@ -174,7 +178,7 @@ test("version-two stores preserve existing state while adding independent screen
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   expect((await migrated.getConversation(conversation.id))?.title).toBe(
     "Keep research",
   );
@@ -278,7 +282,7 @@ test("version-five stores gain curated rows added since, without touching their 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   expect(
     categories.filter((row) => row.referenceId === "systems:dub"),
@@ -317,7 +321,7 @@ test("version-seven stores gain curated rows added since, without touching their
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Magazines & Newspapers + News) land as two rows.
   expect(
@@ -351,7 +355,7 @@ test("version-eight stores gain curated rows added since, without touching their
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Communication Tools + Social Networking) land as two rows.
   expect(
@@ -385,7 +389,7 @@ test("version-nine stores gain the District rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // Entertainment, Travel & Booking, and Scheduling Tools land as three rows.
   expect(
@@ -420,7 +424,7 @@ test("version-ten stores gain the DJI rows, without touching their own labels", 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Electronic & Devices + Marketplace) land as two rows.
   expect(
@@ -454,7 +458,7 @@ test("version-eleven stores gain the Framer rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Design & Media Editing + Productivity) land as two rows.
   expect(
@@ -488,7 +492,7 @@ test("version-twelve stores gain the Fourthwall rows, without touching their own
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Business + Marketplace) land as two rows.
   expect(
@@ -523,7 +527,7 @@ test("version-thirteen stores gain the Calm rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The catalog classifies Calm as Fitness, and that label lands as one row.
   expect(
@@ -574,7 +578,7 @@ test("version-fourteen stores gain the Chargetrip and Fresha rows, without touch
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The Chargetrip seed labels (Development Tools + Travel & Booking) land as
   // two rows; Fresha's three labels land as three rows.
@@ -659,7 +663,7 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // Fitness, Health & Wellness, and Marketplace land as three rows.
   expect(
@@ -726,7 +730,7 @@ test("version-twelve stores gain the Frame.io rows, without touching their own l
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Collaboration Tools + Design & Media Editing) land as
   // two rows.
@@ -775,7 +779,7 @@ test("version-sixteen stores gain the Clay/Mesh rows, without touching their own
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Productivity + Communication Tools) land as two rows.
   expect(
@@ -827,7 +831,7 @@ test("version-nineteen stores gain the Clearful rows, without touching their own
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Health & Wellness + Productivity) land as two rows.
   expect(
@@ -879,7 +883,7 @@ test("version-twenty-two stores gain the Grok rows, without touching their own l
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (AI Tool + Development Tools) land as two rows.
   expect(
@@ -932,7 +936,7 @@ test("version-twenty-four stores gain the Hashnode rows, without touching their 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Social Networking + Development Tools) land as two rows.
   expect(
@@ -992,7 +996,7 @@ test("version-twenty-five stores gain the HTTPie rows, without touching their ow
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed label (Development Tools) lands as one row.
   expect(
@@ -1053,7 +1057,7 @@ test("version-twenty-three stores gain the Clipchamp rows, without touching thei
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Design & Media Editing + Productivity) land as two rows.
   expect(
@@ -1105,7 +1109,7 @@ test("version-twenty-five stores gain the Gumroad rows, without touching their o
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed label (Marketplace) lands as one row.
   expect(
@@ -1157,7 +1161,7 @@ test("version-twenty-six stores gain the Cofounder rows, without touching their 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (AI Tool + Productivity) land as two rows.
   expect(
@@ -1210,7 +1214,7 @@ test("version-twenty-seven stores gain the Handshake rows, without touching thei
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Marketplace + Productivity) land as two rows.
   expect(
@@ -1262,7 +1266,7 @@ test("version-twenty-eight stores gain the Cohere rows, without touching their o
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed label (AI Tool) lands as one row.
   expect(
@@ -1315,7 +1319,7 @@ test("version-twenty-nine stores gain the Hello Ivy rows, without touching their
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed label (Project Management) lands as one row.
   expect(
@@ -1378,7 +1382,7 @@ test("version-thirty stores gain the Hitchd rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Fundraising + Marketplace) land as two rows.
   expect(
@@ -1459,7 +1463,7 @@ test("version-thirty-one stores gain the HBO Max rows, without touching their ow
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Entertainment + Video Streaming) land as two rows.
   expect(
@@ -1511,7 +1515,7 @@ test("version-thirty-two stores gain the Grow rows, without touching their own l
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed label (Education) lands as one row.
   expect(
@@ -1564,7 +1568,7 @@ test("version-thirty-three stores gain the Headspace rows, without touching thei
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // Fitness and Health & Wellness land as two rows.
   expect(
@@ -1628,7 +1632,7 @@ test("version-thirty-four stores gain the Homerun rows, without touching their o
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Business + Productivity) land as two rows.
   expect(
@@ -1696,7 +1700,7 @@ test("version-thirty-five stores gain the HTTPie rows, without touching their ow
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed label (Development Tools) lands as one row.
   expect(
@@ -1748,7 +1752,7 @@ test("version-thirty-six stores gain the Coinbase rows, without touching their o
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Finance, Web3 & Crypto) land as two rows.
   expect(
@@ -1800,7 +1804,7 @@ test("version-thirty-seven stores gain the Column rows, without touching their o
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Finance, Development Tools) land as two rows.
   expect(
@@ -1852,7 +1856,7 @@ test("version-thirty-eight stores gain the Hume rows, without touching their own
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   // The seed label (AI Tool) lands as one row.
   expect(
@@ -1928,7 +1932,7 @@ test("version-thirty-nine stores gain the IFTTT, Intercom, Hers, Leonardo, and H
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(43);
+  ).toBe(RESEARCH_DB_VERSION);
   const categories = await migrated.listReferenceCategories();
   expect(
     categories.filter((row) => row.referenceId === "systems:ifttt"),
@@ -1995,13 +1999,13 @@ test("version-thirty-nine stores gain the IFTTT, Intercom, Hers, Leonardo, and H
 
 test("future database versions are rejected without downgrading their schema", async () => {
   const { dir, store } = await open();
-  await store.client.execute("PRAGMA user_version=44");
+  await store.client.execute(`PRAGMA user_version=${RESEARCH_DB_VERSION + 1}`);
   await expect(createResearchStore(dir)).rejects.toThrow("newer application");
   expect(
     Number(
       (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
     ),
-  ).toBe(44);
+  ).toBe(RESEARCH_DB_VERSION + 1);
 });
 
 test("updateSettings writes JSON on a fresh row and on a conflicting row", async () => {
