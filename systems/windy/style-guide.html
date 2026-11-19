@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Windy style guide</title>
+<style>
+:root {
+  --color-red: #9d0300;
+  --color-red-light: #946051;
+  --color-orange: #d49500;
+  --color-orange-light: #ffe3a1;
+  --color-white: #f8f8f8;
+  --color-yellow: #fff3e1;
+  --color-black: #3c3c3c;
+  --color-gray: #6b6b6b;
+  --color-gray-dark: #4d4d4d;
+  --color-gray-light: #ececec;
+  --color-gray-light-2: #9b9b9b;
+  --color-error: #c42f2f;
+  --color-ok: #026f00;
+  --color-green-light: #00ff16;
+  --color-label-outline: #00000080;
+  --color-label-outline-secondary: #2d2d2d99;
+  --color-map-canvas: #888888;
+  --color-legend: #7c7c7c;
+  --color-paper: #ffffff;
+  --color-ink: #000000;
+  --color-facebook: #4267b2;
+  --color-gps: #2f92fb;
+  --color-focus-ring: #009603;
+  --color-wind-muted: #c1c1c1;
+  --font-family-ui: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+  --font-family-numbers: bariolnumbers, Arial, Helvetica, sans-serif;
+  --font-family-icon: iconfont;
+  --font-family-button: Arial;
+  --font-family-zoom: Lucida Console, Monaco, monospace;
+  --fontSize-xxs: 8px;
+  --fontSize-xs: 10px;
+  --fontSize-s: 12px;
+  --fontSize-m: 14px;
+  --fontSize-l: 16px;
+  --fontSize-xl: 18px;
+  --fontSize-xxl: 20px;
+  --fontSize-xxxl: 24px;
+  --fontSize-title: 28px;
+  --fontSize-ultra: 40px;
+  --fontSize-now: 67px;
+  --fontWeight-light: 300;
+  --fontWeight-regular: 400;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --lineHeight-title: 1;
+  --lineHeight-label: 1.2;
+  --lineHeight-article: 1.4;
+  --lineHeight-legend: 1.5;
+  --lineHeight-menu: 2;
+  --radius-none: 0px;
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 5px;
+  --radius-legend: 6px;
+  --radius-card: 8px;
+  --radius-chip: 12px;
+  --radius-pill: 14px;
+  --radius-search: 18px;
+  --radius-login-chip: 24px;
+  --radius-login-button: 36px;
+  --radius-full: 999px;
+  --spacing-0: 0px;
+  --spacing-2: 4px;
+  --spacing-5: 5px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-15: 15px;
+  --spacing-20: 20px;
+  --spacing-25: 25px;
+  --spacing-32: 32px;
+  --shadow-lift: 0px 0px 4px 0px #000000;
+  --shadow-soft: 0px 1px 3px 0px #0000004d;
+  --shadow-window: 0px 0px 6px 3px #00000029;
+  --shadow-focus: 0px 0px 2px 2px #009603;
+  --typography-body: var(--fontWeight-regular) var(--fontSize-m)/20px var(--font-family-ui);
+  --typography-label: var(--fontWeight-regular) var(--fontSize-xs)/15px var(--font-family-ui);
+  --typography-menu: var(--fontWeight-regular) var(--fontSize-m)/14px var(--font-family-ui);
+  --typography-search: var(--fontWeight-regular) var(--fontSize-xl)/33px var(--font-family-ui);
+  --typography-title: var(--fontWeight-light) var(--fontSize-title)/28px var(--font-family-ui);
+  --typography-button: var(--fontWeight-light) var(--fontSize-xl)/27px var(--font-family-button);
+  --typography-chip: var(--fontWeight-bold) var(--fontSize-s)/14px var(--font-family-ui);
+  --typography-now: var(--fontWeight-regular) var(--fontSize-now)/67px var(--font-family-numbers);
+  --motion-duration-50: 50ms;
+  --motion-duration-200: 200ms;
+  --motion-duration-250: 250ms;
+  --motion-duration-300: 300ms;
+  --motion-duration-500: 500ms;
+  --motion-duration-700: 700ms;
+  --motion-duration-750: 750ms;
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-decelerate: cubic-bezier(0, 0, 0.25, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --background-page: var(--color-white);
+  --background-surface: var(--color-gray-light);
+  --background-ui: var(--color-gray-light);
+  --background-action: var(--color-red);
+  --background-action-secondary: var(--color-red-light);
+  --text-primary: var(--color-gray);
+  --text-secondary: var(--color-gray-light-2);
+  --text-link: var(--color-red-light);
+  --text-on-action: var(--color-white);
+  --text-header: var(--color-red);
+  --text-icon: var(--color-red);
+  --border-stroke: var(--color-gray-light-2);
+  --border-selected: var(--color-red);
+  --status-error: var(--color-error);
+  --status-ok: var(--color-ok);
+  --status-premium: var(--color-orange);
+  --component-button-bg: var(--color-red);
+  --component-button-text: var(--color-white);
+  --component-button-radius: var(--radius-login-button);
+  --component-button-padding: 18px;
+  --component-button-height: 41px;
+  --component-search-bg: var(--color-paper);
+  --component-search-text: var(--color-gray-dark);
+  --component-search-radius: var(--radius-search);
+  --component-search-height: 33px;
+  --component-search-padding: 32px;
+  --component-chip-bg: var(--color-orange);
+  --component-chip-text: var(--color-yellow);
+  --component-chip-radius: var(--radius-chip);
+  --component-chip-height: 21px;
+  --component-menu-bg: var(--color-black);
+  --component-menu-text: var(--color-gray-light);
+  --component-menu-width: 400px;
+  --component-menu-radius: var(--radius-card);
+  --component-popup-bg: var(--color-black);
+  --component-popup-text: var(--color-gray-light);
+  --component-popup-radius: var(--radius-card);
+  --component-popup-padding: 25px;
+  --component-popup-width: 450px;
+  --component-field-bg: var(--color-gray-dark);
+  --component-field-text: var(--color-paper);
+  --component-field-radius: 3.6px;
+  --component-field-height: 32px;
+  color-scheme: light;
+  --sg-sans: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+[data-mode="dark"] {
+  --background-page: var(--color-black);
+  --background-surface: var(--color-gray);
+  --background-ui: var(--color-gray-dark);
+  --background-action: var(--color-red);
+  --background-action-secondary: var(--color-red-light);
+  --text-primary: var(--color-gray-light);
+  --text-secondary: var(--color-yellow);
+  --text-link: var(--color-orange-light);
+  --text-on-action: var(--color-white);
+  --text-header: var(--color-orange-light);
+  --text-icon: var(--color-orange-light);
+  --border-stroke: var(--color-gray-dark);
+  --border-selected: var(--color-orange-light);
+  --status-error: var(--color-error);
+  --status-ok: var(--color-ok);
+  --status-premium: var(--color-orange);
+  --component-button-bg: var(--color-red);
+  --component-button-text: var(--color-white);
+  --component-button-radius: var(--radius-login-button);
+  --component-button-padding: 18px;
+  --component-button-height: 41px;
+  --component-search-bg: var(--color-paper);
+  --component-search-text: var(--color-gray-dark);
+  --component-search-radius: var(--radius-search);
+  --component-search-height: 33px;
+  --component-search-padding: 32px;
+  --component-chip-bg: var(--color-orange);
+  --component-chip-text: var(--color-yellow);
+  --component-chip-radius: var(--radius-chip);
+  --component-chip-height: 21px;
+  --component-menu-bg: var(--color-black);
+  --component-menu-text: var(--color-gray-light);
+  --component-menu-width: 400px;
+  --component-menu-radius: var(--radius-card);
+  --component-popup-bg: var(--color-black);
+  --component-popup-text: var(--color-gray-light);
+  --component-popup-radius: var(--radius-card);
+  --component-popup-padding: 25px;
+  --component-popup-width: 450px;
+  --component-field-bg: var(--color-gray-dark);
+  --component-field-text: var(--color-paper);
+  --component-field-radius: 3.6px;
+  --component-field-height: 32px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background-page);
+  color: var(--text-primary);
+  font: 400 14px/20px var(--sg-sans);
+}
+header {
+  display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+  padding: 16px 24px; border-bottom: 1px solid var(--border-stroke);
+}
+header h1 { margin: 0; font-size: 28px; font-weight: 300; line-height: 28px; }
+header button {
+  margin-left: auto; background: var(--background-action); color: var(--text-on-action);
+  border: 0; border-radius: 24px; padding: 4px 16px; font: inherit; cursor: pointer;
+}
+main { max-width: 1080px; margin: 0 auto; padding: 24px; }
+h2 { font-weight: 300; font-size: 28px; margin: 32px 0 8px; }
+p { max-width: 70ch; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--border-stroke); }
+.sw b { font-size: 12px; }
+.sw span { display: block; font-size: 12px; color: var(--text-secondary); }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+.search {
+  background: var(--component-search-bg); color: var(--component-search-text);
+  height: var(--component-search-height); border-radius: var(--component-search-radius);
+  padding: 0 var(--component-search-padding); border: 0;
+  box-shadow: var(--shadow-lift); font-size: 18px; width: 280px;
+}
+.btn {
+  background: var(--component-button-bg); color: var(--component-button-text);
+  height: var(--component-button-height); border-radius: var(--component-button-radius);
+  padding: 0 var(--component-button-padding); border: 0; font: 300 18px/1 Arial, sans-serif;
+}
+.chip {
+  background: var(--component-chip-bg); color: var(--component-chip-text);
+  height: var(--component-chip-height); border-radius: var(--component-chip-radius);
+  padding: 0 12px; display: inline-flex; align-items: center; font-size: 12px; font-weight: 700;
+  box-shadow: var(--shadow-lift);
+}
+.menu {
+  background: var(--component-menu-bg); color: var(--component-menu-text);
+  border-radius: var(--component-menu-radius); padding: 10px; width: 280px;
+  border: 1px solid var(--border-stroke);
+}
+.field {
+  background: var(--component-field-bg); color: var(--component-field-text);
+  height: var(--component-field-height); border-radius: var(--component-field-radius);
+  border: 1px solid var(--component-field-bg); padding: 0 8px; width: 240px; font-size: 18px;
+}
+.card {
+  background: var(--background-surface); color: var(--text-primary);
+  border-radius: 8px; padding: 16px; width: 280px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Windy</h1>
+  <span>Signed-out map, 2026-11-19</span>
+  <button type="button" id="theme">Theme</button>
+</header>
+<main>
+  <p>Colours, type, and controls from tokens.json. The map canvas is not a token. Dark is the chrome you see. Light is the :root binding and the white detail table.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Type</h2>
+  <div style="font: var(--typography-title)">Oslo, 22:00</div>
+  <div style="font: var(--typography-search); margin-top: 8px">Search...</div>
+  <div style="font: var(--typography-body); margin-top: 8px">Wind, rain, temperature. Body is 14px system sans.</div>
+  <div style="font: 400 67px/67px Arial, Helvetica, sans-serif; margin-top: 8px">25°</div>
+  <p>The 67px figure is bariolnumbers on the product. Arial is the fallback, and the face used by the login button.</p>
+  <h2>Controls</h2>
+  <div class="row"><input class="search" value="Search..."></div>
+  <div class="row"><button class="btn" type="button">Login</button><span class="chip">ECMWF 9km</span></div>
+  <div class="row"><input class="field" placeholder="Email Address"></div>
+  <div class="menu"><div>My Favorites</div><div>My Alerts</div><div>Settings</div></div>
+  <div class="card" style="margin-top:16px">Detail table sits on the light surface, #f8f8f8, even while the map is dark.</div>
+</main>
+<script>
+const root = document.documentElement;
+const names = ["background-page","background-surface","background-ui","background-action","text-primary","text-secondary","text-link","text-on-action","border-stroke","border-selected","status-error","status-ok","status-premium"];
+const box = document.getElementById("swatches");
+function paint() {
+  box.innerHTML = "";
+  for (const n of names) {
+    const v = getComputedStyle(root).getPropertyValue("--" + n).trim();
+    const el = document.createElement("div");
+    el.className = "sw";
+    el.innerHTML = "<i></i><div><b></b><span></span></div>";
+    el.querySelector("i").style.background = v;
+    el.querySelector("b").textContent = n;
+    el.querySelector("span").textContent = v;
+    box.appendChild(el);
+  }
+}
+document.getElementById("theme").addEventListener("click", () => {
+  root.dataset.mode = root.dataset.mode === "dark" ? "light" : "dark";
+  paint();
+});
+paint();
+</script>
+</body>
+</html>
