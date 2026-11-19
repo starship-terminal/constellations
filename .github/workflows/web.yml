@@ -6,7 +6,8 @@ name: Web
 on:
   # tools/catalog.py build reads the catalog, the packages, the refero store and
   # tools/refero/refero_media.py; the app reads systems/, scorecard/ and docs/ at
-  # build and request time. A change to any of them can break the build.
+  # build and request time, and web/lib/request-guard.test.ts reads the shared
+  # server/front-door-cases.json. A change to any of them can break the job.
   pull_request:
     paths:
       - 'web/**'
@@ -18,6 +19,7 @@ on:
       - 'systems/**'
       - 'scorecard/**'
       - 'docs/**'
+      - 'server/front-door-cases.json'
   push:
     branches: [main]
     paths:
@@ -30,6 +32,7 @@ on:
       - 'systems/**'
       - 'scorecard/**'
       - 'docs/**'
+      - 'server/front-door-cases.json'
 permissions:
   contents: read
 jobs:
