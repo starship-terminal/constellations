@@ -20343,6 +20343,84 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "product-hunt",
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com",
+      "category": "directory",
+      "platform": "web",
+      "goodFor": "a public product leaderboard: coral pill actions on a white page, a system sans stack, a ranked list with a square vote control, and a signed-out OAuth login card",
+      "tags": [
+        "web",
+        "directory",
+        "leaderboard",
+        "marketplace",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (public pages only; OAuth login was not entered; the newsletter email form was submitted and the confirmation link did not complete; votes and follows were not clicked)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/product-hunt/README.md",
+      "tokens": "systems/product-hunt/tokens.json",
+      "styleGuide": "systems/product-hunt/style-guide.html",
+      "preview": {
+        "cover": "systems/product-hunt/icon.png",
+        "icon": "systems/product-hunt/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.background.surface.primary",
+            "surface": "light.color.background.surface.secondary",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.brand",
+            "border": "light.color.border.subtle"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "producthunt.com public signed-out surface in the T3 preview browser. Computed styles only. preview_snapshot failed with no screenshot frames. Headless Playwright hit a Cloudflare challenge and was not used.",
+        "timestamp": "2026-11-18T17:50:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/products/s-space",
+          "/categories/productivity",
+          "/login",
+          "/newsletters",
+          "/leaderboard/daily/2026/11/18",
+          "/about",
+          "/stories",
+          "/apps"
+        ],
+        "gaps": [
+          "https://www.producthunt.com/login is OAuth only (LinkedIn, GitHub, X, Google, Facebook, Apple). None were entered. No email field.",
+          "Votes, follows, and comments were not activated.",
+          "Newsletter confirmation link did not complete in the preview tab.",
+          "Dark theme is declared and was not painted.",
+          "Screenshots and crops are missing: the preview browser did not produce frames."
+        ],
+        "durationMin": 70,
+        "date": "2026-11-18"
+      },
+      "layoutGaps": {
+        "components/": "The preview browser returned no screenshot frames, so no component crops were saved. Computed styles are in components.md and raw/components-computed.json.",
+        "screenshots/": "The preview browser returned no screenshot frames, and headless Playwright stopped on the Cloudflare challenge."
+      }
     }
   ]
 }

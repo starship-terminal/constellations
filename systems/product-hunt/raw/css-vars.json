@@ -1,0 +1,78 @@
+{
+  "source": "Computed styles and stylesheet rules read from the live Product Hunt page in the T3 preview browser on 2026-11-18. Viewport 1440x900, devicePixelRatio 2, visualViewport scale 1, unless a reading says 390x844.",
+  "theme": {
+    "observed": "light",
+    "htmlClass": "",
+    "bodyClass": "theme-mirror bg-primary",
+    "colorScheme": "normal",
+    "darkSelector": ":is(.dark, :has(.dark:not(.theme-isolate)) .theme-mirror)",
+    "note": "Dark custom properties are declared. The signed-out pages visited rendered light. Dark was not switched on, so dark values are declared, not computed on an element."
+  },
+  "rootLight": {
+    "--background-primary": "#fff",
+    "--background-secondary": "#f9fafb",
+    "--background-tertiary": "#f2f4f7",
+    "--border-primary": "#eaecf0",
+    "--text-primary": "#101828",
+    "--text-secondary": "#344054",
+    "--text-tertiary": "#475467",
+    "--nav-icon-color": "#667085",
+    "--nav-menu-highlight-bg": "#f5f8ff",
+    "--nav-menu-item-bg": "#fff",
+    "selector": ":root, .light"
+  },
+  "rootDarkDeclared": {
+    "--background-primary": "#161b26",
+    "--background-secondary": "#1f242f",
+    "--background-tertiary": "#333741",
+    "--border-primary": "#1f242f",
+    "--text-primary": "#f9fafb",
+    "--text-secondary": "#d0d5dd",
+    "--text-tertiary": "#98a2b3",
+    "--nav-icon-color": "#98a2b3",
+    "--nav-menu-highlight-bg": "#1f242f",
+    "--nav-menu-item-bg": "#161b26",
+    "selector": ":is(.dark, :has(.dark:not(.theme-isolate)) .theme-mirror)"
+  },
+  "headerHeight": {
+    "declaredRoot": "56px",
+    "declaredMinWidth1099": "86px",
+    "computedAt1440": "85.3984375px",
+    "computedHeaderBoxAt1440": "85px",
+    "computedHeaderBoxAt390": "58px"
+  },
+  "brandScale": {
+    "25": "#ffe8e6",
+    "50": "#ffd2ce",
+    "100": "#ffbbb5",
+    "200": "#ffa49c",
+    "300": "#ff9492",
+    "400": "#ff807d",
+    "500": "#ff6154",
+    "600": "#db5246",
+    "700": "#b6453b",
+    "800": "#92372f",
+    "900": "#491b17",
+    "950": "#240e0c"
+  },
+  "grayScale": {
+    "25": "#fcfcfd",
+    "50": "#f9fafb",
+    "100": "#f2f4f7",
+    "200": "#eaecf0",
+    "300": "#d0d5dd",
+    "400": "#98a2b3",
+    "500": "#667085",
+    "600": "#475467",
+    "700": "#344054",
+    "800": "#1d2939",
+    "900": "#101828",
+    "950": "#0c111d"
+  },
+  "namedColors": {
+    "dark-gray": "#21293c",
+    "light-gray": "#4b587c",
+    "gray-200-border": "#d9e1ec",
+    "focus-ring": "rgba(0, 94, 246, 0.1)"
+  }
+}
