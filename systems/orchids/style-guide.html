@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orchids style guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --text: #1e1b17;
+    --body: #46433f;
+    --muted: #777571;
+    --accent: #fcaa26;
+    --border: #f5f3ef;
+    --border-strong: #e6e3df;
+    --raised: #faf8f4;
+  }
+  :root[data-theme="dark"] {
+    --page: #0e0c0c;
+    --surface: #0e0c0c;
+    --text: #e6e3df;
+    --body: #a6a39f;
+    --muted: #777571;
+    --border: #2d2a26;
+    --border-strong: #2d2a26;
+    --raised: #1e1b17;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 36px; line-height: 40px; letter-spacing: -0.9px; font-weight: 600; margin: 0 0 8px; }
+  h2 { font-size: 24px; line-height: 32px; font-weight: 600; margin: 40px 0 12px; }
+  p { color: var(--body); font-size: 18px; line-height: 28px; }
+  button.theme {
+    background: var(--surface);
+    color: var(--body);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    height: 34px;
+    padding: 6px 12px;
+    font: inherit;
+    font-size: 14px;
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 120px; }
+  .chip { height: 64px; border-radius: 8px; border: 1px solid var(--border); }
+  .label { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .search {
+    height: 36px; border-radius: 8px; padding: 0 14px;
+    background: var(--surface); color: var(--muted);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--muted) 30%, transparent);
+    display: flex; align-items: center; width: 280px; font-size: 14px;
+  }
+  .accent { color: var(--accent); font-size: 14px; font-weight: 500; }
+  .card {
+    border: 1px solid var(--border-strong);
+    border-radius: 16px;
+    padding: 20px 24px;
+    background: var(--surface);
+    width: 240px;
+  }
+  .card strong { display: block; margin-bottom: 8px; }
+  .card span { color: var(--body); font-size: 14px; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <button class="theme" type="button" id="theme">Switch theme</button>
+  <h1>Orchids</h1>
+  <p>Measured docs tokens. Amber accent, Inter, white and near-black pages.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <h1>Introduction</h1>
+  <p>Orchids is the first AI app builder to build and deploy any app, any stack.</p>
+  <div class="accent">Start a Project</div>
+  <p><code>Paper Mono is named, not shipped. This sample uses the mono fallback.</code></p>
+  <h2>Controls</h2>
+  <div class="row">
+    <div class="search">Search...</div>
+    <button class="theme" type="button">Copy page</button>
+  </div>
+  <h2>Card</h2>
+  <div class="card"><strong>Features</strong><span>Explore all the powerful features Orchids has to offer.</span></div>
+</main>
+<script>
+  const roles = ["page", "surface", "text", "body", "muted", "accent", "border", "raised"];
+  const root = document.documentElement;
+  const box = document.getElementById("swatches");
+  function paint() {
+    box.innerHTML = "";
+    const cs = getComputedStyle(root);
+    for (const role of roles) {
+      const el = document.createElement("div");
+      el.className = "swatch";
+      el.innerHTML = '<div class="chip"></div><div class="label"></div>';
+      el.querySelector(".chip").style.background = cs.getPropertyValue("--" + role);
+      el.querySelector(".label").textContent = role + " " + cs.getPropertyValue("--" + role).trim();
+      box.appendChild(el);
+    }
+  }
+  document.getElementById("theme").addEventListener("click", () => {
+    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+    paint();
+  });
+  paint();
+</script>
+</body>
+</html>

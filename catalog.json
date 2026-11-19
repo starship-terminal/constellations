@@ -20343,6 +20343,94 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "orchids",
+      "name": "Orchids",
+      "url": "https://docs.orchids.app",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "Signed-out Mintlify docs for a paused AI app builder: white or #0e0c0c page, amber #fcaa26 text accent, Inter, 8px search, 12px copy control, 16px cards",
+      "tags": [
+        "web",
+        "docs",
+        "ai",
+        "marketing",
+        "light",
+        "dark",
+        "signed-out",
+        "mintlify"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public docs at docs.orchids.app. orchids.app and www.orchids.app return a paused Vercel deployment. No signup, no login, no payment.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/orchids/README.md",
+      "tokens": "systems/orchids/tokens.json",
+      "styleGuide": "systems/orchids/style-guide.html",
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "docs.orchids.app in the T3 preview browser for computed styles, and headless Chromium for screenshots at 1440x900 and 390x844. orchids.app returned Vercel DEPLOYMENT_PAUSED. The preview browser did not produce screenshot frames.",
+        "timestamp": "2026-11-19T01:05:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "docs.orchids.app/",
+          "docs.orchids.app/plans-and-token-usage",
+          "docs.orchids.app/features/orchids-agent",
+          "docs.orchids.app/changelog/overview",
+          "orchids.app/",
+          "www.orchids.app/",
+          "www.orchids.app/login",
+          "www.orchids.app/blog/orchids-is-joining-figma"
+        ],
+        "gaps": [
+          "orchids.app and www.orchids.app are a paused Vercel deployment, including login, signup, pricing, blog, and careers",
+          "Start a Project was not followed",
+          "no email was entered and no account was created",
+          "no payment, card, phone, or government ID was requested or given",
+          "the search dialog was left empty",
+          "the preview browser did not produce screenshot frames"
+        ],
+        "version": "none",
+        "pr": "none",
+        "durationMin": 45
+      },
+      "preview": {
+        "cover": "systems/orchids/screenshots/docs-home-light-desktop.png",
+        "icon": "systems/orchids/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      }
     }
   ]
 }
