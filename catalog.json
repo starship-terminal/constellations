@@ -20343,6 +20343,79 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "wise",
+      "name": "Wise",
+      "url": "https://wise.com/",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Money-transfer marketing and signed-out login: bright green #9FE870 pills on forest #163300, white page, Wise Sans headlines, Inter body, 10px login fields.",
+      "tags": [
+        "web",
+        "finance",
+        "money-transfer",
+        "marketing",
+        "signed-out",
+        "pills",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages and the login wall only. Email and password fields were left empty. No account, phone, card, bank details, or KYC was entered. No transfer was started. Google, Facebook, Apple, and passkey were not clicked.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/wise/README.md",
+      "tokens": "systems/wise/tokens.json",
+      "styleGuide": "systems/wise/style-guide.html",
+      "preview": {
+        "cover": "systems/wise/icon.png",
+        "icon": "systems/wise/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.text",
+          "core.fontFamily.display"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "light.color."
+        ],
+        "typography": [
+          "core.typography."
+        ],
+        "rounded": [
+          "core.radius."
+        ],
+        "spacing": [
+          "core.spacing."
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot failed with The browser is not producing screenshot frames. No PNG was invented.",
+        "components/": "Element crops need screenshots. The same preview failure left components/crops empty.",
+        "icons/": "Wise wordmark and glyphs were not lifted. They stay on wise.com."
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "version": "signed-out web, np-theme-personal, 2026-11-19"
+      }
     }
   ]
 }
