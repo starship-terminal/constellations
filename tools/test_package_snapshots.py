@@ -16,12 +16,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 KIT = ROOT / "tools" / "kit" / "capture"
 # Every copy of the kit's snapshot inside a package: label (the folder's path under systems/,
-# which starts with the slug) -> the folder holding snapshot.js beside unsnap.py. Found, not
-# listed, whatever the layout (tools/capture/, capture/, a vendored tools/kit/), so a package
-# that copies the kit later is checked from its first commit.
+# which starts with the slug) -> the folder holding snapshot.js. Found, not listed, whatever
+# the layout (tools/capture/, capture/, a vendored tools/kit/), so a package that copies the
+# kit later is checked from its first commit. Every snapshot.js counts, with no filter on its
+# siblings: a copy that lost unsnap.py or signed-params.json must fail, not drop out.
 PACKAGES = {p.parent.relative_to(ROOT / "systems").as_posix(): p.parent
-            for p in sorted((ROOT / "systems").glob("*/**/snapshot.js"))
-            if (p.parent / "unsnap.py").is_file()}
+            for p in sorted((ROOT / "systems").glob("*/**/snapshot.js"))}
+SIBLINGS = ("unsnap.py", "signed-params.json")
 SIGNED = [
     "https://bucket.s3.amazonaws.com/a.png?X-Amz-Algorithm=AWS4&X-Amz-Signature=abc",
     "https://storage.googleapis.com/b/o.png?X-Goog-Signature=abc",
@@ -75,9 +76,9 @@ class PackageSnapshots(unittest.TestCase):
         for slug in ("claude", "coursera", "manus", "chatgpt", "notebooklm", "duolingo", "linear",
                      "brilliant", "researchrabbit", "sentry", "navia", "unsplash", "clay", "onefinestay"):
             self.assertIn(slug, slugs)
-        for slug in PACKAGES:
-            for name in ("snapshot.js", "unsnap.py", "signed-params.json"):
-                self.assertTrue((folder(slug) / name).is_file(), (slug, name))
+        missing = [f"{label}/{name}" for label in PACKAGES for name in SIBLINGS
+                   if not (folder(label) / name).is_file()]
+        self.assertEqual(missing, [], "a snapshot.js copy without the kit files beside it")
 
     def test_each_copy_carries_the_kit_list(self):
         want = {"prefixes": self.kit["prefixes"], "params": self.kit["params"]}
