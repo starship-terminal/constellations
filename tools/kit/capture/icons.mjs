@@ -29,33 +29,46 @@ function collect() {
   }).map((s) => {
     const r = s.getBoundingClientRect(), col = rgb(getComputedStyle(s).color);
     const c = s.cloneNode(true);
-    const shapes = [...s.querySelectorAll('path,circle,rect,line,polyline,polygon,ellipse')], cshapes = [...c.querySelectorAll('path,circle,rect,line,polyline,polygon,ellipse')];
-    shapes.forEach((e, i) => {
-      const cs = getComputedStyle(e), t = cshapes[i];
-      for (const a of ['fill', 'stroke']) if ((t.getAttribute(a) || '').startsWith('var(')) t.setAttribute(a, rgb(cs[a]) === col ? 'currentColor' : hex(cs[a]));
-      if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
-      else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
-      if (!t.hasAttribute('stroke') && cs.stroke !== 'none') {
-        t.setAttribute('stroke', rgb(cs.stroke) === col ? 'currentColor' : hex(cs.stroke));
-        t.setAttribute('stroke-width', parseFloat(cs.strokeWidth) || 1);
-        if (cs.strokeLinecap !== 'butt') t.setAttribute('stroke-linecap', cs.strokeLinecap);
-        if (cs.strokeLinejoin !== 'miter') t.setAttribute('stroke-linejoin', cs.strokeLinejoin);
-      }
-    });
+    // The paint a shape takes from a class, a style or var() is written onto its copy as attributes, since
+    // the copy keeps neither classes nor styles.
+    const SHAPES = 'path,circle,rect,line,polyline,polygon,ellipse';
+    const paintInto = (src, dst, imported = false) => {
+      const shapes = [...src.querySelectorAll(SHAPES)], cshapes = [...dst.querySelectorAll(SHAPES)];
+      shapes.forEach((e, i) => {
+        const cs = getComputedStyle(e), t = cshapes[i];
+        for (const a of ['fill', 'stroke']) if ((t.getAttribute(a) || '').startsWith('var(')) t.setAttribute(a, rgb(cs[a]) === col ? 'currentColor' : hex(cs[a]));
+        if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
+        else if (imported && !t.hasAttribute('fill') && cs.fill === 'none') t.setAttribute('fill', 'none');   // its style goes below
+        else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
+        if (!t.hasAttribute('stroke') && cs.stroke !== 'none') {
+          t.setAttribute('stroke', rgb(cs.stroke) === col ? 'currentColor' : hex(cs.stroke));
+          t.setAttribute('stroke-width', parseFloat(cs.strokeWidth) || 1);
+          if (cs.strokeLinecap !== 'butt') t.setAttribute('stroke-linecap', cs.strokeLinecap);
+          if (cs.strokeLinejoin !== 'miter') t.setAttribute('stroke-linejoin', cs.strokeLinejoin);
+        }
+      });
+    };
+    const shapes = [...s.querySelectorAll(SHAPES)];
+    paintInto(s, c);
     c.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
     for (const a of ['id', 'class', 'focusable', 'aria-hidden', 'aria-labelledby', 'style', 'data-testid']) c.removeAttribute(a);
-    // A <use> drawing a symbol defined elsewhere on the page (a sprite sheet) would draw nothing once the
-    // icon stands alone, so the symbol is copied into the icon's own <defs>.
-    for (const u of c.querySelectorAll('use')) {
-      const id = (u.getAttribute('href') || u.getAttribute('xlink:href') || '').replace(/^#/, '');
-      if (!id || c.querySelector(`[id="${CSS.escape(id)}"]`)) continue;
-      const t = document.getElementById(id);
-      if (!t) continue;
-      const defs = c.querySelector('defs') || c.insertBefore(document.createElementNS('http://www.w3.org/2000/svg', 'defs'), c.firstChild);
-      defs.appendChild(t.cloneNode(true));
-    }
     // Every id something in the icon points at is kept: url(#x) (masks, gradients, clip paths) and a <use>'s href.
     const refsOf = (html) => new Set([...html.matchAll(/url\((?:&quot;|["'])?#([^)"'&]+)|\b(?:xlink:)?href="#([^"]+)"/g)].map((m) => m[1] || m[2]));
+    // A target defined elsewhere on the page (a sprite sheet's symbol, a shared gradient or mask) would leave
+    // the standalone icon drawing nothing, so it is copied into the icon's <defs>, painted like the icon's own
+    // shapes, and whatever it points at in turn is followed too (the set stops a cycle).
+    const imported = new Set();
+    for (const pending = [...refsOf(c.outerHTML)]; pending.length;) {
+      const id = pending.shift();
+      if (imported.has(id) || c.querySelector(`[id="${CSS.escape(id)}"]`)) continue;
+      imported.add(id);
+      const t = document.getElementById(id);
+      if (!t) continue;
+      const copy = t.cloneNode(true);
+      paintInto(t, copy, true);
+      (c.querySelector('defs') || c.insertBefore(document.createElementNS('http://www.w3.org/2000/svg', 'defs'), c.firstChild)).appendChild(copy);
+      pending.push(...refsOf(copy.outerHTML));
+    }
     const refs = refsOf(c.outerHTML);
     c.querySelectorAll('[id],[class],[style]').forEach((e) => { if (!refs.has(e.id)) e.removeAttribute('id'); e.removeAttribute('class'); if (e.tagName !== 'mask') e.removeAttribute('style'); });
     c.querySelectorAll('image').forEach((e) => e.remove());
