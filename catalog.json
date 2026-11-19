@@ -20343,6 +20343,92 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "threads",
+      "name": "Threads",
+      "url": "https://www.threads.com/",
+      "category": "media",
+      "platform": "web",
+      "tags": [
+        "web",
+        "social",
+        "signed-out",
+        "dark",
+        "light",
+        "meta"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public home feed, login card, signup dialog, and /login chrome only; no account created, Instagram login not followed, no phone entered, Log in not pressed)",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/threads/README.md",
+      "tokens": "systems/threads/tokens.json",
+      "styleGuide": "systems/threads/style-guide.html",
+      "preview": {
+        "cover": "systems/threads/screenshots/home-dark-default.png",
+        "icon": "systems/threads/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.background.page",
+            "surface": "dark.color.background.surface",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.status.accent",
+            "border": "dark.color.border.divider"
+          },
+          "light": {
+            "page": "light.color.background.page",
+            "surface": "light.color.background.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.status.accent",
+            "border": "light.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.font.family.system",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "threads.com signed-out in the T3 preview tab (computed styles, 1169x731) and headless Chromium after those URLs loaded with no Cloudflare challenge; preview_snapshot failed with 'The browser is not producing screenshot frames'",
+        "timestamp": "2026-11-19T03:05:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/login",
+          "mobile /",
+          "mobile /login",
+          "help.instagram.com Threads Terms",
+          "help.instagram.com privacy supplemental"
+        ],
+        "gaps": [
+          "signup wall not entered: no account, no Instagram login, no phone number, Log in not pressed",
+          "logged-in app (composer, messages, activity, profile, settings) not entered",
+          "pressed, error, disabled, loading, and hover states not provoked",
+          "phone-width light theme not shot",
+          "reduced motion not emulated",
+          "toast declared, not seen painted",
+          "icons not extracted (Meta artwork, docs/RIGHTS.md)",
+          "T3 preview screenshots unavailable (frame error); PNGs are headless of pages already confirmed public"
+        ],
+        "durationMin": 70
+      },
+      "goodFor": "Signed-out Threads chrome: near-black page, inverse login button, 18 px fields, 24 px login card, system-ui at 15 px, with the published light remap",
+      "layoutGaps": {
+        "icons/": "Threads icons are Meta artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
