@@ -1,0 +1,193 @@
+{
+  "capturedAt": "2026-11-19",
+  "harness": "T3 preview browser, getComputedStyle. Screenshots: headless Playwright after preview frames failed.",
+  "viewports": [
+    {
+      "page": "https://tilda.cc/",
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "note": "fill viewport before resize"
+    },
+    {
+      "page": "https://tilda.cc/",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2
+    },
+    {
+      "page": "https://tilda.cc/pricing/",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2
+    },
+    {
+      "page": "https://tilda.cc/login/",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2
+    }
+  ],
+  "home1440": {
+    "heroTitle": {
+      "fontSize": "46px",
+      "fontWeight": "300",
+      "lineHeight": "52px",
+      "color": "rgb(0, 0, 0)",
+      "width": 560
+    },
+    "heroDescr": {
+      "fontSize": "16px",
+      "fontWeight": "300",
+      "lineHeight": "26px",
+      "padding": "21px 0px 0px"
+    },
+    "heroCreate": {
+      "background": "rgb(250, 134, 105)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "15px",
+      "fontWeight": "600",
+      "padding": "13.5px 44px",
+      "height": 50,
+      "border": "1px solid rgb(250, 134, 105)",
+      "radius": "0px",
+      "transition": "0.2s ease-in-out"
+    },
+    "navSignup": {
+      "fontSize": "13px",
+      "fontWeight": "700",
+      "padding": "6.9px 20px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "height": 31,
+      "textTransform": "uppercase"
+    },
+    "sectionXxl": {
+      "fontSize": "78px",
+      "fontWeight": "300",
+      "lineHeight": "91.26px"
+    },
+    "ctaLg": {
+      "background": "rgb(250, 134, 105)",
+      "fontSize": "22px",
+      "fontWeight": "500",
+      "padding": "14.6px 70px",
+      "height": 60
+    },
+    "header": {
+      "height": 80,
+      "padding": "0px 30px"
+    },
+    "container": {
+      "maxWidth": "1200px",
+      "width": 1200
+    },
+    "focusSignup": {
+      "outline": "rgb(32, 21, 255) auto 3px",
+      "outlineOffset": "4px"
+    },
+    "heroPanel": "rgb(240, 240, 240)"
+  },
+  "pricing1440": {
+    "title": {
+      "fontSize": "60px",
+      "fontWeight": "300",
+      "lineHeight": "73.8px"
+    },
+    "card": {
+      "border": "3px solid rgb(0, 0, 0)",
+      "padding": "45px 30px",
+      "width": 360,
+      "height": 544,
+      "radius": "0px"
+    },
+    "planButton": {
+      "background": "rgb(236, 236, 236)",
+      "border": "2px solid rgb(255, 255, 255)",
+      "radius": "30px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "height": 45
+    },
+    "price": {
+      "fontSize": "22px",
+      "fontWeight": "700"
+    },
+    "tabActive": {
+      "color": "rgb(34, 34, 34)",
+      "fontWeight": "500"
+    },
+    "tabIdle": {
+      "color": "rgb(119, 119, 119)",
+      "fontWeight": "400"
+    },
+    "xlCta": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "radius": "60px",
+      "fontSize": "26px",
+      "padding": "21.8px 80px",
+      "height": 80,
+      "shadow": "rgba(0, 0, 0, 0.2) 0px 0px 10px 0px"
+    },
+    "footer": "rgb(17, 17, 17)",
+    "footerArtboard": "rgb(23, 23, 23)",
+    "tableHead": {
+      "background": "rgb(51, 51, 51)",
+      "color": "rgb(255, 255, 255)"
+    }
+  },
+  "login1440": {
+    "bodyBackgroundImage": "linear-gradient(to right top, rgb(239, 107, 80), rgb(248, 173, 112))",
+    "card": {
+      "background": "rgba(255, 255, 255, 0.1)",
+      "radius": "8px",
+      "padding": "30px 55px 37px",
+      "width": 410,
+      "height": 478
+    },
+    "field": {
+      "fontSize": "24px",
+      "letterSpacing": "1px",
+      "height": 53,
+      "width": 300,
+      "color": "rgb(255, 255, 255)",
+      "borderBottom": "1px solid rgb(255, 255, 255)",
+      "padding": "0px 10px"
+    },
+    "label": {
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "16px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "submit": {
+      "background": "rgb(255, 232, 199)",
+      "color": "rgb(0, 0, 0)",
+      "radius": "100px",
+      "fontSize": "18px",
+      "padding": "10px 67px 11px",
+      "height": 44,
+      "width": 180
+    },
+    "helpLink": {
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px"
+    },
+    "submitted": false
+  },
+  "cookie": {
+    "accept": {
+      "background": "rgb(10, 10, 10)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "padding": "9.1px 15px",
+      "radius": "0px"
+    },
+    "banner": {
+      "background": "rgb(255, 255, 255)",
+      "width": 398,
+      "height": 184
+    }
+  }
+}

@@ -20343,6 +20343,58 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "tilda",
+      "name": "Tilda",
+      "url": "https://tilda.cc/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Editorial marketing pages: light type at weight 300, square coral buttons, 1px black outlines, 3px plan frames, a coral gradient sign-in",
+      "tags": [
+        "web",
+        "light",
+        "marketing-site",
+        "website-builder",
+        "editorial"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "public marketing site and signed-out login, measured in the T3 preview browser; login not submitted",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/tilda/README.md",
+      "tokens": "systems/tilda/tokens.json",
+      "styleGuide": "systems/tilda/style-guide.html",
+      "preview": {
+        "cover": "systems/tilda/screenshots/home-light-default.png",
+        "icon": "systems/tilda/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.accent",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45
+      },
+      "layoutGaps": {}
     }
   ]
 }
