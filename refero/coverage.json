@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 219,
-    "system_domains": 210,
-    "matched_domains": 180,
-    "missing_domains": 253,
-    "system_domains_absent_from_catalog": 30
+    "system_packages": 230,
+    "system_domains": 221,
+    "matched_domains": 190,
+    "missing_domains": 243,
+    "system_domains_absent_from_catalog": 31
   },
   "matched": {
     "1password.com": {
@@ -3001,6 +3001,23 @@
         }
       ]
     },
+    "nytimes.com": {
+      "catalog": [
+        {
+          "name": "The New York Times",
+          "domain": "nytimes.com",
+          "id": 49
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "the-athletic",
+          "name": "The Athletic",
+          "url": "https://www.nytimes.com/athletic/",
+          "name_match": true
+        }
+      ]
+    },
     "openai.com": {
       "catalog": [
         {
@@ -3035,6 +3052,57 @@
         }
       ]
     },
+    "rows.com": {
+      "catalog": [
+        {
+          "name": "Rows",
+          "domain": "rows.com",
+          "id": 36
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "rows",
+          "name": "Rows",
+          "url": "https://rows.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "scape.com": {
+      "catalog": [
+        {
+          "name": "Scape",
+          "domain": "scape.com",
+          "id": 763
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "scape",
+          "name": "Scape",
+          "url": "https://www.scape.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "sora.com": {
+      "catalog": [
+        {
+          "name": "Sora",
+          "domain": "sora.com",
+          "id": 742
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "sora",
+          "name": "Sora",
+          "url": "https://sora.com/",
+          "name_match": true
+        }
+      ]
+    },
     "spotify.com": {
       "catalog": [
         {
@@ -3052,6 +3120,57 @@
         }
       ]
     },
+    "squareup.com": {
+      "catalog": [
+        {
+          "name": "Square",
+          "domain": "squareup.com",
+          "id": 47
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "square",
+          "name": "Square",
+          "url": "https://squareup.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "sunsama.com": {
+      "catalog": [
+        {
+          "name": "Sunsama",
+          "domain": "sunsama.com",
+          "id": 880
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "sunsama",
+          "name": "Sunsama",
+          "url": "https://sunsama.com",
+          "name_match": true
+        }
+      ]
+    },
+    "teenage.engineering": {
+      "catalog": [
+        {
+          "name": "Teenage Engineering",
+          "domain": "teenage.engineering",
+          "id": 57
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "teenage-engineering",
+          "name": "Teenage Engineering",
+          "url": "https://teenage.engineering",
+          "name_match": true
+        }
+      ]
+    },
     "telegram.org": {
       "catalog": [
         {
@@ -3065,6 +3184,23 @@
           "slug": "telegram",
           "name": "Telegram",
           "url": "https://telegram.org",
+          "name_match": true
+        }
+      ]
+    },
+    "typefully.com": {
+      "catalog": [
+        {
+          "name": "Typefully",
+          "domain": "typefully.com",
+          "id": 471
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "typefully",
+          "name": "Typefully",
+          "url": "https://typefully.com",
           "name_match": true
         }
       ]
@@ -3099,6 +3235,40 @@
           "slug": "julienne",
           "name": "Julienne",
           "url": "https://withjulienne.com",
+          "name_match": true
+        }
+      ]
+    },
+    "wittl.co": {
+      "catalog": [
+        {
+          "name": "Wittl",
+          "domain": "wittl.co",
+          "id": 632
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "wittl",
+          "name": "Wittl",
+          "url": "https://wittl.co",
+          "name_match": true
+        }
+      ]
+    },
+    "wiza.co": {
+      "catalog": [
+        {
+          "name": "Wiza",
+          "domain": "wiza.co",
+          "id": 502
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "wiza",
+          "name": "Wiza",
+          "url": "https://wiza.co",
           "name_match": true
         }
       ]
@@ -3608,13 +3778,6 @@
         "id": 732
       }
     ],
-    "nytimes.com": [
-      {
-        "name": "The New York Times",
-        "domain": "nytimes.com",
-        "id": 49
-      }
-    ],
     "o-p-e-n.com": [
       {
         "name": "Open",
@@ -4049,13 +4212,6 @@
         "id": 1144
       }
     ],
-    "rows.com": [
-      {
-        "name": "Rows",
-        "domain": "rows.com",
-        "id": 36
-      }
-    ],
     "rox.com": [
       {
         "name": "Rox",
@@ -4103,13 +4259,6 @@
         "name": "Scale AI",
         "domain": "scale.com",
         "id": 157
-      }
-    ],
-    "scape.com": [
-      {
-        "name": "Scape",
-        "domain": "scape.com",
-        "id": 763
       }
     ],
     "seatgeek.com": [
@@ -4210,13 +4359,6 @@
         "id": 82
       }
     ],
-    "sora.com": [
-      {
-        "name": "Sora",
-        "domain": "sora.com",
-        "id": 742
-      }
-    ],
     "soundcloud.com": [
       {
         "name": "SoundCloud",
@@ -4257,13 +4399,6 @@
         "name": "Squarespace",
         "domain": "squarespace.com",
         "id": 451
-      }
-    ],
-    "squareup.com": [
-      {
-        "name": "Square",
-        "domain": "squareup.com",
-        "id": 47
       }
     ],
     "ssense.com": [
@@ -4336,13 +4471,6 @@
         "id": 501
       }
     ],
-    "sunsama.com": [
-      {
-        "name": "Sunsama",
-        "domain": "sunsama.com",
-        "id": 880
-      }
-    ],
     "super.so": [
       {
         "name": "Super.so",
@@ -4390,13 +4518,6 @@
         "name": "Teal",
         "domain": "tealhq.com",
         "id": 106
-      }
-    ],
-    "teenage.engineering": [
-      {
-        "name": "Teenage Engineering",
-        "domain": "teenage.engineering",
-        "id": 57
       }
     ],
     "telescope.fyi": [
@@ -4565,13 +4686,6 @@
         "name": "Typeform",
         "domain": "typeform.com",
         "id": 125
-      }
-    ],
-    "typefully.com": [
-      {
-        "name": "Typefully",
-        "domain": "typefully.com",
-        "id": 471
       }
     ],
     "uber.com": [
@@ -4798,25 +4912,11 @@
         "id": 313
       }
     ],
-    "wittl.co": [
-      {
-        "name": "Wittl",
-        "domain": "wittl.co",
-        "id": 632
-      }
-    ],
     "wix.com": [
       {
         "name": "Wix",
         "domain": "wix.com",
         "id": 176
-      }
-    ],
-    "wiza.co": [
-      {
-        "name": "Wiza",
-        "domain": "wiza.co",
-        "id": 502
       }
     ],
     "womp.com": [
@@ -5141,6 +5241,14 @@
         "slug": "superset-desktop",
         "name": "Superset (desktop)",
         "url": "https://superset.sh",
+        "ios_guess": []
+      }
+    ],
+    "tella.com": [
+      {
+        "slug": "tella",
+        "name": "Tella",
+        "url": "https://www.tella.com",
         "ios_guess": []
       }
     ],
