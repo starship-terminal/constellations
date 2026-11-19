@@ -151,14 +151,22 @@ async function S(key, target, list, meta = {}, opts = {}) {
   if (opts.open) { await reset(); await opts.open(); }
   let loc = await pin(page, target, key);
   if (!loc) { log('  ! missing', key); out.components[key].missing = true; await close(opts); return; }
+  // The pinned node, or, when the page has replaced it, the one the selector finds now (pinned in
+  // turn). The last good locator is kept while nothing matches, so a later state can still find it.
+  let replaced = false;
+  const live = async (st) => {
+    if (await loc.count()) return loc;
+    replaced = true;
+    const again = await pin(page, target, key);
+    if (!again) throw new Error('the element left the page');
+    log('  ~', key, st, 'element replaced, found again by its selector');
+    return (loc = again);
+  };
   for (const st of list) {
     let undo, via;
+    replaced = false;
     try {
-      if (!(await loc.count())) {   // the page replaced the element: find it again by the spec's selector
-        loc = await pin(page, target, key);
-        if (!loc) throw new Error('the element left the page');
-        log('  ~', key, st, 'element replaced, found again by its selector');
-      }
+      await live(st);
       if (!opts.noReset) await reset();
       if (!opts.noScroll) await centre(loc);
       if (opts.before?.[st]) via = await opts.before[st](loc);
@@ -183,7 +191,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      const now = await live(st);   // opening, focus or hover may have replaced it
+      await measure(key, st, now, { ...opts, via: replaced ? `${via}; the page replaced the element, read from the one its selector finds now` : via });
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
