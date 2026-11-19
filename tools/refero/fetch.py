@@ -22,6 +22,7 @@ rows where it is still NULL.
 import argparse
 import concurrent.futures
 import html as html_lib
+import http.client
 import json
 import os
 import re
@@ -125,15 +126,49 @@ class TooLarge(ValueError):
     """A response body over MAX_RESPONSE bytes."""
 
 
-def get(url, binary=True, tries=4):
-    """GET url with retry/backoff. Raises TooLarge, without retrying, for a
-    body over MAX_RESPONSE bytes."""
+class RedirectRefused(ValueError):
+    """A redirect to a URL the caller does not allow."""
+
+
+def https_only(url):
+    return url.startswith("https://")
+
+
+class CheckedRedirect(urllib.request.HTTPRedirectHandler):
+    """Follow a redirect only to a URL `allowed(url)` accepts. urllib joins a
+    relative Location onto the request URL before this sees it."""
+
+    def __init__(self, allowed):
+        super().__init__()
+        self.allowed = allowed
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not self.allowed(newurl):
+            raise RedirectRefused(f"refusing a redirect from {req.full_url} to {newurl!r}")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def opener(allowed):
+    return urllib.request.build_opener(CheckedRedirect(allowed))
+
+
+def get(url, binary=True, tries=4, allowed=https_only):
+    """GET url with retry/backoff. Every redirect target must pass `allowed`
+    (default: https only). Raises, without retrying, RedirectRefused for any
+    other target and TooLarge for a body over MAX_RESPONSE bytes. A body
+    shorter than its Content-Length (a dropped connection) is retried."""
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers=UA)
-            with urllib.request.urlopen(req, timeout=90) as r:
+            with opener(allowed).open(req, timeout=90) as r:
                 data = r.read(MAX_RESPONSE + 1)
+                declared = (r.headers.get("Content-Length") or "").strip()
+            # read(n), unlike read(), returns a cut-short body without raising.
+            if declared.isdigit() and len(data) < int(declared) and len(data) <= MAX_RESPONSE:
+                raise http.client.IncompleteRead(data, int(declared) - len(data))
             break
+        except RedirectRefused:
+            raise
         except Exception:
             if i == tries - 1:
                 raise

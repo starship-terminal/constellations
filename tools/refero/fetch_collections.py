@@ -80,8 +80,15 @@ ITEMLIST_RE = re.compile(
     r'"position":\d+,"url":"https://styles\.refero\.design/style/([0-9a-f-]{36})"')
 
 
-# fetch.get: retry/backoff and a cap on the response size.
-get = refero_fetch.get
+def on_base(url):
+    """True for an https URL on BASE: the only pages, and redirect targets,
+    this tool fetches."""
+    return url.startswith(BASE + "/")
+
+
+def get(url, binary=True, tries=4):
+    """fetch.get (retries, a size cap) that follows redirects only on BASE."""
+    return refero_fetch.get(url, binary, tries, allowed=on_base)
 
 
 def collection_urls(xml):
@@ -93,7 +100,7 @@ def collection_urls(xml):
     for u in (u.strip() for u in LOC_RE.findall(xml)):
         if u.rstrip("/") == BASE:  # the homepage
             continue
-        if u.startswith(BASE + "/"):
+        if on_base(u):
             urls.append(u)
         else:
             print(f"SKIP off-site sitemap url {u!r}", file=sys.stderr)
