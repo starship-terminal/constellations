@@ -1048,9 +1048,9 @@
       "description": "The only AI platform purpose-built for outcomes",
       "status": "captured",
       "package": "systems/copy",
-      "notes": "",
+      "notes": "https://app.copy.ai/login sent a code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 4
     },
     {
@@ -1065,9 +1065,9 @@
       "description": "Curate your universe",
       "status": "captured",
       "package": "systems/cosmos",
-      "notes": "",
+      "notes": "https://www.cosmos.so/login asks for username or email and a password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1082,9 +1082,9 @@
       "description": "Your space for notes, tasks, and big ideas",
       "status": "captured",
       "package": "systems/craft",
-      "notes": "",
+      "notes": "https://docs.craft.do/ sent a code to the capture inbox. The code was not entered. Google, Apple, Microsoft, and SSO are also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 4
     },
     {
@@ -1099,9 +1099,9 @@
       "description": "Interface assets for designers, developers, and startup creatives",
       "status": "captured",
       "package": "systems/craftwork",
-      "notes": "",
+      "notes": "https://craftwork.design/login offers a one-time code, then said the email domain is not allowed. No code was sent. Google is also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 4
     },
     {
@@ -1116,9 +1116,9 @@
       "description": "Bring your creative ideas to life",
       "status": "captured",
       "package": "systems/creativemarket",
-      "notes": "",
+      "notes": "https://creativemarket.com/sign-in stopped on a Cloudflare security verification. No email field was reached.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 4
     },
     {
@@ -1133,9 +1133,9 @@
       "description": "Next generation calendar for professionals and teams",
       "status": "captured",
       "package": "systems/cron",
-      "notes": "",
+      "notes": "https://www.cron.com/ redirects login to https://app.notion.com/login. Notion said the email domain is invalid. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 4
     },
     {
@@ -1150,9 +1150,9 @@
       "description": "A platform for curating and discovering taste.",
       "status": "captured",
       "package": "systems/curater",
-      "notes": "",
+      "notes": "https://curater.org/ Sign in or create account opens only Google sign-in. No email field on the site.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 4
     },
     {
@@ -1167,9 +1167,9 @@
       "description": "Workplace communication for distributed teams",
       "status": "captured",
       "package": "systems/cushion",
-      "notes": "",
+      "notes": "https://app.cushion.so/login sent a login link to the capture inbox. The link was not opened. Google is also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 4
     },
     {
@@ -1184,9 +1184,9 @@
       "description": "Your feedback hub, on autopilot",
       "status": "uncapturable",
       "package": null,
-      "notes": "acquired by Atlassian 2025-09-03, standalone product sunset 2025-10-31; cycle.app is an unpublished Webflow site serving the generic 404 on every path; nothing honest to capture",
+      "notes": "acquired by Atlassian 2025-09-03, standalone product sunset 2025-10-31; cycle.app is an unpublished Webflow site serving the generic 404 on every path; nothing honest to capture https://cycle.app/ and https://cycle.app/login are 404 pages. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 4
     },
     {
@@ -1201,9 +1201,9 @@
       "description": "The place full of art where it gains the voice it deserves",
       "status": "captured",
       "package": "systems/dailyartmagazine",
-      "notes": "public read-only magazine; Shop and Courses are external stores measured as links, never followed. Newsletter and Contact Form 7 fields were filled with sample text and cleared, never submitted. Third-party ad slots are layout evidence only",
+      "notes": "public read-only magazine; Shop and Courses are external stores measured as links, never followed. Newsletter and Contact Form 7 fields were filled with sample text and cleared, never submitted. Third-party ad slots are layout evidence only https://www.dailyartmagazine.com/login is a page-not-found article site. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 4
     },
     {
@@ -1218,9 +1218,9 @@
       "description": "Payroll & Compliance for International Teams",
       "status": "captured",
       "package": "systems/deel",
-      "notes": "",
+      "notes": "https://app.deel.com/login asks for email and password, or the Deel app, SSO, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1235,9 +1235,9 @@
       "description": "Listen to music online",
       "status": "captured",
       "package": "systems/deezer",
-      "notes": "",
+      "notes": "https://account.deezer.com/en-us/login/ asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1252,9 +1252,9 @@
       "description": "Scale Your Insight. Stay Focused on What Matters",
       "status": "captured",
       "package": "systems/delphi",
-      "notes": "",
+      "notes": "https://www.delphi.ai/login redirects to https://www.delphi.co/. Sign In links back to the same page. No email field was reached.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 4
     },
     {
@@ -1269,9 +1269,9 @@
       "description": "Edit videos & podcasts like a doc ",
       "status": "captured",
       "package": "systems/descript",
-      "notes": "",
+      "notes": "https://web.descript.com/login sent a 6-digit passcode to the capture inbox. The code was not entered. A password path is also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 4
     },
     {
@@ -1286,9 +1286,9 @@
       "description": "Level up your designs faster",
       "status": "captured",
       "package": "systems/designmodo",
-      "notes": "public signed-out pass only: marketing, /postcards/pricing, /email-templates, the /my-account/sign-in form and the signed-out Postcards gallery (Welcome-back modal dismissed locally); the builder canvas and every post-login surface stay account-only",
+      "notes": "public signed-out pass only: marketing, /postcards/pricing, /email-templates, the /my-account/sign-in form and the signed-out Postcards gallery (Welcome-back modal dismissed locally); the builder canvas and every post-login surface stay account-only https://designmodo.com/my-account/sign-in/ asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1303,9 +1303,9 @@
       "description": "Generate branded designs and endless post ideas",
       "status": "captured",
       "package": "systems/designstripe",
-      "notes": "public signed-out pass only (designstripe.com redirects to visual.app): marketing, /assets library and set galleries, /tools, /about, /contact, /blog; the design agents and every post-waitlist surface stay account-only",
+      "notes": "public signed-out pass only (designstripe.com redirects to visual.app): marketing, /assets library and set galleries, /tools, /about, /contact, /blog; the design agents and every post-waitlist surface stay account-only https://designstripe.com/login redirects to https://visual.app/login, a 404. The product is now Visual and its login is a waitlist. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 4
     },
     {
@@ -1320,9 +1320,9 @@
       "description": "News, before it trends",
       "status": "captured",
       "package": "systems/digg",
-      "notes": "",
+      "notes": "https://digg.com/login asks for email and password, or Google or X. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1337,9 +1337,9 @@
       "description": "Your Place to Talk and Hang Out",
       "status": "captured",
       "package": "systems/discord",
-      "notes": "",
+      "notes": "https://discord.com/login asks for email or phone and a password, or a QR code or passkey. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 4
     },
     {
@@ -1354,9 +1354,9 @@
       "description": "Movies, Events, Dining, Sports & Concerts Nearby",
       "status": "captured",
       "package": "systems/district",
-      "notes": "",
+      "notes": "https://www.district.in/login says the page was not found. The home Login control did not open a form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 4
     },
     {
@@ -1371,9 +1371,9 @@
       "description": "The Future Of Possible",
       "status": "captured",
       "package": "systems/dji",
-      "notes": "",
+      "notes": "https://account.dji.com/login asks for email and password, or Apple, Google, or Facebook. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 4
     },
     {
