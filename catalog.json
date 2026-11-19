@@ -20343,6 +20343,72 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "the-leap",
+      "name": "The Leap",
+      "url": "https://theleap.co",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Warm creator-store marketing: Tobias headlines, Favorit UI, yellow pill buttons on #f0edee, pastel feature washes, and a square-field login",
+      "tags": [
+        "web",
+        "creator",
+        "ecommerce",
+        "marketing",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "Public marketing and signed-out login. Signup redirected to login, so no account was created. Google and Thinkific were not followed. No card was entered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/the-leap/README.md",
+      "tokens": "systems/the-leap/tokens.json",
+      "styleGuide": "systems/the-leap/style-guide.html",
+      "preview": {
+        "cover": "systems/the-leap/icon.png",
+        "icon": "systems/the-leap/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.raised",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public site 2026-11-19",
+        "durationMin": 45,
+        "gaps": [
+          "preview_snapshot returned The browser is not producing screenshot frames, so no screenshots or crops were saved",
+          "signup at accounts.theleap.co/signup redirected to login, so AgentMail was not used",
+          "signed-in app was not opened",
+          "Google and Thinkific were not followed",
+          "no card was entered",
+          "viewport was 1169, not 1440 and not 390",
+          "no dark theme was found"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned The browser is not producing screenshot frames. Measurements were kept. No screenshots were invented. The catalog cover is icon.png.",
+        "components/": "No crops. The same screenshot-frame failure. Component values are in components.md."
+      }
     }
   ]
 }

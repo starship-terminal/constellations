@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Leap style guide</title>
+<style>
+:root {
+  --page: #f0edee;
+  --surface: #fafafa;
+  --text: #482317;
+  --text-deep: #4c2116;
+  --accent: #ecf956;
+  --brown: #4c2116;
+  --cookie: #eeeeee;
+  --placeholder: #a1a1a1;
+  --sky: #b1dcfc;
+  --green: #c6e57d;
+  --lilac: #e3c6e4;
+  --ink: #4d2114;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: Favorit, "ABC Favorit", ui-sans-serif, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+}
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 {
+  font-family: Tobias, Georgia, serif;
+  font-weight: 300;
+  font-size: 70px;
+  letter-spacing: -1.4px;
+  line-height: 1.15;
+  margin: 0 0 8px;
+}
+h2 {
+  font-family: Tobias, Georgia, serif;
+  font-weight: 300;
+  font-size: 40px;
+  letter-spacing: -0.8px;
+  margin: 40px 0 12px;
+}
+p { color: var(--text-deep); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 128px; }
+.swatch i {
+  display: block;
+  height: 64px;
+  border-radius: 30px;
+  border: 1px solid var(--text);
+}
+.swatch span { display: block; font-size: 12px; margin-top: 6px; color: var(--text-deep); }
+button, .ghost {
+  font: 400 20px/20px Favorit, ui-sans-serif, sans-serif;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.primary {
+  height: 39px;
+  padding: 10px 30px 7px;
+  border-radius: 100px;
+  border: 1px solid var(--text);
+  background: var(--accent);
+}
+.ghost {
+  height: 39px;
+  padding: 10px 30px 7px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  background: transparent;
+}
+.field {
+  display: block;
+  width: 320px;
+  height: 44px;
+  margin-top: 12px;
+  padding: 6px 12px;
+  border: 1px solid var(--text-deep);
+  border-radius: 0;
+  background: var(--white);
+  color: var(--text-deep);
+  font: 400 18px/30px Favorit, ui-sans-serif, sans-serif;
+}
+.card {
+  width: 280px;
+  margin-top: 12px;
+  padding: 40px;
+  border-radius: 20px;
+  background: var(--surface);
+}
+.card strong {
+  display: block;
+  font-family: "ABC Favorit", Favorit, sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -0.7px;
+  color: var(--text-deep);
+}
+.note { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>The Leap</h1>
+  <p>Measured public styles. Tobias for headlines, Favorit for UI, yellow pill on warm gray.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#f0edee"></i><span>page #f0edee</span></div>
+    <div class="swatch"><i style="background:#fafafa"></i><span>surface #fafafa</span></div>
+    <div class="swatch"><i style="background:#482317"></i><span>text #482317</span></div>
+    <div class="swatch"><i style="background:#4c2116"></i><span>deep #4c2116</span></div>
+    <div class="swatch"><i style="background:#ecf956"></i><span>accent #ecf956</span></div>
+    <div class="swatch"><i style="background:#b1dcfc"></i><span>sky #b1dcfc</span></div>
+    <div class="swatch"><i style="background:#c6e57d"></i><span>green #c6e57d</span></div>
+    <div class="swatch"><i style="background:#e3c6e4"></i><span>lilac #e3c6e4</span></div>
+  </div>
+  <h2>Button and field</h2>
+  <button class="primary" type="button">Explore features</button>
+  <button class="ghost" type="button">Sign in</button>
+  <input class="field" type="text" placeholder="Email" aria-label="Email">
+  <div class="card"><strong>Free</strong><p>$0 USD/mo</p></div>
+  <p class="note">Login fields use square corners. Marketing buttons use a 100px pill. Pricing sign-up buttons measured 20px radius. No dark theme was on the pages opened.</p>
+</main>
+</body>
+</html>
