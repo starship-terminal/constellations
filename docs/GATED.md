@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_163 of 231 packages name gated surfaces in their gaps; 58 more mark a gate in their access text; 10 report none._
+_164 of 235 packages name gated surfaces in their gaps; 61 more mark a gate in their access text; 10 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -977,6 +977,12 @@ Access: signed out (every captured surface is public: ifttt.ai marketing home an
 - the plan cards' 'Get started' CTAs lead to checkout - measured, never followed
 - the search and prompt fields were clicked into for the focus look only, never queried or submitted - result surfaces are uncaptured
 
+## [Sana AI](../systems/sana-ai) — `sana-ai`
+Access: signed out (public marketing page plus the email sign-in form; an AgentMail address was typed, the one-time code was not entered, Google was not clicked, and no company SSO was offered)
+- Google sign-in is an iframe and was not clicked
+- no company SSO was offered
+- the sign-in page has no screenshot because a headless shot disagreed with the live dark page
+
 ## Gate noted in access text only
 
 ### [1Password](../systems/1password) — `1password`
@@ -1152,6 +1158,15 @@ signed out. Public marketing pages measured. Login was opened and not submitted.
 
 ### [Whereby](../systems/whereby) — `whereby`
 signed out (public marketing and the login form; the email was focused and not submitted)
+
+### [Telescope](../systems/telescope) — `telescope`
+signed out (public marketing page and /login; email and Google were not submitted)
+
+### [Slack](../systems/slack) — `slack`
+signed out. Public marketing at slack.com/intl/en-sg/ and pricing. Sign-in chrome at slack.com/signin measured and not submitted. Signup, workspace URL, Google, Microsoft, Apple, company SSO and card were not entered.
+
+### [Skyscanner](../systems/skyscanner) — `skyscanner`
+signed out. Public marketing and the search form only. Cookie banner dismissed with essential only. Login modal closed. No email, booking, card or phone.
 
 ## No gated surface recorded
 

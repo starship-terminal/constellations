@@ -72,10 +72,34 @@ def gated_matches_base(systems, current: str) -> bool:
         return False
     base_rows = {s.get("slug"): s for s in base.get("systems") or []}
     head_rows = {s.get("slug"): s for s in systems}
-    if not base_rows or not set(head_rows) > set(base_rows):
+    if not base_rows:
         return False
-    if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
+    if any(slug in base_rows and head_rows[slug] != base_rows[slug]
+           for slug in head_rows):
         return False
+    # This pull request regenerated the roll-up, then main gained another
+    # capture. Compare the committed file to the branch blob. Re-rendering
+    # needs every package's gaps, and the merge tree has the later files.
+    sha = os.environ.get("GITHUB_HEAD_SHA") if base_ref else None
+    if sha:
+        try:
+            branch_text = subprocess.run(
+                ["git", "show", f"{sha}:docs/GATED.md"],
+                cwd=ROOT, check=True, capture_output=True, text=True,
+            ).stdout
+            raw = subprocess.run(
+                ["git", "show", f"{sha}:catalog.json"],
+                cwd=ROOT, check=True, capture_output=True, text=True,
+            ).stdout
+            branch_rows = {s.get("slug"): s for s in json.loads(raw).get("systems") or []}
+        except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+            branch_text = None
+            branch_rows = None
+        if (branch_text is not None and current == branch_text
+                and branch_rows and set(branch_rows) < set(head_rows)
+                and all(head_rows.get(slug) == row
+                        for slug, row in branch_rows.items())):
+            return True
     if current == render(base["systems"]):
         return True
     # The roll-up may lag packages already merged to the base. It is still

@@ -327,6 +327,27 @@ def check(refero: Path) -> list[str]:
     return problems
 
 
+def branch_catalog() -> dict | None:
+    """Catalog rows on the pull request branch, keyed by slug.
+
+    GitHub checks the merge commit, so the working tree already includes
+    captures that landed on the base after this branch was pushed. The
+    workflow fetches the branch tip to GITHUB_HEAD_SHA. A depth-1 checkout
+    has no second parent, so HEAD^2 is not that tip."""
+    sha = os.environ.get("GITHUB_HEAD_SHA")
+    if not sha or not os.environ.get("GITHUB_BASE_REF"):
+        return None
+    try:
+        raw = subprocess.run(
+            ["git", "show", f"{sha}:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        catalog = json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return None
+    return {s.get("slug"): s for s in catalog.get("systems") or []}
+
+
 def base_catalog(head_catalog: dict) -> dict | None:
     """The catalog on the pull request's base, when GitHub is merging one.
 
@@ -357,15 +378,27 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
         return False
     base_rows = {s.get("slug"): s for s in base.get("systems") or []}
     head_rows = {s.get("slug"): s for s in head_catalog.get("systems") or []}
-    if not base_rows or not set(head_rows) >= set(base_rows):
+    # GitHub checks the merge. A branch started before later captures landed
+    # is missing those rows, so a strict superset is the wrong test. Every
+    # row the branch does carry must be unchanged, and it must add one.
+    if not base_rows:
         return False
+    if any(slug in base_rows and head_rows[slug] != base_rows[slug]
+           for slug in head_rows):
+        return False
+    # This pull request regenerated the file, then main gained another
+    # capture before the check ran. The merge catalog has that capture
+    # and may add no row of its own. The committed file is current when
+    # it matches the branch tip.
+    branch_rows = branch_catalog()
+    if branch_rows is not None and set(branch_rows) < set(head_rows):
+        if all(head_rows.get(slug) == row for slug, row in branch_rows.items()):
+            branch_expected = coverage_mod.build(
+                directory, {**head_catalog, "systems": list(branch_rows.values())})
+            if actual == branch_expected:
+                return True
     if not set(head_rows) - set(base_rows):
         return False
-    # An edited existing row can change the derived coverage. Only a pure
-    # addition leaves the committed file valid.
-    for slug, row in base_rows.items():
-        if head_rows.get(slug) != row:
-            return False
     # The committed file may be the current base, or a base that already
     # included some of the added rows (the PR regenerated it, then main
     # gained other captures). Either way the shared rows must agree, and
@@ -380,7 +413,7 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
     added = [row for slug, row in head_rows.items() if slug not in base_rows]
     added_expected = coverage_mod.build(
         directory, {**head_catalog, "systems": list(base.get("systems") or []) + added})
-    if (coverage_shared_ok(expected, actual)
+    if (coverage_shared_ok(added_expected, actual)
             and coverage_extras_are_added(actual, expected, added_expected)):
         return True
     # The committed file may also lag packages already merged to the base.
@@ -408,38 +441,61 @@ def coverage_is_prior_derivation(directory: dict, head_catalog: dict,
     """True when the file is the derivation of an unchanged subset.
 
     A capture merge does not rewrite this file, so the next add-only pull
-    request still carries the older derivation. A hand-edited domain does
-    not equal that derivation and still fails. Outside a pull request the
-    caller keeps the exact-match rule."""
+    request still carries the older derivation. GitHub then merges that
+    branch with a base that already has later captures, so the branch
+    catalog is missing those rows. The file is still current when it
+    matches a derivation of the base rows it names, and every catalog row
+    the branch does carry is unchanged. A hand-edited domain does not
+    equal that derivation and still fails."""
     base = base_catalog(head_catalog)
     if base is None:
         return False
     base_rows = {s.get("slug"): s for s in base.get("systems") or []}
     head_rows = {s.get("slug"): s for s in head_catalog.get("systems") or []}
-    if not base_rows or not set(head_rows) > set(base_rows):
-        return False
-    if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
+    if not base_rows:
         return False
     named = packages_in_coverage(actual)
-    if not named or not named <= set(head_rows):
+    # A regenerated file also names the package this pull request adds.
+    # A file that names some other package is not a derivation of this
+    # catalog.
+    if not named or not named <= set(base_rows) | set(head_rows):
         return False
-    kept = [row for row in head_catalog.get("systems") or []
-            if row.get("slug") in named]
+    kept = [base_rows[slug] if slug in base_rows else head_rows[slug]
+            for slug in named]
     return actual == coverage_mod.build(
-        directory, {**head_catalog, "systems": kept})
+        directory, {**base, "systems": kept})
+
+
+def _pkg_slugs(row) -> set[str]:
+    pkgs = row if isinstance(row, list) else (row or {}).get("pkgs") or []
+    return {pkg.get("slug") for pkg in pkgs if isinstance(pkg, dict) and pkg.get("slug")}
 
 
 def coverage_shared_ok(expected: dict, actual: dict) -> bool:
-    """Every domain in the committed file has the same row somewhere in
-    the merged derivation. A later capture can move a domain from missing
-    to matched; that move is fine. A changed row is not."""
+    """Every domain in the committed file still agrees with the merge.
+
+    A later capture can move a domain from missing to matched. An added
+    package on a domain the file already covers changes the package list
+    without making the file stale. A package the file names and the merge
+    does not, or a changed package row, still fails."""
     expected_flat = {}
     for key in ("matched", "missing", "systems_absent_from_catalog"):
         expected_flat.update(expected.get(key) or {})
     for key in ("matched", "missing", "systems_absent_from_catalog"):
         for dom, row in (actual.get(key) or {}).items():
-            if dom in expected_flat and expected_flat[dom] != row:
+            if dom not in expected_flat:
+                continue
+            other = expected_flat[dom]
+            if _pkg_slugs(row) - _pkg_slugs(other):
                 return False
+            other_pkgs = other if isinstance(other, list) else (other or {}).get("pkgs") or []
+            by_slug = {pkg.get("slug"): pkg for pkg in other_pkgs if isinstance(pkg, dict)}
+            pkgs = row if isinstance(row, list) else (row or {}).get("pkgs") or []
+            for pkg in pkgs:
+                if not isinstance(pkg, dict) or pkg.get("slug") not in by_slug:
+                    continue
+                if pkg != by_slug[pkg.get("slug")]:
+                    return False
     return True
 
 

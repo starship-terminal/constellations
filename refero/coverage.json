@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 231,
-    "system_domains": 222,
-    "matched_domains": 191,
-    "missing_domains": 242,
+    "system_packages": 235,
+    "system_domains": 226,
+    "matched_domains": 195,
+    "missing_domains": 238,
     "system_domains_absent_from_catalog": 31
   },
   "matched": {
@@ -3069,6 +3069,23 @@
         }
       ]
     },
+    "sana.ai": {
+      "catalog": [
+        {
+          "name": "Sana AI",
+          "domain": "sana.ai",
+          "id": 548
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "sana-ai",
+          "name": "Sana AI",
+          "url": "https://sana.ai/",
+          "name_match": true
+        }
+      ]
+    },
     "scape.com": {
       "catalog": [
         {
@@ -3082,6 +3099,40 @@
           "slug": "scape",
           "name": "Scape",
           "url": "https://www.scape.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "skyscanner.com": {
+      "catalog": [
+        {
+          "name": "Skyscanner",
+          "domain": "skyscanner.com",
+          "id": 67
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "skyscanner",
+          "name": "Skyscanner",
+          "url": "https://www.skyscanner.com",
+          "name_match": true
+        }
+      ]
+    },
+    "slack.com": {
+      "catalog": [
+        {
+          "name": "Slack",
+          "domain": "slack.com",
+          "id": 27
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "slack",
+          "name": "Slack",
+          "url": "https://slack.com",
           "name_match": true
         }
       ]
@@ -3184,6 +3235,23 @@
           "slug": "telegram",
           "name": "Telegram",
           "url": "https://telegram.org",
+          "name_match": true
+        }
+      ]
+    },
+    "telescope.fyi": {
+      "catalog": [
+        {
+          "name": "Telescope",
+          "domain": "telescope.fyi",
+          "id": 1138
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "telescope",
+          "name": "Telescope",
+          "url": "https://telescope.fyi/",
           "name_match": true
         }
       ]
@@ -4250,13 +4318,6 @@
         "id": 439
       }
     ],
-    "sana.ai": [
-      {
-        "name": "Sana AI",
-        "domain": "sana.ai",
-        "id": 548
-      }
-    ],
     "savee.it": [
       {
         "name": "SAVEE",
@@ -4341,25 +4402,11 @@
         "id": 351
       }
     ],
-    "skyscanner.com": [
-      {
-        "name": "Skyscanner",
-        "domain": "skyscanner.com",
-        "id": 67
-      }
-    ],
     "slab.com": [
       {
         "name": "Slab",
         "domain": "slab.com",
         "id": 263
-      }
-    ],
-    "slack.com": [
-      {
-        "name": "Slack",
-        "domain": "slack.com",
-        "id": 27
       }
     ],
     "slite.com": [
@@ -4535,13 +4582,6 @@
         "name": "Teal",
         "domain": "tealhq.com",
         "id": 106
-      }
-    ],
-    "telescope.fyi": [
-      {
-        "name": "Telescope",
-        "domain": "telescope.fyi",
-        "id": 1138
       }
     ],
     "tella.tv": [

@@ -287,6 +287,28 @@ def matches_base(result: dict, committed: dict) -> bool:
     if not slugs:
         return False
     head_rows = {s.get("slug"): s for s in catalog.load_catalog()["systems"]}
+    # This pull request regenerated the seed, then main gained another
+    # package. The committed seed matches the branch tip in that case.
+    sha = os.environ.get("GITHUB_HEAD_SHA") if os.environ.get("GITHUB_BASE_REF") else None
+    if sha:
+        try:
+            branch_seed = json.loads(subprocess.run(
+                ["git", "show", f"{sha}:app/src/data/media-taxonomy.json"],
+                cwd=ROOT, check=True, capture_output=True, text=True,
+            ).stdout)
+            raw = subprocess.run(
+                ["git", "show", f"{sha}:catalog.json"],
+                cwd=ROOT, check=True, capture_output=True, text=True,
+            ).stdout
+            branch_rows = {s.get("slug"): s for s in json.loads(raw).get("systems") or []}
+        except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+            branch_seed = None
+            branch_rows = None
+        if (branch_seed is not None and committed == branch_seed
+                and branch_rows and set(branch_rows) <= set(head_rows)
+                and all(head_rows.get(slug) == row for slug, row in branch_rows.items())
+                and set(head_rows) - set(branch_rows)):
+            return True
     if not set(head_rows) > slugs:
         return False
     # A pull request that edits this script changes the derived rules.
