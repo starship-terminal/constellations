@@ -20343,6 +20343,61 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "vectary",
+      "name": "Vectary",
+      "url": "https://www.vectary.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "3D design marketing: yellow announcement bar, light nav, Fira Sans hero, 8px buttons, pricing cards",
+      "tags": [
+        "web",
+        "design",
+        "3d",
+        "marketing",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (login and signup were opened and not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/vectary/README.md",
+      "tokens": "systems/vectary/tokens.json",
+      "styleGuide": "systems/vectary/style-guide.html",
+      "preview": {
+        "cover": "systems/vectary/screenshots/home-light-default.png",
+        "icon": "systems/vectary/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50
+      },
+      "layoutGaps": {
+        "icons/": "The nav logo is a site SVG image. The inline path was not copied whole, so no icon set was committed. The rendered logo is in components/crops/logo-nav-default.png."
+      }
     }
   ]
 }
