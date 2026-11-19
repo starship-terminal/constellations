@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<title>Medium style guide</title>
+<style>
+:root { color-scheme: light; --page:#fff; --ink:#242424; --muted:#6b6b6b; --line:#e5e5e5; --brand:#191919; --brand-ink:#fff; --accent:#1a8917; }
+[data-mode="dark"] { color-scheme: dark; --page:#171717; --ink:#e5e5e5; --muted:#b3b3b3; --line:#3f3f3f; --brand:#fff; --brand-ink:#121212; --accent:#6ab668; }
+body { margin:0; background:var(--page); color:var(--ink); font:16px/1.45 sohne, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+main { max-width:960px; margin:0 auto; padding:32px 24px 80px; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-weight:400; font-size:48px; letter-spacing:-1.92px; margin:0 0 8px; }
+h2 { font-family: Georgia, serif; font-weight:400; font-size:32px; margin:40px 0 12px; }
+p.note { color:var(--muted); max-width:68ch; }
+button.pill { background:var(--brand); color:var(--brand-ink); border:1px solid var(--brand); border-radius:1386px; padding:8px 16px; font:14px/20px inherit; }
+button.ghost { background:transparent; color:var(--ink); border:1px solid var(--ink); border-radius:1386px; padding:8px 16px; font:14px/20px inherit; }
+.toggle { float:right; }
+.row { display:flex; gap:12px; flex-wrap:wrap; }
+.swatch { width:180px; }
+.swatch i { display:block; height:48px; border-radius:4px; border:1px solid var(--line); }
+code { font-size:12px; }
+table { border-collapse:collapse; width:100%; }
+td { border-top:1px solid var(--line); padding:6px 8px; vertical-align:top; font-size:14px; }
+.hero { font-family: Georgia, "Times New Roman", serif; font-size:64px; line-height:0.9; letter-spacing:-3px; font-weight:400; margin:12px 0; }
+.story { font-family: Georgia, serif; font-size:20px; line-height:32px; letter-spacing:-0.06px; max-width:680px; }
+</style>
+</head>
+<body>
+<main>
+<button class="pill toggle" id="theme" type="button">Dark</button>
+<h1>Medium</h1>
+<p class="note">Rendered from tokens.json. Families gt-super, sohne and source-serif-pro are proprietary and are not embedded. Georgia and Helvetica stand in so the page can be opened offline. Green accent is #1a8917 in light and #6ab668 in dark.</p>
+<p class="hero">Human stories &amp; ideas</p>
+<p class="story">A place to read, write, and deepen your understanding. Story body measures 20px / 32px in source-serif-pro, column 680px.</p>
+<div class="row">
+  <button class="pill" type="button">Get started</button>
+  <button class="ghost" type="button">Sign in</button>
+</div>
+<h2>Light colours</h2>
+<div class="row"><div class="swatch"><i style="background:#ffffff"></i><code>bg.neutral.primary</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#f2f2f2"></i><code>bg.neutral.secondary</code><span>#f2f2f2</span></div>
+<div class="swatch"><i style="background:#f9f9f9"></i><code>bg.neutral.tertiary</code><span>#f9f9f9</span></div>
+<div class="swatch"><i style="background:#242424"></i><code>bg.neutral.quaternary</code><span>#242424</span></div>
+<div class="swatch"><i style="background:#ffffff"></i><code>bg.neutral.elevated</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#191919"></i><code>bg.brand.primary</code><span>#191919</span></div>
+<div class="swatch"><i style="background:#bbdbba"></i><code>bg.accent.secondary</code><span>#bbdbba</span></div>
+<div class="swatch"><i style="background:#d2e7d1"></i><code>bg.accent.tertiary</code><span>#d2e7d1</span></div>
+<div class="swatch"><i style="background:#e8f3e8"></i><code>bg.accent.quaternary</code><span>#e8f3e8</span></div>
+<div class="swatch"><i style="background:#c94a4a"></i><code>bg.error.primary</code><span>#c94a4a</span></div>
+<div class="swatch"><i style="background:#fffae1"></i><code>bg.utility.yellow.primary</code><span>#fffae1</span></div>
+<div class="swatch"><i style="background:#e5f2ff"></i><code>bg.utility.blue.primary</code><span>#e5f2ff</span></div>
+<div class="swatch"><i style="background:#e5f2ff"></i><code>bg.verified.book.author.intro</code><span>#e5f2ff</span></div>
+<div class="swatch"><i style="background:#484848"></i><code>bg.scrim</code><span>#484848</span></div>
+<div class="swatch"><i style="background:#242424"></i><code>fg.neutral.primary</code><span>#242424</span></div>
+<div class="swatch"><i style="background:#6b6b6b"></i><code>fg.neutral.secondary</code><span>#6b6b6b</span></div>
+<div class="swatch"><i style="background:#ffffff"></i><code>fg.neutral.tertiary</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#1a8917"></i><code>fg.accent.primary</code><span>#1a8917</span></div>
+<div class="swatch"><i style="background:#c94a4a"></i><code>fg.error.primary</code><span>#c94a4a</span></div>
+<div class="swatch"><i style="background:#437aff"></i><code>fg.utility.blue.primary</code><span>#437aff</span></div>
+<div class="swatch"><i style="background:#0a66c2"></i><code>fg.social.linkedin</code><span>#0a66c2</span></div>
+<div class="swatch"><i style="background:#ccc"></i><code>border</code><span>{border.neutral.tertiary}</span></div>
+<div class="swatch"><i style="background:#1a8917"></i><code>chart.accent.primary</code><span>#1a8917</span></div>
+<div class="swatch"><i style="background:#9fcc9e"></i><code>chart.accent.secondary</code><span>#9fcc9e</span></div>
+<div class="swatch"><i style="background:#bbdbba"></i><code>chart.accent.tertiary</code><span>#bbdbba</span></div>
+<div class="swatch"><i style="background:#e8f3e8"></i><code>chart.accent.quaternary</code><span>#e8f3e8</span></div>
+<div class="swatch"><i style="background:#fea010"></i><code>chart.utility.yellow.primary</code><span>#fea010</span></div>
+<div class="swatch"><i style="background:#ffc017"></i><code>chart.utility.yellow.secondary</code><span>#ffc017</span></div>
+<div class="swatch"><i style="background:#fffae1"></i><code>chart.utility.yellow.tertiary</code><span>#fffae1</span></div>
+<div class="swatch"><i style="background:#b3b3b3"></i><code>chart.neutral.primary</code><span>#b3b3b3</span></div>
+<div class="swatch"><i style="background:#b3b3b3"></i><code>chart.neutral.secondary</code><span>#b3b3b3</span></div>
+<div class="swatch"><i style="background:#e5e5e5"></i><code>chart.neutral.tertiary</code><span>#e5e5e5</span></div>
+<div class="swatch"><i style="background:#242424"></i><code>shadow.elevated</code><span>#242424</span></div>
+<div class="swatch"><i style="background:#e5f2ff"></i><code>status.in.review.background</code><span>#e5f2ff</span></div>
+<div class="swatch"><i style="background:#437aff"></i><code>status.in.review.text</code><span>#437aff</span></div>
+<div class="swatch"><i style="background:#fffae1"></i><code>status.edits.requested.background</code><span>#fffae1</span></div>
+<div class="swatch"><i style="background:#be5b04"></i><code>status.edits.requested.text</code><span>#be5b04</span></div>
+<div class="swatch"><i style="background:#f7f4ed"></i><code>story.footer.bg.subtle</code><span>#f7f4ed</span></div>
+<div class="swatch"><i style="background:#242424"></i><code>story.footer.bg.contrast</code><span>#242424</span></div>
+<div class="swatch"><i style="background:#242424"></i><code>story.footer.fg.subtle</code><span>#242424</span></div></div>
+<h2>Dark colours</h2>
+<div class="row"><div class="swatch"><i style="background:#171717"></i><code>bg.neutral.primary</code><span>#171717</span></div>
+<div class="swatch"><i style="background:#242424"></i><code>bg.neutral.secondary</code><span>#242424</span></div>
+<div class="swatch"><i style="background:#1f1f1f"></i><code>bg.neutral.tertiary</code><span>#1f1f1f</span></div>
+<div class="swatch"><i style="background:#d2d2d2"></i><code>bg.neutral.quaternary</code><span>#d2d2d2</span></div>
+<div class="swatch"><i style="background:#1c1c1c"></i><code>bg.neutral.elevated</code><span>#1c1c1c</span></div>
+<div class="swatch"><i style="background:#ffffff"></i><code>bg.brand.primary</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#156d12"></i><code>bg.accent.secondary</code><span>#156d12</span></div>
+<div class="swatch"><i style="background:#10530e"></i><code>bg.accent.tertiary</code><span>#10530e</span></div>
+<div class="swatch"><i style="background:#0c3d0a"></i><code>bg.accent.quaternary</code><span>#0c3d0a</span></div>
+<div class="swatch"><i style="background:#762323"></i><code>bg.error.primary</code><span>#762323</span></div>
+<div class="swatch"><i style="background:#461f01"></i><code>bg.utility.yellow.primary</code><span>#461f01</span></div>
+<div class="swatch"><i style="background:#22214f"></i><code>bg.utility.blue.primary</code><span>#22214f</span></div>
+<div class="swatch"><i style="background:#171717"></i><code>bg.verified.book.author.intro</code><span>#171717</span></div>
+<div class="swatch"><i style="background:#000000"></i><code>bg.scrim</code><span>#000000</span></div>
+<div class="swatch"><i style="background:#e5e5e5"></i><code>fg.neutral.primary</code><span>#e5e5e5</span></div>
+<div class="swatch"><i style="background:#b3b3b3"></i><code>fg.neutral.secondary</code><span>#b3b3b3</span></div>
+<div class="swatch"><i style="background:#121212"></i><code>fg.neutral.tertiary</code><span>#121212</span></div>
+<div class="swatch"><i style="background:#6ab668"></i><code>fg.accent.primary</code><span>#6ab668</span></div>
+<div class="swatch"><i style="background:#ce5a5a"></i><code>fg.error.primary</code><span>#ce5a5a</span></div>
+<div class="swatch"><i style="background:#3c9fff"></i><code>fg.utility.blue.primary</code><span>#3c9fff</span></div>
+<div class="swatch"><i style="background:#e5e5e5"></i><code>fg.social.linkedin</code><span>#e5e5e5</span></div>
+<div class="swatch"><i style="background:#ccc"></i><code>border</code><span>{border.neutral.tertiary}</span></div>
+<div class="swatch"><i style="background:#84c082"></i><code>chart.accent.primary</code><span>#84c082</span></div>
+<div class="swatch"><i style="background:#1a8917"></i><code>chart.accent.secondary</code><span>#1a8917</span></div>
+<div class="swatch"><i style="background:#156d12"></i><code>chart.accent.tertiary</code><span>#156d12</span></div>
+<div class="swatch"><i style="background:#10530e"></i><code>chart.accent.quaternary</code><span>#10530e</span></div>
+<div class="swatch"><i style="background:#fea010"></i><code>chart.utility.yellow.primary</code><span>#fea010</span></div>
+<div class="swatch"><i style="background:#be5b04"></i><code>chart.utility.yellow.secondary</code><span>#be5b04</span></div>
+<div class="swatch"><i style="background:#be5b04"></i><code>chart.utility.yellow.tertiary</code><span>#be5b04</span></div>
+<div class="swatch"><i style="background:#d2d2d2"></i><code>chart.neutral.primary</code><span>#d2d2d2</span></div>
+<div class="swatch"><i style="background:#d2d2d2"></i><code>chart.neutral.secondary</code><span>#d2d2d2</span></div>
+<div class="swatch"><i style="background:#6b6b6b"></i><code>chart.neutral.tertiary</code><span>#6b6b6b</span></div>
+<div class="swatch"><i style="background:transparent"></i><code>shadow.elevated</code><span>transparent</span></div>
+<div class="swatch"><i style="background:#22214f"></i><code>status.in.review.background</code><span>#22214f</span></div>
+<div class="swatch"><i style="background:#6ab7ff"></i><code>status.in.review.text</code><span>#6ab7ff</span></div>
+<div class="swatch"><i style="background:#461f01"></i><code>status.edits.requested.background</code><span>#461f01</span></div>
+<div class="swatch"><i style="background:#fea010"></i><code>status.edits.requested.text</code><span>#fea010</span></div>
+<div class="swatch"><i style="background:#242424"></i><code>story.footer.bg.subtle</code><span>#242424</span></div>
+<div class="swatch"><i style="background:#dacfbe"></i><code>story.footer.bg.contrast</code><span>#dacfbe</span></div>
+<div class="swatch"><i style="background:#d2d2d2"></i><code>story.footer.fg.subtle</code><span>#d2d2d2</span></div></div>
+<h2>Type, radius, spacing</h2>
+<table><tr><td>font.display</td><td><code>gt-super, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif</code></td></tr><tr><td>font.ui</td><td><code>sohne, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif</code></td></tr><tr><td>font.content</td><td><code>medium-content-sans-serif-font, -apple-system, system-ui, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;H</code></td></tr><tr><td>font.story</td><td><code>source-serif-pro, Georgia, serif</code></td></tr><tr><td>font.help-display</td><td><code>&quot;GT Super Text&quot;, ui-serif, &quot;New York&quot;, Charter, Georgia, serif</code></td></tr><tr><td>font.help-ui</td><td><code>Sohne, system-ui, -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif</code></td></tr><tr><td>fontSize.hero</td><td><code>120px</code></td></tr><tr><td>fontSize.hero-phone</td><td><code>80px</code></td></tr><tr><td>fontSize.membership</td><td><code>85px</code></td></tr><tr><td>fontSize.section</td><td><code>70px</code></td></tr><tr><td>fontSize.feature</td><td><code>48px</code></td></tr><tr><td>fontSize.story-title</td><td><code>42px</code></td></tr><tr><td>fontSize.plans-phone</td><td><code>32px</code></td></tr><tr><td>fontSize.card-title</td><td><code>32px</code></td></tr><tr><td>fontSize.kicker</td><td><code>22px</code></td></tr><tr><td>fontSize.body</td><td><code>20px</code></td></tr><tr><td>fontSize.ui</td><td><code>16px</code></td></tr><tr><td>fontSize.nav</td><td><code>14px</code></td></tr><tr><td>fontSize.legal</td><td><code>11px</code></td></tr><tr><td>fontSize.help-hero</td><td><code>60px</code></td></tr><tr><td>radius.field</td><td><code>4px</code></td></tr><tr><td>radius.billing</td><td><code>4px</code></td></tr><tr><td>radius.badge</td><td><code>8px</code></td></tr><tr><td>radius.search</td><td><code>20px</code></td></tr><tr><td>radius.pill</td><td><code>1386px</code></td></tr><tr><td>radius.pill-lg</td><td><code>1584px</code></td></tr><tr><td>radius.pill-hero</td><td><code>1980px</code></td></tr><tr><td>spacing.2</td><td><code>4px</code></td></tr><tr><td>spacing.8</td><td><code>8px</code></td></tr><tr><td>spacing.12</td><td><code>12px</code></td></tr><tr><td>spacing.16</td><td><code>16px</code></td></tr><tr><td>spacing.20</td><td><code>20px</code></td></tr><tr><td>spacing.24</td><td><code>24px</code></td></tr><tr><td>spacing.48</td><td><code>48px</code></td></tr><tr><td>spacing.64</td><td><code>64px</code></td></tr><tr><td>spacing.page</td><td><code>124px</code></td></tr></table>
+</main>
+<script>
+document.getElementById('theme').onclick = () => {
+  const html = document.documentElement;
+  const next = html.dataset.mode === 'dark' ? 'light' : 'dark';
+  html.dataset.mode = next;
+  document.getElementById('theme').textContent = next === 'dark' ? 'Light' : 'Dark';
+};
+</script>
+</body>
+</html>

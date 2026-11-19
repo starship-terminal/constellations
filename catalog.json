@@ -20343,6 +20343,106 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "medium",
+      "name": "Medium",
+      "url": "https://medium.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Editorial reading pages: white or #171717 page, gt-super display, sohne UI, source-serif-pro body in a 680px column, a #191919 pill that flips white in dark, and accent green #1a8917 / #6ab668",
+      "tags": [
+        "web",
+        "media",
+        "reading",
+        "editorial",
+        "serif-display",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (home, membership, about, blog, one public staff story, plans, the sign-in card and the email step at rest, and the help center are public; Continue, Select, OAuth, Create one and checkout were not pressed; the signed-in home, editor and settings were not entered)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/medium/README.md",
+      "tokens": "systems/medium/tokens.json",
+      "styleGuide": "systems/medium/style-guide.html",
+      "preview": {
+        "cover": "systems/medium/screenshots/home-light-default.png",
+        "icon": "systems/medium/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.display",
+          "core.font.ui",
+          "core.font.story"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "light.background.",
+          "light.foreground.",
+          "light.page"
+        ],
+        "typography": [
+          "core.fontSize."
+        ],
+        "rounded": [
+          "core.radius."
+        ],
+        "spacing": [
+          "core.spacing."
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 90,
+        "method": "public-web",
+        "source": "medium.com in the T3 preview browser. Computed styles and stylesheet custom properties. preview_snapshot failed (no screenshot frames). Headless Playwright hit Cloudflare 403 and was stopped. PNGs are reconstructions from measured boxes.",
+        "timestamp": "2026-11-19T00:40:00Z",
+        "routes": [
+          "/",
+          "/membership",
+          "/about",
+          "/blog",
+          "/blog/dark-mode-for-medium-is-finally-here-002977326982",
+          "/plans",
+          "/m/signin",
+          "https://help.medium.com/hc/en-us",
+          "mobile / and /plans"
+        ],
+        "gaps": [
+          "signed-in home, editor, settings and checkout were not entered",
+          "Continue, Select, OAuth and Create one were not pressed",
+          "live screenshots were not captured: preview frames failed and headless Playwright was stopped at Cloudflare",
+          "no error, disabled or loading state on the public pages"
+        ]
+      }
     }
   ]
 }
