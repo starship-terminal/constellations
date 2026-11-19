@@ -72,6 +72,10 @@ class LoginExtractedTest(unittest.TestCase):
         row = app(**{"login-probe": "password", "notes": "https://example.com/login asked for a password"})
         self.assertEqual(login.check_app(row), [])
 
+    def test_needs_other_info_is_a_probe(self):
+        row = app(**{"login-probe": "needs-other-info", "notes": "https://example.com/login asked for a full name"})
+        self.assertEqual(login.check_app(row), [])
+
     def test_not_started_needs_no_review(self):
         self.assertEqual(login.check_app(app()), [])
 

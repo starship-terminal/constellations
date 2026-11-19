@@ -46,6 +46,7 @@ set `login-extracted`.
 | `oauth-only` | The only path is Google, Apple, or SSO. |
 | `captcha` | A challenge blocked the form. |
 | `phone` | The form asks for a phone number. |
+| `needs-other-info` | The next step asks for a name or other field, and no code was sent. |
 | `closed` | Signups are closed, or the account was rejected. |
 | `no-form` | No email field was found. |
 

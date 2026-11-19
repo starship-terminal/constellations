@@ -708,9 +708,9 @@
       "description": "For Creators and Artists",
       "status": "captured",
       "package": "systems/buymeacoffee",
-      "notes": "",
+      "notes": "https://buymeacoffee.com/login asks for email and password, or Google, Facebook, Apple, or Twitter. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -725,9 +725,9 @@
       "description": "Create a textile from scratch",
       "status": "captured",
       "package": "systems/byborre",
-      "notes": "",
+      "notes": "https://byborre.com/?redirectTo=/dashboard Login/Sign-up asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -742,9 +742,9 @@
       "description": "The intuitive equity platform for fast-growing startups",
       "status": "captured",
       "package": "systems/cakeequity",
-      "notes": "",
+      "notes": "https://app.cakeequity.com/login accepted the email, then asked for a password. Google and LinkedIn are also offered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -759,9 +759,9 @@
       "description": "Open Scheduling Infrastructure",
       "status": "captured",
       "package": "systems/cal",
-      "notes": "",
+      "notes": "https://app.cal.com/auth/login asks for email and password, or Google, Microsoft, or SAML. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -776,9 +776,9 @@
       "description": "Meeting Scheduling Software and AI Meeting Tools",
       "status": "captured",
       "package": "systems/calendly",
-      "notes": "",
+      "notes": "https://calendly.com/login said no account exists for the capture inbox. Signup at https://calendly.com/app/signup asks for a name and password. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -793,9 +793,9 @@
       "description": "#1 app for sleep and meditation",
       "status": "captured",
       "package": "systems/calm",
-      "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary).",
+      "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary). https://www.calm.com/login returned Access to this page has been denied with a blank page and a captcha script. No email field was reached.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 3
     },
     {
@@ -810,9 +810,9 @@
       "description": "Visual Suite for Everyone",
       "status": "captured",
       "package": "systems/canva",
-      "notes": "",
+      "notes": "https://www.canva.com/login/ accepted the email, then asked for a full name to create an account. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 3
     },
     {
@@ -827,9 +827,9 @@
       "description": "When it's not you, it's Care.com",
       "status": "captured",
       "package": "systems/care",
-      "notes": "",
+      "notes": "https://www.care.com/login accepted the email, then asked for a password. Google and Apple are also offered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -844,9 +844,9 @@
       "description": "The fastest, ultra-realistic voice AI platform",
       "status": "captured",
       "package": "systems/cartesia",
-      "notes": "",
+      "notes": "https://play.cartesia.ai/sign-in sent a verification code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 3
     },
     {
@@ -861,9 +861,9 @@
       "description": "EV routing and e-mobility software",
       "status": "captured",
       "package": "systems/chargetrip",
-      "notes": "Captured signed out 2026-11-12 from the WIP branch (measurements complete then); screenshots and the derived pipeline finished 2026-11-16. Boundaries: account.chargetrip.io sign-in measured never submitted; developers/playground shells only; nothing booked or sent; Cookie Settings card hidden, never answered.",
+      "notes": "Captured signed out 2026-11-12 from the WIP branch (measurements complete then); screenshots and the derived pipeline finished 2026-11-16. Boundaries: account.chargetrip.io sign-in measured never submitted; developers/playground shells only; nothing booked or sent; Cookie Settings card hidden, never answered. https://account.chargetrip.io/sign-in sent a one-time login link to the capture inbox. The link was not opened.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 3
     },
     {
@@ -878,9 +878,9 @@
       "description": "Book Fitness Classes & Salon Appointments",
       "status": "captured",
       "package": "systems/classpass",
-      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/607: signed-out marketing routes plus /login and /walkthrough as boundaries. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/607: signed-out marketing routes plus /login and /walkthrough as boundaries. Manifest row was left pending after merge. https://classpass.com/login asks for email and password, or Apple or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -895,9 +895,9 @@
       "description": "Move beyond the CRM",
       "status": "captured",
       "package": "systems/clay-earth",
-      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/608 as systems/clay-earth. clay.earth 301-redirects to me.sh (Mesh, Automattic). Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/608 as systems/clay-earth. clay.earth 301-redirects to me.sh (Mesh, Automattic). Manifest row was left pending after merge. https://clay.earth/login redirects to https://me.sh/login. https://app.me.sh/login?signin is a desktop download page with no web sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 3
     },
     {
@@ -912,9 +912,9 @@
       "description": "The Best Journal and Diary App for Personal Growth",
       "status": "captured",
       "package": "systems/clearful",
-      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/609: signed-out marketing, /library, and the app.clearful.com sign-in boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-16 in https://github.com/starship-terminal/constellations/pull/609: signed-out marketing, /library, and the app.clearful.com sign-in boundary. Manifest row was left pending after merge. https://app.clearful.com/#/sign-in asks for email and password, or Apple or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -929,9 +929,9 @@
       "description": "Online video editor by Microsoft ",
       "status": "captured",
       "package": "systems/clipchamp",
-      "notes": "",
+      "notes": "https://app.clipchamp.com/login redirected to https://clipchamp.com/en/unsupported-browser/. This browser cannot open the editor. No email field was reached.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 3
     },
     {
@@ -946,9 +946,9 @@
       "description": "Cofounder plugs into your existing tools, writes automations, and organizes workflows",
       "status": "captured",
       "package": "systems/cofounder",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/630: signed-out marketing plus app.cofounder.co/os/login as a boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/630: signed-out marketing plus app.cofounder.co/os/login as a boundary. Manifest row was left pending after merge. https://app.cofounder.co/os/login offers only Google and GitHub. No email field.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 3
     },
     {
@@ -963,9 +963,9 @@
       "description": "The World's Leading AI Platform for Enterprise",
       "status": "captured",
       "package": "systems/cohere",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/636: public marketing surface and sign-in boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/636: public marketing surface and sign-in boundary. Manifest row was left pending after merge. https://dashboard.cohere.com/welcome/login asks for email and password, or Google or GitHub. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -980,9 +980,9 @@
       "description": "Buy and Sell Bitcoin, Ethereum, and more with trust",
       "status": "captured",
       "package": "systems/coinbase",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/637: public marketing surface (en-sg) and login.coinbase.com sign-in boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/637: public marketing surface (en-sg) and login.coinbase.com sign-in boundary. Manifest row was left pending after merge. https://login.coinbase.com/signin accepted the email, then asked for a password. Passkey, Google, and Apple are also offered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -997,9 +997,9 @@
       "description": "The developer infrastructure bank",
       "status": "captured",
       "package": "systems/column",
-      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/638: public marketing surface and dashboard.column.com/login sign-in boundary. Manifest row was left pending after merge.",
+      "notes": "Captured 2026-11-17 in https://github.com/starship-terminal/constellations/pull/638: public marketing surface and dashboard.column.com/login sign-in boundary. Manifest row was left pending after merge. https://dashboard.column.com/login accepted the email, then asked for a password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 3
     },
     {
@@ -1031,9 +1031,9 @@
       "description": "Stablecoin banking for global businesses",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://dashboard.copperx.io/login Sign in with Email showed an email field, then Continue stayed disabled. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 3
     },
     {

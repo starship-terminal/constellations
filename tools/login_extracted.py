@@ -26,7 +26,18 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "webapps-manifest.json"
 STATES = ("not-started", "partial", "done", "not-applicable")
-PROBE = ("not-tried", "code-sent", "signed-in", "password", "oauth-only", "captcha", "phone", "closed", "no-form")
+PROBE = (
+    "not-tried",
+    "code-sent",
+    "signed-in",
+    "password",
+    "oauth-only",
+    "captcha",
+    "phone",
+    "needs-other-info",
+    "closed",
+    "no-form",
+)
 REQUIRED_REVIEW = ("offered", "screens", "gaps", "not_submitted")
 # The three places a signed-in walk stops early. Each must be answered.
 WALK = ("nav", "settings", "create")
