@@ -224,9 +224,11 @@ async function recordLedger(
 /**
  * Migration v44 starts the ledger on a store that ran the per-package
  * migrations (v4-v43). Every such store had been offered seed rows for the
- * 219 references frozen in seed-ledger-v43.json, so their current seed keys
- * are recorded as offered: an empty one there was cleared by the user.
- * Every other seed key is left for topUpSeeds to offer.
+ * 212 references in the seeds when v43 first shipped, frozen in
+ * seed-ledger-v43.json, so their current seed keys are recorded as offered:
+ * an empty one there was cleared by the user. Every other seed key is left
+ * for topUpSeeds to offer, including the packages later migrations were
+ * renumbered under v43 for, which a store already at v43 skipped.
  */
 export async function backfillSeedLedger(tx: Transaction) {
   const { default: frozen } = await import("@/data/seed-ledger-v43.json");

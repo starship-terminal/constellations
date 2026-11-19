@@ -58,7 +58,7 @@ async function categoryRows(store: ResearchStore, referenceId: string) {
 
 test("the frozen v43 list names packages the seed still holds, and later packages exist", () => {
   const seeded = new Set(mediaSeed.assignments.map((row) => row.referenceId));
-  expect(frozen.references.length).toBe(219);
+  expect(frozen.references.length).toBe(212);
   expect(frozen.references.every((id) => seeded.has(id))).toBe(true);
   expect(laterReferences.length).toBeGreaterThan(0);
 });
@@ -105,10 +105,11 @@ test("a v43 store with user rows gains the packages seeded since, and keeps its 
   await store.client.execute("DROP TABLE category_seed_ledger");
   await store.client.execute("DROP TABLE media_seed_ledger");
   for (const referenceId of laterReferences)
-    await store.client.execute({
-      sql: "DELETE FROM media_term_assignments WHERE reference_id=?",
-      args: [referenceId],
-    });
+    for (const table of ["media_term_assignments", "reference_categories"])
+      await store.client.execute({
+        sql: `DELETE FROM ${table} WHERE reference_id=?`,
+        args: [referenceId],
+      });
   await store.client.execute("PRAGMA user_version=43");
   const before = (await store.listMediaTermAssignments()).length;
   close(store);
@@ -121,6 +122,14 @@ test("a v43 store with user rows gains the packages seeded since, and keeps its 
   );
   for (const referenceId of laterReferences)
     expect((await mediaRows(migrated, referenceId)).length).toBeGreaterThan(0);
+  // Intercom's migration was renumbered below v43 after v43 first shipped,
+  // so a store already at v43 skipped it: the ledger still delivers it.
+  expect(laterReferences).toContain("systems:intercom");
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:intercom"])).map(
+      (row) => row.label,
+    ),
+  ).toEqual(["Business", "Communication Tools"]);
   // Cleared labels stay cleared.
   expect(await mediaRows(migrated, "systems:digg")).toEqual([]);
   expect(await categoryRows(migrated, "systems:digg")).toEqual([]);
