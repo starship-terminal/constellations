@@ -20343,6 +20343,70 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "rarible",
+      "name": "Rarible",
+      "url": "https://rarible.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "NFT marketplace browse design on a dark page: yellow pill actions, Geist Mono UI, Tomorrow titles, and a card grid. Public signed-out only.",
+      "tags": [
+        "web",
+        "nft",
+        "marketplace",
+        "signed-out",
+        "design-tokens",
+        "dark"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public explore, one collection, drops, terms, FAQ, phone nav, search empty state, and the Login dialog. Dialog closed. No wallet, no email submit, no Buy Now, no og.rarible.com, no rwa.rarible.com.",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/rarible/README.md",
+      "tokens": "systems/rarible/tokens.json",
+      "styleGuide": "systems/rarible/style-guide.html",
+      "preview": {
+        "cover": "systems/rarible/screenshots/home-dark-default.png",
+        "icon": "systems/rarible/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          },
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.sans",
+          "core.font.display"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "T3 Code preview browser",
+        "model": "grok-4.7",
+        "route": "web-inspector",
+        "version": "rarible.com 2026-11-19",
+        "durationMin": 90
+      }
     }
   ]
 }
