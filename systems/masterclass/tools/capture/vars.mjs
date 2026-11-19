@@ -50,12 +50,15 @@ if (!sheets.length) { console.log('no sheets'); await browser.close(); process.e
 
 const page = await context.newPage();
 const result = await page.evaluate((list) => {
+  // Each page callback runs apart from this module and needs its own copy.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
   const fonts = [];
   const walk = (cssRules, context, file) => {
     for (const r of cssRules) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
-        fonts.push({ family: r.style.getPropertyValue('font-family').replace(/["']/g, ''), weight: r.style.getPropertyValue('font-weight'), style: r.style.getPropertyValue('font-style'), file });
+        const o = { family: r.style.getPropertyValue('font-family').replace(/["']/g, ''), weight: r.style.getPropertyValue('font-weight'), style: r.style.getPropertyValue('font-style'), file };
+        fonts.push(o);
         continue;
       }
       if (r.cssRules) {
@@ -65,7 +68,7 @@ const result = await page.evaluate((list) => {
       }
       if (!r.style) continue;
       const properties = {};
-      for (const n of r.style) if (n.startsWith('--')) properties[n] = r.style.getPropertyValue(n).trim().slice(0, 400);
+      for (const n of r.style) if (n.startsWith('--')) properties[n] = noUrl(r.style.getPropertyValue(n).trim()).slice(0, 400);
       if (Object.keys(properties).length) rules.push({ file, selector: (r.selectorText || '').slice(0, 240), context, properties });
     }
   };
@@ -82,7 +85,7 @@ const want = [...new Set(result.rules.filter((r) => !r.error).flatMap((r) => Obj
 
 await page.setContent('<!doctype html><html><head>' + sheets.map((s) => '<style>' + s.css.replace(/<\/style/gi, '<\\/style') + '</style>').join('') + '</head><body><div id="probe"></div></body></html>', { waitUntil: 'load' });
 const resolvedLight = await page.evaluate((names) => {
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\([^)]{0,400}\)/gi, 'url(…)') : v);
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const root = document.documentElement;
   const probe = document.getElementById('probe');
   const lin = (c) => (c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055);
@@ -96,9 +99,8 @@ const resolvedLight = await page.evaluate((names) => {
   };
   const out = {};
   for (const name of names) {
-    const raw0 = getComputedStyle(root).getPropertyValue(name).trim();
-    if (!raw0) continue;
-    const raw = noUrl(raw0);
+    const raw = noUrl(getComputedStyle(root).getPropertyValue(name).trim());
+    if (!raw) continue;
     const r = { raw: raw.length > 240 ? raw.slice(0, 240) + '…' : raw };
     probe.removeAttribute('style');
     if (/^-?\d*\.?\d+$/.test(raw)) { r.kind = 'number'; r.value = +raw; }
