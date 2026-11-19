@@ -20343,6 +20343,66 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "ikea",
+      "name": "IKEA",
+      "url": "https://www.ikea.com/sg/en/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Furniture storefront design: Skapa colour roles on a white page, brand blue #0058a3 and yellow #ffdb00 wordmark, a 64px blue Add to cart pill, square product photos, Noto IKEA at 14px, and a public category, PDP, search and store locator",
+      "tags": ["web", "e-commerce", "furniture", "retail", "storefront", "product-grid", "pdp", "search", "light", "semantic-tokens", "signed-out"],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (every captured surface is public on www.ikea.com/sg/en; the global country picker at www.ikea.com was captured as the page ikea.com actually serves; login, signup, the bag, checkout and payment were not entered; Add to cart, Log in and the OneTrust banner were measured or hidden, never activated)",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/ikea/README.md",
+      "tokens": "systems/ikea/tokens.json",
+      "styleGuide": "systems/ikea/style-guide.html",
+      "preview": {
+        "cover": "systems/ikea/screenshots/home-light-default.png",
+        "icon": "systems/ikea/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": ["core.font.family.sans"]
+      },
+      "source": {"path": "~/.design-systems/ikea/raw-shots (full-colour captures, outside the repo)"},
+      "capture": {
+        "method": "public-web",
+        "source": "www.ikea.com country picker and the Singapore English storefront www.ikea.com/sg/en in headless Chromium, desktop 1440x900 and phone 390x844. OneTrust was hidden, never clicked. Skapa --colour-* triplets harvested from the live stylesheets.",
+        "timestamp": "2026-11-19T00:20:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "www.ikea.com/",
+          "www.ikea.com/sg/en/",
+          "www.ikea.com/sg/en/cat/sofas-armchairs-700640/",
+          "www.ikea.com/sg/en/p/billy-bookcase-white-00522047/",
+          "www.ikea.com/sg/en/search/?q=lamp",
+          "www.ikea.com/sg/en/stores/",
+          "www.ikea.com/sg/en/profile/login/",
+          "www.ikea.com/sg/en/offers/"
+        ],
+        "gaps": [
+          "https://www.ikea.com/sg/en/profile/login/ — the account after Log in, and signup, were not entered. The email field was measured and not submitted.",
+          "https://www.ikea.com/sg/en/cart/ — the bag and checkout were not opened. Add to cart was measured and never pressed. No card was entered.",
+          "https://www.ikea.com/sg/en/favourites/ — the shopping list requires an account and was not opened.",
+          "Store locator Use your current location was not granted. No precise location was captured.",
+          "The US English storefront (www.ikea.com/us/en/) was not measured. This host is served the Singapore shopping locale."
+        ],
+        "durationMin": 70,
+        "date": "2026-11-19"
+      }
     }
   ]
 }
