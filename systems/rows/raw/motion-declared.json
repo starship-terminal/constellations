@@ -1,0 +1,724 @@
+{
+  "transitions": [
+    {
+      "sel": "._3C39E",
+      "media": "",
+      "transition": "color 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._4j_Qi",
+      "media": "",
+      "transition": "text-decoration-color 0.3s ease-in-out, -webkit-text-decoration-color 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s, 0.3s",
+      "easing": "ease-in-out, ease-in-out",
+      "delay": "0s, 0s"
+    },
+    {
+      "sel": "._4j_Qi._2oPaX",
+      "media": "",
+      "transition": "text-decoration-color 0.3s ease-in-out, -webkit-text-decoration-color 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s, 0.3s",
+      "easing": "ease-in-out, ease-in-out",
+      "delay": "0s, 0s"
+    },
+    {
+      "sel": "._3L6sU._3ffnk::before",
+      "media": "",
+      "transition": "",
+      "animation": "elPlY",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3L6sU._3ffnk._2fYbJ::before",
+      "media": "",
+      "transition": "",
+      "animation": "_8o81B",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3L6sU._3ffnk.oH7j5::before",
+      "media": "",
+      "transition": "",
+      "animation": "_3_l9U",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._1Wwpl",
+      "media": "",
+      "transition": "background-color 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._1lqy4",
+      "media": "",
+      "transition": "",
+      "animation": "_1Bgde",
+      "duration": "0.2s",
+      "easing": "ease-in-out",
+      "delay": "0.1s"
+    },
+    {
+      "sel": "._33ebe",
+      "media": "",
+      "transition": "background-color 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._2vV6g",
+      "media": "",
+      "transition": "filter 0.15s ease-in-out",
+      "animation": "",
+      "duration": "0.15s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3SHIr",
+      "media": "",
+      "transition": "opacity 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": ".e7i9h a",
+      "media": "",
+      "transition": "text-decoration-color 0.3s ease-in-out, -webkit-text-decoration-color 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s, 0.3s",
+      "easing": "ease-in-out, ease-in-out",
+      "delay": "0s, 0s"
+    },
+    {
+      "sel": ".e7i9h",
+      "media": "",
+      "transition": "",
+      "animation": "_2oN9I",
+      "duration": "0.2s",
+      "easing": "ease-in-out",
+      "delay": "0.3s"
+    },
+    {
+      "sel": ".e7i9h details summary::before",
+      "media": "(max-width: 30em)",
+      "transition": "transform 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._35e4Q",
+      "media": "",
+      "transition": "transform 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._1zl45",
+      "media": "",
+      "transition": "background 0.3s ease-in-out, filter 0.3s ease-in-out, color 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s, 0.3s, 0.3s",
+      "easing": "ease-in-out, ease-in-out, ease-in-out",
+      "delay": "0s, 0s, 0s"
+    },
+    {
+      "sel": "._3_Ngi",
+      "media": "",
+      "transition": "z-index 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3_Ngi ._3HD_0 ._1Xj1X::after, ._3_Ngi ._3HD_0 ._1Xj1X::before",
+      "media": "",
+      "transition": "opacity 0.15s ease-in-out",
+      "animation": "",
+      "duration": "0.15s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3WsD3::after, ._3WsD3::before",
+      "media": "",
+      "transition": "opacity 0.15s ease-in-out",
+      "animation": "",
+      "duration": "0.15s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3_Ngi:not(._1PsJD)::before",
+      "media": "(hover: hover)",
+      "transition": "0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3hsQ3",
+      "media": "",
+      "transition": "opacity 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": ".xpYaH",
+      "media": "",
+      "transition": "opacity 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._1sGGv",
+      "media": "",
+      "transition": "transform 0.15s ease-in-out, bakground-color 0.15s ease-in-out",
+      "animation": "",
+      "duration": "0.15s, 0.15s",
+      "easing": "ease-in-out, ease-in-out",
+      "delay": "0s, 0s"
+    },
+    {
+      "sel": ".xISt0 select",
+      "media": "",
+      "transition": "border 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": ".eqZMS",
+      "media": "",
+      "transition": "opacity 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": ".Kh95V ._2CO6K path",
+      "media": "",
+      "transition": "fill 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": ".Kh95V ._1IoHe",
+      "media": "",
+      "transition": "transform 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._1QNDI",
+      "media": "",
+      "transition": "background-color 0.3s ease-in-out, transform 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s, 0.3s",
+      "easing": "ease-in-out, ease-in-out",
+      "delay": "0s, 0s"
+    },
+    {
+      "sel": ".bNGLR",
+      "media": "",
+      "transition": "",
+      "animation": "_21EgT",
+      "duration": "0.2s",
+      "easing": "ease-in-out",
+      "delay": "0.1s"
+    },
+    {
+      "sel": "._13FXm",
+      "media": "",
+      "transition": "background-color 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._2OoP3::after, ._2OoP3::before",
+      "media": "",
+      "transition": "opacity 0.15s ease-in-out",
+      "animation": "",
+      "duration": "0.15s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._1ZLoq, ._13FXm",
+      "media": "",
+      "transition": "",
+      "animation": "_1D8if",
+      "duration": "0.2s",
+      "easing": "ease-in-out",
+      "delay": "0.1s"
+    },
+    {
+      "sel": "._1lzZk",
+      "media": "",
+      "transition": "",
+      "animation": "_1D8if",
+      "duration": "0.2s",
+      "easing": "ease-in-out",
+      "delay": "0.2s"
+    },
+    {
+      "sel": "._3RKgG[aria-selected=\"true\"] ._1sk3N",
+      "media": "",
+      "transition": "",
+      "animation": "_3hkeW",
+      "duration": "0.3s",
+      "easing": "cubic-bezier(0.42, 0, 0.398, 1.25)",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3RKgG[aria-selected=\"true\"] ._1sk3N._1P9Cw",
+      "media": "",
+      "transition": "",
+      "animation": "dDko5",
+      "duration": "0.3s",
+      "easing": "cubic-bezier(0.42, 0, 0.398, 1.25)",
+      "delay": "0s"
+    },
+    {
+      "sel": "._1sk3N",
+      "media": "",
+      "transition": "transform 0.2s ease-in-out",
+      "animation": "",
+      "duration": "0.2s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3J6b9",
+      "media": "",
+      "transition": "color 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3EQL-::after",
+      "media": "",
+      "transition": "opacity 0.3s ease-in-out",
+      "animation": "",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3EQL-._7D2r0::after",
+      "media": "",
+      "transition": "",
+      "animation": "_1nztM",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    },
+    {
+      "sel": "._3EQL-._3t5WY::after",
+      "media": "",
+      "transition": "",
+      "animation": "_14pe2",
+      "duration": "0.3s",
+      "easing": "ease-in-out",
+      "delay": "0s"
+    }
+  ],
+  "keyframes": [
+    {
+      "name": "_1t7f4",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: translate3d(0px, 4%, 0px); opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_2TgkK",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "transform: scaleX(1); opacity: 1;"
+        }
+      ]
+    },
+    {
+      "name": "_184F2",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: translate3d(0px, 1.5rem, 0px); opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_2WGqM",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_1V_y_",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_2iQy-",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: scale3d(0.98, 0.98, 0.98); opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_1nPdD",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: translate3d(0px, 0.2rem, 0px); opacity: 0; stroke-dashoffset: 300;"
+        }
+      ]
+    },
+    {
+      "name": "_9WSdQ",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "transform: rotate(1turn);"
+        }
+      ]
+    },
+    {
+      "name": "_3795K",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "stroke-dashoffset: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_19042",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "opacity: 1;"
+        },
+        {
+          "key": "50%",
+          "css": "opacity: 0.4;"
+        }
+      ]
+    },
+    {
+      "name": "_1vu0t",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: translate3d(0px, 4%, 0px); opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_3x7sY",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "transform: scaleX(1); opacity: 1;"
+        }
+      ]
+    },
+    {
+      "name": "_2-Q-2",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: translate3d(0px, 1.5rem, 0px); opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "X1-ed",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_2Movd",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_3A9pv",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: scale3d(0.98, 0.98, 0.98); opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_2f96K",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: translate3d(0px, 0.2rem, 0px); opacity: 0; stroke-dashoffset: 300;"
+        }
+      ]
+    },
+    {
+      "name": "_1PbOW",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "transform: rotate(1turn);"
+        }
+      ]
+    },
+    {
+      "name": "eSM_h",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "stroke-dashoffset: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_2QVQl",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "opacity: 1;"
+        },
+        {
+          "key": "50%",
+          "css": "opacity: 0.4;"
+        }
+      ]
+    },
+    {
+      "name": "vJFen",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: translate3d(0px, 4%, 0px); opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_1YbTc",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "transform: scaleX(1); opacity: 1;"
+        }
+      ]
+    },
+    {
+      "name": "_3763X",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "transform: translate3d(0px, 1.5rem, 0px); opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_3xVkA",
+      "steps": [
+        {
+          "key": "100%",
+          "css": "opacity: 0;"
+        }
+      ]
+    },
+    {
+      "name": "_3TA2b",
+      "steps": [
+        {
+          "key": "0%",
+          "css": "opacity: 0;"
+        }
+      ]
+    }
+  ],
+  "reduce": [],
+  "durations": [
+    [
+      "0.3s",
+      105
+    ],
+    [
+      "0.2s",
+      63
+    ],
+    [
+      "0.15s",
+      29
+    ],
+    [
+      "0.3s, 0.3s",
+      24
+    ],
+    [
+      "1s",
+      7
+    ],
+    [
+      "0.4s",
+      4
+    ],
+    [
+      "0.3s, 0s",
+      4
+    ],
+    [
+      "0.3s, 0.6s",
+      3
+    ],
+    [
+      "0.3s, 0.3s, 0.3s",
+      2
+    ],
+    [
+      "0.15s, 0.15s",
+      2
+    ],
+    [
+      "0.9s, 0.1s",
+      2
+    ],
+    [
+      "0.3s, 0.2s",
+      2
+    ],
+    [
+      "0.3s, 0.4s",
+      2
+    ],
+    [
+      "0.9s",
+      1
+    ],
+    [
+      "0.1s",
+      1
+    ]
+  ],
+  "easings": [
+    [
+      "ease-in-out",
+      171
+    ],
+    [
+      "ease",
+      32
+    ],
+    [
+      "ease-in-out, ease-in-out",
+      23
+    ],
+    [
+      "ease, ease",
+      10
+    ],
+    [
+      "ease-in-out, ease",
+      3
+    ],
+    [
+      "ease-in-out, ease-in-out, ease-in-out",
+      2
+    ],
+    [
+      "cubic-bezier(0.42, 0, 0.398, 1.25)",
+      2
+    ],
+    [
+      "cubic-bezier(0.4, 0.63, 0.57, 1), cubic-bezier(0.4, 0.63, 0.57, 1)",
+      2
+    ],
+    [
+      "ease-in",
+      2
+    ],
+    [
+      "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      2
+    ],
+    [
+      "ease-out",
+      2
+    ],
+    [
+      "ease-in, ease-in",
+      1
+    ],
+    [
+      "unset",
+      1
+    ],
+    [
+      "ease-in-out, ease-in-out, ease-out",
+      1
+    ],
+    [
+      "linear",
+      1
+    ]
+  ]
+}
