@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>n8n style guide</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #fafafa;
+    --surface: #f0f0f0;
+    --text: #161616;
+    --muted: #616161;
+    --accent: #ffbcca;
+    --on-accent: #212121;
+    --border: #d9d9d9;
+    --brand: #ff91ac;
+    --focus: #ff91ac;
+    --card: #d9d9d9;
+  }
+  [data-mode="dark"] {
+    color-scheme: dark;
+    --page: #171717;
+    --surface: #262626;
+    --text: #ffffff;
+    --muted: #e5e5e5;
+    --accent: #ff91ac;
+    --on-accent: #000000;
+    --border: #0000001a;
+    --brand: #ffa7bb;
+    --focus: #00000033;
+    --card: #262626;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px Helvetica, system-ui, sans-serif; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  header { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+  h1 { font-size: 40px; line-height: 42px; font-weight: 500; letter-spacing: -0.4px; margin: 0; }
+  h2 { font-size: 24px; line-height: 24px; font-weight: 500; margin: 32px 0 12px; }
+  p { color: var(--muted); max-width: 68ch; }
+  button.theme { background: var(--surface); color: var(--text); border: 0; border-radius: 9999px; padding: 8px 16px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .swatch { width: 72px; height: 48px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--border); }
+  .primary, .secondary, .console { border: 0; border-radius: 9999px; padding: 12px 16px; font: 400 14px/18px ui-monospace, monospace; letter-spacing: 0.28px; text-transform: uppercase; }
+  .primary { background: #ffbcca; color: #212121; }
+  .secondary { background: #d9d9d9; color: #161616; }
+  .console { background: oklch(0.7807 0.136 5.02); color: oklch(0 0 0); font-family: system-ui, sans-serif; text-transform: none; letter-spacing: 0; height: 36px; }
+  .card { background: var(--card); border-radius: 24px; padding: 32px; max-width: 320px; }
+  .field { background: var(--surface); color: var(--text); border: 0; border-radius: 4px; height: 40px; padding: 0 12px; width: 280px; box-shadow: inset 0 0 0 1px oklch(1 0 89.88 / 0.15); }
+  a.sample { color: var(--brand); }
+  code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>n8n</h1>
+    <button class="theme" type="button" id="theme">Dark console</button>
+  </header>
+  <p>Measured signed-out values from n8n.io and app.n8n.cloud. Light is the marketing site. Dark is the console login and register pages. No screenshots were captured.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Actions</h2>
+  <div class="row">
+    <button class="primary" type="button">Get started</button>
+    <button class="secondary" type="button">Talk to sales</button>
+    <button class="console" type="button">Sign in</button>
+  </div>
+  <h2>Field</h2>
+  <input class="field" value="instance" aria-label="Instance name">
+  <h2>Card</h2>
+  <div class="card">
+    <strong>Starter</strong>
+    <p>20€ /mo, billed annually. Hosted by n8n.</p>
+    <a class="sample" href="https://n8n.io/pricing/">Pricing</a>
+  </div>
+</div>
+<script>
+  const roles = ["page", "surface", "text", "muted", "accent", "border", "brand", "focus", "card"];
+  const box = document.getElementById("swatches");
+  const root = document.documentElement;
+  function paint() {
+    box.replaceChildren();
+    for (const role of roles) {
+      const el = document.createElement("div");
+      el.className = "swatch";
+      el.style.background = getComputedStyle(root).getPropertyValue("--" + role);
+      el.title = role;
+      box.append(el);
+    }
+  }
+  document.getElementById("theme").addEventListener("click", () => {
+    const dark = root.getAttribute("data-mode") === "dark";
+    if (dark) root.removeAttribute("data-mode");
+    else root.setAttribute("data-mode", "dark");
+    document.getElementById("theme").textContent = dark ? "Dark console" : "Light marketing";
+    paint();
+  });
+  paint();
+</script>
+</body>
+</html>

@@ -20343,6 +20343,75 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "n8n",
+      "name": "n8n",
+      "url": "https://n8n.io",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Automation marketing and a signed-out console: pink pill buttons, Baumer Uniwidth headlines, grey cards, and a dark Geist login.",
+      "tags": [
+        "web",
+        "automation",
+        "workflow",
+        "saas",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Marketing pages and app.n8n.cloud login/register. No email was submitted and no workflow was opened.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/n8n/README.md",
+      "tokens": "systems/n8n/tokens.json",
+      "styleGuide": "systems/n8n/style-guide.html",
+      "preview": {
+        "cover": "systems/n8n/icon.png",
+        "icon": "systems/n8n/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.marketing",
+          "core.font.family.console"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "",
+        "durationMin": 50,
+        "pr": "",
+        "durationNote": "Attached T3 preview tab. Computed styles on homepage, pricing, login and register. Screenshot frames failed."
+      },
+      "layoutGaps": {
+        "components/": "no screenshots, so no element crops",
+        "icons/": "no icon set extracted; the wordmark SVG was read as markup and not saved as an asset",
+        "screenshots/": "preview_snapshot failed twice with 'The browser is not producing screenshot frames', so no page captures were saved"
+      }
     }
   ]
 }
