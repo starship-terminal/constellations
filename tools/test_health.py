@@ -142,6 +142,41 @@ class WriteTest(unittest.TestCase):
             root = (pkg.root / "README.md").read_text()
         self.assertIn("| [x](systems/x/README.md) | Tests \\| pipes | 2026-10-10 | light | 2 of 3 met, 1 partly, 0 missing |", root)
 
+    def test_an_add_only_slug_keeps_the_base_catalog_table(self):
+        """The check CI runs. A new slug whose own Health matches is accepted
+        when the root table is still the base table. Editing the existing
+        package's Health, or hand-editing the new section, still fails."""
+        snap = audit({"slug": "x", "name": "X", "grades": grades(F1="meets", F2="partly", C1="meets", V1="na")})
+        added = {"slug": "clay", "captured": "2026-11-19", "goodFor": "CRM", "themes": ["light"], "category": "productivity",
+                 "layoutGaps": {"icons/": "No standalone SVG icon set was lifted."}}
+        with Package() as pkg:
+            health.write(CRITERIA, snap, [SYSTEM])
+            self.assertEqual(health.problems(CRITERIA, snap, [SYSTEM]), [])
+            base_systems = [dict(SYSTEM)]
+            clay = pkg.root / "systems" / "clay"
+            clay.mkdir()
+            (clay / "README.md").write_text("# Clay\n\n## Fonts\n\nInter.\n")
+            (clay / "tokens.json").write_text("")
+            section = health.package_section(CRITERIA, snap, added)
+            (clay / "README.md").write_text("# Clay\n\n" + section)
+            self.assertEqual(
+                health.problems(CRITERIA, snap, [SYSTEM, added], base_systems=base_systems), [])
+            # A layoutGaps reason that still has its closing period is the same section.
+            (clay / "README.md").write_text("# Clay\n\n" + section.replace(").", ".)."))
+            self.assertEqual(
+                health.problems(CRITERIA, snap, [SYSTEM, added], base_systems=base_systems), [])
+            (clay / "README.md").write_text("# Clay\n\n" + section)
+            # A hand-edited Health section on the new package still fails.
+            (clay / "README.md").write_text("# Clay\n\n" + section.replace("Not graded yet", "Graded by hand"))
+            stale = health.problems(CRITERIA, snap, [SYSTEM, added], base_systems=base_systems)
+            self.assertTrue(any("systems/clay/README.md" in line for line in stale))
+            (clay / "README.md").write_text("# Clay\n\n" + section)
+            # An edit to the package that was already on the base still fails.
+            (pkg.root / "systems" / "x" / "README.md").write_text(
+                pkg.readme().replace("Partly", "Meets"))
+            edited = health.problems(CRITERIA, snap, [SYSTEM, added], base_systems=base_systems)
+            self.assertTrue(any("systems/x/README.md" in line for line in edited))
+
     def test_catalog_table_ranks_by_the_scorecard(self):
         snap = audit({"slug": "a", "name": "A", "grades": grades(F1="partly", F2="partly", C1="meets", V1="na")},
                      {"slug": "b", "name": "B", "grades": grades(F1="meets", F2="meets", C1="meets", V1="na")})

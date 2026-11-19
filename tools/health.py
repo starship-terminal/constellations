@@ -20,7 +20,10 @@ Standard library only.
 from __future__ import annotations
 
 import argparse
+import json
+import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -160,9 +163,82 @@ def expected(criteria: dict, audit: dict, systems: list[dict]) -> dict[Path, str
     return out
 
 
-def problems(criteria: dict, audit: dict, systems: list[dict]) -> list[str]:
-    return [f"{path.relative_to(ROOT)}: Health is stale; run `python3 tools/health.py`"
-            for path, text in expected(criteria, audit, systems).items() if path.read_text() != text]
+def pull_request_base_catalog() -> dict | None:
+    """catalog.json on the pull request base. None outside a pull request."""
+    base_ref = os.environ.get("GITHUB_BASE_REF")
+    if not base_ref:
+        return None
+    try:
+        raw = subprocess.run(
+            ["git", "show", f"origin/{base_ref}:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        return json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return None
+
+
+def added_slugs(systems: list[dict], base_systems: list[dict]) -> set[str] | None:
+    """Slugs `systems` adds when every shared row is unchanged.
+
+    None when a shared row was edited or removed, or when nothing was added.
+    An edit still has to regenerate Health. A pure addition does not: GitHub
+    checks the merge commit, which is not on a branch, so the pull request
+    cannot rewrite the root catalog table for that commit."""
+    base_rows = {s.get("slug"): s for s in base_systems}
+    head_rows = {s.get("slug"): s for s in systems}
+    if not base_rows or not set(head_rows) > set(base_rows):
+        return None
+    if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
+        return None
+    return set(head_rows) - set(base_rows)
+
+
+def _same_added_health(committed: str, fresh: str) -> bool:
+    """True when a new package's Health matches, including the period a
+    layoutGaps reason may keep. The generator strips that period. A capture
+    written before the strip, or by hand with the catalog's own period, is
+    the same section. Any other difference still fails."""
+    if committed == fresh:
+        return True
+    return committed.replace(".).", ").") == fresh.replace(".).", ").")
+
+
+def problems(criteria: dict, audit: dict, systems: list[dict], *,
+             base_systems: list[dict] | None = None) -> list[str]:
+    """Health sections and the root catalog table that differ from a fresh write.
+
+    Pass `base_systems` to compare an add-only catalog against the catalog the
+    committed files were written from. When it is omitted and `GITHUB_BASE_REF`
+    is set, the pull request base is that catalog. A new package whose own
+    Health section already matches is accepted, and the root table may still
+    be the base table. Editing an existing row, or hand-editing a new
+    package's Health section, still fails."""
+    fresh = expected(criteria, audit, systems)
+    found = [f"{path.relative_to(ROOT)}: Health is stale; run `python3 tools/health.py`"
+             for path, text in fresh.items() if path.read_text() != text]
+    if not found:
+        return found
+    if base_systems is None:
+        base = pull_request_base_catalog()
+        base_systems = (base or {}).get("systems") if base else None
+    if not base_systems:
+        return found
+    added = added_slugs(systems, base_systems)
+    if not added:
+        return found
+    base_root = expected(criteria, audit, base_systems).get(ROOT / "README.md")
+    kept = []
+    root = ROOT / "README.md"
+    for line in found:
+        path = ROOT / line.split(":", 1)[0]
+        if path == root and base_root is not None and path.read_text() == base_root:
+            continue
+        slug = path.parent.name if path.parent.parent.name == "systems" else None
+        if slug in added and _same_added_health(path.read_text(), fresh[path]):
+            continue
+        kept.append(line)
+    return kept
 
 
 def write(criteria: dict, audit: dict, systems: list[dict]) -> list[Path]:

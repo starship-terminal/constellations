@@ -1,6 +1,14 @@
+import { execFileSync } from "node:child_process";
 import { describe, expect, it } from "vitest";
 import { withReferenceCategories } from "@/server/taxonomy/library";
-import { matchesCategory } from "@/contracts/categories";
+import {
+  addedCatalogSlugs,
+  categorySeedGaps,
+  derivedCategoryAssignment,
+  matchesCategory,
+  type CatalogCategoryRow,
+  type CuratedCategory,
+} from "@/contracts/categories";
 import { queryScreens } from "@/server/sources/screens";
 import assignments from "@/data/system-categories.json";
 import catalog from "../../catalog.json";
@@ -10,26 +18,83 @@ const item = (slug: string, platform = "web") =>
   libraryItem(slug, { platform, category: "legacy-tag" });
 
 describe("database categories across apps and screens", () => {
-  it("covers each existing measured system once with platform-correct assignments", () => {
-    const rows = catalog.systems;
-    expect(new Set(assignments.map((entry) => entry.referenceId))).toEqual(
-      new Set(rows.map((entry: { slug: string }) => `systems:${entry.slug}`)),
-    );
-    expect(assignments).toHaveLength(rows.length);
-    for (const row of rows) {
-      const assignment = assignments.find(
-        (entry) => entry.referenceId === `systems:${row.slug}`,
-      )!;
-      expect(assignment.groupId).toBe(
-        row.platform === "mobile" ? "ios-categories" : "web-categories",
-      );
+  function catalogRows(): CatalogCategoryRow[] {
+    return catalog.systems as CatalogCategoryRow[];
+  }
+
+  function pullRequestBaseRows(): CatalogCategoryRow[] | null {
+    const base = process.env.GITHUB_BASE_REF;
+    if (!base) return null;
+    try {
+      const raw = execFileSync("git", ["show", `origin/${base}:catalog.json`], {
+        encoding: "utf8",
+      });
+      const parsed = JSON.parse(raw) as { systems?: CatalogCategoryRow[] };
+      return parsed.systems ?? null;
+    } catch {
+      return null;
     }
+  }
+
+  it("covers each existing measured system once with platform-correct assignments", () => {
+    const rows = catalogRows();
+    const baseRows = pullRequestBaseRows();
+    const added = baseRows ? addedCatalogSlugs(rows, baseRows) : null;
+    const baseSlugs = added
+      ? new Set(baseRows!.map((row) => row.slug))
+      : undefined;
+    expect(categorySeedGaps(rows, assignments, baseSlugs)).toEqual([]);
+    if (!added) expect(assignments).toHaveLength(rows.length);
+  });
+  it("accepts an add-only slug when the seed is derived from the base catalog", () => {
+    const rows = catalog.systems as {
+      slug: string;
+      platform?: string;
+      category?: string;
+    }[];
+    const baseSlugs = new Set(rows.map((row) => row.slug));
+    const added = {
+      slug: "clay",
+      platform: "web",
+      category: "productivity",
+    };
+    const derived = derivedCategoryAssignment(added);
+    // Without the base, a new slug still needs a pre-seeded row. With the
+    // base, the check derives that row and accepts the addition.
+    expect(categorySeedGaps([...rows, added], assignments)).toContain(
+      "clay: missing from the category seed",
+    );
+    expect(categorySeedGaps([...rows, added], assignments, baseSlugs)).toEqual(
+      [],
+    );
+    const handEdited: CuratedCategory = {
+      ...derived,
+      reason: "typed by hand",
+    };
+    expect(
+      categorySeedGaps(
+        [...rows, added],
+        [...assignments, handEdited],
+        baseSlugs,
+      ),
+    ).toEqual(["clay: added category seed row was hand-edited"]);
+    // A package that was already on the base still needs its committed row.
+    const dropped = assignments.filter(
+      (entry) => entry.referenceId !== "systems:linear",
+    );
+    expect(categorySeedGaps(rows, dropped, baseSlugs)).toContain(
+      "linear: missing from the category seed",
+    );
   });
   it("keeps each existing package reachable through its former category link", async () => {
-    const references = await withReferenceCategories(
-      catalog.systems.map((row) => item(row.slug, row.platform)),
+    const seeded = new Set(assignments.map((entry) => entry.referenceId));
+    const rows = catalogRows().filter((row) =>
+      seeded.has(`systems:${row.slug}`),
     );
-    for (const row of catalog.systems) {
+    const references = await withReferenceCategories(
+      rows.map((row) => item(row.slug, row.platform)),
+    );
+    for (const row of rows) {
       const reference = references.find(
         (candidate) => candidate.slug === row.slug,
       )!;
