@@ -31,6 +31,18 @@ class CssColour(unittest.TestCase):
             self.assertIn("from '../css-colour.mjs'", (CAPTURE / rel).read_text(), rel)
 
 
+class OneLightSwitch(unittest.TestCase):
+    def test_renders_and_readings_share_the_light_switch(self):
+        # render.mjs carried its own switch (every [data-mode] to light) while measure.mjs used lib.setLight
+        # (dark/light/system only), so a product using data-mode for density rendered differently in the
+        # light PNGs than in the light readings. Only lib.mjs may set data-mode now.
+        signed = CAPTURE / "signed-in"
+        own = [f.name for f in sorted(signed.glob("*.mjs")) if f.name != "lib.mjs" and "setAttribute('data-mode'" in f.read_text()]
+        self.assertEqual(own, [])
+        for f in ("render.mjs", "measure.mjs"):
+            self.assertRegex((signed / f).read_text(), r"\bsetLight\b", f)
+
+
 @unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
 class MeasureArgs(unittest.TestCase):
     def test_a_bad_jobs_count_stops_instead_of_running_no_workers(self):
