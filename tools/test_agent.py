@@ -127,6 +127,29 @@ class CatalogCacheTest(unittest.TestCase):
                 path.write_text(json.dumps({"systems": [{"slug": "a"}, {"slug": "b"}]}))
                 self.assertEqual([s["slug"] for s in library._catalog()["systems"]], ["a", "b"])
 
+    def test_concurrent_requests_parse_once(self):
+        import tempfile
+        import threading
+        import time
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "catalog.json").write_text(json.dumps({"systems": []}))
+            calls = []
+            real = library.catalog.load_catalog
+
+            def slow():
+                calls.append(1)
+                time.sleep(0.2)
+                return real()
+            with mock.patch.object(library.catalog, "ROOT", Path(d)), \
+                    mock.patch.object(library.catalog, "_library_cache", None, create=True), \
+                    mock.patch.object(library.catalog, "load_catalog", slow):
+                threads = [threading.Thread(target=library._catalog) for _ in range(5)]
+                for t in threads:
+                    t.start()
+                for t in threads:
+                    t.join()
+            self.assertEqual(len(calls), 1)
+
 
 class ProviderTest(unittest.TestCase):
     def test_parse_openai_and_anthropic_shape(self):

@@ -18,6 +18,7 @@ import os
 import posixpath
 import sqlite3
 import sys
+import threading
 import urllib.parse
 from pathlib import Path
 
@@ -68,8 +69,15 @@ def _catalog() -> dict:
     st = (catalog.ROOT / "catalog.json").stat()
     key = (str(catalog.ROOT), st.st_mtime_ns, st.st_size)
     cached = getattr(catalog, "_library_cache", None)
-    if cached is None or cached[0] != key:
-        cached = catalog._library_cache = (key, catalog.load_catalog())
+    if cached is not None and cached[0] == key:
+        return cached[1]
+    # api.py serves requests on threads: one parses, the others wait for it.
+    # The lock lives on the catalog module too, so every copy of library.py
+    # shares it (setdefault is atomic under the GIL).
+    with catalog.__dict__.setdefault("_library_lock", threading.Lock()):
+        cached = getattr(catalog, "_library_cache", None)
+        if cached is None or cached[0] != key:
+            cached = catalog._library_cache = (key, catalog.load_catalog())
     return cached[1]
 
 
