@@ -1728,9 +1728,9 @@
       "description": "One integration, connect to 1000+ energy devices",
       "status": "captured",
       "package": "systems/enode",
-      "notes": "",
+      "notes": "https://enode.com/login is 404. Sign in opens https://platform.enode.com/login, which sent a login link to the capture inbox (\"Check your email\"). Link not opened. SAML SSO also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 6
     },
     {
@@ -1745,9 +1745,9 @@
       "description": "A curated digital storefront for PC and Mac",
       "status": "captured",
       "package": "systems/epicgames",
-      "notes": "",
+      "notes": "https://www.epicgames.com/id/login asks for email and password, or console and social sign-in. No code was sent. https://www.epicgames.com/login stopped on a Cloudflare check and was not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1762,9 +1762,9 @@
       "description": "Bring your story to life | Music & SFX for videos",
       "status": "captured",
       "package": "systems/epidemicsound",
-      "notes": "",
+      "notes": "https://www.epidemicsound.com/login/ opens a Keycloak form at login.epidemicsound.com with email and password, or Google, Apple, or SSO. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1779,9 +1779,9 @@
       "description": "The fastest way for startups to do any analysis",
       "status": "captured",
       "package": "systems/equals",
-      "notes": "",
+      "notes": "https://equals.app/login redirects to a Netlify 404 on equals.com. Sign in opens https://go.equals.com/auth/new. The capture inbox was entered and the page said \"We couldn't find an account for that email.\" New accounts are a demo request, not a signup form. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 6
     },
     {
@@ -1796,9 +1796,9 @@
       "description": "Men's Fashion, Cocktails, Politics, Interviews",
       "status": "captured",
       "package": "systems/esquire",
-      "notes": "",
+      "notes": "https://www.esquire.com/ Sign In opens https://www.mylo.id/login. After the capture inbox, the next page was passkey signup (\"Creating your passkey account\"). No code was sent. The passkey was not created. Google, Facebook, Apple, Microsoft, and user ID plus password are also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 6
     },
     {
@@ -1813,9 +1813,9 @@
       "description": "Web Search API, AI Search Engine, & Website Crawler",
       "status": "captured",
       "package": "systems/exa",
-      "notes": "",
+      "notes": "https://dashboard.exa.ai/login opens https://auth.exa.ai/ with Google, email, and SSO. Continue with email was blocked: \"This sign-in attempt was blocked for security reasons.\" A Cloudflare turnstile field was present. No code was sent. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 6
     },
     {
@@ -1830,9 +1830,9 @@
       "description": "Bespoke AI models, built for your brand",
       "status": "captured",
       "package": "systems/exactly",
-      "notes": "",
+      "notes": "https://exactly.ai/login is 404. Log in opens https://threads.exactly.ai/login, which stopped on Cloudflare security verification (403). No email field. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 6
     },
     {
@@ -1847,9 +1847,9 @@
       "description": "Whiteboarding tool with hand drawn like experience",
       "status": "captured",
       "package": "systems/excalidraw",
-      "notes": "",
+      "notes": "The free board at https://excalidraw.com/ has no account. Sign in on https://plus.excalidraw.com/ opens https://app.excalidraw.com/sign-up. Passwordless email asks to \"Verify you're human\" before Send magic link. No code was sent. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 6
     },
     {
@@ -1864,9 +1864,9 @@
       "description": "Vacation Homes, Hotels, Car Rentals, Flights",
       "status": "captured",
       "package": "systems/expedia",
-      "notes": "",
+      "notes": "https://www.expedia.com/login returned 429 \"Bot or Not?\" (\"We can't tell if you're a human or a bot.\"). No email field. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 6
     },
     {
@@ -1881,9 +1881,9 @@
       "description": "Brand new platform for creatives",
       "status": "captured",
       "package": "systems/explore",
-      "notes": "",
+      "notes": "https://explore.family and https://explore.family/login do not resolve (ERR_NAME_NOT_RESOLVED). No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 6
     },
     {
@@ -1898,9 +1898,9 @@
       "description": "Share the joy of reading with online book clubs",
       "status": "captured",
       "package": "systems/fable",
-      "notes": "",
+      "notes": "https://fable.co/login is a missing page. The homepage offers Get the app and has no email sign-in form. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 6
     },
     {
@@ -1915,9 +1915,9 @@
       "description": "Build faster with AI coding agents",
       "status": "captured",
       "package": "systems/factory",
-      "notes": "",
+      "notes": "https://factory.ai/login redirects to https://factory.com/login, a Vercel login page with an email field and Google, GitHub, ChatGPT, SAML, and passkey. Continue with Email did not advance after the capture inbox was entered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 6
     },
     {
@@ -1932,9 +1932,9 @@
       "description": "Wholesale Platform",
       "status": "captured",
       "package": "systems/faire",
-      "notes": "",
+      "notes": "https://www.faire.com/?signIn=1 asks for email and password, or Google or Apple. Cookie banner was present and was not accepted. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -1949,9 +1949,9 @@
       "description": "Easiest & most cost-effective way to use Gen AI",
       "status": "captured",
       "package": "systems/fal",
-      "notes": "",
+      "notes": "https://fal.ai/login offers GitHub, Google, Microsoft, and SSO only. No email field. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 6
     },
     {
@@ -1966,9 +1966,9 @@
       "description": "Your favorite crypto wallet",
       "status": "captured",
       "package": "systems/family",
-      "notes": "",
+      "notes": "https://family.co/login is 404. Log in opens https://app.family.co/ (now Aave Account), which emailed a 6-digit verification code after the capture inbox. Code not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 6
     },
     {
@@ -1983,9 +1983,9 @@
       "description": "The Global Destination For Modern Luxury",
       "status": "captured",
       "package": "systems/farfetch",
-      "notes": "",
+      "notes": "https://www.farfetch.com/sg/ Sign in dialog asks for email and password, or a one-time code, Google, Apple, or Facebook. The one-time code path was not used. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -2000,9 +2000,9 @@
       "description": "Create content at scale",
       "status": "captured",
       "package": "systems/feedhive",
-      "notes": "",
+      "notes": "https://www.feedhive.com/login is 404. Login opens https://app.feedhive.com/signin with email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -2017,9 +2017,9 @@
       "description": "The fast, calm customer support platform for SaaS",
       "status": "captured",
       "package": "systems/getfernand",
-      "notes": "",
+      "notes": "https://getfernand.com/login is 404. Log in opens https://app.getfernand.com/auth/login with work email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -2034,9 +2034,9 @@
       "description": "Build your company workspace with no code",
       "status": "captured",
       "package": "systems/fibery",
-      "notes": "",
+      "notes": "https://fibery.io/login offers Google, Microsoft, and Continue with Email. The email path asks for work email and password. No code was sent. Workspace SSO also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 6
     },
     {
@@ -2051,9 +2051,9 @@
       "description": "The Collaborative Interface Design Tool",
       "status": "captured",
       "package": "systems/figma",
-      "notes": "public signed-out surfaces only (marketing pages, /community and the /login /signup product-shell cards); the editor and every post-login surface is behind an account. Cloudflare challenged some routes; fresh-session retries succeeded",
+      "notes": "public signed-out surfaces only (marketing pages, /community and the /login /signup product-shell cards); the editor and every post-login surface is behind an account. Cloudflare challenged some routes; fresh-session retries succeeded https://www.figma.com/login asks for email and password, or Google or single sign-on. Cookie banner was present and was not accepted. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 6
     },
     {
