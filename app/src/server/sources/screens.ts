@@ -118,10 +118,7 @@ export function queryScreens(
     .toLowerCase()
     .split(/[\s_-]+/)
     .filter(Boolean);
-  const referenceIds = new Set([
-    ...(query.referenceIds || []),
-    ...(query.referenceId ? [query.referenceId] : []),
-  ]);
+  const referenceIds = new Set(query.referenceIds || []);
   const selectedTerms = [...new Set(query.termIds || [])];
   const available = query.mode === "flows" ? [] : items;
   const corpus = available.filter(
@@ -210,7 +207,6 @@ export function queryScreens(
       groups: counts(scoped, ({ media }) => [media.group || ""]),
       kinds: counts(available, ({ media }) => [media.kind || ""]),
     },
-    taxonomy: { pageTypes: [], uiElements: [], uxPatterns: [] },
   };
 }
 
