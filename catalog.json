@@ -20343,6 +20343,66 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "paypal",
+      "name": "PayPal",
+      "url": "https://www.paypal.com/",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Payments marketing and signed-out login chrome: warm canvas, white and navy and cyan plates, black pill buttons, PayPal Pro headlines, and a separate login card with a blue Next button",
+      "tags": [
+        "web",
+        "finance",
+        "payments",
+        "marketing",
+        "signed-out",
+        "light",
+        "pill",
+        "navy"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing pages and the login email step were measured; nothing was typed or submitted; the signup wall was recorded and not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/paypal/README.md",
+      "tokens": "systems/paypal/tokens.json",
+      "styleGuide": "systems/paypal/style-guide.html",
+      "preview": {
+        "cover": "systems/paypal/icon.png",
+        "icon": "systems/paypal/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.color.navy",
+            "border": "light.border.login"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.text",
+          "core.fontFamily.headline"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50,
+        "version": "public marketing paypal60 and signed-out login, 2026-11-19"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot failed twice with The browser is not producing screenshot frames. No PNG was invented.",
+        "components/": "no crops, because the preview browser produced no screenshot frames",
+        "icons/": "PayPal wordmark and glyphs were not lifted; they stay on paypalobjects.com"
+      }
     }
   ]
 }
