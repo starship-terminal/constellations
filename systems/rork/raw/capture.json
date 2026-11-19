@@ -1,0 +1,20 @@
+{
+  "host": "https://rork.com/",
+  "wwwRedirect": "https://www.rork.com/ returns 301 to https://rork.com/",
+  "captured": "2026-11-19",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewportScale": 1}
+  },
+  "colorSchemeMedia": "light",
+  "paintedTheme": "dark",
+  "body": {
+    "backgroundColor": "rgb(23, 23, 23)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "16px",
+    "lineHeight": "24px"
+  },
+  "challenge": false,
+  "previewBrowser": "preview_status was not registered in this session. Measurements are from headless Chrome on public pages that loaded without a Cloudflare challenge.",
+  "notEntered": ["email submit", "6-digit code", "Google", "GitHub", "Apple", "payment", "signed-in /app"]
+}

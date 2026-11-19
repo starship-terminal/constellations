@@ -20343,6 +20343,71 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "rork",
+      "name": "Rork",
+      "url": "https://rork.com",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "Dark AI-builder marketing: near-black page, white pill sign-in, a 28px composer card, and an orange Max plan",
+      "tags": [
+        "web",
+        "ai",
+        "app-builder",
+        "marketing",
+        "dark",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public pages and the sign-in dialog; email was not submitted and OAuth was not entered)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/rork/README.md",
+      "tokens": "systems/rork/tokens.json",
+      "styleGuide": "systems/rork/style-guide.html",
+      "preview": {
+        "cover": "systems/rork/screenshots/home-dark-default.png",
+        "icon": "systems/rork/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.card",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.accent.max-start",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.text",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "",
+        "pr": "https://github.com/starship-terminal/constellations/pull/788",
+        "durationMin": 40,
+        "gaps": [
+          "T3 preview browser tools were not registered, so readings are from headless Chrome on public pages",
+          "email code was not requested",
+          "Google, GitHub, and Apple were not entered",
+          "no light theme painted",
+          "signed-in builder was not reached"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the wordmark and chip icons stay in the screenshots"
+      }
     }
   ]
 }
