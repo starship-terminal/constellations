@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TwelveLabs style guide</title>
+<style>
+:root {
+  --page: #f4f3f3;
+  --panel: #ececec;
+  --raised: #ffffff;
+  --ink: #1d1c1b;
+  --ink-raised: #171717;
+  --on-inverse: #f4f4f4;
+  --muted: #45423f;
+  --badge: #dae971;
+  --nav: #1d1c1b1a;
+  --hero: #41403e99;
+  --border: #00000029;
+  --social: #0000003d;
+  --font-display: "Milling Duplex 1mm", sans-serif;
+  --font-ui: Geist, -apple-system, system-ui, Roboto, Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 24px;
+}
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
+h1 { font-size: 44px; line-height: 51.92px; letter-spacing: -0.88px; margin: 0 0 12px; }
+h2 { font-size: 28px; line-height: 35px; letter-spacing: -0.56px; margin: 40px 0 12px; }
+p { margin: 0 0 12px; }
+.note { color: var(--muted); font-size: 14px; line-height: 20px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: 12px; border: 1px solid var(--border); }
+.swatch span { display: block; margin-top: 6px; font-size: 12px; line-height: 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
+.btn-paper, .btn-ink, .btn-auth, .btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+}
+.btn-paper {
+  background: var(--page);
+  color: var(--ink);
+  border-radius: 18px;
+  padding: 18px 24px;
+  min-height: 60px;
+}
+.btn-ink {
+  background: var(--ink);
+  color: var(--on-inverse);
+  border-radius: 14px;
+  padding: 18px 16px;
+  min-height: 44px;
+}
+.btn-auth {
+  background: var(--ink-raised);
+  color: var(--on-inverse);
+  border-radius: 6px;
+  padding: 8px 12px;
+  min-height: 40px;
+  font-family: var(--font-ui);
+  letter-spacing: 0;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--page);
+  border-radius: 18px;
+  padding: 18px 24px;
+  min-height: 60px;
+}
+.hero {
+  background: var(--hero);
+  color: var(--page);
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 360px;
+}
+.badge {
+  display: inline-block;
+  color: var(--badge);
+  font-family: var(--font-display);
+  font-size: 11px;
+  line-height: 13.2px;
+  padding: 2px 7px;
+  border-radius: 99px;
+}
+.field {
+  display: block;
+  width: 340px;
+  max-width: 100%;
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--ink);
+  box-shadow: #1d1c1b 0 0 0 1px;
+  background: transparent;
+  color: #000;
+  font: 14px/20px var(--font-ui);
+}
+label { font: 500 14px/20px var(--font-ui); color: var(--ink-raised); }
+.card {
+  width: min(551px, 100%);
+  border-radius: 80px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: #fff -8px 8px 15px 0 inset, #fff 8px -8px 18px 0 inset;
+  padding: 40px;
+}
+.type-display { font: 400 44px/51.92px var(--font-display); letter-spacing: -0.88px; }
+.type-body { font: 400 16px/24px var(--font-display); letter-spacing: 0.16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>TwelveLabs</h1>
+  <p class="note">Values are the ones read on 2026-11-19 from twelvelabs.io and auth.twelvelabs.io. Milling Duplex 1mm is not on this machine, so display type falls back to sans-serif.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#f4f3f3"></i><span>page #f4f3f3</span></div>
+    <div class="swatch"><i style="background:#ececec"></i><span>panel #ececec</span></div>
+    <div class="swatch"><i style="background:#1d1c1b"></i><span>ink #1d1c1b</span></div>
+    <div class="swatch"><i style="background:#171717"></i><span>auth action #171717</span></div>
+    <div class="swatch"><i style="background:#45423f"></i><span>muted #45423f</span></div>
+    <div class="swatch"><i style="background:#dae971"></i><span>badge #dae971</span></div>
+    <div class="swatch"><i style="background:#41403e"></i><span>hero card #41403e at 0.6</span></div>
+    <div class="swatch"><i style="background:#673ae4"></i><span>violet token, unused on the pages read</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="type-display">See the unseen.</p>
+  <p class="type-body">Your video contains every insight, every event, every decision that mattered.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn-paper" href="#paper">Try Free</a>
+    <span class="hero"><a class="btn-ghost" href="#ghost">Talk to Sales</a></span>
+    <a class="btn-ink" href="#ink">Choose Plus</a>
+    <a class="btn-auth" href="#auth">Continue</a>
+  </div>
+  <p class="note">The inverse marketing label colour was not read apart from the link default. The specimen uses the login inverse text #f4f4f4.</p>
+
+  <h2>Login field</h2>
+  <div class="card">
+    <label for="email">Email address</label>
+    <input class="field" id="email" type="email" value="name@example.com" readonly>
+  </div>
+</main>
+</body>
+</html>

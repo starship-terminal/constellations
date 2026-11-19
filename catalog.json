@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "twelvelabs",
+      "name": "TwelveLabs",
+      "url": "https://www.twelvelabs.io/",
+      "category": "ai-research",
+      "platform": "web",
+      "goodFor": "A paper video-intelligence marketing site: Milling Duplex headlines on #f4f3f3, ink pills, a chartreuse New badge, and a signed-out Auth0 login on auth.twelvelabs.io",
+      "tags": [
+        "web",
+        "ai",
+        "video",
+        "marketing",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "Public marketing plus signed-out login on auth.twelvelabs.io. Email was entered. Password was not typed. Google was not followed. HubSpot contact form and reCAPTCHA were not filled. No card was entered. No API key was created.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/twelvelabs/README.md",
+      "tokens": "systems/twelvelabs/tokens.json",
+      "styleGuide": "systems/twelvelabs/style-guide.html",
+      "preview": {
+        "cover": "systems/twelvelabs/icon.png",
+        "icon": "systems/twelvelabs/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.panel",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public site 2026-11-19",
+        "durationMin": 40,
+        "source": "twelvelabs.io home, pricing and contact, plus auth.twelvelabs.io login, in a T3 preview tab, CSS viewport 1169x731 at devicePixelRatio 2, on 2026-11-19. Computed styles read live. Screenshot frames failed."
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned The browser is not producing screenshot frames. Measurements were kept. No screenshots were invented. The catalog cover is icon.png.",
+        "components/": "No crops. The same screenshot-frame failure. Component values are in components.md."
+      }
     }
   ]
 }
