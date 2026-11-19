@@ -20343,6 +20343,90 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "opensea",
+      "name": "OpenSea",
+      "url": "https://opensea.io",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "NFT marketplace, signed out: a Next.js token layer of channel-triplet --color-* pairs, page #080808 and surface #0c0c0c in dark, brand blue #0086ff, gtAmerica with gtAmericaMono for prices, pill nav and filters, a 480px connect dialog at radius 12px, and green #47bb64 / red #e24756 change figures",
+      "tags": [
+        "web",
+        "finance",
+        "crypto",
+        "nft",
+        "marketplace",
+        "design-tokens",
+        "dark",
+        "light",
+        "signed-out",
+        "nextjs"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (home, collection, activity, discover, drops, tools and terms were public; the connect dialog was opened and closed; no wallet was connected and nothing was submitted). Dark was the live theme. Light is the declared .light pair, resolved on a probe, and was not switched on.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/opensea/README.md",
+      "tokens": "systems/opensea/tokens.json",
+      "styleGuide": "systems/opensea/style-guide.html",
+      "designMd": {
+        "colors": "dark.",
+        "typography": "core.typography."
+      },
+      "preview": {
+        "cover": "systems/opensea/screenshots/home-dark-default.png",
+        "icon": "systems/opensea/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.sans",
+          "core.font.mono"
+        ]
+      },
+      "source": {
+        "path": "T3 preview browser, signed out. Live screenshots were unavailable (preview_snapshot: the browser is not producing screenshot frames). PNGs are reconstructions."
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "opensea.io deploy dpl_CwpX9e5BmHVkkWTfWfcCD4h6Cth3",
+        "route": "public-web",
+        "durationMin": 50,
+        "routes": [
+          "/",
+          "/collection/cryptopunks",
+          "/activity",
+          "/discover/art",
+          "/drops",
+          "/tools",
+          "/tos",
+          "support.opensea.io (separate Zendesk skin)",
+          "Connect with OpenSea dialog (opened, not submitted)"
+        ],
+        "gaps": [
+          "Live screenshots unavailable: preview_snapshot returned 'The browser is not producing screenshot frames'",
+          "Light theme declared and probe-resolved, not seen live. Settings bounced to the connect dialog",
+          "No wallet connected. Email, Google, Apple, MetaMask, WalletConnect, Robinhood not pressed",
+          "Rewards and settings/customize are gated",
+          "No reduced-motion emulation pass",
+          "Pressed, disabled, loading, error, toast and tooltip not on the public pages"
+        ]
+      }
     }
   ]
 }
