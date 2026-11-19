@@ -3,8 +3,10 @@
   "ocr": {
     "emails": true,
     "email_allow": [
-      "@example\\.(com|org)$",
-      "@doppler\\w*\\.com$"
+      "@example\\.com$",
+      "@example\\.org$",
+      "@dopplerhg\\.com$",
+      "@doppler\\.com$"
     ]
   },
   "families": []
