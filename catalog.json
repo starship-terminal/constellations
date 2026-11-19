@@ -20343,6 +20343,82 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "shuttle",
+      "name": "Shuttle",
+      "url": "https://shuttle.zip",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A black file-sharing site: InterVariable throughout, #0077ff tint, 8px app buttons, pill marketing actions, 12px grouped fields, and 24px pricing cards",
+      "tags": [
+        "web",
+        "files",
+        "sharing",
+        "marketing",
+        "dark",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "Public marketing and signed-out space, login and signup. Signup and login were not submitted. Both include a Cloudflare Turnstile. No card was entered.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/shuttle/README.md",
+      "tokens": "systems/shuttle/tokens.json",
+      "styleGuide": "systems/shuttle/style-guide.html",
+      "preview": {
+        "cover": "systems/shuttle/icon.png",
+        "icon": "systems/shuttle/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.raised",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "shuttle.zip marketing, signed-out space, login and signup in a T3 preview tab, CSS viewport 1169x731 at devicePixelRatio 2, on 2026-11-19. Computed styles read live. Screenshot frames failed.",
+        "timestamp": "2026-11-19T02:40:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public site 2026-11-19",
+        "durationMin": 35,
+        "routes": [
+          "/",
+          "/new/s/space/",
+          "/about",
+          "/pricing",
+          "/updates",
+          "/signup",
+          "/login"
+        ],
+        "gaps": [
+          "preview_snapshot returned The browser is not producing screenshot frames, so no screenshots or crops were saved",
+          "signup and login were not submitted because both include a Cloudflare Turnstile",
+          "signed-in library was not opened",
+          "no card was entered",
+          "light theme was declared and not the live computed theme",
+          "viewport was 1169, not 1440 and not 390"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned The browser is not producing screenshot frames. Measurements were kept. No screenshots were invented. The catalog cover is icon.png.",
+        "components/": "No crops. The same screenshot-frame failure. Component values are in components.md."
+      }
     }
   ]
 }
