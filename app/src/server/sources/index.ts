@@ -180,8 +180,9 @@ const STAMP_FILES = [
   "web/data/thumbs",
 ];
 const MEDIA_FOLDERS = ["shots", "posters", "favicons", "videos"];
-const MAX_CACHE_AGE = 5 * 60_000;
-async function sourceStamp(): Promise<string> {
+export const MAX_CACHE_AGE = 5 * 60_000;
+/** Changes when the catalogs, generated data or media mirror change. */
+export async function sourceStamp(): Promise<string> {
   const root = repoRoot(),
     media = mediaRoot();
   const stats = await Promise.all(
