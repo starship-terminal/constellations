@@ -20343,6 +20343,78 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "patreon",
+      "name": "Patreon",
+      "url": "https://www.patreon.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Creator membership marketing: black and white pill buttons on a pale hero, a fluid Oracle display (187.5px at 1440), section bands in #94bbff, and a separate near-black login wall",
+      "tags": [
+        "web",
+        "membership",
+        "creator",
+        "marketing",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the login wall only; no account, no email, no pledge, no card)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/patreon/README.md",
+      "tokens": "systems/patreon/tokens.json",
+      "styleGuide": "systems/patreon/style-guide.html",
+      "preview": {
+        "cover": "systems/patreon/icon.png",
+        "icon": "systems/patreon/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.marketing",
+          "core.font.family.login"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "Live T3 preview browser on patreon.com, computed styles via preview_evaluate. preview_snapshot failed with no screenshot frames. Headless Playwright got a Cloudflare challenge and was stopped.",
+        "timestamp": "2026-11-18T17:30:00Z",
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/product/paid-membership",
+          "/login"
+        ],
+        "gaps": [
+          "signup wall measured and not submitted",
+          "no screenshots: preview frames failed and headless Playwright hit Cloudflare",
+          "hover, pressed, disabled, loading and error states not captured",
+          "no dark marketing theme switch was found"
+        ],
+        "durationMin": 90,
+        "version": "2026-11-19 public site"
+      },
+      "layoutGaps": {
+        "components/": "no crops: the preview browser did not produce screenshot frames, and headless Playwright was stopped by a Cloudflare challenge"
+      }
     }
   ]
 }
