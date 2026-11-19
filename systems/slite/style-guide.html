@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Slite style guide</title>
+<style>
+:root {
+  --page: #fdfdfd;
+  --hero: #fdf9f4;
+  --ink: #3f434a;
+  --ink-strong: #2d2f34;
+  --muted: #6a707c;
+  --line: #d8dadf;
+  --accent: #f67748;
+  --dust: #f9efe4;
+  --card: #ffffff;
+  --focus: #4588ed;
+}
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/24px "Segoe UI", Helvetica, Arial, sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+header.bar { background: var(--hero); padding: 16px 24px; display: flex; gap: 16px; align-items: center; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; font-size: 56px; line-height: 67.2px; margin: 16px 0; }
+h2 { font-family: Georgia, serif; font-weight: 500; font-size: 36px; line-height: 43.2px; margin: 40px 0 12px; }
+p.note { color: var(--muted); max-width: 68ch; }
+.pill { display: inline-flex; align-items: center; height: 38px; padding: 0 16px; border-radius: 999px; font: 600 16px/16px inherit; text-decoration: none; }
+.pill.primary { background: var(--ink-strong); color: var(--page); border: 0; }
+.pill.ghost { background: transparent; color: var(--ink-strong); border: 2px solid var(--ink-strong); }
+.pill.accent { background: var(--accent); color: #fff; border: 0; height: 64px; padding: 0 32px; font-size: 17px; }
+.badge { background: var(--accent); color: #fff; font-size: 12px; font-weight: 600; padding: 0 6px; border-radius: 6px; line-height: 20px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.swatch { width: 160px; }
+.swatch i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--line); }
+code { font-size: 12px; }
+.card { background: var(--card); border-radius: 16px; padding: 48px 60px; box-shadow: 0 1px 3px rgba(0,0,0,.1), 0 2px 6px rgba(0,0,0,.05); max-width: 560px; }
+.field { border: 1px solid var(--line); border-radius: 8px; height: 42px; display: flex; align-items: center; padding: 0 12px; color: var(--muted); font-size: 13px; }
+.auth { background: var(--dust); padding: 32px; border-radius: 16px; }
+table { border-collapse: collapse; width: 100%; }
+td { border-top: 1px solid var(--line); padding: 6px 8px; font-size: 14px; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <strong>slite</strong>
+  <span>Product</span>
+  <span>Pricing</span>
+  <span class="badge">New</span>
+  <span style="margin-left:auto" class="row">
+    <a class="pill ghost" href="#buttons">Book demo</a>
+    <a class="pill primary" href="#buttons">Start for free</a>
+  </span>
+</header>
+<main>
+<h1>A source of truth for your team.</h1>
+<p class="note">Rendered from tokens.json. Garnett and UniversalSans are proprietary and are not embedded. Georgia and the system sans stand in so the page can be opened offline. Accent is #f67748. There is no dark theme in this capture.</p>
+<div class="row" id="buttons">
+  <a class="pill primary">Start for free</a>
+  <a class="pill ghost">Book demo</a>
+  <a class="pill accent">Talk to us</a>
+</div>
+<h2>Colours</h2>
+<div class="row">
+  <div class="swatch"><i style="background:#fdfdfd"></i><code>light.page</code><div>#fdfdfd</div></div>
+  <div class="swatch"><i style="background:#fdf9f4"></i><code>light.surface</code><div>#fdf9f4</div></div>
+  <div class="swatch"><i style="background:#3f434a"></i><code>light.text</code><div>#3f434a</div></div>
+  <div class="swatch"><i style="background:#6a707c"></i><code>light.muted</code><div>#6a707c</div></div>
+  <div class="swatch"><i style="background:#f67748"></i><code>light.accent</code><div>#f67748</div></div>
+  <div class="swatch"><i style="background:#d8dadf"></i><code>light.border</code><div>#d8dadf</div></div>
+  <div class="swatch"><i style="background:#2d2f34"></i><code>background.action</code><div>#2d2f34</div></div>
+  <div class="swatch"><i style="background:#f9efe4"></i><code>background.auth</code><div>#f9efe4</div></div>
+  <div class="swatch"><i style="background:#4588ed"></i><code>foreground.focus</code><div>#4588ed</div></div>
+</div>
+<h2>Sign-in card</h2>
+<div class="auth">
+  <div class="card">
+    <h2 style="font-size:26px;margin:0 0 16px">Sign in</h2>
+    <div class="field">name@company.com</div>
+  </div>
+</div>
+<h2>Type</h2>
+<table>
+  <tr><td>Hero</td><td>Garnett 56px / 67.2px / 500</td></tr>
+  <tr><td>Section</td><td>Garnett 36px / 43.2px / 500</td></tr>
+  <tr><td>Body</td><td>UniversalSans 16px / 24px / 400</td></tr>
+  <tr><td>Nav</td><td>UniversalSans 15px / 600</td></tr>
+  <tr><td>Field</td><td>UniversalSans 13px</td></tr>
+</table>
+</main>
+</body>
+</html>

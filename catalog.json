@@ -20343,6 +20343,74 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "slite",
+      "name": "Slite",
+      "url": "https://slite.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Knowledge-base marketing: cream page, Garnett display, near-black pill, saturn-orange accent, plan cards, signed-out email gate",
+      "tags": [
+        "web",
+        "productivity",
+        "knowledge-base",
+        "saas",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (home, pricing, features, the sign-in card and the create-account card at rest are public; Google, Apple, Slack, Continue with email, Find your workspaces, Book demo, Get started, Contact Sales and checkout were not pressed)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/slite/README.md",
+      "tokens": "systems/slite/tokens.json",
+      "styleGuide": "systems/slite/style-guide.html",
+      "preview": {
+        "cover": "systems/slite/screenshots/home-light-default.png",
+        "icon": "systems/slite/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border.field"
+          }
+        },
+        "fonts": [
+          "core.font.title",
+          "core.font.system"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "light."
+        ],
+        "typography": [
+          "core.typography."
+        ],
+        "rounded": [
+          "core.radius."
+        ],
+        "spacing": [
+          "core.spacing."
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50,
+        "pr": "https://github.com/starship-terminal/constellations/pull/812"
+      }
     }
   ]
 }
