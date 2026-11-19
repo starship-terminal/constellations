@@ -1,5 +1,6 @@
 """Tests for tools/refero/mirror_media.py beyond download() itself: the db
-guard, the per-file job, ffmpeg compression, and the command line (--check,
+guard, the per-file job, ffmpeg compression, the untrusted-row guards (slug and
+URL scheme), and the command line (--check,
 --only, --limit, --force, --compress-videos). urllib.request.urlopen and
 subprocess.run are mocked; the db and the media root are temporary, so
 nothing reaches the network or ~/services. Run with `make test`."""
@@ -356,6 +357,57 @@ class MainCompressTest(MirrorTmp):
         self.assertIsNone(code)
         self.assertEqual(shrink.call_count, 1)  # the poster is an image
         self.assertIn("compressed", out)
+
+
+class UntrustedRowTest(MirrorTmp):
+    """A styles row arrives through the committed text dump, so its slug and
+    URLs are untrusted: neither may reach a local file or leave the root."""
+
+    def test_media_dest_refuses_a_path_like_slug(self):
+        for bad in ("../x", "../../etc/x", "a/b", "Acme", "", "-a", "a--b", None):
+            with self.assertRaises(ValueError, msg=repr(bad)):
+                mirror_media.media_dest(self.media, "shots", bad)
+        self.assertEqual(mirror_media.media_dest(self.media, "shots", "acme-2"),
+                         self.media / "shots" / "acme-2.jpg")
+
+    def test_download_refuses_a_non_https_url_without_opening_it(self):
+        secret = self.tmp / "secret.jpg"
+        secret.write_bytes(b"local file")
+        dest = self.tmp / "shots" / "acme.jpg"
+        dest.parent.mkdir()
+        for url in (secret.as_uri(), "http://cdn/s.jpg", "ftp://cdn/s.jpg"):
+            with mock.patch.object(mirror_media.urllib.request, "urlopen") as opened, \
+                    self.assertRaises(ValueError, msg=url):
+                mirror_media.download("shots", url, dest)
+            opened.assert_not_called()
+        self.assertFalse(dest.exists())
+
+    def test_a_file_url_in_the_db_is_never_copied_into_the_mirror(self):
+        secret = self.tmp / "secret.jpg"
+        secret.write_bytes(b"local file")
+        self.make_db(("gamma", secret.as_uri(), None, None, None, None, None))
+        code, _, err = self.main("--only", "shots")  # real urlopen: it must not run
+        self.assertIsNone(code)
+        self.assertIn("FAIL gamma: refusing a non-https url", err)
+        self.assertFalse((self.media / "shots" / "gamma.jpg").exists())
+
+    def test_a_path_like_slug_is_skipped_and_nothing_lands_outside_the_root(self):
+        self.make_db(("../../escape", "https://cdn/s.jpg", None, None, None, None, None),
+                     SHOT_ONLY)
+        with mock.patch.object(mirror_media.urllib.request, "urlopen",
+                               side_effect=serve) as opened:
+            code, _, err = self.main("--only", "shots")
+        self.assertIsNone(code)
+        self.assertIn("FAIL '../../escape': unsafe slug, skipped", err)
+        self.assertEqual(opened.call_count, 1)  # beta only
+        self.assertTrue((self.media / "shots" / "beta.jpg").exists())
+        self.assertEqual(sorted(p.name for p in self.tmp.rglob("escape*")), [])
+
+    def test_check_fails_on_an_unsafe_slug(self):
+        self.make_db(("a/b", "https://cdn/s.jpg", None, None, None, None, None))
+        code, _, err = self.main("--check", "--only", "shots")
+        self.assertIn("1 styles rows have an unsafe slug", code)
+        self.assertIn("FAIL 'a/b'", err)
 
 
 if __name__ == "__main__":
