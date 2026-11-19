@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "programa",
+      "name": "Programa",
+      "url": "https://programa.design",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Interior-design studio marketing: pale grid hero, Rhymes Display headlines, yellow trial button, mint billing switch, signed-out zinc login form",
+      "tags": [
+        "web",
+        "saas",
+        "marketing",
+        "interior-design",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing pages plus the login and register forms; no account was created and no credentials were entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/programa/README.md",
+      "tokens": "systems/programa/tokens.json",
+      "styleGuide": "systems/programa/style-guide.html",
+      "preview": {
+        "cover": "systems/programa/screenshots/home-light-default.png",
+        "icon": "systems/programa/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.muted",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.primary",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "",
+        "pr": "",
+        "durationMin": 70
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the wordmark and menu mark are in the screenshots"
+      }
     }
   ]
 }
