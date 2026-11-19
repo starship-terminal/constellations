@@ -20343,6 +20343,94 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "stocktwits",
+      "name": "Stocktwits",
+      "url": "https://stocktwits.com",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Signed-out investor social shell: white page, Source Sans 3, 9999px pills, a #1b66e7 link blue, green #128760 and red #dd331d price colours, a 30px quote, and a black marketing hero with a purple wash",
+      "tags": [
+        "web",
+        "finance",
+        "social",
+        "markets",
+        "signed-out",
+        "light",
+        "dark",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public home, symbol, about, widgets, subscriptions, enterprise, privacy, sign-in and signup were read. No account was created. No password, card, phone, brokerage, or KYC field was filled.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/stocktwits/README.md",
+      "tokens": "systems/stocktwits/tokens.json",
+      "styleGuide": "systems/stocktwits/style-guide.html",
+      "preview": {
+        "cover": "systems/stocktwits/screenshots/capture-gap-light.png",
+        "icon": "systems/stocktwits/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "stocktwits.com in the T3 preview tab, desktop 1440x900 and phone 390x844, devicePixelRatio 2. Computed styles and custom properties on the live page. Dark values from [data-theme=dark], then the attribute was removed. preview_snapshot returned no screenshot frames. Headless Playwright hit Cloudflare on every public URL, so no product screenshot was kept.",
+        "timestamp": "2026-11-19T02:50:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/signin",
+          "/signup",
+          "/symbol/AAPL",
+          "/subscriptions",
+          "/about",
+          "/widgets",
+          "/enterprise",
+          "/about/legal/privacy"
+        ],
+        "gaps": [
+          "no product screenshots: preview frames failed and headless Playwright hit Cloudflare",
+          "signup was not submitted, so later account steps were not opened",
+          "no password, Apple sheet, brokerage, card, phone, or KYC flow was entered",
+          "dark theme was read from the data-theme attribute, not from a live theme switch",
+          "hover, pressed, loading, error, and a painted focus ring were not captured"
+        ],
+        "durationMin": 70
+      },
+      "layoutGaps": {
+        "components/": "No element crops. The preview browser returned no screenshot frames, and headless Playwright hit Cloudflare."
+      }
     }
   ]
 }
