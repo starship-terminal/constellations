@@ -20343,6 +20343,73 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "play",
+      "name": "Play",
+      "url": "https://createwithplay.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Dark marketing site for a native iOS design tool: black page, mint primary button, TWK Everett headlines, four-column pricing, signed-out only",
+      "tags": [
+        "web",
+        "design-tool",
+        "marketing",
+        "dark",
+        "signed-out",
+        "ios"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public archive replays only; the live host did not resolve and no account was created)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/play/README.md",
+      "tokens": "systems/play/tokens.json",
+      "styleGuide": "systems/play/style-guide.html",
+      "preview": {
+        "cover": "systems/play/screenshots/home-dark-default.png",
+        "icon": "systems/play/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.raised",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.action.primary",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text"
+        ]
+      },
+      "capture": {
+        "method": "public archive replay in headless Chrome. The live host NXDOMAIN'd.",
+        "source": "Internet Archive replays of createwithplay.com, January 2026 marketing pages and the April 2026 shutdown notice",
+        "timestamp": "2026-11-19T01:40:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "",
+        "pr": "https://github.com/starship-terminal/constellations/pull/754",
+        "durationMin": 50,
+        "gaps": [
+          "live createwithplay.com did not resolve",
+          "T3 preview browser produced no screenshot frames",
+          "signed-out login iframe did not paint",
+          "no light theme on the captured pages"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "the Framer favicon is an SVG on a CDN that returned 503, and the icon extraction pass was not run"
+      }
     }
   ]
 }
