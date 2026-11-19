@@ -107,6 +107,14 @@ export function tokenResolver(leaves: TokenLeaf[]) {
   return { final };
 }
 
+/** Python's round(): halves go to the even neighbour (76.5 -> 76), where
+ * Math.round always goes up. catalog.py's _hex uses it. */
+export function pyRound(value: number): number {
+  const floor = Math.floor(value);
+  const rest = value - floor;
+  if (rest !== 0.5) return Math.round(value);
+  return floor % 2 === 0 ? floor : floor + 1;
+}
 /** DTCG 2025 colour objects carry components, not a string. */
 export function tokenHex(value: unknown): string | null {
   if (!value || typeof value !== "object" || Array.isArray(value)) return null;
@@ -115,7 +123,7 @@ export function tokenHex(value: unknown): string | null {
   if (!Array.isArray(color.components)) return null;
   if (typeof color.hex === "string" && color.hex) return color.hex;
   const hex = (n: number) =>
-    Math.round(Number(n) * 255)
+    pyRound(Number(n) * 255)
       .toString(16)
       .padStart(2, "0");
   const alpha = numberOf(color.alpha) ?? 1;
