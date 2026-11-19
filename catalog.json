@@ -20343,6 +20343,73 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "reclaim-ai",
+      "name": "Reclaim AI",
+      "url": "https://reclaim.ai",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Calendar product marketing: Sharp Grotesk display on a white page, Poppins body, Atlas Grotesk buttons, a blue 10px Get Started, warm billing tabs, and a dark OAuth login with pill provider buttons",
+      "tags": [
+        "web",
+        "marketing",
+        "calendar",
+        "saas",
+        "sharp-grotesk",
+        "oauth"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Marketing pages and app.reclaim.ai/login measured. Login is Google, Microsoft, Dropbox and SSO only, so no email signup was attempted and no calendar OAuth was connected. Contact form measured inside its HubSpot iframe and not submitted.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/reclaim-ai/README.md",
+      "tokens": "systems/reclaim-ai/tokens.json",
+      "styleGuide": "systems/reclaim-ai/style-guide.html",
+      "preview": {
+        "cover": "systems/reclaim-ai/icon.png",
+        "icon": "systems/reclaim-ai/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body",
+          "core.font.family.ui"
+        ]
+      },
+      "layoutGaps": {
+          "components/": "Empty crops folder. No screenshots to crop."
+    },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "reclaim.ai marketing and app.reclaim.ai/login, 2026-11-19",
+        "durationMin": 50,
+        "gaps": "Preview browser returned no screenshot frames. Login has no email field, so signup was not attempted and calendar OAuth was not connected. Contact form not submitted. No 390px pass. Hover, focus, error and reduced-motion not measured."
+      }
     }
   ]
 }
