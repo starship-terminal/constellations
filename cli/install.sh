@@ -32,6 +32,8 @@ For agents, the MCP endpoint is:
 
     claude mcp add --transport http design-systems $BASE/api/mcp
     swe mcp add design-systems --url=$BASE/api/mcp
-    codex:  [mcp_servers.design-systems] url = "$BASE/api/mcp"
+    codex (~/.codex/config.toml):
+        [mcp_servers.design-systems]
+        url = "$BASE/api/mcp"
     opencode/cursor: remote MCP, url $BASE/api/mcp
 EOF

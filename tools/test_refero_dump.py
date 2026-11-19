@@ -286,6 +286,31 @@ class MergeTest(Tmp):
             dump.load(self.a, quiet=True)
         self.assertEqual(self.a.read_bytes(), before)
 
+    def test_a_merged_statement_load_would_not_write_is_refused(self):
+        """schema.sql is a merge surface: only what render() writes may run."""
+        schema = self.root / "schema.sql"
+        good = schema.read_text()
+        before = self.a.read_bytes()
+        outside = self.tmp / "outside.db"
+        for bad in (f"ATTACH DATABASE '{outside}' AS x;",
+                    f"PRAGMA x.page_size=1; ATTACH '{outside}' AS y;",
+                    "PRAGMA writable_schema=1;",
+                    "PRAGMA user_version=7; PRAGMA journal_mode=delete;\nPRAGMA recursive_triggers=ON;",
+                    "INSERT INTO styles VALUES (1,2,3,4,5,6,7);",
+                    "DELETE FROM similar;",
+                    "CREATE TEMP TABLE t (a);"):
+            with self.subTest(bad=bad):
+                schema.write_text(good + "\n" + bad + "\n")
+                with self.assertRaisesRegex(dump.DumpError, "schema.sql: refusing"):
+                    dump.load(self.a, quiet=True)
+                self.assertFalse(outside.exists())
+                self.assertEqual(self.a.read_bytes(), before)
+        schema.write_text(good + "\nCREATE UNIQUE INDEX extra ON similar (uuid, rank, business);\n")
+        with self.assertRaises(sqlite3.IntegrityError):  # parsed, then the rows break it
+            dump.load(self.a, quiet=True)
+        schema.write_text(good + "\nCREATE INDEX extra ON similar (business);\n")
+        dump.load(self.a, quiet=True)  # an index is a statement render() writes
+
     def test_a_lost_table_file_is_refused_not_loaded_empty(self):
         before = snapshot(self.a)
         for lost in ("similar.jsonl", "styles"):

@@ -25,7 +25,7 @@ export const viewport: Viewport = {
   ],
 };
 
-const themeInit = `(function(){try{var d=document.documentElement;d.dataset.theme=localStorage.getItem('ds-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(localStorage.getItem('ds-nav')==='collapsed')d.dataset.nav='collapsed';}catch(e){document.documentElement.dataset.theme='dark'}})();`;
+const themeInit = `(function(){try{var d=document.documentElement;var t=localStorage.getItem('ds-theme');d.dataset.theme=t==='light'||t==='dark'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(localStorage.getItem('ds-nav')==='collapsed')d.dataset.nav='collapsed';}catch(e){document.documentElement.dataset.theme='dark'}})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

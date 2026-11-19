@@ -1,7 +1,7 @@
 """The /api/ route handlers behind the gallery chat. api.py delegates here for
-every request under /api/; the published static site never sees any of it (it
-drops the gallery and runs no Python), and local browsing gets the same routes
-from the Next.js app.
+every request under /api/ on the home-server deployment, where nginx serves
+the docs site statically from site/ and proxies only /api/ to Python; local
+browsing gets the same routes from the Next.js app.
 
   GET  /api/status           {"ok": true, "envProvider": bool}
   GET  /api/mcp              405 — streamable HTTP is POST-only here
@@ -13,8 +13,10 @@ from the Next.js app.
   GET  /api/install.sh       cli/install.sh with @DS_BASE@ filled from the
                              request's forwarded Host/proto
   POST /api/provider/test    {api, base_url, api_key, key_header?, models_url?}
-                             (https only, http for loopback; models_url must
-                             share base_url's origin; redirects refused)
+                             (https to a known model API or a host listed in
+                             DESIGN_SYSTEMS_PROVIDER_HOSTS, http only for a
+                             listed loopback host; models_url must share
+                             base_url's origin; redirects refused)
                              -> {ok, models:[{id,label}], error?} for the
                              settings page's test-gated model field
   POST /api/chat             {messages, provider?} -> {reply, results, media}
