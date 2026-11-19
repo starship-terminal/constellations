@@ -20343,6 +20343,86 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "tango",
+      "name": "Tango",
+      "url": "https://www.tango.ai/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A warm-white how-to marketing site: Gelica headlines, Apercu UI, purple pill buttons on #fafafa, orange pricing and sales accents, and a signed-out Topaz login on app.tango.us",
+      "tags": [
+        "web",
+        "productivity",
+        "documentation",
+        "marketing",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "Public marketing plus signed-out login and signup on app.tango.us. Email was entered. Password, name, Google and Turnstile were not. No card was entered. tango.us was not captured as a separate site.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/tango/README.md",
+      "tokens": "systems/tango/tokens.json",
+      "styleGuide": "systems/tango/style-guide.html",
+      "preview": {
+        "cover": "systems/tango/icon.png",
+        "icon": "systems/tango/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.panel",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body",
+          "core.font.family.app"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public site 2026-11-19",
+        "durationMin": 45,
+        "method": "public-web",
+        "source": "tango.ai marketing, pricing, enterprise and app.tango.us sign-in and sign-up in a T3 preview tab, CSS viewport 1169x731 at devicePixelRatio 2, on 2026-11-19. Computed styles read live. Screenshot frames failed.",
+        "timestamp": "2026-11-19T03:20:00Z",
+        "routes": [
+          "/",
+          "/pricing",
+          "/enterprise",
+          "app.tango.us/sign-in",
+          "app.tango.us/sign-up",
+          "app.tango.us/sign-up/email"
+        ],
+        "gaps": [
+          "preview_snapshot returned The browser is not producing screenshot frames, so no screenshots or crops were saved",
+          "signed-in app was not opened",
+          "password was not typed",
+          "signup name form was not submitted",
+          "Google was not followed",
+          "Turnstile was not solved",
+          "no card was entered",
+          "viewport was 1169, not 1440 and not 390",
+          "dark theme was not present"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned The browser is not producing screenshot frames. Measurements were kept. No screenshots were invented. The catalog cover is icon.png.",
+        "components/": "No crops. The same screenshot-frame failure. Component values are in components.md."
+      }
     }
   ]
 }
