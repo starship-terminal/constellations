@@ -3,6 +3,7 @@
 import assert from "node:assert/strict";
 import { describe, it, mock } from "node:test";
 import { SPECS, ToolError } from "./chat/library.ts";
+import { ROOT } from "./repo.ts";
 import { handle, SERVER_INFO } from "./mcp-rpc.ts";
 
 const rpc = (method: unknown, params?: unknown, id: unknown = 1) => handle({ jsonrpc: "2.0", id, method, params });
@@ -79,7 +80,8 @@ describe("mcp dispatch", () => {
     for (const slug of ["../../etc/passwd", "/etc/passwd", "x".repeat(50_000)]) {
       const out = ((await rpc("tools/call", { name: "get_style", arguments: { slug } })) as { result: { isError?: boolean; content: { text: string }[] } }).result;
       assert.equal(out.isError, true, slug.slice(0, 20));
-      assert.ok(!out.content[0].text.includes(process.cwd()), slug.slice(0, 20));
+      // ROOT is the checkout the tools resolve files against (web/'s parent).
+      assert.ok(!out.content[0].text.includes(ROOT), slug.slice(0, 20));
       assert.ok(out.content[0].text.length <= 400);
     }
   });
