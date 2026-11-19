@@ -20343,6 +20343,58 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "teal",
+      "name": "Teal",
+      "url": "https://www.tealhq.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Career-tool marketing: white Roobert page, goldfinch yellow pill CTAs, teal and pheasant bands, and a separate Inter signed-out app form",
+      "tags": [
+        "web",
+        "career",
+        "saas",
+        "marketing",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing plus sign-in and sign-up; nothing submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/teal/README.md",
+      "tokens": "systems/teal/tokens.json",
+      "styleGuide": "systems/teal/style-guide.html",
+      "preview": {
+        "cover": "systems/teal/screenshots/privacy-light-default.png",
+        "icon": "systems/teal/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.ink",
+            "muted": "light.color.muted",
+            "accent": "light.color.yellow",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.marketing",
+          "core.font.app"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45,
+        "pr": "https://github.com/starship-terminal/constellations/pull/842"
+      }
     }
   ]
 }
