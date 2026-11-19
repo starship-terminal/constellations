@@ -2068,9 +2068,9 @@
       "description": "Identify Every Web Visitor & Mobile Device",
       "status": "captured",
       "package": "systems/fingerprint",
-      "notes": "",
+      "notes": "https://fingerprint.com/login/ is a missing page. The dashboard at https://dashboard.fingerprint.com/login offers Google, GitHub, and Microsoft. Continue with email asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2085,9 +2085,9 @@
       "description": "Freelance Services Marketplace",
       "status": "captured",
       "package": "systems/fiverr",
-      "notes": "",
+      "notes": "https://www.fiverr.com/login Continue with email asks for email or username and password, or Google, Apple, or Facebook. A headless load earlier hit a human-check page. The interactive form loaded. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2102,9 +2102,9 @@
       "description": "Video collaboration platform ",
       "status": "captured",
       "package": "systems/flask",
-      "notes": "",
+      "notes": "https://flask.do/login sent a login link to the capture inbox (\"Login link sent\"). Link not opened. Google also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 7
     },
     {
@@ -2119,9 +2119,9 @@
       "description": "UX planning platform",
       "status": "captured",
       "package": "systems/flowmapp",
-      "notes": "",
+      "notes": "https://flowmapp.com/login is a missing page. Sign in is https://app.flowmapp.com/signin with email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2136,9 +2136,9 @@
       "description": "Build applications faster than ever",
       "status": "captured",
       "package": "systems/flutterflow",
-      "notes": "",
+      "notes": "https://app.flutterflow.io/login is a Flutter canvas. Sign in asks for email and password, or Google, Apple, GitHub, or Microsoft. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2153,9 +2153,9 @@
       "description": "Nutrition Tracker",
       "status": "captured",
       "package": "systems/foodnoms",
-      "notes": "",
+      "notes": "https://foodnoms.com/login is a 404. The site only offers Get the App for the iOS app. No web sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 7
     },
     {
@@ -2170,9 +2170,9 @@
       "description": "AI Product Generation",
       "status": "captured",
       "package": "systems/fourmula",
-      "notes": "",
+      "notes": "https://fourmula.ai/login is a 404. The app account is https://app.fourmula.ai/auth with email and password, or Google. No code was sent. Cookie banner was not accepted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2187,9 +2187,9 @@
       "description": "Products and shops your community will love",
       "status": "captured",
       "package": "systems/fourthwall",
-      "notes": "",
+      "notes": "https://fourthwall.com/login downloaded instead of rendering. Log in opens a Keycloak form at auth.fourthwall.com with email and password, or Google or Apple. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2204,9 +2204,9 @@
       "description": "One platform for all your creative work",
       "status": "captured",
       "package": "systems/frame",
-      "notes": "",
+      "notes": "https://next.frame.io/login is page not found. Opening https://app.frame.io/ redirected to https://accounts.frame.io/welcome with email and password. Cookie banner was rejected. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2221,9 +2221,9 @@
       "description": "The internet is your canvas",
       "status": "captured",
       "package": "systems/framer",
-      "notes": "",
+      "notes": "https://framer.com/login accepted the capture inbox and said \"Verification link sent.\" Link not opened. Google also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 7
     },
     {
@@ -2238,9 +2238,9 @@
       "description": "Instantly book salons and spas nearby",
       "status": "captured",
       "package": "systems/fresha",
-      "notes": "",
+      "notes": "https://fresha.com/login is a 404. Partner login at https://partners.fresha.com/users/login sent a 6-digit code (\"Confirm your email\"). Code not entered. Mobile, Google, Apple, and passkey also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 7
     },
     {
@@ -2255,9 +2255,9 @@
       "description": "Front is a customer communication hub",
       "status": "captured",
       "package": "systems/front",
-      "notes": "",
+      "notes": "https://app.frontapp.com/signin asks for email and password, or Google, Office 365, or SAML SSO. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2272,9 +2272,9 @@
       "description": "Audio Transcription API",
       "status": "captured",
       "package": "systems/gladia",
-      "notes": "",
+      "notes": "https://app.gladia.io/signin asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2289,9 +2289,9 @@
       "description": "On-chain market intelligence",
       "status": "captured",
       "package": "systems/glassnode",
-      "notes": "",
+      "notes": "https://studio.glassnode.com/login is page not found. Log in opens https://auth.glassnode.com/ with email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2306,9 +2306,9 @@
       "description": "Online Graphic Design Tool for E-com Business Owners",
       "status": "captured",
       "package": "systems/glorify",
-      "notes": "",
+      "notes": "https://app.glorify.com/dashboard/login asks for email and password, or Google. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2323,9 +2323,9 @@
       "description": "All-In-One Salon, Spa & Medspa Software",
       "status": "captured",
       "package": "systems/glossgenius",
-      "notes": "public marketing, signed-out auth (/login, /signup, /forgot-password) and a real published booking website read only to its public /book date-picker; everything post-login and past the date-picker is out of scope",
+      "notes": "public marketing, signed-out auth (/login, /signup, /forgot-password) and a real published booking website read only to its public /book date-picker; everything post-login and past the date-picker is out of scope https://app.glossgenius.com/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
@@ -2340,9 +2340,9 @@
       "description": "The #1 Crowdfunding and Fundraising Platform",
       "status": "captured",
       "package": "systems/gofundme",
-      "notes": "",
+      "notes": "https://www.gofundme.com/sign-in rendered an empty page with no email field and no buttons. https://app.gofundme.com/login was a fundraiser-not-found page. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 7
     },
     {
@@ -2357,9 +2357,9 @@
       "description": "Meet Gemini, Google's AI assistant",
       "status": "captured",
       "package": "systems/gemini",
-      "notes": "",
+      "notes": "https://gemini.google.com/app has no site email field. Sign in is a Google account button. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 7
     },
     {
@@ -2374,9 +2374,9 @@
       "description": "Free Online Writing Assistant",
       "status": "captured",
       "package": "systems/grammarly",
-      "notes": "",
+      "notes": "https://www.grammarly.com/login is a missing page. https://www.grammarly.com/signin accepted the capture inbox and said \"We couldn't find an account.\" Create-account was not opened. Google, Facebook, Apple, and SSO also offered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 7
     },
     {
@@ -2391,9 +2391,9 @@
       "description": "Understand the universe",
       "status": "captured",
       "package": "systems/grok",
-      "notes": "",
+      "notes": "https://grok.com/login stopped on Cloudflare and was not retried. The account form is https://accounts.x.ai/sign-in. Login with email then asks for an email sign-in code or a password. Neither was submitted. No code was sent. Google, X, Apple, and GitHub also offered. Cookie banner was rejected.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 7
     },
     {
