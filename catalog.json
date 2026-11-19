@@ -20343,6 +20343,71 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "twist",
+      "name": "Twist",
+      "url": "https://twist.com",
+      "category": "messaging",
+      "platform": "web",
+      "goodFor": "Async-messaging marketing on a warm off-white page: Tiempos Headline at weight 300, a teal #008AA6 primary button, Inter nav links with no fill, and a cream migration banner. Public home, pricing, and Why async, plus the signed-out email login.",
+      "tags": [
+        "web",
+        "messaging",
+        "marketing",
+        "pricing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public home, pricing, and Why async measured. /login email field filled with an AgentMail address and submitted; the name and password step was not filled. Google, Apple, the Typeform waitlist, and checkout were not opened.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/twist/README.md",
+      "tokens": "systems/twist/tokens.json",
+      "styleGuide": "systems/twist/style-guide.html",
+      "preview": {
+        "cover": "systems/twist/screenshots/home-light-default.png",
+        "icon": "systems/twist/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.action.fill",
+            "border": "light.color.border.field"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.surface",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.muted",
+            "accent": "dark.color.action.fill",
+            "border": "dark.color.border.field"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.inter"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "twist.com 2026-11-19",
+        "durationMin": 50,
+        "pr": ""
+      }
     }
   ]
 }
