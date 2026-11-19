@@ -20343,6 +20343,60 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pryzm",
+      "name": "Pryzm",
+      "url": "https://pryzm.design",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A dark visual studio for designers: black page, Poppins headings, a light primary button, and an inset gallery of background cards.",
+      "tags": ["web", "design-tool", "backgrounds", "marketing", "dark"],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing, gallery, lab shell, docs and the sign-in form; account was not created)",
+      "themes": ["dark"],
+      "widths": [1440, 390],
+      "entry": "systems/pryzm/README.md",
+      "tokens": "systems/pryzm/tokens.json",
+      "styleGuide": "systems/pryzm/style-guide.html",
+      "preview": {
+        "cover": "systems/pryzm/screenshots/home-dark-desktop.png",
+        "icon": "systems/pryzm/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": ["core.font.family.sans", "core.font.family.heading"]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "",
+        "date": "2026-11-19",
+        "durationMin": 50,
+        "durationNote": "Attached preview tab measured computed styles. preview_snapshot could not paint frames. Screenshots are headless Playwright of public pages that loaded without a Cloudflare challenge.",
+        "pr": "https://github.com/starship-terminal/constellations/pull/767",
+        "gaps": [
+          "account creation was not submitted",
+          "Google sign-in was not clicked",
+          "checkout was not opened",
+          "light theme is declared and was not painted",
+          "hover, focus, error and empty states were not captured",
+          "preview browser could not produce screenshot frames"
+        ]
+      },
+      "layoutGaps": {
+        "components/": "page screenshots are the evidence; element crops were not cut",
+        "icons/": "no icon set was extracted; icon.png is the wordmark from /logo.png"
+      }
     }
   ]
 }
