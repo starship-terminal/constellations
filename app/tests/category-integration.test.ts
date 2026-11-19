@@ -99,8 +99,8 @@ describe("database categories across apps and screens", () => {
         (candidate) => candidate.slug === row.slug,
       )!;
       expect(
-        matchesCategory(reference, row.category),
-        `${row.slug}: ${row.category}`,
+        matchesCategory(reference, row.category ?? ""),
+        `${row.slug}: ${row.category ?? ""}`,
       ).toBe(true);
     }
   });
