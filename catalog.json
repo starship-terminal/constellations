@@ -20343,6 +20343,63 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "vsco",
+      "name": "VSCO",
+      "url": "https://www.vsco.co/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Photo-product marketing: white 88px nav over a #111 band, gold pill for the free trial, black pill for the solid action, 4px fields on the signed-out login",
+      "tags": [
+        "web",
+        "marketing",
+        "photo",
+        "pill",
+        "gold",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the login form; nothing submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/vsco/README.md",
+      "tokens": "systems/vsco/tokens.json",
+      "styleGuide": "systems/vsco/style-guide.html",
+      "preview": {
+        "cover": "systems/vsco/icon.png",
+        "icon": "systems/vsco/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.gothic"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "www.vsco.co, 2026-11-19; release not exposed",
+        "durationMin": 45,
+        "gaps": "Preview frames failed, so there are no screenshots or crops. Login offers email, password, Google, and Apple, so no account was created and the form was not submitted. Checkout was not entered. Phone width 390 was not measured. No dark theme was painted."
+      },
+      "layoutGaps": {
+        "screenshots/": "The preview browser returned The browser is not producing screenshot frames, so no page captures were saved. preview.cover points at icon.png because a cover file is required.",
+        "components/": "No crops. The same screenshot-frame failure blocked element captures."
+      }
     }
   ]
 }
