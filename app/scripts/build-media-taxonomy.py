@@ -220,6 +220,20 @@ def build() -> dict:
     }
 
 
+def _head_touches(path: str) -> bool:
+    base = os.environ.get("GITHUB_BASE_REF")
+    if not base:
+        return False
+    try:
+        changed = subprocess.run(
+            ["git", "diff", "--name-only", f"origin/{base}...HEAD"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout.splitlines()
+    except (OSError, subprocess.CalledProcessError):
+        return True
+    return path in changed
+
+
 def base_slugs() -> set[str] | None:
     """Slugs on the pull request's base, when GitHub is merging one."""
     base = os.environ.get("GITHUB_BASE_REF")
@@ -248,6 +262,14 @@ def matches_base(result: dict, committed: dict) -> bool:
     head = {s.get("slug") for s in catalog.load_catalog()["systems"]}
     if not head >= slugs:
         return False
+    # A pull request that edits this script changes the derived rules.
+    # That PR regenerates the seed. A capture PR does not touch the script,
+    # so its rules must still match the committed seed.
+    if _head_touches("app/scripts/build-media-taxonomy.py"):
+        return False
+    for field in ("version", "coverage", "rules"):
+        if result.get(field) != committed.get(field):
+            return False
     def package_rows(blob):
         return {row.get("referenceId"): row for row in blob.get("packages") or []}
     def assignment_rows(blob):

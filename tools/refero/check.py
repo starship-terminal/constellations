@@ -366,8 +366,26 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
     for slug, row in base_rows.items():
         if head_rows.get(slug) != row:
             return False
+    # The committed file may be the current base, or a base that already
+    # included some of the added rows (the PR regenerated it, then main
+    # gained other captures). Either way the shared rows must agree, and
+    # every domain in the committed file must still be derived from the
+    # merged catalog. A hand-edited domain fails.
     base_expected = coverage_mod.build(directory, base)
-    return actual == base_expected
+    if actual == base_expected or actual == expected:
+        return True
+    return coverage_contains(base_expected, actual) and coverage_contains(expected, actual)
+
+
+def coverage_contains(outer: dict, inner: dict) -> bool:
+    """True when every domain inner derived is present, unchanged, in outer."""
+    for key in ("matched", "missing", "systems_absent_from_catalog"):
+        inner_map = inner.get(key) or {}
+        outer_map = outer.get(key) or {}
+        for dom, row in inner_map.items():
+            if outer_map.get(dom) != row:
+                return False
+    return True
 
 
 def main() -> None:
