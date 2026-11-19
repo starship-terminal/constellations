@@ -527,7 +527,7 @@ class RawShotsStayOutOfTheRepo(unittest.TestCase):
     def test_public_capture_needs_a_scratch_dir_outside_a_package(self):
         env = {k: v for k, v in os.environ.items() if k != "RAW"}
         res = subprocess.run([NODE, str(HERE / "kit/capture/public/public.mjs")], capture_output=True, text=True,
-                             timeout=60, env={**env, "PLAYWRIGHT": PLAYWRIGHT})
+                             timeout=60, env={**env, "PLAYWRIGHT": PLAYWRIGHT, "KIT_EXAMPLE": "1"})
         self.assertEqual(res.returncode, 2, res.stderr)
         self.assertIn("set RAW=", res.stderr)
         src = (HERE / "kit/capture/public/public.mjs").read_text()

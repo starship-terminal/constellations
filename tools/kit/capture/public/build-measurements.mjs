@@ -2,6 +2,14 @@
 // property the measurement kept, as one table per component. Deterministic; no network.
 //
 //   node build-measurements.mjs
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Gauth's example and would
+// read or write Gauth's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('build-measurements.mjs is the kit\'s Gauth example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import fs from 'node:fs';
 import path from 'node:path';
 import { hex } from '../css-colour.mjs';

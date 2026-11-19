@@ -5,11 +5,39 @@ the kit into the package, then adapt the marked parts. A package keeps its own
 adapted copy under `systems/<slug>/tools/`, because that copy is the record of
 how its values were read; this folder is only the starting point.
 
+Copy only what the route you use needs (see [Which route](#which-route)), never
+the whole kit: a script from another route is dead weight that still reads as
+a record of how the package was captured.
+
 ```bash
-mkdir -p systems/<slug>/tools
-cp -R tools/kit/capture systems/<slug>/tools/capture
-cp tools/kit/build/* systems/<slug>/tools/
+# every web or Electron route: the shared helpers and the token and style-guide builders
+mkdir -p systems/<slug>/tools/capture
+cp tools/kit/capture/{screenshot,safe-url,css-colour,readings,motion,motion-probe}.mjs tools/kit/capture/quantize.py systems/<slug>/tools/capture/
+cp tools/kit/build/{build_tokens.py,build_style_guide.py,style-guide.template.html,motion.py} systems/<slug>/tools/
+
+# then one of:
+# public web pages
+cp -R tools/kit/capture/public systems/<slug>/tools/capture/public
+cp tools/kit/capture/{icons.mjs,icon-names.tsv} systems/<slug>/tools/capture/
+cp tools/kit/build/build_components_md.public.py systems/<slug>/tools/build_components_md.py
+# signed-in web app
+cp -R tools/kit/capture/signed-in systems/<slug>/tools/capture/signed-in
+cp tools/kit/capture/{vars,layout}.mjs systems/<slug>/tools/capture/
+cp tools/kit/build/build_components_md.py systems/<slug>/tools/
+# Electron desktop app
+mkdir -p systems/<slug>/tools/capture/electron
+cp tools/kit/capture/electron/shot.mjs systems/<slug>/tools/capture/electron/
 ```
+
+Every product-specific file is one product's example (Claude, ChatGPT, Gauth or
+Grok Bot) and stops when run, with a message, until it is adapted: rewrite the
+parts marked `PRODUCT (adapt)`, then name the product on its `ADAPTED_FOR` line
+(`ADAPTED_FOR = None` in Python, `const ADAPTED_FOR = null;` in JavaScript, the
+`<!-- ADAPTED_FOR: none | ... -->` line at the top of
+`style-guide.template.html`, which the builder leaves out of the guide). Set it
+only when the file no longer describes the example product. `KIT_EXAMPLE=1`
+runs the kit's example as it is, for the kit's own tests. The list of guarded
+files is in [tools/test_kit_adapt.py](../test_kit_adapt.py).
 
 A native iOS app uses `native/` in place of `build/`, from Grok Bot, the first
 package built with this native pipeline:
@@ -43,8 +71,14 @@ See [docs/CAPTURE.md](../../docs/CAPTURE.md#dependencies) for the full table.
 | Electron desktop app | The owner opens the app with `--remote-debugging-port`; screenshots and CSS variables are read live from the running app | `capture/electron/shot.mjs` ([docs/CAPTURE.md](../../docs/CAPTURE.md#desktop-apps)) |
 | Native desktop app | As the iOS route, with the app's own window | `capture/native/winid.swift`, `sample.py`, `native/` |
 
-`vars.mjs`, `layout.mjs`, `icons.mjs`, `motion-probe.mjs` and `quantize.py` serve both web routes.
-The `build/` scripts serve every route.
+`motion-probe.mjs` (`SNAPS=` for copies, `--urls` for public pages) and
+`quantize.py` serve both web routes. `vars.mjs` and `layout.mjs` read the
+signed-in copies (`SNAPS`); a public package reads its variables with gauth's
+network-response reader (`systems/gauth/tools/capture/vars.mjs`). `icons.mjs`
+drives the public pages through `public/lib.mjs`; a signed-in package starts
+from claude's or chatgpt's (below). The `build/` scripts serve every web and
+Electron route; the public route uses `build_components_md.public.py` as its
+`build_components_md.py`.
 
 ## Screenshot dimensions and acceptance
 
@@ -57,7 +91,7 @@ classes/attributes, document size and PNG dimensions. The helper does not read
 the page URL; a caller may explicitly supply `sanitizedSourceUrl` after removing
 credentials, signed query parameters and banned personal data.
 
-The existing commands and arguments stay the same. Copy the whole capture tree
+The existing commands and arguments stay the same. Copy the shared helpers
 as shown above: [`render.mjs`](capture/signed-in/render.mjs),
 [`public.mjs`](capture/public/public.mjs) and
 [`shot.mjs`](capture/electron/shot.mjs) now import the shared helper one directory
@@ -112,7 +146,8 @@ capture Playwright and is skipped without it).
 
 ## Adapt: the marked parts
 
-Search each file for `PRODUCT (adapt)` first, then work down this list.
+Search each file for `PRODUCT (adapt)` first, then work down this list. Set a
+file's `ADAPTED_FOR` once its marked parts are done; until then it stops.
 
 | File | Change |
 |---|---|

@@ -6,6 +6,14 @@
 // renders both themes and no account setting is touched.
 // Every request goes through lib.mjs's routeCdn: the product's asset host is served from the local
 // cache beside the copies, and anything else (the product itself, trackers) is aborted, as in measure.mjs.
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Manus and Claude's example and would
+// read or write Manus and Claude's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('render.mjs is the kit\'s Manus and Claude example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import fs from 'fs';
 import path from 'path';
 import { pathToFileURL } from 'url';

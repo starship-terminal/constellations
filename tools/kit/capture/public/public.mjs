@@ -8,6 +8,14 @@
 // Nothing is sent, created or signed into: the only presses are dialog dismissals, tabs, Show more, the
 // lesson's own Not now, Continue (the audio gate), Pause, Settings and chapters, and a story card's
 // Explore, which opens a published story.
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Gauth's example and would
+// read or write Gauth's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('public.mjs is the kit\'s Gauth example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import fs from 'fs';
 import os from 'os';
 import path from 'path';

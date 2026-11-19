@@ -37,7 +37,7 @@ class MeasureArgs(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             for bad in ("x", "0", "-2", "1.5"):
                 res = subprocess.run([NODE, str(CAPTURE / "signed-in/measure.mjs"), "--jobs", bad], capture_output=True,
-                                     text=True, timeout=60, env={**os.environ, "SNAPS": d, "PLAYWRIGHT": PLAYWRIGHT})
+                                     text=True, timeout=60, env={**os.environ, "SNAPS": d, "PLAYWRIGHT": PLAYWRIGHT, "KIT_EXAMPLE": "1"})
                 self.assertEqual(res.returncode, 2, (bad, res.stderr))
                 self.assertIn("--jobs needs a whole number", res.stderr)
 
