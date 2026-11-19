@@ -48,7 +48,27 @@ export async function patch(context) {
     Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
+  // The mask goes in as soon as the document has a root element, not at DOMContentLoaded: the
+  // routes load with waitUntil 'commit', and the QR panel can paint before that event fires.
+  await context.addInitScript((css) => {
+    const add = () => {
+      if (document.getElementById('capture-hide-login-qr')) return;
+      const s = document.createElement('style');
+      s.id = 'capture-hide-login-qr';
+      s.textContent = css;
+      (document.head || document.documentElement).appendChild(s);
+    };
+    if (document.documentElement) add();
+    else new MutationObserver((_, o) => { if (document.documentElement) { o.disconnect(); add(); } }).observe(document, { childList: true });
+  }, HIDE_LOGIN_QR);
 }
+
+// /login's "Log in with QR Code" panel draws a live remote-auth token: a credential, never committed.
+// Every page of every run hides the code itself (the svg, canvas or img inside the panel) so no
+// screenshot or crop records it; the panel's box, white tile and computed styles are still read.
+// tools/redact-rules/discord.json paints the same area out of images shot before this existed.
+export const HIDE_LOGIN_QR = '[class*="qrLogin" i] :is(svg, canvas, img), [class*="qrCode" i] :is(svg, canvas, img)'
+  + ' { visibility: hidden !important; }';
 
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
   const browser = await chromium.launch();
