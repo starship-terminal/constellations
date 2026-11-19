@@ -137,13 +137,22 @@ def _is_ip(host: str) -> bool:
         return False
 
 
+def _norm_host(host: str) -> str:
+    """Lowercase, no brackets or root dot, and an IP address in its canonical
+    form, so a listed 0:0:0:0:0:0:0:1 matches a request for [::1]."""
+    host = host.strip().lower().strip("[]").rstrip(".")
+    try:
+        return str(ipaddress.ip_address(host))
+    except ValueError:
+        return host
+
+
 def _listed_hosts() -> list[str]:
     """DESIGN_SYSTEMS_PROVIDER_HOSTS: comma-separated host names (each also
     covering its subdomains) or exact IP addresses, from the environment or
     the repo .env."""
     _env.load_env((PROVIDER_HOSTS_ENV,))
-    return [h.strip().lower().strip("[]").rstrip(".")
-            for h in (os.environ.get(PROVIDER_HOSTS_ENV) or "").split(",") if h.strip()]
+    return [_norm_host(h) for h in (os.environ.get(PROVIDER_HOSTS_ENV) or "").split(",") if h.strip()]
 
 
 def provider_host_allowed(host: str) -> bool:
@@ -154,7 +163,7 @@ def provider_host_allowed(host: str) -> bool:
     and read the status back. Loopback names and IP literals pass only when
     listed exactly, which is how a self-hosted model on this machine is opted
     in (DESIGN_SYSTEMS_PROVIDER_HOSTS=localhost)."""
-    host = host.lower().rstrip(".")
+    host = _norm_host(host)
     listed = _listed_hosts()
     if host in listed:
         return True

@@ -543,6 +543,11 @@ class ProviderHostTest(unittest.TestCase):
         self.assertFalse(self._allowed("http://models.corp.test/v1", listed))
         self.assertFalse(self._allowed("http://127.0.0.2/v1", listed))
 
+    def test_listed_ipv6_matches_in_any_spelling(self):
+        self.assertTrue(self._allowed("http://[0:0:0:0:0:0:0:1]:11434/v1", "0:0:0:0:0:0:0:1"))
+        self.assertTrue(self._allowed("http://[::1]:11434/v1", "0:0:0:0:0:0:0:1"))
+        self.assertTrue(self._allowed("http://[0:0:0:0:0:0:0:1]/v1", "[::1]"))
+
     def test_refused_host_is_never_fetched(self):
         with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_PROVIDER_HOSTS": ""}), \
                 mock.patch.object(chat._opener, "open", side_effect=AssertionError("fetched")):

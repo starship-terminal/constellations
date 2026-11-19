@@ -12,8 +12,19 @@ export const KNOWN_PROVIDER_HOSTS = [
 
 export const PROVIDER_HOSTS_ENV = "DESIGN_SYSTEMS_PROVIDER_HOSTS";
 
-/** Lowercase, no IPv6 brackets, no trailing root dot. */
-export const bareHost = (h: string) => h.trim().toLowerCase().replace(/^\[|\]$/g, "").replace(/\.$/, "");
+const strip = (h: string) => h.trim().toLowerCase().replace(/^\[|\]$/g, "").replace(/\.$/, "");
+
+/** Lowercase, no IPv6 brackets or root dot, and parsed the way a request URL
+    is, so a listed 0:0:0:0:0:0:0:1 matches a request for [::1]. */
+export const bareHost = (h: string) => {
+  const s = strip(h);
+  if (!s) return s;
+  try {
+    return strip(new URL(`http://${s.includes(":") ? `[${s}]` : s}/`).hostname);
+  } catch {
+    return s;
+  }
+};
 
 const isIp = (h: string) => /^\d{1,3}(\.\d{1,3}){3}$/.test(h) || h.includes(":");
 const isLoopback = (h: string) => h === "localhost" || h.endsWith(".localhost") || h === "::1" || /^127\.\d+\.\d+\.\d+$/.test(h);

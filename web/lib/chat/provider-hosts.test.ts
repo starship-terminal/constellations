@@ -42,4 +42,10 @@ describe("providerHostAllowed", () => {
     assert.ok(providerHostAllowed(host("http://[::1]:8000/models"), listed));
     assert.ok(!providerHostAllowed(host("http://127.0.0.2/v1"), listed));
   });
+
+  it("matches a listed IPv6 address in any spelling", () => {
+    assert.ok(providerHostAllowed(host("http://[0:0:0:0:0:0:0:1]:11434/v1"), "0:0:0:0:0:0:0:1"));
+    assert.ok(providerHostAllowed(host("http://[::1]:11434/v1"), "0:0:0:0:0:0:0:1"));
+    assert.ok(providerHostAllowed(host("http://[0:0:0:0:0:0:0:1]/v1"), "[::1]"));
+  });
 });
