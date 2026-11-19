@@ -374,16 +374,37 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
     base_expected = coverage_mod.build(directory, base)
     if actual == base_expected or actual == expected:
         return True
-    return coverage_contains(base_expected, actual) and coverage_contains(expected, actual)
+    # The branch regenerated coverage against an older base. Shared domains
+    # must still match the merge. A domain only the branch file has must be
+    # one of the rows this pull request adds, unchanged.
+    added = [row for slug, row in head_rows.items() if slug not in base_rows]
+    added_expected = coverage_mod.build(
+        directory, {**head_catalog, "systems": list(base.get("systems") or []) + added})
+    return (coverage_shared_ok(expected, actual)
+            and coverage_extras_are_added(actual, expected, added_expected))
 
 
-def coverage_contains(outer: dict, inner: dict) -> bool:
-    """True when every domain inner derived is present, unchanged, in outer."""
+def coverage_shared_ok(expected: dict, actual: dict) -> bool:
+    """Every domain in both files has the same derived row."""
     for key in ("matched", "missing", "systems_absent_from_catalog"):
-        inner_map = inner.get(key) or {}
-        outer_map = outer.get(key) or {}
-        for dom, row in inner_map.items():
-            if outer_map.get(dom) != row:
+        expected_map = expected.get(key) or {}
+        actual_map = actual.get(key) or {}
+        for dom in set(expected_map) & set(actual_map):
+            if expected_map[dom] != actual_map[dom]:
+                return False
+    return True
+
+
+def coverage_extras_are_added(actual: dict, expected: dict, added_expected: dict) -> bool:
+    """A domain only the committed file has is exactly what the added rows derive."""
+    for key in ("matched", "missing", "systems_absent_from_catalog"):
+        actual_map = actual.get(key) or {}
+        expected_map = expected.get(key) or {}
+        added_map = added_expected.get(key) or {}
+        for dom, row in actual_map.items():
+            if dom in expected_map:
+                continue
+            if added_map.get(dom) != row:
                 return False
     return True
 
