@@ -20343,6 +20343,79 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "nothing",
+      "name": "Nothing",
+      "url": "https://nothing.tech/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "hardware-brand marketing: a declared greyscale and accent token layer (--greyscale-100..1000, --accent-yellow/red/blue), NType82 body type with Ndot product names, 4px controls, a frosted header pill, and a page-level dark theme on Nothing OS",
+      "tags": [
+        "web",
+        "hardware",
+        "marketing",
+        "e-commerce",
+        "design-tokens",
+        "light",
+        "dark",
+        "signed-out",
+        "ntype"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "read-only public signed-out pages (home, about, nothing-os, phone-4a-pro, support centre). Account login asks for a password and was not entered. Add to bag and contact-support were not submitted.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/nothing/README.md",
+      "tokens": "systems/nothing/tokens.json",
+      "styleGuide": "systems/nothing/style-guide.html",
+      "preview": {
+        "cover": "systems/nothing/icon.png",
+        "icon": "systems/nothing/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.surface.footer",
+            "text": "light.text.ink",
+            "muted": "light.text.muted",
+            "accent": "light.action.accent",
+            "border": "light.border.hairline"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.surface.footer",
+            "text": "dark.text.ink",
+            "muted": "dark.text.muted",
+            "accent": "dark.action.accent",
+            "border": "dark.border.hairline"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "nothing.tech 2026-11-19",
+        "durationMin": 40,
+        "method": "public-web",
+        "source": "T3 preview tab on the public signed-out UK site. Computed styles from the live DOM. Cross-origin Oxygen stylesheets fetched and parsed because the CSSOM blocked them. Viewport 1169x731 at devicePixelRatio 2.",
+        "timestamp": "2026-11-19T01:10:00Z",
+        "gaps": "No screenshots: preview_snapshot returned 'The browser is not producing screenshot frames'. No 1440 or 390 pass. Password login and checkout not entered."
+      },
+      "layoutGaps": {
+        "screenshots/": "The T3 preview browser returned 'The browser is not producing screenshot frames', so no PNG was saved.",
+        "components/": "No crops. The same screenshot failure blocked element captures.",
+        "icons/": "Icon extraction was not run. The wordmark is text in the header pill."
+      }
     }
   ]
 }
