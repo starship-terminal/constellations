@@ -20343,6 +20343,65 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pattern-brands",
+      "name": "Pattern Brands",
+      "url": "https://patternbrands.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Retail brand index: white page, forest-green pill and footer, P22 Mackinac Pro at weight 400, Cadiz footer links, three brand cards",
+      "tags": [
+        "web",
+        "retail",
+        "marketing",
+        "light",
+        "pill",
+        "brand"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out, public marketing only",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/pattern-brands/README.md",
+      "tokens": "systems/pattern-brands/tokens.json",
+      "styleGuide": "systems/pattern-brands/style-guide.html",
+      "preview": {
+        "cover": "systems/pattern-brands/icon.png",
+        "icon": "systems/pattern-brands/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.footer"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public site 2026-11-19",
+        "route": "public-web",
+        "pr": "https://github.com/starship-terminal/constellations/pull/735",
+        "durationMin": 40,
+        "durationNote": "live computed styles in the T3 preview browser; screenshot frames were not produced"
+      },
+      "layoutGaps": {
+        "components/": "no component crops; the preview browser returned The browser is not producing screenshot frames",
+        "screenshots/": "preview snapshot failed with The browser is not producing screenshot frames; values were read from computed styles instead"
+      }
     }
   ]
 }
