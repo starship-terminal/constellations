@@ -20343,6 +20343,58 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "weights-biases",
+      "name": "Weights & Biases",
+      "url": "https://wandb.ai/site",
+      "category": "ai-research",
+      "platform": "web",
+      "goodFor": "A dark MLOps marketing page on ink and teal, plus a light Forge sign-in: Source Serif 4 display, Source Sans 3 UI, an 8px teal gradient button, and a 4px cobalt form button.",
+      "tags": ["web", "ai-research", "mlops", "marketing", "signed-out", "design-tokens"],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Marketing home and privately hosted pricing were public. Forge login and signup were measured and not submitted. Signup offers Google, GitHub and Microsoft as well as email, so no account was created. No card, plan, or API key was entered.",
+      "themes": ["dark", "light"],
+      "widths": [1440, 390],
+      "entry": "systems/weights-biases/README.md",
+      "tokens": "systems/weights-biases/tokens.json",
+      "styleGuide": "systems/weights-biases/style-guide.html",
+      "preview": {
+        "cover": "systems/weights-biases/icon.png",
+        "icon": "systems/weights-biases/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.surface",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.text.accent",
+            "border": "dark.color.border.default"
+          },
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.action.primary",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": ["core.fontFamily.sans"]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "wandb.ai/site 2026-11-19",
+        "route": "public-web",
+        "durationMin": 40
+      },
+      "layoutGaps": {
+        "components/": "The preview browser produced no screenshot frames, so no component crops were saved.",
+        "screenshots/": "The preview browser produced no screenshot frames. No image was invented. The catalog cover is icon.png."
+      }
     }
   ]
 }
