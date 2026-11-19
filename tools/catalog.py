@@ -86,7 +86,7 @@ def atomic_write(path: Path, text: str) -> None:
 
 
 def load_catalog() -> dict:
-    return json.loads((ROOT / "catalog.json").read_text())
+    return json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
 
 
 # ---------------------------------------------------------------- tokens
@@ -194,7 +194,7 @@ def resolver_for(tokens_path: str) -> Resolver:
 
 @functools.lru_cache(maxsize=256)
 def _resolver(tokens_path: str, mtime_ns: int, size: int) -> Resolver:
-    return Resolver(json.loads((ROOT / tokens_path).read_text()))
+    return Resolver(json.loads((ROOT / tokens_path).read_text(encoding="utf-8")))
 
 
 resolver_for.cache_clear = _resolver.cache_clear
@@ -454,7 +454,7 @@ def signed_url_pattern(spec: dict) -> re.Pattern:
     return re.compile(r"(?:[?&#]|%3F|%26|%23)(?:amp;)?(" + "|".join(names) + r")(?:=|%3D)", re.I)
 
 
-SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text()))
+SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text(encoding="utf-8")))
 
 
 def input_error(message: str):
@@ -469,7 +469,7 @@ def read_json_object(path, what: str) -> dict:
     when it is missing, unreadable, not valid JSON or not an object."""
     path = Path(path).expanduser()
     try:
-        data = json.loads(path.read_text())
+        data = json.loads(path.read_text(encoding="utf-8"))
     except FileNotFoundError:
         input_error(f"{what} {path} not found")
     except (OSError, UnicodeDecodeError) as e:
@@ -915,7 +915,7 @@ def design_md(system: dict) -> str:
     front, theme, sources = data["front"], data["theme"], data["sources"]
     pkg = ROOT / "systems" / system["slug"]
     tokens_rel = Path(system["tokens"]).relative_to(f"systems/{system['slug']}").as_posix()
-    intro, parts = readme_parts((pkg / "README.md").read_text())
+    intro, parts = readme_parts((pkg / "README.md").read_text(encoding="utf-8"))
     src = lambda group: " and ".join(f"`{p.rstrip('.')}`" for p in sources[group])
     # The themes the token file holds beyond the exported one — the catalog's
     # `themes` can name captured surfaces that never became a token set
@@ -1335,7 +1335,7 @@ def layout_gaps(slug: str) -> tuple[list[str], list[str]]:
         if not path.exists() or path.is_dir() != part.endswith("/") or path in ignored:
             missing.append(part)
     readme = folder / "README.md"
-    rows = file_table(readme.read_text()) if readme.is_file() else []
+    rows = file_table(readme.read_text(encoding="utf-8")) if readme.is_file() else []
     unlisted = []
     for entry in sorted(folder.iterdir()):
         if entry.name.startswith(".") or entry.name == "README.md" or entry in ignored:
@@ -1399,7 +1399,7 @@ def design_md_problems(system: dict) -> list[str]:
         fresh = design_md(system)
     except Exception as e:  # report, so the rest of the catalog is still checked
         return [f"{slug}: DESIGN.md generation failed: {type(e).__name__}: {e}"]
-    if path.read_text() != fresh:
+    if path.read_text(encoding="utf-8") != fresh:
         return [f"{slug}: systems/{slug}/DESIGN.md is out of date or hand-edited; run `make design-md`"]
     return []
 
@@ -1546,8 +1546,8 @@ def load_refero() -> list[tuple[Path, dict, dict]]:
                   file=sys.stderr)
             continue
         try:
-            meta = json.loads(meta_path.read_text())
-            ds = json.loads(ds_path.read_text())
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            ds = json.loads(ds_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as e:
             print(f"warning: skipping refero/{folder.name}: {e}", file=sys.stderr)
             continue
@@ -1579,7 +1579,7 @@ def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
     design-system keys the page renders (REFERO_DS_KEYS), and `similar` with each
     business name resolved to a refero slug where one matches."""
     slug = meta.get("slug") or folder.name
-    text = lambda name: (folder / name).read_text() if (folder / name).is_file() else None
+    text = lambda name: (folder / name).read_text(encoding="utf-8") if (folder / name).is_file() else None
     media = {
         key: _refero_asset(kind, slug,
                            refero_media.favicon_url(meta.get("source_url"))
@@ -1684,7 +1684,7 @@ def build() -> Path:
             "cover": cover,
             "icon": s["preview"].get("icon"),
             "swatches": swatches(s),
-            "tokenGroups": [k for k in json.loads((ROOT / s["tokens"]).read_text())
+            "tokenGroups": [k for k in json.loads((ROOT / s["tokens"]).read_text(encoding="utf-8"))
                             if not k.startswith("$")],
             "fonts": fonts(s),
             "score": scores.get(s["slug"]),
@@ -1714,7 +1714,7 @@ def build_exports(systems: list[dict]) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     written = set()
     for s in systems:
-        tokens = json.loads((ROOT / s["tokens"]).read_text())
+        tokens = json.loads((ROOT / s["tokens"]).read_text(encoding="utf-8"))
         exported = export_tokens(tokens, s["themes"])
         atomic_write(out_dir / f"{s['slug']}.css", export_css(exported) + "\n")
         atomic_write(out_dir / f"{s['slug']}.json", json.dumps(exported, indent=2) + "\n")
@@ -1819,7 +1819,7 @@ def main() -> None:
         print("\n".join(hits) if hits else f"no private text found in {args.folder}")
         sys.exit(1 if hits else 0)
     if args.cmd == "contrast":
-        rows = contrast(json.loads(args.file.read_text()), args.theme, args.pairs, args.over)
+        rows = contrast(json.loads(args.file.read_text(encoding="utf-8")), args.theme, args.pairs, args.over)
         for r in rows:
             ratio = f"{r['ratio']:5.2f}:1" if r["ratio"] is not None else "   -   "
             note = {"missing": "a token does not resolve to a colour",
@@ -1862,7 +1862,7 @@ def main() -> None:
             if not system:
                 sys.exit(f"no package {args.slug}; run `find` to list them, or pass --file")
             tokens_path, themes = ROOT / system["tokens"], system["themes"]
-        exported = export_tokens(json.loads(Path(tokens_path).read_text()), themes)
+        exported = export_tokens(json.loads(Path(tokens_path).read_text(encoding="utf-8")), themes)
         print(export_css(exported) if args.format == "css" else json.dumps(exported, indent=2))
         if exported["unresolved"]:
             print(f"warning: {len(exported['unresolved'])} tokens have a reference that points at nothing "

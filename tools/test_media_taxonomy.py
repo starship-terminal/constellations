@@ -4,6 +4,7 @@ from __future__ import annotations
 import importlib.util
 import json
 import os
+import sys
 import subprocess
 import unittest
 from unittest import mock
@@ -28,6 +29,19 @@ class TermIdTest(unittest.TestCase):
         self.assertEqual(taxonomy.term_id("g", "&"), "g:u-26")
         self.assertEqual(taxonomy.term_id("g", "★ ☆"), "g:u-2605-20-2606")
         self.assertEqual(taxonomy.term_id("g", ""), "g:u-")
+
+
+class AsciiLocaleTest(unittest.TestCase):
+    def test_the_seed_builds_under_an_ascii_locale_with_utf8_mode_off(self):
+        # catalog.json and the tokens files hold non-ASCII text; every read must say UTF-8.
+        code = ("import importlib.util, sys; s = importlib.util.spec_from_file_location('t', sys.argv[1]); "
+                "m = importlib.util.module_from_spec(s); s.loader.exec_module(m); "
+                "print(len(m.build()['packages']))")
+        env = {**os.environ, "LC_ALL": "C", "LANG": "C", "PYTHONUTF8": "0", "PYTHONCOERCECLOCALE": "0"}
+        run = subprocess.run([sys.executable, "-c", code, str(ROOT / "app/scripts/build-media-taxonomy.py")],
+                             capture_output=True, text=True, env=env, encoding="utf-8")
+        self.assertEqual(run.returncode, 0, run.stderr[-2000:])
+        self.assertGreater(int(run.stdout.strip()), 0)
 
 
 class FontEvidenceTest(unittest.TestCase):
