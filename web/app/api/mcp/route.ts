@@ -91,6 +91,9 @@ export async function POST(req: Request) {
   // that reads larger than it declared.
   const text = await req.text();
   if (textOverLimit(text)) return tooLargeResponse();
+  // An empty body is an invalid request, not a parse error, as in server/routes.py.
+  if (text === "")
+    return Response.json({ jsonrpc: "2.0", id: null, error: { code: -32600, message: "a JSON-RPC body is required" } }, { status: 400 });
   let raw: unknown;
   try {
     raw = JSON.parse(text);
