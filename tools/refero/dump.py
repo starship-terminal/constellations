@@ -366,20 +366,36 @@ def _statements(sql_text: str):
         raise DumpError("schema.sql ends inside a statement")
 
 
+# What render() writes into schema.sql, and so all load() will run from it:
+# `PRAGMA <one of PRAGMAS>=<integer or quoted string>`, CREATE TABLE, and the
+# other objects sqlite_master can hold. schema.sql merges like any text file,
+# so anything else (ATTACH, a write, another PRAGMA) is refused, not run.
+PRAGMA_STMT = re.compile(r"PRAGMA\s+(\w+)\s*=\s*(?:-?\d+|'[^']*')\s*;?\Z", re.I)
+OTHER_OBJECTS = (["CREATE", "INDEX"], ["CREATE", "UNIQUE", "INDEX"],
+                 ["CREATE", "VIEW"], ["CREATE", "TRIGGER"])
+
+
 def parse(root: Path):
     """schema.sql split into (PRAGMA statements, CREATE TABLE statements,
-    every other statement: indexes, views, triggers), each in file order."""
+    every other statement: indexes, views, triggers), each in file order.
+    Raises DumpError for any statement render() would not have written."""
     schema = (root / "schema.sql").read_text(encoding="utf-8")
     pragmas, tables, others = [], [], []
     for stmt in _statements(schema):
-        head = stmt.split(None, 3)
-        kw = [w.upper() for w in head[:3]]
+        kw = [w.upper() for w in stmt.split(None, 3)[:3]]
         if kw[0] == "PRAGMA":
+            m = PRAGMA_STMT.match(stmt)
+            if not (m and m.group(1).lower() in PRAGMAS):
+                raise DumpError(f"schema.sql: refusing {stmt[:80]!r}: only "
+                                f"PRAGMA {', '.join(PRAGMAS)} may be set")
             pragmas.append(stmt)
         elif kw[:2] == ["CREATE", "TABLE"]:
             tables.append(stmt)
-        else:
+        elif any(kw[:len(head)] == head for head in OTHER_OBJECTS):
             others.append(stmt)
+        else:
+            raise DumpError(f"schema.sql: refusing {stmt[:80]!r}: only PRAGMAs "
+                            "and CREATE TABLE/INDEX/VIEW/TRIGGER statements load")
     return pragmas, tables, others
 
 

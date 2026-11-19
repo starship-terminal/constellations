@@ -14,6 +14,7 @@ import { agentSnippets } from "@/lib/agent-snippets";
 import { SnippetCopyButton } from "@/components/CopyButton";
 
 export interface SettingsStats {
+  /** The checkout's folder name, never its absolute path. */
   repo: string;
   systems: number | null;
   refero: number | null;
@@ -215,7 +216,13 @@ export function Settings({ stats }: { stats: SettingsStats }) {
           {models.length ? (
             <div className="pf-chips">
               {models.slice(0, 12).map((m) => (
-                <button key={m.id} type="button" className="pf-chip" onClick={() => setCfg((c) => ({ ...c, model: m.id }))}>
+                <button
+                  key={m.id}
+                  type="button"
+                  className="pf-chip"
+                  aria-pressed={cfg.model.trim() === m.id}
+                  onClick={() => setCfg((c) => ({ ...c, model: m.id }))}
+                >
                   {m.label}
                 </button>
               ))}
@@ -247,11 +254,14 @@ export function Settings({ stats }: { stats: SettingsStats }) {
             <div className="pf-field">
               <span>Theme</span>
               <div className="seg" role="group" aria-label="Theme">
-                <button type="button" aria-pressed={theme === "light"} onClick={() => applyTheme("light")}>
-                  Light
+                <button type="button" aria-pressed={theme === "system"} onClick={() => applyTheme("system")}>
+                  System
                 </button>
                 <button type="button" aria-pressed={theme === "dark"} onClick={() => applyTheme("dark")}>
                   Dark
+                </button>
+                <button type="button" aria-pressed={theme === "light"} onClick={() => applyTheme("light")}>
+                  Light
                 </button>
               </div>
             </div>
