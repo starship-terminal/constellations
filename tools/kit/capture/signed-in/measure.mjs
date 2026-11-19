@@ -416,7 +416,7 @@ async function measureSnap(browser, label, specs, out) {
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 const labels = [...new Set(SPECS.flatMap((s) => jobsFor(s).map((j) => j.snap)))].filter((l) => !ONLY.length || ONLY.includes(l));
 out._meta = {
-  read: '2026-10-04',
+  read: new Date().toLocaleDateString('en-CA'),   // the local date of this run, as the public route records it
   source: 'Static, redacted copies of the signed-in claude.ai app (tools/capture/signed-in/snapshot.js) with every stylesheet inlined, loaded from file:// in headless Chromium; fonts and images come from assets-proxy.anthropic.com through a local cache. Nothing was requested from claude.ai.',
   viewport: '1440x900 (the mobile-* snapshots 390x844), deviceScaleFactor 2',
   themes: 'Each copy was captured in the dark theme. Dark states have plain names; light states (`light`, `light-<state>`) were read from the same DOM with every [data-mode] element set to light. Every state records `theme` and `snapshot`.',
