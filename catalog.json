@@ -20343,6 +20343,69 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+    "slug": "urban-outfitters",
+    "name": "Urban Outfitters",
+    "url": "https://www.urbanoutfitters.com/",
+    "category": "e-commerce",
+    "platform": "web",
+    "goodFor": "Fashion storefront: white page, #222 ink, Helvetica 12px chrome, square black buy button, red sale price, green promo line, promo strip, sign-in dialog",
+    "tags": [
+      "web",
+      "e-commerce",
+      "fashion",
+      "marketing",
+      "light",
+      "signed-out",
+      "design-tokens"
+    ],
+    "shape": "reference",
+    "captured": "2026-11-19",
+    "access": "signed out (public marketing pages and the sign-in dialog only; no phone, email, bag, or card was entered)",
+    "themes": [
+      "light"
+    ],
+    "widths": [
+      1440
+    ],
+    "entry": "systems/urban-outfitters/README.md",
+    "tokens": "systems/urban-outfitters/tokens.json",
+    "styleGuide": "systems/urban-outfitters/style-guide.html",
+    "preview": {
+      "cover": "systems/urban-outfitters/screenshots/home-light-default.png",
+      "icon": "systems/urban-outfitters/icon.png",
+      "swatches": {
+        "light": {
+          "page": "light.background.page",
+          "surface": "light.background.secondary",
+          "text": "light.text.primary",
+          "muted": "light.text.secondary",
+          "accent": "light.action.primary",
+          "border": "light.border.default"
+        }
+      },
+      "fonts": [
+        "core.font.family.body"
+      ]
+    },
+    "capture": {
+      "harness": "Grok Build",
+      "model": "grok-4.7",
+      "route": "public-web",
+      "durationMin": 90,
+      "version": "signed-out storefront, 2026-11-19",
+      "gaps": [
+        "preview browser returned no screenshot frames",
+        "phone number and email were not entered",
+        "bag, checkout, and payment were not opened",
+        "390 width was not measured",
+        "no dark theme was offered"
+      ]
+    },
+    "layoutGaps": {
+      "icons/": "icon extraction was not run; the site icon is icon.png and control marks were measured, not exported as SVG"
     }
+  }
   ]
 }
