@@ -1,0 +1,2 @@
+file	role	source
+gap	No SVG wordmark was in the painted header	The home logo is a spritesheet div, class volks-logo-animated. Social marks are inline SVG at 30px. They were not extracted.

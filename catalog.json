@@ -20343,6 +20343,62 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "volkshotel",
+      "name": "Volkshotel",
+      "url": "https://www.volkshotel.nl/",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Hotel marketing: white page, grey bands, black footer, 3px square buttons that invert on hover, Century Old Style titles, Apercu UI",
+      "tags": [
+        "web",
+        "hotel",
+        "travel",
+        "marketing",
+        "editorial"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing only; booking, gift card and the newsletter iframe were not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/volkshotel/README.md",
+      "tokens": "systems/volkshotel/tokens.json",
+      "styleGuide": "systems/volkshotel/style-guide.html",
+      "preview": {
+        "cover": "systems/volkshotel/screenshots/home-light-default.png",
+        "icon": "systems/volkshotel/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.fill",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.text",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 70,
+        "pr": "https://github.com/starship-terminal/constellations/pull/888"
+      },
+      "layoutGaps": {
+        "components/": "No crops. preview_snapshot returned no frames, and crops were not cut from the later Playwright shots."
+      }
     }
   ]
 }
