@@ -20343,6 +20343,63 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "playstation",
+      "name": "PlayStation",
+      "url": "https://www.playstation.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Console marketing and signed-out store chrome: white nav, blue Sign In pill, navy hero, store tabs, product tiles, and the Sony account signup wall",
+      "tags": [
+        "web",
+        "games",
+        "marketing",
+        "store",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (the Sony account form was not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/playstation/README.md",
+      "tokens": "systems/playstation/tokens.json",
+      "styleGuide": "systems/playstation/style-guide.html",
+      "preview": {
+        "cover": "systems/playstation/icon.png",
+        "icon": "systems/playstation/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.background.action",
+            "border": "light.border.field"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sst",
+          "core.fontFamily.nav"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45,
+        "pr": "https://github.com/starship-terminal/constellations/pull/756",
+        "version": "en-SG marketing and store, 2026-11-19"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot failed with The browser is not producing screenshot frames. No PNG was invented.",
+        "icons/": "The wordmark and nav glyphs stay on playstation.com. No SVG set was lifted."
+      }
     }
   ]
 }
