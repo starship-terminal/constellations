@@ -159,6 +159,9 @@ export function AppShell({ children }: { children: ReactNode }) {
     [historyFailed, setHistoryFailed] = useState(false);
   // Only the newest history request may update the list or its failure state.
   const historyRequest = useRef(0);
+  function reloadWhenShown() {
+    if (document.visibilityState === "visible") reload();
+  }
   function reload() {
     const request = ++historyRequest.current;
     api("/api/conversations")
@@ -172,11 +175,19 @@ export function AppShell({ children }: { children: ReactNode }) {
       });
   }
   // Pages that change research dispatch "research-history"; moving between
-  // pages changes nothing, so it does not refetch.
+  // pages changes nothing, so it does not refetch. Research created or
+  // renamed in another tab or window arrives when this one is shown or
+  // focused again.
   useEffect(() => {
     reload();
     window.addEventListener("research-history", reload);
-    return () => window.removeEventListener("research-history", reload);
+    document.addEventListener("visibilitychange", reloadWhenShown);
+    window.addEventListener("focus", reload);
+    return () => {
+      window.removeEventListener("research-history", reload);
+      document.removeEventListener("visibilitychange", reloadWhenShown);
+      window.removeEventListener("focus", reload);
+    };
   }, []);
   useEffect(() => {
     setMobile(false);
