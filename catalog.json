@@ -20128,6 +20128,82 @@
         "durationMin": 40,
         "pr": ""
       }
+    },
+{
+      "slug": "runey",
+      "name": "Runey",
+      "url": "https://runey.app/",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Freelance invoicing marketing: a pale page, a grey gradient pill for the one action, white plan cards, and a signed-out email form",
+      "tags": [
+        "web",
+        "invoicing",
+        "finance",
+        "marketing",
+        "saas",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing page plus the /auth sign-in and sign-up views; nothing was typed, nothing was submitted, and Google was not followed)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/runey/README.md",
+      "tokens": "systems/runey/tokens.json",
+      "styleGuide": "systems/runey/style-guide.html",
+      "preview": {
+        "cover": "systems/runey/screenshots/home-light-default.png",
+        "icon": "systems/runey/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.card",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.card",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "runey.app. The T3 preview tab loaded the home and /auth pages and computed styles were read there. The preview tab could not produce screenshot frames, so screenshots, crops, hover and focus were taken in headless Playwright on pages that had already loaded with no Cloudflare challenge. Nothing was typed or submitted.",
+        "timestamp": "2026-11-19T02:05:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/auth"
+        ],
+        "gaps": [
+          "the product app sits behind sign-in and was not entered",
+          "Google was not followed",
+          "sign-up asks for a full name as well as email, so nothing was typed and nothing was submitted",
+          "no error, loading or signed-in state was shown",
+          "dark tokens are declared under .dark and were not painted",
+          "the preview tab could not produce screenshot frames"
+        ],
+        "durationMin": 40
+      }
     }
   ]
 }
