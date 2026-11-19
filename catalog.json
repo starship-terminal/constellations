@@ -20343,6 +20343,69 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "ripple",
+      "name": "Ripple",
+      "url": "https://ripple.com",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Institutional finance marketing: TT Ripple headlines, a blue liquid pill (#005bcc) on a dark hero, white bands, a 12px mega-menu, and a declared BDS plus marketing colour ramp",
+      "tags": [
+        "web",
+        "finance",
+        "crypto",
+        "marketing",
+        "design-tokens",
+        "light",
+        "pills",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (wallet, account, KYC and the sales form were not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/ripple/README.md",
+      "tokens": "systems/ripple/tokens.json",
+      "styleGuide": "systems/ripple/style-guide.html",
+      "preview": {
+        "cover": "systems/ripple/screenshots/home-light-default.png",
+        "icon": "systems/ripple/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.raised",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.subtle"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "none",
+        "durationMin": 90,
+        "gaps": [
+          "Wallet connect, sign-in, account creation and KYC were not entered.",
+          "https://ripple.com/contact/sales/ embeds a form from go.ripple.com. It was not filled and not submitted.",
+          "The Osano cookie banner was hidden and never accepted or denied.",
+          "Search was typed into (payments) and not submitted.",
+          "No dark theme control exists. prefers-color-scheme: dark did not change the page."
+        ]
+      }
     }
   ]
 }
