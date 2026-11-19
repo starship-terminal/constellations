@@ -20343,6 +20343,68 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "zara-home",
+      "name": "Zara Home",
+      "url": "https://www.zarahome.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Home retail: square-corner storefront, one ZH-Sans family, 0.2px tracking, ink buttons, translucent Add on photography",
+      "tags": [
+        "web",
+        "retail",
+        "home",
+        "editorial",
+        "square",
+        "sans"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (worldwide market gate, International homepage, category, product, search, error page)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/zara-home/README.md",
+      "tokens": "systems/zara-home/tokens.json",
+      "styleGuide": "systems/zara-home/style-guide.html",
+      "preview": {
+        "cover": "systems/zara-home/screenshots/specimen-light-default.png",
+        "icon": "systems/zara-home/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "zarahome.com front 2.11.18, 2026-11-19",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/906",
+        "gaps": [
+          "Screenshots of the site were not saved: preview_snapshot returned 'The browser is not producing screenshot frames'. Headless Playwright returned HTTP 403 Access Denied.",
+          "Viewport was the preview pane at 1169x731, not 1440 or 390",
+          "Dark theme not shown",
+          "Did not add to bag, check out, enter a card, phone or address, or create an account"
+        ]
+      },
+      "layoutGaps": {
+        "components/": "element crops need screenshots of the product, which the preview browser did not produce"
+      }
     }
   ]
 }
