@@ -1,0 +1,135 @@
+{
+ "button-google-default": null,
+ "button-google-hover": {
+  "style": {
+   "text": "Continue with Google",
+   "color": "rgb(242, 242, 242)",
+   "backgroundColor": "rgb(48, 52, 70)",
+   "borderRadius": "9999px",
+   "fontSize": "16.702px",
+   "fontWeight": "400",
+   "lineHeight": "25.053px",
+   "padding": "16.702px 25.053px",
+   "border": "1px solid rgb(52, 56, 76)",
+   "height": "50.0938px",
+   "fontFamily": "Sen, Sen, \"Sen Variable\", \"Space Grotesk\", \"Hanken Grotesk\", \"Hanken Grotesk Variable\", Nunito, Teachers, Montserrat, \"Proxima Nova\", Poppins, \"Noto Sans\", sans-serif",
+   "boxShadow": "none"
+  },
+  "box": {
+   "x": 909.78125,
+   "y": 266.5625,
+   "width": 365.46875,
+   "height": 50.09375
+  }
+ },
+ "button-apple-default": {
+  "style": {
+   "text": "Continue with Apple",
+   "color": "rgb(242, 242, 242)",
+   "backgroundColor": "rgb(37, 40, 55)",
+   "borderRadius": "9999px",
+   "fontSize": "16.702px",
+   "fontWeight": "400",
+   "lineHeight": "25.053px",
+   "padding": "16.702px 25.053px",
+   "border": "1px solid rgba(0, 0, 0, 0)",
+   "height": "50.0938px",
+   "fontFamily": "Sen, Sen, \"Sen Variable\", \"Space Grotesk\", \"Hanken Grotesk\", \"Hanken Grotesk Variable\", Nunito, Teachers, Montserrat, \"Proxima Nova\", Poppins, \"Noto Sans\", sans-serif",
+   "boxShadow": "none"
+  },
+  "box": {
+   "x": 909.78125,
+   "y": 333.34375,
+   "width": 365.46875,
+   "height": 50.09375
+  }
+ },
+ "button-offline-default": {
+  "style": {
+   "text": "Continue offline Single device use & free forever. No signup required.",
+   "color": "rgb(242, 242, 242)",
+   "backgroundColor": "rgb(21, 24, 35)",
+   "borderRadius": "0px 0px 6.26325px 6.26325px",
+   "fontSize": "16.702px",
+   "fontWeight": "400",
+   "lineHeight": "25.053px",
+   "padding": "12.5265px",
+   "border": "1px solid rgb(52, 56, 76)",
+   "height": "250.516px",
+   "fontFamily": "Sen, Sen, \"Sen Variable\", \"Space Grotesk\", \"Hanken Grotesk\", \"Hanken Grotesk Variable\", Nunito, Teachers, Montserrat, \"Proxima Nova\", Poppins, \"Noto Sans\", sans-serif",
+   "boxShadow": "none"
+  },
+  "box": {
+   "x": 892.09375,
+   "y": 472.3125,
+   "width": 400.84375,
+   "height": 250.515625
+  }
+ },
+ "button-offline-hover": {
+  "style": {
+   "text": "Continue offline Single device use & free forever. No signup required.",
+   "color": "rgb(242, 242, 242)",
+   "backgroundColor": "rgb(21, 24, 35)",
+   "borderRadius": "0px 0px 6.26325px 6.26325px",
+   "fontSize": "16.702px",
+   "fontWeight": "400",
+   "lineHeight": "25.053px",
+   "padding": "12.5265px",
+   "border": "1px solid rgb(52, 56, 76)",
+   "height": "250.516px",
+   "fontFamily": "Sen, Sen, \"Sen Variable\", \"Space Grotesk\", \"Hanken Grotesk\", \"Hanken Grotesk Variable\", Nunito, Teachers, Montserrat, \"Proxima Nova\", Poppins, \"Noto Sans\", sans-serif",
+   "boxShadow": "none"
+  },
+  "box": {
+   "x": 892.09375,
+   "y": 472.3125,
+   "width": 400.84375,
+   "height": 250.515625
+  }
+ },
+ "link-terms-default": {
+  "style": {
+   "text": "Terms of Service",
+   "color": "rgb(201, 201, 201)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "borderRadius": "0px",
+   "fontSize": "13.3616px",
+   "fontWeight": "400",
+   "lineHeight": "20.0424px",
+   "padding": "0px",
+   "border": "0px solid rgb(229, 231, 235)",
+   "height": "20.0312px",
+   "fontFamily": "Sen, Sen, \"Sen Variable\", \"Space Grotesk\", \"Hanken Grotesk\", \"Hanken Grotesk Variable\", Nunito, Teachers, Montserrat, \"Proxima Nova\", Poppins, \"Noto Sans\", sans-serif",
+   "boxShadow": "none"
+  },
+  "box": {
+   "x": 1079.265625,
+   "y": 784.796875,
+   "width": 103.578125,
+   "height": 20.03125
+  }
+ },
+ "heading-welcome": {
+  "style": {
+   "text": "Welcome to Memotron",
+   "color": "rgb(242, 242, 242)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "borderRadius": "0px",
+   "fontSize": "21.9297px",
+   "fontWeight": "500",
+   "lineHeight": "32.8946px",
+   "padding": "0px",
+   "border": "0px solid rgb(229, 231, 235)",
+   "height": "32.9062px",
+   "fontFamily": "Sen, Sen, \"Sen Variable\", \"Space Grotesk\", \"Hanken Grotesk\", \"Hanken Grotesk Variable\", Nunito, Teachers, Montserrat, \"Proxima Nova\", Poppins, \"Noto Sans\", sans-serif",
+   "boxShadow": "none"
+  },
+  "box": {
+   "x": 973.53125,
+   "y": 50.09375,
+   "width": 237.96875,
+   "height": 32.90625
+  }
+ }
+}
