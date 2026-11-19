@@ -20343,6 +20343,98 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "tripadvisor",
+      "name": "Tripadvisor",
+      "url": "https://www.tripadvisor.com",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Public travel search: a white page, Trip Sans, pine text #002B11, a #00EB5B search pill, 1000px header pills, 8px photo cards, and a declared dark token set that the public pages did not paint",
+      "tags": [
+        "web",
+        "travel",
+        "search",
+        "reviews",
+        "marketplace",
+        "signed-out",
+        "semantic-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out; marketing and search only. Sign in, join, booking, tickets, and payment were not submitted. The join card had no phone field.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/tripadvisor/README.md",
+      "tokens": "systems/tripadvisor/tokens.json",
+      "styleGuide": "systems/tripadvisor/style-guide.html",
+      "preview": {
+        "cover": "systems/tripadvisor/icon.png",
+        "icon": "systems/tripadvisor/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.background.page",
+            "surface": "light.color.surface.neutral.weak",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.action.brand.background",
+            "border": "light.color.border.base"
+          },
+          "dark": {
+            "page": "dark.color.background.page",
+            "surface": "dark.color.surface.base",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.action.brand.background",
+            "border": "dark.color.border.base"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "source": {
+        "path": "systems/tripadvisor/raw/computed.json"
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "method": "live-preview-computed-styles",
+        "source": "https://www.tripadvisor.com signed out, T3 preview browser",
+        "at": "2026-11-19",
+        "durationMin": 90,
+        "routes": [
+          "/",
+          "/Search?q=Kyoto",
+          "/Tourism-g298564-Kyoto_Kyoto_Prefecture_Kinki-Vacations.html",
+          "/Attraction_Review-g298564-d321456-Reviews-Fushimi_Inari_taisha_Shrine-Kyoto_Kyoto_Prefecture_Kinki.html",
+          "/Hotels-g298564-Kyoto_Kyoto_Prefecture_Kinki-Hotels.html",
+          "/ShowForum-g298564-i2712-Kyoto_Kyoto_Prefecture_Kinki.html",
+          "/ShowTopic-g298564-i2712-k15604157-Kyoto_Itinerary_Review_25th_Nov_to_1st_Dec_2026-Kyoto_Kyoto_Prefecture_Kinki.html",
+          "/RegistrationController?flow=sign_up_and_save"
+        ],
+        "gaps": [
+          "Screenshots: preview_snapshot returned 'The browser is not producing screenshot frames'. Headless Playwright got HTTP 403 from captcha-delivery.com and was not used.",
+          "Dark theme is declared on :root[data-dark-theme-supported=true] and was not painted. html had no such attribute.",
+          "Sign in and Join were opened and not submitted. Continue with Google was not followed. No phone or card field was filled.",
+          "See tickets, Book now, and the hotel search were not submitted.",
+          "Cookie Allow All was not pressed.",
+          "Icons: the owl, heart, and bubble artwork are not kept.",
+          "A requested 1440px viewport stayed at innerWidth 1169. 390px was measured."
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "The T3 preview browser did not produce screenshot frames, and headless Playwright was stopped by a captcha (docs/CAPTURE.md).",
+        "components/": "No element crops. The same screenshot failure. Computed styles are in raw/computed.json.",
+        "icons/": "Tripadvisor's owl, heart, and bubble marks are its artwork and are not kept here (docs/RIGHTS.md)."
+      }
     }
   ]
 }
