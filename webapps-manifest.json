@@ -1388,9 +1388,9 @@
       "description": "Makes it easy to create sales proposals, onboarding plans, client portals, and project hubs",
       "status": "captured",
       "package": "systems/dock",
-      "notes": "",
+      "notes": "https://auth.dock.us/login asks for a Dock subdomain before any email. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 5
     },
     {
@@ -1405,9 +1405,9 @@
       "description": "Your Personal AI Doctor",
       "status": "captured",
       "package": "systems/doctronic",
-      "notes": "",
+      "notes": "https://www.doctronic.ai/?modal=signin offers a login code by email. Get Login Code did not advance after the capture inbox was entered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 5
     },
     {
@@ -1422,9 +1422,9 @@
       "description": "#1 in Electronic Signature and Intelligent Agreement Management",
       "status": "captured",
       "package": "systems/docusign",
-      "notes": "",
+      "notes": "https://account.docusign.com/ accepted the email, then asked for a password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1439,9 +1439,9 @@
       "description": "A more humane to-do list",
       "status": "captured",
       "package": "systems/dona",
-      "notes": "",
+      "notes": "https://app.dona.ai/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1456,9 +1456,9 @@
       "description": "Food, grocery and retail - fast same day delivery",
       "status": "captured",
       "package": "systems/doordash",
-      "notes": "",
+      "notes": "https://identity.doordash.com/auth stopped on a Cloudflare security verification. No email field was reached.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 5
     },
     {
@@ -1473,9 +1473,9 @@
       "description": "Just Refill",
       "status": "captured",
       "package": "systems/dopper",
-      "notes": "",
+      "notes": "https://dopper.com/account/login is a not-found page. The shop has no account sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 5
     },
     {
@@ -1490,9 +1490,9 @@
       "description": "Redefines how engineering teams handle secrets",
       "status": "captured",
       "package": "systems/doppler",
-      "notes": "",
+      "notes": "https://dashboard.doppler.com/login asks for email and password, or Google or GitHub. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1507,9 +1507,9 @@
       "description": "Mixology-crafted non-alcoholic cocktails to elevate your mood",
       "status": "captured",
       "package": "systems/drinkdouze",
-      "notes": "",
+      "notes": "https://drinkdouze.com/en/account/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1524,9 +1524,9 @@
       "description": "Community for designers",
       "status": "captured",
       "package": "systems/dribbble",
-      "notes": "",
+      "notes": "https://dribbble.com/session/new sent a passcode to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 5
     },
     {
@@ -1541,9 +1541,9 @@
       "description": "Secure Cloud Storage",
       "status": "captured",
       "package": "systems/dropbox",
-      "notes": "",
+      "notes": "https://www.dropbox.com/login accepted the email, then signup asked for a name and password. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1558,9 +1558,9 @@
       "description": "Link Management for Modern Marketing Teams",
       "status": "captured",
       "package": "systems/dub",
-      "notes": "",
+      "notes": "https://app.dub.co/login said no account exists. Signup at https://app.dub.co/register asks for a password. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1575,9 +1575,9 @@
       "description": "The new standard in website design",
       "status": "captured",
       "package": "systems/editorx",
-      "notes": "",
+      "notes": "https://www.editorx.com/login redirects to Wix Studio. https://users.wix.com/signin said the email has no account, then signup asked for a password. The form was not submitted. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1592,9 +1592,9 @@
       "description": "Swedish developer and manufacturer of musical instruments",
       "status": "captured",
       "package": "systems/elektron",
-      "notes": "",
+      "notes": "https://www.elektron.se/login asks for email and password. A code path is also offered and was not used. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1609,9 +1609,9 @@
       "description": "Create a Website Design Your Future",
       "status": "captured",
       "package": "systems/elementor",
-      "notes": "",
+      "notes": "https://my.elementor.com/login/ shows Sign in but never rendered an email field or a button. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 5
     },
     {
@@ -1626,9 +1626,9 @@
       "description": "Free AI Voice Generator & Voice Agents Platform",
       "status": "captured",
       "package": "systems/elevenlabs",
-      "notes": "",
+      "notes": "https://elevenlabs.io/app/sign-in asks for email and password, or Google, Apple, or SSO. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1643,9 +1643,9 @@
       "description": "AI Music Generator — Create & Stream Music",
       "status": "captured",
       "package": "systems/elevenmusic",
-      "notes": "",
+      "notes": "https://elevenmusic.io/login offers Google and Apple. Continue with Email stayed disabled after the capture inbox was entered. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 5
     },
     {
@@ -1660,9 +1660,9 @@
       "description": "Free Text Read Aloud App",
       "status": "captured",
       "package": "systems/elevenreader",
-      "notes": "",
+      "notes": "https://elevenreader.io/reader/sign-in asks for email and password, or Google or Apple. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1677,9 +1677,9 @@
       "description": "Personalized soundscapes",
       "status": "captured",
       "package": "systems/endel",
-      "notes": "",
+      "notes": "https://app.endel.io/login accepted the email and opened the signed-in app. No password or code was asked. The product was not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 5
     },
     {
@@ -1694,9 +1694,9 @@
       "description": "Infinite Tools, One Place",
       "status": "captured",
       "package": "systems/endless",
-      "notes": "",
+      "notes": "https://endless.io/login redirects to https://endless.app/. Sign in asks for email and password, or Apple, Google, or Microsoft. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 5
     },
     {
@@ -1711,9 +1711,9 @@
       "description": "No-coding tool to create 3D assets",
       "status": "captured",
       "package": "systems/endlesstools",
-      "notes": "",
+      "notes": "https://app.endlesstools.io/login sent a sign-in code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 5
     },
     {
