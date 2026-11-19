@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hims UK style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "CareSans", Helvetica, Arial, sans-serif;
+  --sg-serif: "Ivar Soft", "IvarSoft", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--color-page); color: var(--color-text); font: 400 16px/1.45 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+header.top h1 { font: 400 40px/1.05 var(--sg-sans); margin: 0; letter-spacing: -0.03em; }
+header.top h1 em { font-style: italic; color: var(--color-accent); }
+header.top p { margin: 0; color: var(--color-text-secondary); }
+h2 { font: 400 28px/1.15 var(--sg-sans); margin: 40px 0 12px; letter-spacing: -0.02em; }
+p.lead { max-width: 68ch; color: var(--color-text-secondary); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { border-radius: 16px; overflow: hidden; background: var(--color-surface-white); box-shadow: inset 0 0 0 1px var(--color-border); }
+.sw i { display: block; height: 72px; }
+.sw span { display: block; padding: 8px 10px 10px; font-size: 12px; }
+.sw b { display: block; font-weight: 600; }
+.sw code { color: var(--color-text-secondary); font-size: 11px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 12px 0 20px; }
+button.primary, a.primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 48px; padding: 0 22px; border-radius: 999px; border: 0;
+  background: var(--color-button-primary); color: var(--color-button-primary-text);
+  font: 500 15px/1 var(--sg-sans); text-decoration: none;
+}
+button.accent {
+  height: 48px; padding: 0 22px; border-radius: 999px; border: 0;
+  background: var(--color-button-accent); color: var(--color-button-accent-text);
+  font: 500 15px/1 var(--sg-sans);
+}
+button.ghost {
+  height: 40px; padding: 0 16px; border-radius: 999px;
+  background: transparent; color: var(--color-text);
+  border: 1px solid var(--color-border); font: 500 14px/1 var(--sg-sans);
+}
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 280px; }
+.field label { font-size: 13px; color: var(--color-text-secondary); }
+.field input {
+  height: 52px; border-radius: 12px; border: 1px solid var(--color-border);
+  background: var(--color-surface-white); padding: 0 14px; font: 400 16px/1 var(--sg-sans); color: var(--color-text);
+}
+.card {
+  width: min(280px, 100%); min-height: 140px; border-radius: 20px; padding: 16px;
+  background: var(--color-surface); color: var(--color-text);
+}
+.card em { color: var(--color-accent); font-style: italic; }
+.err { color: var(--color-form-error); font-size: 13px; }
+.type-row { display: grid; grid-template-columns: 180px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); align-items: baseline; }
+.type-row code { font-size: 12px; color: var(--color-text-secondary); }
+.note { font-size: 13px; color: var(--color-text-secondary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>hims <em>UK</em></h1>
+  <p>forhims.co.uk, one light theme. Values from tokens.json.</p>
+</header>
+<p class="lead">The UK marketing site paints a warm canvas, black pill actions, and a clay accent on italic words. Care Sans is the product face and is not loaded here, so the page falls back to Helvetica. Screenshots in screenshots/ are the evidence.</p>
+
+<h2>Colour</h2>
+<div class="swatches">
+  <div class="sw"><i style="background:var(--color-page)"></i><span><b>page</b><code>--color-page</code></span></div>
+  <div class="sw"><i style="background:var(--color-surface)"></i><span><b>surface</b><code>--color-surface</code></span></div>
+  <div class="sw"><i style="background:var(--color-text)"></i><span><b>text</b><code>--color-text</code></span></div>
+  <div class="sw"><i style="background:var(--color-text-secondary)"></i><span><b>muted</b><code>--color-text-secondary</code></span></div>
+  <div class="sw"><i style="background:var(--color-accent)"></i><span><b>accent</b><code>--color-accent</code></span></div>
+  <div class="sw"><i style="background:var(--color-border)"></i><span><b>border</b><code>--color-border</code></span></div>
+  <div class="sw"><i style="background:var(--color-button-primary)"></i><span><b>button</b><code>--color-button-primary</code></span></div>
+  <div class="sw"><i style="background:var(--color-form-error)"></i><span><b>error</b><code>--color-form-error</code></span></div>
+</div>
+
+<h2>Controls</h2>
+<div class="row">
+  <button class="primary" type="button">Explore treatments</button>
+  <button class="accent" type="button">Get started</button>
+  <button class="ghost" type="button">Login</button>
+</div>
+<div class="field">
+  <label for="email">Email address</label>
+  <input id="email" type="email" value="">
+  <span class="err">Your email is required</span>
+</div>
+
+<h2>Category card</h2>
+<div class="card">
+  <div style="font-size:22px">Lose <em>weight</em></div>
+</div>
+
+<h2>Type</h2>
+<div id="type"></div>
+<p class="note">Sizes are the declared --fontSizes-* scale. The live hero uses a fluid --b-font-size-display-* calc, recorded in raw/css-vars.json and not flattened into a single px token.</p>
+</div>
+<script>
+const tokens = /*TOKENS*/null;
+const type = (tokens.core && tokens.core.typography) || {};
+const root = document.getElementById('type');
+for (const [name, tok] of Object.entries(type)) {
+  const row = document.createElement('div');
+  row.className = 'type-row';
+  const size = tok.v.fontSize;
+  row.innerHTML = '<code>' + name + '<br>' + size + '</code><div style="font-size:' + size + '">Personalised healthcare</div>';
+  root.appendChild(row);
+}
+</script>
+</body>
+</html>

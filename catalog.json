@@ -20343,6 +20343,99 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "hims",
+      "name": "Hims",
+      "url": "https://www.forhims.co.uk",
+      "category": "fitness",
+      "platform": "web",
+      "goodFor": "UK telehealth marketing: a warm canvas (#fbf8f5 page, #eee2d7 cards), black pill CTAs, clay accent #cc835c on italic words, Care Sans, a right-hand menu drawer, and a signed-in care portal with Treatments, Messaging and Profile on the same chrome",
+      "tags": [
+        "web",
+        "telehealth",
+        "health",
+        "marketing",
+        "light",
+        "semantic-tokens",
+        "signed-out",
+        "signed-in"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out on the marketing routes; one account created at /customer/login (email and password only) so the care portal shell could be captured. Phone, birthday, payment edit, consultation and clinician chat were not entered. Ketch consent was hidden, never clicked",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/hims/README.md",
+      "tokens": "systems/hims/tokens.json",
+      "styleGuide": "systems/hims/style-guide.html",
+      "preview": {
+        "cover": "systems/hims/screenshots/home-light-default.png",
+        "icon": "systems/hims/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.text-secondary",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.sans"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/hims/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "www.forhims.co.uk in headless Chromium (Playwright), desktop 1440x900 and phone 390x844. Ketch consent hidden, never clicked. Custom properties resolved on documentElement (900 names, 9 stylesheets). Care portal screenshots taken in a second headless context holding the session cookie after an email-and-password account was created in the T3 preview browser. Profile email painted out before quantise.",
+        "timestamp": "2026-11-19T00:20:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/weight-loss",
+          "/hair-loss",
+          "/erectile-dysfunction",
+          "/premature-ejaculation",
+          "/about",
+          "/how-it-works",
+          "/blog",
+          "/conditions",
+          "/hims-reviews",
+          "/purpose",
+          "/customer/login",
+          "/migration-privacy",
+          "/c",
+          "/terms-and-conditions",
+          "/privacy-policy",
+          "/customer/treatments",
+          "/customer/support",
+          "/customer/profile"
+        ],
+        "gaps": [
+          "https://www.forhims.co.uk/customer/profile: Edit on name, phone and birthday was not opened. Those fields were empty. Phone number and date of birth were not entered.",
+          "https://www.forhims.co.uk/customer/profile: Payment Methods Edit was not opened. No card was added.",
+          "https://www.forhims.co.uk/c and category Get started links: consultation and medical intake were not started.",
+          "https://www.forhims.co.uk/customer/support: support and clinician question pills were not opened.",
+          "No government ID was requested on the account step. The next medical step was left closed.",
+          "www.forhims.com is a different host and is not this package. forhims.co.uk did not redirect there.",
+          "Dark theme: not present.",
+          "prefers-reduced-motion probe was not run. Declared durations and easings are in core.motion."
+        ],
+        "durationMin": 70,
+        "date": "2026-11-19",
+        "pr": ""
+      }
     }
   ]
 }
