@@ -138,7 +138,9 @@ def catalog_table(audit: dict, systems: list[dict]) -> str:
             health += ", re-review due"
         missing, _ = catalog.layout_gaps(slug)
         gaps = ", ".join(f"`{m}`" for m in missing) or "none"
-        lines.append(f"| <img src=\"systems/{slug}/icon.png\" width=\"20\" alt=\"{slug}\"> | "
+        icon = s.get("preview", {}).get("icon")   # absent when the entry declares the icon.png gap
+        icon_cell = f"<img src=\"{icon}\" width=\"20\" alt=\"{slug}\">" if icon else ""
+        lines.append(f"| {icon_cell} | "
                      f"[{slug}](systems/{slug}/README.md) | {cell(s.get('goodFor', ''))} | {s.get('captured', '')} "
                      f"| {', '.join(s.get('themes', []))} | {health} | {gaps} |")
     lines += ["", "<!-- catalog:end -->", ""]
