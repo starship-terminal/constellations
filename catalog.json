@@ -20343,6 +20343,68 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "trulia",
+      "name": "Trulia",
+      "url": "https://www.trulia.com/",
+      "category": "directory",
+      "platform": "web",
+      "goodFor": "Real-estate marketing homepage: white page, Figtree, grey ink, teal primary button, 8px controls, photo hero with search",
+      "tags": [
+        "web",
+        "real-estate",
+        "listings",
+        "marketing",
+        "figtree",
+        "teal"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (homepage only; listing navigation hit a PerimeterX wall and was not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/trulia/README.md",
+      "tokens": "systems/trulia/tokens.json",
+      "styleGuide": "systems/trulia/style-guide.html",
+      "preview": {
+        "cover": "systems/trulia/icon.png",
+        "icon": "systems/trulia/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/856",
+        "gaps": [
+          "preview browser did not produce screenshot frames",
+          "PerimeterX blocked /GA/Atlanta/ and then the homepage reload",
+          "sign-in, phone, and agent contact were not entered"
+        ]
+      },
+      "layoutGaps": {
+        "components/": "the preview browser produced no screenshot frames, so there are no element crops",
+        "icons/": "icon extraction was not run; the wordmark is an inline SVG and was not saved",
+        "screenshots/": "the preview browser reported that it is not producing screenshot frames"
+      }
     }
   ]
 }
