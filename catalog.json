@@ -20343,6 +20343,72 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "metaview",
+      "name": "Metaview",
+      "url": "https://www.metaview.ai",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Recruiting-product marketing: black announcement bar, warm paper page, ink pill CTAs, a three-column nav menu, mint pricing cards, and a dark signed-out auth card",
+      "tags": [
+        "web",
+        "recruiting",
+        "saas",
+        "marketing",
+        "pill",
+        "auth",
+        "light",
+        "dark"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing is public; sign-in and sign-up were opened and not submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/metaview/README.md",
+      "tokens": "systems/metaview/tokens.json",
+      "styleGuide": "systems/metaview/style-guide.html",
+      "preview": {
+        "cover": "systems/metaview/screenshots/home-light-default.png",
+        "icon": "systems/metaview/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.faded",
+            "accent": "light.background.ink",
+            "border": "light.border.divider"
+          },
+          "dark": {
+            "page": "dark.app.page",
+            "surface": "dark.app.surface",
+            "text": "dark.app.text",
+            "muted": "dark.app.muted",
+            "accent": "dark.app.action",
+            "border": "dark.app.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.inter"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "www.metaview.ai and app.metaview.ai signed-out auth, 2026-11-19",
+        "durationMin": 70,
+        "pr": "https://github.com/starship-terminal/constellations/pull/693"
+      }
     }
   ]
 }
