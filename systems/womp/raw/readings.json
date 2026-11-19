@@ -1,0 +1,47 @@
+{
+  "captured": "2026-11-19",
+  "viewportPreview": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "viewportPlaywright": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "viewportPhone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2
+  },
+  "note": "Preview browser returned 'The browser is not producing screenshot frames' on preview_snapshot. Screenshots are from headless Chromium on public marketing pages that loaded without a Cloudflare challenge. Computed styles were read from the live preview tab and confirmed in headless Chromium.",
+  "light": {
+    "page": "rgb(255, 255, 255)",
+    "text": "color(display-p3 0.125 0.125 0.125)",
+    "soft": "color(display-p3 0.939 0.939 0.939)",
+    "border": "color(display-p3 0.849 0.849 0.849)",
+    "solid": "color(display-p3 0.125 0.125 0.125)",
+    "onSolid": "color(display-p3 0.988 0.988 0.988)",
+    "focus": "color(display-p3 0.732 0.732 0.732)"
+  },
+  "dark": {
+    "page": "color(display-p3 0.067 0.067 0.067)",
+    "pageComputed": "rgb(17, 17, 17)",
+    "text": "color(display-p3 0.933 0.933 0.933)",
+    "surface": "color(display-p3 0.098 0.098 0.098)",
+    "border": "color(display-p3 0.228 0.228 0.228)",
+    "solid": "color(display-p3 0.933 0.933 0.933)",
+    "onSolid": "color(display-p3 0.067 0.067 0.067)"
+  }
+}
