@@ -20343,6 +20343,81 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "reown",
+      "name": "Reown",
+      "url": "https://reown.com",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Wallet-infrastructure marketing: grey page, black rounded hero, blue and white mono pills, orange announcement, pricing rings, signed-out docs in Inter",
+      "tags": [
+        "web",
+        "crypto",
+        "wallet",
+        "marketing",
+        "docs",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing, docs, and the sign-in wall; no wallet, no API key)",
+      "themes": [
+        "marketing",
+        "docs-dark",
+        "docs-light",
+        "sign-in"
+      ],
+      "widths": [
+        1169,
+        1440,
+        390
+      ],
+      "entry": "systems/reown/README.md",
+      "tokens": "systems/reown/tokens.json",
+      "styleGuide": "systems/reown/style-guide.html",
+      "preview": {
+        "cover": "systems/reown/screenshots/home-light-default.png",
+        "icon": "systems/reown/icon.png",
+        "swatches": {
+          "marketing": {
+            "page": "marketing.background.page",
+            "surface": "marketing.background.surface",
+            "text": "marketing.text.primary",
+            "muted": "marketing.text.muted",
+            "accent": "marketing.background.action",
+            "border": "marketing.border.stroke"
+          },
+          "docs-dark": {
+            "page": "docs-dark.background.page",
+            "surface": "docs-dark.background.surface",
+            "text": "docs-dark.text.primary",
+            "muted": "docs-dark.text.muted",
+            "accent": "docs-dark.background.action",
+            "border": "docs-dark.border.stroke"
+          },
+          "docs-light": {
+            "page": "docs-light.background.page",
+            "surface": "docs-light.background.surface",
+            "text": "docs-light.text.primary",
+            "muted": "docs-light.text.muted",
+            "accent": "docs-light.background.action",
+            "border": "docs-light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono",
+          "core.font.family.docs"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45,
+        "pr": "https://github.com/starship-terminal/constellations/pull/780"
+      }
     }
   ]
 }
