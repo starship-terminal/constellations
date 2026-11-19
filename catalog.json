@@ -20343,6 +20343,77 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "spyglass",
+      "name": "Spyglass",
+      "url": "https://spyglass.so/",
+      "category": "ai-research",
+      "platform": "web",
+      "goodFor": "A creative-research marketing site: white page, Geist body, Familjen Grotesk display, near-black 36px buttons at 6px radius, a frosted 24px nav menu, and an email-only sign-in beside a product demo.",
+      "tags": [
+        "web",
+        "marketing",
+        "research",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages and the signed-out /sign-in and /sign-up forms. Email was not entered. Google was not clicked. No plan CTA was followed.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/spyglass/README.md",
+      "tokens": "systems/spyglass/tokens.json",
+      "styleGuide": "systems/spyglass/style-guide.html",
+      "preview": {
+        "cover": "systems/spyglass/screenshots/home-light-default.png",
+        "icon": "systems/spyglass/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.ink",
+            "muted": "light.color.muted",
+            "accent": "light.color.primary",
+            "border": "light.color.border"
+          },
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.ink",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.primary",
+            "border": "dark.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.sans",
+          "core.font.display"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public site 2026-11-19",
+        "route": "public-web",
+        "durationMin": 90,
+        "gaps": [
+          "signed-in app not entered",
+          "email form not submitted",
+          "Google OAuth not entered",
+          "plan checkout not entered",
+          ".dark and data-spyglass-theme are stylesheet declarations, not visible pages",
+          "preview browser could not produce screenshot frames; screenshots are headless Chromium of the same public pages"
+        ]
+      }
     }
   ]
 }
