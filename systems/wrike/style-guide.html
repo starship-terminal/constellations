@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wrike style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #f2f5fa;
+    --title: #162136;
+    --body: #2b3a57;
+    --muted: #657694;
+    --accent: #00e05c;
+    --on-accent: #162136;
+    --link: #0073d3;
+    --footer: #162136;
+    --footer-text: #bfc7d9;
+    --input-border: #bfc7d9;
+    --popular: #ffa200;
+    --login: #008262;
+    --login-page: #f8fafc;
+    --font: "TT Norms Pro", -apple-system, system-ui, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--body); font: 400 16px/1.6 var(--font); }
+  header { padding: 20px 32px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--surface); }
+  header strong { color: var(--title); font-weight: 600; }
+  header span { color: var(--muted); font-size: 14px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 40px 32px 80px; }
+  h1 { margin: 0 0 8px; color: var(--title); font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: 0; }
+  h2 { margin: 40px 0 12px; color: var(--title); font-size: 24px; line-height: 1.2; font-weight: 600; }
+  p.lead { color: var(--muted); max-width: 68ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .sw { display: flex; gap: 10px; align-items: center; }
+  .sw i { width: 40px; height: 40px; border-radius: 8px; border: 1px solid #dce1eb; display: block; }
+  .sw b { display: block; color: var(--title); font-size: 13px; }
+  .sw small { color: var(--muted); font-size: 12px; }
+  button.accent, a.accent {
+    background: var(--accent); color: var(--on-accent); border: 2px solid transparent;
+    border-radius: 12px; height: 60px; padding: 14px 22px; font: 600 20px/28px var(--font); cursor: pointer;
+  }
+  button.small {
+    background: var(--accent); color: var(--on-accent); border: 2px solid transparent;
+    border-radius: 8px; height: 40px; padding: 8px 14px; font: 600 16px/20px var(--font);
+  }
+  button.ghost {
+    background: transparent; color: var(--title); border: 2px solid var(--title);
+    border-radius: 12px; height: 60px; padding: 14px 22px; font: 600 20px/28px var(--font);
+  }
+  button.login {
+    background: var(--login); color: #fff; border: 1px solid transparent;
+    border-radius: 12px; height: 48px; padding: 0 31px; font: 400 18px/24px -apple-system, system-ui, sans-serif;
+  }
+  label.field {
+    display: flex; align-items: center; height: 60px; width: 320px; padding: 0 20px;
+    background: var(--surface); border: 2px solid var(--input-border); border-radius: 12px; color: var(--muted);
+  }
+  .card {
+    background: var(--page); border: 2px solid #dce1eb; border-radius: 16px; padding: 24px; width: 220px;
+  }
+  .card h3 { margin: 0 0 4px; color: var(--title); font-size: 24px; }
+  .card .cap { color: var(--popular); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+  .login-panel {
+    background: #fff; border-radius: 12px; padding: 28px; width: 420px;
+    box-shadow: 0 2px 8px rgba(0, 39, 128, 0.1), 0 8px 12px rgba(0, 59, 157, 0.05);
+  }
+  .login-stage { background: var(--login-page); padding: 24px; border-radius: 12px; }
+  .login-field {
+    height: 48px; border-radius: 12px; background: rgba(0, 59, 157, 0.05);
+    display: flex; align-items: center; padding: 0 15px; color: rgba(0, 2, 27, 0.6); margin-bottom: 12px;
+    font: 400 18px/24px -apple-system, system-ui, sans-serif;
+  }
+  a.link { color: var(--link); font-weight: 600; text-decoration: none; }
+  footer.band { margin-top: 48px; background: var(--footer); color: var(--footer-text); padding: 24px 32px; border-radius: 12px; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <strong>Wrike</strong>
+  <span>Public signed-out tokens, measured 2026-11-18. One painted theme: light.</span>
+</header>
+<main>
+  <h1>Deliver work, <span style="color:#00e05c">powered by</span> humans and agents</h1>
+  <p class="lead">Values come from computed styles on www.wrike.com and login.wrike.com. TT Norms Pro is not loaded here, so the page falls back to the system sans.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><div><b>page</b><small>#ffffff</small></div></div>
+    <div class="sw"><i style="background:#f2f5fa"></i><div><b>surface</b><small>#f2f5fa</small></div></div>
+    <div class="sw"><i style="background:#162136"></i><div><b>title</b><small>#162136</small></div></div>
+    <div class="sw"><i style="background:#2b3a57"></i><div><b>body</b><small>#2b3a57</small></div></div>
+    <div class="sw"><i style="background:#657694"></i><div><b>muted</b><small>#657694</small></div></div>
+    <div class="sw"><i style="background:#00e05c"></i><div><b>accent</b><small>#00e05c</small></div></div>
+    <div class="sw"><i style="background:#0073d3"></i><div><b>link</b><small>#0073d3</small></div></div>
+    <div class="sw"><i style="background:#008262"></i><div><b>login button</b><small>#008262</small></div></div>
+    <div class="sw"><i style="background:#ffa200"></i><div><b>popular</b><small>#ffa200</small></div></div>
+    <div class="sw"><i style="background:#e51739"></i><div><b>error role</b><small>#e51739</small></div></div>
+  </div>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="accent">Try Wrike for free</button>
+    <button class="ghost">Request a demo</button>
+    <button class="small">Try for free</button>
+  </div>
+  <p class="lead">Small controls are 40px with an 8px radius. Large controls are 60px with a 12px radius. Accent text is midnight, not white.</p>
+
+  <h2>Trial field</h2>
+  <div class="row">
+    <label class="field">Enter your business email</label>
+    <button class="accent" style="height:60px">Try for free</button>
+  </div>
+
+  <h2>Pricing card</h2>
+  <div class="card">
+    <div class="cap">Most popular</div>
+    <h3>Pinnacle</h3>
+    <p style="margin:8px 0 16px;color:#2b3a57">Built for complex workflows</p>
+    <button class="small">Contact us</button>
+  </div>
+
+  <h2>Login panel</h2>
+  <div class="login-stage">
+    <div class="login-panel">
+      <div class="login-field">Email or corporate ID</div>
+      <button class="login">Next</button>
+      <p><a class="link" href="#login" style="color:#0054b2;font-weight:400;font-size:14px">Forgot password?</a></p>
+    </div>
+  </div>
+  <p class="lead">The login app uses a system face, a teal Next button, and a 12px panel. The password step was not opened.</p>
+
+  <footer class="band">
+    Footer links sit on #162136 in #bfc7d9. Marketing pages do not paint a dark theme.
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "source": "T3 preview browser, live computed styles on https://login.wrike.com/login/, signed out, 2026-11-18. Nothing typed. Next was not clicked.",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2
+  },
+  "body": {
+    "backgroundColor": "rgb(248, 250, 252)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "-apple-system"
+  },
+  "panel": {
+    "class": "login-content login-panel",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "12px",
+    "boxShadow": "rgba(0, 39, 128, 0.1) 0px 2px 8px 0px, rgba(0, 59, 157, 0.05) 0px 8px 12px 0px"
+  },
+  "emailField": {
+    "placeholder": "Email or corporate ID",
+    "backgroundColor": "rgba(0, 59, 157, 0.05)",
+    "color": "rgba(0, 2, 27, 0.973)",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "borderRadius": "12px",
+    "height": 48,
+    "padding": "0px 15px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "-apple-system"
+  },
+  "nextButton": {
+    "backgroundColor": "rgb(0, 130, 98)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "borderRadius": "12px",
+    "height": 48,
+    "padding": "0px 31px",
+    "lineHeight": "24px",
+    "transitionDuration": "0.1s",
+    "transitionTimingFunction": "ease-out",
+    "transitionProperty": "all"
+  },
+  "textButton": {
+    "example": "Forgot password?",
+    "color": "rgb(0, 84, 178)",
+    "fontSize": "14px",
+    "borderRadius": "8px",
+    "height": 32
+  },
+  "oauthChip": {
+    "example": "Google",
+    "backgroundColor": "rgba(0, 59, 157, 0.05)",
+    "color": "rgba(0, 2, 27, 0.973)",
+    "fontSize": "14px",
+    "borderRadius": "8px",
+    "height": 32,
+    "padding": "0px 15px"
+  },
+  "link": {
+    "example": "Get started now",
+    "color": "rgb(0, 84, 178)",
+    "fontSize": "14px",
+    "href": "https://www.wrike.com/free-trial"
+  },
+  "focus": {
+    "outline": "rgba(0, 2, 27, 0.973) none 0px",
+    "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+    "note": "focus() on the email input did not paint a visible ring in this read"
+  },
+  "declaredTokensSample": {
+    "--s-pat-application-bg-stopC-1": "#f8fafc",
+    "--dt-textField-invalid-borderColor": "#d2223e",
+    "--dt-form-switch-borderRadius": "10000px",
+    "--s-d-h1-fontSz": "28px",
+    "--s-d-loaderThumb-dk-bgC": "#00ab64"
+  },
+  "gap": "Password step, error, disabled and loading were not reached. Next was not clicked, so the form never advanced. Google, Apple, Office, OTP and SSO were not entered."
+}
