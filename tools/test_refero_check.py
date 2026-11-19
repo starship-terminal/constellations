@@ -7,6 +7,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "refero"))
 import check as refero_check  # noqa: E402
@@ -251,6 +252,53 @@ class CoverageLagTest(unittest.TestCase):
 
     def test_without_a_pull_request_base_the_exemption_does_not_apply(self):
         self.assertFalse(self.matches(self.head, self.prior, base_ref=None))
+
+
+class PriorCoverageTest(unittest.TestCase):
+    def catalog(self, rows):
+        return {"systems": rows}
+
+    def test_a_branch_behind_main_keeps_the_base_derivation(self):
+        directory = {"web_sites": [
+            {"name": "Old", "domain": "old.example", "id": "1"},
+            {"name": "Later", "domain": "later.example", "id": "2"},
+        ], "ios_apps": []}
+        old = {"slug": "old", "name": "Old", "url": "https://old.example"}
+        later = {"slug": "later", "name": "Later", "url": "https://later.example"}
+        added = {"slug": "added", "name": "Added", "url": "https://added.example"}
+        base = self.catalog([old, later])
+        head = self.catalog([old, added])
+        actual = refero_check.coverage_mod.build(directory, base)
+        expected = refero_check.coverage_mod.build(directory, head)
+        with mock.patch.object(refero_check, "base_catalog", return_value=base):
+            self.assertTrue(refero_check.coverage_matches_base(
+                directory, head, actual, expected))
+            edited = self.catalog([{**old, "name": "Renamed"}, added])
+            self.assertFalse(refero_check.coverage_matches_base(
+                directory, edited, actual, expected))
+            self.assertFalse(refero_check.coverage_matches_base(
+                directory, base, actual, expected))
+
+    def test_regenerated_coverage_keeps_the_added_package(self):
+        directory = {"web_sites": [
+            {"name": "Shared", "domain": "shared.example", "id": "1"},
+        ], "ios_apps": []}
+        first = {"slug": "first", "name": "First", "url": "https://shared.example"}
+        added = {"slug": "added", "name": "Added", "url": "https://shared.example"}
+        later = {"slug": "later", "name": "Later", "url": "https://shared.example"}
+        base = self.catalog([first, later])
+        head = self.catalog([first, added])
+        actual = refero_check.coverage_mod.build(directory, head)
+        expected = refero_check.coverage_mod.build(directory, base)
+        with mock.patch.object(refero_check, "base_catalog", return_value=base):
+            self.assertTrue(refero_check.coverage_matches_base(
+                directory, head, actual, expected))
+            stranger = {"slug": "stranger", "name": "Stranger",
+                        "url": "https://shared.example"}
+            foreign = refero_check.coverage_mod.build(
+                directory, self.catalog([first, stranger]))
+            self.assertFalse(refero_check.coverage_matches_base(
+                directory, head, foreign, expected))
 
 
 if __name__ == "__main__":
