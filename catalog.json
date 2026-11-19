@@ -20343,6 +20343,70 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "super-so",
+      "name": "Super.so",
+      "url": "https://super.so/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Notion-to-site marketing: warm white page, sticky frosted nav, amber pill CTAs, 16px pricing cards with one ringed plan, dark auth column",
+      "tags": [
+        "web",
+        "saas",
+        "marketing",
+        "notion",
+        "amber",
+        "pill",
+        "pricing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing plus login and signup chrome; signup was not submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/super-so/README.md",
+      "tokens": "systems/super-so/tokens.json",
+      "styleGuide": "systems/super-so/style-guide.html",
+      "preview": {
+        "cover": "systems/super-so/screenshots/README.md",
+        "icon": "systems/super-so/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text.primary",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.beausite",
+          "core.font.family.beausite-app"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "Live site, 2026-11-19; release not exposed",
+        "durationMin": 45,
+        "pr": "https://github.com/starship-terminal/constellations/pull/815"
+      }
     }
   ]
 }
