@@ -125,12 +125,16 @@ def _walk_problems(name, offered):
 
 
 def _unreviewed_shots(name, folder, seen):
-    """A committed screenshot the review never names is an unfinished walk."""
+    """A committed signed-in screenshot the review never names is an unfinished walk.
+
+    Public captures share screenshots/ and are not part of this pass. The
+    signed-in kit writes signed-in-<label>.png.
+    """
     shots = folder / "screenshots"
     if not shots.is_dir():
         return []
     problems = []
-    for path in sorted(shots.glob("*.png")):
+    for path in sorted(shots.glob("signed-in-*.png")):
         rel = path.relative_to(folder).as_posix()
         if rel not in seen:
             problems.append(f"{name}: {rel} is in the package and missing from login-review")

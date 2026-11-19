@@ -36,8 +36,9 @@ pass is missing until the field moves.
 agent opened every signed-in screen the account could show, saved a
 file for each, and wrote the rest as gaps. `make check` runs
 `tools/login_extracted.py --check`. A `done` row without that review
-fails. A review that names one screenshot fails. A screenshot in the
-package that the review never names fails.
+fails. A review that names one screenshot fails. A `signed-in-*`
+screenshot in the package that the review never names fails. Public
+shots in the same folder are not part of this pass.
 
 One site at a time. The `login-extracted` flip for that site goes in
 the same commit as its screenshots. Do not open several login pull

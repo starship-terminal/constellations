@@ -100,7 +100,7 @@ class LoginExtractedTest(unittest.TestCase):
     def test_done_rejects_a_screenshot_the_review_never_names(self):
         with tempfile.TemporaryDirectory() as tmp:
             package = Path(tmp) / "systems" / "luma"
-            for name in ("home.png", "calendars.png", "settings.png"):
+            for name in ("home.png", "calendars.png", "signed-in-settings.png", "discover-light-default.png"):
                 shot = package / "screenshots" / name
                 shot.parent.mkdir(parents=True, exist_ok=True)
                 shot.write_bytes(b"png")
@@ -111,7 +111,8 @@ class LoginExtractedTest(unittest.TestCase):
                 problems = login.check_app(row)
             finally:
                 login.ROOT = old
-            self.assertTrue(any("settings.png" in p and "missing from login-review" in p for p in problems))
+            self.assertTrue(any("signed-in-settings.png" in p and "missing from login-review" in p for p in problems))
+            self.assertFalse(any("discover-light" in p for p in problems))
 
     def test_done_accepts_a_walk_whose_files_exist(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -3018,9 +3018,70 @@
       ],
       "description": "Luma is all you need to host a memorable event.",
       "status": "pending",
-      "package": null,
-      "notes": "",
-      "login-extracted": "not-started",
+      "package": "systems/luma",
+      "notes": "Signed-in host shell captured 2026-11-20. Account menu and the settings account tab were deleted, not committed. Guest list, check-in, blasts, and a published editor need an event this trial does not have.",
+      "login-extracted": "done",
+      "login-review": {
+        "offered": {
+          "nav": {
+            "items": ["Events", "Calendars", "Notifications"],
+            "reached": ["Events", "Calendars", "Notifications"]
+          },
+          "settings": {
+            "items": ["Preferences", "Payment"],
+            "reached": ["Preferences", "Payment"]
+          },
+          "create": {
+            "items": ["Create Event", "Create Calendar"],
+            "reached": ["Create Event", "Create Calendar"]
+          }
+        },
+        "screens": [
+          {"name": "Events", "file": "screenshots/signed-in-home-dark-desktop.png"},
+          {"name": "Events full", "file": "screenshots/signed-in-home-dark-desktop-full.png"},
+          {"name": "Events light", "file": "screenshots/signed-in-home-light-desktop.png"},
+          {"name": "Events past", "file": "screenshots/signed-in-home-past-dark-narrow.png"},
+          {"name": "Events past full", "file": "screenshots/signed-in-home-past-dark-narrow-full.png"},
+          {"name": "Events past light", "file": "screenshots/signed-in-home-past-light-narrow.png"},
+          {"name": "Calendars", "file": "screenshots/signed-in-calendars-dark-desktop.png"},
+          {"name": "Calendars full", "file": "screenshots/signed-in-calendars-dark-desktop-full.png"},
+          {"name": "Calendars light", "file": "screenshots/signed-in-calendars-light-desktop.png"},
+          {"name": "Calendars tour", "file": "screenshots/signed-in-calendars-tour-dark-narrow.png"},
+          {"name": "Calendars tour full", "file": "screenshots/signed-in-calendars-tour-dark-narrow-full.png"},
+          {"name": "Calendars tour light", "file": "screenshots/signed-in-calendars-tour-light-narrow.png"},
+          {"name": "Create Calendar", "file": "screenshots/signed-in-create-calendar-dark-narrow.png"},
+          {"name": "Create Calendar full", "file": "screenshots/signed-in-create-calendar-dark-narrow-full.png"},
+          {"name": "Create Calendar light", "file": "screenshots/signed-in-create-calendar-light-narrow.png"},
+          {"name": "Create Event", "file": "screenshots/signed-in-create-dark-desktop.png"},
+          {"name": "Create Event full", "file": "screenshots/signed-in-create-dark-desktop-full.png"},
+          {"name": "Create Event light", "file": "screenshots/signed-in-create-light-desktop.png"},
+          {"name": "Create Event open", "file": "screenshots/signed-in-create-open-dark-narrow.png"},
+          {"name": "Create Event open full", "file": "screenshots/signed-in-create-open-dark-narrow-full.png"},
+          {"name": "Create Event open light", "file": "screenshots/signed-in-create-open-light-narrow.png"},
+          {"name": "Notifications", "file": "screenshots/signed-in-notifications-dark-narrow.png"},
+          {"name": "Notifications full", "file": "screenshots/signed-in-notifications-dark-narrow-full.png"},
+          {"name": "Notifications light", "file": "screenshots/signed-in-notifications-light-narrow.png"},
+          {"name": "Payment", "file": "screenshots/signed-in-settings-payment-dark-narrow.png"},
+          {"name": "Payment full", "file": "screenshots/signed-in-settings-payment-dark-narrow-full.png"},
+          {"name": "Payment light", "file": "screenshots/signed-in-settings-payment-light-narrow.png"},
+          {"name": "Preferences", "file": "screenshots/signed-in-settings-preferences-dark-narrow.png"},
+          {"name": "Preferences full", "file": "screenshots/signed-in-settings-preferences-dark-narrow-full.png"},
+          {"name": "Preferences light", "file": "screenshots/signed-in-settings-preferences-light-narrow.png"}
+        ],
+        "gaps": [
+          "guest list, check-in, and blasts: the trial has no event",
+          "published event editor, theme, visibility, and notification menus: no event was created",
+          "account menu and the settings account tab: the snap still held the email, so those files were deleted",
+          "Events past, Calendars tour, Create Calendar, Create Event open, Notifications, Preferences, and Payment are 492 wide, not desktop"
+        ],
+        "not_submitted": [
+          "create event",
+          "create calendar",
+          "payment",
+          "phone number",
+          "passkey"
+        ]
+      },
       "batch": 10
     },
     {
