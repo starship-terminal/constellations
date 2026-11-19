@@ -60,7 +60,17 @@ def _json_size(obj) -> int:
 
 
 def _catalog() -> dict:
-    return catalog.load_catalog()
+    """catalog.json, parsed once per change of the file rather than per tool
+    call (it is ~1.5 MB). library.py is re-executed on every /api/ request so
+    a deploy needs no restart (server/api.py), so the cache lives on the
+    long-lived catalog module, keyed on the file's mtime and size; a pull that
+    changes the file misses it. Callers only read the result."""
+    st = (catalog.ROOT / "catalog.json").stat()
+    key = (str(catalog.ROOT), st.st_mtime_ns, st.st_size)
+    cached = getattr(catalog, "_library_cache", None)
+    if cached is None or cached[0] != key:
+        cached = catalog._library_cache = (key, catalog.load_catalog())
+    return cached[1]
 
 
 def _entry(slug: str) -> dict:
