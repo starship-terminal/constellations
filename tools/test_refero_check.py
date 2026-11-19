@@ -221,13 +221,15 @@ class CoverageLagTest(unittest.TestCase):
         self.prior = refero_check.coverage_mod.build(
             self.directory, {"systems": [self.alpha, self.beta]})
 
-    def matches(self, head, actual, base_ref="main"):
-        env = {"GITHUB_BASE_REF": base_ref} if base_ref else {}
+    def matches(self, head, actual, base_ref="main", branch_catalog=None):
+        env = {"GITHUB_BASE_REF": base_ref, "GITHUB_HEAD_SHA": "refs/pr-head"} if base_ref else {}
         shown = json.dumps(self.base)
+        branch_shown = json.dumps(branch_catalog or self.base)
 
         def fake_run(args, **kwargs):
             self.assertIn("catalog.json", args[-1])
-            return unittest.mock.Mock(stdout=shown, returncode=0)
+            payload = branch_shown if args[-1].startswith("refs/pr-head") else shown
+            return unittest.mock.Mock(stdout=payload, returncode=0)
 
         with unittest.mock.patch.dict(os.environ, env, clear=False), \
                 unittest.mock.patch.object(refero_check.subprocess, "run", fake_run):
@@ -239,6 +241,14 @@ class CoverageLagTest(unittest.TestCase):
 
     def test_an_older_derivation_is_accepted(self):
         self.assertTrue(self.matches(self.head, self.prior))
+
+    def test_a_checker_only_pull_request_may_lag_main(self):
+        # The branch tip carries a package the merge catalog does not,
+        # so the branch-seed shortcut does not return early. The file
+        # still matches the packages it names.
+        extra = {"slug": "only-on-branch", "name": "Only", "url": "https://only.example"}
+        branch = {"systems": list(self.base["systems"]) + [extra]}
+        self.assertTrue(self.matches(self.base, self.prior, branch_catalog=branch))
 
     def test_a_hand_edited_file_is_rejected(self):
         edited = json.loads(json.dumps(self.prior))

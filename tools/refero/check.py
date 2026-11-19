@@ -397,6 +397,11 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
                 directory, {**head_catalog, "systems": list(branch_rows.values())})
             if actual == branch_expected:
                 return True
+    # A checker-only pull request adds no catalog row. The committed file
+    # can still lag packages already on main. Accept that derivation
+    # before the add-only return below rejects it.
+    if coverage_is_prior_derivation(directory, head_catalog, actual):
+        return True
     if not set(head_rows) - set(base_rows):
         return False
     # The committed file may be the current base, or a base that already
