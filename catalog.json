@@ -20343,6 +20343,71 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "coolors",
+      "name": "Coolors",
+      "url": "https://coolors.co",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A light marketing page and a full-bleed palette generator: Inter, a blue primary button, pink Go Pro label, and five color columns with the hex at the bottom.",
+      "tags": [
+        "web",
+        "design-tool",
+        "color",
+        "palette",
+        "signed-in"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed in (kaichen@agentmail.to, created in the attached T3 preview browser and confirmed with the emailed color code). Pro checkout was not opened.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/coolors/README.md",
+      "tokens": "systems/coolors/tokens.json",
+      "styleGuide": "systems/coolors/style-guide.html",
+      "preview": {
+        "cover": "systems/coolors/screenshots/generate-light-desktop.png",
+        "icon": "systems/coolors/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "",
+        "date": "2026-11-18",
+        "durationMin": 40,
+        "durationNote": "Headless probes hit Cloudflare. The attached preview browser loaded the product, completed signup, and measured homepage, generator and explore.",
+        "pr": "https://github.com/starship-terminal/constellations/pull/688",
+        "gaps": [
+          "Pro checkout was not opened and was not submitted",
+          "saved palettes and account settings were not walked",
+          "no dark theme was on the pages that loaded",
+          "a clean 390px screenshot of /palettes/popular was not saved; mobile type was computed before the preview browser stopped painting frames"
+        ]
+      },
+      "layoutGaps": {
+        "components/": "page screenshots are the evidence; element crops were not cut",
+        "icons/": "no icon set was extracted; icon.png is the measured wordmark"
+      }
     }
   ]
 }

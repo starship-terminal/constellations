@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coolors style guide</title>
+<style>
+:root {
+  --core-color-unmeasured: #1a1a1a;
+  --light-page: #1a1a1a;
+  --light-surface: #1a1a1a;
+  --light-text: #f5f5f5;
+  --light-muted: #c8c8c8;
+  --light-accent: #b20f03;
+  --light-border: #313131;
+  color-scheme: light;
+  --ink: var(--light-text);
+  --page: var(--light-page);
+  --line: var(--light-border);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.45 system-ui, sans-serif; }
+main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-size: 28px; margin: 0 0 8px; }
+p { max-width: 68ch; }
+.note { border: 1px solid var(--line); padding: 12px 16px; }
+.swatches { display: grid; gap: 16px; margin-top: 24px; }
+.sw { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start; }
+.sw i { display: block; width: 56px; height: 56px; border: 1px solid var(--line); }
+code { font-family: ui-monospace, monospace; font-size: 13px; }
+small, .sw p { display: block; color: var(--light-muted); font-size: 13px; margin: 4px 0 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Coolors</h1>
+  <p class="note">This page renders the placeholder tokens in tokens.json. coolors.co answered the public Playwright probe with a Cloudflare managed challenge (HTTP 403, title Just a moment...). No Coolors colour, type or component is on this page.</p>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--core-color-unmeasured)"></i><div><code>core.color.unmeasured</code><small>#1a1a1a</small><p>Not captured. coolors.co returned a Cloudflare managed challenge (HTTP 403, cf-mitigated: challenge) on every probed route. No product colour was read.</p></div></div>
+<div class="sw"><i style="background:var(--light-page)"></i><div><code>light.page</code><small>{color.unmeasured}</small><p>Not captured. Headless Playwright title was Just a moment... at 1440x900. No Coolors page colour was computed.</p></div></div>
+<div class="sw"><i style="background:var(--light-surface)"></i><div><code>light.surface</code><small>{color.unmeasured}</small><p>Not captured. Same block as light.page.</p></div></div>
+<div class="sw"><i style="background:var(--light-text)"></i><div><code>light.text</code><small>#f5f5f5</small><p>Not captured. Chosen as a light ink on the placeholder page so the token file validates. Coolors text colours were not read.</p></div></div>
+<div class="sw"><i style="background:var(--light-muted)"></i><div><code>light.muted</code><small>#c8c8c8</small><p>Not captured. Same caveat as light.text.</p></div></div>
+<div class="sw"><i style="background:var(--light-accent)"></i><div><code>light.accent</code><small>#b20f03</small><p>Read from the Cloudflare 403 HTML (inline SVG fill #B20F03 on #challenge-error-text). Not a product token.</p></div></div>
+<div class="sw"><i style="background:var(--light-border)"></i><div><code>light.border</code><small>#313131</small><p>Read from the Cloudflare 403 HTML (html { color:#313131 }). Not a product token.</p></div></div>
+  </div>
+</main>
+</body>
+</html>
