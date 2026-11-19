@@ -187,6 +187,17 @@ class WriteTest(unittest.TestCase):
         self.assertEqual([r.split("]")[0].split("[")[-1] for r in rows], ["b", "a", "c"])
         self.assertIn("not graded yet", rows[2])
 
+    def test_catalog_table_shows_no_icon_for_a_declared_icon_gap(self):
+        # A package with the icon.png layout gap has no preview.icon: its row must not
+        # point at an icon.png that does not exist.
+        systems = [{"slug": "a", "preview": {"icon": "systems/a/icon.png"}},
+                   {"slug": "b", "preview": {}, "layoutGaps": {"icon.png": "no icon published"}}]
+        with Package():
+            table = health.catalog_table(audit(), systems)
+        rows = [line for line in table.splitlines() if "README.md)" in line]
+        self.assertTrue(rows[0].startswith('| <img src="systems/a/icon.png" width="20" alt="a"> |'))
+        self.assertTrue(rows[1].startswith("|  | [b](systems/b/README.md)"))
+
 
 if __name__ == "__main__":
     unittest.main()
