@@ -176,9 +176,11 @@ export async function styleOf(locator) {
     const out = {
       tag: el.tagName.toLowerCase(),
       classes: cls(el).slice(0, 4).join(' '),
-      // Phone numbers are banned from committed packages (the cleanup-redact
-      // list): mask them in the recorded label so a recapture stays clean.
-      text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').replace(/\+\d[\d -]{6,}\d/g, '[phone]').slice(0, 80),
+      // Phone numbers and email addresses are banned from committed packages
+      // (the cleanup-redact list; the contact page's person cards carry a
+      // staff member's direct line and address): mask them in the recorded
+      // label so a recapture stays clean.
+      text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g, '[email]').replace(/\+\d[\d -]{6,}\d/g, '[phone]').slice(0, 80),
       rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
       style: pick(cs),
     };

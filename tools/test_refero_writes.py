@@ -3,6 +3,7 @@ atomic files, a renamed style's folder, the LFS pointer guard and the catalog
 refresh after labelling. No network: page fetches and the API are patched.
 Run with `make test`."""
 import json
+import sqlite3
 import sys
 import tempfile
 import unittest
@@ -64,6 +65,28 @@ class FetchWritesTest(ReferoTmp):
         self.assertTrue((self.refero / "acme-labs" / "tokens.json").is_file())
         meta = json.loads((self.refero / "acme-labs" / "meta.json").read_text())
         self.assertEqual(meta["slug"], "acme-labs")
+
+    def test_a_refetch_keeps_the_export_columns(self):
+        """A --force refetch updates the fetched columns in place; the export
+        columns stay until cmd_export rewrites them, even if that export fails."""
+        self.run_fetch("Acme")
+        db = sqlite3.connect(self.refero / "refero.db")
+        db.execute("UPDATE styles SET variables_css='a', theme_css='b', tokens_json='c', "
+                   "design_system_json='d', prompt_txt='e' WHERE uuid=?", (UUID,))
+        db.commit()
+        rowid = db.execute("SELECT rowid FROM styles WHERE uuid=?", (UUID,)).fetchone()
+        db.close()
+        self.run_fetch("Acme Labs")
+        db = sqlite3.connect(self.refero / "refero.db")
+        try:
+            row = db.execute("SELECT slug, name, variables_css, theme_css, tokens_json, "
+                             "design_system_json, prompt_txt FROM styles WHERE uuid=?",
+                             (UUID,)).fetchone()
+            self.assertEqual(row, ("acme-labs", "Acme Labs", "a", "b", "c", "d", "e"))
+            self.assertEqual(db.execute("SELECT rowid FROM styles WHERE uuid=?",
+                                        (UUID,)).fetchone(), rowid)
+        finally:
+            db.close()
 
     def test_the_catalog_is_written_atomically(self):
         self.run_fetch("Acme")

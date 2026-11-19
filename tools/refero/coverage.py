@@ -5,8 +5,8 @@
 
 refero/directory.json lists the sites and apps in Refero's paid catalog;
 catalog.json lists the measured systems/ packages. Matching is by root
-domain (catalog entries on gemini.google fold under google.com), so a hit
-means "a package was captured somewhere on this domain", not necessarily
+domain (the last two labels, three under a ccSLD such as co.uk; a host on
+its own TLD, such as gemini.google, is its own root), so a hit means "a package was captured somewhere on this domain", not necessarily
 the same product — each matched package carries name_match, a token
 overlap flag between the catalog names and the package slug, to flag the
 false positives (an apps.apple.com store URL matches apple.com).
@@ -34,11 +34,15 @@ ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
 CATALOG = ROOT / "catalog.json"
 
-# ccSLDs where the registrable domain is three labels, not two.
+# ccSLDs where the registrable domain is three labels, not two: the common
+# commercial and organisational ones, not the whole public-suffix list.
 MULTI_SLD = {
-    "co.uk", "org.uk", "com.au", "net.au", "co.nz", "co.jp", "or.jp",
-    "com.br", "com.mx", "co.in", "co.kr", "co.za", "com.sg", "com.hk",
-    "com.cn", "net.cn", "com.tr", "com.ar",
+    "co.uk", "org.uk", "ac.uk", "gov.uk", "com.au", "net.au", "org.au",
+    "co.nz", "co.jp", "or.jp", "ne.jp", "com.br", "com.mx", "co.in",
+    "co.kr", "co.za", "com.sg", "com.hk", "com.cn", "net.cn", "com.tr",
+    "com.ar", "com.tw", "org.tw", "co.id", "co.il", "org.il", "com.my",
+    "com.ph", "co.th", "com.vn", "com.pk", "com.ng", "com.eg", "com.sa",
+    "co.ke", "com.co", "com.pe", "com.ua",
 }
 
 
