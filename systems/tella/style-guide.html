@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tella style guide</title>
+<meta name="description" content="Tella public marketing and signed-out sign-in, rendered from measured tokens.">
+<style>
+:root {
+  --page: #FDFDFD;
+  --canvas: #FFFFFF;
+  --ink: #0C0A09;
+  --ink-strong: #111111;
+  --muted: #848483;
+  --accent: #5E51F8;
+  --on-accent: #FFFFFF;
+  --hairline: #EAEAE9;
+  --stone: #E7E5E4;
+  --stone-text: #78716C;
+  --destructive: #DC2626;
+  --ring: #6366F1;
+  --radius-pill: 999px;
+  --radius-frame: 32px;
+  --font: oracle, Arial, sans-serif;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --page: #1E2025;
+  --canvas: #1E2025;
+  --ink: #ECEEF4;
+  --ink-strong: #ECEEF4;
+  --muted: #9499A8;
+  --accent: #5E51F8;
+  --on-accent: #FFFFFF;
+  --hairline: #303237;
+  --stone: #3A3C41;
+  --stone-text: #9499A8;
+  --destructive: #F87171;
+  --ring: #6366F1;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/24px var(--font); letter-spacing: -0.32px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 18px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { font: 400 32px/38.4px var(--font); letter-spacing: -0.64px; margin: 24px 0 8px; }
+h2 { font: 400 24px/28.8px var(--font); letter-spacing: -0.48px; margin: 40px 0 12px; }
+p.lead { margin: 0; color: var(--muted); font-size: 20px; line-height: 30px; letter-spacing: -0.4px; }
+button.theme { border: 1px solid var(--hairline); background: var(--canvas); color: var(--ink); border-radius: var(--radius-pill); padding: 4px 24px; font: 500 15px/22.5px var(--font); letter-spacing: -0.3px; cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.swatch { width: 132px; }
+.swatch i { display: block; height: 56px; border-radius: 12px; border: 1px solid var(--hairline); }
+.swatch span { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-pill); font: 500 16px/24px var(--font); letter-spacing: -0.32px; text-decoration: none; border: 0; }
+.btn-lg { min-height: 44px; padding: 8px 48px; background: var(--accent); color: var(--on-accent); }
+.btn-nav { padding: 4px 24px; font-size: 15px; line-height: 22.5px; letter-spacing: -0.3px; background: var(--accent); color: var(--on-accent); }
+.btn-secondary { min-height: 44px; padding: 8px 48px; background: var(--canvas); color: var(--ink); border: 1px solid var(--hairline); }
+.badge { display: inline-flex; border-radius: var(--radius-pill); background: #111111; color: #fff; font-size: 12px; padding: 2px 8px; }
+.card { border: 1px solid var(--hairline); border-radius: var(--radius-frame); box-shadow: inset 0 0 0 1px #fff; padding: 24px; max-width: 320px; background: color-mix(in srgb, var(--canvas) 50%, transparent); }
+[data-mode="dark"] .card { box-shadow: none; }
+.card h3 { margin: 0 0 4px; font: 400 20px/30px var(--font); }
+.card .price { font-size: 32px; letter-spacing: -0.64px; margin: 16px 0; }
+.field { display: flex; flex-direction: column; gap: 8px; max-width: 344px; }
+.field label { font: 600 14px/16px var(--font); }
+.field input { height: 40px; border: 0; border-radius: 6px; padding: 0 12px; background: color-mix(in srgb, var(--canvas) 85%, transparent); box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1922); color: var(--ink); font: 400 16px/24px var(--font); }
+.field input:focus { outline: 2px solid #939BFF; }
+.note { font-size: 14px; color: var(--muted); max-width: 68ch; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--hairline); }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <strong>Tella</strong>
+  <button class="theme" type="button" id="theme">Dark tokens</button>
+</header>
+<h1>All-in-one video creation</h1>
+<p class="lead">Record, edit, and share every video you need</p>
+<p class="note">Values are the ones measured on tella.com and authkit.tella.tv on 19 November 2026. The dark toggle shows the declared <code>.dark</code> tokens. The marketing pages paint light even though <code>html</code> carries <code>dark</code>.</p>
+
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+
+<h2>Buttons</h2>
+<div class="row">
+  <a class="btn btn-lg" href="#buttons">Get started</a>
+  <a class="btn btn-nav" href="#buttons">Sign up</a>
+  <a class="btn btn-secondary" href="#buttons">Log in</a>
+  <span class="badge">50% off</span>
+</div>
+
+<h2>Plan card</h2>
+<article class="card">
+  <h3>Premium</h3>
+  <p class="note">Advanced features for greater control.</p>
+  <div class="price">$19 <span class="note">per user/month</span></div>
+  <a class="btn btn-lg" href="#card">Buy now</a>
+</article>
+
+<h2>Sign-in field</h2>
+<div class="field">
+  <label for="email">Email</label>
+  <input id="email" type="email" placeholder="Your email address" autocomplete="off">
+</div>
+<p class="note">AuthKit field: 40px, 6px radius, inset 1px ring at 19% black, focus outline #939BFF. This specimen is a reconstruction of those computed values. The email was not submitted.</p>
+
+<h2>Type</h2>
+<table>
+  <tr><th>Role</th><th>Size</th><th>Weight</th><th>Tracking</th></tr>
+  <tr><td>Display CTA</td><td>52px / 62.4px</td><td>400</td><td>-1.04px</td></tr>
+  <tr><td>Hero and section</td><td>32px / 38.4px</td><td>400</td><td>-0.64px</td></tr>
+  <tr><td>Feature heading</td><td>24px / 28.8px</td><td>400</td><td>-0.48px</td></tr>
+  <tr><td>Body</td><td>16px / 24px</td><td>400</td><td>-0.32px</td></tr>
+  <tr><td>Navigation</td><td>15px / 22.5px</td><td>400</td><td>-0.3px</td></tr>
+</table>
+<p class="note">Marketing type is ABC Oracle. It is proprietary and is not loaded here, so the page falls back to Arial.</p>
+</div>
+<script>
+const rows = [
+  ['Page', '--page'], ['Canvas', '--canvas'], ['Ink', '--ink'], ['Muted', '--muted'],
+  ['Accent', '--accent'], ['Hairline', '--hairline'], ['Stone', '--stone'], ['Destructive', '--destructive']
+];
+const host = document.getElementById('swatches');
+for (const [name, v] of rows) {
+  const d = document.createElement('div');
+  d.className = 'swatch';
+  d.innerHTML = '<i style="background:var(' + v + ')"></i><span>' + name + '</span>';
+  host.appendChild(d);
+}
+document.getElementById('theme').onclick = () => {
+  const html = document.documentElement;
+  const next = html.getAttribute('data-mode') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-mode', next);
+  document.getElementById('theme').textContent = next === 'dark' ? 'Light tokens' : 'Dark tokens';
+};
+</script>
+</body>
+</html>

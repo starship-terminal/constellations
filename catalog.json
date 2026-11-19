@@ -18731,6 +18731,73 @@
       }
     },
     {
+      "slug": "tella",
+      "name": "Tella",
+      "url": "https://www.tella.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Video product marketing: off-white page, Oracle display type at weight 400, indigo pill buttons, 32px plan cards, a black discount badge",
+      "tags": [
+        "web",
+        "video",
+        "saas",
+        "marketing",
+        "pill",
+        "pricing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing pages and the AuthKit sign-in; the email was not submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/tella/README.md",
+      "tokens": "systems/tella/tokens.json",
+      "styleGuide": "systems/tella/style-guide.html",
+      "preview": {
+        "cover": "systems/tella/screenshots/home-light-default.png",
+        "icon": "systems/tella/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.canvas",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.accent",
+            "border": "light.border.hairline"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.action.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.oracle",
+          "core.font.family.auth"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "production-44367545421-1",
+        "route": "public-web",
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/853"
+      },
+      "layoutGaps": {
+        "icons/": "Inline SVGs were on the page (24px and 20px) but were not extracted. The wordmark is in the screenshots and icon.png is the favicon."
+      }
+    },
+    {
       "slug": "tokentracker",
       "name": "TokenTracker",
       "url": "https://github.com/xiufengsun/TokenTracker",
