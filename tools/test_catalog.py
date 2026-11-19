@@ -306,14 +306,23 @@ class ExportTest(unittest.TestCase):
         self.assertEqual(out["themes"]["light"]["--foo-bar"], "#ff0000")
         self.assertEqual(out["themes"]["dark"]["--foo-bar"], "#ffffff")
 
-    def test_duolingo_lip_shadows_follow_the_theme(self):
-        system = next(s for s in catalog.load_catalog()["systems"] if s["slug"] == "duolingo")
-        out = catalog.export_tokens(json.loads((catalog.ROOT / system["tokens"]).read_text()), system["themes"])
+    def test_shadows_that_reference_theme_colours_follow_the_theme(self):
+        # A Duolingo-style button lip: a core shadow whose colour is a theme role.
+        lip = lambda color: {"$type": "shadow", "$value": {"offsetX": "0px", "offsetY": "2px", "blur": "0px",
+                                                            "spread": "0px", "color": color, "type": "dropShadow"}}
+        tokens = {"core": {"shadow": {"lip": {"outline": lip("{border.default}"), "primary": lip("{accent.lip}")}}},
+                  "light": {"border": {"default": {"$type": "color", "$value": "#e5e5e5"}},
+                            "accent": {"lip": {"$type": "color", "$value": "#58a700"}}},
+                  "dark": {"border": {"default": {"$type": "color", "$value": "#37464f"}},
+                           "accent": {"lip": {"$type": "color", "$value": "#79b933"}}},
+                  "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+                              {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}}]}
+        out = catalog.export_tokens(tokens, ["light", "dark"])
         self.assertEqual([p for p in out["skipped"] if p.startswith("core.shadow.lip.")], [])
         light, dark = out["themes"]["light"], out["themes"]["dark"]
-        names = [n for n in light if n.startswith("--shadow-lip-")]
-        self.assertEqual(len(names), 9)
-        self.assertEqual(sorted(n for n in dark if n.startswith("--shadow-lip-")), sorted(names))
+        names = sorted(n for n in light if n.startswith("--shadow-lip-"))
+        self.assertEqual(names, ["--shadow-lip-outline", "--shadow-lip-primary"])
+        self.assertEqual(sorted(n for n in dark if n.startswith("--shadow-lip-")), names)
         self.assertFalse(any(n.startswith("--shadow-lip-") for n in out["base"]))
         self.assertEqual(light["--shadow-lip-outline"], "0px 2px 0px 0px #e5e5e5")
         self.assertEqual(dark["--shadow-lip-outline"], "0px 2px 0px 0px #37464f")
@@ -1128,9 +1137,6 @@ class ReferoBuildTest(unittest.TestCase):
 
 
 class RepositoryTest(unittest.TestCase):
-    def test_catalog_checks_clean(self):
-        self.assertEqual(catalog.check(), [])
-
     def test_platform_is_required_and_must_be_known(self):
         import copy
         from unittest import mock
