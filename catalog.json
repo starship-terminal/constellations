@@ -19197,6 +19197,95 @@
       }
     },
     {
+      "slug": "the-athletic",
+      "name": "The Athletic",
+      "url": "https://www.nytimes.com/athletic/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Sports-subscription editorial chrome: a near-black nav, a red 2px-radius trial button, nyt-cheltenham headlines, nyt-imperial story body, and a public offer page with plan radios. Signed-out only.",
+      "tags": [
+        "web",
+        "media",
+        "sports",
+        "news",
+        "subscription",
+        "signed-out",
+        "editorial"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (theathletic.com redirects to nytimes.com/athletic; home, one public article, about, the NFL league page, the subscription marketing page, the login shell, search, and a 404 were read; the login iframe was not entered; Continue to checkout was not followed; no card, account, or email was submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/the-athletic/README.md",
+      "tokens": "systems/the-athletic/tokens.json",
+      "styleGuide": "systems/the-athletic/style-guide.html",
+      "preview": {
+        "cover": "systems/the-athletic/screenshots/home-light-default.png",
+        "icon": "systems/the-athletic/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.display",
+          "core.font.ui",
+          "core.font.story"
+        ]
+      },
+      "designMd": {
+        "typography": "core.typography."
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "T3 preview browser on nytimes.com/athletic, signed out, measured viewport 1169x731 at devicePixelRatio 2. Computed styles and CSSOM custom properties. preview_snapshot returned no frames, so screenshots are reconstructions.",
+        "timestamp": "2026-11-19T00:00:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "unversioned public web, 2026-11-19",
+        "route": "public-web",
+        "routes": [
+          "https://www.nytimes.com/athletic/ (theathletic.com redirects here)",
+          "https://www.nytimes.com/athletic/7787961/2026/11/18/nhl-goalies-mental-health-crisis/",
+          "https://www.nytimes.com/athletic/about/",
+          "https://www.nytimes.com/athletic/nfl/",
+          "https://www.nytimes.com/subscription/athletic?source=athletic",
+          "https://www.nytimes.com/athletic/login2/ (iframe shell only)",
+          "https://www.nytimes.com/athletic/this-page-does-not-exist-capture/"
+        ],
+        "gaps": [
+          "preview_snapshot returned 'The browser is not producing screenshot frames', so no live PNG was saved",
+          "1440 and 390 viewports were not measured",
+          "the dark theme is declared in CSS and was not painted; the page used data-theme=legacy",
+          "the login iframe is cross-origin and was not entered",
+          "Continue to checkout was not followed, and no card was entered",
+          "hover, pressed, disabled and loading were not forced",
+          "checkbox, switch, textarea, select, tooltip, toast, table and avatar were not on the public pages"
+        ],
+        "durationMin": 90
+      }
+    },
+    {
       "slug": "ifttt",
       "name": "IFTTT",
       "url": "https://ifttt.com",
