@@ -6,14 +6,14 @@
 // html[data-theme=dark] pass measures the real dark declarations.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE, learnPlace, scrubPlace } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
-const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+const save = () => fs.writeFileSync(OUT, JSON.stringify(scrubPlace(out), null, 1) + '\n');   // no city or distance (lib.mjs)
 const ARTIST = '/events/samay-raina/artist';
 const TICKETS = '/events/all-stars-live-apr12-2026-buy-tickets';
 const URLS = { home: '/', homeDark: '/', movies: '/movies/', events: '/events/', comedy: '/events/comedy', artist: ARTIST, tickets: TICKETS, mobile: '/movies/' };
@@ -52,6 +52,7 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
   if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
+  await learnPlace(page);
   return true;
 }
 

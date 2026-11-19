@@ -163,6 +163,34 @@ export const PROPS = [
 // Reads the computed style of the element, its ::before/::after if they paint
 // anything, the rect, the painted layers in its subtree, a focus ring or fill
 // painted by an ancestor, the first text node's type, and the first svg icon.
+// District names a city it picked for the visitor in the top bar's location line and measures every
+// venue card's distance from it; together they say where the capture ran. learnPlace reads that line
+// (the top bar's lines before its "For you" tab) on each page, and scrubPlace masks those words and
+// every distance in recorded text. "Under 10 km", a filter chip's own label, is kept.
+export const PLACE_WORDS = new Map();   // word -> its mask: the first line is the city, the rest the state
+
+export async function learnPlace(page) {
+  const words = await page.evaluate(() => {
+    const bar = [...document.querySelectorAll('header, nav, div')].reverse()
+      .find((el) => el.querySelector('a[href="/movies/"]') && /\bfor you\b/i.test(el.innerText || ''));
+    const lines = (bar?.innerText || '').split('\n').map((x) => x.trim()).filter(Boolean);
+    const i = lines.findIndex((x) => /^for you$/i.test(x));
+    return i > 0 && i <= 3 ? lines.slice(0, i) : [];
+  }).catch(() => []);
+  words.forEach((w, i) => { if (w.length > 1 && !PLACE_WORDS.has(w)) PLACE_WORDS.set(w, i ? '[state]' : '[city]'); });
+}
+
+export function scrubPlace(value) {
+  if (typeof value === 'string') {
+    let t = value.replace(/(?<!Under )\b\d+(?:\.\d+)?\s?km\b/g, '[distance]');
+    for (const [w, mask] of PLACE_WORDS) t = t.split(w).join(mask);
+    return t;
+  }
+  if (Array.isArray(value)) return value.map(scrubPlace);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, scrubPlace(v)]));
+  return value;
+}
+
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
     const cls = (n) => [...n.classList].map((c) => String(c)).filter((c) => c && !/^x[0-9a-z]{5,8}$/.test(c));
