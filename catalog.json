@@ -20343,6 +20343,70 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "new-balance",
+      "name": "New Balance",
+      "url": "https://www.newbalance.co.uk/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Sportswear storefront: near-black promo bar, red wordmark, 2px buttons, 4px fields, Proxima Nova body and ITC Garamond titles",
+      "tags": [
+        "web",
+        "ecommerce",
+        "sportswear",
+        "retail",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (home, men's listing, one product page, customer care, login form)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/new-balance/README.md",
+      "tokens": "systems/new-balance/tokens.json",
+      "styleGuide": "systems/new-balance/style-guide.html",
+      "preview": {
+        "cover": "systems/new-balance/icon.png",
+        "icon": "systems/new-balance/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.sans",
+          "core.font.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "Sites-NBUK-Site en_GB, asset stamp v1795000483560",
+        "route": "web-inspector",
+        "durationMin": 50,
+        "gaps": [
+          "No screenshots or crops: T3 preview returned The browser is not producing screenshot frames",
+          "Headless Chromium returned HTTP 403 on the homepage, so it was not used",
+          "Live viewport was 1169x731, not 1440 or 390",
+          "Add to Bag, login, checkout and account creation were not submitted",
+          "Hover, pressed, focus-visible, disabled, open menu, search results and validation errors were not driven live",
+          "No dark site theme on the captured pages"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "The preview browser could not produce screenshot frames, and headless Chromium returned HTTP 403. Page screenshots were not invented.",
+        "components/": "Element crops need screenshots. None were captured."
+      }
     }
   ]
 }
