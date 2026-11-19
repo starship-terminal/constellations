@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "parallel",
+      "name": "Parallel",
+      "url": "https://www.useparallel.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Job-marketplace marketing and signed-out auth: photo hero, Advercase display type, white 32px auth card, black 12px primary, orange trial gradient",
+      "tags": [
+        "web",
+        "jobs",
+        "marketplace",
+        "marketing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing plus /login and /signup; LinkedIn not clicked; no email submitted; trial not started)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/parallel/README.md",
+      "tokens": "systems/parallel/tokens.json",
+      "styleGuide": "systems/parallel/style-guide.html",
+      "preview": {
+        "cover": "systems/parallel/screenshots/home-desktop.png",
+        "icon": "systems/parallel/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "useparallel.com 2026-11-19",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/747"
+      },
+      "layoutGaps": {
+        "icons/": "inline SVGs were not extracted; the wordmark and LinkedIn mark are in the screenshots and crops"
+      }
     }
   ]
 }

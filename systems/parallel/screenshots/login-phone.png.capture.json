@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-19",
+  "sourceUrl": "https://www.useparallel.com/login",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Headless Chromium. No Cloudflare challenge. Quantized to 256 colours. Read colours from raw/measured.json."
+}
