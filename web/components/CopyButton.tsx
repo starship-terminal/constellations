@@ -7,15 +7,23 @@ import { COPY_RESET_MS, copyLabel, copyOutcome, type CopyState } from "@/lib/cop
 /** Copy text to the clipboard; rejects when the browser refused. */
 export function copyText(text: string): Promise<void> {
   if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+  // Plain-http origins (a tailnet host) have no async clipboard: copy from a
+  // throwaway textarea, kept off-screen, read-only (no mobile keyboard) and
+  // out of the tab order, focused without scrolling so the page stays put.
   return new Promise((resolve, reject) => {
-    const ta = Object.assign(document.createElement("textarea"), { value: text });
+    const ta = Object.assign(document.createElement("textarea"), { value: text, readOnly: true, tabIndex: -1 });
+    ta.setAttribute("aria-hidden", "true");
+    Object.assign(ta.style, { position: "fixed", top: "0", left: "-9999px", opacity: "0" });
+    const before = document.activeElement as HTMLElement | null;
     document.body.append(ta);
+    ta.focus({ preventScroll: true });
     ta.select();
     let ok = false;
     try {
       ok = document.execCommand("copy");
     } catch {}
     ta.remove();
+    before?.focus?.({ preventScroll: true });
     if (ok) resolve();
     else reject(new Error("copy refused"));
   });
@@ -37,15 +45,12 @@ export function CopyButton({
   done,
   className = "btn",
   title,
-  fetchUrl,
 }: {
   text?: string;
   label?: string;
   done?: string;
   className?: string;
   title?: string;
-  /** Text to fetch on click (kept inside the gesture for Safari). */
-  fetchUrl?: string;
 }) {
   const { toast } = useToast();
   return (
@@ -53,20 +58,7 @@ export function CopyButton({
       type="button"
       className={className}
       title={title}
-      onClick={async () => {
-        let t = text;
-        if (!t && fetchUrl) {
-          try {
-            const r = await fetch(fetchUrl, { cache: "no-cache" });
-            if (!r.ok) throw new Error();
-            t = await r.text();
-          } catch {
-            toast(`No export yet; run \`make build\` first`);
-            return;
-          }
-        }
-        await copyWithToast(t || "", toast, done || `${label} copied`);
-      }}
+      onClick={() => copyWithToast(text || "", toast, done || `${label} copied`)}
     >
       {label}
     </button>
