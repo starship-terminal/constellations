@@ -20343,6 +20343,70 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "mapbox",
+      "name": "Mapbox",
+      "url": "https://www.mapbox.com",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Location-product marketing: white page, #0e1012 text, one #007afc blue pill, Cera Pro headlines at 56/70 weight 700, full pill radius, a light-only Webflow nav",
+      "tags": [
+        "web",
+        "maps",
+        "saas",
+        "marketing",
+        "docs",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (marketing, pricing, contact, and public docs). The account console and token creation sit behind sign-in and were never opened. The contact form was not submitted. The OneTrust banner was hidden, never answered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/mapbox/README.md",
+      "tokens": "systems/mapbox/tokens.json",
+      "styleGuide": "systems/mapbox/style-guide.html",
+      "preview": {
+        "cover": "systems/mapbox/screenshots/home-light-default.png",
+        "icon": "systems/mapbox/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.accent",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50,
+        "date": "2026-11-18",
+        "gaps": [
+          "the account console, token creation, and Studio sit behind sign-in on account.mapbox.com and were never opened; no token was created",
+          "the contact form was focused and its request-type list was opened, not submitted; checkout was never reached",
+          "no dark theme was switched; the captured pages paint light only",
+          "checkbox, radio, switch, toast, table, avatar, and a native text area do not mount on the captured public pages"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG icon set was lifted; the wordmark and menu glyph are in the screenshots and crops"
+      }
     }
   ]
 }
