@@ -20343,6 +20343,74 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "riverside",
+      "name": "Riverside",
+      "url": "https://riverside.fm",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Podcast and video studio marketing plus a signed-out dark auth shell: Instrument Sans and Sharp Grotesk on a white page, purple #9671ff pills, a 64px nav, 12px plan cards, and a #0d0d0d studio login with #222222 fields and a #7848ff submit",
+      "tags": [
+        "web",
+        "media",
+        "saas",
+        "marketing",
+        "auth",
+        "podcast"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the studio login and register forms; no account created)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/riverside/README.md",
+      "tokens": "systems/riverside/tokens.json",
+      "styleGuide": "systems/riverside/style-guide.html",
+      "preview": {
+        "cover": "systems/riverside/screenshots/README.md",
+        "icon": "systems/riverside/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.bg.action",
+            "border": "light.color.border.stroke"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.surface",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.muted",
+            "accent": "dark.color.bg.action",
+            "border": "dark.color.border.focus"
+          }
+        },
+        "fonts": [
+          "core.font.family.instrument-sans",
+          "core.font.family.sharp-grotesk",
+          "core.font.family.inter"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "signed-out marketing and studio auth, 2026-11-19",
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/779"
+      },
+      "layoutGaps": {
+        "components/": "preview_snapshot returned no screenshot frames, so no component crops were cut",
+        "icons/": "icon extraction was not run; the preview browser produced no screenshot frames and inline SVGs were not exported"
+      }
     }
   ]
 }
