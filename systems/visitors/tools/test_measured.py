@@ -32,6 +32,10 @@ class Measured(unittest.TestCase):
     def test_home_screenshot_exists(self):
         shot = ROOT / "screenshots" / "home-light-default.png"
         self.assertTrue(shot.is_file())
+        # A checkout with LFS smudge skipped (CI) holds the pointer, not the image.
+        with shot.open("rb") as f:
+            if f.read(64).startswith(b"version https://git-lfs.github.com/spec/v1"):
+                self.skipTest("screenshot is an unpulled Git LFS pointer")
         self.assertGreater(shot.stat().st_size, 1000)
 
 
