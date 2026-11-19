@@ -20343,6 +20343,69 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pocket",
+      "name": "Pocket",
+      "url": "https://getpocket.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A shutdown notice on the old Pocket web chrome: white canvas, coral pocket mark, teal primary button, Doyle headlines and Graphik Web UI",
+      "tags": [
+        "web",
+        "reading",
+        "shutdown",
+        "mozilla",
+        "marketing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. The public site is a shutdown notice. No account was created.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/pocket/README.md",
+      "tokens": "systems/pocket/tokens.json",
+      "styleGuide": "systems/pocket/style-guide.html",
+      "preview": {
+        "cover": "systems/pocket/screenshots/home-light-fold.png",
+        "icon": "systems/pocket/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.canvas",
+            "surface": "light.color.surface.popover",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.action.primary",
+            "border": "light.color.divider.tertiary"
+          },
+          "dark": {
+            "page": "dark.color.canvas",
+            "surface": "dark.color.surface.popover",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.action.primary",
+            "border": "dark.color.divider.tertiary"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.serif-alt"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "shutdown notice, 2026-11-19",
+        "durationMin": 40,
+        "pr": ""
+      }
     }
   ]
 }
