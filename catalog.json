@@ -20343,6 +20343,61 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "savvycal",
+      "name": "SavvyCal",
+      "url": "https://savvycal.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Scheduling marketing on oatmeal, with orange and neon pills, condensed display type, and a signed-out login",
+      "tags": [
+        "web",
+        "marketing",
+        "productivity",
+        "scheduling",
+        "pricing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/savvycal/README.md",
+      "tokens": "systems/savvycal/tokens.json",
+      "styleGuide": "systems/savvycal/style-guide.html",
+      "preview": {
+        "cover": "systems/savvycal/screenshots/home-light-default.png",
+        "icon": "systems/savvycal/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public marketing, 2026-11-19",
+        "route": "public-web",
+        "durationMin": 45,
+        "pr": "https://github.com/starship-terminal/constellations/pull/813"
+      }
     }
   ]
 }

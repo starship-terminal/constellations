@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SavvyCal style guide</title>
+<style>
+  :root {
+    --page: #fcf7ed;
+    --sand: #f4ebda;
+    --surface: #ffffff;
+    --ink: #0c0c09;
+    --muted: #474739;
+    --accent: #f54320;
+    --neon: #b9ff78;
+    --on-accent: #ffffff;
+    --auth: #18181b;
+    --border: #0c0c091a;
+    --field: #18181b1a;
+    --inverse: #0c0c09;
+    --on-inverse: #fbfbf9;
+    --green: #0d542b;
+    --focus: #00c951;
+    --sans: Inter, sans-serif;
+    --display: "GT-Alpina-Condensed", Georgia, serif;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 24px;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 40px 80px; }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 88px;
+    line-height: 83.6px;
+    margin: 0 0 16px;
+  }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 50.4px;
+    margin: 48px 0 16px;
+  }
+  p { color: var(--muted); margin: 0 0 16px; max-width: 40rem; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 8px; border: 1px solid var(--border); }
+  .name { font-size: 14px; line-height: 20px; color: var(--muted); margin-top: 6px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+    border: 0;
+    text-decoration: none;
+  }
+  .primary { background: var(--accent); color: var(--on-accent); padding: 10px 20px; }
+  .ghost { background: transparent; color: var(--ink); padding: 10px 20px; }
+  .neon { background: var(--neon); color: var(--ink); padding: 10px 20px; }
+  .oauth {
+    background: var(--surface);
+    color: var(--auth);
+    border-radius: 8px;
+    height: 48px;
+    padding: 0 20px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    width: 280px;
+  }
+  input {
+    display: block;
+    width: 360px;
+    max-width: 100%;
+    height: 36px;
+    box-sizing: border-box;
+    border: 1px solid var(--field);
+    border-radius: 8px;
+    padding: 5px 11px;
+    font: 14px/24px var(--sans);
+    background: transparent;
+    margin: 12px 0;
+  }
+  input:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .band {
+    background: var(--inverse);
+    color: var(--on-inverse);
+    border-radius: 8px;
+    padding: 32px;
+    margin-top: 24px;
+  }
+  .band p { color: #d8d8d0; }
+  .note { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>SavvyCal</h1>
+  <p>Public marketing and signed-out login. Values are the measured tokens. Display type falls back when GT Alpina is not installed.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#fcf7ed"></div><div class="name">page #fcf7ed</div></div>
+    <div class="swatch"><div class="chip" style="background:#f4ebda"></div><div class="name">sand #f4ebda</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">surface #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#0c0c09"></div><div class="name">ink #0c0c09</div></div>
+    <div class="swatch"><div class="chip" style="background:#474739"></div><div class="name">muted #474739</div></div>
+    <div class="swatch"><div class="chip" style="background:#f54320"></div><div class="name">accent #f54320</div></div>
+    <div class="swatch"><div class="chip" style="background:#b9ff78"></div><div class="name">neon #b9ff78</div></div>
+    <div class="swatch"><div class="chip" style="background:#0d542b"></div><div class="name">green band #0d542b</div></div>
+  </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <span class="btn primary">Try SavvyCal risk-free</span>
+    <span class="btn ghost">See plans &amp; pricing</span>
+    <span class="btn neon">Get started free</span>
+    <span class="btn oauth">Sign in with Google</span>
+  </div>
+  <h2>Field</h2>
+  <label class="note" for="email">Email</label>
+  <input id="email" type="email" placeholder="">
+  <div class="band">
+    <h2 style="color:#fcf7ed;margin-top:0">Kick the tires for free</h2>
+    <p>Footer band is olive-950 with oatmeal type.</p>
+    <span class="btn neon">Get started free</span>
+  </div>
+</main>
+</body>
+</html>
