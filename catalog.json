@@ -20343,6 +20343,81 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "portrait",
+      "name": "Portrait",
+      "url": "https://portrait.so/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Link-in-bio marketing with a navy display face on a gray page, dark pill buttons, and a rainbow ring on Sign up",
+      "tags": [
+        "web",
+        "marketing",
+        "identity",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "public marketing plus email-only signup. Wallet, card, and payment were not entered.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/portrait/README.md",
+      "tokens": "systems/portrait/tokens.json",
+      "styleGuide": "systems/portrait/style-guide.html",
+      "preview": {
+        "cover": "systems/portrait/icon.png",
+        "icon": "systems/portrait/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.action.fill",
+            "border": "light.color.border.default"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.canvas",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.muted",
+            "accent": "light.color.action.fill",
+            "border": "dark.color.action.glass-border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "not recorded",
+        "pr": "pending",
+        "durationMin": 40,
+        "timestamp": "2026-11-19T00:00:00Z",
+        "gaps": [
+          "preview browser did not produce screenshot frames",
+          "phone width not measured",
+          "wallet connect and payment not entered",
+          "live dark theme not switched; data-mode=dark was forced"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "Preview browser returned: The browser is not producing screenshot frames. No PNG was invented.",
+        "components/": "No crops. The same screenshot-frame failure blocked element captures."
+      }
     }
   ]
 }
