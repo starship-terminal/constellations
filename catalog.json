@@ -20343,6 +20343,85 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "luluandgeorgia",
+      "name": "Lulu and Georgia",
+      "url": "https://www.luluandgeorgia.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "furniture storefront design: a white page, near-black ink #1a1713, an olive announcement bar, a red Sale link, square corners, Soehne UI type and Iskry headings, a wide grey search field, and a black add-to-cart",
+      "tags": [
+        "web",
+        "retail",
+        "furniture",
+        "ecommerce",
+        "search",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (every captured surface is public; account, checkout, add to cart, wishlist, and the Shop sign-in Continue were not entered; the search field and the login email were typed into and cleared)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/luluandgeorgia/README.md",
+      "tokens": "systems/luluandgeorgia/tokens.json",
+      "styleGuide": "systems/luluandgeorgia/style-guide.html",
+      "layoutGaps": {
+        "icons/": "Header icons are inline SVGs in the live page and were not extracted. Brand artwork stays in screenshots (docs/RIGHTS.md)."
+      },
+      "source": {
+        "path": "~/.design-systems/luluandgeorgia/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "luluandgeorgia.com public signed-out surface in headless Chromium, desktop 1440x900 and phone 390x844. The DataGrail consent banner is hidden, never answered. Shopify storefront with no brand token sheet; colours are computed styles.",
+        "timestamp": "2026-11-18T09:20:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/collections/furniture",
+          "/products/sachs-dining-table",
+          "/search?q=rug&type=product",
+          "/pages/about-us",
+          "/account/login"
+        ],
+        "gaps": [
+          "https://www.luluandgeorgia.com/account/login redirects to a Shop sign-in on shopify.com. Continue with shop was not clicked. The email field was typed into and cleared. Account creation was not started.",
+          "Add to cart on the product page was measured in hover, focus, and pressed and was not clicked. Checkout was not opened.",
+          "Wishlist, registry, and trade login sit behind an account and were not activated.",
+          "The filter drawer's Apply was not pressed, so no filtered results were submitted.",
+          "The Klaviyo newsletter form was not submitted."
+        ],
+        "durationMin": 40,
+        "date": "2026-11-18",
+        "pr": "https://github.com/starship-terminal/constellations/pull/665"
+      },
+      "preview": {
+        "cover": "systems/luluandgeorgia/screenshots/home-light-default.png",
+        "icon": "systems/luluandgeorgia/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.promo",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      }
     }
   ]
 }
