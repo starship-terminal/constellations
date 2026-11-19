@@ -20343,6 +20343,76 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "nudea",
+      "name": "Nudea",
+      "url": "https://nudea.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "A quiet Shopify lingerie and sleepwear store: cream cotton page, raven ink, Abril Text headlines at weight 300, Neue Haas uppercase pills, a raven announcement bar, red only for sale tags and the promo nav item, and square product photography with 10px card images.",
+      "tags": [
+        "web",
+        "e-commerce",
+        "shopify",
+        "fashion",
+        "lingerie",
+        "marketing",
+        "light",
+        "signed-out",
+        "serif"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing only; account, checkout, payment and the fitting-room booking were not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/nudea/README.md",
+      "tokens": "systems/nudea/tokens.json",
+      "styleGuide": "systems/nudea/style-guide.html",
+      "preview": {
+        "cover": "systems/nudea/screenshots/home-light-default.png",
+        "icon": "systems/nudea/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "nudea.com public signed-out Shopify theme, computed styles in the T3 preview browser at 1440x900 and 390x844, screenshots in headless Chromium after the page loaded without a challenge",
+        "timestamp": "2026-11-19T00:00:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/products/the-classic-flannel-pj-set-mulberry_gingham",
+          "/collections/bras",
+          "/pages/about",
+          "/pages/sustainability",
+          "/search"
+        ],
+        "durationMin": 90
+      },
+      "layoutGaps": {
+        "icons/": "Icon extraction was not run. The wordmark and header glyphs are visible in the screenshots."
+      }
     }
   ]
 }
