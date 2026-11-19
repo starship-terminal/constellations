@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copperx style guide</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ffffff; color: #1e232e; font: 400 16px/24px "Euclid Circular A", ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 48px; line-height: 52px; font-weight: 500; letter-spacing: -1.2px; margin: 0 0 8px; }
+  h2 { font-size: 16px; line-height: 24px; font-weight: 500; margin: 40px 0 12px; }
+  p.lede { color: #8d9097; max-width: 46em; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .swatch { display: flex; gap: 12px; align-items: center; }
+  .swatch i { width: 48px; height: 48px; border-radius: 8px; border: 1px solid rgba(0,0,0,.12); display: block; }
+  .swatch b { display: block; font-size: 14px; font-weight: 500; }
+  .swatch span, .swatch code { display: block; color: #8d9097; font-size: 12px; }
+  .type { margin: 8px 0; }
+  .radius { height: 48px; border: 1px solid rgba(106,115,133,.3); display: inline-flex; align-items: center; padding: 0 16px; margin-right: 12px; }
+  .btns { display: flex; gap: 12px; align-items: center; }
+  button, .btn { height: 36px; padding: 8px 12px; border-radius: 8px; border: 0; font: 500 14px/20px inherit; box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 0 0 1px rgba(106,115,133,.16); }
+  .primary { background: #000000; color: #fff; }
+  .secondary { background: #fff; color: #13171f; }
+  .link { color: #4c63ed; font-weight: 500; font-size: 14px; }
+  .note { color: #8d9097; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Copperx</h1>
+  <p class="lede">Signed-out marketing tokens, measured on copperx.io. One light theme. Euclid Circular A is the product face and is not loaded here.</p>
+  <h2>Colour</h2>
+  <div class="swatches"><div class="swatch"><i style="background:#ffffff"></i><div><b>page</b><span>#ffffff</span><code>background.page</code></div></div>
+<div class="swatch"><i style="background:#f7f9fc"></i><div><b>wash</b><span>#f7f9fc</span><code>background.wash</code></div></div>
+<div class="swatch"><i style="background:#000000"></i><div><b>inverse</b><span>#000000</span><code>background.inverse</code></div></div>
+<div class="swatch"><i style="background:#1e232e"></i><div><b>primary</b><span>#1e232e</span><code>text.primary</code></div></div>
+<div class="swatch"><i style="background:#6a7385"></i><div><b>body</b><span>#6a7385</span><code>text.body</code></div></div>
+<div class="swatch"><i style="background:#8d9097"></i><div><b>muted</b><span>#8d9097</span><code>text.muted</code></div></div>
+<div class="swatch"><i style="background:#ffffff"></i><div><b>inverse</b><span>#ffffff</span><code>text.inverse</code></div></div>
+<div class="swatch"><i style="background:#5f76f9"></i><div><b>link</b><span>#5f76f9</span><code>text.link</code></div></div>
+<div class="swatch"><i style="background:#4c63ed"></i><div><b>default</b><span>#4c63ed</span><code>accent.default</code></div></div>
+<div class="swatch"><i style="background:#3e50b7"></i><div><b>deep</b><span>#3e50b7</span><code>accent.deep</code></div></div>
+<div class="swatch"><i style="background:#2e9fb2"></i><div><b>teal</b><span>#2e9fb2</span><code>accent.teal</code></div></div>
+<div class="swatch"><i style="background:rgba(0, 0, 0, 0.12)"></i><div><b>default</b><span>rgba(0, 0, 0, 0.12)</span><code>border.default</code></div></div>
+<div class="swatch"><i style="background:rgba(106, 115, 133, 0.16)"></i><div><b>control</b><span>rgba(106, 115, 133, 0.16)</span><code>border.control</code></div></div>
+<div class="swatch"><i style="background:#005fcc"></i><div><b>focus</b><span>#005fcc</span><code>border.focus</code></div></div>
+<div class="swatch"><i style="background:#000000"></i><div><b>primary</b><span>#000000</span><code>action.primary</code></div></div>
+<div class="swatch"><i style="background:#1e232e"></i><div><b>primary-hover</b><span>#1e232e</span><code>action.primary-hover</code></div></div>
+<div class="swatch"><i style="background:#ffffff"></i><div><b>secondary</b><span>#ffffff</span><code>action.secondary</code></div></div>
+<div class="swatch"><i style="background:#f7f9fc"></i><div><b>secondary-hover</b><span>#f7f9fc</span><code>action.secondary-hover</code></div></div>
+<div class="swatch"><i style="background:#000000"></i><div><b>bg</b><span>#000000</span><code>component.button.bg</code></div></div>
+<div class="swatch"><i style="background:#ffffff"></i><div><b>text</b><span>#ffffff</span><code>component.button.text</code></div></div>
+<div class="swatch"><i style="background:#ffffff"></i><div><b>bg</b><span>#ffffff</span><code>component.button-secondary.bg</code></div></div>
+<div class="swatch"><i style="background:#13171f"></i><div><b>text</b><span>#13171f</span><code>component.button-secondary.text</code></div></div></div>
+  <h2>Type</h2>
+  <p class="type" style="font-size:96px;font-weight:500;line-height:96px;letter-spacing:-3.84px">display · 96px / 96px</p>
+<p class="type" style="font-size:48px;font-weight:500;line-height:52px;letter-spacing:-1.2px">title · 48px / 52px</p>
+<p class="type" style="font-size:16px;font-weight:500;line-height:24px;letter-spacing:0px">heading · 16px / 24px</p>
+<p class="type" style="font-size:16px;font-weight:400;line-height:24px;letter-spacing:0px">body · 16px / 24px</p>
+<p class="type" style="font-size:14px;font-weight:500;line-height:20px;letter-spacing:0px">ui · 14px / 20px</p>
+<p class="type" style="font-size:14px;font-weight:400;line-height:19.6px;letter-spacing:0px">caption · 14px / 19.6px</p>
+  <h2>Radius</h2>
+  <div class="radius" style="border-radius:8px"><span>control 8px</span></div>
+<div class="radius" style="border-radius:16px"><span>panel 16px</span></div>
+  <h2>Controls</h2>
+  <div class="btns">
+    <button class="primary">Get Started</button>
+    <button class="secondary">Log in</button>
+    <span class="link">Stablecoin Checkout</span>
+  </div>
+  <p class="note">Primary hover is #1e232e. Secondary hover is #f7f9fc. Focus outline is the browser default #005fcc.</p>
+</main>
+</body>
+</html>

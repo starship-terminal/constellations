@@ -20343,6 +20343,89 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "copperx",
+      "name": "Copperx",
+      "url": "https://copperx.io",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Stablecoin banking marketing: a white field, an 85px sticky header, a 96px Euclid Circular A headline with one indigo #4c63ed word, black and white 36px buttons at radius 8, and indigo product cards",
+      "tags": [
+        "web",
+        "finance",
+        "stablecoin",
+        "banking",
+        "marketing",
+        "nextjs",
+        "tailwind",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "read-only (the marketing site is public; dashboard.copperx.io and payout.copperx.io are authenticated hosts named by the Log in dialog and never opened; no account, payment, KYC or wallet flow was entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/copperx/README.md",
+      "tokens": "systems/copperx/tokens.json",
+      "styleGuide": "systems/copperx/style-guide.html",
+      "preview": {
+        "cover": "systems/copperx/screenshots/home-light-default.png",
+        "icon": "systems/copperx/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.wash",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public Playwright capture of copperx.io signed-out marketing surfaces",
+        "source": "copperx.io (a Next.js + Tailwind marketing site) in headless Chromium, desktop 1440x900 and a 390x844 mobile pass. The site publishes no design-token custom properties, so colour, type and geometry are measured computed styles. dashboard.copperx.io and payout.copperx.io are documented authenticated boundaries",
+        "timestamp": "2026-11-18T16:10:00Z",
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/crypto-payment-gateway",
+          "/personal-banking",
+          "/credit-cards",
+          "/payout",
+          "/blog",
+          "mobile / and /pricing"
+        ],
+        "gaps": [
+          "dashboard.copperx.io is the payment-gateway account host named by the Log in dialog; it was not opened",
+          "payout.copperx.io is the financial-account host named by the same dialog; wallets, cards, payouts and KYC were not entered",
+          "no account was created and no field was filled",
+          "the contact page embeds a Google Form; it was not filled, so validation, error and disabled field states were not measured",
+          "Contact Sales links to a Google Form and was not submitted",
+          "the site publishes one light theme; no dark theme was captured",
+          "a consent overlay, if present, was hidden and never answered",
+          "icons: no standalone SVG set was extracted"
+        ],
+        "durationMin": 25,
+        "durationNote": "wall-clock for the signed-out capture, measurement, motion probe and package build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/689"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG set was extracted; the wordmark and glyphs are in the screenshots and icon.png"
+      }
     }
   ]
 }
