@@ -66,7 +66,9 @@ jobs:
   # (~/.design-systems/pw, docs/CAPTURE.md) with Chromium only, beside the check
   # job so the browser download does not lengthen it.
   kit-browser:
-    runs-on: ubuntu-latest
+    # Playwright 1.55.0 has no Chromium build for ubuntu-latest (26.04), so this job
+    # stays on 24.04 until the kit moves to a newer Playwright.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
         with:
