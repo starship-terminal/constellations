@@ -60,3 +60,33 @@ jobs:
         run: make docs
       - name: The docs site never ships the gallery
         run: test ! -e site/gallery
+  # The kit's browser tests (tools/test_kit_privacy.py SnapshotInABrowser,
+  # tools/test_kit_capture.py MeasureArgs) skip without Playwright, so make test
+  # never runs them. This job installs the version the capture kit uses
+  # (~/.design-systems/pw, docs/CAPTURE.md) with Chromium only, beside the check
+  # job so the browser download does not lengthen it.
+  kit-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          lfs: false
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install Playwright 1.55.0 and Chromium
+        run: |
+          npm install --no-save --prefix "$RUNNER_TEMP/pw" playwright@1.55.0
+          "$RUNNER_TEMP/pw/node_modules/.bin/playwright" install --with-deps chromium
+          echo "PLAYWRIGHT=$RUNNER_TEMP/pw/node_modules/playwright/index.mjs" >> "$GITHUB_ENV"
+      - name: Install the tools' Python dependencies
+        run: pip install -r requirements.txt -r tools/requirements-capture.txt
+      - name: Run the kit's browser tests
+        # -v so the log shows each test ran rather than skipped.
+        run: cd tools && python -m unittest -v test_kit_privacy.SnapshotInABrowser test_kit_capture.MeasureArgs
