@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relume style guide</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f1f0ee;
+    --raised: #ffffffcc;
+    --text: #101010;
+    --secondary: #343434;
+    --muted: #8a8a8a;
+    --tertiary: #5c5c5c;
+    --accent: #ff00f4;
+    --on-accent: #ffffff;
+    --border: #1b19191a;
+    --inverse: #101010;
+    --hover: #ff29f6;
+    --danger: #ff4848;
+    --warning: #ffdc00;
+    --success: #00dc11;
+    --info: #00b8ed;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font: 400 14px/21px "Geist Variable", Geist, Arial, sans-serif;
+  }
+  main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font: 400 40px/48px "Geist Variable", Geist, Arial, sans-serif; letter-spacing: -0.8px; margin: 0 0 8px; }
+  h2 { font: 400 24px/32px "Geist Variable", Geist, Arial, sans-serif; letter-spacing: -0.4px; margin: 36px 0 12px; }
+  p { max-width: 68ch; }
+  .note { color: var(--muted); font-size: 13px; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .swatch { width: 148px; }
+  .chip { height: 64px; border-radius: 8px; border: 1px solid var(--border); }
+  .label { font-size: 12px; margin-top: 6px; }
+  .label span { display: block; color: var(--muted); }
+  button.primary, button.secondary, button.continue {
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 6px;
+    font: 400 14px/20px "Geist Variable", Geist, Arial, sans-serif;
+    cursor: pointer;
+  }
+  button.primary { background: var(--accent); color: var(--on-accent); border: 0; }
+  button.secondary { background: transparent; color: var(--text); border: 1px solid rgba(27, 25, 25, 0.1); height: 34px; }
+  button.continue { background: var(--accent); color: var(--on-accent); border: 1px solid transparent; }
+  .composer {
+    width: min(640px, 100%);
+    background: var(--raised);
+    border: 1px solid rgba(27, 25, 25, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    color: var(--muted);
+  }
+  .hero {
+    font: 400 40px/44px "Geist Variable", Geist, Arial, sans-serif;
+    letter-spacing: -1.2px;
+    margin: 12px 0;
+  }
+  a { color: var(--text); }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(27, 25, 25, 0.1); }
+  th { color: var(--muted); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Relume</h1>
+  <p>Public marketing and signed-out login styles measured on 19 November 2026. Geist Variable is not loaded here, so type falls back to Arial.</p>
+  <p class="note">Values come from <a href="tokens.json">tokens.json</a>. This page does not invent a dark theme. prefers-color-scheme dark left the live page on light.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#f1f0ee"></div><div class="label">Page <span>#f1f0ee</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffffcc"></div><div class="label">Composer <span>#ffffffcc</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#101010"></div><div class="label">Text <span>#101010</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#8a8a8a"></div><div class="label">Muted <span>#8a8a8a</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#ff00f4"></div><div class="label">Accent <span>#ff00f4</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#ff29f6"></div><div class="label">Declared hover <span>#ff29f6</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#ff4848"></div><div class="label">Danger <span>#ff4848</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#ffdc00"></div><div class="label">Warning <span>#ffdc00</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#00dc11"></div><div class="label">Success <span>#00dc11</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#00b8ed"></div><div class="label">Info <span>#00b8ed</span></div></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="hero">Fastest AI website builder</p>
+  <p>Drop in your old website, a doc or a few notes. Body is 14px Geist Variable. The hero on a 1440 viewport is 56px, line-height 67.2px, tracking -1.68px.</p>
+
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary" type="button">Start for free</button>
+    <button class="secondary" type="button">Log in</button>
+    <button class="continue" type="button">Continue</button>
+  </div>
+  <div class="composer" style="margin-top:16px">Describe your business...</div>
+
+  <h2>Spacing and radius</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th><th>Where</th></tr>
+    <tr><td>radius.sm</td><td>6px</td><td>Buttons and nav links</td></tr>
+    <tr><td>radius.xl</td><td>16px</td><td>Composer card</td></tr>
+    <tr><td>space.xs</td><td>6px</td><td>Button padding and gap</td></tr>
+    <tr><td>space.xl</td><td>20px</td><td>Composer field padding</td></tr>
+  </table>
+</main>
+</body>
+</html>

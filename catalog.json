@@ -20343,6 +20343,73 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "relume",
+      "name": "Relume",
+      "url": "https://www.relume.io/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Warm-grey marketing site for an AI website builder: magenta primary button, quiet bordered secondary, Geist headlines, frosted composer",
+      "tags": [
+        "web",
+        "marketing",
+        "design-tool",
+        "light",
+        "signed-out",
+        "ai"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the login page; no email, password, Google, or SSO was entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/relume/README.md",
+      "tokens": "systems/relume/tokens.json",
+      "styleGuide": "systems/relume/style-guide.html",
+      "preview": {
+        "cover": "systems/relume/screenshots/home-light-default.png",
+        "icon": "systems/relume/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.raised",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.text",
+          "core.font.family.auth"
+        ]
+      },
+      "capture": {
+        "method": "live preview measurements plus headless Chrome on public pages",
+        "source": "https://www.relume.ai/ homepage, pricing, and signed-out login",
+        "timestamp": "2026-11-19T02:10:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "",
+        "pr": "",
+        "durationMin": 40,
+        "gaps": [
+          "T3 preview browser stopped producing screenshot frames",
+          "login form requires a password and offers Google and SSO, so it was not submitted",
+          "no dark theme painted",
+          "primary hover colour is declared and did not apply in computed style"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "Relume icons are inline SVG artwork in the page and were not extracted (docs/RIGHTS.md)"
+      }
     }
   ]
 }
