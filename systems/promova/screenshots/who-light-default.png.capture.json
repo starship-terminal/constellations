@@ -1,0 +1,12 @@
+{
+  "capturedAt": "2026-11-19T01:50:00Z",
+  "source": "headless Chromium via Playwright. T3 preview_snapshot returned: The browser is not producing screenshot frames.",
+  "sanitizedSourceUrl": "https://promova.com/who-we-are",
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1
+}

@@ -20343,6 +20343,63 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "promova",
+      "name": "Promova",
+      "url": "https://promova.com",
+      "category": "learning",
+      "platform": "web",
+      "goodFor": "language-learning marketing: a black page ground with white and pastel 30px islands, Nekst display type, Manrope body, square black CTAs, and a 5px field",
+      "tags": [
+        "web",
+        "education",
+        "language",
+        "marketing",
+        "signed-out",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the /sign-up form were measured; the form was not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/promova/README.md",
+      "tokens": "systems/promova/tokens.json",
+      "styleGuide": "systems/promova/style-guide.html",
+      "preview": {
+        "cover": "systems/promova/screenshots/home-light-default.png",
+        "icon": "systems/promova/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/762"
+      },
+      "layoutGaps": {
+        "icons/": "SVG extraction was not run. The wordmark and close control are in the crops."
+      }
     }
   ]
 }
