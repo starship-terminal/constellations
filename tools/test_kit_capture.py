@@ -45,6 +45,20 @@ class CssColour(unittest.TestCase):
         self.assertEqual(json.loads(res.stdout), ["#ff0000", "#636363 @ 0.5", "#777777", "#777777", "#ff0000", "#7f7f7f",
                                                   "#ff0000", "#000000", "#008080", "#336699 @ 0.25", "0 1px 2px #000000 @ 0.1"])
 
+    def test_one_colour_in_every_notation_and_a_missing_component(self):
+        # CSS Color 4's worked example, rgb(125 35 41), written in each notation (lch and oklch with plain
+        # and percentage chroma, display-p3 from the inverse matrices); `none` converts as zero.
+        mod = (CAPTURE / "css-colour.mjs").as_uri()
+        same = ["lab(29.2345% 39.3825 20.0664)", "lch(29.2345% 44.2 27)", "lch(29.2345% 29.4667% 27)",
+                "oklab(40.101% 0.1147 0.0453)", "oklch(40.101% 0.12332 21.555)", "oklch(40.101% 30.83% 21.555)",
+                "color(display-p3 0.45124 0.16432 0.1715)"]
+        other = ["oklch(0 0 none / 0.85)", "lch(none none none)", "color(srgb none 0.5 1)"]
+        res = subprocess.run([NODE, "--input-type=module", "-e",
+                              f"import {{ hex }} from {json.dumps(mod)}; console.log(JSON.stringify({json.dumps(same + other)}.map(hex)))"],
+                             capture_output=True, text=True, timeout=30)
+        self.assertEqual(res.returncode, 0, res.stderr)
+        self.assertEqual(json.loads(res.stdout), ["#7d2329"] * len(same) + ["#000000 @ 0.85", "#000000", "#0080ff"])
+
 
 @unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
 class MeasureArgs(unittest.TestCase):

@@ -2,27 +2,29 @@
 // color(display-p3), lab()/oklab() (Chromium computes color-mix, Tailwind 4's opacity modifiers, in
 // these) and lch()/oklch() (Tailwind 4's palette). A colour outside sRGB is clamped into it. A
 // translucent colour reads "#rrggbb @ alpha".
-const N = '[-+]?(?:\\d+\\.?\\d*|\\.\\d+)(?:e[-+]?\\d+)?';
+// A number, or `none` (a missing component, which converts as zero: Chromium writes oklch(0 0 none)).
+const N = '(?:[-+]?(?:\\d+\\.?\\d*|\\.\\d+)(?:e[-+]?\\d+)?|none)';
 const ALPHA = `(?:\\s*\\/\\s*(${N}%?))?`;
-const alpha = (a) => (a === undefined ? undefined : a.endsWith('%') ? parseFloat(a) / 100 : +a);
+const num = (x) => (x === 'none' ? 0 : parseFloat(x));
+const alpha = (a) => (a === undefined ? undefined : a === 'none' ? 0 : a.endsWith('%') ? parseFloat(a) / 100 : +a);
 const toHex = (rgb, a) => {
   const h = '#' + rgb.map((v) => Math.round(Math.min(1, Math.max(0, v)) * 255).toString(16).padStart(2, '0')).join('');
   return a === undefined || a === 1 ? h : `${h} @ ${a}`;
 };
-const deg = (h) => (parseFloat(h) * Math.PI) / 180;
+const deg = (h) => (num(h) * Math.PI) / 180;
 export const hex = (c) => {
   if (!c) return c;
   return String(c).replace(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/g, (m, r, g, b, a) => {
     const h = '#' + [r, g, b].map((v) => (+v).toString(16).padStart(2, '0')).join('');
     return a === undefined || +a === 1 ? h : `${h} @ ${+a}`;
-  }).replace(new RegExp(`color\\(srgb (${N}) (${N}) (${N})${ALPHA}\\)`, 'g'), (m, r, g, b, a) => toHex([+r, +g, +b], alpha(a)))
-    .replace(new RegExp(`color\\(display-p3 (${N}) (${N}) (${N})${ALPHA}\\)`, 'g'), (m, r, g, b, a) => toHex(p3ToSrgb(+r, +g, +b), alpha(a)))
+  }).replace(new RegExp(`color\\(srgb (${N}) (${N}) (${N})${ALPHA}\\)`, 'g'), (m, r, g, b, a) => toHex([r, g, b].map(num), alpha(a)))
+    .replace(new RegExp(`color\\(display-p3 (${N}) (${N}) (${N})${ALPHA}\\)`, 'g'), (m, r, g, b, a) => toHex(p3ToSrgb(...[r, g, b].map(num)), alpha(a)))
     .replace(new RegExp(`(ok)?lab\\((${N}%?) (${N}) (${N})${ALPHA}\\)`, 'g'), (m, ok, L, A, B, a) =>
-      toHex(ok ? oklabToSrgb(parseFloat(L) * (L.endsWith('%') ? 0.01 : 1), +A, +B) : labToSrgb(parseFloat(L), +A, +B), alpha(a)))
+      toHex(ok ? oklabToSrgb(num(L) * (L.endsWith('%') ? 0.01 : 1), num(A), num(B)) : labToSrgb(num(L), num(A), num(B)), alpha(a)))
     .replace(new RegExp(`(ok)?lch\\((${N}%?) (${N}%?) (${N})(?:deg)?${ALPHA}\\)`, 'g'), (m, ok, L, C, H, a) => {
       // a chroma percentage is of 0.4 in oklch and of 150 in lch (CSS Color 4)
-      const c = C.endsWith('%') ? (parseFloat(C) / 100) * (ok ? 0.4 : 150) : +C, h = deg(H);
-      const l = parseFloat(L) * (ok && L.endsWith('%') ? 0.01 : 1);
+      const c = C.endsWith('%') ? (parseFloat(C) / 100) * (ok ? 0.4 : 150) : num(C), h = deg(H);
+      const l = num(L) * (ok && L.endsWith('%') ? 0.01 : 1);
       return toHex(ok ? oklabToSrgb(l, c * Math.cos(h), c * Math.sin(h)) : labToSrgb(l, c * Math.cos(h), c * Math.sin(h)), alpha(a));
     });
 };
