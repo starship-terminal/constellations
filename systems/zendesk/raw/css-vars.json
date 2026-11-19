@@ -1,0 +1,617 @@
+{
+  "captured": "2026-11-19",
+  "url": "https://www.zendesk.com/ (geo-redirected to https://www.zendesk.com/sg/)",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "note": "Marketing CSS is styled-components. Only spacing, radius and content width are custom properties. Colours are computed.",
+  "fontFaces": [
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "100",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Thin.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Thin.woff\") format"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "100",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-ThinItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-ThinItalic.w"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "200",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Extralight.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Extralight.w"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "200",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-ExtralightItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Extral"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "300",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Light.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Light.woff\") form"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "300",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-LightItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-LightItalic"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Regular.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Regular.woff\") "
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "400",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Italic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Italic.woff\") fo"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "500",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Medium.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Medium.woff\") fo"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "500",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-MediumItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-MediumItal"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "600",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-SemiBold.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-SemiBold.woff\""
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "600",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-SemiBoldItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-SemiBold"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Bold.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Bold.woff\") format"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "700",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-BoldItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-BoldItalic.w"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "900",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Black.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Black.woff\") form"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "900",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-BlackItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-BlackItalic"
+    },
+    {
+      "family": "\"Noto Sans JP\"",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/noto-sans-jp-regular.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/noto-sans-jp-regular.woff\") format(\"woff\")"
+    },
+    {
+      "family": "\"Noto Sans JP\"",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/noto-sans-jp-bold.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/noto-sans-jp-bold.woff\") format(\"woff\")"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "100",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Thin.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Thin.woff\") format"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "100",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-ThinItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-ThinItalic.w"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "200",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Extralight.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Extralight.w"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "200",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-ExtralightItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Extral"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "300",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Light.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Light.woff\") form"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "300",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-LightItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-LightItalic"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Regular.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Regular.woff\") "
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "400",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Italic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Italic.woff\") fo"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "500",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Medium.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Medium.woff\") fo"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "500",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-MediumItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-MediumItal"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "600",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-SemiBold.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-SemiBold.woff\""
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "600",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-SemiBoldItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-SemiBold"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Bold.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Bold.woff\") format"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "700",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-BoldItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-BoldItalic.w"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "900",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Black.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Black.woff\") form"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "900",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-BlackItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-BlackItalic"
+    },
+    {
+      "family": "\"Noto Sans JP\"",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/noto-sans-jp-regular.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/noto-sans-jp-regular.woff\") format(\"woff\")"
+    },
+    {
+      "family": "\"Noto Sans JP\"",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/noto-sans-jp-bold.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/noto-sans-jp-bold.woff\") format(\"woff\")"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "100",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Thin.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Thin.woff\") format"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "100",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-ThinItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-ThinItalic.w"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "200",
+      "style": "normal",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Extralight.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Extralight.w"
+    },
+    {
+      "family": "\"Vanilla Sans\"",
+      "weight": "200",
+      "style": "italic",
+      "src": "url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-ExtralightItalic.woff2\") format(\"woff2\"), url(\"https://web-assets.zendesk.com/fonts/VanillaSans/VanillaSans-Extral"
+    }
+  ],
+  "body": {
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "font": "\"Vanilla Sans\", Arial, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "lh": "16px"
+  },
+  "declared": {
+    "--headerHeight": [
+      {
+        "value": "65px",
+        "sel": ".cwMKbe",
+        "media": null
+      },
+      {
+        "value": "115px",
+        "sel": ".cwMKbe",
+        "media": "(min-width: 1150px)"
+      }
+    ],
+    "--mobileGap": [
+      {
+        "value": "36px",
+        "sel": ".cbbKHx",
+        "media": null
+      }
+    ],
+    "--desktopGap": [
+      {
+        "value": "64px",
+        "sel": ".cbbKHx",
+        "media": null
+      }
+    ],
+    "--radius": [
+      {
+        "value": "8px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "12px",
+        "sel": ":root",
+        "media": "(min-width: 481px)"
+      },
+      {
+        "value": "16px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      },
+      {
+        "value": "20px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      },
+      {
+        "value": "40px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--space-space": [
+      {
+        "value": "16px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "16px",
+        "sel": ":root",
+        "media": "(min-width: 481px)"
+      },
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      },
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      },
+      {
+        "value": "32px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--space-globalPadding": [
+      {
+        "value": "16px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "16px",
+        "sel": ":root",
+        "media": "(min-width: 481px)"
+      },
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      },
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      },
+      {
+        "value": "40px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--space-sectionPadding": [
+      {
+        "value": "48px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "56px",
+        "sel": ":root",
+        "media": "(min-width: 481px)"
+      },
+      {
+        "value": "64px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      },
+      {
+        "value": "88px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      },
+      {
+        "value": "104px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--space-sectionPaddingHorizontal": [
+      {
+        "value": "16px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      },
+      {
+        "value": "40px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--space-sectionPaddingVertical": [
+      {
+        "value": "48px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "56px",
+        "sel": ":root",
+        "media": "(min-width: 481px)"
+      },
+      {
+        "value": "64px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      },
+      {
+        "value": "88px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      },
+      {
+        "value": "104px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--space-scrollPadding": [
+      {
+        "value": "110px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "90px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      }
+    ],
+    "--space-textMarginSm": [
+      {
+        "value": "8px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      }
+    ],
+    "--space-textMarginMd": [
+      {
+        "value": "12px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "16px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      }
+    ],
+    "--space-textMarginLg": [
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      }
+    ],
+    "--space-contentMarginSm": [
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      }
+    ],
+    "--space-contentMarginMd": [
+      {
+        "value": "32px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "40px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      },
+      {
+        "value": "48px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      },
+      {
+        "value": "56px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--space-contentMarginLg": [
+      {
+        "value": "48px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "56px",
+        "sel": ":root",
+        "media": "(min-width: 481px)"
+      },
+      {
+        "value": "64px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      },
+      {
+        "value": "72px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--space-buttonMargin": [
+      {
+        "value": "32px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      }
+    ],
+    "--space-linkMarginSm": [
+      {
+        "value": "16px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      }
+    ],
+    "--space-linkMarginMd": [
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      }
+    ],
+    "--space-tabletExtraPadding": [
+      {
+        "value": "0px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      },
+      {
+        "value": "0px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      }
+    ],
+    "--space-modalPaddingHorizontal": [
+      {
+        "value": "24px",
+        "sel": ":root",
+        "media": "(min-width: 0px)"
+      },
+      {
+        "value": "32px",
+        "sel": ":root",
+        "media": "(min-width: 768px)"
+      },
+      {
+        "value": "40px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      },
+      {
+        "value": "56px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--contentWidth": [
+      {
+        "value": "1150px",
+        "sel": ":root",
+        "media": "(min-width: 1150px)"
+      },
+      {
+        "value": "1600px",
+        "sel": ":root",
+        "media": "(min-width: 1600px)"
+      }
+    ],
+    "--accordion-radius": [
+      {
+        "value": "16px",
+        "sel": ".gmBSrZ",
+        "media": null
+      }
+    ],
+    "--ot-footer-space": [
+      {
+        "value": "160px",
+        "sel": "#onetrust-pc-sdk.otPcCenter",
+        "media": null
+      }
+    ]
+  },
+  "sheetErrors": [],
+  "ruleCount": 3527
+}

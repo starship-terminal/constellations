@@ -20343,6 +20343,96 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "zendesk",
+      "name": "Zendesk",
+      "url": "https://www.zendesk.com",
+      "category": "messaging",
+      "platform": "web",
+      "goodFor": "Customer-service marketing and signed-out login on one light theme: a styled-components site with a dark hero (ink #11110d, cream display #f5f5f2, Vanilla Sans 68/500), a lime primary #d1f470 with ink text on white pages and white text on the hero submit, 16px button radius, 12px fields, 40px pricing cards, and a subdomain login that was measured and not submitted",
+      "tags": [
+        "web",
+        "saas",
+        "customer-support",
+        "marketing",
+        "pricing",
+        "forms",
+        "help-center",
+        "light",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (www.zendesk.com marketing, /login, /pricing, /contact, /demo step 1, /register first step, support.zendesk.com/hc/en-us, and garden.zendesk.com as a separate site screenshot). No email was typed. No form was submitted. No card, phone, or company SSO was entered. The agent workspace was not opened.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/zendesk/README.md",
+      "tokens": "systems/zendesk/tokens.json",
+      "styleGuide": "systems/zendesk/style-guide.html",
+      "preview": {
+        "cover": "systems/zendesk/screenshots/home-light-default.png",
+        "icon": "systems/zendesk/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.raised",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "www.zendesk.com (geo-redirected to /sg/), support.zendesk.com/hc/en-us, and the first step of /register and /demo, in headless Chromium. Desktop 1440x900 and a 390x844 mobile pass. Computed styles from the live DOM. The marketing stylesheet declares spacing and radius, not a colour ramp. The T3 preview browser was still connecting, so this capture used headless Chromium on public pages that loaded without a Cloudflare challenge. BOUNDARY: the agent workspace, checkout, and any card, phone, or SSO step were never entered.",
+        "timestamp": "2026-11-19T04:50:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "www.zendesk.com/ (geo-redirected to /sg/)",
+          "www.zendesk.com/sg/login/",
+          "www.zendesk.com/sg/pricing/",
+          "www.zendesk.com/sg/contact/ (form not submitted; public sales phone masked in the screenshot)",
+          "www.zendesk.com/sg/register/ (first step only, not submitted)",
+          "www.zendesk.com/sg/demo/ (step 1 only, no option chosen)",
+          "support.zendesk.com/hc/en-us (search not queried)",
+          "garden.zendesk.com/ (screenshot only, not tokenised)",
+          "www.zendesk.com/sg/this-page-does-not-exist-zd-capture (older 404 template)",
+          "mobile passes on home, login and pricing at 390x844"
+        ],
+        "gaps": [
+          "the signed-in agent workspace was not entered",
+          "register, contact, login and demo forms were not submitted; no email was typed",
+          "no card, phone number, or company SSO was entered",
+          "the Platform menu did not open from a script click",
+          "pricing suite tabs were visible and not measured",
+          "Garden is a separate site and is not in tokens.json",
+          "the 404 page is an older template and is not in the marketing tokens",
+          "pressed states are DevTools-forced (CSS.forcePseudoState), so a script-applied mousedown style is missing",
+          "the reduced-motion probe was not run",
+          "Vanilla Sans is proprietary and not shipped; the style guide falls back to Arial",
+          "no dark theme exists on the public surface",
+          "the promo strip fill was covered by the cookie dialog and was not sampled",
+          "no success banner was shown, so there is no success colour token",
+          "the register error message text colour was not isolated from a script node",
+          "the secondary View demo ring was visible in a screenshot and not isolated in computed style (border width 0)"
+        ],
+        "durationMin": 90,
+        "durationNote": "one session: sparse clone, live measurement, screenshots, token build"
+      }
     }
   ]
 }
