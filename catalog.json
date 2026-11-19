@@ -20343,6 +20343,63 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "rox",
+      "name": "Rox",
+      "url": "https://www.rox.com/",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "Revenue-agent marketing: stone page, serif display at weight 420, square ink and paper buttons, a three-column pricing table, a light contact form",
+      "tags": [
+        "web",
+        "saas",
+        "marketing",
+        "ai",
+        "sales",
+        "framer"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (login is Auth0 with Google and Microsoft; no email was submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/rox/README.md",
+      "tokens": "systems/rox/tokens.json",
+      "styleGuide": "systems/rox/style-guide.html",
+      "preview": {
+        "cover": "systems/rox/screenshots/home-light-default.png",
+        "icon": "systems/rox/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.display",
+          "core.font.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/791"
+      },
+      "layoutGaps": {
+        "icons/": "The wordmark is a Framer sprite referenced by <use>, not an inline path. It was not extracted. The mark is visible in the screenshots."
+      }
     }
   ]
 }
