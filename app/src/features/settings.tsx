@@ -1,7 +1,7 @@
 "use client";
 import { BookmarkImport } from "@/components/bookmark-import";
 import { AppearanceSettings } from "@/components/appearance";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   BookmarkPlus,
@@ -91,20 +91,44 @@ export async function copyText(text: string): Promise<boolean> {
   }
 }
 
+export type CopyState = { label: string; ok: boolean } | undefined;
+/** What a Copy button says: "Copied" or "Copy failed" for two seconds after
+ * a click, restarted by another click, and nothing while detached. */
+export function copyFeedback(
+  show: (state: CopyState) => void,
+  write: (text: string) => Promise<boolean> = copyText,
+) {
+  let reset: ReturnType<typeof setTimeout> | undefined;
+  let live = true;
+  return {
+    async copy(label: string, text: string) {
+      const ok = await write(text);
+      if (!live) return;
+      clearTimeout(reset);
+      show({ label, ok });
+      reset = setTimeout(() => show(undefined), 2000);
+    },
+    // React may detach and attach an effect again (Strict Mode does).
+    attach() {
+      live = true;
+    },
+    detach() {
+      live = false;
+      clearTimeout(reset);
+    },
+  };
+}
+
 function AgentSettings() {
   const [origin, setOrigin] = useState("");
-  const [copied, setCopied] = useState<{ label: string; ok: boolean }>();
-  const reset = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const [copied, setCopied] = useState<CopyState>();
+  const [feedback] = useState(() => copyFeedback(setCopied));
   useEffect(() => {
     setOrigin(window.location.origin);
-    return () => clearTimeout(reset.current);
-  }, []);
-  async function copy(label: string, text: string) {
-    const ok = await copyText(text);
-    clearTimeout(reset.current);
-    setCopied({ label, ok });
-    reset.current = setTimeout(() => setCopied(undefined), 2000);
-  }
+    feedback.attach();
+    return () => feedback.detach();
+  }, [feedback]);
+  const copy = feedback.copy;
   return (
     <section className="settings-section">
       <div className="settings-section-label">

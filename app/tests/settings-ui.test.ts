@@ -7,7 +7,10 @@ vi.mock("next/navigation", () => ({
   useSearchParams: () => new URLSearchParams("tab=agents"),
   useRouter: () => ({ push: () => {}, replace: () => {} }),
 }));
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {
+  vi.unstubAllGlobals();
+  vi.useRealTimers();
+});
 
 test("only the selected settings tab points at a panel", async () => {
   const { SettingsTabList } = await import("@/features/settings");
@@ -30,4 +33,39 @@ test("a refused or missing clipboard reports failure instead of throwing", async
     clipboard: { writeText: vi.fn().mockResolvedValue(undefined) },
   });
   await expect(copyText("x")).resolves.toBe(true);
+});
+
+test("a Copy button shows its result for two seconds, restarts on a click and stops when detached", async () => {
+  vi.useFakeTimers();
+  const { copyFeedback } = await import("@/features/settings");
+  const shown: unknown[] = [];
+  let ok = true;
+  const feedback = copyFeedback(
+    (state) => shown.push(state),
+    async () => ok,
+  );
+  await feedback.copy("Claude", "claude mcp add");
+  expect(shown.at(-1)).toEqual({ label: "Claude", ok: true });
+  vi.advanceTimersByTime(1500);
+  ok = false;
+  await feedback.copy("Codex", "[mcp_servers]");
+  expect(shown.at(-1)).toEqual({ label: "Codex", ok: false });
+  // The second click restarted the two seconds.
+  vi.advanceTimersByTime(1500);
+  expect(shown.at(-1)).toEqual({ label: "Codex", ok: false });
+  vi.advanceTimersByTime(500);
+  expect(shown.at(-1)).toBeUndefined();
+  const count = shown.length;
+  await feedback.copy("swe", "swe mcp add");
+  feedback.detach();
+  vi.advanceTimersByTime(5000);
+  // Leaving the tab cancels the pending reset.
+  expect(shown.length).toBe(count + 1);
+  // A copy that finishes after leaving changes nothing.
+  await feedback.copy("MCP URL", "/api/mcp");
+  expect(shown.length).toBe(count + 1);
+  // Attached again, as React re-runs an effect, it shows results again.
+  feedback.attach();
+  await feedback.copy("MCP URL", "/api/mcp");
+  expect(shown.at(-1)).toEqual({ label: "MCP URL", ok: false });
 });
