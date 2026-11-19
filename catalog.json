@@ -20343,6 +20343,83 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "sharewillow",
+      "name": "ShareWillow",
+      "url": "https://www.sharewillow.com",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Trade-business incentive marketing on one light page: ivory #f7f5f1, espresso #180600 pills, lemon #faf082 accent, Mackinac display over Matter, a dark footer band, and a separate signed-out login card.",
+      "tags": [
+        "web",
+        "finance",
+        "incentives",
+        "marketing",
+        "saas",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing and the login form were read. Nothing was typed or submitted. Signup is a six-step password form with reCAPTCHA, so it was not filled in. Phone sign-in, payment, and the signed-in app were not entered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/sharewillow/README.md",
+      "tokens": "systems/sharewillow/tokens.json",
+      "styleGuide": "systems/sharewillow/style-guide.html",
+      "preview": {
+        "cover": "systems/sharewillow/icon.png",
+        "icon": "systems/sharewillow/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.bg.page",
+            "surface": "light.bg.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent.default",
+            "border": "light.border.strong"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "Live T3 preview browser on www.sharewillow.com and app.sharewillow.com/login. Computed styles and stylesheet custom properties. No screenshots.",
+        "timestamp": "2026-11-19T02:40:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "www.sharewillow.com/",
+          "www.sharewillow.com/pricing",
+          "app.sharewillow.com/login (signed out, not submitted)",
+          "app.sharewillow.com/signup (step 1 of 6 seen, not submitted)"
+        ],
+        "gaps": [
+          "No screenshots. preview_snapshot returned 'The browser is not producing screenshot frames'.",
+          "No dark theme on the marketing site or the login page.",
+          "390px width was not captured.",
+          "Signup was not email-only (password, confirm password, reCAPTCHA, 6 steps), so it was not filled in.",
+          "Phone sign-in, payment, payroll, and the signed-in app were not entered.",
+          "Login checkbox was already checked. Unchecked fill was not read.",
+          "Hover and pressed colours are stylesheet rules, not a hovered element."
+        ],
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/807"
+      },
+    "layoutGaps": {
+          "components/": "The preview browser produced no screenshot frames, so no component crops were saved."
     }
+  }
   ]
 }
