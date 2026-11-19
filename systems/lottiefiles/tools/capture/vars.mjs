@@ -102,6 +102,7 @@ await hideConsent(page);
 const NAMES = [...new Set(harvested.rules.flatMap((r) => Object.keys(r.properties)))];
 async function resolve(mode) {
   return page.evaluate(({ names, mode }) => {
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const html = document.documentElement;
     const prev = html.className;
     if (mode === 'dark') html.classList.add('dark');
@@ -109,7 +110,7 @@ async function resolve(mode) {
     const cs = getComputedStyle(html);
     const out = {};
     for (const n of names) {
-      const value = cs.getPropertyValue(n).trim();
+      const value = noUrl(cs.getPropertyValue(n).trim());
       if (value) out[n] = { value, raw: value };
     }
     html.className = prev;
