@@ -198,9 +198,9 @@
       "description": "Formulations for Skin, Hair & Body",
       "status": "captured",
       "package": "systems/aesop",
-      "notes": "",
+      "notes": "https://www.aesop.com/account/login returned a blank page. The storefront has no sign-in link and no email field.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
@@ -215,9 +215,9 @@
       "description": "Vacation rentals, cabins, beach houses, & more",
       "status": "captured",
       "package": "systems/airbnb",
-      "notes": "",
+      "notes": "https://www.airbnb.com.sg/login sent a confirmation code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 1
     },
     {
@@ -232,9 +232,9 @@
       "description": "Create apps that perfectly fit your team's needs",
       "status": "captured",
       "package": "systems/airtable",
-      "notes": "",
+      "notes": "https://airtable.com/login stopped at Verify it is you and reported unusual traffic. No email field was reached.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 1
     },
     {
@@ -249,9 +249,9 @@
       "description": "Comfortable, Sustainable Shoes & Apparel",
       "status": "captured",
       "package": "systems/allbirds",
-      "notes": "captured signed out at 1440x900 + 390x844; systems/allbirds; PR #438",
+      "notes": "captured signed out at 1440x900 + 390x844; systems/allbirds; PR #438 https://accounts.allbirds.com/authentication/login sent a code to the capture inbox. The code was not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 1
     },
     {
@@ -266,9 +266,9 @@
       "description": "Wellness Club",
       "status": "captured",
       "package": "systems/aloyoga",
-      "notes": "",
+      "notes": "https://www.aloyoga.com/en-sg/account/login asks for email and password. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -283,9 +283,9 @@
       "description": "Meet the all-in-one calendar. Schedule time for todos, events, and contacts with joy",
       "status": "captured",
       "package": "systems/amie",
-      "notes": "",
+      "notes": "https://calendar.amie.so/login offers Login with browser and no email field. https://app.amie.so/login is a 404.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 1
     },
     {
@@ -300,9 +300,9 @@
       "description": "Real-Time Interactive AI Avatars API",
       "status": "captured",
       "package": "systems/anam",
-      "notes": "",
+      "notes": "https://lab.anam.ai/login asks for email and password, or Google, GitHub, or SSO. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -317,9 +317,9 @@
       "description": "Working to build reliable, interpretable, and steerable AI systems",
       "status": "captured",
       "package": "systems/anthropic",
-      "notes": "",
+      "notes": "https://claude.ai/login sent a verification link to the capture inbox. The link was not opened. Google, Apple, and SSO are also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 1
     },
     {
@@ -334,9 +334,9 @@
       "description": "The supergraph: a new layer in your stack",
       "status": "captured",
       "package": "systems/apollographql",
-      "notes": "",
+      "notes": "https://studio.apollographql.com/login asks for email and password, or GitHub or SSO. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 1
     },
     {
@@ -351,9 +351,9 @@
       "description": "Build like a team of hundreds",
       "status": "captured",
       "package": "systems/appwrite",
-      "notes": "",
+      "notes": "https://appwrite.io/sign-in asks for email and password, or GitHub, GitLab, Bitbucket, Google, or a passkey. No code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 1
     },
     {
