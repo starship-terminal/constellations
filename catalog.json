@@ -20343,6 +20343,99 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "monarch-money",
+      "name": "Monarch Money",
+      "url": "https://www.monarch.com",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "A warm personal-finance marketing site: parchment page (#f6f5f3), orange-9 pills (#ff692d), ABC Oracle at weight 350, Copernicus and ABC Otto display at 48px, and an 8px-radius sign-in card that stops at the wall",
+      "tags": [
+        "web",
+        "finance",
+        "marketing",
+        "light",
+        "signed-out",
+        "personal-finance",
+        "pill-nav"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed-out public marketing on www.monarch.com, plus the app.monarch.com/login and /signup walls photographed and not submitted. No account created. No bank linked. No card, phone or government ID entered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/monarch-money/README.md",
+      "tokens": "systems/monarch-money/tokens.json",
+      "styleGuide": "systems/monarch-money/style-guide.html",
+      "preview": {
+        "cover": "systems/monarch-money/screenshots/home-light-default.png",
+        "icon": "systems/monarch-money/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.primary",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "www.monarch.com and app.monarch.com in headless Chromium, desktop 1440x900 and phone 390x844. Computed styles. Osano banner hidden, never clicked. Sign-in and sign-up walls photographed and not submitted.",
+        "timestamp": "2026-11-19T00:40:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/features/tracking",
+          "/features/budgeting",
+          "/features/planning",
+          "/for-couples",
+          "/for-professionals",
+          "/download",
+          "/about",
+          "/security",
+          "/blog",
+          "/whats-new",
+          "/careers",
+          "/press",
+          "/canada",
+          "/compare/mint-alternative",
+          "/calculators/mortgage",
+          "/privacy",
+          "/terms",
+          "help.monarch.com",
+          "app.monarch.com/login",
+          "app.monarch.com/signup"
+        ],
+        "gaps": [
+          "app.monarch.com/login and /signup were photographed and not submitted; no account, bank link, card, phone or government ID",
+          "Continue with Apple and Continue with Google start OAuth and were not pressed",
+          "the signed-in app (accounts, transactions, budgets, goals, reports, advice, settings) was not entered",
+          "the Features menu, FAQ rows and the pricing billing menu were measured closed and not opened",
+          "data-brand=refresh is declared and was not painted; the live page leaves data-brand unset",
+          "the app stylesheet at static.monarch.com was not resolved on the painted sign-in page (cross-origin CSSOM)",
+          "the home Mux hero cannot decode in headless Chromium; the Media Error card was hidden and the video is not evidence",
+          "the Osano consent window was hidden and never clicked",
+          "icons were not extracted as SVG; INDEX.tsv names the wordmark only"
+        ],
+        "durationMin": 90,
+        "pr": ""
+      }
     }
   ]
 }
