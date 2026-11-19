@@ -20343,6 +20343,68 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "uber",
+      "name": "Uber",
+      "url": "https://www.uber.com/",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Ride-hailing marketing chrome: a black 64px header, near-black 8px primary buttons, white Sign up pills, grey 8px location fields, and UberMove headlines. Public signed-out pages only.",
+      "tags": [
+        "web",
+        "travel",
+        "marketing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (US ride, about, business, and drive pages measured; signup wall at auth.uber.com/v2 measured and not entered; no phone, email, card, or ride)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/uber/README.md",
+      "tokens": "systems/uber/tokens.json",
+      "styleGuide": "systems/uber/style-guide.html",
+      "preview": {
+        "cover": "systems/uber/screenshots/ride-light-default.png",
+        "icon": "systems/uber/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.primary",
+            "surface": "light.background.secondary",
+            "text": "light.content.primary",
+            "muted": "light.content.secondary",
+            "accent": "light.component.button.primary.bg",
+            "border": "light.border.subtle"
+          },
+          "dark": {
+            "page": "dark.background.primary",
+            "surface": "dark.background.secondary",
+            "text": "dark.content.primary",
+            "muted": "dark.content.secondary",
+            "accent": "dark.accent.background.primary.bold",
+            "border": "dark.border.subtle"
+          }
+        },
+        "fonts": [
+          "core.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "grok",
+        "model": "grok-4.7",
+        "version": "client-main-styles-6a69a55fd9196980",
+        "route": "public-web",
+        "durationMin": 40,
+        "method": "public-web",
+        "source": "Signed-out uber.com marketing pages in the T3 preview browser (computed styles) and headless Chromium for desktop screenshots. Signup wall measured, not entered."
+      }
     }
   ]
 }
