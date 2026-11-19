@@ -1,0 +1,702 @@
+{
+  "source": "https://helloklean.com/en-int",
+  "captured": "2026-11-18T16:22:57.475Z",
+  "theme": {
+    "bodyClass": "index-",
+    "htmlClass": "js",
+    "colorScheme": "normal",
+    "shopifyTheme": {
+      "name": "BF26",
+      "schema": "Quickfire",
+      "version": "3.0.0"
+    }
+  },
+  "fonts": [
+    {
+      "family": "HKRepro",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "HKRepro",
+      "weight": "500",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "swiper-icons",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "500",
+      "style": "italic",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "500",
+      "style": "italic",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "100",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "100",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "100",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "100",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Kanit",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    }
+  ],
+  "blocked": [
+    "https://cdn.weglot.com/weglot.min.css",
+    "https://cdn.shopify.com/extensions/01a1eaf8-c81d-7c54-af7f-ea52977c76cc/subscriptions-23-171/assets/skio-referrals.css"
+  ],
+  "rules": [
+    {
+      "selector": ".check-circle-outer, .spinner-circle-outer",
+      "context": [],
+      "properties": {
+        "--check-color": "var(--accent-2-color)",
+        "--circle-size": "50px",
+        "--check-width": "calc(var(--circle-size)/20)"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ".check-circle-outer .check-line-long, .spinner-circle-outer .check-line-long",
+      "context": [],
+      "properties": {
+        "--height": "60%"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ".check-circle-outer .check-circle-mask, .spinner-circle-outer .check-circle-mask",
+      "context": [],
+      "properties": {
+        "--spin-end": "70deg"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ".check-circle-outer .spinner-circle-mask, .spinner-circle-outer .spinner-circle-mask",
+      "context": [],
+      "properties": {
+        "--spin-end": "0deg"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ".cross-circle-outer",
+      "context": [],
+      "properties": {
+        "--cross-color": "#d8056b",
+        "--cross-size": "50px",
+        "--cross-width": "calc(var(--cross-size)/20)"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--body": "16px",
+        "--body-mobile": "16px",
+        "--heading-1": "38px",
+        "--heading-2": "32px",
+        "--heading-3": "28px",
+        "--heading-4": "20px",
+        "--heading-1-mobile": "38px",
+        "--heading-2-mobile": "30px",
+        "--heading-3-mobile": "24px",
+        "--heading-4-mobile": "20px",
+        "--primary-color": "#1d1d1f",
+        "--secondary-color": "#f5f4f1",
+        "--accent-1-color": "#1d1d1f",
+        "--accent-2-color": "#1d1d1f",
+        "--text-primary-color": "#1d1d1f",
+        "--text-alternate-color": "#ffffff",
+        "--button-h-padding": "20px",
+        "--button-v-padding": "12px",
+        "--button-font-size": "14px",
+        "--button-transition": "0.3s ease",
+        "--button-1-color": "#1d1d1f",
+        "--button-1-text-color": "#f5f4f1",
+        "--button-1-radius": "25px",
+        "--button-1-border-color": "#1d1d1f",
+        "--button-1-hover-color": "#f5f4f1",
+        "--button-1-hover-text-color": "#1d1d1f",
+        "--button-1-hover-radius": "25px",
+        "--button-1-hover-border-color": "#f5f4f1",
+        "--button-2-color": "#f5f4f1",
+        "--button-2-text-color": "#1d1d1f",
+        "--button-2-radius": "25px",
+        "--button-2-border-color": "#f5f4f1",
+        "--button-2-hover-color": "#1d1d1f",
+        "--button-2-hover-text-color": "#f5f4f1",
+        "--button-2-hover-radius": "25px",
+        "--button-2-hover-border-color": "#1d1d1f",
+        "--button-3-color": "transparent",
+        "--button-3-text-color": "#1d1d1f",
+        "--button-3-radius": "25px",
+        "--button-3-border-color": "#1d1d1f",
+        "--button-3-hover-color": "#1d1d1f",
+        "--button-3-hover-text-color": "#f5f4f1",
+        "--button-3-hover-radius": "25px",
+        "--button-3-hover-border-color": "#1d1d1f"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ".check-circle-outer, .spinner-circle-outer",
+      "context": [],
+      "properties": {
+        "--check-color": "var(--accent-2-color)",
+        "--circle-size": "50px",
+        "--check-width": "calc(var(--circle-size)/20)"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ".check-circle-outer .check-line-long, .spinner-circle-outer .check-line-long",
+      "context": [],
+      "properties": {
+        "--height": "60%"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ".check-circle-outer .check-circle-mask, .spinner-circle-outer .check-circle-mask",
+      "context": [],
+      "properties": {
+        "--spin-end": "70deg"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ".check-circle-outer .spinner-circle-mask, .spinner-circle-outer .spinner-circle-mask",
+      "context": [],
+      "properties": {
+        "--spin-end": "0deg"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ".cross-circle-outer",
+      "context": [],
+      "properties": {
+        "--cross-color": "#d8056b",
+        "--cross-size": "50px",
+        "--cross-width": "calc(var(--cross-size)/20)"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/global.min.css"
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--swiper-theme-color": "#007aff"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ".swiper-lazy-preloader-white",
+      "context": [],
+      "properties": {
+        "--swiper-preloader-color": "#fff"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ".swiper-lazy-preloader-black",
+      "context": [],
+      "properties": {
+        "--swiper-preloader-color": "#000"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--swiper-navigation-size": "44px"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--swiper-theme-color": "#007aff"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ".swiper-lazy-preloader-white",
+      "context": [],
+      "properties": {
+        "--swiper-preloader-color": "#fff"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ".swiper-lazy-preloader-black",
+      "context": [],
+      "properties": {
+        "--swiper-preloader-color": "#000"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--swiper-navigation-size": "44px"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--junipOutlineColor": "#637381"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--junipPrimaryColor": "#000000",
+        "--junipButtonColor": "#000000",
+        "--junipButtonOutlineColor": "#00000080",
+        "--junipStarColor": "#000000",
+        "--junipButtonTextColor": "#fff",
+        "--junipBorderColor": "rgba(0, 0, 0, 0.08)",
+        "--junipSurfaceColor": "rgba(0, 0, 0, 0.03)"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ".drawer",
+      "context": [],
+      "properties": {
+        "--color-foreground": "0, 0, 0",
+        "--color-background": "255, 255, 255"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/component-cart-drawer.css"
+    },
+    {
+      "selector": ".quantity-popover__info .button-close, .variant-remove-total quick-order-list-remove-all-button .button, .quick-order-list-total__confirmation quick-order-list-remove-all-button .b",
+      "context": [],
+      "properties": {
+        "--shadow-opacity": "0",
+        "--border-opacity": "0"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/quantity-popover.css"
+    },
+    {
+      "selector": ".quantity-popover__info-button",
+      "context": [],
+      "properties": {
+        "--shadow-opacity": "0",
+        "--border-opacity": "0"
+      },
+      "href": "https://helloklean.com/cdn/shop/t/262/assets/quantity-popover.css"
+    }
+  ],
+  "resolved": {
+    "light": {
+      "--body": {
+        "value": "16px",
+        "raw": "16px"
+      },
+      "--body-mobile": {
+        "value": "16px",
+        "raw": "16px"
+      },
+      "--heading-1": {
+        "value": "38px",
+        "raw": "38px"
+      },
+      "--heading-2": {
+        "value": "32px",
+        "raw": "32px"
+      },
+      "--heading-3": {
+        "value": "28px",
+        "raw": "28px"
+      },
+      "--heading-4": {
+        "value": "20px",
+        "raw": "20px"
+      },
+      "--heading-1-mobile": {
+        "value": "38px",
+        "raw": "38px"
+      },
+      "--heading-2-mobile": {
+        "value": "30px",
+        "raw": "30px"
+      },
+      "--heading-3-mobile": {
+        "value": "24px",
+        "raw": "24px"
+      },
+      "--heading-4-mobile": {
+        "value": "20px",
+        "raw": "20px"
+      },
+      "--primary-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--secondary-color": {
+        "value": "#f5f4f1",
+        "raw": "#f5f4f1"
+      },
+      "--accent-1-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--accent-2-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--text-primary-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--text-alternate-color": {
+        "value": "#ffffff",
+        "raw": "#ffffff"
+      },
+      "--button-h-padding": {
+        "value": "20px",
+        "raw": "20px"
+      },
+      "--button-v-padding": {
+        "value": "12px",
+        "raw": "12px"
+      },
+      "--button-font-size": {
+        "value": "14px",
+        "raw": "14px"
+      },
+      "--button-transition": {
+        "value": "0.3s ease",
+        "raw": "0.3s ease"
+      },
+      "--button-1-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--button-1-text-color": {
+        "value": "#f5f4f1",
+        "raw": "#f5f4f1"
+      },
+      "--button-1-radius": {
+        "value": "25px",
+        "raw": "25px"
+      },
+      "--button-1-border-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--button-1-hover-color": {
+        "value": "#f5f4f1",
+        "raw": "#f5f4f1"
+      },
+      "--button-1-hover-text-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--button-1-hover-radius": {
+        "value": "25px",
+        "raw": "25px"
+      },
+      "--button-1-hover-border-color": {
+        "value": "#f5f4f1",
+        "raw": "#f5f4f1"
+      },
+      "--button-2-color": {
+        "value": "#f5f4f1",
+        "raw": "#f5f4f1"
+      },
+      "--button-2-text-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--button-2-radius": {
+        "value": "25px",
+        "raw": "25px"
+      },
+      "--button-2-border-color": {
+        "value": "#f5f4f1",
+        "raw": "#f5f4f1"
+      },
+      "--button-2-hover-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--button-2-hover-text-color": {
+        "value": "#f5f4f1",
+        "raw": "#f5f4f1"
+      },
+      "--button-2-hover-radius": {
+        "value": "25px",
+        "raw": "25px"
+      },
+      "--button-2-hover-border-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--button-3-color": {
+        "value": "transparent",
+        "raw": "transparent"
+      },
+      "--button-3-text-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--button-3-radius": {
+        "value": "25px",
+        "raw": "25px"
+      },
+      "--button-3-border-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--button-3-hover-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--button-3-hover-text-color": {
+        "value": "#f5f4f1",
+        "raw": "#f5f4f1"
+      },
+      "--button-3-hover-radius": {
+        "value": "25px",
+        "raw": "25px"
+      },
+      "--button-3-hover-border-color": {
+        "value": "#1d1d1f",
+        "raw": "#1d1d1f"
+      },
+      "--swiper-theme-color": {
+        "value": "#007aff",
+        "raw": "#007aff"
+      },
+      "--swiper-navigation-size": {
+        "value": "44px",
+        "raw": "44px"
+      },
+      "--junipOutlineColor": {
+        "value": "#637381",
+        "raw": "#637381"
+      },
+      "--junipPrimaryColor": {
+        "value": "#000000",
+        "raw": "#000000"
+      },
+      "--junipButtonColor": {
+        "value": "#000000",
+        "raw": "#000000"
+      },
+      "--junipButtonOutlineColor": {
+        "value": "#00000080",
+        "raw": "#00000080"
+      },
+      "--junipStarColor": {
+        "value": "#000000",
+        "raw": "#000000"
+      },
+      "--junipButtonTextColor": {
+        "value": "#fff",
+        "raw": "#fff"
+      },
+      "--junipBorderColor": {
+        "value": "rgba(0, 0, 0, 0.08)",
+        "raw": "rgba(0, 0, 0, 0.08)"
+      },
+      "--junipSurfaceColor": {
+        "value": "rgba(0, 0, 0, 0.03)",
+        "raw": "rgba(0, 0, 0, 0.03)"
+      }
+    }
+  },
+  "themeChecks": {
+    "darkClass": false,
+    "colorScheme": "normal",
+    "note": "Shopify theme BF26 / Quickfire. No dark class or data-theme switch was present on the captured pages."
+  },
+  "networkSheets": [
+    "https://helloklean.com/cdn/shop/t/262/assets/global.min.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/snippet.min.css",
+    "https://helloklean.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/section-hk-header.min.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/section-hk-hero-slider.min.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/quantity-popover.css",
+    "https://cdn.weglot.com/weglot.min.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/component-free-shipping-progress.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/hk-water-checker-v2.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/last.min.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/component-cart-drawer.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/component-totals.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/component-discounts.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/component-cart-items.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/component-price.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/section-hk-newsletter.min.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/section-hk-reviews-manual-slider.min.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/component-cart.css",
+    "https://cdn.weglot.com/weglot.min.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/section-hk-results.min.css",
+    "https://helloklean.com/cdn/shop/t/262/assets/section-hk-benefits.min.css"
+  ]
+}

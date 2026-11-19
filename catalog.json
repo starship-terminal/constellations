@@ -20343,6 +20343,92 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "helloklean",
+      "name": "Hello Klean",
+      "url": "https://helloklean.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "A Shopify DTC storefront for shower and tap filters: warm paper #f5f4f1 against near-black ink #1d1d1f, HKRepro display at 400, 25px pill buttons that invert on hover, product photography on paper cards, and a numbered buy box with a sticky Start now pill",
+      "tags": [
+        "web",
+        "e-commerce",
+        "shopify",
+        "dtc",
+        "beauty",
+        "marketing",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out for every screenshot. A Shopify customer account was created by email code and the empty Orders and Profile pages were opened in the owner's browser; those screens were not saved because the preview host stopped producing frames. Checkout, payment, a filled cart and the Skio portal were not entered. Consent overlays were hidden, never clicked.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/helloklean/README.md",
+      "tokens": "systems/helloklean/tokens.json",
+      "styleGuide": "systems/helloklean/style-guide.html",
+      "preview": {
+        "cover": "systems/helloklean/screenshots/home-light-default.png",
+        "icon": "systems/helloklean/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.card",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary-bg",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.display",
+          "core.fontFamily.body"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "helloklean.com (Shopify theme BF26, schema Quickfire 3.0.0) in headless Chromium. Desktop 1440x900 at dpr 1, phone 390x844 at dpr 2. Declared :root colours, type and the three-button matrix, plus computed styles, layout, inline icons and a motion probe. Account screens were opened in the owner's preview browser and not saved.",
+        "timestamp": "2026-11-19T00:30:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "Quickfire 3.0.0",
+        "route": "public-web",
+        "routes": [
+          "/en-int",
+          "/en-int/collections/hello-klean-2-0",
+          "/en-int/collections/filters",
+          "/en-int/collections/hair",
+          "/en-int/products/hello-klean-skin-filter",
+          "/en-int/products/full-cover-anti-thinning-hard-water-shampoo",
+          "/en-int/pages/about-us",
+          "/en-int/pages/faqs",
+          "/en-int/pages/subscription",
+          "/en-int/pages/contact",
+          "/en-int/pages/your-water-report",
+          "/cart",
+          "/account/login",
+          "/en-int/search?q=filter",
+          "mobile /en-int, shop and product"
+        ],
+        "gaps": [
+          "account.helloklean.com Orders and Profile were opened after email-code signup and not saved: the preview host stopped producing screenshot frames. Orders was empty. Profile showed the capture inbox, no address and no payment method",
+          "checkout, payment, a filled cart and address entry were not entered",
+          "the Skio subscription portal at /a/account/login refused the inbox until an order exists",
+          "the opened FAQ answer sits below the 900px fold, so the answer copy is not in the viewport shot",
+          "the desktop menu shot landed on the UK GBP market while the other shots are the international market in SGD",
+          "several component selectors measured the wrong node: product-card is the header pill, hero-cta is the cart continue pill, add-to-cart is the footer newsletter pill, faq-row is the hamburger"
+        ],
+        "durationMin": 90,
+        "durationNote": "public capture, measurement, motion probe and package write on 2026-11-19, including the email-code account open that produced no screenshot",
+        "pr": "https://github.com/starship-terminal/constellations/pull/705"
+      }
     }
   ]
 }

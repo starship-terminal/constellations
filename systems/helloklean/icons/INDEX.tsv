@@ -1,0 +1,13 @@
+file	role	label	size	pages
+01-open-search.svg	open-search	Open Search	26x26	/en-int,/en-int/collections/filters,/en-int/products/hello-klean-skin-filter,/en-int/pages/faqs
+02-go-to-account.svg	go-to-account	Go To Account	18x20	/en-int,/en-int/collections/filters,/en-int/products/hello-klean-skin-filter,/en-int/pages/faqs
+03-cart.svg	cart	Cart	20x21	/en-int,/en-int/collections/filters,/en-int/products/hello-klean-skin-filter,/en-int/pages/faqs
+04-icon.svg	icon		19x11	/en-int,/en-int/collections/filters,/en-int/products/hello-klean-skin-filter,/en-int/pages/faqs
+05-close.svg	close	Close	24x24	/en-int,/en-int/collections/filters,/en-int/products/hello-klean-skin-filter,/en-int/pages/faqs
+06-icon.svg	icon		19x11	/en-int,/en-int/collections/filters
+07-link-to-instagram.svg	link-to-instagram	Link to Instagram	28x28	/en-int,/en-int/collections/filters
+08-link-to-tiktok.svg	link-to-tiktok	Link to TikTok	28x28	/en-int,/en-int/collections/filters
+09-measured-results.svg	measured-results	Measured Results	9x9	/en-int/products/hello-klean-skin-filter,/en-int/pages/faqs
+10-pause-install.svg	pause-install	Pause Install	17x17	/en-int/products/hello-klean-skin-filter
+11-play-unboxing.svg	play-unboxing	Play Unboxing	17x17	/en-int/products/hello-klean-skin-filter
+12-close-compatibility-modal.svg	close-compatibility-modal	Close compatibility modal	13x13	/en-int/products/hello-klean-skin-filter
