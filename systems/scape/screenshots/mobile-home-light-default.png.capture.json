@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-19T02:30:00Z",
+  "harness": "headless Playwright after T3 preview_snapshot failed with 'The browser is not producing screenshot frames'",
+  "sanitizedSourceUrl": "https://www.scape.com/",
+  "note": "Viewport shots. Desktop context 1440x900 @1x. Mobile context 390x844 @2x (PNG is 780x1688). Cookie banner dismissed with Reject All before default shots. No booking, payment, phone or email was submitted.",
+  "visualReview": {
+    "status": "reviewed",
+    "note": "Opened each PNG. Cookie banner gone on default shots. Contact form shows empty HubSpot step 1 and was not filled."
+  },
+  "screenshot": "mobile-home-light-default.png",
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  }
+}
