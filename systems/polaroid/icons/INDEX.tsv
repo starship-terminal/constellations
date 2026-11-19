@@ -1,0 +1,2 @@
+file	role	source
+logo.svg	Wordmark in the header. fill is currentColor. Computed white on the home hero, black on listing pages.	header SVG, a[aria-label="Homepage link"], www.polaroid.com/en_sg 2026-11-19
