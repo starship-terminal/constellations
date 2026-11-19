@@ -499,7 +499,9 @@ FREE_MAIL = ("gmail.com", "googlemail.com", "yahoo.com", "yahoo.co.jp", "yahoo.c
 # there is a placeholder wherever it shows; no rules file needs to list it.
 EXAMPLE_TLD = re.compile(r"\.example$", re.I)
 REGEX_META = re.compile(r"[.^$*+?{}\[\]\\|()]")
-ALLOW_TEXT = re.compile(r"[\w.+-]*@[\w.-]+")
+# ASCII only: a Unicode letter can fold to a different ASCII one under the matcher's re.I (a dotless
+# i matches i), so a domain spelled with one could name a free-mail domain without looking like it.
+ALLOW_TEXT = re.compile(r"[A-Za-z0-9_.+-]*@[A-Za-z0-9_.-]+")
 
 
 def allow_entry_text(entry):
@@ -519,7 +521,7 @@ def allow_entry_text(entry):
         return None, "is a regex pattern: list exact addresses, one per entry, or one @domain"
     text = re.sub(r"\\([.+-])", r"\1", core)
     if not ALLOW_TEXT.fullmatch(text):
-        return None, "is not one address or one @domain: list exact addresses, one per entry"
+        return None, "is not one address or one @domain in plain ASCII: list exact addresses, one per entry"
     domain = text.partition("@")[2].lower()
     if text.startswith("@") and any(domain == d or domain.endswith("." + d) for d in FREE_MAIL):
         return None, f"allows every address at the free-mail domain {domain}: list exact addresses, one per entry"

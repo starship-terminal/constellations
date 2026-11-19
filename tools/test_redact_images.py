@@ -549,7 +549,9 @@ class AllowEntries(unittest.TestCase):
             "an empty or non-text entry": ["", 7, None],
             "no domain": ["name@", "you@", r"^assistant@", "owner", r"\.example$", r"example\.com$"],
             "a free-mail domain": [r"@gmail\.com$", r"@mail\.com$", r"@yahoo\.co\.jp$", r"@agentmail\.to\b",
-                                   r"@email\.com$", r"@mail\.gmail\.com"],
+                                   r"@email\.com$", r"@mail\.gmail\.com", r"@GMAIL\.COM$"],
+            "non-ASCII spellings": ["@gma\u0131l\\.com$", "@gma\u0130l\\.com$", "@\uff47mail\\.com$",
+                                    "j\u00f6rg@vendor\\.biz", "@vend\u043er\\.biz"],
         }
         for kind, entries in cases.items():
             for entry in entries:
@@ -572,6 +574,11 @@ class AllowEntries(unittest.TestCase):
                          ("vendor.biz@evil.test", False)]:
             with self.subTest(addr=addr):
                 self.assertEqual(R.email_allowed(addr, allow), ok)
+
+    def test_a_dotless_i_domain_would_have_passed_gmail(self):
+        entry = "@gma\u0131l\\.com$"                                  # what review found
+        self.assertTrue(R.email_allowed("stranger@gmail.com", [entry]))     # the matcher folds it to gmail
+        self.assertIsNotNone(R.allow_entry_problem(entry))                  # so validation refuses it
 
     def test_the_reserved_example_tld_needs_no_entry(self):
         w = lambda a: [(a, 0, 0, 10, 10, ("1", "1", "1"))]
