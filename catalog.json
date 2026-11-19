@@ -20273,6 +20273,76 @@
         "icons/": "No icon set was extracted. The wordmark was not saved.",
         "screenshots/": "preview_snapshot failed with 'The browser is not producing screenshot frames', so no page captures were saved"
       }
+    },
+{
+      "slug": "wrike",
+      "name": "Wrike",
+      "url": "https://www.wrike.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Work-management marketing design on a white page with midnight ink and a green action fill: the www.wrike.com home, /price/ plan cards, /free-trial/ email field, /features/, a 404, and the signed-out login.wrike.com email step. TT Norms Pro on the marketing site, a system face on login.",
+      "tags": [
+        "web",
+        "productivity",
+        "work-management",
+        "marketing",
+        "pricing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out. Public marketing pages and the login email step were measured. Nothing was typed or submitted. Next, Google, Apple, Office, OTP, company SSO, demo, and Contact us were not entered.",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/wrike/README.md",
+      "tokens": "systems/wrike/tokens.json",
+      "styleGuide": "systems/wrike/style-guide.html",
+      "preview": {
+        "cover": "systems/wrike/screenshots/home-light-default.png",
+        "icon": "systems/wrike/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.surface",
+            "text": "light.color.text.title",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.action.fill",
+            "border": "light.color.border.input"
+          }
+        },
+        "fonts": ["core.font.family.brand"]
+      },
+      "source": "capture",
+      "layoutGaps": {
+        "components/": "Element crops were not cut. The preview browser could not produce screenshot frames, and the headless pass saved full pages only. Component notes are in components.md."
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "www.wrike.com and login.wrike.com measured signed out on 2026-11-18. Marketing computed styles from the T3 preview browser and headless Chromium at 1440x900 and 390x844. Login computed styles from the preview browser at 1169x731. Screenshots are headless Chromium because the preview browser returned no screenshot frames. Login was not opened in the headless session.",
+        "timestamp": "2026-11-18T20:50:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "https://www.wrike.com/",
+          "https://www.wrike.com/price/",
+          "https://www.wrike.com/free-trial/",
+          "https://www.wrike.com/features/",
+          "https://www.wrike.com/this-page-does-not-exist-capture/ (HTTP 404)",
+          "https://login.wrike.com/login/ (email step only, nothing typed)"
+        ],
+        "gaps": [
+          "password step, OTP, Google, Apple, Office, and company SSO were not entered",
+          "trial submit, demo request, and Contact us were not followed",
+          "accent button hover and pressed were not painted; declared tokens are labelled as such",
+          "reduced-motion emulation was not run",
+          "element crops were not cut",
+          "preview browser could not produce screenshot frames"
+        ],
+        "durationMin": 70,
+        "pr": "https://github.com/starship-terminal/constellations/pull/905"
+      }
     }
   ]
 }
