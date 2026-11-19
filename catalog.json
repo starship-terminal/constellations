@@ -20343,6 +20343,72 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "yelp",
+      "name": "Yelp",
+      "url": "https://www.yelp.com/",
+      "category": "directory",
+      "platform": "web",
+      "goodFor": "Local-search marketing and signed-out results: a red pill primary, a shadowed search bar, and a five-step rating ramp.",
+      "tags": [
+        "web",
+        "directory",
+        "local-search",
+        "marketing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Homepage, public search, one business page, about, the login form (not submitted) and a 404. No password, name, ZIP, phone, card or reservation was entered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169,
+        1440
+      ],
+      "entry": "systems/yelp/README.md",
+      "tokens": "systems/yelp/tokens.json",
+      "styleGuide": "systems/yelp/style-guide.html",
+      "preview": {
+        "cover": "systems/yelp/screenshots/about-light-default.png",
+        "icon": "systems/yelp/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.default",
+            "surface": "light.color.surface.offset",
+            "text": "light.color.text.default",
+            "muted": "light.color.text.subtle",
+            "accent": "light.color.bg.brandPrimary.strong.default",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public web, 2026-11-19",
+        "route": "public-web",
+        "pr": "https://github.com/starship-terminal/constellations/pull/901",
+        "durationMin": 90,
+        "gaps": [
+          "signup and login not submitted: the form asks for a password, a name and a ZIP",
+          "homepage, search and business screenshots missing: headless Chromium was blocked and the preview pane did not paint frames",
+          "phone width not captured",
+          "dark theme not present on the public pages",
+          "hover and pressed not captured"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "Yelp's burst and wordmark are its marks and are not redrawn here (docs/RIGHTS.md). The logo crop is evidence only."
+      }
     }
   ]
 }

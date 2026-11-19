@@ -1,0 +1,21 @@
+{
+  "name": "notfound",
+  "url": "https://www.yelp.com/this-page-does-not-exist-capture",
+  "title": "Page not found (404)",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "iw": 1440,
+  "ih": 900,
+  "dpr": 2,
+  "scrollH": 934,
+  "vv": {
+    "w": 1440,
+    "h": 900,
+    "scale": 1
+  },
+  "theme": "light",
+  "state": "default",
+  "note": "public signed-out, headless Chromium after the same URL loaded in the preview browser without a Cloudflare challenge"
+}
