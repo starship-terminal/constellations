@@ -20343,6 +20343,65 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "seed",
+      "name": "Seed",
+      "url": "https://seed.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Supplement retail: seed green on snow, 1000px pills, 32px glass menus, Seed Sans at weight 350",
+      "tags": [
+        "web",
+        "retail",
+        "supplement",
+        "green",
+        "pill",
+        "one-theme"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (every captured surface is public marketing)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/seed/README.md",
+      "tokens": "systems/seed/tokens.json",
+      "styleGuide": "systems/seed/style-guide.html",
+      "preview": {
+        "cover": "systems/seed/icon.png",
+        "icon": "systems/seed/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.bg.page",
+            "surface": "light.bg.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.bg.inverse",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "seed.com 2026-11-19",
+        "durationMin": 45,
+        "pr": ""
+      },
+      "layoutGaps": {
+        "components/": "The preview browser did not produce screenshot frames, and headless Playwright was stopped at a Cloudflare challenge, so there are no component crops",
+        "screenshots/": "No page screenshots. preview_snapshot failed with 'The browser is not producing screenshot frames'. Headless Playwright returned a Cloudflare challenge on every public URL"
+      }
     }
   ]
 }

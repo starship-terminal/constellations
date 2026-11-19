@@ -1,0 +1,5 @@
+file	role	source
+menu.svg	Phone header menu, two 2px strokes	header svg on https://seed.com/ at innerWidth 390
+arrow.svg	Inline arrow, 11px	homepage svg, fill was #FCFCF7
+chevron.svg	Disclosure chevron, 16px	homepage svg, stroke currentColor 1.5
+globe.svg	International / locale, 16px	homepage svg, stroke currentColor 1.5
