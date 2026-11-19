@@ -48,7 +48,9 @@ const vars = await page.evaluate(() => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   // (a url() is already url(…) here, so a bare URL's query runs to the next space or quote; brackets
   // can sit inside it, as in ?crop=(0,0)&token=…)
-  const noQuery = (v) => v.replace(/\b(https?:\/\/[^\s"'?#]*)[?#][^\s"']*/gi, '$1');
+  // A protocol-relative URL (//cdn.example/a.png?token=…) is a URL too: it starts at a value's start or
+  // after a space, quote, bracket or comma.
+  const noQuery = (v) => v.replace(/(\bhttps?:\/\/|(?:^|(?<=[\s"'(,]))\/\/)([^\s"'?#]*)[?#][^\s"']*/gi, '$1$2');
   const html = getComputedStyle(document.documentElement), body = getComputedStyle(document.body);
   // body's value wins whenever body declares one, a blank override included; trimmed only after
   const read = (n) => { const b = noUrl(body.getPropertyValue(n)); return noQuery((b !== '' ? b : noUrl(html.getPropertyValue(n))).trim()); };
