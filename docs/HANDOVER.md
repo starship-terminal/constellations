@@ -8,9 +8,12 @@ this file is the program-level glue, not a replacement.
 ## The queue
 
 [webapps-manifest.json](../webapps-manifest.json) on `main` is the
-source of truth: 418 catalog domains, `batch` 1–20 per app, ~20 per
-batch. Batch 1 is done (`status: "captured"`, `package:
-"systems/<slug>"`). Work the next `pending` batch in order. When a PR
+source of truth: 418 catalog domains, `batch` 1–21 per app, ~20 per
+batch. As of 2026-11-20 no row is `pending`: 414 are `captured`
+(`package: "systems/<slug>"`) and 4 are `uncapturable`. A row counts as
+captured when a package for that product exists, even when the package's
+catalog `url` is another host (`lu.ma` is `systems/luma`). Check
+[catalog.json](../catalog.json) before capturing a `pending` row. When a PR
 merges, set `status: "captured"` + `package` in the same commit as the
 last merge train (one manifest PR per batch is fine).
 
