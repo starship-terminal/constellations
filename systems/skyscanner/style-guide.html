@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Skyscanner style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --canvas: #eff3f8;
+    --ink: #05203c;
+    --text: #161616;
+    --muted: #626971;
+    --accent: #0062e3;
+    --pressed: #024daf;
+    --primary: #05203c;
+    --secondary: #e0e4e9;
+    --line: #c1c7cf;
+    --danger: #e70866;
+    --success: #0c838a;
+    --warning: #f55d42;
+    --loyalty: #c9fc70;
+    --cookie: #f1f2f8;
+    --footer-text: #eff3f8;
+    --sans: "Skyscanner Relative", -apple-system, system-ui, Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--canvas); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 20.8px; }
+  header { background: var(--ink); color: white; padding: 40px 40px 28px; }
+  header p { max-width: 680px; color: var(--footer-text); }
+  h1 { font-size: 32px; line-height: 40px; font-weight: 700; margin: 0 0 8px; }
+  main { padding: 32px 40px 80px; max-width: 1080px; }
+  h2 { font-size: 24px; line-height: 28px; font-weight: 700; margin: 36px 0 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 148px; background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 8px 10px 10px; font-size: 12px; line-height: 16px; }
+  .specimen { background: white; border-radius: 12px; padding: 24px; margin: 8px 0; }
+  .hero { background: var(--ink); color: white; border-radius: 12px; padding: 24px; }
+  .hero h3 { font-size: 32px; line-height: 40px; margin: 0 0 16px; }
+  .search { display: flex; background: white; border-radius: 12px; overflow: hidden; color: var(--text); }
+  .search div { flex: 1; padding: 14px 16px; }
+  .search small { display: block; color: var(--muted); font-size: 14px; font-weight: 700; line-height: 20px; }
+  .search strong { font-weight: 400; font-size: 16px; }
+  .search button { background: var(--accent); color: white; border: 0; border-radius: 12px; padding: 12px 16px; font: inherit; font-weight: 700; margin: 0; }
+  .btn { display: inline-flex; align-items: center; height: 36px; padding: 6px 16px; border-radius: 8px; border: 0; font: inherit; font-weight: 700; }
+  .btn.login { background: var(--canvas); color: var(--text); }
+  .btn.primary { background: var(--ink); color: white; height: 40px; }
+  .btn.secondary { background: var(--secondary); color: var(--text); height: 40px; }
+  .btn.feature { background: var(--accent); color: white; height: 48px; border-radius: 8px; padding: 12px 16px; }
+  .chip { display: inline-flex; align-items: center; height: 32px; padding: 0 16px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--line); background: transparent; }
+  .chip.on { background: var(--ink); color: white; box-shadow: none; }
+  .tab { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: 18px; color: white; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2); }
+  .tab.on { background: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+  .check { width: 20px; height: 20px; border-radius: 4px; border: 3px solid var(--muted); display: inline-block; vertical-align: middle; background: white; }
+  .check.on { background: var(--accent); border-color: var(--accent); }
+  .card { width: 220px; height: 72px; border-radius: 12px; background: var(--ink); color: white; box-shadow: 0 1px 3px rgba(37,32,31,0.3); display: flex; align-items: center; padding: 0 16px; font-weight: 700; }
+  .promo { font-size: 48px; line-height: 48px; font-weight: 900; letter-spacing: -1.92px; margin: 0; }
+  table { border-collapse: collapse; width: 100%; background: white; border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); font-size: 14px; font-weight: 400; }
+  .note { color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Skyscanner</h1>
+  <p>Public marketing and search form, measured 19 November 2026 on skyscanner.com.sg. Light only. The typeface is Skyscanner Relative, which this page falls back from.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#05203c"></i><span>Ink<br>#05203c</span></div>
+    <div class="swatch"><i style="background:#0062e3"></i><span>Accent<br>#0062e3</span></div>
+    <div class="swatch"><i style="background:#161616"></i><span>Text<br>#161616</span></div>
+    <div class="swatch"><i style="background:#626971"></i><span>Muted<br>#626971</span></div>
+    <div class="swatch"><i style="background:#eff3f8"></i><span>Canvas<br>#eff3f8</span></div>
+    <div class="swatch"><i style="background:#e0e4e9"></i><span>Secondary<br>#e0e4e9</span></div>
+    <div class="swatch"><i style="background:#c1c7cf"></i><span>Line<br>#c1c7cf</span></div>
+    <div class="swatch"><i style="background:#e70866"></i><span>Danger<br>#e70866</span></div>
+    <div class="swatch"><i style="background:#0c838a"></i><span>Success<br>#0c838a</span></div>
+    <div class="swatch"><i style="background:#f55d42"></i><span>Warning<br>#f55d42</span></div>
+    <div class="swatch"><i style="background:#c9fc70"></i><span>Loyalty<br>#c9fc70</span></div>
+    <div class="swatch"><i style="background:#f1f2f8"></i><span>Cookie<br>#f1f2f8</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <div class="specimen">
+    <p class="promo" style="color:#05203c">Go further</p>
+    <p style="font-size:40px;line-height:40px;font-weight:900;margin:8px 0">Want price drops of 20% or more?</p>
+    <p style="font-size:32px;line-height:40px;font-weight:700;margin:8px 0">Millions of cheap flights. One simple search.</p>
+    <p style="font-size:24px;line-height:28px;font-weight:700">Our international sites</p>
+    <p style="font-size:16px;line-height:24px;font-weight:700">Search</p>
+    <p style="font-size:14px;line-height:20px;color:#626971">Add date</p>
+    <p style="font-size:12px;line-height:16px">Compare and book cheap flight tickets</p>
+  </div>
+
+  <h2>Search</h2>
+  <div class="hero">
+    <h3>Millions of cheap flights. One simple search.</h3>
+    <div style="display:flex;gap:8px;margin-bottom:16px">
+      <span class="tab on">Flights</span>
+      <span class="tab">Stays</span>
+      <span class="tab">Cars</span>
+    </div>
+    <div class="search">
+      <div><small>From</small><strong>Singapore (Any)</strong></div>
+      <div><small>To</small><strong style="color:#626971">Choose destination</strong></div>
+      <div><small>Depart</small><strong style="color:#626971">Add date</strong></div>
+      <button>Search</button>
+    </div>
+  </div>
+
+  <h2>Controls</h2>
+  <div class="specimen">
+    <p>
+      <button class="btn login">Log in</button>
+      <button class="btn primary">Accept all</button>
+      <button class="btn secondary">Accept essential only</button>
+      <button class="btn feature">Continue</button>
+    </p>
+    <p>
+      <span class="chip on">Airport</span>
+      <span class="chip">City</span>
+      <span class="check"></span>
+      <span class="check on"></span>
+    </p>
+    <div class="row">
+      <div class="card">Search with AI</div>
+    </div>
+  </div>
+
+  <h2>Scale</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th><th>Where</th></tr>
+    <tr><td>radius sm</td><td>8px</td><td>Button, chip</td></tr>
+    <tr><td>radius md</td><td>12px</td><td>Search field, Search, card, modal</td></tr>
+    <tr><td>radius nav tab</td><td>18px</td><td>Flights / Stays / Cars</td></tr>
+    <tr><td>field height</td><td>72px desktop, 48px phone</td><td>Search control</td></tr>
+    <tr><td>focus</td><td>2px accent outline, 2px offset</td><td>Search button</td></tr>
+  </table>
+  <p class="note">Values are the measured ones in tokens.json. This page does not load Skyscanner Relative.</p>
+</main>
+</body>
+</html>
