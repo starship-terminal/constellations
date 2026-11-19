@@ -55,7 +55,20 @@ async function readBody(request: Request) {
     body.set(part, offset);
     offset += part.byteLength;
   }
-  return new TextDecoder().decode(body);
+  // Invalid UTF-8 is refused like unparseable JSON, as server/routes.py does,
+  // rather than decoded to U+FFFD and run.
+  try {
+    return new TextDecoder("utf-8", { fatal: true }).decode(body);
+  } catch {
+    return undefined;
+  }
+}
+
+function rpcError(status: number, code: number, message: string) {
+  return Response.json(
+    { jsonrpc: "2.0", id: null, error: { code, message } },
+    { status },
+  );
 }
 
 export async function POST(request: Request) {
@@ -75,18 +88,13 @@ export async function POST(request: Request) {
   }
   const text = await readBody(request);
   if (text === null) return tooLarge();
+  if (text === "") return rpcError(400, -32600, "a JSON-RPC body is required");
   let raw: unknown;
   try {
+    if (text === undefined) throw new Error("invalid UTF-8");
     raw = JSON.parse(text);
   } catch {
-    return Response.json(
-      {
-        jsonrpc: "2.0",
-        id: null,
-        error: { code: -32700, message: "unparseable JSON" },
-      },
-      { status: 400 },
-    );
+    return rpcError(400, -32700, "unparseable JSON");
   }
   const out = await handleBatch(raw);
   return out === null

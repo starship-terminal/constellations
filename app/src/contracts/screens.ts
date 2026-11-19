@@ -18,8 +18,7 @@ export interface ScreenQuery {
   theme?: string;
   group?: string;
   kind?: ScreenKind;
-  referenceId?: string;
-  /** Selected packages are combined with OR, alongside the legacy single ID. */
+  /** Selected packages are combined with OR. */
   referenceIds?: string[];
   /** All selected taxonomy terms must be present on the same capture. */
   termIds?: string[];
@@ -58,5 +57,4 @@ export interface ScreenResponse {
     kinds: ScreenFacet[];
   };
   /** Legacy summary; ordered flows remain unavailable without sequence evidence. */
-  taxonomy: { pageTypes: string[]; uiElements: string[]; uxPatterns: string[] };
 }

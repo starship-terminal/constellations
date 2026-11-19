@@ -35,7 +35,7 @@ one place instead of in whichever project first needed them.
 
 It holds two stores of styles at two confidence levels:
 
-- [systems/](systems): the packages, one per product (50 today), measured
+- [systems/](systems): the packages, one per product, measured
   from real captures. Every value carries an evidence label saying where it
   came from. These are the only values to design from.
 - [refero/](refero): a snapshot of [styles.refero.design](https://styles.refero.design)
@@ -87,7 +87,7 @@ one line each with its status, surface, entry point and tests.
 
 | Area | What you get |
 | --- | --- |
-| **Packages** | 50 products under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
+| **Packages** | One package per product under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
 | **Evidence** | Every token says where it came from: a measured CSS read, a reconstruction, or a reviewer's call ([docs/EVIDENCE.md](docs/EVIDENCE.md)) |
 | **Gallery** | One card per package with cover, icon, colour roles and fonts; per-package pages running Screenshots, Brief, Colors, Type, Spacing, Shape, Components, Icons, Health and Files (sections a package has nothing for are hidden); search over names, uses, tags and themes |
 | **Refero** | 1,342 styles labelled by product type and design style, browsed beside the packages but never trusted over them |
@@ -123,6 +123,7 @@ cp .env.example .env                      # fill in what you use; .env is gitign
 | `DS_CHAT_MODEL` | Optional: the model the gallery chat calls when the browser has none saved |
 | `DESIGN_SYSTEMS_REPO` | Optional: this checkout's path, when the app cannot find it by itself |
 | `DESIGN_SYSTEMS_MEDIA`, `DESIGN_SYSTEMS_MEDIA_BASE` | Optional: where mirrored refero media lives, and the base URL for catalog media absent from the local mirror |
+| `DESIGN_SYSTEMS_ALLOWED_HOSTS` | Optional: extra Host names (`name` or `name:port`, comma-separated) the Python `/api/` server (`server/api.py`) answers to; loopback, IP literals and `*.ts.net` already pass |
 
 ## Quick start
 
@@ -798,7 +799,10 @@ flowchart LR
   ([scripts/redeploy.sh](scripts/redeploy.sh),
   [scripts/deploy_trigger.py](scripts/deploy_trigger.py)) serves the app and
   the `/api/` routes behind nginx, with the refero media mirror at
-  `~/services/design-systems/media/`.
+  `~/services/design-systems/media/`. The root [Dockerfile](Dockerfile)
+  exists because the home-server launcher, which lives outside this repo,
+  will not create an app without one; its header comment says how
+  the launcher mounts the checkout and the build.
 - **The agent layer is read-only.** [server/library.py](server/library.py)
   holds the tool specs once; `chat.py` maps them onto the Anthropic and
   OpenAI wire shapes, `routes.py` serves `/api/*`, `mcp.py` speaks JSON-RPC
@@ -867,9 +871,9 @@ CI runs three workflows:
 
 | Workflow | What it gates |
 | --- | --- |
-| [check.yml](.github/workflows/check.yml) | `make check` on every push to `main` and every pull request |
-| [app.yml](.github/workflows/app.yml) | Format check, media taxonomy check, typecheck, tests and a production build for `app/` when `app/**`, `systems/**`, `catalog.json`, `refero/catalog.json` or `tools/catalog.py` changes |
-| [web.yml](.github/workflows/web.yml) | Typecheck and a production build for `web/` when `web/**`, `tools/catalog.py` or `catalog.json` changes |
+| [check.yml](.github/workflows/check.yml) | On every push to `main` and every pull request, two jobs: `check` runs `make check` then `make test`; `docs` runs `make docs` and fails if `site/gallery` exists |
+| [app.yml](.github/workflows/app.yml) | Format check, media taxonomy and float-parity checks, typecheck, tests and a production build for `app/` when `app/**`, `systems/**`, `catalog.json`, `refero/catalog.json` or `tools/catalog.py` changes |
+| [web.yml](.github/workflows/web.yml) | Typecheck, the gallery unit tests (`pnpm --dir web test`) and a production build for `web/` when `web/**`, `tools/catalog.py` or `catalog.json` changes |
 
 Rules that bite: Brief, Health, `DESIGN.md`, `web/data/`,
 `docs/scorecard/` and `site/` are regenerated, never hand-edited; every

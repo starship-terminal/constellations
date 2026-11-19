@@ -36,7 +36,7 @@ in the web/ app, and app/ covers the same stores plus research;
 ```
 catalog.json            index of every systems/ package: slug, platform, tags,
                         goodFor, preview paths, capture provenance
-systems/<slug>/         the packages (210). Standard parts:
+systems/<slug>/         the packages, one per product. Standard parts:
   README.md               Brief (generated) + what was captured + Health (generated)
   tokens.json             every value, evidence-labelled
   DESIGN.md               generated export, one theme, no provenance
@@ -383,7 +383,7 @@ git lfs status
 ```
 
 ```bash
-git ls-files -s | awk '$1=="100644"' | cut -f2 | grep -Ei '\.(png|jpe?g|gif|webp|zip|gz|woff2?|ttf|otf|fig|ico|mp4|mov)$' | xargs -I{} sh -c 'git check-attr filter -- "{}" | grep -q "filter: lfs" || echo "not in LFS: {}"'
+git ls-files -s | awk '$1=="100644"' | cut -f2 | grep -Ei '\.(png|jpe?g|gif|webp|avif|zip|gz|woff2?|ttf|otf|fig|pdf|ico|db|mp4|mov)$' | xargs -I{} sh -c 'git check-attr filter -- "{}" | grep -q "filter: lfs" || echo "not in LFS: {}"'
 ```
 
 ## CI
