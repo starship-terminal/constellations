@@ -115,6 +115,11 @@ RAW_PICK = re.compile(r"\b(?:o|out)\[(\w+)\] ?= ?(?:\w+(?:\[\1\]|\.getPropertyVa
 # A single value read raw: p.backgroundImage.slice(…), content: p.content, a resolved custom property.
 RAW_READ = re.compile(r"\b(?:p|q|pc|c|cs|a|b)\.(?:backgroundImage|content)\.(?:slice|replace)\(|\bcontent: (?:p|q|pc|a|b)\.content\b"
                       r"|\bout\.vars\[\w+\] = (?!noUrl\()")
+# The same two shapes under any target name (style[p] = cs[p], vars[k]=bs.getPropertyValue(k),
+# v[n] = (body.getPropertyValue(n) || ...)), for the kit only: RAW_PICK and RAW_READ above name the
+# targets the package copies use, and many package copies (kit-ports.md in the audit) still read raw.
+WIDE_PICK = re.compile(r"\b[\w.]+\[(\w+)\] ?= ?\w+\[\1\](?![\w.(]|\s*[-+*/%])")
+WIDE_PROP = re.compile(r"\b[\w.]+\[[\w.]+\] ?= ?\(?(?:[\w.]+\.)?getPropertyValue\((?![\'\"])")
 NO_URL_DEF = re.compile(r"\bnoUrl = \(v\)")
 NO_URL_USE = re.compile(r"\bnoUrl\(")
 
@@ -155,6 +160,25 @@ def capture_scripts_recording_raw_urls(root):
             bad += [(rel, "raw pick " + m.group(0)) for m in RAW_PICK.finditer(src)]
         bad += [(rel, "raw read " + m.group(0)) for m in RAW_READ.finditer(src)]
         bad += [(rel, f"noUrl used with no definition in scope at line {n}") for n in no_url_scope_errors(src)]
+    return bad
+
+
+def kit_scripts_recording_raw_values(root):
+    """(path, reason) for each of the kit's own capture scripts that copies a computed value or a
+    custom property into a map raw, whatever the map is called. Kit only: see WIDE_PICK."""
+    bad = []
+    root = Path(root)
+    for path in sorted(root.glob("tools/kit/capture/**/*")):
+        if path.suffix not in (".mjs", ".js") or path.name.startswith("test_"):
+            continue
+        src = path.read_text()
+        rel = str(path.relative_to(root))
+        if "getComputedStyle" in src and URL_PROPS.search(src):
+            bad += [(rel, "raw pick " + m.group(0)) for m in WIDE_PICK.finditer(src)]
+        bad += [(rel, "raw custom property " + m.group(0)) for m in WIDE_PROP.finditer(src)]
+    for rel in ("tools/kit/capture/vars.mjs", "tools/kit/capture/electron/shot.mjs"):
+        bad += [(rel, f"custom property read without noUrl at line {n}") for n in vars_reads_without_no_url((root / rel).read_text())]
+        bad += [(rel, f"noUrl used with no definition in scope at line {n}") for n in no_url_scope_errors((root / rel).read_text())]
     return bad
 
 
@@ -215,6 +239,23 @@ class PackageCaptureScripts(unittest.TestCase):
         for raw in ("content: p.content, width", "p.backgroundImage.slice(0, 200)", "out.vars[n] = root.getPropertyValue(n).trim();"):
             self.assertTrue(RAW_READ.search(raw), raw)
         self.assertFalse(RAW_READ.search("out.vars[n] = noUrl(v);"))
+
+    def test_kit_scripts_record_no_value_raw_under_any_name(self):
+        # The Electron route wrote every custom property raw as v[n] = (body.getPropertyValue(n) || ...),
+        # a target name the package-wide patterns above do not know.
+        self.assertEqual(kit_scripts_recording_raw_values(HERE.parent), [])
+
+    def test_the_wide_patterns_catch_each_shape(self):
+        for raw in ("for (const p of PROPS) style[p] = cs[p];", "vars[k]=bs.getPropertyValue(k)",
+                    "for (const n of names) v[n] = (body.getPropertyValue(n) || html.getPropertyValue(n)).trim();",
+                    "out.vars[n] = root.getPropertyValue(n).trim();"):
+            self.assertTrue(WIDE_PICK.search(raw) or WIDE_PROP.search(raw), raw)
+        for ok in ("style[p] = noUrl(cs[p]);", "vars[k] = noUrl(bs.getPropertyValue(k));", "v[n] = read(n);",
+                   "o[k] = c.getPropertyValue('font-family');", "seen[k] = seen[k] + 1;", "o[p] = cs[p].slice(0, 9);"):
+            self.assertFalse(WIDE_PICK.search(ok) or WIDE_PROP.search(ok), ok)
+        # the line every package's electron/shot.mjs still carries, which the vars lint flags too
+        self.assertEqual(vars_reads_without_no_url(
+            "  for (const n of [...names].sort()) v[n] = (body.getPropertyValue(n) || html.getPropertyValue(n)).trim();"), [1])
 
     def test_every_vars_script_records_custom_properties_through_no_url(self):
         # Declared values (props[k], decls, root/dark) and resolved ones (raw, resolved[w], theme) alike.
@@ -356,6 +397,26 @@ class JavaScriptHalves(unittest.TestCase):
                             "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
+
+    def test_electron_vars_record_no_url_or_query(self):
+        # shot.mjs writes every root custom property beside the screenshot; a signed-in app can set one
+        # to an avatar or asset URL that carries a signature.
+        src = js_block(HERE / "kit/capture/electron/shot.mjs", "const noUrl", "const noQuery")
+        self.assertEqual(re.search(r"const noUrl = .*?: v\);", src).group(0),
+                         re.search(r"const noUrl = .*?: v\);", (HERE / "kit/capture/vars.mjs").read_text()).group(0))
+        cases = {
+            'url("https://cdn.example.test/a.png?X-Amz-Signature=1")': 'url(…)',
+            '"https://cdn.example.test/a.png?token=abc"': '"https://cdn.example.test/a.png"',
+            'https://cdn.example.test/a.png#access_token=abc': 'https://cdn.example.test/a.png',
+            'url(data:image/svg+xml,abc) no-repeat': 'url(data:image/svg+xml,abc) no-repeat',
+            '#5e6ad2': '#5e6ad2',
+            '0 1px 2px rgba(0, 0, 0, 0.1)': '0 1px 2px rgba(0, 0, 0, 0.1)',
+            '': '',
+        }
+        got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map((v) => noQuery(noUrl(v)))))")
+        self.assertEqual(got, list(cases.values()))
+        for v in got:
+            self.assertFalse(catalog.SIGNED_URL.search(v), v)
 
     def test_font_face_ids_tell_apart_files_the_masked_src_cannot(self):
         # noUrl turns every font file URL into url(…), so two faces of one family, weight and style that
