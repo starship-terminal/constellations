@@ -1,0 +1,456 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "note": "T3 preview_snapshot returned: The browser is not producing screenshot frames. No PNG of the live page was saved. Values below were read with preview_evaluate from computed styles and declared custom properties.",
+  "pages": [
+    "https://www.newyorker.com/",
+    "https://www.newyorker.com/magazine/2026/11/23/would-you-dissect-a-human-body",
+    "https://www.newyorker.com/v2/offers/tnya01062",
+    "https://id.condenast.com/interaction/.../email (sign-in email step, not submitted)"
+  ],
+  "colorScheme": "normal",
+  "htmlClass": "",
+  "bodyFont": "TNYAdobeCaslonPro, \"Times New Roman\", Times, serif",
+  "bodySize": "21px",
+  "bodyLineHeight": "31.5px",
+  "bodyColor": "rgb(0, 0, 0)",
+  "declaredOn": "body and body, .theme-standard",
+  "colorsStandard": {
+    "--color-action-brand-default": "rgba(8,121,191,1)",
+    "--color-action-brand-hover": "rgba(102,102,102,1)",
+    "--color-action-brand-pressed": "rgba(56.6,121.4,162.2,1)",
+    "--color-action-brand-inverse": "rgba(255,255,255,1)",
+    "--color-action-utility-default": "rgba(0,0,0,1)",
+    "--color-action-utility-hover": "rgba(8,121,191,1)",
+    "--color-action-utility-pressed": "rgba(6.4,96.8,152.8,1)",
+    "--color-action-utility-inverse": "rgba(255,255,255,1)",
+    "--color-border": "rgba(229,229,229,1)",
+    "--color-border-accent": "rgba(229,229,229,1)",
+    "--color-border-error": "rgba(170,27,25,1)",
+    "--color-border-focus": "rgba(51,51,51,1)",
+    "--color-border-navigation": "rgba(51,51,51,1)",
+    "--color-border-navigation-active": "rgba(18,18,18,1)",
+    "--color-border-pullquote": "rgba(219,51,52,1)",
+    "--color-border-story": "rgba(229,229,229,1)",
+    "--color-border-sub-navigation": "rgba(229,229,229,1)",
+    "--color-border-subtle": "rgba(229,229,229,1)",
+    "--color-border-input": "rgba(229,229,229,1)",
+    "--color-border-active": "rgba(245,245,245,1)",
+    "--color-divider": "rgba(229,229,229,1)",
+    "--color-icon": "rgba(8,121,191,1)",
+    "--color-icon-active": "rgba(8,121,191,1)",
+    "--color-icon-disabled": "rgba(229,229,229,1)",
+    "--color-surface": "rgba(255,255,255,1)",
+    "--color-surface-accent": "rgba(255,255,255,1)",
+    "--color-surface-byline-card": "rgba(219,51,52,1)",
+    "--color-surface-hover": "rgba(245,245,245,1)",
+    "--color-surface-pressed": "rgba(229,229,229,1)",
+    "--color-surface-subtle": "rgba(245,245,245,1)",
+    "--color-surface-navigation": "rgba(255,255,255,1)",
+    "--color-surface-navigation-overlay": "rgba(102,102,102,0.8)",
+    "--color-surface-navigation-elevated": "rgba(250,250,250,1)",
+    "--color-surface-navigation-feature-brand": "rgba(8,121,191,1)",
+    "--color-surface-navigation-feature-brand-hover": "rgba(7,88,139,1)",
+    "--color-surface-navigation-feature-brand-pressed": "rgba(51,51,51,1)",
+    "--color-surface-rubric-card": "rgba(219,51,52,1)",
+    "--color-surface-card-active": "rgba(0,0,0,1)",
+    "--color-surface-status-card": "rgba(219,51,52,1)",
+    "--color-surface-ad": "rgba(255,255,255,0)",
+    "--color-surface-placeholder": "rgba(245,245,245,1)",
+    "--color-text": "rgba(0,0,0,1)",
+    "--color-text-heading": "rgba(0,0,0,1)",
+    "--color-text-subheading": "rgba(0,0,0,1)",
+    "--color-text-subtle": "rgba(0,0,0,1)",
+    "--color-text-accent": "rgba(0,0,0,1)",
+    "--color-text-dek": "rgba(18,18,18,1)",
+    "--color-text-disabled": "rgba(102,102,102,1)",
+    "--color-text-link": "rgba(0,0,0,1)",
+    "--color-text-active": "rgba(0,0,0,1)",
+    "--color-text-error": "rgba(170,27,25,1)",
+    "--color-text-rubric": "rgba(219,51,52,1)",
+    "--color-text-navigation": "rgba(18,18,18,1)",
+    "--color-text-navigation-accent": "rgba(219,51,52,1)",
+    "--color-text-navigation-brand": "rgba(8,121,191,1)",
+    "--color-text-navigation-feature": "rgba(255,255,255,1)",
+    "--color-text-pubdate": "rgba(102,102,102,1)",
+    "--color-text-image-caption": "rgba(18,18,18,1)",
+    "--color-text-image-credit": "rgba(102,102,102,1)",
+    "--color-text-byline": "rgba(0,0,0,1)",
+    "--color-text-byline-card": "rgba(255,255,255,1)",
+    "--color-text-byline-link": "rgba(0,0,0,1)",
+    "--color-text-blockquote": "rgba(0,0,0,1)",
+    "--color-text-rubric-card": "rgba(255,255,255,1)",
+    "--color-text-card-active": "rgba(255,255,255,1)",
+    "--color-text-status": "rgba(8,121,191,1)",
+    "--color-text-status-card": "rgba(255,255,255,1)",
+    "--color-text-ad": "rgba(151,151,151,1)",
+    "--color-overlay-badge": "rgba(0, 0, 0, 0.5)",
+    "--color-overlay-strong-solid": "rgba(0, 0, 0, 0.85)",
+    "--color-overlay-inverse": "white",
+    "--color-overlay-strong-180deg": "linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 60%)",
+    "--color-overlay-subtle-180deg": "linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.25) 60%)"
+  },
+  "themeBrandSample": {
+    "--color-surface-subtle": "rgba(8,121,191,1)",
+    "--color-text": "rgba(255,255,255,1)",
+    "--color-action-brand-default": "rgba(255,255,255,1)"
+  },
+  "typeRolesBase": {
+    "consumption-editorial-body-core": {
+      "size": "21px/1.5em",
+      "font": "normal 400 TNYAdobeCaslonPro,Times New Roman,Times,serif"
+    },
+    "consumption-editorial-body-bold": {
+      "size": "21px/1.5em",
+      "font": "normal 700 TNYAdobeCaslonPro"
+    },
+    "consumption-editorial-display-large": {
+      "size": "63px/1em",
+      "font": "normal 400 TNYAdobeCaslonPro"
+    },
+    "consumption-editorial-hed-standard": {
+      "size": "30px/1.06666666667em",
+      "font": "normal 400 IrvinHeadingPro,Helvetica Neue,Helvetica,Arial,sans-serif",
+      "desktop1024": "42px/1.1111111111em"
+    },
+    "consumption-editorial-hed-feature": {
+      "size": "34px/1.13em",
+      "font": "normal 400 IrvinHeadingPro",
+      "desktop1024": "44.2px/1.130090495492055em"
+    },
+    "discovery-hed-feature": {
+      "size": "28px/1.1428571428571428em",
+      "font": "normal 400 IrvinHeadingPro",
+      "desktop1024": "36px/1.1111111111111112em"
+    },
+    "discovery-hed-core-primary": {
+      "size": "22px/1.2727272727272727em",
+      "font": "normal 400 TNYAdobeCaslonPro"
+    },
+    "discovery-description-core": {
+      "size": "17px/1.411764705882353em",
+      "font": "normal 400 TNYAdobeCaslonPro"
+    },
+    "discovery-page-hed-section": {
+      "size": "32px/1.13em",
+      "font": "normal 400 IrvinHeadingPro"
+    },
+    "navigation-text-primary": {
+      "size": "12px/1.33em",
+      "font": "normal 500 Graphik,Helvetica Neue,Helvetica,Arial,sans-serif",
+      "tracking": "-0.01em"
+    },
+    "foundation-link-primary": {
+      "size": "12px/1.27em",
+      "font": "normal 500 Graphik",
+      "tracking": "-0.0125em"
+    },
+    "foundation-title-primary": {
+      "size": "14px/1.3em",
+      "font": "normal 400 IrvinText,IrvinHeadingPro,Georgia,Times New Roman,Times,serif"
+    },
+    "foundation-meta-secondary": {
+      "size": "10px/1.27em",
+      "font": "normal 500 Graphik",
+      "tracking": "-0.0125em"
+    },
+    "global-editorial-context-primary": {
+      "size": "12px/1.333em",
+      "font": "normal 400 IrvinText"
+    },
+    "utility-button-core": {
+      "size": "13px/1.2307692308em",
+      "font": "normal 500 Graphik",
+      "tracking": "-0.0125em"
+    },
+    "utility-input-core": {
+      "size": "16px/1.31em",
+      "font": "normal 400 Graphik",
+      "tracking": "-0.0125em"
+    },
+    "utility-heading": {
+      "size": "28px/1.1428571428571428em",
+      "font": "normal 400 TNYAdobeCaslonPro"
+    },
+    "utility-body": {
+      "size": "13px/1.2307692308em",
+      "font": "normal 400 Graphik",
+      "tracking": "-0.0125em"
+    },
+    "utility-label": {
+      "size": "13px/1.31em",
+      "font": "normal 500 Graphik",
+      "tracking": "-0.0125em"
+    },
+    "utility-legal-text": {
+      "size": "14px/1.43em",
+      "font": "normal 400 TNYAdobeCaslonPro"
+    },
+    "utility-modal-hed": {
+      "size": "28px/1.1428571428571428em",
+      "font": "normal 400 TNYAdobeCaslonPro"
+    },
+    "utility-modal-body": {
+      "size": "16px/1.25em",
+      "font": "normal 400 Graphik",
+      "tracking": "-0.0125em"
+    },
+    "utility-pricing": {
+      "size": "16px/1.5em",
+      "font": "normal 500 Graphik"
+    },
+    "navigation-text-tertiary": {
+      "size": "11px/1.45em",
+      "font": "normal 400 TNYAdobeCaslonPro",
+      "tracking": "0.09em"
+    }
+  },
+  "computed": {
+    "homeSubscribe": {
+      "bg": "rgb(8, 121, 191)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Graphik",
+      "size": "12px",
+      "weight": "500",
+      "lh": "15.24px",
+      "ls": "-0.12px",
+      "pad": "4px 8px",
+      "radius": "1px",
+      "h": 23
+    },
+    "homeSignIn": {
+      "color": "rgb(0, 0, 0)",
+      "font": "Graphik",
+      "size": "12px",
+      "weight": "500",
+      "ls": "-0.15px",
+      "lh": "15.24px"
+    },
+    "homeNav": {
+      "font": "Graphik",
+      "size": "12px",
+      "weight": "500",
+      "ls": "-0.15px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "homeRubric": {
+      "font": "IrvinText",
+      "size": "12px",
+      "color": "rgb(219, 51, 52)",
+      "weight": "400"
+    },
+    "homeDek": {
+      "font": "TNYAdobeCaslonPro",
+      "size": "21px",
+      "lh": "28px",
+      "color": "rgb(51, 51, 51)"
+    },
+    "homeByline": {
+      "font": "NeutrafaceNewYorker",
+      "size": "15px",
+      "weight": "600",
+      "color": "rgb(18, 18, 18)"
+    },
+    "homeHedFeature": {
+      "font": "IrvinHeadingPro",
+      "size": "36px",
+      "lh": "40px",
+      "weight": "400"
+    },
+    "homeSectionHed": {
+      "font": "IrvinHeadingPro",
+      "size": "28px",
+      "lh": "32px"
+    },
+    "footerLink": {
+      "font": "Graphik",
+      "size": "14px",
+      "color": "rgb(162, 162, 162)",
+      "weight": "500",
+      "ls": "-0.175px"
+    },
+    "articleH1": {
+      "font": "IrvinHeadingPro",
+      "size": "42px",
+      "lh": "46.6667px",
+      "weight": "400",
+      "w": 500
+    },
+    "articleRubric": {
+      "font": "IrvinText",
+      "size": "12px",
+      "color": "rgb(219, 51, 52)"
+    },
+    "articleByline": {
+      "font": "NeutrafaceNewYorker",
+      "size": "15px",
+      "weight": "600"
+    },
+    "articleBody": {
+      "font": "TNYAdobeCaslonPro",
+      "size": "21px",
+      "lh": "31.5px",
+      "weight": "400",
+      "columnWidth": 521
+    },
+    "articleDate": {
+      "font": "Graphik",
+      "size": "12px",
+      "color": "rgb(102, 102, 102)",
+      "weight": "500"
+    },
+    "offerCta": {
+      "bg": "rgb(8, 121, 191)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Graphik",
+      "size": "13px",
+      "weight": "500",
+      "pad": "4px 20px",
+      "radius": "4px",
+      "h": 48,
+      "ls": "-0.1625px",
+      "text": "GET DIGITAL ACCESS"
+    },
+    "offerGift": {
+      "border": "1px solid rgb(0, 0, 0)",
+      "radius": "4px",
+      "pad": "16px 20px",
+      "h": 50,
+      "font": "Graphik",
+      "size": "13px",
+      "weight": "500"
+    },
+    "offerHero": {
+      "font": "TNYAdobeCaslonPro",
+      "size": "36px",
+      "lh": "39.6px",
+      "weight": "400"
+    },
+    "offerPlanName": {
+      "font": "TNYAdobeCaslonPro",
+      "size": "22px",
+      "weight": "400"
+    },
+    "offerStrike": {
+      "font": "Graphik",
+      "size": "16px",
+      "color": "rgb(102, 102, 102)"
+    },
+    "offerPrice": {
+      "font": "Graphik",
+      "size": "16px",
+      "weight": "500",
+      "lh": "24px"
+    },
+    "offerIncludedHed": {
+      "font": "Graphik",
+      "size": "28px",
+      "weight": "500",
+      "lh": "32px"
+    },
+    "offerFooterButton": {
+      "bg": "rgb(18, 18, 18)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(51, 51, 51)",
+      "radius": "4px",
+      "h": 48
+    },
+    "signInH1": {
+      "font": "TNYAdobeCaslonPro",
+      "size": "40px",
+      "weight": "400"
+    },
+    "signInEmailWrap": {
+      "border": "1px solid rgb(0, 0, 0)",
+      "bg": "rgb(255, 255, 255)",
+      "radius": "0px",
+      "h": 51
+    },
+    "signInEmail": {
+      "font": "Graphik",
+      "size": "16px",
+      "pad": "14px 12px",
+      "bg": "rgb(255, 255, 255)"
+    },
+    "signInContinueSpan": {
+      "color": "rgb(255, 255, 255)",
+      "onButtonBg": "rgb(0, 0, 0)",
+      "buttonBorder": "2px solid rgb(0, 0, 0)",
+      "radius": "0px",
+      "h": 50,
+      "pad": "0px 20px",
+      "font": "Graphik",
+      "size": "13px",
+      "weight": "500",
+      "ls": "-0.1625px"
+    },
+    "signInSocial": {
+      "bg": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(229, 229, 229)",
+      "radius": "4px",
+      "h": 60,
+      "w": 115,
+      "font": "Graphik",
+      "size": "13px",
+      "weight": "500"
+    },
+    "signInLegal": {
+      "color": "rgb(102, 102, 102)",
+      "font": "Graphik",
+      "size": "13px"
+    },
+    "header": {
+      "bg": "rgb(255, 255, 255)",
+      "h": 64,
+      "transition": "0.1s cubic-bezier(0, 0.59, 0.32, 1)"
+    },
+    "logo": {
+      "src": "https://www.newyorker.com/verso/static/thenewyorker-us/assets/logo.svg",
+      "rendered": "173x40",
+      "natural": "132x32"
+    },
+    "searchButton": {
+      "h": 32,
+      "w": 32,
+      "pad": "4px",
+      "font": "Graphik",
+      "size": "12px",
+      "weight": "500"
+    },
+    "radio": {
+      "radius": "50%",
+      "h": 18,
+      "w": 18
+    }
+  },
+  "breakpointsDeclared": [
+    "768px",
+    "1024px"
+  ],
+  "grid": {
+    "--grid-gap": "2rem",
+    "--grid-margin": "4rem",
+    "--divider-width": "2px"
+  },
+  "motionComputed": {
+    "headerTransition": "0.1s cubic-bezier(0, 0.59, 0.32, 1)",
+    "signInLink": "0.2s ease-in-out",
+    "logo": "0.3s cubic-bezier(0, 0.59, 0.32, 1)"
+  },
+  "notEntered": [
+    "Did not click Subscribe through to a card form",
+    "Did not type an email or continue on id.condenast.com",
+    "Did not click Google, Apple, or Facebook",
+    "Did not create an account",
+    "Did not start a paid trial"
+  ]
+}
