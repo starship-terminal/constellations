@@ -20343,6 +20343,58 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "saint-laurent",
+      "name": "Saint Laurent",
+      "url": "https://www.ysl.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Luxury retail marketing: white page, 12px uppercase chrome, square black buy button, underlined fields",
+      "tags": [
+        "web",
+        "retail",
+        "luxury",
+        "fashion",
+        "marketing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out; public marketing only; bag, checkout, and account not entered",
+      "themes": [
+        "light"
+      ],
+      "widths": [],
+      "entry": "systems/saint-laurent/README.md",
+      "tokens": "systems/saint-laurent/tokens.json",
+      "styleGuide": "systems/saint-laurent/style-guide.html",
+      "preview": {
+        "cover": "systems/saint-laurent/icon.png",
+        "icon": "systems/saint-laurent/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "www.ysl.com/en-sg public storefront, 2026-11-19",
+        "route": "public-web",
+        "durationMin": 45
+      },
+    "layoutGaps": {
+          "components/": "The preview browser produced no screenshot frames, so no component crops were saved."
     }
+  }
   ]
 }
