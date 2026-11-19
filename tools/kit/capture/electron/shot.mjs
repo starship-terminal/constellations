@@ -8,7 +8,8 @@
 //
 // Writes <out-dir>/<name>.png at the window's own size and pixel ratio, and <out-dir>/<name>.vars.json
 // (every custom property declared on :root, html or body, with its value as computed now, plus the
-// theme class). --hover forces :hover on the first match through CDP, so no pointer moves.
+// theme class). A url() in a value is recorded as url(…) and a bare URL keeps no query.
+// --hover forces :hover on the first match through CDP, so no pointer moves.
 // Read-only: it never clicks or navigates.
 // Quit the app and open it normally afterwards; an open port lets any local process drive it.
 import { screenshotWithMetadata } from '../screenshot.mjs';
@@ -42,9 +43,17 @@ const vars = await page.evaluate(() => {
     for (const r of rules) if (r.selectorText && /^(:root|html|body)/.test(r.selectorText))
       for (const p of r.style) if (p.startsWith('--')) names.add(p);
   }
+  // A custom property can hold a url() or a bare URL with a signed or per-account query (an
+  // avatar, a token-bearing asset), so every value goes through noUrl and loses any URL query.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+  // (a url() is already url(…) here, so a bare URL's query runs to the next space or quote; brackets
+  // can sit inside it, as in ?crop=(0,0)&token=…)
+  const noQuery = (v) => v.replace(/\b(https?:\/\/[^\s"'?#]*)[?#][^\s"']*/gi, '$1');
   const html = getComputedStyle(document.documentElement), body = getComputedStyle(document.body);
+  // body's value wins whenever body declares one, a blank override included; trimmed only after
+  const read = (n) => { const b = noUrl(body.getPropertyValue(n)); return noQuery((b !== '' ? b : noUrl(html.getPropertyValue(n))).trim()); };
   const v = {};
-  for (const n of [...names].sort()) v[n] = (body.getPropertyValue(n) || html.getPropertyValue(n)).trim();
+  for (const n of [...names].sort()) v[n] = read(n);
   return { url: location.href, themeClass: document.documentElement.className, dpr: devicePixelRatio,
            size: [innerWidth, innerHeight], vars: v };
 });
