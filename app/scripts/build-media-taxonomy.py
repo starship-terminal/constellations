@@ -221,12 +221,16 @@ def build() -> dict:
 
 
 def _head_touches(path: str) -> bool:
+    """True when the merge commit's copy of path differs from the base.
+
+    A depth-1 checkout has no merge base, so a three-dot diff fails and
+    must not be treated as an edit. Two trees compare without history."""
     base = os.environ.get("GITHUB_BASE_REF")
     if not base:
         return False
     try:
         changed = subprocess.run(
-            ["git", "diff", "--name-only", f"origin/{base}...HEAD"],
+            ["git", "diff", "--name-only", f"origin/{base}", "HEAD", "--", path],
             cwd=ROOT, check=True, capture_output=True, text=True,
         ).stdout.splitlines()
     except (OSError, subprocess.CalledProcessError):
@@ -250,43 +254,87 @@ def base_slugs() -> set[str] | None:
     return {s.get("slug") for s in catalog_json.get("systems") or []}
 
 
-def matches_base(result: dict, committed: dict) -> bool:
-    """True when this pull request only adds packages, and the seed still
-    matches the base for every package that was already there.
+def _base_tree_files() -> set[str] | None:
+    """Paths in the pull request base. None when the base tree is unreadable.
 
-    A new package has no row in the seed until someone regenerates it on
-    main. Editing an existing package's media still fails this check."""
+    `-z` keeps names that contain quotes, backslashes, or non-ASCII
+    characters. Without it git quotes those names, and a capture such as
+    café-dark.png looks newly added."""
+    base = os.environ.get("GITHUB_BASE_REF")
+    if not base:
+        return None
+    try:
+        listed = subprocess.run(
+            ["git", "ls-tree", "-r", "-z", "--name-only", f"origin/{base}"],
+            cwd=ROOT, check=True, capture_output=True,
+        ).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return {path.decode("utf-8", "surrogateescape")
+            for path in listed.split(b"\0") if path}
+
+
+def matches_base(result: dict, committed: dict) -> bool:
+    """True when this pull request only adds packages, and the committed
+    seed still matches a derivation of the base catalog and base files.
+
+    GitHub checks the merge commit. That commit adds the new package's
+    screenshots, so a derivation of the working tree never equals the
+    committed seed. The seed is still current when it matches the base
+    tree. Editing an existing catalog row, or a file that was already in
+    the base, changes that derivation and still fails."""
     slugs = base_slugs()
     if not slugs:
         return False
-    head = {s.get("slug") for s in catalog.load_catalog()["systems"]}
-    if not head >= slugs:
+    head_rows = {s.get("slug"): s for s in catalog.load_catalog()["systems"]}
+    if not set(head_rows) > slugs:
         return False
     # A pull request that edits this script changes the derived rules.
-    # That PR regenerates the seed. A capture PR does not touch the script,
-    # so its rules must still match the committed seed.
+    # That PR regenerates the seed. A capture PR does not touch the script.
     if _head_touches("app/scripts/build-media-taxonomy.py"):
         return False
-    for field in ("version", "coverage", "rules"):
-        if result.get(field) != committed.get(field):
-            return False
-    def package_rows(blob):
-        return {row.get("referenceId"): row for row in blob.get("packages") or []}
-    def assignment_rows(blob):
-        return {(row.get("referenceId"), row.get("mediaId")): row
-                for row in blob.get("assignments") or []}
-    for key_fn in (package_rows, assignment_rows):
-        committed_rows = key_fn(committed)
-        result_rows = key_fn(result)
-        for key, row in committed_rows.items():
-            if result_rows.get(key) != row:
-                return False
-        for key in result_rows:
-            ref = key[0] if isinstance(key, tuple) else key
-            slug = (ref or "").removeprefix("systems:")
-            if slug in slugs and key not in committed_rows:
-                return False
-    return True
+    base_files = _base_tree_files()
+    if base_files is None:
+        return False
+    try:
+        raw = subprocess.run(
+            ["git", "show", f"origin/{os.environ['GITHUB_BASE_REF']}:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        base_catalog = json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return False
+    base_rows = {s.get("slug"): s for s in base_catalog.get("systems") or []}
+    if set(base_rows) != slugs:
+        return False
+    if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
+        return False
+    # A new image under a package that was already on the base changes the
+    # seed. The derivation below ignores those files so it can rebuild the
+    # base, so reject them here.
+    for row in base_rows.values():
+        for folder, exts in (
+            ("screenshots", catalog.IMAGE_EXT),
+            ("components", catalog.COMPONENT_EXT),
+        ):
+            for item in catalog.list_images(row, folder, exts):
+                if item["path"] not in base_files:
+                    return False
+    saved_catalog = catalog.load_catalog
+    saved_images = catalog.list_images
+
+    def base_images(system, folder, exts):
+        items = saved_images(system, folder, exts)
+        return [item for item in items if item["path"] in base_files]
+
+    catalog.load_catalog = lambda: base_catalog
+    catalog.list_images = base_images
+    try:
+        base_result = build()
+    finally:
+        catalog.load_catalog = saved_catalog
+        catalog.list_images = saved_images
+    return committed == base_result
 
 
 def main() -> None:
