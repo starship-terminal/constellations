@@ -122,6 +122,48 @@ class PackageFileTest(unittest.TestCase):
         self.assertIn(self.SLUG, out["prompt"])
 
 
+class CatalogCacheTest(unittest.TestCase):
+    """library.py is re-executed per /api/ request; catalog.json (~1.5 MB) is
+    parsed once per change of the file, not once per tool call."""
+
+    def test_parsed_once_until_the_file_changes(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "catalog.json"
+            path.write_text(json.dumps({"systems": [{"slug": "a"}]}))
+            with mock.patch.object(library.catalog, "ROOT", Path(d)), \
+                    mock.patch.object(library.catalog, "_library_cache", None, create=True):
+                first = library._catalog()
+                # A fresh copy of library.py, as the next request gets, shares the parse.
+                again = _load("agent_library_again", "library.py")._catalog()
+                self.assertIs(first, again)
+                path.write_text(json.dumps({"systems": [{"slug": "a"}, {"slug": "b"}]}))
+                self.assertEqual([s["slug"] for s in library._catalog()["systems"]], ["a", "b"])
+
+    def test_concurrent_requests_parse_once(self):
+        import tempfile
+        import threading
+        import time
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "catalog.json").write_text(json.dumps({"systems": []}))
+            calls = []
+            real = library.catalog.load_catalog
+
+            def slow():
+                calls.append(1)
+                time.sleep(0.2)
+                return real()
+            with mock.patch.object(library.catalog, "ROOT", Path(d)), \
+                    mock.patch.object(library.catalog, "_library_cache", None, create=True), \
+                    mock.patch.object(library.catalog, "load_catalog", slow):
+                threads = [threading.Thread(target=library._catalog) for _ in range(5)]
+                for t in threads:
+                    t.start()
+                for t in threads:
+                    t.join()
+            self.assertEqual(len(calls), 1)
+
+
 class ProviderTest(unittest.TestCase):
     def test_parse_openai_and_anthropic_shape(self):
         self.assertEqual(chat._parse_models({"data": [{"id": "m1"}, {"id": "m2", "display_name": "M2"}]}),

@@ -110,6 +110,23 @@ def make_resolver(slugs, by_name):
     return resolve
 
 
+def names_by_lower(rows):
+    """Lower-cased style name -> slug, for names exactly one style carries.
+
+    A name several styles share (Apple x6) is left out, so a business with
+    that name links only through an exact slug match: picking one of them
+    would follow the db's row order, which a dump reload or a refetch changes
+    with no change in the data. catalog.py's build_refero applies the same
+    rule to the names it resolves."""
+    count, slug_of = {}, {}
+    for _, slug, name, _ in rows:
+        if name:
+            key = name.lower()
+            count[key] = count.get(key, 0) + 1
+            slug_of[key] = slug
+    return {key: slug for key, slug in slug_of.items() if count[key] == 1}
+
+
 def write_atomic(path, text):
     """Write text to path via a sibling .tmp file and rename, so a crash can
     never leave a truncated file behind."""
@@ -143,10 +160,7 @@ def main():
     rows = db.execute(
         "SELECT uuid, slug, name, result_json FROM styles").fetchall()
     slugs = {slug for _, slug, _, _ in rows}
-    by_name = {}
-    for _, slug, name, _ in rows:
-        if name:
-            by_name.setdefault(name.lower(), slug)
+    by_name = names_by_lower(rows)
     resolve = make_resolver(slugs, by_name)
 
     edges = []          # (uuid, business, why, rank, matched_slug)

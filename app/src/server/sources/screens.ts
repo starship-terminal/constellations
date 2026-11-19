@@ -195,6 +195,7 @@ export function queryScreens(
       ? filtered.slice(0, 1)
       : page.slice(offset, offset + limit),
     total: filtered.length,
+    pageable: page.length,
     termCounts,
     facets: {
       platforms: counts(available, ({ reference }) => [reference.platform]),

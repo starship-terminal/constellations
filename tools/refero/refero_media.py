@@ -10,9 +10,12 @@ extension change lands on every side at once. mirror_media.py --check walks
 the styles rows and verifies each expected file exists.
 
 Slugs are already URL-safe (fetch.slugify), so neither side URL-encodes them.
+media_dest() refuses any other slug: it comes from the db, which merges from
+the committed text dump, so a path-like one must never become a file path.
 """
 
 import os
+import re
 import urllib.parse
 from pathlib import Path
 
@@ -85,8 +88,23 @@ def local_path(kind, slug):
     return f"/refero-media/{kind}/{slug}{KINDS[kind][0]}"
 
 
+# What fetch.slugify produces: lowercase letters and digits joined by single
+# hyphens. catalog.py's REFERO_SLUG is the same rule on the emit side.
+SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+
+
+def safe_slug(slug):
+    """True when slug is one fetch.slugify could have produced."""
+    return isinstance(slug, str) and SLUG.fullmatch(slug) is not None
+
+
 def media_dest(media_root, kind, slug):
-    """The file local_path() resolves to under a media root."""
+    """The file local_path() resolves to under a media root.
+
+    Raises ValueError for a slug that is not lowercase letters, digits and
+    hyphens, so `../x` or `a/b` can never name a file outside the root."""
+    if not safe_slug(slug):
+        raise ValueError(f"unsafe refero slug {slug!r}")
     return Path(media_root) / kind / (slug + KINDS[kind][0])
 
 
