@@ -83,10 +83,6 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
-    indexes = [i for i, _ in ps]
-    if indexes != list(range(1, indexes[-1] + 1)):
-        print('skip incomplete tiles', name, indexes)
-        continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0
