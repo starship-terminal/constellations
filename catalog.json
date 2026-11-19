@@ -20343,6 +20343,62 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "rise",
+      "name": "Rise",
+      "url": "https://risecalendar.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Quiet calendar-product marketing after sunset: Inter essay column, purple primary button, white secondary, two-card pricing, uppercase eyebrow badges",
+      "tags": [
+        "web",
+        "calendar",
+        "productivity",
+        "marketing",
+        "saas",
+        "inter"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (the app shut down on 2025-03-31; login and signup 404)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/rise/README.md",
+      "tokens": "systems/rise/tokens.json",
+      "styleGuide": "systems/rise/style-guide.html",
+      "preview": {
+        "cover": "systems/rise/screenshots/pricing-light-default.png",
+        "icon": "systems/rise/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.primary",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/792"
+      },
+      "layoutGaps": {
+        "icons/": "The wordmark is a gradient SVG in the header, kept only as the logo crop. No icon set was extracted."
+      }
     }
   ]
 }
