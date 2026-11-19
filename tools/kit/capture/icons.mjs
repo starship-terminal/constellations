@@ -37,9 +37,10 @@ function collect() {
       shapes.forEach((e, i) => {
         // A shape in an imported symbol inherits its paint from the <use> that draws it, unless its own
         // class or style sets it: only then is anything written, or the copy could no longer recolour.
-        if (imported && !e.hasAttribute('class') && !e.hasAttribute('style')) return;
         const cs = getComputedStyle(e), t = cshapes[i];
+        // a var() in a paint attribute names a property the standalone file will not have: resolve it first
         for (const a of ['fill', 'stroke']) if ((t.getAttribute(a) || '').startsWith('var(')) t.setAttribute(a, rgb(cs[a]) === col ? 'currentColor' : hex(cs[a]));
+        if (imported && !e.hasAttribute('class') && !e.hasAttribute('style')) return;
         if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
         else if (imported && !t.hasAttribute('fill') && cs.fill === 'none') t.setAttribute('fill', 'none');   // its style goes below
         else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
