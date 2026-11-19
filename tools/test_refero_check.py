@@ -259,7 +259,10 @@ class CoverageLagTest(unittest.TestCase):
                      lambda d: d["totals"].__setitem__("catalog_entries", 999),
                      lambda d: d.__setitem__("about", "hand written"),
                      lambda d: d["matched"]["alpha.example"]["catalog"][0].__setitem__("name", "Renamed"),
-                     lambda d: d["missing"].pop("newer.example")):
+                     lambda d: d["missing"].pop("newer.example"),
+                     # A fake row in a second group for a domain another group holds.
+                     lambda d: d["matched"].__setitem__("newer.example", {"catalog": [], "pkgs": []}),
+                     lambda d: d.__setitem__("note", "extra top-level field")):
             edited = json.loads(json.dumps(regenerated))
             edit(edited)
             self.assertFalse(self.matches(edited))

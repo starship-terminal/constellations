@@ -342,7 +342,7 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
     if kept is None:
         return False
     built = coverage_mod.build(directory, {**head_catalog, "systems": kept})
-    return actual.get("about") == built.get("about") and coverage_same_rows(actual, built)
+    return coverage_same_rows(actual, built)
 
 
 def packages_in_coverage(actual: dict) -> set[str]:
@@ -360,32 +360,14 @@ def packages_in_coverage(actual: dict) -> set[str]:
 
 
 def coverage_same_rows(actual: dict, built: dict) -> bool:
-    """True when both files name the same domain rows, ignoring order.
+    """True when the two files are the same document apart from list order.
 
     The builder walks catalog systems in list order, and a subset built
-    from a set walks them in hash order. The same packages then produce
-    the same domain rows in a different order. A changed row still fails."""
-    def rows(doc):
-        found = {}
-        for key in ("matched", "missing", "systems_absent_from_catalog"):
-            for dom, row in (doc.get(key) or {}).items():
-                found[dom] = (key, row)
-        return found
-    left, right = rows(actual), rows(built)
-    if set(left) != set(right):
-        return False
-    # Counts do not depend on package order. A wrong total is a hand edit.
-    if actual.get("totals") != built.get("totals"):
-        return False
-    return all(same_coverage_row(left[dom], right[dom]) for dom in left)
-
-
-def same_coverage_row(left, right) -> bool:
-    key_l, row_l = left
-    key_r, row_r = right
-    if key_l != key_r:
-        return False
-    return _order_free(row_l) == _order_free(row_r)
+    from a set walks them in hash order, so the same packages can produce
+    the same rows in a different order. Everything else is compared: every
+    group, every domain row, the totals, `about` and any extra field, so a
+    row added to a second group or a stray top-level key still fails."""
+    return _order_free(actual) == _order_free(built)
 
 
 def _order_free(value):
