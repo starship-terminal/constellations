@@ -408,6 +408,9 @@ class JavaScriptHalves(unittest.TestCase):
             'url("https://cdn.example.test/a.png?X-Amz-Signature=1")': 'url(…)',
             '"https://cdn.example.test/a.png?token=abc"': '"https://cdn.example.test/a.png"',
             'https://cdn.example.test/a.png#access_token=abc': 'https://cdn.example.test/a.png',
+            '"https://cdn.example.test/a(1).png?token=abc"': '"https://cdn.example.test/a(1).png"',
+            '"https://cdn.example.test/a.png?crop=(0,0)&token=abc"': '"https://cdn.example.test/a.png"',
+            'https://cdn.example.test/a.png?crop=(0,0)&token=abc 2x': 'https://cdn.example.test/a.png 2x',
             'url(data:image/svg+xml,abc) no-repeat': 'url(data:image/svg+xml,abc) no-repeat',
             '#5e6ad2': '#5e6ad2',
             '0 1px 2px rgba(0, 0, 0, 0.1)': '0 1px 2px rgba(0, 0, 0, 0.1)',
@@ -417,6 +420,13 @@ class JavaScriptHalves(unittest.TestCase):
         self.assertEqual(got, list(cases.values()))
         for v in got:
             self.assertFalse(catalog.SIGNED_URL.search(v), v)
+        # body's own value wins whenever it has one, a blank override included; html's is the fallback
+        page = {"H": {"--a": " red", "--b": " blue", "--c": "url(https://x.test/a.png?sig=1)"}, "B": {"--a": " ", "--b": ""}}
+        stub = (f"const VALUES = {json.dumps(page)}; const document = {{ documentElement: 'H', body: 'B' }};\n"
+                "const getComputedStyle = (e) => ({ getPropertyValue: (n) => VALUES[e][n] ?? '' });\n")
+        src = js_block(HERE / "kit/capture/electron/shot.mjs", "const noUrl", "const read")
+        got = self.node(stub + src + "\nconsole.log(JSON.stringify(['--a', '--b', '--c'].map(read)))")
+        self.assertEqual(got, ["", "blue", "url(…)"])
 
     def test_font_face_ids_tell_apart_files_the_masked_src_cannot(self):
         # noUrl turns every font file URL into url(…), so two faces of one family, weight and style that

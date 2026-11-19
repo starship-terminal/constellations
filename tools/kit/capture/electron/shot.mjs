@@ -46,9 +46,12 @@ const vars = await page.evaluate(() => {
   // A custom property can hold a url() or a bare URL with a signed or per-account query (an
   // avatar, a token-bearing asset), so every value goes through noUrl and loses any URL query.
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
-  const noQuery = (v) => v.replace(/\b(https?:\/\/[^\s"'()?#]*)[?#][^\s"'()]*/gi, '$1');
+  // (a url() is already url(…) here, so a bare URL's query runs to the next space or quote; brackets
+  // can sit inside it, as in ?crop=(0,0)&token=…)
+  const noQuery = (v) => v.replace(/\b(https?:\/\/[^\s"'?#]*)[?#][^\s"']*/gi, '$1');
   const html = getComputedStyle(document.documentElement), body = getComputedStyle(document.body);
-  const read = (n) => noQuery(noUrl(body.getPropertyValue(n).trim()) || noUrl(html.getPropertyValue(n).trim()));
+  // body's value wins whenever body declares one, a blank override included; trimmed only after
+  const read = (n) => { const b = noUrl(body.getPropertyValue(n)); return noQuery((b !== '' ? b : noUrl(html.getPropertyValue(n))).trim()); };
   const v = {};
   for (const n of [...names].sort()) v[n] = read(n);
   return { url: location.href, themeClass: document.documentElement.className, dpr: devicePixelRatio,
