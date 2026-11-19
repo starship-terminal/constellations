@@ -536,11 +536,14 @@ class RawShotsStayOutOfTheRepo(unittest.TestCase):
             stub.write_text("const launch = () => { throw new Error('stub Playwright: no browser in this test'); };\n"
                             "export const chromium = { launch, connectOverCDP: launch };\nexport default { chromium };\n")
             res = subprocess.run([NODE, str(capture / "public/public.mjs")], capture_output=True, text=True, cwd=d,
-                                 timeout=60, env={**env, "PLAYWRIGHT": stub.as_uri(), "KIT_EXAMPLE": "1"})
+                                 timeout=60, env={**env, "PLAYWRIGHT": stub.as_uri(), "KIT_EXAMPLE": "1",
+                                                  "HOME": str(Path(d) / "home"), "USERPROFILE": str(Path(d) / "home")})
             self.assertEqual(res.returncode, 2, res.stderr)
             self.assertIn("set RAW=", res.stderr)
             self.assertNotIn("stub Playwright", res.stderr)
             self.assertEqual(sorted(p.name for p in (Path(d) / "pkg").iterdir()), ["tools"])   # nothing written
+            # a regressed guard would default to ~/.design-systems/<slug>/raw-shots: HOME points in here
+            self.assertFalse((Path(d) / "home").exists())
         src = (HERE / "kit/capture/public/public.mjs").read_text()
         self.assertIn("'.design-systems', path.basename(PKG), 'raw-shots'", src)
         self.assertNotIn("raw/full/", src)
