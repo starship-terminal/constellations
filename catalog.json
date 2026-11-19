@@ -20343,6 +20343,75 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "raster",
+      "name": "Raster",
+      "url": "https://raster.app",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Dark DAM marketing: black page, zinc canvas, Raster Red #ff2f66 actions at 5.25px radius, a cinema-lens gradient clipped to the hero line, Raster Neue wordmark against a 14px system sans, and a separate light docs surface",
+      "tags": [
+        "web",
+        "media",
+        "dam",
+        "marketing",
+        "dark",
+        "signed-out",
+        "raster-red",
+        "tailwind"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "public signed out. Sign-in was opened and measured (Google and an email-link field). The email was not submitted. Google was not used. No card, phone, or checkout.",
+      "themes": [
+        "dark",
+        "docs"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/raster/README.md",
+      "tokens": "systems/raster/tokens.json",
+      "styleGuide": "systems/raster/style-guide.html",
+      "preview": {
+        "cover": "systems/raster/screenshots/home-dark-default.png",
+        "icon": "systems/raster/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.canvas",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.background.action",
+            "border": "dark.border.hairline"
+          },
+          "docs": {
+            "page": "docs.background.page",
+            "surface": "docs.background.surface",
+            "text": "docs.text.primary",
+            "muted": "docs.text.muted",
+            "accent": "docs.text.accent",
+            "border": "docs.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 70,
+        "pr": "",
+        "durationNote": "one session: live computed styles in the T3 preview tab, then headless Chromium for public screenshots after the preview pane stopped painting frames"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the four-tile wordmark and the Feather-derived marks are visible in the screenshots"
+      }
     }
   ]
 }

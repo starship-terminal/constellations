@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raster style guide</title>
+<style>
+:root {
+  --color-brand-red: #ff2f66;
+  --color-brand-orange: #ff6a4d;
+  --color-brand-yellow: #ffc861;
+  --color-brand-pink: #ff7ab8;
+  --color-brand-rose: #ff5fa4;
+  --color-brand-violet: #c66bff;
+  --color-brand-daisy-yellow: #ffb800;
+  --color-brand-primary-inset: #ff5381;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f4f4f5;
+  --color-gray-200: #e4e4e7;
+  --color-gray-300: #d4d4d8;
+  --color-gray-400: #a1a1aa;
+  --color-gray-500: #71717a;
+  --color-gray-600: #52525b;
+  --color-gray-700: #3f3f46;
+  --color-gray-800: #27272a;
+  --color-gray-900: #18181b;
+  --color-gray-950: #09090b;
+  --color-neutral-50: #fafafa;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-docs-page: #f5f5f5;
+  --color-docs-ink: #0a0a0a;
+  --color-docs-muted: #737373;
+  --color-docs-card: #f1f1f1;
+  --color-docs-line: rgba(204, 204, 204, 0.5);
+  --color-docs-active: oklab(0.654023 0.231638 0.0531938 / 0.1);
+  --font-family-display: "Raster Neue", sans-serif;
+  --font-family-sans: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-docs: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --radius-sm: 3.5px;
+  --radius-md: 5.25px;
+  --radius-control: 5.25px;
+  --radius-tabs: 7px;
+  --radius-docs-row: 8px;
+  --radius-docs-card: 12px;
+  --radius-lg: 7px;
+  --radius-xl: 10.5px;
+  --radius-2xl: 14px;
+  --radius-pill: 9999px;
+  --spacing-unit: 3.5px;
+  --spacing-1: 3.5px;
+  --spacing-2: 7px;
+  --spacing-3: 10.5px;
+  --spacing-4: 14px;
+  --spacing-5: 17.5px;
+  --spacing-8: 28px;
+  --spacing-nav-height: 53px;
+  --spacing-button-height: 37px;
+  --spacing-button-sm-height: 27px;
+  --spacing-field-height: 37px;
+  --motion-duration-fast: 150ms;
+  --motion-duration-fade: 200ms;
+  --motion-duration-slide: 300ms;
+  --motion-duration-sidebar: 460ms;
+  --motion-duration-editor: 500ms;
+  --motion-duration-reveal: 1200ms;
+  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-sidebar: cubic-bezier(0.32, 0.72, 0, 1);
+  --motion-easing-slide: cubic-bezier(0.33, 1, 0.68, 1);
+  --motion-easing-editor: cubic-bezier(0.8, 0, 0.2, 1);
+  --background-page: var(--color-black);
+  --background-canvas: var(--color-gray-800);
+  --background-nav: rgba(0, 0, 0, 0.5);
+  --background-field: var(--color-gray-900);
+  --background-tabs: var(--color-gray-900);
+  --background-indicator: var(--color-gray-700);
+  --background-tag-solid: var(--color-gray-700);
+  --background-glass: oklab(0.210329 0.00161358 -0.00563219 / 0.7);
+  --background-secondary: oklab(0.999994 0.0000455678 0.0000200868 / 0.08);
+  --background-action: var(--color-brand-red);
+  --text-primary: var(--color-white);
+  --text-hero: var(--color-neutral-50);
+  --text-muted: var(--color-gray-500);
+  --text-faint: oklab(0.984998 -0.00000956655 0.0000230074 / 0.38);
+  --text-soft: oklab(0.984998 -0.00000956655 0.0000230074 / 0.58);
+  --text-tag: var(--color-gray-400);
+  --text-tag-solid: #d4d4d8;
+  --text-on-action: var(--color-white);
+  --border-hairline: oklab(0.999994 0.0000455678 0.0000200868 / 0.15);
+  --border-action: oklab(0.999994 0.0000455678 0.0000200868 / 0.18);
+  --border-field: oklab(0.999994 0.0000455678 0.0000200868 / 0.1);
+  --border-tabs: rgba(255, 255, 255, 0.08);
+  --border-tag: oklab(0.71181 0.00361261 -0.0124171 / 0.2);
+  --focus-ring: #99c8ff;
+  --component-button-background: var(--background-action);
+  --component-button-text: var(--text-on-action);
+  --component-button-radius: var(--radius-control);
+  --component-button-padding: 7px;
+  --component-button-height: var(--spacing-button-height);
+  --component-field-background: var(--color-gray-800);
+  --component-field-text: var(--text-primary);
+  --component-field-radius: var(--radius-control);
+  --component-field-height: var(--spacing-field-height);
+  color-scheme: dark;
+}
+[data-mode="docs"] {
+  --background-page: var(--color-docs-page);
+  --background-surface: var(--color-docs-card);
+  --background-active: var(--color-docs-active);
+  --text-primary: var(--color-docs-ink);
+  --text-muted: var(--color-docs-muted);
+  --text-accent: var(--color-brand-red);
+  --border-default: var(--color-docs-line);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 500 14px/1.5 -apple-system, system-ui, sans-serif;
+  background: var(--background-page, #000);
+  color: var(--text-primary, #fff);
+}
+main { max-width: 980px; margin: 0 auto; padding: 40px 28px 96px; }
+h1 { font-weight: 500; font-size: 36px; letter-spacing: -0.025em; line-height: 1.1; margin: 0 0 8px; }
+h2 { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: none; margin: 40px 0 12px; color: var(--text-muted, #71717a); }
+p { max-width: 68ch; color: var(--text-soft, rgba(255,255,255,.7)); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 132px; }
+.sw i { display: block; height: 56px; border-radius: 5.25px; border: 1px solid rgba(255,255,255,.12); }
+.sw b, .sw span { display: block; font-size: 11px; font-weight: 500; }
+.sw span { color: var(--text-muted, #71717a); font-weight: 400; }
+.btn {
+  display: inline-flex; align-items: center; height: 37px; padding: 0 28px;
+  border-radius: 5.25px; border: 1px solid rgba(255,255,255,.18);
+  background: var(--background-action, #ff2f66); color: #fff; font: 500 14px/1 -apple-system, sans-serif;
+  box-shadow: inset 0 0 10px -10px #ff5381;
+}
+.btn.sec { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.15); box-shadow: none; }
+.field {
+  height: 37px; width: 240px; border-radius: 5.25px; border: 1px solid rgba(255,255,255,.1);
+  background: #27272a; color: #fff; padding: 0 10.5px; font: 400 14px/1 -apple-system, sans-serif;
+}
+.tag { display: inline-flex; height: 23px; align-items: center; padding: 0 10.5px; border-radius: 9999px; font-size: 10.5px; border: 1px solid rgba(161,161,170,.2); color: #a1a1aa; }
+.tag.solid { background: #3f3f46; color: #d4d4d8; border-color: transparent; }
+nav.mock { display: flex; align-items: center; gap: 18px; height: 53px; padding: 0 20px; background: rgba(0,0,0,.5); border-bottom: 1px solid rgba(255,255,255,.08); }
+.toggle { margin-left: auto; background: transparent; color: inherit; border: 1px solid rgba(255,255,255,.15); border-radius: 5.25px; padding: 4px 10px; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="mock">
+    <strong>Raster</strong>
+    <span>Product</span><span>Pricing</span>
+    <button class="toggle" id="theme" type="button">Docs light</button>
+  </nav>
+  <h1>Raster</h1>
+  <p>Public signed-out surfaces, measured 2026-11-19. Marketing is dark. Docs is a separate light surface. Raster Neue is the wordmark face; the page falls back to the system sans because the woff2 is not vendored.</p>
+  <h2>Brand</h2>
+  <div class="row" id="brand"></div>
+  <h2>Gray</h2>
+  <div class="row" id="gray"></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="btn">Get started</span>
+    <span class="btn sec">Book demo</span>
+    <input class="field" placeholder="Work email" readonly>
+    <span class="tag">approved</span>
+    <span class="tag solid">product-photo</span>
+  </div>
+  <h2>Type</h2>
+  <p style="font-size:36px;line-height:1.1;letter-spacing:-0.025em;color:#fafafa;font-weight:500">The agent-native DAM for teams that ship.</p>
+  <p style="font-size:15px">Not only is Raster the fastest DAM on the planet.</p>
+</main>
+<script>
+const T = {"core": {"color": {"brand": {"red": {"$value": "#ff2f66", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-raster-red, computed rgb(255, 47, 102)"}}, "orange": {"$value": "#ff6a4d", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --raster-gradient-orange"}}, "yellow": {"$value": "#ffc861", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --raster-gradient-yellow"}}, "pink": {"$value": "#ff7ab8", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --raster-gradient-pink"}}, "rose": {"$value": "#ff5fa4", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --raster-gradient-rose"}}, "violet": {"$value": "#c66bff", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --raster-gradient-violet"}}, "daisy-yellow": {"$value": "#ffb800", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-daisy-yellow, computed rgb(255, 184, 0)"}}, "primary-inset": {"$value": "#ff5381", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; primary button inset shadow rgb(255, 83, 129)"}}}, "gray": {"50": {"$value": "#fafafa", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-50"}}, "100": {"$value": "#f4f4f5", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-100, published on /design"}}, "200": {"$value": "#e4e4e7", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-200, published on /design"}}, "300": {"$value": "#d4d4d8", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-300, published on /design"}}, "400": {"$value": "#a1a1aa", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-400, computed rgb(161, 161, 170)"}}, "500": {"$value": "#71717a", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-500, computed rgb(113, 113, 122); hero h1 color"}}, "600": {"$value": "#52525b", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-600, published on /design"}}, "700": {"$value": "#3f3f46", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-700, computed; tabs indicator and solid tag"}}, "800": {"$value": "#27272a", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-800, html background and --background"}}, "900": {"$value": "#18181b", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-900, tabs track and field face"}}, "950": {"$value": "#09090b", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-gray-950"}}}, "neutral-50": {"$value": "#fafafa", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-neutral-50 lab(98.26 0 0), hero body lines"}}, "white": {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-white / --foreground"}}, "black": {"$value": "#000000", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --color-black, body background"}}, "docs": {"page": {"$value": "#f5f5f5", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; body background rgb(245, 245, 245)"}}, "ink": {"$value": "#0a0a0a", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; body and h1 rgb(10, 10, 10)"}}, "muted": {"$value": "#737373", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; lede rgb(115, 115, 115)"}}, "card": {"$value": "#f1f1f1", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; guide card rgb(241, 241, 241)"}}, "line": {"$value": "rgba(204, 204, 204, 0.5)", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; card and search border"}}, "active": {"$value": "oklab(0.654023 0.231638 0.0531938 / 0.1)", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; active sidebar row wash"}}}}, "font": {"family": {"display": {"$value": "\"Raster Neue\", sans-serif", "$type": "fontFamily", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --font-family-display; @font-face /site-assets/fonts/raster-neue.woff2, weight 100 900. Computed on the wordmark."}}, "sans": {"$value": "-apple-system, system-ui, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif", "$type": "fontFamily", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; computed body font-family (html font-size 14px)"}}, "mono": {"$value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace", "$type": "fontFamily", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --font-mono"}}, "docs": {"$value": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif", "$type": "fontFamily", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; computed body font-family"}}}, "weight": {"light": {"$value": 300, "$type": "number", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --font-weight-light; body computed weight on header"}}, "normal": {"$value": 400, "$type": "number", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --font-weight-normal"}}, "medium": {"$value": 500, "$type": "number", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --font-weight-medium; buttons, nav, hero"}}, "semibold": {"$value": 600, "$type": "number", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --font-weight-semibold; pricing plan titles"}}, "bold": {"$value": 700, "$type": "number", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --font-weight-bold"}}}}, "typography": {"hero": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "36px", "fontWeight": "{font.weight.medium}", "lineHeight": "39.6px", "letterSpacing": "-0.9px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; h1 at 1440, text-[36px] leading-[1.1] tracking-[-0.025em]"}}, "hero-phone": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "28px", "fontWeight": "{font.weight.medium}", "lineHeight": "1.1", "letterSpacing": "-0.025em"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; h1 class text-[28px] below md; phone innerWidth 390"}}, "section": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "29px", "fontWeight": "{font.weight.medium}", "lineHeight": "31.9px", "letterSpacing": "-0.638px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; home h2 md:text-[29px] leading-[1.1] tracking-[-0.022em]"}}, "lede": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "18px", "fontWeight": "{font.weight.medium}", "lineHeight": "27px", "letterSpacing": "-0.09px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; home paragraph md:text-[18px] leading-[1.5]"}}, "body": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "15px", "fontWeight": "{font.weight.medium}", "lineHeight": "21px", "letterSpacing": "-0.075px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; feature paragraph text-[15px] leading-[1.4]"}}, "nav": {"$value": {"fontFamily": "{font.family.display}", "fontSize": "14px", "fontWeight": "{font.weight.medium}", "lineHeight": "21px", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; header .nav-link Raster Neue 14px/500"}}, "nav-sm": {"$value": {"fontFamily": "{font.family.display}", "fontSize": "12.25px", "fontWeight": "{font.weight.medium}", "lineHeight": "17.5px", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; Sign in .text-sm, 0.875rem at the 14px root"}}, "button": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "14px", "fontWeight": "{font.weight.medium}", "lineHeight": "21px", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button-primary on the hero"}}, "button-sm": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "12.25px", "fontWeight": "{font.weight.medium}", "lineHeight": "17.5px", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; nav Start for free, text-sm"}}, "eyebrow": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "13px", "fontWeight": "{font.weight.medium}", "lineHeight": "17.55px", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; Trusted by amazing teams, text-[13px] leading-[1.35]"}}, "plan": {"$value": {"fontFamily": "{font.family.display}", "fontSize": "26.25px", "fontWeight": "{font.weight.semibold}", "lineHeight": "32px", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; pricing h2 .title.text-3xl, Raster Neue 600"}}, "price-band": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "48px", "fontWeight": "{font.weight.medium}", "lineHeight": "50px", "letterSpacing": "-0.03em"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; Deploy once heading, md:text-[48px]"}}, "tag": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "10.5px", "fontWeight": "{font.weight.light}", "lineHeight": "14px", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tag on /design"}}, "docs-title": {"$value": {"fontFamily": "{font.family.display}", "fontSize": "28px", "fontWeight": "{font.weight.semibold}", "lineHeight": "42px", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; h1 Raster Documentation"}}, "docs-lede": {"$value": {"fontFamily": "{font.family.docs}", "fontSize": "18px", "fontWeight": "{font.weight.normal}", "lineHeight": "28px", "letterSpacing": "0px"}, "$type": "typography", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; first paragraph, color rgb(115, 115, 115)"}}}, "radius": {"sm": {"$value": "3.5px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --radius-sm 0.25rem at the 14px root"}}, "md": {"$value": "5.25px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --radius-md 0.375rem; computed on .button, .input, .tag track"}}, "control": {"$value": "5.25px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button and .input border-radius"}}, "tabs": {"$value": "7px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tabs border-radius on /design"}}, "docs-row": {"$value": "8px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; search and active sidebar radius"}}, "docs-card": {"$value": "12px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; guide card radius"}}, "lg": {"$value": "7px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --radius-lg 0.5rem at the 14px root"}}, "xl": {"$value": "10.5px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --radius-xl 0.75rem at the 14px root"}}, "2xl": {"$value": "14px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --radius-2xl 1rem at the 14px root"}}, "pill": {"$value": "9999px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tag border-radius computed as 1.67772e+07px, a pill"}}}, "spacing": {"unit": {"$value": "3.5px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --spacing 0.25rem at the 14px root"}}, "1": {"$value": "3.5px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; 0.25rem"}}, "2": {"$value": "7px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; 0.5rem; button padding-block"}}, "3": {"$value": "10.5px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; 0.75rem; nav Start for free padding-inline, field padding-inline"}}, "4": {"$value": "14px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; 1rem"}}, "5": {"$value": "17.5px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; 1.25rem; nav link padding-inline"}}, "8": {"$value": "28px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; 2rem; hero .button-primary padding-inline"}}, "nav-height": {"$value": "53px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; header.navbar height, fixed"}}, "button-height": {"$value": "37px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; hero .button-primary and sign-in buttons"}}, "button-sm-height": {"$value": "27px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; nav Start for free and Book demo"}}, "field-height": {"$value": "37px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .input on /design and the sign-in email field"}}}, "motion": {"duration": {"fast": {"$value": "150ms", "$type": "duration", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --default-transition-duration 0.15s"}}, "fade": {"$value": "200ms", "$type": "duration", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --animate-fade-in 0.2s"}}, "slide": {"$value": "300ms", "$type": "duration", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --animate-slide-up and --stageFoldDuration 0.3s"}}, "sidebar": {"$value": "460ms", "$type": "duration", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --sidebarDuration 0.46s"}}, "editor": {"$value": "500ms", "$type": "duration", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --editorDuration 0.5s"}}, "reveal": {"$value": "1200ms", "$type": "duration", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --animate-reveal 1.2s"}}}, "easing": {"standard": {"$value": [0.4, 0, 0.2, 1], "$type": "cubicBezier", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --default-transition-timing-function"}}, "out": {"$value": [0, 0, 0.2, 1], "$type": "cubicBezier", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --ease-out"}}, "sidebar": {"$value": [0.32, 0.72, 0, 1], "$type": "cubicBezier", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --sidebarEase and --assistantEase"}}, "slide": {"$value": [0.33, 1, 0.68, 1], "$type": "cubicBezier", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --animate-slide-up"}}, "editor": {"$value": [0.8, 0, 0.2, 1], "$type": "cubicBezier", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; --editorEase"}}}}}, "dark": {"background": {"page": {"$value": "{color.black}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; body background-color rgb(0, 0, 0)"}}, "canvas": {"$value": "{color.gray.800}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; html background-color rgb(39, 39, 42), --background"}}, "nav": {"$value": "rgba(0, 0, 0, 0.5)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; header.navbar background"}}, "field": {"$value": "{color.gray.900}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .input on /design, rgb(39, 39, 42) was the sign-in field's dark:bg-black/20 parent; design input computed rgb(39, 39, 42) on a zinc page and rgb(24, 24, 27) is the tabs track"}}, "tabs": {"$value": "{color.gray.900}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tabs background rgb(24, 24, 27)"}}, "indicator": {"$value": "{color.gray.700}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tab-indicator rgb(63, 63, 70)"}}, "tag-solid": {"$value": "{color.gray.700}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tag.tag-solid"}}, "glass": {"$value": "oklab(0.210329 0.00161358 -0.00563219 / 0.7)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .glass on /design"}}, "secondary": {"$value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.08)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button-secondary and Book demo"}}, "action": {"$value": "{color.brand.red}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button-primary"}}}, "text": {"primary": {"$value": "{color.white}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; body color and nav links"}}, "hero": {"$value": "{color.neutral-50}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; hero lines .text-neutral-50, lab(98.26 0 0)"}}, "muted": {"$value": "{color.gray.500}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; h1 computed rgb(113, 113, 122); footer"}}, "faint": {"$value": "oklab(0.984998 -0.00000956655 0.0000230074 / 0.38)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; Trusted by amazing teams"}}, "soft": {"$value": "oklab(0.984998 -0.00000956655 0.0000230074 / 0.58)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; home lede text-neutral-50/58"}}, "tag": {"$value": "{color.gray.400}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tag.tag-outline"}}, "tag-solid": {"$value": "#d4d4d8", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tag.tag-solid color rgb(212, 212, 216)"}}, "on-action": {"$value": "{color.white}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button-primary color"}}}, "border": {"hairline": {"$value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.15)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button-secondary border"}}, "action": {"$value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.18)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button-primary border"}}, "field": {"$value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .input and sign-in email border"}}, "tabs": {"$value": "rgba(255, 255, 255, 0.08)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tabs border"}}, "tag": {"$value": "oklab(0.71181 0.00361261 -0.0124171 / 0.2)", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .tag.tag-outline border"}}}, "focus": {"ring": {"$value": "#99c8ff", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; focused Get started outline rgb(153, 200, 255) auto 1px, offset 1px. Browser default, not a product token."}}}, "component": {"button": {"background": {"$value": "{background.action}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button-primary"}}, "text": {"$value": "{text.on-action}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button-primary"}}, "radius": {"$value": "{radius.control}", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .button-primary"}}, "padding": {"$value": "7px", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; padding-block; padding-inline is 28px on the hero button"}}, "height": {"$value": "{spacing.button-height}", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; hero button"}}}, "field": {"background": {"$value": "{color.gray.800}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .input on /design computed rgb(39, 39, 42)"}}, "text": {"$value": "{text.primary}", "$type": "color", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .input color"}}, "radius": {"$value": "{radius.control}", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .input"}}, "height": {"$value": "{spacing.field-height}", "$type": "dimension", "$extensions": {"source": "Measured on raster.app, html.dark, 2026-11-19; .input"}}}}}, "docs": {"background": {"page": {"$value": "{color.docs.page}", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; the only light surface captured"}}, "surface": {"$value": "{color.docs.card}", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; guide card"}}, "active": {"$value": "{color.docs.active}", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; sidebar current row"}}}, "text": {"primary": {"$value": "{color.docs.ink}", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19"}}, "muted": {"$value": "{color.docs.muted}", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19"}}, "accent": {"$value": "{color.brand.red}", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19; current sidebar label and On this page links"}}}, "border": {"default": {"$value": "{color.docs.line}", "$type": "color", "$extensions": {"source": "Measured on raster.app/docs, html.light, 2026-11-19"}}}}};
+function swatches(group, root) {
+  const el = document.getElementById(root);
+  const node = group.split('.').reduce((o, k) => o[k], T);
+  for (const [name, tok] of Object.entries(node)) {
+    if (!tok.$value || tok.$type !== 'color') continue;
+    const d = document.createElement('div');
+    d.className = 'sw';
+    d.innerHTML = '<i></i><b></b><span></span>';
+    d.querySelector('i').style.background = tok.$value;
+    d.querySelector('b').textContent = name;
+    d.querySelector('span').textContent = tok.$value;
+    el.appendChild(d);
+  }
+}
+swatches('core.color.brand', 'brand');
+swatches('core.color.gray', 'gray');
+document.getElementById('theme').onclick = () => {
+  const html = document.documentElement;
+  const next = html.dataset.mode === 'dark' ? 'docs' : 'dark';
+  html.dataset.mode = next;
+  document.getElementById('theme').textContent = next === 'dark' ? 'Docs light' : 'Marketing dark';
+};
+</script>
+</body>
+</html>
