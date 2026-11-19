@@ -57,7 +57,7 @@ Measured package records and interpreted Refero styles retain separate source id
 - A batch holds at most 8 calls, because one image tool reply can be several megabytes of base64; the other two have no cap.
 - A body without `Content-Length` is accepted and counted as it streams, refused past the 256 KB cap; `web/` refuses such a request with 411.
 
-Empty bodies (400, -32600), bodies that are not UTF-8 or not JSON (400, -32700), cross-site requests (403) and bodies that are not `application/json` (415) are refused as `server/routes.py` refuses them.
+Empty bodies (400, -32600) and bodies that are not UTF-8 or not JSON (400, -32700) are refused as `server/routes.py` refuses them. The endpoint checks the Host header like every route; it does not check `Origin`, `Sec-Fetch-Site` or the content type.
 
 ## Categorisation
 
