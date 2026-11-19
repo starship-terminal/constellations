@@ -1,7 +1,7 @@
 """The /api/ route handlers behind the gallery chat. api.py delegates here for
-every request under /api/; the published static site never sees any of it (it
-drops the gallery and runs no Python), and local browsing gets the same routes
-from the Next.js app.
+every request under /api/ on the home-server deployment, where nginx serves
+the docs site statically from site/ and proxies only /api/ to Python; local
+browsing gets the same routes from the Next.js app.
 
   GET  /api/status           {"ok": true, "envProvider": bool}
   GET  /api/mcp              405 — streamable HTTP is POST-only here
