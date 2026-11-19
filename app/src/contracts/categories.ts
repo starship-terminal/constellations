@@ -67,6 +67,69 @@ const categorySlug = (value: string) =>
     .toLowerCase()
     .replace(/[^\p{L}\p{N}]+/gu, "-")
     .replace(/^-|-$/g, "");
+export type CuratedCategory = {
+  referenceId: string;
+  groupId: string;
+  labels: string[];
+  reason: string;
+};
+
+export type CatalogCategoryRow = {
+  slug: string;
+  platform?: string;
+  category?: string;
+};
+
+/** Rows the committed seed must contain for this catalog.
+
+A slug with no seed row is accepted only when `previous` also has no row for
+it. That is a package the seed never curated. Dropping a row `previous`
+already had is a deleted assignment, and that fails. On a pull request,
+`previous` is the base seed. On main, and in the unit test, it is the
+committed seed itself, so the check still catches a fixture that deletes a
+curated row. A wrong platform group, or a seed row whose package is gone,
+still fails. */
+export function categorySeedGaps(
+  rows: readonly CatalogCategoryRow[],
+  committed: readonly CuratedCategory[],
+  previous: readonly CuratedCategory[] = committed,
+): string[] {
+  const byReference = new Map(
+    committed.map((entry) => [entry.referenceId, entry]),
+  );
+  const curated = new Set(previous.map((entry) => entry.referenceId));
+  const problems: string[] = [];
+  const seen = new Set<string>();
+  for (const row of rows) {
+    const referenceId = `systems:${row.slug}`;
+    if (seen.has(referenceId))
+      problems.push(`${row.slug}: duplicate catalog slug`);
+    seen.add(referenceId);
+    const assignment = byReference.get(referenceId);
+    const groupId =
+      row.platform === "mobile" ? "ios-categories" : "web-categories";
+    if (!assignment) {
+      if (curated.has(referenceId)) {
+        problems.push(`${row.slug}: curated category row was deleted`);
+      }
+      continue;
+    }
+    if (assignment.groupId !== groupId) {
+      problems.push(
+        `${row.slug}: category group ${assignment.groupId} does not match platform ${row.platform || "web"}`,
+      );
+    }
+  }
+  for (const entry of committed) {
+    if (!seen.has(entry.referenceId)) {
+      problems.push(
+        `${entry.referenceId}: category seed row has no catalog package`,
+      );
+    }
+  }
+  return problems;
+}
+
 /** Old deep links remain usable; new links carry namespaced database term IDs. */
 export function matchesCategory(
   item: {
