@@ -483,12 +483,24 @@ class RulesText(unittest.TestCase):
                                  "families[0].name: a phone-number-shaped string"])
         self.assertFalse(any("555" in x or "jane" in x for x in leaks))
 
+    def test_escaped_addresses_and_crowded_numbers_are_still_found(self):
+        self.assertEqual(R.rules_text_leaks({"ocr": {"keep": ["^person@private-corp\\.biz$"]}}),
+                         ["ocr.keep[0]: an email address its email_allow does not pass"])
+        for text in ["555-010-0199 555-010-0200", "555-010-0199 (2026-10-23)", "call (555) 010-0199 today",
+                     "+44 20 7946 0958", "1 555 010 0199 and 1 555 010 0200 and 1 555 010 0201"]:
+            with self.subTest(text=text):
+                self.assertEqual(R.rules_text_leaks({"_note": text}), ["_note: a phone-number-shaped string"])
+        for text in ["2026-10-23 2026-10-24", "rects [[800, 25385, 1115, 25520]]", "1440 x 900 at 2x",
+                     "version 1.2.3", "id 1234567890"]:
+            with self.subTest(text=text):
+                self.assertEqual(R.rules_text_leaks({"_note": text}), [])
+
     def test_allowed_reserved_and_non_phone_values_pass(self):
         rules = {"_note": "placeholders name@example.com, a@b.test, support@vendor-x.biz; captured 2026-10-23; "
                           "size [2880, 1800]; version 1.2.3.4",
                  "families": [{"rects": [[800, 25385, 1115, 25520]], "size": [[2880, 1800]]}],
                  "ocr": {"email_allow": ["^support@vendor-x\\.biz$", "nobody@listed-only-here\\.biz"],
-                         "keep": ["^help@vendor-x\\.biz$"]}}
+                         "keep": ["^support@vendor-x\\.biz$"]}}
         self.assertEqual(R.rules_text_leaks(rules), [])     # email_allow itself is never read as text
 
     def test_check_fails_on_a_rules_file_holding_a_value(self):

@@ -439,7 +439,8 @@ def email_allowed(addr, allow):
 
 # A rules file is committed, so it must never hold the values it paints out: a note names the kind of
 # value and where it sits, never the value. These find what slipped in anyway.
-PHONE = re.compile(r"(?<![\w.])\+?\(?\d[\d ().-]{6,}\d(?!\w)")
+PHONE_RUN = re.compile(r"\+?\(?\d[\d ().-]*\d\)?")
+ISO_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
 RESERVED_DOMAIN = re.compile(r"(^|\.)(example(\.(com|org|net))?|test|invalid|localhost)$", re.I)
 
 
@@ -457,22 +458,35 @@ def _rule_strings(o, path=""):
         yield path, o
 
 
+def _phone_shaped(s):
+    """Whether s holds a phone-number-shaped run: 2 to 6 consecutive digit groups joined by spaces,
+    dots, hyphens or brackets, 9 to 15 digits in all. Every window of a long run is tried, so two
+    numbers side by side, or a number next to a date, still count. An ISO date is never part of one."""
+    for m in PHONE_RUN.finditer(ISO_DATE.sub(",", s)):
+        groups = [len(g) for g in re.findall(r"\d+", m.group())]
+        for i in range(len(groups)):
+            for j in range(i + 1, min(i + 6, len(groups))):
+                if 9 <= sum(groups[i:j + 1]) <= 15:
+                    return True
+    return False
+
+
 def rules_text_leaks(rules):
     """Where a rules file's own text holds a private-looking value: an email address that neither its
-    ocr.email_allow nor a reserved test domain (example.com, .test, .example, .invalid) passes, or a
-    phone-number-shaped string (9 to 15 digits with a separator). Returns "path: kind" lines, never
-    the value, so the report itself leaks nothing."""
+    ocr.email_allow nor a reserved test domain (example.com, .test, .example, .invalid) passes, also
+    when a regex escapes its dots, or a phone-number-shaped string (see _phone_shaped). Returns
+    "path: kind" lines, never the value, so the report itself leaks nothing."""
     ocr = rules.get("ocr") if isinstance(rules, dict) else None
     allow = ocr.get("email_allow", []) if isinstance(ocr, dict) else []
     out = []
     for path, s in _rule_strings(rules):
-        for m in EMAIL.finditer(s):
-            addr = m.group().rstrip(".")
+        # A keep regex spells an address with escaped dots (person@host\.com): read it unescaped too.
+        addrs = {m.group().rstrip(".") for t in (s, re.sub(r"\\(.)", r"\1", s)) for m in EMAIL.finditer(t)}
+        for addr in sorted(addrs):
             if not RESERVED_DOMAIN.search(addr.partition("@")[2]) and not email_allowed(addr, allow):
                 out.append(f"{path}: an email address its email_allow does not pass")
-        for m in PHONE.finditer(s):
-            if 9 <= sum(c.isdigit() for c in m.group()) <= 15 and re.search(r"[ ().-]", m.group()):
-                out.append(f"{path}: a phone-number-shaped string")
+        if _phone_shaped(s):
+            out.append(f"{path}: a phone-number-shaped string")
     return out
 
 
