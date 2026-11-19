@@ -126,7 +126,9 @@ def open_db(refero: Path):
         if f.read(64).startswith(b"version https://git-lfs"):
             sys.exit(f"error: {path} is a Git LFS pointer; "
                      "run: git lfs install && git lfs pull")
-    db = sqlite3.connect(path)
+    # Autocommit mode: main() opens its one write transaction itself, since
+    # the legacy implicit transactions never cover DROP or CREATE.
+    db = sqlite3.connect(path, isolation_level=None)
     db.execute("PRAGMA busy_timeout=30000")
     return db
 
@@ -180,8 +182,10 @@ def main():
     json_styles.sort(key=lambda s: s["slug"])
     matched_count = sum(1 for e in edges if e[4] is not None)
 
-    # One short transaction: other agents write refero.db concurrently.
-    with db:
+    # One short transaction around the DROP, CREATE and INSERTs, so a failed
+    # insert leaves the old table: other agents write refero.db concurrently.
+    db.execute("BEGIN IMMEDIATE")
+    try:
         db.execute("DROP TABLE IF EXISTS similar")
         db.execute("""CREATE TABLE similar (
             uuid TEXT, business TEXT, why TEXT, rank INTEGER,
@@ -189,7 +193,12 @@ def main():
         db.executemany(
             "INSERT INTO similar (uuid, business, why, rank, matched_slug)"
             " VALUES (?,?,?,?,?)", edges)
-    db.close()
+        db.execute("COMMIT")
+    except BaseException:
+        db.execute("ROLLBACK")
+        raise
+    finally:
+        db.close()
     refero_dump.refresh(args.refero / "refero.db")
 
     write_atomic(args.refero / "similar.json", json.dumps({
