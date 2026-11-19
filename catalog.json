@@ -20204,6 +20204,75 @@
         ],
         "durationMin": 40
       }
+    },
+{
+      "slug": "retool",
+      "name": "Retool",
+      "url": "https://retool.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Internal-tool marketing and a signed-out login: cream pill on near-black, Saans headlines, a gray stroke secondary, and an Inter login with a blue focus ring.",
+      "tags": [
+        "web",
+        "saas",
+        "internal-tools",
+        "marketing",
+        "signed-out",
+        "dark"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Homepage, pricing, login, signup and docs. No email was typed. Signup was not submitted. No demo, SSO, card or database.",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/retool/README.md",
+      "tokens": "systems/retool/tokens.json",
+      "styleGuide": "systems/retool/style-guide.html",
+      "preview": {
+        "cover": "systems/retool/icon.png",
+        "icon": "systems/retool/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "",
+        "durationMin": 45,
+        "pr": "",
+        "durationNote": "Attached T3 preview tab. Computed styles on homepage, pricing, login, signup and docs. Screenshot frames failed."
+      },
+      "layoutGaps": {
+        "components/": "preview_snapshot failed with 'The browser is not producing screenshot frames', so there are no element crops",
+        "icons/": "No icon set was extracted. The wordmark was not saved.",
+        "screenshots/": "preview_snapshot failed with 'The browser is not producing screenshot frames', so no page captures were saved"
+      }
     }
   ]
 }
