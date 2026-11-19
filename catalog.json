@@ -20343,6 +20343,96 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "revolut",
+      "name": "Revolut",
+      "url": "https://www.revolut.com/",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "consumer-bank marketing and signed-out login chrome: Revolut UI ships as --rui-* custom properties, a light marketing home (accent #234fa6, ink #1f1f1f, Aeonik Pro display, Inter body, 9999px pills) and a dark set the pricing page and the SSO wall both resolve (accent #6fa0ff, page #000000, grouped background #00010a)",
+      "tags": [
+        "web",
+        "finance",
+        "banking",
+        "revolut-ui",
+        "design-tokens",
+        "light",
+        "dark",
+        "pills",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages and the SSO sign-in wall only. The phone field was not filled. No account was created. No card, email, passkey, Google, or Apple flow was started.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/revolut/README.md",
+      "tokens": "systems/revolut/tokens.json",
+      "styleGuide": "systems/revolut/style-guide.html",
+      "preview": {
+        "cover": "systems/revolut/icon.png",
+        "icon": "systems/revolut/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background",
+            "surface": "light.grouped.background",
+            "text": "light.foreground",
+            "muted": "light.grey.50",
+            "accent": "light.accent",
+            "border": "light.grey.20"
+          },
+          "dark": {
+            "page": "dark.background",
+            "surface": "dark.popover.background",
+            "text": "dark.foreground",
+            "muted": "dark.grey.tone.50",
+            "accent": "dark.accent",
+            "border": "dark.grey.tone.20"
+          }
+        },
+        "fonts": [
+          "core.font.marketing",
+          "core.font.brand"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "Live computed styles in the T3 preview browser on 2026-11-19. Home https://www.revolut.com/ was html[data-theme=light]. Pricing https://www.revolut.com/our-pricing-plans/ was html[data-theme=dark]. Log in opened https://app.revolut.com/start and redirected to https://sso.revolut.com/signin, which was measured and not submitted. The preview browser did not produce screenshot frames, so screenshots/ holds a labelled placeholder rather than a page capture.",
+        "timestamp": "2026-11-19T00:00:00Z",
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/our-pricing-plans/",
+          "app.revolut.com/start redirecting to sso.revolut.com/signin"
+        ],
+        "gaps": [
+          "Signup, Create account, phone, email, passkey, Google and Apple were not entered. The SSO wall is the boundary.",
+          "The preview browser returned 'The browser is not producing screenshot frames', so no live screenshot was saved.",
+          "Viewport was the fill tab at 1169 by 731 CSS pixels, devicePixelRatio 2. No 1440 or 390 pass.",
+          "Business, contact, privacy and plan-detail pages were not measured as their own component sets.",
+          "Hover, focus-visible, pressed, disabled, error and loading were not forced. Focus is the declared --rui-focus-outline only.",
+          "prefers-reduced-motion was not emulated. Motion tokens are the declared --rui-duration and --rui-easing values.",
+          "No standalone SVG icon set was lifted. icon.png is the site apple-touch-icon, resized to 128."
+        ],
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/776"
+      },
+      "layoutGaps": {
+        "components.md": "No component crops. The preview browser produced no screenshot frames, so components.md would have had nothing to point at.",
+        "patterns.md": "No page screenshots to hang patterns on. The same screenshot-frame failure.",
+        "components/": "No crops. Element styles are in tokens.json under light.button, light.footer, light.nav and dark.sso.",
+        "icons/": "Revolut's glyphs are its artwork. icon.png is the published apple-touch-icon only.",
+        "screenshots/": "The preview browser returned 'The browser is not producing screenshot frames'. No live PNG was captured, and none was invented. preview.cover is icon.png for that reason."
+      }
     }
   ]
 }
