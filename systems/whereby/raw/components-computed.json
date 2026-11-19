@@ -1,0 +1,266 @@
+{
+  "viewport": {
+    "marketingDesktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2
+    },
+    "phone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2
+    },
+    "login": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2
+    }
+  },
+  "marketing": {
+    "heroWide": {
+      "bg": "rgb(248, 219, 213)",
+      "pad": "190px 64px 119px",
+      "gap": "48px"
+    },
+    "heroHeading": {
+      "font": "Whereby Roslindale Display Condensed Regular, serif",
+      "size": "48px",
+      "weight": "400",
+      "lh": "60px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "heroBody": {
+      "font": "Inter, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "lh": "27px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "navLabel": {
+      "font": "Inter, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "lh": "27px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "navHeight": "96px",
+    "navPad": "0px 24px",
+    "primaryFill": {
+      "bg": "rgb(43, 24, 155)",
+      "radius": "12px",
+      "height": "48px",
+      "label": {
+        "color": "rgb(255, 255, 255)",
+        "font": "Inter, Inter Placeholder, sans-serif",
+        "size": "16px",
+        "weight": "500",
+        "lh": "24px"
+      }
+    },
+    "primaryHoverFill": {
+      "bg": "rgb(34, 20, 121)"
+    },
+    "secondary": {
+      "stroke": "rgb(43, 24, 155)",
+      "strokeWidthPx": 1,
+      "radius": "12px",
+      "height": "48px",
+      "labelColor": "rgb(43, 24, 155)",
+      "note": "Computed border and box-shadow were none. A 1px stroke of rgb(43, 24, 155) was sampled from the 2x screenshot."
+    },
+    "pageGrey": "rgb(244, 244, 244)",
+    "planCard": {
+      "bg": "rgb(255, 255, 255)",
+      "radius": "12px",
+      "shadow": "rgba(0, 0, 0, 0.16) 0px 1px 4px 0px, rgba(0, 0, 0, 0.16) 0px 8px 16px 0px",
+      "width": 384,
+      "height": 644
+    },
+    "billingTrack": {
+      "bg": "rgb(255, 255, 255)",
+      "radius": "80px",
+      "shadow": "rgba(0, 0, 0, 0.08) 0px 1px 4px 0px",
+      "width": 240,
+      "height": 48
+    },
+    "billingActive": {
+      "color": "rgb(43, 24, 155)",
+      "font": "Inter-Medium, Inter, sans-serif",
+      "size": "16px",
+      "weight": "500"
+    },
+    "billingInactive": {
+      "color": "rgba(0, 0, 0, 0.56)",
+      "font": "Inter-Medium, Inter, sans-serif",
+      "size": "16px",
+      "weight": "500"
+    },
+    "price": {
+      "font": "Whereby Roslindale Display Condensed Regular, serif",
+      "size": "56px",
+      "weight": "400",
+      "color": "rgb(0, 0, 0)"
+    },
+    "priceSuffix": {
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "color": "rgb(0, 0, 0)"
+    },
+    "planName": {
+      "color": "rgb(43, 24, 155)",
+      "size": "24px",
+      "weight": "500",
+      "font": "Inter, sans-serif"
+    },
+    "faqQuestion": {
+      "font": "Inter, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "lh": "27px",
+      "color": "rgb(0, 0, 0)",
+      "rowPad": "16px 0px",
+      "rowHeight": 72
+    },
+    "eyebrow": {
+      "font": "Inter-SemiBold, Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(43, 24, 155)"
+    },
+    "h1_56": {
+      "font": "Whereby Roslindale Display Condensed Regular, serif",
+      "size": "56px",
+      "weight": "400",
+      "lh": "56px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "h1_64": {
+      "font": "Whereby Roslindale Display Condensed Regular, serif",
+      "size": "64px",
+      "weight": "400",
+      "color": "rgb(0, 0, 0)"
+    },
+    "h3_28": {
+      "font": "Whereby Roslindale Text Regular, serif",
+      "size": "28px",
+      "weight": "400",
+      "color": "rgb(0, 0, 0)"
+    },
+    "muted": {
+      "color": "rgba(0, 0, 0, 0.56)",
+      "example": "Category label on features, Annual billing label, login or-divider"
+    }
+  },
+  "login": {
+    "pageBg": "rgb(244, 244, 244)",
+    "heading": {
+      "font": "Whereby Condensed, Georgia, serif",
+      "size": "40px",
+      "weight": "400",
+      "lh": "52px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "body": {
+      "font": "Inter var, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "lh": "26px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "label": {
+      "font": "Inter var, sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "color": "rgb(0, 0, 0)",
+      "text": "Work email"
+    },
+    "field": {
+      "bg": "rgb(255, 255, 255)",
+      "borderRest": "1px solid rgba(0, 0, 0, 0.12)",
+      "borderFocus": "1px solid rgb(43, 24, 155)",
+      "shadowFocus": "rgb(43, 24, 155) 0px 0px 0px 1px inset",
+      "radius": "12px",
+      "pad": "15px 16px",
+      "height": 58,
+      "inputSize": "18px",
+      "placeholder": "name@email.com"
+    },
+    "submit": {
+      "bg": "rgb(43, 24, 155)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "12px",
+      "height": 48,
+      "pad": "0px 16px",
+      "font": "Inter var, sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "width": 400
+    },
+    "oauth": {
+      "border": "1px solid rgb(0, 0, 0)",
+      "radius": "12px",
+      "height": 56,
+      "pad": "5px 40px",
+      "font": "Inter var, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "width": 400
+    },
+    "navLink": {
+      "font": "Inter var, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "color": "rgb(0, 0, 0)"
+    },
+    "navAccentLink": {
+      "color": "rgb(43, 24, 155)",
+      "size": "18px"
+    },
+    "tryFree": {
+      "bg": "rgb(43, 24, 155)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "12px",
+      "height": 48,
+      "pad": "0px 16px",
+      "size": "16px",
+      "weight": "500"
+    },
+    "footerHeading": {
+      "font": "Whereby Text, Georgia, serif",
+      "size": "24px",
+      "weight": "400",
+      "lh": "32px",
+      "color": "rgba(0, 0, 0, 0.72)"
+    },
+    "signupLink": {
+      "color": "rgb(43, 24, 155)",
+      "decoration": "underline",
+      "size": "18px",
+      "weight": "400"
+    },
+    "notSubmitted": true
+  },
+  "tokensDeclared": {
+    "ink": "#000",
+    "white": "#fff",
+    "indigo": "#2b189b",
+    "indigoDeep": "#211375",
+    "indigoDarker": "#190f57",
+    "green": "#006654",
+    "greenDeep": "#0c5b4c",
+    "greenDarker": "#0a5345",
+    "coral": "#c35037",
+    "coralDeep": "#b5432b",
+    "blush": "#f8dbd5",
+    "peach": "#f8e3c8",
+    "grey": "#f4f4f4",
+    "lilac": "#6166de",
+    "yellow": "#fcde6d",
+    "black56": "#0000008f",
+    "black8": "#00000014",
+    "green6": "#0066540a"
+  }
+}
