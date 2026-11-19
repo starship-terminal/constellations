@@ -20343,6 +20343,72 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "zellerfeld",
+      "name": "Zellerfeld",
+      "url": "https://zellerfeld.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Printed-shoe store marketing: black page, coral #ff5e3e actions, Phonic uppercase labels, Lateral Zeller TM headlines, a light sign-in card on the dark store",
+      "tags": [
+        "web",
+        "e-commerce",
+        "shoes",
+        "marketing",
+        "dark",
+        "coral"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public store, product, FAQ, reviews, creators, newsletter, policies, and the sign-in card; no purchase, size, card, phone, or email was entered)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/zellerfeld/README.md",
+      "tokens": "systems/zellerfeld/tokens.json",
+      "styleGuide": "systems/zellerfeld/style-guide.html",
+      "preview": {
+        "cover": "systems/zellerfeld/screenshots/home-dark-default.png",
+        "icon": "systems/zellerfeld/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.text-muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.tertiary"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50,
+        "pr": "https://github.com/starship-terminal/constellations/pull/910",
+        "version": "public site 2026-11-19",
+        "gaps": [
+          "preview browser returned no screenshot frames; screenshots are from headless Chromium on the same public pages after a 200 response and no Cloudflare challenge",
+          "no light theme was painted; semantic colours are declared on .dark",
+          "checkout, size selection, card, phone, Google sign-in, sign-up, and newsletter submit were not entered",
+          "studio.zellerfeld.com guest drop zone was seen and not measured; no file was uploaded",
+          "help.zellerfeld.com was not opened",
+          "icon extraction was not run"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "inline SVGs were not extracted; the wordmark and menu glyph are in the screenshots"
+      }
     }
   ]
 }
