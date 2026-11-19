@@ -1320,8 +1320,8 @@ def manifest_problems(manifest: dict, systems: list[dict]) -> list[str]:
         where = f"webapps-manifest.json {app.get('domain')}"
         package, status = app.get("package"), app.get("status")
         if status == "captured":
-            if not isinstance(package, str) or package.removeprefix("systems/") not in slugs:
-                problems.append(f"{where}: captured, but its package {package!r} is not in catalog.json")
+            if package not in {f"systems/{s}" for s in slugs}:
+                problems.append(f"{where}: captured, but its package {package!r} is not a systems/<slug> in catalog.json")
             continue
         if package:
             problems.append(f"{where}: status {status!r} with package {package!r}; a package means captured")

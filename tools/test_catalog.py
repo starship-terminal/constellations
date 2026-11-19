@@ -31,6 +31,10 @@ class ManifestTest(unittest.TestCase):
                           self.app("gamma.example", "pending", batch=2))
         self.assertEqual(catalog.manifest_problems(m, self.SYSTEMS), [])
 
+    def test_a_bare_slug_is_not_a_package_path(self):
+        m = self.manifest(self.app("alpha.example", "captured", "alpha"))
+        self.assertEqual(len(catalog.manifest_problems(m, self.SYSTEMS)), 1)
+
     def test_each_kind_of_drift_is_named(self):
         m = self.manifest(self.app("alpha.example", "captured"),                     # no package
                           self.app("beta.example", "pending"),                       # beta is captured
@@ -38,7 +42,7 @@ class ManifestTest(unittest.TestCase):
                           totals={"apps": 9, "batches": 4})
         problems = catalog.manifest_problems(m, self.SYSTEMS)
         self.assertEqual(len(problems), 5, problems)
-        self.assertIn("alpha.example: captured, but its package None is not in catalog.json", problems[0])
+        self.assertIn("alpha.example: captured, but its package None is not a systems/<slug> in catalog.json", problems[0])
         self.assertIn("beta.example: status 'pending', but catalog.json already has systems/beta", problems[1])
         self.assertIn("gamma.example: status 'uncapturable' with package 'systems/gamma'", problems[2])
         self.assertIn("totals.apps is 9, the file lists 3", problems[3])
