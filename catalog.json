@@ -20343,6 +20343,91 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "melius",
+      "name": "Melius",
+      "url": "https://melius.com",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "Creative-agent marketing: offwhite page, gray-dark nav, Reckless 56px hero, yellow Sign In and announcement bar, orange Start for Free at 6px, and a dark pricing island with white plan cards",
+      "tags": [
+        "web",
+        "ai",
+        "creative",
+        "marketing",
+        "light",
+        "dark-islands",
+        "signed-out",
+        "tailwind"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing routes, docs.melius.com, and the app.melius.com login and signup cards; nothing submitted; Google, billing and the newsletter were not followed)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/melius/README.md",
+      "tokens": "systems/melius/tokens.json",
+      "styleGuide": "systems/melius/style-guide.html",
+      "capture": {
+        "method": "public-web",
+        "source": "www.melius.com, app.melius.com/login, app.melius.com/signup and docs.melius.com in headless Chromium, desktop 1440x900 and phone 390x844, plus a T3 preview read of computed styles. Named --color-* palette harvested from the stylesheets. Consent banner hidden, never clicked.",
+        "timestamp": "2026-11-19T00:35:00Z",
+        "harness": "Grok / T3",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "www.melius.com/",
+          "www.melius.com/pricing",
+          "www.melius.com/enterprise",
+          "www.melius.com/about",
+          "www.melius.com/manifesto",
+          "www.melius.com/models",
+          "www.melius.com/brand",
+          "www.melius.com/contact",
+          "www.melius.com/creator-program",
+          "www.melius.com/product/ditto",
+          "www.melius.com/product/ai-image-generator",
+          "app.melius.com/login",
+          "app.melius.com/signup",
+          "docs.melius.com/"
+        ],
+        "gaps": [
+          "app.melius.com past the login and signup cards was not entered",
+          "Google OAuth was not followed",
+          "billing and plan CTAs were not followed",
+          "the login and signup forms were not submitted; the password field was never filled",
+          "the newsletter and contact forms were not submitted",
+          "the phone menu click did not open a drawer",
+          "the phone hero was still cycling words"
+        ],
+        "version": "none",
+        "pr": "none",
+        "durationMin": 40
+      },
+      "preview": {
+        "cover": "systems/melius/screenshots/home-light-default.png",
+        "icon": "systems/melius/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      }
     }
   ]
 }
