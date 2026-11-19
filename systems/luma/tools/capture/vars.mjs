@@ -161,8 +161,8 @@ for (const [pass, attrs] of PASSES) {
       // Colour roles live on html.theme-root. Radius, padding and a few
       // geometry names are declared on body and inherit down, so a miss on
       // html falls through to body.
-      const raw = noUrl(getComputedStyle(document.documentElement).getPropertyValue(name).trim()
-        || getComputedStyle(document.body).getPropertyValue(name).trim());
+      const raw = noUrl(getComputedStyle(document.documentElement).getPropertyValue(name).trim())
+        || noUrl(getComputedStyle(document.body).getPropertyValue(name).trim());
       if (!raw) continue;
       const r = { raw: raw.length > 300 ? raw.slice(0, 300) + '…' : raw };
       p.removeAttribute('style');
