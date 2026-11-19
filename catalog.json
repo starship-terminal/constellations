@@ -20343,6 +20343,80 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "onefinestay",
+      "name": "Onefinestay",
+      "url": "https://www.onefinestay.com/",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Luxury vacation-rental marketing: a transparent header over a photo hero, Tiempos headings and Akkurat UI, a 2px white search bar with a coral square button, rust availability buttons, and a neutral-700 footer",
+      "tags": [
+        "web",
+        "travel",
+        "rental",
+        "marketing",
+        "luxury",
+        "serif",
+        "coral",
+        "signed-out",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing only; enquire was measured empty and not submitted; no booking, card, or account)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/onefinestay/README.md",
+      "tokens": "systems/onefinestay/tokens.json",
+      "styleGuide": "systems/onefinestay/style-guide.html",
+      "preview": {
+        "cover": "systems/onefinestay/icon.png",
+        "icon": "systems/onefinestay/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.card",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.field"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned 'The browser is not producing screenshot frames' on 2026-11-19. Computed styles were kept. No screenshot was invented.",
+        "components/": "No crops, for the same screenshot-frame failure. Component values are in components.md and raw/components-computed.json."
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "live site 2026-11-19",
+        "pr": "none",
+        "durationMin": 50,
+        "method": "public-web",
+        "source": "www.onefinestay.com in the T3 preview browser. Computed styles and custom properties on the live page. Lab colours rasterised through a 1x1 sRGB canvas. preview_snapshot could not produce frames.",
+        "timestamp": "2026-11-19T01:10:00Z",
+        "gaps": [
+          "no screenshots or crops: the preview browser did not produce screenshot frames",
+          "enquire asks for a phone number and was not filled or submitted",
+          "no booking, availability check, account, or payment",
+          "hover, pressed, disabled, loading and error states were not painted",
+          "menus, date popover and filter dialog were not opened",
+          "dark theme was not declared on the marketing sheets",
+          "journal uses a separate stylesheet and was measured, not folded into the Next.js tokens"
+        ]
+      }
     }
   ]
 }
