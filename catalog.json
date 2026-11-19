@@ -20343,6 +20343,87 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "perplexity",
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai",
+      "category": "ai-chat",
+      "platform": "web",
+      "goodFor": "Signed-out AI answer-engine chrome: a sparse left nav, a rounded composer, and a teal accent that shifts from #016a71 in light to #4e99a3 in dark, plus the public hub and pricing pills.",
+      "tags": [
+        "web",
+        "ai-chat",
+        "signed-out",
+        "marketing",
+        "pricing",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Product home, hub, pricing, enterprise, terms, and a 404 were read. Sign In was opened. Continue with email, Google, Apple, and SSO were not submitted. No card, phone, or Pro checkout.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/perplexity/README.md",
+      "tokens": "systems/perplexity/tokens.json",
+      "styleGuide": "systems/perplexity/style-guide.html",
+      "preview": {
+        "cover": "systems/perplexity/screenshots/app-light-default.png",
+        "icon": "systems/perplexity/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.base",
+            "surface": "light.color.surface.raised",
+            "text": "light.color.fg.primary",
+            "muted": "light.color.fg.secondary",
+            "accent": "light.color.accent.bg.strong",
+            "border": "light.color.border.base"
+          },
+          "dark": {
+            "page": "dark.color.bg.base",
+            "surface": "dark.color.surface.raised",
+            "text": "dark.color.fg.primary",
+            "muted": "dark.color.fg.secondary",
+            "accent": "dark.color.accent.bg.strong",
+            "border": "dark.color.border.base"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public web, 2026-11-19",
+        "durationMin": 70,
+        "method": "public-web",
+        "timestamp": "2026-11-19T17:30:00Z",
+        "source": "Computed custom properties and element styles on the signed-out product and the public hub, plus viewport screenshots.",
+        "routes": [
+          "https://www.perplexity.ai/",
+          "https://www.perplexity.ai/hub",
+          "https://www.perplexity.ai/hub/pricing",
+          "https://www.perplexity.ai/enterprise",
+          "https://www.perplexity.ai/hub/legal/terms-of-service",
+          "https://www.perplexity.ai/hub/this-page-does-not-exist-capture"
+        ],
+        "gaps": [
+          "Sign-in was opened and not submitted. The form also offers Google, Apple, and SSO, so the email field was not used.",
+          "Pro checkout, phone, and card were not entered.",
+          "Hover, focus, pressed, disabled, and loading were not captured.",
+          "The hub did not switch to dark under prefers-color-scheme: dark.",
+          "T3 preview screenshots failed with 'The browser is not producing screenshot frames'. PNGs are from headless Playwright on public pages that returned 200 with no Cloudflare challenge."
+        ]
+      }
     }
   ]
 }

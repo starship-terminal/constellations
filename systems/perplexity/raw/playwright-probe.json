@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://www.perplexity.ai/hub",
+    "status": 200,
+    "href": "https://www.perplexity.ai/hub",
+    "title": "Perplexity | AI for the Curious",
+    "cf": false,
+    "scheme": "normal",
+    "data": "light",
+    "bodyBg": "rgb(250, 248, 245)",
+    "text": "Products\nBusiness\nCustomers\nResources\nPricing\nSee a demo\nTry Perplexity\nAI for the\ncurious\nAI for the curious\nAI for the curious\nAI for the curious\n\nGet answers. Build ideas.Change worlds.\n\nBuild me a personal finance dashboard that tracks my spending by category\nPerplexity\nOpenAI\nGemini\nNvidia\nClaude\n\nThe best models,\nbetter together.\n\nWhat we do\nAccurate AI\n\nAccurate answers, deeper research, fe"
+  },
+  {
+    "url": "https://www.perplexity.ai/hub/pricing",
+    "status": 200,
+    "href": "https://www.perplexity.ai/hub/pricing",
+    "title": "Perplexity Pricing: Plans for Individuals and Enterprise",
+    "cf": false,
+    "scheme": "normal",
+    "data": "light",
+    "bodyBg": "rgb(250, 248, 245)",
+    "text": "Products\nBusiness\nCustomers\nResources\nPricing\nSee a demo\nTry Perplexity\nWhere curiosity meets capability\n\nOne plan for the most accurate answers, powered by all the top AI models.\n\nIndividual\nEnterprise\nFree\n\nSearch only with accurate answers and citations\n\n$0\n/month\nGood for limited daily usage\nBetter for simple questions\nCitations in every answer\nAccess to basic AI models\nSelect\nPopular\n\nBetter "
+  },
+  {
+    "url": "https://www.perplexity.ai/",
+    "status": 200,
+    "href": "https://www.perplexity.ai/",
+    "title": "Perplexity",
+    "cf": false,
+    "scheme": "normal",
+    "data": "light",
+    "bodyBg": "color(srgb 0.984314 0.984314 0.984314)",
+    "text": "New\nComputer\nAutomations\nArtifacts\nPlugins\nTeammates\nHire your first teammate\n\nPersistent agents that work for you.\n\nCreate new teammate\nProjects\nNo projects\nRecents\nNo recent sessions\nView plans\nSign In\nWhat do you want to know?\nWhat should we work on?\nWhat do you want to know?\n\n\n\n\nAsk anything…\nSearch\nComputer\nModel\nSearch anything\nGet fast and accurate answers from the most trusted sources.\nGet"
+  }
+]
