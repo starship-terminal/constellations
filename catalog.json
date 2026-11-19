@@ -20343,6 +20343,79 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "variant",
+      "name": "Variant",
+      "url": "https://variant.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Signed-out design-tool chrome: a near-black page, off-white Variant Neue Display headline, 6px chips, a 10px composer with a 0.5px white ring, and white-at-10% auth buttons. One dark paint. No light theme on the public pages.",
+      "tags": [
+        "web",
+        "productivity",
+        "design-tool",
+        "signed-out",
+        "dark",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Homepage, /authentication and /terms-and-privacy measured. Email field typed only to read the enabled button, then cleared. Not submitted. Google sign-in not clicked. No payment.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/variant/README.md",
+      "tokens": "systems/variant/tokens.json",
+      "styleGuide": "systems/variant/style-guide.html",
+      "preview": {
+        "cover": "systems/variant/icon.png",
+        "icon": "systems/variant/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.column",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.control-fill",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.inter"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "variant.com, 2026-11-19; Next.js, release not exposed",
+        "durationMin": 45,
+        "gaps": "preview_snapshot failed with 'The browser is not producing screenshot frames'. No screenshots. Email not submitted. Google SSO not entered. Signed-in shell not opened."
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot failed with 'The browser is not producing screenshot frames'; no frames were invented",
+        "components/": "no crops, because there are no screenshots to crop"
+      },
+      "designMd": {
+        "colors": [
+          "dark."
+        ],
+        "typography": [
+          "core.typography."
+        ],
+        "rounded": [
+          "core.radius."
+        ],
+        "spacing": [
+          "core.space."
+        ]
+      }
     }
   ]
 }
