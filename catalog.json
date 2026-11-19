@@ -20343,6 +20343,65 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "spatial-chat",
+      "name": "SpatialChat",
+      "url": "https://spatial.chat/",
+      "category": "events",
+      "platform": "web",
+      "goodFor": "Virtual-events marketing: purple news bar, white header, 12px-radius purple and outlined buttons, gradient hero, pricing tabs and plan cards, and a signed-out login with Google, Apple, and an email field",
+      "tags": [
+        "web",
+        "events",
+        "marketing",
+        "signed-out",
+        "pricing",
+        "purple"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing home and /pricing measured; login at app.spatial.chat/login measured and not submitted; Buy Now, Stripe trial, Book a Demo, Google, and Apple not followed)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/spatial-chat/README.md",
+      "tokens": "systems/spatial-chat/tokens.json",
+      "styleGuide": "systems/spatial-chat/style-guide.html",
+      "preview": {
+        "cover": "systems/spatial-chat/icon.png",
+        "icon": "systems/spatial-chat/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.marketing",
+          "core.font.family.app"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "version": "2026-11-19 public site"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned 'The browser is not producing screenshot frames'; no screenshots were invented",
+        "components/": "no crops, because the same screenshot failure left no image to crop",
+        "icons/": "icon extraction was not run; the site icon is icon.png, fetched from the marketing apple-touch icon"
+      }
     }
   ]
 }
