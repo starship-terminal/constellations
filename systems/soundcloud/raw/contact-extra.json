@@ -1,0 +1,55 @@
+{
+  "heads": [
+    {
+      "text": "Keep the scene alive & your vibe fresh",
+      "cls": "",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "16px",
+      "weight": "600",
+      "lh": "20.8px",
+      "ls": "normal",
+      "radius": "0px",
+      "h": 0,
+      "w": 0,
+      "family": "Interstate",
+      "pad": "0px"
+    },
+    {
+      "text": "About Your Privacy",
+      "cls": "",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "17px",
+      "weight": "700",
+      "lh": "24px",
+      "ls": "normal",
+      "radius": "0px",
+      "h": 0,
+      "w": 0,
+      "family": "Interstate",
+      "pad": "0px 0px 0px 20px"
+    }
+  ],
+  "helpBg": "rgba(0, 0, 0, 0)",
+  "colored": [
+    {
+      "cls": "w-layout-cell cell-129",
+      "bg": "rgb(231, 107, 159)",
+      "radius": "20px",
+      "h": 394,
+      "w": 608,
+      "text": "Press Inquiries\nContact SoundC"
+    },
+    {
+      "cls": "w-layout-cell cell-130",
+      "bg": "rgb(171, 135, 226)",
+      "radius": "20px",
+      "h": 370,
+      "w": 608,
+      "text": "Advertising & Brand Inquiries\n"
+    }
+  ],
+  "navs": [],
+  "bodyBg": "rgb(0, 0, 0)"
+}

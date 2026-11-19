@@ -20343,6 +20343,89 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "soundcloud",
+      "name": "SoundCloud",
+      "url": "https://soundcloud.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "music listener marketing: a dark page #121212, white and black pills, a 16px photo hero, orange only on the playback bar #ff5500, a blue link #699fff, and a signed-out sign-in card",
+      "tags": [
+        "web",
+        "music",
+        "media",
+        "audio",
+        "marketing",
+        "dark",
+        "signed-out",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public listener home, discover, terms, company contact, and the sign-in card; no account, email, or paid plan was started)",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/soundcloud/README.md",
+      "tokens": "systems/soundcloud/tokens.json",
+      "styleGuide": "systems/soundcloud/style-guide.html",
+      "preview": {
+        "cover": "systems/soundcloud/screenshots/home-dark-default.png",
+        "icon": "systems/soundcloud/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
+          },
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "soundcloud.com public signed-out surface. Computed styles read in the T3 preview tab and in headless Chromium. Screenshots are headless Chromium at 1440x900 and 390x844, deviceScaleFactor 2, because the preview browser returned 'The browser is not producing screenshot frames'.",
+        "timestamp": "2026-11-19T02:50:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/discover",
+          "/signin",
+          "/terms-of-use",
+          "/company/contact-us/",
+          "https://secure.soundcloud.com/web-auth"
+        ],
+        "gaps": [
+          "Feed, Library, and Upload ask for an account and were not entered.",
+          "Sign-in Continue, OAuth, and the email field were not submitted. No card, phone, or paid plan was opened.",
+          "The preview browser could not produce screenshot frames, so screenshots are from headless Chromium on pages that loaded without a challenge.",
+          "Reduced motion was not emulated.",
+          "The app header on the marketing home is overflow hidden, so its computed button fills are not painted."
+        ],
+        "durationMin": 45,
+        "date": "2026-11-19",
+        "pr": ""
+      }
     }
   ]
 }
