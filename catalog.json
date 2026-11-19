@@ -20343,6 +20343,72 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "tesla",
+      "name": "Tesla",
+      "url": "https://www.tesla.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Auto brand marketing: transparent 56px header, full-bleed photo bands, blue Order Now beside a white Learn More, 4px controls, Universal Sans display headings",
+      "tags": [
+        "web",
+        "auto",
+        "marketing",
+        "light",
+        "tesla-design-system"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out, public marketing only (homepage, Model Y, Solar Panels, Support, About). Configurator, shop, and account were not entered",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/tesla/README.md",
+      "tokens": "systems/tesla/tokens.json",
+      "styleGuide": "systems/tesla/style-guide.html",
+      "preview": {
+        "cover": "systems/tesla/raw/token-board.png",
+        "icon": "systems/tesla/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.theme-background",
+            "surface": "light.color.theme-background-container",
+            "text": "light.color.theme-foreground",
+            "muted": "light.color.text-contrast-low",
+            "accent": "light.color.color-primary",
+            "border": "light.color.theme-border"
+          },
+          "dark": {
+            "page": "dark.color.theme-background",
+            "surface": "dark.color.theme-background-container",
+            "text": "dark.color.theme-foreground",
+            "muted": "dark.color.text-contrast-low",
+            "accent": "dark.color.color-primary",
+            "border": "dark.color.theme-border"
+          }
+        },
+        "fonts": [
+          "core.font.family.text",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 90,
+        "version": "tcl-react 1.43.8"
+      },
+      "layoutGaps": {
+        "components/": "no crops: preview_snapshot returned no screenshot frames and headless Playwright received HTTP 403",
+        "icons/": "inline SVGs were not extracted; the wordmark and chevrons are in the live header",
+        "screenshots/": "preview_snapshot returned 'The browser is not producing screenshot frames'; headless Playwright against tesla.com returned HTTP 403 Access Denied"
+      }
     }
   ]
 }
