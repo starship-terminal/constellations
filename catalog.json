@@ -20343,6 +20343,95 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "mangomint",
+      "name": "Mangomint",
+      "url": "https://www.mangomint.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Salon and spa software marketing: cream page #fcfafa, navy ink #191e49, magenta pill CTAs, an 80px bar, a published pricing calculator, and a navy sign-in wall with a lilac button that is a different system from the marketing pills",
+      "tags": [
+        "web",
+        "booking",
+        "scheduling",
+        "salon",
+        "saas",
+        "marketing",
+        "pill",
+        "light",
+        "signed-out",
+        "pricing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (every captured surface is public); the salon admin behind sign-in (calendar, clients, payments, checkout) was never reached; the login, forgot-password, demo and trial forms were measured and typed into then cleared, never submitted; the public booking page loaded signed out with an empty service list and Rebook was not pressed; no slot confirmed, no appointment booked",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/mangomint/README.md",
+      "tokens": "systems/mangomint/tokens.json",
+      "styleGuide": "systems/mangomint/style-guide.html",
+      "preview": {
+        "cover": "systems/mangomint/screenshots/home-light-default.png",
+        "icon": "systems/mangomint/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/mangomint/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "www.mangomint.com, app.mangomint.com/login and booking.mangomint.com/737397 in headless Chromium (Playwright), desktop 1440x900 and phone 390x844. Computed styles from the live DOM. A Mira promo strip was hidden with CSS and never clicked. No consent banner was observed.",
+        "timestamp": "2026-11-18T12:00:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing/",
+          "/features/online-booking/",
+          "/demo/",
+          "/trial/",
+          "/about-us/",
+          "/contact-us/",
+          "/blog/",
+          "/go/customers/",
+          "/learn/",
+          "/legal/",
+          "app.mangomint.com/login",
+          "app.mangomint.com/forgot-password",
+          "booking.mangomint.com/737397",
+          "home Businesses menu, pricing FAQ, phone menu"
+        ],
+        "gaps": [
+          "the salon admin behind sign-in (calendar, clients, payments, checkout) was never reached; Log In was not submitted",
+          "the login, forgot-password, demo and trial forms were measured and typed into then cleared, never submitted, so validation, error, loading and success states are absent",
+          "the public booking page loaded signed out with an empty service list; Rebook was not pressed, so no slot and no checkout were reached",
+          "the desktop Features menu click timed out; the Businesses menu is the captured nav pattern",
+          "no dark theme is painted signed out; the navy login wall is a surface, not a theme toggle",
+          "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing"
+        ],
+        "durationMin": 180,
+        "durationNote": "Wall clock for the public signed-out capture: kit adaptation, screenshot and measurement passes, and the offline build."
+      }
     }
   ]
 }
