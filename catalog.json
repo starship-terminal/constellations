@@ -20343,6 +20343,66 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "tidal",
+      "name": "Tidal",
+      "url": "https://tidal.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Signed-out music player chrome: black page, 240px sidebar, frosted grey pill beside a white pill, cyan accent kept off the buttons, 12px login column on the OAuth page",
+      "tags": [
+        "web",
+        "music",
+        "media",
+        "dark",
+        "sidebar",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out; public player, download page and OAuth login chrome; no plan, card or OAuth continue",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/tidal/README.md",
+      "tokens": "systems/tidal/tokens.json",
+      "styleGuide": "systems/tidal/style-guide.html",
+      "preview": {
+        "cover": "systems/tidal/icon.png",
+        "icon": "systems/tidal/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.footer",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.font.text",
+          "core.font.display"
+        ]
+      },
+      "source": {
+        "path": "live computed styles in the T3 preview browser; no raw shots, the browser did not paint frames"
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "web player captured 2026-11-19; build version not exposed",
+        "route": "web-inspector",
+        "durationMin": 45
+      },
+      "layoutGaps": {
+        "components/": "No crops. The preview browser did not produce screenshot frames, and headless Playwright was blocked."
+      }
     }
   ]
 }
