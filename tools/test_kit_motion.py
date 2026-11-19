@@ -58,6 +58,11 @@ class Normalise(unittest.TestCase):
         self.assertEqual(motion.ms_str(200.0), "200ms")
         self.assertEqual(motion.ms_str(0.5), "0.5ms")
         self.assertEqual(motion.ms_key(0.5), "0_5ms")
+        # a long duration keeps fixed decimals: %g wrote 6e+08ms as the value and the key
+        self.assertEqual(motion.ms_str(6e8), "600000000ms")
+        self.assertEqual(motion.ms_key(1234567.5), "1234567_5ms")
+        self.assertEqual(motion.ms_str(0.0123), "0.012ms")
+        self.assertEqual(motion.ms_str(0), "0ms")
 
     def test_easings(self):
         self.assertEqual(motion.norm_easing("cubic-bezier(0.40, 0, .2, 1.0)"), "cubic-bezier(0.4, 0, 0.2, 1)")
@@ -156,6 +161,16 @@ class Build(unittest.TestCase):
         self.assertFalse(motion._is_reduce("@media not (prefers-reduced-motion: reduce)"))
         self.assertIn("700ms", self.group["duration"])
         self.assertNotIn("0_01ms", self.group["duration"])
+
+    def test_an_unresolved_var_or_keyword_easing_says_so(self):
+        raw = json.loads(json.dumps(RAW))
+        page = raw["pages"]["home"]
+        page["groups"].append(group(1, [tr("color", 150, "var(--ease-x)"), tr("width", 150, "unset")], outcome="kept"))
+        _, not_tokenised = motion.build(raw)
+        why = {n["value"]: n["why"] for n in not_tokenised}
+        self.assertIn("steps() or a linear() curve", why["steps(4, end)"])
+        self.assertIn("unresolved var()", why["var(--ease-x)"])
+        self.assertIn("CSS-wide keyword", why["unset"])
 
     def test_a_keyword_in_a_custom_property_is_derived(self):
         raw = json.loads(json.dumps(RAW))
