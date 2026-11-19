@@ -1,0 +1,208 @@
+[
+  {
+    "url": "https://visitors.now/",
+    "status": 200,
+    "error": null,
+    "title": "Visitors - Privacy-friendly Google Analytics alternative",
+    "challenge": false,
+    "scrollHeight": 8119,
+    "h1": "Revenue-first web analytics",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/login",
+    "status": 200,
+    "error": null,
+    "title": "Log in - Visitors",
+    "challenge": false,
+    "scrollHeight": 900,
+    "h1": "Log in to Visitors",
+    "inputs": [
+      {
+        "type": "email",
+        "name": "",
+        "placeholder": "Email address",
+        "bg": "rgb(245, 245, 245)",
+        "color": "rgb(24, 25, 37)",
+        "radius": "12px",
+        "height": "40px",
+        "border": "0px solid rgb(24, 25, 37)",
+        "size": "16px"
+      },
+      {
+        "type": "hidden",
+        "name": "cf-turnstile-response",
+        "placeholder": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(102, 102, 102)",
+        "radius": "0px",
+        "height": "auto",
+        "border": "0px solid rgb(102, 102, 102)",
+        "size": "16px"
+      }
+    ]
+  },
+  {
+    "url": "https://visitors.now/register",
+    "status": 200,
+    "error": null,
+    "title": "Create account - Visitors",
+    "challenge": false,
+    "scrollHeight": 900,
+    "h1": "Sign up to Visitors",
+    "inputs": [
+      {
+        "type": "email",
+        "name": "",
+        "placeholder": "Email address",
+        "bg": "rgb(245, 245, 245)",
+        "color": "rgb(24, 25, 37)",
+        "radius": "12px",
+        "height": "40px",
+        "border": "0px solid rgb(24, 25, 37)",
+        "size": "16px"
+      },
+      {
+        "type": "hidden",
+        "name": "cf-turnstile-response",
+        "placeholder": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(102, 102, 102)",
+        "radius": "0px",
+        "height": "auto",
+        "border": "0px solid rgb(102, 102, 102)",
+        "size": "16px"
+      }
+    ]
+  },
+  {
+    "url": "https://visitors.now/blog",
+    "status": 200,
+    "error": null,
+    "title": "Blog - Visitors",
+    "challenge": false,
+    "scrollHeight": 2300,
+    "h1": "Blog",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/docs",
+    "status": 200,
+    "error": null,
+    "title": "Documentation - Visitors docs",
+    "challenge": false,
+    "scrollHeight": 900,
+    "h1": "Welcome to Visitors",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/contact",
+    "status": 200,
+    "error": null,
+    "title": "Contact - Visitors",
+    "challenge": false,
+    "scrollHeight": 2256,
+    "h1": "Contact",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/pricing",
+    "status": 404,
+    "error": null,
+    "title": "Not found - Visitors",
+    "challenge": false,
+    "scrollHeight": 900,
+    "h1": "404",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/revenue-attribution",
+    "status": 200,
+    "error": null,
+    "title": "Revenue Attribution Analytics - Visitors",
+    "challenge": false,
+    "scrollHeight": 5519,
+    "h1": "Traffic is vanity.\nRevenue is sanity.",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/realtime",
+    "status": 200,
+    "error": null,
+    "title": "Live Website Analytics - Visitors",
+    "challenge": false,
+    "scrollHeight": 5637,
+    "h1": "Live website\nanalytics",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/profiles",
+    "status": 200,
+    "error": null,
+    "title": "Visitor Profiles & User Journeys - Visitors",
+    "challenge": false,
+    "scrollHeight": 5657,
+    "h1": "Visitor profiles\nand journeys",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/performance",
+    "status": 200,
+    "error": null,
+    "title": "Core Web Vitals & Performance Analytics - Visitors",
+    "challenge": false,
+    "scrollHeight": 5495,
+    "h1": "Core Web Vitals\nanalytics",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/vs-google-analytics",
+    "status": 200,
+    "error": null,
+    "title": "Visitors vs Google Analytics (GA4) - Visitors",
+    "challenge": false,
+    "scrollHeight": 8101,
+    "h1": "Privacy-friendly Google Analytics alternative",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/gdpr",
+    "status": 200,
+    "error": null,
+    "title": "GDPR compliance - Visitors",
+    "challenge": false,
+    "scrollHeight": 3888,
+    "h1": "GDPR compliance",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/privacy",
+    "status": 200,
+    "error": null,
+    "title": "Privacy Policy - Visitors",
+    "challenge": false,
+    "scrollHeight": 3728,
+    "h1": "Privacy Policy",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/terms",
+    "status": 200,
+    "error": null,
+    "title": "Terms of Service - Visitors",
+    "challenge": false,
+    "scrollHeight": 6016,
+    "h1": "Terms of Service",
+    "inputs": []
+  },
+  {
+    "url": "https://visitors.now/s/godly.website",
+    "status": 200,
+    "error": null,
+    "title": "Stats on Godly - Visitors",
+    "challenge": false,
+    "scrollHeight": 1938,
+    "h1": null,
+    "inputs": []
+  }
+]

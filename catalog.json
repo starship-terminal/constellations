@@ -20343,6 +20343,80 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "visitors",
+      "name": "Visitors",
+      "url": "https://visitors.now",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Privacy-analytics marketing on a white page with a floating dark nav pill, Open Runde type, and one purple pill for the trial. Signed-out login is a split email form over a globe.",
+      "tags": [
+        "web",
+        "analytics",
+        "marketing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages plus /login and /register. The email form was not submitted because a Turnstile field is present. Google and GitHub were not clicked. Trial and checkout were not followed.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/visitors/README.md",
+      "tokens": "systems/visitors/tokens.json",
+      "styleGuide": "systems/visitors/style-guide.html",
+      "preview": {
+        "cover": "systems/visitors/screenshots/home-light-default.png",
+        "icon": "systems/visitors/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.surface",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.action.fill",
+            "border": "light.color.border.focus"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 70,
+        "routes": [
+          "https://visitors.now/",
+          "https://visitors.now/login",
+          "https://visitors.now/register",
+          "https://visitors.now/blog",
+          "https://visitors.now/docs",
+          "https://visitors.now/contact",
+          "https://visitors.now/s/godly.website",
+          "https://visitors.now/pricing (404)"
+        ],
+        "gaps": [
+          "signed-in product not entered",
+          "Turnstile on login and register, so the email form was not submitted",
+          "Google and GitHub buttons not clicked",
+          "trial and checkout not followed",
+          "no dark theme painted",
+          "preview browser stopped producing screenshot frames; screenshots are from headless Chromium on the same public pages"
+        ]
+      },
+      "layoutGaps": {
+        "components/": "Element crops were not cut. The screenshots are the component evidence.",
+        "icons/": "Visitors icons are the product's artwork and are not extracted (docs/RIGHTS.md)."
+      }
     }
   ]
 }

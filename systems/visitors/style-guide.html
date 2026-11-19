@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Visitors style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #181925;
+    --body: #666666;
+    --muted: #999999;
+    --accent: #918df6;
+    --accent-strong: #9580ff;
+    --on: #ffffff;
+    --quiet: #00000008;
+    --surface: #f5f5f5;
+    --link: #2c78fc;
+    --nav: #14141f;
+    --nav-label: #bbbcc3;
+  }
+  body { margin: 0; background: var(--page); color: var(--body); font: 16px/24px "Open Runde", Inter, sans-serif; letter-spacing: -0.02em; }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { color: var(--ink); font-size: 60px; line-height: 68px; font-weight: 600; letter-spacing: -3px; margin: 0 0 12px; }
+  h2 { color: var(--ink); font-size: 30px; line-height: 36px; font-weight: 500; margin: 40px 0 12px; }
+  p { max-width: 36rem; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .swatch { width: 88px; height: 64px; border-radius: 12px; }
+  .label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  button, .quiet, .navbtn { border: 0; border-radius: 9999px; font: 500 16px/24px "Open Runde", Inter, sans-serif; letter-spacing: -0.02em; height: 44px; padding: 0 20px; }
+  button.primary { background: var(--accent); color: var(--on); }
+  button.header { background: var(--accent-strong); color: var(--on); height: 32px; font-size: 14px; padding: 0 10px; }
+  .quiet { background: rgba(0,0,0,0.03); color: var(--body); }
+  .disabled { background: #dad9fc; color: var(--on); cursor: not-allowed; }
+  .field { display: block; width: 344px; height: 40px; border: 0; border-radius: 12px; background: var(--surface); color: var(--ink); padding: 0 16px; font: 500 16px/24px "Open Runde", Inter, sans-serif; }
+  .field:focus { outline: 2px solid var(--accent); box-shadow: 0 0 0 2px #dad9fc; }
+  .nav { background: var(--nav); color: var(--nav-label); border-radius: 9999px; display: inline-flex; gap: 16px; align-items: center; padding: 8px 8px 8px 16px; font-size: 14px; font-weight: 500; }
+  a { color: var(--link); }
+  .card { background: rgba(0,0,0,0.03); border-radius: 16px; padding: 24px; max-width: 420px; }
+  .ten { color: var(--accent); font-size: 48px; font-weight: 500; line-height: 1; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Visitors</h1>
+  <p>Public signed-out surfaces. Values are the measured tokens, not a redraw of the product.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div><div class="swatch" style="background:#ffffff;box-shadow:inset 0 0 0 1px #eee"></div><div class="label">page</div></div>
+    <div><div class="swatch" style="background:#181925"></div><div class="label">ink</div></div>
+    <div><div class="swatch" style="background:#666666"></div><div class="label">body</div></div>
+    <div><div class="swatch" style="background:#918df6"></div><div class="label">accent</div></div>
+    <div><div class="swatch" style="background:#9580ff"></div><div class="label">register</div></div>
+    <div><div class="swatch" style="background:#2c78fc"></div><div class="label">link</div></div>
+    <div><div class="swatch" style="background:#14141f"></div><div class="label">nav</div></div>
+  </div>
+  <h2>Type</h2>
+  <p style="color:#181925;font-size:36px;line-height:40px;font-weight:500;margin:0">Page title</p>
+  <p>See every visitor in realtime and witness the moment they become a customer.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Start 14 day free trial</button>
+    <span class="quiet">See demo</span>
+    <button class="header">Register</button>
+    <button class="disabled" disabled>Continue with email</button>
+  </div>
+  <p></p>
+  <input class="field" placeholder="Email address" aria-label="Email address">
+  <h2>Nav</h2>
+  <div class="nav"><span style="color:#fff">O</span> Features Pricing Blog Docs Login <button class="header">Register</button></div>
+  <h2>Pricing card</h2>
+  <div class="card"><div class="ten">10K</div><p style="color:#181925">for $9/mo</p></div>
+  <p><a href="https://visitors.now/docs">Docs link</a></p>
+</main>
+</body>
+</html>
