@@ -20343,6 +20343,77 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pop-site",
+      "name": "Pop Site",
+      "url": "https://pop.site",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A Framer marketing site for a personal-site builder: white page, Satoshi at weight 500, a 40px claim pill on a #00a8f5 to #3b82f6 gradient, and a separate signed-out auth card with a slate pill",
+      "tags": [
+        "web",
+        "marketing",
+        "framer",
+        "signed-out",
+        "light",
+        "personal-site"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing at pop.site plus the signed-out sign-in and sign-up screens at app.pop.site. No form was submitted. Google SSO was not entered. No payment.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/pop-site/README.md",
+      "tokens": "systems/pop-site/tokens.json",
+      "styleGuide": "systems/pop-site/style-guide.html",
+      "preview": {
+        "cover": "systems/pop-site/screenshots/home-light-default.png",
+        "icon": "systems/pop-site/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "pop.site and app.pop.site signed-out screens, headless Chromium, desktop 1440x900 and phone 390x844, light. The T3 preview browser read the DOM and did not produce screenshot frames.",
+        "timestamp": "2026-11-19T01:50:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "pop.site/",
+          "pop.site/pricing",
+          "pop.site/blog",
+          "app.pop.site/?signin",
+          "app.pop.site/"
+        ],
+        "gaps": [
+          "signed-in app was not entered; sign-in asks for a password or Google",
+          "sign-up was not submitted; it asks for email and a password",
+          "no validation error was triggered",
+          "dark colour scheme did not change the painted pages",
+          "Satoshi is commercial and is not shipped"
+        ],
+        "durationMin": 70
+      }
     }
   ]
 }
