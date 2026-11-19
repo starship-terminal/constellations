@@ -20343,6 +20343,69 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "skiff",
+      "name": "Skiff",
+      "url": "https://skiff.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A shut-down privacy product's public site: a stone page, a white raised card, an orange #ef5a3c mark and accent line, a charcoal floating nav, and a blue gradient product hero",
+      "tags": [
+        "web",
+        "email",
+        "privacy",
+        "shutdown",
+        "light",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed-out. The home page is the Notion acquisition notice. Product marketing pages, the whitepaper and the report form were measured. No account was created. The report form was not submitted.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/skiff/README.md",
+      "tokens": "systems/skiff/tokens.json",
+      "styleGuide": "systems/skiff/style-guide.html",
+      "preview": {
+        "cover": "systems/skiff/screenshots/home-light-default.png",
+        "icon": "systems/skiff/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.default",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public site as of 2026-11-19 (shutdown notice: services sunset 9 August 2024, forwarding extended to 9 February 2025)",
+        "durationMin": 40,
+        "gaps": [
+          "No account was created. Signed-in Mail, Pages, Drive and Calendar were not entered.",
+          "The report form at https://skiff.com/report was measured empty and not submitted.",
+          "Changelog and privacy-policy links redirected to the home notice. Those documents were not captured.",
+          "Terms and acceptable use point at app.skiff.com docs and were not opened.",
+          "Hover, focus, pressed and error states were not observed. Dark theme was not painted."
+        ]
+      }
     }
   ]
 }
