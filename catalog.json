@@ -20343,6 +20343,74 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "visual-electric",
+      "name": "Visual Electric",
+      "url": "https://visualelectric.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Generative canvas marketing: black home, orange pill, Maison Neue, a white pricing sheet",
+      "tags": [
+        "web",
+        "ai",
+        "image",
+        "marketing",
+        "pricing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (archived public pages; the live apex has no DNS and the login host returned Cloudflare 1014)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/visual-electric/README.md",
+      "tokens": "systems/visual-electric/tokens.json",
+      "styleGuide": "systems/visual-electric/style-guide.html",
+      "preview": {
+        "cover": "systems/visual-electric/screenshots/pricing-light-default.png",
+        "icon": "systems/visual-electric/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.page",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.accent",
+            "border": "light.border.hairline"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.canvas",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.action.accent",
+            "border": "dark.border.hairline"
+          }
+        },
+        "fonts": [
+          "core.font.family.book",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "v4.8.0",
+        "route": "public-web",
+        "durationMin": 70,
+        "pr": "https://github.com/starship-terminal/constellations/pull/894"
+      },
+      "gaps": [
+        "Live visualelectric.com has no DNS record, so every page is an Internet Archive copy",
+        "login.visualelectric.com returned Cloudflare error 1014; no email, card, or SSO was entered",
+        "Signed-in canvas, hover, focus, and form error were not captured"
+      ]
     }
   ]
 }
