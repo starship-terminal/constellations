@@ -6,14 +6,18 @@
 // html[data-theme=dark] pass measures the real dark declarations.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE, learnPlace, scrubPlace, PLACE_WORDS } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
-const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+// No city or distance is ever written (lib.mjs): until a page's location line was read, nothing is saved.
+const save = () => {
+  if (!PLACE_WORDS.size) { console.error('not saving: the location line was never found, so the city could not be masked'); process.exitCode = 1; return; }
+  fs.writeFileSync(OUT, JSON.stringify(scrubPlace(out), null, 1) + '\n');
+};
 const ARTIST = '/events/samay-raina/artist';
 const TICKETS = '/events/all-stars-live-apr12-2026-buy-tickets';
 const URLS = { home: '/', homeDark: '/', movies: '/movies/', events: '/events/', comedy: '/events/comedy', artist: ARTIST, tickets: TICKETS, mobile: '/movies/' };
@@ -52,6 +56,7 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
   if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
+  if (!(await learnPlace(page)) && !PLACE_WORDS.size) log('  ! location line not found on', key, '- nothing is saved until it is');
   return true;
 }
 
@@ -66,7 +71,7 @@ async function chrome(key) {
       if (cs.position !== 'fixed' && cs.position !== 'sticky') continue;
       const r = el.getBoundingClientRect();
       if (r.width < 40 || r.height < 10) continue;
-      seen.push({ node: el.tagName.toLowerCase() + '.' + String(el.className).split(' ')[0].slice(0, 60), z: cs.zIndex, pos: cs.position, rect: `${r.width | 0}x${r.height | 0}@${r.x | 0},${r.y | 0}`, text: (el.innerText || '').slice(0, 40).replace(/\n/g, '|') });
+      seen.push({ node: el.tagName.toLowerCase() + '.' + String(el.className).split(' ')[0].slice(0, 60), z: cs.zIndex, pos: cs.position, rect: `${r.width | 0}x${r.height | 0}@${r.x | 0},${r.y | 0}`, text: (el.innerText || '').replace(/(?<!Under )\b\d+(?:\.\d+)?\s?km\b/g, '[distance]').slice(0, 40).replace(/\n/g, '|') });
     }
     return seen.sort((a, b) => (parseInt(b.z) || 0) - (parseInt(a.z) || 0)).slice(0, 20);
   }).catch(() => []);

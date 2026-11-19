@@ -21,6 +21,7 @@ import {
   mediaMime,
   readJson,
   readText,
+  hasFile,
   referoMedia,
   remoteUrl,
   repoRoot,
@@ -179,8 +180,9 @@ const STAMP_FILES = [
   "web/data/thumbs",
 ];
 const MEDIA_FOLDERS = ["shots", "posters", "favicons", "videos"];
-const MAX_CACHE_AGE = 5 * 60_000;
-async function sourceStamp(): Promise<string> {
+export const MAX_CACHE_AGE = 5 * 60_000;
+/** Changes when the catalogs, generated data or media mirror change. */
+export async function sourceStamp(): Promise<string> {
   const root = repoRoot(),
     media = mediaRoot();
   const stats = await Promise.all(
@@ -538,18 +540,27 @@ export async function readExport(
     if (source !== "refero") return null;
     return readStyleExport(slug, format as ExportFormat, variant);
   }
+  const file = exportFile(source, slug, format as ExportFormat);
+  return file ? readText(file) : null;
+}
+function exportFile(
+  source: string,
+  slug: string,
+  format: ExportFormat,
+): string | null {
   if (source === "refero" || format === "DESIGN.md" || format === "tokens.json")
-    return readText(`${source}/${slug}/${format}`);
+    return `${source}/${slug}/${format}`;
   // Existing catalog exports resolve aliases with the library's own builder.
-  if (format === "variables.css")
-    return readText(`web/data/export/${slug}.css`);
+  if (format === "variables.css") return `web/data/export/${slug}.css`;
   return null;
 }
+// Existence only: reading every export to test for it read whole files.
 async function exportLinks(item: LibraryItem): Promise<Record<string, string>> {
   const links: Record<string, string> = {};
   await Promise.all(
     formats.map(async (format) => {
-      if ((await readExport(item.id, format)) !== null)
+      const file = exportFile(item.source, item.slug, format);
+      if (file && (await hasFile(file)))
         links[format] =
           `/api/library/${item.source}/${item.slug}/export?format=${encodeURIComponent(format)}`;
     }),
@@ -674,7 +685,10 @@ export async function getReferenceMedia(
 export async function getReference(id: string): Promise<LibraryDetail | null> {
   const parsed = parseReferenceId(id);
   if (!parsed) return null;
-  const items = await withReferenceCategories(await allItems()),
+  // Only same-source references can be related, so only they need categories.
+  const items = await withReferenceCategories(
+      (await allItems()).filter((i) => i.source === parsed.source),
+    ),
     item = items.find((i) => i.id === id);
   if (!item) return null;
   const { source, slug } = parsed;
@@ -708,7 +722,11 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
     media = await packageMedia(slug, row);
     measured = await measuredDetail(slug, row, media);
     // Preserve individual evidence labels. Package-level "measured" describes the capture source, not every value.
-    const readme = await readText(`systems/${slug}/README.md`);
+    // measuredDetail has usually read the README already.
+    const readme =
+      measured.readmePath === "README.md" && measured.readme
+        ? measured.readme
+        : await readText(`systems/${slug}/README.md`);
     if (readme)
       guidelines = readme
         .split("\n")

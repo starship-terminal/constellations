@@ -5,11 +5,13 @@ on:
       - 'app/**'
       - '.github/workflows/app.yml'
       # The app reads these at runtime and in its tests, and the media
-      # taxonomy seed is built from them.
+      # taxonomy seed is built from them. The float-parity fixture check
+      # imports server/library.py and tools/catalog.py.
       - 'systems/**'
       - 'catalog.json'
       - 'refero/catalog.json'
       - 'tools/catalog.py'
+      - 'server/library.py'
   push:
     branches: [main]
     paths:
@@ -19,6 +21,7 @@ on:
       - 'catalog.json'
       - 'refero/catalog.json'
       - 'tools/catalog.py'
+      - 'server/library.py'
 permissions:
   contents: read
 jobs:

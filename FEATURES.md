@@ -95,9 +95,10 @@ Status describes implementation in this checkout, not a live QA pass or release 
 - **Health sections and catalog table**: read each package's generated Health section and the ranked catalog table in the root README. Status: implemented. Surface: CLI. Entry point: `tools/health.py` (run by `make grade`). Tests: `tools/test_health.py`.
 - **Scorecard validation**: validate the audit data's shape. Status: implemented. Surface: CLI. Entry point: `make scorecard`. Tests: `tools/test_scorecard.py`.
 
-## Docs site (static build and GitHub Pages)
+## Docs site (static build, served by the home server)
 - **Docs site build**: build the library docs and scorecard pages into a static site with the site's own chrome. Status: implemented. Surface: CLI. Entry point: `make docs` (`tools/scorecard.py`, `tools/site.py`). Tests: `tools/test_site.py`, `tools/test_scorecard.py`.
-- **Encrypted Pages deploy**: read the docs site on GitHub Pages behind a StatiCrypt password, with the gallery, search index and sitemap kept out. Status: implemented. Surface: web. Entry point: `.github/workflows/pages.yml` (push to `main`). Tests: none.
+- **Encrypted Pages deploy**: the GitHub Pages deploy behind a StatiCrypt password. Status: removed in [#573](https://github.com/starship-terminal/constellations/pull/573), with `pages.yml` and StatiCrypt. Tests: none.
+- **Home-server docs site**: read the docs site that nginx on the home server serves from `site/`, with `/api/` proxied to `server/api.py` and `/api/redeploy` to `scripts/deploy_trigger.py`. Pages are not encrypted: access control is network reach (the owner's private network), plus the Host allowlist on `/api/` and the deploy token nginx adds for the trigger. Status: implemented. Surface: web. Entry point: the host-owned `deploy.sh` (see Home-server deployment), `server/api.py`. Tests: `tools/test_site.py`, `tools/test_routes.py`, `tools/test_deploy_trigger.py`.
 - **Site app icon**: choose the Flat or Glass app icon under the site's Settings > Preferences. Status: implemented. Surface: web. Entry point: `settings/` page, `docs/assets/app-icon.js`, `python3 tools/make_icons.py`. Tests: `tools/test_app_icon.mjs`, `tools/test_make_icons.py`.
 - **Redeploy button**: on the self-hosted docs site, trigger a redeploy from the footer and see when it last deployed. Status: implemented. Surface: web. Entry point: `docs/assets/redeploy.js`, `GET|POST /api/redeploy` (`scripts/deploy_trigger.py`). Tests: `tools/test_deploy_trigger.py`.
 
