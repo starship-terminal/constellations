@@ -453,10 +453,7 @@ def main() -> None:
         if problems:
             sys.exit("scorecard data problems:\n  " + "\n  ".join(problems))
         stale_problems, warnings = stale(criteria, audits[-1], systems, categories)
-        base = health.pull_request_base_catalog()
-        problems = stale_problems + health.problems(
-            criteria, audits[-1], systems,
-            base_systems=(base or {}).get("systems") if base else None)
+        problems = stale_problems + health.problems(criteria, audits[-1], systems)
         for w in warnings:
             print(f"warning: {w}")
         if problems:
