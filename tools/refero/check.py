@@ -462,8 +462,53 @@ def coverage_is_prior_derivation(directory: dict, head_catalog: dict,
         return False
     kept = [base_rows[slug] if slug in base_rows else head_rows[slug]
             for slug in named]
-    return actual == coverage_mod.build(
-        directory, {**base, "systems": kept})
+    built = coverage_mod.build(directory, {**base, "systems": kept})
+    return coverage_same_rows(actual, built)
+
+
+def coverage_same_rows(actual: dict, built: dict) -> bool:
+    """True when both files name the same domain rows, ignoring order.
+
+    The builder walks catalog systems in list order, and a subset built
+    from a set walks them in hash order. The same packages then produce
+    the same domain rows in a different order. A changed row still fails."""
+    def rows(doc):
+        found = {}
+        for key in ("matched", "missing", "systems_absent_from_catalog"):
+            for dom, row in (doc.get(key) or {}).items():
+                found[dom] = (key, row)
+        return found
+    left, right = rows(actual), rows(built)
+    if set(left) != set(right):
+        return False
+    # Counts do not depend on package order. A wrong total is a hand edit.
+    if actual.get("totals") != built.get("totals"):
+        return False
+    return all(same_coverage_row(left[dom], right[dom]) for dom in left)
+
+
+def same_coverage_row(left, right) -> bool:
+    key_l, row_l = left
+    key_r, row_r = right
+    if key_l != key_r:
+        return False
+    return _order_free(row_l) == _order_free(row_r)
+
+
+def _order_free(value):
+    """The value with list order removed and every field kept.
+
+    Package lists and catalog lists change order when the subset walks a
+    set. A changed name, url, or name_match stays a difference."""
+    if isinstance(value, list):
+        return sorted((_order_free(item) for item in value), key=_sort_key)
+    if isinstance(value, dict):
+        return {key: _order_free(item) for key, item in value.items()}
+    return value
+
+
+def _sort_key(value) -> str:
+    return json.dumps(value, sort_keys=True, default=str)
 
 
 def _pkg_slugs(row) -> set[str]:

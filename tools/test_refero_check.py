@@ -245,6 +245,51 @@ class CoverageLagTest(unittest.TestCase):
         edited["totals"]["system_packages"] = 1
         self.assertFalse(self.matches(self.head, edited))
 
+    def test_the_same_rows_in_another_order_are_accepted(self):
+        shared = {"slug": "shared", "name": "Shared", "url": "https://alpha.example"}
+        other = {"slug": "other", "name": "Other", "url": "https://alpha.example"}
+        first = refero_check.coverage_mod.build(
+            self.directory, {"systems": [self.alpha, shared]})
+        second = refero_check.coverage_mod.build(
+            self.directory, {"systems": [other, self.alpha]})
+        # Two packages on one domain. Reverse that package list. Dictionary
+        # key order is not the difference this exemption exists for.
+        dom = "alpha.example"
+        bucket = next(key for key in ("matched", "missing") if first.get(key, {}).get(dom))
+        pkgs = first[bucket][dom]["pkgs"]
+        self.assertGreaterEqual(len(pkgs), 2)
+        flipped = json.loads(json.dumps(first))
+        flipped[bucket][dom]["pkgs"] = list(reversed(pkgs))
+        self.assertNotEqual(first, flipped)
+        self.assertTrue(refero_check.coverage_same_rows(first, flipped))
+        self.assertTrue(refero_check.coverage_same_rows(first, second) or first != second)
+
+    def test_a_changed_package_field_is_rejected(self):
+        edited = json.loads(json.dumps(self.prior))
+        for key in ("matched", "missing", "systems_absent_from_catalog"):
+            row = next(iter((edited.get(key) or {}).values()), None)
+            if not row:
+                continue
+            pkgs = row if isinstance(row, list) else row.get("pkgs")
+            if pkgs:
+                pkgs[0]["name"] = "Renamed"
+                break
+        self.assertFalse(refero_check.coverage_same_rows(self.prior, edited))
+
+    def test_a_changed_total_is_rejected(self):
+        edited = json.loads(json.dumps(self.prior))
+        edited["totals"]["matched_domains"] = 0
+        self.assertFalse(refero_check.coverage_same_rows(self.prior, edited))
+
+    def test_a_changed_domain_row_is_rejected(self):
+        edited = json.loads(json.dumps(self.prior))
+        for key in ("matched", "missing"):
+            if edited.get(key):
+                dom = next(iter(edited[key]))
+                edited[key][dom]["pkgs"] = [{"slug": "other", "name": "Other"}]
+                break
+        self.assertFalse(refero_check.coverage_same_rows(self.prior, edited))
+
     def test_an_edited_existing_row_is_rejected(self):
         head = json.loads(json.dumps(self.head))
         head["systems"][0]["name"] = "Alpha edited"
