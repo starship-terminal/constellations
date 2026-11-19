@@ -31,6 +31,25 @@ class CssColour(unittest.TestCase):
             self.assertIn("from '../css-colour.mjs'", (CAPTURE / rel).read_text(), rel)
 
 
+class Templates(unittest.TestCase):
+    def test_icon_names_header_is_the_columns_icons_mjs_reads(self):
+        # icons.mjs reads hash<TAB>name and skips the header row; a name<TAB>role header filled in as
+        # documented never matched a hash.
+        rows = [r.split("\t") for r in (CAPTURE / "icon-names.tsv").read_text().splitlines() if r and not r.startswith("#")]
+        self.assertEqual(rows[0], ["hash", "name"])
+
+    @unittest.skipIf(NODE is None, "node is not on PATH")
+    def test_render_refuses_a_scroll_flag_it_cannot_read(self):
+        with tempfile.TemporaryDirectory() as d:
+            for flag in ("scroll=main:120", "scroll=", "scroll=top"):
+                res = subprocess.run([NODE, str(CAPTURE / "signed-in/render.mjs"), d, "home-dark", flag], capture_output=True,
+                                     text=True, timeout=60, env={**os.environ, "KIT_EXAMPLE": "1"})
+                self.assertEqual(res.returncode, 2, (flag, res.stderr))
+                self.assertIn("scroll= takes a pixel offset, max or auto", res.stderr)
+        head = (CAPTURE / "signed-in/shots.tsv").read_text().splitlines()[0]
+        self.assertNotIn("<selector>", head)
+
+
 @unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
 class MeasureArgs(unittest.TestCase):
     def test_a_bad_jobs_count_stops_instead_of_running_no_workers(self):

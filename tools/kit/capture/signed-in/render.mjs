@@ -11,7 +11,11 @@ import path from 'path';
 import { pathToFileURL } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 const [,, dirArg, label, ...flags] = process.argv;
-if (!dirArg || !label) { console.error('usage: render.mjs <dir> <label> [full] [light] [scroll=<top>]'); process.exit(2); }
+if (!dirArg || !label) { console.error('usage: render.mjs <dir> <label> [full] [light] [scroll=<px>|max|auto]'); process.exit(2); }
+// scroll= takes a pixel offset, max or auto; anything else (a selector:px pair) became Number('...'),
+// NaN, and the scroller silently stayed at 0
+const badScroll = flags.find((f) => f.startsWith('scroll=') && !/^scroll=(?:\d+(?:\.\d+)?|max|auto)$/.test(f));
+if (badScroll) { console.error(`render.mjs: ${badScroll}: scroll= takes a pixel offset, max or auto`); process.exit(2); }
 const dir = path.resolve(dirArg);               // a relative <dir> made a broken file:// URL
 process.env.SNAPS ??= dir;                       // lib.mjs keys its CDN cache off SNAPS
 const { chromium, routeCdn } = await import('./lib.mjs');
