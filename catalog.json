@@ -20343,6 +20343,71 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "ozone",
+      "name": "Ozone",
+      "url": "https://ozone.pro",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Dark video-product marketing: black page, violet hero frame, blue pill CTA, PolySans display with Inter labels",
+      "tags": [
+        "web",
+        "video",
+        "marketing",
+        "dark",
+        "pill",
+        "archive"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Live ozone.tech does not resolve and ozone.pro returns Framer Site Not Found. Values are computed styles from Wayback replays of the public marketing pages.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/ozone/README.md",
+      "tokens": "systems/ozone/tokens.json",
+      "styleGuide": "systems/ozone/style-guide.html",
+      "preview": {
+        "cover": "systems/ozone/icon.png",
+        "icon": "systems/ozone/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.text-muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display-bulky",
+          "core.font.family.text"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "Framer SSR released 2024-04-29, Wayback capture 20240506015935",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/751",
+        "notes": [
+          "manifest domain ozone.tech is NXDOMAIN and available for registration",
+          "live ozone.pro is a Framer 404 and was not used for tokens",
+          "preview_snapshot failed: the browser is not producing screenshot frames",
+          "login and register on app.ozone.tech were not opened"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot failed twice with 'The browser is not producing screenshot frames'. No screenshot was invented. The cover is icon.png.",
+        "components/": "No crops. There are no page screenshots to cut them from."
+      }
     }
   ]
 }
