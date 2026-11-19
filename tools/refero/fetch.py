@@ -270,6 +270,22 @@ def style_name(result, page):
     return m.group(1).strip() if m else None
 
 
+# The styles columns a fetch writes, in insert order; uuid first. The export
+# columns (variables_css, theme_css, tokens_json, design_system_json,
+# prompt_txt) belong to cmd_export and a refetch keeps them.
+FETCHED_COLUMNS = (
+    "uuid", "slug", "name", "tagline", "page_url", "source_url", "theme",
+    "extracted_at", "fetched_at", "design_md", "result_json", "screenshot_url",
+    "video_url", "video_poster_url", "video_detail_url",
+    "video_detail_poster_url", "media_fetched_at",
+    "product_type", "design_style", "tags",
+    "components_json", "components_at")
+UPSERT_STYLE = (
+    "INSERT INTO styles (" + ", ".join(FETCHED_COLUMNS) + ") VALUES ("
+    + ", ".join("?" * len(FETCHED_COLUMNS)) + ") ON CONFLICT(uuid) DO UPDATE SET "
+    + ", ".join(f"{c}=excluded.{c}" for c in FETCHED_COLUMNS[1:]))
+
+
 def init_db():
     REFERO.mkdir(exist_ok=True)
     WORK.mkdir(exist_ok=True)
@@ -465,15 +481,11 @@ def cmd_fetch(args):
                 write_atomic(cpath, json.dumps(comps, indent=2) + "\n")
             elif cpath.exists():
                 cpath.unlink()
+            # An upsert, not INSERT OR REPLACE: a replace deletes the row
+            # first, so a refetch would NULL the export columns
+            # (variables_css ... prompt_txt) until a later export succeeds.
             db.execute(
-                """INSERT OR REPLACE INTO styles
-                   (uuid, slug, name, tagline, page_url, source_url, theme,
-                    extracted_at, fetched_at, design_md, result_json, screenshot_url,
-                    video_url, video_poster_url, video_detail_url,
-                    video_detail_poster_url, media_fetched_at,
-                    product_type, design_style, tags,
-                    components_json, components_at)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                UPSERT_STYLE,
                 (uuid, slug, name, meta_obj["tagline"], url, meta_obj["source_url"],
                  meta_obj["theme"], meta_obj["extracted_at"], meta_obj["fetched_at"],
                  design_md, json.dumps(result), meta_obj["screenshot_url"],
