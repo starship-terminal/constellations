@@ -102,19 +102,38 @@ def have(comp, state, prop=None):
         return False
 
 
+def layer(comp, node, nth):
+    """The nth painted layer of comp's default reading whose node starts with `node`: the layer is
+    picked by the element that paints it, never by the colour it is expected to have."""
+    hits = [pl["bg"] for pl in C[comp]["states"]["default"]["paint"] if pl.get("bg") and pl.get("node", "").startswith(node)]
+    if len(hits) <= nth:
+        raise StopIteration
+    return hits[nth]
+
+
 def lit(value, ty, src, desc):
     return {"value": norm_color(value) if ty == "color" else value, "type": ty, "source": src, "description": desc}
 
 # ------------------------------------------------------------------- fonts
 
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
-fam["sans"] = lit('"Inter", sans-serif', "fontFamily",
+
+
+def family(comps):
+    """The computed fontFamily stack, verbatim; every cited component must paint the same one."""
+    stacks = {st(c, "default")["fontFamily"] for c in comps}
+    if len(stacks) != 1:
+        raise SystemExit(f"fontFamily differs across {comps}: {sorted(stacks)}")
+    return stacks.pop()
+
+
+fam["sans"] = lit(family(["promo-banner", "hero-demo", "price-card", "footer-link"]), "fontFamily",
     "computed fontFamily of promo-banner, hero-demo, price-card, footer-link (raw/components-computed.json); --font-inter on :root (raw/css-vars.json)",
     "Inter — body copy, CTAs, tiles, footer links and every form control.")
-fam["brand"] = lit('"BagossStandardVF", sans-serif', "fontFamily",
+fam["brand"] = lit(family(["nav-link", "nav-demo", "price-cta", "promo-cta"]), "fontFamily",
     "computed fontFamily of nav-link, nav-demo, price-cta, promo-cta (raw/components-computed.json); --font-bagoss-standard on :root (raw/css-vars.json)",
     "Bagoss Standard VF — the nav items and small pill buttons.")
-fam["display"] = lit('"BagossCondensedFont", sans-serif', "fontFamily",
+fam["display"] = lit(family(["hero-h1", "section-heading", "price-h1", "about-h1", "footer-heading"]), "fontFamily",
     "computed fontFamily of hero-h1, section-heading, price-h1, about-h1, footer-heading (raw/components-computed.json); --font-bagoss-condensed on :root (raw/css-vars.json)",
     "Bagoss Condensed — every display heading, hero 60px to about 160px.")
 
@@ -240,7 +259,7 @@ for key, comp, state, prop, group, desc in [
 # the promo strip's fill is painted on a child, not the measured wrapper —
 # read the painted layer, not the wrapper's text colour.
 try:
-    strip = next(pl["bg"] for pl in C["promo-banner"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(27, 27, 27)")
+    strip = layer("promo-banner", "div.MuiBox-root", 0)
     sem.setdefault("background", {})["promo-strip"] = semcolor("background", "promo-strip", strip,
         "painted background of the promo-banner MuiBox child (raw/components-computed.json)",
         "The #1b1b1b promo strip.")
@@ -250,28 +269,28 @@ except (KeyError, StopIteration):
 # purple hero panel + dark video card + promo strip + sky chip are painted
 # on children, not the measured roots — read them off the paint lists.
 try:
-    purple = next(pl["bg"] for pl in C["hero-block"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(32, 21, 71)")
+    purple = layer("hero-block", "div.w-full", 0)
     sem.setdefault("background", {})["hero-panel"] = semcolor("background", "hero-panel", purple,
         "painted background of the hero panel inside hero-block default (raw/components-computed.json)",
         "The #201547 deep-purple panel behind the home h1 and action tiles.")
 except (KeyError, StopIteration):
     pass
 try:
-    dark = next(pl["bg"] for pl in C["review-band"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(20, 20, 20)")
+    dark = layer("review-band", "div.relative", 0)
     sem.setdefault("background", {})["video-card"] = semcolor("background", "video-card", dark,
         "painted background of the video card inside review-band default (raw/components-computed.json)",
         "The #141414 near-black review video card.")
 except (KeyError, StopIteration):
     pass
 try:
-    chip = next(pl["bg"] for pl in C["promo-banner"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(177, 216, 252)")
+    chip = layer("promo-banner", "div.MuiBox-root", 1)
     sem.setdefault("action", {})["accent-chip"] = semcolor("action", "accent-chip", chip,
         "painted background of the SPECIAL OFFER chip inside promo-banner default (raw/components-computed.json)",
         "The #b1d8fc sky-blue accent — the promo chip and the price-card top strip.")
 except (KeyError, StopIteration):
     pass
 try:
-    tile_bg = next(pl["bg"] for pl in C["hero-tile"]["states"]["default"]["paint"] if pl.get("bg", "").startswith("oklab"))
+    tile_bg = layer("hero-tile", "button.group", 0)
     sem.setdefault("background", {})["tile-glass"] = semcolor("background", "tile-glass", tile_bg,
         "painted oklab background of hero-tile default (raw/components-computed.json)",
         "The 4% white glass fill on the hero action tiles over the purple panel.")
@@ -423,7 +442,7 @@ for name, cname, state, prop, ty_, desc in [
 
 # the promo strip's own fill (the banner root reports colour, not bg)
 try:
-    strip = next(pl["bg"] for pl in C["promo-banner"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(27, 27, 27)")
+    strip = layer("promo-banner", "div.MuiBox-root", 0)
     comp["promo-strip-paint"] = semcolor("component", "promo-strip-paint", strip,
         "painted background of the promo-banner MuiBox child (raw/components-computed.json)",
         "The #1b1b1b fill the 64px promo strip paints.")
@@ -465,6 +484,26 @@ try:
         "The browser's 1px auto outline in #101010/own colour — no custom focus ring is painted.")
 except KeyError:
     pass
+
+# A component the last run could not find keeps its earlier states (measure.mjs marks it
+# recaptureMissed and keeps the first run's page/run/url). Say so on every token read from it,
+# so a kept reading never ships as if the latest run had confirmed it.
+FLAGGED = {k: v["recaptureMissed"] for k, v in C.items() if v.get("recaptureMissed")}
+
+
+def note_flagged(node):
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            for k, run in FLAGGED.items():
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and "recaptureMissed" not in src:
+                    node["source"] = src = (src + f"; {k} was not found by the {run} re-run (recaptureMissed),"
+                                            " so this is the reading kept from the earlier run")
+        for v in node.values():
+            note_flagged(v)
+
+
+note_flagged(SPEC)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 

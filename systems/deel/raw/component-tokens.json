@@ -4,19 +4,19 @@
   "font": {
    "family": {
     "sans": {
-     "value": "\"Inter\", sans-serif",
+     "value": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
      "type": "fontFamily",
      "source": "computed fontFamily of promo-banner, hero-demo, price-card, footer-link (raw/components-computed.json); --font-inter on :root (raw/css-vars.json)",
      "description": "Inter — body copy, CTAs, tiles, footer links and every form control."
     },
     "brand": {
-     "value": "\"BagossStandardVF\", sans-serif",
+     "value": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
      "type": "fontFamily",
      "source": "computed fontFamily of nav-link, nav-demo, price-cta, promo-cta (raw/components-computed.json); --font-bagoss-standard on :root (raw/css-vars.json)",
      "description": "Bagoss Standard VF — the nav items and small pill buttons."
     },
     "display": {
-     "value": "\"BagossCondensedFont\", sans-serif",
+     "value": "BagossCondensedFont, \"BagossCondensedFont Fallback\", Arial, Helvetica, sans-serif",
      "type": "fontFamily",
      "source": "computed fontFamily of hero-h1, section-heading, price-h1, about-h1, footer-heading (raw/components-computed.json); --font-bagoss-condensed on :root (raw/css-vars.json)",
      "description": "Bagoss Condensed — every display heading, hero 60px to about 160px."
@@ -1393,7 +1393,7 @@
    "tile-glass": {
     "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)",
     "type": "color",
-    "source": "painted oklab background of hero-tile default (raw/components-computed.json)",
+    "source": "painted oklab background of hero-tile default (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
     "description": "The 4% white glass fill on the hero action tiles over the purple panel."
    }
   },
@@ -1433,7 +1433,7 @@
    "tile-glass": {
     "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
     "type": "color",
-    "source": "computed borderTopColor of hero-tile default (raw/components-computed.json)",
+    "source": "computed borderTopColor of hero-tile default (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
     "description": "The 10% white hairline on the hero action tiles."
    },
    "hairline": {
@@ -1517,7 +1517,7 @@
   "hero-tile-size": {
    "value": 80,
    "type": "dimension",
-   "source": "computed h of hero-tile default (raw/components-computed.json)",
+   "source": "computed h of hero-tile default (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
    "description": "The 80px hero action tile (181px wide)."
   },
   "hero-demo-width": {
@@ -1861,7 +1861,7 @@
       "outlineOffset": "0px"
      }
     },
-    "source": "computed styles of hero-tile across states (raw/components-computed.json)",
+    "source": "computed styles of hero-tile across states (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
     "description": "Hero tile: 4%-white glass at rest on the purple panel; tracks across hover/pressed/focus."
    },
    "faq-state-track": {
