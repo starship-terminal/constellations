@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "the-weather-channel",
+      "name": "The Weather Channel",
+      "url": "https://weather.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Public weather forecast chrome: left icon rail, pill location chip, segmented day tabs, teal condition hero, hourly strip, unit radios",
+      "tags": [
+        "web",
+        "weather",
+        "forecast",
+        "media",
+        "public",
+        "inter"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public forecast and legal pages; login form was not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/the-weather-channel/README.md",
+      "tokens": "systems/the-weather-channel/tokens.json",
+      "styleGuide": "systems/the-weather-channel/style-guide.html",
+      "preview": {
+        "cover": "systems/the-weather-channel/screenshots/today-light-default.png",
+        "icon": "systems/the-weather-channel/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "weather.com public web, 2026-11-19",
+        "durationMin": 70,
+        "pr": "https://github.com/starship-terminal/constellations/pull/836"
+      },
+      "layoutGaps": {
+          "components/": "Empty crops folder; crops were not cut.",
+          "icons/": "Not kept. Nav icons stay in the screenshots."
+    }
     }
   ]
 }

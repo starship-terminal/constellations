@@ -1,0 +1,376 @@
+{
+  "customProperties": {
+    "color": {
+      "black": "#000000",
+      "white": "#ffffff",
+      "blue": {
+        "100": "#eef4ff",
+        "200": "#d8e6fe",
+        "300": "#aacbff",
+        "400": "#679ced",
+        "500": "#3a61cc",
+        "600": "#204794",
+        "700": "#15336e",
+        "800": "#111e37",
+        "900": "#0d142a"
+      },
+      "brand": {
+        "100": "#cbdef0",
+        "200": "#679ced",
+        "300": "#204794",
+        "400": "#0d142a",
+        "active": "#1b4de4",
+        "dark": "#0d142a",
+        "light": "#3a61cc"
+      },
+      "gray": {
+        "100": "#f2f2f2",
+        "200": "#cdcdcd",
+        "300": "#b1b1b0",
+        "400": "#8d8d8d",
+        "500": "#676767",
+        "600": "#545351",
+        "700": "#474746",
+        "800": "#373735",
+        "900": "#252422"
+      },
+      "green": {
+        "100": "#ecf9f2",
+        "200": "#9ad9a8",
+        "300": "#9ad9a8",
+        "400": "#6dc281",
+        "500": "#47a25d",
+        "600": "#2f784c",
+        "700": "#27503c",
+        "800": "#1f3529",
+        "900": "#0f2414"
+      },
+      "orange": {
+        "100": "#fff3e8",
+        "200": "#ffe6d4",
+        "300": "#ffd5ad",
+        "400": "#faa763",
+        "500": "#eb8532",
+        "600": "#b75e0b",
+        "700": "#a15226",
+        "800": "#714024",
+        "900": "#2f2417"
+      },
+      "red": {
+        "100": "#ffefec",
+        "200": "#ffdfd4",
+        "300": "#fbb495",
+        "400": "#f58b6a",
+        "500": "#e96933",
+        "600": "#cb4a14",
+        "700": "#a63200",
+        "800": "#792d1c",
+        "900": "#371e16"
+      },
+      "teal": {
+        "100": "#ecf7f8",
+        "200": "#bfe2e8",
+        "300": "#93ccd3",
+        "400": "#65b0c3",
+        "500": "#3f95b2",
+        "600": "#007094",
+        "700": "#09567c",
+        "800": "#06344d",
+        "900": "#0e1d25"
+      },
+      "yellow": {
+        "100": "#fffaec",
+        "200": "#ffeec0",
+        "300": "#ffd981",
+        "400": "#f5c551",
+        "500": "#d79d36",
+        "600": "#a06921",
+        "700": "#7e520e",
+        "800": "#52340f",
+        "900": "#281b02"
+      },
+      "alert": {
+        "advisory": "#ffb900",
+        "severe": "#ba0d00",
+        "special": "#935ec3",
+        "warning": "#ff7b0f"
+      }
+    }
+  },
+  "computed": {
+    "page": "https://weather.com/en-SG/sg/central-singapore-community-development-council/locality/downtown-core/today",
+    "captured": "2026-11-19",
+    "viewportLive": {
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "dpr": 2,
+      "visualViewport": {
+        "width": 1169,
+        "height": 731,
+        "scale": 1
+      }
+    },
+    "viewportShots": {
+      "desktop": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 2
+      },
+      "phone": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "dpr": 2
+      }
+    },
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "lab(2.75381 0 0)",
+      "fontFamily": "Inter, \"Inter Fallback\"",
+      "fontSize": "16px",
+      "lineHeight": "24px"
+    },
+    "h1": {
+      "text": "Downtown Core Weather",
+      "fontSize": "24px",
+      "fontWeight": "800",
+      "lineHeight": "27.6px",
+      "letterSpacing": "-0.48px",
+      "color": "rgb(37, 36, 34)"
+    },
+    "place": {
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "18.2px",
+      "letterSpacing": "-0.28px",
+      "color": "rgb(37, 36, 34)"
+    },
+    "sectionTitle": {
+      "fontSize": "20px",
+      "fontWeight": "700",
+      "lineHeight": "23px",
+      "letterSpacing": "-0.4px",
+      "color": "rgb(37, 36, 34)"
+    },
+    "outlookTitle": {
+      "fontSize": "20px",
+      "fontWeight": "900",
+      "lineHeight": "23px",
+      "letterSpacing": "-0.4px"
+    },
+    "hero": {
+      "backgroundColor": "rgb(14, 29, 37)",
+      "borderRadius": "16px",
+      "padding": "24px",
+      "width": 661,
+      "height": 242,
+      "temperature": {
+        "fontSize": "120px",
+        "fontWeight": "800",
+        "lineHeight": "104px",
+        "letterSpacing": "-4.8px",
+        "color": "rgb(255, 255, 255)"
+      },
+      "condition": {
+        "fontSize": "18px",
+        "fontWeight": "700",
+        "lineHeight": "23px",
+        "color": "rgb(255, 255, 255)"
+      }
+    },
+    "navSelected": {
+      "backgroundColor": "rgb(242, 242, 242)",
+      "color": "rgb(58, 97, 204)",
+      "fontWeight": "700",
+      "fontSize": "16px",
+      "height": 56,
+      "padding": "0px 12px",
+      "borderRadius": "16px"
+    },
+    "navIdle": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(37, 36, 34)",
+      "fontWeight": "600",
+      "height": 56,
+      "borderRadius": "16px"
+    },
+    "signInRail": {
+      "backgroundColor": "rgb(37, 36, 34)",
+      "color": "rgb(255, 255, 255)",
+      "fontWeight": "600",
+      "fontSize": "16px",
+      "height": 56,
+      "padding": "0px 12px",
+      "borderRadius": "16px"
+    },
+    "locationChip": {
+      "backgroundColor": "rgb(37, 36, 34)",
+      "color": "rgb(255, 255, 255)",
+      "fontWeight": "700",
+      "fontSize": "14px",
+      "height": 48,
+      "padding": "0px 16px",
+      "borderRadius": "24px"
+    },
+    "tabSelected": {
+      "backgroundColor": "rgb(242, 242, 242)",
+      "color": "rgb(58, 97, 204)",
+      "fontWeight": "700",
+      "fontSize": "14px",
+      "height": 48,
+      "padding": "0px 16px",
+      "borderRadius": "24px"
+    },
+    "tabIdle": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(37, 36, 34)",
+      "fontWeight": "700",
+      "fontSize": "14px",
+      "height": 48,
+      "padding": "0px 16px",
+      "borderRadius": "24px"
+    },
+    "seeDetails": {
+      "backgroundColor": "rgb(13, 20, 42)",
+      "color": "lab(98.26 0 0)",
+      "padding": "12px 16px",
+      "borderRadius": "8px",
+      "fontSize": "16px",
+      "height": 40
+    },
+    "iconButton": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "border": "1px solid oklab(0 0 0 / 0.08)",
+      "borderRadius": "16777200px",
+      "width": 44,
+      "height": 44
+    },
+    "hourCell": {
+      "borderRadius": "12px",
+      "time": {
+        "fontSize": "12px",
+        "fontWeight": "700",
+        "lineHeight": "13.8px",
+        "color": "rgb(37, 36, 34)"
+      },
+      "temp": {
+        "fontSize": "20px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "color": "rgb(37, 36, 34)"
+      }
+    },
+    "dailyRow": {
+      "height": 56,
+      "borderRadius": "16px"
+    },
+    "link": {
+      "color": "rgb(58, 97, 204)",
+      "example": "Improve location precision",
+      "fontSize": "14px",
+      "fontWeight": "500"
+    },
+    "muted": {
+      "color": "rgb(103, 103, 103)",
+      "example": "As of 2:52 am SGT",
+      "fontSize": "14px",
+      "fontWeight": "500"
+    },
+    "sunrise": {
+      "color": "rgb(203, 74, 20)"
+    },
+    "tealText": {
+      "color": "rgb(0, 126, 168)"
+    },
+    "precip": {
+      "color": "rgb(63, 149, 178)"
+    },
+    "focus": {
+      "outline": "oklab(0.707999 0 0 / 0.5) none 1px",
+      "outlineOffset": "1px",
+      "element": "Sign in link after focus()"
+    },
+    "settingsPanel": {
+      "role": "dialog",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "width": 340,
+      "shadow": "rgba(0, 0, 0, 0.08) 8px 0px 30px 0px",
+      "radioSelected": {
+        "backgroundColor": "rgb(37, 36, 34)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "height": 26,
+        "padding": "4px 10px",
+        "borderRadius": "16777200px",
+        "ariaChecked": "true"
+      },
+      "radioIdle": {
+        "color": "rgb(84, 83, 81)",
+        "fontWeight": "500",
+        "fontSize": "12px"
+      },
+      "close": {
+        "backgroundColor": "rgb(242, 242, 242)",
+        "width": 32,
+        "height": 32,
+        "borderRadius": "16777200px"
+      }
+    },
+    "searchOpen": {
+      "placeholder": "Search for a location",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "border": "2px solid rgb(58, 97, 204)",
+      "borderRadius": "24px",
+      "height": 48,
+      "fontSize": "14px",
+      "padding": "4px 40px 4px 38px",
+      "fontFamily": "Inter"
+    },
+    "loginField": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "border": "2px solid rgba(0, 0, 0, 0)",
+      "borderRadius": "5px",
+      "height": 60,
+      "padding": "18px 40px 0px 7px",
+      "fontSize": "16px",
+      "labelColor": "rgb(111, 117, 133)"
+    },
+    "loginSubmitDisabled": {
+      "backgroundColor": "rgb(84, 83, 81)",
+      "color": "rgb(205, 205, 205)",
+      "borderRadius": "8px",
+      "height": 41,
+      "padding": "10px 16px",
+      "fontSize": "14px",
+      "fontWeight": "500"
+    },
+    "loginSearch": {
+      "backgroundColor": "rgb(242, 242, 242)",
+      "borderRadius": "8px",
+      "height": 48,
+      "placeholder": "Search City or Postcode"
+    },
+    "motion": {
+      "transition": "color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+      "defaultDuration": "0.15s",
+      "defaultEasing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+      "reducedMotionRulesPresent": true
+    },
+    "shadowsObserved": [
+      "rgba(0, 0, 0, 0.2) 0px 5px 10px 0px"
+    ],
+    "radiiObserved": [
+      "4px",
+      "6px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "28px",
+      "32px",
+      "pill"
+    ],
+    "previewScreenshotFrames": "The T3 preview browser returned 'The browser is not producing screenshot frames' on preview_snapshot. Measurements above were read with preview_evaluate on the attached page. Screenshots were taken with headless Playwright after the same public URL returned 200 with no Cloudflare challenge."
+  }
+}
