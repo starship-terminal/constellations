@@ -544,11 +544,13 @@ def scan(folder: Path, redact: dict) -> list[str]:
     return hits
 
 
-def find(words: list[str]) -> list[dict]:
+def find(words: list[str], catalog: dict | None = None) -> list[dict]:
     """Packages ranked by how many query words they match; a tag hit outranks a name hit,
     which outranks a goodFor/category/theme hit. Substring matching means "ios" can live
-    inside a slug like acnestudios, so name and tag hits are scored separately."""
-    catalog = load_catalog()
+    inside a slug like acnestudios, so name and tag hits are scored separately. `catalog`
+    is an already-parsed catalog.json (server/library.py passes its cached copy); omitted,
+    the file is read."""
+    catalog = load_catalog() if catalog is None else catalog
     ranked = []
     for s in catalog["systems"]:
         name = " ".join([s["slug"], s["name"]]).lower()
