@@ -509,8 +509,8 @@ PROBE_DOMAINS = ("m4qz8wr2.com", "x9v2k7.org", "pz3n8q.io", "w7k2j9.co", "kq8z3v
 def allow_entry_problem(entry):
     """Why a package rules file's ocr.email_allow entry is refused, or None. An entry must pin a domain
     (`@vendor\\.com$`, a whole address, or a `\\.example$` label suffix): it may not pass every address
-    (`.*`), every address at a free-mail domain (`@gmail\\.com$`), or a local part at any domain
-    (`name@`, `^assistant@`). The private patterns file is the owner's and is not held to this."""
+    (`.*`), more than one mailbox at a free-mail domain (`@gmail\\.com$`, `^[a-z]+@gmail\\.com$`), or a
+    local part at any domain (`name@`, `^assistant@`). The private patterns file is the owner's and is not held to this."""
     if not isinstance(entry, str):
         return "is not a string"
     try:
@@ -519,9 +519,16 @@ def allow_entry_problem(entry):
         return f"is not a valid regex ({e})"
     if any(email_allowed(f"{lp}@{d}", [entry]) for lp in PROBE_LOCALS for d in PROBE_DOMAINS):
         return "passes any address"
+    # At a free-mail domain an entry may pass one fixed mailbox, never two: the probes plus local
+    # parts drawn from the entry itself, read two ways (a letters-only class like [a-z]+ yields
+    # both "a" and "zz"), so a pattern over the local part is caught whatever characters it allows.
+    locals_ = set(PROBE_LOCALS) | {"qzkvxwmj"} | {
+        smp.partition("@")[0] for picks, extra in ((_CLASS_PICKS, 0), (_CLASS_PICKS_ALT, 1))
+        for smp in _regex_samples(entry, picks=picks, extra=extra) if "@" in smp}
+    locals_.discard("")
     for d in FREE_MAIL:
-        if any(email_allowed(f"{lp}@{d}", [entry]) for lp in PROBE_LOCALS):
-            return f"passes every address at the free-mail domain {d}: list the exact address"
+        if len({lp for lp in locals_ if email_allowed(f"{lp}@{d}", [entry])}) > 1:
+            return f"passes more than one address at the free-mail domain {d}: list the exact address"
     if "@" not in entry:
         if not entry.startswith("\\."):
             return "names no domain: write @domain or the whole address"
@@ -536,6 +543,7 @@ def allow_entry_problem(entry):
 
 
 _CLASS_PICKS = "a0.-_xZ@ "
+_CLASS_PICKS_ALT = "z9_-.qA@ "
 
 
 def _in_class(ch, items):
@@ -554,10 +562,11 @@ def _in_class(ch, items):
     return hit != neg
 
 
-def _regex_samples(entry, cap=64):
+def _regex_samples(entry, cap=64, picks=_CLASS_PICKS, extra=0):
     """Strings the regex matches: one per combination of its alternatives (at most cap), each repeat
-    taken once and each character class by a plain member. So a grouped or alternated local part,
-    `^(assistant)@...`, is tried the way the matcher reads it rather than as written."""
+    taken its minimum (at least once) plus `extra` times where the bound allows, and each character
+    class by its first member in `picks`. So a grouped or alternated local part, `^(assistant)@...`,
+    is tried the way the matcher reads it rather than as written."""
     P = _re_parser
 
     def seq(items):
@@ -570,16 +579,18 @@ def _regex_samples(entry, cap=64):
         if op is P.LITERAL:
             return [chr(av)]
         if op in (P.NOT_LITERAL, P.ANY):
-            return ["a" if av != ord("a") else "b"] if op is P.NOT_LITERAL else ["a"]
+            c = picks[0]
+            return [c if op is P.ANY or av != ord(c) else "b"]
         if op is P.IN:
-            return [next((c for c in _CLASS_PICKS if _in_class(c, av)), "a")]
+            return [next((c for c in picks if _in_class(c, av)), None)
+                    or next((chr(i) for i in range(33, 127) if _in_class(chr(i), av)), "a")]
         if op is P.BRANCH:
             return [x for b in av[1] for x in seq(b)][:cap]
         if op is P.SUBPATTERN:
             return seq(av[-1])
         if op in (P.MAX_REPEAT, P.MIN_REPEAT, getattr(P, "POSSESSIVE_REPEAT", None)):
             lo, hi, sub = av
-            n = max(lo, 1) if hi else 0
+            n = min(max(lo, 1) + extra, hi) if hi else 0
             return [x * n for x in seq(sub)]
         if op is getattr(P, "ATOMIC_GROUP", None):
             return seq(av)
