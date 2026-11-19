@@ -163,9 +163,15 @@ const classify = (baseMs, reducedMs) => {
 // An animation paused under reduce is stopped, whatever its duration says.
 const stopped = (a) => a.playState === 'paused';
 
+// A zero duration is still a transition when its delay is not (a tooltip that turns visibility on after
+// 300ms with duration 0); removing it requires the delay to go away too.
+const transitionStopped = (t) => t.durationMs <= NEGLIGIBLE_MS && t.delayMs <= NEGLIGIBLE_MS;
+
 // What prefers-reduced-motion: reduce did to one element's motion. Items are matched by property
 // (transitions) or name (animations). Each is removed, shortened (both are reductions), kept, changed (the
-// same length with another easing or delay), increased (longer) or added (not there before). An animation
+// same length with another easing or delay), increased (longer) or added (not there before). Duration is
+// not enough: an unchanged delay on a zero-duration transition is kept, and a delay that shrinks while
+// the duration stays is shortened. An animation
 // that still runs forever after reduce, replacements included, is flagged `loops`. The element's outcome:
 // none (no motion either way); removed or reduced (every item is a reduction); kept (nothing was
 // reduced, nothing got worse); increased (nothing was reduced and something grew or was added); partial
@@ -176,9 +182,16 @@ export function diffMotion(base, reduced) {
   const reducedA = new Map((reduced?.animations || []).map((a) => [a.name, a]));
   for (const t of base?.transitions || []) {
     const r = reducedT.get(t.property);
-    let outcome = r ? classify(t.durationMs, r.durationMs) : 'removed';
+    let outcome = !r || transitionStopped(r) ? 'removed' : classify(t.durationMs, r.durationMs);
+    // classify() looks at duration only, so a zero-duration transition whose delay did not change would be removed.
+    // When the base also had no real duration, the delay is the motion and decides; when the base ran
+    // for a while and reduce left only the delay, the transition was shortened (300ms + 300ms to 0 + 300ms).
+    if (r && !transitionStopped(r) && outcome === 'removed' && r.delayMs > NEGLIGIBLE_MS) {
+      if (t.durationMs > NEGLIGIBLE_MS) outcome = 'shortened';
+      else outcome = r.delayMs < t.delayMs ? 'shortened' : r.delayMs === t.delayMs ? 'kept' : 'increased';
+    }
     if (outcome === 'kept' && (r.easing !== t.easing || r.delayMs !== t.delayMs)) outcome = 'changed';
-    items.push({ kind: 'transition', key: t.property, outcome, from: t.durationMs, to: r ? r.durationMs : 0 });
+    items.push({ kind: 'transition', key: t.property, outcome, from: t.durationMs, to: r && !transitionStopped(r) ? r.durationMs : 0 });
     reducedT.delete(t.property);
   }
   for (const a of base?.animations || []) {
@@ -192,10 +205,18 @@ export function diffMotion(base, reduced) {
   }
   if (base?.scrollBehavior) items.push({ kind: 'scroll', key: 'scroll-behavior', outcome: reduced?.scrollBehavior ? 'kept' : 'removed' });
   else if (reduced?.scrollBehavior) items.push({ kind: 'scroll', key: 'scroll-behavior', outcome: 'added' });
-  for (const t of reducedT.values()) items.push({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs });
+  // An unmatched entry under reduce counts as added motion only when it is real motion: the common
+  // reset (`transition: all 0.01ms`, a 0.01ms animation, a paused one) exists so animationend still
+  // fires, and NEGLIGIBLE_MS already defines it as no motion. An unreadable duration (var()
+  // unresolved, kept as durationRaw) cannot be called negligible, so it still counts.
+  for (const t of reducedT.values()) {
+    if (!t.durationRaw && transitionStopped(t)) continue;   // a delayed zero-duration one still moves
+    items.push({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs });
+  }
   for (const a of reducedA.values()) {
+    if (stopped(a) || (!a.durationRaw && a.durationMs <= NEGLIGIBLE_MS)) continue;
     const item = { kind: 'animation', key: a.name, outcome: 'added', from: 0, to: a.durationMs };
-    if (!stopped(a) && a.iterationCount === 'infinite') item.loops = true;
+    if (a.iterationCount === 'infinite') item.loops = true;
     items.push(item);
   }
   const REDUCING = new Set(['removed', 'shortened']);
@@ -230,20 +251,25 @@ export function groupRecords(records, examples = 3) {
 }
 
 // Counts per outcome and the page's overall behaviour under reduce: no-motion, honours (every moving
-// element is removed or reduced; more motion never counts), ignores (every one is kept) or partial. `loops` names the animations
-// that keep looping, the case reduced motion exists for.
+// element is removed or reduced, and nothing new starts), ignores (every one is kept) or partial.
+// `added` is motion too: a page that only starts an animation under reduce is not no-motion, and a
+// page that stops one animation while starting another does not honour the preference.
+// `loops` names the animations that keep looping, the case reduced motion exists for.
 export function summarise(groups) {
   const counts = { removed: 0, reduced: 0, kept: 0, partial: 0, increased: 0, added: 0 };
   const loops = new Set();
   let moving = 0;
   for (const g of groups) {
     counts[g.outcome] = (counts[g.outcome] || 0) + g.count;
-    if (g.outcome !== 'added') moving += g.count;
+    // A replacement (old animation removed, new one added) is outcome partial, so the added item has to
+    // be counted on its own or the new motion disappears.
+    if (g.outcome !== 'added' && g.items.some((i) => i.outcome === 'added')) counts.added += g.count;
+    moving += g.count;
     for (const i of g.items) if (i.loops) loops.add(i.key);
   }
   let behaviour;
   if (!moving) behaviour = 'no-motion';
-  else if (!counts.kept && !counts.partial && !counts.increased) behaviour = 'honours';
+  else if (!counts.kept && !counts.partial && !counts.increased && !counts.added) behaviour = 'honours';
   else if (counts.kept === moving) behaviour = 'ignores';
   else behaviour = 'partial';
   return { moving, ...counts, behaviour, loops: [...loops].sort() };
@@ -257,7 +283,7 @@ export function mergeSummaries(list) {
     for (const k of Object.keys(total)) total[k] += s[k] || 0;
     for (const l of s.loops || []) loops.add(l);
   }
-  const behaviour = !total.moving ? 'no-motion' : !total.kept && !total.partial && !total.increased ? 'honours' : total.kept === total.moving ? 'ignores' : 'partial';
+  const behaviour = !total.moving ? 'no-motion' : !total.kept && !total.partial && !total.increased && !total.added ? 'honours' : total.kept === total.moving ? 'ignores' : 'partial';
   return { ...total, behaviour, loops: [...loops].sort() };
 }
 

@@ -125,6 +125,57 @@ test('diffMotion: partial, none and added', () => {
   assert.equal(diffMotion({ transitions: [], animations: [], scrollBehavior: 'smooth' }, motionOf({})).outcome, 'removed');
 });
 
+test('a negligible unmatched entry under reduce is not added motion', () => {
+  // The reset a reduced-motion stylesheet paints — `transition: all 0.01ms`
+  // (so animationend still fires), a 0.01ms animation, a paused one — must
+  // not count as added motion (one product's pulse groups read 'partial'
+  // only because of it). An element whose motion fully stops reads 'removed'.
+  const reset = motionOf({ transitionProperty: 'all', transitionDuration: '0.01ms' });
+  assert.equal(diffMotion(base, reset).outcome, 'removed');
+  assert.deepEqual(diffMotion(base, reset).items.map((i) => i.outcome), ['removed', 'removed', 'removed']);
+  const withReset = structuredClone(base);
+  withReset.transitions.push({ property: 'all', durationMs: 0.01, delayMs: 0, easing: 'ease' });
+  assert.equal(diffMotion(base, withReset).outcome, 'kept');
+  const still = motionOf({ animationName: 'none', animationPlayState: 'paused', transitionProperty: 'all', transitionDuration: '0.01ms' });
+  still.animations = [{ name: 'other', durationMs: 0.01, delayMs: 0, easing: 'ease', iterationCount: '1', direction: 'normal', fillMode: 'none', playState: 'running' }];
+  assert.equal(diffMotion(base, still).outcome, 'removed');
+  // a paused animation under reduce is stopped whatever its duration, so it adds no motion either
+  const paused = motionOf({});
+  paused.animations = [{ name: 'pulse-reduced', durationMs: 2000, delayMs: 0, easing: 'ease', iterationCount: 'infinite', direction: 'normal', fillMode: 'none', playState: 'paused' }];
+  assert.deepEqual(diffMotion(motionOf({}), paused).items, []);
+  assert.equal(diffMotion(base, paused).outcome, 'removed');
+  // an unreadable duration on an unmatched property is not provably
+  // negligible: it still counts as added motion
+  const raw = motionOf({ transitionProperty: 'color', transitionDuration: 'var(--d)' });
+  const rd = diffMotion(base, raw);
+  assert.equal(rd.outcome, 'partial');
+  assert.equal(rd.items.find((i) => i.key === 'color').outcome, 'added');
+});
+
+test('an unchanged delay is kept, including a zero-duration visibility delay', () => {
+  // a tooltip whose visibility changes after 300ms with duration 0, in both modes
+  const tip = motionOf({ transitionProperty: 'opacity, visibility', transitionDuration: '300ms, 0s', transitionTimingFunction: 'ease, linear', transitionDelay: '0s, 300ms' });
+  const d = diffMotion(tip, tip);
+  assert.deepEqual(d.items.map((i) => [i.key, i.outcome]), [['opacity', 'kept'], ['visibility', 'kept']]);
+  assert.equal(d.outcome, 'kept');
+  const dropped = motionOf({ transitionProperty: 'opacity, visibility', transitionDuration: '300ms, 0s', transitionTimingFunction: 'ease, linear', transitionDelay: '0s, 0s' });
+  assert.equal(diffMotion(tip, dropped).items.find((i) => i.key === 'visibility').outcome, 'removed');
+  const sooner = structuredClone(tip);
+  sooner.transitions.find((t) => t.property === 'visibility').delayMs = 50;
+  assert.equal(diffMotion(tip, sooner).items.find((i) => i.key === 'visibility').outcome, 'shortened');
+  // a 300ms transition whose duration reduce takes to 0 while its 300ms delay stays was shortened, not kept
+  const fade = motionOf({ transitionProperty: 'opacity', transitionDuration: '300ms', transitionDelay: '300ms' });
+  const waitOnly = motionOf({ transitionProperty: 'opacity', transitionDuration: '0s', transitionDelay: '300ms' });
+  assert.equal(diffMotion(fade, waitOnly).items[0].outcome, 'shortened');
+  assert.equal(summarise(groupRecords([{ node: 'a', base: fade, reduced: waitOnly }])).behaviour, 'honours');
+});
+
+test('a delayed zero-duration transition that appears only under reduce is added motion', () => {
+  // the reset rule is skipped as no motion, but a zero duration with a real delay still moves
+  const delayed = motionOf({ transitionProperty: 'visibility', transitionDuration: '0s', transitionDelay: '300ms' });
+  assert.equal(diffMotion(motionOf({}), delayed).items[0].outcome, 'added');
+});
+
 test('groupRecords folds equal motion into one group, in a stable order', () => {
   const recs = [
     { node: 'button.btn', base, reduced: motionOf({}) },
@@ -148,6 +199,23 @@ test('summarise and mergeSummaries name the page behaviour', () => {
   assert.equal(mergeSummaries([summarise(kept), summarise(gone)]).behaviour, 'partial');
   assert.equal(mergeSummaries([summarise(gone), summarise(gone)]).behaviour, 'honours');
   assert.equal(mergeSummaries([]).behaviour, 'no-motion');
+  // motion that only appears under reduce is still motion
+  const onlyAdded = groupRecords([{ node: 'a', base: motionOf({}), reduced: motionOf({ animationName: 'pulse', animationDuration: '1s', animationIterationCount: 'infinite' }) }]);
+  assert.equal(onlyAdded[0].outcome, 'added');
+  const onlyAddedSummary = summarise(onlyAdded);
+  assert.equal(onlyAddedSummary.behaviour, 'partial');
+  assert.equal(onlyAddedSummary.moving, 1);
+  assert.equal(onlyAddedSummary.added, 1);
+  assert.equal(onlyAddedSummary.removed, 0);
+  assert.deepEqual(summarise(onlyAdded).loops, ['pulse']);
+  // stopping one animation and starting another does not honour the preference
+  const spin = motionOf({ animationName: 'spin', animationDuration: '1s', animationIterationCount: 'infinite' });
+  const pulse = motionOf({ animationName: 'pulse', animationDuration: '1s', animationIterationCount: 'infinite' });
+  const swapped = summarise(groupRecords([{ node: 'a', base: spin, reduced: pulse }]));
+  assert.equal(swapped.behaviour, 'partial');
+  assert.notEqual(swapped.behaviour, 'honours');
+  assert.equal(swapped.added, 1);
+  assert.equal(mergeSummaries([summarise(onlyAdded)]).behaviour, 'partial');
 });
 
 test('declaredOf records only what the rule authors', () => {
