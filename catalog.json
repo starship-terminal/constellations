@@ -19751,6 +19751,63 @@
         "durationMin": 40,
         "version": "wiza.co public marketing, Webflow shared CSS wiza-dev.webflow.shared.5a7165800.min.css, measured 2026-11-19"
       }
+    },
+{
+      "slug": "whereby",
+      "name": "Whereby",
+      "url": "https://whereby.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Video-call marketing: blush hero, indigo 12px buttons, condensed display type at weight 400, grey pricing page with white plan cards",
+      "tags": [
+        "web",
+        "video",
+        "saas",
+        "marketing",
+        "pricing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the login form; the email was focused and not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/whereby/README.md",
+      "tokens": "systems/whereby/tokens.json",
+      "styleGuide": "systems/whereby/style-guide.html",
+      "preview": {
+        "cover": "systems/whereby/screenshots/home-light-default.png",
+        "icon": "systems/whereby/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.inter"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public-2026-11-19",
+        "route": "public-web",
+        "durationMin": 70
+      },
+      "layoutGaps": {
+        "icons/": "Inline SVGs and the wordmark were on the page but were not extracted. icon.png is the site icon."
+      }
     }
   ]
 }
