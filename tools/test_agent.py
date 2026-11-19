@@ -19,6 +19,19 @@ def _load(name, path):
 library = _load("agent_library", "library.py")
 chat = _load("agent_chat", "chat.py")
 
+# The tests stand up providers on loopback and name invented *.test hosts;
+# list them, as an owner with a self-hosted model would. ProviderHostTest
+# checks the unlisted defaults.
+_HOSTS = mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_PROVIDER_HOSTS": "x.test,p.test,127.0.0.1,localhost,::1"})
+
+
+def setUpModule():
+    _HOSTS.start()
+
+
+def tearDownModule():
+    _HOSTS.stop()
+
 
 class SearchTest(unittest.TestCase):
     def test_systems_hits(self):
@@ -489,6 +502,53 @@ class ProviderUrlTest(unittest.TestCase):
         self.assertFalse(out["ok"])
         self.assertIn("origin", out["error"])
         self.assertEqual(self.hits.count("/models"), 0)
+
+
+class ProviderHostTest(unittest.TestCase):
+    """A provider URL comes from the request body and is fetched server-side
+    with the key, so only known model APIs and listed hosts may be named."""
+
+    def _allowed(self, url, listed=""):
+        with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_PROVIDER_HOSTS": listed}):
+            try:
+                chat.check_url(url)
+                return True
+            except chat.ProviderError as e:
+                if "not allowed" in str(e):
+                    self.assertIn("DESIGN_SYSTEMS_PROVIDER_HOSTS", str(e))
+                return False
+
+    def test_known_provider_apis_pass_unlisted(self):
+        for url in ("https://api.anthropic.com/v1/models", "https://api.openai.com/v1/models",
+                    "https://generativelanguage.googleapis.com/v1beta/openai/models",
+                    "https://api.x.ai/v1/models", "https://openrouter.ai/api/v1/models",
+                    "https://my-res.openai.azure.com/openai/models", "https://API.OPENAI.COM./v1"):
+            self.assertTrue(self._allowed(url), url)
+
+    def test_internal_hosts_are_refused_unlisted(self):
+        for url in ("https://intranet.corp.test/models", "https://10.0.0.5/models",
+                    "https://169.254.169.254/latest/meta-data", "https://127.0.0.1:8443/models",
+                    "https://localhost/models", "http://127.0.0.1:11434/v1/models",
+                    "http://[::1]:8000/models", "https://evilopenai.com/v1",
+                    "https://openai.com.evil.test/v1"):
+            self.assertFalse(self._allowed(url), url)
+
+    def test_listed_hosts_opt_in(self):
+        listed = "models.corp.test, 127.0.0.1,[::1]"
+        self.assertTrue(self._allowed("https://models.corp.test/v1", listed))
+        self.assertTrue(self._allowed("https://eu.models.corp.test/v1", listed))
+        self.assertTrue(self._allowed("http://127.0.0.1:11434/v1/models", listed))
+        self.assertTrue(self._allowed("http://[::1]:8000/models", listed))
+        # A listed IP covers itself only, and listing never allows plain http off-box.
+        self.assertFalse(self._allowed("http://models.corp.test/v1", listed))
+        self.assertFalse(self._allowed("http://127.0.0.2/v1", listed))
+
+    def test_refused_host_is_never_fetched(self):
+        with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_PROVIDER_HOSTS": ""}), \
+                mock.patch.object(chat._opener, "open", side_effect=AssertionError("fetched")):
+            out = chat.list_models({"api": "openai", "api_key": "k", "base_url": "https://10.1.2.3/v1"})
+        self.assertFalse(out["ok"])
+        self.assertIn("not allowed", out["error"])
 
 
 class InstallScriptHostTest(unittest.TestCase):
