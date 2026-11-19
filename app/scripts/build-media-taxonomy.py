@@ -255,18 +255,23 @@ def base_slugs() -> set[str] | None:
 
 
 def _base_tree_files() -> set[str] | None:
-    """Paths in the pull request base. None when the base tree is unreadable."""
+    """Paths in the pull request base. None when the base tree is unreadable.
+
+    `-z` keeps names that contain quotes, backslashes, or non-ASCII
+    characters. Without it git quotes those names, and a capture such as
+    café-dark.png looks newly added."""
     base = os.environ.get("GITHUB_BASE_REF")
     if not base:
         return None
     try:
         listed = subprocess.run(
-            ["git", "ls-tree", "-r", "--name-only", f"origin/{base}"],
-            cwd=ROOT, check=True, capture_output=True, text=True,
-        ).stdout.splitlines()
+            ["git", "ls-tree", "-r", "-z", "--name-only", f"origin/{base}"],
+            cwd=ROOT, check=True, capture_output=True,
+        ).stdout
     except (OSError, subprocess.CalledProcessError):
         return None
-    return set(listed)
+    return {path.decode("utf-8", "surrogateescape")
+            for path in listed.split(b"\0") if path}
 
 
 def matches_base(result: dict, committed: dict) -> bool:
