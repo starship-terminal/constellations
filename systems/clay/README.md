@@ -70,7 +70,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 Not graded yet: no scorecard snapshot reviews this package. Review it against [scorecard/criteria.json](../../scorecard/criteria.json) in the wording for its platform (`python3 tools/grade.py --criteria clay` prints it) and merge the grades with `python3 tools/grade.py --write --review clay=<grades.json>`.
 
-Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (No standalone SVG icon set was lifted. The wordmark and control glyphs stay in the screenshots and crops.).
+Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (No standalone SVG icon set was lifted. The wordmark and control glyphs stay in the screenshots and crops).
 
 <!-- health:end -->
 
