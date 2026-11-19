@@ -254,7 +254,8 @@ def main():
 
     db = sqlite3.connect(DB)
     db.execute("PRAGMA busy_timeout=30000")
-    db.executescript(SCHEMA)
+    if not args.limit:  # a dry run leaves the db exactly as it was
+        db.executescript(SCHEMA)
     slug_of = {u: s for u, s in db.execute("SELECT uuid, slug FROM styles")}
 
     collections, skipped, total_styles = [], [], 0

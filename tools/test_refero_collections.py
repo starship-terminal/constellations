@@ -100,6 +100,18 @@ class CollectionsStoreTest(unittest.TestCase):
         self.assertEqual(self.out.read_text(), before)
         self.assertEqual(self.refresh.call_count, 1)
 
+    def test_a_dry_run_on_a_fresh_db_creates_no_tables(self):
+        code, _ = self.run_main("--limit", "1")
+        self.assertIsNone(code)
+        db = sqlite3.connect(self.db_path)
+        try:
+            tables = [r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")]
+        finally:
+            db.close()
+        self.assertEqual(tables, ["styles"])
+        self.assertFalse(self.out.exists())
+        self.refresh.assert_not_called()
+
     def test_an_empty_sitemap_writes_nothing(self):
         code, _ = self.run_main(urls=())
         self.assertIn("no collection pages", code)
