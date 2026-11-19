@@ -20343,6 +20343,61 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "the-new-york-times",
+      "name": "The New York Times",
+      "url": "https://www.nytimes.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "News subscription marketing and signed-out article chrome: black Cheltenham headlines, Franklin UI, a blue masthead Subscribe and Log in, an ink Continue button, and a white email login.",
+      "tags": [
+        "web",
+        "media",
+        "news",
+        "subscription",
+        "signed-out",
+        "editorial"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (homepage, public subscription offer, and email login chrome; no account, no card, no checkout)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/the-new-york-times/README.md",
+      "tokens": "systems/the-new-york-times/tokens.json",
+      "styleGuide": "systems/the-new-york-times/style-guide.html",
+      "preview": {
+        "cover": "systems/the-new-york-times/screenshots/home-light-unavailable.png",
+        "icon": "systems/the-new-york-times/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.cheltenham",
+          "core.font.family.franklin"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "nytimes.com 2026-11-19",
+        "route": "public-web",
+        "pr": "https://github.com/starship-terminal/constellations/pull/848",
+        "durationMin": 45
+      }
     }
   ]
 }
