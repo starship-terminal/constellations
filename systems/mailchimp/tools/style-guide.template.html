@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mailchimp style guide</title>
+<meta name="description" content="Mailchimp design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "Graphik Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-serif: "Means Web", Georgia, Times, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #231e15); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.05 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.03em; color: var(--text-primary, #231e15); }
+h2.sh { font: 700 12px/1 var(--sg-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted, #666c77); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
+.lead { max-width: 62ch; color: var(--text-body, #20232b); opacity: .85; }
+.note { font-size: 13px; color: var(--text-muted, #666c77); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 700 11px/1 var(--sg-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #666c77); opacity: .75; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-input, #dfdfe4); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #666c77); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-input, #dfdfe4); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, #666c77); }
+/* ---- toggle ---- */
+.mode { display: inline-flex; align-items: center; gap: 10px; font: 500 13px/1 var(--sg-sans); color: var(--text-muted, #666c77); user-select: none; cursor: pointer; }
+.mode input { position: absolute; opacity: 0; }
+.mode .trk { width: 36px; height: 20px; border-radius: 9999px; background: var(--background-card, #f6f6f8); border: 1px solid var(--border-input, #dfdfe4); position: relative; transition: background .15s; }
+.mode .trk::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--action-fill, #ffe01b); transition: transform .15s; }
+.mode input:checked + .trk::after { transform: translateX(16px); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-input, #dfdfe4); border-radius: var(--radius-card, 16px); overflow: hidden; background: var(--background-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 68px; padding: 0 22px; font-size: 13px; font-weight: 700; color: var(--text-primary, #231e15); background: #fff; }
+.navbar .wm { font-weight: 700; font-size: 18px; letter-spacing: -0.03em; color: var(--text-primary, #231e15); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 16px; font-size: 13px; font-weight: 700; border-radius: var(--radius-cta, 32px); border: 1px solid var(--border-cta, #231e15); }
+.btn.primary { background: var(--action-fill, #ffe01b); color: var(--action-text, #231e15); }
+.btn.ghost { background: transparent; color: var(--text-primary, #231e15); }
+.hero { color: #fff; padding: 56px 40px 64px; font: 400 64px/1.2 var(--sg-serif); letter-spacing: -1.2px; text-align: center; background: var(--text-primary, #231e15); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); letter-spacing: 0; color: #fff; margin: 16px auto 22px; max-width: 46ch; }
+/* ---- sign-in card mock (login.mailchimp.com, a separate Graphik card) ---- */
+.auth { display: flex; justify-content: center; padding: 44px 20px; background: #f6f6f4; }
+.acard { width: min(422px, 100%); background: #fff; border: 1px solid #e6e6e4; border-radius: 8px; padding: 28px 24px 24px; font-family: var(--sg-sans); }
+.acard h3 { font: 500 20px/1.3 var(--sg-sans); color: #21262a; margin: 0 0 16px; text-align: center; }
+.acard .field { height: 46px; border-radius: 4px; border: 1px solid #017e89; background: #fff; margin-bottom: 12px; display: flex; align-items: center; padding: 0 14px; font-size: 17px; color: #8b8b8b; }
+.acard .go { height: 36px; border-radius: 4px; background: #017e89; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 14px; margin-top: 4px; }
+.acard .forgot { text-align: center; margin-top: 14px; font-size: 14px; font-weight: 500; color: #017e89; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-input, #dfdfe4); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-muted, #666c77); font-family: var(--sg-mono); }
+.pill-nav { display: inline-flex; background: var(--background-page, #fff); border: 1px solid var(--border-tab, #d8dbe2); border-radius: 9999px; padding: 4px; gap: 4px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-gray, #757b86); }
+.pill-nav span { padding: 8px 20px; border-radius: 9999px; }
+.pill-nav .on { background: var(--action-selectedBg, #3347fb); color: #fff; }
+.tabrow { display: inline-flex; gap: 8px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; }
+.tabrow span { height: 30px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 9999px; border: 1px dashed var(--border-tab, #d8dbe2); background: var(--background-page, #fff); color: var(--text-gray, #757b86); }
+.tabrow .on { border: 1px solid var(--action-selectedBorder, #84a1ff); background: var(--background-selectedTint, #eef2ff); color: var(--action-selectedInk, #5a84ff); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mailchimp style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.
+  <label class="mode" style="float:right;margin-top:-34px"><input type="checkbox" id="theme"><span class="trk"></span>Dark</label></p>
+
+  <h2 class="sh">Mailchimp, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the Plums/CXP roles (<code>--cta-background-color</code> yellow, <code>--cta-text-color</code> caviar, the copy sizes, the spacing steps, the CTA radius). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from mailchimp.com on 2026-11-18, signed out, in headless Chromium. The marketing site ships light only. The Dark toggle switches the roles panel to the dark set, which is empty on purpose. Means Web and Graphik Web are served faces and are not loaded here: samples fall back to system fonts. login.mailchimp.com is a separate Graphik Web card measured as a boundary. Signup was not started.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A caviar announcement strip sits above a white header. The header carries the wordmark, Industries and Solutions, Integrations and Resources, then Pricing, an outlined Log In, and a yellow Start Free Trial pill. The home hero is a dark band with a white Means Web headline.</p>
+  <div class="mock" style="padding:0">
+    <div style="background:var(--text-primary,#231e15);color:#fff;text-align:center;font-size:13px;padding:12px">Join Mailchimp with a free 14-day trial. Start today.</div>
+    <div class="navbar"><span class="wm">Mailchimp</span><span>Resources</span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Log In</span><span class="btn primary">Start Free Trial</span></div>
+    <div class="hero">Turn ideas into<br>emails that connect.<small>The home masthead, measured at 64px Means Web on the dark band.</small><span class="btn primary">Start Free Trial</span></div>
+  </div>
+
+  <h2 class="sh">The log-in card</h2>
+  <p class="lead">login.mailchimp.com is a separate signed-out card. The username field measured 422 x 46. The submit measured 422 x 36, teal <code>#017e89</code>, white type. It was measured and never clicked. Sign-in was not started. Signup was not started.</p>
+  <div class="auth">
+    <div class="acard"><h3>Log in to Mailchimp</h3><div class="field">Username or Email</div><div class="go">Log in</div><div class="forgot">Forgot username?</div></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Action yellow <code>#ffe01b</code> with caviar <code>#231e15</code> type and a 1px caviar stroke. The log-in submit is a separate teal, measured on the card and not a marketing token.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Declared spacing steps run <code>--spacing-1</code> (4px) through <code>--spacing-8</code> (96px). The marketing CTA radius is <code>--cta-border-radius</code> (32px). The Standard plan trial link measured 26px. The <code>--radius-*</code> scale and the 150ms ease curves are declared by the embedded Navattic demo and are not Mailchimp tokens.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead"><code>Means Web</code> draws the display headlines (64px on the home hero, 48px on interior mastheads, 36px on the phone). <code>Tally</code>, then <code>Graphik Web</code>, draws marketing UI. The log-in card uses <code>Graphik Web</code> alone. Samples here fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --radius-*/--text-*/--spacing variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, selected, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The roles panel obeys the Dark toggle: mailchimp.com ships no dark
+  // surface, so the dark set is empty and the panel says so instead of
+  // pretending.
+  const rolesHost = () => {
+    const dark = document.documentElement.dataset.mode === 'dark';
+    const roles = flat(TOK[dark ? 'dark' : 'light'] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    let hh = `<div class="pal-h">${dark ? 'dark roles' : 'light roles'}</div>`;
+    if (!roles.length) return hh + `<p class="note">Empty. mailchimp.com ships one light theme. There is no dark token set.</p>`;
+    hh += `<div class="pal${dark ? ' dark' : ''}">`;
+    for (const [n, t] of roles) hh += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    return hh + '</div>';
+  };
+  const host = document.createElement('div');
+  host.id = 'roles-panel';
+  $('#roles-out').insertAdjacentHTML('beforeend', h);
+  $('#roles-out').appendChild(host);
+  const refill = () => { host.innerHTML = rolesHost(); };
+  refill();
+  document.getElementById('theme').addEventListener('change', function () {
+    document.documentElement.dataset.mode = this.checked ? 'dark' : '';
+    refill();
+  });
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ctaRing || {}, 'ctaRing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.animate || {}, 'animate.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.component || {}).login || {}, 'component.login.')) {
+    if (/shadow|glow/.test(n)) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 110))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
