@@ -20343,6 +20343,74 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "trip",
+      "name": "Trip",
+      "url": "https://www.trip.com",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Travel search marketing: a 16px-radius white search card on a photo banner, brand blue #2c61fe primary, 4px-radius fields and buttons, Trip Geom at 700 for field values and display, cyan support band, one light theme",
+      "tags": [
+        "web",
+        "travel",
+        "search",
+        "booking",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (home, hotels landing, customer support, and the email sign-in form are public; the email field was focused and not filled; Search, Continue, Google, Apple, and Facebook were not pressed; no booking, payment, phone, or account was submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/trip/README.md",
+      "tokens": "systems/trip/tokens.json",
+      "styleGuide": "systems/trip/style-guide.html",
+      "preview": {
+        "cover": "systems/trip/icon.png",
+        "icon": "systems/trip/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg-surface",
+            "surface": "light.color.bg-container",
+            "text": "light.color.text-primary",
+            "muted": "light.color.text-tertiary",
+            "accent": "light.color.bg-brand",
+            "border": "light.color.border-default"
+          }
+        },
+        "fonts": [
+          "core.font.stack"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "sg.trip.com online home, 2026-11-19; stylesheet onlineHome.c56710cfc623923d2e70ff1230d47f41.css",
+        "durationMin": 90,
+        "gaps": [
+          "screenshots and crops: preview_snapshot returned 'The browser is not producing screenshot frames'; a fresh headless Chromium hit verify.trip.com and was not used",
+          "search was not submitted; no results, filters, map, or empty state",
+          "sign-in email was focused only; Continue, Google, Apple, and Facebook were not pressed; no account, phone, card, or code",
+          "no booking, payment, or checkout",
+          "checkbox, radio, switch, menu, tooltip, toast, open dialog, and select were not painted on the pages read",
+          "phone width 390 was not captured",
+          "no dark theme in the readable stylesheets",
+          "motion under prefers-reduced-motion was not probed",
+          "icons were not extracted"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "Trip's marks are an icon font (fi) and inline artwork; no standalone SVG set was lifted (docs/RIGHTS.md)",
+        "screenshots/": "preview_snapshot returned no frames, and headless Chromium was redirected to verify.trip.com",
+        "components/": "no crops; the same frame failure as screenshots/"
+      }
     }
   ]
 }
