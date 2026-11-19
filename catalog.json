@@ -20343,6 +20343,100 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "mercury",
+      "name": "Mercury",
+      "url": "https://mercury.com",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "Business-bank marketing: a dark hero on #171721, a light page on #fbfcfd, purple #5266eb pills, Arcadia Display headlines and Arcadia UI, 32px nav controls and a 40px login pill",
+      "tags": [
+        "web",
+        "finance",
+        "banking",
+        "marketing",
+        "light",
+        "dark",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing pages, the login boundary at app.mercury.com/login, and the public demo at demo.mercury.com/dashboard; no signup, KYC, payment, or account)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/mercury/README.md",
+      "tokens": "systems/mercury/tokens.json",
+      "styleGuide": "systems/mercury/style-guide.html",
+      "preview": {
+        "cover": "systems/mercury/screenshots/home-light-default.png",
+        "icon": "systems/mercury/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "mercury.com, app.mercury.com/login and demo.mercury.com/dashboard in headless Chromium, desktop 1440x900 and phone 390x844, on 2026-11-19. Custom properties resolved on a probe for each theme class. Component styles computed on the live DOM. The email field was focused and left empty. Log in, signup, passkey and the demo actions were not followed.",
+        "timestamp": "2026-11-19T00:40:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/about",
+          "/security",
+          "/faq",
+          "/blog",
+          "/legal/privacy",
+          "/personal-banking",
+          "/business-banking",
+          "/contact",
+          "app.mercury.com/login",
+          "demo.mercury.com/dashboard",
+          "mobile / /pricing /faq login"
+        ],
+        "gaps": [
+          "Sign-in at https://app.mercury.com/login was photographed at rest and with the email field focused. Nothing was typed. Log in, Continue with passkey, Forgot password and Open Account were not followed.",
+          "Signup at https://app.mercury.com/signup, KYC, payments, cards and treasury were not opened.",
+          "The public demo at https://demo.mercury.com/dashboard was photographed. Open account, Move money and the task list were not followed. It is a published demo, not an account.",
+          "support.mercury.com returned a Cloudflare challenge to headless Chromium and was not captured.",
+          "The pricing annual switch was left as the page painted it.",
+          "The hero opt-out checkbox was focused and not clicked.",
+          "The blog search was focused and not submitted."
+        ],
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/709"
+      }
     }
   ]
 }
