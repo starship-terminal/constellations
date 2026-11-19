@@ -300,6 +300,27 @@ class PriorCoverageTest(unittest.TestCase):
             self.assertFalse(refero_check.coverage_matches_base(
                 directory, head, foreign, expected))
 
+    def test_a_regenerated_file_matches_the_branch_tip(self):
+        directory = {"web_sites": [
+            {"name": "Old", "domain": "old.example", "id": "1"},
+            {"name": "Later", "domain": "later.example", "id": "2"},
+        ], "ios_apps": []}
+        old = {"slug": "old", "name": "Old", "url": "https://old.example"}
+        later = {"slug": "later", "name": "Later", "url": "https://later.example"}
+        branch = {"old": old}
+        head = self.catalog([old, later])
+        actual = refero_check.coverage_mod.build(directory, self.catalog([old]))
+        expected = refero_check.coverage_mod.build(directory, head)
+        with mock.patch.object(refero_check, "base_catalog", return_value=head), \
+                mock.patch.object(refero_check, "branch_catalog", return_value=branch):
+            self.assertTrue(refero_check.coverage_matches_base(
+                directory, head, actual, expected))
+        renamed = {"old": {**old, "name": "Renamed"}}
+        with mock.patch.object(refero_check, "base_catalog", return_value=head), \
+                mock.patch.object(refero_check, "branch_catalog", return_value=renamed):
+            self.assertFalse(refero_check.coverage_matches_base(
+                directory, head, actual, expected))
+
 
 if __name__ == "__main__":
     unittest.main()

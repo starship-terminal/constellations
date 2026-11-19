@@ -327,6 +327,23 @@ def check(refero: Path) -> list[str]:
     return problems
 
 
+def branch_catalog() -> dict | None:
+    """Catalog rows on the pull request branch, keyed by slug.
+
+    GitHub checks the merge commit, so the working tree already includes
+    captures that landed on the base after this branch was pushed. The
+    branch tip is the second parent. None when that parent is unreadable."""
+    try:
+        raw = subprocess.run(
+            ["git", "show", "HEAD^2:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        catalog = json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return None
+    return {s.get("slug"): s for s in catalog.get("systems") or []}
+
+
 def base_catalog(head_catalog: dict) -> dict | None:
     """The catalog on the pull request's base, when GitHub is merging one.
 
@@ -360,10 +377,23 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
     # GitHub checks the merge. A branch started before later captures landed
     # is missing those rows, so a strict superset is the wrong test. Every
     # row the branch does carry must be unchanged, and it must add one.
-    if not base_rows or not set(head_rows) - set(base_rows):
+    if not base_rows:
         return False
     if any(slug in base_rows and head_rows[slug] != base_rows[slug]
            for slug in head_rows):
+        return False
+    # This pull request regenerated the file, then main gained another
+    # capture before the check ran. The merge catalog has that capture
+    # and may add no row of its own. The committed file is current when
+    # it matches the branch tip.
+    branch_rows = branch_catalog()
+    if branch_rows is not None and set(branch_rows) < set(head_rows):
+        if all(head_rows.get(slug) == row for slug, row in branch_rows.items()):
+            branch_expected = coverage_mod.build(
+                directory, {**head_catalog, "systems": list(branch_rows.values())})
+            if actual == branch_expected:
+                return True
+    if not set(head_rows) - set(base_rows):
         return False
     # The committed file may be the current base, or a base that already
     # included some of the added rows (the PR regenerated it, then main

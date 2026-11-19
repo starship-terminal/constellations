@@ -76,6 +76,23 @@ def gated_matches_base(systems, current: str) -> bool:
         return False
     if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
         return False
+    # This pull request regenerated the roll-up, then main gained another
+    # capture. The committed file matches the branch tip in that case.
+    try:
+        raw = subprocess.run(
+            ["git", "show", "HEAD^2:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        branch = json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        branch = None
+    if branch is not None:
+        branch_rows = {s.get("slug"): s for s in branch.get("systems") or []}
+        if (set(branch_rows) < set(head_rows)
+                and all(head_rows.get(slug) == row
+                        for slug, row in branch_rows.items())
+                and current == render(list(branch_rows.values()))):
+            return True
     if current == render(base["systems"]):
         return True
     # The roll-up may lag packages already merged to the base. It is still
