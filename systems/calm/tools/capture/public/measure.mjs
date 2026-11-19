@@ -19,6 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, HEALTH, M, launch, patch, open, closePromo, clearChallenge, domFind, styleOf, crop, centre, RAW, UA, UA_DESKTOP, UA_MOBILE, isChallengeText } from './lib.mjs';
+import { safeUrl } from '../safe-url.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -349,7 +350,10 @@ async function login() {
     if (page.url() !== before) {
       // The landing route gets its own PerimeterX challenge — wait it out on
       // this context before declaring the step uncaptured.
-      const dest = page.url().replace(BASE, '');
+      // Path only (safeUrl drops the query and masks id-like segments): a signup
+      // redirect can carry a token or an email in its query, and this lands in a
+      // committed desc.
+      const dest = safeUrl(page.url()).replace(BASE, '');
       const cleared = await clearChallenge(page, { tries: 40, step: 4000 }).catch(() => false);
       await page.waitForTimeout(4000);
       await S('signup-page', q('main, [role="main"], form, body > div').filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup page', desc: `The page the Try-Calm-for-Free button navigates to (${dest}) — the signup flow's first step, reached by its own button and never submitted${cleared ? '' : '; its landing stayed PerimeterX-blocked this run'}.`, sel: 'signup landing main' }, { noScroll: true, pad: 24 });
