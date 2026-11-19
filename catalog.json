@@ -20343,6 +20343,85 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Professional-network guest UI: a white page and #f3f2f0 canvas, rgba(0,0,0,0.9) text, #0a66c2 brand pills at 48px with a 24px radius, a transparent Sign in ring, a system-ui stack, and public jobs, company, and profile cards",
+      "tags": [
+        "web",
+        "professional-network",
+        "guest",
+        "pill-button",
+        "jobs",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (guest home, public jobs search, company page, a published profile, and the user agreement load without a session; the feed, messaging, and Easy Apply sit behind sign-in and were never reached; Sign in, Join now, Apply, Follow, and Message were measured, never followed; the login form was not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/linkedin/README.md",
+      "tokens": "systems/linkedin/tokens.json",
+      "styleGuide": "systems/linkedin/style-guide.html",
+      "preview": {
+        "cover": "systems/linkedin/screenshots/home-light-default.png",
+        "icon": "systems/linkedin/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.canvas",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.accent",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "www.linkedin.com guest surfaces in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Colours come from the Mercer --color-* stylesheet on static.licdn.com. The feed, messaging, and Easy Apply are a documented sign-in boundary",
+        "timestamp": "2026-11-18T09:45:00Z",
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/jobs/search/?keywords=designer&location=United%20States",
+          "/company/linkedin",
+          "/in/reidhoffman",
+          "/legal/user-agreement",
+          "/login",
+          "mobile / , /jobs/search/ and /company/linkedin"
+        ],
+        "gaps": [
+          "the feed, messaging, and Easy Apply sit behind sign-in and were never reached; Sign in, Join now, Apply, Follow, and Message were measured, never followed",
+          "the /login form was captured at rest and was not submitted",
+          "Premium redirected to the sign-in wall; the people directory returned an auth wall (HTTP 999)",
+          "about.linkedin.com, business.linkedin.com, news.linkedin.com, and brand.linkedin.com returned 403 to this client",
+          "job listings are geo-served; the cards are what a designer search in the United States returned on the capture date",
+          "consent overlays were hidden when present, never clicked",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 180,
+        "durationNote": "wall-clock for the capture session including kit adaptation, stylesheet harvest, screenshot and measurement passes, and the offline build",
+        "pr": ""
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the wordmark, nav glyphs, and job-card marks are visible in the crops and screenshots"
+      }
     }
   ]
 }
