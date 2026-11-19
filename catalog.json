@@ -20343,6 +20343,60 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "spline",
+      "name": "Spline",
+      "url": "https://spline.design/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Dark 3D-tool marketing: black page, Geist display, pill CTAs, translucent nav, plan columns",
+      "tags": [
+        "web",
+        "3d",
+        "design-tool",
+        "marketing",
+        "dark",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "public marketing, plus a signed-out email signup that stopped before the company step",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/spline/README.md",
+      "tokens": "systems/spline/tokens.json",
+      "styleGuide": "systems/spline/style-guide.html",
+      "preview": {
+        "cover": "systems/spline/screenshots/home-dark-default.png",
+        "icon": "systems/spline/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.background.action",
+            "border": "dark.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.app"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50,
+        "pr": ""
+      }
     }
   ]
 }
