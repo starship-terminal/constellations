@@ -37,6 +37,9 @@ await page.waitForTimeout(5000);
 await closePromo(page);
 
 const harvested = await page.evaluate(() => {
+  // The page runs apart from this module, so it needs its own copy; masking before the
+  // slice keeps a cut-off url( from slipping past the pattern.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
   const blocked = [];
   const rootVars = {};
@@ -51,7 +54,7 @@ const harvested = await page.evaluate(() => {
         if (!rule.style) continue;
         const props = {};
         for (const p of rule.style) {
-          if (p.startsWith('--')) props[p] = rule.style.getPropertyValue(p).trim().slice(0, 240);
+          if (p.startsWith('--')) props[p] = noUrl(rule.style.getPropertyValue(p).trim()).slice(0, 240);
         }
         if (Object.keys(props).length) {
           rules.push({ selector: (rule.selectorText || '').slice(0, 180), context, properties: props, href: (sheet.href || 'inline').split('?')[0].slice(0, 160) });
@@ -65,7 +68,7 @@ const harvested = await page.evaluate(() => {
   for (const r of rules) for (const k of Object.keys(r.properties)) names.add(k);
   const resolved = {};
   for (const name of names) {
-    const v = cs.getPropertyValue(name).trim();
+    const v = noUrl(cs.getPropertyValue(name).trim());
     if (v) resolved[name] = v.slice(0, 240);
   }
   const fonts = [...document.fonts].slice(0, 30).map((f) => ({ family: f.family, weight: f.weight, style: f.style, status: f.status }));

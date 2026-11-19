@@ -25,7 +25,7 @@ for (const url of pages) {
   await page.waitForTimeout(1600);
   await hideConsent(page);
   perPage[url] = await page.evaluate(() => {
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const root = getComputedStyle(document.documentElement);
     const declared = {};
     const interesting = [];
@@ -51,8 +51,8 @@ for (const url of pages) {
     const resolved = {};
     for (const name of Object.keys(declared)) {
       if (!/theme|swatch|palette|typography|radius|spacing|font|button/.test(name)) continue;
-      const v = root.getPropertyValue(name).trim();
-      if (v) resolved[name] = noUrl(v).slice(0, 160);
+      const v = noUrl(root.getPropertyValue(name).trim());
+      if (v) resolved[name] = v.slice(0, 160);
     }
     const h1 = document.querySelector('h1');
     const cta = [...document.querySelectorAll('a')].find((a) => /try it free|get started free|sign in/i.test(a.innerText || ''));
