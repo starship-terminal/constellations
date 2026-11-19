@@ -20343,6 +20343,92 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "mocha",
+      "name": "Mocha",
+      "url": "https://docs.getmocha.com",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "A Mintlify docs site for a shut-down AI app builder: cream page #f9f7ef, brown accent #513a06, lime accent #b4ff6a in dark, 12px controls, Inter, plus a separate 410 page on #f7f5f1 with a 999px pill",
+      "tags": [
+        "web",
+        "docs",
+        "ai",
+        "marketing",
+        "light",
+        "dark",
+        "signed-out",
+        "mintlify"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public docs at docs.getmocha.com. Product hosts on mocha.app return 410. getmocha.com does not resolve. No signup, no login, no payment.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/mocha/README.md",
+      "tokens": "systems/mocha/tokens.json",
+      "styleGuide": "systems/mocha/style-guide.html",
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "docs.getmocha.com and the 410 page on app.mocha.app, headless Chromium, desktop 1440x900 and phone 390x844, both colour schemes. getmocha.com has no A record, so the marketing site was not opened. The T3 preview browser read the docs DOM and did not produce screenshot frames.",
+        "timestamp": "2026-11-19T00:40:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "docs.getmocha.com/welcome",
+          "docs.getmocha.com/getting-started",
+          "docs.getmocha.com/getting-started/faq",
+          "docs.getmocha.com/billing/billing",
+          "docs.getmocha.com/billing/account-subscriptions",
+          "docs.getmocha.com/basics/auth",
+          "docs.getmocha.com/basics/custom-domains",
+          "docs.getmocha.com/guides/troubleshooting",
+          "docs.getmocha.com/guides/troubleshooting-login",
+          "app.mocha.app/"
+        ],
+        "gaps": [
+          "getmocha.com has no DNS A record; home, pricing, and the shutdown blog were not captured",
+          "app, login, auth, dashboard, studio, and build on mocha.app return the same 410 page",
+          "signup is closed; no account was created",
+          "no form was submitted and the search dialog was left empty"
+        ],
+        "durationMin": 70
+      },
+      "preview": {
+        "cover": "systems/mocha/screenshots/docs-welcome-light.png",
+        "icon": "systems/mocha/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      }
     }
   ]
 }
