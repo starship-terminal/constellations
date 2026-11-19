@@ -1749,8 +1749,8 @@
     },
     {
       "referenceId": "systems:luma",
-      "media": 105,
-      "assignedMedia": 31
+      "media": 135,
+      "assignedMedia": 34
     },
     {
       "referenceId": "systems:lumalabs",
@@ -355098,6 +355098,39 @@
           "termId": "web-page-types:home-page",
           "rule": "page-home",
           "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:luma",
+      "mediaId": "systems/luma/screenshots/signed-in-create-calendar-dark-narrow-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:luma",
+      "mediaId": "systems/luma/screenshots/signed-in-create-calendar-dark-narrow.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:luma",
+      "mediaId": "systems/luma/screenshots/signed-in-create-calendar-light-narrow.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
         }
       ]
     },
