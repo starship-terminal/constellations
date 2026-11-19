@@ -20343,6 +20343,62 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "scale-ai",
+      "name": "Scale AI",
+      "url": "https://scale.com/",
+      "category": "ai-research",
+      "platform": "web",
+      "goodFor": "Public AI-lab marketing: fixed white nav, black primary and outline login, tight Aeonik display, sales form, separate Inter login",
+      "tags": [
+        "web",
+        "ai",
+        "marketing",
+        "saas",
+        "login"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the signed-out dashboard login; no account created)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/scale-ai/README.md",
+      "tokens": "systems/scale-ai/tokens.json",
+      "styleGuide": "systems/scale-ai/style-guide.html",
+      "preview": {
+        "cover": "systems/scale-ai/icon.png",
+        "icon": "systems/scale-ai/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.nav",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.background.ink",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50
+      },
+      "layoutGaps": {
+        "components/": "The preview browser returned The browser is not producing screenshot frames, so no component crops were saved.",
+        "icons/": "No icon extraction pass. The wordmark is an inline SVG measured at 80 by 18, and the site icon is icon.png.",
+        "screenshots/": "The preview browser returned The browser is not producing screenshot frames, so no page PNG was saved. preview.cover points at icon.png, the measured site icon, because catalog.json requires a cover file."
+      }
     }
   ]
 }
