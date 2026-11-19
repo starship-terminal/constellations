@@ -20343,6 +20343,65 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "the-org",
+      "name": "The Org",
+      "url": "https://theorg.com",
+      "category": "directory",
+      "platform": "web",
+      "goodFor": "Org-chart directory marketing: uppercase display headline, blue Sign up pill, dark and hairline secondary pills, 16px company cards, a 12px chart card, and a near-black footer.",
+      "tags": [
+        "web",
+        "directory",
+        "org-chart",
+        "marketing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (homepage, pricing, about, contact, a public company page, the 404, and the login and signup forms were measured; Google, Microsoft, passkey and SSO were not followed; no email was submitted; no account was created)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/the-org/README.md",
+      "tokens": "systems/the-org/tokens.json",
+      "styleGuide": "systems/the-org/style-guide.html",
+      "preview": {
+        "cover": "systems/the-org/screenshots/home-light-default.png",
+        "icon": "systems/the-org/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.ui",
+          "core.fontFamily.secondary"
+        ]
+      },
+      "source": {
+        "product": "https://theorg.com/",
+        "captured": "2026-11-19"
+      },
+      "capture": {
+        "harness": "grok",
+        "model": "grok-4.7",
+        "version": "public site, 2026-11-19",
+        "route": "public-web",
+        "pr": "",
+        "durationMin": 70
+      }
     }
   ]
 }
