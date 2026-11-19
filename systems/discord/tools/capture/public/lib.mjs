@@ -48,7 +48,21 @@ export async function patch(context) {
     Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
+  await context.addInitScript((css) => {
+    document.addEventListener('DOMContentLoaded', () => {
+      const s = document.createElement('style');
+      s.textContent = css;
+      (document.head || document.documentElement).appendChild(s);
+    }, { once: true });
+  }, HIDE_LOGIN_QR);
 }
+
+// /login's "Log in with QR Code" panel draws a live remote-auth token: a credential, never committed.
+// Every page of every run hides the code itself (the svg, canvas or img inside the panel) so no
+// screenshot or crop records it; the panel's box, white tile and computed styles are still read.
+// tools/redact-rules/discord.json paints the same area out of images shot before this existed.
+export const HIDE_LOGIN_QR = '[class*="qrLogin" i] :is(svg, canvas, img), [class*="qrCode" i] :is(svg, canvas, img)'
+  + ' { visibility: hidden !important; }';
 
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
   const browser = await chromium.launch();

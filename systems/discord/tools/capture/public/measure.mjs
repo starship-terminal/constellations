@@ -373,14 +373,14 @@ async function login() {
   await sheetsFor('login');
   await chrome('login');
   const g = G.auth;
-  await S('lg-card', q('form').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Auth card', desc: 'The sign-in card on the animated brand backdrop — form fields left, QR panel right.', sel: 'login form' }, { noScroll: true });
+  await S('lg-card', q('form').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Auth card', desc: 'The sign-in card on the animated brand backdrop — form fields left, QR panel right (its code hidden: it encodes a sign-in token).', sel: 'login form' }, { noScroll: true });
   await S('lg-h1', q('h1, h2, h3').filter({ hasText: /welcome back/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Sign-in heading', desc: '"Welcome back!" — the auth card heading.', sel: 'login h1' }, { noScroll: true });
   await S('lg-email', q('input[name="email"], input[type="text"]').and(page.locator(':visible')).first(), FIELD, { group: g, title: 'Email field', desc: 'The "Email or Phone Number" field; the filled state types an address then deletes it — nothing is submitted.', sel: 'input email' }, { noScroll: true, fillText: 'name@example.com' });
   await S('lg-pass', q('input[type="password"]').and(page.locator(':visible')).first(), ['default', 'focused'], { group: g, title: 'Password field', desc: 'The password field with the reveal-button affordance; focused via a click-in, never filled.', sel: 'input password' }, { noScroll: true });
   await S('lg-submit', q('button').filter({ hasText: /^\s*log ?in\s*$/i }).and(page.locator(':visible')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Log In button', desc: 'The brand-fill Log In submit; hover/focus measured, never pressed — it would submit the sign-in.', sel: 'Log In button' }, { noScroll: true });
   await S('lg-forgot', q('a, button').filter({ hasText: /forgot your password/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Forgot link', desc: 'The "Forgot your password?" link; measured, never followed.', sel: 'forgot link' }, { noScroll: true });
   await S('lg-register', q('a, button').filter({ hasText: /^\s*register\s*$/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Register link', desc: 'The "Need an account? Register" link; measured, never followed.', sel: 'register link' }, { noScroll: true });
-  await S('lg-qr', q('[class*="qrLogin"], [class*="qr"]').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'QR panel', desc: 'The "Log in with QR Code" panel on the card\u2019s right.', sel: 'qrLogin panel' }, { noScroll: true });
+  await S('lg-qr', q('[class*="qrLogin"], [class*="qr"]').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'QR panel', desc: 'The "Log in with QR Code" panel on the card\u2019s right; the code itself is hidden before any crop (it encodes a sign-in token).', sel: 'qrLogin panel' }, { noScroll: true });
   save();
 }
 
