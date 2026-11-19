@@ -1,0 +1,67 @@
+{
+  "cards": [
+    {
+      "missing": true,
+      "text": "Free Start"
+    },
+    {
+      "missing": true,
+      "text": "Basic"
+    },
+    {
+      "missing": true,
+      "text": "Pro"
+    },
+    {
+      "text": "Free Start Suited for newly registered companies setting up ",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(51, 51, 51)",
+      "radius": "24px",
+      "border": "1px solid rgb(236, 238, 242)",
+      "size": "15px",
+      "weight": "400",
+      "pad": "24px",
+      "w": 379,
+      "h": 1022
+    },
+    {
+      "text": "Basic Great fit for small businesses with steady transaction",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(51, 51, 51)",
+      "radius": "24px",
+      "border": "1px solid rgb(236, 238, 242)",
+      "size": "15px",
+      "weight": "400",
+      "pad": "24px",
+      "w": 379,
+      "h": 1022
+    },
+    {
+      "text": "Pro Optimal for growing companies with high activity and adv",
+      "bg": "rgb(244, 237, 255)",
+      "color": "rgb(51, 51, 51)",
+      "radius": "24px",
+      "border": "1px solid rgb(244, 237, 255)",
+      "size": "15px",
+      "weight": "400",
+      "pad": "24px",
+      "w": 379,
+      "h": 1022
+    },
+    {
+      "missing": true,
+      "text": "Free Start"
+    },
+    {
+      "missing": true,
+      "text": "Basic"
+    },
+    {
+      "missing": true,
+      "text": "Pro"
+    }
+  ],
+  "save": null,
+  "switches": [],
+  "titleCount": 9
+}

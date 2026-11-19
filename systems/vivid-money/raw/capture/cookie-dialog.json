@@ -1,0 +1,73 @@
+{
+  "dialog": null,
+  "accept": {
+    "text": "Accept",
+    "bg": "rgb(125, 51, 246)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "100px",
+    "shadow": "none",
+    "size": "16px",
+    "weight": "500",
+    "pad": "0px 12px",
+    "border": "1px solid rgba(0, 0, 0, 0)",
+    "w": 0,
+    "h": 0,
+    "font": "Satoshi"
+  },
+  "reject": {
+    "text": "Reject non-essential",
+    "bg": "rgb(245, 245, 244)",
+    "color": "rgb(51, 51, 51)",
+    "radius": "100px",
+    "shadow": "none",
+    "size": "16px",
+    "weight": "400",
+    "pad": "0px 12px",
+    "border": "1px solid rgba(0, 0, 0, 0)",
+    "w": 0,
+    "h": 0,
+    "font": "Satoshi"
+  },
+  "custom": {
+    "text": "CUSTOMIZE",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "radius": "100px",
+    "shadow": "none",
+    "size": "14px",
+    "weight": "500",
+    "pad": "0px",
+    "border": "1px solid rgba(0, 0, 0, 0)",
+    "w": 81,
+    "h": 40,
+    "font": "Satoshi"
+  },
+  "heading": {
+    "text": "Cookies",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(51, 51, 51)",
+    "radius": "0px",
+    "shadow": "none",
+    "size": "28px",
+    "weight": "500",
+    "pad": "0px",
+    "border": "0px none rgb(51, 51, 51)",
+    "w": 100,
+    "h": 36,
+    "font": "Satoshi"
+  },
+  "topBar": {
+    "text": "Drinks, AI keynote & finance peers at @droog Amsterdam. Vivi",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(51, 51, 51)",
+    "radius": "0px",
+    "shadow": "none",
+    "size": "15px",
+    "weight": "400",
+    "pad": "0px",
+    "border": "0px none rgb(51, 51, 51)",
+    "w": 945,
+    "h": 48,
+    "font": "Satoshi"
+  }
+}

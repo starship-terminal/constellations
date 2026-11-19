@@ -20343,6 +20343,61 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "vivid-money",
+      "name": "Vivid Money",
+      "url": "https://vivid.money/",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "European business-bank marketing: a #222 promo bar, purple wordmark, pill Login and Get started, 52px Satoshi headlines, soft-purple featured plan cards, and a signed-out login that uses a second purple",
+      "tags": [
+        "web",
+        "finance",
+        "banking",
+        "marketing",
+        "pill",
+        "satoshi"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the business login chrome; no email, phone, card or KYC was entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/vivid-money/README.md",
+      "tokens": "systems/vivid-money/tokens.json",
+      "styleGuide": "systems/vivid-money/style-guide.html",
+      "preview": {
+        "cover": "systems/vivid-money/screenshots/home-light-desktop.png",
+        "icon": "systems/vivid-money/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.login"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "marketing stylesheets 2.0.440",
+        "route": "public-web",
+        "pr": "https://github.com/starship-terminal/constellations/pull/880",
+        "durationMin": 70
+      }
     }
   ]
 }
