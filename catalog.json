@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "contra",
+      "name": "Contra",
+      "url": "https://contra.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Freelance-network marketing: white page, near-black pill primary, outline secondary, prompt box, topic cards, split auth card",
+      "tags": [
+        "web",
+        "freelance",
+        "marketplace",
+        "marketing",
+        "pill",
+        "network"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and the empty log-in form; sign-up was not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/contra/README.md",
+      "tokens": "systems/contra/tokens.json",
+      "styleGuide": "systems/contra/style-guide.html",
+      "preview": {
+        "cover": "systems/contra/screenshots/home-light-default.png",
+        "icon": "systems/contra/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.headline",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/902",
+        "version": "public site, 2026-11-19"
+      },
+      "layoutGaps": {
+        "icons/": "The icon extraction pass was not run. The site mark is icon.png. Inline nav SVGs stay in the screenshots."
+      }
     }
   ]
 }
