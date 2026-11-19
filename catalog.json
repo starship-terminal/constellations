@@ -20343,6 +20343,64 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "resume-io",
+      "name": "Resume.io",
+      "url": "https://resume.io",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Resume-builder marketing: pale neutral page, white nav and pricing cards, one blue primary button, a pale secondary button, and a dark footer band",
+      "tags": [
+        "web",
+        "saas",
+        "marketing",
+        "resume",
+        "pricing",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing plus the sign-in email step, not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/resume-io/README.md",
+      "tokens": "systems/resume-io/tokens.json",
+      "styleGuide": "systems/resume-io/style-guide.html",
+      "preview": {
+        "cover": "systems/resume-io/screenshots/home-light-default.png",
+        "icon": "systems/resume-io/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.commons",
+          "core.fontFamily.talent"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 70,
+        "version": "signed-out marketing, 2026-11-19"
+      },
+      "layoutGaps": {
+        "components/": "No component crops. The T3 preview browser returned 'The browser is not producing screenshot frames', so only whole-page screenshots were kept."
+      }
     }
   ]
 }
