@@ -20343,6 +20343,61 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+    "slug": "pampam",
+    "name": "PamPam",
+    "url": "https://pampam.city",
+    "category": "productivity",
+    "platform": "web",
+    "goodFor": "Map-maker marketing on a light page: a serif display headline over a photo, a prompt field with a black pill, cream use-case cards, and a four-column pricing table with a green yearly switch and a blue plan button",
+    "tags": [
+      "web",
+      "maps",
+      "marketing",
+      "pricing",
+      "signed-out"
+    ],
+    "shape": "reference",
+    "captured": "2026-11-19",
+    "access": "signed out (home, pricing, about, features, blog, and /login measured; login is a Google button with no email field, so nothing was signed up for; plan buttons were not followed; no card, phone, or government ID was entered)",
+    "themes": [
+      "light"
+    ],
+    "widths": [
+      1440,
+      390
+    ],
+    "entry": "systems/pampam/README.md",
+    "tokens": "systems/pampam/tokens.json",
+    "styleGuide": "systems/pampam/style-guide.html",
+    "preview": {
+      "cover": "systems/pampam/screenshots/home-light-default.png",
+      "icon": "systems/pampam/icon.png",
+      "swatches": {
+        "light": {
+          "page": "light.color.page",
+          "surface": "light.color.surface",
+          "text": "light.color.text",
+          "muted": "light.color.muted",
+          "accent": "light.color.accent",
+          "border": "light.color.border"
+        }
+      },
+      "fonts": [
+        "core.font.family.display",
+        "core.font.family.sans"
+      ]
+    },
+    "source": "capture",
+    "capture": {
+      "harness": "Grok",
+      "model": "grok-4.7",
+      "route": "public-web",
+      "durationMin": 90,
+      "version": "2025",
+      "pr": "https://github.com/starship-terminal/constellations/pull/752"
     }
+  }
   ]
 }
