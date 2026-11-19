@@ -20343,6 +20343,79 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "rovr",
+      "name": "ROVR",
+      "url": "https://rovr.live",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "A dark live-radio shell: black page, a painted yellow (#FFF057) that is not the same as the --primary token, italic kernStandard nav, square auth links on a yellow gate, and pill player controls.",
+      "tags": [
+        "web",
+        "media",
+        "radio",
+        "signed-out",
+        "dark",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public home, moods, schedule, about, privacy, and the /login gate; Google and Apple buttons were not pressed; no email field was on the page)",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/rovr/README.md",
+      "tokens": "systems/rovr/tokens.json",
+      "styleGuide": "systems/rovr/style-guide.html",
+      "preview": {
+        "cover": "systems/rovr/icon.png",
+        "icon": "systems/rovr/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.background",
+            "surface": "dark.color.card",
+            "text": "dark.color.foreground",
+            "muted": "dark.color.muted-foreground",
+            "accent": "dark.color.brand",
+            "border": "dark.color.border"
+          },
+          "light": {
+            "page": "light.color.background",
+            "surface": "light.color.card",
+            "text": "light.color.foreground",
+            "muted": "light.color.muted-foreground",
+            "accent": "light.color.primary",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.kern",
+          "core.font.family.alpina"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "ROVR - Radio Reinvented v1.0.1",
+        "durationMin": 45,
+        "pr": "https://github.com/starship-terminal/constellations/pull/781",
+        "gaps": [
+          "preview_snapshot failed with 'The browser is not producing screenshot frames'; no PNG was saved",
+          "viewport was the attached pane, 1169x731, not 1440 or 390",
+          "light tokens are the :root stylesheet block; html.dark was the live class on every page",
+          "/login is Google and Apple only; those buttons were not pressed and /sign-up was not opened",
+          "shop.rovr.live was not opened"
+        ]
+      },
+      "layoutGaps": {
+          "components/": "No crops. The browser produced no screenshot frames."
+    }
     }
   ]
 }
