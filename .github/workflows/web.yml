@@ -4,11 +4,32 @@
 # thumbnails fall back to the screenshot paths, which the build does not read.
 name: Web
 on:
+  # tools/catalog.py build reads the catalog, the packages, the refero store and
+  # tools/refero/refero_media.py; the app reads systems/, scorecard/ and docs/ at
+  # build and request time. A change to any of them can break the build.
   pull_request:
-    paths: ['web/**', 'tools/catalog.py', 'catalog.json', '.github/workflows/web.yml']
+    paths:
+      - 'web/**'
+      - '.github/workflows/web.yml'
+      - 'catalog.json'
+      - 'tools/catalog.py'
+      - 'tools/refero/refero_media.py'
+      - 'refero/**'
+      - 'systems/**'
+      - 'scorecard/**'
+      - 'docs/**'
   push:
     branches: [main]
-    paths: ['web/**', 'tools/catalog.py', 'catalog.json', '.github/workflows/web.yml']
+    paths:
+      - 'web/**'
+      - '.github/workflows/web.yml'
+      - 'catalog.json'
+      - 'tools/catalog.py'
+      - 'tools/refero/refero_media.py'
+      - 'refero/**'
+      - 'systems/**'
+      - 'scorecard/**'
+      - 'docs/**'
 permissions:
   contents: read
 jobs:
