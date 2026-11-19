@@ -18662,6 +18662,62 @@
       }
     },
     {
+      "slug": "teenage-engineering",
+      "name": "Teenage Engineering",
+      "url": "https://teenage.engineering",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Hardware marketing: black product stage, white store grid, square black subscribe button, pill discount badge, zero-radius fields",
+      "tags": [
+        "web",
+        "hardware",
+        "retail",
+        "marketing",
+        "music"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and store listing only; checkout, cart, and payment were not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/teenage-engineering/README.md",
+      "tokens": "systems/teenage-engineering/tokens.json",
+      "styleGuide": "systems/teenage-engineering/style-guide.html",
+      "preview": {
+        "cover": "systems/teenage-engineering/screenshots/home-light-default.png",
+        "icon": "systems/teenage-engineering/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40
+      },
+      "layoutGaps": {
+        "components/": "no component crops; values were read from computed styles and full-page screenshots",
+        "icons/": "icon extraction was not run; the wordmark and header marks stay in the screenshots"
+      }
+    },
+    {
       "slug": "telegram",
       "name": "Telegram",
       "url": "https://telegram.org",

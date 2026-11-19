@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-11-18T19:00:22.398Z",
+  "name": "store-light-default",
+  "url": "https://teenage.engineering/store",
+  "title": "store - teenage engineering",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "colorScheme": "normal",
+  "scrollH": 26714
+}
