@@ -20343,6 +20343,86 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "missive",
+      "name": "Missive",
+      "url": "https://missiveapp.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Team-inbox marketing and a signed-out login: white page, Tiempos Headline display, Inter UI, a blue 8px Try for free, and a system-font mail card that also paints dark",
+      "tags": [
+        "web",
+        "email",
+        "marketing",
+        "light",
+        "dark",
+        "signed-out",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed-out public marketing and the mail login, signup and SSO screens. No form submitted. No demo booked. No purchase.",
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
+      "entry": "systems/missive/README.md",
+      "tokens": "systems/missive/tokens.json",
+      "styleGuide": "systems/missive/style-guide.html",
+      "preview": {
+        "cover": "systems/missive/screenshots/home-light-default.png",
+        "icon": "systems/missive/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textBody",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.textBody",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": ["core.font.family.display", "core.font.family.sans"]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "missiveapp.com and mail.missiveapp.com signed-out screens, headless Chromium, desktop 1440x900 and phone 390x844. Privacy sheet hidden, never clicked. Dark is data-theme on the mail app only.",
+        "timestamp": "2026-11-19T00:40:00Z",
+        "harness": "Grok / T3",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "missiveapp.com/",
+          "missiveapp.com/pricing",
+          "missiveapp.com/features",
+          "missiveapp.com/customers",
+          "missiveapp.com/download",
+          "missiveapp.com/security",
+          "missiveapp.com/blog",
+          "mail.missiveapp.com/#login",
+          "mail.missiveapp.com/#signup",
+          "mail.missiveapp.com/#sso"
+        ],
+        "gaps": [
+          "the signed-in inbox was not entered; login, signup and SSO were not submitted",
+          "password reset is not a public route: #forgot, #forgot-password and #reset redirect to login; /forgot is a 404",
+          "Book a demo leaves for Calendly and was not followed",
+          "Google and Apple sign-in were not clicked",
+          "the Product menu was not opened; a click on the toggle opened the privacy sheet",
+          "the dark signup screen shows a Cloudflare Verify you are human widget; it was not checked",
+          "checkout, card, phone and government ID were not asked for on these routes and were not entered"
+        ],
+        "durationMin": 70,
+        "pr": "https://github.com/starship-terminal/constellations/pull/708"
+      }
     }
   ]
 }

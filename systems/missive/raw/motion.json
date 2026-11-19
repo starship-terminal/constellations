@@ -1,0 +1,4353 @@
+{
+ "_meta": {
+  "readAt": "2026-11-19",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 23,
+  "removed": 2,
+  "reduced": 0,
+  "kept": 21,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "partial",
+  "loops": []
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://missiveapp.com/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 792,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 5,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 5,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div[role=group].swiper-slide.is-story.w-dyn-item",
+      "div[role=group].swiper-slide.is-story.is-active"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ketch-bannerDesktopAnimate",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "forwards",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ketch-bannerDesktopAnimate",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "forwards",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ketch-bannerDesktopAnimate",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.ketch-fixed.ketch-flex.ketch-z-ketch-max-z-index"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "filter",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "backdrop-filter",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "filter",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "backdrop-filter",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "filter",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "backdrop-filter",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.ketch-relative.ketch-inline-flex.ketch-items-center"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-backdropFadeOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ketch-bannerAnimateCenter",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ketch-bannerAnimateTop",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-bannerDesktopAnimate",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-bannerDismissBottom",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-bannerDismissCenter",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ketch-bannerMobileBottomAnimate",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-bannerMobileDismissBottom",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-fadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ketch-modalAnimatedLeft",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "left"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "left"
+       ]
+      }
+     ],
+     "properties": [
+      "left"
+     ]
+    },
+    {
+     "name": "ketch-modalAnimatedRight",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "right"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "right"
+       ]
+      }
+     ],
+     "properties": [
+      "right"
+     ]
+    },
+    {
+     "name": "ketch-pulseOpacity",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".w-webflow-badge, .w-webflow-badge > img",
+     "context": [],
+     "transitions": [
+      {
+       "property": "unset",
+       "durationRaw": "unset",
+       "easing": "unset"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".w-slider-dot",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".w-lightbox-control",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".w-lightbox-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".button-lg.s-segmentedcontrol",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".accordion--title",
+     "context": [],
+     "transitions": [
+      {
+       "property": "padding",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".button-icon.s-play",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".swiper-slide.is-story",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".swiper-slide.is-usecase",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-backdropFadeOut",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-backdropFadeOut",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerAnimateCenter",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerAnimateCenter",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerAnimateTop",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerAnimateTop",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerDesktopAnimate",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerDesktopAnimate",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerDismissBottom",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerDismissBottom",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerDismissCenter",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerDismissCenter",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerMobileBottomAnimate",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerMobileBottomAnimate",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerMobileDismissBottom",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerMobileDismissBottom",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-fadeIn",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-fadeIn",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-modalAnimatedLeft",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-modalAnimatedLeft",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-modalAnimatedRight",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-modalAnimatedRight",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-pulseOpacity",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-pulseOpacity",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-transition",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-transition-opacity",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-transition-transform",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-duration-1000",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 1000
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-duration-300",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-ease-in-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".root",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--w-backdrop-animation",
+     "declared": "initial",
+     "selector": ":where(.w-popover, .w-modal)",
+     "resolved": ""
+    }
+   ]
+  },
+  "page-2": {
+   "url": "https://missiveapp.com/pricing",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 2672,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 10,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 10,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "padding",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "padding",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "padding",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "div[role=button].accordion--title.w-dropdown-toggle"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ketch-bannerDesktopAnimate",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "forwards",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ketch-bannerDesktopAnimate",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "forwards",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ketch-bannerDesktopAnimate",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.ketch-fixed.ketch-flex.ketch-z-ketch-max-z-index"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "filter",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "backdrop-filter",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "filter",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "backdrop-filter",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "filter",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "backdrop-filter",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.ketch-relative.ketch-inline-flex.ketch-items-center"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-backdropFadeOut",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ketch-bannerAnimateCenter",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ketch-bannerAnimateTop",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-bannerDesktopAnimate",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-bannerDismissBottom",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-bannerDismissCenter",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ketch-bannerMobileBottomAnimate",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-bannerMobileDismissBottom",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ketch-fadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ketch-modalAnimatedLeft",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "left"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "left"
+       ]
+      }
+     ],
+     "properties": [
+      "left"
+     ]
+    },
+    {
+     "name": "ketch-modalAnimatedRight",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "right"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "right"
+       ]
+      }
+     ],
+     "properties": [
+      "right"
+     ]
+    },
+    {
+     "name": "ketch-pulseOpacity",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".w-webflow-badge, .w-webflow-badge > img",
+     "context": [],
+     "transitions": [
+      {
+       "property": "unset",
+       "durationRaw": "unset",
+       "easing": "unset"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".w-slider-dot",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".w-lightbox-control",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".w-lightbox-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".button-lg.s-segmentedcontrol",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".accordion--title",
+     "context": [],
+     "transitions": [
+      {
+       "property": "padding",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".button-icon.s-play",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".swiper-slide.is-story",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".swiper-slide.is-usecase",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-backdropFadeOut",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-backdropFadeOut",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerAnimateCenter",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerAnimateCenter",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerAnimateTop",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerAnimateTop",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerDesktopAnimate",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerDesktopAnimate",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerDismissBottom",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerDismissBottom",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerDismissCenter",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerDismissCenter",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerMobileBottomAnimate",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerMobileBottomAnimate",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-bannerMobileDismissBottom",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-bannerMobileDismissBottom",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-fadeIn",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-fadeIn",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-modalAnimatedLeft",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-modalAnimatedLeft",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-modalAnimatedRight",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-modalAnimatedRight",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-animate-pulseOpacity",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ketch-pulseOpacity",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#lanyard_root * .ketch-transition",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-transition-opacity",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-transition-transform",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-duration-1000",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 1000
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-duration-300",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#lanyard_root * .ketch-ease-in-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".root",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--w-backdrop-animation",
+     "declared": "initial",
+     "selector": ":where(.w-popover, .w-modal)",
+     "resolved": ""
+    }
+   ]
+  },
+  "page-3": {
+   "url": "https://mail.missiveapp.com/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 713,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 8,
+    "removed": 2,
+    "reduced": 0,
+    "kept": 6,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 5,
+     "nodes": [
+      "div.flex.origin-center.items-center"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "spin",
+        "durationMs": 1000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "paused"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "spin",
+        "durationMs": 1000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "paused"
+       }
+      ]
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "spin",
+       "outcome": "removed",
+       "from": 1000,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "spinner",
+        "durationMs": 1500,
+        "delayMs": 0,
+        "easing": "ease-in-out",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "paused"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "spinner",
+        "durationMs": 1500,
+        "delayMs": 0,
+        "easing": "ease-in-out",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "paused"
+       }
+      ]
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "spinner",
+       "outcome": "removed",
+       "from": 1500,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "circle"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.absolute.left-1/2.top-1/2"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "fill"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "fill",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "fill"
+       ]
+      }
+     ],
+     "properties": [
+      "fill",
+      "transform"
+     ]
+    },
+    {
+     "name": "slideRight",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideUp",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideAwayDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slideDown",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "spinning",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "rotate-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": []
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "fade-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "scale-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "scale-out",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "scale-in-small",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "scale-out-small",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "scale-big-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "75%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "scale-big-out",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "25%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "progress-complete",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "box-shadow"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "box-shadow"
+       ]
+      }
+     ],
+     "properties": [
+      "box-shadow"
+     ]
+    },
+    {
+     "name": "spinner",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "stroke-dasharray"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "stroke-dasharray",
+      "transform"
+     ]
+    },
+    {
+     "name": "draw-icon",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "stroke",
+        "stroke-dashoffset"
+       ]
+      },
+      {
+       "offset": "75%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "90%",
+       "properties": [
+        "stroke"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "stroke-dashoffset"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "stroke",
+      "stroke-dashoffset"
+     ]
+    },
+    {
+     "name": "entry-highlight",
+     "steps": [
+      {
+       "offset": "0%, 88%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "pop",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "33%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "66%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "floating-menu",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "preferences-tabs-fade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": []
+      },
+      {
+       "offset": "15%",
+       "properties": []
+      },
+      {
+       "offset": "85%",
+       "properties": []
+      },
+      {
+       "offset": "100%",
+       "properties": []
+      }
+     ],
+     "properties": []
+    },
+    {
+     "name": "fade-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "scale-big-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "75%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "scale-small-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "shake",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "20%, 60%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "40%, 80%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "slide-up-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "spinner",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "stroke-dasharray",
+        "stroke-dashoffset"
+       ]
+      },
+      {
+       "offset": "47.5%",
+       "properties": [
+        "stroke-dasharray",
+        "stroke-dashoffset"
+       ]
+      },
+      {
+       "offset": "95%, 100%",
+       "properties": [
+        "stroke-dasharray",
+        "stroke-dashoffset"
+       ]
+      }
+     ],
+     "properties": [
+      "stroke-dasharray",
+      "stroke-dashoffset"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".entry-highlight::before",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "entry-highlight",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .missive-icon-starring[data-state~=\"starred\"] .starred",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity"
+      },
+      {
+       "property": "transform"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive .progress-circle.complete",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "progress-complete",
+       "durationMs": 100,
+       "delayMs": 500,
+       "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .spinner-medium[data-state~=\"paused\"] svg, .missive .spinner[data-state~=\"paused\"] svg",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "paused"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .spinner svg, .missive .spinner-medium svg",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spinner",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .button.button-white",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationRaw": "var(--duration)",
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive .button[data-state] .button-label, .missive .button[data-state] .spinner",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive .button[data-state] .spinner svg",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "paused"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .button[data-state=\"processing\"] .spinner svg",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .button-macos-spinner .spinner svg",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "paused"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .button-macos-spinner[data-spinning] .spinner svg",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .button-macos-process .missive-icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "margin-left",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive .button-macos-process .missive-icon svg",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "paused"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .button-macos-process[data-processing] .missive-icon svg",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .button-macos-starring[data-state~=\"starred\"] .starred",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity"
+      },
+      {
+       "property": "transform"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive .missive-rotation, .missive [data-missive-rotation]",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spinning",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".missive .input.focus, .missive .input:focus",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 125,
+       "easing": "var(--easing)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 125,
+       "easing": "var(--easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive .input-line:-webkit-autofill, .missive .input-line:-webkit-autofill:active, .missive .input-line:-webkit-autofill:focus, .missive .input-line:-webkit-autofill:hover",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 5000000,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive .input-line-placeholder-label .input-line-placeholder",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform"
+      },
+      {
+       "property": "color"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive .missive-table th .missive-icon-ic_outline_dropdown_bold, .missive .missive-table th .missive-icon-ic_outline_help",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 125,
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 125,
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive .tooltip-hint",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive .missive-calendar[data-dragging-mode]::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive .search-box .button-macos-group",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive .missive-action-banner-animation-container",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "height",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive-has-touch .missive .preferences-navigation .preferences-navigation-tabs",
+     "context": [
+      "@supports (animation-timeline:scroll())"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "preferences-tabs-fade",
+       "durationRaw": "auto",
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".conversation-title-actions .conversation-labels",
+     "context": [],
+     "transitions": [
+      {
+       "property": "padding",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "margin",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive-rotation",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spinning",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".missive-attachment-document .missive-attachment-document-preview .spinner svg",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "paused"
+      }
+     ]
+    },
+    {
+     "selector": ".missive-attachment-document .missive-attachment-upload-progress",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationMs": 1000,
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 1000,
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".comment-box .comment-textarea textarea",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive .comment-box-meta-bar-glass .hovering-bar-meta-bar",
+     "context": [],
+     "transitions": [
+      {
+       "property": "left",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "bottom",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive .comment-box-meta-bar-glass .hovering-bar-meta-bar .hovering-bar-meta-bar-content",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity"
+      },
+      {
+       "property": "transform"
+      },
+      {
+       "property": "padding-bottom"
+      },
+      {
+       "property": "border-radius"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive [data-conversation-tab-bar] .conversation-tab-bar-actions",
+     "context": [],
+     "transitions": [
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "opacity",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "transform",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive [data-conversation-tab-bar][data-comment-expanded] .conversation-tab-bar-actions",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      },
+      {
+       "property": "(base #1)",
+       "delayMs": 0
+      },
+      {
+       "property": "(base #2)",
+       "delayMs": 0
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive [data-conversation-tab-bar] .conversation-tab-bar-actions",
+     "context": [
+      "@container conversation (min-width: 600px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      },
+      {
+       "property": "(base #1)",
+       "delayMs": 0
+      },
+      {
+       "property": "(base #2)",
+       "delayMs": 0
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".entry-highlight .compose-bar .entry-highlight-sticky-spacer",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "entry-highlight",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "forwards",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".collab-container :is(.missive-column-vertical, .missive-column-auto) .signature-switcher",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".multiple-selected .floating-white-box",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "rotate-in",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".missive-view-tasks:has([data-search-focused]) [data-tasks-tab-bar], .preferences-selectable-list:has([data-search-focused]) [data-preferences-tab-bar], html[data-scope=\"search\"] [data-inbox-tab-bar]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 0
+      },
+      {
+       "property": "(base #1)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive .missive-mobile-menu .missive-button-icon:where(html:is([data-layout=\"mobile\"], [data-layout=\"tablet\"]), html:is([data-layout=\"mobile\"], [data-layout=\"tablet\"]) *), .missive .missive-mobile-m",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationRaw": "var(--material-duration)"
+      },
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--material-duration)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive .search-box .input-container:where(html:is([data-layout=\"mobile\"], [data-layout=\"tablet\"]), html:is([data-layout=\"mobile\"], [data-layout=\"tablet\"]) *)",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity"
+      },
+      {
+       "property": "transform"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "html.missive-has-touch .missive .search-box .input-container:where(html:not([data-layout=\"mobile\"]):not([data-layout=\"tablet\"]), html:not([data-layout=\"mobile\"]):not([data-layout=\"tablet\"]) *)",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity"
+      },
+      {
+       "property": "transform"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "[data-context=\"bootstrap\"].missive-has-touch[data-previous-view~=\"conversation\"] .missive-view-inbox-dim:where(html:is([data-layout=\"mobile\"]), html:is([data-layout=\"mobile\"]) *), [data-context=\"boots",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 0
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".missive .conversation-footer .comment-box .comment-highlighter:where(html:is([data-layout=\"mobile\"]), html:is([data-layout=\"mobile\"]) *), .missive .conversation-footer .comment-box .comment-textarea:",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".missive-has-touch .missive.missive-contextmenu.mobile-keyboard-anchor-bottom:where(html:is([data-layout=\"mobile\"]), html:is([data-layout=\"mobile\"]) *), .missive-has-touch .missive.missive-contextmenu",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 120
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".date-range-picker .button-macos-group",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".data-bar > div",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationMs": 425,
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "margin-left",
+       "durationMs": 425,
+       "easing": "var(--material-easing)"
+      },
+      {
+       "property": "background-color",
+       "durationRaw": "var(--material-duration)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".animate-pulse",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "pulse",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-shake",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "shake",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-spin",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spinner",
+       "durationMs": 1500,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".transition",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "-webkit-text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[background-color\\,box-shadow\\,opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[box-shadow\\,transform\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[color\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-columns\\,opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-columns",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[grid-template-rows\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "grid-template-rows",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[height\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[max-width\\,opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-width",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[opacity\\,color\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[opacity\\,transform\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[transform\\,opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[translate\\,opacity\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "translate",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[translate\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "translate",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-\\[width\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-all",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-colors",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "fill",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "stroke",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "-webkit-text-decoration-color",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-opacity",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".transition-transform",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-100",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 100
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-150",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 150
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-200",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-300",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-\\[225ms\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 225
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-\\[250ms\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 250
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-\\[var\\(--material-duration\\)\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationRaw": "var(--material-duration)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".ease-\\[cubic-bezier\\(\\.4\\,\\.0\\,\\.2\\,1\\)\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-\\[var\\(--material-easing\\)\\]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "var(--material-easing)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".ease-in-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-out",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".animation-paused",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "paused"
+      }
+     ]
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--duration",
+     "declared": "125ms",
+     "selector": ":root, [data-theme] [data-theme=\"light\"]",
+     "resolved": "125ms"
+    },
+    {
+     "name": "--easing",
+     "declared": "ease-out",
+     "selector": ":root, [data-theme] [data-theme=\"light\"]",
+     "resolved": "ease-out"
+    },
+    {
+     "name": "--material-duration",
+     "declared": "225ms",
+     "selector": ":root, [data-theme] [data-theme=\"light\"]",
+     "resolved": "225ms"
+    },
+    {
+     "name": "--material-easing",
+     "declared": "cubic-bezier(.4,.0,.2,1)",
+     "selector": ":root, [data-theme] [data-theme=\"light\"]",
+     "resolved": "cubic-bezier(.4,.0,.2,1)"
+    },
+    {
+     "name": "--navigation-duration",
+     "declared": ".35s",
+     "selector": ":root",
+     "resolved": ".35s"
+    },
+    {
+     "name": "--navigation-easing",
+     "declared": "linear(0.0000 0.0%,0.0177 2.5%,0.0622 5.0%,0.1231 7.5%,0.1930 10.0%,0.2665 12.5%,0.3401 15.0%,0.4112 17.5%,0.4783 20.0%,0.5405 22.5%,0.5974 25.0%,0.6488 27.5%,0.6948 30.0%,0.7357 32.5%,0.7719 35.0%,0.8036 37.5%,0.8314 40.0%,0.8556 42.5%,0.8765 45.0%,0.8946 47.5%,0.9102 50.0%,0.9237 52.5%,0.9352 55.0%,0.9450 57.5%,0.9534 60.0%,0.9606 62.5%,0.9667 65.0%,0.9719 67.5%,0.9763 70.0%,0.9800 72.5%,0.9832 75.0%,0.9859 77.5%,0.9881 80.0%,0.9900 82.5%,0.9916 85.0%,0.9930 87.5%,0.9941 90.0%,0.9951 92.5%,0.9959 95.0%,0.9965 97.5%,1.0000 100.0%)",
+     "selector": ":root",
+     "resolved": "linear(0.0000 0.0%,0.0177 2.5%,0.0622 5.0%,0.1231 7.5%,0.1930 10.0%,0.2665 12.5%,0.3401 15.0%,0.4112 17.5%,0.4783 20.0%,0.5405 22.5%,0.5974 25.0%,0.6488 27.5%,0.6948 30.0%,0.7357 32.5%,0.7719 35.0%,0.8036 37.5%,0.8314 40.0%,0.8556 42.5%,0.8765 45.0%,0.8946 47.5%,0.9102 50.0%,0.9237 52.5%,0.9352 55.0%,0.9450 57.5%,0.9534 60.0%,0.9606 62.5%,0.9667 65.0%,0.9719 67.5%,0.9763 70.0%,0.9800 72.5%,0.9832 75.0%,0.9859 77.5%,0.9881 80.0%,0.9900 82.5%,0.9916 85.0%,0.9930 87.5%,0.9941 90.0%,0.9951 92.5%,0.9959 95.0%,0.9965 97.5%,1.0000 100.0%)"
+    }
+   ]
+  }
+ }
+}
