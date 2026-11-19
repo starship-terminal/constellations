@@ -18,7 +18,9 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import os
 import re
+import subprocess
 import unicodedata
 from pathlib import Path
 
@@ -218,13 +220,61 @@ def build() -> dict:
     }
 
 
+def base_slugs() -> set[str] | None:
+    """Slugs on the pull request's base, when GitHub is merging one."""
+    base = os.environ.get("GITHUB_BASE_REF")
+    if not base:
+        return None
+    try:
+        raw = subprocess.run(
+            ["git", "show", f"origin/{base}:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        catalog_json = json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return None
+    return {s.get("slug") for s in catalog_json.get("systems") or []}
+
+
+def matches_base(result: dict, committed: dict) -> bool:
+    """True when this pull request only adds packages, and the seed still
+    matches the base for every package that was already there.
+
+    A new package has no row in the seed until someone regenerates it on
+    main. Editing an existing package's media still fails this check."""
+    slugs = base_slugs()
+    if not slugs:
+        return False
+    head = {s.get("slug") for s in catalog.load_catalog()["systems"]}
+    if not head >= slugs:
+        return False
+    def package_rows(blob):
+        return {row.get("referenceId"): row for row in blob.get("packages") or []}
+    def assignment_rows(blob):
+        return {(row.get("referenceId"), row.get("mediaId")): row
+                for row in blob.get("assignments") or []}
+    for key_fn in (package_rows, assignment_rows):
+        committed_rows = key_fn(committed)
+        result_rows = key_fn(result)
+        for key, row in committed_rows.items():
+            if result_rows.get(key) != row:
+                return False
+        for key in result_rows:
+            ref = key[0] if isinstance(key, tuple) else key
+            slug = (ref or "").removeprefix("systems:")
+            if slug in slugs and key not in committed_rows:
+                return False
+    return True
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     result = build()
     if args.check:
-        if not OUTPUT.exists() or json.loads(OUTPUT.read_text()) != result:
+        committed = json.loads(OUTPUT.read_text()) if OUTPUT.exists() else None
+        if committed != result and not (committed and matches_base(result, committed)):
             raise SystemExit("Media taxonomy seed is stale; run python3 app/scripts/build-media-taxonomy.py")
         print("Media taxonomy seed is current")
     else:

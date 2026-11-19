@@ -21,8 +21,10 @@ skipped with a note.
 
 import argparse
 import json
+import os
 import re
 import sqlite3
+import subprocess
 import sys
 from pathlib import Path
 
@@ -294,7 +296,10 @@ def check(refero: Path) -> list[str]:
                                     f"does not match meta.json")
 
     # ---- coverage.json: a generated diff (directory.json x the systems
-    # catalog.json); recompute it and demand the file match exactly
+    # catalog.json); recompute it and demand the file match exactly.
+    # A pull request that only adds catalog rows cannot regenerate this
+    # file for the merge commit, because the merge is not on a branch.
+    # Compare the added rows against the base file instead.
     try:
         directory = json.loads((refero / "directory.json").read_text())
         systems_cat = json.loads((ROOT / "catalog.json").read_text())
@@ -307,7 +312,8 @@ def check(refero: Path) -> list[str]:
         except (OSError, json.JSONDecodeError) as e:
             problems.append(f"refero/coverage.json does not parse: {e}")
         else:
-            if actual_cov != expected_cov:
+            if actual_cov != expected_cov and not coverage_matches_base(
+                    directory, systems_cat, actual_cov, expected_cov):
                 problems.append("refero/coverage.json is stale; "
                                 "run tools/refero/coverage.py")
 
@@ -319,6 +325,49 @@ def check(refero: Path) -> list[str]:
             problems.append(f"refero/README.md says {m.group(1)} styles; "
                             f"{len(dirs)} folders exist")
     return problems
+
+
+def base_catalog(head_catalog: dict) -> dict | None:
+    """The catalog on the pull request's base, when GitHub is merging one.
+
+    Returns None outside a pull request, or when the base blob cannot be
+    read. The caller then keeps the exact-match rule."""
+    base = os.environ.get("GITHUB_BASE_REF")
+    if not base:
+        return None
+    try:
+        raw = subprocess.run(
+            ["git", "show", f"origin/{base}:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        return json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return None
+
+
+def coverage_matches_base(directory: dict, head_catalog: dict,
+                          actual: dict, expected: dict) -> bool:
+    """True when the committed file matches the base, and this pull request
+    only adds catalog rows.
+
+    Removing or editing a row changes the derived coverage, so that still
+    fails until the file is regenerated."""
+    base = base_catalog(head_catalog)
+    if base is None:
+        return False
+    base_rows = {s.get("slug"): s for s in base.get("systems") or []}
+    head_rows = {s.get("slug"): s for s in head_catalog.get("systems") or []}
+    if not base_rows or not set(head_rows) >= set(base_rows):
+        return False
+    if not set(head_rows) - set(base_rows):
+        return False
+    # An edited existing row can change the derived coverage. Only a pure
+    # addition leaves the committed file valid.
+    for slug, row in base_rows.items():
+        if head_rows.get(slug) != row:
+            return False
+    base_expected = coverage_mod.build(directory, base)
+    return actual == base_expected
 
 
 def main() -> None:
