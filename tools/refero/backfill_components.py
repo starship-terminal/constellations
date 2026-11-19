@@ -3,7 +3,8 @@
 
 Upstream, each style's designSystem.components[] entries gain an `html`
 field after an enrichment pass. Styles fetched before that pass ran hold
-html: null (or an unresolved "$1e" flight reference) in styles.result_json.
+html: null (or, from older runs, an unresolved "$1e" flight reference) in
+styles.result_json.
 This tool re-scrapes the style pages, resolves the React flight references
 ("$1e" -> the `1e:T<hex-byte-length>,<utf8 text>` row in the same
 __next_f.push blob, sliced by UTF-8 bytes), and rewrites each row:
@@ -20,10 +21,11 @@ __next_f.push blob, sliced by UTF-8 bytes), and rewrites each row:
     design-system.json, prompt.txt) via one batched node export.js run
 
 Selection: every styles row whose stored designSystem.components has no
-element with a truthy html (covers complete-but-empty and
-pending-may-be-complete). Styles whose stored html holds unresolved "$xx"
-references count as having html and are skipped; pass --uuids to force
-specific styles back in (e.g. for testing).
+element with resolved html (covers complete-but-empty and
+pending-may-be-complete). An unresolved "$xx" reference is not html, so a
+style whose only html values are such references is selected too; a ref
+that still does not resolve is stored as null, never as "$xx". Pass
+--uuids to force specific styles in (e.g. for testing).
 
 Usage:
     python3 tools/refero/backfill_components.py [--workers 8] [--limit N]
