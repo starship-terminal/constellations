@@ -20343,6 +20343,93 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "seatgeek",
+      "name": "SeatGeek",
+      "url": "https://seatgeek.com",
+      "category": "events",
+      "platform": "web",
+      "goodFor": "Ticket marketplace marketing: a coral #ff5b49 brand on ink #181818, glass pills on a #120100 hero, 100px filter chips, a black 8px primary button, and a declared dark token set that the public pages do not paint",
+      "tags": [
+        "web",
+        "events",
+        "tickets",
+        "marketplace",
+        "marketing",
+        "signed-out",
+        "light",
+        "coral-accent"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and browse only; login hit a DataDome interstitial and was not passed; no ticket bought, no card entered, no account created)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/seatgeek/README.md",
+      "tokens": "systems/seatgeek/tokens.json",
+      "styleGuide": "systems/seatgeek/style-guide.html",
+      "preview": {
+        "icon": "systems/seatgeek/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.card",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.card",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui"
+        ],
+        "cover": "systems/seatgeek/icon.png"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot returned 'The browser is not producing screenshot frames' twice; no frames were invented",
+        "components/": "no component crops; the same screenshot failure",
+        "icons/": "SeatGeek icons and the wordmark are artwork and were not extracted (docs/RIGHTS.md)"
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "seatgeek.com in the T3 preview browser, signed out. Computed styles on /, /about, /nfl-tickets, /concert-tickets, /cities and /help at 1169x731 and a 390x844 resize, both at devicePixelRatio 2. Stylesheets fetched from inside the loaded page (curl from this host got HTTP 403 DataDome). Dark colours are the stylesheet's [data-theme=dark] declarations, not a painted theme.",
+        "timestamp": "2026-11-19T02:40:00Z",
+        "harness": "grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/about",
+          "/nfl-tickets",
+          "/concert-tickets",
+          "/cities",
+          "/help"
+        ],
+        "gaps": [
+          "preview screenshots failed: The browser is not producing screenshot frames",
+          "/login is a DataDome interstitial and was not passed",
+          "no ticket purchase, card, phone, or account creation",
+          "dark theme declared, not painted",
+          "hover, focus, pressed, disabled, loading and error not held"
+        ],
+        "durationMin": 50,
+        "pr": ""
+      }
     }
   ]
 }
