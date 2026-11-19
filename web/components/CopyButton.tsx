@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useToast } from "@/components/Toast";
-import { COPY_RESET_MS, copyLabel, copyOutcome, type CopyState } from "@/lib/copy-state";
+import { copyLabel, copyOutcome, flash, type CopyState } from "@/lib/copy-state";
 
 /** Copy text to the clipboard; rejects when the browser refused. */
 export function copyText(text: string): Promise<void> {
@@ -87,10 +87,7 @@ export function SnippetCopyButton({ text, what }: { text: string; what: string }
         data-state={state}
         aria-label={`Copy ${what}`}
         onClick={async () => {
-          const next = await copyOutcome(text, copyText);
-          setState(next);
-          clearTimeout(timer.current);
-          timer.current = setTimeout(() => setState("idle"), COPY_RESET_MS);
+          timer.current = flash(setState, await copyOutcome(text, copyText), timer.current);
         }}
       >
         <span key={state} className="snip-label">
