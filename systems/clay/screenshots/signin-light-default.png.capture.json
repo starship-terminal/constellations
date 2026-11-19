@@ -1,0 +1,39 @@
+{
+  "capturedAt": "2026-11-18T21:16:00.941Z",
+  "screenshot": "signin-light-default.png",
+  "sourceUrl": "https://app.me.sh/login",
+  "title": "Mesh",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "actual": {
+    "href": "https://app.me.sh/login?signin",
+    "title": "Mesh",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "light",
+    "htmlBg": "rgb(252, 252, 252)",
+    "bodyBg": "rgba(0, 0, 0, 0)",
+    "bodyColor": "rgb(72, 73, 74)",
+    "bodyFont": "SFProText, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "bodySize": "14px",
+    "bodyWeight": "400",
+    "bodyLine": "21px",
+    "scrollHeight": 900
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "note": "Live headless Chromium. Preview browser could not navigate off a stuck tab and returned \"The browser is not producing screenshot frames\"."
+}
