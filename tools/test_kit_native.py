@@ -147,6 +147,15 @@ class KitNativeEvidence(unittest.TestCase):
         t = bt.from_reading("x", "dark", "color", "A box.")   # an older readings.json labelled it Derived
         self.assertEqual(t["$extensions"]["source"]["evidence"], "Sampled")
         self.assertIn("covers 60%", t["$description"])
+        # the neutral ramp names each use with its label, and takes the same correction
+        class Every(dict):   # every reading the ramp asks for is the same mixed grey box
+            def __missing__(self, rid):
+                return {"dark": {"value": "#202020", "share": 0.6, "evidence": "Derived", "capture": "s.png"}}
+        bt.READ = Every()
+        ramp = bt.neutral_ramp()
+        tok = next(iter(ramp.values()))
+        self.assertEqual(tok["$extensions"]["source"]["evidence"], "Sampled")
+        self.assertNotIn("Derived", tok["$description"])
 
     def test_row_pitch_is_read_from_the_edges_and_needs_two(self):
         bt = self.kit("build_tokens")

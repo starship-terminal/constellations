@@ -44,12 +44,17 @@ def tok(value, typ, desc, evidence, capture):
             "$extensions": {"source": {"evidence": evidence, "capture": capture}}}
 
 
+def evidence_of(r):
+    """A reading's label. A fill reading (it has a share) is a sampled pixel however mixed the box: an
+    older readings.json labelled a mixed box Derived."""
+    return "Sampled" if r.get("share") is not None else r["evidence"]
+
+
 def from_reading(rid, theme, typ, desc):
     r = rd(rid, theme)
     note = desc
-    evidence = r["evidence"]
+    evidence = evidence_of(r)
     if r.get("share") is not None:
-        evidence = "Sampled"   # a fill reading is a sampled pixel (older readings.json labelled a mixed box Derived)
         if r["share"] < 0.9:
             note += f" The box's dominant colour covers {round(r['share'] * 100)}% of it (a gradient, glass or a thin mark), so it is a reading, not an exact fill."
     return tok(r["value"], typ, note, evidence, r["capture"])
@@ -110,7 +115,7 @@ def neutral_ramp():
             v = r["value"]
             rr, gg, bb = int(v[1:3], 16), int(v[3:5], 16), int(v[5:7], 16)
             if max(rr, gg, bb) - min(rr, gg, bb) <= 12:     # neutral enough
-                seen.setdefault(v, []).append((f"{theme} {rid}", r["evidence"], r["capture"]))
+                seen.setdefault(v, []).append((f"{theme} {rid}", evidence_of(r), r["capture"]))
     lum = lambda h: sum(int(h[i:i + 2], 16) for i in (1, 3, 5))
     rank = ["Sampled", "Sampled (text)", "Derived"]   # the most exact reading of the value wins
     out = {}
