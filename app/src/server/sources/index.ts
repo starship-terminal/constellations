@@ -562,7 +562,7 @@ async function referoStyleMedia(
   entity: Raw | null,
 ): Promise<ReferenceMedia[]> {
   const media: ReferenceMedia[] = [];
-  const candidates: Record<string, Raw> = entity?.media || {
+  const listed: Record<string, Raw> = entity?.media || {
     shot: {
       local: `/refero-media/shots/${slug}.jpg`,
       remote: meta?.screenshot_url,
@@ -588,6 +588,12 @@ async function referoStyleMedia(
       remote: meta?.favicon_url,
     },
   };
+  // tools/catalog.py's generated media point a favicon's remote at a favicon
+  // service, which would learn the style being browsed. Keep only the one
+  // Refero recorded.
+  const candidates: Record<string, Raw> = listed.favicon
+    ? { ...listed, favicon: { ...listed.favicon, remote: meta?.favicon_url } }
+    : listed;
   const labels: Record<string, string> = {
     shot: "Full page",
     poster: "Page recording poster",
