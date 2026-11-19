@@ -13,7 +13,9 @@ Usage:
 """
 import argparse
 import json
+import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -51,16 +53,33 @@ def gate_lines(entry):
     return lines
 
 
-def main(argv=None):
-    ap = argparse.ArgumentParser(
-        description="Write docs/GATED.md, the roll-up of surfaces signed-out captures never reached."
-    )
-    ap.add_argument("--check", action="store_true", help="write nothing; exit 1 if docs/GATED.md is stale")
-    args = ap.parse_args(argv)
+def gated_matches_base(systems, current: str) -> bool:
+    """True when GitHub is merging a pull request that only adds catalog
+    rows, and the committed roll-up still matches the base catalog.
 
-    catalog = json.loads((ROOT / "catalog.json").read_text())
-    systems = catalog["systems"]
+    A capture pull request cannot rewrite this file for the merge commit.
+    Editing or removing an existing row still fails the check."""
+    base_ref = os.environ.get("GITHUB_BASE_REF")
+    if not base_ref:
+        return False
+    try:
+        raw = subprocess.run(
+            ["git", "show", f"origin/{base_ref}:catalog.json"],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout
+        base = json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return False
+    base_rows = {s.get("slug"): s for s in base.get("systems") or []}
+    head_rows = {s.get("slug"): s for s in systems}
+    if not base_rows or not set(head_rows) > set(base_rows):
+        return False
+    if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
+        return False
+    return current == render(base["systems"])
 
+
+def render(systems):
     gated, access_only, open_all = [], [], []
     for e in systems:
         lines = gate_lines(e)
@@ -70,7 +89,6 @@ def main(argv=None):
             access_only.append((e, lines))
         else:
             open_all.append((e, lines))
-
     out = [HEADER]
     out.append(
         f"_{len(gated)} of {len(systems)} packages name gated surfaces in their "
@@ -96,17 +114,28 @@ def main(argv=None):
     if open_all:
         names = ", ".join(f"`{e['slug']}`" for e, _ in open_all)
         out.append(f"\n## No gated surface recorded\n\n{names}\n")
+    return "".join(out)
 
-    text = "".join(out)
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(
+        description="Write docs/GATED.md, the roll-up of surfaces signed-out captures never reached."
+    )
+    ap.add_argument("--check", action="store_true", help="write nothing; exit 1 if docs/GATED.md is stale")
+    args = ap.parse_args(argv)
+
+    catalog = json.loads((ROOT / "catalog.json").read_text())
+    systems = catalog["systems"]
+    text = render(systems)
     if args.check:
         current = OUT.read_text() if OUT.exists() else ""
-        if current != text:
+        if current != text and not gated_matches_base(systems, current):
             print("docs/GATED.md is stale — run python3 tools/gated.py")
             return 1
         print("gated ok")
         return 0
     OUT.write_text(text)
-    print(f"wrote {OUT.relative_to(ROOT)} ({len(gated)} gated / {len(systems)} packages)")
+    print(f"wrote {OUT.relative_to(ROOT)} ({len(systems)} packages)")
     return 0
 
 
