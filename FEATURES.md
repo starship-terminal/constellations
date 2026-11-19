@@ -1,5 +1,5 @@
 # Features
-A private library of design styles captured from real products, made of evidence-labelled `systems/` packages and a lower-confidence refero snapshot, browsed through two Next.js apps and read by coding agents over MCP and the `ds` CLI.
+A library of design styles captured from real products, made of evidence-labelled `systems/` packages and a lower-confidence refero snapshot, browsed through two Next.js apps and read by coding agents over MCP and the `ds` CLI.
 
 Status describes implementation in this checkout, not a live QA pass or release guarantee. Command placeholders such as `<slug>` must be replaced; bracketed arguments are optional.
 
@@ -95,14 +95,13 @@ Status describes implementation in this checkout, not a live QA pass or release 
 - **Health sections and catalog table**: read each package's generated Health section and the ranked catalog table in the root README. Status: implemented. Surface: CLI. Entry point: `tools/health.py` (run by `make grade`). Tests: `tools/test_health.py`.
 - **Scorecard validation**: validate the audit data's shape. Status: implemented. Surface: CLI. Entry point: `make scorecard`. Tests: `tools/test_scorecard.py`.
 
-## Docs site (static build and GitHub Pages)
+## Docs site (static build)
 - **Docs site build**: build the library docs and scorecard pages into a static site with the site's own chrome. Status: implemented. Surface: CLI. Entry point: `make docs` (`tools/scorecard.py`, `tools/site.py`). Tests: `tools/test_site.py`, `tools/test_scorecard.py`.
-- **Encrypted Pages deploy**: read the docs site on GitHub Pages behind a StatiCrypt password, with the gallery, search index and sitemap kept out. Status: implemented. Surface: web. Entry point: `.github/workflows/pages.yml` (push to `main`). Tests: none.
 - **Site app icon**: choose the Flat or Glass app icon under the site's Settings > Preferences. Status: implemented. Surface: web. Entry point: `settings/` page, `docs/assets/app-icon.js`, `python3 tools/make_icons.py`. Tests: `tools/test_app_icon.mjs`, `tools/test_make_icons.py`.
 - **Redeploy button**: on the self-hosted docs site, trigger a redeploy from the footer and see when it last deployed. Status: implemented. Surface: web. Entry point: `docs/assets/redeploy.js`, `GET|POST /api/redeploy` (`scripts/deploy_trigger.py`). Tests: `tools/test_deploy_trigger.py`.
 
 ## Deployment
-- **Home-server deployment**: pull the private checkout and invoke the host-owned `~/services/design-systems/bin/deploy.sh`, directly or through a systemd user job; the external script determines the deployment steps. Status: implemented. Surface: job. Entry point: `scripts/redeploy.sh`, `scripts/deploy_trigger.py`. Tests: `tools/test_deploy_trigger.py`.
+- **Home-server deployment**: pull the checkout and invoke the host-owned `~/services/design-systems/bin/deploy.sh`, directly or through a systemd user job; the external script determines the deployment steps. Status: implemented. Surface: job. Entry point: `scripts/redeploy.sh`, `scripts/deploy_trigger.py`. Tests: `tools/test_deploy_trigger.py`.
 - **Studio private deployment**: stage, activate, install or update the Studio app as a private systemd user service. Status: implemented. Surface: job. Entry point: `scripts/studio-deploy.sh stage|activate|install|update`, `app/docs/DEPLOYMENT.md`. Tests: none.
 
 ## CI checks

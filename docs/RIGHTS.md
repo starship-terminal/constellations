@@ -1,5 +1,10 @@
 # Rights and privacy
 
+> **2026-11-20:** the repository is public on GitHub
+> (`starship-terminal/constellations`). The rest of this page was written
+> while it was private and has not been changed; the rights position is
+> pending the owner's decision.
+
 This repository is private, and stays private. Two reasons.
 
 ## Most of it is not ours

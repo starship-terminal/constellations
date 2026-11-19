@@ -11,9 +11,9 @@ design-systems
 </p>
 
 <p align="center">
-  <a href="https://github.com/c-wenlong/designs/actions/workflows/check.yml"><img src="https://github.com/c-wenlong/designs/actions/workflows/check.yml/badge.svg" alt="Check"></a>
+  <a href="https://github.com/starship-terminal/constellations/actions/workflows/check.yml"><img src="https://github.com/starship-terminal/constellations/actions/workflows/check.yml/badge.svg" alt="Check"></a>
   <img src="https://img.shields.io/badge/tools-stdlib--only-brightgreen.svg" alt="stdlib only">
-  <img src="https://img.shields.io/badge/repo-private-red.svg" alt="Private repo">
+  <img src="https://img.shields.io/badge/repo-public-blue.svg" alt="Public repo">
 </p>
 
 <p align="center">
@@ -48,8 +48,9 @@ produced all of it, so a fix goes through the builders rather than a hand
 edit. The library is read three ways: by a person through the gallery app
 (`make dev`), by a script or agent through [catalog.json](catalog.json) and
 the read-only MCP server, and by a terminal through the `ds` CLI. The repo
-(`c-wenlong/designs`) stays private; [docs/RIGHTS.md](docs/RIGHTS.md) says
-why.
+(`starship-terminal/constellations`) is public on GitHub; the rights
+position in [docs/RIGHTS.md](docs/RIGHTS.md) is pending the owner's
+decision.
 
 ```
 $ python3 tools/catalog.py find dark chat
@@ -108,7 +109,7 @@ the builders that ask for them (see `make setup`).
 
 ```bash
 brew install git-lfs && git lfs install   # once per machine, before the clone
-git clone git@github.com:c-wenlong/designs.git design-systems
+git clone git@github.com:starship-terminal/constellations.git design-systems
 cd design-systems
 make setup                                # .venv with the site builder's and capture tools' deps
 cp .env.example .env                      # fill in what you use; .env is gitignored
@@ -835,7 +836,7 @@ flowchart LR
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
-| [docs/RIGHTS.md](docs/RIGHTS.md) | Why this repo stays private, and what is not ours |
+| [docs/RIGHTS.md](docs/RIGHTS.md) | What is not ours, and the rights position (pending the owner's decision now that the repo is public) |
 | [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [AGENTS.md](AGENTS.md) | Instructions for coding agents working here |
 
@@ -887,7 +888,7 @@ including the pre-commit checks.
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
-| [docs/RIGHTS.md](docs/RIGHTS.md) | Why this repo stays private, and what is not ours |
+| [docs/RIGHTS.md](docs/RIGHTS.md) | What is not ours, and the rights position (pending the owner's decision now that the repo is public) |
 | [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [docs/TODO.md](docs/TODO.md) | Open work, newest first |
 | [refero/README.md](refero/README.md) | The refero snapshot: layout, provenance, refresh and the media mirror |
@@ -895,10 +896,11 @@ including the pre-commit checks.
 | [app/README.md](app/README.md) | The research app: running it, provider keys, its boundaries |
 | [AGENTS.md](AGENTS.md) | The brief for coding agents working here, or reading the library from another project |
 
-## Private
+## Visibility
 
-This repository stays private and is not pushed anywhere but
-`c-wenlong/designs`. The captures include signed-in pages and products' own
-artwork; [docs/RIGHTS.md](docs/RIGHTS.md) says what may leave the repo and
-what may not. Borrow structure and proportions from a package; never ship a
+This repository is public on GitHub at
+[starship-terminal/constellations](https://github.com/starship-terminal/constellations),
+so anyone can read it. The captures include signed-in pages and products' own
+artwork; the rights position in [docs/RIGHTS.md](docs/RIGHTS.md) is pending
+the owner's decision. Borrow structure and proportions from a package; never ship a
 product's logo, icons, illustrations or brand colours.
