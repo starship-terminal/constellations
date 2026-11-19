@@ -26,13 +26,15 @@ const page = await newPage({ context: browser.contexts()[0], width: 1440, height
 await open(page, 'https://literal.club/', { wait: 1200 });
 
 const declared = await page.evaluate(() => {
+  // Each page callback runs apart from this module and needs its own copy.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const blocks = [];
   const walk = (list) => {
     for (const r of list) {
       try {
         if (r.style && r.selectorText && /:root|html/.test(r.selectorText)) {
           const vars = {};
-          for (const n of r.style) if (n.startsWith('--')) vars[n] = r.style.getPropertyValue(n).trim();
+          for (const n of r.style) if (n.startsWith('--')) vars[n] = noUrl(r.style.getPropertyValue(n).trim());
           if (Object.keys(vars).length) blocks.push({ selector: r.selectorText, vars });
         }
         if (r.cssRules) walk([...r.cssRules]);
@@ -49,10 +51,11 @@ async function resolve(colorScheme) {
   await page.emulateMedia({ colorScheme });
   await page.waitForTimeout(400);
   return page.evaluate((names) => {
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const cs = getComputedStyle(document.documentElement);
     const body = getComputedStyle(document.body);
     const out = {};
-    for (const n of names) out[n] = cs.getPropertyValue(n).trim();
+    for (const n of names) out[n] = noUrl(cs.getPropertyValue(n).trim());
     return {
       colorScheme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
       htmlClass: document.documentElement.className,
