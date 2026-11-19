@@ -1,0 +1,49 @@
+{
+  "iw": 390,
+  "signUp": {
+    "t": "Sign Up",
+    "box": [
+      301,
+      24,
+      69,
+      32
+    ],
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(85, 218, 155)",
+    "size": "13px",
+    "weight": "700",
+    "radius": "4px",
+    "pad": "0px 10px"
+  },
+  "signIn": {
+    "t": "Sign In",
+    "box": [
+      224,
+      33,
+      69,
+      15
+    ],
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "size": "15px",
+    "weight": "700",
+    "radius": "0px",
+    "pad": "0px 10px"
+  },
+  "h1": {
+    "t": "Creative Classes Taught by the",
+    "box": [
+      32,
+      112,
+      326,
+      121
+    ],
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "size": "32px",
+    "weight": "700",
+    "radius": "0px",
+    "pad": "0px"
+  },
+  "menu": null
+}

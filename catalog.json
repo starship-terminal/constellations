@@ -20343,6 +20343,80 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "skillshare",
+      "name": "Skillshare",
+      "url": "https://www.skillshare.com/",
+      "category": "learning",
+      "platform": "web",
+      "goodFor": "creative-class marketing: a light page with a mint action #55da9b, near-black ink #0b1215, a purple link and focus #5620c1, GT Walsheim Pro, 4px controls, and a signed-out signup card over the public home",
+      "tags": [
+        "web",
+        "education",
+        "classes",
+        "marketing",
+        "light",
+        "signed-out",
+        "marketplace"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing and signed-out login chrome only; no membership, card, or email signup was started)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/skillshare/README.md",
+      "tokens": "systems/skillshare/tokens.json",
+      "styleGuide": "systems/skillshare/style-guide.html",
+      "preview": {
+        "cover": "systems/skillshare/screenshots/home-light-default.png",
+        "icon": "systems/skillshare/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface-muted",
+            "text": "light.color.ink-soft",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "skillshare.com public signed-out surface. Computed styles read in the T3 preview tab and in headless Chromium. Screenshots are headless Chromium at 1440x900 and 390x844, deviceScaleFactor 2, because the preview browser returned 'The browser is not producing screenshot frames'.",
+        "timestamp": "2026-11-19T02:40:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/en/about",
+          "/en/teach",
+          "/teams",
+          "/en/press",
+          "/en/careers",
+          "/en/terms",
+          "/en/privacy"
+        ],
+        "gaps": [
+          "https://www.skillshare.com/en/browse and class, teacher, and blog URLs returned a Cloudflare challenge in headless Chromium and were not measured.",
+          "Sign In opens an in-page sheet. It was not activated. Continue with Google, Facebook, Apple, and email were not clicked. No email was submitted and no card was entered.",
+          "No dark theme was offered on the public pages.",
+          "The preview browser could not produce screenshot frames, so screenshots are from headless Chromium on pages that loaded without a challenge."
+        ],
+        "durationMin": 50,
+        "date": "2026-11-19",
+        "pr": ""
+      }
     }
   ]
 }

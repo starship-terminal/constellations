@@ -1,0 +1,339 @@
+{
+  "signupHover": {
+    "color": "rgb(11, 18, 21)",
+    "bg": "rgb(85, 218, 155)",
+    "border": "rgb(85, 218, 155) 1px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "signupFocus": {
+    "color": "rgb(11, 18, 21)",
+    "bg": "rgb(85, 218, 155)",
+    "border": "rgb(85, 218, 155) 1px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "signupActive": {
+    "color": "rgb(11, 18, 21)",
+    "bg": "rgb(85, 218, 155)",
+    "border": "rgb(85, 218, 155) 1px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "googleHover": {
+    "color": "rgb(11, 18, 21)",
+    "bg": "rgb(255, 255, 255)",
+    "border": "rgb(57, 70, 73) 1px",
+    "shadow": "none",
+    "outline": "rgb(11, 18, 21) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "googleFocus": {
+    "color": "rgb(11, 18, 21)",
+    "bg": "rgb(255, 255, 255)",
+    "border": "rgb(57, 70, 73) 1px",
+    "shadow": "none",
+    "outline": "rgb(11, 18, 21) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "googleActive": {
+    "color": "rgb(11, 18, 21)",
+    "bg": "rgb(255, 255, 255)",
+    "border": "rgb(57, 70, 73) 1px",
+    "shadow": "none",
+    "outline": "rgb(11, 18, 21) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "emailHover": {
+    "color": "rgb(86, 32, 193)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "border": "rgb(86, 32, 193) 0px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "underline",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "emailFocus": {
+    "color": "rgb(86, 32, 193)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "border": "rgb(86, 32, 193) 0px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "emailActive": {
+    "color": "rgb(86, 32, 193)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "border": "rgb(86, 32, 193) 0px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "searchFocus": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "border": "rgb(220, 222, 225) 1px",
+    "shadow": "none",
+    "outline": "rgb(0, 0, 0) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "searchHover": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "border": "rgb(220, 222, 225) 1px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "signinHover": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "border": "rgb(0, 0, 0) 0px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "signinFocus": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "border": "rgb(0, 0, 0) 0px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) auto 1px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "signinActive": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "border": "rgb(0, 0, 0) 0px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "browseDefault": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "size": "15px",
+    "weight": "700"
+  },
+  "browseHover": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "border": "rgb(0, 0, 0) 0px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "outlineOffset": "0px",
+    "td": "none",
+    "opacity": "1",
+    "transform": "none"
+  },
+  "footer": {
+    "foot": {
+      "bg": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "h": 356,
+      "pad": "30px 0px",
+      "font": "\"GT Walsheim Pro\", -apple-system, \"syste",
+      "size": "14px"
+    },
+    "sample": {
+      "text": "Illustration classes",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "size": "16px",
+      "weight": "400",
+      "lh": "normal",
+      "deco": "none",
+      "font": "\"GT Walsheim Pro\", sans-serif",
+      "box": [
+        120,
+        102,
+        379,
+        18
+      ]
+    },
+    "linkCount": 36,
+    "headings": [
+      {
+        "text": "Company",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "size": "18px",
+        "weight": "700",
+        "lh": "27.9px",
+        "deco": "none",
+        "font": "\"GT Walsheim Pro\", -apple-system, \"syste",
+        "box": [
+          175,
+          574,
+          186,
+          28
+        ]
+      },
+      {
+        "text": "Work With Us",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "size": "18px",
+        "weight": "700",
+        "lh": "27.9px",
+        "deco": "none",
+        "font": "\"GT Walsheim Pro\", -apple-system, \"syste",
+        "box": [
+          401,
+          574,
+          186,
+          28
+        ]
+      },
+      {
+        "text": "Teach with Us",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "size": "18px",
+        "weight": "700",
+        "lh": "27.9px",
+        "deco": "none",
+        "font": "\"GT Walsheim Pro\", -apple-system, \"syste",
+        "box": [
+          627,
+          574,
+          186,
+          28
+        ]
+      },
+      {
+        "text": "Shop",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "size": "18px",
+        "weight": "700",
+        "lh": "27.9px",
+        "deco": "none",
+        "font": "\"GT Walsheim Pro\", -apple-system, \"syste",
+        "box": [
+          853,
+          574,
+          186,
+          28
+        ]
+      },
+      {
+        "text": "Mobile",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "size": "18px",
+        "weight": "700",
+        "lh": "27.9px",
+        "deco": "none",
+        "font": "\"GT Walsheim Pro\", -apple-system, \"syste",
+        "box": [
+          1079,
+          574,
+          186,
+          28
+        ]
+      }
+    ]
+  },
+  "card": {
+    "box": [
+      272,
+      282
+    ],
+    "radius": "0px",
+    "shadow": "none",
+    "title": null,
+    "imgRadius": null
+  },
+  "placeholderRules": [
+    {
+      "sel": ".jss114 .MuiOutlinedInput-root input::-webkit-input-placeholder",
+      "color": "",
+      "opacity": "0.8"
+    },
+    {
+      "sel": ".jss113 .MuiOutlinedInput-root input::-webkit-input-placeholder",
+      "color": "",
+      "opacity": "0.8"
+    },
+    {
+      "sel": ".jss63 .MuiInput-input::placeholder",
+      "color": "",
+      "opacity": "1"
+    },
+    {
+      "sel": ".jss64::-webkit-input-placeholder",
+      "color": "",
+      "opacity": ""
+    },
+    {
+      "sel": ".jss66::-webkit-input-placeholder",
+      "color": "",
+      "opacity": ""
+    },
+    {
+      "sel": ".jss67::-webkit-input-placeholder",
+      "color": "",
+      "opacity": ""
+    },
+    {
+      "sel": ".jss53 .MuiInput-input::placeholder",
+      "color": "",
+      "opacity": "1"
+    },
+    {
+      "sel": ".jss54::-webkit-input-placeholder",
+      "color": "",
+      "opacity": ""
+    },
+    {
+      "sel": ".jss56::-webkit-input-placeholder",
+      "color": "",
+      "opacity": ""
+    }
+  ]
+}
