@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vevo style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #e3e3e3;
+    --ink: #000000;
+    --crimson: #a1002e;
+    --slate: #798094;
+    --sand: #cec7ae;
+    --action: #174beb;
+    --text: #000000;
+    --muted: #4f4f4f;
+    --inverse: #ffffff;
+    --current: #9507ff;
+    --line: #000000;
+    --pill: 24px;
+    --font: Arial, Helvetica, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.4 var(--font); }
+  header { padding: 20px 30px; border-bottom: 1px solid var(--surface); display: flex; justify-content: space-between; align-items: baseline; }
+  h1 { font-size: 28px; font-weight: 400; margin: 0; }
+  main { padding: 30px; max-width: 1100px; }
+  h2 { font-size: 22px; font-weight: 400; margin: 36px 0 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .sw { width: 140px; }
+  .sw i { display: block; height: 64px; border: 1px solid #e3e3e3; }
+  .sw span { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .hero { background: var(--ink); color: var(--inverse); padding: 30px; margin-top: 16px; }
+  .hero p { font-size: 48px; line-height: 0.95; letter-spacing: -0.01em; margin: 0 0 16px; }
+  button.pill, a.pill { display: inline-flex; align-items: center; height: 46px; padding: 0 26px; border-radius: var(--pill); background: #fff; color: #000; border: 0; font: 400 16px/22px var(--font); text-decoration: none; }
+  .band { padding: 24px 30px; color: #fff; margin-top: 12px; }
+  .cookie { background: var(--action); color: #fff; padding: 16px; display: flex; gap: 12px; align-items: center; }
+  .cookie button { height: 32px; padding: 0 16px; font-size: 14px; border: 1px solid #fff; }
+  .decline { background: var(--action); color: #fff; }
+  .accept { background: #fff; color: var(--action); }
+  p.note { color: var(--muted); font-size: 14px; max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Vevo</h1>
+  <span>Light only. Values from tokens.json.</span>
+</header>
+<main>
+  <p class="note">Public marketing site, signed out, measured 2026-11-19. The display face is a Wix-hosted font and is not loaded here. Arial is the fallback named in the tokens.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="sw"><i style="background:#e3e3e3"></i><span>surface #e3e3e3</span></div>
+    <div class="sw"><i style="background:#000000"></i><span>ink #000000</span></div>
+    <div class="sw"><i style="background:#a1002e"></i><span>crimson #a1002e</span></div>
+    <div class="sw"><i style="background:#798094"></i><span>slate #798094</span></div>
+    <div class="sw"><i style="background:#cec7ae"></i><span>sand #cec7ae</span></div>
+    <div class="sw"><i style="background:#174beb"></i><span>action #174beb</span></div>
+    <div class="sw"><i style="background:#4f4f4f"></i><span>muted #4f4f4f</span></div>
+    <div class="sw"><i style="background:#9507ff"></i><span>current #9507ff</span></div>
+  </div>
+  <h2>Hero and pill</h2>
+  <div class="hero">
+    <p>The World's Leading Music Video Network</p>
+    <a class="pill" href="#button">About Us</a>
+  </div>
+  <h2>Sections</h2>
+  <div class="band" style="background:#a1002e">By the numbers</div>
+  <div class="band" style="background:#798094">Vevo For Artists</div>
+  <div class="band" style="background:#cec7ae;color:#000">Watch More Music</div>
+  <h2>Cookie bar</h2>
+  <div class="cookie">
+    <span>We use cookies to ensure that we give you the best experience on our website.</span>
+    <button class="decline" type="button">Decline</button>
+    <button class="accept" type="button">Accept</button>
+  </div>
+</main>
+</body>
+</html>
