@@ -20343,6 +20343,66 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "uber-eats",
+      "name": "Uber Eats",
+      "url": "https://www.ubereats.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Food-delivery marketing: black and gray pills on white, a 32 px address search, UberMove headlines, and a peach city band",
+      "tags": [
+        "web",
+        "food",
+        "delivery",
+        "marketing",
+        "pill",
+        "uber"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing only; login, signup, checkout and address entry were not opened)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/uber-eats/README.md",
+      "tokens": "systems/uber-eats/tokens.json",
+      "styleGuide": "systems/uber-eats/style-guide.html",
+      "preview": {
+        "cover": "systems/uber-eats/icon.png",
+        "icon": "systems/uber-eats/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.ink",
+            "muted": "light.text.secondary",
+            "accent": "light.background.ink",
+            "border": "light.border.opaque"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public web, 2026-11-19",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/863",
+        "gaps": [
+          "preview browser returned The browser is not producing screenshot frames, so there are no screenshots or crops",
+          "viewport stayed 1169x731; 1440 and 390 were not applied",
+          "dark ramp names exist in CSS but the live page stayed data-theme=light",
+          "login, signup, checkout, phone, card and address entry were not opened"
+        ]
+      }
     }
   ]
 }
