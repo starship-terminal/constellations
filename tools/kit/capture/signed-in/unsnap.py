@@ -76,7 +76,8 @@ def main(src, outdir):
     meta, page = json.loads(m.group(1)), m.group(2)
     # The label names the two files written; anything but a plain name (a / or ..) could write elsewhere.
     if not isinstance(meta.get("label"), str) or not re.fullmatch(r"[\w.-]+", meta["label"]) or meta["label"].strip(".") == "":
-        sys.exit(f"snapshot label {meta.get('label')!r} is not a plain name (letters, digits, _ . -)")
+        # the value is not printed: a label can hold the very text the redaction file exists to keep out
+        sys.exit("the snapshot label is not a plain name (letters, digits, _ . -); rename it in the paste")
     # The page title is usually the conversation or document name, so it is not kept.
     meta.pop("title", None)
     leaks = leaks_in(page + json.dumps(meta, ensure_ascii=False), redact)   # an accented name stays as written

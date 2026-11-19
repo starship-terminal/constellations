@@ -87,9 +87,10 @@ class SharedList(unittest.TestCase):
     def test_unsnap_refuses_a_missing_snapshot_and_a_label_that_is_a_path(self):
         with tempfile.TemporaryDirectory() as d:
             redact = Path(d) / "r.json"
-            redact.write_text(json.dumps({"replace": [["nothing-matches", "g", "x"]]}))
+            redact.write_text(json.dumps({"replace": [["Jane Doe", "gi", "A User"]]}))
             out = Path(d) / "out"
             for body, why in [("not a snapshot", "no SNAPSTART"),
+                              ("SNAPSTART" + json.dumps({"label": "Jane Doe/../x", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
                               ("SNAPSTART" + json.dumps({"label": "../escaped", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
                               ("SNAPSTART" + json.dumps({"label": "a/b", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
                               ("SNAPSTART" + json.dumps({"label": "..", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name")]:
@@ -100,6 +101,7 @@ class SharedList(unittest.TestCase):
                 self.assertNotEqual(res.returncode, 0, body)
                 self.assertIn(why, res.stderr, body)
                 self.assertNotIn("Traceback", res.stderr)
+                self.assertNotIn("Jane", res.stderr)   # a refused label is never echoed
             self.assertFalse((Path(d) / "escaped.html").exists())
 
     def test_unsnap_finds_an_accented_name_in_the_metadata(self):
