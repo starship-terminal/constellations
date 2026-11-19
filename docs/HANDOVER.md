@@ -96,8 +96,7 @@ the last screenshot, from the navigation that is actually on screen.
    thread via GraphQL `resolveReviewThread`. Then merge
    `origin/main` (`--theirs` for catalog.json/README.md/AGENTS.md/
    refero-coverage/media-taxonomy; re-append your package's
-   catalog entry + category keys; bump AGENTS "the packages (N)" to
-   the real `systems/` dir count), regenerate, re-check, push.
+   catalog entry + category keys), regenerate, re-check, push.
    Never resolve `scorecard/` by taking one side: rerun `make grade`
    after merging main. When both sides added a snapshot under the same
    name (`scorecard/audits/<date>-N.json`), keep main's file at that
