@@ -20343,6 +20343,78 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "marathon",
+      "name": "Marathon",
+      "url": "https://onmarathon.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A light archive marketing site: lime banner, ink pill buttons, a two-card pricing page, and a letter homepage after the product wound down",
+      "tags": [
+        "web",
+        "marketing",
+        "light",
+        "signed-out",
+        "archive",
+        "pill",
+        "pricing"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed-out public archive. /sign-in and /register redirect home and were not submitted. Get Started was not used as checkout. No purchase.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/marathon/README.md",
+      "tokens": "systems/marathon/tokens.json",
+      "styleGuide": "systems/marathon/style-guide.html",
+      "preview": {
+        "cover": "systems/marathon/screenshots/home-light-default.png",
+        "icon": "systems/marathon/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "onmarathon.com in headless Chromium, desktop 1440x900 and phone 390x844. Computed styles. No cookie banner appeared. Sign-in and register redirect home and were not submitted.",
+        "timestamp": "2026-11-18T09:30:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/for-agencies",
+          "/pricing",
+          "/demo",
+          "/curated"
+        ],
+        "gaps": [
+          "/sign-in redirects to /; the sign-in form was not submitted and no fields painted",
+          "/register redirects to /; registration was not submitted",
+          "Get Started links to /register and was not used as checkout; no purchase, no payment, no billing portal",
+          "Book A Demo embeds SavvyCal and was not submitted",
+          "app.onmarathon.com account, dashboard and workspace are behind sign-in; the agencies page shows a public demo board only",
+          "careers, privacy and terms leave the site and were not followed",
+          "no cookie banner appeared; the hide path was not a click"
+        ],
+        "durationMin": 90
+      }
     }
   ]
 }
