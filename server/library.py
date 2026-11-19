@@ -208,7 +208,9 @@ def search_styles(query: str, store: str = "all", platform: str | None = None,
             e = by_slug.get(hit["slug"])
             if e is None:
                 continue
-            if platform and platform not in e.get("tags", []) and e.get("platform") != wanted:
+            # The platform field only: a tag such as `mobile` marks a 390px pass of a web
+            # package (mwm), which is not a mobile app.
+            if platform and e.get("platform") != wanted:
                 continue
             out.append({"store": "systems", "slug": hit["slug"], "name": hit["name"],
                         "score": hit["score"], "goodFor": hit["goodFor"], "tags": hit["tags"],
