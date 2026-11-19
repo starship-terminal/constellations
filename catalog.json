@@ -20343,6 +20343,59 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "superlist",
+      "name": "Superlist",
+      "url": "https://www.superlist.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Task-list marketing: cream page, coral gradient pill, sand plan cards, Haffer headlines and Inter body",
+      "tags": [
+        "web",
+        "productivity",
+        "tasks",
+        "marketing",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (public marketing plus the Flutter sign-in screen; the magic link was not sent)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/superlist/README.md",
+      "tokens": "systems/superlist/tokens.json",
+      "styleGuide": "systems/superlist/style-guide.html",
+      "preview": {
+        "cover": "systems/superlist/screenshots/home-light-default.png",
+        "icon": "systems/superlist/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.bottom",
+            "border": "light.border.focus"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45,
+        "pr": "https://github.com/starship-terminal/constellations/pull/839"
+      }
     }
   ]
 }

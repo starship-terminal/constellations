@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Superlist style guide</title>
+<style>
+  :root {
+    --page: #fffdf9;
+    --sand: #f0eeea;
+    --peach: #faeee7;
+    --ink: #181825;
+    --ink-soft: #181824;
+    --muted: #59575c;
+    --footer: #8e8da0;
+    --coral-top: #ff502f;
+    --coral-bottom: #dc0000;
+    --focus: #005fcc;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: Inter, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-family: Georgia, serif; font-weight: 700; font-size: 40px; letter-spacing: -1px; margin: 0 0 8px; }
+  p { color: var(--muted); line-height: 1.5; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 32px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 12px; }
+  .name { font-size: 13px; margin-top: 6px; }
+  .hex { font-size: 12px; color: var(--footer); }
+  .pill {
+    display: inline-block;
+    padding: 14px 25px 15px;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    background-image: linear-gradient(0deg, var(--coral-bottom), var(--coral-top));
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.05) 0px 2px 4px 0px, rgba(255, 255, 255, 0.45) 0px 0.5px 0px 0px inset;
+  }
+  .card { background: var(--sand); border-radius: 20px; padding: 24px; width: 240px; }
+  .price { font-size: 48px; font-weight: 600; line-height: 1.2; margin: 8px 0; }
+  .band { background: var(--ink-soft); color: white; border-radius: 16px; padding: 32px; }
+  a.quiet { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Superlist</h1>
+  <p>Measured public marketing colours. The display face on the live site is Haffer XH. This page falls back to Georgia and Inter because those files are not in the package.</p>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#fffdf9;border:1px solid #dedbd6"></div><div class="name">page</div><div class="hex">#fffdf9</div></div>
+    <div class="swatch"><div class="chip" style="background:#f0eeea"></div><div class="name">sand</div><div class="hex">#f0eeea</div></div>
+    <div class="swatch"><div class="chip" style="background:#faeee7"></div><div class="name">peach</div><div class="hex">#faeee7</div></div>
+    <div class="swatch"><div class="chip" style="background:#181824"></div><div class="name">ink soft</div><div class="hex">#181824</div></div>
+    <div class="swatch"><div class="chip" style="background:linear-gradient(#ff502f,#dc0000)"></div><div class="name">pill</div><div class="hex">#ff502f to #dc0000</div></div>
+  </div>
+  <p><a class="pill" href="#pill">Start for free</a> <a class="quiet" href="#how">See how it works</a></p>
+  <div class="row">
+    <div class="card"><div>Free</div><div class="price">$0</div><div>Plan card, 20px radius, sand fill.</div></div>
+  </div>
+  <div class="band">
+    <strong>Big exhale. Small first step.</strong>
+    <p style="color:#d6d4df">Closing band uses the ink-soft fill. Muted line on that band measured rgb(214, 212, 223).</p>
+  </div>
+</main>
+</body>
+</html>
