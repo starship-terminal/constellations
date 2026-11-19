@@ -74,6 +74,50 @@ class FetchWritesTest(ReferoTmp):
         self.assertEqual(self.tmp_files(), [])
 
 
+class WriteAtomicTest(ReferoTmp):
+    """Every tools/refero writer shares dump.write_atomic: a temp file unique
+    to the call, mode 0644, removed when the write fails."""
+
+    def test_every_writer_uses_the_one_helper(self):
+        import coverage
+        import fetch_collections
+        import index_similar
+        for mod in (fetch, coverage, fetch_collections, index_similar):
+            self.assertIs(mod.write_atomic, refero_dump.write_atomic, mod.__name__)
+
+    def test_a_failed_rename_leaves_the_file_and_no_temp(self):
+        self.refero.mkdir()
+        path = self.refero / "meta.json"
+        path.write_text("old")
+        with mock.patch.object(refero_dump.os, "replace", side_effect=OSError("disk")), \
+                self.assertRaises(OSError):
+            fetch.write_atomic(path, "new")
+        self.assertEqual(path.read_text(), "old")
+        self.assertEqual(sorted(p.name for p in self.refero.iterdir()), ["meta.json"])
+
+    def test_temp_names_are_unique_and_the_mode_is_0644(self):
+        import os
+        self.refero.mkdir()
+        path = self.refero / "meta.json"
+        temps = []
+        real = refero_dump.os.replace
+
+        def record(src, dst):
+            temps.append(Path(src).name)
+            return real(src, dst)
+        old = os.umask(0o077)
+        try:
+            with mock.patch.object(refero_dump.os, "replace", side_effect=record):
+                fetch.write_atomic(path, "a")
+                fetch.write_atomic(path, "b")
+        finally:
+            os.umask(old)
+        self.assertEqual(len(set(temps)), 2)
+        self.assertNotIn("meta.json.tmp", temps)
+        self.assertEqual(path.stat().st_mode & 0o777, 0o644)
+        self.assertEqual(path.read_text(), "b")
+
+
 class ClassifyWritesTest(ReferoTmp):
     LABELS = {"product_type": "devtools", "design_style": "minimal", "tags": ["saas"]}
 

@@ -16,7 +16,6 @@ Re-run after fetch.py.
 
 import argparse
 import json
-import os
 import re
 import sqlite3
 import sys
@@ -110,12 +109,7 @@ def make_resolver(slugs, by_name):
     return resolve
 
 
-def write_atomic(path, text):
-    """Write text to path via a sibling .tmp file and rename, so a crash can
-    never leave a truncated file behind."""
-    tmp = path.with_name(path.name + ".tmp")
-    tmp.write_text(text)
-    os.replace(tmp, path)
+write_atomic = refero_dump.write_atomic
 
 
 def open_db(refero: Path):
