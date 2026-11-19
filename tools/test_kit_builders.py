@@ -94,7 +94,8 @@ SIGNED_IN = {
                                    "focus-visible": state(RING, theme="dark", via="keyboard", focus={"ok": True, "matches": True})}},
         "plain-row": {"title": "Plain row", "group": "Lists", "page": "home-dark", "pages": ["home-dark"], "selector": "() => x",
                       "states": {"default": state(theme="dark", via="at rest"),
-                                 "focus-visible": state(theme="dark", via="keyboard", focus={"ok": True, "matches": False})}},
+                                 "focus-visible": state(theme="dark", via="keyboard", focus={"ok": True, "matches": False},
+                                                        crop="components/crops/plain-row-focus-visible.png")}},
         "static-div": {"title": "Static div", "group": "Lists", "page": "home-dark", "pages": ["home-dark"], "selector": "() => x",
                        "states": {"default": state(theme="dark", via="at rest"),
                                   "focus-visible": {"theme": "dark", "snapshot": "home-dark", "skipped": "not focusable in the static copy (no tabindex)"}}},
@@ -106,6 +107,7 @@ class SignedInComponentsBuilder(unittest.TestCase):
     def test_focus_without_focus_visible_is_left_out_of_the_tally(self):
         with tempfile.TemporaryDirectory() as d:
             pkg = package(d, "build_components_md.py", SIGNED_IN)
+            (pkg / "components/crops/plain-row-focus-visible.png").write_bytes(b"png")   # an earlier run's crop
             md = build(pkg)
             self.assertEqual(md, build(pkg))
         line = next(ln for ln in md.splitlines() if ln.startswith("**Focus.**"))
@@ -113,6 +115,7 @@ class SignedInComponentsBuilder(unittest.TestCase):
         self.assertNotIn("no ring on the element", line)
         self.assertIn("Focus could not be captured on 2 dark states", line)
         self.assertIn("`plain-row`, `static-div`", line)
+        self.assertNotIn("plain-row-focus-visible.png", md)   # no image presents it as a captured focus either
 
 
 @unittest.skipIf(NODE is None, "node is not on PATH")
