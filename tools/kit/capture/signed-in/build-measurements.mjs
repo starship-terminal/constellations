@@ -5,9 +5,10 @@
 //   node tools/capture/signed-in/build-measurements.mjs
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { hex } from '../css-colour.mjs';
 
-const REF = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', '..');
+const REF = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const J = JSON.parse(fs.readFileSync(path.join(REF, 'raw', 'components-computed.json'), 'utf8'));
 
 // rounded-full is calc(infinity * 1px), which computes to 33554400px.
