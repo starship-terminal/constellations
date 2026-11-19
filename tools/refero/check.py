@@ -380,8 +380,53 @@ def coverage_matches_base(directory: dict, head_catalog: dict,
     added = [row for slug, row in head_rows.items() if slug not in base_rows]
     added_expected = coverage_mod.build(
         directory, {**head_catalog, "systems": list(base.get("systems") or []) + added})
-    return (coverage_shared_ok(expected, actual)
-            and coverage_extras_are_added(actual, expected, added_expected))
+    if (coverage_shared_ok(expected, actual)
+            and coverage_extras_are_added(actual, expected, added_expected)):
+        return True
+    # The committed file may also lag packages already merged to the base.
+    # It is still current when it is exactly the derivation of the packages
+    # it names, and those packages are an unchanged subset of this catalog.
+    return coverage_is_prior_derivation(directory, head_catalog, actual)
+
+
+def packages_in_coverage(actual: dict) -> set[str]:
+    """Slugs the committed coverage file derived a row for."""
+    found = set()
+    for row in (actual.get("matched") or {}).values():
+        for pkg in row.get("pkgs") or []:
+            if pkg.get("slug"):
+                found.add(pkg["slug"])
+    for row in (actual.get("systems_absent_from_catalog") or {}).values():
+        for pkg in row:
+            if isinstance(pkg, dict) and pkg.get("slug"):
+                found.add(pkg["slug"])
+    return found
+
+
+def coverage_is_prior_derivation(directory: dict, head_catalog: dict,
+                                 actual: dict) -> bool:
+    """True when the file is the derivation of an unchanged subset.
+
+    A capture merge does not rewrite this file, so the next add-only pull
+    request still carries the older derivation. A hand-edited domain does
+    not equal that derivation and still fails. Outside a pull request the
+    caller keeps the exact-match rule."""
+    base = base_catalog(head_catalog)
+    if base is None:
+        return False
+    base_rows = {s.get("slug"): s for s in base.get("systems") or []}
+    head_rows = {s.get("slug"): s for s in head_catalog.get("systems") or []}
+    if not base_rows or not set(head_rows) > set(base_rows):
+        return False
+    if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
+        return False
+    named = packages_in_coverage(actual)
+    if not named or not named <= set(head_rows):
+        return False
+    kept = [row for row in head_catalog.get("systems") or []
+            if row.get("slug") in named]
+    return actual == coverage_mod.build(
+        directory, {**head_catalog, "systems": kept})
 
 
 def coverage_shared_ok(expected: dict, actual: dict) -> bool:
