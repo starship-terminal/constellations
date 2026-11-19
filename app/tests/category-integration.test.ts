@@ -1,9 +1,11 @@
+import { execFileSync } from "node:child_process";
 import { describe, expect, it } from "vitest";
 import { withReferenceCategories } from "@/server/taxonomy/library";
 import {
   categorySeedGaps,
   matchesCategory,
   type CatalogCategoryRow,
+  type CuratedCategory,
 } from "@/contracts/categories";
 import { queryScreens } from "@/server/sources/screens";
 import assignments from "@/data/system-categories.json";
@@ -18,11 +20,28 @@ describe("database categories across apps and screens", () => {
     return catalog.systems as CatalogCategoryRow[];
   }
 
+  function previousSeed(): CuratedCategory[] {
+    const base = process.env.GITHUB_BASE_REF;
+    if (!base) return assignments;
+    try {
+      const raw = execFileSync(
+        "git",
+        ["show", `origin/${base}:app/src/data/system-categories.json`],
+        { encoding: "utf8" },
+      );
+      const parsed = JSON.parse(raw) as CuratedCategory[];
+      return Array.isArray(parsed) ? parsed : assignments;
+    } catch {
+      return assignments;
+    }
+  }
+
   it("covers each existing measured system once with platform-correct assignments", () => {
     const rows = catalogRows();
-    // No pull request base. This is the check a push to main runs, including
-    // the commit that merged an add-only capture.
-    expect(categorySeedGaps(rows, assignments)).toEqual([]);
+    // On main, previous is the committed seed, so a deleted curated row fails.
+    // On a pull request, previous is the base seed, so a new slug may stay
+    // unseeded and a row the base already had may not disappear.
+    expect(categorySeedGaps(rows, assignments, previousSeed())).toEqual([]);
   });
   it("accepts an add-only slug when the seed has no row for it yet", () => {
     const rows = catalogRows();
@@ -35,6 +54,17 @@ describe("database categories across apps and screens", () => {
     // request and after the merge. A seed row whose package is gone, or a
     // row in the wrong platform group, still fails.
     expect(categorySeedGaps([...rows, added], assignments)).toEqual([]);
+    // A slug the previous seed already curated cannot lose its row. A slug
+    // the previous seed never had can stay unseeded.
+    const dropped = assignments.filter(
+      (entry) => entry.referenceId !== "systems:linear",
+    );
+    expect(categorySeedGaps(rows, dropped, assignments)).toContain(
+      "linear: curated category row was deleted",
+    );
+    expect(categorySeedGaps([...rows, added], dropped, assignments)).toContain(
+      "linear: curated category row was deleted",
+    );
     const orphan = [
       ...assignments,
       {
