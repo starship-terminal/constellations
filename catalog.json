@@ -20343,6 +20343,63 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "outchat",
+      "name": "Outchat",
+      "url": "https://outchat.ai",
+      "category": "ai-chat",
+      "platform": "web",
+      "goodFor": "White marketing page for a branded AI chat: black pill buttons, Aeonik Regular display type, 1280px column, quiet 5% black secondary pill, 12px pricing cards",
+      "tags": [
+        "web",
+        "ai",
+        "chat",
+        "marketing",
+        "saas",
+        "pill",
+        "ycode"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing from a Wayback replay. Login form was a spinner and was not entered",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/outchat/README.md",
+      "tokens": "systems/outchat/tokens.json",
+      "styleGuide": "systems/outchat/style-guide.html",
+      "preview": {
+        "cover": "systems/outchat/screenshots/home-light-default.png",
+        "icon": "systems/outchat/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.quiet",
+            "text": "light.text.primary",
+            "muted": "light.text.legal",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.medium"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/734",
+        "version": "Ycode publish 2025-11-20, Wayback 20260520072344",
+        "durationNote": "Live origin timed out. Values measured from a local Wayback replay."
+      }
     }
   ]
 }

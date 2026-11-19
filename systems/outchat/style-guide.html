@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outchat style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --action: #000000;
+    --quiet: rgba(0, 0, 0, 0.05);
+    --text: #000000;
+    --on-action: #ffffff;
+    --legal: rgba(0, 0, 0, 0.5);
+    --field: #171717;
+    --border: rgba(0, 0, 0, 0.05);
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sans); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+  h1 { font-weight: 400; font-size: 48px; line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 8px; }
+  h2 { font-weight: 400; font-size: 24px; letter-spacing: -0.025em; margin: 40px 0 12px; }
+  p { max-width: 68ch; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .sw { display: flex; gap: 10px; align-items: center; }
+  .sw i { width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }
+  .sw b { display: block; font-size: 13px; font-weight: 500; }
+  .sw span { font-size: 12px; color: #737373; }
+  button, .pill { font: 400 16px/24px var(--sans); border: 0; cursor: pointer; }
+  .primary { background: var(--action); color: var(--on-action); border-radius: 9999px; padding: 10px 20px; }
+  .quiet { background: var(--quiet); color: var(--text); border-radius: 9999px; padding: 8px 16px; }
+  .card { border-radius: 12px; padding: 40px; max-width: 378px; box-shadow: inset 0 0 0 1px var(--border); }
+  .price { font-size: 36px; letter-spacing: -0.025em; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e5e5e5; }
+  code { font-size: 12px; }
+  .note { font-size: 13px; color: #737373; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Outchat</h1>
+  <p class="note">Drawn from tokens.json. Aeonik is not loaded. Inter stands in, which is the family the app stylesheet imports.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><div><b>page</b><span>#ffffff</span></div></div>
+    <div class="sw"><i style="background:#000000"></i><div><b>action</b><span>#000000</span></div></div>
+    <div class="sw"><i style="background:rgba(0,0,0,0.05)"></i><div><b>quiet</b><span>rgba(0,0,0,0.05)</span></div></div>
+    <div class="sw"><i style="background:#171717"></i><div><b>field text</b><span>#171717</span></div></div>
+    <div class="sw"><i style="background:#e7000b"></i><div><b>app destructive</b><span>#e7000b</span></div></div>
+    <div class="sw"><i style="background:#0a0a0a"></i><div><b>app dark page</b><span>#0a0a0a</span></div></div>
+  </div>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary">Make your AI chat</button>
+    <button class="quiet">Login</button>
+  </div>
+
+  <h2>Pricing card</h2>
+  <div class="card">
+    <div>Free</div>
+    <div class="price">$0 <span style="font-size:16px">per month</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Family</th></tr>
+    <tr><td>Hero</td><td>60px / 1.1 / -0.025em</td><td>Aeonik Regular</td></tr>
+    <tr><td>Section</td><td>48px</td><td>Aeonik Regular</td></tr>
+    <tr><td>Price</td><td>36px</td><td>Aeonik Regular</td></tr>
+    <tr><td>Body</td><td>16px / 24px</td><td>Aeonik Regular</td></tr>
+    <tr><td>Button</td><td>16px</td><td>Aeonik Medium</td></tr>
+    <tr><td>Legal</td><td>12px</td><td>Aeonik Regular</td></tr>
+  </table>
+</div>
+</body>
+</html>
