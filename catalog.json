@@ -20343,6 +20343,72 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "quizlet",
+      "name": "Quizlet",
+      "url": "https://quizlet.com",
+      "category": "learning",
+      "platform": "web",
+      "goodFor": "Study-product marketing: twilight promo bar, white sticky nav, pill buttons, sunken search field, 24px feature tiles",
+      "tags": [
+        "web",
+        "learning",
+        "education",
+        "marketing",
+        "pill",
+        "twilight"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Login and signup were opened. No email, password, birthday, phone or card was submitted",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/quizlet/README.md",
+      "tokens": "systems/quizlet/tokens.json",
+      "styleGuide": "systems/quizlet/style-guide.html",
+      "preview": {
+      "cover": "systems/quizlet/icon.png",
+        "icon": "systems/quizlet/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.background.action",
+            "border": "dark.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.hurme"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 70,
+        "version": "not recorded"
+      },
+      "layoutGaps": {
+        "screenshots/": "preview_snapshot failed twice with: The browser is not producing screenshot frames. No screenshot was invented.",
+        "components/": "No crops. The same preview frame failure blocked element screenshots.",
+        "icons/": "Inline SVGs were not extracted. The wordmark and chevrons are named in components.md."
+      }
     }
   ]
 }

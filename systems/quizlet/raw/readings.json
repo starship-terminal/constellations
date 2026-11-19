@@ -1,0 +1,194 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 Code preview browser, live page evaluate",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1},
+    "note": "The preview pane filled the T3 window. This is not a 1440 or 390 capture. preview_resize was not run. preview_snapshot failed twice with: The browser is not producing screenshot frames."
+  },
+  "pages": [
+    {"url": "https://quizlet.com/", "title": "Quizlet: Study Tools & Learning Resources for Students and Teachers | Quizlet", "themeClass": "theme-default"},
+    {"url": "https://quizlet.com/login", "title": "Log in to Quizlet | Quizlet"},
+    {"url": "https://quizlet.com/sign-up", "title": "Sign up | Quizlet", "note": "Reached from the login page's create-account control. Birthday fields were visible. Nothing was submitted."},
+    {"url": "https://quizlet.com/mission", "title": "About Quizlet | Quizlet", "note": "Opened by clicking the homepage footer link."}
+  ],
+  "denied": [
+    {"url": "https://quizlet.com/features/flashcards", "title": "Access to this page has been denied", "text": "Before we continue... Press & Hold to confirm you are a human (and not a bot)."}
+  ],
+  "stylesheetsFetchedInPage": [
+    "https://assets.quizlet.com/_next/static/css/2f945cc419a78f44.css",
+    "https://assets.quizlet.com/_next/static/css/0f6304fb60039a6b.css"
+  ],
+  "computed": {
+    "body": {
+      "backgroundColor": "rgb(246, 247, 251)",
+      "color": "rgb(40, 46, 62)",
+      "fontFamily": "hurme_no2-webfont, -apple-system, system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "26px",
+      "class": "theme-default flex-sidebar"
+    },
+    "h1": {"fontSize": "44px", "lineHeight": "56px", "fontWeight": "700", "colorHome": "rgb(0, 0, 0)", "colorLogin": "rgb(40, 46, 62)"},
+    "h2": {"fontSize": "32px", "lineHeight": "40px", "fontWeight": "700", "color": "rgb(40, 46, 62)"},
+    "lede": {"fontSize": "20px", "lineHeight": "28px", "fontWeight": "400"},
+    "tileTitle": {"fontSize": "24px", "lineHeight": "32px", "fontWeight": "700"},
+    "loginButton": {
+      "backgroundColor": "rgb(66, 85, 255)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "200px",
+      "padding": "10px 16px",
+      "height": "40px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
+      "border": "2px solid transparent"
+    },
+    "signupButton": {
+      "backgroundColor": "rgb(66, 85, 255)",
+      "color": "rgb(255, 255, 255)",
+      "height": "48px",
+      "padding": "12px 24px",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": "600",
+      "borderRadius": "200px"
+    },
+    "xlargeButton": {"height": "56px", "padding": "16px 32px", "fontSize": "16px", "fontWeight": "600", "borderRadius": "200px"},
+    "teachersButton": {"backgroundColor": "rgb(237, 239, 255)", "color": "rgb(66, 85, 255)", "height": "40px", "padding": "10px 16px", "borderRadius": "200px"},
+    "createLink": {"color": "rgb(66, 85, 255)", "fontSize": "14px", "fontWeight": "600", "lineHeight": "20px", "borderRadius": "4px"},
+    "footerLink": {"color": "rgb(40, 46, 62)", "fontSize": "14px", "fontWeight": "600", "lineHeight": "20px"},
+    "legalLink": {"color": "rgb(88, 99, 128)", "fontSize": "12px", "fontWeight": "600"},
+    "searchField": {
+      "backgroundColor": "rgb(246, 247, 251)",
+      "borderRadius": "8px",
+      "padding": "8px 16px",
+      "height": "40px",
+      "border": "2px solid transparent",
+      "placeholderColor": "rgb(147, 155, 180)",
+      "inputFontWeight": "600",
+      "inputFontSize": "16px",
+      "focusBorderColor": "rgb(168, 177, 255)"
+    },
+    "loginField": {"height": "56px", "padding": "8px 16px", "borderRadius": "8px", "backgroundColor": "rgb(246, 247, 251)"},
+    "nav": {"position": "sticky", "height": "64px", "backgroundColor": "rgb(255, 255, 255)", "padding": "12px 16px", "zIndex": "1098"},
+    "promoBar": {"backgroundColor": "rgb(31, 28, 139)", "color": "rgb(255, 255, 255)", "height": "48px", "linkColor": "rgb(199, 247, 230)"},
+    "featureTiles": [
+      {"name": "Record Lecture", "backgroundColor": "rgb(66, 85, 255)", "color": "rgb(255, 255, 255)", "borderRadius": "24px", "height": 390, "width": 310},
+      {"name": "Study Guides", "backgroundColor": "rgb(217, 255, 204)", "color": "rgb(0, 0, 0)", "borderRadius": "24px"},
+      {"name": "Flashcards", "backgroundColor": "rgb(18, 193, 203)", "color": "rgb(0, 0, 0)", "borderRadius": "24px"},
+      {"name": "Games", "backgroundColor": "rgb(217, 221, 232)", "color": "rgb(0, 0, 0)", "borderRadius": "24px"}
+    ],
+    "teacherSection": {"backgroundColor": "rgb(219, 223, 255)", "padding": "48px 0px"},
+    "pageSection": {"backgroundColor": "rgb(246, 247, 251)", "padding": "64px 0px"},
+    "whiteSection": {"backgroundColor": "rgb(255, 255, 255)", "padding": "48px 0px"},
+    "iconButton": {"width": 56, "height": 56, "borderRadius": "50%", "backgroundColor": "rgb(246, 247, 251)", "color": "rgb(88, 99, 128)"},
+    "closeButton": {"width": 40, "height": 40, "borderRadius": "50%", "backgroundColor": "rgb(246, 247, 251)", "color": "rgb(88, 99, 128)"},
+    "magicLinkModal": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "16px",
+      "boxShadow": "rgba(40, 46, 62, 0.1) 0px 4px 16px 0px",
+      "width": 800,
+      "headingSize": "32px",
+      "headingWeight": "700",
+      "headingLineHeight": "40px"
+    },
+    "missionCard": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "24px",
+      "boxShadow": "rgba(40, 46, 62, 0.1) 0px 2px 4px 0px",
+      "width": 304,
+      "height": 384
+    },
+    "footer": {"padding": "64px 0px 0px 32px"},
+    "footerHeading": {"fontSize": "16px", "lineHeight": "24px", "fontWeight": "700", "color": "rgb(40, 46, 62)"},
+    "languageSelect": {"color": "rgb(88, 99, 128)", "fontSize": "14px", "fontWeight": "600", "borderRadius": "4px"},
+    "signupSelect": {"backgroundColor": "rgb(246, 247, 251)", "borderRadius": "200px", "height": 48, "color": "rgb(88, 99, 128)", "fontSize": "16px"},
+    "signupTabActive": {"color": "rgb(46, 56, 86)", "fontSize": "24px", "fontWeight": "700"},
+    "signupTabIdle": {"color": "rgb(88, 99, 128)", "fontSize": "24px", "fontWeight": "700"},
+    "checkbox": {"width": 13, "height": 13, "note": "Native input. No custom painted box was measured."}
+  },
+  "declared": {
+    "source": "2f945cc419a78f44.css fetched inside the page. Cross-origin cssRules were blocked.",
+    "fontFace": "hurme_no2-webfont weights 400, 600, 700 from /static/fonts/latin-sup/hurmegeosans-no2-*.woff2 and latin-basic",
+    "typographyWeights": {"heading": "700", "body": "400", "section": "600"},
+    "scales": {
+      "twilight": {"100": "#EDEFFF", "200": "#DBDFFF", "300": "#A8B1FF", "400": "#7583FF", "500": "#4255FF", "600": "#423ED8", "700": "#1F1C8B", "800": "#14125C", "900": "#0A092D"},
+      "gray": {"100": "#FFFFFF", "200": "#F6F7FB", "300": "#EDEFF4", "400": "#D9DDE8", "500": "#939BB4", "600": "#586380", "700": "#2E3856", "800": "#282E3E", "900": "#1A1D28"},
+      "mint": {"100": "#E6FCF4", "200": "#C7F7E6", "300": "#98F1D1", "400": "#59E8B5", "500": "#18AE79"},
+      "sherbert": {"100": "#FFF6EF", "200": "#FFE8D8", "300": "#FFC38C", "400": "#FF983A", "500": "#CC4E00"},
+      "sunset": {"100": "#FFF9E3", "200": "#FFEDAB", "300": "#FFDC62", "400": "#FFCD1F", "500": "#997700"},
+      "sky": {"100": "#EAF9FF", "200": "#CBF1FF", "300": "#98E3FF", "400": "#51CFFF", "500": "#008EC4"},
+      "lilac": {"100": "#FCF0FF", "200": "#F7D9FF", "300": "#EEAAFF", "400": "#E372FF", "500": "#9900BE"},
+      "lemon": {"100": "#FDFFE9", "200": "#FAFFBB", "300": "#F5FF7D", "400": "#EBFF03", "500": "#D4E603"},
+      "error": {"100": "#FF7873", "200": "#DA4543", "300": "#B00020"}
+    },
+    "themeNight": "body.theme-night and [data-force-night=true] redeclare semantic pairs. Not applied on the pages that loaded. prefers-color-scheme: dark was true on this Mac and the page stayed theme-default.",
+    "nightSamples": {
+      "gray200-gray800": "#282E3E",
+      "gray900-gray200": "#F6F7FB",
+      "twilight500-twilight300": "#A8B1FF",
+      "error-red": "#FF7873",
+      "scrim300-scrim300": "#0101108F",
+      "scrim200-scrim200": "#01011029"
+    },
+    "buttonPrimary": {
+      "background": "var(--twilight500-twilight500)",
+      "color": "var(--gray100-gray100)",
+      "hover": "var(--twilight600-twilight600)",
+      "active": "var(--twilight700-twilight700)",
+      "disabledColor": "var(--gray400-gray600)",
+      "disabledBackground": "var(--gray200-gray700)",
+      "focusBorder": "#A8B1FF",
+      "transition": "all .12s cubic-bezier(.47, 0, .745, .715)",
+      "radius": "12.5rem"
+    },
+    "buttonSecondary": {
+      "background": "var(--twilight100-gray600)",
+      "color": "var(--twilight500-gray200)",
+      "hover": "var(--twilight200-gray700)",
+      "active": "var(--twilight300-gray800)"
+    },
+    "buttonTertiary": {
+      "background": "var(--gray200-gray700)",
+      "color": "var(--gray600-gray200)",
+      "hover": "var(--gray300-gray800)"
+    },
+    "linkPrimaryHover": "var(--twilight-600-twilight-500)",
+    "linkPrimaryActive": "var(--twilight-700-twilight-600)",
+    "linkFocusVisible": "border-color #A8B1FF",
+    "textInput": {
+      "inlineStyle": "--a16m2iw6-0: 3.5rem; --a16m2iw6-1: var(--gray200-gray700); --a16m2iw6-2: var(--gray800-gray200); --a16m2iw6-3: transparent; --a16m2iw6-4: 0.5rem; --a16m2iw6-5: var(--twilight300-twilight300);",
+      "resolved": {"height": "3.5rem", "background": "#F6F7FB", "color": "#282E3E", "border": "transparent", "padY": "0.5rem", "focusBorder": "#A8B1FF"},
+      "radius": "0.5rem",
+      "borderWidth": "0.125rem",
+      "transition": "box-shadow .1s cubic-bezier(.37, 0, .53, 1), background .1s cubic-bezier(.37, 0, .53, 1)"
+    },
+    "modal": {
+      "radius": "1rem",
+      "background": "var(--gray100-grayException750)",
+      "widthDesktop": "50rem",
+      "margin": "5rem",
+      "animationSpeed": "400ms",
+      "easing": "cubic-bezier(.3, 0, .44, 1)",
+      "overlay": "var(--scrim300-scrim300)"
+    },
+    "shadows": [
+      "0 4px 12px rgba(0,0,0,.1)",
+      "0 .25rem 2rem 0 #282E3E1A",
+      "0 .25rem 1rem 0 #282E3E1A",
+      "0 .125rem .25rem 0 #282E3E1A"
+    ],
+    "reducedMotion": "45 prefers-reduced-motion: reduce rules in the main sheet. Buttons and text inputs set animation-duration and transition-duration to 1ms."
+  },
+  "notEntered": [
+    "No email was typed into the magic-link field.",
+    "No password was typed.",
+    "Signup was not submitted. The form asks for birthday month, day and year.",
+    "No phone number, card, or Quizlet Plus flow was opened.",
+    "Google, Facebook, Apple and WhatsApp login links were not followed.",
+    "The PerimeterX press-and-hold challenge on /features/flashcards was not completed."
+  ]
+}
