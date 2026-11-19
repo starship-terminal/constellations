@@ -163,7 +163,7 @@
     "email_allow": [
       "@fingerprint\\.com$",
       "@example\\.com$",
-      "@email\\.com$",
+      "^name@email\\.com$",
       "@company\\.com$"
     ],
     "net": true

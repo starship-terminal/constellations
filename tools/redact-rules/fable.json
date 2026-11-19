@@ -5,9 +5,7 @@
   "email_allow": [
    "@fable\\.(co|com)$",
    "@fable\\w*\\.\\w+$",
-   "example\\.com$",
-   "name@",
-   "you@"
+   "@example\\.com$"
   ]
  },
  "families": []

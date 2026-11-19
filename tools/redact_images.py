@@ -12,7 +12,9 @@ finds anything the rectangles missed, using the same detection patterns as `tool
     python3 tools/redact_images.py lines systems/manus/screenshots/home-dark.png   # author a rules file
 
 `check` never lets a rules file switch a detector off (its ocr.emails or ocr.net), and an email_allow
-entry must match a whole part of an address (see email_allowed). `check` reads every image file under the package that git does not ignore (any folder, every frame;
+entry must match a whole part of an address (see email_allowed). `check` and `apply` refuse a rules
+file whose email_allow entry passes any address, every address at a free-mail domain, or a bare local
+part at any domain (see allow_entry_problem): list the exact address instead. `check` reads every image file under the package that git does not ignore (any folder, every frame;
 a file of an image type it cannot read fails the check), and the package's own rules file, tools/redact-rules/<slug>.json, when one exists (its ocr
 block: email_allow, wrap_ignore) and prints which file it loaded; `--rules` names another one instead.
 `apply` never guesses: it edits files, so its `--rules` stays required.
@@ -79,10 +81,14 @@ import warnings
 from pathlib import Path
 
 import numpy as np
+try:
+    import re._parser as _re_parser          # Python 3.11+
+except ImportError:  # pragma: no cover
+    import sre_parse as _re_parser
 from PIL import Image, ImageFilter, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog import IMAGE_EXT, read_json_object, read_redaction, redaction_patterns, tool_env  # noqa: E402
+from catalog import IMAGE_EXT, input_error, read_json_object, read_redaction, redaction_patterns, tool_env  # noqa: E402
 
 Image.MAX_IMAGE_PIXELS = None
 warnings.simplefilter("ignore", Image.DecompressionBombWarning)
@@ -488,6 +494,111 @@ def rules_text_leaks(rules):
         if _phone_shaped(s):
             out.append(f"{path}: a phone-number-shaped string")
     return out
+# Mailbox domains anyone can sign up at. An allow entry that passes every address at one of them
+# passes a stranger's personal address too, so a package rules file names the exact address instead.
+FREE_MAIL = ("gmail.com", "googlemail.com", "yahoo.com", "yahoo.co.jp", "yahoo.co.uk", "ymail.com",
+             "outlook.com", "hotmail.com", "live.com", "msn.com", "icloud.com", "me.com", "mac.com",
+             "proton.me", "protonmail.com", "pm.me", "mail.com", "email.com", "aol.com", "gmx.com", "gmx.de",
+             "gmx.net", "web.de", "yandex.com", "yandex.ru", "mail.ru", "qq.com", "163.com", "126.com",
+             "zoho.com", "fastmail.com", "hey.com", "tutanota.com", "naver.com", "agentmail.to")
+# Addresses no real entry should pass: random local parts at random domains.
+PROBE_LOCALS = ("q7zk2vx9", "jane.doe.private")
+PROBE_DOMAINS = ("m4qz8wr2.com", "x9v2k7.org", "pz3n8q.io", "w7k2j9.co", "kq8z3v.net", "zz9q.qx7v")
+
+
+def allow_entry_problem(entry):
+    """Why a package rules file's ocr.email_allow entry is refused, or None. An entry must pin a domain
+    (`@vendor\\.com$`, a whole address, or a `\\.example$` label suffix): it may not pass every address
+    (`.*`), every address at a free-mail domain (`@gmail\\.com$`), or a local part at any domain
+    (`name@`, `^assistant@`). The private patterns file is the owner's and is not held to this."""
+    if not isinstance(entry, str):
+        return "is not a string"
+    try:
+        re.compile(entry, re.I)
+    except re.error as e:
+        return f"is not a valid regex ({e})"
+    if any(email_allowed(f"{lp}@{d}", [entry]) for lp in PROBE_LOCALS for d in PROBE_DOMAINS):
+        return "passes any address"
+    for d in FREE_MAIL:
+        if any(email_allowed(f"{lp}@{d}", [entry]) for lp in PROBE_LOCALS):
+            return f"passes every address at the free-mail domain {d}: list the exact address"
+    if "@" not in entry:
+        if not entry.startswith("\\."):
+            return "names no domain: write @domain or the whole address"
+    elif not re.search(r"[\w\\\[(]", entry[entry.rfind("@") + 1:]):
+        return "is a local part with no domain: write the whole address"
+    for sample in _regex_samples(entry):
+        if "@" in sample:
+            local = sample.partition("@")[0] or PROBE_LOCALS[0]
+            if any(email_allowed(f"{local}@{d}", [entry]) for d in PROBE_DOMAINS):
+                return "passes its local part at any domain: write the whole address"
+    return None
+
+
+_CLASS_PICKS = "a0.-_xZ@ "
+
+
+def _in_class(ch, items):
+    P, neg, hit = _re_parser, False, False
+    for op, av in items:
+        if op is P.NEGATE:
+            neg = True
+        elif op is P.LITERAL:
+            hit = hit or ord(ch) == av
+        elif op is P.RANGE:
+            hit = hit or av[0] <= ord(ch) <= av[1]
+        elif op is P.CATEGORY:
+            rx = {P.CATEGORY_DIGIT: r"\d", P.CATEGORY_NOT_DIGIT: r"\D", P.CATEGORY_WORD: r"\w",
+                  P.CATEGORY_NOT_WORD: r"\W", P.CATEGORY_SPACE: r"\s", P.CATEGORY_NOT_SPACE: r"\S"}.get(av)
+            hit = hit or bool(rx and re.fullmatch(rx, ch))
+    return hit != neg
+
+
+def _regex_samples(entry, cap=64):
+    """Strings the regex matches: one per combination of its alternatives (at most cap), each repeat
+    taken once and each character class by a plain member. So a grouped or alternated local part,
+    `^(assistant)@...`, is tried the way the matcher reads it rather than as written."""
+    P = _re_parser
+
+    def seq(items):
+        outs = [""]
+        for op, av in items:
+            outs = [o + a for o in outs for a in node(op, av)][:cap]
+        return outs
+
+    def node(op, av):
+        if op is P.LITERAL:
+            return [chr(av)]
+        if op in (P.NOT_LITERAL, P.ANY):
+            return ["a" if av != ord("a") else "b"] if op is P.NOT_LITERAL else ["a"]
+        if op is P.IN:
+            return [next((c for c in _CLASS_PICKS if _in_class(c, av)), "a")]
+        if op is P.BRANCH:
+            return [x for b in av[1] for x in seq(b)][:cap]
+        if op is P.SUBPATTERN:
+            return seq(av[-1])
+        if op in (P.MAX_REPEAT, P.MIN_REPEAT, getattr(P, "POSSESSIVE_REPEAT", None)):
+            lo, hi, sub = av
+            n = max(lo, 1) if hi else 0
+            return [x * n for x in seq(sub)]
+        if op is getattr(P, "ATOMIC_GROUP", None):
+            return seq(av)
+        return [""]                         # anchors, lookarounds, backreferences: no characters
+
+    try:
+        return seq(_re_parser.parse(entry, re.I))
+    except Exception:
+        return []
+
+
+def validate_email_allow(rules_file, entries):
+    """Stop with one error line when a package rules file's email_allow holds an entry that
+    allow_entry_problem refuses."""
+    if not isinstance(entries, list):
+        input_error(f"{rules_file}: ocr.email_allow must be a list of regexes")
+    bad = [(e, p) for e in entries if (p := allow_entry_problem(e))]
+    if bad:
+        input_error(f"{rules_file}: ocr.email_allow " + "; ".join(f"{json.dumps(e)} {p}" for e, p in bad))
 
 
 def find_private(words, patterns, emails, email_allow):
@@ -543,6 +654,7 @@ def cmd_apply(args):
     pkg = Path(args.package)
     rules = read_json_object(args.rules, "rules file")
     ocr_cfg = dict(rules.get("ocr", {}))
+    validate_email_allow(args.rules, ocr_cfg.get("email_allow", []))
     patterns = load_patterns(args.patterns) if args.patterns else []
     ocr_cfg["email_allow"] = ocr_cfg.get("email_allow", []) + load_email_allow(args.patterns)
     global_keep = [re.compile(k, re.I) for k in ocr_cfg.get("keep", [])]
@@ -620,6 +732,7 @@ def cmd_check(args):
     if rules_file:
         rules = read_json_object(rules_file, "rules file")
         cfg = dict(rules.get("ocr", {}))
+        validate_email_allow(rules_file, cfg.get("email_allow", []))
         print(f"rules: {rules_file if args.rules else 'tools/redact-rules/' + rules_file.name}"
               + ("" if args.rules else " (loaded for this package)"), flush=True)
         # The rules file is committed too: it may describe what it hides, never hold it.
