@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X style guide</title>
+<meta name="description" content="X public signed-out surfaces, rendered from measured tokens.">
+<style>
+:root {
+  --page: #000000;
+  --text: #ffffff;
+  --muted: #999999;
+  --pill: #f8fafc;
+  --on-pill: #000000;
+  --continue: #262626;
+  --disabled: #78716c;
+  --brand: #1d9bf0;
+  --focus: #0ea5e9;
+  --border: #ffffff26;
+  --modal: #141414;
+  --divider: #3f3f46;
+  --sans: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+[data-mode="light"] {
+  --page: #ffffff;
+  --text: #14171a;
+  --muted: #314351;
+  --pill: #ffffff;
+  --on-pill: #14171a;
+  --continue: #14171a;
+  --disabled: #314351;
+  --brand: #067acc;
+  --focus: #067acc;
+  --border: #e8eff3;
+  --modal: #ffffff;
+  --divider: #e8eff3;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/20px var(--sans); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+h1 { font-size: 32px; line-height: 36px; font-weight: 600; letter-spacing: -0.5px; margin: 0; }
+h2 { font-size: 17px; font-weight: 500; margin: 40px 0 12px; }
+p { color: var(--muted); max-width: 68ch; }
+button.theme { margin-left: auto; background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 9999px; padding: 8px 16px; font: 500 13px/16px var(--sans); }
+.row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { display: flex; gap: 10px; align-items: center; }
+.dot { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border); }
+.nm { font-size: 12px; }
+.nm small { display: block; color: var(--muted); }
+.pill { display: inline-flex; align-items: center; justify-content: center; height: 46px; padding: 12px 24px; border-radius: 9999px; background: var(--pill); color: var(--on-pill); font-weight: 500; border: 0; }
+.ghost { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 8px 16px; border-radius: 9999px; background: transparent; color: var(--text); border: 1px solid var(--border); font-weight: 700; font-size: 13px; }
+.continue { display: inline-flex; align-items: center; justify-content: center; height: 48px; min-width: 220px; border-radius: 9999px; background: var(--continue); color: var(--disabled); font-weight: 500; }
+.field { width: min(100%, 384px); height: 62px; border: 2px solid var(--focus); border-radius: 6px; padding: 8px 12px; background: transparent; color: var(--text); }
+.card { width: 150px; padding: 16px; border-radius: 22px; background: var(--modal); border: 1px solid var(--border); box-shadow: 0 4px 20px #0006; font-size: 13px; }
+.link { color: var(--brand); text-decoration: none; }
+.display { font-size: 48px; line-height: 52px; font-weight: 600; letter-spacing: -1px; margin: 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>X</h1>
+  <button class="theme" type="button" id="theme">Light legal surface</button>
+</header>
+<p>Public signed-out chrome measured on 19 November 2026. TwitterChirp, Helvetica Neue LT and xVF are not loaded here. The page falls back to the system sans.</p>
+
+<h2>Colour</h2>
+<div class="swatches" id="swatches"></div>
+
+<h2>Type</h2>
+<p class="display">Happening now.</p>
+<p>Body is 15px / 20px. Footer links are 11px. The legal headline is 144px on a 1440 page and 72px at 390.</p>
+
+<h2>Controls</h2>
+<div class="row">
+  <span class="pill">Continue with phone</span>
+  <span class="ghost">Continue with Apple</span>
+  <span class="continue">Continue</span>
+</div>
+<div class="row" style="margin-top:16px">
+  <div class="field">Email or username</div>
+  <a class="link" href="#coverage">Show more</a>
+  <div class="card">Scan to get the app</div>
+</div>
+
+<h2>Spacing and radius</h2>
+<table>
+  <tr><th>Token</th><th>Value</th><th>Where</th></tr>
+  <tr><td>radius.pill</td><td>9999px</td><td>Login and shell pills</td></tr>
+  <tr><td>radius.field</td><td>6px</td><td>Email field</td></tr>
+  <tr><td>radius.card</td><td>22px</td><td>QR card, computed 21.6px</td></tr>
+  <tr><td>spacing.6</td><td>24px</td><td>Pill horizontal padding</td></tr>
+  <tr><td>spacing.8</td><td>32px</td><td>Headline margin</td></tr>
+</table>
+
+<h2 id="coverage">What is missing</h2>
+<p>Hover, pressed, error, checkbox, radio, switch, tabs, menu, toast, table and the signed-in app were not on these pages. about.x.com has no screenshot: headless Chromium hit a Cloudflare page, and the preview browser produced no frames.</p>
+</div>
+<script>
+const dark = [
+  ["Page", "#000000"], ["Text", "#ffffff"], ["Muted", "#999999"],
+  ["Pill", "#f8fafc"], ["Continue", "#262626"], ["Brand", "#1d9bf0"],
+  ["Focus", "#0ea5e9"], ["Border", "#ffffff26"], ["Modal", "#141414"]
+];
+const light = [
+  ["Page", "#ffffff"], ["Text", "#14171a"], ["Body", "#0f1419"],
+  ["Muted", "#314351"], ["Link", "#067acc"], ["Band", "#14171a"],
+  ["Border", "#e8eff3"]
+];
+const box = document.getElementById("swatches");
+function paint(list) {
+  box.innerHTML = list.map(([n, v]) =>
+    `<div class="sw"><i class="dot" style="background:${v}"></i><div class="nm">${n}<small>${v}</small></div></div>`).join("");
+}
+paint(dark);
+document.getElementById("theme").onclick = () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.getElementById("theme").textContent = next === "dark" ? "Light legal surface" : "Dark product surface";
+  paint(next === "dark" ? dark : light);
+};
+</script>
+</body>
+</html>

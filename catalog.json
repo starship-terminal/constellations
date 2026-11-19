@@ -20343,6 +20343,89 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "x",
+      "name": "X",
+      "url": "https://x.com",
+      "category": "messaging",
+      "platform": "web",
+      "goodFor": "Signed-out social login chrome on black: a 64px Chirp headline, light 9999px pills, a 6px sky-bordered field, and a white legal surface with a 144px headline. Brand link blue is #1d9bf0.",
+      "tags": [
+        "web",
+        "social",
+        "messaging",
+        "signed-out",
+        "dark",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (login chrome, a missing-route shell, terms, privacy and about.x.com were read; no email, phone or password was typed; Continue, Google, Apple, Sign In and Log in were not pressed; no account was created and nothing was posted)",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1169,
+        1440,
+        390
+      ],
+      "entry": "systems/x/README.md",
+      "tokens": "systems/x/tokens.json",
+      "styleGuide": "systems/x/style-guide.html",
+      "preview": {
+        "cover": "systems/x/screenshots/tos-light-1440.png",
+        "icon": "systems/x/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.bg.modal",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.muted",
+            "accent": "dark.color.text.brand",
+            "border": "dark.color.border.default"
+          },
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.band",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.text.link",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.chirp"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "x.com login chrome and a missing route in a T3 preview tab (computed styles; screenshots unavailable because the browser was not producing frames). x.com/en/tos and x.com/en/privacy in headless Chromium after those pages had already loaded without a challenge, 1440x900 and 390x844 at device scale 2. about.x.com measured in the preview tab; headless Chromium was Cloudflare-challenged and no about screenshot was kept. No form was submitted.",
+        "timestamp": "2026-11-19T00:00:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "https://x.com/ (signed-out login chrome, measured, not screenshotted)",
+          "https://x.com/en/tos",
+          "https://x.com/en/privacy",
+          "https://about.x.com/en (measured in the preview tab; headless Chromium challenged)",
+          "https://x.com/this-page-does-not-exist-capture (logged-out shell, measured; headless Chromium returned 403)"
+        ],
+        "gaps": [
+          "preview_snapshot failed twice: The browser is not producing screenshot frames. Login, missing-route and about screenshots were not invented",
+          "headless Chromium got HTTP 403 on x.com/ and the missing route, and a Cloudflare challenge on about.x.com. Those screenshots were discarded",
+          "no email, phone, username or password was typed; Continue, Google, Apple, Sign In and Log in were not pressed",
+          "hover, pressed, error, loading, checkbox, radio, switch, tabs, menu, toast, table and the signed-in app were not captured",
+          "TwitterChirp, Helvetica Neue LT and xVF are proprietary and are not shipped",
+          "the X mark is not kept as SVG"
+        ],
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/900"
+      },
+      "layoutGaps": {}
     }
   ]
 }
