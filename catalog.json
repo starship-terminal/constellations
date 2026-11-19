@@ -20343,6 +20343,81 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "make",
+      "name": "Make",
+      "url": "https://www.make.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A light automation marketing site: white page, Satoshi display at 60px with -1.2px tracking, brand-600 purple on one filled action, 8px buttons, pill Popular and Save 15% badges, a credit slider pricing page, and a sign-in wall with a magenta gradient submit",
+      "tags": [
+        "web",
+        "marketing",
+        "light",
+        "signed-out",
+        "automation",
+        "saas",
+        "pricing",
+        "templates"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed-out public marketing, pricing, templates, integrations, and the make.com/login sign-in wall. Scenarios and the editor sit behind sign-in and were not entered. No form was submitted. No CAPTCHA was passed. No purchase was made.",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/make/README.md",
+      "tokens": "systems/make/tokens.json",
+      "styleGuide": "systems/make/style-guide.html",
+      "preview": {
+        "cover": "systems/make/screenshots/home-light-default.png",
+        "icon": "systems/make/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textBody",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": ["core.font.family.sans"]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "make.com in headless Chromium, desktop 1440x900 and phone 390x844. Computed styles and declared --_default---swatch custom properties. OneTrust banner hidden, never clicked. Sign-in wall measured and not submitted.",
+        "timestamp": "2026-11-18T09:30:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/templates",
+          "/integrations",
+          "/product",
+          "/enterprise",
+          "/security",
+          "/privacy-notice",
+          "/login",
+          "/register"
+        ],
+        "gaps": [
+          "make.com/login is a sign-in wall; email and password were focused and not submitted, and scenarios, the editor, Make Grid and account settings were not entered",
+          "Continue with Google and Continue with SSO at https://www.make.com/login start OAuth and were not pressed",
+          "make.com/register shows a CAPTCHA and was not submitted",
+          "Get started on pricing links to register and was not followed into an account",
+          "Talk to sales and Enterprise checkout were not submitted",
+          "Opening a template into the scenario editor requires sign-in and was not done",
+          "the OneTrust cookie banner was hidden and never clicked"
+        ],
+        "durationMin": 90,
+        "durationNote": "Public signed-out session: marketing, pricing, templates, and the sign-in wall.",
+        "date": "2026-11-18",
+        "version": "public site as of 2026-11-18",
+        "pr": "https://github.com/starship-terminal/constellations/pull/673"
+      }
     }
   ]
 }
