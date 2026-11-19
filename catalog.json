@@ -20343,6 +20343,89 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "zara",
+      "name": "ZARA",
+      "url": "https://www.zara.com/",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Fashion retail storefront: black on white, zero radius, 0.5px rules, Helvetica Now Text at weight 300 in uppercase labels, a square primary and a hairline secondary, and a light-only public chrome.",
+      "tags": [
+        "web",
+        "e-commerce",
+        "fashion",
+        "marketing",
+        "light",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (location gate and US storefront, new arrivals, one product page, search, help, empty bag, logon form measured and not submitted, a made-up 404; nothing added to the bag)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/zara/README.md",
+      "tokens": "systems/zara/tokens.json",
+      "styleGuide": "systems/zara/style-guide.html",
+      "preview": {
+        "cover": "systems/zara/icon.png",
+        "icon": "systems/zara/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.bg.wash",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.action.primary",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.main"
+        ]
+      },
+      "source": "capture",
+      "capture": {
+        "method": "public-web",
+        "source": "www.zara.com in the T3 preview browser. Computed styles via preview_evaluate. Viewport measured 1169x731 at devicePixelRatio 2. Stylesheet static.zara.net/stdstatic/10.21.1. Screenshot frames unavailable.",
+        "timestamp": "2026-11-19T00:00:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "10.21.1",
+        "routes": [
+          "https://www.zara.com/",
+          "https://www.zara.com/us/",
+          "https://www.zara.com/us/en/woman-new-in-l1180.html",
+          "https://www.zara.com/us/en/faux-shearling-long-coat-p01255730.html",
+          "https://www.zara.com/us/en/search/home",
+          "https://www.zara.com/us/en/help-center",
+          "https://www.zara.com/us/en/shop/cart",
+          "https://account.zara.com/login/two-step (measured, not submitted)",
+          "https://www.zara.com/us/en/this-page-does-not-exist-capture-9f3a"
+        ],
+        "gaps": [
+          "preview_snapshot returned no screenshot frames, so screenshots and crops are absent",
+          "viewport stayed at 1169x731; a 1440 and a 390 pass were not captured",
+          "add to bag, checkout, card, phone, address, and account creation were not entered",
+          "the logon email field was not submitted",
+          "hover and pressed states were not captured",
+          "no dark theme was on the public storefront",
+          "icons were not extracted as files"
+        ],
+        "durationMin": 90,
+        "pr": "https://github.com/starship-terminal/constellations/pull/907"
+      },
+      "layoutGaps": {
+        "screenshots/": "The T3 preview browser returned 'The browser is not producing screenshot frames'. No PNG was invented.",
+        "components/": "Crops need screenshots. The same frame failure left components/crops empty, so the folder is declared missing rather than shipping an empty crop set as evidence.",
+        "icons/": "The wordmark SVG was read in the DOM (viewBox 0 0 132 55). A standalone icon set was not extracted."
+      }
     }
   ]
 }
