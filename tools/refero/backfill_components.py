@@ -52,18 +52,6 @@ EXPORT_JS = fetch.EXPORT_JS
 # A React flight reference looks like "$1e": the model text lives in a
 # `1e:T<hex-byte-length>,<text>` row of the same blob.
 REF_RE = re.compile(r"^\$[0-9a-z]+$")
-COMPONENT_COLUMNS = ["components_json", "components_at"]
-
-
-def init_db():
-    """fetch.init_db plus the two component columns this tool owns."""
-    db = fetch.init_db()
-    have = {r[1] for r in db.execute("PRAGMA table_info(styles)")}
-    for col in COMPONENT_COLUMNS:
-        if col not in have:
-            db.execute(f"ALTER TABLE styles ADD COLUMN {col} TEXT")
-    db.commit()
-    return db
 
 
 def has_truthy_html(result_json):
@@ -294,7 +282,7 @@ def main():
                          "(resolved first, ahead of --limit)")
     args = ap.parse_args()
 
-    db = init_db()
+    db = fetch.init_db()  # adds the component columns too
     rows = select_rows(db, args)
     print(f"to refetch: {len(rows)}")
     if args.dry_run:

@@ -212,6 +212,12 @@ class BuildTest(unittest.TestCase):
                 self.assertIn(f"{page.url}index.html", files)
         self.assertTrue({"settings/index.html", "404.html"} <= files)
 
+    def test_the_404_page_resolves_its_links_from_the_site_root(self):
+        head = (self.out / "404.html").read_text().split("</head>")[0]
+        self.assertIn('<base href="/">', head)
+        self.assertLess(head.index('<base href="/">'), head.index("stylesheet"))
+        self.assertNotIn("document.write", head)
+
     def test_nested_scorecard_links_are_rewritten(self):
         html = (self.out / "scorecard" / "linear" / "index.html").read_text()
         self.assertIn('href="../../PACKAGE/"', html)

@@ -552,16 +552,13 @@ def build() -> None:
     count += 1
 
     # A 404 is served at the missing URL, whatever its depth, so the page's
-    # relative links would resolve inside the missing directory. The script
-    # writes <base> before the stylesheet links: the site sits at / on the
-    # deploy host, or under a path prefix when served from a subdirectory.
+    # relative links would resolve inside the missing directory. A <base>
+    # before the stylesheet links points them at the site root, where the
+    # site sits on the deploy host.
     not_found = Page(DOCS / "index.md", "", None)
     not_found.title = "Page not found"
-    base_fix = ("<script>\n  var __seg = location.pathname.split('/').filter(Boolean);\n"
-                "  document.write('<base href=\"/' + (__seg[0] === 'design-systems' ? 'design-systems/' : '') + '\">');\n"
-                "</script>")
     html_404 = render(not_found, "<h1>Page not found</h1><p><a href='./'>Back to the library home</a>.</p>",
-                      {"navigation"}).replace("<head>", "<head>\n" + base_fix, 1)
+                      {"navigation"}).replace("<head>", '<head>\n<base href="/">', 1)
     atomic_write(OUT / "404.html", html_404)
     print(f"site: wrote {count} pages to {os.path.relpath(OUT, ROOT)}/")
 
