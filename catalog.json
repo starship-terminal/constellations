@@ -20343,6 +20343,59 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "workflow",
+      "name": "Workflow",
+      "url": "https://www.workflow.design",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Design-feedback marketing: white page, Crimson Pro display at weight 300, Inter 14px body, quiet gray 8px buttons, ink paid-plan actions",
+      "tags": [
+        "web",
+        "design",
+        "feedback",
+        "marketing",
+        "saas"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing home, features, pricing, contact; login rendered a spinner; no account created)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/workflow/README.md",
+      "tokens": "systems/workflow/tokens.json",
+      "styleGuide": "systems/workflow/style-guide.html",
+      "preview": {
+        "cover": "systems/workflow/screenshots/home-light-desktop.png",
+        "icon": "systems/workflow/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.button.dark",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.body",
+          "core.font.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 45,
+        "version": "signed-out marketing, 2026-11-19"
+      }
     }
   ]
 }
