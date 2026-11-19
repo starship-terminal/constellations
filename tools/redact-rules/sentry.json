@@ -5,7 +5,11 @@
       "@example\\.com$",
       "^lea(?:rn|m)@sentry\\.io$",
       "^person@sentry\\.io$",
-      "^c?chenwenlongoffic[il]al@gma[il]l\\.com$"
+      "^chenwenlongofficial@gmail\\.com$",
+      "^chenwenlongofficlal@gmail\\.com$",
+      "^cchenwenlongofficial@gmail\\.com$",
+      "^cchenwenlongofficlal@gmail\\.com$",
+      "^c?chenwenlongoffic[il]al@gmall\\.com$"
     ]
   },
   "families": [

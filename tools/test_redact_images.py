@@ -542,6 +542,7 @@ class AllowEntries(unittest.TestCase):
                       r"^(assistant)@[\w.-]+$", r"^(?:a|assistant)@[\w.-]+\.\w+$", r"^as+istant@.+$",
                       r"^[a-z]+@gmail\.com$", r"^[a-z]{2,8}@gmail\.com$", r"^(jane|john)@yahoo\.com$",  # a pattern of
                       r"^\w+\.\w+@outlook\.com$", r"^satoshi[0-9]?@gmail\.com$",                    # free-mail boxes
+                      r"^satoshi2?@gmail\.com$", r"^[bc]{2}@gmail\.com$", r"^c?hen@gma[il]l\.com$",
                       r"example\.com$", "owner", "(", 7]:
             with self.subTest(entry=entry):
                 self.assertIsNotNone(R.allow_entry_problem(entry))
@@ -549,7 +550,7 @@ class AllowEntries(unittest.TestCase):
 
     def test_pinned_entries_pass(self):
         for entry in [r"@example\.(com|org)$", r"@vendor\.biz$", r"\.example$", r"^owner@mine\.test$",
-                      r"satoshi@gmail\.com$", r"^satoshi@gma[il]l\.com$", r"^hello@vendor\.biz$", r"wagmi@[0-9][0-9.x]*", r"@everyone$"]:
+                      r"satoshi@gmail\.com$", r"^ALICE@gmail\.com$", r"john\.doe\+1@gmail\.com$", r"^hello@vendor\.biz$", r"wagmi@[0-9][0-9.x]*", r"@everyone$"]:
             with self.subTest(entry=entry):
                 self.assertIsNone(R.allow_entry_problem(entry))
 

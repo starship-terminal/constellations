@@ -503,14 +503,16 @@ FREE_MAIL = ("gmail.com", "googlemail.com", "yahoo.com", "yahoo.co.jp", "yahoo.c
              "zoho.com", "fastmail.com", "hey.com", "tutanota.com", "naver.com", "agentmail.to")
 # Addresses no real entry should pass: random local parts at random domains.
 PROBE_LOCALS = ("q7zk2vx9", "jane.doe.private")
+# One address spelled out: plain characters and escaped dots, plus or hyphens only, optionally anchored.
+LITERAL_ADDRESS = re.compile(r"\^?(?:[\w-]|\\[.+-])+@(?:[\w-]|\\[.-])+(?:\$|\\b)?")
 PROBE_DOMAINS = ("m4qz8wr2.com", "x9v2k7.org", "pz3n8q.io", "w7k2j9.co", "kq8z3v.net", "zz9q.qx7v")
 
 
 def allow_entry_problem(entry):
     """Why a package rules file's ocr.email_allow entry is refused, or None. An entry must pin a domain
     (`@vendor\\.com$`, a whole address, or a `\\.example$` label suffix): it may not pass every address
-    (`.*`), more than one mailbox at a free-mail domain (`@gmail\\.com$`, `^[a-z]+@gmail\\.com$`), or a
-    local part at any domain (`name@`, `^assistant@`). The private patterns file is the owner's and is not held to this."""
+    (`.*`), a free-mail domain other than through one literal address (`@gmail\\.com$`,
+    `^[a-z]+@gmail\\.com$`, `^satoshi2?@gmail\\.com$`), or a local part at any domain (`name@`). The private patterns file is the owner's and is not held to this."""
     if not isinstance(entry, str):
         return "is not a string"
     try:
@@ -519,16 +521,16 @@ def allow_entry_problem(entry):
         return f"is not a valid regex ({e})"
     if any(email_allowed(f"{lp}@{d}", [entry]) for lp in PROBE_LOCALS for d in PROBE_DOMAINS):
         return "passes any address"
-    # At a free-mail domain an entry may pass one fixed mailbox, never two: the probes plus local
-    # parts drawn from the entry itself, read two ways (a letters-only class like [a-z]+ yields
-    # both "a" and "zz"), so a pattern over the local part is caught whatever characters it allows.
+    # An entry that can reach a free-mail domain must be one literal address: no class, group,
+    # repeat or alternation anywhere, so it passes exactly one mailbox (case aside, as the check
+    # ignores case). Reach is tried with the probes and with local parts drawn from the entry.
     locals_ = set(PROBE_LOCALS) | {"qzkvxwmj"} | {
         smp.partition("@")[0] for picks, extra in ((_CLASS_PICKS, 0), (_CLASS_PICKS_ALT, 1))
         for smp in _regex_samples(entry, picks=picks, extra=extra) if "@" in smp}
     locals_.discard("")
-    for d in FREE_MAIL:
-        if len({lp for lp in locals_ if email_allowed(f"{lp}@{d}", [entry])}) > 1:
-            return f"passes more than one address at the free-mail domain {d}: list the exact address"
+    reach = next((d for d in FREE_MAIL if any(email_allowed(f"{lp}@{d}", [entry]) for lp in locals_)), None)
+    if reach and not LITERAL_ADDRESS.fullmatch(entry):
+        return f"can match addresses at the free-mail domain {reach}: write one exact address"
     if "@" not in entry:
         if not entry.startswith("\\."):
             return "names no domain: write @domain or the whole address"
