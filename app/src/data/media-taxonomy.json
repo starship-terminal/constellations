@@ -1498,6 +1498,11 @@
       "assignedMedia": 96
     },
     {
+      "referenceId": "systems:rows",
+      "media": 16,
+      "assignedMedia": 4
+    },
+    {
       "referenceId": "systems:raycast-desktop",
       "media": 112,
       "assignedMedia": 70
@@ -1513,14 +1518,29 @@
       "assignedMedia": 496
     },
     {
+      "referenceId": "systems:scape",
+      "media": 27,
+      "assignedMedia": 16
+    },
+    {
       "referenceId": "systems:sentry",
       "media": 225,
       "assignedMedia": 63
     },
     {
+      "referenceId": "systems:sora",
+      "media": 0,
+      "assignedMedia": 0
+    },
+    {
       "referenceId": "systems:spotify",
       "media": 69,
       "assignedMedia": 58
+    },
+    {
+      "referenceId": "systems:square",
+      "media": 0,
+      "assignedMedia": 0
     },
     {
       "referenceId": "systems:substack",
@@ -1533,9 +1553,19 @@
       "assignedMedia": 158
     },
     {
+      "referenceId": "systems:sunsama",
+      "media": 17,
+      "assignedMedia": 17
+    },
+    {
       "referenceId": "systems:superset-desktop",
       "media": 727,
       "assignedMedia": 506
+    },
+    {
+      "referenceId": "systems:teenage-engineering",
+      "media": 10,
+      "assignedMedia": 2
     },
     {
       "referenceId": "systems:telegram",
@@ -1543,14 +1573,29 @@
       "assignedMedia": 87
     },
     {
+      "referenceId": "systems:tella",
+      "media": 11,
+      "assignedMedia": 9
+    },
+    {
       "referenceId": "systems:tokentracker",
       "media": 388,
       "assignedMedia": 190
     },
     {
+      "referenceId": "systems:typefully",
+      "media": 13,
+      "assignedMedia": 13
+    },
+    {
       "referenceId": "systems:untitled-stream",
       "media": 113,
       "assignedMedia": 113
+    },
+    {
+      "referenceId": "systems:wittl",
+      "media": 12,
+      "assignedMedia": 8
     },
     {
       "referenceId": "systems:youtube",
@@ -1563,9 +1608,19 @@
       "assignedMedia": 244
     },
     {
+      "referenceId": "systems:the-athletic",
+      "media": 16,
+      "assignedMedia": 11
+    },
+    {
       "referenceId": "systems:ifttt",
       "media": 148,
       "assignedMedia": 51
+    },
+    {
+      "referenceId": "systems:wiza",
+      "media": 0,
+      "assignedMedia": 0
     }
   ],
   "assignments": [
@@ -314218,6 +314273,50 @@
       ]
     },
     {
+      "referenceId": "systems:rows",
+      "mediaId": "systems/rows/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:rows",
+      "mediaId": "systems/rows/screenshots/templates-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:rows",
+      "mediaId": "systems/rows/components/crops/button-primary-focus.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:rows",
+      "mediaId": "systems/rows/components/crops/button-primary-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
       "referenceId": "systems:raycast-desktop",
       "mediaId": "systems/raycast-desktop/screenshots/dark/20-settings-general.png",
       "terms": [
@@ -323406,6 +323505,192 @@
       ]
     },
     {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/screenshots/contact-light-form-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/screenshots/faq-light-accordion-open.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/screenshots/faq-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/screenshots/mobile-faq-light-menu-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/screenshots/rooms-light-sort-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/components/crops/accordion-open.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/components/crops/badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/components/crops/button-primary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/components/crops/button-secondary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/components/crops/card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/components/crops/dialog-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/components/crops/icon-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/components/crops/tabs-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:scape",
+      "mediaId": "systems/scape/components/crops/text-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
       "referenceId": "systems:sentry",
       "mediaId": "systems/sentry/screenshots/app/account-dark-menu.png",
       "terms": [
@@ -323566,6 +323851,17 @@
           "termId": "web-ui-elements:list",
           "rule": "ui-list",
           "reason": "Capture filename explicitly names list; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth-mixed/organization-auth-plan-dialog-loaded-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
         }
       ]
     },
@@ -323880,17 +324176,6 @@
     {
       "referenceId": "systems:sentry",
       "mediaId": "systems/sentry/screenshots/breadth/organization-scrubbing-dialog-dark.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:sentry",
-      "mediaId": "systems/sentry/screenshots/breadth-mixed/organization-auth-plan-dialog-loaded-dark.png",
       "terms": [
         {
           "termId": "web-ui-elements:dialog-modal-window",
@@ -328115,6 +328400,343 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/screenshots/home-light-390.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/screenshots/login-light-390.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/screenshots/pricing-light-390.png",
+      "terms": [
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/button-email-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/button-oauth-google.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/button-oauth-outlook.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/button-oauth-sso.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/button-primary-390.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/button-primary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/button-primary-pricing.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/card-login-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/field-email-focus.png",
+      "terms": [
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/field-password-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sunsama",
+      "mediaId": "systems/sunsama/components/crops/tabs-login.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:dm-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family DM Sans from systems/sunsama/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:avenir",
+          "rule": "font-primary",
+          "reason": "Exact primary family Avenir from systems/sunsama/tokens.json#core.font.family.auth. Inherited package evidence; fallback families excluded."
         }
       ]
     },
@@ -334335,6 +334957,33 @@
       ]
     },
     {
+      "referenceId": "systems:teenage-engineering",
+      "mediaId": "systems/teenage-engineering/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:teenage-engineering",
+      "mediaId": "systems/teenage-engineering/screenshots/home-light-search.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
       "referenceId": "systems:telegram",
       "mediaId": "systems/telegram/screenshots/dark/02-chat-list-folders-tabbar.png",
       "terms": [
@@ -335478,6 +336127,105 @@
           "termId": "ios-ui-elements:toolbar",
           "rule": "ui-toolbar",
           "reason": "Capture filename explicitly names toolbar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:tella",
+      "mediaId": "systems/tella/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:tella",
+      "mediaId": "systems/tella/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:tella",
+      "mediaId": "systems/tella/screenshots/home-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:tella",
+      "mediaId": "systems/tella/components/crops/badge.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:tella",
+      "mediaId": "systems/tella/components/crops/button-primary-large.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:tella",
+      "mediaId": "systems/tella/components/crops/button-primary.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:tella",
+      "mediaId": "systems/tella/components/crops/button-secondary.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:tella",
+      "mediaId": "systems/tella/components/crops/card-plan.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:tella",
+      "mediaId": "systems/tella/components/crops/switch-on.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
         }
       ]
     },
@@ -337742,6 +338490,194 @@
       ]
     },
     {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/screenshots/email-light-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/screenshots/home-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/screenshots/home-dark-phone.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/screenshots/home-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/screenshots/pricing-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/screenshots/pricing-dark-phone.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/screenshots/pricing-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/components/crops/button-nav-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/components/crops/button-primary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/components/crops/dialog-email-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:typefully",
+      "mediaId": "systems/typefully/components/crops/text-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/typefully/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
       "referenceId": "systems:untitled-stream",
       "mediaId": "systems/untitled-stream/screenshots/home-light-default.png",
       "terms": [
@@ -339166,6 +340102,94 @@
           "termId": "web-fonts:untitled-sans",
           "rule": "font-primary",
           "reason": "Exact primary family Untitled Sans from systems/untitled-stream/tokens.json#core.font.family.untitled-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:wittl",
+      "mediaId": "systems/wittl/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:wittl",
+      "mediaId": "systems/wittl/screenshots/home-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:wittl",
+      "mediaId": "systems/wittl/components/crops/accordion-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:wittl",
+      "mediaId": "systems/wittl/components/crops/badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:wittl",
+      "mediaId": "systems/wittl/components/crops/button-primary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:wittl",
+      "mediaId": "systems/wittl/components/crops/button-primary-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:wittl",
+      "mediaId": "systems/wittl/components/crops/button-secondary-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:wittl",
+      "mediaId": "systems/wittl/components/crops/card-feature.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         }
       ]
     },
@@ -344561,6 +345585,127 @@
           "termId": "web-fonts:menlo",
           "rule": "font-primary",
           "reason": "Exact primary family Menlo from systems/zed-desktop/tokens.json#core.fontFamily.buffer. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/screenshots/home-light-phone.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/screenshots/search-light-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/components/crops/badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/components/crops/button-checkout.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/components/crops/button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/components/crops/card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/components/crops/radio-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/components/crops/radio-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:the-athletic",
+      "mediaId": "systems/the-athletic/components/crops/text-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
         }
       ]
     },

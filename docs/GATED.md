@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_161 of 219 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_163 of 230 packages name gated surfaces in their gaps; 57 more mark a gate in their access text; 10 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -961,6 +961,15 @@ Access: read-only (the marketing site is public signed out; the bot builder and 
 - the bot builder and the in-app template library sit behind sign-in at app.manychat.com; Log in and Get started were measured, never followed
 - checkout was not submitted; Monthly and Annual were toggled locally
 
+## [Scape](../systems/scape) — `scape`
+Access: signed out. Public marketing only. Booking, payment, phone and the contact form were not entered. Cookie consent was dismissed with Reject All.
+- booking, payment, phone and the HubSpot contact form were not entered
+
+## [The Athletic](../systems/the-athletic) — `the-athletic`
+Access: signed out (theathletic.com redirects to nytimes.com/athletic; home, one public article, about, the NFL league page, the subscription marketing page, the login shell, search, and a 404 were read; the login iframe was not entered; Continue to checkout was not followed; no card, account, or email was submitted)
+- the login iframe is cross-origin and was not entered
+- Continue to checkout was not followed, and no card was entered
+
 ## [IFTTT](../systems/ifttt) — `ifttt`
 Access: signed out (every captured surface is public: ifttt.ai marketing home and ifttt.com's /explore(+services,+stories,+applets) gallery, /plans pricing, /twitter and /todoist service pages, an applet page, /connect/discord/instagram, /solutions/productivity and /solutions/smart-home, /mcp, /about, /careers, /partners, /terms and a made-up-route 404; 'Log in', 'Get started' and every /join path measured, never followed; the Applet 'Connect' install toggle measured, never pressed; the plan CTAs never followed to checkout; help.ifttt.com answers HTTP 403 to automation - a documented blocked boundary; platform.ifttt.com redirects to ifttt.ai - no separate public platform surface; the App Store/Play badges link off-site and were never followed; nothing was signed into, typed, searched, shared, bought or submitted; the only presses were local UI toggles - the detail pages' Share button (its own modal, closed with its X), the plans Monthly/Yearly billing switch, the featured category tabs, 'show more' expanders and the mobile hamburger)
 - the signed-in product (Log in, Get started, /join, account surfaces) is a boundary - measured, never entered
@@ -1090,6 +1099,9 @@ not signed in to an Orca account (not needed); read live from the running app ov
 ### [Shopify Polaris (React archive)](../systems/polaris) — `polaris`
 published packages and the archive repo at a pinned commit (2026-09-25); gallery re-shot and ramps, focus states and patterns added in headless Chromium (2026-10-17)
 
+### [Rows](../systems/rows) — `rows`
+public marketing, signed out. Login and signup routes on rows.com 404. The Superhuman Docs handoff is company SSO plus email behind reCAPTCHA and was not entered.
+
 ### [ResearchRabbit](../systems/researchrabbit) — `researchrabbit`
 signed in
 
@@ -1098,6 +1110,9 @@ signed-in owner account; Developer plan observed; no trial activated
 
 ### [Spotify](../systems/spotify) — `spotify`
 signed in, Premium Family plan, iPhone Mirroring
+
+### [Square](../systems/square) — `square`
+signed out (marketing pages and the login email step were measured; nothing was typed or submitted; the signup wall was recorded and not entered)
 
 ### [Substack](../systems/substack) — `substack`
 signed in, iPhone Mirroring
@@ -1108,11 +1123,20 @@ signed in, free account; both projects paused; public landing
 ### [Superset (desktop)](../systems/superset-desktop) — `superset-desktop`
 signed in (the owner's organisation on the free plan); read live from the running app over its remote-debugging port
 
+### [Teenage Engineering](../systems/teenage-engineering) — `teenage-engineering`
+signed out (public marketing and store listing only; checkout, cart, and payment were not entered)
+
 ### [Telegram](../systems/telegram) — `telegram`
 signed in, iPhone Mirroring
 
+### [Tella](../systems/tella) — `tella`
+signed out (marketing pages and the AuthKit sign-in; the email was not submitted)
+
 ### [TokenTracker](../systems/tokentracker) — `tokentracker`
 local dashboard served by the TokenTracker CLI (v1.4.3), no account, headless Chromium
+
+### [Typefully](../systems/typefully) — `typefully`
+signed out (public marketing and the email dialog; the form was not submitted)
 
 ### [Untitled](../systems/untitled-stream) — `untitled-stream`
 signed out (every surface captured is public; the app behind login was not captured)
@@ -1123,6 +1147,9 @@ signed in, free plan, iPhone Mirroring
 ### [Zed (desktop)](../systems/zed-desktop) — `zed-desktop`
 the owner's signed-in Zed (Free plan) on a scratch folder; colours from Zed's published theme file at the v1.25.2 commit, sizes and type from 2x window pixels
 
+### [Wiza](../systems/wiza) — `wiza`
+signed out. Public marketing pages measured. Login was opened and not submitted. Signup hit Cloudflare and was not driven. No phone, card, or company SSO was entered.
+
 ## No gated surface recorded
 
-`ableton`, `allbirds`, `anam`, `attio`, `gauth`, `raycast-desktop`, `refero-design`
+`ableton`, `allbirds`, `anam`, `attio`, `gauth`, `raycast-desktop`, `refero-design`, `sora`, `sunsama`, `wittl`
