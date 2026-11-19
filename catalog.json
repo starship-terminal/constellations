@@ -20343,6 +20343,90 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "mymind",
+      "name": "MyMind",
+      "url": "https://mymind.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Private bookmarking marketing: an off-white page, a Louize display headline, and one orange pill for sign up and price",
+      "tags": [
+        "web",
+        "bookmarking",
+        "marketing",
+        "light",
+        "serif-display",
+        "orange-accent",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing pages and the access.mymind.com sign-in panel. Google and Apple buttons were not pressed. No email field was present.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/mymind/README.md",
+      "tokens": "systems/mymind/tokens.json",
+      "styleGuide": "systems/mymind/style-guide.html",
+      "preview": {
+        "cover": "systems/mymind/icon.png",
+        "icon": "systems/mymind/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.display",
+          "core.fontFamily.sans",
+          "core.fontFamily.body"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "public site as of 2026-11-19",
+        "durationMin": 70,
+        "pr": "https://github.com/starship-terminal/constellations/pull/726",
+        "method": "live preview browser computed styles",
+        "source": "mymind.com and access.mymind.com/signin in the T3 Code preview browser on 2026-11-19. Desktop innerWidth 1169, phone innerWidth 390. Colour and type are computed styles. Screenshot frames were not produced.",
+        "timestamp": "2026-11-19T00:00:00Z",
+        "routes": [
+          "/",
+          "/pricing",
+          "/why",
+          "/how",
+          "/faq",
+          "/reviews",
+          "/this-page-does-not-exist-mymind",
+          "access.mymind.com/signin"
+        ],
+        "gaps": [
+          "preview_snapshot failed: The browser is not producing screenshot frames. No PNG was saved.",
+          "Sign-in is Google and Apple only. The email-only signup the capture rule allows was not on the page, so AgentMail was not used.",
+          "Google and Apple buttons were not pressed. No provider screen, phone, or KYC was entered.",
+          "Checkout and plan purchase on /pricing were not opened.",
+          "The signed-in library, search, empty and error states were not entered.",
+          "Hover, focus-visible, pressed and disabled were not measured.",
+          "prefers-reduced-motion was not emulated.",
+          "A 1440-wide viewport was requested and the attached page stayed at innerWidth 1169."
+        ]
+      },
+      "layoutGaps": {
+        "components/": "no component crops: the preview browser did not produce screenshot frames",
+        "screenshots/": "no page captures: the preview browser did not produce screenshot frames"
+      }
     }
   ]
 }
