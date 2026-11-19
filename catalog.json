@@ -20343,6 +20343,63 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "peerlist",
+      "name": "Peerlist",
+      "url": "https://peerlist.io",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Professional-network marketing and signed-out app chrome: white page, Geist UI, Instrument headlines, green rgb(0 170 69) primary with a darker green border, 12px buttons, 16px cards, a 568px marketing column",
+      "tags": [
+        "web",
+        "network",
+        "jobs",
+        "marketing",
+        "signed-out",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (public marketing, jobs, scroll, launchpad, search, login, and signup; signup was not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/peerlist/README.md",
+      "tokens": "systems/peerlist/tokens.json",
+      "styleGuide": "systems/peerlist/style-guide.html",
+      "preview": {
+        "cover": "systems/peerlist/icon.png",
+        "icon": "systems/peerlist/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "durationNote": "one session, T3 preview, screenshot frames failed"
+      },
+    "layoutGaps": {
+          "components/": "The preview browser produced no screenshot frames, so no component crops were saved.",
+          "screenshots/": "The preview browser produced no screenshot frames. No image was invented. The catalog cover is icon.png."
     }
+  }
   ]
 }

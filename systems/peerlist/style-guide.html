@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Peerlist style guide</title>
+<style>
+  body { margin: 0; font: 400 16px/24px Geist, ui-sans-serif, system-ui, sans-serif; color: #0d0d0d; background: #fff; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-weight: 400; font-size: 40px; line-height: 48px; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 32px 0 12px; }
+  p { color: #334155; max-width: 68ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sw { display: flex; gap: 10px; align-items: center; }
+  .sw i { width: 36px; height: 36px; border-radius: 8px; border: 1px solid #e2e8f0; display: block; }
+  .sw b { display: block; font-size: 13px; }
+  .sw span { font-size: 12px; color: #64748b; }
+  .btn { display: inline-flex; align-items: center; height: 32px; padding: 6px 16px; border-radius: 12px; font-weight: 600; font-size: 14px; }
+  .primary { background: rgb(0 170 69); color: #fff; border: 1px solid rgb(30 135 75); }
+  .secondary { background: #fff; color: rgb(13 13 13); border: 1px solid rgb(226 232 240); }
+  .dark { background: rgb(15 23 42); color: #fff; border: 1px solid rgb(13 13 13); height: 40px; border-radius: 16px; padding: 8px 24px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e2e8f0; }
+  code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Peerlist</h1>
+  <p>Public signed-out surfaces measured on 18 November 2026. The live pages stayed on the light class. Dark gray tokens are declared in the stylesheet and listed in tokens.json, not painted here.</p>
+  <h2>Colour</h2>
+  <div class="grid"><div class="sw"><i style="background:rgb(255 255 255)"></i><div><b>gray.00</b><span>rgb(255 255 255)</span></div></div><div class="sw"><i style="background:rgb(248 249 251)"></i><div><b>gray.25</b><span>rgb(248 249 251)</span></div></div><div class="sw"><i style="background:rgb(248 250 252)"></i><div><b>gray.50</b><span>rgb(248 250 252)</span></div></div><div class="sw"><i style="background:rgb(241 245 249)"></i><div><b>gray.100</b><span>rgb(241 245 249)</span></div></div><div class="sw"><i style="background:rgb(226 232 240)"></i><div><b>gray.200</b><span>rgb(226 232 240)</span></div></div><div class="sw"><i style="background:rgb(203 213 225)"></i><div><b>gray.300</b><span>rgb(203 213 225)</span></div></div><div class="sw"><i style="background:rgb(148 163 184)"></i><div><b>gray.400</b><span>rgb(148 163 184)</span></div></div><div class="sw"><i style="background:rgb(100 116 139)"></i><div><b>gray.500</b><span>rgb(100 116 139)</span></div></div><div class="sw"><i style="background:rgb(71 85 105)"></i><div><b>gray.600</b><span>rgb(71 85 105)</span></div></div><div class="sw"><i style="background:rgb(51 65 85)"></i><div><b>gray.700</b><span>rgb(51 65 85)</span></div></div><div class="sw"><i style="background:rgb(30 41 59)"></i><div><b>gray.800</b><span>rgb(30 41 59)</span></div></div><div class="sw"><i style="background:rgb(15 23 42)"></i><div><b>gray.900</b><span>rgb(15 23 42)</span></div></div><div class="sw"><i style="background:rgb(13 13 13)"></i><div><b>gray.1k</b><span>rgb(13 13 13)</span></div></div><div class="sw"><i style="background:rgb(0 170 69)"></i><div><b>green</b><span>rgb(0 170 69)</span></div></div><div class="sw"><i style="background:rgb(227 245 234)"></i><div><b>green-00</b><span>rgb(227 245 234)</span></div></div><div class="sw"><i style="background:rgb(111 207 151)"></i><div><b>green-100</b><span>rgb(111 207 151)</span></div></div><div class="sw"><i style="background:rgb(82 192 120)"></i><div><b>green-200</b><span>rgb(82 192 120)</span></div></div><div class="sw"><i style="background:rgb(30 135 75)"></i><div><b>green-500</b><span>rgb(30 135 75)</span></div></div><div class="sw"><i style="background:rgb(1 83 0)"></i><div><b>green-800</b><span>rgb(1 83 0)</span></div></div><div class="sw"><i style="background:#219653"></i><div><b>mark-stroke</b><span>#219653</span></div></div><div class="sw"><i style="background:rgb(235 87 87)"></i><div><b>red</b><span>rgb(235 87 87)</span></div></div><div class="sw"><i style="background:rgb(255 234 234)"></i><div><b>red-00</b><span>rgb(255 234 234)</span></div></div><div class="sw"><i style="background:rgb(244 121 116)"></i><div><b>red-200</b><span>rgb(244 121 116)</span></div></div><div class="sw"><i style="background:rgb(194 13 13)"></i><div><b>red-600</b><span>rgb(194 13 13)</span></div></div><div class="sw"><i style="background:rgb(249 115 22)"></i><div><b>orange</b><span>rgb(249 115 22)</span></div></div><div class="sw"><i style="background:rgb(47 128 237)"></i><div><b>blue</b><span>rgb(47 128 237)</span></div></div><div class="sw"><i style="background:rgb(27 134 255)"></i><div><b>blue-figma</b><span>rgb(27 134 255)</span></div></div><div class="sw"><i style="background:rgb(255 255 255)"></i><div><b>white</b><span>rgb(255 255 255)</span></div></div><div class="sw"><i style="background:rgb(0 0 0)"></i><div><b>ink</b><span>rgb(0 0 0)</span></div></div></div>
+  <h2>Buttons</h2>
+  <p>
+    <span class="btn primary">Create Profile</span>
+    <span class="btn secondary">Log in</span>
+    <span class="btn dark">Login</span>
+  </p>
+  <h2>Type</h2>
+  <table><tr><th>Role</th><th>Value</th></tr>
+  <tr><td><code>body</code></td><td>{'fontFamily': '{font.family.ui}', 'fontSize': '16px', 'fontWeight': '400', 'lineHeight': '24px'}</td></tr><tr><td><code>display</code></td><td>{'fontFamily': '{font.family.display}', 'fontSize': '48px', 'fontWeight': '400', 'lineHeight': '57.6px'}</td></tr><tr><td><code>section</code></td><td>{'fontFamily': '{font.family.display}', 'fontSize': '40px', 'fontWeight': '400', 'lineHeight': '48px'}</td></tr><tr><td><code>title</code></td><td>{'fontFamily': '{font.family.ui}', 'fontSize': '20px', 'fontWeight': '600', 'lineHeight': '28px'}</td></tr><tr><td><code>subhead</code></td><td>{'fontFamily': '{font.family.ui}', 'fontSize': '18px', 'fontWeight': '400', 'lineHeight': '28px'}</td></tr><tr><td><code>ui</code></td><td>{'fontFamily': '{font.family.ui}', 'fontSize': '14px', 'fontWeight': '500', 'lineHeight': '20px'}</td></tr><tr><td><code>label</code></td><td>{'fontFamily': '{font.family.ui}', 'fontSize': '14px', 'fontWeight': '600', 'lineHeight': '20px'}</td></tr><tr><td><code>field</code></td><td>{'fontFamily': '{font.family.ui}', 'fontSize': '14px', 'fontWeight': '400', 'lineHeight': '20px'}</td></tr><tr><td><code>username</code></td><td>{'fontFamily': '{font.family.ui}', 'fontSize': '20px', 'fontWeight': '400', 'lineHeight': '28px'}</td></tr><tr><td><code>fine</code></td><td>{'fontFamily': '{font.family.ui}', 'fontSize': '12px', 'fontWeight': '600', 'lineHeight': '16px'}</td></tr><tr><td><code>app-title</code></td><td>{'fontFamily': '{font.family.ui}', 'fontSize': '16px', 'fontWeight': '600', 'lineHeight': '22px'}</td></tr>
+  </table>
+  <h2>Radius</h2>
+  <table><tr><th>Step</th><th>Value</th></tr>
+  <tr><td><code>sm</code></td><td>2px</td></tr><tr><td><code>md</code></td><td>6px</td></tr><tr><td><code>control</code></td><td>8px</td></tr><tr><td><code>button</code></td><td>12px</td></tr><tr><td><code>card</code></td><td>16px</td></tr><tr><td><code>nav</code></td><td>24px</td></tr><tr><td><code>pill</code></td><td>9999px</td></tr><tr><td><code>check</code></td><td>4px</td></tr>
+  </table>
+  <h2>Spacing</h2>
+  <table><tr><th>Step</th><th>Value</th></tr>
+  <tr><td><code>1</code></td><td>4px</td></tr><tr><td><code>2</code></td><td>8px</td></tr><tr><td><code>3</code></td><td>12px</td></tr><tr><td><code>4</code></td><td>16px</td></tr><tr><td><code>5</code></td><td>20px</td></tr><tr><td><code>6</code></td><td>24px</td></tr><tr><td><code>header</code></td><td>56px</td></tr><tr><td><code>control</code></td><td>32px</td></tr><tr><td><code>control-lg</code></td><td>40px</td></tr><tr><td><code>shell</code></td><td>568px</td></tr><tr><td><code>auth</code></td><td>380px</td></tr><tr><td><code>field</code></td><td>446px</td></tr><tr><td><code>feed</code></td><td>640px</td></tr>
+  </table>
+</main>
+</body>
+</html>
