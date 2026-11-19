@@ -20343,6 +20343,84 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "loom",
+      "name": "Loom",
+      "url": "https://www.loom.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Async video marketing and a signed-out share page: white page, Charlie Display headlines, one blurple pill CTA (#1868db), a quiet Contact Sales pill, Lens tokens (--lns-*) declared for light and dark, and a login wall that stops before SSO",
+      "tags": [
+        "web",
+        "marketing",
+        "video",
+        "light",
+        "signed-out",
+        "atlassian",
+        "pill-nav",
+        "productivity"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed-out public marketing, pricing, legal, the /login wall, and one public share page. SSO, signup Continue, Contact Sales, checkout, and recording were not pressed. No CAPTCHA.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/loom/README.md",
+      "tokens": "systems/loom/tokens.json",
+      "styleGuide": "systems/loom/style-guide.html",
+      "preview": {
+        "cover": "systems/loom/screenshots/home-light-default.png",
+        "icon": "systems/loom/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "version": "public marketing, 2026-11-18",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/enterprise",
+          "/ai",
+          "/security",
+          "/use-case",
+          "/desktop",
+          "/customers",
+          "/legal",
+          "/login",
+          "/share/136d5353b9fd4b82b0f4410c24200fec"
+        ],
+        "gaps": [
+          "https://www.loom.com/login is a sign-in wall: SSO and Continue were not pressed, so the library, recorder, and account were not entered",
+          "https://www.loom.com/signup redirects to id.atlassian.com and the form was not submitted",
+          "pricing Try for free, Sign up, and Contact Sales lead to signup or a sales form and were not followed; no checkout was opened",
+          "the library, recording, and workspace settings sit behind sign-in. Phone home and menu shots show a Chrome Google sign-in sheet; Continue on that sheet was not pressed",
+          "the OneTrust cookie banner was hidden and never clicked, so no consent choice was submitted"
+        ],
+        "durationMin": 90,
+        "durationNote": "Public signed-out capture of marketing, pricing, the login wall, and one public share page.",
+        "pr": "https://github.com/starship-terminal/constellations/pull/675"
+      }
     }
   ]
 }
