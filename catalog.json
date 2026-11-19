@@ -20343,6 +20343,92 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "xbox",
+      "name": "Xbox",
+      "url": "https://www.xbox.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Game-console marketing and store: dark 54px header, square lime CTA on green ink, yellow badges, Segoe UI, and a 4px-radius store module with a green Game Pass button",
+      "tags": [
+        "web",
+        "media",
+        "games",
+        "marketing",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (home, games, consoles, Game Pass, search, and one product page are public; Sign in, cart, BUY, and JOIN GAME PASS were not followed)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/xbox/README.md",
+      "tokens": "systems/xbox/tokens.json",
+      "styleGuide": "systems/xbox/style-guide.html",
+      "preview": {
+        "cover": "systems/xbox/screenshots/home-light-desktop.png",
+        "icon": "systems/xbox/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.action.gamePass",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.segoe",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "xbox.com public marketing and store in the T3 preview browser (computed styles at 1169x731) plus headless Playwright screenshots at 1440x900 and 390x844 after preview frames failed",
+        "timestamp": "2026-11-19T04:55:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/en-SG/games",
+          "/en-SG/consoles",
+          "/en-SG/xbox-game-pass",
+          "/en-SG/search/results?q=halo",
+          "/en-SG/games/store/halo-infinite/9np1p1wfs0lb"
+        ],
+        "gaps": [
+          "Sign in, Microsoft account, cart, checkout, and JOIN GAME PASS subscription form were not entered",
+          "preview browser stopped producing screenshot frames; screenshots are headless Playwright viewport shots",
+          "GET GAME PASS and BUY fills are sampled from screenshots because those controls had not painted in the live preview",
+          "reduced-motion emulation was not re-read",
+          "no component crops; icon SVGs not extracted",
+          "text area, select, checkbox, radio, switch, dialog, toast, table not on the public pages"
+        ],
+        "durationMin": 40,
+        "pr": ""
+      },
+      "layoutGaps": {
+        "components/": "preview browser stopped producing frames before crops could be cut; full-page screenshots are the evidence",
+        "icons/": "marketing icons are a glyph font and store icons were not extracted as SVG (docs/RIGHTS.md)"
+      }
     }
   ]
 }
