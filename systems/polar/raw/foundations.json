@@ -1,0 +1,101 @@
+{
+  "source": "getComputedStyle on polar.sh, 2026-11-19, T3 preview tab, viewport 1169x731 at devicePixelRatio 2",
+  "polar": {
+    "50": "#d9d9d9",
+    "100": "#c9c9c9",
+    "200": "#adadad",
+    "300": "#9e9e9e",
+    "400": "#858585",
+    "500": "#757575",
+    "600": "#292929",
+    "700": "#212121",
+    "800": "#181818",
+    "900": "#111111",
+    "950": "#090909"
+  },
+  "blue": {
+    "50": "#eff6ff",
+    "100": "#dbeafe",
+    "200": "#bedbff",
+    "300": "#8ec5ff",
+    "400": "#50a2ff",
+    "500": "#2b7fff",
+    "600": "#155dfc",
+    "700": "#1447e6",
+    "900": "#1c398e",
+    "950": "#162556"
+  },
+  "status": {
+    "red400": "#ff6467",
+    "red500": "#fb2c36",
+    "red600": "#e7000b",
+    "green500": "#00bc7d",
+    "amber500": "#fe9a00",
+    "yellow500": "#f0b100"
+  },
+  "semanticDark": {
+    "page": "#181818",
+    "raised": "#181818",
+    "sunken": "#111111",
+    "header": "#090909",
+    "text": "#ffffff",
+    "muted": "#757575",
+    "onAccent": "#d9d9d9",
+    "accent": "#155dfc",
+    "border": "#212121",
+    "danger": "#fb2c36",
+    "success": "#00bc7d"
+  },
+  "semanticLightDocs": {
+    "page": "#ffffff",
+    "raised": "#ffffff",
+    "sunken": "#f3f4f6",
+    "header": "#ffffff",
+    "text": "#000000",
+    "muted": "#3e3e3e",
+    "onAccent": "#ffffff",
+    "accent": "#166534",
+    "border": "#eeeeee",
+    "danger": "#fb2c36",
+    "success": "#166534"
+  },
+  "type": {
+    "sans": "\"PP Neue Montreal\", Inter, sans-serif",
+    "display": "\"PP Neue Montreal\", InterDisplay, sans-serif",
+    "mono": "GeistMono, monospace",
+    "docs": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+    "docsMono": "\"Paper Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+  },
+  "radius": {
+    "xs": ["2px", "--radius-xs 0.125rem"],
+    "sm": ["5.6px", "--radius-sm calc(0.6rem - 4px)"],
+    "md": ["7.6px", "--radius-md calc(0.6rem - 2px)"],
+    "lg": ["9.6px", "--radius 0.6rem"],
+    "xl": ["12px", "--radius-xl 0.75rem and auth email field"],
+    "2xl": ["16px", "--radius-2xl 1rem and blog pre"],
+    "3xl": ["24px", "--radius-3xl 1.5rem"],
+    "4xl": ["32px", "--radius-4xl 2rem"],
+    "pill": ["9999px", "button border-radius computed as a full pill"]
+  },
+  "space": {
+    "1": ["4px", "--spacing 0.25rem"],
+    "2": ["8px", "button gap and table cell padding-block"],
+    "3": ["12px", "button padding-block and email padding-inline"],
+    "4": ["16px", "nav padding-block and table cell padding-inline"],
+    "5": ["20px", "button padding-inline"],
+    "6": ["24px", "body line-height used as a rhythm"],
+    "8": ["32px", "docs sidebar horizontal padding"],
+    "12": ["48px", "nav padding-inline and home content inset"]
+  },
+  "motion": {
+    "fast": "150ms",
+    "accordion": "200ms"
+  },
+  "components": {
+    "primaryButton": {"bg": "#ffffff", "text": "#000000", "radius": "9999px"},
+    "ghostButton": {"bg": "transparent", "text": "#ffffff", "radius": "9999px"},
+    "secondaryButton": {"bg": "#212121", "text": "#ffffff"},
+    "field": {"bg": "#181818", "text": "#ffffff", "radius": "12px"},
+    "code": {"bg": "#181818", "text": "#a6accd", "radius": "16px"}
+  }
+}
