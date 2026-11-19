@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zapier style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #fffefb;
+    --surface: #fffefb;
+    --raised: #f8f4f0;
+    --selected: #eceae3;
+    --text: #201515;
+    --secondary: #36342e;
+    --muted: #605d52;
+    --disabled: #939084;
+    --border: #c5c0b1;
+    --border-strong: #201515;
+    --border-subtle: #eceae3;
+    --accent: #ff4f00;
+    --accent-hover: #d24304;
+    --ink: #201515;
+    --on-accent: #fffefb;
+    --danger: #d12d37;
+    --success: #2ca47e;
+    --info: #503ebd;
+    --sans: Inter, system-ui, sans-serif;
+    --serif: Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sans); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font: 500 40px/40px var(--sans); margin: 0 0 8px; }
+  h2 { font: 600 20px/25px var(--sans); letter-spacing: -0.5px; margin: 40px 0 12px; }
+  p.note { color: var(--secondary); font-size: 14px; line-height: 21px; max-width: 70ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .sw { border: 1px solid var(--border-subtle); border-radius: 4px; overflow: hidden; }
+  .sw i { display: block; height: 48px; }
+  .sw span { display: block; padding: 6px 8px; font-size: 12px; line-height: 18px; color: var(--muted); }
+  button, .btn { font: 600 16px/1 var(--sans); border-radius: 4px; padding: 8px 16px; border: 1px solid transparent; cursor: pointer; }
+  .brand { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+  .ink { background: var(--ink); color: var(--on-accent); border-color: var(--ink); height: 48px; padding: 12px 24px; font-size: 18px; }
+  .secondary-btn { background: transparent; color: var(--text); border-color: var(--border-strong); }
+  .subtle { background: transparent; color: var(--text); border: none; font-weight: 400; height: 36px; padding: 6px 10px; font-size: 14px; }
+  .pill { background: var(--accent); color: var(--on-accent); border-color: var(--accent); border-radius: 18px; height: 36px; padding: 6px 12px; font-size: 14px; }
+  .disabled { background: var(--selected); color: var(--disabled); border-color: var(--selected); opacity: 0.75; height: 48px; padding: 12px 24px; font-size: 18px; }
+  label { display: block; font-size: 14px; font-weight: 600; margin: 12px 0 4px; }
+  input, textarea { width: 100%; max-width: 364px; height: 48px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--sans); }
+  input.focus { border-color: var(--border-strong); box-shadow: 0 0 0 1px var(--border-strong); outline: none; }
+  textarea { height: 96px; }
+  .card { background: var(--raised); border-radius: 12px; padding: 24px; width: 240px; }
+  .card.on { background: var(--selected); box-shadow: 0 0 0 1px var(--border-strong); }
+  .plan { border: 1px solid var(--border); border-radius: 0; padding: 28px; width: 220px; background: var(--surface); }
+  .plan .amt { font-size: 36px; line-height: 54px; font-weight: 500; }
+  .tabs { display: flex; gap: 0; }
+  .tab { height: 64px; padding: 0 20px; border-radius: 8px; border: 1px solid var(--border-strong); background: var(--page); font: 600 24px/1 var(--sans); }
+  .tab.on { background: var(--ink); color: var(--on-accent); }
+  .radio { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--disabled); display: inline-grid; place-items: center; }
+  .radio.on { border-color: var(--border-strong); }
+  .radio.on i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); display: block; }
+  .eyebrow { font-size: 12px; line-height: 18px; letter-spacing: 0.48px; text-transform: uppercase; color: var(--muted); }
+  .display { font-size: 48px; line-height: 48px; font-weight: 500; }
+  .feature { font-family: var(--serif); font-weight: 300; font-size: 28px; line-height: 35px; letter-spacing: -0.42px; }
+  code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Zapier, light only</p>
+  <h1>Style guide</h1>
+  <p class="note">Specimens use the measured light tokens. Degular Display and Serrif are not loaded. Display falls back to Inter. Feature falls back to Georgia. No dark theme was on the captured pages.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#fffefb"></i><span>page #fffefb</span></div>
+    <div class="sw"><i style="background:#f8f4f0"></i><span>raised #f8f4f0</span></div>
+    <div class="sw"><i style="background:#eceae3"></i><span>selected #eceae3</span></div>
+    <div class="sw"><i style="background:#c5c0b1"></i><span>border #c5c0b1</span></div>
+    <div class="sw"><i style="background:#201515"></i><span>text #201515</span></div>
+    <div class="sw"><i style="background:#36342e"></i><span>secondary #36342e</span></div>
+    <div class="sw"><i style="background:#605d52"></i><span>muted #605d52</span></div>
+    <div class="sw"><i style="background:#939084"></i><span>disabled #939084</span></div>
+    <div class="sw"><i style="background:#ff4f00"></i><span>accent #ff4f00</span></div>
+    <div class="sw"><i style="background:#d24304"></i><span>accent hover #d24304</span></div>
+    <div class="sw"><i style="background:#d12d37"></i><span>danger #d12d37</span></div>
+    <div class="sw"><i style="background:#2ca47e"></i><span>success #2ca47e</span></div>
+    <div class="sw"><i style="background:#381933"></i><span>plum #381933</span></div>
+    <div class="sw"><i style="background:#32372c"></i><span>moss #32372c</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="eyebrow">The next generation of Zapier</p>
+  <p class="display">Welcome to automation</p>
+  <p class="feature">Start building anywhere</p>
+  <p>Body at 16px Inter. Secondary copy uses #36342e.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="brand">Start free with email</button>
+    <button class="secondary-btn">Start free with Google</button>
+    <button class="subtle">Log in</button>
+    <button class="pill">Sign up</button>
+    <button class="ink">Try it free</button>
+    <button class="disabled" disabled>Continue</button>
+  </div>
+
+  <h2>Fields</h2>
+  <label>Email</label>
+  <input class="focus" value="focused field">
+  <label>Password</label>
+  <input type="password" value="rest">
+  <label>Notes</label>
+  <textarea>Textarea from the stylesheet, 96px tall.</textarea>
+
+  <h2>Cards and pricing</h2>
+  <div class="row">
+    <div class="card">Feature card, radius 12px</div>
+    <div class="card on">Active card, 1px ink ring</div>
+    <div class="plan"><div>Free</div><div class="amt">$0</div><button class="ink">Try it free</button></div>
+  </div>
+
+  <h2>Tabs and radios</h2>
+  <div class="tabs">
+    <button class="tab on">Platform</button>
+    <button class="tab">Agents</button>
+    <button class="tab">Chatbots</button>
+  </div>
+  <p class="row" style="margin-top:16px">
+    <span class="radio"></span> Pay monthly
+    <span class="radio on"><i></i></span> Pay yearly
+  </p>
+</div>
+</body>
+</html>
