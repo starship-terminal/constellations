@@ -20343,6 +20343,63 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "slab",
+      "name": "Slab",
+      "url": "https://slab.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Knowledge-base marketing: plum hero (#42022e), coral Get Started (#ff4143), Sentinel headlines, Whitney body, and a signed-out subdomain login card",
+      "tags": [
+        "web",
+        "wiki",
+        "knowledge-base",
+        "saas",
+        "marketing",
+        "signed-out",
+        "serif"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing and the signed-out login page. Register asks for email, full name and password, so it was not submitted. Google signup was not clicked. No company SSO, card, phone or KYC step was entered.",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169,
+        1440,
+        390
+      ],
+      "entry": "systems/slab/README.md",
+      "tokens": "systems/slab/tokens.json",
+      "styleGuide": "systems/slab/style-guide.html",
+      "preview": {
+        "cover": "systems/slab/screenshots/home-light-default.png",
+        "icon": "systems/slab/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.raised",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent.coral",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.whitney",
+          "core.font.family.sentinel"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "version": "slab.com public site, 2026-11-19",
+        "durationMin": 35,
+        "pr": "https://github.com/starship-terminal/constellations/pull/802"
+      }
     }
   ]
 }
