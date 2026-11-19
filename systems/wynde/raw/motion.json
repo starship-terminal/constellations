@@ -1,0 +1,303 @@
+{
+ "_meta": {
+  "readAt": "2026-11-19",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 4,
+  "removed": 0,
+  "reduced": 0,
+  "kept": 4,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "ignores",
+  "loops": []
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://wynde.io/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 2067,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 4,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 4,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "a.framer-text.framer-styles-preset-1fnzdty"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "left",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "left",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "left",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "width",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "width",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".framer-jFQZo .framer-styles-preset-1fnzdty:not(.rich-text-wrapper), .framer-jFQZo .framer-styles-preset-1fnzdty.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://wynde.io/<id>",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 101,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 0,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 0,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "no-motion",
+    "loops": []
+   },
+   "groups": [],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  }
+ }
+}

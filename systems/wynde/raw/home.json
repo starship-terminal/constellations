@@ -1,0 +1,487 @@
+{
+  "url": "https://wynde.io/",
+  "title": "Wynde",
+  "captured": "2026-11-19",
+  "viewportDesktop": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    },
+    "scrollHeight": 7554,
+    "requestedNote": "preview fill viewport, not a requested 1440"
+  },
+  "viewportPhone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "scrollHeight": 12835,
+    "resize": "preview_resize freeform 390x844 did not change the reported viewport setting, but window.innerWidth read 390 after a second call"
+  },
+  "colorScheme": "normal",
+  "prefersColorScheme": "dark on the host; the marketing page stayed light (body background rgb(255,255,255)). No theme control on the page.",
+  "themeControl": null,
+  "inputs": 0,
+  "buttons": {
+    "navLogin": {
+      "text": "Log in",
+      "href": "https://app.wynde.io",
+      "backgroundColor": "rgb(237, 241, 245)",
+      "labelColor": "rgb(24, 24, 24)",
+      "font": "Inter 15px/27px weight 500",
+      "padding": "2px 8px",
+      "height": 31,
+      "borderRadius": "38px",
+      "border": "0",
+      "boxShadow": "none"
+    },
+    "navPrimary": {
+      "text": "Get started for free",
+      "href": "https://app.wynde.io",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "labelColor": "rgb(255, 255, 255)",
+      "font": "Inter 15px/27px weight 500",
+      "padding": "2px 8px",
+      "height": 31,
+      "borderRadius": "38px"
+    },
+    "heroPrimary": {
+      "text": "Get started for free",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "labelColor": "rgb(255, 255, 255)",
+      "font": "Inter 20px/20px weight 600 letter-spacing -0.2px",
+      "padding": "12px 20px",
+      "height": 48,
+      "borderRadius": "52px",
+      "phoneWidth": 294
+    },
+    "heroSecondary": {
+      "text": "Book a demo",
+      "href": "https://meetings-eu1.hubspot.com/sergey-timofeev/wynde-demo",
+      "backgroundColor": "rgb(218, 223, 229)",
+      "labelColor": "rgb(43, 43, 43)",
+      "font": "Inter 20px/20px weight 600 letter-spacing -0.2px",
+      "padding": "12px 20px",
+      "height": 48,
+      "borderRadius": "52px",
+      "width": 162.8
+    },
+    "watchDemo": {
+      "text": "Watch demo",
+      "href": "https://app.arcade.software/share/rr8wqodaSjSohYuDoMDf",
+      "labelColor": "rgb(24, 24, 24)",
+      "font": "Inter 15px/27px weight 500",
+      "iconBox": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "width": 24,
+        "height": 24
+      }
+    }
+  },
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "sans-serif",
+    "fontSize": "12px"
+  },
+  "framerColorTokensOnBody": {
+    "--token-5e57362f-188d-445c-b361-1c6deda8f965": "#edf1f5",
+    "--token-cc803130-5f70-43b3-b233-c36127ce1ff0": "#dadfe5",
+    "--token-ab7839c3-30f5-4da9-b6da-266a3cf00973": "#4c5259",
+    "--token-5ebf9054-2885-467b-a56b-ff913fe2146c": "#cbf0ff",
+    "--token-7b2c175b-96a9-43a9-a66d-4756333336b3": "#0e48604d"
+  },
+  "header": {
+    "backgroundColor": "rgba(255, 255, 255, 0.95)",
+    "height": 64,
+    "padding": "0px 32px",
+    "position": "relative",
+    "borderRadius": "0px",
+    "boxShadow": "none",
+    "widthAt1169": 1169
+  },
+  "contentColumn": {
+    "widthAt1169": 1105,
+    "note": "hero panel and section columns measured 1105px inside the 1169 viewport, 32px side inset"
+  },
+  "navLink": {
+    "text": "Features",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+    "fontSize": "15px",
+    "fontWeight": "500",
+    "lineHeight": "27px",
+    "letterSpacing": "normal",
+    "adjacentLabelColor": "rgb(24, 24, 24)"
+  },
+  "hero": {
+    "headline": {
+      "text": "Take the guesswork out",
+      "fontFamily": "\"Suisse Int'l Bold\"",
+      "fontSize": "68px",
+      "fontWeight": "400",
+      "lineHeight": "64px",
+      "letterSpacing": "-2.04px",
+      "color": "rgb(0, 0, 0)",
+      "phone": {
+        "fontSize": "44px",
+        "lineHeight": "44px",
+        "letterSpacing": "-1.32px",
+        "width": 294
+      }
+    },
+    "lede": {
+      "text": "Wynde is a platform for modern product teams...",
+      "fontFamily": "Inter",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "28px",
+      "letterSpacing": "-0.18px",
+      "color": "rgb(80, 84, 89)"
+    },
+    "panel": {
+      "backgroundColor": "rgb(237, 241, 245)",
+      "borderRadius": "24px",
+      "height": 612,
+      "width": 1105
+    }
+  },
+  "focus": {
+    "element": "Log in link",
+    "outline": "rgb(229, 151, 0) auto 1px",
+    "outlineOffset": "1px",
+    "boxShadow": "none",
+    "note": "browser default focus ring, not a product token. The outline colour is the browser chrome, recorded as observed, not tokenised as a brand colour."
+  },
+  "sections": [
+    {
+      "name": "page",
+      "backgroundColor": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "hero panel",
+      "backgroundColor": "rgb(237, 241, 245)",
+      "borderRadius": "24px"
+    },
+    {
+      "name": "feature card",
+      "backgroundColor": "rgb(203, 240, 255)",
+      "borderRadius": "20px",
+      "width": 537,
+      "height": 295
+    },
+    {
+      "name": "prototype frame",
+      "backgroundColor": "rgb(249, 251, 252)",
+      "borderRadius": "20px"
+    },
+    {
+      "name": "audience band",
+      "backgroundColor": "rgb(0, 96, 74)",
+      "borderRadius": "24px",
+      "boxShadow": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px",
+      "headlineColor": "rgb(239, 255, 183)",
+      "headlineSize": "44px",
+      "font": "Suisse Int'l Bold"
+    },
+    {
+      "name": "reports band",
+      "backgroundColor": "rgb(1, 43, 75)",
+      "borderRadius": "24px",
+      "sameShadow": true,
+      "headlineColor": "rgb(222, 240, 255)"
+    },
+    {
+      "name": "quote card",
+      "backgroundColor": "rgb(237, 240, 244)",
+      "borderRadius": "20px"
+    },
+    {
+      "name": "pricing card",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "20px",
+      "padding": "24px 20px",
+      "border": "0",
+      "boxShadow": "none",
+      "width": 541,
+      "heights": {
+        "Start": 412,
+        "Team": 412,
+        "Enterprise": 492
+      }
+    }
+  ],
+  "pricing": {
+    "heading": "Pricing",
+    "plans": {
+      "Start": {
+        "labelColor": "rgb(76, 82, 89)",
+        "price": "Free",
+        "priceFont": "Suisse Int'l Medium",
+        "priceSize": "28px",
+        "priceWeight": "400",
+        "priceLetterSpacing": "0.56px",
+        "priceLineHeight": "15.95px"
+      },
+      "Team": {
+        "labelColor": "rgb(247, 81, 28)",
+        "price": "$175 / mo"
+      },
+      "Enterprise": {
+        "labelColor": "rgb(0, 82, 141)",
+        "price": "Talk to us",
+        "cta": {
+          "text": "Contact sales",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "labelColor": "rgb(0, 0, 0)",
+          "font": "Inter 20px weight 500",
+          "padding": "12px 20px",
+          "height": 48,
+          "width": 200,
+          "borderRadius": "52px",
+          "cursor": "pointer",
+          "href": null
+        }
+      }
+    },
+    "annualSwitch": {
+      "track": {
+        "backgroundColor": "rgb(0, 0, 0)",
+        "width": 28,
+        "height": 16,
+        "borderRadius": "40px"
+      },
+      "knob": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "width": 8,
+        "height": 8,
+        "borderRadius": "100%"
+      },
+      "label": {
+        "text": "Annual discount",
+        "font": "Inter 15px/27px weight 500",
+        "color": "rgb(0, 0, 0)"
+      },
+      "note": "Not a native switch. Measured at rest. Not toggled, so the on-state colour is a gap."
+    }
+  },
+  "typeRoles": [
+    {
+      "role": "display",
+      "sample": "Take the guesswork out",
+      "fontFamily": "Suisse Int'l Bold",
+      "fontSize": "68px",
+      "fontWeight": "400",
+      "lineHeight": "64px",
+      "letterSpacing": "-2.04px",
+      "color": "rgb(0, 0, 0)"
+    },
+    {
+      "role": "display-phone",
+      "fontSize": "44px",
+      "lineHeight": "44px",
+      "letterSpacing": "-1.32px"
+    },
+    {
+      "role": "section",
+      "sample": "Create your perfect research study in minutes",
+      "fontFamily": "Suisse Int'l Bold",
+      "fontSize": "44px",
+      "lineHeight": "50px",
+      "letterSpacing": "-0.44px",
+      "color": "rgb(0, 0, 0)"
+    },
+    {
+      "role": "section-36",
+      "sample": "save over $10,000",
+      "fontFamily": "Suisse Int'l Bold",
+      "fontSize": "36px",
+      "lineHeight": "43px",
+      "letterSpacing": "-0.36px"
+    },
+    {
+      "role": "lede",
+      "fontFamily": "Inter",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "28px",
+      "letterSpacing": "-0.18px",
+      "color": "rgb(80, 84, 89)"
+    },
+    {
+      "role": "body",
+      "fontFamily": "Inter",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "27px",
+      "letterSpacing": "0.18px",
+      "color": "rgb(0, 0, 0)"
+    },
+    {
+      "role": "nav",
+      "fontFamily": "Inter",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "lineHeight": "27px",
+      "color": "rgb(0, 0, 0)"
+    },
+    {
+      "role": "muted",
+      "sample": "Pavel D., Sr UX Researcher",
+      "fontFamily": "Inter",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "lineHeight": "27px",
+      "letterSpacing": "0.15px",
+      "color": "rgb(76, 82, 89)"
+    },
+    {
+      "role": "cta",
+      "fontFamily": "Inter",
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
+      "letterSpacing": "-0.2px"
+    },
+    {
+      "role": "price",
+      "fontFamily": "Suisse Int'l Medium",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "lineHeight": "15.95px",
+      "letterSpacing": "0.56px",
+      "color": "rgb(0, 0, 0)"
+    },
+    {
+      "role": "plan-label",
+      "fontFamily": "Inter",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "15.95px"
+    },
+    {
+      "role": "legal-title",
+      "fontFamily": "Inter",
+      "fontSize": "32px",
+      "fontWeight": "700",
+      "lineHeight": "64px",
+      "color": "rgb(0, 0, 0)"
+    },
+    {
+      "role": "legal-body",
+      "fontFamily": "Inter",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "36px",
+      "color": "rgb(0, 0, 0)",
+      "contentWidth": 880,
+      "contentX": 145
+    },
+    {
+      "role": "footer-link",
+      "fontFamily": "Inter",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "color": "rgb(76, 82, 89)"
+    }
+  ],
+  "accentColoursObserved": {
+    "teamPlanLabel": "rgb(247, 81, 28)",
+    "enterprisePlanLabel": "rgb(0, 82, 141)",
+    "startPlanLabel": "rgb(76, 82, 89)",
+    "audienceBand": "rgb(0, 96, 74)",
+    "audienceHeadline": "rgb(239, 255, 183)",
+    "reportsBand": "rgb(1, 43, 75)",
+    "reportsHeadline": "rgb(222, 240, 255)",
+    "featureWash": "rgb(203, 240, 255)",
+    "ink": "rgb(0, 0, 0)",
+    "inkSoft": "rgb(24, 24, 24)",
+    "bodyMuted": "rgb(80, 84, 89)",
+    "tokenMuted": "#4c5259",
+    "page": "#ffffff",
+    "heroWash": "#edf1f5",
+    "secondaryFill": "#dadfe5",
+    "demoWash": "#cbf0ff"
+  },
+  "fontsLoaded": [
+    "Inter 400",
+    "Inter 500",
+    "Inter 600",
+    "Suisse Int'l Bold",
+    "Suisse Int'l Medium",
+    "IBM Plex Mono 700"
+  ],
+  "fontsInProductDemosNotTokenised": [
+    "Favorit Pro",
+    "SF Pro Text",
+    "SF Pro"
+  ],
+  "icon": "https://framerusercontent.com/images/mJHRY5BHDv3457EfFkZJduSKw.png",
+  "breakpointsDeclared": [
+    {
+      "hash": "72rtr7",
+      "mediaQuery": "(min-width: 1024px)"
+    },
+    {
+      "hash": "17648dx",
+      "mediaQuery": "(max-width: 1023.98px)"
+    }
+  ],
+  "phoneNav": {
+    "desktopNavHiddenClass": "hidden-72rtr7",
+    "menuButton": {
+      "x": 334,
+      "y": 16,
+      "width": 32,
+      "height": 32,
+      "cursor": "pointer"
+    },
+    "openPanel": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "width": 390,
+      "height": 271,
+      "padding": "8px 24px",
+      "borderRadius": "0px",
+      "boxShadow": "none"
+    },
+    "loginInMenu": {
+      "backgroundColor": "rgb(237, 241, 245)",
+      "labelColor": "rgb(24, 24, 24)",
+      "width": 342,
+      "height": 31,
+      "borderRadius": "38px"
+    },
+    "primaryInMenu": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "labelColor": "rgb(255, 255, 255)",
+      "width": 342,
+      "height": 31,
+      "borderRadius": "38px"
+    }
+  },
+  "motionObservedInCSSOM": {
+    "productLinkTransition": {
+      "selector": ".framer-jFQZo .framer-styles-preset-1fnzdty",
+      "transition": "0.3s color cubic-bezier(0.44, 0, 0.56, 1)"
+    },
+    "reduceRules": 0,
+    "intercomLauncher": "third-party, not tokenised",
+    "note": "Full motion-probe.mjs was not run. These are the stylesheet rules visible in the live CSSOM."
+  },
+  "linksNotFollowed": [
+    "https://app.wynde.io login was opened only to see the boundary, nothing submitted",
+    "https://meetings-eu1.hubspot.com demo booking not followed",
+    "https://app.arcade.software demo not followed",
+    "https://g2.com reviews not followed",
+    "linkedin and x not followed"
+  ],
+  "screenshotFrames": "T3 preview_snapshot failed twice: The browser is not producing screenshot frames."
+}
