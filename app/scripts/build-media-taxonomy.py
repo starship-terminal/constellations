@@ -305,8 +305,9 @@ def matches_base(result: dict, committed: dict) -> bool:
             branch_seed = None
             branch_rows = None
         if (branch_seed is not None and committed == branch_seed
-                and branch_rows and set(branch_rows) < set(head_rows)
-                and all(head_rows.get(slug) == row for slug, row in branch_rows.items())):
+                and branch_rows and set(branch_rows) <= set(head_rows)
+                and all(head_rows.get(slug) == row for slug, row in branch_rows.items())
+                and set(head_rows) - set(branch_rows)):
             return True
     if not set(head_rows) > slugs:
         return False

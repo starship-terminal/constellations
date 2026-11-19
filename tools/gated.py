@@ -72,9 +72,10 @@ def gated_matches_base(systems, current: str) -> bool:
         return False
     base_rows = {s.get("slug"): s for s in base.get("systems") or []}
     head_rows = {s.get("slug"): s for s in systems}
-    if not base_rows or not set(head_rows) > set(base_rows):
+    if not base_rows:
         return False
-    if any(head_rows.get(slug) != row for slug, row in base_rows.items()):
+    if any(slug in base_rows and head_rows[slug] != base_rows[slug]
+           for slug in head_rows):
         return False
     # This pull request regenerated the roll-up, then main gained another
     # capture. Compare the committed file to the branch blob. Re-rendering
