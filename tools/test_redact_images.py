@@ -539,6 +539,7 @@ class AllowEntries(unittest.TestCase):
                       r"@gmail\.com$", r"@mail\.com$", r"@yahoo\.co\.jp$",  # a whole free-mail domain
                       r"@agentmail\.to\b", r"@email\.com$",
                       "name@", "you@", r"^assistant@", "name@.*",               # a local part at any domain
+                      r"^(assistant)@[\w.-]+$", r"^(?:a|assistant)@[\w.-]+\.\w+$", r"^as+istant@.+$",
                       r"example\.com$", "owner", "(", 7]:
             with self.subTest(entry=entry):
                 self.assertIsNotNone(R.allow_entry_problem(entry))

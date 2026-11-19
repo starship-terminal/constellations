@@ -81,6 +81,10 @@ import warnings
 from pathlib import Path
 
 import numpy as np
+try:
+    import re._parser as _re_parser          # Python 3.11+
+except ImportError:  # pragma: no cover
+    import sre_parse as _re_parser
 from PIL import Image, ImageFilter, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -523,10 +527,68 @@ def allow_entry_problem(entry):
             return "names no domain: write @domain or the whole address"
     elif not re.search(r"[\w\\\[(]", entry[entry.rfind("@") + 1:]):
         return "is a local part with no domain: write the whole address"
-    m = re.match(r"\^?((?:[\w+-]|\\\.|\.)+)@", entry)
-    if m and any(email_allowed(f"{m.group(1).replace(chr(92), '')}@{d}", [entry]) for d in PROBE_DOMAINS):
-        return "passes its local part at any domain: write the whole address"
+    for sample in _regex_samples(entry):
+        if "@" in sample:
+            local = sample.partition("@")[0] or PROBE_LOCALS[0]
+            if any(email_allowed(f"{local}@{d}", [entry]) for d in PROBE_DOMAINS):
+                return "passes its local part at any domain: write the whole address"
     return None
+
+
+_CLASS_PICKS = "a0.-_xZ@ "
+
+
+def _in_class(ch, items):
+    P, neg, hit = _re_parser, False, False
+    for op, av in items:
+        if op is P.NEGATE:
+            neg = True
+        elif op is P.LITERAL:
+            hit = hit or ord(ch) == av
+        elif op is P.RANGE:
+            hit = hit or av[0] <= ord(ch) <= av[1]
+        elif op is P.CATEGORY:
+            rx = {P.CATEGORY_DIGIT: r"\d", P.CATEGORY_NOT_DIGIT: r"\D", P.CATEGORY_WORD: r"\w",
+                  P.CATEGORY_NOT_WORD: r"\W", P.CATEGORY_SPACE: r"\s", P.CATEGORY_NOT_SPACE: r"\S"}.get(av)
+            hit = hit or bool(rx and re.fullmatch(rx, ch))
+    return hit != neg
+
+
+def _regex_samples(entry, cap=64):
+    """Strings the regex matches: one per combination of its alternatives (at most cap), each repeat
+    taken once and each character class by a plain member. So a grouped or alternated local part,
+    `^(assistant)@...`, is tried the way the matcher reads it rather than as written."""
+    P = _re_parser
+
+    def seq(items):
+        outs = [""]
+        for op, av in items:
+            outs = [o + a for o in outs for a in node(op, av)][:cap]
+        return outs
+
+    def node(op, av):
+        if op is P.LITERAL:
+            return [chr(av)]
+        if op in (P.NOT_LITERAL, P.ANY):
+            return ["a" if av != ord("a") else "b"] if op is P.NOT_LITERAL else ["a"]
+        if op is P.IN:
+            return [next((c for c in _CLASS_PICKS if _in_class(c, av)), "a")]
+        if op is P.BRANCH:
+            return [x for b in av[1] for x in seq(b)][:cap]
+        if op is P.SUBPATTERN:
+            return seq(av[-1])
+        if op in (P.MAX_REPEAT, P.MIN_REPEAT, getattr(P, "POSSESSIVE_REPEAT", None)):
+            lo, hi, sub = av
+            n = max(lo, 1) if hi else 0
+            return [x * n for x in seq(sub)]
+        if op is getattr(P, "ATOMIC_GROUP", None):
+            return seq(av)
+        return [""]                         # anchors, lookarounds, backreferences: no characters
+
+    try:
+        return seq(_re_parser.parse(entry, re.I))
+    except Exception:
+        return []
 
 
 def validate_email_allow(rules_file, entries):
