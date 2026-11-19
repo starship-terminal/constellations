@@ -20343,6 +20343,76 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "pastel",
+      "name": "Pastel",
+      "url": "https://usepastel.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Website-feedback marketing: white page, stone #f5f5f4 bands, Figtree, a #165dfb announcement bar and trial button, a #454745 signup pill, green #12b981 pricing CTAs, and a separate #4f77ff login card",
+      "tags": [
+        "web",
+        "feedback",
+        "annotation",
+        "design-tools",
+        "marketing",
+        "pricing",
+        "light",
+        "signed-out",
+        "webflow"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (marketing home, plans and features are public; login and signup were measured and not submitted because both ask for a password; SSO, Google, forgot-password and checkout were not entered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1169
+      ],
+      "entry": "systems/pastel/README.md",
+      "tokens": "systems/pastel/tokens.json",
+      "styleGuide": "systems/pastel/style-guide.html",
+      "preview": {
+        "cover": "systems/pastel/icon.png",
+        "icon": "systems/pastel/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.app",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary",
+            "border": "light.border.outline"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.app"
+        ]
+      },
+      "layoutGaps": {
+        "screenshots/": "The T3 preview browser returned \"The browser is not producing screenshot frames\" after the pages had loaded. Measurements were kept. No screenshot was invented.",
+        "components/": "Crops need screenshots. The same preview snapshot failure left no PNG to crop.",
+        "icons/": "The wordmark is a raster image and the Google control is an iframe. Inline SVGs were not extracted."
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "date": "2026-11-19",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/738",
+        "gaps": [
+          "signed-in dashboard at https://usepastel.com/home was not reached",
+          "login and signup both require a password, so neither form was submitted",
+          "SSO at /sso, Google sign-in, and forgot-password were not entered",
+          "pricing checkout and Contact us were not entered",
+          "no screenshots: preview snapshot failed with The browser is not producing screenshot frames",
+          "desktop 1440 and phone 390 were not captured; the pane was 1169 by 731"
+        ]
+      }
     }
   ]
 }
