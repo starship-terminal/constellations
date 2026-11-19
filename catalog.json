@@ -20343,6 +20343,76 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "mschf",
+      "name": "MSCHF",
+      "url": "https://mschf.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "A one-page drop index: black ground, grey uppercase mono at a viewport-scaled size, a gold square logo button, a 3px gold rule, and red for what is not released yet",
+      "tags": [
+        "web",
+        "dark",
+        "mono",
+        "index",
+        "marketing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (the host has no account; the index and the Nuxt 404 are public)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/mschf/README.md",
+      "tokens": "systems/mschf/tokens.json",
+      "styleGuide": "systems/mschf/style-guide.html",
+      "preview": {
+        "cover": "systems/mschf/screenshots/home-dark-default.png",
+        "icon": "systems/mschf/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.raised",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.accent",
+            "border": "dark.border.subtle"
+          }
+        },
+        "fonts": [
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "mschf.com in the T3 preview browser and in headless Chromium. Computed styles at 1440x900 and 390x844, stylesheet rules from the CSSOM, crops at 2x, motion probe on / and /missing-page. Cloudflare did not challenge. Nothing was typed or submitted.",
+        "timestamp": "2026-11-19T00:35:00Z",
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/missing-page",
+          "mobile /"
+        ],
+        "gaps": [
+          "the site is one index; the sitemap lists only /",
+          "there is no account, no light theme, and no form on this host",
+          "section.subscription is declared and not mounted",
+          "store.mschf.com is a separate Shopify theme and was not packaged",
+          "the logo button click does not open a surface",
+          "pressed, disabled, error and loading states are not painted"
+        ],
+        "durationMin": 50,
+        "durationNote": "one session: sparse clone, live style read, screenshots, motion probe, package write",
+        "pr": "https://github.com/starship-terminal/constellations/pull/699"
+      }
     }
   ]
 }
