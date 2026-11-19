@@ -20343,6 +20343,93 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "open",
+      "name": "Open",
+      "url": "https://o-p-e-n.com/",
+      "category": "fitness",
+      "platform": "web",
+      "goodFor": "Mindfulness studio marketing: black page with cream #eeece7 type, 60px 999px pills, Monument Grotesk Regular and Semi-Mono, copper place labels, a cream sign-in modal",
+      "tags": [
+        "web",
+        "wellness",
+        "marketing",
+        "dark",
+        "light",
+        "signed-out",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public pages on o-p-e-n.com. Sign-in was opened through the email step and not submitted. No Apple, phone, card, or booking.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/open/README.md",
+      "tokens": "systems/open/tokens.json",
+      "styleGuide": "systems/open/style-guide.html",
+      "source": "capture",
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 50,
+        "method": "public-web",
+        "source": "o-p-e-n.com public signed-out pages. CSS from the T3 preview tab at 1169x731. Screenshots from headless Chromium at 1440x900 and 390x844. The preview browser did not produce screenshot frames.",
+        "timestamp": "2026-11-19T01:00:00Z",
+        "routes": [
+          "o-p-e-n.com/",
+          "o-p-e-n.com/about",
+          "o-p-e-n.com/faq",
+          "o-p-e-n.com/signin",
+          "o-p-e-n.com/signin?auth=check-email",
+          "o-p-e-n.com/in-person",
+          "o-p-e-n.com/all",
+          "o-p-e-n.com/global",
+          "o-p-e-n.com/privacy",
+          "o-p-e-n.com/terms"
+        ],
+        "gaps": [
+          "T3 preview browser did not produce screenshot frames",
+          "email was not submitted; Apple and phone sign-in were not entered",
+          "no card, credit pack, or booking",
+          "motion-probe was not run; reduce verdict is a gap",
+          "hover, pressed, loading, and error states were not captured live",
+          "signed-in studio was not entered"
+        ]
+      },
+      "preview": {
+        "cover": "systems/open/screenshots/home-dark-default.png",
+        "icon": "systems/open/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.regular",
+          "core.font.family.mono"
+        ]
+      }
     }
   ]
 }
