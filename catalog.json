@@ -20343,6 +20343,63 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "netflix",
+      "name": "Netflix",
+      "url": "https://www.netflix.com/",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Signed-out streaming marketing: black page, red action, translucent field chrome, gradient reason cards, square FAQ rows",
+      "tags": [
+        "web",
+        "media",
+        "streaming",
+        "marketing",
+        "dark",
+        "signup"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out. Public marketing and login chrome only. No account, no card, no playback.",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1169,
+        390
+      ],
+      "entry": "systems/netflix/README.md",
+      "tokens": "systems/netflix/tokens.json",
+      "styleGuide": "systems/netflix/style-guide.html",
+      "preview": {
+        "cover": "systems/netflix/screenshots/home-dark-unavailable.png",
+        "icon": "systems/netflix/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.background.action",
+            "border": "dark.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.netflix-sans"
+        ]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "version": "not exposed in the signed-out chrome",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": ""
+      },
+    "layoutGaps": {
+          "components/": "The preview browser produced no screenshot frames, so no component crops were saved."
     }
+  }
   ]
 }
