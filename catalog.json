@@ -20343,6 +20343,65 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "wix",
+      "name": "Wix",
+      "url": "https://www.wix.com/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Signed-out website-builder marketing: white fixed header, pill primary, black text, mint section fills, email login with a 6px field",
+      "tags": [
+        "web",
+        "marketing",
+        "saas",
+        "website-builder",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-18",
+      "access": "signed out (homepage, pricing, and the email login; the form was not submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/wix/README.md",
+      "tokens": "systems/wix/tokens.json",
+      "styleGuide": "systems/wix/style-guide.html",
+      "preview": {
+        "cover": "systems/wix/icon.png",
+        "icon": "systems/wix/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.header",
+            "border": "light.border.field"
+          }
+        },
+        "fonts": [
+          "core.font.display",
+          "core.font.text"
+        ]
+      },
+      "capture": {
+        "harness": "Grok Build",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "durationMin": 40,
+        "pr": "https://github.com/starship-terminal/constellations/pull/897",
+        "durationNote": "one session, public pages only"
+      },
+      "layoutGaps": {
+        "components/": "no crops; the same screenshot failure",
+        "icons/": "inline SVGs were not extracted; the logo is in the header measurements only",
+        "screenshots/": "preview_snapshot failed: The browser is not producing screenshot frames. No image was invented. The catalog cover is icon.png."
+      }
     }
   ]
 }
