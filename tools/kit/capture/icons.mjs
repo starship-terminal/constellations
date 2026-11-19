@@ -35,6 +35,9 @@ function collect() {
     const paintInto = (src, dst, imported = false) => {
       const shapes = [...src.querySelectorAll(SHAPES)], cshapes = [...dst.querySelectorAll(SHAPES)];
       shapes.forEach((e, i) => {
+        // A shape in an imported symbol inherits its paint from the <use> that draws it, unless its own
+        // class or style sets it: only then is anything written, or the copy could no longer recolour.
+        if (imported && !e.hasAttribute('class') && !e.hasAttribute('style')) return;
         const cs = getComputedStyle(e), t = cshapes[i];
         for (const a of ['fill', 'stroke']) if ((t.getAttribute(a) || '').startsWith('var(')) t.setAttribute(a, rgb(cs[a]) === col ? 'currentColor' : hex(cs[a]));
         if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
