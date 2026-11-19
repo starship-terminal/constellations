@@ -6,8 +6,6 @@
    "@fresha\\.com$",
    "@fresha\\.io$",
    "@example\\.(com|org|net|inc)$",
-   "@gmail\\.com$",
-   "@mail\\.com$",
    "@everyone$",
    "@here$"
   ]
