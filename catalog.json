@@ -20343,6 +20343,90 @@
         "durationMin": 70,
         "pr": "https://github.com/starship-terminal/constellations/pull/905"
       }
+    },
+{
+      "slug": "whatsapp",
+      "name": "WhatsApp",
+      "url": "https://www.whatsapp.com",
+      "category": "messaging",
+      "platform": "web",
+      "goodFor": "Private-messaging marketing pages: a #fcf5eb cream field, #1c1e21 ink, a #111b21 footer and privacy hero, a #25d366 Download pill with an ink label, WhatsApp Sans Var at 80px on the desktop hero and 44px on the phone hero, and 50px pills",
+      "tags": [
+        "web",
+        "messaging",
+        "marketing",
+        "chat",
+        "privacy",
+        "green",
+        "pill-button",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-19",
+      "access": "signed out (every captured surface is public marketing; web.whatsapp.com was not opened; no phone number was entered; no QR pairing surface was opened; Download and Log in were measured, never followed)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/whatsapp/README.md",
+      "tokens": "systems/whatsapp/tokens.json",
+      "styleGuide": "systems/whatsapp/style-guide.html",
+      "preview": {
+        "cover": "systems/whatsapp/screenshots/home-light-default.png",
+        "icon": "systems/whatsapp/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.field",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/whatsapp/raw-shots (full-colour captures, outside the repo; this run wrote them under /tmp/wa-raw)"
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "whatsapp.com in headless Chromium (Playwright) after the T3 preview tab loaded the same public home page but produced no screenshot frames. Desktop 1440x900 and a 390x844 phone pass. Computed styles from the live DOM. The site declares no custom properties on :root, so tokens are measured computed values. web.whatsapp.com is a documented sign-in boundary and was not opened.",
+        "timestamp": "2026-11-19T04:22:00Z",
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/download",
+          "/privacy",
+          "/calling",
+          "/contact",
+          "/security",
+          "phone / and /download"
+        ],
+        "gaps": [
+          "web.whatsapp.com was not opened; no phone number was entered; no QR pairing surface was opened",
+          "Download, Log in and the Mac app link were measured, never followed",
+          "blog.whatsapp.com, faq.whatsapp.com and whatsappbusiness.com are other domains and were not captured",
+          "the Features menu radius and shadow were not measured; the DOM walk landed on a transparent wrapper",
+          "the contact-us link colour is a screenshot pixel sample, not a computed style",
+          "no public form was on the captured pages, so fields, validation and error states were not measured",
+          "a reduced-motion pass still reported the 0.33s and 0.5s link transitions"
+        ],
+        "durationMin": 70,
+        "durationNote": "wall-clock for the capture session including the preview attempt, the headless measurement pass, and the package write",
+        "pr": ""
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the wordmark and the download glyph are visible in the crops and screenshots"
+      }
     }
   ]
 }
