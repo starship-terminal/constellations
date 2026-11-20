@@ -85,8 +85,16 @@ def check(path, ty, val):
             if not str(layer.get("color", "")).startswith("{"):
                 norm_color(layer.get("color", ""))
     if ty == "gradient":
-        if not isinstance(val, list) or not all(isinstance(st, dict) and "color" in st and "position" in st for st in val):
-            raise ValueError(f"{path}: gradient {val!r} is not a list of colour stops")
+        # At least two stops, each with a readable colour and a numeric position between 0 and 1.
+        if not isinstance(val, list) or len(val) < 2:
+            raise ValueError(f"{path}: gradient {val!r} needs two or more stops")
+        for st in val:
+            if not isinstance(st, dict) or "color" not in st or "position" not in st:
+                raise ValueError(f"{path}: gradient stop {st!r} needs a colour and a position")
+            if not isinstance(st["position"], (int, float)) or isinstance(st["position"], bool) or not 0 <= st["position"] <= 1:
+                raise ValueError(f"{path}: gradient stop position {st['position']!r} is not a number from 0 to 1")
+            if not str(st["color"]).startswith("{"):
+                norm_color(st["color"])
 
 
 def leaf(path, spec, theme):
@@ -156,24 +164,32 @@ MEMBER = {"fontFamily": "fontFamily", "fontSize": "dimension", "fontWeight": "fo
           "lineHeight": "dimension", "letterSpacing": "dimension", "color": "color",
           "duration": "duration", "timingFunction": "cubicBezier"}
 
-for prefix, tree, names in (("core", core, NAMES), ("light", light, NAMES_L), ("dark", dark, NAMES_D)):
-    by = dict(tokens_of(core))
-    by.update(dict(tokens_of(tree)))
-    for n, t in list(tokens_of(tree)):
-        for a in aliases(t["$value"]):
-            if a not in names:
-                raise KeyError(f"{prefix}.{n}: alias {{{a}}} points at nothing")
-        # An alias must name a token of the type its place needs (the kit's check; a colour that
-        # aliases a gradient or a dimension would pass the name check alone).
-        v = t["$value"]
-        if isinstance(v, str) and aliases(v) and t["$type"] in ("color", "dimension", "fontFamily", "duration"):
-            if by[aliases(v)[0]]["$type"] != t["$type"]:
-                raise TypeError(f"{prefix}.{n}: alias {v} is a {by[aliases(v)[0]]['$type']}, not a {t['$type']}")
-        items = v.items() if isinstance(v, dict) else [(k, x) for layer in v for k, x in layer.items()] if isinstance(v, list) and v and isinstance(v[0], dict) else []
-        for k, m in items:
-            want = MEMBER.get(k)
-            if want and isinstance(m, str) and aliases(m) and by[aliases(m)[0]]["$type"] != want:
-                raise TypeError(f"{prefix}.{n}: {k} {m} is a {by[aliases(m)[0]]['$type']}, not a {want}")
+def check_aliases(core, light, dark):
+    """Every alias names a token of its own set or core, of the type its place needs."""
+    NAMES = {n for n, _ in tokens_of(core)}
+    NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
+    NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
+    for prefix, tree, names in (("core", core, NAMES), ("light", light, NAMES_L), ("dark", dark, NAMES_D)):
+        by = dict(tokens_of(core))
+        by.update(dict(tokens_of(tree)))
+        for n, t in list(tokens_of(tree)):
+            for a in aliases(t["$value"]):
+                if a not in names:
+                    raise KeyError(f"{prefix}.{n}: alias {{{a}}} points at nothing")
+            # An alias must name a token of the type its place needs (the kit's check; a colour that
+            # aliases a gradient or a dimension would pass the name check alone).
+            v = t["$value"]
+            if isinstance(v, str) and aliases(v) and t["$type"] in ("color", "dimension", "fontFamily", "duration"):
+                if by[aliases(v)[0]]["$type"] != t["$type"]:
+                    raise TypeError(f"{prefix}.{n}: alias {v} is a {by[aliases(v)[0]]['$type']}, not a {t['$type']}")
+            items = v.items() if isinstance(v, dict) else [(k, x) for layer in v for k, x in layer.items()] if isinstance(v, list) and v and isinstance(v[0], dict) else []
+            for k, m in items:
+                want = MEMBER.get(k)
+                if want and isinstance(m, str) and aliases(m) and by[aliases(m)[0]]["$type"] != want:
+                    raise TypeError(f"{prefix}.{n}: {k} {m} is a {by[aliases(m)[0]]['$type']}, not a {want}")
+
+
+check_aliases(core, light, dark)
 
 tokens = {
     "core": core,

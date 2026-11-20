@@ -77,14 +77,19 @@ async function record(page, name, state, loc, extra = {}) {
 // Pointer to a corner and focus dropped before every state, as the kit's S() does. Before, the
 // pointer stayed on the element from the hover reading through pressed and focus-visible, so the
 // focus-visible readings were hover and focus mixed.
-async function rest(page) {
-  await page.mouse.move(2, 2).catch(() => {});
+async function rest(page, loc) {
+  // Park the pointer outside the control being measured: (2, 2) sits inside the full-width banner
+  // link, so it would hover that control. Below the control's box, or off the viewport's right edge.
+  const vp = page.viewportSize() || { width: 1440, height: 900 };
+  const box = loc ? await loc.first().boundingBox().catch(() => null) : null;
+  const y = box ? Math.min(vp.height - 2, Math.round(box.y + box.height + 40)) : vp.height - 2;
+  await page.mouse.move(vp.width - 2, y).catch(() => {});
   await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
   await page.waitForTimeout(150);
 }
 
 async function states(page, name, loc) {
-  await rest(page);
+  await rest(page, loc);
   if (!(await loc.count())) {
     await record(page, name, 'default', loc, { via: 'rest' });
     return;
@@ -93,11 +98,11 @@ async function states(page, name, loc) {
   await loc.first().hover().catch(() => {});
   await page.waitForTimeout(350);
   await record(page, name, 'hover', loc, { via: 'mouse hover' });
-  await rest(page);
+  await rest(page, loc);
   const release = await forcePseudo(page, loc.first(), ['hover', 'active']);
   await record(page, name, 'pressed', loc, { via: 'CDP forcePseudoState active+hover; no click' });
   await release();
-  await rest(page);
+  await rest(page, loc);
   await loc.first().focus().catch(() => {});
   await page.keyboard.press('Shift+Tab').catch(() => {});
   await page.keyboard.press('Tab').catch(() => {});
@@ -109,9 +114,11 @@ async function states(page, name, loc) {
     // saved as its focus. Record the miss instead, as the kit does.
     out.components[name] ??= {};
     out.components[name]['focus-visible'] = { skipped: 'focus failed: keyboard focus did not reach the element', via: 'focus failed' };
+    // A crop from an earlier run would still show a focus state the reading now says was not captured.
+    fs.rmSync(path.join(CROPS, `${name}-focus-visible.png`), { force: true });
     log('  -', name, 'focus-visible skipped: focus failed');
   }
-  await rest(page);
+  await rest(page, loc);
 }
 
 async function run() {
