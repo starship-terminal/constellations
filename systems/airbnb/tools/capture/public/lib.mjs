@@ -43,9 +43,9 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
-  // Headless Chromium sets navigator.webdriver; airbnb.com bot-walls some routes
-  // on it. This masks only that flag, the same signal the site itself reads.
-  await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed. Headless Chromium sets
+  // navigator.webdriver and airbnb.com bot-walls some routes on it; the capture
+  // no longer masks the flag, so a walled route is a boundary, not a reading.
   return { browser, context };
 }
 
