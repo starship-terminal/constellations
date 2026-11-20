@@ -186,10 +186,10 @@ const out = {
     bySelector,
   },
   errors: result.errors,
-  app: result.rules.filter((r) => r.bin === 'app'),
+  app: maskIdents(result.rules.filter((r) => r.bin === 'app')),
   vendor: maskIdents(result.rules.filter((r) => r.bin === 'vendor')),
-  framework: result.rules.filter((r) => r.bin === 'framework'),
-  utility: result.rules.filter((r) => r.bin === 'utility'),
+  framework: maskIdents(result.rules.filter((r) => r.bin === 'framework')),
+  utility: maskIdents(result.rules.filter((r) => r.bin === 'utility')),
   fonts: result.fonts,
   resolved: { light: Object.fromEntries(Object.entries(resolved).map(([k, r]) => [k, IDENT.test(k) ? { kind: r.kind, value: '<identifier omitted>' } : r])) },
 };

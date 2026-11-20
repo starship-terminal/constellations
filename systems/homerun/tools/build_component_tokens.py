@@ -78,7 +78,10 @@ def st(comp, state):
 def stprop(comp, state, prop):
     """prop may be `styleProp`, `textStyle.prop`, `paint.N.prop` (the Nth
     painted child layer), `ancestors.N.prop` or the special `ringShadow`:
-    resolve the dotted path inside the measured state."""
+    resolve the dotted path inside the measured state. A component flagged
+    missing or recaptureMissed is refused here too, as in st()."""
+    if C[comp].get("missing") or C[comp].get("recaptureMissed"):
+        raise KeyError(comp)
     d = C[comp]["states"][state]
     if prop == "ringShadow":
         sh = d.get("style", {}).get("boxShadow", "") or ""

@@ -118,6 +118,44 @@ def ref(name, ty, desc, **kw):
     return var(name, ty, source=f"css-var {name} resolved (raw/css-vars.json)", description=desc, **kw)
 
 
+
+def gradient_stops(body):
+    """The colour stops of a linear-gradient() body after its angle, split on
+    top-level commas only (rgb(), oklab() keep their commas) and keeping an
+    explicit stop position; stops without one are spread evenly, as CSS does
+    between known neighbours (2026-11 audit, finding 14-29)."""
+    parts, depth, cur = [], 0, ""
+    for ch in body:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == "," and depth == 0:
+            parts.append(cur.strip()); cur = ""
+        else:
+            cur += ch
+    parts.append(cur.strip())
+    stops = []
+    for p in parts:
+        m = re.fullmatch(r"(.+?\)|#[0-9a-fA-F]{3,8}|[a-z]+)(?:\s+(-?[\d.]+)%)?", p)
+        if not m:
+            raise ValueError(f"unreadable gradient stop {p!r}")
+        stops.append([m.group(1), None if m.group(2) is None else float(m.group(2)) / 100])
+    if stops[0][1] is None:
+        stops[0][1] = 0.0
+    if stops[-1][1] is None:
+        stops[-1][1] = 1.0
+    i = 0
+    while i < len(stops):
+        if stops[i][1] is None:
+            j = i
+            while stops[j][1] is None:
+                j += 1
+            a, b = stops[i - 1][1], stops[j][1]
+            for k in range(i, j):
+                stops[k][1] = a + (b - a) * (k - i + 1) / (j - i + 1)
+            i = j
+        i += 1
+    return [(c, round(pos, 4)) for c, pos in stops]
+
 def put(tree, path, leaf):
     if leaf is None:
         return
@@ -303,9 +341,9 @@ for n in sorted(R):
             raw = R[n]
             gm = re.fullmatch(r"linear-gradient\((\d+)deg,\s*(.+)\)", raw)
             if gm:
-                stops = [s.strip() for s in gm.group(2).split(",")]
+                stops = gradient_stops(gm.group(2))
                 put(pal, ("access-gradient", tier, "gradient"), {
-                    "value": [{"color": norm_color(s), "position": i / (len(stops) - 1)} for i, s in enumerate(stops)],
+                    "value": [{"color": norm_color(c), "position": pos} for c, pos in stops],
                     "type": "gradient", "angle": f"{gm.group(1)}deg",
                     "source": f"css-var {n} resolved (raw/css-vars.json)",
                     "description": f"The {tier} FARFETCH Access tier gradient ({raw})."})
