@@ -1,4 +1,4 @@
-"""build_tokens.check refuses a leaf with no source and a bad dimension."""
+"""build_tokens.check refuses a leaf with no source, a bad dimension or colour, and a broken alias."""
 import json
 import pathlib
 import unittest
@@ -32,6 +32,24 @@ class CheckTest(unittest.TestCase):
             build_tokens.check(bad)
         bad = {"core": {}, "light": {"text": {"$type": "color", "$value": "{color.nothing}", **src}}}
         with self.assertRaises(ValueError):
+            build_tokens.check(bad)
+
+    def test_alias_inside_typography_must_resolve(self):
+        bad = json.loads(TOKENS.read_text())
+        bad["core"]["typography"]["body"]["$value"]["fontSize"] = "{fontSize.missing}"
+        with self.assertRaisesRegex(ValueError, "points at nothing"):
+            build_tokens.check(bad)
+
+    def test_alias_cycle_is_refused(self):
+        bad = json.loads(TOKENS.read_text())
+        bad["core"]["color"]["ink"]["$value"] = "{color.ink}"
+        with self.assertRaisesRegex(ValueError, "cycle"):
+            build_tokens.check(bad)
+
+    def test_malformed_alias_is_refused(self):
+        bad = json.loads(TOKENS.read_text())
+        bad["core"]["color"]["ink"]["$value"] = "{color.white}oops"
+        with self.assertRaisesRegex(ValueError, "malformed"):
             build_tokens.check(bad)
 
     def test_dimension_is_one_length(self):

@@ -63,7 +63,8 @@ def alias(path, source, description=None):
 
 def check(doc):
     """Refuse a leaf with no source, a dimension that is not one length, a colour that is not
-    #rrggbb(aa), and an alias that resolves neither in its own set nor in core."""
+    #rrggbb(aa), a malformed alias, an alias (at any depth of a value) that resolves neither in its
+    own set nor in core, and an alias chain that loops."""
     def leaves(node, path=""):
         if not isinstance(node, dict):
             return
@@ -74,6 +75,37 @@ def check(doc):
             if not key.startswith("$"):
                 yield from leaves(child, f"{path}.{key}" if path else key)
 
+    def strings(value):
+        if isinstance(value, str):
+            yield value
+        elif isinstance(value, dict):
+            for v in value.values():
+                yield from strings(v)
+        elif isinstance(value, list):
+            for v in value:
+                yield from strings(v)
+
+    def alias_refs(value, where):
+        """Every alias inside a value, at any depth. A string holding a brace must be one whole alias."""
+        refs = []
+        for text in strings(value):
+            if "{" in text or "}" in text:
+                m = re.fullmatch(r"\{([A-Za-z0-9_.-]+)\}", text)
+                if not m:
+                    raise ValueError(f"{where} malformed alias {text!r}")
+                refs.append(m.group(1))
+        return refs
+
+    def follow(ref, own, core, where, chain):
+        """Resolve ref in its own set, then core, then follow the target's aliases; refuse a cycle."""
+        if ref in chain:
+            raise ValueError(f"{where} alias cycle through {{{ref}}}")
+        target = own.get(ref) or core.get(ref)
+        if target is None:
+            raise ValueError(f"{where} alias {{{ref}}} points at nothing")
+        for nxt in alias_refs(target["$value"], where):
+            follow(nxt, own if ref in own else core, core, where, chain + [ref])
+
     sets = [k for k in doc if not k.startswith("$")]
     core = {p: t for p, t in leaves(doc.get("core", {}))}
     for name in sets:
@@ -83,10 +115,10 @@ def check(doc):
             if "$extensions" not in node or "source" not in node.get("$extensions", {}):
                 raise ValueError(f"{where} has no source")
             value = node["$value"]
-            if isinstance(value, str) and value.startswith("{"):
-                target = value[1:-1]
-                if target not in own and target not in core:
-                    raise ValueError(f"{where} alias {value} points at nothing")
+            refs = alias_refs(value, where)
+            for ref in refs:
+                follow(ref, own, core, where, [path])
+            if isinstance(value, str) and refs:
                 continue
             if node.get("$type") == "dimension" and isinstance(value, str) and not DIM.fullmatch(value):
                 raise ValueError(f"{where} dimension {value!r}")
