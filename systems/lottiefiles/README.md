@@ -80,6 +80,8 @@ Foundation colours are the custom properties on `:root` and `.dark`, harvested b
 ## What to distrust
 
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.
+- The font weight of each `core.typography` role was typed in by hand at capture time, as the Tailwind step the role appears to use. No element's weight was read for it, so those tokens are labelled Reconstruction.
+- The Download tab entry in [components.md](components.md) was written by hand from [animation-light-download-tab.png](screenshots/animation-light-download-tab.png). No values were read for it.
 - The dark set was not painted by the public site. It is the stylesheet's `.dark` block.
 - Pricing plan buttons (blue `#0077bb`, teal `#017a71`, ink) are measured component colours. They are not the teal `--primary` token.
 - Hover on the teal control computes `oklab(... / 0.9)`. That alpha form is in the component readings. The token keeps the resting `--primary`.
@@ -103,8 +105,8 @@ Inter LF, DM Sans LF, Noto Sans JP LF and Noto Sans KR LF are named in the style
 | Spacing | Captured. `--spacing` 0.25rem and the steps built from it |
 | Radii | Captured. `--radius` 0.5rem. Hero button radius from the measured CTA |
 | Borders | Captured. `--border`, `--input`, `--ring` |
-| Elevation | Captured where the shadow string parsed (`--shadow-md`, `--shadow-lg`). `--shadow-sm` has a negative spread and was not tokenised |
-| Motion | Partly captured. Tailwind animation-delay steps are in `core.motion.duration`. A product easing was not isolated |
+| Elevation | Captured. `--shadow-sm`, `--shadow-md` and `--shadow-lg` in `core.elevation`, two layers each, negative spreads kept |
+| Motion | Partly captured. `--default-transition-duration` is `core.motion.duration.base`. Tailwind's animation-delay steps are `core.motion.delay`: delays, not durations. A product easing was not isolated |
 | Sizing | Captured. Header control 36px and hero CTA 48px, measured |
 | Layout | Captured at 1440 and 390. Tailwind breakpoints `--breakpoint-sm` through `--breakpoint-xl` |
 | Button | Captured. [components/crops/nav-signup-default.png](components/crops/nav-signup-default.png), [components/crops/hero-cta-default.png](components/crops/hero-cta-default.png) |

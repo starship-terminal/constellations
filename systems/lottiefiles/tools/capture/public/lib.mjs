@@ -82,8 +82,12 @@ export async function styleOf(loc) {
   }, PROPS);
 }
 
+// Element screenshot into components/crops/<name>.png, padded, then stored as 256 colours like every
+// other committed image. The element is scrolled into view first and measured once after, so one
+// below the fold is cropped where it now sits.
 export async function crop(page, loc, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
+  await loc.scrollIntoViewIfNeeded().catch(() => {});
   const box = await loc.boundingBox();
   if (!box || box.width < 2 || box.height < 2) throw new Error('no box');
   const vp = page.viewportSize();
@@ -93,14 +97,15 @@ export async function crop(page, loc, name, pad = 8) {
   const h = Math.min(vp.height - y, box.height + pad * 2);
   if (w < 2 || h < 2) throw new Error('crop clipped off viewport');
   const file = path.join(CROPS, `${name}.png`);
-  await loc.scrollIntoViewIfNeeded().catch(() => {});
-  const box2 = await loc.boundingBox();
-  const x2 = Math.max(0, box2.x - pad);
-  const y2 = Math.max(0, box2.y - pad);
-  const w2 = Math.min(vp.width - x2, box2.width + pad * 2);
-  const h2 = Math.min(vp.height - y2, box2.height + pad * 2);
-  await page.screenshot({ path: file, clip: { x: x2, y: y2, width: w2, height: h2 } });
+  await page.screenshot({ path: file, clip: { x, y, width: w, height: h } });
+  quantize(file);
   return `components/crops/${name}.png`;
+}
+
+export function quantize(file) {
+  execFileSync(PYTHON, ['-c',
+    'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)',
+    file]);
 }
 
 export async function centre(loc) {
