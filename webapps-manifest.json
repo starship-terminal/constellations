@@ -5327,9 +5327,9 @@
       "description": "Build an employee incentive plan that motivates your team to act like owners",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://app.sharewillow.com/login shows email and password, or phone. Password not submitted.",
+      "notes": "Email probe: https://app.sharewillow.com/login shows email and password, or phone. Password not submitted. Public walk 2026-11-21: header opens Product and Industries menus, Customers, Pricing, Agents, Sign in, and Book a demo. Sign in stops at app.sharewillow.com/login. Phone Open menu opens a dialog with the same destinations. Login shows email, password, phone, and Google. Google was not clicked. Signup was mapped and not screenshotted. No email was typed. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1576 at e8c8e5ab53e5. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 16
     },
     {
