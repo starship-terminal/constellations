@@ -107,6 +107,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **The forms.** The auth fields were measured at rest and typed into then cleared — validation, error, loading and success states are unverified because nothing was submitted. The PDP "Start generation" pill's dim accent/15% fill is its resting (not-ready) style, not a measured disabled state.
 - **The fluid marketing scale.** Marketing px values are fluid-rem readings at 1440 (and 390): the declared `--_fonts---*` steps are the tokens; measured `font.size.measured.*` names what the page painted — the two differ by design.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
+- **Sidecar theme shape.** 28 of the 29 committed `screenshots/*.capture.json` record `actual.theme` as `{root: {...}, body: {...}}`, an older shape of this package's `tools/capture/screenshot.mjs`; `auth-dark-forgot` has the kit's flat shape. The script now writes the kit's shape (`classes`, `attributes`, `colorScheme` from `<html>`) with `<body>`'s markers in `actual.theme.body`, so a reader of `actual.theme.classes` works on new captures. The committed sidecars keep the old shape until a recapture rewrites them (the script was edited, not run).
 - **Reduced motion.** The marketing site and app ignore `prefers-reduced-motion` (337 moving elements kept running, including the hero strips and marquee loops) — an honest finding, recorded in `core.motion.$extensions.reducedMotion`.
 
 ## Fonts
