@@ -32,7 +32,7 @@ colors:
   border-focus: "#44b1ff"
   action-fill: "#44b1ff"
   action-ink: "#1e1e1e"
-  action-hover: "#63bbf9"
+  action-hover: "#a2d1f1"
   status-danger: "#fc5c3f"
   status-warning: "#f2ba41"
   status-success: "#65dc8d"

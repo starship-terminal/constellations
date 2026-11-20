@@ -99,7 +99,7 @@ Every colour, radius, length and font on this package is one of three kinds, and
 
 - **Declared.** `css-var --name (light)`: a custom property in kit.com's stylesheets, harvested by `tools/capture/vars.mjs` from the live home page's network sheets plus inline style blocks, re-parsed with CSSStyleSheet, and resolved on a probe document at 1440 x 900. The site declares no theme scope, so the light and dark passes resolve the same values. The dark token set is left empty on purpose.
 - **Measured.** `computed …` or `measured …`: a computed style or bounding box read from the live DOM by `tools/capture/public/measure.mjs`, with a matching crop in `components/crops/`.
-- **Derived.** The spacing steps `s1` through `s9` are multiples of the declared `--spacing` of 4px. They were not read as separate custom properties.
+- **Reconstruction.** The spacing steps `s1` through `s9` (4, 8, 12, 16, 24, 32, 48, 64, 80px) are multiples of the declared `--spacing` of 4px picked by hand at capture time. Tailwind multiplies `--spacing` by any integer, so no reading names these nine steps; only `core.spacing.base` is declared.
 
 Consent overlays were hidden in CSS and never answered. Nothing was signed into, submitted, purchased, or followed through an OAuth flow. The log-in fields were typed into with a placeholder address and then cleared. Log in was never clicked.
 
@@ -129,7 +129,7 @@ Consent overlays were hidden in CSS and never answered. Nothing was signed into,
 | Colour semantic | captured | [tokens.json](tokens.json) `light.background`, `light.text`, `light.border`, `light.action`, `light.status`. Overlay, scrim, and a full status fill/text/border trio are not present on the public pages. |
 | Type families | captured | KitSansFont, Libre Franklin, Inter. See [hero-h1](components/crops/hero-h1-default.png). |
 | Type scale | captured | Declared `--text-xs` through `--text-5xl`, plus measured 80/64/48px display sizes. |
-| Spacing | captured | Declared `--spacing` 4px and derived steps in `core.spacing`. |
+| Spacing | captured | Declared `--spacing` 4px in `core.spacing.base`; the nine steps beside it are a hand-picked reconstruction. |
 | Radii | captured | Declared `--radius-xs` through `--radius-3xl`. Measured 8px pills, 10px fields, 12px submit. |
 | Borders | captured | `light.border.default` gray-300, `light.border.strong` gray-800, `light.border.focus` blue-500. |
 | Elevation | not present | The public pages do not ship a 3 to 5 level shadow scale. The open nav panel paints one drop shadow. See [nav-panel](components/crops/nav-panel-default.png). |
