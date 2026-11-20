@@ -16,6 +16,20 @@ import re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
 DECLARED = RAW["declared"]
+COMPUTED = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+HAND = "Reconstruction — entered by hand at capture time, no raw reading behind it"
+
+
+def reading(comp, prop):
+    """A computed style (or rect h/w) of a component in raw/components-computed.json; raises when
+    the reading is missing."""
+    c = COMPUTED[comp]
+    if prop in ("h", "w"):
+        return f"{c['rect'][prop]:g}px"
+    v = c["style"].get(prop)
+    if not v:
+        raise KeyError(f"{comp}: no {prop} reading")
+    return v
 SRC = "css-var"
 
 
@@ -88,6 +102,23 @@ def easing(name):
     }
 
 
+def unnest(node):
+    """Lift tokens that sit inside another token out as siblings: --colour-elevation-1 and
+    --colour-elevation-1-border would make elevation.1 hold elevation.1.border, where DTCG walkers
+    stop at $value and never look. The child becomes elevation.1-border."""
+    for k in list(node):
+        v = node[k]
+        if not isinstance(v, dict) or k.startswith("$"):
+            continue
+        unnest(v)
+        if "$value" in v:
+            for c in [c for c in v if not c.startswith("$")]:
+                if f"{k}-{c}" in node:
+                    raise SystemExit(f"cannot lift {k}.{c}: {k}-{c} exists")
+                node[f"{k}-{c}"] = v.pop(c)
+    return node
+
+
 def nest(tree, parts, leaf):
     node = tree
     for p in parts[:-1]:
@@ -102,7 +133,7 @@ def colour_tree():
             continue
         parts = name.removeprefix("--colour-").split("-")
         nest(tree, parts, color(name))
-    return tree
+    return unnest(tree)
 
 
 def radius():
@@ -132,49 +163,53 @@ def font_family():
         "$type": "fontFamily",
         "$value": ["Noto IKEA", "Noto Sans", "system-ui", "sans-serif"],
         "$extensions": {
-            "source": "computed font-family on body, www.ikea.com/sg/en/ 2026-11-19. The live stack leads with currency-symbol faces, then Noto IKEA. Noto IKEA is proprietary and is not loaded here."
+            "source": "Reconstruction — abridged by hand from the computed font-family on body, www.ikea.com/sg/en/ 2026-11-19 "
+                      "(raw/css-vars.json computed.bodyFont). The live stack leads with currency-symbol faces "
+                      "(\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\"), then Noto IKEA and per-script Noto faces. "
+                      "Noto IKEA is proprietary and is not loaded here."
         },
     }
 
 
+# Type steps: each size is the declared Skapa variable (unitless px). A weight or line height is
+# read where a component paints that step (its class names it: pp-skapa__typography-heading-l,
+# pipcom-typography-heading-s); every other weight and line height was typed at capture time.
+TYPE_STEPS = {
+    "display-xl": ("--skapa-display-xl", 700, "80px", None),
+    "display-l": ("--skapa-display-l", 700, "64px", None),
+    "display-m": ("--skapa-display-m", 700, "48px", None),
+    "heading-xl": ("--skapa-heading-xl", 700, "40px", None),
+    "heading-l": ("--skapa-heading-l", 700, "32px", "login-heading"),
+    "heading-m": ("--skapa-heading-m", 700, "24px", None),
+    "heading-s": ("--skapa-heading-s", 700, "22px", "product-title"),
+    "body-l": ("--skapa-body-l", 400, "24px", None),
+    "body-m": ("--skapa-body-m", 400, "22px", None),
+    "body-s": ("--skapa-body-s", 400, "18px", None),
+    "price": ("--_skapa-price-font-size", 700, "32px", None),
+}
+
+
 def typography():
-    roles = {
-        "display-xl": ("72px", "700", "80px"),
-        "display-l": ("56px", "700", "64px"),
-        "display-m": ("40px", "700", "48px"),
-        "heading-xl": ("32px", "700", "40px"),
-        "heading-l": ("24px", "700", "32px"),
-        "heading-m": ("18px", "700", "24px"),
-        "heading-s": ("16px", "700", "22px"),
-        "body-l": ("16px", "400", "24px"),
-        "body-m": ("14px", "400", "22px"),
-        "body-s": ("12px", "400", "18px"),
-        "price": ("28px", "700", "32px"),
-    }
-    sources = {
-        "display-xl": "--skapa-display-xl = 72",
-        "display-l": "--skapa-display-l = 56",
-        "display-m": "--skapa-display-m = 40",
-        "heading-xl": "--skapa-heading-xl = 32",
-        "heading-l": "--skapa-heading-l = 24 (login h1 computed 24px)",
-        "heading-m": "--skapa-heading-m = 18",
-        "heading-s": "--skapa-heading-s = 16",
-        "body-l": "--skapa-body-l = 16",
-        "body-m": "--skapa-body-m = 14 (computed body size)",
-        "body-s": "--skapa-body-s = 12",
-        "price": "--_skapa-price-font-size = 1.75rem",
-    }
     out = {}
-    for key, (size, weight, line) in roles.items():
+    for key, (var, weight, line, comp) in TYPE_STEPS.items():
+        size = DECLARED[var].strip()
+        if re.fullmatch(r"\d+(\.\d+)?", size):
+            size += "px"
+        elif size.endswith("rem"):
+            size = "%gpx" % (float(size[:-3]) * 16)
+        src = f"declared {var} (raw/css-vars.json)"
+        if comp:
+            c = COMPUTED[comp]
+            if c["style"]["fontSize"] != size:
+                raise ValueError(f"{key}: {comp} paints {c['style']['fontSize']}, the step declares {size}")
+            weight, line = int(reading(comp, "fontWeight")), reading(comp, "lineHeight")
+            src += f"; fontWeight and lineHeight computed on {comp} ({c['classes'].split()[-1]}, raw/components-computed.json)"
+        else:
+            src += f"; fontWeight and lineHeight: {HAND}"
         out[key] = {
             "$type": "typography",
-            "$value": {
-                "fontFamily": "{core.font.family.sans}",
-                "fontSize": size,
-                "fontWeight": int(weight),
-                "lineHeight": line,
-            },
-            "$extensions": {"source": f"Measured Skapa type step {sources[key]}, www.ikea.com/sg/en 2026-11-19"},
+            "$value": {"fontFamily": "{font.family.sans}", "fontSize": size, "fontWeight": weight, "lineHeight": line},
+            "$extensions": {"source": src},
         }
     return out
 
@@ -214,34 +249,34 @@ def component():
         "button-primary": {
             "bg": {
                 "$type": "color",
-                "$value": "{light.accent}",
+                "$value": "{accent}",
                 "$extensions": {"source": "computed .pipf-btn__inner background on Add to cart, BILLY PDP 2026-11-19; matches --colour-interactive-emphasised-bg-default"},
             },
             "text": {
                 "$type": "color",
-                "$value": "{light.on-accent}",
+                "$value": "{on-accent}",
                 "$extensions": {"source": "computed colour on Add to cart label"},
             },
             "radius": {
                 "$type": "dimension",
-                "$value": "{core.radius.cap}",
+                "$value": "{radius.cap}",
                 "$extensions": {"source": "computed border-radius 64px on .pipf-btn--emphasised"},
             },
             "height": {
                 "$type": "dimension",
-                "$value": "56px",
-                "$extensions": {"source": "computed height of Add to cart, BILLY PDP 2026-11-19"},
+                "$value": reading("button-primary", "h"),
+                "$extensions": {"source": "computed height of button-primary (Add to cart, BILLY PDP 2026-11-19, raw/components-computed.json)"},
             },
         },
         "search": {
             "height": {
                 "$type": "dimension",
-                "$value": "48px",
-                "$extensions": {"source": "computed height of header search input, 2026-11-19"},
+                "$value": reading("search", "h"),
+                "$extensions": {"source": "computed height of search (the header search input, 2026-11-19, raw/components-computed.json)"},
             },
             "text": {
                 "$type": "color",
-                "$value": "{light.text}",
+                "$value": "{text}",
                 "$extensions": {"source": "computed colour of input[name=q]"},
             },
         },
@@ -265,9 +300,24 @@ def build():
         },
         "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
     }
-    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=1) + "\n")
-    print("wrote tokens.json", sum(1 for _ in json.dumps(tokens).split('"$type"')), "tokens")
+    names = set()
+
+    def walk(n, p=""):
+        for k, v in n.items():
+            if isinstance(v, dict) and "$value" in v:
+                names.add(p + k)
+                yield p + k, v
+            elif isinstance(v, dict) and not k.startswith("$"):
+                yield from walk(v, p + k + ".")
+    leaves = [x for setname in ("core", "light") for x in walk(tokens[setname])]
+    for n, t in leaves:
+        for a in re.findall(r"\{([^{}]+)\}", json.dumps(t["$value"])):
+            if a not in names:
+                raise KeyError(f"{n}: alias {{{a}}} points at nothing")
+    return tokens
 
 
 if __name__ == "__main__":
-    build()
+    tokens = build()
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=1) + "\n")
+    print("wrote tokens.json", sum(1 for _ in json.dumps(tokens).split('"$type"')), "tokens")

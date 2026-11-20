@@ -61,6 +61,7 @@ def slim(node):
 
 
 html = template.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light"))
-html = html.replace("/*TOKENS*/null", json.dumps(slim(T), separators=(",", ":")))
+# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" from ending it early.
+html = html.replace("/*TOKENS*/null", json.dumps(slim(T), separators=(",", ":")).replace("<", "\\u003c"))
 (HERE / "style-guide.html").write_text(html)
 print("wrote style-guide.html", len(html))

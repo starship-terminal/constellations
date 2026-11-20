@@ -50,6 +50,10 @@ p.lead { color: var(--muted); max-width: 68ch; }
 </div>
 <script>
 const TOKENS = /*TOKENS*/null;
+// Values come from third-party CSS: escape them before they go into markup.
+const esc = (x) => String(x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+// A swatch paints its own custom property, so an alias ({accent}) shows the colour it resolves to.
+const cssvar = (path) => "var(--" + path.replace(/\./g, "-").replace(/[^a-zA-Z0-9-]/g, "-") + ")";
 const roles = ["page","surface","text","muted","accent","yellow","border","destructive","positive","family","focus"];
 const pal = document.getElementById("roles");
 for (const name of roles) {
@@ -57,7 +61,7 @@ for (const name of roles) {
   if (!t) continue;
   const el = document.createElement("div");
   el.className = "sw";
-  el.innerHTML = `<i style="background:${t.v}"></i><div><b>${name}</b><span>${t.v}</span></div>`;
+  el.innerHTML = `<i style="background:${cssvar(name)}"></i><div><b>${esc(name)}</b><span>${esc(t.v)}</span></div>`;
   pal.appendChild(el);
 }
 function walk(node, prefix, out) {
@@ -68,12 +72,12 @@ function walk(node, prefix, out) {
   }
 }
 const colours = [];
-walk(TOKENS.light.colour, "", colours);
+walk(TOKENS.light.colour, "colour.", colours);
 const box = document.getElementById("colours");
 for (const [name, value] of colours) {
   const el = document.createElement("div");
   el.className = "sw";
-  el.innerHTML = `<i style="background:${value}"></i><div><b>${name}</b><span>${value}</span></div>`;
+  el.innerHTML = `<i style="background:${cssvar(name)}"></i><div><b>${esc(name.replace(/^colour\./, ""))}</b><span>${esc(value)}</span></div>`;
   box.appendChild(el);
 }
 </script>
