@@ -28,6 +28,7 @@ const OUT = process.env.OUT_JSON || path.join(REF, 'raw', 'motion.json');
 const SNAPS = process.env.SNAPS ? path.resolve(process.env.SNAPS) : null;
 const urlsArg = process.argv.indexOf('--urls');
 const URLS = urlsArg > 0 ? (process.argv[urlsArg + 1] || '').split(',').filter(Boolean) : [];
+if (SNAPS) { console.error('this package keeps only the public route: pass --urls'); process.exit(2); }
 if (!SNAPS && !URLS.length) { console.error('SNAPS=<dir of page copies>, or --urls <url>[,<url>...], is required'); process.exit(2); }
 const CAP = Number(process.env.MOTION_CAP) || 6000;   // moving elements kept per pass
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
