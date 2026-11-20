@@ -140,16 +140,14 @@ const mobile = {
   help: { path: '/help', run: async (p, S) => { await S.view('default'); } },
 };
 
-const browser = await chromium.launch({ args: ['--disable-blink-features=AutomationControlled'] });
+// Automation is not hidden: no AutomationControlled flag, no webdriver mask.
+const browser = await chromium.launch();
 const desktopCtx = await browser.newContext({
   viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US',
 });
 const mobileCtx = await browser.newContext({
   viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US',
 });
-for (const ctx of [desktopCtx, mobileCtx]) {
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
-}
 
 for (const [k, spec] of Object.entries(desktop)) {
   const name = k;

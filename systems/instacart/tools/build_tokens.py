@@ -113,6 +113,31 @@ def typography(family, size, weight, line_height, source, description):
 # from the live DOM crops in raw/components-computed.json when present, and
 # from the same pages' computed styles recorded here when a crop missed.
 BODY_FONT = '{font.family.sans}'
+READINGS = {r["name"]: r for r in json.loads((RAW / "components-computed.json").read_text())["readings"]}
+HAND = "Reconstruction — entered by hand at capture time, no raw reading behind it"
+
+
+def reading(name, prop):
+    """A computed style (or the box height) of a reading in raw/components-computed.json; raises
+    when the reading is missing."""
+    r = READINGS[name]
+    if r.get("missing"):
+        raise KeyError(f"{name}: recorded missing")
+    if prop == "height":
+        return f"{r['box']['height']:g}px"
+    v = r["style"]["style"].get(prop)
+    if not v:
+        raise KeyError(f"{name}: no {prop} reading")
+    return v
+
+
+def read_dim(name, prop, description, note=""):
+    return measured_dim(reading(name, prop), f"computed {prop} of {name} (raw/components-computed.json){note}", description)
+
+
+def weight_alias(value):
+    names = {"400": "regular", "500": "medium", "600": "semibold", "700": "bold"}
+    return "{font.weight." + names[str(value)] + "}"
 
 core = {
     "color": {
@@ -216,18 +241,21 @@ core = {
             ),
         },
         "weight": {
-            "regular": {"$value": 400, "$type": "fontWeight", "$description": "Body.", "$extensions": {"source": "computed fontWeight of body"}},
-            "medium": {"$value": 500, "$type": "fontWeight", "$description": "Labels and prices.", "$extensions": {"source": "measured header and price text"}},
-            "semibold": {"$value": 600, "$type": "fontWeight", "$description": "Buttons and store names.", "$extensions": {"source": "measured Continue and store-card titles"}},
-            "bold": {"$value": 700, "$type": "fontWeight", "$description": "Headings.", "$extensions": {"source": "measured hero and page titles"}},
+            "regular": {"$value": int(V["body"]["fontWeight"]), "$type": "fontWeight", "$description": "Body.", "$extensions": {"source": "computed fontWeight of body (raw/css-vars.json body)"}},
+            "medium": {"$value": 500, "$type": "fontWeight", "$description": "Labels and prices.", "$extensions": {"source": HAND + " (no captured element paints 500; the price line paints 600)"}},
+            "semibold": {"$value": int(reading("chip-default", "fontWeight")), "$type": "fontWeight", "$description": "Chips and prices.", "$extensions": {"source": "computed fontWeight of chip-default (raw/components-computed.json); price-default matches"}},
+            "bold": {"$value": 700, "$type": "fontWeight", "$description": "Headings.", "$extensions": {"source": HAND + " (no heading was measured)"}},
         },
     },
     "typography": {
-        "body": typography(BODY_FONT, "16px", "{font.weight.regular}", "24px", "computed body fontSize 16px, line-height normal (~24px)", "Default body."),
-        "label": typography(BODY_FONT, "14px", "{font.weight.medium}", "20px", "measured filter chips and store meta", "Chip and meta label."),
-        "button": typography(BODY_FONT, "16px", "{font.weight.semibold}", "24px", "measured Continue and Sign up", "Primary button label."),
-        "heading": typography(BODY_FONT, "32px", "{font.weight.bold}", "40px", "measured homepage section titles", "Section heading."),
-        "display": typography(BODY_FONT, "48px", "{font.weight.bold}", "56px", "measured grocery-delivery hero", "Marketing display."),
+        "body": typography(BODY_FONT, reading("login-card-default", "fontSize"), "{font.weight.regular}", reading("login-card-default", "lineHeight"),
+                           "computed fontSize and lineHeight of login-card-default (raw/components-computed.json); body computes 16px, line-height normal", "Default body."),
+        "label": typography(BODY_FONT, reading("chip-default", "fontSize"), weight_alias(reading("chip-default", "fontWeight")), reading("chip-default", "lineHeight"),
+                            "computed fontSize, fontWeight and lineHeight of chip-default (raw/components-computed.json): the chip element's own style", "Chip label."),
+        "button": typography(BODY_FONT, reading("button-continue-default", "fontSize"), weight_alias(reading("button-continue-default", "fontWeight")), reading("button-continue-default", "lineHeight"),
+                             "computed fontSize, fontWeight and lineHeight of button-continue-default (raw/components-computed.json): the button element's own style; this capture recorded no separate text-node reading", "Primary button label."),
+        "heading": typography(BODY_FONT, "32px", "{font.weight.bold}", "40px", HAND + " (homepage section titles were not measured)", "Section heading."),
+        "display": typography(BODY_FONT, "48px", "{font.weight.bold}", "56px", HAND + " (the grocery-delivery hero was not measured)", "Marketing display."),
     },
     "motion": {
         "easing": {
@@ -263,9 +291,10 @@ light = {
             "primary": {
                 "background": {"$value": "{color.accent}", "$type": "color", "$extensions": {"source": "alias of accent; measured Sign up and Continue"}},
                 "text": {"$value": "{color.on-accent}", "$type": "color", "$extensions": {"source": "alias of on-accent"}},
-                "radius": {"$value": "999px", "$type": "dimension", "$description": "Pills are fully rounded, past the 24px radius step.", "$extensions": {"source": "measured Continue and Sign up border-radius"}},
-                "height": measured_dim("40px", "measured header Sign up height", "Header primary height."),
-                "height-lg": measured_dim("56px", "measured login Continue height", "Auth primary height."),
+                "radius": read_dim("button-primary-default", "borderTopLeftRadius", "Half the 40px height: a pill. The 56px Continue paints 28px, also half its height.",
+                                   "; button-continue-default paints 28px on its 56px height"),
+                "height": read_dim("button-primary-default", "height", "Header primary height.", "; the header Sign up"),
+                "height-lg": read_dim("button-continue-default", "height", "Auth primary height.", "; the login Continue"),
             },
             "secondary": {
                 "background": {"$value": "{color.page}", "$type": "color", "$extensions": {"source": "alias of page"}},
@@ -274,20 +303,21 @@ light = {
             },
         },
         "search": {
-            "height": measured_dim("56px", "measured homepage search height", "Header search height."),
-            "radius": {"$value": "999px", "$type": "dimension", "$extensions": {"source": "measured homepage search border-radius"}},
+            "height": read_dim("search-default", "height", "Header search height.", "; the homepage search"),
+            "radius": read_dim("search-default", "borderTopLeftRadius", "Half the 56px height: a pill."),
         },
         "card": {
-            "radius": measured_dim("12px", "measured store card and login card; matches --ids-system-radius-12", "Card radius."),
+            "radius": {"$value": DECL["--ids-system-radius-12"].strip(), "$type": "dimension", "$description": "Card radius.",
+                       "$extensions": {"source": "css-var --ids-system-radius-12 (light); the store-card and login-card readings paint 0px on the element measured, so no card reading holds it"}},
             "background": {"$value": "{color.page}", "$type": "color", "$extensions": {"source": "alias of page"}},
         },
         "chip": {
-            "height": measured_dim("32px", "measured EBT chip height", "Filter chip height."),
-            "radius": {"$value": "999px", "$type": "dimension", "$extensions": {"source": "measured filter chip border-radius"}},
+            "height": read_dim("chip-default", "height", "Filter chip height.", "; the EBT chip"),
+            "radius": read_dim("chip-default", "borderTopLeftRadius", "Filter chip radius."),
         },
         "field": {
-            "height": measured_dim("48px", "measured login email height", "Text field height."),
-            "radius": measured_dim("8px", "measured email field; matches --ids-system-radius-8", "Field radius."),
+            "height": read_dim("text-field-default", "height", "Text field height.", "; the login email field"),
+            "radius": read_dim("text-field-default", "borderTopLeftRadius", "Field radius.", "; matches --ids-system-radius-8"),
         },
     },
 }
@@ -306,7 +336,8 @@ doc = {
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }
 
-out = HERE / "tokens.json"
-text = json.dumps(doc, indent=2) + "\n"
-out.write_text(text)
-print("wrote", out, "bytes", len(text))
+if __name__ == "__main__":
+    out = HERE / "tokens.json"
+    text = json.dumps(doc, indent=2) + "\n"
+    out.write_text(text)
+    print("wrote", out, "bytes", len(text))
