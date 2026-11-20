@@ -33,7 +33,7 @@ The README's [Do and don't](#do-and-dont) section lists no rules.
 | text | #0D0D0D `light.color.text` |
 | muted | #717171 `light.color.muted` |
 | accent | #0D0D0D `light.color.accent` |
-| border | rgba(13, 13, 13, 0.1) `light.color.border` |
+| border | #0d0d0d1a `light.color.border` |
 
 Fonts: `core.font.family.mackinac` is P22 Mackinac Pro, then 3 fallbacks; `core.font.family.inter` is Inter, then 5 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 10 type styles (`core.typography`), 7 radius steps (`core.radius`), 11 spacing steps (`core.spacing`).
 

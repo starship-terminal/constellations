@@ -8,6 +8,7 @@ A value that was not read is listed under $extensions.notTokenised.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -44,6 +45,10 @@ def bezier_points(value: str) -> list:
     points = [float(p) for p in value.split(",")]
     assert len(points) == 4, value
     return [int(p) if p.is_integer() else p for p in points]
+
+
+def duration(value: str, source: str) -> dict:
+    return {"$type": "duration", "$value": value, "$extensions": {"source": source}}
 
 
 def cubic(value: str, source: str) -> dict:
@@ -225,12 +230,12 @@ def build() -> dict:
             },
             "motion": {
                 "duration": {
-                    "menu": dim("300ms", f"{MOTION}; menu panel 0.3s and scrim background-color 0.3s"),
-                    "fast": dim("200ms", f"{MOTION}; transition all, visibility 0.2s ease, 88 elements"),
-                    "reveal": dim("1200ms", f"{MOTION}; motion-revealIn and motion-fadeIn 1.2s"),
-                    "guide-fast": dim("100ms", f"{GUIDE}; Fast step, upper bound of 50 to 100ms"),
-                    "guide-moderate": dim("250ms", f"{GUIDE}; Moderate step, upper bound of 150 to 250ms"),
-                    "guide-slow": dim("500ms", f"{GUIDE}; Slow step, upper bound of 300 to 500ms"),
+                    "menu": duration("300ms", f"{MOTION}; menu panel 0.3s and scrim background-color 0.3s"),
+                    "fast": duration("200ms", f"{MOTION}; transition all, visibility 0.2s ease, 88 elements"),
+                    "reveal": duration("1200ms", f"{MOTION}; motion-revealIn and motion-fadeIn 1.2s"),
+                    "guide-fast": duration("100ms", f"{GUIDE}; Fast step, upper bound of 50 to 100ms"),
+                    "guide-moderate": duration("250ms", f"{GUIDE}; Moderate step, upper bound of 150 to 250ms"),
+                    "guide-slow": duration("500ms", f"{GUIDE}; Slow step, upper bound of 300 to 500ms"),
                 },
                 "easing": {
                     "ease": cubic("0.25, 0.1, 0.25, 1", f"{MOTION}; keyword ease on the 0.2s transition, expanded"),
@@ -286,7 +291,7 @@ def build() -> dict:
                 "urgent": alias("{color.orange.100}", f"{WDS}; --wds-color-fill-urgent-primary aliases --wds-color-orange-100"),
                 "info": alias("{color.blue.100}", f"{WDS}; --wds-color-fill-standard-primary aliases --wds-color-blue-100"),
             },
-            "scrim": color("rgba(0, 0, 0, 0.5)", f"{MARKETING}; open Product menu scrim"),
+            "scrim": color("#00000080", f"{MARKETING}; open Product menu scrim, computed rgba(0, 0, 0, 0.5)"),
             "focus": {
                 "ring": color("#000000", f"{MARKETING}; Product button focus box-shadow 0 0 0 1px and 0 0 0 3px"),
             },
@@ -329,8 +334,56 @@ def build() -> dict:
     return tokens
 
 
+# ---------------------------------------------------------------- check (finding 16-6)
+
+def _token_paths(node, path=""):
+    for key, value in node.items():
+        if key.startswith("$") or not isinstance(value, dict):
+            continue
+        if "$value" in value:
+            yield f"{path}{key}", value
+        else:
+            yield from _token_paths(value, f"{path}{key}.")
+
+
+def _aliases(value):
+    if isinstance(value, str):
+        return re.findall(r"\{([^{}]+)\}", value)
+    if isinstance(value, dict):
+        return [a for v in value.values() for a in _aliases(v)]
+    if isinstance(value, list):
+        return [a for v in value for a in _aliases(v)]
+    return []
+
+
+def check(doc):
+    """Refuse a token with no source, a colour that is not #rrggbb(aa), or an alias that resolves in
+    neither its own set nor core (the order tools/catalog.py's Resolver uses). Raises SystemExit."""
+    sets = [s for s, v in doc.items() if not s.startswith("$") and isinstance(v, dict)]
+    flat = {s: dict(_token_paths(doc[s])) for s in sets}
+    core = flat.get("core", {})
+    problems = []
+    for s in sets:
+        for path, token in flat[s].items():
+            where = f"{s}.{path}"
+            if not token.get("$extensions", {}).get("source"):
+                problems.append(f"{where}: no source")
+            value = token["$value"]
+            for ref in _aliases(value):
+                if ref == path:  # resolves to itself first: a cycle
+                    problems.append(f"{where}: alias {{{ref}}} names itself")
+                elif ref not in flat[s] and ref not in core:
+                    problems.append(f"{where}: alias {{{ref}}} resolves nowhere")
+            if token.get("$type") == "color" and not _aliases(value):
+                if not (isinstance(value, str) and re.fullmatch(r"#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?", value)):
+                    problems.append(f"{where}: colour {value!r} is not #rrggbb(aa)")
+    if problems:
+        raise SystemExit("token check failed:\n" + "\n".join(problems))
+
+
 def main() -> None:
     data = build()
+    check(data)
     path = ROOT / "tokens.json"
     path.write_text(json.dumps(data, indent=2) + "\n")
     print(f"wrote {path}")
