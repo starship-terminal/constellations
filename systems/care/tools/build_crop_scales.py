@@ -18,11 +18,19 @@ from PIL import Image
 REF = pathlib.Path(__file__).resolve().parent.parent
 C = json.load(open(REF / "raw/components-computed.json"))["components"]
 
+
+def focus_not_captured(v):
+    """A skipped state, or a focus-visible reading where keyboard focus never landed ("focus
+    failed") or did not match :focus-visible: its crop is the element at rest, not that state, so it
+    is not a crop of the state (the kit's rule, tools/kit/build/build_components_md.py)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
 out = {}
 for key, c in C.items():
     for state, st in c["states"].items():
         file = st.get("crop")
-        if not file:
+        if not file or focus_not_captured(st):
             continue
         p = REF / file
         if not p.exists():

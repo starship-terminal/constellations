@@ -296,15 +296,6 @@
   ],
   "scale": 2
  },
- "components/crops/category-card-focus-visible.png": {
-  "component": "category-card",
-  "state": "focus-visible",
-  "pixels": [
-   432,
-   536
-  ],
-  "scale": 2
- },
  "components/crops/category-card-pressed.png": {
   "component": "category-card",
   "state": "pressed",
@@ -347,15 +338,6 @@
   "pixels": [
    624,
    528
-  ],
-  "scale": 1
- },
- "components/crops/service-card-focus-visible.png": {
-  "component": "service-card",
-  "state": "focus-visible",
-  "pixels": [
-   608,
-   512
   ],
   "scale": 1
  },
@@ -578,15 +560,6 @@
  "components/crops/care-tag-hover.png": {
   "component": "care-tag",
   "state": "hover",
-  "pixels": [
-   174,
-   80
-  ],
-  "scale": 2
- },
- "components/crops/care-tag-focus-visible.png": {
-  "component": "care-tag",
-  "state": "focus-visible",
   "pixels": [
    174,
    80
