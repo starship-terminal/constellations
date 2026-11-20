@@ -24,7 +24,10 @@ class Tokens(unittest.TestCase):
     def test_readings_exist(self):
         raw = json.loads((HERE / "raw" / "readings.json").read_text())
         self.assertEqual(raw["pages"]["login"]["submitted"], False)
-        self.assertIn("5727e7", json.dumps(raw).lower().replace("#", ""))
+        tokens = json.loads((HERE / "tokens.json").read_text())
+        # The palette token at its role equals the raw reading at its key.
+        self.assertEqual(raw["marketingCustomProperties"]["values"]["--primary-1"], "#5727e7")
+        self.assertEqual(tokens["core"]["palette"]["primary-1"]["$value"], raw["marketingCustomProperties"]["values"]["--primary-1"])
 
 if __name__ == "__main__":
     unittest.main()

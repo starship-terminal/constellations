@@ -14,7 +14,7 @@ Tella is a screen recorder and video editor (tella.com, formerly tella.tv). This
 | [components/](components/) | Crops cut from the full-colour captures. |
 | [screenshots/](screenshots/) | 256-colour page captures at 1440 and 390. |
 | [raw/](raw/) | Declared custom properties, computed component styles, motion notes. |
-| [tools/](tools/) | Kit copy. `tools/native/test_build_tokens.py` checks `tokens.json`. |
+| [tools/](tools/) | Kit copy. `tools/test_build_tokens.py` runs the kit's `tools/native/build_tokens.py` check on `tokens.json`. |
 
 ## Brief
 
@@ -143,6 +143,6 @@ python3 tools/catalog.py design-md tella
 python3 tools/package_tests.py tella
 ```
 
-`tokens.json` was written from [raw/css-vars.json](raw/css-vars.json) and [raw/components-computed.json](raw/components-computed.json). There is no product `build_tokens.py` mapping. The kit's `tools/native/test_build_tokens.py` checks the committed file.
+`tokens.json` was written from [raw/css-vars.json](raw/css-vars.json) and [raw/components-computed.json](raw/components-computed.json). There is no product `build_tokens.py` mapping. `tools/test_build_tokens.py` checks the committed file with the kit's `check()` from `tools/native/build_tokens.py`.
 
 Screenshots were quantized with `python3 systems/tella/tools/capture/quantize.py` from a scratch folder that is not in the repo.
