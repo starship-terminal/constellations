@@ -168,22 +168,23 @@ Page: home. Selector: `header a[href=/login]`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 71 x 64 | = | = | = |
-| Padding | 0px 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | #f7f7f7 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | norms 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | background-color, color 0.3s, 0.3s ease, ease delay 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 71 x 64 | = | - | = |
+| Padding | 0px 16px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | #f7f7f7 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | norms 14px/20px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | background-color, color 0.3s, 0.3s ease, ease delay 0s, 0s | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Painted layers | - | = | = | a 71.0x64.0 bg #f7f7f7 |
 
-Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-focus-visible.png`, `nav-login-pressed.png`.
+Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-pressed.png`.
 
 #### nav-cta
 
@@ -193,22 +194,23 @@ Page: home. Selector: `[data-testid=NavCta]`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 149 x 53 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | norms 14px/20px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.Button_button__8B4nB.Button_buttonColor-primary__SYZoa: norms 16px/16px 500, #ffffff | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | span.Button_button__8B4nB.Button_buttonColor-primary__SYZoa 149.0x40.0 bg #0055ff border T:1px solid #0055ff / R:1px solid #0055ff / B:1px solid #0055ff / L:1px solid #0055ff r 9999px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 149 x 53 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | norms 14px/20px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.Button_button__8B4nB.Button_buttonColor-primary__SYZoa: norms 16px/16px 500, #ffffff | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | span.Button_button__8B4nB.Button_buttonColor-primary__SYZoa 149.0x40.0 bg #0055ff border T:1px solid #0055ff / R:1px solid #0055ff / B:1px solid #0055ff / L:1px solid #0055ff r 9999px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
+Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-pressed.png`.
 
 ### Home
 

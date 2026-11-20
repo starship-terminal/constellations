@@ -1028,7 +1028,7 @@ Page: contact. Selector: `.ds-submit`. States: default, hover, focus-visible, pr
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-focus-visible.png`, `form-submit-pressed.png`.
+Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-pressed.png`.
 
 ### Footer
 
