@@ -612,17 +612,19 @@ for key, comp, state, i, desc in [
                            "description": desc + f" ({s['transitionProperty'].split(',')[i].strip() if i < len(s['transitionProperty'].split(',')) else s['transitionProperty']})"}
     except (KeyError, TypeError):
         pass
-# The mega-nav grid animates at 0.5s (from the sheet rules captured in _meta).
-try:
-    tr = next((x for x in (C.get("nav-dropdown", {}).get("_meta") or []) if False), None)
-except Exception:
-    tr = None
-motion.setdefault("mega-nav", {"value": "0.5s", "type": "duration",
-                               "source": ".nav-dropdown-grid transition in the home stylesheets (raw/components-computed.json _meta.sheets)",
-                               "description": "The mega-nav grid's 0.5s open animation."})
-motion.setdefault("nav-panel", {"value": "0.3s", "type": "duration",
-                              "source": ".nav-container.for-dropdown transition in the home stylesheets (raw/components-computed.json _meta.sheets)",
-                              "description": "The mega-nav panel's 0.3s transition."})
+# The mega-nav grid and panel transitions, read from the home sheet rules
+# recorded in raw/components-computed.json _meta.sheets (no element reading holds them).
+SHEETS = json.loads((RAW / "components-computed.json").read_text())["_meta"].get("sheets", {}).get("home", [])
+for key, sel, desc in [
+    ("mega-nav", ".nav-dropdown-grid", "The mega-nav grid's open animation."),
+    ("nav-panel", ".nav-container.for-dropdown", "The mega-nav panel's transition."),
+]:
+    rule = next((x for x in SHEETS if x.get("selector") == sel), None)
+    d = re.match(r"^\s*(\d*\.?\d+m?s)\b", (rule or {}).get("transition") or "")
+    if d and key not in motion:
+        motion[key] = {"value": d.group(1), "type": "duration",
+                       "source": f"{sel} transition in the home stylesheets (raw/components-computed.json _meta.sheets: '{rule['transition']}')",
+                       "description": desc}
 
 # ------------------------------------------------------------- measured
 

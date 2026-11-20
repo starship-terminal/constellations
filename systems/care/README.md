@@ -115,6 +115,8 @@ Nothing was signed into, joined, searched, booked or paid for: the login and get
 - **The gate is frequency-capped.** The `Join Care.com` modal mounts over the listing on scroll but not on every load; a run where it stayed absent records `gate-dialog` missing.
 - **Marketplace data is real.** Provider rows name real public caregivers (first name + initial, photo, rate); that is the product's published content kept under the repo's private-library policy — no contact details appear on the public page or in the package.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **Five components kept an earlier run's readings.** The 2026-11-12 recapture did not find `nav-dropdown`, `menu-item`, `menu-link`, `hero-title` or `section-h2` (`recaptureMissed` in `raw/components-computed.json`). Every token built from them (the section-heading type, the menu-link type and colour, the menu-row height and radius, the white canvas) says "stale" in its source, and components.md marks the five entries. They need a recapture.
+- **The ZIP field's filled state typed the email default.** The spec passed its sample ZIP where the shooter does not read it, so `zip-field` `filled` was measured with `name@example.com` typed (then deleted). The script now passes the ZIP correctly (edited, not run).
 
 ## Do and don't
 

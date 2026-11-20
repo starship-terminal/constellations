@@ -482,6 +482,9 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
+        if c.get("recaptureMissed"):
+            W(f"Kept from an earlier run: the {c['recaptureMissed']} recapture did not find this component, so these readings may not match the current page or script.")
+            W()
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:

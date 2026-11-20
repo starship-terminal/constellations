@@ -194,14 +194,11 @@ for key, comp, state, prop, desc in [
     ("white", "menu-item", "default", "backgroundColor", "The white #ffffff canvas, menu panel and card fields."),
     ("grey-hover", "category-card", "hover", "backgroundColor", "The #f5f5f5 wash the category card takes on hover."),
     ("grey-pressed", "category-card", "pressed", "backgroundColor", "The #e8e8e8 a pressed category card paints."),
-    ("grey-surface", "listing-h1", "default", "color", "Reserved grey step; falls back to the card hover wash when the listing title paints ink."),
     ("muted", "zip-field", "default", "placeholder", "The #707070 muted grey on field placeholders and hairline outlines."),
 ]:
     try:
         if prop == "placeholder":
             v = norm_color(C[comp]["states"][state].get("placeholder", {}).get("color"))
-        elif prop == "color" and key == "grey-surface":
-            v = None  # only kept if a distinct grey is ever measured
         else:
             v = norm_color(st(comp, state).get(prop, ""))
         if v and v != "transparent":
@@ -210,7 +207,6 @@ for key, comp, state, prop, desc in [
                             "description": desc}
     except KeyError:
         pass
-neutral.pop("grey-surface", None)
 
 brand = SPEC["core"].setdefault("color", {}).setdefault("brand", {})
 for key, comp, state, prop, desc in [
@@ -409,7 +405,7 @@ for name, comp, state, prop, ty, desc in [
     ("header.height", "header", "default", "height", "dimension", "The fixed header height."),
     ("header.padding", "header", "default", "paddingX", "dimension", "The header's horizontal padding."),
     ("cta.height", "join-cta", "default", "height", "dimension", "The pill CTA height."),
-    ("cta.paddingX", "join-cta", "default", "paddingRight", "dimension", "Pill horizontal padding."),
+    ("cta.paddingX", "join-cta", "default", "paddingX", "dimension", "Pill horizontal padding."),
     ("search.height", "search-cta", "default", "height", "dimension", "The hero Search CTA height."),
     ("menu-row.height", "menu-item", "default", "height", "dimension", "A mega-menu row height."),
     ("field.height", "login-email", "default", "height", "dimension", "A legacy form field height."),
@@ -424,18 +420,38 @@ for name, comp, state, prop, ty, desc in [
     ("m-nav.height", "m-nav-item", "default", "height", "dimension", "A mobile drawer row height."),
 ]:
     try:
+        src_prop = prop
         if prop == "paddingX":
-            v = st(comp, state)["paddingRight"]
+            # horizontal padding is one value only when both sides read the same
+            l_, r_ = st(comp, state)["paddingLeft"], st(comp, state)["paddingRight"]
+            v = l_ if l_ == r_ else None
+            src_prop = "paddingLeft / paddingRight"
         else:
-            v = st(comp, state).get(prop) or C[comp]["states"][state]["rect"][{"height": "h", "width": "w"}.get(prop, prop)]
+            v = st(comp, state).get(prop)  # no reading, no token (never a bounding rect under a computed source)
         if v:
             bag, _, leaf = name.partition(".")
             comp_.setdefault(bag, {})[leaf] = {"value": v, "type": ty,
-                                             "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
+                                             "source": f"computed {src_prop} of {comp} {state} (raw/components-computed.json)",
                                              "description": desc}
     except (KeyError, TypeError):
         pass
 
+STALE = {k: v["recaptureMissed"] for k, v in C.items() if v.get("recaptureMissed")}
+
+
+def mark_stale(node):
+    """Components flagged recaptureMissed kept an earlier run's readings; a leaf built from one says so."""
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            m = re.match(r"computed .+? of ([a-z0-9-]+) [a-z-]+ \(raw/components-computed\.json\)", src)
+            if m and m.group(1) in STALE:
+                node["source"] = src + "; stale: kept from an earlier run (the %s recapture did not find %s)" % (STALE[m.group(1)], m.group(1))
+        for v in node.values():
+            mark_stale(v)
+
+
+mark_stale(SPEC)
 RAW.joinpath("component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 n = sum(1 for _ in re.findall(r'"(?:value|var)":', json.dumps(SPEC)))
 print("component-tokens.json:", n, "leaves")

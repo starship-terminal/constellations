@@ -402,7 +402,10 @@ async function home() {
   // Open a deployment section, then measure the expanded answer region —
   // [role="region"] matches the trigger stack, not the content.
   const accTrig = q('button[data-slot*="accordion"], button').filter({ hasText: /^\s*(Cloud|On-premise)\s*$/ }).filter({ visible: true }).first();
-  if (await accTrig.count()) { await accTrig.click({ timeout: 6000 }).catch(() => accTrig.evaluate((e) => e.click())); await page.waitForTimeout(900); }
+  // The trigger's own 'selected' state above already opened it; a second click closed it again and the
+  // content reading caught the trigger stack. Click only when the section is not open.
+  const isOpen = async () => (await accTrig.getAttribute('data-state').catch(() => null)) === 'open' || (await accTrig.getAttribute('aria-expanded').catch(() => null)) === 'true';
+  if (await accTrig.count() && !(await isOpen())) { await accTrig.click({ timeout: 6000 }).catch(() => accTrig.evaluate((e) => e.click())); await page.waitForTimeout(900); }
   await S('accordion-content', q('[data-slot="accordion-content"]').filter({ visible: true }).first(), ['default'], { group: s, title: 'Accordion content', desc: 'The expanded accordion region beside the deployment triggers, opened for the read.', sel: '[data-slot=accordion-content]' });
   save();
 }

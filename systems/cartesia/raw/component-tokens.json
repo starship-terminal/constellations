@@ -1523,7 +1523,7 @@
    },
    "menu-width": {
     "value": "624px",
-    "source": "computed width of nav-dropdown default (raw/components-computed.json)",
+    "source": "computed width of nav-dropdown default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find nav-dropdown)",
     "type": "dimension",
     "description": "Products mega-menu panel width."
    },
@@ -1535,7 +1535,7 @@
    },
    "menu-pad": {
     "value": "12px",
-    "source": "computed paddingTop of nav-dropdown default (raw/components-computed.json)",
+    "source": "computed paddingTop of nav-dropdown default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find nav-dropdown)",
     "type": "dimension",
     "description": "Menu panel padding."
    }
@@ -1623,13 +1623,13 @@
   "card": {
    "product-width": {
     "value": "571px",
-    "source": "computed width of product-card default (raw/components-computed.json)",
+    "source": "computed width of product-card default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find product-card)",
     "type": "dimension",
     "description": "Product card width (half of the two-up grid)."
    },
    "product-height": {
     "value": "377.59px",
-    "source": "computed height of product-card default (raw/components-computed.json)",
+    "source": "computed height of product-card default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find product-card)",
     "type": "dimension",
     "description": "Product card height."
    },

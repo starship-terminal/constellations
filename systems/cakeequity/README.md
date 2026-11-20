@@ -107,6 +107,7 @@ Nothing was signed into, bought or submitted: the login card was captured as a s
 - **The login is a different toolchain.** authentication.cakeequity.com is a hosted Kinde page: `#5a38fd` primary (not `#4823ff`), 8px controls, a 2px `#0054f0` focus ring, its own system stack. Do not blend its values into the marketing system.
 - **The mobile page is wider than the phone.** `.comparison-grid{min-width:700px}` forces a ~745px layout viewport at 390 visual width: the hamburger sits off-screen at x~660 and the page pans. The mobile shots record what a phone paints; they are not a clean 390px layout.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **No url on the login and mobile entries.** Those pages are opened with their own url, which the capture did not record, so their components carry `url: null` in `raw/components-computed.json` (login: app.cakeequity.com/login, redirected to the hosted Kinde page; mobile: the home page at 390 wide). The script now records the opened url (edited, not run).
 - **Missing components.** `calc-field` is recorded missing — the pricing calculator's inputs sit in `.pp-hidden-fields` (display:none) — and `story-card`'s quote cards are hover-revealed layers whose rest state is `opacity:0`.
 
 ## Fonts

@@ -200,7 +200,16 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          // Close what the toggle opened once it is read: an open menu keeps focus and stole every later
+          // component's keyboard focus (they recorded "focus failed").
+          undo = async () => {
+            await page.keyboard.press('Escape'); await page.waitForTimeout(400);
+            const open = await loc.first().getAttribute('aria-expanded').catch(() => null);
+            if (open === 'true') { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(400); }
+          };
+        }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -408,8 +417,10 @@ async function home() {
   await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: 'The "What will you design today?" headline, white on the gradient hero band.', sel: 'h1' });
   await S('hero-sub', await domFind(page, /Make AI-powered social posts/, { sel: 'p, span, div, h2', tag: 'herosub' }), ['default'], { group: h, title: 'Hero copy', desc: 'The lede under the headline on the gradient hero.', sel: 'hero lede' });
   await S('hero-cta', q('button, a').filter({ hasText: /^\s*Start designing\s*$/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The "Start designing" action on the dark hero; measured, never followed.', sel: 'hero CTA' });
-  await S('tool-tab', q('[role="tab"]').filter({ hasText: /^\s*Presentations\s*$/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Tool tab', desc: 'A tools-showcase tab (AI / Presentations / Social / Video / Print Shop); measured unselected — the selected state is the screenshot toggle.', sel: 'tools role=tab' });
   await S('tool-panel', q('[role="tabpanel"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Tool panel', desc: "The tools-showcase panel under the tabs (the selected tool's artwork and copy).", sel: 'role=tabpanel' });
+  // After the panel: focus-visible on an ARIA tab activates it, so measured first it turned the panel into
+  // the Presentations panel and its own focus/pressed readings into selected-state ones.
+  await S('tool-tab', q('[role="tab"]').filter({ hasText: /^\s*Presentations\s*$/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Tool tab', desc: 'A tools-showcase tab (AI / Presentations / Social / Video / Print Shop); measured unselected — the selected state is the screenshot toggle.', sel: 'tools role=tab' });
   await markFeatureCard();
   await S('feature-card', q('[data-m-mark="featcard"]').filter({ visible: true }).first(), B4, { group: h, title: 'Feature card', desc: 'A dark feature card on the home page (the Magic-Layers card with an "Explore" link); the link was measured, never followed.', sel: '.theme.dark feature card' });
   await S('explore-link', q('.theme.dark a, .theme.dark [role="link"]').filter({ hasText: /Explore (Magic|Brand|animations|the collection)/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Explore link', desc: 'An "Explore X" link inside a dark feature card; measured, never followed.', sel: 'explore link' });
