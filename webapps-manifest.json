@@ -3814,9 +3814,9 @@
       "description": "Build, run, and scale your mobile app",
       "status": "pending",
       "package": null,
-      "notes": "Open MWM Console opens https://console.mwm.ai/sign-in. Email and password, or Google or Apple. Password not submitted.",
+      "notes": "Open MWM Console opens https://console.mwm.ai/sign-in. Email and password, or Google or Apple. Password not submitted. Public walk 2026-11-21: shared chrome is the logo, Products and Resources mega menus, Pricing, Open MWM Console, Build your app, a phone drawer, a language menu, and footer summaries. Product pages are MWM AI, Console, Publishing, Intelligence, and Studio. Directories (apps, articles, glossary, guides, rankings, tags, authors, methodology) are one index plus one example. Legal pages and the empty IP dispute form are included. Console sign-in and Create App sign-in were not entered. Careers, external product sites, prompt submit, attachment, voice, and locale mirrors were not opened. /sign-up is a 404. No form was submitted. Public package in PR 1542 at 60ba30ff1dc2. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 11
     },
     {
