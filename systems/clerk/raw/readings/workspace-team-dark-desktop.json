@@ -484,7 +484,7 @@
       "className": "min-w-0 flex-1 max-lg:space-y-6",
       "disabled": false,
       "index": 12,
-      "name": "Team\n3 of 3 seats used\nInvite user\nMembers\n3\nInvites\n0\nRequests\n0\nMember\tJoined\tRole\t\nActions\n\n\nShayaan Sultan\n[email removed]",
+      "name": "Team\n3 of 3 seats used\nInvite user\nMembers\n3\nInvites\n0\nRequests\n0\nMember\tJoined\tRole\t\nActions\n\n\n[name removed]\n[email removed]",
       "rect": {
         "bottom": 558.0208740234375,
         "height": 422.0486450195313,
@@ -804,7 +804,7 @@
       "className": "react-aria-TabPanel",
       "disabled": false,
       "index": 20,
-      "name": "Member\tJoined\tRole\t\nActions\n\n\nShayaan Sultan\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen",
+      "name": "Member\tJoined\tRole\t\nActions\n\n\n[name removed]\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen",
       "rect": {
         "bottom": 558.0208740234375,
         "height": 297.1007080078125,
@@ -1044,7 +1044,7 @@
       "className": "peer/scroll-area group/scroll-area relative flex min-h-0 w-full flex-1 items-stretch [--table-scroll-mask-width:var(--table-mask-width,--spacing(15))] [--table-scroll-bg:var(--table-cell-bg,var(--color-main))] has-data-[slot=empty]:@container",
       "disabled": false,
       "index": 26,
-      "name": "Member\tJoined\tRole\t\nActions\n\n\nShayaan Sultan\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen",
+      "name": "Member\tJoined\tRole\t\nActions\n\n\n[name removed]\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen",
       "rect": {
         "bottom": 554.0278167724609,
         "height": 233.1423797607422,
@@ -1084,7 +1084,7 @@
       "className": "w-full group-data-has-overflow-x/scroll-area:overscroll-x-none before:[--scroll-area-overflow-x-start:inherit] before:pointer-events-none before:absolute before:bottom-0 before:left-0 before:z-2 before:top-(--table-head-height,0px) before:rounded-(--table-body-rounded,0px) before:bg-linear-to-r before:from-(--table-scroll-bg) before:to-transparent before:w-[min(var(--table-scroll-mask-width),var(--scroll-area-overflow-x-start,0px))] after:[--scroll-area-overflow-x-end:inherit] after:pointer-events-none after:absolute after:right-0 after:bottom-0 after:z-2 after:top-(--table-head-height,0px) after:rounded-(--table-body-rounded,0px) after:bg-linear-to-l after:from-(--table-scroll-bg) after:to-transparent after:w-[min(var(--table-scroll-mask-width),var(--scroll-area-overflow-x-end,var(--table-scroll-mask-width)))] [[data-has-overflow-x]_&_tr:last-child_td]:pb-[calc(var(--table-cell-px)+(--spacing(3)))]! base-ui-disable-scrollbar",
       "disabled": false,
       "index": 27,
-      "name": "Member\tJoined\tRole\t\nActions\n\n\nShayaan Sultan\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen",
+      "name": "Member\tJoined\tRole\t\nActions\n\n\n[name removed]\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen",
       "rect": {
         "bottom": 554.0278167724609,
         "height": 233.1423797607422,
@@ -1124,7 +1124,7 @@
       "className": "isolate bg-(--table-scroll-bg) pb-(--table-card-banner-height,0px) in-data-has-overflow-x:has-[[data-slot=table][data-virtualized]]:pb-[calc(var(--table-card-banner-height,0px)+var(--table-cell-px)+(--spacing(3)))]",
       "disabled": false,
       "index": 28,
-      "name": "Member\tJoined\tRole\t\nActions\n\n\nShayaan Sultan\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen",
+      "name": "Member\tJoined\tRole\t\nActions\n\n\n[name removed]\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen",
       "rect": {
         "bottom": 554.0278167724609,
         "height": 233.1423797607422,
@@ -1444,7 +1444,7 @@
       "className": "[&>[data-slot=table-row]:last-child:not([data-selected])>[data-slot=table-cell]]:border-0 [&>[data-slot=table-row]:first-child>[data-slot=table-cell]:first-child]:rounded-tl-(--table-body-rounded) [&>[data-slot=table-row]:first-child>[data-slot=table-cell]:last-child]:rounded-tr-(--table-body-rounded) [&>[data-slot=table-row]:last-child>[data-slot=table-cell]:first-child]:rounded-bl-(--table-body-rounded) [&>[data-slot=table-row]:last-child>[data-slot=table-cell]:last-child]:rounded-br-(--table-body-rounded) **:data-[slot=empty]:sticky **:data-[slot=empty]:left-0 **:data-[slot=empty]:max-w-[100cqw]",
       "disabled": false,
       "index": 36,
-      "name": "Shayaan Sultan\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen\n[email removed]\nYou\n\tJun 2",
+      "name": "[name removed]\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t\n\n\nWenlong Chen\n[email removed]\nYou\n\tJun 2",
       "rect": {
         "bottom": 554.0277862548828,
         "height": 194.14930725097656,
@@ -1484,7 +1484,7 @@
       "className": "group/table-row data-focus-visible:relative data-focus-visible:z-20 transition-colors [&>td]:border-b data-href:cursor-pointer data-focus-visible:outline-none data-focus-visible:[&>[data-slot=table-cell]]:shadow-[inset_0_2px_0_var(--color-brand),inset_0_-2px_0_var(--color-brand)] data-focus-visible:[&>[data-slot=table-cell]:first-child]:shadow-[inset_2px_0_0_var(--color-brand),inset_0_2px_0_var(--color-brand),inset_0_-2px_0_var(--color-brand)] data-focus-visible:[&>[data-slot=table-cell]:last-child]:shadow-[inset_-2px_0_0_var(--color-brand),inset_0_2px_0_var(--color-brand),inset_0_-2px_0_var(--color-brand)] data-focus-visible:[&>[data-slot=table-cell]:only-child]:shadow-[inset_2px_0_0_var(--color-brand),inset_-2px_0_0_var(--color-brand),inset_0_2px_0_var(--color-brand),inset_0_-2px_0_var(--color-brand)] data-focus-visible:[&:has(>[data-slot=table-cell][data-focus-visible])>[data-slot=table-cell]]:shadow-none! group-data-[interaction-modality=pointer]/table:data-focus-visible:[&>[data-slot=table-cell]]:shadow-none! group-data-[interaction-modality=pointer]/table:[&>[data-slot=table-cell][data-focus-visible]:after]:ring-0! group-data-[interaction-modality=pointer]/table:[&_[slot=drag][data-focus-visible]]:outline-none! has-[:is(button,label)[data-hovered]]:data-hovered:[&:not([data-selected])]:bg-transparent data-hovered:[&:not([data-selected])]:bg-(--table-cell-bg-hover) data-selected:bg-gray-700/8 dark:data-selected:bg-gray-700/12",
       "disabled": false,
       "index": 37,
-      "name": "Shayaan Sultan\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t",
+      "name": "[name removed]\n[email removed]\n\tSep 3, 2026\t\nViewer\n \nOwner\nViewer\n\t",
       "rect": {
         "bottom": 424.9652862548828,
         "height": 65.08680725097656,
@@ -1524,7 +1524,7 @@
       "className": "relative px-(--table-cell-px) py-(--table-cell-py) align-middle outline-none first:group-first/table-row:rounded-tl-[inherit] first:group-last/table-row:rounded-bl-[inherit] last:group-first/table-row:rounded-tr-[inherit] last:group-last/table-row:rounded-br-[inherit] data-focus-visible:after:ring-brand data-focus-visible:after:pointer-events-none data-focus-visible:after:absolute data-focus-visible:after:inset-1 data-focus-visible:after:rounded-sm data-focus-visible:after:ring-2 [[data-has-overflow-y]_&[data-focus-visible]:last-child]:after:right-[18px] [[data-cell-type=selection]+&]:pl-0 [[data-cell-type=selection]+&[data-focus-visible]]:after:left-[calc(var(--table-cell-px)/-2)]",
       "disabled": false,
       "index": 38,
-      "name": "Shayaan Sultan\n[email removed]",
+      "name": "[name removed]\n[email removed]",
       "rect": {
         "bottom": 424.9652862548828,
         "height": 65.08680725097656,
@@ -2284,7 +2284,7 @@
       "className": "group/table-row data-focus-visible:relative data-focus-visible:z-20 transition-colors [&>td]:border-b data-href:cursor-pointer data-focus-visible:outline-none data-focus-visible:[&>[data-slot=table-cell]]:shadow-[inset_0_2px_0_var(--color-brand),inset_0_-2px_0_var(--color-brand)] data-focus-visible:[&>[data-slot=table-cell]:first-child]:shadow-[inset_2px_0_0_var(--color-brand),inset_0_2px_0_var(--color-brand),inset_0_-2px_0_var(--color-brand)] data-focus-visible:[&>[data-slot=table-cell]:last-child]:shadow-[inset_-2px_0_0_var(--color-brand),inset_0_2px_0_var(--color-brand),inset_0_-2px_0_var(--color-brand)] data-focus-visible:[&>[data-slot=table-cell]:only-child]:shadow-[inset_2px_0_0_var(--color-brand),inset_-2px_0_0_var(--color-brand),inset_0_2px_0_var(--color-brand),inset_0_-2px_0_var(--color-brand)] data-focus-visible:[&:has(>[data-slot=table-cell][data-focus-visible])>[data-slot=table-cell]]:shadow-none! group-data-[interaction-modality=pointer]/table:data-focus-visible:[&>[data-slot=table-cell]]:shadow-none! group-data-[interaction-modality=pointer]/table:[&>[data-slot=table-cell][data-focus-visible]:after]:ring-0! group-data-[interaction-modality=pointer]/table:[&_[slot=drag][data-focus-visible]]:outline-none! has-[:is(button,label)[data-hovered]]:data-hovered:[&:not([data-selected])]:bg-transparent data-hovered:[&:not([data-selected])]:bg-(--table-cell-bg-hover) data-selected:bg-gray-700/8 dark:data-selected:bg-gray-700/12",
       "disabled": false,
       "index": 57,
-      "name": "Suveen Ellawela\n[email removed]\n\tNov 17, 2025\t\nOwner\n \nOwner\nViewer\n\t",
+      "name": "[name removed]\n[email removed]\n\tNov 17, 2025\t\nOwner\n \nOwner\nViewer\n\t",
       "rect": {
         "bottom": 554.0277900695801,
         "height": 63.9756965637207,
@@ -2324,7 +2324,7 @@
       "className": "relative px-(--table-cell-px) py-(--table-cell-py) align-middle outline-none first:group-first/table-row:rounded-tl-[inherit] first:group-last/table-row:rounded-bl-[inherit] last:group-first/table-row:rounded-tr-[inherit] last:group-last/table-row:rounded-br-[inherit] data-focus-visible:after:ring-brand data-focus-visible:after:pointer-events-none data-focus-visible:after:absolute data-focus-visible:after:inset-1 data-focus-visible:after:rounded-sm data-focus-visible:after:ring-2 [[data-has-overflow-y]_&[data-focus-visible]:last-child]:after:right-[18px] [[data-cell-type=selection]+&]:pl-0 [[data-cell-type=selection]+&[data-focus-visible]]:after:left-[calc(var(--table-cell-px)/-2)]",
       "disabled": false,
       "index": 58,
-      "name": "Suveen Ellawela\n[email removed]",
+      "name": "[name removed]\n[email removed]",
       "rect": {
         "bottom": 554.0277900695801,
         "height": 63.9756965637207,
