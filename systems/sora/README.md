@@ -33,12 +33,12 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 
 | Role | dark | light |
 |---|---|---|
-| page | rgb(0 0 0) `dark.color.background.primary` | rgb(255 255 255) `light.color.background.primary` |
-| surface | rgb(26 26 26) `dark.color.background.secondary` | rgb(227 227 227) `light.color.background.secondary` |
-| text | rgb(255 255 255) `dark.color.text.primary` | rgb(25 25 25) `light.color.text.primary` |
-| muted | hsla(0,0%,100%,.6) `dark.color.text.secondary` | rgba(25,25,25,.5) `light.color.text.secondary` |
-| accent | rgb(255, 255, 255) `dark.color.control.button-background` | rgb(0, 0, 0) `light.color.control.button-background` |
-| border | hsla(0,0%,100%,.15) `dark.color.border.primary` | rgba(0,0,0,.15) `light.color.border.primary` |
+| page | #000000 `dark.color.background.primary` | #ffffff `light.color.background.primary` |
+| surface | #1a1a1a `dark.color.background.secondary` | #e3e3e3 `light.color.background.secondary` |
+| text | #ffffff `dark.color.text.primary` | #191919 `light.color.text.primary` |
+| muted | #ffffff99 `dark.color.text.secondary` | #19191980 `light.color.text.secondary` |
+| accent | #ffffff `dark.color.control.button-background` | #000000 `light.color.control.button-background` |
+| border | #ffffff26 `dark.color.border.primary` | #00000026 `light.color.border.primary` |
 
 Fonts: `core.font.family.sans` is ui-sans-serif, then 12 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 3 type styles (`core.typography`), 7 radius steps (`core.radius`), 10 spacing steps (`core.spacing`).
 
@@ -50,10 +50,10 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| dark | 21.00:1 pass | 17.40:1 pass | no colour | no colour |
-| light | 17.58:1 pass | 13.69:1 pass | 3.36:1 fail | 3.16:1 fail |
+| dark | 21.00:1 pass | 17.40:1 pass | 7.37:1 pass | 6.93:1 pass |
+| light | 17.58:1 pass | 13.69:1 pass | 3.38:1 fail | 3.18:1 fail |
 
-4 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.focus.outline` rgb(255 255 255); `light.color.focus.outline` rgb(0 0 0).
+6 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.focus.outline` #ffffff; `light.color.focus.outline` #000000.
 
 <!-- brief:end -->
 
