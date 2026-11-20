@@ -124,6 +124,24 @@ function comp(key, meta) {
   return c;
 }
 
+// A failed re-read must not erase an earlier successful one: keep the saved
+// style and record the failed attempt beside it. comp() has already stamped
+// this run's date on the component, so the kept state is pinned to the run
+// that actually read it (its own run stamp, else the component's earlier run)
+// and an old reading is never republished as a new one.
+function keepEarlier(c, state, e, earlierRun) {
+  const err = String(e.message || e).slice(0, 200);
+  const prev = c.states[state];
+  if (prev && prev.style) {
+    // A state that already carried a rerunError before read was recorded is
+    // from an unknown earlier run: its date stays unknown (null), never the
+    // component's date, which a failed re-read had already advanced.
+    if (prev.read === undefined) prev.read = prev.rerunError ? null : (prev.run || earlierRun);
+    prev.rerunError = err;
+    prev.rerunOn = run;
+  } else c.states[state] = { error: err };
+}
+
 async function measure(key, state, target, opts = {}) {
   const loc = target.and(page.locator(':visible')).first();
   const c = out.components[key];
@@ -139,11 +157,7 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    // A failed re-read must not erase an earlier successful one: keep the
-    // saved style and record the failed attempt beside it.
-    const prev = c.states[state];
-    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    keepEarlier(c, state, e, opts.earlierRun);
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -195,20 +209,41 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
-        if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        // noToggle: the state is read as it already paints; openedVia says why
+        // it is open (an earlier toggle, or open at rest), so the record never
+        // claims an interaction that did not run.
+        if (opts.noToggle) via = opts.openedVia || 'held open by an earlier toggle';
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          undo = () => closeOpened(key, loc, opts);
+        }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      await measure(key, st, loc, { ...opts, via, earlierRun: keep?.run });
     } catch (e) {
-      const prev = out.components[key].states[st];
-      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-      else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      keepEarlier(out.components[key], st, e, keep?.run);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
   }
   await reset();
+}
+
+// Closes what an `opened` state opened. An open dropdown or menu keeps focus
+// and covers the page, so every later focus-visible reading would come back
+// 'focus failed'. Escape first, then the trigger again; if the trigger still
+// reports aria-expanded="true" the miss is recorded on the opened state so
+// the later readings on this page can be checked.
+async function closeOpened(key, loc, opts) {
+  const expanded = () => loc.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null);
+  await page.keyboard.press('Escape').catch(() => {});
+  await page.waitForTimeout(400);
+  if ((await expanded()) === 'true') { await toggle(loc, { allowLink: opts.allowLink }).catch(() => {}); await page.waitForTimeout(600); }
+  if ((await expanded()) === 'true') {
+    const st = out.components[key].states.opened;
+    if (st) st.closeFailed = 'aria-expanded still "true" after Escape and a second toggle';
+    log('  ! opened state did not close', key);
+  }
 }
 
 // Clicks a UI toggle (dropdown, menu, sheet trigger). Refuses a submit button
@@ -286,7 +321,7 @@ async function home() {
   const h = G.home;
   await S('hero-h1', q('main h1, h1').and(page.locator(':visible')).first(), ['default'], { group: h, title: 'Hero headline', desc: '"Design Agents for Revenue Teams" — the serif display heading.', sel: 'h1' }, { noScroll: true });
   await S('hero-sub', q('main p, h1 + p, h1 ~ p').and(page.locator(':visible')).first(), ['default'], { group: h, title: 'Hero subcopy', desc: 'The supporting paragraph under the hero heading.', sel: 'hero p' }, { noScroll: true });
-  await S('feature-acc', q('button').filter({ hasText: /Chat-driven for everyone/i }).and(page.locator(':visible')).first(), ['default','hover','focus-visible','pressed','opened'], { group: h, title: 'Feature accordion', desc: 'A monospace feature accordion row on the dark panel ("Chat-driven for everyone on the team"); its opened state is the already-expanded first row, measured as painted.', sel: 'feature accordion button' }, { before: SETTLE, noToggle: true });
+  await S('feature-acc', q('button').filter({ hasText: /Chat-driven for everyone/i }).and(page.locator(':visible')).first(), ['default','hover','focus-visible','pressed','opened'], { group: h, title: 'Feature accordion', desc: 'A monospace feature accordion row on the dark panel ("Chat-driven for everyone on the team"); its opened state is the already-expanded first row, measured as painted.', sel: 'feature accordion button' }, { before: SETTLE, noToggle: true, openedVia: 'already expanded at rest; nothing was toggled' });
   await S('feature-acc2', q('button').filter({ hasText: /Quickly personalize/i }).and(page.locator(':visible')).first(), ['default','hover','focus-visible','pressed','opened'], { group: h, title: 'Accordion (closed)', desc: 'The closed "Quickly personalize every presentation" accordion row; its opened state is toggled locally to reveal the panel copy.', sel: 'feature accordion button 2' }, { before: SETTLE });
   await S('sec-h2', q('h2').filter({ hasText: /Keep every slide|on-brand/i }).and(page.locator(':visible')).first(), ['default'], { group: h, title: 'Section heading', desc: 'A serif section heading ("Keep every slide on-brand").', sel: 'h2' });
   await S('dark-h2', q('h2').filter({ hasText: /Every agent is an endpoint/i }).and(page.locator(':visible')).first(), ['default'], { group: h, title: 'Dark-panel heading', desc: 'The white serif heading inside the dark feature panel ("Every agent is an endpoint").', sel: 'dark h2' });
@@ -356,7 +391,9 @@ async function post() {
   await chrome('post');
   const g = G.post;
   await S('post-h1', q('article h1, main h1, h1').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Article heading', desc: 'The article title heading.', sel: 'article h1' }, { noScroll: true });
-  await S('post-para', q('article p, main p').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Article paragraph', desc: 'A body paragraph in the article.', sel: 'article p' });
+  // A body paragraph, not the one-line subtitle the first <p> was in the
+  // 2026-11 run ("Plus tips to achieve it").
+  await S('post-para', q('article p, main p').filter({ hasText: /\S.{80,}/ }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Article paragraph', desc: 'A body paragraph in the article.', sel: 'article p' });
   await S('post-link', q('article a, main a').filter({ hasNotText: /VISUAL|WHY|ASSETS|TOOLS|BLOG|WAITLIST/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Article link', desc: 'An inline link inside the article body; measured, never followed.', sel: 'article a' });
   save();
 }
