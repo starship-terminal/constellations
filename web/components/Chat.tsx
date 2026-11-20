@@ -9,6 +9,7 @@ import { useLightbox } from "@/components/Lightbox";
 import { useToast } from "@/components/Toast";
 import { copyWithToast } from "@/components/CopyButton";
 import { migrateStoredProvider, PROVIDER_NOTICE_KEY, saveReplyOf, type SaveReply } from "@/components/storage";
+import { latestOnly } from "@/components/provider-form";
 
 interface ChatResultCard {
   cover?: string;
@@ -112,11 +113,19 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // The server holds the key; the chat is available when it says a
     // provider is configured, and follows Settings through PROVIDER_EVENT.
-    const sync = () =>
+    // Requests can overlap (the first load, a save's event, a tab coming
+    // back): only the newest one's reply counts, so a reply from before a
+    // save never turns the chat off again after it.
+    const requests = latestOnly();
+    const sync = () => {
+      const n = requests.begin();
       fetch("/api/status")
         .then((r) => (r.ok ? r.json() : null))
-        .then((d) => setConfigured(!!(d && (d.configured ?? d.envProvider))))
+        .then((d) => {
+          if (requests.isLatest(n)) setConfigured(!!(d && (d.configured ?? d.envProvider)));
+        })
         .catch(() => {});
+    };
     sync();
     window.addEventListener(PROVIDER_EVENT, sync);
     // Another tab saved or removed the key: refresh here too, and let this
