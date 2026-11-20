@@ -43,8 +43,16 @@ const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, u
 const page = await ctx.newPage();
 const index = ['file\tlabel\tpx\tpage'];
 const seen = new Set();
+const files = new Map();
+const failed = [];
 for (const url of pages) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  try {
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  } catch (e) {
+    failed.push(new URL(url).pathname);
+    console.error('page failed', url, String(e.message).slice(0, 120));
+    continue;
+  }
   await page.waitForTimeout(1800);
   await hideConsent(page);
   if (url.endsWith('/')) {
@@ -58,11 +66,19 @@ for (const url of pages) {
     const name = `${slug}-${hash}.svg`;
     if (seen.has(name)) continue;
     seen.add(name);
-    fs.writeFileSync(OUT + name, icon.markup);
+    files.set(name, icon.markup);
     index.push(`${name}\t${icon.label}\t${icon.w}\t${new URL(url).pathname}`);
   }
   console.log(url, icons.length);
 }
-fs.writeFileSync(OUT + 'INDEX.tsv', index.join('\n') + '\n');
 await browser.close();
+// The old set is replaced only after a complete collection (the kit's guard), so a run
+// that loses a page cannot leave icons/ emptied or out of step with INDEX.tsv.
+if (failed.length || !seen.size) {
+  console.error(`not replacing icons/: ${failed.length ? 'failed pages: ' + failed.join(', ') : 'no icons collected'}`);
+  process.exit(1);
+}
+for (const f of fs.readdirSync(OUT)) if (f.endsWith('.svg')) fs.unlinkSync(OUT + f);
+for (const [name, markup] of files) fs.writeFileSync(OUT + name, markup);
+fs.writeFileSync(OUT + 'INDEX.tsv', index.join('\n') + '\n');
 console.log('icons', seen.size);

@@ -24,6 +24,11 @@ for key in sorted(C):
             states.append(f"{name} (not captured: {via})")
         else:
             states.append(name)
+    # A keyboard focus that never landed is not a reading: list it as not captured,
+    # never as a state that draws no ring (the kit's builders do the same).
+    for name, val in (comp.get("notCaptured") or {}).items():
+        if isinstance(val, dict) and "failed" in str(val.get("via", "")):
+            states.append(f"{name} (focus could not be captured)")
     states = ", ".join(states) or "missing"
     where = comp.get("where") or comp.get("url") or ""
     crop = ""
