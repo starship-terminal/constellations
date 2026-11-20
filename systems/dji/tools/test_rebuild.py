@@ -61,6 +61,18 @@ class RebuildTest(unittest.TestCase):
         src = self.built["core"]["font"]["size"]["measured"]["body"]["$extensions"]["source"]
         self.assertIn("read from the wrong element; recapture needed", src)
 
+    def test_recaptured_lede_clears_the_flag(self):
+        root = pathlib.Path(self.tmp.name) / "recaptured"
+        shutil.copytree(self.root / "tools", root / "tools")
+        shutil.copytree(self.root / "raw", root / "raw")
+        path = root / "raw" / "components-computed.json"
+        J = json.loads(path.read_text())
+        J["components"]["co-lede"]["states"]["default"]["text"] = "DJI is a global leader in civilian drones and creative camera technology."
+        path.write_text(json.dumps(J))
+        subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, check=True, capture_output=True)
+        spec = json.loads((root / "raw" / "component-tokens.json").read_text())
+        self.assertNotIn("wrong element", spec["core"]["font"]["size"]["measured"]["body"]["source"])
+
     def test_dark_components_are_labelled_from_the_dark_set(self):
         md = (self.root / "components.md").read_text()
         self.assertIn("rgba(255, 255, 255, 0.09) `action.ghost-hover`", md)

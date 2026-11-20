@@ -779,7 +779,11 @@ for name, cname, state, prop, ty_, desc in [
 # co-lede's selector caught the "browser not supported" notice in a modal box,
 # not the company page lede (the README's Known gaps; measure.mjs is fixed by
 # edit, not yet re-run). Every token read from it says so.
-WRONG_ELEMENT = {"co-lede": "the unsupported-browser notice in a modal box, not the company lede"}
+# Flagged only while the reading is that notice, so a good recapture clears it.
+WRONG_ELEMENT = {k: what for k, what, bad in [
+    ("co-lede", "the unsupported-browser notice in a modal box, not the company lede",
+     lambda c: "no longer supported" in (c["states"]["default"].get("text") or "")),
+] if k in C and bad(C[k])}
 
 
 def note_wrong(node):
