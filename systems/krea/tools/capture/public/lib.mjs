@@ -151,11 +151,15 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }
 
+// Returns false when the navigation failed or a bot check is still up, so the caller records the
+// page as blocked instead of measuring an error page or a challenge as the product.
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  let ok = true;
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => { ok = false; });
+  if (!(await clearChallenge(page))) ok = false;
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return ok;
 }
 
 // Computed style properties recorded for every component and state.
