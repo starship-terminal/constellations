@@ -68,10 +68,23 @@ DECL = {"light": declared("light"), "dark": declared("dark")}
 
 
 def put(tree, path, token):
+    """Place a token at a dotted path without nesting it inside another token.
+
+    --colors-bg-brand and --colors-bg-brand-hover both split on "-", so the second
+    would land inside the first token, where tools/catalog.py's flatten (it stops at
+    $value) never sees it. When the walk reaches a token, the rest of the path stays
+    joined with "-" as a sibling key (brand and brand-hover). A taken path raises.
+    """
     node = tree
     parts = path.split(".")
-    for p in parts[:-1]:
+    for i, p in enumerate(parts[:-1]):
+        nxt = node.get(p)
+        if isinstance(nxt, dict) and "$value" in nxt:
+            parts = parts[:i] + ["-".join(parts[i:])]
+            break
         node = node.setdefault(p, {})
+    if parts[-1] in node:
+        raise ValueError("token path already taken: " + ".".join(parts))
     node[parts[-1]] = token
 
 
@@ -93,7 +106,9 @@ for name, rec in sorted(RES["light"].items()):
     raw = rec.get("raw") or rec.get("value")
     put(light, path, tok(raw, "color", src))
     drec = RES["dark"].get(name) or {}
-    draw = drec.get("raw") or raw
+    draw = drec.get("raw") or drec.get("value")
+    if not draw:  # never publish the light value under a dark source
+        raise KeyError(f"{name}: no dark value in raw/css-vars.json")
     dsrc = f"css-var {name}, declared on .klarna-ui-DEFAULT-dark (raw/css-vars.json, 2026-11-18). Declared theme; the public marketing site paints light."
     put(dark, path, tok(draw, "color", dsrc))
 
@@ -200,6 +215,8 @@ if (RAW / "motion.json").exists():
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
     import motion
     core["motion"], _motion_extra = motion.build(json.loads((RAW / "motion.json").read_text()))
+    if _motion_extra:  # what DTCG cannot carry is kept, as the kit does
+        core["$extensions"] = {"notTokenised": _motion_extra}
 
 # Component tokens from measurements, when present.
 comp_path = RAW / "component-tokens.json"

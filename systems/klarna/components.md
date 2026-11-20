@@ -16,7 +16,7 @@ Public marketing components, read on 2026-11-18 from www.klarna.com/us/ while si
 | Button type | Klarna Text | 16px / 500 |
 | Nav type | Klarna Text | 14px / 500, line-height 16px |
 
-Focus on Sign in and the hero buttons is a 2px solid outline in `light.text` (`#0b051d`). Nav link focus computed to outline 0. Transitions on background, border, colour and opacity run 200ms `ease` (`core.motion.duration.200ms`). Under `prefers-reduced-motion: reduce` the probe recorded partial removal: some 200ms transitions stayed, some dropped. See [raw/motion.json](raw/motion.json).
+Focus on Sign in and the hero buttons is a 2px solid outline in `light.text` (`#0b051d`). Keyboard focus never landed on the nav link or the icon button (`via: focus failed`), so their focus look was not captured; it was not measured as absent. Transitions on background, border, colour and opacity run 200ms `ease` (`core.motion.duration.200ms`). Under `prefers-reduced-motion: reduce` the probe recorded partial removal: some 200ms transitions stayed, some dropped. See [raw/motion.json](raw/motion.json).
 
 ## Nav link
 
@@ -27,7 +27,7 @@ A text link in the sticky header. Height 32px, padding 8px 12px, radius `core.ra
 | default | Transparent fill | [nav-link-default](components/crops/nav-link-default.png) |
 | hover | Fill `#e5e3f5` (Measured, lavender wash) | [nav-link-hover](components/crops/nav-link-hover.png) |
 | pressed | Overlay `rgba(0, 0, 0, 0.08)`, matches `--colors-overlay-press-default` | [nav-link-pressed](components/crops/nav-link-pressed.png) |
-| focus-visible | Outline stayed 0 in this reading | [nav-link-focus-visible](components/crops/nav-link-focus-visible.png) |
+| focus-visible | Not captured: keyboard focus did not land (`focus failed`); the reading and crop show the link at rest | - |
 
 ## Sign in button
 
@@ -37,22 +37,22 @@ Header pill. Fill `light.color.btn.primary` (`#0b051d`), text inverse, height 42
 |---|---|---|
 | default | Ink fill | [sign-in-button-default](components/crops/sign-in-button-default.png) |
 | hover | Eggplant `rgb(44, 34, 66)` (Measured) | [sign-in-button-hover](components/crops/sign-in-button-hover.png) |
-| pressed | Darker ink | [sign-in-button-pressed](components/crops/sign-in-button-pressed.png) |
+| pressed | Not captured: the forced `:active` landed on the nav link, so the reading equals default. Recapture needed | - |
 | focus-visible | 2px solid `light.text` outline | [sign-in-button-focus-visible](components/crops/sign-in-button-focus-visible.png) |
 
 ## Brand button
 
-The pink "Get the app" pill. Fill `light.accent` (`#ffa8cd`), text `light.text`, height 52px, padding 15px 20px, radius `core.radiuses.radius.round`, Klarna Text 16/500. Hover fill measured `rgb(245, 161, 197)`. Focus outline 2px solid `light.text`.
+The pink "Get the app" pill. Fill `light.accent` (`#ffa8cd`), text `light.text`, height 52px, padding 15px 20px, radius `core.radiuses.radius.round`, Klarna Text 16/500. Hover fill measured `rgb(245, 161, 197)`. Focus outline 2px solid `light.text`. Pressed was not captured: the forced `:active` landed on the nav link, so the reading equals default (recapture needed).
 
 The painted pill sits in a horizontal scroller. The element crop named `primary-button-default.png` is the pink QR card, not this pill. Use [home-light-search](screenshots/home-light-search.png) and the computed JSON. [primary-button-hover](components/crops/primary-button-hover.png) is the hover fill sample from the first measure run.
 
 ## Ink button
 
-Secondary hero action ("Learn more"). Fill `light.color.btn.primary`, text inverse, height 52px, same pill radius and type as the brand button. Hover measured `rgb(31, 25, 47)`. The default crop is a blank off-screen frame. Do not cite it. Focus and pressed crops exist from the measure run. Confirm them against [raw/components-computed.json](raw/components-computed.json) before treating a file as the painted button.
+Secondary hero action ("Learn more"). Fill `light.color.btn.primary`, text inverse, height 52px, same pill radius and type as the brand button. Hover measured `rgb(31, 25, 47)`. The default crop is a blank off-screen frame. Do not cite it. The focus crop exists from the measure run. Pressed was not captured: the forced `:active` landed on the nav link, so the reading equals default (recapture needed). Confirm crops against [raw/components-computed.json](raw/components-computed.json) before treating a file as the painted button.
 
 ## Icon button
 
-Round header controls (search, language). About 28 to 56px, radius `core.radiuses.radius.round`. Crops: [icon-button-default](components/crops/icon-button-default.png), [hover](components/crops/icon-button-hover.png), [pressed](components/crops/icon-button-pressed.png), [focus-visible](components/crops/icon-button-focus-visible.png).
+Round header controls (search, language). About 28 to 56px, radius `core.radiuses.radius.round`. Crops: [icon-button-default](components/crops/icon-button-default.png), [hover](components/crops/icon-button-hover.png). Pressed was not captured: the forced `:active` landed on the nav link, so the reading equals default (recapture needed). Keyboard focus did not land (`focus failed`), so focus-visible was not captured either.
 
 ## Search field
 

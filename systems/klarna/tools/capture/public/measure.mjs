@@ -8,7 +8,11 @@ import { BASE, launch, open, hideConsent, styleOf, crop, RAW, CROPS } from './li
 fs.mkdirSync(RAW, { recursive: true });
 fs.mkdirSync(CROPS, { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
-const out = { _meta: { product: 'Klarna', captured: '2026-11-18', route: 'public-web', market: 'https://www.klarna.com/us/' }, components: {} };
+// Earlier readings are loaded and merged, so a page that fails mid-run (the finally below still
+// writes) keeps every component it did not reach instead of erasing them.
+const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
+out.components ??= {};
+out._meta = { ...(out._meta || {}), product: 'Klarna', captured: new Date().toLocaleDateString('en-CA'), route: 'public-web', market: 'https://www.klarna.com/us/' };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 const { browser, context } = await launch({ width: 1440, height: 900, dpr: 2 });
@@ -38,10 +42,23 @@ async function kbFocus(loc) {
   return ok ? 'Shift+Tab, Tab' : 'focus failed';
 }
 
+// One CDP session per page, reused for every forced state (a new one per call was never detached).
+const sessions = new WeakMap();
+async function cdpFor(p) {
+  if (!sessions.has(p)) {
+    const cdp = await context.newCDPSession(p);
+    await cdp.send('DOM.enable');
+    await cdp.send('CSS.enable');
+    sessions.set(p, cdp);
+  }
+  return sessions.get(p);
+}
+
 async function forcePseudo(loc, classes) {
-  const cdp = await context.newCDPSession(page);
-  await cdp.send('DOM.enable');
-  await cdp.send('CSS.enable');
+  const cdp = await cdpFor(page);
+  // Clear the marker an earlier call left: DOM.querySelector returns the first marked node in
+  // document order, so a stale marker made every later pressed state force the wrong element.
+  await page.evaluate(() => document.querySelectorAll('[data-m-force]').forEach((n) => n.removeAttribute('data-m-force')));
   await loc.evaluate((el) => el.setAttribute('data-m-force', '1'));
   const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
   const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-force]' });
@@ -215,7 +232,6 @@ try {
       title: 'Sign-in continue', group: 'Boundary', desc: 'The continue control on the login card. Hovered only. The login flow was not started.',
     });
   }
-  await page.screenshot({ path: path.join(RAW, 'signin-boundary-note.png'), fullPage: false }).catch(() => {});
   await page.close();
 } finally {
   fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
