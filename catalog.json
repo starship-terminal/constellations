@@ -20804,7 +20804,7 @@
       "url": "https://www.ikea.com/sg/en/",
       "category": "e-commerce",
       "platform": "web",
-      "goodFor": "Furniture storefront design: Skapa colour roles on a white page, brand blue #0058a3 and yellow #ffdb00 wordmark, a 64px blue Add to cart pill, square product photos, Noto IKEA at 14px, and a public category, PDP, search and store locator",
+      "goodFor": "Furniture storefront design: Skapa colour roles on a white page, brand blue #0058a3 and yellow #ffdb00 wordmark, a blue Add to cart pill 56px high with a 64px radius, square product photos, Noto IKEA at 14px, and a public category, PDP, search and store locator",
       "tags": ["web", "e-commerce", "furniture", "retail", "storefront", "product-grid", "pdp", "search", "light", "semantic-tokens", "signed-out"],
       "shape": "reference",
       "captured": "2026-11-19",
