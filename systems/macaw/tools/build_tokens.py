@@ -8,6 +8,7 @@ macaw-prod.webflow.*.min.css (--gray*, --primary*, --error*, --warning*,
 """
 import json
 import pathlib
+import re
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
@@ -38,7 +39,18 @@ def font(value, source):
 
 
 def shadow(value, source):
-    return {"$value": value, "$type": "shadow", "$extensions": {"source": source}}
+    """A computed box-shadow ("0px 1px 2px 0px rgba(...)") as the DTCG shadow object list."""
+    m = re.fullmatch(r"(inset )?(-?[\d.]+px) (-?[\d.]+px) ([\d.]+px) (-?[\d.]+px) (#[0-9a-f]{6}|rgba?\([^)]*\))", value)
+    if not m:
+        raise SystemExit(f"shadow not understood: {value!r}")
+    layer = {"color": m.group(6), "offsetX": m.group(2), "offsetY": m.group(3), "blur": m.group(4), "spread": m.group(5)}
+    if m.group(1):
+        layer["inset"] = True
+    return {"$value": [layer], "$type": "shadow", "$extensions": {"source": source}}
+
+
+# For a value no file in raw/ holds: typed in at capture time (docs/EVIDENCE.md, Reconstruction).
+HAND = "Reconstruction: entered by hand at capture time; no file in raw/ holds this reading. Capture note"
 
 
 def ramp(prefix, steps, note):
@@ -97,7 +109,7 @@ core = {
             "pro": color("#ffe8e2", f"{M}: .pricing07_top-row-content.orange"),
             "scale": color("#e3eeff", f"{M}: .pricing07_top-row-content.blue"),
         },
-        "focusRing": color("#005fcc", f"{M}: browser focus-visible outline on links and buttons"),
+        "focusRing": color("#005fcc", "Observed. Chromium's default focus ring (-webkit-focus-ring-color), not a Macaw colour: the focus-visible outline on links and buttons reads rgb(0, 95, 204). Macaw's own focus cue is the 4px focusHalo"),
         "focusHalo": color("#ffe1df", f"{M}: 4px box-shadow ring on focused button and field, same as --primary100"),
     },
     "font": {
@@ -115,22 +127,22 @@ core = {
             "label": dim("14px", f"{M}: .field-label"),
             "button": dim("14.8px", f"{M}: primary and secondary buttons"),
             "body": dim("16px", f"{M}: body"),
-            "section": dim("27.2px", f"{M}: article h2 on the home examples"),
+            "section": dim("27.2px", f"{HAND}: article h2 on the home examples"),
             "heading": dim("36px", f"{M}: example card h3"),
             "display": dim("53.6px", f"{M}: h1"),
-            "privacy-h2": dim("60px", f"{M}: privacy page h2"),
+            "privacy-h2": dim("60px", f"{HAND}: privacy page h2"),
         },
         "lineHeight": {
-            "display": dim("64.3px", f"{M}: pricing h1 height equals one line"),
-            "heading": dim("43.2px", f"{M}: example card h3"),
-            "section": dim("32.64px", f"{M}: article h2"),
+            "display": dim("64.32px", f"{M}: h1 computed line-height (display, pricing-heading and the other h1s in raw/components-computed.json)"),
+            "heading": dim("43.2px", f"{HAND}: example card h3"),
+            "section": dim("32.64px", f"{HAND}: article h2"),
             "body": dim("24px", f"{D}: 16px body at 1.5, the form-input line-height in the sheet"),
             "button": dim("22px", f"{D}: 14.8px button label at the sheet's 1.5 line"),
         },
         "tracking": {
             "display": dim("-1.608px", f"{M}: home h1 letter-spacing"),
-            "heading": dim("-0.72px", f"{M}: example card h3 letter-spacing"),
-            "section": dim("-0.544px", f"{M}: article h2 letter-spacing"),
+            "heading": dim("-0.72px", f"{HAND}: example card h3 letter-spacing"),
+            "section": dim("-0.544px", f"{HAND}: article h2 letter-spacing"),
         },
     },
     "typography": {
@@ -253,8 +265,51 @@ tokens = {
 }
 
 if MOTION:
-    import motion as motion_mod
-    core["motion"] = motion_mod.tokens(MOTION)
+    # The package's own motion.py (copy it from tools/kit/build/ before running the probe):
+    # build() returns the token group and what DTCG cannot carry.
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+    import motion
+    core["motion"], not_tokenised = motion.build(MOTION)
+    if not_tokenised:
+        core.setdefault("$extensions", {})["notTokenised"] = not_tokenised
 
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("wrote", HERE / "tokens.json")
+
+def leaves(node, path=""):
+    for k, v in node.items():
+        if k.startswith("$") or not isinstance(v, dict):
+            continue
+        here = f"{path}.{k}" if path else k
+        if "$value" in v:
+            yield here, v
+        else:
+            yield from leaves(v, here)
+
+
+def check(doc):
+    """The kit's guards, which this fork had dropped: every alias resolves (the set, then core),
+    every leaf has a source, and colours and dimensions have DTCG shapes."""
+    core_names = {p for p, _ in leaves(doc["core"])}
+    for setname in ("core", "light"):
+        local = {p for p, _ in leaves(doc[setname])}
+        for path, tok in leaves(doc[setname]):
+            if not tok.get("$extensions", {}).get("source"):
+                raise SystemExit(f"{setname}.{path}: no source")
+            v = tok["$value"]
+            texts = [v] if isinstance(v, str) else [x for layer in (v if isinstance(v, list) else [v]) if isinstance(layer, dict) for x in layer.values() if isinstance(x, str)]
+            for ref in (r for t in texts for r in re.findall(r"\{([^{}]+)\}", t)):
+                if ref not in local and ref not in core_names:
+                    raise SystemExit(f"{setname}.{path}: alias {{{ref}}} resolves to nothing")
+            if isinstance(v, str) and not v.startswith("{"):
+                if tok["$type"] == "dimension" and not re.fullmatch(r"-?\d*\.?\d+(px|rem)", v):
+                    raise SystemExit(f"{setname}.{path}: dimension {v!r}")
+                if tok["$type"] == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?|rgba?\([^)]*\)", v):
+                    raise SystemExit(f"{setname}.{path}: colour {v!r}")
+            if tok["$type"] == "shadow" and not isinstance(v, list):
+                raise SystemExit(f"{setname}.{path}: shadow must be a list of layers")
+
+
+check(tokens)
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+    print("wrote", HERE / "tokens.json")

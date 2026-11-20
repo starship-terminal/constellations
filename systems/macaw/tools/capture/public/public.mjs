@@ -22,10 +22,29 @@ const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
 
+// The kit helper's dimension check, inlined: a PNG whose size is not what the viewport, clip and
+// scale ask for is deleted and the shot fails, instead of being kept with a sidecar that says it is fine.
+function checkDimensions(target, opts, requested) {
+  const png = fs.readFileSync(target);
+  const width = png.readUInt32BE(16), height = png.readUInt32BE(20);
+  const dpr = requested.deviceScaleFactor || 1;
+  const want = opts.clip
+    ? { width: Math.round(opts.clip.width * dpr), height: Math.round(opts.clip.height * dpr) }
+    : { width: Math.round(requested.viewport.width * dpr), height: opts.fullPage ? null : Math.round(requested.viewport.height * dpr) };
+  if (Math.abs(width - want.width) > 1 || (want.height !== null && Math.abs(height - want.height) > 1)) {
+    fs.unlinkSync(target);
+    throw new Error(`dimension mismatch: ${path.basename(target)} is ${width}x${height}, expected ${want.width}x${want.height ?? 'any'}`);
+  }
+  return { width, height };
+}
+
 async function screenshotWithMetadata(page, opts, requested) {
   const target = opts.path;
   await page.screenshot({ path: target, fullPage: !!opts.fullPage, clip: opts.clip });
+  const pixels = checkDimensions(target, opts, requested);
   const side = {
+    pixels,
+    dimensionCheck: 'pass',
     schemaVersion: 1,
     capturedAt: new Date().toISOString(),
     screenshot: path.basename(target),
