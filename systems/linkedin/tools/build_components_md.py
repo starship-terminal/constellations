@@ -303,8 +303,17 @@ W("### Overlays and transient states")
 W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
+def filter_shot():
+    """Name the screenshot only when it is committed; otherwise point at the crop that is."""
+    shot = Path("screenshots/jobs-light-filter.png")
+    if shot.exists():
+        return f"[screenshot]({shot})"
+    crop = (C.get("filter-chip", {}).get("states", {}).get("opened") or {}).get("crop")
+    return f"no screenshot; [opened crop]({crop})" if crop and Path(crop).exists() else "not captured"
+
+
 OVER = [
-    ("Date posted filter", "jobs search", "the chip was opened as a local dropdown, then Escape", "jobs-light-filter, when the shot exists"),
+    ("Date posted filter", "jobs search", "the chip was opened as a local dropdown, then Escape", filter_shot()),
     ("Consent overlay", "every page", "hidden when present, never clicked", "boundary; see Gaps"),
     ("Sign in / Join now / Apply / Follow / Message", "nav, jobs, company, profile", "measured, never followed or submitted", "boundary; see Gaps"),
 ]

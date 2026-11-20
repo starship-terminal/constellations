@@ -29,6 +29,11 @@ const SNAPS = process.env.SNAPS ? path.resolve(process.env.SNAPS) : null;
 const urlsArg = process.argv.indexOf('--urls');
 const URLS = urlsArg > 0 ? (process.argv[urlsArg + 1] || '').split(',').filter(Boolean) : [];
 if (!SNAPS && !URLS.length) { console.error('SNAPS=<dir of page copies>, or --urls <url>[,<url>...], is required'); process.exit(2); }
+// This package was captured public-web only and ships no signed-in route (tools/capture/signed-in/).
+if (SNAPS && !fs.existsSync(path.join(here, 'signed-in', 'lib.mjs'))) {
+  console.error('SNAPS needs the signed-in route, which this package does not ship; use --urls');
+  process.exit(2);
+}
 const CAP = Number(process.env.MOTION_CAP) || 6000;   // moving elements kept per pass
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
