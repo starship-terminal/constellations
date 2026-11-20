@@ -679,24 +679,25 @@ Page: explore. Selector: `block card`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 359 x 181 | 351.82 x 177.38 | = | 351.82 x 177.38 |
-| Padding | 13px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 42px | = | = | = |
-| Background | #151515 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | dieGroteskA 16px/24px 400 | = | = | = |
-| Letter spacing | 0.200102px | = | = | = |
-| Colour | #f5f5f5 | = | = | = |
-| Text node | p.MuiTypography-root.MuiTypography-default: dieGroteskA 14px/20px 400, #f5f5f5, ls 0.8px | = | = | = |
-| Transition | transform, background-color 0.16s, 0.16s ease, ease delay 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | div.MuiStack-root.css-xfhyob-card 359.0x181.0 bg #151515 r 42px; div.MuiBox-root.css-1pggzu7-tile 155.0x155.0 bg #1d1d1d r 22%; div::after.MuiBox-root.css-1pggzu7-tile 155pxx155px r 22% shadow #ffffff @ 0.55 0px 0px 16px 1px inset | div.MuiStack-root.css-xfhyob-card 351.8x177.4 bg #151515 r 42px; div.MuiBox-root.css-1pggzu7-tile 151.9x151.9 bg #1d1d1d r 22%; div::after.MuiBox-root.css-1pggzu7-tile 155pxx155px r 22% shadow #ffffff @ 0.55 0px 0px 16px 1px inset | = | div.MuiStack-root.css-xfhyob-card 351.8x177.4 bg #151515 r 42px; div.MuiBox-root.css-1pggzu7-tile 151.9x151.9 bg #1d1d1d r 22%; div::after.MuiBox-root.css-1pggzu7-tile 155pxx155px r 22% shadow #ffffff @ 0.55 0px 0px 16px 1px inset |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 359 x 181 | 351.82 x 177.38 | - | 351.82 x 177.38 |
+| Padding | 13px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 42px | = | - | = |
+| Background | #151515 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | dieGroteskA 16px/24px 400 | = | - | = |
+| Letter spacing | 0.200102px | = | - | = |
+| Colour | #f5f5f5 | = | - | = |
+| Text node | p.MuiTypography-root.MuiTypography-default: dieGroteskA 14px/20px 400, #f5f5f5, ls 0.8px | = | - | = |
+| Transition | transform, background-color 0.16s, 0.16s ease, ease delay 0s, 0s | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | div.MuiStack-root.css-xfhyob-card 359.0x181.0 bg #151515 r 42px; div.MuiBox-root.css-1pggzu7-tile 155.0x155.0 bg #1d1d1d r 22%; div::after.MuiBox-root.css-1pggzu7-tile 155pxx155px r 22% shadow #ffffff @ 0.55 0px 0px 16px 1px inset | div.MuiStack-root.css-xfhyob-card 351.8x177.4 bg #151515 r 42px; div.MuiBox-root.css-1pggzu7-tile 151.9x151.9 bg #1d1d1d r 22%; div::after.MuiBox-root.css-1pggzu7-tile 155pxx155px r 22% shadow #ffffff @ 0.55 0px 0px 16px 1px inset | - | div.MuiStack-root.css-xfhyob-card 351.8x177.4 bg #151515 r 42px; div.MuiBox-root.css-1pggzu7-tile 151.9x151.9 bg #1d1d1d r 22%; div::after.MuiBox-root.css-1pggzu7-tile 155pxx155px r 22% shadow #ffffff @ 0.55 0px 0px 16px 1px inset |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Transform | - | matrix(0.98, 0, 0, 0.98, 0, 0) | = | matrix(0.98, 0, 0, 0.98, 0, 0) |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `d-block-card-default.png`, `d-block-card-hover.png`, `d-block-card-focus-visible.png`, `d-block-card-pressed.png`.
+Crops: `d-block-card-default.png`, `d-block-card-hover.png`, `d-block-card-pressed.png`.
 
 #### d-section
 
