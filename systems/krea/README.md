@@ -34,7 +34,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 4. Do use a 10px radius on sidebar controls.
 5. Do keep the sidebar at 255px on desktop.
 6. Don't invent a light app shell.
-7. Don't style the signed-in product from this package.
+7. Don't style the signed-in product from the public shots alone.
 8. Don't follow Generate, Get Pro or Book a call.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
