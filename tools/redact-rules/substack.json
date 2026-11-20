@@ -17,7 +17,7 @@
       ]
     },
     {
-      "name": "activity: subscribers' avatars, names, handles and bio; a person named in a note",
+      "name": "activity: subscribers' avatars, names, handles and bio; a person named in a note; the last row's avatar and name behind the tab bar (the Home icon and the Home and Read labels go with them)",
       "files": [
         "screenshots/*/12-activity-feed-primary-secondary-buttons.png"
       ],
@@ -91,6 +91,27 @@
           410,
           1258,
           "solid"
+        ],
+        [
+          118,
+          1584,
+          206,
+          1598,
+          "rows"
+        ],
+        [
+          116,
+          1598,
+          206,
+          1678,
+          "rows"
+        ],
+        [
+          116,
+          1676,
+          362,
+          1712,
+          "rows"
         ]
       ]
     },
