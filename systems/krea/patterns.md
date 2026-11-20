@@ -36,6 +36,14 @@ https://www.krea.ai/login is "Welcome to Krea" (`login-h1`) with Continue with G
 
 The home collapses to Explore, Upgrade, filter chips (All, New, Images, Videos, Edit) and a tool grid (Image, Video, Agent, MCP, Enhancer, Audio). A menu control (`m-menu`, 52 x 64) opens the phone nav. See [mobile-home-dark-default](screenshots/mobile-home-dark-default.png) and [mobile-home-dark-nav](screenshots/mobile-home-dark-nav.png). Pricing at 390 keeps the plan stack. See [mobile-pricing-dark-default](screenshots/mobile-pricing-dark-default.png). Login at 390 is the same OAuth card. See [mobile-login-dark-default](screenshots/mobile-login-dark-default.png).
 
+## Signed-in home (2026-11-20)
+
+https://www.krea.ai/app, already signed in, paints the same `html.dark` field. The shell is two columns, not the 255px signed-out sidebar. A 52px black icon rail holds Krea, Bots, Agent, Node Editor, Train Lora, Files, API, More, and Account and usage. Beside it, a 288px section sidebar lists Home, Image, Video, Enhancer, Ad Studio, Edit, More, Sessions, Pricing (40% off yearly), Enterprise, MCP and Invite teammates. The canvas is a hero carousel and a prompt composer (Auto, Fast, a count, Generate). Generate was not clicked. See [app-dark-default](screenshots/app-dark-default.png).
+
+Account and usage opens a menu: Buy plan, Usage (0% used), Workspace, Settings, Report a bug, Log out. Buy plan, Invite teammates, Report a bug and Log out were not followed. Settings navigated toward `/manage/profile` and the preview then stopped painting, so that page has no screenshot. See [app-dark-account-menu](screenshots/app-dark-account-menu.png) and [login-review.json](login-review.json).
+
+The computed custom properties on that page match the public dark roles (`--background`, `--foreground`, `--card`, `--sidebar`, `--radius` at 0.625rem). They are recorded in [signed-in-2026-11-20.json](raw/signed-in-2026-11-20.json) and are not a second token set. Phone width was not captured on this walk.
+
 ## What does not paint signed out
 
 There is no validation error, empty generation result, loading state, or destructive confirmation on the public pages. Search opens from a 20px sidebar button (`search-button`). The results panel was not captured as its own surface. Onboarding is the public home itself: the composer and the tool grid. Account, assets, train, nodes, billing, API keys and checkout stop at the login or plan buttons.
