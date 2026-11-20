@@ -72,8 +72,46 @@ def emit(root, name, leaf):
     node[last] = leaf
 
 
+# Three focus-visible states (nav-link, m-burger, m-menu-pill) were recorded `via: focus failed`;
+# their via was later rewritten by hand to this sentence, not re-measured. They are treated as
+# failed focus: never a token source.
+HAND_RELABELLED_FOCUS = "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
+
+
+def not_captured(v):
+    return (bool(v.get("skipped")) or v.get("via") in ("focus failed", HAND_RELABELLED_FOCUS)
+            or (v.get("focus") or {}).get("matches") is False)
+
+
 def st(comp, state):
-    return C[comp]["states"][state]["style"]
+    v = C[comp]["states"][state]
+    if not_captured(v):
+        raise KeyError(f"{comp} {state}: keyboard focus never confirmed (via {v.get('via')!r}); not a reading")
+    return v["style"]
+
+
+def colour_at(comp, state, where):
+    """The colour one reading holds: a style property, `text.color` (first text node),
+    `::before.<prop>`, or `paint:<node fragment>.<bg|border|outline>` (a painted layer)."""
+    if C[comp].get("missing"):
+        raise KeyError(f"{comp}: flagged missing (misidentified); not a reading")
+    v = C[comp]["states"][state]
+    style = st(comp, state)
+    if where == "text.color":
+        raw = (v.get("textStyle") or {}).get("color")
+    elif where.startswith("::before."):
+        raw = (v.get("::before") or {}).get(where.split(".", 1)[1])
+    elif where.startswith("paint:"):
+        frag, field = where[6:].rsplit(".", 1)
+        layer = next((n for n in v.get("paint") or [] if frag in (n.get("node") or "")), None)
+        raw = (layer or {}).get(field)
+        if raw and field in ("border", "outline"):
+            raw = re.search(r"rgba?\([^)]*\)", raw).group(0)
+    else:
+        raw = style.get(where)
+    if not raw:
+        raise KeyError(f"{comp} {state}: no {where} reading")
+    return norm_color(raw)
 
 
 def ts(comp, state, prop):
@@ -193,7 +231,16 @@ light = SPEC["light"]
 ALIAS = "role alias over the measured palette"
 
 
-def role(name, target, desc, source=None):
+def role(name, target, desc, source=None, readings=()):
+    """A role colour. `readings` are the (component, state, where) readings that paint it; each
+    must hold the target or the build stops, and they become the source. A role with no reading
+    carries its declared variable alone."""
+    for comp_, state_, where_ in readings:
+        got = colour_at(comp_, state_, where_)
+        if got != target:
+            raise ValueError(f"{name}: {comp_} {state_} {where_} reads {got}, not {target}")
+    if readings:
+        source = "computed " + "; ".join(f"{w} of {c} {s_}" for c, s_, w in readings) + " (raw/components-computed.json)"
     if target.startswith("{"):
         emit(light, name, {"value": target, "type": "color",
                            "source": source or ALIAS, "description": desc})
@@ -209,22 +256,41 @@ def role(name, target, desc, source=None):
                                "description": desc})
 
 
-role("--surface-page", "#fcfaf2", "The #fcfaf2 cream page field (sand-3/--white).", "computed body/page background on both hosts")
-role("--surface-card", "#f9f3df", "The sand-2 card field.", "computed card surfaces (raw/components-computed.json)")
-role("--surface-band", "#cce2ff", "The darkBlue-3 light-blue band: the PLP filter sheet, the cart strip, the New Customers card.", "computed new-card and cart-strip background (raw/components-computed.json); the filter sheet's own fill was not captured — its wrapper records transparent")
-role("--surface-menu", "#fed200", "The yellow mega-menu panel.", "the opened Bottle menu paints the declared --yellow (screenshots/home-light-menu.png); the stored flyout reading is a misidentified static section")
-role("--surface-menu-mobile", "#0067e5", "The darkBlue full-screen mobile menu.", "computed dialog__background layer inside m-menu-open (raw/components-computed.json)")
-role("--surface-deep", "#000f2e", "The deep-sea surface (filled pills, the × close button).", "computed painted fill layer inside btn-dark (raw/components-computed.json)")
-role("--text-primary", "#000f2e", "The deep-sea ink on headings and primary copy.", "computed color of plp-h1 / headings (raw/components-computed.json)")
-role("--text-muted", "#515a8a", "The deep-sea-1 secondary text (item counts, meta).", "computed muted text inside filter rows (raw/components-computed.json)")
-role("--text-on-dark", "#fcfaf2", "Cream text on darkBlue/deep-sea surfaces.", "computed color of m-menu rows / btn-dark label (raw/components-computed.json)")
-role("--action-primary", "#0067e5", "The darkBlue fill on Add to cart / Sign in / shop CTAs.", "computed backgroundColor of add-to-cart / shop-hero-button (raw/components-computed.json)")
-role("--action-dark", "#000f2e", "The deep-sea fill on 'Watch now', Sign in, × close.", "computed painted fill layers of btn-dark and the login-button ::before (raw/components-computed.json)")
-role("--action-accent", "#0abeaa", "The carribean '+ Filters' pill.", "computed ::before fill of filters-button (raw/components-computed.json)")
-role("--action-warm", "#fed200", "The yellow active tab / burger fill.", "computed flyout-tab active state and m-burger fill (raw/components-computed.json)")
-role("--border-ink", "#000f2e", "The deep-sea outline on ghost pills and filter rings.", "computed borders of btn-outline / filter rows (raw/components-computed.json)")
-role("--focus-ring", "#005fcc", "The keyboard focus ring on the marketing chrome (nav links, menu pills, burger).", "computed outlineColor of nav-link / m-burger / m-menu-pill focus-visible (raw/components-computed.json)")
-role("--focus-ring-shop", "#000f2e", "The keyboard focus ring on shop controls.", "computed outlineColor of shop-nav-link focus-visible (raw/components-computed.json)")
+role("--surface-page", "#fcfaf2", "The #fcfaf2 cream page field (sand-3/--white).",
+     readings=[("shop-header", "default", "backgroundColor"), ("newsletter-input", "default", "backgroundColor")])
+role("--surface-card", "#f9f3df", "The sand-2 card field (the footer's social chips paint it).",
+     readings=[("footer", "default", "paint:a.link.social.bg")])
+role("--surface-band", "#cce2ff", "The darkBlue-3 light-blue band: the PLP filter sheet, the cart strip, the New Customers card.",
+     readings=[("new-card", "default", "backgroundColor"), ("cart-strip", "default", "backgroundColor")])
+# The opened Bottle mega-menu was screenshotted, not measured (the stored flyout reading is a
+# misidentified static section): the role carries the declared --yellow alone.
+role("--surface-menu", "#fed200", "The yellow mega-menu panel (declared --yellow; the opened panel was not measured).")
+role("--surface-menu-mobile", "#0067e5", "The darkBlue full-screen mobile menu.",
+     readings=[("m-menu-open", "default", "paint:dialog__background.bg")])
+role("--surface-deep", "#000f2e", "The deep-sea surface (filled pills, the × close button).",
+     readings=[("btn-dark", "default", "paint:burstButton_fakeButton.bg")])
+role("--text-primary", "#000f2e", "The deep-sea ink on headings and primary copy.",
+     readings=[("plp-h1", "default", "color")])
+# No reading holds #515a8a: the role carries the declared --deep-sea-1 alone.
+role("--text-muted", "#515a8a", "The deep-sea-1 secondary text (declared; no captured component paints it).")
+role("--text-on-dark", "#fcfaf2", "Cream text on darkBlue/deep-sea surfaces.",
+     readings=[("m-nav-item", "default", "color"), ("m-menu-open", "default", "text.color")])
+role("--action-primary", "#0067e5", "The darkBlue fill on Add to cart / Sign in / shop CTAs.",
+     readings=[("add-to-cart", "default", "backgroundColor"), ("shop-hero-button", "default", "::before.backgroundColor")])
+role("--action-dark", "#000f2e", "The deep-sea fill on 'Watch now', Sign in, × close.",
+     readings=[("btn-dark", "default", "paint:burstButton_fakeButton.bg"), ("login-button", "default", "::before.backgroundColor")])
+role("--action-accent", "#0abeaa", "The carribean '+ Filters' pill.",
+     readings=[("filters-button", "default", "::before.backgroundColor")])
+# The flyout-tab reading is misidentified and m-burger paints no yellow: declared --yellow alone.
+role("--action-warm", "#fed200", "The yellow active tab / burger fill (declared --yellow; no captured reading paints it).")
+role("--border-ink", "#000f2e", "The deep-sea rings on the Sign in pill and the option radios (the ghost pill measured on media paints cream).",
+     readings=[("login-button", "default", "paint:button::before.border"), ("content-card", "default", "paint:RoiProductItem_radioButton.border")])
+# nav-link, m-burger and m-menu-pill focus-visible are hand-relabelled failed focus; these
+# controls took a confirmed keyboard focus (Shift+Tab, Tab) and paint the same ring.
+role("--focus-ring", "#005fcc", "The keyboard focus ring on the marketing chrome (buttons, pills, tabs).",
+     readings=[("btn-outline", "focus-visible", "outlineColor"), ("collection-tab", "focus-visible", "outlineColor")])
+role("--focus-ring-shop", "#000f2e", "The keyboard focus ring on shop controls.",
+     readings=[("shop-nav-link", "focus-visible", "outlineColor")])
 
 # ------------------------------------------------------------- type scale
 
@@ -323,7 +389,7 @@ for n in sorted(R):
 
 meas = SPEC["core"].setdefault("measured", {})
 for key, comp, state, prop, ty, desc in [
-    ("focus-ring", "nav-link", "focus-visible", "outlineColor", "color", "The keyboard focus ring colour on the header links."),
+    ("focus-ring", "btn-outline", "focus-visible", "outlineColor", "color", "The keyboard focus ring colour on marketing controls (the header links' focus was never confirmed)."),
     ("focus-ring-shop", "shop-nav-link", "focus-visible", "outlineColor", "color", "The focus ring on the shop nav."),
     ("header-shadow", "header", "default", "boxShadow", "shadow", "Any elevation the header bar paints."),
 ]:

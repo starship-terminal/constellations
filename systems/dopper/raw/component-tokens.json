@@ -489,8 +489,8 @@
    "focus-ring": {
     "value": "#005fcc",
     "type": "color",
-    "source": "computed outlineColor of nav-link focus-visible (raw/components-computed.json)",
-    "description": "The keyboard focus ring colour on the header links."
+    "source": "computed outlineColor of btn-outline focus-visible (raw/components-computed.json)",
+    "description": "The keyboard focus ring colour on marketing controls (the header links' focus was never confirmed)."
    },
    "focus-ring-shop": {
     "value": "#000f2e",
@@ -505,39 +505,39 @@
    "page": {
     "var": "--sand-3",
     "type": "color",
-    "source": "computed body/page background on both hosts; css-var --sand-3 resolved light (raw/css-vars.json)",
+    "source": "computed backgroundColor of shop-header default; backgroundColor of newsletter-input default (raw/components-computed.json); css-var --sand-3 resolved light (raw/css-vars.json)",
     "description": "The #fcfaf2 cream page field (sand-3/--white)."
    },
    "card": {
     "var": "--sand-2",
     "type": "color",
-    "source": "computed card surfaces (raw/components-computed.json); css-var --sand-2 resolved light (raw/css-vars.json)",
-    "description": "The sand-2 card field."
+    "source": "computed paint:a.link.social.bg of footer default (raw/components-computed.json); css-var --sand-2 resolved light (raw/css-vars.json)",
+    "description": "The sand-2 card field (the footer's social chips paint it)."
    },
    "band": {
     "var": "--darkBlue-3",
     "type": "color",
-    "source": "computed new-card and cart-strip background (raw/components-computed.json); the filter sheet's own fill was not captured \u2014 its wrapper records transparent; css-var --darkBlue-3 resolved light (raw/css-vars.json)",
+    "source": "computed backgroundColor of new-card default; backgroundColor of cart-strip default (raw/components-computed.json); css-var --darkBlue-3 resolved light (raw/css-vars.json)",
     "description": "The darkBlue-3 light-blue band: the PLP filter sheet, the cart strip, the New Customers card."
    },
    "menu": {
     "default": {
      "var": "--yellow",
      "type": "color",
-     "source": "the opened Bottle menu paints the declared --yellow (screenshots/home-light-menu.png); the stored flyout reading is a misidentified static section; css-var --yellow resolved light (raw/css-vars.json)",
-     "description": "The yellow mega-menu panel."
+     "source": "css-var --yellow resolved light (raw/css-vars.json)",
+     "description": "The yellow mega-menu panel (declared --yellow; the opened panel was not measured)."
     },
     "mobile": {
      "var": "--darkBlue",
      "type": "color",
-     "source": "computed dialog__background layer inside m-menu-open (raw/components-computed.json); css-var --darkBlue resolved light (raw/css-vars.json)",
+     "source": "computed paint:dialog__background.bg of m-menu-open default (raw/components-computed.json); css-var --darkBlue resolved light (raw/css-vars.json)",
      "description": "The darkBlue full-screen mobile menu."
     }
    },
    "deep": {
     "var": "--deep-sea",
     "type": "color",
-    "source": "computed painted fill layer inside btn-dark (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
+    "source": "computed paint:burstButton_fakeButton.bg of btn-dark default (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
     "description": "The deep-sea surface (filled pills, the \u00d7 close button)."
    }
   },
@@ -545,20 +545,20 @@
    "primary": {
     "var": "--deep-sea",
     "type": "color",
-    "source": "computed color of plp-h1 / headings (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
+    "source": "computed color of plp-h1 default (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
     "description": "The deep-sea ink on headings and primary copy."
    },
    "muted": {
     "var": "--deep-sea-1",
     "type": "color",
-    "source": "computed muted text inside filter rows (raw/components-computed.json); css-var --deep-sea-1 resolved light (raw/css-vars.json)",
-    "description": "The deep-sea-1 secondary text (item counts, meta)."
+    "source": "css-var --deep-sea-1 resolved light (raw/css-vars.json)",
+    "description": "The deep-sea-1 secondary text (declared; no captured component paints it)."
    },
    "on": {
     "dark": {
      "var": "--sand-3",
      "type": "color",
-     "source": "computed color of m-menu rows / btn-dark label (raw/components-computed.json); css-var --sand-3 resolved light (raw/css-vars.json)",
+     "source": "computed color of m-nav-item default; text.color of m-menu-open default (raw/components-computed.json); css-var --sand-3 resolved light (raw/css-vars.json)",
      "description": "Cream text on darkBlue/deep-sea surfaces."
     }
    }
@@ -567,34 +567,34 @@
    "primary": {
     "var": "--darkBlue",
     "type": "color",
-    "source": "computed backgroundColor of add-to-cart / shop-hero-button (raw/components-computed.json); css-var --darkBlue resolved light (raw/css-vars.json)",
+    "source": "computed backgroundColor of add-to-cart default; ::before.backgroundColor of shop-hero-button default (raw/components-computed.json); css-var --darkBlue resolved light (raw/css-vars.json)",
     "description": "The darkBlue fill on Add to cart / Sign in / shop CTAs."
    },
    "dark": {
     "var": "--deep-sea",
     "type": "color",
-    "source": "computed painted fill layers of btn-dark and the login-button ::before (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
+    "source": "computed paint:burstButton_fakeButton.bg of btn-dark default; ::before.backgroundColor of login-button default (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
     "description": "The deep-sea fill on 'Watch now', Sign in, \u00d7 close."
    },
    "accent": {
     "var": "--carribean",
     "type": "color",
-    "source": "computed ::before fill of filters-button (raw/components-computed.json); css-var --carribean resolved light (raw/css-vars.json)",
+    "source": "computed ::before.backgroundColor of filters-button default (raw/components-computed.json); css-var --carribean resolved light (raw/css-vars.json)",
     "description": "The carribean '+ Filters' pill."
    },
    "warm": {
     "var": "--yellow",
     "type": "color",
-    "source": "computed flyout-tab active state and m-burger fill (raw/components-computed.json); css-var --yellow resolved light (raw/css-vars.json)",
-    "description": "The yellow active tab / burger fill."
+    "source": "css-var --yellow resolved light (raw/css-vars.json)",
+    "description": "The yellow active tab / burger fill (declared --yellow; no captured reading paints it)."
    }
   },
   "border": {
    "ink": {
     "var": "--deep-sea",
     "type": "color",
-    "source": "computed borders of btn-outline / filter rows (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
-    "description": "The deep-sea outline on ghost pills and filter rings."
+    "source": "computed paint:button::before.border of login-button default; paint:RoiProductItem_radioButton.border of content-card default (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
+    "description": "The deep-sea rings on the Sign in pill and the option radios (the ghost pill measured on media paints cream)."
    }
   },
   "focus": {
@@ -602,8 +602,8 @@
     "default": {
      "value": "#005fcc",
      "type": "color",
-     "source": "computed outlineColor of nav-link / m-burger / m-menu-pill focus-visible (raw/components-computed.json)",
-     "description": "The keyboard focus ring on the marketing chrome (nav links, menu pills, burger)."
+     "source": "computed outlineColor of btn-outline focus-visible; outlineColor of collection-tab focus-visible (raw/components-computed.json)",
+     "description": "The keyboard focus ring on the marketing chrome (buttons, pills, tabs)."
     },
     "shop": {
      "var": "--deep-sea",
