@@ -704,6 +704,22 @@ class ProviderKeyTest(TempConfig):
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
         self.assertEqual((self.config / "provider.db").stat().st_mode & 0o777, 0o600)
 
+    def test_a_damaged_file_is_recognised_without_error_codes(self):
+        # Python before 3.11 gives sqlite3 errors no sqlite_errorcode; the
+        # store then reads SQLite's message text.
+        self.config.mkdir(parents=True)
+        db = self.config / "provider.db"
+        db.write_text(("damaged %s " % KEY) * 300)
+        with mock.patch.object(self.store, "_error_code", lambda cause: None):
+            h = self.call("delete", "/api/provider")
+            self.assertEqual((h.status, h.json()["removed"]), (200, True))
+            self.assertFalse(db.exists())
+            # A busy lock's text is not damage: it is still never deleted.
+            busy = self.store._store_error("x", __import__("sqlite3").OperationalError("database is locked"))
+            self.assertFalse(busy.damaged)
+            malformed = self.store._store_error("x", __import__("sqlite3").DatabaseError("database disk image is malformed"))
+            self.assertTrue(malformed.damaged)
+
     def test_a_busy_database_is_never_deleted(self):
         import sqlite3
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
@@ -729,6 +745,49 @@ class ProviderKeyTest(TempConfig):
             os.chmod(self.config, 0o700)
         self.assertEqual((cfg, source), (None, "saved"))
         self.assertTrue(error)
+
+    def test_config_dir_cases_shared_with_the_web_store(self):
+        cases = json.loads((SERVER / "provider-config-cases.json").read_text())["cases"]
+        home = Path(self._tmp.name) / "home"
+        repo = str(SERVER.parent)
+        for case in cases:
+            value = case["value"].replace("<HOME>", str(home)).replace("<REPO>", repo)
+            with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_CONFIG_DIR": value, "HOME": str(home)}):
+                if case["expect"] == "error":
+                    with self.assertRaises(self.store.StoreError, msg=value) as ctx:
+                        self.store.config_dir()
+                    self.assertIn("absolute path outside the checkout", str(ctx.exception))
+                    # A refused folder is an error the chat reports, never "nothing saved".
+                    self.assertEqual(self.store.resolve({"api_key": ENV_KEY})[1:], ("saved", str(ctx.exception)))
+                else:
+                    self.assertEqual(str(self.store.config_dir()), case["expect"].replace("<HOME>", str(home)), value)
+
+    def test_a_key_in_a_url_field_is_refused_without_quoting_it(self):
+        from urllib.parse import quote
+        for extra in ({"base_url": f"https://models.example/v1?key={KEY}"},
+                      {"models_url": f"https://models.example/v1/models?key={quote(KEY, safe='')}"},
+                      {"name": f"mine {KEY}"}):
+            for path in ("/api/provider", "/api/provider/test"):
+                h = self.call("post", path, {**GOOD, **extra, "api_key": KEY})
+                self.assertEqual(h.status, 400, (path, extra))
+                self.assertIn("API key field only", h.json()["error"])
+        self.assertEqual(self.models_calls(), [])
+        self.assertIsNone(self.store.load())
+        self.assert_no_key()
+
+    def test_a_key_saved_inside_a_url_is_redacted_from_the_public_fields(self):
+        self.store.save_provider({**GOOD, "base_url": f"https://models.example/v1?key={KEY}", "api_key": KEY}, "replace")
+        got = self.call("get", "/api/provider").json()
+        self.assertEqual(got["provider"]["base_url"], "https://models.example/v1?key=[redacted]")
+        self.assert_no_key()
+
+    def test_an_empty_or_missing_body_is_the_same_400_as_the_web_app(self):
+        self.chat.env_cfg = {"api": "anthropic", "base_url": "https://api.anthropic.com", "api_key": ENV_KEY, "model": "m"}
+        for path in ("/api/provider/test", "/api/provider"):
+            for raw in (b"", b"{}", b"[]", b"null", b"nope"):
+                handled, h = _post(self.routes, path, raw=raw)
+                self.assertEqual((h.status, h.json()["error"]), (400, "JSON body required"), (path, raw))
+        self.assertEqual(self.models_calls(), [])
 
     def test_delete_is_only_the_provider_route(self):
         handled, h = _send(self.routes, "delete", "/api/mcp")

@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useLightbox } from "@/components/Lightbox";
 import { useToast } from "@/components/Toast";
 import { copyWithToast } from "@/components/CopyButton";
-import { migrateStoredProvider, PROVIDER_NOTICE_KEY } from "@/components/storage";
+import { migrateStoredProvider, PROVIDER_NOTICE_KEY, saveReplyOf, type SaveReply } from "@/components/storage";
 
 interface ChatResultCard {
   cover?: string;
@@ -76,18 +76,13 @@ export function announceProviderChange(): void {
 }
 
 /** POST a provider to the server's save route; the reply never holds the key. */
-export async function saveProvider(body: Record<string, string | boolean>): Promise<{ ok: boolean; existing?: boolean; error?: string }> {
+export async function saveProvider(body: Record<string, string | boolean>): Promise<SaveReply> {
   const r = await fetch("/api/provider", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
-  const d = await r.json().catch(() => null);
-  return {
-    ok: !!d?.ok,
-    existing: d?.existing === true,
-    error: typeof d?.error === "string" ? d.error : r.ok ? undefined : `HTTP ${r.status}`,
-  };
+  return saveReplyOf(r.status, await r.json().catch(() => null));
 }
 
 // The history the model sees: each question with the markdown answer it got.

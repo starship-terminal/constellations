@@ -18,7 +18,8 @@ import {
   resolveProvider,
   type ListModels,
 } from "./provider-api.ts";
-import { CONFIG_DIR_ENV, loadSaved, providerFile, saveProvider, updateModel } from "./provider-store.ts";
+import { CONFIG_DIR_ENV, configDir, loadSaved, providerFile, saveProvider, updateModel, StoreError } from "./provider-store.ts";
+import { ROOT } from "./repo.ts";
 
 const KEY = "sk-test-0123456789abcdef";
 const KEY2 = "sk-test-rotated-fedcba9876";
@@ -61,6 +62,32 @@ afterEach(() => {
 });
 
 const savedFile = async () => (await loadSaved()) ?? ({} as Record<string, string>);
+
+describe("the config folder", () => {
+  it("resolves every shared case as server/provider_store.py does", async () => {
+    const { cases } = JSON.parse(await fs.readFile(path.join(ROOT, "server", "provider-config-cases.json"), "utf8"));
+    const home = path.join(dir, "home");
+    const savedHome = process.env.HOME;
+    process.env.HOME = home;
+    try {
+      for (const c of cases as { value: string; expect: string }[]) {
+        process.env[CONFIG_DIR_ENV] = c.value.replaceAll("<HOME>", home).replaceAll("<REPO>", ROOT);
+        if (c.expect === "error") {
+          assert.throws(() => configDir(), (e: unknown) => e instanceof StoreError && /absolute path outside the checkout/.test(e.message), c.value);
+          // A refused folder is an error the chat reports, never "nothing saved".
+          process.env.ANTHROPIC_API_KEY = ENV_KEY;
+          const held = await resolveProvider();
+          assert.deepEqual([held.cfg, held.source], [null, "saved"], c.value);
+          delete process.env.ANTHROPIC_API_KEY;
+        } else {
+          assert.equal(configDir(), c.expect.replaceAll("<HOME>", home), c.value);
+        }
+      }
+    } finally {
+      process.env.HOME = savedHome;
+    }
+  });
+});
 
 describe("the key store", () => {
   it("lives under the override folder, outside the checkout, mode 0600 in a 0700 folder", async () => {
@@ -307,7 +334,43 @@ describe("recovery and key bytes", () => {
   });
 });
 
+describe("a key in a URL field", () => {
+  it("is refused at parse on save and test, without quoting it", async () => {
+    for (const extra of [
+      { base_url: `https://models.example/v1?key=${KEY}` },
+      { models_url: `https://models.example/v1/models?key=${encodeURIComponent(KEY)}` },
+      { name: `mine ${KEY}` },
+    ]) {
+      for (const handler of [handleSave, handleTest]) {
+        const r = await handler({ ...GOOD, ...extra, api_key: KEY }, okModels);
+        assert.equal(r.status, 400, JSON.stringify(extra));
+        assert.match(String(r.body.error), /API key field only/);
+        assert.ok(!everything(r.body).includes(KEY));
+      }
+    }
+    assert.deepEqual(calls, []);
+    assert.equal(await loadSaved(), null);
+  });
+
+  it("is redacted from the public fields if it was saved some other way", async () => {
+    await saveProvider({ ...GOOD, base_url: `https://models.example/v1?key=${KEY}`, api_key: KEY }, "replace");
+    const got = await handleGet();
+    assert.equal((got.body.provider as Record<string, string>).base_url, "https://models.example/v1?key=[redacted]");
+    assert.ok(!everything(got.body, await providerState()).includes(KEY));
+  });
+});
+
 describe("testing a key", () => {
+  it("answers an empty or missing body with the same 400 as server/routes.py", async () => {
+    process.env.ANTHROPIC_API_KEY = ENV_KEY;
+    for (const body of [undefined, null, {}, [], "x"])
+      for (const handler of [handleTest, handleSave]) {
+        const r = await handler(body, okModels);
+        assert.deepEqual([r.status, r.body.error], [400, "JSON body required"], JSON.stringify(body));
+      }
+    assert.deepEqual(calls, [], "no provider call, not even with an env key held");
+  });
+
   it("tests a typed key against the typed endpoint", async () => {
     const r = await handleTest({ ...GOOD, api_key: KEY }, okModels);
     assert.equal(r.body.ok, true);

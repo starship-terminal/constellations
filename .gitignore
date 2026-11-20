@@ -31,6 +31,10 @@ docs/scorecard/
 # covers web/.env.local and app/.env.local, which Next loads.
 .env*
 !.env.example
+# The chat's saved provider key (web/lib/provider-store.ts, server/
+# provider_store.py). Both refuse a folder inside the checkout; this is the
+# second line of defence.
+provider.db*
 *.key
 secrets/
 __pycache__/

@@ -62,6 +62,9 @@ async function run(stored, server) {
       requests.push({ url, method: opts.method || "GET", body: opts.body ? JSON.parse(opts.body) : undefined });
       if (!server) return { ok: false, status: 404, json: async () => { throw new Error("not json"); } };
       const out = server(url, opts.method || "GET", opts.body ? JSON.parse(opts.body) : undefined);
+      if (out === "reject") throw new TypeError("Failed to fetch");
+      // { status, html: true } stands for a proxy's error page.
+      if (out && out.status) return { ok: false, status: out.status, json: async () => { if (out.html) throw new Error("not json"); return out.body; } };
       return { ok: true, status: 200, json: async () => out };
     },
     JSON,
@@ -142,4 +145,32 @@ test("saving posts the typed key to the server and keeps no copy", async () => {
   assert.deepEqual(writes, []);
   assert.equal(els["pf-key"].value, "", "the key field empties once the server has it");
   assert.match(els["pf-status"].textContent, /^Saved on the server/);
+});
+
+test("a server that does not answer keeps the old browser key and never posts it", async () => {
+  for (const down of [() => ({ status: 502, html: true }), () => "reject", () => ({ status: 503, html: true })]) {
+    const { els, store, requests } = await run(legacy, down);
+    assert.equal(store.get("ds-provider"), legacy, "the only copy stays");
+    assert.ok(requests.every((r) => r.method === "GET"));
+    assert.match(els["pf-notice"].textContent, /stays here for now/);
+  }
+});
+
+test("a save that fails with 5xx or a non-JSON page keeps the old browser key", async () => {
+  for (const fail of [{ status: 502, html: true }, { status: 500, body: { ok: false, error: "busy" } }, "reject"]) {
+    const { els, store } = await run(legacy, (url, method) =>
+      method === "POST" ? fail : { ok: true, source: "none", configured: false, provider: null },
+    );
+    assert.equal(store.get("ds-provider"), legacy);
+    assert.match(els["pf-notice"].textContent, /stays here for now/);
+    assert.ok(!els["pf-notice"].textContent.includes(KEY));
+  }
+});
+
+test("a refused body (4xx JSON) is a decision: the browser key is deleted", async () => {
+  const { els, store } = await run(legacy, (url, method) =>
+    method === "POST" ? { status: 400, body: { ok: false, error: "That API key has characters a key cannot hold." } } : { ok: true, source: "none", provider: null },
+  );
+  assert.equal(store.has("ds-provider"), false);
+  assert.match(els["pf-notice"].textContent, /^Deleted the API key/);
 });

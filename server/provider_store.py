@@ -38,6 +38,7 @@ import contextlib
 import os
 import re
 import sqlite3
+from urllib.parse import quote, unquote
 from pathlib import Path
 
 CONFIG_DIR_ENV = "DESIGN_SYSTEMS_CONFIG_DIR"
@@ -62,11 +63,25 @@ _SQLITE_CORRUPT = 11
 _SQLITE_NOTADB = 26
 
 
+# SQLite's own text for those two codes, for Pythons before 3.11, where
+# sqlite3 errors carry no sqlite_errorcode.
+_DAMAGED_TEXT = ("file is not a database", "database disk image is malformed")
+
+
+def _error_code(cause: BaseException | None):
+    """SQLite's result code on an error (Python 3.11 and later), else None."""
+    code = getattr(cause, "sqlite_errorcode", None)
+    return code if isinstance(code, int) else None
+
+
 def _store_error(message: str, cause: BaseException | None = None) -> StoreError:
     err = StoreError(message)
-    code = getattr(cause, "sqlite_errorcode", None)
-    if isinstance(code, int):
+    code = _error_code(cause)
+    if code is not None:
         err.damaged = (code & 0xFF) in (_SQLITE_CORRUPT, _SQLITE_NOTADB)
+    elif isinstance(cause, sqlite3.DatabaseError):
+        text = str(cause).lower()
+        err.damaged = any(t in text for t in _DAMAGED_TEXT)
     return err
 
 
@@ -74,9 +89,36 @@ class BadRequest(Exception):
     """A posted provider that cannot be used. The message never quotes it."""
 
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+CONFIG_DIR_HELP = (f"{CONFIG_DIR_ENV} must be an absolute path outside the checkout (a leading ~/ is "
+                   "expanded), for example ~/.config/design-systems.")
+
+
 def config_dir() -> Path:
+    """The folder that holds provider.db. web/lib/provider-store.ts applies the
+    same rules, and server/provider-config-cases.json holds the cases both test
+    suites run, so the gallery and this API always name the same file: a
+    leading ~ or ~/ is the home folder (systemd's Environment= and a .env file
+    do not expand it); a relative path, a ~user path or a path inside the
+    checkout is refused with a StoreError that says how to set it, never
+    resolved against whatever folder the server started in."""
     raw = (os.environ.get(CONFIG_DIR_ENV) or "").strip()
-    return Path(raw).expanduser().resolve() if raw else Path.home() / ".config" / "design-systems"
+    home = Path.home()
+    if not raw:
+        d = home / ".config" / "design-systems"
+    elif raw == "~":
+        d = home
+    elif raw.startswith("~/"):
+        d = home / raw[2:]
+    elif os.path.isabs(raw):
+        d = Path(raw)
+    else:
+        raise StoreError(CONFIG_DIR_HELP)
+    d = Path(os.path.normpath(d))
+    for root in {Path(os.path.normpath(REPO_ROOT)), REPO_ROOT.resolve()}:
+        if d == root or root in d.parents:
+            raise StoreError(CONFIG_DIR_HELP)
+    return d
 
 
 def provider_file() -> Path:
@@ -234,11 +276,25 @@ def remove() -> bool:
         return True
 
 
+URL_KEY = "Put the API key in the API key field only, not in the base URL, models URL, label or model."
+
+
+def _carries(value: str, key: str) -> bool:
+    """Whether `value` holds `key`, as typed or percent-encoded."""
+    if not value or len(key) < 4:
+        return False
+    return key in value or key in unquote(value) or quote(key, safe="") in value
+
+
 def public(cfg: dict | None) -> dict | None:
-    """The fields of a provider that may leave the server."""
+    """The fields of a provider that may leave the server, each passed through
+    redact() with the provider's own key: parsing already refuses a key in any
+    of them, and this guards anything saved some other way."""
     if not cfg:
         return None
-    return {k: cfg[k] for k in PUBLIC_FIELDS if isinstance(cfg.get(k), str) and cfg[k]}
+    key = cfg.get("api_key")
+    keys = (key, quote(key, safe="")) if isinstance(key, str) and key else ()
+    return {k: redact(cfg[k], *keys) for k in PUBLIC_FIELDS if isinstance(cfg.get(k), str) and cfg[k]}
 
 
 def redact(text: str, *keys: str | None) -> str:
@@ -273,6 +329,9 @@ def parse(body) -> dict:
         raise BadRequest("Key header must be a header name.")
     if len(s["model"]) > 160 or len(s["name"]) > 80:
         raise BadRequest("Model or label is too long.")
+    # The URLs are shown back on the page; a key inside one would be too.
+    if s["api_key"] and any(_carries(s[k], s["api_key"]) for k in ("base_url", "models_url", "name", "model")):
+        raise BadRequest(URL_KEY)
     s["api"] = api
     s["base_url"] = (s["base_url"] or DEFAULT_BASE_URL[api]).rstrip("/")
     s["key_header"] = s["key_header"].lower()

@@ -132,10 +132,25 @@ class BadRequest extends Error {}
 
 const FIELDS = ["api", "base_url", "key_header", "models_url", "model", "name", "api_key"] as const;
 
+const URL_KEY = "Put the API key in the API key field only, not in the base URL, models URL, label or model.";
+
+/** Whether `value` holds `key`, as typed or percent-encoded. */
+function carriesText(value: string, key: string): boolean {
+  if (!value || key.length < 4) return false;
+  let decoded = value;
+  try {
+    decoded = decodeURIComponent(value);
+  } catch {}
+  return value.includes(key) || decoded.includes(key) || value.includes(encodeURIComponent(key));
+}
+
 /** Validate and normalise a posted provider object. Throws BadRequest with a
     message that never quotes the submitted values. */
 function parse(body: unknown): Submitted {
-  if (typeof body !== "object" || body === null || Array.isArray(body)) throw new BadRequest("Send a JSON object.");
+  // No body, a body that is not a JSON object, or an empty object: the same
+  // 400 server/routes.py answers, so both servers agree on it.
+  if (typeof body !== "object" || body === null || Array.isArray(body) || !Object.keys(body).length)
+    throw new BadRequest("JSON body required");
   const b = body as Record<string, unknown>;
   if (b.migrate !== undefined && typeof b.migrate !== "boolean") throw new BadRequest("migrate must be true or false.");
   const s: Record<string, string> = {};
@@ -151,6 +166,9 @@ function parse(body: unknown): Submitted {
     throw new BadRequest("That API key has characters a key cannot hold.");
   if (s.key_header && !/^[A-Za-z0-9-]{1,64}$/.test(s.key_header)) throw new BadRequest("Key header must be a header name.");
   if (s.model.length > 160 || s.name.length > 80) throw new BadRequest("Model or label is too long.");
+  // The URLs are shown back on the page; a key inside one would be too.
+  if (s.api_key && [s.base_url, s.models_url, s.name, s.model].some((v) => carriesText(v, s.api_key)))
+    throw new BadRequest(URL_KEY);
   return {
     migrate: b.migrate === true,
     api,
