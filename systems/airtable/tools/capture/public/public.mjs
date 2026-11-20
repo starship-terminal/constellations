@@ -53,8 +53,13 @@ class Shooter {
     // Retire any tiles from an earlier run before writing this capture's, so a
     // shorter page cannot be stitched back together with stale trailing tiles.
     for (const stale of fs.readdirSync(RAW).filter((x) => x.startsWith(`${this.prefix}-${name}.part`))) fs.rmSync(path.join(RAW, stale), { force: true });
-    if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
+    // An infinite or growing page reports a scrollHeight without end: tile at most 8 chunks
+    // and log the boundary (the kit's cap), never one tile per chunk for ever.
+    const MAXH = 8 * chunk;
+    const hCap = Math.min(H, MAXH);
+    if (H > MAXH) console.log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
+    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
