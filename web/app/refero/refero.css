@@ -2,7 +2,7 @@
    from the vanilla gallery. */
 
 /* Facet counts inside the theme tab buttons. */
-.rf-tabs-list .n { font-size: 10.5px; font-family: var(--mono); opacity: 0.65; margin-left: 5px; }
+.rf-tabs-list .n { font-size: 10.5px; font-variant-numeric: tabular-nums; opacity: 0.65; margin-left: 5px; }
 
 /* Mini facet chips: under a card's tagline, and the entity header row. */
 .rf-card-chips { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }

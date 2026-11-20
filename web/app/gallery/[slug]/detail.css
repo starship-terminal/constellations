@@ -22,7 +22,7 @@
 .pd-sc-row:last-child { border-bottom: 0; }
 .pd-sc-row .sc-badge { font-size: 14px; }
 .pd-sc-row b { font-size: 13px; font-weight: 550; }
-.pd-sc-row .id { color: var(--faint); font-family: var(--mono); font-size: 11px; margin-right: 7px; }
+.pd-sc-row .id { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 11px; margin-right: 7px; }
 .pd-sc-row p { margin: 3px 0 0; color: var(--muted); font-size: 12.5px; }
 
 /* files section: one collapsible group per top-level dir */
@@ -40,7 +40,7 @@
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .pd-files li a:hover { text-decoration: underline; text-underline-offset: 2px; }
-.pd-size { color: var(--faint); font-size: 11.5px; font-family: var(--mono); flex: none; }
+.pd-size { color: var(--faint); font-size: 11.5px; font-variant-numeric: tabular-nums; flex: none; }
 
 /* file viewer */
 .pd-doc { max-width: 780px; }
