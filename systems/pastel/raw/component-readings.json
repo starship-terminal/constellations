@@ -1,0 +1,463 @@
+{
+  "home": {
+    "navBtn": {
+      "text": "Features",
+      "tag": "A",
+      "cls": "navbar-button w-button",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "4px",
+      "padding": "6px 12px 6px 12px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 32,
+      "w": 86.6
+    },
+    "login": {
+      "text": "Login",
+      "tag": "A",
+      "cls": "navbar-button navbar-login-button w-button",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "10px",
+      "padding": "10px 22px 10px 22px",
+      "border": "1px solid rgba(152, 152, 152, 0.45)",
+      "boxShadow": "none",
+      "h": 42,
+      "w": 86
+    },
+    "signup": {
+      "text": "Sign up",
+      "tag": "A",
+      "cls": "navbar-button navbar-signup-button w-button",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(69, 71, 69)",
+      "borderRadius": "10px",
+      "padding": "11px 16px 11px 16px",
+      "border": "0px none rgb(255, 255, 255)",
+      "boxShadow": "none",
+      "h": 42,
+      "w": 86.5
+    },
+    "h2": {
+      "text": "Works on any file, device or browser",
+      "tag": "H2",
+      "cls": "heading-2",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "45px",
+      "fontWeight": "400",
+      "lineHeight": "48.15px",
+      "letterSpacing": "normal",
+      "color": "rgb(34, 34, 34)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "0px 0px 0px 0px",
+      "border": "0px none rgb(34, 34, 34)",
+      "boxShadow": "none",
+      "h": 48.2,
+      "w": 1209.6
+    },
+    "quote": {
+      "text": "“Our clients love how they can just drop comments and we tur",
+      "tag": "DIV",
+      "cls": "quote-small header",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "0px 0px 0px 0px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 114.9,
+      "w": 560
+    },
+    "card": {
+      "text": "Live Shopify Website",
+      "tag": "LI",
+      "cls": "splide__slide splide__slide--clone",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "0px 0px 0px 0px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 357.1,
+      "w": 255.7
+    },
+    "footer": {
+      "text": "Making creative feedback simpler. 12 million comments & coun",
+      "tag": "SECTION",
+      "cls": "footer",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "0px 0px 5px 0px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 435,
+      "w": 1440
+    },
+    "demoLink": {
+      "text": "Watch demo",
+      "tag": "A",
+      "cls": "button button-transparent w-button",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "color": "rgb(69, 64, 60)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "10px",
+      "padding": "11px 22px 11px 22px",
+      "border": "1px solid rgb(215, 211, 209)",
+      "boxShadow": "none",
+      "h": 48,
+      "w": 137.9
+    },
+    "navbar": {
+      "text": "FeaturesCase StudiesBlogPricingLoginSign up",
+      "tag": "DIV",
+      "cls": "navbar",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "0px 0px 0px 0px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 68,
+      "w": 1440
+    },
+    "ctaHover": {
+      "backgroundColor": "rgb(22, 93, 251)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "boxShadow": "none"
+    },
+    "focus": {
+      "tag": "A",
+      "text": "New: Your AI agent can now act on Pastel",
+      "outline": "rgb(0, 95, 204) auto 1px",
+      "boxShadow": "none",
+      "backgroundColor": "rgb(22, 93, 251)"
+    }
+  },
+  "plans": {
+    "toggle": {
+      "text": "Monthly Annual",
+      "cls": "pricing-toggle",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "0px 0px 0px 0px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 36,
+      "w": 212.9
+    },
+    "monthly": {
+      "text": "Monthly",
+      "cls": "toggle-text monthly",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "0px 0px 0px 0px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 18,
+      "w": 67.5
+    },
+    "annual": {
+      "text": "Annual",
+      "cls": "toggle-text annual",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "0px 0px 0px 0px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 18,
+      "w": 55.5
+    },
+    "switch": {
+      "text": "",
+      "cls": "toggle-switch",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgb(135, 135, 135)",
+      "borderRadius": "100%",
+      "padding": "0px 0px 0px 0px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 28,
+      "w": 28
+    },
+    "cards": [
+      {
+        "text": "Free 1 user 1 canvas $0 Get started for free Includes: In-line file attachments ",
+        "cls": "plan-container grey",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(17, 17, 17)",
+        "backgroundColor": "rgb(245, 245, 244)",
+        "borderRadius": "0px",
+        "padding": "0px 0px 40px 0px",
+        "border": "1px solid rgba(80, 80, 80, 0.3)",
+        "boxShadow": "none",
+        "h": 744.2,
+        "w": 280
+      },
+      {
+        "text": "Includes: In-line file attachments Export to CSV Comment labels Assigning commen",
+        "cls": "plan-details",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(17, 17, 17)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "padding": "0px 0px 0px 0px",
+        "border": "0px none rgb(17, 17, 17)",
+        "boxShadow": "none",
+        "h": 351,
+        "w": 209.3
+      },
+      {
+        "text": "In-line file attachments Export to CSV Comment labels Assigning comments User me",
+        "cls": "pricing-details-list",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(17, 17, 17)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "padding": "0px 0px 0px 27.2031px",
+        "border": "0px none rgb(17, 17, 17)",
+        "boxShadow": "none",
+        "h": 324,
+        "w": 209.3
+      },
+      {
+        "text": "Pro 2 users 3 canvases $35/mo Get started for free Includes: Everything in Free ",
+        "cls": "plan-container",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(17, 17, 17)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "padding": "0px 0px 40px 0px",
+        "border": "1px solid rgba(80, 80, 80, 0.3)",
+        "boxShadow": "none",
+        "h": 744.2,
+        "w": 280
+      }
+    ],
+    "price": {
+      "text": "$0",
+      "cls": "plan-title bold bottom-padding",
+      "fontSize": "21px",
+      "fontWeight": "600",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "padding": "0px 0px 0px 0px",
+      "border": "0px none rgb(17, 17, 17)",
+      "boxShadow": "none",
+      "h": 21,
+      "w": 279
+    }
+  },
+  "blog": {
+    "vars": {
+      "--black": "#000",
+      "--midnight-blue": "#282876",
+      "--royal-blue": "#3c5a9a1a",
+      "--light-slate-grey": "#8181ac",
+      "--alice-blue": "#e1f4ff",
+      "--white": "white",
+      "--medium-slate-blue": "#836ae4",
+      "--ghost-white": "#f4f5fd",
+      "--medium-purple": "#a994fa",
+      "--coral": "#ff6a39",
+      "--grey": "#505050",
+      "--thistle": "#f9e1ff",
+      "--thistle-2": "#ffe6e9",
+      "--ivory": "#f9ffd9"
+    },
+    "body": {
+      "text": "Features Pricing Customers Reviews Blog Log in Try for free ",
+      "cls": "",
+      "fontFamily": "Inter, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "0px"
+    },
+    "h1": null,
+    "nav": {
+      "text": "Features",
+      "cls": "link nav-link",
+      "fontFamily": "Inter, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px"
+    },
+    "card": null
+  },
+  "customers": {
+    "body": {
+      "text": "FeaturesHow it worksPricingReviewsCustomersBlog Lo",
+      "cls": "pastel-app bg-gray-100",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgb(245, 245, 244)",
+      "borderRadius": "0px",
+      "h": 900,
+      "w": 1440
+    },
+    "h1": {
+      "text": "Customers",
+      "cls": "tw-y2mbk mb-16",
+      "fontFamily": "Figtree, Helvetica, Arial, sans-serif",
+      "fontSize": "36px",
+      "fontWeight": "400",
+      "color": "rgb(28, 25, 23)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "h": 49.5,
+      "w": 1248
+    },
+    "cta": null,
+    "nav": {
+      "text": "Features",
+      "cls": "",
+      "fontFamily": "Figtree, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "h": 19,
+      "w": 102.6
+    }
+  },
+  "help": {
+    "body": {
+      "fontFamily": "system-ui, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "fontSize": "16px",
+      "color": "rgb(26, 26, 26)",
+      "backgroundColor": "rgb(255, 255, 255)"
+    },
+    "h1": {
+      "fontFamily": "system-ui, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "fontSize": "28px",
+      "fontWeight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    "search": {
+      "backgroundColor": "rgba(255, 255, 255, 0.2)",
+      "borderRadius": "10px",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "18px",
+      "border": "1px rgba(0, 0, 0, 0.08)"
+    },
+    "vars": {
+      "--body-bg": "rgb(255, 255, 255)",
+      "--body-primary-color": "#1a1a1a",
+      "--body-secondary-color": "#595959",
+      "--header-bg": "rgb(79, 119, 255)",
+      "--header-color": "hsl(0, 0%, 100%)"
+    }
+  },
+  "status": {
+    "body": {
+      "fontFamily": "Inter, \"Inter Fallback\", \"SF Pro Display\", -apple-system, system-ui, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "16px",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    "h1": {
+      "fontFamily": "Inter, \"Inter Fallback\", \"SF Pro Display\", -apple-system, system-ui, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "color": "rgb(0, 0, 0)"
+    },
+    "vars": {
+      "--brand-color": "#111",
+      "--ok-color": "#00bc86",
+      "--disrupted-color": "#ff8c00",
+      "--degraded-color": "#ECC94B",
+      "--down-color": "#8f485d",
+      "--notice-color": "#004968",
+      "--unknown-color": "#DFE0E1"
+    },
+    "buttons": [
+      "Open",
+      "Get updates",
+      "Dark mode",
+      "Read uptime graph for Screenshot service",
+      "Read uptime graph for Proxy service",
+      "Read uptime graph for Website",
+      "Read uptime graph for API service",
+      "Read uptime graph for Frontend applicati"
+    ]
+  },
+  "faq": {
+    "closed": {
+      "fontSize": "24px",
+      "fontWeight": "400",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    "openAnswer": {
+      "fontSize": "17.6px",
+      "color": "rgb(17, 17, 17)",
+      "lineHeight": "26.4px",
+      "text": "Pastel is a visual feedback and QA tool used by digital agencies, freelancers, a"
+    }
+  }
+}
