@@ -4800,7 +4800,7 @@
       "description": "Escape the everyday and immerse yourself in nature",
       "status": "pending",
       "package": null,
-      "notes": "https://www.raus.life/ has a newsletter signup and no account sign-in. Cookie banner set to necessary only.",
+      "notes": "https://www.raus.life/ has a newsletter signup and no account sign-in. Cookie banner set to necessary only. Public walk 2026-11-21: /login is the styled 404. No signed-in surface. Public package in PR 1494 at 04e32b29e. catalog.json not in that PR. Date picker did not open. Shop, finder, companion, and business hosts were not entered. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 14
