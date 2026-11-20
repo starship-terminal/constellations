@@ -416,7 +416,7 @@
      "var": "--color-paper",
      "type": "color",
      "source": "css-var --color-paper resolved (raw/css-vars.json)",
-     "description": "Declared paper lab(96.648 0.43 1.2) — the warm off-white card surface (element-tile measures it)."
+     "description": "Declared paper lab(96.648 0.43 1.2) — the warm off-white card surface."
     },
     "arena": {
      "var": "--color-arena",
@@ -494,10 +494,10 @@
     "description": "Declared radius xs."
    },
    "full": {
-    "value": "33554400px",
+    "value": "9999px",
     "type": "dimension",
-    "source": "computed borderTopLeftRadius of signup-cta default (raw/components-computed.json)",
-    "description": "rounded-full computes to the CSS maximum 3.35544e+07px — every pill control (CTAs, tabs, menu button, Next)."
+    "source": "computed borderTopLeftRadius of signup-cta default (raw/components-computed.json), 3.35544e+07px",
+    "description": "rounded-full computes to the CSS maximum 3.35544e+07px, written 9999px — every pill control (CTAs, tabs, menu button, Next)."
    },
    "card-quarter": {
     "value": "25%",
@@ -1435,7 +1435,7 @@
   },
   "nav-link-size": {
    "value": "15px",
-   "type": "fontSize",
+   "type": "dimension",
    "source": "computed fontSize of nav-link default (raw/components-computed.json)",
    "description": "Nav link 15px/22."
   },
@@ -1466,8 +1466,8 @@
   "hero-search-height": {
    "value": "58px",
    "type": "dimension",
-   "source": "computed height of hero-search default (raw/components-computed.json)",
-   "description": "Home hero search pill height (~82px)."
+   "source": "computed height of hero-search default (raw/components-computed.json); read from the wrong element (the header's Log in / Sign up group, 204 x 58, not the hero search pill); recapture needed",
+   "description": "Read from the wrong element: the header's Log in / Sign up group (204 x 58), not the hero search pill; recapture needed."
   },
   "tab-height": {
    "value": "40.0156px",
