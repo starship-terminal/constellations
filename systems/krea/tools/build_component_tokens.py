@@ -48,13 +48,11 @@ def lit(value, ty, src, desc):
 SPEC = {
     "_about": (
         "Krea public tokens, 2026-11-18. core scales come from the Tailwind "
-        "@theme layer resolved with html.dark. light holds the painted dark "
-        "semantic roles (the product's only public theme; the set is named "
-        "light because the catalog expects a light semantic set, and dark "
-        "stays empty). component holds measured control values."
+        "@theme layer resolved with html.dark. dark holds the painted "
+        "semantic roles (the product's only public theme; there is no light "
+        "set). component holds measured control values."
     ),
     "core": {},
-    "light": {},
     "dark": {},
     "component": {},
 }
@@ -109,7 +107,7 @@ for key, name in (("in", "--ease-in"), ("out", "--ease-out"), ("in-out", "--ease
     if resolved(name):
         ease[key] = var(name, "cubicBezier")
 
-# --- semantic roles, the painted dark theme, stored as the light set ---
+# --- semantic roles, the painted dark theme ---
 # Map shadcn names that resolved. Prefer --color-* when the harvest stored them as colors.
 roles = {
     "page": "--background",
@@ -133,7 +131,7 @@ roles = {
     "sidebar-border": "--sidebar-border",
     "sidebar-primary": "--sidebar-primary",
 }
-sem = SPEC["light"].setdefault("color", {})
+sem = SPEC["dark"].setdefault("color", {})
 for key, name in roles.items():
     if resolved(name):
         sem[key] = var(name, "color", description=f"Painted on html.dark ({name}).")

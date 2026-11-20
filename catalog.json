@@ -1248,7 +1248,7 @@
         "route": "public-web",
         "version": "www.apollographql.com, 2026-11-10; release not exposed",
         "durationMin": null,
-        "durationNote": "not timed; the capture ran across several sessions on 2026-11-10, and per-shot timestamps are kept in raw/full/*.capture.json",
+        "durationNote": "not timed; the capture ran across several sessions on 2026-11-10. Per-shot timestamps were kept with the full-colour page captures, which stay outside the repo",
         "gaps": "Apollo Studio and every authenticated surface (login/signup pages captured at rest only); consent answers, form submission, checkout and downloads deliberately uncaptured; nav search overlay, mobile menu drawer, open FAQ rows and carousel/video play states not captured",
         "pr": "https://github.com/c-wenlong/designs/pull/449"
       }
@@ -16326,7 +16326,7 @@
       "captured": "2026-11-18",
       "access": "read-only (the home shell, pricing, enterprise, blog, plugins, MCP, the image tool, docs, terms and the login card are public; a Continue with Email attempt on 2026-11-18 was stopped by Cloudflare Turnstile: GET /api/auth/email-flow returned 400 captcha_failed with no visible widget, so assets, train, nodes, account, billing, API keys, checkout and generation remain behind sign-in; Sign in, Sign up, OAuth, Book a call, Get Pro and Generate were measured, never followed except that one Email continue; the prompt and email fields were filled; consent overlays were hidden, never answered)",
       "themes": [
-        "light"
+        "dark"
       ],
       "widths": [
         1440,
@@ -16339,13 +16339,13 @@
         "cover": "systems/krea/screenshots/home-dark-default.png",
         "icon": "systems/krea/icon.png",
         "swatches": {
-          "light": {
-            "page": "light.color.page-950",
-            "surface": "light.color.surface",
-            "text": "light.color.text",
-            "muted": "light.color.text-muted",
-            "accent": "light.color.accent",
-            "border": "light.color.border"
+          "dark": {
+            "page": "dark.color.page-950",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text",
+            "muted": "dark.color.text-muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
           }
         },
         "fonts": [
@@ -16355,7 +16355,7 @@
       },
       "capture": {
         "method": "public-web",
-        "source": "www.krea.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass at 1x (the page forces devicePixelRatio to 1). Computed styles and crops from the live DOM. The Tailwind v4 theme layer and the .dark semantic roles were resolved under html.dark. The painted dark roles are stored in the light token set because the catalog reads a light semantic set. Everything past login is a documented authenticated boundary",
+        "source": "www.krea.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass at 1x (the page forces devicePixelRatio to 1). Computed styles and crops from the live DOM. The Tailwind v4 theme layer and the .dark semantic roles were resolved under html.dark. The painted roles are the token file's dark set; there is no light set. Everything past login is a documented authenticated boundary",
         "timestamp": "2026-11-18T04:00:00Z",
         "harness": "Grok Build",
         "model": "grok-4.7",
@@ -16746,6 +16746,7 @@
         "dark",
         "light"
       ],
+      "defaultTheme": "dark",
       "widths": [
         1440,
         390
@@ -25011,6 +25012,7 @@
         "colors": "dark.",
         "typography": "core.typography."
       },
+      "notes": "The cover and every screenshot are reconstructions drawn with Pillow from the measured boxes and colours (tools/build_package.py --drawings), not live captures: the preview browser produced no screenshot frames.",
       "preview": {
         "cover": "systems/opensea/screenshots/home-dark-default.png",
         "icon": "systems/opensea/icon.png",

@@ -60,7 +60,7 @@ class Rebuild(unittest.TestCase):
 
     def test_colours_are_srgb(self):
         """Contrast checks and DESIGN.md parse hex and rgba only (14-18: oklch strings were committed)."""
-        for set_name in ("core", "light"):
+        for set_name in ("core", "dark"):
             for path, leaf in leaves(self.tokens[set_name]):
                 if leaf["$type"] == "color" and not str(leaf["$value"]).startswith("{"):
                     self.assertRegex(leaf["$value"], r"^(#[0-9a-f]{6}|rgba\(\d+, \d+, \d+, [\d.]+\))$", f"{set_name}.{path}")
@@ -75,7 +75,7 @@ class Rebuild(unittest.TestCase):
         """nav-signin's outline is none, so its ring is the box-shadow spread, not the unpainted outlineColor."""
         comps = json.loads((PKG / "raw" / "components-computed.json").read_text())["components"]
         sty = comps["nav-signin"]["states"]["focus-visible"]["style"]
-        focus = self.tokens["light"]["component"]["focus"]
+        focus = self.tokens["dark"]["component"]["focus"]
         self.assertEqual(sty["outlineStyle"], "none")
         self.assertNotIn("outline", focus)
         layers = re.findall(r"((?:rgba?|oklab)\([^)]*\)) 0px 0px 0px (\d+)px", sty["boxShadow"])
