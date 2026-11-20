@@ -30,6 +30,9 @@ class StyleGuide(unittest.TestCase):
                 if style.startswith("font-family:"):
                     self.assertIn("font-size:", style)
                 self.assertNotIn("{", style)  # an unresolved {alias} is not CSS
+                if style.startswith("font:"):
+                    # The proprietary faces are not loaded, so each specimen keeps the body's fallback.
+                    self.assertIn("Helvetica, Arial, sans-serif", style)
 
 
 if __name__ == "__main__":

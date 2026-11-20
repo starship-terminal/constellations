@@ -54,6 +54,7 @@ for name, token in flat(T["light"]):
         f'<span>{name}</span><code>{token["$value"]}</code></div>'
     )
 
+FALLBACK = "Helvetica, Arial, sans-serif"  # the body's fallback, which the note promises
 type_rows = []
 for name, token in flat(T["core"]):
     if token["$type"] != "typography":
@@ -61,7 +62,8 @@ for name, token in flat(T["core"]):
     v = token["$value"]
     type_rows.append(
         # The family is an alias ({font.family.favorit}): resolve it to its custom property.
-        f'<p class="type" style="font: {alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])};'
+        # The proprietary faces are not loaded here, so the guide's own fallback follows the token's family.
+        f'<p class="type" style="font: {alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}, {FALLBACK};'
         f'letter-spacing:{alias(v["letterSpacing"])}">{name} · SSENSE</p>'
     )
 
