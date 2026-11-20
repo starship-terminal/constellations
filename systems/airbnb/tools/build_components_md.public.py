@@ -55,9 +55,15 @@ def colour(c, tokens=True):
         tok = BY_COLOR.get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
-    c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
-               lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
-    return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+    # one pass over both spellings, so a colour labelled from color(srgb ...)
+    # is never re-matched as rgba() and labelled a second time
+    def sub(m):
+        if m.group(1) is not None:
+            return label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4)))
+        return label(norm(*m.group(5, 6, 7), m.group(8)))
+
+    return re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)"
+                  r"|rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", sub, c)
 
 
 def sides(t, r, b, l):
@@ -442,6 +448,15 @@ if LAYOUT:
     for page in ["home", "search", "room", "help", "host"]:
         W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390)) + " |")
     W()
+def covers(x, st):
+    """True when a painted layer fills or frames at least 90% of the component's box. The capture
+    records a layer's size but not its offset, so the most it can cover is the smaller width times
+    the smaller height (the kit's covering_layer rule)."""
+    rw, rh = st["rect"]["w"], st["rect"]["h"]
+    dims = [float(n) for n in re.findall(r"[\d.]+", x.get("size", ""))[:2]]
+    return len(dims) == 2 and bool(rw and rh) and min(dims[0], rw) * min(dims[1], rh) >= 0.9 * rw * rh
+
+
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
@@ -460,8 +475,10 @@ for k in ["listing-card", "result-card", "search-bar", "search-panel-open", "hel
     # property by property, each from the layer that actually paints it, so a
     # real root value is never overwritten and a missing one (reserve-card's
     # shadow lives on the aside, not the white inner div) is not lost
+    # Only a layer that covers at least 90% of the root's box can stand in for
+    # it: a divider, badge or CTA inside the card is not the card's look.
     if ("radius" not in p or p["background"] == "transparent" or "border" not in p or "shadow" not in p) and st.get("paint"):
-        paints = st["paint"]
+        paints = [x for x in st["paint"] if covers(x, st)]
         p = dict(p)
 
         def first(k):
