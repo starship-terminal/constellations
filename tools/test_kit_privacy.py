@@ -525,7 +525,7 @@ class JavaScriptHalves(unittest.TestCase):
             (snaps / "home.html").write_text('<html><head><style>img[src="/avatar?account_id=12345"]{--avatar-size:32px}'
                                              ' a[href=/u?session=abc]{--link:#00f} :root{--bg:#fff}</style></head><body></body></html>')
             res = subprocess.run([NODE, str(pkg / "tools/capture/vars.mjs")], capture_output=True, text=True, timeout=120,
-                                 env={**os.environ, "SNAPS": str(snaps), "PLAYWRIGHT": PW})
+                                 env={**os.environ, "SNAPS": str(snaps), "PLAYWRIGHT": PW, "KIT_EXAMPLE": "1"})
             self.assertEqual(res.returncode, 0, res.stderr[-2000:])
             saved = (pkg / "raw/css-vars.json").read_text()
         self.assertIn('img[src=\\"/avatar\\"]', saved)

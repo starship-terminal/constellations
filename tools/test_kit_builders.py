@@ -2,6 +2,7 @@
 small invented package: what they write, and that a rerun writes the same bytes. Run with `make test`;
 the build-measurements halves need node and are skipped without it."""
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -45,7 +46,8 @@ def package(d, builder, computed):
 
 
 def build(pkg):
-    res = subprocess.run([sys.executable, str(pkg / "tools" / "build_components_md.py")], capture_output=True, text=True, timeout=60)
+    res = subprocess.run([sys.executable, str(pkg / "tools" / "build_components_md.py")], capture_output=True, text=True, timeout=60,
+                         env={**os.environ, "KIT_EXAMPLE": "1"})   # the kit's own example, run as it is
     if res.returncode:
         raise AssertionError(res.stderr[-2000:])
     return (pkg / "components.md").read_text()
@@ -212,7 +214,8 @@ class MeasurementBuilders(unittest.TestCase):
         shutil.copy(KIT / "capture/css-colour.mjs", pkg / "tools/capture/css-colour.mjs")
         shutil.copy(KIT / "capture" / route / "build-measurements.mjs", pkg / "tools/capture" / route / "build-measurements.mjs")
         (pkg / "raw/components-computed.json").write_text(json.dumps(computed))
-        res = subprocess.run([NODE, str(pkg / "tools/capture" / route / "build-measurements.mjs")], capture_output=True, text=True, timeout=60)
+        res = subprocess.run([NODE, str(pkg / "tools/capture" / route / "build-measurements.mjs")], capture_output=True, text=True, timeout=60,
+                             env={**os.environ, "KIT_EXAMPLE": "1"})
         self.assertEqual(res.returncode, 0, res.stderr)
         return (pkg / "raw/measurements.md").read_text()
 
