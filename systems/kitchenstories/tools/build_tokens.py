@@ -62,10 +62,10 @@ def norm_color(v):
         lvl = round(float(m.group(1)) * 2.55)
         a = float(m.group(2) or 1)
         return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    # CSS Color 4 / composited values pass through verbatim (lab, oklch, color-mix, ...)
-    if re.match(r"(ok)?lab\(|(ok)?lch\(|(ok)?color\(|color-mix\(", v.strip()):
-        return v.strip()
-    raise ValueError("not a colour: " + v)
+    # CSS Color 4 / composited values (lab, oklch, color-mix, ...) are refused rather than passed
+    # through: tools/catalog.py, the contrast checks and DESIGN.md read only hex and rgba, so a
+    # verbatim oklch() token would be a colour nothing can check. None is in raw today.
+    raise ValueError("not a colour this builder converts: " + v)
 
 
 DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
