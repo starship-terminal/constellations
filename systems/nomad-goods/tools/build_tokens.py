@@ -50,6 +50,15 @@ def lengths(text):
     return re.findall(r"-?\d+(?:\.\d+)?px", text)
 
 
+def shadow_lengths(text):
+    """offset-x, offset-y, blur and spread of a one-layer computed box-shadow, colour removed."""
+    rest = re.sub(r"rgba?\([^)]*\)", "", text)
+    found = lengths(rest)
+    if len(found) != 4:
+        raise SystemExit(f"expected four lengths in the shadow {text!r}")
+    return found
+
+
 def hand(token, stylesheet):
     """Relabel a token whose value was typed in from a stylesheet that raw/ does not hold."""
     token["$extensions"]["evidence"] = X
@@ -129,8 +138,11 @@ def typo(family, reading, source, weight=None, tracking=None):
     else:
         fills.append(f"font-weight {weight} is the class's weight on the other readings, not read here")
     if tracking is None:
-        ls = r.get("letterSpacing", "normal")
-        if ls == "normal":
+        ls = r.get("letterSpacing")
+        if ls is None:
+            tracking = "0px"
+            fills.append("letter-spacing not read, written 0px")
+        elif ls == "normal":
             tracking = "0px"
             fills.append("letter-spacing computed normal, written 0px")
         else:
@@ -272,10 +284,7 @@ def build():
             "field-ring": shadow(
                 {
                     "color": hexes(R("fieldMd.boxShadow"))[0],
-                    "offsetX": "0px",
-                    "offsetY": "0px",
-                    "blur": "0px",
-                    "spread": lengths(R("fieldMd.boxShadow"))[-1],
+                    **dict(zip(("offsetX", "offsetY", "blur", "spread"), shadow_lengths(R("fieldMd.boxShadow")))),
                     "inset": "inset" in R("fieldMd.boxShadow"),
                 },
                 ".field inset ring, computed on the search field (fieldMd.boxShadow)",
@@ -326,7 +335,7 @@ def build():
             "inverse": color("{core.color.white}", "hero h1 and announcement computed rgb(255, 255, 255)"),
         },
         "border": {
-            "default": color("#0000001a", "field inset ring #0000001a"),
+            "default": color(hexes(R("fieldMd.boxShadow"))[0], "field inset ring (fieldMd.boxShadow)"),
             "strong": color("{core.color.black}", "button-dark border #000"),
             "focus": color("{core.color.black}", "focus-visible outline 2px solid #000"),
             "error": hand(color("{core.color.danger}", "fields.css .field-error #e3163b"), "fields.css"),
@@ -349,7 +358,7 @@ def build():
                 "text": color("{core.color.white}", "button-dark color"),
                 "radius": dim("{core.radius.pill}", "button-md computed 100px"),
                 "height": dim("{core.size.control-md}", "button-md computed 48px"),
-                "padding": dim("24px", "button-md computed padding-inline 24px"),
+                "padding": dim(lengths(R("buttonDarkMd.padding"))[1], "button-md computed padding-inline (buttonDarkMd.padding)"),
             },
             "button-secondary": {
                 "background": color("{core.color.white}", "button-light gradient starts rgb(255, 255, 255)"),
@@ -419,9 +428,17 @@ def check(doc):
                 if ref not in flat:
                     raise SystemExit(f"{path}: alias {{{ref}}} resolves to nothing")
         v = t["$value"]
+        if isinstance(v, str) and "{" in v and t["$type"] in ("color", "dimension", "duration"):
+            # an alias must be the whole value and point at a token of the same type
+            m = re.fullmatch(r"\{([^{}]+)\}", v)
+            if not m:
+                raise SystemExit(f"{path}: {v!r} is not one whole alias")
+            if flat[m.group(1)]["$type"] != t["$type"]:
+                raise SystemExit(f"{path}: alias {v} points at a {flat[m.group(1)]['$type']}, not a {t['$type']}")
+            v = flat[m.group(1)]["$value"]
         if t["$type"] == "duration" and not re.fullmatch(r"\d+(\.\d+)?(ms|s)", v):
             raise SystemExit(f"{path}: duration {v!r} is not a time")
-        if t["$type"] == "dimension" and not v.startswith("{") and not re.fullmatch(r"-?\d+(\.\d+)?px", v):
+        if t["$type"] == "dimension" and not re.fullmatch(r"-?\d+(\.\d+)?px", v):
             raise SystemExit(f"{path}: dimension {v!r} is not one px length")
     return len(flat)
 

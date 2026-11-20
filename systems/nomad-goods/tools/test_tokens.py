@@ -80,19 +80,54 @@ class Builder(unittest.TestCase):
             build_tokens.R("nope.width")
 
     def test_measured_colours_and_lengths_are_in_raw(self):
-        raw = (ROOT / "raw" / "readings.json").read_text()
-        rgb = {"#%02x%02x%02x" % tuple(int(x) for x in m)
-               for m in __import__("re").findall(r"rgba?\((\d+),\s*(\d+),\s*(\d+)", raw)}
+        colours, lengths = raw_values()
         for path, t in leaves(TOKENS["core"]):
             if t["$extensions"]["evidence"] != "Measured" or not isinstance(t["$value"], str):
                 continue
             if t["$type"] == "color":
-                self.assertIn(t["$value"][:7], rgb, path)
-            elif t["$type"] == "dimension":   # a px length, or a viewport width recorded as a number
-                self.assertTrue(f'"{t["$value"]}' in raw or f'{t["$value"][:-2]},' in raw or f' {t["$value"]}' in raw, path)
+                self.assertIn(t["$value"], colours, path)
+            elif t["$type"] == "dimension":
+                self.assertIn(t["$value"], lengths, path)
+
+    def test_the_raw_lookup_is_exact(self):
+        colours, lengths = raw_values()
+        self.assertNotIn("3px", lengths)            # "243," in an rgb() is not a 3px reading
+        self.assertIn("#00000099", colours)        # the phone-menu scrim keeps its alpha
+        self.assertNotIn("#00000001", colours)
+
+    def test_an_alias_dimension_must_point_at_a_dimension(self):
+        for bad in ("{core.color.page}", "{core.space.8}garbage"):
+            doc = copy.deepcopy(TOKENS)
+            doc["light"]["component"]["card"]["radius"]["$value"] = bad
+            with self.assertRaises(SystemExit, msg=bad):
+                build_tokens.check(doc)
 
     def test_no_success_colour_is_invented(self):
         self.assertNotIn("success", TOKENS["light"]["status"])
+
+
+def raw_values():
+    """Every colour (#rrggbb, or #rrggbbaa when its alpha is below 1) and every px length that a string in
+    raw/readings.json holds, plus the viewport widths, parsed exactly rather than found as substrings."""
+    import re
+    data = json.loads((ROOT / "raw" / "readings.json").read_text())
+    colours, lengths = set(), set()
+
+    def visit(node):
+        if isinstance(node, dict):
+            for v in node.values():
+                visit(v)
+        elif isinstance(node, list):
+            for v in node:
+                visit(v)
+        elif isinstance(node, str):
+            colours.update(build_tokens.hexes(node) if "rgb" in node else [])
+            colours.update(h.lower() for h in re.findall(r"#[0-9a-fA-F]{6}\b", node))
+            lengths.update(re.findall(r"(?<![\w.])-?\d+(?:\.\d+)?px\b", node))
+
+    visit(data["computed"])
+    lengths.update(f"{data[v]['innerWidth']}px" for v in ("viewportDesktop", "viewportPhone"))
+    return colours, lengths
 
 
 def leaves(node, path="core"):
