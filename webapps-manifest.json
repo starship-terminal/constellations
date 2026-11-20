@@ -3122,7 +3122,7 @@
       "description": "Track your reading and discover new books",
       "status": "pending",
       "package": null,
-      "notes": "https://literal.club/register created an account with the capture inbox. The home page is signed in. Email verification has not arrived. Product not walked.",
+      "notes": "https://literal.club/register created an account with the capture inbox. The home page is signed in. Email verification has not arrived. Product not walked. Signed-in walk: home showed an email-verification banner and an empty library. Preview frames then stopped, so no screenshots were saved. No PR. Profile, phone, and light theme were not reached. login-extracted stays not-started until a review with screens exists.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 10
@@ -6619,9 +6619,9 @@
       "description": "Privacy-friendly Google Analytics alternative",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://visitors.now/login Continue with Google signed in and opened project setup. Setup not filled. Product not walked.",
+      "notes": "Email probe: https://visitors.now/login Continue with Google signed in and opened project setup. Setup not filled. Product not walked. Signed-in walk: https://visitors.now/login is a sign-in wall (email, Google, GitHub). https://visitors.now/dashboard returned to that wall. Session was not present. Public screens in PR 1478 (c9b33be2e). Post-auth pages were not reached. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 20
     },
     {
