@@ -61,21 +61,49 @@ class CssColour(unittest.TestCase):
         self.assertEqual(json.loads(res.stdout), ["#7d2329"] * len(same) + ["#000000 @ 0.85", "#000000", "#0080ff"])
 
 
-# Node test files with a runner of their own elsewhere under tools/ (test_capture_screenshot.py, test_kit_motion.py).
-NODE_RUN_ELSEWHERE = {"test_screenshot.mjs", "test_motion.mjs"}
+# Node test files with a runner of their own elsewhere under tools/, and that runner.
+NODE_RUN_ELSEWHERE = {"test_screenshot.mjs": "test_capture_screenshot.py", "test_motion.mjs": "test_kit_motion.py"}
+
+
+def node_tests_ran(f):
+    """Run one node test file with the TAP reporter: (exit code, output, the names of the tests that ran). A
+    file that registers no test is still reported as one passing test, named after the file, so that one
+    is not counted."""
+    res = subprocess.run([NODE, "--test", "--test-reporter=tap", str(f)], capture_output=True, text=True, timeout=120)
+    names = [m for m in re.findall(r"(?m)^ok \d+ - (.+)$", res.stdout) if m.strip() != str(f)]
+    return res.returncode, res.stdout + res.stderr, names
 
 
 @unittest.skipIf(NODE is None, "node is not on PATH")
 class KitNodeTests(unittest.TestCase):
     def test_every_other_kit_node_test_file_passes(self):
-        # Any tools/kit/**/test_*.mjs, so a new one runs under `make test` without its own runner.
+        # Any tools/kit/**/test_*.mjs, so a new one runs under `make test` without its own runner. The TAP
+        # reporter is named (node picks its spec reporter on CI) so a file whose tests never ran is caught too.
         files = sorted(p for p in (HERE / "kit").rglob("test_*.mjs") if p.name not in NODE_RUN_ELSEWHERE)
-        self.assertIn(CAPTURE / "test_readings.mjs", files)
+        for must in (CAPTURE / "test_readings.mjs", CAPTURE / "public/test_pin.mjs"):
+            self.assertIn(must, files)
         for f in files:
-            res = subprocess.run([NODE, "--test", str(f)], capture_output=True, text=True, timeout=120)
-            self.assertEqual(res.returncode, 0, f"{f.relative_to(HERE.parent)}\n{res.stdout[-3000:]}{res.stderr[-1000:]}")
-        for name in NODE_RUN_ELSEWHERE:
-            self.assertTrue((CAPTURE / name).is_file(), name)
+            with self.subTest(file=str(f.relative_to(HERE.parent))):
+                code, out, names = node_tests_ran(f)
+                self.assertEqual(code, 0, out[-4000:])
+                self.assertRegex(out, r"(?m)^# fail 0$")
+                self.assertTrue(names, f"no test ran:\n{out[-2000:]}")
+
+    def test_a_file_that_registers_no_test_is_not_counted_as_run(self):
+        # node reports an empty file as "ok 1 - <the file>" and "# pass 1"
+        with tempfile.TemporaryDirectory() as d:
+            empty, one = Path(d) / "test_empty.mjs", Path(d) / "test_one.mjs"
+            empty.write_text("import test from 'node:test';\n")
+            one.write_text("import test from 'node:test';\ntest('one', () => {});\n")
+            self.assertEqual(node_tests_ran(empty)[2], [])
+            self.assertEqual(node_tests_ran(one)[2], ["one"])
+
+    def test_every_kit_node_test_file_has_a_runner(self):
+        # the ones left out above are run by their own wrapper, which must exist and name the file
+        for name, runner in NODE_RUN_ELSEWHERE.items():
+            with self.subTest(file=name):
+                self.assertTrue((CAPTURE / name).is_file(), name)
+                self.assertIn(f"kit/capture/{name}", (HERE / runner).read_text(), runner)
 
 
 @unittest.skipIf(NODE is None, "node is not on PATH")
@@ -102,6 +130,102 @@ def icons_collect():
 
 @unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
 class IconPaint(unittest.TestCase):
+    def collect(self, page):
+        """collect() run in Chromium on one page: the saved html of each icon, or None for one left out."""
+        script = (f"const pw = await import({json.dumps(PLAYWRIGHT)}); const {{ chromium }} = pw.default ?? pw;\n"
+                  f"{icons_collect()}\n"
+                  "const b = await chromium.launch(); const p = await b.newPage();\n"
+                  f"await p.setContent({json.dumps(page)});\n"
+                  "const list = await p.evaluate(collect); await b.close();\n"
+                  "console.log(JSON.stringify(list.map((x) => x && x.html)));")
+        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
+        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+        return json.loads(res.stdout)
+
+    def test_paint_a_group_inside_a_sprite_symbol_sets_is_kept(self):
+        # Train 20's review: a path in an imported symbol with no class or style of its own was left to
+        # inherit from the <use>, but a group around it supplied the paint through its class, and the cleanup
+        # dropped that class, so the line vanished. A shape that inherits from the sprite sheet stays
+        # recolourable (no paint written).
+        page = ("<style>.line{fill:none;stroke:#ff0000;stroke-width:2px}.dot{fill:#00ff00}</style>"
+                "<svg width='0' height='0' style='position:absolute'><symbol id='a' viewBox='0 0 24 24'>"
+                "<g class='line'><path d='M2 12h20'/></g><g style='fill:#0000ff'><circle cx='4' cy='4' r='2'/></g>"
+                "<path class='dot' d='M0 0h1v1z'/><path d='M3 3h1v1z'/></symbol></svg>"
+                "<button aria-label='Go' style='color:#333'><svg width='24' height='24'><use href='#a'/></svg></button>")
+        (html,) = self.collect(page)
+        paths = re.findall(r"<(?:path|circle)[^>]*>", html)
+        self.assertEqual(len(paths), 4, html)
+        self.assertIn('stroke="#ff0000"', paths[0])
+        self.assertIn('fill="none"', paths[0])
+        self.assertIn('stroke-width="2"', paths[0])
+        self.assertIn('fill="#0000ff"', paths[1])
+        self.assertIn('fill="#00ff00"', paths[2])
+        self.assertNotIn("fill=", paths[3])   # inherits from the <use>, so the icon can still be recoloured
+        self.assertNotIn("class=", html)
+        self.assertNotIn("style=", html)
+
+    def test_a_group_that_sets_only_a_stroke_leaves_the_fill_alone(self):
+        # Greptile on PR 1353: one differing property opened the whole copy, so the sprite sheet's default
+        # black fill was written onto an outline whose group set only a stroke, and the outline came out filled.
+        page = ("<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'>"
+                "<g style='stroke:#ff0000'><path d='M2 12h20'/></g><g style='fill:#00ff00'><path d='M0 0h4v4z'/></g></symbol></svg>"
+                "<button aria-label='Go'><svg width='24' height='24' fill='none'><use href='#s'/></svg></button>")
+        (html,) = self.collect(page)
+        outline, box = re.findall(r"<path[^>]*>", html)
+        self.assertIn('stroke="#ff0000"', outline)
+        self.assertNotIn("fill=", outline)   # the <use>'s fill="none" still applies
+        self.assertIn('fill="#00ff00"', box)
+        self.assertNotIn("stroke=", box)
+
+    def test_a_fill_in_the_icons_own_colour_still_follows_it(self):
+        # Greptile on 9d4bd6843: with the fill judged apart, an explicit fill="#000000" equal to the icon's
+        # colour (black text) under a stroke-only group stopped becoming currentColor, so it no longer recoloured
+        page = ("<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'>"
+                "<g style='stroke:#ff0000'><path fill='#000000' d='M2 12h20'/></g></symbol></svg>"
+                "<button aria-label='Go' style='color:#000000'><svg width='24' height='24'><use href='#s'/></svg></button>")
+        (html,) = self.collect(page)
+        (path,) = re.findall(r"<path[^>]*>", html)
+        self.assertIn('fill="currentColor"', path)
+        self.assertIn('stroke="#ff0000"', path)
+
+    def test_a_width_set_inside_leaves_the_stroke_colour_to_the_use(self):
+        # Train 25's review: a group that set only stroke-width counted as permission to copy the stroke
+        # colour too, so the sheet's red stroke was written where the <use> supplies blue
+        page = ("<svg width='0' height='0' style='position:absolute;stroke:#ff0000'><symbol id='s' viewBox='0 0 24 24'>"
+                "<g style='stroke-width:2px'><path d='M2 12h20'/></g></symbol></svg>"
+                "<button aria-label='Go'><svg width='24' height='24' fill='none' stroke='#0000ff'><use href='#s'/></svg></button>")
+        (html,) = self.collect(page)
+        (path,) = re.findall(r"<path[^>]*>", html)
+        self.assertIn('stroke-width="2"', path)
+        self.assertNotIn("stroke=", path.replace("stroke-width=", ""))   # the colour still comes from the <use>
+
+    def test_a_group_fill_equal_to_the_sheets_default_is_kept(self):
+        # Train 25's review: a group that sets the hidden sheet's default fill on purpose (black, by style or
+        # by class) looked like inherited paint, its paths got no fill, and the cleanup dropped the group's
+        # style, so under <svg fill="none"> the parts disappeared
+        page = ("<style>.ink{fill:#000000}</style>"
+                "<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'>"
+                "<g style='fill:#000000'><path d='M0 0h4v4z'/></g><g class='ink'><path d='M5 5h4v4z'/></g>"
+                "<path d='M9 9h1v1z'/></symbol></svg>"
+                "<button aria-label='Go' style='color:#333333'><svg width='24' height='24' fill='none'><use href='#s'/></svg></button>")
+        (html,) = self.collect(page)
+        styled, classed, plain = re.findall(r"<path[^>]*>", html)
+        self.assertIn('fill="#000000"', styled)
+        self.assertIn('fill="#000000"', classed)
+        self.assertNotIn("fill=", plain)   # nothing inside sets it, so the <use>'s fill="none" applies
+
+    def test_an_icon_drawn_from_another_files_sprite_is_left_out(self):
+        # finding 20-8: <use href="/icons/sprite.svg#x"> draws nothing in the saved file, so it was saved blank
+        page = ("<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'><path d='M0 0h24v24z'/></symbol></svg>"
+                "<button aria-label='A'><svg width='24' height='24'><use href='/icons/icon_definitions.svg#add'/></svg></button>"
+                "<button aria-label='B'><svg width='24' height='24'><use xlink:href='https://cdn.example.test/s.svg#x'/></svg></button>"
+                "<button aria-label='C'><svg width='24' height='24'><use href='#s'/></svg></button>")
+        got = self.collect(page)
+        self.assertEqual(len(got), 3)
+        self.assertIsNone(got[0])
+        self.assertIsNone(got[1])
+        self.assertIn('<symbol id="s"', got[2])
+
     def test_a_shared_gradient_keeps_its_styled_stop_colours(self):
         # Greptile on PR 1004: a gradient imported from the page whose stops are coloured by a class or a
         # style lost those colours when the copy's classes and styles were stripped, and drew black.
@@ -110,15 +234,7 @@ class IconPaint(unittest.TestCase):
                 "<stop offset='0' class='a'/><stop offset='1' style='stop-color:#00ff00;stop-opacity:0.4'/>"
                 "<stop offset='1' class='b'/><stop offset='1' stop-color='#123456'/></linearGradient></defs></svg>"
                 "<button aria-label='Go'><svg width='24' height='24' viewBox='0 0 24 24'><rect width='24' height='24' fill='url(#g)'/></svg></button>")
-        script = (f"const pw = await import({json.dumps(PLAYWRIGHT)}); const {{ chromium }} = pw.default ?? pw;\n"
-                  f"{icons_collect()}\n"
-                  "const b = await chromium.launch(); const p = await b.newPage();\n"
-                  f"await p.setContent({json.dumps(page)});\n"
-                  "const list = await p.evaluate(collect); await b.close();\n"
-                  "console.log(JSON.stringify(list.map((x) => x.html)));")
-        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
-        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
-        (html,) = json.loads(res.stdout)
+        (html,) = self.collect(page)
         stops = re.findall(r"<stop[^>]*>", html)
         self.assertEqual(len(stops), 4, html)
         self.assertIn('stop-color="#ff0000"', stops[0])
@@ -129,6 +245,25 @@ class IconPaint(unittest.TestCase):
         self.assertIn('stop-color="#123456"', stops[3])
         self.assertNotIn("class=", html)
         self.assertNotIn("style=", html)
+
+
+class Templates(unittest.TestCase):
+    def test_icon_names_header_is_the_columns_icons_mjs_reads(self):
+        # icons.mjs reads hash<TAB>name and skips the header row; a name<TAB>role header filled in as
+        # documented never matched a hash.
+        rows = [r.split("\t") for r in (CAPTURE / "icon-names.tsv").read_text().splitlines() if r and not r.startswith("#")]
+        self.assertEqual(rows[0], ["hash", "name"])
+
+    @unittest.skipIf(NODE is None, "node is not on PATH")
+    def test_render_refuses_a_scroll_flag_it_cannot_read(self):
+        with tempfile.TemporaryDirectory() as d:
+            for flag in ("scroll=main:120", "scroll=", "scroll=top"):
+                res = subprocess.run([NODE, str(CAPTURE / "signed-in/render.mjs"), d, "home-dark", flag], capture_output=True,
+                                     text=True, timeout=60, env={**os.environ, "KIT_EXAMPLE": "1"})
+                self.assertEqual(res.returncode, 2, (flag, res.stderr))
+                self.assertIn("scroll= takes a pixel offset, max or auto", res.stderr)
+        head = (CAPTURE / "signed-in/shots.tsv").read_text().splitlines()[0]
+        self.assertNotIn("<selector>", head)
 
 
 @unittest.skipIf(NODE is None, "node is not on PATH")

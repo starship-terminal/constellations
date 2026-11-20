@@ -147,7 +147,7 @@ def term_id(group: str, label: str) -> str:
 
 
 def build() -> dict:
-    snapshot = json.loads((ROOT / "app/src/data/refero-catalog-taxonomy.json").read_text())
+    snapshot = json.loads((ROOT / "app/src/data/refero-catalog-taxonomy.json").read_text(encoding="utf-8"))
     terms = {g["id"]: {t["label"]: term_id(g["id"], t["label"]) for t in g["terms"]} for g in snapshot["groups"]}
     rules = {}
     for scope, definitions in [("page", PAGE_RULES), ("ui", UI_RULES), ("ux", UX_RULES)]:
@@ -248,7 +248,7 @@ def main() -> None:
     args = parser.parse_args()
     result = build()
     if args.check:
-        committed = json.loads(OUTPUT.read_text()) if OUTPUT.exists() else None
+        committed = json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else None
         if committed != result and not (committed and matches_base(result, committed)):
             raise SystemExit("Media taxonomy seed is stale; run python3 app/scripts/build-media-taxonomy.py")
         print("Media taxonomy seed is current")
