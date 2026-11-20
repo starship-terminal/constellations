@@ -65,6 +65,15 @@ class CssColour(unittest.TestCase):
 NODE_RUN_ELSEWHERE = {"test_screenshot.mjs": "test_capture_screenshot.py", "test_motion.mjs": "test_kit_motion.py"}
 
 
+def node_tests_ran(f):
+    """Run one node test file with the TAP reporter: (exit code, output, the names of the tests that ran). A
+    file that registers no test is still reported as one passing test, named after the file, so that one
+    is not counted."""
+    res = subprocess.run([NODE, "--test", "--test-reporter=tap", str(f)], capture_output=True, text=True, timeout=120)
+    names = [m for m in re.findall(r"(?m)^ok \d+ - (.+)$", res.stdout) if m.strip() != str(f)]
+    return res.returncode, res.stdout + res.stderr, names
+
+
 @unittest.skipIf(NODE is None, "node is not on PATH")
 class KitNodeTests(unittest.TestCase):
     def test_every_other_kit_node_test_file_passes(self):
@@ -75,10 +84,19 @@ class KitNodeTests(unittest.TestCase):
             self.assertIn(must, files)
         for f in files:
             with self.subTest(file=str(f.relative_to(HERE.parent))):
-                res = subprocess.run([NODE, "--test", "--test-reporter=tap", str(f)], capture_output=True, text=True, timeout=120)
-                self.assertEqual(res.returncode, 0, f"{res.stdout[-3000:]}{res.stderr[-1000:]}")
-                self.assertRegex(res.stdout, r"(?m)^# pass [1-9]")
-                self.assertRegex(res.stdout, r"(?m)^# fail 0$")
+                code, out, names = node_tests_ran(f)
+                self.assertEqual(code, 0, out[-4000:])
+                self.assertRegex(out, r"(?m)^# fail 0$")
+                self.assertTrue(names, f"no test ran:\n{out[-2000:]}")
+
+    def test_a_file_that_registers_no_test_is_not_counted_as_run(self):
+        # node reports an empty file as "ok 1 - <the file>" and "# pass 1"
+        with tempfile.TemporaryDirectory() as d:
+            empty, one = Path(d) / "test_empty.mjs", Path(d) / "test_one.mjs"
+            empty.write_text("import test from 'node:test';\n")
+            one.write_text("import test from 'node:test';\ntest('one', () => {});\n")
+            self.assertEqual(node_tests_ran(empty)[2], [])
+            self.assertEqual(node_tests_ran(one)[2], ["one"])
 
     def test_every_kit_node_test_file_has_a_runner(self):
         # the ones left out above are run by their own wrapper, which must exist and name the file
