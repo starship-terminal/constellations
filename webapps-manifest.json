@@ -6551,9 +6551,9 @@
       "description": "Build interactive 3D and AR solutions online",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.vectary.com/login/ Continue with Google signed in and opened the app. Product not walked.",
+      "notes": "https://www.vectary.com/login/ showed Welcome to Vectary. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 20
     },
     {
