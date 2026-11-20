@@ -98,6 +98,21 @@ class ReadingsDriveRolesTest(unittest.TestCase):
                     code, _ = _build(one)
                     self.assertNotEqual(code, 0)
 
+class RecaptureFlagTest(unittest.TestCase):
+    """The builders refuse a recaptureMissed entry, so S() in the capture script
+    must clear the flag once the component is found again. The script drives a
+    browser and is not run in tests; this checks its source instead."""
+
+    def test_found_component_clears_recapture_missed(self):
+        src = (PKG / "tools" / "capture" / "public" / "measure.mjs").read_text()
+        body = src[src.index("async function S("):]
+        body = body[:body.index("\n}\n")]
+        miss = body.index("out.components[key].recaptureMissed = run;")
+        found = body.index("if (!(await loc.count()))")
+        after = body[body.index("return;", miss):]
+        self.assertLess(found, miss)
+        self.assertIn("delete out.components[key].recaptureMissed;", after.split("for (const st of list)")[0])
+
 
 if __name__ == "__main__":
     unittest.main()
