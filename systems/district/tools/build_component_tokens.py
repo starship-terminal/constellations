@@ -661,13 +661,20 @@ for key, comp, state, prop, group, prefer, desc in [
 # README's Known gaps; the capture script is fixed by edit, not yet re-run).
 # A token read from one says so, so a wrong-element reading never ships as the
 # component it is named for.
-WRONG_ELEMENT = {
-    "mv-h1": "an off-screen carousel slide title, not the listing heading",
-    "ev-h1": "an off-screen carousel slide title, not the listing heading",
-    "cm-h1": "an off-screen carousel slide title, not the listing heading",
-    "cm-filter": "the 632x500 sort dropdown panel, not a filter control",
-    "at-book": "the same show card as at-show, not a booking control",
-}
+# Each is flagged only while its reading still shows the fault, so a good
+# recapture clears it.
+def _rect(k):
+    return C[k]["states"]["default"].get("rect") or {}
+
+
+_OFFSCREEN = lambda k: _rect(k).get("x", 0) + _rect(k).get("w", 0) <= 0
+WRONG_ELEMENT = {k: what for k, what, bad in [
+    ("mv-h1", "an off-screen carousel slide title, not the listing heading", _OFFSCREEN),
+    ("ev-h1", "an off-screen carousel slide title, not the listing heading", _OFFSCREEN),
+    ("cm-h1", "an off-screen carousel slide title, not the listing heading", _OFFSCREEN),
+    ("cm-filter", "the 632x500 sort dropdown panel, not a filter control", lambda k: _rect(k).get("h", 0) >= 200),
+    ("at-book", "the same show card as at-show, not a booking control", lambda k: "at-show" in C and _rect(k) == _rect("at-show")),
+] if k in C and bad(k)}
 
 ty = SPEC["core"].setdefault("font", {}).setdefault("size", {})
 for key, comp, state, desc in [

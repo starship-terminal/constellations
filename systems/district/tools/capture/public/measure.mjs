@@ -129,8 +129,10 @@ function keepEarlier(c, state, e, earlierRun) {
   const err = String(e.message || e).slice(0, 200);
   const prev = c.states[state];
   if (prev && prev.style) {
+    // A state that already carried a rerunError before read was recorded is
+    // from an unknown earlier run: its date stays unknown (null).
+    if (prev.read === undefined) prev.read = prev.rerunError ? null : (prev.run || earlierRun);
     prev.rerunError = err;
-    prev.read ??= prev.run || earlierRun; // a second failed re-read keeps the first date
     prev.rerunOn = run;
   } else c.states[state] = { error: err };
 }

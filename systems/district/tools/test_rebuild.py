@@ -83,6 +83,18 @@ class RebuildTest(unittest.TestCase):
         self.assertIn("read from the wrong element; recapture needed", src)
         self.assertLess(self.C["ev-h1"]["states"]["default"]["rect"]["x"], 0)
 
+    def test_recaptured_heading_clears_the_flag(self):
+        root = pathlib.Path(self.tmp.name) / "recaptured"
+        shutil.copytree(self.root / "tools", root / "tools")
+        shutil.copytree(self.root / "raw", root / "raw")
+        path = root / "raw" / "components-computed.json"
+        J = json.loads(path.read_text())
+        J["components"]["ev-h1"]["states"]["default"]["rect"].update({"x": 80, "y": 120})
+        path.write_text(json.dumps(J))
+        subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, check=True, capture_output=True)
+        spec = json.loads((root / "raw" / "component-tokens.json").read_text())
+        self.assertNotIn("wrong element", spec["core"]["font"]["size"]["measured"]["display"]["source"])
+
     def test_dark_theme_comes_from_the_page(self):
         md = (PKG / "tools" / "build_components_md.py").read_text()
         self.assertNotIn("Server discovery", md)
