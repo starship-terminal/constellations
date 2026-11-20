@@ -91,6 +91,10 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 <!-- health:end -->
 
+## What to distrust
+
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
+
 ## Do and don't
 
 1. **Do keep the palette flat.** One `:root` palette of named neutrals and accents — `white`/`grey`/`black`/`blue`/`border` — resolved per host, no ramps. Take the per-host values from the `light`/`help`/`app`/`dark` sets in [tokens.json](tokens.json); never blend them. ([home-light-default](screenshots/home-light-default.png))

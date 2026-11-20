@@ -153,6 +153,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **`lib-card`, `blog-card`, `blog-h1` and `glass-card` read 0x0 or missed**: the selectors matched elements the page kept hidden, zero-sized or renamed — honest misses kept in the data, not gaps filled by hand. `glass-card` and `login-signup-link` mount nothing the selectors could settle on at all.
 - **The auth shell's `login-email`/`signup-email` are 0x0** because the app keeps the email step behind the SSO screen; the password field measured 336 x 24.
 - **`demo-terms`' `focused` state could not land a keyboard focus** (the real input is visually hidden behind its `label.form-checkbox`), so that reading is the label at rest — the `via` field says so.

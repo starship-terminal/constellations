@@ -96,6 +96,7 @@ A Next.js app on Tailwind v4 with a shadcn-style semantic layer on `:root`: `--c
 
 ## Boundaries
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - There is no auth surface on www.craft.do: Log in links out to docs.craft.do and was never followed; Try Craft Free and the platform buttons lead to /download and were never used.
 - Prices render in the served region's currency (SGD) — regional, not a universal figure.
 - The billing toggle was flipped for one screenshot and flipped back; nothing was purchased.

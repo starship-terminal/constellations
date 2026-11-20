@@ -211,6 +211,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **Post-login surfaces**: the seller dashboard, buyer library, payouts and settings were never reached — the capture was signed out end to end. Do not present this package's tokens as the dashboard's.
 - **Product/creator dark**: the subdomain's inline styles pin a light palette; no `product-dark-*` or `creator-dark-*` shots exist because the live page does not repaint. Any dark product page is a guess, not evidence.
 - **Search results**: the marketplace search fields were measured empty; no query was ever submitted.

@@ -98,6 +98,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## How the values were read
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
+
 | Step | What ran |
 |---|---|
 | Screenshots | `tools/capture/public/public.mjs` — 14 marketing pages + login/register/anonymous-editor + mobile passes at 1440 x 900 and 390 x 844 (default + stitched `-full`, bounded) |

@@ -94,6 +94,7 @@ A Next.js app on Tailwind utilities with a real semantic layer on `:root` — `-
 
 ## Boundaries
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - The signed-in library — the account, cart/checkout, asset downloads, the Pro purchase and the author dashboard — was never reached. /login is an OTP card whose Send code was never pressed.
 - The theme toggle was flipped for one dark screenshot and flipped back; it is a local UI switch, not an account setting.
 - The fixed cookie notice was hidden, never answered.

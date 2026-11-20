@@ -114,6 +114,7 @@ The marketing names are emitted under `core` at their natural paths (`color.prim
 
 ## What to distrust
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **Nothing dark paints.** Every signed-out surface is light-only (no toggle; the app's `.dark` class is declared but never applied, and the `[data-theme="dark"]` rules come from the third-party Decagon chat-widget sheet — an `external` provenance bin, not first-party evidence). Do not present those declarations as a captured dark theme.
 - **Three vocabularies, one name-space.** `--surface-primary`, `--black`, `--space-2x` and friends mean different values on the marketing site, the app and a booking site — the sets are deliberately separate; never read an `app` token onto the marketing surface or vice versa.
 - **Presses are forced.** `pressed` states were read with `CSS.forcePseudoState` — any script-driven mousedown look is uncaptured.

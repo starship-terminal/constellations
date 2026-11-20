@@ -291,6 +291,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - `dark.studio.*` is a stylesheet declaration (`html[data-theme="dark-theme"]`, plus the `--ant-*` layer), not a painted surface — no public control reaches it signed out. Never present it as a verified dark theme.
 - Screenshots are 256-colour PNGs — read exact colours from tokens.json or the raw files, never the pixels.
 - `component.docs.*` values belong to GitBook's stack, not Glassnode's GDS — keep them namespaced.

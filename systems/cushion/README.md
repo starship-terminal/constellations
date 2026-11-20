@@ -92,6 +92,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## Boundaries
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - The signed-in app (real inboxes, posting, check-ins, settings) sits behind "Log in" / "Sign up" / "Get started" and was never reached; every captured control was measured, never followed. The "Acme Inc" inbox on the home page is a marketing mock, measured as DOM but not the authenticated product.
 - Download buttons and store links on /download were never followed; nothing was downloaded.
 - The home page is long (H≈10584): the full-page capture is bounded by the kit's chunk cap — documented, not missing content.

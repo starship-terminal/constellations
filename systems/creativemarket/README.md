@@ -96,6 +96,7 @@ A Rails storefront with a Vue island layer, painted under `data-theme="legacy"` 
 
 ## Boundaries
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - The signed-in account — dashboard, purchases, downloads, checkout, the sell studio — was never reached. /sign-in is a username/password card; the username field was filled with a placeholder and cleared, Log In never pressed.
 - Add to cart, Buy now, the license radios, the bundle checkboxes, every membership CTA and Save 25% were measured, never followed; nothing entered the cart.
 - The CookieYes consent banner and the "Licensing Questions? Let's Chat!" launcher were hidden via the overlay hider, never answered.
