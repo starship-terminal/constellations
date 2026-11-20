@@ -150,18 +150,18 @@ core = {
     "color": core_color,
     "font": {
         "family": {
-            "display": {"$type": "fontFamily", "$value": "STK Bureau, Times New Roman, serif",
-                        "$extensions": {"source": SRC_ROOT + " --_typography-old---type--stk-bureau. Proprietary; the tokens fall back to Times New Roman."}},
+            "display": {"$type": "fontFamily", "$value": '"STK Bureau", "Times New Roman", sans-serif',
+                        "$extensions": {"source": SRC_ROOT + " --_typography-old---type--stk-bureau. Proprietary. The declared stack, copied as written, falls back to Times New Roman, then sans-serif."}},
             "sans": {"$type": "fontFamily", "$value": "ABC Social, Arial, sans-serif",
                      "$extensions": {"source": SRC_ROOT + " --_typography-old---type--abc-social. Proprietary; the tokens fall back to Arial. The auth app computes the same face as abcsocial, sans-serif."}},
         }
     },
     "typography": {
-        "display": font("STK Bureau, Times New Roman, serif", "80px", 300, "88px", "-4px",
+        "display": font('"STK Bureau", "Times New Roman", sans-serif', "80px", 300, "88px", "-4px",
                         SRC_COMPUTED + " h1.home_hero-h1 on the home hero, 80px / 88px, weight 300, letter-spacing -4px."),
-        "pageTitle": font("STK Bureau, Times New Roman, serif", "64px", 300, "70.4px", "-3.2px",
+        "pageTitle": font('"STK Bureau", "Times New Roman", sans-serif', "64px", 300, "70.4px", "-3.2px",
                           SRC_COMPUTED + " the pricing h1, 64px / 70.4px, weight 300, letter-spacing -3.2px."),
-        "cardTitle": font("STK Bureau, Times New Roman, serif", "28px", 300, "28px", "-0.56px",
+        "cardTitle": font('"STK Bureau", "Times New Roman", sans-serif', "28px", 300, "28px", "-0.56px",
                           SRC_COMPUTED + " the first text node inside a pricing card, 28px, weight 300, letter-spacing -0.56px."),
         "body": font("ABC Social, Arial, sans-serif", "16px", 300, "24px", "0px",
                      SRC_COMPUTED + " body on www.mural.co, 16px / 24px, weight 300."),
@@ -258,11 +258,12 @@ tokens = {
     "$themes": [{
         "id": "light",
         "name": "Light",
-        "selectedTokenSets": {"core": "enabled", "light": "enabled"},
+        "selectedTokenSets": {"core": "source", "light": "enabled"},
         "$extensions": {"source": "The public site and the signed-out auth pages ship one light theme. No dark switch was found."},
     }],
 }
 
 out = json.dumps(tokens, indent=1) + "\n"
-(HERE / "tokens.json").write_text(out)
-print("wrote tokens.json", len(out), "bytes")
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(out)
+    print("wrote tokens.json", len(out), "bytes")
