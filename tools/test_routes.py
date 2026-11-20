@@ -72,9 +72,38 @@ class Handler:
 def _post(routes, path, obj=None, raw=None, **kw):
     body = raw if raw is not None else json.dumps(obj).encode()
     h = Handler(path, body, **kw)
-    with contextlib.redirect_stderr(io.StringIO()):
+    err = io.StringIO()
+    with contextlib.redirect_stderr(err):
         handled = routes.handle_post(h)
+    h.stderr = err.getvalue()
     return handled, h
+
+
+def _store():
+    spec = importlib.util.spec_from_file_location("provider_store_under_test", SERVER / "provider_store.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def _loader(chat, store=None):
+    """routes._load for a test: the real provider store (pointed at a
+    throwaway folder by TempConfig), the fake chat for everything else."""
+    store = store or _store()
+    return lambda name: store if name == "provider_store" else chat
+
+
+class TempConfig(unittest.TestCase):
+    """Points DESIGN_SYSTEMS_CONFIG_DIR at a fresh folder for each test, so a
+    saved provider never lands in the real ~/.config."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.config = Path(self._tmp.name) / "config"
+        patch = mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_CONFIG_DIR": str(self.config)})
+        patch.start()
+        self.addCleanup(patch.stop)
+        self.addCleanup(self._tmp.cleanup)
 
 
 class FakeChat:
@@ -244,10 +273,11 @@ class GuardTest(unittest.TestCase):
         self.assertEqual(h.status, 403)
 
 
-class GetTest(unittest.TestCase):
+class GetTest(TempConfig):
     def setUp(self):
+        super().setUp()
         self.routes = _routes()
-        self.routes._load = lambda name: FakeChat(env_cfg={"api": "anthropic"})
+        self.routes._load = _loader(FakeChat(env_cfg={"api": "anthropic", "api_key": "env-test-key"}))
 
     def get(self, path):
         h = Handler(path)
@@ -256,7 +286,9 @@ class GetTest(unittest.TestCase):
 
     def test_status_reports_the_env_provider_without_the_key(self):
         h = self.get("/api/status?x=1")
-        self.assertEqual((h.status, h.json()), (200, {"ok": True, "envProvider": True}))
+        self.assertEqual((h.status, h.json()),
+                         (200, {"ok": True, "envProvider": True, "configured": True, "source": "env"}))
+        self.assertNotIn(b"env-test-key", h.wfile.getvalue())
         self.assertEqual(h.sent["cache-control"], "no-store")
 
     def test_unknown_route_is_404(self):
@@ -269,21 +301,23 @@ class GetTest(unittest.TestCase):
             self.assertEqual(self.get("/api/install.sh").status, 404)
 
 
-class ProviderTestRouteTest(unittest.TestCase):
+class ProviderTestRouteTest(TempConfig):
     good = {"base_url": "https://models.example/v1/", "api_key": "test-key"}
 
     def setUp(self):
+        super().setUp()
         self.routes = _routes()
         self.chat = FakeChat(models={"ok": True, "models": [{"id": "m", "label": "m"}]})
-        self.routes._load = lambda name: self.chat
+        self.routes._load = _loader(self.chat)
 
     def test_required_fields(self):
-        for body in ({}, {"api_key": "k"}, {"base_url": "https://x.example"}):
+        # No body, or no key with none held. A blank base URL is the API's default.
+        for body in ({}, {"base_url": "https://x.example"}):
             handled, h = _post(self.routes, "/api/provider/test", body)
             self.assertEqual(h.status, 400, body)
         handled, h = _post(self.routes, "/api/provider/test", raw=b"nope")
         self.assertEqual(h.status, 400)
-        self.assertEqual(self.chat.calls, [])
+        self.assertNotIn("list_models", [c[0] for c in self.chat.calls])
 
     def test_defaults_and_trailing_slash(self):
         handled, h = _post(self.routes, "/api/provider/test", self.good)
@@ -312,13 +346,14 @@ class ProviderTestRouteTest(unittest.TestCase):
         self.assertNotIn(b"private", h.wfile.getvalue())
 
 
-class ChatRouteTest(unittest.TestCase):
+class ChatRouteTest(TempConfig):
     provider = {"api": "openai", "base_url": "https://models.example/v1", "api_key": "k", "model": "m"}
 
     def setUp(self):
+        super().setUp()
         self.routes = _routes()
         self.chat = FakeChat(reply={"reply": "hi", "results": [], "media": []})
-        self.routes._load = lambda name: self.chat
+        self.routes._load = _loader(self.chat)
 
     def test_body_required(self):
         handled, h = _post(self.routes, "/api/chat", raw=b"")
@@ -335,10 +370,18 @@ class ChatRouteTest(unittest.TestCase):
         self.assertEqual(self.chat.calls[-1][1], [{"role": "user", "content": "x"}])
         self.assertEqual(self.chat.calls[-1][2]["model"], "env")
 
-    def test_browser_provider_is_used(self):
+    def test_a_key_in_the_body_is_refused(self):
+        # A page from before keys moved server-side; the key is never used.
         handled, h = _post(self.routes, "/api/chat", {"messages": [], "provider": self.provider})
+        self.assertEqual((h.status, h.json()["error"]), (400, "key_in_body"))
+        self.assertNotIn("run", [c[0] for c in self.chat.calls])
+
+    def test_saved_provider_is_used(self):
+        _store().save_provider(self.provider, "replace")
+        self.chat.env_cfg = {"api": "anthropic", "model": "env", "api_key": "env-k"}
+        handled, h = _post(self.routes, "/api/chat", {"messages": [], "provider": {"model": "ignored"}})
         self.assertEqual(h.status, 200)
-        self.assertEqual(self.chat.calls[-1][2]["model"], "m")
+        self.assertEqual((self.chat.calls[-1][2]["model"], self.chat.calls[-1][2]["api_key"]), ("m", "k"))
 
     def test_ill_typed_provider_or_messages_are_refused(self):
         # Each of these raised outside the handler's try and dropped the connection.
@@ -370,6 +413,399 @@ class ChatRouteTest(unittest.TestCase):
     def test_unknown_post_route_is_404(self):
         handled, h = _post(self.routes, "/api/chat/extra", {"messages": []})
         self.assertEqual(h.status, 404)
+
+
+KEY = "sk-test-0123456789abcdef"
+KEY2 = "sk-test-rotated-fedcba9876"
+ENV_KEY = "sk-env-test-5555555555"
+GOOD = {"api": "openai", "base_url": "https://models.example/v1", "model": "m1", "name": "example"}
+
+
+class KeyChat(FakeChat):
+    """A chat module whose model list passes, or fails echoing the key back
+    as some providers do."""
+
+    def __init__(self, fail=False, **kw):
+        super().__init__(**kw)
+        self.fail = fail
+        self.no_list = False
+
+    def list_models(self, cfg):
+        self.calls.append(("list_models", cfg))
+        if self.raise_:
+            raise self.raise_
+        if self.no_list:
+            return {"ok": True, "models": [], "note": "no model list at this endpoint; type the model name"}
+        if self.fail:
+            return {"ok": False, "error": f"https://models.example/v1/models answered HTTP 401 for {cfg['api_key']}"}
+        return {"ok": True, "models": [{"id": "m1", "label": "Model one"}]}
+
+
+def _send(routes, method, path, obj=None):
+    body = b"" if obj is None else json.dumps(obj).encode()
+    h = Handler(path, body)
+    err = io.StringIO()
+    with contextlib.redirect_stderr(err):
+        handled = getattr(routes, f"handle_{method}")(h)
+    h.stderr = err.getvalue()
+    return handled, h
+
+
+class ProviderKeyTest(TempConfig):
+    """The server-held key: tested before it is saved, saved 0600 outside the
+    checkout, never returned, resolved saved-then-env, kept out of every
+    answer and log line."""
+
+    def setUp(self):
+        super().setUp()
+        self.routes = _routes()
+        self.store = _store()
+        self.chat = KeyChat()
+        self.routes._load = _loader(self.chat, self.store)
+        self.seen = []
+
+    def call(self, method, path, obj=None):
+        handled, h = _send(self.routes, method, path, obj)
+        self.assertTrue(handled)
+        self.seen += [h.wfile.getvalue().decode(), h.stderr]
+        return h
+
+    def assert_no_key(self, *keys):
+        text = "\n".join(self.seen)
+        for k in keys or (KEY, KEY2, ENV_KEY):
+            self.assertNotIn(k, text)
+
+    def saved(self):
+        return self.store.load() or {}
+
+    def models_calls(self):
+        return [c[1] for c in self.chat.calls if c[0] == "list_models"]
+
+    def test_save_tests_first_then_writes_0600_outside_the_checkout(self):
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.assertEqual((h.status, h.json()["ok"], h.json()["source"]), (200, True, "saved"))
+        self.assertEqual([c["api_key"] for c in self.models_calls()], [KEY])
+        f = self.config / "provider.db"
+        self.assertEqual(self.config.stat().st_mode & 0o777, 0o700)
+        self.assertEqual(self.saved()["api_key"], KEY)
+        # SQLite's side files get the database file's mode.
+        for p in self.config.iterdir():
+            self.assertEqual(p.stat().st_mode & 0o777, 0o600, p.name)
+        self.assertFalse(str(f).startswith(str(SERVER.parent)))
+        self.assert_no_key()
+
+    def test_state_says_where_the_key_comes_from_never_the_key(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        got = self.call("get", "/api/provider").json()
+        self.assertEqual((got["source"], got["configured"], got["provider"]), ("saved", True, GOOD))
+        status = self.call("get", "/api/status").json()
+        self.assertEqual((status["source"], status["configured"]), ("saved", True))
+        self.assertNotIn("api_key", json.dumps(got))
+        self.assert_no_key()
+
+    def test_a_failing_key_is_not_saved_and_its_echo_is_redacted(self):
+        self.chat.fail = True
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.assertEqual((h.status, h.json()["ok"], h.json()["saved"]), (200, False, False))
+        self.assertIn("[redacted]", h.json()["error"])
+        self.assertIsNone(self.store.load())
+        self.assert_no_key()
+
+    def test_rotation_keeps_the_old_key_until_the_new_one_passes(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.chat.fail = True
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertEqual(self.saved()["api_key"], KEY)
+        self.chat.fail = False
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertEqual(self.saved()["api_key"], KEY2)
+        self.assert_no_key()
+
+    def test_the_model_changes_without_the_key_but_the_endpoint_does_not(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.chat.calls.clear()
+        h = self.call("post", "/api/provider", {**GOOD, "model": "m2"})
+        self.assertEqual(h.status, 200)
+        self.assertEqual(self.models_calls(), [])
+        self.assertEqual((self.saved()["model"], self.saved()["api_key"]), ("m2", KEY))
+        for change in ({"base_url": "https://elsewhere.example/v1"}, {"api": "anthropic"},
+                       {"key_header": "x-other"}, {"models_url": "https://models.example/list"}):
+            h = self.call("post", "/api/provider", {**GOOD, **change})
+            self.assertEqual(h.status, 400, change)
+        self.assertEqual(self.saved()["base_url"], GOOD["base_url"])
+
+    def test_bad_saves_are_refused_without_quoting_the_key(self):
+        for body in ({**GOOD, "model": "", "api_key": KEY}, {**GOOD}, {**GOOD, "base_url": 1},
+                     {**GOOD, "api": "other"}, {**GOOD, "api_key": KEY + "\nx-injected: 1"}):
+            h = self.call("post", "/api/provider", body)
+            self.assertEqual(h.status, 400, body)
+        self.assertEqual(self.models_calls(), [])
+        self.assert_no_key()
+
+    def test_the_held_key_is_tested_only_against_its_own_endpoint(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.chat.calls.clear()
+        h = self.call("post", "/api/provider/test", {**GOOD, "base_url": GOOD["base_url"] + "/"})
+        self.assertEqual((h.status, h.json()["ok"]), (200, True))
+        self.assertEqual([c["api_key"] for c in self.models_calls()], [KEY])
+        self.chat.calls.clear()
+        h = self.call("post", "/api/provider/test", {**GOOD, "base_url": "https://attacker.example/v1"})
+        self.assertEqual(h.status, 400)
+        self.assertEqual(self.models_calls(), [])
+        self.assert_no_key()
+
+    def test_precedence_saved_then_env_then_none(self):
+        self.chat.reply = {"reply": "hi", "results": [], "media": []}
+        h = self.call("post", "/api/chat", {"messages": []})
+        self.assertEqual(h.status, 503)
+        self.chat.env_cfg = {"api": "anthropic", "base_url": "https://api.anthropic.com",
+                             "api_key": ENV_KEY, "model": "env"}
+        self.assertEqual(self.call("get", "/api/provider").json()["source"], "env")
+        self.call("post", "/api/chat", {"messages": []})
+        self.assertEqual(self.chat.calls[-1][2]["api_key"], ENV_KEY)
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.call("post", "/api/chat", {"messages": []})
+        self.assertEqual(self.chat.calls[-1][2]["api_key"], KEY)
+        h = self.call("delete", "/api/provider")
+        self.assertEqual((h.json()["removed"], h.json()["source"]), (True, "env"))
+        self.call("post", "/api/chat", {"messages": []})
+        self.assertEqual(self.chat.calls[-1][2]["api_key"], ENV_KEY)
+        self.assertEqual(self.call("delete", "/api/provider").json()["removed"], False)
+        self.assert_no_key()
+
+    def test_a_broken_saved_file_is_reported_not_replaced_by_env(self):
+        self.chat.env_cfg = {"api": "anthropic", "api_key": ENV_KEY, "model": "env"}
+        self.config.mkdir(parents=True)
+        (self.config / "provider.db").write_text(("not a database, key %s " % KEY) * 200)
+        state = self.call("get", "/api/provider").json()
+        self.assertEqual((state["source"], state["configured"]), ("saved", False))
+        h = self.call("post", "/api/chat", {"messages": []})
+        self.assertRegex(h.json()["error"], "cannot be (read|used)")
+        self.assertNotIn("run", [c[0] for c in self.chat.calls])
+        self.assert_no_key()
+
+    def test_logs_and_errors_never_carry_the_key(self):
+        # An exception whose text quotes the key, as an invalid header value does.
+        self.chat.raise_ = ValueError(f"Invalid header value b'Bearer {KEY}'")
+        h = self.call("post", "/api/provider/test", {**GOOD, "api_key": KEY})
+        self.assertEqual(h.status, 500)
+        self.assertIn("[redacted]", h.stderr)
+        self.chat.raise_ = ProviderError(f"https://models.example/v1?k={KEY} unreachable")
+        h = self.call("post", "/api/provider/test", {**GOOD, "api_key": KEY})
+        self.assertEqual((h.status, h.json()["ok"]), (200, False))
+        self.chat.raise_ = None
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.chat.raise_ = RuntimeError(f"boom {KEY}")
+        h = self.call("post", "/api/chat", {"messages": []})
+        self.assertEqual(h.status, 500)
+        self.chat.raise_ = ProviderError(f"HTTP 401 for {KEY}")
+        h = self.call("post", "/api/chat", {"messages": []})
+        self.assertIn("[redacted]", h.json()["error"])
+        self.assert_no_key()
+
+    def test_a_migration_never_replaces_a_saved_provider(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.chat.calls.clear()
+        self.chat.fail = True
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
+        self.assertEqual((h.json()["ok"], h.json()["existing"]), (False, True))
+        self.assertEqual(self.models_calls(), [])
+        self.chat.fail = False
+        self.assertEqual(self.saved()["api_key"], KEY)
+        # Into a fresh store a migration saves; it needs a key and a boolean flag.
+        self.config.joinpath("provider.db").unlink()
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
+        self.assertTrue(h.json()["ok"])
+        self.assertEqual(self.call("post", "/api/provider", {**GOOD, "migrate": "yes"}).status, 400)
+        self.assert_no_key()
+
+    def test_a_migration_never_brings_back_a_key_the_user_removed(self):
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY, "migrate": True})
+        self.assertTrue(h.json()["ok"])
+        self.call("delete", "/api/provider")
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY, "migrate": True})
+        self.assertEqual((h.json()["ok"], h.json()["existing"]), (False, True))
+        self.assertIsNone(self.store.load())
+        self.assertTrue(self.call("post", "/api/provider", {**GOOD, "api_key": KEY2}).json()["ok"])
+
+    def test_an_unchecked_key_never_replaces_a_working_one(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.chat.no_list = True
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertFalse(h.json()["ok"])
+        self.assertIn("could not be checked", h.json()["error"])
+        self.assertEqual(self.saved()["api_key"], KEY)
+        self.call("delete", "/api/provider")
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertEqual((h.json()["ok"], h.json()["verified"]), (True, False))
+        self.assert_no_key()
+
+    def test_a_blank_key_header_is_its_apis_default(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        h = self.call("post", "/api/provider", {**GOOD, "key_header": "Authorization", "model": "m3"})
+        self.assertEqual(h.status, 200)
+        self.assertTrue(self.store.same_endpoint({"api": "anthropic"}, {"api": "anthropic", "key_header": "x-api-key"}))
+        self.assertFalse(self.store.same_endpoint({"api": "openai"}, {"api": "openai", "key_header": "x-api-key"}))
+
+    def test_a_model_only_save_never_writes_back_a_changed_or_removed_key(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        seen = self.store.load()
+        self.store.save_provider({**seen, "api_key": KEY2}, "replace")
+        self.assertFalse(self.store.update_model(seen, "m9", ""))
+        self.assertEqual((self.saved()["api_key"], self.saved()["model"]), (KEY2, GOOD["model"]))
+        now = self.store.load()
+        self.store.remove()
+        self.assertFalse(self.store.update_model(now, "m9", ""))
+        self.assertIsNone(self.store.load())
+
+    def test_each_save_mode_decides_and_writes_in_one_statement(self):
+        a = {**GOOD, "api_key": KEY}
+        self.assertTrue(self.store.save_provider(a, "create"))
+        self.assertFalse(self.store.save_provider({**a, "api_key": KEY2}, "create"))
+        self.assertFalse(self.store.save_provider({**a, "api_key": KEY2}, "same-key"))
+        self.assertTrue(self.store.save_provider({**a, "model": "m5"}, "same-key"))
+        self.assertTrue(self.store.save_provider({**a, "api_key": KEY2}, "replace"))
+        self.assertEqual(self.saved()["api_key"], KEY2)
+
+    def test_the_web_store_reads_what_python_wrote(self):
+        # Both servers share the file: the schema and columns must match.
+        import shutil
+        import subprocess
+        if not shutil.which("node"):
+            self.skipTest("Node.js is required")
+        self.store.save_provider({**GOOD, "api_key": KEY}, "replace")
+        script = ("import('" + str(SERVER.parent / "web" / "lib" / "provider-store.ts") + "')"
+                  ".then(async m => { const p = await m.loadSaved(); console.log(JSON.stringify(m.publicView(p))); })")
+        out = subprocess.run(["node", "--disable-warning=ExperimentalWarning", "-e", script],
+                             capture_output=True, text=True,
+                             env={**os.environ, "DESIGN_SYSTEMS_CONFIG_DIR": str(self.config)})
+        self.assertEqual(out.returncode, 0, out.stderr)
+        self.assertEqual(json.loads(out.stdout.strip().splitlines()[-1]), GOOD)
+
+    def raw_bytes(self):
+        return b"".join(p.read_bytes() for p in self.config.iterdir() if p.is_file())
+
+    def test_no_copy_of_a_removed_or_replaced_key_stays_in_the_files(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertNotIn(KEY.encode(), self.raw_bytes())
+        self.call("delete", "/api/provider")
+        self.assertNotIn(KEY2.encode(), self.raw_bytes())
+
+    def test_remove_and_a_checked_replacement_recover_a_damaged_file(self):
+        self.config.mkdir(parents=True)
+        db = self.config / "provider.db"
+        db.write_text(("damaged %s " % KEY) * 300)
+        (self.config / "provider.db-journal").write_text("old key %s" % KEY)
+        h = self.call("delete", "/api/provider")
+        self.assertEqual((h.status, h.json()["removed"], h.json()["source"]), (200, True, "none"))
+        self.assertEqual(list(self.config.iterdir()), [])
+        db.write_text(("damaged %s " % KEY) * 300)
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertTrue(h.json()["ok"])
+        self.assertEqual(self.saved()["api_key"], KEY2)
+        db.write_text(("damaged %s " % KEY) * 300)
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
+        self.assertFalse(h.json()["ok"])
+
+    def test_a_save_tightens_a_loose_existing_file(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        os.chmod(self.config / "provider.db", 0o644)
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertEqual((self.config / "provider.db").stat().st_mode & 0o777, 0o600)
+
+    def test_a_damaged_file_is_recognised_without_error_codes(self):
+        # Python before 3.11 gives sqlite3 errors no sqlite_errorcode; the
+        # store then reads SQLite's message text.
+        self.config.mkdir(parents=True)
+        db = self.config / "provider.db"
+        db.write_text(("damaged %s " % KEY) * 300)
+        with mock.patch.object(self.store, "_error_code", lambda cause: None):
+            h = self.call("delete", "/api/provider")
+            self.assertEqual((h.status, h.json()["removed"]), (200, True))
+            self.assertFalse(db.exists())
+            # A busy lock's text is not damage: it is still never deleted.
+            busy = self.store._store_error("x", __import__("sqlite3").OperationalError("database is locked"))
+            self.assertFalse(busy.damaged)
+            malformed = self.store._store_error("x", __import__("sqlite3").DatabaseError("database disk image is malformed"))
+            self.assertTrue(malformed.damaged)
+
+    def test_a_busy_database_is_never_deleted(self):
+        import sqlite3
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        other = sqlite3.connect(self.config / "provider.db", isolation_level=None)
+        other.execute("BEGIN EXCLUSIVE")
+        try:
+            h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+            self.assertEqual(h.status, 500)
+            h = self.call("delete", "/api/provider")
+            self.assertEqual(h.status, 500)
+        finally:
+            other.execute("ROLLBACK")
+            other.close()
+        self.assertEqual(self.saved()["api_key"], KEY)
+
+    def test_an_unreadable_folder_is_reported_not_replaced_by_env(self):
+        self.chat.env_cfg = {"api": "anthropic", "api_key": ENV_KEY, "model": "env"}
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        os.chmod(self.config, 0o000)
+        try:
+            cfg, source, error = self.store.resolve(self.chat.env_cfg)
+        finally:
+            os.chmod(self.config, 0o700)
+        self.assertEqual((cfg, source), (None, "saved"))
+        self.assertTrue(error)
+
+    def test_config_dir_cases_shared_with_the_web_store(self):
+        cases = json.loads((SERVER / "provider-config-cases.json").read_text())["cases"]
+        home = Path(self._tmp.name) / "home"
+        repo = str(SERVER.parent)
+        for case in cases:
+            value = case["value"].replace("<HOME>", str(home)).replace("<REPO>", repo)
+            with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_CONFIG_DIR": value, "HOME": str(home)}):
+                if case["expect"] == "error":
+                    with self.assertRaises(self.store.StoreError, msg=value) as ctx:
+                        self.store.config_dir()
+                    self.assertIn("absolute path outside the checkout", str(ctx.exception))
+                    # A refused folder is an error the chat reports, never "nothing saved".
+                    self.assertEqual(self.store.resolve({"api_key": ENV_KEY})[1:], ("saved", str(ctx.exception)))
+                else:
+                    self.assertEqual(str(self.store.config_dir()), case["expect"].replace("<HOME>", str(home)), value)
+
+    def test_a_key_in_a_url_field_is_refused_without_quoting_it(self):
+        from urllib.parse import quote
+        for extra in ({"base_url": f"https://models.example/v1?key={KEY}"},
+                      {"models_url": f"https://models.example/v1/models?key={quote(KEY, safe='')}"},
+                      {"name": f"mine {KEY}"}):
+            for path in ("/api/provider", "/api/provider/test"):
+                h = self.call("post", path, {**GOOD, **extra, "api_key": KEY})
+                self.assertEqual(h.status, 400, (path, extra))
+                self.assertIn("API key field only", h.json()["error"])
+        self.assertEqual(self.models_calls(), [])
+        self.assertIsNone(self.store.load())
+        self.assert_no_key()
+
+    def test_a_key_saved_inside_a_url_is_redacted_from_the_public_fields(self):
+        self.store.save_provider({**GOOD, "base_url": f"https://models.example/v1?key={KEY}", "api_key": KEY}, "replace")
+        got = self.call("get", "/api/provider").json()
+        self.assertEqual(got["provider"]["base_url"], "https://models.example/v1?key=[redacted]")
+        self.assert_no_key()
+
+    def test_an_empty_or_missing_body_is_the_same_400_as_the_web_app(self):
+        self.chat.env_cfg = {"api": "anthropic", "base_url": "https://api.anthropic.com", "api_key": ENV_KEY, "model": "m"}
+        for path in ("/api/provider/test", "/api/provider"):
+            for raw in (b"", b"{}", b"[]", b"null", b"nope"):
+                handled, h = _post(self.routes, path, raw=raw)
+                self.assertEqual((h.status, h.json()["error"]), (400, "JSON body required"), (path, raw))
+        self.assertEqual(self.models_calls(), [])
+
+    def test_delete_is_only_the_provider_route(self):
+        handled, h = _send(self.routes, "delete", "/api/mcp")
+        self.assertFalse(handled)
+        h = Handler("/api/provider", headers={"origin": "https://evil.example"})
+        with contextlib.redirect_stderr(io.StringIO()):
+            self.assertTrue(self.routes.handle_delete(h))
+        self.assertEqual(h.status, 403)
 
 
 if __name__ == "__main__":

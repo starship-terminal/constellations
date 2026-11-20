@@ -1,15 +1,14 @@
 "use client";
 
-// Settings: the chat's model provider (localStorage "ds-provider"), theme and
-// sidebar prefs ("ds-theme" / "ds-nav"), saved media ("ds-saved"), and the
-// data summary the server page passes in.
+// Settings: the chat's model provider (held by the server: /api/provider),
+// theme and sidebar prefs ("ds-theme" / "ds-nav"), saved media ("ds-saved"),
+// and the data summary the server page passes in.
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLightbox } from "@/components/Lightbox";
-import { readSavedPaths, readStoredProvider } from "@/components/storage";
-import { PROVIDER_EVENT } from "@/components/Chat";
+import { PROVIDER_NOTICE_KEY, readSavedPaths } from "@/components/storage";
+import { announceProviderChange, PROVIDER_EVENT } from "@/components/Chat";
 import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
-import { baseUrlOf } from "@/lib/provider-defaults";
 import { agentSnippets } from "@/lib/agent-snippets";
 import { SnippetCopyButton } from "@/components/CopyButton";
 
@@ -21,6 +20,8 @@ export interface SettingsStats {
   audit: string | null;
 }
 
+/** The form. `api_key` is only ever what the user has just typed: the server
+    never sends a key back, so a saved key shows as the source badge instead. */
 interface Cfg {
   api: string;
   base_url: string;
@@ -28,11 +29,26 @@ interface Cfg {
   key_header: string;
   model: string;
   name: string;
+  models_url: string;
 }
 
-const EMPTY: Cfg = { api: "anthropic", base_url: "", api_key: "", key_header: "", model: "", name: "" };
+type KeySource = "saved" | "env" | "none";
 
-const readProvider = (): Cfg => ({ ...EMPTY, ...readStoredProvider() });
+interface ProviderState {
+  source: KeySource;
+  configured: boolean;
+  provider: Partial<Record<keyof Cfg, string>> | null;
+  envAvailable: boolean;
+  error?: string;
+}
+
+const EMPTY: Cfg = { api: "anthropic", base_url: "", api_key: "", key_header: "", model: "", name: "", models_url: "" };
+
+const SOURCE_LABEL: Record<KeySource, string> = {
+  saved: "Saved on the server",
+  env: "From the server environment",
+  none: "No key",
+};
 
 const baseName = (p: string) => {
   try {
@@ -47,94 +63,309 @@ interface ModelHit {
   label: string;
 }
 
-export function Settings({ stats }: { stats: SettingsStats }) {
-  const lb = useLightbox();
+const fromState = (s: ProviderState | null): Cfg => ({ ...EMPTY, ...(s?.source === "saved" ? s.provider : null), api_key: "" });
+
+const postJson = async (url: string, method: string, body?: unknown) => {
+  const r = await fetch(url, {
+    method,
+    headers: body === undefined ? undefined : { "content-type": "application/json" },
+    body: body === undefined ? undefined : JSON.stringify(body),
+  });
+  return (await r.json().catch(() => null)) as Record<string, unknown> | null;
+};
+
+function ProviderPanel() {
   const [cfg, setCfg] = useState<Cfg>(EMPTY);
-  const { theme, collapsed } = usePrefs();
-  const [saved, setSaved] = useState<string[]>([]);
+  const [state, setState] = useState<ProviderState | null>(null);
   const [models, setModels] = useState<ModelHit[]>([]);
   const [status, setStatus] = useState("");
   const [warn, setWarn] = useState(false);
-  const [testing, setTesting] = useState(false);
-  const [envNote, setEnvNote] = useState("");
-  const [origin, setOrigin] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [notice, setNotice] = useState("");
+  // Set by any edit to the form. A state reply that lands after the reader
+  // has typed (a slow first load, another tab's change) updates the badge
+  // but never overwrites the fields.
+  const edited = useRef(false);
 
-  useEffect(() => {
-    setOrigin(window.location.origin);
-    setCfg(readProvider());
-    setSaved(readSavedPaths());
-    fetch("/api/status")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => setEnvNote(d?.envProvider ? " The server also has its own key configured." : ""))
-      .catch(() => {});
+  const load = useCallback(async (fill: boolean) => {
+    try {
+      const d = (await postJson("/api/provider", "GET")) as unknown as ProviderState | null;
+      if (!d || typeof d.source !== "string") throw new Error();
+      setState(d);
+      if (fill && !edited.current) setCfg(fromState(d));
+      if (d.error) {
+        setWarn(true);
+        setStatus(d.error);
+      }
+    } catch {
+      setState(null);
+      setWarn(true);
+      setStatus("No answer from the server.");
+    }
   }, []);
 
+  useEffect(() => {
+    load(true);
+    const readNotice = () => {
+      try {
+        setNotice(sessionStorage.getItem(PROVIDER_NOTICE_KEY) || "");
+      } catch {}
+    };
+    readNotice();
+    // The one-time move of a browser-stored key may finish after this page loads.
+    const onChange = () => {
+      readNotice();
+      load(true);
+    };
+    window.addEventListener(PROVIDER_EVENT, onChange);
+    return () => window.removeEventListener(PROVIDER_EVENT, onChange);
+  }, [load]);
+
   const onField =
-    (k: keyof Cfg) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    (k: keyof Cfg) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      edited.current = true;
       setCfg((c) => ({ ...c, [k]: e.target.value }));
+    };
+
+  const body = () => {
+    const out: Record<string, string> = { api: cfg.api, base_url: cfg.base_url.trim(), model: cfg.model.trim() };
+    if (cfg.key_header.trim()) out.key_header = cfg.key_header.trim();
+    if (cfg.models_url.trim()) out.models_url = cfg.models_url.trim();
+    if (cfg.name.trim()) out.name = cfg.name.trim();
+    if (cfg.api_key.trim()) out.api_key = cfg.api_key.trim();
+    return out;
+  };
 
   const test = async () => {
-    if (!cfg.api_key) {
+    if (!cfg.api_key.trim() && state?.source === "none") {
       setWarn(true);
-      setStatus("Fill the API key first; the test uses this form's key, not the server's.");
+      setStatus("Enter an API key first.");
       return;
     }
-    setTesting(true);
+    setBusy(true);
     setWarn(false);
     setStatus("Testing…");
     try {
-      const r = await fetch("/api/models", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ provider: { ...cfg, base_url: baseUrlOf(cfg) } }),
-      });
-      const d = await r.json();
+      const d = await postJson("/api/provider/test", "POST", body());
       if (d?.ok) {
-        const list: ModelHit[] = Array.isArray(d.models) ? d.models : [];
+        const list = Array.isArray(d.models) ? (d.models as ModelHit[]) : [];
         setModels(list);
         setStatus(list.length ? `Connected: ${list.length} models found.` : `Connected. ${d.note || "Type the model name."}`);
       } else {
         setWarn(true);
-        setStatus(d?.error === "no_provider" ? "Fill the base URL and API key first." : d?.error || "Test failed.");
+        setStatus(typeof d?.error === "string" ? d.error : "Test failed.");
       }
     } catch {
       setWarn(true);
       setStatus("No answer from the server.");
     }
-    setTesting(false);
+    setBusy(false);
   };
 
-  const save = () => {
-    if (!cfg.api_key || !cfg.model.trim()) {
+  const save = async () => {
+    if (!cfg.model.trim()) {
       setWarn(true);
-      setStatus("The chat needs an API key and a model; fill both before saving.");
+      setStatus("Pick a model before saving.");
       return;
     }
-    const out: Record<string, string> = {
-      api: cfg.api,
-      base_url: baseUrlOf(cfg),
-      api_key: cfg.api_key,
-      model: cfg.model.trim(),
-    };
-    if (cfg.key_header.trim()) out.key_header = cfg.key_header.trim();
-    if (cfg.name.trim()) out.name = cfg.name.trim();
-    try {
-      localStorage.setItem("ds-provider", JSON.stringify(out));
-    } catch {}
-    window.dispatchEvent(new Event(PROVIDER_EVENT));
+    if (!cfg.api_key.trim() && state?.source !== "saved") {
+      setWarn(true);
+      setStatus("Enter an API key to save.");
+      return;
+    }
+    setBusy(true);
     setWarn(false);
-    setStatus(`Saved: ${cfg.name.trim() || cfg.api} · ${cfg.model.trim()}`);
+    setStatus(cfg.api_key.trim() ? "Testing the key, then saving…" : "Saving…");
+    try {
+      const d = await postJson("/api/provider", "POST", body());
+      if (d?.ok) {
+        if (Array.isArray(d.models) && d.models.length) setModels(d.models as ModelHit[]);
+        setState(d as unknown as ProviderState);
+        // The key field empties: the server has it now and never returns it.
+        setCfg((c) => ({ ...c, api_key: "" }));
+        edited.current = false;
+        setStatus(
+          `Saved on the server: ${cfg.name.trim() || cfg.api} · ${cfg.model.trim()}` +
+            (d.verified === false ? ". This endpoint has no model list, so the key itself was not checked." : ""),
+        );
+        announceProviderChange();
+      } else {
+        setWarn(true);
+        setStatus(`Not saved. ${typeof d?.error === "string" ? d.error : "The server refused it."}`);
+      }
+    } catch {
+      setWarn(true);
+      setStatus("No answer from the server.");
+    }
+    setBusy(false);
   };
 
-  const clearProvider = () => {
+  const remove = async () => {
+    setBusy(true);
     try {
-      localStorage.removeItem("ds-provider");
-    } catch {}
-    window.dispatchEvent(new Event(PROVIDER_EVENT));
-    setCfg((c) => ({ ...c, api_key: "" }));
-    setWarn(false);
-    setStatus("Removed the saved provider.");
+      const d = await postJson("/api/provider", "DELETE");
+      if (d?.ok) {
+        setState(d as unknown as ProviderState);
+        setCfg(EMPTY);
+        edited.current = false;
+        setModels([]);
+        setWarn(false);
+        setStatus(
+          (d as unknown as ProviderState).source === "env"
+            ? "Removed the saved key. The chat now uses the server's environment key."
+            : "Removed the saved key.",
+        );
+        announceProviderChange();
+      } else {
+        setWarn(true);
+        setStatus(typeof d?.error === "string" ? d.error : "Could not remove the saved key.");
+      }
+    } catch {
+      setWarn(true);
+      setStatus("No answer from the server.");
+    }
+    setBusy(false);
   };
+
+  const source = state?.source ?? "none";
+  const using = state?.provider;
+
+  return (
+    <>
+      <p className="pref-help">The chat&rsquo;s brain: which wire format, endpoint, key and model it talks to.</p>
+      <div className="pf-source" data-source={state ? source : undefined}>
+        <span className="tag pf-badge">{state ? SOURCE_LABEL[source] : "Checking…"}</span>
+        <span className="pf-using">
+          {state?.error
+            ? "The saved provider cannot be used."
+            : using
+              ? `${using.name || using.api} · ${using.model}`
+              : state
+                ? "The chat needs a key before it can answer."
+                : ""}
+        </span>
+      </div>
+      {notice ? (
+        <p className="pf-notice" role="note">
+          {notice}
+        </p>
+      ) : null}
+      <div className="pf-grid">
+        <label className="pf-field">
+          <span>Label</span>
+          <input value={cfg.name} onChange={onField("name")} autoComplete="off" spellCheck={false} placeholder="anthropic" />
+        </label>
+        <label className="pf-field">
+          <span>API</span>
+          <select className="st-sel" value={cfg.api} onChange={onField("api")}>
+            <option value="anthropic">anthropic</option>
+            <option value="openai">openai (OpenAI-compatible)</option>
+          </select>
+        </label>
+        <label className="pf-field">
+          <span>Base URL</span>
+          <input
+            value={cfg.base_url}
+            onChange={onField("base_url")}
+            type="url"
+            autoComplete="off"
+            spellCheck={false}
+            placeholder={cfg.api === "anthropic" ? "https://api.anthropic.com" : "https://api.openai.com/v1"}
+          />
+        </label>
+        <label className="pf-field">
+          <span>API key</span>
+          <input
+            value={cfg.api_key}
+            onChange={onField("api_key")}
+            type="password"
+            autoComplete="off"
+            spellCheck={false}
+            placeholder={source === "saved" ? "Leave blank to keep the saved key" : "sk-…"}
+          />
+        </label>
+        <label className="pf-field">
+          <span>Key header</span>
+          <input
+            value={cfg.key_header}
+            onChange={onField("key_header")}
+            autoComplete="off"
+            spellCheck={false}
+            placeholder={cfg.api === "anthropic" ? "x-api-key" : "authorization"}
+          />
+        </label>
+        <label className="pf-field">
+          <span>Model</span>
+          <input
+            value={cfg.model}
+            onChange={onField("model")}
+            list="st-models"
+            autoComplete="off"
+            spellCheck={false}
+            placeholder="claude-sonnet-4-5"
+          />
+          <datalist id="st-models">
+            {models.map((m) => (
+              <option key={m.id} value={m.id}>
+                {m.label}
+              </option>
+            ))}
+          </datalist>
+        </label>
+      </div>
+      {models.length ? (
+        <div className="pf-chips">
+          {models.slice(0, 12).map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              className="pf-chip"
+              aria-pressed={cfg.model.trim() === m.id}
+              onClick={() => setCfg((c) => ({ ...c, model: m.id }))}
+            >
+              {m.label}
+            </button>
+          ))}
+        </div>
+      ) : null}
+      <p className="pf-status" role="status" data-warn={warn ? "1" : undefined}>
+        {status}
+      </p>
+      <div className="pf-actions">
+        <button className="btn" type="button" onClick={test} disabled={busy}>
+          Test
+        </button>
+        <button className="btn primary" type="button" onClick={save} disabled={busy}>
+          {source === "saved" && cfg.api_key.trim() ? "Replace key" : "Save"}
+        </button>
+        {source === "saved" ? (
+          <button className="btn" type="button" onClick={remove} disabled={busy}>
+            Remove
+          </button>
+        ) : null}
+      </div>
+      <p className="pref-note">
+        The key goes to this app&rsquo;s server once. The server tests it, keeps it in its own config folder and never
+        sends it back; this browser does not store it. A saved key only goes to the endpoint it was saved with, so
+        changing the API, base URL or key header needs the key again.
+        {state?.envAvailable && source === "saved"
+          ? " The server also has ANTHROPIC_API_KEY set; it applies again once the saved key is removed."
+          : ""}
+      </p>
+    </>
+  );
+}
+
+export function Settings({ stats }: { stats: SettingsStats }) {
+  const lb = useLightbox();
+  const { theme, collapsed } = usePrefs();
+  const [saved, setSaved] = useState<string[]>([]);
+  const [origin, setOrigin] = useState("");
+
+  useEffect(() => {
+    setOrigin(window.location.origin);
+    setSaved(readSavedPaths());
+  }, []);
 
   const applyTheme = (t: Theme) => setTheme(t);
   const applyNav = (c: boolean) => setCollapsed(c);
@@ -150,101 +381,13 @@ export function Settings({ stats }: { stats: SettingsStats }) {
     <div className="page">
       <div className="g-hero">
         <h1>Settings</h1>
-        <p className="sub">Choices here are saved in this browser and apply to every page of the app.</p>
+        <p className="sub">Preferences are saved in this browser and apply to every page of the app; the model provider is saved on the server.</p>
       </div>
 
       <div className="prefs">
         <fieldset className="pref" id="model-provider">
           <legend className="pref-name">Model provider</legend>
-          <p className="pref-help">The chat&rsquo;s brain: which wire format, endpoint, key and model it talks to.</p>
-          <div className="pf-grid">
-            <label className="pf-field">
-              <span>Label</span>
-              <input value={cfg.name} onChange={onField("name")} autoComplete="off" spellCheck={false} placeholder="anthropic" />
-            </label>
-            <label className="pf-field">
-              <span>API</span>
-              <select className="st-sel" value={cfg.api} onChange={onField("api")}>
-                <option value="anthropic">anthropic</option>
-                <option value="openai">openai (OpenAI-compatible)</option>
-              </select>
-            </label>
-            <label className="pf-field">
-              <span>Base URL</span>
-              <input
-                value={cfg.base_url}
-                onChange={onField("base_url")}
-                type="url"
-                autoComplete="off"
-                spellCheck={false}
-                placeholder={cfg.api === "anthropic" ? "https://api.anthropic.com" : "https://api.openai.com/v1"}
-              />
-            </label>
-            <label className="pf-field">
-              <span>API key</span>
-              <input value={cfg.api_key} onChange={onField("api_key")} type="password" autoComplete="off" spellCheck={false} placeholder="sk-…" />
-            </label>
-            <label className="pf-field">
-              <span>Key header</span>
-              <input
-                value={cfg.key_header}
-                onChange={onField("key_header")}
-                autoComplete="off"
-                spellCheck={false}
-                placeholder={cfg.api === "anthropic" ? "x-api-key" : "authorization"}
-              />
-            </label>
-            <label className="pf-field">
-              <span>Model</span>
-              <input
-                value={cfg.model}
-                onChange={onField("model")}
-                list="st-models"
-                autoComplete="off"
-                spellCheck={false}
-                placeholder="claude-sonnet-4-5"
-              />
-              <datalist id="st-models">
-                {models.map((m) => (
-                  <option key={m.id} value={m.id}>
-                    {m.label}
-                  </option>
-                ))}
-              </datalist>
-            </label>
-          </div>
-          {models.length ? (
-            <div className="pf-chips">
-              {models.slice(0, 12).map((m) => (
-                <button
-                  key={m.id}
-                  type="button"
-                  className="pf-chip"
-                  aria-pressed={cfg.model.trim() === m.id}
-                  onClick={() => setCfg((c) => ({ ...c, model: m.id }))}
-                >
-                  {m.label}
-                </button>
-              ))}
-            </div>
-          ) : null}
-          <p className="pf-status" role="status" data-warn={warn ? "1" : undefined}>
-            {status}
-          </p>
-          <div className="pf-actions">
-            <button className="btn" type="button" onClick={test} disabled={testing}>
-              {testing ? "Testing…" : "Test"}
-            </button>
-            <button className="btn primary" type="button" onClick={save}>
-              Save
-            </button>
-            <button className="btn" type="button" onClick={clearProvider}>
-              Clear
-            </button>
-          </div>
-          <p className="pref-note">
-            Stored in this browser only. With no key here the server falls back to its own configured model.{envNote}
-          </p>
+          <ProviderPanel />
         </fieldset>
 
         <fieldset className="pref">

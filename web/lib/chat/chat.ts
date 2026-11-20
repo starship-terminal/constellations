@@ -21,7 +21,6 @@ import { bareHost, PROVIDER_HOSTS_ENV, providerHostAllowed } from "./provider-ho
 type Obj = Record<string, unknown>;
 
 const ANTHROPIC_VERSION = "2023-06-01";
-const DEFAULT_MODEL = "claude-sonnet-4-5";
 const MAX_ROUNDS = 8;
 const REQUEST_TIMEOUT = 120;
 const MODELS_TIMEOUT = 25;
@@ -60,39 +59,8 @@ export interface ProviderCfg {
   models_url?: string;
 }
 
-export function providerConfig(
-  body?: {
-    api?: string;
-    base_url?: string;
-    api_key?: string;
-    key_header?: string;
-    models_url?: string;
-    model?: string;
-    name?: string;
-  } | null,
-): ProviderCfg | null {
-  // Normalise the page's provider object, or fall back to the env's
-  // ANTHROPIC_API_KEY.
-  if (body && body.api_key && body.model) {
-    return {
-      ...body,
-      api: body.api || "openai",
-      base_url: (body.base_url || "").replace(/\/+$/, ""),
-      api_key: body.api_key,
-      model: body.model,
-    };
-  }
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (key)
-    return {
-      api: "anthropic",
-      base_url: "https://api.anthropic.com",
-      api_key: key,
-      model: process.env.DS_CHAT_MODEL || DEFAULT_MODEL,
-      name: "env ANTHROPIC_API_KEY",
-    };
-  return null;
-}
+// The provider a chat runs on comes from lib/provider-api.ts (the server-held
+// key, else ANTHROPIC_API_KEY); this module only talks to it.
 
 function headers(cfg: ProviderCfg, keyHeader?: string): Record<string, string> {
   const hdr = keyHeader || cfg.key_header || (cfg.api === "anthropic" ? "x-api-key" : "authorization");
