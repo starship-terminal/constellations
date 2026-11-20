@@ -1,6 +1,6 @@
 # TwelveLabs
 
-TwelveLabs (twelvelabs.io) is a video intelligence platform. This package records the public marketing site and the signed-out login on auth.twelvelabs.io, measured on 2026-11-19 from a live T3 preview tab. The email field was set to kaichen@agentmail.to. The next step asked for a password and that field was not filled. Google was not followed. The contact form is a HubSpot iframe with reCAPTCHA and was not filled. No card was entered. No API key was created.
+TwelveLabs (twelvelabs.io) is a video intelligence platform. This package records the public marketing site and the signed-out login on auth.twelvelabs.io, measured on 2026-11-19 from a live T3 preview tab. The email field was left blank. An earlier note named an address; that string is removed.  The next step asked for a password and that field was not filled. Google was not followed. The contact form is a HubSpot iframe with reCAPTCHA and was not filled. No card was entered. No API key was created.
 
 The live CSS viewport was 1169 by 731 at devicePixelRatio 2. Marketing pages paint a paper page (`#f4f3f3`) and ink text (`#1d1c1b`) in Milling Duplex 1mm. `prefers-color-scheme` was dark and the pages did not switch.
 
@@ -15,7 +15,9 @@ The live CSS viewport was 1169 by 731 at devicePixelRatio 2. Marketing pages pai
 | [patterns.md](patterns.md) | Public page patterns |
 | [components/](components/) | Crop folder, empty because screenshot frames failed |
 | [icons/](icons/) | Index pointing at the site icon |
-| [screenshots/](screenshots/) | Note that no frames were produced |
+| [screenshots/](screenshots/) | One home frame, `home-dark-default.raw.png`, 2880×1800 from a 1440×900 CSS viewport at devicePixelRatio 2, taken 2026-11-20 before frames failed again. The 2026-11-19 pass had no frames |
+| [site-tree.md](site-tree.md) | Which control opens which page, mapped 2026-11-20 |
+| [login-review.json](login-review.json) | Login wall and a gap for every post-auth screen |
 | [raw/](raw/) | Computed-style readings |
 | [tools/](tools/) | Builders and the copied capture kit |
 
@@ -76,7 +78,9 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops. T
 
 Framer colour tokens were read from the `body { --token-... }` block in the marketing stylesheet on https://www.twelvelabs.io/. Computed colour, type, radius, padding and size were read with `getComputedStyle` on the home page, the open menu, https://www.twelvelabs.io/pricing, https://www.twelvelabs.io/contact and https://auth.twelvelabs.io/u/login. Login custom properties (`--primary-color`, `--font-default-color`, `--button-border-radius`) were read from the Auth0 stylesheet and matched against the painted controls.
 
-The preview browser returned "The browser is not producing screenshot frames" on `preview_snapshot`. No screenshots were invented. Headless Playwright was not launched.
+The 2026-11-19 preview pass returned "The browser is not producing screenshot frames". On 2026-11-20 one home frame was saved at CSS 1440×900, PNG 2880×1800, then the same error returned. `preview_open` was called once and snapshot once more, then capture stopped. No other screenshots were invented.
+
+`catalog.json` was left for the batch merge.
 
 ## What to distrust
 
@@ -112,7 +116,8 @@ Marketing type computes as Milling Duplex 1mm, with a placeholder family behind 
 | Contact form fields | Not captured. HubSpot iframe plus reCAPTCHA |
 | Password field | Visible, not filled |
 | Checkbox, radio, switch, select, textarea, tabs, tooltip, toast, table, avatar | Not present on the pages read |
-| Width 1440 and 390 | Not captured. Live viewport was 1169 by 731 |
+| Width 1440 | One home screenshot on 2026-11-20, CSS 1440×900, PNG 2880×1800. [screenshots/home-dark-default.raw.png](screenshots/home-dark-default.raw.png). The 2026-11-19 readings were at 1169×731 |
+| Width 390 | Not captured |
 | Screenshots and crops | Not captured. Screenshot frames failed |
 
 ## Do and don't
@@ -121,7 +126,7 @@ Marketing type computes as Milling Duplex 1mm, with a placeholder family behind 
 - **Use a paper pill for the hero primary and an ink pill for the selected plan.** Home Try Free is 18px radius on paper. Pricing Choose Plus is 14px radius on ink. Evidence is the same readings file.
 - **Keep login on auth.twelvelabs.io as an email step, then a password step.** The card is a translucent white 80px radius. Evidence is the login readings.
 - **Use chartreuse only for the small New badge.** `#dae971` was read on that label, not as a page accent.
-- **Do not invent a 1440 screenshot.** The CSS viewport was 1169 by 731, and screenshot frames failed.
+- **Do not invent a 1440 screenshot.** One home frame exists from 2026-11-20 at CSS 1440×900. The 2026-11-19 readings were at 1169×731, and frames failed again before any other page.
 
 ## Rebuild
 

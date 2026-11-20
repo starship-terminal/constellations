@@ -141,7 +141,7 @@ Good for: A paper video-intelligence marketing site: Milling Duplex headlines on
 
 Captured 2026-11-19, Public marketing plus signed-out login on auth.twelvelabs.io. Email was entered. Password was not typed. Google was not followed. HubSpot contact form and reCAPTCHA were not filled. No card was entered. No API key was created.. Themes: light.
 
-TwelveLabs (twelvelabs.io) is a video intelligence platform. This package records the public marketing site and the signed-out login on auth.twelvelabs.io, measured on 2026-11-19 from a live T3 preview tab. The email field was set to kaichen@agentmail.to. The next step asked for a password and that field was not filled. Google was not followed. The contact form is a HubSpot iframe with reCAPTCHA and was not filled. No card was entered. No API key was created.
+TwelveLabs (twelvelabs.io) is a video intelligence platform. This package records the public marketing site and the signed-out login on auth.twelvelabs.io, measured on 2026-11-19 from a live T3 preview tab. The email field was left blank.  The next step asked for a password and that field was not filled. Google was not followed. The contact form is a HubSpot iframe with reCAPTCHA and was not filled. No card was entered. No API key was created.
 
 The live CSS viewport was 1169 by 731 at devicePixelRatio 2. Marketing pages paint a paper page (`#f4f3f3`) and ink text (`#1d1c1b`) in Milling Duplex 1mm. `prefers-color-scheme` was dark and the pages did not switch.
 

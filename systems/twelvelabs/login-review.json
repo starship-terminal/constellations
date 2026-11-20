@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-11-20T19:11:00Z",
+  "profile": "default",
+  "tab": "opened with reuseExistingTab false",
+  "signedIn": false,
+  "stoppedBecause": "playground.twelvelabs.io redirected to a login wall. Access rules forbid typing a password, a code, or clicking Google.",
+  "loginWall": {
+    "requestedUrl": "https://playground.twelvelabs.io/",
+    "landedUrl": "https://auth.twelvelabs.io/u/login/identifier",
+    "title": "Log in | Platform",
+    "askedFor": [
+      "Email address",
+      "Continue",
+      "Sign up",
+      "Continue with Google"
+    ],
+    "alsoShown": "A Cloudflare Turnstile script loaded in the background. No robot-check prompt was shown as the page content. The visible ask was the email field.",
+    "fieldsFilled": false,
+    "oauthClicked": false
+  },
+  "postAuthScreens": [],
+  "gaps": [
+    {
+      "screen": "Playground home",
+      "url": "https://playground.twelvelabs.io/",
+      "gap": "Redirected to the login wall. Not signed in."
+    },
+    {
+      "screen": "Video library",
+      "gap": "Behind the login wall. Not reached."
+    },
+    {
+      "screen": "Search",
+      "gap": "Signed-in search was not reached. The public marketing page /product/video-search is a different surface."
+    },
+    {
+      "screen": "Analyze",
+      "gap": "Behind the login wall. Not reached."
+    },
+    {
+      "screen": "Embed",
+      "gap": "Behind the login wall. Not reached."
+    },
+    {
+      "screen": "Jockey agent",
+      "gap": "Signed-in Jockey was not reached. The public page /jockey was mapped and not captured."
+    },
+    {
+      "screen": "Indexes and uploads",
+      "gap": "Behind the login wall. Not reached."
+    },
+    {
+      "screen": "API keys and settings",
+      "gap": "Behind the login wall. Not reached."
+    },
+    {
+      "screen": "Billing and plan",
+      "gap": "Behind the login wall. Not reached. Public pricing is /pricing."
+    }
+  ]
+}
