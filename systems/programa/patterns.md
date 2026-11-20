@@ -1,46 +1,33 @@
-# Patterns
+# Programa patterns
 
-Public marketing pages, signed out. Login and register were read in the preview browser and have no screenshot here.
+Public marketing site, 2026-11-21. The signed-in product was not entered.
 
-## Home
+## App shell
 
-Hero on a pale grid, Rhymes Display headline, black and white buttons, a product illustration. Header is 72px with a yellow Start free button.
+The header is a light bar, 72px in the declared `--spacing-header-height` token. Logo left, Features / Solutions / Pricing / Learn in the centre, Log in and Start free on the right. Start free is the mint header button. On phone, the centre links collapse into Open menu. See [home-light-default.png](screenshots/home-light-default.png) and [mobile-home-light-default.png](screenshots/mobile-home-light-default.png).
 
-![Home, 1440](screenshots/home-light-default.png)
-
-![Home, 390](screenshots/home-light-phone.png)
-
-The phone header replaces the links with a menu button. The menu opened over a white scrim and set Pricing in Rhymes Display at 36px.
+The footer repeats product, company, resource and legal links. It is on every captured page.
 
 ## Pricing
 
-One Pro plan, a mint billing switch set to Annual, and a yellow trial button. Testimonial cards sit below the fold.
+One Pro card, a Monthly / Annual switch, and a yellow Start 7 day trial button. The trial button was not clicked. See [pricing-light-default.png](screenshots/pricing-light-default.png) and [mobile-pricing-light-default.png](screenshots/mobile-pricing-light-default.png).
 
-![Pricing, 1440](screenshots/pricing-light-default.png)
+## FAQ
 
-![Pricing, 390](screenshots/pricing-light-phone.png)
+Questions are a right-hand accordion. One question was opened. See [faq-light-accordion.png](screenshots/faq-light-accordion.png).
 
-## Features
+## Search
 
-Feature index. The headline computed 60px at 390px width.
-
-![Features, 1440](screenshots/features-light-default.png)
-
-![Features, 390](screenshots/features-light-phone.png)
+The blog has a search field. It was focused and not submitted. See [blog-light-search-focus.png](screenshots/blog-light-search-focus.png).
 
 ## Contact
 
-The page heading is Rhymes Display. The form is a Typeform iframe and was not filled.
+Contact us shows a Get in touch button and, below the fold, an email field and a Submit button. Neither was submitted. No email was typed. See [contact-light-default.png](screenshots/contact-light-default.png) and [contact-light-email-focus.png](screenshots/contact-light-email-focus.png).
 
-![Contact, 1440](screenshots/contact-light-default.png)
+## Content indexes
 
-## Login and register
+Blog, editorial, and made-with-Programa are card indexes into article templates. One article, `/blog/what-is-programa`, was captured as the template. The other 168 blog URLs and 139 editorial URLs were not captured one by one.
 
-Login is a centered 480px form on a white page: email, password, a black Log in submit, then Google, Trimble, and Xero buttons. Register adds a reCAPTCHA and a terms line. Neither form was submitted. Headless Chrome returned 403, so these pages have no screenshot in this package.
+## Not captured
 
-## Gaps
-
-- Signed-in app shell, empty, loading, and error states were not reached.
-- No destructive confirmation.
-- No search field on the measured pages.
-- No onboarding. Register was not submitted.
+Empty, loading, and error states of the product. Destructive confirmation. Onboarding. The signed-in dashboard, schedules, and client dashboard. Those live on `app.programa.design` behind login.

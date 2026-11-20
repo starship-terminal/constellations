@@ -1,60 +1,71 @@
-# Components
+# Programa components
 
-Crops are from the headless marketing screenshots. Login controls were measured in the preview browser and have no crop, because headless Chrome returned 403 for those URLs.
+Public marketing site only, read on 2026-11-21 from [programa.design](https://programa.design/). Crops are cut from the full-colour captures and saved at 2x. Values are token names from [tokens.json](tokens.json).
 
 ## Button
 
-Primary trial button on pricing. Background `#fdffa2`, text `#000000`, height 31px, radius 6px, font-size 12px.
+The header **Start free** control is a mint pill, not the yellow accent.
 
-![Start 7 day trial](components/crops/button-primary-default.png)
+| State | Crop | Values |
+|---|---|---|
+| default | [button-primary-default.png](components/crops/button-primary-default.png) | background `light.component.buttonPrimary.background`, text `light.component.buttonPrimary.text`, radius `light.component.buttonPrimary.radius`, height 28px |
+| hover | not a colour change on this control | computed hover matched default |
+| focus-visible | recorded in [raw/components-computed.json](raw/components-computed.json) | focus via `focus()`. Ring is the browser default, not a designed token |
+| pressed | CDP forcePseudoState, not a click | login and register were not opened |
 
-Secondary hero button. Background `#1a1916`, text `#ffffff`, height 36px, radius 6px, padding 0 12px.
+The hero **Get started** control is the dark button: `light.component.buttonDark`. Hover paints `light.component.buttonDark.hover`.
 
-![Get started](components/crops/button-secondary-default.png)
+The hero **Watch a demo** control is the white button: `light.component.buttonSecondary`. Hover paints `light.raised`.
 
-White hero button. Background `#ffffff`, text `#1a1916`, height 36px, radius 6px.
-
-![Watch a demo](components/crops/button-white-default.png)
-
-Nav call to action. Background `#fcfda1`, text `#7f2e1b`, height 28px, radius 6px.
-
-![Start free](components/crops/button-cta-default.png)
-
-Hover, pressed, disabled, and loading were not captured.
-
-## Icon button
-
-Phone menu button at 390px. White fill, radius 6px, 30 by 30.
-
-![Open menu](components/crops/icon-button-menu-default.png)
-
-## Switch
-
-Billing switch on pricing, `aria-checked` true. Track `#a7f3d0`, 28 by 16, radius 999px. Knob 12px white.
-
-![Annual on](components/crops/switch-on-default.png)
-
-The off state was not captured.
-
-## Card
-
-Pro plan card. Radius 12px on the testimonial cards of the same page. The plan wrapper itself computed radius 0 and max-width 340px. The crop shows the painted card.
-
-![Pro plan](components/crops/card-plan-default.png)
-
-## Text field
-
-Login email field. Wrapper background `#fcfbf9`, height 32px, radius 6px, horizontal padding 8px. Input text 13px InterVariable, placeholder `#7b736c`. No value was typed, so there is no crop.
+The pricing **Start 7 day trial** control is the yellow accent. It was not clicked. Its fill is `light.accent`.
 
 ## Link
 
-Nav link 14px Inter, colour `#1a1916`. Footer link 12px Inter, colour `#7b736c`. Terms link on register is 14px Inter weight 600, colour `#18181b`.
+Nav links (Features, Solutions, Pricing, Learn) are Inter 14px, colour `light.text`, radius 6px. Hover paints `light.raised`. Crop: [nav-link-default.png](components/crops/nav-link-default.png).
+
+Footer links are Inter 12px, colour `light.link`. Hover adds an underline. Crop was not cut because the link sits far down the page.
+
+Log in is a quiet text button. Crop: [button-quiet-default.png](components/crops/button-quiet-default.png). It opens the login wall. Not followed.
+
+## Text field
+
+Blog search (`input[name="query"]`, placeholder Explore the blog) and the contact email field were focused and not typed into. The measured box is the inner input, 14px Inter, transparent background, 20px tall. The painted field chrome is Not captured.
+
+## Switch
+
+Pricing has a Monthly / Annual toggle. The annual state is in [pricing-light-default.png](screenshots/pricing-light-default.png). The control was clicked locally and not submitted. No computed switch metrics were kept, because the first selector missed the thumb.
+
+## Accordion
+
+FAQ questions are buttons. Open state: [faq-light-accordion.png](screenshots/faq-light-accordion.png). Question text is Inter 16px, colour black.
+
+## Badge
+
+The Features menu marks Schedules with a New chip. Crop: [badge-default.png](components/crops/badge-default.png). Background `light.component.badge.background` (green pale), text `light.component.badge.text` (green dark), radius 6px.
+
+## Menu
+
+Desktop Features, Solutions and Learn menus open on hover. Shots: [home-light-features-menu.png](screenshots/home-light-features-menu.png), [home-light-solutions-menu.png](screenshots/home-light-solutions-menu.png), [home-light-learn-menu.png](screenshots/home-light-learn-menu.png).
+
+Phone menu opens from the button labelled Open menu. Shots: [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png), [mobile-home-light-menu-features.png](screenshots/mobile-home-light-menu-features.png).
+
+## Card
+
+The pricing Pro card is visible in [pricing-light-default.png](screenshots/pricing-light-default.png). Its metrics were not tokenised. The selector matched the page, not the card.
+
+## Display type
+
+H1 uses Rhymes Display, 80px, weight 300, line-height 64px, colour `light.text`. Crop: [display-default.png](components/crops/display-default.png).
+
+## Not present on the public site
+
+Text area, select, checkbox, radio, tooltip, toast, table, and a designed avatar component. Contact shows staff photos. Those are published portraits, not a component with states.
+
+Dialog: no public dialog mounted. Login is a separate page, not a dialog.
 
 ## Gaps
 
-- No hover, focus-visible, pressed, disabled, or loading crop.
-- No login or register screenshot.
-- Desktop mega menu not opened.
-- Switch off state not captured.
-- Typeform contact fields not measured.
-- Toast, dialog, tooltip, tabs, select, checkbox, radio, and table were not on the captured pages.
+- Signed-in app components are behind `https://app.programa.design/login`. Not captured.
+- Disabled, loading, and error states were not shown on the public pages.
+- Text field chrome, plan card metrics, and the billing switch thumb are Not captured.
+- Icon extraction was not run. Icons are visible in the menu screenshots.
