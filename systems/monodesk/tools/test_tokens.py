@@ -56,6 +56,10 @@ class TokensTest(unittest.TestCase):
         import build_tokens  # main() builds in memory; only write() touches tokens.json
         self.assertEqual(T, json.loads(json.dumps(build_tokens.main())))
 
+    def test_app_heading_says_it_was_typed_in(self):
+        for path in ("font.size.appHeading", "typography.appHeading"):
+            self.assertTrue(flat(T["core"])[path]["$extensions"]["source"].startswith("Reconstruction"), path)
+
     def test_unread_values_are_not_labelled_as_readings(self):
         # raw/css-vars.json holds no custom property, so a token sourced only to one says Reconstruction.
         for path, token in flat(T).items():

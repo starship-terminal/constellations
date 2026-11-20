@@ -55,16 +55,21 @@ function rgbToHex(c) {
 }
 
 // Consent is hidden, never answered: no button is clicked (a loose /ok/ label matched "Book a demo"
-// and "Facebook", and clicking accept answers the banner). Returns how many overlays were hidden.
+// and "Facebook", and clicking accept answers the banner). Known banner ids are hidden outright; a
+// broader cookie/consent match is hidden only when it is an overlay (fixed or sticky, or a dialog),
+// so a cookie-settings link or a policy section in the page stays in the shot. Returns the count.
 async function dismissCookie(page) {
   return page.evaluate(() => {
     let n = 0;
-    const sel = '#onetrust-banner-sdk, [id*="onetrust" i], #CybotCookiebotDialog, [id*="cookie" i], [class*="cookie" i], [id*="consent" i], [class*="consent" i], [aria-label*="cookie" i]';
-    document.querySelectorAll(sel).forEach((el) => {
-      if (el === document.body || el === document.documentElement) return;
-      el.style.setProperty('display', 'none', 'important');
-      n++;
-    });
+    const hide = (el) => { el.style.setProperty('display', 'none', 'important'); n++; };
+    document.querySelectorAll('#onetrust-banner-sdk, #onetrust-consent-sdk, #CybotCookiebotDialog, #usercentrics-root').forEach(hide);
+    const broad = '[id*="cookie" i], [class*="cookie" i], [id*="consent" i], [class*="consent" i], [aria-label*="cookie" i]';
+    for (const el of document.querySelectorAll(broad)) {
+      if (el === document.body || el === document.documentElement || el.closest('[style*="display: none"]')) continue;
+      const pos = getComputedStyle(el).position;
+      const overlay = pos === 'fixed' || pos === 'sticky' || el.getAttribute('role') === 'dialog' || el.getAttribute('aria-modal') === 'true';
+      if (overlay) hide(el);
+    }
     return n;
   }).catch(() => 0);
 }

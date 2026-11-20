@@ -341,6 +341,7 @@ def main():
 # these computed values, which no file in raw/ holds.
 UNREAD = {
     "core.font.size.appHeading",  # "Login to your account"; raw has only create-heading (16px)
+    "core.typography.appHeading",  # the same heading's 22px / 30px composite
     "light.text.muted",  # rgb(81, 81, 81) on "or continue with"
 }
 HAND = ("Reconstruction: entered by hand at capture time; no file in raw/ holds this reading "
@@ -362,7 +363,7 @@ def relabel_unread(tokens):
     import re
     for path, tok in leaves(tokens):
         src = tok["$extensions"]["source"]
-        if isinstance(tok["$value"], str) and tok["$value"].startswith("{"):
+        if path not in UNREAD and isinstance(tok["$value"], str) and tok["$value"].startswith("{"):
             continue  # an alias carries the evidence of the token it names
         # A source that cites only a custom property has nothing behind it; one that also cites a
         # computed style on an element ("computed color on ...") is backed by that reading.
