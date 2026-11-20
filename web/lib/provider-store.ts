@@ -8,7 +8,8 @@
 // ~/.config/design-systems/provider.db. Outside the checkout, so no key can
 // be committed; tests point the variable at a throwaway folder. The folder is
 // created 0700 and the database file 0600 (SQLite gives its -wal and -shm
-// files the same mode).
+// files the same mode). secure_delete and a checkpoint after every write keep a
+// replaced or removed key's bytes out of both files.
 //
 // Why SQLite for one row: every change is a single statement, so SQLite's
 // own locking (released when a process dies, so a crash never leaves a lock
@@ -59,42 +60,61 @@ const SCHEMA = `CREATE TABLE IF NOT EXISTS provider (
 const COLUMNS = "api, base_url, key_header, models_url, model, name, api_key";
 
 /** Open the database, or null when none has been created (nothing saved).
-    `create` makes the folder (0700) and the file (0600) first. node:sqlite is
-    loaded here, not at import, so nothing else in the app depends on it. */
+    `create` makes the folder (0700) and the file (0600) first. Any other
+    failure (a permission change, a damaged file) is a StoreError, never
+    "nothing saved", so the env key cannot quietly take over. node:sqlite is
+    loaded here, not at import, so nothing else in the app depends on it.
+    secure_delete overwrites a replaced or removed key's bytes in the file. */
 async function open(create: boolean): Promise<DatabaseSync | null> {
   const file = providerFile();
-  if (create) {
-    await fs.mkdir(configDir(), { recursive: true, mode: 0o700 });
-    const fh = await fs.open(file, "a", 0o600);
-    await fh.close();
-    await fs.chmod(file, 0o600);
-  } else {
-    try {
+  try {
+    if (create) {
+      await fs.mkdir(configDir(), { recursive: true, mode: 0o700 });
+      const fh = await fs.open(file, "a", 0o600);
+      await fh.close();
+      await fs.chmod(file, 0o600);
+    } else {
       await fs.access(file);
-    } catch {
-      return null;
     }
+  } catch (e) {
+    if (!create && (e as NodeJS.ErrnoException).code === "ENOENT") return null;
+    throw new StoreError("The saved provider file cannot be read.");
   }
+  let db: DatabaseSync | null = null;
   try {
     const { DatabaseSync } = await import("node:sqlite");
-    const db = new DatabaseSync(file);
+    db = new DatabaseSync(file);
     db.exec("PRAGMA busy_timeout = 5000");
+    db.exec("PRAGMA secure_delete = ON");
     db.exec("PRAGMA journal_mode = WAL");
     db.exec(SCHEMA);
     return db;
   } catch {
+    try {
+      db?.close();
+    } catch {}
     throw new StoreError("The saved provider file cannot be read.");
   }
 }
 
+/** Run `fn`, then fold the write-ahead log back into the file and empty it,
+    so no copy of an old key stays in the -wal file, and close. */
 function run<T>(db: DatabaseSync, fn: () => T): T {
   try {
-    return fn();
+    const out = fn();
+    db.exec("PRAGMA wal_checkpoint(TRUNCATE)");
+    return out;
   } catch {
     throw new StoreError("The saved provider file cannot be used.");
   } finally {
     db.close();
   }
+}
+
+/** Delete the database and its side files: the way out of a damaged one. */
+async function discardFiles(): Promise<void> {
+  const file = providerFile();
+  for (const f of [file, `${file}-wal`, `${file}-shm`]) await fs.rm(f, { force: true });
 }
 
 const rowToProvider = (row: Record<string, unknown> | undefined): SavedProvider | null => {
@@ -133,7 +153,6 @@ export async function loadSaved(): Promise<SavedProvider | null> {
       the provider could not check must not replace a different one).
     Returns whether the row was written. One statement, so it is atomic. */
 export async function saveProvider(cfg: SavedProvider, mode: "replace" | "create" | "same-key"): Promise<boolean> {
-  const db = (await open(true))!;
   const placeholders = "1, ?, ?, ?, ?, ?, ?, ?";
   const update =
     "api = excluded.api, base_url = excluded.base_url, key_header = excluded.key_header, models_url = excluded.models_url, model = excluded.model, name = excluded.name, api_key = excluded.api_key";
@@ -143,7 +162,19 @@ export async function saveProvider(cfg: SavedProvider, mode: "replace" | "create
       : mode === "same-key"
         ? `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO UPDATE SET ${update} WHERE provider.api_key = excluded.api_key`
         : `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO UPDATE SET ${update}`;
-  return run(db, () => Number(db.prepare(sql).run(...values(cfg)).changes) > 0);
+  const attempt = async () => {
+    const db = (await open(true))!;
+    return run(db, () => Number(db.prepare(sql).run(...values(cfg)).changes) > 0);
+  };
+  try {
+    return await attempt();
+  } catch (e) {
+    // A checked key may replace a damaged file outright; the other modes
+    // must not, since they only write when they can see what is there.
+    if (!(e instanceof StoreError) || mode !== "replace") throw e;
+    await discardFiles();
+    return attempt();
+  }
 }
 
 /** Change the model and label of the saved provider, only while it still
@@ -165,11 +196,23 @@ export async function updateModel(seen: SavedProvider, model: string, name: stri
   );
 }
 
-/** Delete the saved provider. True when there was one. */
+/** Delete the saved provider. True when there was one. The row is deleted
+    with secure_delete on, so its bytes are overwritten; a damaged file that
+    cannot be opened is deleted outright, so Remove always recovers. */
 export async function removeSaved(): Promise<boolean> {
-  const db = await open(false);
-  if (!db) return false;
-  return run(db, () => Number(db.prepare("DELETE FROM provider WHERE id = 1").run().changes) > 0);
+  try {
+    const db = await open(false);
+    if (!db) return false;
+    return run(db, () => Number(db.prepare("DELETE FROM provider WHERE id = 1").run().changes) > 0);
+  } catch (e) {
+    if (!(e instanceof StoreError)) throw e;
+    try {
+      await discardFiles();
+    } catch {
+      throw new StoreError("The saved provider file cannot be removed.");
+    }
+    return true;
+  }
 }
 
 /** The fields of a provider that may leave the server. */

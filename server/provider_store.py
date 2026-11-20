@@ -86,16 +86,27 @@ SAVE_SQL = {
 @contextlib.contextmanager
 def _db(create: bool):
     """The open database, or None when none exists (nothing saved). `create`
-    makes the folder (0700) and the file (0600) first."""
+    makes the folder (0700) and the file (0600) first. Any other failure (a
+    permission change, a damaged file) is a StoreError, never "nothing saved",
+    so the env key cannot quietly take over. secure_delete overwrites a
+    replaced or removed key's bytes, and a checkpoint after the work keeps no
+    copy in the -wal file."""
     path = provider_file()
-    if create:
-        config_dir().mkdir(parents=True, exist_ok=True, mode=0o700)
-        fd = os.open(path, os.O_CREAT | os.O_RDWR, 0o600)
-        os.close(fd)
-        os.chmod(path, 0o600)
-    elif not path.exists():
-        yield None
-        return
+    try:
+        if create:
+            config_dir().mkdir(parents=True, exist_ok=True, mode=0o700)
+            fd = os.open(path, os.O_CREAT | os.O_RDWR, 0o600)
+            os.close(fd)
+            os.chmod(path, 0o600)
+        else:
+            os.stat(path)
+    except FileNotFoundError:
+        if not create:
+            yield None
+            return
+        raise StoreError("The saved provider file cannot be read.") from None
+    except OSError:
+        raise StoreError("The saved provider file cannot be read.") from None
     try:
         conn = sqlite3.connect(path, timeout=5, isolation_level=None)
     except sqlite3.Error:
@@ -103,16 +114,25 @@ def _db(create: bool):
     try:
         try:
             conn.execute("PRAGMA busy_timeout = 5000")
+            conn.execute("PRAGMA secure_delete = ON")
             conn.execute("PRAGMA journal_mode = WAL")
             conn.execute(SCHEMA)
         except sqlite3.Error:
             raise StoreError("The saved provider file cannot be read.") from None
         try:
             yield conn
+            conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
         except sqlite3.Error:
             raise StoreError("The saved provider file cannot be used.") from None
     finally:
         conn.close()
+
+
+def _discard_files() -> None:
+    """Delete the database and its side files: the way out of a damaged one."""
+    path = provider_file()
+    for f in (path, path.with_name(path.name + "-wal"), path.with_name(path.name + "-shm")):
+        f.unlink(missing_ok=True)
 
 
 def load() -> dict | None:
@@ -138,9 +158,19 @@ def save_provider(cfg: dict, mode: str) -> bool:
     """Write the provider in one statement. `mode`: "replace" always (a key the
     provider checked); "create" only when none is saved (a migration from a
     browser); "same-key" only when none is saved or it holds this same key (a
-    key the provider could not check). True when the row was written."""
-    with _db(True) as conn:
-        return conn.execute(SAVE_SQL[mode], _values(cfg)).rowcount > 0
+    key the provider could not check). True when the row was written. A
+    checked key may replace a damaged file outright; the other modes may not,
+    since they only write when they can see what is there."""
+    def attempt() -> bool:
+        with _db(True) as conn:
+            return conn.execute(SAVE_SQL[mode], _values(cfg)).rowcount > 0
+    try:
+        return attempt()
+    except StoreError:
+        if mode != "replace":
+            raise
+        _discard_files()
+        return attempt()
 
 
 def update_model(seen: dict, model: str, name: str) -> bool:
@@ -158,11 +188,19 @@ def update_model(seen: dict, model: str, name: str) -> bool:
 
 
 def remove() -> bool:
-    """Delete the saved provider. True when there was one."""
-    with _db(False) as conn:
-        if conn is None:
-            return False
-        return conn.execute("DELETE FROM provider WHERE id = 1").rowcount > 0
+    """Delete the saved provider. True when there was one. A damaged file that
+    cannot be opened is deleted outright, so Remove always recovers."""
+    try:
+        with _db(False) as conn:
+            if conn is None:
+                return False
+            return conn.execute("DELETE FROM provider WHERE id = 1").rowcount > 0
+    except StoreError:
+        try:
+            _discard_files()
+        except OSError:
+            raise StoreError("The saved provider file cannot be removed.") from None
+        return True
 
 
 def public(cfg: dict | None) -> dict | None:

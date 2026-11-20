@@ -234,6 +234,53 @@ describe("review fixes", () => {
   });
 });
 
+describe("recovery and key bytes", () => {
+  const rawBytes = async () => {
+    let all = "";
+    for (const f of await fs.readdir(path.join(dir, "config")))
+      all += (await fs.readFile(path.join(dir, "config", f))).toString("latin1");
+    return all;
+  };
+
+  it("leaves no copy of a removed or replaced key in the files", async () => {
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    await handleSave({ ...GOOD, api_key: KEY2 }, okModels);
+    assert.ok(!(await rawBytes()).includes(KEY), "the replaced key is gone");
+    await handleRemove();
+    assert.ok(!(await rawBytes()).includes(KEY2), "the removed key is gone");
+  });
+
+  it("Remove and a checked replacement recover a damaged file", async () => {
+    await fs.mkdir(path.join(dir, "config"), { recursive: true });
+    await fs.writeFile(providerFile(), `damaged ${KEY} `.repeat(300));
+    assert.equal((await providerState()).configured, false);
+    const removed = await handleRemove();
+    assert.deepEqual([removed.status, removed.body.removed, removed.body.source], [200, true, "none"]);
+    await fs.writeFile(providerFile(), `damaged ${KEY} `.repeat(300));
+    const saved = await handleSave({ ...GOOD, api_key: KEY2 }, okModels);
+    assert.equal(saved.body.ok, true);
+    assert.equal((await savedFile()).api_key, KEY2);
+    // A migration never replaces what it cannot read.
+    await fs.writeFile(providerFile(), `damaged ${KEY} `.repeat(300));
+    const moved = await handleSave({ ...GOOD, api_key: KEY2, migrate: true }, okModels);
+    assert.equal(moved.body.ok, false);
+  });
+
+  it("reports an unreadable folder instead of falling back to the env key", async () => {
+    process.env.ANTHROPIC_API_KEY = ENV_KEY;
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    await fs.chmod(path.join(dir, "config"), 0o000);
+    try {
+      const held = await resolveProvider();
+      assert.equal(held.cfg, null);
+      assert.equal(held.source, "saved");
+      assert.ok(held.error);
+    } finally {
+      await fs.chmod(path.join(dir, "config"), 0o700);
+    }
+  });
+});
+
 describe("testing a key", () => {
   it("tests a typed key against the typed endpoint", async () => {
     const r = await handleTest({ ...GOOD, api_key: KEY }, okModels);
