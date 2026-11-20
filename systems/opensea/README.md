@@ -158,4 +158,4 @@ python3 tools/catalog.py design-md opensea
 python3 tools/package_tests.py opensea
 ```
 
-`build_package.py` rewrites [tokens.json](tokens.json), [style-guide.html](style-guide.html), and the reconstruction PNGs from [raw/](raw). Run it from the repository root, or run the script by path. `design-md` must be run from the repository root.
+`build_package.py` rewrites [tokens.json](tokens.json) and [style-guide.html](style-guide.html) from [raw/](raw). It leaves the reconstruction PNGs alone; `python3 tools/build_package.py --drawings` redraws them too, with Pillow's bundled font, so expect them to differ from the committed drawings (those were drawn with the system Arial). Run it from the repository root, or run the script by path. `design-md` must be run from the repository root.
