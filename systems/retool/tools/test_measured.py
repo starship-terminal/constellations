@@ -81,5 +81,30 @@ class BuildTest(unittest.TestCase):
             labelled = tok["$extensions"]["source"].startswith("Reconstruction")
             self.assertEqual(labelled, not build_tokens.in_raw(value), path)
 
+
+class MatcherTest(unittest.TestCase):
+    """The colour matcher on its own, against fixed inputs (not the package's labels)."""
+
+    def setUp(self):
+        import sys
+        sys.path.insert(0, str(ROOT / "tools"))
+        import build_tokens
+        self.b = build_tokens
+        self.saved = list(build_tokens.RAW_COLOURS)
+
+    def tearDown(self):
+        self.b.RAW_COLOURS[:] = self.saved
+
+    def test_opacity_must_match(self):
+        self.b.RAW_COLOURS[:] = [(0, 0, 0, 0.0), (0, 0, 0, 0.04), (35, 79, 166, 0.5)]
+        self.assertFalse(self.b.colour_in_raw("#000000"))
+        self.assertTrue(self.b.colour_in_raw("#0000000a"))
+        self.assertTrue(self.b.colour_in_raw("#234fa680"))
+        self.assertFalse(self.b.colour_in_raw("#234fa6"))
+
+    def test_parses_comma_space_and_slash_forms(self):
+        found = self.b._colours("rgb(1, 2, 3) rgba(4,5,6,0.2) rgb(7 8 9/0.5) #0a0b0c #0d0e0f80")
+        self.assertEqual(found, [(1, 2, 3, 1.0), (4, 5, 6, 0.2), (7, 8, 9, 0.5), (10, 11, 12, 1.0), (13, 14, 15, 128 / 255)])
+
 if __name__ == "__main__":
     unittest.main()
