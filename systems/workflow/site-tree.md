@@ -70,7 +70,7 @@ No cookie or consent dialog was present. No form on the home page.
 | `/features` | Workflow – Features | Index of feature articles. Each card opens `/features/<slug>`. |
 | `/about` | Workflow – About | Team links to `/team/midhat-hadi` and `/team/sophia-oneal`. |
 | `/pricing` | Workflow – Pricing | Plan cards, FAQ anchors (`#FAQs`). Plan CTAs open the sign-up wall. Billing toggle, if present, is in-page and was recorded in the capture log. No checkout was started. |
-| `/contact` | Workflow – Contact | Contact form present. Fields were not filled and the form was not submitted. |
+| `/contact` | Workflow – Contact | No form. Support, press, and general rows are links and buttons. The page also publishes a street address and mailbox addresses. Those strings are painted out of the screenshots and are not written here. |
 | `/policies` | Workflow – Policies | In-page anchors for privacy and other policy sections. |
 | `/help` | Workflow Help Center | Category links to `/help/<slug>`. |
 | `/referral-program` | Referral Program | Program copy. Any "claim" or sign-up control stops at the auth wall. |

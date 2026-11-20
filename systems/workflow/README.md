@@ -13,7 +13,7 @@ The public site sets type in Inter and Crimson Pro, paints a warm page (`#f6f4f0
 | [components.md](components.md) | Public controls and their crops |
 | [patterns.md](patterns.md) | How the public pages are put together |
 | [site-tree.md](site-tree.md) | Which control opens which page, menu, or wall |
-| [components/crops/](components/crops) | Element screenshots of the public button, link, tab and field |
+| [components/crops/](components/crops) | Element screenshots of the public button, link and tab |
 | [screenshots/](screenshots) | 175 captures, `{page}-light-{state}.png`, phone files prefixed `mobile-` |
 | [raw/](raw) | CSS custom properties, computed styles, and a few viewport sidecars |
 | [icons/](icons) | No extracted icons. INDEX.tsv records that brand artwork stays in screenshots |
@@ -66,6 +66,7 @@ Custom properties were read from the live CSSOM on https://www.workflow.design/ 
 - `legacy.*` colours are still declared. The current roles are the `--color--*` names.
 - Button pressed state did not paint a distinct fill under CDP `:active`. It is not a token.
 - Warning and info colours are not declared. They are Not captured.
+- Contact screenshots have the published street address and mailbox addresses painted out. The rest of that page is the live layout.
 - Phone full-page shots of `/features` and `/policies` are tall. The shooter caps a page at 8 chunks.
 
 ## Fonts
@@ -83,7 +84,8 @@ Inter and Crimson Pro, named by `--type--body` and `--type--display`. Both are l
 | Spacing, radii | Captured from `--space--*` and `--radius--*` |
 | Elevation | Not captured as a scale. Comment shadow colours are in `light.shadow` |
 | Motion | Captured. 200ms, cubic-bezier(0.455, 0.03, 0.515, 0.955) on the header button |
-| Button, link, tabs, text field, menu, dialog | Captured. See [components.md](components.md) |
+| Button, link, tabs, menu, dialog | Captured. See [components.md](components.md) |
+| Text field | Not present. `/contact` has no inputs |
 | Icon button, select, checkbox, radio, switch, tooltip, toast, table, avatar, badge | Not present on the public site |
 | App shell, inbox, comment composer, destructive confirm, onboarding | Not captured. Login wall at `https://app.workflow.design/users/sign-in` |
 | Dark theme | Not present |
