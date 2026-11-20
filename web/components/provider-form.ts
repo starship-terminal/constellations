@@ -40,6 +40,14 @@ export function afterSave(current: ProviderForm, sent: ProviderForm): { form: Pr
   return { form: { ...current, api_key: "" }, settled: true };
 }
 
+/** The form after a successful Remove started from `sent`: it empties only
+    while it still holds what it held when Remove was clicked. A
+    replacement typed while the removal was in flight is kept. */
+export function afterRemove(current: ProviderForm, sent: ProviderForm): { form: ProviderForm; settled: boolean } {
+  if (!sameForm(current, sent)) return { form: current, settled: false };
+  return { form: EMPTY_FORM, settled: true };
+}
+
 /** Numbers each request so only the newest one's reply is used: a reply
     from an older request that lands late is ignored. */
 export function latestOnly(): { begin(): number; isLatest(n: number): boolean } {

@@ -79,8 +79,12 @@ lives in the browser:
    key.
 6. A saved key only goes to the endpoint it was saved with. Changing the
    API, base URL, key header or models URL needs the key again; the model
-   and label change without it. Remove (`DELETE /api/provider`) deletes the
-   file, and the env key, if set, applies again.
+   and label change without it. Remove (`DELETE /api/provider`) deletes
+   the saved row (with `secure_delete` on, so its bytes are overwritten),
+   and the env key, if set, applies again. `provider.db` itself stays: it
+   keeps the mark that it once held a provider, which stops an old
+   browser's key from being moved back in after the user removed theirs
+   (see below). Only a file SQLite reports as damaged is deleted whole.
 7. Error texts are scrubbed of the key before they are returned, and the
    routes log only an error's type.
 

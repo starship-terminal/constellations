@@ -278,10 +278,16 @@ SETTINGS_BODY = """<h1>Settings</h1>
     };
     el('pf-clear').onclick = function () {
       pending(true);
+      var submitted = formSig();
       send('DELETE', 'provider').then(function (d) {
         if (!d.ok) { setStatus(d.error || 'Could not remove the saved key.', true); return; }
-        show(d); fill(d);
-        setStatus(d.source === 'env' ? 'Removed the saved key. The chat now uses the server environment key.' : 'Removed the saved key.');
+        show(d);
+        // The form resets only if the reader did not start a replacement
+        // while the removal was in flight (as with Save).
+        var kept = formSig() !== submitted;
+        if (!kept) fill(d);
+        setStatus((d.source === 'env' ? 'Removed the saved key. The chat now uses the server environment key.' : 'Removed the saved key.') +
+          (kept ? ' The form keeps what you typed since; test and save it to use it.' : ''));
       }).catch(function () { setStatus('No answer from the server.', true); })
         .finally(function () { pending(false); });
     };

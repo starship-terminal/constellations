@@ -2,7 +2,7 @@
 // used by Settings.tsx and Chat.tsx. Run with `pnpm test`.
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { afterSave, EMPTY_FORM, latestOnly, sameForm, withField, type ProviderForm } from "./provider-form.ts";
+import { afterRemove, afterSave, EMPTY_FORM, latestOnly, sameForm, withField, type ProviderForm } from "./provider-form.ts";
 
 // A provider saved from the docs page's Gemini template, as GET /api/provider returns it.
 const GEMINI: ProviderForm = {
@@ -48,6 +48,17 @@ describe("a save reply", () => {
     for (const k of Object.keys(EMPTY_FORM) as (keyof ProviderForm)[])
       assert.equal(sameForm(sent, { ...sent, [k]: `${sent[k]}-changed` }), false, k);
     assert.equal(sameForm(sent, { ...sent }), true);
+  });
+});
+
+describe("a remove reply", () => {
+  it("empties an unchanged form", () => {
+    assert.deepEqual(afterRemove({ ...GEMINI }, GEMINI), { form: EMPTY_FORM, settled: true });
+  });
+
+  it("keeps a replacement typed while the removal was in flight", () => {
+    const typed = withField(withField(GEMINI, "base_url", "https://api.openai.com/v1"), "api_key", "sk-form-test-3333333333");
+    assert.deepEqual(afterRemove(typed, GEMINI), { form: typed, settled: false });
   });
 });
 
