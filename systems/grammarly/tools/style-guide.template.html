@@ -8,10 +8,9 @@
 <!--
    Grammarly's display face Matter and the Super Sans Mono VF in the Origin stacks are self-hosted brand faces and are
    not loaded here: headings fall back to Inter, exactly as the token stacks order them. Inter is
-   loaded from Google Fonts.
+   not loaded either (the guide makes no network requests): it draws only where it is installed,
+   and the stacks' system fallbacks otherwise.
 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
 <style>
 :root {
 /*CORE*/
@@ -230,7 +229,8 @@ table.tok td:last-child { font: 11px var(--fontFamily-mono); color: var(--color-
 
 <script>
 const TOK = /*TOKENS*/null;
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+// Escapes quotes too (values land in title="..." attributes) and shows an object as JSON, not [object Object].
+const esc = (s) => String(s && typeof s === 'object' ? JSON.stringify(s) : s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const flat = (o, p='') => Object.entries(o||{}).flatMap(([k,v]) => k.startsWith('$') ? [] : (v && typeof v === 'object' && 'v' in v) ? [[p+k, v]] : flat(v, p+k+'.'));
 const cssname = (p) => '--' + p.replace(/[^a-zA-Z0-9-]/g, '-').replace(/\./g, '-');
 const theme = () => document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';

@@ -58,7 +58,7 @@ Screenshots are named `{page}-light-{state}.png` (grammarly.com paints one light
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 27 components were given a real keyboard focus. 20 draw a ring: `nav-menu-button` (2px solid #027e6f `green.60`, offset 0px), `nav-link` (2px solid #027e6f `green.60`, offset 1px), `nav-demo` (2px solid #027e6f `green.60`, offset 1px), `nav-login` (2px solid #027e6f `green.60`, offset 1px), `nav-signup` (2px solid #027e6f `green.60`, offset 2px), `btn-hero` (2px solid #027e6f `green.60`, offset 2px), `btn-google` (2px solid #027e6f `green.60`, offset 2px), `btn-carousel` (3px solid #027e6f `green.60`, offset 2px), `feature-card` (3px solid #027e6f `green.60`, offset 3px), `stat-card` (2px solid #11a683, offset -4px), `link-legal` (2px solid #027e6f `green.60`, offset 1px), `footer-link` (1px auto #101010, offset 1px), `plan-cta-primary` (2px solid #027e6f `green.60`, offset 2px), `plan-cta-secondary` (2px solid #027e6f `green.60`, offset 2px), `info-icon-button` (2px solid #027e6f `green.60`, offset 2px), `tools-nav-item` (2px solid #027e6f `green.60`, offset 2px), `form-select` (1px auto #101010, offset 0px), `signin-help-link` (2px solid #027e6f `green.60`, offset 2px), `m-menu-button` (2px solid #027e6f `green.60`, offset 0px), `m-hero-btn` (2px solid #027e6f `green.60`, offset 2px). The other 7 draw none, so a keyboard user sees no change: `nav-panel-item`, `tab`, `checker-cta`, `copy-button`, `form-submit`, `signin-continue`, `signin-provider`.
+**Focus.** 24 components were given a real keyboard focus. 20 draw a ring: `nav-menu-button` (2px solid #027e6f `green.60`, offset 0px), `nav-link` (2px solid #027e6f `green.60`, offset 1px), `nav-demo` (2px solid #027e6f `green.60`, offset 1px), `nav-login` (2px solid #027e6f `green.60`, offset 1px), `nav-signup` (2px solid #027e6f `green.60`, offset 2px), `btn-hero` (2px solid #027e6f `green.60`, offset 2px), `btn-google` (2px solid #027e6f `green.60`, offset 2px), `btn-carousel` (3px solid #027e6f `green.60`, offset 2px), `feature-card` (3px solid #027e6f `green.60`, offset 3px), `stat-card` (2px solid #11a683, offset -4px), `link-legal` (2px solid #027e6f `green.60`, offset 1px), `footer-link` (1px auto #101010, offset 1px), `plan-cta-primary` (2px solid #027e6f `green.60`, offset 2px), `plan-cta-secondary` (2px solid #027e6f `green.60`, offset 2px), `info-icon-button` (2px solid #027e6f `green.60`, offset 2px), `tools-nav-item` (2px solid #027e6f `green.60`, offset 2px), `form-select` (1px auto #101010, offset 0px), `signin-help-link` (2px solid #027e6f `green.60`, offset 2px), `m-menu-button` (2px solid #027e6f `green.60`, offset 0px), `m-hero-btn` (2px solid #027e6f `green.60`, offset 2px). The other 4 draw none, so a keyboard user sees no change: `tab`, `checker-cta`, `signin-continue`, `signin-provider`. Focus could not be held on 3 more (`nav-panel-item`, `copy-button`, `form-submit`), so their focus look is uncaptured, not absent.
 
 **Pressed.** Pressed was forced with DevTools (`:active` + `:hover` forced on the node), so no link, submit or sign-in control could fire. The `--button-*-background-active` tokens say the buttons change fill on press rather than transform; the state rows below record what was actually painted.
 
@@ -88,14 +88,14 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Feature card](#feature-card) | 417.33 x 382.78 | 1px solid #ebebeb `neutral.10` | 8px | #ffffff `white` | none | 0 |
 | [Customer stat card](#customer-stat-card) | 390 x 500 | - | 8px | #ffffff `white` | none | 0 |
-| [Plan card (featured)](#plan-card-featured) | 386.67 x 786 | - | 8px 8px 0px 0px | #027e6f `green.60` | none | 0 |
-| [Plan card (plain)](#plan-card-plain) | 386.67 x 786 | - | 8px 8px 0px 0px | #027e6f `green.60` | none | 0 |
+| [Plan card (featured)](#plan-card-featured) | 386.67 x 786 | - | - | transparent | none | 0 |
+| [Plan card (plain)](#plan-card-plain) | 386.67 x 786 | - | - | transparent | none | 0 |
 | [Promo banner](#promo-banner) | 1440 x 51.19 | - | - | #00231f `green.100` | none | 0px 14px |
-| [Dark section](#dark-section) | 1440 x 469 | 1px transparent | 6px | #ffffff `white` | none | 96px 80px 0px 80px |
-| [Sign-in card](#sign-in-card) | 396 x 202 | - | 4px | #ffffff `white` | none | 0 |
-| [Checker frame](#checker-frame) | 1280 x 666 | 1px #c6cbde | 12px | #ffffff `white` | rgba(26, 33, 52, 0.11) 0px 12px 48px 0px | 32px 0px |
+| [Dark section](#dark-section) | 1440 x 469 | - | - | transparent | none | 96px 80px 0px 80px |
+| [Sign-in card](#sign-in-card) | 396 x 202 | - | - | transparent | none | 0 |
+| [Checker frame](#checker-frame) | 1280 x 666 | - | - | transparent | none | 32px 0px |
 | [Suggestions rail (onboarding)](#suggestions-rail-onboarding) | 267 x 215 | - | - | transparent | none | 0 |
-| [Mobile menu](#mobile-menu) | 390 x 844 | - | 6px | rgba(255, 255, 255, 0) `transparent` | none | 0 |
+| [Mobile menu](#mobile-menu) | 390 x 844 | - | - | #ffffff `white` | none | 0 |
 
 ## Components
 
@@ -144,9 +144,9 @@ Read as `nav-panel-item` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 253 x 38; padding 8px 16px; radius 4px; background transparent; text Glyph 14/22 400, #1c1c1c `neutral.100` |
-| hover | outline 1px solid #027e6f `green.60`, offset 0px |
-| focus-visible | size 0 x 0; text Glyph 16/normal 400, #0000ee |
-| pressed | outline 1px solid #027e6f `green.60`, offset 0px |
+| hover, pressed | outline 1px solid #027e6f `green.60`, offset 0px |
+
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible`), so its focus look is uncaptured, not measured as absent.
 
 ![Nav dropdown item default](components/crops/nav-panel-item-default.png) ![Nav dropdown item hover](components/crops/nav-panel-item-hover.png) ![Nav dropdown item pressed](components/crops/nav-panel-item-pressed.png)
 
@@ -435,8 +435,10 @@ The quiet button over the editor that copies the field's text (present in the DO
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 0 x 0; padding 0px 8px; border 1px solid #027e6f `green.60`; radius 6px; background rgba(255, 255, 255, 0) `transparent`; text Glyph 14/32 400, #027e6f `green.60` |
+| default | size 0 x 0; padding 0px 8px; border 1px solid #027e6f `green.60`; radius 6px; background rgba(255, 255, 255, 0) `transparent`; text Glyph 14/32 400, #027e6f `green.60` |
 | pressed | shadow #027e6f 0px 0px 0px 1px |
+
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible`), so its focus look is uncaptured, not measured as absent.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -494,9 +496,11 @@ The form's green Submit. Measured, never pressed. Read as `form-submit` on the c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 93 x 60; padding 16px 24px; border 1px solid transparent; radius 6px; background #f0f2fc; text Glyph 14/24 400, #c6cbde |
+| default (same: hover, pressed) | size 93 x 60; padding 16px 24px; border 1px solid transparent; radius 6px; background #f0f2fc; text Glyph 14/24 400, #c6cbde |
 
-![Submit button default](components/crops/form-submit-default.png) ![Submit button hover](components/crops/form-submit-hover.png) ![Submit button focus-visible](components/crops/form-submit-focus-visible.png) ![Submit button pressed](components/crops/form-submit-pressed.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible`), so its focus look is uncaptured, not measured as absent.
+
+![Submit button default](components/crops/form-submit-default.png) ![Submit button hover](components/crops/form-submit-hover.png) ![Submit button pressed](components/crops/form-submit-pressed.png)
 
 ### Footer
 

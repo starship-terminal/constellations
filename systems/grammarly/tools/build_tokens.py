@@ -81,9 +81,21 @@ def decl(name):
     return DECL.get(name, (None, None))[1]
 
 
-def prov(name, dark=False):
-    """Provenance string for a css-var token."""
-    d = decl(name)
+def dark_decl(name):
+    """The grammarly declaration of `name` in a dark scope, if one exists."""
+    for dd in V["decls"]:
+        if dd["name"] != name or dd["owner"] != "grammarly" or dd["media"]:
+            continue
+        s = dd["selector"] or ""
+        if ('data-gds-theme="dark"' in s or 'data-origin-mode="dark"' in s) and not any(x in s for x in ("superhuman", "coda", "checkout-ui")):
+            return dd
+    return None
+
+
+def prov(name, dark=False, d=None):
+    """Provenance string for a css-var token. A dark token cites its dark-scope
+    declaration when there is one (the light one otherwise: the value is inherited)."""
+    d = d or (dark and dark_decl(name)) or decl(name)
     sel = (d["selector"] if d else ":root")
     sel = re.sub(r"\s+", " ", sel).strip()
     if len(sel) > 110:
@@ -190,8 +202,15 @@ def put(set_name, path, ty, value, source, desc=None, extra=None):
     check(f"{set_name}.{path}", ty, value)
     node = tokens[set_name]
     parts = path.split(".")
-    for p in parts[:-1]:
+    for i, p in enumerate(parts[:-1]):
+        if "$value" in node.get(p, {}):
+            # a token is never also a group (catalog flatten stops at $value, so
+            # children would vanish): --x-default-f3 becomes a sibling, default-f3
+            parts = parts[:i] + ["-".join(parts[i:])]
+            break
         node = node.setdefault(p, {})
+    if any(not k.startswith("$") for k in node.get(parts[-1], {})):
+        raise ValueError(f"{set_name}.{path}: a group already sits at this path")
     leaf = {"$value": value, "$type": ty, "$extensions": {"source": source}}
     if desc:
         leaf["$description"] = desc
@@ -204,10 +223,9 @@ def put(set_name, path, ty, value, source, desc=None, extra=None):
 def var(set_name, path, ty, name, desc=None, dark=False, extra=None):
     """A token whose value is a css-var's resolved value."""
     res = RESD if dark else RESL
-    if name not in res or res[name] is None:
-        res = RESL if dark else RESD
-    if name not in res:
-        raise KeyError(f"{set_name}.{path}: {name} not resolved")
+    # never fill one theme from the other's resolution: a missing reading is an error
+    if res.get(name) is None:
+        raise KeyError(f"{set_name}.{path}: {name} not resolved in the {'dark' if dark else 'light'} pass")
     return put(set_name, path, ty, res[name], prov(name, dark), desc, extra)
 
 
@@ -217,7 +235,7 @@ def alias_var(set_name, path, name, desc=None, dark=False):
     d = decl(name)
     val = d["value"].strip() if d else ""
     m = re.fullmatch(r"var\((--[\w-]+)\)", val)
-    target = None
+    target = hit = None
     if m:
         # pick the decl that matches this theme
         for dd in V["decls"]:
@@ -230,9 +248,11 @@ def alias_var(set_name, path, name, desc=None, dark=False):
                 if mm:
                     target = alias_map.get(mm.group(1))
                     if target:
+                        hit = (dd, mm.group(1))
                         break
     if target:
-        return put(set_name, path, "color", "{" + target + "}", prov(name, dark) + f"; declared as var({m.group(1)})", desc)
+        # cite the declaration the alias was built from, not the light one
+        return put(set_name, path, "color", "{" + target + "}", prov(name, dark, hit[0]) + f"; declared as var({hit[1]})", desc)
     return var(set_name, path, "color", name, desc, dark)
 
 
