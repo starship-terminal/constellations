@@ -103,7 +103,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **The cover play button's hover is not a reading.** Row hover swaps the album-cover button out of the layout, so `track-play` and `sfx-play` hover hold a 0x0 box: components.md leaves those states out and says so, and the hover look is on the row (`track-row`, `sfx-row`).
 - **Two entries read the wrong element.** `plan-price` is an empty 688 x 384 div at y 6525, not a price line, and `su-submit` is the "Continue with Google" link, not the registration submit. No token cites them; recapture needed.
 - **Some roles have no reading.** `dark.border.divider` and `dark.action.liked` were entered by hand (no measured border or liked icon paints them) and say so in their source; `light.text.muted`, `dark.text.muted` and `core.motion.control` have no reading at all and are listed under `_gaps` in raw/component-tokens.json.
-- **Quantised screenshots band gradients.** Screenshots are 256-colour PNGs; read exact colours from tokens.json or the raw JSON, and pixel-perfect gradients from [raw/full/](raw/full).
+- **Quantised screenshots band gradients.** Screenshots are 256-colour PNGs; read exact colours, gradients included, from tokens.json or the raw JSON. The full-colour page captures are kept outside the repo.
 - **Hidden twins exist.** The header ships a hidden duplicate "Log in" link and pricing a hidden "Compare plans" heading before the painted ones; the package measures the painted copy (the last match) only.
 - **SFX pages have no large category card.** The nearest real subcategory surface is a small periwinkle in-row text link (`sfx-category-card`, 39 x 20); do not look for tile-style category cards that were never there.
 
