@@ -1,0 +1,135 @@
+{
+ "_note": "Notion for iOS: other workspace members' names and initial avatars in the Inbox access-request rows, and the other attendee's name in two Meetings note titles, are painted out; the owner's own name, avatar and pages stay. Coordinates are for the 812 x 1780 iPhone Mirroring window. The screenshots keep their transparent corners: after apply, the alpha channel is restored and the image requantised with tools/capture/quantize.py's call (RGBA, fast octree, no dither).",
+ "families": [
+  {
+   "name": "inbox access-request rows",
+   "files": [
+    "screenshots/dark/04-inbox-tab.png",
+    "screenshots/light/04-inbox-tab.png"
+   ],
+   "size": [
+    [
+     812,
+     1780
+    ]
+   ],
+   "rects": [
+    [
+     52,
+     590,
+     284,
+     646,
+     "solid"
+    ],
+    [
+     52,
+     878,
+     344,
+     934,
+     "solid"
+    ],
+    [
+     52,
+     1116,
+     302,
+     1170,
+     "solid"
+    ]
+   ]
+  },
+  {
+   "name": "inbox rows behind the filter menu",
+   "files": [
+    "screenshots/dark/05-inbox-filter-menu.png"
+   ],
+   "size": [
+    [
+     812,
+     1780
+    ]
+   ],
+   "rects": [
+    [
+     52,
+     590,
+     192,
+     646,
+     "solid"
+    ],
+    [
+     192,
+     612,
+     195,
+     646,
+     "solid"
+    ],
+    [
+     195,
+     620,
+     200,
+     646,
+     "solid"
+    ],
+    [
+     200,
+     628,
+     206,
+     646,
+     "solid"
+    ],
+    [
+     206,
+     636,
+     212,
+     646,
+     "solid"
+    ],
+    [
+     52,
+     878,
+     344,
+     934,
+     "solid"
+    ],
+    [
+     52,
+     1116,
+     302,
+     1170,
+     "solid"
+    ]
+   ]
+  },
+  {
+   "name": "meeting note titles",
+   "files": [
+    "screenshots/dark/03-meetings-tab.png"
+   ],
+   "size": [
+    [
+     812,
+     1780
+    ]
+   ],
+   "rects": [
+    [
+     106,
+     762,
+     322,
+     808,
+     "solid"
+    ],
+    [
+     106,
+     946,
+     320,
+     996,
+     "solid"
+    ]
+   ]
+  }
+ ],
+ "ocr": {
+  "net": false
+ }
+}
