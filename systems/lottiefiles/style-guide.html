@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LottieFiles style guide</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; background: #fff; color: #111; font: 400 15px/1.45 "Inter", ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 20px 80px; }
+  h1 { font: 500 40px/1.05 "DM Sans", "Inter", sans-serif; letter-spacing: -0.04em; margin: 0 0 8px; }
+  h2 { margin: 36px 0 12px; font-size: 18px; }
+  p { max-width: 68ch; color: #444; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .sw { border: 1px solid #e6e6e8; border-radius: 12px; overflow: hidden; }
+  .sw i { display: block; height: 64px; }
+  .sw span { display: block; padding: 8px 10px; font-size: 12px; }
+  .btn { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 12px; background: #28aca2; color: #fafafa; font-weight: 500; text-decoration: none; }
+  .quiet { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 12px; background: #fff; color: #20272c; border: 1px solid #e4e4e7; font-weight: 500; margin-left: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; vertical-align: top; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+<h1>LottieFiles</h1>
+<p>Public marketing site, one light theme. Values come from tokens.json. The teal chip below uses the sampled sRGB of the primary button so a browser that does not paint oklch still shows the control.</p>
+<h2>Roles</h2>
+<div class="swatches">
+<div class="sw"><i style="background:oklch(100% 0 0)"></i><span><code>page</code><br>oklch(100% 0 0)</span></div>
+<div class="sw"><i style="background:oklch(100% 0 0)"></i><span><code>surface</code><br>oklch(100% 0 0)</span></div>
+<div class="sw"><i style="background:oklch(14.1% 0.005 285.823)"></i><span><code>text</code><br>oklch(14.1% 0.005 285.823)</span></div>
+<div class="sw"><i style="background:oklch(55.2% 0.016 285.938)"></i><span><code>muted</code><br>oklch(55.2% 0.016 285.938)</span></div>
+<div class="sw"><i style="background:#28aca2"></i><span><code>accent</code><br>oklch(62.6% 0.11 185.333)</span></div>
+<div class="sw"><i style="background:oklch(92% 0.004 286.32)"></i><span><code>border</code><br>oklch(92% 0.004 286.32)</span></div>
+</div>
+<h2>Controls</h2>
+<p><a class="btn" href="#roles">Get started for free</a><span class="quiet">Get in touch</span></p>
+<p>Hero buttons are 48px tall, 12px radius, Inter LF 16/500. Header Sign up is 36px tall, 6px radius, 14/500.</p>
+<h2>Tokens</h2>
+<table>
+<tr><th>Token</th><th>Value</th><th>Source</th></tr>
+<tr><td><code>color.brand.primary</code></td><td><code>oklch(62.6% 0.11 185.333)</code></td><td>css-var --color-primary, computed on :root at https://lottiefiles.com/ (raw/css-vars.json liveRoot)</td></tr>
+<tr><td><code>color.brand.primary-hover</code></td><td><code>oklab(0.626 -0.109524 -0.0102239 / 0.9)</code></td><td>computed backgroundColor of the Get started for free link while the pointer is over it (raw/components-computed.json button-primary hover)</td></tr>
+<tr><td><code>color.brand.primary-srgb</code></td><td><code>#28aca2</code></td><td>sampled sRGB from the raw (pre-quantize) home-light-default.png pixel on the Get started for free button, 2026-11-21</td></tr>
+<tr><td><code>color.page</code></td><td><code>oklch(100% 0 0)</code></td><td>css-var --color-background, computed on :root</td></tr>
+<tr><td><code>color.surface</code></td><td><code>oklch(100% 0 0)</code></td><td>css-var --color-card, computed on :root</td></tr>
+<tr><td><code>color.faint</code></td><td><code>oklch(98.5% 0 0)</code></td><td>css-var --color-faint, computed on :root</td></tr>
+<tr><td><code>color.text</code></td><td><code>oklch(14.1% 0.005 285.823)</code></td><td>css-var --color-foreground, computed on :root</td></tr>
+<tr><td><code>color.on-accent</code></td><td><code>oklch(98.5% 0 0)</code></td><td>css-var --color-primary-foreground, computed on :root</td></tr>
+<tr><td><code>color.muted</code></td><td><code>oklch(55.2% 0.016 285.938)</code></td><td>css-var --color-muted-foreground, computed on :root</td></tr>
+<tr><td><code>color.border</code></td><td><code>oklch(92% 0.004 286.32)</code></td><td>css-var --color-border, computed on :root</td></tr>
+<tr><td><code>color.accent-wash</code></td><td><code>oklch(96.7% 0.001 286.375)</code></td><td>css-var --color-accent, computed on :root</td></tr>
+<tr><td><code>color.destructive</code></td><td><code>oklch(57.7% 0.245 27.325)</code></td><td>css-var --color-destructive, computed on :root</td></tr>
+<tr><td><code>color.warning</code></td><td><code>oklch(70.5% 0.213 47.604)</code></td><td>css-var --color-warning, computed on :root</td></tr>
+<tr><td><code>color.inverse</code></td><td><code>oklch(14.1% 0.005 285.823)</code></td><td>css-var --color-background-inverse, computed on :root</td></tr>
+<tr><td><code>font.family.sans</code></td><td><code>"Inter LF", sans-serif</code></td><td>css-var --font-sans, computed on :root; also computed fontFamily of header buttons</td></tr>
+<tr><td><code>font.family.display</code></td><td><code>"DM Sans LF", "DM Sans", sans-serif</code></td><td>computed fontFamily of the home h1 and the hero paragraph, 2026-11-21</td></tr>
+<tr><td><code>font.family.mono</code></td><td><code>ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace</code></td><td>css-var --font-mono, computed on :root</td></tr>
+<tr><td><code>font.size.display</code></td><td><code>96px</code></td><td>computed fontSize of the home h1</td></tr>
+<tr><td><code>font.size.hero</code></td><td><code>24px</code></td><td>computed fontSize of the hero paragraph</td></tr>
+<tr><td><code>font.size.body</code></td><td><code>16px</code></td><td>computed fontSize of the hero CTA</td></tr>
+<tr><td><code>font.size.nav</code></td><td><code>14px</code></td><td>computed fontSize of header nav and Sign up</td></tr>
+<tr><td><code>font.weight.display</code></td><td><code>500</code></td><td>computed fontWeight of the home h1</td></tr>
+<tr><td><code>font.weight.control</code></td><td><code>500</code></td><td>computed fontWeight of the hero CTA and Sign up</td></tr>
+<tr><td><code>font.line-height.display</code></td><td><code>99.84px</code></td><td>computed lineHeight of the home h1</td></tr>
+<tr><td><code>font.letter-spacing.display</code></td><td><code>-4.8px</code></td><td>computed letterSpacing of the home h1</td></tr>
+<tr><td><code>radius.control</code></td><td><code>12px</code></td><td>computed borderRadius of the hero CTA</td></tr>
+<tr><td><code>radius.nav</code></td><td><code>6px</code></td><td>computed borderRadius of Sign up and Log in</td></tr>
+<tr><td><code>radius.md</code></td><td><code>0.5rem</code></td><td>css-var --radius, computed on :root</td></tr>
+<tr><td><code>space.control-x</code></td><td><code>24px</code></td><td>computed paddingLeft of the hero CTA</td></tr>
+<tr><td><code>space.nav-x</code></td><td><code>16px</code></td><td>computed paddingLeft of Sign up</td></tr>
+<tr><td><code>size.control</code></td><td><code>48px</code></td><td>computed height of the hero CTA</td></tr>
+<tr><td><code>size.nav</code></td><td><code>36px</code></td><td>computed height of Sign up and the search button</td></tr>
+<tr><td><code>border.width</code></td><td><code>1px</code></td><td>computed borderTopWidth of Log in and Get in touch</td></tr>
+<tr><td><code>shadow.control</code></td><td><code>offsetX 0px offsetY 1px blur 2px spread 0px color rgba(0, 0, 0, 0.05)</code></td><td>computed boxShadow of Get started for free (raw/components-computed.json button-primary default)</td></tr>
+</table></main></body></html>
