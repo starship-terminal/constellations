@@ -20,7 +20,7 @@
 // save only applies while the row still holds the key and endpoint it read
 // (compare and swap), a migration only inserts when no row exists, and an
 // unchecked key only replaces a row that holds the same key.
-import { promises as fs, realpathSync } from "node:fs";
+import { existsSync, promises as fs, realpathSync, statSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import type { DatabaseSync } from "node:sqlite";
@@ -64,13 +64,73 @@ const inside = (child: string, parent: string): boolean => {
   return rel === "" || (!rel.startsWith("..") && !path.isAbsolute(rel));
 };
 
+/** `p` with its nearest existing ancestor replaced by that ancestor's real
+    path (symlinks resolved), and the part that does not exist yet appended. */
+function realOfNearest(p: string): string {
+  let cur = path.resolve(p);
+  const rest: string[] = [];
+  for (;;) {
+    try {
+      return path.join(realpathSync(cur), ...rest.reverse());
+    } catch {
+      const up = path.dirname(cur);
+      if (up === cur) return path.resolve(p);
+      rest.push(path.basename(cur));
+      cur = up;
+    }
+  }
+}
+
+/** Whether the filesystem holding `existing` ignores letter case, found by
+    testing it rather than by platform: the same path with the case of its
+    last lettered part swapped is the same file. macOS's default disk is
+    case-insensitive, a Linux disk usually is not. */
+export function caseInsensitiveAt(existing: string): boolean {
+  const parts = existing.split(path.sep);
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const swapped = [...parts[i]].map((c) => (c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase())).join("");
+    if (swapped === parts[i]) continue;
+    const variant = [...parts.slice(0, i), swapped, ...parts.slice(i + 1)].join(path.sep);
+    try {
+      const [a, b] = [statSync(existing), statSync(variant)];
+      return a.dev === b.dev && a.ino === b.ino;
+    } catch {
+      return false;
+    }
+  }
+  return false;
+}
+
+/** Whether `root` really is a checkout (it holds catalog.json or .git). A
+    server started from / or /home has a fallback root that is not, and then
+    the "inside the checkout" rule does not apply. */
+export const isCheckout = (root: string): boolean =>
+  existsSync(path.join(root, "catalog.json")) || existsSync(path.join(root, ".git"));
+
+/** Whether `dir` is inside the checkout at `root`: compared as typed, and as
+    real paths (a symlink into the checkout counts), case-folded where the
+    filesystem ignores case. server/provider_store.py has the same rule. */
+export function insideCheckout(dir: string, root: string): boolean {
+  if (!isCheckout(root)) return false;
+  if (inside(path.resolve(dir), path.resolve(root))) return true;
+  const realRoot = realOfNearest(root);
+  let d = realOfNearest(dir);
+  let r = realRoot;
+  if (caseInsensitiveAt(realRoot)) {
+    d = d.toLowerCase();
+    r = r.toLowerCase();
+  }
+  return inside(d, r);
+}
+
 /** The folder that holds provider.db. server/provider_store.py applies the
     same rules, and server/provider-config-cases.json holds the cases both
     test suites run, so the gallery and the Python API always name the same
     file: a leading ~ or ~/ is the home folder (systemd's Environment= and
     a .env file do not expand it); a relative path, a ~user path or a path
-    inside the checkout is refused with a StoreError that says how to set it,
-    never resolved against whatever folder the server started in. */
+    inside the checkout (see insideCheckout) is refused with a StoreError
+    that says how to set it, never resolved against whatever folder the
+    server started in. */
 export function configDir(): string {
   const raw = (process.env[CONFIG_DIR_ENV] ?? "").trim();
   const home = os.homedir();
@@ -81,11 +141,7 @@ export function configDir(): string {
   else if (path.isAbsolute(raw)) dir = raw;
   else throw new StoreError(CONFIG_DIR_HELP);
   dir = path.resolve(dir);
-  const roots = [path.resolve(ROOT)];
-  try {
-    roots.push(realpathSync(ROOT));
-  } catch {}
-  if (roots.some((r) => inside(dir, r))) throw new StoreError(CONFIG_DIR_HELP);
+  if (insideCheckout(dir, ROOT)) throw new StoreError(CONFIG_DIR_HELP);
   return dir;
 }
 

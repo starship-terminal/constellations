@@ -759,18 +759,46 @@ class ProviderKeyTest(TempConfig):
     def test_config_dir_cases_shared_with_the_web_store(self):
         cases = json.loads((SERVER / "provider-config-cases.json").read_text())["cases"]
         home = Path(self._tmp.name) / "home"
+        home.mkdir()
         repo = str(SERVER.parent)
+        head, tail = os.path.split(repo)
+        swapcase = os.path.join(head, tail.swapcase())
+        link = home / "repo-link"
+        link.symlink_to(repo, target_is_directory=True)
+        try:
+            case_insensitive = os.path.samefile(repo, swapcase)
+        except OSError:
+            case_insensitive = False
         for case in cases:
-            value = case["value"].replace("<HOME>", str(home)).replace("<REPO>", repo)
+            value = (case["value"].replace("<HOME>", str(home)).replace("<REPO_SWAPCASE>", swapcase)
+                     .replace("<REPO>", repo).replace("<LINK>", str(link)))
+            expect = case["expect"]
+            if expect == "error-if-case-insensitive":
+                expect = "error" if case_insensitive else os.path.normpath(value)
             with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_CONFIG_DIR": value, "HOME": str(home)}):
-                if case["expect"] == "error":
+                if expect == "error":
                     with self.assertRaises(self.store.StoreError, msg=value) as ctx:
                         self.store.config_dir()
                     self.assertIn("absolute path outside the checkout", str(ctx.exception))
                     # A refused folder is an error the chat reports, never "nothing saved".
                     self.assertEqual(self.store.resolve({"api_key": ENV_KEY})[1:], ("saved", str(ctx.exception)))
                 else:
-                    self.assertEqual(str(self.store.config_dir()), case["expect"].replace("<HOME>", str(home)), value)
+                    self.assertEqual(str(self.store.config_dir()), expect.replace("<HOME>", str(home)), value)
+
+    def test_the_checkout_rule_applies_only_to_a_real_checkout(self):
+        root = Path(self._tmp.name) / "srv"
+        (root / "cfg").mkdir(parents=True)
+        # A server started from a folder that is not a checkout refuses nothing.
+        with mock.patch.object(self.store, "REPO_ROOT", root), \
+                mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_CONFIG_DIR": str(root / "cfg")}):
+            self.assertEqual(self.store.config_dir(), root / "cfg")
+            (root / ".git").mkdir()
+            with self.assertRaises(self.store.StoreError):
+                self.store.config_dir()
+            (root / ".git").rmdir()
+            (root / "catalog.json").write_text("{}")
+            with self.assertRaises(self.store.StoreError):
+                self.store.config_dir()
 
     def test_a_key_in_a_url_field_is_refused_without_quoting_it(self):
         from urllib.parse import quote

@@ -4,7 +4,7 @@
 // response and log line. listModels is a stub, so no provider is called.
 // Run with `pnpm test`.
 import assert from "node:assert/strict";
-import { promises as fs, mkdtempSync, rmSync } from "node:fs";
+import { promises as fs, mkdtempSync, rmSync, statSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { afterEach, beforeEach, describe, it, mock } from "node:test";
@@ -18,7 +18,7 @@ import {
   resolveProvider,
   type ListModels,
 } from "./provider-api.ts";
-import { CONFIG_DIR_ENV, configDir, loadSaved, providerFile, saveProvider, updateModel, StoreError } from "./provider-store.ts";
+import { CONFIG_DIR_ENV, configDir, insideCheckout, loadSaved, providerFile, saveProvider, updateModel, StoreError } from "./provider-store.ts";
 import { ROOT } from "./repo.ts";
 
 const KEY = "sk-test-0123456789abcdef";
@@ -67,25 +67,57 @@ describe("the config folder", () => {
   it("resolves every shared case as server/provider_store.py does", async () => {
     const { cases } = JSON.parse(await fs.readFile(path.join(ROOT, "server", "provider-config-cases.json"), "utf8"));
     const home = path.join(dir, "home");
+    await fs.mkdir(home, { recursive: true });
+    const swapcase = path.join(
+      path.dirname(ROOT),
+      [...path.basename(ROOT)].map((c) => (c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase())).join(""),
+    );
+    const link = path.join(home, "repo-link");
+    await fs.symlink(ROOT, link, "dir");
+    let caseInsensitive = false;
+    try {
+      const [a, b] = [statSync(ROOT), statSync(swapcase)];
+      caseInsensitive = a.dev === b.dev && a.ino === b.ino;
+    } catch {}
     const savedHome = process.env.HOME;
     process.env.HOME = home;
     try {
       for (const c of cases as { value: string; expect: string }[]) {
-        process.env[CONFIG_DIR_ENV] = c.value.replaceAll("<HOME>", home).replaceAll("<REPO>", ROOT);
-        if (c.expect === "error") {
-          assert.throws(() => configDir(), (e: unknown) => e instanceof StoreError && /absolute path outside the checkout/.test(e.message), c.value);
+        const value = c.value
+          .replaceAll("<HOME>", home)
+          .replaceAll("<REPO_SWAPCASE>", swapcase)
+          .replaceAll("<REPO>", ROOT)
+          .replaceAll("<LINK>", link);
+        let expect = c.expect;
+        if (expect === "error-if-case-insensitive") expect = caseInsensitive ? "error" : path.normalize(value);
+        process.env[CONFIG_DIR_ENV] = value;
+        if (expect === "error") {
+          assert.throws(() => configDir(), (e: unknown) => e instanceof StoreError && /absolute path outside the checkout/.test(e.message), value);
           // A refused folder is an error the chat reports, never "nothing saved".
           process.env.ANTHROPIC_API_KEY = ENV_KEY;
           const held = await resolveProvider();
-          assert.deepEqual([held.cfg, held.source], [null, "saved"], c.value);
+          assert.deepEqual([held.cfg, held.source], [null, "saved"], value);
           delete process.env.ANTHROPIC_API_KEY;
         } else {
-          assert.equal(configDir(), c.expect.replaceAll("<HOME>", home), c.value);
+          assert.equal(configDir(), expect.replaceAll("<HOME>", home), value);
         }
       }
     } finally {
       process.env.HOME = savedHome;
     }
+  });
+
+  it("applies the checkout rule only to a real checkout", async () => {
+    const root = path.join(dir, "srv");
+    await fs.mkdir(path.join(root, "cfg"), { recursive: true });
+    // A server started from a folder that is not a checkout refuses nothing.
+    assert.equal(insideCheckout(path.join(root, "cfg"), root), false);
+    await fs.mkdir(path.join(root, ".git"));
+    assert.equal(insideCheckout(path.join(root, "cfg"), root), true);
+    await fs.rmdir(path.join(root, ".git"));
+    await fs.writeFile(path.join(root, "catalog.json"), "{}");
+    assert.equal(insideCheckout(path.join(root, "cfg"), root), true);
+    assert.equal(insideCheckout(path.join(dir, "elsewhere"), root), false);
   });
 });
 
