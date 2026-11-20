@@ -76,5 +76,15 @@ class CheckTest(unittest.TestCase):
         self.assertIn("no source", done.stdout)
 
 
+
+class Provenance(unittest.TestCase):
+    def test_committed_tokens_match_build(self):
+        self.assertEqual(json.loads(TOKENS.read_text()), json.loads(json.dumps(build_tokens.build())))
+
+    def test_unread_colours_say_reconstruction(self):
+        color = json.loads(TOKENS.read_text())["core"]["color"]
+        for name in ("blue", "green", "red", "orange"):
+            self.assertTrue(color[name]["$extensions"]["source"].startswith("Reconstruction"), name)
+
 if __name__ == "__main__":
     unittest.main()

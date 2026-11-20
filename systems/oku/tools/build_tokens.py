@@ -7,6 +7,7 @@ not invented. Deterministic: same readings, same bytes.
 """
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = json.loads((HERE / "raw" / "readings.json").read_text())
@@ -20,6 +21,10 @@ def color(value, source):
 
 def dim(value, source):
     return {"$type": "dimension", "$value": value, "$extensions": {"source": source}}
+
+
+def duration(value, source):
+    return {"$type": "duration", "$value": value, "$extensions": {"source": source}}
 
 
 def font(family, size, weight, line, tracking, source):
@@ -66,7 +71,7 @@ def semantic(theme):
             "text-on-accent": ("#131314", "Join button text rgb(19, 19, 20) on the olive fill."),
             "link": ("#9E9EFF", "logo and book-card link color rgb(158, 158, 255). Not a declared --theme-ui-colors-* name."),
             "border": ("#363539", "text field border rgb(54, 53, 57). Matches --theme-ui-colors-blueberry-20."),
-            "border-strong": ("#E0E1E4", "outline button inset ring rgba(224, 225, 228, 0.22), solid role taken from olive."),
+            "border-strong": ("#E0E1E438", "outline button inset ring rgba(224, 225, 228, 0.22): olive at the measured 22% alpha."),
             "accent": ("#E0E1E4", "primary Join fill rgb(224, 225, 228). Same value as text-primary."),
             "accent-brand": ("#E32020", "Declared --theme-ui-colors-candy. Not painted on the measured public controls."),
             "success": ("#349E54", "Declared --theme-ui-colors-kiwi-100. Save 50%! painted rgb(111, 153, 101), which is badge-premium-100."),
@@ -88,7 +93,7 @@ def semantic(theme):
             "text-muted": ("#46474E", "byline rgb(70, 71, 78). Matches --theme-ui-colors-blueberry-80."),
             "text-disabled": ("#8C8C90", "Declared --theme-ui-colors-blueberry-50. Idle tab was not remeasured in light."),
             "text-on-accent": ("#FFFFFF", "Join button text rgb(255, 255, 255) on the black fill."),
-            "link": ("#0000EE", "book card link color rgb(0, 0, 238) in light. Browser default, not a declared token."),
+            "link": ("#0000EE", "book card link color rgb(0, 0, 238) in light. Browser default, not a declared token.", OBSERVED),
             "border": ("#E8E8E9", "book card border rgb(232, 232, 233). Matches --theme-ui-colors-blueberry-10."),
             "border-strong": ("#131314", "Declared --theme-ui-colors-blueberry-100. Light outline ring was not remeasured."),
             "accent": ("#000000", "primary Join fill rgb(0, 0, 0) in light. Matches --theme-ui-colors-blackberry."),
@@ -100,9 +105,22 @@ def semantic(theme):
             "highlight": ("#F8DF80", "Declared --theme-ui-colors-highlight for the light selector."),
         }
     out = {}
-    for name, (value, source) in roles.items():
-        out[name] = color(value, f"Measured. {source} {SRC}")
+    for name, (value, source, *label) in roles.items():
+        out[name] = color(value, f"{evidence(source, *label)}. {source} {SRC}")
     return out
+
+
+OBSERVED = "Observed"
+NOT_PAINTED = re.compile(r"not (re)?measured|not painted|not remeasured", re.I)
+
+
+def evidence(source, label=None):
+    """Measured when the role's value was read painted on the page; Derived when a declared custom property
+    was assigned to a role that was not painted (or not remeasured in this theme); a label given with the
+    role wins."""
+    if label:
+        return label
+    return "Derived" if source.startswith("Declared") or NOT_PAINTED.search(source) else "Measured"
 
 
 def core():
@@ -192,8 +210,8 @@ def core():
             }
         },
         "motion": {
-            "duration-switch": dim("300ms", "label.css-1tfy84h transition, and 16 stylesheet rules."),
-            "duration-short": dim("150ms", "7 stylesheet rules, ease-in-out. Selector not isolated."),
+            "duration-switch": duration("300ms", "label.css-1tfy84h transition, and 16 stylesheet rules."),
+            "duration-short": duration("150ms", "7 stylesheet rules, ease-in-out. Selector not isolated."),
             "easing-switch": {
                 "$type": "cubicBezier",
                 "$value": [0.23, 1, 0.32, 1],
@@ -235,13 +253,13 @@ def component(theme):
             "background": color("#000000", "Light Join fill rgb(0, 0, 0). " + SRC),
             "text": color("#FFFFFF", "Light Join text. " + SRC),
             "radius": dim("8px", "8px."),
-            "height": dim("40px", "40px, not remeasured in light."),
+            "height": dim("40px", "Derived. 40px, from the dark Join; not remeasured in light."),
         },
         "field": {
-            "background": color("#FFFFFF", "Light field was not remeasured. Page fill recorded. " + SRC),
-            "text": color("#131314", "Light field text was not remeasured. " + SRC),
-            "radius": dim("8px", "8px, from the dark field."),
-            "height": dim("46px", "46px, from the dark field."),
+            "background": color("#FFFFFF", "Derived. Light field was not remeasured. Page fill recorded. " + SRC),
+            "text": color("#131314", "Derived. Light field text was not remeasured. " + SRC),
+            "radius": dim("8px", "Derived. 8px, from the dark field."),
+            "height": dim("46px", "Derived. 46px, from the dark field."),
         },
         "card": {
             "background": color("#FFFFFF", "Light explore card painted the page colour. " + SRC),
@@ -251,6 +269,7 @@ def component(theme):
 
 
 def build():
+    """The token document, built in memory from raw/readings.json; main() writes it."""
     sets = {
         "core": core(),
         "light": {"color": semantic("light"), "ramp": ramp("light"), "component": component("light")},
@@ -263,10 +282,14 @@ def build():
     # Drop the empty description-only group if a checker wants real tokens only.
     # Keep it: the fruit names live in each theme's ramp.
     sets["core"].pop("color", None)
-    text = json.dumps(sets, indent=2) + "\n"
+    return sets
+
+
+def main():
+    text = json.dumps(build(), indent=2) + "\n"
     (HERE / "tokens.json").write_text(text)
     print(f"wrote {HERE / 'tokens.json'} ({len(text)} bytes)")
 
 
 if __name__ == "__main__":
-    build()
+    main()
