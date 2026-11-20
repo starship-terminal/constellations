@@ -17,7 +17,8 @@
 // pseudo-classes only. The OneTrust consent SDK is aborted at request level.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, closePromo, killGeo, clearChallenge, domClick, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, M, launch, patch, open, closePromo, killGeo, domClick, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { pageState, recordBlocked } from './gate.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -29,7 +30,7 @@ const URLS = {
   home: '/',
   shopall: '/shop-all/',
   skincare: '/skin-care/',
-  pdp: '/shop-all/',                // resolved to the first product at runtime
+  pdp: '/shop-all/',                // the catalogue; the product page is its first tile, opened in the same context
   search: '/',
   cart: '/',
   signup: '/',
@@ -39,18 +40,42 @@ const URLS = {
 let page, cdp, current, context, contextMobile, run;
 const touched = new Set();
 
-// A bot interstitial or an error page renders a minimal body: detect it so a
-// blocked load is skipped, not measured.
-async function blocked() {
+// A bot check is a boundary (gate.mjs). Each page is loaded once in its run's
+// context. A page that shows a challenge, an error or no content, at load or
+// after the settle wait, is recorded in _meta.blocked and skipped: it is never
+// reloaded, retried or opened again in a fresh context, and never measured.
+// Earlier readings in the file are kept as they are.
+function block(key, url, reason) {
+  log('  BLOCKED', key, reason);
+  recordBlocked(out, key, url, reason, run);
+  save();
+  return false;
+}
+
+// Loads `url` once into the current page and checks it is still the product
+// after the settle wait.
+async function load(key, url, { wait, promo }) {
+  let r = await open(page, url, { wait, promo });
+  if (r.ok && (await pageState(page)) !== 'ok') r = { ok: false, reason: 'page turned into a challenge or an error after loading' };
+  if (!r.ok) return block(key, url, r.reason);
+  if (out._meta.blocked) delete out._meta.blocked[key];
+  if (promo === 'close') await killGeo(page);
+  await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
+  return true;
+}
+
+// The product URL (…/<SKU>.html) of the first product tile on the catalogue
+// page the current page shows.
+async function firstProductUrl() {
   return page.evaluate(() => {
-    const t = (document.body && document.body.innerText) || '';
-    return /something went wrong|performing security verification|verifying you are human|just a moment|page cannot be found/i.test(t) || t.trim().length < 40;
-  }).catch(() => true);
+    const a = [...document.querySelectorAll('a[href$=".html"]')].find((n) => /\/[A-Z]+\d[A-Z0-9]*\.html/i.test(n.getAttribute('href') || ''));
+    return a ? a.href : null;
+  }).catch(() => null);
 }
 
 // ---------- helpers ----------
 
-async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {}) {
+async function newPage(key, { mobile = false, promo = 'close', wait = 6000, url } = {}) {
   current = key;
   const b = context.browser();
   const ctx = await b.newContext(mobile
@@ -63,15 +88,8 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
   log('open', key, mobile ? '(mobile)' : '');
-  for (let attempt = 0; attempt < 3; attempt++) {
-    await open(page, URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key], { wait, promo });
-    if (!(await blocked())) break;
-    log('  blocked pass', attempt + 1, '- reloading');
-  }
-  if (await blocked()) { log('  BLOCKED', key); return false; }
-  if (promo === 'close') await killGeo(page);
-  await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
-  return true;
+  // Desktop and mobile runs share page keys (home): a block is recorded per view.
+  return load(mobile && !key.startsWith('mobile-') ? `mobile-${key}` : key, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
 }
 
 async function reset() {
@@ -230,59 +248,6 @@ async function sheetsFor(key) {
   });
   out._meta.sheets ??= {};
   out._meta.sheets[key] = res;
-}
-
-// Cloudflare lets each browser context load exactly one document before it
-// starts issuing Turnstile challenges, so a PDP is reached as a first load in
-// its own context: the product URL (…/<SKU>.html) is resolved on the
-// catalogue page in a throwaway context, then the current page navigates to
-// it — but the current context already spent its one pass on /shop-all/, so
-// the resolution happens in a fresh context and this page is re-pointed at
-// the URL by the caller via newPageAt(). The resolved URL is recorded.
-async function resolvePdpUrl() {
-  if (out._meta.pdpUrl) return out._meta.pdpUrl;
-  const b = context.browser();
-  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
-  await patch(ctx);
-  const p = await ctx.newPage();
-  let url = null;
-  try {
-    await p.goto(BASE + '/shop-all/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await clearChallenge(p, { tries: 6, step: 2000 });
-    url = await p.evaluate(() => {
-      const a = [...document.querySelectorAll('a[href$=".html"]')].find((n) => /\/[A-Z]+\d[A-Z0-9]*\.html/i.test(n.getAttribute('href') || ''));
-      return a ? a.href : null;
-    });
-  } finally { await ctx.close(); }
-  if (!url) throw new Error('no product tile link found');
-  out._meta.pdpUrl = url;
-  save();
-  return url;
-}
-
-// A fresh context whose first document request is `url`: the only request
-// Cloudflare reliably lets through unchallenged.
-async function newPageAt(url, { mobile = false, wait = 8000 } = {}) {
-  const b = context.browser();
-  const ctx = await b.newContext(mobile
-    ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
-    : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
-  await patch(ctx);
-  page = await ctx.newPage();
-  cdp = await ctx.newCDPSession(page);
-  page.setDefaultTimeout(8000);
-  await cdp.send('DOM.enable');
-  await cdp.send('CSS.enable');
-  for (let attempt = 0; attempt < 3; attempt++) {
-    await open(page, url, { wait, promo: 'close' });
-    if (!(await blocked())) break;
-    log('  blocked pass', attempt + 1, '- reloading');
-    await page.waitForTimeout(6000);
-  }
-  if (await blocked()) { log('  BLOCKED', url); return false; }
-  await killGeo(page);
-  await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
-  return true;
 }
 
 // ---------- page runs ----------
@@ -453,11 +418,20 @@ async function signup() {
   await page.close();
 }
 
+// The product page is reached the way a visitor reaches it: from the
+// catalogue, in the same context, so it is that context's second document.
+// Turnstile challenges a second document load; a challenge there is recorded
+// as blocked like any other page, never got past with a fresh context.
+async function toProductPage(key) {
+  const url = await firstProductUrl();
+  if (!url) return block(key, BASE + '/shop-all/', 'no product tile link found');
+  out._meta.pdpUrl = url;
+  URLS[key] = url;   // the product URL, so component records name it
+  return load(key, url, { wait: 8000, promo: 'close' });
+}
+
 async function pdp() {
-  const url = await resolvePdpUrl();
-  current = 'pdp';
-  URLS.pdp = url;   // the resolved PDP URL, so component records name it
-  if (!(await newPageAt(url))) { await page.close(); return; }
+  if (!(await newPage('pdp', { url: BASE + '/shop-all/' })) || !(await toProductPage('pdp'))) { await page.close(); return; }
   const g = G.pdp;
   await S('breadcrumbs', q('[class*="breadcrumb" i], nav[aria-label*="bread" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Breadcrumbs', desc: 'The breadcrumb line over the PDP.', sel: 'breadcrumbs' }, { noScroll: true });
   await S('breadcrumb-link', q('[class*="breadcrumb" i] a, nav[aria-label*="bread" i] a').filter({ visible: true }).first(), B4, { group: g, title: 'Breadcrumb link', desc: 'A crumb link; the last crumb is the product name.', sel: 'breadcrumb a' }, { noScroll: true });
@@ -529,13 +503,10 @@ async function mobile() {
   await page.close();
   // The PDP's information accordion carries h-hide-for-large — it only paints
   // at phone widths — so it is measured here, on the product page at 390.
-  const pdpUrl = out._meta.pdpUrl || (await resolvePdpUrl());
-  current = 'mobile-pdp';
-  URLS['mobile-pdp'] = pdpUrl;
-  if (await newPageAt(pdpUrl, { mobile: true })) {
+  if ((await newPage('mobile-pdp', { mobile: true, url: BASE + '/shop-all/' })) && (await toProductPage('mobile-pdp'))) {
     await S('accordion', q('.c-accordion__title, [data-js-accordion-control]').filter({ visible: true }).first(), ['default'], { group: G.pdp, title: 'Accordion row', desc: 'An expandable information row on the PDP (Description). The block carries h-hide-for-large — desktop never paints it — so this is measured on the mobile PDP at 390.', sel: '.c-accordion__title' });
-    await page.close();
   }
+  await page.close();
 }
 
 run = new Date().toISOString();

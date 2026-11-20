@@ -429,6 +429,221 @@ class Commands(unittest.TestCase):
 
 
 @unittest.skipIf(R is None, "Pillow and numpy are not installed")
+class ApplyInPlace(unittest.TestCase):
+    """`apply` changes only the pixels it paints: mode, palette, tRNS, metadata and every other pixel
+    (alpha included) survive, as they did not when every output was requantized to 256 colours."""
+    W, H = 48, 36
+    BOX = (10, 10, 22, 20)                                 # x0, y0, x1, y1 of the one rectangle
+
+    def rules(self, d, mode="solid"):
+        p = Path(d) / "r.json"
+        p.write_text(json.dumps({"families": [{"files": ["screenshots/*"], "rects": [[*self.BOX, mode]]}],
+                                 "ocr": {"net": False}}))
+        return p
+
+    def inside(self):
+        m = np.zeros((self.H, self.W), bool)
+        x0, y0, x1, y1 = self.BOX
+        m[y0:y1, x0:x1] = True
+        return m
+
+    def palette_png(self, f, trns):
+        """20 palette entries; index 0 is the transparent rounded corners, 1 the background, 5 the
+        text to paint out, 7 a mark far from the box. Alpha 254 elsewhere, as iPhone Mirroring writes."""
+        idx = np.ones((self.H, self.W), np.uint8)
+        idx[:2, :2] = idx[:2, -2:] = idx[-2:, :2] = idx[-2:, -2:] = 0
+        idx[12:18, 12:20] = 5
+        idx[30, 40] = 7
+        im = Image.frombytes("P", (self.W, self.H), idx.tobytes())
+        im.putpalette(bytes(v for i in range(20) for v in (i * 12, 255 - i * 9, (i * 37) % 256)))
+        from PIL import PngImagePlugin
+        info = PngImagePlugin.PngInfo()
+        info.add_text("Software", "test fixture")
+        kw = {"transparency": bytes([0] + [254] * 19)} if trns else {}
+        im.save(f, pnginfo=info, dpi=(144, 144), **kw)
+
+    def gradient(self, channels):
+        """More than 256 colours, so a median-cut requantize moves pixels far from any box."""
+        y, x = np.mgrid[0:self.H, 0:self.W]
+        a = np.stack([x * 5, y * 7, (x * y) % 256, 60 + x * 4][:channels], axis=2).astype(np.uint8)
+        a[12:18, 12:20, :3] = 255                          # text inside the box
+        return a
+
+    def apply(self, d, rules, *extra):
+        with contextlib.redirect_stdout(io.StringIO()) as out, self.assertRaises(SystemExit) as cm:
+            R.main(["apply", d, "--rules", str(rules), *extra])
+        return cm.exception.code, out.getvalue()
+
+    def read(self, f):
+        with Image.open(f) as im:
+            im.load()
+            return im.mode, im.getpalette(), im.info.get("transparency"), np.array(im), np.array(im.convert("RGBA")), im
+
+    def assert_only_box_changed(self, f, before):
+        mode0, pal0, t0, arr0, rgba0, im0 = before
+        mode1, pal1, t1, arr1, rgba1, im1 = self.read(f)
+        out = ~self.inside()
+        self.assertEqual((mode1, pal1, t1), (mode0, pal0, t0))
+        self.assertTrue(np.array_equal(arr1[out], arr0[out]))       # indices, or samples, outside the box
+        self.assertTrue(np.array_equal(rgba1[out], rgba0[out]))     # colour and alpha outside the box
+        self.assertFalse(np.array_equal(rgba1[~out], rgba0[~out]))  # the box was painted
+        return arr1, rgba1, im1
+
+    def test_palette_with_trns_keeps_palette_alpha_and_every_index_outside_the_box(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "screenshots/mirror.png"
+            f.parent.mkdir()
+            self.palette_png(f, trns=True)
+            before = self.read(f)
+            code, _ = self.apply(d, self.rules(d))
+            self.assertEqual(code, 0)
+            arr, rgba, im = self.assert_only_box_changed(f, before)
+            self.assertFalse((arr[self.inside()] == 5).any())          # the text is gone
+            self.assertTrue((arr[self.inside()] == 1).all())           # painted with the ring's entry
+            self.assertEqual(im.info.get("dpi"), before[5].info.get("dpi"))
+            self.assertEqual(im.text, {"Software": "test fixture"})
+
+    def test_old_requantize_would_fail_far_from_the_box(self):
+        """The defect: a corner pixel nowhere near the box lost its transparency, and an RGB gradient
+        pixel far from it moved, because the whole image was rewritten through a requantize."""
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "screenshots").mkdir()
+            p, g = Path(d) / "screenshots/p.png", Path(d) / "screenshots/g.png"
+            self.palette_png(p, trns=True)
+            Image.fromarray(self.gradient(3)).save(g)
+            want = np.array(Image.open(g))[33, 45]
+            self.apply(d, self.rules(d))
+            self.assertEqual(Image.open(p).convert("RGBA").getpixel((self.W - 1, self.H - 1))[3], 0)
+            self.assertEqual(Image.open(p).convert("RGBA").getpixel((40, 30))[3], 254)
+            self.assertEqual(list(np.array(Image.open(g))[33, 45]), list(want))
+
+    def test_palette_without_trns(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "screenshots/plain.png"
+            f.parent.mkdir()
+            self.palette_png(f, trns=False)
+            before = self.read(f)
+            self.assertEqual(self.apply(d, self.rules(d, "rows"))[0], 0)
+            arr, _, _ = self.assert_only_box_changed(f, before)
+            self.assertIsNone(Image.open(f).info.get("transparency"))
+            self.assertTrue(arr.max() < 20)                             # no entry added
+
+    def test_rgb_rgba_grey_are_painted_in_their_own_mode(self):
+        for mode, make in (("RGB", lambda: self.gradient(3)), ("RGBA", lambda: self.gradient(4)),
+                           ("L", lambda: self.gradient(3)[..., 1]),
+                           ("LA", lambda: self.gradient(4)[..., [1, 3]])):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as d:
+                f = Path(d) / "screenshots/x.png"
+                f.parent.mkdir()
+                Image.fromarray(np.ascontiguousarray(make())).save(f)
+                before = self.read(f)
+                self.assertEqual(before[0], mode)
+                self.assertEqual(self.apply(d, self.rules(d, "rows"))[0], 0)
+                _, rgba, _ = self.assert_only_box_changed(f, before)
+                self.assertFalse((rgba[self.inside()][:, :3] == 255).all(axis=1).any())   # text gone
+
+    def test_alpha_inside_the_box_is_filled_too(self):
+        """A glyph drawn in alpha alone (transparent crop, opaque text) must not survive the fill."""
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "screenshots/glyph.png"
+            f.parent.mkdir()
+            a = np.zeros((self.H, self.W, 4), np.uint8)
+            a[14:16, 12:20, 3] = 255
+            Image.fromarray(a).save(f)
+            self.apply(d, self.rules(d))
+            self.assertTrue((np.array(Image.open(f))[..., 3] == 0).all())
+
+    def test_untouched_files_stay_byte_identical(self):
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "screenshots").mkdir()
+            (Path(d) / "components").mkdir()
+            flat, other = Path(d) / "screenshots/flat.png", Path(d) / "components/other.png"
+            Image.new("RGB", (self.W, self.H), (20, 30, 40)).save(flat)   # the fill changes nothing
+            self.palette_png(other, trns=True)                            # no rule matches it
+            raw = flat.read_bytes(), other.read_bytes()
+            code, out = self.apply(d, self.rules(d, "rows"))
+            self.assertEqual((code, (flat.read_bytes(), other.read_bytes())), (0, raw))
+            self.assertIn("0 edited", out)
+
+    def test_a_palette_with_no_close_entry_uses_the_nearest_and_says_so(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "screenshots/bw.png"
+            f.parent.mkdir()
+            idx = np.zeros((self.H, self.W), np.uint8)
+            idx[:, self.W // 2:] = 1                        # black left, white right: rows blends grey
+            im = Image.frombytes("P", (self.W, self.H), idx.tobytes())
+            im.putpalette(bytes([0, 0, 0, 255, 255, 255]))
+            im.save(f)
+            pal = Image.open(f).getpalette()
+            box = [20, 5, 30, 30]
+            r = Path(d) / "r.json"
+            r.write_text(json.dumps({"families": [{"files": ["screenshots/*"], "rects": [box]}], "ocr": {"net": False}}))
+            code, out = self.apply(d, r)
+            self.assertEqual(code, 0)
+            self.assertIn("no palette entry within", out)
+            self.assertEqual(Image.open(f).getpalette(), pal)      # never grown
+            self.assertTrue(set(np.unique(np.array(Image.open(f)))) <= {0, 1})
+
+    def test_a_fill_that_maps_back_to_the_same_entries_is_still_reported(self):
+        """Black left, white right, split inside the box: the grey blend maps back to the very same
+        indices, so nothing is written, but the far matches and the no-op are still said."""
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "screenshots/split.png"
+            f.parent.mkdir()
+            idx = np.zeros((self.H, self.W), np.uint8)
+            idx[:, 24:] = 1
+            im = Image.frombytes("P", (self.W, self.H), idx.tobytes())
+            im.putpalette(bytes([0, 0, 0, 255, 255, 255]))
+            im.save(f)
+            raw = f.read_bytes()
+            r = Path(d) / "r.json"
+            r.write_text(json.dumps({"families": [{"files": ["screenshots/*"], "rects": [[20, 5, 28, 30]]}],
+                                     "ocr": {"net": False}}))
+            code, out = self.apply(d, r)
+            self.assertEqual((code, f.read_bytes()), (0, raw))
+            self.assertIn("unchanged screenshots/split.png: every painted pixel mapped back", out)
+            self.assertIn("no palette entry within", out)
+            self.assertIn("0 edited", out)
+
+    def test_a_rewrite_that_changes_an_outside_pixel_is_refused(self):
+        from unittest import mock
+        real = R.Native.encode
+
+        def corrupt(self_, work, painted):             # an encoder bug: one far pixel also changes
+            work, painted = work.copy(), painted.copy()
+            work[-1, -1] = 255 - work[-1, -1]
+            painted[-1, -1] = True
+            return real(self_, work, painted)
+
+        for name, make in (("p.png", lambda f: self.palette_png(f, trns=True)),
+                           ("g.png", lambda f: Image.fromarray(self.gradient(4)).save(f))):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as d:
+                f = Path(d) / "screenshots" / name
+                f.parent.mkdir()
+                make(f)
+                raw = f.read_bytes()
+                with mock.patch.object(R.Native, "encode", corrupt), \
+                     contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                    R.main(["apply", d, "--rules", str(self.rules(d))])
+                self.assertIn("refusing to write", str(cm.exception.code))
+                self.assertEqual(f.read_bytes(), raw)
+                self.assertEqual(sorted(p.name for p in f.parent.iterdir()), [name])   # no temp file left
+
+    def test_lossy_and_16_bit_files_are_named_and_left_alone(self):
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "screenshots").mkdir()
+            jpg, deep = Path(d) / "screenshots/a.jpg", Path(d) / "screenshots/b.png"
+            Image.fromarray(self.gradient(3)).save(jpg, quality=95)
+            Image.fromarray(self.gradient(3)[..., 0].astype(np.uint16)).save(deep)     # 16-bit grey
+            raw = jpg.read_bytes(), deep.read_bytes()
+            code, out = self.apply(d, self.rules(d))
+            self.assertEqual(code, 1)
+            self.assertIn("cannot edit screenshots/a.jpg in place: a JPEG is lossy", out)
+            self.assertIn("cannot edit screenshots/b.png in place: 16-bit", out)
+            self.assertEqual((jpg.read_bytes(), deep.read_bytes()), raw)
+
+
+@unittest.skipIf(R is None, "Pillow and numpy are not installed")
 class Matching(unittest.TestCase):
     def words(self, text, y=0):
         out, x = [], 0

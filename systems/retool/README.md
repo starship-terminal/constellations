@@ -17,7 +17,7 @@ Retool (retool.com) is a builder for internal software. This package covers the 
 | [icons/](icons/) | Not extracted. See the file table gap in the catalog. |
 | [screenshots/](screenshots/) | None. The preview browser did not produce frames. |
 | [raw/](raw/) | `measured.json`. |
-| [tools/](tools/) | `build_tokens.py`, `build_style_guide.py`, `test_measured.py`, and the copied kit. |
+| [tools/](tools/) | `build_tokens.py`, `build_style_guide.py`, `test_measured.py`, and the copied kit. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 

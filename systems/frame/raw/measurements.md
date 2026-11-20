@@ -970,7 +970,7 @@ Page: contactform. Selector: `contact Submit`. States: default, hover, focus-vis
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-focus-visible.png`, `form-submit-pressed.png`.
+Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-pressed.png`.
 
 ### Sign-in surface (accounts.frame.io — a different stack)
 

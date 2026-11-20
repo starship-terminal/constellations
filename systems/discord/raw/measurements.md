@@ -86,7 +86,7 @@ Page: home. Selector: `nav Discover`. States: default, hover, focus-visible, pre
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `mk-nav-drop-default.png`, `mk-nav-drop-hover.png`, `mk-nav-drop-focus-visible.png`, `mk-nav-drop-pressed.png`.
+Crops: `mk-nav-drop-default.png`, `mk-nav-drop-hover.png`, `mk-nav-drop-pressed.png`.
 
 #### mk-nav-login
 

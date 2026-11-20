@@ -256,194 +256,217 @@ function SettingsContent() {
           Your research, connected to the model you choose.
         </p>
       </header>
-      <SettingsTabList tab={tab} onSelect={selectTab} />
-      <div
-        role="tabpanel"
-        id={`settings-panel-${tab}`}
-        aria-labelledby={`settings-tab-${tab}`}
-      >
-        {tab === "appearance" && <AppearanceSettings />}
-        {tab === "import" && <BookmarkImport />}
-        {tab === "agents" && <AgentSettings />}
-        {tab === "ai" &&
-          (loading ? (
-            <Spinner label="Loading settings…" />
-          ) : error ? (
-            <ErrorState message={error} />
-          ) : (
-            data && (
-              <>
-                <section className="settings-section">
-                  <div className="settings-section-label">
-                    <Settings2 size={19} />
-                    <div>
-                      <h2>Research model</h2>
-                      <p>
-                        The model searches and inspects the same library you
-                        browse.
-                      </p>
+      <div className="settings-layout">
+        <SettingsTabList tab={tab} onSelect={selectTab} />
+        <div
+          className="settings-panel"
+          key={tab}
+          role="tabpanel"
+          id={`settings-panel-${tab}`}
+          aria-labelledby={`settings-tab-${tab}`}
+        >
+          {tab === "appearance" && <AppearanceSettings />}
+          {tab === "import" && <BookmarkImport />}
+          {tab === "agents" && <AgentSettings />}
+          {tab === "ai" &&
+            (loading ? (
+              <Spinner label="Loading settings…" />
+            ) : error ? (
+              <ErrorState message={error} />
+            ) : (
+              data && (
+                <>
+                  <section className="settings-section">
+                    <div className="settings-section-label">
+                      <Settings2 size={19} />
+                      <div>
+                        <h2>Research model</h2>
+                        <p>
+                          The model searches and inspects the same library you
+                          browse.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <form
-                    className="settings-form"
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      save();
-                    }}
-                  >
-                    <div className="settings-field">
-                      <span>Provider</span>
-                      <Select
-                        label="Provider"
-                        disabled={testing}
-                        value={provider}
-                        onChange={(value) => {
-                          const next = value as "openai" | "anthropic";
-                          setProvider(next);
-                          setBaseURL(DEFAULT_BASE_URL[next]);
-                          setModel(DEFAULT_MODEL[next]);
-                          setApiKey("");
-                        }}
-                        options={[
-                          { value: "openai", label: "OpenAI" },
-                          { value: "anthropic", label: "Anthropic" },
-                        ]}
-                      />
-                    </div>
-                    <div className="settings-field">
-                      <span>Base URL</span>
-                      <input
-                        disabled={testing}
-                        type="url"
-                        aria-label="Base URL"
-                        value={baseURL}
-                        onChange={(e) => setBaseURL(e.target.value)}
-                        placeholder={DEFAULT_BASE_URL[provider]}
-                      />
-                      <small>
-                        Filled from the provider. Point it at a compatible
-                        server or proxy to change it.
-                      </small>
-                    </div>
-                    <div className="settings-field">
-                      <span>API key</span>
-                      <input
-                        disabled={testing}
-                        type="password"
-                        autoComplete="off"
-                        spellCheck={false}
-                        aria-label="API key"
-                        value={apiKey}
-                        onChange={(e) => setApiKey(e.target.value)}
-                        placeholder={
-                          provider === "openai" ? "sk-…" : "sk-ant-…"
-                        }
-                      />
-                      <small
-                        className={`credential-note ${data.keySources?.[provider] ? "ready" : ""}`}
-                      >
-                        {data.keySources?.[provider] ? (
-                          <CheckCircle2 size={13} />
-                        ) : (
-                          <KeyRound size={13} />
-                        )}
-                        <span>
-                          {data.keySources?.[provider] === "stored"
-                            ? "Key saved on this server. Paste a new one to replace it."
-                            : data.keySources?.[provider] === "environment"
-                              ? "Using the key from the server environment. Paste one here to override it."
-                              : "Required for research. Saved on this server and never sent back to the browser."}
-                        </span>
-                      </small>
-                      {data.keySources?.[provider] === "stored" && (
-                        <button
-                          type="button"
-                          className="text-button"
-                          disabled={busy || testing}
-                          onClick={removeKey}
-                        >
-                          Remove saved key
-                        </button>
-                      )}
-                    </div>
-                    <button
-                      type="button"
-                      className="pill"
-                      disabled={busy || testing}
-                      onClick={async () => {
-                        setTesting(true);
-                        setConnection("");
-                        setError("");
-                        try {
-                          const key = apiKey.trim();
-                          const result = await api<{ models: string[] }>(
-                            "/api/models",
-                            {
-                              method: "POST",
-                              body: JSON.stringify({
-                                provider,
-                                baseURL: baseURL.trim() || null,
-                                ...(key ? { apiKey: key } : {}),
-                              }),
-                            },
-                          );
-                          setModels(result.models);
-                          setConnection(
-                            `Connected. ${result.models.length} models available.`,
-                          );
-                        } catch (e) {
-                          setError((e as Error).message);
-                        } finally {
-                          setTesting(false);
-                        }
+                    <form
+                      className="settings-form"
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        save();
                       }}
                     >
-                      {testing
-                        ? "Testing connection…"
-                        : "Test connection & load models"}
-                    </button>
-                    {connection && <p role="status">{connection}</p>}
-                    <div className="settings-field">
-                      <span>Model</span>
-                      <Combobox
-                        label="Model"
-                        disabled={testing}
-                        options={models}
-                        value={model}
-                        onChange={setModel}
-                        placeholder={DEFAULT_MODEL[provider]}
-                        required
-                      />
-                      <small>
-                        Test the connection to browse available models, or type
-                        an ID.
-                      </small>
-                    </div>
-                    {localError && (
-                      <p className="error-text" role="alert">
-                        {localError}
-                      </p>
-                    )}
-                    <button
-                      type="submit"
-                      className="primary"
-                      disabled={busy || testing || !model.trim()}
-                    >
-                      {saved ? <Check size={15} /> : null}
-                      {saved
-                        ? "Settings saved"
-                        : busy
-                          ? "Saving…"
-                          : "Save model settings"}
-                    </button>
-                  </form>
-                </section>
-              </>
-            )
-          ))}
+                      <div className="settings-field">
+                        <span>Provider</span>
+                        <Select
+                          label="Provider"
+                          disabled={testing}
+                          value={provider}
+                          onChange={(value) => {
+                            const next = value as "openai" | "anthropic";
+                            setProvider(next);
+                            setBaseURL(DEFAULT_BASE_URL[next]);
+                            setModel(DEFAULT_MODEL[next]);
+                            setApiKey("");
+                          }}
+                          options={[
+                            { value: "openai", label: "OpenAI" },
+                            { value: "anthropic", label: "Anthropic" },
+                          ]}
+                        />
+                      </div>
+                      <div className="settings-field">
+                        <span>Base URL</span>
+                        <input
+                          disabled={testing}
+                          type="url"
+                          aria-label="Base URL"
+                          value={baseURL}
+                          onChange={(e) => setBaseURL(e.target.value)}
+                          placeholder={DEFAULT_BASE_URL[provider]}
+                        />
+                        <small>
+                          Filled from the provider. Point it at a compatible
+                          server or proxy to change it.
+                        </small>
+                      </div>
+                      <div className="settings-field">
+                        <span>API key</span>
+                        <input
+                          disabled={testing}
+                          type="password"
+                          autoComplete="off"
+                          spellCheck={false}
+                          aria-label="API key"
+                          value={apiKey}
+                          onChange={(e) => setApiKey(e.target.value)}
+                          placeholder={
+                            provider === "openai" ? "sk-…" : "sk-ant-…"
+                          }
+                        />
+                        <small
+                          className={`credential-note ${data.keySources?.[provider] ? "ready" : ""}`}
+                        >
+                          {data.keySources?.[provider] ? (
+                            <CheckCircle2 size={13} />
+                          ) : (
+                            <KeyRound size={13} />
+                          )}
+                          <span>
+                            {data.keySources?.[provider] === "stored"
+                              ? "Key saved on this server. Paste a new one to replace it."
+                              : data.keySources?.[provider] === "environment"
+                                ? "Using the key from the server environment. Paste one here to override it."
+                                : "Required for research. Saved on this server and never sent back to the browser."}
+                          </span>
+                        </small>
+                        {data.keySources?.[provider] === "stored" && (
+                          <button
+                            type="button"
+                            className="text-button"
+                            disabled={busy || testing}
+                            onClick={removeKey}
+                          >
+                            Remove saved key
+                          </button>
+                        )}
+                      </div>
+                      <button
+                        type="button"
+                        className="pill"
+                        disabled={busy || testing}
+                        onClick={async () => {
+                          setTesting(true);
+                          setConnection("");
+                          setError("");
+                          try {
+                            const key = apiKey.trim();
+                            const result = await api<{ models: string[] }>(
+                              "/api/models",
+                              {
+                                method: "POST",
+                                body: JSON.stringify({
+                                  provider,
+                                  baseURL: baseURL.trim() || null,
+                                  ...(key ? { apiKey: key } : {}),
+                                }),
+                              },
+                            );
+                            setModels(result.models);
+                            setConnection(
+                              `Connected. ${result.models.length} models available.`,
+                            );
+                          } catch (e) {
+                            setError((e as Error).message);
+                          } finally {
+                            setTesting(false);
+                          }
+                        }}
+                      >
+                        {testing
+                          ? "Testing connection…"
+                          : "Test connection & load models"}
+                      </button>
+                      {connection && <p role="status">{connection}</p>}
+                      <div className="settings-field">
+                        <span>Model</span>
+                        <Combobox
+                          label="Model"
+                          disabled={testing}
+                          options={models}
+                          value={model}
+                          onChange={setModel}
+                          placeholder={DEFAULT_MODEL[provider]}
+                          required
+                        />
+                        <small>
+                          Test the connection to browse available models, or
+                          type an ID.
+                        </small>
+                      </div>
+                      {localError && (
+                        <p className="error-text" role="alert">
+                          {localError}
+                        </p>
+                      )}
+                      <button
+                        type="submit"
+                        className="primary"
+                        disabled={busy || testing || !model.trim()}
+                      >
+                        {saved ? <Check size={15} /> : null}
+                        {saved
+                          ? "Settings saved"
+                          : busy
+                            ? "Saving…"
+                            : "Save model settings"}
+                      </button>
+                    </form>
+                  </section>
+                </>
+              )
+            ))}
+        </div>
       </div>
     </div>
   );
+}
+
+/** The tab a key moves to, or -1 for a key that moves nothing. The list is
+ * vertical on desktop and a horizontal row on a phone, so both axes work. */
+export function nextTabIndex(key: string, index: number, count: number) {
+  switch (key) {
+    case "ArrowDown":
+    case "ArrowRight":
+      return (index + 1) % count;
+    case "ArrowUp":
+    case "ArrowLeft":
+      return (index - 1 + count) % count;
+    case "Home":
+      return 0;
+    case "End":
+      return count - 1;
+    default:
+      return -1;
+  }
 }
 
 /** Only the selected tab has a panel in the page, so only it names one. */
@@ -454,11 +477,27 @@ export function SettingsTabList({
   tab: SettingsTab;
   onSelect: (id: SettingsTab) => void;
 }) {
+  // A vertical list beside the panel on desktop; a scrolling row on a phone.
+  const [row, setRow] = useState(false);
+  useEffect(() => {
+    const media = matchMedia("(max-width: 1100px)");
+    const update = () => setRow(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+  // On a phone the selected tab may sit past the edge of the scrolling row.
+  useEffect(() => {
+    document
+      .getElementById(`settings-tab-${tab}`)
+      ?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [tab, row]);
   return (
     <div
       className="settings-tabs"
       role="tablist"
       aria-label="Settings sections"
+      aria-orientation={row ? "horizontal" : "vertical"}
     >
       {tabs.map((choice, index) => (
         <button
@@ -473,16 +512,7 @@ export function SettingsTabList({
           tabIndex={tab === choice.id ? 0 : -1}
           onClick={() => onSelect(choice.id)}
           onKeyDown={(event) => {
-            const nextIndex =
-              event.key === "ArrowRight"
-                ? (index + 1) % tabs.length
-                : event.key === "ArrowLeft"
-                  ? (index - 1 + tabs.length) % tabs.length
-                  : event.key === "Home"
-                    ? 0
-                    : event.key === "End"
-                      ? tabs.length - 1
-                      : -1;
+            const nextIndex = nextTabIndex(event.key, index, tabs.length);
             if (nextIndex >= 0) {
               event.preventDefault();
               onSelect(tabs[nextIndex].id);

@@ -575,7 +575,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The terminal content is not Superset's design.** What streams in a pane is Claude Code's own interface in Superset's terminal palette; Superset's design is the chrome around it.
 - **Component values are one element each.** `component.*` and components.md read the first element that matched each part; they are not counts across pages.
 - **Run frames are timed, not chosen.** The `run-*` screenshots are frames 1.2 s apart; the states named (thinking, tool call, editing) are what was on screen at that moment.
-- **The owner's addresses show.** Settings > Usage lists the agent accounts signed in on this Mac, including the owner's two own email addresses; they are left unmasked in both themes (the owner approved this on 2026-10-25).
+- **The owner's addresses show.** Settings > Usage lists the agent accounts signed in on this Mac, including the owner's two own email addresses; they are left unmasked in both themes (the owner approved this on 2026-10-25). The two other users' names beside the owner's rank on the public leaderboard on that page are painted out in both themes (owner's decision, 2026-11-21, for the public repository) with [tools/redact_images.py](../../tools/redact_images.py) and [its rules](../../tools/redact-rules/superset-desktop.json).
 - Screenshots are 256-colour PNGs. Flat UI colours are exact; read values from tokens.json.
 
 ### Do and don't (from README.md)

@@ -15,7 +15,7 @@ Runey is invoicing, projects and clients for freelancers and small teams. This p
 | [icons/](icons/) | An index. The wordmark is an inline SVG, and the UI icons are Lucide |
 | [screenshots/](screenshots/) | Home, cookie, auth sign-in, auth sign-up, and a phone shot |
 | [raw/](raw/) | The computed readings the tokens come from |
-| [tools/](tools/) | The kit copy. This capture was measured live, not rebuilt by the kit scripts |
+| [tools/](tools/) | The kit copy. This capture was measured live, not rebuilt by the kit scripts. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 

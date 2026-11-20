@@ -16969,7 +16969,7 @@
           "maze.co/demo/",
           "maze.co/resources/user-research-report/",
           "auth.maze.co/login",
-          "app.maze.co/report/Banking-App-Usability-Test/3pvvlrkzmvlpob/intro"
+          "app.maze.co/report/[share-link]"
         ],
         "gaps": [
           "app.maze.co past the public report redirects to sign-in; the workspace was not entered",
@@ -20804,7 +20804,7 @@
       "url": "https://www.ikea.com/sg/en/",
       "category": "e-commerce",
       "platform": "web",
-      "goodFor": "Furniture storefront design: Skapa colour roles on a white page, brand blue #0058a3 and yellow #ffdb00 wordmark, a 64px blue Add to cart pill, square product photos, Noto IKEA at 14px, and a public category, PDP, search and store locator",
+      "goodFor": "Furniture storefront design: Skapa colour roles on a white page, brand blue #0058a3 and yellow #ffdb00 wordmark, a blue Add to cart pill 56px high with a 64px radius, square product photos, Noto IKEA at 14px, and a public category, PDP, search and store locator",
       "tags": ["web", "e-commerce", "furniture", "retail", "storefront", "product-grid", "pdp", "search", "light", "semantic-tokens", "signed-out"],
       "shape": "reference",
       "captured": "2026-11-19",
@@ -32469,70 +32469,6 @@
         "components/": "no element crops; the preview browser returned The browser is not producing screenshot frames",
         "screenshots/": "no page captures; the preview browser returned The browser is not producing screenshot frames",
         "icons/": "icon harvest was not run; the site icon is icon.png from the 32px favicon"
-      }
-    },
-{
-      "slug": "tome",
-      "name": "Tome",
-      "url": "https://tome.app/",
-      "category": "productivity",
-      "platform": "web",
-      "goodFor": "A host 404 page only: the Magical Tome product is not served at tome.app, so this records that shutdown surface and not a presentation editor",
-      "tags": [
-        "web",
-        "presentations",
-        "shutdown",
-        "404"
-      ],
-      "shape": "reference",
-      "captured": "2026-11-19",
-      "access": "signed out. https://tome.app/ and /login both return the host 404. No email form, so no signup. No payment.",
-      "themes": [
-        "dark",
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
-      "entry": "systems/tome/README.md",
-      "tokens": "systems/tome/tokens.json",
-      "styleGuide": "systems/tome/style-guide.html",
-      "preview": {
-        "cover": "systems/tome/screenshots/home-dark-desktop.png",
-        "swatches": {
-          "dark": {
-            "page": "dark.background.page",
-            "surface": "dark.background.page",
-            "text": "dark.text.primary",
-            "muted": "dark.text.secondary",
-            "accent": "dark.border.focus",
-            "border": "dark.border.divider"
-          },
-          "light": {
-            "page": "light.background.page",
-            "surface": "light.background.page",
-            "text": "light.text.primary",
-            "muted": "light.text.secondary",
-            "accent": "light.border.focus",
-            "border": "light.border.divider"
-          }
-        },
-        "fonts": [
-          "core.font.family.sans",
-          "core.font.family.mono"
-        ]
-      },
-      "capture": {
-        "harness": "Grok Build",
-        "model": "grok-4.7",
-        "route": "public-web",
-        "durationMin": 40,
-        "version": "none. The domain returned HTTP 404 DEPLOYMENT_NOT_FOUND on 2026-11-19"
-      },
-      "layoutGaps": {
-        "icon.png": "tome.app/favicon.ico and /apple-touch-icon.png returned 404, and the gstatic favicon endpoint returned 404. No product icon was on the page.",
-        "icons/": "The 404 page has one inline separator SVG and no icon set. It was not extracted."
       }
     },
 {

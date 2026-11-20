@@ -431,7 +431,7 @@ Page: pricing. Selector: `yearly billing toggle`. States: default, hover, focus-
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-focus-visible.png`, `billing-toggle-pressed.png`.
+Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-pressed.png`.
 
 #### credits-select
 
@@ -910,7 +910,7 @@ Page: mobile. Selector: `mobile nav toggle`. States: default, hover, focus-visib
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `m-menu-btn-default.png`, `m-menu-btn-hover.png`, `m-menu-btn-focus-visible.png`, `m-menu-btn-pressed.png`, `m-menu-btn-opened.png`.
+Crops: `m-menu-btn-default.png`, `m-menu-btn-hover.png`, `m-menu-btn-pressed.png`, `m-menu-btn-opened.png`.
 
 #### m-drawer
 

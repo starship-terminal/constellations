@@ -1566,7 +1566,7 @@ Page: jobs. Selector: `job card`. States: default, hover, focus-visible, pressed
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `job-card-default.png`, `job-card-hover.png`, `job-card-focus-visible.png`, `job-card-pressed.png`.
+Crops: `job-card-default.png`, `job-card-hover.png`, `job-card-pressed.png`.
 
 #### job-title
 
@@ -1590,7 +1590,7 @@ Page: jobs. Selector: `job title inside a job card`. States: default, hover, foc
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `job-title-default.png`, `job-title-hover.png`, `job-title-focus-visible.png`, `job-title-pressed.png`.
+Crops: `job-title-default.png`, `job-title-hover.png`, `job-title-pressed.png`.
 
 #### job-tag
 
@@ -1616,7 +1616,7 @@ Page: jobs. Selector: `job tag inside a job card`. States: default, hover, focus
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `job-tag-default.png`, `job-tag-hover.png`, `job-tag-focus-visible.png`, `job-tag-pressed.png`.
+Crops: `job-tag-default.png`, `job-tag-hover.png`, `job-tag-pressed.png`.
 
 #### job-apply
 

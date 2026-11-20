@@ -502,7 +502,7 @@ Page: home. Selector: `demo output tab`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `demo-output-tab-default.png`, `demo-output-tab-hover.png`, `demo-output-tab-focus-visible.png`, `demo-output-tab-pressed.png`.
+Crops: `demo-output-tab-default.png`, `demo-output-tab-hover.png`, `demo-output-tab-pressed.png`.
 
 #### demo-run
 
@@ -930,7 +930,7 @@ Page: signin. Selector: `Continue with email`. States: default, hover, focus-vis
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `auth-email-btn-default.png`, `auth-email-btn-hover.png`, `auth-email-btn-focus-visible.png`, `auth-email-btn-pressed.png`.
+Crops: `auth-email-btn-default.png`, `auth-email-btn-hover.png`, `auth-email-btn-pressed.png`.
 
 #### auth-email
 
@@ -1239,7 +1239,7 @@ Page: docs. Selector: `docs language tab`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `docs-tab-default.png`, `docs-tab-hover.png`, `docs-tab-focus-visible.png`, `docs-tab-pressed.png`.
+Crops: `docs-tab-default.png`, `docs-tab-hover.png`, `docs-tab-pressed.png`.
 
 #### docs-cta
 
@@ -1575,7 +1575,7 @@ Page: docsdark. Selector: `docs language tab`. States: default, hover, focus-vis
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `d-docs-tab-default.png`, `d-docs-tab-hover.png`, `d-docs-tab-focus-visible.png`, `d-docs-tab-pressed.png`.
+Crops: `d-docs-tab-default.png`, `d-docs-tab-hover.png`, `d-docs-tab-pressed.png`.
 
 #### d-docs-cta
 

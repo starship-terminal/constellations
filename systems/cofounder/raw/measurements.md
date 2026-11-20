@@ -333,7 +333,7 @@ Crops: `tool-tab-off-default.png`, `tool-tab-off-hover.png`, `tool-tab-off-focus
 
 #### tool-button
 
-Tool button. A tool/agent picker button (border-black/10 bg-white/60 rounded-[10px], hover -translate-y lift).
+Tool button. A tool/agent picker button (border-black/10 bg-white/60 rounded-[10px], hover white-fill swap).
 
 Page: home. Selector: `button.border-black/10`. States: default, hover, focus-visible, pressed.
 
@@ -632,7 +632,7 @@ Crops: `pricing-title-default.png`.
 
 #### plan-card
 
-Plan card. A whole-card plan anchor (pricing-card-group -> pricing-card): border-border-card bg-surface-raised rounded-2xl, hover -translate-y-10 reveal of the hidden CTA chip. Links to app.cofounder.co; never followed.
+Plan card. A whole-card plan anchor (pricing-card-group -> pricing-card): border-border-card bg-surface-raised rounded-2xl, hover reveals the hidden CTA chip (no lift transition - the anchor computes 0s). Links to app.cofounder.co; never followed.
 
 Page: pricing. Selector: `a.pricing-card-group`. States: default, hover, focus-visible, pressed.
 

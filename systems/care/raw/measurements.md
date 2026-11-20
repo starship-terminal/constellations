@@ -307,25 +307,26 @@ Page: home. Selector: `a.MuiLink-root category card`. States: default, hover, fo
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 200 x 252 | = | = | = |
-| Padding | 32px 24px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 24px | = | = | = |
-| Background | #ffffff | #f5f5f5 | = | #e8e8e8 |
-| Box shadow | none | = | = | = |
-| Outline | none | 1px solid #707070 offset 0px | = | 1px solid #707070 offset 0px |
-| Font | Oceanic Grotesk 18px/28px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1e1e1e | = | = | = |
-| Text node | span.MuiTypography-root.MuiTypography-h3: Oceanic Grotesk 18px/24px 500, #1e1e1e | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #1e1e1e | = | = | = |
-| ::before | auto x auto, absolute, bg #000000 @ 0, radius 24px | = | = | = |
-| Painted layers | a.MuiTypography-root.MuiTypography-inherit 200.0x252.0 bg #ffffff r 24px; a::before.MuiTypography-root.MuiTypography-inherit autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 24px | a.MuiTypography-root.MuiTypography-inherit 200.0x252.0 bg #f5f5f5 r 24px outline 1px solid #707070 offset 0px; a::before.MuiTypography-root.MuiTypography-inherit autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 24px | = | a.MuiTypography-root.MuiTypography-inherit 200.0x252.0 bg #e8e8e8 r 24px outline 1px solid #707070 offset 0px; a::before.MuiTypography-root.MuiTypography-inherit autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 24px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 200 x 252 | = | - | = |
+| Padding | 32px 24px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 24px | = | - | = |
+| Background | #ffffff | #f5f5f5 | - | #e8e8e8 |
+| Box shadow | none | = | - | = |
+| Outline | none | 1px solid #707070 offset 0px | - | 1px solid #707070 offset 0px |
+| Font | Oceanic Grotesk 18px/28px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1e1e1e | = | - | = |
+| Text node | span.MuiTypography-root.MuiTypography-h3: Oceanic Grotesk 18px/24px 500, #1e1e1e | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 24 x 24, colour #1e1e1e | = | - | = |
+| ::before | auto x auto, absolute, bg #000000 @ 0, radius 24px | = | - | = |
+| Painted layers | a.MuiTypography-root.MuiTypography-inherit 200.0x252.0 bg #ffffff r 24px; a::before.MuiTypography-root.MuiTypography-inherit autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 24px | a.MuiTypography-root.MuiTypography-inherit 200.0x252.0 bg #f5f5f5 r 24px outline 1px solid #707070 offset 0px; a::before.MuiTypography-root.MuiTypography-inherit autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 24px | - | a.MuiTypography-root.MuiTypography-inherit 200.0x252.0 bg #e8e8e8 r 24px outline 1px solid #707070 offset 0px; a::before.MuiTypography-root.MuiTypography-inherit autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 24px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `category-card-default.png`, `category-card-hover.png`, `category-card-focus-visible.png`, `category-card-pressed.png`.
+Crops: `category-card-default.png`, `category-card-hover.png`, `category-card-pressed.png`.
 
 #### section-h2
 
@@ -383,23 +384,24 @@ Page: childcare. Selector: `.MuiPaper-root service card`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 608 x 512 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 32px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | none | #000000 @ 0.15 0px 4px 16px 0px | = | #000000 @ 0.15 0px 4px 16px 0px |
-| Outline | none | = | = | = |
-| Font | Oceanic Grotesk 18px/28px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1e1e1e | = | = | = |
-| Text node | a.MuiTypography-root.MuiTypography-h2: Oceanic Grotesk 24px/32px 500, #1e1e1e | = | = | = |
-| Transition | box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Painted layers | div.MuiPaper-root.MuiPaper-elevation 608.0x512.0 bg #ffffff r 32px; a::before.MuiTypography-root.MuiTypography-h2 autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 6px; a.MuiButtonBase-root.MuiButton-root 144.3x40.0 bg #025747 border T:1px solid #025747 / R:1px solid #025747 / B:1px solid #025747 / L:1px solid #025747 r 20px | div.MuiPaper-root.MuiPaper-elevation 608.0x512.0 bg #ffffff r 32px shadow #000000 @ 0.15 0px 4px 16px 0px; a::before.MuiTypography-root.MuiTypography-h2 autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 6px; a.MuiButtonBase-root.MuiButton-root 144.3x40.0 bg #025747 border T:1px solid #025747 / R:1px solid #025747 / B:1px solid #025747 / L:1px solid #025747 r 20px | = | div.MuiPaper-root.MuiPaper-elevation 608.0x512.0 bg #ffffff r 32px shadow #000000 @ 0.15 0px 4px 16px 0px; a::before.MuiTypography-root.MuiTypography-h2 autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 6px; a.MuiButtonBase-root.MuiButton-root 144.3x40.0 bg #025747 border T:1px solid #025747 / R:1px solid #025747 / B:1px solid #025747 / L:1px solid #025747 r 20px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 608 x 512 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 32px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | none | #000000 @ 0.15 0px 4px 16px 0px | - | #000000 @ 0.15 0px 4px 16px 0px |
+| Outline | none | = | - | = |
+| Font | Oceanic Grotesk 18px/28px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1e1e1e | = | - | = |
+| Text node | a.MuiTypography-root.MuiTypography-h2: Oceanic Grotesk 24px/32px 500, #1e1e1e | = | - | = |
+| Transition | box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Painted layers | div.MuiPaper-root.MuiPaper-elevation 608.0x512.0 bg #ffffff r 32px; a::before.MuiTypography-root.MuiTypography-h2 autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 6px; a.MuiButtonBase-root.MuiButton-root 144.3x40.0 bg #025747 border T:1px solid #025747 / R:1px solid #025747 / B:1px solid #025747 / L:1px solid #025747 r 20px | div.MuiPaper-root.MuiPaper-elevation 608.0x512.0 bg #ffffff r 32px shadow #000000 @ 0.15 0px 4px 16px 0px; a::before.MuiTypography-root.MuiTypography-h2 autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 6px; a.MuiButtonBase-root.MuiButton-root 144.3x40.0 bg #025747 border T:1px solid #025747 / R:1px solid #025747 / B:1px solid #025747 / L:1px solid #025747 r 20px | - | div.MuiPaper-root.MuiPaper-elevation 608.0x512.0 bg #ffffff r 32px shadow #000000 @ 0.15 0px 4px 16px 0px; a::before.MuiTypography-root.MuiTypography-h2 autoxauto border T:2px solid #4d9380 / R:2px solid #4d9380 / B:2px solid #4d9380 / L:2px solid #4d9380 r 6px; a.MuiButtonBase-root.MuiButton-root 144.3x40.0 bg #025747 border T:1px solid #025747 / R:1px solid #025747 / B:1px solid #025747 / L:1px solid #025747 r 20px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Cursor | - | pointer | = | pointer |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `service-card-default.png`, `service-card-hover.png`, `service-card-focus-visible.png`, `service-card-pressed.png`.
+Crops: `service-card-default.png`, `service-card-hover.png`, `service-card-pressed.png`.
 
 #### service-cta
 
@@ -608,22 +610,23 @@ Page: listing. Selector: `.CareTag chip`. States: default, hover, focus-visible,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 71.95 x 24 | = | = | = |
-| Padding | 2px 4px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 4px | = | = | = |
-| Background | #f5f5f5 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Oceanic Grotesk 18px/28px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1e1e1e | = | = | = |
-| Text node | div.MuiTypography-root.MuiTypography-body3: Oceanic Grotesk 14px/20px 400, #1e1e1e | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.CareTag.CareTag--large 72.0x24.0 bg #f5f5f5 r 4px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 71.95 x 24 | = | - | = |
+| Padding | 2px 4px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 4px | = | - | = |
+| Background | #f5f5f5 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Oceanic Grotesk 18px/28px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1e1e1e | = | - | = |
+| Text node | div.MuiTypography-root.MuiTypography-body3: Oceanic Grotesk 14px/20px 400, #1e1e1e | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.CareTag.CareTag--large 72.0x24.0 bg #f5f5f5 r 4px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `care-tag-default.png`, `care-tag-hover.png`, `care-tag-focus-visible.png`, `care-tag-pressed.png`.
+Crops: `care-tag-default.png`, `care-tag-hover.png`, `care-tag-pressed.png`.
 
 #### read-more
 

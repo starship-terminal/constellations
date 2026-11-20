@@ -174,22 +174,23 @@ Page: home. Selector: `.y0DxmG_ctaWrapper`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 123 x 32.03 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Verlag 18px/27px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff @ 0.7 | = | = | = |
-| Text node | div.eoWgla_ctaInner: Verlag 12px/12px 600, #ffffff, ls 1px | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.eoWgla_cta.y0DxmG_cta 123.0x32.0 r 8px shadow #ffffff @ 0.24 0px 0px 0px 1px inset; div::after.eoWgla_cta.y0DxmG_cta calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | div.eoWgla_cta.y0DxmG_cta 123.0x32.0 bg #ffffff @ 0.04 r 8px shadow #ffffff @ 0.24 0px 0px 0px 1px inset; div::after.eoWgla_cta.y0DxmG_cta calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 123 x 32.03 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Verlag 18px/27px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff @ 0.7 | = | - | = |
+| Text node | div.eoWgla_ctaInner: Verlag 12px/12px 600, #ffffff, ls 1px | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.eoWgla_cta.y0DxmG_cta 123.0x32.0 r 8px shadow #ffffff @ 0.24 0px 0px 0px 1px inset; div::after.eoWgla_cta.y0DxmG_cta calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | div.eoWgla_cta.y0DxmG_cta 123.0x32.0 bg #ffffff @ 0.04 r 8px shadow #ffffff @ 0.24 0px 0px 0px 1px inset; div::after.eoWgla_cta.y0DxmG_cta calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
+Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-pressed.png`.
 
 #### nav-signin
 
@@ -299,25 +300,26 @@ Page: home. Selector: `.IQmOHa_mainCTA .eoWgla_ctaInner`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 205 x 54 | 202.95 x 53.46 | = | = |
-| Padding | 0px 27px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 14px | = | = | = |
-| Background | #fdfcfa | = | = | = |
-| Box shadow | #ffffff @ 0.98 0px 0px 4px 1px | = | = | = |
-| Outline | none | = | = | = |
-| Font | Verlag 18px/18px 600 | = | = | = |
-| Letter spacing | 1px | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | transform 0.35s ease | = | = | = |
-| Transform | matrix(1, 0, 0, 1, 0, 0) | matrix(0.99, 0, 0, 0.99, 0, 0) | = | = |
-| Cursor | pointer | = | = | = |
-| ::before | calc(100% + 54px) x calc(100% + 18px), absolute, bg #000000 @ 0 linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%), radius 0px | = | = | = |
-| ::after | 100% x 100%, absolute, bg #000000 @ 0 linear-gradient(135deg, #ffffff, #b6b6b6 150%), radius 0px | = | = | = |
-| Painted layers | div.eoWgla_ctaInner 205.0x54.0 bg #fdfcfa r 14px shadow #ffffff @ 0.98 0px 0px 4px 1px; div::before.eoWgla_ctaInner calc(100% + 54px)xcalc(100% + 18px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | div.eoWgla_ctaInner 202.9x53.5 bg #fdfcfa r 14px shadow #ffffff @ 0.98 0px 0px 4px 1px; div::before.eoWgla_ctaInner calc(100% + 54px)xcalc(100% + 18px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 205 x 54 | 202.95 x 53.46 | - | = |
+| Padding | 0px 27px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 14px | = | - | = |
+| Background | #fdfcfa | = | - | = |
+| Box shadow | #ffffff @ 0.98 0px 0px 4px 1px | = | - | = |
+| Outline | none | = | - | = |
+| Font | Verlag 18px/18px 600 | = | - | = |
+| Letter spacing | 1px | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | transform 0.35s ease | = | - | = |
+| Transform | matrix(1, 0, 0, 1, 0, 0) | matrix(0.99, 0, 0, 0.99, 0, 0) | - | = |
+| Cursor | pointer | = | - | = |
+| ::before | calc(100% + 54px) x calc(100% + 18px), absolute, bg #000000 @ 0 linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%), radius 0px | = | - | = |
+| ::after | 100% x 100%, absolute, bg #000000 @ 0 linear-gradient(135deg, #ffffff, #b6b6b6 150%), radius 0px | = | - | = |
+| Painted layers | div.eoWgla_ctaInner 205.0x54.0 bg #fdfcfa r 14px shadow #ffffff @ 0.98 0px 0px 4px 1px; div::before.eoWgla_ctaInner calc(100% + 54px)xcalc(100% + 18px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | div.eoWgla_ctaInner 202.9x53.5 bg #fdfcfa r 14px shadow #ffffff @ 0.98 0px 0px 4px 1px; div::before.eoWgla_ctaInner calc(100% + 54px)xcalc(100% + 18px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `cta-default.png`, `cta-hover.png`, `cta-focus-visible.png`, `cta-pressed.png`.
+Crops: `cta-default.png`, `cta-hover.png`, `cta-pressed.png`.
 
 #### cta-bottom
 
@@ -327,24 +329,25 @@ Page: home. Selector: `.JzsFla_ctaButton`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 185 x 52 | 181.3 x 50.96 | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 16px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Verlag 16px/27px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #f2b98b | #efab74 | = | = |
-| Text node | div.eoWgla_ctaInner: Verlag 16px/16px 600, #000000, ls 1px | = | = | = |
-| Transition | background-color 0.15s ease-in-out | = | = | = |
-| Cursor | pointer | = | = | = |
-| ::after | calc(100% + 48px) x calc(100% + 16px), absolute, bg #000000 @ 0 linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%), radius 100% | = | = | = |
-| Painted layers | div.eoWgla_cta.JzsFla_ctaButton 185.0x52.0 bg #ffffff r 16px; div::after.eoWgla_cta.JzsFla_ctaButton calc(100% + 48px)xcalc(100% + 16px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 48px)xcalc(100% + 16px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | div.eoWgla_cta.JzsFla_ctaButton 181.3x51.0 bg #ffffff r 16px; div::after.eoWgla_cta.JzsFla_ctaButton calc(100% + 48px)xcalc(100% + 16px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 48px)xcalc(100% + 16px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 185 x 52 | 181.3 x 50.96 | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 16px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Verlag 16px/27px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #f2b98b | #efab74 | - | = |
+| Text node | div.eoWgla_ctaInner: Verlag 16px/16px 600, #000000, ls 1px | = | - | = |
+| Transition | background-color 0.15s ease-in-out | = | - | = |
+| Cursor | pointer | = | - | = |
+| ::after | calc(100% + 48px) x calc(100% + 16px), absolute, bg #000000 @ 0 linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%), radius 100% | = | - | = |
+| Painted layers | div.eoWgla_cta.JzsFla_ctaButton 185.0x52.0 bg #ffffff r 16px; div::after.eoWgla_cta.JzsFla_ctaButton calc(100% + 48px)xcalc(100% + 16px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 48px)xcalc(100% + 16px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | div.eoWgla_cta.JzsFla_ctaButton 181.3x51.0 bg #ffffff r 16px; div::after.eoWgla_cta.JzsFla_ctaButton calc(100% + 48px)xcalc(100% + 16px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 48px)xcalc(100% + 16px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `cta-bottom-default.png`, `cta-bottom-hover.png`, `cta-bottom-focus-visible.png`, `cta-bottom-pressed.png`.
+Crops: `cta-bottom-default.png`, `cta-bottom-hover.png`, `cta-bottom-pressed.png`.
 
 #### filter-button
 
@@ -546,24 +549,25 @@ Page: pricing. Selector: `.htJ5kW_button inside a plan card`. States: default, h
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 238 x 44 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | 1px solid #1f1f1f @ 0.4 | 1px solid #000000 @ 0 | = | 1px solid #000000 @ 0 |
-| Radius | 10px | = | = | = |
-| Background | transparent | #fb7232 | = | #fb7232 |
-| Box shadow | none | = | = | = |
-| Backdrop filter | saturate(1.6) blur(12px) | = | = | = |
-| Outline | none | = | = | = |
-| Font | Verlag 14px/27px 600 | = | = | = |
-| Letter spacing | 1px | = | = | = |
-| Colour | #1f1f1f | #ffffff | = | #ffffff |
-| Transition | background-color, color, border-color 0.15s, 0.15s, 0.15s ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | div.htJ5kW_button 238.0x44.0 border T:1px solid #1f1f1f @ 0.4 / R:1px solid #1f1f1f @ 0.4 / B:1px solid #1f1f1f @ 0.4 / L:1px solid #1f1f1f @ 0.4 r 10px | div.htJ5kW_button 238.0x44.0 bg #fb7232 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px | = | div.htJ5kW_button 238.0x44.0 bg #fb7232 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px |
-| Ancestor paint | 1 up div._3K18mq_card bg #959595 @ 0.06 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 238 x 44 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | 1px solid #1f1f1f @ 0.4 | 1px solid #000000 @ 0 | - | 1px solid #000000 @ 0 |
+| Radius | 10px | = | - | = |
+| Background | transparent | #fb7232 | - | #fb7232 |
+| Box shadow | none | = | - | = |
+| Backdrop filter | saturate(1.6) blur(12px) | = | - | = |
+| Outline | none | = | - | = |
+| Font | Verlag 14px/27px 600 | = | - | = |
+| Letter spacing | 1px | = | - | = |
+| Colour | #1f1f1f | #ffffff | - | #ffffff |
+| Transition | background-color, color, border-color 0.15s, 0.15s, 0.15s ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | div.htJ5kW_button 238.0x44.0 border T:1px solid #1f1f1f @ 0.4 / R:1px solid #1f1f1f @ 0.4 / B:1px solid #1f1f1f @ 0.4 / L:1px solid #1f1f1f @ 0.4 r 10px | div.htJ5kW_button 238.0x44.0 bg #fb7232 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px | - | div.htJ5kW_button 238.0x44.0 bg #fb7232 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px |
+| Ancestor paint | 1 up div._3K18mq_card bg #959595 @ 0.06 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
+Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-pressed.png`.
 
 #### plan-cta-filled
 
@@ -573,25 +577,26 @@ Page: pricing. Selector: `.htJ5kW_button inside _3K18mq_popular`. States: defaul
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 238 x 44 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 10px | = | = | = |
-| Background | #fb7232 | = | = | = |
-| Box shadow | none | = | = | = |
-| Backdrop filter | saturate(1.6) blur(12px) | = | = | = |
-| Outline | none | = | = | = |
-| Font | Verlag 14px/27px 600 | = | = | = |
-| Letter spacing | 1px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | background-color, color, border-color 0.15s, 0.15s, 0.15s ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| ::after | 238px x 44px, absolute, bg #ffffff @ 0.08, radius 10px | = | = | = |
-| Painted layers | div.htJ5kW_button.htJ5kW_popular 238.0x44.0 bg #fb7232 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px; div::after.htJ5kW_button.htJ5kW_popular 238pxx44px bg #ffffff @ 0.08 r 10px | = | = | = |
-| Ancestor paint | 1 up div._3K18mq_card._3K18mq_popular bg #959595 @ 0.06 shadow #fb7232 @ 0.24 0px 0px 0px 3px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 238 x 44 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 10px | = | - | = |
+| Background | #fb7232 | = | - | = |
+| Box shadow | none | = | - | = |
+| Backdrop filter | saturate(1.6) blur(12px) | = | - | = |
+| Outline | none | = | - | = |
+| Font | Verlag 14px/27px 600 | = | - | = |
+| Letter spacing | 1px | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | background-color, color, border-color 0.15s, 0.15s, 0.15s ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s | = | - | = |
+| Cursor | pointer | = | - | = |
+| ::after | 238px x 44px, absolute, bg #ffffff @ 0.08, radius 10px | = | - | = |
+| Painted layers | div.htJ5kW_button.htJ5kW_popular 238.0x44.0 bg #fb7232 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px; div::after.htJ5kW_button.htJ5kW_popular 238pxx44px bg #ffffff @ 0.08 r 10px | = | - | = |
+| Ancestor paint | 1 up div._3K18mq_card._3K18mq_popular bg #959595 @ 0.06 shadow #fb7232 @ 0.24 0px 0px 0px 3px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `plan-cta-filled-default.png`, `plan-cta-filled-hover.png`, `plan-cta-filled-focus-visible.png`, `plan-cta-filled-pressed.png`.
+Crops: `plan-cta-filled-default.png`, `plan-cta-filled-hover.png`, `plan-cta-filled-pressed.png`.
 
 #### billing-toggle
 
@@ -731,22 +736,23 @@ Page: signin. Selector: `._emailLoginBtn_*`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 272 x 40 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 12px | = | = | = |
-| Background | #ff6821 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | SF Pro Text 14px/21px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff @ 0.6 | = | = | = |
-| Transition | background-color, color 0.15s, 0.15s ease-in-out, ease-in-out delay 0s, 0s | = | = | = |
-| Painted layers | button._loginBtn_1ii7i_42._emailLoginBtn_axxef_40 272.0x40.0 bg #ff6821 r 12px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 272 x 40 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 12px | = | - | = |
+| Background | #ff6821 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | SF Pro Text 14px/21px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff @ 0.6 | = | - | = |
+| Transition | background-color, color 0.15s, 0.15s ease-in-out, ease-in-out delay 0s, 0s | = | - | = |
+| Painted layers | button._loginBtn_1ii7i_42._emailLoginBtn_axxef_40 272.0x40.0 bg #ff6821 r 12px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `signin-email-btn-default.png`, `signin-email-btn-hover.png`, `signin-email-btn-focus-visible.png`, `signin-email-btn-pressed.png`.
+Crops: `signin-email-btn-default.png`, `signin-email-btn-hover.png`, `signin-email-btn-pressed.png`.
 
 #### signin-apple
 
@@ -1021,23 +1027,24 @@ Page: home. Selector: `.y0DxmG_btns`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 123 x 32.03 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 14px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Verlag 18px/27px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff @ 0.7 | = | = | = |
-| Text node | div.eoWgla_ctaInner: Verlag 12px/12px 600, #1f1f1e, ls 1px | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.eoWgla_cta.y0DxmG_cta 123.0x32.0 bg #ffffff r 8px; div::after.eoWgla_cta.y0DxmG_cta calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | = | a.y0DxmG_signInBtn 0.0x0.0 bg #ffffff @ 0.08 r 8px; div.eoWgla_cta.y0DxmG_cta 123.0x32.0 bg #ffffff r 8px; div::after.eoWgla_cta.y0DxmG_cta calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | a.y0DxmG_signInBtn 0.0x0.0 bg #ffffff @ 0.08 r 8px; div.eoWgla_cta.y0DxmG_cta 123.0x32.0 bg #ffffff r 8px; div::after.eoWgla_cta.y0DxmG_cta calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 123 x 32.03 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 14px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Verlag 18px/27px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff @ 0.7 | = | - | = |
+| Text node | div.eoWgla_ctaInner: Verlag 12px/12px 600, #1f1f1e, ls 1px | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.eoWgla_cta.y0DxmG_cta 123.0x32.0 bg #ffffff r 8px; div::after.eoWgla_cta.y0DxmG_cta calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) | = | - | a.y0DxmG_signInBtn 0.0x0.0 bg #ffffff @ 0.08 r 8px; div.eoWgla_cta.y0DxmG_cta 123.0x32.0 bg #ffffff r 8px; div::after.eoWgla_cta.y0DxmG_cta calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%) r 100%; div::before.eoWgla_ctaInner calc(100% + 36px)xcalc(100% + 12px) image linear-gradient(225deg, #32c5ff 0%, #b620e0 51%, #f7b500 100%); div::after.eoWgla_ctaInner 100%x100% image linear-gradient(135deg, #ffffff, #b6b6b6 150%) |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `m-cta-default.png`, `m-cta-hover.png`, `m-cta-focus-visible.png`, `m-cta-pressed.png`.
+Crops: `m-cta-default.png`, `m-cta-hover.png`, `m-cta-pressed.png`.
 
 ## Transitions declared in the readable stylesheets
 
