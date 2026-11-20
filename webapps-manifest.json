@@ -6466,9 +6466,9 @@
       "description": "Food Delivery and Takeout",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.ubereats.com/login-redirect/ opened a delivery feed with a cart. No login form. Product not walked.",
+      "notes": "https://www.ubereats.com/orders redirected to the Uber sign-in page. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 19
     },
     {
