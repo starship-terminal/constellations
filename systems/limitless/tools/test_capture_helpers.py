@@ -63,6 +63,13 @@ class CaptureDatesTest(unittest.TestCase):
         self.assertLess(ok, src.index("c.read = TODAY;"))
         self.assertEqual(src.count("recaptureError: msg, recaptureRun: TODAY"), 2)
 
+    def test_backfill_dates_states_and_success_clears_missed(self):
+        src = (CAPTURE / "public" / "measure.mjs").read_text()
+        backfill = src.index("for (const st of Object.values(c.states || {})) if (st && typeof st === 'object' && !st.read) st.read = prevDate;")
+        self.assertLess(backfill, src.index("const out = {"))
+        ok = src.index("c.states[state] = { ...s, crop: file, via, read: TODAY };")
+        self.assertLess(ok, src.index("delete c.recaptureMissed;"))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -44,6 +44,9 @@ class RebuildTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             copy = pathlib.Path(tmp) / "pkg"
             shutil.copytree(PKG, copy, ignore=shutil.ignore_patterns("__pycache__"))
+            # Remove the committed outputs first, so a builder that writes nothing cannot pass.
+            for name in BUILT:
+                (copy / name).unlink()
             for builder in ("build_tokens.py", "build_style_guide.py"):
                 subprocess.run([sys.executable, str(copy / "tools" / builder)], check=True, capture_output=True)
             for name in BUILT:
