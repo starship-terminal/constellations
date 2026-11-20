@@ -4,6 +4,7 @@ tools/site.py shares its name with the stdlib `site` module (already imported by
 the interpreter), so it is loaded here by file path.
 """
 import importlib.util
+import os
 import re
 import shutil
 import subprocess
@@ -104,6 +105,24 @@ class AppIconTest(unittest.TestCase):
         self.assertEqual(re.findall(r'name="app-icon" value="(\w+)"', body), ["flat", "glass"])
         for src in re.findall(r'src="\.\./(assets/[^"]+)"', body):
             self.assertTrue((sitegen.DOCS / src).exists(), src)
+
+    def test_the_settings_page_never_stores_a_provider_key(self):
+        body = sitegen.SETTINGS_BODY
+        self.assertNotIn("setItem('ds-provider'", body)
+        self.assertNotIn("api_key || ''", body)  # the key field was prefilled from storage
+        self.assertIn("send('POST', 'provider'", body)
+
+    @unittest.skipUnless(shutil.which("node"), "Node.js is required to run the Settings script")
+    def test_the_provider_script(self):
+        script = re.search(r"<script>(.*?)</script>", sitegen.SETTINGS_BODY, re.S).group(1)
+        self.assertIn("pf-templates", script)
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "provider.js"
+            path.write_text(script)
+            result = subprocess.run(["node", "--test", str(HERE / "test_settings_provider.mjs")],
+                                    capture_output=True, text=True,
+                                    env={**os.environ, "SETTINGS_SCRIPT": str(path)})
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_every_icon_the_swap_names_exists(self):
         js = (self.ASSETS / "app-icon.js").read_text()

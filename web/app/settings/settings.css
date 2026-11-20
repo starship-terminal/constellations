@@ -10,3 +10,16 @@
 #model-provider { scroll-margin-top: 20px; }
 /* Below 900px a 52px fixed top bar covers the first screen edge. */
 @media (max-width: 899px) { #model-provider { scroll-margin-top: 72px; } }
+
+/* Where the chat's key comes from: saved on the server, the server's
+   environment, or nowhere. The badge is the only sign of a saved key; the
+   key itself never comes back to the page. */
+.pf-source { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 14px; font-size: 12.5px; }
+.pf-source .pf-using { color: var(--muted); }
+.pf-source[data-source="saved"] .pf-badge { color: var(--meets); }
+.pf-source[data-source="env"] .pf-badge { color: var(--text); }
+.pf-source[data-source="none"] .pf-badge { color: var(--partly); }
+.pf-notice {
+  margin: 0 0 14px; padding: 9px 12px; font-size: 12.5px; color: var(--text);
+  background: var(--accent-soft); border: 1px solid var(--line); border-radius: var(--radius-ctl);
+}

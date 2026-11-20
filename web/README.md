@@ -1,0 +1,85 @@
+# web/: the gallery app
+
+The Next.js app that browses the library: gallery, refero, scorecard, docs,
+the librarian chat and Settings. `make dev` runs it on 127.0.0.1:8800;
+`make web-build` builds it for production. The repo's
+[AGENTS.md](../AGENTS.md) has the map; this file covers what the app keeps
+for itself.
+
+## The model provider key
+
+Settings > Model provider sets the model the chat talks to. The key never
+lives in the browser:
+
+1. The page sends the key once, to `POST /api/provider`.
+2. The server tests it with one model-list call. A key that fails is not
+   saved, and the previous key, if any, keeps working. That is also how a
+   key is replaced: save a new one and it swaps in only once it passes.
+3. The server writes the provider to
+   `$DESIGN_SYSTEMS_CONFIG_DIR/provider.json`, default
+   `~/.config/design-systems/provider.json`: outside the checkout, folder
+   mode 0700, file mode 0600, written through a temporary file and a rename.
+4. No answer carries the key. `GET /api/provider` and `GET /api/status` say
+   only where it comes from, shown on the page as a badge: saved on the
+   server, from the server environment, or no key.
+5. The chat uses the saved key; `ANTHROPIC_API_KEY` (from the environment
+   or the repo's `.env`) only while nothing is saved; with neither, the
+   chat asks for setup. A saved file that is broken is reported, never
+   quietly replaced by the env key.
+6. A saved key only goes to the endpoint it was saved with. Changing the
+   API, base URL, key header or models URL needs the key again; the model
+   and label change without it. Remove (`DELETE /api/provider`) deletes the
+   file, and the env key, if set, applies again.
+7. Error texts are scrubbed of the key before they are returned, and the
+   routes log only an error's type.
+
+An older version stored the whole provider, key included, in the browser's
+`localStorage` under `ds-provider`. On the first page load after the update
+the app sends that key to the save route, deletes the browser copy whether
+or not the server kept it, and says which happened (a toast, then a note on
+Settings).
+
+The logic lives in [lib/provider-api.ts](lib/provider-api.ts) and
+[lib/provider-store.ts](lib/provider-store.ts), tested by
+`lib/provider-api.test.ts` and `components/storage.test.ts` (`pnpm test`).
+The Python `/api/` server for the docs site applies the same rules to the
+same file ([server/provider_store.py](../server/provider_store.py),
+tested by `tools/test_routes.py`).
+
+The app has no login, so anyone who can reach it can replace or remove the
+saved key and spend it through the chat, as with the env key before. Nobody
+can read it back.
+
+## The docs site's Settings page
+
+The published docs site ([tools/site.py](../tools/site.py)) has the same
+Model provider section. Where a server answers its `/api/` (the home
+server's `server/api.py` behind nginx), it uses the routes above. On a copy
+with no server, such as GitHub Pages, the section says so, stores nothing,
+and deletes a key an older version left in that browser.
+
+## On the home server
+
+These steps are for the owner; nothing in this repo contacts the host.
+
+1. Pick the folder that holds the saved provider, outside the clone. The
+   gallery's unit (`next start` from the clone) and the Python API unit
+   (`server/api.py`) must see the same one: either both run as the same user
+   with the same `HOME` (then `~/.config/design-systems/` is shared and
+   nothing needs setting), or set `DESIGN_SYSTEMS_CONFIG_DIR` to the same
+   absolute path for both, in each unit's environment or the clone's `.env`.
+2. If the gallery runs from the [Dockerfile](../Dockerfile) image, mount a
+   volume at that folder and set `DESIGN_SYSTEMS_CONFIG_DIR` to the mount
+   point; otherwise a saved key is lost when the container is recreated.
+3. Make sure the folder belongs to the user the units run as. The app
+   creates it 0700 and the file 0600 itself; an existing folder keeps its
+   mode, so check it is not readable by others.
+4. Restart the API unit once after this change deploys: `server/api.py`
+   itself changed (it now passes `DELETE /api/provider` to the routes), and
+   only the route modules reload per request. The gallery unit picks the
+   change up with its usual rebuild.
+5. Check that nginx's `/api/` location passes every method (no
+   `limit_except`), so `DELETE /api/provider` reaches the API.
+6. Open Settings > Model provider in each browser that had a key saved: the
+   page moves it to the server and deletes the browser copy. Or save the key
+   once from any browser, since the saved key now serves them all.

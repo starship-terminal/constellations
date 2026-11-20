@@ -1,23 +1,19 @@
-// POST /api/models — settings page "Test" button. Lists the provider's models
-// for the config the page posted. It never falls back to the server's env
-// key: the test is of the browser's own config, which needs no model yet.
+// POST /api/models: the older name of POST /api/provider/test, kept for a page
+// loaded before the move. It takes {provider: {...}}, the shape that page
+// posted, and applies the same rules (lib/provider-api.ts).
 import { NextResponse } from "next/server";
 import { listModels } from "@/lib/chat/chat";
-import { baseUrlOf } from "@/lib/provider-defaults";
+import { handleTest } from "@/lib/provider-api";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
-  let body: { provider?: Record<string, string> };
+  let body: { provider?: unknown } | undefined;
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ ok: false, error: "bad JSON" }, { status: 400 });
+    body = undefined;
   }
-  const p = body.provider && typeof body.provider === "object" ? body.provider : {};
-  const base_url = baseUrlOf(p).replace(/\/+$/, "");
-  if (!p.api_key || !base_url) return NextResponse.json({ ok: false, error: "no_provider" });
-  return NextResponse.json(
-    await listModels({ ...p, api: p.api || "openai", base_url, api_key: p.api_key, model: p.model || "" }),
-  );
+  const r = await handleTest(body && typeof body === "object" ? body.provider : undefined, listModels);
+  return NextResponse.json(r.body, { status: r.status, headers: { "cache-control": "no-store" } });
 }

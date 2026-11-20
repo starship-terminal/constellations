@@ -1,12 +1,16 @@
 // Unit tests for the browser-storage readers. Run with `pnpm test`.
 import assert from "node:assert/strict";
 import { afterEach, describe, it } from "node:test";
-import { readSavedPaths, readStoredProvider } from "./storage.ts";
+import { migrateStoredProvider, readSavedPaths, readStoredProvider } from "./storage.ts";
 
 const store = new Map<string, string>();
 Object.defineProperty(globalThis, "localStorage", {
   configurable: true,
-  value: { getItem: (k: string) => store.get(k) ?? null, setItem: (k: string, v: string) => void store.set(k, v) },
+  value: {
+    getItem: (k: string) => store.get(k) ?? null,
+    setItem: (k: string, v: string) => void store.set(k, v),
+    removeItem: (k: string) => void store.delete(k),
+  },
 });
 
 describe("readStoredProvider", () => {
@@ -42,5 +46,53 @@ describe("readSavedPaths", () => {
   it("keeps only strings", () => {
     store.set("ds-saved", JSON.stringify(["a.png", 3, null, "b.png"]));
     assert.deepEqual(readSavedPaths(), ["a.png", "b.png"]);
+  });
+});
+
+describe("migrateStoredProvider", () => {
+  afterEach(() => store.clear());
+  const KEY = "sk-old-browser-key-1234567";
+  const old = { api: "openai", base_url: "https://models.example/v1", api_key: KEY, model: "m1", name: "x" };
+
+  it("sends a stored key to the server once, then deletes it", async () => {
+    store.set("ds-provider", JSON.stringify(old));
+    const sent: Record<string, string>[] = [];
+    const note = await migrateStoredProvider(async (b) => {
+      sent.push(b);
+      assert.ok(store.has("ds-provider"), "deleted only after the save answered");
+      return { ok: true };
+    });
+    assert.deepEqual(sent, [old]);
+    assert.equal(store.has("ds-provider"), false);
+    assert.match(String(note), /^Moved the API key/);
+    assert.ok(!String(note).includes(KEY));
+    // Nothing left to move on the next load.
+    assert.equal(await migrateStoredProvider(async () => assert.fail("no second save")), null);
+  });
+
+  it("deletes the stored key even when the server refuses it, and says so without quoting it", async () => {
+    store.set("ds-provider", JSON.stringify(old));
+    const note = await migrateStoredProvider(async () => ({ ok: false, error: `HTTP 401 for ${KEY}` }));
+    assert.equal(store.has("ds-provider"), false);
+    assert.match(String(note), /^Deleted the API key .*enter it again/);
+    assert.ok(!String(note).includes(KEY));
+  });
+
+  it("deletes the stored key when the server cannot be reached", async () => {
+    store.set("ds-provider", JSON.stringify(old));
+    const note = await migrateStoredProvider(async () => {
+      throw new Error("offline");
+    });
+    assert.equal(store.has("ds-provider"), false);
+    assert.match(String(note), /no answer from the server/);
+  });
+
+  it("drops a leftover value with no key silently, and does nothing when there is none", async () => {
+    assert.equal(await migrateStoredProvider(async () => assert.fail("nothing to send")), null);
+    for (const raw of [JSON.stringify({ model: "m" }), "nope{"]) {
+      store.set("ds-provider", raw);
+      assert.equal(await migrateStoredProvider(async () => assert.fail("nothing to send")), null);
+      assert.equal(store.has("ds-provider"), false);
+    }
   });
 });
