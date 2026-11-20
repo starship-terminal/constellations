@@ -4,6 +4,7 @@ A share link that grants access is masked like a signed URL (owner's rule, 2026-
 committed text says app.maze.co/report/[share-link], and the capture scripts read the real link
 from MAZE_REPORT_URL. This fails if any text file in the package names a report path again.
 """
+import json
 import re
 import unittest
 from pathlib import Path
@@ -27,6 +28,15 @@ def leaks(root):
 class ShareLink(unittest.TestCase):
     def test_no_file_names_the_report_link(self):
         self.assertEqual(leaks(ROOT), [])
+
+    def test_catalog_entry_does_not_name_the_report_link(self):
+        # catalog.json holds maze's capture block (routes, gaps), which the gallery builder copies
+        # as is, so the placeholder must be the only report path there too.
+        catalog = json.loads((ROOT.parent.parent / "catalog.json").read_text(encoding="utf-8"))
+        entry = next(s for s in catalog["systems"] if s.get("slug") == "maze")
+        text = json.dumps(entry, ensure_ascii=False)
+        self.assertIsNone(REPORT_PATH.search(text))
+        self.assertIn("app.maze.co/report/[share-link]", text)
 
     def test_a_named_report_link_is_found(self):
         import tempfile
