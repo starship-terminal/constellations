@@ -1,0 +1,307 @@
+{
+  "core": {
+    "_meta": {
+      "product": "West Elm",
+      "captured": "2026-11-21",
+      "theme": "light only"
+    },
+    "color": {
+      "ink": {
+        "type": "color",
+        "value": "rgb(33, 33, 33)",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. body color."
+      },
+      "muted": {
+        "type": "color",
+        "value": "rgb(100, 100, 100)",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. secondary nav and footer link color."
+      },
+      "white": {
+        "type": "color",
+        "value": "rgb(255, 255, 255)",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. brand-strip background and login field background."
+      },
+      "fieldBorder": {
+        "type": "color",
+        "value": "rgb(200, 200, 200)",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. search input border."
+      },
+      "footer": {
+        "type": "color",
+        "value": "rgb(244, 244, 244)",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. footer backgroundColor."
+      },
+      "promo": {
+        "type": "color",
+        "value": "#5b081a",
+        "source": "Sampled from raw/home screenshot pixel (720, 184) before quantize. CSS custom property was not declared; the promo band's computed background was not isolated from a transparent wrapper."
+      },
+      "sale": {
+        "type": "color",
+        "value": "#bf4759",
+        "source": "Sampled from raw/home screenshot pixel (1276, 152), the SALE nav label, before quantize."
+      },
+      "focus": {
+        "type": "color",
+        "value": "rgb(37, 99, 235)",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. login email input outline on :focus."
+      }
+    },
+    "font": {
+      "text": {
+        "type": "fontFamily",
+        "value": "\"GT Eesti Text\", Helvetica, Arial, sans-serif",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. body fontFamily. GT Eesti Text is proprietary."
+      },
+      "display": {
+        "type": "fontFamily",
+        "value": "Sanomat, Georgia, Times, serif",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. homepage h1 fontFamily. Sanomat is proprietary."
+      }
+    },
+    "typography": {
+      "display": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.display}",
+          "fontSize": "48px",
+          "fontWeight": 300,
+          "lineHeight": "60px",
+          "letterSpacing": "0.96px"
+        },
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. homepage h1 'The Winter Edit' was 48px/60px/300. Registry h1 measured 64px on the same family in a later reading and is not this token."
+      },
+      "nav": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.text}",
+          "fontSize": "12px",
+          "fontWeight": 300,
+          "lineHeight": "40px",
+          "letterSpacing": "0.96px"
+        },
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. #nav-main link, text-transform uppercase."
+      },
+      "utility": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.text}",
+          "fontSize": "10px",
+          "fontWeight": 375,
+          "lineHeight": "13px",
+          "letterSpacing": "0.8px"
+        },
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. #nav-user-links ACCOUNT, text-transform uppercase."
+      },
+      "body": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.text}",
+          "fontSize": "12px",
+          "fontWeight": 300,
+          "lineHeight": "18px",
+          "letterSpacing": "0px"
+        },
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. body."
+      },
+      "button": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.text}",
+          "fontSize": "14px",
+          "fontWeight": 375,
+          "lineHeight": "16.8px",
+          "letterSpacing": "1.4px"
+        },
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. SHOP NOW control, text-transform uppercase, padding 12px 24px."
+      },
+      "secondary": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.text}",
+          "fontSize": "14px",
+          "fontWeight": 300,
+          "lineHeight": "18.2px",
+          "letterSpacing": "0.42px"
+        },
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. secondary nav link."
+      },
+      "field": {
+        "type": "typography",
+        "value": {
+          "fontFamily": "{font.text}",
+          "fontSize": "16px",
+          "fontWeight": 300,
+          "lineHeight": "18px",
+          "letterSpacing": "0px"
+        },
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. login email input font-size 16px, height 59px, padding 28px 16px 8px."
+      }
+    },
+    "radius": {
+      "none": {
+        "type": "dimension",
+        "value": "0px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. buttons, fields, nav and cards measured border-radius 0px."
+      }
+    },
+    "space": {
+      "buttonX": {
+        "type": "dimension",
+        "value": "24px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. SHOP NOW padding-left/right."
+      },
+      "buttonY": {
+        "type": "dimension",
+        "value": "12px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. SHOP NOW padding-top/bottom."
+      },
+      "fieldX": {
+        "type": "dimension",
+        "value": "16px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. login email padding-left and search padding-left."
+      },
+      "searchY": {
+        "type": "dimension",
+        "value": "6px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. search input padding-top."
+      }
+    },
+    "size": {
+      "navItem": {
+        "type": "dimension",
+        "value": "40px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. primary nav link height."
+      },
+      "utility": {
+        "type": "dimension",
+        "value": "39px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. utility link height."
+      },
+      "header": {
+        "type": "dimension",
+        "value": "177px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. header bounding height, rounded from 177.2."
+      },
+      "search": {
+        "type": "dimension",
+        "value": "36px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. search input height."
+      },
+      "searchWidth": {
+        "type": "dimension",
+        "value": "400px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. search input width."
+      },
+      "field": {
+        "type": "dimension",
+        "value": "59px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. login email input height."
+      },
+      "button": {
+        "type": "dimension",
+        "value": "43px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. SHOP NOW height, rounded from 42.8."
+      },
+      "footer": {
+        "type": "dimension",
+        "value": "661px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. footer height, rounded from 660.8."
+      }
+    },
+    "border": {
+      "hairline": {
+        "type": "dimension",
+        "value": "1px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. search input and SHOP NOW border-top-width."
+      },
+      "focus": {
+        "type": "dimension",
+        "value": "2px",
+        "source": "Measured computed style, westelm.com, headed Chrome, 1440x900, 2026-11-21. Light theme only. login email outline-width on focus."
+      }
+    }
+  },
+  "light": {
+    "background": {
+      "page": {
+        "type": "color",
+        "value": "{color.white}",
+        "source": "Alias of measured white. Page ground on the loaded surfaces is white; body backgroundColor was transparent."
+      },
+      "surface": {
+        "type": "color",
+        "value": "{color.footer}",
+        "source": "Alias of measured footer fill, the only raised surface read."
+      },
+      "promo": {
+        "type": "color",
+        "value": "{color.promo}",
+        "source": "Alias of the sampled promo band."
+      },
+      "inverse": {
+        "type": "color",
+        "value": "{color.ink}",
+        "source": "Alias of measured ink, used as the primary button fill."
+      }
+    },
+    "text": {
+      "primary": {
+        "type": "color",
+        "value": "{color.ink}",
+        "source": "Alias of measured body color."
+      },
+      "muted": {
+        "type": "color",
+        "value": "{color.muted}",
+        "source": "Alias of measured secondary/footer link color."
+      },
+      "onInverse": {
+        "type": "color",
+        "value": "{color.white}",
+        "source": "Alias of measured white, the SHOP NOW label color."
+      },
+      "sale": {
+        "type": "color",
+        "value": "{color.sale}",
+        "source": "Alias of the sampled SALE label."
+      },
+      "link": {
+        "type": "color",
+        "value": "{color.focus}",
+        "source": "Login legal links render as the same blue the focused field outlines. Not separately measured on an unfocused link."
+      }
+    },
+    "border": {
+      "default": {
+        "type": "color",
+        "value": "{color.fieldBorder}",
+        "source": "Alias of measured search border."
+      },
+      "strong": {
+        "type": "color",
+        "value": "{color.ink}",
+        "source": "Alias of measured ink, the focused field and primary button border."
+      }
+    },
+    "action": {
+      "primary": {
+        "type": "color",
+        "value": "{color.ink}",
+        "source": "Alias. CONTINUE WITH EMAIL and SHOP NOW fill."
+      },
+      "primaryText": {
+        "type": "color",
+        "value": "{color.white}",
+        "source": "Alias. Label on the primary fill."
+      }
+    },
+    "focus": {
+      "ring": {
+        "type": "color",
+        "value": "{color.focus}",
+        "source": "Alias of the measured focus outline."
+      }
+    }
+  }
+}
