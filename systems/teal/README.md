@@ -84,6 +84,7 @@ The T3 preview browser returned "The browser is not producing screenshot frames"
 ## What to distrust
 
 - **There is no dark theme on these pages.** Do not invent one from the marketing bird palette.
+- **32 values were typed in and not saved to raw/.** [raw/readings.json](raw/readings.json) records the main computed readings and part of the declared palette. The other declared custom properties (the secondary bird colours, the hover fills, the mono stack, two weights, the tracking and duration tokens, the app shadow) and some computed sizes (display and price type, footer and testimonial radii, the sign-in form width) are not in it. Those 32 tokens are labelled Reconstruction, entered by hand at capture time; the list is `HAND` in [tools/build_tokens.py](tools/build_tokens.py).
 - **Marketing yellow and app yellow are two readings.** `#f5b501` is the marketing pill. The sign-in button computed `rgb(244, 179, 1)`, which is the app token `--color-accent-500` (`#f4b301`).
 - **App brand `#005249` and marketing teal `#005149` differ by one channel.** Both were read. Do not collapse them.
 - **Hover colours are declarations.** Header links declare `hover:text-[#005149]`. Sign up declares `hover:brightness-95`. Those were not a live pointer hover, because the preview snapshot could not drive a visible hover frame.

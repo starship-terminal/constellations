@@ -270,6 +270,35 @@ tokens["app"]["color"]["legal"] = color(
     "Measured. Computed colour of the terms line on https://app.tealhq.com/sign-up, 2026-11-19.",
 )
 
-out = HERE / "tokens.json"
-out.write_text(json.dumps(tokens, indent=2) + "\n")
-print(f"wrote {out}")
+# Values typed in from the preview that raw/readings.json does not hold (declared custom properties
+# it did not record, and computed styles that were read but not saved). They carry the hand-entered
+# label, not Measured; the rest of the file's values are in raw/readings.json.
+HAND = [
+    "core.font.marketingNav", "core.font.mono", "core.fontWeight.light", "core.fontWeight.regular",
+    "core.fontSize.display", "core.fontSize.price", "core.fontSize.footerLink", "core.lineHeight.heroLead",
+    "core.lineHeight.display", "core.lineHeight.price", "core.letterSpacing.h2", "core.letterSpacing.tight",
+    "core.radius.testimonial", "core.radius.footer", "core.size.authForm", "core.size.iconWell",
+    "core.shadow.appSm", "core.motion.durationFast", "core.motion.durationButton", "core.motion.durationPress",
+    "light.color.inkStrong", "light.color.muted", "light.color.border", "light.color.chickadee",
+    "light.color.menuHover", "light.color.canary", "light.color.maroon", "light.color.brown",
+    "app.color.brandHover", "app.color.accentHover", "app.color.danger", "app.color.legal",
+]
+for path in HAND:
+    node = tokens
+    for key in path.split("."):
+        node = node[key]
+    reading = node["$extensions"]["source"].removeprefix("Measured. ")
+    node["$extensions"]["source"] = (
+        "Reconstruction: entered by hand at capture time; no raw/ file holds this reading. " + reading
+    )
+
+
+def render() -> str:
+    """tokens.json's exact text; importing this module writes nothing."""
+    return json.dumps(tokens, indent=2) + "\n"
+
+
+if __name__ == "__main__":
+    out = HERE / "tokens.json"
+    out.write_text(render())
+    print(f"wrote {out}")

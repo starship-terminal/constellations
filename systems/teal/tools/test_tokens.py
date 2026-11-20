@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Teal tokens only contain values the 2026-11-19 readings recorded."""
 import json
+import re
+import sys
 import unittest
 from pathlib import Path
 
@@ -31,7 +33,7 @@ class TokensTest(unittest.TestCase):
         def walk(node, path):
             if isinstance(node, dict) and "$value" in node:
                 source = node.get("$extensions", {}).get("source", "")
-                if not source.startswith("Measured") and not source.startswith("Derived"):
+                if not source.startswith(("Measured", "Derived", "Reconstruction: entered by hand")):
                     missing.append(path)
             elif isinstance(node, dict):
                 for key, value in node.items():
@@ -43,6 +45,22 @@ class TokensTest(unittest.TestCase):
         walk(TOKENS["light"], "light")
         walk(TOKENS["app"], "app")
         self.assertEqual(missing, [])
+
+    def test_committed_file_matches_builder(self):
+        sys.path.insert(0, str(HERE / "tools"))
+        import build_tokens
+        self.assertEqual((HERE / "tokens.json").read_text(), build_tokens.render())
+
+    def test_measured_colours_are_in_the_readings(self):
+        raw = (HERE / "raw" / "readings.json").read_text().lower()
+        rgb = {"#%02x%02x%02x" % tuple(int(float(c)) for c in m.split(",")[:3])
+               for m in re.findall(r"rgba?\(([\d.]+, [\d.]+, [\d.]+)", raw)}
+        for theme in ("light", "app"):
+            for name, token in TOKENS[theme]["color"].items():
+                value = token["$value"].lower()
+                if token["$extensions"]["source"].startswith("Measured") and value.startswith("#"):
+                    with self.subTest(token=f"{theme}.color.{name}"):
+                        self.assertTrue(value in raw or value in rgb, value)
 
     def test_no_dark_set(self):
         self.assertNotIn("dark", TOKENS)
