@@ -433,7 +433,9 @@ async function explore() {
   const pg = 'Player';
   const pauseBtn = q('button[aria-label="Pause"]').filter({ visible: true }).first();
   const bar = await markPainted('button[aria-label="Pause"]', 'm-player', { minW: 600, minH: 40, maxUp: 12 }).catch(() => null);
-  await S('player-bar', await orElse(bar, q('footer').filter({ visible: true }).first()), ['default'], { group: pg, title: 'Player bar', desc: 'The bottom transport bar mounted by pressing a card\'s Play (art, progress, transport, volume).', sel: 'painted ancestor of the pause button' }, { noScroll: true });
+  // No footer fallback: when Play mounts no player, player-bar is recorded missing, not
+  // the 708px site footer under the player's name.
+  await S('player-bar', bar, ['default'], { group: pg, title: 'Player bar', desc: 'The bottom transport bar mounted by pressing a card\'s Play (art, progress, transport, volume).', sel: 'painted ancestor of the pause button' }, { noScroll: true });
   await S('player-play', pauseBtn, B4, { group: pg, title: 'Player play/pause', desc: 'The transport\'s central pause button (a playing track).', sel: 'button[aria-label="Pause"]' }, { noScroll: true });
   // Previous/next carry no accessible name: they are the transport buttons
   // immediately before and after Pause in DOM order.
