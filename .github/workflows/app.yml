@@ -24,6 +24,10 @@ on:
       - 'server/library.py'
 permissions:
   contents: read
+# Replaces a pull request's older run on a new push; see the note in check.yml.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   app:
     # Audit fix branches (audit2/*) are not tested one by one: each fix is
