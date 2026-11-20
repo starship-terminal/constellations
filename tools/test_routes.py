@@ -628,6 +628,18 @@ class ProviderKeyTest(TempConfig):
         self.assertIsNone(self.store.load())
         self.assertTrue(self.call("post", "/api/provider", {**GOOD, "api_key": KEY2}).json()["ok"])
 
+    def test_a_file_from_before_the_meta_backfill_still_blocks_a_revived_key(self):
+        # A provider.db made by an earlier version: a saved row, an empty meta.
+        import sqlite3
+        self.config.mkdir(parents=True)
+        conn = sqlite3.connect(self.config / "provider.db", isolation_level=None)
+        conn.executescript("CREATE TABLE provider (id INTEGER PRIMARY KEY CHECK (id = 1), api TEXT NOT NULL, base_url TEXT NOT NULL, key_header TEXT NOT NULL DEFAULT '', models_url TEXT NOT NULL DEFAULT '', model TEXT NOT NULL, name TEXT NOT NULL DEFAULT '', api_key TEXT NOT NULL); CREATE TABLE meta (k TEXT PRIMARY KEY); INSERT INTO provider VALUES (1, 'openai', 'https://models.example/v1', '', '', 'm1', '', 'KEYPLACEHOLDER');".replace("KEYPLACEHOLDER", KEY))
+        conn.close()
+        self.call("delete", "/api/provider")
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY, "migrate": True})
+        self.assertEqual((h.json()["ok"], h.json()["existing"]), (False, True))
+        self.assertIsNone(self.store.load())
+
     def test_an_unchecked_key_never_replaces_a_working_one(self):
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
         self.chat.no_list = True
