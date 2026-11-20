@@ -150,6 +150,8 @@ The green Join-now header action; measured, never followed. Read as `join-cta` o
 #### Mega menu
 The Find-care mega menu panel, opened by its own trigger. Read as `nav-dropdown` on the home page.
 
+Kept from an earlier run: the 2026-11-12 recapture did not find this component, so these readings may not match the current page or script.
+
 **Values (default).** size 928 x 360; background transparent; text Oceanic Grotesk 16/20 500, #1e1e1e `color.neutral.ink`; icon 24 x 24, #1e1e1e `color.neutral.ink`; layers div.MuiBox-root.mui-bm0daf 196.0x360.0 rgb(246, 243, 238); button.MuiButtonBase-root.MegaMenu--item 164.0x48.0 rgb(255, 255, 255) 8px; button::before.MuiButtonBase-root.MegaMenu--item autoxauto T:2px solid rgb(77, 147, 128) / R:2px solid rgb(77, 147, 128) / B:2px solid rgb(77, 147, 128) / L:2px solid rgb(77, 147, 128) 8px; button::before.MuiButtonBase-root.MegaMenu--item autoxauto T:2px solid rgb(.
 
 Child layers that carry the look: div 196x360 background #f6f3ee; button 164x48 background #ffffff `color.neutral.white` radius 8px; button::before autoxauto border 2px solid #4d9380 `color.brand.green-focus` radius 8px.
@@ -159,6 +161,8 @@ Child layers that carry the look: div 196x360 background #f6f3ee; button 164x48 
 #### Mega-menu tab
 A category tab inside the mega menu (Child care active by default). Read as `menu-item` on the home page.
 
+Kept from an earlier run: the 2026-11-12 recapture did not find this component, so these readings may not match the current page or script.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, focus-visible, pressed) | size 164 x 48; padding 0px 10px 0px 16px; radius 8px; background #ffffff `color.neutral.white`; text Oceanic Grotesk 16/20 500, #1e1e1e `color.neutral.ink`; icon 24 x 24, #1e1e1e `color.neutral.ink`; layers ::before rgba(0, 0, 0, 0) 2px none 1 |
@@ -167,6 +171,8 @@ A category tab inside the mega menu (Child care active by default). Read as `men
 
 #### Menu link
 A link inside the opened mega menu. Read as `menu-link` on the home page.
+
+Kept from an earlier run: the 2026-11-12 recapture did not find this component, so these readings may not match the current page or script.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -183,6 +189,8 @@ The full-bleed photo hero with the 64px display headline and the ZIP + Search ba
 
 #### Hero headline
 The hero display headline over the photo ("Connecting families with quality, local caregivers"); the testimonial-name accentHeadline1 h1s are excluded. Read as `hero-title` on the home page.
+
+Kept from an earlier run: the 2026-11-12 recapture did not find this component, so these readings may not match the current page or script.
 
 **Values (default).** size 700 x 144; background transparent; text NaN Druid Sans 64/72 550, #ffffff `color.neutral.white`.
 
@@ -224,6 +232,8 @@ A "One membership" category card (Child care, Senior care, Pet care ...); measur
 
 #### Section heading
 A section display heading ("One membership for every season of life"). Read as `section-h2` on the home page.
+
+Kept from an earlier run: the 2026-11-12 recapture did not find this component, so these readings may not match the current page or script.
 
 **Values (default).** size 657.05 x 40; background transparent; text NaN Druid Sans 40/40 550, #1e1e1e `color.neutral.ink`.
 
