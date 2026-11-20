@@ -37,7 +37,7 @@ Screenshots are named `{page}-light-{state}.png`: the public surface paints one 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 10 components were given a real keyboard focus. 4 draw an outline ring: `cookie-learn` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-twitter` (1px auto #005fcc `measured.focus-outline`, offset 1px). The other 6 show no measured change: `cookie-accept`, `nav-about`, `nav-login`, `watch-video`, `try-cta`, `join-btn`.
+**Focus.** 10 components were given a real keyboard focus. 4 draw an outline ring: `cookie-learn` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-twitter` (1px auto #005fcc `measured.focus-outline`, offset 1px). The other 6 show no measured change: `cookie-accept`, `nav-about`, `nav-login`, `watch-video`, `try-cta`, `join-btn`. Focus could not be captured on 2 more (keyboard focus never landed on them, so their readings are left out): `logo`, `team-card`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): the pill buttons fall back to their resting fill when pressed (the hover grey is a :hover rule, so :active:hover reads as default), the grey chips keep stepping darker (#e0e3e7 → #dde0e4 → #dadde1), and the unstyled social/logo anchors pick up the UA :active link red #ff0000 — a browser default, not a Dona value. Nothing a real press would submit was ever pressed.
 
