@@ -39,6 +39,16 @@ class Tokens(unittest.TestCase):
         with self.assertRaises(SystemExit):
             build_tokens.check(bad)
 
+    def test_check_refuses_a_self_alias_a_cycle_and_a_malformed_alias(self):
+        import copy
+        import build_tokens
+        doc = build_tokens.build()
+        for value, why in (("{color.text.primary}", "cycle"), ("{color.bg.page}oops", "malformed"), ("{", "malformed")):
+            bad = copy.deepcopy(doc)
+            bad["light"]["color"]["text"]["primary"]["$value"] = value
+            with self.subTest(value=value), self.assertRaisesRegex(SystemExit, why):
+                build_tokens.check(bad)
+
     def test_no_dark_set(self):
         tokens = json.loads((HERE / "tokens.json").read_text())
         self.assertNotIn("dark", tokens)

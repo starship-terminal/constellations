@@ -276,29 +276,49 @@ def walk(node, path=""):
             yield from walk(value, path + key + ".")
 
 
-def aliases(value):
+def aliases(value, where="value"):
+    """Every alias inside a value, at any depth. A string holding a brace must be one whole alias."""
     if isinstance(value, str):
-        return re.findall(r"\{([^{}]+)\}", value)
+        if "{" not in value and "}" not in value:
+            return []
+        m = re.fullmatch(r"\{([A-Za-z0-9_.-]+)\}", value)
+        if not m:
+            raise SystemExit(f"{where}: malformed alias {value!r}")
+        return [m.group(1)]
     if isinstance(value, dict):
-        return [a for v in value.values() for a in aliases(v)]
+        return [a for v in value.values() for a in aliases(v, where)]
+    if isinstance(value, list):
+        return [a for v in value for a in aliases(v, where)]
     return []
+
+
+def follow(ref, own, core, where, chain=()):
+    """Resolve ref in its own set, then core; follow the target's aliases and refuse a cycle."""
+    if ref in chain:
+        raise SystemExit(f"{where}: alias cycle through {{{ref}}}")
+    scope = own if ref in own else core
+    if ref not in scope:
+        raise SystemExit(f"{where}: alias {{{ref}}} points at nothing")
+    for nxt in aliases(scope[ref]["$value"], where):
+        follow(nxt, scope, core, where, (*chain, ref))
 
 
 def check(doc: dict) -> None:
     """Refuse a token with no source, a colour that is not hex, a dimension that is not one px or
-    rem length, and an alias that does not resolve in its own set or in core (the Resolver's order)."""
+    rem length, a malformed alias, an alias that does not resolve in its own set or in core (the
+    Resolver's order), and an alias chain that loops."""
     core_names = dict(walk(doc["core"]))
     for set_name in ("core", "light"):
-        names = {**core_names, **dict(walk(doc[set_name]))}
+        own = dict(walk(doc[set_name]))
         for path, token in walk(doc[set_name]):
             where = f"{set_name}.{path}"
             if not token.get("$extensions", {}).get("source"):
                 raise SystemExit(f"{where}: no source")
-            for a in aliases(token["$value"]):
-                if a not in names:
-                    raise SystemExit(f"{where}: alias {{{a}}} points at nothing")
+            refs = aliases(token["$value"], where)
+            for a in refs:
+                follow(a, own, core_names, where, (path,))
             value = token["$value"]
-            if isinstance(value, str) and value.startswith("{"):
+            if isinstance(value, str) and refs:
                 continue
             if token["$type"] == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", value):
                 raise SystemExit(f"{where}: colour {value!r} is not hex")
