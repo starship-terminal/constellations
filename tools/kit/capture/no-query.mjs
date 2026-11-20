@@ -16,7 +16,9 @@
 
 const SPAN = /(?<![\w.-])data:(?:"[^"]*"|'[^']*'|[^\s"'])*|(["'])((?:\\.|(?!\1)[^\\])*)\1|(url\(\s*)([^\s"')][^)\s]*)(\s*\))|[^\s"']+/gi;
 const ABSOLUTE = /^(?:[a-z][a-z0-9+.-]*:)?\/\//i;
-const URLISH = /^(?:[a-z][a-z0-9+.-]*:\/\/|\/\/|[\w.~%@+()[\]=,-]*[/.])/i;
+// Path characters are letters and digits of any script (\p{L}, \p{N}, marks), so "фото.png" or
+// "logo.фото" is a path as much as "logo.png" is.
+const URLISH = /^(?:[a-z][a-z0-9+.-]*:\/\/|\/\/|[\p{L}\p{N}\p{M}_.~%@+()[\]=,-]*[/.])/iu;
 
 // The index a URL-shaped text is cut at, or -1 to keep it whole.
 function cutAt(u) {
@@ -33,10 +35,10 @@ function cutAt(u) {
 const cutWhole = (u) => { const at = cutAt(u); return at < 0 ? u : u.slice(0, at); };
 
 // Quoted text: the URL starts at the first word that begins like one (a scheme, //, or a path with a /
-// or a .ext), wherever it sits (after the start, a space, a bracket, a comma or =), and runs to the
+// or a .ext in any script), wherever it sits (after the start, a space, a bracket, a comma or =), and runs to the
 // closing quote, spaces included ("/media/my photo.png?sig=1"). From there everything from the first ?
 // (or a # as cutAt decides) to the quote is cut; a data: URL keeps the text whole.
-const URL_START = /^(?:[a-z][a-z0-9+.-]*:\/\/|\/\/|[\w.~%@+()[\]=,-]*(?:\/|\.\w))/i;
+const URL_START = /^(?:[a-z][a-z0-9+.-]*:\/\/|\/\/|[\p{L}\p{N}\p{M}_.~%@+()[\]=,-]*(?:\/|\.[\p{L}\p{N}]))/iu;
 function cutQuoted(inner) {
   for (const m of inner.matchAll(/(?:^|(?<=[\s([,=]))\S+/g)) {
     if (/^data:/i.test(m[0])) return inner;
