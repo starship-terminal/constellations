@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROVR style guide</title>
+<meta name="description" content="ROVR (rovr.live) public design tokens, rendered from tokens.json.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: dark;
+  --sg-sans: kernStandard, "kernStandard Fallback", system-ui, sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page, #000); color: var(--text, #fafafa); font: 400 16px/1.5 var(--sg-sans); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 40px/1.1 var(--sg-sans); margin: 0 0 8px; text-transform: uppercase; color: var(--accent, #fff057); }
+h2 { font: 700 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #a3a3a3); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--text, #fafafa); }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border: 1px solid var(--border, #262626); }
+.sw b, .sw span { display: block; font: 500 11px/1.4 ui-monospace, Menlo, monospace; }
+.sw span { color: var(--muted, #a3a3a3); }
+.chrome { border: 1px solid var(--border, #262626); background: var(--page, #000); }
+.bar { display: flex; align-items: center; gap: 18px; height: 56px; padding: 0 16px; border-bottom: 1px solid var(--accent, #fff057); font-size: 15px; font-style: italic; }
+.bar .mark { font-weight: 800; font-style: normal; letter-spacing: .08em; color: var(--accent, #fff057); }
+.bar .sp { flex: 1; }
+.bar a { color: var(--color-brand-nav-quiet, rgba(255,240,87,.5)); text-decoration: none; }
+.menu { display: inline-flex; align-items: center; height: var(--component-button-height, 24px); padding: 0 14px; border-radius: var(--component-button-radius, 30px); background: var(--component-button-bg, #fff057); color: var(--component-button-text, #000); font: 700 15px/1 var(--sg-sans); font-style: italic; }
+.stage { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 280px; }
+.stage .copy { padding: 28px 24px; }
+.stage h3 { margin: 0; font: 700 51px/1.05 var(--sg-sans); color: var(--accent, #fff057); text-transform: uppercase; }
+.stage .by { font: 400 28px/1.1 var(--sg-sans); margin: 8px 0; }
+.play { width: var(--component-play-size, 70px); height: var(--component-play-size, 70px); border-radius: var(--component-play-radius, 9999px); background: var(--component-play-bg, #fff057); color: #000; display: inline-flex; align-items: center; justify-content: center; font-size: 22px; }
+.track { background: var(--accent, #fff057); color: #000; padding: 12px 16px; font-size: 14px; }
+.field { border: 0; border-bottom: 1px solid var(--accent, #fff057); background: transparent; color: var(--component-field-text, #fff057); font: 400 14px/20px var(--sg-sans); width: 240px; padding: 6px 0; }
+.note { color: var(--muted, #a3a3a3); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ROVR</h1>
+  <p>Public radio chrome from rovr.live, dark only. Every swatch below is a token from tokens.json. kernStandard is not loaded here, so the page falls back to system-ui.</p>
+
+  <h2>Colour roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>var(--page)</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>var(--text)</span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><b>muted</b><span>var(--muted)</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>var(--border)</span></div>
+    <div class="sw"><i style="background:var(--primary)"></i><b>primary token</b><span>var(--primary)</span></div>
+    <div class="sw"><i style="background:var(--destructive)"></i><b>destructive</b><span>var(--destructive)</span></div>
+  </div>
+  <p class="note">Accent is the painted yellow of the MENU pill. Primary is the computed --primary channel, a nearby yellow. They are not the same reading.</p>
+
+  <h2>Chrome</h2>
+  <div class="chrome">
+    <div class="bar"><span class="mark">ROVR</span><a>RADIO</a><a>MOODS</a><a>SCHEDULE</a><a>CURATORS</a><a>ARCHIVE</a><span class="sp"></span><span class="menu">MENU</span></div>
+    <div class="stage">
+      <div class="copy">
+        <h3>Morning strut</h3>
+        <div class="by">BY Curator</div>
+        <p>Vintage morning jams for early-birds</p>
+        <span class="play">▶</span>
+      </div>
+      <div style="background:#111"></div>
+    </div>
+    <div class="track">Track: Title · Artist · Label</div>
+  </div>
+
+  <h2>Field</h2>
+  <p class="note">The sign-in field was measured empty. This specimen is not a filled account form.</p>
+  <input class="field" placeholder="Enter your Email" readonly>
+
+  <h2>Type</h2>
+  <p style="font:700 51px/1.05 var(--sg-sans);text-transform:uppercase;color:var(--accent)">Display 51</p>
+  <p style="font:800 40px/1 var(--sg-sans);color:var(--text)">Manifesto weight 800</p>
+  <p style="font:400 15px/1.5 var(--sg-sans);font-style:italic;color:var(--color-brand-nav-quiet)">Nav italic 15</p>
+  <p style="font:400 10px/1.5 var(--sg-sans);color:var(--accent)">Caption 10</p>
+</main>
+</body>
+</html>
