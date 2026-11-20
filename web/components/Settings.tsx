@@ -10,7 +10,9 @@ import { PROVIDER_NOTICE_KEY, readSavedPaths } from "@/components/storage";
 import { announceProviderChange, PROVIDER_EVENT } from "@/components/Chat";
 import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
 import { agentSnippets } from "@/lib/agent-snippets";
+import { scrollBehavior } from "@/components/motion";
 import { SnippetCopyButton } from "@/components/CopyButton";
+import { TABS, tabForKey, tabFromHash, type TabId } from "@/components/settings-tabs";
 import { afterSave, EMPTY_FORM, latestOnly, withField, type ProviderForm } from "@/components/provider-form";
 
 export interface SettingsStats {
@@ -372,16 +374,81 @@ function ProviderPanel() {
   );
 }
 
+/** Below this width the tab list sits above the panel as one scrolling row. */
+const NARROW = "(max-width: 760px)";
+
 export function Settings({ stats }: { stats: SettingsStats }) {
   const lb = useLightbox();
   const { theme, collapsed } = usePrefs();
   const [saved, setSaved] = useState<string[]>([]);
   const [origin, setOrigin] = useState("");
 
+  const [tab, setTab] = useState<TabId>("model-provider");
+  const [narrow, setNarrow] = useState(false);
+  const tabRefs = useRef<Partial<Record<TabId, HTMLButtonElement | null>>>({});
+
   useEffect(() => {
     setOrigin(window.location.origin);
     setSaved(readSavedPaths());
   }, []);
+
+  useEffect(() => {
+    // The hash picks the tab: on load, on back/forward, and after a link on
+    // this page (Next's client navigation changes the hash without a
+    // hashchange event, so a same-page link click is checked too).
+    const sync = () => {
+      const t = tabFromHash(window.location.hash);
+      if (t) setTab(t);
+    };
+    sync();
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as Element | null)?.closest?.("a[href*='#']");
+      if (a) setTimeout(sync, 0);
+    };
+    window.addEventListener("hashchange", sync);
+    window.addEventListener("popstate", sync);
+    document.addEventListener("click", onClick);
+    const mq = window.matchMedia(NARROW);
+    const onMq = () => setNarrow(mq.matches);
+    onMq();
+    mq.addEventListener("change", onMq);
+    return () => {
+      window.removeEventListener("hashchange", sync);
+      window.removeEventListener("popstate", sync);
+      document.removeEventListener("click", onClick);
+      mq.removeEventListener("change", onMq);
+    };
+  }, []);
+
+  useEffect(() => {
+    // On a phone the list is one sideways row: keep the open tab in view.
+    if (narrow) tabRefs.current[tab]?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: scrollBehavior() });
+  }, [tab, narrow]);
+
+  const select = (t: TabId, focus = false) => {
+    setTab(t);
+    // replaceState: switching tabs is not a navigation worth a history entry.
+    try {
+      history.replaceState(history.state, "", `#${t}`);
+    } catch {}
+    if (focus) tabRefs.current[t]?.focus();
+  };
+
+  const onTabKey = (e: React.KeyboardEvent) => {
+    const next = tabForKey(tab, e.key);
+    if (!next) return;
+    e.preventDefault();
+    select(next, true);
+  };
+
+  const panel = (id: TabId) => ({
+    id,
+    role: "tabpanel",
+    "aria-labelledby": `st-tab-${id}`,
+    tabIndex: 0,
+    hidden: tab !== id,
+    className: "st-panel",
+  });
 
   const applyTheme = (t: Theme) => setTheme(t);
   const applyNav = (c: boolean) => setCollapsed(c);
@@ -400,121 +467,160 @@ export function Settings({ stats }: { stats: SettingsStats }) {
         <p className="sub">Preferences are saved in this browser and apply to every page of the app; the model provider is saved on the server.</p>
       </div>
 
-      <div className="prefs">
-        <fieldset className="pref" id="model-provider">
-          <legend className="pref-name">Model provider</legend>
-          <ProviderPanel />
-        </fieldset>
+      <div className="st-layout">
+        <div
+          className="st-tabs"
+          role="tablist"
+          aria-label="Settings sections"
+          aria-orientation={narrow ? "horizontal" : "vertical"}
+          onKeyDown={onTabKey}
+        >
+          {TABS.map((t) => (
+            <button
+              key={t.id}
+              ref={(el) => {
+                tabRefs.current[t.id] = el;
+              }}
+              id={`st-tab-${t.id}`}
+              type="button"
+              role="tab"
+              className="st-tab"
+              aria-selected={tab === t.id}
+              aria-controls={t.id}
+              tabIndex={tab === t.id ? 0 : -1}
+              onClick={() => select(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
 
-        <fieldset className="pref">
-          <legend className="pref-name">Preferences</legend>
-          <p className="pref-help">How the app looks and how much room the sidebar takes.</p>
-          <div className="pf-grid">
-            <div className="pf-field">
-              <span>Theme</span>
-              <div className="seg" role="group" aria-label="Theme">
-                <button type="button" aria-pressed={theme === "system"} onClick={() => applyTheme("system")}>
-                  System
-                </button>
-                <button type="button" aria-pressed={theme === "dark"} onClick={() => applyTheme("dark")}>
-                  Dark
-                </button>
-                <button type="button" aria-pressed={theme === "light"} onClick={() => applyTheme("light")}>
-                  Light
-                </button>
-              </div>
-            </div>
-            <div className="pf-field">
-              <span>Sidebar</span>
-              <div className="seg" role="group" aria-label="Sidebar">
-                <button type="button" aria-pressed={!collapsed} onClick={() => applyNav(false)}>
-                  Expanded
-                </button>
-                <button type="button" aria-pressed={collapsed} onClick={() => applyNav(true)}>
-                  Collapsed
-                </button>
-              </div>
-            </div>
-          </div>
-        </fieldset>
+        <div className="prefs st-panels">
+          <section {...panel("model-provider")}>
+            <fieldset className="pref">
+              <legend className="pref-name">Model provider</legend>
+              <ProviderPanel />
+            </fieldset>
+          </section>
 
-        <fieldset className="pref">
-          <legend className="pref-name">For agents</legend>
-          <p className="pref-help">
-            Install the ds CLI or point a coding agent at the remote MCP endpoint — both read this
-            library over the same /api/mcp transport, read-only.
-          </p>
-          <dl className="meta snippets">
-            {agentSnippets(origin).map((s) => (
-              <div className="snip-row" key={s.label}>
-                <dt>{s.label}</dt>
-                <dd>
-                  <code>{s.text}</code>
-                  <SnippetCopyButton text={s.text} what={`${s.label} setup`} />
-                </dd>
+          <section {...panel("appearance")}>
+            <fieldset className="pref">
+              <legend className="pref-name">Appearance</legend>
+              <p className="pref-help">How the app looks and how much room the sidebar takes.</p>
+              <div className="pf-grid">
+                <div className="pf-field">
+                  <span>Theme</span>
+                  <div className="seg" role="group" aria-label="Theme">
+                    <button type="button" aria-pressed={theme === "system"} onClick={() => applyTheme("system")}>
+                      System
+                    </button>
+                    <button type="button" aria-pressed={theme === "dark"} onClick={() => applyTheme("dark")}>
+                      Dark
+                    </button>
+                    <button type="button" aria-pressed={theme === "light"} onClick={() => applyTheme("light")}>
+                      Light
+                    </button>
+                  </div>
+                </div>
+                <div className="pf-field">
+                  <span>Sidebar</span>
+                  <div className="seg" role="group" aria-label="Sidebar">
+                    <button type="button" aria-pressed={!collapsed} onClick={() => applyNav(false)}>
+                      Expanded
+                    </button>
+                    <button type="button" aria-pressed={collapsed} onClick={() => applyNav(true)}>
+                      Collapsed
+                    </button>
+                  </div>
+                </div>
               </div>
-            ))}
-          </dl>
-          <p className="pref-note">
-            Any harness that takes a remote (streamable-HTTP) MCP URL works. On a machine with the
-            repo checkout, <code>python3 server/mcp.py</code> is the stdio variant.
-          </p>
-        </fieldset>
+            </fieldset>
+          </section>
 
-        <fieldset className="pref">
-          <legend className="pref-name">Saved media</legend>
-          <p className="pref-help">Screenshots saved from the lightbox, kept in this browser.</p>
-          {saved.length ? (
-            <>
-              <div className="shots">
-                {saved.map((p, i) => (
-                  <button
-                    key={p}
-                    type="button"
-                    className="shot"
-                    onClick={() =>
-                      lb.open({
-                        items: saved.map((x) => ({ path: x, name: baseName(x) })),
-                        index: i,
-                        opts: { onSave: () => setSaved(readSavedPaths()) },
-                      })
-                    }
-                  >
-                    <span className="frame">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={p} alt="" loading="lazy" />
-                    </span>
-                    <span>{baseName(p)}</span>
-                  </button>
+          <section {...panel("agents")}>
+            <fieldset className="pref">
+              <legend className="pref-name">For agents</legend>
+              <p className="pref-help">
+                Install the ds CLI or point a coding agent at the remote MCP endpoint — both read this
+                library over the same /api/mcp transport, read-only.
+              </p>
+              <dl className="meta snippets">
+                {agentSnippets(origin).map((s) => (
+                  <div className="snip-row" key={s.label}>
+                    <dt>{s.label}</dt>
+                    <dd>
+                      <code>{s.text}</code>
+                      <SnippetCopyButton text={s.text} what={`${s.label} setup`} />
+                    </dd>
+                  </div>
                 ))}
-              </div>
-              <div className="pf-actions st-actions">
-                <button className="btn" type="button" onClick={clearSaved}>
-                  Clear all
-                </button>
-              </div>
-            </>
-          ) : (
-            <p className="faint">Nothing saved yet. The lightbox&rsquo;s Save button puts screenshots here.</p>
-          )}
-        </fieldset>
+              </dl>
+              <p className="pref-note">
+                Any harness that takes a remote (streamable-HTTP) MCP URL works. On a machine with the
+                repo checkout, <code>python3 server/mcp.py</code> is the stdio variant.
+              </p>
+            </fieldset>
+          </section>
 
-        <fieldset className="pref">
-          <legend className="pref-name">Data</legend>
-          <p className="pref-help">What the app is reading from disk.</p>
-          <dl className="meta">
-            <dt>Repo</dt>
-            <dd>
-              <code>{stats.repo}</code>
-            </dd>
-            <dt>Packages</dt>
-            <dd>{stats.systems?.toLocaleString() ?? "n/a"}</dd>
-            <dt>Refero styles</dt>
-            <dd>{stats.refero?.toLocaleString() ?? "n/a"}</dd>
-            <dt>Latest audit</dt>
-            <dd>{stats.audit ?? "n/a"}</dd>
-          </dl>
-        </fieldset>
+          <section {...panel("saved-media")}>
+            <fieldset className="pref">
+              <legend className="pref-name">Saved media</legend>
+              <p className="pref-help">Screenshots saved from the lightbox, kept in this browser.</p>
+              {saved.length ? (
+                <>
+                  <div className="shots">
+                    {saved.map((p, i) => (
+                      <button
+                        key={p}
+                        type="button"
+                        className="shot"
+                        onClick={() =>
+                          lb.open({
+                            items: saved.map((x) => ({ path: x, name: baseName(x) })),
+                            index: i,
+                            opts: { onSave: () => setSaved(readSavedPaths()) },
+                          })
+                        }
+                      >
+                        <span className="frame">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={p} alt="" loading="lazy" />
+                        </span>
+                        <span>{baseName(p)}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <div className="pf-actions st-actions">
+                    <button className="btn" type="button" onClick={clearSaved}>
+                      Clear all
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <p className="faint">Nothing saved yet. The lightbox&rsquo;s Save button puts screenshots here.</p>
+              )}
+            </fieldset>
+          </section>
+
+          <section {...panel("data")}>
+            <fieldset className="pref">
+              <legend className="pref-name">Data</legend>
+              <p className="pref-help">What the app is reading from disk.</p>
+              <dl className="meta">
+                <dt>Repo</dt>
+                <dd>
+                  <code>{stats.repo}</code>
+                </dd>
+                <dt>Packages</dt>
+                <dd>{stats.systems?.toLocaleString() ?? "n/a"}</dd>
+                <dt>Refero styles</dt>
+                <dd>{stats.refero?.toLocaleString() ?? "n/a"}</dd>
+                <dt>Latest audit</dt>
+                <dd>{stats.audit ?? "n/a"}</dd>
+              </dl>
+            </fieldset>
+          </section>
+        </div>
       </div>
     </div>
   );
