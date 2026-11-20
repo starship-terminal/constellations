@@ -199,7 +199,7 @@ python3 -m unittest discover -s tools
 git status --short .
 ```
 
-`tools/capture/quantize.py ~/.design-systems/grab/raw-shots` (masks, then quantises) and `tools/crops.py` both need Pillow, and rewrite `screenshots/` and `components/crops/`. After a re-quantise, run `python3 tools/redact_images.py apply systems/grab --rules tools/redact-rules/grab.json` from the repository root and put each edited image back on its quantised capture's palette and transparency (only the masked boxes may differ), so the names stay masked. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
+`tools/capture/quantize.py ~/.design-systems/grab/raw-shots` (masks, then quantises) and `tools/crops.py` both need Pillow, and rewrite `screenshots/` and `components/crops/`. After a re-quantise, run `python3 tools/redact_images.py apply systems/grab --rules tools/redact-rules/grab.json` from the repository root (it keeps each image's palette and every pixel outside the boxes), so the names stay masked. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
 ## Use in SwiftUI and Figma
 
