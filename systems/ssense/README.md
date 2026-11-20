@@ -125,3 +125,5 @@ python3 tools/build_components_md.py
 ```
 
 Run those from `systems/ssense`. Then, from the repo root, `python3 tools/catalog.py design-md ssense`.
+
+`build_components_md.py` writes components.md from text typed in from raw/readings.json at capture time. It does not read raw/, so a recapture must update that text by hand.
