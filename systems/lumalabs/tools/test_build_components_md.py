@@ -53,6 +53,21 @@ class ComponentsMdTest(unittest.TestCase):
         self.assertIn("Recapture needed", entry)
         self.assertNotIn("1440 x 18434", text)
 
+    def test_a_failed_focus_is_not_counted_as_a_reading(self):
+        import json
+        with tempfile.TemporaryDirectory() as d:
+            raw = pathlib.Path(d) / "raw"
+            shutil.copytree(PKG / "raw", raw)
+            v = json.loads((raw / "components-computed.json").read_text())
+            v["components"]["nav-product"]["states"]["focus-visible"]["via"] = "focus failed"
+            (raw / "components-computed.json").write_text(json.dumps(v))
+            run, out = build(raw)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        focus = out.split("**Focus.**", 1)[1].split("\n", 1)[0]
+        self.assertIn("6 components were given a real keyboard focus", focus)
+        self.assertIn("Focus could not be captured on 1 more", focus)
+        self.assertNotIn("nav-product-focus-visible.png", out)
+
     def test_a_dead_link_fails_the_build(self):
         with tempfile.TemporaryDirectory() as d:
             raw = pathlib.Path(d) / "raw"
