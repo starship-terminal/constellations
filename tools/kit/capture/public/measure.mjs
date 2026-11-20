@@ -34,7 +34,11 @@ out.components ??= {};
 // an earlier run's entries, if their page is not rerun, lose any query they were recorded with
 for (const c of Object.values(out.components)) if (c.url) c.url = safeUrl(c.url);
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
-const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+// Every recorded string is written through noEmails, whatever recorded it: styleOf masks its own text,
+// but an attribute (aria-label="Switch to ..."), a selector or an error message can carry an address too.
+const EMAIL = /[\w.+%-]+@[\w-]+(?:\.[\w-]+)+/g;
+const noEmails = (k, v) => (typeof v === 'string' ? v.replace(EMAIL, '<email>') : v);
+const save = () => fs.writeFileSync(OUT, JSON.stringify(out, noEmails, 1) + '\n');
 
 const URLS = {
   home: '/',

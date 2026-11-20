@@ -296,6 +296,18 @@ class PackageCaptureScripts(unittest.TestCase):
         for slug in ("brilliant", "coursera"):
             self.assertIn("bare(", (root / f"systems/{slug}/tools/capture/vars.mjs").read_text())
 
+    def test_a_placeholder_is_recorded_as_a_placeholder_and_every_text_through_no_email(self):
+        for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs"):
+            src = path.read_text()
+            text = [l for l in src.splitlines() if re.match(r"\s*text: ", l)]
+            self.assertTrue(text, path)
+            for line in text:
+                self.assertNotIn("placeholder", line, path)   # a field's placeholder is not its text
+                self.assertIn("noEmail(", line, path)
+            for line in (l for l in src.splitlines() if "out.placeholder = {" in l or "text: tn.textContent" in l):
+                self.assertIn("noEmail(", line, path)
+            self.assertRegex(src, r"out\.placeholder = \{ text: noEmail\(", path)
+
     def test_placeholder_fallback_goes_through_no_url(self):
         # The composer placeholder falls back to the ::before content, a computed value that can be a url().
         root = HERE.parent
@@ -395,6 +407,30 @@ class JavaScriptHalves(unittest.TestCase):
                             "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
+
+    def test_measure_scripts_write_every_string_through_the_email_mask(self):
+        # Greptile on PR 1298: styleOf masked text, but attrs['aria-label'] (and an error or a selector)
+        # still reached components-computed.json with the address in it
+        for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/measure.mjs"):
+            src = path.read_text()
+            writes = [l for l in src.splitlines() if "writeFileSync(OUT" in l]
+            self.assertTrue(writes, path)
+            for line in writes:
+                self.assertIn(", noEmails, 1)", line, path)
+            block = js_block(path, "const EMAIL", "const noEmails")
+            got = self.node(block + "\nconsole.log(JSON.stringify({ attrs: { 'aria-label': 'Switch to person.name@example.co' }, "
+                            "error: 'toggle refused: A \"a@b.example\"', n: 3, list: ['x', 'y@z.test'] }, noEmails))")
+            self.assertEqual(got, {"attrs": {"aria-label": "Switch to <email>"}, "error": 'toggle refused: A "<email>"', "n": 3, "list": ["x", "<email>"]}, path)
+        self.assertIn("(out.attrs ||= {})[a] = noEmail(el.getAttribute(a))", (SIGNED_IN / "measure.mjs").read_text())
+
+    def test_recorded_text_masks_email_addresses(self):
+        # finding 11e-22: a sign-in field's placeholder showed the product's inbox, and styleOf recorded it
+        for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs"):
+            src = js_block(path, "const noEmail = ", "const noEmail = ")
+            got = self.node(src + "\nconsole.log(JSON.stringify(["
+                            "noEmail('Email hello.team+news@example.co.uk to join'), noEmail('first.last@sub.example.com'),"
+                            "noEmail('Sign in'), noEmail('@handle and a@b'), noEmail(null)]))")
+            self.assertEqual(got, ["Email <email> to join", "<email>", "Sign in", "@handle and a@b", None], path)
 
     def test_font_face_ids_tell_apart_files_the_masked_src_cannot(self):
         # noUrl turns every font file URL into url(…), so two faces of one family, weight and style that

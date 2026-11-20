@@ -119,6 +119,20 @@ class SignedInComponentsBuilder(unittest.TestCase):
         self.assertNotIn("plain-row-focus-visible.png", md)   # no image presents it as a captured focus either
 
 
+class SignedInFieldText(unittest.TestCase):
+    def test_a_field_whose_only_text_is_its_placeholder_keeps_its_text_row(self):
+        # styleOf records a placeholder under placeholder.text, no longer as the field's text
+        field = state(theme="dark", via="at rest", text="",
+                      placeholder={"text": "Message", "color": "rgb(128, 128, 128)", "opacity": "1", "fontSize": "14px"})
+        computed = json.loads(json.dumps(SIGNED_IN))
+        computed["components"]["composer"] = {"title": "Composer", "group": "Fields", "page": "home-dark", "pages": ["home-dark"],
+                                              "selector": "() => x", "states": {"default": field}}
+        with tempfile.TemporaryDirectory() as d:
+            md = build(package(d, "build_components_md.py", computed))
+        entry = md.split("#### Composer", 1)[1].split("####", 1)[0]
+        self.assertIn("Inter 14/20 400", entry)
+
+
 @unittest.skipIf(NODE is None, "node is not on PATH")
 class MeasurementBuilders(unittest.TestCase):
     def run_builder(self, d, route, computed):
