@@ -18,17 +18,19 @@ const REF = path.resolve(here, '..', '..');
 const { browser, context } = await launch();
 const sheets = [];
 const seen = new Set();
-for (const url of [BASE + '/', BASE + '/s/pricing', PROFILE]) {
+const URLS = [BASE + '/', BASE + '/s/pricing', PROFILE];
+const skipped = [];   // pages not read this run, saved with the readings
+for (const url of URLS) {
   const page = await context.newPage();
   try { await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }); }
-  catch (e) { console.log('skip', url, String(e.message).split('\n')[0]); await page.close(); continue; }
-  if (!(await clearChallenge(page))) { console.log('skip', url, 'bot check did not clear: recorded as a boundary, not bypassed'); await page.close(); continue; }
+  catch (e) { skipped.push({ url, reason: String(e.message).split('\n')[0].slice(0, 160) }); console.log('skip', url, skipped.at(-1).reason); await page.close(); continue; }
+  if (!(await clearChallenge(page))) { skipped.push({ url, reason: 'bot check did not clear: recorded as a boundary, not bypassed' }); console.log('skip', url, skipped.at(-1).reason); await page.close(); continue; }
   await page.waitForTimeout(4000);
   await closePromo(page);
   const found = await page.evaluate(() => [...document.styleSheets].map((s, i) => {
     // A sheet's query (Vercel's ?dpl= deploy id, cache busters) is not part of its name.
     try { return { name: s.href ? s.href.split(/[?#]/)[0] : 'inline-' + location.pathname + '-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
-    catch { return { name: s.href ? s.href.split(/[?#]/)[0] : 'sheet-' + i, media: '', css: '', unreadable: true }; }
+    catch { return { name: s.href ? s.href.split(/[?#]/)[0] : 'sheet-' + i, href: s.href || '', media: '', css: '', unreadable: true }; }
   }));
   for (const s of found) {
     const key = s.name + ':' + (s.css || '').length;
@@ -41,7 +43,7 @@ for (const url of [BASE + '/', BASE + '/s/pricing', PROFILE]) {
 for (const s of sheets) {
   if (!s.unreadable || !/^https?:/.test(s.name)) continue;
   try {
-    const res = await fetch(s.name);
+    const res = await fetch(s.href || s.name);
     if (!res.ok) throw new Error('HTTP ' + res.status);
     s.css = await res.text();
     s.fetched = true;
@@ -50,6 +52,14 @@ for (const s of sheets) {
   } catch (e) {
     s.fetchError = String(e.message || e);
   }
+}
+
+// A run that read no page keeps the committed readings: writing now would
+// replace them with an empty file and still exit 0.
+if (skipped.length === URLS.length) {
+  console.error('no page was read; raw/css-vars.json left as it was');
+  await browser.close();
+  process.exit(1);
 }
 
 const probe = await browser.newPage();
@@ -162,6 +172,7 @@ const out = {
     names: { theme: names('theme').length, app: names('app').length, tailwind: names('tailwind').length, utility: names('utility').length },
   },
   errors: result.errors,
+  ...(skipped.length ? { skippedPages: skipped } : {}),
   theme: result.rules.filter((r) => r.bin === 'theme').slice(0, 400),
   app: result.rules.filter((r) => r.bin === 'app').slice(0, 200),
   fonts: result.fonts.slice(0, 80),
