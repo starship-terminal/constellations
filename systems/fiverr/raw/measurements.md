@@ -115,7 +115,7 @@ Page: home. Selector: `button Connect to your AI`. States: default, hover, focus
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-ai-default.png`, `nav-ai-hover.png`, `nav-ai-focus-visible.png`, `nav-ai-pressed.png`.
+Crops: `nav-ai-default.png`, `nav-ai-hover.png`, `nav-ai-pressed.png`.
 
 #### nav-locale
 
@@ -143,7 +143,7 @@ Page: home. Selector: `button EN`. States: default, hover, focus-visible, presse
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-locale-default.png`, `nav-locale-hover.png`, `nav-locale-focus-visible.png`, `nav-locale-pressed.png`.
+Crops: `nav-locale-default.png`, `nav-locale-hover.png`, `nav-locale-pressed.png`.
 
 #### nav-seller
 
@@ -170,7 +170,7 @@ Page: home. Selector: `a Become a Seller`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-seller-default.png`, `nav-seller-hover.png`, `nav-seller-focus-visible.png`, `nav-seller-pressed.png`.
+Crops: `nav-seller-default.png`, `nav-seller-hover.png`, `nav-seller-pressed.png`.
 
 #### nav-signin
 
@@ -197,7 +197,7 @@ Page: home. Selector: `a Sign in`. States: default, hover, focus-visible, presse
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-focus-visible.png`, `nav-signin-pressed.png`.
+Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-pressed.png`.
 
 #### nav-join
 
@@ -224,7 +224,7 @@ Page: home. Selector: `a Join`. States: default, hover, focus-visible, pressed.
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-join-default.png`, `nav-join-hover.png`, `nav-join-focus-visible.png`, `nav-join-pressed.png`.
+Crops: `nav-join-default.png`, `nav-join-hover.png`, `nav-join-pressed.png`.
 
 #### cat-nav
 
@@ -251,7 +251,7 @@ Page: home. Selector: `a Graphics & Design`. States: default, hover, focus-visib
 | Painted layers | - | a::after 142.391pxx3px bg #1dbf73 | = | = |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `cat-nav-default.png`, `cat-nav-hover.png`, `cat-nav-focus-visible.png`, `cat-nav-pressed.png`.
+Crops: `cat-nav-default.png`, `cat-nav-hover.png`, `cat-nav-pressed.png`.
 
 #### drawer
 
@@ -378,7 +378,7 @@ Page: home. Selector: `hero search-form submit`. States: default, hover, focus-v
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `hero-search-btn-default.png`, `hero-search-btn-hover.png`, `hero-search-btn-focus-visible.png`, `hero-search-btn-pressed.png`.
+Crops: `hero-search-btn-default.png`, `hero-search-btn-hover.png`, `hero-search-btn-pressed.png`.
 
 #### popular-chip
 
@@ -407,7 +407,7 @@ Page: home. Selector: `popular service chip`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `popular-chip-default.png`, `popular-chip-hover.png`, `popular-chip-focus-visible.png`, `popular-chip-pressed.png`.
+Crops: `popular-chip-default.png`, `popular-chip-hover.png`, `popular-chip-pressed.png`.
 
 #### cat-card
 
@@ -519,7 +519,7 @@ Page: home. Selector: `footer a Careers`. States: default, hover, focus-visible,
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
+Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-pressed.png`.
 
 #### footer-locale
 
@@ -547,7 +547,7 @@ Page: home. Selector: `footer button English`. States: default, hover, focus-vis
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `footer-locale-default.png`, `footer-locale-hover.png`, `footer-locale-focus-visible.png`, `footer-locale-pressed.png`.
+Crops: `footer-locale-default.png`, `footer-locale-hover.png`, `footer-locale-pressed.png`.
 
 #### footer-currency
 
@@ -574,7 +574,7 @@ Page: home. Selector: `footer currency button`. States: default, hover, focus-vi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `footer-currency-default.png`, `footer-currency-hover.png`, `footer-currency-focus-visible.png`, `footer-currency-pressed.png`.
+Crops: `footer-currency-default.png`, `footer-currency-hover.png`, `footer-currency-pressed.png`.
 
 ### Categories and directory
 

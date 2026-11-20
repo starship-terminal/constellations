@@ -781,7 +781,7 @@ Page: genre. Selector: `faq heading`. States: default, hover, focus-visible, pre
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `faq-row-default.png`, `faq-row-hover.png`, `faq-row-focus-visible.png`, `faq-row-pressed.png`, `faq-row-opened.png`.
+Crops: `faq-row-default.png`, `faq-row-hover.png`, `faq-row-pressed.png`, `faq-row-opened.png`.
 
 ### Signup upsell
 

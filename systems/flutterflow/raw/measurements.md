@@ -275,7 +275,7 @@ Page: pricing. Selector: `.ff-btn.ff-btn-primary.ff-btn-sm`. States: default, ho
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 | Transform | - | = | = | matrix(0.97, 0, 0, 0.97, 0, 0) | = |
 
-Crops: `btn-primary-sm-default.png`, `btn-primary-sm-hover.png`, `btn-primary-sm-focus-visible.png`, `btn-primary-sm-pressed.png`, `btn-primary-sm-dark.png`.
+Crops: `btn-primary-sm-default.png`, `btn-primary-sm-hover.png`, `btn-primary-sm-pressed.png`, `btn-primary-sm-dark.png`.
 
 #### brand
 
