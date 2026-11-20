@@ -204,6 +204,7 @@ async function tag(name, probe) {
   return page.evaluate(([n, src]) => {
     const el = (new Function('return (' + src + ')')())();
     if (!el) return false;
+    document.querySelectorAll(`[data-m="${n}"]`).forEach((o) => o.removeAttribute('data-m'));
     el.setAttribute('data-m', n);
     return true;
   }, [name, probe.toString()]).catch(() => false);
