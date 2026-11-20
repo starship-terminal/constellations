@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skillshare style guide</title>
+<style>
+:root {
+/*LIGHT*/
+  --sg-sans: "GT Walsheim Pro", Arial, Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #0b1215); background: var(--page, #fff); }
+main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font-size: 40px; line-height: 1.15; margin: 0 0 8px; font-weight: 700; }
+h2 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin: 40px 0 12px; font-weight: 700; }
+p { max-width: 62ch; }
+.note { font-size: 13px; opacity: 0.7; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.dot { width: 28px; height: 28px; border-radius: 4px; border: 1px solid #dcdee1; }
+.nm { font-size: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; border-radius: 4px; border: 1px solid transparent; font-weight: 700; font-size: 18px; background: var(--accent, #55da9b); color: var(--text, #0b1215); }
+.social { display: flex; align-items: center; justify-content: center; height: 40px; width: 280px; border-radius: 4px; border: 1px solid #394649; background: #fff; font-weight: 700; font-size: 16px; }
+.field { height: 40px; width: 280px; border-radius: 4px; border: 1px solid var(--border, #dcdee1); padding: 0 10px; font: 400 15px/40px var(--sg-sans); }
+.link { color: var(--link, #5620c1); font-weight: 700; }
+.hero { font-size: 46px; line-height: 1.26; font-weight: 700; max-width: 16ch; }
+.bar { background: #000; color: #fff; padding: 16px 20px; display: flex; align-items: center; gap: 16px; }
+.word { font-weight: 700; letter-spacing: -0.03em; }
+footer.mock { background: #020404; color: #fff; padding: 28px 20px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Skillshare style guide</h1>
+  <p class="note">Generated from tokens.json. Swatches are measured values. The page mock is a reconstruction drawn with those tokens, not a screenshot.</p>
+
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+
+  <h2>Type</h2>
+  <p class="hero">Creative Classes Taught by the Best Creative Pros</p>
+  <p>GT Walsheim Pro is the served face. This page falls back to Arial when that face is not installed.</p>
+
+  <h2>Controls</h2>
+  <p><span class="btn">Sign Up</span></p>
+  <p><span class="social">Continue with Google</span></p>
+  <p><input class="field" placeholder="Email address" readonly></p>
+  <p class="link">Continue with email</p>
+
+  <h2>Chrome</h2>
+  <div class="bar"><span class="word">SKILL SHARE.</span><span style="flex:1"></span><span>Sign In</span><span class="btn">Sign Up</span></div>
+  <footer class="mock">Company · Work With Us · Teach with Us · Shop</footer>
+</main>
+<script>
+const swatches = [
+  ["page", "var(--page, #fff)"],
+  ["surface", "var(--surface, #f4f4f4)"],
+  ["text", "var(--text, #0b1215)"],
+  ["accent", "var(--accent, #55da9b)"],
+  ["link", "var(--link, #5620c1)"],
+  ["border", "var(--border, #dcdee1)"],
+];
+const row = document.getElementById("swatches");
+for (const [name, value] of swatches) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<span class="dot" style="background:${value}"></span><span class="nm">${name}</span>`;
+  row.appendChild(el);
+}
+</script>
+</body>
+</html>
