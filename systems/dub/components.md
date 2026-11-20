@@ -50,7 +50,7 @@ Screenshots are named `{page}-{theme}-{state}.png`: the marketing and auth surfa
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 29 components were given a real keyboard focus. 29 draw an outline ring: `nav-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-login` (2px solid transparent, offset 2px), `nav-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-demo` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-tab` (1px auto #005fcc `measured.focus-outline`, offset 0px), `billing-toggle` (1px auto #005fcc `measured.focus-outline`, offset 0px), `plan-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `faq-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `customer-card` (1px auto #005fcc `measured.focus-outline`, offset 1px), `sales-topic` (1px auto #005fcc `measured.focus-outline`, offset 0px), `email-submit` (1px auto #005fcc `measured.focus-outline`, offset 0px), `oauth-google` (2px solid transparent, offset 2px), `oauth-github` (2px solid transparent, offset 2px), `oauth-saml` (2px solid transparent, offset 2px), `auth-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `docs-nav-item` (1px auto #155dfc `color.brand.primary`, offset -2px), `docs-search` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-theme` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-copy` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-feedback` (2px solid #155dfc `color.brand.primary`, offset -2px), `docs-nav-tab` (1px auto #155dfc `color.brand.primary`, offset 1px), `dk-docs-nav-item` (1px auto #155dfc `color.brand.primary`, offset -2px), `dk-docs-copy` (1px auto #155dfc `color.brand.primary`, offset 0px), `dk-docs-search` (1px auto #155dfc `color.brand.primary`, offset 0px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-nav-item` (1px auto #005fcc `measured.focus-outline`, offset 0px). On dub.co the button ring is the browser-default `auto 1px rgb(0, 95, 204)` outline, the docs surface draws its own 1px `#155dfc` ring, and the email field instead takes a black border plus a 1px black ring shadow.
+**Focus.** 29 components were given a real keyboard focus. 25 draw an outline ring: `nav-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-demo` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-tab` (1px auto #005fcc `measured.focus-outline`, offset 0px), `billing-toggle` (1px auto #005fcc `measured.focus-outline`, offset 0px), `plan-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `faq-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `customer-card` (1px auto #005fcc `measured.focus-outline`, offset 1px), `sales-topic` (1px auto #005fcc `measured.focus-outline`, offset 0px), `email-submit` (1px auto #005fcc `measured.focus-outline`, offset 0px), `auth-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `docs-nav-item` (1px auto #155dfc `color.brand.primary`, offset -2px), `docs-search` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-theme` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-copy` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-feedback` (2px solid #155dfc `color.brand.primary`, offset -2px), `docs-nav-tab` (1px auto #155dfc `color.brand.primary`, offset 1px), `dk-docs-nav-item` (1px auto #155dfc `color.brand.primary`, offset -2px), `dk-docs-copy` (1px auto #155dfc `color.brand.primary`, offset 0px), `dk-docs-search` (1px auto #155dfc `color.brand.primary`, offset 0px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-nav-item` (1px auto #005fcc `measured.focus-outline`, offset 0px). 4 change only their border: `nav-login`, `oauth-google`, `oauth-github`, `oauth-saml`. On dub.co the button ring is the browser-default `auto 1px rgb(0, 95, 204)` outline, the docs surface draws its own 1px `#155dfc` ring, and the email field instead takes a black border plus a 1px black ring shadow.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -252,7 +252,7 @@ The pricing page heading. Read as `pricing-h1` on the pricing page.
 ![Pricing title default](components/crops/pricing-h1-default.png)
 
 #### Billing toggle
-The Monthly/Yearly period toggle ("10% discount + 12x usage upfront"); the yearly option was toggled for the state, never checked out. Read as `billing-toggle` on the pricing page.
+The Monthly/Yearly period toggle ("10% discount + 12x usage upfront"), read on its Yearly option at rest, on hover, on keyboard focus and forced pressed; never clicked or checked out. Read as `billing-toggle` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -300,7 +300,7 @@ A pricing plan card (the painted ancestor of the plan name). Read as `plan-card`
 ![Plan card default](components/crops/plan-card-default.png)
 
 #### FAQ accordion
-A billing-FAQ accordion trigger; toggled for the open state. Read as `faq-trigger` on the pricing page.
+A billing-FAQ accordion trigger, read closed: at rest, on hover, on keyboard focus and forced pressed. Read as `faq-trigger` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -393,7 +393,7 @@ The "Tell us about your company's needs" textarea; focused only. Read as `sales-
 ![Message textarea default](components/crops/sales-message-default.png) ![Message textarea focused](components/crops/sales-message-focused.png)
 
 #### Topic option
-A selectable topic pill on the contact form (Tools/Legal/…); toggled, never submitted. Read as `sales-topic` on the contact-sales page.
+A selectable topic pill on the contact form (Tools/Legal/…), read unselected: at rest, on hover, on keyboard focus and forced pressed; never submitted. Read as `sales-topic` on the contact-sales page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|

@@ -46,8 +46,26 @@ DECL = {t: {n: v.get("value", v["raw"]) for n, v in V["resolved"][t].items()}
         for t in V["resolved"]}
 
 
+def _lin(c):
+    return 12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055
+
+
+def oklab_rgb(L, a, b):
+    """oklab -> 8-bit sRGB, the kit's tools/kit/build/build_tokens.py conversion."""
+    l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3
+    rgb = [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+           -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s]
+    return [round(min(1, max(0, _lin(x))) * 255) for x in rgb]
+
+
+class NotTokenised(Exception):
+    """A value DTCG cannot hold under its type; listed in the set's $extensions.notTokenised."""
+
+
 def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla() -> #rrggbb or rgba(r, g, b, a)."""
+    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla(), oklab() -> #rrggbb or rgba(r, g, b, a)."""
     v = v.strip().lower()
     m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
     if m:
@@ -71,16 +89,23 @@ def norm_color(v):
         lvl = round(float(m.group(1)) * 2.55)
         a = float(m.group(2) or 1)
         return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    # Other CSS colour functions — oklab()/oklch() is how Chrome reports
-    # Mintlify's color-mix() washes on the docs surface — pass through
-    # unchanged; they are the measured painted value.
-    if re.fullmatch(r"(oklab|oklch|lab|lch|hsl|hsla|hwb|color|color-mix|light-dark)\(.*\)", v) \
-            or v == "currentcolor":
-        return "currentColor" if v == "currentcolor" else v
+    # oklab() is how Chrome reports Mintlify's color-mix() washes on the docs
+    # surface: converted to sRGB as the kit does; leaf() keeps the authored
+    # string in $extensions.authored.
+    m = re.fullmatch(r"oklab\(\s*([-\d.e]+)\s+([-\d.e]+)\s+([-\d.e]+)(?:\s*/\s*([\d.]+))?\s*\)", v)
+    if m:
+        r, g, b = oklab_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3)))
+        a = round(float(m.group(4) or 1), 3)
+        return "#%02x%02x%02x" % (r, g, b) if a >= 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, a)
+    if v == "currentcolor":
+        raise NotTokenised("currentColor: the colour follows the element's text colour, which a DTCG colour cannot hold")
+    if re.fullmatch(r"(oklch|lab|lch|hsl|hsla|hwb|color|color-mix|light-dark)\(.*\)", v):
+        raise NotTokenised("a CSS colour function this builder does not convert to sRGB")
     raise ValueError("not a colour: " + v)
 
 
-DIM = re.compile(r"-?(\d+(\.\d+)?|\.\d+)(px|rem|em)")
+DIM = re.compile(r"-?(\d+(\.\d+)?|\.\d+)(px|rem)")
+EM = re.compile(r"-?(\d+(\.\d+)?|\.\d+)em")
 
 
 def check(path, ty, val):
@@ -126,7 +151,9 @@ def leaf(path, spec, theme):
     else:
         val = spec["value"]
         src = spec["source"]
+    authored = None
     if ty == "color" and not str(val).startswith("{"):
+        authored = val if str(val).strip().lower().startswith("oklab(") else None
         val = norm_color(val)
     if ty == "cubicBezier" and isinstance(val, str):
         m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
@@ -150,8 +177,12 @@ def leaf(path, spec, theme):
             val = "%gpx" % val
         elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):
             val = val.strip() + "px"
+        elif isinstance(val, str) and EM.fullmatch(val.strip()):
+            raise NotTokenised("an em length, relative to the element's own font size; a DTCG dimension holds px or rem")
     check(path, ty, val)
     t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
+    if authored:
+        t["$extensions"]["authored"] = authored
     if spec.get("description"):
         t["$description"] = spec["description"]
     if spec.get("responsive"):
@@ -161,20 +192,44 @@ def leaf(path, spec, theme):
     return t
 
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
+def is_leaf(node):
+    return isinstance(node, dict) and "type" in node and ("value" in node or "var" in node)
+
+
+def build(node, theme, skipped, path=""):
+    """The DTCG tree for a spec subtree. A leaf whose value DTCG cannot hold is left out and
+    recorded in `skipped` (the set's $extensions.notTokenised) with its value and why."""
     if isinstance(node, dict) and "$value" in node:
         return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
+    out = {}
+    for k, v in node.items():
+        if k.startswith("_"):
+            continue
+        p = f"{path}.{k}" if path else k
+        if is_leaf(v):
+            try:
+                out[k] = leaf(p, v, theme)
+            except NotTokenised as e:
+                raw = DECL[v.get("resolve", theme)].get(v["var"]) if "var" in v else v["value"]
+                skipped.append({"name": p, "value": raw, "source": f"css-var {v['var']}" if "var" in v else v["source"],
+                                "why": str(e)})
+        else:
+            sub = build(v, theme, skipped, p)
+            if sub or not v:  # a group left empty only by skipped leaves is dropped
+                out[k] = sub
+    return out
 
 
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
+SKIPPED = {"core": [], "light": [], "dark": []}
+core = build(SPEC["core"], "light", SKIPPED["core"])  # scales are theme-independent
+light = build(SPEC["light"], "light", SKIPPED["light"])
+dark = build(SPEC["dark"], "dark", SKIPPED["dark"])
 # The component tokens live in their own top-level spec tree but belong to the
 # exported themes the components were measured on: light.component.*
-light["component"] = build(SPEC["component"], "light")
+light["component"] = build(SPEC["component"], "light", SKIPPED["light"], "component")
+for name, tree in (("core", core), ("light", light), ("dark", dark)):
+    if SKIPPED[name]:
+        tree["$extensions"] = {"notTokenised": SKIPPED[name]}
 
 
 # every alias must point at a token that exists
