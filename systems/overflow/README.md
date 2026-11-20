@@ -13,7 +13,7 @@ Overflow is a user-flow diagramming tool (overflow.io, PROTOIO Inc.). This packa
 | [components/](components/) | Crops of buttons, fields, and the sign-in heading |
 | [screenshots/](screenshots/) | Viewport shots of the public pages and the signed-out shell |
 | [raw/](raw/) | Computed-style readings the tokens were built from |
-| [tools/](tools/) | The kit copy, the builders, and test_build_tokens.py |
+| [tools/](tools/) | The builders and test_build_tokens.py. `capture/signed-in/` holds only the kit's page-copy privacy guards; no kit capture script took these readings |
 | [icon.png](icon.png) | Site icon |
 
 ## Brief
@@ -80,6 +80,12 @@ App colour, type, shadow, and motion tokens are the custom properties resolved o
 
 ## What to distrust
 
+The forced focus-visible outline is `outline-style: auto` in `rgb(0, 95, 204)`: Chromium's default focus ring. Overflow sets no focus colour, so `core.color.focus-ring` and `light.focus.*` are labelled Observed and are not a brand value to copy.
+
+Five marketing values have no reading in raw/: the h3 eyebrow colour `#acacbc`, the `.btn-secondary` fill `#f0f0f2`, and the `section`, `card-title` and `eyebrow` type styles. They are labelled Reconstruction (typed in by hand at capture time).
+
+The cookie banner was dismissed with its Required only choice before the readings; every marketing reading was taken after that click.
+
 The hero wash has no CSS `background-image` on the section or its ancestors. Its stops are not in the tokens.
 
 `font-weight: 550` is the computed value of `.btn`. It is not a standard weight.
@@ -133,4 +139,4 @@ python3 tools/build_style_guide.py
 python3 tools/catalog.py design-md overflow
 ```
 
-Run the last command from the repository root. `tools/build_components_md.py` is the kit's starter and is not wired to these readings; [components.md](components.md) was written from the readings directly.
+Run the last command from the repository root. [components.md](components.md) was written from the readings directly; it has no builder.
