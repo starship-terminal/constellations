@@ -604,24 +604,25 @@ Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 346 x 40 | = | = | 352.92 x 40.8 |
-| Padding | 8px 20px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 40px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Suisse Intl 14px/19.6px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | transform 0.16s cubic-bezier(0, 0, 0.2, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a.btn.btn-primary 346.0x40.0 bg #ffffff r 40px | = | = | a.btn.btn-primary 352.9x40.8 bg #ffffff r 40px |
-| Ancestor paint | 3 up div.pricing-card.glass-card shadow #000000 @ 0.22 0px 8px 28px 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 346 x 40 | = | - | 352.92 x 40.8 |
+| Padding | 8px 20px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 40px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Suisse Intl 14px/19.6px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | transform 0.16s cubic-bezier(0, 0, 0.2, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a.btn.btn-primary 346.0x40.0 bg #ffffff r 40px | = | - | a.btn.btn-primary 352.9x40.8 bg #ffffff r 40px |
+| Ancestor paint | 3 up div.pricing-card.glass-card shadow #000000 @ 0.22 0px 8px 28px 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Transform | - | = | = | matrix(1.02, 0, 0, 1.02, 0, 0) |
 
-Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
+Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-pressed.png`.
 
 #### calc-hours
 
@@ -851,25 +852,26 @@ Read: 2026-11-16.
 
 | Property | default | focused |
 |---|---|---|
-| Size (w x h) | 462 x 18 | = |
-| Padding | 0px | = |
-| Gap | 12px | = |
-| Border | none | = |
-| Radius | 0px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | Suisse Intl 16px/22.4px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #ffffff | = |
-| Text node | span.form-checkbox-label: Suisse Intl 12px/18px 400, #727272 | = |
-| Transition | none | = |
-| Cursor | pointer | = |
-| Painted layers | span.form-checkbox-mark 16.0x16.0 bg #1c1c1e border T:1px solid #252525 / R:1px solid #252525 / B:1px solid #252525 / L:1px solid #252525 | input 0.0x0.0 outline 1px auto #101010 offset 2px; span.form-checkbox-mark 16.0x16.0 bg #1c1c1e border T:1px solid #252525 / R:1px solid #252525 / B:1px solid #252525 / L:1px solid #252525 outline 2px solid #1a9eff offset 2px |
-| Ancestor paint | 3 up div.contact-form-card.hero-ebook-form-card bg #000000 shadow #ffffff @ 0.06 0px 1px 0px 0px inset, #000000 @ 0.28 0px 24px 48px 0px | = |
-| How | at rest | focus failed |
+| Size (w x h) | 462 x 18 | - |
+| Padding | 0px | - |
+| Gap | 12px | - |
+| Border | none | - |
+| Radius | 0px | - |
+| Background | transparent | - |
+| Box shadow | none | - |
+| Outline | none | - |
+| Font | Suisse Intl 16px/22.4px 400 | - |
+| Letter spacing | normal | - |
+| Colour | #ffffff | - |
+| Text node | span.form-checkbox-label: Suisse Intl 12px/18px 400, #727272 | - |
+| Transition | none | - |
+| Cursor | pointer | - |
+| Painted layers | span.form-checkbox-mark 16.0x16.0 bg #1c1c1e border T:1px solid #252525 / R:1px solid #252525 / B:1px solid #252525 / L:1px solid #252525 | - |
+| Ancestor paint | 3 up div.contact-form-card.hero-ebook-form-card bg #000000 shadow #ffffff @ 0.06 0px 1px 0px 0px inset, #000000 @ 0.28 0px 24px 48px 0px | - |
+| How | at rest | - |
+| Skipped | - | focus failed: keyboard focus did not reach the element |
 
-Crops: `demo-terms-default.png`, `demo-terms-focused.png`.
+Crops: `demo-terms-default.png`.
 
 #### demo-submit
 

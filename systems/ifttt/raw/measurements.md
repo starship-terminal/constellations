@@ -109,7 +109,7 @@ Page: explore. Selector: `a.nav-link`. States: default, hover, focus-visible.
 | How | resting state | mouse hover over the element | - |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
-Crops: `nav-link-default.png`, `nav-link-focus-visible.png`.
+Crops: `nav-link-default.png`.
 
 #### nav-login
 

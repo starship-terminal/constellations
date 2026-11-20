@@ -507,23 +507,24 @@ Page: home. Selector: `"Close" in the promo card`. States: default, hover, focus
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 87.53 x 48 | = | = | = |
-| Padding | 0px 16px | = | = | = |
-| Border | 1px solid #0c1a69 @ 0.14 | 1px solid #dddfea | = | 1px solid #dddfea |
-| Radius | 8px | = | = | = |
-| Background | transparent | #dddfea | = | #dddfea |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Base-Variable 16px/24px 600 | = | = | = |
-| Letter spacing | -0.32px | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | all 0.2s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | div.O_M3g.ZF_q4 87.5x48.0 border T:1px solid #0c1a69 @ 0.14 / R:1px solid #0c1a69 @ 0.14 / B:1px solid #0c1a69 @ 0.14 / L:1px solid #0c1a69 @ 0.14 r 8px | div.O_M3g.ZF_q4 87.5x48.0 bg #dddfea border T:1px solid #dddfea / R:1px solid #dddfea / B:1px solid #dddfea / L:1px solid #dddfea r 8px | = | div.O_M3g.ZF_q4 87.5x48.0 bg #dddfea border T:1px solid #dddfea / R:1px solid #dddfea / B:1px solid #dddfea / L:1px solid #dddfea r 8px |
-| Ancestor paint | 3 up div bg #ffffff shadow #07191f @ 0.1 0px 20px 40px 0px, #07191f @ 0.1 0px 10px 30px 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 87.53 x 48 | = | - | = |
+| Padding | 0px 16px | = | - | = |
+| Border | 1px solid #0c1a69 @ 0.14 | 1px solid #dddfea | - | 1px solid #dddfea |
+| Radius | 8px | = | - | = |
+| Background | transparent | #dddfea | - | #dddfea |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Base-Variable 16px/24px 600 | = | - | = |
+| Letter spacing | -0.32px | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | all 0.2s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | div.O_M3g.ZF_q4 87.5x48.0 border T:1px solid #0c1a69 @ 0.14 / R:1px solid #0c1a69 @ 0.14 / B:1px solid #0c1a69 @ 0.14 / L:1px solid #0c1a69 @ 0.14 r 8px | div.O_M3g.ZF_q4 87.5x48.0 bg #dddfea border T:1px solid #dddfea / R:1px solid #dddfea / B:1px solid #dddfea / L:1px solid #dddfea r 8px | - | div.O_M3g.ZF_q4 87.5x48.0 bg #dddfea border T:1px solid #dddfea / R:1px solid #dddfea / B:1px solid #dddfea / L:1px solid #dddfea r 8px |
+| Ancestor paint | 3 up div bg #ffffff shadow #07191f @ 0.1 0px 20px 40px 0px, #07191f @ 0.1 0px 10px 30px 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `mcp-card-close-default.png`, `mcp-card-close-hover.png`, `mcp-card-close-focus-visible.png`, `mcp-card-close-pressed.png`.
+Crops: `mcp-card-close-default.png`, `mcp-card-close-hover.png`, `mcp-card-close-pressed.png`.
 
 #### coach-box
 
