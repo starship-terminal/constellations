@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patreon style guide</title>
+<style>
+body { margin: 0; font: 14px/1.4 ui-sans-serif, system-ui, sans-serif; background: #f9f9f9; color: #111; }
+main { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-weight: 500; letter-spacing: -0.03em; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.swatch { background: #fff; border-radius: 12px; padding: 10px; }
+.swatch i { display: block; height: 48px; border-radius: 8px; border: 1px solid #00000017; }
+.swatch span, .swatch code { display: block; margin-top: 6px; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; vertical-align: top; font-size: 13px; }
+code { font-size: 12px; }
+.note { color: #333; max-width: 68ch; }
+</style>
+</head>
+<body>
+<main>
+<h1>Patreon public tokens</h1>
+<p class="note">Rendered from tokens.json. Light swatches are the logged-out app studio tokens. The creator accent is the measured Join for free fill on one public membership page.</p>
+<h2>Light roles</h2>
+<div class="swatches"><div class="swatch"><i style="background:#f9f9f9"></i><span>page</span><code>#f9f9f9</code></div><div class="swatch"><i style="background:#fff"></i><span>surface</span><code>#fff</code></div><div class="swatch"><i style="background:#f9f9f9"></i><span>surface-alt</span><code>#f9f9f9</code></div><div class="swatch"><i style="background:#000"></i><span>text</span><code>#000</code></div><div class="swatch"><i style="background:#0009"></i><span>text-muted</span><code>#0009</code></div><div class="swatch"><i style="background:#0060aa"></i><span>text-primary</span><code>#0060aa</code></div><div class="swatch"><i style="background:#00000017"></i><span>border</span><code>#00000017</code></div><div class="swatch"><i style="background:#0000006e"></i><span>border-strong</span><code>#0000006e</code></div><div class="swatch"><i style="background:#c6374d"></i><span>critical</span><code>#c6374d</code></div><div class="swatch"><i style="background:#097d3f"></i><span>success</span><code>#097d3f</code></div><div class="swatch"><i style="background:#7d5905"></i><span>warning</span><code>#7d5905</code></div><div class="swatch"><i style="background:rgb(175, 2, 16)"></i><span>accent</span><code>rgb(175, 2, 16)</code></div></div>
+<h2>Every token</h2>
+<table>
+<thead><tr><th>Set</th><th>Path</th><th>Type</th><th>Value</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td>core</td><td><code>font.app</code></td><td>fontFamily</td><td><code>"\"ABC Oracle Plus Variable\", -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, arial, sans-serif"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>font.marketing</code></td><td>fontFamily</td><td><code>"\"Oracle\",\"Noto Sans JP\",\"Noto Sans KR\",\"Noto Sans SC\",\"Noto Sans TC\",\"Noto Sans Regular\",Helvetica Neue,Helvetica,Arial,sans-serif"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>font.heading</code></td><td>fontFamily</td><td><code>"\"PatreonOracle_Regular\""</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>radius.none</code></td><td>dimension</td><td><code>"0px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>radius.sm</code></td><td>dimension</td><td><code>"4px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>radius.sm-md</code></td><td>dimension</td><td><code>"6px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>radius.md</code></td><td>dimension</td><td><code>"8px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>radius.lg</code></td><td>dimension</td><td><code>"12px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>radius.xl</code></td><td>dimension</td><td><code>"16px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>radius.pill</code></td><td>dimension</td><td><code>"9999px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>space.0</code></td><td>dimension</td><td><code>"0px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>space.2</code></td><td>dimension</td><td><code>"2px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>space.4</code></td><td>dimension</td><td><code>"4px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>space.8</code></td><td>dimension</td><td><code>"8px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>space.12</code></td><td>dimension</td><td><code>"12px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>space.16</code></td><td>dimension</td><td><code>"16px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>space.24</code></td><td>dimension</td><td><code>"24px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>space.32</code></td><td>dimension</td><td><code>"32px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>space.48</code></td><td>dimension</td><td><code>"48px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>border.thin</code></td><td>dimension</td><td><code>"1px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>border.thick</code></td><td>dimension</td><td><code>"2px"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>shadow.low</code></td><td>shadow</td><td><code>"0px 1px 4px 0px #0000000f"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>shadow.mid</code></td><td>shadow</td><td><code>"0px 4px 14px 0px #0000001a"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>shadow.high</code></td><td>shadow</td><td><code>"0px 6px 24px 0px #00000024"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>typography.body</code></td><td>typography</td><td><code>{"fontFamily": "{font.app}", "fontSize": "14px", "fontWeight": "337", "lineHeight": "1.4em"}</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>typography.heading</code></td><td>typography</td><td><code>{"fontFamily": "{font.app}", "fontSize": "22px", "fontWeight": "500", "lineHeight": "1.3em"}</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>typography.display</code></td><td>typography</td><td><code>{"fontFamily": "{font.app}", "fontSize": "48px", "fontWeight": "500", "lineHeight": "1.2em"}</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>motion.duration</code></td><td>duration</td><td><code>"0.5s"</code></td><td>Measured</td></tr>
+<tr><td>core</td><td><code>motion.side-nav</code></td><td>duration</td><td><code>"320ms"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>page</code></td><td>color</td><td><code>"#f9f9f9"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>surface</code></td><td>color</td><td><code>"#fff"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>surface-alt</code></td><td>color</td><td><code>"#f9f9f9"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>text</code></td><td>color</td><td><code>"#000"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>text-muted</code></td><td>color</td><td><code>"#0009"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>text-primary</code></td><td>color</td><td><code>"#0060aa"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>border</code></td><td>color</td><td><code>"#00000017"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>border-strong</code></td><td>color</td><td><code>"#0000006e"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>critical</code></td><td>color</td><td><code>"#c6374d"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>success</code></td><td>color</td><td><code>"#097d3f"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>warning</code></td><td>color</td><td><code>"#7d5905"</code></td><td>Measured</td></tr>
+<tr><td>light</td><td><code>accent</code></td><td>color</td><td><code>"rgb(175, 2, 16)"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>page</code></td><td>color</td><td><code>"#121212"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>surface</code></td><td>color</td><td><code>"#272727"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>surface-alt</code></td><td>color</td><td><code>"#272727"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>text</code></td><td>color</td><td><code>"#fff"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>text-muted</code></td><td>color</td><td><code>"#ffffffba"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>text-primary</code></td><td>color</td><td><code>"#a2badf"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>border</code></td><td>color</td><td><code>"#ffffff30"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>border-strong</code></td><td>color</td><td><code>"#ffffff63"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>critical</code></td><td>color</td><td><code>"#fdc7cf"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>success</code></td><td>color</td><td><code>"#5bd795"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>warning</code></td><td>color</td><td><code>"#fab719"</code></td><td>Measured</td></tr>
+<tr><td>dark</td><td><code>accent</code></td><td>color</td><td><code>"rgb(175, 2, 16)"</code></td><td>Derived</td></tr>
+</tbody>
+</table>
+</main>
+</body>
+</html>
