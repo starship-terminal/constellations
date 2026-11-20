@@ -5,6 +5,7 @@ Pop Site has two surfaces. Marketing (pop.site) is a Framer page. Auth (app.pop.
 is a separate app with Radix-style ramps. Values here are the ones those readings
 measured. A colour that was declared and not painted is left out of the semantic sets.
 """
+import copy
 import json
 import pathlib
 import sys
@@ -36,7 +37,9 @@ def dim(value, evidence, capture):
 
 
 def text(value, evidence, capture):
+    """A font-family stack."""
     return {
+        "$type": "fontFamily",
         "$value": value,
         "$extensions": {"source": {"evidence": evidence, "capture": capture}},
     }
@@ -224,21 +227,31 @@ light = {
     },
 }
 
-tokens = {
-    "core": core,
-    "light": light,
-    "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}
-    ],
-}
+def build():
+    """The token document, built in memory from raw/. Writes nothing."""
+    doc_core = copy.deepcopy(core)
+    tokens = {
+        "core": doc_core,
+        "light": copy.deepcopy(light),
+        "$themes": [
+            {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}
+        ],
+    }
+    motion_path = RAW / "motion.json"
+    if motion_path.exists():
+        group, not_tokenised = motion.build(json.loads(motion_path.read_text()))
+        if group:
+            doc_core["motion"] = group
+        if not_tokenised:
+            doc_core.setdefault("$extensions", {})["notTokenised"] = not_tokenised
+    return tokens
 
-motion_path = RAW / "motion.json"
-if motion_path.exists():
-    group, not_tokenised = motion.build(json.loads(motion_path.read_text()))
-    if group:
-        core["motion"] = group
-    if not_tokenised:
-        core.setdefault("$extensions", {})["notTokenised"] = not_tokenised
 
-(ROOT / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("tokens.json", len(json.dumps(tokens)))
+def main():
+    tokens = build()
+    (ROOT / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+    print("tokens.json", len(json.dumps(tokens)))
+
+
+if __name__ == "__main__":
+    main()
