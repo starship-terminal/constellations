@@ -1,0 +1,11 @@
+{
+  "product": "promova",
+  "url": "https://promova.com/",
+  "captured": "2026-11-21",
+  "note": "promova.com declares almost no design custom properties. The only names harvested from same-origin stylesheets were a progress-bar vendor set (--bprogress-*) and --safe-area-inset-bottom. Design colours, type and radii were read from getComputedStyle on painted elements. See components-computed.json.",
+  "root": {
+    "--bprogress-color": { "value": "Not captured", "bin": "vendor", "source": "stylesheet :root, bprogress spinner. Not a design token." },
+    "--safe-area-inset-bottom": { "value": "env(safe-area-inset-bottom)", "bin": "utility", "selector": ".footer__footer_bottom__tZwINo", "source": "Measured CSS, footer bottom rule, 2026-11-21." }
+  },
+  "themeSwitch": "Not present. No data-theme, .dark or color-scheme switch was found. Pages paint one light scheme. Section backgrounds change (lilac hero, pink FAQ) and are section styles, not themes."
+}

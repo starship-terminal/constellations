@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Promova style guide</title>
+<meta name="description" content="Promova public marketing tokens, rendered from tokens.json. Nekst and Manrope are not loaded here.">
+<style>
+:root {
+  --color-neutral-ink: #000000;
+  --color-neutral-paper: #ffffff;
+  --color-neutral-frame: #000000;
+  --color-neutral-hover-ink: #262626;
+  --color-neutral-wall: #eeeeee;
+  --color-neutral-mist: #f5f5f5;
+  --color-brand-lilac: #bec8ff;
+  --color-brand-pink: #f5a0d2;
+  --color-brand-yellow: #fff584;
+  --color-brand-lavender: #d7d4e2;
+  --font-family-display: Nekst, Arial, sans-serif;
+  --font-family-ui: nekst, Rubik, Arial, sans-serif;
+  --font-family-body: manrope, Manrope, Rubik, Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-size-display: 70px;
+  --font-size-title: 24px;
+  --font-size-body: 16px;
+  --font-size-nav: 15px;
+  --font-size-button: 14px;
+  --font-size-hero-button: 18px;
+  --radius-panel: 30px;
+  --radius-card: 20px;
+  --radius-none: 0px;
+  --size-nav-height: 100px;
+  --size-nav-button-height: 40px;
+  --size-hero-button-height: 60px;
+  --size-content-width: 1400px;
+  --motion-nav: 200ms;
+  --background-page: var(--color-neutral-frame);
+  --background-surface: var(--color-neutral-paper);
+  --background-hero: var(--color-brand-lilac);
+  --background-faq: var(--color-brand-pink);
+  --text-primary: var(--color-neutral-ink);
+  --text-on-accent: var(--color-neutral-paper);
+  --text-muted: var(--color-neutral-ink);
+  --border-default: var(--color-neutral-ink);
+  --accent-default: var(--color-neutral-ink);
+  --accent-hover: var(--color-neutral-hover-ink);
+  --component-button-bg: var(--color-neutral-ink);
+  --component-button-text: var(--color-neutral-paper);
+  --component-button-height: 40px;
+  --component-button-radius: 0px;
+  --component-hero-button-bg: var(--color-neutral-ink);
+  --component-hero-button-text: var(--color-neutral-paper);
+  --component-hero-button-height: 60px;
+  --component-card-bg: var(--color-neutral-paper);
+  --component-card-radius: 20px;
+  --sg-display: Nekst, Arial, sans-serif;
+  --sg-body: Manrope, Rubik, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-neutral-frame, #000); color: var(--color-neutral-ink, #000); font: 400 16px/1.5 var(--sg-body); }
+main { max-width: 1100px; margin: 0 auto; padding: 28px 20px 80px; }
+h1 { font: 700 40px/1 var(--sg-display); margin: 0 0 8px; color: #fff; }
+.note, .lead { color: #fff; max-width: 68ch; }
+.note { opacity: .75; font-size: 14px; }
+h2 { font: 400 13px/1 var(--sg-body); letter-spacing: .08em; text-transform: lowercase; color: #fff; margin: 40px 0 12px; }
+.panel { background: var(--color-neutral-paper, #fff); color: var(--color-neutral-ink, #000); border-radius: var(--radius-panel, 30px); padding: 28px; }
+.hero { background: var(--color-brand-lilac, #bec8ff); border-radius: var(--radius-panel, 30px); padding: 36px; margin-top: 16px; }
+.hero h3 { font: 700 48px/1 var(--sg-display); margin: 0 0 12px; max-width: 10ch; }
+.bar { display: flex; align-items: center; gap: 18px; background: #fff; border-radius: 30px; height: 72px; padding: 0 24px; color: #000; }
+.bar .wm { background: #000; color: #fff; font-weight: 700; padding: 6px 10px; border-radius: 8px; }
+.bar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 14px; font: 400 14px/1 var(--sg-display); background: #000; color: #fff; border: 0; }
+.btn.ghost { background: #fff; color: #000; border: 1px solid #000; }
+.btn.hero { height: 60px; padding: 0 48px; font-weight: 700; font-size: 18px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.sw { background: #fff; color: #000; border-radius: 12px; padding: 8px 10px; min-width: 140px; font-size: 12px; }
+.sw i { display: block; height: 28px; border-radius: 6px; border: 1px solid #ddd; margin-bottom: 6px; }
+.card { background: #fff; border-radius: 20px; padding: 20px; width: 180px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Promova</h1>
+  <p class="lead">Public marketing surface, measured 2026-11-21. Every swatch below is a custom property from tokens.json. The boxed mocks are reconstructions drawn with those tokens.</p>
+  <p class="note">Nekst and Manrope are served faces and are not loaded here. Samples fall back to Arial. The signed-in app, sign-up form and onboarding past screen 1 were not captured.</p>
+
+  <h2>chrome</h2>
+  <div class="bar"><span class="wm">promova</span><span>Languages</span><span>Courses</span><span>Why Promova</span><span>Resources</span><span class="sp"></span><span class="btn ghost">SIGN UP</span><span class="btn">GET STARTED</span></div>
+  <div class="hero">
+    <h3>Speak before you're ready</h3>
+    <p>Speaking isn't the final step. It's where you start.</p>
+    <span class="btn hero">TRY NOW</span>
+  </div>
+
+  <h2>colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--color-neutral-ink)"></i>ink</div>
+    <div class="sw"><i style="background:var(--color-neutral-paper)"></i>paper</div>
+    <div class="sw"><i style="background:var(--color-neutral-frame)"></i>frame</div>
+    <div class="sw"><i style="background:var(--color-neutral-hover-ink)"></i>hover ink</div>
+    <div class="sw"><i style="background:var(--color-brand-lilac)"></i>lilac</div>
+    <div class="sw"><i style="background:var(--color-brand-pink)"></i>pink</div>
+    <div class="sw"><i style="background:var(--color-brand-yellow)"></i>yellow</div>
+    <div class="sw"><i style="background:var(--color-neutral-wall)"></i>wall</div>
+  </div>
+
+  <h2>cards</h2>
+  <div class="panel">
+    <div class="row">
+      <div class="card">English</div>
+      <div class="card">Spanish</div>
+      <div class="card">French</div>
+    </div>
+  </div>
+</main>
+<script>const TOK = {"core":{"color":{"neutral":{"ink":{"v":"#000000","t":"color","s":"Measured CSS, h1.hero_section_concept5__title color rgb(0, 0, 0), https://promova.com/ 1440x900, 2026-11-21. raw/components-computed.json hero-title."},"paper":{"v":"#ffffff","t":"color","s":"Measured CSS, .landing_navigation__navigation backgroundColor rgb(255, 255, 255), https://promova.com/ 2026-11-21."},"frame":{"v":"#000000","t":"color","s":"Measured CSS, body.body_black backgroundColor rgb(0, 0, 0), https://promova.com/ 2026-11-21. The page frame behind the rounded panels."},"hover-ink":{"v":"#262626","t":"color","s":"Measured CSS, a.navigation_actions__main_button backgroundColor rgb(38, 38, 38) under a real pointer hover, 2026-11-21."},"wall":{"v":"#eeeeee","t":"color","s":"Measured CSS, body backgroundColor rgb(238, 238, 238) on https://promova.com/sign-up, 2026-11-21."},"mist":{"v":"#f5f5f5","t":"color","s":"Measured CSS, a painted element backgroundColor rgb(245, 245, 245) counted once on the homepage colour pass, 2026-11-21. Role on the page was not identified beyond the fill."}},"brand":{"lilac":{"v":"#bec8ff","t":"color","s":"Measured CSS, .hero_section_concept5__section backgroundColor rgb(190, 200, 255), https://promova.com/ 2026-11-21."},"pink":{"v":"#f5a0d2","t":"color","s":"Measured CSS, body.body_pink backgroundColor rgb(245, 160, 210), https://promova.com/faq 2026-11-21."},"yellow":{"v":"#fff584","t":"color","s":"Measured CSS, a painted element backgroundColor rgb(255, 245, 132) counted once on the homepage colour pass, 2026-11-21. Matches the POPULAR chip seen in the Languages menu screenshot. The chip element itself was not isolated."},"lavender":{"v":"#d7d4e2","t":"color","s":"Measured CSS, a painted element backgroundColor rgb(215, 212, 226) counted once on the homepage colour pass, 2026-11-21. Role not identified."}}},"font":{"family":{"display":{"v":"Nekst, Arial, sans-serif","t":"fontFamily","s":"Measured CSS, h1 fontFamily Nekst, Arial, sans-serif, https://promova.com/ 2026-11-21. Nekst is a served face and is not in this package."},"ui":{"v":"nekst, Rubik, Arial, sans-serif","t":"fontFamily","s":"Measured CSS, nav trigger and GET STARTED fontFamily starts with nekst, then Rubik, Arial. Fallback stack shortened to the families that resolved. 2026-11-21."},"body":{"v":"manrope, Manrope, Rubik, Arial, sans-serif","t":"fontFamily","s":"Measured CSS, body.body_font fontFamily starts with manrope. 2026-11-21. Manrope is a served face and is not in this package."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"Measured CSS, body and nav fontWeight 400, 2026-11-21."},"bold":{"v":700,"t":"fontWeight","s":"Measured CSS, h1 and TRY NOW fontWeight 700, 2026-11-21."}},"size":{"display":{"v":"70px","t":"dimension","s":"Measured CSS, h1 fontSize 70px, line-height 70px, https://promova.com/ 2026-11-21."},"title":{"v":"24px","t":"dimension","s":"Measured CSS, h2 fontSize 24px, line-height 24px, 2026-11-21."},"body":{"v":"16px","t":"dimension","s":"Measured CSS, body fontSize 16px, 2026-11-21."},"nav":{"v":"15px","t":"dimension","s":"Measured CSS, nav trigger fontSize 15px, 2026-11-21."},"button":{"v":"14px","t":"dimension","s":"Measured CSS, GET STARTED and SIGN UP fontSize 14px, 2026-11-21."},"hero-button":{"v":"18px","t":"dimension","s":"Measured CSS, TRY NOW and FAQ SEARCH fontSize 18px, 2026-11-21."}}},"radius":{"panel":{"v":"30px","t":"dimension","s":"Measured CSS, nav bar, hero panel and footer borderRadius 30px, 2026-11-21."},"card":{"v":"20px","t":"dimension","s":"Measured CSS, language card and FAQ topic card borderRadius 20px, 2026-11-21."},"none":{"v":"0px","t":"dimension","s":"Measured CSS, GET STARTED, SIGN UP and TRY NOW borderRadius 0px, 2026-11-21."}},"size":{"nav-height":{"v":"100px","t":"dimension","s":"Measured CSS, .landing_navigation__navigation height 100px at 1440, 2026-11-21."},"nav-button-height":{"v":"40px","t":"dimension","s":"Measured CSS, GET STARTED and SIGN UP height 40px, 2026-11-21."},"hero-button-height":{"v":"60px","t":"dimension","s":"Measured CSS, TRY NOW and FAQ SEARCH height 60px, 2026-11-21."},"content-width":{"v":"1400px","t":"dimension","s":"Measured CSS, nav bar and hero panel width 1400px inside a 1440 viewport, 2026-11-21."}},"motion":{"nav":{"v":"200ms","t":"duration","s":"Measured CSS, nav trigger transition opacity 0.2s ease-out, 2026-11-21. Easing recorded in the source string. No cubic-bezier token was declared."}}},"light":{"background":{"page":{"v":"{color.neutral.frame}","t":"color","s":"Alias of the measured body frame. The visible page is black around white and lilac panels."},"surface":{"v":"{color.neutral.paper}","t":"color","s":"Alias of the measured nav and card fill."},"hero":{"v":"{color.brand.lilac}","t":"color","s":"Alias of the measured hero panel fill."},"faq":{"v":"{color.brand.pink}","t":"color","s":"Alias of the measured FAQ page fill."}},"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"Alias of the measured heading colour."},"on-accent":{"v":"{color.neutral.paper}","t":"color","s":"Alias of the measured GET STARTED label colour rgb(255, 255, 255)."},"muted":{"v":"{color.neutral.ink}","t":"color","s":"Not captured as a separate role. Homepage text that was measured used the same ink. This alias records that fact and is not a second reading."}},"border":{"default":{"v":"{color.neutral.ink}","t":"color","s":"Measured CSS, SIGN UP border 1px solid rgb(0, 0, 0), 2026-11-21."}},"accent":{"default":{"v":"{color.neutral.ink}","t":"color","s":"The filled action is black, not a hue. Alias of the measured GET STARTED fill."},"hover":{"v":"{color.neutral.hover-ink}","t":"color","s":"Alias of the measured GET STARTED hover fill."}},"component":{"button":{"bg":{"v":"{color.neutral.ink}","t":"color","s":"Measured CSS, GET STARTED backgroundColor rgb(0, 0, 0)."},"text":{"v":"{color.neutral.paper}","t":"color","s":"Measured CSS, GET STARTED color rgb(255, 255, 255)."},"height":{"v":"40px","t":"dimension","s":"Measured CSS, GET STARTED height 40px."},"radius":{"v":"0px","t":"dimension","s":"Measured CSS, GET STARTED borderRadius 0px."}},"hero-button":{"bg":{"v":"{color.neutral.ink}","t":"color","s":"Measured CSS, TRY NOW backgroundColor rgb(0, 0, 0)."},"text":{"v":"{color.neutral.paper}","t":"color","s":"Measured CSS, TRY NOW color rgb(255, 255, 255)."},"height":{"v":"60px","t":"dimension","s":"Measured CSS, TRY NOW height 60px."}},"card":{"bg":{"v":"{color.neutral.paper}","t":"color","s":"Measured CSS, language card backgroundColor rgb(255, 255, 255)."},"radius":{"v":"20px","t":"dimension","s":"Measured CSS, language card borderRadius 20px."}}}},"dark":{}};</script>
+</body>
+</html>

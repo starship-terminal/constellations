@@ -1,0 +1,90 @@
+{
+  "core": {
+    "color": {
+      "neutral": {
+        "ink": { "type": "color", "value": "#000000", "source": "Measured CSS, h1.hero_section_concept5__title color rgb(0, 0, 0), https://promova.com/ 1440x900, 2026-11-21. raw/components-computed.json hero-title." },
+        "paper": { "type": "color", "value": "#ffffff", "source": "Measured CSS, .landing_navigation__navigation backgroundColor rgb(255, 255, 255), https://promova.com/ 2026-11-21." },
+        "frame": { "type": "color", "value": "#000000", "source": "Measured CSS, body.body_black backgroundColor rgb(0, 0, 0), https://promova.com/ 2026-11-21. The page frame behind the rounded panels." },
+        "hover-ink": { "type": "color", "value": "#262626", "source": "Measured CSS, a.navigation_actions__main_button backgroundColor rgb(38, 38, 38) under a real pointer hover, 2026-11-21." },
+        "wall": { "type": "color", "value": "#eeeeee", "source": "Measured CSS, body backgroundColor rgb(238, 238, 238) on https://promova.com/sign-up, 2026-11-21." },
+        "mist": { "type": "color", "value": "#f5f5f5", "source": "Measured CSS, a painted element backgroundColor rgb(245, 245, 245) counted once on the homepage colour pass, 2026-11-21. Role on the page was not identified beyond the fill." }
+      },
+      "brand": {
+        "lilac": { "type": "color", "value": "#bec8ff", "source": "Measured CSS, .hero_section_concept5__section backgroundColor rgb(190, 200, 255), https://promova.com/ 2026-11-21." },
+        "pink": { "type": "color", "value": "#f5a0d2", "source": "Measured CSS, body.body_pink backgroundColor rgb(245, 160, 210), https://promova.com/faq 2026-11-21." },
+        "yellow": { "type": "color", "value": "#fff584", "source": "Measured CSS, a painted element backgroundColor rgb(255, 245, 132) counted once on the homepage colour pass, 2026-11-21. Matches the POPULAR chip seen in the Languages menu screenshot. The chip element itself was not isolated." },
+        "lavender": { "type": "color", "value": "#d7d4e2", "source": "Measured CSS, a painted element backgroundColor rgb(215, 212, 226) counted once on the homepage colour pass, 2026-11-21. Role not identified." }
+      }
+    },
+    "font": {
+      "family": {
+        "display": { "type": "fontFamily", "value": "Nekst, Arial, sans-serif", "source": "Measured CSS, h1 fontFamily Nekst, Arial, sans-serif, https://promova.com/ 2026-11-21. Nekst is a served face and is not in this package." },
+        "ui": { "type": "fontFamily", "value": "nekst, Rubik, Arial, sans-serif", "source": "Measured CSS, nav trigger and GET STARTED fontFamily starts with nekst, then Rubik, Arial. Fallback stack shortened to the families that resolved. 2026-11-21." },
+        "body": { "type": "fontFamily", "value": "manrope, Manrope, Rubik, Arial, sans-serif", "source": "Measured CSS, body.body_font fontFamily starts with manrope. 2026-11-21. Manrope is a served face and is not in this package." }
+      },
+      "weight": {
+        "regular": { "type": "fontWeight", "value": 400, "source": "Measured CSS, body and nav fontWeight 400, 2026-11-21." },
+        "bold": { "type": "fontWeight", "value": 700, "source": "Measured CSS, h1 and TRY NOW fontWeight 700, 2026-11-21." }
+      },
+      "size": {
+        "display": { "type": "dimension", "value": "70px", "source": "Measured CSS, h1 fontSize 70px, line-height 70px, https://promova.com/ 2026-11-21." },
+        "title": { "type": "dimension", "value": "24px", "source": "Measured CSS, h2 fontSize 24px, line-height 24px, 2026-11-21." },
+        "body": { "type": "dimension", "value": "16px", "source": "Measured CSS, body fontSize 16px, 2026-11-21." },
+        "nav": { "type": "dimension", "value": "15px", "source": "Measured CSS, nav trigger fontSize 15px, 2026-11-21." },
+        "button": { "type": "dimension", "value": "14px", "source": "Measured CSS, GET STARTED and SIGN UP fontSize 14px, 2026-11-21." },
+        "hero-button": { "type": "dimension", "value": "18px", "source": "Measured CSS, TRY NOW and FAQ SEARCH fontSize 18px, 2026-11-21." }
+      }
+    },
+    "radius": {
+      "panel": { "type": "dimension", "value": "30px", "source": "Measured CSS, nav bar, hero panel and footer borderRadius 30px, 2026-11-21." },
+      "card": { "type": "dimension", "value": "20px", "source": "Measured CSS, language card and FAQ topic card borderRadius 20px, 2026-11-21." },
+      "none": { "type": "dimension", "value": "0px", "source": "Measured CSS, GET STARTED, SIGN UP and TRY NOW borderRadius 0px, 2026-11-21." }
+    },
+    "size": {
+      "nav-height": { "type": "dimension", "value": "100px", "source": "Measured CSS, .landing_navigation__navigation height 100px at 1440, 2026-11-21." },
+      "nav-button-height": { "type": "dimension", "value": "40px", "source": "Measured CSS, GET STARTED and SIGN UP height 40px, 2026-11-21." },
+      "hero-button-height": { "type": "dimension", "value": "60px", "source": "Measured CSS, TRY NOW and FAQ SEARCH height 60px, 2026-11-21." },
+      "content-width": { "type": "dimension", "value": "1400px", "source": "Measured CSS, nav bar and hero panel width 1400px inside a 1440 viewport, 2026-11-21." }
+    },
+    "motion": {
+      "nav": { "type": "duration", "value": "200ms", "source": "Measured CSS, nav trigger transition opacity 0.2s ease-out, 2026-11-21. Easing recorded in the source string. No cubic-bezier token was declared." }
+    }
+  },
+  "light": {
+    "background": {
+      "page": { "type": "color", "value": "{color.neutral.frame}", "source": "Alias of the measured body frame. The visible page is black around white and lilac panels." },
+      "surface": { "type": "color", "value": "{color.neutral.paper}", "source": "Alias of the measured nav and card fill." },
+      "hero": { "type": "color", "value": "{color.brand.lilac}", "source": "Alias of the measured hero panel fill." },
+      "faq": { "type": "color", "value": "{color.brand.pink}", "source": "Alias of the measured FAQ page fill." }
+    },
+    "text": {
+      "primary": { "type": "color", "value": "{color.neutral.ink}", "source": "Alias of the measured heading colour." },
+      "on-accent": { "type": "color", "value": "{color.neutral.paper}", "source": "Alias of the measured GET STARTED label colour rgb(255, 255, 255)." },
+      "muted": { "type": "color", "value": "{color.neutral.ink}", "source": "Not captured as a separate role. Homepage text that was measured used the same ink. This alias records that fact and is not a second reading." }
+    },
+    "border": {
+      "default": { "type": "color", "value": "{color.neutral.ink}", "source": "Measured CSS, SIGN UP border 1px solid rgb(0, 0, 0), 2026-11-21." }
+    },
+    "accent": {
+      "default": { "type": "color", "value": "{color.neutral.ink}", "source": "The filled action is black, not a hue. Alias of the measured GET STARTED fill." },
+      "hover": { "type": "color", "value": "{color.neutral.hover-ink}", "source": "Alias of the measured GET STARTED hover fill." }
+    },
+    "component": {
+      "button": {
+        "bg": { "type": "color", "value": "{color.neutral.ink}", "source": "Measured CSS, GET STARTED backgroundColor rgb(0, 0, 0)." },
+        "text": { "type": "color", "value": "{color.neutral.paper}", "source": "Measured CSS, GET STARTED color rgb(255, 255, 255)." },
+        "height": { "type": "dimension", "value": "40px", "source": "Measured CSS, GET STARTED height 40px." },
+        "radius": { "type": "dimension", "value": "0px", "source": "Measured CSS, GET STARTED borderRadius 0px." }
+      },
+      "hero-button": {
+        "bg": { "type": "color", "value": "{color.neutral.ink}", "source": "Measured CSS, TRY NOW backgroundColor rgb(0, 0, 0)." },
+        "text": { "type": "color", "value": "{color.neutral.paper}", "source": "Measured CSS, TRY NOW color rgb(255, 255, 255)." },
+        "height": { "type": "dimension", "value": "60px", "source": "Measured CSS, TRY NOW height 60px." }
+      },
+      "card": {
+        "bg": { "type": "color", "value": "{color.neutral.paper}", "source": "Measured CSS, language card backgroundColor rgb(255, 255, 255)." },
+        "radius": { "type": "dimension", "value": "20px", "source": "Measured CSS, language card borderRadius 20px." }
+      }
+    }
+  }
+}
