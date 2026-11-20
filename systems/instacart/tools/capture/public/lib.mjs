@@ -22,15 +22,11 @@ export const RAW = path.join(REF, 'raw');
 export const M = (name) => `[class*="${name}"]`;
 
 export async function launch({ width = 1440, height = 900, mobile = false, dpr } = {}) {
-  const browser = await chromium.launch({
-    args: ['--disable-blink-features=AutomationControlled'],
-  });
+  // Automation is not hidden: no AutomationControlled flag, no webdriver mask.
+  const browser = await chromium.launch();
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: dpr ?? 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: dpr ?? 1, userAgent: UA, locale: 'en-US' });
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  });
   return { browser, context };
 }
 

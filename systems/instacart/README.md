@@ -24,7 +24,7 @@ An email account was created in the attached T3 preview browser and the storefro
 1. **Do keep marketing chrome white and put the forest green on the hero.** The header, cards and page are white. The homepage hero band is #003D29 (`color.hero`). See [home-light-default](screenshots/home-light-default.png).
 2. **Do fill primary actions with #108910 and white type.** Sign up, Continue, Log in on the storefront, and Add are full pills. See [button-primary](components/crops/button-primary-default.png) and [button-continue](components/crops/button-continue-default.png).
 3. **Do use the yellow chip for deals, not for actions.** #FFDC23 (`color.deal`) marks "No markups" and sale callouts. It is not a button fill. See [deals-light-default](screenshots/deals-light-default.png).
-4. **Do round controls fully and cards at 12px.** Buttons, search and chips are pills. Store cards and the login card use 12px. Fields use about 8px. See [store-card](components/crops/store-card-default.png) and [text-field](components/crops/text-field-default.png).
+4. **Do round controls fully and cards at 12px.** Buttons, search and chips are pills (half their height: 20px on the 40px header buttons, 28px on the 56px search and Continue, 999px on chips). Cards use the declared 12px radius step. Fields use 8px. See [store-card](components/crops/store-card-default.png) and [text-field](components/crops/text-field-default.png).
 5. **Don't invent a dark theme.** The consumer site paints one light theme. `colorScheme` is `normal` and there is no `data-theme`. See [login-light-default](screenshots/login-light-default.png).
 6. **Don't treat Instacart Business as the consumer palette.** `/business` uses a purple header and a periwinkle pill. Those values are measured on that page, not aliased into the consumer green. See [business-light-default](screenshots/business-light-default.png).
 7. **Don't press checkout.** Add, Continue, Shop and the Plus trial were not used to place an order, save a street address, or start a paid trial. See [search-light-default](screenshots/search-light-default.png).
@@ -92,6 +92,8 @@ Consent, location and promo dialogs were hidden in CSS. No consent control was c
 
 ## What to distrust
 
+- **Readings taken with automation hidden.** The committed screenshots and readings were taken by scripts that launched Chromium with the `AutomationControlled` flag off and masked `navigator.webdriver`. That code was removed on 2026-11-20 (capture conduct); a recapture runs undisguised and records any page that blocks it as a boundary.
+- **Some type and weights were typed.** The heading (32/40) and display (48/56) styles, and the 500 and 700 weights, have no reading behind them; their sources say Reconstruction. Body, label and button type are read from the login card, the EBT chip and the Continue button (the element's own style: Continue computes weight 400; no text-node reading was recorded). The card radius is the declared `--ids-system-radius-12`; the captured store-card and login-card elements paint 0px.
 - The signed-in storefront was reached in the T3 preview browser, then screenshot capture failed because the host was not producing frames. Those screens are not in this package. Do not treat the public search page as the logged-in home.
 - Hover crops of green pills often match the rest state. Instacart's primary fill does not always shift on hover in headless Chromium. Do not invent a hover green.
 - `login-card-default` is the form only, not the whole card with the social row.
