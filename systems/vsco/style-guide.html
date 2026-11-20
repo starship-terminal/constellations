@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VSCO style guide</title>
+<meta name="description" content="VSCO public marketing tokens, rendered from tokens.json.">
+<style>
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-blackish: #111111;
+  --color-darkGrey: #1e1e1e;
+  --color-grey: #737373;
+  --color-lightGrey: #f2f2f2;
+  --color-lightGreyHover: #aaaaaa;
+  --color-gold: #ffbc3c;
+  --color-goldHover: #ffc24e;
+  --color-goldOnWhite: #b2994f;
+  --color-pink: #ff0877;
+  --color-pinkHover: #ff81b9;
+  --color-green: #4d7d3f;
+  --color-red: #f73100;
+  --color-disabled: #757575;
+  --font-family: "VSCO Gothic", sans-serif;
+  --typography-display: 500 100px/90px var(--font-family);
+  --typography-nav: 500 15px/22.5px var(--font-family);
+  --typography-tab: 600 11px/14px var(--font-family);
+  --typography-button: 600 13px/16px var(--font-family);
+  --typography-buttonSmall: 500 13px/16px var(--font-family);
+  --typography-body: 400 16px/24px var(--font-family);
+  --radius-none: 0px;
+  --radius-badge: 4px;
+  --radius-pill: 999px;
+  --space-2: 2px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-28: 28px;
+  --size-buttonSmall: 32px;
+  --size-buttonBanner: 34px;
+  --size-button: 40px;
+  --size-banner: 50px;
+  --size-iconButton: 24px;
+  --motion-menu: 450ms;
+  --motion-button: 850ms;
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --background-page: var(--color-white);
+  --background-inverse: var(--color-blackish);
+  --background-surface: var(--color-white);
+  --background-banner: var(--color-pink);
+  --text-primary: var(--color-black);
+  --text-onAccent: var(--color-white);
+  --text-onGold: var(--color-black);
+  --text-inverse: var(--color-white);
+  --text-muted: var(--color-grey);
+  --border-default: var(--color-black);
+  --accent-gold: var(--color-gold);
+  --accent-goldHover: var(--color-goldHover);
+  --accent-pink: var(--color-pink);
+  --accent-pinkHover: var(--color-pinkHover);
+  --action-primary: var(--color-black);
+  --action-disabled: var(--color-disabled);
+  --focus-ring: var(--color-black);
+  color-scheme: light;
+  --sg-sans: "VSCO Gothic", Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {  }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 500 40px/44px var(--sg-sans); margin: 0 0 8px; }
+h2 { font: 500 22px/28px var(--sg-sans); margin: 40px 0 12px; }
+p.lead { max-width: 68ch; color: var(--text-primary); }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw i { display: block; width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px #00000022; }
+.nm { font: 600 12px/1.3 var(--sg-mono); }
+.vl { font-size: 12px; color: var(--text-muted); }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; margin: 12px 0 24px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: var(--radius-pill); height: var(--size-button); padding: 2px 28px; font: 600 13px/16px var(--sg-sans); text-decoration: none; cursor: pointer; }
+.btn.gold { background: var(--accent-gold); color: var(--text-onGold); }
+.btn.gold:hover { background: var(--accent-goldHover); }
+.btn.ink { background: var(--action-primary); color: var(--text-onAccent); height: var(--size-buttonSmall); padding: 2px 16px; font-weight: 500; }
+.btn.pink { background: var(--accent-pink); color: var(--text-onAccent); height: var(--size-buttonBanner); }
+.btn.pink:hover { background: var(--accent-pinkHover); }
+.btn.off { background: var(--action-disabled); color: var(--text-onAccent); }
+.cap { display: block; font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+.band { background: var(--background-inverse); color: var(--text-inverse); padding: 24px; border-radius: 0; }
+.tab { font: 600 11px/14px var(--sg-sans); letter-spacing: 0.04em; text-transform: uppercase; padding: 8px 0; margin-right: 16px; border-bottom: 2px solid transparent; }
+.tab.on { border-bottom-color: var(--text-inverse); }
+.display { font: 500 64px/58px var(--sg-sans); letter-spacing: -0.03em; margin: 0; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid #00000022; vertical-align: top; }
+code { font-family: var(--sg-mono); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>VSCO</h1>
+  <p class="lead">Public marketing site, one light theme. Pills are 999px. Gold is the trial button. Pink is the top promo. Ink is the default button. VSCO Gothic is not loaded here, so the samples fall back to Helvetica.</p>
+
+  <h2>Colour</h2>
+  <div class="pal" id="pal"></div>
+
+  <h2>Type</h2>
+  <p class="display">Everything a photographer needs</p>
+  <span class="cap">Display is 100px / 90px at weight 500 on the live site. This sample is 64px so it fits the guide.</span>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <div><a class="btn gold" href="#">Try VSCO for free</a><span class="cap">gold, 40px, hover lightens</span></div>
+    <div><a class="btn ink" href="#">Try for free</a><span class="cap">ink, 32px small</span></div>
+    <div><a class="btn pink" href="#">Learn more</a><span class="cap">promo pink, 34px</span></div>
+    <div><button class="btn off" disabled>Continue</button><span class="cap">disabled grey, login email step</span></div>
+  </div>
+
+  <h2>Dark band</h2>
+  <div class="band">
+    <div class="tab on">What's new</div><span class="tab">Create</span><span class="tab">Connect</span><span class="tab">Work</span>
+    <p style="font:500 32px/36px var(--sg-sans);margin:16px 0 0">Your home for photography</p>
+  </div>
+
+  <h2>Tokens</h2>
+  <table id="tok"></table>
+</div>
+<script>
+const TOK = {"core":{"color":{"black":{"v":"#000000","t":"color","s":"Measured: computed color of nav-menu default and background of button-primary default (raw/components-computed.json); stylesheet --black is the keyword black"},"white":{"v":"#ffffff","t":"color","s":"Measured: computed color of button-primary default and background of the marketing page (home-dark-default.png region; computed rgb(255,255,255) on button text)"},"blackish":{"v":"#111111","t":"color","s":"Measured: stylesheet custom property --black-ish on https://www.vsco.co/ (raw/css-vars.json) and computed body backgroundColor rgb(17, 17, 17)"},"darkGrey":{"v":"#1e1e1e","t":"color","s":"Measured: stylesheet custom property --dark-grey (raw/css-vars.json)"},"grey":{"v":"#737373","t":"color","s":"Measured: stylesheet custom property --v1-dark-grey (raw/css-vars.json)"},"lightGrey":{"v":"#f2f2f2","t":"color","s":"Measured: stylesheet custom property --light-grey (raw/css-vars.json)"},"lightGreyHover":{"v":"#aaaaaa","t":"color","s":"Measured: stylesheet custom property --light-grey-hover (raw/css-vars.json)"},"gold":{"v":"#ffbc3c","t":"color","s":"Measured: stylesheet --v1-gold and computed backgroundColor of button-gold default rgb(255, 188, 60)"},"goldHover":{"v":"#ffc24e","t":"color","s":"Measured: computed backgroundColor of button-gold hover, CDP forcePseudoState hover (raw/components-computed.json)"},"goldOnWhite":{"v":"#b2994f","t":"color","s":"Measured: stylesheet custom property --gold-on-white (raw/css-vars.json). Not observed as a painted control on the captured pages."},"pink":{"v":"#ff0877","t":"color","s":"Measured: computed backgroundColor of button-banner default rgb(255, 8, 119). Not a custom property."},"pinkHover":{"v":"#ff81b9","t":"color","s":"Measured: computed backgroundColor of button-banner hover, CDP forcePseudoState hover"},"green":{"v":"#4d7d3f","t":"color","s":"Measured: stylesheet custom property --surface-green (raw/css-vars.json). Not observed painted on the captured pages."},"red":{"v":"#f73100","t":"color","s":"Measured: stylesheet custom property --100-red-l (raw/css-vars.json). Not observed painted on the captured pages."},"disabled":{"v":"#757575","t":"color","s":"Measured: computed backgroundColor of the disabled CONTINUE button on https://vsco.co/user/login when that URL served the email step (rgb(117, 117, 117))"}},"font":{"family":{"v":"\"VSCO Gothic\", sans-serif","t":"fontFamily","s":"Measured: computed fontFamily of nav-menu, hero-heading, and body on https://www.vsco.co/"}},"typography":{"display":{"v":{"fontFamily":"{font.family}","fontSize":"100px","fontWeight":500,"lineHeight":"90px"},"t":"typography","s":"Measured: hero-heading computed fontSize 100px, fontWeight 500, height 180px over two lines so line-height 90px"},"nav":{"v":{"fontFamily":"{font.family}","fontSize":"15px","fontWeight":500,"lineHeight":"22.5px"},"t":"typography","s":"Measured: nav-menu default fontSize 15px, fontWeight 500. Line height derived as 1.5 of the size; the element height is 38.5px including 8px padding."},"tab":{"v":{"fontFamily":"{font.family}","fontSize":"11px","fontWeight":600,"lineHeight":"14px"},"t":"typography","s":"Measured: tab default fontSize 11px, fontWeight 600"},"button":{"v":{"fontFamily":"{font.family}","fontSize":"13px","fontWeight":600,"lineHeight":"16px"},"t":"typography","s":"Measured: button-gold default fontSize 13px, fontWeight 600"},"buttonSmall":{"v":{"fontFamily":"{font.family}","fontSize":"13px","fontWeight":500,"lineHeight":"16px"},"t":"typography","s":"Measured: button-primary default fontSize 13px, fontWeight 500"},"body":{"v":{"fontFamily":"{font.family}","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"Measured: menu-link default fontSize 16px, fontWeight 400. Line height not captured as a separate computed lineHeight; 24px is derived as 1.5."}},"radius":{"none":{"v":"0px","t":"dimension","s":"Measured: nav-menu and hero-heading borderTopLeftRadius 0px"},"badge":{"v":"4px","t":"dimension","s":"Measured: badge default borderTopLeftRadius 4px"},"pill":{"v":"999px","t":"dimension","s":"Measured: button-gold, button-primary, button-banner borderTopLeftRadius 999px"}},"space":{"2":{"v":"2px","t":"dimension","s":"Measured: button-gold paddingTop 2px"},"8":{"v":"8px","t":"dimension","s":"Measured: nav-menu paddingTop 8px"},"16":{"v":"16px","t":"dimension","s":"Measured: button-primary paddingRight 16px (is-small)"},"28":{"v":"28px","t":"dimension","s":"Measured: button-gold paddingRight 28px"}},"size":{"buttonSmall":{"v":"32px","t":"dimension","s":"Measured: button-primary height 32px"},"buttonBanner":{"v":"34px","t":"dimension","s":"Measured: button-banner height 34px"},"button":{"v":"40px","t":"dimension","s":"Measured: button-gold height 40px and disabled CONTINUE height 40px"},"banner":{"v":"50px","t":"dimension","s":"Measured: inline custom property --banner-h 50px on the home page html element"},"iconButton":{"v":"24px","t":"dimension","s":"Measured: icon-button (phone menu) height 24px"}},"motion":{"menu":{"v":"450ms","t":"duration","s":"Measured: menu-link transitionDuration 0.45s, derived to ms"},"button":{"v":"850ms","t":"duration","s":"Measured: plan-cta transitionDuration 0.85s, derived to ms"}},"layout":{"desktop":{"v":"1440px","t":"dimension","s":"Measured: capture viewport innerWidth 1440 (screenshots/*.png.capture.json)"},"phone":{"v":"390px","t":"dimension","s":"Measured: capture viewport innerWidth 390"}}},"light":{"background":{"page":{"v":"{color.white}","t":"color","s":"Measured: marketing sections paint white; home screenshot and button text white on black. Body element background is blackish and shows in the dark band."},"inverse":{"v":"{color.blackish}","t":"color","s":"Measured: body backgroundColor rgb(17, 17, 17) and the home 'Your home for photography' band"},"surface":{"v":"{color.white}","t":"color","s":"Measured: products menu panel paints white (home-dark-products-menu.png)"},"banner":{"v":"{color.pink}","t":"color","s":"Measured: top promo bar shares the banner button pink; the bar fill was not read as its own computed style. The button fill is the evidence."}},"text":{"primary":{"v":"{color.black}","t":"color","s":"Measured: nav-menu and hero-heading color rgb(0, 0, 0)"},"onAccent":{"v":"{color.white}","t":"color","s":"Measured: button-primary and button-banner color rgb(255, 255, 255)"},"onGold":{"v":"{color.black}","t":"color","s":"Measured: button-gold color rgb(0, 0, 0)"},"inverse":{"v":"{color.white}","t":"color","s":"Measured: tab default color rgb(255, 255, 255) on the dark band"},"muted":{"v":"{color.grey}","t":"color","s":"Measured token --v1-dark-grey. Not confirmed as the computed color of a muted label in this capture."}},"border":{"default":{"v":"{color.black}","t":"color","s":"Measured: nav-menu borderTopColor rgb(0, 0, 0) at width 0. Outline buttons paint a hairline; that width was not captured on a visible outline button."}},"accent":{"gold":{"v":"{color.gold}","t":"color","s":"Measured: button-gold default"},"goldHover":{"v":"{color.goldHover}","t":"color","s":"Measured: button-gold hover"},"pink":{"v":"{color.pink}","t":"color","s":"Measured: button-banner default"},"pinkHover":{"v":"{color.pinkHover}","t":"color","s":"Measured: button-banner hover"}},"action":{"primary":{"v":"{color.black}","t":"color","s":"Measured: button-primary backgroundColor rgb(0, 0, 0)"},"disabled":{"v":"{color.disabled}","t":"color","s":"Measured: disabled CONTINUE on the login URL email step"}},"focus":{"ring":{"v":"{color.black}","t":"color","s":"Measured: nav-menu focus-visible outline 1px auto. Colour of the auto ring was not a custom colour."}}},"dark":{}};
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const flat = (node, prefix='') => Object.entries(node || {}).flatMap(([k,v]) => v && v.t ? [[prefix+k, v]] : (v && typeof v === 'object' ? flat(v, prefix+k+'.') : []));
+const pal = document.getElementById('pal');
+for (const [n,t] of flat(TOK.core.color, 'color.').concat(flat(TOK.light, ''))) {
+  if (t.t !== 'color') continue;
+  const bg = t.v.startsWith('{') ? 'var(--' + t.v.replace(/[{}.]/g, (c) => c === '.' ? '-' : '') + ')' : t.v;
+  pal.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:${esc(t.v.startsWith('#') ? t.v : '#ccc')}"></i><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`);
+}
+const rows = flat(TOK.core, 'core.').concat(flat(TOK.light, 'light.'));
+document.getElementById('tok').innerHTML = '<tr><th>Token</th><th>Value</th><th>Source</th></tr>' + rows.map(([n,t]) => `<tr><td><code>${esc(n)}</code></td><td>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</td><td>${esc(t.s)}</td></tr>`).join('');
+</script>
+</body>
+</html>
