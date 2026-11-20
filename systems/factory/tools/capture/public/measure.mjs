@@ -94,10 +94,14 @@ async function waitSignin() {
 // a local UI toggle, no form, no navigation.
 async function setDocsTheme(theme) {
   const btn = page.locator(`button.theme-selector-button[aria-label="Switch to ${theme} theme"]`).first();
-  if (!(await btn.count())) return 'no theme selector on this docs page';
+  // a state labelled dark is only read when dark painted: a missing control
+  // or a toggle that did not take throws, and the state records the error
+  // instead of a light reading (2026-11 audit, finding 17-5; not run since)
+  if (!(await btn.count())) throw new Error('no theme selector on this docs page');
   await btn.click({ timeout: 4000 }).catch(() => btn.evaluate((el) => el.click()));
   await page.waitForTimeout(900);
   const cur = await page.evaluate(() => document.documentElement.getAttribute('data-theme'));
+  if (cur !== theme.toLowerCase()) throw new Error(`docs theme reads ${JSON.stringify(cur)} after switching to ${theme}`);
   return `docs theme selector switched to ${theme} (data-theme now ${JSON.stringify(cur)})`;
 }
 
