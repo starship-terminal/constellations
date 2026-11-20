@@ -56,7 +56,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | dark | 19.56:1 pass | 18.42:1 pass | 6.95:1 pass | 6.54:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.focus` #005fcc; `dark.console.focus-ring` #0a84ff.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.focus` #005fcc (Observed, not measured); `dark.console.focus-ring` #0a84ff.
 
 <!-- brief:end -->
 

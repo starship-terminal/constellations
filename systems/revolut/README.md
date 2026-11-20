@@ -55,7 +55,7 @@ Read no components.md (No component crops. The preview browser produced no scree
 | light | 16.48:1 pass | 15.38:1 pass | 4.87:1 pass | 4.54:1 pass |
 | dark | 21.00:1 pass | 15.52:1 pass | 14.87:1 pass | 11.57:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus.outline` 2px solid #6fa0ff80; `light.focus.outline` 2px solid #234fa680; `dark.input.error.focus` #421210; `light.input.error.focus` #fde5e3.
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus.outline` 2px solid #6fa0ff80 (Reconstruction, not measured); `light.focus.outline` 2px solid #234fa680; `dark.input.error.focus` #421210; `light.input.error.focus` #fde5e3.
 
 <!-- brief:end -->
 
