@@ -286,16 +286,19 @@ def build():
         "core": core(),
         "light": light(),
         "$themes": [
-            {"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}}
+            {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}
         ],
     }
-    # Fix typography keys to use the recovered camel split consistently.
-    # Rebuild typography with stable names from the source property.
+    # One composite per declared --fontSizes-* step. Size and family are declared; the weight is
+    # the same-named --fontWeights-* step where Bonsai declares one. Bonsai declares no line height
+    # or letter spacing for these steps (the --b-line-height-* calc() roles belong to the newer
+    # --b-* scale, and the measured titles paint neither), so those were typed at capture time
+    # and the source says so.
     typo = {}
     line = {
-        "displayXLarge": "1.05", "displayLarge": "1.05", "displayMedium": "1.08", "displaySmall": "1.1",
-        "headingXLarge": "1.15", "headingLarge": "1.2", "headingMedium": "1.25", "headingSmall": "1.3",
-        "bodyLarge": "1.4", "bodyMedium": "1.45", "bodySmall": "1.4", "caption": "1.35", "label": "1.3", "tiny": "1.2",
+        "displayXLarge": 1.05, "displayLarge": 1.05, "displayMedium": 1.08, "displaySmall": 1.1,
+        "headingXLarge": 1.15, "headingLarge": 1.2, "headingMedium": 1.25, "headingSmall": 1.3,
+        "bodyLarge": 1.4, "bodyMedium": 1.45, "bodySmall": 1.4, "caption": 1.35, "label": 1.3, "tiny": 1.2,
     }
     for name in sorted(RESOLVED):
         if not name.startswith("--fontSizes-"):
@@ -303,22 +306,36 @@ def build():
         raw_key = name.removeprefix("--fontSizes-")
         pretty = re.sub(r"([a-z])([A-Z])", r"\1-\2", raw_key).lower()
         size_key = slug(name, "--fontSizes-")
+        weight_var = f"--fontWeights-{raw_key}"
+        if weight_var in RESOLVED:
+            weight = "{type.weight." + slug(weight_var, "--fontWeights-") + "}"
+            weight_src = f"weight declared {weight_var}"
+            hand = "lineHeight and letterSpacing"
+        else:
+            weight = "{type.weight.regular}"
+            weight_src = None
+            hand = "fontWeight, lineHeight and letterSpacing"
+        src = f"declared {name} (size) and --b-font-family-sans (family)"
+        if weight_src:
+            src += f"; {weight_src}"
+        src += f"; {hand}: Reconstruction — entered by hand at capture time, no raw reading behind it"
         typo[pretty] = {
             "$type": "typography",
             "$value": {
                 "fontFamily": "{font.sans}",
                 "fontSize": "{type.size." + size_key + "}",
-                "fontWeight": "{type.weight.regular}",
-                "lineHeight": line.get(raw_key, "1.4"),
-                "letterSpacing": "0em",
+                "fontWeight": weight,
+                "lineHeight": line[raw_key],
+                "letterSpacing": "0px",
             },
-            "$extensions": {"source": f"derived {SRC} {name} + --b-font-family-sans"},
+            "$extensions": {"source": src},
         }
     tokens["core"]["typography"] = typo
-    out = HERE / "tokens.json"
-    out.write_text(json.dumps(tokens, indent=2) + "\n")
-    print("wrote", out, "core colors", len(tokens["core"]["color"]), "type", len(typo))
+    return tokens
 
 
 if __name__ == "__main__":
-    build()
+    tokens = build()
+    out = HERE / "tokens.json"
+    out.write_text(json.dumps(tokens, indent=2) + "\n")
+    print("wrote", out, "core colors", len(tokens["core"]["color"]), "type", len(tokens["core"]["typography"]))
