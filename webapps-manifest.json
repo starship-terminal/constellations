@@ -6670,9 +6670,9 @@
       "description": "AI Notes and Meetings",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://voicenotes.com/login Continue with Google signed in and opened the app. Product not walked.",
+      "notes": "https://voicenotes.com/app redirected to the login page. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 20
     },
     {
