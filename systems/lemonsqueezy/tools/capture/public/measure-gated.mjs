@@ -3,10 +3,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { launch, styleOf, crop, RAW } from './lib.mjs';
+import { datePrior } from '../merge-dates.mjs';
 
 const OUT = path.join(RAW, 'components-computed.json');
 const existing = JSON.parse(fs.readFileSync(OUT, 'utf8'));
+// Each state carries its own read date; kept states keep theirs (merge-dates.mjs).
+const RUN = new Date().toLocaleDateString('en-CA');
 const out = existing;
+datePrior(out.components, out._meta && out._meta.captured);
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 
@@ -22,13 +26,13 @@ async function measure(key, state, loc, opts = {}) {
       try { file = await crop(page, loc, `${key}-${state}`, opts.pad ?? 12); }
       catch (e) { s.cropError = String(e.message || e).slice(0, 140); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, read: RUN };
     log('  ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h), s.style.backgroundColor, s.style.color);
   } catch (e) {
     // A failed re-read keeps the committed reading and notes the failure beside it.
     const prior = c.states[state];
-    if (prior && !prior.error) { c.states[state] = { ...prior, recaptureError: String(e.message || e).slice(0, 200) }; return; }
-    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    if (prior && !prior.error) { c.states[state] = { ...prior, recaptureError: String(e.message || e).slice(0, 200), recaptureRun: RUN }; return; }
+    c.states[state] = { error: String(e.message || e).slice(0, 200), read: RUN };
     log('  !', key, state, String(e.message).slice(0, 140));
   }
 }
