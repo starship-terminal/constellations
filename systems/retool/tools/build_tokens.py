@@ -7,6 +7,7 @@ source string keeps the rgb reading. Nothing here invents a ramp step.
 """
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -286,8 +287,8 @@ def build():
         },
         "motion": {
             "duration": {
-                "button": dim("300ms", HOME + " Start for free transition-duration 0.3s.", "Marketing button."),
-                "default": dim("150ms", M + " --default-transition-duration 0.15s.", "Default duration."),
+                "button": {"$type": "duration", "$value": "300ms", "$description": "Marketing button.", "$extensions": {"source": HOME + " Start for free transition-duration 0.3s."}},
+                "default": {"$type": "duration", "$value": "150ms", "$description": "Default duration.", "$extensions": {"source": M + " --default-transition-duration 0.15s."}},
             },
             "easing": {
                 "in-out": cubic(
@@ -346,7 +347,7 @@ def build():
         "button-text": color("#e9ebdf", L + " --btn-primary-default-text.", "Primary button text token."),
         "button-hover": color("#2e2f2d", L + " --btn-primary-hover-background. Hover was not held.", "Primary hover."),
         "focus": color("#518dd2", LOGIN + " The live focus ring was read on the login field, not on a light marketing control.", "Focus."),
-        "scrim": color("#00000099", L + " --nav-scrolled-background stayed #000c.", "Scrim."),
+        "scrim": color("#00000099", "Not read after the class swap: the value is the dark set's --surface-lightbox-scrim (#0009). The light source this cited, --nav-scrolled-background (#000c), is the scrolled nav fill, not a scrim.", "Scrim."),
         "footer": color("#151515", L + " --footer-background stayed #151515.", "Footer."),
         "critical": color("#c72844", L + " --input-default-error-stroke.", "Error stroke."),
         "alert": color("#e79295", L + " --alert-default-background.", "Alert fill."),
@@ -362,9 +363,87 @@ def build():
             {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
         ],
     }
-    (ROOT / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-    print(f"wrote tokens.json")
+    relabel_unread(tokens)
+    return tokens
+
+
+# raw/measured.json is the only file in raw/. A token whose value it does not hold (in hex, rgb() or
+# px form) was typed in from the capture session; its source says so (docs/EVIDENCE.md, Reconstruction).
+HAND = "Reconstruction. Entered by hand at capture time; raw/measured.json holds no reading of this value. Capture note: "
+RAW_TEXT = re.sub(r"\s+", "", (ROOT / "raw" / "measured.json").read_text().lower())
+
+
+
+def _colours(text):
+    """Every colour written in raw/, as (r, g, b, alpha): rgb()/rgba() with commas, spaces or a slash
+    alpha, and #rgb/#rrggbb/#rrggbbaa."""
+    out = []
+    for m in re.finditer(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)\s*(?:[,/]\s*(\d*\.?\d+)(%?))?\s*\)", text):
+        a = 1.0 if m.group(4) is None else float(m.group(4)) / (100 if m.group(5) else 1)
+        out.append((int(m.group(1)), int(m.group(2)), int(m.group(3)), a))
+    for m in re.finditer(r"#([0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{3})(?![0-9a-z])", text):
+        out.append(_hex(m.group(0)))
+    return out
+
+
+def _hex(value):
+    h = value.lstrip("#")
+    if len(h) == 3:
+        h = "".join(c * 2 for c in h)
+    return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16), int(h[6:8], 16) / 255 if len(h) == 8 else 1.0)
+
+
+RAW_COLOURS = _colours((ROOT / "raw" / "measured.json").read_text().lower())
+
+
+def colour_in_raw(value):
+    """A hex colour is backed only by a raw colour with the same channels and the same opacity."""
+    r, g, b, a = _hex(value)
+    return any((r, g, b) == c[:3] and abs(a - c[3]) <= 0.01 for c in RAW_COLOURS)
+
+def in_raw(value):
+    v = str(value).strip().lower()
+    forms = {v.replace(" ", "")}
+    if re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", v):
+        return colour_in_raw(v)
+    if "," in v and not v.startswith(("#", "rgb")):
+        forms.add('"' + v.split(",")[0].strip().strip("'\"") + '"')  # a font stack: its computed first family
+    m = re.fullmatch(r"(\d*\.?\d+)ms", v)
+    if m:
+        forms.add(f"{float(m.group(1)) / 1000:g}s")
+    m = re.fullmatch(r"(\d*\.?\d+)px", v)
+    if m:
+        n = float(m.group(1))
+        forms |= {f":{n:g},", f":{n:g}}}"}  # a box size stored as a bare number ("height": 40)
+    if v == "9999px":
+        forms |= {"16777215px", "16777200px", "1.67772e+07px"}  # the full pill a computed rounded-full radius reports
+    return any(f in RAW_TEXT for f in forms)
+
+
+def leaves(node, path=""):
+    for k, v in node.items():
+        if k.startswith("$") or not isinstance(v, dict):
+            continue
+        here = f"{path}.{k}" if path else k
+        if "$value" in v:
+            yield here, v
+        else:
+            yield from leaves(v, here)
+
+
+def relabel_unread(tokens):
+    for _, tok in leaves(tokens):
+        value = tok["$value"]
+        if isinstance(value, str) and value.startswith("{"):
+            continue  # an alias carries the evidence of the token it names
+        if isinstance(value, (str, int, float)) and not in_raw(value):
+            tok["$extensions"]["source"] = HAND + tok["$extensions"]["source"]
+
+
+def write():
+    (ROOT / "tokens.json").write_text(json.dumps(build(), indent=2) + "\n")
+    print("wrote tokens.json")
 
 
 if __name__ == "__main__":
-    build()
+    write()
