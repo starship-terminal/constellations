@@ -53,9 +53,16 @@ class RebuildTest(unittest.TestCase):
             (cap / "public").mkdir(parents=True)
             shutil.copy2(PKG / "tools" / "capture" / "css-colour.mjs", cap / "css-colour.mjs")
             shutil.copy2(MEASUREMENTS, cap / "public" / "build-measurements.mjs")
+        # The copy starts without the outputs, so each comparison reads a freshly written file.
+        cls.expected = [rel for rel in OUTPUTS + ("raw/measurements.md",) if (PKG / rel).exists()]
+        for rel in cls.expected:
+            (root / rel).unlink()
         for b in BUILDERS:
             subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
         cls.built = json.loads((root / "tokens.json").read_text())
+        if NODE and MEASUREMENTS.exists():
+            subprocess.run([NODE, str(root / "tools" / "capture" / "public" / "build-measurements.mjs")],
+                           cwd=root, check=True, capture_output=True)
         cls.C = json.loads((PKG / "raw" / "components-computed.json").read_text())["components"]
 
     @classmethod
@@ -63,14 +70,14 @@ class RebuildTest(unittest.TestCase):
         cls.tmp.cleanup()
 
     def test_committed_output_matches_rebuild(self):
-        for rel in OUTPUTS:
-            if (PKG / rel).exists() and (self.root / rel).exists():
-                self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
+        for rel in self.expected:
+            if rel == "raw/measurements.md" and not NODE:
+                continue
+            self.assertTrue((self.root / rel).exists(), f"{rel} was not rebuilt")
+            self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
 
     @unittest.skipUnless(NODE and MEASUREMENTS.exists(), "needs node")
     def test_measurements_match_rebuild(self):
-        subprocess.run([NODE, str(self.root / "tools" / "capture" / "public" / "build-measurements.mjs")],
-                       cwd=self.root, check=True, capture_output=True)
         rel = "raw/measurements.md"
         self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
 
@@ -111,6 +118,15 @@ class RebuildTest(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stderr)
         self.assertEqual(spec["core"]["color"]["neutral"]["white"]["value"], "#010203")
         self.assertEqual(spec["dark"]["focus-outline"]["value"], "#040506")
+
+    def test_focus_white_is_the_spread_ring_layer(self):
+        # Review: with a drop shadow before the ring, the first layer is not the ring.
+        def edit(C):
+            C["nav-link"]["states"]["focus-visible"]["style"]["boxShadow"] = \
+                "rgb(1, 2, 3) 0px 4px 8px 0px, rgb(255, 255, 255) 0px 0px 0px 2px"
+        r, spec = self._rebuild_with(edit)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual(spec["core"]["color"]["neutral"]["white"]["value"], "#ffffff")
 
     def test_easing_must_be_read(self):
         # 13-12: the easing loop published its typed curve even when the cited reading lacked it.

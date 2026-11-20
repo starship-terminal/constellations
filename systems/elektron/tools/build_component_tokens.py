@@ -313,7 +313,17 @@ for key, comp, state, prop, desc in [
     except KeyError:
         pass
 # pure white, the focus ring's outer half (measured on every focus-visible state)
-neutral["white"] = {"value": shadow_value(st("nav-link", "focus-visible")["boxShadow"], "nav-link focus-visible")[0]["color"],
+def spread_ring(layers, spread, where):
+    """The one layer that is a flat ring of the given spread (no offset, no blur)."""
+    hits = [l for l in layers if l["offsetX"] == l["offsetY"] == l["blur"] == "0px" and l["spread"] == spread
+            and not l.get("inset")]
+    if len(hits) != 1:
+        raise SystemExit(f"{where}: expected one {spread} spread ring in the box-shadow, found {len(hits)}")
+    return hits[0]
+
+
+neutral["white"] = {"value": spread_ring(shadow_value(st("nav-link", "focus-visible")["boxShadow"], "nav-link focus-visible"),
+                                         "2px", "nav-link focus-visible")["color"],
                     "type": "color",
                     "source": "computed boxShadow of nav-link focus-visible (raw/components-computed.json): the colour of its 2px spread layer",
                     "description": "Pure white, used only as the focus ring's 2px spread layer and the lightest field borders."}
