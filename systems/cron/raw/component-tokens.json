@@ -339,7 +339,7 @@
    "content-max": {
     "value": "1000px",
     "type": "dimension",
-    "source": "declared .content max-width in the home page's inline styles (raw/css-vars.json sheets)",
+    "source": "Reconstruction: entered by hand at capture time; raw/css-vars.json holds no .content max-width rule",
     "description": "The .content max-width (1000px; 800px under 1000px viewport)."
    },
    "entry-w": {
