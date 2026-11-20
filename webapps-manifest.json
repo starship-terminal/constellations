@@ -3967,9 +3967,9 @@
       "description": "We make tools for the modern Nomad",
       "status": "pending",
       "package": null,
-      "notes": "https://nomadgoods.com/sg/login and /account/login are page-not-found. No account form.",
+      "notes": "https://nomadgoods.com/sg/login and /account/login are page-not-found. Public walk 2026-11-21: Account on https://nomadgoods.com/sg/ opens https://account.nomadgoods.com/authentication/login (email, then Continue). Form not submitted. No PR. Skipped the account shell this pass.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 12
     },
     {
@@ -4154,7 +4154,7 @@
       "description": "Create Your Branded AI Chat",
       "status": "pending",
       "package": null,
-      "notes": "https://outchat.ai/ did not load. https://app.outchat.ai/login is a Vercel 404. No sign-in form.",
+      "notes": "https://outchat.ai/ did not load. https://app.outchat.ai/login is a Vercel 404. No sign-in form. Public walk 2026-11-21: https://outchat.ai/ and https://www.outchat.ai/ timed out on port 443. https://app.outchat.ai/ is DEPLOYMENT_NOT_FOUND. No package. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 12
