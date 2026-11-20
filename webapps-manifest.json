@@ -6772,9 +6772,9 @@
       "description": "No-code website builder",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://webflow.com/login showed email and password. Continue with Google is a frame that did not open an account chooser. Password not submitted.",
+      "notes": "Email probe: https://webflow.com/login showed email and password. Continue with Google is a frame that did not open an account chooser. Password not submitted. Public walk 2026-11-21: Platform, Solutions, and Resources open menus and stay on the page. Source, Enterprise, and Pricing open their pages. Log in opens /login and stops. Start for free opens /signup and stops at a press-and-hold wall. Contact Sales opens the enterprise form and was not submitted. Dark mode is a button in the menu chrome. Phone uses one menu button for the same links. Google was not clicked. No email was typed. No form was submitted. Signed-in designer was not captured. Public package refresh in PR 1599 at 766c36a9f539. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 20
     },
     {
