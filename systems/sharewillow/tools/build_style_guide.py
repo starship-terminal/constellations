@@ -34,7 +34,7 @@ def group(title, node):
 
 core = TOKENS["core"]
 light = TOKENS["light"]
-dark = TOKENS["dark"]
+dark = TOKENS["light"]["band"]  # the hero and footer band, a group of the light set
 
 type_rows = []
 for name, token in core["typography"].items():

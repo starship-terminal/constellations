@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The builder writes tokens that match the raw readings, and refuses a guessed colour."""
+"""The builder writes tokens that match the raw readings."""
 import json
 import pathlib
 import unittest
@@ -8,6 +8,19 @@ HERE = pathlib.Path(__file__).resolve().parent.parent
 
 
 class BuildTokens(unittest.TestCase):
+    def test_committed_file_matches_builder(self):
+        # Built in memory; importing the builder writes nothing.
+        import sys
+        sys.path.insert(0, str(HERE / "tools"))
+        import build_tokens
+        self.assertEqual((HERE / "tokens.json").read_text(), build_tokens.render())
+
+    def test_band_is_part_of_the_light_page_not_a_theme(self):
+        tokens = json.loads((HERE / "tokens.json").read_text())
+        self.assertNotIn("dark", tokens)
+        self.assertEqual([t["id"] for t in tokens["$themes"]], ["light"])
+        self.assertEqual(tokens["light"]["band"]["bg"]["page"]["$value"], "#0d0a07")
+
     def test_light_page_is_the_measured_ivory(self):
         tokens = json.loads((HERE / "tokens.json").read_text())
         theme = json.loads((HERE / "raw" / "theme.css.json").read_text())
@@ -35,7 +48,6 @@ class BuildTokens(unittest.TestCase):
 
         walk(tokens["core"], "core")
         walk(tokens["light"], "light")
-        walk(tokens["dark"], "dark")
 
     def test_gaps_are_recorded_not_filled(self):
         tokens = json.loads((HERE / "tokens.json").read_text())

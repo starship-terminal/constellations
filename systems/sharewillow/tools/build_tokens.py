@@ -245,7 +245,9 @@ light = {
     },
 }
 
-dark = {
+# The hero and footer band on the light marketing page: a group of the light set, not a theme.
+# The site has no dark mode, so there is no dark set.
+band = {
     "bg": {
         "page": color(props["--color-hero-bg"], M_SRC + " --color-hero-bg. Footer computed rgb(13, 10, 7)."),
         "surface": color(props["--color-hero-surface"], M_SRC + " --color-hero-surface"),
@@ -264,19 +266,16 @@ dark = {
         "default": color(props["--color-accent"], M_SRC + " --color-accent. Same lemon, used on the dark footer band."),
         "ink": color(props["--color-accent-ink"], M_SRC + " --color-accent-ink"),
     },
-    "$extensions": {
-        "note": "Not a switched theme. These are the hero/footer tokens measured on the light marketing page. The site had no dark mode."
-    },
+    "$description": "The hero and footer band measured on the light marketing page. Not a theme: the site has no dark mode.",
 }
+light["band"] = band
 
 doc = {
     "$description": "ShareWillow public marketing (www.sharewillow.com) and signed-out login (app.sharewillow.com/login), measured 2026-11-19.",
     "core": core,
     "light": light,
-    "dark": dark,
     "$themes": [
         {"id": "light", "name": "light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}},
-        {"id": "dark", "name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
     ],
     "$extensions": {
         "notTokenised": [
@@ -292,5 +291,13 @@ doc = {
     },
 }
 
-(HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
-print("wrote", HERE / "tokens.json")
+
+
+def render():
+    """tokens.json's exact text; importing this module writes nothing."""
+    return json.dumps(doc, indent=2) + "\n"
+
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(render())
+    print("wrote", HERE / "tokens.json")

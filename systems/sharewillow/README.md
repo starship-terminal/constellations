@@ -80,7 +80,7 @@ The preview browser could not take a screenshot. Measurements were still read fr
 
 ## What to distrust
 
-The `dark` token set is the hero and footer palette on the light page. The site did not switch themes. Hover and pressed colours are stylesheet rules (`espresso/90`, `ivory`, `scale: 0.985`), not a hovered element. The marketing focus ring was declared as `ring-espresso/30` and was not forced. Keyboard focus on Product painted the browser outline `auto 1px rgb(229, 151, 0)`. The login checkbox was already checked, so the unchecked fill is missing. Display sizes that use `clamp()` are recorded at 1440, not at 390. Matter and Mackinac are proprietary and are not in this package. The style guide falls back to system fonts.
+The hero and footer palette on the light page is the `light.band` group. It was a `dark` token set, but the site did not switch themes, so it is not registered as a theme. Hover and pressed colours are stylesheet rules (`espresso/90`, `ivory`, `scale: 0.985`), not a hovered element. The marketing focus ring was declared as `ring-espresso/30` and was not forced. Keyboard focus on Product painted the browser outline `auto 1px rgb(229, 151, 0)`. The login checkbox was already checked, so the unchecked fill is missing. Display sizes that use `clamp()` are recorded at 1440, not at 390. Matter and Mackinac are proprietary and are not in this package. The style guide falls back to system fonts.
 
 ## Fonts
 
@@ -92,7 +92,7 @@ Marketing loads Matter (weights 300 to 700) and Mackinac (P22 Mackinac Pro, weig
 |---|---|
 | Colour, light marketing | Captured in [tokens.json](tokens.json) `light` and `core.palette` |
 | Colour, dark theme | Not present. No dark mode on the marketing site or the login page |
-| Hero and footer dark band | Captured as the `dark` set, from `--color-hero-*` and the footer computed style |
+| Hero and footer dark band | Captured as the `light.band` group, from `--color-hero-*` and the footer computed style |
 | Type | Captured for display, body, lede, nav, button, eyebrow, login title |
 | Spacing and radii | Captured from the custom properties and the measured controls |
 | Elevation | Captured for the header button and the product menu. Other shadows were not enumerated |
