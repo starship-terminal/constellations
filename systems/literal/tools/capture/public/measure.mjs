@@ -276,10 +276,18 @@ out._meta = {
 };
 // One page that fails (a bot check left showing, a missing control) is logged
 // and skipped; the others still run and are saved.
+const failedPages = [];
 for (const run of [home, signin, book, profile, explore, mobile, dark]) {
-  try { await run(); } catch (e) { log('PAGE FAILED', run.name, String(e.message || e).split('\n')[0]); }
+  try { await run(); } catch (e) {
+    const why = String(e.message || e).split('\n')[0].slice(0, 180);
+    failedPages.push({ page: run.name, error: why });
+    log('PAGE FAILED', run.name, why);
+  }
 }
+// The file says which pages this run could not read; their earlier readings are kept.
+if (failedPages.length) out._meta.failedPages = failedPages;
 fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 log('wrote', OUT, Object.keys(out.components).length, 'components');
 if (page) await page.close().catch(() => {});
 await browser.close();
+if (failedPages.length) { console.error(`${failedPages.length} page(s) failed; their earlier readings were kept`); process.exit(1); }

@@ -82,9 +82,14 @@ def reading(comp, state="default"):
         raise SystemExit(f"raw/components-computed.json has no {comp}.{state} style reading")
 
 
+def run_of(comp, state="default"):
+    """The date the cited state was read: a state kept after a failed rerun keeps its own run."""
+    return COMP[comp]["states"][state].get("run") or COMP[comp].get("run")
+
+
 def measured_type(comp, family):
     s = reading(comp)
-    src = f"Measured computed style on {comp}.default ({COMP[comp].get('page')}, {COMP[comp].get('run')}): fontSize, lineHeight, fontWeight"
+    src = f"Measured computed style on {comp}.default ({COMP[comp].get('page')}, {run_of(comp)}): fontSize, lineHeight, fontWeight"
     return typography(s["fontSize"], s["lineHeight"], s["fontWeight"], family, src)
 
 
@@ -95,7 +100,7 @@ def measured_radius(comp):
     if len(corners) != 1 or not re.fullmatch(r"\d+(\.\d+)?px", v):
         raise SystemExit(f"{comp}: corners are not one px radius: {sorted(corners)}")
     return {"$type": "dimension", "$value": v,
-            "$extensions": {"source": f"Measured computed borderTopLeftRadius on {comp}.default ({COMP[comp].get('page')}, {COMP[comp].get('run')})"}}
+            "$extensions": {"source": f"Measured computed borderTopLeftRadius on {comp}.default ({COMP[comp].get('page')}, {run_of(comp)})"}}
 
 
 def typography(size, line, weight, family, source):
@@ -161,8 +166,8 @@ def core():
         "$extensions": {"notTokenised": not_tokenised},
         "font": {
             "family": {
-                "sans": font(reading("nav-explore")["fontFamily"], f"Measured computed fontFamily on nav-explore.default (home, {COMP['nav-explore'].get('run')}), the Inter every UI control measures"),
-                "serif": font(reading("hero-title")["fontFamily"], f"Measured computed fontFamily on hero-title.default (home, {COMP['hero-title'].get('run')})"),
+                "sans": font(reading("nav-explore")["fontFamily"], f"Measured computed fontFamily on nav-explore.default (home, {run_of('nav-explore')}), the Inter every UI control measures"),
+                "serif": font(reading("hero-title")["fontFamily"], f"Measured computed fontFamily on hero-title.default (home, {run_of('hero-title')})"),
             }
         },
         "typography": {
