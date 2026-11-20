@@ -587,12 +587,12 @@ def rules_key_problems(rules):
             return []
         for i, o in enumerate(obj):
             keys(o, level, f"{where}[{i}]")
-        return [o for o in obj if isinstance(o, dict)]
+        return [(i, o) for i, o in enumerate(obj) if isinstance(o, dict)]   # keep each entry's own index
 
     keys(rules, "the top level", "")
     if "ocr" in rules:
         keys(rules["ocr"], "ocr", "ocr")
-    for i, fam in enumerate(items(rules.get("families", []), "a family", "families")):
+    for i, fam in items(rules.get("families", []), "a family", "families"):
         items(fam.get("ocr_lines", []), "an ocr_lines entry", f"families[{i}].ocr_lines")
     return out
 

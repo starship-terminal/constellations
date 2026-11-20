@@ -640,6 +640,9 @@ class RulesKeys(unittest.TestCase):
         self.assertEqual(R.rules_key_problems({"ocr": [], "families": [7]}),
                          ["ocr must be a JSON object", "families[0] must be a JSON object"])
         self.assertEqual(R.rules_key_problems({"families": {}}), ["families must be a list"])
+        # a bad entry before a good one does not shift the good one's index in the message
+        self.assertEqual(R.rules_key_problems({"families": [7, {"ocr_lines": [{"bogus": 1}]}]}),
+                         ["families[0] must be a JSON object", "families[1].ocr_lines[0].bogus is not a rules-file key"])
 
     def test_documented_keys_pass(self):
         rules = {"families": [{"name": "n", "files": ["*"], "skip": [], "size": [[1, 1]], "rects": [],
