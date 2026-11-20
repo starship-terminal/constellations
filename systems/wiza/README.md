@@ -37,6 +37,7 @@ At 390px the h1 token computed to 49.2727px and `--site--margin` computed to 18.
 - **Login is a different system.** Inter var and 6px radius. It is not the marketing button.
 - **Signup was a Cloudflare challenge.** It was not measured.
 - **Britti Sans and Inter files are not shipped.** The tokens name the families.
+- **Type line heights are hand entries.** raw/ holds the declared font-size clamps and line-height steps, not each style's computed line height or tracking. Each `core.typography` step's line height applies the declared steps by hand (headings at 1, text at 1.3 or 1.5); `display` is 80px/80px. No step carries a letterSpacing. The `-0.03em` tracking token is under `core.$extensions.notTokenised`. `light.color.heroGround`, `core.layout.contentMax` and `core.font.family.auth` were read but not saved, and are labelled Reconstruction.
 
 ## Fonts
 
