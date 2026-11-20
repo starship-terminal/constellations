@@ -52,6 +52,22 @@ function collect() {
           if (cs.strokeLinejoin !== 'miter') t.setAttribute('stroke-linejoin', cs.strokeLinejoin);
         }
       });
+      // A gradient's stops can take their colour from a class or a style the copy will not keep (both are
+      // stripped below), which leaves a stop drawing black: the computed stop-color and stop-opacity are
+      // written onto each copied stop, unless its own plain attribute already says it.
+      const stops = [...src.querySelectorAll('stop')], cstops = [...dst.querySelectorAll('stop')];
+      stops.forEach((e, i) => {
+        const t = cstops[i];
+        const own = t && t.getAttribute('stop-color');
+        if (!t || (own && !own.startsWith('var(') && !e.hasAttribute('class') && !e.hasAttribute('style'))) return;
+        const cs = getComputedStyle(e);
+        const parts = (cs.stopColor.match(/rgba?\(([^)]+)\)/) || [, ''])[1].split(/[,/\s]+/).filter(Boolean);
+        const alpha = parts.length > 3 ? parseFloat(parts[3]) : 1;
+        t.setAttribute('stop-color', rgb(cs.stopColor) === col ? 'currentColor' : hex(cs.stopColor));
+        const op = parseFloat(cs.stopOpacity) * alpha;
+        if (op !== 1) t.setAttribute('stop-opacity', +op.toFixed(3));
+        else t.removeAttribute('stop-opacity');
+      });
     };
     const shapes = [...s.querySelectorAll(SHAPES)];
     paintInto(s, c);

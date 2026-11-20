@@ -2,6 +2,7 @@
 conversion and argument checks. Run with `make test`; skipped without node (and, for the
 measure.mjs check, without the capture Playwright, $PLAYWRIGHT or ~/.design-systems/pw)."""
 import json
+import re
 import os
 import shutil
 import subprocess
@@ -44,6 +45,44 @@ class IconRefs(unittest.TestCase):
                              capture_output=True, text=True, timeout=30)
         self.assertEqual(res.returncode, 0, res.stderr)
         self.assertEqual(json.loads(res.stdout), ["c-2", "g1", "m3", "s1", "s2"])
+
+
+def icons_collect():
+    """The in-page collect() from icons.mjs, as source."""
+    lines = (CAPTURE / "icons.mjs").read_text().splitlines()
+    i = lines.index("function collect() {")
+    return "\n".join(lines[i:lines.index("}", i) + 1])
+
+
+@unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+class IconPaint(unittest.TestCase):
+    def test_a_shared_gradient_keeps_its_styled_stop_colours(self):
+        # Greptile on PR 1004: a gradient imported from the page whose stops are coloured by a class or a
+        # style lost those colours when the copy's classes and styles were stripped, and drew black.
+        page = ("<style>.a{stop-color:#ff0000}.b{stop-color:rgba(0,0,255,0.5)}</style>"
+                "<svg width='0' height='0' style='position:absolute'><defs><linearGradient id='g'>"
+                "<stop offset='0' class='a'/><stop offset='1' style='stop-color:#00ff00;stop-opacity:0.4'/>"
+                "<stop offset='1' class='b'/><stop offset='1' stop-color='#123456'/></linearGradient></defs></svg>"
+                "<button aria-label='Go'><svg width='24' height='24' viewBox='0 0 24 24'><rect width='24' height='24' fill='url(#g)'/></svg></button>")
+        script = (f"const pw = await import({json.dumps(PLAYWRIGHT)}); const {{ chromium }} = pw.default ?? pw;\n"
+                  f"{icons_collect()}\n"
+                  "const b = await chromium.launch(); const p = await b.newPage();\n"
+                  f"await p.setContent({json.dumps(page)});\n"
+                  "const list = await p.evaluate(collect); await b.close();\n"
+                  "console.log(JSON.stringify(list.map((x) => x.html)));")
+        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
+        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+        (html,) = json.loads(res.stdout)
+        stops = re.findall(r"<stop[^>]*>", html)
+        self.assertEqual(len(stops), 4, html)
+        self.assertIn('stop-color="#ff0000"', stops[0])
+        self.assertIn('stop-color="#00ff00"', stops[1])
+        self.assertIn('stop-opacity="0.4"', stops[1])
+        self.assertIn('stop-color="#0000ff"', stops[2])
+        self.assertIn('stop-opacity="0.5"', stops[2])
+        self.assertIn('stop-color="#123456"', stops[3])
+        self.assertNotIn("class=", html)
+        self.assertNotIn("style=", html)
 
 
 @unittest.skipIf(NODE is None, "node is not on PATH")
