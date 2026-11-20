@@ -174,7 +174,8 @@ function flat(node, prefix) {
   for (const [k, v] of Object.entries(node || {})) {
     if (k.startsWith("$")) continue;
     const path = prefix ? prefix + "." + k : k;
-    if (v && typeof v === "object" && "$value" in v) out.push([path, v]);
+    // build_style_guide.py inlines the slim tree: a leaf is {v, t, s}, not DTCG $value/$type.
+    if (v && typeof v === "object" && "v" in v && "t" in v) out.push([path, v]);
     else if (v && typeof v === "object") out.push(...flat(v, path));
   }
   return out;
@@ -184,13 +185,14 @@ function paint() {
   const set = TOKENS[mode] || {};
   const host = document.getElementById("swatches");
   host.innerHTML = "";
-  for (const [path, token] of flat(set, mode)) {
+  for (const [path, token] of flat(set, "")) {
     if (token.t !== "color") continue;
     const row = document.createElement("div");
     row.className = "sw";
     row.innerHTML = "<i></i><div><b></b><span></span></div>";
-    row.querySelector("i").style.background = token.v;
-    row.querySelector("b").textContent = path;
+    // the set's custom property, so an alias paints its resolved colour
+    row.querySelector("i").style.background = "var(--" + path.replace(/[^a-zA-Z0-9-]/g, "-") + ")";
+    row.querySelector("b").textContent = mode + "." + path;
     row.querySelector("span").textContent = token.v;
     host.appendChild(row);
   }
@@ -201,6 +203,7 @@ function paint() {
     row.className = "typerow";
     const sample = document.createElement("div");
     sample.textContent = "Build for what's next";
+    sample.style.fontFamily = String(token.v.fontFamily).replace(/\{([^{}]+)\}/g, (m, n) => "var(--" + n.replace(/[^a-zA-Z0-9-]/g, "-") + ")");
     sample.style.fontSize = token.v.fontSize;
     sample.style.fontWeight = token.v.fontWeight;
     sample.style.lineHeight = token.v.lineHeight;
