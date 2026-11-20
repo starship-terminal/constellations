@@ -92,5 +92,24 @@ class RebuildTest(unittest.TestCase):
         entry = built.split("#### testimonial-arrow\n")[1].split("\n#### ")[0]
         self.assertIn("| Skipped |", entry)
 
+    def test_recaptured_modal_keeps_the_dialog_tokens(self):
+        # After the corrected selector reads div.modal itself, it is not in its own ancestors list.
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("capture", "__pycache__"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            f = root / "raw" / "components-computed.json"
+            j = json.loads(f.read_text())
+            v = j["components"]["signin-dialog"]["states"]["default"]
+            v.update(tag="div", classes="modal", ancestors=[])
+            v["style"].update(borderTopLeftRadius="24px", width="441px")
+            f.write_text(json.dumps(j))
+            for b in ("build_component_tokens.py", "build_tokens.py"):
+                subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
+            dlg = json.loads((root / "tokens.json").read_text())["light"]["component"]["dialog"]
+            self.assertEqual(dlg["radius"]["$value"], "24px")
+            self.assertEqual(dlg["width"]["$value"], "441px")
+            self.assertNotIn("wrong element", dlg["width"]["$extensions"]["source"])
+
 if __name__ == "__main__":
     unittest.main()

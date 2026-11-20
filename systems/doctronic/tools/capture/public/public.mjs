@@ -214,15 +214,19 @@ for (const { k, mob } of runs) {
         if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.path); await ctx.close(); continue; }
         await wait(p, spec.wait || 7000);
         // The theme is only requested (localStorage.theme); check what painted before naming a shot
-        // after it: a dark run whose page body paints a light ground (or the reverse) is skipped.
+        // after it. The canvas is the first opaque ground among the page's main content area
+        // (doctronic paints it on main.layoutContent while body stays transparent), body and html;
+        // when all are transparent the canvas is the browser's white.
         const lum = await p.evaluate(() => {
-          for (const el of [document.body, document.documentElement]) {
+          for (const el of [document.querySelector('main'), document.body, document.documentElement]) {
+            if (!el) continue;
             const m = getComputedStyle(el).backgroundColor.match(/[\d.]+/g);
             if (m && (m.length < 4 || +m[3] > 0)) return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255;
           }
-          return null;
+          return 1;
         }).catch(() => null);
-        if (lum !== null && (theme === 'dark') !== (lum < 0.5)) { log('  THEME MISMATCH', runName, 'painted luminance', lum.toFixed(2), '- skipped'); await ctx.close(); continue; }
+        if (lum === null) { log('  THEME UNCHECKED', runName, '- skipped'); await ctx.close(); continue; }
+        if ((theme === 'dark') !== (lum < 0.5)) { log('  THEME MISMATCH', runName, 'painted luminance', lum.toFixed(2), '- skipped'); await ctx.close(); continue; }
       }
       await spec.run(p, S);
     } catch (e) { log('  PAGE FAILED', runName, e.message.split('\n')[0]); }

@@ -444,6 +444,14 @@ def ancestor_node(comp, state, match):
     return None
 
 
+def is_node(comp, state, match):
+    """Whether the component's own element is the node `match` names ("form.inputCard":
+    tag form, a class containing inputCard)."""
+    v = C.get(comp, {}).get("states", {}).get(state, {})
+    tag, _, cls = match.partition(".")
+    return v.get("tag") == tag and any(cls in c for c in (v.get("classes") or "").split())
+
+
 def layer_prop(layer, prop):
     """A component prop read off a paint/ancestor record: width/height come
     from its "WxH" size, a border-radius prop from its radius."""
@@ -476,13 +484,29 @@ for key, cname, state, prop, desc, layer in [
     ("header.height", "header", "default", "height", "The measured top-bar height (the declared --header-height is 72px).", None),
 ]:
     if layer == "section":
-        # signin-dialog read the dialog's transparent inner section (the selector's DOM-order .or()
-        # fallback), not the painted div.modal; the width is that section's.
-        if have(cname, state, prop):
+        # The committed signin-dialog reading is the dialog's transparent inner section (the
+        # selector's DOM-order .or() fallback), not the painted div.modal; its width says so. A
+        # recapture that reads the modal itself is an ordinary reading.
+        if have(cname, state, prop) and C[cname]["states"][state].get("tag") != "section":
+            comp.setdefault(key.split(".")[0], {})[key.split(".")[1]] = {
+                "type": "dimension", "value": st(cname, state)[prop],
+                "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)", "description": desc}
+        elif have(cname, state, prop):
             node = comp.setdefault(key.split(".")[0], {})
             node[key.split(".")[1]] = {"type": "dimension", "value": st(cname, state)[prop],
                                        "source": f"computed {prop} of {cname} {state} (raw/components-computed.json); read from the dialog's transparent inner section, not the painted div.modal: read from the wrong element, recapture needed",
                                        "description": desc}
+        continue
+    if layer and is_node(cname, state, layer[1]) and have(cname, state, prop):
+        # The selected element is itself the painted node (a recapture with the corrected
+        # selector): read its own computed style.
+        node = comp
+        parts = key.split(".")
+        for p in parts[:-1]:
+            node = node.setdefault(p, {})
+        node[parts[-1]] = {"type": "dimension", "value": st(cname, state)[prop],
+                           "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
+                           "description": desc}
         continue
     if layer:
         kind, match = layer
