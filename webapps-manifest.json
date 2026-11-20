@@ -6602,9 +6602,9 @@
       "description": "The world's only all-in-one video solution",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://vimeo.com/log_in Continue with Google signed in and opened a survey. Survey not filled. Product not walked.",
+      "notes": "Email probe: https://vimeo.com/log_in Continue with Google signed in and opened a survey. Survey not filled. Product not walked. Signed-in walk: https://vimeo.com/log_in is a sign-in wall (Google, Facebook, Apple, email). https://vimeo.com/auth-modal asks to sign up or log in. Session was not present. No PR. Post-auth pages were not reached. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 20
     },
     {
