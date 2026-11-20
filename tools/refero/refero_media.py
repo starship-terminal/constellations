@@ -64,8 +64,9 @@ KINDS = {
     "favicons": (".png", "image/"),
 }
 
-# The favicon "remote" is Google's faviconV2 endpoint for the source host;
-# the mirrored file is what that URL returned.
+# Google's faviconV2 endpoint for the source host: where mirror_media.py and
+# fetch_icon.py download a favicon, host-side. Never emitted to a browser
+# (catalog.py's favicon pair has no remote), so browsing tells Google nothing.
 FAVICON_API = ("https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON"
                "&fallback_opts=TYPE,SIZE,URL&size=128&url=")
 
