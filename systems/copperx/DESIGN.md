@@ -166,6 +166,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - `core.spacing` steps 16 and 24 are a derived 4px scale. The measured paddings are 8px and 12px on the buttons. Copperx does not publish a space scale.
 - The product-page title token (`core.typography.title`, 48px) is a reading of the corporate-card headline's role, not a custom property. The home display is the 96px token.
 - Pressed colour is a forced `:active`. If the site swaps the node in script on mousedown, that swap is missing.

@@ -98,6 +98,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 ## Known gaps
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **The dashboard itself.** Column's product — ledgers, transfers, account controls — sits behind `dashboard.column.com` sign-in and was never crossed; the login form was measured at rest only. docs.column.com was not captured.
 - **Hidden menu items.** The navy "Sign up" choice inside the GetStartedMenu renders eager in the DOM but `visibility:hidden` at rest, so it is not measured; the trigger (a local menu toggle the kit never presses, since "get started" reads as a signup step) is.
 - **Motion is thin.** The sheets declare no duration/ease tokens; whatever the chrome actually transitions is measured and reported, nothing more.

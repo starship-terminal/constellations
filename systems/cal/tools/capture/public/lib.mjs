@@ -35,11 +35,11 @@ export const RAW = path.join(REF, 'raw');
 // overlay was ever painted for this client; the generic hider stays anyway.
 export const M = (name) => `[class*="${name}"]`;
 
-// The per-context patches every page gets: the webdriver mask, plus a record of
+// The per-context patches every page gets: a record of
 // the real devicePixelRatio before app code runs.
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // automation flag: left as the browser sets it (navigator.webdriver is not masked).
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

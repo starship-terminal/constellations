@@ -106,6 +106,7 @@ Nothing was signed into, created, submitted or paid for: the auth card was measu
 
 ## What to distrust
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **This is the public surface, not the editor.** The design editor, Brand Kit, dashboards, teams and account sit behind the auth card and are uncaptured. Marketing pages describe the product; nothing here verifies how it behaves. Treat the product's own design system as unknown.
 - **"Dark" is a painted surface, not a toggle.** The home header/hero band and feature sections paint dark through `.theme.dark` elements on a light page — nothing on the public surface toggles it. The `dark` token set is the translucent-white state layer those surfaces paint, read as surface roles, not a user-selectable mode.
 - **The hero's colour field is media, not CSS.** The purple-to-teal band is painted by an image/video layer behind the hero — no flat-colour token claims to be it. The teal→purple gradient token is the *logo* gradient from the StyleX layer, a different thing.

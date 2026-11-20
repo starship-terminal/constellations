@@ -103,6 +103,7 @@ Every public surface was captured signed-out: routes were opened in fresh contex
 
 ### Honest gaps
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **library.me.sh** (the host /terms and /privacy redirect to) sits behind a "Confirm you are human" verification gate — not captured.
 - **/press/kit** redirects to a public Notion press kit (clayearth.notion.site) — external, not captured.
 - The app interior, checkout, downloads (/start links) and every OAuth/sign-in action — boundaries, never crossed.

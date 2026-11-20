@@ -97,6 +97,7 @@ Every number in [tokens.json](tokens.json) and [raw/measurements.md](raw/measure
 
 ## What is not here
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **The product.** Cofounder's OS — the agent workspace, integrations, settings and billing — lives behind app.cofounder.co sign-in; every CTA links there and was never followed, the login card was measured at rest and never submitted, and no checkout was entered. docs.cofounder.co (the docs/CLI surface) was not captured.
 - **Dark theme.** The site paints one light theme; the #1a6fd1 tools band and the pixel-art hero art are bands inside it, not a second theme.
 - **A few controls that never paint.** The campaign carousel's Previous/Next arrow buttons exist in the DOM but never render a visible box signed out; the how-to guide has no landmark element around its content column. Both are recorded as missing in [components.md](components.md) rather than faked.

@@ -106,6 +106,7 @@ Nothing was signed into, created, submitted or paid for: the login.copy.ai auth 
 
 ## What to distrust
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **This is the public surface, not the product.** The workflows builder, the GTM dashboards, chat, tables, teams and account sit behind the auth card and are uncaptured. Marketing pages describe the product; nothing here verifies how it behaves. Treat the product's own design system as unknown.
 - **"Dark" is a painted surface, not a toggle.** The top banner fills #171717 and the platform feature card bands are #29007a deep purple — painted treatments inside a light page. The `dark` token set is the small role set those bands paint, not a user-selectable mode.
 - **The login card is a second system.** login.copy.ai paints its own tokens — #5753c6 links, #e5e7eb borders, 4.5px radii, an `interFont` stack — that differ from the marketing site's. Both are tokenised and labelled; don't mix them.

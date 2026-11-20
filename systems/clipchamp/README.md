@@ -83,6 +83,7 @@ Every number in [tokens.json](tokens.json) and [raw/measurements.md](raw/measure
 
 ## What is not here
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **The editor.** app.clipchamp.com's editing surface, templates' interactive previews, export and every OAuth/account action sit behind sign-in — never crossed. The sign-in card was measured at rest; the email path (the only field) was not entered.
 - **Dark theme.** The site paints one light theme; dark bands inside it are measured as `light.surface.dark`, not a second theme.
 - **Checkout.** The Premium plan's purchase flow was never entered; pricing was read signed-out.

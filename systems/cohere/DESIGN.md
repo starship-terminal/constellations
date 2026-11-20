@@ -110,6 +110,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### Known gaps (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - `cta-dark`'s hover state could not be captured: under a real hover the pill's `ease-button-gradient` animation re-renders the node, so the locator goes stale mid-evaluate (the failure is recorded in the state's `error` field). The identical hover swap is measured on `nav-cta` (background → pureBlack), which backs `light.accentHover`.
 - The pricing tabs were measured in their two states (on/off) without switching the tab — the rate table content under the inactive tab was never painted for capture.
 - The visited-link colour is declared (`.text-coral-700` #ca492d via the `:visited` variant) but no visited link could be rendered signed-out; the token carries the declared provenance.

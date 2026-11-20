@@ -97,6 +97,7 @@ Every public surface was captured signed-out in headless Chromium (Playwright, `
 
 ### Honest gaps
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **The journal app itself** — entries, editor, settings — sits behind sign-in; never crossed.
 - **The sign-in card's computed styles** are unreadable by design: the canvas paints, so `light.app.*` values are pixel-sampled and labelled.
 - **/journal-prompts** threw a transient human-verification challenge on one pass and captured clean on retry; if it recurs the route is a boundary.

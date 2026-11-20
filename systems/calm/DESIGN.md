@@ -223,6 +223,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **This is the public shell, not the product.** Playback, the home feed, library, profile, check-ins, gifting/checkout flows and every post-login surface sit behind the login card and are uncaptured. Treat the product's own design system past the preview as unknown.
 - **Two surfaces, not a theme toggle.** The marketing pages are light-only and /app/sleep, /app/meditate and /app/music are dark-only; no switch is offered. `tokens.json` keeps the app-shell roles in the `dark` set — read them as the preview shell, not a user-selectable dark mode.
 - **The /app/* pages are a preview, not the app.** The rail, category pills, content rails and cards are the real product shell served signed out, but every card is locked and every play action leads to signup.

@@ -106,6 +106,7 @@ Nothing was signed into, booked or submitted: the login and signup pages were ca
 
 ## What to distrust
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **This is the public shell, not the product.** The scheduler, event-type editor, availability, bookings, workflows, insights and settings sit behind app.cal.com and are uncaptured. Treat the product's own design system as unknown — a signed-in pass would add real coverage.
 - **Two token layers, three hosts.** Marketing values come from `--color-hp-*`; the booker/auth values from `--cal-*`. They disagree where they overlap (marketing ink `#242424` vs booker text `#3c3e44`), so the light set keeps them apart at `*` and `booker.*`.
 - **One booking page, one brand.** The booker is cal.com/peer's event type; its `#292929` paint on today/Confirm is this host's effective brand — other users' pages recolour and reflow.

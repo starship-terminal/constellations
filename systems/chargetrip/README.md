@@ -108,6 +108,7 @@ Nothing was signed into, booked, sent or consented to: the Products flyout and t
 
 ## What to distrust
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **The signed-in product is uncaptured.** The routing engine, dashboard, API keys and the working playground all sit behind account.chargetrip.io; the sign-in card and the developers/playground shells were captured as boundaries and nothing authenticated was inferred.
 - **Two stacks on one domain group.** The marketing site is a Framer build (Geist + Cirka, `--token-*` palette); account.chargetrip.io's sign-in card is a different stack (Tailwind v4, oklch colours, Geist) — the sign-in measurements are real but belong to a different design layer, and are recorded as such.
 - **One theme only.** Every captured route paints the same light surface; the dark hero band and the "Most popular" plan card are dark islands, not a dark theme — `tokens.json` ships a single `light` set.
