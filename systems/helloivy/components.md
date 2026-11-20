@@ -461,37 +461,43 @@ Read on 2026-11-17T12:50:48.903Z.
 
 ## Icons
 
-39 distinct inline-SVG icons were collected from the live pages into [icons/](icons) by `tools/capture/icons.mjs`, indexed in [icons/INDEX.tsv](icons/INDEX.tsv): a file is named from `tools/capture/icon-names.tsv` where its geometry hash is listed, else the label or class of the control it sits in, else `icon-<hash>`; colour is kept as `currentColor` wherever it matched the text colour, so each icon recolours from CSS `color` the way it does on the site. The icons are the product's artwork — borrow the set's grammar (sizes, stroke-vs-fill, naming roles), never the artwork itself.
+49 distinct inline-SVG icons were collected from the live pages into [icons/](icons) by `tools/capture/icons.mjs`, indexed in [icons/INDEX.tsv](icons/INDEX.tsv): a file is named from `tools/capture/icon-names.tsv` where its geometry hash is listed, else the label or class of the control it sits in, else `icon-<hash>`; colour is kept as `currentColor` wherever it matched the text colour, so each icon recolours from CSS `color` the way it does on the site. The icons are the product's artwork — borrow the set's grammar (sizes, stroke-vs-fill, naming roles), never the artwork itself.
 
 | Icon | Rendered sizes | View box | Style | Seen on | Next to |
 |---|---|---|---|---|---|
 | [icon-22e6e660](icons/icon-22e6e660.svg) | 17x17 |  | fill | home; features; feature-tasks; feature-annotate; feature-portal; pricing; about; blog; blog-post; release-notes; project-management; project-collab; alt-notion; terms; nav; dark |  |
-| [looks-great-get-started](icons/looks-great-get-started.svg) | 20x20 48x48 | 0 0 256 256 | fill | home; features; feature-tasks; feature-annotate; feature-portal; pricing; about; blog; blog-post; release-notes; project-collab; alt-notion; terms; nav; dark | LOOKS GREAT GET STARTED / Sign up |
-| [icon-fa065dc7](icons/icon-fa065dc7.svg) | 40x17 | 0 0 256 256 | fill | home; features; feature-tasks; feature-annotate; feature-portal; pricing; about; blog; blog-post; release-notes; project-collab; alt-notion; terms; nav |  |
-| [icon-4ec79d1e](icons/icon-4ec79d1e.svg) | 16x16 | 0 0 24 24 | stroke | home; features; feature-tasks; feature-annotate; feature-portal; pricing; about; blog; blog-post; release-notes; project-collab; alt-notion; terms; nav |  |
+| [looks-great-get-started](icons/looks-great-get-started.svg) | 20x20 44x44 48x48 | 0 0 256 256 | fill | home; features; feature-tasks; feature-annotate; feature-portal; pricing; about; blog; blog-post; release-notes; project-management; project-collab; alt-notion; terms; nav; dark | LOOKS GREAT GET STARTED / Sign up |
+| [icon-4ec79d1e](icons/icon-4ec79d1e.svg) | 16x16 | 0 0 24 24 | stroke | home; features; feature-tasks; feature-annotate; feature-portal; pricing; about; blog; blog-post; release-notes; project-management; project-collab; alt-notion; terms; nav |  |
+| [icon-fa065dc7](icons/icon-fa065dc7.svg) | 40x17 | 0 0 256 256 | fill | home; features; feature-tasks; feature-annotate; feature-portal; pricing; about; blog; blog-post; release-notes; project-management; project-collab; alt-notion; terms; nav |  |
 | [try-it-for-free](icons/try-it-for-free.svg) | 17x22 |  | fill | home; features; pricing; nav; dark | Try it for free |
 | [icon-10663c0e](icons/icon-10663c0e.svg) | 33x33 | 0 0 256 256 | fill | home; pricing; alt-notion; nav; dark |  |
 | [icon-781f7e5f](icons/icon-781f7e5f.svg) | 31x41 |  | fill | home; nav; dark |  |
-| [features](icons/features.svg) | 22x22 | 0 0 24 24 | stroke | feature-annotate; feature-portal; blog-post | FEATURES / BLOG |
+| [features](icons/features.svg) | 22x22 | 0 0 24 24 | stroke | feature-tasks; feature-annotate; feature-portal; blog-post | FEATURES / BLOG |
 | [icon-1b2d580c](icons/icon-1b2d580c.svg) | 20x20 | 0 0 256 256 | fill | pricing |  |
+| [icon-3a302b70](icons/icon-3a302b70.svg) | 60x60 | 0 0 24 24 | stroke | project-management; project-collab |  |
 | [icon-80f86dad](icons/icon-80f86dad.svg) | 18x18 |  | fill | nav |  |
 | [icon-a774d0d1](icons/icon-a774d0d1.svg) | 20x20 | 0 0 256 256 | fill | pricing |  |
 | [icon-c97598f2](icons/icon-c97598f2.svg) | 20x20 |  | fill | pricing |  |
 | [get-notified](icons/get-notified.svg) | 26x26 | 0 0 256 256 | fill | feature-annotate; feature-portal | Get notified / Real-time feedback and notifications |
 | [icon-f167ab6b](icons/icon-f167ab6b.svg) | 26x26 | 0 0 256 256 | fill | feature-annotate; feature-portal | Resolve feedback and approve / Annotations and approvals |
+| [drag-drop](icons/drag-drop.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Drag & drop |
 | [icon-0786a42a](icons/icon-0786a42a.svg) | 26x26 | 0 0 256 256 | fill | feature-portal | An interactive newspaper for your team a |
 | [icon-0dcd37b5](icons/icon-0dcd37b5.svg) | 26x26 | 0 0 256 256 | fill | feature-annotate | Real-time image annotation |
+| [minimize-task-columns](icons/minimize-task-columns.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Minimize task columns |
 | [icon-23d5ee50](icons/icon-23d5ee50.svg) | 36x36 |  | fill | alt-notion |  |
 | [icon-249e8ecd](icons/icon-249e8ecd.svg) | 17x17 |  | fill | docs |  |
+| [icon-31b6e6a5](icons/icon-31b6e6a5.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Full-screen or modal view |
 | [icon-36995227](icons/icon-36995227.svg) | 24x24 |  | fill | docs | What's new? See all Hello Ivy's latest r |
 | [icon-380ae1e0](icons/icon-380ae1e0.svg) | 60x60 | 0 0 24 24 | stroke | feature-portal |  |
-| [icon-3a302b70](icons/icon-3a302b70.svg) | 60x60 | 0 0 24 24 | stroke | project-collab |  |
 | [icon-3a5f6d01](icons/icon-3a5f6d01.svg) | 26x26 | 0 0 256 256 | fill | feature-annotate | From feedback to task in one click |
+| [subtasks](icons/subtasks.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Subtasks |
 | [login-with-google](icons/login-with-google.svg) | 30x20 | 0 0 30 30 | fill | app-login | Login with Google |
 | [icon-5fb959c8](icons/icon-5fb959c8.svg) | 60x60 | 0 0 24 24 | stroke | feature-tasks |  |
 | [effortless-file-sharing](icons/effortless-file-sharing.svg) | 26x26 | 0 0 256 256 | fill | feature-portal | Effortless file sharing |
 | [icon-64fc511b](icons/icon-64fc511b.svg) | 16x16 | 0 0 24 24 | stroke | dark |  |
 | [icon-66d70966](icons/icon-66d70966.svg) | 24x24 |  | fill | docs | Just beginning? Start with a step by ste |
+| [icon-68adee91](icons/icon-68adee91.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Task activity and history |
+| [icon-84fb7579](icons/icon-84fb7579.svg) | 24x24 | 0 0 24 24 | stroke | docs | Task management for experts How to manag |
 | [icon-9296637f](icons/icon-9296637f.svg) | 40x17 41x17 43x18 44x19 | 0 0 256 256 | fill | dark |  |
 | [icon-97a5ccb9](icons/icon-97a5ccb9.svg) | 17x17 |  | fill | doc-page |  |
 | [label-tasks](icons/label-tasks.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Label tasks |
@@ -500,10 +506,14 @@ Read on 2026-11-17T12:50:48.903Z.
 | [icon-a58786a0](icons/icon-a58786a0.svg) | 60x60 | 0 0 24 24 | stroke | about |  |
 | [icon-a74dd1fc](icons/icon-a74dd1fc.svg) | 60x60 | 0 0 24 24 | stroke | feature-annotate |  |
 | [shared-taskboards](icons/shared-taskboards.svg) | 26x26 | 0 0 256 256 | fill | feature-portal | Shared taskboards |
+| [chat-in-context](icons/chat-in-context.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Chat in context |
 | [custom-branding](icons/custom-branding.svg) | 26x26 | 0 0 256 256 | fill | feature-portal | Custom branding |
+| [mentions](icons/mentions.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Mentions |
 | [upload-from-figma](icons/upload-from-figma.svg) | 26x26 | 0 0 256 256 | fill | feature-annotate | Upload from Figma |
-| [icon-cd530830](icons/icon-cd530830.svg) | 39x46 47x50 | 0 0 165 215 | stroke | app-share |  |
+| [connect-everything](icons/connect-everything.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Connect everything |
+| [icon-d2a31722](icons/icon-d2a31722.svg) | 26x26 | 0 0 256 256 | fill | feature-tasks | Display options for tasks |
 | [share-work-with-anyone](icons/share-work-with-anyone.svg) | 26x26 | 0 0 256 256 | fill | feature-annotate | Share work with anyone |
+| [icon-f8edf7f1](icons/icon-f8edf7f1.svg) | 20x20 | 0 0 256 256 | fill | pricing |  |
 
 ## Gaps
 

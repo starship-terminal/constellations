@@ -2,6 +2,7 @@
 // Dimension checks do not prove popup contents or a DOM-to-image crop mapping.
 import fs from 'node:fs';
 import path from 'node:path';
+import { safeUrl } from './safe-url.mjs';
 
 export function pngDimensions(bytes) {
   if (bytes.length < 33 || !bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])) || bytes.readUInt32BE(8) !== 13 ||
@@ -22,8 +23,9 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     schemaVersion: 1,
     capturedAt,
     screenshot: path.basename(options.path),
-    // Never read page.url(): it can contain a signed URL or an account ID.
-    sanitizedSourceUrl: requested.sanitizedSourceUrl ?? null,
+    // Never read page.url(): it can contain a signed URL or an account ID. A URL the caller passes goes
+    // through safeUrl too (origin and route words only), so passing page.url() records no query or id.
+    sanitizedSourceUrl: requested.sanitizedSourceUrl == null ? null : safeUrl(requested.sanitizedSourceUrl),
     requested: { viewport: requested.viewport ?? null, deviceScaleFactor: requested.deviceScaleFactor ?? null },
     configuredViewport: null,
     actual: null,
@@ -39,24 +41,21 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     const configuredViewport = page.viewportSize();
     const actual = await page.evaluate(() => {
       const root = document.documentElement, body = document.body, visual = window.visualViewport;
-      // Some sites hang the theme on <body> instead of <html> (fourmula.ai's
-      // Webflow theme lives on body.dark, inverted against the paint), so the
-      // same restricted markers are recorded for both elements — a sidecar can
-      // then vouch for which paint the shot actually reached.
-      const themeOf = (el) => el ? {
+      // PACKAGE: fourmula.ai's Webflow theme hangs on <body> (body.dark, inverted against the paint), not <html>.
+      // The kit's fields (classes, attributes, colorScheme) stay <html>'s, so a reader of
+      // actual.theme.classes gets the root markers as in every kit capture; the same restricted
+      // markers read on <body> go in actual.theme.body (null when there is no body).
+      const markers = (el) => ({
         classes: [...el.classList].filter(name => name === 'light' || name === 'dark'),
         attributes: Object.fromEntries(['data-theme', 'data-mode', 'data-color-mode'].flatMap(name => {
           const value = el.getAttribute(name);
           return ['light', 'dark', 'system', 'auto'].includes(value) ? [[name, value]] : [];
         })),
         colorScheme: getComputedStyle(el).colorScheme,
-      } : null;
+      });
       return {
         innerWidth, innerHeight, devicePixelRatio,
-        theme: {
-          root: themeOf(root),
-          body: themeOf(body),
-        },
+        theme: { ...markers(root), body: body ? markers(body) : null },
         visualViewport: visual ? { width: visual.width, height: visual.height, scale: visual.scale,
           offsetLeft: visual.offsetLeft, offsetTop: visual.offsetTop, pageLeft: visual.pageLeft, pageTop: visual.pageTop } : null,
         documentSize: {

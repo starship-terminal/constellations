@@ -110,6 +110,7 @@ Nothing was sent, submitted, signed into, bought or downloaded. The only presses
 - **Pressed is forced.** `pressed` states come from `CSS.forcePseudoState`; a mousedown-only state (if any) is missing. `product-card` and `accordion` would not hold a real keyboard focus — their focus look is uncaptured, not absent.
 - **The WordPress furniture.** The `#21759b` skip-link and `#f1f1f1` skip-link slab in the cart drawer's paint list are WordPress core styling, not Elektron design — not tokenised.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw JSON — the unquantized captures are kept outside the repository.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

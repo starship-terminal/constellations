@@ -24,7 +24,7 @@
 // Bins:
 //   generated  the hashed-name design tokens the UI library declares
 //   app        semantically-named vars on the shop's own selectors
-//   vendor     OneTrust (--ot-*, ot-* selectors) and Font Awesome (--fa-*)
+//   vendor     the VENDOR pattern below: Axeptio, Loloyal (--ll-*), Swiper (--swiper-*), Font Awesome (--fa-*)
 //   utility    a one-off `[--x:value]` arbitrary-property utility class
 //   tailwind   Tailwind internals: --tw-*, @layer properties
 import fs from 'node:fs';

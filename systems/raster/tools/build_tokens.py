@@ -8,8 +8,9 @@ Sources, read on 2026-11-19:
 
 Marketing pages paint one dark theme (html.dark, color-scheme dark, body
 rgb(0, 0, 0), root 14px). Docs paints a separate light surface. No light
-marketing theme was on the page, so the light set holds the docs surface
-only and says so.
+marketing theme was on the page, so the docs surface is its own `docs` set
+(not `light`: there is no light marketing theme to name), which the style
+guide and the catalog entry read by that name.
 
 Every value below was read. A role that was not on the page is absent.
 Deterministic: same inputs, byte-identical output.
@@ -216,21 +217,26 @@ tokens = {
             },
         },
     },
-    "light": {
-        "background": {
-            "page": C("{color.docs.page}", f"{DOCS}; the only light surface captured"),
-            "surface": C("{color.docs.card}", f"{DOCS}; guide card"),
-            "active": C("{color.docs.active}", f"{DOCS}; sidebar current row"),
-        },
-        "text": {
-            "primary": C("{color.docs.ink}", DOCS),
-            "muted": C("{color.docs.muted}", DOCS),
-            "accent": C("{color.brand.red}", f"{DOCS}; current sidebar label and On this page links"),
-        },
-        "border": {
-            "default": C("{color.docs.line}", DOCS),
-        },
+}
+
+# The docs set goes after $themes and $metadata, where the committed tokens.json has it.
+DOCS_SET = {
+    "background": {
+        "page": C("{color.docs.page}", f"{DOCS}; the only light surface captured"),
+        "surface": C("{color.docs.card}", f"{DOCS}; guide card"),
+        "active": C("{color.docs.active}", f"{DOCS}; sidebar current row"),
     },
+    "text": {
+        "primary": C("{color.docs.ink}", DOCS),
+        "muted": C("{color.docs.muted}", DOCS),
+        "accent": C("{color.brand.red}", f"{DOCS}; current sidebar label and On this page links"),
+    },
+    "border": {
+        "default": C("{color.docs.line}", DOCS),
+    },
+}
+
+tokens.update({
     "$themes": [
         {
             "id": "dark",
@@ -239,14 +245,15 @@ tokens = {
             "$description": "The marketing theme. html.dark, color-scheme dark, black page, zinc canvas, Raster Red actions.",
         },
         {
-            "id": "light",
-            "name": "Light",
-            "selectedTokenSets": {"core": "source", "light": "enabled"},
+            "id": "docs",
+            "name": "Docs",
+            "selectedTokenSets": {"core": "source", "docs": "enabled"},
             "$description": "Docs only. raster.app/docs sets html.light. The marketing site had no light theme.",
         },
     ],
-    "$metadata": {"tokenSetOrder": ["core", "dark", "light"]},
-}
+    "$metadata": {"tokenSetOrder": ["core", "dark", "docs"]},
+    "docs": DOCS_SET,
+})
 
 (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
 print("wrote", HERE / "tokens.json")

@@ -35,6 +35,8 @@ def flat(node, prefix=""):
 
 
 BY_COLOR = {}
+# Core palette names first: krea paints one theme, so a theme role is cited only where no
+# core step holds the colour (a role name that merely shares a value would mislabel it).
 for _set in ("core", "light", "dark"):
     for n, t in flat(T.get(_set, {}), prefix=_set + "."):
         if t["$type"] == "color":

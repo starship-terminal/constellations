@@ -39,6 +39,7 @@ intercom.com is worth a capture because it declares a complete design layer to t
 - **Pressed states** are DevTools-forced; a script-applied mousedown style would not show.
 - **Reduced motion**: the probe reports a partial story — most pages keep their transitions under `prefers-reduced-motion`; the per-page results are in `raw/motion.json`.
 - **Screenshots are 256-colour PNGs**; read exact colours from the tokens or the raw files. Animated sections (hero canvases, marquee rows) keep moving, so two captures of the same view can differ.
+- **Sidecar theme classes.** The 44 committed `screenshots/*.capture.json` have the kit's flat `actual.theme` with an empty `classes` list: they do not record `body.theme-light`. This package's `tools/capture/screenshot.mjs` later merged `<body>`'s classes into that list; it now writes the kit's shape, `<html>` only in `actual.theme.classes`, with `<body>`'s markers (`theme-light` / `theme-dark` included) in `actual.theme.body`. The committed sidecars stay as they are until a recapture rewrites them (the script was edited, not run).
 - **The footer was read on /blog.** `footer`, `footer-link` and `locale-select` were measured on whatever page the run opened last, which was /blog. The footer is the same on every page, so the values hold; `tools/capture/public/measure.mjs` now opens the home page for the footer group (edited in the 2026-11 audit, not run).
 
 ## Do and don't

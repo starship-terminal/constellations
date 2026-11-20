@@ -33,8 +33,7 @@ export const RAW = path.join(REF, 'raw');
 // answered — no Accept/Reject is ever clicked.
 export const M = (name) => `[class*="${name}"]`;
 
-// The per-context patches every page gets (no webdriver mask: a bot check is a boundary; formerly applied
-// in headed mode — Akamai reads it), plus a record of the real
+// The per-context patches every page gets (no webdriver mask: a bot check is a boundary), plus a record of the real
 // devicePixelRatio before app code runs, for the screenshot sidecar.
 export async function patch(context) {
   await context.addInitScript(() => {

@@ -740,9 +740,12 @@ def design_md_theme(system: dict) -> str:
     capture saw, not the palettes the token file ships, so the preferred light
     theme can have no swatch set (Framer's /login is a captured light surface
     while tokens.json only carries `dark`): the label is the swatch set the
-    export falls back to, not the preference."""
+    export falls back to, not the preference. A catalog `defaultTheme` names the
+    theme the product paints by default (Leonardo's app is dark; its only light
+    surface is the docs site) and wins over the light preference."""
     swatch_sets = system.get("preview", {}).get("swatches", {})
-    wanted = next((t for t in system["themes"] if t.startswith("light")), system["themes"][0])
+    wanted = system.get("defaultTheme") or next((t for t in system["themes"] if t.startswith("light")),
+                                                system["themes"][0])
     return wanted if wanted in swatch_sets else next(iter(swatch_sets), wanted)
 
 

@@ -1,5 +1,5 @@
 {
- "_about": "Krea public tokens, 2026-11-18. core scales come from the Tailwind @theme layer resolved with html.dark. light holds the painted dark semantic roles (the product's only public theme; the set is named light because the catalog expects a light semantic set, and dark stays empty). component holds measured control values.",
+ "_about": "Krea public tokens, 2026-11-18. core scales come from the Tailwind @theme layer resolved with html.dark. dark holds the painted semantic roles (the product's only public theme; there is no light set). component holds measured control values.",
  "core": {
   "color": {
    "primary": {
@@ -618,7 +618,7 @@
    }
   }
  },
- "light": {
+ "dark": {
   "color": {
    "page": {
     "var": "--background",
@@ -732,7 +732,6 @@
    }
   }
  },
- "dark": {},
  "component": {
   "sign-in": {
    "backgroundColor": {

@@ -397,6 +397,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **A zero-sized nav link.** The pink `Start Project Brief` nav link exists in the header DOM but paints 0 x 0 at 1440 wide on the home page — it is documented as a gap, not measured.
 - **Readings to recapture.** `designer-name` is the "15 Services available" meta line (its name filter matched inside "available") and `m-search` is a tag chip; components.md marks both and no token reads them. The selectors are fixed in `measure.mjs` (edited, not run), as is the reduced-motion probe, which read `header` (absent) instead of the `.site-nav` bar and so recorded nothing.
 - **Feeds are third-party content.** Shot cards, designer names, ratings and avatars are public posts by other people; values are read from the first card, so geometry and copy vary between runs.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ### Do and don't (from README.md)
 

@@ -108,6 +108,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 - `light.background.page` (`#ffffff`) is a screenshot sample: no measured element reports the page field behind the home hero. Its source says so.
 - `menu-popover`, `artist-avatar` and `menu-item` were not found by the 2026-11-13 re-run (`recaptureMissed`); the readings kept from the earlier run feed `core.radius.popover`, `core.shadow.popover`, `core.component.popover-width` and `core.component.artist-image`, and their sources say so.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Coverage
 
