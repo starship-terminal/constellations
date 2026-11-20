@@ -124,7 +124,7 @@ Shadows, resolved to CSS:
 | `core.shadow.md` | `0px 1.6px 3px 0px rgba(0, 0, 0, 0.02), 0px 4.2px 7px 0px rgba(0, 0, 0, 0.03), 0px 8px 14px 0px rgba(0, 0, 0, 0.04), 0px 17.5px 29px 0px rgba(0, 0, 0, 0.05), 0px 48px 80px 0px rgba(0, 0, 0, 0.06)` |
 | `core.shadow.lg` | `0px 3px 3px 0px rgba(0, 0, 0, 0.03), 0px 8px 7px 0px rgba(0, 0, 0, 0.04), 0px 17px 14px 0px rgba(0, 0, 0, 0.05), 0px 35px 29px 0px rgba(0, 0, 0, 0.06), 0px 96px 80px 0px rgba(0, 0, 0, 0.07)` |
 | `core.shadow.xl` | `0px 4.5px 3px 0px rgba(0, 0, 0, 0.04), 0px 11.3px 7px 0px rgba(0, 0, 0, 0.06), 0px 23px 14px 0px rgba(0, 0, 0, 0.08), 0px 47.5px 29px 0px rgba(0, 0, 0, 0.1), 0px 130px 80px 0px rgba(0, 0, 0, 0.14)` |
-| `core.shadow.modal` | `0px 0px 0px 1px rgba(21, 21, 21, 0.08), 0px 3px 3px 0px rgba(0, 0, 0, 0.03), 0px 8px 7px 0px rgba(0, 0, 0, 0.04), 0px 17px 14px 0px rgba(0, 0, 0, 0.05), 0px 35px 29px 0px rgba(0, 0, 0, 0.06), 0px -4px 4px 0px rgba(0, 0, 0, 0.04)` |
+| `core.shadow.modal` | `0px 0px 0px 1px rgba(21, 21, 21, 0.08), 0px 3px 3px 0px rgba(0, 0, 0, 0.03), 0px 8px 7px 0px rgba(0, 0, 0, 0.04), 0px 17px 14px 0px rgba(0, 0, 0, 0.05), 0px 35px 29px 0px rgba(0, 0, 0, 0.06), inset 0px -4px 4px 0px rgba(0, 0, 0, 0.04)` |
 | `core.shadow.card-hover` | `0px 28px 17px 0px rgba(0, 0, 0, 0.004), 0px 12px 12px 0px rgba(0, 0, 0, 0.01), 0px 3px 7px 0px rgba(0, 0, 0, 0.01), 0px 0px 0px 0px rgba(0, 0, 0, 0.01)` |
 
 ## Shapes
@@ -153,6 +153,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Get Luma Plus is checkout.** It links to `/calendar/manage/plus`. That page was never opened.
 - **Discover is localized.** Popular events follow the capture egress. Treat those titles as sample content.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read exact colours from tokens or the raw files.
+- **The modal shadow's last layer is inset.** `core.shadow.modal` keeps the `0px -4px 4px` top edge as `inset: true`. Before the 2026-11 audit it was written as an outer drop shadow.
+- **Automation was masked.** The committed public readings and screenshots were taken with `navigator.webdriver` hidden by `tools/capture/public/lib.mjs`. The mask has been removed from the script (2026-11 audit); a bot check is now a boundary, not something to get past.
 - **The map is imagery.** The event page embeds a map of a public venue (Brooklyn Bridge Park). Street names in that image are the map, not a measured address.
 
 ### Do and don't (from README.md)
