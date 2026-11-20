@@ -9,13 +9,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium, UA, BASE, AUTH, REPORT, hideConsent } from './public/lib.mjs';
+import { chromium, UA, BASE, AUTH, requireReport, maskReport, hideConsent } from './public/lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
 
-const pages = [BASE + '/', BASE + '/pricing/', AUTH + '/login', REPORT];
+const pages = [BASE + '/', BASE + '/pricing/', AUTH + '/login', requireReport()];
 const browser = await chromium.launch({ headless: true });
 const bodies = new Map();
 const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
@@ -151,6 +151,6 @@ const out = {
   errors: result.errors.slice(0, 12),
   resolved: { light: resolved },
 };
-fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
+fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), maskReport(JSON.stringify(out, null, 1)) + '\n');
 const colors = Object.values(resolved).filter((v) => v.kind === 'color').length;
 console.log('sheets', sheets.length, 'rules', result.rules.length, 'resolved', Object.keys(resolved).length, 'colors', colors, 'errors', result.errors.length);

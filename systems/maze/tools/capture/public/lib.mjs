@@ -22,8 +22,21 @@ export const BASE = 'https://maze.co';
 export const AUTH = 'https://auth.maze.co';
 export const APP = 'https://app.maze.co';
 // Maze's own published sample report. It loads signed out. It is a report,
-// not a study to take.
-export const REPORT = 'https://app.maze.co/report/Banking-App-Usability-Test/3pvvlrkzmvlpob/intro';
+// not a study to take. Its URL is a share link, and a share link that grants
+// access is masked like a signed URL (owner's rule, 2026-11-21), so it is not
+// committed: set MAZE_REPORT_URL to the report's link before a capture.
+// measure.mjs and vars.mjs stop without it; public.mjs skips the report pages.
+export const REPORT = process.env.MAZE_REPORT_URL || null;
+// Every file a capture writes goes through maskReport, so the link used to
+// navigate is never saved: the committed placeholder takes its place.
+export const REPORT_PLACEHOLDER = 'https://app.maze.co/report/[share-link]';
+export function maskReport(text) {
+  return REPORT ? String(text).split(REPORT).join(REPORT_PLACEHOLDER) : String(text);
+}
+export function requireReport() {
+  if (!REPORT) throw new Error('MAZE_REPORT_URL is not set: the sample report link is not committed (a share link is masked like a signed URL)');
+  return REPORT;
+}
 
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..');

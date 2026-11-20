@@ -324,6 +324,7 @@ for (const { k, mob } of runs) {
   const name = (mob ? 'mobile-' : '') + k;
   if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
   const spec = (mob ? mobile : desktop)[k];
+  if (!spec.url) { log(name, 'skipped: MAZE_REPORT_URL is not set (see lib.mjs)'); continue; }
   const vw = mob ? 390 : 1440;
   const vh = mob ? 844 : 900;
   const dpr = mob ? 2 : 1;
