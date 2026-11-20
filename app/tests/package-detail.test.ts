@@ -322,6 +322,9 @@ describe("interpreted source contract", () => {
         video_poster_url: "https://example.com/poster.jpg",
         video_detail_url: "https://example.com/detail.mp4",
         video_detail_poster_url: "https://example.com/detail-poster.jpg",
+        // The favicon Refero recorded; with none there is no favicon entry
+        // (no favicon service fallback).
+        favicon_url: "https://example.com/favicon.png",
       }),
     );
     const design = {

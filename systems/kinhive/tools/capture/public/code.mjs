@@ -1,6 +1,9 @@
-// Captures the join/sign-in 6-digit code step after submitting the capture email.
-// The address is read from CAPTURE_EMAIL or ~/.design-systems/kinhive/email and
-// replaced in the DOM before each shot. LinkedIn is never pressed.
+// Captured the join/sign-in 6-digit code step on 2026-11-18 by submitting the capture email.
+// Submitting join or sign-in creates a sign-up or requests a code on the live site, so the
+// script no longer takes that step (boundary, 2026-11 audit): the committed join-code and
+// signin-code shots stay as the record of that one pass, and a rerun stops at the form.
+// The address is read from CAPTURE_EMAIL or ~/.design-systems/kinhive/email and replaced in
+// the DOM before each shot. LinkedIn is never pressed.
 //
 //   RAW=... PLAYWRIGHT=... node code.mjs
 import fs from 'fs';
@@ -22,13 +25,17 @@ const wait = (p, ms) => p.waitForTimeout(ms);
 
 async function redact(page) {
   await page.evaluate((email) => {
-    const re = new RegExp(email.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'ig');
+    // Two regexes: .test() on a /g regex carries lastIndex from one node to the next and can
+    // skip a match, so the test is made without g and only the replace is global.
+    const src = email.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const has = new RegExp(src, 'i');
+    const all = new RegExp(src, 'ig');
     for (const el of document.querySelectorAll('input, textarea')) {
-      if (re.test(el.value || '')) el.value = 'you@email.com';
+      if (has.test(el.value || '')) el.value = 'you@email.com';
     }
     const walk = (n) => {
-      if (n.nodeType === 3 && re.test(n.nodeValue || '')) {
-        n.nodeValue = n.nodeValue.replace(re, 'you@email.com');
+      if (n.nodeType === 3 && has.test(n.nodeValue || '')) {
+        n.nodeValue = n.nodeValue.replace(all, 'you@email.com');
       }
       for (const c of n.childNodes || []) walk(c);
     };
@@ -47,28 +54,19 @@ async function shot(page, name, vw, vh, dpr, sourceUrl) {
   log('  shot', name);
 }
 
-async function fillJoin(page) {
-  await page.locator('#first').fill('Kai');
-  await page.locator('#last').fill('Chen');
-  await page.locator('#email').fill(EMAIL);
-  await page.getByRole('button', { name: 'Continue', exact: true }).click();
-  await page.waitForFunction(() => !!document.querySelector('#code'), { timeout: 20000 });
-  await wait(page, 600);
+// Boundary: pressing Continue on /join submits a sign-up to the live site. Not done.
+async function fillJoin() {
+  throw new Error('boundary: the join form is not submitted (a live sign-up)');
 }
 
-async function fillSignin(page) {
-  await page.locator('#email').fill(EMAIL);
-  await page.getByRole('button', { name: /Email me a sign-in code/i }).click();
-  await page.waitForFunction(() => !!document.querySelector('#code'), { timeout: 20000 });
-  await wait(page, 600);
+// Boundary: "Email me a sign-in code" makes the live site send an email. Not done.
+async function fillSignin() {
+  throw new Error('boundary: the sign-in form is not submitted (it sends a live email)');
 }
 
-async function wrongCode(page) {
-  await page.locator('#code').fill('000000');
-  await wait(page, 300);
-  const btn = page.getByRole('button', { name: 'Continue', exact: true });
-  await btn.click({ timeout: 8000 });
-  await wait(page, 1500);
+// Boundary: submitting a code is a live sign-in attempt. Not done.
+async function wrongCode() {
+  throw new Error('boundary: no code is submitted');
 }
 
 async function runOne({ mobile, kind }) {
@@ -87,7 +85,6 @@ async function runOne({ mobile, kind }) {
     hasTouch: mobile,
     locale: 'en-US',
     colorScheme: 'light',
-    args: ['--disable-blink-features=AutomationControlled'],
   });
   await patch(context);
   const page = context.pages()[0] || await context.newPage();

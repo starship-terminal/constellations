@@ -12,7 +12,7 @@ Danish design TV stands and accessories. Public marketing and storefront on `www
 | [components.md](components.md) | Component inventory |
 | [patterns.md](patterns.md) | Page patterns |
 | [raw/](raw/) | [readings.json](raw/readings.json) |
-| [tools/](tools/) | Kit copy used to render the style guide |
+| [tools/](tools/) | The style-guide builder (`build/build_style_guide.py`, adapted from the kit) and its template, the token test, and the kit README |
 
 <!-- brief:start -->
 <!-- brief:end -->
@@ -168,11 +168,11 @@ Both are proprietary. They are not in this package. Body's own computed family, 
 ## Rebuild
 
 ```bash
-python3 tools/build_style_guide.py
-python3 ../../tools/catalog.py design-md pedestal
+python3 tools/build/build_style_guide.py
+python3 tools/catalog.py design-md pedestal
 ```
 
-Run the second command from the repository root. `tools/build_tokens.py` is the unmodified kit and expects another product's dumps. This package's tokens were written from [raw/readings.json](raw/readings.json).
+Run the first command from this package and the second from the repository root. There is no token builder: tokens.json was written by hand from [raw/readings.json](raw/readings.json), and `tools/test_tokens.py` checks it against those readings.
 
 ## Storefront and account
 

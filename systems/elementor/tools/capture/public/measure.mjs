@@ -14,7 +14,7 @@
 // .dark-mode islands that re-bind the same vars. Nothing is sent, bought or
 // signed into: the only presses are local UI toggles — the Products mega-menu
 // trigger, an FAQ accordion header, the mobile menu and the acceptance
-// checkbox (checked and unchecked, nothing submitted). The Cookiebot dialog,
+// checkbox (checked, then unchecked again; nothing submitted). The Cookiebot dialog,
 // the accessibility launcher and the Angie FAB are hidden, never answered.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -439,7 +439,13 @@ async function contact() {
   await S('field-select', q('select.elementor-field, select').filter({ visible: true }).first(), B4, { group: g, title: 'Department select', desc: 'The department select; measured, never changed.', sel: 'select.elementor-field' });
   // The input is the toggle target but paints at opacity 0: checkboxExtra
   // also reads the visible box (the label's ::before) and the checked flag.
-  await S('checkbox', q('input[type="checkbox"].elementor-field, input#form-field-acceptance').filter({ visible: true }).first(), B4.concat(['selected']), { group: g, title: 'Acceptance checkbox', desc: 'The acceptance checkbox; checked and unchecked as local UI state — the form was never submitted.', sel: 'input#form-field-acceptance' }, { extra: checkboxExtra });
+  await S('checkbox', q('input[type="checkbox"].elementor-field, input#form-field-acceptance').filter({ visible: true }).first(), B4.concat(['selected']), { group: g, title: 'Acceptance checkbox', desc: 'The acceptance checkbox; checked for the selected state and unchecked again (local UI state) — the form was never submitted.', sel: 'input#form-field-acceptance' }, {
+    extra: checkboxExtra,
+    // The input paints at opacity 0, so pressed is forced on the label the user presses.
+    pressLoc: q('label[for="form-field-acceptance"]'),
+    // Uncheck after the selected reading so the form is left as it was found.
+    after: { selected: async (l) => { if (await l.isChecked().catch(() => false)) await toggle(l); } },
+  });
   await S('submit-btn', q('button[type="submit"], button.elementor-button').filter({ visible: true }).first(), B4, { group: g, title: 'Submit button', desc: 'The form submit; measured, never pressed (a real press would send the form).', sel: 'button[type=submit]' });
   save();
 }

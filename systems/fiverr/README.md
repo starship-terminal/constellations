@@ -50,7 +50,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | Role | light |
 |---|---|
 | page | #ffffff `core.color.neutral.paper` |
-| surface | rgba(0, 0, 0, 0) `core.color.neutral.hover-wash` |
+| surface | #ffffff `core.color.neutral.paper` |
 | text | #222325 `core.color.neutral.ink` |
 | muted | #62646a `core.color.neutral.muted` |
 | accent | #1dbf73 `core.color.brand.accent` |
@@ -110,7 +110,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 - **Measured, not declared.** fiverr.com serves a hashed atomic stylesheet layer: ~1,290 custom properties on `:root`, all named by content hash (`--_103bn0w`, `--_14uh8ef`), plus a handful of component-scoped vars — a token-free layer with no semantic names to alias. `tools/capture/vars.mjs` records the whole harvest (including the Macan `@font-face` woff2 rules on npm-assets.fiverrcdn.com) in [raw/css-vars.json](raw/css-vars.json); every design token in tokens.json is therefore a computed style read off the running pages by `tools/capture/public/measure.mjs`, with the component and state named in `$extensions.source`.
 - **Public only.** Nothing was signed into, bought or submitted. The hero search and the join/login fields were typed into then cleared and never sent; Continue, Contact me, Join, Sign in, Continue-with-* and every CTA were measured, never followed; the package tabs were not switched (switching re-prices the card). The only presses were local UI toggles — the Sidebar-menu drawer, a results filter trigger, the FAQ accordions.
-- **PerimeterX.** fiverr.com gates some clients behind a press&hold challenge ("It needs a human touch"). The kit's `pressAndHold` drives the nested-iframe `PRESS & HOLD` button automatically — it was never answered by hand — and clearance cookies are reused between contexts. When the edge throttled this client, routes were retried on fresh contexts; anything still gated is recorded as a gap, not inferred.
+- **PerimeterX.** fiverr.com gates some clients behind a press&hold challenge ("It needs a human touch"). The capture scripts now treat it as a boundary: they wait for the real document, never press or hold the challenge, never save or replay a clearance cookie, and log a page that stays challenged as blocked. The committed readings predate that change (see [What to distrust](#what-to-distrust)).
 - **Hidden, never answered.** The UserWay accessibility widget and any consent/promo layer are hidden before every shot and reading; they were never clicked.
 - **Provenance.** Every screenshot carries a `.capture.json` sidecar (URL, viewport, DPR, document bounds, clip) written by `tools/capture/screenshot.mjs`. Full-page shots are bounded at eight chunks; a page that reports an unbounded `scrollHeight` is truncated with the boundary recorded.
 - **Localization.** Prices rendered localized to this client's currency (SGD) — the "From S$xx" strings and the footer's "S$ SGD" button are readings of the live page as served.
+
+## What to distrust
+
+- **Readings taken past a bot check.** Every committed screenshot, crop, [raw/components-computed.json](raw/components-computed.json) reading and the [raw/css-vars.json](raw/css-vars.json) harvest was taken by an earlier version of the capture scripts that held PerimeterX's press-and-hold button automatically, replayed the clearance cookies in later contexts and hid automation (a `navigator.webdriver` mask and the `AutomationControlled` flag). That code was removed on 2026-11-20. The values are the live pages as served, but a recapture with the current scripts stops wherever the challenge appears and records those pages as gaps.

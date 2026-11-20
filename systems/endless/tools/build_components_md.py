@@ -34,13 +34,6 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
-BY_COLOR = {}
-for _set in ("core", "light"):
-    for n, t in flat(T.get(_set, {})):
-        if t["$type"] == "color":
-            BY_COLOR.setdefault(t["$value"], n if _set == "core" else f"{_set}.{n}")
-
-
 # ------------------------------------------------- lab / oklab -> sRGB hex
 # Chromium computes Tailwind v4 colours (oklch declarations, color-mix opacity
 # modifiers) as lab()/oklab() strings in raw/components-computed.json — most of
@@ -83,6 +76,9 @@ def _tohex(rgb):
 
 def norm_color(v):
     v = (v or "").strip()
+    # A percentage alpha ("/ 50%", "rgba(..., 50%)") becomes the 0-1 number the
+    # patterns below read; without this the colour passed through unconverted.
+    v = re.sub(r"(/\s*|^rgba\([^,]+,[^,]+,[^,]+,\s*)([\d.]+)%\)$", lambda m: f"{m.group(1)}{float(m.group(2)) / 100:g})", v)
     m = re.fullmatch(r"#([0-9a-fA-F]{3,8})", v)
     if m:
         h = m.group(1).lower()
@@ -127,6 +123,23 @@ def norm_color(v):
     return v
 
 
+# One value -> token map per theme. A dark-group component (measured under
+# .dark) is labelled from core + dark, never from the light set: #fafafa is
+# light.primary.foreground but dark.foreground. THEME is set per component.
+BY_THEME = {}
+for _theme in ("light", "dark"):
+    _m = BY_THEME[_theme] = {}
+    for _set in ("core", _theme):
+        for n, t in flat(T.get(_set, {})):
+            if t["$type"] == "color":
+                _m.setdefault(norm_color(t["$value"]), n if _set == "core" else f"{_set}.{n}")
+THEME = "light"
+
+
+def theme_of(c):
+    return "dark" if (c.get("group") or "").startswith("Dark theme") else "light"
+
+
 # Every colour expression the readings carry; each is normalised to #hex or
 # rgba() before the BY_COLOR token lookup.
 COL_EXPR = re.compile(r"color\(srgb [^)]*\)|oklch\([^)]*\)|(?:ok)?lab\([^)]*\)|rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}")
@@ -137,7 +150,7 @@ def colour(c, tokens=True):
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
-        tok = BY_COLOR.get(v) if tokens else None
+        tok = BY_THEME[THEME].get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
     return COL_EXPR.sub(lambda m: label(norm_color(m.group(0))), c)
@@ -315,6 +328,12 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
+# Entries whose selector caught another control. The readings stay as
+# evidence of what was read, but the entry says so (README, What to distrust).
+WRONG_ELEMENT = {
+    "composer-send": "These readings are the composer's \"Add to prompt\" attach button, not the send control: the selector's `form button` fallback matched it first. Recapture needed.",
+}
+
 PAGE_NAME = {"home": "home", "pricing": "pricing", "contact": "contact", "toolgen": "AI image generator",
              "models": "models", "radar": "radar", "brand": "brand", "blog": "blog", "docs": "docs",
              "mcp": "MCP", "mobile": "home"}
@@ -430,6 +449,7 @@ W("Values that apply across entries, from the measurement files.")
 W()
 foc = []
 for k, c in C.items():
+    THEME = theme_of(c)
     st = c["states"].get("focus-visible")
     if not st or "style" not in st or st.get("via") == "focus failed":
         continue
@@ -506,6 +526,7 @@ for k in ["composer", "plan-card", "contact-form", "tool-panel", "model-card", "
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
+    THEME = theme_of(c)
     st = next((s for s in c["states"].values() if "style" in s), None)
     if st is None:
         continue
@@ -527,6 +548,7 @@ for g in groups:
     for k, c in C.items():
         if c.get("group") != g:
             continue
+        THEME = theme_of(c)
         W()
         W(f"#### {c['title']}")
         desc = (c.get("desc") or "").strip()
@@ -538,6 +560,9 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
+        if k in WRONG_ELEMENT:
+            W(f"**Wrong element.** {WRONG_ELEMENT[k]}")
+            W()
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:

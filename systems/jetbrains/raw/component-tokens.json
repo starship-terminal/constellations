@@ -100,7 +100,7 @@
    "pink": {
     "value": "#f31199",
     "type": "color",
-    "source": "measured css custom property --main-page-pink on home ._page",
+    "source": "declared --main-page-pink on ._page_KBeAC (raw/css-vars.json)",
     "description": "Home campaign pink"
    },
    "danger": {
@@ -237,69 +237,69 @@
     "sans": {
      "value": "\"JetBrains Sans\", Helvetica, Arial, sans-serif",
      "type": "fontFamily",
-     "source": "measured computed font-family on header links and the Explore Air button, jetbrains.com home 2026-11-18",
+     "source": "computed fontFamily of button-primary default (raw/components-computed.json); the header CTA on home",
      "description": "JetBrains Sans, the marketing UI face"
     },
     "ui": {
-     "value": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+     "value": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
      "type": "fontFamily",
-     "source": "measured computed font-family on account.jetbrains.com/login, the --rs-font-family-ui fallback stack"
+     "source": "computed fontFamily of email-field default (raw/components-computed.json); account.jetbrains.com/login, the --rs-font-family-ui fallback stack"
     }
    },
    "weight": {
     "regular": {
      "value": 400,
      "type": "fontWeight",
-     "source": "measured font-weight 400 on body copy"
+     "source": "computed fontWeight of button-primary default (raw/components-computed.json)"
     },
     "medium": {
      "value": 500,
      "type": "fontWeight",
-     "source": "measured font-weight on nav and button labels where the sheet sets 500"
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: nav and button labels; every measured label reads 400"
     },
     "bold": {
      "value": 700,
      "type": "fontWeight",
-     "source": "measured font-weight on display headings"
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: display headings; no heading was measured"
     }
    },
    "size": {
     "caption": {
      "value": "13px",
      "type": "dimension",
-     "source": "measured 13px captions on store cards"
+     "source": "computed fontSize of badge default (raw/components-computed.json)"
     },
     "body": {
      "value": "16px",
      "type": "dimension",
-     "source": "measured 16px body and button label, --rs-text-2-font-size"
+     "source": "computed fontSize of button-primary default (raw/components-computed.json)"
     },
     "lead": {
      "value": "18px",
      "type": "dimension",
-     "source": "measured 18px lead on product pages"
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: lead on product pages"
     },
     "title": {
      "value": "24px",
      "type": "dimension",
-     "source": "measured 24px section titles"
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: section titles"
     },
     "display": {
      "value": "48px",
      "type": "dimension",
-     "source": "measured display size on the home hero"
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: display size on the home hero"
     }
    },
    "line-height": {
     "body": {
      "value": "24px",
      "type": "dimension",
-     "source": "declared --rs-text-2-line-height 24px"
+     "source": "computed lineHeight of email-field default (raw/components-computed.json)"
     },
     "tight": {
      "value": "1.1",
      "type": "number",
-     "source": "measured line-height on display headings"
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: display headings"
     }
    }
   },
@@ -307,81 +307,81 @@
    "2": {
     "value": "2px",
     "type": "dimension",
-    "source": "measured 2px icon nudge"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: icon nudge"
    },
    "4": {
     "value": "4px",
     "type": "dimension",
-    "source": "4px base step"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: base step"
    },
    "8": {
     "value": "8px",
     "type": "dimension",
-    "source": "8px step"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: step"
    },
    "12": {
     "value": "12px",
     "type": "dimension",
-    "source": "12px step"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: step"
    },
    "16": {
     "value": "16px",
     "type": "dimension",
-    "source": "16px step, header gutters"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: header gutters"
    },
    "24": {
     "value": "24px",
     "type": "dimension",
-    "source": "24px step"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: step"
    },
    "32": {
     "value": "32px",
     "type": "dimension",
-    "source": "32px step"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: step"
    },
    "48": {
     "value": "48px",
     "type": "dimension",
-    "source": "48px section gap"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: section gap"
    },
    "64": {
     "value": "64px",
     "type": "dimension",
-    "source": "declared --rs-card-padding 64px on home cards"
+    "source": "declared --rs-card-padding on ._card_c-1N7 (raw/css-vars.json)"
    }
   },
   "radius": {
    "sm": {
     "value": "4px",
     "type": "dimension",
-    "source": "measured 4px on small chips"
+    "source": "computed borderTopLeftRadius of badge default (raw/components-computed.json)"
    },
    "md": {
     "value": "8px",
     "type": "dimension",
-    "source": "declared --rs-card-border-radius 8px on tool cards"
+    "source": "declared --rs-card-border-radius on ._toolCard_9A-4D (raw/css-vars.json)"
    },
    "pill": {
     "value": "20px",
     "type": "dimension",
-    "source": "measured 20px radius on the Explore Air pill button"
+    "source": "computed borderTopLeftRadius of button-primary default (raw/components-computed.json); the Explore Air pill"
    },
    "round": {
     "value": "999px",
     "type": "dimension",
-    "source": "pill controls that resolve to a full capsule"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: pill controls that resolve to a full capsule"
    }
   },
   "borderWidth": {
    "hairline": {
     "value": "1px",
     "type": "dimension",
-    "source": "measured 1px borders on outline buttons and cards"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: borders on outline buttons and cards"
    },
    "focus": {
     "value": "3px",
     "type": "dimension",
-    "source": "declared --rs-card-focus-border-width 3px"
+    "source": "declared --rs-card-focus-border-width on ._toolCard_9A-4D (raw/css-vars.json)"
    }
   }
  },
@@ -414,7 +414,7 @@
    "primary": {
     "value": "#343434",
     "type": "color",
-    "source": "measured computed color rgb(52, 52, 52) on store body text, 2026-11-18"
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: store body text colour rgb(52, 52, 52); no raw file holds it"
    },
    "secondary": {
     "var": "--rs-color-grey-60",
@@ -459,7 +459,7 @@
   "accent-pressed": {
    "value": "#5646cc",
    "type": "color",
-   "source": "derived: primary light pressed one step darker than #6b57ff; labelled derived because no pressed primary was measured on a light page"
+   "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: a suggested pressed step darker than #6b57ff; no pressed primary was measured on a light page"
   },
   "focus": {
    "var": "--rs-color-primary-light-theme",
@@ -586,41 +586,41 @@
    "radius": {
     "value": "20px",
     "type": "dimension",
-    "source": "measured border-radius on the Explore Air button"
+    "source": "computed borderTopLeftRadius of button-primary default (raw/components-computed.json); the Explore Air button"
    },
    "padding-x": {
-    "value": "16px",
+    "value": "24px",
     "type": "dimension",
-    "source": "measured horizontal padding on the Explore Air button"
+    "source": "computed paddingLeft of button-primary default (raw/components-computed.json); the Explore Air button"
    },
    "height": {
     "value": "40px",
     "type": "dimension",
-    "source": "measured height of size-M buttons"
+    "source": "computed height of button-primary default (raw/components-computed.json); a size-M button"
    },
    "font-size": {
     "value": "16px",
     "type": "dimension",
-    "source": "measured font-size on the Explore Air button"
+    "source": "computed fontSize of button-primary default (raw/components-computed.json); the Explore Air button"
    }
   },
   "card": {
    "radius": {
     "value": "8px",
     "type": "dimension",
-    "source": "declared --rs-card-border-radius 8px on home tool cards"
+    "source": "declared --rs-card-border-radius on ._toolCard_9A-4D (raw/css-vars.json)"
    },
    "padding": {
     "value": "64px",
     "type": "dimension",
-    "source": "declared --rs-card-padding 64px"
+    "source": "declared --rs-card-padding on ._card_c-1N7 (raw/css-vars.json)"
    }
   },
   "nav": {
    "height": {
-    "value": "64px",
+    "value": "72px",
     "type": "dimension",
-    "source": "measured sticky header height on jetbrains.com"
+    "source": "computed height of nav default (raw/components-computed.json); the sticky header on jetbrains.com"
    }
   }
  }

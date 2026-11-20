@@ -104,6 +104,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Tokens | `tools/build_component_tokens.py` → `raw/component-tokens.json` → `tools/build_tokens.py` → `tokens.json` |
 | Docs | `tools/build_components_md.py`, `tools/build_style_guide.py`, `tools/capture/public/build-measurements.mjs` |
 
+## Known gaps
+
+- `light.background.page` (`#ffffff`) is a screenshot sample: no measured element reports the page field behind the home hero. Its source says so.
+- `menu-popover`, `artist-avatar` and `menu-item` were not found by the 2026-11-13 re-run (`recaptureMissed`); the readings kept from the earlier run feed `core.radius.popover`, `core.shadow.popover`, `core.component.popover-width` and `core.component.artist-image`, and their sources say so.
+
 ## Coverage
 
 | Requirement | Status |

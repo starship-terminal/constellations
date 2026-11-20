@@ -237,6 +237,7 @@ The home page is the screen to get right. An 84px bar carries the serif wordmark
 - **Some hover rows read "same".** Anthropic's pills and tabs genuinely restyle on hover, but several links and cards measure identical; the entries are not missing a state.
 - **`docs-*-dark-*` shots are emulated.** The docs dark theme was captured under `page.emulateMedia({colorScheme:'dark'})` against `data-mode="system"`, which is what a dark-mode visitor sees, not a hand-set dark mode.
 - **`--theme-*` values are per-component scopes.** They re-declare on panels (a dark `--theme-background-primary` on dark sections); the light semantic set uses the :root defaults resolved on the product pages, as raw/css-vars.json's `resolved` map records.
+- **`plan-card` and `plan-cta` were read from the wrong elements.** The capture switched the pricing page to its API tab before probing the plan card, so `plan-card` is a row of the API usage table ("Opus 5 Prompt caching Read $0.50 / MTok ..."), and the unscoped CTA search caught the header's Try Claude pill at y=24, not a button in a plan card. Both need a recapture; the script now probes them on the default tab, inside the card (not run since).
 
 ### Do and don't (from README.md)
 

@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Self-contained, no template drift."""
+import html as htmllib
 import json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
-
-
-def hexish(value):
-    return value
 
 
 def rows(group):
@@ -28,12 +25,19 @@ type_rows = rows(T["core"]["typography"])
 radii = rows(T["core"]["radius"])
 space = rows(T["core"]["spacing"])
 
+def cell(value):
+    """A token value as table text: a typography composite as its parts, not a Python dict."""
+    if isinstance(value, dict):
+        value = " / ".join(f"{k} {v}" for k, v in value.items())
+    return htmllib.escape(str(value))
+
+
 def swatch(name, value):
     css = value if value.startswith("rgb") or value.startswith("#") else "#ccc"
     return f'<div class="sw"><i style="background:{css}"></i><div><b>{name}</b><span>{value}</span></div></div>'
 
 
-html = f"""<!doctype html>
+page = f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -72,19 +76,19 @@ html = f"""<!doctype html>
   </p>
   <h2>Type</h2>
   <table><tr><th>Role</th><th>Value</th></tr>
-  {''.join(f'<tr><td><code>{n}</code></td><td>{v}</td></tr>' for n, v in type_rows)}
+  {''.join(f'<tr><td><code>{n}</code></td><td>{cell(v)}</td></tr>' for n, v in type_rows)}
   </table>
   <h2>Radius</h2>
   <table><tr><th>Step</th><th>Value</th></tr>
-  {''.join(f'<tr><td><code>{n}</code></td><td>{v}</td></tr>' for n, v in radii)}
+  {''.join(f'<tr><td><code>{n}</code></td><td>{cell(v)}</td></tr>' for n, v in radii)}
   </table>
   <h2>Spacing</h2>
   <table><tr><th>Step</th><th>Value</th></tr>
-  {''.join(f'<tr><td><code>{n}</code></td><td>{v}</td></tr>' for n, v in space)}
+  {''.join(f'<tr><td><code>{n}</code></td><td>{cell(v)}</td></tr>' for n, v in space)}
   </table>
 </main>
 </body>
 </html>
 """
-(HERE / "style-guide.html").write_text(html)
+(HERE / "style-guide.html").write_text(page)
 print("wrote style-guide.html")

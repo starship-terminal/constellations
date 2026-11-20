@@ -132,3 +132,7 @@ dailyartmagazine.com loads headless from this client. The newsletter modal opens
 ## How the values were read
 
 The site is a WordPress publication, so there is no app to sign into: the capture is the public magazine itself. `tools/capture/public/` holds the kit copy — `public.mjs` shoots the routes (home with the hamburger-opened mega-menu, latest, a category index, an article, about, contact, search, and a 390px pass on home + article), `measure.mjs` reads bounding boxes and computed styles for every component in `raw/components-computed.json` across default/hover/focus-visible/pressed/focused/filled states plus the locally opened mega-menu (the site's `#hamburger` trigger) and the newsletter modal (the site's `.modal-r--show` class). `capture/vars.mjs` resolves the declared custom properties; `build_component_tokens.py` turns the measurements into the token spec, `build_tokens.py` resolves it into `tokens.json`, `build-measurements.mjs` writes `raw/measurements.md`, and `build_components_md.py` + `build_style_guide.py` generate the docs. Nothing was submitted, signed into, downloaded or followed off-domain; third-party ad slots were measured as layout only.
+
+## Known gaps
+
+- `light.component.nl-checkbox-box` (16px, the painted checkbox box) was entered by hand at capture time: a probe read the `.checkbox-style` label's `::after` on the live home page, but that reading was never saved, and `raw/components-computed.json` holds only the 13x13 input (`nl-checkbox`). Its source says so; a recapture should record the pseudo-element.

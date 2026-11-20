@@ -18,9 +18,7 @@ const context = await browser.newContext({
   userAgent: UA,
   locale: 'en-US',
 });
-await context.addInitScript(() => {
-  Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-});
+// navigator.webdriver is left as the browser reports it: automation is not hidden (2026-11 audit).
 const page = await context.newPage();
 const report = [];
 
