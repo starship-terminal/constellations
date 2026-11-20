@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monarch Money style guide</title>
+<style>
+:root {
+  --page: #fdf8ed;
+  --surface: #ffffff;
+  --raised: #ffffff;
+  --text: #22201d;
+  --muted: #777573;
+  --accent: #ff692d;
+  --accentHover: #f35b16;
+  --onAccent: #fefcfb;
+  --border: #dcd9d6;
+  --input: #dcd9d6;
+  --ring: #22201d;
+  --destructive: #e5484d;
+  --onDestructive: #ffffff;
+  --success: #e6f6eb;
+  --successText: #218358;
+  --warning: #fff7c2;
+  --warningText: #ab6400;
+  --info: #def7f9;
+  --infoText: #107d98;
+  --error: #fdebec;
+  --errorText: #e5484d;
+  --secondary: #ffffff;
+  --secondaryText: #22201d;
+  --mutedSurface: #efecea;
+  --cardText: #22201d;
+  --parchment: #fdf8ed;
+  --wheat: #f3ecd7;
+  --wheatLighter: #fdf8ed;
+  --surfaceToken: #f6f5f3;
+  --button: #f35b16;
+  --buttonHover: #e64818;
+  --focusRing: #22201d;
+  --sg-sans: "ABC Oracle", ui-sans-serif, system-ui, sans-serif;
+  --sg-display: "ABC Otto", Georgia, serif;
+  --sg-mono: "Beltram Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 350 16px/1.4 var(--sg-sans); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font-family: var(--sg-display); font-weight: 400; font-size: 48px; line-height: 1.1; margin: 0 0 8px; }
+h2 { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 40px 0 12px; }
+.lead { max-width: 62ch; color: var(--muted); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.sw { display: flex; gap: 10px; align-items: center; }
+.sw i { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border); display: block; }
+.sw b { display: block; font: 500 12px/1.3 var(--sg-mono); }
+.sw span { color: var(--muted); font: 12px/1.3 var(--sg-mono); }
+.ramp { display: grid; grid-template-columns: 72px repeat(12, 1fr); gap: 3px; align-items: center; margin: 4px 0; }
+.ramp span { font: 12px/1 var(--sg-mono); color: var(--muted); }
+.ramp i { height: 28px; border-radius: 4px; display: block; }
+.ty { border-top: 1px solid var(--border); padding: 12px 0; }
+.ty code { font: 12px/1 var(--sg-mono); color: var(--muted); margin-right: 8px; }
+.sample { font-family: var(--sg-display); }
+.btn { display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; background: var(--accent); color: var(--onAccent); font-weight: 500; }
+.btn.quiet { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+.card { background: var(--surface); border-radius: 16px; padding: 20px; max-width: 360px; box-shadow: 0 8px 24px rgba(34,32,29,.08); }
+.note { color: var(--muted); font-size: 13px; max-width: 70ch; }
+</style>
+</head>
+<body>
+<main>
+<h1>Monarch Money</h1>
+<p class="lead">Public marketing tokens from www.monarch.com, read 2026-11-21. One light theme. Proprietary faces fall back to system fonts. Values come from tokens.json.</p>
+<h2>Roles</h2>
+<div class="swatches"><div class="sw"><i style="background:#fdf8ed"></i><div><b>page</b><span>#fdf8ed</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><b>surface</b><span>#ffffff</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><b>raised</b><span>#ffffff</span></div></div><div class="sw"><i style="background:#22201d"></i><div><b>text</b><span>#22201d</span></div></div><div class="sw"><i style="background:#777573"></i><div><b>muted</b><span>#777573</span></div></div><div class="sw"><i style="background:#ff692d"></i><div><b>accent</b><span>#ff692d</span></div></div><div class="sw"><i style="background:#f35b16"></i><div><b>accentHover</b><span>#f35b16</span></div></div><div class="sw"><i style="background:#fefcfb"></i><div><b>onAccent</b><span>#fefcfb</span></div></div><div class="sw"><i style="background:#dcd9d6"></i><div><b>border</b><span>#dcd9d6</span></div></div><div class="sw"><i style="background:#dcd9d6"></i><div><b>input</b><span>#dcd9d6</span></div></div><div class="sw"><i style="background:#22201d"></i><div><b>ring</b><span>#22201d</span></div></div><div class="sw"><i style="background:#e5484d"></i><div><b>destructive</b><span>#e5484d</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><b>onDestructive</b><span>#ffffff</span></div></div><div class="sw"><i style="background:#e6f6eb"></i><div><b>success</b><span>#e6f6eb</span></div></div><div class="sw"><i style="background:#218358"></i><div><b>successText</b><span>#218358</span></div></div><div class="sw"><i style="background:#fff7c2"></i><div><b>warning</b><span>#fff7c2</span></div></div><div class="sw"><i style="background:#ab6400"></i><div><b>warningText</b><span>#ab6400</span></div></div><div class="sw"><i style="background:#def7f9"></i><div><b>info</b><span>#def7f9</span></div></div><div class="sw"><i style="background:#107d98"></i><div><b>infoText</b><span>#107d98</span></div></div><div class="sw"><i style="background:#fdebec"></i><div><b>error</b><span>#fdebec</span></div></div><div class="sw"><i style="background:#e5484d"></i><div><b>errorText</b><span>#e5484d</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><b>secondary</b><span>#ffffff</span></div></div><div class="sw"><i style="background:#22201d"></i><div><b>secondaryText</b><span>#22201d</span></div></div><div class="sw"><i style="background:#efecea"></i><div><b>mutedSurface</b><span>#efecea</span></div></div><div class="sw"><i style="background:#22201d"></i><div><b>cardText</b><span>#22201d</span></div></div><div class="sw"><i style="background:#fdf8ed"></i><div><b>parchment</b><span>#fdf8ed</span></div></div><div class="sw"><i style="background:#f3ecd7"></i><div><b>wheat</b><span>#f3ecd7</span></div></div><div class="sw"><i style="background:#fdf8ed"></i><div><b>wheatLighter</b><span>#fdf8ed</span></div></div><div class="sw"><i style="background:#f6f5f3"></i><div><b>surfaceToken</b><span>#f6f5f3</span></div></div><div class="sw"><i style="background:#f35b16"></i><div><b>button</b><span>#f35b16</span></div></div><div class="sw"><i style="background:#e64818"></i><div><b>buttonHover</b><span>#e64818</span></div></div><div class="sw"><i style="background:#22201d"></i><div><b>focusRing</b><span>#22201d</span></div></div></div>
+<h2>Ramps</h2>
+<div class="ramp"><span>gray</span><i title="gray-1 #fbfaf8" style="background:#fbfaf8"></i><i title="gray-2 #f6f5f3" style="background:#f6f5f3"></i><i title="gray-3 #efecea" style="background:#efecea"></i><i title="gray-4 #ebe8e5" style="background:#ebe8e5"></i><i title="gray-5 #e4e1de" style="background:#e4e1de"></i><i title="gray-6 #dcd9d6" style="background:#dcd9d6"></i><i title="gray-7 #d1cecb" style="background:#d1cecb"></i><i title="gray-8 #bebbb8" style="background:#bebbb8"></i><i title="gray-9 #8f8c8a" style="background:#8f8c8a"></i><i title="gray-10 #84827f" style="background:#84827f"></i><i title="gray-11 #777573" style="background:#777573"></i><i title="gray-12 #22201d" style="background:#22201d"></i></div><div class="ramp"><span>orange</span><i title="orange-1 #fefcfb" style="background:#fefcfb"></i><i title="orange-2 #fff5f0" style="background:#fff5f0"></i><i title="orange-3 #ffe9de" style="background:#ffe9de"></i><i title="orange-4 #ffd7c4" style="background:#ffd7c4"></i><i title="orange-5 #ffc9b1" style="background:#ffc9b1"></i><i title="orange-6 #ffb99c" style="background:#ffb99c"></i><i title="orange-7 #ffa586" style="background:#ffa586"></i><i title="orange-8 #f48d68" style="background:#f48d68"></i><i title="orange-9 #ff692d" style="background:#ff692d"></i><i title="orange-10 #f35b16" style="background:#f35b16"></i><i title="orange-11 #d64700" style="background:#d64700"></i><i title="orange-12 #592c1d" style="background:#592c1d"></i></div><div class="ramp"><span>blue</span><i title="blue-1 #fafdfe" style="background:#fafdfe"></i><i title="blue-2 #f2fafb" style="background:#f2fafb"></i><i title="blue-3 #def7f9" style="background:#def7f9"></i><i title="blue-4 #caf1f6" style="background:#caf1f6"></i><i title="blue-5 #b5e9f0" style="background:#b5e9f0"></i><i title="blue-6 #9ddde7" style="background:#9ddde7"></i><i title="blue-7 #7dcedc" style="background:#7dcedc"></i><i title="blue-8 #3db9cf" style="background:#3db9cf"></i><i title="blue-9 #00a2c7" style="background:#00a2c7"></i><i title="blue-10 #0797b9" style="background:#0797b9"></i><i title="blue-11 #107d98" style="background:#107d98"></i><i title="blue-12 #0d3c48" style="background:#0d3c48"></i></div><div class="ramp"><span>green</span><i title="green-1 #fbfefc" style="background:#fbfefc"></i><i title="green-2 #f4fbf6" style="background:#f4fbf6"></i><i title="green-3 #e6f6eb" style="background:#e6f6eb"></i><i title="green-4 #d6f1df" style="background:#d6f1df"></i><i title="green-5 #c4e8d1" style="background:#c4e8d1"></i><i title="green-6 #adddc0" style="background:#adddc0"></i><i title="green-7 #8eceaa" style="background:#8eceaa"></i><i title="green-8 #5bb98b" style="background:#5bb98b"></i><i title="green-9 #30a46c" style="background:#30a46c"></i><i title="green-10 #2b9a66" style="background:#2b9a66"></i><i title="green-11 #218358" style="background:#218358"></i><i title="green-12 #193b2d" style="background:#193b2d"></i></div><div class="ramp"><span>red</span><i title="red-1 #fffcfc" style="background:#fffcfc"></i><i title="red-2 #fff7f7" style="background:#fff7f7"></i><i title="red-3 #feebec" style="background:#feebec"></i><i title="red-4 #ffdbdc" style="background:#ffdbdc"></i><i title="red-5 #ffcdce" style="background:#ffcdce"></i><i title="red-6 #fdbdbe" style="background:#fdbdbe"></i><i title="red-7 #f4a9aa" style="background:#f4a9aa"></i><i title="red-8 #eb8e90" style="background:#eb8e90"></i><i title="red-9 #e5484d" style="background:#e5484d"></i><i title="red-10 #dc3e42" style="background:#dc3e42"></i><i title="red-11 #ce2c31" style="background:#ce2c31"></i><i title="red-12 #641723" style="background:#641723"></i></div><div class="ramp"><span>yellow</span><i title="yellow-1 #fefdfb" style="background:#fefdfb"></i><i title="yellow-2 #fefbe9" style="background:#fefbe9"></i><i title="yellow-3 #fff7c2" style="background:#fff7c2"></i><i title="yellow-4 #ffee9c" style="background:#ffee9c"></i><i title="yellow-5 #fbe577" style="background:#fbe577"></i><i title="yellow-6 #f3d673" style="background:#f3d673"></i><i title="yellow-7 #e9c162" style="background:#e9c162"></i><i title="yellow-8 #e2a336" style="background:#e2a336"></i><i title="yellow-9 #ffc53d" style="background:#ffc53d"></i><i title="yellow-10 #ffba18" style="background:#ffba18"></i><i title="yellow-11 #ab6400" style="background:#ab6400"></i><i title="yellow-12 #4f3422" style="background:#4f3422"></i></div>
+<h2>Type</h2>
+<div class="ty" style="font-size:48px;font-weight:350;line-height:1.2"><code>display</code> 48px / 1.2 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:48px;font-weight:350;line-height:1.2"><code>heading1</code> 48px / 1.2 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:40px;font-weight:350;line-height:1.2"><code>heading2</code> 40px / 1.2 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:32px;font-weight:350;line-height:1.2"><code>heading3</code> 32px / 1.2 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:24px;font-weight:350;line-height:1.2"><code>heading4</code> 24px / 1.2 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:20px;font-weight:350;line-height:1.4"><code>heading5</code> 20px / 1.4 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:20px;font-weight:350;line-height:1.4"><code>heading6</code> 20px / 1.4 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:18px;font-weight:350;line-height:1.4"><code>body</code> 18px / 1.4 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:16px;font-weight:350;line-height:1.3"><code>small</code> 16px / 1.3 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:14px;font-weight:350;line-height:1.3"><code>extraSmall</code> 14px / 1.3 / 350<div class="sample">The modern way to manage money</div></div><div class="ty" style="font-size:14px;font-weight:500;line-height:1.3"><code>eyebrow</code> 14px / 1.3 / 500<div class="sample">The modern way to manage money</div></div>
+<h2>Components</h2>
+<p class="note">Button and card geometry is drawn from screenshots. Radii and heights were not declared as custom properties, so they are not tokens.</p>
+<p><span class="btn">Sign up</span> <span class="btn quiet">Sign in</span></p>
+<div class="card"><strong>Core</strong><p>Budget, save, and stay on track</p><span class="btn">Try Monarch free for 7 days</span></div>
+</main>
+</body>
+</html>

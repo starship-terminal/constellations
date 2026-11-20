@@ -1,0 +1,5250 @@
+{
+ "readAt": "2026-11-20",
+ "source": "www.monarch.com public homepage stylesheets, CSSOM plus fetched cross-origin sheets, re-parsed in a probe document. One light theme. html class: \"\". color-scheme: normal",
+ "sheets": [
+  {
+   "name": "inline-0",
+   "media": "",
+   "bytes": 84056
+  },
+  {
+   "name": "https://www.monarch.com/_next/static/immutable/chunks/3qku5pw2g07vz.css",
+   "media": "",
+   "bytes": 11179
+  },
+  {
+   "name": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "media": "",
+   "bytes": 126501
+  },
+  {
+   "name": "inline-3",
+   "media": "",
+   "bytes": 1458
+  },
+  {
+   "name": "inline-4",
+   "media": "",
+   "bytes": 636
+  },
+  {
+   "name": "inline-5",
+   "media": "",
+   "bytes": 9273
+  },
+  {
+   "name": "https://accounts.google.com/gsi/style",
+   "media": "",
+   "bytes": 696,
+   "fetched": true
+  }
+ ],
+ "counts": {
+  "rules": 235,
+  "fonts": 18,
+  "names": {
+   "token": 309,
+   "osano": 146,
+   "tw": 72,
+   "utility": 5
+  }
+ },
+ "errors": [],
+ "token": [
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-window",
+   "context": [],
+   "properties": {
+    "--fade-transition-time": "700ms",
+    "--slide-transition-time": "400ms",
+    "--osano-focus-outline": "3px solid var(--osano-focus-outline-color)",
+    "--osano-focus-outline-offset": "2px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/3qku5pw2g07vz.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--daisy": "#fffdf6",
+    "--parchment": "#fdf8ed",
+    "--wheat": "#f3ecd7",
+    "--secondary-grey": "#f6f5f3",
+    "--tertiary-grey": "#e4e1de",
+    "--dark-grey": "#8f8c8a",
+    "--charcoal": "#22201d",
+    "--monarch-orange": "#f35b16",
+    "--light-monarch-orange": "#ffe9de",
+    "--persimmon": "#e64818",
+    "--light-persimmon": "#ffc1af",
+    "--mahogany": "#360305",
+    "--evergreen": "#1a3d37",
+    "--walnut": "#7e3c1c",
+    "--sunbeam": "#f3e69e",
+    "--goldenrod": "#efb921",
+    "--light-goldenrod": "#ffdd7c",
+    "--pool-blue": "#278fc0",
+    "--sky": "#c1eeff",
+    "--light-sky": "#dff5fc",
+    "--milkweed": "#7abf72",
+    "--light-milkweed": "#deffd9",
+    "--aster": "#fbc9e8",
+    "--light-aster": "#fce3f1",
+    "--monarch-orange-lightest": "var(--light-monarch-orange)",
+    "--monarch-orange-lighter": "var(--light-persimmon)",
+    "--monarch-orange-light": "#ff926b",
+    "--monarch-orange-dark": "#b14000",
+    "--monarch-orange-darker": "#712900",
+    "--monarch-orange-darkest": "#381200",
+    "--mahogany-lightest": "#fee9e6",
+    "--mahogany-lighter": "#bb9592",
+    "--mahogany-light": "#794945",
+    "--mahogany-dark": "#2e0002",
+    "--mahogany-darker": "#250001",
+    "--mahogany-darkest": "#1b0001",
+    "--goldenrod-lightest": "#fff6e2",
+    "--goldenrod-lighter": "#fde2a7",
+    "--goldenrod-light": "#f7cd6d",
+    "--goldenrod-dark": "#ac7e00",
+    "--goldenrod-darker": "#6a4900",
+    "--goldenrod-darkest": "#2d1b00",
+    "--pool-blue-lightest": "var(--light-sky)",
+    "--pool-blue-lighter": "#a1d8f8",
+    "--pool-blue-light": "#5fb4e2",
+    "--pool-blue-dark": "#006992",
+    "--pool-blue-darker": "#004461",
+    "--pool-blue-darkest": "#002334",
+    "--milkweed-lightest": "#f0faef",
+    "--milkweed-lighter": "#c5e9c0",
+    "--milkweed-light": "#9dd596",
+    "--milkweed-dark": "#408c38",
+    "--milkweed-darker": "#15590e",
+    "--milkweed-darkest": "#012800",
+    "--aster-lightest": "#ffecf7",
+    "--aster-lighter": "var(--light-aster)",
+    "--aster-light": "#fdd4ed",
+    "--aster-dark": "#d271a2",
+    "--aster-darker": "#8c3256",
+    "--aster-darkest": "#3d0719",
+    "--evergreen-lightest": "#ebfbf7",
+    "--evergreen-lighter": "#91bcb3",
+    "--evergreen-light": "#4b7b72",
+    "--evergreen-dark": "#0f2c27",
+    "--evergreen-darker": "#061b18",
+    "--evergreen-darkest": "#020c09",
+    "--walnut-lightest": "#fff4f0",
+    "--walnut-lighter": "#edaa8d",
+    "--walnut-light": "#bc6d4a",
+    "--walnut-dark": "#5a2507",
+    "--walnut-darker": "#371200",
+    "--walnut-darkest": "#160400",
+    "--wheat-lightest": "var(--daisy)",
+    "--wheat-lighter": "var(--parchment)",
+    "--wheat-light": "#f6f0dd",
+    "--wheat-dark": "#a7a18f",
+    "--wheat-darker": "#605c4e",
+    "--wheat-darkest": "#221f15",
+    "--grey-lightest": "var(--secondary-grey)",
+    "--grey-lighter": "#d5d1ce",
+    "--grey-light": "#b2aeab",
+    "--grey": "var(--dark-grey)",
+    "--grey-dark": "#565350",
+    "--grey-darker": "var(--charcoal)",
+    "--grey-darkest": "#0b0907",
+    "--background": "var(--gray-2)",
+    "--foreground": "var(--gray-12)",
+    "--card": "#fff",
+    "--card-foreground": "var(--gray-12)",
+    "--popover": "#fff",
+    "--popover-foreground": "var(--gray-12)",
+    "--primary": "var(--orange-9)",
+    "--primary-hover": "var(--orange-10)",
+    "--primary-foreground": "var(--orange-1)",
+    "--secondary": "#fff",
+    "--secondary-foreground": "var(--gray-12)",
+    "--muted": "var(--gray-3)",
+    "--muted-foreground": "var(--gray-11)",
+    "--accent": "var(--gray-2)",
+    "--accent-foreground": "var(--gray-12)",
+    "--destructive": "var(--red-9)",
+    "--destructive-foreground": "#fff",
+    "--border": "var(--gray-6)",
+    "--input": "var(--gray-6)",
+    "--ring": "var(--gray-12)",
+    "--subtle": "var(--gray-9)",
+    "--link": "currentColor",
+    "--error": "#fdebec",
+    "--error-foreground": "var(--destructive)",
+    "--success": "#e6f6eb",
+    "--success-foreground": "#218358",
+    "--warning": "#fff7c2",
+    "--warning-foreground": "#ab6400",
+    "--info": "#def7f9",
+    "--info-foreground": "#107d98"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/3qku5pw2g07vz.css",
+   "selector": ":root:where([data-brand=\"refresh\"])",
+   "context": [],
+   "properties": {
+    "--background": "var(--parchment)",
+    "--foreground": "var(--charcoal)",
+    "--card-foreground": "var(--charcoal)",
+    "--popover-foreground": "var(--charcoal)",
+    "--primary": "var(--monarch-orange)",
+    "--primary-hover": "var(--persimmon)",
+    "--primary-foreground": "#fff",
+    "--secondary-foreground": "var(--charcoal)",
+    "--muted": "var(--wheat)",
+    "--muted-foreground": "#65625d",
+    "--accent": "var(--wheat)",
+    "--accent-foreground": "var(--charcoal)",
+    "--destructive": "#dc3e42",
+    "--border": "var(--tertiary-grey)",
+    "--input": "var(--tertiary-grey)",
+    "--ring": "var(--charcoal)",
+    "--subtle": "var(--dark-grey)",
+    "--link": "var(--monarch-orange)"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/3qku5pw2g07vz.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--font-primary": "\"ABC Oracle\", sans-serif",
+    "--font-secondary": "\"Copernicus\", sans-serif",
+    "--font-display": "\"ABC Otto\", serif",
+    "--font-accent": "\"Beltram Mono\", ui-monospace, monospace",
+    "--type-display-size": "36px",
+    "--type-display-leading": "1.2",
+    "--type-display-tracking": "var(--type-heading-1-tracking)",
+    "--type-display-weight": "var(--type-heading-1-weight)",
+    "--type-heading-1-size": "32px",
+    "--type-heading-1-leading": "1.2",
+    "--type-heading-1-tracking": "-3.2px",
+    "--type-heading-1-weight": "350",
+    "--type-heading-2-size": "32px",
+    "--type-heading-2-leading": "1.2",
+    "--type-heading-2-tracking": "-2.4px",
+    "--type-heading-2-weight": "350",
+    "--type-heading-3-size": "28px",
+    "--type-heading-3-leading": "1.2",
+    "--type-heading-3-tracking": "-1.6px",
+    "--type-heading-3-weight": "350",
+    "--type-heading-4-size": "20px",
+    "--type-heading-4-leading": "1.2",
+    "--type-heading-4-tracking": "-.24px",
+    "--type-heading-4-weight": "350",
+    "--type-heading-5-size": "18px",
+    "--type-heading-5-leading": "1.4",
+    "--type-heading-5-tracking": "-.2px",
+    "--type-heading-5-weight": "350",
+    "--type-heading-6-size": "16px",
+    "--type-heading-6-leading": "1.4",
+    "--type-heading-6-tracking": "-.2px",
+    "--type-heading-6-weight": "350",
+    "--type-body-size": "18px",
+    "--type-body-leading": "1.4",
+    "--type-body-tracking": "-.18px",
+    "--type-body-weight": "350",
+    "--type-small-size": "1rem",
+    "--type-small-leading": "1.3",
+    "--type-small-tracking": "-.16px",
+    "--type-small-weight": "350",
+    "--type-extra-small-size": ".875rem",
+    "--type-extra-small-leading": "1.3",
+    "--type-extra-small-tracking": "-.14px",
+    "--type-extra-small-weight": "350",
+    "--type-eyebrow-size": ".875rem",
+    "--type-eyebrow-leading": "1.3",
+    "--type-eyebrow-tracking": ".05em",
+    "--type-eyebrow-weight": "500"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/3qku5pw2g07vz.css",
+   "selector": ":root",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--type-display-size": "48px",
+    "--type-heading-1-size": "48px",
+    "--type-heading-2-size": "40px",
+    "--type-heading-3-size": "32px",
+    "--type-heading-4-size": "1.5rem",
+    "--type-heading-5-size": "20px",
+    "--type-heading-6-size": "20px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/3qku5pw2g07vz.css",
+   "selector": ":root:where([data-brand=\"refresh\"])",
+   "context": [],
+   "properties": {
+    "--font-secondary": "var(--font-display)",
+    "--type-heading-1-tracking": "-.03em",
+    "--type-heading-2-tracking": "-.03em",
+    "--type-heading-3-tracking": "0",
+    "--type-heading-4-tracking": "-.02em",
+    "--type-heading-5-tracking": "0",
+    "--type-heading-6-tracking": "0",
+    "--type-body-tracking": "0",
+    "--type-small-tracking": "0",
+    "--type-extra-small-tracking": "0",
+    "--type-display-size": "37px",
+    "--type-eyebrow-weight": "400",
+    "--type-eyebrow-tracking": ".03em"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/3qku5pw2g07vz.css",
+   "selector": ":root:where([data-brand=\"refresh\"])",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--type-display-size": "75px",
+    "--type-heading-3-tracking": "-.03em"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/3qku5pw2g07vz.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--gray-1": "#fbfaf8",
+    "--gray-2": "#f6f5f3",
+    "--gray-3": "#efecea",
+    "--gray-4": "#ebe8e5",
+    "--gray-5": "#e4e1de",
+    "--gray-6": "#dcd9d6",
+    "--gray-7": "#d1cecb",
+    "--gray-8": "#bebbb8",
+    "--gray-9": "#8f8c8a",
+    "--gray-10": "#84827f",
+    "--gray-11": "#777573",
+    "--gray-12": "#22201d",
+    "--orange-1": "#fefcfb",
+    "--orange-2": "#fff5f0",
+    "--orange-3": "#ffe9de",
+    "--orange-4": "#ffd7c4",
+    "--orange-5": "#ffc9b1",
+    "--orange-6": "#ffb99c",
+    "--orange-7": "#ffa586",
+    "--orange-8": "#f48d68",
+    "--orange-9": "#ff692d",
+    "--orange-10": "#f35b16",
+    "--orange-11": "#d64700",
+    "--orange-12": "#592c1d",
+    "--yellow-1": "#fefdfb",
+    "--yellow-2": "#fefbe9",
+    "--yellow-3": "#fff7c2",
+    "--yellow-4": "#ffee9c",
+    "--yellow-5": "#fbe577",
+    "--yellow-6": "#f3d673",
+    "--yellow-7": "#e9c162",
+    "--yellow-8": "#e2a336",
+    "--yellow-9": "#ffc53d",
+    "--yellow-10": "#ffba18",
+    "--yellow-11": "#ab6400",
+    "--yellow-12": "#4f3422",
+    "--blue-1": "#fafdfe",
+    "--blue-2": "#f2fafb",
+    "--blue-3": "#def7f9",
+    "--blue-4": "#caf1f6",
+    "--blue-5": "#b5e9f0",
+    "--blue-6": "#9ddde7",
+    "--blue-7": "#7dcedc",
+    "--blue-8": "#3db9cf",
+    "--blue-9": "#00a2c7",
+    "--blue-10": "#0797b9",
+    "--blue-11": "#107d98",
+    "--blue-12": "#0d3c48",
+    "--green-1": "#fbfefc",
+    "--green-2": "#f4fbf6",
+    "--green-3": "#e6f6eb",
+    "--green-4": "#d6f1df",
+    "--green-5": "#c4e8d1",
+    "--green-6": "#adddc0",
+    "--green-7": "#8eceaa",
+    "--green-8": "#5bb98b",
+    "--green-9": "#30a46c",
+    "--green-10": "#2b9a66",
+    "--green-11": "#218358",
+    "--green-12": "#193b2d",
+    "--purple-1": "#fefcfe",
+    "--purple-2": "#fbf7fe",
+    "--purple-3": "#f7edfe",
+    "--purple-4": "#f2e2fc",
+    "--purple-5": "#ead5f9",
+    "--purple-6": "#e0c4f4",
+    "--purple-7": "#d1afec",
+    "--purple-8": "#be93e4",
+    "--purple-9": "#8e4ec6",
+    "--purple-10": "#8347b9",
+    "--purple-11": "#8145b5",
+    "--purple-12": "#402060",
+    "--red-1": "#fffcfc",
+    "--red-2": "#fff7f7",
+    "--red-3": "#feebec",
+    "--red-4": "#ffdbdc",
+    "--red-5": "#ffcdce",
+    "--red-6": "#fdbdbe",
+    "--red-7": "#f4a9aa",
+    "--red-8": "#eb8e90",
+    "--red-9": "#e5484d",
+    "--red-10": "#dc3e42",
+    "--red-11": "#ce2c31",
+    "--red-12": "#641723",
+    "--pink-1": "#fffcfe",
+    "--pink-2": "#fef7fb",
+    "--pink-3": "#fee9f5",
+    "--pink-4": "#fbdcef",
+    "--pink-5": "#f6cee7",
+    "--pink-6": "#efbfdd",
+    "--pink-7": "#e7acd0",
+    "--pink-8": "#dd93c2",
+    "--pink-9": "#d6409f",
+    "--pink-10": "#cf3897",
+    "--pink-11": "#c2298a",
+    "--pink-12": "#651249",
+    "--indigo-1": "#fdfdfe",
+    "--indigo-2": "#f7f9ff",
+    "--indigo-3": "#edf2fe",
+    "--indigo-4": "#e1e9ff",
+    "--indigo-5": "#d2deff",
+    "--indigo-6": "#c1d0ff",
+    "--indigo-7": "#abbdf9",
+    "--indigo-8": "#8da4ef",
+    "--indigo-9": "#3e63dd",
+    "--indigo-10": "#3358d4",
+    "--indigo-11": "#3a5bc7",
+    "--indigo-12": "#1f2d5c",
+    "--theme-orange-background": "var(--orange-9)",
+    "--theme-orange-foreground": "#fff",
+    "--theme-blue-background": "var(--blue-9)",
+    "--theme-blue-foreground": "#fff",
+    "--theme-green-background": "var(--green-9)",
+    "--theme-green-foreground": "#fff",
+    "--theme-purple-background": "var(--pink-9)",
+    "--theme-purple-foreground": "#fff",
+    "--theme-yellow-background": "var(--yellow-9)",
+    "--theme-yellow-foreground": "var(--gray-12)",
+    "--theme-gray-background": "var(--gray-4)",
+    "--theme-gray-foreground": "var(--gray-12)",
+    "--theme-none-background": "transparent",
+    "--theme-none-foreground": "var(--gray-12)"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/3qku5pw2g07vz.css",
+   "selector": ":root:where([data-brand=\"refresh\"])",
+   "context": [],
+   "properties": {
+    "--gray-1": "var(--daisy)",
+    "--gray-2": "var(--parchment)",
+    "--gray-3": "var(--wheat)",
+    "--gray-4": "var(--wheat)",
+    "--gray-5": "var(--tertiary-grey)",
+    "--gray-6": "var(--tertiary-grey)",
+    "--gray-7": "var(--dark-grey)",
+    "--gray-8": "var(--dark-grey)",
+    "--gray-9": "var(--dark-grey)",
+    "--gray-10": "var(--muted-foreground)",
+    "--gray-11": "var(--muted-foreground)",
+    "--gray-12": "var(--charcoal)",
+    "--orange-1": "#fff",
+    "--orange-3": "var(--light-monarch-orange)",
+    "--orange-6": "var(--light-persimmon)",
+    "--orange-9": "var(--monarch-orange)",
+    "--orange-10": "var(--persimmon)",
+    "--orange-12": "var(--mahogany)",
+    "--yellow-6": "var(--light-goldenrod)",
+    "--yellow-9": "var(--goldenrod)",
+    "--blue-9": "var(--pool-blue)",
+    "--blue-10": "var(--pool-blue)",
+    "--green-6": "var(--light-milkweed)",
+    "--green-8": "var(--milkweed)",
+    "--green-9": "var(--milkweed)",
+    "--red-3": "color-mix(in srgb, var(--destructive) 10%, transparent)",
+    "--red-9": "var(--destructive)",
+    "--red-10": "var(--destructive)",
+    "--red-11": "var(--destructive)",
+    "--pink-6": "var(--light-aster)",
+    "--pink-9": "var(--aster)",
+    "--theme-orange-background": "var(--monarch-orange)",
+    "--theme-gray-background": "var(--wheat)",
+    "--theme-gray-foreground": "var(--charcoal)",
+    "--theme-none-foreground": "var(--charcoal)",
+    "--theme-orange-link": "currentColor",
+    "--theme-gray-link": "var(--link)",
+    "--theme-none-link": "var(--link)",
+    "--theme-orange-link-decoration": "underline",
+    "--theme-gray-link-decoration": "none",
+    "--theme-none-link-decoration": "none",
+    "--theme-blue-background": "var(--theme-gray-background)",
+    "--theme-blue-foreground": "var(--theme-gray-foreground)",
+    "--theme-blue-link": "var(--theme-gray-link)",
+    "--theme-blue-link-decoration": "var(--theme-gray-link-decoration)",
+    "--theme-green-background": "var(--theme-gray-background)",
+    "--theme-green-foreground": "var(--theme-gray-foreground)",
+    "--theme-green-link": "var(--theme-gray-link)",
+    "--theme-green-link-decoration": "var(--theme-gray-link-decoration)",
+    "--theme-purple-background": "var(--theme-gray-background)",
+    "--theme-purple-foreground": "var(--theme-gray-foreground)",
+    "--theme-purple-link": "var(--theme-gray-link)",
+    "--theme-purple-link-decoration": "var(--theme-gray-link-decoration)",
+    "--theme-yellow-background": "var(--theme-gray-background)",
+    "--theme-yellow-foreground": "var(--theme-gray-foreground)",
+    "--theme-yellow-link": "var(--theme-gray-link)",
+    "--theme-yellow-link-decoration": "var(--theme-gray-link-decoration)"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":where(.announcement-bar-text)",
+   "context": [],
+   "properties": {
+    "--link": "currentColor",
+    "--link-decoration": "underline"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] mux-player::part(center play button)",
+   "context": [],
+   "properties": {
+    "--media-control-background": "var(--monarch-orange)",
+    "--media-control-hover-background": "var(--persimmon)"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] mux-player",
+   "context": [],
+   "properties": {
+    "--media-background-color": "transparent"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] #feature-comparison-embed",
+   "context": [],
+   "properties": {
+    "--color-bg": "var(--daisy)",
+    "--color-border": "var(--wheat)"
+   },
+   "bin": "token"
+  }
+ ],
+ "osano": [
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-background-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button:focus-visible",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-background-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_accept, .osano-cm-button--type_accept-all",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-accept-background-color)",
+    "--osano-button-border-color": "var(--osano-button-accept-border-color)",
+    "--osano-button-foreground-color": "var(--osano-button-accept-foreground-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_accept-all:focus-visible, .osano-cm-button--type_accept-all:hover, .osano-cm-button--type_accept:focus-visible, .osano-cm-button--type_accept:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-accept-background-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_deny",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-deny-background-color)",
+    "--osano-button-border-color": "var(--osano-button-deny-border-color)",
+    "--osano-button-foreground-color": "var(--osano-button-deny-foreground-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_deny:focus-visible, .osano-cm-button--type_deny:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-deny-background-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_denyAll",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-reject-all-background-color)",
+    "--osano-button-border-color": "var(--osano-button-reject-all-border-color)",
+    "--osano-button-foreground-color": "var(--osano-button-reject-all-foreground-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_denyAll:focus-visible, .osano-cm-button--type_denyAll:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(\n      --osano-button-reject-all-background-color-hover\n  )"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_manage",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-manage-background-color)",
+    "--osano-button-border-color": "var(--osano-button-manage-border-color)",
+    "--osano-button-foreground-color": "var(--osano-button-manage-foreground-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-button--type_manage:focus-visible, .osano-cm-button--type_manage:hover",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-manage-background-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-close",
+   "context": [],
+   "properties": {
+    "--osano-button-close-background-color": "transparent",
+    "--osano-button-close-stroke-color": "var(--osano-button-close-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-close:focus-visible",
+   "context": [],
+   "properties": {
+    "--osano-button-close-background-color": "var(--osano-button-close-color)",
+    "--osano-button-close-stroke-color": "var(--osano-dialog-background-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-off-track-color)",
+    "--osano-toggle-thumb-color": "var(--osano-toggle-off-thumb-color)",
+    "--osano-toggle-border-color": "transparent"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:checked + .osano-cm-toggle__switch",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-on-track-color)",
+    "--osano-toggle-thumb-color": "var(--osano-toggle-on-thumb-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:hover + .osano-cm-toggle__switch",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-off-track-color-hover)",
+    "--osano-toggle-thumb-color": "var(--osano-toggle-off-thumb-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:focus-visible + .osano-cm-toggle__switch::before",
+   "context": [],
+   "properties": {
+    "--osano-toggle-border-color": "var(--osano-toggle-off-track-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:checked:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:checked:hover + .osano-cm-toggle__switch",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-on-track-color-hover)",
+    "--osano-toggle-thumb-color": "var(--osano-toggle-on-thumb-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:checked:focus-visible + .osano-cm-toggle__switch::before",
+   "context": [],
+   "properties": {
+    "--osano-toggle-border-color": "var(--osano-toggle-on-track-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:hover + .osano-cm-toggle__switch",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-off-track-color-disabled)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:focus-visible + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:hover + .osano-cm-toggle__switch::after",
+   "context": [],
+   "properties": {
+    "--osano-toggle-thumb-color": "var(--osano-toggle-off-thumb-color-disabled)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:focus-visible + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:hover + .osano-cm-toggle__switch::before",
+   "context": [],
+   "properties": {
+    "--osano-toggle-border-color": "transparent"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled:checked + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:checked:focus-visible + .osano-cm-toggle__switch, .osano-cm-toggle__input:disabled:checked:hover + .osano-cm-toggle__switch",
+   "context": [],
+   "properties": {
+    "--osano-toggle-track-color": "var(--osano-toggle-on-track-color-disabled)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled:checked + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:checked:focus-visible + .osano-cm-toggle__switch::after, .osano-cm-toggle__input:disabled:checked:hover + .osano-cm-toggle__switch::after",
+   "context": [],
+   "properties": {
+    "--osano-toggle-thumb-color": "var(--osano-toggle-on-thumb-color-disabled)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-toggle__input:disabled:checked + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:checked:focus-visible + .osano-cm-toggle__switch::before, .osano-cm-toggle__input:disabled:checked:hover + .osano-cm-toggle__switch::before",
+   "context": [],
+   "properties": {
+    "--osano-toggle-border-color": "transparent"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-dialog",
+   "context": [],
+   "properties": {
+    "--osano-gpc-color": "var(--osano-dialog-gpc-color)",
+    "--osano-gpc-border-color": "var(--osano-dialog-gpc-border-color)",
+    "--osano-gpc-background-color": "var(--osano-dialog-gpc-background-color)",
+    "--osano-gpc-foreground-color": "var(--osano-dialog-gpc-foreground-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-info-dialog",
+   "context": [],
+   "properties": {
+    "--osano-dialog-background-color": "var(--osano-info-dialog-background-color)",
+    "--osano-dialog-foreground-color": "var(--osano-info-dialog-foreground-color)",
+    "--osano-toggle-off-track-color": "var(--osano-info-dialog-toggle-off-track-color)",
+    "--osano-toggle-off-thumb-color": "var(--osano-info-dialog-toggle-off-thumb-color)",
+    "--osano-toggle-on-track-color": "var(--osano-info-dialog-toggle-on-track-color)",
+    "--osano-toggle-on-thumb-color": "var(--osano-info-dialog-toggle-on-thumb-color)",
+    "--osano-toggle-off-track-color-hover": "var(--osano-info-dialog-toggle-off-track-color-hover)",
+    "--osano-toggle-off-track-color-focus": "var(--osano-info-dialog-toggle-off-track-color-focus)",
+    "--osano-toggle-off-thumb-color-hover": "var(--osano-info-dialog-toggle-off-thumb-color-hover)",
+    "--osano-toggle-off-thumb-color-focus": "var(--osano-info-dialog-toggle-off-thumb-color-focus)",
+    "--osano-toggle-on-track-color-hover": "var(--osano-info-dialog-toggle-on-track-color-hover)",
+    "--osano-toggle-on-track-color-focus": "var(--osano-info-dialog-toggle-on-track-color-focus)",
+    "--osano-toggle-on-thumb-color-hover": "var(--osano-info-dialog-toggle-on-thumb-color-hover)",
+    "--osano-toggle-on-thumb-color-focus": "var(--osano-info-dialog-toggle-on-thumb-color-focus)",
+    "--osano-toggle-off-track-color-contrast": "var(\n      --osano-info-dialog-toggle-off-track-color-contrast\n  )",
+    "--osano-toggle-off-thumb-color-contrast": "var(\n      --osano-info-dialog-toggle-off-thumb-color-contrast\n  )",
+    "--osano-toggle-on-track-color-contrast": "var(--osano-info-dialog-toggle-on-track-color-contrast)",
+    "--osano-toggle-on-thumb-color-contrast": "var(--osano-info-dialog-toggle-on-thumb-color-contrast)",
+    "--osano-toggle-on-track-color-disabled": "var(--osano-info-dialog-toggle-on-track-color-disabled)",
+    "--osano-toggle-on-thumb-color-disabled": "var(--osano-info-dialog-toggle-on-thumb-color-disabled)",
+    "--osano-toggle-off-track-color-disabled": "var(\n      --osano-info-dialog-toggle-off-track-color-disabled\n  )",
+    "--osano-toggle-off-thumb-color-disabled": "var(\n      --osano-info-dialog-toggle-off-thumb-color-disabled\n  )",
+    "--osano-button-background-color": "var(--osano-info-dialog-button-background-color)",
+    "--osano-button-border-color": "var(--osano-info-dialog-button-border-color)",
+    "--osano-button-foreground-color": "var(--osano-info-dialog-button-foreground-color)",
+    "--osano-button-foreground-color-focus": "var(--osano-info-dialog-button-foreground-color-focus)",
+    "--osano-button-background-color-focus": "var(--osano-info-dialog-button-background-color-focus)",
+    "--osano-button-foreground-color-hover": "var(--osano-info-dialog-button-foreground-color-hover)",
+    "--osano-button-background-color-hover": "var(--osano-info-dialog-button-background-color-hover)",
+    "--osano-button-accept-background-color": "var(--osano-info-dialog-button-background-color)",
+    "--osano-button-accept-border-color": "var(--osano-info-dialog-button-border-color)",
+    "--osano-button-accept-foreground-color": "var(--osano-info-dialog-button-foreground-color)",
+    "--osano-button-accept-foreground-color-focus": "var(\n      --osano-info-dialog-button-foreground-color-focus\n  )",
+    "--osano-button-accept-background-color-focus": "var(\n      --osano-info-dialog-button-background-color-focus\n  )",
+    "--osano-button-accept-foreground-color-hover": "var(\n      --osano-info-dialog-button-foreground-color-hover\n  )",
+    "--osano-button-accept-background-color-hover": "var(\n      --osano-info-dialog-button-background-color-hover\n  )",
+    "--osano-button-deny-background-color": "var(--osano-info-dialog-button-background-color)",
+    "--osano-button-deny-border-color": "var(--osano-info-dialog-button-border-color)",
+    "--osano-button-deny-foreground-color": "var(--osano-info-dialog-button-foreground-color)",
+    "--osano-button-deny-foreground-color-focus": "var(\n      --osano-info-dialog-button-foreground-color-focus\n  )",
+    "--osano-button-deny-background-color-focus": "var(\n      --osano-info-dialog-button-background-color-focus\n  )",
+    "--osano-button-deny-foreground-color-hover": "var(\n      --osano-info-dialog-button-foreground-color-hover\n  )",
+    "--osano-button-deny-background-color-hover": "var(\n      --osano-info-dialog-button-background-color-hover\n  )",
+    "--osano-link-color": "var(--osano-info-dialog-link-color)",
+    "--osano-link-color-contrast": "var(--osano-info-dialog-link-color-contrast)",
+    "--osano-link-color-hover": "var(--osano-info-dialog-link-color-hover)",
+    "--osano-link-color-focus": "var(--osano-info-dialog-link-color-focus)",
+    "--osano-button-close-color": "var(--osano-info-dialog-button-close-color)",
+    "--osano-gpc-color": "var(--osano-info-dialog-gpc-color)",
+    "--osano-gpc-border-color": "var(--osano-info-dialog-gpc-border-color)",
+    "--osano-gpc-background-color": "var(--osano-info-dialog-gpc-background-color)",
+    "--osano-gpc-foreground-color": "var(--osano-info-dialog-gpc-foreground-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-consent-id-box__button--copied",
+   "context": [],
+   "properties": {
+    "--osano-button-background-color": "var(--osano-button-accept-background-color-hover)",
+    "--osano-button-border-color": "var(--osano-button-accept-background-color-hover)",
+    "--osano-button-foreground-color": "var(--osano-button-accept-foreground-color-hover)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ".osano-cm-window--theme_modern",
+   "context": [],
+   "properties": {
+    "--osano-focus-outline": "2px solid var(--osano-focus-outline-color)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "inline-0",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--osano-clear-dialog-background": "rgba(255,255,255,0)",
+    "--osano-theme": "classic",
+    "--osano-button-border-color": "var(--osano-button-foreground-color)",
+    "--osano-dialog-type": "bar",
+    "--osano-display-position": "bottom",
+    "--osano-info-dialog-position": "right",
+    "--osano-widget-position": "right",
+    "--osano-opt-out-widget-position": "left",
+    "--osano-button-background-color": "#ffffff",
+    "--osano-button-foreground-color": "#22201d",
+    "--osano-dialog-background-color": "#ffffff",
+    "--osano-dialog-foreground-color": "#22201d",
+    "--osano-info-dialog-overlay-color": "rgba(34,32,29,0.5)",
+    "--osano-link-color": "#22201d",
+    "--osano-toggle-off-track-color": "#bebbb8",
+    "--osano-toggle-off-thumb-color": "#666666",
+    "--osano-toggle-on-track-color": "#ff692d",
+    "--osano-toggle-on-thumb-color": "#4b4b4b",
+    "--osano-widget-color": "#37cd8f",
+    "--osano-widget-outline-color": "#29246a",
+    "--osano-widget-fill-color": "#fff",
+    "--osano-focus-outline-color": "Highlight",
+    "--osano-pill-background-color": "#EBE0FE",
+    "--osano-pill-foreground-color": "#3E1A7F",
+    "--osano-button-close-color": "var(--osano-dialog-foreground-color)",
+    "--osano-button-accept-background-color": "var(--osano-button-background-color)",
+    "--osano-button-accept-border-color": "var(--osano-button-border-color, var(--osano-button-foreground-color))",
+    "--osano-button-accept-foreground-color": "var(--osano-button-foreground-color)",
+    "--osano-button-deny-background-color": "#ffffff",
+    "--osano-button-deny-border-color": "var(--osano-button-border-color, var(--osano-button-foreground-color))",
+    "--osano-button-deny-foreground-color": "#22201d",
+    "--osano-button-reject-all-background-color": "var(--osano-button-background-color)",
+    "--osano-button-reject-all-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-button-reject-all-border-color": "var(--osano-button-border-color, var(--osano-button-foreground-color))",
+    "--osano-button-reject-all-foreground-color": "var(--osano-button-foreground-color)",
+    "--osano-button-manage-background-color": "var(--osano-button-background-color)",
+    "--osano-button-manage-border-color": "var(--osano-button-border-color, var(--osano-button-foreground-color))",
+    "--osano-button-manage-foreground-color": "var(--osano-button-foreground-color)",
+    "--osano-info-dialog-link-color": "var(--osano-link-color)",
+    "--osano-info-dialog-button-close-color": "var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color))",
+    "--osano-info-dialog-toggle-off-track-color": "var(--osano-toggle-off-track-color)",
+    "--osano-info-dialog-toggle-off-thumb-color": "var(--osano-toggle-off-thumb-color)",
+    "--osano-info-dialog-toggle-on-track-color": "var(--osano-toggle-on-track-color)",
+    "--osano-info-dialog-toggle-on-thumb-color": "var(--osano-toggle-on-thumb-color)",
+    "--osano-info-dialog-button-background-color": "var(--osano-button-background-color)",
+    "--osano-info-dialog-button-border-color": "var(--osano-info-dialog-button-foreground-color, var(--osano-button-foreground-color))",
+    "--osano-info-dialog-button-foreground-color": "var(--osano-button-foreground-color)",
+    "--osano-dialog-gpc-background-color": "var(--osano-dialog-background-color)",
+    "--osano-dialog-gpc-border-color": "var(--osano-dialog-foreground-color)",
+    "--osano-dialog-gpc-foreground-color": "var(--osano-dialog-foreground-color)",
+    "--osano-dialog-gpc-color": "#37cd84",
+    "--osano-info-dialog-gpc-background-color": "var(--osano-info-dialog-background-color, var(--osano-dialog-background-color))",
+    "--osano-info-dialog-gpc-border-color": "var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color))",
+    "--osano-info-dialog-gpc-foreground-color": "var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color))",
+    "--osano-info-dialog-gpc-color": "var(--osano-dialog-gpc-color)",
+    "--osano-gpc-background-color": "#ffffff",
+    "--osano-gpc-border-color": "#058a5e",
+    "--osano-gpc-foreground-color": "#058a5e",
+    "--osano-gpc-color": "#37cd84",
+    "--osano-gpc-background-color-hover": "#ffffff",
+    "--osano-info-dialog-background-color": "#ffffff",
+    "--osano-info-dialog-foreground-color": "#22201d",
+    "--osano-toggle-on-thumb-color-disabled": "#bfbfbf",
+    "--osano-toggle-on-thumb-color-hover": "#3d3d3d",
+    "--osano-info-dialog-toggle-on-thumb-color-hover": "#3d3d3d",
+    "--osano-toggle-off-thumb-color-disabled": "#bfbfbf",
+    "--osano-toggle-off-thumb-color-hover": "#575757",
+    "--osano-info-dialog-toggle-off-thumb-color-hover": "#575757",
+    "--osano-toggle-off-background-color": "#d2cfff",
+    "--osano-toggle-button-off-color": "#ffffff",
+    "--osano-toggle-on-background-color": "#37cd8f",
+    "--osano-toggle-button-on-color": "#f4f4f4",
+    "--osano-button-background-color-contrast": "#ebebeb",
+    "--osano-button-foreground-color-contrast": "#363431",
+    "--osano-button-deny-background-color-contrast": "#ebebeb",
+    "--osano-button-deny-foreground-color-contrast": "#363431",
+    "--osano-dialog-background-color-contrast": "#ebebeb",
+    "--osano-dialog-foreground-color-contrast": "#363431",
+    "--osano-link-color-contrast": "#363431",
+    "--osano-toggle-off-track-color-contrast": "#aaa7a4",
+    "--osano-toggle-off-track-color-disabled": "#7e7b78",
+    "--osano-toggle-off-thumb-color-contrast": "#7a7a7a",
+    "--osano-toggle-on-track-color-contrast": "#eb5519",
+    "--osano-toggle-on-track-color-disabled": "#bf2900",
+    "--osano-toggle-on-thumb-color-contrast": "#5f5f5f",
+    "--osano-gpc-background-color-contrast": "#ebebeb",
+    "--osano-button-background-color-hover": "var(--osano-button-background-color-contrast, #ebebeb)",
+    "--osano-button-foreground-color-hover": "var(--osano-button-foreground-color-contrast, #363431)",
+    "--osano-button-background-color-focus": "var(--osano-button-foreground-color-hover, var(--osano-button-foreground-color-contrast))",
+    "--osano-button-foreground-color-focus": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-toggle-off-track-color-hover": "var(--osano-toggle-off-track-color-contrast, #aaa7a4)",
+    "--osano-toggle-off-track-color-focus": "var(--osano-toggle-off-thumb-color-hover, var(--osano-toggle-off-thumb-color-contrast))",
+    "--osano-toggle-off-thumb-color-focus": "var(--osano-toggle-off-track-color-hover, var(--osano-toggle-off-track-color-contrast))",
+    "--osano-toggle-on-track-color-hover": "var(--osano-toggle-on-track-color-contrast, #eb5519)",
+    "--osano-toggle-on-track-color-focus": "var(--osano-toggle-on-thumb-color-hover, var(--osano-toggle-on-thumb-color-contrast))",
+    "--osano-toggle-on-thumb-color-focus": "var(--osano-toggle-on-track-color-hover, var(--osano-toggle-on-track-color-contrast))",
+    "--osano-button-accept-background-color-contrast": "var(--osano-button-background-color-contrast, #ebebeb)",
+    "--osano-button-accept-foreground-color-contrast": "var(--osano-button-foreground-color-contrast, #363431)",
+    "--osano-button-accept-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-button-accept-foreground-color-hover": "var(--osano-button-accept-foreground-color-contrast, var(--osano-button-foreground-color-contrast))",
+    "--osano-button-accept-background-color-focus": "var(--osano-button-accept-foreground-color-hover, var(--osano-button-accept-foreground-color-contrast))",
+    "--osano-button-accept-foreground-color-focus": "var(--osano-button-accept-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-button-deny-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-button-deny-foreground-color-hover": "var(--osano-button-deny-foreground-color-contrast, #363431)",
+    "--osano-button-deny-background-color-focus": "var(--osano-button-deny-foreground-color-hover, var(--osano-button-deny-foreground-color-contrast))",
+    "--osano-button-deny-foreground-color-focus": "var(--osano-button-deny-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-button-reject-all-background-color-contrast": "var(--osano-button-background-color-contrast, #ebebeb)",
+    "--osano-button-reject-all-foreground-color-contrast": "var(--osano-button-foreground-color-contrast, #363431)",
+    "--osano-button-reject-all-foreground-color-hover": "var(--osano-button-reject-all-foreground-color-contrast, var(--osano-button-foreground-color-contrast))",
+    "--osano-button-reject-all-background-color-focus": "var(--osano-button-reject-all-foreground-color-hover, var(--osano-button-reject-all-foreground-color-contrast))",
+    "--osano-button-reject-all-foreground-color-focus": "var(--osano-button-reject-all-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-button-manage-background-color-contrast": "var(--osano-button-background-color-contrast, #ebebeb)",
+    "--osano-button-manage-foreground-color-contrast": "var(--osano-button-foreground-color-contrast, #363431)",
+    "--osano-button-manage-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-button-manage-foreground-color-hover": "var(--osano-button-manage-foreground-color-contrast, var(--osano-button-foreground-color-contrast))",
+    "--osano-button-manage-background-color-focus": "var(--osano-button-manage-foreground-color-hover, var(--osano-button-manage-foreground-color-contrast))",
+    "--osano-button-manage-foreground-color-focus": "var(--osano-button-manage-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-info-dialog-button-background-color-contrast": "var(--osano-button-background-color-contrast, #ebebeb)",
+    "--osano-info-dialog-button-foreground-color-contrast": "var(--osano-button-foreground-color-contrast, #363431)",
+    "--osano-info-dialog-button-background-color-hover": "var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast))",
+    "--osano-info-dialog-button-foreground-color-hover": "var(--osano-info-dialog-button-foreground-color-contrast, var(--osano-button-foreground-color-contrast))",
+    "--osano-info-dialog-button-background-color-focus": "var(--osano-info-dialog-button-foreground-color-hover, var(--osano-info-dialog-button-foreground-color-contrast))",
+    "--osano-info-dialog-button-foreground-color-focus": "var(--osano-info-dialog-button-background-color-hover, var(--osano-button-background-color-hover))",
+    "--osano-info-dialog-toggle-off-track-color-contrast": "var(--osano-toggle-off-track-color-contrast, #aaa7a4)",
+    "--osano-info-dialog-toggle-off-thumb-color-contrast": "var(--osano-toggle-off-thumb-color-contrast, #7a7a7a)",
+    "--osano-info-dialog-toggle-off-track-color-hover": "var(--osano-info-dialog-toggle-off-track-color-contrast, var(--osano-toggle-off-track-color-contrast))",
+    "--osano-info-dialog-toggle-off-track-color-focus": "var(--osano-info-dialog-toggle-off-thumb-color-hover, var(--osano-info-dialog-toggle-off-thumb-color-contrast))",
+    "--osano-info-dialog-toggle-off-thumb-color-focus": "var(--osano-info-dialog-toggle-off-track-color-hover, var(--osano-info-dialog-toggle-off-track-color-contrast))",
+    "--osano-info-dialog-toggle-off-track-color-disabled": "var(--osano-toggle-off-track-color-disabled, #7e7b78)",
+    "--osano-info-dialog-toggle-off-thumb-color-disabled": "var(--osano-toggle-off-thumb-color-disabled)",
+    "--osano-info-dialog-toggle-on-track-color-contrast": "var(--osano-toggle-on-track-color-contrast, #eb5519)",
+    "--osano-info-dialog-toggle-on-thumb-color-contrast": "var(--osano-toggle-on-thumb-color-contrast, #5f5f5f)",
+    "--osano-info-dialog-toggle-on-track-color-hover": "var(--osano-info-dialog-toggle-on-track-color-contrast, var(--osano-toggle-on-track-color-contrast))",
+    "--osano-info-dialog-toggle-on-track-color-focus": "var(--osano-info-dialog-toggle-on-thumb-color-hover, var(--osano-info-dialog-toggle-on-thumb-color-contrast))",
+    "--osano-info-dialog-toggle-on-thumb-color-focus": "var(--osano-info-dialog-toggle-on-track-color-hover, var(--osano-info-dialog-toggle-on-track-color-contrast))",
+    "--osano-info-dialog-toggle-on-track-color-disabled": "var(--osano-toggle-on-track-color-disabled, #bf2900)",
+    "--osano-info-dialog-toggle-on-thumb-color-disabled": "var(--osano-toggle-on-thumb-color-disabled)",
+    "--osano-info-dialog-link-color-contrast": "var(--osano-link-color-contrast, #363431)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .osano-cm-toggle",
+   "context": [],
+   "properties": {
+    "--osano-toggle-on-track-color": "var(--monarch-orange)",
+    "--osano-toggle-on-track-color-hover": "var(--persimmon)",
+    "--osano-toggle-on-thumb-color": "#fff",
+    "--osano-toggle-on-thumb-color-hover": "#fff",
+    "--osano-toggle-on-thumb-color-disabled": "#fff",
+    "--osano-toggle-on-track-color-disabled": "var(--monarch-orange)",
+    "--osano-toggle-off-track-color": "var(--dark-grey)",
+    "--osano-toggle-off-track-color-hover": "color-mix(in srgb, var(--dark-grey), var(--charcoal) 20%)",
+    "--osano-toggle-off-thumb-color": "#fff",
+    "--osano-toggle-off-thumb-color-hover": "#fff",
+    "--osano-toggle-off-thumb-color-disabled": "#fff",
+    "--osano-toggle-off-track-color-disabled": "var(--dark-grey)"
+   },
+   "bin": "osano"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .osano-cm-toggle__input:focus-visible + .osano-cm-toggle__switch::before",
+   "context": [],
+   "properties": {
+    "--osano-toggle-border-color": "var(--ring)"
+   },
+   "bin": "osano"
+  }
+ ],
+ "tw": [
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "context": [],
+   "properties": {
+    "--tw-border-spacing-x": "0",
+    "--tw-border-spacing-y": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-pan-x": "",
+    "--tw-pan-y": "",
+    "--tw-pinch-zoom": "",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-gradient-from-position": "",
+    "--tw-gradient-via-position": "",
+    "--tw-gradient-to-position": "",
+    "--tw-ordinal": "",
+    "--tw-slashed-zero": "",
+    "--tw-numeric-figure": "",
+    "--tw-numeric-spacing": "",
+    "--tw-numeric-fraction": "",
+    "--tw-ring-inset": "",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "#556bfc80",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--tw-blur": "",
+    "--tw-brightness": "",
+    "--tw-contrast": "",
+    "--tw-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--tw-invert": "",
+    "--tw-saturate": "",
+    "--tw-sepia": "",
+    "--tw-drop-shadow": "",
+    "--tw-backdrop-blur": "",
+    "--tw-backdrop-brightness": "",
+    "--tw-backdrop-contrast": "",
+    "--tw-backdrop-grayscale": "",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-backdrop-invert": "",
+    "--tw-backdrop-opacity": "",
+    "--tw-backdrop-saturate": "",
+    "--tw-backdrop-sepia": "",
+    "--tw-contain-size": "",
+    "--tw-contain-layout": "",
+    "--tw-contain-paint": "",
+    "--tw-contain-style": ""
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": "::before, ::after",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".pt > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".announcement-bar-text a:hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".plain-text > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":where(.plain-text) ul > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".-translate-x-1\\/2",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-50%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".-translate-x-4",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-1rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".-translate-x-full",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-100%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-50%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".-translate-y-\\[calc\\(100\\%_\\+_1rem\\)\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "calc(calc(100% + 1rem) * -1)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".translate-x-0",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".translate-x-\\[-50\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-50%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".translate-y-0",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".translate-y-\\[-300\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-300%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".translate-y-\\[-50\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-50%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".-rotate-\\[10deg\\]",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "-10deg"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".rotate-45",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "45deg"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".rotate-90",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "90deg"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".scale-90",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": ".9",
+    "--tw-scale-y": ".9"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".scale-\\[3\\.5\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "3.5",
+    "--tw-scale-y": "3.5"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\!space-y-12 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\!space-y-2 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\!space-y-6 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-x-1 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-x-3 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-0 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-0\\.5 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-1 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-1\\.5 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-12 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-16 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-2 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-2\\.5 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-3 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-3\\.5 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-4 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-5 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-6 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".space-y-8 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".divide-x > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-divide-x-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".border-gray-200",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".border-primary",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".border-white",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".bg-background",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".bg-black",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".bg-popover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".bg-white",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".from-gray-3",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "var(--gray-3) var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "#fff0 var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from), var(--tw-gradient-to)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".from-orange-6",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "var(--orange-6) var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "#fff0 var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from), var(--tw-gradient-to)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".from-orange-9",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "var(--orange-9) var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "#fff0 var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from), var(--tw-gradient-to)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".from-red-9",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "var(--red-9) var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "#fff0 var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from), var(--tw-gradient-to)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".from-yellow-6",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "var(--yellow-6) var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "#fff0 var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from), var(--tw-gradient-to)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".to-orange-9",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "var(--orange-9) var(--tw-gradient-to-position)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".to-pink-9",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "var(--pink-9) var(--tw-gradient-to-position)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".to-red-9",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "var(--red-9) var(--tw-gradient-to-position)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".to-transparent",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "transparent var(--tw-gradient-to-position)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".to-yellow-9",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "var(--yellow-9) var(--tw-gradient-to-position)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".text-foreground",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".text-gray-600",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".text-gray-700",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".text-green-600",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".text-popover-foreground",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".text-primary",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".text-red-600",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".text-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".shadow",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 #22201d13, 0 1px 2px -1px #22201d13",
+    "--tw-shadow-colored": "0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".shadow-2xl",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 25px 50px -12px #22201d33",
+    "--tw-shadow-colored": "0 25px 50px -12px var(--tw-shadow-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".shadow-lg",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 10px 15px -3px #22201d1a, 0 4px 6px -4px #22201d1a",
+    "--tw-shadow-colored": "0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".shadow-md",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 4px 6px -1px #22201d13, 0 2px 4px -2px #22201d13",
+    "--tw-shadow-colored": "0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".shadow-sm",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 1px 2px 0 #22201d0d",
+    "--tw-shadow-colored": "0 1px 2px 0 var(--tw-shadow-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".shadow-xl",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 20px 25px -5px #22201d1a, 0 8px 10px -6px #22201d1a",
+    "--tw-shadow-colored": "0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".shadow-pink-6",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "var(--pink-6)",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".ring",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".ring-1",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".ring-inset",
+   "context": [],
+   "properties": {
+    "--tw-ring-inset": "inset"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".ring-\\[\\#000\\]\\/10",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "#0000001a"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".ring-\\[rgba\\(34\\,32\\,27\\,0\\.075\\)\\]",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "#22201b13"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".ring-gray-6",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "var(--gray-6)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".ring-gray-900\\/5",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "#1b1d270d"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".ring-offset-gray-1",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-color": "var(--gray-1)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".blur",
+   "context": [],
+   "properties": {
+    "--tw-blur": "blur(8px)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".blur-3xl",
+   "context": [],
+   "properties": {
+    "--tw-blur": "blur(64px)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".grayscale",
+   "context": [],
+   "properties": {
+    "--tw-grayscale": "grayscale(100%)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".backdrop-blur-2xl",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(40px)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".backdrop-blur-lg",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(16px)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".backdrop-blur-xl",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(24px)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".animate-in",
+   "context": [],
+   "properties": {
+    "--tw-enter-opacity": "initial",
+    "--tw-enter-scale": "initial",
+    "--tw-enter-rotate": "initial",
+    "--tw-enter-translate-x": "initial",
+    "--tw-enter-translate-y": "initial"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".fade-in, .fade-in-0",
+   "context": [],
+   "properties": {
+    "--tw-enter-opacity": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".zoom-in-95",
+   "context": [],
+   "properties": {
+    "--tw-enter-scale": ".95"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".slide-in-from-top-2",
+   "context": [],
+   "properties": {
+    "--tw-enter-translate-y": "-.5rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".hover\\:-translate-y-2:hover",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-.5rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".hover\\:bg-accent:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".hover\\:text-white:hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".hover\\:shadow-2xl:hover",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 25px 50px -12px #22201d33",
+    "--tw-shadow-colored": "0 25px 50px -12px var(--tw-shadow-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".hover\\:shadow-lg:hover",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 10px 15px -3px #22201d1a, 0 4px 6px -4px #22201d1a",
+    "--tw-shadow-colored": "0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".focus\\:bg-accent:focus",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".focus\\:text-white:focus",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".focus\\:ring-2:focus",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".focus\\:ring-gray-12:focus",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "var(--gray-12)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".focus\\:ring-offset-2:focus",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-width": "2px"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".focus-visible\\:ring-2:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".focus-visible\\:ring-gray-12:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "var(--gray-12)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".focus-visible\\:ring-offset-2:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-width": "2px"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".active\\:bg-accent:active",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".active\\:shadow-inner:active",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "inset 0 2px 4px 0 #22201d0d",
+    "--tw-shadow-colored": "inset 0 2px 4px 0 var(--tw-shadow-color)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".group:hover .group-hover\\:scale-\\[1\\.025\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1.025",
+    "--tw-scale-y": "1.025"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".group:hover .group-hover\\:text-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".group:focus .group-focus\\:scale-\\[1\\.025\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1.025",
+    "--tw-scale-y": "1.025"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[side\\=bottom\\]\\:translate-y-1[data-side=\"bottom\"]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": ".25rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[side\\=left\\]\\:-translate-x-1[data-side=\"left\"]",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-.25rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[side\\=right\\]\\:translate-x-1[data-side=\"right\"]",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": ".25rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[side\\=top\\]\\:-translate-y-1[data-side=\"top\"]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-.25rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[active\\]\\:bg-accent[data-active], .data-\\[state\\=open\\]\\:bg-accent[data-state=\"open\"]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[motion\\^\\=from-\\]\\:animate-in[data-motion^=\"from-\"], .data-\\[state\\=open\\]\\:animate-in[data-state=\"open\"], .data-\\[state\\=visible\\]\\:animate-in[data-state=\"visible\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-opacity": "initial",
+    "--tw-enter-scale": "initial",
+    "--tw-enter-rotate": "initial",
+    "--tw-enter-translate-x": "initial",
+    "--tw-enter-translate-y": "initial"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[motion\\^\\=to-\\]\\:animate-out[data-motion^=\"to-\"], .data-\\[state\\=closed\\]\\:animate-out[data-state=\"closed\"], .data-\\[state\\=hidden\\]\\:animate-out[data-state=\"hidden\"]",
+   "context": [],
+   "properties": {
+    "--tw-exit-opacity": "initial",
+    "--tw-exit-scale": "initial",
+    "--tw-exit-rotate": "initial",
+    "--tw-exit-translate-x": "initial",
+    "--tw-exit-translate-y": "initial"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[motion\\^\\=from-\\]\\:fade-in[data-motion^=\"from-\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-opacity": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[motion\\^\\=to-\\]\\:fade-out[data-motion^=\"to-\"], .data-\\[state\\=closed\\]\\:fade-out[data-state=\"closed\"], .data-\\[state\\=closed\\]\\:fade-out-0[data-state=\"closed\"], .data-\\[state\\=hidden\\]\\:fade-out[data-state=\"hidden\"]",
+   "context": [],
+   "properties": {
+    "--tw-exit-opacity": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[state\\=open\\]\\:fade-in[data-state=\"open\"], .data-\\[state\\=open\\]\\:fade-in-0[data-state=\"open\"], .data-\\[state\\=visible\\]\\:fade-in[data-state=\"visible\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-opacity": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[state\\=closed\\]\\:zoom-out-95[data-state=\"closed\"]",
+   "context": [],
+   "properties": {
+    "--tw-exit-scale": ".95"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[state\\=open\\]\\:zoom-in-90[data-state=\"open\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-scale": ".9"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[state\\=open\\]\\:zoom-in-95[data-state=\"open\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-scale": ".95"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[motion\\=from-end\\]\\:slide-in-from-right-52[data-motion=\"from-end\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-translate-x": "13rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[motion\\=from-start\\]\\:slide-in-from-left-52[data-motion=\"from-start\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-translate-x": "-13rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[motion\\=to-end\\]\\:slide-out-to-right-52[data-motion=\"to-end\"]",
+   "context": [],
+   "properties": {
+    "--tw-exit-translate-x": "13rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[motion\\=to-start\\]\\:slide-out-to-left-52[data-motion=\"to-start\"]",
+   "context": [],
+   "properties": {
+    "--tw-exit-translate-x": "-13rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[side\\=bottom\\]\\:slide-in-from-top-2[data-side=\"bottom\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-translate-y": "-.5rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[side\\=left\\]\\:slide-in-from-right-2[data-side=\"left\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-translate-x": ".5rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[side\\=right\\]\\:slide-in-from-left-2[data-side=\"right\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-translate-x": "-.5rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[side\\=top\\]\\:slide-in-from-bottom-2[data-side=\"top\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-translate-y": ".5rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[state\\=closed\\]\\:slide-out-to-left-1\\/2[data-state=\"closed\"]",
+   "context": [],
+   "properties": {
+    "--tw-exit-translate-x": "-50%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[state\\=closed\\]\\:slide-out-to-top-2[data-state=\"closed\"]",
+   "context": [],
+   "properties": {
+    "--tw-exit-translate-y": "-.5rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[state\\=closed\\]\\:slide-out-to-top-\\[48\\%\\][data-state=\"closed\"]",
+   "context": [],
+   "properties": {
+    "--tw-exit-translate-y": "-48%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[state\\=open\\]\\:slide-in-from-left-1\\/2[data-state=\"open\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-translate-x": "-50%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".data-\\[state\\=open\\]\\:slide-in-from-top-\\[48\\%\\][data-state=\"open\"]",
+   "context": [],
+   "properties": {
+    "--tw-enter-translate-y": "-48%"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".group[data-state=\"open\"] .group-data-\\[state\\=open\\]\\:rotate-180",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "180deg"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".group[data-state=\"open\"] .group-data-\\[state\\=open\\]\\:rotate-90",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "90deg"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:border-accent",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:border-tertiary-grey",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:\\!bg-goldenrod",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:\\!bg-milkweed",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:\\!bg-monarch-orange",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:\\!bg-pool-blue",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:bg-accent",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:bg-background",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:bg-error",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:bg-mahogany",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:bg-primary",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:bg-success",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:bg-white",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:to-orange-10",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "var(--orange-10) var(--tw-gradient-to-position)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:text-error-foreground",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:text-link",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:text-success-foreground",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:text-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:shadow-none",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:shadow-orange-6",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "var(--orange-6)",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:active\\:bg-white:active",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".max-md\\:bg-white",
+   "context": [
+    "@media not all and (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".max-md\\:\\!backdrop-blur-2xl",
+   "context": [
+    "@media not all and (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(40px)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:max-md\\:bg-accent",
+   "context": [
+    "@media not all and (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".max-sm\\:space-y-4 > :not([hidden]) ~ :not([hidden])",
+   "context": [
+    "@media not all and (min-width: 640px)"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".sm\\:space-x-2 > :not([hidden]) ~ :not([hidden])",
+   "context": [
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:translate-x-0",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:translate-y-2",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-translate-y": ".5rem"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:translate-y-\\[calc\\(100\\%_-_4rem\\)\\]",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(100% - 4rem)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:space-y-10 > :not([hidden]) ~ :not([hidden])",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:space-y-12 > :not([hidden]) ~ :not([hidden])",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:space-y-16 > :not([hidden]) ~ :not([hidden])",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:space-y-3 > :not([hidden]) ~ :not([hidden])",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:space-y-4 > :not([hidden]) ~ :not([hidden])",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:space-y-5 > :not([hidden]) ~ :not([hidden])",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:bg-white",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".md\\:\\!backdrop-blur-2xl",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(40px)"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".group:hover .md\\:group-hover\\:translate-y-0",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".group:hover .md\\:group-hover\\:scale-\\[1\\.025\\]",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-scale-x": "1.025",
+    "--tw-scale-y": "1.025"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".group:focus .md\\:group-focus\\:translate-y-0",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".group:focus .md\\:group-focus\\:scale-\\[1\\.025\\]",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-scale-x": "1.025",
+    "--tw-scale-y": "1.025"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".lg\\:-translate-x-0",
+   "context": [
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "-0px"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[\\&\\>svg\\+div\\]\\:translate-y-\\[-3px\\] > svg + div",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-3px"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[\\&\\>svg\\]\\:text-foreground > svg",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[\\&\\[data-state\\=open\\]\\>svg\\]\\:rotate-180[data-state=\"open\"] > svg",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "180deg"
+   },
+   "bin": "tw"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ":root[data-brand=\"refresh\"] .brand\\:\\[\\&_\\.filled-icons\\]\\:\\!text-goldenrod .filled-icons",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tw"
+  }
+ ],
+ "utility": [
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[--delay\\:160ms\\]",
+   "context": [],
+   "properties": {
+    "--delay": ".16s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[--delay\\:20ms\\]",
+   "context": [],
+   "properties": {
+    "--delay": "20ms"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[--delay\\:50ms\\]",
+   "context": [],
+   "properties": {
+    "--delay": "50ms"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[--delay\\:80ms\\]",
+   "context": [],
+   "properties": {
+    "--delay": "80ms"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[--duration\\:3s\\]",
+   "context": [],
+   "properties": {
+    "--duration": "3s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[--link-decoration\\:underline\\]",
+   "context": [],
+   "properties": {
+    "--link-decoration": "underline"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[--link-hover\\:var\\(--monarch-orange\\)\\]",
+   "context": [],
+   "properties": {
+    "--link-hover": "var(--monarch-orange)"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "selector": ".\\[--link\\:currentColor\\]",
+   "context": [],
+   "properties": {
+    "--link": "currentColor"
+   },
+   "bin": "utility"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Oracle\"",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "350",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Oracle\"",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "350",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Oracle\"",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Oracle\"",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Oracle\"",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "700",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Oracle\"",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "700",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "Copernicus",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "Copernicus",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "Copernicus",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "Copernicus",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"Copernicus Book\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Oracle\"",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Oracle Light\"",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Otto\"",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Otto\"",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Otto\"",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"ABC Otto\"",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "500",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.monarch.com/_next/static/immutable/chunks/13abesxsybg-a.css",
+   "font-family": "\"Beltram Mono\"",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--accent": {
+    "raw": "#f6f5f3",
+    "kind": "color",
+    "value": "#f6f5f3"
+   },
+   "--accent-foreground": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--aster": {
+    "raw": "#fbc9e8",
+    "kind": "color",
+    "value": "#fbc9e8"
+   },
+   "--aster-dark": {
+    "raw": "#d271a2",
+    "kind": "color",
+    "value": "#d271a2"
+   },
+   "--aster-darker": {
+    "raw": "#8c3256",
+    "kind": "color",
+    "value": "#8c3256"
+   },
+   "--aster-darkest": {
+    "raw": "#3d0719",
+    "kind": "color",
+    "value": "#3d0719"
+   },
+   "--aster-light": {
+    "raw": "#fdd4ed",
+    "kind": "color",
+    "value": "#fdd4ed"
+   },
+   "--aster-lighter": {
+    "raw": "#fce3f1",
+    "kind": "color",
+    "value": "#fce3f1"
+   },
+   "--aster-lightest": {
+    "raw": "#ffecf7",
+    "kind": "color",
+    "value": "#ffecf7"
+   },
+   "--background": {
+    "raw": "#f6f5f3",
+    "kind": "color",
+    "value": "#f6f5f3"
+   },
+   "--blue-1": {
+    "raw": "#fafdfe",
+    "kind": "color",
+    "value": "#fafdfe"
+   },
+   "--blue-10": {
+    "raw": "#0797b9",
+    "kind": "color",
+    "value": "#0797b9"
+   },
+   "--blue-11": {
+    "raw": "#107d98",
+    "kind": "color",
+    "value": "#107d98"
+   },
+   "--blue-12": {
+    "raw": "#0d3c48",
+    "kind": "color",
+    "value": "#0d3c48"
+   },
+   "--blue-2": {
+    "raw": "#f2fafb",
+    "kind": "color",
+    "value": "#f2fafb"
+   },
+   "--blue-3": {
+    "raw": "#def7f9",
+    "kind": "color",
+    "value": "#def7f9"
+   },
+   "--blue-4": {
+    "raw": "#caf1f6",
+    "kind": "color",
+    "value": "#caf1f6"
+   },
+   "--blue-5": {
+    "raw": "#b5e9f0",
+    "kind": "color",
+    "value": "#b5e9f0"
+   },
+   "--blue-6": {
+    "raw": "#9ddde7",
+    "kind": "color",
+    "value": "#9ddde7"
+   },
+   "--blue-7": {
+    "raw": "#7dcedc",
+    "kind": "color",
+    "value": "#7dcedc"
+   },
+   "--blue-8": {
+    "raw": "#3db9cf",
+    "kind": "color",
+    "value": "#3db9cf"
+   },
+   "--blue-9": {
+    "raw": "#00a2c7",
+    "kind": "color",
+    "value": "#00a2c7"
+   },
+   "--border": {
+    "raw": "#dcd9d6",
+    "kind": "color",
+    "value": "#dcd9d6"
+   },
+   "--card": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--card-foreground": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--charcoal": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--color-bg": {
+    "kind": "missing"
+   },
+   "--color-border": {
+    "kind": "missing"
+   },
+   "--daisy": {
+    "raw": "#fffdf6",
+    "kind": "color",
+    "value": "#fffdf6"
+   },
+   "--dark-grey": {
+    "raw": "#8f8c8a",
+    "kind": "color",
+    "value": "#8f8c8a"
+   },
+   "--delay": {
+    "kind": "missing"
+   },
+   "--destructive": {
+    "raw": "#e5484d",
+    "kind": "color",
+    "value": "#e5484d"
+   },
+   "--destructive-foreground": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--duration": {
+    "kind": "missing"
+   },
+   "--error": {
+    "raw": "#fdebec",
+    "kind": "color",
+    "value": "#fdebec"
+   },
+   "--error-foreground": {
+    "raw": "#e5484d",
+    "kind": "color",
+    "value": "#e5484d"
+   },
+   "--evergreen": {
+    "raw": "#1a3d37",
+    "kind": "color",
+    "value": "#1a3d37"
+   },
+   "--evergreen-dark": {
+    "raw": "#0f2c27",
+    "kind": "color",
+    "value": "#0f2c27"
+   },
+   "--evergreen-darker": {
+    "raw": "#061b18",
+    "kind": "color",
+    "value": "#061b18"
+   },
+   "--evergreen-darkest": {
+    "raw": "#020c09",
+    "kind": "color",
+    "value": "#020c09"
+   },
+   "--evergreen-light": {
+    "raw": "#4b7b72",
+    "kind": "color",
+    "value": "#4b7b72"
+   },
+   "--evergreen-lighter": {
+    "raw": "#91bcb3",
+    "kind": "color",
+    "value": "#91bcb3"
+   },
+   "--evergreen-lightest": {
+    "raw": "#ebfbf7",
+    "kind": "color",
+    "value": "#ebfbf7"
+   },
+   "--fade-transition-time": {
+    "kind": "missing"
+   },
+   "--font-accent": {
+    "raw": "\"Beltram Mono\", ui-monospace, monospace",
+    "kind": "other"
+   },
+   "--font-display": {
+    "raw": "\"ABC Otto\", serif",
+    "kind": "other"
+   },
+   "--font-primary": {
+    "raw": "\"ABC Oracle\", sans-serif",
+    "kind": "other"
+   },
+   "--font-secondary": {
+    "raw": "\"Copernicus\", sans-serif",
+    "kind": "other"
+   },
+   "--foreground": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--goldenrod": {
+    "raw": "#efb921",
+    "kind": "color",
+    "value": "#efb921"
+   },
+   "--goldenrod-dark": {
+    "raw": "#ac7e00",
+    "kind": "color",
+    "value": "#ac7e00"
+   },
+   "--goldenrod-darker": {
+    "raw": "#6a4900",
+    "kind": "color",
+    "value": "#6a4900"
+   },
+   "--goldenrod-darkest": {
+    "raw": "#2d1b00",
+    "kind": "color",
+    "value": "#2d1b00"
+   },
+   "--goldenrod-light": {
+    "raw": "#f7cd6d",
+    "kind": "color",
+    "value": "#f7cd6d"
+   },
+   "--goldenrod-lighter": {
+    "raw": "#fde2a7",
+    "kind": "color",
+    "value": "#fde2a7"
+   },
+   "--goldenrod-lightest": {
+    "raw": "#fff6e2",
+    "kind": "color",
+    "value": "#fff6e2"
+   },
+   "--gray-1": {
+    "raw": "#fbfaf8",
+    "kind": "color",
+    "value": "#fbfaf8"
+   },
+   "--gray-10": {
+    "raw": "#84827f",
+    "kind": "color",
+    "value": "#84827f"
+   },
+   "--gray-11": {
+    "raw": "#777573",
+    "kind": "color",
+    "value": "#777573"
+   },
+   "--gray-12": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--gray-2": {
+    "raw": "#f6f5f3",
+    "kind": "color",
+    "value": "#f6f5f3"
+   },
+   "--gray-3": {
+    "raw": "#efecea",
+    "kind": "color",
+    "value": "#efecea"
+   },
+   "--gray-4": {
+    "raw": "#ebe8e5",
+    "kind": "color",
+    "value": "#ebe8e5"
+   },
+   "--gray-5": {
+    "raw": "#e4e1de",
+    "kind": "color",
+    "value": "#e4e1de"
+   },
+   "--gray-6": {
+    "raw": "#dcd9d6",
+    "kind": "color",
+    "value": "#dcd9d6"
+   },
+   "--gray-7": {
+    "raw": "#d1cecb",
+    "kind": "color",
+    "value": "#d1cecb"
+   },
+   "--gray-8": {
+    "raw": "#bebbb8",
+    "kind": "color",
+    "value": "#bebbb8"
+   },
+   "--gray-9": {
+    "raw": "#8f8c8a",
+    "kind": "color",
+    "value": "#8f8c8a"
+   },
+   "--green-1": {
+    "raw": "#fbfefc",
+    "kind": "color",
+    "value": "#fbfefc"
+   },
+   "--green-10": {
+    "raw": "#2b9a66",
+    "kind": "color",
+    "value": "#2b9a66"
+   },
+   "--green-11": {
+    "raw": "#218358",
+    "kind": "color",
+    "value": "#218358"
+   },
+   "--green-12": {
+    "raw": "#193b2d",
+    "kind": "color",
+    "value": "#193b2d"
+   },
+   "--green-2": {
+    "raw": "#f4fbf6",
+    "kind": "color",
+    "value": "#f4fbf6"
+   },
+   "--green-3": {
+    "raw": "#e6f6eb",
+    "kind": "color",
+    "value": "#e6f6eb"
+   },
+   "--green-4": {
+    "raw": "#d6f1df",
+    "kind": "color",
+    "value": "#d6f1df"
+   },
+   "--green-5": {
+    "raw": "#c4e8d1",
+    "kind": "color",
+    "value": "#c4e8d1"
+   },
+   "--green-6": {
+    "raw": "#adddc0",
+    "kind": "color",
+    "value": "#adddc0"
+   },
+   "--green-7": {
+    "raw": "#8eceaa",
+    "kind": "color",
+    "value": "#8eceaa"
+   },
+   "--green-8": {
+    "raw": "#5bb98b",
+    "kind": "color",
+    "value": "#5bb98b"
+   },
+   "--green-9": {
+    "raw": "#30a46c",
+    "kind": "color",
+    "value": "#30a46c"
+   },
+   "--grey": {
+    "raw": "#8f8c8a",
+    "kind": "color",
+    "value": "#8f8c8a"
+   },
+   "--grey-dark": {
+    "raw": "#565350",
+    "kind": "color",
+    "value": "#565350"
+   },
+   "--grey-darker": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--grey-darkest": {
+    "raw": "#0b0907",
+    "kind": "color",
+    "value": "#0b0907"
+   },
+   "--grey-light": {
+    "raw": "#b2aeab",
+    "kind": "color",
+    "value": "#b2aeab"
+   },
+   "--grey-lighter": {
+    "raw": "#d5d1ce",
+    "kind": "color",
+    "value": "#d5d1ce"
+   },
+   "--grey-lightest": {
+    "raw": "#f6f5f3",
+    "kind": "color",
+    "value": "#f6f5f3"
+   },
+   "--indigo-1": {
+    "raw": "#fdfdfe",
+    "kind": "color",
+    "value": "#fdfdfe"
+   },
+   "--indigo-10": {
+    "raw": "#3358d4",
+    "kind": "color",
+    "value": "#3358d4"
+   },
+   "--indigo-11": {
+    "raw": "#3a5bc7",
+    "kind": "color",
+    "value": "#3a5bc7"
+   },
+   "--indigo-12": {
+    "raw": "#1f2d5c",
+    "kind": "color",
+    "value": "#1f2d5c"
+   },
+   "--indigo-2": {
+    "raw": "#f7f9ff",
+    "kind": "color",
+    "value": "#f7f9ff"
+   },
+   "--indigo-3": {
+    "raw": "#edf2fe",
+    "kind": "color",
+    "value": "#edf2fe"
+   },
+   "--indigo-4": {
+    "raw": "#e1e9ff",
+    "kind": "color",
+    "value": "#e1e9ff"
+   },
+   "--indigo-5": {
+    "raw": "#d2deff",
+    "kind": "color",
+    "value": "#d2deff"
+   },
+   "--indigo-6": {
+    "raw": "#c1d0ff",
+    "kind": "color",
+    "value": "#c1d0ff"
+   },
+   "--indigo-7": {
+    "raw": "#abbdf9",
+    "kind": "color",
+    "value": "#abbdf9"
+   },
+   "--indigo-8": {
+    "raw": "#8da4ef",
+    "kind": "color",
+    "value": "#8da4ef"
+   },
+   "--indigo-9": {
+    "raw": "#3e63dd",
+    "kind": "color",
+    "value": "#3e63dd"
+   },
+   "--info": {
+    "raw": "#def7f9",
+    "kind": "color",
+    "value": "#def7f9"
+   },
+   "--info-foreground": {
+    "raw": "#107d98",
+    "kind": "color",
+    "value": "#107d98"
+   },
+   "--input": {
+    "raw": "#dcd9d6",
+    "kind": "color",
+    "value": "#dcd9d6"
+   },
+   "--light-aster": {
+    "raw": "#fce3f1",
+    "kind": "color",
+    "value": "#fce3f1"
+   },
+   "--light-goldenrod": {
+    "raw": "#ffdd7c",
+    "kind": "color",
+    "value": "#ffdd7c"
+   },
+   "--light-milkweed": {
+    "raw": "#deffd9",
+    "kind": "color",
+    "value": "#deffd9"
+   },
+   "--light-monarch-orange": {
+    "raw": "#ffe9de",
+    "kind": "color",
+    "value": "#ffe9de"
+   },
+   "--light-persimmon": {
+    "raw": "#ffc1af",
+    "kind": "color",
+    "value": "#ffc1af"
+   },
+   "--light-sky": {
+    "raw": "#dff5fc",
+    "kind": "color",
+    "value": "#dff5fc"
+   },
+   "--link": {
+    "raw": "currentColor",
+    "kind": "other"
+   },
+   "--link-decoration": {
+    "kind": "missing"
+   },
+   "--link-hover": {
+    "kind": "missing"
+   },
+   "--mahogany": {
+    "raw": "#360305",
+    "kind": "color",
+    "value": "#360305"
+   },
+   "--mahogany-dark": {
+    "raw": "#2e0002",
+    "kind": "color",
+    "value": "#2e0002"
+   },
+   "--mahogany-darker": {
+    "raw": "#250001",
+    "kind": "color",
+    "value": "#250001"
+   },
+   "--mahogany-darkest": {
+    "raw": "#1b0001",
+    "kind": "color",
+    "value": "#1b0001"
+   },
+   "--mahogany-light": {
+    "raw": "#794945",
+    "kind": "color",
+    "value": "#794945"
+   },
+   "--mahogany-lighter": {
+    "raw": "#bb9592",
+    "kind": "color",
+    "value": "#bb9592"
+   },
+   "--mahogany-lightest": {
+    "raw": "#fee9e6",
+    "kind": "color",
+    "value": "#fee9e6"
+   },
+   "--media-background-color": {
+    "kind": "missing"
+   },
+   "--media-control-background": {
+    "kind": "missing"
+   },
+   "--media-control-hover-background": {
+    "kind": "missing"
+   },
+   "--milkweed": {
+    "raw": "#7abf72",
+    "kind": "color",
+    "value": "#7abf72"
+   },
+   "--milkweed-dark": {
+    "raw": "#408c38",
+    "kind": "color",
+    "value": "#408c38"
+   },
+   "--milkweed-darker": {
+    "raw": "#15590e",
+    "kind": "color",
+    "value": "#15590e"
+   },
+   "--milkweed-darkest": {
+    "raw": "#012800",
+    "kind": "color",
+    "value": "#012800"
+   },
+   "--milkweed-light": {
+    "raw": "#9dd596",
+    "kind": "color",
+    "value": "#9dd596"
+   },
+   "--milkweed-lighter": {
+    "raw": "#c5e9c0",
+    "kind": "color",
+    "value": "#c5e9c0"
+   },
+   "--milkweed-lightest": {
+    "raw": "#f0faef",
+    "kind": "color",
+    "value": "#f0faef"
+   },
+   "--monarch-orange": {
+    "raw": "#f35b16",
+    "kind": "color",
+    "value": "#f35b16"
+   },
+   "--monarch-orange-dark": {
+    "raw": "#b14000",
+    "kind": "color",
+    "value": "#b14000"
+   },
+   "--monarch-orange-darker": {
+    "raw": "#712900",
+    "kind": "color",
+    "value": "#712900"
+   },
+   "--monarch-orange-darkest": {
+    "raw": "#381200",
+    "kind": "color",
+    "value": "#381200"
+   },
+   "--monarch-orange-light": {
+    "raw": "#ff926b",
+    "kind": "color",
+    "value": "#ff926b"
+   },
+   "--monarch-orange-lighter": {
+    "raw": "#ffc1af",
+    "kind": "color",
+    "value": "#ffc1af"
+   },
+   "--monarch-orange-lightest": {
+    "raw": "#ffe9de",
+    "kind": "color",
+    "value": "#ffe9de"
+   },
+   "--muted": {
+    "raw": "#efecea",
+    "kind": "color",
+    "value": "#efecea"
+   },
+   "--muted-foreground": {
+    "raw": "#777573",
+    "kind": "color",
+    "value": "#777573"
+   },
+   "--orange-1": {
+    "raw": "#fefcfb",
+    "kind": "color",
+    "value": "#fefcfb"
+   },
+   "--orange-10": {
+    "raw": "#f35b16",
+    "kind": "color",
+    "value": "#f35b16"
+   },
+   "--orange-11": {
+    "raw": "#d64700",
+    "kind": "color",
+    "value": "#d64700"
+   },
+   "--orange-12": {
+    "raw": "#592c1d",
+    "kind": "color",
+    "value": "#592c1d"
+   },
+   "--orange-2": {
+    "raw": "#fff5f0",
+    "kind": "color",
+    "value": "#fff5f0"
+   },
+   "--orange-3": {
+    "raw": "#ffe9de",
+    "kind": "color",
+    "value": "#ffe9de"
+   },
+   "--orange-4": {
+    "raw": "#ffd7c4",
+    "kind": "color",
+    "value": "#ffd7c4"
+   },
+   "--orange-5": {
+    "raw": "#ffc9b1",
+    "kind": "color",
+    "value": "#ffc9b1"
+   },
+   "--orange-6": {
+    "raw": "#ffb99c",
+    "kind": "color",
+    "value": "#ffb99c"
+   },
+   "--orange-7": {
+    "raw": "#ffa586",
+    "kind": "color",
+    "value": "#ffa586"
+   },
+   "--orange-8": {
+    "raw": "#f48d68",
+    "kind": "color",
+    "value": "#f48d68"
+   },
+   "--orange-9": {
+    "raw": "#ff692d",
+    "kind": "color",
+    "value": "#ff692d"
+   },
+   "--osano-button-accept-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-accept-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-accept-background-color-focus": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-accept-background-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-accept-border-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-accept-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-accept-foreground-color-contrast": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-accept-foreground-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-accept-foreground-color-hover": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-background-color-focus": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-background-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-border-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-close-background-color": {
+    "kind": "missing"
+   },
+   "--osano-button-close-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-close-stroke-color": {
+    "kind": "missing"
+   },
+   "--osano-button-deny-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-deny-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-deny-background-color-focus": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-deny-background-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-deny-border-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-deny-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-deny-foreground-color-contrast": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-deny-foreground-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-deny-foreground-color-hover": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-foreground-color-contrast": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-foreground-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-foreground-color-hover": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-manage-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-manage-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-manage-background-color-focus": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-manage-background-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-manage-border-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-manage-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-manage-foreground-color-contrast": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-manage-foreground-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-manage-foreground-color-hover": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-reject-all-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-button-reject-all-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-reject-all-background-color-focus": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-reject-all-background-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-reject-all-border-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-reject-all-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-button-reject-all-foreground-color-contrast": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-button-reject-all-foreground-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-button-reject-all-foreground-color-hover": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-clear-dialog-background": {
+    "raw": "rgba(255,255,255,0)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0)"
+   },
+   "--osano-dialog-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-dialog-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-dialog-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-dialog-foreground-color-contrast": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-dialog-gpc-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-dialog-gpc-border-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-dialog-gpc-color": {
+    "raw": "#37cd84",
+    "kind": "color",
+    "value": "#37cd84"
+   },
+   "--osano-dialog-gpc-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-dialog-type": {
+    "raw": "bar",
+    "kind": "other"
+   },
+   "--osano-display-position": {
+    "raw": "bottom",
+    "kind": "other"
+   },
+   "--osano-focus-outline": {
+    "kind": "missing"
+   },
+   "--osano-focus-outline-color": {
+    "raw": "Highlight",
+    "kind": "color",
+    "value": "rgba(128, 188, 254, 0.6)"
+   },
+   "--osano-focus-outline-offset": {
+    "kind": "missing"
+   },
+   "--osano-gpc-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-gpc-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-gpc-background-color-hover": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-gpc-border-color": {
+    "raw": "#058a5e",
+    "kind": "color",
+    "value": "#058a5e"
+   },
+   "--osano-gpc-color": {
+    "raw": "#37cd84",
+    "kind": "color",
+    "value": "#37cd84"
+   },
+   "--osano-gpc-foreground-color": {
+    "raw": "#058a5e",
+    "kind": "color",
+    "value": "#058a5e"
+   },
+   "--osano-info-dialog-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-button-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-button-background-color-contrast": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-button-background-color-focus": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-info-dialog-button-background-color-hover": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-button-border-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-info-dialog-button-close-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-info-dialog-button-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-info-dialog-button-foreground-color-contrast": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-info-dialog-button-foreground-color-focus": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--osano-info-dialog-button-foreground-color-hover": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-info-dialog-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-info-dialog-gpc-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-info-dialog-gpc-border-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-info-dialog-gpc-color": {
+    "raw": "#37cd84",
+    "kind": "color",
+    "value": "#37cd84"
+   },
+   "--osano-info-dialog-gpc-foreground-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-info-dialog-link-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-info-dialog-link-color-contrast": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-info-dialog-overlay-color": {
+    "raw": "rgba(34,32,29,0.5)",
+    "kind": "color",
+    "value": "rgba(34, 32, 29, 0.5)"
+   },
+   "--osano-info-dialog-position": {
+    "raw": "right",
+    "kind": "other"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color": {
+    "raw": "#666666",
+    "kind": "color",
+    "value": "#666666"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-contrast": {
+    "raw": "#7a7a7a",
+    "kind": "color",
+    "value": "#7a7a7a"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-focus": {
+    "raw": "#aaa7a4",
+    "kind": "color",
+    "value": "#aaa7a4"
+   },
+   "--osano-info-dialog-toggle-off-thumb-color-hover": {
+    "raw": "#575757",
+    "kind": "color",
+    "value": "#575757"
+   },
+   "--osano-info-dialog-toggle-off-track-color": {
+    "raw": "#bebbb8",
+    "kind": "color",
+    "value": "#bebbb8"
+   },
+   "--osano-info-dialog-toggle-off-track-color-contrast": {
+    "raw": "#aaa7a4",
+    "kind": "color",
+    "value": "#aaa7a4"
+   },
+   "--osano-info-dialog-toggle-off-track-color-disabled": {
+    "raw": "#7e7b78",
+    "kind": "color",
+    "value": "#7e7b78"
+   },
+   "--osano-info-dialog-toggle-off-track-color-focus": {
+    "raw": "#575757",
+    "kind": "color",
+    "value": "#575757"
+   },
+   "--osano-info-dialog-toggle-off-track-color-hover": {
+    "raw": "#aaa7a4",
+    "kind": "color",
+    "value": "#aaa7a4"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color": {
+    "raw": "#4b4b4b",
+    "kind": "color",
+    "value": "#4b4b4b"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-contrast": {
+    "raw": "#5f5f5f",
+    "kind": "color",
+    "value": "#5f5f5f"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-focus": {
+    "raw": "#eb5519",
+    "kind": "color",
+    "value": "#eb5519"
+   },
+   "--osano-info-dialog-toggle-on-thumb-color-hover": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--osano-info-dialog-toggle-on-track-color": {
+    "raw": "#ff692d",
+    "kind": "color",
+    "value": "#ff692d"
+   },
+   "--osano-info-dialog-toggle-on-track-color-contrast": {
+    "raw": "#eb5519",
+    "kind": "color",
+    "value": "#eb5519"
+   },
+   "--osano-info-dialog-toggle-on-track-color-disabled": {
+    "raw": "#bf2900",
+    "kind": "color",
+    "value": "#bf2900"
+   },
+   "--osano-info-dialog-toggle-on-track-color-focus": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--osano-info-dialog-toggle-on-track-color-hover": {
+    "raw": "#eb5519",
+    "kind": "color",
+    "value": "#eb5519"
+   },
+   "--osano-link-color": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--osano-link-color-contrast": {
+    "raw": "#363431",
+    "kind": "color",
+    "value": "#363431"
+   },
+   "--osano-link-color-focus": {
+    "kind": "missing"
+   },
+   "--osano-link-color-hover": {
+    "kind": "missing"
+   },
+   "--osano-opt-out-widget-position": {
+    "raw": "left",
+    "kind": "other"
+   },
+   "--osano-pill-background-color": {
+    "raw": "#EBE0FE",
+    "kind": "color",
+    "value": "#ebe0fe"
+   },
+   "--osano-pill-foreground-color": {
+    "raw": "#3E1A7F",
+    "kind": "color",
+    "value": "#3e1a7f"
+   },
+   "--osano-theme": {
+    "raw": "classic",
+    "kind": "other"
+   },
+   "--osano-toggle-border-color": {
+    "kind": "missing"
+   },
+   "--osano-toggle-button-off-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-toggle-button-on-color": {
+    "raw": "#f4f4f4",
+    "kind": "color",
+    "value": "#f4f4f4"
+   },
+   "--osano-toggle-off-background-color": {
+    "raw": "#d2cfff",
+    "kind": "color",
+    "value": "#d2cfff"
+   },
+   "--osano-toggle-off-thumb-color": {
+    "raw": "#666666",
+    "kind": "color",
+    "value": "#666666"
+   },
+   "--osano-toggle-off-thumb-color-contrast": {
+    "raw": "#7a7a7a",
+    "kind": "color",
+    "value": "#7a7a7a"
+   },
+   "--osano-toggle-off-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-toggle-off-thumb-color-focus": {
+    "raw": "#aaa7a4",
+    "kind": "color",
+    "value": "#aaa7a4"
+   },
+   "--osano-toggle-off-thumb-color-hover": {
+    "raw": "#575757",
+    "kind": "color",
+    "value": "#575757"
+   },
+   "--osano-toggle-off-track-color": {
+    "raw": "#bebbb8",
+    "kind": "color",
+    "value": "#bebbb8"
+   },
+   "--osano-toggle-off-track-color-contrast": {
+    "raw": "#aaa7a4",
+    "kind": "color",
+    "value": "#aaa7a4"
+   },
+   "--osano-toggle-off-track-color-disabled": {
+    "raw": "#7e7b78",
+    "kind": "color",
+    "value": "#7e7b78"
+   },
+   "--osano-toggle-off-track-color-focus": {
+    "raw": "#575757",
+    "kind": "color",
+    "value": "#575757"
+   },
+   "--osano-toggle-off-track-color-hover": {
+    "raw": "#aaa7a4",
+    "kind": "color",
+    "value": "#aaa7a4"
+   },
+   "--osano-toggle-on-background-color": {
+    "raw": "#37cd8f",
+    "kind": "color",
+    "value": "#37cd8f"
+   },
+   "--osano-toggle-on-thumb-color": {
+    "raw": "#4b4b4b",
+    "kind": "color",
+    "value": "#4b4b4b"
+   },
+   "--osano-toggle-on-thumb-color-contrast": {
+    "raw": "#5f5f5f",
+    "kind": "color",
+    "value": "#5f5f5f"
+   },
+   "--osano-toggle-on-thumb-color-disabled": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--osano-toggle-on-thumb-color-focus": {
+    "raw": "#eb5519",
+    "kind": "color",
+    "value": "#eb5519"
+   },
+   "--osano-toggle-on-thumb-color-hover": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--osano-toggle-on-track-color": {
+    "raw": "#ff692d",
+    "kind": "color",
+    "value": "#ff692d"
+   },
+   "--osano-toggle-on-track-color-contrast": {
+    "raw": "#eb5519",
+    "kind": "color",
+    "value": "#eb5519"
+   },
+   "--osano-toggle-on-track-color-disabled": {
+    "raw": "#bf2900",
+    "kind": "color",
+    "value": "#bf2900"
+   },
+   "--osano-toggle-on-track-color-focus": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--osano-toggle-on-track-color-hover": {
+    "raw": "#eb5519",
+    "kind": "color",
+    "value": "#eb5519"
+   },
+   "--osano-toggle-thumb-color": {
+    "kind": "missing"
+   },
+   "--osano-toggle-track-color": {
+    "kind": "missing"
+   },
+   "--osano-widget-color": {
+    "raw": "#37cd8f",
+    "kind": "color",
+    "value": "#37cd8f"
+   },
+   "--osano-widget-fill-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--osano-widget-outline-color": {
+    "raw": "#29246a",
+    "kind": "color",
+    "value": "#29246a"
+   },
+   "--osano-widget-position": {
+    "raw": "right",
+    "kind": "other"
+   },
+   "--parchment": {
+    "raw": "#fdf8ed",
+    "kind": "color",
+    "value": "#fdf8ed"
+   },
+   "--persimmon": {
+    "raw": "#e64818",
+    "kind": "color",
+    "value": "#e64818"
+   },
+   "--pink-1": {
+    "raw": "#fffcfe",
+    "kind": "color",
+    "value": "#fffcfe"
+   },
+   "--pink-10": {
+    "raw": "#cf3897",
+    "kind": "color",
+    "value": "#cf3897"
+   },
+   "--pink-11": {
+    "raw": "#c2298a",
+    "kind": "color",
+    "value": "#c2298a"
+   },
+   "--pink-12": {
+    "raw": "#651249",
+    "kind": "color",
+    "value": "#651249"
+   },
+   "--pink-2": {
+    "raw": "#fef7fb",
+    "kind": "color",
+    "value": "#fef7fb"
+   },
+   "--pink-3": {
+    "raw": "#fee9f5",
+    "kind": "color",
+    "value": "#fee9f5"
+   },
+   "--pink-4": {
+    "raw": "#fbdcef",
+    "kind": "color",
+    "value": "#fbdcef"
+   },
+   "--pink-5": {
+    "raw": "#f6cee7",
+    "kind": "color",
+    "value": "#f6cee7"
+   },
+   "--pink-6": {
+    "raw": "#efbfdd",
+    "kind": "color",
+    "value": "#efbfdd"
+   },
+   "--pink-7": {
+    "raw": "#e7acd0",
+    "kind": "color",
+    "value": "#e7acd0"
+   },
+   "--pink-8": {
+    "raw": "#dd93c2",
+    "kind": "color",
+    "value": "#dd93c2"
+   },
+   "--pink-9": {
+    "raw": "#d6409f",
+    "kind": "color",
+    "value": "#d6409f"
+   },
+   "--pool-blue": {
+    "raw": "#278fc0",
+    "kind": "color",
+    "value": "#278fc0"
+   },
+   "--pool-blue-dark": {
+    "raw": "#006992",
+    "kind": "color",
+    "value": "#006992"
+   },
+   "--pool-blue-darker": {
+    "raw": "#004461",
+    "kind": "color",
+    "value": "#004461"
+   },
+   "--pool-blue-darkest": {
+    "raw": "#002334",
+    "kind": "color",
+    "value": "#002334"
+   },
+   "--pool-blue-light": {
+    "raw": "#5fb4e2",
+    "kind": "color",
+    "value": "#5fb4e2"
+   },
+   "--pool-blue-lighter": {
+    "raw": "#a1d8f8",
+    "kind": "color",
+    "value": "#a1d8f8"
+   },
+   "--pool-blue-lightest": {
+    "raw": "#dff5fc",
+    "kind": "color",
+    "value": "#dff5fc"
+   },
+   "--popover": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--popover-foreground": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--primary": {
+    "raw": "#ff692d",
+    "kind": "color",
+    "value": "#ff692d"
+   },
+   "--primary-foreground": {
+    "raw": "#fefcfb",
+    "kind": "color",
+    "value": "#fefcfb"
+   },
+   "--primary-hover": {
+    "raw": "#f35b16",
+    "kind": "color",
+    "value": "#f35b16"
+   },
+   "--purple-1": {
+    "raw": "#fefcfe",
+    "kind": "color",
+    "value": "#fefcfe"
+   },
+   "--purple-10": {
+    "raw": "#8347b9",
+    "kind": "color",
+    "value": "#8347b9"
+   },
+   "--purple-11": {
+    "raw": "#8145b5",
+    "kind": "color",
+    "value": "#8145b5"
+   },
+   "--purple-12": {
+    "raw": "#402060",
+    "kind": "color",
+    "value": "#402060"
+   },
+   "--purple-2": {
+    "raw": "#fbf7fe",
+    "kind": "color",
+    "value": "#fbf7fe"
+   },
+   "--purple-3": {
+    "raw": "#f7edfe",
+    "kind": "color",
+    "value": "#f7edfe"
+   },
+   "--purple-4": {
+    "raw": "#f2e2fc",
+    "kind": "color",
+    "value": "#f2e2fc"
+   },
+   "--purple-5": {
+    "raw": "#ead5f9",
+    "kind": "color",
+    "value": "#ead5f9"
+   },
+   "--purple-6": {
+    "raw": "#e0c4f4",
+    "kind": "color",
+    "value": "#e0c4f4"
+   },
+   "--purple-7": {
+    "raw": "#d1afec",
+    "kind": "color",
+    "value": "#d1afec"
+   },
+   "--purple-8": {
+    "raw": "#be93e4",
+    "kind": "color",
+    "value": "#be93e4"
+   },
+   "--purple-9": {
+    "raw": "#8e4ec6",
+    "kind": "color",
+    "value": "#8e4ec6"
+   },
+   "--red-1": {
+    "raw": "#fffcfc",
+    "kind": "color",
+    "value": "#fffcfc"
+   },
+   "--red-10": {
+    "raw": "#dc3e42",
+    "kind": "color",
+    "value": "#dc3e42"
+   },
+   "--red-11": {
+    "raw": "#ce2c31",
+    "kind": "color",
+    "value": "#ce2c31"
+   },
+   "--red-12": {
+    "raw": "#641723",
+    "kind": "color",
+    "value": "#641723"
+   },
+   "--red-2": {
+    "raw": "#fff7f7",
+    "kind": "color",
+    "value": "#fff7f7"
+   },
+   "--red-3": {
+    "raw": "#feebec",
+    "kind": "color",
+    "value": "#feebec"
+   },
+   "--red-4": {
+    "raw": "#ffdbdc",
+    "kind": "color",
+    "value": "#ffdbdc"
+   },
+   "--red-5": {
+    "raw": "#ffcdce",
+    "kind": "color",
+    "value": "#ffcdce"
+   },
+   "--red-6": {
+    "raw": "#fdbdbe",
+    "kind": "color",
+    "value": "#fdbdbe"
+   },
+   "--red-7": {
+    "raw": "#f4a9aa",
+    "kind": "color",
+    "value": "#f4a9aa"
+   },
+   "--red-8": {
+    "raw": "#eb8e90",
+    "kind": "color",
+    "value": "#eb8e90"
+   },
+   "--red-9": {
+    "raw": "#e5484d",
+    "kind": "color",
+    "value": "#e5484d"
+   },
+   "--ring": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--secondary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--secondary-foreground": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--secondary-grey": {
+    "raw": "#f6f5f3",
+    "kind": "color",
+    "value": "#f6f5f3"
+   },
+   "--sky": {
+    "raw": "#c1eeff",
+    "kind": "color",
+    "value": "#c1eeff"
+   },
+   "--slide-transition-time": {
+    "kind": "missing"
+   },
+   "--subtle": {
+    "raw": "#8f8c8a",
+    "kind": "color",
+    "value": "#8f8c8a"
+   },
+   "--success": {
+    "raw": "#e6f6eb",
+    "kind": "color",
+    "value": "#e6f6eb"
+   },
+   "--success-foreground": {
+    "raw": "#218358",
+    "kind": "color",
+    "value": "#218358"
+   },
+   "--sunbeam": {
+    "raw": "#f3e69e",
+    "kind": "color",
+    "value": "#f3e69e"
+   },
+   "--tertiary-grey": {
+    "raw": "#e4e1de",
+    "kind": "color",
+    "value": "#e4e1de"
+   },
+   "--theme-blue-background": {
+    "raw": "#00a2c7",
+    "kind": "color",
+    "value": "#00a2c7"
+   },
+   "--theme-blue-foreground": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--theme-blue-link": {
+    "kind": "missing"
+   },
+   "--theme-blue-link-decoration": {
+    "kind": "missing"
+   },
+   "--theme-gray-background": {
+    "raw": "#ebe8e5",
+    "kind": "color",
+    "value": "#ebe8e5"
+   },
+   "--theme-gray-foreground": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--theme-gray-link": {
+    "kind": "missing"
+   },
+   "--theme-gray-link-decoration": {
+    "kind": "missing"
+   },
+   "--theme-green-background": {
+    "raw": "#30a46c",
+    "kind": "color",
+    "value": "#30a46c"
+   },
+   "--theme-green-foreground": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--theme-green-link": {
+    "kind": "missing"
+   },
+   "--theme-green-link-decoration": {
+    "kind": "missing"
+   },
+   "--theme-none-background": {
+    "raw": "transparent",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--theme-none-foreground": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--theme-none-link": {
+    "kind": "missing"
+   },
+   "--theme-none-link-decoration": {
+    "kind": "missing"
+   },
+   "--theme-orange-background": {
+    "raw": "#ff692d",
+    "kind": "color",
+    "value": "#ff692d"
+   },
+   "--theme-orange-foreground": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--theme-orange-link": {
+    "kind": "missing"
+   },
+   "--theme-orange-link-decoration": {
+    "kind": "missing"
+   },
+   "--theme-purple-background": {
+    "raw": "#d6409f",
+    "kind": "color",
+    "value": "#d6409f"
+   },
+   "--theme-purple-foreground": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--theme-purple-link": {
+    "kind": "missing"
+   },
+   "--theme-purple-link-decoration": {
+    "kind": "missing"
+   },
+   "--theme-yellow-background": {
+    "raw": "#ffc53d",
+    "kind": "color",
+    "value": "#ffc53d"
+   },
+   "--theme-yellow-foreground": {
+    "raw": "#22201d",
+    "kind": "color",
+    "value": "#22201d"
+   },
+   "--theme-yellow-link": {
+    "kind": "missing"
+   },
+   "--theme-yellow-link-decoration": {
+    "kind": "missing"
+   },
+   "--type-body-leading": {
+    "raw": "1.4",
+    "kind": "number",
+    "value": 1.4
+   },
+   "--type-body-size": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--type-body-tracking": {
+    "raw": "-.18px",
+    "kind": "other"
+   },
+   "--type-body-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--type-display-leading": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--type-display-size": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--type-display-tracking": {
+    "raw": "-3.2px",
+    "kind": "other"
+   },
+   "--type-display-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--type-extra-small-leading": {
+    "raw": "1.3",
+    "kind": "number",
+    "value": 1.3
+   },
+   "--type-extra-small-size": {
+    "raw": ".875rem",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--type-extra-small-tracking": {
+    "raw": "-.14px",
+    "kind": "other"
+   },
+   "--type-extra-small-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--type-eyebrow-leading": {
+    "raw": "1.3",
+    "kind": "number",
+    "value": 1.3
+   },
+   "--type-eyebrow-size": {
+    "raw": ".875rem",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--type-eyebrow-tracking": {
+    "raw": ".05em",
+    "kind": "dimension",
+    "value": "0.796875px"
+   },
+   "--type-eyebrow-weight": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--type-heading-1-leading": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--type-heading-1-size": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--type-heading-1-tracking": {
+    "raw": "-3.2px",
+    "kind": "other"
+   },
+   "--type-heading-1-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--type-heading-2-leading": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--type-heading-2-size": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--type-heading-2-tracking": {
+    "raw": "-2.4px",
+    "kind": "other"
+   },
+   "--type-heading-2-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--type-heading-3-leading": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--type-heading-3-size": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--type-heading-3-tracking": {
+    "raw": "-1.6px",
+    "kind": "other"
+   },
+   "--type-heading-3-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--type-heading-4-leading": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--type-heading-4-size": {
+    "raw": "1.5rem",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--type-heading-4-tracking": {
+    "raw": "-.24px",
+    "kind": "other"
+   },
+   "--type-heading-4-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--type-heading-5-leading": {
+    "raw": "1.4",
+    "kind": "number",
+    "value": 1.4
+   },
+   "--type-heading-5-size": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--type-heading-5-tracking": {
+    "raw": "-.2px",
+    "kind": "other"
+   },
+   "--type-heading-5-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--type-heading-6-leading": {
+    "raw": "1.4",
+    "kind": "number",
+    "value": 1.4
+   },
+   "--type-heading-6-size": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--type-heading-6-tracking": {
+    "raw": "-.2px",
+    "kind": "other"
+   },
+   "--type-heading-6-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--type-small-leading": {
+    "raw": "1.3",
+    "kind": "number",
+    "value": 1.3
+   },
+   "--type-small-size": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--type-small-tracking": {
+    "raw": "-.16px",
+    "kind": "other"
+   },
+   "--type-small-weight": {
+    "raw": "350",
+    "kind": "number",
+    "value": 350
+   },
+   "--walnut": {
+    "raw": "#7e3c1c",
+    "kind": "color",
+    "value": "#7e3c1c"
+   },
+   "--walnut-dark": {
+    "raw": "#5a2507",
+    "kind": "color",
+    "value": "#5a2507"
+   },
+   "--walnut-darker": {
+    "raw": "#371200",
+    "kind": "color",
+    "value": "#371200"
+   },
+   "--walnut-darkest": {
+    "raw": "#160400",
+    "kind": "color",
+    "value": "#160400"
+   },
+   "--walnut-light": {
+    "raw": "#bc6d4a",
+    "kind": "color",
+    "value": "#bc6d4a"
+   },
+   "--walnut-lighter": {
+    "raw": "#edaa8d",
+    "kind": "color",
+    "value": "#edaa8d"
+   },
+   "--walnut-lightest": {
+    "raw": "#fff4f0",
+    "kind": "color",
+    "value": "#fff4f0"
+   },
+   "--warning": {
+    "raw": "#fff7c2",
+    "kind": "color",
+    "value": "#fff7c2"
+   },
+   "--warning-foreground": {
+    "raw": "#ab6400",
+    "kind": "color",
+    "value": "#ab6400"
+   },
+   "--wheat": {
+    "raw": "#f3ecd7",
+    "kind": "color",
+    "value": "#f3ecd7"
+   },
+   "--wheat-dark": {
+    "raw": "#a7a18f",
+    "kind": "color",
+    "value": "#a7a18f"
+   },
+   "--wheat-darker": {
+    "raw": "#605c4e",
+    "kind": "color",
+    "value": "#605c4e"
+   },
+   "--wheat-darkest": {
+    "raw": "#221f15",
+    "kind": "color",
+    "value": "#221f15"
+   },
+   "--wheat-light": {
+    "raw": "#f6f0dd",
+    "kind": "color",
+    "value": "#f6f0dd"
+   },
+   "--wheat-lighter": {
+    "raw": "#fdf8ed",
+    "kind": "color",
+    "value": "#fdf8ed"
+   },
+   "--wheat-lightest": {
+    "raw": "#fffdf6",
+    "kind": "color",
+    "value": "#fffdf6"
+   },
+   "--yellow-1": {
+    "raw": "#fefdfb",
+    "kind": "color",
+    "value": "#fefdfb"
+   },
+   "--yellow-10": {
+    "raw": "#ffba18",
+    "kind": "color",
+    "value": "#ffba18"
+   },
+   "--yellow-11": {
+    "raw": "#ab6400",
+    "kind": "color",
+    "value": "#ab6400"
+   },
+   "--yellow-12": {
+    "raw": "#4f3422",
+    "kind": "color",
+    "value": "#4f3422"
+   },
+   "--yellow-2": {
+    "raw": "#fefbe9",
+    "kind": "color",
+    "value": "#fefbe9"
+   },
+   "--yellow-3": {
+    "raw": "#fff7c2",
+    "kind": "color",
+    "value": "#fff7c2"
+   },
+   "--yellow-4": {
+    "raw": "#ffee9c",
+    "kind": "color",
+    "value": "#ffee9c"
+   },
+   "--yellow-5": {
+    "raw": "#fbe577",
+    "kind": "color",
+    "value": "#fbe577"
+   },
+   "--yellow-6": {
+    "raw": "#f3d673",
+    "kind": "color",
+    "value": "#f3d673"
+   },
+   "--yellow-7": {
+    "raw": "#e9c162",
+    "kind": "color",
+    "value": "#e9c162"
+   },
+   "--yellow-8": {
+    "raw": "#e2a336",
+    "kind": "color",
+    "value": "#e2a336"
+   },
+   "--yellow-9": {
+    "raw": "#ffc53d",
+    "kind": "color",
+    "value": "#ffc53d"
+   }
+  }
+ }
+}

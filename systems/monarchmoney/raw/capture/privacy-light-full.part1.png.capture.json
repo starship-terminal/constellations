@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-20T21:16:03.626Z",
+  "screenshot": "privacy-light-full.part1.png",
+  "sanitizedSourceUrl": null,
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 460
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 20461
+    },
+    "scroll": {
+      "x": 0,
+      "y": 460
+    }
+  },
+  "capture": {
+    "mode": "clip",
+    "scale": "device",
+    "clip": {
+      "x": 0,
+      "y": 14000,
+      "width": 1440,
+      "height": 6461
+    }
+  },
+  "png": {
+    "width": 1440,
+    "height": 6461
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 1440,
+      "height": 6461
+    },
+    "basis": "clip"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
+}
