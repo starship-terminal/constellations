@@ -3557,7 +3557,7 @@
       "description": "Online Business Banking For Startups, Small Businesses & Scaling Companies",
       "status": "pending",
       "package": null,
-      "notes": "https://app.mercury.com/signin asks for email and password, or a passkey. Password not submitted.",
+      "notes": "https://app.mercury.com/signin asks for email and password, or a passkey. Password not submitted. Public walk 2026-11-21 did not start: the capture worker stopped before any page loaded. Session not checked. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "password",
       "batch": 11
