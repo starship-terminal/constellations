@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunsama style guide</title>
+<style>
+:root {
+  --color-ink: #202228;
+  --color-ink-soft: #2c3034;
+  --color-orange: #ff891c;
+  --color-orange-deep: #f06351;
+  --color-orange-wash: #ffe8e4;
+  --color-blue: #2da8ff;
+  --color-page: #fafafa;
+  --color-page-secondary: #f6f5f1;
+  --color-page-grey: #f4f4f4;
+  --color-border: #f2f2f2;
+  --color-border-strong: #e5e4e0;
+  --color-border-warm: rgba(238, 236, 230, 0.89);
+  --color-card-veil: rgba(255, 255, 255, 0.5);
+  --color-grey: #e9e9ea;
+  --font-app: Avenir, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-leading: 1.42;
+  --size-radius: 4px;
+  --size-radius-sm: 2px;
+  --size-radius-pill: 10px;
+  --size-radius-circle: 100px;
+  --size-text-1: 10px;
+  --size-text-2: 12px;
+  --size-text-3: 14px;
+  --size-text-4: 16px;
+  --size-text-6: 20px;
+  --size-column-width: 272px;
+  --size-calendar-gutter: 48px;
+  --size-card-padding: 12px;
+  --size-card-gap: 8px;
+  --size-calendar-pane: 380px;
+  --shadow-card: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  --shadow-button: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  --shadow-modal: 0px 3px 20px 0px rgba(0, 0, 0, 0.2);
+  --page: #fafafa;
+  --surface: #f6f5f1;
+  --text: #202228;
+  --muted: #2c3034;
+  --accent: #ff891c;
+  --border: #e5e4e0;
+  --link: #2da8ff;
+  --app-page: #ffffff;
+  --app-surface: #f7f8fa;
+  --app-base: #ecedee;
+  --app-raised: #f5f5f5;
+  --app-overlay: rgba(43, 36, 62, 0.3);
+  --app-text: #413f39;
+  --app-border: #dcdcdc;
+  --app-ghost: rgba(0, 0, 0, 0.08);
+  --app-accent: #2ca7ff;
+  --app-success: #4dcd7d;
+  --app-danger: #f34235;
+  --app-warning: #fdbd5b;
+  --app-alert: #eb8063;
+  --app-info: #7d4dcd;
+  --app-urgent: #eb8063;
+  --app-important: #a382ff;
+  --app-low: #787878;
+  --app-channel-blue: #2ca7ff;
+  --app-channel-purple: #a382ff;
+  --app-channel-green: #4dcd7d;
+  --app-channel-orange: #eb8063;
+  --app-channel-grey: #a0a0a0;
+  --elevation-card: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  --elevation-button: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  --elevation-modal: 0px 3px 20px 0px rgba(0, 0, 0, 0.2);
+  color-scheme: light;
+  --sg-sans: "DM Sans", Avenir, ui-sans-serif, system-ui, sans-serif;
+}
+[data-mode="dark"] {
+  --page: #fafafa;
+  --surface: #f6f5f1;
+  --text: #202228;
+  --muted: #2c3034;
+  --accent: #ff891c;
+  --border: #e5e4e0;
+  --link: #2da8ff;
+  --app-page: #212123;
+  --app-surface: #141415;
+  --app-base: #08090a;
+  --app-raised: #515153;
+  --app-overlay: rgba(78, 73, 90, 0.6);
+  --app-text: #e6e6e6;
+  --app-border: #303132;
+  --app-ghost: rgba(255, 255, 255, 0.08);
+  --app-accent: #2ca7ff;
+  --app-success: #4dcd7d;
+  --app-danger: #f34235;
+  --app-warning: #fdbd5b;
+  --app-alert: #eb8063;
+  --app-info: #7d4dcd;
+  --app-urgent: #eb8063;
+  --app-important: #a382ff;
+  --app-low: #787878;
+  --app-channel-blue: #2ca7ff;
+  --app-channel-purple: #a382ff;
+  --app-channel-green: #4dcd7d;
+  --app-channel-orange: #eb8063;
+  --app-channel-grey: #a0a0a0;
+  --elevation-card: 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+  --elevation-button: 0px 1px 2px 0px rgba(0, 0, 0, 0.9);
+  --elevation-modal: 0px 3px 30px 0px rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/1.45 var(--sg-sans); }
+header { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-size: 22px; margin: 0; }
+h2 { font-size: 18px; margin: 36px 0 12px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.sw { display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 36px; height: 36px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--border); display: block; }
+code { font-size: 12px; }
+.sw span { display: block; color: var(--muted); font-size: 12px; }
+button.theme { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 8px 14px; }
+.specimen { display: flex; gap: 12px; align-items: center; margin: 12px 0; }
+.pill { background: var(--accent); color: #fff; border: 0; border-radius: 999px; padding: 10px 18px; font: 600 15px var(--sg-sans); }
+.card { background: var(--app-page); color: var(--app-text); border: 1px solid var(--app-border); border-radius: var(--size-radius); padding: 16px; max-width: 360px; box-shadow: var(--elevation-card); }
+.note { color: var(--muted); max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sunsama</h1>
+  <button class="theme" type="button" id="theme">Dark app tokens</button>
+</header>
+<main>
+  <p class="note">Rendered from tokens.json. Marketing colours stay on :root. The toggle swaps the app-demo colours declared on .sslab[data-theme=dark]. The public marketing pages do not paint that attribute.</p>
+  <h2>Marketing colours</h2>
+  <div class="swatches">
+<div class="sw"><i style="background:#fafafa"></i><div><code>page</code><span>#fafafa</span></div></div>
+<div class="sw"><i style="background:#f6f5f1"></i><div><code>surface</code><span>#f6f5f1</span></div></div>
+<div class="sw"><i style="background:#202228"></i><div><code>text</code><span>#202228</span></div></div>
+<div class="sw"><i style="background:#2c3034"></i><div><code>muted</code><span>#2c3034</span></div></div>
+<div class="sw"><i style="background:#ff891c"></i><div><code>accent</code><span>#ff891c</span></div></div>
+<div class="sw"><i style="background:#e5e4e0"></i><div><code>border</code><span>#e5e4e0</span></div></div>
+<div class="sw"><i style="background:#2da8ff"></i><div><code>link</code><span>#2da8ff</span></div></div>
+<div class="sw"><i style="background:var(--app-page)"></i><div><code>app.page</code><span>var(--app-page)</span></div></div>
+<div class="sw"><i style="background:var(--app-text)"></i><div><code>app.text</code><span>var(--app-text)</span></div></div>
+<div class="sw"><i style="background:var(--app-accent)"></i><div><code>app.accent</code><span>var(--app-accent)</span></div></div>
+<div class="sw"><i style="background:var(--app-success)"></i><div><code>app.success</code><span>var(--app-success)</span></div></div>
+<div class="sw"><i style="background:var(--app-danger)"></i><div><code>app.danger</code><span>var(--app-danger)</span></div></div>
+<div class="sw"><i style="background:var(--app-warning)"></i><div><code>app.warning</code><span>var(--app-warning)</span></div></div>
+<div class="sw"><i style="background:var(--app-border)"></i><div><code>app.border</code><span>var(--app-border)</span></div></div>
+  </div>
+  <h2>App demo colours</h2>
+  <div class="swatches">
+<div class="sw"><i style="background:var(--app-page)"></i><div><code>app.page</code><span>var(--app-page)</span></div></div>
+<div class="sw"><i style="background:var(--app-text)"></i><div><code>app.text</code><span>var(--app-text)</span></div></div>
+<div class="sw"><i style="background:var(--app-accent)"></i><div><code>app.accent</code><span>var(--app-accent)</span></div></div>
+<div class="sw"><i style="background:var(--app-success)"></i><div><code>app.success</code><span>var(--app-success)</span></div></div>
+<div class="sw"><i style="background:var(--app-danger)"></i><div><code>app.danger</code><span>var(--app-danger)</span></div></div>
+<div class="sw"><i style="background:var(--app-warning)"></i><div><code>app.warning</code><span>var(--app-warning)</span></div></div>
+<div class="sw"><i style="background:var(--app-border)"></i><div><code>app.border</code><span>var(--app-border)</span></div></div>
+  </div>
+  <h2>Specimens</h2>
+  <div class="specimen"><button class="pill" type="button">Start for Free</button><span class="note">Orange pill, 44px, full radius. The only filled marketing action.</span></div>
+  <div class="card">
+    <strong>Monday</strong>
+    <p>App demo card. Radius 4px. Text uses the .sslab colour, which changes with the toggle.</p>
+  </div>
+</main>
+<script>
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.getElementById("theme").textContent = next === "dark" ? "Light app tokens" : "Dark app tokens";
+});
+</script>
+</body>
+</html>
