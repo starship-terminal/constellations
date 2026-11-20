@@ -34,10 +34,10 @@ Button. https://www.make.com/templates
 
 | State | Size | Fill | Ink | Type | Via |
 |---|---|---|---|---|---|
-| default | 119.52×32.84 | #000000 | #ffffff `core.color.white` | 14px / 400 | at rest |
-| hover | 119.52×32.84 | #000000 | #ffffff `core.color.white` | 14px / 400 | mouse hover |
-| focus-visible | 119.52×32.84 | #000000 | #ffffff `core.color.white` | 14px / 400 | Shift+Tab, Tab |
-| pressed | 119.52×32.84 | #000000 | #ffffff `core.color.white` | 14px / 400 | CDP forcePseudoState :active:hover |
+| default | 119.52×32.84 | transparent | #ffffff `core.color.white` | 14px / 400 | at rest |
+| hover | 119.52×32.84 | transparent | #ffffff `core.color.white` | 14px / 400 | mouse hover |
+| focus-visible | 119.52×32.84 | transparent | #ffffff `core.color.white` | 14px / 400 | Shift+Tab, Tab |
+| pressed | 119.52×32.84 | transparent | #ffffff `core.color.white` | 14px / 400 | CDP forcePseudoState :active:hover |
 
 ![nav-get-started](components/crops/nav-get-started-default.png)
 
@@ -47,7 +47,7 @@ Button. https://www.make.com/login
 
 | State | Size | Fill | Ink | Type | Via |
 |---|---|---|---|---|---|
-| default | 354×55 | #000000 | #ffffff `core.color.white` | 14px / 700 | at rest |
+| default | 354×55 | transparent | #ffffff `core.color.white` | 14px / 700 | at rest |
 
 ![signin-submit](components/crops/signin-submit-default.png)
 
@@ -69,7 +69,7 @@ Type. https://www.make.com/
 
 | State | Size | Fill | Ink | Type | Via |
 |---|---|---|---|---|---|
-| default | 960×144 | #000000 | #342237 `core.color.neutral.900` | 60px / 500 | at rest |
+| default | 960×144 | transparent | #342237 `core.color.neutral.900` | 60px / 500 | at rest |
 
 ![display](components/crops/display-default.png)
 
@@ -79,7 +79,7 @@ Type. https://www.make.com/pricing
 
 | State | Size | Fill | Ink | Type | Via |
 |---|---|---|---|---|---|
-| default | 568×60 | #000000 | #342237 `core.color.neutral.900` | 48px / 500 | at rest |
+| default | 568×60 | transparent | #342237 `core.color.neutral.900` | 48px / 500 | at rest |
 
 ![pricing-heading](components/crops/pricing-heading-default.png)
 
@@ -89,10 +89,10 @@ Text field. https://www.make.com/templates
 
 | State | Size | Fill | Ink | Type | Via |
 |---|---|---|---|---|---|
-| default | 506×54 | #000000 | #342237 `core.color.neutral.900` | 16px / 400 | at rest |
-| hover | 506×54 | #000000 | #342237 `core.color.neutral.900` | 16px / 400 | mouse hover |
-| focus-visible | 506×54 | #000000 | #342237 `core.color.neutral.900` | 16px / 400 | Shift+Tab, Tab |
-| focused | 506×54 | #000000 | #342237 `core.color.neutral.900` | 16px / 400 | clicked into the field; nothing submitted |
+| default | 506×54 | transparent | #342237 `core.color.neutral.900` | 16px / 400 | at rest |
+| hover | 506×54 | transparent | #342237 `core.color.neutral.900` | 16px / 400 | mouse hover |
+| focus-visible | 506×54 | transparent | #342237 `core.color.neutral.900` | 16px / 400 | Shift+Tab, Tab |
+| focused | 506×54 | transparent | #342237 `core.color.neutral.900` | 16px / 400 | clicked into the field; nothing submitted |
 
 ![search-field](components/crops/search-field-default.png)
 
@@ -135,8 +135,8 @@ Disclosure. https://www.make.com/pricing
 
 | State | Size | Fill | Ink | Type | Via |
 |---|---|---|---|---|---|
-| default | 127.23×24 | #000000 | #342237 `core.color.neutral.900` | 16px / 500 | at rest |
-| hover | 127.23×24 | #000000 | #342237 `core.color.neutral.900` | 16px / 500 | mouse hover |
+| default | 127.23×24 | transparent | #342237 `core.color.neutral.900` | 16px / 500 | at rest |
+| hover | 127.23×24 | transparent | #342237 `core.color.neutral.900` | 16px / 500 | mouse hover |
 
 ![faq-summary](components/crops/faq-summary-default.png)
 

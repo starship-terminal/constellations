@@ -29,27 +29,44 @@ for n, t in flat(T):
         BY.setdefault(t["$value"].lower(), n)
 
 
-def hex_of(rgb):
+def parse(rgb):
+    """(hex, alpha) for a computed colour, or None. Alpha is 1 for #rrggbb and rgb()."""
     if not isinstance(rgb, str):
         return None
     if rgb.startswith("#"):
-        return rgb.lower()
-    parts = rgb.replace("rgb(", "").replace("rgba(", "").replace(")", "").split(",")
+        return rgb.lower(), 1.0
+    if not rgb.startswith(("rgb(", "rgba(")):
+        return None
+    parts = rgb.replace("rgba(", "").replace("rgb(", "").replace(")", "").replace("/", ",").replace(" ", ",").split(",")
+    parts = [x for x in parts if x]
     if len(parts) < 3:
         return None
     try:
         r, g, b = [int(float(x)) for x in parts[:3]]
+        a = float(parts[3]) if len(parts) > 3 else 1.0
     except ValueError:
         return None
-    return "#%02x%02x%02x" % (r, g, b)
+    return "#%02x%02x%02x" % (r, g, b), a
 
 
 def colour(rgb):
-    h = hex_of(rgb)
-    if not h:
-        return rgb or ""
+    """A colour cell. A transparent fill says so, a translucent one keeps its rgba(); only an opaque
+    colour is written as hex and named by the token that holds it."""
+    p = parse(rgb)
+    if not p:
+        return cell(rgb or "")
+    h, a = p
+    if a == 0:
+        return "transparent"
+    if a < 1:
+        return cell(rgb)
     tok = BY.get(h)
     return f"{h} `{tok}`" if tok else h
+
+
+def cell(text):
+    """A table cell: a pipe would split it and a newline would end the row."""
+    return " ".join(str(text).split()).replace("|", "\\|")
 
 
 lines = ["# Make components", "", "Measured on public pages, 2026-11-18, light, 1440. Nothing was submitted.", ""]
@@ -64,7 +81,7 @@ for key in order:
         continue
     lines.append(f"## {comp.get('title', key)}")
     lines.append("")
-    lines.append(f"{comp.get('group', '')}. {comp.get('url', '')}")
+    lines.append(cell(f"{comp.get('group', '')}. {comp.get('url', '')}"))
     lines.append("")
     if comp.get("missing"):
         lines.append("Not found on the page.")
@@ -73,12 +90,15 @@ for key in order:
     lines.append("| State | Size | Fill | Ink | Type | Via |")
     lines.append("|---|---|---|---|---|---|")
     for state, s in comp.get("states", {}).items():
+        if s.get("skipped"):
+            lines.append(f"| {cell(state)} | | | | | not captured: {cell(s['skipped'])} |")
+            continue
         if s.get("error"):
-            lines.append(f"| {state} | | | | | {s['error'][:80]} |")
+            lines.append(f"| {cell(state)} | | | | | {cell(s['error'][:80])} |")
             continue
         st = s.get("style") or {}
         lines.append(
-            f"| {state} | {s.get('rect', {}).get('w')}×{s.get('rect', {}).get('h')} | {colour(st.get('backgroundColor'))} | {colour(st.get('color'))} | {st.get('fontSize')} / {st.get('fontWeight')} | {s.get('via', '')} |"
+            f"| {state} | {s.get('rect', {}).get('w')}×{s.get('rect', {}).get('h')} | {colour(st.get('backgroundColor'))} | {colour(st.get('color'))} | {st.get('fontSize')} / {st.get('fontWeight')} | {cell(s.get('via', ''))} |"
         )
     crop = next((s.get("crop") for s in comp.get("states", {}).values() if s.get("crop")), None)
     if crop:
