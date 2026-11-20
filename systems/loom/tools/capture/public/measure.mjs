@@ -72,6 +72,11 @@ async function record(key, state, loc, meta, via) {
     let file;
     try { file = await crop(page, loc, `${key}-${state}`); } catch (e) { s.cropError = String(e.message).slice(0, 140); }
     c.states[state] = { ...s, crop: file, via };
+    // A state read now supersedes an earlier run's "not captured" marker for it.
+    if (c.notCaptured && c.notCaptured[state]) {
+      delete c.notCaptured[state];
+      if (!Object.keys(c.notCaptured).length) delete c.notCaptured;
+    }
     log(' ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h), s.style?.backgroundColor, s.style?.color);
   } catch (e) {
     const msg = String(e.message).slice(0, 180);

@@ -47,7 +47,9 @@ const files = new Map();
 const failed = [];
 for (const url of pages) {
   try {
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    // goto resolves on a 404 or 503 page: an error status counts as a failed page too.
+    const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    if (!res || !res.ok()) throw new Error('HTTP ' + (res ? res.status() : 'no response'));
   } catch (e) {
     failed.push(new URL(url).pathname);
     console.error('page failed', url, String(e.message).slice(0, 120));
