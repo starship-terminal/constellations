@@ -644,22 +644,23 @@ Page: menus. Selector: `.RadioGroup__choice Dark`. States: default, hover, focus
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 32 x 24 | = | = |
-| Padding | 0px 6px | = | = |
-| Border | none | = | = |
-| Radius | 8px | = | = |
-| Background | #ffffff | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Assistant 12px/12px 600 | = | = |
-| Letter spacing | 0.4px | = | = |
-| Colour | #6965db | #5753d0 | #5753d0 |
-| Transition | none | = | = |
-| Cursor | default | = | = |
-| Icon | 16 x 16, colour #6965db | 16 x 16, colour #5753d0 | 16 x 16, colour #5753d0 |
-| Painted layers | div.RadioGroup__choice 32.0x24.0 bg #ffffff r 8px | = | = |
-| Ancestor paint | 1 up div.RadioGroup bg #ffffff; 3 up div.Island.dropdown-menu-container bg #ffffff shadow #000000 @ 0.17 0px 0px 1px 0px, #000000 @ 0.08 0px 0px 3px 0px, #000000 @ 0.05 0px 7px 14px 0px | = | = |
-| How | at rest | mouse hover | focus failed |
+| Size (w x h) | 32 x 24 | = | - |
+| Padding | 0px 6px | = | - |
+| Border | none | = | - |
+| Radius | 8px | = | - |
+| Background | #ffffff | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Assistant 12px/12px 600 | = | - |
+| Letter spacing | 0.4px | = | - |
+| Colour | #6965db | #5753d0 | - |
+| Transition | none | = | - |
+| Cursor | default | = | - |
+| Icon | 16 x 16, colour #6965db | 16 x 16, colour #5753d0 | - |
+| Painted layers | div.RadioGroup__choice 32.0x24.0 bg #ffffff r 8px | = | - |
+| Ancestor paint | 1 up div.RadioGroup bg #ffffff; 3 up div.Island.dropdown-menu-container bg #ffffff shadow #000000 @ 0.17 0px 0px 1px 0px, #000000 @ 0.08 0px 0px 3px 0px, #000000 @ 0.05 0px 7px 14px 0px | = | - |
+| How | at rest | mouse hover | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
 Crops: `theme-choice-default.png`, `theme-choice-hover.png`, `theme-choice-focus-visible.png`.
 
@@ -781,21 +782,22 @@ Page: editor. Selector: `button[aria-label=Undo]`. States: default, focus-visibl
 
 | Property | default | focus-visible |
 |---|---|---|
-| Size (w x h) | 36 x 36 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 8px 0px 0px 8px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | Arial 14px/normal 400 | = |
-| Letter spacing | normal | = |
-| Colour | #101010 @ 0.3 | = |
-| Transition | none | = |
-| Cursor | default | = |
-| Icon | 16 x 16, colour #b8b8b8 | = |
-| Ancestor paint | 3 up div.undo-redo-buttons.zen-mode-transition bg #ececf4 shadow #ffffff 0px 0px 0px 1px | = |
-| How | at rest | focus failed |
+| Size (w x h) | 36 x 36 | - |
+| Padding | 0px | - |
+| Border | none | - |
+| Radius | 8px 0px 0px 8px | - |
+| Background | transparent | - |
+| Box shadow | none | - |
+| Outline | none | - |
+| Font | Arial 14px/normal 400 | - |
+| Letter spacing | normal | - |
+| Colour | #101010 @ 0.3 | - |
+| Transition | none | - |
+| Cursor | default | - |
+| Icon | 16 x 16, colour #b8b8b8 | - |
+| Ancestor paint | 3 up div.undo-redo-buttons.zen-mode-transition bg #ececf4 shadow #ffffff 0px 0px 0px 1px | - |
+| How | at rest | - |
+| Skipped | - | focus failed: keyboard focus did not reach the element |
 
 Crops: `undo-btn-default.png`, `undo-btn-focus-visible.png`.
 
@@ -807,21 +809,22 @@ Page: editor. Selector: `button[aria-label=Redo]`. States: default, focus-visibl
 
 | Property | default | focus-visible |
 |---|---|---|
-| Size (w x h) | 36 x 36 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 0px 8px 8px 0px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | Arial 14px/normal 400 | = |
-| Letter spacing | normal | = |
-| Colour | #101010 @ 0.3 | = |
-| Transition | none | = |
-| Cursor | default | = |
-| Icon | 16 x 16, colour #b8b8b8 | = |
-| Ancestor paint | 3 up div.undo-redo-buttons.zen-mode-transition bg #ececf4 shadow #ffffff 0px 0px 0px 1px | = |
-| How | at rest | focus failed |
+| Size (w x h) | 36 x 36 | - |
+| Padding | 0px | - |
+| Border | none | - |
+| Radius | 0px 8px 8px 0px | - |
+| Background | transparent | - |
+| Box shadow | none | - |
+| Outline | none | - |
+| Font | Arial 14px/normal 400 | - |
+| Letter spacing | normal | - |
+| Colour | #101010 @ 0.3 | - |
+| Transition | none | - |
+| Cursor | default | - |
+| Icon | 16 x 16, colour #b8b8b8 | - |
+| Ancestor paint | 3 up div.undo-redo-buttons.zen-mode-transition bg #ececf4 shadow #ffffff 0px 0px 0px 1px | - |
+| How | at rest | - |
+| Skipped | - | focus failed: keyboard focus did not reach the element |
 
 Crops: `redo-btn-default.png`, `redo-btn-focus-visible.png`.
 
@@ -1417,20 +1420,21 @@ Page: dialogs. Selector: `export Switch`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 40 x 20 | = | = |
-| Padding | 0px | = | = |
-| Border | 1px solid #6965db | 1px solid #5b57d1 | 1px solid #5b57d1 |
-| Radius | 12px | = | = |
-| Background | #6965db | #5b57d1 | #5b57d1 |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Assistant 16px/normal 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #1b1b1f | = | = |
-| Transition | background, border 0.15s ease-out | = | = |
-| ::before | 14px x 14px, absolute, bg #ffffff, radius 100% | = | = |
-| Painted layers | div.Switch.toggled 40.0x20.0 bg #6965db border T:1px solid #6965db / R:1px solid #6965db / B:1px solid #6965db / L:1px solid #6965db r 12px; div::before.Switch.toggled 14pxx14px bg #ffffff r 100% | div.Switch.toggled 40.0x20.0 bg #5b57d1 border T:1px solid #5b57d1 / R:1px solid #5b57d1 / B:1px solid #5b57d1 / L:1px solid #5b57d1 r 12px; div::before.Switch.toggled 14pxx14px bg #ffffff r 100% | div.Switch.toggled 40.0x20.0 bg #5b57d1 border T:1px solid #5b57d1 / R:1px solid #5b57d1 / B:1px solid #5b57d1 / L:1px solid #5b57d1 r 12px; div::before.Switch.toggled 14pxx14px bg #ffffff r 100% |
-| How | at rest | mouse hover | focus failed |
+| Size (w x h) | 40 x 20 | = | - |
+| Padding | 0px | = | - |
+| Border | 1px solid #6965db | 1px solid #5b57d1 | - |
+| Radius | 12px | = | - |
+| Background | #6965db | #5b57d1 | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Assistant 16px/normal 400 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #1b1b1f | = | - |
+| Transition | background, border 0.15s ease-out | = | - |
+| ::before | 14px x 14px, absolute, bg #ffffff, radius 100% | = | - |
+| Painted layers | div.Switch.toggled 40.0x20.0 bg #6965db border T:1px solid #6965db / R:1px solid #6965db / B:1px solid #6965db / L:1px solid #6965db r 12px; div::before.Switch.toggled 14pxx14px bg #ffffff r 100% | div.Switch.toggled 40.0x20.0 bg #5b57d1 border T:1px solid #5b57d1 / R:1px solid #5b57d1 / B:1px solid #5b57d1 / L:1px solid #5b57d1 r 12px; div::before.Switch.toggled 14pxx14px bg #ffffff r 100% | - |
+| How | at rest | mouse hover | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
 Crops: `export-switch-default.png`, `export-switch-hover.png`, `export-switch-focus-visible.png`.
 

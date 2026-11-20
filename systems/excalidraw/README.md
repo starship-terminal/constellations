@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #6965db `light.color.brand.default` | #a8a5ff `dark.color.brand.default` |
 | border | #ebebeb `light.color.border.subtle` | #3d3d3d `dark.color.border.subtle` |
 
-Fonts: `core.font.family.ui` is Assistant, then 8 fallbacks; `core.font.family.display` is Excalifont, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 3 radius steps (`core.radius`), 10 spacing steps (`core.space`).
+Fonts: `core.font.family.ui` is Assistant, then 8 fallbacks; `core.font.family.display` is Excalifont, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 3 radius steps (`core.radius`), 10 spacing steps (`core.space`).
 
 ### Using components
 
@@ -116,6 +116,12 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Mobile pass | yes — 390 x 844 at 2x, including the swapped shape-actions bar |
 | Icons | layout gap — no standalone SVG set lifted; product glyphs visible in crops/screenshots |
 | Fonts | declared and measured; served faces (Assistant, Excalifont, Cascadia) not redistributed |
+
+## Known gaps
+
+- `lib-empty` (Library empty state): the 2026-11-13 reading is the "Browse libraries" block, not the empty-state text; its selector's `.sidebar div` matching /libraries/ caught the wrong element. Needs a recapture. `measure.mjs` now selects the empty-state text only; it was edited, not run.
+- `undo-btn`, `redo-btn`, `theme-choice` and `export-switch`: keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md leaves them out and `raw/measurements.md` shows them as Skipped. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
+- `core.font.family.mono` (`"Cascadia", ui-monospace, monospace`) was entered by hand at capture time: no measured element computes it and `raw/css-vars.json` has no `@font-face` for Cascadia. Its source says so.
 
 ## Rebuild
 
