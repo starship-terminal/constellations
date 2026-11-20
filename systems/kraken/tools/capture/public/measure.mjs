@@ -13,7 +13,10 @@ fs.mkdirSync(RAW, { recursive: true });
 // it did not reach instead of writing a file without them.
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
 out.components ??= {};
-out._meta = { ...(out._meta || {}), product: 'kraken', captured: new Date().toLocaleDateString('en-CA'), route: 'public-web' };
+// Each refreshed component carries its own run date; _meta.captured moves only when the whole
+// run finishes, so retained readings never take a date they were not measured on.
+const RUN = new Date().toLocaleDateString('en-CA');
+out._meta = { ...(out._meta || {}), product: 'kraken', route: 'public-web', lastRun: RUN };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 
@@ -86,6 +89,7 @@ async function measure(key, state, loc, opts = {}) {
 
 async function S(key, loc, list, meta, opts = {}) {
   out.components[key] = {
+    run: RUN,
     page: current,
     title: meta.title,
     group: meta.group,
@@ -246,6 +250,7 @@ async function run() {
   const n = Object.keys(out.components).length;
   const states = Object.values(out.components).reduce((a, c) => a + Object.keys(c.states || {}).length, 0);
   log('done', n, 'components', states, 'states');
+  out._meta.captured = RUN;   // every page ran
   save();
 }
 
