@@ -59,7 +59,10 @@ async function newPage(key, { mobile = false, wait = 6000 } = {}) {
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, BASE + URLS[key], { wait });
+  if (!(await open(page, BASE + URLS[key], { wait }))) {
+    // a bot check that never cleared: the page runner fails and records nothing for it
+    throw new Error('bot check never cleared: recorded as a boundary, not measured');
+  }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
 }
 

@@ -271,7 +271,12 @@ for (const [key, g] of Object.entries(GROUPS)) {
   await cdp.send('CSS.enable');
   const url = BASE + URLS[g.page];
   log('open', key, g.mobile ? '(mobile)' : '', url);
-  await open(page, url, { wait: 7000 });
+  if (!(await open(page, url, { wait: 7000 }))) {
+    // not reached, or a bot check that never cleared: a boundary, never measured as the product
+    log('  ! not reached or bot-checked: recorded as a boundary', key);
+    await page.close().catch(() => {});
+    continue;
+  }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   if (g.setup) await g.setup(page).catch((e) => log('  setup failed:', e.message));
   // the readable sheets' transition declarations, for measurements.md

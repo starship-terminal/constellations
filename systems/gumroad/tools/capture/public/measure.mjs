@@ -304,7 +304,12 @@ for (const [key, g] of Object.entries(GROUPS)) {
   await cdp.send('CSS.enable');
   const url = URLS[g.page].startsWith('http') ? URLS[g.page] : BASE + URLS[g.page];
   log('open', key, g.mobile ? '(mobile)' : '', url);
-  await open(page, url, { wait: 7000 });
+  if (!(await open(page, url, { wait: 7000 }))) {
+    // not reached, or a bot check that never cleared: a boundary, never measured as the product
+    log('  ! not reached or bot-checked: recorded as a boundary', key);
+    await page.close().catch(() => {});
+    continue;
+  }
   // Cosmetic only (no blinking caret in crops) — the checkout page's CSP
   // refuses injected styles, so a refusal must not kill the run.
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
