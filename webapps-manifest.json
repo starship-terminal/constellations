@@ -6211,9 +6211,9 @@
       "description": "Make Your Day",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.tiktok.com/login Continue with Google opened For You with a Profile control. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 19
     },
     {
@@ -6228,9 +6228,9 @@
       "description": "Create a Website for Free",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://tilda.cc/login/ showed email and password. Password not submitted. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 19
     },
     {
@@ -6245,9 +6245,9 @@
       "description": "Fitness studio software",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://time2book.me/login Continue with Google signed in and opened a create-profile screen. Profile not filled. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 19
     },
     {
@@ -6262,9 +6262,9 @@
       "description": "Organize Your Work & Life",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.todoist.com/auth/login Continue with Google opened the app. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 19
     },
     {
@@ -6279,9 +6279,9 @@
       "description": "Polished & Professional AI Presentations",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://tome.app/ and /login are a missing deployment. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 19
     },
     {
@@ -6296,9 +6296,9 @@
       "description": "Book your next business trip",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.travelperk.com/login Continue with Google completed and returned no matching account. Email form not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 19
     },
     {
@@ -6313,9 +6313,9 @@
       "description": "Travel Deals and Promotions",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.trip.com/account/signin Continue with Google returned to the public homepage. No account surface.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 19
     },
     {
@@ -6330,9 +6330,9 @@
       "description": "Over a billion reviews & contributions for Hotels, Attractions, Restaurants, and more",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.tripadvisor.com/RegistrationController Continue with Google returned to the public homepage. Sign in control disappeared. No account surface.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 19
     },
     {
@@ -6347,9 +6347,9 @@
       "description": "Real Estate Listings, Homes For Sale, Housing Data",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.trulia.com/login showed email and password. Continue with Google is a frame that opens a new tab, and the popup did not open. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 19
     },
     {
@@ -6364,9 +6364,9 @@
       "description": "The world's most powerful video intelligence platform",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://playground.twelvelabs.io/ Continue with Google signed in and opened onboarding. Onboarding not filled. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 19
     },
     {
@@ -6381,9 +6381,9 @@
       "description": "Organized work communication for flexible teams",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://twist.com/login Continue with Google opened the app. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 19
     },
     {
@@ -6398,9 +6398,9 @@
       "description": "Interactive livestreaming service",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.twitch.tv/login Continue with Google signed in and offered a passkey. Passkey skipped. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 19
     },
     {
@@ -6415,9 +6415,9 @@
       "description": "People-Friendly Forms and Surveys",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://admin.typeform.com/login Continue with Google opened a consent window that did not return to this tab. Email form not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 19
     },
     {
@@ -6432,9 +6432,9 @@
       "description": "Twitter thread maker & analytics",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://typefully.com/ Log in offers Google, X, LinkedIn, and email. Continue with Google did not open an account chooser. Email form not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 19
     },
     {
@@ -6449,9 +6449,9 @@
       "description": "Go anywhere with Uber",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://auth.uber.com/v2 asks for a phone number or email and says a verification code will be sent. Continue with Google did not open an account chooser. Phone not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "phone",
       "batch": 19
     },
     {
@@ -6466,9 +6466,9 @@
       "description": "Food Delivery and Takeout",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.ubereats.com/login-redirect/ opened a delivery feed with a cart. No login form. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 19
     },
     {
@@ -6483,9 +6483,9 @@
       "description": "Powering Experience Makers",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://backoffice.understory.io/login showed email and password. Password not submitted. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 19
     },
     {
@@ -6500,9 +6500,9 @@
       "description": "Photos for everyone",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://unsplash.com/login showed email and password. Password not submitted. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 19
     },
     {
@@ -6517,9 +6517,9 @@
       "description": "Clothing, accessories and apartment items for men and women",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.urbanoutfitters.com/login stopped on a bot check before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 19
     },
     {
@@ -6534,9 +6534,9 @@
       "description": "Endless designs for your ideas, just scroll",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://variant.com/authentication Continue with Google signed in and landed on a missing /login page. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 19
     },
     {
