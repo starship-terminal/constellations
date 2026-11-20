@@ -1,0 +1,1167 @@
+{
+  "source": "https://www.trulia.com/ custom properties read from document.styleSheets on 2026-11-21",
+  "theme": {
+    "colorScheme": "normal",
+    "dataTheme": null,
+    "className": ""
+  },
+  "computed": {
+    "html.color": "rgb(59, 65, 68)",
+    "body.color": "rgb(59, 65, 68)",
+    "html.backgroundColor": "rgb(255, 255, 255)",
+    "body.backgroundColor": "rgb(255, 255, 255)",
+    "html.fontFamily": "Figtree, \"Figtree Fallback\"",
+    "body.fontFamily": "Figtree, \"Figtree Fallback\"",
+    "html.fontSize": "16px",
+    "body.fontSize": "16px",
+    "html.lineHeight": "24px",
+    "body.lineHeight": "24px",
+    "html.fontWeight": "400",
+    "body.fontWeight": "400"
+  },
+  "sheets": 4,
+  "crossOriginSheets": 1,
+  "fonts": [
+    {
+      "font-family": "Figtree",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "font-family": "Figtree",
+      "font-weight": "400",
+      "font-style": "normal"
+    },
+    {
+      "font-family": "Figtree",
+      "font-weight": "700",
+      "font-style": "normal"
+    },
+    {
+      "font-family": "Figtree",
+      "font-weight": "700",
+      "font-style": "normal"
+    },
+    {
+      "font-family": "Figtree",
+      "font-weight": "900",
+      "font-style": "normal"
+    },
+    {
+      "font-family": "Figtree",
+      "font-weight": "900",
+      "font-style": "normal"
+    },
+    {
+      "font-family": "\"Figtree Fallback\"",
+      "font-weight": null,
+      "font-style": null
+    }
+  ],
+  "decls": [
+    {
+      "name": "--font-figtree",
+      "value": "\"Figtree\",\"Figtree Fallback\"",
+      "selector": ".__variable_f41bc4",
+      "media": ""
+    },
+    {
+      "name": "--made-with-panda",
+      "value": "\"\ud83d\udc3c\"",
+      "selector": ":root",
+      "media": ""
+    },
+    {
+      "name": "--scroll-snap-strictness",
+      "value": "proximity",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--border-spacing-x",
+      "value": "0",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--border-spacing-y",
+      "value": "0",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--translate-x",
+      "value": "0",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--translate-y",
+      "value": "0",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--rotate",
+      "value": "0",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--rotate-x",
+      "value": "0",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--rotate-y",
+      "value": "0",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--skew-x",
+      "value": "0",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--skew-y",
+      "value": "0",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--scale-x",
+      "value": "1",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--scale-y",
+      "value": "1",
+      "selector": "*, ::backdrop, ::after, ::before",
+      "media": ""
+    },
+    {
+      "name": "--header-height",
+      "value": "64px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--filter-bar-height",
+      "value": "74px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--banner-height",
+      "value": "64px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--banner-small-height",
+      "value": "42px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--lead-shadow",
+      "value": "rgba(59,65,68,0.18) 0px 17px 21px -1px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--focus-shadow",
+      "value": "rgb(255,255,255) 0px 0px 0px 1px,rgb(77,197,207) 0px 0px 2px 3px,rgb(0,120,130) 0px 0px 2px 4px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--borders-default",
+      "value": "1px solid var(--colors-grey-400)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--borders-light",
+      "value": "1px solid var(--colors-grey-100)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tarzana-50",
+      "value": "rgb(224,247,248)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tarzana-300",
+      "value": "rgb(77,197,207)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tarzana-500",
+      "value": "rgb(0,173,187)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tarzana-700",
+      "value": "rgb(0,120,130)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tarzana-800",
+      "value": "rgb(0,86,93)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tarzana-900",
+      "value": "rgb(0,69,75)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-belmont-50",
+      "value": "rgb(242,246,255)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-belmont-500",
+      "value": "rgb(5,34,134)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-lexington-500",
+      "value": "rgb(206,182,255)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-lexington-800",
+      "value": "rgb(102,90,127)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-lexington-900",
+      "value": "rgb(61,54,76)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-oakmore-50",
+      "value": "rgb(255,234,216)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-oakmore-500",
+      "value": "rgb(255,94,63)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-oakmore-700",
+      "value": "rgb(178,65,43)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-oakmore-800",
+      "value": "rgb(127,46,31)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-oakmore-500-a-a",
+      "value": "rgb(217,60,35)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-oakmore-700-a-a",
+      "value": "rgb(156,17,20)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-lincoln",
+      "value": "rgb(194,213,0)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-gold",
+      "value": "rgb(242,196,48)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-castro",
+      "value": "rgb(250,140,104)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-richmond",
+      "value": "rgb(116,6,49)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-greenwich",
+      "value": "rgb(20,66,37)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-sherwood",
+      "value": "rgb(182,204,188)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-brentwood",
+      "value": "rgb(245,226,214)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-okay",
+      "value": "rgb(0,133,69)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-white",
+      "value": "rgb(255,255,255)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-50",
+      "value": "rgb(245,246,247)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-100",
+      "value": "rgb(232,233,234)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-400",
+      "value": "rgb(205,209,212)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-500",
+      "value": "rgb(134,144,153)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-600",
+      "value": "rgb(107,119,128)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-900",
+      "value": "rgb(59,65,68)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-black",
+      "value": "rgb(0,0,0)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-transparent",
+      "value": "transparent",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-0",
+      "value": "0px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-sub-caption",
+      "value": "10px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-caption",
+      "value": "12px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-small",
+      "value": "14px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-body",
+      "value": "16px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-sub-header",
+      "value": "20px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-title",
+      "value": "24px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-headline",
+      "value": "28px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-display",
+      "value": "38px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-jumbo",
+      "value": "50px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--font-sizes-mega",
+      "value": "68px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-0",
+      "value": "0",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-sub-caption",
+      "value": "1.6",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-caption",
+      "value": "1.33",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-small",
+      "value": "1.43",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-body",
+      "value": "1.5",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-sub-header",
+      "value": "1.2",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-title",
+      "value": "1.33",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-headline",
+      "value": "1.14",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-display",
+      "value": "1.05",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-jumbo",
+      "value": "1.12",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--line-heights-mega",
+      "value": "1.06",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--radii-s",
+      "value": "2px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--radii-m",
+      "value": "8px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--radii-l",
+      "value": "16px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--shadows-default",
+      "value": "0px 4px 12px 1px rgba(0,0,0,0.09)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--sizes-100%",
+      "value": "100%",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--sizes-50%",
+      "value": "50%",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--sizes-25%",
+      "value": "25%",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--sizes-breakpoint-xs",
+      "value": "376px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--sizes-breakpoint-sm",
+      "value": "570px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--sizes-breakpoint-md",
+      "value": "768px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--sizes-breakpoint-lg",
+      "value": "993px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--sizes-breakpoint-xl",
+      "value": "1279px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--sizes-breakpoint-xxl",
+      "value": "1339px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-0",
+      "value": "0",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-xxxs",
+      "value": "2px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-xxs",
+      "value": "4px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-xs",
+      "value": "8px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-s",
+      "value": "16px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-m",
+      "value": "24px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-l",
+      "value": "32px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-xl",
+      "value": "48px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-xxl",
+      "value": "64px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-xxxl",
+      "value": "96px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--spacing-xxxxl",
+      "value": "128px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--breakpoints-xs",
+      "value": "376px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--breakpoints-sm",
+      "value": "570px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--breakpoints-md",
+      "value": "768px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--breakpoints-lg",
+      "value": "993px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--breakpoints-xl",
+      "value": "1279px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--breakpoints-xxl",
+      "value": "1339px",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-primary",
+      "value": "var(--colors-tarzana-500)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-primary-light",
+      "value": "var(--colors-tarzana-50)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-primary-dark",
+      "value": "var(--colors-tarzana-700)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-primary-darker",
+      "value": "var(--colors-tarzana-800)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-secondary",
+      "value": "var(--colors-belmont-500)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-secondary-light",
+      "value": "var(--colors-belmont-50)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tertiary",
+      "value": "var(--colors-oakmore-500)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tertiary-light",
+      "value": "var(--colors-oakmore-50)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tertiary-a-a",
+      "value": "var(--colors-oakmore-500-a-a)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-tertiary-a-a-dark",
+      "value": "var(--colors-oakmore-700-a-a)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-success",
+      "value": "var(--colors-okay)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-warning",
+      "value": "var(--colors-gold)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-error",
+      "value": "var(--colors-oakmore-500-a-a)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey",
+      "value": "var(--colors-grey-900)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-oslo-gray",
+      "value": "var(--colors-grey-600)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-light",
+      "value": "var(--colors-grey-600)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-charade",
+      "value": "var(--colors-grey-400)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-ultra",
+      "value": "var(--colors-grey-400)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-silver",
+      "value": "var(--colors-grey-100)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--colors-grey-mercury",
+      "value": "var(--colors-grey-50)",
+      "selector": ":where(:root, :host)",
+      "media": ""
+    },
+    {
+      "name": "--thickness",
+      "value": "1px",
+      "selector": ".--thickness_1px",
+      "media": ""
+    },
+    {
+      "name": "--bat-high-60",
+      "value": "-20px,16px",
+      "selector": ".--bat-high-60_-20px\\,_16px",
+      "media": ""
+    },
+    {
+      "name": "--bat-high-100",
+      "value": "-34px,30px",
+      "selector": ".--bat-high-100_-34px\\,_30px",
+      "media": ""
+    },
+    {
+      "name": "--bat-mid-60",
+      "value": "-8px,26px",
+      "selector": ".--bat-mid-60_-8px\\,_26px",
+      "media": ""
+    },
+    {
+      "name": "--bat-mid-100",
+      "value": "-14px,46px",
+      "selector": ".--bat-mid-100_-14px\\,_46px",
+      "media": ""
+    },
+    {
+      "name": "--bat-low-60",
+      "value": "4px,28px",
+      "selector": ".--bat-low-60_4px\\,_28px",
+      "media": ""
+    },
+    {
+      "name": "--bat-low-100",
+      "value": "8px,52px",
+      "selector": ".--bat-low-100_8px\\,_52px",
+      "media": ""
+    },
+    {
+      "name": "--bat-high-60",
+      "value": "-26px,12px",
+      "selector": ".--bat-high-60_-26px\\,_12px",
+      "media": ""
+    },
+    {
+      "name": "--bat-high-100",
+      "value": "-44px,26px",
+      "selector": ".--bat-high-100_-44px\\,_26px",
+      "media": ""
+    },
+    {
+      "name": "--bat-mid-60",
+      "value": "-14px,26px",
+      "selector": ".--bat-mid-60_-14px\\,_26px",
+      "media": ""
+    },
+    {
+      "name": "--bat-mid-100",
+      "value": "-26px,46px",
+      "selector": ".--bat-mid-100_-26px\\,_46px",
+      "media": ""
+    },
+    {
+      "name": "--bat-low-60",
+      "value": "-2px,30px",
+      "selector": ".--bat-low-60_-2px\\,_30px",
+      "media": ""
+    },
+    {
+      "name": "--bat-low-100",
+      "value": "-4px,54px",
+      "selector": ".--bat-low-100_-4px\\,_54px",
+      "media": ""
+    },
+    {
+      "name": "--bat-high-60",
+      "value": "-18px,8px",
+      "selector": ".--bat-high-60_-18px\\,_8px",
+      "media": ""
+    },
+    {
+      "name": "--bat-high-100",
+      "value": "-30px,16px",
+      "selector": ".--bat-high-100_-30px\\,_16px",
+      "media": ""
+    },
+    {
+      "name": "--bat-mid-60",
+      "value": "-10px,18px",
+      "selector": ".--bat-mid-60_-10px\\,_18px",
+      "media": ""
+    },
+    {
+      "name": "--bat-mid-100",
+      "value": "-18px,30px",
+      "selector": ".--bat-mid-100_-18px\\,_30px",
+      "media": ""
+    },
+    {
+      "name": "--bat-low-60",
+      "value": "2px,22px",
+      "selector": ".--bat-low-60_2px\\,_22px",
+      "media": ""
+    },
+    {
+      "name": "--bat-low-100",
+      "value": "4px,36px",
+      "selector": ".--bat-low-100_4px\\,_36px",
+      "media": ""
+    },
+    {
+      "name": "--mix-background",
+      "value": "color-mix(in srgb,var(--colors-white) 80%,transparent)",
+      "selector": ".bg_white\\/80",
+      "media": ""
+    },
+    {
+      "name": "--mix-background",
+      "value": "color-mix(in srgb,var(--colors-white) 75%,transparent)",
+      "selector": ".bg_white\\/75",
+      "media": ""
+    },
+    {
+      "name": "--mix-borderColor",
+      "value": "color-mix(in srgb,var(--colors-secondary) 50%,transparent)",
+      "selector": ".bd-c_\\{colors\\.secondary\\}\\/50",
+      "media": ""
+    },
+    {
+      "name": "--mix-borderColor",
+      "value": "color-mix(in srgb,var(--colors-grey) 80%,transparent)",
+      "selector": ".bd-c_grey\\/80",
+      "media": ""
+    },
+    {
+      "name": "--mix-borderColor",
+      "value": "color-mix(in srgb,var(--colors-tertiary-a-a) 50%,transparent)",
+      "selector": ".bd-c_tertiaryAA\\/50",
+      "media": ""
+    },
+    {
+      "name": "--mix-backgroundColor",
+      "value": "color-mix(in srgb,var(--colors-grey-100) 80%,transparent)",
+      "selector": ".bg-c_grey\\.100\\/80",
+      "media": ""
+    },
+    {
+      "name": "--gradient-stops",
+      "value": "var(--gradient-via-stops,var(--gradient-position),var(--gradient-from) var(--gradient-from-position),var(--gradient-to) var(--gradient-to-position))",
+      "selector": ".bg-linear_to-r",
+      "media": ""
+    },
+    {
+      "name": "--gradient-position",
+      "value": "to right",
+      "selector": ".bg-linear_to-r",
+      "media": ""
+    },
+    {
+      "name": "--gradient-from",
+      "value": "var(--colors-grey-100)",
+      "selector": ".grad-from_grey\\.100",
+      "media": ""
+    },
+    {
+      "name": "--gradient-via",
+      "value": "var(--colors-grey-50)",
+      "selector": ".grad-via_grey\\.50",
+      "media": ""
+    },
+    {
+      "name": "--gradient-stops",
+      "value": "var(--gradient-via-stops)",
+      "selector": ".grad-via_grey\\.50",
+      "media": ""
+    },
+    {
+      "name": "--gradient-via-stops",
+      "value": "var(--gradient-position),var(--gradient-from) var(--gradient-from-position),var(--gradient-via) var(--gradient-via-position),var(--gradient-to) var(--gradient-to-position)",
+      "selector": ".grad-via_grey\\.50",
+      "media": ""
+    },
+    {
+      "name": "--gradient-to",
+      "value": "var(--colors-grey-100)",
+      "selector": ".grad-to_grey\\.100",
+      "media": ""
+    },
+    {
+      "name": "--gradient-from",
+      "value": "var(--colors-black)",
+      "selector": ".grad-from_black",
+      "media": ""
+    },
+    {
+      "name": "--gradient-to",
+      "value": "var(--colors-transparent)",
+      "selector": ".grad-to_transparent",
+      "media": ""
+    },
+    {
+      "name": "--gradient-from",
+      "value": "var(--colors-white)",
+      "selector": ".grad-from_white",
+      "media": ""
+    },
+    {
+      "name": "--gradient-from",
+      "value": "var(--colors-grey-50)",
+      "selector": ".grad-from_grey\\.50",
+      "media": ""
+    },
+    {
+      "name": "--gradient-from",
+      "value": "var(--colors-transparent)",
+      "selector": ".grad-from_transparent",
+      "media": ""
+    },
+    {
+      "name": "--gradient-to",
+      "value": "var(--colors-black)",
+      "selector": ".grad-to_black",
+      "media": ""
+    },
+    {
+      "name": "--gradient-to",
+      "value": "var(--colors-white)",
+      "selector": ".grad-to_white",
+      "media": ""
+    },
+    {
+      "name": "--gradient-to",
+      "value": "var(--colors-grey-50)",
+      "selector": ".grad-to_grey\\.50",
+      "media": ""
+    },
+    {
+      "name": "--gradient-stops",
+      "value": "var(--gradient-via-stops,var(--gradient-position),var(--gradient-from) var(--gradient-from-position),var(--gradient-to) var(--gradient-to-position))",
+      "selector": ".bg-linear_to-b",
+      "media": ""
+    },
+    {
+      "name": "--gradient-position",
+      "value": "to bottom",
+      "selector": ".bg-linear_to-b",
+      "media": ""
+    },
+    {
+      "name": "--mix---gradient-from",
+      "value": "color-mix(in srgb,var(--colors-black) 50%,transparent)",
+      "selector": ".grad-from_black\\/50",
+      "media": ""
+    },
+    {
+      "name": "--gradient-from",
+      "value": "var(--mix---gradient-from,var(--colors-black))",
+      "selector": ".grad-from_black\\/50",
+      "media": ""
+    },
+    {
+      "name": "--gradient-to-position",
+      "value": "50%",
+      "selector": ".grad-to-pos_50\\%",
+      "media": ""
+    },
+    {
+      "name": "--mix-backgroundColor",
+      "value": "color-mix(in srgb,var(--colors-black) 80%,transparent)",
+      "selector": ".bg-c_black\\/80",
+      "media": ""
+    },
+    {
+      "name": "--mix-backgroundColor",
+      "value": "color-mix(in srgb,var(--colors-grey) 80%,transparent)",
+      "selector": ".bg-c_grey\\/80",
+      "media": ""
+    },
+    {
+      "name": "--mix-backgroundColor",
+      "value": "color-mix(in srgb,var(--colors-success) 10%,transparent)",
+      "selector": ".bg-c_success\\/10",
+      "media": ""
+    },
+    {
+      "name": "--mix-backgroundColor",
+      "value": "color-mix(in srgb,var(--colors-error) 10%,transparent)",
+      "selector": ".bg-c_error\\/10",
+      "media": ""
+    },
+    {
+      "name": "--mix-borderBottomColor",
+      "value": "color-mix(in srgb,var(--colors-grey-100) 40%,transparent)",
+      "selector": ".bd-b-c_grey\\.100\\/40",
+      "media": ""
+    },
+    {
+      "name": "--mix-borderColor",
+      "value": "color-mix(in srgb,var(--colors-grey) 80%,transparent)",
+      "selector": ".\\[\\&\\:visited\\]\\:bd-c_grey\\/80:visited",
+      "media": ""
+    },
+    {
+      "name": "--mix-backgroundColor",
+      "value": "color-mix(in srgb,var(--colors-grey-oslo-gray) 80%,transparent)",
+      "selector": ".focus\\:bg-c_grey\\.osloGray\\/80:is(:focus, [data-focus])",
+      "media": ""
+    },
+    {
+      "name": "--mix-borderColor",
+      "value": "color-mix(in srgb,var(--colors-secondary) 50%,transparent)",
+      "selector": ".hover\\:bd-c_\\{colors\\.secondary\\}\\/50:is(:hover, [data-hover])",
+      "media": ""
+    },
+    {
+      "name": "--mix-borderColor",
+      "value": "color-mix(in srgb,var(--colors-tertiary-a-a) 50%,transparent)",
+      "selector": ".hover\\:bd-c_tertiaryAA\\/50:is(:hover, [data-hover])",
+      "media": ""
+    },
+    {
+      "name": "--mix-backgroundColor",
+      "value": "color-mix(in srgb,var(--colors-grey-oslo-gray) 80%,transparent)",
+      "selector": ".hover\\:bg-c_grey\\.osloGray\\/80:is(:hover, [data-hover])",
+      "media": ""
+    },
+    {
+      "name": "--transition-duration",
+      "value": "0s",
+      "selector": ".motionReduce\\:trs-dur_0s",
+      "media": "@media (prefers-reduced-motion: reduce)"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trulia style guide</title>
+<style>
+:root {
+  --font: Figtree, "Figtree Fallback", Arial, sans-serif;
+  --page: #ffffff;
+  --surface: #f5f6f7;
+  --text: #3b4144;
+  --muted: #6b7780;
+  --accent: #007882;
+  --border: #cdd1d4;
+  --search: #d93c23;
+  --tarzana-50: #e0f7f8;
+  --tarzana-300: #4dc5cf;
+  --tarzana-500: #00adbb;
+  --tarzana-700: #007882;
+  --tarzana-800: #00565d;
+  --tarzana-900: #00454b;
+  --belmont-50: #f2f6ff;
+  --belmont-500: #052286;
+  --lexington-500: #ceb6ff;
+  --lexington-800: #665a7f;
+  --lexington-900: #3d364c;
+  --oakmore-50: #ffead8;
+  --oakmore-500: #ff5e3f;
+  --oakmore-700: #b2412b;
+  --oakmore-800: #7f2e1f;
+  --lincoln: #c2d500;
+  --gold: #f2c430;
+  --castro: #fa8c68;
+  --richmond: #740631;
+  --greenwich: #144225;
+  --sherwood: #b6ccbc;
+  --brentwood: #f5e2d6;
+  --okay: #008545;
+  --white: #ffffff;
+  --grey-50: #f5f6f7;
+  --grey-100: #e8e9ea;
+  --grey-400: #cdd1d4;
+  --grey-500: #869099;
+  --grey-600: #6b7780;
+  --grey-900: #3b4144;
+  --black: #000000;
+  --color-page: var(--color-white);
+  --color-surface: var(--color-grey-50);
+  --color-text: var(--color-grey-900);
+  --color-muted: var(--color-grey-600);
+  --color-accent: var(--color-tarzana-700);
+  --color-accent-bright: var(--color-tarzana-500);
+  --color-border: var(--color-grey-400);
+  --color-on-accent: var(--color-white);
+  --color-link: var(--color-tarzana-700);
+  --color-secondary: var(--color-belmont-500);
+  --color-tertiary: var(--color-oakmore-500-a-a);
+  --color-success: var(--color-okay);
+  --color-warning: var(--color-gold);
+  --color-danger: var(--color-oakmore-500-a-a);
+  --color-accent-hover: var(--#e8e9ea);
+  --color-search-submit: var(--#d93c23);
+  --color-search-submit-hover: var(--#9c1114);
+  --color-scrim: var(--#0000004d);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--font); }
+header { padding: 24px 32px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+h1 { margin: 0; font-size: 24px; font-weight: 900; letter-spacing: -0.1px; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px; }
+h2 { font-size: 20px; font-weight: 700; margin: 32px 0 12px; }
+.grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: 8px; border: 1px solid var(--border); }
+.sw span, .sw code { display: block; font-size: 12px; color: var(--muted); }
+.row { display: flex; gap: 12px; align-items: center; margin: 8px 0; }
+button.login { background: #fff; color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; font: 700 16px/24px var(--font); }
+button.primary { background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 8px 16px; font: 700 16px/24px var(--font); }
+button.search { background: var(--search); color: #fff; border: 0; border-radius: 0 8px 8px 0; width: 60px; height: 42px; }
+.field { border: 1px solid #869099; border-radius: 8px; height: 42px; padding: 0 12px; display: flex; align-items: center; color: var(--muted); width: 280px; }
+.card { background: var(--surface); border-radius: 16px; padding: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Trulia</h1>
+  <button class="login">Sign up or Log in</button>
+</header>
+<main>
+  <p>Rendered from tokens.json. Light only. Figtree is not bundled; the page falls back to Arial.</p>
+  <h2>Semantic roles</h2>
+  <div class="grid"><div class="sw"><i style="background:var(--color-page)"></i><span>page</span><code>{color.white}</code></div>
+<div class="sw"><i style="background:var(--color-surface)"></i><span>surface</span><code>{color.grey.50}</code></div>
+<div class="sw"><i style="background:var(--color-text)"></i><span>text</span><code>{color.grey.900}</code></div>
+<div class="sw"><i style="background:var(--color-muted)"></i><span>muted</span><code>{color.grey.600}</code></div>
+<div class="sw"><i style="background:var(--color-accent)"></i><span>accent</span><code>{color.tarzana.700}</code></div>
+<div class="sw"><i style="background:var(--color-accent-bright)"></i><span>accent-bright</span><code>{color.tarzana.500}</code></div>
+<div class="sw"><i style="background:var(--color-border)"></i><span>border</span><code>{color.grey.400}</code></div>
+<div class="sw"><i style="background:var(--color-on-accent)"></i><span>on-accent</span><code>{color.white}</code></div>
+<div class="sw"><i style="background:var(--color-link)"></i><span>link</span><code>{color.tarzana.700}</code></div>
+<div class="sw"><i style="background:var(--color-secondary)"></i><span>secondary</span><code>{color.belmont.500}</code></div>
+<div class="sw"><i style="background:var(--color-tertiary)"></i><span>tertiary</span><code>{color.oakmore.500-a-a}</code></div>
+<div class="sw"><i style="background:var(--color-success)"></i><span>success</span><code>{color.okay}</code></div>
+<div class="sw"><i style="background:var(--color-warning)"></i><span>warning</span><code>{color.gold}</code></div>
+<div class="sw"><i style="background:var(--color-danger)"></i><span>danger</span><code>{color.oakmore.500-a-a}</code></div>
+<div class="sw"><i style="background:var(--color-accent-hover)"></i><span>accent-hover</span><code>#e8e9ea</code></div>
+<div class="sw"><i style="background:var(--color-search-submit)"></i><span>search-submit</span><code>#d93c23</code></div>
+<div class="sw"><i style="background:var(--color-search-submit-hover)"></i><span>search-submit-hover</span><code>#9c1114</code></div>
+<div class="sw"><i style="background:var(--color-scrim)"></i><span>scrim</span><code>#0000004d</code></div></div>
+  <h2>Palette</h2>
+  <div class="grid"><div class="sw"><i style="background:#e0f7f8"></i><span>50</span><code>#e0f7f8</code></div>
+<div class="sw"><i style="background:#4dc5cf"></i><span>300</span><code>#4dc5cf</code></div>
+<div class="sw"><i style="background:#00adbb"></i><span>500</span><code>#00adbb</code></div>
+<div class="sw"><i style="background:#007882"></i><span>700</span><code>#007882</code></div>
+<div class="sw"><i style="background:#00565d"></i><span>800</span><code>#00565d</code></div>
+<div class="sw"><i style="background:#00454b"></i><span>900</span><code>#00454b</code></div>
+<div class="sw"><i style="background:#f2f6ff"></i><span>50</span><code>#f2f6ff</code></div>
+<div class="sw"><i style="background:#052286"></i><span>500</span><code>#052286</code></div>
+<div class="sw"><i style="background:#ceb6ff"></i><span>500</span><code>#ceb6ff</code></div>
+<div class="sw"><i style="background:#665a7f"></i><span>800</span><code>#665a7f</code></div>
+<div class="sw"><i style="background:#3d364c"></i><span>900</span><code>#3d364c</code></div>
+<div class="sw"><i style="background:#ffead8"></i><span>50</span><code>#ffead8</code></div>
+<div class="sw"><i style="background:#ff5e3f"></i><span>500</span><code>#ff5e3f</code></div>
+<div class="sw"><i style="background:#b2412b"></i><span>700</span><code>#b2412b</code></div>
+<div class="sw"><i style="background:#7f2e1f"></i><span>800</span><code>#7f2e1f</code></div>
+<div class="sw"><i style="background:#c2d500"></i><span>lincoln</span><code>#c2d500</code></div>
+<div class="sw"><i style="background:#f2c430"></i><span>gold</span><code>#f2c430</code></div>
+<div class="sw"><i style="background:#fa8c68"></i><span>castro</span><code>#fa8c68</code></div>
+<div class="sw"><i style="background:#740631"></i><span>richmond</span><code>#740631</code></div>
+<div class="sw"><i style="background:#144225"></i><span>greenwich</span><code>#144225</code></div>
+<div class="sw"><i style="background:#b6ccbc"></i><span>sherwood</span><code>#b6ccbc</code></div>
+<div class="sw"><i style="background:#f5e2d6"></i><span>brentwood</span><code>#f5e2d6</code></div>
+<div class="sw"><i style="background:#008545"></i><span>okay</span><code>#008545</code></div>
+<div class="sw"><i style="background:#ffffff"></i><span>white</span><code>#ffffff</code></div>
+<div class="sw"><i style="background:#f5f6f7"></i><span>50</span><code>#f5f6f7</code></div>
+<div class="sw"><i style="background:#e8e9ea"></i><span>100</span><code>#e8e9ea</code></div>
+<div class="sw"><i style="background:#cdd1d4"></i><span>400</span><code>#cdd1d4</code></div>
+<div class="sw"><i style="background:#869099"></i><span>500</span><code>#869099</code></div>
+<div class="sw"><i style="background:#6b7780"></i><span>600</span><code>#6b7780</code></div>
+<div class="sw"><i style="background:#3b4144"></i><span>900</span><code>#3b4144</code></div>
+<div class="sw"><i style="background:#000000"></i><span>black</span><code>#000000</code></div></div>
+  <h2>Type scale</h2>
+  <div style="font-size:10px;line-height:1.2">sub-caption 10px</div>
+<div style="font-size:12px;line-height:1.2">caption 12px</div>
+<div style="font-size:14px;line-height:1.2">small 14px</div>
+<div style="font-size:16px;line-height:1.2">body 16px</div>
+<div style="font-size:20px;line-height:1.2">sub-header 20px</div>
+<div style="font-size:24px;line-height:1.2">title 24px</div>
+<div style="font-size:28px;line-height:1.2">headline 28px</div>
+<div style="font-size:38px;line-height:1.2">display 38px</div>
+<div style="font-size:50px;line-height:1.2">jumbo 50px</div>
+<div style="font-size:68px;line-height:1.2">mega 68px</div>
+  <h2>Controls</h2>
+  <div class="row"><button class="login">Sign up or Log in</button><button class="primary">Submit</button><button class="search">Go</button></div>
+  <div class="row"><div class="field">Search for City, Neighborhood, Zip</div></div>
+  <div class="card">Surface card. Radius large is 16px. Page text is grey.900.</div>
+</main>
+</body>
+</html>
