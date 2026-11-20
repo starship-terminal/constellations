@@ -160,7 +160,8 @@ const CHROME = [
     desc: 'The sidebar footer control that collapses the rail — a local UI toggle. "opened" is its own press (the rail collapsed), restored afterwards.',
     sel: 'button (text Toggle Sidebar)', find: async (p) => await domFind(p, /toggle sidebar/i, { sel: 'button', tag: 'st', minW: 40 }), states: ['default', 'hover',
       { name: 'opened', via: 'the "Toggle Sidebar" button\'s own press (sidebar collapsed; pressed again to restore)',
-        fn: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); } },
+        fn: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); },
+        restore: async (loc) => { await loc.click({ timeout: 4000 }); await page.waitForTimeout(900); } },
     ] },
   { key: 'app-search-button', group: 'App chrome', title: 'Search button (Ctrl K)',
     desc: 'The sidebar "Search" menu-button carrying the ⌘K hint; opens the command search dialog.',
@@ -275,7 +276,7 @@ const PRO = [
       { name: 'opened', via: 'the question row\'s own press (answer visible; pressed again to close)', fn: async (loc) => {
         await loc.click({ timeout: 4000 }).catch(() => {});
         await page.waitForTimeout(700);
-      } },
+      }, restore: async (loc) => { await loc.click({ timeout: 4000 }); await page.waitForTimeout(700); } },
     ] },
 ];
 
@@ -551,6 +552,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
       // the forced state into the next measurement.
       let pressed = null;
       let darkOn = false;
+      let toggled = null;  // the locator a toggled state pressed, for its restore
       try {
         await reset();
         let viaText = 'resting state';
@@ -561,7 +563,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
         else if (st === 'pressed') { pressed = await pressOn(readLoc); viaText = via.pressed; }
         else if (st === 'dark') { if (!(await darkFn(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = isBlog(g.page) ? via.darkblog : via.dark; }
         else if (st === 'darkblog') { if (!(await setBlogTheme(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = via.darkblog; }
-        else if (st && typeof st === 'object' && st.fn) { const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
+        else if (st && typeof st === 'object' && st.fn) { toggled = readLoc; const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
         else if (typeof st === 'function') { await st(readLoc); viaText = 'reached by the component\'s own UI toggle'; }
         await centre(readLoc).catch(() => {});
         const v = await styleOf(readLoc);
@@ -580,6 +582,17 @@ for (const [key, g] of Object.entries(GROUPS)) {
         log(' ', spec.key, name, 'FAILED', e.message.split('\n')[0]);
       } finally {
         if (pressed != null) await pressOff(pressed).catch(() => {});
+        // A toggled state puts the page back before the next reading, even
+        // when the reading failed: without it every later component was
+        // measured in the toggled layout (the collapsed sidebar, an open FAQ
+        // row). If the pressed element went stale, find the control again.
+        if (toggled && st.restore) {
+          try { await st.restore(toggled); } catch (e) {
+            const again = await spec.find(page).catch(() => null);
+            if (again && await again.count()) await st.restore(again.first()).catch((e2) => log(' ', spec.key, name, 'restore failed', e2.message.split('\n')[0]));
+            else log(' ', spec.key, name, 'restore failed', e.message.split('\n')[0]);
+          }
+        }
         if (darkOn) {
           let back = await darkFn(page, 'light').catch(() => false);
           if (!back) back = await darkFn(page, 'light').catch(() => false);
