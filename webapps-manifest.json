@@ -3088,9 +3088,9 @@
       "description": "Manage your professional identity",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.linkedin.com/login/ asks for email and password, or Sign in with Apple. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 10
     },
     {
@@ -3105,9 +3105,9 @@
       "description": "Your Mini Website",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://linktr.ee/universal-login#/login accepted the capture inbox, then said no account was found. Signup not opened. Google and Apple also offered. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 10
     },
     {
@@ -3122,9 +3122,9 @@
       "description": "Track your reading and discover new books",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://literal.club/login stopped on Cloudflare before a form. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 10
     },
     {
@@ -3139,9 +3139,9 @@
       "description": "Async Video Messaging for Work",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.loom.com/login stayed on the login page and said the capture inbox was an invalid email address. No code sent. Google, Slack, Apple, Outlook, and SSO also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 10
     },
     {
@@ -3156,9 +3156,9 @@
       "description": "Lightweight, scalable animations for your websites and apps",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://lottiefiles.com/login is 404. https://accounts.lottiefiles.com/login asks for organization email and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 10
     },
     {
@@ -3173,9 +3173,9 @@
       "description": "Vibe Code Apps & Websites with AI, Fast",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://lovable.dev/login accepted the capture inbox and opened signup saying no account was found. Signup asks for email and password. Password not submitted. Google, GitHub, and Apple also offered. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 10
     },
     {
@@ -3190,9 +3190,9 @@
       "description": "Exclusive styles you won't find anywhere else",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.luluandgeorgia.com/account/login opens Shopify customer login and sent a code. Code not entered. News checkbox left unchecked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 10
     },
     {
@@ -3285,9 +3285,9 @@
       "description": "Building visual AI to expand human imagination and capabilities",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Sign in opens https://auth.lumalabs.ai/ email continue, then a password field, or Google, Apple, passkey, or email code. Password not submitted and email code not requested.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 10
     },
     {
@@ -3302,9 +3302,9 @@
       "description": "Free AI Stock Images & Pictures",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.lummi.ai/login asks for email and password, or Google. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 10
     },
     {
@@ -3319,9 +3319,9 @@
       "description": "Human Quality AI Writing At Scale",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://macawhq.com/ is the marketing site. Log in points at https://app.macawhq.com/sign-in, which does not resolve. No email form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 10
     },
     {
@@ -3336,9 +3336,9 @@
       "description": "Marketing, Automation & Email Platform",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://login.mailchimp.com/ stayed on the username page after the capture inbox and said to check the username. No code sent. Google also offered. Create account not opened.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 10
     },
     {
@@ -3353,9 +3353,9 @@
       "description": "No-Code Workflow Automation",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.make.com/login asks for email and password, or Google or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 10
     },
     {
@@ -3370,9 +3370,9 @@
       "description": "Salon & Spa Software | Booking & Management",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.mangomint.com/login asks for email and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 10
     },
     {
@@ -3387,9 +3387,9 @@
       "description": "Chat marketing made easy",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://manychat.com/login redirected to https://app.manychat.com/signin and asked to confirm a human. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 10
     },
     {
@@ -3404,9 +3404,9 @@
       "description": "Maps, Navigation, Search, and Data",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://account.mapbox.com/auth/signin/ asks for email and password, or Google. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 10
     },
     {
@@ -3421,9 +3421,9 @@
       "description": "Project Management For Creatives",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://onmarathon.com/ is an archive. https://onmarathon.com/sign-in redirects back to the archive homepage with no login form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 10
     },
     {
@@ -3438,9 +3438,9 @@
       "description": "Online Classes",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.masterclass.com/auth/login redirected to a Google sign-in for MasterClass. No site email field. Google sign-in not completed.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 10
     },
     {
@@ -3455,9 +3455,9 @@
       "description": "It’s the ultimate reading client for the open web",
       "status": "captured",
       "package": "systems/matter",
-      "notes": "public signed-out marketing, a public article, docs, and the reader sign-in card. The reader app sits behind sign-in and was not reached. Subscribe, OAuth, and checkout were not submitted.",
+      "notes": "public signed-out marketing, a public article, docs, and the reader sign-in card. The reader app sits behind sign-in and was not reached. Subscribe, OAuth, and checkout were not submitted. https://web.getmatter.app/login redirected to an Apple Account sign-in for Matter. Apple sign-in not completed.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 10
     },
     {
@@ -3472,9 +3472,9 @@
       "description": "User insights at the speed of product development",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://auth.maze.co/login shows email and password under a cookie banner. Banner not accepted. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 10
     },
     {
