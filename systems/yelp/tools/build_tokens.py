@@ -233,10 +233,74 @@ def build():
         "light": light,
         "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
     }
-    text = json.dumps(doc, indent=2) + "\n"
-    (HERE / "tokens.json").write_text(text)
-    print(f"wrote {HERE / 'tokens.json'} ({text.count(chr(10))} lines)")
+    check(doc)
+    return json.dumps(doc, indent=2) + "\n"
+
+
+# ---------------------------------------------------------------- check (finding 16-6)
+
+def _token_paths(node, path=""):
+    for key, value in node.items():
+        if key.startswith("$") or not isinstance(value, dict):
+            continue
+        if "$value" in value:
+            yield f"{path}{key}", value
+        else:
+            yield from _token_paths(value, f"{path}{key}.")
+
+
+def _aliases(value):
+    if isinstance(value, str):
+        return re.findall(r"\{([^{}]+)\}", value)
+    if isinstance(value, dict):
+        return [a for v in value.values() for a in _aliases(v)]
+    if isinstance(value, list):
+        return [a for v in value for a in _aliases(v)]
+    return []
+
+
+def _follow(flat, s, ref, seen):
+    """Follow an alias chain: each name resolves in the set it is read from, then core (the
+    Resolver's order). Returns a problem string for a dead alias or a repeated token, else None."""
+    target_set = s if ref in flat[s] else "core" if ref in flat.get("core", {}) else None
+    if target_set is None:
+        return f"alias {{{ref}}} resolves nowhere"
+    if (target_set, ref) in seen:
+        return f"alias loop through {{{ref}}}"
+    for nxt in _aliases(flat[target_set][ref]["$value"]):
+        err = _follow(flat, target_set, nxt, seen | {(target_set, ref)})
+        if err:
+            return err
+    return None
+
+
+def check(doc):
+    """Refuse a token with no source, a colour that is neither #rrggbb(aa) nor one whole alias, an
+    alias that resolves in neither its own set nor core (the order tools/catalog.py's Resolver
+    uses), and an alias chain that comes back to a token it already passed. Raises SystemExit."""
+    sets = [s for s, v in doc.items() if not s.startswith("$") and isinstance(v, dict)]
+    flat = {s: dict(_token_paths(doc[s])) for s in sets}
+    core = flat.get("core", {})
+    problems = []
+    for s in sets:
+        for path, token in flat[s].items():
+            where = f"{s}.{path}"
+            if not token.get("$extensions", {}).get("source"):
+                problems.append(f"{where}: no source")
+            value = token["$value"]
+            for ref in _aliases(value):
+                err = _follow(flat, s, ref, {(s, path)})
+                if err:
+                    problems.append(f"{where}: {err}")
+            if token.get("$type") == "color":
+                whole_alias = isinstance(value, str) and re.fullmatch(r"\{[^{}]+\}", value)
+                if not whole_alias and not (isinstance(value, str) and re.fullmatch(r"#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?", value)):
+                    problems.append(f"{where}: colour {value!r} is not #rrggbb(aa) or one whole alias")
+    if problems:
+        raise SystemExit("token check failed:\n" + "\n".join(problems))
 
 
 if __name__ == "__main__":
-    build()
+    text = build()
+    (HERE / "tokens.json").write_text(text)
+    print(f"wrote {HERE / 'tokens.json'} ({text.count(chr(10))} lines)")

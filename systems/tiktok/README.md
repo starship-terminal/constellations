@@ -40,12 +40,12 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 |---|---|
 | page | #000000 `dark.background.page` |
 | surface | #1e1e1e `dark.background.surface` |
-| text | rgba(255, 255, 255, 0.9) `dark.text.primary` |
-| muted | rgba(255, 255, 255, 0.5) `dark.text.secondary` |
+| text | #ffffffe6 `dark.text.primary` |
+| muted | #ffffff80 `dark.text.secondary` |
 | accent | #fe2c55 `dark.background.action` |
-| border | rgba(255, 255, 255, 0.12) `dark.border.stroke` |
+| border | #ffffff1f `dark.border.stroke` |
 
-Fonts: `core.font.family.tiktok` is TikTokFont, then 4 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 10 type styles (`core.typography`), 11 radius steps (`core.radius`), 11 spacing steps (`core.spacing`).
+Fonts: `core.font.family.tiktok` is TikTokFont, then 4 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 10 type styles (`core.typography`), 12 radius steps (`core.radius`), 11 spacing steps (`core.spacing`).
 
 ### Using components
 
@@ -55,7 +55,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| dark | 16.74:1 pass | 13.66:1 pass | 5.28:1 pass | 5.12:1 pass |
+| dark | 16.82:1 pass | 13.72:1 pass | 5.31:1 pass | 5.15:1 pass |
 
 4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.border.focus` #ff4c3a; `core.borderWidth.focus` 2px.
 
