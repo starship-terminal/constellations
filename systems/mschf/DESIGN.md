@@ -9,12 +9,12 @@ colors:
   neutral: "#000000"
   surface: "#000000"
   on-surface: "#84898e"
-  on-surface-variant: "rgba(168, 145, 65, 0.3)"
+  on-surface-variant: "#84898e"
   outline: "rgba(168, 145, 65, 0.3)"
   surface-page: "#000000"
   surface-raised: "#000000"
   text-primary: "#84898e"
-  text-muted: "rgba(168, 145, 65, 0.3)"
+  text-muted: "#84898e"
   text-onAccent: "#f00007"
   accent: "#ffc700"
   border-subtle: "rgba(168, 145, 65, 0.3)"
@@ -106,7 +106,7 @@ The roles below are the catalog's swatches for the `dark` theme. The front matte
 - **neutral (#000000):** `dark.surface.page`
 - **surface (#000000):** `dark.surface.raised`
 - **on-surface (#84898e):** `dark.text.primary`
-- **on-surface-variant (rgba(168, 145, 65, 0.3)):** `dark.text.muted`
+- **on-surface-variant (#84898e):** `dark.text.muted`
 - **outline (rgba(168, 145, 65, 0.3)):** `dark.border.subtle`
 
 ## Typography
