@@ -49,9 +49,12 @@ try {
 // collection (the kit's guard), so a dead page cannot leave icons/ and INDEX.tsv out of step.
 const failed = [];
 async function harvest(url, tag) {
+  let res;
   try {
-    await page.goto(BASE + url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+    res = await page.goto(BASE + url, { waitUntil: 'domcontentloaded', timeout: 90000 });
   } catch (e) { failed.push(`${tag} (${String(e.message || e).split('\n')[0].slice(0, 80)})`); return; }
+  // goto resolves on an HTTP error page (a 503 is not a throw): only a 2xx page counts as collected
+  if (!res || !res.ok()) { failed.push(`${tag} (HTTP ${res ? res.status() : 'no response'})`); return; }
   if ((await clearChallenge(page)) === false) { failed.push(`${tag} (challenge)`); return; }
   await page.waitForTimeout(7000);
   await closePromo(page);
@@ -126,7 +129,8 @@ for (const u of PAGES) await harvest(u, u === '/' ? 'home' : u.replace(/^\//, ''
 const mctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' });
 await patch(mctx);
 const mp = await mctx.newPage();
-await mp.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch((e) => failed.push(`mobile-home (${String(e.message || e).split('\n')[0].slice(0, 80)})`));
+const mres = await mp.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch((e) => { failed.push(`mobile-home (${String(e.message || e).split('\n')[0].slice(0, 80)})`); return undefined; });
+if (mres !== undefined && (!mres || !mres.ok())) failed.push(`mobile-home (HTTP ${mres ? mres.status() : 'no response'})`);
 await mp.waitForTimeout(7000);
 await mp.locator('div[aria-label="Mobile menu toggle"]').first().click().catch(() => {});
 await mp.waitForTimeout(1200);

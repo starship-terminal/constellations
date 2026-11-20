@@ -102,21 +102,35 @@ class RebuildTest(unittest.TestCase):
             self.assertIn("so the browser chose it, not the site", self.built["light"]["focus"][k]["$extensions"]["source"])
 
     def test_failed_focus_is_not_published_as_a_reading(self):
+        """An older capture saved a failed keyboard focus as the element at rest with via 'focus
+        failed'; build-measurements.mjs must show it as Skipped, with no values. The record is made
+        here on a temp copy, so the test does not depend on what the committed capture holds."""
         if self.measurements is None:
             self.skipTest("node is not installed")
         self.assertEqual((PKG / "raw" / "measurements.md").read_text(), self.measurements)
-        failed = [k for k, c in self.C.items() if (c["states"].get("focus-visible") or {}).get("via") == "focus failed"]
-        self.assertTrue(failed)
-        for k in failed:
-            block = self.measurements.split(f"#### {k}\n", 1)[1].split("\n#### ", 1)[0]
-            cells = lambda r: [c.strip() for c in r.strip().strip("|").split("|")]  # noqa: E731
-            table = [cells(r) for r in block.splitlines() if r.startswith("| ") and not r.startswith("|---")]
-            col = table[0].index("focus-visible")
-            for row in table[1:]:
-                if row[0] == "Skipped":
-                    self.assertTrue(row[col].startswith("focus failed"), k)
-                else:
-                    self.assertEqual(row[col], "-", f"{k}: {row}")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            shutil.copytree(pathlib.Path(self.tmp.name) / "tools", root / "tools")
+            shutil.copytree(PKG / "raw", root / "raw")
+            raw = json.loads((root / "raw" / "components-computed.json").read_text())
+            k = next(k for k, c in raw["components"].items() if "style" in (c["states"].get("focus-visible") or {}))
+            st = raw["components"][k]["states"]["focus-visible"]
+            raw["components"][k]["states"]["focus-visible"] = {**st, "via": "focus failed"}
+            (root / "raw" / "components-computed.json").write_text(json.dumps(raw))
+            subprocess.run(["node", str(root / "tools" / "capture" / "public" / "build-measurements.mjs")],
+                           cwd=root, check=True, capture_output=True)
+            md = (root / "raw" / "measurements.md").read_text()
+        block = md.split(f"#### {k}\n", 1)[1].split("\n#### ", 1)[0]
+        cells = lambda r: [c.strip() for c in r.strip().strip("|").split("|")]  # noqa: E731
+        table = [cells(r) for r in block.splitlines() if r.startswith("| ") and not r.startswith("|---")]
+        col = table[0].index("focus-visible")
+        self.assertIn("Skipped", [row[0] for row in table[1:]])
+        for row in table[1:]:
+            if row[0] == "Skipped":
+                self.assertTrue(row[col].startswith("focus failed"), k)
+            else:
+                # "-" (no value), or "=" where the first state has no value either
+                self.assertIn(row[col], ("-", "=") if row[1] == "-" else ("-",), f"{k}: {row}")
 
     def test_skipped_focus_keeps_its_note(self):
         """A newer capture records a failed focus as {skipped, via} with no style; components.md
@@ -127,8 +141,7 @@ class RebuildTest(unittest.TestCase):
             shutil.copytree(PKG / "raw", root / "raw")
             shutil.copy(PKG / "tokens.json", root / "tokens.json")
             raw = json.loads((root / "raw" / "components-computed.json").read_text())
-            k = next(k for k, c in raw["components"].items()
-                     if (c["states"].get("focus-visible") or {}).get("via") == "focus failed")
+            k = next(k for k, c in raw["components"].items() if "style" in (c["states"].get("focus-visible") or {}))
             raw["components"][k]["states"]["focus-visible"] = {
                 "skipped": "focus failed: keyboard focus did not reach the element", "via": "focus failed"}
             (root / "raw" / "components-computed.json").write_text(json.dumps(raw))
