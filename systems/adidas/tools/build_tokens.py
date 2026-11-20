@@ -115,6 +115,47 @@ _errors = alias_errors(core, light, {})
 if _errors:
     raise KeyError("; ".join(_errors))
 
+# every finished leaf gets the type check, the composites passed through as $value included
+# (typography, shadow, gradient), and an alias must name a token of the same type
+from token_checks import tokens_of  # noqa: E402
+
+_named = dict(tokens_of(core))
+_named.update(dict(tokens_of(light)))
+COMPOSITE = {"fontFamily": "fontFamily", "fontSize": "dimension", "fontWeight": "fontWeight",
+             "letterSpacing": "dimension"}
+
+
+def _typed(path, ty, val):
+    if isinstance(val, str) and val.startswith("{") and val.endswith("}"):
+        target = _named.get(val[1:-1])
+        if target is None:
+            raise KeyError(f"{path}: alias {val} points at nothing")
+        if target["$type"] != ty:
+            raise TypeError(f"{path}: alias {val} is a {target['$type']}, not a {ty}")
+        return
+    check(path, ty, val)
+
+
+for _set, _tree in (("core", core), ("light", light)):
+    for _n, _t in tokens_of(_tree):
+        _p, _ty, _v = f"{_set}.{_n}", _t["$type"], _t["$value"]
+        if _ty == "typography":
+            for _k, _sub in COMPOSITE.items():
+                if _k in _v:
+                    _typed(f"{_p}.{_k}", _sub, _v[_k])
+        elif _ty == "shadow":
+            for _layer in _v:
+                for _k in ("offsetX", "offsetY", "blur", "spread"):
+                    _typed(f"{_p}.{_k}", "dimension", _layer[_k])
+                _typed(f"{_p}.color", "color", _layer["color"])
+        elif _ty == "gradient":
+            for _stop in _v:
+                _typed(f"{_p}.color", "color", _stop["color"])
+                if not isinstance(_stop["position"], (int, float)) or not 0 <= _stop["position"] <= 1:
+                    raise ValueError(f"{_p}: gradient position {_stop['position']!r}")
+        else:
+            _typed(_p, _ty, _v)
+
 tokens = {
     "core": core,
     "light": light,
