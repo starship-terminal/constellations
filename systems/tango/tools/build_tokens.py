@@ -39,6 +39,20 @@ def shadow(value: str, source: str) -> dict:
     return {"$type": "shadow", "$value": value, "$extensions": {"source": f"{SOURCE} {source}"}}
 
 
+def hand(token: dict) -> dict:
+    """Relabel a declared value that no raw/ file holds: Reconstruction, entered by hand."""
+    note = token["$extensions"]["source"][len(SOURCE) + 1:]
+    token["$extensions"]["source"] = (
+        f"Reconstruction: entered by hand at capture time from {note} (T3 preview tab, 2026-11-19); "
+        "no raw/ file holds this reading"
+    )
+    return token
+
+
+def duration(value: str, source: str) -> dict:
+    return {"$type": "duration", "$value": value, "$extensions": {"source": f"{SOURCE} {source}"}}
+
+
 def other(value: str, source: str) -> dict:
     return {"$type": "other", "$value": value, "$extensions": {"source": f"{SOURCE} {source}"}}
 
@@ -53,8 +67,8 @@ def build() -> dict:
                 "purple": {
                     "400": color("#6f26d0", "--color--purple--400 and --topaz-colors-purple500"),
                     "600": color("#5d1b98", "--topaz-colors-purple600"),
-                    "700": color("#40125e", "--topaz-colors-purple700"),
-                    "100": color("#f4ecf9", "--topaz-colors-purple100"),
+                    "700": hand(color("#40125e", "--topaz-colors-purple700")),
+                    "100": hand(color("#f4ecf9", "--topaz-colors-purple100")),
                     "300": color("#dec4f3", "--topaz-colors-purple300"),
                 },
                 "orange": {
@@ -65,9 +79,9 @@ def build() -> dict:
                 "yellow": color("#fdd543", "--color--brand--yellow"),
                 "warmWhite": color("#fafafa", "--color--brand--warm-white and body background"),
                 "ink": color("#383838", "body color and --color--neutral--500"),
-                "black": color("#0d0d0d", "--color--grey--950 and --_color---fill--primary"),
-                "border": color("#cccccc", "--_color---border--default"),
-                "error": color("#ff2323", "--_color---border--error"),
+                "black": hand(color("#0d0d0d", "--color--grey--950 and --_color---fill--primary")),
+                "border": hand(color("#cccccc", "--_color---border--default")),
+                "error": hand(color("#ff2323", "--_color---border--error")),
                 "cardBorder": color("#989595", "pricing card border rgb(152, 149, 149)"),
             },
             "font": {
@@ -75,8 +89,8 @@ def build() -> dict:
                     "display": font("Gelica, Arial, sans-serif", "marketing h1 and app h2"),
                     "body": font("\"Apercu Pro\", Arial, sans-serif", "marketing body"),
                     "app": font("Apercu, ui-sans-serif, system-ui, sans-serif", "app.tango.us body"),
-                    "secondary": font("\"Inter Variable\", Arial, sans-serif", "--_typography---font-family--secondary"),
-                    "tertiary": font("Lato, Arial, sans-serif", "--_typography---font-family--tertiary"),
+                    "secondary": hand(font("\"Inter Variable\", Arial, sans-serif", "--_typography---font-family--secondary")),
+                    "tertiary": hand(font("Lato, Arial, sans-serif", "--_typography---font-family--tertiary")),
                 }
             },
             "typography": {
@@ -107,7 +121,6 @@ def build() -> dict:
             },
             "radius": {
                 "button": dim("731px", "marketing pill, computed from 100vh at this viewport"),
-                "buttonToken": dim("100vh", "--_sizes---radius--button"),
                 "card": dim("16px", "pricing card"),
                 "navCard": dim("24px", "navbar dropdown card and app demo card"),
                 "appPanel": dim("32px", "sign-in panel, --topaz-radii-xl"),
@@ -125,8 +138,13 @@ def build() -> dict:
             "motion": {
                 "button": other("all 0.35s ease", "marketing .button computed transition"),
                 "appButton": other("background, color, border, border-color, opacity, box-shadow 0.2s ease-in-out", "app button computed transition"),
-                "navDropdown": other(".4s", "--navbar--dropdown-duration"),
+                "navDropdown": hand(duration("400ms", "--navbar--dropdown-duration .4s")),
             },
+            "$extensions": {"notTokenised": [
+                "--_sizes---radius--button is declared as 100vh, a viewport-height length DTCG cannot hold as one "
+                "px value; the marketing pill computed it as 731px at the 731px-tall viewport (core.radius.button). "
+                "Entered by hand at capture time; no raw/ file holds the declaration.",
+            ]},
         },
         "light": {
             "surface": {
@@ -146,13 +164,13 @@ def build() -> dict:
             "accentHover": color("#5d1b98", "--topaz-colors-accentHover, not shown as a live hover"),
             "highlight": color("#f9650f", "Annual pricing selected face and logo colour rgb(249, 101, 15)"),
             "border": {
-                "default": color("#cccccc", "--_color---border--default"),
+                "default": hand(color("#cccccc", "--_color---border--default")),
                 "card": color("#989595", "Free and Enterprise pricing card border"),
                 "field": color("#96949a", "app field border rgb(150, 148, 154)"),
                 "focus": color("#dec4f3", "focused field outline rgb(222, 196, 243)"),
             },
             "status": {
-                "error": color("#ff2323", "--_color---border--error, declared, not shown on a live field"),
+                "error": hand(color("#ff2323", "--_color---border--error, declared, not shown on a live field")),
                 "disabled": color("#9b98a0", "disabled Continue text"),
                 "disabledSurface": color("#e8e6ea", "disabled Continue background"),
             },
