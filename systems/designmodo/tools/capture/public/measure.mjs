@@ -169,6 +169,10 @@ async function S(key, target, list, meta = {}, opts = {}) {
     else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
   }
+  // Found this run: its states are re-read below, so an earlier miss no longer
+  // describes them (the builder flags every token read from a component that
+  // still carries recaptureMissed).
+  delete out.components[key].recaptureMissed;
   for (const st of list) {
     let undo, via;
     try {
