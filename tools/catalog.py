@@ -1521,8 +1521,8 @@ def section_data(system: dict) -> dict:
 # are where a separate fetch job puts each remote file; both sides are emitted so a
 # card can fall back to the remote while its file is missing.
 
-# The /refero-media/<kind>/<slug>.<ext> contract and the gstatic favicon URL are
-# shared with tools/refero/mirror_media.py (which downloads those files) through
+# The /refero-media/<kind>/<slug>.<ext> contract is shared with
+# tools/refero/mirror_media.py (which downloads those files) through
 # tools/refero/refero_media.py, imported by location so tools/refero/ stays off
 # sys.path.
 _spec = importlib.util.spec_from_file_location(
@@ -1558,8 +1558,10 @@ def _refero_asset(kind: str, slug: str, remote) -> dict | None:
 
 
 # Entity media key -> (refero_media kind, meta.json field the remote URL lives
-# in). `favicon` has no meta field; its remote is the gstatic faviconV2 URL for
-# source_url, the same URL mirror_media.py downloads the file from.
+# in). `favicon` has no meta field: mirror_media.py fetches it from a favicon
+# service host-side, and the emitted pair keeps only the mirrored local path,
+# since a browser asking that service for a style's host would tell it which
+# styles are browsed.
 REFERO_MEDIA = {
     "shot": ("shots", "screenshot_url"),
     "poster": ("posters", "video_poster_url"),
@@ -1629,11 +1631,12 @@ def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
     slug = meta.get("slug") or folder.name
     text = lambda name: (folder / name).read_text() if (folder / name).is_file() else None
     media = {
-        key: _refero_asset(kind, slug,
-                           refero_media.favicon_url(meta.get("source_url"))
-                           if field is None else meta.get(field))
-        for key, (kind, field) in REFERO_MEDIA.items()
+        key: _refero_asset(kind, slug, meta.get(field))
+        for key, (kind, field) in REFERO_MEDIA.items() if field is not None
     }
+    # The favicon exists in the mirror only when its source host does.
+    media["favicon"] = ({"local": refero_media.local_path("favicons", slug), "remote": None}
+                        if refero_media.favicon_url(meta.get("source_url")) else None)
     similar = [{"slug": slug_of.get(str(s.get("business") or "").lower()),
                 "name": s.get("business"), "why": s.get("why")}
                for s in ds.get("similar") or [] if isinstance(s, dict)]
