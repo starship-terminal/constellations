@@ -37,5 +37,33 @@ class BuildersTest(unittest.TestCase):
         self.assertEqual(fam["primary"]["$value"], raw["pdp-price"]["states"]["default"]["style"]["fontFamily"])
 
 
+class BadReadingsTest(unittest.TestCase):
+    """The font rows refuse a missing family and weights that disagree, instead of typing a value."""
+
+    def build_with(self, mutate):
+        with tempfile.TemporaryDirectory() as tmp:
+            copy = pathlib.Path(tmp) / "pkg"
+            shutil.copytree(PKG, copy, ignore=shutil.ignore_patterns("__pycache__", "screenshots", "components"))
+            raw = copy / "raw" / "components-computed.json"
+            data = json.loads(raw.read_text())
+            mutate(data["components"])
+            raw.write_text(json.dumps(data))
+            return subprocess.run([sys.executable, str(copy / "tools" / "build_component_tokens.py")], capture_output=True, text=True)
+
+    def test_missing_font_family_is_refused(self):
+        def drop(c):
+            del c["promo-strip"]["states"]["default"]["style"]["fontFamily"]
+        run = self.build_with(drop)
+        self.assertNotEqual(run.returncode, 0)
+        self.assertIn("promo-strip", run.stderr)
+
+    def test_disagreeing_weights_are_refused(self):
+        def change(c):
+            c["load-more"]["states"]["default"]["style"]["fontWeight"] = "700"
+        run = self.build_with(change)
+        self.assertNotEqual(run.returncode, 0)
+        self.assertIn("fontWeight readings differ", run.stderr)
+
+
 if __name__ == "__main__":
     unittest.main()
