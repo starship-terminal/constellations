@@ -4698,9 +4698,9 @@
       "description": "Promova helps you learn languages with ease!",
       "status": "pending",
       "package": null,
-      "notes": "https://promova.com/sign-up rendered no email form, only footer legal text.",
+      "notes": "Email probe: https://promova.com/sign-up rendered no email form, only footer legal text. Public walk 2026-11-21: marketing pages loaded. SIGN UP opens https://promova.com/sign-up and was not entered. GET STARTED and TRY NOW open the quiz at https://promova.com/foxtrot/org-main and were not submitted. Public package in PR 1498 at d6f363179. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 14
     },
     {
