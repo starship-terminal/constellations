@@ -3489,9 +3489,9 @@
       "description": "Read and write stories",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://medium.com/login is 404. https://www.medium.com/login stopped on a Cloudflare security check before a form. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 11
     },
     {
@@ -3506,9 +3506,9 @@
       "description": "AI-powered builder for tests and quizzes",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.meiro.cc/login accepted the capture inbox and opened a free-trial signup asking for name and password. Password not submitted. Google also offered. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 11
     },
     {
@@ -3523,9 +3523,9 @@
       "description": "The AI-native operating system for creatives",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Sign in on https://app.melius.com/login opened a dialog that sent a one-time code. Code not entered. Google also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 11
     },
     {
@@ -3540,9 +3540,9 @@
       "description": "Open source personal knowledge management for everyone",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://memotron.app/login returned Access Denied before a form. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 11
     },
     {
@@ -3557,9 +3557,9 @@
       "description": "Online Business Banking For Startups, Small Businesses & Scaling Companies",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.mercury.com/signin asks for email and password, or a passkey. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 11
     },
     {
@@ -3574,9 +3574,9 @@
       "description": "New ways to create, edit, and discover with Meta AI",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://auth.meta.com/ accepted the capture inbox and said no Meta Account was found. Create-account was not opened. Facebook and Instagram also offered. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 11
     },
     {
@@ -3591,9 +3591,9 @@
       "description": " Automatic, AI-generated interview notes",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.metaview.ai/auth/sign-in accepted the capture inbox and opened account creation asking for first name, last name, and password. Password not submitted. Google and Microsoft also offered. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 11
     },
     {
@@ -3610,9 +3610,9 @@
       "description": "Your AI companion",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://login.microsoftonline.com/ accepted the capture inbox and said the username may be incorrect. Create-account was not opened. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 11
     },
     {
@@ -3627,9 +3627,9 @@
       "description": "Video Conferencing, Meetings, Calling",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Outlook sign-in is the same Microsoft login. The capture inbox was not recognized and create-account was not opened. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 11
     },
     {
@@ -3644,9 +3644,9 @@
       "description": "The Innovation Workspace",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://miro.com/login/ email continue did not advance. https://miro.com/login/passwordless/ rejected the capture inbox domain. Cookie banner rejected. No code sent. Google, Microsoft, and SSO also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 11
     },
     {
@@ -3661,9 +3661,9 @@
       "description": "Inbox collaboration for teams that run on email",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://mail.missiveapp.com/#login asks for work email and password, or Google, Apple, or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 11
     },
     {
@@ -3678,9 +3678,9 @@
       "description": "AI-Powered No‑Code App Builder for Entrepreneurs",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://getmocha.com/login does not resolve. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 11
     },
     {
@@ -3695,9 +3695,9 @@
       "description": "Design without limits",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://modyfi.com/ is a 404 page. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 11
     },
     {
@@ -3712,9 +3712,9 @@
       "description": "Design Store",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.moma.org/auth/login opens Keycloak and emailed a 6-digit code. Code not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 11
     },
     {
@@ -3729,9 +3729,9 @@
       "description": "Track, budget, plan, and do more with your money",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.monarch.com/login asks for a password. Password not submitted. Cookie banner not accepted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 11
     },
     {
@@ -3746,9 +3746,9 @@
       "description": "A new way of working",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://auth.monday.com/auth/login_monday said the capture inbox was not found. Signup not opened. Google and Microsoft also offered. No code sent. The preview browser was marked unsupported; the form loaded in Chrome.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 11
     },
     {
@@ -3763,9 +3763,9 @@
       "description": "Less admin. More creative flow.",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.monodesk.com/signin is 404. https://app.monodesk.com/login asks for email and password, or Google. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 11
     },
     {
@@ -3780,9 +3780,9 @@
       "description": "Art collective that engages art, fashion, tech, and capitalism",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://mschf.com/ is a project index with no account sign-in. www.mschf.com reset the connection.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 11
     },
     {
@@ -3797,9 +3797,9 @@
       "description": "Collaborative intelligence company",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.mural.co/login is 404. https://app.mural.co/signin said no registered user for the capture inbox. Signup not opened. Google also offered. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 11
     },
     {
@@ -3814,9 +3814,9 @@
       "description": "Build, run, and scale your mobile app",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Open MWM Console opens https://console.mwm.ai/sign-in. Email and password, or Google or Apple. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 11
     },
     {
