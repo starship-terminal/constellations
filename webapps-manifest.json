@@ -1388,7 +1388,7 @@
       "description": "Makes it easy to create sales proposals, onboarding plans, client portals, and project hubs",
       "status": "captured",
       "package": "systems/dock",
-      "notes": "https://auth.dock.us/login asks for a Dock subdomain before any email. The form was not submitted. No code was sent.",
+      "notes": "https://auth.dock.us/login asks for a Dock subdomain before any email. The form was not submitted. No code was sent. Needs a business domain. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 5
@@ -1796,7 +1796,7 @@
       "description": "Men's Fashion, Cocktails, Politics, Interviews",
       "status": "captured",
       "package": "systems/esquire",
-      "notes": "https://www.esquire.com/ Sign In opens https://www.mylo.id/login. After the capture inbox, the next page was passkey signup (\"Creating your passkey account\"). No code was sent. The passkey was not created. Google, Facebook, Apple, Microsoft, and user ID plus password are also offered.",
+      "notes": "https://www.esquire.com/ is signed out. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 6
@@ -2442,7 +2442,7 @@
       "description": "Careers start here ",
       "status": "pending",
       "package": null,
-      "notes": "https://app.joinhandshake.com/access accepted the capture inbox, then asked \"I'm here to hire\" or \"I'm here for a job.\" Neither was chosen. No code was sent.",
+      "notes": "https://app.joinhandshake.com/access accepted the capture inbox, then asked \"I'm here to hire\" or \"I'm here for a job.\" Neither was chosen. No code was sent. Does not support a Singapore number. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 8
@@ -2918,7 +2918,7 @@
       "description": "Collaborate with your team and clients to get things done",
       "status": "captured",
       "package": "systems/kitchen",
-      "notes": "https://kitchen.co/login/workspace asks for a workspace Kitchen URL before any email. The form was not submitted. No code was sent.",
+      "notes": "https://kitchen.co/login/workspace asks for a workspace Kitchen URL before any email. The form was not submitted. No code was sent. Needs a business domain. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 9
@@ -2935,7 +2935,7 @@
       "description": "Shop, Track Purchases, Make Payments",
       "status": "captured",
       "package": "systems/klarna",
-      "notes": "https://app.klarna.com/login asks for a country of residence before any email. No country was chosen. No code was sent.",
+      "notes": "https://app.klarna.com/login asks for a country of residence before any email. No country was chosen. No code was sent. Singapore is not supported. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 9
@@ -3003,7 +3003,7 @@
       "description": "Explore the world of LEGO",
       "status": "captured",
       "package": "systems/lego",
-      "notes": "https://www.lego.com/en-sg/login is a missing page. https://identity.lego.com/ asks for a birth year before any email. Birth year was not entered. No code was sent.",
+      "notes": "https://www.lego.com/en-us/account is signed out. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 9
@@ -3455,9 +3455,9 @@
       "description": "It’s the ultimate reading client for the open web",
       "status": "captured",
       "package": "systems/matter",
-      "notes": "public signed-out marketing, a public article, docs, and the reader sign-in card. The reader app sits behind sign-in and was not reached. Subscribe, OAuth, and checkout were not submitted. https://web.getmatter.app/login redirected to an Apple Account sign-in for Matter. Apple sign-in not completed.",
+      "notes": "public signed-out marketing, a public article, docs, and the reader sign-in card. The reader app sits behind sign-in and was not reached. Subscribe, OAuth, and checkout were not submitted. The user signed in. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "oauth-only",
+      "login-probe": "signed-in",
       "batch": 10
     },
     {
@@ -3848,7 +3848,7 @@
       "description": "AI Workflow Automation Platform & Tools",
       "status": "pending",
       "package": null,
-      "notes": "https://app.n8n.cloud/login asks for an instance name before any email. Instance name not entered.",
+      "notes": "https://app.n8n.cloud/login asks for an instance name before any email. Instance name not entered. Needs a business domain. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 12
@@ -4358,7 +4358,7 @@
       "description": "Buy TV stand and designer accessories",
       "status": "pending",
       "package": null,
-      "notes": "https://www.pedestal.com/login asks for a country or currency before any email. No country chosen.",
+      "notes": "https://www.pedestal.com/ has no signed-in account. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 13
@@ -4749,9 +4749,9 @@
       "description": "Learning tools, flashcards, and textbook solutions",
       "status": "pending",
       "package": null,
-      "notes": "https://quizlet.com/login asked to press and hold to confirm a human. Do not retry.",
+      "notes": "The user signed in. Your Sets opened. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 14
     },
     {
@@ -4766,7 +4766,7 @@
       "description": "Low Fee NFT Marketplace",
       "status": "pending",
       "package": null,
-      "notes": "https://rarible.com/ login is missing. https://og.rarible.com/login offers Connect wallet only. Wallet not connected.",
+      "notes": "https://rarible.com/all shows Login. Wallet not connected. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "oauth-only",
       "batch": 14
@@ -4834,7 +4834,7 @@
       "description": " Social music network",
       "status": "pending",
       "package": null,
-      "notes": "https://record.club/login stopped on a Cloudflare security check. Do not retry.",
+      "notes": "https://record.club/ stopped on a bot check. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 14
@@ -5191,7 +5191,7 @@
       "description": "Official Online Store",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://ysl.com/login returned Access Denied before a form. Not retried.",
+      "notes": "https://www.ysl.com/en-us/account is signed out. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 16
@@ -5225,9 +5225,9 @@
       "description": "The best way to save and share inspiration",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://savee.com/login/ stopped on a human check before a form. Not retried.",
+      "notes": "The user signed in. The home feed opened. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "captcha",
+      "login-probe": "signed-in",
       "batch": 16
     },
     {
@@ -5446,7 +5446,7 @@
       "description": " Compare Cheap Flights & Book Airline Tickets ",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.skyscanner.com/login stopped on a person-or-robot check before a form. Not retried.",
+      "notes": "https://www.skyscanner.com/ blocked the browser as a bot. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 16
@@ -5463,7 +5463,7 @@
       "description": "Knowledge Base & Wiki Software",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://slab.com/login/ asks for a workspace subdomain before email. Subdomain not entered.",
+      "notes": "Email probe: https://slab.com/login/ asks for a workspace subdomain before email. Subdomain not entered. Needs a business domain. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 16
@@ -5531,7 +5531,7 @@
       "description": "Animate stories, visualize ideas, and bring your concepts to life",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://sora.chatgpt.com/login stopped on a Cloudflare security check before a form. Not retried.",
+      "notes": "Not available. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 17
@@ -5769,7 +5769,7 @@
       "description": "Progressive and premium stock image",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.stocksy.com/login returned a block page before a form. Not retried.",
+      "notes": "https://www.stocksy.com/login returned a block page before a form. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 17
@@ -5922,7 +5922,7 @@
       "description": "Sell Courses, Coaching and Digital Downloads",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://sso.teachable.com/secure/teachable_accounts/sign_in stopped on a Cloudflare check before a form. Not retried.",
+      "notes": "https://sso.teachable.com/secure/teachable_accounts/sign_in requires a credit card. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 18
@@ -5939,7 +5939,7 @@
       "description": "AI Powered Tools to Grow Your Career",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.tealhq.com/ stopped on a Cloudflare check before a form. Not retried.",
+      "notes": "https://app.tealhq.com/home stopped on a bot check. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 18
@@ -6024,7 +6024,7 @@
       "description": "Sports news, stories, scores, schedules",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.nytimes.com/athletic/ stopped on a bot check before a form. /login is 404. Not retried.",
+      "notes": "https://www.nytimes.com/athletic/ is signed out. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 18
@@ -6058,7 +6058,7 @@
       "description": "Your Free All-In-One Creator Store",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://make.theleap.co/accounts/login stopped on a Cloudflare check before a form. Not retried.",
+      "notes": "The user could not sign in. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 18
@@ -6177,7 +6177,7 @@
       "description": "High Fidelity Music Streaming",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://login.tidal.com offered Continue, Passkey, Google, and Apple. Google account chooser did not select the signed-in session and asked for a Google email or password. Not entered.",
+      "notes": "https://tidal.com/ still shows Log in. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "oauth-only",
       "batch": 18
@@ -6517,7 +6517,7 @@
       "description": "Clothing, accessories and apartment items for men and women",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.urbanoutfitters.com/login stopped on a bot check before a form. Not retried.",
+      "notes": "Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 19
@@ -6568,9 +6568,9 @@
       "description": "We enable developers to build and publish wonderful things",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://vercel.com/login Continue with Google asked for an authenticator code. Code not entered.",
+      "notes": "The user signed in. The dashboard opened. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "needs-other-info",
+      "login-probe": "signed-in",
       "batch": 20
     },
     {
@@ -6942,7 +6942,7 @@
       "description": "The Most Accurate B2B Contact Database",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://wiza.co/auth/login Continue with Google stopped on a bot check before the app opened. Not retried.",
+      "notes": "https://wiza.co/auth/login stopped on a bot check before the app opened. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 21
@@ -7095,7 +7095,7 @@
       "description": "Discover the new ZARA collection online",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.zara.com/us/en/logon Continue with Google stopped on an access-denied page before the app opened. Not retried.",
+      "notes": "https://www.zara.com/us/ is signed out. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 21
@@ -7112,7 +7112,7 @@
       "description": "Home Decor",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.zarahome.com/us/ Continue with Google stopped on an access-denied page before the app opened. Not retried. The /logon URL is gone.",
+      "notes": "https://www.zarahome.com/us/ is signed out. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 21
@@ -7146,7 +7146,7 @@
       "description": "Customer Service Software & Sales CRM",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.zendesk.com/login/ asks for a Zendesk subdomain before sign-in. Subdomain not entered. No Google button.",
+      "notes": "Email probe: https://www.zendesk.com/login/ asks for a Zendesk subdomain before sign-in. Subdomain not entered. No Google button. Needs a business domain. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "needs-other-info",
       "batch": 21
@@ -7180,7 +7180,7 @@
       "description": "Record. Share. Done.",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://supercut.ai/login stopped on a bot check before a form. Not retried.",
+      "notes": "https://supercut.ai/login stopped on a bot check before a form. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "captcha",
       "batch": 21
