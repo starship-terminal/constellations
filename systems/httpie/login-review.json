@@ -1,0 +1,62 @@
+{
+  "slug": "httpie",
+  "reviewedAt": "2026-11-21",
+  "signedInSurface": false,
+  "account": null,
+  "summary": "No signed-in surface was reached. The public web client opens in an Incognito space with no account form. Marketing login URLs are the site's own 404.",
+  "probes": [
+    {
+      "url": "https://httpie.io/login",
+      "status": 404,
+      "visibleText": "The requested page doesn't exist. Take me home",
+      "askedFor": "nothing. This is a missing page, not a sign-in wall."
+    },
+    {
+      "url": "https://httpie.io/signin",
+      "status": 404,
+      "visibleText": "The requested page doesn't exist. Take me home",
+      "askedFor": "nothing"
+    },
+    {
+      "url": "https://httpie.io/sign-in",
+      "status": 404,
+      "visibleText": "The requested page doesn't exist. Take me home",
+      "askedFor": "nothing"
+    },
+    {
+      "url": "https://httpie.io/account",
+      "status": 404,
+      "visibleText": "The requested page doesn't exist. Take me home",
+      "askedFor": "nothing"
+    },
+    {
+      "url": "https://httpie.io/app",
+      "status": 200,
+      "visibleText": "Incognito space. Collection. Drafts are your unsaved requests. GET httpie.io/hello. Send.",
+      "askedFor": "nothing. No email, password, or OAuth control was on the page."
+    }
+  ],
+  "notFilled": [
+    "https://httpie.io/discord (Discord invite asking for a display name and date of birth)",
+    "https://httpie.io/survey (Mailchimp survey)",
+    "https://httpie.io/ai (email field for a waiting list; not typed into)"
+  ],
+  "publicScreensReached": [
+    "https://httpie.io/",
+    "https://httpie.io/desktop",
+    "https://httpie.io/cli",
+    "https://httpie.io/cli/run",
+    "https://httpie.io/ai",
+    "https://httpie.io/docs",
+    "https://httpie.io/docs/desktop",
+    "https://httpie.io/docs/cli",
+    "https://httpie.io/jobs",
+    "https://httpie.io/blog",
+    "https://httpie.io/blog/changelog-0027",
+    "https://httpie.io/download",
+    "https://httpie.io/about",
+    "https://httpie.io/terms",
+    "https://httpie.io/privacy",
+    "https://httpie.io/app"
+  ]
+}
