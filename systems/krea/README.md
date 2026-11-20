@@ -129,7 +129,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Border roles | Captured for default (`dark.color.border`) and input (`dark.color.input`). Focus is a measured 1px outline on some controls, not a named border-strong token |
 | Accent states | Captured for default and hover (`dark.color.accent`, `dark.color.accent-hover`). Pressed is a measured scale on buttons, not a third accent colour |
 | Status colours | Partly. `--destructive`, `--warning` and `--success` resolve. No info role, and no text or border pair for each status |
-| Theme parity | Captured as one theme. The product ships html.dark on the public app. The dark token set is empty on purpose |
+| Theme parity | Captured as one theme. The product ships html.dark on the public app, so the token file holds a `dark` set and no `light` set |
 | Type | Captured. Suisse Intl and Suisse Intl Mono with fallback stacks, a text size scale, weights including book 450. No separate line-height token scale |
 | Spacing | Captured as a 4px base (`core.spacing.unit`). Tailwind utilities compute the rest. No named 8-step spacing scale beyond that base |
 | Shape | Captured. Radius xs through 4xl, plus the 10px `--radius`. Border widths are measured per control, not a named scale |
