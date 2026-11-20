@@ -2612,7 +2612,7 @@
       "description": "API testing client that flows with you",
       "status": "pending",
       "package": null,
-      "notes": "https://httpie.io/login is a missing page. https://httpie.io/app opens the API client in an incognito space with no account form. No code was sent.",
+      "notes": "https://httpie.io/login is a missing page. https://httpie.io/app opens the API client in an incognito space with no account form. No code was sent. Public walk 2026-11-21: /login, /signin, /sign-in, and /account are the site 404. /app has no account form. Public package in PR 1491 at bda602e5b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 8
@@ -4307,7 +4307,7 @@
       "description": "Design-forward goods for everyday living",
       "status": "pending",
       "package": null,
-      "notes": "https://www.patternbrands.com/login and /signin are page-not-found. No sign-in form.",
+      "notes": "https://www.patternbrands.com/login and /signin are page-not-found. No sign-in form. Public walk 2026-11-21: home, terms, privacy, and the 404. No account control. Public package in PR 1492 at 56c078aee. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 13
