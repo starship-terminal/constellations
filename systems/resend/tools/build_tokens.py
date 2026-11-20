@@ -29,8 +29,9 @@ def gradient_base(component):
     """The first stop of a measured linear-gradient fill, as #rrggbbaa. A missing or unparseable
     reading fails the build rather than falling back to a guessed opaque fill."""
     image = (RAW["components"].get(component) or {}).get("backgroundImage", "")
-    m = re.search(r"rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)", image)
-    if not image.startswith("linear-gradient(") or not m:
+    # The first stop is the first colour after the optional angle or direction; it must be rgba().
+    m = re.match(r"linear-gradient\(\s*(?:[^,()]+,\s*)?rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)", image)
+    if not m:
         raise SystemExit(f"{component} backgroundImage is not a readable linear-gradient: {image!r}")
     r, g, b = (int(m.group(i)) for i in (1, 2, 3))
     return "#%02x%02x%02x%02x" % (r, g, b, round(float(m.group(4)) * 255)), image

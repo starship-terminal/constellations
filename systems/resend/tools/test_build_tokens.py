@@ -30,6 +30,16 @@ class TokensTest(unittest.TestCase):
         self.assertEqual(button["text"]["$value"], "#ffffff")
         self.assertEqual(button["bg"]["$value"], "#fdfdfd0d")  # the gradient's first stop, 5% white
 
+    def test_first_stop_must_be_the_rgba(self):
+        saved = build_tokens.RAW["components"]["getStartedHero"]["backgroundImage"]
+        try:
+            build_tokens.RAW["components"]["getStartedHero"]["backgroundImage"] = (
+                "linear-gradient(104deg, rgb(253, 253, 253) 5%, rgba(240, 240, 228, 0.1) 100%)")
+            with self.assertRaises(SystemExit):
+                build_tokens.gradient_base("getStartedHero")
+        finally:
+            build_tokens.RAW["components"]["getStartedHero"]["backgroundImage"] = saved
+
     def test_unreadable_gradient_fails(self):
         saved = build_tokens.RAW["components"]["getStartedHero"]["backgroundImage"]
         try:
