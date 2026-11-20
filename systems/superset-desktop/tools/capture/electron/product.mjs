@@ -439,9 +439,23 @@ const runningDot = page => (runTab === null ? centre(page) : tabs(page).nth(runT
 // Types only into the run tab's visible terminal. Superset keeps another .xterm off screen, so an
 // unscoped `.last()` focus could send the prompt and Enter to another tab's shell or session: select
 // the run's own tab, focus the input inside the displayed terminal, and check focus landed there.
-async function sendToTerminal({ page }, text) {
+// The displayed terminal: of the centre pane's .xterm elements, the first whose bounding box is on
+// screen. Playwright counts the off-screen copy (x=-9999 in the saved run) as visible, so
+// W.terminal's first() can pick it; a box with a negative x or y, no size, or outside the viewport
+// is never chosen.
+export async function displayedTerminal(page) {
+  const all = page.locator('[data-pane-area=center] [role=application] .xterm');
+  const view = page.viewportSize() || { width: Infinity, height: Infinity };
+  for (let i = 0, n = await all.count(); i < n; i++) {
+    const term = all.nth(i);
+    const box = await term.boundingBox();
+    if (box && box.width > 0 && box.height > 0 && box.x >= 0 && box.y >= 0 && box.x < view.width && box.y < view.height) return term;
+  }
+  throw new Error('no terminal on screen in the run tab; nothing was typed');
+}
+export async function sendToTerminal({ page }, text) {
   if (runTab !== null) { await tabs(page).nth(runTab).click(); await wait(page, 300); }
-  const term = W.terminal(page);
+  const term = await displayedTerminal(page);
   await term.click();
   const input = term.locator('.xterm-helper-textarea');
   await input.focus();
