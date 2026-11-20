@@ -159,7 +159,7 @@ describe("saving a key", () => {
     const broken = await handleSave({ ...GOOD, api_key: KEY }, okModels);
     assert.equal(broken.status, 500);
     assert.ok(!everything(broken.body).includes(KEY));
-    assert.ok(logged.length > 0);
+    assert.ok(!logged.join("\n").includes(KEY));
   });
 });
 
@@ -264,6 +264,23 @@ describe("recovery and key bytes", () => {
     await fs.writeFile(providerFile(), `damaged ${KEY} `.repeat(300));
     const moved = await handleSave({ ...GOOD, api_key: KEY2, migrate: true }, okModels);
     assert.equal(moved.body.ok, false);
+  });
+
+  it("never deletes a working database because it is busy", async () => {
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    const { DatabaseSync } = await import("node:sqlite");
+    const other = new DatabaseSync(providerFile());
+    other.exec("BEGIN EXCLUSIVE");
+    try {
+      const r = await handleSave({ ...GOOD, api_key: KEY2 }, okModels);
+      assert.equal(r.status, 500);
+      const removed = await handleRemove();
+      assert.equal(removed.status, 500);
+    } finally {
+      other.exec("ROLLBACK");
+      other.close();
+    }
+    assert.equal((await savedFile()).api_key, KEY, "the working provider is still there");
   });
 
   it("reports an unreadable folder instead of falling back to the env key", async () => {
