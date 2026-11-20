@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sharewillow style guide</title>
+<style>
+:root {
+  --core-palette-ivory: #f7f5f1;
+  --core-palette-paper: #ffffff;
+  --core-palette-surface2: #faf7e8;
+  --core-palette-espresso: #180600;
+  --core-palette-inkMuted: #6b5b4a;
+  --core-palette-inkSubtle: #9a8c7a;
+  --core-palette-lemon: #faf082;
+  --core-palette-lemonDeep: #f5e75a;
+  --core-palette-lime: #b2fa82;
+  --core-palette-peach: #faa064;
+  --core-palette-sky: #82aafa;
+  --core-palette-rose: #fa8282;
+  --core-palette-heroBg: #0d0a07;
+  --core-palette-heroSurface: #181310;
+  --core-palette-heroSurface2: #221c17;
+  --core-palette-heroInk: #f5f2e0;
+  --core-palette-heroInkMuted: rgba(245, 242, 224, 0.651);
+  --core-palette-heroInkSubtle: rgba(245, 242, 224, 0.451);
+  --core-palette-heroBorder: rgba(245, 242, 224, 0.102);
+  --core-palette-heroBorderStrong: rgba(245, 242, 224, 0.2);
+  --core-palette-border: rgba(24, 6, 0, 0.078);
+  --core-palette-borderStrong: rgba(24, 6, 0, 0.161);
+  --core-palette-buttonHover: #2b1a10;
+  --core-palette-heroInkOnButton: #f5f2e0;
+  --core-font-family-sans: "Matter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --core-font-family-display: "Mackinac", "Matter", ui-serif, Georgia, serif;
+  --core-font-family-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+  --core-typography-display: {'fontFamily': '{core.font.family.display}', 'fontSize': '80px', 'fontWeight': 500, 'lineHeight': '80px', 'letterSpacing': '-2.4px'};
+  --core-typography-body: {'fontFamily': '{core.font.family.sans}', 'fontSize': '16px', 'fontWeight': 400, 'lineHeight': '{core.leading.relaxed}'};
+  --core-typography-label: {'fontFamily': '{core.font.family.sans}', 'fontSize': '14px', 'fontWeight': 500, 'lineHeight': '1.25'};
+  --core-typography-caption: {'fontFamily': '{core.font.family.sans}', 'fontSize': '13px', 'fontWeight': 400, 'lineHeight': '1.375'};
+  --core-leading-tight: 1.25;
+  --core-leading-snug: 1.375;
+  --core-leading-relaxed: 1.625;
+  --core-weight-normal: 400;
+  --core-weight-medium: 500;
+  --core-weight-semibold: 600;
+  --core-weight-bold: 700;
+  --core-radius-sm: 6px;
+  --core-radius-md: 10px;
+  --core-radius-lg: 16px;
+  --core-radius-xl: 24px;
+  --core-radius-2xl: 32px;
+  --core-radius-3xl: 24px;
+  --core-radius-button: 28px;
+  --core-radius-field: 16px;
+  --core-radius-loginButton: 8px;
+  --core-space-1: 4px;
+  --core-space-2: 8px;
+  --core-space-3: 12px;
+  --core-space-4: 16px;
+  --core-space-6: 24px;
+  --core-space-8: 32px;
+  --core-motion-easeOut: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --core-motion-easeInOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --core-motion-easeOutQuart: cubic-bezier(0.25, 1.0, 0.5, 1.0);
+  --core-size-buttonHeight: 56px;
+  --core-size-fieldHeight: 48px;
+  --core-size-loginButtonHeight: 44px;
+  --core-size-navLink: 14px;
+  --light-background-page: var(--core-palette-ivory);
+  --light-background-surface: var(--core-palette-paper);
+  --light-background-surface2: var(--core-palette-surface2);
+  --light-background-hero: var(--core-palette-heroBg);
+  --light-background-heroSurface: var(--core-palette-heroSurface);
+  --light-text-primary: var(--core-palette-espresso);
+  --light-text-muted: var(--core-palette-inkMuted);
+  --light-text-subtle: var(--core-palette-inkSubtle);
+  --light-text-onAccent: var(--core-palette-espresso);
+  --light-text-onButton: var(--core-palette-heroInkOnButton);
+  --light-text-hero: var(--core-palette-heroInk);
+  --light-text-heroMuted: var(--core-palette-heroInkMuted);
+  --light-text-link: var(--core-palette-espresso);
+  --light-border-default: var(--core-palette-border);
+  --light-border-strong: var(--core-palette-borderStrong);
+  --light-accent-default: var(--core-palette-lemon);
+  --light-accent-deep: var(--core-palette-lemonDeep);
+  --light-accent-pressed: var(--core-palette-buttonHover);
+  --light-status-success: var(--core-palette-lime);
+  --light-status-warning: var(--core-palette-peach);
+  --light-status-danger: var(--core-palette-rose);
+  --light-status-info: var(--core-palette-sky);
+  --light-component-button-background: var(--core-palette-espresso);
+  --light-component-button-text: var(--core-palette-heroInkOnButton);
+  --light-component-button-radius: var(--core-radius-button);
+  --light-component-button-height: var(--core-size-buttonHeight);
+  --light-component-field-background: var(--core-palette-paper);
+  --light-component-field-text: var(--core-palette-espresso);
+  --light-component-field-radius: var(--core-radius-field);
+  --light-component-field-height: var(--core-size-fieldHeight);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--light-background-page); color: var(--light-text-primary); font: 400 16px/1.5 var(--core-font-family-sans); }
+header { padding: 28px 32px; border-bottom: 1px solid var(--light-border-default); display: flex; justify-content: space-between; align-items: baseline; }
+h1 { font-family: var(--core-font-family-display); font-weight: 500; font-size: 40px; margin: 0; letter-spacing: -0.025em; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px; }
+h2 { font-size: 13px; letter-spacing: 0.05em; text-transform: none; color: var(--light-text-muted); font-weight: 500; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw i { display: block; height: 64px; border-radius: 12px; border: 1px solid var(--light-border-default); }
+.sw span { display: block; margin-top: 6px; font-size: 13px; }
+.sw code { font-size: 11px; color: var(--light-text-muted); }
+.row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin: 16px 0 32px; }
+.btn { display: inline-flex; align-items: center; height: var(--light-component-button-height); padding: 0 22px; border-radius: 999px; background: var(--light-component-button-background); color: var(--light-component-button-text); text-decoration: none; font-weight: 500; }
+.quiet { color: var(--light-text-link); text-decoration: none; font-weight: 500; }
+.field { height: var(--light-component-field-height); border-radius: var(--light-component-field-radius); border: 1px solid var(--light-border-strong); background: var(--light-component-field-background); padding: 0 14px; width: 280px; color: var(--light-text-primary); }
+.badge { background: var(--light-accent-default); color: var(--light-text-onAccent); border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600; }
+.hero { background: var(--light-background-hero); color: var(--light-text-hero); border-radius: 24px; padding: 28px; }
+.note { color: var(--light-text-muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sharewillow</h1>
+  <span class="note">Public marketing site, light only</span>
+</header>
+<main>
+  <h2>Palette</h2>
+  <div class="grid"><div class="sw"><i style="background:#f7f5f1"></i><span>ivory</span><code>#f7f5f1</code></div><div class="sw"><i style="background:#ffffff"></i><span>paper</span><code>#ffffff</code></div><div class="sw"><i style="background:#faf7e8"></i><span>surface2</span><code>#faf7e8</code></div><div class="sw"><i style="background:#180600"></i><span>espresso</span><code>#180600</code></div><div class="sw"><i style="background:#6b5b4a"></i><span>inkMuted</span><code>#6b5b4a</code></div><div class="sw"><i style="background:#9a8c7a"></i><span>inkSubtle</span><code>#9a8c7a</code></div><div class="sw"><i style="background:#faf082"></i><span>lemon</span><code>#faf082</code></div><div class="sw"><i style="background:#f5e75a"></i><span>lemonDeep</span><code>#f5e75a</code></div><div class="sw"><i style="background:#b2fa82"></i><span>lime</span><code>#b2fa82</code></div><div class="sw"><i style="background:#faa064"></i><span>peach</span><code>#faa064</code></div><div class="sw"><i style="background:#82aafa"></i><span>sky</span><code>#82aafa</code></div><div class="sw"><i style="background:#fa8282"></i><span>rose</span><code>#fa8282</code></div><div class="sw"><i style="background:#0d0a07"></i><span>heroBg</span><code>#0d0a07</code></div><div class="sw"><i style="background:#181310"></i><span>heroSurface</span><code>#181310</code></div><div class="sw"><i style="background:#221c17"></i><span>heroSurface2</span><code>#221c17</code></div><div class="sw"><i style="background:#f5f2e0"></i><span>heroInk</span><code>#f5f2e0</code></div><div class="sw"><i style="background:rgba(245, 242, 224, 0.651)"></i><span>heroInkMuted</span><code>rgba(245, 242, 224, 0.651)</code></div><div class="sw"><i style="background:rgba(245, 242, 224, 0.451)"></i><span>heroInkSubtle</span><code>rgba(245, 242, 224, 0.451)</code></div><div class="sw"><i style="background:rgba(245, 242, 224, 0.102)"></i><span>heroBorder</span><code>rgba(245, 242, 224, 0.102)</code></div><div class="sw"><i style="background:rgba(245, 242, 224, 0.2)"></i><span>heroBorderStrong</span><code>rgba(245, 242, 224, 0.2)</code></div><div class="sw"><i style="background:rgba(24, 6, 0, 0.078)"></i><span>border</span><code>rgba(24, 6, 0, 0.078)</code></div><div class="sw"><i style="background:rgba(24, 6, 0, 0.161)"></i><span>borderStrong</span><code>rgba(24, 6, 0, 0.161)</code></div><div class="sw"><i style="background:#2b1a10"></i><span>buttonHover</span><code>#2b1a10</code></div><div class="sw"><i style="background:#f5f2e0"></i><span>heroInkOnButton</span><code>#f5f2e0</code></div></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn" href="#components">Book a demo</a>
+    <a class="quiet" href="#components">See the app</a>
+    <span class="badge">Coming soon</span>
+  </div>
+  <div class="row">
+    <input class="field" placeholder="Company name" aria-label="Sample field">
+  </div>
+  <h2>Hero section</h2>
+  <div class="hero">
+    <p style="font-family:var(--core-font-family-display);font-size:36px;margin:0 0 8px">Show your techs the money.</p>
+    <p style="color:var(--light-text-heroMuted);margin:0">Dark section inside the light page. Not a second theme.</p>
+  </div>
+  <p class="note">Matter and Mackinac are proprietary. This page falls back to the stacks in the tokens. Values come from tokens.json.</p>
+</main>
+</body>
+</html>

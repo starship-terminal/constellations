@@ -1,0 +1,18 @@
+[
+  {
+    "path": "background.scrim",
+    "source": "Not captured. No scrim token declared. Menus open without a measured overlay colour."
+  },
+  {
+    "path": "text.disabled",
+    "source": "Not captured. No disabled text colour was reached on a public control."
+  },
+  {
+    "path": "border.focus",
+    "source": "Not captured. Keyboard focus on the primary button did not change the computed border or outline in this pass."
+  },
+  {
+    "path": "accent.hover",
+    "source": "Not captured as a lemon hover step. The primary button hover shifts espresso to rgb(43, 26, 16), recorded as core.palette.buttonHover."
+  }
+]
