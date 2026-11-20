@@ -11,14 +11,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SYSTEMS = ROOT / "systems"
 
-# Packages that fail on main for a real defect, each with its reason. A slug listed here is still
-# checked, and the test fails once it passes, so the entry is removed with the fix. A new package is
-# never listed: fix it instead.
+# Packages that fail on main for a real defect: slug -> the exact problems it has. The listed package
+# is still checked, its problems must equal the list (a new defect fails, and so does a fix, so the
+# entry is removed with it). A new package is never listed: fix it instead.
 EXPECTED_FAILURES = {
-    # light and dark component.code-block-surface alias {bg.elevated-secondary} and
-    # {surface.composer-surface-primary}; neither token exists (the light one lives at
-    # surface.elevated-secondary), so tokens.json carries no code-block-surface at all.
-    "chatgpt": "component.code-block-surface aliases name no token",
+    # light and dark component.code-block-surface alias tokens that do not exist (the light one lives
+    # at surface.elevated-secondary), so tokens.json carries no code-block-surface at all.
+    "chatgpt": [
+        "dark.component.code-block-surface: {surface.composer-surface-primary} names no token",
+        "light.component.code-block-surface: {bg.elevated-secondary} names no token",
+    ],
 }
 
 ALIAS = re.compile(r"\{([^{}]+)\}")
@@ -125,19 +127,32 @@ def component_token_problems(pkg):
             if target(ref, path.split(".")[0]) is None:
                 problems.append(f"{path}: {{{ref}}} names no token")
 
+    def edges(path):
+        return [t for t in (target(r, path.split(".")[0]) for r in refs(known[path])) if t]
+
+    # Depth-first over every chain an input token starts, built tokens included, with the nodes on
+    # the current chain tracked: reaching one of them again is a loop, wherever in the chain it is.
+    done = set()
     for start in comp:
-        seen, frontier = {start}, [(start, 0)]
-        while frontier:
-            path, depth = frontier.pop()
-            if depth > MAX_DEPTH:
-                problems.append(f"{start}: alias chain deeper than {MAX_DEPTH}")
-                break
-            nxt = [t for t in (target(r, path.split(".")[0]) for r in refs(known[path])) if t]
-            if start in nxt:
-                problems.append(f"{start}: alias chain loops back to itself")
-                break
-            frontier += [(t, depth + 1) for t in nxt if t not in seen]
-            seen.update(nxt)
+        if start in done:
+            continue
+        stack, on_chain = [(start, iter(edges(start)))], [start]
+        while stack:
+            path, it = stack[-1]
+            nxt = next(it, None)
+            if nxt is None:
+                stack.pop()
+                on_chain.pop()
+                done.add(path)
+            elif nxt in on_chain:
+                loop = on_chain[on_chain.index(nxt):] + [nxt]
+                problems.append("alias loop: " + " -> ".join(loop))
+            elif nxt not in done:
+                if len(on_chain) > MAX_DEPTH:
+                    problems.append(f"{start}: alias chain deeper than {MAX_DEPTH}")
+                    continue
+                stack.append((nxt, iter(edges(nxt))))
+                on_chain.append(nxt)
 
     for s in sources(tree):
         for m in FILE_REF.finditer(s):
@@ -160,11 +175,8 @@ class EveryPackage(unittest.TestCase):
         for f in files:
             pkg = f.parent.parent if f.parent.name == "raw" else f.parent
             with self.subTest(package=pkg.name):
-                problems = component_token_problems(pkg)
-                if pkg.name in EXPECTED_FAILURES:
-                    self.assertTrue(problems, f"{pkg.name} passes now: remove it from EXPECTED_FAILURES")
-                else:
-                    self.assertEqual(problems, [])
+                self.assertEqual(component_token_problems(pkg), EXPECTED_FAILURES.get(pkg.name, []),
+                                 "a listed package that changed: update or remove its EXPECTED_FAILURES entry")
 
     def test_expected_failures_name_packages_that_exist(self):
         for slug in EXPECTED_FAILURES:
@@ -211,7 +223,12 @@ class Checker(unittest.TestCase):
     def test_an_alias_loop_is_named(self):
         tree = {"light": {"a": {"value": "{b}", "type": "color"}, "b": {"value": "{c}", "type": "color"},
                           "c": {"value": "{a}", "type": "color"}}}
-        self.assertEqual(self.problems(tree), [f"light.{k}: alias chain loops back to itself" for k in "abc"])
+        self.assertEqual(self.problems(tree), ["alias loop: light.a -> light.b -> light.c -> light.a"])
+
+    def test_a_loop_among_built_tokens_is_named(self):
+        tree = {"light": {"a": {"value": "{b}", "type": "color"}}}
+        tokens = {"light": {"b": {"$value": "{c}", "$type": "color"}, "c": {"$value": "{b}", "$type": "color"}}}
+        self.assertEqual(self.problems(tree, tokens), ["alias loop: light.b -> light.c -> light.b"])
 
     def test_a_missing_package_file_is_named_and_product_files_are_not(self):
         tree = {"core": {"x": {"value": "1px", "type": "dimension",
