@@ -15,9 +15,10 @@ The live CSS viewport was 1169 by 731 at devicePixelRatio 2. Marketing, login, p
 | [patterns.md](patterns.md) | Public page patterns |
 | [components/](components/) | Crop folder, empty because screenshot frames failed |
 | [icons/](icons/) | Index and a 128 px copy of the site icon |
-| [screenshots/](screenshots/) | Note that no frames were produced |
-| [raw/](raw/) | Capture notes for the live readings |
-| [tools/](tools/) | Copied capture kit |
+| [screenshots/](screenshots/) | Seven signed-in dashboard frames from 2026-11-21. The 2026-11-19 public pass produced none |
+| [raw/](raw/) | Public capture notes, plus computed custom properties from the signed-in overview |
+| [login-review.json](login-review.json) | The 2026-11-21 signed-in walk: nav, settings, create, screens, gaps, and what was not submitted |
+| [tools/](tools/) | Copied capture kit, plus the signed-in review builder |
 
 ## Brief
 
@@ -76,11 +77,13 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (No crops. T
 
 Custom properties were read from the stylesheets on https://vercel.com/ and from `getComputedStyle(document.documentElement)`. Component colour, type, radius, padding, and size were read with `getComputedStyle` on the live elements. `oklch` and `hsla` colours were converted to hex by filling a 1 by 1 sRGB canvas in that same page when the result was opaque. Pages read: https://vercel.com/, https://vercel.com/login, https://vercel.com/pricing, https://vercel.com/design, https://vercel.com/geist/introduction, https://vercel.com/geist/colors, https://vercel.com/geist/button, and https://vercel.com/docs.
 
-The preview browser returned "The browser is not producing screenshot frames" on `preview_snapshot`. No screenshots were invented. Headless Playwright was not launched.
+The preview browser returned "The browser is not producing screenshot frames" on `preview_snapshot`. No screenshots were invented for that public pass. Headless Playwright was not launched.
+
+A later signed-in pass on 2026-11-21 opened `https://vercel.com/dashboard` in the T3 in-app preview, default profile. The page was already signed in and landed on the Hobby scope overview. Dark was already on (`dark-theme`, `color-scheme: dark`). The theme was not switched. Desktop frames were taken at a measured CSS viewport of 1440 x 900 (device pixel ratio 2, visual viewport scale 1). Phone frames were taken at a measured CSS viewport of 390 x 844 (device pixel ratio 2, visual viewport scale 1). PNG pixel sizes are 2880 x 1800 and 780 x 1688. The walk is [login-review.json](login-review.json). Nothing was created, deployed, bought, invited, saved or deleted. A collaborator username in the settings sidebar was painted out. The public token set was left as the 2026-11-19 reading. `raw/css-vars.json` keeps the Geist and ds names read from the signed-in overview (176 names) and is not wired into `tokens.json`.
 
 ## What to distrust
 
-The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. Light theme exists as a Geist theme switcher at https://vercel.com/geist/theme-switcher and was not opened, so there is no light token set. Primary buttons on marketing and login are light gray (`#ededed`) on black, not the blue `--geist-success` (`#0070f3`). Link and focus are `--ds-blue-900` (`#47a8ff`). The email field's own radius is 0. The 8px radius is on the wrap, whose ring is `rgba(255, 255, 255, 0.14)`. `--ds-gray-alpha-400` (`#ffffff24`) is the nearest named step, and the token stores that named step. Pricing `h1` weight computed as 450, which is not one of the `--font-weight-*` steps. Screenshot folders are empty on purpose.
+The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. Light theme exists as a Geist theme switcher at https://vercel.com/geist/theme-switcher and was not opened, so there is no light token set. Primary buttons on marketing and login are light gray (`#ededed`) on black, not the blue `--geist-success` (`#0070f3`). Link and focus are `--ds-blue-900` (`#47a8ff`). The email field's own radius is 0. The 8px radius is on the wrap, whose ring is `rgba(255, 255, 255, 0.14)`. `--ds-gray-alpha-400` (`#ffffff24`) is the nearest named step, and the token stores that named step. Pricing `h1` weight computed as 450, which is not one of the `--font-weight-*` steps. The 2026-11-19 public pass has no frames. The 2026-11-21 dashboard frames are quantized, so read colours from tokens.json, not from those PNGs. The preview tool reported a 1280 x 800 pane after the 1440 x 900 resize. `window.innerWidth` then measured 1440 and `window.innerHeight` measured 900. Phone PNGs are 780 x 1688. The accessibility tree reported a 390 x 878 box. Trust the `window` measurement and the PNG size.
 
 ## Fonts
 
@@ -105,9 +108,10 @@ GeistSans is the UI face, computed as `GeistSans, "GeistSans Fallback"`. Geist M
 | Table, avatar, badge | Not captured as components |
 | Code | Docs `pre` and Geist button code |
 | App shell | Marketing header, docs sidebar, login form, described in [patterns.md](patterns.md) |
-| Signed-in app, signup submit, card, SAML, Google, GitHub | Not entered |
-| Screenshots | Not captured. Preview frames failed |
-| Phone 390 and desktop 1440 | Not applied. Live width was 1169 |
+| Signed-in app | Partial, 2026-11-21 | Overview, Create New menu, Deployments, Domains empty, Team Settings General, phone overview, phone scope switcher. See [login-review.json](login-review.json) |
+| Signup submit, card, SAML, Google, GitHub | Not entered | Still the 2026-11-19 boundary |
+| Screenshots | Seven dashboard frames | Public marketing frames still missing |
+| Phone 390 and desktop 1440 | Dashboard only | Public readings stay at 1169 |
 
 ## Do and don't
 
@@ -115,7 +119,8 @@ GeistSans is the UI face, computed as `GeistSans, "GeistSans Fallback"`. Geist M
 - **Use the 1px gray ring for secondary actions.** "Log In" and "Continue with Google" sit on `#0a0a0a` with a `rgb(46, 46, 46)` ring, which matches `--ds-gray-400`. [components.md](components.md) records that ring.
 - **Keep login signed out.** https://vercel.com/login offers email, Google, GitHub, ChatGPT, SAML SSO, and Passkey. Do not invent a dashboard behind it. [patterns.md](patterns.md) records what was not entered.
 - **Use GeistSans for UI and Geist Mono for code.** The marketing `h1` is 64px weight 400 with letter-spacing `-3.84px`. [tokens.json](tokens.json) keeps both faces.
-- **Do not invent a 1440 screenshot.** The preview browser produced no frames. [screenshots/](screenshots/) says so.
+- **Do not invent a 1440 marketing screenshot.** The 2026-11-19 pass produced no public frames. The 1440 and 390 frames in [screenshots/](screenshots/) are the signed-in dashboard.
+- **Do not treat the signed-in walk as a finished dashboard capture.** Most sidebar and settings destinations were listed and not opened. Create, Buy, Upgrade, and Save were not submitted. [login-review.json](login-review.json) lists them.
 
 ## Rebuild
 

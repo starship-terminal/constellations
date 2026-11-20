@@ -1,0 +1,10 @@
+{
+  "families": [
+    {
+      "name": "Team settings sidebar: a collaborator username and avatar (other people)",
+      "files": ["screenshots/settings-general-dark-desktop.png"],
+      "size": [[2880, 1800]],
+      "rects": [[16, 1688, 220, 1784, "rows"]]
+    }
+  ]
+}
