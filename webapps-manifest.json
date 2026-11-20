@@ -4630,7 +4630,7 @@
       "description": "Learn with the best online language tutors on app & web",
       "status": "pending",
       "package": null,
-      "notes": "The user signed in. Product not walked.",
+      "notes": "The user signed in. Product not walked. Signed-in walk: preview frames were not available, so https://preply.com/ was not opened. Session not checked. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 14
@@ -4664,7 +4664,7 @@
       "description": "The best new products in tech",
       "status": "pending",
       "package": null,
-      "notes": "The user signed in. Product not walked.",
+      "notes": "The user signed in. Product not walked. Signed-in walk: preview frames were not available, so https://www.producthunt.com/ was not opened. Session not checked. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 14
@@ -5225,7 +5225,7 @@
       "description": "The best way to save and share inspiration",
       "status": "pending",
       "package": null,
-      "notes": "The user signed in. The home feed opened. Product not walked.",
+      "notes": "The user signed in. The home feed opened. Product not walked. Signed-in walk: preview frames were not available, so https://savee.it/ was not opened. Session not checked. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 16
