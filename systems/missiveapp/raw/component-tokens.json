@@ -1,0 +1,298 @@
+{
+  "_about": "Missive's public marketing token layer, read from :root on missiveapp.com. Swatches and semantic colours are declared CSS custom properties. There is no dark theme. Component sizes are computed styles where a capture measured them.",
+  "core": {
+    "color": {
+      "swatch": {
+        "neutral": {
+          "050": {
+            "var": "--swatch--neutral-050",
+            "type": "color"
+          },
+          "100": {
+            "var": "--swatch--neutral-100",
+            "type": "color"
+          },
+          "200": {
+            "var": "--swatch--neutral-200",
+            "type": "color"
+          },
+          "300": {
+            "var": "--swatch--neutral-300",
+            "type": "color"
+          },
+          "400": {
+            "var": "--swatch--neutral-400",
+            "type": "color"
+          },
+          "500": {
+            "var": "--swatch--neutral-500",
+            "type": "color"
+          },
+          "600": {
+            "var": "--swatch--neutral-600",
+            "type": "color"
+          },
+          "700": {
+            "var": "--swatch--neutral-700",
+            "type": "color"
+          },
+          "800": {
+            "var": "--swatch--neutral-800",
+            "type": "color"
+          },
+          "900": {
+            "var": "--swatch--neutral-900",
+            "type": "color"
+          },
+          "950": {
+            "var": "--swatch--neutral-950",
+            "type": "color"
+          },
+          "1000": {
+            "var": "--swatch--neutral-1000",
+            "type": "color"
+          }
+        },
+        "blue": {
+          "100": {
+            "var": "--swatch--blue-100",
+            "type": "color"
+          },
+          "600": {
+            "var": "--swatch--blue-600",
+            "type": "color"
+          },
+          "800": {
+            "var": "--swatch--blue-800",
+            "type": "color"
+          }
+        },
+        "cumin": {
+          "50": {
+            "var": "--swatch--cumin-50",
+            "type": "color"
+          },
+          "200": {
+            "var": "--swatch--cumin-200",
+            "type": "color"
+          },
+          "500": {
+            "var": "--swatch--cumin-500",
+            "type": "color"
+          },
+          "600": {
+            "var": "--swatch--cumin-600",
+            "type": "color"
+          },
+          "700": {
+            "var": "--swatch--cumin-700",
+            "type": "color"
+          }
+        },
+        "green": {
+          "050": {
+            "var": "--swatch--green-050",
+            "type": "color"
+          },
+          "100": {
+            "var": "--swatch--green-100",
+            "type": "color"
+          },
+          "600": {
+            "var": "--swatch--green-600",
+            "type": "color"
+          }
+        },
+        "white": {
+          "var": "--swatch--white",
+          "type": "color"
+        },
+        "black": {
+          "var": "--swatch--black",
+          "type": "color"
+        }
+      }
+    },
+    "spacing": {
+      "1": {
+        "var": "--spacing--1",
+        "type": "dimension"
+      },
+      "2": {
+        "var": "--spacing--2",
+        "type": "dimension"
+      },
+      "3": {
+        "var": "--spacing--3",
+        "type": "dimension"
+      },
+      "4": {
+        "var": "--spacing--4",
+        "type": "dimension"
+      },
+      "6": {
+        "var": "--spacing--6",
+        "type": "dimension"
+      },
+      "8": {
+        "var": "--spacing--8",
+        "type": "dimension"
+      },
+      "12": {
+        "var": "--spacing--12",
+        "type": "dimension"
+      },
+      "16": {
+        "var": "--spacing--16",
+        "type": "dimension"
+      },
+      "20": {
+        "var": "--spacing--20",
+        "type": "dimension"
+      },
+      "28": {
+        "var": "--spacing--28",
+        "type": "dimension"
+      }
+    },
+    "font": {
+      "family": {
+        "ui": {
+          "value": "Inter, ui-sans-serif, system-ui, sans-serif",
+          "type": "fontFamily",
+          "source": "measured @font-face font-family Inter on missiveapp.com; the file is the site's webfont and is not committed"
+        },
+        "display": {
+          "value": "\"Tiempos Headline\", Georgia, serif",
+          "type": "fontFamily",
+          "source": "measured @font-face font-family Tiempos Headline on missiveapp.com; the file is the site's webfont and is not committed"
+        }
+      }
+    }
+  },
+  "light": {
+    "page": {
+      "var": "--color--bg-white",
+      "type": "color"
+    },
+    "surface": {
+      "var": "--color--bg-neutral",
+      "type": "color"
+    },
+    "text": {
+      "var": "--color--a",
+      "type": "color"
+    },
+    "muted": {
+      "var": "--color--b",
+      "type": "color"
+    },
+    "border": {
+      "var": "--color--d",
+      "type": "color"
+    },
+    "accent": {
+      "var": "--color--brand",
+      "type": "color"
+    },
+    "on-accent": {
+      "var": "--swatch--white",
+      "type": "color"
+    },
+    "color": {
+      "page": {
+        "var": "--color--bg-white",
+        "type": "color"
+      },
+      "surface": {
+        "var": "--color--bg-neutral",
+        "type": "color"
+      },
+      "text": {
+        "var": "--color--a",
+        "type": "color"
+      },
+      "muted": {
+        "var": "--color--b",
+        "type": "color"
+      },
+      "border": {
+        "var": "--color--d",
+        "type": "color"
+      },
+      "border-strong": {
+        "var": "--color--c",
+        "type": "color"
+      },
+      "hairline": {
+        "var": "--color--e",
+        "type": "color"
+      },
+      "accent": {
+        "var": "--color--brand",
+        "type": "color"
+      },
+      "accent-hover": {
+        "var": "--color--brand-dark",
+        "type": "color"
+      },
+      "accent-soft": {
+        "var": "--color--brand-light",
+        "type": "color"
+      },
+      "on-accent": {
+        "var": "--swatch--white",
+        "type": "color"
+      }
+    },
+    "status": {
+      "success": {
+        "var": "--swatch--green-600",
+        "type": "color",
+        "description": "A green swatch. The site does not declare a success role."
+      },
+      "warning": {
+        "var": "--swatch--cumin-600",
+        "type": "color",
+        "description": "A cumin swatch. The site does not declare a warning role."
+      }
+    }
+  },
+  "component": {
+    "button": {
+      "height": {
+        "value": "44px",
+        "type": "dimension",
+        "source": "measured nav-cta default computed height on a at 1440"
+      }
+    },
+    "nav": {
+      "link-height": {
+        "value": "44px",
+        "type": "dimension",
+        "source": "measured nav-link default computed height on a at 1440"
+      }
+    },
+    "type": {
+      "hero-size": {
+        "value": "56px",
+        "type": "dimension",
+        "source": "measured hero-title default computed fontSize on h1 at 1440"
+      }
+    },
+    "field": {
+      "height": {
+        "value": "37px",
+        "type": "dimension",
+        "source": "measured docs-search default computed height on input at 1440"
+      }
+    },
+    "shell": {
+      "header": {
+        "value": "61px",
+        "type": "dimension",
+        "source": "measured header default computed height on div at 1440"
+      }
+    }
+  }
+}

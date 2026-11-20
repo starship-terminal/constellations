@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missive style guide</title>
+<meta name="description" content="Missive (missiveapp.com) design tokens and the public marketing site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-default, #3d3d3d); background: var(--page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #737373); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #e5e7eb); }
+.lead { max-width: 62ch; color: var(--muted, #686868); }
+.note { font-size: 13px; color: var(--muted, #686868); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #686868); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #e5e7eb); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #686868); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #686868); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border, #e5e7eb); border-radius: 16px; overflow: hidden; background: var(--page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--component-shell-header, 68px); padding: 0 20px; background: var(--page, #fff); border-bottom: 1px solid var(--border, #e5e7eb); font-size: 14px; color: var(--muted, rgba(0,0,0,.7)); }
+.navbar .wm { width: 22px; height: 22px; border-radius: 6px; background: var(--accent-default, #0d0d0d); display: inline-block; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 32px); padding: 0 14px; border-radius: var(--border-radius, 3px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
+.btn.primary { border-radius: var(--component-control-radius, 100px);  background: var(--accent-default, #0d0d0d); color: var(--on-accent, #fff); }
+.btn.big { height: var(--component-control-heightLarge, 42px); padding: 0 20px; border-radius: var(--border-radius, 3px); font-weight: 500; font-size: 14px; }
+.btn.ghost { background: transparent; color: var(--text, #000); border: 0; }
+.btn.trial { height: 42px; width: 100%; }
+.hero { background: var(--page, #fff); color: var(--text, #000); padding: 64px 40px; font: var(--typography-display, 400 56px/67.2px var(--sg-sans)); letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font: var(--typography-body, 400 16px/24px var(--sg-sans)); color: var(--muted, rgba(0,0,0,.8)); margin: 16px auto 22px; max-width: 46ch; }
+.hero .row { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
+.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: var(--border-radius, 3px); border: 1px solid rgba(0,0,0,.2); background: #fff; font-size: 12px; font-weight: 500; color: var(--chip-text, rgba(0,0,0,.6)); }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 0; border-radius: var(--border-radius, 3px); padding: 22px; background: var(--surface, #f4f4f4); font-size: 13px; }
+.plan .price { font: var(--typography-price, 400 36px/36px var(--sg-sans)); margin: 8px 0 12px; }
+.plan .btn { width: 100%; }
+.field { display: flex; align-items: center; height: var(--component-control-field, 50px); border: 1px solid var(--surface, #f4f4f4); border-radius: var(--border-radius, 3px); padding: 0 12px; font-size: 14px; color: var(--muted, #666); max-width: 414px; background: var(--surface, #f4f4f4); margin-bottom: 8px; }
+.caps-eyebrow { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted, #6e6e6e); font-weight: 500; }
+.seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--border, #e5e7eb); font-size: 13px; }
+.tlist { border: 1px solid var(--border, #e5e7eb); border-radius: 12px; overflow: hidden; }
+.trow { display: flex; gap: 16px; align-items: baseline; padding: 10px 16px; border-bottom: 1px solid var(--border, #e5e7eb); }
+.trow:last-child { border-bottom: 0; }
+.tnm { font: 500 11px/1 var(--sg-mono); color: var(--muted, #666); min-width: 90px; text-transform: uppercase; letter-spacing: .06em; }
+.tspec { font-size: 22px; }
+.seg b { padding: 4px 12px; font-weight: 500; border-radius: 6px; }
+.seg b.on { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <button id="mode" hidden style="float:right;margin-top:8px;padding:6px 14px;border:1px solid var(--border-default,#cfcfcf);border-radius:var(--border-radius,3px);background:var(--surface,#f3f3f3);color:var(--text-default,#3d3d3d);cursor:pointer;font:inherit">Dark</button>
+  <h1>Missive style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Missive, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: Missive's Webflow token layer: <code>--swatch--*</code> neutrals, blue, cumin and green, <code>--color--*</code> roles, and a <code>--spacing--*</code> scale. One light theme. No dark theme was found. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from missiveapp.com on 2026-11-21, signed out, in headless Chromium. The app behind sign-in was never reached. Nothing was sent, submitted or signed into.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A white nav, Inter body, Tiempos Headline display, a blue #2266ed primary action, and a near-black #34363a ink on white with a #f5f6f6 surface.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm"></span><span>Product</span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Log in</span><span class="btn ghost">Book a demo</span><span class="btn primary">Try for free</span></div>
+    <div class="hero">Inbox collaboration for teams<br>that run on email
+      <small>A public marketing reconstruction from the measured tokens.</small>
+      <div class="row"><span class="caps-eyebrow">Email</span></div>
+      <div class="row" style="gap:10px"><span class="btn primary">Try for free</span><span class="btn ghost">Watch demo</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">Three plan columns: Starter, Productive, Business. Plan CTAs go to the signup wall and were not followed. FAQ accordions sit below the columns.</p>
+  <div class="mock" style="padding:20px">
+    <div class="plans">
+      <div class="plan"><b>Starter</b><div class="price">Plan</div><span class="btn ghost trial">Try for free</span><p style="color:var(--muted,#666);font-size:12px;margin-top:10px">The first public column.</p></div>
+      <div class="plan"><b>Productive</b><div class="price">Plan</div><span class="btn primary trial">Try for free</span><p style="color:var(--muted,#666);font-size:12px;margin-top:10px">The middle public column.</p></div>
+      <div class="plan"><b>Business</b><div class="price">Plan</div><span class="btn ghost trial">Try for free</span><p style="color:var(--muted,#666);font-size:12px;margin-top:10px">The third public column.</p></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>--color--a</code> is ink #34363a, <code>--color--b</code> is muted #646c76, <code>--color--brand</code> is #2266ed, page is white, surface is #f5f6f6.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Layout metrics</h2>
+  <p class="lead">Spacing is <code>--spacing--1</code> 4px through <code>--spacing--28</code> 112px. Radius, shadow and motion were not declared as custom properties.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Type styles</h2>
+  <p class="lead">Inter for UI, Tiempos Headline for display. Both are webfonts loaded by the site and not committed here.</p>
+  <div id="type-out" class="tlist"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, toggle and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+$('#mode').addEventListener('click', () => {
+  const d = document.documentElement.dataset.mode === 'dark';
+  document.documentElement.dataset.mode = d ? '' : 'dark';
+  $('#mode').textContent = d ? 'Dark' : 'Light';
+});
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  // Colours sit flat under core (primary.600, neutral.200.201, card.bg.*,
+  // brand.50..900 plus bare names like gold, black, gray.800); group the
+  // flattened list by its first two segments where they form a family, else
+  // the first.
+  const colors = flat(TOK.core || {}, '').filter(([, t]) => t.t === 'color');
+  const groups = new Map();
+  for (const [n, t] of colors) {
+    const p = n.split('.');
+    const g = p.length > 2 ? p[0] + '.' + p[1] : p[0];
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push([n, t]);
+  }
+  for (const [g, items] of groups) {
+    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const g of ['media', 'grid', 'zIndex', 'border', 'shadow', 'transition', 'spacing'])
+    for (const [n, t] of flat(TOK.core[g] || {}, g + '.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+// Resolve a {path.to.token} alias against TOK.core so labels read the real
+// family names, not the alias braces.
+const resolveTok = (a, depth = 0) => {
+  const m = /^\{(.+)\}$/.exec(String(a || '').trim());
+  if (!m || depth > 4) return a;
+  let n = TOK.core;
+  for (const p of m[1].split('.')) n = n && n[p];
+  return n && n.v !== undefined ? resolveTok(n.v, depth + 1) : a;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fam = String(resolveTok(v.fontFamily) || 'inherit').replace(/"/g, "'");
+    const wt = String(v.fontWeight || 400).replace(/[^0-9]/g, '') || 400;
+    h += `<div class="trow"><div class="tnm">${esc(n)}</div><div class="tspec" style="font-family:${fam};font-weight:${wt};font-size:${esc(v.fontSize || '16px')};line-height:${esc(v.lineHeight || '1.4')}">${esc(fam.split(',')[0] || '')} ${esc(v.fontSize || '')}/${esc(v.lineHeight || '')}</div></div>`;
+  }
+  const el = $('#type-out'); if (el) el.innerHTML = h;
+})();
+</script>
+</body>
+</html>
