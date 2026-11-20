@@ -445,6 +445,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
       // pressed/dark are cleared in finally so a failed read can never leak
       // the forced state into the next measurement.
       let pressed = null;
+      let toggled = null;  // the locator a toggled state pressed; finally restores it
       let darkOn = false;
       try {
         await reset();
@@ -455,7 +456,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
         else if (st === 'focused') { await readLoc.click({ timeout: 3000 }).catch(() => readLoc.evaluate((el) => el.focus())); await page.waitForTimeout(400); viaText = 'the field clicked into'; }
         else if (st === 'pressed') { pressed = await pressOn(readLoc); viaText = via.pressed; }
         else if (st === 'dark') { if (!(await setTheme(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = via.dark; }
-        else if (st && typeof st === 'object' && st.fn) { const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
+        else if (st && typeof st === 'object' && st.fn) { toggled = readLoc; const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
         else if (typeof st === 'function') { await st(readLoc); viaText = 'reached by the component\'s own UI toggle'; }
         await centre(readLoc).catch(() => {});
         const v = await styleOf(readLoc);
@@ -476,7 +477,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
         if (pressed != null) await pressOff(pressed).catch(() => {});
         // a toggled state presses its control back, so later components are
         // read in the resting layout (the ifttt pattern; 2026-11 audit, not run)
-        if (st && typeof st === 'object' && st.restore) await st.restore(readLoc).catch(() => {});
+        if (toggled && st.restore) await st.restore(toggled).catch((e) => log(' ', spec.key, name, 'restore failed', e.message.split('\n')[0]));
         if (darkOn) {
           let back = await setTheme(page, 'light').catch(() => false);
           if (!back) back = await setTheme(page, 'light').catch(() => false);

@@ -492,6 +492,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
       // pressed/dark are cleared in finally so a failed read can never leak
       // the forced state into the next measurement.
       let pressed = null;
+      let toggled = null;  // the locator a toggled state pressed; finally restores it
       let darkOn = false;
       try {
         await reset();
@@ -513,7 +514,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
             loc = refound.first();
           } else { log(' ', spec.key, name, 'not refound after the dark reload — skipped'); continue; }
         }
-        else if (st && typeof st === 'object' && st.fn) { const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
+        else if (st && typeof st === 'object' && st.fn) { toggled = readLoc; const alt = await st.fn(readLoc); if (alt && typeof alt.count === 'function' && await alt.count()) readLoc = alt; viaText = st.via || 'reached by the component\'s own UI toggle'; }
         else if (typeof st === 'function') { await st(readLoc); viaText = 'reached by the component\'s own UI toggle'; }
         await centre(readLoc).catch(() => {});
         const v = await styleOf(readLoc);
@@ -534,7 +535,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
         if (pressed != null) await pressOff(pressed).catch(() => {});
         // a toggled state presses its control back, so later components are
         // read in the resting layout (the ifttt pattern; 2026-11 audit, not run)
-        if (st && typeof st === 'object' && st.restore) await st.restore(readLoc).catch(() => {});
+        if (toggled && st.restore) await st.restore(toggled).catch((e) => log(' ', spec.key, name, 'restore failed', e.message.split('\n')[0]));
         if (darkOn) {
           let back = await darkFn(page, 'light').catch(() => false);
           if (!back) back = await darkFn(page, 'light').catch(() => false);
