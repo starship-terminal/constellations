@@ -138,7 +138,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Family names are literal.** The search field's family really is `"Analog One V2."` (trailing period) and the button face `"digi one v2"`.
 - **Pressed is forced.** `pressed` states come from `CSS.forcePseudoState`; a mousedown-only state (if any) is missing. `product-card` and `accordion` would not hold a real keyboard focus — their focus look is uncaptured, not absent.
 - **The WordPress furniture.** The `#21759b` skip-link and `#f1f1f1` skip-link slab in the cart drawer's paint list are WordPress core styling, not Elektron design — not tokenised.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw JSON — the unquantized captures are in [raw/full/](raw/full).
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw JSON — the unquantized captures are kept outside the repository.
 
 ### Do and don't (from README.md)
 
