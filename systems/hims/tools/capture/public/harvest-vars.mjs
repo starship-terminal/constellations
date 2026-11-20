@@ -15,7 +15,7 @@ await hideConsent(page);
 
 const data = await page.evaluate(() => {
   // A url() can carry a signed asset URL: record it as url(…), as the kit and the sibling forks do.
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/gi, 'url(…)') : v);
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const names = new Set();
   const declared = [];
   const walk = (list, context) => {
