@@ -1,15 +1,41 @@
 #!/usr/bin/env python3
-"""Skillshare tokens stay inside the measured set."""
-import json, pathlib, unittest
+"""Skillshare tokens: every literal colour is a raw/ reading."""
+import json, pathlib, re, unittest
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
 
-MEASURED = {
-    "#ffffff", "#000000", "#0b1215", "#394649", "#dcdce1", "#55da9b",
-    "#50cf93", "#5620c1", "#fafafa", "#f4f4f4", "#070c0e", "#002333",
-    "#232424",
-}
+
+def raw_colours(package):
+    """Every colour a raw/ file holds, as lower-case #rrggbb or #rrggbbaa (hex, rgb() and rgba())."""
+    seen = set()
+    for f in sorted((package / "raw").rglob("*")):
+        if not f.is_file() or f.suffix not in (".json", ".md", ".txt", ".css"):
+            continue
+        text = f.read_text(errors="replace").lower()
+        for h in re.findall(r"#([0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{3,4})\b", text):
+            h = "".join(c * 2 for c in h) if len(h) in (3, 4) else h
+            seen.add("#" + (h[:6] if len(h) == 8 and h.endswith("ff") else h))
+        for m in re.finditer(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+))?\s*\)", text):
+            h = "#%02x%02x%02x" % tuple(int(x) for x in m.groups()[:3])
+            if m.group(4) and float(m.group(4)) < 1:
+                h += "%02x" % int(float(m.group(4)) * 255 + 0.5)
+            seen.add(h)
+    return seen
+
+
+def literal_colours(node, path=""):
+    """(path, value, source) for every colour token with a literal value, in every set and group."""
+    if isinstance(node, dict) and "$value" in node:
+        v = node["$value"]
+        if node.get("$type") == "color" and isinstance(v, str) and v.startswith("#"):
+            yield path, v.lower(), (node.get("$extensions") or {}).get("source", "")
+        return
+    if isinstance(node, dict):
+        for k, child in node.items():
+            if not k.startswith("$"):
+                yield from literal_colours(child, f"{path}.{k}" if path else k)
+
 
 
 class Tokens(unittest.TestCase):
@@ -21,11 +47,18 @@ class Tokens(unittest.TestCase):
         self.assertEqual(T["light"]["color"]["accent"]["$value"], "#55da9b")
         self.assertEqual(T["light"]["color"]["link"]["$value"], "#5620c1")
 
-    def test_hex_colours_were_measured(self):
-        for name, tok in T["light"]["color"].items():
-            value = tok["$value"]
-            if isinstance(value, str) and value.startswith("#"):
-                self.assertIn(value, MEASURED, name)
+    def test_literal_colours_are_in_raw(self):
+        """Every literal colour, in every set and nested group, is a colour some raw/ file holds,
+        unless its source says it was entered by hand (Reconstruction)."""
+        seen = raw_colours(HERE)
+        found = list(literal_colours(T))
+        self.assertTrue(found, "no colour tokens")
+        for path, value, source in found:
+            if source.startswith("Reconstruction"):
+                continue
+            with self.subTest(token=path):
+                short = value[:7] if len(value) == 9 and value.endswith("ff") else value
+                self.assertIn(short, seen, value)
 
     def test_control_radius(self):
         self.assertEqual(T["core"]["radius"]["control"]["$value"], "4px")

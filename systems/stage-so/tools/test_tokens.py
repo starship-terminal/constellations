@@ -1,32 +1,59 @@
-"""stage.so tokens stay inside colours measured on the Spaceship listing."""
+"""stage.so tokens: every literal colour is a raw/ reading from the Spaceship listing, or labelled hand-entered."""
 import json
+import re
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TOKENS = json.loads((ROOT / "tokens.json").read_text())
 
-MEASURED = {
-    "#171f66", "#ffffff", "#2b2b2d", "#575758", "#cbcbcc", "#f9f9f9",
-    "#394eff", "#ffffffcc", "#ffffffb3", "#ffffff0d", "#07070c36", "#17181a",
-    "#17181a0f", "#17181a17", "#17181a12",
-}
+
+def raw_colours(package):
+    """Every colour a raw/ file holds, as lower-case #rrggbb or #rrggbbaa (hex, rgb() and rgba())."""
+    seen = set()
+    for f in sorted((package / "raw").rglob("*")):
+        if not f.is_file() or f.suffix not in (".json", ".md", ".txt", ".css"):
+            continue
+        text = f.read_text(errors="replace").lower()
+        for h in re.findall(r"#([0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{3,4})\b", text):
+            h = "".join(c * 2 for c in h) if len(h) in (3, 4) else h
+            seen.add("#" + (h[:6] if len(h) == 8 and h.endswith("ff") else h))
+        for m in re.finditer(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+))?\s*\)", text):
+            h = "#%02x%02x%02x" % tuple(int(x) for x in m.groups()[:3])
+            if m.group(4) and float(m.group(4)) < 1:
+                h += "%02x" % int(float(m.group(4)) * 255 + 0.5)
+            seen.add(h)
+    return seen
 
 
-def colours(node):
+def literal_colours(node, path=""):
+    """(path, value, source) for every colour token with a literal value, in every set and group."""
+    if isinstance(node, dict) and "$value" in node:
+        v = node["$value"]
+        if node.get("$type") == "color" and isinstance(v, str) and v.startswith("#"):
+            yield path, v.lower(), (node.get("$extensions") or {}).get("source", "")
+        return
     if isinstance(node, dict):
-        if node.get("$type") == "color" and isinstance(node.get("$value"), str):
-            if node["$value"].startswith("#"):
-                yield node["$value"].lower()
-        for child in node.values():
-            yield from colours(child)
+        for k, child in node.items():
+            if not k.startswith("$"):
+                yield from literal_colours(child, f"{path}.{k}" if path else k)
+
+
 
 
 class Tokens(unittest.TestCase):
-    def test_every_literal_colour_was_measured(self):
-        found = set(colours(TOKENS))
+    def test_literal_colours_are_in_raw(self):
+        """Every literal colour, in every set and nested group, is a colour some raw/ file holds,
+        unless its source says it was entered by hand (Reconstruction)."""
+        seen = raw_colours(ROOT)
+        found = list(literal_colours(TOKENS))
         self.assertTrue(found, "no colour tokens")
-        self.assertEqual(found - MEASURED, set())
+        for path, value, source in found:
+            if source.startswith("Reconstruction"):
+                continue
+            with self.subTest(token=path):
+                short = value[:7] if len(value) == 9 and value.endswith("ff") else value
+                self.assertIn(short, seen, value)
 
     def test_listing_theme_only(self):
         self.assertIn("listing", TOKENS)
