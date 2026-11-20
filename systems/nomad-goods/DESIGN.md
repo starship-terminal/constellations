@@ -33,7 +33,6 @@ colors:
   accent-pressed: "#0e0e0e"
   accent-info: "#005bd3"
   accent-sale: "#cb794c"
-  status-success: "#000000"
   status-warning: "#cb794c"
   status-danger: "#e3163b"
   status-info: "#005bd3"
@@ -51,20 +50,20 @@ typography:
     fontFamily: "Gotham-Bold"
     fontSize: "77px"
     fontWeight: 700
-    lineHeight: 0.95
-    letterSpacing: "-0.04em"
+    lineHeight: "73.15px"
+    letterSpacing: "-3.08px"
   display-mobile:
     fontFamily: "Gotham-Bold"
     fontSize: "47px"
     fontWeight: 700
-    lineHeight: 0.95
-    letterSpacing: "-0.04em"
+    lineHeight: "44.65px"
+    letterSpacing: "-1.88px"
   title-section:
     fontFamily: "Gotham-Bold"
     fontSize: "56px"
     fontWeight: 700
-    lineHeight: 0.95
-    letterSpacing: "-0.04em"
+    lineHeight: "53.2px"
+    letterSpacing: "-2.24px"
   title-md:
     fontFamily: "Gotham-Bold"
     fontSize: "50px"
@@ -75,8 +74,8 @@ typography:
     fontFamily: "Gotham-Bold"
     fontSize: "36px"
     fontWeight: 700
-    lineHeight: 1.11
-    letterSpacing: "-0.04em"
+    lineHeight: "39.96px"
+    letterSpacing: "-1.44px"
   heading-md:
     fontFamily: "Gotham-Bold"
     fontSize: "24px"
@@ -87,26 +86,26 @@ typography:
     fontFamily: "Gotham-Bold"
     fontSize: "16px"
     fontWeight: 700
-    lineHeight: 1.11
-    letterSpacing: "-0.04em"
+    lineHeight: "17.76px"
+    letterSpacing: "-0.64px"
   price:
     fontFamily: "Gotham-Bold"
     fontSize: "32px"
     fontWeight: 700
-    lineHeight: 1
-    letterSpacing: "-0.04em"
+    lineHeight: "32px"
+    letterSpacing: "-1.28px"
   body-lg:
     fontFamily: "Aleo"
     fontSize: "23px"
     fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "0em"
+    lineHeight: "34.5px"
+    letterSpacing: "0px"
   body:
     fontFamily: "Aleo"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "0em"
+    lineHeight: "24px"
+    letterSpacing: "0px"
   body-sm:
     fontFamily: "Aleo"
     fontSize: "14px"
@@ -123,32 +122,32 @@ typography:
     fontFamily: "Gotham-Bold"
     fontSize: "16px"
     fontWeight: 700
-    lineHeight: 1.11
-    letterSpacing: "-0.04em"
+    lineHeight: "17.76px"
+    letterSpacing: "-0.64px"
   button-sm:
     fontFamily: "Gotham-Bold"
     fontSize: "14px"
     fontWeight: 700
-    lineHeight: 1.11
-    letterSpacing: "-0.04em"
+    lineHeight: "15.54px"
+    letterSpacing: "-0.56px"
   field:
     fontFamily: "Gotham-Book"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "-0.02em"
+    lineHeight: "24px"
+    letterSpacing: "-0.32px"
   detail-sm:
     fontFamily: "Gotham-Book"
     fontSize: "12px"
     fontWeight: 400
-    lineHeight: 1.25
-    letterSpacing: "-0.02em"
+    lineHeight: "15px"
+    letterSpacing: "-0.24px"
   pill:
     fontFamily: "Gotham-Bold"
     fontSize: "11px"
     fontWeight: 700
-    lineHeight: 1
-    letterSpacing: "-0.04em"
+    lineHeight: "11px"
+    letterSpacing: "-0.44px"
 rounded:
   none: "0px"
   checkbox: "6px"
@@ -271,6 +270,10 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't edit this file; it is regenerated from the tokens.
 
 ### What to distrust (from README.md)
+
+`raw/readings.json` holds the computed styles and the stylesheet names, not the stylesheets. Every value that came only from `type.css`, `buttons.css`, `fields.css`, `surfaces.css`, `labels.css`, `links.css` or `css-bundle.css` (the error red, the disabled grey, the placeholder grey, `#007aff`, the checkbox, tab-bar, status and textarea radii, the card shadow, every motion value, and four type styles) is labelled Reconstruction in tokens.json: typed in by hand at capture time, with no reading in the repo. No success colour was read, so there is no `light.status.success`; `light.status.warning` is the sale pill colour standing in.
+
+The cookie consent banner was accepted in the preview tab (see How the values were read); every reading was taken after that click.
 
 There are no screenshots. The preview browser returned `The browser is not producing screenshot frames` on both snapshot attempts. Do not treat a missing image as a layout you have seen.
 

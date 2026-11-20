@@ -74,12 +74,58 @@ def px(v):
     return "%gpx" % round(float(str(v).replace("px", "")), 2)
 
 
-def num(v, fallback):
-    try:
-        f = float(str(v).replace("px", "").strip())
-        return f
-    except (TypeError, ValueError):
-        return fallback
+def need(v, what):
+    """A reading the spec cites must exist: a missing one fails the build
+    instead of falling back to a typed value under a "measured" source."""
+    if v in (None, ""):
+        raise SystemExit("build_component_tokens: raw/components-computed.json has no %s" % what)
+    return v
+
+
+def m(key, prop, state="default"):
+    return need(val(key, prop, state), "%s of %s %s" % (prop, key, state))
+
+
+def r(key, dim, state="default"):
+    return need(rect(key, state).get(dim), "rect.%s of %s %s" % (dim, key, state))
+
+
+RGB = re.compile(r"rgba?\(\s*([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\s*\)")
+
+
+def hexa(v):
+    """rgb()/rgba() as the spec writes colours: #rrggbb when opaque, rgba() otherwise."""
+    mm = RGB.fullmatch(v.strip())
+    if not mm:
+        raise SystemExit("build_component_tokens: cannot read colour %r" % v)
+    rr, gg, bb, a = mm.groups()
+    if a is None or float(a) == 1:
+        return "#%02x%02x%02x" % (round(float(rr)), round(float(gg)), round(float(bb)))
+    return "rgba(%d, %d, %d, %g)" % (round(float(rr)), round(float(gg)), round(float(bb)), float(a))
+
+
+def mc(key, prop, state="default"):
+    return hexa(m(key, prop, state))
+
+
+def shadow(v):
+    """A computed box-shadow list ("rgba(...) 0px 1px 2px 0px, ...") as DTCG layers."""
+    layers = []
+    for part in re.split(r",\s*(?![^()]*\))", v):
+        mm = re.fullmatch(r"(rgba?\([^)]*\))\s+(-?[\d.]+px)\s+(-?[\d.]+px)\s+(-?[\d.]+px)\s+(-?[\d.]+px)", part.strip())
+        if not mm:
+            raise SystemExit("build_component_tokens: cannot read box-shadow layer %r" % part)
+        layers.append({"offsetX": mm.group(2), "offsetY": mm.group(3), "blur": mm.group(4), "spread": mm.group(5), "color": hexa(mm.group(1))})
+    return layers
+
+
+def ring(key, state="focus-visible"):
+    """(colour, spread) of a computed 0 0 0 Npx box-shadow ring."""
+    v = m(key, "boxShadow", state)
+    mm = re.fullmatch(r"(rgba?\([^)]*\))\s+0px\s+0px\s+0px\s+([\d.]+px)", v.strip())
+    if not mm:
+        raise SystemExit("build_component_tokens: %s %s boxShadow is not a ring: %r" % (key, state, v))
+    return hexa(mm.group(1)), mm.group(2)
 
 
 # ---------- palette: the declared glue ramps (resolved css-var leaves) ----------
@@ -101,28 +147,23 @@ for family in ("blue", "green", "grey", "red", "yellow", "purple"):
 
 # ---------- type ramp: measured font metrics ----------
 
-def face(key, state="default"):
-    fam = val(key, "fontFamily", state) or '"Google Sans Flex", Arial, Helvetica, sans-serif'
-    return fam
-
-
-FLEX = face("hero-h1")
+FLEX = m("hero-h1", "fontFamily")
 
 
 def typ(key, label, state="default", desc=None):
-    s = sty(key, state)
+    s = {p: m(key, p, state) for p in ("fontSize", "fontWeight", "lineHeight", "letterSpacing")}
+    # DTCG letterSpacing is a dimension; CSS `normal` is written as 0px (the source keeps the reading).
+    ls = "0px" if s["letterSpacing"] == "normal" else s["letterSpacing"]
     return lit(
-        {"fontFamily": FLEX, "fontSize": px(s["fontSize"]), "fontWeight": int(num(s.get("fontWeight"), 400)),
-         "lineHeight": px(s["lineHeight"]), "letterSpacing": s.get("letterSpacing", "normal")},
+        {"fontFamily": FLEX, "fontSize": px(s["fontSize"]), "fontWeight": int(float(s["fontWeight"])),
+         "lineHeight": px(s["lineHeight"]), "letterSpacing": ls},
         "typography", "%s: %s" % (src(key, "typography", state), "%s %s/%s %s, ls %s" % (FLEX.split(",")[0].strip('"'), s["fontSize"], s["lineHeight"], s.get("fontWeight"), s.get("letterSpacing"))),
         desc)
 
 
 # ---------- build the spec ----------
 
-shadow_tabbar = val("tab-bar", "boxShadow") or "none"
-shadow_btn_hover = val("cert-cta", "boxShadow", "hover") or "none"
-shadow_btn_pressed = val("cert-cta", "boxShadow", "pressed") or "none"
+FOCUS_COLOUR, FOCUS_WIDTH = ring("nav-link")
 
 core = {
     "color": {
@@ -132,12 +173,12 @@ core = {
     "font": {
         "family": {
             "sans": lit(FLEX, "fontFamily", src("hero-h1", "fontFamily"), "The variable face everything paints: Google Sans Flex opsz 6-144 wght 100-1000, served from fonts.googleapis.com (Google Sans Text, Google Sans, Google Sans Display and Product Sans faces are also requested and declared in the font sheet)."),
-            "system": lit("Arial, Helvetica, sans-serif", "fontFamily", "the fallback tail of the measured fontFamily stack", "The fallback tail the flex stack declares."),
+            "system": lit(FLEX.split(",", 1)[1].strip(), "fontFamily", "the fallback tail of the " + src("hero-h1", "fontFamily"), "The fallback tail the flex stack declares."),
         },
         "weight": {
-            "regular": lit(400, "fontWeight", src("body-p", "fontWeight")),
-            "medium": lit(500, "fontWeight", src("nav-link", "fontWeight")),
-            "bold": lit(700, "fontWeight", src("stat-chip", "fontWeight"), "The stat figures are the only 700-weight text measured; headings all paint regular/medium."),
+            "regular": lit(int(m("body-p", "fontWeight")), "fontWeight", src("body-p", "fontWeight")),
+            "medium": lit(int(m("nav-link", "fontWeight")), "fontWeight", src("nav-link", "fontWeight")),
+            "bold": lit(int(m("stat-chip", "fontWeight")), "fontWeight", src("stat-chip", "fontWeight"), "The stat figures are the only 700-weight text measured; headings all paint regular/medium."),
         },
     },
     "typography": {
@@ -154,69 +195,67 @@ core = {
         "button": typ("cert-cta", "button", "default", "Pill button text (16px/24px, 500, ls 0.5px)."),
     },
     "radius": {
-        "pill": lit(px(val("cert-cta", "borderTopLeftRadius") or 48), "dimension", src("cert-cta", "borderTopLeftRadius"), "The fully-round pill: every button and the jumplinks tab bar."),
-        "bar": lit(px(val("tab-bar", "borderTopLeftRadius") or 120), "dimension", src("tab-bar", "borderTopLeftRadius"), "The jumplinks pill bar (120px — the bar itself)."),
-        "card": lit(px(val("card-link", "borderTopLeftRadius") or 8), "dimension", src("card-link", "borderTopLeftRadius"), "The announcement card link radius (8px)."),
-        "control": lit(px(val("nav-link", "borderTopLeftRadius") or 4), "dimension", src("nav-link", "borderTopLeftRadius"), "Small controls: nav links, menu items, the drawer button (4px)."),
+        "pill": lit(px(m("cert-cta", "borderTopLeftRadius")), "dimension", src("cert-cta", "borderTopLeftRadius"), "The fully-round pill: every button and the jumplinks tab bar."),
+        "bar": lit(px(m("tab-bar", "borderTopLeftRadius")), "dimension", src("tab-bar", "borderTopLeftRadius"), "The jumplinks pill bar (120px — the bar itself)."),
+        "card": lit(px(m("card-link", "borderTopLeftRadius")), "dimension", src("card-link", "borderTopLeftRadius"), "The announcement card link radius (8px)."),
+        "control": lit(px(m("nav-link", "borderTopLeftRadius")), "dimension", src("nav-link", "borderTopLeftRadius"), "Small controls: nav links, menu items, the drawer button (4px)."),
     },
     "shadow": {
         "elevation-1": lit(
-            [{"offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px", "color": "rgba(60, 64, 67, 0.3)"},
-             {"offsetX": "0px", "offsetY": "1px", "blur": "3px", "spread": "1px", "color": "rgba(60, 64, 67, 0.15)"}],
+            shadow(m("tab-bar", "boxShadow")),
             "shadow", src("tab-bar", "boxShadow"), "The glue elevation the jumplinks bar and hovered buttons share."),
         "button-pressed": lit(
-            [{"offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px", "color": "rgba(60, 64, 67, 0.3)"},
-             {"offsetX": "0px", "offsetY": "2px", "blur": "6px", "spread": "2px", "color": "rgba(60, 64, 67, 0.15)"}],
+            shadow(m("cert-cta", "boxShadow", "pressed")),
             "shadow", src("cert-cta", "boxShadow", "pressed"), "The deeper elevation a pressed button paints."),
     },
     "space": {
-        "button": {"x": lit(px(val("cert-cta", "paddingLeft") or 16), "dimension", src("cert-cta", "paddingLeft")),
-                   "y": lit(px(val("cert-cta", "paddingTop") or 12), "dimension", src("cert-cta", "paddingTop"))},
-        "nav": {"x": lit(px(val("nav-link", "paddingLeft") or 12), "dimension", src("nav-link", "paddingLeft"))},
-        "tab": {"x": lit(px(val("tab", "paddingLeft") or 8), "dimension", src("tab", "paddingLeft")),
-                "y": lit(px(val("tab", "paddingTop") or 7), "dimension", src("tab", "paddingTop"))},
-        "page": {"x": lit(px(rect("cert-hero").get("x", 72)), "dimension", "measured content-column inset (72px) at 1440 on grow.google's US edition (raw/components-computed.json)", "The 72px page inset: content starts at x=72 on a 1440 canvas (the 1296px column).")},
+        "button": {"x": lit(px(m("cert-cta", "paddingLeft")), "dimension", src("cert-cta", "paddingLeft")),
+                   "y": lit(px(m("cert-cta", "paddingTop")), "dimension", src("cert-cta", "paddingTop"))},
+        "nav": {"x": lit(px(m("nav-link", "paddingLeft")), "dimension", src("nav-link", "paddingLeft"))},
+        "tab": {"x": lit(px(m("tab", "paddingLeft")), "dimension", src("tab", "paddingLeft")),
+                "y": lit(px(m("tab", "paddingTop")), "dimension", src("tab", "paddingTop"))},
+        "page": {"x": lit(px(r("card", "x")), "dimension", src("card", "rect.x", what="rect.x (the content-column inset at 1440)"), "The page inset: the announcement card, the video teaser and the FAQ rows all start at x=72 on a 1440 canvas (the 1296px column).")},
     },
     "focusRing": {
-        "color": lit("#1a73e8", "color", src("nav-link", "boxShadow", "focus-visible", "the 2px focus ring (a box-shadow, not an outline)"), "Keyboard focus is a 2px box-shadow ring offset 1px, never an outline."),
-        "width": lit("2px", "dimension", src("tab", "boxShadow", "focus-visible", "the 2px ring width")),
-        "offset": lit("1px", "dimension", src("promo-link", "outlineOffset", "focus-visible", "the ring offset")),
+        "color": lit(FOCUS_COLOUR, "color", src("nav-link", "boxShadow", "focus-visible", "the 2px focus ring (a box-shadow, not an outline)"), "Keyboard focus is a 2px box-shadow ring offset 1px, never an outline."),
+        "width": lit(ring("tab")[1], "dimension", src("tab", "boxShadow", "focus-visible", "the 2px ring width")),
+        "offset": lit(m("promo-link", "outlineOffset", "focus-visible"), "dimension", src("promo-link", "outlineOffset", "focus-visible", "the ring offset")),
     },
 }
 
 light = {
     "color": {
         "surface": {
-            "base": lit("#ffffff", "color", src("header", "backgroundColor"), "The page ground — header, mega-menu and body all paint white."),
-            "muted": lit("#f8f9fa", "color", src("nav-link", "backgroundColor", "focus-visible"), "The quiet hover wash on controls (grey-50)."),
-            "footer": lit("#eff2f7", "color", src("footer", "backgroundColor"), "The blue-grey footer band."),
-            "dark": lit("#18191d", "color", src("cert-hero", "backgroundColor"), "The editorial dark hero on certificate pages — a section paint, not a theme."),
+            "base": lit(mc("header", "backgroundColor"), "color", src("header", "backgroundColor"), "The page ground — header, mega-menu and body all paint white."),
+            "muted": lit(mc("nav-link", "backgroundColor", "focus-visible"), "color", src("nav-link", "backgroundColor", "focus-visible"), "The quiet hover wash on controls (grey-50)."),
+            "footer": lit(mc("footer", "backgroundColor"), "color", src("footer", "backgroundColor"), "The blue-grey footer band."),
+            "dark": lit(mc("cert-hero", "backgroundColor"), "color", src("cert-hero", "backgroundColor"), "The editorial dark hero on certificate pages — a section paint, not a theme."),
         },
         "ink": {
-            "primary": lit("#202124", "color", src("hero-h1", "color"), "Near-black ink (grey-900)."),
-            "secondary": lit("#3c4043", "color", src("nav-link", "color"), "Nav and body ink (grey-800)."),
-            "tertiary": lit("#5f6368", "color", src("m-drawer-btn", "color"), "Icon-only ink (grey-700)."),
-            "inverse": lit("#ffffff", "color", src("cert-h1", "color"), "Ink on the dark hero and on filled buttons."),
+            "primary": lit(mc("hero-h1", "color"), "color", src("hero-h1", "color"), "Near-black ink (grey-900)."),
+            "secondary": lit(mc("nav-link", "color"), "color", src("nav-link", "color"), "Nav and body ink (grey-800)."),
+            "tertiary": lit(mc("m-drawer-btn", "color"), "color", src("m-drawer-btn", "color"), "Icon-only ink (grey-700)."),
+            "inverse": lit(mc("cert-h1", "color"), "color", src("cert-h1", "color"), "Ink on the dark hero and on filled buttons."),
         },
         "link": {
-            "default": lit("#3186ff", "color", src("breadcrumb", "color"), "The site's painted link/accent blue — brighter than the declared #1a73e8 brand step."),
-            "hover": lit("#3186ff", "color", src("learn-more-btn", "color", "hover")),
-            "hoverWash": lit("rgba(26, 115, 232, 0.04)", "color", src("learn-more-btn", "backgroundColor", "hover"), "The faint brand wash a text link gains on hover."),
-            "pressed": lit("rgba(26, 115, 232, 0.1)", "color", src("learn-more-btn", "backgroundColor", "pressed")),
-            "legacy": lit("#1a73e8", "color", src("card-link", "color"), "The older brand blue still painted by card links (glue-blue-600)."),
+            "default": lit(mc("breadcrumb", "color"), "color", src("breadcrumb", "color"), "The site's painted link/accent blue — brighter than the declared #1a73e8 brand step."),
+            "hover": lit(mc("learn-more-btn", "color", "hover"), "color", src("learn-more-btn", "color", "hover")),
+            "hoverWash": lit(mc("learn-more-btn", "backgroundColor", "hover"), "color", src("learn-more-btn", "backgroundColor", "hover"), "The faint brand wash a text link gains on hover."),
+            "pressed": lit(mc("learn-more-btn", "backgroundColor", "pressed"), "color", src("learn-more-btn", "backgroundColor", "pressed")),
+            "legacy": lit(mc("card-link", "color"), "color", src("card-link", "color"), "The older brand blue still painted by card links (glue-blue-600)."),
         },
         "accent": {"value": "{color.palette.blue.600}", "type": "color", "source": "alias to the declared glue-blue-600", "description": "The declared brand blue (glue-blue-600 #1a73e8): the card-link colour and the focus-ring colour."},
         "line": {
-            "hairline": lit("#dadce0", "color", src("expansion-panel", "borderTopColor"), "The row separator the expansion panels draw (grey-300)."),
+            "hairline": lit(mc("expansion-panel", "borderTopColor"), "color", src("expansion-panel", "borderTopColor"), "The row separator the expansion panels draw (grey-300)."),
         },
         "focus": {"value": "{focusRing.color}", "type": "color", "source": "alias to the measured focus ring"},
     },
     "button": {
         "primary": {
-            "bg": lit("#3186ff", "color", src("cert-cta", "backgroundColor"), "The filled pill — the site's painted action blue."),
-            "bgHover": lit("#185abc", "color", src("cert-cta", "backgroundColor", "hover"), "Hover darkens to glue-blue-800."),
-            "bgPressed": lit("#185abc", "color", src("cert-cta", "backgroundColor", "pressed")),
-            "fg": lit("#ffffff", "color", src("cert-cta", "color")),
+            "bg": lit(mc("cert-cta", "backgroundColor"), "color", src("cert-cta", "backgroundColor"), "The filled pill — the site's painted action blue."),
+            "bgHover": lit(mc("cert-cta", "backgroundColor", "hover"), "color", src("cert-cta", "backgroundColor", "hover"), "Hover darkens to glue-blue-800."),
+            "bgPressed": lit(mc("cert-cta", "backgroundColor", "pressed"), "color", src("cert-cta", "backgroundColor", "pressed")),
+            "fg": lit(mc("cert-cta", "color"), "color", src("cert-cta", "color")),
             "radius": {"value": "{radius.pill}", "type": "dimension", "source": "alias to the measured pill radius"},
             "paddingX": {"value": "{space.button.x}", "type": "dimension", "source": "alias to the measured button padding"},
             "paddingY": {"value": "{space.button.y}", "type": "dimension", "source": "alias to the measured button padding"},
@@ -224,22 +263,22 @@ light = {
         },
     },
     "banner": {
-        "bg": lit("#ffffff", "color", src("promo-banner", "backgroundColor") or "measured transparent — the promo text paints on white"),
-        "link": lit("#3186ff", "color", src("promo-banner", "color"), "The promo copy colour; the Enroll now tail is a filled pill."),
+        "bg": lit(mc("promo-banner", "backgroundColor"), "color", src("promo-banner", "backgroundColor"), "The promo paragraph itself paints nothing (transparent); the bar's fill is on an ancestor the capture did not measure, so it is not recorded (recapture needed, see the README's gaps)."),
+        "link": lit(mc("promo-banner", "color"), "color", src("promo-banner", "color"), "The promo copy colour: white type on the bar's fill (the fill itself was not measured)."),
     },
     "tab": {
-        "bar": {"bg": lit("#ffffff", "color", src("tab-bar", "backgroundColor")), "shadow": {"value": "{shadow.elevation-1}", "type": "shadow", "source": "alias to the measured bar elevation"}, "radius": {"value": "{radius.bar}", "type": "dimension", "source": "alias to the measured bar radius"}},
+        "bar": {"bg": lit(mc("tab-bar", "backgroundColor"), "color", src("tab-bar", "backgroundColor")), "shadow": {"value": "{shadow.elevation-1}", "type": "shadow", "source": "alias to the measured bar elevation"}, "radius": {"value": "{radius.bar}", "type": "dimension", "source": "alias to the measured bar radius"}},
         "item": {
-            "fg": lit("#3c4043", "color", src("tab", "color")),
-            "bgHover": lit("#f8f9fa", "color", src("tab", "backgroundColor", "hover")),
-            "bgPressed": lit("#f1f3f4", "color", src("tab", "backgroundColor", "pressed")),
+            "fg": lit(mc("tab", "color"), "color", src("tab", "color")),
+            "bgHover": lit(mc("tab", "backgroundColor", "hover"), "color", src("tab", "backgroundColor", "hover")),
+            "bgPressed": lit(mc("tab", "backgroundColor", "pressed"), "color", src("tab", "backgroundColor", "pressed")),
         },
     },
     "surface": {
         "hero": {"bg": {"value": "{color.surface.dark}", "type": "color", "source": "alias to the dark hero surface"}, "ink": {"value": "{color.ink.inverse}", "type": "color", "source": "alias to inverse ink"}},
     },
     "stat": {
-        "number": lit("#202124", "color", src("stat-chip", "color"), "The measured stat figure colour; sibling stats paint one of the four brand hues (the screenshots show red/blue/yellow/green numbers — only the first is measured)."),
+        "number": lit(mc("stat-chip", "color"), "color", src("stat-chip", "color"), "The measured stat figure colour; sibling stats paint one of the four brand hues (the screenshots show red/blue/yellow/green numbers — only the first is measured)."),
     },
     # DESIGN.md reads component tokens out of the colour set's `component`
     # group (grok's convention): colour-role aliases plus the measured
@@ -278,7 +317,6 @@ light = {
             "height": {"value": "{geometry.footer.height}", "type": "dimension", "source": "alias to the measured footer height"},
         },
         "banner": {
-            "bg": {"value": "{banner.bg}", "type": "color", "source": "alias to the measured promo banner paint"},
             "height": {"value": "{geometry.banner.height}", "type": "dimension", "source": "alias to the measured promo anchor height"},
         },
         "megaMenu": {
@@ -289,26 +327,26 @@ light = {
 }
 
 component = {
-    "header": {"height": lit(px(rect("header").get("h", 64)), "dimension", src("header", "rect.height"), "The 64px top bar at 1440 and 390 wide."),
-               "width": lit(px(rect("header").get("w", 1440)), "dimension", src("header", "rect.width"))},
-    "nav": {"itemHeight": lit(px(rect("nav-link").get("h", 48)), "dimension", src("nav-link", "rect.height"))},
-    "megaMenu": {"height": lit(px(rect("mega-panel").get("h", 623)), "dimension", src("mega-panel", "rect.height")),
-                 "width": lit(px(rect("mega-panel").get("w", 1440)), "dimension", src("mega-panel", "rect.width"), "The full-bleed panel." )},
-    "button": {"height": lit(px(rect("cert-cta").get("h", 50)), "dimension", src("cert-cta", "rect.height"))},
-    "drawerButton": {"size": lit(px(rect("m-drawer-btn").get("w", 48)), "dimension", src("m-drawer-btn", "rect.width"), "The 48px square drawer toggle at 390 wide.")},
-    "jumplink": {"height": lit(px(rect("tab").get("h", 38)), "dimension", src("tab", "rect.height"))},
-    "banner": {"height": lit(px(rect("promo-banner").get("h", 20)), "dimension", src("promo-banner", "rect.height"), "The promo anchor's own box; the painted bar is its paragraph parent.")},
-    "video": {"width": lit(px(rect("video-teaser").get("w", 616.5)), "dimension", src("video-teaser", "rect.width")),
-              "height": lit(px(rect("video-teaser").get("h", 346.5)), "dimension", src("video-teaser", "rect.height"))},
-    "hero": {"height": lit(px(rect("cert-hero").get("h", 720)), "dimension", src("cert-hero", "rect.height"))},
-    "card": {"announcement": {"width": lit(px(rect("card").get("w", 1296)), "dimension", src("card", "rect.width")),
-                              "height": lit(px(rect("card").get("h", 285)), "dimension", src("card", "rect.height"))},
-             "certificate": {"width": lit(px(rect("cert-card").get("w", 370)), "dimension", src("cert-card", "rect.width")),
-                             "height": lit(px(rect("cert-card").get("h", 386)), "dimension", src("cert-card", "rect.height"))}},
-    "footer": {"height": lit(px(rect("footer").get("h", 837)), "dimension", src("footer", "rect.height"))},
-    "select": {"width": lit(px(rect("footer-lang").get("w", 233)), "dimension", src("footer-lang", "rect.width"))},
-    "expansionPanel": {"rowHeight": lit(px(rect("expansion-panel").get("h", 93)), "dimension", src("expansion-panel", "rect.height"))},
-    "mobileHeader": {"height": lit(px(rect("m-header").get("h", 64)), "dimension", src("m-header", "rect.height", "default", "rect.height at 390 wide"))},
+    "header": {"height": lit(px(r("header", "h")), "dimension", src("header", "rect.height"), "The 64px top bar at 1440 and 390 wide."),
+               "width": lit(px(r("header", "w")), "dimension", src("header", "rect.width"))},
+    "nav": {"itemHeight": lit(px(r("nav-link", "h")), "dimension", src("nav-link", "rect.height"))},
+    "megaMenu": {"height": lit(px(r("mega-panel", "h")), "dimension", src("mega-panel", "rect.height")),
+                 "width": lit(px(r("mega-panel", "w")), "dimension", src("mega-panel", "rect.width"), "The full-bleed panel." )},
+    "button": {"height": lit(px(r("cert-cta", "h")), "dimension", src("cert-cta", "rect.height"))},
+    "drawerButton": {"size": lit(px(r("m-drawer-btn", "w")), "dimension", src("m-drawer-btn", "rect.width"), "The 48px square drawer toggle at 390 wide.")},
+    "jumplink": {"height": lit(px(r("tab", "h")), "dimension", src("tab", "rect.height"))},
+    "banner": {"height": lit(px(r("promo-banner", "h")), "dimension", src("promo-banner", "rect.height"), "The promo anchor's own box; the painted bar is its paragraph parent.")},
+    "video": {"width": lit(px(r("video-teaser", "w")), "dimension", src("video-teaser", "rect.width")),
+              "height": lit(px(r("video-teaser", "h")), "dimension", src("video-teaser", "rect.height"))},
+    "hero": {"height": lit(px(r("cert-hero", "h")), "dimension", src("cert-hero", "rect.height"))},
+    "card": {"announcement": {"width": lit(px(r("card", "w")), "dimension", src("card", "rect.width")),
+                              "height": lit(px(r("card", "h")), "dimension", src("card", "rect.height"))},
+             "certificate": {"width": lit(px(r("cert-card", "w")), "dimension", src("cert-card", "rect.width")),
+                             "height": lit(px(r("cert-card", "h")), "dimension", src("cert-card", "rect.height"))}},
+    "footer": {"height": lit(px(r("footer", "h")), "dimension", src("footer", "rect.height"))},
+    "select": {"width": lit(px(r("footer-lang", "w")), "dimension", src("footer-lang", "rect.width"))},
+    "expansionPanel": {"rowHeight": lit(px(r("expansion-panel", "h")), "dimension", src("expansion-panel", "rect.height"))},
+    "mobileHeader": {"height": lit(px(r("m-header", "h")), "dimension", src("m-header", "rect.height", "default", "rect.height at 390 wide"))},
 }
 
 # Motion comes from the probe: build_tokens.py turns raw/motion.json into the

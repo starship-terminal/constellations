@@ -29,12 +29,12 @@ colors:
   color-neutral-alpha-veil-5: "rgba(239, 239, 239, 0.05)"
   color-neutral-alpha-ink-75: "rgba(239, 239, 239, 0.75)"
   color-neutral-alpha-ink-90: "rgba(239, 239, 239, 0.9)"
-  color-neutral-alpha-white-30: "oklab(0.999994 0.0000455678 0.0000200868 / 0.3)"
-  color-neutral-alpha-white-75: "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)"
-  color-neutral-alpha-white-85: "oklab(0.999994 0.0000455678 0.0000200868 / 0.85)"
-  color-neutral-alpha-black-50: "oklab(0.144787 0.00000661612 0.00000289828 / 0.5)"
-  color-neutral-alpha-black-80: "oklab(0.144787 0.00000661612 0.00000289828 / 0.8)"
-  color-neutral-alpha-placeholder-50: "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)"
+  color-neutral-alpha-white-30: "rgba(255, 255, 255, 0.3)"
+  color-neutral-alpha-white-75: "rgba(255, 255, 255, 0.75)"
+  color-neutral-alpha-white-85: "rgba(255, 255, 255, 0.85)"
+  color-neutral-alpha-black-50: "rgba(10, 10, 10, 0.5)"
+  color-neutral-alpha-black-80: "rgba(10, 10, 10, 0.8)"
+  color-neutral-alpha-placeholder-50: "rgba(255, 255, 255, 0.5)"
   color-accent-pink: "#ff13b1"
   color-accent-pink-hover: "#ff4bc4"
   color-accent-pill: "#ff3dae"
@@ -50,16 +50,16 @@ colors:
   surface-raised: "#2a2a2a"
   surface-hover: "#373737"
   surface-veil: "rgba(239, 239, 239, 0.05)"
-  surface-overlay: "oklab(0.144787 0.00000661612 0.00000289828 / 0.5)"
-  surface-overlay-hover: "oklab(0.144787 0.00000661612 0.00000289828 / 0.8)"
+  surface-overlay: "rgba(10, 10, 10, 0.5)"
+  surface-overlay-hover: "rgba(10, 10, 10, 0.8)"
   text-primary: "#ffffff"
   text-app: "#efefef"
   text-muted: "#959595"
-  text-dim: "oklab(0.999994 0.0000455678 0.0000200868 / 0.3)"
+  text-dim: "rgba(255, 255, 255, 0.3)"
   text-app-dim: "rgba(239, 239, 239, 0.75)"
   text-on-light: "#0a0a0a"
   text-on-accent: "#ffffff"
-  text-placeholder: "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)"
+  text-placeholder: "rgba(255, 255, 255, 0.5)"
   text-placeholder-app: "#959595"
   border-card: "#222222"
   border-field: "#2a2a2a"
@@ -69,7 +69,7 @@ colors:
   action-bg: "#ffffff"
   action-fg: "#0a0a0a"
   action-bg-hover: "#c4c4c4"
-  action-bg-hover-soft: "oklab(0.999994 0.0000455678 0.0000200868 / 0.85)"
+  action-bg-hover-soft: "rgba(255, 255, 255, 0.85)"
   action-app-bg: "#efefef"
   action-app-bg-hover: "rgba(239, 239, 239, 0.9)"
   action-nav-bg-hover: "#373737"
@@ -96,7 +96,7 @@ colors:
   component-button-nav-text-hover: "#ffffff"
   component-button-news-bg: "#ffffff"
   component-button-news-text: "#0a0a0a"
-  component-button-news-bg-hover: "oklab(0.999994 0.0000455678 0.0000200868 / 0.85)"
+  component-button-news-bg-hover: "rgba(255, 255, 255, 0.85)"
   component-button-accent-bg: "#ff13b1"
   component-button-accent-bg-hover: "#ff4bc4"
   component-button-accent-text: "#ffffff"
@@ -342,7 +342,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **One theme only.** Both surfaces paint dark; no light theme, no switcher. `tokens.json` ships a dark set only.
 - **Two surfaces, two page fields.** `#000` is the marketing page (Tailwind `bg-[#000]`); `#0a0a0a` (`--color-black`, `bg-back`) is the app-shell page. The token file keeps both as `dark.surface.page` and `dark.surface.app` — do not collapse them.
 - **The accents are measured, not declared.** `#ff13b1`/`#ff4bc4`/`#ff3dae` and `#2c5cff`/`#5a65ff` live in the sheets as literal hover/bg utilities; the tokens cite the components they were measured on.
-- **Two different focus conventions.** Marketing links draw the browser's own 1px `#005fcc` auto outline (tokenised `dark.focus.ua`); app-shell controls keep Tailwind's transparent 2px-offset preset and signal focus by swapping their border to grey-1. Neither is a designed ring in the usual sense.
+- **Two different focus conventions, neither a designed ring.** Marketing links draw the browser's own 1px `auto` outline; `#005fcc` (`dark.focus.ua`) is the colour Chrome reports for it, the UA default, not a colour the product paints. App-shell buttons keep Tailwind's `outline: 2px solid transparent` preset and show no measured change on keyboard focus; only the email field swaps its border to grey-1, and that on click focus. `billing-yearly`'s keyboard focus failed, so its focus look is uncaptured.
+- **`gradient.overlay` was entered by hand.** No rule or component in `raw/` holds the bottom media fade; its source says so and it needs a recapture.
 - **The pill radius is nominal `9999px`.** Chrome resolves Tailwind's `rounded-full` (`calc(infinity * 1px)`) to 33554432px in computed style; the token records 9999px, the value a reader expects.
 - **Quantised screenshots and crops.** `screenshots/` and `components/crops/` are 256-colour PNGs; the crops' in-run quantize step failed (the runner's `python3` lacked Pillow) so they were quantised after capture with the same recipe — the `cropError` keys in [raw/components-computed.json](raw/components-computed.json) record the failure. Read exact colours from tokens or the raw files.
 - **Animated content moves between runs.** The hero's orbiting asset cards, gradient title and the auto-advancing testimonial carousel mean two captures of the same view differ.

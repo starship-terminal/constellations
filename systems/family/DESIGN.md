@@ -40,7 +40,7 @@ colors:
   color-selection-color: "#ffffff"
   background-page: "#ffffff"
   background-card: "#ffffff"
-  background-field: "rgba(0, 0, 0, 0)"
+  background-field: "#f6f7f9"
   text-ink: "#343433"
   text-muted: "rgba(71, 70, 69, 0.7)"
   text-low: "#848281"

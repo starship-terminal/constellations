@@ -114,13 +114,20 @@ def props(v):
         o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
     t = v.get("textStyle")
     # ManyChat buttons duplicate the label. The first span is often
-    # transparent (button__before). A white computed colour on a white fill
-    # is that hidden copy too: the crop shows dark ink on white and white
-    # ink on the pink and black fills.
+    # transparent (button__before), and a white computed colour on a white
+    # fill is that hidden copy too. The table reports the colour that was
+    # measured and says the visible copy was not read; it never substitutes
+    # a colour picked from the crop.
     ink = colour(t["color"]) if t else colour(s["color"])
     bg = colour(s["backgroundColor"])
+    note = ""
+    if ink == "transparent" and t:
+        ink = colour(s["color"])
+        note = "the element's computed colour; its first label span is a transparent copy"
     if ink == "transparent" or (ink.startswith("#ffffff") and (bg.startswith("#ffffff") or "neutral-0" in bg)):
-        ink = "#0f0f0f `core.color.raw.neutral-900`" if bg.startswith("#ffffff") or "neutral-0" in bg else "#ffffff `core.color.raw.neutral-0`"
+        note = "measured white on a white fill, so the visible label's colour was not read"
+    if note:
+        ink += f" ({note})"
     face = t if t else s
     o["text"] = f"{font(face['fontSize'], face['lineHeight'], face['fontWeight'], face['fontFamily'])}, {ink}"
     if s["transitionDuration"] not in ("0s", ""):

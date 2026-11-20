@@ -8,7 +8,7 @@ Measured on public signed-out pages, 2026-11-18, light, 1440. Hover is a real po
 | billing-annual | default, hover | pricing; not selected | [billing-annual](components/crops/billing-annual-default.png) |
 | billing-monthly | default | pricing; selected | [billing-monthly](components/crops/billing-monthly-default.png) |
 | body-copy | default | home | [body-copy](components/crops/body-copy-default.png) |
-| continue-button | default, hover, pressed | login wall; pressed is forced :active, not a click | [continue-button](components/crops/continue-button-default.png) |
+| continue-button | default, hover, pressed, focus-visible (focus could not be captured) | login wall; pressed is forced :active, not a click | [continue-button](components/crops/continue-button-default.png) |
 | copy-link | default, hover, focus-visible | public share; not clicked | [copy-link](components/crops/copy-link-default.png) |
 | email-field | default, focused, filled | login wall | [email-field](components/crops/email-field-default.png) |
 | faq | default, hover, opened | pricing | [faq](components/crops/faq-default.png) |
@@ -16,7 +16,7 @@ Measured on public signed-out pages, 2026-11-18, light, 1440. Hover is a real po
 | menu-item | default, hover | Apps menu row | [menu-item](components/crops/menu-item-default.png) |
 | menu-panel | default | Apps menu | [menu-panel](components/crops/menu-panel-default.png) |
 | nav-link | default, hover, focus-visible, pressed | home nav | [nav-link](components/crops/nav-link-default.png) |
-| nav-menu | default, hover | home nav | [nav-menu](components/crops/nav-menu-default.png) |
+| nav-menu | default, hover, focus-visible (focus could not be captured) | home nav | [nav-menu](components/crops/nav-menu-default.png) |
 | plan-card | default | pricing Starter card | [plan-card](components/crops/plan-card-default.png) |
 | plan-cta | default, hover | pricing Starter; not followed | [plan-cta](components/crops/plan-cta-default.png) |
 | popular-cta | default, hover, focus-visible | pricing Business + AI filled action; not followed | [popular-cta](components/crops/popular-cta-default.png) |

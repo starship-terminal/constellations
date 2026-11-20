@@ -21,7 +21,7 @@
 // never pressed.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE, pickTool, openMainMenu, setTheme, closeMenus, closeDialog } from './lib.mjs';
+import { BASE, M, launch, patch, open, domFind, styleOf, crop, centre, RAW, REF, CROPS, UA, UA_MOBILE, pickTool, openMainMenu, setTheme, closeMenus, closeDialog } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -133,7 +133,7 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -185,7 +185,22 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (opts.noToggle) via = 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (st === 'focus-visible' && via === 'focus failed') {
+        // Keyboard focus never reached the element, so a reading now would be the element at rest
+        // saved as its focus. Record the miss instead (the builders list it as "focus could not be
+        // captured"), and drop the crop an earlier run saved for this state.
+        // An earlier run's real focus reading is kept, with the failed retry noted beside it.
+        const prevSt = out.components[key].states[st];
+        if (prevSt?.style && prevSt.via !== 'focus failed') {
+          prevSt.rerunError = 'focus failed: keyboard focus did not reach the element';
+          log('  !', key, st, 'focus failed; earlier reading kept');
+        } else {
+          const old = prevSt?.crop && path.resolve(REF, prevSt.crop);
+          if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
+          out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via, run };
+          log('  -', key, st, 'skipped: focus failed');
+        }
+      } else await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
       if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
@@ -194,6 +209,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
+  }
+  // A listed state that failed its re-read kept the earlier evidence under
+  // rerunError (and its own earlier `run`); the entry then republishes under
+  // the earlier run's page/run/url and records the miss, so retained readings
+  // never carry the new run's date.
+  if (keep && list.some((st) => out.components[key].states[st]?.rerunError)) {
+    Object.assign(out.components[key], keep);
+    out.components[key].recaptureMissed = run;
   }
   await reset();
 }
@@ -455,7 +478,9 @@ async function library() {
     if (await tab.count()) { await tab.click({ timeout: 4000 }).catch(() => tab.evaluate((el) => el.click())); await page.waitForTimeout(900); }
     return (await on()) ? 'toggled the search tab to reveal the field' : 'clicked the search tab; no field reported';
   }, noScroll: true, noReset: true });
-  await S('lib-empty', q('.sidebar [class*="empty" i], .sidebar div').filter({ hasText: /no items|empty|libraries/i }).filter({ visible: true }).last(), ['default'], { group: g, title: 'Library empty state', desc: 'The "no shapes yet" empty-state text inside the panel.', sel: 'library empty state' }, { noScroll: true, noReset: true });
+  // The empty-state text only: a bare `.sidebar div` matching /libraries/ caught the
+  // "Browse libraries" wrapper on 2026-11-13 (README known gaps).
+  await S('lib-empty', q('.sidebar [class*="no-items" i], .sidebar [class*="empty" i]').filter({ hasText: /no items|empty/i }).filter({ hasNotText: /browse libraries/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Library empty state', desc: 'The "no shapes yet" empty-state text inside the panel.', sel: 'library empty state' }, { noScroll: true, noReset: true });
   await S('lib-browse-btn', q('.sidebar button, .sidebar a').filter({ hasText: /Browse|libraries/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Browse libraries button', desc: 'The "Browse libraries" action — opens the community libraries list; measured never followed.', sel: 'library Browse button' }, { noScroll: true, noReset: true });
   await S('lib-overflow', q('.sidebar button[aria-label*="more" i], .sidebar button[aria-label*="menu" i], .sidebar button.dropdown-menu-button').filter({ visible: true }).first(), B4, { group: g, title: 'Library overflow', desc: 'The "…" overflow menu button at the library head (Reset library, import); measured never pressed.', sel: 'library overflow button' }, { noScroll: true, noReset: true });
   await closeLibrary();

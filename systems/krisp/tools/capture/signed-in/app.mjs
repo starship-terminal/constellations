@@ -161,7 +161,6 @@ async function dumpVars(page, theme) {
       const r = el.getBoundingClientRect();
       return {
         sel, tag: el.tagName.toLowerCase(),
-        text: (el.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 80),
         rect: { x: r.x, y: r.y, w: r.width, h: r.height },
         style: {
           color: s.color, backgroundColor: s.backgroundColor, borderTopColor: s.borderTopColor,
@@ -251,11 +250,14 @@ readings.push(...await captureRun({ mobile: true, theme: 'dark', pages: mobilePa
 fs.mkdirSync(PKG_RAW, { recursive: true });
 fs.writeFileSync(path.join(PKG_RAW, 'app-css-vars.json'), JSON.stringify({
   capturedAt: new Date().toISOString(),
-  note: 'Computed custom properties on the signed-in app. Auth and account ids stripped.',
+  note: 'Computed custom properties on the signed-in app. Values that look like an email, a token or an id are dropped.',
   readings: readings.map((r) => {
+    // Filter on the value, not the name: a design var such as --*-token-* or --author* stays, and
+    // an address, a JWT or a long opaque id is dropped whatever its name.
     const vars = {};
     for (const [k, v] of Object.entries(r.vars || {})) {
-      if (/auth|token|email|userid|session/i.test(k) || /auth|token/i.test(v)) continue;
+      const val = String(v);
+      if (/[^\s@"']+@[^\s@"']+\.[a-z]{2,}/i.test(val) || /\beyJ[\w-]{10,}/.test(val) || /\b[0-9a-f]{24,}\b/i.test(val) || /\b[\w-]{32,}\b/.test(val)) continue;
       vars[k] = v;
     }
     return { ...r, vars };

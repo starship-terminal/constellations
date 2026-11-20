@@ -61,6 +61,8 @@ def norm_color(v):
     -> #rrggbb or rgba(r, g, b, a). Anything else (lab/oklch/… strings that
     only matched a loose colour test) passes through unchanged."""
     v = v.strip().lower()
+    # The committed raw/css-vars.json was written before vars.mjs joined its hex digits
+    # ("#9b,9b,9b"); the capture script is fixed, and this reading stays until a recapture.
     m = re.fullmatch(r"#([0-9a-f]{2}),([0-9a-f]{2}),([0-9a-f]{2})", v)
     if m:
         return "#" + "".join(m.groups())
@@ -108,8 +110,10 @@ def parse_shadow(v):
     layers = []
     for part in re.split(r",\s*(?![^()]*\))", v):
         part = part.strip()
-        inset = part.startswith("inset")
-        part = re.sub(r"^inset\s+", "", part)
+        # Chromium writes a computed inset last ("rgba(...) 0px 1px 0px 0px inset"); a declaration
+        # may put it first. Either way the layer is inset.
+        inset = bool(re.search(r"(^|\s)inset(\s|$)", part))
+        part = re.sub(r"(^|\s)inset(?=\s|$)", " ", part).strip()
         col = None
         for pat in (r"^(#[0-9a-f]{2}(?:,[0-9a-f]{2}){2}|#[0-9a-f]{3,8})\s+",
                     r"^(rgba?\([^)]*\)|hsla?\([^)]*\)|(?:ok)?lab\([^)]*\)|(?:ok)?lch\([^)]*\))\s+",
@@ -120,13 +124,16 @@ def parse_shadow(v):
                 col = m.group(1)
                 part = (part[: m.start()] + part[m.end():]).strip()
                 break
-        nums = re.findall(r"-?\d*\.?\d+(?:px|rem)", part)
-        if len(nums) < 2:
-            raise ValueError(f"shadow layer has <2 lengths: {part!r}")
+        words = part.split()
+        nums = [w if re.search(r"(px|rem)$", w) else w + "px" for w in words if re.fullmatch(r"-?\d*\.?\d+(?:px|rem)?", w)]
+        if len(nums) < 2 or len(nums) != len(words):
+            raise ValueError(f"shadow layer is not 2-4 lengths and a colour: {part!r}")
+        if col is None:
+            raise ValueError(f"shadow layer has no colour: {part!r}")
         layer = {"offsetX": nums[0], "offsetY": nums[1],
                  "blur": nums[2] if len(nums) > 2 else "0px",
                  "spread": nums[3] if len(nums) > 3 else "0px",
-                 "color": col or "rgba(0, 0, 0, 0.5)"}
+                 "color": col}
         if inset:
             layer["inset"] = True
         layers.append(layer)
@@ -280,11 +287,10 @@ tokens = {
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
-
-
 def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})

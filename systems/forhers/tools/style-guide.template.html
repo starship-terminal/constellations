@@ -214,7 +214,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     if (typeof t.v === 'object') continue;
     m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   }
-  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : typeof t.v === 'object' ? Object.entries(t.v).map(([k, x]) => k + ' ' + (Array.isArray(x) ? 'cubic-bezier(' + x.join(', ') + ')' : x)).join(', ') : t.v)}</span></div>`;
   $('#spacing-out').innerHTML = m;
 })();
 

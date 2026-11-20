@@ -97,10 +97,14 @@ def norm_color(v):
         h = m.group(1).lower()
         if len(h) in (3, 4):
             h = "".join(c * 2 for c in h)
+        if len(h) == 8 and h[6:] != "ff":  # keep the alpha of #rrggbbaa
+            return f"rgba({int(h[0:2], 16)}, {int(h[2:4], 16)}, {int(h[4:6], 16)}, {'%g' % round(int(h[6:8], 16) / 255, 3)})"
         return "#" + h[:6]
-    m = re.fullmatch(r"rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)", v)
+    m = re.fullmatch(r"rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+%?))?\)", v)
     if m:
         r, g, b, a = m.groups()
+        if a is not None and a.endswith("%"):  # a percentage alpha
+            a = "%g" % (float(a[:-1]) / 100)
         if a is None or float(a) >= 1:
             return "#%02x%02x%02x" % (int(float(r)), int(float(g)), int(float(b)))
         return f"rgba({int(float(r))}, {int(float(g))}, {int(float(b))}, {'%g' % float(a)})"
@@ -485,8 +489,6 @@ for key, cname, state, props_, desc in [
                 ty = {"fontSize": "dimension", "fontWeight": "fontWeight",
                       "fontFamily": "fontFamily", "letterSpacing": "dimension"}[p]
                 v = t[p]
-                if p == "letterSpacing" and str(v).endswith("em"):
-                    v = str(v)[:-2] + "rem"
                 if p == "letterSpacing" and v in ("normal", ""):
                     continue
                 entry[p] = {"value": v, "type": ty,

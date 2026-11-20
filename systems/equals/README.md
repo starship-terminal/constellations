@@ -60,7 +60,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | light | 19.93:1 pass | 19.93:1 pass | 5.65:1 pass | 5.65:1 pass |
 | dark | 15.05:1 pass | 13.70:1 pass | 7.61:1 pass | 6.93:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.docs.focus` #7839e5; `light.docs.focus` #7839e5; `light.signin.focus` #7c3aed; `light.marketing.focus` #101010.
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.docs.focus` #7839e5; `light.docs.focus` #7839e5; `light.signin.focus` #7c3aed.
 
 <!-- brief:end -->
 
@@ -120,3 +120,10 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Mobile pass | yes — 390 x 844 on home, pricing, the use-case page, sign-in and docs dark |
 | Icons | layout gap — no standalone SVG set lifted; product glyphs visible in crops/screenshots |
 | Fonts | declared and measured; served faces (Unica77, Serrif Condensed, Aeonik Fono/Pro, neue-haas-unica, JetBrains Mono, Paper Mono) not redistributed |
+
+## Known gaps
+
+- `faq` (FAQ item): `default` and `opened` are the same reading (both 230px, expanded). The capture ran the accordion toggle before every state, so the closed state was never read. Needs a recapture; `measure.mjs` now runs the toggle only for `opened` (edited, not run).
+- `m-drawer` (Mobile nav drawer): the reading is the 390 x 52 header nav, not the drawer the hamburger opens; the selector's `.header__nav, …, nav` first match caught it. Needs a recapture; `measure.mjs` now finds the tall panel holding the drawer links after opening it (edited, not run).
+- `wb-toolbar-button`, `wb-sheet-tab`, `signin-footer` and `m-hamburger`: keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md leaves them out and `raw/measurements.md` shows them as Skipped. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
+- Left out on purpose, listed under `_gaps` in `raw/component-tokens.json`: `light.signin.card` (the card computes a transparent background; `light.signin.canvas` is the surface behind it) and `light.marketing.focus` (the marketing links draw the browser's default `auto` focus ring in #101010, not a product colour).

@@ -100,10 +100,10 @@ The nav item that opens the mega menu of solutions pages on hover. Read as `nav-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 90 x 36; padding 0px 14px; radius 7px; background #ffffff `color.white`; text Inter 14/20 600, #111827 `color.gray.900` |
+| default (same: pressed) | size 90 x 36; padding 0px 14px; radius 7px; background #ffffff `color.white`; text Inter 14/20 600, #111827 `color.gray.900` |
 | hover | background #f3f4f6 `color.gray.100` |
 
-![Solutions menu link default](components/crops/nav-solutions-default.png) ![Solutions menu link hover](components/crops/nav-solutions-hover.png) ![Solutions menu link focus-visible](components/crops/nav-solutions-focus-visible.png) ![Solutions menu link pressed](components/crops/nav-solutions-pressed.png)
+![Solutions menu link default](components/crops/nav-solutions-default.png) ![Solutions menu link hover](components/crops/nav-solutions-hover.png) ![Solutions menu link pressed](components/crops/nav-solutions-pressed.png)
 
 #### Solutions menu, open
 The link after its own hover opens the menu; the crop holds the opened panel region. Read as `nav-solutions-open` on the home page.

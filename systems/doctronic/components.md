@@ -54,7 +54,7 @@ Screenshots are named `{page}-{theme}-state.png`: the app surfaces (home, /chat/
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 27 components were given a real keyboard focus. 21 draw an outline ring: `signup-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `login-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `menu-item` (2px solid #1d4fd7 `color.blue.700`, offset 2px), `nav-link` (2px solid #3c83f6 `color.blue.500`, offset 2px), `signup-free` (2px solid #3c83f6 `color.blue.500`, offset 0px), `sidebar-login` (2px solid #3c83f6 `color.blue.500`, offset 0px), `support-link` (1px auto #2463eb `color.blue.600`, offset 1px), `starter` (2px solid #1b1b18 `color.neutral.900`, offset 2px), `oauth-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `create-account-link` (1px auto #005fcc, offset 1px), `check-button` (1px auto #005fcc, offset 0px), `mkt-nav-pill` (1px auto #005fcc, offset 1px), `try-button` (1px auto #005fcc, offset 1px), `mkt-footer-link` (1px auto #005fcc, offset 1px), `article-card` (on a child: 1px auto rgb(0, 95, 204) offset 1px), `telehealth-cta` (1px auto #005fcc, offset 1px), `d-signup-button` (2px solid #61a6fa `color.blue.400`, offset 0px), `pause-control` (2px solid #3c83f6 `color.blue.500`, offset 2px), `category-chip` (1px auto #005fcc, offset 1px), `footer-social-icon` (1px auto #005fcc, offset 1px), `footer-legal-link` (1px auto #005fcc, offset 1px). 6 draw a focus ring as a shadow instead: `menu-button`, `start-chat-button`, `sidebar-toggle`, `send-button`, `email-login-button`, `dialog-close`.
+**Focus.** 27 components were given a real keyboard focus. 21 draw an outline ring: `signup-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `login-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `menu-item` (2px solid #1d4fd7 `color.blue.700`, offset 2px), `nav-link` (2px solid #3c83f6 `color.blue.500`, offset 2px), `signup-free` (2px solid #3c83f6 `color.blue.500`, offset 0px), `sidebar-login` (2px solid #3c83f6 `color.blue.500`, offset 0px), `support-link` (1px auto #2463eb `color.blue.600`, offset 1px), `starter` (2px solid #1b1b18 `color.neutral.900`, offset 2px), `oauth-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `create-account-link` (1px auto #005fcc, offset 1px), `check-button` (1px auto #005fcc, offset 0px), `mkt-nav-pill` (1px auto #005fcc, offset 1px), `try-button` (1px auto #005fcc, offset 1px), `mkt-footer-link` (1px auto #005fcc, offset 1px), `article-card` (on a child: 1px auto rgb(0, 95, 204) offset 1px), `telehealth-cta` (1px auto #005fcc, offset 1px), `d-signup-button` (2px solid #61a6fa `color.blue.400`, offset 0px), `pause-control` (2px solid #3c83f6 `color.blue.500`, offset 2px), `category-chip` (1px auto #005fcc, offset 1px), `footer-social-icon` (1px auto #005fcc, offset 1px), `footer-legal-link` (1px auto #005fcc, offset 1px). 6 draw a focus ring as a shadow instead: `menu-button`, `start-chat-button`, `sidebar-toggle`, `send-button`, `email-login-button`, `dialog-close`. Focus could not be captured on 2 more (keyboard focus never landed on them, so their readings are left out): `testimonial-arrow`, `condensed-button`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -139,6 +139,8 @@ aria-label "open sidebar": opens the site-menu drawer. The drawer was opened and
 #### Wordmark
 Read as `logo` on the home page.
 
+**Known wrong; recapture needed.** The reading is the 620 x 25 logo wrapper `div`, not the wordmark link.
+
 **Values (default).** size 620 x 25; background transparent; text -apple-system 16/normal 400, #1b1b18 `color.neutral.900`; icon 115.89 x 22, #1b1b18 `color.neutral.900`.
 
 ![Wordmark default](components/crops/logo-default.png)
@@ -154,6 +156,8 @@ Child layers that carry the look: div 320x1 border 1px dashed rgba(27, 27, 24, 0
 
 #### Menu drawer item
 A row in the site-menu drawer. Measured while the drawer was open; links were never followed. Read as `menu-item` on the home page.
+
+**Known wrong; recapture needed.** The reading is the "About Chat" expandable row, the same node as `menu-item-expand`, not a link row.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -251,6 +255,8 @@ Read as `hipaa-badge` on the home page.
 
 #### Feature card
 Read as `feature-card` on the home page.
+
+**Known wrong; recapture needed.** The reading is the testimonial `article` (the same card as `quote-card`), not a feature card.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -427,6 +433,8 @@ New chat: the highlighted row in the expanded rail. Read as `nav-link-current` o
 #### Sidebar link
 Read as `nav-link` on the /chat/ page.
 
+**Known wrong; recapture needed.** The reading is the highlighted "New chat" row, the same node as `nav-link-current`, not a resting sidebar link.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 224 x 36; padding 8px; radius 8px; background #f0f6ff `color.blue.50`; text geist 14/19.6 500, #2463eb `color.blue.600`; icon 20 x 20, #2463eb `color.blue.600` |
@@ -496,6 +504,8 @@ Not on the page when it was captured.
 #### Chat hero
 The centered empty-state: the Fraunces greeting and the large input card. Read as `chat-hero` on the /chat/ page.
 
+**Known wrong; recapture needed.** The reading is the whole 1440 x 900 `main`, not the centred empty state.
+
 **Values (default).** size 1440 x 900; background #fdfdf7 `color.neutral.50`; text geist 14/19.6 500, #2463eb `color.blue.600`; icon 115.89 x 22, #1b1b18 `color.neutral.900`.
 
 ![Chat hero default](components/crops/chat-hero-default.png)
@@ -509,6 +519,8 @@ Read as `chat-greeting` on the /chat/ page.
 
 #### Chat input card
 The large raised card holding the textarea and the round Send button; expands when focused. Read as `input-card` on the /chat/ page.
+
+**Known wrong; recapture needed.** The reading is the transparent 652 x 148 `.wrapper.chatInput`, not the painted `form` card.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -811,6 +823,8 @@ The sign-in card reached by the public ?modal=signin URL: a centered raised dial
 
 #### Sign-in dialog
 Reached by the public ?modal=signin URL: a centered raised card over a dimmed page. Nothing inside it was pressed. Read as `signin-dialog` on the home (the ?modal=signin URL) page.
+
+**Known wrong; recapture needed.** The reading is the transparent inner `section`, not the painted `div.modal` card.
 
 **Values (default).** size 393 x 583.45; background transparent; text fraunces 32/37.44 400, #1b1b18 `color.neutral.900`; icon 16 x 16, #1b1b18 `color.neutral.900`; layers img.doctorImage 78.0x78.0 rgba(0, 0, 0, 0.1) 0px 5px 32px 0px 50%; img.patientImage 45.0x45.0 rgba(0, 0, 0, 0.1) 0px 5px 32px 0px 50%; span.content 329.0x43.6 rgb(36, 99, 235) color(srgb 0.141176 0.388235 0.921569 / 0.39) 0px 4px 7px 0px 52px; span.shimmer 329.0x43.6 52px; span.content 329.0x44.0 T:1px solid color(srgb 0.105882 0.105882 0.0941176 / 0.2) / R:1px solid color(srgb 0.105882 0.105882 0.
 

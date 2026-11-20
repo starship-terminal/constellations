@@ -79,6 +79,8 @@ Stylesheets on tidal.com were readable. The Square Sans stylesheet on squarecdn.
 
 ## What to distrust
 
+The readings were not saved. [raw/readings.json](raw/readings.json) holds the pages, viewports, theme and what was not entered, but no style or custom-property value. So every token read in the inspector is labelled Reconstruction, entered by hand at capture time, and the two values worked out from those stay Derived. A recapture that writes the computed styles and `:root` custom properties to raw/ would make them Measured.
+
 The preview browser returned "The browser is not producing screenshot frames." Nothing in screenshots/ is a capture of the product. Headless Playwright against https://tidal.com/ returned HTTP 403 and a block page, so that shot was deleted and not used.
 
 `dark.color.button.loginDisabled` is white at 0.4 alpha, derived from the disabled Continue opacity. The field stroke is an inset box-shadow, recorded as a border colour. Explore's h1 line-height was not re-read, so the home h1 line-height is stored on that style. The login button's computed line-height was the button height, so the body line-height is stored instead.

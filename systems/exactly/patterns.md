@@ -32,7 +32,7 @@ Headline plus the embedded scheduler at rest inside its iframe: a bordered panel
 
 ## Mobile (390 wide)
 
-A 56px top bar carries the wordmark, a white Join pill and the hamburger (`light.focus.ring-mobile` #e59700 focus ring — the phone chrome is the only place focus paints orange rather than #101010). The hamburger toggles a nav overlay of drawer links; the hero display drops to 27px/36px over the same photograph recipe.
+A 56px top bar carries the wordmark, a white Join pill and the hamburger (`light.focus.ring-mobile` #e59700 focus ring — the colour Chrome's phone emulation uses for its own `auto` ring, as #101010 is on the desktop pass; the site sets no focus colour). The hamburger toggles a nav overlay of drawer links; the hero display drops to 27px/36px over the same photograph recipe.
 
 ## Footer
 

@@ -126,7 +126,7 @@ const mobile = {
   home: { path: '/', wait: 10000, run: async (p, S) => {
     await S.view('default');
     await step('menu', async () => {
-      const m = p.locator('[data-cy="mobilenavhamburgermenu"] button, button[data-cy="mobilenavhamburgermenu"]').filter({ visible: true }).first();
+      let m = p.locator('[data-cy="mobilenavhamburgermenu"] button, button[data-cy="mobilenavhamburgermenu"]').filter({ visible: true }).first();
       if (!(await m.count())) m = p.locator('nav[data-cy="navbar"] button').filter({ visible: true }).last();
       if (await m.count()) { await clickEl(m); await wait(p, 1500); await S.view('menu'); await p.keyboard.press('Escape'); }
     });

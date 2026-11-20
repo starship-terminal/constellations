@@ -13,10 +13,16 @@
 // filter. Log In, Get Started, Download on iOS, every Watch link and the login form are never
 // followed or submitted. No consent overlay was seen.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, APP } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots are working files, never committed: by default they go outside the repository,
+// to ~/.design-systems/<slug>/raw-shots, as in the kit.
+const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(PKG), 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

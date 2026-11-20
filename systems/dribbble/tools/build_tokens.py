@@ -30,7 +30,8 @@ product theme.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """
-import json, pathlib, re
+import ast, json, operator, pathlib, re
+from decimal import Decimal
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -75,7 +76,33 @@ def norm_color(v):
     raise ValueError("not a colour: " + v)
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(e[+-]?\d+)?(px|rem)")
+DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+
+
+_OPS = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul, ast.Div: operator.truediv}
+
+
+def calc_value(expr):
+    """+ - * / over number literals (a declared calc() of literals); None for anything else."""
+    try:
+        tree = ast.parse(expr.strip(), mode="eval")
+    except SyntaxError:
+        return None
+
+    def ev(n):
+        if isinstance(n, ast.Expression):
+            return ev(n.body)
+        if isinstance(n, ast.Constant) and isinstance(n.value, (int, float)):
+            return n.value
+        if isinstance(n, ast.BinOp) and type(n.op) in _OPS:
+            return _OPS[type(n.op)](ev(n.left), ev(n.right))
+        if isinstance(n, ast.UnaryOp) and isinstance(n.op, ast.USub):
+            return -ev(n.operand)
+        raise ValueError("not plain arithmetic")
+    try:
+        return ev(tree)
+    except (ValueError, ZeroDivisionError):
+        return None
 
 
 def check(path, ty, val):
@@ -140,15 +167,17 @@ def leaf(path, spec, theme):
             # A declared calc() sum/difference of literals (the --zi-*/--sl-z-index
             # stacking expressions) resolves to a number; the expression itself
             # stays in raw/css-vars.json as the declared evidence.
-            flat = re.sub(r"\bcalc\b", "", val)
-            if re.fullmatch(r"[\d\s+\-*/().]+", flat):
-                v2 = eval(flat, {"__builtins__": {}}, {})
+            v2 = calc_value(re.sub(r"\bcalc\b", "", val))
+            if v2 is not None:
                 val = int(v2) if float(v2).is_integer() else round(float(v2), 4)
     if ty == "duration" and isinstance(val, str):
         m = re.fullmatch(r"([\d.]+)(m?s)", val.strip())
         if m:
             val = ("%g" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))) + "ms"
     if ty == "dimension":
+        if isinstance(val, str) and re.fullmatch(r"-?[\d.]+e[+-]?\d+px", val.strip()):
+            # Chromium reports huge pill radii as 1e+07px; DTCG wants a plain number.
+            val = format(Decimal(val.strip()[:-2]), "f") + "px"
         if isinstance(val, (int, float)):
             val = "%gpx" % val
         elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):

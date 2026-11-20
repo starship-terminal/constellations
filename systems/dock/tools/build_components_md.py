@@ -54,8 +54,10 @@ def colour(c, tokens=True):
         tok = BY_COLOR.get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
+    # color(srgb) becomes rgba() first, so the one labelling pass below never sees a colour it
+    # already labelled (a second pass wrote "`border.focus` `border.focus`").
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
-               lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
+               lambda m: "rgba(%d, %d, %d, %s)" % (*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4) or "1"), c)
     return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
 
 
@@ -165,12 +167,30 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
 
 
+# Eight header/footer focus-visible states were recorded `via: focus failed` by the run that wrote
+# them; their via was later rewritten by hand to this sentence (commit 492e65670), not re-measured.
+HAND_RELABELLED_FOCUS = "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
+
+
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, a focus-visible reading taken
+    where keyboard focus never landed (kbFocus returned "focus failed", including the hand-relabelled
+    ones above) or where the element took focus but did not match :focus-visible. Its style is the
+    element at rest, so it is left out of every table and tally and listed as "focus could not be
+    captured"."""
+    return (bool(v.get("skipped")) or v.get("via") in ("focus failed", HAND_RELABELLED_FOCUS)
+            or (v.get("focus") or {}).get("matches") is False)
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def state_rows(c):
-    # A state whose capture failed (e.g. via: "focus failed" — the element would
-    # not hold a real keyboard focus) is not a captured state: it is reported
-    # separately so a failed attempt can never read as a measured absence of a
-    # focus ring.
-    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
+    # A state whose capture failed (focus_not_captured) is not a captured state:
+    # it is reported separately so a failed attempt can never read as a measured
+    # absence of a focus ring.
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -199,7 +219,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -256,6 +276,13 @@ MOBILE = [
     ("mobile-home", "Home, phone", "/"),
     ("mobile-pricing", "Pricing, phone", "/pricing"),
 ]
+
+# Entries whose committed reading is not the component the name says (README: What to distrust).
+WRONG = {
+    "hero-lede": "The reading and crop are the hero eyebrow pill (\"AI Revenue Enablement\", 202 x 38), not the lede under the headline. The committed script now marks the first sentence-length paragraph after the h1 instead; it has not been re-run.",
+    "signup-submit": "The readings and crops are the \"Continue with Google\" OAuth button, not the email form's submit.",
+    "m-hero": "The mobile menu was still open when it was read (Escape does not close its `<details>`), so the crop can show the menu over the headline; the computed values are the h1's own.",
+}
 
 L = []
 
@@ -324,13 +351,15 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+foc, unfocused = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st or st.get("via") == "focus failed":
+    if st and focus_not_captured(st):
+        unfocused.append(f"`{k}`")
+    if not st or not measured(st):
         continue
     s = st["style"]
-    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
+    base = next((v["style"] for v in c["states"].values() if measured(v)), s)
     # A fully transparent outline paints nothing: a transparent outline must
     # not count as a painted ring.
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and s["outlineColor"] != "rgba(0, 0, 0, 0)"
@@ -356,6 +385,8 @@ if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
 if without:
     parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
+if unfocused:
+    parts.append(f"Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
 W()
 W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.")
@@ -367,7 +398,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -403,7 +434,7 @@ for k in ["plan-card", "nav-dropdown", "login-card", "signup-card", "customer-ca
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)
@@ -431,15 +462,19 @@ for g in groups:
             desc += "."
         where = PAGE_NAME.get(c["page"], c["page"])
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
+        if k in WRONG:
+            W()
+            W(f"**Known wrong; recapture needed.** {WRONG[k]}")
         if c.get("note"):
             # A recorded caveat on the entry itself — e.g. a selector that
             # measured a neighbouring control until it was fixed.
+            W()
             W(f"**Note:** {c['note']}")
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
+        failed = [s for s, v in c["states"].items() if focus_not_captured(v)]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -451,7 +486,8 @@ for g in groups:
                 W(f"| {lab} | {fmt(d)} |")
             W()
         if failed:
-            W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.")
+            hand = any(c["states"][s].get("via") == HAND_RELABELLED_FOCUS for s in failed)
+            W(f"**Focus not capturable.** A real keyboard focus could not be confirmed on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`{'; the via was later rewritten by hand, not re-measured' if hand else ''}), so its focus look is uncaptured — not measured as absent.")
             W()
         cl = child_layers(c)
         if cl:

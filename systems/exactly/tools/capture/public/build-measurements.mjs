@@ -72,6 +72,8 @@ for (const g of groups) {
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
+      // a focus-visible state where keyboard focus never landed: older runs saved the element at rest
+      if (v.skipped || v.via === 'focus failed') { (rows.Skipped ||= {})[st] = v.skipped || 'focus failed: keyboard focus did not reach the element'; continue; }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }
     W(`| Property | ${states.join(' | ')} |`);

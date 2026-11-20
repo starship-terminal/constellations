@@ -23,8 +23,12 @@ fetch_screens.py or a systems/ capture.
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
 from urllib.parse import urlparse
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import dump as refero_dump  # noqa: E402  (its write_atomic)
 
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
@@ -59,10 +63,7 @@ def tokens(text):
     return set(re.findall(r"[a-z0-9]+", (text or "").lower()))
 
 
-def write_atomic(path, text):
-    tmp = path.with_name(path.name + ".tmp")
-    tmp.write_text(text)
-    tmp.replace(path)
+write_atomic = refero_dump.write_atomic
 
 
 def build(directory: dict, catalog: dict) -> dict:

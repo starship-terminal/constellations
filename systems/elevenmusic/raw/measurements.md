@@ -626,23 +626,24 @@ Page: home. Selector: `[role=tab][data-state=inactive]`. States: default, hover,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 82.84 x 40 | = | = | = |
-| Padding | 0px 16px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | transparent | #ffffff @ 0.08 | = | #ffffff @ 0.08 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #868686 | #fafafa | = | #fafafa |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| ::after | 82.8438px x 2px, absolute, bg #fafafa, radius 0px | = | = | = |
-| Painted layers | button::after.relative.inline-flex 82.8438pxx2px bg #fafafa | button.relative.inline-flex 82.8x40.0 bg #ffffff @ 0.08 r 3.35544e+07px; button::after.relative.inline-flex 82.8438pxx2px bg #fafafa | = | button.relative.inline-flex 82.8x40.0 bg #ffffff @ 0.08 r 3.35544e+07px; button::after.relative.inline-flex 82.8438pxx2px bg #fafafa |
-| Ancestor paint | 1 up div.group/tabs-list.relative bg #ffffff @ 0.08 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 82.84 x 40 | = | - | = |
+| Padding | 0px 16px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | transparent | #ffffff @ 0.08 | - | #ffffff @ 0.08 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 14px/20px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #868686 | #fafafa | - | #fafafa |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| ::after | 82.8438px x 2px, absolute, bg #fafafa, radius 0px | = | - | = |
+| Painted layers | button::after.relative.inline-flex 82.8438pxx2px bg #fafafa | button.relative.inline-flex 82.8x40.0 bg #ffffff @ 0.08 r 3.35544e+07px; button::after.relative.inline-flex 82.8438pxx2px bg #fafafa | - | button.relative.inline-flex 82.8x40.0 bg #ffffff @ 0.08 r 3.35544e+07px; button::after.relative.inline-flex 82.8438pxx2px bg #fafafa |
+| Ancestor paint | 1 up div.group/tabs-list.relative bg #ffffff @ 0.08 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `seg-tab-off-default.png`, `seg-tab-off-hover.png`, `seg-tab-off-focus-visible.png`, `seg-tab-off-pressed.png`.
 
@@ -736,23 +737,24 @@ Page: home. Selector: `button[aria-label="Next"]`. States: default, hover, focus
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32 x 32 | = | = | 30.4 x 30.4 |
-| Padding | 0px | = | = | = |
-| Gap | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | #2e2e2e @ 0.85 | = | = | #2e2e2e |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.35 0px 20px 24px 0px, #000000 @ 0.18 0px 5px 8px 0px, #ffffff @ 0.06 0px 0px 0px 0.5px | = | = | = |
-| Backdrop filter | blur(16px) | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #fafafa | = | = | = |
-| Transition | transform, background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #fafafa | = | = | 15.2 x 15.2, colour #fafafa |
-| Painted layers | button.font-normal.outline-hidden 32.0x32.0 bg #2e2e2e @ 0.85 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.35 0px 20px 24px 0px, #000000 @ 0.18 0px 5px 8px 0px, #ffffff @ 0.06 0px 0px 0px 0.5px | = | = | button.font-normal.outline-hidden 30.4x30.4 bg #2e2e2e r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.35 0px 20px 24px 0px, #000000 @ 0.18 0px 5px 8px 0px, #ffffff @ 0.06 0px 0px 0px 0.5px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 32 x 32 | = | - | 30.4 x 30.4 |
+| Padding | 0px | = | - | = |
+| Gap | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | #2e2e2e @ 0.85 | = | - | #2e2e2e |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.35 0px 20px 24px 0px, #000000 @ 0.18 0px 5px 8px 0px, #ffffff @ 0.06 0px 0px 0px 0.5px | = | - | = |
+| Backdrop filter | blur(16px) | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #fafafa | = | - | = |
+| Transition | transform, background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 16 x 16, colour #fafafa | = | - | 15.2 x 15.2, colour #fafafa |
+| Painted layers | button.font-normal.outline-hidden 32.0x32.0 bg #2e2e2e @ 0.85 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.35 0px 20px 24px 0px, #000000 @ 0.18 0px 5px 8px 0px, #ffffff @ 0.06 0px 0px 0px 0.5px | = | - | button.font-normal.outline-hidden 30.4x30.4 bg #2e2e2e r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.35 0px 20px 24px 0px, #000000 @ 0.18 0px 5px 8px 0px, #ffffff @ 0.06 0px 0px 0px 0.5px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `carousel-next-default.png`, `carousel-next-hover.png`, `carousel-next-focus-visible.png`, `carousel-next-pressed.png`.
 
@@ -1220,22 +1222,23 @@ Page: explore. Selector: `button[aria-label="Play track"]`. States: default, hov
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32.4 x 32.4 | 36 x 36 | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #fafafa | = | = | = |
-| Transition | background-color, color, box-shadow, border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 14.4 x 14.4, colour #000000 | 16 x 16, colour #000000 | = | = |
-| Painted layers | button.transition-[background-color,color,box-shadow,border-color].outline-hidden 32.4x32.4 bg #ffffff r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | button.transition-[background-color,color,box-shadow,border-color].outline-hidden 36.0x36.0 bg #ffffff r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 32.4 x 32.4 | 36 x 36 | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #fafafa | = | - | = |
+| Transition | background-color, color, box-shadow, border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | default | = | - | = |
+| Icon | 14.4 x 14.4, colour #000000 | 16 x 16, colour #000000 | - | = |
+| Painted layers | button.transition-[background-color,color,box-shadow,border-color].outline-hidden 32.4x32.4 bg #ffffff r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | button.transition-[background-color,color,box-shadow,border-color].outline-hidden 36.0x36.0 bg #ffffff r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `play-track-default.png`, `play-track-hover.png`, `play-track-focus-visible.png`, `play-track-pressed.png`.
 
@@ -1596,22 +1599,23 @@ Page: explore. Selector: `transport Remix`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 31.36 x 31.36 | - | = | = |
-| Padding | 0px | - | = | = |
-| Gap | 0px | - | = | = |
-| Border | none | - | = | = |
-| Radius | 3.35544e+07px | - | = | = |
-| Background | transparent | - | = | = |
-| Box shadow | none | - | = | = |
-| Outline | none | - | = | = |
-| Font | Inter 16px/24px 400 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #ffffff @ 0.7 | - | = | #ffffff |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | - | = | = |
-| Cursor | pointer | - | = | = |
-| Icon | 17.64 x 17.64, colour #ffffff @ 0.7 | - | = | 17.64 x 17.64, colour #ffffff |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 31.36 x 31.36 | - | - | = |
+| Padding | 0px | - | - | = |
+| Gap | 0px | - | - | = |
+| Border | none | - | - | = |
+| Radius | 3.35544e+07px | - | - | = |
+| Background | transparent | - | - | = |
+| Box shadow | none | - | - | = |
+| Outline | none | - | - | = |
+| Font | Inter 16px/24px 400 | - | - | = |
+| Letter spacing | normal | - | - | = |
+| Colour | #ffffff @ 0.7 | - | - | #ffffff |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | - | - | = |
+| Cursor | pointer | - | - | = |
+| Icon | 17.64 x 17.64, colour #ffffff @ 0.7 | - | - | 17.64 x 17.64, colour #ffffff |
+| How | at rest | - | - | CDP forcePseudoState :active:hover |
 | Error | - | locator.hover: Element is outside of the viewport Call log:   - waiting for locator('button[aria-label="Remix"]').visible().last().visible().first().visible().first()     - locator resolved to <button | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `player-remix-default.png`, `player-remix-focus-visible.png`, `player-remix-pressed.png`.
 
@@ -2257,23 +2261,24 @@ Page: login. Selector: `button "Continue with Email"`. States: default, hover, f
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 376 x 36 | = | = | 368.48 x 35.28 |
-| Padding | 0px 14px | = | = | = |
-| Gap | 6px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | #fafafa | = | = | #faf8f7 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 14px/20px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #0a0a0a | = | = | = |
-| Text node | span: Inter 14px/20px 400, #0a0a0a | = | = | = |
-| Transition | background-color, color, box-shadow, border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Opacity | 0.4 | = | = | = |
-| Cursor | default | = | = | = |
-| Painted layers | button.inline-flex.shrink-0 376.0x36.0 bg #fafafa r 3.35544e+07px | = | = | button.inline-flex.shrink-0 368.5x35.3 bg #faf8f7 r 3.35544e+07px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 376 x 36 | = | - | 368.48 x 35.28 |
+| Padding | 0px 14px | = | - | = |
+| Gap | 6px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | #fafafa | = | - | #faf8f7 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 14px/20px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #0a0a0a | = | - | = |
+| Text node | span: Inter 14px/20px 400, #0a0a0a | = | - | = |
+| Transition | background-color, color, box-shadow, border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Opacity | 0.4 | = | - | = |
+| Cursor | default | = | - | = |
+| Painted layers | button.inline-flex.shrink-0 376.0x36.0 bg #fafafa r 3.35544e+07px | = | - | button.inline-flex.shrink-0 368.5x35.3 bg #faf8f7 r 3.35544e+07px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `continue-btn-default.png`, `continue-btn-hover.png`, `continue-btn-focus-visible.png`, `continue-btn-pressed.png`.
 

@@ -29,7 +29,11 @@ def resolve(path, seen=None):
     if isinstance(value, str):
         match = re.fullmatch(r"\{([^{}]+)\}", value.strip())
         if match:
-            return resolve(match.group(1), seen | {path})
+            ref = match.group(1)
+            # Aliases name core paths without the set ({color.black} is core.color.black).
+            if ref.split(".")[0] not in T:
+                ref = "core." + ref
+            return resolve(ref, seen | {path})
     return value
 
 
@@ -151,5 +155,6 @@ page = f"""<!doctype html>
 </body>
 </html>
 """
-(HERE / "style-guide.html").write_text(page)
-print("wrote style-guide.html")
+if __name__ == "__main__":
+    (HERE / "style-guide.html").write_text(page)
+    print("wrote style-guide.html")

@@ -108,13 +108,13 @@ typography:
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "21px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   button:
     fontFamily: "TWK Lausanne"
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "21px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   small:
     fontFamily: "TWK Lausanne"
     fontSize: "11px"

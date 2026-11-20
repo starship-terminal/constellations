@@ -69,10 +69,10 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Topic card](#topic-card) | 346.66 x 280 | - | 24px | #f7f3f0 `background.warm` | none | 20px |
 | [Perspective flip](#perspective-flip) | 272.23 x 360.3 | 1px solid transparent | 28px | transparent | none | 0 |
-| [Expert tile](#expert-tile) | 528 x 192 | 1px solid rgba(33, 32, 28, 0.09) `border.hairline` `border.hairline` | 24px | #ffffff `color.white` | none | 24px 24px 18px 24px |
+| [Expert tile](#expert-tile) | 528 x 192 | 1px solid rgba(33, 32, 28, 0.09) `border.hairline` | 24px | #ffffff `color.white` | none | 24px 24px 18px 24px |
 | [Ask card](#ask-card) | 346.66 x 280 | - | 24px | #f7f3f0 `background.warm` | none | 20px |
-| [Result expert card](#result-expert-card) | 672 x 318 | 1px solid rgba(141, 141, 134, 0.2) `border.card-border` `border.card-border` | 26px | #ffffff `color.white` | none | 18px 0px 20px 0px |
-| [Suggested question](#suggested-question) | 245.33 x 83.75 | 1px solid transparent | 18px | rgba(141, 141, 134, 0.1) `background.chip` `background.chip` | none | 12px 14px |
+| [Result expert card](#result-expert-card) | 672 x 318 | 1px solid rgba(141, 141, 134, 0.2) `border.card-border` | 26px | #ffffff `color.white` | none | 18px 0px 20px 0px |
+| [Suggested question](#suggested-question) | 245.33 x 83.75 | 1px solid transparent | 18px | rgba(141, 141, 134, 0.1) `background.chip` | none | 12px 14px |
 | [Sign-in dialog](#sign-in-dialog) | 448 x 360 | - | 26px | #ffffff `color.white` | rgba(33, 32, 28, 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px | 0 |
 | [Mobile topic card](#mobile-topic-card) | 350 x 150 | - | 20px | #f7f3f0 `background.warm` | none | 16px 18px |
 
@@ -103,7 +103,7 @@ A topic link in the header/category strip ("Career & Work"); measured, never fol
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 79 x 40; padding 10px 16px; radius 3.35544e+07px; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition all 0.2s cubic-bezier(0, 0, 0.2, 1) |
+| default | size 79 x 40; padding 10px 16px; radius 3.35544e+07px; background rgba(141, 141, 134, 0.1) `background.chip`; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition all 0.2s cubic-bezier(0, 0, 0.2, 1) |
 | hover | background rgba(141, 141, 134, 0.15); text Delphi Inter 14/20 500, #21201c `accent.foreground` |
 | focus-visible | outline 1px auto rgba(253, 84, 0, 0.5), offset 1px |
 | pressed | size 77.42 x 39.2; background rgba(141, 141, 134, 0.15); text Delphi Inter 14/20 500, #21201c `accent.foreground` |
@@ -116,9 +116,9 @@ The header Sign-In action; it opens the auth dialog (measured below), never foll
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 96 x 36; padding 0px 12px; border 1px solid transparent; radius 26px; background transparent; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #63635e `color.sand.11` |
-| hover | background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.6 x 13.6, #21201c `accent.foreground` |
+| hover | background rgba(141, 141, 134, 0.1) `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.6 x 13.6, #21201c `accent.foreground` |
 | focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
-| pressed | size 94.08 x 35.28; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.33 x 13.33, #21201c `accent.foreground` |
+| pressed | size 94.08 x 35.28; background rgba(141, 141, 134, 0.1) `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.33 x 13.33, #21201c `accent.foreground` |
 
 ![Sign In default](components/crops/signin-btn-default.png) ![Sign In hover](components/crops/signin-btn-hover.png) ![Sign In focus-visible](components/crops/signin-btn-focus-visible.png) ![Sign In pressed](components/crops/signin-btn-pressed.png)
 
@@ -240,7 +240,7 @@ The auth dialog opened by the header Sign In (Continue with Google / Continue wi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 400 x 40; padding 0px 16px 0px 12px; border 1px solid transparent; radius 26px; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #21201c `accent.foreground` |
+| default | size 400 x 40; padding 0px 16px 0px 12px; border 1px solid transparent; radius 26px; background rgba(141, 141, 134, 0.1) `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #21201c `accent.foreground` |
 | hover | background rgba(141, 141, 134, 0.15) |
 | focus-visible | border 1px solid #fd5400 `color.tangerine.9`; background rgba(141, 141, 134, 0.15); shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
 | pressed | size 392 x 39.2; border 1px solid #fd5400 `color.tangerine.9`; background rgba(141, 141, 134, 0.15); shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px; icon 13.33 x 13.33, #21201c `accent.foreground` |
@@ -274,7 +274,7 @@ A category chip in the gallery strip; measured, never followed. Read as `disc-ca
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 79 x 40; padding 10px 16px; radius 3.35544e+07px; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition all 0.2s cubic-bezier(0, 0, 0.2, 1) |
+| default | size 79 x 40; padding 10px 16px; radius 3.35544e+07px; background rgba(141, 141, 134, 0.1) `background.chip`; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition all 0.2s cubic-bezier(0, 0, 0.2, 1) |
 | hover | background rgba(141, 141, 134, 0.15); text Delphi Inter 14/20 500, #21201c `accent.foreground` |
 | focus-visible | outline 1px auto rgba(253, 84, 0, 0.5), offset 1px |
 | pressed | size 77.43 x 39.2; background rgba(141, 141, 134, 0.149813); text Delphi Inter 14/20 500, #21201c `accent.foreground` |
@@ -291,7 +291,7 @@ A quoted expert perspective in the gallery. Read as `disc-quote` on the discover
 #### Expert tile
 An expert portrait tile in the gallery grid. Read as `disc-card` on the discover page.
 
-**Values (default).** size 528 x 192; padding 24px 24px 18px 24px; border 1px solid rgba(33, 32, 28, 0.09) `border.hairline` `border.hairline`; radius 24px; background #ffffff `color.white`; text Delphi Inter 23/29.9 500, #63635e `color.sand.11`; transition box-shadow 0.26s cubic-bezier(0.22, 1, 0.36, 1), transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.18s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.26s ease.
+**Values (default).** size 528 x 192; padding 24px 24px 18px 24px; border 1px solid rgba(33, 32, 28, 0.09) `border.hairline`; radius 24px; background #ffffff `color.white`; text Delphi Inter 23/29.9 500, #63635e `color.sand.11`; transition box-shadow 0.26s cubic-bezier(0.22, 1, 0.36, 1), transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.18s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.26s ease.
 
 ![Expert tile default](components/crops/disc-card-default.png)
 
@@ -340,14 +340,14 @@ Child layers that carry the look: blockquote::before 630pxx82px background #f1f1
 #### Result expert card
 An expert result card (portrait, name, role, badges, quoted answer, Save/Expand). Read as `srch-expert-card` on the search page.
 
-**Values (default).** size 672 x 318; padding 18px 0px 20px 0px; border 1px solid rgba(141, 141, 134, 0.2) `border.card-border` `border.card-border`; radius 26px; background #ffffff `color.white`; text Delphi Pythia 24/28 600, #21201c `accent.foreground`; transition box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), --quote-glow 1.8s cubic-bezier(0.3, 0, 0, 1); icon 24 x 24, #21201c `accent.foreground`.
+**Values (default).** size 672 x 318; padding 18px 0px 20px 0px; border 1px solid rgba(141, 141, 134, 0.2) `border.card-border`; radius 26px; background #ffffff `color.white`; text Delphi Pythia 24/28 600, #21201c `accent.foreground`; transition box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), --quote-glow 1.8s cubic-bezier(0.3, 0, 0, 1); icon 24 x 24, #21201c `accent.foreground`.
 
 ![Result expert card default](components/crops/srch-expert-card-default.png)
 
 #### Credential badge
 A credential badge on a result card ("VP OF GLOBAL COMMUNITY AT TORC"). Read as `srch-badge` on the search page.
 
-**Values (default).** size 228 x 20; radius 6px; background rgba(33, 32, 28, 0.06) `background.badge` `background.badge`; text Delphi Pythia 10/20 600, #63635e `color.sand.11`.
+**Values (default).** size 228 x 20; radius 6px; background rgba(33, 32, 28, 0.06) `background.badge`; text Delphi Pythia 10/20 600, #63635e `color.sand.11`.
 
 ![Credential badge default](components/crops/srch-badge-default.png)
 
@@ -366,9 +366,9 @@ The card’s "Save" action; measured, never pressed. Read as `srch-save` on the 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 81 x 36; padding 0px 12px 0px 10px; border 1px solid transparent; radius 26px; background transparent; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #63635e `color.sand.11` |
-| hover | background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.6 x 13.6, #21201c `accent.foreground` |
+| hover | background rgba(141, 141, 134, 0.1) `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.6 x 13.6, #21201c `accent.foreground` |
 | focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
-| pressed | size 79.38 x 35.28; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.33 x 13.33, #21201c `accent.foreground` |
+| pressed | size 79.38 x 35.28; background rgba(141, 141, 134, 0.1) `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.33 x 13.33, #21201c `accent.foreground` |
 
 ![Save button default](components/crops/srch-save-default.png) ![Save button hover](components/crops/srch-save-hover.png) ![Save button focus-visible](components/crops/srch-save-focus-visible.png) ![Save button pressed](components/crops/srch-save-pressed.png)
 
@@ -407,7 +407,7 @@ The "Share" profile action; measured, never pressed. Read as `share-btn` on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 77.81 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background rgba(33, 32, 28, 0.1) `action.share` `action.share`; text Delphi Inter 16/24 450, #63635e `color.sand.11`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), outline-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), text-decoration-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), fill 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), stroke 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-from 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-via 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-to 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
+| default (same: hover) | size 77.81 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background rgba(33, 32, 28, 0.1) `action.share`; text Delphi Inter 16/24 450, #63635e `color.sand.11`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), outline-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), text-decoration-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), fill 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), stroke 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-from 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-via 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-to 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
 | focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
 | pressed | size 76.26 x 39.2; background rgba(33, 32, 28, 0.15); text Delphi Inter 16/24 450, #21201c `accent.foreground` |
 
@@ -470,7 +470,7 @@ A suggested starter question chip; measured, never pressed — pressing it would
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 245.33 x 83.75; padding 12px 14px; border 1px solid transparent; radius 18px; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/19.25 500, #21201c `accent.foreground`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
+| default | size 245.33 x 83.75; padding 12px 14px; border 1px solid transparent; radius 18px; background rgba(141, 141, 134, 0.1) `background.chip`; text Delphi Inter 14/19.25 500, #21201c `accent.foreground`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
 | hover | background rgba(141, 141, 134, 0.15) |
 | focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
 | pressed | size 240.42 x 82.07; background rgba(141, 141, 134, 0.15) |

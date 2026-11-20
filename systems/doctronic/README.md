@@ -60,7 +60,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | light | 16.90:1 pass | 17.26:1 pass | 6.99:1 pass | 7.06:1 pass |
 | dark | 18.96:1 pass | 16.90:1 pass | 10.19:1 pass | 9.44:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.shadow.focus-ring` 0px 0px 0px 2px rgb(97, 166, 250); `light.shadow.focus-ring` 0px 0px 0px 2px rgb(36, 99, 235); `core.measured.focus-outline` #3c83f6; `dark.color.accent.focus-ring` #61a6fa.
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.shadow.focus-ring` 0px 0px 0px 2px #61a6fa; `light.shadow.focus-ring` 0px 0px 0px 2px #2463eb; `core.measured.focus-outline` #3c83f6; `dark.color.accent.focus-ring` #61a6fa.
 
 <!-- brief:end -->
 
@@ -88,6 +88,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 `tools/capture/public/public.mjs` is the screenshot pass: it loads each public route in headless Chromium (desktop 1440 x 900 at 1x, phone 390 x 844 at 2x, `localStorage.theme` set by an init script before navigation), hides the cookie/consent layers and the reCAPTCHA badge without ever answering them, and shoots default and toggled states plus bounded full pages (the eight-chunk cap is a documented boundary; home is ~6767px and Wall of Love ~8841px). Full-colour PNGs stay in the scratch dir `~/.design-systems/doctronic/raw-shots`; `tools/capture/quantize.py` stores the committed 256-colour copies in `screenshots/` and stitches `*.partN.png` tiles. `tools/capture/vars.mjs` harvests every custom property from the Next.js CSS chunks and inline styles, then resolves each name in a probe document carrying the real sheets once per theme — `data-theme="light"` and `data-theme="dark"`, the site's own mechanism. `tools/capture/public/measure.mjs` reads computed styles of each component and state (real hover, real keyboard focus, CDP-forced `:active`, typed-and-deleted text fields, the drawer's and rail's own toggles) into `raw/components-computed.json`, crops each to `components/crops/`, and `tools/capture/public/build-measurements.mjs` renders the tables in `raw/measurements.md`. `tools/build_component_tokens.py` writes the token spec from the harvest plus the readings, `tools/build_tokens.py` emits `tokens.json` (aliases kept, per-theme resolution, `$extensions.source` on every leaf), `tools/build_style_guide.py` renders `style-guide.html`, and `tools/build_components_md.py` renders `components.md`.
 
 Nothing was signed into, created, submitted or sent. Send/Start chat, Check My Symptoms, the starter chips, Sign up/Log in/OAuth/Create-an-account and every external link were measured, never used.
+
+## What to distrust
+
+- **Seven entries measured the wrong element.** The capture's `.or()` fallbacks are unions resolved in DOM order, so an earlier node won: `nav-link` is the highlighted "New chat" row (the same node as `nav-link-current`), `input-card` the transparent wrapper, `chat-hero` the whole `main`, `logo` the 620 x 25 wrapper, `feature-card` the testimonial (the same card as `quote-card`), `signin-dialog` the transparent inner section, and `menu-item` the expandable "About Chat" row (the same node as `menu-item-expand`). components.md flags each; `light.component.dialog.width` (393px) is the inner section's width and says so. The input-card and dialog radius tokens read the painted `form` and `div.modal` layers and are unaffected. The script now prefers the intended node by `count()` (not re-run). Recapture needed.
+- **Dark screenshots were requested, not checked.** The dark pass sets `localStorage.theme`; the committed shots were never checked for what painted. The script now skips a shot whose page ground does not match the requested theme (not re-run).
 
 ## Do and don't
 

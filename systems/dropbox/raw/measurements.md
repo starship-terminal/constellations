@@ -201,7 +201,7 @@ Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-focus-visible.
 
 #### nav-cta
 
-Get-started action. The header Get started action (the dark pill); measured, never followed.
+Get-started action. The header Get started action (the blue pill); measured, never followed.
 
 Page: home. Selector: `nav a Get started`. States: default, hover, focus-visible, pressed.
 
@@ -544,20 +544,21 @@ Page: plans. Selector: `billing radio label`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 138.11 x 24 | = | = | = |
-| Padding | 0px 0px 0px 28px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Atlas Grotesk Web 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1e1919 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | default | = | = | = |
-| Painted layers | input::before.dwg-input-radio__input 20pxx20px border T:1px solid #1e1919 / R:1px solid #1e1919 / B:1px solid #1e1919 / L:1px solid #1e1919 r 50% | = | input.dwg-input-radio__input 146.1x32.0 shadow #428bff 0px 0px 0px 3px; input::before.dwg-input-radio__input 20pxx20px border T:1px solid #1e1919 / R:1px solid #1e1919 / B:1px solid #1e1919 / L:1px solid #1e1919 r 50% | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 138.11 x 24 | = | - | = |
+| Padding | 0px 0px 0px 28px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Atlas Grotesk Web 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1e1919 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | default | = | - | = |
+| Painted layers | input::before.dwg-input-radio__input 20pxx20px border T:1px solid #1e1919 / R:1px solid #1e1919 / B:1px solid #1e1919 / L:1px solid #1e1919 r 50% | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `billing-radio-default.png`, `billing-radio-hover.png`, `billing-radio-focus-visible.png`, `billing-radio-pressed.png`.
 
@@ -879,20 +880,21 @@ Page: features. Selector: `dwg-card/dwg-nav-card tile`. States: default, hover, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 413.53 x 517.55 | = | = | = |
-| Padding | 0px 24px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Times 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | h3.dwg-text.dwg-font-family--atlas-grotesk: Atlas Grotesk Web 20px/24px 500, #1e1919 | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.dwg-media-frame.dwg-box 365.5x365.5 bg #eee9e2 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 413.53 x 517.55 | = | - | = |
+| Padding | 0px 24px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Times 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | h3.dwg-text.dwg-font-family--atlas-grotesk: Atlas Grotesk Web 20px/24px 500, #1e1919 | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.dwg-media-frame.dwg-box 365.5x365.5 bg #eee9e2 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `feat-card-default.png`, `feat-card-hover.png`, `feat-card-focus-visible.png`, `feat-card-pressed.png`.
 

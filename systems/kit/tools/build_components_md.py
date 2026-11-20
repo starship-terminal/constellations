@@ -165,12 +165,23 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and reported separately (the kit's rule, tools/kit/build)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def state_rows(c):
-    # A state whose capture failed (e.g. via: "focus failed" — the element would
-    # not hold a real keyboard focus) is not a captured state: it is reported
+    # A state whose capture failed is not a captured state: it is reported
     # separately so a failed attempt can never read as a measured absence of a
     # focus ring.
-    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -227,6 +238,13 @@ def child_layers(c):
 PAGE_NAME = {"home": "home", "pricing": "pricing", "features": "features", "compare": "compare/mailchimp",
              "login": "app log-in", "mobile": "home"}
 
+# Crops dropped after the capture: the measurements stay in raw/, the images were not kept.
+CROPS_NOT_STORED = {
+    "feat-search": "The filled crop was not stored. The field was typed into and cleared, and the crop was dropped with the log-in field crops so the package keeps only empty-field images.",
+    "login-email": "Focused and filled crops were not stored. The empty field paints an email as a CSS placeholder, and the image scan treats any address as personal data. The stored page shot hides that placeholder. Measurements for focused and filled stay in [raw/measurements.md](raw/measurements.md).",
+    "login-password": "Focused and filled crops were not stored, for the same reason as the email field.",
+}
+
 GROUP_INTRO = {
     "Announcement bar": "The blue announcement strip above the nav on marketing pages.",
     "Site chrome": "The fixed #mega-nav: wordmark, Features / Use Cases / Resources menus, Pricing, Log in, Request a demo, and the blue Start free trial pill.",
@@ -279,7 +297,7 @@ def links(prefix):
 
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
-n_states = sum(len(c["states"]) for c in C.values())
+n_states = sum(1 for c in C.values() for v in c["states"].values() if measured(v))
 icons = []
 
 W("# Kit components")
@@ -351,7 +369,7 @@ def paint_outlines(v):
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st or st.get("via") == "focus failed":
+    if not st or not measured(st):
         continue
     s = st["style"]
     base_st = next((v for v in c["states"].values() if "style" in v), st)
@@ -469,7 +487,7 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
+        failed = [s for s, v in c["states"].items() if focus_not_captured(v)]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -489,6 +507,9 @@ for g in groups:
             W()
         imgs = [f"![{c['title']} {st}](components/crops/{os.path.basename(c['states'][st]['crop'])})" for st in states if c["states"][st].get("crop")]
         W(" ".join(imgs) if imgs else "No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
+        if k in CROPS_NOT_STORED:
+            W()
+            W(CROPS_NOT_STORED[k])
 
 # ------------------------------------------------ icons
 W()

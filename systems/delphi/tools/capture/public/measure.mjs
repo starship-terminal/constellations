@@ -28,7 +28,10 @@ out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
-const URLS = { home: '/', discover: '/discover/productivity', search: '/search/i-want-to-bring-my-different-groups-of-friends-together-and-buil', expert: '/karpathy', chat: '/karpathy/chat?handoff=karpathy-how-far-we-are-from-agi', mobile: '/' };
+const URLS = { home: '/', discover: '/discover/productivity', search: '/search/i-want-to-bring-my-different-groups-of-friends-together-and-buil', expert: '/karpathy', chat: '/karpathy/chat', mobile: '/' };
+// chat opens without a ?handoff= query: a handoff can post the handed-off
+// question into a live AI chat on load, signed out. The composer is filled and
+// cleared locally, never submitted.
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
 const listed = new Map();
@@ -127,6 +130,21 @@ function comp(key, meta) {
   return c;
 }
 
+// A failed re-read must not erase an earlier successful one: keep the saved
+// style and record the failed attempt beside it. comp() has already stamped
+// this run's date on the component, so the kept state is pinned to the run
+// that actually read it (its own run stamp, else the component's earlier run)
+// and an old reading is never republished as a new one.
+function keepEarlier(c, state, e, earlierRun) {
+  const err = String(e.message || e).slice(0, 200);
+  const prev = c.states[state];
+  if (prev && prev.style) {
+    prev.rerunError = err;
+    prev.read ??= prev.run || earlierRun; // a second failed re-read keeps the first date
+    prev.rerunOn = run;
+  } else c.states[state] = { error: err };
+}
+
 async function measure(key, state, target, opts = {}) {
   const loc = target.and(page.locator(':visible')).first();
   const c = out.components[key];
@@ -142,11 +160,7 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    // A failed re-read must not erase an earlier successful one: keep the
-    // saved style and record the failed attempt beside it.
-    const prev = c.states[state];
-    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    keepEarlier(c, state, e, opts.earlierRun);
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -201,11 +215,9 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (opts.noToggle) via = 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      await measure(key, st, loc, { ...opts, via, earlierRun: keep?.run });
     } catch (e) {
-      const prev = out.components[key].states[st];
-      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-      else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      keepEarlier(out.components[key], st, e, keep?.run);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});

@@ -121,14 +121,35 @@ def decl_color(name):
 
 
 # colours
+def is_leaf(node):
+    return isinstance(node, dict) and "type" in node and ("var" in node or "value" in node)
+
+
+def emit(tree, parts, leaf, name):
+    """Place a leaf at a dotted path without nesting it inside another leaf.
+
+    --color-warm-white and --color-warm-white-100 both split on "-", so the second
+    would land inside the first leaf's dict, where build_tokens.py treats the node as
+    one leaf and drops it. When the walk reaches a leaf, the rest of the name stays
+    joined with "-" as a sibling key (warm.white and warm.white-100). A path that is
+    already taken raises instead of overwriting.
+    """
+    node = tree
+    for i, p in enumerate(parts[:-1]):
+        nxt = node.get(p)
+        if is_leaf(nxt):
+            parts = parts[:i] + ["-".join(parts[i:])]
+            break
+        node = node.setdefault(p, {})
+    key = parts[-1]
+    if key in node:
+        raise KeyError(f"{name}: token path {'.'.join(parts)} is already taken")
+    node[key] = leaf
+
+
 color = SPEC["core"].setdefault("color", {})
 for name in sorted(k for k in R if k.startswith("--color-") and re.fullmatch(r"#[0-9a-fA-F]{3,8}", str(R.get(k) or ""))):
-    key = name[len("--color-"):].replace("-", ".")
-    node = color
-    parts = key.split(".")
-    for p in parts[:-1]:
-        node = node.setdefault(p, {})
-    node[parts[-1]] = var(name, "color")
+    emit(color, name[len("--color-"):].split("-"), var(name, "color"), name)
 
 # fonts
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
@@ -182,7 +203,9 @@ if declared("--spacing"):
     spacing["base"] = decl("--spacing", "dimension")
 for i, px in enumerate([4, 8, 12, 16, 24, 32, 48, 64, 80], start=1):
     spacing["s%d" % i] = lit("%dpx" % px, "dimension",
-                             "derived from the declared --spacing of 4px (0.25rem)",
+                             "Reconstruction: entered by hand at capture time. The step list was chosen "
+                             "by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies "
+                             "--spacing by any integer, so no reading names these nine steps",
                              "Step %d on the 4px base." % i)
 
 radius = SPEC["core"].setdefault("radius", {})
@@ -227,8 +250,19 @@ light["border"] = {
 light["action"] = {
     "fill": var("--color-blue-500", "color", description="The Start free trial fill."),
     "ink": var("--color-soft-black", "color", description="The ink fill on Request demo and the log-in submit."),
-    "hover": var("--color-blue-400", "color", description="The next lighter blue step. Hover was also measured on the live pill."),
+    "hover": None,
 }
+# The trial pill's hover fill, read from the live pill and matched to the declared
+# blue it paints (#a2d1f1 is --color-blue-200). Refuses to guess when no declared
+# colour matches.
+_hover = norm_color(st("nav-trial", "hover")["backgroundColor"])
+_hover_vars = sorted(n for n in R if n.startswith("--color-") and norm_color(str(R[n])) == _hover)
+if len(_hover_vars) != 1:
+    raise SystemExit(f"nav-trial hover fill {_hover} matches {_hover_vars}, not exactly one declared colour")
+light["action"]["hover"] = var(_hover_vars[0], "color",
+                               source=f"the measured fill of nav-trial hover ({_hover}, computed backgroundColor)",
+                               description="The Start free trial fill on hover, as measured on the live pill.")
+
 light["status"] = {
     "danger": var("--color-red-500", "color"),
     "warning": var("--color-yellow-500", "color"),

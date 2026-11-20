@@ -46,7 +46,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #0a0a0a `light.accent` | #fdfdfd `dark.accent` |
 | border | #dadada `light.border.default` | #2f2f2f `dark.border.default` |
 
-Fonts: `core.font.family.sans` is saveeFont, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 6 type styles (`core.typography`), 10 radius steps (`core.radius`), 11 spacing steps (`core.spacing`).
+Fonts: `core.font.family.sans` is saveeFont, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 6 type styles (`core.typography`), 10 radius steps (`core.radius`), 10 spacing steps (`core.spacing`).
 
 ### Using components
 

@@ -182,7 +182,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
         await page.waitForTimeout(500);
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
-      } else via = via || 'at rest';
+      } else via = via || opts.via || 'at rest';
       if (via === 'focus failed') {
         // The element never took focus: a resting read labelled focus-visible is
         // not a captured focus, so the attempt is recorded as an error instead.
@@ -208,6 +208,7 @@ const q = (sel) => page.locator(sel);
 async function tag(name, probe) {
   return page.evaluate(([n, src]) => {
     const el = (new Function('return (' + src + ')')())();
+    for (const old of document.querySelectorAll(`[data-m="${n}"]`)) old.removeAttribute('data-m');
     if (!el) return false;
     el.setAttribute('data-m', n);
     return true;
@@ -219,12 +220,14 @@ async function tag(name, probe) {
 async function tagEl(name, reSrc, scopeSel) {
   return page.evaluate(([n, src, scope]) => {
     const re = new RegExp(src, 'i');
-    const sc = (scope && document.querySelector(scope)) || document;
+    const sc = scope ? document.querySelector(scope) : document;
+    if (!sc) return false; // the scope is gone: never fall back to the whole page
     const cands = [...sc.querySelectorAll('a,button,[role=button],[role=tab],li,div,span')].filter((e) => {
       const t = (e.innerText || e.getAttribute('aria-label') || '').trim(); const r = e.getBoundingClientRect();
       return re.test(t) && t.length < 80 && r.width > 10 && r.height > 8;
     }).sort((a, b) => (a.innerText || '').length - (b.innerText || '').length);
     const el = cands.find((e) => e.matches('a,button,[role=button],[role=tab],li,[tabindex]') || getComputedStyle(e).cursor === 'pointer') || cands[0];
+    for (const old of document.querySelectorAll(`[data-m="${n}"]`)) old.removeAttribute('data-m');
     if (!el) return false;
     el.setAttribute('data-m', n);
     return true;
@@ -313,7 +316,7 @@ async function shell(pageKey) {
         });
         return cands.sort((a, b) => a.innerText.length - b.innerText.length)[0] || null;
       });
-      if (menu) await S('nav-dropdown', q('[data-m="submenu"]'), ['default'], { group: g, title: 'Nav dropdown', desc: 'The dropdown under a header section (Product: Claude, Claude Code, Claude in Chrome, …). Shown in its hover-open state.', sel: 'the open dropdown panel' }, { noScroll: true, via: 'hover over the trigger' });
+      if (menu) await S('nav-dropdown', q('[data-m="submenu"]'), ['default'], { group: g, title: 'Nav dropdown', desc: 'The dropdown under a header section (Product: Claude, Claude Code, Claude in Chrome, …). Shown in its hover-open state.', sel: 'the open dropdown panel' }, { noScroll: true, noReset: true, via: 'hover over the trigger' });
       if (await tagEl('sublink', 'claude code|claude in|api|docs', '[data-m="submenu"]'))
         await S('nav-dropdown-link', q('[data-m="sublink"]'), ['default', 'hover'], { group: g, title: 'Dropdown link', desc: 'An item in the open nav dropdown.', sel: 'an item in the dropdown' }, { noScroll: true, open: async () => { await trig.hover({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(1400); } });
       await reset();
@@ -430,14 +433,8 @@ async function pricing() {
     });
     return cands.sort((a, b) => a.innerText.length - b.innerText.length)[0] || null;
   });
-  if (tabs) {
-    await S('plan-tabs', q('[data-m="tabs"]'), ['default'], { group: g, title: 'Plan type tabs', desc: 'The Individual / Developer / Team plan tabs.', sel: 'the tab strip' });
-    if (await tagEl('tabitem', '^developer$|^individual$|^team$', '[data-m="tabs"]'))
-      await S('plan-tab', q('[data-m="tabitem"]'), B4, { group: g, title: 'Plan tab', desc: 'One segment of the plan-type tabs.', sel: '"Developer" tab' });
-    if (await tagEl('tabitem2', '^api$', '[data-m="tabs"]')) {
-      await S('plan-tab-active', q('[data-m="tabitem2"]'), ['default'], { group: g, title: 'Plan tab, switched', desc: 'The same tab strip after a local click: the API segment is the active one, and the API usage table replaces the plan cards.', sel: 'the "API" tab after clicking it' }, { open: async () => { await toggle(q('[data-m="tabitem2"]')); await page.waitForTimeout(1800); } });
-    }
-  }
+  // Plan card and its CTA first, on the default tab: switching to API replaces
+  // the plan cards with the API usage table. The CTA is searched inside the card.
   const card = await tag('pcard', () => {
     const cands = [...document.querySelectorAll('[class*="card" i], [class*="plan" i], article, li')].filter((e) => {
       const r = e.getBoundingClientRect();
@@ -446,8 +443,16 @@ async function pricing() {
     return cands.sort((a, b) => a.innerText.length - b.innerText.length)[0] || null;
   });
   if (card) await S('plan-card', q('[data-m="pcard"]'), ['default'], { group: g, title: 'Plan card', desc: 'A plan card on the pricing grid.', sel: 'a plan column' });
-  if (await tagEl('planc', '^try claude$|^contact sales$|^subscribe|^get started'))
+  if (card && await tagEl('planc', '^try claude$|^contact sales$|^subscribe|^get started', '[data-m="pcard"]'))
     await S('plan-cta', q('[data-m="planc"]'), B4, { group: g, title: 'Plan CTA', desc: 'A button inside a plan card ("Try Claude", "Contact sales"). Measured and focused, never followed.', sel: 'a plan card button' });
+  if (tabs) {
+    await S('plan-tabs', q('[data-m="tabs"]'), ['default'], { group: g, title: 'Plan type tabs', desc: 'The Individual / Developer / Team plan tabs.', sel: 'the tab strip' });
+    if (await tagEl('tabitem', '^developer$|^individual$|^team$', '[data-m="tabs"]'))
+      await S('plan-tab', q('[data-m="tabitem"]'), B4, { group: g, title: 'Plan tab', desc: 'One segment of the plan-type tabs.', sel: '"Developer" tab' });
+    if (await tagEl('tabitem2', '^api$', '[data-m="tabs"]')) {
+      await S('plan-tab-active', q('[data-m="tabitem2"]'), ['default'], { group: g, title: 'Plan tab, switched', desc: 'The same tab strip after a local click: the API segment is the active one, and the API usage table replaces the plan cards.', sel: 'the "API" tab after clicking it' }, { open: async () => { await toggle(q('[data-m="tabitem2"]')); await page.waitForTimeout(1800); } });
+    }
+  }
   // The batch banner lives on the API tab's usage table — click it first.
   const apiTab = page.locator('[role=tab]').filter({ hasText: /^api$/i }).first();
   if (await apiTab.count()) { await apiTab.click().catch(() => {}); await page.waitForTimeout(1800); }

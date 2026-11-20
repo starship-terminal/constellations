@@ -35,7 +35,11 @@ def dim_px(value, source):
     return tok(value, "dimension", source)
 
 
-doc = {
+def build():
+    """The token document, built in memory from raw/; main() writes it."""
+    # Silence unused binding if a future reader expects COMP keys to be walked.
+    assert EL["searchButton"]["background"] == "rgb(255, 128, 101)"
+    return {
     "$schema": "https://www.w3.org/TR/design-tokens/",
     "core": {
         "font": {
@@ -277,10 +281,14 @@ doc = {
     ],
 }
 
-# Silence unused binding if a future reader expects COMP keys to be walked.
-assert EL["searchButton"]["background"] == "rgb(255, 128, 101)"
 
-out = HERE / "tokens.json"
-text = json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
-out.write_text(text)
-print(f"wrote {out}")
+
+def main():
+    out = HERE / "tokens.json"
+    text = json.dumps(build(), indent=2, ensure_ascii=False) + "\n"
+    out.write_text(text)
+    print(f"wrote {out}")
+
+
+if __name__ == "__main__":
+    main()

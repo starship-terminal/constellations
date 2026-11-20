@@ -19,10 +19,8 @@ RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
 RL = V.get("resolved", {}).get("light", {})
 R = {n: (v.get("value", v.get("raw")) if isinstance(v, dict) else v) for n, v in RL.items()}
-comp_path = RAW / "components-computed.json"
-C = {}
-if comp_path.exists():
-    C = json.loads(comp_path.read_text()).get("components", {})
+# Required: every measured size below reads it, and a missing file must fail the build.
+C = json.loads((RAW / "components-computed.json").read_text())["components"]
 
 
 def var(name, ty="color", **kw):
@@ -35,6 +33,35 @@ def measured(value, source, ty, **kw):
     d = {"value": value, "type": ty, "source": source}
     d.update(kw)
     return d
+
+
+HAND = "Reconstruction — entered by hand at capture time, no raw reading behind it"
+
+
+def hand(value, note, ty, **kw):
+    """A value typed in at capture time. Labelled as such, never as measured or declared."""
+    return measured(value, f"{HAND}: {note}", ty, **kw)
+
+
+def computed(comp, prop, ty, state="default", what=None, **kw):
+    """A computed style read on a component in raw/components-computed.json; raises when the
+    component, state or property is missing, so a recapture that loses it fails the build."""
+    v = C[comp]["states"][state]["style"][prop]
+    if v in (None, "", "auto", "normal"):
+        raise KeyError(f"{comp} {state}: no {prop} reading")
+    if ty == "fontWeight":
+        v = int(v)
+    return measured(v, f"computed {prop} of {comp} {state} (raw/components-computed.json)" + (f"; {what}" if what else ""), ty, **kw)
+
+
+def declared(name, selector, ty, **kw):
+    """A custom property declared on a selector in raw/css-vars.json (first rule whose selector
+    contains `selector`); raises when no such declaration was harvested."""
+    for b in ("app", "skins", "vendor", "utility"):
+        for r in V.get(b, []):
+            if selector in r.get("selector", "") and name in r.get("properties", {}):
+                return measured(r["properties"][name], f"declared {name} on {r['selector']} (raw/css-vars.json)", ty, **kw)
+    raise KeyError(f"{name} on {selector}: not in raw/css-vars.json")
 
 
 SPEC = {
@@ -66,8 +93,7 @@ SPEC["core"]["color"] = {
         "dark-dim": var("--rs-color-primary-dim-dark-theme"),
         "dark-fog": var("--rs-color-primary-fog-dark-theme"),
     },
-    "pink": measured("#f31199", "measured css custom property --main-page-pink on home ._page", "color",
-                     description="Home campaign pink"),
+    "pink": declared("--main-page-pink", "._page", "color", description="Home campaign pink"),
 }
 for role, light_name, dark_name in (
     ("danger", "--rs-color-danger-light-theme", "--rs-color-danger-dark-theme"),
@@ -93,58 +119,52 @@ for prefix, key in (("black", "black-alpha"), ("white", "white-alpha")):
 
 SPEC["core"]["font"] = {
     "family": {
-        "sans": measured(
-            '"JetBrains Sans", Helvetica, Arial, sans-serif',
-            "measured computed font-family on header links and the Explore Air button, jetbrains.com home 2026-11-18",
-            "fontFamily",
-            description="JetBrains Sans, the marketing UI face",
-        ),
-        "ui": measured(
-            '"JetBrains Sans", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-            "measured computed font-family on account.jetbrains.com/login, the --rs-font-family-ui fallback stack",
-            "fontFamily",
-        ),
+        "sans": computed("button-primary", "fontFamily", "fontFamily", what="the header CTA on home",
+                         description="JetBrains Sans, the marketing UI face"),
+        "ui": computed("email-field", "fontFamily", "fontFamily", what="account.jetbrains.com/login, the --rs-font-family-ui fallback stack"),
     },
     "weight": {
-        "regular": measured(400, "measured font-weight 400 on body copy", "fontWeight"),
-        "medium": measured(500, "measured font-weight on nav and button labels where the sheet sets 500", "fontWeight"),
-        "bold": measured(700, "measured font-weight on display headings", "fontWeight"),
+        "regular": computed("button-primary", "fontWeight", "fontWeight"),
+        "medium": hand(500, "nav and button labels; every measured label reads 400", "fontWeight"),
+        "bold": hand(700, "display headings; no heading was measured", "fontWeight"),
     },
     "size": {
-        "caption": measured("13px", "measured 13px captions on store cards", "dimension"),
-        "body": measured("16px", "measured 16px body and button label, --rs-text-2-font-size", "dimension"),
-        "lead": measured("18px", "measured 18px lead on product pages", "dimension"),
-        "title": measured("24px", "measured 24px section titles", "dimension"),
-        "display": measured("48px", "measured display size on the home hero", "dimension"),
+        "caption": computed("badge", "fontSize", "dimension"),
+        "body": computed("button-primary", "fontSize", "dimension"),
+        "lead": hand("18px", "lead on product pages", "dimension"),
+        "title": hand("24px", "section titles", "dimension"),
+        "display": hand("48px", "display size on the home hero", "dimension"),
     },
     "line-height": {
-        "body": measured("24px", "declared --rs-text-2-line-height 24px", "dimension"),
-        "tight": measured("1.1", "measured line-height on display headings", "number"),
+        "body": computed("email-field", "lineHeight", "dimension"),
+        "tight": hand("1.1", "display headings", "number"),
     },
 }
 
+# No spacing scale is declared; the steps are a suggested 4px scale. --rs-card-padding is the
+# one declared spacing value (the home ._card).
 SPEC["core"]["spacing"] = {
-    "2": measured("2px", "measured 2px icon nudge", "dimension"),
-    "4": measured("4px", "4px base step", "dimension"),
-    "8": measured("8px", "8px step", "dimension"),
-    "12": measured("12px", "12px step", "dimension"),
-    "16": measured("16px", "16px step, header gutters", "dimension"),
-    "24": measured("24px", "24px step", "dimension"),
-    "32": measured("32px", "32px step", "dimension"),
-    "48": measured("48px", "48px section gap", "dimension"),
-    "64": measured("64px", "declared --rs-card-padding 64px on home cards", "dimension"),
+    "2": hand("2px", "icon nudge", "dimension"),
+    "4": hand("4px", "base step", "dimension"),
+    "8": hand("8px", "step", "dimension"),
+    "12": hand("12px", "step", "dimension"),
+    "16": hand("16px", "header gutters", "dimension"),
+    "24": hand("24px", "step", "dimension"),
+    "32": hand("32px", "step", "dimension"),
+    "48": hand("48px", "section gap", "dimension"),
+    "64": declared("--rs-card-padding", "._card_", "dimension"),
 }
 
 SPEC["core"]["radius"] = {
-    "sm": measured("4px", "measured 4px on small chips", "dimension"),
-    "md": measured("8px", "declared --rs-card-border-radius 8px on tool cards", "dimension"),
-    "pill": measured("20px", "measured 20px radius on the Explore Air pill button", "dimension"),
-    "round": measured("999px", "pill controls that resolve to a full capsule", "dimension"),
+    "sm": computed("badge", "borderTopLeftRadius", "dimension"),
+    "md": declared("--rs-card-border-radius", "._toolCard", "dimension"),
+    "pill": computed("button-primary", "borderTopLeftRadius", "dimension", what="the Explore Air pill"),
+    "round": hand("999px", "pill controls that resolve to a full capsule", "dimension"),
 }
 
 SPEC["core"]["borderWidth"] = {
-    "hairline": measured("1px", "measured 1px borders on outline buttons and cards", "dimension"),
-    "focus": measured("3px", "declared --rs-card-focus-border-width 3px", "dimension"),
+    "hairline": hand("1px", "borders on outline buttons and cards", "dimension"),
+    "focus": declared("--rs-card-focus-border-width", "._toolCard", "dimension"),
 }
 
 # Semantic roles. Light is the store/help/login paint. Dark is the home campaign.
@@ -157,7 +177,7 @@ SPEC["light"] = {
         "scrim": var("--rs-color-black-t50"),
     },
     "text": {
-        "primary": measured("#343434", "measured computed color rgb(52, 52, 52) on store body text, 2026-11-18", "color"),
+        "primary": hand("#343434", "store body text colour rgb(52, 52, 52); no raw file holds it", "color"),
         "secondary": var("--rs-color-grey-60"),
         "disabled": var("--rs-color-grey-40"),
         "on-accent": var("--rs-color-white"),
@@ -170,7 +190,7 @@ SPEC["light"] = {
     },
     "accent": var("--rs-color-primary-light-theme", description="Light-theme brand purple #6b57ff"),
     "accent-hover": var("--rs-color-primary-dim-light-theme"),
-    "accent-pressed": measured("#5646cc", "derived: primary light pressed one step darker than #6b57ff; labelled derived because no pressed primary was measured on a light page", "color"),
+    "accent-pressed": hand("#5646cc", "a suggested pressed step darker than #6b57ff; no pressed primary was measured on a light page", "color"),
     "focus": var("--rs-color-primary-light-theme"),
     "status": {
         "success": var("--rs-color-success"),
@@ -214,17 +234,17 @@ SPEC["dark"] = {
 
 SPEC["component"] = {
     "button": {
-        "radius": measured("20px", "measured border-radius on the Explore Air button", "dimension"),
-        "padding-x": measured("16px", "measured horizontal padding on the Explore Air button", "dimension"),
-        "height": measured("40px", "measured height of size-M buttons", "dimension"),
-        "font-size": measured("16px", "measured font-size on the Explore Air button", "dimension"),
+        "radius": computed("button-primary", "borderTopLeftRadius", "dimension", what="the Explore Air button"),
+        "padding-x": computed("button-primary", "paddingLeft", "dimension", what="the Explore Air button"),
+        "height": computed("button-primary", "height", "dimension", what="a size-M button"),
+        "font-size": computed("button-primary", "fontSize", "dimension", what="the Explore Air button"),
     },
     "card": {
-        "radius": measured("8px", "declared --rs-card-border-radius 8px on home tool cards", "dimension"),
-        "padding": measured("64px", "declared --rs-card-padding 64px", "dimension"),
+        "radius": declared("--rs-card-border-radius", "._toolCard", "dimension"),
+        "padding": declared("--rs-card-padding", "._card_", "dimension"),
     },
     "nav": {
-        "height": measured("64px", "measured sticky header height on jetbrains.com", "dimension"),
+        "height": computed("nav", "height", "dimension", what="the sticky header on jetbrains.com"),
     },
 }
 
@@ -242,5 +262,6 @@ def prune(node):
     return True
 
 prune(SPEC)
-(RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1) + "\n")
-print("wrote", RAW / "component-tokens.json", "vars known", len(R))
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1) + "\n")
+    print("wrote", RAW / "component-tokens.json", "vars known", len(R))

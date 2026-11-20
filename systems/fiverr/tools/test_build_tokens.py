@@ -94,5 +94,69 @@ class CommittedTokensTest(unittest.TestCase):
                     self.assertIn(a, names, f"{set_name}.{name}: alias {{{a}}} points at nothing")
 
 
+RAW = pathlib.Path(__file__).resolve().parent.parent / "raw" / "components-computed.json"
+COMPUTED = build_tokens.re.compile(r"computed (\w+) of (\S+) (\S+) \(raw/components-computed\.json\)$")
+
+
+def same(raw, value):
+    """A raw computed reading and the committed value it became."""
+    if raw is None:
+        return False
+    if raw == value:
+        return True
+    try:
+        if build_tokens.norm_color(raw) == value:
+            return True
+    except ValueError:
+        pass
+    m = build_tokens.re.fullmatch(r"([\d.]+)s", str(raw))
+    if m and value == f"{float(m.group(1)) * 1000:g}ms":
+        return True
+    try:
+        return float(raw) == float(value)
+    except (TypeError, ValueError):
+        return False
+
+
+class MeasuredLeavesTest(unittest.TestCase):
+    """Every leaf whose source names a computed reading carries that reading."""
+
+    @unittest.skipUnless(TOKENS.exists() and RAW.exists(), "no tokens.json or raw readings")
+    def test_computed_leaves_match_raw(self):
+        doc = json.loads(TOKENS.read_text())
+        comps = json.loads(RAW.read_text())
+        comps = comps.get("components", comps)
+        checked = 0
+        for set_name, tree in doc.items():
+            if set_name.startswith("$"):
+                continue
+            for name, tok in leaves(tree):
+                m = COMPUTED.match(tok.get("$extensions", {}).get("source", ""))
+                if not m:
+                    continue
+                prop, comp, state = m.groups()
+                with self.subTest(token=f"{set_name}.{name}"):
+                    st = comps[comp]["states"][state]
+                    self.assertNotEqual(st.get("via"), "focus failed")
+                    raw = [(st.get("style") or {}).get(prop), (st.get("textStyle") or {}).get(prop)]
+                    self.assertTrue(any(same(r, tok["$value"]) for r in raw),
+                                    f"{tok['$value']!r} is not the raw {prop} {raw}")
+                    checked += 1
+        self.assertGreater(checked, 30)
+
+    @unittest.skipUnless(TOKENS.exists(), "no tokens.json yet")
+    def test_no_transparent_colour(self):
+        # A transparent reading (alpha 0) paints nothing; committed as a fill it hands a
+        # consumer an invisible surface.
+        doc = json.loads(TOKENS.read_text())
+        for set_name, tree in doc.items():
+            if set_name.startswith("$"):
+                continue
+            for name, tok in leaves(tree):
+                if tok.get("$type") == "color" and isinstance(tok["$value"], str):
+                    self.assertNotRegex(tok["$value"], r"^(transparent|rgba\([^)]*,\s*0\))$",
+                                        f"{set_name}.{name}")
+
+
 if __name__ == "__main__":
     unittest.main()

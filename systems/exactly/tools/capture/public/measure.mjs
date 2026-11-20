@@ -23,7 +23,7 @@
 // answered.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, REF, CROPS, UA, UA_MOBILE } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -210,7 +210,21 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (opts.noToggle) via = 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (st === 'focus-visible' && via === 'focus failed') {
+        // Keyboard focus never reached the element, so a reading now would be the element at rest
+        // saved as its focus. Record the miss instead (the builders list it as "focus could not be
+        // captured"); an earlier run's real focus reading is kept, with the failed retry noted beside it.
+        const prevSt = out.components[key].states[st];
+        if (prevSt?.style && prevSt.via !== 'focus failed') {
+          prevSt.rerunError = 'focus failed: keyboard focus did not reach the element';
+          log('  !', key, st, 'focus failed; earlier reading kept');
+        } else {
+          const old = prevSt?.crop && path.resolve(REF, prevSt.crop);
+          if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
+          out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via, run };
+          log('  -', key, st, 'skipped: focus failed');
+        }
+      } else await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
       if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
@@ -265,7 +279,9 @@ async function sheetsFor(key) {
 
 // Whether the page paints a different transition under prefers-reduced-motion:
 // the same component re-read in a context with reduce on.
-async function reducedMotion(key, sel) {
+async function reducedMotion(key, sel, text = null) {
+  // `text` narrows `sel` to the named, visible element the normal pass measured.
+  const slot = `${key} ${sel}${text ? ` "${text.source}"` : ''}`; // one entry per element
   out._meta.reducedMotion ??= {};
   try {
     const b = context.browser();
@@ -275,15 +291,19 @@ async function reducedMotion(key, sel) {
     await p.goto(URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key], { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     await p.waitForTimeout(7000);
     await closePromo(p);
-    const v = await p.evaluate((s) => {
-      const el = document.querySelector(s);
+    const v = await p.evaluate(([s, src]) => {
+      const re = src && new RegExp(src, 'i');
+      const el = [...document.querySelectorAll(s)].find((n) => {
+        const r = n.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && (!re || re.test((n.innerText || '').trim()));
+      });
       if (!el) return null;
       const cs = getComputedStyle(el);
       return { transition: cs.transition, animation: cs.animation, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
-    }, sel).catch(() => null);
-    out._meta.reducedMotion[key] = { selector: sel, reduce: v };
+    }, [sel, text && text.source]).catch(() => null);
+    out._meta.reducedMotion[slot] = { page: key, selector: sel, text: text && text.source, reduce: v };
     await ctx.close();
-  } catch (e) { out._meta.reducedMotion[key] = { selector: sel, error: String(e).slice(0, 120) }; }
+  } catch (e) { out._meta.reducedMotion[slot] = { page: key, selector: sel, error: String(e).slice(0, 120) }; }
 }
 
 const G = {
@@ -508,9 +528,9 @@ const finishedPages = new Set();
 try {
   for (const k of order) { if (k !== 'mobile') { await plan[k](); finishedPages.add(k); } }
   if (!pages.length || pages.includes('mobile')) { await plan.mobile(); finishedPages.add('mobile'); }
-  // Reduced-motion check on an element that transitions (the orange CTA's
-  // hover), so the delta is meaningful.
-  if (!pages.length || pages.includes('home')) await reducedMotion('home', 'a');
+  // Reduced-motion check on an element that transitions, so the delta is meaningful: the footer
+  // links' 0.2s colour transition (the CTAs and the first `a` declare none).
+  if (!pages.length || pages.includes('home')) await reducedMotion('home', 'a', /^(Privacy policy|Cookies policy|Copyright policy|Content rules|Platform license agreement)$/);
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
     // An untouched entry is pruned only when its page finished this run: a

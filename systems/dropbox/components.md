@@ -546,6 +546,8 @@ Read as `footer-link` on the home page.
 #### Social link
 A social link in the footer. Read as `social-icon` on the home page.
 
+**Wrong element.** `footer a[href*="x.com"]` also matches dropbox.com, so these are the "Dropbox Sign" footer link's values, not a social icon's. The selector is fixed in tools/capture/public/measure.mjs; the entry needs a recapture.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 91.03 x 17; background transparent; text Atlas Grotesk Web 14/22 400, #f7f5f2 `color.brand.status.faint.background` |

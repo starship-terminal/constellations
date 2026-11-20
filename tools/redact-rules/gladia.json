@@ -4,20 +4,20 @@
   "ocr": {
     "emails": true,
     "email_allow": [
-      "name@example.com",
-      "sales@gladia.io",
-      "support@gladia.io",
-      "privacy@gladia.io",
-      "dpo@gladia.io",
-      "contact@gladia.io",
-      "hello@gladia.io",
-      "legal@gladia.io",
-      "security@gladia.io",
+      "name@example\\.com",
+      "sales@gladia\\.io",
+      "support@gladia\\.io",
+      "privacy@gladia\\.io",
+      "dpo@gladia\\.io",
+      "contact@gladia\\.io",
+      "hello@gladia\\.io",
+      "legal@gladia\\.io",
+      "security@gladia\\.io",
       "@gladia\\.i",
-      "jobs@gladia.io",
-      "press@gladia.io",
-      "partners@gladia.io",
-      "copyright@gladia.io"
+      "jobs@gladia\\.io",
+      "press@gladia\\.io",
+      "partners@gladia\\.io",
+      "copyright@gladia\\.io"
     ]
   }
 }

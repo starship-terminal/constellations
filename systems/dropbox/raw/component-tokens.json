@@ -133,9 +133,15 @@
     },
     "measured-section-h2": {
      "type": "dimension",
-     "value": "20px",
+     "value": "{font.size.text-xlarge}",
      "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
-     "description": "A section heading size. Measured — outside the declared ramp."
+     "description": "A section heading size. Measured; it equals the declared text-xlarge step."
+    },
+    "measured-price": {
+     "type": "dimension",
+     "value": "{font.size.text-xlarge}",
+     "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+     "description": "The plan price figure size. Measured; it equals the declared text-xlarge step."
     },
     "measured-menu-item": {
      "type": "dimension",

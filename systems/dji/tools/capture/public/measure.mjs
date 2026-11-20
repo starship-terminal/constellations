@@ -116,6 +116,24 @@ function comp(key, meta) {
   return c;
 }
 
+// A failed re-read must not erase an earlier successful one: keep the saved
+// style and record the failed attempt beside it. comp() has already stamped
+// this run's date on the component, so the kept state is pinned to the run
+// that actually read it (its own run stamp, else the component's earlier run)
+// and an old reading is never republished as a new one.
+function keepEarlier(c, state, e, earlierRun) {
+  const err = String(e.message || e).slice(0, 200);
+  const prev = c.states[state];
+  if (prev && prev.style) {
+    // A state that already carried a rerunError before read was recorded is
+    // from an unknown earlier run: its date stays unknown (null), never the
+    // component's date, which a failed re-read had already advanced.
+    if (prev.read === undefined) prev.read = prev.rerunError ? null : (prev.run || earlierRun);
+    prev.rerunError = err;
+    prev.rerunOn = run;
+  } else c.states[state] = { error: err };
+}
+
 async function measure(key, state, target, opts = {}) {
   const loc = target.and(page.locator(':visible')).first();
   const c = out.components[key];
@@ -131,11 +149,7 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    // A failed re-read must not erase an earlier successful one: keep the
-    // saved style and record the failed attempt beside it.
-    const prev = c.states[state];
-    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    keepEarlier(c, state, e, opts.earlierRun);
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -188,19 +202,37 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          undo = () => closeOpened(key, loc, opts);
+        }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      await measure(key, st, loc, { ...opts, via, earlierRun: keep?.run });
     } catch (e) {
-      const prev = out.components[key].states[st];
-      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-      else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      keepEarlier(out.components[key], st, e, keep?.run);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
   }
   await reset();
+}
+
+// Closes what an `opened` state opened. An open dropdown or menu keeps focus
+// and covers the page, so every later focus-visible reading would come back
+// 'focus failed'. Escape first, then the trigger again; if the trigger still
+// reports aria-expanded="true" the miss is recorded on the opened state so
+// the later readings on this page can be checked.
+async function closeOpened(key, loc, opts) {
+  const expanded = () => loc.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null);
+  await page.keyboard.press('Escape').catch(() => {});
+  await page.waitForTimeout(400);
+  if ((await expanded()) === 'true') { await toggle(loc, { allowLink: opts.allowLink }).catch(() => {}); await page.waitForTimeout(600); }
+  if ((await expanded()) === 'true') {
+    const st = out.components[key].states.opened;
+    if (st) st.closeFailed = 'aria-expanded still "true" after Escape and a second toggle';
+    log('  ! opened state did not close', key);
+  }
 }
 
 // Clicks a UI toggle (dropdown, menu, sheet trigger). Refuses a submit button
@@ -345,7 +377,9 @@ async function company() {
   await chrome('company');
   const g = G.support;
   await S('co-h1', await domFind(page, /^about dji$/i, { sel: 'a, span, div', tag: 'coh', minW: 40, minH: 14 }), ['default'], { group: g, title: 'About DJI nav heading', desc: 'The "About DJI" section heading in the company sidebar nav — the page paints its hero as image, so this named link is its display text.', sel: 'about nav item' }, { noScroll: true });
-  await S('co-lede', q('p').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Company lede', desc: 'The first body paragraph on the company page.', sel: 'company p' });
+  // The first visible <p> was the unsupported-browser notice in a modal box
+  // (2026-11 run), not the company lede.
+  await S('co-lede', q('p:not(.modal-box p)').filter({ hasNotText: /no longer supported/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Company lede', desc: 'The first body paragraph on the company page.', sel: 'company p' });
   save();
 }
 

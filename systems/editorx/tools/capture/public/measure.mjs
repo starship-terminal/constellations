@@ -207,7 +207,17 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          // Close it again after the reading: a menu left open holds focus, so every later
+          // focus-visible on the page records 'focus failed'. Escape closes a menu; an
+          // accordion still reporting aria-expanded=true is toggled back.
+          undo = async () => {
+            await page.keyboard.press('Escape'); await page.waitForTimeout(300);
+            const l = loc.filter({ visible: true }).first();
+            if ((await l.getAttribute('aria-expanded').catch(() => null)) === 'true') { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(600); }
+          };
+        }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -507,7 +517,7 @@ async function home() {
   await chrome('home');
   const g = G.shell;
   await S('nav-bar', q('nav').filter({ hasText: /Product/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Nav bar', desc: 'The fixed top bar (57px): the Wix Studio wordmark, the Product / Resources / Enterprise dropdown triggers, Pricing, the language selector, Log In and the black Start Creating button.', sel: 'nav' }, { noScroll: true });
-  await S('logo', q('nav a[href$="/studio"], nav a').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', desc: 'The Wix Studio wordmark anchor.', sel: 'nav a /studio' }, { noScroll: true });
+  await S('logo', q('nav a[href$="/studio"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', desc: 'The Wix Studio wordmark anchor.', sel: 'nav a /studio' }, { noScroll: true });
   await S('nav-trigger', q('nav button').filter({ hasText: /^\s*Product\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Nav trigger', desc: 'The Product button that opens the nav dropdown; toggled, never followed.', sel: 'nav button "Product"' }, { noScroll: true });
   await S('nav-link', q('nav a').filter({ hasText: /^\s*Pricing\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Nav link', desc: 'The plain Pricing nav link; measured, never followed.', sel: 'nav a "Pricing"' }, { noScroll: true });
   await S('nav-lang', q('button[aria-label*="language" i], button#menu-item-languages').filter({ visible: true }).first(), B4, { group: g, title: 'Language selector', desc: 'The globe language control ("language selector, english selected"); never opened.', sel: 'button[aria-label*=language]' }, { noScroll: true });

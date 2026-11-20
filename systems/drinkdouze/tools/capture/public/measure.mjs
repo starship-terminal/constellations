@@ -1,3 +1,23 @@
+// Measures drinkdouze.com's public components in every state reachable
+// without signing in, adding to the cart or submitting anything.
+//
+//   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
+//
+// Pages: home shop product trio faq story login cart search mobile (the footer
+// runs with home).
+// Writes raw/components-computed.json (merged) and one crop per component and
+// state into components/crops/; raw/measurements.md is built by
+// build-measurements.mjs.
+//
+// drinkdouze.com is a French Shopify storefront (an Impact-family theme plus
+// douze-custom.css) that paints light only, so specs select by the theme's
+// custom elements (product-item, store-header, cart-count), its BEM classes
+// and visible text. The quick-add form is visibility:hidden until its card is
+// hovered, so every quick-add state is read with the card hovered. The only
+// presses are local UI toggles: the 24-Canettes pack-size swatch (a radio,
+// nothing added) and the mobile menu. Add-to-cart, quick-add, Se connecter and
+// the cart actions are measured, never pressed. The Klaviyo popup and any
+// consent overlay are hidden, never answered.
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
@@ -318,7 +338,7 @@ async function shop() {
   await S('product-card-title', q('product-item .product-item__title-wrapper').filter({ visible: true }).first(), ['default'], { group: g, title: 'Product card wordmark', desc: 'The flavour title on a grid card is a wordmark image (no live text), over a pack-line paragraph.', sel: '.product-item__title-wrapper' });
   await S('product-card-pack', q('product-item .product-item__info-wrapper .h5, product-item .h5').filter({ visible: true }).first(), ['default'], { group: g, title: 'Card pack line', desc: 'The "6 canettes 25cl" pack description under the wordmark, h5 style.', sel: '.product-item__info-wrapper .h5' });
   const hoverCard2 = async () => { const c0 = q('product-item').filter({ visible: true }).first(); if (await c0.count()) { await c0.hover({ timeout: 5000 }).catch(() => {}); await page.waitForTimeout(700); return 'hovered the card to reveal the quick-add form'; } };
-  await S('quick-add', q('product-item .product-item__add-to-cart-btn, product-item .product-item__quick-form .button').filter({ visible: true }).first(), B4, { group: g, title: 'Quick-add button', desc: "The card's Ajouter-au-panier — visibility:hidden until the card is hovered; the press posts to /cart/add so it is measured, never pressed.", sel: '.product-item__add-to-cart-btn' }, { noReset: true, open: hoverCard2, before: Object.fromEntries(B4.map((s) => [s, hoverCard2])) });
+  await S('quick-add', q('product-item .product-item__add-to-cart-btn, product-item .product-item__quick-form .button').filter({ visible: true }).first(), B4, { group: g, title: 'Quick-add button', desc: "The card's Ajouter-au-panier — visibility:hidden until the card is hovered, so every state is read with the card hovered; the press posts to /cart/add so it is measured, never pressed.", sel: '.product-item__add-to-cart-btn' }, { noReset: true, open: hoverCard2, before: Object.fromEntries(B4.map((s) => [s, hoverCard2])) });
   await S('product-card-price', q('product-item .product-item__btn-price').filter({ visible: true }).first(), ['default'], { group: g, title: 'Quick-add price', desc: "The price span inside the quick-add button.", sel: '.product-item__btn-price' }, { noReset: true, open: hoverCard2 });
   await S('sort-control', q('select, [class*="filter" i], [class*="sort" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Sort control', desc: 'A sort/filter control on the collection grid, if one paints.', sel: 'shop select' });
   await S('pagination', q('[class*="pagination" i], nav[aria-label*="pagination" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pagination', desc: "The grid's pagination, if the catalogue is long enough to need one.", sel: 'pagination' });
@@ -334,9 +354,11 @@ async function product() {
   await S('pdp-title', q('.product-item__title-wrapper, product-info .heading, [class*="product-info" i] [class*="title" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Product title', desc: 'The 60px Boogy flavour title in the buy box.', sel: '.product-item__title-wrapper' });
   await S('pdp-price', q('[data-product-price-list] .price, .price-list .price, [class*="price" i]').filter({ hasText: /\d+([.,]\d+)?\s*€/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Price', desc: 'The selling price figure (21.00€ for a 6-pack).', sel: '[data-product-price-list] .price' });
   await S('variant-swatch', q('label.block-swatch__item').filter({ hasText: /6\s*CANETTES/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Pack-size swatch (checked)', desc: 'The checked "6 Canettes" block-swatch radio label.', sel: 'label.block-swatch__item "6 CANETTES"' });
-  await S('variant-swatch-2', q('label.block-swatch__item').filter({ hasText: /12\s*CANETTES/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Pack-size swatch', desc: 'An unchecked block-swatch option (12 Canettes); one was toggled selected for the state shots, never added to the cart.', sel: 'label.block-swatch__item "12 CANETTES"' });
-  await S('swatch-selected', q('label.block-swatch__item').filter({ hasText: /24\s*CANETTES/i }).filter({ visible: true }).first(), ['selected'], { group: g, title: 'Swatch, newly selected', desc: 'The 24-Canettes swatch in its selected state, reached by the swatch\'s own click.', sel: 'selected block-swatch' }, { before: { selected: async () => { const v = q('label.block-swatch__item').filter({ hasText: /24\s*CANETTES/i }).filter({ visible: true }).first(); if (await v.count()) { await v.click({ timeout: 4000 }).catch(() => v.evaluate((el) => el.click())); await page.waitForTimeout(1200); return 'clicked the 24-CANETTES swatch (local radio, nothing added)'; } } } });
+  await S('variant-swatch-2', q('label.block-swatch__item').filter({ hasText: /12\s*CANETTES/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Pack-size swatch', desc: 'An unchecked block-swatch option (12 Canettes), read at rest, on hover, on keyboard focus and forced pressed; the selected look is the separate swatch-selected entry. Never added to the cart.', sel: 'label.block-swatch__item "12 CANETTES"' });
+  // add-to-cart first: the swatch-selected click below picks the 24-pack and is not undone, so
+  // a later read would show that pack's price, not the default one named in the desc.
   await S('add-to-cart', q('.product-form__add-button, button[data-product-add-to-cart-button]').filter({ visible: true }).first(), B4, { group: g, title: 'Add to cart button', desc: 'The "Ajouter au panier — 21€" submit; measured, never pressed — a press posts to /cart/add.', sel: '.product-form__add-button' });
+  await S('swatch-selected', q('label.block-swatch__item').filter({ hasText: /24\s*CANETTES/i }).filter({ visible: true }).first(), ['selected'], { group: g, title: 'Swatch, newly selected', desc: 'The 24-Canettes swatch in its selected state, reached by the swatch\'s own click.', sel: 'selected block-swatch' }, { before: { selected: async () => { const v = q('label.block-swatch__item').filter({ hasText: /24\s*CANETTES/i }).filter({ visible: true }).first(); if (await v.count()) { await v.click({ timeout: 4000 }).catch(() => v.evaluate((el) => el.click())); await page.waitForTimeout(1200); return 'clicked the 24-CANETTES swatch (local radio, nothing added)'; } } } });
   await S('reassurance', q('.product-info__reassurance-item').filter({ visible: true }).first(), ['default'], { group: g, title: 'Reassurance line', desc: 'A trust line under the buy button ("livraison à J+2…"), dusk text with a flavour-coloured divider.', sel: '.product-info__reassurance-item' });
   await S('reviews-tab', q('.kl_reviews__list__tabs button, .kl_reviews [role="tab"], .kl_reviews__list__tabs').filter({ visible: true }).first(), B4, { group: g, title: 'Reviews tab', desc: "A Klaviyo-reviews tab (\"Avis\" / \"Écrire un avis\") — a vendor widget painted in the theme's chrome.", sel: '.kl_reviews__list__tabs' });
   await S('sort-select', q('select').filter({ visible: true }).first(), B4, { group: g, title: 'Review sort select', desc: 'The Klaviyo reviews sort <select> — the one native select that paints signed out.', sel: 'select#kl_reviews__sort_by_reviews' });
@@ -370,12 +392,13 @@ async function story() {
 async function login() {
   if (!(await newPage('login', { wait: 9000 }))) return;
   const g = G.auth;
-  const card = await markPainted('.customer-form-card, form#customer_login', 'm-login', { minW: 250, minH: 200 }).catch(() => null);
-  await S('login-card', card || q('.customer-form-card, main form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Login card', desc: 'The centred customer-login card; never filled or submitted.', sel: '.customer-form-card' });
+  const card = await markPainted('.customer-form-card, form#customer_login', 'm-login', { minW: 250, minH: 200 });
+  // markPainted returns a never-matching locator on a miss, not null
+  await S('login-card', (await card.count()) ? card : q('.customer-form-card, main form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Login card', desc: 'The centred customer-login card; never filled or submitted.', sel: '.customer-form-card' });
   await S('email-field', q('input[name="customer[email]"], input[type="email"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'The E-mail input with its floating label; sample text was typed and deleted, nothing sent.', sel: 'input[name="customer[email]"]' });
   await S('password-field', q('input[name="customer[password]"], input[type="password"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Password field', desc: 'The Mot-de-passe input; focused only, never filled.', sel: 'input[name="customer[password]"]' });
   await S('login-button', q('form button[type="submit"], form .button').filter({ hasText: /connecter|log ?in/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Login button', desc: 'The Se-connecter submit; measured, never pressed (a press would submit).', sel: 'form button "Se connecter"' });
-  await S('recover-link', q('form button[type="button"], .customer-form-card button, main button').filter({ hasText: /oubli|forgot|recover|récup/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Recover toggle', desc: 'The "Mot de passe oublié ?" button — it swaps the card to the recover form in place; measured, and the swap itself captured as a state.', sel: 'button "Mot de passe oublié"' });
+  await S('recover-link', q('form button[type="button"], .customer-form-card button, main button').filter({ hasText: /oubli|forgot|recover|récup/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Recover toggle', desc: 'The "Mot de passe oublié ?" button, which swaps the card to the recover form in place; measured at rest, on hover, on keyboard focus and forced pressed, never clicked, so the swap is not captured.', sel: 'button "Mot de passe oublié"' });
   await S('register-link', q('a[href*="register" i], main a').filter({ hasText: /inscrire|register/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Register link', desc: 'The "S\'inscrire" link to /account/register.', sel: 'a[href*="register"]' });
   save();
 }

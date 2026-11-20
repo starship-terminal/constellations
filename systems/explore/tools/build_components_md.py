@@ -147,8 +147,20 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and listed as focus that could not be captured (kit builder port)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -177,7 +189,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -304,13 +316,15 @@ W()
 foc, failed = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if not st:
         continue
-    if st.get("via") == "focus failed":
+    if focus_not_captured(st):
         # Keyboard focus never landed on the element, so this record is the
         # unfocused style, not an observed focus look: a capture gap.
         failed.append(k)
         continue
+    if "style" not in st:
+        continue  # an error record (the focus attempt threw, no earlier reading): nothing to report
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
@@ -328,7 +342,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -366,7 +380,7 @@ for k in ["post-card", "auth-panel", "feature", "field-email", "login-submit", "
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)

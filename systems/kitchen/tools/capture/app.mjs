@@ -146,7 +146,6 @@ const ctx = await chromium.launchPersistentContext(PROFILE, {
   deviceScaleFactor: 1,
   userAgent: UA,
   locale: 'en-US',
-  args: ['--disable-blink-features=AutomationControlled'],
 });
 const page = ctx.pages()[0] || await ctx.newPage();
 page.setDefaultTimeout(12000);
@@ -300,14 +299,15 @@ try {
   fs.writeFileSync(path.join(os.homedir(), '.design-systems/kitchen/app-notes.json'), JSON.stringify({ app: APP, notes, vars: { colorScheme: vars.colorScheme, customPropertyCount: vars.customPropertyCount, bodyBg: vars.bodyBg, bodyColor: vars.bodyColor, bodyFont: vars.bodyFont } }, null, 2));
   log('vars', vars.customPropertyCount, vars.bodyBg, vars.bodyFont);
 
+  // The session's cookies and localStorage seed the mobile context in memory only: they are
+  // never written to disk (an earlier run left them in ~/.design-systems/kitchen/storage-state.json,
+  // which can be deleted).
   const state = await ctx.storageState();
-  const statePath = path.join(os.homedir(), '.design-systems/kitchen/storage-state.json');
-  fs.writeFileSync(statePath, JSON.stringify(state));
   await ctx.close();
 
   const browser = await chromium.launch({ headless: true });
   const mctx = await browser.newContext({
-    storageState: statePath,
+    storageState: state,
     viewport: { width: 390, height: 844 },
     deviceScaleFactor: 2,
     userAgent: UA_MOBILE,

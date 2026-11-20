@@ -126,3 +126,9 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 | Mobile pass | yes — 390 x 844 on home and pricing, plus the drawer |
 | Icons | yes — 15 SVGs in [icons/](icons) with INDEX.tsv |
 | Fonts | declared and measured; served faces (Inter, Inter Variable) not redistributed |
+
+## Known gaps
+
+- `showcase-chip`, `read-more` and `help-search`: keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md leaves them out and `raw/measurements.md` shows them as Skipped. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
+- `article-quote` is a stale entry: a 2026-11-13 run marked it missing and the script no longer measures it, but the prune runs only on a full run, so it stays in `raw/components-computed.json` and components.md until the next one.
+- `light.focus.ring` (#101010) and `light.focus.ring-mobile` (#e59700) are `outline: auto` rings in the colours Chrome uses for its own focus ring on the desktop pass and under the phone emulation. The site sets no focus colour; the tokens say so in their source.

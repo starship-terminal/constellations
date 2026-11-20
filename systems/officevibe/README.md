@@ -9,7 +9,7 @@ The only theme on these pages is light. The measured viewport was 1169 by 731 CS
 | [README.md](README.md) | This entry |
 | [icon.png](icon.png) | Workleap favicon, fetched from the site and resized to 128 px |
 | [DESIGN.md](DESIGN.md) | Generated from [tokens.json](tokens.json) |
-| [tokens.json](tokens.json) | Measured marketing and login tokens |
+| [tokens.json](tokens.json) | Marketing and login tokens: `:root` custom properties Measured, element computed styles Reconstruction (raw/ does not hold them) |
 | [style-guide.html](style-guide.html) | Specimens drawn from the measured values |
 | [components.md](components.md) | Controls that were on the public pages |
 | [patterns.md](patterns.md) | The public page patterns |
@@ -80,6 +80,8 @@ The painted login primary button is `#2545ff`. The Hop token `--hop-primary-surf
 The login label computed colour was `rgb(108, 108, 107)`. `--hop-neutral-text-weak` is `#777775`. The token records the custom property. The computed label colour is in the note.
 
 Screenshots are absent. Do not treat [style-guide.html](style-guide.html) as a capture of the page.
+
+`raw/computed.json` holds the capture's metadata, not the element styles. Every token whose source is an element's computed style (the page, card and field fills, the nav colour, component heights and paddings, the pricing-card shadow, the 0.4s footer transition, the button easing) is labelled Reconstruction: typed in by hand at capture time. The custom properties from the two `:root` dumps are Measured. The heading styles (`display`, `h1` to `h5`) and the `.button` fill, text and radius come from stylesheet rules raw/ does not keep, and a token that aliases a hand-entered value is labelled the same way.
 
 Two marketing custom properties in the dump have a `<deleted|...>` suffix in the name (`--_typography---paragraph-lg--bottom-margin` and `--_typography---paragraph-xl--bottom-margin`). They were not used as tokens.
 

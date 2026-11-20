@@ -75,6 +75,11 @@ def check(path, ty, val):
                     raise ValueError(f"{path}: shadow {k} {layer[k]!r}")
             if "color" in layer and not str(layer["color"]).startswith("{"):
                 layer["color"] = norm_color(layer["color"])
+            if "inset" in layer and layer["inset"] is not True:
+                raise ValueError(f"{path}: shadow inset {layer['inset']!r}")
+            extra = set(layer) - {"color", "offsetX", "offsetY", "blur", "spread", "inset"}
+            if extra:
+                raise ValueError(f"{path}: shadow layer keys {sorted(extra)}")
     if ty == "number" and not isinstance(val, (int, float)):
         raise ValueError(f"{path}: number {val!r}")
     if ty == "fontWeight" and not isinstance(val, int):

@@ -1,4 +1,5 @@
-"""The Rise token file matches the readings taken on 2026-11-19."""
+"""tokens.json matches an in-memory build, and its pins hold the values taken on 2026-11-19 (literal
+pins, not a comparison with raw/: raw/readings.md is prose)."""
 import json
 import pathlib
 import unittest
@@ -8,6 +9,14 @@ TOKENS = json.loads((HERE / "tokens.json").read_text())
 
 
 class RiseTokens(unittest.TestCase):
+    def test_committed_tokens_match_build(self):
+        import build_tokens  # build() returns the tree; only write() touches tokens.json
+        self.assertEqual(TOKENS, json.loads(json.dumps(build_tokens.build())))
+
+    def test_unpainted_hairline_is_gone(self):
+        # The unset border colour on border-width 0 elements is not a painted edge.
+        self.assertNotIn("hairline", TOKENS["light"]["border"])
+
     def test_primary_is_the_declared_triplet(self):
         self.assertEqual(TOKENS["light"]["color"]["primary"]["$value"], "#7161ec")
 

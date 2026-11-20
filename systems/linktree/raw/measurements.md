@@ -56,7 +56,7 @@ Page: home. Selector: `nav a "Pricing"`. States: default, hover, focus-visible, 
 | Cursor | pointer | = | = | = |
 | Icon | 0 x 0, colour #a8a29e | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.flex.items-center 86.2x48.0 bg #eff0ec r 16px | = |
+| Painted layers | - | - | a.flex.items-center 86.2x48.0 bg #eff0ec r 16px | - |
 
 Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
@@ -132,7 +132,7 @@ Page: home. Selector: `nav button "Solutions"`. States: default, hover, focus-vi
 | Cursor | pointer | = | = | = |
 | Icon | 0 x 0, colour #1e2330 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | button.flex.items-center 106.1x48.0 bg #eff0ec r 16px | = |
+| Painted layers | - | - | button.flex.items-center 106.1x48.0 bg #eff0ec r 16px | - |
 
 Crops: `nav-menu-default.png`, `nav-menu-hover.png`, `nav-menu-focus-visible.png`, `nav-menu-pressed.png`.
 
@@ -340,8 +340,8 @@ Page: home. Selector: `footer a "About"`. States: default, hover, focus-visible,
 | Transition | opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Opacity | - | 0.7 | = | 0.7 |
-| Painted layers | - | = | a.font-linksans.font-normal 39.1x19.5 outline 1px auto #005fcc offset 1px | = |
+| Opacity | - | 0.7 | - | 0.7 |
+| Painted layers | - | - | a.font-linksans.font-normal 39.1x19.5 outline 1px auto #005fcc offset 1px | - |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
@@ -496,7 +496,7 @@ Page: profile. Selector: `button[aria-label="Share profile"]`. States: default, 
 | Icon | 20 x 20, colour #000000 | = | = | = |
 | Ancestor paint | 1 up div.relative.flex outline 1px solid #ffffff @ 0.4 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | button.flex.h-full 40.0x40.0 outline 1px auto #005fcc offset 0px | = |
+| Painted layers | - | - | button.flex.h-full 40.0x40.0 outline 1px auto #005fcc offset 0px | - |
 
 Crops: `profile-share-default.png`, `profile-share-hover.png`, `profile-share-focus-visible.png`, `profile-share-pressed.png`.
 
@@ -522,7 +522,7 @@ Page: profile. Selector: `button "Links"`. States: default, hover, focus-visible
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | button.group.peer 93.9x48.0 r 64px outline 1px auto #005fcc offset 0px | = |
+| Painted layers | - | - | button.group.peer 93.9x48.0 r 64px outline 1px auto #005fcc offset 0px | - |
 
 Crops: `profile-tab-default.png`, `profile-tab-hover.png`, `profile-tab-focus-visible.png`, `profile-tab-pressed.png`.
 
@@ -690,25 +690,26 @@ Page: login. Selector: `button "Continue"`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 480 x 56 | = | = | 470.4 x 54.88 |
-| Padding | 0px 20px | = | = | = |
-| Gap | 4px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | #e5e4e1 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Link Sans Product 16px/24px 500 | = | = | = |
-| Letter spacing | 0.16px | = | = | = |
-| Colour | #040403 @ 0.18 | = | = | = |
-| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | default | = | = | = |
-| ::before | 480px x 56px, absolute, bg #ffffff @ 0.14, radius 9999px | = | = | 480px x 56px, absolute, bg #ffffff @ 0.2, radius 9999px |
-| Painted layers | button.inline-flex.items-center 480.0x56.0 bg #e5e4e1 r 9999px; button::before.inline-flex.items-center 480pxx56px bg #ffffff @ 0.14 r 9999px | = | = | button.inline-flex.items-center 470.4x54.9 bg #e5e4e1 r 9999px; button::before.inline-flex.items-center 480pxx56px bg #ffffff @ 0.2 r 9999px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
-| Transform | - | = | = | matrix(0.98, 0, 0, 0.98, 0, 0) |
+| Size (w x h) | 480 x 56 | = | - | 470.4 x 54.88 |
+| Padding | 0px 20px | = | - | = |
+| Gap | 4px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | #e5e4e1 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Link Sans Product 16px/24px 500 | = | - | = |
+| Letter spacing | 0.16px | = | - | = |
+| Colour | #040403 @ 0.18 | = | - | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | default | = | - | = |
+| ::before | 480px x 56px, absolute, bg #ffffff @ 0.14, radius 9999px | = | - | 480px x 56px, absolute, bg #ffffff @ 0.2, radius 9999px |
+| Painted layers | button.inline-flex.items-center 480.0x56.0 bg #e5e4e1 r 9999px; button::before.inline-flex.items-center 480pxx56px bg #ffffff @ 0.14 r 9999px | = | - | button.inline-flex.items-center 470.4x54.9 bg #e5e4e1 r 9999px; button::before.inline-flex.items-center 480pxx56px bg #ffffff @ 0.2 r 9999px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | - | focus failed: keyboard focus did not reach the element | - |
+| Transform | - | - | - | matrix(0.98, 0, 0, 0.98, 0, 0) |
 
-Crops: `login-continue-default.png`, `login-continue-hover.png`, `login-continue-focus-visible.png`, `login-continue-pressed.png`.
+Crops: `login-continue-default.png`, `login-continue-hover.png`, `login-continue-pressed.png`.
 
 #### login-google
 

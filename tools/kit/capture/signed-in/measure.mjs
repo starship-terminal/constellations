@@ -27,11 +27,15 @@
 // file is aborted.
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
 import { chromium, REF, RAW, CROPS, SNAPS, SCROLL, PYTHON, metaOf, newContext, openSnap, setLight } from './lib.mjs';
 import { safeUrl } from '../safe-url.mjs';
+import { quantizeCrop } from '../crop.mjs';
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
+// Every recorded string is written through noEmails, whatever recorded it: styleOf masks its own text,
+// but an attribute (aria-label="Switch to ..."), a selector or an error message can carry an address too.
+const EMAIL = /[\w.+%-]+@[\w-]+(?:\.[\w-]+)+/g;
+const noEmails = (k, v) => (typeof v === 'string' ? v.replace(EMAIL, '<email>') : v);
 const OUT = path.join(RAW, 'components-computed.json');
 const args = process.argv.slice(2);
 const jobsArg = args.indexOf('--jobs');
@@ -153,17 +157,21 @@ function styleOf(el, props) {
   // A url() in a computed value (a background photo, a cursor) can be a signed or per-account URL:
   // recorded as url(…), only data: and #fragment references kept.
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  // An email address in recorded text (a field's placeholder showing a product's inbox, a label naming
+  // an account) is recorded as <email>, so no address reaches the package.
+  const noEmail = (v) => (typeof v === 'string' ? v.replace(/[\w.+%-]+@[\w-]+(?:\.[\w-]+)+/g, '<email>') : v);
   const pick = (cs) => { const o = {}; for (const p of props) o[p] = noUrl(cs[p]); return o; };
   const cs = getComputedStyle(el);
   const r = el.getBoundingClientRect();
   const out = {
     tag: el.tagName.toLowerCase(),
     classes: cls(el).slice(0, 700),
-    text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+    // a field's placeholder is not its text: it is recorded under placeholder.text below
+    text: noEmail((el.innerText || el.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ')).slice(0, 80),
     rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
     style: pick(cs),
   };
-  for (const a of ['role', 'aria-label', 'data-cds', 'data-state', 'data-active', 'aria-checked', 'aria-selected', 'data-variant']) if (el.hasAttribute(a)) (out.attrs ||= {})[a] = el.getAttribute(a);
+  for (const a of ['role', 'aria-label', 'data-cds', 'data-state', 'data-active', 'aria-checked', 'aria-selected', 'data-variant']) if (el.hasAttribute(a)) (out.attrs ||= {})[a] = noEmail(el.getAttribute(a));
   for (const pe of ['::before', '::after']) {
     const p = getComputedStyle(el, pe);
     if (p.content && p.content !== 'none' && p.content !== 'normal') {
@@ -204,17 +212,17 @@ function styleOf(el, props) {
   if (tn && tn.parentElement !== el) {
     const t = tn.parentElement;
     const tc = getComputedStyle(t);
-    out.textStyle = { node: short(t), text: tn.textContent.trim().slice(0, 40), fontFamily: tc.fontFamily, fontSize: tc.fontSize, lineHeight: tc.lineHeight, fontWeight: tc.fontWeight, letterSpacing: tc.letterSpacing, color: tc.color, textDecorationLine: tc.textDecorationLine, textTransform: tc.textTransform };
+    out.textStyle = { node: short(t), text: noEmail(tn.textContent.trim()).slice(0, 40), fontFamily: tc.fontFamily, fontSize: tc.fontSize, lineHeight: tc.lineHeight, fontWeight: tc.fontWeight, letterSpacing: tc.letterSpacing, color: tc.color, textDecorationLine: tc.textDecorationLine, textTransform: tc.textTransform };
   }
   if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.querySelector('input')) {
     const f = el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' ? el : el.querySelector('input');
     const ph = getComputedStyle(f, '::placeholder');
-    out.placeholder = { text: f.getAttribute('placeholder'), color: ph.color, opacity: ph.opacity, fontSize: ph.fontSize, lineHeight: ph.lineHeight };
+    out.placeholder = { text: noEmail(f.getAttribute('placeholder')), color: ph.color, opacity: ph.opacity, fontSize: ph.fontSize, lineHeight: ph.lineHeight };
   }
   const pp = el.querySelector('[contenteditable=true] p[data-placeholder], [contenteditable=true] p.is-editor-empty') || (el.matches('p[data-placeholder]') ? el : null);
   if (pp) {
     const b = getComputedStyle(pp, '::before');
-    out.placeholder = { text: pp.getAttribute('data-placeholder') || noUrl(b.content).slice(0, 80), color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
+    out.placeholder = { text: noEmail(pp.getAttribute('data-placeholder') || noUrl(b.content)).slice(0, 80), color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
   }
   const svg = el.tagName.toLowerCase() === 'svg' ? el : [...el.querySelectorAll('svg')].find((s) => s.getBoundingClientRect().width > 1);
   if (svg) {
@@ -338,7 +346,7 @@ async function measureSnap(browser, label, specs, out) {
     if (clip.width < 1 || clip.height < 1) throw new Error('off screen');
     const file = path.join(CROPS, `${name}.png`);
     await page.screenshot({ path: file, clip, animations: 'allow' });
-    execFileSync(PYTHON, ['-c', 'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nif im.width>1600: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)', file]);
+    quantizeCrop(file, PYTHON);   // 256 colours, halved past the shared size rule (../crop.mjs)
     return path.relative(REF, file);
   };
 
@@ -467,7 +475,7 @@ const save = () => {
     for (const n of names) { const l = n === 'default' ? 'light' : `light-${n}`; if (pick(l)) ordered[l] = pick(l); }
     comps[spec.key] = { ...c, states: ordered };
   }
-  fs.writeFileSync(OUT, JSON.stringify({ _meta: out._meta, components: comps }, null, 1) + '\n');
+  fs.writeFileSync(OUT, JSON.stringify({ _meta: out._meta, components: comps }, noEmails, 1) + '\n');
 };
 await Promise.all(Array.from({ length: Math.min(CONC, queue.length) }, async () => {
   while (queue.length) {

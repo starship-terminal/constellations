@@ -161,7 +161,6 @@ def build():
             "3": dim("12px", src + " field padding top"),
             "4": dim("16px", src + " field padding and nav button padding-y"),
             "5": dim("20px", src + " hero button padding-y"),
-            "6": dim("24px", src + " blur-xl token, not a layout gap"),
             "8": dim("32px", src + " plan card padding"),
             "10": dim("40px", src + " hero button padding-x"),
             "nav": dim("64px", src + " rendered nav height"),
@@ -170,10 +169,10 @@ def build():
         },
         "motion": {
             "duration": {
-                "default": dim("150ms", src + " --default-transition-duration"),
-                "over": dim("180ms", src + " --transition-duration-over"),
-                "overLong": dim("300ms", src + " --transition-duration-over-long"),
-                "slide": dim("350ms", src + " --transition-duration-slide"),
+                "default": tok("duration", "150ms", src + " --default-transition-duration"),
+                "over": tok("duration", "180ms", src + " --transition-duration-over"),
+                "overLong": tok("duration", "300ms", src + " --transition-duration-over-long"),
+                "slide": tok("duration", "350ms", src + " --transition-duration-slide"),
             },
             "easing": {
                 "default": tok("cubicBezier", [0.4, 0, 0.2, 1], src + " --default-transition-timing-function"),
@@ -247,7 +246,8 @@ def build():
             "default": color(dark["border"], src + " theme-dark --color-border"),
             "strong": color("#e5e5e5", src + " contact focus ring"),
             "ring": color(dark["ring"], src + " theme-dark --color-ring"),
-            "social": color("#c4c4c4", src + " light social ring, not remeasured in dark"),
+            "social": color("#c4c4c4", "Reconstruction: the light social ring reading (" + src
+                            + "), copied into dark by hand at capture time; not remeasured in dark"),
         },
         "status": {
             "destructive": color(named["destructive"], src + " --color-destructive"),
@@ -282,9 +282,14 @@ def build():
             {"name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
         ],
     }
-    OUT.write_text(json.dumps(doc, indent=2) + "\n")
-    print(f"wrote {OUT}")
+    return doc
+
+
+def render():
+    """tokens.json's exact text; nothing is written."""
+    return json.dumps(build(), indent=2) + "\n"
 
 
 if __name__ == "__main__":
-    build()
+    OUT.write_text(render())
+    print(f"wrote {OUT}")

@@ -489,7 +489,7 @@ Shadows, resolved to CSS:
 | `core.shadow.xl` | `0px 5px 32px 0px rgba(0, 0, 0, 0.1)` |
 | `core.shadow.brand-glow` | `0px 4px 14px 0px rgba(9, 97, 228, 0.39)` |
 | `core.shadow.brand-glow-hover` | `0px 6px 20px 0px rgba(9, 97, 228, 0.5)` |
-| `light.shadow.focus-ring` | `0px 0px 0px 2px rgb(36, 99, 235)` |
+| `light.shadow.focus-ring` | `0px 0px 0px 2px #2463eb` |
 
 ## Shapes
 
@@ -508,6 +508,11 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't read colours off the screenshots; they are 256-colour PNGs.
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
+
+### What to distrust (from README.md)
+
+- **Seven entries measured the wrong element.** The capture's `.or()` fallbacks are unions resolved in DOM order, so an earlier node won: `nav-link` is the highlighted "New chat" row (the same node as `nav-link-current`), `input-card` the transparent wrapper, `chat-hero` the whole `main`, `logo` the 620 x 25 wrapper, `feature-card` the testimonial (the same card as `quote-card`), `signin-dialog` the transparent inner section, and `menu-item` the expandable "About Chat" row (the same node as `menu-item-expand`). components.md flags each; `light.component.dialog.width` (393px) is the inner section's width and says so. The input-card and dialog radius tokens read the painted `form` and `div.modal` layers and are unaffected. The script now prefers the intended node by `count()` (not re-run). Recapture needed.
+- **Dark screenshots were requested, not checked.** The dark pass sets `localStorage.theme`; the committed shots were never checked for what painted. The script now skips a shot whose page ground does not match the requested theme (not re-run).
 
 ### Do and don't (from README.md)
 

@@ -1,8 +1,6 @@
 """The committed tokens.json matches a fresh build, and every token has a source."""
 import json
 import pathlib
-import subprocess
-import sys
 import unittest
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -23,9 +21,23 @@ def walk(node):
 
 class BuildTokensTest(unittest.TestCase):
     def test_committed_tokens_match_rebuild(self):
-        before = TOKENS.read_text()
-        subprocess.run([sys.executable, str(HERE / "build_tokens.py")], check=True, cwd=PKG)
-        self.assertEqual(TOKENS.read_text(), before)
+        # Built in memory; importing the builder writes nothing.
+        import build_tokens
+        self.assertEqual(TOKENS.read_text(), build_tokens.render())
+
+    def test_link_is_the_product_link_reading(self):
+        raw = json.loads((PKG / "raw" / "components-computed.json").read_text())
+        self.assertEqual(raw["controls"]["login"]["productLink"]["color"], "rgb(17, 17, 13)")
+        doc = json.loads(TOKENS.read_text())
+        self.assertEqual(doc["light"]["text"]["link"]["$value"], "#11110d")
+
+    def test_style_guide_aliases_name_emitted_properties(self):
+        # Every var(--x) the builder writes for an alias must be a property it declares.
+        import re
+        html = (PKG / "style-guide.html").read_text()
+        declared = set(re.findall(r"(--[A-Za-z0-9-]+):", html))
+        for used in set(re.findall(r"var\((--[A-Za-z0-9-]+)", html)):
+            self.assertIn(used, declared)
 
     def test_every_token_has_a_source(self):
         doc = json.loads(TOKENS.read_text())

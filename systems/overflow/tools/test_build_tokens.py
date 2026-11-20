@@ -1,23 +1,39 @@
-"""The Overflow token builder is deterministic and keeps measured colours.
+"""The Overflow token builder reproduces the committed tokens.json and keeps measured colours.
 
-Run from the package tools directory, which is how tools/package_tests.py calls it.
+build_tokens.build() runs in memory; nothing here writes tokens.json. Run from the package tools
+directory, which is how tools/package_tests.py calls it.
 """
 import json
 import pathlib
-import subprocess
 import sys
 import unittest
 
 HERE = pathlib.Path(__file__).resolve().parent
 PKG = HERE.parent
 TOKENS = PKG / "tokens.json"
+sys.path.insert(0, str(HERE))
+import build_tokens  # noqa: E402
 
 
 class BuildTokens(unittest.TestCase):
-    def test_rebuild_is_deterministic(self):
-        before = TOKENS.read_bytes()
-        subprocess.run([sys.executable, str(HERE / "build_tokens.py")], check=True, cwd=PKG)
-        self.assertEqual(TOKENS.read_bytes(), before)
+    def test_committed_file_is_what_the_builder_makes(self):
+        self.assertEqual(json.loads(TOKENS.read_text()), build_tokens.build())
+
+    def test_the_browser_focus_ring_is_not_a_measured_brand_colour(self):
+        data = json.loads(TOKENS.read_text())
+        for token in (data["core"]["color"]["focus-ring"], data["light"]["focus"]["outline"]):
+            self.assertEqual(token["$extensions"]["evidence"], "Observed")
+            self.assertIn("default focus ring", token["$extensions"]["source"])
+
+    def test_the_style_guide_says_the_ring_is_the_browsers(self):
+        guide = (PKG / "style-guide.html").read_text()
+        self.assertIn("Chromium's default focus ring", guide)
+        self.assertIn("focus (Chromium's default ring, not Overflow's)", guide)
+
+    def test_durations_are_typed_duration(self):
+        for key, token in json.loads(TOKENS.read_text())["core"]["motion"].items():
+            if str(token["$value"]).endswith("ms"):
+                self.assertEqual(token["$type"], "duration", key)
 
     def test_measured_roles(self):
         data = json.loads(TOKENS.read_text())

@@ -1753,67 +1753,67 @@
       "size": {
         "nav": {
           "value": "15px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of mkt-nav-link default (raw/components-computed.json)",
           "description": "The marketing header-link size."
         },
         "small": {
           "value": "11.5px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of demo-output default (raw/components-computed.json)",
           "description": "The small copy size inside the demo output."
         },
         "docs-body": {
           "value": "16.6667px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of docs-para default (raw/components-computed.json)",
           "description": "The docs paragraph size."
         },
         "docs-code": {
           "value": "14px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of docs-code default (raw/components-computed.json)",
           "description": "The docs code size."
         },
         "field": {
           "value": "16px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of demo-textarea default (raw/components-computed.json)",
           "description": "The demo query field size."
         },
         "body": {
           "value": "18.4px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
           "description": "The hero lede size."
         },
         "auth": {
           "value": "16px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of auth-google default (raw/components-computed.json)",
           "description": "The sign-in button text size."
         },
         "docs-h1": {
           "value": "32px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of docs-h1 default (raw/components-computed.json)",
           "description": "The docs page heading size."
         },
         "pricing-h1": {
           "value": "48px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of pricing-h1 default (raw/components-computed.json)",
           "description": "The pricing page heading size."
         },
         "mobile-display": {
           "value": "38.4px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of m-hero-h1 default (raw/components-computed.json)",
           "description": "The display size at 390px."
         },
         "display": {
           "value": "63.2px",
-          "type": "fontSize",
+          "type": "dimension",
           "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
           "description": "The marketing display size ('The world's data for AI agents')."
         }
@@ -2271,16 +2271,10 @@
         "description": "The stat digits' roll duration."
       },
       "control": {
-        "value": "color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+        "value": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
         "type": "other",
         "source": "computed transition of mkt-nav-link default (raw/components-computed.json)",
         "description": "The marketing nav control's transition."
-      },
-      "control-reduced": {
-        "value": "all",
-        "type": "other",
-        "source": "transition still applied under prefers-reduced-motion on home (raw/components-computed.json)",
-        "description": "The control transition that survives reduced motion."
       }
     },
     "breakpoint": {
@@ -2590,23 +2584,11 @@
         "source": "computed backgroundColor of docs-nav-item default (raw/components-computed.json); matches declared color.docs.mintlify.exa-gray.200",
         "description": "The active nav item's field."
       },
-      "code-bg": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of docs-code default (raw/components-computed.json)",
-        "description": "The code block's surface."
-      },
-      "field": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of docs-search default (raw/components-computed.json)",
-        "description": "The search pill's field."
-      },
       "focus": {
-        "value": "{color.docs.mintlify.exa-gray.800}",
+        "value": "{color.docs.vars.nav-tab-ring}",
         "type": "color",
-        "source": "computed outlineColor of docs-search focus-visible (raw/components-computed.json); matches declared color.docs.mintlify.exa-gray.800",
-        "description": "The focus outline on docs controls."
+        "source": "the box-shadow 3px spread focus ring of docs-search focus-visible (raw/components-computed.json); its outline is 0px none; matches declared color.docs.vars.nav-tab-ring",
+        "description": "The focus ring on docs controls."
       },
       "rail-line": {
         "value": "{color.docs.gray.100}",
@@ -2615,9 +2597,9 @@
         "description": "The sidebar's hairline."
       },
       "cta-surface": {
-        "value": "rgba(0, 0, 0, 0)",
+        "value": "#002f96",
         "type": "color",
-        "source": "computed backgroundColor of docs-cta default (raw/components-computed.json)",
+        "source": "the background of docs-cta's parent div.docs-home-quickstart default (raw/components-computed.json ancestors); docs-cta itself computes a transparent backgroundColor",
         "description": "The 'Add Exa to your agent' banner's field."
       }
     },
@@ -2646,12 +2628,6 @@
         "source": "computed color of demo-output default (raw/components-computed.json)",
         "description": "The muted text inside the demo output."
       },
-      "focus": {
-        "value": "#101010",
-        "type": "color",
-        "source": "computed outlineColor of mkt-nav-link focus-visible (raw/components-computed.json)",
-        "description": "The keyboard-focus outline on marketing links."
-      },
       "action": {
         "value": "{color.neutral.black}",
         "type": "color",
@@ -2676,18 +2652,6 @@
         "source": "the painted background of mkt-menu's rounded child default (raw/components-computed.json paint list); matches declared color.secondary.default",
         "description": "The mega-menu surface — painted on the rounded child; the wrapper is a transparent positioning box."
       },
-      "menu-hover": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of mkt-menu-item default (raw/components-computed.json)",
-        "description": "The menu item's field."
-      },
-      "demo-surface": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of demo-widget default (raw/components-computed.json)",
-        "description": "The demo widget's surface."
-      },
       "demo-pill-active": {
         "value": "rgba(0, 0, 0, 0.45)",
         "type": "color",
@@ -2701,9 +2665,9 @@
         "description": "The blue Run-preview arrow fill."
       },
       "announce-surface": {
-        "value": "rgba(0, 0, 0, 0)",
+        "value": "#eef8ff",
         "type": "color",
-        "source": "computed backgroundColor of mkt-announce default (raw/components-computed.json)",
+        "source": "the background of mkt-announce's parent div.relative.flex default (raw/components-computed.json ancestors); mkt-announce itself computes a transparent backgroundColor",
         "description": "The announcement strip's field."
       },
       "action-hover": {
@@ -2720,23 +2684,11 @@
       }
     },
     "signin": {
-      "card": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of auth-card default (raw/components-computed.json)",
-        "description": "The sign-in card's surface."
-      },
       "heading": {
         "value": "{color.auth.text-light.default}",
         "type": "color",
         "source": "computed color of auth-heading default (raw/components-computed.json); matches declared color.auth.text-light.default",
         "description": "The 'Start building with Exa' heading ink."
-      },
-      "field": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of auth-email default (raw/components-computed.json)",
-        "description": "The e-mail field's fill."
       },
       "field-border": {
         "value": "#e0e0e0",
@@ -2775,9 +2727,9 @@
         "description": "The Google button's border."
       },
       "code-bg": {
-        "value": "rgba(0, 0, 0, 0)",
+        "value": "#27282c",
         "type": "color",
-        "source": "computed backgroundColor of auth-code default (raw/components-computed.json)",
+        "source": "the background of auth-code's parent div.flex.h-full default (raw/components-computed.json ancestors); auth-code itself computes a transparent backgroundColor",
         "description": "The code sample's surface."
       },
       "placeholder": {
@@ -3367,23 +3319,11 @@
         "source": "computed backgroundColor of d-docs-nav-item default (raw/components-computed.json)",
         "description": "The active nav item's field on dark."
       },
-      "code-bg": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of d-docs-code default (raw/components-computed.json)",
-        "description": "The code block's surface on dark."
-      },
-      "field": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of d-docs-search default (raw/components-computed.json)",
-        "description": "The search pill's field on dark."
-      },
       "focus": {
-        "value": "{color.docs.primary-light}",
+        "value": "rgba(250, 250, 250, 0.09)",
         "type": "color",
-        "source": "computed outlineColor of d-docs-search focus-visible (raw/components-computed.json); matches declared color.docs.primary-light",
-        "description": "The focus outline on dark."
+        "source": "the box-shadow 3px spread focus ring of d-docs-search focus-visible (raw/components-computed.json); its outline is 0px none",
+        "description": "The focus ring on dark."
       },
       "rail-line": {
         "value": "rgba(255, 255, 255, 0.1)",
@@ -3392,9 +3332,9 @@
         "description": "The sidebar's hairline on dark."
       },
       "cta-surface": {
-        "value": "rgba(0, 0, 0, 0)",
+        "value": "#002f96",
         "type": "color",
-        "source": "computed backgroundColor of d-docs-cta default (raw/components-computed.json)",
+        "source": "the background of d-docs-cta's parent div.docs-home-quickstart default (raw/components-computed.json ancestors); d-docs-cta itself computes a transparent backgroundColor",
         "description": "The CTA banner's field on dark."
       }
     }
@@ -3463,7 +3403,7 @@
     "auth-card-width": {
       "value": "360px",
       "type": "dimension",
-      "source": "measured w of auth-card default (raw/components-computed.json)",
+      "source": "Reconstruction: read from the wrong element (auth-card measured the 360 x 98 e-mail form inside the card, not the card; recapture needed); measured w of auth-card default (raw/components-computed.json)",
       "description": "The sign-in card width."
     },
     "auth-field-height": {
@@ -3502,5 +3442,55 @@
       "source": "measured h of m-hamburger default (raw/components-computed.json)",
       "description": "The phone hamburger hit area."
     }
-  }
+  },
+  "_gaps": [
+    {
+      "token": "core.shadow.widget",
+      "why": "demo-widget default computes no box-shadow"
+    },
+    {
+      "token": "core.shadow.cta",
+      "why": "hero-cta default computes no box-shadow"
+    },
+    {
+      "token": "core.motion.control-reduced",
+      "why": "no reduced-motion reading names a running transition: h1 on home computes 'all'"
+    },
+    {
+      "token": "light.marketing.focus",
+      "why": "mkt-nav-link focus-visible paints no focus ring of its own: outline 1px auto #101010 is the browser's default auto ring, and no box-shadow layer has a spread"
+    },
+    {
+      "token": "light.marketing.menu-hover",
+      "why": "mkt-menu-item default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "light.marketing.demo-surface",
+      "why": "demo-widget default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "light.signin.card",
+      "why": "read from the wrong element: auth-card measured the 360 x 98 e-mail form inside the card, not the card; recapture needed"
+    },
+    {
+      "token": "light.signin.field",
+      "why": "auth-email default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "light.docs.code-bg",
+      "why": "docs-code default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "light.docs.field",
+      "why": "docs-search default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "dark.docs.code-bg",
+      "why": "d-docs-code default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "dark.docs.field",
+      "why": "d-docs-search default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    }
+  ]
 }

@@ -29,7 +29,7 @@ export const HIDE_CONSENT =
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    try { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); } catch { /* already defined */ }
+    // navigator.webdriver is left as the browser reports it: automation is not hidden (2026-11 audit).
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

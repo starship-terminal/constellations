@@ -35,6 +35,17 @@ class BuildTokensTest(unittest.TestCase):
         with self.assertRaises(build_tokens.CheckError):
             build_tokens.check(doc)
 
+    def test_easings_are_four_number_lists(self):
+        easing = build_tokens.build()["core"]["motion"]["easing"]
+        self.assertEqual(easing["out-slow"]["$value"], [0, 0, 0.3, 1])
+        self.assertEqual(easing["in-out"]["$value"], [0.42, 0, 0.58, 1])
+
+    def test_a_string_easing_fails(self):
+        doc = build_tokens.build()
+        doc["core"]["motion"]["easing"]["out-slow"]["$value"] = "cubic-bezier(0, 0, 0.3, 1)"
+        with self.assertRaises(build_tokens.CheckError):
+            build_tokens.check(doc)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -2326,61 +2326,61 @@
         "small": {
           "value": "40px",
           "type": "dimension",
-          "source": "measured height of the header fs-button--primary small (nav-signup-buy default, raw/components-computed.json)"
+          "source": "computed height of nav-signup-buy default (raw/components-computed.json); the header fs-button--primary small"
         },
         "medium": {
           "value": "48px",
           "type": "dimension",
-          "source": "measured height of the fs-button medium (cta-primary/next-btn default, raw/components-computed.json)"
+          "source": "computed height of cta-primary default (raw/components-computed.json); next-btn matches"
         }
       },
       "paddingX": {
         "small": {
           "value": "16px",
           "type": "dimension",
-          "source": "measured horizontal padding of the small fs-button (nav-signup-buy default, raw/components-computed.json)"
+          "source": "computed paddingLeft of nav-signup-buy default (raw/components-computed.json)"
         },
         "medium": {
           "value": "20px",
           "type": "dimension",
-          "source": "measured horizontal padding of the medium fs-button (cta-primary default, raw/components-computed.json)"
+          "source": "computed paddingLeft of cta-primary default (raw/components-computed.json)"
         }
       },
       "radius": {
         "value": "4px",
         "type": "dimension",
-        "source": "measured border-radius of fs-buttons (cta-primary/nav-signup-buy default, raw/components-computed.json); matches --slate-radius-component-default"
+        "source": "computed borderTopLeftRadius of cta-primary default (raw/components-computed.json); nav-signup-buy matches; matches --slate-radius-component-default"
       }
     },
     "radius": {
       "filter": {
         "value": "999px",
         "type": "dimension",
-        "source": "measured border-radius of the All-filters pill (cat-filter-btn default, raw/components-computed.json); matches --slate-radius-component-filter"
+        "source": "computed borderTopLeftRadius of cat-filter-btn default (raw/components-computed.json); the All-filters pill; matches --slate-radius-component-filter"
       }
     },
     "field": {
       "inputHeight": {
         "value": "20px",
         "type": "dimension",
-        "source": "measured height of the text input inside the boxed apply/sign-in fields (field-email/signin-email default, raw/components-computed.json)"
+        "source": "computed height of field-email default (raw/components-computed.json); the text input inside the boxed apply field (signin-email matches)"
       },
       "borderWidth": {
         "value": "1px",
         "type": "dimension",
-        "source": "measured border width on the apply text fields (field-firstname default, raw/components-computed.json)"
+        "source": "Reconstruction — entered by hand at capture time, no raw reading behind it (field-firstname measures borderTopWidth 0px, and its fs-form-field box records no border)"
       }
     },
     "checkbox": {
       "size": {
         "value": "14px",
         "type": "dimension",
-        "source": "measured size of the fs-checkbox input (checkbox-terms default, raw/components-computed.json)"
+        "source": "computed width of checkbox-terms default (raw/components-computed.json)"
       },
       "radius": {
         "value": "2px",
         "type": "dimension",
-        "source": "measured border-radius of the fs-checkbox input; matches --slate-radius-component-checkbox (checkbox-terms default, raw/components-computed.json)"
+        "source": "painted radius of div.fs-checkbox__box.type-aligned-elem, the ancestor of checkbox-terms default (raw/components-computed.json); the input itself measures 0px; matches --slate-radius-component-checkbox"
       }
     },
     "dialog": {
@@ -2388,12 +2388,12 @@
         "signIn": {
           "value": "420px",
           "type": "dimension",
-          "source": "measured width of the 'Sign in to Faire' fs-modal (signin-dialog default, raw/components-computed.json)"
+          "source": "computed width of signin-dialog default (raw/components-computed.json); the Sign in to Faire fs-modal"
         },
         "signUp": {
           "value": "500px",
           "type": "dimension",
-          "source": "measured width of the 'Unlock wholesale pricing' fs-modal (signup-dialog default, raw/components-computed.json)"
+          "source": "computed width of signup-dialog default (raw/components-computed.json); the Unlock wholesale pricing fs-modal"
         }
       }
     },
@@ -2401,21 +2401,21 @@
       "width": {
         "value": "312px",
         "type": "dimension",
-        "source": "measured width of the mobile nav drawer (m-drawer default, raw/components-computed.json)"
+        "source": "computed width of m-drawer default (raw/components-computed.json); the mobile nav drawer"
       }
     },
     "avatar": {
       "brand": {
         "value": "96px",
         "type": "dimension",
-        "source": "measured size of the circular fs-avatar on the brand storefront (brand-avatar default, raw/components-computed.json)"
+        "source": "computed width of brand-avatar default (raw/components-computed.json); the circular fs-avatar on the brand storefront"
       }
     },
     "categoriesPanel": {
       "height": {
         "value": "712px",
         "type": "dimension",
-        "source": "measured height of the 'All categories' dropdown panel at 1440x900 (categories-panel default, raw/components-computed.json)"
+        "source": "computed height of categories-panel default (raw/components-computed.json); the All categories dropdown at 1440x900"
       }
     },
     "header": {
@@ -2423,12 +2423,12 @@
         "desktop": {
           "value": "108px",
           "type": "dimension",
-          "source": "measured height of the desktop header element incl. promo strip and category nav (mkt-header default, raw/components-computed.json)"
+          "source": "computed height of mkt-header default (raw/components-computed.json); header incl. promo strip and category nav"
         },
         "mobile": {
           "value": "51px",
           "type": "dimension",
-          "source": "measured height of the phone top bar (m-topbar default, raw/components-computed.json)"
+          "source": "computed height of m-topbar default (raw/components-computed.json); the phone top bar"
         }
       }
     },
@@ -2436,17 +2436,17 @@
       "width": {
         "value": "2px",
         "type": "dimension",
-        "source": "measured focus-visible outline width on fs-buttons (cta-primary/nav-signup-buy/next-btn focus-visible, raw/components-computed.json)"
+        "source": "computed outlineWidth of cta-primary focus-visible (raw/components-computed.json); nav-signup-buy and next-btn match"
       },
       "offset": {
         "value": "1px",
         "type": "dimension",
-        "source": "measured focus-visible outline offset on fs-buttons (cta-primary/next-btn focus-visible, raw/components-computed.json)"
+        "source": "computed outlineOffset of cta-primary focus-visible (raw/components-computed.json); next-btn matches"
       },
       "color": {
         "value": "rgb(39, 94, 197)",
         "type": "color",
-        "source": "measured focus-visible outline colour on fs-buttons (cta-primary/next-btn focus-visible, raw/components-computed.json); the blue action-border-focus_ring role"
+        "source": "computed outlineColor of cta-primary focus-visible (raw/components-computed.json); next-btn matches; the blue action-border-focus_ring role"
       }
     }
   }

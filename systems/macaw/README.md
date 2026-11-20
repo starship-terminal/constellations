@@ -89,6 +89,7 @@ Overlays (consent, Intercom, leftover tingle modals) were hidden with CSS. No co
 - Pressed on the primary button is a forced `:active` and matches hover (`--primary700`). It is not a separate pressed paint.
 - Focus outline `#005fcc` is the browser default, not a Webflow token.
 - Privacy h2 is 60px on that page only. Do not treat it as the display role. Display is the 53.6px h1.
+- Six type values have no reading in [raw/](raw): `font.size.section` (27.2px), `font.size.privacy-h2` (60px), `font.lineHeight.heading` (43.2px), `font.lineHeight.section` (32.64px) and the two matching trackings. They were typed in at capture time, and their sources say Reconstruction.
 
 ## Fonts
 

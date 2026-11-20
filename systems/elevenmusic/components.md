@@ -829,6 +829,8 @@ A pricing FAQ row (68px, border-t); the expanded state was opened by its own tog
 #### FAQ row
 The accordion item wrapper (question + answer region). Read as `faq-answer` on the pricing page.
 
+**Read in the wrong state.** faq-item's `expanded` reading opened this row and left it open, so this default reading (152px tall, against the 68px closed row) is of the open item. tools/capture/public/measure.mjs now closes it after the reading. The entry needs a recapture.
+
 **Values (default).** size 960 x 152; background transparent; text Inter 18/28 400, #fafafa `dark.color.ink.foreground`; icon 5.3 x 5.3, #868686 `dark.color.ink.muted-foreground`.
 
 ![FAQ row default](components/crops/faq-answer-default.png)

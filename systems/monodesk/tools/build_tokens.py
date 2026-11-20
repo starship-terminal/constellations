@@ -216,7 +216,7 @@ def main():
                     "hoverBackground": color(style("plan-cta-hover")["backgroundColor"], "computed background-color on pricing Get started :hover"),
                     "hoverText": color(style("plan-cta-hover")["color"], "computed color on pricing Get started :hover"),
                     "radius": dim(100, "computed border-radius on pricing Get started"),
-                    "height": dim(38, "bounding box height of pricing Get started"),
+                    "height": dim(plan["height"], "computed height of pricing Get started (raw/components-computed.json plan-cta-default)"),
                 },
                 "login": {
                     "background": color(login_btn["backgroundColor"], "computed background-color on Login button"),
@@ -332,9 +332,52 @@ def main():
     }
 
     tokens = {"core": core, "light": light, "dark": dark}
+    relabel_unread(tokens)
+    return tokens
+
+
+# raw/css-vars.json holds one empty dump per page, so no custom property reading survived the capture:
+# a value sourced to a declared or computed --name was typed in from the capture session. So were
+# these computed values, which no file in raw/ holds.
+UNREAD = {
+    "core.font.size.appHeading",  # "Login to your account"; raw has only create-heading (16px)
+    "core.typography.appHeading",  # the same heading's 22px / 30px composite
+    "light.text.muted",  # rgb(81, 81, 81) on "or continue with"
+}
+HAND = ("Reconstruction: entered by hand at capture time; no file in raw/ holds this reading "
+        "(raw/css-vars.json dumps are empty). Capture note: ")
+
+
+def leaves(node, path=""):
+    for k, v in node.items():
+        if k.startswith("$") or not isinstance(v, dict):
+            continue
+        here = f"{path}.{k}" if path else k
+        if "$value" in v:
+            yield here, v
+        else:
+            yield from leaves(v, here)
+
+
+def relabel_unread(tokens):
+    import re
+    for path, tok in leaves(tokens):
+        src = tok["$extensions"]["source"]
+        if path not in UNREAD and isinstance(tok["$value"], str) and tok["$value"].startswith("{"):
+            continue  # an alias carries the evidence of the token it names
+        # A source that cites only a custom property has nothing behind it; one that also cites a
+        # computed style on an element ("computed color on ...") is backed by that reading.
+        cites_var = bool(re.search(r"(?<![\w-])--[A-Za-z]", src))
+        cites_style = bool(re.search(r"computed (?!--|custom property)", src))
+        if path in UNREAD or (cites_var and not cites_style):
+            tok["$extensions"]["source"] = HAND + src
+
+
+def write():
+    tokens = main()
     (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
     print("wrote", HERE / "tokens.json")
 
 
 if __name__ == "__main__":
-    main()
+    write()

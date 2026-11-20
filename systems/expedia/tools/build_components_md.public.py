@@ -34,14 +34,25 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
-BY_COLOR = {}
 PAL = T["core"]["color"]["palette"]
-# light1 first: the theme the signed-out pages actually paint, so a shared hex
-# labels as color.palette.light1.* rather than an identical loyalty/marketing name
-for theme in sorted((k for k in PAL if not k.startswith("$")), key=lambda k: k != "light1"):
-    for n, t in flat({theme: PAL[theme]}):
-        if t["$type"] == "color":
-            BY_COLOR.setdefault(t["$value"], "color.palette." + n)
+
+
+def by_colour(first):
+    """hex -> palette token, preferring the palette of the theme a component paints in, so a shared
+    hex labels as that theme's colour rather than an identical one from another palette."""
+    out = {}
+    for theme in sorted((k for k in PAL if not k.startswith("$")), key=lambda k: k != first):
+        for n, t in flat({theme: PAL[theme]}):
+            if t["$type"] == "color":
+                out.setdefault(t["$value"], "color.palette." + n)
+    return out
+
+
+# The pages pin data-theme-light="light-1" on the body; the promo band re-themes itself to
+# marketing-3 (README, Themes), so its colours label from that palette.
+COMPONENT_THEME = {"marketing-band": "marketing3"}
+BY_THEME = {t: by_colour(t) for t in {"light1", *COMPONENT_THEME.values()}}
+BY_COLOR = BY_THEME["light1"]
 
 
 def norm(r, g, b, a=None):
@@ -157,10 +168,16 @@ def paint_diff(st, base):
     computed style is not the whole story: fields repaint their inner input's
     border and hearts outline their inner button, neither of which reaches the
     root — those changes live only in the captured paint list."""
-    bp = {p["node"]: p for p in (base or {}).get("paint") or []}
+    # Pair layers by node label and occurrence: two sibling `span`s are two layers, and a dict keyed
+    # by label alone would compare the second against the first.
+    bp, seen = {}, {}
+    for p in (base or {}).get("paint") or []:
+        bp.setdefault(p["node"], []).append(p)
     out = []
     for p in (st or {}).get("paint") or []:
-        b = bp.get(p["node"])
+        i = seen[p["node"]] = seen.get(p["node"], -1) + 1
+        same = bp.get(p["node"]) or []
+        b = same[i] if i < len(same) else None
         if b is None:
             continue
         changes = []
@@ -441,6 +458,7 @@ for g in groups:
     for k, c in C.items():
         if c["group"] != g:
             continue
+        BY_COLOR = BY_THEME[COMPONENT_THEME.get(k, "light1")]  # colour() reads the global
         W()
         W(f"#### {c['title']}")
         desc = (c.get("desc") or "").strip()
@@ -469,6 +487,7 @@ for g in groups:
         imgs = [f"![{c['title']} {st}](components/crops/{os.path.basename(c['states'][st]['crop'])})" for st in states if c["states"][st].get("crop")]
         W(" ".join(imgs) if imgs else "No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
 
+BY_COLOR = BY_THEME["light1"]  # back to the page theme for the shared sections
 # ------------------------------------------------ gaps
 W("## Gaps")
 W()

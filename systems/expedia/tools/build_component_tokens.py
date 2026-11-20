@@ -235,9 +235,22 @@ for setname in THEMES:
 measured = {}
 
 
+GAPS = out.setdefault("_gaps", [])
+
+
 def grab(comp, state="default"):
-    c = COMP["components"].get(comp, {})
-    st = c.get("states", {}).get(state) or c.get("states", {}).get("default") or next(iter(c.get("states", {}).values()), {})
+    """The reading for comp in state. A missing component or state stops the build: falling back
+    to another state would publish, say, the default outline as the focus ring under a
+    `measured <comp> <state>` source."""
+    c = COMP["components"].get(comp)
+    if not c or state not in c.get("states", {}):
+        raise SystemExit(f"{comp} {state}: no such reading in raw/components-computed.json; fix the row or recapture")
+    if c.get("missing"):
+        # measure.mjs keeps an earlier run's states when the component is not found again
+        raise SystemExit(f"{comp}: flagged missing by the last capture; its states are an earlier run's, recapture it")
+    st = c["states"][state]
+    if "style" not in st or st.get("skipped") or st.get("via") == "focus failed":
+        raise SystemExit(f"{comp} {state}: no usable reading ({st.get('skipped') or st.get('error') or st.get('via')})")
     return st, c
 
 
@@ -246,7 +259,7 @@ def m_dimension(path, comp, state, pick, desc):
     s = st.get("style", {})
     v = pick(st, s)
     if v is None:
-        return
+        raise SystemExit(f"{comp} {state}: the reading has no value for core.measured.{'.'.join(path)}")
     node = measured
     for k in path[:-1]:
         node = node.setdefault(k, {})
@@ -255,11 +268,24 @@ def m_dimension(path, comp, state, pick, desc):
                       "description": desc}
 
 
-def m_color(path, comp, state, pick, desc):
+UA_RING = "rgb(16, 16, 16)"  # Chrome's own -webkit-focus-ring-color
+
+
+def m_color(path, comp, state, pick, desc, optional=False):
+    """A measured colour. A missing value stops the build unless the row is optional (a lookup that
+    may find nothing); a transparent or `none` reading is recorded as a gap."""
     st, c = grab(comp, state)
     s = st.get("style", {})
     v = pick(st, s)
+    if v is None and not optional:
+        raise SystemExit(f"{comp} {state}: the reading has no value for core.measured.{'.'.join(path)}")
     if not v or v in ("none", "rgba(0, 0, 0, 0)"):
+        GAPS.append({"token": "core.measured." + ".".join(path), "why": f"{comp} {state} paints no colour there ({v!r})"})
+        return
+    if path[-1] == "outlineColor" and s.get("outlineStyle") == "auto" and v == UA_RING:
+        # an `auto` outline in Chrome's own ring colour is the browser default, not egds-outline-focus
+        GAPS.append({"token": "core.measured." + ".".join(path), "why": f"{comp} {state} draws the browser's default focus ring "
+                     f"(outline {s.get('outlineWidth')} auto {v}); the declared --egds-outline-focus is not what paints"})
         return
     node = measured
     for k in path[:-1]:
@@ -274,7 +300,7 @@ def m_text(path, comp, state, key, desc):
     ts = st.get("textStyle") or st.get("style", {})
     v = ts.get(key)
     if v is None:
-        return
+        raise SystemExit(f"{comp} {state}: no {key} in its reading")
     node = measured
     for k in path[:-1]:
         node = node.setdefault(k, {})
@@ -295,10 +321,10 @@ m_dimension(["pill", "radius"], "sort-control", "default", lambda st, s: s.get("
 m_dimension(["tab", "height"], "tab", "default", lambda st, s: st["rect"]["h"], "Product tab height in the search form.")
 m_dimension(["heart", "size"], "card-heart", "default", lambda st, s: st["rect"]["w"], "Save-heart button size.")
 m_dimension(["focus", "outlineWidth"], "search-submit", "focus-visible", lambda st, s: s.get("outlineWidth"), "Focus ring width on keyboard focus.")
-m_color(["focus", "outlineColor"], "search-submit", "focus-visible", lambda st, s: s.get("outlineColor"), "Focus ring colour (egds-outline-focus).")
+m_color(["focus", "outlineColor"], "search-submit", "focus-visible", lambda st, s: s.get("outlineColor"), "Focus ring colour.")
 m_color(["button", "search", "background"], "search-submit", "default", lambda st, s: s.get("backgroundColor"), "Search button fill (egds-primary).")
 m_color(["button", "search", "text"], "search-submit", "default", lambda st, s: s.get("color"), "Text on the search button (egds-on-primary).")
-m_color(["page", "background"], "search-shell", "default", lambda st, s: st.get("ancestors", [{}])[0].get("bg") if st.get("ancestors") else None, "Ground behind the search shell.")
+m_color(["page", "background"], "search-shell", "default", lambda st, s: st.get("ancestors", [{}])[0].get("bg") if st.get("ancestors") else None, "Ground behind the search shell.", optional=True)
 m_text(["type", "heroTitle", "fontSize"], "hero-title", "default", "fontSize", "Hero display size at 1440.")
 m_text(["type", "heroTitle", "lineHeight"], "hero-title", "default", "lineHeight", "Hero display line-height.")
 m_text(["type", "heroTitle", "fontWeight"], "hero-title", "default", "fontWeight", "Hero display weight.")

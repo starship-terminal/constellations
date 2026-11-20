@@ -86,6 +86,7 @@ Nothing was signed into, purchased or submitted. The membership picker was viewe
 - **This is the public shell.** Playback, the lesson list behind a membership, account and payment were not reached. Do not style the member app from this package.
 - **One theme.** No light set is applied on `:root`. Do not invent one.
 - **Pressed states were not measured.** The CDP CSS agent did not enable, so hover and default are the interactive evidence.
+- **Automation was hidden during the committed capture.** The readings, crops and screenshots were taken with a `navigator.webdriver` mask. The scripts no longer hide automation, and a rerun that meets a bot check records it as a boundary. The `/checkout` pass used to click a plan's Select. No committed file holds that state, and the script now shoots the plans at rest.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read colours from tokens.
 - **The quiz Continue control is disabled until a choice is made.** It was not clicked, so its enabled colour is uncaptured.
 - **`--mc-color-error-*-rgb` channels are truncated in the stylesheet** (for example error-100-rgb reads `255,214,21`). The hex channels were used. The rgb twins were dropped.

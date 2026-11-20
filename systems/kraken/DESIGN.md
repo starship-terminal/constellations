@@ -336,7 +336,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- The 4px spacing scale in `core.spacing` is derived. Kraken does not publish a space scale as custom properties. The steps match measured button padding (8, 12, 16) and the 2px radius increment. Control gaps that are declared (`--gap-ds-checkbox-*`, `--spacing-ds-radio-*`) are measured.
+- The 4px spacing scale in `core.spacing` was picked by hand at capture time and is labelled Reconstruction. Kraken does not publish a space scale as custom properties. The steps were chosen to fit the measured button padding (8, 12, 16) and the 2px radius increment. Control gaps that are declared (`--gap-ds-checkbox-*`, `--spacing-ds-radio-*`) are measured.
 - `core.motion` comes from [raw/motion.json](raw/motion.json). The probe's reduce verdict is partial: most moving elements keep their timing under `prefers-reduced-motion: reduce`.
 - Pressed colour is a forced `:active`. If Kraken swaps the node in script on mousedown, that swap is missing.
 - The email field's focus ring is weak on the input itself. The wrapper carries more of the focus paint, and that wrapper was not cropped separately.

@@ -71,8 +71,9 @@ async function fillComposer(p, S, name = 'filled') {
 // The home page's "open sidebar" button opens the site-menu drawer (a local
 // UI toggle). Escape closes it.
 async function menuDrawer(p, S) {
-  const b = p.getByRole('button', { name: /open sidebar|open menu|menu/i }).filter({ visible: true }).first()
-    || p.locator('[class*="_buttonBase"]').filter({ visible: true }).first();
+  // A Locator is always truthy, so `a || b` never fell back: pick by count() instead.
+  let b = p.getByRole('button', { name: /open sidebar|open menu|menu/i }).filter({ visible: true }).first();
+  if (!(await b.count())) b = p.locator('[class*="_buttonBase"]').filter({ visible: true }).first();
   if (!(await b.count())) return;
   await clickEl(b);
   await wait(p, 1600);
@@ -212,6 +213,20 @@ for (const { k, mob } of runs) {
         await p.goto(BASE + spec.path, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
         if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.path); await ctx.close(); continue; }
         await wait(p, spec.wait || 7000);
+        // The theme is only requested (localStorage.theme); check what painted before naming a shot
+        // after it. The canvas is the first opaque ground among the page's main content area
+        // (doctronic paints it on main.layoutContent while body stays transparent), body and html;
+        // when all are transparent the canvas is the browser's white.
+        const lum = await p.evaluate(() => {
+          for (const el of [document.querySelector('main'), document.body, document.documentElement]) {
+            if (!el) continue;
+            const m = getComputedStyle(el).backgroundColor.match(/[\d.]+/g);
+            if (m && (m.length < 4 || +m[3] > 0)) return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255;
+          }
+          return 1;
+        }).catch(() => null);
+        if (lum === null) { log('  THEME UNCHECKED', runName, '- skipped'); await ctx.close(); continue; }
+        if ((theme === 'dark') !== (lum < 0.5)) { log('  THEME MISMATCH', runName, 'painted luminance', lum.toFixed(2), '- skipped'); await ctx.close(); continue; }
       }
       await spec.run(p, S);
     } catch (e) { log('  PAGE FAILED', runName, e.message.split('\n')[0]); }

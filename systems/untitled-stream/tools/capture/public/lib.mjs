@@ -32,14 +32,9 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
-  // untitled.stream sits behind a Cloudflare managed challenge that detects
-  // navigator.webdriver on the FIRST paint of a fresh document. Masking it
-  // lets the interstitial self-clear on the marketing routes (/, /pricing,
-  // /trust). /login and the legal pages stall anyway — they need a real
-  // signed-in browser and are out of scope for this capture.
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  });
+  // untitled.stream sits behind a Cloudflare managed challenge.
+  // bot check: Cloudflare's challenge is recorded as a boundary, not bypassed (no navigator.webdriver mask).
+  // A route that does not clear on its own is recorded as blocked (clearChallenge below).
   return { browser, context };
 }
 
@@ -144,12 +139,16 @@ export async function domClick(page, reText, sel = 'button, a') {
   );
 }
 
+// Opens url and reports whether the real document arrived. A navigation error
+// throws; a challenge that never clears returns false, so the caller records the
+// route as blocked instead of measuring the interstitial.
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
   if (url.startsWith(BASE)) await seedConsent(page);
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+  if (!(await clearChallenge(page))) return false;
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return true;
 }
 
 // untitled.stream's public routes are flat — kept for parity with the kit.

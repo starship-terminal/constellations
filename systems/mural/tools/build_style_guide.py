@@ -68,7 +68,8 @@ for name, token in T["core"]["typography"].items():
     v = token["$value"]
     family = "Times New Roman, serif" if "STK" in v["fontFamily"] else "Arial, sans-serif"
     sample = "Sync up. Speed up." if "display" in name or "Title" in name or "title" in name else "The visual workspace for a team."
-    style = f"font-family:{family};font-size:{v['fontSize']};font-weight:{v['fontWeight']};line-height:{v['lineHeight']};letter-spacing:{v['letterSpacing']}"
+    # Escaped, so a value holding a quote cannot close the style attribute.
+    style = html.escape(f"font-family:{family};font-size:{v['fontSize']};font-weight:{v['fontWeight']};line-height:{v['lineHeight']};letter-spacing:{v['letterSpacing']}", quote=True)
     type_rows.append(
         f'<div class="ty"><div><b>{html.escape(name)}</b><code>{html.escape(v["fontSize"])} / {html.escape(v["lineHeight"])} {v["fontWeight"]}</code></div>'
         f'<p style="{style}">{html.escape(sample)}</p></div>'

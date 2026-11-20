@@ -30,8 +30,6 @@ const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = {
   home: 'https://dock.us/', pricing: 'https://dock.us/pricing',
   customers: 'https://dock.us/customers', templates: 'https://dock.us/templates',
-  library: 'https://dock.us/library', product: 'https://dock.us/product/content-management',
-  solutions: 'https://dock.us/solutions/client-portal', about: 'https://dock.us/about-us',
   demo: 'https://dock.us/demo', login: 'https://auth.dock.us/login', signup: 'https://auth.dock.us/sign-up',
 };
 let page, cdp, current, context, run, liveCtx;
@@ -242,7 +240,11 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          // close it again with the same control so it cannot hold focus or cover the next reading
+          undo = async () => { await page.keyboard.press('Escape'); if ((await loc.getAttribute('aria-expanded').catch(() => null)) === 'true' || (await loc.evaluate((el) => !!el.closest('details[open]')).catch(() => false))) await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(400); };
+        }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -524,7 +526,7 @@ async function login() {
   const g = G.auth;
   await markAuthCard(/Subdomain|subdomain/i, 'logincard');
   await S('login-card', q('[data-m-mark="logincard"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Login card', desc: 'The sign-in card on auth.dock.us (a workspace-subdomain field + Continue); captured, never used.', sel: 'login card' }, { noScroll: true });
-  await S('subdomain-field', q('input[name="subdomain"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Subdomain field', desc: 'The workspace-subdomain input; focused and given sample text that was deleted again — nothing sent.', sel: 'input[name=subdomain]', fillText: 'acme' }, { noScroll: true });
+  await S('subdomain-field', q('input[name="subdomain"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Subdomain field', desc: 'The workspace-subdomain input; focused and given sample text that was deleted again — nothing sent.', sel: 'input[name=subdomain]' }, { noScroll: true, fillText: 'acme' });
   await S('continue-btn', q('button').filter({ hasText: /^\s*Continue\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Continue button', desc: "The login form's Continue submit; measured, never pressed.", sel: 'button "Continue"' }, { noScroll: true });
   save();
 }
@@ -546,7 +548,11 @@ async function signup() {
   }
   if (await submit.count()) {
     const picked = await submit.evaluate((el) => (el.innerText || '').trim()).catch(() => '');
-    if (/google|microsoft|apple|sso|saml/i.test(picked)) log('  ! signup-submit matched an OAuth action, not the email submit:', JSON.stringify(picked));
+    if (/google|microsoft|apple|sso|saml/i.test(picked)) {
+      log('  ! signup-submit matched an OAuth action, not the email submit; recorded missing:', JSON.stringify(picked));
+      delete out.components['signup-submit'];
+      submit = q('[data-m-none="signup-submit"]');
+    }
   }
   await S('signup-submit', submit, B4, { group: g, title: 'Signup submit', desc: "The signup card's email-form submit (the OAuth actions above it are different controls); measured, never pressed.", sel: 'button[type=submit] on sign-up' }, { noScroll: true });
   save();
@@ -578,6 +584,8 @@ async function mobile() {
   await S('m-menu-open', q('details.navigation[open] .navigation-content, .navigation-content').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The opened mobile navigation panel inside dock-site-header (the expanded list of nav groups and actions).', sel: 'details.navigation[open] .navigation-content' }, { noScroll: true, noReset: true });
   await S('m-nav-item', q('details.navigation[open] summary.nav-trigger, details.navigation[open] a.menu-link').filter({ hasText: /^\s*(Product|Resources|Sales|Content|Learning)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav item', desc: 'A nav item inside the opened mobile menu.', sel: 'mobile menu item' }, { noScroll: true, noReset: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
+  // Escape does not close a <details> menu: use its own toggle so m-hero is not read under it
+  if (await q('details.navigation[open]').count()) { await menu.click({ timeout: 5000 }).catch(() => menu.evaluate((el) => el.click())); await page.waitForTimeout(800); }
   await S('m-hero', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile headline', sel: 'h1 at 390' });
   save();
 }

@@ -4,8 +4,7 @@
     "emails": true,
     "email_allow": [
       "@glassnode\\.com$",
-      "@example\\.com$",
-      "@email\\.com$"
+      "@example\\.com$"
     ],
     "net": true
   }

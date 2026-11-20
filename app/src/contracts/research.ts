@@ -60,7 +60,9 @@ export interface SearchOutput {
 }
 export interface InspectOutput {
   kind: "inspected";
-  visualEvidence?: "image-supplied" | "text-only";
+  /** "image-earlier" exists only in model history: the image went to the
+   * model in an earlier turn and is not sent again. */
+  visualEvidence?: "image-supplied" | "text-only" | "image-earlier";
   reference: LibraryDetail;
   citation: ResearchCitation;
 }

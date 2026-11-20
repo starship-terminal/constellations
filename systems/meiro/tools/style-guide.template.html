@@ -144,7 +144,9 @@ var tb = document.querySelector("#tokens tbody");
     tr.innerHTML = "<td><code></code></td><td></td><td></td>";
     tr.children[0].firstChild.textContent = row[0];
     tr.children[1].textContent = val;
-    tr.children[2].textContent = (row[1].s || "").slice(0, 140);
+    // Motion tokens carry their source as an object ({evidence, capture}), the others as text.
+    const src = row[1].s;
+    tr.children[2].textContent = (typeof src === "string" ? src : JSON.stringify(src || "")).slice(0, 140);
     tb.appendChild(tr);
   });
 });

@@ -476,7 +476,12 @@ async function offers() {
   const join = q('button[data-theme-key="button-primary"]').filter({ hasText: /join/i }).filter({ visible: true }).first();
   await S('plan-card', join.locator('xpath=ancestor::*[.//text()[contains(., "year") or contains(., "month") or contains(., "$")]][1]'), ['default'], { group: g, title: 'Plan card', desc: 'A membership plan card: plan name, price line, perk list and its Join action.', sel: 'ancestor of Join button' });
   await S('plan-name', q('h3, span, div, p').filter({ hasText: /^\s*(Premium|Print \+ Digital|Digital Only)\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan name', desc: 'The plan name ("Premium") heading on a plan card.', sel: 'plan name' });
-  await S('plan-price', q('main').locator('xpath=.//*[contains(normalize-space(.),\"$\")][string-length(normalize-space(.))<30][not(.//*[contains(normalize-space(.),\"$\")])]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price', desc: 'The "$xx/year" price line on a plan card.', sel: 'plan price' });
+  // The price the plan charges, not the struck-through list price beside it: on 2026-11-13 the first
+  // "$" leaf was the line-through "$75" span. Struck elements are marked and skipped in-page.
+  await page.evaluate(() => document.querySelectorAll('main *').forEach((n) => {
+    if (getComputedStyle(n).textDecorationLine.includes('line-through') || /^(S|DEL|STRIKE)$/.test(n.tagName)) n.setAttribute('data-m-struck', '1');
+  })).catch(() => {});
+  await S('plan-price', q('main').locator('xpath=.//*[contains(normalize-space(.),\"$\")][string-length(normalize-space(.))<30][not(.//*[contains(normalize-space(.),\"$\")])][not(ancestor-or-self::*[@data-m-struck])]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price', desc: 'The "$xx/year" price line on a plan card.', sel: 'plan price' });
   await S('plan-perk', q('main').locator('xpath=.//*[contains(translate(normalize-space(.),\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"),\"access to esquire.com\")][not(.//*[contains(.,\"access to esquire.com\")])]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan perk', desc: 'A perk bullet inside a plan card.', sel: 'plan perk li' });
   await S('plan-join', join, B4, { group: g, title: 'Join button', desc: 'The "Join Premium" primary button on a plan card — links to checkout; measured, never followed.', sel: 'button[data-theme-key=button-primary] Join' });
   await S('best-value', q('span, div, p').filter({ hasText: /^\s*best value\s*$/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Best Value chip', desc: 'The "Best Value" badge on the featured plan.', sel: 'Best Value' });

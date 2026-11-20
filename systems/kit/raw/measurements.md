@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.gauth.com on 2026-11-18 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from kit.com and app.kit.com/users/login on 2026-11-18 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -282,24 +282,25 @@ Page: home. Selector: `Request demo`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 118.61 x 32 | = | = | = |
-| Padding | 4px 8px | = | = | = |
-| Gap | 4px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #1e1e1e | = | = | #3d3d3d |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Libre Franklin 14px/24.003px 600 | = | = | = |
-| Letter spacing | -0.14px | = | = | = |
-| Colour | #f2efe9 | = | = | = |
-| Text node | span.px-1: Libre Franklin 14px/24.003px 600, #f2efe9, ls -0.14px | = | = | = |
-| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a.font-sans.transition-all 118.6x32.0 bg #1e1e1e r 8px | = | = | a.font-sans.transition-all 118.6x32.0 bg #3d3d3d r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 118.61 x 32 | = | - | = |
+| Padding | 4px 8px | = | - | = |
+| Gap | 4px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | #1e1e1e | = | - | #3d3d3d |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Libre Franklin 14px/24.003px 600 | = | - | = |
+| Letter spacing | -0.14px | = | - | = |
+| Colour | #f2efe9 | = | - | = |
+| Text node | span.px-1: Libre Franklin 14px/24.003px 600, #f2efe9, ls -0.14px | = | - | = |
+| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | a.font-sans.transition-all 118.6x32.0 bg #1e1e1e r 8px | = | - | a.font-sans.transition-all 118.6x32.0 bg #3d3d3d r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `hero-secondary-default.png`, `hero-secondary-hover.png`, `hero-secondary-focus-visible.png`, `hero-secondary-pressed.png`.
+Crops: `hero-secondary-default.png`, `hero-secondary-hover.png`, `hero-secondary-pressed.png`.
 
 ### Footer
 
@@ -833,7 +834,7 @@ Crops: `m-hero-default.png`.
 
 ## Transitions declared in the readable stylesheets
 
-Gauth's own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd's CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth's own rules.
+This list holds only the rules the CSSOM could read on each page; the per-state Transition rows above are computed values.
 
 - features: `transform 0.5s, opacity 0.5s, z-index 0.5s`, `opacity 0.5s`, `stroke 0.5s, color 2s`, `stroke 0.5s`, `opacity 0.3s`, `transform 0.2s, right 0.2s`, `0.3s`, `0.3s ease-in-out`, `max-height 0.3s ease-in-out`, `background var(--button-transition-duration)`, `background-color 0.2s ease-in, color 0.2s ease-in`
 

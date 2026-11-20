@@ -29,7 +29,7 @@ export const M = (name) => `[class*="${name}"]`;
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // navigator.webdriver is left as the browser reports it: automation is not hidden (2026-11 audit).
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }
@@ -38,7 +38,6 @@ export async function launchBrowser() {
   return chromium.launch({
     headless: false,
     channel: 'chrome',
-    args: ['--disable-blink-features=AutomationControlled'],
   });
 }
 

@@ -1538,7 +1538,7 @@
      "value": "#0d0c22",
      "type": "color",
      "source": "computed bg of login-btn default (raw/components-computed.json)",
-     "description": "The #060318 deep ink the dark pills fill."
+     "description": "The #0d0c22 deep ink the dark pills fill."
     },
     "ink-on-dark": {
      "value": "#ffffff",
@@ -1574,7 +1574,7 @@
      "value": "rgba(244, 215, 243, 0.3)",
      "type": "color",
      "source": "computed bg of promo-banner default (raw/components-computed.json)",
-     "description": "The #f8f8fc promo-strip fill."
+     "description": "The rgba(244, 215, 243, 0.3) promo-strip fill."
     },
     "chip-surface": {
      "value": "#ffffff",
@@ -1652,7 +1652,7 @@
      "value": "rgba(219, 218, 222, 0.9)",
      "type": "color",
      "source": "computed borderTopColor of email-field default (raw/components-computed.json)",
-     "description": "The field hairline #e7e7e9."
+     "description": "The field hairline rgba(219, 218, 222, 0.9)."
     }
    }
   },
@@ -1710,7 +1710,7 @@
     "value": "1e+07px",
     "type": "dimension",
     "source": "computed borderTopLeftRadius of login-btn default (raw/components-computed.json)",
-    "description": "The pill radius on header/dark buttons (~20px)."
+    "description": "The pill radius on header/dark buttons: a 10000000px cap, so the ends are fully round."
    },
    "chip": {
     "value": "1e+07px",
@@ -2175,7 +2175,7 @@
     "value": "{color.measured.promo-surface}",
     "type": "color",
     "source": "measured role off the live page (raw/components-computed.json)",
-    "description": "The promo/chip #f8f8fc tint."
+    "description": "The promo/chip rgba(244, 215, 243, 0.3) tint."
    },
    "text": {
     "value": "{color.measured.ink}",
@@ -2187,7 +2187,7 @@
     "value": "{color.measured.muted}",
     "type": "color",
     "source": "measured role off the live page (raw/components-computed.json)",
-    "description": "The #6e6d7a muted text."
+    "description": "The #3a3546 muted text."
    },
    "accent": {
     "value": "{color.measured.pink}",
@@ -2211,7 +2211,7 @@
     "value": "{color.measured.border}",
     "type": "color",
     "source": "measured role off the live page (raw/components-computed.json)",
-    "description": "The #e7e7e9 field/card hairline."
+    "description": "The rgba(219, 218, 222, 0.9) field/card hairline."
    },
    "link": {
     "value": "{color.measured.link}",
@@ -2227,7 +2227,7 @@
     "value": "{color.measured.ink-deep}",
     "type": "color",
     "source": "role alias over the palette",
-    "description": "The dark pill fill (#060318)."
+    "description": "The dark pill fill (#0d0c22)."
    },
    "text": {
     "value": "{color.measured.ink-on-dark}",

@@ -60,7 +60,8 @@ PUBLIC = {
                          "states": {"default": state(via="at rest"), "focus-visible": state(via="Shift+Tab, Tab")}},
         # an older run's shape: the element at rest saved under focus-visible
         "old-link": {"title": "Old link", "group": "Links", "page": "home",
-                     "states": {"default": state(via="at rest"), "focus-visible": state({"backgroundColor": "rgb(1, 2, 3)"}, via="focus failed")}},
+                     "states": {"default": state(via="at rest"), "focus-visible": state({"backgroundColor": "rgb(1, 2, 3)"}, via="focus failed",
+                                                             crop="components/crops/old-link-focus-visible.png")}},
         # what measure.mjs records now
         "new-link": {"title": "New link", "group": "Links", "page": "home",
                      "states": {"default": state(via="at rest"), "focus-visible": {"skipped": "focus failed: keyboard focus did not reach the element", "via": "focus failed"}}},
@@ -84,6 +85,19 @@ class PublicComponentsBuilder(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             pkg = package(d, "build_components_md.public.py", PUBLIC)
             self.assertEqual(build(pkg), build(pkg))
+
+    def test_layout_json_is_optional_and_a_reading_without_a_main_box_is_read(self):
+        with tempfile.TemporaryDirectory() as d:
+            pkg = package(d, "build_components_md.public.py", PUBLIC)
+            (pkg / "raw/layout.json").unlink()
+            self.assertNotIn("**Layout grid.**", build(pkg))   # nothing read, so no table of dashes
+            # the shape the kit's layout.mjs writes: grids, but no `main` box (grid_of raised KeyError)
+            (pkg / "raw/layout.json").write_text(json.dumps({"home@1440": {"label": "home", "grids": [
+                {"el": "div.grid", "cols": "320px 320px", "colGap": "24px", "rowGap": "24px"}]}, "atlas@390": {"label": "atlas", "grids": []}}))
+            md = build(pkg)
+        row = next(ln for ln in md.splitlines() if ln.startswith("| home |"))
+        self.assertEqual(row, "| home | grid 320 320 gap 24px | - | - | - |")
+        self.assertIn("| atlas | - | - | - | - |", md)
 
 
 SIGNED_IN = {
@@ -154,6 +168,13 @@ class CardShapes(unittest.TestCase):
 
 
 class SignedInComponentsBuilder(unittest.TestCase):
+    def test_it_needs_no_layout_json(self):
+        # it loaded raw/layout.json and never used it, so a package without one crashed
+        with tempfile.TemporaryDirectory() as d:
+            pkg = package(d, "build_components_md.py", SIGNED_IN)
+            (pkg / "raw/layout.json").unlink()
+            self.assertIn("**Focus.**", build(pkg))
+
     def test_focus_without_focus_visible_is_left_out_of_the_tally(self):
         with tempfile.TemporaryDirectory() as d:
             pkg = package(d, "build_components_md.py", SIGNED_IN)
@@ -166,6 +187,20 @@ class SignedInComponentsBuilder(unittest.TestCase):
         self.assertIn("Focus could not be captured on 2 dark states", line)
         self.assertIn("`plain-row`, `static-div`", line)
         self.assertNotIn("plain-row-focus-visible.png", md)   # no image presents it as a captured focus either
+
+
+class SignedInFieldText(unittest.TestCase):
+    def test_a_field_whose_only_text_is_its_placeholder_keeps_its_text_row(self):
+        # styleOf records a placeholder under placeholder.text, no longer as the field's text
+        field = state(theme="dark", via="at rest", text="",
+                      placeholder={"text": "Message", "color": "rgb(128, 128, 128)", "opacity": "1", "fontSize": "14px"})
+        computed = json.loads(json.dumps(SIGNED_IN))
+        computed["components"]["composer"] = {"title": "Composer", "group": "Fields", "page": "home-dark", "pages": ["home-dark"],
+                                              "selector": "() => x", "states": {"default": field}}
+        with tempfile.TemporaryDirectory() as d:
+            md = build(package(d, "build_components_md.py", computed))
+        entry = md.split("#### Composer", 1)[1].split("####", 1)[0]
+        self.assertIn("Inter 14/20 400", entry)
 
 
 @unittest.skipIf(NODE is None, "node is not on PATH")
@@ -187,13 +222,32 @@ class MeasurementBuilders(unittest.TestCase):
         old = md.split("#### old-link", 1)[1].split("####", 1)[0]
         self.assertIn("| Skipped | - | focus failed: keyboard focus did not reach the element |", old)
         self.assertNotIn("#010203", old)
+        self.assertNotIn("old-link-focus-visible.png", old)   # no crop presents it as a captured focus
         new = md.split("#### new-link", 1)[1].split("####", 1)[0]
         self.assertIn("| Skipped | - | focus failed: keyboard focus did not reach the element |", new)
+
+    def test_public_measurements_skip_focus_without_focus_visible(self):
+        computed = json.loads(json.dumps(PUBLIC))
+        computed["components"]["ring-button"]["states"]["focus-visible"].update(
+            focus={"ok": True, "matches": False}, crop="components/crops/ring-button-focus-visible.png")
+        with tempfile.TemporaryDirectory() as d:
+            md = self.run_builder(d, "public", computed)
+        ring = md.split("#### ring-button", 1)[1].split("####", 1)[0]
+        self.assertIn("| Skipped | - | focused without matching :focus-visible, so no keyboard-focus reading |", ring)
+        self.assertNotIn("#0000ff", ring)
+        self.assertNotIn("ring-button-focus-visible.png", ring)
 
     def test_signed_in_measurements_count_focus_without_focus_visible_apart(self):
         with tempfile.TemporaryDirectory() as d:
             md = self.run_builder(d, "signed-in", SIGNED_IN)
         self.assertIn("- **Focus-visible, dark** (1 focused states; focus could not be captured on 2 more): outline 2px solid #0000ff offset 2px (1).", md)
+        # the same states are left out of the measured count, the component tables and the crop list
+        self.assertIn("3 components, 6 states (4 measured, 2 skipped, 0 not found).", md)
+        row = md.split("#### plain-row", 1)[1].split("####", 1)[0]
+        self.assertIn("| Skipped | - | focused without matching :focus-visible, so no keyboard-focus reading |", row)
+        self.assertNotIn("| How | at rest | keyboard |", row)
+        self.assertNotIn("plain-row-focus-visible.png", row)
+        self.assertIn("Crops: none.", row)
 
 
 if __name__ == "__main__":

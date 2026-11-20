@@ -40,6 +40,12 @@ def hex_of(value: str) -> str:
     return value
 
 
+def hex_rgb(value: str) -> str:
+    """rgb(0, 95, 204) as #005fcc."""
+    parts = value.strip()[value.index("(") + 1:-1].split(",")
+    return "#%02x%02x%02x" % tuple(int(p) for p in parts[:3])
+
+
 def color(value, source):
     return {"$value": hex_of(value) if value.startswith("#") else value, "$type": "color",
             "$extensions": {"source": source}}
@@ -47,6 +53,29 @@ def color(value, source):
 
 def dim(value, source):
     return {"$value": value, "$type": "dimension", "$extensions": {"source": source}}
+
+
+def duration(value, source):
+    return {"$value": value, "$type": "duration", "$extensions": {"source": source}}
+
+
+UA_RING = ("Chromium's default focus ring, not Overflow's: the forced focus-visible outline is "
+           "outline-style auto (raw/focus-visible.json outline {}), and the product sets no focus colour. "
+           "Observed; do not ship it as a brand value.")
+
+
+def ua_default(token):
+    """A value the browser drew, not the product (finding 16-9)."""
+    token["$extensions"]["evidence"] = "Observed"
+    token["$extensions"]["source"] = UA_RING.format(FOCUS["outline"]) + " " + token["$extensions"]["source"]
+    return token
+
+
+def by_hand(token):
+    """A value typed in at capture time that no file in raw/ holds (docs/EVIDENCE.md: Reconstruction)."""
+    token["$extensions"]["evidence"] = "Reconstruction"
+    token["$extensions"]["source"] += ". Entered by hand at capture time; no file in raw/ holds this reading."
+    return token
 
 
 def num(value, source):
@@ -85,7 +114,8 @@ def cubic(value, source):
     return {"$value": value, "$type": "other", "$extensions": {"source": source, "notTokenised": "keyword easing, not a cubic-bezier"}}
 
 
-def main():
+def build():
+    """The token document, built in memory from raw/; main() writes it."""
     home = DEEP["pages"]["home"]
     signin = DEEP["pages"]["signin"]
     h1 = home["h1"]
@@ -128,7 +158,7 @@ def main():
             continue
         key = name[len("--animation-"):]
         if value.endswith("ms"):
-            app_motion[key] = dim(value, f"{SRC_APP}; {name}")
+            app_motion[key] = duration(value, f"{SRC_APP}; {name}")
         elif value.startswith("cubic-bezier("):
             app_motion[key] = cubic(value, f"{SRC_APP}; {name}")
         else:
@@ -141,12 +171,12 @@ def main():
     marketing_type = {
         "display": text_style(inter, h1["fontSize"], 800, h1["lineHeight"], h1["letterSpacing"],
                               f"{SRC_MKT}; h1.intro-section__title"),
-        "section": text_style(inter, "48px", 800, "55.68px", "-0.8px",
-                               f"{SRC_MKT}; features h2 Syncing"),
-        "card-title": text_style(inter, "40px", 800, "24px", "-0.5px",
-                                  f"{SRC_MKT}; pricing h2 Pro (line-height 24px is the computed value, shorter than the size)"),
-        "eyebrow": text_style(inter, "14px", 700, "16.24px", "1px",
-                               f"{SRC_MKT}; footer/menu h3 OVERFLOW"),
+        "section": by_hand(text_style(inter, "48px", 800, "55.68px", "-0.8px",
+                                      f"{SRC_MKT}; features h2 Syncing")),
+        "card-title": by_hand(text_style(inter, "40px", 800, "24px", "-0.5px",
+                                         f"{SRC_MKT}; pricing h2 Pro (line-height 24px is the computed value, shorter than the size)")),
+        "eyebrow": by_hand(text_style(inter, "14px", 700, "16.24px", "1px",
+                                      f"{SRC_MKT}; footer/menu h3 OVERFLOW")),
         "nav": text_style(inter, nav["fontSize"], 400, nav["lineHeight"], "0px",
                           f"{SRC_MKT}; header a.nav-link"),
         "body": text_style(inter, "16px", 400, "28px", "0px",
@@ -187,13 +217,13 @@ def main():
                 "paper": color("#ffffff", f"{SRC_MKT}; body background-color rgb(255, 255, 255)"),
                 "hero-text": color("#ffffff", f"{SRC_MKT}; h1.intro-section__title color"),
                 "navy": color("#161637", f"{SRC_MKT}; menu h4 color rgb(22, 22, 55); also --color-launcher-logo-text and --color-purple170"),
-                "eyebrow": color("#acacbc", f"{SRC_MKT}; h3 color rgb(172, 172, 188)"),
+                "eyebrow": by_hand(color("#acacbc", f"{SRC_MKT}; h3 color rgb(172, 172, 188)")),
                 "footer-link": color("rgba(0, 0, 0, 0.6)", f"{SRC_MKT}; a.footer-nav__link color"),
                 "link": color("#0085e4", f"{SRC_MKT}; cookie-statement link rgb(0, 133, 228); stylesheet a:hover #0085e4"),
                 "link-hover": color("#259aef", "declared a:hover in public-site-v2.min.css; not a resting computed style"),
                 "gray-light": color("#fafafc", f"{SRC_MKT}; .site-section--gray-light background"),
                 "gray-dark": color("#f2f2f4", f"{SRC_MKT}; .site-section--gray-dark background"),
-                "cookie-secondary": color("#f0f0f2", f"{SRC_MKT}; button.btn-secondary background"),
+                "cookie-secondary": by_hand(color("#f0f0f2", f"{SRC_MKT}; button.btn-secondary background")),
                 "cookie-secondary-hover": color("#e8e8ea", "declared .btn-secondary:hover in public-site-v2.min.css"),
                 "field": color("rgba(0, 0, 0, 0.04)", f"{SRC_MKT}; input.form-control background"),
                 "field-border": color("#e8e8ea", f"{SRC_MKT}; input.form-control border-top-color"),
@@ -201,7 +231,7 @@ def main():
                 "theme": color("#232d41", "meta theme-color on marketing pages; also --color-brand-blue"),
                 "auth-panel": color("#d6f3ff", "computed .authpanel background rgb(214, 243, 255), overflow.io/n/signin"),
                 "auth-text": color("#2a2d32", f"{SRC_APP} body color rgb(42, 45, 50); --color-text is #36383b"),
-                "focus-ring": color("#005fcc", "CSS.forcePseudoState focus-visible on header a.btn-primary; outline-color rgb(0, 95, 204)"),
+                "focus-ring": ua_default(color(hex_rgb(FOCUS["outlineColor"]), "CSS.forcePseudoState focus-visible on header a.btn-primary; outline-color rgb(0, 95, 204)")),
             },
             "radius": {
                 "button": dim("8px", f"{SRC_MKT}; .btn border-radius"),
@@ -328,9 +358,9 @@ def main():
 
     # Record the focus ring and the hover lift where they were read.
     tokens["light"]["focus"] = {
-        "outline": color("#005fcc", FOCUS and "CSS.forcePseudoState focus-visible outline-color on header a.btn-primary"),
-        "width": dim(FOCUS["outlineWidth"], "CSS.forcePseudoState focus-visible outline-width"),
-        "offset": dim(FOCUS["outlineOffset"], "CSS.forcePseudoState focus-visible outline-offset"),
+        "outline": ua_default(color("{color.focus-ring}", "CSS.forcePseudoState focus-visible outline-color on header a.btn-primary")),
+        "width": ua_default(dim(FOCUS["outlineWidth"], "CSS.forcePseudoState focus-visible outline-width")),
+        "offset": ua_default(dim(FOCUS["outlineOffset"], "CSS.forcePseudoState focus-visible outline-offset")),
     }
     tokens["core"]["motion"]["marketing-button-hover"] = {
         "$value": "translateY(-2px)",
@@ -359,8 +389,12 @@ def main():
         }
     }
 
+    return tokens
+
+
+def main():
     out = HERE / "tokens.json"
-    out.write_text(json.dumps(tokens, indent=2) + "\n")
+    out.write_text(json.dumps(build(), indent=2) + "\n")
     print(f"wrote {out}")
 
 

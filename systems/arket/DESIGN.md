@@ -33,31 +33,31 @@ typography:
     fontSize: "28px"
     fontWeight: 400
     lineHeight: "34px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   title:
     fontFamily: "arketSansMono"
     fontSize: "22px"
     fontWeight: 400
     lineHeight: "28px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   body:
     fontFamily: "arketSansMono"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   button:
     fontFamily: "arketSansMono"
     fontSize: "20px"
     fontWeight: 400
     lineHeight: "16px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   small:
     fontFamily: "arketSCSansMono"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "16px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
 rounded:
   "1": "1px"
   "12": "12px"

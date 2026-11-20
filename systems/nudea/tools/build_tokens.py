@@ -13,6 +13,7 @@ import re
 
 PKG = pathlib.Path(__file__).resolve().parent.parent
 READINGS = PKG / "raw" / "readings.json"
+RAW_ROOT = json.loads(READINGS.read_text())["customProperties"]
 OUT = PKG / "tokens.json"
 
 HEX = re.compile(r"^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$")
@@ -40,6 +41,15 @@ def dim(value, note, capture="computed style, nudea.com 2026-11-19"):
 
 def num(value, typ, note, capture="computed style or custom property, nudea.com 2026-11-19"):
     return {"$value": value, "$type": typ, **src("Measured", capture, note)}
+
+
+def bezier(text):
+    """cubic-bezier(0, 0, 0.3, 1) as the DTCG list [0, 0, 0.3, 1]."""
+    m = re.fullmatch(r"cubic-bezier\(([^)]*)\)", text.strip())
+    if not m:
+        raise CheckError(f"not a cubic-bezier: {text!r}")
+    nums = [float(x) for x in m.group(1).split(",")]
+    return [int(x) if x == int(x) else x for x in nums]
 
 
 def alias(path, typ, note):
@@ -202,8 +212,9 @@ def build():
                 "extra-long": num("600ms", "duration", "--duration-extra-long is 0.6s. --animation-fade-in uses 0.6s.", capture=root),
             },
             "easing": {
-                "in-out": num("ease-in-out", "cubicBezier", ".button transition-timing-function computes to ease-in-out.", capture=product),
-                "out-slow": num("cubic-bezier(0, 0, 0.3, 1)", "cubicBezier", "--ease-out-slow. Used by --animation-fade-in and --animation-slide-in.", capture=root),
+                "in-out": {"$value": [0.42, 0, 0.58, 1], "$type": "cubicBezier",
+                           **src("Derived", product, ".button transition-timing-function computes to ease-in-out; the CSS keyword is cubic-bezier(0.42, 0, 0.58, 1).")},
+                "out-slow": num(bezier(RAW_ROOT["--ease-out-slow"]), "cubicBezier", "--ease-out-slow is cubic-bezier(0, 0, 0.3, 1). Used by --animation-fade-in and --animation-slide-in.", capture=root),
             },
         },
     }
@@ -325,6 +336,10 @@ def check(doc):
         elif node.get("$type") == "dimension" and isinstance(val, str):
             if not PX.match(val):
                 raise CheckError(f"bad dimension {path}: {val}")
+        elif node.get("$type") == "cubicBezier":
+            if not (isinstance(val, list) and len(val) == 4
+                    and all(isinstance(x, (int, float)) and not isinstance(x, bool) for x in val)):
+                raise CheckError(f"cubicBezier {path} is not four numbers: {val!r}")
     return flat
 
 

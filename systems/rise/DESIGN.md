@@ -59,7 +59,6 @@ colors:
   border-default: "#d6d9e4"
   border-quiet: "rgba(214, 217, 228, 0.5)"
   border-image: "rgba(30, 42, 41, 0.05)"
-  border-hairline: "rgb(229, 231, 235)"
   component-button-primary-bg: "#7161ec"
   component-button-primary-text: "#ffffff"
   component-button-secondary-bg: "#ffffff"
@@ -256,6 +255,8 @@ The focus utility names `--ring`. The stylesheet does not set it. The focus crop
 There is no dark theme. Do not invent one from the 404 page. A first computed read of that page reported a black body while it was still settling. The screenshot and a pixel sample are white.
 
 Screenshots are full colour. Read values from the tokens, not from the images.
+
+Seven values have no reading in [raw/](raw): the three motion durations, the 1280px nav width, `background.primary-soft`, `border.quiet` and `border.image`. They were typed in at capture time, and their sources say Reconstruction. The builder holds the `:root` triplets as literals: they agree with [raw/readings.md](raw/readings.md), but a recapture does not update them. [components.md](components.md) is written from text in `tools/build_components_md.py` in the same way.
 
 ### Do and don't (from README.md)
 
