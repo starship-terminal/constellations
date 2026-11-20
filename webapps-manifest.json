@@ -4596,9 +4596,9 @@
       "description": "Free Personal Site Builder",
       "status": "pending",
       "package": null,
-      "notes": "Log In opens https://app.pop.site/?signin with email and password, or Google. Password not submitted.",
+      "notes": "Log In opens https://app.pop.site/?signin with email and password, or Google. Password not submitted. Public walk 2026-11-21: public pages are home, pricing, blog, sections, featured, press, terms, privacy, myinformation, and articles. /enterprise is a 404. Log In stops at app.pop.site/?signin. Create Account, empty Claim, and footer Sign In stop at app.pop.site/. The FAQ accordion is the only in-page interaction. Google was not clicked. No form was filled. Public package in PR 1557 at 75cb686be1d0. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 14
     },
     {
@@ -4732,9 +4732,9 @@
       "description": "Background & Visual Studio for Designers",
       "status": "pending",
       "package": null,
-      "notes": "https://pryzm.design/login is 404. https://pryzm.design/signin asks for email and password, or Google. Password not submitted.",
+      "notes": "https://pryzm.design/login is 404. https://pryzm.design/signin asks for email and password, or Google. Password not submitted. Public walk 2026-11-21: marketing nav opens Inspiration, Lab, Pricing, Studio, and Sign in. At 390 px, Menu opens a dialog with those links. The studio rail opens Studio, Lab, Flow, Inspiration, Docs, and Collapse. My work redirects to sign-in. Gallery filters and look cards are public. Studio, Lab, and Flow open export, share, aspect, add-layer, and add-node dialogs without an account. Share asks to save first. Remix on a Pro look opens a paywall. Checkout was not followed. Google was not clicked. No email was typed. No form was submitted. Public package in PR 1556 at 70b091901869. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 14
     },
     {
