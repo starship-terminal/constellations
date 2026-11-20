@@ -120,14 +120,24 @@ async function pick(p, sel, score, tag = 'pk') {
 // CSS.forcePseudoState through CDP: the press never happens, so no link can
 // navigate and no button can fire.
 async function pressOn(loc) {
-  const b = await loc.boundingBox();
-  if (!b) return null;
+  // Force :active:hover on the component element itself, never the topmost
+  // node at its centre (a text span or an svg), so the component's own
+  // :active rule applies (2026-11 audit, finding 12-6; not run since).
   await cdp.send('DOM.getDocument').catch(() => {});
-  const { backendNodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) });
-  const { nodeIds } = await cdp.send('DOM.pushNodesByBackendIdsToFrontend', { backendNodeIds: [backendNodeId] });
-  await cdp.send('CSS.forcePseudoState', { nodeId: nodeIds[0], forcedPseudoClasses: ['active', 'hover'] });
-  await page.waitForTimeout(400);
-  return nodeIds[0];
+  await loc.evaluate((el) => el.setAttribute('data-press-target', '1'));
+  try {
+    const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false });
+    // an unresolved target throws, so the state records an error instead of
+    // a resting reading labelled pressed
+    if (!result || !result.objectId) throw new Error('press target not resolvable');
+    const { nodeId } = await cdp.send('DOM.requestNode', { objectId: result.objectId });
+    if (!nodeId) throw new Error('press target has no DOM node');
+    await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
+    await page.waitForTimeout(400);
+    return nodeId;
+  } finally {
+    await loc.evaluate((el) => el.removeAttribute('data-press-target')).catch(() => {});
+  }
 }
 const pressOff = (id) => id == null ? null : cdp.send('CSS.forcePseudoState', { nodeId: id, forcedPseudoClasses: [] }).catch(() => {});
 
