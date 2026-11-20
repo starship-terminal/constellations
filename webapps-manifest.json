@@ -6500,9 +6500,9 @@
       "description": "Photos for everyone",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://unsplash.com/login showed email and password. Password not submitted. No Google button.",
+      "notes": "Email probe: https://unsplash.com/login showed email and password. Password not submitted. No Google button. Public walk 2026-11-21: header search, Menu dialog, language menu, and visual-search dialog are public. Collections, Download History, Bookmarks, and Submit an image stop at the login wall. Captured pages include home, illustrations, explore, a topic grid, one photo, Unsplash+, about, license, developers, images, awards, and login. Login showed empty email and password fields. No email was typed. No form was submitted. Signed-in collections were not captured. Public package in PR 1593 at f595da613aa1. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 19
     },
     {
