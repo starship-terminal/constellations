@@ -27,7 +27,7 @@ Fonts: `core.font.family.sans` is Helvetica Neue, then 3 fallbacks. Scales, coun
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 60 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 58 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -82,7 +82,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 |---|---|
 | [tokens.json](tokens.json) | 58 core + 21 light + 6 dark tokens, evidence-labelled (`{var: ...}` leaves resolve to the declared layer; measured values name the component reading) |
 | [style-guide.html](style-guide.html) | every token rendered, with a reconstructed mock of the dark header |
-| [components.md](components.md) | the discovery list and 28 measured component entries (60 state crops; post-video recorded as a miss) |
+| [components.md](components.md) | the discovery list and 28 measured component entries (58 state crops; post-video recorded as a miss) |
 | [patterns.md](patterns.md) | page layouts |
 | [DESIGN.md](DESIGN.md) | the generated one-theme export |
 | [icon.png](icon.png) | the Cron / Notion Calendar app icon, 128px (Git LFS) |
