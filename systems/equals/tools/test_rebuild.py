@@ -28,6 +28,8 @@ def flat(tree, path=""):
 
 
 class RebuildTest(unittest.TestCase):
+    MOTION_FROM = "hero-cta"  # the reading core.motion.control is built from
+
     @classmethod
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
@@ -36,6 +38,16 @@ class RebuildTest(unittest.TestCase):
         shutil.copytree(PKG / "raw", root / "raw")
         for b in ("build_component_tokens.py", "build_tokens.py"):
             subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
+        # raw/measurements.md comes from the capture folder's build-measurements.mjs; copy only it
+        # and the colour helper it imports, and run it on the temp copy.
+        cls.measurements = None
+        if shutil.which("node"):
+            (root / "tools" / "capture" / "public").mkdir(parents=True)
+            shutil.copy(PKG / "tools" / "capture" / "css-colour.mjs", root / "tools" / "capture")
+            shutil.copy(PKG / "tools" / "capture" / "public" / "build-measurements.mjs", root / "tools" / "capture" / "public")
+            subprocess.run(["node", str(root / "tools" / "capture" / "public" / "build-measurements.mjs")],
+                           cwd=root, check=True, capture_output=True)
+            cls.measurements = (root / "raw" / "measurements.md").read_text()
         cls.built = json.loads((root / "tokens.json").read_text())
         cls.spec = json.loads((root / "raw" / "component-tokens.json").read_text())
         spec = importlib.util.spec_from_file_location("equals_bct", root / "tools" / "build_component_tokens.py")
@@ -89,16 +101,70 @@ class RebuildTest(unittest.TestCase):
         self.assertNotIn("focus", self.built["light"]["marketing"])
 
     def test_transition_pairs_each_property_with_its_timing(self):
-        sty = self.C["hero-cta"]["states"]["default"]["style"]
-        props = [p.strip() for p in sty["transitionProperty"].split(",")]
-        items = re.split(r",\s*(?![^()]*\))", self.core["motion.control"]["$value"])
-        self.assertEqual([i.split()[0] for i in items], props)
-        for i in items:
-            self.assertEqual(i.split(" ", 1)[1], f"{sty['transitionDuration']} {sty['transitionTimingFunction']}")
+        t = self.B.transition
+        # one timing for several properties: it repeats to every property
+        self.assertEqual(t({"transitionProperty": "color, background-color", "transitionDuration": "0.15s",
+                            "transitionTimingFunction": "ease-out"}),
+                         "color 0.15s ease-out, background-color 0.15s ease-out")
+        # per-property timings pair by index
+        self.assertEqual(t({"transitionProperty": "opacity, transform", "transitionDuration": "0.1s, 0.3s",
+                            "transitionTimingFunction": "linear, cubic-bezier(0.2, 0, 0, 1)"}),
+                         "opacity 0.1s linear, transform 0.3s cubic-bezier(0.2, 0, 0, 1)")
+        # shorter timing lists repeat from the start, as CSS repeats them
+        self.assertEqual(t({"transitionProperty": "a, b, c", "transitionDuration": "1s, 2s",
+                            "transitionTimingFunction": "ease"}),
+                         "a 1s ease, b 2s ease, c 1s ease")
+        # and the committed token is that pairing of its own reading
+        comp = self.MOTION_FROM
+        self.assertEqual(self.core["motion.control"]["$value"], t(self.C[comp]["states"]["default"]["style"]))
 
     def test_font_sizes_are_dimensions(self):
         for path, leaf in flat(self.built["core"]["font"]["size"]):
             self.assertEqual(leaf["$type"], "dimension", path)
+
+    def test_failed_focus_is_not_published_as_a_reading(self):
+        if self.measurements is None:
+            self.skipTest("node is not installed")
+        self.assertEqual((PKG / "raw" / "measurements.md").read_text(), self.measurements)
+        failed = [k for k, c in self.C.items() if (c["states"].get("focus-visible") or {}).get("via") == "focus failed"]
+        self.assertTrue(failed)
+        for k in failed:
+            block = self.measurements.split(f"#### {k}\n", 1)[1].split("\n#### ", 1)[0]
+            cells = lambda r: [c.strip() for c in r.strip().strip("|").split("|")]  # noqa: E731
+            table = [cells(r) for r in block.splitlines() if r.startswith("| ") and not r.startswith("|---")]
+            col = table[0].index("focus-visible")
+            for row in table[1:]:
+                if row[0] == "Skipped":
+                    self.assertTrue(row[col].startswith("focus failed"), k)
+                else:
+                    self.assertEqual(row[col], "-", f"{k}: {row}")
+
+    def test_skipped_focus_keeps_its_note(self):
+        """A newer capture records a failed focus as {skipped, via} with no style; components.md
+        still has to say focus could not be captured on that component."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            shutil.copytree(pathlib.Path(self.tmp.name) / "tools", root / "tools", ignore=shutil.ignore_patterns("capture"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            shutil.copy(PKG / "tokens.json", root / "tokens.json")
+            raw = json.loads((root / "raw" / "components-computed.json").read_text())
+            k = next(k for k, c in raw["components"].items()
+                     if (c["states"].get("focus-visible") or {}).get("via") == "focus failed")
+            raw["components"][k]["states"]["focus-visible"] = {
+                "skipped": "focus failed: keyboard focus did not reach the element", "via": "focus failed"}
+            (root / "raw" / "components-computed.json").write_text(json.dumps(raw))
+            subprocess.run([sys.executable, str(root / "tools" / "build_components_md.py")], cwd=root, check=True, capture_output=True)
+            md = (root / "components.md").read_text()
+            block = md.split(f"Read as `{k}`", 1)[1].split("\n#### ", 1)[0]
+            self.assertIn("Focus not capturable", block)
+
+    def test_docs_cite_only_existing_tokens(self):
+        names = set()
+        for theme in ("core", "light", "dark"):
+            names |= {f"{theme}.{n}" for n, _ in flat(self.built[theme])}
+        for doc in ("patterns.md", "components.md"):
+            for m in set(re.findall(r"`((?:core|light|dark)\.[A-Za-z0-9._-]+)`", (PKG / doc).read_text())):
+                self.assertTrue(m in names or any(n.startswith(m + ".") for n in names), f"{doc} cites {m}")
 
 
 if __name__ == "__main__":

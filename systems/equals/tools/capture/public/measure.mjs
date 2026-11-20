@@ -207,11 +207,17 @@ async function S(key, target, list, meta = {}, opts = {}) {
         // Keyboard focus never reached the element, so a reading now would be the element at rest
         // saved as its focus. Record the miss instead (the builders list it as "focus could not be
         // captured"), and drop the crop an earlier run saved for this state.
+        // An earlier run's real focus reading is kept, with the failed retry noted beside it.
         const prevSt = out.components[key].states[st];
-        const old = prevSt?.crop && path.resolve(REF, prevSt.crop);
-        if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
-        out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via, run };
-        log('  -', key, st, 'skipped: focus failed');
+        if (prevSt?.style && prevSt.via !== 'focus failed') {
+          prevSt.rerunError = 'focus failed: keyboard focus did not reach the element';
+          log('  !', key, st, 'focus failed; earlier reading kept');
+        } else {
+          const old = prevSt?.crop && path.resolve(REF, prevSt.crop);
+          if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
+          out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via, run };
+          log('  -', key, st, 'skipped: focus failed');
+        }
       } else await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
