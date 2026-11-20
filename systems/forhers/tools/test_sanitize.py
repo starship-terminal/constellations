@@ -43,5 +43,13 @@ class SanitizeTest(unittest.TestCase):
         self.assertEqual(self.run_node(tags), ['<a href="/css/site.css" class="x">', '<img src="/image/a.png" alt="A b">', "<br />"])
 
 
+    def test_unquoted_slash_values_keep_their_slash(self):
+        tags = ["<img src=/image/>", "<a href=/>", "<img src=x />", '<img src="x"/>', "<br/>"]
+        self.assertEqual(self.run_node(tags), ["<img src=/image/>", "<a href=/>", "<img src=x />", '<img src="x" />', "<br />"])
+
+    def test_invalid_numeric_reference_does_not_throw(self):
+        self.assertEqual(self.run_node(['<a href="&#x110000;">', '<a href="&#xD800;javascript:x">']),
+                         ['<a href="&#x110000;">', '<a href="&#xD800;javascript:x">'])
+
 if __name__ == "__main__":
     unittest.main()
