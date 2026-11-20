@@ -3933,9 +3933,9 @@
       "description": "Discover your neighborhood",
       "status": "pending",
       "package": null,
-      "notes": "https://nextdoor.com/login/ asks for email or mobile number and password, or Google, Facebook, or Apple. Password not submitted.",
+      "notes": "https://nextdoor.com/login/ asks for email or mobile number and password, or Google, Facebook, or Apple. Password not submitted. Public walk 2026-11-21: the homepage is marketing with an embedded signup card. Header Partners and Businesses menus and the footer open about, press, careers, help, legal, small business, enterprise, agencies, directories, neighborhoods, developers, and industry pages. Log in, Sign up, Continue, Google, Apple, Facebook, join, choose-address, create-business, ads signup, and Events (redirects to login) were recorded and not entered. No form was submitted. Public package in PR 1544 at 9dca056d963c. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 12
     },
     {
