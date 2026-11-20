@@ -103,6 +103,50 @@ class RebuildTest(unittest.TestCase):
                              f"{s['transitionDuration'].split(',')[0]} {s['transitionTimingFunction'].split(',')[0]}")
         self.assertEqual(spec["dark"]["border"]["$value"], V["dark"]["--Grey-700"]["value"])
 
+    def _rebuild_with(self, edit, builders=("build_component_tokens.py",)):
+        """Rebuild a second temp copy after edit(components) changes its raw readings."""
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = pathlib.Path(tmp.name) / "pkg"
+        shutil.copytree(self.root, root)
+        raw = root / "raw" / "components-computed.json"
+        J = json.loads(raw.read_text())
+        edit(J["components"])
+        raw.write_text(json.dumps(J))
+        rs = [subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, capture_output=True, text=True)
+              for b in builders]
+        return rs, root
+
+    def test_motion_keeps_a_bezier_with_commas(self):
+        def edit(C):
+            s = C["hero-cta"]["states"]["default"]["style"]
+            s["transitionProperty"], s["transitionDuration"] = "background-color, color", "0.2s, 0.1s"
+            s["transitionTimingFunction"] = "cubic-bezier(0.4, 0, 0.2, 1), ease"
+        (r,), root = self._rebuild_with(edit)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        spec = json.loads((root / "raw" / "component-tokens.json").read_text())
+        self.assertEqual(spec["component"]["motion"]["button"]["$value"], "0.2s cubic-bezier(0.4, 0, 0.2, 1)")
+
+    def test_failed_focus_cannot_feed_a_token(self):
+        # A focus-visible state where focus failed keeps its at-rest style; the focus ring tokens
+        # read nav-cta's, so the build must stop rather than publish that style as the ring.
+        def edit(C):
+            C["nav-cta"]["states"]["focus-visible"]["via"] = "focus failed"
+        (r,), _ = self._rebuild_with(edit)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("nav-cta focus-visible: keyboard focus was not captured", r.stderr)
+
+    def test_failed_focus_with_a_style_is_not_counted(self):
+        # The components builder must list such a state as failed, never as a ring or a no-ring reading.
+        def edit(C):
+            C["nav-link"]["states"]["focus-visible"]["via"] = "focus failed"
+        rs, root = self._rebuild_with(edit, ("build_components_md.py",))
+        self.assertEqual(rs[0].returncode, 0, rs[0].stderr)
+        line = next(l for l in (root / "components.md").read_text().splitlines() if l.startswith("**Focus.**"))
+        counted, failed = line.split(" On ", 1)
+        self.assertNotIn("`nav-link`", counted)
+        self.assertIn("`nav-link`", failed)
+
     def test_type_steps_are_the_text_readings(self):
         # 13-12: planPrice/body/small fell back to typed sizes when a reading was missing.
         spec = json.loads((self.root / "raw" / "component-tokens.json").read_text())["component"]["type"]

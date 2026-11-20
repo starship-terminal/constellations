@@ -42,9 +42,7 @@ def need(v, what):
 def motion(k, i=0):
     """The i-th entry of a component's computed transition as "<duration> <easing>"."""
     s = style(k)
-    dur = [x.strip() for x in s["transitionDuration"].split(",")]
-    ease = [x.strip() for x in s["transitionTimingFunction"].split(",")]
-    prop = [x.strip() for x in s["transitionProperty"].split(",")]
+    dur, ease, prop = (entries(s[p]) for p in ("transitionDuration", "transitionTimingFunction", "transitionProperty"))
     return f"{dur[i]} {ease[i]}", prop[i]
 
 
@@ -55,7 +53,25 @@ def st(k, state="default"):
 
 
 def style(k, state="default"):
-    return st(k, state).get("style") or {}
+    v = st(k, state)
+    if v.get("skipped") or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False:
+        # keyboard focus never landed: the style is the element at rest, not a focus reading
+        raise SystemExit(f"{k} {state}: keyboard focus was not captured, so it cannot source a token")
+    return v.get("style") or {}
+
+
+def entries(v):
+    """A computed comma list split between entries only (commas inside cubic-bezier() stay)."""
+    out, depth, cur = [], 0, ""
+    for ch in v:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == "," and depth == 0:
+            out.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    return out + [cur.strip()]
 
 
 def col(v):
