@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy Me a Coffee style guide</title>
+<meta name="description" content="Buy Me a Coffee public-site tokens and components, rendered from tokens.json.">
+<style>
+:root {
+  --color-brand-yellow: #ffdd00;
+  --color-brand-yellow-bright: #f7d046;
+  --color-brand-yellow-soft: #fffce6;
+  --color-brand-amber: #f8a629;
+  --color-neutral-ink: #222222;
+  --color-neutral-ink-v2: #1f2022;
+  --color-neutral-black: #000000;
+  --color-neutral-white: #ffffff;
+  --color-neutral-paper: #faf8f0;
+  --color-neutral-grey: #777777;
+  --color-neutral-grey-v1: #717171;
+  --color-neutral-grey-v5: #999999;
+  --color-neutral-hairline: rgba(34, 34, 34, 0.05);
+  --color-neutral-line: rgba(34, 34, 34, 0.1);
+  --color-neutral-wash: rgba(34, 34, 34, 0.05);
+  --color-status-green: #84c743;
+  --color-status-red: #ee3124;
+  --color-status-dark-red: #d8573f;
+  --font-family-display: Circular Bold, Circular, ui-sans-serif, system-ui, sans-serif;
+  --font-family-body: Circular Regular, Circular, ui-sans-serif, system-ui, sans-serif;
+  --font-family-medium: Circular Medium, Circular, ui-sans-serif, system-ui, sans-serif;
+  --font-family-book: Circular Book, Circular, ui-sans-serif, system-ui, sans-serif;
+  --font-family-script: Borel Regular, cursive;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --typography-display: 400 96px/95px var(--core-font-family-display);
+  --typography-heading: 400 48px/56px var(--core-font-family-display);
+  --typography-title: 400 24px/32px var(--core-font-family-display);
+  --typography-body: 400 16px/24px var(--core-font-family-body);
+  --typography-label: 400 16px/24px var(--core-font-family-medium);
+  --typography-caption: 400 14px/20px var(--core-font-family-book);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-card: 36px;
+  --radius-pill: 9999px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --shadow-menu: 0px 8px 24px 0px rgba(0, 0, 0, 0.08);
+  --motion-hover: 100ms;
+  --motion-menu: 150ms;
+  --color-page: var(--core-color-neutral-paper);
+  --color-surface: var(--core-color-neutral-white);
+  --color-text: var(--core-color-neutral-ink);
+  --color-muted: var(--core-color-neutral-grey);
+  --color-accent: var(--core-color-brand-yellow);
+  --color-border: var(--core-color-neutral-line);
+  --color-on-accent: var(--core-color-neutral-ink);
+  --component-button-background: var(--core-color-brand-yellow);
+  --component-button-text: var(--core-color-neutral-ink);
+  --component-button-radius: 9999px;
+  --component-button-height: 48px;
+  --component-nav-text: var(--core-color-neutral-ink);
+  --component-nav-size: 16px;
+  --component-header-background: var(--core-color-neutral-white);
+  --component-header-height: 76px;
+  --component-header-padding: 14px;
+  --component-field-radius: 12px;
+  --component-field-height: 48px;
+  --sg-sans: "Circular", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #222); background: var(--color-page, #faf8f0); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 400 48px/1.05 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.02em; }
+h2 { font: 400 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted, #777); margin: 48px 0 12px; }
+p.lead { max-width: 62ch; color: var(--color-muted, #777); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(34,34,34,.12); display: block; }
+.sw b { font: 500 12px/1.3 var(--sg-mono); display: block; }
+.sw span { font: 400 11px/1.3 var(--sg-mono); color: var(--color-muted, #777); }
+.mock { background: var(--color-surface, #fff); border-radius: 16px; overflow: hidden; border: 1px solid rgba(34,34,34,.08); }
+.bar { display: flex; align-items: center; gap: 16px; height: 76px; padding: 0 24px; background: #fff; font-size: 16px; }
+.bar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 18px; border-radius: 9999px; background: var(--color-accent, #ffdd00); color: var(--color-text, #222); font-size: 16px; border: 0; }
+.hero { padding: 64px 40px 48px; background: var(--color-page, #faf8f0); }
+.hero h3 { margin: 0; font: 400 64px/0.98 var(--sg-sans); letter-spacing: -0.025em; max-width: 12ch; }
+.hero p { color: var(--color-muted, #777); max-width: 42ch; }
+.card { margin: 16px; padding: 24px; background: #fff; border-radius: 36px; box-shadow: 0 8px 24px rgba(0,0,0,.08); max-width: 360px; }
+.field { height: 48px; border-radius: 12px; border: 1px solid rgba(34,34,34,.1); padding: 0 14px; display: flex; align-items: center; color: #777; background: rgba(0,0,0,.03); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(34,34,34,.08); }
+th { color: #777; font-weight: 500; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Buy Me a Coffee</h1>
+  <p class="lead">Public marketing site, measured 2026-11-21, signed out. One light theme. Yellow <code>#ffdd00</code> on floral white <code>#faf8f0</code>, ink <code>#222222</code>, Circular. Circular is not shipped here, so this page falls back to the system sans.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+
+  <h2>Type</h2>
+  <div id="type"></div>
+
+  <h2>Components</h2>
+  <div class="mock">
+    <div class="bar">
+      <span>FAQ</span><span>Wall of love</span><span>Apps</span><span>Resources</span>
+      <span class="sp"></span>
+      <span>Log in</span>
+      <span class="btn">Sign up</span>
+    </div>
+    <div class="hero">
+      <h3>Fund your creative work</h3>
+      <p>Accept support. Start a membership. Set up a shop.</p>
+      <span class="btn">Start my page</span>
+    </div>
+  </div>
+  <div class="card">
+    <strong>Support</strong>
+    <p>Quantity radios, a name field, a message. The payment button is not part of this guide's action.</p>
+    <div class="field">Name or @yoursocial</div>
+  </div>
+
+  <h2>Radius and spacing</h2>
+  <table id="geom"></table>
+</main>
+<script>
+const tokens = {"core":{"color":{"brand":{"yellow":{"v":"#ffdd00","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-yellow"},"yellow-bright":{"v":"#f7d046","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-yellow-bright"},"yellow-soft":{"v":"#fffce6","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-yellow-v1"},"amber":{"v":"#f8a629","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-yellow-v3"}},"neutral":{"ink":{"v":"#222222","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-dark / .text-dark"},"ink-v2":{"v":"#1f2022","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .text-dark-v2"},"black":{"v":"#000000","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-black"},"white":{"v":"#ffffff","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-white"},"paper":{"v":"#faf8f0","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-floral-white"},"grey":{"v":"#777777","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .text-grey"},"grey-v1":{"v":"#717171","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-grey-v1"},"grey-v5":{"v":"#999999","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-grey-v5"},"hairline":{"v":"rgba(34, 34, 34, 0.05)","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .border-grey"},"line":{"v":"rgba(34, 34, 34, 0.1)","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .border-grey-1"},"wash":{"v":"rgba(34, 34, 34, 0.05)","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-dark-rgba-05"}},"status":{"green":{"v":"#84c743","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-green"},"red":{"v":"#ee3124","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-red"},"dark-red":{"v":"#d8573f","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-dark-red"}}},"font":{"family":{"display":{"v":"Circular Bold, Circular, ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .font-cr-bold"},"body":{"v":"Circular Regular, Circular, ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .font-cr-regular"},"medium":{"v":"Circular Medium, Circular, ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .font-cr-medium"},"book":{"v":"Circular Book, Circular, ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .font-cr-book"},"script":{"v":"Borel Regular, cursive","t":"fontFamily","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .font-br-regular"}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); h1 and buttons report font-weight 400 because Circular Bold is a separate family"},"medium":{"v":500,"t":"fontWeight","s":"Derived: Circular Medium is a separate family; the computed weight on nav links is 400"},"bold":{"v":700,"t":"fontWeight","s":"Derived: Circular Bold is a separate family; the computed weight on h1 is 400"}}},"typography":{"display":{"v":{"fontFamily":"{core.font.family.display}","fontSize":"96px","fontWeight":400,"lineHeight":"95px","letterSpacing":"-2.4px"},"t":"typography","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); h1"},"heading":{"v":{"fontFamily":"{core.font.family.display}","fontSize":"48px","fontWeight":400,"lineHeight":"56px","letterSpacing":"-0.96px"},"t":"typography","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .text-48 on feature pages"},"title":{"v":{"fontFamily":"{core.font.family.display}","fontSize":"24px","fontWeight":400,"lineHeight":"32px","letterSpacing":"0px"},"t":"typography","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .text-24.font-cr-bold"},"body":{"v":{"fontFamily":"{core.font.family.body}","fontSize":"16px","fontWeight":400,"lineHeight":"24px","letterSpacing":"0px"},"t":"typography","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); page"},"label":{"v":{"fontFamily":"{core.font.family.medium}","fontSize":"16px","fontWeight":400,"lineHeight":"24px","letterSpacing":"0px"},"t":"typography","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); nav link a[aria-label=FAQ]"},"caption":{"v":{"fontFamily":"{core.font.family.book}","fontSize":"14px","fontWeight":400,"lineHeight":"20px","letterSpacing":"0px"},"t":"typography","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .text-14"}},"radius":{"sm":{"v":"8px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .rounded-8"},"md":{"v":"12px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .rounded-12"},"lg":{"v":"16px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .rounded-16"},"xl":{"v":"24px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .rounded-24"},"card":{"v":"36px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .rounded-36"},"pill":{"v":"9999px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .rounded-full"}},"spacing":{"1":{"v":"4px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .p-4"},"2":{"v":"8px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .p-8"},"3":{"v":"12px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .p-12"},"4":{"v":"16px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .p-16"},"5":{"v":"24px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .p-24"},"6":{"v":"32px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .p-32"}},"shadow":{"menu":{"v":[{"color":"rgba(0, 0, 0, 0.08)","offsetX":"0px","offsetY":"8px","blur":"24px","spread":"0px"}],"t":"shadow","s":"Not captured as a computed box-shadow. The Resources panel uses the shadow-smd class. This layer is a Reconstruction so the style guide has a shadow to draw."}},"motion":{"hover":{"v":"100ms","t":"duration","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .bg-transition background-color .1s ease-out"},"menu":{"v":"150ms","t":"duration","s":"Measured from the header class duration-150 on the Apps and Resources menus"}}},"light":{"color":{"page":{"v":"{core.color.neutral.paper}","t":"color","s":"Alias of core.color.neutral.paper; .bg-floral-white on the homepage root"},"surface":{"v":"{core.color.neutral.white}","t":"color","s":"Alias of core.color.neutral.white; #bmc-header background"},"text":{"v":"{core.color.neutral.ink}","t":"color","s":"Alias of core.color.neutral.ink; .text-dark"},"muted":{"v":"{core.color.neutral.grey}","t":"color","s":"Alias of core.color.neutral.grey; .text-grey"},"accent":{"v":"{core.color.brand.yellow}","t":"color","s":"Alias of core.color.brand.yellow; .bg-yellow and .btn-with-bg-yellow:before"},"border":{"v":"{core.color.neutral.line}","t":"color","s":"Alias of core.color.neutral.line; .border-grey-1"},"on-accent":{"v":"{core.color.neutral.ink}","t":"color","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); Sign up label colour on the yellow button"}},"component":{"button":{"background":{"v":"{core.color.brand.yellow}","t":"color","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .btn-with-bg-yellow:before"},"text":{"v":"{core.color.neutral.ink}","t":"color","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); Sign up"},"radius":{"v":"9999px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); .rounded-full on .bmc-btn"},"height":{"v":"48px","t":"dimension","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); header Sign up link height"}},"nav":{"text":{"v":"{core.color.neutral.ink}","t":"color","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); FAQ link"},"size":{"v":"16px","t":"dimension","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); FAQ link font-size"}},"header":{"background":{"v":"{core.color.neutral.white}","t":"color","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); #bmc-header"},"height":{"v":"76px","t":"dimension","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); #bmc-header at 1440"},"padding":{"v":"14px","t":"dimension","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); #bmc-header padding-top"}},"field":{"radius":{"v":"12px","t":"dimension","s":"Measured from the inlined Tailwind v3.4.1 sheet on https://buymeacoffee.com/ (2026-11-21); search modal field"},"height":{"v":"48px","t":"dimension","s":"Measured getComputedStyle on https://buymeacoffee.com/ at 1440x900 (2026-11-21); login email field, approximated from the login page control row"}}}},"dark":{}};
+function flat(node, prefix, out) {
+  out = out || [];
+  Object.keys(node || {}).forEach(function (k) {
+    if (k.charAt(0) === '$') return;
+    const v = node[k];
+    const path = prefix ? prefix + '.' + k : k;
+    if (v && v.v !== undefined) out.push([path, v]);
+    else if (v && typeof v === 'object') flat(v, path, out);
+  });
+  return out;
+}
+const sw = document.getElementById('swatches');
+flat(tokens.core.color).concat(flat(tokens.light.color)).forEach(function (row) {
+  const path = row[0], t = row[1];
+  if (t.t !== 'color') return;
+  const val = String(t.v);
+  if (val.charAt(0) === '{') return;
+  const el = document.createElement('div');
+  el.className = 'sw';
+  el.innerHTML = '<i style="background:' + val + '"></i><div><b>' + path + '</b><span>' + val + '</span></div>';
+  sw.appendChild(el);
+});
+const type = document.getElementById('type');
+flat(tokens.core.typography).forEach(function (row) {
+  const v = row[1].v;
+  const p = document.createElement('p');
+  p.style.fontSize = v.fontSize;
+  p.style.lineHeight = v.lineHeight;
+  p.style.letterSpacing = v.letterSpacing;
+  p.style.margin = '8px 0';
+  p.textContent = row[0] + ' ' + v.fontSize;
+  type.appendChild(p);
+});
+const geom = document.getElementById('geom');
+flat(tokens.core.radius).concat(flat(tokens.core.spacing)).forEach(function (row) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = '<td><code>' + row[0] + '</code></td><td>' + row[1].v + '</td>';
+  geom.appendChild(tr);
+});
+</script>
+</body>
+</html>

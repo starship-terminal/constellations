@@ -1,0 +1,58 @@
+{
+  "capturedAt": "2026-11-21",
+  "url": "https://buymeacoffee.com/",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "devicePixelRatio": 1
+  },
+  "elements": {
+    "page": {
+      "selector": ".bg-floral-white",
+      "backgroundColor": "rgb(250, 248, 240)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": "400"
+    },
+    "header": {
+      "selector": "#bmc-header",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "padding": "14px 24px",
+      "height": "76px"
+    },
+    "h1": {
+      "selector": "h1",
+      "color": "rgb(34, 34, 34)",
+      "fontFamily": "Circular Bold",
+      "fontSize": "96px",
+      "fontWeight": "400",
+      "lineHeight": "95px",
+      "letterSpacing": "-2.4px"
+    },
+    "signup": {
+      "selector": "a[href$='/signup']",
+      "color": "rgb(34, 34, 34)",
+      "fontFamily": "Circular Medium",
+      "fontSize": "16px",
+      "height": "48px",
+      "padding": "8px 16px"
+    },
+    "faq": {
+      "selector": "a[aria-label=FAQ]",
+      "color": "rgb(34, 34, 34)",
+      "fontFamily": "Circular Medium",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "height": "40px"
+    }
+  },
+  "fontsLoaded": [
+    "Circular Regular",
+    "Circular Book",
+    "Circular Bold",
+    "Circular Black",
+    "Circular Medium",
+    "Borel Regular"
+  ]
+}

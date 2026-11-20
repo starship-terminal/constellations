@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy Me a Coffee style guide</title>
+<meta name="description" content="Buy Me a Coffee public-site tokens and components, rendered from tokens.json.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Circular", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #222); background: var(--color-page, #faf8f0); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 400 48px/1.05 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.02em; }
+h2 { font: 400 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted, #777); margin: 48px 0 12px; }
+p.lead { max-width: 62ch; color: var(--color-muted, #777); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(34,34,34,.12); display: block; }
+.sw b { font: 500 12px/1.3 var(--sg-mono); display: block; }
+.sw span { font: 400 11px/1.3 var(--sg-mono); color: var(--color-muted, #777); }
+.mock { background: var(--color-surface, #fff); border-radius: 16px; overflow: hidden; border: 1px solid rgba(34,34,34,.08); }
+.bar { display: flex; align-items: center; gap: 16px; height: 76px; padding: 0 24px; background: #fff; font-size: 16px; }
+.bar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 18px; border-radius: 9999px; background: var(--color-accent, #ffdd00); color: var(--color-text, #222); font-size: 16px; border: 0; }
+.hero { padding: 64px 40px 48px; background: var(--color-page, #faf8f0); }
+.hero h3 { margin: 0; font: 400 64px/0.98 var(--sg-sans); letter-spacing: -0.025em; max-width: 12ch; }
+.hero p { color: var(--color-muted, #777); max-width: 42ch; }
+.card { margin: 16px; padding: 24px; background: #fff; border-radius: 36px; box-shadow: 0 8px 24px rgba(0,0,0,.08); max-width: 360px; }
+.field { height: 48px; border-radius: 12px; border: 1px solid rgba(34,34,34,.1); padding: 0 14px; display: flex; align-items: center; color: #777; background: rgba(0,0,0,.03); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(34,34,34,.08); }
+th { color: #777; font-weight: 500; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Buy Me a Coffee</h1>
+  <p class="lead">Public marketing site, measured 2026-11-21, signed out. One light theme. Yellow <code>#ffdd00</code> on floral white <code>#faf8f0</code>, ink <code>#222222</code>, Circular. Circular is not shipped here, so this page falls back to the system sans.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+
+  <h2>Type</h2>
+  <div id="type"></div>
+
+  <h2>Components</h2>
+  <div class="mock">
+    <div class="bar">
+      <span>FAQ</span><span>Wall of love</span><span>Apps</span><span>Resources</span>
+      <span class="sp"></span>
+      <span>Log in</span>
+      <span class="btn">Sign up</span>
+    </div>
+    <div class="hero">
+      <h3>Fund your creative work</h3>
+      <p>Accept support. Start a membership. Set up a shop.</p>
+      <span class="btn">Start my page</span>
+    </div>
+  </div>
+  <div class="card">
+    <strong>Support</strong>
+    <p>Quantity radios, a name field, a message. The payment button is not part of this guide's action.</p>
+    <div class="field">Name or @yoursocial</div>
+  </div>
+
+  <h2>Radius and spacing</h2>
+  <table id="geom"></table>
+</main>
+<script>
+const tokens = /*TOKENS*/null;
+function flat(node, prefix, out) {
+  out = out || [];
+  Object.keys(node || {}).forEach(function (k) {
+    if (k.charAt(0) === '$') return;
+    const v = node[k];
+    const path = prefix ? prefix + '.' + k : k;
+    if (v && v.v !== undefined) out.push([path, v]);
+    else if (v && typeof v === 'object') flat(v, path, out);
+  });
+  return out;
+}
+const sw = document.getElementById('swatches');
+flat(tokens.core.color).concat(flat(tokens.light.color)).forEach(function (row) {
+  const path = row[0], t = row[1];
+  if (t.t !== 'color') return;
+  const val = String(t.v);
+  if (val.charAt(0) === '{') return;
+  const el = document.createElement('div');
+  el.className = 'sw';
+  el.innerHTML = '<i style="background:' + val + '"></i><div><b>' + path + '</b><span>' + val + '</span></div>';
+  sw.appendChild(el);
+});
+const type = document.getElementById('type');
+flat(tokens.core.typography).forEach(function (row) {
+  const v = row[1].v;
+  const p = document.createElement('p');
+  p.style.fontSize = v.fontSize;
+  p.style.lineHeight = v.lineHeight;
+  p.style.letterSpacing = v.letterSpacing;
+  p.style.margin = '8px 0';
+  p.textContent = row[0] + ' ' + v.fontSize;
+  type.appendChild(p);
+});
+const geom = document.getElementById('geom');
+flat(tokens.core.radius).concat(flat(tokens.core.spacing)).forEach(function (row) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = '<td><code>' + row[0] + '</code></td><td>' + row[1].v + '</td>';
+  geom.appendChild(tr);
+});
+</script>
+</body>
+</html>
