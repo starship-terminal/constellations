@@ -29,6 +29,8 @@ const URLS = { home: '/', pricing: '/pricing', video: '/video-editing', template
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
 const listed = new Map();
+// page keys newPage() opened during the current plan
+const opened = new Set();
 // Routes PerimeterX gates this run: components last measured on them keep their
 // earlier readings instead of being pruned below (a blocked pass must never
 // erase evidence).
@@ -43,6 +45,7 @@ async function blocked() {
 
 async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url = null } = {}) {
   current = key;
+  opened.add(key);
   // Close the previous page's context before opening the next: leaving them
   // alive keeps every captured page (and its animations) running in the
   // background for the rest of the run.
@@ -124,6 +127,21 @@ function comp(key, meta) {
   return c;
 }
 
+// A failed re-read must not erase an earlier successful one: keep the saved
+// style and record the failed attempt beside it. comp() has already stamped
+// this run's date on the component, so the kept state is pinned to the run
+// that actually read it (its own run stamp, else the component's earlier run)
+// and an old reading is never republished as a new one.
+function keepEarlier(c, state, e, earlierRun) {
+  const err = String(e.message || e).slice(0, 200);
+  const prev = c.states[state];
+  if (prev && prev.style) {
+    prev.rerunError = err;
+    prev.read = prev.run || earlierRun;
+    prev.rerunOn = run;
+  } else c.states[state] = { error: err };
+}
+
 async function measure(key, state, target, opts = {}) {
   const loc = target.and(page.locator(':visible')).first();
   const c = out.components[key];
@@ -139,11 +157,7 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    // A failed re-read must not erase an earlier successful one: keep the
-    // saved style and record the failed attempt beside it.
-    const prev = c.states[state];
-    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    keepEarlier(c, state, e, opts.earlierRun);
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -196,19 +210,37 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          undo = () => closeOpened(key, loc, opts);
+        }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      await measure(key, st, loc, { ...opts, via, earlierRun: keep?.run });
     } catch (e) {
-      const prev = out.components[key].states[st];
-      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-      else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      keepEarlier(out.components[key], st, e, keep?.run);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
   }
   await reset();
+}
+
+// Closes what an `opened` state opened. An open dropdown or menu keeps focus
+// and covers the page, so every later focus-visible reading would come back
+// 'focus failed'. Escape first, then the trigger again; if the trigger still
+// reports aria-expanded="true" the miss is recorded on the opened state so
+// the later readings on this page can be checked.
+async function closeOpened(key, loc, opts) {
+  const expanded = () => loc.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null);
+  await page.keyboard.press('Escape').catch(() => {});
+  await page.waitForTimeout(400);
+  if ((await expanded()) === 'true') { await toggle(loc, { allowLink: opts.allowLink }).catch(() => {}); await page.waitForTimeout(600); }
+  if ((await expanded()) === 'true') {
+    const st = out.components[key].states.opened;
+    if (st) st.closeFailed = 'aria-expanded still "true" after Escape and a second toggle';
+    log('  ! opened state did not close', key);
+  }
 }
 
 // Clicks a UI toggle (dropdown, menu, sheet trigger). Refuses a submit button
@@ -398,10 +430,14 @@ context = ctx0;
 const pages = process.argv.slice(2);
 const plan = { home, pricing, video, templates, story, underlord, auth, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
+// A plan can open more than one page key (mobile() opens 'mobile' and
+// 'mobile-pricing'): every key the plan opened counts as finished with it, so
+// a component that vanished from either page is pruned.
 const finishedPages = new Set();
+const finish = () => { for (const k of opened) finishedPages.add(k); opened.clear(); };
 try {
-  for (const k of order) { if (k !== 'mobile') { await plan[k](); finishedPages.add(k); } }
-  if (!pages.length || pages.includes('mobile')) { await plan.mobile(); finishedPages.add('mobile'); }
+  for (const k of order) { if (k !== 'mobile') { await plan[k](); finish(); } }
+  if (!pages.length || pages.includes('mobile')) { await plan.mobile(); finish(); }
   // Reduced-motion check on an element that transitions (the Create CTA's
   // hover), so the delta is meaningful.
   if (!pages.length || pages.includes('home')) await reducedMotion('home', 'header a, nav a');
