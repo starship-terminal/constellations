@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "product": "The New York Times",
+    "source": "Live computed custom properties on www.nytimes.com/account, 2026-11-21, signed-in registered account, light theme. Viewport 1440x900 CSS, devicePixelRatio 2.",
+    "theme": "light only. The sheets declare dark counterparts under --tpl-pvt-dark, but this account had no theme switch and the live page stayed light."
+  },
+  "colors": {
+    "content-primary": {"$value": "#121212", "source": "computed --tpl-color-content-primary on :root"},
+    "content-primary-dim": {"$value": "#363636", "source": "computed --tpl-color-content-primary-dim"},
+    "content-secondary": {"$value": "#5a5a5a", "source": "computed --tpl-color-content-secondary"},
+    "content-secondary-dim": {"$value": "#727272", "source": "computed --tpl-color-content-secondary-dim"},
+    "content-accent": {"$value": "#346eb7", "source": "computed --tpl-color-content-accent"},
+    "content-accent-dim": {"$value": "#326891", "source": "computed --tpl-color-content-accent-dim"},
+    "content-positive": {"$value": "#267c30", "source": "computed --tpl-color-content-positive"},
+    "content-negative": {"$value": "#a90111", "source": "computed --tpl-color-content-negative"},
+    "content-breaking": {"$value": "#d0021b", "source": "computed --tpl-color-content-breaking"},
+    "content-placeholder": {"$value": "#8b8b8b", "source": "computed --tpl-color-content-placeholder"},
+    "stroke-primary": {"$value": "#121212", "source": "computed --tpl-color-stroke-primary"},
+    "stroke-secondary": {"$value": "#959595", "source": "computed --tpl-color-stroke-secondary"},
+    "stroke-tertiary": {"$value": "#dfdfdf", "source": "computed --tpl-color-stroke-tertiary"},
+    "background-primary": {"$value": "#ffffff", "source": "computed --tpl-color-background-primary"},
+    "background-secondary": {"$value": "#f8f8f8", "source": "computed --tpl-color-background-secondary"},
+    "background-tertiary": {"$value": "#ebebeb", "source": "computed --tpl-color-background-tertiary"},
+    "background-highlight": {"$value": "#fefad1", "source": "computed --tpl-color-background-highlight"},
+    "background-scrim": {"$value": "#12121299", "source": "computed --tpl-color-background-scrim"},
+    "background-elevated": {"$value": "#ffffff", "source": "computed --tpl-color-background-elevated"},
+    "signal-editorial": {"$value": "#326891", "source": "computed --color-signal-editorial"},
+    "signal-developing": {"$value": "#e6540a", "source": "computed --color-signal-developing"},
+    "signal-accent": {"$value": "#2671dc", "source": "computed --color-signal-accent"},
+    "button-emphasis-bg": {"$value": "#121212", "source": "computed --tpl-theme-button-emphasis-background-color"},
+    "button-emphasis-fg": {"$value": "#f8f8f8", "source": "computed --tpl-theme-button-emphasis-content-color"},
+    "button-bg": {"$value": "#ffffff", "source": "computed --tpl-theme-button-background-color"},
+    "button-fg": {"$value": "#121212", "source": "computed --tpl-theme-button-content-color"},
+    "button-border": {"$value": "#121212", "source": "computed --tpl-theme-button-border-color"},
+    "search-go": {"$value": "#567b95", "source": "computed background of the enabled Go button after typing in the masthead search, saved page"},
+    "search-go-border": {"$value": "#326891", "source": "computed border-color of that Go button"}
+  },
+  "type": {
+    "franklin": {"$value": "nyt-franklin, helvetica, arial, sans-serif", "source": "computed --tpl-font-family-franklin"},
+    "cheltenham": {"$value": "nyt-cheltenham-small, georgia, times new roman, times, serif", "source": "computed --tpl-font-family-cheltenham-sh"},
+    "imperial": {"$value": "nyt-imperial, georgia, times new roman, times, serif", "source": "computed --tpl-font-family-imperial"},
+    "karnak": {"$value": "nyt-karnak, georgia, times new roman, times, serif", "source": "computed --tpl-font-family-karnak"},
+    "account-greeting": {"fontSize": "32px", "lineHeight": "38.4px", "fontWeight": "600", "fontFamily": "nyt-franklin, helvetica, arial, sans-serif", "color": "#121212", "source": "computed h1 on /account"},
+    "account-nav": {"fontSize": "18px", "lineHeight": "27px", "fontWeight": "700", "fontFamily": "nyt-franklin, helvetica, arial, sans-serif", "source": "computed selected Account nav link"},
+    "update-link": {"fontSize": "16px", "lineHeight": "20.8px", "fontWeight": "500", "color": "#121212", "source": "computed Update link on /account"},
+    "section-nav-item": {"fontSize": "18px", "lineHeight": "23px", "fontWeight": "600", "color": "#121212", "source": "computed Home link in the section drawer"},
+    "search-input": {"fontSize": "14px", "fontWeight": "400", "color": "#333333", "background": "#ffffff", "radius": "3px", "source": "computed masthead search textbox"},
+    "search-go": {"fontSize": "10px", "fontWeight": "700", "radius": "3px", "source": "computed Go button"}
+  },
+  "space": {
+    "1": "0.5rem",
+    "2": "1rem",
+    "3": "1.5rem",
+    "4": "2rem",
+    "5": "2.5rem",
+    "6": "3rem",
+    "8": "4rem",
+    "source": "computed --tpl-size-spacing-*"
+  },
+  "geometry": {
+    "dialog-radius": "3px",
+    "tile-radius": "0px",
+    "dialog-shadow": "0px 0px 5px #00000026",
+    "section-drawer-width": "240px",
+    "source": "computed --tpl-theme-dialog-corner-radius, --tpl-theme-tile-corner-radius, dialog shadow parts, section drawer getBoundingClientRect"
+  }
+}
