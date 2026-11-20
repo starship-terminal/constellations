@@ -66,6 +66,10 @@ const CUT = {
   'url(/x/data:a.png?sig=1)': 'url(/x/data:a.png)',
   'img[src="/data:a.png?sig=1"]': 'img[src="/data:a.png"]',
   '"see /data:a.png?sig=1"': '"see /data:a.png"',
+  // a data: URL first in a quoted list does not shield the URLs after it (next review)
+  'img[srcset="data:image/png;base64,AA 1x, https://cdn.test/b.png?sig=secret 2x"]': 'img[srcset="data:image/png;base64,AA 1x, https://cdn.test/b.png"]',
+  '"data:image/png;base64,AA 1x, /b.png?token=x 2x"': '"data:image/png;base64,AA 1x, /b.png"',
+  'image-set("data:image/png;base64,AA" 1x, "/b.png?sig=1" 2x)': 'image-set("data:image/png;base64,AA" 1x, "/b.png" 2x)',
   // free text: no URL needed at all, only the query shape
   'What? a=b': 'What',
 };

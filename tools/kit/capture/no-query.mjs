@@ -12,11 +12,13 @@
 //   - any other quoted text, and the text outside quotes and url( ) (the whole value), is free text: it
 //     is cut from the first ? that has an = after it before the span ends, or from a # whose name runs
 //     into = or &, whatever comes before it.
-// A data: URL (bare, quoted or in url( )) is left alone, = padding and all, but only where data: opens
+// A data: URL (bare, quoted or in url( )) is left alone, = padding and all; quoted, it ends at a list's
+// ", " (srcset="data:… 1x, /b.png?sig=… 2x" still cuts the second URL), and only where data: opens
 // a value: at its start or after a space, a quote, a bracket, a comma or = ("/x/data:a.png" is a path).
 // A bare one runs through any quoted text inside it and ends at the first unquoted space.
 //
-// What it over-cuts, knowingly: prose with a ? followed later by an = loses its tail ("What? a=b" keeps
+// What it over-cuts, knowingly: a quoted data: URL whose own payload holds ", " and a later ?…= loses
+// that tail; prose with a ? followed later by an = loses its tail ("What? a=b" keeps
 // "What"); a bare image-set() or srcset in free text loses everything after its first query, closing
 // bracket included; a quoted srcset keeps only its first URL; an unquoted attribute selector
 // (img[src=/a?sig=1]) loses its closing ].
@@ -110,7 +112,14 @@ export const noQuery = (v) => {
   if (typeof v !== 'string') return v;
   const parts = scan(v).map((p) => {
     if (p.kind === 'url') return { ...p, body: cutUrlBody(p.body) };
-    if (p.kind === 'quoted' && !DATA.test(p.text)) return { ...p, text: p.field ? cutField(p.text) : cutFree(p.text) };
+    if (p.kind === 'quoted') {
+      const cut = p.field ? cutField : cutFree;
+      if (!DATA.test(p.text)) return { ...p, text: cut(p.text) };
+      // A data: URL first in a quoted list (a srcset, an image-set) ends at the list's ", ": what follows
+      // is cut like any other value, so a data: URL in front does not shield a signed URL behind it.
+      const end = p.text.search(/,\s/);
+      return end < 0 ? p : { ...p, text: p.text.slice(0, end) + cut(p.text.slice(end)) };
+    }
     return p;
   });
   // Outer text is one span, the whole value: from a query start in it, the rest of the value goes.
