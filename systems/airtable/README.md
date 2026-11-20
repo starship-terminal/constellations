@@ -99,6 +99,8 @@ Third-party UI is swept out of every capture ([lib.mjs](tools/capture/public/lib
 - **`layout.json`'s whatsnew content column reads 350px** — the gallery iframe's internal max-width, not the page's.
 - **Hover reads "same" on several controls by design** (the tile cards, tab list). The entries are not missing a state.
 - **`component.embed-card-shadow` is a placeholder note**, not a shadow token: the real stack is `core.shadow.low`.
+- **`about-card` was read from the wrong element.** It is the 1342 x 116 stats list on /about ("50M+ apps and agents ..."), not a card. Needs a recapture; the script now skips lists and full-width blocks (not run since).
+- **The FAQ readings and the script disagree.** The committed `faq-item` and `faq-item-open` were read on /platform/ai (their `page` and `url`), but the committed script measures those keys on the home page only, so a rerun would replace them with a different FAQ. Rerun, or restore the platform-ai FAQ probe, before trusting a rebuild against them.
 
 ## Fonts
 

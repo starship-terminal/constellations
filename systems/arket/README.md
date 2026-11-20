@@ -106,6 +106,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **Hover is an inversion, not a tint.** Outlined controls and nav items flip to black fill with white text; black buttons barely lift (to `#080808`). Don't substitute a grey hover.
 - **Some font names differ per surface.** The shop shell paints `arketSansMono`; the consent card and account gate fall back to `"Arket Sans"`/`"Arket-Sans-Mono"` stacks. The `+N` colour chips use the small-caps `arketSCSansMono`.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
+- **`service-link` is the service page's ARKET logo.** Two specs share the key: the service page's loose `main a` probe overwrote the home page's Customer service link with the logo (43 x 40, "ARKET"). Needs a recapture; the script now gives the second probe its own key, `service-page-link` (not run since).
 
 ## Fonts
 

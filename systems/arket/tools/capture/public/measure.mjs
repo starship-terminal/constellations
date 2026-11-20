@@ -328,7 +328,8 @@ async function service() {
   const acc = q('main button[aria-expanded], main summary, main details summary').filter({ hasText: /\w{5,}/ }).filter({ visible: true }).first();
   await S('service-accordion', acc, B4, { group: g, title: 'Service accordion', desc: 'A help-topic disclosure row.', sel: 'main disclosure' });
   await S('service-accordion-open', acc, ['opened'], { group: g, title: 'Service accordion, open', desc: 'The same row after its own toggle.', sel: 'main disclosure' }, { cropLoc: acc.locator('xpath=ancestor::*[self::details or self::section or self::div][1]') });
-  await S('service-link', q('main a').filter({ hasText: /\w{4,}/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Service link', sel: 'main a' });
+  // its own key: 'service-link' is the home page's Customer service link
+  await S('service-page-link', q('main a').filter({ hasText: /\w{4,}/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Service link', sel: 'main a' });
   save();
 }
 

@@ -109,6 +109,7 @@ Font sizes on this site are not fluid: Framer serves fixed px steps per breakpoi
 - **`m-nav-bar` measures 37 x 16.** The selector caught the trigger's hit area, not the 390-wide band; the band's real height is the fixed header's 64px (see [raw/layout.json](raw/layout.json)).
 - **Mobile `-full` screenshots stitch viewport slices.** `mobile-*-light-full.png` are stitched from `*.partN.png` tiles in raw/full; the stitch seams can shift a pixel.
 - **Billing toggle and demo submit button states.** The pricing page has no monthly/yearly switch (`billing-toggle` records missing); the demo submit was measured in all four states but never pressed.
+- **`nav-cta` was read from the wrong elements.** `.last()` over every "Book a demo" link took the footer CTA for the default state (y=6854) and the hero CTA for the others (y=430), not the button in the nav. Needs a recapture; the script now searches inside the header (not run since). The CTA tokens now cite only the other CTAs (`cta-demo`, `cta-try`, `plan-cta` and the rest), which hold the same values.
 
 ## Fonts
 

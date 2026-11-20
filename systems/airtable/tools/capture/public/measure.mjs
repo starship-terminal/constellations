@@ -742,7 +742,8 @@ async function about() {
   const card = await tag('acard', () => {
     const cands = [...document.querySelectorAll('a, [class*="card" i], article')].filter((e) => {
       const r = e.getBoundingClientRect();
-      return r.width > 240 && r.height > 100 && r.top > 400 && (e.querySelector('img, h2, h3'));
+      // a card, not a full-width list or grid (the 1342px stats ul matched before)
+      return r.width > 240 && r.width < 900 && r.height > 100 && r.top > 400 && !e.matches('ul, ol') && (e.querySelector('img, h2, h3'));
     });
     return cands[0] || null;
   });

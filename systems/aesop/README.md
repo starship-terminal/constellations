@@ -97,6 +97,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Aesop's icon art
 - The sign-up modal's remote fragment never rendered in headless; the dialog was measured as an empty shell.
 - The cart drawer's body logs a JSON parse warning in headless; the drawer chrome measured fine.
 - Several components were re-measured after selector fixes; `search-panel` (its container) and `cart-close` (no measurable close button) are honest misses, and `qty-select` does not exist on a one-variant PDP.
+- **`pdp-subtitle` was read from the wrong element.** Its text search matched the breadcrumb crumb ("Seasonal Gift Kits"), not the descriptor line under the product name. Needs a recapture.
 
 ## Fonts
 

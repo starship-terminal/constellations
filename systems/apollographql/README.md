@@ -108,6 +108,7 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 - **The eyebrow strip may be gone.** The "Apollo Summit 2026" promo band is event-tied; a re-capture may not find it.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
 - **Studio auth pages are at rest only.** Login/signup were captured signed out; their form states, errors and everything past submit are uncaptured.
+- **`nav-menu-item` was read from the wrong element.** It is a page-body "Explore GraphOS" link (the open state at y=3177), not a row inside the Products dropdown. Needs a recapture. The horizon-dark-3 tokens now cite only `text-link`, which holds the same colour.
 
 ## Fonts
 
