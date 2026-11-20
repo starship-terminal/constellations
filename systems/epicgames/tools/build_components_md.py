@@ -219,6 +219,15 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
+# Entries whose selector caught another control, or another element per state.
+# The readings stay as evidence of what was read; the entry says so (README,
+# What to distrust).
+WRONG_ELEMENT = {
+    "m-hamburger": "These readings are the \"Epic Ecosystem Dropdown\" button, not the mobile menu button: the selector's `button:has(svg)` fallback matched it first. Recapture needed.",
+    "h-chat": "These readings are the \"Back to top\" button, not the chat launcher: `button:has(svg)` with `.last()` matched it. Recapture needed.",
+    "w-tile": "The carousel rotated between states, so each state read a different tile (default UNREAL ENGINE, hover and focus-visible FORTNITE, pressed ROCKET LEAGUE): the state rows compare different elements. Only the default row describes one tile. Recapture needed.",
+}
+
 PAGE_NAME = {"discover": "Discover", "browse": "Browse", "product": "product", "freegames": "Free Games",
              "news": "News", "download": "Download", "signin": "sign-in", "sitehome": "marketing home",
              "help": "support centre", "mobile": "Discover"}
@@ -429,6 +438,9 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
+        if k in WRONG_ELEMENT:
+            W(f"**Known-wrong reading.** {WRONG_ELEMENT[k]}")
+            W()
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:

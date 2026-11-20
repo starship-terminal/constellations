@@ -118,12 +118,17 @@ async function kbFocus(loc) {
   await loc.evaluate((el) => el.focus());
   await page.keyboard.press('Shift+Tab');
   await page.keyboard.press('Tab');
-  let ok = await loc.evaluate((el) => document.activeElement === el || el.contains(document.activeElement));
+  // The global nav lives inside <egs-navigation>'s shadow root, where
+  // document.activeElement is the host: ask the element itself (:focus,
+  // :focus-within), as the dock base this fork came from does.
+  const hasFocus = (el) => el.matches(':focus') || el.matches(':focus-within')
+    || el === document.activeElement || el.contains(document.activeElement);
+  let ok = await loc.evaluate(hasFocus);
   let how = 'Shift+Tab, Tab';
   if (!ok) {
     await page.keyboard.press('Shift');
     await loc.evaluate((el) => el.focus());
-    ok = await loc.evaluate((el) => document.activeElement === el);
+    ok = await loc.evaluate(hasFocus);
     how = 'keydown then focus()';
   }
   await page.waitForTimeout(350);
@@ -236,7 +241,17 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (opts.noToggle) via = 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (st === 'focus-visible' && via === 'focus failed') {
+        // Keyboard focus never reached the element, so a reading now would be
+        // the element at rest saved as its focus. Record the miss instead and
+        // drop the crop an earlier run saved for this state (the kit's branch).
+        const prev = out.components[key].states[st];
+        const old = prev?.crop && path.resolve(RAW, '..', prev.crop);
+        const crops = path.resolve(RAW, '..', 'components', 'crops');
+        if (old && old.startsWith(crops + path.sep)) fs.rmSync(old, { force: true });
+        out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via };
+        log('  -', key, st, 'skipped: focus failed');
+      } else await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
       if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
@@ -499,7 +514,11 @@ async function sitehome() {
   if (!(await newPage('sitehome'))) return;
   await sheetsFor('sitehome');
   const w = G.sitehome;
-  await S('w-tile', q('a, div').filter({ hasText: /^\s*(UNREAL\s*ENGINE|FORTNITE|ROCKET\s*LEAGUE|STORE|ROBO\s*RECALL|UNREAL\s*TOURNAMENT)\s*EXPLORE\s*$/i }).filter({ visible: true }).first(), B4, { group: w, title: 'Product tile', desc: 'A giant product tile (UNREAL ENGINE / FORTNITE / ROCKET LEAGUE / STORE) with its EXPLORE action on the OpenSans marketing home; measured, never followed.', sel: 'marketing tile' });
+  // Mark one tile before S(): the carousel rotates, and a locator that
+  // re-resolves per state read a different product tile in each state.
+  await q('a, div').filter({ hasText: /^\s*(UNREAL\s*ENGINE|FORTNITE|ROCKET\s*LEAGUE|STORE|ROBO\s*RECALL|UNREAL\s*TOURNAMENT)\s*EXPLORE\s*$/i }).filter({ visible: true }).first()
+    .evaluate((el) => el.setAttribute('data-m', 'w-tile')).catch(() => {});
+  await S('w-tile', q('[data-m="w-tile"]'), B4, { group: w, title: 'Product tile', desc: 'A giant product tile (UNREAL ENGINE / FORTNITE / ROCKET LEAGUE / STORE) with its EXPLORE action on the OpenSans marketing home; measured, never followed.', sel: 'marketing tile' });
   await S('w-explore', q('a, button, span').filter({ hasText: /^\s*EXPLORE\s*$/i }).filter({ visible: true }).first(), B4, { group: w, title: 'Explore link', desc: 'The EXPLORE caption on a product tile; measured, never followed.', sel: 'EXPLORE' });
   save();
 }
@@ -513,7 +532,8 @@ async function help() {
   await S('h-search', await widest('input', { tag: 'hs', minW: 200 }), FIELD, { group: h, title: 'Support search', desc: 'The "Search support..." field; focused and typed into then cleared — never submitted.', sel: 'help search input' }, { noScroll: true, fillText: 'refund' });
   await S('h-tile', q('a[class*="Tile" i], a[class*="GoToTile" i]').filter({ hasText: /self-service|explore topics|enterprise/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Help tile', desc: 'A support-category tile (Self-service/Explore topics/Games/Enterprise, a.Tile); measured, never followed.', sel: 'help a.Tile' });
   await S('h-status', await domFind(page, /server status/i, { sel: 'div, a, span', tag: 'hst', minW: 60, minH: 10 }), ['default'], { group: h, title: 'Server status chip', desc: 'The "Server status" indicator, top right; measured never followed.', sel: 'server status' }, { noScroll: true });
-  await S('h-chat', q('button[aria-label*="chat" i], button[aria-label*="help" i], [class*="chat" i] button, button:has(svg)').filter({ visible: true }).last(), B4, { group: h, title: 'Chat launcher', desc: 'The round chat button bottom right; measured, never pressed.', sel: 'chat bubble' }, { noScroll: true });
+  // Not `button:has(svg)`: with .last() it caught the "Back to top" button.
+  await S('h-chat', q('button[aria-label*="chat" i], button[aria-label*="help" i], [class*="chat" i] button').filter({ hasNotText: /back to top/i }).filter({ visible: true }).last(), B4, { group: h, title: 'Chat launcher', desc: 'The round chat button bottom right; measured, never pressed.', sel: 'chat bubble' }, { noScroll: true });
   save();
 }
 
@@ -523,7 +543,9 @@ async function mobile() {
   const g = G.mobile;
   const sh = G.nav;
   await S('m-egs-nav', q('egs-navigation').first(), ['default'], { group: sh, title: 'Global nav (mobile)', desc: 'The <egs-navigation> at 390px.', sel: 'egs-navigation (390)' }, { noScroll: true, pad: 4 });
-  await S('m-hamburger', q('button[aria-label*="menu" i], button[aria-label*="navigation" i], button:has(svg)').filter({ visible: true }).first(), B4, { group: g, title: 'Hamburger', desc: 'The mobile menu button; measured, the drawer itself is captured in screenshots.', sel: 'mobile menu button' }, { noScroll: true });
+  // Not `button:has(svg)` or the ecosystem switcher: the union caught the
+  // "Epic Ecosystem Dropdown" button first.
+  await S('m-hamburger', q('button[aria-label*="menu" i]:not([aria-label*="ecosystem" i]), button[aria-label*="navigation" i]:not([aria-label*="ecosystem" i])').filter({ hasNotText: /ecosystem/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Hamburger', desc: 'The mobile menu button; measured, the drawer itself is captured in screenshots.', sel: 'mobile menu button' }, { noScroll: true });
   await S('m-hero', q('a[class*="slideLink" i], a[class*="card" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero card', desc: 'The first card of the mobile store home.', sel: 'mobile first card' }, { noScroll: true });
   await S('m-card', q('a').filter({ hasText: /SGD|Free|Coming Soon/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile game card', desc: 'A game card on the mobile discover feed.', sel: 'mobile card' });
   await S('m-search', await widest('input', { tag: 'ms', minW: 80 }), FIELD, { group: g, title: 'Mobile search', desc: 'The mobile search field; focused and typed into then cleared — never submitted.', sel: 'mobile search input' }, { noScroll: true, fillText: 'fort' });
@@ -532,7 +554,15 @@ async function mobile() {
 
 const ALL = { discover, browse, product, freegames, news, download, signin, sitehome, help, mobile };
 const wanted = process.argv.slice(2);
-run = new Date().toISOString().slice(0, 16).replace('T', ' ');
+const unknown = wanted.filter((k) => !(k in ALL));
+if (unknown.length) {
+  console.error(`unknown page argument(s): ${unknown.join(', ')} — known pages: ${Object.keys(ALL).join(', ')}`);
+  process.exit(1);
+}
+run = new Date().toISOString().slice(0, 10);
+out._meta.read = run;
+out._meta.viewport = '1440 x 900 (mobile group 390 x 844); dark is the only painted public theme';
+out._meta.tool = 'tools/capture/public/measure.mjs';
 out._meta.product = 'epicgames.com';
 out._meta.note = 'public signed-out capture; nothing bought, submitted or signed into';
 browser = await chromium.launch({ args: LAUNCH_ARGS });
@@ -549,7 +579,14 @@ for (const [k, c] of Object.entries(out.components)) {
   if (!touched.has(k) && !failedPages.has(c.page) && c.page && URLS[c.page]) {
     if (!wanted.length || wanted.includes(c.page)) {
       delete out.components[k];
+      continue;
     }
+  }
+  // States a spec no longer lists are pruned only after their page finished
+  // this run, so a blocked or partial run never drops evidence.
+  const want = listed.get(k);
+  if (want && touched.has(k) && !failedPages.has(c.page)) {
+    for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }
 }
 save();

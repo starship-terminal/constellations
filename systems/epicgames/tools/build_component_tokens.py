@@ -63,6 +63,57 @@ SPEC = {"_about": (
     "core": {}, "dark": {}, "component": {}}
 
 
+# A named row whose reading is missing is recorded here instead of being
+# dropped silently; the build stops on any gap not listed in KNOWN_GAPS (at the
+# end), and listed ones are written to raw/component-tokens.json `_gaps`.
+GAPS = []
+
+
+def gap(what):
+    GAPS.append(what)
+
+
+def split_shadow(v):
+    """Top-level comma split of a computed box-shadow list."""
+    return [x.strip() for x in re.split(r",\s*(?![^()]*\))", v or "") if x.strip()]
+
+
+def painted_ring(sty):
+    """(colour, how) of the focus ring a state really paints: a drawn outline
+    (style not none or auto, width above 0), else the outermost visible
+    box-shadow layer with a spread. An outline colour under outline-style none
+    is the inactive default, not a ring, so it is never returned."""
+    if sty.get("outlineStyle", "none") not in ("none", "auto") and float(sty.get("outlineWidth", "0px")[:-2] or 0) > 0 \
+            and sty.get("outlineColor") != "rgba(0, 0, 0, 0)":
+        return sty["outlineColor"], f"outline {sty['outlineWidth']} {sty['outlineStyle']}"
+    ring = None
+    for layer in split_shadow(sty.get("boxShadow", "none")):
+        m = re.match(r"^(rgba?\([^)]*\))\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(\s+inset)?$", layer)
+        if not m or m.group(6) or float(m.group(5)) <= 0 or re.fullmatch(r"rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0\s*\)", m.group(1)):
+            continue
+        ring = (m.group(1), f"box-shadow {m.group(5)}px spread")
+    if ring:
+        return ring
+    raise KeyError("no painted ring")
+
+
+def transition(s):
+    """The computed transition lists as one valid shorthand: CSS repeats the
+    duration/easing/delay lists to the length of transition-property, so each
+    property is paired with its own entry by index."""
+    props = [x.strip() for x in (s.get("transitionProperty") or "all").split(",")]
+    durs = [x.strip() for x in (s.get("transitionDuration") or "0s").split(",")]
+    eases = re.findall(r"cubic-bezier\([^)]*\)|steps\([^)]*\)|[a-z-]+", s.get("transitionTimingFunction") or "ease")
+    delays = [x.strip() for x in (s.get("transitionDelay") or "0s").split(",")]
+    parts = []
+    for i, p in enumerate(props):
+        d, e, dl = durs[i % len(durs)], eases[i % len(eases)], delays[i % len(delays)]
+        if d in ("0s", "0ms"):
+            continue
+        parts.append(" ".join([p, d, e] + ([dl] if dl not in ("0s", "0ms") else [])))
+    return ", ".join(parts)
+
+
 def st(comp, state):
     return C[comp]["states"][state]["style"]
 
@@ -219,10 +270,12 @@ for key, comp, state, desc in [
         fam[key] = {"value": v, "type": "fontFamily",
                     "source": f"computed fontFamily of {comp} {state} (raw/components-computed.json)",
                     "description": desc}
+    else:
+        gap(f"font.family.{key}: no {comp} {state} fontFamily reading")
 
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
 for key, comp, desc in [
-    ("measured-regular", "card-price", "400 — card prices, body and meta text."),
+    ("measured-regular", "card-price", "The card price weight (prices and meta text)."),
     ("measured-medium", "hero-cta", "500 — CTA labels and nav actions."),
     ("measured-display", "p-title", "The product page display weight."),
 ]:
@@ -231,7 +284,7 @@ for key, comp, desc in [
         weights[key] = lit(w, "fontWeight",
                            f"computed fontWeight of {comp} default (raw/components-computed.json)", desc)
     except (KeyError, TypeError, ValueError):
-        pass
+        gap(f"font.weight.{key}: no {comp} default fontWeight reading")
 
 # ------------------------------------------------- declared scales (EDS)
 #
@@ -300,7 +353,7 @@ for key, comp, state, prop, group, desc in [
     ("primary", "egs-nav", "default", "color", "text",
      "The white-95% primary text and nav ink."),
     ("secondary", "card-price", "default", "color", "text",
-     "The white-65% secondary text — prices, meta, footer links."),
+     "The card price and meta text ink (it paints the same value as the primary ink)."),
     ("inverse", "hero-cta", "default", "color", "text",
      "The near-black ink on white strong-fill CTAs."),
     ("heading", "b-h1", "default", "color", "text",
@@ -310,9 +363,9 @@ for key, comp, state, prop, group, desc in [
     ("accent-brand-hover", "nav-download", "hover", "backgroundColor", "action",
      "The lighter brand blue the nav Download lifts to on hover."),
     ("accent-eds", "s-continue", "default", "backgroundColor", "action",
-     "The #33bfff EDS accent on the sign-in Continue and free-games CTA."),
+     "The EDS accent fill on the sign-in Continue and free-games CTA."),
     ("accent-eds-hover", "s-continue", "hover", "backgroundColor", "action",
-     "The #69d0ff the EDS accent lifts to on hover."),
+     "The lighter fill the EDS accent lifts to on hover."),
     ("fill-subtle", "nav-signin", "default", "backgroundColor", "action",
      "The white-15% subtle fill on the Sign in ghost button and pager buttons."),
     ("fill-subtle-hover", "nav-signin", "hover", "backgroundColor", "action",
@@ -345,17 +398,19 @@ for key, comp, state, prop, group, desc in [
                 raw = painted(comp, state, lambda bg: bg not in ("rgba(0, 0, 0, 0)", "none"))
             src = f"painted badge fill of {comp} {state} (raw/components-computed.json)"
         elif prop == "_focus":
-            s = st(comp, state)
-            raw = s.get("outlineColor") or s.get("borderTopColor")
-            src = f"computed focus outline/border of {comp} {state} (raw/components-computed.json)"
+            if C[comp]["states"][state].get("via") == "focus failed":
+                raise KeyError("focus failed")
+            raw, how = painted_ring(st(comp, state))
+            src = f"computed focus ring ({how}) of {comp} {state} (raw/components-computed.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         if not raw or raw == "rgba(0, 0, 0, 0)":
+            gap(f"{group}.{key}: {comp} {state} {prop} paints nothing")
             continue
         dsem.setdefault(group, {})[key] = semcolor(raw, src, desc)
     except (KeyError, StopIteration):
-        pass
+        gap(f"{group}.{key}: no {comp} {state} {prop} reading")
 
 # ------------------------------------------------------------- type ramp
 
@@ -378,10 +433,10 @@ for key, comp, state, desc in [
         raw = st(comp, state)["fontSize"]
         src = f"computed fontSize of {comp} {state} (raw/components-computed.json)"
         alias = size_alias.get(raw)
-        ty[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
+        ty[key] = lit(f"{{{alias[0]}}}" if alias else raw, "dimension",
                       src + (f"; matches declared {alias[1]}" if alias else ""), desc)
     except KeyError:
-        pass
+        gap(f"font.size.{key}: no {comp} {state} fontSize reading")
 
 # ------------------------------------------------------------------ shape
 
@@ -403,20 +458,20 @@ for key, comp, state, desc in [
         radii[key] = lit(f"{{{dkey}}}" if dkey else v, "dimension",
                          src + (f"; matches declared {dkey}" if dkey else ""), desc)
     except KeyError:
-        pass
+        gap(f"radius.{key}: no {comp} {state} borderTopLeftRadius reading")
 
 # ------------------------------------------------------------- elevation
 
 sh = SPEC["core"].setdefault("shadow", {})
 for key, comp, state, desc in [
-    ("dialog", "s-dialog", "default", "The layered shadow the sign-in modal carries."),
+    ("dialog", "s-dialog", "default", "The sign-in modal's computed box-shadow (none on this capture)."),
     ("drawer", "mobile-discover-dark-drawer", "default", "The mobile drawer shadow."),
 ]:
     try:
         sh[key] = lit(st(comp, state)["boxShadow"], "other",
                       f"computed boxShadow of {comp} {state} (raw/components-computed.json)", desc)
     except KeyError:
-        pass
+        gap(f"shadow.{key}: no {comp} {state} boxShadow reading")
 
 # ------------------------------------------------------------------ motion
 
@@ -426,13 +481,14 @@ for key, comp, state, desc in [
     ("card", "game-card", "default", "The card hover transition."),
 ]:
     try:
-        s = st(comp, state)
-        dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
-        if dur and dur != "0s":
-            mo[key] = lit(f"{s.get('transitionProperty', 'all')} {dur} {ease or ''}".strip(), "other",
+        v = transition(st(comp, state))
+        if v:
+            mo[key] = lit(v, "other",
                           f"computed transition of {comp} {state} (raw/components-computed.json)", desc)
+        else:
+            gap(f"motion.{key}: {comp} {state} has no transition")
     except KeyError:
-        pass
+        gap(f"motion.{key}: no {comp} {state} reading")
 
 # ------------------------------------------------------------- components
 
@@ -456,7 +512,23 @@ for name, cname, state, prop, ty_, desc in [
         comp[name] = lit(("%g" % v) + "px" if isinstance(v, (int, float)) else str(v) + "px",
                          ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
     except KeyError:
-        pass
+        gap(f"component.{name}: no {cname} {state} {prop} reading")
+
+# Rows missing from the committed readings, kept visible in `_gaps` (they
+# were dropped silently before 2026-11): the badge and the support tile paint
+# no fill of their own, no drawer component was measured, and the game card's
+# computed transition is 0s.
+KNOWN_GAPS = {
+    "background.free-badge: fg-badge default _paint-free paints nothing",
+    "background.tile: h-tile default backgroundColor paints nothing",
+    "shadow.drawer: no mobile-discover-dark-drawer default boxShadow reading",
+    "motion.card: game-card default has no transition",
+}
+_new = [g for g in GAPS if g not in KNOWN_GAPS]
+if _new:
+    raise SystemExit("missing readings for named token rows (recapture, or list them in KNOWN_GAPS):\n  " + "\n  ".join(_new))
+if GAPS:
+    SPEC["_gaps"] = GAPS
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})
