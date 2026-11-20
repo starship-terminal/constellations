@@ -497,6 +497,7 @@ CONTRACT_BETA_DS = {"description": "d2"}
 
 
 MEDIA_BASE = "https://media.example.test"
+DEFAULT_MEDIA_BASE = "https://pub-b22e019453104cc8b3c214b1009a6c42.r2.dev"  # the public R2 bucket
 
 
 class MediaBaseTest(unittest.TestCase):
@@ -512,7 +513,7 @@ class MediaBaseTest(unittest.TestCase):
         env = {k: v for k, v in os.environ.items() if k != "DESIGN_SYSTEMS_MEDIA_BASE"}
         with mock.patch.object(refero_media, "load_env", return_value=[]), \
                 mock.patch.dict(os.environ, env, clear=True):
-            self.assertTrue(refero_media.media_base().startswith("https://"))
+            self.assertEqual(refero_media.media_base(), DEFAULT_MEDIA_BASE)
 
     def test_load_env_reads_only_the_named_keys_and_never_overrides(self):
         with tempfile.TemporaryDirectory() as d:
@@ -552,6 +553,7 @@ class ReferoEmitContractTest(unittest.TestCase):
         # copies DESIGN_SYSTEMS_MEDIA_BASE from the repo's .env into os.environ. Pin the
         # value and skip the .env, so the output does not depend on the machine and
         # nothing leaks into the rest of the test run.
+        cls.env_before = os.environ.get("DESIGN_SYSTEMS_MEDIA_BASE")
         with mock.patch.object(catalog, "ROOT", root), \
                 mock.patch.object(catalog, "DATA", cls.site), \
                 mock.patch.object(catalog.refero_media, "load_env", return_value=[]) as cls.load_env, \
@@ -570,7 +572,7 @@ class ReferoEmitContractTest(unittest.TestCase):
     def test_the_media_base_comes_from_the_environment(self):
         self.assertEqual(self.index["mediaBase"], MEDIA_BASE)
         self.load_env.assert_called_with(("DESIGN_SYSTEMS_MEDIA_BASE",))
-        self.assertNotEqual(os.environ.get("DESIGN_SYSTEMS_MEDIA_BASE"), MEDIA_BASE)  # restored
+        self.assertEqual(os.environ.get("DESIGN_SYSTEMS_MEDIA_BASE"), self.env_before)  # restored, or still absent
 
     def test_emitted_key_sets_are_fixed(self):
         self.assertEqual(set(self.index), INDEX_KEYS)
