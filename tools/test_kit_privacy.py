@@ -17,6 +17,7 @@ import catalog  # noqa: E402
 
 SIGNED_IN = HERE / "kit" / "capture" / "signed-in"
 NODE = shutil.which("node")
+PW = os.environ.get("PLAYWRIGHT") or str(Path.home() / ".design-systems/pw/node_modules/playwright/index.mjs")
 
 
 def load(path, name):
@@ -154,6 +155,11 @@ RAW_PICK = re.compile(r"\b(?:o|out)\[(\w+)\] ?= ?(?:\w+(?:\[\1\]|\.getPropertyVa
 # A single value read raw: p.backgroundImage.slice(…), content: p.content, a resolved custom property.
 RAW_READ = re.compile(r"\b(?:p|q|pc|c|cs|a|b)\.(?:backgroundImage|content)\.(?:slice|replace)\(|\bcontent: (?:p|q|pc|a|b)\.content\b"
                       r"|\bout\.vars\[\w+\] = (?!noUrl\()")
+# The same two shapes under any target name (style[p] = cs[p], vars[k]=bs.getPropertyValue(k),
+# v[n] = (body.getPropertyValue(n) || ...)), for the kit only: RAW_PICK and RAW_READ above name the
+# targets the package copies use, and many package copies (kit-ports.md in the audit) still read raw.
+WIDE_PICK = re.compile(r"\b[\w.]+\[(\w+)\] ?= ?\w+\[\1\](?![\w.(]|\s*[-+*/%])")
+WIDE_PROP = re.compile(r"\b[\w.]+\[[\w.]+\] ?= ?\(?(?:[\w.]+\.)?getPropertyValue\((?![\'\"])")
 NO_URL_DEF = re.compile(r"\bnoUrl = \(v\)")
 NO_URL_USE = re.compile(r"\bnoUrl\(")
 
@@ -194,6 +200,25 @@ def capture_scripts_recording_raw_urls(root):
             bad += [(rel, "raw pick " + m.group(0)) for m in RAW_PICK.finditer(src)]
         bad += [(rel, "raw read " + m.group(0)) for m in RAW_READ.finditer(src)]
         bad += [(rel, f"noUrl used with no definition in scope at line {n}") for n in no_url_scope_errors(src)]
+    return bad
+
+
+def kit_scripts_recording_raw_values(root):
+    """(path, reason) for each of the kit's own capture scripts that copies a computed value or a
+    custom property into a map raw, whatever the map is called. Kit only: see WIDE_PICK."""
+    bad = []
+    root = Path(root)
+    for path in sorted(root.glob("tools/kit/capture/**/*")):
+        if path.suffix not in (".mjs", ".js") or path.name.startswith("test_"):
+            continue
+        src = path.read_text()
+        rel = str(path.relative_to(root))
+        if "getComputedStyle" in src and URL_PROPS.search(src):
+            bad += [(rel, "raw pick " + m.group(0)) for m in WIDE_PICK.finditer(src)]
+        bad += [(rel, "raw custom property " + m.group(0)) for m in WIDE_PROP.finditer(src)]
+    for rel in ("tools/kit/capture/vars.mjs", "tools/kit/capture/electron/shot.mjs"):
+        bad += [(rel, f"custom property read without noUrl at line {n}") for n in vars_reads_without_no_url((root / rel).read_text())]
+        bad += [(rel, f"noUrl used with no definition in scope at line {n}") for n in no_url_scope_errors((root / rel).read_text())]
     return bad
 
 
@@ -254,6 +279,23 @@ class PackageCaptureScripts(unittest.TestCase):
         for raw in ("content: p.content, width", "p.backgroundImage.slice(0, 200)", "out.vars[n] = root.getPropertyValue(n).trim();"):
             self.assertTrue(RAW_READ.search(raw), raw)
         self.assertFalse(RAW_READ.search("out.vars[n] = noUrl(v);"))
+
+    def test_kit_scripts_record_no_value_raw_under_any_name(self):
+        # The Electron route wrote every custom property raw as v[n] = (body.getPropertyValue(n) || ...),
+        # a target name the package-wide patterns above do not know.
+        self.assertEqual(kit_scripts_recording_raw_values(HERE.parent), [])
+
+    def test_the_wide_patterns_catch_each_shape(self):
+        for raw in ("for (const p of PROPS) style[p] = cs[p];", "vars[k]=bs.getPropertyValue(k)",
+                    "for (const n of names) v[n] = (body.getPropertyValue(n) || html.getPropertyValue(n)).trim();",
+                    "out.vars[n] = root.getPropertyValue(n).trim();"):
+            self.assertTrue(WIDE_PICK.search(raw) or WIDE_PROP.search(raw), raw)
+        for ok in ("style[p] = noUrl(cs[p]);", "vars[k] = noUrl(bs.getPropertyValue(k));", "v[n] = read(n);",
+                   "o[k] = c.getPropertyValue('font-family');", "seen[k] = seen[k] + 1;", "o[p] = cs[p].slice(0, 9);"):
+            self.assertFalse(WIDE_PICK.search(ok) or WIDE_PROP.search(ok), ok)
+        # the line every package's electron/shot.mjs still carries, which the vars lint flags too
+        self.assertEqual(vars_reads_without_no_url(
+            "  for (const n of [...names].sort()) v[n] = (body.getPropertyValue(n) || html.getPropertyValue(n)).trim();"), [1])
 
     def test_every_vars_script_records_custom_properties_through_no_url(self):
         # Declared values (props[k], decls, root/dark) and resolved ones (raw, resolved[w], theme) alike.
@@ -407,6 +449,96 @@ class JavaScriptHalves(unittest.TestCase):
                             "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
+
+    def test_electron_vars_record_no_url_or_query(self):
+        # shot.mjs writes every root custom property beside the screenshot; a signed-in app can set one
+        # to an avatar or asset URL that carries a signature.
+        shot = (HERE / "kit/capture/electron/shot.mjs").read_text()
+        src = next(l.strip() for l in shot.splitlines() if l.strip().startswith("const noUrl = "))
+        self.assertIn("vars.vars = scrubQueries(vars.vars);", shot)   # the recorded values go through no-query.mjs
+        mod = (HERE / "kit/capture/no-query.mjs").as_uri()
+        self.assertEqual(re.search(r"const noUrl = .*?: v\);", src).group(0),
+                         re.search(r"const noUrl = .*?: v\);", (HERE / "kit/capture/vars.mjs").read_text()).group(0))
+        cases = {
+            'url("https://cdn.example.test/a.png?X-Amz-Signature=1")': 'url(…)',
+            '"https://cdn.example.test/a.png?token=abc"': '"https://cdn.example.test/a.png"',
+            'https://cdn.example.test/a.png#access_token=abc': 'https://cdn.example.test/a.png',
+            '"https://cdn.example.test/a(1).png?token=abc"': '"https://cdn.example.test/a(1).png"',
+            '"https://cdn.example.test/a.png?crop=(0,0)&token=abc"': '"https://cdn.example.test/a.png"',
+            'https://cdn.example.test/a.png?crop=(0,0)&token=abc 2x': 'https://cdn.example.test/a.png',   # fails closed: over-cut
+            'avatar?token=secret': 'avatar',
+            '//cdn.example.test/avatar.png?token=secret': '//cdn.example.test/avatar.png',
+            '"//cdn.example.test/a.png#access_token=abc"': '"//cdn.example.test/a.png"',
+            'image-set("//cdn.example.test/a.png?sig=1" 1x, //cdn.example.test/b.png?sig=2 2x)': 'image-set("//cdn.example.test/a.png" 1x, //cdn.example.test/b.png',
+            '/media/avatar.png?token=secret': '/media/avatar.png',
+            '"avatar.png?sig=abc"': '"avatar.png"',
+            '/avatar.png?crop=(0,0)&token=secret': '/avatar.png',
+            'avatar(1).png?token=secret': 'avatar(1).png',
+            'calc(100% - 2px)': 'calc(100% - 2px)',
+            'url(data:image/svg+xml,abc) no-repeat': 'url(data:image/svg+xml,abc) no-repeat',
+            '#5e6ad2': '#5e6ad2',
+            '0 1px 2px rgba(0, 0, 0, 0.1)': '0 1px 2px rgba(0, 0, 0, 0.1)',
+            '': '',
+        }
+        script = (f"import({json.dumps(mod)}).then(({{ noQuery }}) => {{ {src}\n"
+                  f"console.log(JSON.stringify({json.dumps(list(cases))}.map((v) => noQuery(noUrl(v))))); }})")
+        got = self.node(script)
+        self.assertEqual(got, list(cases.values()))
+        for v in got:
+            self.assertFalse(catalog.SIGNED_URL.search(v), v)
+        # body's own value wins whenever it has one, a blank override included; html's is the fallback
+        page = {"H": {"--a": " red", "--b": " blue", "--c": "url(https://x.test/a.png?sig=1)"}, "B": {"--a": " ", "--b": ""}}
+        stub = (f"const VALUES = {json.dumps(page)}; const document = {{ documentElement: 'H', body: 'B' }};\n"
+                "const getComputedStyle = (e) => ({ getPropertyValue: (n) => VALUES[e][n] ?? '' });\n")
+        src = js_block(HERE / "kit/capture/electron/shot.mjs", "const noUrl", "const read")
+        got = self.node(stub + src + "\nconsole.log(JSON.stringify(['--a', '--b', '--c'].map(read)))")
+        self.assertEqual(got, ["", "blue", "url(…)"])
+
+    def test_the_no_query_node_tests_pass(self):
+        # tools/kit/capture/test_no_query.mjs: the full case table, and keys that clean alike being merged
+        # the TAP reporter is named: node picks the spec reporter by itself on CI, whose counts read "ℹ pass 5"
+        res = subprocess.run([NODE, "--test", "--test-reporter=tap", str(HERE / "kit/capture/test_no_query.mjs")],
+                             capture_output=True, text=True, timeout=60)
+        self.assertEqual(res.returncode, 0, res.stdout[-3000:] + res.stderr[-1000:])
+        self.assertRegex(res.stdout, r"(?m)^# pass [1-9]")
+        self.assertRegex(res.stdout, r"(?m)^# fail 0$")
+
+    def test_vars_mjs_writes_its_output_through_the_query_scrub(self):
+        # vars.mjs records declared and resolved values and selectors; noUrl only sees url(), so a bare,
+        # scheme-relative or relative URL with a query kept it until the whole output went through scrubQueries.
+        src = (HERE / "kit/capture/vars.mjs").read_text()
+        self.assertIn("const saved = scrubQueries(out);", src)
+        self.assertIn("JSON.stringify(saved, null, 1)", src)
+        self.assertIn("from './no-query.mjs'", src)
+
+    @unittest.skipIf(not Path(PW).is_file(), "the capture Playwright is not installed")
+    def test_vars_mjs_prints_no_query_either(self):
+        # Train 19: the saved JSON was scrubbed, but the console summary printed the raw selector map, and
+        # package captures commit their console output (raw/*.log). Run vars.mjs on a page copy holding a
+        # selector with a query, and look for the id in both the file and stdout.
+        with tempfile.TemporaryDirectory() as d:
+            pkg, snaps = Path(d) / "pkg", Path(d) / "snaps"
+            (pkg / "tools/capture").mkdir(parents=True)
+            snaps.mkdir()
+            for f in ("vars.mjs", "no-query.mjs"):
+                shutil.copy(HERE / "kit/capture" / f, pkg / "tools/capture" / f)
+            (snaps / "home.html").write_text('<html><head><style>img[src="/avatar?account_id=12345"]{--avatar-size:32px}'
+                                             ' a[href=/u?session=abc]{--link:#00f} :root{--bg:#fff}</style></head><body></body></html>')
+            res = subprocess.run([NODE, str(pkg / "tools/capture/vars.mjs")], capture_output=True, text=True, timeout=120,
+                                 env={**os.environ, "SNAPS": str(snaps), "PLAYWRIGHT": PW})
+            self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+            saved = (pkg / "raw/css-vars.json").read_text()
+        self.assertIn('img[src=\\"/avatar\\"]', saved)
+        self.assertIn('img[src="/avatar"]', res.stdout)   # the printed map is the scrubbed one
+        for out in (saved, res.stdout, res.stderr):
+            self.assertNotIn("12345", out)
+            self.assertNotIn("account_id", out)
+            self.assertNotIn("session=", out)
+
+    def test_electron_shot_prints_no_query_in_its_errors(self):
+        src = (HERE / "kit/capture/electron/shot.mjs").read_text()
+        for line in (l for l in src.splitlines() if "console.error(`" in l and "${" in l):
+            self.assertIn("noQuery(", line, line)
 
     def test_measure_scripts_write_every_string_through_the_email_mask(self):
         # Greptile on PR 1298: styleOf masked text, but attrs['aria-label'] (and an error or a selector)

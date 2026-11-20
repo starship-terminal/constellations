@@ -69,8 +69,11 @@ or `'./…'` lines, then the same lines in each helper. `screenshot.mjs` imports
 `safe-url.mjs`, so the single-file upgrade copies both; an older package without
 `safe-url.mjs` otherwise stops with `ERR_MODULE_NOT_FOUND` before capture starts.
 The other shared imports today: `layout.mjs` and the two `measure.mjs` import
-`safe-url.mjs`, `motion-probe.mjs` imports `motion.mjs` and `safe-url.mjs`, and
-both `build-measurements.mjs` import `css-colour.mjs`.
+`safe-url.mjs`; `layout.mjs` and the public `measure.mjs` import `readings.mjs`;
+the public `lib.mjs` and the signed-in `measure.mjs` import `crop.mjs`;
+`vars.mjs` and `electron/shot.mjs` import `no-query.mjs`; `motion-probe.mjs`
+imports `motion.mjs` and `safe-url.mjs`; and both `build-measurements.mjs` import
+`css-colour.mjs`. Within the public route, `measure.mjs` imports `pin.mjs`.
 
 The helper checks the PNG header dimensions against the capture region and
 scale, allowing one physical pixel for rounding. Viewport, full-page and clipped
