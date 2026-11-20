@@ -3899,9 +3899,9 @@
       "description": "Watch TV Shows Online, Watch Movies Online",
       "status": "pending",
       "package": null,
-      "notes": "https://www.netflix.com/sg/login asks for email or mobile number and password. Password not submitted.",
+      "notes": "https://www.netflix.com/sg/login asks for email or mobile number and password. Password not submitted. Public walk 2026-11-21: the homepage redirected to a regional marketing path. Title cards opened a preview dialog. FAQ rows expanded in place. Cookie Preferences opened a OneTrust dialog and was not saved. Footer links reached help, jobs, investors, and the speed test. Sign In stops at the login wall and was not filled. Get Started and signup Next were not clicked. Account redirects to login and that branch stopped. Public package in PR 1538 at c5316edc37e0. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 12
     },
     {
