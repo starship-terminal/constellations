@@ -5531,9 +5531,9 @@
       "description": "Animate stories, visualize ideas, and bring your concepts to life",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://sora.chatgpt.com/login stopped on a Cloudflare security check before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 17
     },
     {
@@ -5548,9 +5548,9 @@
       "description": "Hear the world's sounds",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://secure.soundcloud.com/web-auth email Continue said something unexpected happened and did not advance. Facebook, Google, and Apple were not used.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 17
     },
     {
@@ -5565,9 +5565,9 @@
       "description": "Make music online",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.soundtrap.com/login shows email and password, or Google, Apple, Facebook, or a Microsoft school account. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 17
     },
     {
@@ -5582,9 +5582,9 @@
       "description": "Simple way to deliver engaging video meetings",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.spatial.chat/login emailed a magic link to the capture inbox. Link not opened.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 17
     },
     {
@@ -5616,9 +5616,9 @@
       "description": "The world's largest creative search engine",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://spyglass.so/sign-in said it could not find an account for the capture inbox. Signup not opened.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 17
     },
     {
@@ -5633,9 +5633,9 @@
       "description": "Solutions For Your Small, Medium & Large Business",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.squareup.com/login shows email or phone and a password, or a passkey. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 17
     },
     {
@@ -5650,9 +5650,9 @@
       "description": "Create a Website in Minutes ",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://login.squarespace.com shows email and password, or Google, Apple, or Facebook. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 17
     },
     {
@@ -5667,9 +5667,9 @@
       "description": "Shop from 500+ luxury labels, emerging designers and streetwear brands for both men and women",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.ssense.com/en-sg/account/login email step opened a create-account password form. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 17
     },
     {
@@ -5684,9 +5684,9 @@
       "description": "Generative AI for music & sound fx",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: homepage Sign in opened AuthKit. Continue with email then asked for a password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 17
     },
     {
@@ -5701,9 +5701,9 @@
       "description": "You’ve never designed this easy before",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://stage.so/ is a domain for sale. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 17
     },
     {
@@ -5718,9 +5718,9 @@
       "description": "Coffee Company",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.starbucks.com/account/signin shows email and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 17
     },
     {
@@ -5735,9 +5735,9 @@
       "description": "Browser Infrastructure for AI Agents",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://auth.steel.dev/sign-in rejected the capture inbox domain. GitHub and Google were not used.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 17
     },
     {
@@ -5752,9 +5752,9 @@
       "description": "Scalable, Secure GraphQL APIs at the Edge",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://stellate.co/login Continue with Email sent a magic login link. Link not opened.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 17
     },
     {
@@ -5769,9 +5769,9 @@
       "description": "Progressive and premium stock image",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.stocksy.com/login returned a block page before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 17
     },
     {
@@ -5786,9 +5786,9 @@
       "description": "The Leading Social Platform for Investors and Traders",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://stocktwits.com/signin shows email or username and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 17
     },
     {
@@ -5803,9 +5803,9 @@
       "description": "Payment Processing Platform for the Internet",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://dashboard.stripe.com/login shows email and password, or Google, passkey, or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 17
     },
     {
@@ -5820,9 +5820,9 @@
       "description": "AI Music Generator",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://suno.com/sign-in email path said sign-in is not approved for this address. Phone path not used.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 17
     },
     {
@@ -5837,9 +5837,9 @@
       "description": "Make work-life balance a reality",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.sunsama.com/login shows email and password, or Google, Outlook, or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 17
     },
     {
@@ -5854,9 +5854,9 @@
       "description": "Create a websites with Notion",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.super.so/login shows email and password, or Google, Apple, or a passkey. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 17
     },
     {
