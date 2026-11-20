@@ -16,7 +16,10 @@ library's catalog reads a light semantic set. The dark set stays empty.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """
-import json, pathlib, re
+import json, pathlib, re, sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from oklab import oklab_or_oklch  # noqa: E402
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -34,8 +37,11 @@ DECL = {"light": APP, "dark": {}}
 
 
 def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla(), "R G B" channels -> #rrggbb or rgba(r, g, b, a)."""
+    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla(), oklab(), oklch(), "R G B" channels -> #rrggbb or rgba(r, g, b, a)."""
     v = v.strip().lower()
+    ok = oklab_or_oklch(v)
+    if ok:
+        return ok
     m = re.fullmatch(r"#([0-9a-f]{1,2}),\s*([0-9a-f]{1,2}),\s*([0-9a-f]{1,2})", v)
     if m:  # the harvest stores some sRGB colours as "#rr,gg,bb" hex channels
         return "#%02x%02x%02x" % tuple(int(x, 16) for x in m.groups())
@@ -115,7 +121,10 @@ def leaf(path, spec, theme):
     else:
         val = spec["value"]
         src = spec["source"]
+    authored = None
     if ty == "color" and not str(val).startswith("{"):
+        if re.match(r"\s*ok(lab|lch)\(", str(val)):
+            authored = str(val).strip()  # contrast checks and DESIGN.md read sRGB; the computed form is kept
         val = norm_color(val)
     if ty == "cubicBezier" and isinstance(val, str):
         m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
@@ -143,6 +152,8 @@ def leaf(path, spec, theme):
                 val = val + "px"
     check(path, ty, val)
     t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
+    if authored or spec.get("computed"):
+        t["$extensions"]["computed"] = spec.get("computed") or authored
     if spec.get("description"):
         t["$description"] = spec["description"]
     if spec.get("responsive"):
