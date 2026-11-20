@@ -138,4 +138,4 @@ python3 tools/build_components_md.py                                           #
 Capture conduct, edited in the 2026-11 audit and not run since:
 
 - The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.
-- The booking wizard's "+" is no longer pressed: it put a service in a real venue's cart. The committed `booking-cart` `service-added` reading is from a run before this edit; the script now measures the cart at rest only.
+- The booking wizard's "+" is no longer pressed, in measure.mjs or public.mjs: it put a service in a real venue's cart. The committed `booking-cart` `service-added` reading and the `booking-light-ticked` screenshot are from a run before this edit; the scripts now capture the cart at rest only.

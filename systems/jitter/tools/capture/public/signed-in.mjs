@@ -73,8 +73,13 @@ async function dismissEditorChrome(p) {
 async function openScratchFile(p) {
   const path = process.env.JITTER_SCRATCH_FILE;
   if (!path) { log('BOUNDARY editor: set JITTER_SCRATCH_FILE to an existing scratch file; no file is created'); return false; }
-  await p.goto(new URL(path, p.url()).toString(), { waitUntil: 'domcontentloaded' }).catch(() => {});
+  // a failed navigation throws; a link that lands anywhere but the editor
+  // (a sign-in redirect, a stale id) is a boundary, never shot as the editor
+  await p.goto(new URL(path, p.url()).toString(), { waitUntil: 'domcontentloaded' });
   await wait(p, 4000);
+  const editor = await p.locator('canvas').first().isVisible().catch(() => false)
+    && await p.getByRole('button', { name: /^(Animate|Design)$/i }).first().isVisible().catch(() => false);
+  if (!/\/file\//.test(p.url()) || !editor) { log('BOUNDARY editor: JITTER_SCRATCH_FILE did not open the editor (now at', p.url().split('?')[0] + ')'); return false; }
   return true;
 }
 
