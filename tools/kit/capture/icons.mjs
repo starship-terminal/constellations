@@ -44,12 +44,17 @@ function collect() {
         const cs = getComputedStyle(e), t = cshapes[i];
         // a var() in a paint attribute names a property the standalone file will not have: resolve it first
         for (const a of ['fill', 'stroke']) if ((t.getAttribute(a) || '').startsWith('var(')) t.setAttribute(a, rgb(cs[a]) === col ? 'currentColor' : hex(cs[a]));
-        const setInside = outside && ['fill', 'stroke', 'strokeWidth'].some((k) => cs[k] !== outside[k]);
-        if (imported && !e.hasAttribute('class') && !e.hasAttribute('style') && !setInside) return;
-        if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
-        else if (imported && !t.hasAttribute('fill') && cs.fill === 'none') t.setAttribute('fill', 'none');   // its style goes below
-        else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
-        if (!t.hasAttribute('stroke') && cs.stroke !== 'none') {
+        // Fill and stroke are judged apart: a group that sets only a stroke leaves the fill to the <use>, and
+        // copying the sprite sheet's default black fill would turn an outline into a filled shape.
+        const own = !imported || e.hasAttribute('class') || e.hasAttribute('style');
+        const fillSet = own || (outside && cs.fill !== outside.fill);
+        const strokeSet = own || (outside && (cs.stroke !== outside.stroke || cs.strokeWidth !== outside.strokeWidth));
+        if (fillSet) {
+          if (!t.hasAttribute('fill') && cs.fill !== 'none' && !cs.fill.startsWith('url')) t.setAttribute('fill', rgb(cs.fill) === col ? 'currentColor' : hex(cs.fill));
+          else if (imported && !t.hasAttribute('fill') && cs.fill === 'none') t.setAttribute('fill', 'none');   // its style goes below
+          else if (t.getAttribute('fill') && !['none', 'currentColor'].includes(t.getAttribute('fill')) && !t.getAttribute('fill').startsWith('url') && rgb(cs.fill) === col) t.setAttribute('fill', 'currentColor');
+        }
+        if (strokeSet && !t.hasAttribute('stroke') && cs.stroke !== 'none') {
           t.setAttribute('stroke', rgb(cs.stroke) === col ? 'currentColor' : hex(cs.stroke));
           t.setAttribute('stroke-width', parseFloat(cs.strokeWidth) || 1);
           if (cs.strokeLinecap !== 'butt') t.setAttribute('stroke-linecap', cs.strokeLinecap);

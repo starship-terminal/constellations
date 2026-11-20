@@ -136,6 +136,19 @@ class IconPaint(unittest.TestCase):
         self.assertNotIn("class=", html)
         self.assertNotIn("style=", html)
 
+    def test_a_group_that_sets_only_a_stroke_leaves_the_fill_alone(self):
+        # Greptile on PR 1353: one differing property opened the whole copy, so the sprite sheet's default
+        # black fill was written onto an outline whose group set only a stroke, and the outline came out filled.
+        page = ("<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'>"
+                "<g style='stroke:#ff0000'><path d='M2 12h20'/></g><g style='fill:#00ff00'><path d='M0 0h4v4z'/></g></symbol></svg>"
+                "<button aria-label='Go'><svg width='24' height='24' fill='none'><use href='#s'/></svg></button>")
+        (html,) = self.collect(page)
+        outline, box = re.findall(r"<path[^>]*>", html)
+        self.assertIn('stroke="#ff0000"', outline)
+        self.assertNotIn("fill=", outline)   # the <use>'s fill="none" still applies
+        self.assertIn('fill="#00ff00"', box)
+        self.assertNotIn("stroke=", box)
+
     def test_an_icon_drawn_from_another_files_sprite_is_left_out(self):
         # finding 20-8: <use href="/icons/sprite.svg#x"> draws nothing in the saved file, so it was saved blank
         page = ("<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'><path d='M0 0h24v24z'/></symbol></svg>"
