@@ -214,9 +214,9 @@ The /servers discovery page — app surface painted .theme-dark.theme-darker: th
 #### Search box
 The "Search servers for games and interests" field wrapper on discovery. Read as `ds-search` on the server discovery page.
 
-**Values (default).** size 640 x 64; background transparent; text gg sans 12/16 400, #ffffff `always.white`; icon 24 x 24, #ffffff `always.white`; layers div.searchBox__7pJSN.searchBarContainer__J-bNz 640.0x64.0 rgba(255, 255, 255, 0.12) `color.opacity.white.12` `color.opacity.white.12` T:1px solid transparent / R:1px solid transparent / B:1px solid transparent / L:1px solid transparent 12px.
+**Values (default).** size 640 x 64; background transparent; text gg sans 12/16 400, #ffffff `always.white`; icon 24 x 24, #ffffff `always.white`; layers div.searchBox__7pJSN.searchBarContainer__J-bNz 640.0x64.0 rgba(255, 255, 255, 0.12) `color.opacity.white.12` T:1px solid transparent / R:1px solid transparent / B:1px solid transparent / L:1px solid transparent 12px.
 
-Child layers that carry the look: div 640x64 background rgba(255, 255, 255, 0.12) `color.opacity.white.12` `color.opacity.white.12` border 1px solid transparent radius 12px.
+Child layers that carry the look: div 640x64 background rgba(255, 255, 255, 0.12) `color.opacity.white.12` border 1px solid transparent radius 12px.
 
 ![Search box default](components/crops/ds-search-default.png)
 
@@ -486,7 +486,7 @@ The DISCOVERABLE SERVERS display at 390px. Read as `m-h1` on the server discover
 #### Mobile search
 The discovery search field at 390px. Read as `m-search` on the server discovery page at 390 wide.
 
-**Values (default).** size 358 x 64; padding 12px 16px; border 1px solid transparent; radius 12px; background rgba(255, 255, 255, 0.12) `color.opacity.white.12` `color.opacity.white.12`; text gg sans 12/16 400, #ffffff `always.white`; icon 24 x 24, #ffffff `always.white`.
+**Values (default).** size 358 x 64; padding 12px 16px; border 1px solid transparent; radius 12px; background rgba(255, 255, 255, 0.12) `color.opacity.white.12`; text gg sans 12/16 400, #ffffff `always.white`; icon 24 x 24, #ffffff `always.white`.
 
 ![Mobile search default](components/crops/m-search-default.png)
 
