@@ -81,6 +81,23 @@ def font(fz, lh, fw, f):
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally (the kit's rule)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
+def cell(x):
+    """A markdown table cell: a pipe would split the cell and a newline would end the row."""
+    return re.sub(r"\s*\n\s*", " ", str(x)).replace("|", "/")
+
+
 def props(v):
     s = v["style"]
     o = {}
@@ -149,7 +166,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -178,7 +195,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -267,7 +284,7 @@ W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
 for p, desc, url in SHOTS + MOBILE:
-    W(f"| {desc} | `{url}` | {links(p)} |")
+    W(f"| {cell(desc)} | `{url}` | {links(p)} |")
 W()
 W("### Overlays and transient states")
 W()
@@ -279,7 +296,7 @@ OVER = [
     ("Mobile menu, open", "home, phone", "the menu button's own toggle", "[mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-open](#mobile-menu-open)"),
 ]
 for r in OVER:
-    W("| " + " | ".join(r) + " |")
+    W("| " + " | ".join(cell(x) for x in r) + " |")
 W()
 
 # ------------------------------------------------ shared values
@@ -293,7 +310,7 @@ for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
         continue
-    if "failed" in str(st.get("via", "")):
+    if "failed" in str(st.get("via", "")) or focus_not_captured(st):
         failed.append(k)
         continue
     s = st["style"]
@@ -319,7 +336,19 @@ if without:
     line += f" The other {len(without)} show no change a keyboard user can see: {', '.join(without)}."
 W(line)
 W()
-W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): links and buttons fade or lift as measured. Nothing that would submit or navigate was pressed.")
+# Pressed, from the readings: each component whose forced :active differs from its default, and what changes.
+pressed, n_pressed = [], 0
+for k, c in C.items():
+    st = c["states"]
+    if not all(x in st and measured(st[x]) for x in ("default", "pressed")):
+        continue
+    n_pressed += 1
+    base, pr = props(st["default"]), props(st["pressed"])
+    diff = {x: pr.get(x, "none") for x in ORDER if pr.get(x) != base.get(x)}
+    if diff:
+        pressed.append(f"`{k}` ({fmt(diff)})")
+W(f"**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover) on {n_pressed} components; nothing that would submit or navigate was pressed. "
+  + (f"{len(pressed)} change from default: {'; '.join(pressed)}. The other {n_pressed - len(pressed)} read the same as default." if pressed else "None changes from default."))
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -328,7 +357,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -352,8 +381,20 @@ def dur_ms(d):
 
 
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
-    W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
+    W(f"| {d} | `{cell(e)}` | {cell(', '.join(sorted(ps)))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
+def covering_layer(st):
+    """The first painted layer inside the component that fills or frames at least 90% of its box (the
+    kit's rule). The capture records a layer's size but not its offset, so the most it can cover is
+    the smaller width times the smaller height."""
+    rw, rh = st["rect"]["w"], st["rect"]["h"]
+    for x in st.get("paint") or []:
+        dims = [float(n) for n in re.findall(r"[\d.]+", x.get("size", ""))[:2]]
+        if len(dims) == 2 and rw and rh and min(dims[0], rw) * min(dims[1], rh) >= 0.9 * rw * rh and (x.get("bg") or x.get("border")):
+            return x
+    return None
+
+
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
@@ -364,14 +405,20 @@ for k in ["header", "hero-title", "tab", "mockup-card", "search-field", "filter-
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
-    W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
+    if p["background"] == "transparent" and "border" not in p and st.get("paint"):
+        # The root paints nothing (a radius alone paints nothing): its look is a painted child that
+        # covers it (at least 90% of its box), named in the row. A smaller child (a CTA's ::before, a
+        # badge, a divider) is not the card, so the row then keeps the root's own values.
+        p0 = covering_layer(st)
+        if p0:
+            p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius") or p.get("radius", "-"),
+                     background=(colour(p0["bg"]) if p0.get("bg") else "-") + f" (on `{p0['node']}`)",
+                     shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+    W(f"| [{cell(c['title'])}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | " + " | ".join(cell(x) for x in (p['size'], p.get('border', '-'), p.get('radius', '-'), p.get('background', '-'), p.get('shadow', 'none'), p.get('padding', '0'))) + " |")
 W()
 
 # ------------------------------------------------ entries
@@ -422,19 +469,24 @@ W("## Icons")
 W()
 W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots are Artboard Studio's artwork. Declared under layoutGaps in the catalog entry.")
 W()
-W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
-W("|---|---|---|---|---|---|")
-for r in icons:
-    f, name, h, sizes, vb, style, seen, place, label = (r + [""] * 9)[:9]
-    W(f"| [{name}](icons/{f}) | {sizes} | {vb} | {style} | {seen} | {label.replace('|', '/')[:60]} |")
-W()
+if icons:
+    W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
+    W("|---|---|---|---|---|---|")
+    for r in icons:
+        f, name, h, sizes, vb, style, seen, place, label = (r + [""] * 9)[:9]
+        W(f"| [{cell(name)}](icons/{f}) | {cell(sizes)} | {cell(vb)} | {cell(style)} | {cell(seen)} | {cell(label)[:60]} |")
+    W()
 
 # ------------------------------------------------ gaps
 W("## Gaps")
 W()
 W("### Pages")
 W()
-W("- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created. The contact-sales .ds-input fields were focused and one sample value typed and deleted, never submitted.")
+focused_only = [k for k, c in C.items() if "focused" in c["states"] and "filled" not in c["states"]]
+typed = [k for k, c in C.items() if "filled" in c["states"]]
+W("- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created."
+  + (f" {', '.join(f'`{k}`' for k in focused_only)} {'was' if len(focused_only) == 1 else 'were'} focused only; nothing was typed into {'it' if len(focused_only) == 1 else 'them'}." if focused_only else "")
+  + (f" {', '.join(f'`{k}`' for k in typed)} had one sample value typed and deleted, never submitted." if typed else ""))
 W()
 W("### States")
 W()
