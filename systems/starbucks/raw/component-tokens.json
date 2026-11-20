@@ -1,0 +1,92 @@
+{
+  "_readme": "Token tree build_tokens.py reads. Each leaf is {type, value, source}. Values were read from computed styles on www.starbucks.com and the Auth0 sign-in wall on 2026-11-21. No custom properties were declared on :root (varCount 0). One light theme.",
+  "core": {
+    "color": {
+      "green": { "type": "color", "value": "#006242", "source": "Measured: computed backgroundColor of the home order strip and body backgroundColor of auth.starbucks.com/u/login, rgb(0, 98, 66), 2026-11-21" },
+      "greenLink": { "type": "color", "value": "#00754a", "source": "Measured: computed color of 'See the holiday menu' and backgroundColor of Add to Order and the Auth0 Sign in button, rgb(0, 117, 74)" },
+      "greenDeep": { "type": "color", "value": "#1e3932", "source": "Measured: computed backgroundColor of the Customize button on /menu/product/407/hot, rgb(30, 57, 50)" },
+      "cream": { "type": "color", "value": "#f5f1eb", "source": "Measured: computed backgroundColor of the home holiday panel, rgb(245, 241, 235)" },
+      "white": { "type": "color", "value": "#ffffff", "source": "Measured: computed backgroundColor of body on www.starbucks.com" },
+      "black": { "type": "color", "value": "#000000", "source": "Measured: computed color of body text and backgroundColor of Join now" },
+      "ink": { "type": "color", "value": "rgba(0, 0, 0, 0.87)", "source": "Measured: computed color of Sign in and product body text" },
+      "nav": { "type": "color", "value": "rgba(0, 0, 0, 0.9)", "source": "Measured: computed color of the MENU header link" },
+      "fieldBorder": { "type": "color", "value": "rgba(0, 40, 25, 0.68)", "source": "Measured: computed borderTopColor of #username on the sign-in wall" },
+      "onAccent": { "type": "color", "value": "#ffffff", "source": "Measured: computed color of Join now, Add to Order, and the Auth0 Sign in button" }
+    },
+    "font": {
+      "family": {
+        "sans": { "type": "fontFamily", "value": "SoDoSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif", "source": "Measured: computed fontFamily of body on www.starbucks.com. SoDoSans is proprietary; the guide uses the Helvetica fallback." }
+      },
+      "weight": {
+        "light": { "type": "fontWeight", "value": 300, "source": "Measured: fontWeight of Start an order" },
+        "regular": { "type": "fontWeight", "value": 400, "source": "Measured: fontWeight of body" },
+        "semibold": { "type": "fontWeight", "value": 600, "source": "Measured: fontWeight of Join now, See the holiday menu, h1" },
+        "bold": { "type": "fontWeight", "value": 700, "source": "Measured: fontWeight of MENU and the product h1" }
+      }
+    },
+    "typography": {
+      "body": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "16px", "fontWeight": "{font.weight.regular}", "lineHeight": "24px", "letterSpacing": "-0.16px" }, "source": "Measured: computed body style on www.starbucks.com" },
+      "nav": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "14px", "fontWeight": "{font.weight.bold}", "lineHeight": "21px", "letterSpacing": "1.4px" }, "source": "Measured: computed style of the MENU header link, text-transform uppercase" },
+      "heading": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "24px", "fontWeight": "{font.weight.semibold}", "lineHeight": "33.6px", "letterSpacing": "-0.24px" }, "source": "Measured: computed style of the home h1 'Holiday flavors are in town!'" },
+      "display": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "36px", "fontWeight": "{font.weight.bold}", "lineHeight": "44px", "letterSpacing": "-0.36px" }, "source": "Measured: computed style of the sign-in h1 Welcome back!" },
+      "button": { "type": "typography", "value": { "fontFamily": "{font.family.sans}", "fontSize": "14px", "fontWeight": "{font.weight.semibold}", "lineHeight": "16.8px", "letterSpacing": "-0.16px" }, "source": "Measured: computed style of Join now and Sign in in the header" }
+    },
+    "radius": {
+      "none": { "type": "dimension", "value": "0px", "source": "Measured: borderRadius of the MENU link and body" },
+      "field": { "type": "dimension", "value": "8px", "source": "Measured: borderRadius of #username on the sign-in wall" },
+      "pill": { "type": "dimension", "value": "50px", "source": "Measured: borderRadius of Join now, Sign in, and Start an order" }
+    },
+    "space": {
+      "button-x": { "type": "dimension", "value": "16px", "source": "Measured: padding-inline of Join now (7px 16px)" },
+      "button-y": { "type": "dimension", "value": "7px", "source": "Measured: padding-block of Join now" },
+      "field-x": { "type": "dimension", "value": "16px", "source": "Measured: padding-inline of #username" },
+      "order-x": { "type": "dimension", "value": "24px", "source": "Measured: padding-inline of Add to Order (18px 24px)" }
+    },
+    "size": {
+      "header": { "type": "dimension", "value": "100px", "source": "Measured: header getBoundingClientRect height on the home page at 1440" },
+      "button": { "type": "dimension", "value": "33px", "source": "Measured: Join now height" },
+      "field": { "type": "dimension", "value": "56px", "source": "Measured: #username height on the sign-in wall" },
+      "order": { "type": "dimension", "value": "59px", "source": "Measured: Add to Order height" },
+      "checkbox": { "type": "dimension", "value": "24px", "source": "Measured: keep-me-signed-in checkbox height" }
+    },
+    "border": {
+      "hairline": { "type": "dimension", "value": "1px", "source": "Measured: borderTopWidth of Join now and #username" },
+      "banner": { "type": "dimension", "value": "2px", "source": "Measured: borderTopWidth of Start an order" }
+    },
+    "shadow": {
+      "order": { "type": "shadow", "value": [{ "color": "rgba(0, 0, 0, 0.24)", "offsetX": "0px", "offsetY": "0px", "blur": "6px", "spread": "0px" }, { "color": "rgba(0, 0, 0, 0.14)", "offsetX": "0px", "offsetY": "8px", "blur": "12px", "spread": "0px" }], "source": "Measured: boxShadow of Add to Order" }
+    },
+    "layout": {
+      "desktop": { "type": "dimension", "value": "1440px", "source": "Requested and measured viewport width of desktop captures (innerWidth 1440)" },
+      "phone": { "type": "dimension", "value": "390px", "source": "Requested viewport width of phone captures" }
+    }
+  },
+  "light": {
+    "background": {
+      "page": { "type": "color", "value": "{color.white}", "source": "Measured: body backgroundColor on www.starbucks.com" },
+      "brand": { "type": "color", "value": "{color.green}", "source": "Measured: home order strip and sign-in page background" },
+      "surface": { "type": "color", "value": "{color.cream}", "source": "Measured: home holiday panel background" },
+      "inverse": { "type": "color", "value": "{color.greenDeep}", "source": "Measured: Customize button fill; the product hero uses the same deep green family" }
+    },
+    "text": {
+      "primary": { "type": "color", "value": "{color.black}", "source": "Measured: body color on the home page" },
+      "ink": { "type": "color", "value": "{color.ink}", "source": "Measured: product body and Sign in label" },
+      "accent": { "type": "color", "value": "{color.greenLink}", "source": "Measured: See the holiday menu and Forgot your password?" },
+      "onBrand": { "type": "color", "value": "{color.onAccent}", "source": "Measured: color of text on the green order strip and green buttons" },
+      "heading": { "type": "color", "value": "{color.green}", "source": "Measured: home h1 color rgb(0, 98, 66)" }
+    },
+    "border": {
+      "default": { "type": "color", "value": "{color.ink}", "source": "Measured: border color of the Sign in pill" },
+      "accent": { "type": "color", "value": "{color.greenLink}", "source": "Measured: border color of See the holiday menu" },
+      "field": { "type": "color", "value": "{color.fieldBorder}", "source": "Measured: border color of the email field on the sign-in wall" }
+    },
+    "action": {
+      "primary": { "type": "color", "value": "{color.black}", "source": "Measured: Join now background" },
+      "brand": { "type": "color", "value": "{color.greenLink}", "source": "Measured: Add to Order and Auth0 Sign in backgrounds" },
+      "banner": { "type": "color", "value": "{color.green}", "source": "Measured: Start an order background, which matches the strip" }
+    },
+    "focus": {
+      "ring": { "type": "color", "value": "{color.greenLink}", "source": "Not captured as a keyboard ring. The email field's computed box-shadow uses rgba(0, 117, 74, 0.23); a dedicated focus-visible ring was not isolated. Recorded as the accent, with this gap." }
+    }
+  }
+}
