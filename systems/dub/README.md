@@ -12,7 +12,7 @@ Dub is worth a capture because the public surface is three different stacks that
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (63, 165 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the marketing header, the hero, pricing, the auth cards, the docs sidebar and its dark theme, the footer, mobile |
-| [components/crops/](components/crops) | 165 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 160 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 37 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (mobile-home is part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `pricing-light-yearly` the toggled billing period, `docs-dark-dark-*` the docs page under its own Dark preference |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — marketing/app/docs sheets, resolved on the `.light` and `.dark` scopes; consent/Intercom/fontshare vars binned vendor), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
