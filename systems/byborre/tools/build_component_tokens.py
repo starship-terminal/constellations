@@ -46,6 +46,16 @@ RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
 RL = V.get("resolved", {}).get("light", {})
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
+
+
+def current(comp):
+    """The component's entry, refused when the last run did not read it: missing
+    (no states) or recaptureMissed (earlier states kept under their own
+    provenance) is not a current reading, so it cannot source a role."""
+    c = C[comp]
+    if c.get("missing") or c.get("recaptureMissed"):
+        raise KeyError(f"{comp}: not a current reading (missing or recaptureMissed)")
+    return c
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
 
 
@@ -266,7 +276,7 @@ for name, target, desc in [
     ("--icon-muted", "color.neutral.icon-muted", "Muted glyph colour (+ icons, badge outline)."),
 ]:
     if target is None:
-        _on_dark = {norm_color(st(c, "default").get("color", "")) for c in ("footer-link", "hero-title")}
+        _on_dark = {norm_color(current(c)["states"]["default"]["style"].get("color", "")) for c in ("footer-link", "hero-title")}
         if len(_on_dark) != 1:
             raise ValueError(f"{name}: readings differ: {sorted(_on_dark)}")
         emit(light, name, {"value": _on_dark.pop(), "type": "color",

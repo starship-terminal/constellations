@@ -181,10 +181,10 @@ for path, comp, state, prop, desc in [
         pass
 
 # The claim page ground is not any component's own fill: body paints #fafafa
-# on /editor (read off the page in the capture notes).
+# on /editor, a value entered by hand at capture time (see grey.250 above).
 SPEC["light"]["claimPage"] = {
     "type": "color", "value": "{color.grey.250}",
-    "source": "computed backgroundColor of body on /editor (the claim screen); same value as core.color.grey.250",
+    "source": "alias of core.color.grey.250, which was entered by hand at capture time (the body backgroundColor on /editor, the claim screen, as read off the page), not a committed reading",
     "description": "The signed-out claim screen's ground, a whisper off pure white.",
 }
 

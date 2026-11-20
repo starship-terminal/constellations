@@ -1,7 +1,8 @@
-"""The committed outputs must rebuild from the package's inputs.
+"""The committed outputs must rebuild from the package's inputs, and the typed roles must follow their readings.
 
 The builders run on a temporary copy of the package, so nothing committed is rewritten.
 """
+import json
 import pathlib
 import re
 import shutil
@@ -32,6 +33,70 @@ class RebuildTest(unittest.TestCase):
         for out in OUTPUTS:
             with self.subTest(out=out):
                 self.assertEqual((self.copy / out).read_text(), (PKG / out).read_text())
+
+
+# Each role below is read from raw/components-computed.json. Changing those
+# readings must change the built token, and a missing, stale or disagreeing
+# reading must stop the build instead of falling back to a typed value.
+CASES = [
+    dict(name="neutral.paper", reads=lambda C: [("c-widget", "default"), ("c-header", "default"), ("r-tweet", "default")], prop="backgroundColor", sentinel="rgb(18, 52, 87)", expect='"#123457"'),
+]
+
+RAW_JSON = "raw/components-computed.json"
+OUT_JSON = "raw/component-tokens.json"
+SKIP = shutil.ignore_patterns("__pycache__", "screenshots", "crops", "boards", "icons", "*.png", "*.jpg", "*.webp")
+
+
+def _build(mutate):
+    with tempfile.TemporaryDirectory() as tmp:
+        copy = pathlib.Path(tmp) / "pkg"
+        shutil.copytree(PKG, copy, ignore=SKIP)
+        raw = json.loads((copy / RAW_JSON).read_text())
+        mutate(raw["components"])
+        (copy / RAW_JSON).write_text(json.dumps(raw))
+        r = subprocess.run([sys.executable, str(copy / "tools" / "build_component_tokens.py")],
+                           capture_output=True, text=True, cwd=copy)
+        out = (copy / OUT_JSON).read_text() if r.returncode == 0 else ""
+        return r.returncode, out
+
+
+def _set(reads, prop, value):
+    def mutate(C):
+        for comp, state in reads(C):
+            C[comp]["states"][state]["style"][prop] = value
+    return mutate
+
+
+def _flag(reads, flag):
+    def mutate(C):
+        comp = reads(C)[0][0]
+        C[comp][flag] = True
+    return mutate
+
+
+class ReadingsDriveRolesTest(unittest.TestCase):
+    def test_roles_follow_their_readings(self):
+        committed = (PKG / OUT_JSON).read_text()
+        for c in CASES:
+            with self.subTest(role=c["name"]):
+                self.assertNotIn(c["expect"], committed)
+                code, out = _build(_set(c["reads"], c["prop"], c["sentinel"]))
+                self.assertEqual(code, 0)
+                self.assertIn(c["expect"], out)
+
+    def test_bad_readings_stop_the_build(self):
+        for c in CASES:
+            for flag in c.get("flags", ("missing", "recaptureMissed")):
+                with self.subTest(role=c["name"], flag=flag):
+                    code, _ = _build(_flag(c["reads"], flag))
+                    self.assertNotEqual(code, 0)
+            if len(c["reads"](json.loads((PKG / RAW_JSON).read_text())["components"])) > 1:
+                with self.subTest(role=c["name"], case="disagree"):
+                    def one(C, c=c):
+                        comp, state = c["reads"](C)[0]
+                        C[comp]["states"][state]["style"][c["prop"]] = c["sentinel"]
+                    code, _ = _build(one)
+                    self.assertNotEqual(code, 0)
 
 
 if __name__ == "__main__":
