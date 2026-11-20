@@ -1864,9 +1864,9 @@
       "description": "Vacation Homes, Hotels, Car Rentals, Flights",
       "status": "captured",
       "package": "systems/expedia",
-      "notes": "https://www.expedia.com/login sent a code to the capture inbox. The code was accepted, then the page asked for a name and password to finish creating the account. Those fields were not filled.",
+      "notes": "https://www.expedia.com/login sent a code to the capture inbox. The account home is signed in. Profile details were not filled. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "needs-other-info",
+      "login-probe": "signed-in",
       "batch": 6
     },
     {
@@ -2459,7 +2459,7 @@
       "description": "Create, collaborate, and scale your blogs and docs",
       "status": "pending",
       "package": null,
-      "notes": "https://hashnode.com/login Continue with Google signed in and opened onboarding. Onboarding not filled. Product not walked.",
+      "notes": "https://hashnode.com/login Continue with Google signed in. The next screen asks for a profile. Profile not created. Product not walked.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 8
