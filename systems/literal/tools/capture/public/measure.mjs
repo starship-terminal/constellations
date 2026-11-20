@@ -21,6 +21,11 @@ const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { _m
 out._meta ??= {};
 out.components ??= {};
 const RUN = new Date().toLocaleDateString('en-CA');
+// _meta.read keeps the earlier date until this run reads a state, so a rerun that
+// fails throughout never redates old readings; _meta.lastAttempt is this run's
+// date. Each state carries its own `run` date, and the component's `run` moves
+// only when one of its states is read.
+const PRIOR_READ = out._meta.read;
 const BOOK = '/book/the-midnight-library-mrpx0';
 const PROFILE = '/kikimeower';
 
@@ -81,7 +86,7 @@ async function shot(loc, key, state) {
 
 async function S(key, loc, states, meta) {
   const c = out.components[key] ??= { states: {} };
-  Object.assign(c, { page: current, run: RUN, theme, url: page.url().split('?')[0], ...meta });
+  Object.assign(c, { page: current, theme, url: page.url().split('?')[0], ...meta });
   c.states ??= {};
   const target = loc.first();
   if (!(await target.count())) {
@@ -118,6 +123,8 @@ async function S(key, loc, states, meta) {
       const s = await styleOf(target);
       const cropPath = await shot(target, key, st);
       c.states[st] = { ...s, crop: cropPath, via, run: RUN };
+      c.run = RUN;
+      out._meta.read = RUN; // a reading succeeded in this run
       delete c.missing;
       log('  ', key, st, `${s.rect.w}x${s.rect.h}`, s.style?.backgroundColor, s.style?.color);
     } catch (e) {
@@ -125,7 +132,7 @@ async function S(key, loc, states, meta) {
       // writing the error over it.
       const msg = String(e.message || e).slice(0, 180);
       const prev = c.states[st];
-      c.states[st] = prev && !prev.error ? { ...prev, recaptureError: msg, recaptureRun: RUN } : { error: msg };
+      c.states[st] = prev && !prev.error ? { ...prev, recaptureError: msg, recaptureRun: RUN } : { error: msg, run: RUN };
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
@@ -268,7 +275,8 @@ async function dark() {
 }
 
 out._meta = {
-  read: RUN,
+  read: PRIOR_READ || RUN,
+  lastAttempt: RUN,
   product: 'Literal.club',
   route: 'public-web',
   viewport: '1440x900 desktop, 390x844 mobile',

@@ -64,5 +64,12 @@ class RebuildTest(unittest.TestCase):
             self.assertNotIn("`light.", row, row)
 
 
+    def test_capture_date_moves_only_on_a_reading(self):
+        src = (PKG / "tools" / "capture" / "public" / "measure.mjs").read_text()
+        self.assertIn("read: PRIOR_READ || RUN,\n  lastAttempt: RUN,", src)
+        self.assertNotIn("run: RUN, theme", src)
+        self.assertIn("via, run: RUN };\n      c.run = RUN;\n      out._meta.read = RUN;", src)
+
+
 if __name__ == "__main__":
     unittest.main()
