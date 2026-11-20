@@ -15,6 +15,22 @@ HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
 LIGHT = {n: d.get("value") or d.get("raw") for n, d in V["resolved"]["light"].items()}
+C = json.loads((RAW / "components-computed.json").read_text())["components"]
+
+
+def comp(key, state, prop):
+    """A computed style of a measured component. Raises when the reading is missing."""
+    try:
+        v = C[key][state]["style"]["style"][prop]
+    except KeyError:
+        raise SystemExit("no reading for %s %s %s in raw/components-computed.json" % (key, state, prop))
+    if v in (None, ""):
+        raise SystemExit("empty reading for %s %s %s" % (key, state, prop))
+    return v
+
+
+def measured(key, state, prop):
+    return "measured %s on %s %s (raw/components-computed.json, lego.com 2026-11-18)" % (prop, key, state)
 
 
 def norm_color(v):
@@ -67,9 +83,15 @@ def tok(value, ty, source):
 
 
 def put(tree, path, token):
+    """Place a token. A path that would make a token also hold child tokens raises:
+    tools/catalog.py stops at $value, so those children would vanish from every export."""
     node = tree
     for part in path[:-1]:
         node = node.setdefault(part, {})
+        if "$value" in node:
+            raise ValueError("token %s would also contain %s" % (".".join(path[:-1]), path[-1]))
+    if path[-1] in node:
+        raise ValueError("duplicate token path " + ".".join(path))
     node[path[-1]] = token
 
 
@@ -91,6 +113,11 @@ for group, prefix in ROLE_GROUPS.items():
         if not is_color(raw):
             continue
         tail = name[len(prefix):].replace("-", ".")
+        # --ds-color-layer-neutral-static and its -inverted sibling: a dotted
+        # split would nest one token inside the other, so name the child as a
+        # hyphenated sibling instead.
+        if tail == "neutral.static.inverted":
+            tail = "neutral.static-inverted"
         # Keep the semantic roles, not every theme-thumbnail colour.
         if group == "color.brand" and not re.match(
             r"^(black|white|bright|cool|dark|earth|extended)", tail
@@ -117,77 +144,100 @@ for name, raw in sorted(LIGHT.items()):
         step = name.rsplit("-", 1)[-1]
         put(core, ["radius", step], tok(px, "dimension", "css-var %s" % name))
 
-# Shadows: keep the numeric ladder as strings under $extensions, and tokenise
-# the first layer when it parses. DTCG shadow needs structured layers; store
-# the declared string as a note and a single reconstructed layer when simple.
-SHADOW_RE = re.compile(
-    r"(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(#[0-9a-fA-F]{3,8})"
-)
+# Shadows. Each declared layer becomes one DTCG shadow layer. The parser splits
+# on top-level commas only (rgb()/rgba() carry commas), takes the colour in any
+# position (hex, rgb(), rgba()), keeps `inset` wherever it stands, and raises on
+# a layer it cannot read instead of dropping it.
+def split_top(value):
+    out, depth, cur = [], 0, ""
+    for ch in value:
+        if ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+        if ch == "," and depth == 0:
+            out.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    if cur.strip():
+        out.append(cur.strip())
+    return out
+
+
+COLOR_RE = re.compile(r"rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}\b")
+
+
+def shadow_layers(name, value):
+    layers = []
+    for part in split_top(str(value)):
+        inset = bool(re.search(r"\binset\b", part))
+        rest = re.sub(r"\binset\b", " ", part)
+        colours = COLOR_RE.findall(rest)
+        rest = COLOR_RE.sub(" ", rest)
+        lengths = rest.split()
+        if len(colours) != 1 or not 2 <= len(lengths) <= 4:
+            raise SystemExit("%s: shadow layer not understood: %r" % (name, part))
+        nums = []
+        for n in lengths:
+            m = re.fullmatch(r"(-?[\d.]+)(px)?", n)
+            if not m or (m.group(2) is None and float(m.group(1)) != 0):
+                raise SystemExit("%s: shadow length not understood: %r" % (name, n))
+            nums.append("%gpx" % float(m.group(1)))
+        while len(nums) < 4:
+            nums.append("0px")
+        layer = {"offsetX": nums[0], "offsetY": nums[1], "blur": nums[2], "spread": nums[3],
+                 "color": norm_color(colours[0])}
+        if inset:
+            layer["inset"] = True
+        layers.append(layer)
+    return layers
+
+
 for name, raw in sorted(LIGHT.items()):
     if not re.fullmatch(r"--ds-shadow-\d+", name):
         continue
-    layers = []
-    for m in SHADOW_RE.finditer(str(raw)):
-        col = m.group(5)
-        if len(col) == 9:
-            # #rrggbbaa
-            try:
-                col = norm_color(col)
-            except ValueError:
-                continue
-        else:
-            col = norm_color(col)
-        layers.append({
-            "offsetX": "%gpx" % float(m.group(1)),
-            "offsetY": "%gpx" % float(m.group(2)),
-            "blur": "%gpx" % float(m.group(3)),
-            "spread": "%gpx" % float(m.group(4)),
-            "color": col,
-        })
-    if layers:
-        put(core, ["shadow", name.rsplit("-", 1)[-1]], tok(layers, "shadow", "css-var %s" % name))
+    put(core, ["shadow", name.rsplit("-", 1)[-1]], tok(shadow_layers(name, raw), "shadow", "css-var %s" % name))
 
-# Type. Cera Pro is the computed UI family on every measured control.
-put(core, ["font", "family", "ui"], tok(
-    "Cera Pro, Noto Sans KR, sans-serif", "fontFamily",
-    "measured fontFamily on .sk-button and h1, lego.com 2026-11-18; Cera Pro is proprietary and not committed",
-))
-put(core, ["font", "weight", "regular"], tok(400, "fontWeight", "measured fontWeight on body text"))
-put(core, ["font", "weight", "medium"], tok(500, "fontWeight", "measured fontWeight on Add to Bag (.sk-button--emphasis)"))
-put(core, ["font", "weight", "bold"], tok(700, "fontWeight", "measured fontWeight on product price (ds-heading-lg)"))
-put(core, ["font", "size", "body"], tok("16px", "dimension", "measured fontSize on product card price row"))
-put(core, ["font", "size", "button"], tok("18px", "dimension", "measured fontSize on Add to Bag"))
-put(core, ["font", "size", "price"], tok("24px", "dimension", "measured fontSize on PDP price, rounded from 24.347px computed"))
-put(core, ["typography", "body"], {
-    "$type": "typography",
-    "$value": {
-        "fontFamily": "{font.family.ui}",
-        "fontSize": "{font.size.body}",
-        "fontWeight": "{font.weight.regular}",
-        "lineHeight": "1.4",
-    },
-    "$extensions": {"source": "derived from measured Cera Pro body on the shop"},
-})
-put(core, ["typography", "button"], {
-    "$type": "typography",
-    "$value": {
-        "fontFamily": "{font.family.ui}",
-        "fontSize": "{font.size.button}",
-        "fontWeight": "{font.weight.medium}",
-        "lineHeight": "1.2",
-    },
-    "$extensions": {"source": "derived from measured Add to Bag"},
-})
-put(core, ["typography", "price"], {
-    "$type": "typography",
-    "$value": {
-        "fontFamily": "{font.family.ui}",
-        "fontSize": "{font.size.price}",
-        "fontWeight": "{font.weight.bold}",
-        "lineHeight": "1.2",
-    },
-    "$extensions": {"source": "derived from measured PDP price"},
-})
+# Type. Cera Pro is the computed UI family on every measured control; the
+# stack is the computed one, quotes dropped. Cera Pro is proprietary and not
+# committed.
+def family(key, state="default"):
+    return ", ".join(f.strip().strip('"\'') for f in comp(key, state, "fontFamily").split(","))
+
+
+put(core, ["font", "family", "ui"], tok(family("product-card"), "fontFamily", measured("product-card", "default", "fontFamily")))
+put(core, ["font", "weight", "regular"], tok(int(comp("product-card", "default", "fontWeight")), "fontWeight", measured("product-card", "default", "fontWeight")))
+put(core, ["font", "weight", "medium"], tok(int(comp("pdp-add", "default", "fontWeight")), "fontWeight", measured("pdp-add", "default", "fontWeight") + "; Add to Bag on the product page"))
+put(core, ["font", "weight", "bold"], tok(int(comp("pdp-price", "default", "fontWeight")), "fontWeight", measured("pdp-price", "default", "fontWeight")))
+put(core, ["font", "size", "body"], tok(px_of(comp("product-price", "default", "fontSize")), "dimension", measured("product-price", "default", "fontSize") + "; product card price row"))
+put(core, ["font", "size", "button"], tok(px_of(comp("pdp-add", "default", "fontSize")), "dimension", measured("pdp-add", "default", "fontSize")))
+put(core, ["font", "size", "price"], tok("%gpx" % round(float(px_of(comp("pdp-price", "default", "fontSize"))[:-2])), "dimension",
+                                         "derived: %s, rounded to the whole pixel" % measured("pdp-price", "default", "fontSize")))
+
+
+def line_height(key, state="default"):
+    """Unitless ratio of the computed line-height to the computed font-size."""
+    lh = float(px_of(comp(key, state, "lineHeight"))[:-2])
+    fs = float(px_of(comp(key, state, "fontSize"))[:-2])
+    return "%g" % round(lh / fs, 2)
+
+
+for role, key, size, weight in (
+    ("body", "product-price", "body", "regular"),
+    ("button", "pdp-add", "button", "medium"),
+    ("price", "pdp-price", "price", "bold"),
+):
+    put(core, ["typography", role], {
+        "$type": "typography",
+        "$value": {
+            "fontFamily": "{font.family.ui}",
+            "fontSize": "{font.size.%s}" % size,
+            "fontWeight": "{font.weight.%s}" % weight,
+            "lineHeight": line_height(key),
+        },
+        "$extensions": {"source": "derived: lineHeight is %s lineHeight / fontSize; the other fields alias measured tokens" % key},
+    })
 
 # Motion from declared nav timings.
 put(core, ["motion", "duration", "nav-open"], tok("200ms", "duration", "css-var --_nav-open-duration .2s"))
@@ -210,18 +260,26 @@ light["emphasis"] = alias("color.action.emphasis.enabled", "measured Add to Bag 
 light["positive"] = alias("color.text.positive", "declared positive text")
 light["warning"] = alias("color.text.warning", "declared warning text")
 light["negative"] = alias("color.text.negative", "declared negative text")
-light["focus"] = tok("#005ad2", "color", "measured: primary action blue used as the focus colour; outline width read per control")
+# The keyboard focus ring is a 2px box-shadow in --ds-color-focused-default.
+# account-button is read because its hover paints nothing, so its
+# focus-visible reading is not mixed with a hover fill.
+FOCUS_VAR = "--ds-color-focused-default"
+ring = comp("account-button", "focus-visible", "boxShadow")
+if norm_color(COLOR_RE.findall(ring)[0]) != norm_color(LIGHT[FOCUS_VAR]):
+    raise SystemExit("focus ring %r does not paint %s %s" % (ring, FOCUS_VAR, LIGHT[FOCUS_VAR]))
+light["focus"] = tok(norm_color(LIGHT[FOCUS_VAR]), "color",
+                     "css-var %s; painted as the 2px box-shadow ring (%s)" % (FOCUS_VAR, measured("account-button", "focus-visible", "boxShadow")))
 
 # Component dimensions from the PDP measurement.
 light["component"] = {
     "button": {
-        "radius": tok("999px", "dimension", "measured borderRadius on Add to Bag, --ds-layout-radius-pill"),
-        "padding-x": tok("20px", "dimension", "measured padding on Add to Bag"),
-        "font-size": tok("18px", "dimension", "measured fontSize on Add to Bag"),
+        "radius": tok(px_of(comp("pdp-add", "default", "borderTopLeftRadius")), "dimension", measured("pdp-add", "default", "borderTopLeftRadius") + "; --ds-layout-radius-pill"),
+        "padding-x": tok(px_of(comp("pdp-add", "default", "paddingLeft")), "dimension", measured("pdp-add", "default", "paddingLeft")),
+        "font-size": tok(px_of(comp("pdp-add", "default", "fontSize")), "dimension", measured("pdp-add", "default", "fontSize")),
     },
     "stepper": {
-        "radius": tok("4px", "dimension", "measured borderRadius on quantity stepper"),
-        "border": tok("1px", "dimension", "measured borderTopWidth on quantity stepper"),
+        "radius": tok(px_of(comp("quantity", "default", "borderTopLeftRadius")), "dimension", measured("quantity", "default", "borderTopLeftRadius")),
+        "border": tok(px_of(comp("quantity", "default", "borderTopWidth")), "dimension", measured("quantity", "default", "borderTopWidth")),
     },
 }
 

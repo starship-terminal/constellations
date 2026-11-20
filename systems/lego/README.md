@@ -48,7 +48,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #005ad2 `light.accent` |
 | border | #b0b0b0 `light.border` |
 
-Fonts: `core.font.family.ui` is Cera Pro, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 3 type styles (`core.typography`), 10 radius steps (`core.radius`), 22 spacing steps (`core.space`).
+Fonts: `core.font.family.ui` is Cera Pro, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 3 type styles (`core.typography`), 10 radius steps (`core.radius`), 22 spacing steps (`core.space`).
 
 ### Using components
 
@@ -60,7 +60,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 18.42:1 pass | 17.65:1 pass | 6.00:1 pass | 5.75:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus` #005ad2.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus` #4695f0.
 
 <!-- brief:end -->
 
@@ -105,6 +105,19 @@ The age-gate dialog (`dialog.AgeGate_age-gate__wrapper`) and the consent modal w
 ## What to distrust
 
 Screenshots are 256-colour PNGs. Read colours from the tokens. Cera Pro is not loaded in the style guide, so the guide's type is a fallback. The listing Add to Bag measured `#f47d20` (`--ds-color-brand-bright-orange`); the product Add to Bag measured `#e96f14` (`--ds-color-action-emphasis-enabled`). Both are real. A forced pressed state on the listing button came back as a `lab()` colour and is not tokenised. The filter panel did not open, so its interior is unmeasured.
+
+Known-wrong state readings. `tools/capture/public/measure.mjs` left the pointer on each control from the hover step through focus-visible and pressed, and kept the keyboard focus into pressed. The script now resets the pointer and focus before every state; it was not re-run.
+
+- `nav-shop`: focus-visible carries the hover yellow fill (rgb(250, 196, 0)) beside the 2px focus ring, and pressed carries the focus ring; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `filter-button`: focus-visible carries the hover grey fill (rgb(203, 203, 203)), and pressed carries the focus ring; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `sort-button`: focus-visible carries the hover grey fill (rgb(203, 203, 203)), and pressed carries the focus ring; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `pdp-add`: focus-visible carries the hover fill (rgb(201, 105, 43)), and pressed carries the focus ring; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `account-button`: pressed carries the focus ring left from the focus-visible step; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `wishlist-button`: pressed carries the focus ring left from the focus-visible step; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `bag-link`: pressed carries the focus ring left from the focus-visible step; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+- `add-to-bag`: pressed carries the focus ring left from the focus-visible step; needs a recapture (the pk-k recapture tracking issue (2026-11 audit)).
+
+Every committed reading was taken with `navigator.webdriver` masked by the capture context. That mask is removed from `tools/capture/public/lib.mjs`; the readings are kept.
 
 ## Fonts
 
