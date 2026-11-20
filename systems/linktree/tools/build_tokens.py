@@ -187,8 +187,12 @@ for role, node in list(core.get("typography", {}).items()):
         "lineHeight": node["lineHeight"]["$value"],
     }
     core["typography"][role]["$type"] = "typography"
+    # The composite carries all four readings, so its source names all four
+    # (it used to cite only the fontFamily reading). The leaves stay for the
+    # style guide; exports stop at the composite's $value, which holds the
+    # same values, so nothing is lost there.
     core["typography"][role]["$extensions"] = {
-        "source": node["fontFamily"]["$extensions"]["source"],
+        "source": "; ".join(node[k]["$extensions"]["source"] for k in ("fontFamily", "fontSize", "fontWeight", "lineHeight")),
     }
 # The component tokens live in their own top-level spec tree but belong to the
 # exported theme: the painted surface is light, so they sit under

@@ -20,13 +20,15 @@ const sheets = [];
 const seen = new Set();
 for (const url of [BASE + '/', BASE + '/s/pricing', PROFILE]) {
   const page = await context.newPage();
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  try { await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }); }
+  catch (e) { console.log('skip', url, String(e.message).split('\n')[0]); await page.close(); continue; }
+  if (!(await clearChallenge(page))) { console.log('skip', url, 'bot check did not clear: recorded as a boundary, not bypassed'); await page.close(); continue; }
   await page.waitForTimeout(4000);
   await closePromo(page);
   const found = await page.evaluate(() => [...document.styleSheets].map((s, i) => {
-    try { return { name: s.href || 'inline-' + location.pathname + '-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
-    catch { return { name: s.href || 'sheet-' + i, media: '', css: '', unreadable: true }; }
+    // A sheet's query (Vercel's ?dpl= deploy id, cache busters) is not part of its name.
+    try { return { name: s.href ? s.href.split(/[?#]/)[0] : 'inline-' + location.pathname + '-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
+    catch { return { name: s.href ? s.href.split(/[?#]/)[0] : 'sheet-' + i, media: '', css: '', unreadable: true }; }
   }));
   for (const s of found) {
     const key = s.name + ':' + (s.css || '').length;
