@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+"""Write style-guide.html from tokens.json. Dark only. No invented states."""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+tokens = json.loads((ROOT / "tokens.json").read_text())
+
+def val(path):
+    node = tokens
+    for part in path.split("."):
+        node = node[part]
+    return node["$value"] if isinstance(node, dict) and "$value" in node else node
+
+# resolve one-level aliases of the form {core.color.x}
+def resolve(value, depth=0):
+    if not isinstance(value, str) or depth > 6:
+        return value
+    if value.startswith("{") and value.endswith("}"):
+        return resolve(val(value[1:-1]), depth + 1)
+    return value
+
+swatches = [
+    ("page", "dark.page"),
+    ("surface", "dark.surface"),
+    ("surface 2", "dark.surface-2"),
+    ("text", "dark.text"),
+    ("muted", "dark.muted"),
+    ("body", "core.color.text-body"),
+    ("tertiary", "core.color.text-tertiary"),
+    ("accent", "dark.accent"),
+    ("up", "dark.up"),
+    ("down", "dark.down"),
+    ("hairline", "core.color.hairline"),
+    ("control", "core.color.control"),
+]
+
+def chip(name, path):
+    colour = resolve(val(path))
+    return f'<div class="swatch"><i style="background:{colour}"></i><b>{name}</b><code>{colour}</code><small>{path}</small></div>'
+
+html = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MWM style guide</title>
+<style>
+  :root {{
+    color-scheme: dark;
+    --page: {resolve(val('dark.page'))};
+    --text: {resolve(val('dark.text'))};
+    --muted: {resolve(val('dark.muted'))};
+    --surface: {resolve(val('dark.surface'))};
+    --line: {resolve(val('dark.border'))};
+    --font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }}
+  body {{ margin: 0; background: var(--page); color: var(--text); font: 16px/1.5 var(--font); }}
+  main {{ max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }}
+  h1 {{ font-size: 40px; line-height: 1.05; letter-spacing: -1.2px; font-weight: 600; margin: 0 0 8px; }}
+  h2 {{ font-size: 18px; margin: 40px 0 12px; }}
+  p {{ color: var(--muted); max-width: 62ch; }}
+  .row {{ display: flex; flex-wrap: wrap; gap: 12px; }}
+  .swatch {{ width: 140px; }}
+  .swatch i {{ display: block; height: 64px; border-radius: 8px; border: 1px solid rgba(255,255,255,.12); }}
+  .swatch b, .swatch code, .swatch small {{ display: block; font-size: 12px; }}
+  .swatch code, .swatch small {{ color: var(--muted); }}
+  .btn {{ display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 8px; font-size: 13px; font-weight: 600; letter-spacing: -0.26px; text-decoration: none; }}
+  .primary {{ background: #fff; color: #0c0c0c; }}
+  .secondary {{ background: rgba(255,255,255,.1); color: #fff; }}
+  .pricing {{ display: inline-flex; align-items: center; justify-content: center; height: 44px; min-width: 180px; border-radius: 8px; background: #fff; color: #000; font-weight: 600; }}
+  .disabled {{ display: inline-flex; align-items: center; justify-content: center; height: 48px; min-width: 180px; border-radius: 8px; background: #2a2a2a; color: #616161; font-weight: 700; font-size: 12.25px; }}
+  .field {{ width: 280px; box-sizing: border-box; height: 40px; border-radius: 8px; border: 1px solid #1a1a1a; background: #141414; color: #fff; padding: 10px 16px; font: 12.25px/18.375px var(--font); }}
+  .field:focus {{ background: #1c1c1c; border-color: #3a3a3a; outline: none; }}
+  .card {{ width: 220px; padding: 18px; border-radius: 16px; background: #181818; }}
+  .card.selected {{ background: #1d1d1d; box-shadow: rgba(255,83,1,.32) 0 0 0 1px inset; }}
+  .display {{ font-size: 72px; font-weight: 600; line-height: 76px; letter-spacing: -2.88px; margin: 0; }}
+  .note {{ font-size: 13px; color: var(--muted); }}
+</style>
+</head>
+<body>
+<main>
+  <h1>MWM</h1>
+  <p>Public marketing site, dark only, measured 2026-11-21. Hover and pressed header buttons are not shown: they were not measured.</p>
+  <h2>Colours</h2>
+  <div class="row">
+    {''.join(chip(n, p) for n, p in swatches)}
+  </div>
+  <h2>Type</h2>
+  <p class="display">Build</p>
+  <p>72 px, weight 600, line-height 76 px, tracking -2.88 px, Inter. The declared display stack names Modern Gothic first. That face was not loaded.</p>
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn primary">Build your app</a>
+    <a class="btn secondary">Open MWM Console</a>
+    <a class="pricing">Get MWM AI Pro</a>
+    <span class="disabled">Submit Dispute</span>
+  </div>
+  <p class="note">Primary label #0c0c0c. Pricing label #000. Disabled submit is the empty form, not a hover state.</p>
+  <h2>Field</h2>
+  <input class="field" placeholder="Empty field" aria-label="Empty field specimen">
+  <p class="note">Default fill #141414, border #1a1a1a. Focus fill #1c1c1c, border #3a3a3a. Do not type a real value here.</p>
+  <h2>Card</h2>
+  <div class="row">
+    <div class="card">Category</div>
+    <div class="card selected">Selected</div>
+  </div>
+  <p class="note">Selected ring is rgba(255, 83, 1, 0.32) inset 1 px.</p>
+</main>
+</body>
+</html>
+"""
+(ROOT / "style-guide.html").write_text(html)
+print("wrote style-guide.html")
