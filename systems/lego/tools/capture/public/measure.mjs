@@ -16,7 +16,11 @@ const cdp = await context.newCDPSession(page);
 await cdp.send('DOM.enable');
 await cdp.send('CSS.enable');
 
-const components = {};
+// Start from the committed readings: a run that fails part-way, or is blocked
+// before it reads anything, keeps every component and state it did not reach.
+const prior = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : null;
+const components = (prior && prior.components) || {};
+const failedPages = [];
 
 // Written after every page, so a later failure keeps what was already read.
 function save() {
@@ -44,7 +48,12 @@ async function record(name, state, locator) {
   let cropPath = null;
   try { cropPath = await crop(page, loc, `${name}-${state}`); } catch (e) { log('  crop fail', name, state, String(e.message).slice(0, 120)); }
   components[name] ??= {};
-  components[name][state] = { style, crop: cropPath, page: page.url().split('?')[0] };
+  const old = components[name][state];
+  if (style && style.error && old && old.style && !old.style.error) {
+    components[name][state] = { ...old, recaptureError: style.error }; // keep the prior reading
+  } else {
+    components[name][state] = { style, crop: cropPath, page: page.url().split('?')[0] };
+  }
   log('  ok', name, state, style && style.style && style.style.backgroundColor);
 }
 
@@ -110,7 +119,7 @@ async function states(name, locator, { press = true, focus = false } = {}) {
 // Each page block runs on its own: a failure is logged, the components read so
 // far are saved, and the next page still runs.
 async function section(label, fn) {
-  try { await fn(); } catch (e) { log('page fail', label, String(e.message).slice(0, 160)); }
+  try { await fn(); } catch (e) { failedPages.push(label); log('page fail', label, String(e.message).slice(0, 160)); }
   save();
 }
 
@@ -194,3 +203,7 @@ await section('search-typed', async () => {
 
 log('wrote', OUT, 'components', Object.keys(components).length);
 await browser.close();
+if (failedPages.length) {
+  console.error('pages that failed (their earlier readings were kept):', failedPages.join(', '));
+  process.exitCode = 1;
+}
