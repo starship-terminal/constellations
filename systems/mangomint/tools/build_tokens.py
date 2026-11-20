@@ -260,6 +260,19 @@ def check(sets):
             for a in aliases(v):
                 if a not in names:
                     raise KeyError(f"{setname}.{n}: alias {{{a}}} points at nothing")
+            # Readers resolve only a whole-string reference, and a loop resolves to nothing: refuse a
+            # reference mixed into other text, and follow every chain to its literal.
+            refs = [v] if isinstance(v, str) else [m for m in v.values() if isinstance(m, str)] if isinstance(v, dict) else []
+            for r in refs:
+                if aliases(r) and not re.fullmatch(r"\{[^{}]+\}", r):
+                    raise ValueError(f"{setname}.{n}: {r!r} mixes a reference into other text")
+                seen = {n}
+                while isinstance(r, str) and re.fullmatch(r"\{[^{}]+\}", r):
+                    target = r[1:-1]
+                    if target in seen:
+                        raise ValueError(f"{setname}.{n}: reference loop through {target}")
+                    seen.add(target)
+                    r = names[target]["$value"]
             if isinstance(v, str) and aliases(v) and ty in ("color", "dimension", "fontFamily", "fontWeight", "duration"):
                 if names[aliases(v)[0]].get("$type") != ty:
                     raise TypeError(f"{setname}.{n}: alias {v} is a {names[aliases(v)[0]].get('$type')}, not a {ty}")

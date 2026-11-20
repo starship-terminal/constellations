@@ -29,6 +29,18 @@ class Tokens(unittest.TestCase):
         with self.assertRaises(TypeError):
             build_tokens.check(sets)
 
+    def test_check_refuses_a_reference_mixed_into_text(self):
+        sets = copy.deepcopy({"core": build_tokens.core, "light": build_tokens.light})
+        sets["core"]["radius"]["pill"]["$value"] = "48px {radius.login}"
+        with self.assertRaises(ValueError):
+            build_tokens.check(sets)
+
+    def test_check_refuses_a_self_reference(self):
+        sets = copy.deepcopy({"core": build_tokens.core, "light": build_tokens.light})
+        sets["core"]["radius"]["pill"]["$value"] = "{radius.pill}"
+        with self.assertRaises(ValueError):
+            build_tokens.check(sets)
+
     def test_check_refuses_a_bad_dimension(self):
         sets = copy.deepcopy({"core": build_tokens.core, "light": build_tokens.light})
         sets["core"]["radius"]["pill"]["$value"] = "48"
