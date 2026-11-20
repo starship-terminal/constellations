@@ -20,7 +20,7 @@ def resolve(value, trail=()):
 
 
 def color(path):
-    return resolve(TOKENS["light"]["background"].get(path, {}).get("$value") if False else walk(path))
+    return walk(path)
 
 
 def walk(path):

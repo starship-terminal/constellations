@@ -5,7 +5,7 @@ import pathlib
 HERE = pathlib.Path(__file__).resolve().parent.parent
 TEXT = """# West Elm components
 
-Public signed-out surfaces, measured on westelm.com on 2026-11-19 from computed styles. No element crops: the preview browser returned "The browser is not producing screenshot frames", so this inventory names the element and the token, and does not pretend a crop exists.
+Public signed-out surfaces, measured on westelm.com on 2026-11-19 from computed styles. No element crops: the preview browser returned "The browser is not producing screenshot frames", and a headless Playwright pass was refused with "403 - Restricted Access". This inventory names the element and the token. It does not pretend a crop exists.
 
 ## Button
 
@@ -103,7 +103,7 @@ Pressed and loading states were not forced.
 
 ## Gaps
 
-- No screenshots or crops. The preview browser did not produce screenshot frames.
+- No screenshots or crops. The preview browser did not produce screenshot frames. Headless Playwright was answered with 403 Restricted Access, so those images were discarded.
 - Dark theme: not shown. No theme switch on the public pages.
 - Phone width (390): not measured. The pane was 1169×731.
 - Hover, focus-visible and pressed were not forced live. Hover and disabled colours for Add to cart and the primary button come from stylesheet rules.
