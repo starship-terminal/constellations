@@ -7027,9 +7027,9 @@
       "description": "It's what's happening ",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://x.com/i/flow/login Continue with Google signed in and opened the home timeline. Product not walked.",
+      "notes": "https://x.com/home redirected to the logged-out home. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 21
     },
     {
