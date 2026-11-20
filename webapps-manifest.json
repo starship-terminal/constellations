@@ -3319,7 +3319,7 @@
       "description": "Human Quality AI Writing At Scale",
       "status": "pending",
       "package": null,
-      "notes": "https://macawhq.com/ is the marketing site. Log in points at https://app.macawhq.com/sign-in, which does not resolve. No email form.",
+      "notes": "https://macawhq.com/ is the marketing site. Log in points at https://app.macawhq.com/sign-in, which does not resolve. No email form. Public walk 2026-11-21: home, product, writing examples, pricing, contact, terms, privacy, and free-tool landings loaded. Log in, Start for free, and Google strategy leave for app.macawhq.com, which does not resolve. Contact was not submitted. Public package in PR 1505 at 211975fdd. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 10
@@ -5480,9 +5480,9 @@
       "description": "One platform for your team and your work",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://slack.com/signin and https://app.slack.com/get-started email Continue stayed on loading and did not send a code. Google, Microsoft, and Apple were not used.",
+      "notes": "Email probe: https://slack.com/signin and https://app.slack.com/get-started email Continue stayed on loading and did not send a code. Google, Microsoft, and Apple were not used. Public walk 2026-11-21: marketing, pricing, features, enterprise, solutions, resources, stories, blog, help, marketplace, trust, demo, contact, and legal loaded. Sign in stops at https://slack.com/signin. Get started stops at https://slack.com/get-started and https://app.slack.com/get-started. Those walls were not entered. No form was submitted. Public package in PR 1504 at 5103d08a0. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 16
     },
     {
