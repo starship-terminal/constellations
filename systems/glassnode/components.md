@@ -656,7 +656,7 @@ The "Assets" nav item with its live asset count (3,727 at capture); measured, ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 203 x 30; padding 0px 10px; radius 6px; background transparent; text inter 13/18.85 500, #b8b8b5 `light.measured.tokenization.tokNavInk`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #8a8a87 |
+| default | size 203 x 30; padding 0px 10px; radius 6px; background transparent; text inter 13/18.85 500, #b8b8b5; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #8a8a87 |
 | hover | background #232323; text inter 13/18.85 500, #e8e8e6 |
 | focus-visible | outline 2px solid #16cc8c `core.palette.accent`, offset 2px; layers a.rail-item.relative 203.0x30.0 2px solid rgb(22, 204, 140) offset 2px 6px |
 | pressed | background #232323; text inter 13/18.85 500, #e8e8e6 |
@@ -692,7 +692,7 @@ The "Request access" nav action to /api-access; measured, never followed. Read a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 203 x 30; padding 0px 10px; radius 6px; background transparent; text inter 13/18.85 500, #b8b8b5 `light.measured.tokenization.tokNavInk`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #8a8a87 |
+| default | size 203 x 30; padding 0px 10px; radius 6px; background transparent; text inter 13/18.85 500, #b8b8b5; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #8a8a87 |
 | hover | background #232323; text inter 13/18.85 500, #e8e8e6 |
 | focus-visible | outline 2px solid #16cc8c `core.palette.accent`, offset 2px; layers a.rail-item.relative 203.0x30.0 2px solid rgb(22, 204, 140) offset 2px 6px |
 | pressed | background #232323; text inter 13/18.85 500, #e8e8e6 |
@@ -702,7 +702,7 @@ The "Request access" nav action to /api-access; measured, never followed. Read a
 #### Registry stat
 A live registry count (assets/issuers/products/derivatives) in the nav or hero — the dark theme's numeric treatment. Read as `tok-stat` on the tokenization registry page.
 
-**Values (default).** size 203 x 30; padding 0px 10px; radius 6px; background transparent; text inter 13/18.85 500, #b8b8b5 `light.measured.tokenization.tokNavInk`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #8a8a87.
+**Values (default).** size 203 x 30; padding 0px 10px; radius 6px; background transparent; text inter 13/18.85 500, #b8b8b5; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #8a8a87.
 
 ![Registry stat default](components/crops/tok-stat-default.png)
 

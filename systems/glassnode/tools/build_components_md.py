@@ -404,7 +404,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c.get("states", {}).values():
-        if "style" not in st:
+        if "style" not in st or st.get("via") == "focus failed":  # a failed focus is the resting element: not a tally
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
