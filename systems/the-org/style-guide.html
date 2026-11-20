@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Org style guide</title>
+<style>
+:root {
+  --color-brand: #000840;
+  --color-primary-10: #f3f6fc;
+  --color-primary-20: #e7edf9;
+  --color-primary-40: #adb4fa;
+  --color-primary-100: #0f4be5;
+  --color-primary-100-hover: #0515d4;
+  --color-neutral-0: #ffffff;
+  --color-neutral-10: #f7f7f7;
+  --color-neutral-20: #eaeaeb;
+  --color-neutral-30: #d8d8d9;
+  --color-neutral-40: #ceced0;
+  --color-neutral-60: #b1b1b4;
+  --color-neutral-70: #919195;
+  --color-neutral-80: #707075;
+  --color-neutral-90: #464649;
+  --color-neutral-100: #0a0a0b;
+  --color-fg-1: #111321;
+  --color-fg-2: #6f7179;
+  --color-fg-3: #ababb1;
+  --color-fg-4: #e4e4e7;
+  --color-fg-5: #ffffff;
+  --color-bg-1: #ffffff;
+  --color-bg-2: #f9f9f9;
+  --color-bg-3: #f5f5f6;
+  --color-bg-4: #e4e4e7;
+  --color-bg-5: #6f7179;
+  --color-bg-6: #111321;
+  --color-status-success: #009378;
+  --color-status-warning: #ffb818;
+  --color-status-error: #f6354d;
+  --color-status-accent: #dcf2f3;
+  --font-family-primary: "Inter",sans-serif;
+  --font-family-secondary: "PP Right Grotesk",helvetica neue,helvetica,arial,sans-serif;
+  --font-size-fs-1: 12px;
+  --font-size-fs-1-5: 13px;
+  --font-size-fs-10: 40px;
+  --font-size-fs-11: 50px;
+  --font-size-fs-12: 60px;
+  --font-size-fs-13: 68px;
+  --font-size-fs-14: 76px;
+  --font-size-fs-2: 14px;
+  --font-size-fs-2-5: 15px;
+  --font-size-fs-3: 16px;
+  --font-size-fs-4: 18px;
+  --font-size-fs-4-5: 20px;
+  --font-size-fs-5: 22px;
+  --font-size-fs-6: 24px;
+  --font-size-fs-7: 28px;
+  --font-size-fs-8: 32px;
+  --font-size-fs-9: 36px;
+  --font-line-height-tight: 1;
+  --font-line-height-snug: 1.25;
+  --font-line-height-body: 1.5;
+  --spacing-sp-0: 0px;
+  --spacing-sp-1: 4px;
+  --spacing-sp-2: 8px;
+  --spacing-sp-2-5: 12px;
+  --spacing-sp-3: 16px;
+  --spacing-sp-3-5: 20px;
+  --spacing-sp-4: 24px;
+  --spacing-sp-5: 32px;
+  --spacing-sp-6: 40px;
+  --spacing-sp-6-5: 48px;
+  --spacing-sp-7: 56px;
+  --spacing-sp-8: 72px;
+  --spacing-sp-9: 104px;
+  --radius-icon: 4px;
+  --radius-card: 12px;
+  --radius-popover: 16px;
+  --layout-content: 1136px;
+  --layout-compact: 375px;
+  --layout-screen-xs: 480px;
+  --layout-screen-sm: 768px;
+  --layout-screen-md: 992px;
+  --layout-screen-lg: 1200px;
+  --layout-icon: 24px;
+  --motion-card-hover: 80ms;
+  --motion-ease-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --motion-ease-enter: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --page: #fefefe;
+  --surface: #ffffff;
+  --surface-muted: #f9f9f9;
+  --text: #111321;
+  --muted: #6f7179;
+  --disabled: #ababb1;
+  --accent: #1754cf;
+  --accent-hover: #0f49bd;
+  --accent-pressed: #093eaa;
+  --on-accent: #ffffff;
+  --ink: #272725;
+  --link: #0f4be5;
+  --border: #eaeaeb;
+  --success: #009378;
+  --warning: #ffb818;
+  --danger: #f6354d;
+  --component-signup-height: 32px;
+  --component-signup-radius: 40px;
+  --component-hero-cta-height: 48px;
+  --component-search-height: 40px;
+  --sg-sans: Inter, "DM Sans", system-ui, sans-serif;
+  --sg-display: "PP Right Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #111321); background: var(--page, #fefefe); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-display); margin: 0 0 8px; letter-spacing: -0.03em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #6f7179); margin: 48px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #eaeaeb); }
+.lead, .note { max-width: 68ch; color: var(--muted, #6f7179); }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: 12px; border: 1px solid var(--border, #eaeaeb); }
+.sw b, .sw span { display: block; font: 500 11px/1.3 var(--sg-mono); margin-top: 4px; }
+.sw span { font-weight: 400; color: var(--muted, #6f7179); }
+.mock { border: 1px solid var(--border, #eaeaeb); border-radius: 16px; overflow: hidden; background: var(--page, #fefefe); margin-top: 16px; }
+.nav { display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 24px; }
+.nav .logo { font: 700 18px/1 var(--sg-display); letter-spacing: -0.04em; margin-right: auto; }
+.nav a { color: var(--text); text-decoration: none; font-size: 14px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 32px; padding: 0 16px; border-radius: 16px; background: var(--accent, #1754cf); color: var(--on-accent, #fff); font: 500 14px/1 var(--sg-sans); }
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 48px 32px; }
+.hero h2 { font: 500 48px/0.95 var(--sg-display); letter-spacing: -0.03em; margin: 0; text-transform: uppercase; }
+.hero p { color: var(--muted); }
+.cta { display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 24px; background: var(--ink, #272725); color: var(--page, #fdfdfc); font-weight: 500; }
+.ghost { display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 24px; background: var(--surface, #fff); color: var(--text); border: 1px solid var(--border); margin-left: 8px; }
+.card { border: 1px solid var(--border); border-radius: 12px; padding: 16px; background: var(--surface); }
+.row { display: flex; gap: 8px; margin-top: 16px; }
+@media (max-width: 700px) { .hero { grid-template-columns: 1fr; padding: 24px 16px; } .hero h2 { font-size: 36px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>The Org style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Swatches are the declared custom properties and the measured button colours. One light theme.</p>
+  <h2 class="sh">Chrome</h2>
+  <div class="mock">
+    <div class="nav"><span class="logo">THE ORG</span><a>Platform</a><a>Enrich</a><a>Pricing</a><span class="btn">Sign up</span></div>
+    <div class="hero">
+      <div>
+        <h2>Transparency starts here</h2>
+        <p>Join the world's biggest network of public org charts.</p>
+        <div class="row"><span class="cta">Start for free</span><span class="ghost">Learn more</span></div>
+      </div>
+      <div class="card">Org chart card. White surface, 12px radius, navy text.</div>
+    </div>
+  </div>
+  <h2 class="sh">Palette</h2>
+  <div class="swatches" id="swatches"></div>
+</main>
+<script>
+const TOK = {"core":{"color":{"brand":{"v":"#000840","t":"color","s":"css-var --brand resolved on https://theorg.com/ (light)","d":"Navy brand ink."},"primary":{"10":{"v":"#f3f6fc","t":"color","s":"css-var --primary-10 resolved on https://theorg.com/ (light)"},"20":{"v":"#e7edf9","t":"color","s":"css-var --primary-20 resolved on https://theorg.com/ (light)"},"40":{"v":"#adb4fa","t":"color","s":"css-var --primary-40 resolved on https://theorg.com/ (light)"},"100":{"v":"#0f4be5","t":"color","s":"css-var --primary-100 resolved on https://theorg.com/ (light)","d":"Declared link blue."},"100-hover":{"v":"#0515d4","t":"color","s":"css-var --primary-100-hover resolved on https://theorg.com/ (light)"}},"neutral":{"0":{"v":"#ffffff","t":"color","s":"css-var --neutral-0 resolved on https://theorg.com/ (light)"},"10":{"v":"#f7f7f7","t":"color","s":"css-var --neutral-10 resolved on https://theorg.com/ (light)"},"20":{"v":"#eaeaeb","t":"color","s":"css-var --neutral-20 resolved on https://theorg.com/ (light)"},"30":{"v":"#d8d8d9","t":"color","s":"css-var --neutral-30 resolved on https://theorg.com/ (light)"},"40":{"v":"#ceced0","t":"color","s":"css-var --neutral-40 resolved on https://theorg.com/ (light)"},"60":{"v":"#b1b1b4","t":"color","s":"css-var --neutral-60 resolved on https://theorg.com/ (light)"},"70":{"v":"#919195","t":"color","s":"css-var --neutral-70 resolved on https://theorg.com/ (light)"},"80":{"v":"#707075","t":"color","s":"css-var --neutral-80 resolved on https://theorg.com/ (light)"},"90":{"v":"#464649","t":"color","s":"css-var --neutral-90 resolved on https://theorg.com/ (light)"},"100":{"v":"#0a0a0b","t":"color","s":"css-var --neutral-100 resolved on https://theorg.com/ (light)"}},"fg":{"1":{"v":"#111321","t":"color","s":"css-var --fg-fg1 resolved on https://theorg.com/ (light)"},"2":{"v":"#6f7179","t":"color","s":"css-var --fg-fg2 resolved on https://theorg.com/ (light)"},"3":{"v":"#ababb1","t":"color","s":"css-var --fg-fg3 resolved on https://theorg.com/ (light)"},"4":{"v":"#e4e4e7","t":"color","s":"css-var --fg-fg4 resolved on https://theorg.com/ (light)"},"5":{"v":"#ffffff","t":"color","s":"css-var --fg-fg5 resolved on https://theorg.com/ (light)"}},"bg":{"1":{"v":"#ffffff","t":"color","s":"css-var --bg-bg1 resolved on https://theorg.com/ (light)"},"2":{"v":"#f9f9f9","t":"color","s":"css-var --bg-bg2 resolved on https://theorg.com/ (light)"},"3":{"v":"#f5f5f6","t":"color","s":"css-var --bg-bg3 resolved on https://theorg.com/ (light)"},"4":{"v":"#e4e4e7","t":"color","s":"css-var --bg-bg4 resolved on https://theorg.com/ (light)"},"5":{"v":"#6f7179","t":"color","s":"css-var --bg-bg5 resolved on https://theorg.com/ (light)"},"6":{"v":"#111321","t":"color","s":"css-var --bg-bg6 resolved on https://theorg.com/ (light)"}},"status":{"success":{"v":"#009378","t":"color","s":"css-var --success resolved on https://theorg.com/ (light)"},"warning":{"v":"#ffb818","t":"color","s":"css-var --warning resolved on https://theorg.com/ (light)"},"error":{"v":"#f6354d","t":"color","s":"css-var --error resolved on https://theorg.com/ (light)"},"accent":{"v":"#dcf2f3","t":"color","s":"css-var --accent-100 resolved on https://theorg.com/ (light)","d":"Pale teal accent declared beside the landing colours."}}},"font":{"family":{"primary":{"v":"\"Inter\",sans-serif","t":"fontFamily","s":"css-var --font-primary"},"secondary":{"v":"\"PP Right Grotesk\",helvetica neue,helvetica,arial,sans-serif","t":"fontFamily","s":"css-var --font-secondary"}},"size":{"fs-1":{"v":"12px","t":"dimension","s":"css-var --fs-1 resolved on https://theorg.com/ (light)"},"fs-1-5":{"v":"13px","t":"dimension","s":"css-var --fs-1-5 resolved on https://theorg.com/ (light)"},"fs-10":{"v":"40px","t":"dimension","s":"css-var --fs-10 resolved on https://theorg.com/ (light)"},"fs-11":{"v":"50px","t":"dimension","s":"css-var --fs-11 resolved on https://theorg.com/ (light)"},"fs-12":{"v":"60px","t":"dimension","s":"css-var --fs-12 resolved on https://theorg.com/ (light)"},"fs-13":{"v":"68px","t":"dimension","s":"css-var --fs-13 resolved on https://theorg.com/ (light)"},"fs-14":{"v":"76px","t":"dimension","s":"css-var --fs-14 resolved on https://theorg.com/ (light)"},"fs-2":{"v":"14px","t":"dimension","s":"css-var --fs-2 resolved on https://theorg.com/ (light)"},"fs-2-5":{"v":"15px","t":"dimension","s":"css-var --fs-2-5 resolved on https://theorg.com/ (light)"},"fs-3":{"v":"16px","t":"dimension","s":"css-var --fs-3 resolved on https://theorg.com/ (light)"},"fs-4":{"v":"18px","t":"dimension","s":"css-var --fs-4 resolved on https://theorg.com/ (light)"},"fs-4-5":{"v":"20px","t":"dimension","s":"css-var --fs-4-5 resolved on https://theorg.com/ (light)"},"fs-5":{"v":"22px","t":"dimension","s":"css-var --fs-5 resolved on https://theorg.com/ (light)"},"fs-6":{"v":"24px","t":"dimension","s":"css-var --fs-6 resolved on https://theorg.com/ (light)"},"fs-7":{"v":"28px","t":"dimension","s":"css-var --fs-7 resolved on https://theorg.com/ (light)"},"fs-8":{"v":"32px","t":"dimension","s":"css-var --fs-8 resolved on https://theorg.com/ (light)"},"fs-9":{"v":"36px","t":"dimension","s":"css-var --fs-9 resolved on https://theorg.com/ (light)"}},"line-height":{"tight":{"v":1,"t":"number","s":"css-var --lh-1"},"snug":{"v":1.25,"t":"number","s":"css-var --lh-2"},"body":{"v":1.5,"t":"number","s":"css-var --lh-3"}}},"spacing":{"sp-0":{"v":"0px","t":"dimension","s":"css-var --sp-0 resolved on https://theorg.com/ (light)"},"sp-1":{"v":"4px","t":"dimension","s":"css-var --sp-1 resolved on https://theorg.com/ (light)"},"sp-2":{"v":"8px","t":"dimension","s":"css-var --sp-2 resolved on https://theorg.com/ (light)"},"sp-2-5":{"v":"12px","t":"dimension","s":"css-var --sp-2-5 resolved on https://theorg.com/ (light)"},"sp-3":{"v":"16px","t":"dimension","s":"css-var --sp-3 resolved on https://theorg.com/ (light)"},"sp-3-5":{"v":"20px","t":"dimension","s":"css-var --sp-3-5 resolved on https://theorg.com/ (light)"},"sp-4":{"v":"24px","t":"dimension","s":"css-var --sp-4 resolved on https://theorg.com/ (light)"},"sp-5":{"v":"32px","t":"dimension","s":"css-var --sp-5 resolved on https://theorg.com/ (light)"},"sp-6":{"v":"40px","t":"dimension","s":"css-var --sp-6 resolved on https://theorg.com/ (light)"},"sp-6-5":{"v":"48px","t":"dimension","s":"css-var --sp-6-5 resolved on https://theorg.com/ (light)"},"sp-7":{"v":"56px","t":"dimension","s":"css-var --sp-7 resolved on https://theorg.com/ (light)"},"sp-8":{"v":"72px","t":"dimension","s":"css-var --sp-8 resolved on https://theorg.com/ (light)"},"sp-9":{"v":"104px","t":"dimension","s":"css-var --sp-9 resolved on https://theorg.com/ (light)"}},"radius":{"icon":{"v":"4px","t":"dimension","s":"css-var --icon-radius resolved on https://theorg.com/ (light)"},"card":{"v":"12px","t":"dimension","s":"css-var --border-radius resolved on https://theorg.com/ (light)"},"popover":{"v":"16px","t":"dimension","s":"css-var --popover-rounding resolved on https://theorg.com/ (light)"}},"layout":{"content":{"v":"1136px","t":"dimension","s":"css-var --max-content-width resolved on https://theorg.com/ (light)"},"compact":{"v":"375px","t":"dimension","s":"css-var --max-width-compact resolved on https://theorg.com/ (light)"},"screen-xs":{"v":"480px","t":"dimension","s":"css-var --screen-xs-min resolved on https://theorg.com/ (light)"},"screen-sm":{"v":"768px","t":"dimension","s":"css-var --screen-sm-min resolved on https://theorg.com/ (light)"},"screen-md":{"v":"992px","t":"dimension","s":"css-var --screen-md-min resolved on https://theorg.com/ (light)"},"screen-lg":{"v":"1200px","t":"dimension","s":"css-var --screen-lg-min resolved on https://theorg.com/ (light)"},"icon":{"v":"24px","t":"dimension","s":"css-var --icon-size resolved on https://theorg.com/ (light)"}},"motion":{"card-hover":{"v":"80ms","t":"duration","s":"css-var --transition-card-hover-duration"},"ease-out":{"v":[0.19,1,0.22,1],"t":"cubicBezier","s":"css-var --transition-01"},"ease-enter":{"v":[0.075,0.82,0.165,1],"t":"cubicBezier","s":"css-var --transition-timing-function"}}},"light":{"page":{"v":"#fefefe","t":"color","s":"css-var --background resolved on https://theorg.com/ (light)","d":"Page background."},"surface":{"v":"#ffffff","t":"color","s":"css-var --bg-bg1 resolved on https://theorg.com/ (light)","d":"Card and menu surface."},"surface-muted":{"v":"#f9f9f9","t":"color","s":"css-var --bg-bg2 resolved on https://theorg.com/ (light)"},"text":{"v":"#111321","t":"color","s":"css-var --fg-fg1 resolved on https://theorg.com/ (light)"},"muted":{"v":"#6f7179","t":"color","s":"css-var --fg-fg2 resolved on https://theorg.com/ (light)"},"disabled":{"v":"#ababb1","t":"color","s":"css-var --fg-fg3 resolved on https://theorg.com/ (light)"},"accent":{"v":"#1754cf","t":"color","s":"computed backgroundColor of nav-signup default (raw/components-computed.json)"},"accent-hover":{"v":"#0f49bd","t":"color","s":"computed backgroundColor of nav-signup hover (raw/components-computed.json)"},"accent-pressed":{"v":"#093eaa","t":"color","s":"computed backgroundColor of nav-signup pressed (raw/components-computed.json)"},"on-accent":{"v":"#ffffff","t":"color","s":"computed color of nav-signup default (raw/components-computed.json)"},"ink":{"v":"#272725","t":"color","s":"computed backgroundColor of hero-cta default (raw/components-computed.json)"},"link":{"v":"#0f4be5","t":"color","s":"css-var --primary-100 resolved on https://theorg.com/ (light)"},"border":{"v":"#eaeaeb","t":"color","s":"css-var --neutral-20 resolved on https://theorg.com/ (light)"},"success":{"v":"#009378","t":"color","s":"css-var --success resolved on https://theorg.com/ (light)"},"warning":{"v":"#ffb818","t":"color","s":"css-var --warning resolved on https://theorg.com/ (light)"},"danger":{"v":"#f6354d","t":"color","s":"css-var --error resolved on https://theorg.com/ (light)"},"component":{"signup":{"height":{"v":"32px","t":"dimension","s":"computed height of nav-signup default (raw/components-computed.json)"},"radius":{"v":"40px","t":"dimension","s":"computed borderRadius of nav-signup default"}},"hero-cta":{"height":{"v":"48px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)"}},"search":{"height":{"v":"40px","t":"dimension","s":"computed height of search-field default (raw/components-computed.json)"}}}},"dark":{}};
+const roles = ["page","surface","text","muted","accent","on-accent","ink","link","border","success","warning","danger"];
+const box = document.getElementById("swatches");
+for (const name of roles) {
+  const t = TOK.light[name];
+  if (!t) continue;
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i></i><b>" + name + "</b><span></span>";
+  el.querySelector("i").style.background = t.$value;
+  el.querySelector("span").textContent = t.$value;
+  box.appendChild(el);
+}
+</script>
+</body>
+</html>
