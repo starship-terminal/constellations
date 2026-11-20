@@ -68,23 +68,24 @@ Page: home. Selector: `form.search-field`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 585 x 44 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Averta 15px/22px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #303538 | = | = | = |
-| Text node | span.ui-select__single-label: Averta 14px/20px 600, #303538 | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 16 x 16, colour #899298, fill #000000 | = | = | = |
-| Painted layers | input.search-field__input 585.0x44.0 bg #fafdff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 100px; div::before.search-field__category 1pxx24px bg #899298; div.multiselect__tags 120.0x32.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 3px; div.multiselect__content-wrapper 0.0x0.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 8px shadow #000000 @ 0.15 0px 0px 8px 0px; span.multiselect__option.multiselect__option--highlight 0.0x0.0 bg #edf2f5; div.search-dropdown 0.0x0.0 bg #ffffff r 24px shadow #000000 @ 0.15 0px 0px 8px 0px | input.search-field__input 585.0x44.0 bg #fafdff border T:1px solid #ccd4da / R:1px solid #ccd4da / B:1px solid #ccd4da / L:1px solid #ccd4da r 100px; div::before.search-field__category 1pxx24px bg #899298; div.multiselect__tags 120.0x32.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 3px; div.multiselect__content-wrapper 0.0x0.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 8px shadow #000000 @ 0.15 0px 0px 8px 0px; span.multiselect__option.multiselect__option--highlight 0.0x0.0 bg #edf2f5; div.search-dropdown 0.0x0.0 bg #ffffff r 24px shadow #000000 @ 0.15 0px 0px 8px 0px | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 585 x 44 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Averta 15px/22px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #303538 | = | - | = |
+| Text node | span.ui-select__single-label: Averta 14px/20px 600, #303538 | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 16 x 16, colour #899298, fill #000000 | = | - | = |
+| Painted layers | input.search-field__input 585.0x44.0 bg #fafdff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 100px; div::before.search-field__category 1pxx24px bg #899298; div.multiselect__tags 120.0x32.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 3px; div.multiselect__content-wrapper 0.0x0.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 8px shadow #000000 @ 0.15 0px 0px 8px 0px; span.multiselect__option.multiselect__option--highlight 0.0x0.0 bg #edf2f5; div.search-dropdown 0.0x0.0 bg #ffffff r 24px shadow #000000 @ 0.15 0px 0px 8px 0px | input.search-field__input 585.0x44.0 bg #fafdff border T:1px solid #ccd4da / R:1px solid #ccd4da / B:1px solid #ccd4da / L:1px solid #ccd4da r 100px; div::before.search-field__category 1pxx24px bg #899298; div.multiselect__tags 120.0x32.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 3px; div.multiselect__content-wrapper 0.0x0.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 8px shadow #000000 @ 0.15 0px 0px 8px 0px; span.multiselect__option.multiselect__option--highlight 0.0x0.0 bg #edf2f5; div.search-dropdown 0.0x0.0 bg #ffffff r 24px shadow #000000 @ 0.15 0px 0px 8px 0px | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-search-default.png`, `nav-search-hover.png`, `nav-search-focus-visible.png`, `nav-search-pressed.png`.
+Crops: `nav-search-default.png`, `nav-search-hover.png`, `nav-search-pressed.png`.
 
 #### join-link
 
@@ -145,22 +146,23 @@ Page: home. Selector: `cart icon`. States: default, hover, focus-visible, presse
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 20 x 23 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Averta 14px/14px 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #088178 | #003a37 | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 20 x 21, colour #000000 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 20 x 23 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Averta 14px/14px 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #088178 | #003a37 | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 20 x 21, colour #000000 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `cart-icon-default.png`, `cart-icon-hover.png`, `cart-icon-focus-visible.png`, `cart-icon-pressed.png`.
+Crops: `cart-icon-default.png`, `cart-icon-hover.png`, `cart-icon-pressed.png`.
 
 #### nav-link
 
@@ -785,23 +787,24 @@ Page: search. Selector: `result card`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 320 x 213.33 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Averta 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #303538 | = | = | = |
-| Text node | span.product-thumbnail-badge__text: Averta 14px/14px 400, #303538 | span.product-thumbnail-badge__text: Averta 14px/14px 400, #003a37 | = | = |
-| Transition | none | = | = | = |
-| Icon | 16 x 16, colour #303538 | = | = | = |
-| Painted layers | a 320.0x213.3 bg #edf2f5; div.product-thumbnail-badge 143.4x28.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 0px 18px 0px 0px; button.like-button.product-thumbnail__like-button 30.0x30.0 bg #ffffff @ 0.9 r 3.35544e+07px shadow #000000 @ 0.1 0px 1px 8px 0px, #000000 @ 0.05 0px 0px 1px 1px, #ffffff 0px 1px 1px 0px inset, #ffffff @ 0.25 0px -1px 0px 0px inset; button.sp-button.product-card-add-to-cart 0.0x0.0 bg #088178 border T:2px solid #088178 / R:2px solid #088178 / B:2px solid #088178 / L:2px solid #088178 | a 320.0x213.3 bg #edf2f5; div.product-thumbnail__font-preview 320.0x213.3 bg #ffffff; div.product-thumbnail-badge 143.4x28.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 0px 18px 0px 0px; button.like-button.product-thumbnail__like-button 30.0x30.0 bg #ffffff @ 0.9 r 3.35544e+07px shadow #000000 @ 0.1 0px 1px 8px 0px, #000000 @ 0.05 0px 0px 1px 1px, #ffffff 0px 1px 1px 0px inset, #ffffff @ 0.25 0px -1px 0px 0px inset; button.sp-button.product-card-add-to-cart 320.0x44.0 bg #088178 border T:2px solid #088178 / R:2px solid #088178 / B:2px solid #088178 / L:2px solid #088178 | a 320.0x213.3 bg #edf2f5; div.product-thumbnail__font-preview 320.0x213.3 bg #ffffff; div.product-thumbnail-badge 143.4x28.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 0px 18px 0px 0px; button.like-button.product-thumbnail__like-button 30.0x30.0 bg #ffffff @ 0.9 r 3.35544e+07px shadow #000000 @ 0.1 0px 1px 8px 0px, #000000 @ 0.05 0px 0px 1px 1px, #ffffff 0px 1px 1px 0px inset, #ffffff @ 0.25 0px -1px 0px 0px inset; button.sp-button.product-card-add-to-cart 0.0x0.0 bg #088178 border T:2px solid #088178 / R:2px solid #088178 / B:2px solid #088178 / L:2px solid #088178 | a 320.0x213.3 bg #edf2f5; div.product-thumbnail__font-preview 320.0x213.3 bg #ffffff; div.product-thumbnail-badge 143.4x28.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 0px 18px 0px 0px; button.like-button.product-thumbnail__like-button 30.0x30.0 bg #ffffff @ 0.9 r 3.35544e+07px shadow #000000 @ 0.1 0px 1px 8px 0px, #000000 @ 0.05 0px 0px 1px 1px, #ffffff 0px 1px 1px 0px inset, #ffffff @ 0.25 0px -1px 0px 0px inset; button.sp-button.product-card-add-to-cart 320.0x44.0 bg #088178 border T:2px solid #088178 / R:2px solid #088178 / B:2px solid #088178 / L:2px solid #088178 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 320 x 213.33 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Averta 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #303538 | = | - | = |
+| Text node | span.product-thumbnail-badge__text: Averta 14px/14px 400, #303538 | span.product-thumbnail-badge__text: Averta 14px/14px 400, #003a37 | - | = |
+| Transition | none | = | - | = |
+| Icon | 16 x 16, colour #303538 | = | - | = |
+| Painted layers | a 320.0x213.3 bg #edf2f5; div.product-thumbnail-badge 143.4x28.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 0px 18px 0px 0px; button.like-button.product-thumbnail__like-button 30.0x30.0 bg #ffffff @ 0.9 r 3.35544e+07px shadow #000000 @ 0.1 0px 1px 8px 0px, #000000 @ 0.05 0px 0px 1px 1px, #ffffff 0px 1px 1px 0px inset, #ffffff @ 0.25 0px -1px 0px 0px inset; button.sp-button.product-card-add-to-cart 0.0x0.0 bg #088178 border T:2px solid #088178 / R:2px solid #088178 / B:2px solid #088178 / L:2px solid #088178 | a 320.0x213.3 bg #edf2f5; div.product-thumbnail__font-preview 320.0x213.3 bg #ffffff; div.product-thumbnail-badge 143.4x28.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 0px 18px 0px 0px; button.like-button.product-thumbnail__like-button 30.0x30.0 bg #ffffff @ 0.9 r 3.35544e+07px shadow #000000 @ 0.1 0px 1px 8px 0px, #000000 @ 0.05 0px 0px 1px 1px, #ffffff 0px 1px 1px 0px inset, #ffffff @ 0.25 0px -1px 0px 0px inset; button.sp-button.product-card-add-to-cart 320.0x44.0 bg #088178 border T:2px solid #088178 / R:2px solid #088178 / B:2px solid #088178 / L:2px solid #088178 | - | a 320.0x213.3 bg #edf2f5; div.product-thumbnail__font-preview 320.0x213.3 bg #ffffff; div.product-thumbnail-badge 143.4x28.0 bg #ffffff border T:1px solid #edf2f5 / R:1px solid #edf2f5 / B:1px solid #edf2f5 / L:1px solid #edf2f5 r 0px 18px 0px 0px; button.like-button.product-thumbnail__like-button 30.0x30.0 bg #ffffff @ 0.9 r 3.35544e+07px shadow #000000 @ 0.1 0px 1px 8px 0px, #000000 @ 0.05 0px 0px 1px 1px, #ffffff 0px 1px 1px 0px inset, #ffffff @ 0.25 0px -1px 0px 0px inset; button.sp-button.product-card-add-to-cart 320.0x44.0 bg #088178 border T:2px solid #088178 / R:2px solid #088178 / B:2px solid #088178 / L:2px solid #088178 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `result-card-default.png`, `result-card-hover.png`, `result-card-focus-visible.png`, `result-card-pressed.png`.
+Crops: `result-card-default.png`, `result-card-hover.png`, `result-card-pressed.png`.
 
 ### Membership
 
@@ -836,22 +839,23 @@ Page: membership. Selector: `plan card`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 274 x 323 | = | = | = |
-| Padding | 30px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 16px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Averta 16px/28px 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #303538 | = | = | = |
-| Text node | h3.pricing-tier__title: Averta 16px/28px 700, #6e777d | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.pricing-tier 274.0x323.0 bg #ffffff r 16px; hr.pricing-tier__hr 214.0x1.0 bg #edf2f5; button.btn.btn--tertiary-alternative 214.0x45.0 bg #edeeff border T:2px solid #edeeff / R:2px solid #edeeff / B:2px solid #edeeff / L:2px solid #edeeff r 8px; button::before.btn.btn--tertiary-alternative 336pxx336px bg #4e42a1 r 3.35544e+07px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 274 x 323 | = | - | = |
+| Padding | 30px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 16px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Averta 16px/28px 700 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #303538 | = | - | = |
+| Text node | h3.pricing-tier__title: Averta 16px/28px 700, #6e777d | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.pricing-tier 274.0x323.0 bg #ffffff r 16px; hr.pricing-tier__hr 214.0x1.0 bg #edf2f5; button.btn.btn--tertiary-alternative 214.0x45.0 bg #edeeff border T:2px solid #edeeff / R:2px solid #edeeff / B:2px solid #edeeff / L:2px solid #edeeff r 8px; button::before.btn.btn--tertiary-alternative 336pxx336px bg #4e42a1 r 3.35544e+07px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `plan-card-default.png`, `plan-card-hover.png`, `plan-card-focus-visible.png`, `plan-card-pressed.png`.
+Crops: `plan-card-default.png`, `plan-card-hover.png`, `plan-card-pressed.png`.
 
 ### Sign-in
 

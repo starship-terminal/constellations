@@ -1629,7 +1629,7 @@ Page: contact. Selector: `input.wpcf7-submit`. States: default, hover, focus-vis
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `cf7-send-default.png`, `cf7-send-hover.png`, `cf7-send-focus-visible.png`, `cf7-send-pressed.png`.
+Crops: `cf7-send-default.png`, `cf7-send-hover.png`, `cf7-send-pressed.png`.
 
 ### Search
 

@@ -497,7 +497,7 @@ Page: features. Selector: `feature card box`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `feat-card-default.png`, `feat-card-hover.png`, `feat-card-focus-visible.png`, `feat-card-pressed.png`.
+Crops: `feat-card-default.png`, `feat-card-hover.png`, `feat-card-pressed.png`.
 
 #### feat-link
 
@@ -935,7 +935,7 @@ Page: templates. Selector: `template card`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `template-card-default.png`, `template-card-hover.png`, `template-card-focus-visible.png`, `template-card-pressed.png`.
+Crops: `template-card-default.png`, `template-card-hover.png`, `template-card-pressed.png`.
 
 ### Academy and enterprise
 

@@ -240,7 +240,7 @@ Page: home. Selector: `announcement pill`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `hero-badge-default.png`, `hero-badge-hover.png`, `hero-badge-focus-visible.png`, `hero-badge-pressed.png`.
+Crops: `hero-badge-default.png`, `hero-badge-hover.png`, `hero-badge-pressed.png`.
 
 #### hero-title
 
@@ -861,7 +861,7 @@ Page: sales. Selector: `button "Send message"`. States: default, hover, focus-vi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `sales-submit-default.png`, `sales-submit-hover.png`, `sales-submit-focus-visible.png`, `sales-submit-pressed.png`.
+Crops: `sales-submit-default.png`, `sales-submit-hover.png`, `sales-submit-pressed.png`.
 
 ### Log in and sign up
 

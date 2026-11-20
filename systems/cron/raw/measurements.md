@@ -294,21 +294,22 @@ Page: blog. Selector: `post entry`. States: default, hover, focus-visible, press
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 676 x 987.53 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Helvetica Neue 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | a: Helvetica Neue 16px/16px 400, #616161 | = | = | = |
-| Transition | none | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 676 x 987.53 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Helvetica Neue 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | a: Helvetica Neue 16px/16px 400, #616161 | = | - | = |
+| Transition | none | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `post-entry-default.png`, `post-entry-hover.png`, `post-entry-focus-visible.png`, `post-entry-pressed.png`.
+Crops: `post-entry-default.png`, `post-entry-hover.png`, `post-entry-pressed.png`.
 
 ### Changelog
 
@@ -573,21 +574,22 @@ Page: home. Selector: `.nav-menu-button`. States: default, hover, focus-visible,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 24 x 18 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Helvetica Neue 16px/27.2px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #cccccc | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 24 x 24, colour #cccccc | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 24 x 18 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Helvetica Neue 16px/27.2px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #cccccc | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 24 x 24, colour #cccccc | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-focus-visible.png`, `m-menu-button-pressed.png`.
+Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-pressed.png`.
 
 #### m-menu-open
 

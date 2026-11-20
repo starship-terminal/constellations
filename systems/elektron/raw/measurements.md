@@ -347,7 +347,7 @@ Page: shop. Selector: `shop product group-content`. States: default, hover, focu
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `product-card-default.png`, `product-card-hover.png`, `product-card-focus-visible.png`, `product-card-pressed.png`.
+Crops: `product-card-default.png`, `product-card-hover.png`, `product-card-pressed.png`.
 
 #### product-card-title
 
@@ -526,7 +526,7 @@ Page: product-digitakt. Selector: `.block-button Key Features`. States: default,
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `accordion-default.png`, `accordion-hover.png`, `accordion-focus-visible.png`, `accordion-pressed.png`, `accordion-opened.png`.
+Crops: `accordion-default.png`, `accordion-hover.png`, `accordion-pressed.png`, `accordion-opened.png`.
 
 #### pdp-title-accessory
 

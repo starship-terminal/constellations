@@ -1107,7 +1107,7 @@ Page: artist. Selector: `player Back`. States: default, hover, focus-visible, pr
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `player-prev-default.png`, `player-prev-hover.png`, `player-prev-focus-visible.png`, `player-prev-pressed.png`.
+Crops: `player-prev-default.png`, `player-prev-hover.png`, `player-prev-pressed.png`.
 
 #### player-next
 
@@ -1366,7 +1366,7 @@ Page: offers. Selector: `ul.toggle-premiumtab`. States: default, hover, focus-vi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-focus-visible.png`, `billing-toggle-pressed.png`.
+Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-pressed.png`.
 
 #### toggle-option
 
@@ -1600,7 +1600,7 @@ Page: mobile. Selector: `.burger-menu`. States: default, hover, focus-visible, p
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 | Text node | - | = | = | = | a.nav-main-link.backstage-header-link: Inter 20px/normal 600, #fdfcfe |
 
-Crops: `m-hamburger-default.png`, `m-hamburger-hover.png`, `m-hamburger-focus-visible.png`, `m-hamburger-pressed.png`, `m-hamburger-opened.png`.
+Crops: `m-hamburger-default.png`, `m-hamburger-hover.png`, `m-hamburger-pressed.png`, `m-hamburger-opened.png`.
 
 #### m-drawer
 
@@ -1963,7 +1963,7 @@ Page: signup. Selector: `signup submit`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `signup-cta-default.png`, `signup-cta-hover.png`, `signup-cta-focus-visible.png`, `signup-cta-pressed.png`.
+Crops: `signup-cta-default.png`, `signup-cta-hover.png`, `signup-cta-pressed.png`.
 
 ## Transitions declared in the readable stylesheets
 

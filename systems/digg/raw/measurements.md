@@ -250,7 +250,7 @@ Page: home. Selector: `Compact button`. States: default, hover, focus-visible, p
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `feed-compact-default.png`, `feed-compact-hover.png`, `feed-compact-focus-visible.png`, `feed-compact-pressed.png`.
+Crops: `feed-compact-default.png`, `feed-compact-hover.png`, `feed-compact-pressed.png`.
 
 #### cat-title
 
@@ -327,7 +327,7 @@ Page: home. Selector: `data-post-headline`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `post-headline-default.png`, `post-headline-hover.png`, `post-headline-focus-visible.png`, `post-headline-pressed.png`.
+Crops: `post-headline-default.png`, `post-headline-hover.png`, `post-headline-pressed.png`.
 
 #### post-summary
 
@@ -380,7 +380,7 @@ Page: home. Selector: `vote button`. States: default, hover, focus-visible, pres
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `post-vote-default.png`, `post-vote-hover.png`, `post-vote-focus-visible.png`, `post-vote-pressed.png`.
+Crops: `post-vote-default.png`, `post-vote-hover.png`, `post-vote-pressed.png`.
 
 #### post-comment
 
@@ -407,7 +407,7 @@ Page: home. Selector: `comment link`. States: default, hover, focus-visible, pre
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `post-comment-default.png`, `post-comment-hover.png`, `post-comment-focus-visible.png`, `post-comment-pressed.png`.
+Crops: `post-comment-default.png`, `post-comment-hover.png`, `post-comment-pressed.png`.
 
 #### post-avatars
 
@@ -434,7 +434,7 @@ Page: home. Selector: `source avatar`. States: default, hover, focus-visible, pr
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `post-avatars-default.png`, `post-avatars-hover.png`, `post-avatars-focus-visible.png`, `post-avatars-pressed.png`.
+Crops: `post-avatars-default.png`, `post-avatars-hover.png`, `post-avatars-pressed.png`.
 
 #### post-sources
 
@@ -459,7 +459,7 @@ Page: home. Selector: `sources meta link`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `post-sources-default.png`, `post-sources-hover.png`, `post-sources-focus-visible.png`, `post-sources-pressed.png`.
+Crops: `post-sources-default.png`, `post-sources-hover.png`, `post-sources-pressed.png`.
 
 #### post-thumb
 
