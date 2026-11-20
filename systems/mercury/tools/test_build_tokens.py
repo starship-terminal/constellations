@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The Mercury token file resolves, and every token records a source."""
+"""The Mercury token file matches a fresh build, resolves, and every token records a source."""
 import json
 import pathlib
 import re
@@ -48,6 +48,19 @@ def lookup(path, depth=0):
 
 
 class TokensTest(unittest.TestCase):
+    def test_committed_tokens_match_build(self):
+        # Builds in memory (the builder writes only when run as a script).
+        import build_tokens
+        self.assertEqual(TOKENS, json.loads(json.dumps(build_tokens.tokens)))
+
+    def test_dtcg_value_shapes(self):
+        for path, node in FLAT.items():
+            if node["$type"] == "cubicBezier":
+                self.assertIsInstance(node["$value"], list, path)
+                self.assertEqual(len(node["$value"]), 4, path)
+            if node["$type"] == "color" and isinstance(node["$value"], str) and node["$value"].startswith("#"):
+                self.assertIn(len(node["$value"]), (7, 9), path)
+
     def test_themes(self):
         self.assertEqual([t["id"] for t in TOKENS["$themes"]], ["light", "dark"])
 

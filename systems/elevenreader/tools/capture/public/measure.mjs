@@ -230,6 +230,10 @@ async function toggle(loc, { allowLink = false } = {}) {
 
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
+// A <details> opened for its `open` reading is closed again, or the next entry on
+// the same node (its summary) is read open but labelled default.
+const closeDetails = async (l) => { await l.filter({ visible: true }).first().evaluate((el) => { el.open = false; }); await page.waitForTimeout(400); };
+
 
 async function sheetsFor(key) {
   const res = await page.evaluate(() => {
@@ -303,6 +307,10 @@ async function markPainted(sel, tag, { maxUp = 8, minW = 100, minH = 60, descend
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }
 
+// markPainted returns a never-matching locator on a miss, never null, so a
+// `marked || fallback` never falls back: choose by count() instead.
+const orElse = async (loc, fallback) => ((loc && (await loc.count())) ? loc : fallback);
+
 // Marks the widest element matching sel: for repeated media like the hero
 // orbit's cover cards, where first-match lands on an edge-on card.
 async function markWidest(sel, tag) {
@@ -349,7 +357,7 @@ async function home() {
   };
   try { await openDiscover(); } catch (e) { log('  ! discover open failed', String(e.message).split('\n')[0]); }
   const panel = await markPainted('a[href*="/genres/"], a[href*="/collections/"]', 'm-panel', { minW: 300, minH: 150 }).catch(() => null);
-  await S('nav-dropdown', panel || q('[class*="absolute"][class*="top-full"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Discover mega-menu', desc: 'The Discover dropdown panel (Popular Genres, Trending Collections, Free Audiobooks cover grid), opened by its own trigger.', sel: 'discover panel' }, { noScroll: true, noReset: true });
+  await S('nav-dropdown', await orElse(panel, q('[class*="absolute"][class*="top-full"]').filter({ visible: true }).first()), ['default'], { group: g, title: 'Discover mega-menu', desc: 'The Discover dropdown panel (Popular Genres, Trending Collections, Free Audiobooks cover grid), opened by its own trigger.', sel: 'discover panel' }, { noScroll: true, noReset: true });
   await S('menu-link', q('a').filter({ hasText: /^\s*(Romance|Mystery|Science Fiction|Fantasy|Horror|Fan Fiction)\b/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Menu link', desc: 'A genre link inside the opened mega-menu.', sel: 'mega-menu a' }, { noScroll: true, noReset: true, open: openDiscover });
   await S('menu-heading', q('p, div, span, h3, h4').filter({ hasText: /^\s*(Popular Genres|Trending Collections|Free Audiobooks)\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Menu column heading', desc: 'A column heading inside the mega-menu.', sel: 'mega-menu heading' }, { noScroll: true, noReset: true, open: openDiscover });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
@@ -377,7 +385,7 @@ async function home() {
     return 'opened by its own summary';
   };
   const faq = q('details[name="homepage-faq"], details').filter({ hasText: /What voices are available|How much does/i }).filter({ visible: true }).first();
-  await S('faq-item', faq, ['default', 'open'], { group: s, title: 'FAQ item', desc: 'A homepage FAQ <details>; the open state is the item after its own summary was clicked.', sel: 'details[name=homepage-faq]' }, { before: { open: openSummary } });
+  await S('faq-item', faq, ['default', 'open'], { group: s, title: 'FAQ item', desc: 'A homepage FAQ <details>; the open state is the item after its own summary was clicked.', sel: 'details[name=homepage-faq]' }, { before: { open: openSummary }, after: { open: closeDetails } });
   await S('faq-summary', q('details summary').filter({ hasText: /What voices|How much/i }).filter({ visible: true }).first(), B4, { group: s, title: 'FAQ summary', desc: 'The clickable FAQ question row (with the +/- indicator); a press toggles its details.', sel: 'details summary' });
   save();
 }
@@ -402,11 +410,11 @@ async function pricing() {
   await chrome('pricing');
   const g = G.pricing;
   await S('pricing-h1', q('h1, h3').filter({ hasText: /Your reading, made effortless/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing title', desc: 'The 60px Waldenburg pricing display heading.', sel: 'pricing display h3' }, { noScroll: true });
-  await S('billing-off', q('button').filter({ hasText: /^\s*Monthly\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing option (idle)', desc: 'The unselected Monthly segment (#57534F text, hover black); the state was toggled for a screenshot, never checked out.', sel: 'button "Monthly"' }, { noScroll: true });
+  await S('billing-off', q('button').filter({ hasText: /^\s*Monthly\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing option (idle)', desc: 'The unselected Monthly segment (#57534F text, hover black), read at rest, on hover, on keyboard focus and forced pressed; never clicked or checked out.', sel: 'button "Monthly"' }, { noScroll: true });
   await S('billing-on', q('button').filter({ hasText: /Annual/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing option (selected)', desc: 'The selected Annual segment (white pill, ring shadow, the green Save-25% chip).', sel: 'button "Annual"' }, { noScroll: true });
   await S('save-badge', q('span').filter({ hasText: /^\s*Save\s+\d+%\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Save badge', desc: 'The green Save-25% chip inside the Annual segment (#E1F5E0 bg, #307D18 text).', sel: 'span "Save 25%"' }, { noScroll: true });
   const card = await markPainted('h4, [class*="plan" i]', 'm-plan', { minW: 220, minH: 260 }).catch(() => null);
-  await S('plan-card', card || q('div[class*="rounded"][class*="border"], div[class*="shadow"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan card (the painted ancestor of the plan name).', sel: 'plan card' });
+  await S('plan-card', await orElse(card, q('div[class*="rounded"][class*="border"], div[class*="shadow"]').filter({ visible: true }).first()), ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan card (the painted ancestor of the plan name).', sel: 'plan card' });
   await S('plan-name', q('h4, h3, p, div').filter({ hasText: /^\s*(Free|Ultra|Premium|Plus)\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan name', desc: 'A plan card\'s name.', sel: 'plan name' });
   await S('plan-price', q('span, div, p').filter({ hasText: /^\s*\$\d+/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price', desc: 'A plan card\'s price figure.', sel: 'plan price' });
   await S('plan-cta', q('a, button').filter({ hasText: /free trial|Get started|Try free|Start free/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s action (Start-3-day-free-trial pill); measured never followed.', sel: 'plan CTA' });
@@ -535,7 +543,7 @@ async function mobile() {
     await page.waitForTimeout(900);
     return 'opened by its own summary';
   };
-  await S('m-footer-col', q('footer details').filter({ hasText: /Use Cases|Browse|Compare/ }).filter({ visible: true }).first(), ['default', 'open'], { group: g, title: 'Mobile footer column', desc: 'A footer <details> link column (lg:hidden — the mobile-only accordion); the open state is the column after its own summary was tapped.', sel: 'footer details at 390' }, { noScroll: true, before: { open: mOpen } });
+  await S('m-footer-col', q('footer details').filter({ hasText: /Use Cases|Browse|Compare/ }).filter({ visible: true }).first(), ['default', 'open'], { group: g, title: 'Mobile footer column', desc: 'A footer <details> link column (lg:hidden — the mobile-only accordion); the open state is the column after its own summary was tapped.', sel: 'footer details at 390' }, { noScroll: true, before: { open: mOpen }, after: { open: closeDetails } });
   await S('m-footer-summary', q('footer summary').filter({ hasText: /Use Cases|Browse|Compare/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile footer summary', desc: 'The tappable footer column row (f-ui-04 with the chevron pair).', sel: 'footer summary at 390' }, { noScroll: true });
   save();
 }

@@ -272,17 +272,23 @@ light = {
     },
 }
 
-tokens = {
-    "core": core,
-    "light": light,
-    "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}}],
-    "$metadata": {
-        "tokenSetOrder": ["core", "light"],
-        "note": "Preply paints one theme signed out (tokyo-ui / ds-scheme--base). prefers-color-scheme: dark did not restyle the page.",
-    },
-}
+def build():
+    """The token document. Writes nothing; in particular nothing under raw/, which holds readings."""
+    return {
+        "core": core,
+        "light": light,
+        "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}}],
+        "$metadata": {
+            "tokenSetOrder": ["core", "light"],
+            "note": "Preply paints one theme signed out (tokyo-ui / ds-scheme--base). prefers-color-scheme: dark did not restyle the page.",
+        },
+    }
 
-out = RAW / "component-tokens.json"
-out.write_text(json.dumps({"core": "see tokens.json", "measuredFrom": SRC}, indent=2) + "\n")
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("wrote", HERE / "tokens.json")
+
+def main():
+    (HERE / "tokens.json").write_text(json.dumps(build(), indent=2) + "\n")
+    print("wrote", HERE / "tokens.json")
+
+
+if __name__ == "__main__":
+    main()

@@ -566,6 +566,20 @@
             "source": "computed boxShadow of add-to-cart hover (raw/components-computed.json)",
             "description": "The buy-box submit 'Ajouter au panier' — the primary action. shadow, hover."
           }
+        },
+        "focus": {
+          "outline": {
+            "value": "rgb(0, 95, 204)",
+            "type": "color",
+            "source": "computed outlineColor of add-to-cart focus-visible (raw/components-computed.json)",
+            "description": "The buy-box submit 'Ajouter au panier' — the primary action. outline (style auto: the browser's own focus ring), focus-visible."
+          },
+          "outline-width": {
+            "value": "1px",
+            "type": "dimension",
+            "source": "computed outlineWidth of add-to-cart focus-visible (raw/components-computed.json)",
+            "description": "The buy-box submit 'Ajouter au panier' — the primary action. outline width, focus-visible."
+          }
         }
       },
       "hero": {
@@ -632,6 +646,20 @@
             "source": "computed boxShadow of hero-cta hover (raw/components-computed.json)",
             "description": "The hero SHOP button. shadow, hover."
           }
+        },
+        "focus": {
+          "outline": {
+            "value": "rgb(0, 95, 204)",
+            "type": "color",
+            "source": "computed outlineColor of hero-cta focus-visible (raw/components-computed.json)",
+            "description": "The hero SHOP button. outline (style auto: the browser's own focus ring), focus-visible."
+          },
+          "outline-width": {
+            "value": "1px",
+            "type": "dimension",
+            "source": "computed outlineWidth of hero-cta focus-visible (raw/components-computed.json)",
+            "description": "The hero SHOP button. outline width, focus-visible."
+          }
         }
       },
       "flavor": {
@@ -697,6 +725,20 @@
             "type": "shadow",
             "source": "computed boxShadow of quick-add hover (raw/components-computed.json)",
             "description": "The product-card button — its fill re-binds to the flavour accent (#f26554 on Orange Sanguine). shadow, hover."
+          }
+        },
+        "focus": {
+          "outline": {
+            "value": "rgb(0, 95, 204)",
+            "type": "color",
+            "source": "computed outlineColor of quick-add focus-visible (raw/components-computed.json)",
+            "description": "The product-card button — its fill re-binds to the flavour accent (#f26554 on Orange Sanguine). outline (style auto: the browser's own focus ring), focus-visible."
+          },
+          "outline-width": {
+            "value": "1px",
+            "type": "dimension",
+            "source": "computed outlineWidth of quick-add focus-visible (raw/components-computed.json)",
+            "description": "The product-card button — its fill re-binds to the flavour accent (#f26554 on Orange Sanguine). outline width, focus-visible."
           }
         }
       }

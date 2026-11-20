@@ -1,7 +1,10 @@
 // Measures designmodo.com's public components in every state reachable without
 // signing in or pressing a destructive control, and writes raw/components-computed.json.
 //
-//   RAW=/scratch PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page,page,...]
+//   PLAYWRIGHT=/path/to/playwright/index.mjs [OUT_JSON=/path/out.json] node measure.mjs [page ...]
+//
+// Pages (space-separated): home app pricing templates login postcards mobile.
+// Writes raw/components-computed.json unless OUT_JSON names another file.
 //
 // designmodo.com is a single light theme signed out: the marketing home, the Postcards
 // product/pricing pages, the email-templates gallery, the my-account sign-in form, and
@@ -135,9 +138,13 @@ async function measure(key, state, target, opts = {}) {
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
     // A failed re-read must not erase an earlier successful one: keep the
-    // saved style and record the failed attempt beside it.
+    // saved style and record the failed attempt beside it, pinned to the run
+    // that actually read it (comp() has already restamped the component).
     const prev = c.states[state];
-    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
+    if (prev && prev.style) {
+      prev.rerunError = String(e.message || e).slice(0, 200);
+      if (opts.earlierRun) { prev.read ??= opts.earlierRun; prev.rerunOn = run; } // a second failure keeps the first date
+    }
     else c.states[state] = { error: String(e.message || e).slice(0, 200) };
     log('  !', key, state, String(e.message).slice(0, 120));
   }
@@ -162,6 +169,10 @@ async function S(key, target, list, meta = {}, opts = {}) {
     else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
   }
+  // Found this run: its states are re-read below, so an earlier miss no longer
+  // describes them (the builder flags every token read from a component that
+  // still carries recaptureMissed).
+  delete out.components[key].recaptureMissed;
   for (const st of list) {
     let undo, via;
     try {
@@ -199,7 +210,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (opts.noToggle) via = 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      await measure(key, st, loc, { ...opts, via, earlierRun: keep?.run });
     } catch (e) {
       const prev = out.components[key].states[st];
       if (prev && prev.style) {
@@ -207,7 +218,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
         // comp() already stamped this run's date on the component; pin the
         // retained reading to the run that actually captured it so an old
         // measurement is never republished as a new one.
-        if (keep) { prev.read = keep.run; prev.rerunOn = run; }
+        if (keep) { prev.read ??= keep.run; prev.rerunOn = run; } // a second failure keeps the first date
       }
       else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
@@ -411,14 +422,19 @@ async function mobile() {
   save();
 }
 
+const pages = process.argv.slice(2);
+const plan = { home, app, pricing, templates, login, postcards, mobile };
+// Refuse an unknown page name (a comma-separated list is one unknown name)
+// before anything is stamped: a run that matches no page must not write
+// today's date into _meta.read.
+const unknown = pages.filter((k) => !(k in plan));
+if (unknown.length) { console.error(`unknown page(s): ${unknown.join(', ')}; pages are: ${Object.keys(plan).join(' ')}`); process.exit(2); }
 run = new Date().toISOString().slice(0, 10);
 out._meta.read = run;
 out._meta.viewport = '1440 x 900 (mobile group 390 x 844); designmodo.com paints a single light theme signed out';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
-const pages = process.argv.slice(2);
-const plan = { home, app, pricing, templates, login, postcards, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 const finishedPages = new Set();
 try {
