@@ -34,7 +34,9 @@ def cssname(path):
 
 
 def alias(v):
-    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
+    # A set-qualified alias ({light.accent.default}, {core.radius.button}) names the same custom
+    # property as the bare path: the sets are emitted without their set name.
+    return re.sub(r"\{(?:(?:core|light|dark)\.)?([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
 
 
 def css_val(name, t):

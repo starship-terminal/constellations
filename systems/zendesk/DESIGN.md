@@ -21,7 +21,7 @@ colors:
   text-on-hero-body: "#ffffff"
   text-inverse: "#ffffff"
   text-muted: "#11110db6"
-  text-link: "#70a32a"
+  text-link: "#11110d"
   border-default: "#d5d5d2"
   border-strong: "#11110d78"
   border-focus: "#11110d"
