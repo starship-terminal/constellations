@@ -199,7 +199,7 @@ python3 -m unittest discover -s tools
 git status --short .
 ```
 
-`tools/capture/quantize.py <raw-shots>` and `tools/crops.py` (both need Pillow) rewrite `screenshots/` and `components/crops/`. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
+`tools/capture/quantize.py <raw-shots>` and `tools/crops.py` (both need Pillow) rewrite `screenshots/` and `components/crops/`. A rebuild that changes nothing proves the outputs still match their inputs. Re-quantizing from the raw shots brings back the people masked in `screenshots/`: after `quantize.py`, run `python3 tools/redact_images.py apply systems/substack --rules tools/redact-rules/substack.json` from the repository root, confirm every edited file is still a 256-colour PNG with its alpha and that only pixels inside the rules' rectangles changed (the committed masks were painted that way, on each file's original palette and transparency), and only then run `tools/crops.py`. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
 ## Use in SwiftUI and Figma
 
