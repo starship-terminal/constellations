@@ -4205,9 +4205,9 @@
       "description": "AI Map Maker for Custom Interactive Maps",
       "status": "pending",
       "package": null,
-      "notes": "https://www.pampam.city/login offers only Sign in with Google. Google sign-in not completed.",
+      "notes": "https://www.pampam.city/login offers only Sign in with Google. Google sign-in not completed. Public walk 2026-11-21: the PAM wordmark opens home. Pricing opens pricing. Solutions and Products open on-page menus. Inspiration opens explore. Sign in with Google opens login and that branch stops. Phone header is the wordmark plus the same wall, with no drawer. Make map opens a login dialog on the homepage and stops. Google was not clicked. No email was typed. No form was submitted. Signed-in editor was not captured. Public package refresh in PR 1600 at f46e19a99199. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "oauth-only",
+      "login-probe": "closed",
       "batch": 13
     },
     {
