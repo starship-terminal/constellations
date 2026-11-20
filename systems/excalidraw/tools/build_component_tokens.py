@@ -99,7 +99,10 @@ for s in (10, 20, 30, 40, 50, 60, 70, 80, 85, 90, 100):
 # from the served @font-face rules and the computed fontFamily of canvas text
 # (the welcome logo is the hand-drawn face).
 core["font"]["family"]["ui"] = {**L("--ui-font", "fontFamily", "The declared UI stack — Assistant over the system sanses."), "source": "css-var --ui-font"}
-core["font"]["family"]["display"] = M(style("welcome-logo", "fontFamily"),
+display = style("welcome-logo", "fontFamily")
+if not display:
+    raise SystemExit("welcome-logo default has no computed fontFamily in raw/components-computed.json; recapture it")
+core["font"]["family"]["display"] = M(display,
                                       "computed fontFamily of welcome-logo default (raw/components-computed.json)",
                                       "fontFamily", "The hand-drawn face: welcome logo and default canvas handwriting.")
 # No reading holds a monospace stack: no measured element computes Cascadia and raw/css-vars.json

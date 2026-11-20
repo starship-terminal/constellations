@@ -40,6 +40,16 @@ class RebuildTest(unittest.TestCase):
         shutil.copytree(PKG / "raw", root / "raw")
         for b in ("build_component_tokens.py", "build_tokens.py"):
             subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
+        # raw/measurements.md comes from the capture folder's build-measurements.mjs; copy only it
+        # and the colour helper it imports, and run it on the temp copy.
+        cls.measurements = None
+        if shutil.which("node"):
+            (root / "tools" / "capture" / "public").mkdir(parents=True)
+            shutil.copy(PKG / "tools" / "capture" / "css-colour.mjs", root / "tools" / "capture")
+            shutil.copy(PKG / "tools" / "capture" / "public" / "build-measurements.mjs", root / "tools" / "capture" / "public")
+            subprocess.run(["node", str(root / "tools" / "capture" / "public" / "build-measurements.mjs")],
+                           cwd=root, check=True, capture_output=True)
+            cls.measurements = (root / "raw" / "measurements.md").read_text()
         cls.built = json.loads((root / "tokens.json").read_text())
         cls.spec = json.loads((root / "raw" / "component-tokens.json").read_text())
         cls.V = json.loads((PKG / "raw" / "css-vars.json").read_text())
@@ -76,13 +86,21 @@ class RebuildTest(unittest.TestCase):
         self.assertTrue(fam["mono"]["$extensions"]["source"].startswith("Reconstruction:"))
 
     def test_failed_focus_is_not_published_as_a_reading(self):
-        md = (PKG / "raw" / "measurements.md").read_text()
+        if self.measurements is None:
+            self.skipTest("node is not installed")
+        self.assertEqual((PKG / "raw" / "measurements.md").read_text(), self.measurements)
         failed = [k for k, c in self.C.items() if (c["states"].get("focus-visible") or {}).get("via") == "focus failed"]
         self.assertTrue(failed)
         for k in failed:
-            block = md.split(f"#### {k}\n", 1)[1].split("\n#### ", 1)[0]
-            self.assertIn("| Skipped |", block, k)
-
+            block = self.measurements.split(f"#### {k}\n", 1)[1].split("\n#### ", 1)[0]
+            cells = lambda r: [c.strip() for c in r.strip().strip("|").split("|")]  # noqa: E731
+            table = [cells(r) for r in block.splitlines() if r.startswith("| ") and not r.startswith("|---")]
+            col = table[0].index("focus-visible")
+            for row in table[1:]:
+                if row[0] == "Skipped":
+                    self.assertTrue(row[col].startswith("focus failed"), k)
+                else:
+                    self.assertEqual(row[col], "-", f"{k}: {row}")
 
 if __name__ == "__main__":
     unittest.main()
