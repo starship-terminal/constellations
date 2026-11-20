@@ -152,6 +152,18 @@ class SectionTest(unittest.TestCase):
         self.assertIn("`core.focusRing.inset` 0px;", text)
         self.assertIn("`core.focusRing.offset` 1px (Sampled, not measured)", text)
 
+    def test_a_key_holding_a_dot_keeps_its_label(self):
+        tokens = json.loads(json.dumps(TOKENS))
+        tokens["light"]["border"] = {"input.error.focus": {
+            "$value": "#ff0000", "$extensions": {"source": {"evidence": "Sampled"}}}}
+        self.assertIn("`light.border.input.error.focus` #ff0000 (Sampled, not measured)", self.section(tokens=tokens))
+
+    def test_token_objects_walks_like_flatten(self):
+        tokens = json.loads(json.dumps(TOKENS))
+        tokens["light"]["a.b"] = {"c": {"$value": "#000000"}}
+        tokens["core"]["legacy"] = {"value": "1px", "type": "dimension"}
+        self.assertEqual(set(brief.token_objects(tokens)), set(catalog.flatten(tokens)))
+
     def test_evidence_reads_each_label_place(self):
         self.assertEqual(brief.evidence({"$extensions": {"source": {"evidence": "Sampled (text)"}}}), "Sampled")
         self.assertEqual(brief.evidence({"$extensions": {"evidence": "Observed", "source": "UA ring"}}), "Observed")

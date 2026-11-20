@@ -160,14 +160,23 @@ LABELS = ("Measured", "Derived", "Sampled", "Observed", "Reconstruction", "Not c
 NOT_MEASURED = ("Sampled", "Observed", "Reconstruction", "Not captured")
 
 
-def _token(tokens, path: str):
-    """The token object at a dotted path (catalog.flatten's paths), or None."""
-    node = tokens
-    for part in path.split("."):
-        if not isinstance(node, dict) or part not in node:
-            return None
-        node = node[part]
-    return node if isinstance(node, dict) else None
+def token_objects(tokens: dict) -> dict[str, dict]:
+    """Map catalog.flatten's dotted paths to their token objects, by the same walk, so a
+    key that itself holds a dot (`input.error.focus`) lands on the same path."""
+    found: dict[str, dict] = {}
+
+    def walk(node, path):
+        if not isinstance(node, dict):
+            return
+        if "$value" in node or ("value" in node and not isinstance(node["value"], dict)):
+            found[".".join(path)] = node
+            return
+        for key, child in node.items():
+            if not key.startswith("$"):
+                walk(child, path + [key])
+
+    walk(tokens, [])
+    return found
 
 
 def evidence(token) -> str | None:
@@ -189,7 +198,7 @@ def evidence(token) -> str | None:
 
 def focus_tokens(system: dict, theme: str | None) -> str:
     res = catalog.resolver_for(system["tokens"])
-    tokens = json.loads((ROOT / system["tokens"]).read_text())
+    tokens = token_objects(json.loads((ROOT / system["tokens"]).read_text()))
     # A base token (`shadow.focus`, `focusRing.width`) before a variant of it (`shadow.focus-danger`).
     variant = lambda p: bool(re.search(r"focus[a-z]*[-_][a-z]", p.split(".")[-1], re.I))
     paths = sorted((p for p in res.flat if "focus" in p.lower()),
@@ -201,7 +210,7 @@ def focus_tokens(system: dict, theme: str | None) -> str:
         raw = res.final(path)
         if (raw is None or catalog._unresolved(raw)) and theme:
             raw = res.final(path, theme=theme)
-        label = evidence(_token(tokens, path))
+        label = evidence(tokens.get(path))
         shown.append(f"`{path}` {_value(raw)}" + (f" ({label}, not measured)" if label in NOT_MEASURED else ""))
     return "Focus tokens: " + "; ".join(shown) + "."
 
