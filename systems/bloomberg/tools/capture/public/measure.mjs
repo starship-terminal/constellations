@@ -18,6 +18,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { pageRunner, exitStatus } from './run-pages.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -439,11 +440,10 @@ const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k)
 // A page counts as finished only when its runner returns without throwing and
 // no bot check stopped it: any other throw (a goto timeout, a locator outside
 // S()) used to abort the loop, and the finally then pruned every page after it.
-const finished = new Set();
-async function runPage(fn, ...args) {
-  try { await fn(...args); if (current) finished.add(current); } catch (e) { if (current) failedPages.add(current); log('PAGE FAILED', fn.name, String(e && e.message || e).split('\n')[0]); }
-}
-const pageDone = (c) => finished.has(c.page) && !failedPages.has(c.page);
+// A page that throws is recorded as broken and the run goes on; the exit
+// status at the end is nonzero when any page threw (run-pages.mjs).
+const { finished, broken, runPage } = pageRunner(() => current, log);
+const pageDone = (c) => finished.has(c.page) && !failedPages.has(c.page) && !broken.has(c.page);
 try {
   for (const k of order) { if (k !== 'mobile' && k !== 'article') await runPage(plan[k]); }
   if (!pages.length || pages.includes('article')) await runPage(article);
@@ -463,3 +463,4 @@ try {
   await browser.close();
 }
 console.log('components-computed.json:', Object.keys(out.components).length, 'components');
+process.exitCode = exitStatus(broken);
