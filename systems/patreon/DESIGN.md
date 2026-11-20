@@ -164,6 +164,8 @@ The login stylesheets were cross-origin (13 blocked). Login values are computed 
 
 Screenshots are missing, declared under layoutGaps. Do not treat the style guide specimens as captures of the live page.
 
+tokens.json is written by hand. `tools/build/build_tokens.py` does not write it: it checks that every value appears in [raw/computed.json](raw/computed.json) and that every alias resolves. Four values have no reading there and say so in their source: the home h2 type (`core.typography.section`) and the Find a Creator radius (`core.radius.search`) are Reconstruction, and the nav line height and the login font's fallback stack were entered by hand.
+
 ### Do and don't (from README.md)
 
 - **Use the black pill on a light section and the white pill on the dark hero.** The header Get Started is white with black text. The pricing Get started is black with white text. Both are 47px with a 30px radius at 1440. See [patterns.md](patterns.md).

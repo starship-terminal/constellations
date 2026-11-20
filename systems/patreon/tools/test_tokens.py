@@ -1,4 +1,5 @@
 """Patreon token checks. Run from the package tools/ directory."""
+import importlib.util
 import json
 import pathlib
 import unittest
@@ -6,9 +7,25 @@ import unittest
 HERE = pathlib.Path(__file__).resolve().parent
 TOKENS = json.loads((HERE.parent / "tokens.json").read_text())
 RAW = json.loads((HERE.parent / "raw" / "computed.json").read_text())
+_spec = importlib.util.spec_from_file_location("patreon_check", HERE / "build" / "build_tokens.py")
+CHECK = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(CHECK)
 
 
 class TokenTest(unittest.TestCase):
+    def test_every_token_is_a_reading_or_says_it_was_typed(self):
+        # tools/build/build_tokens.py checks every token against raw/computed.json; it writes nothing.
+        self.assertEqual(CHECK.check(), [])
+
+    def test_check_catches_a_value_with_no_reading(self):
+        token = CHECK.TOKENS["core"]["color"]["primary"]
+        saved = token["$value"]
+        try:
+            token["$value"] = "#123456"
+            self.assertTrue(any("#123456" in p for p in CHECK.check()))
+        finally:
+            token["$value"] = saved
+
     def test_primary_matches_reading(self):
         self.assertEqual(TOKENS["core"]["color"]["primary"]["$value"], RAW["resolved"]["--color-primary"])
 
