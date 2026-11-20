@@ -181,7 +181,8 @@ for n in sorted(k for k in SITE if re.fullmatch(r"--(desktop|mobile|tablet)-nav-
 # computed styles of the live page chrome and copy. Each is a literal
 # measured value with its measurement as source; none is invented.
 C_PATH = RAW / "components-computed.json"
-C = json.loads(C_PATH.read_text()).get("components", {}) if C_PATH.exists() else {}
+# Required: without it every measured token would drop silently.
+C = json.loads(C_PATH.read_text())["components"]
 
 
 def style_tok(comp, state, prop, path, ty, label, root="light"):
