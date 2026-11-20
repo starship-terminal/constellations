@@ -54,5 +54,33 @@ class MeasuredRoleAliasTest(unittest.TestCase):
         for key in ("ink", "footerInk"):
             self.assertEqual(m["text"][key]["$value"], "{color.text.default}")
 
+    def test_action_and_form_roles_alias_their_kind(self):
+        """Inks alias a button's text.* or text.*, fills a button's surface.* or surface.*, borders
+        an input's border.* or border.*; a role with no var of its kind stays a literal."""
+        m = json.loads(TOKENS.read_text())["light"]["measured"]["color"]
+        ink_keys = {"ctaInk", "heroCtaInk", "donateInk", "shareInk", "wpButtonInk", "fieldInk", "pillInk", "placeholder"}
+        fill_keys = {"ctaFill", "heroCtaFill", "donateFill", "continueFill", "wpButtonFill", "fieldBg", "countryFieldBg", "ctaHover"}
+        border_keys = {"fieldBorder", "pillBorder"}
+        for group in ("action", "form"):
+            for key, tok in m.get(group, {}).items():
+                if key.startswith("$"):
+                    continue
+                v = tok["$value"]
+                if not (isinstance(v, str) and v.startswith("{")):
+                    self.assertRegex(v, r"^(#[0-9a-f]{6}|rgba\()", f"{group}.{key}")  # the literal fallback
+                    continue
+                parts = v[1:-1].split(".")[1:]
+                if key in ink_keys:
+                    self.assertTrue(parts[0] == "text" or (parts[0] in ("button", "input") and "text" in parts), f"{key} -> {v}")
+                elif key in fill_keys:
+                    self.assertTrue(parts[0] == "surface" or (parts[0] in ("button", "input") and "surface" in parts), f"{key} -> {v}")
+                elif key in border_keys:
+                    self.assertTrue(parts[0] == "border" or (parts[0] == "input" and "border" in parts), f"{key} -> {v}")
+                else:
+                    self.fail(f"{group}.{key} is not classed as ink, fill or border")
+        # no declared var paints the transparent fills, so they stay literals
+        self.assertEqual(m["action"]["ctaFill"]["$value"], "rgba(255, 255, 255, 0)")
+        self.assertEqual(m["form"]["fieldBg"]["$value"], "rgba(0, 0, 0, 0)")
+
 if __name__ == "__main__":
     unittest.main()
