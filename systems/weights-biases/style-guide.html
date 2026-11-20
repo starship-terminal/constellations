@@ -177,18 +177,20 @@ p.lead { color: var(--color-text-secondary); max-width: 72ch; }
 .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
 .cta { display: inline-flex; align-items: center; padding: var(--component-button-padding) var(--spacing-9); border-radius: var(--radius-md);
   background: linear-gradient(270deg, var(--color-action-fillStart), var(--color-action-fillEnd)); color: var(--color-ink);
-  font: var(--typography-button); text-transform: uppercase; border: 0; }
-.forge { display: inline-flex; align-items: center; height: var(--spacing-field); padding: 0 var(--component-button-padding); border-radius: var(--radius-sm);
-  background: var(--color-action-primary); color: var(--color-paper); font: var(--typography-button); border: 0; }
+  font: var(--typography-button); letter-spacing: 0.96px; /* core.typography.button letterSpacing */ text-transform: uppercase; border: 0; }
+/* Forge Log in and Forgot your password, as read on the login page (raw/computed.json pages.login.primary
+   and .ghost): weight 500, 16px/16px, padding 0 8px. Not the marketing button type. */
+.forge { display: inline-flex; align-items: center; height: var(--spacing-field); padding: 0 var(--spacing-4); border-radius: var(--radius-sm);
+  background: var(--color-action-primary); color: var(--color-paper); font: var(--fontWeight-medium) 16px/16px var(--fontFamily-sans); border: 0; }
 .forge:focus-visible { outline: 1px auto var(--color-focusRing); }
-.ghost { display: inline-flex; align-items: center; height: var(--spacing-field); padding: 0 var(--component-button-padding); border-radius: var(--radius-sm);
-  background: transparent; color: var(--color-text-ghost); font: var(--typography-button); border: 0; }
+.ghost { display: inline-flex; align-items: center; height: var(--spacing-field); padding: 0 var(--spacing-4); border-radius: var(--radius-sm);
+  background: transparent; color: var(--color-text-ghost); font: var(--fontWeight-medium) 16px/16px var(--fontFamily-sans); border: 0; }
 .field { height: var(--component-field-height); width: 260px; border-radius: var(--component-field-radius); border: 1px solid var(--color-border-default);
   background: var(--component-field-background); color: var(--component-field-text); padding: 4px 8px; font: var(--typography-ui); }
 .social { display: inline-flex; align-items: center; height: var(--component-social-height); padding: 10px 16px; border-radius: var(--component-social-radius);
   background: var(--component-social-background); color: var(--component-social-text); border: 1px solid var(--color-border-social); font-weight: 500; }
 .navlink { color: var(--component-navLink-text); font: var(--typography-nav); text-decoration: none; }
-.code { background: var(--color-bg-code); color: var(--color-text-code); font: var(--typography-code); padding: 16px; border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-copy); margin: 0; }
+.code { background: var(--color-bg-code); color: var(--color-text-code); font: var(--typography-code); padding: 16px; border-radius: 0 0 var(--radius-md) var(--radius-md); margin: 0; }
 .note { font-size: 13px; color: var(--color-text-secondary); }
 table { border-collapse: collapse; width: 100%; font-size: 14px; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border-default); vertical-align: top; }
