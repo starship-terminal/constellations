@@ -51,7 +51,10 @@ test("messages, selection, notes and settings survive reopening the database", a
   await store.updateCollection(collection.id, { notes: "A useful pattern" });
   await store.putItem(collection.id, "systems:linear", "Keep the density");
   await store.putItem(collection.id, "systems:linear", "Changed my note");
-  await store.saveSettings({ provider: "openai", model: "test-model" });
+  await store.updateSettings(() => ({
+    provider: "openai",
+    model: "test-model",
+  }));
   store.close();
   stores.splice(stores.indexOf(store), 1);
   const reopened = await createResearchStore(dir);
@@ -162,7 +165,10 @@ test("version-two stores preserve existing state while adding independent screen
   const second = await store.createCollection("Second board");
   await store.putItem(first.id, "systems:linear", "Existing package note");
   await store.saveMedia("systems:linear", "screenshots/one.png");
-  await store.saveSettings({ provider: "openai", model: "kept-model" });
+  await store.updateSettings(() => ({
+    provider: "openai",
+    model: "kept-model",
+  }));
   await store.client.execute("DROP TABLE collection_media");
   await store.client.execute("PRAGMA user_version=2");
   store.close();

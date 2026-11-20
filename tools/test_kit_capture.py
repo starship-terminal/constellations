@@ -31,6 +31,40 @@ class CssColour(unittest.TestCase):
             self.assertIn("from '../css-colour.mjs'", (CAPTURE / rel).read_text(), rel)
 
 
+@unittest.skipIf(NODE is None, "node is not on PATH")
+class CheckoutPaths(unittest.TestCase):
+    def test_measurement_builders_find_the_package_under_a_path_with_a_space(self):
+        # new URL(import.meta.url).pathname is not decoded, so "a b" became "a%20b" and raw/ was not found.
+        computed = {"_meta": {"read": "2026-01-02", "snapshots": {}}, "components": {}}
+        for route in ("public", "signed-in"):
+            with tempfile.TemporaryDirectory() as d:
+                pkg = Path(d) / "a checkout é" / "pkg"
+                (pkg / "tools/capture" / route).mkdir(parents=True)
+                (pkg / "raw").mkdir()
+                shutil.copy(CAPTURE / "css-colour.mjs", pkg / "tools/capture/css-colour.mjs")
+                shutil.copy(CAPTURE / route / "build-measurements.mjs", pkg / "tools/capture" / route / "build-measurements.mjs")
+                (pkg / "raw/components-computed.json").write_text(json.dumps(computed))
+                res = subprocess.run([NODE, str(pkg / "tools/capture" / route / "build-measurements.mjs")], capture_output=True,
+                                     text=True, timeout=60, env={**os.environ, "KIT_EXAMPLE": "1"})
+                self.assertEqual(res.returncode, 0, (route, res.stderr[-1000:]))
+                self.assertTrue((pkg / "raw/measurements.md").is_file(), route)
+
+    def test_no_kit_script_reads_a_path_from_an_undecoded_url(self):
+        bad = [f"{p.relative_to(CAPTURE)}:{n}" for p in sorted(CAPTURE.rglob("*.mjs")) if not p.name.startswith("test_")
+               for n, line in enumerate(p.read_text().splitlines(), 1) if "import.meta.url" in line and ".pathname" in line]
+        self.assertEqual(bad, [])
+
+
+class ReadDates(unittest.TestCase):
+    def test_no_kit_script_records_a_fixed_read_date(self):
+        # signed-in/measure.mjs wrote read: '2026-10-04' (the example's capture day) on every run, and the
+        # builders print it as the day the styles were read.
+        import re
+        bad = [f"{p.relative_to(CAPTURE)}:{n}" for p in sorted(CAPTURE.rglob("*.mjs")) if not p.name.startswith("test_")
+               for n, line in enumerate(p.read_text().splitlines(), 1) if re.search(r"\bread: ['\"`]\d{4}-\d\d-\d\d", line)]
+        self.assertEqual(bad, [])
+
+
 @unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
 class MeasureArgs(unittest.TestCase):
     def test_a_bad_jobs_count_stops_instead_of_running_no_workers(self):

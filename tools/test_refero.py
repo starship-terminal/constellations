@@ -370,7 +370,7 @@ class DownloadTest(unittest.TestCase):
         self.tmp.cleanup()
 
     def fetch_it(self, side):
-        return mock.patch.object(mirror_media.urllib.request, "urlopen",
+        return mock.patch.object(mirror_media.OPENER, "open",
                                  side_effect=side)
 
     def test_a_good_response_writes_via_partial(self):

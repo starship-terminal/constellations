@@ -3,8 +3,11 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@endless\\.(io|app|com)$",
-   "@example\\.(com|org)$"
+   "@endless\\.app$",
+   "@endless\\.com$",
+   "@endless\\.io$",
+   "@example\\.com$",
+   "@example\\.org$"
   ]
  },
  "families": []

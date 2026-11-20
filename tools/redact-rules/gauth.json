@@ -2,7 +2,9 @@
   "_note": "Gauth: no rectangles; every capture is signed out, so the pages hold no account's content. The OCR email net is kept, with two addresses allowed: Gauth's own public contact address in the site footer (gauthmath.com, which OCR sometimes reads as gauthmath.cor on the full-page shots), and name@example.com, the reserved example address typed into the Sign in field so its button enables (never submitted).",
   "ocr": {
     "email_allow": [
-      "@gauthmath\\.co[mr]?\\b",
+      "@gauthmath\\.co$",
+      "@gauthmath\\.com$",
+      "@gauthmath\\.cor$",
       "@example\\.com\\b"
     ]
   }

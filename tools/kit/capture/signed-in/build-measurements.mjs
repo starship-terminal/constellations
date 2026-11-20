@@ -5,9 +5,10 @@
 //   node tools/capture/signed-in/build-measurements.mjs
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { hex } from '../css-colour.mjs';
 
-const REF = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', '..');
+const REF = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const J = JSON.parse(fs.readFileSync(path.join(REF, 'raw', 'components-computed.json'), 'utf8'));
 
 // rounded-full is calc(infinity * 1px), which computes to 33554400px.
@@ -107,14 +108,17 @@ const cleanShadow = (sh) => splitTop(sh).filter((l) => !/rgba\([^)]*,\s*0\)/.tes
 const shadows = count(ok.flatMap((x) => [x.v.style.boxShadow, ...(x.v.paint || []).map((p) => p.shadow)]).filter((s) => s && s !== 'none').map(cleanShadow).filter(Boolean));
 W(`- **Shadows**: ${shadows.slice(0, 6).map(([s, n]) => `\`${s}\` (${n})`).join('; ')}.`);
 for (const theme of ['dark', 'light']) {
-  const fv = ok.filter((x) => x.v.theme === theme && /focus-visible/.test(x.st));
+  // focus.matches false: the element took focus without matching :focus-visible, so its style is no
+  // keyboard-focus reading; those are counted apart, like the skipped ones
+  const fv = ok.filter((x) => x.v.theme === theme && /focus-visible/.test(x.st) && x.v.focus?.matches !== false);
+  const notFv = allStates.filter((x) => x.v.theme === theme && /focus-visible/.test(x.st) && (x.v.skipped || x.v.focus?.matches === false)).length;
   const rings = count(fv.map((x) => {
     const s = x.v.style;
     const ol = s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) > 0 ? `outline ${s.outlineWidth} ${s.outlineStyle} ${hex(s.outlineColor)} offset ${s.outlineOffset}` : '';
     const sh = s.boxShadow !== 'none' ? `shadow ${hex(s.boxShadow)}` : '';
     return ol || sh || 'nothing painted on the element';
   }));
-  W(`- **Focus-visible, ${theme}** (${fv.length} focused states): ${rings.map(([r, n]) => `${r} (${n})`).join('; ')}.`);
+  W(`- **Focus-visible, ${theme}** (${fv.length} focused states${notFv ? `; focus could not be captured on ${notFv} more` : ''}): ${rings.map(([r, n]) => `${r} (${n})`).join('; ')}.`);
 }
 for (const theme of ['dark', 'light']) {
   const hc = hoverChanges(theme);
