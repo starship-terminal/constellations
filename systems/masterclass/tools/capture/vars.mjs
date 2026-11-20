@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium, BASE, UA, hideConsent } from './public/lib.mjs';
+import { chromium, BASE, UA, blockedByChallenge, hideConsent } from './public/lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
@@ -34,6 +34,12 @@ for (const route of ROUTES) {
   });
   await p.goto(route, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch((e) => console.log('goto fail', route, e.message.split('\n')[0]));
   await p.waitForTimeout(3500);
+  if (await blockedByChallenge(p)) {
+    // A challenge page's CSS is not the product's: stop before anything is written.
+    console.error('BLOCKED by a bot check at', route, '- raw/css-vars.json left as it was');
+    await browser.close();
+    process.exit(2);
+  }
   await hideConsent(p);
   const blocks = await p.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => {
     try { return ['inline-' + i + ' @ ' + location.pathname, [...s.cssRules].map((r) => r.cssText).join('\n')]; }

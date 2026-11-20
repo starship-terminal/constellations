@@ -4,7 +4,7 @@
 //   PLAYWRIGHT=... node measure.mjs [group ...]
 import fs from 'node:fs';
 import path from 'node:path';
-import { chromium, BASE, UA, UA_MOBILE, open, hideConsent, styleOf, crop, quantize, CROPS, RAW } from './lib.mjs';
+import { chromium, BASE, UA, UA_MOBILE, open, blockedByChallenge, hideConsent, styleOf, crop, quantize, CROPS, RAW } from './lib.mjs';
 
 const OUT = path.join(RAW, 'components-computed.json');
 fs.mkdirSync(RAW, { recursive: true });
@@ -150,8 +150,11 @@ async function measureOne(spec) {
     await el.scrollIntoViewIfNeeded().catch(() => {});
     let nodeId = null;
     try {
-      if (state === 'pressed') nodeId = await pressOn(el);
-      else await DRIVERS[state].fn(el);
+      if (state === 'pressed') {
+        nodeId = await pressOn(el);
+        // No forced :active means no pressed reading: the catch records a failed state and no crop.
+        if (nodeId == null) throw new Error('pressed could not be forced on the component');
+      } else await DRIVERS[state].fn(el);
       const reading = await styleOf(el);
       reading.via = state === 'pressed' ? DRIVERS.pressed.via : DRIVERS[state].via;
       rec.states[state] = reading;
@@ -185,6 +188,13 @@ async function runPage(pageKey, specs, mobile) {
   const url = URLS[pageKey] || URLS.home;
   log('page', pageKey, url);
   await open(page, url, { wait: 3500 });
+  if (await blockedByChallenge(page)) {
+    // Keep every earlier reading for this page: nothing measured on a challenge is saved.
+    log('  BLOCKED by a bot check; earlier readings kept', pageKey);
+    (out._meta.blocked ??= {})[pageKey] = new Date().toISOString();
+    await ctx.close();
+    return;
+  }
   for (const spec of specs) {
     spec.page = pageKey;
     await measureOne(spec);

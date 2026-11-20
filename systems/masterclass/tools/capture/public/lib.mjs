@@ -48,6 +48,15 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   return { browser, context };
 }
 
+// Whether the page is a bot check (Cloudflare and the like) rather than the product. Automation is
+// not hidden, so a rerun can meet one; it is recorded as a boundary and nothing from it is saved.
+export async function blockedByChallenge(page) {
+  const s = await page.evaluate(() => ({ title: document.title, body: (document.body && document.body.innerText || '').slice(0, 400) }))
+    .catch(() => ({ title: '', body: '' }));
+  return /just a moment|attention required|verify you are human/i.test(s.title)
+    || /performing security verification|verify you are human|checking your browser|press ?& ?hold|you have been blocked/i.test(s.body);
+}
+
 export async function open(page, url, { wait = 4000 } = {}) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await page.waitForTimeout(wait);
