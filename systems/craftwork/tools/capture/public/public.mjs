@@ -68,15 +68,26 @@ const desktop = {
         await closePromo(p);
         // Shoot only what painted: the root must carry data-theme="dark" and the body a dark ground,
         // or a failed toggle is written as a light page named -dark.
+        // The ground is the first opaque background from body up through html (a transparent
+        // body shows what is behind it, which is not black); none at all is the canvas white.
         const dark = await p.evaluate(() => {
-          const m = getComputedStyle(document.body).backgroundColor.match(/\d+(\.\d+)?/g) || [255, 255, 255];
-          const [r, g, b] = m.map(Number);
+          let ground = [255, 255, 255];
+          for (const el of [document.body, document.documentElement]) {
+            const m = (getComputedStyle(el).backgroundColor.match(/[\d.]+/g) || []).map(Number);
+            if (m.length >= 3 && (m.length < 4 || m[3] > 0.5)) { ground = m.slice(0, 3); break; }
+          }
+          const [r, g, b] = ground;
           return document.documentElement.getAttribute('data-theme') === 'dark' && 0.2126 * r + 0.7152 * g + 0.0722 * b < 80;
         });
+        const shot = `${RAW}/home-dark-default.png`;
         if (dark) {
-          await screenshotWithMetadata(p, { path: `${RAW}/home-dark-default.png`, sanitizedSourceUrl: S.sourceUrl }, S.requested);
+          await screenshotWithMetadata(p, { path: shot, sanitizedSourceUrl: S.sourceUrl }, S.requested);
           S.count++; log('  shot dark-default');
-        } else log('  ! the theme toggle did not paint dark; no dark shot');
+        } else {
+          // an earlier run's file in a reused RAW dir would still be published by quantize.py
+          for (const f of [shot, `${shot}.capture.json`]) fs.rmSync(f, { force: true });
+          log('  ! the theme toggle did not paint dark; no dark shot (any earlier one removed)');
+        }
         await clickEl(t); await wait(p, 1200);
       }
     });
