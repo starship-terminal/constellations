@@ -56,5 +56,18 @@ class Components(unittest.TestCase):
         self.assertIn("## Gaps", text)
 
 
+class CaptureDates(unittest.TestCase):
+    def test_measure_merge_dates(self):
+        """capture/public/test_dates.mjs: a partial rerun dates only what it read (needs node)."""
+        import shutil
+        import subprocess
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node is not installed")
+        test = pathlib.Path(__file__).resolve().parent / "capture" / "public" / "test_dates.mjs"
+        out = subprocess.run([node, "--test", str(test)], capture_output=True, text=True)
+        self.assertEqual(out.returncode, 0, out.stdout[-2000:] + out.stderr[-2000:])
+
+
 if __name__ == "__main__":
     unittest.main()

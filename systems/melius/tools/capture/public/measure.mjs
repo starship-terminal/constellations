@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, APP, DOCS, launch, open, styleOf, crop, centre, RAW, hideConsent } from './lib.mjs';
+import { startRun, touch, readOk, readFailed } from './dates.mjs';
 
 fs.mkdirSync(RAW, { recursive: true });
 fs.mkdirSync(path.join(RAW, '..', 'components', 'crops'), { recursive: true });
@@ -14,21 +15,18 @@ const OUT = path.join(RAW, 'components-computed.json');
 // Start from the committed readings and replace only what this run reads, so a page that fails
 // part way keeps the earlier readings of every later component instead of dropping them.
 const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
-// _meta keeps the earlier dates until a component is read again, and each component carries its own
-// read date, so a partial run never makes retained readings look fresh.
+// Dates follow dates.mjs: _meta.read and each component's `read` move only when a state is
+// actually read, kept readings take the earlier date, and _meta.lastAttempt records this run.
 const today = new Date().toLocaleDateString('en-CA');
 const done = new Set();
-const out = {
-  _meta: {
-    ...(prev._meta || {}),
-    product: 'Melius',
-    route: 'public-web',
-    theme: 'light',
-    note: 'Signed out. Consent banner hidden, never clicked. Login and signup fields focused and filled with a sample string, then cleared. Nothing submitted. Billing and OAuth not followed.',
-  },
-  components: prev.components || {},
-};
-if (!out._meta.captured) out._meta.captured = out._meta.read = today;
+const earlier = new Map();   // key -> the states the committed file held, for a failed reread
+const out = startRun(prev, today);
+Object.assign(out._meta, {
+  product: 'Melius',
+  route: 'public-web',
+  theme: 'light',
+  note: 'Signed out. Consent banner hidden, never clicked. Login and signup fields focused and filled with a sample string, then cleared. Nothing submitted. Billing and OAuth not followed.',
+});
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 
@@ -79,8 +77,9 @@ async function forcePseudo(loc, classes) {
 }
 
 async function record(key, state, loc, meta, via) {
-  // A component this run reaches is rewritten from scratch; one it never reaches keeps its reading.
-  if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current, read: today }; done.add(key); out._meta.captured = out._meta.read = today; }
+  // A component this run reaches is rewritten from its new readings; one it never reaches keeps its
+  // reading and date. Dates move only on a successful read (dates.mjs).
+  if (!done.has(key)) { touch(out, earlier, key, { ...meta, url: current }); done.add(key); }
   const c = out.components[key];
   Object.assign(c, meta, { url: current });
   c.states ??= {};
@@ -91,10 +90,10 @@ async function record(key, state, loc, meta, via) {
     let file;
     try { file = await crop(page, loc, `${key}-${state}`); }
     catch (e) { s.cropError = String(e.message).slice(0, 160); }
-    c.states[state] = { ...s, crop: file, via };
+    readOk(out, c, state, { ...s, crop: file, via }, today);
     log(' ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h), s.cropError || '');
   } catch (e) {
-    c.states[state] = { error: String(e.message).slice(0, 180), via };
+    readFailed(c, earlier.get(key), state, { error: String(e.message).slice(0, 180), via }, today);
     log(' !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -103,9 +102,10 @@ async function states(key, loc, list, meta) {
   const target = loc.first();
   if (!(await target.count())) {
     log(' ! missing', key);
+    // The absence was seen on this run, so the entry is dated today; no state was read, so
+    // _meta.read stays where it was.
     out.components[key] = { missing: true, ...meta, url: current, read: today, states: {} };
     done.add(key);
-    out._meta.captured = out._meta.read = today;
     return;
   }
   for (const st of list) {
@@ -121,8 +121,8 @@ async function states(key, loc, list, meta) {
       if (via === 'focus failed') {
         // Keyboard focus never reached the element, so a reading now would be the element at rest
         // saved as its focus. Record the miss instead, as the kit does.
-        if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current, read: today }; done.add(key); out._meta.captured = out._meta.read = today; }
-        out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via };
+        if (!done.has(key)) { touch(out, earlier, key, { ...meta, url: current }); done.add(key); }
+        readFailed(out.components[key], earlier.get(key), st, { skipped: 'focus failed: keyboard focus did not reach the element', via }, today);
         log('  -', key, st, 'skipped: focus failed');
         continue;
       }
