@@ -468,7 +468,23 @@ function isCategoryGroup(groupId: string) {
 }
 
 export function taxonomyStore(client: Client) {
-  let termMap: { revision: number; map: Map<string, string[]> } | undefined;
+  // The load in flight is shared, so parallel requests read the rows once.
+  let termMap:
+    { revision: number; map: Promise<Map<string, string[]>> } | undefined;
+  async function loadTermMap() {
+    const map = new Map<string, string[]>();
+    for (const row of (
+      await client.execute(
+        "SELECT reference_id,media_id,term_id FROM media_term_assignments ORDER BY reference_id,media_id,term_id",
+      )
+    ).rows) {
+      const id = `${row.reference_id}:${row.media_id}`;
+      const terms = map.get(id);
+      if (terms) terms.push(String(row.term_id));
+      else map.set(id, [String(row.term_id)]);
+    }
+    return map;
+  }
   async function listTaxonomyGroups(): Promise<TaxonomyGroup[]> {
     const [groups, terms] = await Promise.all([
       client.execute(
@@ -549,18 +565,12 @@ export function taxonomyStore(client: Client) {
           ?.value ?? -1,
       );
       if (termMap?.revision === revision) return termMap.map;
-      const map = new Map<string, string[]>();
-      for (const row of (
-        await client.execute(
-          "SELECT reference_id,media_id,term_id FROM media_term_assignments ORDER BY reference_id,media_id,term_id",
-        )
-      ).rows) {
-        const id = `${row.reference_id}:${row.media_id}`;
-        const terms = map.get(id);
-        if (terms) terms.push(String(row.term_id));
-        else map.set(id, [String(row.term_id)]);
-      }
+      const map = loadTermMap();
       termMap = { revision, map };
+      // A failed load is not kept: the next call tries again.
+      map.catch(() => {
+        if (termMap?.map === map) termMap = undefined;
+      });
       return map;
     },
     async listReferenceCategories(): Promise<

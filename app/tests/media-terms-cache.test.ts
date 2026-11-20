@@ -1,4 +1,4 @@
-import { expect, test } from "vitest";
+import { expect, test, vi } from "vitest";
 import mediaSeed from "@/data/media-taxonomy.json";
 import { tempStore } from "./helpers";
 
@@ -25,6 +25,22 @@ test("the media term map is read once and re-read after any write, plain SQL inc
   expect((await store.mediaTermsByMedia()).get(id)).toEqual([
     sample.terms[0].termId,
   ]);
+});
+
+test("parallel reads share one load of the assignments", async () => {
+  const { store } = await tempStore("media-terms-parallel-");
+  const execute = vi.spyOn(store.client, "execute");
+  const maps = await Promise.all([
+    store.mediaTermsByMedia(),
+    store.mediaTermsByMedia(),
+    store.mediaTermsByMedia(),
+  ]);
+  expect(new Set(maps).size).toBe(1);
+  const fullReads = execute.mock.calls.filter(([statement]) =>
+    String(statement).includes("FROM media_term_assignments"),
+  );
+  expect(fullReads).toHaveLength(1);
+  execute.mockRestore();
 });
 
 test("a version-44 store gains the revision table and its triggers", async () => {
