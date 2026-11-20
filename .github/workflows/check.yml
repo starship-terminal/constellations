@@ -23,11 +23,6 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   check:
-    # Audit fix branches (audit2/*) are not tested one by one: each fix is
-    # reviewed on its own pull request and then lands in a train branch
-    # (audit2/train-*), whose single run here is the gate. Skipping them keeps
-    # hundreds of small pull requests from filling the account's Actions queue.
-    if: github.event_name != 'pull_request' || !startsWith(github.head_ref, 'audit2/') || startsWith(github.head_ref, 'audit2/train-')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -59,8 +54,6 @@ jobs:
           sudo apt-get install -y -q tesseract-ocr
       - run: make test
   docs:
-    # Skips audit fix branches; see the note on the first job.
-    if: github.event_name != 'pull_request' || !startsWith(github.head_ref, 'audit2/') || startsWith(github.head_ref, 'audit2/train-')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -86,9 +79,6 @@ jobs:
   # (~/.design-systems/pw, docs/CAPTURE.md) with Chromium only, beside the check
   # job so the browser download does not lengthen it.
   kit-browser:
-    # Skipped on audit fix branches like the check job above: its Playwright
-    # install takes about seven minutes, and the train branch's run is the gate.
-    if: github.event_name != 'pull_request' || !startsWith(github.head_ref, 'audit2/') || startsWith(github.head_ref, 'audit2/train-')
     # Playwright 1.55.0 has no Chromium build for ubuntu-latest (26.04), so this job
     # stays on 24.04 until the kit moves to a newer Playwright.
     runs-on: ubuntu-24.04
