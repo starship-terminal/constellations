@@ -6551,9 +6551,9 @@
       "description": "Build interactive 3D and AR solutions online",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.vectary.com/login/ Continue with Google signed in and opened the app. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 20
     },
     {
@@ -6568,9 +6568,9 @@
       "description": "We enable developers to build and publish wonderful things",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://vercel.com/login Continue with Google asked for an authenticator code. Code not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 20
     },
     {
@@ -6585,9 +6585,9 @@
       "description": "The World's Leading Music Video Network",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.vevo.com/login never loaded a form. Homepage is a marketing site with no sign-in.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 20
     },
     {
@@ -6602,9 +6602,9 @@
       "description": "The world's only all-in-one video solution",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://vimeo.com/log_in Continue with Google signed in and opened a survey. Survey not filled. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 20
     },
     {
@@ -6619,9 +6619,9 @@
       "description": "Privacy-friendly Google Analytics alternative",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://visitors.now/login Continue with Google signed in and opened project setup. Setup not filled. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 20
     },
     {
@@ -6636,9 +6636,9 @@
       "description": "Generate AI Images & Videos",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://visualelectric.com/login did not resolve. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 20
     },
     {
@@ -6653,9 +6653,9 @@
       "description": "Let your money grow",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://business.vivid.money/en/login asks for a phone number or email. Phone not entered. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "phone",
       "batch": 20
     },
     {
@@ -6670,9 +6670,9 @@
       "description": "AI Notes and Meetings",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://voicenotes.com/login Continue with Google signed in and opened the app. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 20
     },
     {
@@ -6687,9 +6687,9 @@
       "description": "A creative place where life is 24/7",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.volkshotel.nl/en/login redirected to a WordPress login that is a 404. No product sign-in.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 20
     },
     {
@@ -6704,9 +6704,9 @@
       "description": "Photo & Video Editor",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://vsco.co/user/login showed email and password. Log in with Google did not open an account chooser. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 20
     },
     {
@@ -6721,9 +6721,9 @@
       "description": "Save Money. Live Better",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://identity.walmart.com/account/login asks for a phone number or email and says it will check for an account. Phone not entered. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "phone",
       "batch": 20
     },
     {
@@ -6738,9 +6738,9 @@
       "description": "Better than your bank",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://my.wealthsimple.com/app/login showed email and password. Password not submitted. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 20
     },
     {
@@ -6755,9 +6755,9 @@
       "description": "AI-Powered Design Workflows, Built for Creative Pros",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.weavy.ai/signin offers Figma, Google, and Microsoft. Continue with Google did not open an account chooser.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 20
     },
     {
@@ -6772,9 +6772,9 @@
       "description": "No-code website builder",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://webflow.com/login showed email and password. Continue with Google is a frame that did not open an account chooser. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 20
     },
     {
@@ -6789,9 +6789,9 @@
       "description": "Weekrise is simple yet packed with useful features to boost your productivity",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://weekrise.com/auth/login said the capture inbox is not signed up. Sign up not opened. Google did not open an account chooser.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 20
     },
     {
@@ -6806,9 +6806,9 @@
       "description": "The developer-first ‍MLOps platform",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://wandb.ai/login redirected to CoreWeave Forge. Continue with Google signed in. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 20
     },
     {
@@ -6823,9 +6823,9 @@
       "description": "Modern Furniture, Home Decor, Lighting & More",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.westelm.com/account/login.html asks for an email. Continue with email returned an error and did not send a code. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 20
     },
     {
@@ -6840,9 +6840,9 @@
       "description": "Secure and Reliable Free Private Messaging and Calling",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://web.whatsapp.com/ asked to update the browser before any sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 20
     },
     {
@@ -6857,9 +6857,9 @@
       "description": "Hybrid meetings that just work",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://whereby.com/user/login accepted the capture inbox and showed a 6-digit login code step. Code not entered. Google did not open an account chooser.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 20
     },
     {
@@ -6874,9 +6874,9 @@
       "description": "Weather forecast",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.windy.com/login Continue with Google signed in and opened the map. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 20
     },
     {
