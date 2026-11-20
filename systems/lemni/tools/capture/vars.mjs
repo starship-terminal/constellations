@@ -118,7 +118,7 @@ const binOf = (r) => {
 for (const r of result.rules) r.bin = binOf(r);
 const names = (bin) => [...new Set(result.rules.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
-  readAt: '2026-11-18',
+  readAt: new Date().toLocaleDateString('en-CA'),
   source: 'inline <style> blocks and any linked stylesheets from a signed-out load of www.lemni.com /, /pricing, /docs and lemni.com/signup (which redirects to /signin), re-parsed with CSSStyleSheet and resolved on a probe carrying those sheets. Framer publishes no --token-* palette on these pages; painted colours are measured from elements.',
   sheets: sheets.map(([n, t]) => `${n.slice(0, 100)} (${t.length} bytes)`).slice(0, 40),
   counts: {
