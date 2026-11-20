@@ -312,6 +312,108 @@ export async function backfillSeedLedger(tx: Transaction, openedAt: number) {
       )
       .map((row) => [row.referenceId, row.mediaId] as const),
   );
+  // A package the seed has dropped since v44 has no seed rows left to read
+  // its keys from, only the store's rows. A row whose key was in the seed at
+  // v44 was offered by it: record the key, so pruneRemovedSeeds removes the
+  // package here as it would from a store that always had a ledger.
+  const current = await seedReferences();
+  const leftCategories = await tx.execute(
+    "SELECT DISTINCT c.reference_id,t.group_id FROM reference_categories c JOIN taxonomy_terms t ON t.id=c.term_id",
+  );
+  await recordLedger(
+    tx,
+    "category_seed_ledger",
+    "group_id",
+    leftCategories.rows
+      .map((row) => [String(row.reference_id), String(row.group_id)] as const)
+      .filter(
+        ([referenceId, groupId]) =>
+          !current.has(referenceId) &&
+          knownCategories.has(`${referenceId} ${groupId}`),
+      ),
+  );
+  const leftMedia = await tx.execute(
+    "SELECT DISTINCT reference_id,media_id FROM media_term_assignments",
+  );
+  await recordLedger(
+    tx,
+    "media_seed_ledger",
+    "media_id",
+    leftMedia.rows
+      .map((row) => [String(row.reference_id), String(row.media_id)] as const)
+      .filter(
+        ([referenceId, mediaId]) =>
+          !current.has(referenceId) &&
+          knownMedia.has(mediaKey(referenceId, mediaId)),
+      ),
+  );
+}
+
+/** Every reference either seed file names. */
+async function seedReferences(): Promise<Set<string>> {
+  const { default: categories } = await import("@/data/system-categories.json");
+  const { default: media } = await import("@/data/media-taxonomy.json");
+  return new Set([
+    ...categories.map((row) => row.referenceId),
+    ...media.assignments.map((row) => row.referenceId),
+  ]);
+}
+
+/**
+ * Runs on every open, after topUpSeeds. A package deleted from the library
+ * drops out of both seed files; this removes the rows the seed gave it.
+ * Only ledger keys of references neither seed file names are touched, and
+ * of those only curated rows are deleted: a manual category stays. A key
+ * whose rows were all curated leaves the ledger, so the package is seeded
+ * afresh if it comes back. A key that holds a manual row, or no rows (a
+ * label the user cleared), stays, so that choice survives a return. User
+ * state that names the package (collections, saved media, conversations) is
+ * not seed data and is never touched; pages show those entries as
+ * unavailable. Idempotent: a second run finds no curated rows to remove.
+ */
+export async function pruneRemovedSeeds(tx: Transaction) {
+  const current = JSON.stringify([...(await seedReferences())]);
+  const gone = (alias: string) =>
+    `${alias}.reference_id NOT IN (SELECT value FROM json_each(?)) AND ${alias}.origin='curated'`;
+  // Ledger keys of removed packages that hold curated rows.
+  const categoryKeys = (
+    await tx.execute({
+      sql: `SELECT DISTINCT l.reference_id,l.group_id FROM category_seed_ledger l JOIN taxonomy_terms t ON t.group_id=l.group_id JOIN reference_categories c ON c.reference_id=l.reference_id AND c.term_id=t.id WHERE ${gone("c")}`,
+      args: [current],
+    })
+  ).rows.map((row) => [String(row.reference_id), String(row.group_id)]);
+  const mediaKeys = (
+    await tx.execute({
+      sql: `SELECT DISTINCT l.reference_id,l.media_id FROM media_seed_ledger l JOIN media_term_assignments m ON m.reference_id=l.reference_id AND m.media_id=l.media_id WHERE ${gone("m")}`,
+      args: [current],
+    })
+  ).rows.map((row) => [String(row.reference_id), String(row.media_id)]);
+  // Each key list travels as one JSON parameter, so no statement nears
+  // SQLite's parameter limit however many keys a removal holds.
+  const pairs =
+    "SELECT json_extract(value,'$[0]'),json_extract(value,'$[1]') FROM json_each(?)";
+  if (categoryKeys.length) {
+    const keys = JSON.stringify(categoryKeys);
+    await tx.execute({
+      sql: `DELETE FROM reference_categories WHERE origin='curated' AND (reference_id,(SELECT t.group_id FROM taxonomy_terms t WHERE t.id=reference_categories.term_id)) IN (${pairs})`,
+      args: [keys],
+    });
+    await tx.execute({
+      sql: `DELETE FROM category_seed_ledger WHERE (reference_id,group_id) IN (${pairs}) AND NOT EXISTS (SELECT 1 FROM reference_categories c JOIN taxonomy_terms t ON t.id=c.term_id WHERE c.reference_id=category_seed_ledger.reference_id AND t.group_id=category_seed_ledger.group_id)`,
+      args: [keys],
+    });
+  }
+  if (mediaKeys.length) {
+    const keys = JSON.stringify(mediaKeys);
+    await tx.execute({
+      sql: `DELETE FROM media_term_assignments WHERE origin='curated' AND (reference_id,media_id) IN (${pairs})`,
+      args: [keys],
+    });
+    await tx.execute({
+      sql: `DELETE FROM media_seed_ledger WHERE (reference_id,media_id) IN (${pairs}) AND NOT EXISTS (SELECT 1 FROM media_term_assignments m WHERE m.reference_id=media_seed_ledger.reference_id AND m.media_id=media_seed_ledger.media_id)`,
+      args: [keys],
+    });
+  }
 }
 
 /** The 8-hex-digit key seed-keys-v44.json lists a media pair under. */

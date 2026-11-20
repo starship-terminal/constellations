@@ -12,7 +12,7 @@ Cohere is worth a capture because the site is a **Next.js App Router / Tailwind 
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (39, 97 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the promo banner + glass header, the gradient pill CTAs, the pricing rate table and FAQ accordion, the footer bands, and the full-screen mobile menu |
-| [components/crops/](components/crops) | 94 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 93 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 28 `{page}-{theme}-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots at 2x; the privacy/terms and mobile fulls exceed one GPU texture and are stitched from `.partN` tiles (bounded at 8 chunks each) |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 1,596 rules across 8 sheets, 1,086 literal utility declarations, 49 @font-face records), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads). The full-colour pre-quantization shots are kept outside the repo |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -49,7 +49,7 @@ Fonts: `core.font.family.displayMeasured` is CohereText, then 9 fallbacks; `core
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 94 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 93 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -83,7 +83,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 ## What was captured
 
-Routes: `/` (with the promo banner, glass header, hero, customer marquee, callout cards and footer), `/pricing` (the per-model rate table plus the FAQ accordion), `/north` and `/command` (product pages), `/models-overview`, `/developers`, `/customer-stories`, `/about`, `/privacy`, `/terms-of-use`, the mobile passes for home/pricing/north at 390 x 844 with the hamburger menu opened by its own press, and `dashboard.cohere.com/welcome/login` at rest. 28 screenshots, 39 measured components in 97 states, 94 crops.
+Routes: `/` (with the promo banner, glass header, hero, customer marquee, callout cards and footer), `/pricing` (the per-model rate table plus the FAQ accordion), `/north` and `/command` (product pages), `/models-overview`, `/developers`, `/customer-stories`, `/about`, `/privacy`, `/terms-of-use`, the mobile passes for home/pricing/north at 390 x 844 with the hamburger menu opened by its own press, and `dashboard.cohere.com/welcome/login` at rest. 28 screenshots, 39 measured components in 97 states, 93 crops.
 
 ## Known gaps
 

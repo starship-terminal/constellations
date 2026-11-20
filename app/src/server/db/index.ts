@@ -20,6 +20,7 @@ import {
   seedLedgerMigration,
   backfillSeedLedger,
   topUpSeeds,
+  pruneRemovedSeeds,
   referencesWithoutMedia,
   mediaTermsRevisionMigration,
 } from "./taxonomy";
@@ -173,6 +174,9 @@ export async function createResearchStore(directory: string) {
     // Every open: seed rows for packages and media the seed JSON gained since
     // this store last opened. Never add a per-package migration for this.
     await topUpSeeds(tx);
+    // Every open, in the same transaction: remove the seed rows of packages
+    // the library no longer has. User state is never touched.
+    await pruneRemovedSeeds(tx);
     await tx.commit();
   } catch (error) {
     await tx.rollback();

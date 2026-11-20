@@ -12,7 +12,7 @@ Epidemic Sound is worth a capture because it ships its real token layer to the b
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values, light and dark |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (56, 147 states) with crops and values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the ecru marketing chrome, pricing, the dark catalog shell (banner + track rows + banner + footer), the Keycloak auth forms, mobile |
-| [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` (146 files at 2x) |
+| [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` (145 files at 2x) |
 | [screenshots/](screenshots) | 25 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale (bounded at 8 tiles); `mobile-*` shots are 2x captures of the 390 x 844 viewport, plus `mobile-genre-dark-drawer` (the nav drawer open) |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — ~294 resolved custom properties across the dark/light/alternative/alternative-light probes, run with the shipped `radii-override` body class), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads). The full-colour screenshots before quantisation, with their `.capture.json` sidecars, are kept outside the repository (`~/.design-systems/epidemicsound/raw-shots`, the kit's default) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -52,7 +52,7 @@ Fonts: `core.font.family.display` is Sebenta, then 6 fallbacks; `core.font.famil
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 146 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 145 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

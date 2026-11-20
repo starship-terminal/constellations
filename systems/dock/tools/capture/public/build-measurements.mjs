@@ -17,8 +17,10 @@ const esc = (s) => String(s ?? '').replace(/\|/g, '/').replace(/\n/g, ' ');
 // same rule as focus_not_captured in tools/build_components_md.py): a skipped one, or a focus-visible
 // reading taken where keyboard focus never landed (older runs saved the element at rest) or where the
 // element took focus without matching :focus-visible.
-const focusNotCaptured = (v) => Boolean(v.skipped) || v.via === 'focus failed' || v.focus?.matches === false;
-const notCapturedWhy = (v) => v.skipped || (v.via === 'focus failed' ? 'focus failed: keyboard focus did not reach the element' : 'focused without matching :focus-visible, so no keyboard-focus reading');
+// This package also marks some failed focus states with HAND_RELABELLED_FOCUS (below): their via
+// was rewritten by hand after the run, not re-measured, so they count as not captured too.
+const focusNotCaptured = (v) => Boolean(v.skipped) || v.via === 'focus failed' || v.via === HAND_RELABELLED_FOCUS || v.focus?.matches === false;
+const notCapturedWhy = (v) => v.skipped || (v.via === 'focus failed' ? 'focus failed: keyboard focus did not reach the element' : v.via === HAND_RELABELLED_FOCUS ? 'focus failed when captured; the via was later rewritten by hand, not re-measured' : 'focused without matching :focus-visible, so no keyboard-focus reading');
 
 function props(v) {
   const s = v.style || {};
@@ -82,7 +84,6 @@ for (const g of groups) {
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
       if (focusNotCaptured(v)) { (rows.Skipped ||= {})[st] = notCapturedWhy(v); continue; }
       // eight header/footer focus states the run recorded as focus failed; their via was rewritten by hand afterwards (commit 492e65670), not re-measured
-      if (v.via === HAND_RELABELLED_FOCUS) { (rows.Skipped ||= {})[st] = 'focus failed when captured; the via was later rewritten by hand, not re-measured'; continue; }
       if (!v.style || !v.rect) { // a note entry (e.g. pdp_url) carries no computed style
         (rows.Note ||= {})[st] = v.text || v.via || '';
         continue;

@@ -13,7 +13,7 @@ Fourmula is an AI product-photography product for e-commerce brands, and its pub
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the marketing chrome, the FAQ rows, the app sign-in card and the PDP format radios, with a working light/dark toggle (the marketing site has both paints). |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (77, 175 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the marketing chrome and inverted theme toggle, the hero and logo strips, the FAQ accordion, the legal pages, the app's floating header, the sign-in boundary, the create-PDP generator, mobile, motion and focus. |
-| [components/crops/](components/crops) | 173 element crops at 2x, named `{component}-{state}.png`. |
+| [components/crops/](components/crops) | 168 element crops at 2x, named `{component}-{state}.png`. |
 | [screenshots/](screenshots) | 29 quantised `{page}-{theme}-{state}.png` captures. `light` is the marketing light paint (`.body.dark`), `dark` the site's dark paint or the dark-only app; desktop 1440 x 900 at 1x; `-full` whole pages stitched at 1x; `mobile-*` shots at 390 x 844 @2x. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the marketing stylesheet harvest — resolved custom properties plus @font-face), `css-vars-app.json` (the app's @theme harvest), `motion.json` (the two-pass reduced-motion probe), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
@@ -53,7 +53,7 @@ Fonts: `core.font.family.marketing` is Sf Pro Display, then 2 fallbacks; `core.f
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 173 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 168 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

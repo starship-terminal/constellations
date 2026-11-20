@@ -13,7 +13,7 @@ Fable is worth a capture because it ships a complete Tailwind-style token layer 
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the two skins and the discover wall, light and dark. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (81, 215 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the two skins' chrome, the marketing hero, the clubs index and search modal, book/club detail, the sign-in panel, support, the discover wall, mobile, motion and focus. |
-| [components/crops/](components/crops) | 215 element crops at 2x, named `{component}-{state}.png`. |
+| [components/crops/](components/crops) | 213 element crops at 2x, named `{component}-{state}.png`. |
 | [screenshots/](screenshots) | 34 quantised `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale; `mobile-*` shots at 390 x 844 @2x; `clubs-light-search` the open dialog, `book-light-spoilers` the spoiler reveal, `mobile-home-light-nav` the nav sheet. `mobile-*-full` pages are stitched `partN` tiles (≤8 chunks). |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — resolved custom properties plus @font-face), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
@@ -52,7 +52,7 @@ Fonts: `core.font.family.heading` is Heldane Display, then 1 fallback; `core.fon
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 215 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 213 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
