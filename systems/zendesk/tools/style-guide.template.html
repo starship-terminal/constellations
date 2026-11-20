@@ -132,7 +132,13 @@ const host = document.getElementById("swatches");
 for (const [name, prop] of roles) {
   const el = document.createElement("div");
   el.className = "sw";
-  el.innerHTML = `<i style="background:var(--${prop})"></i><b>${name}</b><small>${prop}</small>`;
+  const dot = document.createElement("i");
+  dot.style.background = `var(--${prop})`;
+  const label = document.createElement("b");
+  label.textContent = name;
+  const code = document.createElement("small");
+  code.textContent = prop;
+  el.append(dot, label, code);
   host.appendChild(el);
 }
 </script>
