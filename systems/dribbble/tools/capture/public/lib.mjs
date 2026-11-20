@@ -32,16 +32,16 @@ export const RAW = path.join(REF, 'raw');
 // answered.
 export const M = (name) => `[class*="${name}"]`;
 
-// The per-context patches every page gets: the webdriver mask (dribbble.com
-// sits behind AWS WAF, which issues a JS challenge to headless clients),
-// plus a record of the real devicePixelRatio before app code runs — some
+// The per-context patches every page gets (dribbble.com sits behind AWS WAF,
+// which issues a JS challenge to headless clients; that challenge is recorded
+// as a boundary, not bypassed): a record of the real devicePixelRatio before app code runs — some
 // sites' scripts make window.devicePixelRatio read 1 while the renderer still
 // paints at the context's deviceScaleFactor (a 780x1688 PNG from a 390x844
 // viewport). __captureDPR keeps the launch-time value for the screenshot
 // sidecar.
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: navigator.webdriver is left as the browser reports it; a challenge is recorded as a boundary, not bypassed (D7)
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }
@@ -134,8 +134,8 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
 }
 
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });  // a navigation error stops the run instead of measuring a blank page (20-4)
+  if (!(await clearChallenge(page))) throw new Error('blocked: the bot check did not clear on ' + url);
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
 }
