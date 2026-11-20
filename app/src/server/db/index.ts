@@ -21,11 +21,12 @@ import {
   backfillSeedLedger,
   topUpSeeds,
   referencesWithoutMedia,
+  mediaTermsRevisionMigration,
 } from "./taxonomy";
 import { packageTopUps } from "./package-top-ups";
 
 /** The schema version this build writes. A newer store is refused. */
-export const RESEARCH_DB_VERSION = 44;
+export const RESEARCH_DB_VERSION = 45;
 
 // Versioned migrations apply atomically, and never touch the canonical library.
 const migrations = [
@@ -163,6 +164,11 @@ export async function createResearchStore(directory: string) {
       for (const statement of seedLedgerMigration) await tx.execute(statement);
       await backfillSeedLedger(tx, version);
       await tx.execute("PRAGMA user_version = 44");
+    }
+    if (version < 45) {
+      for (const statement of mediaTermsRevisionMigration)
+        await tx.execute(statement);
+      await tx.execute("PRAGMA user_version = 45");
     }
     // Every open: seed rows for packages and media the seed JSON gained since
     // this store last opened. Never add a per-package migration for this.
