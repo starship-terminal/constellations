@@ -637,25 +637,26 @@ Page: home. Selector: `.wpg-tab`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 81.33 x 31 | = | = | = |
-| Padding | 4px 2px | = | = | = |
-| Gap | 2px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 10px/10px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #00a0ff | = | = | = |
-| Text node | span: Inter 10px/10px 400, #00a0ff | = | = | = |
-| Transition | color 0.2s ease | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 11 x 11, colour #00a0ff | = | = | = |
-| Ancestor paint | 3 up div.widget-pg__widget--light.widget-pg__widget bg #ffffff shadow #123769 @ 0.16 0px 8px 32px 0px, #123769 @ 0.08 0px 0px 0px 1px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 81.33 x 31 | = | - | = |
+| Padding | 4px 2px | = | - | = |
+| Gap | 2px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 10px/10px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #00a0ff | = | - | = |
+| Text node | span: Inter 10px/10px 400, #00a0ff | = | - | = |
+| Transition | color 0.2s ease | = | - | = |
+| Cursor | default | = | - | = |
+| Icon | 11 x 11, colour #00a0ff | = | - | = |
+| Ancestor paint | 3 up div.widget-pg__widget--light.widget-pg__widget bg #ffffff shadow #123769 @ 0.16 0px 8px 32px 0px, #123769 @ 0.08 0px 0px 0px 1px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `wpg-tab-default.png`, `wpg-tab-hover.png`, `wpg-tab-focus-visible.png`, `wpg-tab-pressed.png`.
+Crops: `wpg-tab-default.png`, `wpg-tab-hover.png`, `wpg-tab-pressed.png`.
 
 #### wpg-article
 
