@@ -148,12 +148,17 @@ def page_of(key):
     return COMPS[key]["url"].split("?")[0]
 
 
+def viewport_of(key):
+    """The capture width a component was read at: the Mobile group ran at 390 x 844."""
+    return "390x844" if COMPS[key].get("group", "").startswith("Mobile") else "1440x900"
+
+
 def reading(key, prop, state="default"):
     st = (COMPS.get(key) or {}).get("states", {}).get(state) or {}
     value = (st.get("style") or {}).get(prop)
     if st.get("error") or value in (None, ""):
         raise SystemExit(f"no reading of {prop} on {key}/{state}")
-    return value, f"measured {prop} on {key}/{state} ({page_of(key)}), 1440x900, 2026-11-18"
+    return value, f"measured {prop} on {key}/{state} ({page_of(key)}), {viewport_of(key)}, 2026-11-18"
 
 
 def mdim(path, key, prop, note=""):
@@ -219,7 +224,7 @@ core = {
         "1": dim("core.spacing.1", "4px", HAND + "; the 4px unit of the guest utility scale"),
         "2": mdim("core.spacing.2", "hero-email", "paddingTop"),
         "3": mdim("core.spacing.3", "apply-cta", "paddingTop", ".btn-md vertical padding"),
-        "4": mdim("core.spacing.4", "m-nav", "paddingLeft"),
+        "4": mdim("core.spacing.4", "filter-chip", "paddingLeft"),
         "6": mdim("core.spacing.6", "apply-cta", "paddingLeft", ".btn-md horizontal padding"),
     },
     "size": {
