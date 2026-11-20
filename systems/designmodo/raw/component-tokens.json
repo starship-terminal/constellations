@@ -204,13 +204,13 @@
       "page": {
         "value": "#ffffff",
         "type": "color",
-        "source": "the marketing surface paints white — site-footer default measures rgb(255,255,255) (raw/components-computed.json)",
+        "source": "computed backgroundColor of site-footer default: the marketing surface paints white (raw/components-computed.json)",
         "description": "The white field the marketing surface paints (footer/section paint; #fff on the pricing tint)."
       },
       "paper": {
         "value": "#f4f4f4",
         "type": "color",
-        "source": "the app gallery canvas paints #f4f4f4 (screenshots/app-*.png; body bg measured rgb(244,244,244) at recon)",
+        "source": "entered by hand at capture time, not measured: the recon's app body background rgb(244,244,244) was never saved to raw/ (compare screenshots/app-*.png); recapture needed",
         "description": "The #f4f4f4 app canvas behind the gallery (the app shell's page paint)."
       },
       "navy": {
@@ -228,7 +228,7 @@
       "card-face": {
         "value": "#f4f6f7",
         "type": "color",
-        "source": "the gallery card faces paint #f4f6f7 (measured on sc-hBxvHn at recon; screenshots/app-*.png)",
+        "source": "painted background of the div.sc-hBxvHn card face inside create-blank default (raw/components-computed.json)",
         "description": "The #f4f6f7 dashed Create-Blank/AI card faces in the app gallery."
       },
       "field": {
@@ -442,13 +442,13 @@
     "tpl-card-width": {
       "value": "266px",
       "type": "dimension",
-      "source": "measured w of tpl-card default (raw/components-computed.json)",
+      "source": "measured w of tpl-card default (raw/components-computed.json); tpl-card was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
       "description": "The 266px template card."
     },
     "tpl-card-height": {
       "value": "592px",
       "type": "dimension",
-      "source": "measured h of tpl-card default (raw/components-computed.json)",
+      "source": "measured h of tpl-card default (raw/components-computed.json); tpl-card was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
       "description": "The 592px template card."
     },
     "badge-height": {

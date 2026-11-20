@@ -335,8 +335,15 @@ for k, c in C.items():
     # button takes the white+blue pair on focus while the row's own shadow
     # stays none): compare each painted child's shadow against the same node
     # in the base state, so a shadow the child always had is not misread.
-    base_shadows = {n["node"]: n.get("shadow") for n in base_state.get("paint", [])}
-    child_shadow = next((n["shadow"] for n in st.get("paint", []) if n.get("shadow") and base_shadows.get(n["node"]) != n["shadow"]), None)
+    # Pair layers by node label and occurrence: sibling layers often share a label,
+    # and a dict keyed by label alone compares each against the last sibling.
+    def keyed(layers):
+        seen = {}
+        for n in layers:
+            i = seen[n["node"]] = seen.get(n["node"], -1) + 1
+            yield (n["node"], i), n
+    base_shadows = {key: n.get("shadow") for key, n in keyed(base_state.get("paint", []))}
+    child_shadow = next((n["shadow"] for key, n in keyed(st.get("paint", [])) if n.get("shadow") and base_shadows.get(key) != n["shadow"]), None)
     shadow = (s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none") or bool(child_shadow)
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
@@ -410,6 +417,12 @@ for k in ["plan-card", "template-card", "feat-card", "inspo-card", "academy-card
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
+# Entries whose selector caught another element (the README's What to distrust
+# lists them): the readings below are that element's, not the named component's.
+WRONG = {
+    "logo": "The `nav a` fallback in the selector matched first, so these are the \"Pricing\" nav link's values, not the Wix Studio wordmark's.",
+}
+
 # ------------------------------------------------ entries
 W("## Components")
 groups = [g for g in GROUP_INTRO if any(c.get("group") == g for c in C.values())]
@@ -435,6 +448,9 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
+        if k in WRONG:
+            W(f"**Wrong element.** {WRONG[k]} The selector is fixed in tools/capture/public/measure.mjs; the entry needs a recapture.")
+            W()
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:

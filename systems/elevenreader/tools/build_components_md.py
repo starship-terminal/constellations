@@ -331,7 +331,7 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+foc, wrapper_rings = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st or st.get("via") == "focus failed":
@@ -354,6 +354,8 @@ for k, c in C.items():
     decor = s["textDecorationLine"] != base["textDecorationLine"]
     desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
     foc.append((k, ring or bool(child_ring), shadow, border, decor, desc))
+    if ring:
+        wrapper_rings.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], tokens=False)}", s["outlineOffset"]))
 with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, de, r in foc if ring]
 with_shadow = [f"`{k}`" for k, ring, sh, bd, de, r in foc if not ring and sh]
 with_border = [f"`{k}`" for k, ring, sh, bd, de, r in foc if not ring and not sh and bd]
@@ -422,6 +424,12 @@ for k in ["plan-card", "signin-card", "signup-card", "faq-item", "nav-dropdown",
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
+# Capture descs that claim an interaction the S() call never ran. Corrected here
+# until a recapture writes the fixed desc from tools/capture/public/measure.mjs.
+DESC_FIX = {
+    "billing-off": "The unselected Monthly segment (#57534F text, hover black), read at rest, on hover, on keyboard focus and forced pressed; never clicked or checked out.",
+}
+
 # ------------------------------------------------ entries
 W("## Components")
 groups = [g for g in GROUP_INTRO if any(c.get("group") == g for c in C.values())]
@@ -438,7 +446,7 @@ for g in groups:
             continue
         W()
         W(f"#### {c['title']}")
-        desc = (c.get("desc") or "").strip()
+        desc = DESC_FIX.get(k, c.get("desc") or "").strip()
         if desc and not desc.endswith((".", ")", '"')):
             desc += "."
         where = PAGE_NAME.get(c["page"], c["page"])
@@ -499,7 +507,17 @@ W("### States")
 W()
 W("- **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing. Forced presses shrink the pills (a scale-98 transform is painted on hero-cta, plan-cta, genre-chip, view-all, try-cta and promo-cta).")
 W("- **Disabled, error and loading states** were not seen on the public surface.")
-W("- **Hover on nav links** changes only the fill (transparent to the surface tint); every control that rings draws the same 2px solid black outline at 2px offset.")
+# The ring sentence is counted from the readings, not written by hand.
+looks = sorted({look for _, look, _ in wrapper_rings})
+offsets = {}
+for k, _, off in wrapper_rings:
+    offsets.setdefault(off, []).append(k)
+main_off = max(offsets, key=lambda o: len(offsets[o]))
+others = "; ".join(f"{o} on {len(ks)}: {', '.join(f'`{k}`' for k in ks)}" for o, ks in sorted(offsets.items()) if o != main_off)
+ring_text = (f"every control that rings on its own box draws the same {looks[0]} outline" if len(looks) == 1
+             else f"controls that ring on their own box draw {len(looks)} outline looks ({', '.join(looks)})")
+ring_text += f", at {main_off} offset on {len(offsets[main_off])} of {len(wrapper_rings)}" + (f" ({others})" if others else "")
+W(f"- **Hover on nav links** changes only the fill (transparent to the surface tint); {ring_text}.")
 W()
 W("### Themes")
 W()
