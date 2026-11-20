@@ -277,6 +277,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+The per-element readings were not saved. [raw/components.json](raw/components.json) holds only the viewport and a note, so 94 tokens read from computed styles (the named colours, type, weights, component sizes, shadows and motion) are labelled Reconstruction, entered by hand at capture time. The 120 values declared as custom properties in [raw/css-vars.json](raw/css-vars.json) stay Measured.
+
 The painted Sign up blue, rgb(23, 84, 207), is not `--primary-100` (`#0F4BE5`). The hover blue, rgb(15, 73, 189), is not `--primary-100-hover` (`#0515d4`). Body type computes as DMSans, not the declared `--font-primary` Inter. Inter was measured only on the auth inputs. `--card-box-shadow` is a four-layer stack. The trending cards computed a smaller shadow. The homepage footer computed 322px tall. `--height-footer` is 205px. Sonner declares a dark toast theme. It was not on screen, so there is no dark token set. Screenshots are full colour. Do not sample tokens from them.
 
 ### Do and don't (from README.md)

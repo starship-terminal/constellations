@@ -363,6 +363,38 @@ def component_tokens():
     }
 
 
+def label_hand_entries(tokens):
+    """raw/components.json holds no per-element reading (its note says they stayed in the capture
+    notes), so a value is Measured only when the custom property its source names is declared with
+    that value in raw/css-vars.json. Any other computed value was typed in: relabel it."""
+    declared = VARS["declared"]
+
+    def backed(node):
+        detail = node["$extensions"]["source"].get("detail", "")
+        value = json.dumps(node["$value"]).lower().replace(" ", "")
+        for name in re.findall(r"--[A-Za-z0-9_-]+", detail):
+            for row in declared.get(name, []):
+                if row["val"].lower().replace(" ", "") in value or value.strip('"') == row["val"].lower().replace(" ", ""):
+                    return True
+        return False
+
+    def walk(node):
+        if isinstance(node, dict) and "$value" in node:
+            source = node["$extensions"]["source"]
+            if source["evidence"] == "Measured" and not (isinstance(node["$value"], str) and node["$value"].startswith("{")) and not backed(node):
+                source["evidence"] = "Reconstruction"
+                source["detail"] = ("Entered by hand at capture time; raw/components.json holds no per-element reading. "
+                                    + source["detail"])
+        elif isinstance(node, dict):
+            for k, v in node.items():
+                if not k.startswith("$"):
+                    walk(v)
+
+    for set_name, body in tokens.items():
+        if not set_name.startswith("$"):
+            walk(body)
+
+
 def check(tokens):
     """Refuse a token with no source, a broken alias, or a dimension that is not one length."""
     problems = []
@@ -370,20 +402,23 @@ def check(tokens):
     def walk(node, path):
         if isinstance(node, dict) and "$value" in node:
             source = node.get("$extensions", {}).get("source", {})
-            if source.get("evidence") not in ("Measured", "Derived", "Sampled", "Not captured"):
+            if source.get("evidence") not in ("Measured", "Derived", "Sampled", "Reconstruction", "Not captured"):
                 problems.append(f"{path} has no evidence label")
             value = node["$value"]
             if node["$type"] == "dimension" and isinstance(value, str) and not value.startswith("{"):
                 if not re.fullmatch(r"-?\d+(\.\d+)?(px|rem|em)", value):
                     problems.append(f"{path} dimension {value!r} is not one length")
             if isinstance(value, str) and value.startswith("{") and value.endswith("}"):
+                # Resolve in the token's own set first, then core, as tools/catalog.py's Resolver does.
                 target = value[1:-1].split(".")
-                cur = tokens["core"]
-                for part in target:
-                    if not isinstance(cur, dict) or part not in cur:
-                        problems.append(f"{path} alias {value} does not resolve")
+                for root in (tokens[path.split(".")[0]], tokens["core"]):
+                    cur = root
+                    for part in target:
+                        cur = cur.get(part) if isinstance(cur, dict) else None
+                    if isinstance(cur, dict) and "$value" in cur:
                         break
-                    cur = cur[part]
+                else:
+                    problems.append(f"{path} alias {value} does not resolve")
         elif isinstance(node, dict):
             for k, v in node.items():
                 if not k.startswith("$"):
@@ -404,11 +439,12 @@ def build():
         "light": light(),
         "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
     }
+    label_hand_entries(tokens)
     check(tokens)
-    out = HERE / "tokens.json"
-    out.write_text(json.dumps(tokens, indent=2) + "\n")
-    print(f"wrote {out}")
+    return tokens
 
 
 if __name__ == "__main__":
-    build()
+    out = HERE / "tokens.json"
+    out.write_text(json.dumps(build(), indent=2) + "\n")
+    print(f"wrote {out}")
