@@ -124,6 +124,18 @@ def have(comp, state, prop=None):
         return False
 
 
+
+# A transparent reading is no fill (the colour comes from an ancestor), so it
+# is never committed as one (2026-11 audit, finding 14-8).
+TRANSPARENT = re.compile(r"transparent|rgba\(\s*[\d.]+[,\s]+[\d.]+[,\s]+[\d.]+\s*[,/]\s*0(\.0+)?%?\s*\)")
+
+
+def opaque(v):
+    """v unless it is a transparent reading; a KeyError skips the token."""
+    if v is None or TRANSPARENT.fullmatch(str(v).strip()):
+        raise KeyError("transparent")
+    return v
+
 def lit(value, ty, src, desc):
     return {"value": norm_color(value) if ty == "color" else value, "type": ty, "source": src, "description": desc}
 
@@ -537,7 +549,7 @@ for key, comp, state, prop, group, desc in [
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-        if raw in (None, ""):
+        if raw in (None, "") or (prop == "backgroundColor" and TRANSPARENT.fullmatch(str(raw).strip())):
             raise KeyError(prop)
         sem.setdefault(group, {})[key] = semcolor(raw, src, desc)
     except KeyError:
@@ -645,7 +657,7 @@ for name, cname, state, prop, ty_, desc in [
     ("code-bg", "docs-code", "default", "backgroundColor", "color", "A docs code block's fill."),
 ]:
     try:
-        docs[name] = lit(norm_color(st(cname, state)[prop]), "color",
+        docs[name] = lit(norm_color(opaque(st(cname, state)[prop])), "color",
             f"computed {prop} of {cname} {state} on docs.fingerprint.com (raw/components-computed.json)", desc)
     except KeyError:
         pass
@@ -662,7 +674,7 @@ for name, cname, state, prop, ty_, desc in [
             v = rc(cname, state, prop)
             shell[name] = lit(("%g" % v) + "px", ty_, f"measured {prop} of {cname} {state} on the product shell (raw/components-computed.json)", desc)
         else:
-            shell[name] = lit(norm_color(st(cname, state)[prop]), "color",
+            shell[name] = lit(norm_color(opaque(st(cname, state)[prop])), "color",
                 f"computed {prop} of {cname} {state} on the product shell (raw/components-computed.json)", desc)
     except KeyError:
         pass
