@@ -90,6 +90,11 @@ def ls(key, state="default"):
     return tts(key, state).get("letterSpacing") or st(key, state)["letterSpacing"]
 
 
+def rect(key, dim, state="default"):
+    """A measured box edge as a px dimension (the rect is recorded in CSS px, 2 decimals)."""
+    return ("%g" % round(C[key]["states"][state]["rect"][dim], 2)) + "px"
+
+
 M = "computed style of {k} {s} (raw/components-computed.json)"
 
 
@@ -151,39 +156,41 @@ SPEC = {
                 "card": val(ff("plan-name"), "fontFamily", mm("plan-name", "fontFamily"), description="Inter with its 'Inter Placeholder' fallback — the plan-card title face (showcase card titles paint Inter Variable)."),
             },
             "size": {
-                "display": val("47px", "dimension", mm("hero-h1", "fontSize"), description="Display size: every h1 and the 47px section headings.", responsive={"mobile": "27px"},),
-                "display-sm": val("27px", "dimension", mm("m-hero-h1", "fontSize"), description="The display at 390 wide."),
-                "heading-2": val("32px", "dimension", mm("article-h2", "fontSize"), description="Article section headings."),
-                "lead": val("22px", "dimension", mm("article-body", "fontSize"), description="Lead and article body size; also the FAQ question/answer text."),
-                "card": val("21px", "dimension", mm("plan-name", "fontSize"), description="Card titles (h4/h5) and footer text."),
-                "drawer": val("17px", "dimension", mm("m-drawer-link", "fontSize"), description="Mobile drawer links."),
-                "field": val("16px", "dimension", mm("help-search-input", "fontSize"), description="The modal search field."),
-                "ui": val("14px", "dimension", mm("nav-cta", "fontSize"), description="UI text: nav links, CTA labels, plan features, chips."),
+                "display": val(fs("hero-h1")[0], "dimension", mm("hero-h1", "fontSize"), description="Display size: every h1 and the 47px section headings.", responsive={"mobile": fs("m-hero-h1")[0]}),
+                "display-sm": val(fs("m-hero-h1")[0], "dimension", mm("m-hero-h1", "fontSize"), description="The display at 390 wide."),
+                "heading-2": val(fs("article-h2")[0], "dimension", mm("article-h2", "fontSize"), description="Article section headings."),
+                "lead": val(fs("article-body")[0], "dimension", mm("article-body", "fontSize"), description="Lead and article body size; also the FAQ question/answer text."),
+                "card": val(fs("plan-name")[0], "dimension", mm("plan-name", "fontSize"), description="Card titles (h4/h5) and footer text."),
+                "drawer": val(fs("m-drawer-link")[0], "dimension", mm("m-drawer-link", "fontSize"), description="Mobile drawer links."),
+                "field": val(fs("help-search-input")[0], "dimension", mm("help-search-input", "fontSize"), description="The modal search field."),
+                "ui": val(fs("nav-cta")[0], "dimension", mm("nav-cta", "fontSize"), description="UI text: nav links, CTA labels, plan features, chips."),
             },
             "weight": {
-                "light": val(300, "fontWeight", mm("hero-h1", "fontWeight"), description="Display headlines."),
-                "regular": val(400, "fontWeight", mm("article-body", "fontWeight"), description="Everything else."),
-                "semibold": val(600, "fontWeight", mm("read-more", "fontWeight"), description="Caption links only (Read more, industry-card titles)."),
+                "light": val(fw("hero-h1"), "fontWeight", mm("hero-h1", "fontWeight"), description="Display headlines."),
+                "regular": val(fw("article-body"), "fontWeight", mm("article-body", "fontWeight"), description="Everything else."),
+                "semibold": val(fw("read-more"), "fontWeight", mm("read-more", "fontWeight"), description="Caption links only (Read more, industry-card titles)."),
             },
             "lineHeight": {
-                "display": val("60px", "dimension", mm("hero-h1", "lineHeight")),
-                "display-sm": val("36px", "dimension", mm("m-hero-h1", "lineHeight")),
-                "heading-2": val("44px", "dimension", mm("article-h2", "lineHeight")),
-                "lead": val("32px", "dimension", mm("article-body", "lineHeight")),
-                "card": val("32px", "dimension", mm("plan-name", "lineHeight")),
-                "drawer": val("24px", "dimension", mm("m-drawer-link", "lineHeight")),
-                "field": val("32px", "dimension", mm("help-search-input", "lineHeight")),
-                "ui": val("20px", "dimension", mm("nav-cta", "lineHeight")),
+                "display": val(fs("hero-h1")[1], "dimension", mm("hero-h1", "lineHeight")),
+                "display-sm": val(fs("m-hero-h1")[1], "dimension", mm("m-hero-h1", "lineHeight")),
+                "heading-2": val(fs("article-h2")[1], "dimension", mm("article-h2", "lineHeight")),
+                "lead": val(fs("article-body")[1], "dimension", mm("article-body", "lineHeight")),
+                "card": val(fs("plan-name")[1], "dimension", mm("plan-name", "lineHeight")),
+                "drawer": val(fs("m-drawer-link")[1], "dimension", mm("m-drawer-link", "lineHeight")),
+                "field": val(fs("help-search-input")[1], "dimension", mm("help-search-input", "lineHeight")),
+                "ui": val(fs("nav-cta")[1], "dimension", mm("nav-cta", "lineHeight")),
             },
             "letterSpacing": {
-                "display": val("-1.88px", "dimension", mm("hero-h1", "letterSpacing"), description="-4% of the display size."),
-                "display-sm": val("-0.81px", "dimension", mm("m-hero-h1", "letterSpacing")),
-                "heading-2": val("-0.32px", "dimension", mm("article-h2", "letterSpacing")),
-                "lead": val("-0.22px", "dimension", mm("article-body", "letterSpacing")),
-                "card": val("-0.42px", "dimension", mm("plan-name", "letterSpacing")),
-                "card-alt": val("-0.63px", "dimension", mm("showcase-card-title", "letterSpacing")),
-                "semibold-ui": val("-0.14px", "dimension", mm("read-more", "letterSpacing")),
-                "none": val("0px", "dimension", "computed letterSpacing 'normal' resolves to 0", description="UI text tracks normally."),
+                "display": val(ls("hero-h1"), "dimension", mm("hero-h1", "letterSpacing"), description="-4% of the display size."),
+                "display-sm": val(ls("m-hero-h1"), "dimension", mm("m-hero-h1", "letterSpacing")),
+                "heading-2": val(ls("article-h2"), "dimension", mm("article-h2", "letterSpacing")),
+                "lead": val(ls("article-body"), "dimension", mm("article-body", "letterSpacing")),
+                "card": val(ls("plan-name"), "dimension", mm("plan-name", "letterSpacing")),
+                "card-alt": val(ls("showcase-card-title"), "dimension", mm("showcase-card-title", "letterSpacing")),
+                "semibold-ui": val(ls("read-more"), "dimension", mm("read-more", "letterSpacing")),
+                "none": {"value": "0px" if ls("nav-cta") == "normal" else ls("nav-cta"), "type": "dimension",
+                         "source": "derived: " + mm("nav-cta", "letterSpacing") + " is 'normal', which tracks at 0px",
+                         "description": "UI text tracks normally."},
             },
         },
         "typography": {
@@ -194,23 +201,23 @@ SPEC = {
             "ui": {"$type": "typography", "$value": {"fontFamily": "{font.family.ui}", "fontSize": "{font.size.ui}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.ui}", "letterSpacing": "{font.letterSpacing.none}"}, "$extensions": {"source": "composed from the nav-cta measurements"}},
         },
         "radius": {
-            "none": val("0px", "dimension", mm("hero-h1", "borderTopLeftRadius"), description="Text and prose blocks are square."),
-            "card": val("40px", "dimension", mm("help-card", "borderTopLeftRadius"), description="The soft card corner: collection cards on the help landing."),
-            "cta": val("100px", "dimension", mm("plan-cta", "borderTopLeftRadius"), description="The plan cards' 56px CTAs are fully rounded at 100px."),
-            "pill": val("1000px", "dimension", mm("nav-cta", "borderTopLeftRadius"), description="Pills: nav links, hero CTAs, the Join pill, drawer links — 1000px, effectively a capsule."),
+            "none": val(st("hero-h1")["borderTopLeftRadius"], "dimension", mm("hero-h1", "borderTopLeftRadius"), description="Text and prose blocks are square."),
+            "card": val(st("help-card")["borderTopLeftRadius"], "dimension", mm("help-card", "borderTopLeftRadius"), description="The soft card corner: collection cards on the help landing."),
+            "cta": val(st("plan-cta")["borderTopLeftRadius"], "dimension", mm("plan-cta", "borderTopLeftRadius"), description="The plan cards' 56px CTAs are fully rounded at 100px."),
+            "pill": val(st("nav-cta")["borderTopLeftRadius"], "dimension", mm("nav-cta", "borderTopLeftRadius"), description="Pills: nav links, hero CTAs, the Join pill, drawer links — 1000px, effectively a capsule."),
         },
         "space": {
-            "4": val("4px", "dimension", mm("m-drawer-link", "paddingTop"), description="Drawer link vertical padding."),
-            "6": val("6px", "dimension", mm("m-join", "paddingTop"), description="Join pill and sidebar-link vertical padding."),
-            "8": val("8px", "dimension", mm("nav-link", "paddingTop"), description="Nav link vertical padding and footer side padding."),
-            "12": val("12px", "dimension", mm("nav-link", "paddingRight"), description="Nav link horizontal padding."),
-            "16": val("16px", "dimension", mm("nav-cta", "paddingRight"), description="Header pill and drawer-link horizontal padding."),
-            "18": val("18px", "dimension", mm("hero-cta", "paddingTop"), description="CTA vertical padding."),
-            "24": val("24px", "dimension", mm("hero-cta", "paddingRight"), description="CTA horizontal padding; the sidebar's side padding."),
-            "40": val("40px", "dimension", mm("help-card", "paddingTop"), description="Card padding (collection cards, the compare bar's vertical padding)."),
+            "4": val(st("m-drawer-link")["paddingTop"], "dimension", mm("m-drawer-link", "paddingTop"), description="Drawer link vertical padding."),
+            "6": val(st("m-join")["paddingTop"], "dimension", mm("m-join", "paddingTop"), description="Join pill and sidebar-link vertical padding."),
+            "8": val(st("nav-link")["paddingTop"], "dimension", mm("nav-link", "paddingTop"), description="Nav link vertical padding and footer side padding."),
+            "12": val(st("nav-link")["paddingRight"], "dimension", mm("nav-link", "paddingRight"), description="Nav link horizontal padding."),
+            "16": val(st("nav-cta")["paddingRight"], "dimension", mm("nav-cta", "paddingRight"), description="Header pill and drawer-link horizontal padding."),
+            "18": val(st("hero-cta")["paddingTop"], "dimension", mm("hero-cta", "paddingTop"), description="CTA vertical padding."),
+            "24": val(st("hero-cta")["paddingRight"], "dimension", mm("hero-cta", "paddingRight"), description="CTA horizontal padding; the sidebar's side padding."),
+            "40": val(st("help-card")["paddingTop"], "dimension", mm("help-card", "paddingTop"), description="Card padding (collection cards, the compare bar's vertical padding)."),
         },
         "duration": {
-            "fast": val("0.2s", "duration", mm("footer-link", "transitionDuration"), description="The link colour transition (footer and article links)."),
+            "fast": val(st("footer-link")["transitionDuration"], "duration", mm("footer-link", "transitionDuration"), description="The link colour transition (footer and article links)."),
         },
     },
     "light": {
@@ -245,45 +252,53 @@ SPEC = {
             "muted": var("--token-3a806071-b041-43a8-b489-4903bdd7258c", description="rgba(255,255,255,.6) footer body text."),
         },
         "focus": {
-            "ring": val(st("nav-cta", "focus-visible")["outlineColor"], "color", mm("nav-cta", "outlineColor", "focus-visible"), description="The 1px focus ring on interactive elements (desktop)."),
-            "ring-mobile": val(st("m-join", "focus-visible")["outlineColor"], "color", mm("m-join", "outlineColor", "focus-visible"), description="The 1px focus ring at 390 wide — the site paints a different colour there."),
+            # Both rings are `outline: auto` in the colour Chrome uses for its own focus ring (#101010 on
+            # the desktop pass, #e59700 under the phone emulation): the browser picks it, not the site.
+            "ring": val(st("nav-cta", "focus-visible")["outlineColor"], "color",
+                        mm("nav-cta", "outlineColor", "focus-visible") + "; outline-style " + st("nav-cta", "focus-visible")["outlineStyle"]
+                        + ", in Chrome's own default focus-ring colour, so the browser chose it, not the site",
+                        description="The 1px auto focus ring the browser draws on interactive elements (desktop pass); the site sets no focus colour of its own."),
+            "ring-mobile": val(st("m-join", "focus-visible")["outlineColor"], "color",
+                               mm("m-join", "outlineColor", "focus-visible") + "; outline-style " + st("m-join", "focus-visible")["outlineStyle"]
+                               + ", in the colour Chrome's phone emulation uses for its own focus ring, so the browser chose it, not the site",
+                               description="The same browser-drawn ring at 390 wide: Chrome's phone emulation draws it in #e59700; the site sets no focus colour of its own."),
             "width": val(st("nav-cta", "focus-visible")["outlineWidth"], "dimension", mm("nav-cta", "outlineWidth", "focus-visible")),
             "offset": val(st("nav-cta", "focus-visible")["outlineOffset"], "dimension", mm("nav-cta", "outlineOffset", "focus-visible")),
         },
     },
     "component": {
         "nav": {
-            "height": val("68px", "dimension", mm("nav-header", "rect height"), description="The fixed desktop header."),
-            "pill-height": val("36px", "dimension", mm("nav-cta", "rect height"), description="Header link and pill height."),
+            "height": val(rect("nav-header", "h"), "dimension", mm("nav-header", "rect height"), description="The fixed desktop header."),
+            "pill-height": val(rect("nav-cta", "h"), "dimension", mm("nav-cta", "rect height"), description="Header link and pill height."),
         },
         "cta": {
-            "height": val("56px", "dimension", mm("hero-cta", "rect height"), description="The large pill CTAs."),
-            "padding-x": val("24px", "dimension", mm("hero-cta", "paddingRight")),
-            "padding-y": val("18px", "dimension", mm("hero-cta", "paddingTop")),
+            "height": val(rect("hero-cta", "h"), "dimension", mm("hero-cta", "rect height"), description="The large pill CTAs."),
+            "padding-x": val(st("hero-cta")["paddingRight"], "dimension", mm("hero-cta", "paddingRight")),
+            "padding-y": val(st("hero-cta")["paddingTop"], "dimension", mm("hero-cta", "paddingTop")),
         },
         "card": {
-            "plan-width": val("389.33px", "dimension", mm("plan-card", "rect width"), description="A plan card at 1440."),
-            "plan-height": val("745px", "dimension", mm("plan-card", "rect height")),
-            "help-width": val("640px", "dimension", mm("help-card", "rect width"), description="A help collection card."),
-            "showcase-width": val("708px", "dimension", mm("showcase-card", "rect width"), description="A showcase brand card at 1440 (two-column grid)."),
-            "case-width": val("767px", "dimension", mm("case-card", "rect width"), description="A case-study row's text block."),
+            "plan-width": val(rect("plan-card", "w"), "dimension", mm("plan-card", "rect width"), description="A plan card at 1440."),
+            "plan-height": val(rect("plan-card", "h"), "dimension", mm("plan-card", "rect height")),
+            "help-width": val(rect("help-card", "w"), "dimension", mm("help-card", "rect width"), description="A help collection card."),
+            "showcase-width": val(rect("showcase-card", "w"), "dimension", mm("showcase-card", "rect width"), description="A showcase brand card at 1440 (two-column grid)."),
+            "case-width": val(rect("case-card", "w"), "dimension", mm("case-card", "rect width"), description="A case-study row's text block."),
         },
         "field": {
-            "search-width": val("640px", "dimension", mm("help-search", "rect width"), description="The Search… trigger field."),
-            "search-height": val("52px", "dimension", mm("help-search", "rect height")),
-            "modal-input-width": val("348px", "dimension", mm("help-search-input", "rect width"), description="The real input inside the Framer search modal."),
-            "modal-input-height": val("32px", "dimension", mm("help-search-input", "rect height")),
+            "search-width": val(rect("help-search", "w"), "dimension", mm("help-search", "rect width"), description="The Search… trigger field."),
+            "search-height": val(rect("help-search", "h"), "dimension", mm("help-search", "rect height")),
+            "modal-input-width": val(rect("help-search-input", "w"), "dimension", mm("help-search-input", "rect width"), description="The real input inside the Framer search modal."),
+            "modal-input-height": val(rect("help-search-input", "h"), "dimension", mm("help-search-input", "rect height")),
         },
         "mobile": {
-            "topbar-height": val("56px", "dimension", mm("m-topbar", "rect height")),
-            "hamburger": val("32px", "dimension", mm("m-hamburger", "rect width"), description="The 32 x 32 menu toggle."),
-            "drawer-link-height": val("32px", "dimension", mm("m-drawer-link", "rect height")),
+            "topbar-height": val(rect("m-topbar", "h"), "dimension", mm("m-topbar", "rect height")),
+            "hamburger": val(rect("m-hamburger", "w"), "dimension", mm("m-hamburger", "rect width"), description="The 32 x 32 menu toggle."),
+            "drawer-link-height": val(rect("m-drawer-link", "h"), "dimension", mm("m-drawer-link", "rect height")),
         },
         "scheduler": {
-            "height": val("600px", "dimension", mm("demo-scheduler", "rect height"), description="The embedded booking iframe's height."),
+            "height": val(rect("demo-scheduler", "h"), "dimension", mm("demo-scheduler", "rect height"), description="The embedded booking iframe's height."),
         },
         "sidebar": {
-            "width": val("240px", "dimension", mm("help-sidebar", "rect width"), description="The help-center doc rail."),
+            "width": val(rect("help-sidebar", "w"), "dimension", mm("help-sidebar", "rect width"), description="The help-center doc rail."),
         },
     },
 }

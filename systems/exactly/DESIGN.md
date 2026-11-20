@@ -152,3 +152,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 6. **Don't style the signed-in product from this package.** threads.exactly.ai was never reached; the studio, generator and account surfaces are a documented boundary, not inferable from the marketing site.
 7. **Don't invent a dark theme.** The public site paints light only; the near-black footer is a section, not a theme. See [footer](components/crops/footer-default.png).
 8. **Don't treat wrapper colours as the product's.** Several Framer anchor wrappers report the browser's default link blue/pressed red while the painted text inside carries the real value — read the text node's colour, as each entry's Text row does.
+
+### Known gaps (from README.md)
+
+- `showcase-chip`, `read-more` and `help-search`: keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md leaves them out and `raw/measurements.md` shows them as Skipped. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
+- `article-quote` is a stale entry: a 2026-11-13 run marked it missing and the script no longer measures it, but the prune runs only on a full run, so it stays in `raw/components-computed.json` and components.md until the next one.
+- `light.focus.ring` (#101010) and `light.focus.ring-mobile` (#e59700) are `outline: auto` rings in the colours Chrome uses for its own focus ring on the desktop pass and under the phone emulation. The site sets no focus colour; the tokens say so in their source.
