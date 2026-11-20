@@ -351,7 +351,9 @@ def _carries(value: str, key: str) -> bool:
     """Whether `value` holds `key`, as typed or percent-encoded."""
     if not value or len(key) < 4:
         return False
-    return key in value or key in unquote(value) or quote(key, safe="") in value
+    # unquote decodes each %XX on its own, either case of hex, and leaves a
+    # stray % alone; web/lib/provider-api.ts's percentDecode does the same.
+    return key in value or key in unquote(value)
 
 
 def public(cfg: dict | None) -> dict | None:

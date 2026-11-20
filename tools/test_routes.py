@@ -825,6 +825,25 @@ class ProviderKeyTest(TempConfig):
         self.assertIsNone(self.store.load())
         self.assert_no_key()
 
+    def test_key_url_cases_shared_with_the_web_app(self):
+        import re
+        from urllib.parse import quote
+        spec = json.loads((SERVER / "provider-key-url-cases.json").read_text())
+        key = spec["key"]
+        upper = quote(key, safe="")
+        lower = re.sub(r"%[0-9A-F]{2}", lambda m: m.group(0).lower(), upper)
+        self.assertNotEqual(upper, lower)
+        for case in spec["cases"]:
+            fields = {k: v.replace("<KEY_UPPER>", upper).replace("<KEY_LOWER>", lower).replace("<KEY>", key)
+                      for k, v in case.items() if k != "expect"}
+            h = self.call("post", "/api/provider", {**GOOD, **fields, "api_key": key})
+            if case["expect"] == "refuse":
+                self.assertEqual(h.status, 400, fields)
+                self.assertIn("API key field only", h.json()["error"])
+            else:
+                self.assertEqual((h.status, h.json()["ok"]), (200, True), fields)
+            self.assertNotIn(key, h.wfile.getvalue().decode())
+
     def test_a_key_saved_inside_a_url_is_redacted_from_the_public_fields(self):
         self.store.save_provider({**GOOD, "base_url": f"https://models.example/v1?key={KEY}", "api_key": KEY}, "replace")
         got = self.call("get", "/api/provider").json()
