@@ -160,7 +160,7 @@ const binOf = (r) => {
 for (const r of result.rules) r.bin = binOf(r);
 const names = (bin) => [...new Set(result.rules.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
-  readAt: '2026-11-18',
+  readAt: new Date().toLocaleDateString('en-CA'),
   source: 'inline stylesheets harvested from live loads of /us/, /us/shopping/, /us/help/ and /international/ on www.klarna.com; resolved on a probe document in light (:root / .klarna-ui-DEFAULT-light) and dark (.klarna-ui-DEFAULT-dark)',
   sheets: sheets.map(([n, t]) => `${n} (${t.length} bytes)`),
   counts: {
