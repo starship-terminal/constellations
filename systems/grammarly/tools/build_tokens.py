@@ -629,7 +629,10 @@ tokens["core"]["typography"]["$description"] = "The Origin heading and text role
 
 # Motion, as measured on the page (raw/motion.json via the probe; motion.py is product-free)
 if (RAW / "motion.json").exists():
-    tokens["core"]["motion"], _motion_not_core = motion.build(json.loads((RAW / "motion.json").read_text()))
+    tokens["core"]["motion"], motion_not_core = motion.build(json.loads((RAW / "motion.json").read_text()))
+    # what DTCG cannot carry (steps()/linear() easings, the >60 transitions note) is listed, not dropped
+    if motion_not_core:
+        tokens["core"].setdefault("$extensions", {}).setdefault("notTokenised", []).extend(motion_not_core)
 
 # --------------------------------------------------------------------------- aliases must resolve
 def tokens_of(tree, prefix=""):
