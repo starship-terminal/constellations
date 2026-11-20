@@ -107,6 +107,7 @@ Nothing was signed into, created, submitted or paid for: the login and register 
 - **Declared and painted CTAs disagree.** The DIG layer declares `primary-cta` black (`#050505`), but the marketing CTAs paint `#0061fe` blue → `#0057e5` hover → `#0050d0` pressed — exactly the `--dwg-theme__color__primary__button--*` values. Use `core.measured.cta-fill*` for what a real button shows.
 - **The auth cards mix in an older sheet.** /login and /register (the "susi" surfaces) run the wrappers and the email field on a `lucida grande` system stack at 13-16px, but the painted labels stay Atlas Grotesk Web — the SSO buttons at 14/16, Continue at 16/19.2 500. Sizes and radii differ from the marketing chrome; don't extrapolate the marketing system into them.
 - **The mega-menu is pointer-driven.** It opens on hover and closes when keyboard focus moves; a menu link's focus-visible/pressed states are a documented gap, not measured absences.
+- **`social-icon` is the wrong element.** Its selector's `href*="x.com"` also matches dropbox.com, so the entry holds the "Dropbox Sign" footer link's values; components.md marks it and no token reads it. The selector is fixed in `measure.mjs` (edited, not run); the entry needs a recapture.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **A/B and regional variance.** The home hero rotates variants ("One place to store, share, and collaborate" / "Freedom to work your way"), prices render US$, and the CCPA banner mounts by region — all recorded as they painted.
 
