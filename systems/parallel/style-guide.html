@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parallel style guide</title>
+<style>
+:root {
+  --core-color-black: #0f0f0f;
+  --core-color-white: #ffffff;
+  --core-color-off-white: #fffefb;
+  --core-color-light-gray: #fafafa;
+  --core-color-gray: rgba(204, 204, 204, 0.09);
+  --core-color-green: #1fba4a;
+  --core-color-orange: #fe8a11;
+  --core-color-pink: #f54cb2;
+  --core-color-purple: #daccff;
+  --core-color-red: #ff2222;
+  --core-color-red-200: #ff3e3e;
+  --core-color-red-400: #e95656;
+  --core-color-yellow: #eafa35;
+  --core-color-scrollbar-thumb: #d3d3d3;
+  --core-color-app-background: #fbfaf9;
+  --core-color-input-hover-border: #000000;
+  --core-color-input-focus-border: rgba(128, 188, 254, 0.6);
+  --core-font-family-primary: "Work Sans",sans-serif;
+  --core-font-family-secondary: "Termina",sans-serif;
+  --core-font-family-tertiary: "Cousine",sans-serif;
+  --core-font-family-display: "Advercase Demo", __rulesFont_d96771, __rulesFont_Fallback_d96771, system-ui, arial, serif;
+  --core-font-size-display: 100.8px;
+  --core-font-size-body: 14px;
+  --core-font-weight-display: 400;
+  --core-font-line-height-display: 114.912px;
+  --core-font-letter-spacing-display: -3.024px;
+  --core-space-grid-1: 24px;
+  --core-space-grid-2: 48px;
+  --core-space-column-1: 70px;
+  --core-space-column-2: 164px;
+  --core-space-column-3: 258px;
+  --core-space-column-4: 352px;
+  --core-space-column-5: 446px;
+  --core-space-column-6: 540px;
+  --core-space-column-7: 634px;
+  --core-space-column-8: 728px;
+  --core-space-column-9: 822px;
+  --core-space-column-10: 916px;
+  --core-space-column-11: 1010px;
+  --core-space-column-12: 1104px;
+  --core-size-scrollbar: 8px;
+  --core-size-scrollbar-thumb-border: 2px;
+  --core-size-scrollbar-track-margin: 4px;
+  --core-shadow-primary: 8px 8px 0px 0px #0f0f0f;
+  --core-shadow-secondary: 6px 6px 0px 0px #0f0f0f;
+  --surface-page: #fbfaf9;
+  --surface-paper: var(--core-color-off-white);
+  --surface-white: var(--core-color-white);
+  --surface-app: var(--core-color-app-background);
+  --text-primary: #000000;
+  --text-on-hero: #ffffff;
+  --text-ink: var(--core-color-black);
+  --border-strong: var(--core-color-black);
+  --border-input-hover: var(--core-color-input-hover-border);
+  --border-focus: var(--core-color-input-focus-border);
+  --accent-yellow: var(--core-color-yellow);
+  --accent-pink: var(--core-color-pink);
+  --accent-red: var(--core-color-red);
+  --accent-green: var(--core-color-green);
+  color-scheme: light;
+  --sg-sans: var(--core-font-family-primary), ui-sans-serif, system-ui, sans-serif;
+  --sg-display: "Iowan Old Style", Palatino, Georgia, serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 400 15px/1.45 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-family: var(--sg-display); font-weight: 400; font-size: 48px; letter-spacing: -0.03em; margin: 0 0 8px; }
+h2 { font-family: var(--sg-display); font-weight: 400; font-size: 28px; margin: 40px 0 12px; }
+p { max-width: 68ch; }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.dot { width: 44px; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); }
+code { font-size: 12px; }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 999px; background: var(--text-ink); color: var(--surface-white); text-decoration: none; }
+.chip { display: inline-flex; height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.35); color: white; background: rgba(255,255,255,.1); }
+.card { background: var(--surface-white); border-radius: 16px; padding: 16px; box-shadow: var(--core-shadow-tertiary, 2px 6px 10px rgba(0,0,0,.11)); }
+.hero { background: #111; color: var(--text-on-hero); border-radius: 24px; padding: 48px 32px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Parallel</h1>
+<p>Public tokens read from useparallel.com on 2026-11-21. One light theme. Values come from tokens.json, not from the screenshots.</p>
+<h2>Colour</h2>
+<div class="pal">
+<div class="sw"><i class="dot" style="background:--core-color-black"></i><div><code>black</code><br><code>#0f0f0f</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-white"></i><div><code>white</code><br><code>#ffffff</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-off-white"></i><div><code>off-white</code><br><code>#fffefb</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-light-gray"></i><div><code>light-gray</code><br><code>#fafafa</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-gray"></i><div><code>gray</code><br><code>rgba(204, 204, 204, 0.09)</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-green"></i><div><code>green</code><br><code>#1fba4a</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-orange"></i><div><code>orange</code><br><code>#fe8a11</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-pink"></i><div><code>pink</code><br><code>#f54cb2</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-purple"></i><div><code>purple</code><br><code>#daccff</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-red"></i><div><code>red</code><br><code>#ff2222</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-red-200"></i><div><code>red-200</code><br><code>#ff3e3e</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-red-400"></i><div><code>red-400</code><br><code>#e95656</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-yellow"></i><div><code>yellow</code><br><code>#eafa35</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-scrollbar-thumb"></i><div><code>scrollbar-thumb</code><br><code>#d3d3d3</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-app-background"></i><div><code>app-background</code><br><code>#fbfaf9</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-input-hover-border"></i><div><code>input-hover-border</code><br><code>#000000</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-input-focus-border"></i><div><code>input-focus-border</code><br><code>rgba(128, 188, 254, 0.6)</code></div></div>
+</div>
+<h2>Roles</h2>
+<div class="pal">
+<div class="sw"><i class="dot" style="background:--surface-page"></i><div><code>surface.page</code><br><code>#fbfaf9</code></div></div>
+<div class="sw"><i class="dot" style="background:--surface-paper"></i><div><code>surface.paper</code><br><code>{core.color.off-white}</code></div></div>
+<div class="sw"><i class="dot" style="background:--surface-white"></i><div><code>surface.white</code><br><code>{core.color.white}</code></div></div>
+<div class="sw"><i class="dot" style="background:--surface-app"></i><div><code>surface.app</code><br><code>{core.color.app-background}</code></div></div>
+<div class="sw"><i class="dot" style="background:--text-primary"></i><div><code>text.primary</code><br><code>#000000</code></div></div>
+<div class="sw"><i class="dot" style="background:--text-on-hero"></i><div><code>text.on-hero</code><br><code>#ffffff</code></div></div>
+<div class="sw"><i class="dot" style="background:--text-ink"></i><div><code>text.ink</code><br><code>{core.color.black}</code></div></div>
+<div class="sw"><i class="dot" style="background:--border-strong"></i><div><code>border.strong</code><br><code>{core.color.black}</code></div></div>
+<div class="sw"><i class="dot" style="background:--border-input-hover"></i><div><code>border.input-hover</code><br><code>{core.color.input-hover-border}</code></div></div>
+<div class="sw"><i class="dot" style="background:--border-focus"></i><div><code>border.focus</code><br><code>{core.color.input-focus-border}</code></div></div>
+<div class="sw"><i class="dot" style="background:--accent-yellow"></i><div><code>accent.yellow</code><br><code>{core.color.yellow}</code></div></div>
+<div class="sw"><i class="dot" style="background:--accent-pink"></i><div><code>accent.pink</code><br><code>{core.color.pink}</code></div></div>
+<div class="sw"><i class="dot" style="background:--accent-red"></i><div><code>accent.red</code><br><code>{core.color.red}</code></div></div>
+<div class="sw"><i class="dot" style="background:--accent-green"></i><div><code>accent.green</code><br><code>{core.color.green}</code></div></div>
+</div>
+<h2>Type</h2>
+<p class="hero" style="font-family: var(--sg-display); font-size: 64px; line-height: 1.05; letter-spacing: -0.03em;">Find your life's work</p>
+<p>Display on the live site is Advercase Demo at 100.8px. That face is not loaded here. The sample uses a serif fallback.</p>
+<h2>Controls</h2>
+<p><a class="btn" href="#">Sign up</a></p>
+<p><span class="chip">Full time</span></p>
+<div class="card"><strong>Job card</strong><br>A white card on the app background.</div>
+</div>
+</body>
+</html>
