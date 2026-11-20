@@ -355,7 +355,15 @@ for (const [key, g] of Object.entries(GROUPS)) {
     return found.slice(0, 30);
   }).catch(() => []);
 
-  for (const spec of g.specs) {
+  for (let spec of g.specs) {
+    // One key per page: a key another page already holds a reading for gets
+    // this group's prefix (meditation-hero-h1), so the 16 hero-h1 pages no
+    // longer overwrite one another and the bare key stays the first page's.
+    // Start a full recapture from an empty file so the first page is home.
+    // (Edited in the 2026-11 audit; not run since.)
+    const held = out.components[spec.key];
+    const ckey = held && held.page && held.page !== g.page ? `${key}-${spec.key}` : spec.key;
+    spec = { ...spec, key: ckey };
     const comp = out.components[spec.key] ??= {};
     comp.group = spec.group;
     comp.title = spec.title;

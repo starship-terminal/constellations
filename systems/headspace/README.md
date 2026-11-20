@@ -121,6 +121,8 @@ Every colour, radius, length and font on this package is a **measured** value â€
 - **Full pages are bounded.** `-full` screenshots tile at most 8 chunks; taller pages truncate from the bottom and their sidecars note the document height.
 - **`/pricing` is a 404.** Headspace serves its own "Whoops! Something's changed" page there; it is a recorded absence, not a capture.
 - **Screenshots are 256-colour PNGs.** Read exact colours from the tokens or the raw files, never from a screenshot pixel.
+- **`hero-h1` is the /share page's headline.** The capture read `hero-h1` on 16 pages under one key and kept only the last one, so the home headline reading was lost. `core.font.family/size/lineHeight/weight.display` and `light.color.ink.primary` come from /share and say so in their source; a recapture is needed. `auth-card` was read on /login and /signup under one key and records no page. `tools/capture/public/measure.mjs` now gives a repeated key its page's prefix (edited, not run).
+- **Four Lottie icons were dropped.** `mindfulness-for-kids`, `start-therapy` and the two `process-thoughts` SVGs referenced `<use>` targets the icon harvest stripped, so they rendered blank. They are deleted with their `icons/INDEX.tsv` rows; they were animation frames, not interface icons.
 
 ## Rebuild
 
