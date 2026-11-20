@@ -107,13 +107,17 @@ const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).cat
 
 // The DDS theme layer resolves html[data-theme=light|dark]: dark is real
 // paint flipped through the attribute, not a guess.
+// The check reads what painted (the body background's luminance), not the
+// attribute this function just set, so a failed switch never writes a light
+// page as a *-dark-* shot.
 const setTheme = async (p, t) => {
-  const ok = await p.evaluate((t) => {
-    document.documentElement.setAttribute('data-theme', t);
-    return document.documentElement.getAttribute('data-theme') === t;
-  }, t);
-  if (!ok) throw new Error('setTheme ' + t + ' did not apply');
+  await p.evaluate((t) => document.documentElement.setAttribute('data-theme', t), t);
   await wait(p, 1200);
+  const dark = await p.evaluate(() => {
+    const [r, g, b, a = 1] = (getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g) || []).map(Number);
+    return a > 0 && (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 < 0.25;
+  });
+  if (dark !== (t === 'dark')) throw new Error('setTheme ' + t + ' did not paint: body background is ' + (dark ? 'dark' : 'light'));
 };
 
 const ARTIST = '/events/samay-raina/artist';
