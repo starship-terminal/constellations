@@ -29,9 +29,12 @@ colors:
   colour-commercial-message-ikea-family: "#007cc1"
   colour-commercial-message-new: "#ca5008"
   colour-commercial-message-time-restricted-offer: "#cc0008"
+  colour-commercial-message-new-lower-price: "#cc0008"
   colour-elevation-1: "#ffffff"
   colour-elevation-2: "#ffffff"
   colour-elevation-3: "#111111"
+  colour-elevation-1-border: "#dfdfdf"
+  colour-elevation-2-border: "#484848"
   colour-extended-palette-01: "#c1cfd4"
   colour-extended-palette-02: "#a3acb0"
   colour-extended-palette-03: "#8cddff"
@@ -93,6 +96,7 @@ colors:
   colour-semantic-informative: "#0058a3"
   colour-semantic-negative: "#e00751"
   colour-semantic-positive: "#0a8a00"
+  colour-semantic-caution-text: "#ca5008"
   colour-static-black: "#111111"
   colour-static-dark-grey: "#767676"
   colour-static-grey: "#dfdfdf"
@@ -135,7 +139,7 @@ typography:
     fontFamily: "Noto IKEA"
     fontSize: "24px"
     fontWeight: 700
-    lineHeight: "32px"
+    lineHeight: "30px"
   heading-m:
     fontFamily: "Noto IKEA"
     fontSize: "18px"
@@ -145,7 +149,7 @@ typography:
     fontFamily: "Noto IKEA"
     fontSize: "16px"
     fontWeight: 700
-    lineHeight: "22px"
+    lineHeight: "20px"
   body-l:
     fontFamily: "Noto IKEA"
     fontSize: "16px"
@@ -277,4 +281,5 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Most type weights and line heights were typed.** Every `core.typography.*` size is the declared Skapa step. Only heading-l (24/30 700, the login heading) and heading-s (16/20 700, the product title) are read from a component; the other weights and line heights (display 80/64/48px, heading 40/24px, body 24/22/18px, price 32px) have no reading and say Reconstruction. `core.font.family.sans` is abridged by hand from the measured body stack.
 The buy button's own `background-color` is transparent. The blue fill is painted by the inner `.pipf-btn__inner` span. A reading of the button element alone looks unfilled. Hover on that button did not change the computed background in this pass, so hover is the declared `--colour-interactive-emphasised-bg-hover` (`#004f93`), not a second computed reading. Noto IKEA is proprietary and is not in the package. The style guide falls back to Noto Sans. Currency-symbol faces lead the live font stack and are not design faces.
