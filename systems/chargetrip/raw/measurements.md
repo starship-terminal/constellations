@@ -69,22 +69,23 @@ Page: home. Selector: `div[text=Products] inside the bar`. States: default, hove
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 99 x 32 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | sans-serif 12px/normal 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #000000 | = | = | = | = |
-| Text node | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #262322 | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #dc3b04 | = | = | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #dd3b00 |
-| Transition | none | = | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
+| Size (w x h) | 99 x 32 | = | - | = | = |
+| Padding | 0px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | sans-serif 12px/normal 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #000000 | = | - | = | = |
+| Text node | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #262322 | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #dc3b04 | - | = | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #dd3b00 |
+| Transition | none | = | - | = | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
 | Painted layers | - | div.framer-tBbOV.framer-i5yBN 99.0x32.0 bg #dd3b00 @ 0.15 r 24px | = | = | div.framer-tBbOV.framer-i5yBN 99.0x32.0 bg #dd3b00 @ 0.15 r 24px |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-focus-visible.png`, `nav-item-pressed.png`, `nav-item-opened.png`.
+Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-pressed.png`, `nav-item-opened.png`.
 
 #### menu-panel
 

@@ -405,22 +405,23 @@ Page: home. Selector: `badge chip`. States: default, hover, focus-visible, press
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 42.38 x 24.8 | = | = | = |
-| Padding | 4px 8px | = | = | = |
-| Gap | 4px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #071a31 @ 0.05 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Geist 12px/16.8px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #3d464e | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | span.w-fit.inline-flex 42.4x24.8 bg #071a31 @ 0.05 r 8px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 42.38 x 24.8 | = | - | = |
+| Padding | 4px 8px | = | - | = |
+| Gap | 4px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | #071a31 @ 0.05 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Geist 12px/16.8px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #3d464e | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | span.w-fit.inline-flex 42.4x24.8 bg #071a31 @ 0.05 r 8px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `badge-default.png`, `badge-hover.png`, `badge-focus-visible.png`, `badge-pressed.png`.
+Crops: `badge-default.png`, `badge-hover.png`, `badge-pressed.png`.
 
 ### Pricing
 
@@ -748,22 +749,23 @@ Page: event. Selector: `button "Go to next month"`. States: default, hover, focu
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 40 x 40 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Gap | 4px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Proxima Nova 14px/21px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #a6bbd1 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 24 x 24, colour #a6bbd1 | = | = | = |
-| Painted layers | button.ukre8r9.u1rh2s45 40.0x40.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 9999px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 40 x 40 | = | - | = |
+| Padding | 8px 16px | = | - | = |
+| Gap | 4px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Proxima Nova 14px/21px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #a6bbd1 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | default | = | - | = |
+| Icon | 24 x 24, colour #a6bbd1 | = | - | = |
+| Painted layers | button.ukre8r9.u1rh2s45 40.0x40.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 9999px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: none.
 

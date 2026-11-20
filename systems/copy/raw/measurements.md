@@ -299,24 +299,25 @@ Page: home. Selector: `input.is-submit`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 128.3 x 40 | = | = | = |
-| Padding | 0px 20px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | #171717 | #693ee0 | = | #693ee0 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/24px 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | border-color, background-color 0.3s, 0.3s ease, ease delay 0s, 0s | = | = | = |
-| Cursor | default | = | = | = |
-| Placeholder | #ffffff, opacity 1 | = | = | = |
-| Painted layers | input.button.is-submit 128.3x40.0 bg #171717 | input.button.is-submit 128.3x40.0 bg #693ee0 | = | input.button.is-submit 128.3x40.0 bg #693ee0 |
-| Ancestor paint | 3 up div.hero--form-wr bg #ffffff shadow #e4edf1 @ 0.07 0px 2px 14px 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 128.3 x 40 | = | - | = |
+| Padding | 0px 20px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | #171717 | #693ee0 | - | #693ee0 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/24px 700 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | border-color, background-color 0.3s, 0.3s ease, ease delay 0s, 0s | = | - | = |
+| Cursor | default | = | - | = |
+| Placeholder | #ffffff, opacity 1 | = | - | = |
+| Painted layers | input.button.is-submit 128.3x40.0 bg #171717 | input.button.is-submit 128.3x40.0 bg #693ee0 | - | input.button.is-submit 128.3x40.0 bg #693ee0 |
+| Ancestor paint | 3 up div.hero--form-wr bg #ffffff shadow #e4edf1 @ 0.07 0px 2px 14px 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `hero-submit-default.png`, `hero-submit-hover.png`, `hero-submit-focus-visible.png`, `hero-submit-pressed.png`.
+Crops: `hero-submit-default.png`, `hero-submit-hover.png`, `hero-submit-pressed.png`.
 
 #### playbook-card
 

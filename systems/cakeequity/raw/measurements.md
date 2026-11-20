@@ -445,26 +445,27 @@ Page: home. Selector: `.story-card`. States: default, hover, focus-visible, pres
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 420 x 102.73 | = | = | = |
-| Padding | 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 16px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | #000000 @ 0.2 0px 2px 5px 0px | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/16.8px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #0000ee | #4823ff | = | = |
-| Text node | p.story-quote-hover-home: Exposure Light 18px/23.4px 300, #18161a | = | = | = |
-| Transition | opacity 0.2s ease | = | = | = |
-| Transform | matrix(1, 0, 0, 1, -210, -6) | matrix(1, 0, 0, 1, -210, -12) | = | = |
-| Opacity | 0 | - | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | div.story-card 420.0x102.7 bg #ffffff r 16px shadow #000000 @ 0.2 0px 2px 5px 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 420 x 102.73 | = | - | = |
+| Padding | 16px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 16px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | #000000 @ 0.2 0px 2px 5px 0px | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/16.8px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #0000ee | #4823ff | - | = |
+| Text node | p.story-quote-hover-home: Exposure Light 18px/23.4px 300, #18161a | = | - | = |
+| Transition | opacity 0.2s ease | = | - | = |
+| Transform | matrix(1, 0, 0, 1, -210, -6) | matrix(1, 0, 0, 1, -210, -12) | - | = |
+| Opacity | 0 | - | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | div.story-card 420.0x102.7 bg #ffffff r 16px shadow #000000 @ 0.2 0px 2px 5px 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `story-card-default.png`, `story-card-hover.png`, `story-card-focus-visible.png`, `story-card-pressed.png`.
+Crops: `story-card-default.png`, `story-card-hover.png`, `story-card-pressed.png`.
 
 #### faq-item
 

@@ -686,25 +686,26 @@ Page: signin. Selector: `[data-testid=email-submit-button]`. States: default, ho
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 400 x 56 | = | = | 392 x 54.88 |
-| Padding | 16px 32px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 56px | = | = | = |
-| Background | #1460ff | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Times New Roman 16px/normal 600 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span: CoinbaseSans 16px/24px 600, #ffffff | = | = | = |
-| Transition | none | = | = | = |
-| Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | matrix(0.98, 0, 0, 0.98, 0, 0) |
-| Opacity | 0.5 | = | = | = |
-| Cursor | default | = | = | = |
-| Painted layers | button.flex-ff5rfy6.fgInverse-f1sdlwjn 400.0x56.0 bg #1460ff r 56px | = | = | button.flex-ff5rfy6.fgInverse-f1sdlwjn 392.0x54.9 bg #1460ff r 56px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 400 x 56 | = | - | 392 x 54.88 |
+| Padding | 16px 32px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 56px | = | - | = |
+| Background | #1460ff | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Times New Roman 16px/normal 600 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Text node | span: CoinbaseSans 16px/24px 600, #ffffff | = | - | = |
+| Transition | none | = | - | = |
+| Transform | matrix(1, 0, 0, 1, 0, 0) | = | - | matrix(0.98, 0, 0, 0.98, 0, 0) |
+| Opacity | 0.5 | = | - | = |
+| Cursor | default | = | - | = |
+| Painted layers | button.flex-ff5rfy6.fgInverse-f1sdlwjn 400.0x56.0 bg #1460ff r 56px | = | - | button.flex-ff5rfy6.fgInverse-f1sdlwjn 392.0x54.9 bg #1460ff r 56px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `signin-submit-default.png`, `signin-submit-hover.png`, `signin-submit-focus-visible.png`, `signin-submit-pressed.png`.
+Crops: `signin-submit-default.png`, `signin-submit-hover.png`, `signin-submit-pressed.png`.
 
 #### signin-oauth
 

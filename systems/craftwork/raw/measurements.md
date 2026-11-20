@@ -392,22 +392,23 @@ Page: pricing. Selector: `plan card`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 547.19 x 340 | = | = | = |
-| Padding | 24px 0px 0px 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | euclidCircularALightWebS 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.min-w-0.flex-1: euclidCircularALightWebS 14px/21px 400, #606060 | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 16 x 16, colour #ffffff | = | = | = |
-| Painted layers | span.pointer-events-none.absolute 437.8x192.0 bg #000000 @ 0.03 r 9999px; span.absolute.inset-0 419.2x224.3 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 455.9x244.5 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 493.1x265.1 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 490.9x263.1 image linear-gradient(#000000 @ 0 35%, #f4f4f4 100%); div.border.border-stroke-primary 443.0x55.0 bg #ffffff border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 16px | span.pointer-events-none.absolute 437.8x192.0 bg #000000 @ 0.03 r 9999px; span.absolute.inset-0 416.5x230.0 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 451.6x249.7 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 486.9x269.6 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 484.9x267.6 image linear-gradient(#000000 @ 0 35%, #f4f4f4 100%); div.border.border-stroke-primary 443.0x55.0 bg #ffffff border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 16px | = | = |
-| Ancestor paint | 1 up li.group.relative bg #f4f4f4 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px inset | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 547.19 x 340 | = | - | = |
+| Padding | 24px 0px 0px 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | euclidCircularALightWebS 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.min-w-0.flex-1: euclidCircularALightWebS 14px/21px 400, #606060 | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 16 x 16, colour #ffffff | = | - | = |
+| Painted layers | span.pointer-events-none.absolute 437.8x192.0 bg #000000 @ 0.03 r 9999px; span.absolute.inset-0 419.2x224.3 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 455.9x244.5 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 493.1x265.1 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 490.9x263.1 image linear-gradient(#000000 @ 0 35%, #f4f4f4 100%); div.border.border-stroke-primary 443.0x55.0 bg #ffffff border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 16px | span.pointer-events-none.absolute 437.8x192.0 bg #000000 @ 0.03 r 9999px; span.absolute.inset-0 416.5x230.0 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 451.6x249.7 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 486.9x269.6 bg #f4f4f4 border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 14px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.45 0px 24px 48px -16px; span.absolute.inset-0 484.9x267.6 image linear-gradient(#000000 @ 0 35%, #f4f4f4 100%); div.border.border-stroke-primary 443.0x55.0 bg #ffffff border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 16px | - | = |
+| Ancestor paint | 1 up li.group.relative bg #f4f4f4 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px inset | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: none.
 

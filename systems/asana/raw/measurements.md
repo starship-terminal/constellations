@@ -267,7 +267,7 @@ Page: home. Selector: `hero CTA`. States: default, hover, focus-visible, pressed
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
+Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-pressed.png`.
 
 #### caps-label
 
