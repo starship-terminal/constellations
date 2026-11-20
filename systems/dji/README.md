@@ -79,6 +79,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 - `co-lede`: the first visible `<p>` on /company was the "Internet Explorer is no longer supported" notice in a modal box, not the company lede. `light.text.muted` and `core.font.size.measured.body` cite it and say so (the colour matches the declared `--black-secondary`, but the reading is not the lede). `tools/capture/public/measure.mjs` now skips the modal notice (edited, not run); recapture needed.
 - `m-menu` hover: the 2026-11-15 re-read timed out and the capture kept an earlier reading beside the `rerunError`, under the component's new run date. The reading's own date was not recorded. measure.mjs now pins a kept reading to its own run.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Health
 

@@ -113,6 +113,7 @@ Nothing was bought, sent or signed into: the login card's fields were filled wit
 - **The announced "free shipping" strip is a boxed section too.** The announcement bar paints sable inside a 45px-radius box of its own — it is not a page-edge strip.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **Rate limiting.** Direct Shopify requests to some product routes and `/products.json` return 429 from a datacentre-looking client; the browser pass succeeded with fresh contexts, but a re-run may need the same care.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

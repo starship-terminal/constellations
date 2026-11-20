@@ -204,6 +204,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The forms.** Contact and login fields were measured at rest and typed into then cleared — validation, error, loading and success states are unverified because nothing was submitted.
 - **`--leading-*` and tracking companions.** Plain-number line heights are DTCG `number` tokens; a few `--tracking-*` values that ship unitless/`em` sit as `other` rather than letter-spacing dimensions.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ### Do and don't (from README.md)
 
