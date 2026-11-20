@@ -1,0 +1,1630 @@
+{
+  "_meta": {
+    "product": "Zellerfeld",
+    "captured": "2026-11-20T23:51:27.726Z",
+    "widths": "1440x900 and 390x844",
+    "theme": "light only"
+  },
+  "components": {
+    "nav-button": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Open navigation",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.1)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "36px",
+            "width": "36px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "nav-button-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Open navigation",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "36px",
+            "width": "36px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "nav-button-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Open navigation",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.1)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "36px",
+            "width": "36px",
+            "boxHeight": "36px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(23, 23, 23) 0px 0px 0px 2px, rgb(55, 115, 245) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "nav-button-focus-visible.png"
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Open navigation",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "36px",
+            "width": "35px",
+            "boxHeight": "35px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "nav-button-pressed.png"
+        }
+      },
+      "page": "home",
+      "role": "icon button",
+      "note": "Opens the navigation drawer"
+    },
+    "wordmark": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "A",
+            "text": "Zellerfeld",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 8px 0px 0px",
+            "height": "28px",
+            "width": "134px",
+            "boxHeight": "28px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "wordmark-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "A",
+            "text": "Zellerfeld",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 8px 0px 0px",
+            "height": "28px",
+            "width": "134px",
+            "boxHeight": "28px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "wordmark-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "A",
+            "text": "Zellerfeld",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 8px 0px 0px",
+            "height": "28px",
+            "width": "134px",
+            "boxHeight": "28px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(23, 23, 23) 0px 0px 0px 2px, rgb(55, 115, 245) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "textTransform": "none",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "wordmark-focus-visible.png"
+        }
+      },
+      "page": "home",
+      "role": "link"
+    },
+    "create-link": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "A",
+            "text": "CREATE CREATE",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 94, 62)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "1px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "116px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 94, 62) none 3px"
+          },
+          "crop": "create-link-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "A",
+            "text": "CREATE CREATE",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 94, 62)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "1px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "116px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 94, 62) none 3px"
+          },
+          "crop": "create-link-hover.png"
+        },
+        "focus-visible": {
+          "via": "focus failed",
+          "style": null,
+          "crop": null
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "A",
+            "text": "CREATE CREATE",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 94, 62)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "1px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "111px",
+            "boxHeight": "35px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 94, 62) none 3px"
+          },
+          "crop": "create-link-pressed.png"
+        }
+      },
+      "page": "home",
+      "role": "link",
+      "note": "Leaves for studio.zellerfeld.com"
+    },
+    "sign-in-button": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "BUTTON",
+            "text": "SIGN IN SIGN IN",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.1)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "114px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "sign-in-button-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "BUTTON",
+            "text": "SIGN IN SIGN IN",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "114px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "sign-in-button-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "BUTTON",
+            "text": "SIGN IN SIGN IN",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.1)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "114px",
+            "boxHeight": "36px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(23, 23, 23) 0px 0px 0px 2px, rgb(55, 115, 245) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "sign-in-button-focus-visible.png"
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "BUTTON",
+            "text": "SIGN IN SIGN IN",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "109px",
+            "boxHeight": "35px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "sign-in-button-pressed.png"
+        }
+      },
+      "page": "home",
+      "role": "button",
+      "note": "Opens Clerk sign-in. Not clicked."
+    },
+    "search-field": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "INPUT",
+            "text": "",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "lineHeight": "14px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.4)",
+            "borderTopWidth": "1px",
+            "borderRadius": "8px",
+            "padding": "0px 48px",
+            "height": "36px",
+            "width": "451px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "search-field-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "INPUT",
+            "text": "",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "lineHeight": "14px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.4)",
+            "borderTopWidth": "1px",
+            "borderRadius": "8px",
+            "padding": "0px 48px",
+            "height": "36px",
+            "width": "451px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "search-field-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "INPUT",
+            "text": "",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "lineHeight": "14px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "borderTopWidth": "1px",
+            "borderRadius": "8px",
+            "padding": "0px 48px",
+            "height": "36px",
+            "width": "451px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "search-field-focus-visible.png"
+        },
+        "focused": {
+          "via": "click, not submitted",
+          "style": {
+            "tag": "INPUT",
+            "text": "",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "lineHeight": "14px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "borderTopWidth": "1px",
+            "borderRadius": "8px",
+            "padding": "0px 48px",
+            "height": "36px",
+            "width": "451px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "search-field-focused.png"
+        },
+        "filled": {
+          "via": "typed nike, not submitted, then cleared",
+          "style": {
+            "tag": "INPUT",
+            "text": "",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "lineHeight": "14px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "borderTopWidth": "1px",
+            "borderRadius": "8px",
+            "padding": "0px 48px",
+            "height": "36px",
+            "width": "451px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "search-field-filled.png"
+        }
+      },
+      "page": "home",
+      "role": "text field"
+    },
+    "cookie-accept": {
+      "states": {
+        "default": {
+          "via": "not captured: banner hidden before this measure so consent is never clicked",
+          "style": null,
+          "crop": null
+        }
+      },
+      "page": "home",
+      "role": "button",
+      "note": "Consent. Not clicked. Banner may already be hidden."
+    },
+    "nav-drawer": {
+      "states": {
+        "open": {
+          "via": "Open navigation click",
+          "style": {
+            "tag": "DIV",
+            "text": "Menu SHOES Sneakers Boots Slides Barefoot EXPLORE Top creators Stria Sport Heron",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "8px 32px 8px 8px",
+            "height": "900px",
+            "width": "1000px",
+            "boxHeight": "900px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "nav-drawer-open.png"
+        }
+      },
+      "page": "home",
+      "role": "menu"
+    },
+    "nav-link": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "A",
+            "text": "Sneakers",
+            "fontFamily": "\"Lateral Zeller TM\", Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "700",
+            "lineHeight": "24px",
+            "letterSpacing": "-0.4px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "24px",
+            "width": "299px",
+            "boxHeight": "24px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "nav-link-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "A",
+            "text": "Sneakers",
+            "fontFamily": "\"Lateral Zeller TM\", Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "700",
+            "lineHeight": "24px",
+            "letterSpacing": "-0.4px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "24px",
+            "width": "299px",
+            "boxHeight": "24px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "nav-link-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "A",
+            "text": "Sneakers",
+            "fontFamily": "\"Lateral Zeller TM\", Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "700",
+            "lineHeight": "24px",
+            "letterSpacing": "-0.4px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "24px",
+            "width": "299px",
+            "boxHeight": "24px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "nav-link-focus-visible.png"
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "A",
+            "text": "Sneakers",
+            "fontFamily": "\"Lateral Zeller TM\", Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "700",
+            "lineHeight": "24px",
+            "letterSpacing": "-0.4px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "24px",
+            "width": "299px",
+            "boxHeight": "24px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "nav-link-pressed.png"
+        }
+      },
+      "page": "home",
+      "role": "link"
+    },
+    "sort-chip": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "BUTTON",
+            "text": "TRENDING TRENDING",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "98px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "sort-chip-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "BUTTON",
+            "text": "TRENDING TRENDING",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.9)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "98px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "sort-chip-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "BUTTON",
+            "text": "TRENDING TRENDING",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "98px",
+            "boxHeight": "36px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(23, 23, 23) 0px 0px 0px 2px, rgb(55, 115, 245) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "sort-chip-focus-visible.png"
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "BUTTON",
+            "text": "TRENDING TRENDING",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.9)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "94px",
+            "boxHeight": "35px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "sort-chip-pressed.png"
+        }
+      },
+      "page": "sneakers",
+      "role": "button"
+    },
+    "product-card": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "A",
+            "text": "AIRMAX 1000.3",
+            "fontFamily": "\"Lateral Zeller TM\", Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "700",
+            "lineHeight": "16px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "auto",
+            "width": "111px",
+            "boxHeight": "17px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "product-card-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "A",
+            "text": "AIRMAX 1000.3",
+            "fontFamily": "\"Lateral Zeller TM\", Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "700",
+            "lineHeight": "16px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "auto",
+            "width": "111px",
+            "boxHeight": "17px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "product-card-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "A",
+            "text": "AIRMAX 1000.3",
+            "fontFamily": "\"Lateral Zeller TM\", Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "700",
+            "lineHeight": "16px",
+            "letterSpacing": "normal",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "auto",
+            "width": "111px",
+            "boxHeight": "17px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "product-card-focus-visible.png"
+        }
+      },
+      "page": "sneakers",
+      "role": "card"
+    },
+    "buy-button": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "BUTTON",
+            "text": "BUY NOW",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 94, 62)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "56px",
+            "width": "333px",
+            "boxHeight": "56px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "buy-button-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "BUTTON",
+            "text": "BUY NOW",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 94, 62)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "56px",
+            "width": "333px",
+            "boxHeight": "56px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "buy-button-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "BUTTON",
+            "text": "BUY NOW",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 94, 62)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "56px",
+            "width": "333px",
+            "boxHeight": "56px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(23, 23, 23) 0px 0px 0px 2px, rgb(55, 115, 245) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "buy-button-focus-visible.png"
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "BUTTON",
+            "text": "BUY NOW",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 94, 62)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "56px",
+            "width": "319px",
+            "boxHeight": "54px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "buy-button-pressed.png"
+        }
+      },
+      "page": "product",
+      "role": "button",
+      "note": "Opens Fit Profile. Measured at rest. Not used to proceed."
+    },
+    "wishlist-button": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Add to wishlist",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.1)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "56px",
+            "width": "56px",
+            "boxHeight": "56px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "wishlist-button-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Add to wishlist",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "56px",
+            "width": "56px",
+            "boxHeight": "56px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "wishlist-button-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Add to wishlist",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.1)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "56px",
+            "width": "56px",
+            "boxHeight": "56px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(23, 23, 23) 0px 0px 0px 2px, rgb(55, 115, 245) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "wishlist-button-focus-visible.png"
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Add to wishlist",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px",
+            "height": "56px",
+            "width": "54px",
+            "boxHeight": "54px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "wishlist-button-pressed.png"
+        }
+      },
+      "page": "product",
+      "role": "icon button",
+      "note": "Opens sign-in. Not clicked here."
+    },
+    "color-swatch": {
+      "states": {
+        "default": {
+          "via": "not captured: colour link not found",
+          "style": null
+        }
+      },
+      "page": "product",
+      "role": "link"
+    },
+    "gallery-thumb": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Show image 2",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+            "borderTopWidth": "1px",
+            "borderRadius": "6px",
+            "padding": "0px",
+            "height": "64px",
+            "width": "64px",
+            "boxHeight": "64px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "gallery-thumb-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Show image 2",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.3)",
+            "borderTopWidth": "1px",
+            "borderRadius": "6px",
+            "padding": "0px",
+            "height": "64px",
+            "width": "64px",
+            "boxHeight": "64px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "gallery-thumb-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Show image 2",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+            "borderTopWidth": "1px",
+            "borderRadius": "6px",
+            "padding": "0px",
+            "height": "64px",
+            "width": "64px",
+            "boxHeight": "64px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(0, 95, 204) auto 1px"
+          },
+          "crop": "gallery-thumb-focus-visible.png"
+        }
+      },
+      "page": "product",
+      "role": "button"
+    },
+    "accordion": {
+      "states": {
+        "default": {
+          "via": "closed summary",
+          "style": {
+            "tag": "SUMMARY",
+            "text": "How does it feels to wear 3D printed shoes ?",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "24px 0px",
+            "height": "84px",
+            "width": "1320px",
+            "boxHeight": "84px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "accordion-default.png"
+        },
+        "open": {
+          "via": "summary click",
+          "style": {
+            "tag": "SUMMARY",
+            "text": "How does it feels to wear 3D printed shoes ?",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "24px 0px",
+            "height": "84px",
+            "width": "1320px",
+            "boxHeight": "84px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "accordion-open.png"
+        }
+      },
+      "page": "faq",
+      "role": "disclosure"
+    },
+    "newsletter-field": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "INPUT",
+            "text": "Enter your email",
+            "fontFamily": "Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "18px",
+            "letterSpacing": "-0.8px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "18px",
+            "width": "276px",
+            "boxHeight": "18px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "newsletter-field-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "INPUT",
+            "text": "Enter your email",
+            "fontFamily": "Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "18px",
+            "letterSpacing": "-0.8px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "18px",
+            "width": "276px",
+            "boxHeight": "18px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "newsletter-field-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "INPUT",
+            "text": "Enter your email",
+            "fontFamily": "Lateral, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "18px",
+            "letterSpacing": "-0.8px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "18px",
+            "width": "276px",
+            "boxHeight": "18px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "newsletter-field-focus-visible.png"
+        }
+      },
+      "page": "newsletter",
+      "role": "text field",
+      "note": "Not filled. Not submitted."
+    },
+    "newsletter-submit": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "BUTTON",
+            "text": "BE PART OF THE REVOLUTION BE PART OF THE REVOLUTION",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 94, 62)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "263px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "newsletter-submit-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "BUTTON",
+            "text": "BE PART OF THE REVOLUTION BE PART OF THE REVOLUTION",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 94, 62)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "263px",
+            "boxHeight": "36px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "newsletter-submit-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "BUTTON",
+            "text": "BE PART OF THE REVOLUTION BE PART OF THE REVOLUTION",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 94, 62)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "263px",
+            "boxHeight": "36px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(23, 23, 23) 0px 0px 0px 2px, rgb(55, 115, 245) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) none 1px"
+          },
+          "crop": "newsletter-submit-focus-visible.png"
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "BUTTON",
+            "text": "BE PART OF THE REVOLUTION BE PART OF THE REVOLUTION",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgb(255, 94, 62)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "4px",
+            "padding": "0px 16px",
+            "height": "36px",
+            "width": "252px",
+            "boxHeight": "35px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "crop": "newsletter-submit-pressed.png"
+        }
+      },
+      "page": "newsletter",
+      "role": "button",
+      "note": "Not clicked."
+    },
+    "footer-link": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "A",
+            "text": "FAQ",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "14px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "auto",
+            "width": "25px",
+            "boxHeight": "17px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "footer-link-default.png"
+        },
+        "hover": {
+          "via": "mouse hover",
+          "style": {
+            "tag": "A",
+            "text": "FAQ",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "14px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "auto",
+            "width": "25px",
+            "boxHeight": "17px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "footer-link-hover.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "A",
+            "text": "FAQ",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "14px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "auto",
+            "width": "25px",
+            "boxHeight": "17px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(0, 95, 204) auto 1px"
+          },
+          "crop": "footer-link-focus-visible.png"
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "A",
+            "text": "FAQ",
+            "fontFamily": "Phonic, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "14px",
+            "letterSpacing": "-0.14px",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "auto",
+            "width": "25px",
+            "boxHeight": "17px",
+            "boxShadow": "none",
+            "textTransform": "uppercase",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "footer-link-pressed.png"
+        }
+      },
+      "page": "faq",
+      "role": "link"
+    },
+    "mobile-nav-button": {
+      "states": {
+        "default": {
+          "via": "resting",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "40px",
+            "width": "32px",
+            "boxHeight": "40px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5) none 3px"
+          },
+          "crop": "mobile-nav-button-default.png"
+        },
+        "focus-visible": {
+          "via": "keyboard Tab",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "40px",
+            "width": "32px",
+            "boxHeight": "40px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "rgb(0, 95, 204) auto 1px"
+          },
+          "crop": "mobile-nav-button-focus-visible.png"
+        },
+        "pressed": {
+          "via": "CDP forcePseudoState hover+active (no click)",
+          "style": {
+            "tag": "BUTTON",
+            "text": "Menu",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "40px",
+            "width": "32px",
+            "boxHeight": "40px",
+            "boxShadow": "none",
+            "textTransform": "none",
+            "outline": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5) none 3px"
+          },
+          "crop": "mobile-nav-button-pressed.png"
+        }
+      },
+      "page": "home",
+      "role": "icon button",
+      "width": 390,
+      "note": "Bottom bar Menu. The desktop Open navigation button is hidden at 390."
+    },
+    "mobile-nav-drawer": {
+      "states": {
+        "open": {
+          "via": "Open navigation",
+          "style": {
+            "tag": "DIV",
+            "text": "Menu SHOES Sneakers Boots Slides Barefoot EXPLORE Top creators Stria Sport Heron",
+            "fontFamily": "Exposure, ui-sans-serif, system-ui, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "color": "rgb(255, 255, 255)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "borderTopColor": "rgb(255, 94, 62)",
+            "borderTopWidth": "0px",
+            "borderRadius": "0px",
+            "padding": "0px",
+            "height": "844px",
+            "width": "390px",
+            "boxHeight": "844px",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(",
+            "textTransform": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "crop": "mobile-nav-drawer-open.png"
+        }
+      },
+      "page": "home",
+      "role": "menu",
+      "width": 390
+    }
+  }
+}
