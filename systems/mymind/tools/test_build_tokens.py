@@ -38,6 +38,12 @@ class CheckTest(unittest.TestCase):
         self.assertEqual(light_value(data, "color.chip-text"), "#748297")
         self.assertEqual(light_value(data, "color.chip"), "#f5f7f9")
 
+    def test_a_chain_into_core_stays_in_core(self):
+        # core.color.canvas -> {color.muted} must resolve to core's muted, not light's.
+        data = tree()
+        data["core"]["color"]["canvas"]["$value"] = "{color.muted}"
+        self.assertEqual(light_value(data, "color.page"), data["core"]["color"]["muted"]["$value"])
+
     def test_self_alias_fails(self):
         data = tree()
         data["light"]["color"]["link"]["$value"] = "{color.link}"

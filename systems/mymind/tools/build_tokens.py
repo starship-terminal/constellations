@@ -45,10 +45,13 @@ def resolve(value, sets, order, seen=frozenset()):
             key = (name, ref)
             if key in seen:
                 raise ValueError(f"alias cycle at {name}.{ref}")
-            return resolve(node["$value"], sets, order, seen | {key})
+            # Continue from the referenced token's own set, as the catalog Resolver does: an alias that
+            # led into core resolves its next step in core, not back in light.
+            return resolve(node["$value"], sets, ORDER[name], seen | {key})
     raise ValueError(f"alias {value} points at nothing in {' or '.join(order)}")
 
 
+ORDER = {"core": ("core",), "light": ("light", "core")}
 RAW = HERE.parent / "raw" / "computed.json"
 
 
