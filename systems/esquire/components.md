@@ -65,7 +65,7 @@ Values that apply across entries, from the measurement files.
 | [Rail card](#rail-card) | 302 x 342.8 | - | - | transparent | none | 0 |
 | [Section card](#section-card) | 1440 x 1311.58 | - | - | #f5f6f8 `light.background.panel` | none | 10px 40px 30px 40px |
 | [Result card](#result-card) | 265 x 212.7 | - | - | transparent | none | 4px 5px 15px 5px |
-| [Plan card](#plan-card) | 352 x 250.95 | 1px solid #3b3b3b `core.palette.gray.23` | 10px | #f5f6f8 `light.background.panel` | none | 16px 16px 20px 16px |
+| [Plan card](#plan-card) | 352 x 250.95 | 1px solid #3b3b3b `light.text.muted` | 10px | #f5f6f8 `light.background.panel` | none | 16px 16px 20px 16px |
 | [Related card](#related-card) | 800 x 982 | - | - | transparent | none | 0 |
 | [Premium story card](#premium-story-card) | 1200 x 72.8 | - | - | transparent | none | 20px 0px 0px 0px |
 
@@ -78,16 +78,16 @@ The ~155px top chrome shared by every page: the 32px red utility strip (edition 
 #### Desktop navigation
 The full top chrome: the dark utility strip (edition, Newsletter), the main bar (search field, Esquire wordmark, Sign In, Subscribe) and the .megaMenu category strip. Read as `nav` on the home page.
 
-**Values (default).** size 1440 x 155.5; background #ffffff `core.palette.gray.100`; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; icon 16 x 16, #121212 `core.palette.gray.7`.
+**Values (default).** size 1440 x 155.5; background #ffffff `light.background.page`; text Lausanne 13/18.2 400, #121212 `light.text.ink`; icon 16 x 16, #121212 `light.text.ink`.
 
 ![Desktop navigation default](components/crops/nav-default.png)
 
 #### Utility strip
 The 32px top utility bar holding the US edition switcher and the Newsletter link. Read as `nav-utility` on the home page.
 
-**Values (default).** size 64.81 x 32; background transparent; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; icon 16 x 16, #121212 `core.palette.gray.7`; layers button.hds-do-not-use.inline-flex 64.8x32.0 rgb(255, 58, 48) T:1px solid rgb(255, 58, 48) / R:1px solid rgb(255, 58, 48) / B:1px solid rgb(255, 58, 48) / L:1px solid rgb(255, 58, 48) 1024px; div.css-1gvhv7i.e1c0kr9d1 0.0x0.0 rgb(255, 255, 255) T:1px solid rgb(237, 237, 237) / R:1px solid rgb(237, 237, 237) / B:1px solid rgb(237, 237, 237) / L:1px solid rgb(237, 237, 237); a.hds-do-not-use.inline-f.
+**Values (default).** size 64.81 x 32; background transparent; text Lausanne 13/18.2 400, #121212 `light.text.ink`; icon 16 x 16, #121212 `light.text.ink`; layers button.hds-do-not-use.inline-flex 64.8x32.0 rgb(255, 58, 48) T:1px solid rgb(255, 58, 48) / R:1px solid rgb(255, 58, 48) / B:1px solid rgb(255, 58, 48) / L:1px solid rgb(255, 58, 48) 1024px; div.css-1gvhv7i.e1c0kr9d1 0.0x0.0 rgb(255, 255, 255) T:1px solid rgb(237, 237, 237) / R:1px solid rgb(237, 237, 237) / B:1px solid rgb(237, 237, 237) / L:1px solid rgb(237, 237, 237); a.hds-do-not-use.inline-f.
 
-Child layers that carry the look: button 64.8x32 background #ff3a30 `light.brand.red` border 1px solid #ff3a30 `light.brand.red` radius 1024px; div 0x0 background #ffffff `core.palette.gray.100` border 1px solid #ededed `core.palette.gray.93`; a 0x0 background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg` border 1px solid rgba(255, 255, 255, 0.04).
+Child layers that carry the look: button 64.8x32 background #ff3a30 `light.brand.red` border 1px solid #ff3a30 `light.brand.red` radius 1024px; div 0x0 background #ffffff `light.background.page` border 1px solid #ededed `light.border.soft`; a 0x0 background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg` border 1px solid rgba(255, 255, 255, 0.04).
 
 ![Utility strip default](components/crops/nav-utility-default.png)
 
@@ -96,8 +96,8 @@ The "US" edition button in the utility strip; measured, never toggled open beyon
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 64.81 x 32; padding 0px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `core.palette.gray.7` |
-| hover | background #ffffff `core.palette.gray.100` |
+| default | size 64.81 x 32; padding 0px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 13/18.2 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `light.text.ink` |
+| hover | background #ffffff `light.background.page` |
 | focus-visible | outline 1px auto #101010, offset 0px |
 | pressed | background #fff0f0 `light.button.primary.bg_active` |
 
@@ -108,8 +108,8 @@ The "Newsletter" utility link; measured, never followed. Read as `nav-newsletter
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 125 x 32; padding 0px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `core.palette.gray.7` |
-| hover | background #ffffff `core.palette.gray.100` |
+| default | size 125 x 32; padding 0px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 13/18.2 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `light.text.ink` |
+| hover | background #ffffff `light.background.page` |
 | focus-visible | outline 1px auto #101010, offset 1px |
 | pressed | background #fff0f0 `light.button.primary.bg_active` |
 
@@ -118,7 +118,7 @@ The "Newsletter" utility link; measured, never followed. Read as `nav-newsletter
 #### Wordmark
 The Esquire wordmark lockup centred in the main bar (a link home holding the widest inline svg). Read as `nav-logo` on the home page.
 
-**Values (default).** size 296 x 60; background transparent; text sans-serif 16/18.4 400, #121212 `core.palette.gray.7`; transform translate(-148px, 0px).
+**Values (default).** size 296 x 60; background transparent; text sans-serif 16/18.4 400, #121212 `light.text.ink`; transform translate(-148px, 0px).
 
 ![Wordmark default](components/crops/nav-logo-default.png)
 
@@ -127,7 +127,7 @@ The "Sign In" link to account.esquire.com; measured, never followed. Read as `na
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 77.41 x 38.3; padding 8px 12px; border 1px solid rgba(255, 255, 255, 0.04); radius 1024px; background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg`; text Lausanne 16/20.3 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
+| default | size 77.41 x 38.3; padding 8px 12px; border 1px solid rgba(255, 255, 255, 0.04); radius 1024px; background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg`; text Lausanne 16/20.3 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
 | hover | border 1px solid rgba(255, 58, 48, 0.08); background rgba(255, 58, 48, 0.08) |
 | focus-visible | outline 1px auto #101010, offset 1px |
 | pressed | border 1px solid rgba(255, 58, 48, 0.16); background rgba(255, 58, 48, 0.16) |
@@ -139,8 +139,8 @@ The red "Subscribe" call-to-action in the main bar; measured, never followed. Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 105.81 x 38.3; padding 8px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 16/20.3 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
-| hover | background #ffffff `core.palette.gray.100` |
+| default | size 105.81 x 38.3; padding 8px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 16/20.3 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
+| hover | background #ffffff `light.background.page` |
 | focus-visible | outline 1px auto #101010, offset 1px |
 | pressed | background #fff0f0 `light.button.primary.bg_active` |
 
@@ -151,7 +151,7 @@ The header "Search..." input; focused and typed into then cleared — never subm
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 211.81 x 26.19; padding 4px 2px 4px 12px; background transparent; text Lausanne 14/18.2 400, #121212 `core.palette.gray.7`; placeholder #757575 `core.palette.gray.46`; ancestors div.flex.items-center bg #ffffff `core.palette.gray.100` |
+| default (same: focused, filled) | size 211.81 x 26.19; padding 4px 2px 4px 12px; background transparent; text Lausanne 14/18.2 400, #121212 `light.text.ink`; placeholder #757575 `light.text.disabled`; ancestors div.flex.items-center bg #ffffff `light.background.page` |
 
 ![Search field default](components/crops/nav-search-default.png) ![Search field focused](components/crops/nav-search-focused.png) ![Search field filled](components/crops/nav-search-filled.png)
 
@@ -160,7 +160,7 @@ The search-icon submit inside the header search box; measured, never pressed. Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 26.19 x 26.19; border 1px solid rgba(18, 18, 18, 0); radius 1024px; background rgba(18, 18, 18, 0); text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `core.palette.gray.7` |
+| default | size 26.19 x 26.19; border 1px solid rgba(18, 18, 18, 0); radius 1024px; background rgba(18, 18, 18, 0); text Lausanne 13/18.2 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `light.text.ink` |
 | hover | border 1px solid rgba(18, 18, 18, 0.04) `light.button.secondary.bg_hover`; background rgba(18, 18, 18, 0.04) `light.button.secondary.bg_hover` |
 | focus-visible | outline 1px auto #101010, offset 0px |
 | pressed | border 1px solid rgba(18, 18, 18, 0.08) `light.button.secondary.bg_active`; background rgba(18, 18, 18, 0.08) `light.button.secondary.bg_active` |
@@ -170,9 +170,9 @@ The search-icon submit inside the header search box; measured, never pressed. Re
 #### Category menu
 The .megaMenu category strip under the main bar: Entertainment through Food and Drinks plus the "More" overflow toggle. Read as `megamenu` on the home page.
 
-**Values (default).** size 1440 x 53.2; border B: 1px solid #757575 `core.palette.gray.46`; background transparent; text Lausanne 16/23.2 400, #121212 `core.palette.gray.7`; icon 16 x 16, #121212 `core.palette.gray.7`; layers div.megaMenu.css-1uwvko7 1440.0x53.2 B:1px solid rgb(117, 117, 117); button.hds-do-not-use.inline-flex 26.0x18.0 rgba(255, 56, 46, 0) T:1px solid rgba(255, 255, 255, 0.04) / R:1px solid rgba(255, 255, 255, 0.04) / B:1px solid rgba(255, 255, 255, 0.04) / L:1px solid rgba(255, 255, 255, 0.04) 1024px; button.hds-do-not-use.inline-flex 26.0x18.0 rgba(255, 56, 46, 0) T:1px solid rgba(255, 255, 255, 0.0; ancestors div.css-zbfy27.eju4swf3 bg #ffffff `core.palette.gray.100`.
+**Values (default).** size 1440 x 53.2; border B: 1px solid #757575 `light.text.disabled`; background transparent; text Lausanne 16/23.2 400, #121212 `light.text.ink`; icon 16 x 16, #121212 `light.text.ink`; layers div.megaMenu.css-1uwvko7 1440.0x53.2 B:1px solid rgb(117, 117, 117); button.hds-do-not-use.inline-flex 26.0x18.0 rgba(255, 56, 46, 0) T:1px solid rgba(255, 255, 255, 0.04) / R:1px solid rgba(255, 255, 255, 0.04) / B:1px solid rgba(255, 255, 255, 0.04) / L:1px solid rgba(255, 255, 255, 0.04) 1024px; button.hds-do-not-use.inline-flex 26.0x18.0 rgba(255, 56, 46, 0) T:1px solid rgba(255, 255, 255, 0.0; ancestors div.css-zbfy27.eju4swf3 bg #ffffff `light.background.page`.
 
-Child layers that carry the look: div 1440x53.2 border 1px solid #757575 `core.palette.gray.46`; button 26x18 background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg` border 1px solid rgba(255, 255, 255, 0.04) radius 1024px; button 26x18 background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg` border 1px solid rgba(255, 255, 255, 0.04) radius 1024px.
+Child layers that carry the look: div 1440x53.2 border 1px solid #757575 `light.text.disabled`; button 26x18 background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg` border 1px solid rgba(255, 255, 255, 0.04) radius 1024px; button 26x18 background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg` border 1px solid rgba(255, 255, 255, 0.04) radius 1024px.
 
 ![Category menu default](components/crops/megamenu-default.png)
 
@@ -181,7 +181,7 @@ A .megaMenu category link ("Entertainment"); measured, never followed. Read as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 112.61 x 23.2; background transparent; text Lausanne 16/23.2 400, #121212 `core.palette.gray.7` |
+| default (same: hover, pressed) | size 112.61 x 23.2; background transparent; text Lausanne 16/23.2 400, #121212 `light.text.ink` |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.hds-do-not-use.no-underline 112.6x23.2 1px auto rgb(16, 16, 16) offset 1px |
 
 ![Category link default](components/crops/nav-link-default.png) ![Category link hover](components/crops/nav-link-hover.png) ![Category link focus-visible](components/crops/nav-link-focus-visible.png) ![Category link pressed](components/crops/nav-link-pressed.png)
@@ -191,7 +191,7 @@ The per-category "Open X submenu" chevron button; measured, never toggled. Read 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 26 x 18; padding 0px 4px; border 1px solid rgba(255, 255, 255, 0.04); radius 1024px; background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg`; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `core.palette.gray.7` |
+| default (same: hover) | size 26 x 18; padding 0px 4px; border 1px solid rgba(255, 255, 255, 0.04); radius 1024px; background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg`; text Lausanne 13/18.2 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `light.text.ink` |
 | focus-visible | outline 1px auto #101010, offset 0px |
 | pressed | border 1px solid rgba(255, 58, 48, 0.16); background rgba(255, 58, 48, 0.16) |
 
@@ -202,7 +202,7 @@ The "More" overflow toggle — a local UI toggle; the opened state was measured 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, opened) | size 87.61 x 28.2; padding 4px 12px; border 1px solid rgba(255, 255, 255, 0.04); radius 1024px; background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg`; text Lausanne 16/18.2 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `core.palette.gray.7` |
+| default (same: hover, opened) | size 87.61 x 28.2; padding 4px 12px; border 1px solid rgba(255, 255, 255, 0.04); radius 1024px; background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg`; text Lausanne 16/18.2 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `light.text.ink` |
 | focus-visible | outline 1px auto #101010, offset 0px |
 | pressed | border 1px solid rgba(255, 58, 48, 0.16); background rgba(255, 58, 48, 0.16) |
 
@@ -211,7 +211,7 @@ The "More" overflow toggle — a local UI toggle; the opened state was measured 
 #### More panel
 The overflow panel opened by "More" — the hidden sections (Sports, Member Exclusives, For You) plus their submenu links. Read as `more-panel` on the home page.
 
-**Values (default).** size 302 x 92.89; background transparent; text Lausanne 14/20.3 400, #121212 `core.palette.gray.7`; ancestors div.css-96zydn.edouk7815 bg #ffffff `core.palette.gray.100`.
+**Values (default).** size 302 x 92.89; background transparent; text Lausanne 14/20.3 400, #121212 `light.text.ink`; ancestors div.css-96zydn.edouk7815 bg #ffffff `light.background.page`.
 
 ![More panel default](components/crops/more-panel-default.png)
 
@@ -222,88 +222,88 @@ The landing: the Latest story list (thumbnail rows, 18px Lausanne headlines, BY-
 #### Ad disclaimer
 The "Advertisement - Continue Reading Below" furniture label that sits above each blank ad slot; the slots themselves stay empty because ad requests are aborted. Read as `ad-disclaimer` on the home page.
 
-**Values (default).** size 1280 x 14.84; background transparent; text Lausanne 11/14.85 400, #121212 `core.palette.gray.7`; layers ::before rgb(237, 237, 237) 0px none 1; ::after rgb(237, 237, 237) 0px none 1; div::before.ad-disclaimer.no-print 507.906pxx1px rgb(237, 237, 237); div::after.ad-disclaimer.no-print 507.906pxx1px rgb(237, 237, 237).
+**Values (default).** size 1280 x 14.84; background transparent; text Lausanne 11/14.85 400, #121212 `light.text.ink`; layers ::before rgb(237, 237, 237) 0px none 1; ::after rgb(237, 237, 237) 0px none 1; div::before.ad-disclaimer.no-print 507.906pxx1px rgb(237, 237, 237); div::after.ad-disclaimer.no-print 507.906pxx1px rgb(237, 237, 237).
 
-Child layers that carry the look: div::before 507.906pxx1px background #ededed `core.palette.gray.93`; div::after 507.906pxx1px background #ededed `core.palette.gray.93`.
+Child layers that carry the look: div::before 507.906pxx1px background #ededed `light.border.soft`; div::after 507.906pxx1px background #ededed `light.border.soft`.
 
 ![Ad disclaimer default](components/crops/ad-disclaimer-default.png)
 
 #### Section heading
 A home-page section heading ("The Latest") — 32px Lausanne. Read as `section-h2` on the home page.
 
-**Values (default).** size 302 x 41.59; background transparent; text Lausanne 32/41.6 400, #121212 `core.palette.gray.7`.
+**Values (default).** size 302 x 41.59; background transparent; text Lausanne 32/41.6 400, #121212 `light.text.ink`.
 
 ![Section heading default](components/crops/section-h2-default.png)
 
 #### Story list card
 A story row in "The Latest": thumbnail, 18px Lausanne headline, byline and read-time. Read as `story-card` on the home page.
 
-**Values (default).** size 302 x 132; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`; icon 16 x 16, #3b3b3b `core.palette.gray.23`.
+**Values (default).** size 302 x 132; background transparent; text Lausanne 12/16.8 400, #3b3b3b `light.text.muted`; icon 16 x 16, #3b3b3b `light.text.muted`.
 
 ![Story list card default](components/crops/story-card-default.png)
 
 #### Story headline
 An 18px Lausanne story headline in the Latest list. Read as `story-title` on the home page.
 
-**Values (default).** size 214 x 69.61; background transparent; text Lausanne 18/23.2 400, #121212 `core.palette.gray.7`.
+**Values (default).** size 214 x 69.61; background transparent; text Lausanne 18/23.2 400, #121212 `light.text.ink`.
 
 ![Story headline default](components/crops/story-title-default.png)
 
 #### Story thumbnail
 The thumbnail image inside a story list card. Read as `story-thumb` on the home page.
 
-**Values (default).** size 80 x 80; background #ededed `core.palette.gray.93`; text Lausanne 16/18.4 400, transparent.
+**Values (default).** size 80 x 80; background #ededed `light.border.soft`; text Lausanne 16/18.4 400, transparent.
 
 ![Story thumbnail default](components/crops/story-thumb-default.png)
 
 #### Byline
 A "BY <AUTHOR>" byline under a story headline. Read as `byline` on the home page.
 
-**Values (default).** size 114.41 x 12; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`.
+**Values (default).** size 114.41 x 12; background transparent; text Lausanne 12/16.8 400, #3b3b3b `light.text.muted`.
 
 ![Byline default](components/crops/byline-default.png)
 
 #### Read time
 The "min read" duration label with its clock icon on a story card. Read as `readtime` on the home page.
 
-**Values (default).** size 86 x 16.8; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`; icon 16 x 16, #3b3b3b `core.palette.gray.23`.
+**Values (default).** size 86 x 16.8; background transparent; text Lausanne 12/16.8 400, #3b3b3b `light.text.muted`; icon 16 x 16, #3b3b3b `light.text.muted`.
 
 ![Read time default](components/crops/readtime-default.png)
 
 #### Eyebrow
 The small uppercase red eyebrow ("NEWS" / "STYLE") over a headline. Read as `eyebrow` on the home page.
 
-**Values (default).** size 40.61 x 13; background transparent; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`.
+**Values (default).** size 40.61 x 13; background transparent; text Lausanne 13/18.2 400, #121212 `light.text.ink`.
 
 ![Eyebrow default](components/crops/eyebrow-default.png)
 
 #### Hero story
 The cover hero headline painted at display size (56px PlayFair). Read as `hero-story` on the home page.
 
-**Values (default).** size 628 x 112; background transparent; text PlayFair 56/56 400, #121212 `core.palette.gray.7`.
+**Values (default).** size 628 x 112; background transparent; text PlayFair 56/56 400, #121212 `light.text.ink`.
 
 ![Hero story default](components/crops/hero-story-default.png)
 
 #### Hero dek
 The standfirst paragraph under the hero headline. Read as `hero-dek` on the home page.
 
-**Values (default).** size 628 x 52.19; background transparent; text Lausanne 20/26.1 400, #121212 `core.palette.gray.7`.
+**Values (default).** size 628 x 52.19; background transparent; text Lausanne 20/26.1 400, #121212 `light.text.ink`.
 
 ![Hero dek default](components/crops/hero-dek-default.png)
 
 #### Rail card
 A right-rail "MAN AT HIS BEST" style card: thumbnail over a 20px headline with a dek. Read as `rail-card` on the home page.
 
-**Values (default).** size 302 x 342.8; background transparent; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; icon 16 x 16, #3b3b3b `core.palette.gray.23`; layers hr.css-1n2oy37.ehvmj2s4 302.0x1.0 rgb(18, 18, 18).
+**Values (default).** size 302 x 342.8; background transparent; text Lausanne 13/18.2 400, #121212 `light.text.ink`; icon 16 x 16, #3b3b3b `light.text.muted`; layers hr.css-1n2oy37.ehvmj2s4 302.0x1.0 rgb(18, 18, 18).
 
-Child layers that carry the look: hr 302x1 background #121212 `core.palette.gray.7`.
+Child layers that carry the look: hr 302x1 background #121212 `light.text.ink`.
 
 ![Rail card default](components/crops/rail-card-default.png)
 
 #### Newsletter block
 The mid-page "Real journalism and real style" newsletter band: 28px Lausanne pitch, email field, Sign Up button and terms copy. Read as `newsletter-block` on the home page.
 
-**Values (default).** size 942 x 235.31; padding 32px 48px 20px 48px; background #f5f6f8 `light.background.panel`; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; icon 24 x 24, #575757 `core.palette.gray.34`.
+**Values (default).** size 942 x 235.31; padding 32px 48px 20px 48px; background #f5f6f8 `light.background.panel`; text Lausanne 13/18.2 400, #121212 `light.text.ink`; icon 24 x 24, #575757 `light.text.subtle`.
 
 ![Newsletter block default](components/crops/newsletter-block-default.png)
 
@@ -312,7 +312,7 @@ The "Enter your email address" field; focused and typed into then cleared — ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 368.59 x 36.3; padding 8px 0px; background transparent; text Lausanne 16/20.3 400, #121212 `core.palette.gray.7`; placeholder #757575 `core.palette.gray.46`; ancestors div.flex.items-center bg #ffffff `core.palette.gray.100` |
+| default (same: focused, filled) | size 368.59 x 36.3; padding 8px 0px; background transparent; text Lausanne 16/20.3 400, #121212 `light.text.ink`; placeholder #757575 `light.text.disabled`; ancestors div.flex.items-center bg #ffffff `light.background.page` |
 
 ![Newsletter field default](components/crops/newsletter-input-default.png) ![Newsletter field focused](components/crops/newsletter-input-focused.png) ![Newsletter field filled](components/crops/newsletter-input-filled.png)
 
@@ -321,8 +321,8 @@ The red "Sign Up" submit inside the newsletter band; measured, never pressed. Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 85.41 x 28.3; padding 0px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 16/20.3 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
-| hover | background #ffffff `core.palette.gray.100` |
+| default | size 85.41 x 28.3; padding 0px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 16/20.3 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
+| hover | background #ffffff `light.background.page` |
 | focus-visible | outline 1px auto #101010, offset 0px |
 | pressed | background #fff0f0 `light.button.primary.bg_active` |
 
@@ -331,9 +331,9 @@ The red "Sign Up" submit inside the newsletter band; measured, never pressed. Re
 #### Pagination
 The "1 | 2 | 3" pagination under the story feed; measured, never followed. Read as `pagination` on the home page.
 
-**Values (default).** size 192 x 56.39; padding 12px 0px; background transparent; text Lausanne 14/20.3 400, #121212 `core.palette.gray.7`; icon 24 x 24, #121212 `core.palette.gray.7`; layers a.hds-do-not-use.inline-flex 32.0x32.0 rgba(255, 56, 46, 0) 1024px; a.hds-do-not-use.inline-flex 32.0x32.0 rgb(214, 214, 214) T:1px solid rgb(237, 237, 237) / R:1px solid rgb(237, 237, 237) / B:1px solid rgb(237, 237, 237) / L:1px solid rgb(237, 237, 237) 1024px; a.hds-do-not-use.inline-flex 32.0x32.0 rgb(255, 255, 255) T:1px solid rgba(18, 18, 18, 0) / R:1px solid rgba(18, 18, 18, 0) / B:1px soli; ancestors section.css-1imhwz1.ege0am41 bg #ffffff `core.palette.gray.100`.
+**Values (default).** size 192 x 56.39; padding 12px 0px; background transparent; text Lausanne 14/20.3 400, #121212 `light.text.ink`; icon 24 x 24, #121212 `light.text.ink`; layers a.hds-do-not-use.inline-flex 32.0x32.0 rgba(255, 56, 46, 0) 1024px; a.hds-do-not-use.inline-flex 32.0x32.0 rgb(214, 214, 214) T:1px solid rgb(237, 237, 237) / R:1px solid rgb(237, 237, 237) / B:1px solid rgb(237, 237, 237) / L:1px solid rgb(237, 237, 237) 1024px; a.hds-do-not-use.inline-flex 32.0x32.0 rgb(255, 255, 255) T:1px solid rgba(18, 18, 18, 0) / R:1px solid rgba(18, 18, 18, 0) / B:1px soli; ancestors section.css-1imhwz1.ege0am41 bg #ffffff `light.background.page`.
 
-Child layers that carry the look: a 32x32 background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg` radius 1024px; a 32x32 background #d6d6d6 `core.palette.gray.84` border 1px solid #ededed `core.palette.gray.93` radius 1024px; a 32x32 background #ffffff `core.palette.gray.100` border 1px solid rgba(18, 18, 18, 0) radius 1024px.
+Child layers that carry the look: a 32x32 background rgba(255, 56, 46, 0) `light.button.primary-outlined.bg` radius 1024px; a 32x32 background #d6d6d6 `light.border.field` border 1px solid #ededed `light.border.soft` radius 1024px; a 32x32 background #ffffff `light.background.page` border 1px solid rgba(18, 18, 18, 0) radius 1024px.
 
 ![Pagination default](components/crops/pagination-default.png)
 
@@ -344,7 +344,7 @@ A section index (Style): the front title and description, the lead story card an
 #### Section title
 The section-front title ("Style") — the display word at the top of the front. Read as `sec-h1` on the style section page.
 
-**Values (default).** size 205 x 85; padding 25px 40px 13px 40px; radius 80px; background rgba(0, 0, 0, 0.7); text Lausanne 52/52 400, #ffffff `core.palette.gray.100`.
+**Values (default).** size 205 x 85; padding 25px 40px 13px 40px; radius 80px; background rgba(0, 0, 0, 0.7); text Lausanne 52/52 400, #ffffff `light.background.page`.
 
 ![Section title default](components/crops/sec-h1-default.png)
 
@@ -369,7 +369,7 @@ Child layers that carry the look: div 1200x213 background #f5f6f8 `light.backgro
 #### Section eyebrow
 The uppercase eyebrow over the lead story. Read as `sec-eyebrow` on the style section page.
 
-**Values (default).** size 205 x 85; padding 25px 40px 13px 40px; radius 80px; background rgba(0, 0, 0, 0.7); text Lausanne 52/52 400, #ffffff `core.palette.gray.100`.
+**Values (default).** size 205 x 85; padding 25px 40px 13px 40px; radius 80px; background rgba(0, 0, 0, 0.7); text Lausanne 52/52 400, #ffffff `light.background.page`.
 
 ![Section eyebrow default](components/crops/sec-eyebrow-default.png)
 
@@ -385,7 +385,7 @@ The "See More" pagination ghost button — dark #121212 outline, red text; measu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 101.61 x 38.3; padding 8px 12px; border 1px solid #121212 `core.palette.gray.7`; radius 1024px; background #ffffff `core.palette.gray.100`; text Lausanne 16/20.3 400, #ff3a30 `light.brand.red`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
+| default | size 101.61 x 38.3; padding 8px 12px; border 1px solid #121212 `light.text.ink`; radius 1024px; background #ffffff `light.background.page`; text Lausanne 16/20.3 400, #ff3a30 `light.brand.red`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
 | hover | background rgba(18, 18, 18, 0.04) `light.button.secondary.bg_hover` |
 | focus-visible | outline 1px auto #101010, offset 0px |
 | pressed | background rgba(18, 18, 18, 0.08) `light.button.secondary.bg_active` |
@@ -413,7 +413,7 @@ A cover story: the RELATED pill strip, breadcrumb, PlayFair headline with standf
 #### Related strip
 The "RELATED" pill row pinned under the nav linking sibling stories; measured, never followed. Read as `related-strip` on the article page.
 
-**Values (default).** size 1440 x 40; background transparent; text SF Pro 14/15.4 700, #000000 `core.palette.gray.0`; layers span.css-6o028r.e1gtgae89 8.0x8.0 rgb(0, 0, 0) 50%; a.e1gtgae84.css-1ylu0af 220.4x32.0 T:1px solid rgb(82, 82, 82) / R:1px solid rgb(82, 82, 82) / B:1px solid rgb(82, 82, 82) / L:1px solid rgb(82, 82, 82) 24px; a.e1gtgae84.css-1ylu0af 272.6x32.0 T:1px solid rgb(82, 82, 82) / R:1px solid rgb(82, 82, 82) / B:1px solid rgb(82, 82, 82) / L:1px solid rgb(82, 82, 82) 24px; a.e1gtgae84.css-1ylu0af 174.5x; ancestors div.css-p4n3k4.e1gtgae80 bg #ffffff `core.palette.gray.100`.
+**Values (default).** size 1440 x 40; background transparent; text SF Pro 14/15.4 700, #000000 `core.palette.gray.0`; layers span.css-6o028r.e1gtgae89 8.0x8.0 rgb(0, 0, 0) 50%; a.e1gtgae84.css-1ylu0af 220.4x32.0 T:1px solid rgb(82, 82, 82) / R:1px solid rgb(82, 82, 82) / B:1px solid rgb(82, 82, 82) / L:1px solid rgb(82, 82, 82) 24px; a.e1gtgae84.css-1ylu0af 272.6x32.0 T:1px solid rgb(82, 82, 82) / R:1px solid rgb(82, 82, 82) / B:1px solid rgb(82, 82, 82) / L:1px solid rgb(82, 82, 82) 24px; a.e1gtgae84.css-1ylu0af 174.5x; ancestors div.css-p4n3k4.e1gtgae80 bg #ffffff `light.background.page`.
 
 Child layers that carry the look: span 8x8 background #000000 `core.palette.gray.0` radius 50%; a 220.4x32 border 1px solid #525252 radius 24px; a 272.6x32 border 1px solid #525252 radius 24px.
 
@@ -536,35 +536,35 @@ The /offers/premium-membership plan page: Choose a Plan over three plan cards (P
 #### Offers heading
 "Choose a Plan" — the display heading over the plan grid. Read as `offers-h1` on the membership offers page.
 
-**Values (default).** size 1088 x 36; background transparent; text sans-serif 32/36 700, #121212 `core.palette.gray.7`.
+**Values (default).** size 1088 x 36; background transparent; text sans-serif 32/36 700, #121212 `light.text.ink`.
 
 ![Offers heading default](components/crops/offers-h1-default.png)
 
 #### Plan card
 A membership plan card: plan name, price line, perk list and its Join action. Read as `plan-card` on the membership offers page.
 
-**Values (default).** size 352 x 250.95; padding 16px 16px 20px 16px; border 1px solid #3b3b3b `core.palette.gray.23`; radius 10px; background #f5f6f8 `light.background.panel`; text SF Pro 12/15.96 600, #ffffff `core.palette.gray.100`.
+**Values (default).** size 352 x 250.95; padding 16px 16px 20px 16px; border 1px solid #3b3b3b `light.text.muted`; radius 10px; background #f5f6f8 `light.background.panel`; text SF Pro 12/15.96 600, #ffffff `light.background.page`.
 
 ![Plan card default](components/crops/plan-card-default.png)
 
 #### Plan name
 The plan name ("Premium") heading on a plan card. Read as `plan-name` on the membership offers page.
 
-**Values (default).** size 85.47 x 26.09; padding 4px 8px; border 1px solid #bdbdbd `core.palette.gray.74`; radius 1024px; background #ffffff `core.palette.gray.100`; text SF Pro 14/16.1 600, #121212 `core.palette.gray.7`.
+**Values (default).** size 85.47 x 26.09; padding 4px 8px; border 1px solid #bdbdbd `light.border.divider`; radius 1024px; background #ffffff `light.background.page`; text SF Pro 14/16.1 600, #121212 `light.text.ink`.
 
 ![Plan name default](components/crops/plan-name-default.png)
 
 #### Plan price
 The "$xx/year" price line on a plan card. Read as `plan-price` on the membership offers page.
 
-**Values (default).** size 35.05 x 24; background transparent; text SF Pro 20/24 400, #575757 `core.palette.gray.34`.
+**Values (default).** size 35.05 x 24; background transparent; text SF Pro 20/24 400, #575757 `light.text.subtle`.
 
 ![Plan price default](components/crops/plan-price-default.png)
 
 #### Plan perk
 A perk bullet inside a plan card. Read as `plan-perk` on the membership offers page.
 
-**Values (default).** size 298 x 16.09; background transparent; text SF Pro 14/16.1 400, #121212 `core.palette.gray.7`.
+**Values (default).** size 298 x 16.09; background transparent; text SF Pro 14/16.1 400, #121212 `light.text.ink`.
 
 ![Plan perk default](components/crops/plan-perk-default.png)
 
@@ -574,16 +574,16 @@ The "Join Premium" primary button on a plan card — links to checkout; measured
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 318 x 32; padding 9.6px 18px 5px 18px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 16/32 400, #000000 `core.palette.gray.0`; transition all 0.3s ease-in-out |
-| hover | background #ffffff `core.palette.gray.100` |
+| hover | background #ffffff `light.background.page` |
 | focus-visible | outline 2px dotted #000000 `core.palette.gray.0`, offset 4px |
-| pressed | background #ffffff `core.palette.gray.100` |
+| pressed | background #ffffff `light.background.page` |
 
 ![Join button default](components/crops/plan-join-default.png) ![Join button hover](components/crops/plan-join-hover.png) ![Join button focus-visible](components/crops/plan-join-focus-visible.png) ![Join button pressed](components/crops/plan-join-pressed.png)
 
 #### Best Value chip
 The "Best Value" badge on the featured plan. Read as `best-value` on the membership offers page.
 
-**Values (default).** size 99.7 x 23.95; background transparent; text SF Pro 12/15.96 600, #ffffff `core.palette.gray.100`; transform translate(-49.8516px, 0px); layers div.css-16hzl36.enfk5g712 99.7x24.0 rgb(0, 0, 0) 20px; ancestors div.css-15330ls.enfk5g70 bg #f5f6f8 `light.background.panel`.
+**Values (default).** size 99.7 x 23.95; background transparent; text SF Pro 12/15.96 600, #ffffff `light.background.page`; transform translate(-49.8516px, 0px); layers div.css-16hzl36.enfk5g712 99.7x24.0 rgb(0, 0, 0) 20px; ancestors div.css-15330ls.enfk5g70 bg #f5f6f8 `light.background.panel`.
 
 Child layers that carry the look: div 99.7x24 background #000000 `core.palette.gray.0` radius 20px.
 
@@ -627,10 +627,10 @@ The "GIVE A GIFT SUBSCRIPTION" ghost action — red text on white at rest, filli
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 322.28 x 40.59; padding 9.6px 18px 5px 18px; border 1px solid transparent; radius 1024px; background #ffffff `core.palette.gray.100`; text Lausanne 20/24 400, #ff3a30 `light.brand.red`; transition all 0.3s ease-in-out |
-| hover | border 1px solid #ffffff `core.palette.gray.100`; background #ff3a30 `light.brand.red`; text Lausanne 20/24 400, #ffffff `core.palette.gray.100` |
+| default | size 322.28 x 40.59; padding 9.6px 18px 5px 18px; border 1px solid transparent; radius 1024px; background #ffffff `light.background.page`; text Lausanne 20/24 400, #ff3a30 `light.brand.red`; transition all 0.3s ease-in-out |
+| hover | border 1px solid #ffffff `light.background.page`; background #ff3a30 `light.brand.red`; text Lausanne 20/24 400, #ffffff `light.background.page` |
 | focus-visible | outline 2px dotted #000000 `core.palette.gray.0`, offset 4px |
-| pressed | border 1px solid #ffffff `core.palette.gray.100`; background #ff3a30 `light.brand.red`; text Lausanne 20/24 400, #ffffff `core.palette.gray.100` |
+| pressed | border 1px solid #ffffff `light.background.page`; background #ff3a30 `light.brand.red`; text Lausanne 20/24 400, #ffffff `light.background.page` |
 
 ![Gift subscription CTA default](components/crops/gift-cta-default.png) ![Gift subscription CTA hover](components/crops/gift-cta-hover.png) ![Gift subscription CTA focus-visible](components/crops/gift-cta-focus-visible.png) ![Gift subscription CTA pressed](components/crops/gift-cta-pressed.png)
 
@@ -664,7 +664,7 @@ The big search field on the results page (1115x48); focused and typed into then 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 1115 x 48; padding 12px; background transparent; text Lausanne 14/18.2 400, #121212 `core.palette.gray.7`; placeholder #757575 `core.palette.gray.46`; ancestors div.css-1h43vkx.e1ow10r31 bg #ffffff `core.palette.gray.100` |
+| default (same: focused, filled) | size 1115 x 48; padding 12px; background transparent; text Lausanne 14/18.2 400, #121212 `light.text.ink`; placeholder #757575 `light.text.disabled`; ancestors div.css-1h43vkx.e1ow10r31 bg #ffffff `light.background.page` |
 
 ![Search results field default](components/crops/search-field-default.png) ![Search results field focused](components/crops/search-field-focused.png) ![Search results field filled](components/crops/search-field-filled.png)
 
@@ -674,9 +674,9 @@ The round red search submit beside the field; measured, never pressed. Read as `
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 46 x 45; padding 13px 12px 10px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 32px; background #ff3a30 `light.brand.red`; text Lausanne 14/18.2 400, #000000 `core.palette.gray.0`; transition all 0.3s ease-in-out |
-| hover | background #ffffff `core.palette.gray.100` |
+| hover | background #ffffff `light.background.page` |
 | focus-visible | outline 2px dotted #000000 `core.palette.gray.0`, offset 4px |
-| pressed | background #ffffff `core.palette.gray.100` |
+| pressed | background #ffffff `light.background.page` |
 
 ![Search submit default](components/crops/search-btn-default.png) ![Search submit hover](components/crops/search-btn-hover.png) ![Search submit focus-visible](components/crops/search-btn-focus-visible.png) ![Search submit pressed](components/crops/search-btn-pressed.png)
 
@@ -692,7 +692,7 @@ The "Sort By: Relevance" popover trigger; measured, never toggled. Read as `sear
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 238 x 51.19; padding 12px; border 1px solid #d4d4d4; radius 3px; background #ffffff `core.palette.gray.100`; text Lausanne 14/25.2 400, #000000 `core.palette.gray.0`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
+| default (same: hover, focus-visible, pressed) | size 238 x 51.19; padding 12px; border 1px solid #d4d4d4; radius 3px; background #ffffff `light.background.page`; text Lausanne 14/25.2 400, #000000 `core.palette.gray.0`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
 
 ![Sort control default](components/crops/search-sort-default.png) ![Sort control hover](components/crops/search-sort-hover.png) ![Sort control focus-visible](components/crops/search-sort-focus-visible.png) ![Sort control pressed](components/crops/search-sort-pressed.png)
 
@@ -715,7 +715,7 @@ The red-outline "See More" button at the foot of the results; measured, never pr
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 101.61 x 38.3; padding 8px 12px; border 1px solid #121212 `core.palette.gray.7`; radius 1024px; background #ffffff `core.palette.gray.100`; text Lausanne 16/20.3 400, #ff3a30 `light.brand.red`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
+| default | size 101.61 x 38.3; padding 8px 12px; border 1px solid #121212 `light.text.ink`; radius 1024px; background #ffffff `light.background.page`; text Lausanne 16/20.3 400, #ff3a30 `light.brand.red`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
 | hover | background rgba(18, 18, 18, 0.04) `light.button.secondary.bg_hover` |
 | focus-visible | outline 1px auto #101010, offset 0px |
 | pressed | background rgba(18, 18, 18, 0.08) `light.button.secondary.bg_active` |
@@ -729,7 +729,7 @@ The slide-in side panel the hamburger opens (section links with accordion chevro
 #### Side panel
 The slide-in side panel the hamburger opens — section links with accordion chevrons; its links were never followed. Read as `m-drawer` on the home page.
 
-**Values (default).** size 390 x 844; background #f5f5f5 `core.palette.gray.96`; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; transition transform 0.2s linear; icon 16 x 16, #121212 `core.palette.gray.7`.
+**Values (default).** size 390 x 844; background #f5f5f5 `core.palette.gray.96`; text Lausanne 13/18.2 400, #121212 `light.text.ink`; transition transform 0.2s linear; icon 16 x 16, #121212 `light.text.ink`.
 
 ![Side panel default](components/crops/m-drawer-default.png)
 
@@ -738,7 +738,7 @@ The "Close Sidepanel" icon button; measured, never pressed. Read as `m-drawer-cl
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 42 x 42; padding 8px; border 1px solid rgba(18, 18, 18, 0); radius 1024px; background rgba(18, 18, 18, 0); text Lausanne 16/20.3 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 24 x 24, #121212 `core.palette.gray.7` |
+| default (same: hover) | size 42 x 42; padding 8px; border 1px solid rgba(18, 18, 18, 0); radius 1024px; background rgba(18, 18, 18, 0); text Lausanne 16/20.3 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 24 x 24, #121212 `light.text.ink` |
 | focus-visible | outline 1px auto #e59700, offset 0px |
 | pressed | border 1px solid rgba(18, 18, 18, 0.08) `light.button.secondary.bg_active`; background rgba(18, 18, 18, 0.08) `light.button.secondary.bg_active`; outline 1px auto #e59700, offset 0px |
 
@@ -756,7 +756,7 @@ The site footer: wordmark, social icon buttons, the link columns and the Hearst 
 #### Footer
 The site footer: wordmark, social icons, the Newsletter/About Us link columns and the legal line. Read as `footer` on the home page.
 
-**Values (default).** size 1280 x 634.2; background transparent; text Lausanne 14/20.3 400, #121212 `core.palette.gray.7`; layers a.ot-sdk-show-settings.ebnr9ku0 144.8x54.0 T:1px solid rgb(0, 0, 0) / R:1px solid rgb(0, 0, 0) / B:1px solid rgb(0, 0, 0) / L:1px solid rgb(0, 0, 0).
+**Values (default).** size 1280 x 634.2; background transparent; text Lausanne 14/20.3 400, #121212 `light.text.ink`; layers a.ot-sdk-show-settings.ebnr9ku0 144.8x54.0 T:1px solid rgb(0, 0, 0) / R:1px solid rgb(0, 0, 0) / B:1px solid rgb(0, 0, 0) / L:1px solid rgb(0, 0, 0).
 
 Child layers that carry the look: a 144.8x54 border 1px solid #000000 `core.palette.gray.0`.
 
@@ -767,7 +767,7 @@ A footer nav link ("About Us"); measured, never followed. Read as `footer-link` 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 67.2 x 20.3; background transparent; text Lausanne 14/20.3 400, #121212 `core.palette.gray.7` |
+| default (same: hover, pressed) | size 67.2 x 20.3; background transparent; text Lausanne 14/20.3 400, #121212 `light.text.ink` |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.hds-do-not-use.no-underline 67.2x20.3 1px auto rgb(16, 16, 16) offset 1px |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
@@ -784,7 +784,7 @@ The home at phone width: the ~154px top chrome (red strip, hamburger, wordmark, 
 #### Mobile navigation
 The phone top chrome: red utility strip, hamburger, Esquire wordmark and search icon. Read as `m-nav` on the home page at 390 wide.
 
-**Values (default).** size 390 x 154.2; background #ffffff `core.palette.gray.100`; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; icon 16 x 16, #121212 `core.palette.gray.7`.
+**Values (default).** size 390 x 154.2; background #ffffff `light.background.page`; text Lausanne 13/18.2 400, #121212 `light.text.ink`; icon 16 x 16, #121212 `light.text.ink`.
 
 ![Mobile navigation default](components/crops/m-nav-default.png)
 
@@ -793,7 +793,7 @@ The hamburger button that toggles the side panel — a local UI toggle; the open
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, opened) | size 42 x 42; padding 8px; border 1px solid rgba(18, 18, 18, 0); radius 1024px; background rgba(18, 18, 18, 0); text Lausanne 16/20.3 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 24 x 24, #121212 `core.palette.gray.7` |
+| default (same: hover, opened) | size 42 x 42; padding 8px; border 1px solid rgba(18, 18, 18, 0); radius 1024px; background rgba(18, 18, 18, 0); text Lausanne 16/20.3 400, #121212 `light.text.ink`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 24 x 24, #121212 `light.text.ink` |
 | focus-visible | outline 1px auto #e59700, offset 0px |
 | pressed | border 1px solid rgba(18, 18, 18, 0.08) `light.button.secondary.bg_active`; background rgba(18, 18, 18, 0.08) `light.button.secondary.bg_active` |
 
@@ -802,7 +802,7 @@ The hamburger button that toggles the side panel — a local UI toggle; the open
 #### Mobile wordmark
 The Esquire wordmark centred in the phone bar. Read as `m-logo` on the home page at 390 wide.
 
-**Values (default).** size 192 x 48; background transparent; text sans-serif 16/18.4 400, #121212 `core.palette.gray.7`; transform translate(-96px, 0px).
+**Values (default).** size 192 x 48; background transparent; text sans-serif 16/18.4 400, #121212 `light.text.ink`; transform translate(-96px, 0px).
 
 ![Mobile wordmark default](components/crops/m-logo-default.png)
 
@@ -811,7 +811,7 @@ The search icon link in the phone bar; measured, never followed. Read as `m-sear
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 24 x 32; background transparent; text sans-serif 16/18.4 400, #121212 `core.palette.gray.7`; icon 24 x 24, #121212 `core.palette.gray.7` |
+| default (same: hover, pressed) | size 24 x 32; background transparent; text sans-serif 16/18.4 400, #121212 `light.text.ink`; icon 24 x 24, #121212 `light.text.ink` |
 | focus-visible | outline 1px auto #e59700, offset 1px; layers a.hds-do-not-use.no-underline 24.0x32.0 1px auto rgb(229, 151, 0) offset 1px |
 
 ![Mobile search link default](components/crops/m-search-default.png) ![Mobile search link hover](components/crops/m-search-hover.png) ![Mobile search link focus-visible](components/crops/m-search-focus-visible.png) ![Mobile search link pressed](components/crops/m-search-pressed.png)
@@ -819,37 +819,37 @@ The search icon link in the phone bar; measured, never followed. Read as `m-sear
 #### Mobile story headline
 A story headline in the phone feed. Read as `m-story` on the home page at 390 wide.
 
-**Values (default).** size 358 x 36.41; background transparent; text Lausanne 28/36.4 400, #121212 `core.palette.gray.7`.
+**Values (default).** size 358 x 36.41; background transparent; text Lausanne 28/36.4 400, #121212 `light.text.ink`.
 
 ![Mobile story headline default](components/crops/m-story-default.png)
 
 #### Mobile eyebrow
 The uppercase eyebrow over a phone headline. Read as `m-eyebrow` on the home page at 390 wide.
 
-**Values (default).** size 40.61 x 13; background transparent; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`.
+**Values (default).** size 40.61 x 13; background transparent; text Lausanne 13/18.2 400, #121212 `light.text.ink`.
 
 ![Mobile eyebrow default](components/crops/m-eyebrow-default.png)
 
 #### Mobile byline
 A "BY <AUTHOR>" byline on the phone feed. Read as `m-byline` on the home page at 390 wide.
 
-**Values (default).** size 114.41 x 12; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`.
+**Values (default).** size 114.41 x 12; background transparent; text Lausanne 12/16.8 400, #3b3b3b `light.text.muted`.
 
 ![Mobile byline default](components/crops/m-byline-default.png)
 
 #### Mobile newsletter
 The newsletter band in the phone feed. Read as `m-newsletter` on the home page at 390 wide.
 
-**Values (default).** size 326 x 217.61; background transparent; text Lausanne 16/20.3 400, #121212 `core.palette.gray.7`; icon 24 x 24, #575757 `core.palette.gray.34`; layers div.flex.items-center 326.0x38.3 rgb(255, 255, 255) T:1px solid rgb(117, 117, 117) / R:1px solid rgb(117, 117, 117) / B:1px solid rgb(117, 117, 117) / L:1px solid rgb(117, 117, 117) 1024px; button.hds-do-not-use.inline-flex 326.0x38.3 rgb(255, 58, 48) T:1px solid rgb(255, 58, 48) / R:1px solid rgb(255, 58, 48) / B:1px solid rgb(255, 58, 48) / L:1px solid rgb(255, 58, 48) 1024px.
+**Values (default).** size 326 x 217.61; background transparent; text Lausanne 16/20.3 400, #121212 `light.text.ink`; icon 24 x 24, #575757 `light.text.subtle`; layers div.flex.items-center 326.0x38.3 rgb(255, 255, 255) T:1px solid rgb(117, 117, 117) / R:1px solid rgb(117, 117, 117) / B:1px solid rgb(117, 117, 117) / L:1px solid rgb(117, 117, 117) 1024px; button.hds-do-not-use.inline-flex 326.0x38.3 rgb(255, 58, 48) T:1px solid rgb(255, 58, 48) / R:1px solid rgb(255, 58, 48) / B:1px solid rgb(255, 58, 48) / L:1px solid rgb(255, 58, 48) 1024px.
 
-Child layers that carry the look: div 326x38.3 background #ffffff `core.palette.gray.100` border 1px solid #757575 `core.palette.gray.46` radius 1024px; button 326x38.3 background #ff3a30 `light.brand.red` border 1px solid #ff3a30 `light.brand.red` radius 1024px.
+Child layers that carry the look: div 326x38.3 background #ffffff `light.background.page` border 1px solid #757575 `light.text.disabled` radius 1024px; button 326x38.3 background #ff3a30 `light.brand.red` border 1px solid #ff3a30 `light.brand.red` radius 1024px.
 
 ![Mobile newsletter default](components/crops/m-newsletter-default.png)
 
 #### Mobile footer
 The site footer on the phone. Read as `m-footer` on the home page at 390 wide.
 
-**Values (default).** size 358 x 1272.7; background transparent; text Lausanne 14/20.3 400, #121212 `core.palette.gray.7`; layers a.ot-sdk-show-settings.ebnr9ku0 140.8x54.0 T:1px solid rgb(0, 0, 0) / R:1px solid rgb(0, 0, 0) / B:1px solid rgb(0, 0, 0) / L:1px solid rgb(0, 0, 0).
+**Values (default).** size 358 x 1272.7; background transparent; text Lausanne 14/20.3 400, #121212 `light.text.ink`; layers a.ot-sdk-show-settings.ebnr9ku0 140.8x54.0 T:1px solid rgb(0, 0, 0) / R:1px solid rgb(0, 0, 0) / B:1px solid rgb(0, 0, 0) / L:1px solid rgb(0, 0, 0).
 
 Child layers that carry the look: a 140.8x54 border 1px solid #000000 `core.palette.gray.0`.
 

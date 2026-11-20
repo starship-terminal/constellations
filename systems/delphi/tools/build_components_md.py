@@ -47,7 +47,9 @@ def _resolve_alias(value, node, depth=0):
 
 
 BY_COLOR = {}
-for _set in ("core", "light", "dark"):
+# Theme names first, core as the fallback: a colour a theme role shares with a core
+# scale step is named by the role it plays in that theme.
+for _set in ("light", "dark", "core"):
     for n, t in flat(T[_set]):
         if t["$type"] == "color":
             BY_COLOR.setdefault(_resolve_alias(t["$value"], T[_set]), n)

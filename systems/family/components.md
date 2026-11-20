@@ -69,7 +69,7 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Post card](#post-card) | 1024 x 280 | B: 1px solid color(display-p3 0.94902 0.941176 0.929412) | - | transparent | none | 96px 0px 72px 0px |
 | [Tweet card](#tweet-card) | 540 x 204 | - | 10px | color(display-p3 1 1 1) | color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset | 32px |
-| [Nav dropdown](#nav-dropdown) | 316 x 135 | - | 8px | #ffffff `color.overlay.color` | rgba(0, 0, 0, 0.1) 0px 3px 16px 0px | 4px |
+| [Nav dropdown](#nav-dropdown) | 316 x 135 | - | 8px | #ffffff `color.body.bg.default` | rgba(0, 0, 0, 0.1) 0px 3px 16px 0px | 4px |
 | [FAQ item](#faq-item) | 512 x 56 | B: 1px solid color(display-p3 0.94902 0.941176 0.929412) | - | transparent | none | 0px 0px 28px 0px |
 | [Category button](#category-button) | 240 x 29.92 | - | 8px | transparent | none | 10px 0px |
 | [Login card](#login-card) | 380 x 284 | - | - | transparent | none | 0 |
@@ -84,9 +84,9 @@ The public top bar on every marketing surface: the Family wordmark, the Develope
 #### Site header
 The fixed top bar: the Family wordmark, the Developers/Resources hover dropdowns, X (Twitter), Log In and the dark Get Started pill. Read as `mkt-header` on the home page.
 
-**Values (default).** size 1024 x 94; background transparent; text Inter 15/10 500, #282624; transform matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1); icon 72 x 18, #262626; layers a 119.0x32.9 #ffffff `color.overlay.color` 6px; div.Nav__DropdownContainer-sc-141m4ur-3.jmGeWm 303.4x129.6 #ffffff `color.overlay.color` rgba(0, 0, 0, 0.1) 0px 3px 16px 0px 8px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 34.6x34.6 #ffffff `color.overlay.color` rgba(0, 0, 0, 0.04) 0px 0px 0px 1px 9.6px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 34.6x34.6 #ffffff `color.overlay.color` rgba(0, 0, 0,.
+**Values (default).** size 1024 x 94; background transparent; text Inter 15/10 500, #282624; transform matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1); icon 72 x 18, #262626; layers a 119.0x32.9 #ffffff `color.body.bg.default` 6px; div.Nav__DropdownContainer-sc-141m4ur-3.jmGeWm 303.4x129.6 #ffffff `color.body.bg.default` rgba(0, 0, 0, 0.1) 0px 3px 16px 0px 8px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 34.6x34.6 #ffffff `color.body.bg.default` rgba(0, 0, 0, 0.04) 0px 0px 0px 1px 9.6px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 34.6x34.6 #ffffff `color.body.bg.default` rgba(.
 
-Child layers that carry the look: a 119x32.9 background #ffffff `color.overlay.color` radius 6px; div 303.4x129.6 background #ffffff `color.overlay.color` radius 8px shadow rgba(0, 0, 0, 0.1) 0px 3px 16px 0px; div 34.6x34.6 background #ffffff `color.overlay.color` radius 9.6px shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px.
+Child layers that carry the look: a 119x32.9 background #ffffff `color.body.bg.default` radius 6px; div 303.4x129.6 background #ffffff `color.body.bg.default` radius 8px shadow rgba(0, 0, 0, 0.1) 0px 3px 16px 0px; div 34.6x34.6 background #ffffff `color.body.bg.default` radius 9.6px shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px.
 
 ![Site header default](components/crops/mkt-header-default.png)
 
@@ -102,7 +102,7 @@ The Developers dropdown trigger; hover opens the ConnectKit/Family card menu —
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 119 x 32.91; padding 11px 10px; radius 6px; background #ffffff `color.overlay.color`; text Inter 15/10 500, #282624; transition background 0.2s ease, color 0.2s ease; icon 10 x 10, #282624 |
+| default (same: pressed) | size 119 x 32.91; padding 11px 10px; radius 6px; background #ffffff `color.body.bg.default`; text Inter 15/10 500, #282624; transition background 0.2s ease, color 0.2s ease; icon 10 x 10, #282624 |
 | hover | background color(display-p3 0.984314 0.980392 0.976471); text Inter 15/10 500, color(display-p3 0.203922 0.203922 0.2); icon 10 x 10, color(display-p3 0.203922 0.203922 0.2) |
 | focus-visible | outline 2px solid color(display-p3 0.517647 0.509804 0.505882), offset 1px |
 
@@ -111,7 +111,7 @@ The Developers dropdown trigger; hover opens the ConnectKit/Family card menu —
 #### Nav dropdown
 The Developers dropdown panel (ConnectKit and Family cards); opened by hovering the trigger. Read as `nav-dropdown` on the home page.
 
-**Values (default).** size 316 x 135; padding 4px; radius 8px; background #ffffff `color.overlay.color`; shadow rgba(0, 0, 0, 0.1) 0px 3px 16px 0px; text Inter 15/22 500, #121212 `color.logo.color`; transition opacity 0.1s ease, transform 0.1s ease; transform matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1); icon 23 x 28, color(display-p3 0.203922 0.203922 0.2); layers ::before rgba(0, 0, 0, 0) 0px none 1.
+**Values (default).** size 316 x 135; padding 4px; radius 8px; background #ffffff `color.body.bg.default`; shadow rgba(0, 0, 0, 0.1) 0px 3px 16px 0px; text Inter 15/22 500, #121212 `color.logo.color`; transition opacity 0.1s ease, transform 0.1s ease; transform matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1); icon 23 x 28, color(display-p3 0.203922 0.203922 0.2); layers ::before rgba(0, 0, 0, 0) 0px none 1.
 
 ![Nav dropdown default](components/crops/nav-dropdown-default.png)
 
@@ -120,7 +120,7 @@ The Resources dropdown trigger (Blog / Changelog / Help & Support / FAQs); measu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 113 x 32.91; padding 11px 10px; radius 6px; background #ffffff `color.overlay.color`; text Inter 15/10 500, #282624; transition background 0.2s ease, color 0.2s ease; icon 10 x 10, #282624 |
+| default (same: pressed) | size 113 x 32.91; padding 11px 10px; radius 6px; background #ffffff `color.body.bg.default`; text Inter 15/10 500, #282624; transition background 0.2s ease, color 0.2s ease; icon 10 x 10, #282624 |
 | hover | background color(display-p3 0.984314 0.980392 0.976471); text Inter 15/10 500, color(display-p3 0.203922 0.203922 0.2); icon 10 x 10, color(display-p3 0.203922 0.203922 0.2) |
 | focus-visible | outline 2px solid color(display-p3 0.517647 0.509804 0.505882), offset 1px |
 
@@ -131,7 +131,7 @@ The header social link; measured, never followed. Read as `nav-twitter` on the h
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 97 x 32; padding 11px 10px; radius 6px; background #ffffff `color.overlay.color`; text Inter 15/10 500, #282624; transition background 0.2s ease, color 0.2s ease |
+| default (same: pressed) | size 97 x 32; padding 11px 10px; radius 6px; background #ffffff `color.body.bg.default`; text Inter 15/10 500, #282624; transition background 0.2s ease, color 0.2s ease |
 | hover | background color(display-p3 0.984314 0.980392 0.976471); text Inter 15/10 500, color(display-p3 0.203922 0.203922 0.2) |
 | focus-visible | outline 2px solid color(display-p3 0.517647 0.509804 0.505882), offset 1px |
 
@@ -154,7 +154,7 @@ The near-black Get Started pill; measured, never pressed (it starts the download
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 109.02 x 32; padding 0px 14px; radius 32px; background #171717 `color.overlay.background`; text Inter 15/normal 500, #ffffff `color.overlay.color`; transition background-color 0.1s ease |
+| default (same: focus-visible) | size 109.02 x 32; padding 0px 14px; radius 32px; background #171717 `color.icon.color.hover`; text Inter 15/normal 500, #ffffff `color.body.bg.default`; transition background-color 0.1s ease |
 | hover, pressed | background #121212 `color.logo.color` |
 
 ![Get Started button default](components/crops/getstarted-btn-default.png) ![Get Started button hover](components/crops/getstarted-btn-hover.png) ![Get Started button focus-visible](components/crops/getstarted-btn-focus-visible.png) ![Get Started button pressed](components/crops/getstarted-btn-pressed.png)
@@ -182,7 +182,7 @@ The "Download on iOS" pill; measured, never followed (it goes to the App Store).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 209.7 x 48; padding 0px 24px 0px 22px; radius 32px; background #171717 `color.overlay.background`; text Inter 17/17 500, #ffffff `color.overlay.color`; transition background-color 0.1s ease; icon 16 x 20, #ffffff `color.overlay.color` |
+| default (same: focus-visible) | size 209.7 x 48; padding 0px 24px 0px 22px; radius 32px; background #171717 `color.icon.color.hover`; text Inter 17/17 500, #ffffff `color.body.bg.default`; transition background-color 0.1s ease; icon 16 x 20, #ffffff `color.body.bg.default` |
 | hover, pressed | background #121212 `color.logo.color` |
 
 ![Download CTA default](components/crops/download-cta-default.png) ![Download CTA hover](components/crops/download-cta-hover.png) ![Download CTA focus-visible](components/crops/download-cta-focus-visible.png) ![Download CTA pressed](components/crops/download-cta-pressed.png)
@@ -235,7 +235,7 @@ A "Watch the demo" button under a feature; opens the video overlay — measured,
 #### Demo overlay
 The full-viewport video overlay "Watch the demo" mounts; measured open, then closed. Read as `demo-overlay` on the home page.
 
-**Values (default).** size 1440 x 900; padding 16px; background transparent; text Inter 16/22 500, #ffffff `color.overlay.color`; icon 14 x 14, #000000; layers div.WatchDemo__OverlayBackground-sc-1kj9jjo-4.kCuicB 1440.0x900.0 rgba(249, 247, 245, 0.8); div.WatchDemo__VideoContainer-sc-1kj9jjo-5.cgVGwv 860.0x483.8 #cccccc 12px; div.WatchDemo__IconContainer-sc-1kj9jjo-8.fnJard 860.0x483.8 rgba(0, 0, 0, 0.1).
+**Values (default).** size 1440 x 900; padding 16px; background transparent; text Inter 16/22 500, #ffffff `color.body.bg.default`; icon 14 x 14, #000000; layers div.WatchDemo__OverlayBackground-sc-1kj9jjo-4.kCuicB 1440.0x900.0 rgba(249, 247, 245, 0.8); div.WatchDemo__VideoContainer-sc-1kj9jjo-5.cgVGwv 860.0x483.8 #cccccc 12px; div.WatchDemo__IconContainer-sc-1kj9jjo-8.fnJard 860.0x483.8 rgba(0, 0, 0, 0.1).
 
 Child layers that carry the look: div 1440x900 background rgba(249, 247, 245, 0.8); div 860x483.8 background #cccccc radius 12px; div 860x483.8 background rgba(0, 0, 0, 0.1).
 
@@ -320,7 +320,7 @@ The "Email or Phone Number" login field; typed into then cleared, never submitte
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 380 x 48; padding 15px 16.96px; background transparent; text inter 16/18 500, #171717 `color.overlay.background`; transition opacity 0.3s ease; placeholder rgba(23, 23, 23, 0.2) `color.input.placeholder` |
+| default (same: focused, filled) | size 380 x 48; padding 15px 16.96px; background transparent; text inter 16/18 500, #171717 `color.icon.color.hover`; transition opacity 0.3s ease; placeholder rgba(23, 23, 23, 0.2) `color.input.placeholder` |
 
 ![Email/phone field default](components/crops/login-field-default.png) ![Email/phone field focused](components/crops/login-field-focused.png) ![Email/phone field filled](components/crops/login-field-filled.png)
 
@@ -596,8 +596,8 @@ A docs action button ("Stay Updated" / "Contact Us"); measured, never pressed. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 116 x 32; background transparent; text Inter 14/22 500, #ffffff `color.overlay.color`; transition all 0.2s ease-out; layers button.sc-dAlyuH.DTESE 116.0x32.0 #343433 `color.marketing.primary` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px 6px |
-| hover | layers button.sc-dAlyuH.DTESE 116.0x32.0 #171717 `color.overlay.background` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px 6px |
+| default (same: focus-visible, pressed) | size 116 x 32; background transparent; text Inter 14/22 500, #ffffff `color.body.bg.default`; transition all 0.2s ease-out; layers button.sc-dAlyuH.DTESE 116.0x32.0 #343433 `color.marketing.primary` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px 6px |
+| hover | layers button.sc-dAlyuH.DTESE 116.0x32.0 #171717 `color.icon.color.hover` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px 6px |
 
 Child layers that carry the look: button 116x32 background #343433 `color.marketing.primary` radius 6px shadow transparent 0px 0px 0px 1px inset, transparent 0px 0px 0px 0px.
 
@@ -617,9 +617,9 @@ The phone surface at 390 wide: the mobile header with the drawer button, the her
 #### Mobile header
 The phone top bar: wordmark, menu button and the Get Started pill. Read as `m-header` on the home page at 390 wide.
 
-**Values (default).** size 342 x 70; background transparent; text Inter 15/normal 500, #ffffff `color.overlay.color`; transform matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1); icon 72 x 18, #262626; layers a 0.0x0.0 #ffffff `color.overlay.color` 6px; div.Nav__DropdownContainer-sc-141m4ur-3.jmGeWm 0.0x0.0 #ffffff `color.overlay.color` rgba(0, 0, 0, 0.1) 0px 3px 16px 0px 8px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 0.0x0.0 #ffffff `color.overlay.color` rgba(0, 0, 0, 0.04) 0px 0px 0px 1px 9.6px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 0.0x0.0 #ffffff `color.overlay.color` rgba(0, 0, 0, 0.04) 0px .
+**Values (default).** size 342 x 70; background transparent; text Inter 15/normal 500, #ffffff `color.body.bg.default`; transform matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1); icon 72 x 18, #262626; layers a 0.0x0.0 #ffffff `color.body.bg.default` 6px; div.Nav__DropdownContainer-sc-141m4ur-3.jmGeWm 0.0x0.0 #ffffff `color.body.bg.default` rgba(0, 0, 0, 0.1) 0px 3px 16px 0px 8px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 0.0x0.0 #ffffff `color.body.bg.default` rgba(0, 0, 0, 0.04) 0px 0px 0px 1px 9.6px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 0.0x0.0 #ffffff `color.body.bg.default` rgba(0, 0, 0, 0..
 
-Child layers that carry the look: a 0x0 background #ffffff `color.overlay.color` radius 6px; div 0x0 background #ffffff `color.overlay.color` radius 8px shadow rgba(0, 0, 0, 0.1) 0px 3px 16px 0px; div 0x0 background #ffffff `color.overlay.color` radius 9.6px shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px.
+Child layers that carry the look: a 0x0 background #ffffff `color.body.bg.default` radius 6px; div 0x0 background #ffffff `color.body.bg.default` radius 8px shadow rgba(0, 0, 0, 0.1) 0px 3px 16px 0px; div 0x0 background #ffffff `color.body.bg.default` radius 9.6px shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px.
 
 ![Mobile header default](components/crops/m-header-default.png)
 
@@ -628,7 +628,7 @@ The hamburger that opens the mobile nav drawer; measured, its press is a local t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 32 x 32; radius 8px; background #ffffff `color.overlay.color`; text Inter 13.33/normal 400, #000000 |
+| default (same: hover, focus-visible, pressed) | size 32 x 32; radius 8px; background #ffffff `color.body.bg.default`; text Inter 13.33/normal 400, #000000 |
 
 ![Mobile menu button default](components/crops/m-menu-default.png) ![Mobile menu button hover](components/crops/m-menu-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-pressed.png)
 
@@ -644,7 +644,7 @@ The "Download on iOS" pill on the phone hero; measured, never followed. Read as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 209.7 x 48; padding 0px 24px 0px 22px; radius 32px; background #171717 `color.overlay.background`; text Inter 17/17 500, #ffffff `color.overlay.color`; transition background-color 0.1s ease; icon 16 x 20, #ffffff `color.overlay.color` |
+| default (same: focus-visible) | size 209.7 x 48; padding 0px 24px 0px 22px; radius 32px; background #171717 `color.icon.color.hover`; text Inter 17/17 500, #ffffff `color.body.bg.default`; transition background-color 0.1s ease; icon 16 x 20, #ffffff `color.body.bg.default` |
 | hover, pressed | background #121212 `color.logo.color` |
 
 ![Mobile download CTA default](components/crops/m-download-default.png) ![Mobile download CTA hover](components/crops/m-download-hover.png) ![Mobile download CTA focus-visible](components/crops/m-download-focus-visible.png) ![Mobile download CTA pressed](components/crops/m-download-pressed.png)

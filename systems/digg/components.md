@@ -58,10 +58,10 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Story card](#story-card) | 704 x 183 | 1px solid transparent | 18px | transparent | none | 14px 16px |
 | [Category card](#category-card) | 704 x 160 | 1px solid transparent | 18px | transparent | none | 14px 16px |
-| [Top Contributors](#top-contributors) | 376 x 352 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
-| [Top Posts panel](#top-posts-panel) | 376 x 556 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
-| [Stat card](#stat-card) | 376 x 384 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
-| [Sources list](#sources-list) | 376 x 246 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
+| [Top Contributors](#top-contributors) | 376 x 352 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `background.card` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
+| [Top Posts panel](#top-posts-panel) | 376 x 556 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `background.card` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
+| [Stat card](#stat-card) | 376 x 384 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `background.card` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
+| [Sources list](#sources-list) | 376 x 246 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `background.card` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
 | [Card (dark)](#card-dark) | 704 x 183 | 1px solid transparent | 18px | transparent | none | 14px 16px |
 | [Mobile card](#mobile-card) | 390 x 207 | 1px solid transparent | 18px | transparent | none | 14px 16px |
 
@@ -122,7 +122,7 @@ The blue Sign up button at the foot of the sidebar; measured, never followed. Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #1c66eb `color.primary`; text roobert 14/20 500, #ffffff `color.white`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #1c66eb `color.blue.500`; text roobert 14/20 500, #ffffff `background.card`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background rgba(28, 102, 235, 0.8) `action.primary-hover` |
 | focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(28, 102, 235, 0.801409) |
@@ -278,14 +278,14 @@ The two white rail panels beside the feed: Top Contributors (with the #e37b4c ra
 #### Top Contributors
 The right-rail "Top Contributors" ranked panel. Read as `rail-contribs` on the home feed page.
 
-**Values (default).** size 376 x 352; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #161617 `card.foreground`.
+**Values (default).** size 376 x 352; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `background.card`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #161617 `card.foreground`.
 
 ![Top Contributors default](components/crops/rail-contribs-default.png)
 
 #### Top Posts panel
 The right-rail "Top Posts Yesterday" list with thumbnails. Read as `rail-posts` on the home feed page.
 
-**Values (default).** size 376 x 556; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #161617 `card.foreground`; icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 376 x 556; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `background.card`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #161617 `card.foreground`; icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
 
 ![Top Posts panel default](components/crops/rail-posts-default.png)
 
@@ -335,9 +335,9 @@ The blue Sign up CTA under the dark theme. Read as `d-signup` on the home feed (
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #1c66eb `color.primary`; text roobert 14/20 500, #ffffff `color.white`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #1c66eb `color.blue.500`; text roobert 14/20 500, #ffffff `background.card`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background rgba(28, 102, 235, 0.8) `action.primary-hover` |
-| focus-visible | border 1px solid #1c66eb `color.primary`; shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px |
+| focus-visible | border 1px solid #1c66eb `color.blue.500`; shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(28, 102, 235, 0.8) `action.primary-hover` |
 
 ![Sign up (dark) default](components/crops/d-signup-default.png) ![Sign up (dark) hover](components/crops/d-signup-hover.png) ![Sign up (dark) focus-visible](components/crops/d-signup-focus-visible.png) ![Sign up (dark) pressed](components/crops/d-signup-pressed.png)
@@ -349,7 +349,7 @@ The Trending sort trigger under the dark theme. Read as `d-trending` on the home
 |---|---|
 | default | size 105.28 x 36; padding 8px 12px; border 1px solid rgba(255, 255, 255, 0.15) `border.input`; radius 26px; background rgba(255, 255, 255, 0.045) `background.input-fill`; text roobert 14/20 400, #fdfdff `background.default`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(253, 253, 255, 0.7) `muted.foreground` |
 | hover | background rgba(255, 255, 255, 0.075) |
-| focus-visible | border 1px solid #1c66eb `color.primary`; shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px |
+| focus-visible | border 1px solid #1c66eb `color.blue.500`; shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(255, 255, 255, 0.075) |
 
 ![Sort dropdown (dark) default](components/crops/d-trending-default.png) ![Sort dropdown (dark) hover](components/crops/d-trending-hover.png) ![Sort dropdown (dark) focus-visible](components/crops/d-trending-focus-visible.png) ![Sort dropdown (dark) pressed](components/crops/d-trending-pressed.png)
@@ -391,9 +391,9 @@ The "digg it" vote pill under the headline (icon + count); pressed is CDP-forced
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 138.33 x 44; padding 3px 11px 3px 3px; border 1px solid rgba(28, 102, 235, 0.2) `border.vote-border`; radius 999px; background #fdfdff `background.default`; text roobert 12/16 600, #1c66eb `color.primary`; transition background-color 0.28s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.28s cubic-bezier(0.77, 0, 0.175, 1), color 0.28s cubic-bezier(0.77, 0, 0.175, 1), scale 0.16s cubic-bezier(0.23, 1, 0.32, 1); icon 12 x 12, #1c66eb `color.primary` |
+| default (same: focus-visible) | size 138.33 x 44; padding 3px 11px 3px 3px; border 1px solid rgba(28, 102, 235, 0.2) `border.vote-border`; radius 999px; background #fdfdff `background.default`; text roobert 12/16 600, #1c66eb `color.blue.500`; transition background-color 0.28s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.28s cubic-bezier(0.77, 0, 0.175, 1), color 0.28s cubic-bezier(0.77, 0, 0.175, 1), scale 0.16s cubic-bezier(0.23, 1, 0.32, 1); icon 12 x 12, #1c66eb `color.blue.500` |
 | hover | border 1px solid rgba(28, 102, 235, 0.3) |
-| pressed | size 134.18 x 42.68; border 1px solid rgba(28, 102, 235, 0.3); icon 11.64 x 11.64, #1c66eb `color.primary` |
+| pressed | size 134.18 x 42.68; border 1px solid rgba(28, 102, 235, 0.3); icon 11.64 x 11.64, #1c66eb `color.blue.500` |
 
 ![digg it button default](components/crops/st-vote-default.png) ![digg it button hover](components/crops/st-vote-hover.png) ![digg it button focus-visible](components/crops/st-vote-focus-visible.png) ![digg it button pressed](components/crops/st-vote-pressed.png)
 
@@ -410,14 +410,14 @@ The "N Sources, first seen Xh ago" meta cluster; measured, never followed. Read 
 #### Stat card
 The right-rail stat card — TODAY'S RANK over COMBINED VIEWS and the like/comment/save counts. Read as `st-stat` on the story page.
 
-**Values (default).** size 376 x 384; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 12/16 600, rgba(22, 22, 23, 0.7) `muted.foreground`; icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 376 x 384; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `background.card`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 12/16 600, rgba(22, 22, 23, 0.7) `muted.foreground`; icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
 
 ![Stat card default](components/crops/st-stat-default.png)
 
 #### Sources list
 The right-rail "N Sources" list of source posts. Read as `st-srclist` on the story page.
 
-**Values (default).** size 376 x 246; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 12/16 600, rgba(22, 22, 23, 0.7) `muted.foreground`; icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 376 x 246; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `background.card`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 12/16 600, rgba(22, 22, 23, 0.7) `muted.foreground`; icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
 
 ![Sources list default](components/crops/st-srclist-default.png)
 
@@ -513,7 +513,7 @@ The blue Continue submit; hover/focus measured, never pressed — it would submi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 353 x 36; padding 0px 10px; border 1px solid transparent; radius 3.35544e+07px; background #1c66eb `color.primary`; text roobert 14/20 500, #ffffff `color.white`; transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
+| default | size 353 x 36; padding 0px 10px; border 1px solid transparent; radius 3.35544e+07px; background #1c66eb `color.blue.500`; text roobert 14/20 500, #ffffff `background.card`; transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
 | hover | background rgba(28, 102, 235, 0.8) `action.primary-hover`; layers ::after transparent 0px none 0 |
 | focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
 
@@ -524,7 +524,7 @@ The "Don’t have an account? Sign up" link under the form; measured, never foll
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 46 x 17.98; background transparent; text roobert 13/18 500, #1c66eb `color.primary`; transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out |
+| default | size 46 x 17.98; background transparent; text roobert 13/18 500, #1c66eb `color.blue.500`; transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out |
 | hover | text roobert 13/18 500, #3a7bee |
 | focus-visible | outline 1px auto rgba(171, 171, 191, 0.5) `border.focus`, offset 1px; layers a.cl-footerActionLink.🔒️ 46.0x18.0 1px auto rgba(171, 171, 191, 0.5) `border.focus` offset 1px |
 | pressed | text roobert 13/18 500, #1359d7 |
@@ -553,7 +553,7 @@ The sign-up Continue submit; hover/focus measured, never pressed. Read as `su-co
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 353 x 36; padding 0px 10px; border 1px solid transparent; radius 3.35544e+07px; background #1c66eb `color.primary`; text roobert 14/20 500, #ffffff `color.white`; transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
+| default | size 353 x 36; padding 0px 10px; border 1px solid transparent; radius 3.35544e+07px; background #1c66eb `color.blue.500`; text roobert 14/20 500, #ffffff `background.card`; transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
 | hover | background rgba(28, 102, 235, 0.8) `action.primary-hover`; layers ::after transparent 0px none 0 |
 | focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
 
@@ -566,7 +566,7 @@ The phone surface at 390 wide: the 107px top bar, the story card and the feed fo
 #### Mobile top bar
 The phone top bar (digg wordmark + menu trigger). Read as `m-bar` on the home feed page at 390 wide.
 
-**Values (default).** size 390 x 107; background #f8f8fb `sidebar.default`; text roobert 14/20 500, #ffffff `color.white`; icon 21 x 21, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 390 x 107; background #f8f8fb `sidebar.default`; text roobert 14/20 500, #ffffff `background.card`; icon 21 x 21, rgba(22, 22, 23, 0.7) `muted.foreground`.
 
 ![Mobile top bar default](components/crops/m-bar-default.png)
 

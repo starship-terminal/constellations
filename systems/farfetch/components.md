@@ -73,7 +73,7 @@ The ~124px top chrome shared by every page: the 44px TopBar row (department link
 #### Header
 The full top chrome: the TopBar (department links, locale flag, account, wishlist, bag) over the NavBar row (wordmark, category links, search field). Read as `header` on the new-in edit page.
 
-**Values (default).** size 1440 x 124; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition transform 0.2s ease-in-out; layers ::after rgba(0, 0, 0, 0) 0px none 0; ancestors div bg #ffffff `core.palette.named.branco`.
+**Values (default).** size 1440 x 124; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition transform 0.2s ease-in-out; layers ::after rgba(0, 0, 0, 0) 0px none 0; ancestors div bg #ffffff `light.action.ghost-light.active.icon`.
 
 ![Header default](components/crops/header-default.png)
 
@@ -82,10 +82,10 @@ A TopBar department link ("Womenswear" / "Menswear" / "Kidswear"); measured, nev
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 121 x 44; padding 10px 12px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1) |
-| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
+| default | size 121 x 44; padding 10px 12px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1) |
+| hover | background #f5f5f5 `light.action.ghost-dark.active.surface` |
 | focus-visible | outline 2px solid #101010, offset -2px |
-| pressed | background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/19.99 700, #727272 `core.palette.legacy.darker.grey` |
+| pressed | background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/19.99 700, #727272 `light.action.ghost-dark.active.icon` |
 
 ![Department link default](components/crops/topbar-dept-default.png) ![Department link hover](components/crops/topbar-dept-hover.png) ![Department link focus-visible](components/crops/topbar-dept-focus-visible.png) ![Department link pressed](components/crops/topbar-dept-pressed.png)
 
@@ -94,10 +94,10 @@ The "Language and region" flag IconButtonGhostDark in the TopBar; measured, neve
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/normal 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `core.palette.named.preto` |
-| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
+| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/normal 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `light.access.private-client.01` |
+| hover | background #f5f5f5 `light.action.ghost-dark.active.surface` |
 | focus-visible | outline 2px solid #101010, offset -2px |
-| pressed | background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/normal 700, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #727272 `core.palette.legacy.darker.grey` |
+| pressed | background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/normal 700, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #727272 `light.action.ghost-dark.active.icon` |
 
 ![Locale control default](components/crops/topbar-locale-default.png) ![Locale control hover](components/crops/topbar-locale-hover.png) ![Locale control focus-visible](components/crops/topbar-locale-focus-visible.png) ![Locale control pressed](components/crops/topbar-locale-pressed.png)
 
@@ -106,10 +106,10 @@ The account/sign-in icon button in the TopBar; measured, never followed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/normal 700, transparent; transition background-color 0.3s ease, opacity 0.3s ease; icon 30.86 x 30.86, transparent |
+| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/normal 700, transparent; transition background-color 0.3s ease, opacity 0.3s ease; icon 30.86 x 30.86, transparent |
 | hover | icon 27.6 x 27.6, transparent |
 | focus-visible | outline 2px solid #101010, offset -2px; icon 33.78 x 33.78, transparent |
-| pressed | text Farfetch Basis 15/normal 700, #727272 `core.palette.legacy.darker.grey`; icon 24.99 x 24.99, #727272 `core.palette.legacy.darker.grey` |
+| pressed | text Farfetch Basis 15/normal 700, #727272 `light.action.ghost-dark.active.icon`; icon 24.99 x 24.99, #727272 `light.action.ghost-dark.active.icon` |
 
 ![Account icon default](components/crops/topbar-account-default.png) ![Account icon hover](components/crops/topbar-account-hover.png) ![Account icon focus-visible](components/crops/topbar-account-focus-visible.png) ![Account icon pressed](components/crops/topbar-account-pressed.png)
 
@@ -118,10 +118,10 @@ The heart icon link to /wishlist (gated); measured, never followed. Read as `top
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `core.palette.named.preto` |
-| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
+| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `light.access.private-client.01` |
+| hover | background #f5f5f5 `light.action.ghost-dark.active.surface` |
 | focus-visible | outline 2px solid #101010, offset -2px |
-| pressed | background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/19.99 700, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #727272 `core.palette.legacy.darker.grey` |
+| pressed | background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/19.99 700, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #727272 `light.action.ghost-dark.active.icon` |
 
 ![Wishlist icon default](components/crops/topbar-wishlist-default.png) ![Wishlist icon hover](components/crops/topbar-wishlist-hover.png) ![Wishlist icon focus-visible](components/crops/topbar-wishlist-focus-visible.png) ![Wishlist icon pressed](components/crops/topbar-wishlist-pressed.png)
 
@@ -130,10 +130,10 @@ The shopping-bag icon link to checkout (gated); measured, never followed. Read a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `core.palette.named.preto` |
-| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
+| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `light.access.private-client.01` |
+| hover | background #f5f5f5 `light.action.ghost-dark.active.surface` |
 | focus-visible | outline 2px solid #101010, offset -2px |
-| pressed | background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/19.99 700, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #727272 `core.palette.legacy.darker.grey` |
+| pressed | background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/19.99 700, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #727272 `light.action.ghost-dark.active.icon` |
 
 ![Bag icon default](components/crops/topbar-bag-default.png) ![Bag icon hover](components/crops/topbar-bag-hover.png) ![Bag icon focus-visible](components/crops/topbar-bag-focus-visible.png) ![Bag icon pressed](components/crops/topbar-bag-pressed.png)
 
@@ -142,7 +142,7 @@ The FARFETCH wordmark lockup linking home; measured, never followed. Read as `lo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 201 x 24.95; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto` |
+| default (same: hover, pressed) | size 201 x 24.95; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -153,7 +153,7 @@ A NavBar category link ("Clothing"); measured, never followed. Read as `nav-link
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 58 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto` |
+| default (same: hover, pressed) | size 58 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01` |
 | focus-visible | outline 2px solid #101010, offset -2px; layers a.ltr-k0ippd.e3owdn51 58.0x20.0 2px solid rgb(16, 16, 16) offset -2px |
 
 ![Category link default](components/crops/nav-link-default.png) ![Category link hover](components/crops/nav-link-hover.png) ![Category link focus-visible](components/crops/nav-link-focus-visible.png) ![Category link pressed](components/crops/nav-link-pressed.png)
@@ -173,8 +173,8 @@ The header "What are you looking for?" search input; focused and typed into then
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 270 x 44; border B: 1px solid #727272 `core.palette.legacy.darker.grey`; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; transition box-shadow 0.3s cubic-bezier(0.66, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.66, 0, 0.2, 1); icon 24 x 24, #b6b6b6 `core.palette.legacy.dark.grey` |
-| focused, filled | border B: 1px solid #222222 `core.palette.named.preto`; shadow #222222 0px -1px 0px 0px inset |
+| default | size 270 x 44; border B: 1px solid #727272 `light.action.ghost-dark.active.icon`; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; transition box-shadow 0.3s cubic-bezier(0.66, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.66, 0, 0.2, 1); icon 24 x 24, #b6b6b6 `light.action.ghost-dark.disabled.icon` |
+| focused, filled | border B: 1px solid #222222 `light.access.private-client.01`; shadow #222222 0px -1px 0px 0px inset |
 
 ![Search field default](components/crops/search-field-default.png) ![Search field focused](components/crops/search-field-focused.png) ![Search field filled](components/crops/search-field-filled.png)
 
@@ -183,8 +183,8 @@ The search-icon submit inside the header field; measured, never pressed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 32 x 32; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/normal 700, #b6b6b6 `core.palette.legacy.dark.grey`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #b6b6b6 `core.palette.legacy.dark.grey`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ancestors div.ltr-qfqbf bg #ffffff `core.palette.named.branco` shadow transparent 0px -1px 0px 0px inset |
-| focus-visible | outline 2px solid #101010, offset -2px; ancestors div.ltr-qfqbf bg #ffffff `core.palette.named.branco` shadow #222222 0px -1px 0px 0px inset |
+| default (same: hover, pressed) | size 32 x 32; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/normal 700, #b6b6b6 `light.action.ghost-dark.disabled.icon`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #b6b6b6 `light.action.ghost-dark.disabled.icon`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ancestors div.ltr-qfqbf bg #ffffff `light.action.ghost-light.active.icon` shadow transparent 0px -1px 0px 0px inset |
+| focus-visible | outline 2px solid #101010, offset -2px; ancestors div.ltr-qfqbf bg #ffffff `light.action.ghost-light.active.icon` shadow #222222 0px -1px 0px 0px inset |
 
 ![Search icon button default](components/crops/search-submit-default.png) ![Search icon button hover](components/crops/search-submit-hover.png) ![Search icon button focus-visible](components/crops/search-submit-focus-visible.png) ![Search icon button pressed](components/crops/search-submit-pressed.png)
 
@@ -195,9 +195,9 @@ The modular women's/men's listing front (/shopping/{women,men}/items.aspx): the 
 #### Hero module
 The content-module hero on the listing front: campaign image, Display title, dek and a "Shop Now" secondary button. Read as `hero-module` on the men's listing page.
 
-**Values (default).** size 1392 x 1007.64; padding 48px 0px; background transparent; text Farfetch Basis 38/48.00 400, #222222 `core.palette.named.preto`; layers a.ltr-i5fx28 106.4x44.0 rgb(255, 255, 255) T:1px solid rgb(34, 34, 34) / R:1px solid rgb(34, 34, 34) / B:1px solid rgb(34, 34, 34) / L:1px solid rgb(34, 34, 34); ancestors div.ltr-wn2fdi bg #ffffff `core.palette.named.branco`.
+**Values (default).** size 1392 x 1007.64; padding 48px 0px; background transparent; text Farfetch Basis 38/48.00 400, #222222 `light.access.private-client.01`; layers a.ltr-i5fx28 106.4x44.0 rgb(255, 255, 255) T:1px solid rgb(34, 34, 34) / R:1px solid rgb(34, 34, 34) / B:1px solid rgb(34, 34, 34) / L:1px solid rgb(34, 34, 34); ancestors div.ltr-wn2fdi bg #ffffff `light.action.ghost-light.active.icon`.
 
-Child layers that carry the look: a 106.4x44 background #ffffff `core.palette.named.branco` border 1px solid #222222 `core.palette.named.preto`.
+Child layers that carry the look: a 106.4x44 background #ffffff `light.action.ghost-light.active.icon` border 1px solid #222222 `light.access.private-client.01`.
 
 ![Hero module default](components/crops/hero-module-default.png)
 
@@ -206,10 +206,10 @@ The "Shop Now" secondary button inside the hero module (white surface, dark stro
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 106.44 x 44; padding 10px 16px; border 1px solid #222222 `core.palette.named.preto`; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1) |
-| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
+| default | size 106.44 x 44; padding 10px 16px; border 1px solid #222222 `light.access.private-client.01`; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1) |
+| hover | background #f5f5f5 `light.action.ghost-dark.active.surface` |
 | focus-visible | outline 2px solid #005fcc, offset -2px |
-| pressed | border 1px solid #727272 `core.palette.legacy.darker.grey`; background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/19.99 700, #727272 `core.palette.legacy.darker.grey` |
+| pressed | border 1px solid #727272 `light.action.ghost-dark.active.icon`; background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/19.99 700, #727272 `light.action.ghost-dark.active.icon` |
 
 ![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
@@ -220,21 +220,21 @@ The 'New In' edit (/sets/women/new-in-this-week-eu-women.aspx) — the classic l
 #### Breadcrumbs
 The category breadcrumb trail (Home > Women > …). Read as `breadcrumb` on the new-in edit page.
 
-**Values (default).** size 1392 x 41; background transparent; text Farfetch Basis 13/17.00 400, #222222 `core.palette.named.preto`; icon 12 x 12, #222222 `core.palette.named.preto`.
+**Values (default).** size 1392 x 41; background transparent; text Farfetch Basis 13/17.00 400, #222222 `light.access.private-client.01`; icon 12 x 12, #222222 `light.access.private-client.01`.
 
 ![Breadcrumbs default](components/crops/breadcrumb-default.png)
 
 #### Page heading
 The listing h1 (PageTitleHeading on the classic listing) or the hero module DisplayLarge title on the modular pages. Read as `page-title` on the new-in edit page.
 
-**Values (default).** size 928 x 38; background transparent; text Farfetch Basis 30/38.00 400, #222222 `core.palette.named.preto`; ancestors div.ltr-1md0mx1 bg rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`.
+**Values (default).** size 928 x 38; background transparent; text Farfetch Basis 30/38.00 400, #222222 `light.access.private-client.01`; ancestors div.ltr-1md0mx1 bg rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`.
 
 ![Page heading default](components/crops/page-title-default.png)
 
 #### Page description
 The collapsible SEO body copy under the page heading. Read as `page-desc` on the new-in edit page.
 
-**Values (default).** size 928 x 39.97; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 928 x 39.97; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`.
 
 ![Page description default](components/crops/page-desc-default.png)
 
@@ -243,19 +243,19 @@ The "All Filters" button in the listing toolbar; measured, never toggled (its pa
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 129 x 44; padding 10px 44px 10px 16px; border 1px solid #222222 `core.palette.named.preto`; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `core.palette.named.preto`; ancestors div.ltr-1pvugye.e1deumxq0 bg #ffffff `core.palette.named.branco` |
-| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
+| default | size 129 x 44; padding 10px 44px 10px 16px; border 1px solid #222222 `light.access.private-client.01`; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `light.access.private-client.01`; ancestors div.ltr-1pvugye.e1deumxq0 bg #ffffff `light.action.ghost-light.active.icon` |
+| hover | background #f5f5f5 `light.action.ghost-dark.active.surface` |
 | focus-visible | outline 2px solid #101010, offset -2px |
-| pressed | border 1px solid #727272 `core.palette.legacy.darker.grey`; background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/19.99 700, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #727272 `core.palette.legacy.darker.grey` |
+| pressed | border 1px solid #727272 `light.action.ghost-dark.active.icon`; background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/19.99 700, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #727272 `light.action.ghost-dark.active.icon` |
 
 ![All Filters button default](components/crops/filter-button-default.png) ![All Filters button hover](components/crops/filter-button-hover.png) ![All Filters button focus-visible](components/crops/filter-button-focus-visible.png) ![All Filters button pressed](components/crops/filter-button-pressed.png)
 
 #### Quick filter scroller
 The quick-filter chip scroller under the toolbar — the chips are lazy-rendered, so the SSR copy only paints their skeleton bar. Read as `quick-filter` on the new-in edit page.
 
-**Values (default).** size 475 x 44; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; layers div.ltr-naoiyt 75.0x44.0 rgb(245, 245, 245); div.ltr-naoiyt 80.0x44.0 rgb(245, 245, 245); div.ltr-naoiyt 120.0x44.0 rgb(245, 245, 245); div.ltr-naoiyt 80.0x44.0 rgb(245, 245, 245); div.ltr-naoiyt 90.0x44.0 rgb(245, 245, 245).
+**Values (default).** size 475 x 44; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; layers div.ltr-naoiyt 75.0x44.0 rgb(245, 245, 245); div.ltr-naoiyt 80.0x44.0 rgb(245, 245, 245); div.ltr-naoiyt 120.0x44.0 rgb(245, 245, 245); div.ltr-naoiyt 80.0x44.0 rgb(245, 245, 245); div.ltr-naoiyt 90.0x44.0 rgb(245, 245, 245).
 
-Child layers that carry the look: div 75x44 background #f5f5f5 `core.palette.named.whiteSmoke`; div 80x44 background #f5f5f5 `core.palette.named.whiteSmoke`; div 120x44 background #f5f5f5 `core.palette.named.whiteSmoke`.
+Child layers that carry the look: div 75x44 background #f5f5f5 `light.action.ghost-dark.active.surface`; div 80x44 background #f5f5f5 `light.action.ghost-dark.active.surface`; div 120x44 background #f5f5f5 `light.action.ghost-dark.active.surface`.
 
 ![Quick filter scroller default](components/crops/quick-filter-default.png)
 
@@ -264,9 +264,9 @@ A listing product card: image, wishlist heart, brand name, description, price. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 321 x 536.98; background transparent; text Farfetch Basis 13/17.00 400, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #222222 `core.palette.named.preto`; layers div.ltr-mhoyab 321.0x537.0 rgb(255, 255, 255); div::before.ltr-1d9p1fi 281pxx376px rgb(245, 245, 245); div.ltr-1ismw06 321.0x103.0 rgb(255, 255, 255); button.ltr-o7d7sz 44.0x44.0 T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0); ancestors ul.ltr-sjsjxu.eoq4d4w0 bg #ffffff `core.palette.named.branco` |
+| default (same: hover) | size 321 x 536.98; background transparent; text Farfetch Basis 13/17.00 400, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #222222 `light.access.private-client.01`; layers div.ltr-mhoyab 321.0x537.0 rgb(255, 255, 255); div::before.ltr-1d9p1fi 281pxx376px rgb(245, 245, 245); div.ltr-1ismw06 321.0x103.0 rgb(255, 255, 255); button.ltr-o7d7sz 44.0x44.0 T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0); ancestors ul.ltr-sjsjxu.eoq4d4w0 bg #ffffff `light.action.ghost-light.active.icon` |
 
-Child layers that carry the look: div 321x537 background #ffffff `core.palette.named.branco`; div::before 281pxx376px background #f5f5f5 `core.palette.named.whiteSmoke`; div 321x103 background #ffffff `core.palette.named.branco`.
+Child layers that carry the look: div 321x537 background #ffffff `light.action.ghost-light.active.icon`; div::before 281pxx376px background #f5f5f5 `light.action.ghost-dark.active.surface`; div 321x103 background #ffffff `light.action.ghost-light.active.icon`.
 
 ![Product card default](components/crops/product-card-default.png) ![Product card hover](components/crops/product-card-hover.png)
 
@@ -275,21 +275,21 @@ The brand-name line on a product card. Read as `card-brand` on the new-in edit p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 321 x 19.98; background transparent; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
+| default (same: hover) | size 321 x 19.98; background transparent; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
 
 ![Card brand default](components/crops/card-brand-default.png) ![Card brand hover](components/crops/card-brand-hover.png)
 
 #### Card description
 The product description line under the brand. Read as `card-desc` on the new-in edit page.
 
-**Values (default).** size 321 x 17; background transparent; text Farfetch Basis 13/17.00 400, #222222 `core.palette.named.preto`; layers ::after rgba(0, 0, 0, 0) 0px none 1.
+**Values (default).** size 321 x 17; background transparent; text Farfetch Basis 13/17.00 400, #222222 `light.access.private-client.01`; layers ::after rgba(0, 0, 0, 0) 0px none 1.
 
 ![Card description default](components/crops/card-desc-default.png)
 
 #### Card price
 The price block on a product card. Read as `card-price` on the new-in edit page.
 
-**Values (default).** size 321 x 25.98; padding 6px 0px 0px 0px; background transparent; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`.
+**Values (default).** size 321 x 25.98; padding 6px 0px 0px 0px; background transparent; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`.
 
 ![Card price default](components/crops/card-price-default.png)
 
@@ -298,26 +298,26 @@ The heart icon button floating on the card image (aria-pressed toggle); measured
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background transparent; text Farfetch Basis 15/normal 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `core.palette.named.preto`; ancestors div.ltr-mhoyab bg #ffffff `core.palette.named.branco` |
-| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
+| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background transparent; text Farfetch Basis 15/normal 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `light.access.private-client.01`; ancestors div.ltr-mhoyab bg #ffffff `light.action.ghost-light.active.icon` |
+| hover | background #f5f5f5 `light.action.ghost-dark.active.surface` |
 | focus-visible | outline 2px solid #101010, offset -2px |
-| pressed | background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/normal 700, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #727272 `core.palette.legacy.darker.grey` |
+| pressed | background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/normal 700, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #727272 `light.action.ghost-dark.active.icon` |
 
 ![Card wishlist heart default](components/crops/card-wishlist-default.png) ![Card wishlist heart hover](components/crops/card-wishlist-hover.png) ![Card wishlist heart focus-visible](components/crops/card-wishlist-focus-visible.png) ![Card wishlist heart pressed](components/crops/card-wishlist-pressed.png)
 
 #### Card size hint
 The size-availability hint under a card ("XS S M L" style). Read as `card-sizes` on the new-in edit page.
 
-**Values (default).** size 321 x 102.98; padding 17.0001px 0px 0px 0px; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition opacity 0.3s cubic-bezier(0.66, 0, 0.2, 1); opacity 0.
+**Values (default).** size 321 x 102.98; padding 17.0001px 0px 0px 0px; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition opacity 0.3s cubic-bezier(0.66, 0, 0.2, 1); opacity 0.
 
 ![Card size hint default](components/crops/card-sizes-default.png)
 
 #### Pagination
 The pagination control under the grid ("1 of 3" + next arrow). Read as `pagination` on the new-in edit page.
 
-**Values (default).** size 1392 x 117; padding 48px 0px 0px 0px; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; icon 24 x 24, #ffffff `core.palette.named.branco`; layers hr.ltr-llidud 1392.0x1.0 T:1px solid rgb(230, 230, 230); a.ltr-nlzw0a 93.0x44.0 rgb(34, 34, 34) T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0).
+**Values (default).** size 1392 x 117; padding 48px 0px 0px 0px; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; icon 24 x 24, #ffffff `light.action.ghost-light.active.icon`; layers hr.ltr-llidud 1392.0x1.0 T:1px solid rgb(230, 230, 230); a.ltr-nlzw0a 93.0x44.0 rgb(34, 34, 34) T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0).
 
-Child layers that carry the look: hr 1392x1 border 1px solid #e6e6e6 `core.palette.legacy.grey.base`; a 93x44 background #222222 `core.palette.named.preto` border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`.
+Child layers that carry the look: hr 1392x1 border 1px solid #e6e6e6 `light.action.ghost-light.hover.label`; a 93x44 background #222222 `light.access.private-client.01` border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`.
 
 ![Pagination default](components/crops/pagination-default.png)
 
@@ -326,10 +326,10 @@ The next-page arrow in the pagination control; measured, never followed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 93 x 44; padding 0px 12px 0px 16px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #222222 `core.palette.named.preto`; text Farfetch Basis 15/19.99 700, #ffffff `core.palette.named.branco`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #ffffff `core.palette.named.branco` |
-| hover | background #727272 `core.palette.legacy.darker.grey` |
+| default | size 93 x 44; padding 0px 12px 0px 16px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #222222 `light.access.private-client.01`; text Farfetch Basis 15/19.99 700, #ffffff `light.action.ghost-light.active.icon`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #ffffff `light.action.ghost-light.active.icon` |
+| hover | background #727272 `light.action.ghost-dark.active.icon` |
 | focus-visible | outline 2px solid #101010, offset -2px |
-| pressed | background #b6b6b6 `core.palette.legacy.dark.grey` |
+| pressed | background #b6b6b6 `light.action.ghost-dark.disabled.icon` |
 
 ![Pagination next default](components/crops/pagination-next-default.png) ![Pagination next hover](components/crops/pagination-next-hover.png) ![Pagination next focus-visible](components/crops/pagination-next-focus-visible.png) ![Pagination next pressed](components/crops/pagination-next-pressed.png)
 
@@ -338,8 +338,8 @@ A showcase carousel next-arrow (small ghost-dark icon button); measured, never p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 32 x 32; border 1px solid #222222 `core.palette.named.preto`; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/normal 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `core.palette.named.preto`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
-| pressed | border 1px solid #727272 `core.palette.legacy.darker.grey`; background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/normal 700, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #727272 `core.palette.legacy.darker.grey` |
+| default (same: hover) | size 32 x 32; border 1px solid #222222 `light.access.private-client.01`; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/normal 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `light.access.private-client.01`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
+| pressed | border 1px solid #727272 `light.action.ghost-dark.active.icon`; background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/normal 700, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #727272 `light.action.ghost-dark.active.icon` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -348,14 +348,14 @@ A showcase carousel next-arrow (small ghost-dark icon button); measured, never p
 #### Brands module
 "Brands of the moment" — the premium-brand tile module on the modular listing. Read as `brands-module` on the men's listing page.
 
-**Values (default).** size 1392 x 722.64; padding 48px 0px 24px 0px; background transparent; text Farfetch Basis 22/27.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 1392 x 722.64; padding 48px 0px 24px 0px; background transparent; text Farfetch Basis 22/27.99 400, #222222 `light.access.private-client.01`.
 
 ![Brands module default](components/crops/brands-module-default.png)
 
 #### Editorial card
 A fashion-feed editorial card on the listing tail. Read as `editorial-card` on the men's listing page.
 
-**Values (default).** size 329.98 x 483.59; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 329.98 x 483.59; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`.
 
 ![Editorial card default](components/crops/editorial-card-default.png)
 
@@ -369,7 +369,7 @@ The "-40%" discount footnote on a sale card — content-primary-enabled-sale red
 #### Original price
 The struck-through pre-sale price beside the discount mark on a sale card (grey, line-through). Read as `sale-original` on the new-in edit page.
 
-**Values (default).** size 28.42 x 17; background transparent; text Farfetch Basis 13/17.00 400, #727272 `core.palette.legacy.darker.grey`; decoration line-through #727272 `core.palette.legacy.darker.grey`.
+**Values (default).** size 28.42 x 17; background transparent; text Farfetch Basis 13/17.00 400, #727272 `light.action.ghost-dark.active.icon`; decoration line-through #727272 `light.action.ghost-dark.active.icon`.
 
 ![Original price default](components/crops/sale-original-default.png)
 
@@ -380,7 +380,7 @@ A D&G slides PDP: breadcrumbs, the image carousel with ghost arrows, the ghost-d
 #### Breadcrumbs
 The PDP breadcrumb trail (Women > Dolce & Gabbana > Shoes > …). Read as `pdp-breadcrumb` on the product detail page.
 
-**Values (default).** size 1392 x 17; background transparent; text Farfetch Basis 13/17.00 400, #222222 `core.palette.named.preto`; icon 12 x 12, #222222 `core.palette.named.preto`.
+**Values (default).** size 1392 x 17; background transparent; text Farfetch Basis 13/17.00 400, #222222 `light.access.private-client.01`; icon 12 x 12, #222222 `light.access.private-client.01`.
 
 ![Breadcrumbs default](components/crops/pdp-breadcrumb-default.png)
 
@@ -389,8 +389,8 @@ A gallery next/previous arrow; measured, never pressed. Read as `pdp-arrow` on t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 32 x 32; border 1px solid #222222 `core.palette.named.preto`; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/normal 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `core.palette.named.preto`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
-| pressed | border 1px solid #727272 `core.palette.legacy.darker.grey`; background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/normal 700, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #727272 `core.palette.legacy.darker.grey` |
+| default (same: hover) | size 32 x 32; border 1px solid #222222 `light.access.private-client.01`; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/normal 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `light.access.private-client.01`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
+| pressed | border 1px solid #727272 `light.action.ghost-dark.active.icon`; background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/normal 700, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #727272 `light.action.ghost-dark.active.icon` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -401,24 +401,24 @@ The "Dolce & Gabbana" ghost-dark brand link over the PDP title; measured, never 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 175 x 27.98; background transparent; text Farfetch Basis 22/27.99 400, #222222 `core.palette.named.preto`; transition color 0.15s cubic-bezier(0.66, 0, 0.2, 1), text-decoration 0.15s cubic-bezier(0.66, 0, 0.2, 1) |
-| hover | decoration underline #222222 `core.palette.named.preto` |
+| default | size 175 x 27.98; background transparent; text Farfetch Basis 22/27.99 400, #222222 `light.access.private-client.01`; transition color 0.15s cubic-bezier(0.66, 0, 0.2, 1), text-decoration 0.15s cubic-bezier(0.66, 0, 0.2, 1) |
+| hover | decoration underline #222222 `light.access.private-client.01` |
 | focus-visible | outline 2px solid #101010, offset -2px; transition color 0.15s cubic-bezier(0.66, 0, 0.2, 1); layers a.ltr-1rkeqir-Body-Heading.e1h8dali1 175.0x28.0 2px solid rgb(16, 16, 16) offset -2px |
-| pressed | decoration underline #222222 `core.palette.named.preto` |
+| pressed | decoration underline #222222 `light.access.private-client.01` |
 
 ![Brand link default](components/crops/pdp-brand-default.png) ![Brand link hover](components/crops/pdp-brand-hover.png) ![Brand link focus-visible](components/crops/pdp-brand-focus-visible.png) ![Brand link pressed](components/crops/pdp-brand-pressed.png)
 
 #### Product title
 The product description heading ("logo-embossed cut-out slides"). Read as `pdp-title` on the product detail page.
 
-**Values (default).** size 452 x 47.97; background transparent; text Farfetch Basis 22/27.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 452 x 47.97; background transparent; text Farfetch Basis 22/27.99 400, #222222 `light.access.private-client.01`.
 
 ![Product title default](components/crops/pdp-title-default.png)
 
 #### Price callout
 The "$345" price callout above the size selector. Read as `pdp-price` on the product detail page.
 
-**Values (default).** size 452 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 452 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`.
 
 ![Price callout default](components/crops/pdp-price-default.png)
 
@@ -427,11 +427,11 @@ The "Select size" combobox (44px outlined field, chevron). Its listbox is hydrat
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 452 x 44; background transparent; text Farfetch Basis 15/19.99 400, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #222222 `core.palette.named.preto`; layers div.ltr-cubnbt 452.0x44.0 rgb(255, 255, 255) T:1px solid rgb(114, 114, 114) / R:1px solid rgb(114, 114, 114) / B:1px solid rgb(114, 114, 114) / L:1px solid rgb(114, 114, 114) |
+| default (same: hover, pressed) | size 452 x 44; background transparent; text Farfetch Basis 15/19.99 400, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #222222 `light.access.private-client.01`; layers div.ltr-cubnbt 452.0x44.0 rgb(255, 255, 255) T:1px solid rgb(114, 114, 114) / R:1px solid rgb(114, 114, 114) / B:1px solid rgb(114, 114, 114) / L:1px solid rgb(114, 114, 114) |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-Child layers that carry the look: div 452x44 background #ffffff `core.palette.named.branco` border 1px solid #727272 `core.palette.legacy.darker.grey`.
+Child layers that carry the look: div 452x44 background #ffffff `light.action.ghost-light.active.icon` border 1px solid #727272 `light.action.ghost-dark.active.icon`.
 
 ![Size selector default](components/crops/size-selector-default.png) ![Size selector hover](components/crops/size-selector-hover.png) ![Size selector pressed](components/crops/size-selector-pressed.png)
 
@@ -440,8 +440,8 @@ The primary "Add To Bag" button — actions-primary dark surface; measured, neve
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 322 x 44; padding 10px 16px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #222222 `core.palette.named.preto`; text Farfetch Basis 15/19.99 700, #ffffff `core.palette.named.branco`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1) |
-| hover | background #727272 `core.palette.legacy.darker.grey` |
+| default | size 322 x 44; padding 10px 16px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #222222 `light.access.private-client.01`; text Farfetch Basis 15/19.99 700, #ffffff `light.action.ghost-light.active.icon`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1) |
+| hover | background #727272 `light.action.ghost-dark.active.icon` |
 | focus-visible | outline 2px solid #101010, offset -2px |
 | pressed | background #959595 |
 
@@ -452,7 +452,7 @@ The "Wishlist" secondary action beside Add To Bag (aria-pressed toggle); measure
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 118 x 44; padding 10px 44px 10px 16px; border 1px solid #222222 `core.palette.named.preto`; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `core.palette.named.preto` |
+| default (same: hover, pressed) | size 118 x 44; padding 10px 44px 10px 16px; border 1px solid #222222 `light.access.private-client.01`; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `light.access.private-client.01` |
 | focus-visible | outline 2px solid #101010, offset -2px |
 
 ![PDP wishlist default](components/crops/pdp-wishlist-default.png) ![PDP wishlist hover](components/crops/pdp-wishlist-hover.png) ![PDP wishlist focus-visible](components/crops/pdp-wishlist-focus-visible.png) ![PDP wishlist pressed](components/crops/pdp-wishlist-pressed.png)
@@ -460,18 +460,18 @@ The "Wishlist" secondary action beside Add To Bag (aria-pressed toggle); measure
 #### Info accordion
 "The Details / Composition / FARFETCH ID" accordion under the buy box. Read as `pdp-accordion` on the product detail page.
 
-**Values (default).** size 1392 x 484.78; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; icon 24 x 24, #222222 `core.palette.named.preto`; layers section.ltr-t80gkb 1392.0x472.8 B:1px solid rgb(230, 230, 230).
+**Values (default).** size 1392 x 484.78; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; icon 24 x 24, #222222 `light.access.private-client.01`; layers section.ltr-t80gkb 1392.0x472.8 B:1px solid rgb(230, 230, 230).
 
-Child layers that carry the look: section 1392x472.8 border 1px solid #e6e6e6 `core.palette.legacy.grey.base`.
+Child layers that carry the look: section 1392x472.8 border 1px solid #e6e6e6 `light.action.ghost-light.hover.label`.
 
 ![Info accordion default](components/crops/pdp-accordion-default.png)
 
 #### Accordion section
 One accordion section (SSR ships the first panel expanded). Read as `accordion-item` on the product detail page.
 
-**Values (default).** size 1392 x 472.78; border B: 1px solid #e6e6e6 `core.palette.legacy.grey.base`; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; icon 24 x 24, #222222 `core.palette.named.preto`; layers section.ltr-t80gkb 1392.0x472.8 B:1px solid rgb(230, 230, 230).
+**Values (default).** size 1392 x 472.78; border B: 1px solid #e6e6e6 `light.action.ghost-light.hover.label`; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; icon 24 x 24, #222222 `light.access.private-client.01`; layers section.ltr-t80gkb 1392.0x472.8 B:1px solid rgb(230, 230, 230).
 
-Child layers that carry the look: section 1392x472.8 border 1px solid #e6e6e6 `core.palette.legacy.grey.base`.
+Child layers that carry the look: section 1392x472.8 border 1px solid #e6e6e6 `light.action.ghost-light.hover.label`.
 
 ![Accordion section default](components/crops/accordion-item-default.png)
 
@@ -480,7 +480,7 @@ An accordion section toggle; measured, never toggled (panels need hydration). Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 1392 x 44; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; icon 24 x 24, #222222 `core.palette.named.preto` |
+| default (same: hover, pressed) | size 1392 x 44; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; icon 24 x 24, #222222 `light.access.private-client.01` |
 | focus-visible | outline 2px solid #101010, offset -2px; layers button.ltr-g3vsg 1392.0x44.0 2px solid rgb(16, 16, 16) offset -2px |
 
 ![Accordion toggle default](components/crops/accordion-button-default.png) ![Accordion toggle hover](components/crops/accordion-button-hover.png) ![Accordion toggle focus-visible](components/crops/accordion-button-focus-visible.png) ![Accordion toggle pressed](components/crops/accordion-button-pressed.png)
@@ -488,25 +488,25 @@ An accordion section toggle; measured, never toggled (panels need hydration). Re
 #### Card skeleton
 A product-card loading skeleton in the related-products showcase (the showcase grid ships skeletonised in SSR). Read as `skeleton-card` on the product detail page.
 
-**Values (default).** size 288.88 x 501.16; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; layers div.ltr-q6lfkw 288.9x385.2 rgb(245, 245, 245); div.ltr-7yf7ta 202.2x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 260.0x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 144.4x22.0 rgb(245, 245, 245).
+**Values (default).** size 288.88 x 501.16; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; layers div.ltr-q6lfkw 288.9x385.2 rgb(245, 245, 245); div.ltr-7yf7ta 202.2x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 260.0x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 144.4x22.0 rgb(245, 245, 245).
 
-Child layers that carry the look: div 288.9x385.2 background #f5f5f5 `core.palette.named.whiteSmoke`; div 202.2x22 background #f5f5f5 `core.palette.named.whiteSmoke`; div 260x22 background #f5f5f5 `core.palette.named.whiteSmoke`.
+Child layers that carry the look: div 288.9x385.2 background #f5f5f5 `light.action.ghost-dark.active.surface`; div 202.2x22 background #f5f5f5 `light.action.ghost-dark.active.surface`; div 260x22 background #f5f5f5 `light.action.ghost-dark.active.surface`.
 
 ![Card skeleton default](components/crops/skeleton-card-default.png)
 
 #### Showcase skeleton
 A related-products showcase in its SSR loading state. Read as `skeleton-showcase` on the product detail page.
 
-**Values (default).** size 1392 x 573.14; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; icon 24 x 24, #222222 `core.palette.named.preto`; layers div.ltr-vqy38v-TitleSkeleton 487.2x28.0 rgb(245, 245, 245) B:2px solid rgb(255, 255, 255); div.ltr-q6lfkw 288.9x385.2 rgb(245, 245, 245); div.ltr-7yf7ta 202.2x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 260.0x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 144.4x22.0 rgb(245, 245, 245); div.ltr-q6lfkw 288.9x385.2 rgb(245, 245, 245).
+**Values (default).** size 1392 x 573.14; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; icon 24 x 24, #222222 `light.access.private-client.01`; layers div.ltr-vqy38v-TitleSkeleton 487.2x28.0 rgb(245, 245, 245) B:2px solid rgb(255, 255, 255); div.ltr-q6lfkw 288.9x385.2 rgb(245, 245, 245); div.ltr-7yf7ta 202.2x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 260.0x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 144.4x22.0 rgb(245, 245, 245); div.ltr-q6lfkw 288.9x385.2 rgb(245, 245, 245).
 
-Child layers that carry the look: div 487.2x28 background #f5f5f5 `core.palette.named.whiteSmoke` border 2px solid #ffffff `core.palette.named.branco`; div 288.9x385.2 background #f5f5f5 `core.palette.named.whiteSmoke`; div 202.2x22 background #f5f5f5 `core.palette.named.whiteSmoke`.
+Child layers that carry the look: div 487.2x28 background #f5f5f5 `light.action.ghost-dark.active.surface` border 2px solid #ffffff `light.action.ghost-light.active.icon`; div 288.9x385.2 background #f5f5f5 `light.action.ghost-dark.active.surface`; div 202.2x22 background #f5f5f5 `light.action.ghost-dark.active.surface`.
 
 ![Showcase skeleton default](components/crops/skeleton-showcase-default.png)
 
 #### Image gallery
 The PDP product-photo column (the stacked product shots left of the buy box; its arrow controls need hydration). Read as `pdp-gallery` on the product detail page.
 
-**Values (default).** size 904 x 1201.31; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 904 x 1201.31; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`.
 
 ![Image gallery default](components/crops/pdp-gallery-default.png)
 
@@ -522,7 +522,7 @@ The country landing: 'Choose a department' over three full-bleed tiles (WOMENSWE
 #### Chooser heading
 "Choose a department" — the Title heading over the three department tiles. Read as `dept-heading` on the home page.
 
-**Values (default).** size 928 x 27.98; background transparent; text Farfetch Basis 22/27.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 928 x 27.98; background transparent; text Farfetch Basis 22/27.99 400, #222222 `light.access.private-client.01`.
 
 ![Chooser heading default](components/crops/dept-heading-default.png)
 
@@ -531,7 +531,7 @@ A department chooser tile — full-bleed image with the department Display name 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 447.98 x 251.92; background transparent; text Farfetch Basis 30/38.00 400, #ffffff `core.palette.named.branco`; layers div::before._eb25ab._f6155d 447.984pxx251.922px |
+| default (same: hover) | size 447.98 x 251.92; background transparent; text Farfetch Basis 30/38.00 400, #ffffff `light.action.ghost-light.active.icon`; layers div::before._eb25ab._f6155d 447.984pxx251.922px |
 
 Child layers that carry the look: div::before 447.984pxx251.922px image linear-gradient(rgba(34, 34, 34, 0), rgba(34, 34, 34, 0.82)).
 
@@ -540,7 +540,7 @@ Child layers that carry the look: div::before 447.984pxx251.922px image linear-g
 #### Category kicker
 The Kicker heading ("Clothing") over a category card in a department column; the card around it is the link, the heading itself is not interactive. Read as `dept-kicker` on the home page.
 
-**Values (default).** size 329.98 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 329.98 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`.
 
 ![Category kicker default](components/crops/dept-kicker-default.png)
 
@@ -549,7 +549,7 @@ A department-column category card (image with a Kicker label, e.g. NEW IN); meas
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 329.98 x 483.59; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto` |
+| default (same: hover) | size 329.98 x 483.59; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01` |
 
 ![Category card default](components/crops/home-category-card-default.png) ![Category card hover](components/crops/home-category-card-hover.png)
 
@@ -565,49 +565,49 @@ The pulse type roles measured where they paint on the pages (DisplayLarge, Displ
 #### Display
 A --typography-display / display-large specimen. Read as `type-display` on the women's listing page.
 
-**Values (default).** size 588 x 48; background transparent; text Farfetch Basis 38/48.00 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 588 x 48; background transparent; text Farfetch Basis 38/48.00 400, #222222 `light.access.private-client.01`.
 
 ![Display default](components/crops/type-display-default.png)
 
 #### Kicker
 The uppercase --typography-kicker over a heading. Read as `type-kicker` on the women's listing page.
 
-**Values (default).** size 329.98 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 329.98 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`.
 
 ![Kicker default](components/crops/type-kicker-default.png)
 
 #### Footnote
 The --typography-footnote micro-label. Read as `type-footnote` on the women's listing page.
 
-**Values (default).** size 1392 x 17; background transparent; text Farfetch Basis 13/17.00 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 1392 x 17; background transparent; text Farfetch Basis 13/17.00 400, #222222 `light.access.private-client.01`.
 
 ![Footnote default](components/crops/type-footnote-default.png)
 
 #### Label
 A small label style (LabelPrimarySmall). Read as `type-label` on the women's listing page.
 
-**Values (default).** size 336 x 17; background transparent; text Farfetch Basis 13/17.00 400, #727272 `core.palette.legacy.darker.grey`.
+**Values (default).** size 336 x 17; background transparent; text Farfetch Basis 13/17.00 400, #727272 `light.action.ghost-dark.active.icon`.
 
 ![Label default](components/crops/type-label-default.png)
 
 #### Editorial
 The Nimbus Roman D --typography-editorial serif. Read as `type-editorial` on the women's listing page.
 
-**Values (default).** size 588 x 48; background transparent; text Nimbus Roman D 20/24 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 588 x 48; background transparent; text Nimbus Roman D 20/24 400, #222222 `light.access.private-client.01`.
 
 ![Editorial default](components/crops/type-editorial-default.png)
 
 #### Title
 A --typography-title specimen. Read as `type-title` on the women's listing page.
 
-**Values (default).** size 928 x 27.98; background transparent; text Farfetch Basis 22/27.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 928 x 27.98; background transparent; text Farfetch Basis 22/27.99 400, #222222 `light.access.private-client.01`.
 
 ![Title default](components/crops/type-title-default.png)
 
 #### Body
 A --typography-body specimen. Read as `type-body` on the women's listing page.
 
-**Values (default).** size 684 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 684 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`.
 
 ![Body default](components/crops/type-body-default.png)
 
@@ -618,7 +618,7 @@ The site footer: section-title columns of links, the 'Get updates by Email' fiel
 #### Footer
 The site footer: link columns, newsletter sign-up, socials, locale/legal line. Read as `footer` on the new-in edit page.
 
-**Values (default).** size 1440 x 508.97; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; icon 24 x 24, #222222 `core.palette.named.preto`; ancestors div bg #ffffff `core.palette.named.branco`.
+**Values (default).** size 1440 x 508.97; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; icon 24 x 24, #222222 `light.access.private-client.01`; ancestors div bg #ffffff `light.action.ghost-light.active.icon`.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -627,17 +627,17 @@ A footer column link; measured, never followed. Read as `footer-link` on the new
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 330 x 34; padding 6px 0px; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; decoration underline transparent; transition text-decoration-color 0.15s cubic-bezier(0.66, 0, 0.2, 1) |
-| hover | decoration underline #222222 `core.palette.named.preto` |
-| focus-visible | outline 2px solid #101010, offset -2px; decoration underline #222222 `core.palette.named.preto`; layers a.ltr-o5fwqn 330.0x34.0 2px solid rgb(16, 16, 16) offset -2px |
-| pressed | decoration underline #222222 `core.palette.named.preto` |
+| default | size 330 x 34; padding 6px 0px; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; decoration underline transparent; transition text-decoration-color 0.15s cubic-bezier(0.66, 0, 0.2, 1) |
+| hover | decoration underline #222222 `light.access.private-client.01` |
+| focus-visible | outline 2px solid #101010, offset -2px; decoration underline #222222 `light.access.private-client.01`; layers a.ltr-o5fwqn 330.0x34.0 2px solid rgb(16, 16, 16) offset -2px |
+| pressed | decoration underline #222222 `light.access.private-client.01` |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
 #### Footer column heading
 A footer column heading (small caps label). Read as `footer-heading` on the new-in edit page.
 
-**Values (default).** size 330 x 19.98; background transparent; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`.
+**Values (default).** size 330 x 19.98; background transparent; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`.
 
 ![Footer column heading default](components/crops/footer-heading-default.png)
 
@@ -646,8 +646,8 @@ The footer "Get updates by Email" field; focused and typed into then cleared —
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 300 x 42; padding 0px 0px 0px 16px; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; placeholder #727272 `core.palette.legacy.darker.grey`; ancestors div.ltr-6xvdur bg #ffffff `core.palette.named.branco` |
-| focused, filled | ancestors div.ltr-6xvdur bg #ffffff `core.palette.named.branco` outline 2px solid #101010 |
+| default | size 300 x 42; padding 0px 0px 0px 16px; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; placeholder #727272 `light.action.ghost-dark.active.icon`; ancestors div.ltr-6xvdur bg #ffffff `light.action.ghost-light.active.icon` |
+| focused, filled | ancestors div.ltr-6xvdur bg #ffffff `light.action.ghost-light.active.icon` outline 2px solid #101010 |
 
 ![Newsletter field default](components/crops/news-field-default.png) ![Newsletter field focused](components/crops/news-field-focused.png) ![Newsletter field filled](components/crops/news-field-filled.png)
 
@@ -656,10 +656,10 @@ The "Sign Up" newsletter button; measured, never pressed. Read as `news-submit` 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 90 x 44; padding 10px 16px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #222222 `core.palette.named.preto`; text Farfetch Basis 15/19.99 700, #ffffff `core.palette.named.branco`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1) |
-| hover | background #727272 `core.palette.legacy.darker.grey` |
+| default | size 90 x 44; padding 10px 16px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #222222 `light.access.private-client.01`; text Farfetch Basis 15/19.99 700, #ffffff `light.action.ghost-light.active.icon`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1) |
+| hover | background #727272 `light.action.ghost-dark.active.icon` |
 | focus-visible | outline 2px solid #101010, offset 1px |
-| pressed | background #b6b6b6 `core.palette.legacy.dark.grey` |
+| pressed | background #b6b6b6 `light.action.ghost-dark.disabled.icon` |
 
 ![Sign Up button default](components/crops/news-submit-default.png) ![Sign Up button hover](components/crops/news-submit-hover.png) ![Sign Up button focus-visible](components/crops/news-submit-focus-visible.png) ![Sign Up button pressed](components/crops/news-submit-pressed.png)
 
@@ -668,10 +668,10 @@ A social icon link in the footer; measured, never followed. Read as `footer-soci
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `core.palette.named.preto` |
-| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
+| default | size 44 x 44; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #222222 `light.access.private-client.01` |
+| hover | background #f5f5f5 `light.action.ghost-dark.active.surface` |
 | focus-visible | outline 2px solid #101010, offset -2px |
-| pressed | background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/19.99 700, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #727272 `core.palette.legacy.darker.grey` |
+| pressed | background #f5f5f5 `light.action.ghost-dark.active.surface`; text Farfetch Basis 15/19.99 700, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #727272 `light.action.ghost-dark.active.icon` |
 
 ![Social icon link default](components/crops/footer-social-default.png) ![Social icon link hover](components/crops/footer-social-hover.png) ![Social icon link focus-visible](components/crops/footer-social-focus-visible.png) ![Social icon link pressed](components/crops/footer-social-pressed.png)
 
@@ -682,7 +682,7 @@ The pages at phone width: the TopBar collapses the departments into the Dropdown
 #### Mobile header
 The top chrome at 390: department links, wordmark, locale/account/wishlist/bag icons (the SSR markup paints the desktop chrome responsively; the hamburger needs hydration). Read as `m-header` on the home page at 390 wide.
 
-**Values (default).** size 390 x 100; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition transform 0.2s ease-in-out; icon 24 x 24, #222222 `core.palette.named.preto`; layers ::after rgba(0, 0, 0, 0) 0px none 0; ancestors div bg #ffffff `core.palette.named.branco`.
+**Values (default).** size 390 x 100; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; transition transform 0.2s ease-in-out; icon 24 x 24, #222222 `light.access.private-client.01`; layers ::after rgba(0, 0, 0, 0) 0px none 0; ancestors div bg #ffffff `light.action.ghost-light.active.icon`.
 
 ![Mobile header default](components/crops/m-header-default.png)
 
@@ -691,7 +691,7 @@ The "departments" DropdownMenuSelectorUncontrolled in the TopBar — visible onl
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 62 x 44; background transparent; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; icon 24 x 24, #222222 `core.palette.named.preto`; layers button.ey6fkr80.ltr-1iz9vsw 215.0x44.0 rgba(255, 255, 255, 0) T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0) |
+| default (same: hover, pressed) | size 62 x 44; background transparent; text Farfetch Basis 15/19.99 700, #222222 `light.access.private-client.01`; icon 24 x 24, #222222 `light.access.private-client.01`; layers button.ey6fkr80.ltr-1iz9vsw 215.0x44.0 rgba(255, 255, 255, 0) T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0) |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -702,37 +702,37 @@ Child layers that carry the look: button 215x44 background rgba(255, 255, 255, 0
 #### Mobile search field
 The search input at phone width. Read as `m-search` on the home page at 390 wide.
 
-**Values (default).** size 270 x 44; border B: 1px solid #727272 `core.palette.legacy.darker.grey`; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; transition box-shadow 0.3s cubic-bezier(0.66, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.66, 0, 0.2, 1); icon 24 x 24, #b6b6b6 `core.palette.legacy.dark.grey`.
+**Values (default).** size 270 x 44; border B: 1px solid #727272 `light.action.ghost-dark.active.icon`; background #ffffff `light.action.ghost-light.active.icon`; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`; transition box-shadow 0.3s cubic-bezier(0.66, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.66, 0, 0.2, 1); icon 24 x 24, #b6b6b6 `light.action.ghost-dark.disabled.icon`.
 
 ![Mobile search field default](components/crops/m-search-default.png)
 
 #### Mobile wordmark
 The FARFETCH wordmark at phone width. Read as `m-logo` on the home page at 390 wide.
 
-**Values (default).** size 124 x 15.39; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+**Values (default).** size 124 x 15.39; background transparent; text Farfetch Basis 15/19.99 400, #222222 `light.access.private-client.01`.
 
 ![Mobile wordmark default](components/crops/m-logo-default.png)
 
 #### Mobile Add To Bag
 The primary buy button at phone width. Read as `m-add-to-bag` on the product detail page at 390 wide.
 
-**Values (default).** size 84.5 x 61.97; padding 10px 16px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #222222 `core.palette.named.preto`; text Farfetch Basis 15/19.99 700, #ffffff `core.palette.named.branco`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1).
+**Values (default).** size 84.5 x 61.97; padding 10px 16px; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background #222222 `light.access.private-client.01`; text Farfetch Basis 15/19.99 700, #ffffff `light.action.ghost-light.active.icon`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1).
 
 ![Mobile Add To Bag default](components/crops/m-add-to-bag-default.png)
 
 #### Mobile size selector
 The "Select size" combobox at phone width. Read as `m-size-selector` on the product detail page at 390 wide.
 
-**Values (default).** size 142.5 x 44; background transparent; text Farfetch Basis 15/19.99 400, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #222222 `core.palette.named.preto`; layers div.ltr-cubnbt 142.5x44.0 rgb(255, 255, 255) T:1px solid rgb(114, 114, 114) / R:1px solid rgb(114, 114, 114) / B:1px solid rgb(114, 114, 114) / L:1px solid rgb(114, 114, 114).
+**Values (default).** size 142.5 x 44; background transparent; text Farfetch Basis 15/19.99 400, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #222222 `light.access.private-client.01`; layers div.ltr-cubnbt 142.5x44.0 rgb(255, 255, 255) T:1px solid rgb(114, 114, 114) / R:1px solid rgb(114, 114, 114) / B:1px solid rgb(114, 114, 114) / L:1px solid rgb(114, 114, 114).
 
-Child layers that carry the look: div 142.5x44 background #ffffff `core.palette.named.branco` border 1px solid #727272 `core.palette.legacy.darker.grey`.
+Child layers that carry the look: div 142.5x44 background #ffffff `light.action.ghost-light.active.icon` border 1px solid #727272 `light.action.ghost-dark.active.icon`.
 
 ![Mobile size selector default](components/crops/m-size-selector-default.png)
 
 #### Mobile department tile
 A department chooser tile at phone width. Read as `m-dept-tile` on the home page at 390 wide.
 
-**Values (default).** size 260 x 146.25; background transparent; text Farfetch Basis 30/38.00 400, #ffffff `core.palette.named.branco`; layers div::before._eb25ab._f6155d 260pxx146.25px.
+**Values (default).** size 260 x 146.25; background transparent; text Farfetch Basis 30/38.00 400, #ffffff `light.action.ghost-light.active.icon`; layers div::before._eb25ab._f6155d 260pxx146.25px.
 
 Child layers that carry the look: div::before 260pxx146.25px image linear-gradient(rgba(34, 34, 34, 0), rgba(34, 34, 34, 0.82)).
 
@@ -741,9 +741,9 @@ Child layers that carry the look: div::before 260pxx146.25px image linear-gradie
 #### Mobile product card
 A listing product card at phone width. Read as `m-product-card` on the women's listing page at 390 wide.
 
-**Values (default).** size 173 x 339.64; background transparent; text Farfetch Basis 13/17.00 400, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #222222 `core.palette.named.preto`; layers div.ltr-mhoyab 173.0x339.6 rgb(255, 255, 255); div::before.ltr-1d9p1fi 133pxx178.656px rgb(245, 245, 245); button.ltr-o7d7sz 44.0x44.0 T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0).
+**Values (default).** size 173 x 339.64; background transparent; text Farfetch Basis 13/17.00 400, #727272 `light.action.ghost-dark.active.icon`; icon 24 x 24, #222222 `light.access.private-client.01`; layers div.ltr-mhoyab 173.0x339.6 rgb(255, 255, 255); div::before.ltr-1d9p1fi 133pxx178.656px rgb(245, 245, 245); button.ltr-o7d7sz 44.0x44.0 T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0).
 
-Child layers that carry the look: div 173x339.6 background #ffffff `core.palette.named.branco`; div::before 133pxx178.656px background #f5f5f5 `core.palette.named.whiteSmoke`; button 44x44 border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`.
+Child layers that carry the look: div 173x339.6 background #ffffff `light.action.ghost-light.active.icon`; div::before 133pxx178.656px background #f5f5f5 `light.action.ghost-dark.active.surface`; button 44x44 border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`.
 
 ![Mobile product card default](components/crops/m-product-card-default.png)
 

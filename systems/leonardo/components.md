@@ -61,7 +61,7 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Learn card](#learn-card) | 590.39 x 598.11 | - | - | transparent | none | 0 |
 | [Continue with Canva](#continue-with-canva) | 240.5 x 32.5 | - | 9.75px | rgba(255, 255, 255, 0.1) `color.docs.border.base` | none | 6.5px 13px |
-| [Generate button](#generate-button) | 97.28 x 32.5 | - | 13000px | #262626 `color.hover` | none | 6.5px 19.5px |
+| [Generate button](#generate-button) | 97.28 x 32.5 | - | 13000px | #262626 `color.raised` | none | 6.5px 19.5px |
 
 ## Components
 
@@ -92,7 +92,7 @@ Not on the page when it was captured.
 #### Marketing footer
 The sitemap footer: product, company, legal and social links. Read as `mkt-footer` on the home page.
 
-**Values (default).** size 1440 x 838.13; padding 84.375px 33.75px 13.5px 33.75px; background #000000 `color.black`; text canvaSans 10.39/12.99 400, #ffffff `color.white`; icon 16.88 x 16.88, #ffffff `color.white`.
+**Values (default).** size 1440 x 838.13; padding 84.375px 33.75px 13.5px 33.75px; background #000000 `color.black`; text canvaSans 10.39/12.99 400, #ffffff `color.text.on.accent`; icon 16.88 x 16.88, #ffffff `color.text.on.accent`.
 
 ![Marketing footer default](components/crops/mkt-footer-default.png)
 
@@ -101,17 +101,17 @@ A link to the public docs. Measured, not followed from this page. Read as `api-d
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 200.86 x 48.27; background transparent; text canvaSans 16/21.28 500, #000000 `color.black`; layers button.group/gooey.relative 200.9x48.3 #ffffff `color.white` 3.35544e+07px |
-| focus-visible | outline 1px auto rgba(161, 161, 161, 0.5), offset 1px; layers a 200.9x48.3 1px auto rgba(161, 161, 161, 0.5) offset 1px; button.group/gooey.relative 200.9x48.3 #ffffff `color.white` 3.35544e+07px |
+| default (same: hover, pressed) | size 200.86 x 48.27; background transparent; text canvaSans 16/21.28 500, #000000 `color.black`; layers button.group/gooey.relative 200.9x48.3 #ffffff `color.text.on.accent` 3.35544e+07px |
+| focus-visible | outline 1px auto rgba(161, 161, 161, 0.5), offset 1px; layers a 200.9x48.3 1px auto rgba(161, 161, 161, 0.5) offset 1px; button.group/gooey.relative 200.9x48.3 #ffffff `color.text.on.accent` 3.35544e+07px |
 
-Child layers that carry the look: button 200.9x48.3 background #ffffff `color.white` radius 3.35544e+07px.
+Child layers that carry the look: button 200.9x48.3 background #ffffff `color.text.on.accent` radius 3.35544e+07px.
 
 ![View documentation link default](components/crops/api-docs-default.png) ![View documentation link hover](components/crops/api-docs-hover.png) ![View documentation link focus-visible](components/crops/api-docs-focus-visible.png) ![View documentation link pressed](components/crops/api-docs-pressed.png)
 
 #### Contact heading
 The public contact page heading. The form itself is a submission boundary and was not filled or sent. Read as `ct-h1` on the contact page.
 
-**Values (default).** size 507.09 x 27.22; background transparent; text leoSans 29.59/27.23 400, #ffffff `color.white`.
+**Values (default).** size 507.09 x 27.22; background transparent; text leoSans 29.59/27.23 400, #ffffff `color.text.on.accent`.
 
 ![Contact heading default](components/crops/ct-h1-default.png)
 
@@ -122,7 +122,7 @@ Display type on the black marketing canvas: the home wordmark line, the API hero
 #### Hero display
 The marketing display heading on the black canvas. Read as `mkt-h1` on the home page.
 
-**Values (default).** size 440.31 x 65.66; background transparent; text leoSans 34.42/32.01 800, #ffffff `color.white`.
+**Values (default).** size 440.31 x 65.66; background transparent; text leoSans 34.42/32.01 800, #ffffff `color.text.on.accent`.
 
 ![Hero display default](components/crops/mkt-h1-default.png)
 
@@ -134,14 +134,14 @@ Not on the page when it was captured.
 #### API hero
 The public API marketing heading. Read as `api-h1` on the API page.
 
-**Values (default).** size 1188.34 x 174.14; background transparent; text leoSans 64.5/58.05 900, #6e60ee `color.purple.base`.
+**Values (default).** size 1188.34 x 174.14; background transparent; text leoSans 64.5/58.05 900, #6e60ee `color.accent.base`.
 
 ![API hero default](components/crops/api-h1-default.png)
 
 #### Learn heading
 The public Learn page heading. Read as `learn-h1` on the learn page.
 
-**Values (default).** size 901.69 x 78; background transparent; text leoSans 97.5/78 700, #ffffff `color.white`.
+**Values (default).** size 901.69 x 78; background transparent; text leoSans 97.5/78 700, #ffffff `color.text.on.accent`.
 
 ![Learn heading default](components/crops/learn-h1-default.png)
 
@@ -190,7 +190,7 @@ The public prompt field. Sample text was typed and cleared. Generate was never p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 667.88 x 18; background transparent; text canvaSans 13/17.55 400, #ffffff `color.white`; placeholder #a1a1a1 |
+| default | size 667.88 x 18; background transparent; text canvaSans 13/17.55 400, #ffffff `color.text.on.accent`; placeholder #a1a1a1 |
 | focused, filled | size 820.63 x 18 |
 
 ![Prompt field default](components/crops/app-prompt-default.png) ![Prompt field focused](components/crops/app-prompt-focused.png) ![Prompt field filled](components/crops/app-prompt-filled.png)
@@ -200,7 +200,7 @@ The Generate control. States forced through CDP. Never clicked, so no generation
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 97.28 x 32.5; padding 6.5px 19.5px; radius 13000px; background #262626 `color.hover`; text canvaSans 13/19.5 500, #737373 `color.text.muted`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.5 |
+| default (same: hover, pressed) | size 97.28 x 32.5; padding 6.5px 19.5px; radius 13000px; background #262626 `color.raised`; text canvaSans 13/19.5 500, #737373 `color.text.muted`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.5 |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -243,7 +243,7 @@ A blueprint category chip. Measured at rest. Read as `bp-chip` on the blueprints
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 52 x 31.25; padding 6.5px 13px; border 1px solid #7c71f7 `color.purple.400`; radius 13000px; background rgba(110, 96, 238, 0.15); text canvaSans 11.37/16.25 500, #fafafa `color.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default (same: hover, pressed) | size 52 x 31.25; padding 6.5px 13px; border 1px solid #7c71f7 `color.text.link`; radius 13000px; background rgba(110, 96, 238, 0.15); text canvaSans 11.37/16.25 500, #fafafa `color.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | focus-visible | shadow #ffffff 0px 0px 0px 0px, rgba(110, 96, 238, 0.5) 0px 0px 0px 4px |
 
 ![Category chip default](components/crops/bp-chip-default.png) ![Category chip hover](components/crops/bp-chip-hover.png) ![Category chip focus-visible](components/crops/bp-chip-focus-visible.png) ![Category chip pressed](components/crops/bp-chip-pressed.png)
@@ -264,7 +264,7 @@ An OAuth button. Measured at rest. Never followed. Read as `li-canva` on the log
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #ffffff `color.white` |
+| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #ffffff `color.text.on.accent` |
 | hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` |
 | focus-visible | shadow rgba(110, 96, 238, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(23, 23, 23, 0.8) |
@@ -300,7 +300,7 @@ The public login FAQ link. Measured, not followed. Read as `li-help` on the logi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 70.86 x 18; background transparent; text canvaSans 13/19.5 500, #7c71f7 `color.purple.400` |
+| default (same: hover, pressed) | size 70.86 x 18; background transparent; text canvaSans 13/19.5 500, #7c71f7 `color.text.link` |
 | focus-visible | outline 1px auto #005fcc, offset 1px; layers a.text-highlight-foreground.text-sm 70.9x18.0 1px auto #005fcc offset 1px |
 
 ![Need help link default](components/crops/li-help-default.png) ![Need help link hover](components/crops/li-help-hover.png) ![Need help link focus-visible](components/crops/li-help-focus-visible.png) ![Need help link pressed](components/crops/li-help-pressed.png)
@@ -312,7 +312,7 @@ docs.leonardo.ai getting-started, painted dark. Search and a nav link were measu
 #### Docs heading
 The Quick Start heading on the public ReadMe docs. Read as `docs-h1` on the docs page.
 
-**Values (default).** size 800 x 39.84; background transparent; text Twemoji Country Flags 31/39.85 600, #ffffff `color.white`.
+**Values (default).** size 800 x 39.84; background transparent; text Twemoji Country Flags 31/39.85 600, #ffffff `color.text.on.accent`.
 
 ![Docs heading default](components/crops/docs-h1-default.png)
 
@@ -331,7 +331,7 @@ A sidebar documentation link. Hover measured. Not followed. Read as `docs-nav` o
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 91.06 x 32; padding 10px; border 1px solid transparent; radius 6px; background rgba(255, 255, 255, 0.1) `color.docs.border.base`; text Twemoji Country Flags 14/normal 500, #ffffff `color.white`; transition background-color 0.15s cubic-bezier(0.16, 1, 0.3, 1), border 0.15s cubic-bezier(0.16, 1, 0.3, 1) |
+| default | size 91.06 x 32; padding 10px; border 1px solid transparent; radius 6px; background rgba(255, 255, 255, 0.1) `color.docs.border.base`; text Twemoji Country Flags 14/normal 500, #ffffff `color.text.on.accent`; transition background-color 0.15s cubic-bezier(0.16, 1, 0.3, 1), border 0.15s cubic-bezier(0.16, 1, 0.3, 1) |
 | hover | border 1px solid rgba(255, 255, 255, 0.1) `color.docs.border.base` |
 
 ![Docs nav link default](components/crops/docs-nav-default.png) ![Docs nav link hover](components/crops/docs-nav-hover.png)
@@ -348,7 +348,7 @@ Not on the page when it was captured.
 #### Phone prompt
 The prompt field at 390px, at rest. Read as `m-app-prompt` on the phone app page.
 
-**Values (default).** size 298 x 43; background transparent; text canvaSans 16/21.63 400, #ffffff `color.white`; placeholder #a1a1a1.
+**Values (default).** size 298 x 43; background transparent; text canvaSans 16/21.63 400, #ffffff `color.text.on.accent`; placeholder #a1a1a1.
 
 ![Phone prompt default](components/crops/m-app-prompt-default.png)
 
