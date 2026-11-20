@@ -38,7 +38,7 @@ Screenshots are named `{page}-light-{state}.png`: every public surface paints `l
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 13 components were given a real keyboard focus. 13 draw an outline ring: `nav-link` (1px auto #101010 `border.focus`, offset 1px), `waitlist-btn` (1px solid #ffffff `background.default`, offset -1px), `feature-acc` (1px auto #101010 `border.focus`, offset 0px), `ast-tile-hero` (1px auto #101010 `border.focus`, offset 1px), `ast-tile` (1px auto #101010 `border.focus`, offset 1px), `ast-kind-link` (1px auto #101010 `border.focus`, offset 1px), `av-back` (1px auto #101010 `border.focus`, offset 1px), `av-item` (1px auto #101010 `border.focus`, offset 1px), `tool-card` (1px auto #101010 `border.focus`, offset 1px), `tool-card2` (1px auto #101010 `border.focus`, offset 1px), `post-link` (1px auto #101010 `border.focus`, offset 1px), `m-acc` (1px auto #e59700, offset 0px), `av-kind` (1px auto #101010 `border.focus`, offset 1px).
+**Focus.** 13 components were given a real keyboard focus. 13 draw an outline ring: `nav-link` (1px auto #101010 `border.focus`, offset 1px), `waitlist-btn` (1px solid #ffffff `background.page`, offset -1px), `feature-acc` (1px auto #101010 `border.focus`, offset 0px), `ast-tile-hero` (1px auto #101010 `border.focus`, offset 1px), `ast-tile` (1px auto #101010 `border.focus`, offset 1px), `ast-kind-link` (1px auto #101010 `border.focus`, offset 1px), `av-back` (1px auto #101010 `border.focus`, offset 1px), `av-item` (1px auto #101010 `border.focus`, offset 1px), `tool-card` (1px auto #101010 `border.focus`, offset 1px), `tool-card2` (1px auto #101010 `border.focus`, offset 1px), `post-link` (1px auto #101010 `border.focus`, offset 1px), `m-acc` (1px auto #e59700, offset 0px), `av-kind` (1px auto #101010 `border.focus`, offset 1px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -63,16 +63,16 @@ The fixed top bar on every surface: the VISUAL wordmark, mono section links and 
 #### Site nav
 The fixed top nav: VISUAL wordmark, section links (WHY VISUAL? / ASSETS / TOOLS / BLOG) and the WAITLIST button. Read as `mkt-nav` on the assets page.
 
-**Values (default).** size 1440 x 32; padding 0px 32px; background transparent; text fontMono 12/12 500, #ffffff `background.default`; icon 20 x 20, #ffffff `background.default`; layers a.ui:inline-flex.ui:items-center 88.0x32.0 #2c2c26 `background.ink` 4px; ul.items-center.ml-auto 256.0x32.0 #ffffff `background.default` T:1px solid rgb(208, 208, 200) / R:1px solid rgb(208, 208, 200) / B:1px solid rgb(208, 208, 200) / L:1px solid rgb(208, 208, 200) 4px; a.whitespace-nowrap.flex 93.0x24.0 #ffffff `background.default` 3px; a.whitespace-nowrap.flex 58.0x24.0 #ffffff `background.defa.
+**Values (default).** size 1440 x 32; padding 0px 32px; background transparent; text fontMono 12/12 500, #ffffff `background.page`; icon 20 x 20, #ffffff `background.page`; layers a.ui:inline-flex.ui:items-center 88.0x32.0 #2c2c26 `background.ink` 4px; ul.items-center.ml-auto 256.0x32.0 #ffffff `background.page` T:1px solid rgb(208, 208, 200) / R:1px solid rgb(208, 208, 200) / B:1px solid rgb(208, 208, 200) / L:1px solid rgb(208, 208, 200) 4px; a.whitespace-nowrap.flex 93.0x24.0 #ffffff `background.page` 3px; a.whitespace-nowrap.flex 58.0x24.0 #ffffff `background.page` 3px;.
 
-Child layers that carry the look: a 88x32 background #2c2c26 `background.ink` radius 4px; ul 256x32 background #ffffff `background.default` border 1px solid #d0d0c8 `border.control.default` radius 4px; a 93x24 background #ffffff `background.default` radius 3px.
+Child layers that carry the look: a 88x32 background #2c2c26 `background.ink` radius 4px; ul 256x32 background #ffffff `background.page` border 1px solid #d0d0c8 `border.hairline` radius 4px; a 93x24 background #ffffff `background.page` radius 3px.
 
 ![Site nav default](components/crops/mkt-nav-default.png)
 
 #### Logo
 The VISUAL wordmark at the left of the nav. Read as `mkt-logo` on the assets page.
 
-**Values (default).** size 88 x 32; padding 0px 12px; radius 4px; background #2c2c26 `background.ink`; text fontMono 12/12 500, #ffffff `background.default`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `background.default`.
+**Values (default).** size 88 x 32; padding 0px 12px; radius 4px; background #2c2c26 `background.ink`; text fontMono 12/12 500, #ffffff `background.page`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #ffffff `background.page`.
 
 ![Logo default](components/crops/mkt-logo-default.png)
 
@@ -81,7 +81,7 @@ A section link in the top nav ("WHY VISUAL?"); measured, never followed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 93 x 24; padding 0px 8px; radius 3px; background #ffffff `background.default`; text fontMono 12/12 500, #000000 `text.black`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 93 x 24; padding 0px 8px; radius 3px; background #ffffff `background.page`; text fontMono 12/12 500, #000000 `text.black`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background #f6f6f4 `background.hover-fill` |
 | focus-visible | outline 1px auto #101010 `border.focus`, offset 1px |
 | pressed | background #f6f6f4 `background.hover-fill` |
@@ -93,9 +93,9 @@ The nav WAITLIST button — the product’s only conversion CTA on this surface;
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 82 x 32; padding 0px 12px; border 1px solid #aaa674 `accent.foreground`; radius 3.35544e+07px; background #e8e7d9 `accent.default`; text fontMono 12/12 500, #2c2c26 `background.ink`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 82 x 32; padding 0px 12px; border 1px solid #aaa674 `border.olive`; radius 3.35544e+07px; background #e8e7d9 `background.cream`; text fontMono 12/12 500, #2c2c26 `background.ink`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background #414238 `color.neutral.900` |
-| focus-visible | shadow #2c2c26 0px 0px 0px 2px; outline 1px solid #ffffff `background.default`, offset -1px |
+| focus-visible | shadow #2c2c26 0px 0px 0px 2px; outline 1px solid #ffffff `background.page`, offset -1px |
 | pressed | background #414238 `color.neutral.900` |
 
 ![Waitlist CTA default](components/crops/waitlist-btn-default.png) ![Waitlist CTA hover](components/crops/waitlist-btn-hover.png) ![Waitlist CTA focus-visible](components/crops/waitlist-btn-focus-visible.png) ![Waitlist CTA pressed](components/crops/waitlist-btn-pressed.png)
@@ -123,7 +123,7 @@ A monospace feature accordion row on the dark panel ("Chat-driven for everyone o
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed, opened) | size 568.66 x 60.27; padding 16px 0px 16px 32px; background transparent; text fontMono 20/28.28 500, #ffffff `background.default`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #aaab9c `color.neutral.400`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
+| default (same: pressed, opened) | size 568.66 x 60.27; padding 16px 0px 16px 32px; background transparent; text fontMono 20/28.28 500, #ffffff `background.page`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #aaab9c `color.neutral.400`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
 | focus-visible | outline 1px auto #101010 `border.focus`, offset 0px; layers ::before rgba(0, 0, 0, 0) 0px none 1; button.ui:flex.ui:flex-1 568.7x60.3 1px auto rgb(16, 16, 16) offset 0px |
 
 ![Feature accordion focus-visible](components/crops/feature-acc-focus-visible.png) ![Feature accordion pressed](components/crops/feature-acc-pressed.png) ![Feature accordion opened](components/crops/feature-acc-opened.png)
@@ -138,7 +138,7 @@ A serif section heading ("Keep every slide on-brand"). Read as `sec-h2` on the h
 #### Dark-panel heading
 The white serif heading inside the dark feature panel ("Every agent is an endpoint"). Read as `dark-h2` on the home page.
 
-**Values (default).** size 312.39 x 96; background transparent; text fontSerif 48/48 300, #ffffff `background.default`.
+**Values (default).** size 312.39 x 96; background transparent; text fontSerif 48/48 300, #ffffff `background.page`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -147,7 +147,7 @@ The closed "Quickly personalize every presentation" accordion row; its opened st
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: opened) | size 568.66 x 60.27; padding 16px 0px 16px 32px; background transparent; text fontMono 20/28.28 500, #ffffff `background.default`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #aaab9c `color.neutral.400`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
+| default (same: opened) | size 568.66 x 60.27; padding 16px 0px 16px 32px; background transparent; text fontMono 20/28.28 500, #ffffff `background.page`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #aaab9c `color.neutral.400`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
 
 ![Accordion (closed) default](components/crops/feature-acc2-default.png) ![Accordion (closed) opened](components/crops/feature-acc2-opened.png)
 
@@ -167,7 +167,7 @@ The featured category tile (569px rounded-xl square, "/ REPLICANTS" label over a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 568.66 x 568.66; radius 8px; background #ffffff `background.default`; image linear-gradient(45deg, #e3e3de `border.surface` 25%, transparent 25%, transparent 75%, #e3e3de `border.surface` 75%, #e3e3de `border.surface`), linear-gradient(45deg, #e3e3de `border.surface` 25%, tra; text fontMono 10/10 500, #6d6e5e `color.neutral.700`; icon 16 x 16, #6d6e5e `color.neutral.700` |
+| default (same: hover, pressed) | size 568.66 x 568.66; radius 8px; background #ffffff `background.page`; image linear-gradient(45deg, #e3e3de `color.neutral.100` 25%, transparent 25%, transparent 75%, #e3e3de `color.neutral.100` 75%, #e3e3de `color.neutral.100`), linear-gradient(45deg, #e3e3de `color.neutral.1; text fontMono 10/10 500, #6d6e5e `color.neutral.700`; icon 16 x 16, #6d6e5e `color.neutral.700` |
 | focus-visible | outline 1px auto #101010 `border.focus`, offset 1px |
 
 ![Hero category tile default](components/crops/ast-tile-hero-default.png) ![Hero category tile hover](components/crops/ast-tile-hero-hover.png) ![Hero category tile focus-visible](components/crops/ast-tile-hero-focus-visible.png) ![Hero category tile pressed](components/crops/ast-tile-hero-pressed.png)
@@ -177,7 +177,7 @@ A standard category tile (280px rounded-xl square); measured, never followed. Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 280.33 x 280.33; radius 8px; background #ffffff `background.default`; image linear-gradient(45deg, #e3e3de `border.surface` 25%, transparent 25%, transparent 75%, #e3e3de `border.surface` 75%, #e3e3de `border.surface`), linear-gradient(45deg, #e3e3de `border.surface` 25%, tra; text fontMono 10/10 500, #6d6e5e `color.neutral.700`; icon 16 x 16, #6d6e5e `color.neutral.700` |
+| default (same: hover, pressed) | size 280.33 x 280.33; radius 8px; background #ffffff `background.page`; image linear-gradient(45deg, #e3e3de `color.neutral.100` 25%, transparent 25%, transparent 75%, #e3e3de `color.neutral.100` 75%, #e3e3de `color.neutral.100`), linear-gradient(45deg, #e3e3de `color.neutral.1; text fontMono 10/10 500, #6d6e5e `color.neutral.700`; icon 16 x 16, #6d6e5e `color.neutral.700` |
 | focus-visible | outline 1px auto #101010 `border.focus`, offset 1px |
 
 ![Category tile default](components/crops/ast-tile-default.png) ![Category tile hover](components/crops/ast-tile-hover.png) ![Category tile focus-visible](components/crops/ast-tile-focus-visible.png) ![Category tile pressed](components/crops/ast-tile-pressed.png)
@@ -215,7 +215,7 @@ The link back to the asset library; measured, never followed. Read as `av-back` 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 58 x 24; padding 0px 8px; radius 3px; background #ffffff `background.default`; text fontMono 12/12 500, #000000 `text.black`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 58 x 24; padding 0px 8px; radius 3px; background #ffffff `background.page`; text fontMono 12/12 500, #000000 `text.black`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background #f6f6f4 `background.hover-fill` |
 | focus-visible | outline 1px auto #101010 `border.focus`, offset 1px |
 | pressed | background #f6f6f4 `background.hover-fill` |
@@ -227,7 +227,7 @@ An avatar tile in the set grid (links to its detail page); measured, never follo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 222.66 x 222.66; radius 8px; background #ffffff `background.default`; image linear-gradient(45deg, #e3e3de `border.surface` 25%, transparent 25%, transparent 75%, #e3e3de `border.surface` 75%, #e3e3de `border.surface`), linear-gradient(45deg, #e3e3de `border.surface` 25%, tra; text fontMono 16/24 400, #000000 `text.black` |
+| default (same: hover, pressed) | size 222.66 x 222.66; radius 8px; background #ffffff `background.page`; image linear-gradient(45deg, #e3e3de `color.neutral.100` 25%, transparent 25%, transparent 75%, #e3e3de `color.neutral.100` 75%, #e3e3de `color.neutral.100`), linear-gradient(45deg, #e3e3de `color.neutral.1; text fontMono 16/24 400, #000000 `text.black` |
 | focus-visible | outline 1px auto #101010 `border.focus`, offset 1px |
 
 ![Avatar item default](components/crops/av-item-default.png) ![Avatar item hover](components/crops/av-item-hover.png) ![Avatar item focus-visible](components/crops/av-item-focus-visible.png) ![Avatar item pressed](components/crops/av-item-pressed.png)
@@ -267,7 +267,7 @@ A tool card ("Color Wheel" — bordered white card with a breadcrumb label, titl
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 338 x 422.5; padding 24px 24px 20px 24px; border 1px solid #d0d0c8 `border.control.default`; radius 6px; background #ffffff `background.default`; text fontMono 12/12 500, #6d6e5e `color.neutral.700` |
+| default (same: hover, pressed) | size 338 x 422.5; padding 24px 24px 20px 24px; border 1px solid #d0d0c8 `border.hairline`; radius 6px; background #ffffff `background.page`; text fontMono 12/12 500, #6d6e5e `color.neutral.700` |
 | focus-visible | outline 1px auto #101010 `border.focus`, offset 1px |
 
 ![Tool card default](components/crops/tool-card-default.png) ![Tool card hover](components/crops/tool-card-hover.png)
@@ -277,7 +277,7 @@ A second tool card ("Image Resizer"), sampled for consistency. Read as `tool-car
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 338 x 422.5; padding 24px 24px 20px 24px; border 1px solid #d0d0c8 `border.control.default`; radius 6px; background #ffffff `background.default`; text fontMono 12/12 500, #6d6e5e `color.neutral.700` |
+| default (same: hover, pressed) | size 338 x 422.5; padding 24px 24px 20px 24px; border 1px solid #d0d0c8 `border.hairline`; radius 6px; background #ffffff `background.page`; text fontMono 12/12 500, #6d6e5e `color.neutral.700` |
 | focus-visible | outline 1px auto #101010 `border.focus`, offset 1px |
 
 ![Tool card 2 default](components/crops/tool-card2-default.png) ![Tool card 2 hover](components/crops/tool-card2-hover.png) ![Tool card 2 focus-visible](components/crops/tool-card2-focus-visible.png)
@@ -342,9 +342,9 @@ The phone surface at 390 wide: the 40px top bar, serif hero and accordion rows.
 #### Mobile nav
 The phone top bar: VISUAL wordmark and the WAITLIST button. Read as `m-nav` on the home page at 390 wide.
 
-**Values (default).** size 390 x 40; padding 0px 16px; background transparent; text fontMono 12/12 500, #ffffff `background.default`; icon 20 x 20, #ffffff `background.default`; layers a.ui:inline-flex.ui:items-center 88.0x32.0 #2c2c26 `background.ink` 4px; a.whitespace-nowrap.flex 0.0x0.0 #ffffff `background.default` 3px; a.whitespace-nowrap.flex 0.0x0.0 #ffffff `background.default` 3px; a.whitespace-nowrap.flex 0.0x0.0 #ffffff `background.default` 3px; a.whitespace-nowrap.flex 0.0x0.0 #ffffff `background.default` 3px; button.ui:justify-center.ui:whitespace-nowrap 50.0x40.0 #ff.
+**Values (default).** size 390 x 40; padding 0px 16px; background transparent; text fontMono 12/12 500, #ffffff `background.page`; icon 20 x 20, #ffffff `background.page`; layers a.ui:inline-flex.ui:items-center 88.0x32.0 #2c2c26 `background.ink` 4px; a.whitespace-nowrap.flex 0.0x0.0 #ffffff `background.page` 3px; a.whitespace-nowrap.flex 0.0x0.0 #ffffff `background.page` 3px; a.whitespace-nowrap.flex 0.0x0.0 #ffffff `background.page` 3px; a.whitespace-nowrap.flex 0.0x0.0 #ffffff `background.page` 3px; button.ui:justify-center.ui:whitespace-nowrap 50.0x40.0 #ffffff `backgr.
 
-Child layers that carry the look: a 88x32 background #2c2c26 `background.ink` radius 4px; a 0x0 background #ffffff `background.default` radius 3px; a 0x0 background #ffffff `background.default` radius 3px.
+Child layers that carry the look: a 88x32 background #2c2c26 `background.ink` radius 4px; a 0x0 background #ffffff `background.page` radius 3px; a 0x0 background #ffffff `background.page` radius 3px.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -360,7 +360,7 @@ A feature accordion row on the phone; measured, never toggled here. Read as `m-a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 350 x 64; padding 16px 0px 16px 32px; background transparent; text fontMono 16/16 500, #ffffff `background.default`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #aaab9c `color.neutral.400`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
+| default (same: hover, pressed) | size 350 x 64; padding 16px 0px 16px 32px; background transparent; text fontMono 16/16 500, #ffffff `background.page`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #aaab9c `color.neutral.400`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
 | focus-visible | outline 1px auto #e59700, offset 0px; layers ::before rgba(0, 0, 0, 0) 0px none 1; button.ui:flex.ui:flex-1 350.0x64.0 1px auto rgb(229, 151, 0) offset 0px |
 
 ![Mobile accordion hover](components/crops/m-acc-hover.png) ![Mobile accordion focus-visible](components/crops/m-acc-focus-visible.png) ![Mobile accordion pressed](components/crops/m-acc-pressed.png)
@@ -368,7 +368,7 @@ A feature accordion row on the phone; measured, never toggled here. Read as `m-a
 #### Mobile footer
 The phone footer. Read as `m-footer` on the home page at 390 wide.
 
-**Values (default).** size 390 x 316; padding 32px 16px; background #2c2c26 `background.ink`; text fontMono 12/12 500, #ffffff `background.default`.
+**Values (default).** size 390 x 316; padding 32px 16px; background #2c2c26 `background.ink`; text fontMono 12/12 500, #ffffff `background.page`.
 
 ![Mobile footer default](components/crops/m-footer-default.png)
 
@@ -379,7 +379,7 @@ The olive-ink dark footer on every surface.
 #### Site footer
 The sitemap footer (BLOG / ASSET LIBRARY / DESIGN TOOLS / ABOUT / CONTACT / LINKEDIN). Read as `site-footer` on the home page.
 
-**Values (default).** size 1440 x 320; padding 32px 24px; background #2c2c26 `background.ink`; text fontMono 12/12 500, #ffffff `background.default`.
+**Values (default).** size 1440 x 320; padding 32px 24px; background #2c2c26 `background.ink`; text fontMono 12/12 500, #ffffff `background.page`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
