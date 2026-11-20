@@ -94,7 +94,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 4. **Do treat the declared vocabularies as canonical colour.** The marketing `--token-*` layer (`token.*`) and the app's `--light-*`/`--dark-*`/`--active-*` ramps (`app.*`) are stylesheet declarations; the semantic roles alias to them where they match. See [tokens.json](tokens.json) and the swatches in [style-guide.html](style-guide.html), e.g. [login-card](components/crops/login-card-default.png).
 5. **Don't style the signed-in product from this package.** Everything post-login is a documented boundary; the signed-out auth cards and the anonymous editor are the evidence, and even they were never submitted. See [login-app-default](screenshots/login-app-default.png).
 6. **Don't read the dark app as a marketing dark theme.** There is no marketing dark theme — the site paints light only; `app` is a separate surface's chrome, paired with `core` under its own `$themes` entry. See [designer-app-canvas](screenshots/designer-app-canvas.png).
-7. **Don't fabricate editor flows.** The Craft dialog's "Add to canvas" was measured disabled and enabled, never pressed; Share/Download/Replace and every OAuth button were measured, never activated. See [ed-add](components/crops/ed-add-default.png) and [ed-add enabled](components/crops/ed-add-enabled.png).
+7. **Don't fabricate editor flows.** The Craft dialog's "Add to canvas" was measured disabled and enabled by measure.mjs; the screenshot pass did press it once, which ran an AI generation, and [designer-app-canvas](screenshots/designer-app-canvas.png) is its result (the script now stops at the button, edited 2026-11, not rerun). Share/Download/Replace and every OAuth button were measured, never activated. See [ed-add](components/crops/ed-add-default.png) and [ed-add enabled](components/crops/ed-add-enabled.png).
 
 ## How the values were read
 
@@ -114,7 +114,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Two distinct themes | yes — marketing `light` (the only marketing theme) and the app's own dark-chrome `app` set, never merged |
 | Components measured, not inferred | yes — hover/focus-visible/pressed/opened/enabled states on public routes only |
 | Consent overlay handled | yes — hidden for clean captures, never answered |
-| Boundaries declared | yes — auth, OAuth, trial, Share/Download, Add-to-canvas measured, never followed or submitted |
+| Boundaries declared | yes — auth, OAuth, trial, Share/Download measured, never followed or submitted; Add to canvas was pressed once by the screenshot pass (an AI generation) and is a boundary from 2026-11 |
 | Mobile pass | yes — 390 x 844 at 2x on home, pricing and login |
 | Icons | layout gap — no standalone SVG set lifted; product glyphs visible in crops/screenshots |
 | Fonts | declared (414 @font-faces harvested) and measured; served faces not redistributed |
