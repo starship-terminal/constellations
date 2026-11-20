@@ -470,9 +470,9 @@
       "description": "The data-driven CRM",
       "status": "captured",
       "package": "systems/attio",
-      "notes": "pre-existing package; verified complete against docs/PACKAGE.md during batch 2 https://app.attio.com/login opened the signed-in onboarding page in this browser. No new code was requested.",
+      "notes": "pre-existing package; verified complete against docs/PACKAGE.md during batch 2 https://app.attio.com/login opened the signed-in onboarding page in this browser. No new code was requested. Signed-in walk: https://app.attio.com/login redirected to https://app.attio.com/onboarding/welcome, a sign-in wall (Google, email). Session was not present. Public screens in PR 1470 (9add0f0ba). Post-auth pages were not reached. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 2
     },
     {
@@ -2459,7 +2459,7 @@
       "description": "Create, collaborate, and scale your blogs and docs",
       "status": "pending",
       "package": null,
-      "notes": "https://hashnode.com/login Continue with Google signed in. The next screen asks for a profile. Profile not created. Product not walked.",
+      "notes": "https://hashnode.com/login Continue with Google signed in. The next screen asks for a profile. Profile not created. Product not walked. Signed-in walk: https://hashnode.com/onboard was the only shell. Profile fields left blank. Screens in PR 1473 (c5622642f). Dashboard, editor, drafts, bookmarks, notifications, and settings were not reached. login-extracted stays not-started until the batch review.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 8
@@ -6534,9 +6534,9 @@
       "description": "Endless designs for your ideas, just scroll",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://variant.com/authentication Continue with Google signed in and landed on a missing /login page. Product not walked.",
+      "notes": "Email probe: https://variant.com/authentication Continue with Google signed in and landed on a missing /login page. Product not walked. Signed-in walk: https://variant.com/authentication is a sign-in wall (Continue with Google, email). Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 19
     },
     {
