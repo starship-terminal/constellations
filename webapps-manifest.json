@@ -4443,9 +4443,9 @@
       "description": "Discover recipes, home ideas, style inspiration and other ideas to try",
       "status": "pending",
       "package": null,
-      "notes": "https://www.pinterest.com/login/ asks for email and password. Password not submitted.",
+      "notes": "https://www.pinterest.com/login/ asks for email and password. Password not submitted. Public walk 2026-11-21: the logo stays on /. Explore opens /ideas/. Search focus stays on / and mounts a dialog. About, Businesses, Create, and News open their hosts. Log in, Sign up, and Join open auth dialogs and stop. Footer Log in opens /login/ and stops. See more boards opens one official board. Idea cards open public idea pages. Shop opens /shopping/. Help and policy open their hosts. Google, Apple, Facebook, and QR were not clicked. No form was submitted. Public package in PR 1555 at b4247b09f187. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 13
     },
     {
@@ -4477,9 +4477,9 @@
       "description": "A Free Online UI/UX Design Tool",
       "status": "pending",
       "package": null,
-      "notes": "https://pixso.net/signin is missing. https://pixso.net/user/login/ asks for email and password, or Google, NAVER, or SSO. Password not submitted.",
+      "notes": "https://pixso.net/signin is missing. https://pixso.net/user/login/ asks for email and password, or Google, NAVER, or SSO. Password not submitted. Public walk 2026-11-21: the header opens Product, AI design, Resources and learning, and Enterprise as menus. Pricing opens /pricing/. Log in and Get started open /user/login/. Community, plugins, and developer docs use a second header. Phone navigation opens the same groups. Google, NAVER, SSO, signup, and the contact form were not used. No form was submitted. Public package in PR 1553 at d74e7c8405c1. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 13
     },
     {
@@ -4647,9 +4647,9 @@
       "description": "Watch movies, TV shows, sports, and live TV",
       "status": "pending",
       "package": null,
-      "notes": "Sign In opens Amazon at https://www.amazon.sg/ap/signin with email or mobile and a password field. Password not submitted.",
+      "notes": "Sign In opens Amazon at https://www.amazon.sg/ap/signin with email or mobile and a password field. Password not submitted. Public walk 2026-11-21: the homepage redirects to /offers/nonprimehomepage. Home, Movies, TV, Sports, Categories, genres, kids, collections, a title page, Help, legal, and Watch Anywhere are public. Search, the language menu, the account menu, and Share stay on the page. Join Prime, Sign in, trial buttons, Like, settings, profiles, and Contact Us open amazon.sg/ap/signin and those branches stop. Password was not submitted. Public package in PR 1554 at 31368355a497. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 14
     },
     {
