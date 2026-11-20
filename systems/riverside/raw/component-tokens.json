@@ -1,0 +1,445 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. riverside.com declares a named Webflow palette on :root. Colour names stay under core.color. Roles are the light set. Measured sizes come from raw/components-computed.json. The login wall is a dark panel, not a theme.",
+ "core": {
+  "color": {
+   "ink": {
+    "brand": {
+     "var": "--brand-black",
+     "type": "color"
+    },
+    "navy": {
+     "var": "--black",
+     "type": "color"
+    },
+    "dark": {
+     "var": "--dark",
+     "type": "color"
+    },
+    "black": {
+     "var": "--black-2",
+     "type": "color"
+    },
+    "slate": {
+     "var": "--black-3",
+     "type": "color"
+    },
+    "secondary": {
+     "var": "--secondary--black-2",
+     "type": "color"
+    }
+   },
+   "paper": {
+    "white": {
+     "var": "--white",
+     "type": "color"
+    },
+    "smoke": {
+     "var": "--white-smoke",
+     "type": "color"
+    },
+    "smoke-2": {
+     "var": "--white-smoke-2",
+     "type": "color"
+    },
+    "smoke-3": {
+     "var": "--white-smoke-3",
+     "type": "color"
+    },
+    "ghost": {
+     "var": "--ghost-white",
+     "type": "color"
+    },
+    "light": {
+     "var": "--light",
+     "type": "color"
+    },
+    "floral": {
+     "var": "--floral-white",
+     "type": "color"
+    },
+    "alice": {
+     "var": "--alice-blue",
+     "type": "color"
+    }
+   },
+   "accent": {
+    "peacock": {
+     "var": "--peacock",
+     "type": "color"
+    },
+    "peacock-2": {
+     "var": "--peacock-2",
+     "type": "color"
+    },
+    "slate-blue": {
+     "var": "--slate-blue",
+     "type": "color"
+    },
+    "purple": {
+     "var": "--primary-purple",
+     "type": "color"
+    },
+    "purple-500": {
+     "var": "--primary-500",
+     "type": "color"
+    },
+    "purple-2": {
+     "var": "--secondary-purple",
+     "type": "color"
+    },
+    "medium": {
+     "var": "--medium-slate-blue",
+     "type": "color"
+    },
+    "royal": {
+     "var": "--royal-blue",
+     "type": "color"
+    },
+    "sky": {
+     "var": "--slate-blue-2",
+     "type": "color"
+    }
+   },
+   "wash": {
+    "lavender": {
+     "var": "--lavender",
+     "type": "color"
+    },
+    "lime": {
+     "var": "--lime",
+     "type": "color"
+    },
+    "mint": {
+     "var": "--mint-cream",
+     "type": "color"
+    }
+   },
+   "muted": {
+    "grey": {
+     "var": "--grey",
+     "type": "color"
+    },
+    "tech": {
+     "var": "--tech-gray",
+     "type": "color"
+    },
+    "tech-text": {
+     "var": "--tech-gray-text",
+     "type": "color"
+    },
+    "c150": {
+     "var": "--secondary-c150",
+     "type": "color"
+    },
+    "c300": {
+     "var": "--secondary-c300",
+     "type": "color"
+    },
+    "white-ca": {
+     "var": "--white-ca",
+     "type": "color"
+    }
+   }
+  },
+  "measured": {
+   "cta-fill": {
+    "value": "#1d1d1d",
+    "type": "color",
+    "source": "computed backgroundColor of nav-cta default (raw/components-computed.json)",
+    "description": "The black Start for Free pill."
+   },
+   "cta-text": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed color of nav-cta default (raw/components-computed.json)",
+    "description": "White label on the black pill."
+   },
+   "focus-ring": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of nav-link focus-visible (raw/components-computed.json)",
+    "description": "Keyboard focus ring on the Pricing link, if one paints."
+   },
+   "field-fill": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed backgroundColor of newsletter-field default (raw/components-computed.json)",
+    "description": "The blog email field fill."
+   },
+   "login-field": {
+    "value": "#222222",
+    "type": "color",
+    "source": "computed backgroundColor of login-email default (raw/components-computed.json)",
+    "description": "The login email field fill."
+   }
+  },
+  "font": {
+   "family": {
+    "display": {
+     "value": "\"Sharp Grotesk\", Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json); @font-face Sharp Grotesk in raw/css-vars.json",
+     "description": "Marketing display headings."
+    },
+    "ui": {
+     "value": "\"Instrument Sans\", Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-link and header (raw/components-computed.json); @font-face Instrument Sans in raw/css-vars.json",
+     "description": "Marketing UI and body."
+    },
+    "login": {
+     "value": "Inter, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of login-email default (raw/components-computed.json)",
+     "description": "The login wall uses Inter, not Instrument Sans."
+    }
+   }
+  },
+  "typography": {
+   "display": {
+    "$value": {
+     "fontFamily": "{font.family.display}",
+     "fontSize": "60px",
+     "lineHeight": "75px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of hero-title default (raw/components-computed.json); the 60px Sharp Grotesk hero"
+    }
+   },
+   "title": {
+    "$value": {
+     "fontFamily": "{font.family.display}",
+     "fontSize": "50px",
+     "lineHeight": "62.5px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of pricing-title default (raw/components-computed.json); the 50px pricing heading"
+    }
+   },
+   "ui": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "14px",
+     "lineHeight": "16px",
+     "fontWeight": 500,
+     "letterSpacing": "0.16px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of nav-cta default (raw/components-computed.json); the 14px pill label"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "16px",
+     "lineHeight": "24.8px",
+     "fontWeight": 400,
+     "letterSpacing": "0.16px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of header default (raw/components-computed.json); the 16px header/body size"
+    }
+   },
+   "caption": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "12px",
+     "lineHeight": "12px",
+     "fontWeight": 400,
+     "letterSpacing": "0.16px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of footer-link default (raw/components-computed.json); the 12px footer link"
+    }
+   },
+   "login": {
+    "$value": {
+     "fontFamily": "{font.family.login}",
+     "fontSize": "20px",
+     "lineHeight": "28px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of login-title default (raw/components-computed.json); the 20px login heading"
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "type": "dimension",
+    "value": "300px",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "the Start for Free pill (300px, fully round at 40px height)"
+   },
+   "field": {
+    "type": "dimension",
+    "value": "5px",
+    "source": "computed borderTopLeftRadius of newsletter-field default (raw/components-computed.json)",
+    "description": "the blog email field"
+   },
+   "login-field": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of login-email default (raw/components-computed.json)",
+    "description": "the login email field"
+   }
+  },
+  "layout": {
+   "header-height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "the desktop top bar"
+   },
+   "mobile-header-height": {
+    "type": "dimension",
+    "value": "60px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "the phone top bar"
+   },
+   "control-height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "the Start for Free pill"
+   },
+   "field-height": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of newsletter-field default (raw/components-computed.json)",
+    "description": "the blog email field"
+   },
+   "login-field-height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of login-email default (raw/components-computed.json)",
+    "description": "the login email field"
+   }
+  }
+ },
+ "light": {
+  "page": {
+   "value": "#ffffff",
+   "type": "color",
+   "source": "computed background of the homepage body, matching --white (raw/css-vars.json)",
+   "description": "Page paper."
+  },
+  "surface": {
+   "value": "#f7f7f7",
+   "type": "color",
+   "source": "computed backgroundColor of plan-card default (raw/components-computed.json)",
+   "description": "Pricing page field behind the plan cards."
+  },
+  "text": {
+   "var": "--brand-black",
+   "type": "color",
+   "description": "Primary ink on marketing pages, measured on the header and nav."
+  },
+  "muted": {
+   "var": "--secondary-c300",
+   "type": "color",
+   "description": "Muted grey from the :root palette."
+  },
+  "accent": {
+   "var": "--primary-purple",
+   "type": "color",
+   "description": "The purple CTA and link accent."
+  },
+  "border": {
+   "var": "--secondary-c150",
+   "type": "color",
+   "description": "Hairline grey from the :root palette."
+  },
+  "on-accent": {
+   "var": "--white",
+   "type": "color",
+   "description": "Text on the black nav CTA and the purple hero CTA."
+  },
+  "ink": {
+   "var": "--brand-black",
+   "type": "color",
+   "description": "The black Start for Free pill fill."
+  },
+  "footer-muted": {
+   "value": "#c7c7c7",
+   "type": "color",
+   "source": "computed color of footer-link default (raw/components-computed.json)",
+   "description": "Footer link ink on the dark footer."
+  },
+  "login-surface": {
+   "value": "#222222",
+   "type": "color",
+   "source": "computed backgroundColor of login-email default (raw/components-computed.json)",
+   "description": "Login field fill on the dark login panel. A panel, not a theme."
+  },
+  "login-text": {
+   "value": "#fafafa",
+   "type": "color",
+   "source": "computed color of login-title default (raw/components-computed.json)",
+   "description": "Text on the login panel."
+  },
+  "login-link": {
+   "var": "--primary-500",
+   "type": "color",
+   "description": "SSO and sign-up link colour on the login wall."
+  }
+ },
+ "dark": {},
+ "component": {
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The header Start for Free pill."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "300px",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "The pill radius."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of newsletter-field default (raw/components-computed.json)",
+    "description": "The newsletter field."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "5px",
+    "source": "computed borderTopLeftRadius of newsletter-field default (raw/components-computed.json)",
+    "description": "The newsletter field radius."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The desktop header."
+   }
+  },
+  "menu": {
+   "row": {
+    "type": "dimension",
+    "value": "46px",
+    "source": "computed height of m-nav-link default (raw/components-computed.json)",
+    "description": "A phone menu row."
+   }
+  }
+ }
+}

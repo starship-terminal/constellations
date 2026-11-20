@@ -1,0 +1,2035 @@
+{
+ "readAt": "2026-11-21",
+ "source": "the stylesheet bodies fetched during a live home load on riverside.com (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
+ "sheets": [
+  "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css (3099338 bytes)",
+  "https://fonts.googleapis.com/css (31885 bytes)",
+  "https://cdn.cookiehub.eu/c2/css/926fc84f.css (74709 bytes)",
+  "https://accounts.google.com/gsi/style (696 bytes)",
+  "inline-0 (62 bytes)",
+  "inline-1 (5104 bytes)",
+  "inline-2 (105 bytes)",
+  "inline-3 (9273 bytes)",
+  "inline-4 (3177 bytes)",
+  "inline-5 (3612 bytes)",
+  "inline-6 (3719 bytes)",
+  "inline-7 (508 bytes)",
+  "inline-8 (10276 bytes)",
+  "inline-9 (687 bytes)",
+  "inline-10 (609 bytes)",
+  "inline-11 (359 bytes)",
+  "inline-12 (8177 bytes)",
+  "inline-13 (99 bytes)",
+  "inline-14 (5405 bytes)",
+  "inline-15 (251 bytes)",
+  "inline-16 (110 bytes)",
+  "inline-17 (691 bytes)",
+  "inline-18 (1422 bytes)",
+  "inline-19 (284 bytes)",
+  "inline-20 (284 bytes)",
+  "inline-21 (284 bytes)",
+  "inline-22 (520 bytes)",
+  "inline-23 (315 bytes)",
+  "inline-24 (328 bytes)",
+  "inline-25 (183 bytes)",
+  "inline-26 (56 bytes)",
+  "inline-27 (60 bytes)",
+  "inline-28 (300 bytes)",
+  "inline-29 (2495 bytes)",
+  "inline-30 (877 bytes)",
+  "inline-31 (3224 bytes)"
+ ],
+ "counts": {
+  "rules": 62,
+  "fonts": 103,
+  "names": {
+   "theme": 0,
+   "app": 97,
+   "skins": 0,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[app] :where(.w-popover, .w-modal)": 1,
+   "[app] :root": 71,
+   "[app] .h2---56": 2,
+   "[app] .rs__heading": 2,
+   "[app] .rs__heading:where(.w-variant-d5a11a05-08ac-5f00-b6a3-02bd288d6f22)": 2,
+   "[app] .rs__heading:where(.w-variant-4ccf6764-dfb9-71c6-ff5d-d22806152e32)": 2,
+   "[app] .rs__heading:where(.w-variant-3ad36f46-1005-7b98-b4c4-75387e4f5093)": 2,
+   "[app] .rs__heading:where(.w-variant-04186dab-ac3c-3130-63b5-ebbfeebdd6ff)": 2,
+   "[app] .rs__heading:where(.w-variant-7ec2c48a-8640-130c-bcad-30f305058e1b)": 2,
+   "[app] .rs__heading:where(.w-variant-fe368f5a-18c6-15be-c1fa-a2b9d32d94ea)": 2,
+   "[app] .rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c49)": 2,
+   "[app] .rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4b)": 2,
+   "[app] .rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4c)": 2,
+   "[app] .rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4d)": 2,
+   "[app] .rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4e)": 2,
+   "[app] .rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4a)": 2,
+   "[app] .rs__heading:where(.w-variant-9050699e-b053-c991-8b53-ffdccff8caa4)": 2,
+   "[app] .rs__heading:where(.w-variant-3aeb246d-ce72-2071-b8d5-40d130c0c40a)": 2,
+   "[app] .rs__heading:where(.w-variant-eeafa72a-f7ec-6856-4f66-2bdd180bae04)": 2,
+   "[app] .rs__heading:where(.w-variant-1cb72c39-c2bb-6743-2ec2-30eef5525a9f)": 2,
+   "[app] .rs__heading:where(.w-variant-cc122cad-adcf-19ce-da42-01912f6b5cba)": 2,
+   "[app] .rs__heading:where(.w-variant-e8d54267-a62b-1e59-1c1d-bcfef15c76d0)": 2,
+   "[app] .rs__heading:where(.w-variant-1e433017-e001-edd8-ff6a-c732d54f64e2)": 2,
+   "[app] .rs__heading:where(.w-variant-98a03383-e41c-9d49-2a7e-eb2509e5984a)": 2,
+   "[app] .rs__heading:where(.w-variant-9a0b36ae-10ac-da12-b708-2e7030bb5a91)": 2,
+   "[app] .rs__heading:where(.w-variant-786e6664-ddac-cdd5-f2b3-74ef4f594e55)": 2,
+   "[app] .rs__heading:where(.w-variant-7f653176-8aaa-0834-813e-092d48fc3b44)": 2,
+   "[app] .rs__heading.h_18_16-2": 2,
+   "[app] .rs__heading.h_50_30-2, .rs__heading.h_50_30-3, .rs__heading.h_50_30-7": 2,
+   "[app] .rs__heading.h_40_30-2, .rs__heading.h_40_30-6": 2,
+   "[app] .rs__heading.h_50_30-11": 2,
+   "[app] .rs__heading.h2_30_24-2, .rs__heading.h2_30_24-5, .rs__heading.h2_30_24-8, .rs__heading.h2_30_24-11": 2,
+   "[app] .rs__heading.h_40_22-2, .rs__heading.h_40_22-6": 2,
+   "[app] .rs__heading.h_80_40-2": 2,
+   "[app] .rs__heading.h2_30_24-14": 2,
+   "[app] .rs__heading.h_40_30-10": 2,
+   "[app] .rs__heading.h2_30_24-18": 2,
+   "[app] .rs__heading.h_40_30-15": 2,
+   "[app] .rs__heading.h_24_20-2": 2,
+   "[app] .rs__heading.h_40_22-11": 2,
+   "[app] .rs__heading.h_50_30-15": 2,
+   "[app] .rs__heading.h1_50_30-3": 2,
+   "[app] .rs__heading.h_40_30-20": 2,
+   "[app] .rs__heading.h2_40_30-3": 2,
+   "[app] .rs__text": 2,
+   "[app] .rs__text:where(.w-variant-649f0f7c-dc04-86e8-fb7c-6c8f41f6cdfb)": 2,
+   "[app] .rs__text:where(.w-variant-0a610eb7-d896-a5ec-d879-02739e5c4c80), .rs__text.text_24_16-3": 2,
+   "[app] .rs__text.text_18_16-3": 2,
+   "[app] .rs__paragraph:where(.w-variant-9050699e-b053-c991-8b53-ffdccff8caa4), .rs__paragraph._18_16-3": 2,
+   "[app] .u-rich-text": 2,
+   "[app] .u-rich-text:where(.w-variant-562de4f1-2b61-f128-f8b6-c56ca61a0463)": 2,
+   "[app] .u-rich-text:where(.w-variant-94fd32f2-9312-ed06-c5a0-17e87609e7d3)": 2,
+   "[app] @media screen and (max-width: 479px) .rs__heading:where(.w-variant-98a03383-e41c-9d49-2a7e-eb2509e5984a), .rs__heading.h_80_40-2": 2,
+   "[app] [data-spacer-height]": 4,
+   "[app] [data-padding]": 4,
+   "[app] [data-padding-top]": 8,
+   "[app] [data-padding-bottom]": 8,
+   "[app] [data-text-settings]": 12,
+   "[app] #animated-button": 3
+  }
+ },
+ "errors": [],
+ "theme": [],
+ "app": [
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ":where(.w-popover, .w-modal)",
+   "context": [],
+   "properties": {
+    "--w-backdrop-animation": "initial"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--brand-black": "#1d1d1d",
+    "--black": "#151c22",
+    "--peacock": "#4745ce",
+    "--lavender": "#e4e1ff",
+    "--slate-blue": "#5042df",
+    "--white-smoke": "#f9fafc",
+    "--peacock-2": "#6357da",
+    "--dark": "#1d1d1d",
+    "--black-2": "black",
+    "--white": "white",
+    "--tech-gray-text": "#d2d2d2",
+    "--medium-slate-blue": "#6d75f4",
+    "--black-3": "#161c21",
+    "--white-smoke-3": "#f6f6f6",
+    "--alice-blue": "#f1f6ff",
+    "--ghost-white": "#f5f6fb",
+    "--white-smoke-2": "#f1f1f1",
+    "--primary-purple": "#9671ff",
+    "--grey": "#8e9095",
+    "--tech-gray": "#ababab",
+    "--black-02": "#111",
+    "--floral-white": "#f4f1e9",
+    "--mint-cream": "#edf9f0",
+    "--_site-settings---color": "white",
+    "--secondary--black-2": "#2c2c2c",
+    "--secondary-c150": "#dbdbdb",
+    "--secondary-purple": "#ad98fa",
+    "--secondary-c300": "#888",
+    "--light": "#f6f4f9",
+    "--slate-blue-2": "#0f97fa",
+    "--lime": "#dfff84",
+    "--white-ca": "#cacaca",
+    "--black-111": "white",
+    "--primary-500": "#b196ff",
+    "--_text-colors---color": "white",
+    "--_text-styles---font-size": "16px",
+    "--_typography---line-height--h_80_42": "clamp(48px,((48px - ((86px - 48px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((86px - 48px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),86px)",
+    "--_text-styles---line-height": "22px",
+    "--_typography---font-size--text_18_16": "clamp(16px,((16px - ((18px - 16px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((18px - 16px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),18px)",
+    "--_typography---line-height--text_18_16": "clamp(24px,((24px - ((26px - 24px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((26px - 24px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),26px)",
+    "--_typography---font-size--h_50_30": "clamp(30px,((30px - ((50px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((50px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),50px)",
+    "--_typography---line-height--h_50_30": "clamp(38px,((38px - ((58px - 38px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((58px - 38px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),58px)",
+    "--_typography---font-size--h_40_30": "clamp(30px,((30px - ((40px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((40px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),40px)",
+    "--_typography---line-height--h_40_30": "clamp(38px,((38px - ((48px - 38px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((48px - 38px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),48px)",
+    "--_typography---font-size--h_24_20": "clamp(20px,((20px - ((24px - 20px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((24px - 20px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),24px)",
+    "--_typography---line-height--h_24_20": "clamp(28px,((28px - ((30px - 28px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((30px - 28px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),30px)",
+    "--_typography---font-size--h_30_24": "clamp(24px,((24px - ((30px - 24px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((30px - 24px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),30px)",
+    "--_typography---line-height--h_30_24": "clamp(30px,((30px - ((38px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((38px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),38px)",
+    "--_typography---font-size--h_56_30": "clamp(30px,((30px - ((56px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((56px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),56px)",
+    "--_typography---font-size--h_80_42": "clamp(42px,((42px - ((80px - 42px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((80px - 42px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),80px)",
+    "--_site-settings---viewport-max": "1440px",
+    "--_typography---font-size--h_80_40": "clamp(40px,((40px - ((80px - 40px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((80px - 40px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),80px)",
+    "--_typography---font-size--h_58_30": "clamp(30px,((30px - ((58px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((58px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),58px)",
+    "--_typography---font-size--h_40_22": "clamp(22px,((22px - ((40px - 22px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((40px - 22px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),40px)",
+    "--_typography---font-size--h_40_27": "clamp(27px,((27px - ((40px - 27px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((40px - 27px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),40px)",
+    "--_typography---font-size--h_30_28": "clamp(28px,((28px - ((30px - 28px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((30px - 28px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),30px)",
+    "--_typography---font-size--h_24_18": "clamp(18px,((18px - ((24px - 18px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((24px - 18px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),24px)",
+    "--_typography---font-size--text_24_16": "clamp(16px,((16px - ((24px - 16px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((24px - 16px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),24px)",
+    "--_typography---line-height--h_80_40": "clamp(46px,((46px - ((86px - 46px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((86px - 46px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),86px)",
+    "--_typography---line-height--h_56_30": "clamp(38px,((38px - ((64px - 38px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((64px - 38px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),64px)",
+    "--_typography---line-height--h_58_30": "clamp(38px,((38px - ((67px - 38px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((67px - 38px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),67px)",
+    "--_typography---line-height--h_40_22": "clamp(30px,((30px - ((48px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((48px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),48px)",
+    "--_typography---line-height--h_40_27": "clamp(30px,((30px - ((48px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((48px - 30px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),48px)",
+    "--_typography---line-height--h_30_28": "clamp(35px,((35px - ((38px - 35px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((38px - 35px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),38px)",
+    "--_typography---line-height--h_24_18": "clamp(26px,((26px - ((30px - 26px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((30px - 26px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),30px)",
+    "--_typography---line-height--text_24_16": "clamp(24px,((24px - ((30px - 24px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min))*var(--_site-settings---viewport-min))) + ((30px - 24px)/(var(--_site-settings---viewport-max) - var(--_site-settings---viewport-min)))*100vw),30px)",
+    "--_typography---h2": "0px",
+    "--_site-settings---viewport-min": "375px",
+    "--_typography---size": "0px",
+    "--_typography---size-2": "0px",
+    "--royal-blue": "#2662d9"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".h2---56",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_56_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_56_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "16px",
+    "--_text-styles---line-height": "22px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-d5a11a05-08ac-5f00-b6a3-02bd288d6f22)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_80_42)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_80_42)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-4ccf6764-dfb9-71c6-ff5d-d22806152e32)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-3ad36f46-1005-7b98-b4c4-75387e4f5093)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_30_24)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_30_24)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-04186dab-ac3c-3130-63b5-ebbfeebdd6ff)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_22)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_22)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-7ec2c48a-8640-130c-bcad-30f305058e1b)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_27)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_27)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-fe368f5a-18c6-15be-c1fa-a2b9d32d94ea)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_56_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_56_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c49)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_80_42)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_80_42)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4b)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4c)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_30_24)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_30_24)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4d)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_22)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_22)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4e)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_27)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_27)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-41b2624d-d7be-ad2d-a793-d21de5c33c4a)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_56_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_56_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-9050699e-b053-c991-8b53-ffdccff8caa4)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_30_24)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_30_24)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-3aeb246d-ce72-2071-b8d5-40d130c0c40a)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_50_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_50_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-eeafa72a-f7ec-6856-4f66-2bdd180bae04)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_50_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_50_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-1cb72c39-c2bb-6743-2ec2-30eef5525a9f)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--text_18_16)",
+    "--_text-styles---line-height": "var(--_typography---line-height--text_18_16)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-cc122cad-adcf-19ce-da42-01912f6b5cba)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_24_18)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_24_18)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-e8d54267-a62b-1e59-1c1d-bcfef15c76d0)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_24_20)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_24_20)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-1e433017-e001-edd8-ff6a-c732d54f64e2)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "24px",
+    "--_text-styles---line-height": "30px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-98a03383-e41c-9d49-2a7e-eb2509e5984a)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_80_42)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_80_42)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-9a0b36ae-10ac-da12-b708-2e7030bb5a91)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_24_18)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_24_18)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-786e6664-ddac-cdd5-f2b3-74ef4f594e55)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_58_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_58_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-7f653176-8aaa-0834-813e-092d48fc3b44)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_30_28)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_30_28)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_18_16-2",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--text_18_16)",
+    "--_text-styles---line-height": "var(--_typography---line-height--text_18_16)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_50_30-2, .rs__heading.h_50_30-3, .rs__heading.h_50_30-7",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_50_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_50_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_40_30-2, .rs__heading.h_40_30-6",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_50_30-11",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_50_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_50_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h2_30_24-2, .rs__heading.h2_30_24-5, .rs__heading.h2_30_24-8, .rs__heading.h2_30_24-11",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_30_24)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_30_24)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_40_22-2, .rs__heading.h_40_22-6",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_22)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_22)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_80_40-2",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_80_42)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_80_42)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h2_30_24-14",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_30_24)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_30_24)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_40_30-10",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h2_30_24-18",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_30_24)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_30_24)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_40_30-15",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_24_20-2",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_24_20)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_24_20)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_40_22-11",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_22)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_22)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_50_30-15",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_50_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_50_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h1_50_30-3",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_50_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_50_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h_40_30-20",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading.h2_40_30-3",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_40_30)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_40_30)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__text",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "16px",
+    "--_text-styles---line-height": "22px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__text:where(.w-variant-649f0f7c-dc04-86e8-fb7c-6c8f41f6cdfb)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--text_18_16)",
+    "--_text-styles---line-height": "var(--_typography---line-height--text_18_16)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__text:where(.w-variant-0a610eb7-d896-a5ec-d879-02739e5c4c80), .rs__text.text_24_16-3",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--text_24_16)",
+    "--_text-styles---line-height": "var(--_typography---line-height--text_24_16)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__text.text_18_16-3",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--text_18_16)",
+    "--_text-styles---line-height": "var(--_typography---line-height--text_18_16)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__paragraph:where(.w-variant-9050699e-b053-c991-8b53-ffdccff8caa4), .rs__paragraph._18_16-3",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--text_18_16)",
+    "--_text-styles---line-height": "var(--_typography---line-height--text_18_16)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".u-rich-text",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "16px",
+    "--_text-styles---line-height": "22px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".u-rich-text:where(.w-variant-562de4f1-2b61-f128-f8b6-c56ca61a0463)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_24_20)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_24_20)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".u-rich-text:where(.w-variant-94fd32f2-9312-ed06-c5a0-17e87609e7d3)",
+   "context": [],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--text_18_16)",
+    "--_text-styles---line-height": "var(--_typography---line-height--text_18_16)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "selector": ".rs__heading:where(.w-variant-98a03383-e41c-9d49-2a7e-eb2509e5984a), .rs__heading.h_80_40-2",
+   "context": [
+    "@media screen and (max-width: 479px)"
+   ],
+   "properties": {
+    "--_text-styles---font-size": "var(--_typography---font-size--h_80_40)",
+    "--_text-styles---line-height": "var(--_typography---line-height--h_80_40)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-14",
+   "selector": "[data-spacer-height]",
+   "context": [],
+   "properties": {
+    "--spacer-height": "0",
+    "--spacer-height-m": "var(--spacer-height)",
+    "--spacer-height-sm": "var(--spacer-height-m)",
+    "--spacer-height-xs": "var(--spacer-height-sm)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-14",
+   "selector": "[data-padding]",
+   "context": [],
+   "properties": {
+    "--padding": "24px",
+    "--padding-m": "var(--padding)",
+    "--padding-sm": "var(--padding-m)",
+    "--padding-xs": "var(--padding-sm)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-14",
+   "selector": "[data-padding-top]",
+   "context": [],
+   "properties": {
+    "--padding-top": "0",
+    "--padding-top-m": "var(--padding-top)",
+    "--padding-top-sm": "var(--padding-top-m)",
+    "--padding-top-xs": "var(--padding-top-sm)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-14",
+   "selector": "[data-padding-bottom]",
+   "context": [],
+   "properties": {
+    "--padding-bottom": "0",
+    "--padding-bottom-m": "var(--padding-bottom)",
+    "--padding-bottom-sm": "var(--padding-bottom-m)",
+    "--padding-bottom-xs": "var(--padding-bottom-sm)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-14",
+   "selector": "[data-text-settings]",
+   "context": [],
+   "properties": {
+    "--text-color": "#fff",
+    "--text-color-m": "var(--text-color)",
+    "--text-color-sm": "var(--text-color-m)",
+    "--max-width": "none",
+    "--max-width-m": "var(--max-width)",
+    "--max-width-sm": "var(--max-width-m)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-18",
+   "selector": "[data-padding-top]",
+   "context": [],
+   "properties": {
+    "--padding-top": "0",
+    "--padding-top-m": "var(--padding-top)",
+    "--padding-top-sm": "var(--padding-top-m)",
+    "--padding-top-xs": "var(--padding-top-sm)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-18",
+   "selector": "[data-padding-bottom]",
+   "context": [],
+   "properties": {
+    "--padding-bottom": "0",
+    "--padding-bottom-m": "var(--padding-bottom)",
+    "--padding-bottom-sm": "var(--padding-bottom-m)",
+    "--padding-bottom-xs": "var(--padding-bottom-sm)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-18",
+   "selector": "[data-text-settings]",
+   "context": [],
+   "properties": {
+    "--text-color": "#fff",
+    "--text-color-m": "var(--text-color)",
+    "--text-color-sm": "var(--text-color-m)",
+    "--max-width": "none",
+    "--max-width-m": "var(--max-width)",
+    "--max-width-sm": "var(--max-width-m)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-31",
+   "selector": "#animated-button",
+   "context": [],
+   "properties": {
+    "--ab-color": "#9671FF",
+    "--ab-width": "210px",
+    "--ab-height": "52px"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "webflow-icons",
+   "src": "url(\"data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaGVhCXYFgQAABNQAAAAkaG10eCe4A1oAAAT4AAAAMGxvY2EDtALGAAAFKAAAABptYXhwABAAPgAABUQAAAAgbmFtZSoCsMsAAAVkAAABznBvc3QAAwAAAAAHNAAAACAAAwP4AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAQAAAAAwACAACAAQAAQAg5gPpA//9//8AAAAAACDmAOkA//3//wAB/+MaBBcIAAMAAQAAAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEBIAAAAyADgAAFAAAJAQcJARcDIP5AQAGA/oBAAcABwED+gP6AQAABAOAAAALgA4AABQAAEwEXCQEH4AHAQP6AAYBAAcABwED+gP6AQAAAAwDAAOADQALAAA8AHwAvAAABISIGHQEUFjMhMjY9ATQmByEiBh0BFBYzITI2PQE0JgchIgYdARQWMyEyNj0BNCYDIP3ADRMTDQJADRMTDf3ADRMTDQJADRMTDf3ADRMTDQJADRMTAsATDSANExMNIA0TwBMNIA0TEw0gDRPAEw0gDRMTDSANEwAAAAABAJ0AtAOBApUABQAACQIHCQEDJP7r/upcAXEBcgKU/usBFVz+fAGEAAAAAAL//f+9BAMDwwAEAAkAABcBJwEXAwE3AQdpA5ps/GZsbAOabPxmbEMDmmz8ZmwDmvxmbAOabAAAAgAA/8AEAAPAAB0AOwAABSInLgEnJjU0Nz4BNzYzMTIXHgEXFhUUBw4BBwYjNTI3PgE3NjU0Jy4BJyYjMSIHDgEHBhUUFx4BFxYzAgBqXV6LKCgoKIteXWpqXV6LKCgoKIteXWpVSktvICEhIG9LSlVVSktvICEhIG9LSlVAKCiLXl1qal1eiygoKCiLXl1qal1eiygoZiEgb0tKVVVKS28gISEgb0tKVVVKS28gIQABAAABwAIAA8AAEgAAEzQ3PgE3NjMxFSIHDgEHBhUxIwAoKIteXWpVSktvICFmAcBqXV6LKChmISBvS0pVAAAAAgAA/8AFtgPAADIAOgAAARYXHgEXFhUUBw4BBwYHIxUhIicuAScmNTQ3PgE3NjMxOAExNDc+ATc2MzIXHgEXFhcVATMJATMVMzUEjD83NlAXFxYXTjU1PQL8kz01Nk8XFxcXTzY1PSIjd1BQWlJJSXInJw3+mdv+2/7c25MCUQYcHFg5OUA/ODlXHBwIAhcXTzY1PTw1Nk8XF1tQUHcjIhwcYUNDTgL+3QFt/pOTkwABAAAAAQAAmM7nP18PPPUACwQAAAAAANciZKUAAAAA1yJkpf/9/70FtgPDAAAACAACAAAAAAAAAAEAAAPA/8AAAAW3//3//QW2AAEAAAAAAAAAAAAAAAAAAAAMBAAAAAAAAAAAAAAAAgAAAAQAASAEAADgBAAAwAQAAJ0EAP/9BAAAAAQAAAAFtwAAAAAAAAAKABQAHgAyAEYAjACiAL4BFgE2AY4AAAABAAAADAA8AAMAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADQAAAAEAAAAAAAIABwCWAAEAAAAAAAMADQBIAAEAAAAAAAQADQCrAAEAAAAAAAUACwAnAAEAAAAAAAYADQBvAAEAAAAAAAoAGgDSAAMAAQQJAAEAGgANAAMAAQQJAAIADgCdAAMAAQQJAAMAGgBVAAMAAQQJAAQAGgC4AAMAAQQJAAUAFgAyAAMAAQQJAAYAGgB8AAMAAQQJAAoANADsd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\") format(\"truetype\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "Inter-custom-woff2",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e9d_inter-custom-woff2-100.woff2\") format(\"woff2\")",
+   "font-weight": "900",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "Inter-custom-woff2",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e9d_inter-custom-woff2-100.woff2\") format(\"woff2\")",
+   "font-weight": "800",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "Inter-custom-woff2",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e9d_inter-custom-woff2-100.woff2\") format(\"woff2\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "Inter-custom-woff2",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e9d_inter-custom-woff2-100.woff2\") format(\"woff2\")",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "Inter-custom-woff2",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e9d_inter-custom-woff2-100.woff2\") format(\"woff2\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "Inter-custom-woff2",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e9d_inter-custom-woff2-100.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "Inter-custom-woff2",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e9d_inter-custom-woff2-100.woff2\") format(\"woff2\")",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "Inter-custom-woff2",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e9d_inter-custom-woff2-100.woff2\") format(\"woff2\")",
+   "font-weight": "200",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "Inter-custom-woff2",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e9d_inter-custom-woff2-100.woff2\") format(\"woff2\")",
+   "font-weight": "100",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "\"Instrument Sans\"",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/698c86d1e8e32548bbc5ac05_instrument-sans-v4-latin-ext-400.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "\"Instrument Sans\"",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/698c86f1ced5c0d7fe57bfbf_instrument-sans-v4-latin-ext-500.woff2\") format(\"woff2\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "\"Instrument Sans\"",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/698c8703fa748a37bb0c9b14_instrument-sans-v4-latin-ext-600.woff2\") format(\"woff2\")",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "\"Sharp Grotesk\"",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/698c8716e0386c8d45868029_sharp-grotesk-book-400.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "FA-Brands",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065355_Font-Awesome-5-Brands-Regular-400.otf\") format(\"opentype\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "FA-Solid",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065379_Font-Awesome-5-Free-Solid-900.otf\") format(\"opentype\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/css/riversidefm-design-com-domain-staging.shared.541799af3.min.css",
+   "font-family": "FA-Regular",
+   "src": "url(\"https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065350_Font-Awesome-5-Free-Regular-400.otf\") format(\"opentype\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"Alfa Slab One\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/alfaslabone/v21/6NUQ8FmMKwSEKjnm5-4v-4Jh2d1he_escmAm9w.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"Alfa Slab One\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/alfaslabone/v21/6NUQ8FmMKwSEKjnm5-4v-4Jh2dxhe_escmAm9w.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"Alfa Slab One\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/alfaslabone/v21/6NUQ8FmMKwSEKjnm5-4v-4Jh2dJhe_escmA.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbSB4ZhRNU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "\"IBM Plex Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "src": "url(\"https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Shrikhand",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/shrikhand/v17/a8IbNovtLWfR7T7bMJwrGIKR8Ttcte1q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Shrikhand",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/shrikhand/v17/a8IbNovtLWfR7T7bMJwrDYKR8Ttcte1q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Shrikhand",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/shrikhand/v17/a8IbNovtLWfR7T7bMJwrA4KR8TtctQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--alice-blue": {
+    "raw": "#f1f6ff",
+    "kind": "color",
+    "value": "#f1f6ff"
+   },
+   "--black": {
+    "raw": "#151c22",
+    "kind": "color",
+    "value": "#151c22"
+   },
+   "--black-02": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--black-111": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--black-2": {
+    "raw": "black",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--black-3": {
+    "raw": "#161c21",
+    "kind": "color",
+    "value": "#161c21"
+   },
+   "--brand-black": {
+    "raw": "#1d1d1d",
+    "kind": "color",
+    "value": "#1d1d1d"
+   },
+   "--dark": {
+    "raw": "#1d1d1d",
+    "kind": "color",
+    "value": "#1d1d1d"
+   },
+   "--floral-white": {
+    "raw": "#f4f1e9",
+    "kind": "color",
+    "value": "#f4f1e9"
+   },
+   "--ghost-white": {
+    "raw": "#f5f6fb",
+    "kind": "color",
+    "value": "#f5f6fb"
+   },
+   "--grey": {
+    "raw": "#8e9095",
+    "kind": "color",
+    "value": "#8e9095"
+   },
+   "--lavender": {
+    "raw": "#e4e1ff",
+    "kind": "color",
+    "value": "#e4e1ff"
+   },
+   "--light": {
+    "raw": "#f6f4f9",
+    "kind": "color",
+    "value": "#f6f4f9"
+   },
+   "--lime": {
+    "raw": "#dfff84",
+    "kind": "color",
+    "value": "#dfff84"
+   },
+   "--medium-slate-blue": {
+    "raw": "#6d75f4",
+    "kind": "color",
+    "value": "#6d75f4"
+   },
+   "--mint-cream": {
+    "raw": "#edf9f0",
+    "kind": "color",
+    "value": "#edf9f0"
+   },
+   "--peacock": {
+    "raw": "#4745ce",
+    "kind": "color",
+    "value": "#4745ce"
+   },
+   "--peacock-2": {
+    "raw": "#6357da",
+    "kind": "color",
+    "value": "#6357da"
+   },
+   "--primary-500": {
+    "raw": "#b196ff",
+    "kind": "color",
+    "value": "#b196ff"
+   },
+   "--primary-purple": {
+    "raw": "#9671ff",
+    "kind": "color",
+    "value": "#9671ff"
+   },
+   "--royal-blue": {
+    "raw": "#2662d9",
+    "kind": "color",
+    "value": "#2662d9"
+   },
+   "--secondary--black-2": {
+    "raw": "#2c2c2c",
+    "kind": "color",
+    "value": "#2c2c2c"
+   },
+   "--secondary-c150": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--secondary-c300": {
+    "raw": "#888",
+    "kind": "color",
+    "value": "#888888"
+   },
+   "--secondary-purple": {
+    "raw": "#ad98fa",
+    "kind": "color",
+    "value": "#ad98fa"
+   },
+   "--slate-blue": {
+    "raw": "#5042df",
+    "kind": "color",
+    "value": "#5042df"
+   },
+   "--slate-blue-2": {
+    "raw": "#0f97fa",
+    "kind": "color",
+    "value": "#0f97fa"
+   },
+   "--tech-gray": {
+    "raw": "#ababab",
+    "kind": "color",
+    "value": "#ababab"
+   },
+   "--tech-gray-text": {
+    "raw": "#d2d2d2",
+    "kind": "color",
+    "value": "#d2d2d2"
+   },
+   "--white": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--white-ca": {
+    "raw": "#cacaca",
+    "kind": "color",
+    "value": "#cacaca"
+   },
+   "--white-smoke": {
+    "raw": "#f9fafc",
+    "kind": "color",
+    "value": "#f9fafc"
+   },
+   "--white-smoke-2": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "#f1f1f1"
+   },
+   "--white-smoke-3": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   }
+  },
+  "light": {
+   "--alice-blue": {
+    "raw": "#f1f6ff",
+    "kind": "color",
+    "value": "#f1f6ff"
+   },
+   "--black": {
+    "raw": "#151c22",
+    "kind": "color",
+    "value": "#151c22"
+   },
+   "--black-02": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--black-111": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--black-2": {
+    "raw": "black",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--black-3": {
+    "raw": "#161c21",
+    "kind": "color",
+    "value": "#161c21"
+   },
+   "--brand-black": {
+    "raw": "#1d1d1d",
+    "kind": "color",
+    "value": "#1d1d1d"
+   },
+   "--dark": {
+    "raw": "#1d1d1d",
+    "kind": "color",
+    "value": "#1d1d1d"
+   },
+   "--floral-white": {
+    "raw": "#f4f1e9",
+    "kind": "color",
+    "value": "#f4f1e9"
+   },
+   "--ghost-white": {
+    "raw": "#f5f6fb",
+    "kind": "color",
+    "value": "#f5f6fb"
+   },
+   "--grey": {
+    "raw": "#8e9095",
+    "kind": "color",
+    "value": "#8e9095"
+   },
+   "--lavender": {
+    "raw": "#e4e1ff",
+    "kind": "color",
+    "value": "#e4e1ff"
+   },
+   "--light": {
+    "raw": "#f6f4f9",
+    "kind": "color",
+    "value": "#f6f4f9"
+   },
+   "--lime": {
+    "raw": "#dfff84",
+    "kind": "color",
+    "value": "#dfff84"
+   },
+   "--medium-slate-blue": {
+    "raw": "#6d75f4",
+    "kind": "color",
+    "value": "#6d75f4"
+   },
+   "--mint-cream": {
+    "raw": "#edf9f0",
+    "kind": "color",
+    "value": "#edf9f0"
+   },
+   "--peacock": {
+    "raw": "#4745ce",
+    "kind": "color",
+    "value": "#4745ce"
+   },
+   "--peacock-2": {
+    "raw": "#6357da",
+    "kind": "color",
+    "value": "#6357da"
+   },
+   "--primary-500": {
+    "raw": "#b196ff",
+    "kind": "color",
+    "value": "#b196ff"
+   },
+   "--primary-purple": {
+    "raw": "#9671ff",
+    "kind": "color",
+    "value": "#9671ff"
+   },
+   "--royal-blue": {
+    "raw": "#2662d9",
+    "kind": "color",
+    "value": "#2662d9"
+   },
+   "--secondary--black-2": {
+    "raw": "#2c2c2c",
+    "kind": "color",
+    "value": "#2c2c2c"
+   },
+   "--secondary-c150": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--secondary-c300": {
+    "raw": "#888",
+    "kind": "color",
+    "value": "#888888"
+   },
+   "--secondary-purple": {
+    "raw": "#ad98fa",
+    "kind": "color",
+    "value": "#ad98fa"
+   },
+   "--slate-blue": {
+    "raw": "#5042df",
+    "kind": "color",
+    "value": "#5042df"
+   },
+   "--slate-blue-2": {
+    "raw": "#0f97fa",
+    "kind": "color",
+    "value": "#0f97fa"
+   },
+   "--tech-gray": {
+    "raw": "#ababab",
+    "kind": "color",
+    "value": "#ababab"
+   },
+   "--tech-gray-text": {
+    "raw": "#d2d2d2",
+    "kind": "color",
+    "value": "#d2d2d2"
+   },
+   "--white": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--white-ca": {
+    "raw": "#cacaca",
+    "kind": "color",
+    "value": "#cacaca"
+   },
+   "--white-smoke": {
+    "raw": "#f9fafc",
+    "kind": "color",
+    "value": "#f9fafc"
+   },
+   "--white-smoke-2": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "#f1f1f1"
+   },
+   "--white-smoke-3": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   }
+  }
+ }
+}
