@@ -4,21 +4,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, launch, open, styleOf, crop, centre, RAW, hideConsent } from './lib.mjs';
+import { startRun, touch, readOk, readFailed } from './dates.mjs';
 
 fs.mkdirSync(RAW, { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
 // Start from the committed readings and replace only what this run reads, so a page that fails
 // part way keeps the earlier readings of every later component instead of dropping them.
 const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
-// _meta.captured keeps the earlier date until a component is read again, and each component
-// carries its own read date, so a partial run never makes retained readings look fresh.
+// Dates follow dates.mjs: _meta.read and each component's `read` move only when a state is
+// actually read, kept readings take the earlier date, and _meta.lastAttempt records this run.
 const today = new Date().toLocaleDateString('en-CA');
-const out = {
-  _meta: { ...(prev._meta || {}), product: 'Make', route: 'public-web', theme: 'light' },
-  components: prev.components || {},
-};
-if (!out._meta.captured) out._meta.captured = today;
+const out = startRun(prev, today);
+Object.assign(out._meta, { product: 'Make', route: 'public-web', theme: 'light' });
 const done = new Set();
+const earlier = new Map();   // key -> the states the committed file held, for a failed reread
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 let page, context, browser, cdp, current;
@@ -68,25 +67,26 @@ async function forcePseudo(loc, classes) {
 }
 
 async function record(key, state, loc, meta, via) {
-  // A component this run reaches is rewritten from scratch; one it never reaches keeps its reading.
-  if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current, read: today }; done.add(key); out._meta.captured = today; }
+  // A component this run reaches is rewritten from its new readings; one it never reaches keeps its
+  // reading and date. Dates move only on a successful read (dates.mjs).
+  if (!done.has(key)) { touch(out, earlier, key, { ...meta, url: current }); done.add(key); }
   const c = out.components[key];
   try {
     await centre(loc);
     const s = await styleOf(loc);
     let file;
     try { file = await crop(page, loc, `${key}-${state}`); } catch (e) { s.cropError = String(e.message).slice(0, 140); }
-    c.states[state] = { ...s, crop: file, via };
+    readOk(out, c, state, { ...s, crop: file, via }, today);
     log(' ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h), s.style && s.style.backgroundColor, s.style && s.style.color, s.style && s.style.fontSize);
   } catch (e) {
-    c.states[state] = { error: String(e.message).slice(0, 180), via };
+    readFailed(c, earlier.get(key), state, { error: String(e.message).slice(0, 180), via }, today);
     log(' !', key, state, String(e.message).slice(0, 120));
   }
 }
 
 async function states(key, loc, list, meta) {
   const target = loc.filter({ visible: true }).first();
-  if (!(await target.count())) { log(' ! missing', key); out.components[key] = { missing: true, ...meta, url: current, read: today, states: {} }; done.add(key); out._meta.captured = today; return; }
+  if (!(await target.count())) { log(' ! missing', key); out.components[key] = { missing: true, ...meta, url: current, read: today, states: {} }; done.add(key); return; }  // absence seen today; no state read, so _meta.read stays
   for (const st of list) {
     await reset();
     let undo, via = 'at rest';
@@ -96,8 +96,8 @@ async function states(key, loc, list, meta) {
       if (via === 'focus failed') {
         // Keyboard focus never reached the element, so a reading now would be the element at rest
         // saved as its focus. Record the miss instead, as the kit does.
-        if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current, read: today }; done.add(key); out._meta.captured = today; }
-        out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via };
+        if (!done.has(key)) { touch(out, earlier, key, { ...meta, url: current }); done.add(key); }
+        readFailed(out.components[key], earlier.get(key), st, { skipped: 'focus failed: keyboard focus did not reach the element', via }, today);
         log('  -', key, st, 'skipped: focus failed');
         continue;
       }
