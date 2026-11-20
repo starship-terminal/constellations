@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """The Meiro token builder is deterministic and keeps the measured palette."""
 import json
-import subprocess
-import sys
 import unittest
 from pathlib import Path
 
@@ -12,9 +10,24 @@ TOKENS = ROOT / "tokens.json"
 
 class BuildTokensTest(unittest.TestCase):
     def test_rebuild_changes_nothing(self):
-        before = TOKENS.read_bytes()
-        subprocess.check_call([sys.executable, str(ROOT / "tools" / "build_tokens.py")], cwd=ROOT)
-        self.assertEqual(TOKENS.read_bytes(), before)
+        # Builds in memory (the builder writes only as a script), so a mismatch never rewrites tokens.json.
+        import build_tokens
+        self.assertEqual(json.loads(TOKENS.read_text()), json.loads(json.dumps(build_tokens.doc, ensure_ascii=False)))
+
+    def test_check_refuses_a_dead_alias(self):
+        import copy
+        import build_tokens
+        doc = copy.deepcopy(build_tokens.doc)
+        doc["dark"]["page"]["$value"] = "{color.nothing}"
+        with self.assertRaises(SystemExit):
+            build_tokens.check(doc)
+
+    def test_hand_entered_values_are_not_labelled_measured(self):
+        tokens = json.loads(TOKENS.read_text())
+        self.assertEqual(tokens["core"]["spacing"]["1"]["$extensions"]["evidence"], "Reconstruction")
+        self.assertEqual(tokens["core"]["typography"]["display-mobile"]["$extensions"]["evidence"], "Reconstruction")
+        self.assertEqual(tokens["core"]["size"]["content"]["$extensions"]["evidence"], "Derived")
+        self.assertEqual(tokens["dark"]["focus"]["$extensions"]["evidence"], "Observed")
 
     def test_palette_matches_the_framer_declaration(self):
         tokens = json.loads(TOKENS.read_text())

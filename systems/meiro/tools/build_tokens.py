@@ -13,6 +13,7 @@ Deterministic: same inputs, same bytes. Run from anywhere.
 """
 import json
 import pathlib
+import re
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -24,33 +25,36 @@ import motion  # noqa: E402
 SRC = "Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"
 
 
-def color(value, source):
-    return {"$value": value, "$type": "color", "$extensions": {"source": source, "evidence": "Measured"}}
+def color(value, source, evidence="Measured"):
+    return {"$value": value, "$type": "color", "$extensions": {"source": source, "evidence": evidence}}
 
 
-def dim(value, source):
-    return {"$value": value, "$type": "dimension", "$extensions": {"source": source, "evidence": "Measured"}}
+def dim(value, source, evidence="Measured"):
+    return {"$value": value, "$type": "dimension", "$extensions": {"source": source, "evidence": evidence}}
 
 
-def font(value, source):
-    return {"$value": value, "$type": "fontFamily", "$extensions": {"source": source, "evidence": "Measured"}}
+def font(value, source, evidence="Measured"):
+    return {"$value": value, "$type": "fontFamily", "$extensions": {"source": source, "evidence": evidence}}
 
 
-def num(value, source, typ="number"):
-    return {"$value": value, "$type": typ, "$extensions": {"source": source, "evidence": "Measured"}}
+def num(value, source, typ="number", evidence="Measured"):
+    return {"$value": value, "$type": typ, "$extensions": {"source": source, "evidence": evidence}}
 
 
-def typography(family, size, line, weight, source):
+def typography(family, size, line, weight, source, evidence="Measured"):
     return {
         "$value": {
             "fontFamily": family,
             "fontSize": size,
-            "fontWeight": weight,
+            "fontWeight": int(weight),  # DTCG fontWeight is a number, not the string getComputedStyle returns
             "lineHeight": line,
         },
         "$type": "typography",
-        "$extensions": {"source": source, "evidence": "Measured"},
+        "$extensions": {"source": source, "evidence": evidence},
     }
+
+
+HAND = "Entered by hand at capture time; no file in raw/ holds this reading. "
 
 
 # Framer body tokens, declared in the marketing stylesheet (raw/framer-tokens.css).
@@ -111,7 +115,9 @@ core = {
     },
     "typography": {
         "display": typography("{font.family.display}", "50px", "70px", "400", "h1 on meiro.cc at 1440"),
-        "display-mobile": typography("{font.family.display}", "34px", "44.2px", "400", "h1 on meiro.cc at 390"),
+        "display-mobile": typography("{font.family.display}", "34px", "44.2px", "400",
+                                     HAND + "h1 on meiro.cc at 390: raw/ holds the 34px size but no 390-wide line height; 44.2px is 34px x 1.3",
+                                     evidence="Reconstruction"),
         "title": typography("{font.family.display}", "32px", "44.8px", "400", "h3 section titles on meiro.cc"),
         "eyebrow": typography("{font.family.medium}", "18px", "23.4px", "400", "lime eyebrow on meiro.cc/pricing"),
         "body": typography("{font.family.regular}", "20px", "30px", "400", "hero paragraph on meiro.cc"),
@@ -135,7 +141,8 @@ core = {
         "widget": dim("48px", "Gleap launcher circle"),
     },
     "spacing": {
-        "1": dim("4px", "Derived from the 4px rhythm of measured paddings (5px nav inset rounds to the same step)"),
+        "1": dim("4px", HAND + "A 4px step chosen for the rhythm of the measured paddings (the 5px nav inset rounds to it)",
+                 evidence="Reconstruction"),
         "2": dim("8px", "gap between trial notes"),
         "3": dim("12px", "input horizontal padding on the app field"),
         "4": dim("16px", "primary button vertical padding on meiro.cc"),
@@ -151,7 +158,8 @@ core = {
         "button-hero": dim("56px", "hero Get started button height on meiro.cc"),
         "app-control": dim("50px", "email button and input height on app.meiro.cc/login"),
         "app-card": dim("520px", "sign-in card width on app.meiro.cc/login at 1440"),
-        "content": dim("1080px", "plan row width: three 332px cards plus gaps, measured on meiro.cc/pricing"),
+        "content": dim("1080px", "plan row width worked out from three measured 332px plan cards plus their gaps on meiro.cc/pricing (raw/states.json); the row itself was not read",
+                       evidence="Derived"),
     },
     "border": {
         "field": dim("1px", "email input border width on app.meiro.cc/forgot-password"),
@@ -173,7 +181,8 @@ dark = {
     "accent-text": color("{color.lime}", "Save $84 and legal-page links on meiro.cc"),
     "border": color("{color.line}", "email field border rgb(59, 62, 62) on app.meiro.cc/forgot-password"),
     "danger": color("{color.danger}", "declared --token danger #ff7c7c; not painted on a captured control"),
-    "focus": color("#005fcc", "forced focus-visible outline on the marketing Get started link, rgb(0, 95, 204)"),
+    "focus": color("#005fcc", "Chromium's default focus ring, not a Meiro colour: the forced focus-visible outline on the marketing Get started link reads rgb(0, 95, 204), the browser's -webkit-focus-ring-color. Meiro styles no ring of its own",
+                   evidence="Observed"),
     "widget": color("{color.widget}", "Gleap launcher"),
     "component": {
         "button-primary": {
@@ -215,7 +224,7 @@ doc = {
         {
             "id": "dark",
             "name": "Dark",
-            "selectedTokenSets": {"core": "enabled", "dark": "enabled"},
+            "selectedTokenSets": {"core": "source", "dark": "enabled"},
             "$extensions": {
                 "source": "Both meiro.cc and app.meiro.cc paint one dark theme. No light theme was declared or switched."
             },
@@ -230,7 +239,46 @@ if (RAW / "motion.json").exists():
     if not_tokenised:
         core.setdefault("$extensions", {})["notTokenised"] = not_tokenised
 
-out = ROOT / "tokens.json"
-text = json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
-out.write_text(text)
-print(f"wrote {out} ({out.stat().st_size} bytes)")
+def leaves(node, path=""):
+    for k, v in node.items():
+        if k.startswith("$") or not isinstance(v, dict):
+            continue
+        here = f"{path}.{k}" if path else k
+        if "$value" in v:
+            yield here, v
+        else:
+            yield from leaves(v, here)
+
+
+def check(doc):
+    """The kit's guards: every alias resolves (dark first, then core), every leaf has a source
+    and an evidence label, and dimensions and colours have DTCG shapes. Raises before writing."""
+    core_names = {p for p, _ in leaves(doc["core"])}
+    for setname in ("core", "dark"):
+        local = {p for p, _ in leaves(doc[setname])}
+        for path, tok in leaves(doc[setname]):
+            ext = tok.get("$extensions", {})
+            src = ext.get("source")
+            evidence = ext.get("evidence") or (src.get("evidence") if isinstance(src, dict) else None)
+            if not src or not evidence:
+                raise SystemExit(f"{setname}.{path}: no source or evidence")
+            values = tok["$value"].values() if isinstance(tok["$value"], dict) else [tok["$value"]]
+            for v in values:
+                for ref in re.findall(r"\{([^{}]+)\}", str(v)):
+                    if ref not in local and ref not in core_names:
+                        raise SystemExit(f"{setname}.{path}: alias {{{ref}}} resolves to nothing")
+            v = tok["$value"]
+            if isinstance(v, str) and not v.startswith("{"):
+                if tok["$type"] == "dimension" and not re.fullmatch(r"-?\d*\.?\d+(px|rem)", v):
+                    raise SystemExit(f"{setname}.{path}: dimension {v!r}")
+                if tok["$type"] == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?|rgba?\([^)]*\)", v):
+                    raise SystemExit(f"{setname}.{path}: colour {v!r}")
+
+
+check(doc)
+
+if __name__ == "__main__":
+    out = ROOT / "tokens.json"
+    text = json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
+    out.write_text(text)
+    print(f"wrote {out} ({out.stat().st_size} bytes)")
