@@ -17,6 +17,7 @@ import catalog  # noqa: E402
 
 SIGNED_IN = HERE / "kit" / "capture" / "signed-in"
 NODE = shutil.which("node")
+PW = os.environ.get("PLAYWRIGHT") or str(Path.home() / ".design-systems/pw/node_modules/playwright/index.mjs")
 
 
 def load(path, name):
@@ -455,8 +456,38 @@ class JavaScriptHalves(unittest.TestCase):
         # vars.mjs records declared and resolved values and selectors; noUrl only sees url(), so a bare,
         # scheme-relative or relative URL with a query kept it until the whole output went through scrubQueries.
         src = (HERE / "kit/capture/vars.mjs").read_text()
-        self.assertIn("JSON.stringify(scrubQueries(out), null, 1)", src)
+        self.assertIn("const saved = scrubQueries(out);", src)
+        self.assertIn("JSON.stringify(saved, null, 1)", src)
         self.assertIn("from './no-query.mjs'", src)
+
+    @unittest.skipIf(not Path(PW).is_file(), "the capture Playwright is not installed")
+    def test_vars_mjs_prints_no_query_either(self):
+        # Train 19: the saved JSON was scrubbed, but the console summary printed the raw selector map, and
+        # package captures commit their console output (raw/*.log). Run vars.mjs on a page copy holding a
+        # selector with a query, and look for the id in both the file and stdout.
+        with tempfile.TemporaryDirectory() as d:
+            pkg, snaps = Path(d) / "pkg", Path(d) / "snaps"
+            (pkg / "tools/capture").mkdir(parents=True)
+            snaps.mkdir()
+            for f in ("vars.mjs", "no-query.mjs"):
+                shutil.copy(HERE / "kit/capture" / f, pkg / "tools/capture" / f)
+            (snaps / "home.html").write_text('<html><head><style>img[src="/avatar?account_id=12345"]{--avatar-size:32px}'
+                                             ' a[href=/u?session=abc]{--link:#00f} :root{--bg:#fff}</style></head><body></body></html>')
+            res = subprocess.run([NODE, str(pkg / "tools/capture/vars.mjs")], capture_output=True, text=True, timeout=120,
+                                 env={**os.environ, "SNAPS": str(snaps), "PLAYWRIGHT": PW})
+            self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+            saved = (pkg / "raw/css-vars.json").read_text()
+        self.assertIn('img[src=\\"/avatar\\"]', saved)
+        self.assertIn('img[src="/avatar"]', res.stdout)   # the printed map is the scrubbed one
+        for out in (saved, res.stdout, res.stderr):
+            self.assertNotIn("12345", out)
+            self.assertNotIn("account_id", out)
+            self.assertNotIn("session=", out)
+
+    def test_electron_shot_prints_no_query_in_its_errors(self):
+        src = (HERE / "kit/capture/electron/shot.mjs").read_text()
+        for line in (l for l in src.splitlines() if "console.error(`" in l and "${" in l):
+            self.assertIn("noQuery(", line, line)
 
     def test_font_face_ids_tell_apart_files_the_masked_src_cannot(self):
         # noUrl turns every font file URL into url(…), so two faces of one family, weight and style that

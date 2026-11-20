@@ -14,7 +14,7 @@
 // Quit the app and open it normally afterwards; an open port lets any local process drive it.
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { safeUrl } from '../safe-url.mjs';
-import { scrubQueries } from '../no-query.mjs';
+import { noQuery, scrubQueries } from '../no-query.mjs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const [out, name, prefix = 'https://'] = process.argv.slice(2).filter(a => !a.startsWith('--'));
 const hover = process.argv.find(a => a.startsWith('--hover='))?.slice(8);
@@ -23,14 +23,14 @@ if (!out || !name) { console.error('usage: shot.mjs <out-dir> <name> [url-prefix
 
 const browser = await pw.chromium.connectOverCDP(`http://127.0.0.1:${port}`);
 const page = browser.contexts().flatMap(c => c.pages()).find(p => p.url().startsWith(prefix));
-if (!page) { console.error(`no page starting with ${prefix}`); process.exit(1); }
+if (!page) { console.error(`no page starting with ${noQuery(prefix)}`); process.exit(1); }   // logs are committed: no query in them
 let cdp, nodeId;
 if (hover) {
   cdp = await page.context().newCDPSession(page);
   await cdp.send('DOM.enable'); await cdp.send('CSS.enable');
   const { root } = await cdp.send('DOM.getDocument');
   ({ nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: hover }));
-  if (!nodeId) { console.error(`no element matches ${hover}`); process.exit(1); }
+  if (!nodeId) { console.error(`no element matches ${noQuery(hover)}`); process.exit(1); }
   await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['hover'] });
   await page.waitForTimeout(300);
 }

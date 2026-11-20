@@ -218,7 +218,9 @@ const out = {
 };
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
 // noUrl only sees url(); a bare, scheme-relative or relative URL in a value or a selector loses its query here.
-fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(scrubQueries(out), null, 1) + '\n');
+// The console summary prints from the same scrubbed copy: package captures commit their logs (raw/*.log).
+const saved = scrubQueries(out);
+fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(saved, null, 1) + '\n');
 console.log(`resolved: light ${Object.keys(resolved.light).length}, dark ${Object.keys(resolved.dark).length}, compact differs ${Object.keys(resolved.compact).length}`);
 console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names cds ${out.counts.names.cds}, app ${out.counts.names.app}, tailwind ${out.counts.names.tailwind}`);
-for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 30)) console.log(`  ${v}\t${k.slice(0, 160)}`);
+for (const [k, v] of Object.entries(saved.counts.bySelector).sort((a, b) => b[1] - a[1]).slice(0, 30)) console.log(`  ${v}\t${k.slice(0, 160)}`);
