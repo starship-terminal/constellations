@@ -1,0 +1,238 @@
+{
+  "capturedAt": "2026-11-20T22:55:56.118Z",
+  "pages": [
+    {
+      "id": "home",
+      "requested": "https://www.squarespace.com/",
+      "final": "https://www.squarespace.com/",
+      "status": 200,
+      "title": "Website Builder – Easily Create Your Own Website — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "pricing",
+      "requested": "https://www.squarespace.com/pricing",
+      "final": "https://www.squarespace.com/pricing",
+      "status": 200,
+      "title": "Squarespace Pricing Plans & Features — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "templates",
+      "requested": "https://www.squarespace.com/templates",
+      "final": "https://www.squarespace.com/templates",
+      "status": 200,
+      "title": "Website Templates: Customizable Web Design Templates - Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "get-started",
+      "requested": "https://www.squarespace.com/templates/get-started",
+      "final": "https://www.squarespace.com/templates/get-started",
+      "status": 200,
+      "title": "Website Templates - Website Design Templates — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "website-design",
+      "requested": "https://www.squarespace.com/website-design",
+      "final": "https://www.squarespace.com/website-design",
+      "status": 200,
+      "title": "Design a Website: The Leader in Website Design — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "ecommerce",
+      "requested": "https://www.squarespace.com/ecommerce-website",
+      "final": "https://www.squarespace.com/ecommerce-website",
+      "status": 200,
+      "title": "Ecommerce Website Builder - Start an Online Store — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "feature-index",
+      "requested": "https://www.squarespace.com/feature-index",
+      "final": "https://www.squarespace.com/feature-index",
+      "status": 200,
+      "title": "Feature List - All Squarespace Features — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "blog",
+      "requested": "https://www.squarespace.com/blog",
+      "final": "https://www.squarespace.com/blog",
+      "status": 200,
+      "title": "Web Design & Business Tips from Making It — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "contact",
+      "requested": "https://www.squarespace.com/contact",
+      "final": "https://www.squarespace.com/contact",
+      "status": 200,
+      "title": "Contact Us — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "about",
+      "requested": "https://www.squarespace.com/about/company",
+      "final": "https://www.squarespace.com/about/company",
+      "status": 200,
+      "title": "About Us — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "tools",
+      "requested": "https://www.squarespace.com/tools",
+      "final": "https://www.squarespace.com/tools",
+      "status": 200,
+      "title": "Free Online Business Tools — Squarespace",
+      "mobile": false
+    },
+    {
+      "id": "domains",
+      "requested": "https://domains.squarespace.com/",
+      "final": "https://domains.squarespace.com/",
+      "status": 200,
+      "title": "Buy a Domain Name — Domain Name Search — Squarespace Domains",
+      "mobile": false
+    },
+    {
+      "id": "login",
+      "requested": "https://login.squarespace.com/",
+      "final": "https://login.squarespace.com/api/1/login/oauth/provider/authorize",
+      "status": 200,
+      "title": "Squarespace — Login",
+      "wall": true,
+      "mobile": false
+    },
+    {
+      "id": "mobile-home",
+      "requested": "https://www.squarespace.com/",
+      "final": "https://www.squarespace.com/",
+      "status": 200,
+      "title": "Website Builder – Easily Create Your Own Website — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-pricing",
+      "requested": "https://www.squarespace.com/pricing",
+      "final": "https://www.squarespace.com/pricing",
+      "status": 200,
+      "title": "Squarespace Pricing Plans & Features — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-templates",
+      "requested": "https://www.squarespace.com/templates",
+      "final": "https://www.squarespace.com/templates",
+      "status": 200,
+      "title": "Website Templates: Customizable Web Design Templates - Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-get-started",
+      "requested": "https://www.squarespace.com/templates/get-started",
+      "final": "https://www.squarespace.com/templates/get-started",
+      "status": 200,
+      "title": "Website Templates - Website Design Templates — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-website-design",
+      "requested": "https://www.squarespace.com/website-design",
+      "final": "https://www.squarespace.com/website-design",
+      "status": 200,
+      "title": "Design a Website: The Leader in Website Design — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-ecommerce",
+      "requested": "https://www.squarespace.com/ecommerce-website",
+      "final": "https://www.squarespace.com/ecommerce-website",
+      "status": 200,
+      "title": "Ecommerce Website Builder - Start an Online Store — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-feature-index",
+      "requested": "https://www.squarespace.com/feature-index",
+      "final": "https://www.squarespace.com/feature-index",
+      "status": 200,
+      "title": "Feature List - All Squarespace Features — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-blog",
+      "requested": "https://www.squarespace.com/blog",
+      "final": "https://www.squarespace.com/blog",
+      "status": 200,
+      "title": "Web Design & Business Tips from Making It — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-contact",
+      "requested": "https://www.squarespace.com/contact",
+      "final": "https://www.squarespace.com/contact",
+      "status": 200,
+      "title": "Contact Us — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-about",
+      "requested": "https://www.squarespace.com/about/company",
+      "final": "https://www.squarespace.com/about/company",
+      "status": 200,
+      "title": "About Us — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-tools",
+      "requested": "https://www.squarespace.com/tools",
+      "final": "https://www.squarespace.com/tools",
+      "status": 200,
+      "title": "Free Online Business Tools — Squarespace",
+      "mobile": true
+    },
+    {
+      "id": "mobile-domains",
+      "requested": "https://domains.squarespace.com/",
+      "final": "https://domains.squarespace.com/",
+      "status": 200,
+      "title": "Buy a Domain Name — Domain Name Search — Squarespace Domains",
+      "mobile": true
+    },
+    {
+      "id": "mobile-login",
+      "requested": "https://login.squarespace.com/",
+      "final": "https://login.squarespace.com/api/1/login/oauth/provider/authorize",
+      "status": 200,
+      "title": "Squarespace — Login",
+      "wall": true,
+      "mobile": true
+    }
+  ],
+  "walls": [
+    {
+      "id": "login",
+      "requested": "https://login.squarespace.com/",
+      "final": "https://login.squarespace.com/api/1/login/oauth/provider/authorize",
+      "status": 200,
+      "title": "Squarespace — Login",
+      "wall": true,
+      "mobile": false,
+      "note": "known login probe, nothing typed"
+    },
+    {
+      "id": "mobile-login",
+      "requested": "https://login.squarespace.com/",
+      "final": "https://login.squarespace.com/api/1/login/oauth/provider/authorize",
+      "status": 200,
+      "title": "Squarespace — Login",
+      "wall": true,
+      "mobile": true,
+      "note": "known login probe, nothing typed"
+    }
+  ],
+  "failures": []
+}
