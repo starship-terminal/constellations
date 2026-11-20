@@ -8,7 +8,8 @@ import Link from "next/link";
 import { useLightbox } from "@/components/Lightbox";
 import { useToast } from "@/components/Toast";
 import { copyWithToast } from "@/components/CopyButton";
-import { readStoredProvider } from "@/components/storage";
+import { migrateStoredProvider, PROVIDER_NOTICE_KEY, saveReplyOf, type SaveReply } from "@/components/storage";
+import { latestOnly } from "@/components/provider-form";
 
 interface ChatResultCard {
   cover?: string;
@@ -39,15 +40,6 @@ interface Turn {
   media?: ChatMedia[];
   calls?: string[];
 }
-interface Cfg {
-  api?: string;
-  base_url?: string;
-  api_key?: string;
-  key_header?: string;
-  models_url?: string;
-  model?: string;
-  name?: string;
-}
 interface ChatCtx {
   open: (draft?: string) => void;
   close: () => void;
@@ -67,13 +59,32 @@ const Ctx = createContext<ChatCtx>({
 
 export const useChat = () => useContext(Ctx);
 
-/** Dispatched on window after Settings saves or removes "ds-provider". */
+/** Dispatched on window after the server-held provider changes (Settings
+    saves or removes it, or the one-time move of a browser-stored key ran). */
 export const PROVIDER_EVENT = "ds-provider-change";
 
-const dsProvider = (): Cfg | null => {
-  const p = readStoredProvider();
-  return p && p.api_key && p.model ? p : null;
-};
+const CHANNEL = "ds-provider";
+
+/** Tell this tab (PROVIDER_EVENT) and the app's other tabs (a
+    BroadcastChannel carrying no data) that the server-held provider changed. */
+export function announceProviderChange(): void {
+  window.dispatchEvent(new Event(PROVIDER_EVENT));
+  try {
+    const ch = new BroadcastChannel(CHANNEL);
+    ch.postMessage("changed");
+    ch.close();
+  } catch {}
+}
+
+/** POST a provider to the server's save route; the reply never holds the key. */
+export async function saveProvider(body: Record<string, string | boolean>): Promise<SaveReply> {
+  const r = await fetch("/api/provider", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  return saveReplyOf(r.status, await r.json().catch(() => null));
+}
 
 // The history the model sees: each question with the markdown answer it got.
 // An exchange whose answer failed, is still pending, or is a page placeholder
@@ -97,34 +108,60 @@ const UP_ICON = (
 export function ChatProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [draft, setDraft] = useState("");
-  const [envProvider, setEnvProvider] = useState(false);
-  const [hasLocal, setHasLocal] = useState(false);
+  const [configured, setConfigured] = useState(false);
+  const { toast } = useToast();
   useEffect(() => {
-    // Settings saves or clears the provider in this tab (PROVIDER_EVENT) or
-    // in another one (storage); either way the chat's availability follows.
-    const sync = () => setHasLocal(!!dsProvider());
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === "ds-provider" || e.key === null) sync();
+    // The server holds the key; the chat is available when it says a
+    // provider is configured, and follows Settings through PROVIDER_EVENT.
+    // Requests can overlap (the first load, a save's event, a tab coming
+    // back): only the newest one's reply counts, so a reply from before a
+    // save never turns the chat off again after it.
+    const requests = latestOnly();
+    const sync = () => {
+      const n = requests.begin();
+      fetch("/api/status")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => {
+          if (requests.isLatest(n)) setConfigured(!!(d && (d.configured ?? d.envProvider)));
+        })
+        .catch(() => {});
     };
     sync();
     window.addEventListener(PROVIDER_EVENT, sync);
-    window.addEventListener("storage", onStorage);
-    fetch("/api/status")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => setEnvProvider(!!(d && d.envProvider)))
-      .catch(() => {});
+    // Another tab saved or removed the key: refresh here too, and let this
+    // tab's Settings know. Coming back to the tab refreshes as well.
+    let ch: BroadcastChannel | null = null;
+    try {
+      ch = new BroadcastChannel(CHANNEL);
+      ch.onmessage = () => window.dispatchEvent(new Event(PROVIDER_EVENT));
+    } catch {}
+    const onVisible = () => {
+      if (document.visibilityState === "visible") sync();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    // An older version kept the key in localStorage: move it to the server
+    // once and delete the browser copy, then say so.
+    migrateStoredProvider(saveProvider).then((notice) => {
+      if (!notice) return;
+      try {
+        sessionStorage.setItem(PROVIDER_NOTICE_KEY, notice);
+      } catch {}
+      toast(notice, 9000);
+      announceProviderChange();
+    });
     return () => {
       window.removeEventListener(PROVIDER_EVENT, sync);
-      window.removeEventListener("storage", onStorage);
+      document.removeEventListener("visibilitychange", onVisible);
+      ch?.close();
     };
-  }, []);
+  }, [toast]);
   const open = useCallback((d?: string) => {
     setIsOpen(true);
     if (d) setDraft(d);
   }, []);
   const close = useCallback(() => setIsOpen(false), []);
   return (
-    <Ctx.Provider value={{ open, close, isOpen, draft, setDraft, enabled: envProvider || hasLocal }}>
+    <Ctx.Provider value={{ open, close, isOpen, draft, setDraft, enabled: configured }}>
       {children}
     </Ctx.Provider>
   );
@@ -184,7 +221,7 @@ export function ChatDrawer() {
       const r = await fetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ messages: wire, provider: dsProvider() || undefined }),
+        body: JSON.stringify({ messages: wire }),
       });
       const d = await r.json();
       if (myEpoch !== epoch.current) return;

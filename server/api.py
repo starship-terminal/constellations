@@ -8,7 +8,7 @@ proxies to it:
 
     GET  /api/status          GET  /api/redeploy*   POST /api/provider/test
     POST /api/chat            POST /api/mcp         GET /api/ds
-    GET  /api/install.sh
+    GET  /api/install.sh      GET/POST/DELETE /api/provider
 
 (*redeploy is answered by the separate trigger service, not here.)
 
@@ -35,7 +35,12 @@ must be listed in DESIGN_SYSTEMS_ALLOWED_HOSTS (comma-separated, `name` or
 
 The repo clone's root .env is loaded the same way the refero tools load it,
 so ANTHROPIC_API_KEY on the host gives every browser on the tailnet a working
-chat with no per-browser setup. Every request re-loads the agent modules, so
+chat with no per-browser setup. A key saved through a Settings page is kept
+by provider_store.py in $DESIGN_SYSTEMS_CONFIG_DIR/provider.db (default
+~/.config/design-systems/ of the user this unit runs as), outside the clone,
+and takes precedence over ANTHROPIC_API_KEY until it is removed. The gallery's
+unit reads and writes the same file, so both must run with the same
+DESIGN_SYSTEMS_CONFIG_DIR (or the same HOME). Every request re-loads the agent modules, so
 a `git pull` by deploy.sh updates the API with no restart of this unit
 (catalog, which library.py imports by name, is reloaded in place when
 catalog.py changes, for the same reason).
@@ -58,8 +63,10 @@ def _dotenv() -> None:
         "refero_media", ROOT / "tools" / "refero" / "refero_media.py")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    # Only what the API server reads: the allowed hosts and the chat key and model.
-    mod.load_env(("DESIGN_SYSTEMS_ALLOWED_HOSTS", "ANTHROPIC_API_KEY", "DS_CHAT_MODEL"))
+    # Only what the API server reads: the allowed hosts, the chat key and model,
+    # and where a saved provider lives.
+    mod.load_env(("DESIGN_SYSTEMS_ALLOWED_HOSTS", "ANTHROPIC_API_KEY", "DS_CHAT_MODEL",
+                  "DESIGN_SYSTEMS_CONFIG_DIR"))
 
 
 def _server():
@@ -123,8 +130,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.send_error(404)
 
     def do_DELETE(self) -> None:
-        # Streamable-HTTP session teardown; the server is stateless, so there
-        # is nothing to clean up — acknowledge and move on.
+        # DELETE /api/provider removes the saved provider. Any other DELETE is
+        # the streamable-HTTP session teardown; the server is stateless, so
+        # there is nothing to clean up — acknowledge and move on.
+        if _dispatch("handle_delete", self):
+            return
         self.send_response(200)
         self.send_header("content-length", "0")
         self.end_headers()

@@ -108,8 +108,10 @@ SETTINGS_BODY = """<h1>Settings</h1>
   </fieldset>
   <fieldset class="pref" id="provider">
     <legend class="pref-name">Model provider</legend>
-    <p class="pref-help">Powers the app's chat search. Saved in this browser; the key only travels to this local server.</p>
-    <div id="pf">
+    <p class="pref-help">Powers the app's chat search. The key is kept by the server, never by this browser.</p>
+    <p class="pf-source" id="pf-source" hidden><span class="pf-badge" id="pf-badge"></span> <span id="pf-using"></span></p>
+    <p class="pf-notice" id="pf-notice" role="note" hidden></p>
+    <div id="pf" hidden>
       <div class="pf-chips" role="group" aria-label="Provider template" id="pf-templates"></div>
       <div class="pf-grid">
         <label class="pf-field"><span>Base URL</span>
@@ -123,11 +125,11 @@ SETTINGS_BODY = """<h1>Settings</h1>
       <div class="pf-actions">
         <button id="pf-test" class="pf-btn" type="button">Test connection</button>
         <button id="pf-save" class="pf-btn primary" type="button">Save</button>
-        <button id="pf-clear" class="pf-btn" type="button">Forget</button>
+        <button id="pf-clear" class="pf-btn" type="button" hidden>Remove</button>
       </div>
-      <p class="pref-note">The template fills Base URL and the auth style; every field stays editable. Model unlocks once a test against the endpoint succeeds, and the fetched list fills the dropdown. Anthropic keys also work from .env as ANTHROPIC_API_KEY with no setup here.</p>
+      <p class="pref-note">The key goes to the server once: it is tested, kept there and never sent back. The template fills Base URL and the auth style. Model unlocks once a test against the endpoint succeeds, and the fetched list fills the dropdown. A saved key only goes to the endpoint it was saved with, so a new endpoint needs the key again. With no key saved, ANTHROPIC_API_KEY in the server's .env applies.</p>
     </div>
-    <p id="pf-off" hidden>Agent chat runs in the Next.js app (<code>make dev</code>); this section is inactive on the docs site.</p>
+    <p id="pf-off" hidden>This copy of the site has no server, so it cannot hold a key and stores none. Set the key where the chat runs: Settings &gt; Model provider in the gallery app (<code>make dev</code>), or <code>ANTHROPIC_API_KEY</code> in that server's <code>.env</code>.</p>
   </fieldset>
 </div>
 <script>
@@ -139,23 +141,34 @@ SETTINGS_BODY = """<h1>Settings</h1>
       grok: { label: 'Grok (xAI)', api: 'openai', base_url: 'https://api.x.ai/v1', key_header: 'authorization' },
       custom: { label: 'Custom', api: 'openai', base_url: '', key_header: 'authorization' }
     };
+    var SOURCE = { saved: 'Saved on the server', env: 'From the server environment', none: 'No key' };
+    // An older version of this page kept the whole provider, key included, in
+    // localStorage under this name. Nothing writes it any more.
+    var LEGACY = 'ds-provider';
     var API = '../api/';
     var el = function (id) { return document.getElementById(id); };
     var base = el('pf-base'), key = el('pf-key'), model = el('pf-model'),
         models = el('pf-models'), status = el('pf-status'), form = el('pf'), off = el('pf-off');
-    var current = 'anthropic', verified = '';
+    var current = 'anthropic', verified = '', state = null;
     // `active` is the api/auth the test and save actually use. Picking a
-    // template sets it; a saved config restores its own, so a custom base URL
-    // can't silently change the wire format on the next save.
+    // template sets it; the saved provider restores its own, so a custom base
+    // URL can't silently change the wire format on the next save.
     var active = { api: 'anthropic', key_header: 'x-api-key' };
-    var sig = function () { return JSON.stringify([base.value.trim(), key.value]); };
+    var sig = function () { return JSON.stringify([active.api, active.key_header, base.value.trim(), key.value]); };
     var setStatus = function (t, warn) { status.textContent = t || ''; status.dataset.warn = warn ? '1' : ''; };
-    // The model field stays locked until the exact base+key pair passes a test.
+    var notice = function (t) { el('pf-notice').textContent = t; el('pf-notice').hidden = !t; };
+    // The model field stays locked until the exact endpoint+key pair passes a test.
     var relock = function () {
       var ok = verified && verified === sig();
       model.disabled = !ok;
-      if (!ok) { model.placeholder = 'test the connection first'; }
-      else { model.placeholder = 'pick or type a model'; }
+      model.placeholder = ok ? 'pick or type a model' : 'test the connection first';
+    };
+    var send = function (method, path, body) {
+      var opts = { method: method };
+      if (body) { opts.headers = { 'content-type': 'application/json' }; opts.body = JSON.stringify(body); }
+      return fetch(API + path, opts).then(function (r) {
+        return r.json().catch(function () { return { ok: false, error: 'HTTP ' + r.status }; });
+      });
     };
     function template(key_) {
       current = key_;
@@ -184,15 +197,43 @@ SETTINGS_BODY = """<h1>Settings</h1>
     [base, key].forEach(function (i) {
       i.addEventListener('input', function () { setStatus(''); fillModels([]); relock(); });
     });
+    var body = function () {
+      var b = { name: current, api: active.api, base_url: base.value.trim(), key_header: active.key_header,
+                model: model.value.trim() };
+      if (active.models_url) b.models_url = active.models_url;
+      if (key.value.trim()) b.api_key = key.value.trim();
+      return b;
+    };
+    // Show where the key comes from. The server never sends the key itself.
+    function show(d) {
+      state = d;
+      var src = d.source || 'none', p = d.provider || {};
+      el('pf-source').hidden = false;
+      el('pf-source').dataset.source = src;
+      el('pf-badge').textContent = SOURCE[src] || src;
+      el('pf-using').textContent = d.error ? d.error : (p.model ? (TEMPLATES[p.name] || {}).label || p.name || p.api : '') + (p.model ? ' · ' + p.model : 'The chat needs a key before it can answer.');
+      el('pf-clear').hidden = src !== 'saved';
+      key.placeholder = src === 'saved' ? 'leave blank to keep the saved key' : 'sk-…';
+    }
+    function fill(d) {
+      var p = d.source === 'saved' ? d.provider : null;
+      if (!p) { template('anthropic'); relock(); return; }
+      var match = Object.keys(TEMPLATES).find(function (k) {
+        return TEMPLATES[k].api === p.api && TEMPLATES[k].base_url === p.base_url;
+      });
+      template(match || (TEMPLATES[p.name] ? p.name : 'custom'));
+      active = { api: p.api || 'openai', key_header: p.key_header || (p.api === 'anthropic' ? 'x-api-key' : 'authorization') };
+      if (p.models_url) active.models_url = p.models_url;
+      base.value = p.base_url || base.value; key.value = '';
+      model.value = p.model || ''; verified = sig(); relock();
+    }
     el('pf-test').onclick = function () {
-      if (!base.value.trim() || !key.value) { setStatus('Base URL and API key first.', true); return; }
-      var body = { api: active.api, base_url: base.value.trim(), api_key: key.value, key_header: active.key_header };
-      if (active.models_url) body.models_url = active.models_url;
+      if (!base.value.trim()) { setStatus('Base URL first.', true); return; }
+      if (!key.value.trim() && (!state || state.source === 'none')) { setStatus('API key first.', true); return; }
       var submitted = sig();
       setStatus('Testing…');
       el('pf-test').disabled = true;
-      fetch(API + 'provider/test', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
-        .then(function (r) { return r.json(); })
+      send('POST', 'provider/test', body())
         .then(function (d) {
           // Only the pair actually tested may unlock the model field; a field
           // edited mid-flight invalidates this reply.
@@ -205,45 +246,118 @@ SETTINGS_BODY = """<h1>Settings</h1>
             if (d.models && d.models.length && !model.value) model.value = d.models[0].id;
           } else { setStatus(d.error || 'Test failed.', true); }
         })
-        .catch(function () { setStatus('No answer from the local server.', true); })
+        .catch(function () { setStatus('No answer from the server.', true); })
         .finally(function () { el('pf-test').disabled = false; });
     };
+    // The whole form as it would be sent, to tell whether it changed while a
+    // save was in flight.
+    var formSig = function () { return JSON.stringify([current, sig(), model.value]); };
+    // Save and Remove wait for each other: with both enabled, a Remove that
+    // finished first would be undone by the save still being tested.
+    var pending = function (on) { el('pf-save').disabled = on; el('pf-clear').disabled = on; };
     el('pf-save').onclick = function () {
       if (!verified || verified !== sig()) { setStatus('Test the connection before saving.', true); return; }
       if (!model.value.trim()) { setStatus('Pick a model first.', true); return; }
-      var cfg = { name: current, api: active.api, base_url: base.value.trim(), api_key: key.value,
-                  key_header: active.key_header, model: model.value.trim() };
-      if (active.models_url) cfg.models_url = active.models_url;
-      try { localStorage.setItem('ds-provider', JSON.stringify(cfg)); } catch (e) {}
-      setStatus('Saved: ' + TEMPLATES[current].label + ' · ' + cfg.model);
+      setStatus('Saving…');
+      pending(true);
+      var submitted = formSig(), label = TEMPLATES[current].label + ' · ' + model.value.trim();
+      send('POST', 'provider', body()).then(function (d) {
+        if (!d.ok) { setStatus('Not saved. ' + (d.error || 'The server refused it.'), true); return; }
+        show(d);
+        var note = d.verified === false ? '. This endpoint has no model list, so the key itself was not checked.' : '';
+        // A reply that lands after the reader edited the form must not empty
+        // the key they typed since or reset what they changed.
+        if (formSig() !== submitted) {
+          setStatus('Saved on the server: ' + label + note + '. The form has changed since; save again to use the changes.');
+          return;
+        }
+        key.value = ''; verified = sig(); relock();
+        setStatus('Saved on the server: ' + label + note);
+      }).catch(function () { setStatus('No answer from the server.', true); })
+        .finally(function () { pending(false); });
     };
     el('pf-clear').onclick = function () {
-      try { localStorage.removeItem('ds-provider'); } catch (e) {}
-      setStatus('Forgot the saved provider.');
+      pending(true);
+      var submitted = formSig();
+      send('DELETE', 'provider').then(function (d) {
+        if (!d.ok) { setStatus(d.error || 'Could not remove the saved key.', true); return; }
+        show(d);
+        // The form resets only if the reader did not start a replacement
+        // while the removal was in flight (as with Save).
+        var kept = formSig() !== submitted;
+        if (!kept) fill(d);
+        setStatus((d.source === 'env' ? 'Removed the saved key. The chat now uses the server environment key.' : 'Removed the saved key.') +
+          (kept ? ' The form keeps what you typed since; test and save it to use it.' : ''));
+      }).catch(function () { setStatus('No answer from the server.', true); })
+        .finally(function () { pending(false); });
     };
-    // Prefill the saved provider; the chip is cosmetic — its saved api/auth
-    // values are what survive, not whichever template its URL happens to match.
-    try {
-      var saved = JSON.parse(localStorage.getItem('ds-provider') || 'null');
-      if (saved) {
-        var match = Object.keys(TEMPLATES).find(function (k) {
-          return TEMPLATES[k].api === saved.api && TEMPLATES[k].base_url === saved.base_url;
+    var legacy = null;
+    try { legacy = JSON.parse(localStorage.getItem(LEGACY) || 'null'); } catch (e) { legacy = null; }
+    var hadKey = !!(legacy && typeof legacy === 'object' && typeof legacy.api_key === 'string' && legacy.api_key);
+    var drop = function () { try { localStorage.removeItem(LEGACY); } catch (e) {} };
+    // POST to the API and keep the status: only a JSON answer below 500 is
+    // the server's decision.
+    var post = function (path, body) {
+      return fetch(API + path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
+        .then(function (r) {
+          return r.json().then(function (d) { return { status: r.status, d: d }; },
+                               function () { return { status: r.status, d: null }; });
         });
-        template(match || (TEMPLATES[saved.name] ? saved.name : 'custom'));
-        active = { api: saved.api || 'openai', key_header: saved.key_header || 'authorization' };
-        if (saved.models_url) active.models_url = saved.models_url;
-        base.value = saved.base_url || base.value; key.value = saved.api_key || '';
-        model.value = saved.model || ''; verified = sig(); relock();
-        setStatus('Saved: ' + ((TEMPLATES[saved.name] || {}).label || saved.name || 'provider') + ' · ' + saved.model);
-      } else { template('anthropic'); }
-    } catch (e) { template('anthropic'); }
-    // The API only exists on the local server; elsewhere the section goes quiet.
-    fetch(API + 'status').then(function (r) {
-      if (!r.ok) throw new Error();
-      return r.json();
-    }).then(function (d) {
-      if (d && d.envProvider) setStatus((status.textContent ? status.textContent + ' ' : '') + '(server has an .env fallback key too)');
-    }).catch(function () { form.hidden = true; off.hidden = false; });
+    };
+    // Move a key an older version left in this browser to the server once.
+    // The browser copy is deleted once the server has decided (saved it, kept
+    // its own, refused the body or failed the key's test) and kept when it
+    // did not answer, answered 5xx or not in JSON: a restarting API must not
+    // cost the only copy, and the next visit tries again.
+    function migrate() {
+      if (!hadKey) { drop(); return Promise.resolve(); }
+      // migrate: the server saves it only when it has no provider yet, so an
+      // old browser never replaces a newer key.
+      var b = { api_key: legacy.api_key, migrate: true };
+      ['name', 'api', 'base_url', 'key_header', 'models_url', 'model'].forEach(function (k) {
+        if (typeof legacy[k] === 'string' && legacy[k]) b[k] = legacy[k];
+      });
+      return post('provider', b).catch(function () { return { status: 0, d: null }; })
+        .then(function (res) {
+          var d = res.d && typeof res.d === 'object' ? res.d : null;
+          if (!d || res.status >= 500 || res.status === 0) {
+            notice('The server did not answer, so the API key this browser had saved stays here for now. It moves to the server on a later visit.');
+            return;
+          }
+          drop();
+          notice(d.ok ? 'Moved the API key this browser had saved to the server. This browser no longer stores it.'
+            : d.existing ? 'Deleted the API key this browser had saved. The server already has, or had, its own saved key, so it kept its own setting.'
+            : 'Deleted the API key this browser had saved. The server did not keep it (' +
+              String(d.error || 'it did not say why').split(legacy.api_key).join('[redacted]') + '), so enter it again below.');
+        });
+    }
+    // The API exists only where a server answers /api/ (the gallery app, or
+    // the home server's Python API behind nginx). A 404 means this copy has
+    // none (GitHub Pages): nothing can hold a key here, the form stays hidden,
+    // and an old browser key is deleted without being sent anywhere. Any other
+    // failure (no answer, a 502 while the API restarts) keeps that key.
+    fetch(API + 'provider').then(function (r) {
+      return r.json().then(function (d) { return { status: r.status, d: d }; },
+                           function () { return { status: r.status, d: null }; });
+    }, function () { return { status: 0, d: null }; }).then(function (res) {
+      if (res.d && typeof res.d.source === 'string') {
+        // The form shows only once it is filled, so nothing the reader types
+        // can be replaced by a fill that lands after a slow migration.
+        return migrate().then(function () { return send('GET', 'provider'); })
+          .then(function (d2) { show(d2); fill(d2); },
+                function () { show(res.d); fill(res.d); setStatus('No answer from the server.', true); })
+          .then(function () { form.hidden = false; });
+      }
+      form.hidden = true; off.hidden = false;
+      if (res.status !== 404) {
+        if (hadKey) notice('The server did not answer, so the API key this browser had saved stays here for now.');
+        return;
+      }
+      if (legacy !== null) {
+        drop();
+        if (hadKey) notice('Deleted an API key an older version of this page had saved in this browser. This copy of the site keeps no key.');
+      }
+    }).catch(function () { setStatus('No answer from the server.', true); });
   })();
 </script>
 <script>
