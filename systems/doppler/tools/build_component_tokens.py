@@ -38,6 +38,19 @@ C = json.loads((RAW / "components-computed.json").read_text())["components"]
 # ----------------------------------------------------------- utility lookup
 # The utility harvest keys every rule by its selector text; media-context
 # rules keep their context list. cls(".bg-warm-black") -> properties dict.
+def st(comp, state):
+    c = C[comp]
+    if c.get("missing") or c.get("recaptureMissed"):
+        raise KeyError(comp)
+    return c["states"][state]["style"]
+
+
+def missed(comp):
+    """A source note for a component a later run could not find (its states are an earlier run's)."""
+    d = C[comp].get("recaptureMissed")
+    return f"; the {d} run did not find {comp}, so these are its {C[comp].get('run')} states (recaptureMissed); recapture needed" if d else ""
+
+
 def unescape(sel):
     return sel.replace("\\", "")
 
@@ -139,20 +152,22 @@ for path, sel, prop, desc in PALETTE:
 # ----------------------------------------------------------------- fonts
 # The three families resolve through the --font-* vars on the .__variable_*
 # classes and paint through .font-sans / .font-mono / .font-inter.
-FAMILY = {
-    "sans": ("'Doppler Repro', '__DopplerRepro_Fallback_a18e76', sans-serif",
-             "declared .font-sans -> var(--font-doppler-repro) -> \"__DopplerRepro_a18e76\",\"__DopplerRepro_Fallback_a18e76\" (raw/css-vars.json theme + raw/utility-classes.json); 8 @font-face files (400/700, normal/italic) — a variable weight paints 450",
-             "Doppler Repro: headings, nav, buttons, body."),
-    "mono": ("'Doppler Repro Mono', '__DopplerReproMono_Fallback_e3cbb4', monospace",
-             "declared .font-mono -> var(--font-doppler-repro-mono) -> \"__DopplerReproMono_e3cbb4\" (raw/css-vars.json theme); paints on span.text-code",
-             "Doppler Repro Mono: inline code chips and CLI samples."),
-    "inter": ("'Inter', '__Inter_Fallback_516c7b', sans-serif",
-              "declared .font-inter -> var(--font-inter) -> \"__Inter_516c7b\" (raw/css-vars.json theme); paints on the demo checklist copy",
-              "Inter: long-form/supporting text where a more neutral sans is wanted."),
-}
-for k, (val, src, desc) in FAMILY.items():
+# The three families resolve through the --font-* vars on the .__variable_* classes and paint
+# through .font-sans / .font-mono / .font-inter. Each stack is the computed fontFamily of a
+# component that paints it (Next.js's hashed face names, as the browser reads them).
+FAMILY = [
+    ("sans", "header", "declared .font-sans -> var(--font-doppler-repro); 8 @font-face files (400/700, normal/italic) — a variable weight paints 450",
+     "Doppler Repro: headings, nav, buttons, body."),
+    ("mono", "code-chip", "declared .font-mono -> var(--font-doppler-repro-mono); paints on span.text-code",
+     "Doppler Repro Mono: inline code chips and CLI samples."),
+    ("inter", "check-item", "declared .font-inter -> var(--font-inter); paints on the demo checklist copy",
+     "Inter: long-form/supporting text where a more neutral sans is wanted."),
+]
+for k, comp_name, decl, desc in FAMILY:
     put(SPEC["core"].setdefault("font", {}).setdefault("family", {}), k,
-        {"value": val, "type": "fontFamily", "source": src, "description": desc})
+        {"value": st(comp_name, "default")["fontFamily"], "type": "fontFamily",
+         "source": f"computed fontFamily of {comp_name} default (raw/components-computed.json); {decl} (raw/css-vars.json theme + raw/utility-classes.json)",
+         "description": desc})
 
 # The declared type scale: every .text-* size step (media-context steps keep
 # their breakpoint in the description). Desktop is >=1023px ('md:').
@@ -235,15 +250,17 @@ for k, sel, desc in TRACK:
     put(SPEC["core"]["font"].setdefault("tracking", {}), k,
         {"value": v, "type": "dimension", "source": f"declared {sel} letter-spacing (raw/utility-classes.json)", "description": desc})
 
+# Each named weight is the computed fontWeight of a component that paints it.
 WEIGHT = [
-    ("regular", 400, ".font-normal / the painted body weight; Doppler Repro also paints 450."),
-    ("mid", 450, "The display weight: every h*/p* step declares font-weight:450 (a variable instance of Doppler Repro)."),
-    ("medium", 500, ".font-medium / the .text-label weight."),
-    ("bold", 700, ".font-bold / .text-labelSm and .text-navLink weight."),
+    ("regular", "hero-sub", ".font-normal / the painted body weight; Doppler Repro also paints 450."),
+    ("mid", "hero-title", "The display weight: every h*/p* step declares font-weight:450 (a variable instance of Doppler Repro)."),
+    ("medium", "search-field", ".font-medium / the .text-label weight."),
+    ("bold", "nav-link", ".font-bold / .text-labelSm and .text-navLink weight."),
 ]
-for k, v, desc in WEIGHT:
+for k, comp_name, desc in WEIGHT:
     put(SPEC["core"]["font"].setdefault("weight", {}), k,
-        {"value": v, "type": "fontWeight", "source": "declared .text-*/.font-* weights (raw/utility-classes.json) and computed font-weight of the measured components", "description": desc})
+        {"value": int(st(comp_name, "default")["fontWeight"]), "type": "fontWeight",
+         "source": f"computed fontWeight of {comp_name} default (raw/components-computed.json)", "description": desc})
 
 # --------------------------------------------------------------- radii etc.
 for k, sel, desc in [
@@ -317,16 +334,12 @@ for k, sel, desc in [
         {"value": v, "type": "duration", "source": src, "description": desc})
 
 # ---------------------------------------------------- measured component bits
-def st(comp, state):
-    c = C[comp]
-    if c.get("missing") or c.get("recaptureMissed"):
-        raise KeyError(comp)
-    return c["states"][state]["style"]
-
-
 def stprop(comp, state, prop):
     """A bare property reads the computed style block; a dotted path walks the
-    state dict (textStyle.color, paint.0.bg, ancestors.N.bg)."""
+    state dict (textStyle.color, paint.0.bg, ancestors.N.bg). A component the
+    capture could not find has no reading."""
+    if C[comp].get("missing"):
+        raise KeyError(comp)
     d = C[comp]["states"][state]
     if "." not in prop:
         return d.get("style", {}).get(prop, "")
@@ -345,7 +358,13 @@ def stprop(comp, state, prop):
 
 def norm_color(v):
     v = (v or "").strip()
-    v = re.sub(r"/var\(--tw-[a-z-]*-opacity,[^)]*\)", "", v)  # rgb(r g b/var(--tw-x-opacity,1)) -> rgb(r g b)
+    # rgb(r g b/var(--tw-x-opacity,A)) -> rgb(r g b / A): keep the fallback alpha, never assume 1
+    v = re.sub(r"\s*/\s*var\(--tw-[a-z-]*-opacity,\s*([\d.]+%?)\)", r" / \1", v)
+    m = re.fullmatch(r"rgb\((\d+)\s+(\d+)\s+(\d+)\s*/\s*([\d.]+%?)\)", v)
+    if m:
+        a = float(m.group(4)[:-1]) / 100 if m.group(4).endswith("%") else float(m.group(4))
+        r, g, b = (int(m.group(i)) for i in (1, 2, 3))
+        return "#%02x%02x%02x" % (r, g, b) if a >= 1 else f"rgba({r}, {g}, {b}, {'%g' % a})"
     m = re.fullmatch(r"rgb\((\d+)\s+(\d+)\s+(\d+)\)", v)  # space-separated rgb()
     if m:
         return "#%02x%02x%02x" % (int(m.group(1)), int(m.group(2)), int(m.group(3)))
@@ -509,7 +528,8 @@ for key, cname, state, prop, desc in [
             continue
         m = re.match(r"(-?[\d.]+)", str(v))
         put(comp, key, {"type": "dimension", "value": "%gpx" % float(m.group(1)),
-                        "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
+                        "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)" + missed(cname)
+                        + ("; an outlined 'Start for Free' link, not the green hero CTA the name says: read from the wrong element, recapture needed" if cname == "hero-cta" else ""),
                         "description": desc})
     except (KeyError, AttributeError):
         pass
