@@ -6126,9 +6126,9 @@
       "description": "Breaking news and latest headlines ",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.washingtonpost.com/subscribe/signin/ offers email and Google. Google account chooser did not select the signed-in session and asked for a Google email or password. Not entered.",
+      "notes": "Email probe: https://www.washingtonpost.com/subscribe/signin/ offers email and Google. Google account chooser did not select the signed-in session and asked for a Google email or password. Not entered. Public walk 2026-11-21: the header sections button opens a drawer of public fronts. Chevrons open child lists for Style, Sports, World, Weather, Food, Science, Education, and D.C., Md. and Va. News alerts opens a dialog. Sign in, Google, Apple, Amazon, Facebook, and SSO stop at subscribe/signin. Article and author links were mapped and not screenshotted. Google was not clicked. No email was typed. No form was submitted. Signed-in account was not captured. Public package refresh in PR 1597 at ce8c2c0710ad. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 18
     },
     {
