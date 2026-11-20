@@ -177,6 +177,36 @@ class WriteTest(unittest.TestCase):
             edited = health.problems(CRITERIA, snap, [SYSTEM, added])
             self.assertTrue(any("systems/x/README.md" in line for line in edited))
 
+    def test_the_root_table_may_omit_only_ungraded_packages(self):
+        """root_omits_only_ungraded: each way the root table can be wrong while a
+        package's own Health is current still fails."""
+        snap = audit({"slug": "x", "name": "X", "grades": grades(F1="meets", F2="partly", C1="meets", V1="na")})
+        y = {"slug": "y", "captured": "2026-10-11", "goodFor": "Other", "themes": ["dark"]}
+        stale = "README.md: Health is stale; run `python3 tools/health.py`"
+        with Package() as pkg:
+            (pkg.root / "systems" / "y").mkdir()
+            (pkg.root / "systems" / "y" / "README.md").write_text(README)
+            health.write(CRITERIA, snap, [SYSTEM, y])
+            root = pkg.root / "README.md"
+            current = root.read_text()
+
+            def table(systems):
+                return health.TABLE.sub(lambda _: health.catalog_table(snap, systems), current, count=1)
+
+            # Leaving out ungraded y is accepted; that is the exemption.
+            root.write_text(table([SYSTEM]))
+            self.assertEqual(health.problems(CRITERIA, snap, [SYSTEM, y]), [])
+            # Leaving out graded x is not.
+            root.write_text(table([y]))
+            self.assertIn(stale, health.problems(CRITERIA, snap, [SYSTEM, y]))
+            # A row for a package not in the catalog is not.
+            ghost = {"slug": "ghost", "captured": "2026-10-01", "goodFor": "Gone", "themes": ["light"]}
+            root.write_text(table([SYSTEM, y, ghost]))
+            self.assertIn(stale, health.problems(CRITERIA, snap, [SYSTEM, y]))
+            # A stale row for a listed package is not.
+            root.write_text(table([{**SYSTEM, "goodFor": "Old words"}]))
+            self.assertIn(stale, health.problems(CRITERIA, snap, [SYSTEM, y]))
+
     def test_catalog_table_ranks_by_the_scorecard(self):
         snap = audit({"slug": "a", "name": "A", "grades": grades(F1="partly", F2="partly", C1="meets", V1="na")},
                      {"slug": "b", "name": "B", "grades": grades(F1="meets", F2="meets", C1="meets", V1="na")})
