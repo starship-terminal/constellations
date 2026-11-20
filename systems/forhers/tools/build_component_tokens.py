@@ -132,8 +132,18 @@ def put(tree, path, leaf):
 # swap) but no SSR rule applies it — recorded as declared-only.
 
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
-put(fam, ("sans",), lit("sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif", "fontFamily",
-    "computed fontFamily of nav-link/footer (raw/components-computed.json)",
+def computed_text(comp, prop, state="default"):
+    """A computed style off comp in raw/components-computed.json (the element's own style);
+    raises when it is missing."""
+    v = (C[comp]["states"][state].get("style") or {}).get(prop)
+    if not v:
+        raise KeyError(f"{comp} {state}: no {prop} reading")
+    return v
+
+
+put(fam, ("sans",), lit(computed_text("article-card", "fontFamily"), "fontFamily",
+    "computed fontFamily of article-card default (raw/components-computed.json); blog-topic and the other "
+    "blog/prose components match (nav-link and footer measure CareSans)",
     "The UI sans — nav, footer, blog/prose, forms and the /shop stack."))
 put(fam, ("display",), lit("CareSans, Helvetica, Arial, sans-serif", "fontFamily",
     "computed fontFamily of hero-heading (raw/components-computed.json)",
@@ -311,8 +321,9 @@ def census():
 
 CENSUS = census()
 # Colours that only appear in full rule bodies (the census above counts the
-# custom-property declarations css-vars.json keeps): declaration counts were
-# taken across the same archived inline sheets.
+# custom-property declarations css-vars.json keeps). These counts were taken by
+# hand at capture time across the archived inline sheets, which are not
+# committed, so the sources say so and nothing recounts them.
 SHEET_COUNTS = {
     "#ffffff": 234, "#338585": 103, "#000000": 62, "#3f676d": 34, "#c5ed82": 34,
     "#6498a0": 30, "#76b2a7": 29, "#78b3a8": 29, "#9cccbc": 29, "#757575": 28,
@@ -336,21 +347,71 @@ SHEET_COUNTS = {
 
 
 def swatch(group, name, value, desc):
-    n = CENSUS.get(norm_color(value), 0) or SHEET_COUNTS.get(norm_color(value), 0)
-    src = (f"stylesheet literal, {n} declaration{'s' if n != 1 else ''} in the archived inline sheets "
-           "(raw/css-vars.json sheet index)") if n else \
-          "stylesheet literal in the archived inline sheets (raw/css-vars.json sheet index)"
+    n = CENSUS.get(norm_color(value), 0)
+    hand_n = SHEET_COUNTS.get(norm_color(value), 0)
+    if n:
+        src = (f"stylesheet literal, {n} custom-property declaration{'s' if n != 1 else ''} in "
+               "raw/css-vars.json")
+    elif hand_n:
+        src = (f"stylesheet literal, {hand_n} declaration{'s' if hand_n != 1 else ''} counted by hand at capture "
+               "time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)")
+    else:
+        src = "stylesheet literal in the archived inline sheets (raw/css-vars.json sheet index)"
     put(pal, (group, name), lit(value, "color", src, desc))
 
 
 # ink — near-black text and its alpha steps (measured + declared)
 swatch("ink", "base", "#000000", "The ink every ramp step derives from.")
+RAW_TEXT = {f.name: f.read_text() for f in (RAW / "components-computed.json", RAW / "css-vars.json")}
+
+
+def ink_source(v):
+    """Where an ink step was read: the first computed reading that paints it (text colour first,
+    then fills, then any property, then a layer inside a composite such as a box-shadow), else a
+    declaration in raw/css-vars.json, else None (typed in at capture time)."""
+    order = ("color", "backgroundColor")
+    found = {}
+
+    def strings(node, key=None):
+        """(property, value) for every string under a state: style, textStyle, and the paint and
+        ancestor layers the kit records."""
+        if isinstance(node, dict):
+            for kk, vv in node.items():
+                yield from strings(vv, kk)
+        elif isinstance(node, list):
+            for vv in node:
+                yield from strings(vv, key)
+        elif isinstance(node, str):
+            yield key, node
+
+    for k, c in C.items():
+        for state, st in c.get("states", {}).items():
+            if True:
+                for prop, val in strings(st):
+                    rank = order.index(prop) if prop in order else len(order)
+                    try:
+                        whole = norm_color(val) == v
+                    except ValueError:
+                        whole = False
+                    if whole:
+                        what = "painted fill (a paint layer)" if prop == "bg" else f"computed {prop}"
+                        found.setdefault(rank, f"{what} of {k} {state} (raw/components-computed.json)")
+                    elif v in val:
+                        found.setdefault(9, f"a layer of computed {prop} of {k} {state} (raw/components-computed.json)")
+    if found:
+        return found[min(found)]
+    compact = v.replace(" ", "").replace("(0,0,0,0.", "(0,0,0,.")
+    if v in RAW_TEXT["css-vars.json"] or compact in RAW_TEXT["css-vars.json"]:
+        return "declared in an archived inline sheet (raw/css-vars.json)"
+    return None
+
+
 for name, v, d in [
     ("a89", "rgba(0, 0, 0, 0.89)", "Primary text — nav, body, footer."),
     ("a74", "rgba(0, 0, 0, 0.74)", "A mid emphasis step."),
     ("a65", "rgba(0, 0, 0, 0.65)", "Secondary text — prose body, privacy notes."),
     ("a54", "rgba(0, 0, 0, 0.54)", "The muted step."),
-    ("a50", "rgba(0, 0, 0, 0.50)", "The page dek's reading."),
+    ("a50", "rgba(0, 0, 0, 0.5)", "The page dek's reading."),
     ("a44", "rgba(0, 0, 0, 0.44)", "Subtle text — bylines and meta."),
     ("a37", "rgba(0, 0, 0, 0.37)", "The faint step — 'Read more'."),
     ("a33", "rgba(0, 0, 0, 0.33)", "Placeholder/disabled-adjacent text."),
@@ -361,8 +422,10 @@ for name, v, d in [
     ("a05", "rgba(0, 0, 0, 0.05)", "The lightest wash."),
     ("a03", "rgba(0, 0, 0, 0.03)", "The faintest surface tint."),
 ]:
-    put(pal, ("ink", name), lit(v, "color",
-        "computed style or stylesheet literal in the archived pages (raw/components-computed.json, raw/css-vars.json)", d))
+    v = norm_color(v)
+    src = ink_source(v) or ("Reconstruction — entered by hand at capture time, no raw reading behind it "
+                            "(no computed style or declaration holds this step)")
+    put(pal, ("ink", name), lit(v, "color", src, d))
 
 # paper — whites and greys
 for name, v, d in [
@@ -523,11 +586,14 @@ SEM = [
     (("border", "wash"), "{palette.ink.a06}", "The 6% border wash (dialog edge)."),
     (("focus", "ring"), "#101010", "The painted focus indicator — outline: auto 1px rgb(16,16,16)."),
 ]
+FOCUS_SRC = ink_source("#101010")
+if not FOCUS_SRC:
+    raise KeyError("no reading paints the #101010 focus outline")
 for path, val, desc in SEM:
     ty = "color"
-    put(light, path, {"value": val, "type": ty,
-                      "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
-                      "description": desc})
+    src = ("alias over core.palette; the palette leaf cites its measurement or declaration" if val.startswith("{")
+           else FOCUS_SRC + "; a literal, not an alias (no palette step holds it)")
+    put(light, path, {"value": val, "type": ty, "source": src, "description": desc})
 
 # ------------------------------------------------------------- components
 
@@ -622,9 +688,6 @@ for cname in ("nav-link", "cta-primary", "cta-tertiary", "read-more", "login-but
     except KeyError:
         continue
 
-(RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
-
-
 def count(d):
     if not isinstance(d, dict):
         return 1
@@ -633,4 +696,6 @@ def count(d):
     return sum(count(v) for v in d.values())
 
 
-print("component-tokens.json:", {k: count(v) for k, v in SPEC.items() if isinstance(v, dict)})
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
+    print("component-tokens.json:", {k: count(v) for k, v in SPEC.items() if isinstance(v, dict)})

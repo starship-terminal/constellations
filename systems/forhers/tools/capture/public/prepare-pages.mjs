@@ -17,7 +17,10 @@ export function rewrite(html) {
     .replace(/<script\b[\s\S]*?<\/script\s*>/gi, '')
     .replace(/<script\b[^>]*\/?>/gi, '')
     .replace(/<link\b[^>]*\bas=["']?script["']?[^>]*>/gi, '')
-    .replace(/<link\b[^>]*\brel=["']?preload["']?[^>]*\bas=["']?script["']?[^>]*>/gi, '');
+    .replace(/<link\b[^>]*\brel=["']?preload["']?[^>]*\bas=["']?script["']?[^>]*>/gi, '')
+    // inline handlers (onload=, onerror= ...) and javascript: URLs run script too
+    .replace(/\s+on[a-z]+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/\b(href|src|action|formaction)\s*=\s*(["']?)\s*javascript:[^"'>\s]*\2/gi, '$1="#"');
   for (const host of ASSET_HOSTS) {
     out = out.split(`https://${host}/`).join(`/asset/${host}/`);
     out = out.split(`http://${host}/`).join(`/asset/${host}/`);
