@@ -162,6 +162,19 @@ class RebuildTest(unittest.TestCase):
                 block = committed.split(f"Read as `{k}`", 1)[1].split("\n#### ", 1)[0]
                 self.assertNotIn("focus-visible", block, k)
 
+    def test_an_error_only_focus_record_does_not_break_the_build(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            shutil.copytree(pathlib.Path(self.tmp.name) / "tools", root / "tools", ignore=shutil.ignore_patterns("capture"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            shutil.copy(PKG / "tokens.json", root / "tokens.json")
+            raw = json.loads((root / "raw" / "components-computed.json").read_text())
+            k = next(k for k, c in raw["components"].items() if "style" in (c["states"].get("focus-visible") or {}))
+            raw["components"][k]["states"]["focus-visible"] = {"error": "focus attempt threw"}
+            (root / "raw" / "components-computed.json").write_text(json.dumps(raw))
+            r = subprocess.run([sys.executable, str(root / "tools" / "build_components_md.py")], cwd=root, capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, r.stderr[-400:])
+
     def test_docs_cite_only_existing_tokens(self):
         names = set()
         for theme in ("core", "light", "dark"):

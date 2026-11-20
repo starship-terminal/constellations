@@ -323,6 +323,8 @@ for k, c in C.items():
         # unfocused style, not an observed focus look: a capture gap.
         failed.append(k)
         continue
+    if "style" not in st:
+        continue  # an error record (the focus attempt threw, no earlier reading): nothing to report
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
