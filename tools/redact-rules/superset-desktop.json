@@ -1,6 +1,28 @@
 {
- "_note": "No pixel rectangles for systems/superset-desktop. Settings > Usage lists the owner's two own addresses, which show (owner's decision, 2026-10-25); only the OCR pass below stays, to catch hostnames and anyone else's address.",
- "families": [],
+ "_note": "Settings > Usage lists the owner's own addresses, which show (owner's decision, 2026-10-25). The one family paints out the two other users' leaderboard names on that page (owner's decision, 2026-11-21, for the public repo). The OCR pass below stays, to catch hostnames and anyone else's address.",
+ "families": [
+  {
+   "name": "usage: the two other people's leaderboard names beside the owner's rank (owner's decision, 2026-11-21)",
+   "files": [
+    "screenshots/dark/settings-usage.png",
+    "screenshots/light/settings-usage.png"
+   ],
+   "rects": [
+    [
+     946,
+     392,
+     1162,
+     424
+    ],
+    [
+     946,
+     508,
+     1168,
+     540
+    ]
+   ]
+  }
+ ],
  "ocr": {
   "net": true,
   "emails": true
