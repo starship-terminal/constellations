@@ -46,7 +46,7 @@ Screenshots are named `{page}-light-state.png`: every captured surface paints `l
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 27 components were given a real keyboard focus. 25 draw an outline ring: `signin-btn` (1px auto #005fcc, offset 1px), `signup-btn` (1px auto #005fcc, offset 1px), `address-pill` (1px auto #005fcc, offset 0px), `location-pill` (1px auto #005fcc, offset 0px), `cta-btn` (1px auto #005fcc, offset 1px), `dir-link` (1px auto #005fcc, offset 1px), `show-more` (on a child: 1px auto rgb(0, 95, 204) offset 0px), `cross-link` (1px auto #005fcc, offset 1px), `address-btn` (1px auto #005fcc, offset 0px), `cart-btn` (1px auto #005fcc, offset 0px), `dp-cta` (1px auto #005fcc, offset 0px), `popular-btn` (1px auto #005fcc, offset 0px), `nearby-cta` (1px auto #005fcc, offset 0px), `pagination` (on a child: 1px auto rgb(0, 95, 204) offset 0px), `internal-link` (1px auto #005fcc, offset 1px), `fulfil-toggle` (1px auto #005fcc, offset 0px), `quick-add` (1px auto #005fcc, offset 0px), `hsa-toggle` (on a child: 1px auto rgb(0, 95, 204) offset 0px), `identity-btn` (1px auto #005fcc, offset 0px), `landing-link` (on a child: 1px auto rgb(0, 95, 204) offset 1px), `car-btn` (1px auto #005fcc, offset 1px), `car-nav-link` (1px auto #005fcc, offset 1px), `footer-link` (1px auto #005fcc, offset 1px), `appstore-badge` (1px auto #005fcc, offset 1px), `social-btn` (1px auto #005fcc, offset 1px). The other 2 show no measured change: `value-prop-card`, `card-cta`.
+**Focus.** 27 components were given a real keyboard focus. 25 draw an outline ring: `signin-btn` (1px auto #005fcc, offset 1px), `signup-btn` (1px auto #005fcc, offset 1px), `address-pill` (1px auto #005fcc, offset 0px), `location-pill` (1px auto #005fcc, offset 0px), `cta-btn` (1px auto #005fcc, offset 1px), `dir-link` (1px auto #005fcc, offset 1px), `show-more` (on a child: 1px auto rgb(0, 95, 204) offset 0px), `cross-link` (1px auto #005fcc, offset 1px), `address-btn` (1px auto #005fcc, offset 0px), `cart-btn` (1px auto #005fcc, offset 0px), `dp-cta` (1px auto #005fcc, offset 0px), `popular-btn` (1px auto #005fcc, offset 0px), `nearby-cta` (1px auto #005fcc, offset 0px), `pagination` (on a child: 1px auto rgb(0, 95, 204) offset 0px), `internal-link` (1px auto #005fcc, offset 1px), `fulfil-toggle` (1px auto #005fcc, offset 0px), `quick-add` (1px auto #005fcc, offset 0px), `hsa-toggle` (on a child: 1px auto rgb(0, 95, 204) offset 0px), `identity-btn` (1px auto #005fcc, offset 0px), `landing-link` (on a child: 1px auto rgb(0, 95, 204) offset 1px), `car-btn` (1px auto #005fcc, offset 1px), `car-nav-link` (1px auto #005fcc, offset 1px), `footer-link` (1px auto #005fcc, offset 1px), `appstore-badge` (1px auto #005fcc, offset 1px), `social-btn` (1px auto #005fcc, offset 1px). The other 2 show no measured change: `value-prop-card`, `card-cta`. Focus could not be captured on 6 more (keyboard focus never landed on them, so their readings are left out): `tab-selected`, `tab-idle`, `city-link`, `bell-btn`, `group-order`, `m-identity-btn`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -120,7 +120,7 @@ The footer/top-bar native <select> of locales (data-size="small"). Read as `lang
 #### App header
 The consumer app shell header — HomeLogo, address button, side-nav toggle, cart and bell. Read as `app-header` on the DashPass student page.
 
-**Values (default).** size 1440 x 64; padding 64px 0px 0px 0px; background transparent; text DD Norms 14/20 700, #191919 `color.neutral.100`; icon 32 x 18, #0000ee; layers div.sc-51f7ae22-5.CiCuB 1440.0x0.0 rgb(255, 255, 255); div.sc-51f7ae22-6.jtIgLU 1440.0x64.0 rgb(255, 255, 255) B:1px solid rgb(228, 228, 228); div.sc-51f7ae22-8.icwqCe 152.0x18.0; button.ButtonRootInternal-sc-j2wkqj-0.gAhkoD 150.3x32.0 rgb(241, 241, 241) rgb(241, 241, 241) 0px 0px 0px 1px inset 9999px; button.ButtonRootInternal-sc-j2wkqj-0.dxDIIR 32.0x32.0 rgb(241, 241, 241) rgb(241, 241, 241) 0px.
+**Values (default).** size 1440 x 64; padding 64px 0px 0px 0px; background transparent; text DD Norms 14/20 700, #191919 `color.neutral.100`; icon 32 x 18, #0000ee (the browser's default link colour, inherited in the replay); layers div.sc-51f7ae22-5.CiCuB 1440.0x0.0 rgb(255, 255, 255); div.sc-51f7ae22-6.jtIgLU 1440.0x64.0 rgb(255, 255, 255) B:1px solid rgb(228, 228, 228); div.sc-51f7ae22-8.icwqCe 152.0x18.0; button.ButtonRootInternal-sc-j2wkqj-0.gAhkoD 150.3x32.0 rgb(241, 241, 241) rgb(241, 241, 241) 0px 0px 0px 1px inset 9999px; button.ButtonRootInternal-sc-j2wkqj-0.dxDIIR 32.0x32.0 rgb(241, 241, 241) rgb(241, 241, 241) 0px.
 
 Child layers that carry the look: div 1440x0 background #ffffff `color.white`; div 1440x64 background #ffffff `color.white` border 1px solid #e4e4e4; div 152x18 image linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff `color.white` 5%, #ffffff `color.
 
@@ -129,7 +129,7 @@ Child layers that carry the look: div 1440x0 background #ffffff `color.white`; d
 #### App wordmark
 Read as `app-logo` on the DashPass student page.
 
-**Values (default).** size 152 x 18; background transparent; image linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff `color.white` 5%, #ffffff `color.white` 50%, #ffffff `color.white` 95%, rgba(255, 255, 255, 0) 100%); text Times 16/normal 400, #000000 `color.black`; icon 32 x 18, #0000ee.
+**Values (default).** size 152 x 18; background transparent; image linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff `color.white` 5%, #ffffff `color.white` 50%, #ffffff `color.white` 95%, rgba(255, 255, 255, 0) 100%); text browser default (Times 16/normal 400, #000000); icon 32 x 18, #0000ee (the browser's default link colour, inherited in the replay).
 
 ![App wordmark default](components/crops/app-logo-default.png)
 
@@ -148,7 +148,7 @@ The header address/destination control — an address gate, never pressed. Read 
 #### Side-nav toggle
 The hamburger that opens the side navigation; toggled on mobile only. Read as `sidenav-toggle` on the DashPass student page.
 
-**Values (default).** size 221 x 836; border R: 1px solid #e4e4e4; background #ffffff `color.white`; text DD Norms 14/20 500, #191919 `color.neutral.100`; transition box-shadow 0.225s cubic-bezier(0.83, 0, 0.17, 1); icon 24 x 24, #0000ee.
+**Values (default).** size 221 x 836; border R: 1px solid #e4e4e4; background #ffffff `color.white`; text DD Norms 14/20 500, #191919 `color.neutral.100`; transition box-shadow 0.225s cubic-bezier(0.83, 0, 0.17, 1); icon 24 x 24, #0000ee (the browser's default link colour, inherited in the replay).
 
 ![Side-nav toggle default](components/crops/sidenav-toggle-default.png)
 
@@ -169,7 +169,7 @@ The header notifications bell; measured, never pressed. Read as `bell-btn` on th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 24 x 32; background transparent; text Times 16/normal 400, #000000 `color.black`; icon 24 x 24, #191919 `color.neutral.100`; layers button.ButtonRootInternal-sc-j2wkqj-0.dxDIIR 32.0x32.0 rgb(241, 241, 241) rgb(241, 241, 241) 0px 0px 0px 1px inset 9999px |
+| default (same: pressed) | size 24 x 32; background transparent; text browser default (Times 16/normal 400, #000000); icon 24 x 24, #191919 `color.neutral.100`; layers button.ButtonRootInternal-sc-j2wkqj-0.dxDIIR 32.0x32.0 rgb(241, 241, 241) rgb(241, 241, 241) 0px 0px 0px 1px inset 9999px |
 | hover | icon 24 x 24, #242424 `color.neutral.95`; layers button.ButtonRootInternal-sc-j2wkqj-0.dxDIIR 32.0x32.0 rgb(214, 214, 214) rgb(214, 214, 214) 0px 0px 0px 1px inset 9999px |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
@@ -415,7 +415,7 @@ A real public restaurant page (/en-US/store/…): store header, Delivery/Pickup 
 #### Store header
 The storefront header: hero image, name, rating and delivery info. Read as `store-head` on the restaurant storefront page.
 
-**Values (default).** size 1200 x 210; background transparent; text Times 16/normal 400, #000000 `color.black`; layers div.sc-9c44606c-5.eznBjt 0.0x0.0 T:60px solid rgba(0, 0, 0, 0) / L:480px solid rgb(255, 255, 255); div.sc-9c44606c-6.joKFnE 80.0x80.0 rgb(255, 255, 255) T:2px solid rgb(255, 255, 255) / R:2px solid rgb(255, 255, 255) / B:2px solid rgb(255, 255, 255) / L:2px solid rgb(255, 255, 255) rgba(0, 0, 0, 0.2) 0px 2px 8px 0px 50%; div.sc-9c44606c-7.dgRYDA 1200.0x110.0 0px 0px 12px 12px.
+**Values (default).** size 1200 x 210; background transparent; text browser default (Times 16/normal 400, #000000); layers div.sc-9c44606c-5.eznBjt 0.0x0.0 T:60px solid rgba(0, 0, 0, 0) / L:480px solid rgb(255, 255, 255); div.sc-9c44606c-6.joKFnE 80.0x80.0 rgb(255, 255, 255) T:2px solid rgb(255, 255, 255) / R:2px solid rgb(255, 255, 255) / B:2px solid rgb(255, 255, 255) / L:2px solid rgb(255, 255, 255) rgba(0, 0, 0, 0.2) 0px 2px 8px 0px 50%; div.sc-9c44606c-7.dgRYDA 1200.0x110.0 0px 0px 12px 12px.
 
 Child layers that carry the look: div 0x0 border 60px solid transparent; div 80x80 background #ffffff `color.white` border 2px solid #ffffff `color.white` radius 50% shadow rgba(0, 0, 0, 0.2) 0px 2px 8px 0px; div 1200x110 image linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 75%) radius 0px 0px 12px 12px.
 
@@ -471,7 +471,7 @@ Not on the page when it was captured.
 #### Menu item card
 A menu item in the virtualised grid: image, name, price. Read as `menu-item` on the restaurant storefront page.
 
-**Values (default).** size 944 x 450; radius 16px; background #f7f7f7 `color.neutral.0`; text Times 16/normal 400, #000000 `color.black`.
+**Values (default).** size 944 x 450; radius 16px; background #f7f7f7 `color.neutral.0`; text browser default (Times 16/normal 400, #000000).
 
 ![Menu item card default](components/crops/menu-item-default.png)
 
@@ -549,7 +549,7 @@ A promo chip on a restaurant card ("20% off on $40+"). Read as `offer-badge` on 
 #### Leaderboard badge
 A "Top 10%"-style tag on a restaurant card. Read as `leaderboard-badge` on the restaurants-near-me page.
 
-**Values (default).** size 118.33 x 20; padding 0px 8px; radius 9999px; background #f1f1f1 `color.neutral.5`; shadow rgba(247, 247, 247, 0) 0px 0px 0px 0px inset; text DD Norms 12/18 700, #191919 `color.neutral.100`; icon 24 x 24, #0000ee.
+**Values (default).** size 118.33 x 20; padding 0px 8px; radius 9999px; background #f1f1f1 `color.neutral.5`; shadow rgba(247, 247, 247, 0) 0px 0px 0px 0px inset; text DD Norms 12/18 700, #191919 `color.neutral.100`; icon 24 x 24, #0000ee (the browser's default link colour, inherited in the replay).
 
 ![Leaderboard badge default](components/crops/leaderboard-badge-default.png)
 
@@ -582,7 +582,7 @@ Read as `pagination` on the restaurants-near-me page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 1440 x 584; background transparent; text Times 16/normal 400, #000000 `color.black`; layers div.sc-f98a4c4c-0.gTFInR 240.0x20.0 rgb(241, 241, 241) 8px; div.sc-f98a4c4c-0.foUEsd 28.0x28.0 rgb(241, 241, 241) 50%; div.sc-f98a4c4c-0.foUEsd 28.0x28.0 rgb(241, 241, 241) 50%; div.sc-f98a4c4c-0.hoBkdx 448.0x172.0 rgb(241, 241, 241) 8px; div.sc-f98a4c4c-0.gXJfPn 96.0x14.0 rgb(241, 241, 241) 8px; div.sc-f98a4c4c-0.gEHuWJ 184.0x14.0 rgb(241, 241, 241) 8px |
+| default (same: hover, pressed) | size 1440 x 584; background transparent; text browser default (Times 16/normal 400, #000000); layers div.sc-f98a4c4c-0.gTFInR 240.0x20.0 rgb(241, 241, 241) 8px; div.sc-f98a4c4c-0.foUEsd 28.0x28.0 rgb(241, 241, 241) 50%; div.sc-f98a4c4c-0.foUEsd 28.0x28.0 rgb(241, 241, 241) 50%; div.sc-f98a4c4c-0.hoBkdx 448.0x172.0 rgb(241, 241, 241) 8px; div.sc-f98a4c4c-0.gXJfPn 96.0x14.0 rgb(241, 241, 241) 8px; div.sc-f98a4c4c-0.gEHuWJ 184.0x14.0 rgb(241, 241, 241) 8px |
 | focus-visible | layers div.sc-f98a4c4c-0.gTFInR 240.0x20.0 rgb(241, 241, 241) 8px; div.sc-f98a4c4c-0.foUEsd 28.0x28.0 rgb(241, 241, 241) 50%; div.sc-f98a4c4c-0.foUEsd 28.0x28.0 rgb(241, 241, 241) 50%; div.sc-297d2f35-0.sc-e4dee18e-0 1376.0x228.0 1px auto rgb(0, 95, 204) offset 0px; div.sc-f98a4c4c-0.hoBkdx 448.0x172.0 rgb(241, 241, 241) 8px; div.sc-f98a4c4c-0.gXJfPn 96.0x14.0 rgb(241, 241, 241) 8px |
 
 Child layers that carry the look: div 240x20 background #f1f1f1 `color.neutral.5` image linear-gradient(90deg, #f1f1f1 `color.neutral.5`, #f7f7f7 `color.neutral.0`, #f1f1f1 `colo radius 8px; div 28x28 background #f1f1f1 `color.neutral.5` image linear-gradient(90deg, #f1f1f1 `color.neutral.5`, #f7f7f7 `color.neutral.0`, #f1f1f1 `colo radius 50%; div 28x28 background #f1f1f1 `color.neutral.5` image linear-gradient(90deg, #f1f1f1 `color.neutral.5`, #f7f7f7 `color.neutral.0`, #f1f1f1 `colo radius 50%.
@@ -624,7 +624,7 @@ The catalog search field on the HSA/FSA store; focused only, nothing submitted. 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 788.78 x 32; background transparent; text Times 16/normal 400, #000000 `color.black`; icon 24 x 24, #191919 `color.neutral.100`; layers div::before.sc-b40f2357-2.fsoSKH calc(100% - 16px)x64px rgb(255, 255, 255) T:1px solid rgb(214, 214, 214) / R:1px solid rgb(214, 214, 214) / L:1px solid rgb(214, 214, 214) 20px 20px 0px 0px; div.InputContainer-sc-5yzsia-1.cIaZpF 756.8x32.0 rgb(247, 247, 247) rgb(247, 247, 247) 0px 0px 0px 1px inset 20px; div.InputContentContainerInternal-sc-5yzsia-2.gUKLGr 698.8x20.0 rgb(247, 247, 247); input.Inpu |
+| default | size 788.78 x 32; background transparent; text browser default (Times 16/normal 400, #000000); icon 24 x 24, #191919 `color.neutral.100`; layers div::before.sc-b40f2357-2.fsoSKH calc(100% - 16px)x64px rgb(255, 255, 255) T:1px solid rgb(214, 214, 214) / R:1px solid rgb(214, 214, 214) / L:1px solid rgb(214, 214, 214) 20px 20px 0px 0px; div.InputContainer-sc-5yzsia-1.cIaZpF 756.8x32.0 rgb(247, 247, 247) rgb(247, 247, 247) 0px 0px 0px 1px inset 20px; div.InputContentContainerInternal-sc-5yzsia-2.gUKLGr 698.8x20.0 rgb(247, 247, 247); input.Inpu |
 | focused | layers div::before.sc-b40f2357-2.fsoSKH calc(100% - 16px)x64px rgb(255, 255, 255) T:1px solid rgb(214, 214, 214) / R:1px solid rgb(214, 214, 214) / L:1px solid rgb(214, 214, 214) 20px 20px 0px 0px; div.InputContainer-sc-5yzsia-1.cIaZpF 756.8x32.0 rgb(247, 247, 247) rgb(25, 25, 25) 0px 0px 0px 2px inset 20px; div.InputContentContainerInternal-sc-5yzsia-2.gUKLGr 698.8x20.0 rgb(247, 247, 247); input.InputCo |
 
 Child layers that carry the look: div::before calc(100% - 16px)x64px background #ffffff `color.white` border 1px solid #d6d6d6 `color.neutral.10` radius 20px 20px 0px 0px; div 756.8x32 background #f7f7f7 `color.neutral.0` radius 20px shadow #f7f7f7 `color.neutral.0` 0px 0px 0px 1px inset; div 698.8x20 background #f7f7f7 `color.neutral.0`.
@@ -712,7 +712,7 @@ The App Store / Google Play badge links. Read as `appstore-badge` on the home pa
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 160 x 52; background transparent; text Times 16/normal 400, #000000 `color.black`; transition opacity 0.2s ease; opacity 0.7; layers div.sc-6c4a270f-15.behXqC 160.0x52.0 rgb(73, 73, 73) 8px |
+| default | size 160 x 52; background transparent; text browser default (Times 16/normal 400, #000000); transition opacity 0.2s ease; opacity 0.7; layers div.sc-6c4a270f-15.behXqC 160.0x52.0 rgb(73, 73, 73) 8px |
 | hover | opacity none |
 | focus-visible | outline 1px auto #005fcc, offset 1px; layers a.sc-6c4a270f-14.fSugZ 160.0x52.0 1px auto rgb(0, 95, 204) offset 1px; div.sc-6c4a270f-15.behXqC 160.0x52.0 rgb(73, 73, 73) 8px |
 | pressed | opacity none |
@@ -726,7 +726,7 @@ A social-media icon link in the footer. Read as `social-btn` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 24 x 32; background transparent; text Times 16/normal 400, #000000 `color.black`; transition opacity 0.2s ease; opacity 0.7; icon 24 x 24, #000000 `color.black` |
+| default | size 24 x 32; background transparent; text browser default (Times 16/normal 400, #000000); transition opacity 0.2s ease; opacity 0.7; icon 24 x 24, #000000 `color.black` |
 | hover | opacity none |
 | focus-visible | outline 1px auto #005fcc, offset 1px; layers a.sc-6c4a270f-14.fSugZ 24.0x32.0 1px auto rgb(0, 95, 204) offset 1px |
 | pressed | opacity none |
@@ -836,6 +836,7 @@ DoorDash's product — the consumer ordering flow, restaurant browsing past the 
 
 - **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing.
 - **Disabled, error and loading states** exist richly in the --comp-* token layer (…-disabled, …-progressing) and were tokenised from the declarations; the public surface rarely paints them.
+- **Browser defaults in the replay.** Elements the site styles only through their text children kept the browser's inherited defaults in the Wayback replay: Times 16px, #000000 text and the #0000ee link blue on anchors and the icons inside them. An entry whose text reads "browser default (...)" or whose icon is marked as the browser's link colour shows that, not a DoorDash value; the component tokens take their text colour from the first text node instead.
 - **Hydration.** The archived pages are the SSR output; React hydration may not complete under Wayback, so lazy content that mounts after hydration (extra directory rows, some imagery) can be absent from a shot — the DOM and styles that did render are real.
 
 ### Themes
