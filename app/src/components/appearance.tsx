@@ -81,6 +81,12 @@ document.dispatchEvent(new CustomEvent('ds-icon-change',{detail:next}));
 });
 }catch(e){}})();`;
 const THEME_KEY = "studio-theme";
+/** The owner's standard order: System, Dark, Light. */
+export const THEME_OPTIONS = [
+  { value: "system", label: "System" },
+  { value: "dark", label: "Dark" },
+  { value: "light", label: "Light" },
+];
 // Runs before hydration inside the layout <body>, ahead of any content, so a
 // light-theme user never sees a dark first paint. AppearanceBootstrap keeps it
 // current afterwards; both resolve the stored choice the same way.
@@ -165,11 +171,7 @@ export function AppearanceSettings() {
                 localStorage.setItem(THEME_KEY, next);
                 window.dispatchEvent(new Event("studio-appearance"));
               }}
-              options={[
-                { value: "dark", label: "Dark" },
-                { value: "light", label: "Light" },
-                { value: "system", label: "System" },
-              ]}
+              options={[...THEME_OPTIONS]}
             />
           </div>
         </div>

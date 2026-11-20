@@ -29,8 +29,11 @@
 }
 .coach {
   border: 1px solid var(--line);
-  border-bottom: 0;
-  padding: 12px 42px 12px 16px;
+  /* The tip tucks under the composer: its sides run down behind the
+     composer's rounded top corners, so the pair reads as one joined shape
+     instead of a box with an open, clipped bottom. */
+  padding: 12px 42px 36px 16px;
+  margin-bottom: -24px;
   border-radius: 22px 22px 0 0;
   position: relative;
   min-height: 68px;
@@ -59,6 +62,7 @@
   background: var(--surface);
 }
 .composer {
+  position: relative;
   /* The mode buttons switch to short labels by the composer's own width,
      which the sidebar narrows at any viewport. */
   container-type: inline-size;

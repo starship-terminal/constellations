@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { themeInitScript, themeStorageChanged } from "@/components/appearance";
+import {
+  THEME_OPTIONS,
+  themeInitScript,
+  themeStorageChanged,
+} from "@/components/appearance";
 
 // Evaluates the inline script the root layout runs before first paint.
 function run(stored: string | null, prefersDark = false, throws = false) {
@@ -43,5 +47,15 @@ describe("themeStorageChanged", () => {
     expect(themeStorageChanged("studio-theme")).toBe(true);
     expect(themeStorageChanged(null)).toBe(true);
     expect(themeStorageChanged("ds-icon")).toBe(false);
+  });
+});
+
+describe("THEME_OPTIONS", () => {
+  it("lists System, Dark, Light in that order", () => {
+    expect(THEME_OPTIONS.map((o) => o.label)).toEqual([
+      "System",
+      "Dark",
+      "Light",
+    ]);
   });
 });

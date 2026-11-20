@@ -21,6 +21,7 @@ import {
   ArchiveRestore,
 } from "lucide-react";
 import { api, Modal } from "./shared";
+import { createInFlightGuard } from "./recent-guard";
 export function Mark() {
   return (
     <>
@@ -57,56 +58,56 @@ export function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
         href="/library"
       >
         <Grid2X2 size={20} />
-        Gallery
+        <span className="nav-label">Gallery</span>
       </Link>
       <Link
         className={`nav-link ${path === "/library" && platform === "web" ? "active" : ""}`}
         href="/library?platform=web"
       >
         <Monitor size={20} />
-        Web apps
+        <span className="nav-label">Web apps</span>
       </Link>
       <Link
         className={`nav-link ${path === "/library" && platform === "mobile" ? "active" : ""}`}
         href="/library?platform=mobile"
       >
         <Smartphone size={20} />
-        iOS apps
+        <span className="nav-label">iOS apps</span>
       </Link>
       <Link
         className={`nav-link ${path === "/library" && platform === "desktop" ? "active" : ""}`}
         href="/library?platform=desktop"
       >
         <Laptop size={20} />
-        Desktop apps
+        <span className="nav-label">Desktop apps</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/styles") ? "active" : ""}`}
         href="/styles"
       >
         <Palette size={20} />
-        Styles
+        <span className="nav-label">Styles</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/collections") ? "active" : ""}`}
         href="/collections"
       >
         <Bookmark size={20} />
-        Bookmarks
+        <span className="nav-label">Bookmarks</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/docs") ? "active" : ""}`}
         href="/docs"
       >
         <BookOpen size={20} />
-        Documents
+        <span className="nav-label">Documents</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/scorecard") ? "active" : ""}`}
         href="/scorecard"
       >
         <BarChart3 size={20} />
-        Scorecard
+        <span className="nav-label">Scorecard</span>
       </Link>
     </nav>
   );
@@ -159,11 +160,19 @@ export function AppShell({ children }: { children: ReactNode }) {
     [historyFailed, setHistoryFailed] = useState(false);
   // Only the newest history request may update the list or its failure state.
   const historyRequest = useRef(0);
+  // A tab switch fires focus and visibilitychange together, and the first
+  // focus can land while the mount fetch is still running: those join the
+  // fetch already in flight. Once it settles, the next event fetches again.
+  const inFlight = useRef(createInFlightGuard());
   function reloadWhenShown() {
-    if (document.visibilityState === "visible") reload();
+    if (document.visibilityState === "visible") reloadIfIdle();
+  }
+  function reloadIfIdle() {
+    if (!inFlight.current.busy()) reload();
   }
   function reload() {
     const request = ++historyRequest.current;
+    const done = inFlight.current.start();
     api("/api/conversations")
       .then((d) => {
         if (request !== historyRequest.current) return;
@@ -172,7 +181,8 @@ export function AppShell({ children }: { children: ReactNode }) {
       })
       .catch(() => {
         if (request === historyRequest.current) setHistoryFailed(true);
-      });
+      })
+      .finally(done);
   }
   // Pages that change research dispatch "research-history"; moving between
   // pages changes nothing, so it does not refetch. Research created or
@@ -182,11 +192,11 @@ export function AppShell({ children }: { children: ReactNode }) {
     reload();
     window.addEventListener("research-history", reload);
     document.addEventListener("visibilitychange", reloadWhenShown);
-    window.addEventListener("focus", reload);
+    window.addEventListener("focus", reloadIfIdle);
     return () => {
       window.removeEventListener("research-history", reload);
       document.removeEventListener("visibilitychange", reloadWhenShown);
-      window.removeEventListener("focus", reload);
+      window.removeEventListener("focus", reloadIfIdle);
     };
   }, []);
   useEffect(() => {
@@ -285,7 +295,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         </Link>
         <Link href="/" className="new-research">
           <Plus size={22} />
-          New research
+          <span className="nav-label">New research</span>
         </Link>
         <Suspense fallback={null}>
           <CatalogNavigation onNavigate={() => setMobile(false)} />
@@ -385,7 +395,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             href="/settings"
           >
             <Settings size={18} />
-            Settings
+            <span className="nav-label">Settings</span>
           </Link>
         </div>
       </aside>

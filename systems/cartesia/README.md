@@ -115,6 +115,7 @@ Nothing was signed into, generated, called or submitted: the sign-in and sign-up
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **`plan-tab` is recorded missing** — the pricing plan tabs rendered zero-size/lazy-mounted at capture; an honest miss, not a measured absence.
 - **rounded-full clamps.** `rounded-full` computes to a giant px radius (~33.5 million px); the token records the clamp at 9999px.
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 
 ## Fonts
 

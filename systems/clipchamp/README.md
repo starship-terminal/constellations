@@ -83,6 +83,7 @@ Every number in [tokens.json](tokens.json) and [raw/measurements.md](raw/measure
 
 ## What is not here
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **The editor.** app.clipchamp.com's editing surface, templates' interactive previews, export and every OAuth/account action sit behind sign-in — never crossed. The sign-in card was measured at rest; the email path (the only field) was not entered.
 - **Dark theme.** The site paints one light theme; the dark band inside it is a pixel sample (`core.sampled.surfaceDark`), not a second theme.
 - **Three entries were read from the wrong element; they need a recapture.** `content-block-dark` is a heading with a `_DarkBackground` text variant (transparent, 640 x 79), not the dark band; the band's fill is only a pixel sample, kept as `core.sampled.surfaceDark`. `plan-head` is the 52 x 24 `_HeadIcon`, not a header cell with the plan name and price. `feature-tooltip` is a plain table cell (`_CellTooltip`, "Free stock assets") with no tooltip open, so this capture has no tooltip. The capture selectors for the first two are narrowed by edit, not rerun.

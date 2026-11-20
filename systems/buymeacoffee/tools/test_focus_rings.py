@@ -21,6 +21,10 @@ class RebuildTest(unittest.TestCase):
         cls.tmp = tempfile.TemporaryDirectory()
         cls.copy = pathlib.Path(cls.tmp.name) / "pkg"
         shutil.copytree(PKG, cls.copy, ignore=shutil.ignore_patterns("__pycache__"))
+        # Remove the committed outputs from the copy first, so a builder that
+        # writes nothing cannot pass by leaving the committed file in place.
+        for out in OUTPUTS:
+            (cls.copy / out).unlink()
         for b in BUILDERS:
             subprocess.run([sys.executable, str(cls.copy / "tools" / b)], check=True, capture_output=True, cwd=cls.copy)
 
@@ -31,6 +35,7 @@ class RebuildTest(unittest.TestCase):
     def test_outputs_match_committed(self):
         for out in OUTPUTS:
             with self.subTest(out=out):
+                self.assertTrue((self.copy / out).exists(), f"{out} was not rebuilt")
                 self.assertEqual((self.copy / out).read_text(), (PKG / out).read_text())
 
     def test_no_transparent_outline_is_a_ring(self):

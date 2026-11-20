@@ -166,6 +166,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - `core.spacing` steps 16 and 24 are a derived 4px scale. The measured paddings are 8px and 12px on the buttons. Copperx does not publish a space scale.
 - Three values were typed in by hand at capture time and no raw file holds them, so their sources say Reconstruction: `core.typography.title` (48px/52px, 500, -1.2px), `core.color.body` (#6a7385) and `core.radius.panel` (16px). The headlines that were measured are larger: the corporate-card h1 is 80px/84px 500 (-2.4px) and the pricing h1 64px/62px 400 (`cards-title`, `pricing-title` in raw/components-computed.json). The home display is the 96px token.
 - The focus-visible and pressed readings of `login-button` and `primary-button` are not clean: the capture never reset between states, so focus-visible was read with the pointer still on the button and pressed with the focus ring still drawn. No token uses them; [components.md](components.md) shows them with that warning. They need a recapture (the script now resets between states; it was not rerun).

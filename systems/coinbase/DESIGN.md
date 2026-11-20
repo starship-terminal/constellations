@@ -163,6 +163,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### Known gaps (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **Headless Chromium could not be used**: Cloudflare holds it on the managed challenge, so every capture and measurement ran headed Chromium under `xvfb-run` with `navigator.webdriver` masked and a fresh context per route. The tooling records this in comments so the capture is reproducible.
 - **The controls carry almost no motion**: nav/CTA/chip controls declare `0s` transitions; the only animated chrome measured is the promo banner, the explore search field and the mobile menu link at `0.2s ease-in-out` — so the motion scale is two measured durations and one curve, not a declared ladder.
 - **Nothing paints a real drop shadow on the marketing chrome**: the `--shadow-elevation1/2` ladder is declared on the theme element and tokenised, but no measured component casts it — the surface is flat.

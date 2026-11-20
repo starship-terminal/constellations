@@ -139,7 +139,7 @@ for (const { k, mob } of runs) {
     hasTouch: mob,
     locale: 'en-US',
   });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // automation flag: left as the browser sets it (navigator.webdriver is not masked).
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);

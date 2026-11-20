@@ -19,8 +19,12 @@ class BuildComponentsMdTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             copy = pathlib.Path(tmp) / "pkg"
             shutil.copytree(PKG, copy, ignore=shutil.ignore_patterns("__pycache__"))
+            # Remove the committed output from the copy first, so a builder that
+            # writes nothing cannot pass by leaving the committed file in place.
+            (copy / "components.md").unlink()
             subprocess.run([sys.executable, str(copy / "tools" / "build_components_md.py")],
                            check=True, capture_output=True)
+            self.assertTrue((copy / "components.md").exists(), "components.md was not rebuilt")
             built = (copy / "components.md").read_text()
         self.assertEqual(built, (PKG / "components.md").read_text())
 

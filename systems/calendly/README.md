@@ -103,6 +103,7 @@ Nothing was signed into, booked or submitted: the login and signup cards were ca
 
 ## What to distrust
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **This is the public shell, not the product.** The Calendly workspace — event-type editor, availability, meetings, routing, workflows, contacts, integrations, analytics, billing — sits behind /app/login and is uncaptured. Treat the product's own design system as unknown.
 - **Two applications, not a theme toggle.** The marketing site and the booking pages share a domain and some variable names but are different codebases with different fonts, palettes and geometry. `tokens.json` keeps booking roles under `light.booking.*` (they paint light); `dark.*` is the marketing `.dark` island scope, not a user-selectable dark mode, and the booking bundle's dark scope is declared but never paints.
 - **The marketing `.dark` islands invert the primary action.** Inside them the primary button is magnolia-on-midnight with midnight text — the mirror of the page's midnight pill. Copy the scoped roles, not the page defaults.

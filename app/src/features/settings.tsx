@@ -146,7 +146,11 @@ function AgentSettings() {
           <div className="settings-field" key={line.label}>
             <span>{line.label}</span>
             <code>{line.text}</code>
-            <button type="button" onClick={() => copy(line.label, line.text)}>
+            <button
+              type="button"
+              className="pill small"
+              onClick={() => copy(line.label, line.text)}
+            >
               {copied?.label === line.label
                 ? copied.ok
                   ? "Copied"
