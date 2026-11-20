@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pexels style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "Canva Sans", "Helvetica Neue", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 14px/19.6px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { font-size: 32px; line-height: 1.1; letter-spacing: -1px; margin: 0; }
+h2 { font-size: 20px; margin: 36px 0 12px; }
+button.toggle { height: 48px; padding: 0 20px; border-radius: 12px; border: 1px solid var(--action-primary); background: var(--action-primary); color: var(--text-onAccent); font: inherit; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.swatch { width: 92px; }
+.swatch i { display: block; height: 48px; border-radius: 12px; border: 1px solid var(--border-default); }
+.swatch span { display: block; font-size: 11px; color: var(--text-muted); margin-top: 4px; word-break: break-all; }
+.btn { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 12px; background: var(--action-primary); color: var(--text-onAccent); border: 1px solid var(--action-primary); font: 400 17px/17px var(--sg-sans); letter-spacing: -0.5px; }
+.pill { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 30px; background: var(--action-selected); color: var(--text-onAccent); }
+.chip { display: inline-flex; align-items: center; height: 48px; padding: 8px; border-radius: 180px; border: 1px solid var(--border-default); }
+.search { display: flex; align-items: center; height: 72px; padding: 12px; border-radius: 12px; background: var(--background-surface); width: 100%; max-width: 768px; color: var(--text-muted); }
+.card { border: 1px solid var(--border-default); border-radius: 12px; padding: 16px; background: var(--background-page); }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border-default); vertical-align: top; }
+.note { color: var(--text-muted); max-width: 68ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Pexels</h1>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle declared dark</button>
+</header>
+<p class="note">Rendered from tokens.json. The public site paints light. Dark is the stylesheet's <code>[data-mode=dark]</code> set, not a theme the captured pages applied.</p>
+
+<h2>Type</h2>
+<p style="font: 700 48px/52.8px var(--sg-sans); letter-spacing: -2px; margin: 0;">The best free stock photos.</p>
+<p>Body is 14px Canva Sans. Labels on controls are 17px with -0.5px tracking.</p>
+
+<h2>Controls</h2>
+<p>
+  <span class="btn">Join</span>
+  <span class="pill">Home</span>
+  <span class="chip">Ocean</span>
+</p>
+<div class="search">Search for free photos</div>
+
+<h2>Greyscale</h2>
+<div class="row" id="greys"></div>
+<h2>Named hues</h2>
+<div class="row" id="hues"></div>
+
+<h2>Tokens</h2>
+<table id="tokens"><tbody></tbody></table>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+const mode = () => document.documentElement.dataset.mode || "light";
+function paint() {
+  const set = TOKENS[mode()] || TOKENS.light;
+  const g = document.getElementById("greys");
+  g.innerHTML = "";
+  for (const [k, t] of Object.entries(set.color.greyscale)) {
+    const d = document.createElement("div");
+    d.className = "swatch";
+    d.innerHTML = `<i style="background:${css(t.v, set)}"></i><span>${k}<br>${t.v}</span>`;
+    g.appendChild(d);
+  }
+  const h = document.getElementById("hues");
+  h.innerHTML = "";
+  for (const hue of ["alien", "jellyfish", "papaya", "strawberry", "sunshine"]) {
+    for (const [k, t] of Object.entries(set.color[hue])) {
+      const d = document.createElement("div");
+      d.className = "swatch";
+      d.innerHTML = `<i style="background:${css(t.v, set)}"></i><span>${hue} ${k}</span>`;
+      h.appendChild(d);
+    }
+  }
+  const body = document.querySelector("#tokens tbody");
+  body.innerHTML = "";
+  const rows = [];
+  const walk = (node, path) => {
+    if (node && node.v !== undefined) rows.push([path, node.t, String(node.v)]);
+    else if (node && typeof node === "object") for (const [k, v] of Object.entries(node)) walk(v, path ? path + "." + k : k);
+  };
+  walk(TOKENS.core, "core");
+  walk(set, mode());
+  for (const [p, t, v] of rows) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${p}</td><td>${t}</td><td>${v}</td>`;
+    body.appendChild(tr);
+  }
+}
+function css(v, set) {
+  return String(v).replace(/\{color\.([^.}]+)\.([^}]+)\}/g, (_, hue, step) => set.color[hue][step].v);
+}
+document.querySelector(".toggle").addEventListener("click", () => setTimeout(paint, 0));
+paint();
+</script>
+</body>
+</html>
